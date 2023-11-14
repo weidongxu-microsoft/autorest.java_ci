@@ -6,25 +6,27 @@ package com.azure.resourcemanager.search.generated.models;
 
 import com.azure.resourcemanager.search.generated.fluent.models.QueryKeyInner;
 
-/** An immutable client-side representation of QueryKey. */
+/**
+ * An immutable client-side representation of QueryKey.
+ */
 public interface QueryKey {
     /**
      * Gets the name property: The name of the query API key; may be empty.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the key property: The value of the query API key.
-     *
+     * 
      * @return the key value.
      */
     String key();
 
     /**
      * Gets the inner com.azure.resourcemanager.search.generated.fluent.models.QueryKeyInner object.
-     *
+     * 
      * @return the inner object.
      */
     QueryKeyInner innerModel();

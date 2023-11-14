@@ -18,15 +18,19 @@ import java.util.Collection;
  * However, faces that end up being too small in the resized video may not be detected.
  */
 public final class AnalysisResolution extends ExpandableStringEnum<AnalysisResolution> {
-    /** Static value SourceResolution for AnalysisResolution. */
+    /**
+     * Static value SourceResolution for AnalysisResolution.
+     */
     public static final AnalysisResolution SOURCE_RESOLUTION = fromString("SourceResolution");
 
-    /** Static value StandardDefinition for AnalysisResolution. */
+    /**
+     * Static value StandardDefinition for AnalysisResolution.
+     */
     public static final AnalysisResolution STANDARD_DEFINITION = fromString("StandardDefinition");
 
     /**
      * Creates a new instance of AnalysisResolution value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -35,7 +39,7 @@ public final class AnalysisResolution extends ExpandableStringEnum<AnalysisResol
 
     /**
      * Creates or finds a AnalysisResolution from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding AnalysisResolution.
      */
@@ -46,7 +50,7 @@ public final class AnalysisResolution extends ExpandableStringEnum<AnalysisResol
 
     /**
      * Gets known AnalysisResolution values.
-     *
+     * 
      * @return known AnalysisResolution values.
      */
     public static Collection<AnalysisResolution> values() {

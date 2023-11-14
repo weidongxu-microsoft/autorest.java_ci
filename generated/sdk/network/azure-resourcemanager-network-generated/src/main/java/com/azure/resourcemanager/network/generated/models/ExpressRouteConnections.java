@@ -8,11 +8,13 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteConnectionInner;
 
-/** Resource collection API of ExpressRouteConnections. */
+/**
+ * Resource collection API of ExpressRouteConnections.
+ */
 public interface ExpressRouteConnections {
     /**
      * Creates a connection between an ExpressRoute gateway and an ExpressRoute circuit.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.
      * @param connectionName The name of the connection subresource.
@@ -22,15 +24,12 @@ public interface ExpressRouteConnections {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return expressRouteConnection resource.
      */
-    ExpressRouteConnection createOrUpdate(
-        String resourceGroupName,
-        String expressRouteGatewayName,
-        String connectionName,
-        ExpressRouteConnectionInner putExpressRouteConnectionParameters);
+    ExpressRouteConnection createOrUpdate(String resourceGroupName, String expressRouteGatewayName,
+        String connectionName, ExpressRouteConnectionInner putExpressRouteConnectionParameters);
 
     /**
      * Creates a connection between an ExpressRoute gateway and an ExpressRoute circuit.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.
      * @param connectionName The name of the connection subresource.
@@ -41,16 +40,12 @@ public interface ExpressRouteConnections {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return expressRouteConnection resource.
      */
-    ExpressRouteConnection createOrUpdate(
-        String resourceGroupName,
-        String expressRouteGatewayName,
-        String connectionName,
-        ExpressRouteConnectionInner putExpressRouteConnectionParameters,
-        Context context);
+    ExpressRouteConnection createOrUpdate(String resourceGroupName, String expressRouteGatewayName,
+        String connectionName, ExpressRouteConnectionInner putExpressRouteConnectionParameters, Context context);
 
     /**
      * Gets the specified ExpressRouteConnection.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.
      * @param connectionName The name of the ExpressRoute connection.
@@ -60,12 +55,12 @@ public interface ExpressRouteConnections {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified ExpressRouteConnection along with {@link Response}.
      */
-    Response<ExpressRouteConnection> getWithResponse(
-        String resourceGroupName, String expressRouteGatewayName, String connectionName, Context context);
+    Response<ExpressRouteConnection> getWithResponse(String resourceGroupName, String expressRouteGatewayName,
+        String connectionName, Context context);
 
     /**
      * Gets the specified ExpressRouteConnection.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.
      * @param connectionName The name of the ExpressRoute connection.
@@ -78,7 +73,7 @@ public interface ExpressRouteConnections {
 
     /**
      * Deletes a connection to a ExpressRoute circuit.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.
      * @param connectionName The name of the connection subresource.
@@ -90,7 +85,7 @@ public interface ExpressRouteConnections {
 
     /**
      * Deletes a connection to a ExpressRoute circuit.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.
      * @param connectionName The name of the connection subresource.
@@ -103,7 +98,7 @@ public interface ExpressRouteConnections {
 
     /**
      * Lists ExpressRouteConnections.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.
      * @param context The context to associate with this operation.
@@ -112,12 +107,12 @@ public interface ExpressRouteConnections {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return expressRouteConnection list along with {@link Response}.
      */
-    Response<ExpressRouteConnectionList> listWithResponse(
-        String resourceGroupName, String expressRouteGatewayName, Context context);
+    Response<ExpressRouteConnectionList> listWithResponse(String resourceGroupName, String expressRouteGatewayName,
+        Context context);
 
     /**
      * Lists ExpressRouteConnections.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

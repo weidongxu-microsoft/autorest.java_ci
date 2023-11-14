@@ -12,7 +12,9 @@ import com.azure.resourcemanager.costmanagement.generated.models.ExportSchedule;
 import com.azure.resourcemanager.costmanagement.generated.models.FormatType;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** A export resource. */
+/**
+ * A export resource.
+ */
 @Fluent
 public final class ExportInner extends ProxyResource {
     /*
@@ -28,13 +30,15 @@ public final class ExportInner extends ProxyResource {
     @JsonProperty(value = "eTag")
     private String etag;
 
-    /** Creates an instance of ExportInner class. */
+    /**
+     * Creates an instance of ExportInner class.
+     */
     public ExportInner() {
     }
 
     /**
      * Get the innerProperties property: The properties of the export.
-     *
+     * 
      * @return the innerProperties value.
      */
     private ExportProperties innerProperties() {
@@ -44,7 +48,7 @@ public final class ExportInner extends ProxyResource {
     /**
      * Get the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to
      * determine whether the user is updating the latest version or not.
-     *
+     * 
      * @return the etag value.
      */
     public String etag() {
@@ -54,7 +58,7 @@ public final class ExportInner extends ProxyResource {
     /**
      * Set the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to
      * determine whether the user is updating the latest version or not.
-     *
+     * 
      * @param etag the etag value to set.
      * @return the ExportInner object itself.
      */
@@ -65,7 +69,7 @@ public final class ExportInner extends ProxyResource {
 
     /**
      * Get the schedule property: Has schedule information for the export.
-     *
+     * 
      * @return the schedule value.
      */
     public ExportSchedule schedule() {
@@ -74,7 +78,7 @@ public final class ExportInner extends ProxyResource {
 
     /**
      * Set the schedule property: Has schedule information for the export.
-     *
+     * 
      * @param schedule the schedule value to set.
      * @return the ExportInner object itself.
      */
@@ -88,7 +92,7 @@ public final class ExportInner extends ProxyResource {
 
     /**
      * Get the format property: The format of the export being delivered.
-     *
+     * 
      * @return the format value.
      */
     public FormatType format() {
@@ -97,7 +101,7 @@ public final class ExportInner extends ProxyResource {
 
     /**
      * Set the format property: The format of the export being delivered.
-     *
+     * 
      * @param format the format value to set.
      * @return the ExportInner object itself.
      */
@@ -111,7 +115,7 @@ public final class ExportInner extends ProxyResource {
 
     /**
      * Get the deliveryInfo property: Has delivery information for the export.
-     *
+     * 
      * @return the deliveryInfo value.
      */
     public ExportDeliveryInfo deliveryInfo() {
@@ -120,7 +124,7 @@ public final class ExportInner extends ProxyResource {
 
     /**
      * Set the deliveryInfo property: Has delivery information for the export.
-     *
+     * 
      * @param deliveryInfo the deliveryInfo value to set.
      * @return the ExportInner object itself.
      */
@@ -134,7 +138,7 @@ public final class ExportInner extends ProxyResource {
 
     /**
      * Get the definition property: Has definition for the export.
-     *
+     * 
      * @return the definition value.
      */
     public ExportDefinition definition() {
@@ -143,7 +147,7 @@ public final class ExportInner extends ProxyResource {
 
     /**
      * Set the definition property: Has definition for the export.
-     *
+     * 
      * @param definition the definition value to set.
      * @return the ExportInner object itself.
      */
@@ -157,7 +161,7 @@ public final class ExportInner extends ProxyResource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

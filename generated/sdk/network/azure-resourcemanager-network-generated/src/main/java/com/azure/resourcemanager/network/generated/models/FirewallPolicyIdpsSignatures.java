@@ -7,11 +7,14 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of FirewallPolicyIdpsSignatures. */
+/**
+ * Resource collection API of FirewallPolicyIdpsSignatures.
+ */
 public interface FirewallPolicyIdpsSignatures {
     /**
-     * Retrieves the current status of IDPS signatures for the relevant policy.
-     *
+     * Retrieves the current status of IDPS signatures for the relevant policy. Maximal amount of returned signatures is
+     * 1000.
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @param parameters Will describe the query to run against the IDPS signatures DB.
@@ -21,12 +24,13 @@ public interface FirewallPolicyIdpsSignatures {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return query result along with {@link Response}.
      */
-    Response<QueryResults> listWithResponse(
-        String resourceGroupName, String firewallPolicyName, IdpsQueryObject parameters, Context context);
+    Response<QueryResults> listWithResponse(String resourceGroupName, String firewallPolicyName,
+        IdpsQueryObject parameters, Context context);
 
     /**
-     * Retrieves the current status of IDPS signatures for the relevant policy.
-     *
+     * Retrieves the current status of IDPS signatures for the relevant policy. Maximal amount of returned signatures is
+     * 1000.
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @param parameters Will describe the query to run against the IDPS signatures DB.

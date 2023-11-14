@@ -10,7 +10,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.time.Duration;
 
-/** Describes the properties of a video overlay. */
+/**
+ * Describes the properties of a video overlay.
+ */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
 @JsonTypeName("#Microsoft.Media.VideoOverlay")
 @Fluent
@@ -34,13 +36,15 @@ public final class VideoOverlay extends Overlay {
     @JsonProperty(value = "cropRectangle")
     private Rectangle cropRectangle;
 
-    /** Creates an instance of VideoOverlay class. */
+    /**
+     * Creates an instance of VideoOverlay class.
+     */
     public VideoOverlay() {
     }
 
     /**
      * Get the position property: The location in the input video where the overlay is applied.
-     *
+     * 
      * @return the position value.
      */
     public Rectangle position() {
@@ -49,7 +53,7 @@ public final class VideoOverlay extends Overlay {
 
     /**
      * Set the position property: The location in the input video where the overlay is applied.
-     *
+     * 
      * @param position the position value to set.
      * @return the VideoOverlay object itself.
      */
@@ -61,7 +65,7 @@ public final class VideoOverlay extends Overlay {
     /**
      * Get the opacity property: The opacity of the overlay. This is a value in the range [0 - 1.0]. Default is 1.0
      * which mean the overlay is opaque.
-     *
+     * 
      * @return the opacity value.
      */
     public Double opacity() {
@@ -71,7 +75,7 @@ public final class VideoOverlay extends Overlay {
     /**
      * Set the opacity property: The opacity of the overlay. This is a value in the range [0 - 1.0]. Default is 1.0
      * which mean the overlay is opaque.
-     *
+     * 
      * @param opacity the opacity value to set.
      * @return the VideoOverlay object itself.
      */
@@ -82,7 +86,7 @@ public final class VideoOverlay extends Overlay {
 
     /**
      * Get the cropRectangle property: An optional rectangular window used to crop the overlay image or video.
-     *
+     * 
      * @return the cropRectangle value.
      */
     public Rectangle cropRectangle() {
@@ -91,7 +95,7 @@ public final class VideoOverlay extends Overlay {
 
     /**
      * Set the cropRectangle property: An optional rectangular window used to crop the overlay image or video.
-     *
+     * 
      * @param cropRectangle the cropRectangle value to set.
      * @return the VideoOverlay object itself.
      */
@@ -100,42 +104,54 @@ public final class VideoOverlay extends Overlay {
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public VideoOverlay withInputLabel(String inputLabel) {
         super.withInputLabel(inputLabel);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public VideoOverlay withStart(Duration start) {
         super.withStart(start);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public VideoOverlay withEnd(Duration end) {
         super.withEnd(end);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public VideoOverlay withFadeInDuration(Duration fadeInDuration) {
         super.withFadeInDuration(fadeInDuration);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public VideoOverlay withFadeOutDuration(Duration fadeOutDuration) {
         super.withFadeOutDuration(fadeOutDuration);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public VideoOverlay withAudioGainLevel(Double audioGainLevel) {
         super.withAudioGainLevel(audioGainLevel);
@@ -144,7 +160,7 @@ public final class VideoOverlay extends Overlay {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

@@ -12,8 +12,8 @@ public final class AccessKeysImpl implements AccessKeys {
 
     private final com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager;
 
-    AccessKeysImpl(
-        AccessKeysInner innerObject, com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager) {
+    AccessKeysImpl(AccessKeysInner innerObject,
+        com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

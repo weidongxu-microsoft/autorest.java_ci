@@ -14,8 +14,8 @@ public final class IpPrefixesListImpl implements IpPrefixesList {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    IpPrefixesListImpl(
-        IpPrefixesListInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    IpPrefixesListImpl(IpPrefixesListInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

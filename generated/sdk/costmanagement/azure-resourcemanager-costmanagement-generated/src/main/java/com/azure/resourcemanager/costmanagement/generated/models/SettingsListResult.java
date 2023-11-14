@@ -9,7 +9,9 @@ import com.azure.resourcemanager.costmanagement.generated.fluent.models.SettingI
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Result of listing settings. It contains a list of available settings. */
+/**
+ * Result of listing settings. It contains a list of available settings.
+ */
 @Immutable
 public final class SettingsListResult {
     /*
@@ -24,13 +26,15 @@ public final class SettingsListResult {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
-    /** Creates an instance of SettingsListResult class. */
+    /**
+     * Creates an instance of SettingsListResult class.
+     */
     public SettingsListResult() {
     }
 
     /**
      * Get the value property: The list of settings.
-     *
+     * 
      * @return the value value.
      */
     public List<SettingInner> value() {
@@ -39,7 +43,7 @@ public final class SettingsListResult {
 
     /**
      * Get the nextLink property: The link (url) to the next page of results.
-     *
+     * 
      * @return the nextLink value.
      */
     public String nextLink() {
@@ -48,7 +52,7 @@ public final class SettingsListResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

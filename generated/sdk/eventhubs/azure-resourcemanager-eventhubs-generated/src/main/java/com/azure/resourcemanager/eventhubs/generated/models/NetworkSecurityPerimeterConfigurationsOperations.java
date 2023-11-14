@@ -6,11 +6,13 @@ package com.azure.resourcemanager.eventhubs.generated.models;
 
 import com.azure.core.util.Context;
 
-/** Resource collection API of NetworkSecurityPerimeterConfigurationsOperations. */
+/**
+ * Resource collection API of NetworkSecurityPerimeterConfigurationsOperations.
+ */
 public interface NetworkSecurityPerimeterConfigurationsOperations {
     /**
      * Refreshes any information about the association.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param resourceAssociationName The ResourceAssociation Name.
@@ -22,7 +24,7 @@ public interface NetworkSecurityPerimeterConfigurationsOperations {
 
     /**
      * Refreshes any information about the association.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param resourceAssociationName The ResourceAssociation Name.
@@ -31,6 +33,6 @@ public interface NetworkSecurityPerimeterConfigurationsOperations {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void createOrUpdate(
-        String resourceGroupName, String namespaceName, String resourceAssociationName, Context context);
+    void createOrUpdate(String resourceGroupName, String namespaceName, String resourceAssociationName,
+        Context context);
 }

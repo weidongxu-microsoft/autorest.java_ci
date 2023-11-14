@@ -14,8 +14,7 @@ public final class AvailableDelegationImpl implements AvailableDelegation {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    AvailableDelegationImpl(
-        AvailableDelegationInner innerObject,
+    AvailableDelegationImpl(AvailableDelegationInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

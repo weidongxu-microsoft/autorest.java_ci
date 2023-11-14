@@ -13,11 +13,13 @@ import com.azure.core.util.Context;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.MonitoringMetricConfigurationInner;
 
-/** An instance of this class provides access to all the operations defined in MonitoringConfigsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in MonitoringConfigsClient.
+ */
 public interface MonitoringConfigsClient {
     /**
      * Lists metric configurations in a role.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param resourceGroupName The resource group name.
@@ -27,12 +29,12 @@ public interface MonitoringConfigsClient {
      * @return collection of metric configurations as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<MonitoringMetricConfigurationInner> list(
-        String deviceName, String roleName, String resourceGroupName);
+    PagedIterable<MonitoringMetricConfigurationInner> list(String deviceName, String roleName,
+        String resourceGroupName);
 
     /**
      * Lists metric configurations in a role.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param resourceGroupName The resource group name.
@@ -43,12 +45,12 @@ public interface MonitoringConfigsClient {
      * @return collection of metric configurations as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<MonitoringMetricConfigurationInner> list(
-        String deviceName, String roleName, String resourceGroupName, Context context);
+    PagedIterable<MonitoringMetricConfigurationInner> list(String deviceName, String roleName, String resourceGroupName,
+        Context context);
 
     /**
      * Gets a metric configuration of a role.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param resourceGroupName The resource group name.
@@ -59,12 +61,12 @@ public interface MonitoringConfigsClient {
      * @return a metric configuration of a role along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<MonitoringMetricConfigurationInner> getWithResponse(
-        String deviceName, String roleName, String resourceGroupName, Context context);
+    Response<MonitoringMetricConfigurationInner> getWithResponse(String deviceName, String roleName,
+        String resourceGroupName, Context context);
 
     /**
      * Gets a metric configuration of a role.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param resourceGroupName The resource group name.
@@ -78,7 +80,7 @@ public interface MonitoringConfigsClient {
 
     /**
      * Creates a new metric configuration or updates an existing one for a role.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param resourceGroupName The resource group name.
@@ -90,14 +92,12 @@ public interface MonitoringConfigsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<MonitoringMetricConfigurationInner>, MonitoringMetricConfigurationInner> beginCreateOrUpdate(
-        String deviceName,
-        String roleName,
-        String resourceGroupName,
+        String deviceName, String roleName, String resourceGroupName,
         MonitoringMetricConfigurationInner monitoringMetricConfiguration);
 
     /**
      * Creates a new metric configuration or updates an existing one for a role.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param resourceGroupName The resource group name.
@@ -110,15 +110,12 @@ public interface MonitoringConfigsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<MonitoringMetricConfigurationInner>, MonitoringMetricConfigurationInner> beginCreateOrUpdate(
-        String deviceName,
-        String roleName,
-        String resourceGroupName,
-        MonitoringMetricConfigurationInner monitoringMetricConfiguration,
-        Context context);
+        String deviceName, String roleName, String resourceGroupName,
+        MonitoringMetricConfigurationInner monitoringMetricConfiguration, Context context);
 
     /**
      * Creates a new metric configuration or updates an existing one for a role.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param resourceGroupName The resource group name.
@@ -129,15 +126,12 @@ public interface MonitoringConfigsClient {
      * @return the metric setting details for the role.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    MonitoringMetricConfigurationInner createOrUpdate(
-        String deviceName,
-        String roleName,
-        String resourceGroupName,
+    MonitoringMetricConfigurationInner createOrUpdate(String deviceName, String roleName, String resourceGroupName,
         MonitoringMetricConfigurationInner monitoringMetricConfiguration);
 
     /**
      * Creates a new metric configuration or updates an existing one for a role.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param resourceGroupName The resource group name.
@@ -149,16 +143,12 @@ public interface MonitoringConfigsClient {
      * @return the metric setting details for the role.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    MonitoringMetricConfigurationInner createOrUpdate(
-        String deviceName,
-        String roleName,
-        String resourceGroupName,
-        MonitoringMetricConfigurationInner monitoringMetricConfiguration,
-        Context context);
+    MonitoringMetricConfigurationInner createOrUpdate(String deviceName, String roleName, String resourceGroupName,
+        MonitoringMetricConfigurationInner monitoringMetricConfiguration, Context context);
 
     /**
      * deletes a new metric configuration for a role.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param resourceGroupName The resource group name.
@@ -172,7 +162,7 @@ public interface MonitoringConfigsClient {
 
     /**
      * deletes a new metric configuration for a role.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param resourceGroupName The resource group name.
@@ -183,12 +173,12 @@ public interface MonitoringConfigsClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginDelete(
-        String deviceName, String roleName, String resourceGroupName, Context context);
+    SyncPoller<PollResult<Void>, Void> beginDelete(String deviceName, String roleName, String resourceGroupName,
+        Context context);
 
     /**
      * deletes a new metric configuration for a role.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param resourceGroupName The resource group name.
@@ -201,7 +191,7 @@ public interface MonitoringConfigsClient {
 
     /**
      * deletes a new metric configuration for a role.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param resourceGroupName The resource group name.

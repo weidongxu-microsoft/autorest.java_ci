@@ -22,8 +22,8 @@ public final class ListContainerItemImpl implements ListContainerItem {
 
     private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
-    ListContainerItemImpl(
-        ListContainerItemInner innerObject, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
+    ListContainerItemImpl(ListContainerItemInner innerObject,
+        com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

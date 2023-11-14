@@ -20,35 +20,28 @@ public final class ConfigurationsImpl implements Configurations {
 
     private final com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager;
 
-    public ConfigurationsImpl(
-        ConfigurationsClient innerClient,
+    public ConfigurationsImpl(ConfigurationsClient innerClient,
         com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<ClusterQuotaConfigurationProperties> patchWithResponse(
-        String resourceGroupName,
-        String clusterName,
-        ClusterQuotaConfigurationPropertiesInner parameters,
-        Context context) {
-        Response<ClusterQuotaConfigurationPropertiesInner> inner =
-            this.serviceClient().patchWithResponse(resourceGroupName, clusterName, parameters, context);
+    public Response<ClusterQuotaConfigurationProperties> patchWithResponse(String resourceGroupName, String clusterName,
+        ClusterQuotaConfigurationPropertiesInner parameters, Context context) {
+        Response<ClusterQuotaConfigurationPropertiesInner> inner
+            = this.serviceClient().patchWithResponse(resourceGroupName, clusterName, parameters, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ClusterQuotaConfigurationPropertiesImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public ClusterQuotaConfigurationProperties patch(
-        String resourceGroupName, String clusterName, ClusterQuotaConfigurationPropertiesInner parameters) {
-        ClusterQuotaConfigurationPropertiesInner inner =
-            this.serviceClient().patch(resourceGroupName, clusterName, parameters);
+    public ClusterQuotaConfigurationProperties patch(String resourceGroupName, String clusterName,
+        ClusterQuotaConfigurationPropertiesInner parameters) {
+        ClusterQuotaConfigurationPropertiesInner inner
+            = this.serviceClient().patch(resourceGroupName, clusterName, parameters);
         if (inner != null) {
             return new ClusterQuotaConfigurationPropertiesImpl(inner, this.manager());
         } else {
@@ -56,15 +49,12 @@ public final class ConfigurationsImpl implements Configurations {
         }
     }
 
-    public Response<ClusterQuotaConfigurationProperties> getWithResponse(
-        String resourceGroupName, String clusterName, Context context) {
-        Response<ClusterQuotaConfigurationPropertiesInner> inner =
-            this.serviceClient().getWithResponse(resourceGroupName, clusterName, context);
+    public Response<ClusterQuotaConfigurationProperties> getWithResponse(String resourceGroupName, String clusterName,
+        Context context) {
+        Response<ClusterQuotaConfigurationPropertiesInner> inner
+            = this.serviceClient().getWithResponse(resourceGroupName, clusterName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ClusterQuotaConfigurationPropertiesImpl(inner.getValue(), this.manager()));
         } else {
             return null;

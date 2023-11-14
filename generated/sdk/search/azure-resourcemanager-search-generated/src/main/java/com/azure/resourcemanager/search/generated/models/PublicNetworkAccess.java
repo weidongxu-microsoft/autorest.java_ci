@@ -13,13 +13,19 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * access method.
  */
 public enum PublicNetworkAccess {
-    /** Enum value enabled. */
+    /**
+     * Enum value enabled.
+     */
     ENABLED("enabled"),
 
-    /** Enum value disabled. */
+    /**
+     * Enum value disabled.
+     */
     DISABLED("disabled");
 
-    /** The actual serialized value for a PublicNetworkAccess instance. */
+    /**
+     * The actual serialized value for a PublicNetworkAccess instance.
+     */
     private final String value;
 
     PublicNetworkAccess(String value) {
@@ -28,7 +34,7 @@ public enum PublicNetworkAccess {
 
     /**
      * Parses a serialized value to a PublicNetworkAccess instance.
-     *
+     * 
      * @param value the serialized value to parse.
      * @return the parsed PublicNetworkAccess object, or null if unable to parse.
      */
@@ -46,7 +52,9 @@ public enum PublicNetworkAccess {
         return null;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @JsonValue
     @Override
     public String toString() {

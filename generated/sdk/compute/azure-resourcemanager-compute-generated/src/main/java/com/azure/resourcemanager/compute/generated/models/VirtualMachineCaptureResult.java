@@ -7,46 +7,48 @@ package com.azure.resourcemanager.compute.generated.models;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineCaptureResultInner;
 import java.util.List;
 
-/** An immutable client-side representation of VirtualMachineCaptureResult. */
+/**
+ * An immutable client-side representation of VirtualMachineCaptureResult.
+ */
 public interface VirtualMachineCaptureResult {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the schema property: the schema of the captured virtual machine.
-     *
+     * 
      * @return the schema value.
      */
     String schema();
 
     /**
      * Gets the contentVersion property: the version of the content.
-     *
+     * 
      * @return the contentVersion value.
      */
     String contentVersion();
 
     /**
      * Gets the parameters property: parameters of the captured virtual machine.
-     *
+     * 
      * @return the parameters value.
      */
     Object parameters();
 
     /**
      * Gets the resources property: a list of resource items of the captured virtual machine.
-     *
+     * 
      * @return the resources value.
      */
     List<Object> resources();
 
     /**
      * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineCaptureResultInner object.
-     *
+     * 
      * @return the inner object.
      */
     VirtualMachineCaptureResultInner innerModel();

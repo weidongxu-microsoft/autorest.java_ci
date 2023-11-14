@@ -22,20 +22,17 @@ public final class QueueServicesImpl implements QueueServices {
 
     private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
-    public QueueServicesImpl(
-        QueueServicesClient innerClient, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
+    public QueueServicesImpl(QueueServicesClient innerClient,
+        com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
     public Response<ListQueueServices> listWithResponse(String resourceGroupName, String accountName, Context context) {
-        Response<ListQueueServicesInner> inner =
-            this.serviceClient().listWithResponse(resourceGroupName, accountName, context);
+        Response<ListQueueServicesInner> inner
+            = this.serviceClient().listWithResponse(resourceGroupName, accountName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ListQueueServicesImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -51,15 +48,12 @@ public final class QueueServicesImpl implements QueueServices {
         }
     }
 
-    public Response<QueueServiceProperties> getServicePropertiesWithResponse(
-        String resourceGroupName, String accountName, Context context) {
-        Response<QueueServicePropertiesInner> inner =
-            this.serviceClient().getServicePropertiesWithResponse(resourceGroupName, accountName, context);
+    public Response<QueueServiceProperties> getServicePropertiesWithResponse(String resourceGroupName,
+        String accountName, Context context) {
+        Response<QueueServicePropertiesInner> inner
+            = this.serviceClient().getServicePropertiesWithResponse(resourceGroupName, accountName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new QueueServicePropertiesImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -78,19 +72,13 @@ public final class QueueServicesImpl implements QueueServices {
     public QueueServiceProperties getServicePropertiesById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
         }
         return this.getServicePropertiesWithResponse(resourceGroupName, accountName, Context.NONE).getValue();
     }
@@ -98,19 +86,13 @@ public final class QueueServicesImpl implements QueueServices {
     public Response<QueueServiceProperties> getServicePropertiesByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
         }
         return this.getServicePropertiesWithResponse(resourceGroupName, accountName, context);
     }

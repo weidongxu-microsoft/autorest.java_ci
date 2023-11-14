@@ -24,8 +24,8 @@ public final class CloudServicesImpl implements CloudServices {
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    public CloudServicesImpl(
-        CloudServicesClient innerClient, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
+    public CloudServicesImpl(CloudServicesClient innerClient,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -38,15 +38,12 @@ public final class CloudServicesImpl implements CloudServices {
         this.serviceClient().delete(resourceGroupName, cloudServiceName, context);
     }
 
-    public Response<CloudService> getByResourceGroupWithResponse(
-        String resourceGroupName, String cloudServiceName, Context context) {
-        Response<CloudServiceInner> inner =
-            this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, cloudServiceName, context);
+    public Response<CloudService> getByResourceGroupWithResponse(String resourceGroupName, String cloudServiceName,
+        Context context) {
+        Response<CloudServiceInner> inner
+            = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, cloudServiceName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new CloudServiceImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -62,15 +59,12 @@ public final class CloudServicesImpl implements CloudServices {
         }
     }
 
-    public Response<CloudServiceInstanceView> getInstanceViewWithResponse(
-        String resourceGroupName, String cloudServiceName, Context context) {
-        Response<CloudServiceInstanceViewInner> inner =
-            this.serviceClient().getInstanceViewWithResponse(resourceGroupName, cloudServiceName, context);
+    public Response<CloudServiceInstanceView> getInstanceViewWithResponse(String resourceGroupName,
+        String cloudServiceName, Context context) {
+        Response<CloudServiceInstanceViewInner> inner
+            = this.serviceClient().getInstanceViewWithResponse(resourceGroupName, cloudServiceName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new CloudServiceInstanceViewImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -150,26 +144,21 @@ public final class CloudServicesImpl implements CloudServices {
         this.serviceClient().deleteInstances(resourceGroupName, cloudServiceName);
     }
 
-    public void deleteInstances(
-        String resourceGroupName, String cloudServiceName, RoleInstances parameters, Context context) {
+    public void deleteInstances(String resourceGroupName, String cloudServiceName, RoleInstances parameters,
+        Context context) {
         this.serviceClient().deleteInstances(resourceGroupName, cloudServiceName, parameters, context);
     }
 
     public CloudService getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String cloudServiceName = Utils.getValueFromIdByName(id, "cloudServices");
         if (cloudServiceName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'cloudServices'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'cloudServices'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, cloudServiceName, Context.NONE).getValue();
     }
@@ -177,18 +166,13 @@ public final class CloudServicesImpl implements CloudServices {
     public Response<CloudService> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String cloudServiceName = Utils.getValueFromIdByName(id, "cloudServices");
         if (cloudServiceName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'cloudServices'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'cloudServices'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, cloudServiceName, context);
     }
@@ -196,18 +180,13 @@ public final class CloudServicesImpl implements CloudServices {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String cloudServiceName = Utils.getValueFromIdByName(id, "cloudServices");
         if (cloudServiceName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'cloudServices'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'cloudServices'.", id)));
         }
         this.delete(resourceGroupName, cloudServiceName, Context.NONE);
     }
@@ -215,18 +194,13 @@ public final class CloudServicesImpl implements CloudServices {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String cloudServiceName = Utils.getValueFromIdByName(id, "cloudServices");
         if (cloudServiceName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'cloudServices'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'cloudServices'.", id)));
         }
         this.delete(resourceGroupName, cloudServiceName, context);
     }

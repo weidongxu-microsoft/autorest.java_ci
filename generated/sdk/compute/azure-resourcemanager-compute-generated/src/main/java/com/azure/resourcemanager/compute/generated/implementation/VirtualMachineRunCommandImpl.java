@@ -149,25 +149,19 @@ public final class VirtualMachineRunCommandImpl
     }
 
     public VirtualMachineRunCommand create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualMachineRunCommands()
-                .createOrUpdate(resourceGroupName, vmName, runCommandName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getVirtualMachineRunCommands()
+            .createOrUpdate(resourceGroupName, vmName, runCommandName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public VirtualMachineRunCommand create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualMachineRunCommands()
-                .createOrUpdate(resourceGroupName, vmName, runCommandName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getVirtualMachineRunCommands()
+            .createOrUpdate(resourceGroupName, vmName, runCommandName, this.innerModel(), context);
         return this;
     }
 
-    VirtualMachineRunCommandImpl(
-        String name, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
+    VirtualMachineRunCommandImpl(String name,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = new VirtualMachineRunCommandInner();
         this.serviceManager = serviceManager;
         this.runCommandName = name;
@@ -179,25 +173,18 @@ public final class VirtualMachineRunCommandImpl
     }
 
     public VirtualMachineRunCommand apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualMachineRunCommands()
-                .update(resourceGroupName, vmName, runCommandName, updateRunCommand, Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getVirtualMachineRunCommands().update(resourceGroupName,
+            vmName, runCommandName, updateRunCommand, Context.NONE);
         return this;
     }
 
     public VirtualMachineRunCommand apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualMachineRunCommands()
-                .update(resourceGroupName, vmName, runCommandName, updateRunCommand, context);
+        this.innerObject = serviceManager.serviceClient().getVirtualMachineRunCommands().update(resourceGroupName,
+            vmName, runCommandName, updateRunCommand, context);
         return this;
     }
 
-    VirtualMachineRunCommandImpl(
-        VirtualMachineRunCommandInner innerObject,
+    VirtualMachineRunCommandImpl(VirtualMachineRunCommandInner innerObject,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -208,23 +195,17 @@ public final class VirtualMachineRunCommandImpl
 
     public VirtualMachineRunCommand refresh() {
         String localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualMachineRunCommands()
-                .getByVirtualMachineWithResponse(resourceGroupName, vmName, runCommandName, localExpand, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getVirtualMachineRunCommands()
+            .getByVirtualMachineWithResponse(resourceGroupName, vmName, runCommandName, localExpand, Context.NONE)
+            .getValue();
         return this;
     }
 
     public VirtualMachineRunCommand refresh(Context context) {
         String localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualMachineRunCommands()
-                .getByVirtualMachineWithResponse(resourceGroupName, vmName, runCommandName, localExpand, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getVirtualMachineRunCommands()
+            .getByVirtualMachineWithResponse(resourceGroupName, vmName, runCommandName, localExpand, context)
+            .getValue();
         return this;
     }
 
@@ -338,8 +319,8 @@ public final class VirtualMachineRunCommandImpl
         }
     }
 
-    public VirtualMachineRunCommandImpl withOutputBlobManagedIdentity(
-        RunCommandManagedIdentity outputBlobManagedIdentity) {
+    public VirtualMachineRunCommandImpl
+        withOutputBlobManagedIdentity(RunCommandManagedIdentity outputBlobManagedIdentity) {
         if (isInCreateMode()) {
             this.innerModel().withOutputBlobManagedIdentity(outputBlobManagedIdentity);
             return this;
@@ -349,8 +330,8 @@ public final class VirtualMachineRunCommandImpl
         }
     }
 
-    public VirtualMachineRunCommandImpl withErrorBlobManagedIdentity(
-        RunCommandManagedIdentity errorBlobManagedIdentity) {
+    public VirtualMachineRunCommandImpl
+        withErrorBlobManagedIdentity(RunCommandManagedIdentity errorBlobManagedIdentity) {
         if (isInCreateMode()) {
             this.innerModel().withErrorBlobManagedIdentity(errorBlobManagedIdentity);
             return this;

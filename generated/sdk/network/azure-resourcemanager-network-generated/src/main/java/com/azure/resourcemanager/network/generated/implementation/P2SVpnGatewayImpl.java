@@ -129,20 +129,14 @@ public final class P2SVpnGatewayImpl implements P2SVpnGateway, P2SVpnGateway.Def
     }
 
     public P2SVpnGateway create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getP2SVpnGateways()
-                .createOrUpdate(resourceGroupName, gatewayName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getP2SVpnGateways().createOrUpdate(resourceGroupName,
+            gatewayName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public P2SVpnGateway create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getP2SVpnGateways()
-                .createOrUpdate(resourceGroupName, gatewayName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getP2SVpnGateways().createOrUpdate(resourceGroupName,
+            gatewayName, this.innerModel(), context);
         return this;
     }
 
@@ -158,25 +152,19 @@ public final class P2SVpnGatewayImpl implements P2SVpnGateway, P2SVpnGateway.Def
     }
 
     public P2SVpnGateway apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getP2SVpnGateways()
-                .updateTags(resourceGroupName, gatewayName, updateP2SVpnGatewayParameters, Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getP2SVpnGateways().updateTags(resourceGroupName, gatewayName,
+            updateP2SVpnGatewayParameters, Context.NONE);
         return this;
     }
 
     public P2SVpnGateway apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getP2SVpnGateways()
-                .updateTags(resourceGroupName, gatewayName, updateP2SVpnGatewayParameters, context);
+        this.innerObject = serviceManager.serviceClient().getP2SVpnGateways().updateTags(resourceGroupName, gatewayName,
+            updateP2SVpnGatewayParameters, context);
         return this;
     }
 
-    P2SVpnGatewayImpl(
-        P2SVpnGatewayInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    P2SVpnGatewayImpl(P2SVpnGatewayInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
@@ -184,22 +172,14 @@ public final class P2SVpnGatewayImpl implements P2SVpnGateway, P2SVpnGateway.Def
     }
 
     public P2SVpnGateway refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getP2SVpnGateways()
-                .getByResourceGroupWithResponse(resourceGroupName, gatewayName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getP2SVpnGateways()
+            .getByResourceGroupWithResponse(resourceGroupName, gatewayName, Context.NONE).getValue();
         return this;
     }
 
     public P2SVpnGateway refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getP2SVpnGateways()
-                .getByResourceGroupWithResponse(resourceGroupName, gatewayName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getP2SVpnGateways()
+            .getByResourceGroupWithResponse(resourceGroupName, gatewayName, context).getValue();
         return this;
     }
 
@@ -228,16 +208,14 @@ public final class P2SVpnGatewayImpl implements P2SVpnGateway, P2SVpnGateway.Def
     }
 
     public P2SVpnConnectionHealth getP2SVpnConnectionHealthDetailed(P2SVpnConnectionHealthRequest request) {
-        return serviceManager
-            .p2SVpnGateways()
-            .getP2SVpnConnectionHealthDetailed(resourceGroupName, gatewayName, request);
+        return serviceManager.p2SVpnGateways().getP2SVpnConnectionHealthDetailed(resourceGroupName, gatewayName,
+            request);
     }
 
-    public P2SVpnConnectionHealth getP2SVpnConnectionHealthDetailed(
-        P2SVpnConnectionHealthRequest request, Context context) {
-        return serviceManager
-            .p2SVpnGateways()
-            .getP2SVpnConnectionHealthDetailed(resourceGroupName, gatewayName, request, context);
+    public P2SVpnConnectionHealth getP2SVpnConnectionHealthDetailed(P2SVpnConnectionHealthRequest request,
+        Context context) {
+        return serviceManager.p2SVpnGateways().getP2SVpnConnectionHealthDetailed(resourceGroupName, gatewayName,
+            request, context);
     }
 
     public P2SVpnGatewayImpl withRegion(Region location) {
@@ -265,8 +243,8 @@ public final class P2SVpnGatewayImpl implements P2SVpnGateway, P2SVpnGateway.Def
         return this;
     }
 
-    public P2SVpnGatewayImpl withP2SConnectionConfigurations(
-        List<P2SConnectionConfiguration> p2SConnectionConfigurations) {
+    public P2SVpnGatewayImpl
+        withP2SConnectionConfigurations(List<P2SConnectionConfiguration> p2SConnectionConfigurations) {
         this.innerModel().withP2SConnectionConfigurations(p2SConnectionConfigurations);
         return this;
     }

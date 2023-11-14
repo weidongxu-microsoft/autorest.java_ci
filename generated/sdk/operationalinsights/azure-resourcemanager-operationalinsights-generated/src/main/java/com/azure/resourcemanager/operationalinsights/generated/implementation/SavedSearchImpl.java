@@ -90,28 +90,21 @@ public final class SavedSearchImpl implements SavedSearch, SavedSearch.Definitio
     }
 
     public SavedSearch create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSavedSearches()
-                .createOrUpdateWithResponse(
-                    resourceGroupName, workspaceName, savedSearchId, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getSavedSearches().createOrUpdateWithResponse(resourceGroupName,
+                workspaceName, savedSearchId, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public SavedSearch create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSavedSearches()
-                .createOrUpdateWithResponse(resourceGroupName, workspaceName, savedSearchId, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getSavedSearches()
+            .createOrUpdateWithResponse(resourceGroupName, workspaceName, savedSearchId, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
-    SavedSearchImpl(
-        String name, com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager) {
+    SavedSearchImpl(String name,
+        com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager) {
         this.innerObject = new SavedSearchInner();
         this.serviceManager = serviceManager;
         this.savedSearchId = name;
@@ -122,28 +115,20 @@ public final class SavedSearchImpl implements SavedSearch, SavedSearch.Definitio
     }
 
     public SavedSearch apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSavedSearches()
-                .createOrUpdateWithResponse(
-                    resourceGroupName, workspaceName, savedSearchId, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getSavedSearches().createOrUpdateWithResponse(resourceGroupName,
+                workspaceName, savedSearchId, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public SavedSearch apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSavedSearches()
-                .createOrUpdateWithResponse(resourceGroupName, workspaceName, savedSearchId, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getSavedSearches()
+            .createOrUpdateWithResponse(resourceGroupName, workspaceName, savedSearchId, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
-    SavedSearchImpl(
-        SavedSearchInner innerObject,
+    SavedSearchImpl(SavedSearchInner innerObject,
         com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -153,22 +138,14 @@ public final class SavedSearchImpl implements SavedSearch, SavedSearch.Definitio
     }
 
     public SavedSearch refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSavedSearches()
-                .getWithResponse(resourceGroupName, workspaceName, savedSearchId, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getSavedSearches()
+            .getWithResponse(resourceGroupName, workspaceName, savedSearchId, Context.NONE).getValue();
         return this;
     }
 
     public SavedSearch refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSavedSearches()
-                .getWithResponse(resourceGroupName, workspaceName, savedSearchId, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getSavedSearches()
+            .getWithResponse(resourceGroupName, workspaceName, savedSearchId, context).getValue();
         return this;
     }
 

@@ -8,7 +8,9 @@ import com.azure.core.annotation.Immutable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Server edition capabilities. */
+/**
+ * Server edition capabilities.
+ */
 @Immutable
 public final class ServerEditionCapabilityV2 {
     /*
@@ -41,13 +43,15 @@ public final class ServerEditionCapabilityV2 {
     @JsonProperty(value = "supportedSkus", access = JsonProperty.Access.WRITE_ONLY)
     private List<SkuCapabilityV2> supportedSkus;
 
-    /** Creates an instance of ServerEditionCapabilityV2 class. */
+    /**
+     * Creates an instance of ServerEditionCapabilityV2 class.
+     */
     public ServerEditionCapabilityV2() {
     }
 
     /**
      * Get the name property: Server edition name.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -56,7 +60,7 @@ public final class ServerEditionCapabilityV2 {
 
     /**
      * Get the defaultSku property: Default Sku name.
-     *
+     * 
      * @return the defaultSku value.
      */
     public String defaultSku() {
@@ -65,7 +69,7 @@ public final class ServerEditionCapabilityV2 {
 
     /**
      * Get the defaultStorageSize property: Default storage size.
-     *
+     * 
      * @return the defaultStorageSize value.
      */
     public Integer defaultStorageSize() {
@@ -74,7 +78,7 @@ public final class ServerEditionCapabilityV2 {
 
     /**
      * Get the supportedStorageEditions property: A list of supported storage editions.
-     *
+     * 
      * @return the supportedStorageEditions value.
      */
     public List<StorageEditionCapability> supportedStorageEditions() {
@@ -83,7 +87,7 @@ public final class ServerEditionCapabilityV2 {
 
     /**
      * Get the supportedSkus property: A list of supported Skus.
-     *
+     * 
      * @return the supportedSkus value.
      */
     public List<SkuCapabilityV2> supportedSkus() {
@@ -92,7 +96,7 @@ public final class ServerEditionCapabilityV2 {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

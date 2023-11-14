@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of NatRules. */
+/**
+ * Resource collection API of NatRules.
+ */
 public interface NatRules {
     /**
      * Retrieves the details of a nat ruleGet.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @param natRuleName The name of the nat rule.
@@ -22,12 +24,12 @@ public interface NatRules {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return vpnGatewayNatRule Resource along with {@link Response}.
      */
-    Response<VpnGatewayNatRule> getWithResponse(
-        String resourceGroupName, String gatewayName, String natRuleName, Context context);
+    Response<VpnGatewayNatRule> getWithResponse(String resourceGroupName, String gatewayName, String natRuleName,
+        Context context);
 
     /**
      * Retrieves the details of a nat ruleGet.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @param natRuleName The name of the nat rule.
@@ -40,7 +42,7 @@ public interface NatRules {
 
     /**
      * Deletes a nat rule.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @param natRuleName The name of the nat rule.
@@ -52,7 +54,7 @@ public interface NatRules {
 
     /**
      * Deletes a nat rule.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @param natRuleName The name of the nat rule.
@@ -65,20 +67,20 @@ public interface NatRules {
 
     /**
      * Retrieves all nat rules for a particular virtual wan vpn gateway.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return result of the request to list all nat rules to a virtual wan vpn gateway as paginated response with
-     *     {@link PagedIterable}.
+     * {@link PagedIterable}.
      */
     PagedIterable<VpnGatewayNatRule> listByVpnGateway(String resourceGroupName, String gatewayName);
 
     /**
      * Retrieves all nat rules for a particular virtual wan vpn gateway.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @param context The context to associate with this operation.
@@ -86,13 +88,13 @@ public interface NatRules {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return result of the request to list all nat rules to a virtual wan vpn gateway as paginated response with
-     *     {@link PagedIterable}.
+     * {@link PagedIterable}.
      */
     PagedIterable<VpnGatewayNatRule> listByVpnGateway(String resourceGroupName, String gatewayName, Context context);
 
     /**
      * Retrieves the details of a nat ruleGet.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -103,7 +105,7 @@ public interface NatRules {
 
     /**
      * Retrieves the details of a nat ruleGet.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -115,7 +117,7 @@ public interface NatRules {
 
     /**
      * Deletes a nat rule.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -125,7 +127,7 @@ public interface NatRules {
 
     /**
      * Deletes a nat rule.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -136,7 +138,7 @@ public interface NatRules {
 
     /**
      * Begins definition for a new VpnGatewayNatRule resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new VpnGatewayNatRule definition.
      */

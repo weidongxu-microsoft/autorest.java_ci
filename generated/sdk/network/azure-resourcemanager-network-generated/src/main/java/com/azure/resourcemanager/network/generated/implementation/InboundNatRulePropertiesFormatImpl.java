@@ -17,8 +17,7 @@ public final class InboundNatRulePropertiesFormatImpl implements InboundNatRuleP
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    InboundNatRulePropertiesFormatImpl(
-        InboundNatRulePropertiesFormatInner innerObject,
+    InboundNatRulePropertiesFormatImpl(InboundNatRulePropertiesFormatInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

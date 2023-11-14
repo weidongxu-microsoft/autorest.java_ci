@@ -12,8 +12,7 @@ public final class TldLegalAgreementImpl implements TldLegalAgreement {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    TldLegalAgreementImpl(
-        TldLegalAgreementInner innerObject,
+    TldLegalAgreementImpl(TldLegalAgreementInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

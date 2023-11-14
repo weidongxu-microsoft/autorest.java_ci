@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Result of the List private link resources operation. */
+/**
+ * Result of the List private link resources operation.
+ */
 @Fluent
 public final class PrivateLinkResourcesListResultInner {
     /*
@@ -23,13 +25,15 @@ public final class PrivateLinkResourcesListResultInner {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
-    /** Creates an instance of PrivateLinkResourcesListResultInner class. */
+    /**
+     * Creates an instance of PrivateLinkResourcesListResultInner class.
+     */
     public PrivateLinkResourcesListResultInner() {
     }
 
     /**
      * Get the value property: A collection of private link resources.
-     *
+     * 
      * @return the value value.
      */
     public List<PrivateLinkResourceInner> value() {
@@ -38,7 +42,7 @@ public final class PrivateLinkResourcesListResultInner {
 
     /**
      * Set the value property: A collection of private link resources.
-     *
+     * 
      * @param value the value value to set.
      * @return the PrivateLinkResourcesListResultInner object itself.
      */
@@ -49,7 +53,7 @@ public final class PrivateLinkResourcesListResultInner {
 
     /**
      * Get the nextLink property: A link for the next page of private link resources.
-     *
+     * 
      * @return the nextLink value.
      */
     public String nextLink() {
@@ -58,7 +62,7 @@ public final class PrivateLinkResourcesListResultInner {
 
     /**
      * Set the nextLink property: A link for the next page of private link resources.
-     *
+     * 
      * @param nextLink the nextLink value to set.
      * @return the PrivateLinkResourcesListResultInner object itself.
      */
@@ -69,7 +73,7 @@ public final class PrivateLinkResourcesListResultInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

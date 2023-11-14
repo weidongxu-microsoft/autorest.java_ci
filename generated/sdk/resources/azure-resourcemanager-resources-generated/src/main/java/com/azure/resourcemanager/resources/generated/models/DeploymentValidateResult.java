@@ -7,27 +7,29 @@ package com.azure.resourcemanager.resources.generated.models;
 import com.azure.core.management.exception.ManagementError;
 import com.azure.resourcemanager.resources.generated.fluent.models.DeploymentValidateResultInner;
 
-/** An immutable client-side representation of DeploymentValidateResult. */
+/**
+ * An immutable client-side representation of DeploymentValidateResult.
+ */
 public interface DeploymentValidateResult {
     /**
      * Gets the error property: Error Response
-     *
-     * <p>The deployment validation error.
-     *
+     * 
+     * The deployment validation error.
+     * 
      * @return the error value.
      */
     ManagementError error();
 
     /**
      * Gets the properties property: The template deployment properties.
-     *
+     * 
      * @return the properties value.
      */
     DeploymentPropertiesExtended properties();
 
     /**
      * Gets the inner com.azure.resourcemanager.resources.generated.fluent.models.DeploymentValidateResultInner object.
-     *
+     * 
      * @return the inner object.
      */
     DeploymentValidateResultInner innerModel();

@@ -170,37 +170,19 @@ public final class ConnectionMonitorResultImpl
     }
 
     public ConnectionMonitorResult create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getConnectionMonitors()
-                .createOrUpdate(
-                    resourceGroupName,
-                    networkWatcherName,
-                    connectionMonitorName,
-                    createParameters,
-                    createMigrate,
-                    Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getConnectionMonitors().createOrUpdate(resourceGroupName,
+            networkWatcherName, connectionMonitorName, createParameters, createMigrate, Context.NONE);
         return this;
     }
 
     public ConnectionMonitorResult create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getConnectionMonitors()
-                .createOrUpdate(
-                    resourceGroupName,
-                    networkWatcherName,
-                    connectionMonitorName,
-                    createParameters,
-                    createMigrate,
-                    context);
+        this.innerObject = serviceManager.serviceClient().getConnectionMonitors().createOrUpdate(resourceGroupName,
+            networkWatcherName, connectionMonitorName, createParameters, createMigrate, context);
         return this;
     }
 
-    ConnectionMonitorResultImpl(
-        String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    ConnectionMonitorResultImpl(String name,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new ConnectionMonitorResultInner();
         this.serviceManager = serviceManager;
         this.connectionMonitorName = name;
@@ -214,29 +196,20 @@ public final class ConnectionMonitorResultImpl
     }
 
     public ConnectionMonitorResult apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getConnectionMonitors()
-                .updateTagsWithResponse(
-                    resourceGroupName, networkWatcherName, connectionMonitorName, updateParameters, Context.NONE)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getConnectionMonitors().updateTagsWithResponse(resourceGroupName,
+                networkWatcherName, connectionMonitorName, updateParameters, Context.NONE).getValue();
         return this;
     }
 
     public ConnectionMonitorResult apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getConnectionMonitors()
-                .updateTagsWithResponse(
-                    resourceGroupName, networkWatcherName, connectionMonitorName, updateParameters, context)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getConnectionMonitors().updateTagsWithResponse(resourceGroupName,
+                networkWatcherName, connectionMonitorName, updateParameters, context).getValue();
         return this;
     }
 
-    ConnectionMonitorResultImpl(
-        ConnectionMonitorResultInner innerObject,
+    ConnectionMonitorResultImpl(ConnectionMonitorResultInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -246,22 +219,14 @@ public final class ConnectionMonitorResultImpl
     }
 
     public ConnectionMonitorResult refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getConnectionMonitors()
-                .getWithResponse(resourceGroupName, networkWatcherName, connectionMonitorName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getConnectionMonitors()
+            .getWithResponse(resourceGroupName, networkWatcherName, connectionMonitorName, Context.NONE).getValue();
         return this;
     }
 
     public ConnectionMonitorResult refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getConnectionMonitors()
-                .getWithResponse(resourceGroupName, networkWatcherName, connectionMonitorName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getConnectionMonitors()
+            .getWithResponse(resourceGroupName, networkWatcherName, connectionMonitorName, context).getValue();
         return this;
     }
 
@@ -278,9 +243,8 @@ public final class ConnectionMonitorResultImpl
     }
 
     public void start(Context context) {
-        serviceManager
-            .connectionMonitors()
-            .start(resourceGroupName, networkWatcherName, connectionMonitorName, context);
+        serviceManager.connectionMonitors().start(resourceGroupName, networkWatcherName, connectionMonitorName,
+            context);
     }
 
     public ConnectionMonitorQueryResult query() {
@@ -288,9 +252,8 @@ public final class ConnectionMonitorResultImpl
     }
 
     public ConnectionMonitorQueryResult query(Context context) {
-        return serviceManager
-            .connectionMonitors()
-            .query(resourceGroupName, networkWatcherName, connectionMonitorName, context);
+        return serviceManager.connectionMonitors().query(resourceGroupName, networkWatcherName, connectionMonitorName,
+            context);
     }
 
     public ConnectionMonitorResultImpl withRegion(Region location) {
@@ -338,8 +301,8 @@ public final class ConnectionMonitorResultImpl
         return this;
     }
 
-    public ConnectionMonitorResultImpl withTestConfigurations(
-        List<ConnectionMonitorTestConfiguration> testConfigurations) {
+    public ConnectionMonitorResultImpl
+        withTestConfigurations(List<ConnectionMonitorTestConfiguration> testConfigurations) {
         this.createParameters.withTestConfigurations(testConfigurations);
         return this;
     }

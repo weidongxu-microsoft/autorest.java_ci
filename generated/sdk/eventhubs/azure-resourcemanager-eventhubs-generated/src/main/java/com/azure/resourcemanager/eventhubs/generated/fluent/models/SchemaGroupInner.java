@@ -14,7 +14,9 @@ import java.time.OffsetDateTime;
 import java.util.Map;
 import java.util.UUID;
 
-/** Single item in List or Get Schema Group operation. */
+/**
+ * Single item in List or Get Schema Group operation.
+ */
 @Fluent
 public final class SchemaGroupInner extends ProxyResource {
     /*
@@ -35,13 +37,15 @@ public final class SchemaGroupInner extends ProxyResource {
     @JsonProperty(value = "location", access = JsonProperty.Access.WRITE_ONLY)
     private String location;
 
-    /** Creates an instance of SchemaGroupInner class. */
+    /**
+     * Creates an instance of SchemaGroupInner class.
+     */
     public SchemaGroupInner() {
     }
 
     /**
      * Get the innerProperties property: The properties property.
-     *
+     * 
      * @return the innerProperties value.
      */
     private SchemaGroupProperties innerProperties() {
@@ -50,7 +54,7 @@ public final class SchemaGroupInner extends ProxyResource {
 
     /**
      * Get the systemData property: The system meta data relating to this resource.
-     *
+     * 
      * @return the systemData value.
      */
     public SystemData systemData() {
@@ -59,7 +63,7 @@ public final class SchemaGroupInner extends ProxyResource {
 
     /**
      * Get the location property: The geo-location where the resource lives.
-     *
+     * 
      * @return the location value.
      */
     public String location() {
@@ -68,7 +72,7 @@ public final class SchemaGroupInner extends ProxyResource {
 
     /**
      * Get the updatedAtUtc property: Exact time the Schema Group was updated.
-     *
+     * 
      * @return the updatedAtUtc value.
      */
     public OffsetDateTime updatedAtUtc() {
@@ -77,7 +81,7 @@ public final class SchemaGroupInner extends ProxyResource {
 
     /**
      * Get the createdAtUtc property: Exact time the Schema Group was created.
-     *
+     * 
      * @return the createdAtUtc value.
      */
     public OffsetDateTime createdAtUtc() {
@@ -86,7 +90,7 @@ public final class SchemaGroupInner extends ProxyResource {
 
     /**
      * Get the etag property: The ETag value.
-     *
+     * 
      * @return the etag value.
      */
     public UUID etag() {
@@ -95,7 +99,7 @@ public final class SchemaGroupInner extends ProxyResource {
 
     /**
      * Get the groupProperties property: dictionary object for SchemaGroup group properties.
-     *
+     * 
      * @return the groupProperties value.
      */
     public Map<String, String> groupProperties() {
@@ -104,7 +108,7 @@ public final class SchemaGroupInner extends ProxyResource {
 
     /**
      * Set the groupProperties property: dictionary object for SchemaGroup group properties.
-     *
+     * 
      * @param groupProperties the groupProperties value to set.
      * @return the SchemaGroupInner object itself.
      */
@@ -118,7 +122,7 @@ public final class SchemaGroupInner extends ProxyResource {
 
     /**
      * Get the schemaCompatibility property: The schemaCompatibility property.
-     *
+     * 
      * @return the schemaCompatibility value.
      */
     public SchemaCompatibility schemaCompatibility() {
@@ -127,7 +131,7 @@ public final class SchemaGroupInner extends ProxyResource {
 
     /**
      * Set the schemaCompatibility property: The schemaCompatibility property.
-     *
+     * 
      * @param schemaCompatibility the schemaCompatibility value to set.
      * @return the SchemaGroupInner object itself.
      */
@@ -141,7 +145,7 @@ public final class SchemaGroupInner extends ProxyResource {
 
     /**
      * Get the schemaType property: The schemaType property.
-     *
+     * 
      * @return the schemaType value.
      */
     public SchemaType schemaType() {
@@ -150,7 +154,7 @@ public final class SchemaGroupInner extends ProxyResource {
 
     /**
      * Set the schemaType property: The schemaType property.
-     *
+     * 
      * @param schemaType the schemaType value to set.
      * @return the SchemaGroupInner object itself.
      */
@@ -164,7 +168,7 @@ public final class SchemaGroupInner extends ProxyResource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

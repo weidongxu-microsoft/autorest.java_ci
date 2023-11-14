@@ -11,7 +11,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** Specifies a certificate for token validation. */
+/**
+ * Specifies a certificate for token validation.
+ */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
 @JsonTypeName("#Microsoft.Media.ContentKeyPolicyX509CertificateTokenKey")
 @Fluent
@@ -22,13 +24,15 @@ public final class ContentKeyPolicyX509CertificateTokenKey extends ContentKeyPol
     @JsonProperty(value = "rawBody", required = true)
     private byte[] rawBody;
 
-    /** Creates an instance of ContentKeyPolicyX509CertificateTokenKey class. */
+    /**
+     * Creates an instance of ContentKeyPolicyX509CertificateTokenKey class.
+     */
     public ContentKeyPolicyX509CertificateTokenKey() {
     }
 
     /**
      * Get the rawBody property: The raw data field of a certificate in PKCS 12 format (X509Certificate2 in .NET).
-     *
+     * 
      * @return the rawBody value.
      */
     public byte[] rawBody() {
@@ -37,7 +41,7 @@ public final class ContentKeyPolicyX509CertificateTokenKey extends ContentKeyPol
 
     /**
      * Set the rawBody property: The raw data field of a certificate in PKCS 12 format (X509Certificate2 in .NET).
-     *
+     * 
      * @param rawBody the rawBody value to set.
      * @return the ContentKeyPolicyX509CertificateTokenKey object itself.
      */
@@ -48,17 +52,15 @@ public final class ContentKeyPolicyX509CertificateTokenKey extends ContentKeyPol
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override
     public void validate() {
         super.validate();
         if (rawBody() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property rawBody in model ContentKeyPolicyX509CertificateTokenKey"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property rawBody in model ContentKeyPolicyX509CertificateTokenKey"));
         }
     }
 

@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** SKU details. */
+/**
+ * SKU details.
+ */
 @Fluent
 public final class ManagedHsmSku {
     /*
@@ -23,13 +25,15 @@ public final class ManagedHsmSku {
     @JsonProperty(value = "name", required = true)
     private ManagedHsmSkuName name;
 
-    /** Creates an instance of ManagedHsmSku class. */
+    /**
+     * Creates an instance of ManagedHsmSku class.
+     */
     public ManagedHsmSku() {
     }
 
     /**
      * Get the family property: SKU Family of the managed HSM Pool.
-     *
+     * 
      * @return the family value.
      */
     public ManagedHsmSkuFamily family() {
@@ -38,7 +42,7 @@ public final class ManagedHsmSku {
 
     /**
      * Set the family property: SKU Family of the managed HSM Pool.
-     *
+     * 
      * @param family the family value to set.
      * @return the ManagedHsmSku object itself.
      */
@@ -49,7 +53,7 @@ public final class ManagedHsmSku {
 
     /**
      * Get the name property: SKU of the managed HSM Pool.
-     *
+     * 
      * @return the name value.
      */
     public ManagedHsmSkuName name() {
@@ -58,7 +62,7 @@ public final class ManagedHsmSku {
 
     /**
      * Set the name property: SKU of the managed HSM Pool.
-     *
+     * 
      * @param name the name value to set.
      * @return the ManagedHsmSku object itself.
      */
@@ -69,19 +73,17 @@ public final class ManagedHsmSku {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (family() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property family in model ManagedHsmSku"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property family in model ManagedHsmSku"));
         }
         if (name() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property name in model ManagedHsmSku"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property name in model ManagedHsmSku"));
         }
     }
 

@@ -11,7 +11,9 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.time.Duration;
 import java.util.List;
 
-/** Describes the properties for producing a series of PNG images from the input video. */
+/**
+ * Describes the properties for producing a series of PNG images from the input video.
+ */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
 @JsonTypeName("#Microsoft.Media.PngImage")
 @Fluent
@@ -22,13 +24,15 @@ public final class PngImage extends Image {
     @JsonProperty(value = "layers")
     private List<PngLayer> layers;
 
-    /** Creates an instance of PngImage class. */
+    /**
+     * Creates an instance of PngImage class.
+     */
     public PngImage() {
     }
 
     /**
      * Get the layers property: A collection of output PNG image layers to be produced by the encoder.
-     *
+     * 
      * @return the layers value.
      */
     public List<PngLayer> layers() {
@@ -37,7 +41,7 @@ public final class PngImage extends Image {
 
     /**
      * Set the layers property: A collection of output PNG image layers to be produced by the encoder.
-     *
+     * 
      * @param layers the layers value to set.
      * @return the PngImage object itself.
      */
@@ -46,49 +50,63 @@ public final class PngImage extends Image {
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public PngImage withStart(String start) {
         super.withStart(start);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public PngImage withStep(String step) {
         super.withStep(step);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public PngImage withRange(String range) {
         super.withRange(range);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public PngImage withKeyFrameInterval(Duration keyFrameInterval) {
         super.withKeyFrameInterval(keyFrameInterval);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public PngImage withStretchMode(StretchMode stretchMode) {
         super.withStretchMode(stretchMode);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public PngImage withSyncMode(VideoSyncMode syncMode) {
         super.withSyncMode(syncMode);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public PngImage withLabel(String label) {
         super.withLabel(label);
@@ -97,7 +115,7 @@ public final class PngImage extends Image {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

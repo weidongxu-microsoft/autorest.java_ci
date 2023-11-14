@@ -12,8 +12,7 @@ public final class RecoveryWalkResponseImpl implements RecoveryWalkResponse {
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    RecoveryWalkResponseImpl(
-        RecoveryWalkResponseInner innerObject,
+    RecoveryWalkResponseImpl(RecoveryWalkResponseInner innerObject,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

@@ -21,8 +21,7 @@ public final class PublicIpPrefixPropertiesFormatImpl implements PublicIpPrefixP
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    PublicIpPrefixPropertiesFormatImpl(
-        PublicIpPrefixPropertiesFormatInner innerObject,
+    PublicIpPrefixPropertiesFormatImpl(PublicIpPrefixPropertiesFormatInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

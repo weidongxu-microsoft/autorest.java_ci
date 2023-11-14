@@ -36,8 +36,7 @@ public final class SubnetPropertiesFormatImpl implements SubnetPropertiesFormat 
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    SubnetPropertiesFormatImpl(
-        SubnetPropertiesFormatInner innerObject,
+    SubnetPropertiesFormatImpl(SubnetPropertiesFormatInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -90,12 +89,8 @@ public final class SubnetPropertiesFormatImpl implements SubnetPropertiesFormat 
     public List<ServiceEndpointPolicy> serviceEndpointPolicies() {
         List<ServiceEndpointPolicyInner> inner = this.innerModel().serviceEndpointPolicies();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new ServiceEndpointPolicyImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new ServiceEndpointPolicyImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -104,12 +99,8 @@ public final class SubnetPropertiesFormatImpl implements SubnetPropertiesFormat 
     public List<PrivateEndpoint> privateEndpoints() {
         List<PrivateEndpointInner> inner = this.innerModel().privateEndpoints();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new PrivateEndpointImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new PrivateEndpointImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -118,12 +109,8 @@ public final class SubnetPropertiesFormatImpl implements SubnetPropertiesFormat 
     public List<IpConfiguration> ipConfigurations() {
         List<IpConfigurationInner> inner = this.innerModel().ipConfigurations();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new IpConfigurationImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new IpConfigurationImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -132,12 +119,8 @@ public final class SubnetPropertiesFormatImpl implements SubnetPropertiesFormat 
     public List<IpConfigurationProfile> ipConfigurationProfiles() {
         List<IpConfigurationProfileInner> inner = this.innerModel().ipConfigurationProfiles();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new IpConfigurationProfileImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new IpConfigurationProfileImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

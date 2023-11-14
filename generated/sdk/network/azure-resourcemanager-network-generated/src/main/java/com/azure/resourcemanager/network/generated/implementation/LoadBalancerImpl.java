@@ -75,12 +75,8 @@ public final class LoadBalancerImpl implements LoadBalancer, LoadBalancer.Defini
     public List<FrontendIpConfiguration> frontendIpConfigurations() {
         List<FrontendIpConfigurationInner> inner = this.innerModel().frontendIpConfigurations();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new FrontendIpConfigurationImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new FrontendIpConfigurationImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -89,12 +85,8 @@ public final class LoadBalancerImpl implements LoadBalancer, LoadBalancer.Defini
     public List<BackendAddressPool> backendAddressPools() {
         List<BackendAddressPoolInner> inner = this.innerModel().backendAddressPools();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new BackendAddressPoolImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new BackendAddressPoolImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -103,12 +95,8 @@ public final class LoadBalancerImpl implements LoadBalancer, LoadBalancer.Defini
     public List<LoadBalancingRule> loadBalancingRules() {
         List<LoadBalancingRuleInner> inner = this.innerModel().loadBalancingRules();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new LoadBalancingRuleImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new LoadBalancingRuleImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -117,9 +105,8 @@ public final class LoadBalancerImpl implements LoadBalancer, LoadBalancer.Defini
     public List<Probe> probes() {
         List<ProbeInner> inner = this.innerModel().probes();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner.stream().map(inner1 -> new ProbeImpl(inner1, this.manager())).collect(Collectors.toList()));
+            return Collections.unmodifiableList(
+                inner.stream().map(inner1 -> new ProbeImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -128,12 +115,8 @@ public final class LoadBalancerImpl implements LoadBalancer, LoadBalancer.Defini
     public List<InboundNatRule> inboundNatRules() {
         List<InboundNatRuleInner> inner = this.innerModel().inboundNatRules();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new InboundNatRuleImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new InboundNatRuleImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -151,12 +134,8 @@ public final class LoadBalancerImpl implements LoadBalancer, LoadBalancer.Defini
     public List<OutboundRule> outboundRules() {
         List<OutboundRuleInner> inner = this.innerModel().outboundRules();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new OutboundRuleImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new OutboundRuleImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -202,20 +181,14 @@ public final class LoadBalancerImpl implements LoadBalancer, LoadBalancer.Defini
     }
 
     public LoadBalancer create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getLoadBalancers()
-                .createOrUpdate(resourceGroupName, loadBalancerName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getLoadBalancers().createOrUpdate(resourceGroupName,
+            loadBalancerName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public LoadBalancer create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getLoadBalancers()
-                .createOrUpdate(resourceGroupName, loadBalancerName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getLoadBalancers().createOrUpdate(resourceGroupName,
+            loadBalancerName, this.innerModel(), context);
         return this;
     }
 
@@ -231,27 +204,19 @@ public final class LoadBalancerImpl implements LoadBalancer, LoadBalancer.Defini
     }
 
     public LoadBalancer apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getLoadBalancers()
-                .updateTagsWithResponse(resourceGroupName, loadBalancerName, updateParameters, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getLoadBalancers()
+            .updateTagsWithResponse(resourceGroupName, loadBalancerName, updateParameters, Context.NONE).getValue();
         return this;
     }
 
     public LoadBalancer apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getLoadBalancers()
-                .updateTagsWithResponse(resourceGroupName, loadBalancerName, updateParameters, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getLoadBalancers()
+            .updateTagsWithResponse(resourceGroupName, loadBalancerName, updateParameters, context).getValue();
         return this;
     }
 
-    LoadBalancerImpl(
-        LoadBalancerInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    LoadBalancerImpl(LoadBalancerInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
@@ -260,23 +225,15 @@ public final class LoadBalancerImpl implements LoadBalancer, LoadBalancer.Defini
 
     public LoadBalancer refresh() {
         String localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getLoadBalancers()
-                .getByResourceGroupWithResponse(resourceGroupName, loadBalancerName, localExpand, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getLoadBalancers()
+            .getByResourceGroupWithResponse(resourceGroupName, loadBalancerName, localExpand, Context.NONE).getValue();
         return this;
     }
 
     public LoadBalancer refresh(Context context) {
         String localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getLoadBalancers()
-                .getByResourceGroupWithResponse(resourceGroupName, loadBalancerName, localExpand, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getLoadBalancers()
+            .getByResourceGroupWithResponse(resourceGroupName, loadBalancerName, localExpand, context).getValue();
         return this;
     }
 

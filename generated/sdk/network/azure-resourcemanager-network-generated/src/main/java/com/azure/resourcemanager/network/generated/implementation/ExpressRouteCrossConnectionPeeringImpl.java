@@ -17,8 +17,7 @@ public final class ExpressRouteCrossConnectionPeeringImpl implements ExpressRout
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    ExpressRouteCrossConnectionPeeringImpl(
-        ExpressRouteCrossConnectionPeeringInner innerObject,
+    ExpressRouteCrossConnectionPeeringImpl(ExpressRouteCrossConnectionPeeringInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

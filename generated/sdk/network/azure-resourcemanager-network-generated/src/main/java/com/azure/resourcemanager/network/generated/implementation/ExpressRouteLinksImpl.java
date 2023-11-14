@@ -21,22 +21,18 @@ public final class ExpressRouteLinksImpl implements ExpressRouteLinks {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public ExpressRouteLinksImpl(
-        ExpressRouteLinksClient innerClient,
+    public ExpressRouteLinksImpl(ExpressRouteLinksClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<ExpressRouteLink> getWithResponse(
-        String resourceGroupName, String expressRoutePortName, String linkName, Context context) {
-        Response<ExpressRouteLinkInner> inner =
-            this.serviceClient().getWithResponse(resourceGroupName, expressRoutePortName, linkName, context);
+    public Response<ExpressRouteLink> getWithResponse(String resourceGroupName, String expressRoutePortName,
+        String linkName, Context context) {
+        Response<ExpressRouteLinkInner> inner
+            = this.serviceClient().getWithResponse(resourceGroupName, expressRoutePortName, linkName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ExpressRouteLinkImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -57,10 +53,10 @@ public final class ExpressRouteLinksImpl implements ExpressRouteLinks {
         return Utils.mapPage(inner, inner1 -> new ExpressRouteLinkImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<ExpressRouteLink> list(
-        String resourceGroupName, String expressRoutePortName, Context context) {
-        PagedIterable<ExpressRouteLinkInner> inner =
-            this.serviceClient().list(resourceGroupName, expressRoutePortName, context);
+    public PagedIterable<ExpressRouteLink> list(String resourceGroupName, String expressRoutePortName,
+        Context context) {
+        PagedIterable<ExpressRouteLinkInner> inner
+            = this.serviceClient().list(resourceGroupName, expressRoutePortName, context);
         return Utils.mapPage(inner, inner1 -> new ExpressRouteLinkImpl(inner1, this.manager()));
     }
 

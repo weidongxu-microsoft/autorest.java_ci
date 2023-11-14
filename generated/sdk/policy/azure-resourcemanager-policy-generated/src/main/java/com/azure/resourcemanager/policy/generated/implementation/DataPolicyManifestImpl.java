@@ -17,8 +17,8 @@ public final class DataPolicyManifestImpl implements DataPolicyManifest {
 
     private final com.azure.resourcemanager.policy.generated.PolicyManager serviceManager;
 
-    DataPolicyManifestImpl(
-        DataPolicyManifestInner innerObject, com.azure.resourcemanager.policy.generated.PolicyManager serviceManager) {
+    DataPolicyManifestImpl(DataPolicyManifestInner innerObject,
+        com.azure.resourcemanager.policy.generated.PolicyManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

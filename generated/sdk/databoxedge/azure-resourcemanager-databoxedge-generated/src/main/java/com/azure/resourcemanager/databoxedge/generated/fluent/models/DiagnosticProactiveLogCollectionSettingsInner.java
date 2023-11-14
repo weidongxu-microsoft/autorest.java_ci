@@ -11,7 +11,9 @@ import com.azure.resourcemanager.databoxedge.generated.models.ArmBaseModel;
 import com.azure.resourcemanager.databoxedge.generated.models.ProactiveDiagnosticsConsent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The diagnostic proactive log collection settings of a device. */
+/**
+ * The diagnostic proactive log collection settings of a device.
+ */
 @Fluent
 public final class DiagnosticProactiveLogCollectionSettingsInner extends ArmBaseModel {
     /*
@@ -26,13 +28,15 @@ public final class DiagnosticProactiveLogCollectionSettingsInner extends ArmBase
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
-    /** Creates an instance of DiagnosticProactiveLogCollectionSettingsInner class. */
+    /**
+     * Creates an instance of DiagnosticProactiveLogCollectionSettingsInner class.
+     */
     public DiagnosticProactiveLogCollectionSettingsInner() {
     }
 
     /**
      * Get the innerProperties property: Properties of the diagnostic proactive log collection settings.
-     *
+     * 
      * @return the innerProperties value.
      */
     private ProactiveLogCollectionSettingsProperties innerProperties() {
@@ -42,7 +46,7 @@ public final class DiagnosticProactiveLogCollectionSettingsInner extends ArmBase
     /**
      * Get the systemData property: Metadata pertaining to creation and last modification of
      * DiagnosticProactiveLogCollectionSettings.
-     *
+     * 
      * @return the systemData value.
      */
     public SystemData systemData() {
@@ -51,7 +55,7 @@ public final class DiagnosticProactiveLogCollectionSettingsInner extends ArmBase
 
     /**
      * Get the userConsent property: Proactive diagnostic collection consent flag.
-     *
+     * 
      * @return the userConsent value.
      */
     public ProactiveDiagnosticsConsent userConsent() {
@@ -60,7 +64,7 @@ public final class DiagnosticProactiveLogCollectionSettingsInner extends ArmBase
 
     /**
      * Set the userConsent property: Proactive diagnostic collection consent flag.
-     *
+     * 
      * @param userConsent the userConsent value to set.
      * @return the DiagnosticProactiveLogCollectionSettingsInner object itself.
      */
@@ -74,18 +78,15 @@ public final class DiagnosticProactiveLogCollectionSettingsInner extends ArmBase
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override
     public void validate() {
         super.validate();
         if (innerProperties() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property innerProperties in model"
-                            + " DiagnosticProactiveLogCollectionSettingsInner"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property innerProperties in model DiagnosticProactiveLogCollectionSettingsInner"));
         } else {
             innerProperties().validate();
         }

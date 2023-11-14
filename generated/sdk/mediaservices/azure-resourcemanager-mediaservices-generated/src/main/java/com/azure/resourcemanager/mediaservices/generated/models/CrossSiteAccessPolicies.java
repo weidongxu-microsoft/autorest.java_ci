@@ -7,7 +7,9 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The client access policy. */
+/**
+ * The client access policy.
+ */
 @Fluent
 public final class CrossSiteAccessPolicies {
     /*
@@ -22,13 +24,15 @@ public final class CrossSiteAccessPolicies {
     @JsonProperty(value = "crossDomainPolicy")
     private String crossDomainPolicy;
 
-    /** Creates an instance of CrossSiteAccessPolicies class. */
+    /**
+     * Creates an instance of CrossSiteAccessPolicies class.
+     */
     public CrossSiteAccessPolicies() {
     }
 
     /**
      * Get the clientAccessPolicy property: The content of clientaccesspolicy.xml used by Silverlight.
-     *
+     * 
      * @return the clientAccessPolicy value.
      */
     public String clientAccessPolicy() {
@@ -37,7 +41,7 @@ public final class CrossSiteAccessPolicies {
 
     /**
      * Set the clientAccessPolicy property: The content of clientaccesspolicy.xml used by Silverlight.
-     *
+     * 
      * @param clientAccessPolicy the clientAccessPolicy value to set.
      * @return the CrossSiteAccessPolicies object itself.
      */
@@ -48,7 +52,7 @@ public final class CrossSiteAccessPolicies {
 
     /**
      * Get the crossDomainPolicy property: The content of crossdomain.xml used by Silverlight.
-     *
+     * 
      * @return the crossDomainPolicy value.
      */
     public String crossDomainPolicy() {
@@ -57,7 +61,7 @@ public final class CrossSiteAccessPolicies {
 
     /**
      * Set the crossDomainPolicy property: The content of crossdomain.xml used by Silverlight.
-     *
+     * 
      * @param crossDomainPolicy the crossDomainPolicy value to set.
      * @return the CrossSiteAccessPolicies object itself.
      */
@@ -68,7 +72,7 @@ public final class CrossSiteAccessPolicies {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

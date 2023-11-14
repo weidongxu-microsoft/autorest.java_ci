@@ -11,11 +11,13 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.WorkflowRunInner;
 
-/** An instance of this class provides access to all the operations defined in WorkflowRunsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in WorkflowRunsClient.
+ */
 public interface WorkflowRunsClient {
     /**
      * Gets a list of workflow runs.
-     *
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param workflowName The workflow name.
@@ -29,13 +31,13 @@ public interface WorkflowRunsClient {
 
     /**
      * Gets a list of workflow runs.
-     *
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param workflowName The workflow name.
      * @param top The number of items to be included in the result.
      * @param filter The filter to apply on the operation. Options for filters include: Status, StartTime, and
-     *     ClientTrackingId.
+     * ClientTrackingId.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -43,12 +45,12 @@ public interface WorkflowRunsClient {
      * @return a list of workflow runs as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<WorkflowRunInner> list(
-        String resourceGroupName, String name, String workflowName, Integer top, String filter, Context context);
+    PagedIterable<WorkflowRunInner> list(String resourceGroupName, String name, String workflowName, Integer top,
+        String filter, Context context);
 
     /**
      * Gets a workflow run.
-     *
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param workflowName The workflow name.
@@ -60,12 +62,12 @@ public interface WorkflowRunsClient {
      * @return a workflow run along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<WorkflowRunInner> getWithResponse(
-        String resourceGroupName, String name, String workflowName, String runName, Context context);
+    Response<WorkflowRunInner> getWithResponse(String resourceGroupName, String name, String workflowName,
+        String runName, Context context);
 
     /**
      * Gets a workflow run.
-     *
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param workflowName The workflow name.
@@ -80,7 +82,7 @@ public interface WorkflowRunsClient {
 
     /**
      * Cancels a workflow run.
-     *
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param workflowName The workflow name.
@@ -92,12 +94,12 @@ public interface WorkflowRunsClient {
      * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<Void> cancelWithResponse(
-        String resourceGroupName, String name, String workflowName, String runName, Context context);
+    Response<Void> cancelWithResponse(String resourceGroupName, String name, String workflowName, String runName,
+        Context context);
 
     /**
      * Cancels a workflow run.
-     *
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param workflowName The workflow name.

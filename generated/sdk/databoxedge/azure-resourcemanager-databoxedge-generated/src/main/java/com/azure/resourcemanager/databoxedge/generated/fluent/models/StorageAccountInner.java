@@ -12,7 +12,9 @@ import com.azure.resourcemanager.databoxedge.generated.models.DataPolicy;
 import com.azure.resourcemanager.databoxedge.generated.models.StorageAccountStatus;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Represents a Storage Account on the Data Box Edge/Gateway device. */
+/**
+ * Represents a Storage Account on the Data Box Edge/Gateway device.
+ */
 @Fluent
 public final class StorageAccountInner extends ArmBaseModel {
     /*
@@ -27,13 +29,15 @@ public final class StorageAccountInner extends ArmBaseModel {
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
-    /** Creates an instance of StorageAccountInner class. */
+    /**
+     * Creates an instance of StorageAccountInner class.
+     */
     public StorageAccountInner() {
     }
 
     /**
      * Get the innerProperties property: The Storage Account properties.
-     *
+     * 
      * @return the innerProperties value.
      */
     private StorageAccountProperties innerProperties() {
@@ -42,7 +46,7 @@ public final class StorageAccountInner extends ArmBaseModel {
 
     /**
      * Get the systemData property: Metadata pertaining to creation and last modification of StorageAccount.
-     *
+     * 
      * @return the systemData value.
      */
     public SystemData systemData() {
@@ -51,7 +55,7 @@ public final class StorageAccountInner extends ArmBaseModel {
 
     /**
      * Get the description property: Description for the storage Account.
-     *
+     * 
      * @return the description value.
      */
     public String description() {
@@ -60,7 +64,7 @@ public final class StorageAccountInner extends ArmBaseModel {
 
     /**
      * Set the description property: Description for the storage Account.
-     *
+     * 
      * @param description the description value to set.
      * @return the StorageAccountInner object itself.
      */
@@ -74,7 +78,7 @@ public final class StorageAccountInner extends ArmBaseModel {
 
     /**
      * Get the storageAccountStatus property: Current status of the storage account.
-     *
+     * 
      * @return the storageAccountStatus value.
      */
     public StorageAccountStatus storageAccountStatus() {
@@ -83,7 +87,7 @@ public final class StorageAccountInner extends ArmBaseModel {
 
     /**
      * Set the storageAccountStatus property: Current status of the storage account.
-     *
+     * 
      * @param storageAccountStatus the storageAccountStatus value to set.
      * @return the StorageAccountInner object itself.
      */
@@ -97,7 +101,7 @@ public final class StorageAccountInner extends ArmBaseModel {
 
     /**
      * Get the dataPolicy property: Data policy of the storage Account.
-     *
+     * 
      * @return the dataPolicy value.
      */
     public DataPolicy dataPolicy() {
@@ -106,7 +110,7 @@ public final class StorageAccountInner extends ArmBaseModel {
 
     /**
      * Set the dataPolicy property: Data policy of the storage Account.
-     *
+     * 
      * @param dataPolicy the dataPolicy value to set.
      * @return the StorageAccountInner object itself.
      */
@@ -120,7 +124,7 @@ public final class StorageAccountInner extends ArmBaseModel {
 
     /**
      * Get the storageAccountCredentialId property: Storage Account Credential Id.
-     *
+     * 
      * @return the storageAccountCredentialId value.
      */
     public String storageAccountCredentialId() {
@@ -129,7 +133,7 @@ public final class StorageAccountInner extends ArmBaseModel {
 
     /**
      * Set the storageAccountCredentialId property: Storage Account Credential Id.
-     *
+     * 
      * @param storageAccountCredentialId the storageAccountCredentialId value to set.
      * @return the StorageAccountInner object itself.
      */
@@ -143,7 +147,7 @@ public final class StorageAccountInner extends ArmBaseModel {
 
     /**
      * Get the blobEndpoint property: BlobEndpoint of Storage Account.
-     *
+     * 
      * @return the blobEndpoint value.
      */
     public String blobEndpoint() {
@@ -153,7 +157,7 @@ public final class StorageAccountInner extends ArmBaseModel {
     /**
      * Get the containerCount property: The Container Count. Present only for Storage Accounts with DataPolicy set to
      * Cloud.
-     *
+     * 
      * @return the containerCount value.
      */
     public Integer containerCount() {
@@ -162,17 +166,15 @@ public final class StorageAccountInner extends ArmBaseModel {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override
     public void validate() {
         super.validate();
         if (innerProperties() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property innerProperties in model StorageAccountInner"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property innerProperties in model StorageAccountInner"));
         } else {
             innerProperties().validate();
         }

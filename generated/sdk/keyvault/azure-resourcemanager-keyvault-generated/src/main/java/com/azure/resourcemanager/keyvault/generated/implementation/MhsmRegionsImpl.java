@@ -19,22 +19,22 @@ public final class MhsmRegionsImpl implements MhsmRegions {
 
     private final com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager;
 
-    public MhsmRegionsImpl(
-        MhsmRegionsClient innerClient, com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager) {
+    public MhsmRegionsImpl(MhsmRegionsClient innerClient,
+        com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
     public PagedIterable<MhsmGeoReplicatedRegion> listByResource(String resourceGroupName, String name) {
-        PagedIterable<MhsmGeoReplicatedRegionInner> inner =
-            this.serviceClient().listByResource(resourceGroupName, name);
+        PagedIterable<MhsmGeoReplicatedRegionInner> inner
+            = this.serviceClient().listByResource(resourceGroupName, name);
         return Utils.mapPage(inner, inner1 -> new MhsmGeoReplicatedRegionImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<MhsmGeoReplicatedRegion> listByResource(
-        String resourceGroupName, String name, Context context) {
-        PagedIterable<MhsmGeoReplicatedRegionInner> inner =
-            this.serviceClient().listByResource(resourceGroupName, name, context);
+    public PagedIterable<MhsmGeoReplicatedRegion> listByResource(String resourceGroupName, String name,
+        Context context) {
+        PagedIterable<MhsmGeoReplicatedRegionInner> inner
+            = this.serviceClient().listByResource(resourceGroupName, name, context);
         return Utils.mapPage(inner, inner1 -> new MhsmGeoReplicatedRegionImpl(inner1, this.manager()));
     }
 

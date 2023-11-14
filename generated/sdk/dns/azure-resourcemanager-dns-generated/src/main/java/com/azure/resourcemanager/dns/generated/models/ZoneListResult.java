@@ -9,7 +9,9 @@ import com.azure.resourcemanager.dns.generated.fluent.models.ZoneInner;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The response to a Zone List or ListAll operation. */
+/**
+ * The response to a Zone List or ListAll operation.
+ */
 @Fluent
 public final class ZoneListResult {
     /*
@@ -24,13 +26,15 @@ public final class ZoneListResult {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
-    /** Creates an instance of ZoneListResult class. */
+    /**
+     * Creates an instance of ZoneListResult class.
+     */
     public ZoneListResult() {
     }
 
     /**
      * Get the value property: Information about the DNS zones.
-     *
+     * 
      * @return the value value.
      */
     public List<ZoneInner> value() {
@@ -39,7 +43,7 @@ public final class ZoneListResult {
 
     /**
      * Set the value property: Information about the DNS zones.
-     *
+     * 
      * @param value the value value to set.
      * @return the ZoneListResult object itself.
      */
@@ -50,7 +54,7 @@ public final class ZoneListResult {
 
     /**
      * Get the nextLink property: The continuation token for the next page of results.
-     *
+     * 
      * @return the nextLink value.
      */
     public String nextLink() {
@@ -59,7 +63,7 @@ public final class ZoneListResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

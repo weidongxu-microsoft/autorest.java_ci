@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of AutoscaleSettings. */
+/**
+ * Resource collection API of AutoscaleSettings.
+ */
 public interface AutoscaleSettings {
     /**
      * Lists the autoscale settings for a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -23,7 +25,7 @@ public interface AutoscaleSettings {
 
     /**
      * Lists the autoscale settings for a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -35,7 +37,7 @@ public interface AutoscaleSettings {
 
     /**
      * Deletes and autoscale setting.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param autoscaleSettingName The autoscale setting name.
      * @param context The context to associate with this operation.
@@ -44,12 +46,12 @@ public interface AutoscaleSettings {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
-    Response<Void> deleteByResourceGroupWithResponse(
-        String resourceGroupName, String autoscaleSettingName, Context context);
+    Response<Void> deleteByResourceGroupWithResponse(String resourceGroupName, String autoscaleSettingName,
+        Context context);
 
     /**
      * Deletes and autoscale setting.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param autoscaleSettingName The autoscale setting name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -60,7 +62,7 @@ public interface AutoscaleSettings {
 
     /**
      * Gets an autoscale setting.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param autoscaleSettingName The autoscale setting name.
      * @param context The context to associate with this operation.
@@ -69,12 +71,12 @@ public interface AutoscaleSettings {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return an autoscale setting along with {@link Response}.
      */
-    Response<AutoscaleSettingResource> getByResourceGroupWithResponse(
-        String resourceGroupName, String autoscaleSettingName, Context context);
+    Response<AutoscaleSettingResource> getByResourceGroupWithResponse(String resourceGroupName,
+        String autoscaleSettingName, Context context);
 
     /**
      * Gets an autoscale setting.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param autoscaleSettingName The autoscale setting name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -86,7 +88,7 @@ public interface AutoscaleSettings {
 
     /**
      * Lists the autoscale settings for a subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return represents a collection of autoscale setting resources as paginated response with {@link PagedIterable}.
@@ -95,7 +97,7 @@ public interface AutoscaleSettings {
 
     /**
      * Lists the autoscale settings for a subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -106,7 +108,7 @@ public interface AutoscaleSettings {
 
     /**
      * Gets an autoscale setting.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -117,7 +119,7 @@ public interface AutoscaleSettings {
 
     /**
      * Gets an autoscale setting.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -129,7 +131,7 @@ public interface AutoscaleSettings {
 
     /**
      * Deletes and autoscale setting.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -139,7 +141,7 @@ public interface AutoscaleSettings {
 
     /**
      * Deletes and autoscale setting.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -151,7 +153,7 @@ public interface AutoscaleSettings {
 
     /**
      * Begins definition for a new AutoscaleSettingResource resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new AutoscaleSettingResource definition.
      */

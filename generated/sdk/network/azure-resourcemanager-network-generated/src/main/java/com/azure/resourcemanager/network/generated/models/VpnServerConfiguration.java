@@ -11,46 +11,48 @@ import com.azure.resourcemanager.network.generated.fluent.models.VpnServerConfig
 import java.util.List;
 import java.util.Map;
 
-/** An immutable client-side representation of VpnServerConfiguration. */
+/**
+ * An immutable client-side representation of VpnServerConfiguration.
+ */
 public interface VpnServerConfiguration {
     /**
      * Gets the name property: The name of the resource.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the type property: The type of the resource.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the location property: The geo-location where the resource lives.
-     *
+     * 
      * @return the location value.
      */
     String location();
 
     /**
      * Gets the tags property: Resource tags.
-     *
+     * 
      * @return the tags value.
      */
     Map<String, String> tags();
 
     /**
      * Gets the etag property: A unique read-only string that changes whenever the resource is updated.
-     *
+     * 
      * @return the etag value.
      */
     String etag();
 
     /**
      * Gets the id property: Resource ID.
-     *
+     * 
      * @return the id value.
      */
     String id();
@@ -58,56 +60,56 @@ public interface VpnServerConfiguration {
     /**
      * Gets the namePropertiesName property: The name of the VpnServerConfiguration that is unique within a resource
      * group.
-     *
+     * 
      * @return the namePropertiesName value.
      */
     String namePropertiesName();
 
     /**
      * Gets the vpnProtocols property: VPN protocols for the VpnServerConfiguration.
-     *
+     * 
      * @return the vpnProtocols value.
      */
     List<VpnGatewayTunnelingProtocol> vpnProtocols();
 
     /**
      * Gets the vpnAuthenticationTypes property: VPN authentication types for the VpnServerConfiguration.
-     *
+     * 
      * @return the vpnAuthenticationTypes value.
      */
     List<VpnAuthenticationType> vpnAuthenticationTypes();
 
     /**
      * Gets the vpnClientRootCertificates property: VPN client root certificate of VpnServerConfiguration.
-     *
+     * 
      * @return the vpnClientRootCertificates value.
      */
     List<VpnServerConfigVpnClientRootCertificate> vpnClientRootCertificates();
 
     /**
      * Gets the vpnClientRevokedCertificates property: VPN client revoked certificate of VpnServerConfiguration.
-     *
+     * 
      * @return the vpnClientRevokedCertificates value.
      */
     List<VpnServerConfigVpnClientRevokedCertificate> vpnClientRevokedCertificates();
 
     /**
      * Gets the radiusServerRootCertificates property: Radius Server root certificate of VpnServerConfiguration.
-     *
+     * 
      * @return the radiusServerRootCertificates value.
      */
     List<VpnServerConfigRadiusServerRootCertificate> radiusServerRootCertificates();
 
     /**
      * Gets the radiusClientRootCertificates property: Radius client root certificate of VpnServerConfiguration.
-     *
+     * 
      * @return the radiusClientRootCertificates value.
      */
     List<VpnServerConfigRadiusClientRootCertificate> radiusClientRootCertificates();
 
     /**
      * Gets the vpnClientIpsecPolicies property: VpnClientIpsecPolicies for VpnServerConfiguration.
-     *
+     * 
      * @return the vpnClientIpsecPolicies value.
      */
     List<IpsecPolicy> vpnClientIpsecPolicies();
@@ -115,7 +117,7 @@ public interface VpnServerConfiguration {
     /**
      * Gets the radiusServerAddress property: The radius server address property of the VpnServerConfiguration resource
      * for point to site client connection.
-     *
+     * 
      * @return the radiusServerAddress value.
      */
     String radiusServerAddress();
@@ -123,21 +125,21 @@ public interface VpnServerConfiguration {
     /**
      * Gets the radiusServerSecret property: The radius secret property of the VpnServerConfiguration resource for point
      * to site client connection.
-     *
+     * 
      * @return the radiusServerSecret value.
      */
     String radiusServerSecret();
 
     /**
      * Gets the radiusServers property: Multiple Radius Server configuration for VpnServerConfiguration.
-     *
+     * 
      * @return the radiusServers value.
      */
     List<RadiusServer> radiusServers();
 
     /**
      * Gets the aadAuthenticationParameters property: The set of aad vpn authentication parameters.
-     *
+     * 
      * @return the aadAuthenticationParameters value.
      */
     AadAuthenticationParameters aadAuthenticationParameters();
@@ -145,79 +147,84 @@ public interface VpnServerConfiguration {
     /**
      * Gets the provisioningState property: The provisioning state of the VpnServerConfiguration resource. Possible
      * values are: 'Updating', 'Deleting', and 'Failed'.
-     *
+     * 
      * @return the provisioningState value.
      */
     String provisioningState();
 
     /**
      * Gets the p2SVpnGateways property: List of references to P2SVpnGateways.
-     *
+     * 
      * @return the p2SVpnGateways value.
      */
     List<P2SVpnGateway> p2SVpnGateways();
 
     /**
      * Gets the configurationPolicyGroups property: List of all VpnServerConfigurationPolicyGroups.
-     *
+     * 
      * @return the configurationPolicyGroups value.
      */
     List<VpnServerConfigurationPolicyGroup> configurationPolicyGroups();
 
     /**
      * Gets the etagPropertiesEtag property: A unique read-only string that changes whenever the resource is updated.
-     *
+     * 
      * @return the etagPropertiesEtag value.
      */
     String etagPropertiesEtag();
 
     /**
      * Gets the region of the resource.
-     *
+     * 
      * @return the region of the resource.
      */
     Region region();
 
     /**
      * Gets the name of the resource region.
-     *
+     * 
      * @return the name of the resource region.
      */
     String regionName();
 
     /**
      * Gets the name of the resource group.
-     *
+     * 
      * @return the name of the resource group.
      */
     String resourceGroupName();
 
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.VpnServerConfigurationInner object.
-     *
+     * 
      * @return the inner object.
      */
     VpnServerConfigurationInner innerModel();
 
-    /** The entirety of the VpnServerConfiguration definition. */
-    interface Definition
-        extends DefinitionStages.Blank,
-            DefinitionStages.WithLocation,
-            DefinitionStages.WithResourceGroup,
-            DefinitionStages.WithCreate {
+    /**
+     * The entirety of the VpnServerConfiguration definition.
+     */
+    interface Definition extends DefinitionStages.Blank, DefinitionStages.WithLocation,
+        DefinitionStages.WithResourceGroup, DefinitionStages.WithCreate {
     }
 
-    /** The VpnServerConfiguration definition stages. */
+    /**
+     * The VpnServerConfiguration definition stages.
+     */
     interface DefinitionStages {
-        /** The first stage of the VpnServerConfiguration definition. */
+        /**
+         * The first stage of the VpnServerConfiguration definition.
+         */
         interface Blank extends WithLocation {
         }
 
-        /** The stage of the VpnServerConfiguration definition allowing to specify location. */
+        /**
+         * The stage of the VpnServerConfiguration definition allowing to specify location.
+         */
         interface WithLocation {
             /**
              * Specifies the region for the resource.
-             *
+             * 
              * @param location The geo-location where the resource lives.
              * @return the next definition stage.
              */
@@ -225,18 +232,20 @@ public interface VpnServerConfiguration {
 
             /**
              * Specifies the region for the resource.
-             *
+             * 
              * @param location The geo-location where the resource lives.
              * @return the next definition stage.
              */
             WithResourceGroup withRegion(String location);
         }
 
-        /** The stage of the VpnServerConfiguration definition allowing to specify parent resource. */
+        /**
+         * The stage of the VpnServerConfiguration definition allowing to specify parent resource.
+         */
         interface WithResourceGroup {
             /**
              * Specifies resourceGroupName.
-             *
+             * 
              * @param resourceGroupName The resource group name of the VpnServerConfiguration.
              * @return the next definition stage.
              */
@@ -247,100 +256,104 @@ public interface VpnServerConfiguration {
          * The stage of the VpnServerConfiguration definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
          */
-        interface WithCreate
-            extends DefinitionStages.WithTags,
-                DefinitionStages.WithNamePropertiesName,
-                DefinitionStages.WithVpnProtocols,
-                DefinitionStages.WithVpnAuthenticationTypes,
-                DefinitionStages.WithVpnClientRootCertificates,
-                DefinitionStages.WithVpnClientRevokedCertificates,
-                DefinitionStages.WithRadiusServerRootCertificates,
-                DefinitionStages.WithRadiusClientRootCertificates,
-                DefinitionStages.WithVpnClientIpsecPolicies,
-                DefinitionStages.WithRadiusServerAddress,
-                DefinitionStages.WithRadiusServerSecret,
-                DefinitionStages.WithRadiusServers,
-                DefinitionStages.WithAadAuthenticationParameters,
-                DefinitionStages.WithConfigurationPolicyGroups {
+        interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithNamePropertiesName,
+            DefinitionStages.WithVpnProtocols, DefinitionStages.WithVpnAuthenticationTypes,
+            DefinitionStages.WithVpnClientRootCertificates, DefinitionStages.WithVpnClientRevokedCertificates,
+            DefinitionStages.WithRadiusServerRootCertificates, DefinitionStages.WithRadiusClientRootCertificates,
+            DefinitionStages.WithVpnClientIpsecPolicies, DefinitionStages.WithRadiusServerAddress,
+            DefinitionStages.WithRadiusServerSecret, DefinitionStages.WithRadiusServers,
+            DefinitionStages.WithAadAuthenticationParameters, DefinitionStages.WithConfigurationPolicyGroups {
             /**
              * Executes the create request.
-             *
+             * 
              * @return the created resource.
              */
             VpnServerConfiguration create();
 
             /**
              * Executes the create request.
-             *
+             * 
              * @param context The context to associate with this operation.
              * @return the created resource.
              */
             VpnServerConfiguration create(Context context);
         }
 
-        /** The stage of the VpnServerConfiguration definition allowing to specify tags. */
+        /**
+         * The stage of the VpnServerConfiguration definition allowing to specify tags.
+         */
         interface WithTags {
             /**
              * Specifies the tags property: Resource tags..
-             *
+             * 
              * @param tags Resource tags.
              * @return the next definition stage.
              */
             WithCreate withTags(Map<String, String> tags);
         }
 
-        /** The stage of the VpnServerConfiguration definition allowing to specify namePropertiesName. */
+        /**
+         * The stage of the VpnServerConfiguration definition allowing to specify namePropertiesName.
+         */
         interface WithNamePropertiesName {
             /**
              * Specifies the namePropertiesName property: The name of the VpnServerConfiguration that is unique within a
              * resource group..
-             *
+             * 
              * @param namePropertiesName The name of the VpnServerConfiguration that is unique within a resource group.
              * @return the next definition stage.
              */
             WithCreate withNamePropertiesName(String namePropertiesName);
         }
 
-        /** The stage of the VpnServerConfiguration definition allowing to specify vpnProtocols. */
+        /**
+         * The stage of the VpnServerConfiguration definition allowing to specify vpnProtocols.
+         */
         interface WithVpnProtocols {
             /**
              * Specifies the vpnProtocols property: VPN protocols for the VpnServerConfiguration..
-             *
+             * 
              * @param vpnProtocols VPN protocols for the VpnServerConfiguration.
              * @return the next definition stage.
              */
             WithCreate withVpnProtocols(List<VpnGatewayTunnelingProtocol> vpnProtocols);
         }
 
-        /** The stage of the VpnServerConfiguration definition allowing to specify vpnAuthenticationTypes. */
+        /**
+         * The stage of the VpnServerConfiguration definition allowing to specify vpnAuthenticationTypes.
+         */
         interface WithVpnAuthenticationTypes {
             /**
              * Specifies the vpnAuthenticationTypes property: VPN authentication types for the VpnServerConfiguration..
-             *
+             * 
              * @param vpnAuthenticationTypes VPN authentication types for the VpnServerConfiguration.
              * @return the next definition stage.
              */
             WithCreate withVpnAuthenticationTypes(List<VpnAuthenticationType> vpnAuthenticationTypes);
         }
 
-        /** The stage of the VpnServerConfiguration definition allowing to specify vpnClientRootCertificates. */
+        /**
+         * The stage of the VpnServerConfiguration definition allowing to specify vpnClientRootCertificates.
+         */
         interface WithVpnClientRootCertificates {
             /**
              * Specifies the vpnClientRootCertificates property: VPN client root certificate of VpnServerConfiguration..
-             *
+             * 
              * @param vpnClientRootCertificates VPN client root certificate of VpnServerConfiguration.
              * @return the next definition stage.
              */
-            WithCreate withVpnClientRootCertificates(
-                List<VpnServerConfigVpnClientRootCertificate> vpnClientRootCertificates);
+            WithCreate
+                withVpnClientRootCertificates(List<VpnServerConfigVpnClientRootCertificate> vpnClientRootCertificates);
         }
 
-        /** The stage of the VpnServerConfiguration definition allowing to specify vpnClientRevokedCertificates. */
+        /**
+         * The stage of the VpnServerConfiguration definition allowing to specify vpnClientRevokedCertificates.
+         */
         interface WithVpnClientRevokedCertificates {
             /**
              * Specifies the vpnClientRevokedCertificates property: VPN client revoked certificate of
              * VpnServerConfiguration..
-             *
+             * 
              * @param vpnClientRevokedCertificates VPN client revoked certificate of VpnServerConfiguration.
              * @return the next definition stage.
              */
@@ -348,12 +361,14 @@ public interface VpnServerConfiguration {
                 List<VpnServerConfigVpnClientRevokedCertificate> vpnClientRevokedCertificates);
         }
 
-        /** The stage of the VpnServerConfiguration definition allowing to specify radiusServerRootCertificates. */
+        /**
+         * The stage of the VpnServerConfiguration definition allowing to specify radiusServerRootCertificates.
+         */
         interface WithRadiusServerRootCertificates {
             /**
              * Specifies the radiusServerRootCertificates property: Radius Server root certificate of
              * VpnServerConfiguration..
-             *
+             * 
              * @param radiusServerRootCertificates Radius Server root certificate of VpnServerConfiguration.
              * @return the next definition stage.
              */
@@ -361,12 +376,14 @@ public interface VpnServerConfiguration {
                 List<VpnServerConfigRadiusServerRootCertificate> radiusServerRootCertificates);
         }
 
-        /** The stage of the VpnServerConfiguration definition allowing to specify radiusClientRootCertificates. */
+        /**
+         * The stage of the VpnServerConfiguration definition allowing to specify radiusClientRootCertificates.
+         */
         interface WithRadiusClientRootCertificates {
             /**
              * Specifies the radiusClientRootCertificates property: Radius client root certificate of
              * VpnServerConfiguration..
-             *
+             * 
              * @param radiusClientRootCertificates Radius client root certificate of VpnServerConfiguration.
              * @return the next definition stage.
              */
@@ -374,110 +391,128 @@ public interface VpnServerConfiguration {
                 List<VpnServerConfigRadiusClientRootCertificate> radiusClientRootCertificates);
         }
 
-        /** The stage of the VpnServerConfiguration definition allowing to specify vpnClientIpsecPolicies. */
+        /**
+         * The stage of the VpnServerConfiguration definition allowing to specify vpnClientIpsecPolicies.
+         */
         interface WithVpnClientIpsecPolicies {
             /**
              * Specifies the vpnClientIpsecPolicies property: VpnClientIpsecPolicies for VpnServerConfiguration..
-             *
+             * 
              * @param vpnClientIpsecPolicies VpnClientIpsecPolicies for VpnServerConfiguration.
              * @return the next definition stage.
              */
             WithCreate withVpnClientIpsecPolicies(List<IpsecPolicy> vpnClientIpsecPolicies);
         }
 
-        /** The stage of the VpnServerConfiguration definition allowing to specify radiusServerAddress. */
+        /**
+         * The stage of the VpnServerConfiguration definition allowing to specify radiusServerAddress.
+         */
         interface WithRadiusServerAddress {
             /**
              * Specifies the radiusServerAddress property: The radius server address property of the
              * VpnServerConfiguration resource for point to site client connection..
-             *
+             * 
              * @param radiusServerAddress The radius server address property of the VpnServerConfiguration resource for
-             *     point to site client connection.
+             * point to site client connection.
              * @return the next definition stage.
              */
             WithCreate withRadiusServerAddress(String radiusServerAddress);
         }
 
-        /** The stage of the VpnServerConfiguration definition allowing to specify radiusServerSecret. */
+        /**
+         * The stage of the VpnServerConfiguration definition allowing to specify radiusServerSecret.
+         */
         interface WithRadiusServerSecret {
             /**
              * Specifies the radiusServerSecret property: The radius secret property of the VpnServerConfiguration
              * resource for point to site client connection..
-             *
+             * 
              * @param radiusServerSecret The radius secret property of the VpnServerConfiguration resource for point to
-             *     site client connection.
+             * site client connection.
              * @return the next definition stage.
              */
             WithCreate withRadiusServerSecret(String radiusServerSecret);
         }
 
-        /** The stage of the VpnServerConfiguration definition allowing to specify radiusServers. */
+        /**
+         * The stage of the VpnServerConfiguration definition allowing to specify radiusServers.
+         */
         interface WithRadiusServers {
             /**
              * Specifies the radiusServers property: Multiple Radius Server configuration for VpnServerConfiguration..
-             *
+             * 
              * @param radiusServers Multiple Radius Server configuration for VpnServerConfiguration.
              * @return the next definition stage.
              */
             WithCreate withRadiusServers(List<RadiusServer> radiusServers);
         }
 
-        /** The stage of the VpnServerConfiguration definition allowing to specify aadAuthenticationParameters. */
+        /**
+         * The stage of the VpnServerConfiguration definition allowing to specify aadAuthenticationParameters.
+         */
         interface WithAadAuthenticationParameters {
             /**
              * Specifies the aadAuthenticationParameters property: The set of aad vpn authentication parameters..
-             *
+             * 
              * @param aadAuthenticationParameters The set of aad vpn authentication parameters.
              * @return the next definition stage.
              */
             WithCreate withAadAuthenticationParameters(AadAuthenticationParameters aadAuthenticationParameters);
         }
 
-        /** The stage of the VpnServerConfiguration definition allowing to specify configurationPolicyGroups. */
+        /**
+         * The stage of the VpnServerConfiguration definition allowing to specify configurationPolicyGroups.
+         */
         interface WithConfigurationPolicyGroups {
             /**
              * Specifies the configurationPolicyGroups property: List of all VpnServerConfigurationPolicyGroups..
-             *
+             * 
              * @param configurationPolicyGroups List of all VpnServerConfigurationPolicyGroups.
              * @return the next definition stage.
              */
-            WithCreate withConfigurationPolicyGroups(
-                List<VpnServerConfigurationPolicyGroupInner> configurationPolicyGroups);
+            WithCreate
+                withConfigurationPolicyGroups(List<VpnServerConfigurationPolicyGroupInner> configurationPolicyGroups);
         }
     }
 
     /**
      * Begins update for the VpnServerConfiguration resource.
-     *
+     * 
      * @return the stage of resource update.
      */
     VpnServerConfiguration.Update update();
 
-    /** The template for VpnServerConfiguration update. */
+    /**
+     * The template for VpnServerConfiguration update.
+     */
     interface Update extends UpdateStages.WithTags {
         /**
          * Executes the update request.
-         *
+         * 
          * @return the updated resource.
          */
         VpnServerConfiguration apply();
 
         /**
          * Executes the update request.
-         *
+         * 
          * @param context The context to associate with this operation.
          * @return the updated resource.
          */
         VpnServerConfiguration apply(Context context);
     }
 
-    /** The VpnServerConfiguration update stages. */
+    /**
+     * The VpnServerConfiguration update stages.
+     */
     interface UpdateStages {
-        /** The stage of the VpnServerConfiguration update allowing to specify tags. */
+        /**
+         * The stage of the VpnServerConfiguration update allowing to specify tags.
+         */
         interface WithTags {
             /**
              * Specifies the tags property: Resource tags..
-             *
+             * 
              * @param tags Resource tags.
              * @return the next definition stage.
              */
@@ -487,14 +522,14 @@ public interface VpnServerConfiguration {
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @return the refreshed resource.
      */
     VpnServerConfiguration refresh();
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @return the refreshed resource.
      */

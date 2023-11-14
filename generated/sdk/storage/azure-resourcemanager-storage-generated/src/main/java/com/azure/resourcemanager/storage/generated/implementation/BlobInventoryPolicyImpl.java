@@ -67,29 +67,21 @@ public final class BlobInventoryPolicyImpl
     }
 
     public BlobInventoryPolicy create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getBlobInventoryPolicies()
-                .createOrUpdateWithResponse(
-                    resourceGroupName, accountName, blobInventoryPolicyName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getBlobInventoryPolicies().createOrUpdateWithResponse(resourceGroupName,
+                accountName, blobInventoryPolicyName, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public BlobInventoryPolicy create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getBlobInventoryPolicies()
-                .createOrUpdateWithResponse(
-                    resourceGroupName, accountName, blobInventoryPolicyName, this.innerModel(), context)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getBlobInventoryPolicies().createOrUpdateWithResponse(resourceGroupName,
+                accountName, blobInventoryPolicyName, this.innerModel(), context).getValue();
         return this;
     }
 
-    BlobInventoryPolicyImpl(
-        BlobInventoryPolicyName name, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
+    BlobInventoryPolicyImpl(BlobInventoryPolicyName name,
+        com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = new BlobInventoryPolicyInner();
         this.serviceManager = serviceManager;
         this.blobInventoryPolicyName = name;
@@ -100,55 +92,38 @@ public final class BlobInventoryPolicyImpl
     }
 
     public BlobInventoryPolicy apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getBlobInventoryPolicies()
-                .createOrUpdateWithResponse(
-                    resourceGroupName, accountName, blobInventoryPolicyName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getBlobInventoryPolicies().createOrUpdateWithResponse(resourceGroupName,
+                accountName, blobInventoryPolicyName, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public BlobInventoryPolicy apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getBlobInventoryPolicies()
-                .createOrUpdateWithResponse(
-                    resourceGroupName, accountName, blobInventoryPolicyName, this.innerModel(), context)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getBlobInventoryPolicies().createOrUpdateWithResponse(resourceGroupName,
+                accountName, blobInventoryPolicyName, this.innerModel(), context).getValue();
         return this;
     }
 
-    BlobInventoryPolicyImpl(
-        BlobInventoryPolicyInner innerObject,
+    BlobInventoryPolicyImpl(BlobInventoryPolicyInner innerObject,
         com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
         this.accountName = Utils.getValueFromIdByName(innerObject.id(), "storageAccounts");
-        this.blobInventoryPolicyName =
-            BlobInventoryPolicyName.fromString(Utils.getValueFromIdByName(innerObject.id(), "inventoryPolicies"));
+        this.blobInventoryPolicyName
+            = BlobInventoryPolicyName.fromString(Utils.getValueFromIdByName(innerObject.id(), "inventoryPolicies"));
     }
 
     public BlobInventoryPolicy refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getBlobInventoryPolicies()
-                .getWithResponse(resourceGroupName, accountName, blobInventoryPolicyName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getBlobInventoryPolicies()
+            .getWithResponse(resourceGroupName, accountName, blobInventoryPolicyName, Context.NONE).getValue();
         return this;
     }
 
     public BlobInventoryPolicy refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getBlobInventoryPolicies()
-                .getWithResponse(resourceGroupName, accountName, blobInventoryPolicyName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getBlobInventoryPolicies()
+            .getWithResponse(resourceGroupName, accountName, blobInventoryPolicyName, context).getValue();
         return this;
     }
 

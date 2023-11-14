@@ -21,8 +21,7 @@ public final class LocationBasedCapabilitySetsImpl implements LocationBasedCapab
 
     private final com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager;
 
-    public LocationBasedCapabilitySetsImpl(
-        LocationBasedCapabilitySetsClient innerClient,
+    public LocationBasedCapabilitySetsImpl(LocationBasedCapabilitySetsClient innerClient,
         com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -39,13 +38,10 @@ public final class LocationBasedCapabilitySetsImpl implements LocationBasedCapab
     }
 
     public Response<Capability> getWithResponse(String locationName, String capabilitySetName, Context context) {
-        Response<CapabilityInner> inner =
-            this.serviceClient().getWithResponse(locationName, capabilitySetName, context);
+        Response<CapabilityInner> inner
+            = this.serviceClient().getWithResponse(locationName, capabilitySetName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new CapabilityImpl(inner.getValue(), this.manager()));
         } else {
             return null;

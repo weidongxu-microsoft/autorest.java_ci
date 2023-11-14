@@ -7,11 +7,13 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 
-/** Resource collection API of AvailableSkus. */
+/**
+ * Resource collection API of AvailableSkus.
+ */
 public interface AvailableSkus {
     /**
      * List all the available Skus and information related to them.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return list of SKU Information objects as paginated response with {@link PagedIterable}.
@@ -20,7 +22,7 @@ public interface AvailableSkus {
 
     /**
      * List all the available Skus and information related to them.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

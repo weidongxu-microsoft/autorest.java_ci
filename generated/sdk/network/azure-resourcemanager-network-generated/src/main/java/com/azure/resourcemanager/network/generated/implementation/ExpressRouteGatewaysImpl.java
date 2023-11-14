@@ -22,8 +22,7 @@ public final class ExpressRouteGatewaysImpl implements ExpressRouteGateways {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public ExpressRouteGatewaysImpl(
-        ExpressRouteGatewaysClient innerClient,
+    public ExpressRouteGatewaysImpl(ExpressRouteGatewaysClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -32,10 +31,7 @@ public final class ExpressRouteGatewaysImpl implements ExpressRouteGateways {
     public Response<ExpressRouteGatewayList> listBySubscriptionWithResponse(Context context) {
         Response<ExpressRouteGatewayListInner> inner = this.serviceClient().listBySubscriptionWithResponse(context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ExpressRouteGatewayListImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -51,15 +47,12 @@ public final class ExpressRouteGatewaysImpl implements ExpressRouteGateways {
         }
     }
 
-    public Response<ExpressRouteGatewayList> listByResourceGroupWithResponse(
-        String resourceGroupName, Context context) {
-        Response<ExpressRouteGatewayListInner> inner =
-            this.serviceClient().listByResourceGroupWithResponse(resourceGroupName, context);
+    public Response<ExpressRouteGatewayList> listByResourceGroupWithResponse(String resourceGroupName,
+        Context context) {
+        Response<ExpressRouteGatewayListInner> inner
+            = this.serviceClient().listByResourceGroupWithResponse(resourceGroupName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ExpressRouteGatewayListImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -75,15 +68,12 @@ public final class ExpressRouteGatewaysImpl implements ExpressRouteGateways {
         }
     }
 
-    public Response<ExpressRouteGateway> getByResourceGroupWithResponse(
-        String resourceGroupName, String expressRouteGatewayName, Context context) {
-        Response<ExpressRouteGatewayInner> inner =
-            this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, expressRouteGatewayName, context);
+    public Response<ExpressRouteGateway> getByResourceGroupWithResponse(String resourceGroupName,
+        String expressRouteGatewayName, Context context) {
+        Response<ExpressRouteGatewayInner> inner
+            = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, expressRouteGatewayName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ExpressRouteGatewayImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -91,8 +81,8 @@ public final class ExpressRouteGatewaysImpl implements ExpressRouteGateways {
     }
 
     public ExpressRouteGateway getByResourceGroup(String resourceGroupName, String expressRouteGatewayName) {
-        ExpressRouteGatewayInner inner =
-            this.serviceClient().getByResourceGroup(resourceGroupName, expressRouteGatewayName);
+        ExpressRouteGatewayInner inner
+            = this.serviceClient().getByResourceGroup(resourceGroupName, expressRouteGatewayName);
         if (inner != null) {
             return new ExpressRouteGatewayImpl(inner, this.manager());
         } else {
@@ -111,21 +101,13 @@ public final class ExpressRouteGatewaysImpl implements ExpressRouteGateways {
     public ExpressRouteGateway getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String expressRouteGatewayName = Utils.getValueFromIdByName(id, "expressRouteGateways");
         if (expressRouteGatewayName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'expressRouteGateways'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'expressRouteGateways'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, expressRouteGatewayName, Context.NONE).getValue();
     }
@@ -133,21 +115,13 @@ public final class ExpressRouteGatewaysImpl implements ExpressRouteGateways {
     public Response<ExpressRouteGateway> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String expressRouteGatewayName = Utils.getValueFromIdByName(id, "expressRouteGateways");
         if (expressRouteGatewayName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'expressRouteGateways'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'expressRouteGateways'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, expressRouteGatewayName, context);
     }
@@ -155,21 +129,13 @@ public final class ExpressRouteGatewaysImpl implements ExpressRouteGateways {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String expressRouteGatewayName = Utils.getValueFromIdByName(id, "expressRouteGateways");
         if (expressRouteGatewayName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'expressRouteGateways'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'expressRouteGateways'.", id)));
         }
         this.delete(resourceGroupName, expressRouteGatewayName, Context.NONE);
     }
@@ -177,21 +143,13 @@ public final class ExpressRouteGatewaysImpl implements ExpressRouteGateways {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String expressRouteGatewayName = Utils.getValueFromIdByName(id, "expressRouteGateways");
         if (expressRouteGatewayName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'expressRouteGateways'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'expressRouteGateways'.", id)));
         }
         this.delete(resourceGroupName, expressRouteGatewayName, context);
     }

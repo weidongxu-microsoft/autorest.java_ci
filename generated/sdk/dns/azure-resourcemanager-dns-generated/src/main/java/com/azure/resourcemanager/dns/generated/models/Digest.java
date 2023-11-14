@@ -7,7 +7,9 @@ package com.azure.resourcemanager.dns.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** A digest. */
+/**
+ * A digest.
+ */
 @Fluent
 public final class Digest {
     /*
@@ -23,14 +25,16 @@ public final class Digest {
     @JsonProperty(value = "value")
     private String value;
 
-    /** Creates an instance of Digest class. */
+    /**
+     * Creates an instance of Digest class.
+     */
     public Digest() {
     }
 
     /**
-     * Get the algorithmType property: The digest algorithm type represents the standard digest algorithm number used to
-     * construct the digest. See: https://www.iana.org/assignments/ds-rr-types/ds-rr-types.xhtml.
-     *
+     * Get the algorithmType property: The digest algorithm type represents the standard digest algorithm number used
+     * to construct the digest. See: https://www.iana.org/assignments/ds-rr-types/ds-rr-types.xhtml.
+     * 
      * @return the algorithmType value.
      */
     public Integer algorithmType() {
@@ -38,9 +42,9 @@ public final class Digest {
     }
 
     /**
-     * Set the algorithmType property: The digest algorithm type represents the standard digest algorithm number used to
-     * construct the digest. See: https://www.iana.org/assignments/ds-rr-types/ds-rr-types.xhtml.
-     *
+     * Set the algorithmType property: The digest algorithm type represents the standard digest algorithm number used
+     * to construct the digest. See: https://www.iana.org/assignments/ds-rr-types/ds-rr-types.xhtml.
+     * 
      * @param algorithmType the algorithmType value to set.
      * @return the Digest object itself.
      */
@@ -51,7 +55,7 @@ public final class Digest {
 
     /**
      * Get the value property: The digest value is a cryptographic hash value of the referenced DNSKEY Resource Record.
-     *
+     * 
      * @return the value value.
      */
     public String value() {
@@ -60,7 +64,7 @@ public final class Digest {
 
     /**
      * Set the value property: The digest value is a cryptographic hash value of the referenced DNSKEY Resource Record.
-     *
+     * 
      * @param value the value value to set.
      * @return the Digest object itself.
      */
@@ -71,7 +75,7 @@ public final class Digest {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

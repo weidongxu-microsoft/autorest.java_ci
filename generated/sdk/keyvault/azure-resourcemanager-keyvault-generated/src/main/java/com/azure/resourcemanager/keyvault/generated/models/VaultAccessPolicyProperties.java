@@ -9,7 +9,9 @@ import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Properties of the vault access policy. */
+/**
+ * Properties of the vault access policy.
+ */
 @Fluent
 public final class VaultAccessPolicyProperties {
     /*
@@ -19,14 +21,16 @@ public final class VaultAccessPolicyProperties {
     @JsonProperty(value = "accessPolicies", required = true)
     private List<AccessPolicyEntry> accessPolicies;
 
-    /** Creates an instance of VaultAccessPolicyProperties class. */
+    /**
+     * Creates an instance of VaultAccessPolicyProperties class.
+     */
     public VaultAccessPolicyProperties() {
     }
 
     /**
-     * Get the accessPolicies property: An array of 0 to 16 identities that have access to the key vault. All identities
-     * in the array must use the same tenant ID as the key vault's tenant ID.
-     *
+     * Get the accessPolicies property: An array of 0 to 16 identities that have access to the key vault. All
+     * identities in the array must use the same tenant ID as the key vault's tenant ID.
+     * 
      * @return the accessPolicies value.
      */
     public List<AccessPolicyEntry> accessPolicies() {
@@ -34,9 +38,9 @@ public final class VaultAccessPolicyProperties {
     }
 
     /**
-     * Set the accessPolicies property: An array of 0 to 16 identities that have access to the key vault. All identities
-     * in the array must use the same tenant ID as the key vault's tenant ID.
-     *
+     * Set the accessPolicies property: An array of 0 to 16 identities that have access to the key vault. All
+     * identities in the array must use the same tenant ID as the key vault's tenant ID.
+     * 
      * @param accessPolicies the accessPolicies value to set.
      * @return the VaultAccessPolicyProperties object itself.
      */
@@ -47,15 +51,13 @@ public final class VaultAccessPolicyProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (accessPolicies() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property accessPolicies in model VaultAccessPolicyProperties"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property accessPolicies in model VaultAccessPolicyProperties"));
         } else {
             accessPolicies().forEach(e -> e.validate());
         }

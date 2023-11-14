@@ -9,7 +9,9 @@ import com.azure.resourcemanager.mediaservices.generated.fluent.models.Transform
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** A collection of Transform items. */
+/**
+ * A collection of Transform items.
+ */
 @Fluent
 public final class TransformCollection {
     /*
@@ -25,13 +27,15 @@ public final class TransformCollection {
     @JsonProperty(value = "@odata.nextLink")
     private String odataNextLink;
 
-    /** Creates an instance of TransformCollection class. */
+    /**
+     * Creates an instance of TransformCollection class.
+     */
     public TransformCollection() {
     }
 
     /**
      * Get the value property: A collection of Transform items.
-     *
+     * 
      * @return the value value.
      */
     public List<TransformInner> value() {
@@ -40,7 +44,7 @@ public final class TransformCollection {
 
     /**
      * Set the value property: A collection of Transform items.
-     *
+     * 
      * @param value the value value to set.
      * @return the TransformCollection object itself.
      */
@@ -52,7 +56,7 @@ public final class TransformCollection {
     /**
      * Get the odataNextLink property: A link to the next page of the collection (when the collection contains too many
      * results to return in one response).
-     *
+     * 
      * @return the odataNextLink value.
      */
     public String odataNextLink() {
@@ -62,7 +66,7 @@ public final class TransformCollection {
     /**
      * Set the odataNextLink property: A link to the next page of the collection (when the collection contains too many
      * results to return in one response).
-     *
+     * 
      * @param odataNextLink the odataNextLink value to set.
      * @return the TransformCollection object itself.
      */
@@ -73,7 +77,7 @@ public final class TransformCollection {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

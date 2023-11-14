@@ -10,7 +10,9 @@ import com.azure.resourcemanager.keyvault.generated.models.PrivateEndpointConnec
 import com.azure.resourcemanager.keyvault.generated.models.PrivateLinkServiceConnectionState;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Properties of the private endpoint connection resource. */
+/**
+ * Properties of the private endpoint connection resource.
+ */
 @Fluent
 public final class PrivateEndpointConnectionProperties {
     /*
@@ -31,13 +33,15 @@ public final class PrivateEndpointConnectionProperties {
     @JsonProperty(value = "provisioningState")
     private PrivateEndpointConnectionProvisioningState provisioningState;
 
-    /** Creates an instance of PrivateEndpointConnectionProperties class. */
+    /**
+     * Creates an instance of PrivateEndpointConnectionProperties class.
+     */
     public PrivateEndpointConnectionProperties() {
     }
 
     /**
      * Get the privateEndpoint property: Properties of the private endpoint object.
-     *
+     * 
      * @return the privateEndpoint value.
      */
     public PrivateEndpoint privateEndpoint() {
@@ -46,7 +50,7 @@ public final class PrivateEndpointConnectionProperties {
 
     /**
      * Set the privateEndpoint property: Properties of the private endpoint object.
-     *
+     * 
      * @param privateEndpoint the privateEndpoint value to set.
      * @return the PrivateEndpointConnectionProperties object itself.
      */
@@ -57,7 +61,7 @@ public final class PrivateEndpointConnectionProperties {
 
     /**
      * Get the privateLinkServiceConnectionState property: Approval state of the private link connection.
-     *
+     * 
      * @return the privateLinkServiceConnectionState value.
      */
     public PrivateLinkServiceConnectionState privateLinkServiceConnectionState() {
@@ -66,19 +70,19 @@ public final class PrivateEndpointConnectionProperties {
 
     /**
      * Set the privateLinkServiceConnectionState property: Approval state of the private link connection.
-     *
+     * 
      * @param privateLinkServiceConnectionState the privateLinkServiceConnectionState value to set.
      * @return the PrivateEndpointConnectionProperties object itself.
      */
-    public PrivateEndpointConnectionProperties withPrivateLinkServiceConnectionState(
-        PrivateLinkServiceConnectionState privateLinkServiceConnectionState) {
+    public PrivateEndpointConnectionProperties
+        withPrivateLinkServiceConnectionState(PrivateLinkServiceConnectionState privateLinkServiceConnectionState) {
         this.privateLinkServiceConnectionState = privateLinkServiceConnectionState;
         return this;
     }
 
     /**
      * Get the provisioningState property: Provisioning state of the private endpoint connection.
-     *
+     * 
      * @return the provisioningState value.
      */
     public PrivateEndpointConnectionProvisioningState provisioningState() {
@@ -87,19 +91,19 @@ public final class PrivateEndpointConnectionProperties {
 
     /**
      * Set the provisioningState property: Provisioning state of the private endpoint connection.
-     *
+     * 
      * @param provisioningState the provisioningState value to set.
      * @return the PrivateEndpointConnectionProperties object itself.
      */
-    public PrivateEndpointConnectionProperties withProvisioningState(
-        PrivateEndpointConnectionProvisioningState provisioningState) {
+    public PrivateEndpointConnectionProperties
+        withProvisioningState(PrivateEndpointConnectionProvisioningState provisioningState) {
         this.provisioningState = provisioningState;
         return this;
     }
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -95,20 +95,14 @@ public final class CloudServiceImpl implements CloudService, CloudService.Defini
     }
 
     public CloudService create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getCloudServices()
-                .createOrUpdate(resourceGroupName, cloudServiceName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getCloudServices().createOrUpdate(resourceGroupName,
+            cloudServiceName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public CloudService create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getCloudServices()
-                .createOrUpdate(resourceGroupName, cloudServiceName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getCloudServices().createOrUpdate(resourceGroupName,
+            cloudServiceName, this.innerModel(), context);
         return this;
     }
 
@@ -124,25 +118,19 @@ public final class CloudServiceImpl implements CloudService, CloudService.Defini
     }
 
     public CloudService apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getCloudServices()
-                .update(resourceGroupName, cloudServiceName, updateParameters, Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getCloudServices().update(resourceGroupName, cloudServiceName,
+            updateParameters, Context.NONE);
         return this;
     }
 
     public CloudService apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getCloudServices()
-                .update(resourceGroupName, cloudServiceName, updateParameters, context);
+        this.innerObject = serviceManager.serviceClient().getCloudServices().update(resourceGroupName, cloudServiceName,
+            updateParameters, context);
         return this;
     }
 
-    CloudServiceImpl(
-        CloudServiceInner innerObject, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
+    CloudServiceImpl(CloudServiceInner innerObject,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
@@ -150,22 +138,14 @@ public final class CloudServiceImpl implements CloudService, CloudService.Defini
     }
 
     public CloudService refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getCloudServices()
-                .getByResourceGroupWithResponse(resourceGroupName, cloudServiceName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getCloudServices()
+            .getByResourceGroupWithResponse(resourceGroupName, cloudServiceName, Context.NONE).getValue();
         return this;
     }
 
     public CloudService refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getCloudServices()
-                .getByResourceGroupWithResponse(resourceGroupName, cloudServiceName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getCloudServices()
+            .getByResourceGroupWithResponse(resourceGroupName, cloudServiceName, context).getValue();
         return this;
     }
 

@@ -13,8 +13,7 @@ public final class PerfMonResponseImpl implements PerfMonResponse {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    PerfMonResponseImpl(
-        PerfMonResponseInner innerObject,
+    PerfMonResponseImpl(PerfMonResponseInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

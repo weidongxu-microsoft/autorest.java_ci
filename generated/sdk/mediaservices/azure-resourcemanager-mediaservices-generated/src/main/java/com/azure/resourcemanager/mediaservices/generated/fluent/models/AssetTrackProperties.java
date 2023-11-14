@@ -9,7 +9,9 @@ import com.azure.resourcemanager.mediaservices.generated.models.ProvisioningStat
 import com.azure.resourcemanager.mediaservices.generated.models.TrackBase;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Properties of a video, audio or text track in the asset. */
+/**
+ * Properties of a video, audio or text track in the asset.
+ */
 @Fluent
 public final class AssetTrackProperties {
     /*
@@ -24,13 +26,15 @@ public final class AssetTrackProperties {
     @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private ProvisioningState provisioningState;
 
-    /** Creates an instance of AssetTrackProperties class. */
+    /**
+     * Creates an instance of AssetTrackProperties class.
+     */
     public AssetTrackProperties() {
     }
 
     /**
      * Get the track property: Detailed information about a track in the asset.
-     *
+     * 
      * @return the track value.
      */
     public TrackBase track() {
@@ -39,7 +43,7 @@ public final class AssetTrackProperties {
 
     /**
      * Set the track property: Detailed information about a track in the asset.
-     *
+     * 
      * @param track the track value to set.
      * @return the AssetTrackProperties object itself.
      */
@@ -50,7 +54,7 @@ public final class AssetTrackProperties {
 
     /**
      * Get the provisioningState property: Provisioning state of the asset track.
-     *
+     * 
      * @return the provisioningState value.
      */
     public ProvisioningState provisioningState() {
@@ -59,7 +63,7 @@ public final class AssetTrackProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

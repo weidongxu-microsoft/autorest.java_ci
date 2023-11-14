@@ -9,7 +9,9 @@ import com.azure.resourcemanager.keyvault.generated.fluent.models.MhsmGeoReplica
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** List of regions associated with a managed HSM Pools. */
+/**
+ * List of regions associated with a managed HSM Pools.
+ */
 @Fluent
 public final class MhsmRegionsListResult {
     /*
@@ -24,13 +26,15 @@ public final class MhsmRegionsListResult {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
-    /** Creates an instance of MhsmRegionsListResult class. */
+    /**
+     * Creates an instance of MhsmRegionsListResult class.
+     */
     public MhsmRegionsListResult() {
     }
 
     /**
      * Get the value property: The region associated with a managed HSM Pools.
-     *
+     * 
      * @return the value value.
      */
     public List<MhsmGeoReplicatedRegionInner> value() {
@@ -39,7 +43,7 @@ public final class MhsmRegionsListResult {
 
     /**
      * Set the value property: The region associated with a managed HSM Pools.
-     *
+     * 
      * @param value the value value to set.
      * @return the MhsmRegionsListResult object itself.
      */
@@ -50,7 +54,7 @@ public final class MhsmRegionsListResult {
 
     /**
      * Get the nextLink property: The URL to get the next set of managed HSM Pools.
-     *
+     * 
      * @return the nextLink value.
      */
     public String nextLink() {
@@ -59,7 +63,7 @@ public final class MhsmRegionsListResult {
 
     /**
      * Set the nextLink property: The URL to get the next set of managed HSM Pools.
-     *
+     * 
      * @param nextLink the nextLink value to set.
      * @return the MhsmRegionsListResult object itself.
      */
@@ -70,7 +74,7 @@ public final class MhsmRegionsListResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

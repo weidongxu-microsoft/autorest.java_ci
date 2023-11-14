@@ -6,18 +6,20 @@ package com.azure.resourcemanager.recoveryservices.generated.models;
 
 import com.azure.resourcemanager.recoveryservices.generated.fluent.models.CapabilitiesResponseInner;
 
-/** An immutable client-side representation of CapabilitiesResponse. */
+/**
+ * An immutable client-side representation of CapabilitiesResponse.
+ */
 public interface CapabilitiesResponse {
     /**
      * Gets the type property: Describes the Resource type: Microsoft.RecoveryServices/Vaults.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the properties property: Capabilities properties in response.
-     *
+     * 
      * @return the properties value.
      */
     CapabilitiesResponseProperties properties();
@@ -25,7 +27,7 @@ public interface CapabilitiesResponse {
     /**
      * Gets the inner com.azure.resourcemanager.recoveryservices.generated.fluent.models.CapabilitiesResponseInner
      * object.
-     *
+     * 
      * @return the inner object.
      */
     CapabilitiesResponseInner innerModel();

@@ -13,11 +13,13 @@ import com.azure.core.util.Context;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.network.generated.fluent.models.HubIpConfigurationInner;
 
-/** An instance of this class provides access to all the operations defined in VirtualHubIpConfigurationsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in VirtualHubIpConfigurationsClient.
+ */
 public interface VirtualHubIpConfigurationsClient {
     /**
      * Retrieves the details of a Virtual Hub Ip configuration.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @param ipConfigName The name of the ipconfig.
@@ -28,12 +30,12 @@ public interface VirtualHubIpConfigurationsClient {
      * @return ipConfigurations along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<HubIpConfigurationInner> getWithResponse(
-        String resourceGroupName, String virtualHubName, String ipConfigName, Context context);
+    Response<HubIpConfigurationInner> getWithResponse(String resourceGroupName, String virtualHubName,
+        String ipConfigName, Context context);
 
     /**
      * Retrieves the details of a Virtual Hub Ip configuration.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @param ipConfigName The name of the ipconfig.
@@ -48,7 +50,7 @@ public interface VirtualHubIpConfigurationsClient {
     /**
      * Creates a VirtualHubIpConfiguration resource if it doesn't exist else updates the existing
      * VirtualHubIpConfiguration.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @param ipConfigName The name of the ipconfig.
@@ -65,7 +67,7 @@ public interface VirtualHubIpConfigurationsClient {
     /**
      * Creates a VirtualHubIpConfiguration resource if it doesn't exist else updates the existing
      * VirtualHubIpConfiguration.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @param ipConfigName The name of the ipconfig.
@@ -78,16 +80,13 @@ public interface VirtualHubIpConfigurationsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<HubIpConfigurationInner>, HubIpConfigurationInner> beginCreateOrUpdate(
-        String resourceGroupName,
-        String virtualHubName,
-        String ipConfigName,
-        HubIpConfigurationInner parameters,
+        String resourceGroupName, String virtualHubName, String ipConfigName, HubIpConfigurationInner parameters,
         Context context);
 
     /**
      * Creates a VirtualHubIpConfiguration resource if it doesn't exist else updates the existing
      * VirtualHubIpConfiguration.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @param ipConfigName The name of the ipconfig.
@@ -98,13 +97,13 @@ public interface VirtualHubIpConfigurationsClient {
      * @return ipConfigurations.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    HubIpConfigurationInner createOrUpdate(
-        String resourceGroupName, String virtualHubName, String ipConfigName, HubIpConfigurationInner parameters);
+    HubIpConfigurationInner createOrUpdate(String resourceGroupName, String virtualHubName, String ipConfigName,
+        HubIpConfigurationInner parameters);
 
     /**
      * Creates a VirtualHubIpConfiguration resource if it doesn't exist else updates the existing
      * VirtualHubIpConfiguration.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @param ipConfigName The name of the ipconfig.
@@ -116,16 +115,12 @@ public interface VirtualHubIpConfigurationsClient {
      * @return ipConfigurations.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    HubIpConfigurationInner createOrUpdate(
-        String resourceGroupName,
-        String virtualHubName,
-        String ipConfigName,
-        HubIpConfigurationInner parameters,
-        Context context);
+    HubIpConfigurationInner createOrUpdate(String resourceGroupName, String virtualHubName, String ipConfigName,
+        HubIpConfigurationInner parameters, Context context);
 
     /**
      * Deletes a VirtualHubIpConfiguration.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualHubBgpConnection.
      * @param virtualHubName The name of the VirtualHub.
      * @param ipConfigName The name of the ipconfig.
@@ -135,12 +130,12 @@ public interface VirtualHubIpConfigurationsClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginDelete(
-        String resourceGroupName, String virtualHubName, String ipConfigName);
+    SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String virtualHubName,
+        String ipConfigName);
 
     /**
      * Deletes a VirtualHubIpConfiguration.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualHubBgpConnection.
      * @param virtualHubName The name of the VirtualHub.
      * @param ipConfigName The name of the ipconfig.
@@ -151,12 +146,12 @@ public interface VirtualHubIpConfigurationsClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginDelete(
-        String resourceGroupName, String virtualHubName, String ipConfigName, Context context);
+    SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String virtualHubName, String ipConfigName,
+        Context context);
 
     /**
      * Deletes a VirtualHubIpConfiguration.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualHubBgpConnection.
      * @param virtualHubName The name of the VirtualHub.
      * @param ipConfigName The name of the ipconfig.
@@ -169,7 +164,7 @@ public interface VirtualHubIpConfigurationsClient {
 
     /**
      * Deletes a VirtualHubIpConfiguration.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualHubBgpConnection.
      * @param virtualHubName The name of the VirtualHub.
      * @param ipConfigName The name of the ipconfig.
@@ -183,7 +178,7 @@ public interface VirtualHubIpConfigurationsClient {
 
     /**
      * Retrieves the details of all VirtualHubIpConfigurations.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -196,7 +191,7 @@ public interface VirtualHubIpConfigurationsClient {
 
     /**
      * Retrieves the details of all VirtualHubIpConfigurations.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @param context The context to associate with this operation.

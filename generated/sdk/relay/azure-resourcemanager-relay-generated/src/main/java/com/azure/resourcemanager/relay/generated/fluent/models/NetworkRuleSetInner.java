@@ -13,7 +13,9 @@ import com.azure.resourcemanager.relay.generated.models.PublicNetworkAccess;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Description of topic resource. */
+/**
+ * Description of topic resource.
+ */
 @Fluent
 public final class NetworkRuleSetInner extends ProxyResource {
     /*
@@ -28,13 +30,15 @@ public final class NetworkRuleSetInner extends ProxyResource {
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
-    /** Creates an instance of NetworkRuleSetInner class. */
+    /**
+     * Creates an instance of NetworkRuleSetInner class.
+     */
     public NetworkRuleSetInner() {
     }
 
     /**
      * Get the innerProperties property: NetworkRuleSet properties.
-     *
+     * 
      * @return the innerProperties value.
      */
     private NetworkRuleSetProperties innerProperties() {
@@ -43,7 +47,7 @@ public final class NetworkRuleSetInner extends ProxyResource {
 
     /**
      * Get the systemData property: The system meta data relating to this resource.
-     *
+     * 
      * @return the systemData value.
      */
     public SystemData systemData() {
@@ -52,7 +56,7 @@ public final class NetworkRuleSetInner extends ProxyResource {
 
     /**
      * Get the defaultAction property: Default Action for Network Rule Set.
-     *
+     * 
      * @return the defaultAction value.
      */
     public DefaultAction defaultAction() {
@@ -61,7 +65,7 @@ public final class NetworkRuleSetInner extends ProxyResource {
 
     /**
      * Set the defaultAction property: Default Action for Network Rule Set.
-     *
+     * 
      * @param defaultAction the defaultAction value to set.
      * @return the NetworkRuleSetInner object itself.
      */
@@ -74,9 +78,9 @@ public final class NetworkRuleSetInner extends ProxyResource {
     }
 
     /**
-     * Get the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
-     * enabled.
-     *
+     * Get the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it
+     * is enabled.
+     * 
      * @return the publicNetworkAccess value.
      */
     public PublicNetworkAccess publicNetworkAccess() {
@@ -84,9 +88,9 @@ public final class NetworkRuleSetInner extends ProxyResource {
     }
 
     /**
-     * Set the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
-     * enabled.
-     *
+     * Set the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it
+     * is enabled.
+     * 
      * @param publicNetworkAccess the publicNetworkAccess value to set.
      * @return the NetworkRuleSetInner object itself.
      */
@@ -100,7 +104,7 @@ public final class NetworkRuleSetInner extends ProxyResource {
 
     /**
      * Get the ipRules property: List of IpRules.
-     *
+     * 
      * @return the ipRules value.
      */
     public List<NWRuleSetIpRules> ipRules() {
@@ -109,7 +113,7 @@ public final class NetworkRuleSetInner extends ProxyResource {
 
     /**
      * Set the ipRules property: List of IpRules.
-     *
+     * 
      * @param ipRules the ipRules value to set.
      * @return the NetworkRuleSetInner object itself.
      */
@@ -123,7 +127,7 @@ public final class NetworkRuleSetInner extends ProxyResource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

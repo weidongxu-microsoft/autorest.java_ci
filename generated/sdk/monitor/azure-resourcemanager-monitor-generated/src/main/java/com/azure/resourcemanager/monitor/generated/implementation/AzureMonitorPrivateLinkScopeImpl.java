@@ -16,10 +16,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public final class AzureMonitorPrivateLinkScopeImpl
-    implements AzureMonitorPrivateLinkScope,
-        AzureMonitorPrivateLinkScope.Definition,
-        AzureMonitorPrivateLinkScope.Update {
+public final class AzureMonitorPrivateLinkScopeImpl implements AzureMonitorPrivateLinkScope,
+    AzureMonitorPrivateLinkScope.Definition, AzureMonitorPrivateLinkScope.Update {
     private AzureMonitorPrivateLinkScopeInner innerObject;
 
     private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
@@ -56,12 +54,8 @@ public final class AzureMonitorPrivateLinkScopeImpl
     public List<PrivateEndpointConnection> privateEndpointConnections() {
         List<PrivateEndpointConnectionInner> inner = this.innerModel().privateEndpointConnections();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -99,27 +93,19 @@ public final class AzureMonitorPrivateLinkScopeImpl
     }
 
     public AzureMonitorPrivateLinkScope create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getPrivateLinkScopes()
-                .createOrUpdateWithResponse(resourceGroupName, scopeName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getPrivateLinkScopes()
+            .createOrUpdateWithResponse(resourceGroupName, scopeName, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public AzureMonitorPrivateLinkScope create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getPrivateLinkScopes()
-                .createOrUpdateWithResponse(resourceGroupName, scopeName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getPrivateLinkScopes()
+            .createOrUpdateWithResponse(resourceGroupName, scopeName, this.innerModel(), context).getValue();
         return this;
     }
 
-    AzureMonitorPrivateLinkScopeImpl(
-        String name, com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
+    AzureMonitorPrivateLinkScopeImpl(String name,
+        com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = new AzureMonitorPrivateLinkScopeInner();
         this.serviceManager = serviceManager;
         this.scopeName = name;
@@ -131,27 +117,18 @@ public final class AzureMonitorPrivateLinkScopeImpl
     }
 
     public AzureMonitorPrivateLinkScope apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getPrivateLinkScopes()
-                .updateTagsWithResponse(resourceGroupName, scopeName, updatePrivateLinkScopeTags, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getPrivateLinkScopes()
+            .updateTagsWithResponse(resourceGroupName, scopeName, updatePrivateLinkScopeTags, Context.NONE).getValue();
         return this;
     }
 
     public AzureMonitorPrivateLinkScope apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getPrivateLinkScopes()
-                .updateTagsWithResponse(resourceGroupName, scopeName, updatePrivateLinkScopeTags, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getPrivateLinkScopes()
+            .updateTagsWithResponse(resourceGroupName, scopeName, updatePrivateLinkScopeTags, context).getValue();
         return this;
     }
 
-    AzureMonitorPrivateLinkScopeImpl(
-        AzureMonitorPrivateLinkScopeInner innerObject,
+    AzureMonitorPrivateLinkScopeImpl(AzureMonitorPrivateLinkScopeInner innerObject,
         com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -160,22 +137,14 @@ public final class AzureMonitorPrivateLinkScopeImpl
     }
 
     public AzureMonitorPrivateLinkScope refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getPrivateLinkScopes()
-                .getByResourceGroupWithResponse(resourceGroupName, scopeName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getPrivateLinkScopes()
+            .getByResourceGroupWithResponse(resourceGroupName, scopeName, Context.NONE).getValue();
         return this;
     }
 
     public AzureMonitorPrivateLinkScope refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getPrivateLinkScopes()
-                .getByResourceGroupWithResponse(resourceGroupName, scopeName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getPrivateLinkScopes()
+            .getByResourceGroupWithResponse(resourceGroupName, scopeName, context).getValue();
         return this;
     }
 

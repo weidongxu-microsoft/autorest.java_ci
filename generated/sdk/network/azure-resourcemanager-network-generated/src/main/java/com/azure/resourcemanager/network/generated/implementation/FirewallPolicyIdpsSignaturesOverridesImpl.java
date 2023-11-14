@@ -22,30 +22,26 @@ public final class FirewallPolicyIdpsSignaturesOverridesImpl implements Firewall
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public FirewallPolicyIdpsSignaturesOverridesImpl(
-        FirewallPolicyIdpsSignaturesOverridesClient innerClient,
+    public FirewallPolicyIdpsSignaturesOverridesImpl(FirewallPolicyIdpsSignaturesOverridesClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<SignaturesOverrides> patchWithResponse(
-        String resourceGroupName, String firewallPolicyName, SignaturesOverridesInner parameters, Context context) {
-        Response<SignaturesOverridesInner> inner =
-            this.serviceClient().patchWithResponse(resourceGroupName, firewallPolicyName, parameters, context);
+    public Response<SignaturesOverrides> patchWithResponse(String resourceGroupName, String firewallPolicyName,
+        SignaturesOverridesInner parameters, Context context) {
+        Response<SignaturesOverridesInner> inner
+            = this.serviceClient().patchWithResponse(resourceGroupName, firewallPolicyName, parameters, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new SignaturesOverridesImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public SignaturesOverrides patch(
-        String resourceGroupName, String firewallPolicyName, SignaturesOverridesInner parameters) {
+    public SignaturesOverrides patch(String resourceGroupName, String firewallPolicyName,
+        SignaturesOverridesInner parameters) {
         SignaturesOverridesInner inner = this.serviceClient().patch(resourceGroupName, firewallPolicyName, parameters);
         if (inner != null) {
             return new SignaturesOverridesImpl(inner, this.manager());
@@ -54,23 +50,20 @@ public final class FirewallPolicyIdpsSignaturesOverridesImpl implements Firewall
         }
     }
 
-    public Response<SignaturesOverrides> putWithResponse(
-        String resourceGroupName, String firewallPolicyName, SignaturesOverridesInner parameters, Context context) {
-        Response<SignaturesOverridesInner> inner =
-            this.serviceClient().putWithResponse(resourceGroupName, firewallPolicyName, parameters, context);
+    public Response<SignaturesOverrides> putWithResponse(String resourceGroupName, String firewallPolicyName,
+        SignaturesOverridesInner parameters, Context context) {
+        Response<SignaturesOverridesInner> inner
+            = this.serviceClient().putWithResponse(resourceGroupName, firewallPolicyName, parameters, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new SignaturesOverridesImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public SignaturesOverrides put(
-        String resourceGroupName, String firewallPolicyName, SignaturesOverridesInner parameters) {
+    public SignaturesOverrides put(String resourceGroupName, String firewallPolicyName,
+        SignaturesOverridesInner parameters) {
         SignaturesOverridesInner inner = this.serviceClient().put(resourceGroupName, firewallPolicyName, parameters);
         if (inner != null) {
             return new SignaturesOverridesImpl(inner, this.manager());
@@ -79,15 +72,12 @@ public final class FirewallPolicyIdpsSignaturesOverridesImpl implements Firewall
         }
     }
 
-    public Response<SignaturesOverrides> getWithResponse(
-        String resourceGroupName, String firewallPolicyName, Context context) {
-        Response<SignaturesOverridesInner> inner =
-            this.serviceClient().getWithResponse(resourceGroupName, firewallPolicyName, context);
+    public Response<SignaturesOverrides> getWithResponse(String resourceGroupName, String firewallPolicyName,
+        Context context) {
+        Response<SignaturesOverridesInner> inner
+            = this.serviceClient().getWithResponse(resourceGroupName, firewallPolicyName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new SignaturesOverridesImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -103,15 +93,12 @@ public final class FirewallPolicyIdpsSignaturesOverridesImpl implements Firewall
         }
     }
 
-    public Response<SignaturesOverridesList> listWithResponse(
-        String resourceGroupName, String firewallPolicyName, Context context) {
-        Response<SignaturesOverridesListInner> inner =
-            this.serviceClient().listWithResponse(resourceGroupName, firewallPolicyName, context);
+    public Response<SignaturesOverridesList> listWithResponse(String resourceGroupName, String firewallPolicyName,
+        Context context) {
+        Response<SignaturesOverridesListInner> inner
+            = this.serviceClient().listWithResponse(resourceGroupName, firewallPolicyName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new SignaturesOverridesListImpl(inner.getValue(), this.manager()));
         } else {
             return null;

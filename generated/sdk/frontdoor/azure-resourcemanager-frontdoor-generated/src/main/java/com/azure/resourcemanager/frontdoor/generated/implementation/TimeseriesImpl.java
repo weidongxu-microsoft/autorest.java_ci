@@ -18,8 +18,8 @@ public final class TimeseriesImpl implements Timeseries {
 
     private final com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager;
 
-    TimeseriesImpl(
-        TimeseriesInner innerObject, com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager) {
+    TimeseriesImpl(TimeseriesInner innerObject,
+        com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

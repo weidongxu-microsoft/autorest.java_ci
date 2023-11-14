@@ -12,8 +12,7 @@ public final class CsmPublishingCredentialsPoliciesEntityImpl implements CsmPubl
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    CsmPublishingCredentialsPoliciesEntityImpl(
-        CsmPublishingCredentialsPoliciesEntityInner innerObject,
+    CsmPublishingCredentialsPoliciesEntityImpl(CsmPublishingCredentialsPoliciesEntityInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

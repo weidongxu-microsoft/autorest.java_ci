@@ -7,15 +7,23 @@ package com.azure.resourcemanager.keyvault.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** The type of the action. The value should be compared case-insensitively. */
+/**
+ * The type of action.
+ */
 public enum KeyRotationPolicyActionType {
-    /** Enum value Rotate. */
-    ROTATE("Rotate"),
+    /**
+     * Enum value rotate.
+     */
+    ROTATE("rotate"),
 
-    /** Enum value Notify. */
-    NOTIFY("Notify");
+    /**
+     * Enum value notify.
+     */
+    NOTIFY("notify");
 
-    /** The actual serialized value for a KeyRotationPolicyActionType instance. */
+    /**
+     * The actual serialized value for a KeyRotationPolicyActionType instance.
+     */
     private final String value;
 
     KeyRotationPolicyActionType(String value) {
@@ -24,7 +32,7 @@ public enum KeyRotationPolicyActionType {
 
     /**
      * Parses a serialized value to a KeyRotationPolicyActionType instance.
-     *
+     * 
      * @param value the serialized value to parse.
      * @return the parsed KeyRotationPolicyActionType object, or null if unable to parse.
      */
@@ -42,7 +50,9 @@ public enum KeyRotationPolicyActionType {
         return null;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @JsonValue
     @Override
     public String toString() {

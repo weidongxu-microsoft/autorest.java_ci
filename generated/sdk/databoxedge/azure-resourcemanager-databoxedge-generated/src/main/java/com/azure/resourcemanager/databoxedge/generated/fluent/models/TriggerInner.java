@@ -14,7 +14,9 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** Trigger details. */
+/**
+ * Trigger details.
+ */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
     include = JsonTypeInfo.As.PROPERTY,
@@ -23,8 +25,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @JsonTypeName("Trigger")
 @JsonSubTypes({
     @JsonSubTypes.Type(name = "FileEvent", value = FileEventTrigger.class),
-    @JsonSubTypes.Type(name = "PeriodicTimerEvent", value = PeriodicTimerEventTrigger.class)
-})
+    @JsonSubTypes.Type(name = "PeriodicTimerEvent", value = PeriodicTimerEventTrigger.class) })
 @Immutable
 public class TriggerInner extends ArmBaseModel {
     /*
@@ -33,13 +34,15 @@ public class TriggerInner extends ArmBaseModel {
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
-    /** Creates an instance of TriggerInner class. */
+    /**
+     * Creates an instance of TriggerInner class.
+     */
     public TriggerInner() {
     }
 
     /**
      * Get the systemData property: Metadata pertaining to creation and last modification of Trigger.
-     *
+     * 
      * @return the systemData value.
      */
     public SystemData systemData() {
@@ -48,7 +51,7 @@ public class TriggerInner extends ArmBaseModel {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

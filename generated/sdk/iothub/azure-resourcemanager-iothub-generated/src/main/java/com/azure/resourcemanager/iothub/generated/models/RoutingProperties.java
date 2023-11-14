@@ -45,7 +45,9 @@ public final class RoutingProperties {
     @JsonProperty(value = "enrichments")
     private List<EnrichmentProperties> enrichments;
 
-    /** Creates an instance of RoutingProperties class. */
+    /**
+     * Creates an instance of RoutingProperties class.
+     */
     public RoutingProperties() {
     }
 
@@ -53,7 +55,7 @@ public final class RoutingProperties {
      * Get the endpoints property: The properties related to the custom endpoints to which your IoT hub routes messages
      * based on the routing rules. A maximum of 10 custom endpoints are allowed across all endpoint types for paid hubs
      * and only 1 custom endpoint is allowed across all endpoint types for free hubs.
-     *
+     * 
      * @return the endpoints value.
      */
     public RoutingEndpoints endpoints() {
@@ -64,7 +66,7 @@ public final class RoutingProperties {
      * Set the endpoints property: The properties related to the custom endpoints to which your IoT hub routes messages
      * based on the routing rules. A maximum of 10 custom endpoints are allowed across all endpoint types for paid hubs
      * and only 1 custom endpoint is allowed across all endpoint types for free hubs.
-     *
+     * 
      * @param endpoints the endpoints value to set.
      * @return the RoutingProperties object itself.
      */
@@ -77,7 +79,7 @@ public final class RoutingProperties {
      * Get the routes property: The list of user-provided routing rules that the IoT hub uses to route messages to
      * built-in and custom endpoints. A maximum of 100 routing rules are allowed for paid hubs and a maximum of 5
      * routing rules are allowed for free hubs.
-     *
+     * 
      * @return the routes value.
      */
     public List<RouteProperties> routes() {
@@ -88,7 +90,7 @@ public final class RoutingProperties {
      * Set the routes property: The list of user-provided routing rules that the IoT hub uses to route messages to
      * built-in and custom endpoints. A maximum of 100 routing rules are allowed for paid hubs and a maximum of 5
      * routing rules are allowed for free hubs.
-     *
+     * 
      * @param routes the routes value to set.
      * @return the RoutingProperties object itself.
      */
@@ -101,7 +103,7 @@ public final class RoutingProperties {
      * Get the fallbackRoute property: The properties of the route that is used as a fall-back route when none of the
      * conditions specified in the 'routes' section are met. This is an optional parameter. When this property is not
      * present in the template, the fallback route is disabled by default.
-     *
+     * 
      * @return the fallbackRoute value.
      */
     public FallbackRouteProperties fallbackRoute() {
@@ -112,7 +114,7 @@ public final class RoutingProperties {
      * Set the fallbackRoute property: The properties of the route that is used as a fall-back route when none of the
      * conditions specified in the 'routes' section are met. This is an optional parameter. When this property is not
      * present in the template, the fallback route is disabled by default.
-     *
+     * 
      * @param fallbackRoute the fallbackRoute value to set.
      * @return the RoutingProperties object itself.
      */
@@ -124,7 +126,7 @@ public final class RoutingProperties {
     /**
      * Get the enrichments property: The list of user-provided enrichments that the IoT hub applies to messages to be
      * delivered to built-in and custom endpoints. See: https://aka.ms/telemetryoneventgrid.
-     *
+     * 
      * @return the enrichments value.
      */
     public List<EnrichmentProperties> enrichments() {
@@ -134,7 +136,7 @@ public final class RoutingProperties {
     /**
      * Set the enrichments property: The list of user-provided enrichments that the IoT hub applies to messages to be
      * delivered to built-in and custom endpoints. See: https://aka.ms/telemetryoneventgrid.
-     *
+     * 
      * @param enrichments the enrichments value to set.
      * @return the RoutingProperties object itself.
      */
@@ -145,7 +147,7 @@ public final class RoutingProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

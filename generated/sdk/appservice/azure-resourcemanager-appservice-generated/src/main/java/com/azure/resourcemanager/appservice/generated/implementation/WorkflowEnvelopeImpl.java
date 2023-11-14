@@ -13,8 +13,7 @@ public final class WorkflowEnvelopeImpl implements WorkflowEnvelope {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    WorkflowEnvelopeImpl(
-        WorkflowEnvelopeInner innerObject,
+    WorkflowEnvelopeImpl(WorkflowEnvelopeInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

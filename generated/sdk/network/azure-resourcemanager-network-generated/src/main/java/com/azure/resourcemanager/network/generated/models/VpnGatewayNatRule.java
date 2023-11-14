@@ -9,11 +9,13 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.VpnGatewayNatRuleInner;
 import java.util.List;
 
-/** An immutable client-side representation of VpnGatewayNatRule. */
+/**
+ * An immutable client-side representation of VpnGatewayNatRule.
+ */
 public interface VpnGatewayNatRule {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.
-     *
+     * 
      * @return the id value.
      */
     String id();
@@ -21,111 +23,119 @@ public interface VpnGatewayNatRule {
     /**
      * Gets the name property: The name of the resource that is unique within a resource group. This name can be used to
      * access the resource.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the etag property: A unique read-only string that changes whenever the resource is updated.
-     *
+     * 
      * @return the etag value.
      */
     String etag();
 
     /**
      * Gets the type property: Resource type.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the provisioningState property: The provisioning state of the NAT Rule resource.
-     *
+     * 
      * @return the provisioningState value.
      */
     ProvisioningState provisioningState();
 
     /**
      * Gets the typePropertiesType property: The type of NAT rule for VPN NAT.
-     *
+     * 
      * @return the typePropertiesType value.
      */
     VpnNatRuleType typePropertiesType();
 
     /**
      * Gets the mode property: The Source NAT direction of a VPN NAT.
-     *
+     * 
      * @return the mode value.
      */
     VpnNatRuleMode mode();
 
     /**
      * Gets the internalMappings property: The private IP address internal mapping for NAT.
-     *
+     * 
      * @return the internalMappings value.
      */
     List<VpnNatRuleMapping> internalMappings();
 
     /**
      * Gets the externalMappings property: The private IP address external mapping for NAT.
-     *
+     * 
      * @return the externalMappings value.
      */
     List<VpnNatRuleMapping> externalMappings();
 
     /**
      * Gets the ipConfigurationId property: The IP Configuration ID this NAT rule applies to.
-     *
+     * 
      * @return the ipConfigurationId value.
      */
     String ipConfigurationId();
 
     /**
      * Gets the egressVpnSiteLinkConnections property: List of egress VpnSiteLinkConnections.
-     *
+     * 
      * @return the egressVpnSiteLinkConnections value.
      */
     List<SubResource> egressVpnSiteLinkConnections();
 
     /**
      * Gets the ingressVpnSiteLinkConnections property: List of ingress VpnSiteLinkConnections.
-     *
+     * 
      * @return the ingressVpnSiteLinkConnections value.
      */
     List<SubResource> ingressVpnSiteLinkConnections();
 
     /**
      * Gets the name of the resource group.
-     *
+     * 
      * @return the name of the resource group.
      */
     String resourceGroupName();
 
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.VpnGatewayNatRuleInner object.
-     *
+     * 
      * @return the inner object.
      */
     VpnGatewayNatRuleInner innerModel();
 
-    /** The entirety of the VpnGatewayNatRule definition. */
+    /**
+     * The entirety of the VpnGatewayNatRule definition.
+     */
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
 
-    /** The VpnGatewayNatRule definition stages. */
+    /**
+     * The VpnGatewayNatRule definition stages.
+     */
     interface DefinitionStages {
-        /** The first stage of the VpnGatewayNatRule definition. */
+        /**
+         * The first stage of the VpnGatewayNatRule definition.
+         */
         interface Blank extends WithParentResource {
         }
 
-        /** The stage of the VpnGatewayNatRule definition allowing to specify parent resource. */
+        /**
+         * The stage of the VpnGatewayNatRule definition allowing to specify parent resource.
+         */
         interface WithParentResource {
             /**
              * Specifies resourceGroupName, gatewayName.
-             *
+             * 
              * @param resourceGroupName The resource group name of the VpnGateway.
              * @param gatewayName The name of the gateway.
              * @return the next definition stage.
@@ -137,91 +147,99 @@ public interface VpnGatewayNatRule {
          * The stage of the VpnGatewayNatRule definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
          */
-        interface WithCreate
-            extends DefinitionStages.WithName,
-                DefinitionStages.WithTypePropertiesType,
-                DefinitionStages.WithMode,
-                DefinitionStages.WithInternalMappings,
-                DefinitionStages.WithExternalMappings,
-                DefinitionStages.WithIpConfigurationId {
+        interface WithCreate extends DefinitionStages.WithName, DefinitionStages.WithTypePropertiesType,
+            DefinitionStages.WithMode, DefinitionStages.WithInternalMappings, DefinitionStages.WithExternalMappings,
+            DefinitionStages.WithIpConfigurationId {
             /**
              * Executes the create request.
-             *
+             * 
              * @return the created resource.
              */
             VpnGatewayNatRule create();
 
             /**
              * Executes the create request.
-             *
+             * 
              * @param context The context to associate with this operation.
              * @return the created resource.
              */
             VpnGatewayNatRule create(Context context);
         }
 
-        /** The stage of the VpnGatewayNatRule definition allowing to specify name. */
+        /**
+         * The stage of the VpnGatewayNatRule definition allowing to specify name.
+         */
         interface WithName {
             /**
              * Specifies the name property: The name of the resource that is unique within a resource group. This name
              * can be used to access the resource..
-             *
+             * 
              * @param name The name of the resource that is unique within a resource group. This name can be used to
-             *     access the resource.
+             * access the resource.
              * @return the next definition stage.
              */
             WithCreate withName(String name);
         }
 
-        /** The stage of the VpnGatewayNatRule definition allowing to specify typePropertiesType. */
+        /**
+         * The stage of the VpnGatewayNatRule definition allowing to specify typePropertiesType.
+         */
         interface WithTypePropertiesType {
             /**
              * Specifies the typePropertiesType property: The type of NAT rule for VPN NAT..
-             *
+             * 
              * @param typePropertiesType The type of NAT rule for VPN NAT.
              * @return the next definition stage.
              */
             WithCreate withTypePropertiesType(VpnNatRuleType typePropertiesType);
         }
 
-        /** The stage of the VpnGatewayNatRule definition allowing to specify mode. */
+        /**
+         * The stage of the VpnGatewayNatRule definition allowing to specify mode.
+         */
         interface WithMode {
             /**
              * Specifies the mode property: The Source NAT direction of a VPN NAT..
-             *
+             * 
              * @param mode The Source NAT direction of a VPN NAT.
              * @return the next definition stage.
              */
             WithCreate withMode(VpnNatRuleMode mode);
         }
 
-        /** The stage of the VpnGatewayNatRule definition allowing to specify internalMappings. */
+        /**
+         * The stage of the VpnGatewayNatRule definition allowing to specify internalMappings.
+         */
         interface WithInternalMappings {
             /**
              * Specifies the internalMappings property: The private IP address internal mapping for NAT..
-             *
+             * 
              * @param internalMappings The private IP address internal mapping for NAT.
              * @return the next definition stage.
              */
             WithCreate withInternalMappings(List<VpnNatRuleMapping> internalMappings);
         }
 
-        /** The stage of the VpnGatewayNatRule definition allowing to specify externalMappings. */
+        /**
+         * The stage of the VpnGatewayNatRule definition allowing to specify externalMappings.
+         */
         interface WithExternalMappings {
             /**
              * Specifies the externalMappings property: The private IP address external mapping for NAT..
-             *
+             * 
              * @param externalMappings The private IP address external mapping for NAT.
              * @return the next definition stage.
              */
             WithCreate withExternalMappings(List<VpnNatRuleMapping> externalMappings);
         }
 
-        /** The stage of the VpnGatewayNatRule definition allowing to specify ipConfigurationId. */
+        /**
+         * The stage of the VpnGatewayNatRule definition allowing to specify ipConfigurationId.
+         */
         interface WithIpConfigurationId {
             /**
              * Specifies the ipConfigurationId property: The IP Configuration ID this NAT rule applies to..
-             *
+             * 
              * @param ipConfigurationId The IP Configuration ID this NAT rule applies to.
              * @return the next definition stage.
              */
@@ -231,99 +249,110 @@ public interface VpnGatewayNatRule {
 
     /**
      * Begins update for the VpnGatewayNatRule resource.
-     *
+     * 
      * @return the stage of resource update.
      */
     VpnGatewayNatRule.Update update();
 
-    /** The template for VpnGatewayNatRule update. */
-    interface Update
-        extends UpdateStages.WithName,
-            UpdateStages.WithTypePropertiesType,
-            UpdateStages.WithMode,
-            UpdateStages.WithInternalMappings,
-            UpdateStages.WithExternalMappings,
-            UpdateStages.WithIpConfigurationId {
+    /**
+     * The template for VpnGatewayNatRule update.
+     */
+    interface Update extends UpdateStages.WithName, UpdateStages.WithTypePropertiesType, UpdateStages.WithMode,
+        UpdateStages.WithInternalMappings, UpdateStages.WithExternalMappings, UpdateStages.WithIpConfigurationId {
         /**
          * Executes the update request.
-         *
+         * 
          * @return the updated resource.
          */
         VpnGatewayNatRule apply();
 
         /**
          * Executes the update request.
-         *
+         * 
          * @param context The context to associate with this operation.
          * @return the updated resource.
          */
         VpnGatewayNatRule apply(Context context);
     }
 
-    /** The VpnGatewayNatRule update stages. */
+    /**
+     * The VpnGatewayNatRule update stages.
+     */
     interface UpdateStages {
-        /** The stage of the VpnGatewayNatRule update allowing to specify name. */
+        /**
+         * The stage of the VpnGatewayNatRule update allowing to specify name.
+         */
         interface WithName {
             /**
              * Specifies the name property: The name of the resource that is unique within a resource group. This name
              * can be used to access the resource..
-             *
+             * 
              * @param name The name of the resource that is unique within a resource group. This name can be used to
-             *     access the resource.
+             * access the resource.
              * @return the next definition stage.
              */
             Update withName(String name);
         }
 
-        /** The stage of the VpnGatewayNatRule update allowing to specify typePropertiesType. */
+        /**
+         * The stage of the VpnGatewayNatRule update allowing to specify typePropertiesType.
+         */
         interface WithTypePropertiesType {
             /**
              * Specifies the typePropertiesType property: The type of NAT rule for VPN NAT..
-             *
+             * 
              * @param typePropertiesType The type of NAT rule for VPN NAT.
              * @return the next definition stage.
              */
             Update withTypePropertiesType(VpnNatRuleType typePropertiesType);
         }
 
-        /** The stage of the VpnGatewayNatRule update allowing to specify mode. */
+        /**
+         * The stage of the VpnGatewayNatRule update allowing to specify mode.
+         */
         interface WithMode {
             /**
              * Specifies the mode property: The Source NAT direction of a VPN NAT..
-             *
+             * 
              * @param mode The Source NAT direction of a VPN NAT.
              * @return the next definition stage.
              */
             Update withMode(VpnNatRuleMode mode);
         }
 
-        /** The stage of the VpnGatewayNatRule update allowing to specify internalMappings. */
+        /**
+         * The stage of the VpnGatewayNatRule update allowing to specify internalMappings.
+         */
         interface WithInternalMappings {
             /**
              * Specifies the internalMappings property: The private IP address internal mapping for NAT..
-             *
+             * 
              * @param internalMappings The private IP address internal mapping for NAT.
              * @return the next definition stage.
              */
             Update withInternalMappings(List<VpnNatRuleMapping> internalMappings);
         }
 
-        /** The stage of the VpnGatewayNatRule update allowing to specify externalMappings. */
+        /**
+         * The stage of the VpnGatewayNatRule update allowing to specify externalMappings.
+         */
         interface WithExternalMappings {
             /**
              * Specifies the externalMappings property: The private IP address external mapping for NAT..
-             *
+             * 
              * @param externalMappings The private IP address external mapping for NAT.
              * @return the next definition stage.
              */
             Update withExternalMappings(List<VpnNatRuleMapping> externalMappings);
         }
 
-        /** The stage of the VpnGatewayNatRule update allowing to specify ipConfigurationId. */
+        /**
+         * The stage of the VpnGatewayNatRule update allowing to specify ipConfigurationId.
+         */
         interface WithIpConfigurationId {
             /**
              * Specifies the ipConfigurationId property: The IP Configuration ID this NAT rule applies to..
-             *
+             * 
              * @param ipConfigurationId The IP Configuration ID this NAT rule applies to.
              * @return the next definition stage.
              */
@@ -333,14 +362,14 @@ public interface VpnGatewayNatRule {
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @return the refreshed resource.
      */
     VpnGatewayNatRule refresh();
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @return the refreshed resource.
      */

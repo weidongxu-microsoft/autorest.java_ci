@@ -9,7 +9,9 @@ import com.azure.resourcemanager.mysql.generated.fluent.models.CapabilityInner;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** location capability set. */
+/**
+ * location capability set.
+ */
 @Immutable
 public final class CapabilitySetsList {
     /*
@@ -24,13 +26,15 @@ public final class CapabilitySetsList {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
-    /** Creates an instance of CapabilitySetsList class. */
+    /**
+     * Creates an instance of CapabilitySetsList class.
+     */
     public CapabilitySetsList() {
     }
 
     /**
      * Get the value property: A list of supported capability sets.
-     *
+     * 
      * @return the value value.
      */
     public List<CapabilityInner> value() {
@@ -39,7 +43,7 @@ public final class CapabilitySetsList {
 
     /**
      * Get the nextLink property: Link to retrieve next page of results.
-     *
+     * 
      * @return the nextLink value.
      */
     public String nextLink() {
@@ -48,7 +52,7 @@ public final class CapabilitySetsList {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

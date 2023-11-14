@@ -16,8 +16,7 @@ public final class NetworkVirtualApplianceSkuImpl implements NetworkVirtualAppli
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    NetworkVirtualApplianceSkuImpl(
-        NetworkVirtualApplianceSkuInner innerObject,
+    NetworkVirtualApplianceSkuImpl(NetworkVirtualApplianceSkuInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

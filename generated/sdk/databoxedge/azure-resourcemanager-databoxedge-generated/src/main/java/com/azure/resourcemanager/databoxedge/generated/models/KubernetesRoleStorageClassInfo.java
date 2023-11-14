@@ -7,7 +7,9 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 import com.azure.core.annotation.Immutable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Kubernetes storage class info. */
+/**
+ * Kubernetes storage class info.
+ */
 @Immutable
 public final class KubernetesRoleStorageClassInfo {
     /*
@@ -28,13 +30,15 @@ public final class KubernetesRoleStorageClassInfo {
     @JsonProperty(value = "posixCompliant", access = JsonProperty.Access.WRITE_ONLY)
     private PosixComplianceStatus posixCompliant;
 
-    /** Creates an instance of KubernetesRoleStorageClassInfo class. */
+    /**
+     * Creates an instance of KubernetesRoleStorageClassInfo class.
+     */
     public KubernetesRoleStorageClassInfo() {
     }
 
     /**
      * Get the name property: Storage class name.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -43,7 +47,7 @@ public final class KubernetesRoleStorageClassInfo {
 
     /**
      * Get the type property: Storage class type.
-     *
+     * 
      * @return the type value.
      */
     public String type() {
@@ -52,7 +56,7 @@ public final class KubernetesRoleStorageClassInfo {
 
     /**
      * Get the posixCompliant property: If provisioned storage is posix compliant.
-     *
+     * 
      * @return the posixCompliant value.
      */
     public PosixComplianceStatus posixCompliant() {
@@ -61,7 +65,7 @@ public final class KubernetesRoleStorageClassInfo {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

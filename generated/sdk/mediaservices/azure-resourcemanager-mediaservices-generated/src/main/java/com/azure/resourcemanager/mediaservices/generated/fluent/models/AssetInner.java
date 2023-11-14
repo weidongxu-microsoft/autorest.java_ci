@@ -12,7 +12,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
-/** An Asset. */
+/**
+ * An Asset.
+ */
 @Fluent
 public final class AssetInner extends ProxyResource {
     /*
@@ -27,13 +29,15 @@ public final class AssetInner extends ProxyResource {
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
-    /** Creates an instance of AssetInner class. */
+    /**
+     * Creates an instance of AssetInner class.
+     */
     public AssetInner() {
     }
 
     /**
      * Get the innerProperties property: The resource properties.
-     *
+     * 
      * @return the innerProperties value.
      */
     private AssetProperties innerProperties() {
@@ -42,7 +46,7 @@ public final class AssetInner extends ProxyResource {
 
     /**
      * Get the systemData property: The system metadata relating to this resource.
-     *
+     * 
      * @return the systemData value.
      */
     public SystemData systemData() {
@@ -51,7 +55,7 @@ public final class AssetInner extends ProxyResource {
 
     /**
      * Get the assetId property: The Asset ID.
-     *
+     * 
      * @return the assetId value.
      */
     public UUID assetId() {
@@ -60,7 +64,7 @@ public final class AssetInner extends ProxyResource {
 
     /**
      * Get the created property: The creation date of the Asset.
-     *
+     * 
      * @return the created value.
      */
     public OffsetDateTime created() {
@@ -69,7 +73,7 @@ public final class AssetInner extends ProxyResource {
 
     /**
      * Get the lastModified property: The last modified date of the Asset.
-     *
+     * 
      * @return the lastModified value.
      */
     public OffsetDateTime lastModified() {
@@ -78,7 +82,7 @@ public final class AssetInner extends ProxyResource {
 
     /**
      * Get the alternateId property: The alternate ID of the Asset.
-     *
+     * 
      * @return the alternateId value.
      */
     public String alternateId() {
@@ -87,7 +91,7 @@ public final class AssetInner extends ProxyResource {
 
     /**
      * Set the alternateId property: The alternate ID of the Asset.
-     *
+     * 
      * @param alternateId the alternateId value to set.
      * @return the AssetInner object itself.
      */
@@ -101,7 +105,7 @@ public final class AssetInner extends ProxyResource {
 
     /**
      * Get the description property: The Asset description.
-     *
+     * 
      * @return the description value.
      */
     public String description() {
@@ -110,7 +114,7 @@ public final class AssetInner extends ProxyResource {
 
     /**
      * Set the description property: The Asset description.
-     *
+     * 
      * @param description the description value to set.
      * @return the AssetInner object itself.
      */
@@ -124,7 +128,7 @@ public final class AssetInner extends ProxyResource {
 
     /**
      * Get the container property: The name of the asset blob container.
-     *
+     * 
      * @return the container value.
      */
     public String container() {
@@ -133,7 +137,7 @@ public final class AssetInner extends ProxyResource {
 
     /**
      * Set the container property: The name of the asset blob container.
-     *
+     * 
      * @param container the container value to set.
      * @return the AssetInner object itself.
      */
@@ -147,7 +151,7 @@ public final class AssetInner extends ProxyResource {
 
     /**
      * Get the storageAccountName property: The name of the storage account.
-     *
+     * 
      * @return the storageAccountName value.
      */
     public String storageAccountName() {
@@ -156,7 +160,7 @@ public final class AssetInner extends ProxyResource {
 
     /**
      * Set the storageAccountName property: The name of the storage account.
-     *
+     * 
      * @param storageAccountName the storageAccountName value to set.
      * @return the AssetInner object itself.
      */
@@ -170,7 +174,7 @@ public final class AssetInner extends ProxyResource {
 
     /**
      * Get the storageEncryptionFormat property: The Asset encryption format. One of None or MediaStorageEncryption.
-     *
+     * 
      * @return the storageEncryptionFormat value.
      */
     public AssetStorageEncryptionFormat storageEncryptionFormat() {
@@ -179,7 +183,7 @@ public final class AssetInner extends ProxyResource {
 
     /**
      * Get the encryptionScope property: The Asset container encryption scope in the storage account.
-     *
+     * 
      * @return the encryptionScope value.
      */
     public String encryptionScope() {
@@ -188,7 +192,7 @@ public final class AssetInner extends ProxyResource {
 
     /**
      * Set the encryptionScope property: The Asset container encryption scope in the storage account.
-     *
+     * 
      * @param encryptionScope the encryptionScope value to set.
      * @return the AssetInner object itself.
      */
@@ -202,7 +206,7 @@ public final class AssetInner extends ProxyResource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

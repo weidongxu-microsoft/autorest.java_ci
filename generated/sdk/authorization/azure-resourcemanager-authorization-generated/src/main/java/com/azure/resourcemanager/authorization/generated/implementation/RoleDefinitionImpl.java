@@ -45,12 +45,8 @@ public final class RoleDefinitionImpl implements RoleDefinition, RoleDefinition.
     public List<Permission> permissions() {
         List<PermissionInner> inner = this.innerModel().permissions();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new PermissionImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(
+                inner.stream().map(inner1 -> new PermissionImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -83,27 +79,19 @@ public final class RoleDefinitionImpl implements RoleDefinition, RoleDefinition.
     }
 
     public RoleDefinition create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getRoleDefinitions()
-                .createOrUpdateWithResponse(scope, roleDefinitionId, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getRoleDefinitions()
+            .createOrUpdateWithResponse(scope, roleDefinitionId, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public RoleDefinition create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getRoleDefinitions()
-                .createOrUpdateWithResponse(scope, roleDefinitionId, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getRoleDefinitions()
+            .createOrUpdateWithResponse(scope, roleDefinitionId, this.innerModel(), context).getValue();
         return this;
     }
 
-    RoleDefinitionImpl(
-        String name, com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager) {
+    RoleDefinitionImpl(String name,
+        com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager) {
         this.innerObject = new RoleDefinitionInner();
         this.serviceManager = serviceManager;
         this.roleDefinitionId = name;
@@ -114,61 +102,36 @@ public final class RoleDefinitionImpl implements RoleDefinition, RoleDefinition.
     }
 
     public RoleDefinition apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getRoleDefinitions()
-                .createOrUpdateWithResponse(scope, roleDefinitionId, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getRoleDefinitions()
+            .createOrUpdateWithResponse(scope, roleDefinitionId, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public RoleDefinition apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getRoleDefinitions()
-                .createOrUpdateWithResponse(scope, roleDefinitionId, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getRoleDefinitions()
+            .createOrUpdateWithResponse(scope, roleDefinitionId, this.innerModel(), context).getValue();
         return this;
     }
 
-    RoleDefinitionImpl(
-        RoleDefinitionInner innerObject,
+    RoleDefinitionImpl(RoleDefinitionInner innerObject,
         com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.scope =
-            Utils
-                .getValueFromIdByParameterName(
-                    innerObject.id(),
-                    "/{scope}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId}",
-                    "scope");
-        this.roleDefinitionId =
-            Utils
-                .getValueFromIdByParameterName(
-                    innerObject.id(),
-                    "/{scope}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId}",
-                    "roleDefinitionId");
+        this.scope = Utils.getValueFromIdByParameterName(innerObject.id(),
+            "/{scope}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId}", "scope");
+        this.roleDefinitionId = Utils.getValueFromIdByParameterName(innerObject.id(),
+            "/{scope}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId}", "roleDefinitionId");
     }
 
     public RoleDefinition refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getRoleDefinitions()
-                .getWithResponse(scope, roleDefinitionId, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getRoleDefinitions()
+            .getWithResponse(scope, roleDefinitionId, Context.NONE).getValue();
         return this;
     }
 
     public RoleDefinition refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getRoleDefinitions()
-                .getWithResponse(scope, roleDefinitionId, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getRoleDefinitions()
+            .getWithResponse(scope, roleDefinitionId, context).getValue();
         return this;
     }
 

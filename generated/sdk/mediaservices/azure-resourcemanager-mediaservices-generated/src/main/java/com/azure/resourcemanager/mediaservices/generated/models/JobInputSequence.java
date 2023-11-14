@@ -11,8 +11,8 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.List;
 
 /**
- * A Sequence contains an ordered list of Clips where each clip is a JobInput. The Sequence will be treated as a single
- * input.
+ * A Sequence contains an ordered list of Clips where each clip is a JobInput. The Sequence will be treated as a
+ * single input.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
 @JsonTypeName("#Microsoft.Media.JobInputSequence")
@@ -24,13 +24,15 @@ public final class JobInputSequence extends JobInput {
     @JsonProperty(value = "inputs")
     private List<JobInputClip> inputs;
 
-    /** Creates an instance of JobInputSequence class. */
+    /**
+     * Creates an instance of JobInputSequence class.
+     */
     public JobInputSequence() {
     }
 
     /**
      * Get the inputs property: JobInputs that make up the timeline.
-     *
+     * 
      * @return the inputs value.
      */
     public List<JobInputClip> inputs() {
@@ -39,7 +41,7 @@ public final class JobInputSequence extends JobInput {
 
     /**
      * Set the inputs property: JobInputs that make up the timeline.
-     *
+     * 
      * @param inputs the inputs value to set.
      * @return the JobInputSequence object itself.
      */
@@ -50,7 +52,7 @@ public final class JobInputSequence extends JobInput {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

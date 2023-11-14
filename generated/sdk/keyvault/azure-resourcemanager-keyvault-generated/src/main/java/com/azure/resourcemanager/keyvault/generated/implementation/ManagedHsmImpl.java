@@ -11,6 +11,7 @@ import com.azure.resourcemanager.keyvault.generated.fluent.models.ManagedHsmInne
 import com.azure.resourcemanager.keyvault.generated.models.ManagedHsm;
 import com.azure.resourcemanager.keyvault.generated.models.ManagedHsmProperties;
 import com.azure.resourcemanager.keyvault.generated.models.ManagedHsmSku;
+import com.azure.resourcemanager.keyvault.generated.models.ManagedServiceIdentity;
 import java.util.Collections;
 import java.util.Map;
 
@@ -52,6 +53,10 @@ public final class ManagedHsmImpl implements ManagedHsm, ManagedHsm.Definition, 
         return this.innerModel().systemData();
     }
 
+    public ManagedServiceIdentity identity() {
+        return this.innerModel().identity();
+    }
+
     public ManagedHsmProperties properties() {
         return this.innerModel().properties();
     }
@@ -86,20 +91,14 @@ public final class ManagedHsmImpl implements ManagedHsm, ManagedHsm.Definition, 
     }
 
     public ManagedHsm create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getManagedHsms()
-                .createOrUpdate(resourceGroupName, name, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getManagedHsms().createOrUpdate(resourceGroupName, name,
+            this.innerModel(), Context.NONE);
         return this;
     }
 
     public ManagedHsm create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getManagedHsms()
-                .createOrUpdate(resourceGroupName, name, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getManagedHsms().createOrUpdate(resourceGroupName, name,
+            this.innerModel(), context);
         return this;
     }
 
@@ -114,22 +113,19 @@ public final class ManagedHsmImpl implements ManagedHsm, ManagedHsm.Definition, 
     }
 
     public ManagedHsm apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getManagedHsms()
-                .update(resourceGroupName, name, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getManagedHsms().update(resourceGroupName, name,
+            this.innerModel(), Context.NONE);
         return this;
     }
 
     public ManagedHsm apply(Context context) {
-        this.innerObject =
-            serviceManager.serviceClient().getManagedHsms().update(resourceGroupName, name, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getManagedHsms().update(resourceGroupName, name,
+            this.innerModel(), context);
         return this;
     }
 
-    ManagedHsmImpl(
-        ManagedHsmInner innerObject, com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager) {
+    ManagedHsmImpl(ManagedHsmInner innerObject,
+        com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
@@ -137,22 +133,14 @@ public final class ManagedHsmImpl implements ManagedHsm, ManagedHsm.Definition, 
     }
 
     public ManagedHsm refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getManagedHsms()
-                .getByResourceGroupWithResponse(resourceGroupName, name, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getManagedHsms()
+            .getByResourceGroupWithResponse(resourceGroupName, name, Context.NONE).getValue();
         return this;
     }
 
     public ManagedHsm refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getManagedHsms()
-                .getByResourceGroupWithResponse(resourceGroupName, name, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getManagedHsms()
+            .getByResourceGroupWithResponse(resourceGroupName, name, context).getValue();
         return this;
     }
 
@@ -173,6 +161,11 @@ public final class ManagedHsmImpl implements ManagedHsm, ManagedHsm.Definition, 
 
     public ManagedHsmImpl withSku(ManagedHsmSku sku) {
         this.innerModel().withSku(sku);
+        return this;
+    }
+
+    public ManagedHsmImpl withIdentity(ManagedServiceIdentity identity) {
+        this.innerModel().withIdentity(identity);
         return this;
     }
 

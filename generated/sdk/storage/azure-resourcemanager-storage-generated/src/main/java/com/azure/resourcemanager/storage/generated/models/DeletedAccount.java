@@ -6,39 +6,41 @@ package com.azure.resourcemanager.storage.generated.models;
 
 import com.azure.resourcemanager.storage.generated.fluent.models.DeletedAccountInner;
 
-/** An immutable client-side representation of DeletedAccount. */
+/**
+ * An immutable client-side representation of DeletedAccount.
+ */
 public interface DeletedAccount {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the name property: The name of the resource.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the type property: The type of the resource.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the storageAccountResourceId property: Full resource id of the original storage account.
-     *
+     * 
      * @return the storageAccountResourceId value.
      */
     String storageAccountResourceId();
 
     /**
      * Gets the location property: Location of the deleted account.
-     *
+     * 
      * @return the location value.
      */
     String location();
@@ -46,28 +48,28 @@ public interface DeletedAccount {
     /**
      * Gets the restoreReference property: Can be used to attempt recovering this deleted account via PutStorageAccount
      * API.
-     *
+     * 
      * @return the restoreReference value.
      */
     String restoreReference();
 
     /**
      * Gets the creationTime property: Creation time of the deleted account.
-     *
+     * 
      * @return the creationTime value.
      */
     String creationTime();
 
     /**
      * Gets the deletionTime property: Deletion time of the deleted account.
-     *
+     * 
      * @return the deletionTime value.
      */
     String deletionTime();
 
     /**
      * Gets the inner com.azure.resourcemanager.storage.generated.fluent.models.DeletedAccountInner object.
-     *
+     * 
      * @return the inner object.
      */
     DeletedAccountInner innerModel();

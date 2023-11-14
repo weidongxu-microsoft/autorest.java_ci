@@ -16,7 +16,9 @@ import com.azure.resourcemanager.databoxedge.generated.models.RoleStatus;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** IoT role properties. */
+/**
+ * IoT role properties.
+ */
 @Fluent
 public final class IoTRoleProperties {
     /*
@@ -67,13 +69,15 @@ public final class IoTRoleProperties {
     @JsonProperty(value = "roleStatus", required = true)
     private RoleStatus roleStatus;
 
-    /** Creates an instance of IoTRoleProperties class. */
+    /**
+     * Creates an instance of IoTRoleProperties class.
+     */
     public IoTRoleProperties() {
     }
 
     /**
      * Get the hostPlatform property: Host OS supported by the IoT role.
-     *
+     * 
      * @return the hostPlatform value.
      */
     public PlatformType hostPlatform() {
@@ -82,7 +86,7 @@ public final class IoTRoleProperties {
 
     /**
      * Set the hostPlatform property: Host OS supported by the IoT role.
-     *
+     * 
      * @param hostPlatform the hostPlatform value to set.
      * @return the IoTRoleProperties object itself.
      */
@@ -93,7 +97,7 @@ public final class IoTRoleProperties {
 
     /**
      * Get the ioTDeviceDetails property: IoT device metadata to which data box edge device needs to be connected.
-     *
+     * 
      * @return the ioTDeviceDetails value.
      */
     public IoTDeviceInfo ioTDeviceDetails() {
@@ -102,7 +106,7 @@ public final class IoTRoleProperties {
 
     /**
      * Set the ioTDeviceDetails property: IoT device metadata to which data box edge device needs to be connected.
-     *
+     * 
      * @param ioTDeviceDetails the ioTDeviceDetails value to set.
      * @return the IoTRoleProperties object itself.
      */
@@ -113,7 +117,7 @@ public final class IoTRoleProperties {
 
     /**
      * Get the ioTEdgeDeviceDetails property: IoT edge device to which the IoT role needs to be configured.
-     *
+     * 
      * @return the ioTEdgeDeviceDetails value.
      */
     public IoTDeviceInfo ioTEdgeDeviceDetails() {
@@ -122,7 +126,7 @@ public final class IoTRoleProperties {
 
     /**
      * Set the ioTEdgeDeviceDetails property: IoT edge device to which the IoT role needs to be configured.
-     *
+     * 
      * @param ioTEdgeDeviceDetails the ioTEdgeDeviceDetails value to set.
      * @return the IoTRoleProperties object itself.
      */
@@ -133,7 +137,7 @@ public final class IoTRoleProperties {
 
     /**
      * Get the shareMappings property: Mount points of shares in role(s).
-     *
+     * 
      * @return the shareMappings value.
      */
     public List<MountPointMap> shareMappings() {
@@ -142,7 +146,7 @@ public final class IoTRoleProperties {
 
     /**
      * Set the shareMappings property: Mount points of shares in role(s).
-     *
+     * 
      * @param shareMappings the shareMappings value to set.
      * @return the IoTRoleProperties object itself.
      */
@@ -153,7 +157,7 @@ public final class IoTRoleProperties {
 
     /**
      * Get the ioTEdgeAgentInfo property: Iot edge agent details to download the agent and bootstrap iot runtime.
-     *
+     * 
      * @return the ioTEdgeAgentInfo value.
      */
     public IoTEdgeAgentInfo ioTEdgeAgentInfo() {
@@ -162,7 +166,7 @@ public final class IoTRoleProperties {
 
     /**
      * Set the ioTEdgeAgentInfo property: Iot edge agent details to download the agent and bootstrap iot runtime.
-     *
+     * 
      * @param ioTEdgeAgentInfo the ioTEdgeAgentInfo value to set.
      * @return the IoTRoleProperties object itself.
      */
@@ -173,7 +177,7 @@ public final class IoTRoleProperties {
 
     /**
      * Get the hostPlatformType property: Platform where the Iot runtime is hosted.
-     *
+     * 
      * @return the hostPlatformType value.
      */
     public HostPlatformType hostPlatformType() {
@@ -182,7 +186,7 @@ public final class IoTRoleProperties {
 
     /**
      * Get the computeResource property: Resource allocation.
-     *
+     * 
      * @return the computeResource value.
      */
     public ComputeResource computeResource() {
@@ -191,7 +195,7 @@ public final class IoTRoleProperties {
 
     /**
      * Set the computeResource property: Resource allocation.
-     *
+     * 
      * @param computeResource the computeResource value to set.
      * @return the IoTRoleProperties object itself.
      */
@@ -202,7 +206,7 @@ public final class IoTRoleProperties {
 
     /**
      * Get the roleStatus property: Role status.
-     *
+     * 
      * @return the roleStatus value.
      */
     public RoleStatus roleStatus() {
@@ -211,7 +215,7 @@ public final class IoTRoleProperties {
 
     /**
      * Set the roleStatus property: Role status.
-     *
+     * 
      * @param roleStatus the roleStatus value to set.
      * @return the IoTRoleProperties object itself.
      */
@@ -222,28 +226,23 @@ public final class IoTRoleProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (hostPlatform() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property hostPlatform in model IoTRoleProperties"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property hostPlatform in model IoTRoleProperties"));
         }
         if (ioTDeviceDetails() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property ioTDeviceDetails in model IoTRoleProperties"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property ioTDeviceDetails in model IoTRoleProperties"));
         } else {
             ioTDeviceDetails().validate();
         }
         if (ioTEdgeDeviceDetails() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property ioTEdgeDeviceDetails in model IoTRoleProperties"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property ioTEdgeDeviceDetails in model IoTRoleProperties"));
         } else {
             ioTEdgeDeviceDetails().validate();
         }
@@ -257,9 +256,8 @@ public final class IoTRoleProperties {
             computeResource().validate();
         }
         if (roleStatus() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property roleStatus in model IoTRoleProperties"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property roleStatus in model IoTRoleProperties"));
         }
     }
 

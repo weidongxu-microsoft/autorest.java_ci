@@ -15,8 +15,8 @@ public final class QueryResultsImpl implements QueryResults {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    QueryResultsImpl(
-        QueryResultsInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    QueryResultsImpl(QueryResultsInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

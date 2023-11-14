@@ -77,20 +77,14 @@ public final class BgpConnectionImpl implements BgpConnection, BgpConnection.Def
     }
 
     public BgpConnection create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualHubBgpConnections()
-                .createOrUpdate(resourceGroupName, virtualHubName, connectionName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getVirtualHubBgpConnections()
+            .createOrUpdate(resourceGroupName, virtualHubName, connectionName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public BgpConnection create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualHubBgpConnections()
-                .createOrUpdate(resourceGroupName, virtualHubName, connectionName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getVirtualHubBgpConnections()
+            .createOrUpdate(resourceGroupName, virtualHubName, connectionName, this.innerModel(), context);
         return this;
     }
 
@@ -105,25 +99,19 @@ public final class BgpConnectionImpl implements BgpConnection, BgpConnection.Def
     }
 
     public BgpConnection apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualHubBgpConnections()
-                .createOrUpdate(resourceGroupName, virtualHubName, connectionName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getVirtualHubBgpConnections()
+            .createOrUpdate(resourceGroupName, virtualHubName, connectionName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public BgpConnection apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualHubBgpConnections()
-                .createOrUpdate(resourceGroupName, virtualHubName, connectionName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getVirtualHubBgpConnections()
+            .createOrUpdate(resourceGroupName, virtualHubName, connectionName, this.innerModel(), context);
         return this;
     }
 
-    BgpConnectionImpl(
-        BgpConnectionInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    BgpConnectionImpl(BgpConnectionInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
@@ -132,22 +120,14 @@ public final class BgpConnectionImpl implements BgpConnection, BgpConnection.Def
     }
 
     public BgpConnection refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualHubBgpConnections()
-                .getWithResponse(resourceGroupName, virtualHubName, connectionName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getVirtualHubBgpConnections()
+            .getWithResponse(resourceGroupName, virtualHubName, connectionName, Context.NONE).getValue();
         return this;
     }
 
     public BgpConnection refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualHubBgpConnections()
-                .getWithResponse(resourceGroupName, virtualHubName, connectionName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getVirtualHubBgpConnections()
+            .getWithResponse(resourceGroupName, virtualHubName, connectionName, context).getValue();
         return this;
     }
 

@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.keyvault.generated.models.DeletedManagedHsmProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The DeletedManagedHsm model. */
+/**
+ * The DeletedManagedHsm model.
+ */
 @Fluent
 public final class DeletedManagedHsmInner {
     /*
@@ -35,13 +37,15 @@ public final class DeletedManagedHsmInner {
     @JsonProperty(value = "properties")
     private DeletedManagedHsmProperties properties;
 
-    /** Creates an instance of DeletedManagedHsmInner class. */
+    /**
+     * Creates an instance of DeletedManagedHsmInner class.
+     */
     public DeletedManagedHsmInner() {
     }
 
     /**
      * Get the id property: The Azure Resource Manager resource ID for the deleted managed HSM Pool.
-     *
+     * 
      * @return the id value.
      */
     public String id() {
@@ -50,7 +54,7 @@ public final class DeletedManagedHsmInner {
 
     /**
      * Get the name property: The name of the managed HSM Pool.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -59,7 +63,7 @@ public final class DeletedManagedHsmInner {
 
     /**
      * Get the type property: The resource type of the managed HSM Pool.
-     *
+     * 
      * @return the type value.
      */
     public String type() {
@@ -68,7 +72,7 @@ public final class DeletedManagedHsmInner {
 
     /**
      * Get the properties property: Properties of the deleted managed HSM.
-     *
+     * 
      * @return the properties value.
      */
     public DeletedManagedHsmProperties properties() {
@@ -77,7 +81,7 @@ public final class DeletedManagedHsmInner {
 
     /**
      * Set the properties property: Properties of the deleted managed HSM.
-     *
+     * 
      * @param properties the properties value to set.
      * @return the DeletedManagedHsmInner object itself.
      */
@@ -88,7 +92,7 @@ public final class DeletedManagedHsmInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

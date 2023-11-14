@@ -8,7 +8,9 @@ import com.azure.core.annotation.Immutable;
 import com.azure.core.management.ProxyResource;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** A recoverable server resource. */
+/**
+ * A recoverable server resource.
+ */
 @Immutable
 public final class RecoverableServerResourceInner extends ProxyResource {
     /*
@@ -17,13 +19,15 @@ public final class RecoverableServerResourceInner extends ProxyResource {
     @JsonProperty(value = "properties")
     private RecoverableServerProperties innerProperties;
 
-    /** Creates an instance of RecoverableServerResourceInner class. */
+    /**
+     * Creates an instance of RecoverableServerResourceInner class.
+     */
     public RecoverableServerResourceInner() {
     }
 
     /**
      * Get the innerProperties property: Resource properties.
-     *
+     * 
      * @return the innerProperties value.
      */
     private RecoverableServerProperties innerProperties() {
@@ -32,7 +36,7 @@ public final class RecoverableServerResourceInner extends ProxyResource {
 
     /**
      * Get the lastAvailableBackupDateTime property: The last available backup date time.
-     *
+     * 
      * @return the lastAvailableBackupDateTime value.
      */
     public String lastAvailableBackupDateTime() {
@@ -41,7 +45,7 @@ public final class RecoverableServerResourceInner extends ProxyResource {
 
     /**
      * Get the serviceLevelObjective property: The service level objective.
-     *
+     * 
      * @return the serviceLevelObjective value.
      */
     public String serviceLevelObjective() {
@@ -50,7 +54,7 @@ public final class RecoverableServerResourceInner extends ProxyResource {
 
     /**
      * Get the edition property: Edition of the performance tier.
-     *
+     * 
      * @return the edition value.
      */
     public String edition() {
@@ -59,7 +63,7 @@ public final class RecoverableServerResourceInner extends ProxyResource {
 
     /**
      * Get the vCore property: vCore associated with the service level objective.
-     *
+     * 
      * @return the vCore value.
      */
     public Integer vCore() {
@@ -68,7 +72,7 @@ public final class RecoverableServerResourceInner extends ProxyResource {
 
     /**
      * Get the hardwareGeneration property: Hardware generation associated with the service level objective.
-     *
+     * 
      * @return the hardwareGeneration value.
      */
     public String hardwareGeneration() {
@@ -77,7 +81,7 @@ public final class RecoverableServerResourceInner extends ProxyResource {
 
     /**
      * Get the version property: The PostgreSQL version.
-     *
+     * 
      * @return the version value.
      */
     public String version() {
@@ -86,7 +90,7 @@ public final class RecoverableServerResourceInner extends ProxyResource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -7,19 +7,21 @@ package com.azure.resourcemanager.dns.generated.models;
 import com.azure.resourcemanager.dns.generated.fluent.models.DnsResourceReferenceResultInner;
 import java.util.List;
 
-/** An immutable client-side representation of DnsResourceReferenceResult. */
+/**
+ * An immutable client-side representation of DnsResourceReferenceResult.
+ */
 public interface DnsResourceReferenceResult {
     /**
      * Gets the dnsResourceReferences property: The result of dns resource reference request. A list of dns resource
      * references for each of the azure resource in the request.
-     *
+     * 
      * @return the dnsResourceReferences value.
      */
     List<DnsResourceReference> dnsResourceReferences();
 
     /**
      * Gets the inner com.azure.resourcemanager.dns.generated.fluent.models.DnsResourceReferenceResultInner object.
-     *
+     * 
      * @return the inner object.
      */
     DnsResourceReferenceResultInner innerModel();

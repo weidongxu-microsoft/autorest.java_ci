@@ -33,13 +33,15 @@ public final class CapacityReservationGroupInner extends Resource {
     @JsonProperty(value = "zones")
     private List<String> zones;
 
-    /** Creates an instance of CapacityReservationGroupInner class. */
+    /**
+     * Creates an instance of CapacityReservationGroupInner class.
+     */
     public CapacityReservationGroupInner() {
     }
 
     /**
      * Get the innerProperties property: capacity reservation group Properties.
-     *
+     * 
      * @return the innerProperties value.
      */
     private CapacityReservationGroupProperties innerProperties() {
@@ -50,7 +52,7 @@ public final class CapacityReservationGroupInner extends Resource {
      * Get the zones property: Availability Zones to use for this capacity reservation group. The zones can be assigned
      * only during creation. If not provided, the group supports only regional resources in the region. If provided,
      * enforces each capacity reservation in the group to be in one of the zones.
-     *
+     * 
      * @return the zones value.
      */
     public List<String> zones() {
@@ -61,7 +63,7 @@ public final class CapacityReservationGroupInner extends Resource {
      * Set the zones property: Availability Zones to use for this capacity reservation group. The zones can be assigned
      * only during creation. If not provided, the group supports only regional resources in the region. If provided,
      * enforces each capacity reservation in the group to be in one of the zones.
-     *
+     * 
      * @param zones the zones value to set.
      * @return the CapacityReservationGroupInner object itself.
      */
@@ -70,14 +72,18 @@ public final class CapacityReservationGroupInner extends Resource {
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public CapacityReservationGroupInner withLocation(String location) {
         super.withLocation(location);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public CapacityReservationGroupInner withTags(Map<String, String> tags) {
         super.withTags(tags);
@@ -87,7 +93,7 @@ public final class CapacityReservationGroupInner extends Resource {
     /**
      * Get the capacityReservations property: A list of all capacity reservation resource ids that belong to capacity
      * reservation group.
-     *
+     * 
      * @return the capacityReservations value.
      */
     public List<SubResourceReadOnly> capacityReservations() {
@@ -97,7 +103,7 @@ public final class CapacityReservationGroupInner extends Resource {
     /**
      * Get the virtualMachinesAssociated property: A list of references to all virtual machines associated to the
      * capacity reservation group.
-     *
+     * 
      * @return the virtualMachinesAssociated value.
      */
     public List<SubResourceReadOnly> virtualMachinesAssociated() {
@@ -107,7 +113,7 @@ public final class CapacityReservationGroupInner extends Resource {
     /**
      * Get the instanceView property: The capacity reservation group instance view which has the list of instance views
      * for all the capacity reservations that belong to the capacity reservation group.
-     *
+     * 
      * @return the instanceView value.
      */
     public CapacityReservationGroupInstanceView instanceView() {
@@ -116,7 +122,7 @@ public final class CapacityReservationGroupInner extends Resource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

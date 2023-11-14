@@ -21,22 +21,18 @@ public final class FirewallPolicyIdpsSignaturesImpl implements FirewallPolicyIdp
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public FirewallPolicyIdpsSignaturesImpl(
-        FirewallPolicyIdpsSignaturesClient innerClient,
+    public FirewallPolicyIdpsSignaturesImpl(FirewallPolicyIdpsSignaturesClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<QueryResults> listWithResponse(
-        String resourceGroupName, String firewallPolicyName, IdpsQueryObject parameters, Context context) {
-        Response<QueryResultsInner> inner =
-            this.serviceClient().listWithResponse(resourceGroupName, firewallPolicyName, parameters, context);
+    public Response<QueryResults> listWithResponse(String resourceGroupName, String firewallPolicyName,
+        IdpsQueryObject parameters, Context context) {
+        Response<QueryResultsInner> inner
+            = this.serviceClient().listWithResponse(resourceGroupName, firewallPolicyName, parameters, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new QueryResultsImpl(inner.getValue(), this.manager()));
         } else {
             return null;

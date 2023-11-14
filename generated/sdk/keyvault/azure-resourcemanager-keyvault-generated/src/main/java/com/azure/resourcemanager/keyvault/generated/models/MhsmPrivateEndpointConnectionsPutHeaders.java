@@ -9,7 +9,9 @@ import com.azure.core.http.HttpHeaderName;
 import com.azure.core.http.HttpHeaders;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The MhsmPrivateEndpointConnectionsPutHeaders model. */
+/**
+ * The MhsmPrivateEndpointConnectionsPutHeaders model.
+ */
 @Fluent
 public final class MhsmPrivateEndpointConnectionsPutHeaders {
     /*
@@ -29,7 +31,7 @@ public final class MhsmPrivateEndpointConnectionsPutHeaders {
     // HttpHeaders containing the raw property values.
     /**
      * Creates an instance of MhsmPrivateEndpointConnectionsPutHeaders class.
-     *
+     * 
      * @param rawHeaders The raw HttpHeaders that will be used to create the property values.
      */
     public MhsmPrivateEndpointConnectionsPutHeaders(HttpHeaders rawHeaders) {
@@ -42,7 +44,7 @@ public final class MhsmPrivateEndpointConnectionsPutHeaders {
 
     /**
      * Get the retryAfter property: The Retry-After property.
-     *
+     * 
      * @return the retryAfter value.
      */
     public Integer retryAfter() {
@@ -51,7 +53,7 @@ public final class MhsmPrivateEndpointConnectionsPutHeaders {
 
     /**
      * Set the retryAfter property: The Retry-After property.
-     *
+     * 
      * @param retryAfter the retryAfter value to set.
      * @return the MhsmPrivateEndpointConnectionsPutHeaders object itself.
      */
@@ -62,7 +64,7 @@ public final class MhsmPrivateEndpointConnectionsPutHeaders {
 
     /**
      * Get the azureAsyncOperation property: The Azure-AsyncOperation property.
-     *
+     * 
      * @return the azureAsyncOperation value.
      */
     public String azureAsyncOperation() {
@@ -71,7 +73,7 @@ public final class MhsmPrivateEndpointConnectionsPutHeaders {
 
     /**
      * Set the azureAsyncOperation property: The Azure-AsyncOperation property.
-     *
+     * 
      * @param azureAsyncOperation the azureAsyncOperation value to set.
      * @return the MhsmPrivateEndpointConnectionsPutHeaders object itself.
      */
@@ -82,7 +84,7 @@ public final class MhsmPrivateEndpointConnectionsPutHeaders {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Kubernetes role compute resource. */
+/**
+ * Kubernetes role compute resource.
+ */
 @Fluent
 public final class KubernetesRoleCompute {
     /*
@@ -29,13 +31,15 @@ public final class KubernetesRoleCompute {
     @JsonProperty(value = "processorCount", access = JsonProperty.Access.WRITE_ONLY)
     private Integer processorCount;
 
-    /** Creates an instance of KubernetesRoleCompute class. */
+    /**
+     * Creates an instance of KubernetesRoleCompute class.
+     */
     public KubernetesRoleCompute() {
     }
 
     /**
      * Get the vmProfile property: VM profile.
-     *
+     * 
      * @return the vmProfile value.
      */
     public String vmProfile() {
@@ -44,7 +48,7 @@ public final class KubernetesRoleCompute {
 
     /**
      * Set the vmProfile property: VM profile.
-     *
+     * 
      * @param vmProfile the vmProfile value to set.
      * @return the KubernetesRoleCompute object itself.
      */
@@ -55,7 +59,7 @@ public final class KubernetesRoleCompute {
 
     /**
      * Get the memoryInBytes property: Memory in bytes.
-     *
+     * 
      * @return the memoryInBytes value.
      */
     public Long memoryInBytes() {
@@ -64,7 +68,7 @@ public final class KubernetesRoleCompute {
 
     /**
      * Get the processorCount property: Processor count.
-     *
+     * 
      * @return the processorCount value.
      */
     public Integer processorCount() {
@@ -73,14 +77,13 @@ public final class KubernetesRoleCompute {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (vmProfile() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property vmProfile in model KubernetesRoleCompute"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property vmProfile in model KubernetesRoleCompute"));
         }
     }
 

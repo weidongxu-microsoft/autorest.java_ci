@@ -10,11 +10,13 @@ import com.azure.core.util.Context;
 import java.util.List;
 import java.util.Map;
 
-/** Resource collection API of VirtualHubBgpConnections. */
+/**
+ * Resource collection API of VirtualHubBgpConnections.
+ */
 public interface VirtualHubBgpConnections {
     /**
      * Retrieves the details of a Virtual Hub Bgp Connection.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @param connectionName The name of the connection.
@@ -24,12 +26,12 @@ public interface VirtualHubBgpConnections {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return virtual Appliance Site resource along with {@link Response}.
      */
-    Response<BgpConnection> getWithResponse(
-        String resourceGroupName, String virtualHubName, String connectionName, Context context);
+    Response<BgpConnection> getWithResponse(String resourceGroupName, String virtualHubName, String connectionName,
+        Context context);
 
     /**
      * Retrieves the details of a Virtual Hub Bgp Connection.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @param connectionName The name of the connection.
@@ -42,7 +44,7 @@ public interface VirtualHubBgpConnections {
 
     /**
      * Deletes a VirtualHubBgpConnection.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualHubBgpConnection.
      * @param virtualHubName The name of the VirtualHub.
      * @param connectionName The name of the connection.
@@ -54,7 +56,7 @@ public interface VirtualHubBgpConnections {
 
     /**
      * Deletes a VirtualHubBgpConnection.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualHubBgpConnection.
      * @param virtualHubName The name of the VirtualHub.
      * @param connectionName The name of the connection.
@@ -67,7 +69,7 @@ public interface VirtualHubBgpConnections {
 
     /**
      * Retrieves the details of all VirtualHubBgpConnections.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -79,7 +81,7 @@ public interface VirtualHubBgpConnections {
 
     /**
      * Retrieves the details of all VirtualHubBgpConnections.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @param context The context to associate with this operation.
@@ -92,7 +94,7 @@ public interface VirtualHubBgpConnections {
 
     /**
      * Retrieves a list of routes the virtual hub bgp connection has learned.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param hubName The name of the virtual hub.
      * @param connectionName The name of the virtual hub bgp connection.
@@ -105,7 +107,7 @@ public interface VirtualHubBgpConnections {
 
     /**
      * Retrieves a list of routes the virtual hub bgp connection has learned.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param hubName The name of the virtual hub.
      * @param connectionName The name of the virtual hub bgp connection.
@@ -115,12 +117,12 @@ public interface VirtualHubBgpConnections {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return map from virtual router instance to list of peer routes.
      */
-    Map<String, List<PeerRoute>> listLearnedRoutes(
-        String resourceGroupName, String hubName, String connectionName, Context context);
+    Map<String, List<PeerRoute>> listLearnedRoutes(String resourceGroupName, String hubName, String connectionName,
+        Context context);
 
     /**
      * Retrieves a list of routes the virtual hub bgp connection is advertising to the specified peer.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param hubName The name of the virtual hub.
      * @param connectionName The name of the virtual hub bgp connection.
@@ -133,7 +135,7 @@ public interface VirtualHubBgpConnections {
 
     /**
      * Retrieves a list of routes the virtual hub bgp connection is advertising to the specified peer.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param hubName The name of the virtual hub.
      * @param connectionName The name of the virtual hub bgp connection.
@@ -143,12 +145,12 @@ public interface VirtualHubBgpConnections {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return map from virtual router instance to list of peer routes.
      */
-    Map<String, List<PeerRoute>> listAdvertisedRoutes(
-        String resourceGroupName, String hubName, String connectionName, Context context);
+    Map<String, List<PeerRoute>> listAdvertisedRoutes(String resourceGroupName, String hubName, String connectionName,
+        Context context);
 
     /**
      * Retrieves the details of a Virtual Hub Bgp Connection.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -159,7 +161,7 @@ public interface VirtualHubBgpConnections {
 
     /**
      * Retrieves the details of a Virtual Hub Bgp Connection.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -171,7 +173,7 @@ public interface VirtualHubBgpConnections {
 
     /**
      * Deletes a VirtualHubBgpConnection.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -181,7 +183,7 @@ public interface VirtualHubBgpConnections {
 
     /**
      * Deletes a VirtualHubBgpConnection.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -192,7 +194,7 @@ public interface VirtualHubBgpConnections {
 
     /**
      * Begins definition for a new BgpConnection resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new BgpConnection definition.
      */

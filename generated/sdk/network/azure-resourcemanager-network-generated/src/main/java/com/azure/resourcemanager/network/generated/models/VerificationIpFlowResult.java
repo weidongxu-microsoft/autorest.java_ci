@@ -6,11 +6,13 @@ package com.azure.resourcemanager.network.generated.models;
 
 import com.azure.resourcemanager.network.generated.fluent.models.VerificationIpFlowResultInner;
 
-/** An immutable client-side representation of VerificationIpFlowResult. */
+/**
+ * An immutable client-side representation of VerificationIpFlowResult.
+ */
 public interface VerificationIpFlowResult {
     /**
      * Gets the access property: Indicates whether the traffic is allowed or denied.
-     *
+     * 
      * @return the access value.
      */
     Access access();
@@ -18,14 +20,14 @@ public interface VerificationIpFlowResult {
     /**
      * Gets the ruleName property: Name of the rule. If input is not matched against any security rule, it is not
      * displayed.
-     *
+     * 
      * @return the ruleName value.
      */
     String ruleName();
 
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.VerificationIpFlowResultInner object.
-     *
+     * 
      * @return the inner object.
      */
     VerificationIpFlowResultInner innerModel();

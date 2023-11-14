@@ -12,8 +12,7 @@ public final class DetectorDefinitionResourceImpl implements DetectorDefinitionR
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    DetectorDefinitionResourceImpl(
-        DetectorDefinitionResourceInner innerObject,
+    DetectorDefinitionResourceImpl(DetectorDefinitionResourceInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

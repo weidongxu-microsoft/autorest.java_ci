@@ -133,22 +133,14 @@ public final class LogSearchRuleResourceImpl
     }
 
     public LogSearchRuleResource create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getScheduledQueryRules()
-                .createOrUpdateWithResponse(resourceGroupName, ruleName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getScheduledQueryRules()
+            .createOrUpdateWithResponse(resourceGroupName, ruleName, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public LogSearchRuleResource create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getScheduledQueryRules()
-                .createOrUpdateWithResponse(resourceGroupName, ruleName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getScheduledQueryRules()
+            .createOrUpdateWithResponse(resourceGroupName, ruleName, this.innerModel(), context).getValue();
         return this;
     }
 
@@ -164,27 +156,18 @@ public final class LogSearchRuleResourceImpl
     }
 
     public LogSearchRuleResource apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getScheduledQueryRules()
-                .updateWithResponse(resourceGroupName, ruleName, updateParameters, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getScheduledQueryRules()
+            .updateWithResponse(resourceGroupName, ruleName, updateParameters, Context.NONE).getValue();
         return this;
     }
 
     public LogSearchRuleResource apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getScheduledQueryRules()
-                .updateWithResponse(resourceGroupName, ruleName, updateParameters, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getScheduledQueryRules()
+            .updateWithResponse(resourceGroupName, ruleName, updateParameters, context).getValue();
         return this;
     }
 
-    LogSearchRuleResourceImpl(
-        LogSearchRuleResourceInner innerObject,
+    LogSearchRuleResourceImpl(LogSearchRuleResourceInner innerObject,
         com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -193,22 +176,14 @@ public final class LogSearchRuleResourceImpl
     }
 
     public LogSearchRuleResource refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getScheduledQueryRules()
-                .getByResourceGroupWithResponse(resourceGroupName, ruleName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getScheduledQueryRules()
+            .getByResourceGroupWithResponse(resourceGroupName, ruleName, Context.NONE).getValue();
         return this;
     }
 
     public LogSearchRuleResource refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getScheduledQueryRules()
-                .getByResourceGroupWithResponse(resourceGroupName, ruleName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getScheduledQueryRules()
+            .getByResourceGroupWithResponse(resourceGroupName, ruleName, context).getValue();
         return this;
     }
 

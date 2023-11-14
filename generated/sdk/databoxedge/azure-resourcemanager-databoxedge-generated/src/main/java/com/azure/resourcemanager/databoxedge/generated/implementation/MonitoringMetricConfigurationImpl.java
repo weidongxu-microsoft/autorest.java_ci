@@ -16,8 +16,7 @@ public final class MonitoringMetricConfigurationImpl implements MonitoringMetric
 
     private final com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager;
 
-    MonitoringMetricConfigurationImpl(
-        MonitoringMetricConfigurationInner innerObject,
+    MonitoringMetricConfigurationImpl(MonitoringMetricConfigurationInner innerObject,
         com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

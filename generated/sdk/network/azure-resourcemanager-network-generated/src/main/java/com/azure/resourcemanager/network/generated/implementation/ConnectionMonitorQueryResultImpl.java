@@ -16,8 +16,7 @@ public final class ConnectionMonitorQueryResultImpl implements ConnectionMonitor
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    ConnectionMonitorQueryResultImpl(
-        ConnectionMonitorQueryResultInner innerObject,
+    ConnectionMonitorQueryResultImpl(ConnectionMonitorQueryResultInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

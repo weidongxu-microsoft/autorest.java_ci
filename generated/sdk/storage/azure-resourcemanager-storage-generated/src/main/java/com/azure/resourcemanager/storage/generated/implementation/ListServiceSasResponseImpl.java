@@ -12,8 +12,7 @@ public final class ListServiceSasResponseImpl implements ListServiceSasResponse 
 
     private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
-    ListServiceSasResponseImpl(
-        ListServiceSasResponseInner innerObject,
+    ListServiceSasResponseImpl(ListServiceSasResponseInner innerObject,
         com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

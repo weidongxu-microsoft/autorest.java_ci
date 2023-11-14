@@ -14,8 +14,7 @@ public final class IpAddressAvailabilityResultImpl implements IpAddressAvailabil
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    IpAddressAvailabilityResultImpl(
-        IpAddressAvailabilityResultInner innerObject,
+    IpAddressAvailabilityResultImpl(IpAddressAvailabilityResultInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

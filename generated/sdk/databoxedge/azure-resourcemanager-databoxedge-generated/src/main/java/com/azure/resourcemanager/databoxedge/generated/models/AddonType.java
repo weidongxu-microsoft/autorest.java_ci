@@ -8,17 +8,23 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Addon type. */
+/**
+ * Addon type.
+ */
 public final class AddonType extends ExpandableStringEnum<AddonType> {
-    /** Static value IotEdge for AddonType. */
+    /**
+     * Static value IotEdge for AddonType.
+     */
     public static final AddonType IOT_EDGE = fromString("IotEdge");
 
-    /** Static value ArcForKubernetes for AddonType. */
+    /**
+     * Static value ArcForKubernetes for AddonType.
+     */
     public static final AddonType ARC_FOR_KUBERNETES = fromString("ArcForKubernetes");
 
     /**
      * Creates a new instance of AddonType value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -27,7 +33,7 @@ public final class AddonType extends ExpandableStringEnum<AddonType> {
 
     /**
      * Creates or finds a AddonType from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding AddonType.
      */
@@ -38,7 +44,7 @@ public final class AddonType extends ExpandableStringEnum<AddonType> {
 
     /**
      * Gets known AddonType values.
-     *
+     * 
      * @return known AddonType values.
      */
     public static Collection<AddonType> values() {

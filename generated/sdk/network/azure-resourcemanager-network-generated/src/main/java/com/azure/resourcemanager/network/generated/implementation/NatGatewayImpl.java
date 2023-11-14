@@ -134,20 +134,14 @@ public final class NatGatewayImpl implements NatGateway, NatGateway.Definition, 
     }
 
     public NatGateway create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNatGateways()
-                .createOrUpdate(resourceGroupName, natGatewayName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getNatGateways().createOrUpdate(resourceGroupName,
+            natGatewayName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public NatGateway create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNatGateways()
-                .createOrUpdate(resourceGroupName, natGatewayName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getNatGateways().createOrUpdate(resourceGroupName,
+            natGatewayName, this.innerModel(), context);
         return this;
     }
 
@@ -163,27 +157,19 @@ public final class NatGatewayImpl implements NatGateway, NatGateway.Definition, 
     }
 
     public NatGateway apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNatGateways()
-                .updateTagsWithResponse(resourceGroupName, natGatewayName, updateParameters, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getNatGateways()
+            .updateTagsWithResponse(resourceGroupName, natGatewayName, updateParameters, Context.NONE).getValue();
         return this;
     }
 
     public NatGateway apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNatGateways()
-                .updateTagsWithResponse(resourceGroupName, natGatewayName, updateParameters, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getNatGateways()
+            .updateTagsWithResponse(resourceGroupName, natGatewayName, updateParameters, context).getValue();
         return this;
     }
 
-    NatGatewayImpl(
-        NatGatewayInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    NatGatewayImpl(NatGatewayInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
@@ -192,23 +178,15 @@ public final class NatGatewayImpl implements NatGateway, NatGateway.Definition, 
 
     public NatGateway refresh() {
         String localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNatGateways()
-                .getByResourceGroupWithResponse(resourceGroupName, natGatewayName, localExpand, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getNatGateways()
+            .getByResourceGroupWithResponse(resourceGroupName, natGatewayName, localExpand, Context.NONE).getValue();
         return this;
     }
 
     public NatGateway refresh(Context context) {
         String localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNatGateways()
-                .getByResourceGroupWithResponse(resourceGroupName, natGatewayName, localExpand, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getNatGateways()
+            .getByResourceGroupWithResponse(resourceGroupName, natGatewayName, localExpand, context).getValue();
         return this;
     }
 

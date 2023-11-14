@@ -11,7 +11,9 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** A charge summary resource. */
+/**
+ * A charge summary resource.
+ */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
     include = JsonTypeInfo.As.PROPERTY,
@@ -20,8 +22,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @JsonTypeName("ChargeSummary")
 @JsonSubTypes({
     @JsonSubTypes.Type(name = "legacy", value = LegacyChargeSummary.class),
-    @JsonSubTypes.Type(name = "modern", value = ModernChargeSummary.class)
-})
+    @JsonSubTypes.Type(name = "modern", value = ModernChargeSummary.class) })
 @Fluent
 public class ChargeSummary extends ProxyResource {
     /*
@@ -31,14 +32,16 @@ public class ChargeSummary extends ProxyResource {
     @JsonProperty(value = "eTag")
     private String etag;
 
-    /** Creates an instance of ChargeSummary class. */
+    /**
+     * Creates an instance of ChargeSummary class.
+     */
     public ChargeSummary() {
     }
 
     /**
      * Get the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to
      * determine whether the user is updating the latest version or not.
-     *
+     * 
      * @return the etag value.
      */
     public String etag() {
@@ -48,7 +51,7 @@ public class ChargeSummary extends ProxyResource {
     /**
      * Set the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to
      * determine whether the user is updating the latest version or not.
-     *
+     * 
      * @param etag the etag value to set.
      * @return the ChargeSummary object itself.
      */
@@ -59,7 +62,7 @@ public class ChargeSummary extends ProxyResource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

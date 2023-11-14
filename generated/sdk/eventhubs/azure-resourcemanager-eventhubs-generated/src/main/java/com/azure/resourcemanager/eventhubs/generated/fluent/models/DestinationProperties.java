@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.UUID;
 
-/** Properties describing the storage account, blob container and archive name format for capture destination. */
+/**
+ * Properties describing the storage account, blob container and archive name format for capture destination.
+ */
 @Fluent
 public final class DestinationProperties {
     /*
@@ -49,13 +51,15 @@ public final class DestinationProperties {
     @JsonProperty(value = "dataLakeFolderPath")
     private String dataLakeFolderPath;
 
-    /** Creates an instance of DestinationProperties class. */
+    /**
+     * Creates an instance of DestinationProperties class.
+     */
     public DestinationProperties() {
     }
 
     /**
      * Get the storageAccountResourceId property: Resource id of the storage account to be used to create the blobs.
-     *
+     * 
      * @return the storageAccountResourceId value.
      */
     public String storageAccountResourceId() {
@@ -64,7 +68,7 @@ public final class DestinationProperties {
 
     /**
      * Set the storageAccountResourceId property: Resource id of the storage account to be used to create the blobs.
-     *
+     * 
      * @param storageAccountResourceId the storageAccountResourceId value to set.
      * @return the DestinationProperties object itself.
      */
@@ -75,7 +79,7 @@ public final class DestinationProperties {
 
     /**
      * Get the blobContainer property: Blob container Name.
-     *
+     * 
      * @return the blobContainer value.
      */
     public String blobContainer() {
@@ -84,7 +88,7 @@ public final class DestinationProperties {
 
     /**
      * Set the blobContainer property: Blob container Name.
-     *
+     * 
      * @param blobContainer the blobContainer value to set.
      * @return the DestinationProperties object itself.
      */
@@ -97,7 +101,7 @@ public final class DestinationProperties {
      * Get the archiveNameFormat property: Blob naming convention for archive, e.g.
      * {Namespace}/{EventHub}/{PartitionId}/{Year}/{Month}/{Day}/{Hour}/{Minute}/{Second}. Here all the parameters
      * (Namespace,EventHub .. etc) are mandatory irrespective of order.
-     *
+     * 
      * @return the archiveNameFormat value.
      */
     public String archiveNameFormat() {
@@ -108,7 +112,7 @@ public final class DestinationProperties {
      * Set the archiveNameFormat property: Blob naming convention for archive, e.g.
      * {Namespace}/{EventHub}/{PartitionId}/{Year}/{Month}/{Day}/{Hour}/{Minute}/{Second}. Here all the parameters
      * (Namespace,EventHub .. etc) are mandatory irrespective of order.
-     *
+     * 
      * @param archiveNameFormat the archiveNameFormat value to set.
      * @return the DestinationProperties object itself.
      */
@@ -119,7 +123,7 @@ public final class DestinationProperties {
 
     /**
      * Get the dataLakeSubscriptionId property: Subscription Id of Azure Data Lake Store.
-     *
+     * 
      * @return the dataLakeSubscriptionId value.
      */
     public UUID dataLakeSubscriptionId() {
@@ -128,7 +132,7 @@ public final class DestinationProperties {
 
     /**
      * Set the dataLakeSubscriptionId property: Subscription Id of Azure Data Lake Store.
-     *
+     * 
      * @param dataLakeSubscriptionId the dataLakeSubscriptionId value to set.
      * @return the DestinationProperties object itself.
      */
@@ -139,7 +143,7 @@ public final class DestinationProperties {
 
     /**
      * Get the dataLakeAccountName property: The Azure Data Lake Store name for the captured events.
-     *
+     * 
      * @return the dataLakeAccountName value.
      */
     public String dataLakeAccountName() {
@@ -148,7 +152,7 @@ public final class DestinationProperties {
 
     /**
      * Set the dataLakeAccountName property: The Azure Data Lake Store name for the captured events.
-     *
+     * 
      * @param dataLakeAccountName the dataLakeAccountName value to set.
      * @return the DestinationProperties object itself.
      */
@@ -159,7 +163,7 @@ public final class DestinationProperties {
 
     /**
      * Get the dataLakeFolderPath property: The destination folder path for the captured events.
-     *
+     * 
      * @return the dataLakeFolderPath value.
      */
     public String dataLakeFolderPath() {
@@ -168,7 +172,7 @@ public final class DestinationProperties {
 
     /**
      * Set the dataLakeFolderPath property: The destination folder path for the captured events.
-     *
+     * 
      * @param dataLakeFolderPath the dataLakeFolderPath value to set.
      * @return the DestinationProperties object itself.
      */
@@ -179,7 +183,7 @@ public final class DestinationProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.appservice.generated.models.KeyVaultSecretStatus;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Key Vault container for a certificate that is purchased through Azure. */
+/**
+ * Key Vault container for a certificate that is purchased through Azure.
+ */
 @Fluent
 public final class AppServiceCertificate {
     /*
@@ -29,13 +31,15 @@ public final class AppServiceCertificate {
     @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private KeyVaultSecretStatus provisioningState;
 
-    /** Creates an instance of AppServiceCertificate class. */
+    /**
+     * Creates an instance of AppServiceCertificate class.
+     */
     public AppServiceCertificate() {
     }
 
     /**
      * Get the keyVaultId property: Key Vault resource Id.
-     *
+     * 
      * @return the keyVaultId value.
      */
     public String keyVaultId() {
@@ -44,7 +48,7 @@ public final class AppServiceCertificate {
 
     /**
      * Set the keyVaultId property: Key Vault resource Id.
-     *
+     * 
      * @param keyVaultId the keyVaultId value to set.
      * @return the AppServiceCertificate object itself.
      */
@@ -55,7 +59,7 @@ public final class AppServiceCertificate {
 
     /**
      * Get the keyVaultSecretName property: Key Vault secret name.
-     *
+     * 
      * @return the keyVaultSecretName value.
      */
     public String keyVaultSecretName() {
@@ -64,7 +68,7 @@ public final class AppServiceCertificate {
 
     /**
      * Set the keyVaultSecretName property: Key Vault secret name.
-     *
+     * 
      * @param keyVaultSecretName the keyVaultSecretName value to set.
      * @return the AppServiceCertificate object itself.
      */
@@ -75,7 +79,7 @@ public final class AppServiceCertificate {
 
     /**
      * Get the provisioningState property: Status of the Key Vault secret.
-     *
+     * 
      * @return the provisioningState value.
      */
     public KeyVaultSecretStatus provisioningState() {
@@ -84,7 +88,7 @@ public final class AppServiceCertificate {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

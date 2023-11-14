@@ -20,8 +20,7 @@ public final class DdosCustomPoliciesImpl implements DdosCustomPolicies {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public DdosCustomPoliciesImpl(
-        DdosCustomPoliciesClient innerClient,
+    public DdosCustomPoliciesImpl(DdosCustomPoliciesClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -35,15 +34,12 @@ public final class DdosCustomPoliciesImpl implements DdosCustomPolicies {
         this.serviceClient().delete(resourceGroupName, ddosCustomPolicyName, context);
     }
 
-    public Response<DdosCustomPolicy> getByResourceGroupWithResponse(
-        String resourceGroupName, String ddosCustomPolicyName, Context context) {
-        Response<DdosCustomPolicyInner> inner =
-            this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, ddosCustomPolicyName, context);
+    public Response<DdosCustomPolicy> getByResourceGroupWithResponse(String resourceGroupName,
+        String ddosCustomPolicyName, Context context) {
+        Response<DdosCustomPolicyInner> inner
+            = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, ddosCustomPolicyName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DdosCustomPolicyImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -62,20 +58,13 @@ public final class DdosCustomPoliciesImpl implements DdosCustomPolicies {
     public DdosCustomPolicy getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String ddosCustomPolicyName = Utils.getValueFromIdByName(id, "ddosCustomPolicies");
         if (ddosCustomPolicyName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'ddosCustomPolicies'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'ddosCustomPolicies'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, ddosCustomPolicyName, Context.NONE).getValue();
     }
@@ -83,20 +72,13 @@ public final class DdosCustomPoliciesImpl implements DdosCustomPolicies {
     public Response<DdosCustomPolicy> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String ddosCustomPolicyName = Utils.getValueFromIdByName(id, "ddosCustomPolicies");
         if (ddosCustomPolicyName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'ddosCustomPolicies'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'ddosCustomPolicies'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, ddosCustomPolicyName, context);
     }
@@ -104,20 +86,13 @@ public final class DdosCustomPoliciesImpl implements DdosCustomPolicies {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String ddosCustomPolicyName = Utils.getValueFromIdByName(id, "ddosCustomPolicies");
         if (ddosCustomPolicyName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'ddosCustomPolicies'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'ddosCustomPolicies'.", id)));
         }
         this.delete(resourceGroupName, ddosCustomPolicyName, Context.NONE);
     }
@@ -125,20 +100,13 @@ public final class DdosCustomPoliciesImpl implements DdosCustomPolicies {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String ddosCustomPolicyName = Utils.getValueFromIdByName(id, "ddosCustomPolicies");
         if (ddosCustomPolicyName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'ddosCustomPolicies'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'ddosCustomPolicies'.", id)));
         }
         this.delete(resourceGroupName, ddosCustomPolicyName, context);
     }

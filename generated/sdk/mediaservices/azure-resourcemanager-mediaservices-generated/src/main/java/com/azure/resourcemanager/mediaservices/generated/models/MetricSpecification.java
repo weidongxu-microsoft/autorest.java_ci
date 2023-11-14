@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** A metric emitted by service. */
+/**
+ * A metric emitted by service.
+ */
 @Fluent
 public final class MetricSpecification {
     /*
@@ -83,13 +85,15 @@ public final class MetricSpecification {
     @JsonProperty(value = "supportedTimeGrainTypes", access = JsonProperty.Access.WRITE_ONLY)
     private List<String> supportedTimeGrainTypes;
 
-    /** Creates an instance of MetricSpecification class. */
+    /**
+     * Creates an instance of MetricSpecification class.
+     */
     public MetricSpecification() {
     }
 
     /**
      * Get the name property: The metric name.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -98,7 +102,7 @@ public final class MetricSpecification {
 
     /**
      * Get the displayName property: The metric display name.
-     *
+     * 
      * @return the displayName value.
      */
     public String displayName() {
@@ -107,7 +111,7 @@ public final class MetricSpecification {
 
     /**
      * Get the displayDescription property: The metric display description.
-     *
+     * 
      * @return the displayDescription value.
      */
     public String displayDescription() {
@@ -116,7 +120,7 @@ public final class MetricSpecification {
 
     /**
      * Get the unit property: The metric unit.
-     *
+     * 
      * @return the unit value.
      */
     public MetricUnit unit() {
@@ -125,7 +129,7 @@ public final class MetricSpecification {
 
     /**
      * Get the aggregationType property: The metric aggregation type.
-     *
+     * 
      * @return the aggregationType value.
      */
     public MetricAggregationType aggregationType() {
@@ -134,7 +138,7 @@ public final class MetricSpecification {
 
     /**
      * Get the lockAggregationType property: The metric lock aggregation type.
-     *
+     * 
      * @return the lockAggregationType value.
      */
     public MetricAggregationType lockAggregationType() {
@@ -143,7 +147,7 @@ public final class MetricSpecification {
 
     /**
      * Get the supportedAggregationTypes property: Supported aggregation types.
-     *
+     * 
      * @return the supportedAggregationTypes value.
      */
     public List<String> supportedAggregationTypes() {
@@ -152,7 +156,7 @@ public final class MetricSpecification {
 
     /**
      * Set the supportedAggregationTypes property: Supported aggregation types.
-     *
+     * 
      * @param supportedAggregationTypes the supportedAggregationTypes value to set.
      * @return the MetricSpecification object itself.
      */
@@ -163,7 +167,7 @@ public final class MetricSpecification {
 
     /**
      * Get the dimensions property: The metric dimensions.
-     *
+     * 
      * @return the dimensions value.
      */
     public List<MetricDimension> dimensions() {
@@ -172,7 +176,7 @@ public final class MetricSpecification {
 
     /**
      * Get the enableRegionalMdmAccount property: Indicates whether regional MDM account is enabled.
-     *
+     * 
      * @return the enableRegionalMdmAccount value.
      */
     public Boolean enableRegionalMdmAccount() {
@@ -181,7 +185,7 @@ public final class MetricSpecification {
 
     /**
      * Get the sourceMdmAccount property: The source MDM account.
-     *
+     * 
      * @return the sourceMdmAccount value.
      */
     public String sourceMdmAccount() {
@@ -190,7 +194,7 @@ public final class MetricSpecification {
 
     /**
      * Get the sourceMdmNamespace property: The source MDM namespace.
-     *
+     * 
      * @return the sourceMdmNamespace value.
      */
     public String sourceMdmNamespace() {
@@ -199,7 +203,7 @@ public final class MetricSpecification {
 
     /**
      * Get the supportedTimeGrainTypes property: The supported time grain types.
-     *
+     * 
      * @return the supportedTimeGrainTypes value.
      */
     public List<String> supportedTimeGrainTypes() {
@@ -208,7 +212,7 @@ public final class MetricSpecification {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

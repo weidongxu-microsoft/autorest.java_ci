@@ -7,7 +7,9 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Details about Edge Profile for the resource. */
+/**
+ * Details about Edge Profile for the resource.
+ */
 @Fluent
 public final class EdgeProfile {
     /*
@@ -16,13 +18,15 @@ public final class EdgeProfile {
     @JsonProperty(value = "subscription")
     private EdgeProfileSubscription subscription;
 
-    /** Creates an instance of EdgeProfile class. */
+    /**
+     * Creates an instance of EdgeProfile class.
+     */
     public EdgeProfile() {
     }
 
     /**
      * Get the subscription property: Edge Profile Subscription.
-     *
+     * 
      * @return the subscription value.
      */
     public EdgeProfileSubscription subscription() {
@@ -31,7 +35,7 @@ public final class EdgeProfile {
 
     /**
      * Set the subscription property: Edge Profile Subscription.
-     *
+     * 
      * @param subscription the subscription value to set.
      * @return the EdgeProfile object itself.
      */
@@ -42,7 +46,7 @@ public final class EdgeProfile {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

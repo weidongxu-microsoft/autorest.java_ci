@@ -17,8 +17,7 @@ public final class DatabasePrincipalListResultImpl implements DatabasePrincipalL
 
     private final com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager;
 
-    DatabasePrincipalListResultImpl(
-        DatabasePrincipalListResultInner innerObject,
+    DatabasePrincipalListResultImpl(DatabasePrincipalListResultInner innerObject,
         com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -27,12 +26,8 @@ public final class DatabasePrincipalListResultImpl implements DatabasePrincipalL
     public List<DatabasePrincipal> value() {
         List<DatabasePrincipalInner> inner = this.innerModel().value();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new DatabasePrincipalImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new DatabasePrincipalImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

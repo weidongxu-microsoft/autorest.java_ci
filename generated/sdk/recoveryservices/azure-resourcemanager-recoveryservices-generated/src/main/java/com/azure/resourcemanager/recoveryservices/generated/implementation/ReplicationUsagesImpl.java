@@ -19,8 +19,7 @@ public final class ReplicationUsagesImpl implements ReplicationUsages {
 
     private final com.azure.resourcemanager.recoveryservices.generated.RecoveryServicesManager serviceManager;
 
-    public ReplicationUsagesImpl(
-        ReplicationUsagesClient innerClient,
+    public ReplicationUsagesImpl(ReplicationUsagesClient innerClient,
         com.azure.resourcemanager.recoveryservices.generated.RecoveryServicesManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;

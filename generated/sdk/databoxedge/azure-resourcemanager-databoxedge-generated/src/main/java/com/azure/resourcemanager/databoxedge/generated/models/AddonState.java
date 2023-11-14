@@ -8,32 +8,48 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Addon Provisioning State. */
+/**
+ * Addon Provisioning State.
+ */
 public final class AddonState extends ExpandableStringEnum<AddonState> {
-    /** Static value Invalid for AddonState. */
+    /**
+     * Static value Invalid for AddonState.
+     */
     public static final AddonState INVALID = fromString("Invalid");
 
-    /** Static value Creating for AddonState. */
+    /**
+     * Static value Creating for AddonState.
+     */
     public static final AddonState CREATING = fromString("Creating");
 
-    /** Static value Created for AddonState. */
+    /**
+     * Static value Created for AddonState.
+     */
     public static final AddonState CREATED = fromString("Created");
 
-    /** Static value Updating for AddonState. */
+    /**
+     * Static value Updating for AddonState.
+     */
     public static final AddonState UPDATING = fromString("Updating");
 
-    /** Static value Reconfiguring for AddonState. */
+    /**
+     * Static value Reconfiguring for AddonState.
+     */
     public static final AddonState RECONFIGURING = fromString("Reconfiguring");
 
-    /** Static value Failed for AddonState. */
+    /**
+     * Static value Failed for AddonState.
+     */
     public static final AddonState FAILED = fromString("Failed");
 
-    /** Static value Deleting for AddonState. */
+    /**
+     * Static value Deleting for AddonState.
+     */
     public static final AddonState DELETING = fromString("Deleting");
 
     /**
      * Creates a new instance of AddonState value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -42,7 +58,7 @@ public final class AddonState extends ExpandableStringEnum<AddonState> {
 
     /**
      * Creates or finds a AddonState from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding AddonState.
      */
@@ -53,7 +69,7 @@ public final class AddonState extends ExpandableStringEnum<AddonState> {
 
     /**
      * Gets known AddonState values.
-     *
+     * 
      * @return known AddonState values.
      */
     public static Collection<AddonState> values() {

@@ -108,20 +108,14 @@ public final class ExperimentImpl implements Experiment, Experiment.Definition, 
     }
 
     public Experiment create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getExperiments()
-                .createOrUpdate(resourceGroupName, profileName, experimentName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getExperiments().createOrUpdate(resourceGroupName,
+            profileName, experimentName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public Experiment create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getExperiments()
-                .createOrUpdate(resourceGroupName, profileName, experimentName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getExperiments().createOrUpdate(resourceGroupName,
+            profileName, experimentName, this.innerModel(), context);
         return this;
     }
 
@@ -137,25 +131,19 @@ public final class ExperimentImpl implements Experiment, Experiment.Definition, 
     }
 
     public Experiment apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getExperiments()
-                .update(resourceGroupName, profileName, experimentName, updateParameters, Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getExperiments().update(resourceGroupName, profileName,
+            experimentName, updateParameters, Context.NONE);
         return this;
     }
 
     public Experiment apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getExperiments()
-                .update(resourceGroupName, profileName, experimentName, updateParameters, context);
+        this.innerObject = serviceManager.serviceClient().getExperiments().update(resourceGroupName, profileName,
+            experimentName, updateParameters, context);
         return this;
     }
 
-    ExperimentImpl(
-        ExperimentInner innerObject, com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager) {
+    ExperimentImpl(ExperimentInner innerObject,
+        com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
@@ -164,22 +152,14 @@ public final class ExperimentImpl implements Experiment, Experiment.Definition, 
     }
 
     public Experiment refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getExperiments()
-                .getWithResponse(resourceGroupName, profileName, experimentName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getExperiments()
+            .getWithResponse(resourceGroupName, profileName, experimentName, Context.NONE).getValue();
         return this;
     }
 
     public Experiment refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getExperiments()
-                .getWithResponse(resourceGroupName, profileName, experimentName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getExperiments()
+            .getWithResponse(resourceGroupName, profileName, experimentName, context).getValue();
         return this;
     }
 

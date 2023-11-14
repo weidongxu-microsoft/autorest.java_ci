@@ -6,53 +6,55 @@ package com.azure.resourcemanager.appservice.generated.models;
 
 import com.azure.resourcemanager.appservice.generated.fluent.models.CustomDnsSuffixConfigurationInner;
 
-/** An immutable client-side representation of CustomDnsSuffixConfiguration. */
+/**
+ * An immutable client-side representation of CustomDnsSuffixConfiguration.
+ */
 public interface CustomDnsSuffixConfiguration {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the name property: The name of the resource.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the type property: The type of the resource.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the kind property: Kind of resource.
-     *
+     * 
      * @return the kind value.
      */
     String kind();
 
     /**
      * Gets the provisioningState property: The provisioningState property.
-     *
+     * 
      * @return the provisioningState value.
      */
     CustomDnsSuffixProvisioningState provisioningState();
 
     /**
      * Gets the provisioningDetails property: The provisioningDetails property.
-     *
+     * 
      * @return the provisioningDetails value.
      */
     String provisioningDetails();
 
     /**
      * Gets the dnsSuffix property: The default custom domain suffix to use for all sites deployed on the ASE.
-     *
+     * 
      * @return the dnsSuffix value.
      */
     String dnsSuffix();
@@ -60,7 +62,7 @@ public interface CustomDnsSuffixConfiguration {
     /**
      * Gets the certificateUrl property: The URL referencing the Azure Key Vault certificate secret that should be used
      * as the default SSL/TLS certificate for sites with the custom domain suffix.
-     *
+     * 
      * @return the certificateUrl value.
      */
     String certificateUrl();
@@ -68,7 +70,7 @@ public interface CustomDnsSuffixConfiguration {
     /**
      * Gets the keyVaultReferenceIdentity property: The user-assigned identity to use for resolving the key vault
      * certificate reference. If not specified, the system-assigned ASE identity will be used if available.
-     *
+     * 
      * @return the keyVaultReferenceIdentity value.
      */
     String keyVaultReferenceIdentity();
@@ -76,7 +78,7 @@ public interface CustomDnsSuffixConfiguration {
     /**
      * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.CustomDnsSuffixConfigurationInner
      * object.
-     *
+     * 
      * @return the inner object.
      */
     CustomDnsSuffixConfigurationInner innerModel();

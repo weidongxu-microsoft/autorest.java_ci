@@ -21,8 +21,7 @@ public final class DeletedWebAppsImpl implements DeletedWebApps {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    public DeletedWebAppsImpl(
-        DeletedWebAppsClient innerClient,
+    public DeletedWebAppsImpl(DeletedWebAppsClient innerClient,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -48,15 +47,12 @@ public final class DeletedWebAppsImpl implements DeletedWebApps {
         return Utils.mapPage(inner, inner1 -> new DeletedSiteImpl(inner1, this.manager()));
     }
 
-    public Response<DeletedSite> getDeletedWebAppByLocationWithResponse(
-        String location, String deletedSiteId, Context context) {
-        Response<DeletedSiteInner> inner =
-            this.serviceClient().getDeletedWebAppByLocationWithResponse(location, deletedSiteId, context);
+    public Response<DeletedSite> getDeletedWebAppByLocationWithResponse(String location, String deletedSiteId,
+        Context context) {
+        Response<DeletedSiteInner> inner
+            = this.serviceClient().getDeletedWebAppByLocationWithResponse(location, deletedSiteId, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DeletedSiteImpl(inner.getValue(), this.manager()));
         } else {
             return null;

@@ -28,21 +28,18 @@ public final class VirtualHubsImpl implements VirtualHubs {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public VirtualHubsImpl(
-        VirtualHubsClient innerClient, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    public VirtualHubsImpl(VirtualHubsClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<VirtualHub> getByResourceGroupWithResponse(
-        String resourceGroupName, String virtualHubName, Context context) {
-        Response<VirtualHubInner> inner =
-            this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, virtualHubName, context);
+    public Response<VirtualHub> getByResourceGroupWithResponse(String resourceGroupName, String virtualHubName,
+        Context context) {
+        Response<VirtualHubInner> inner
+            = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, virtualHubName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new VirtualHubImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -87,8 +84,8 @@ public final class VirtualHubsImpl implements VirtualHubs {
     }
 
     public VirtualHubEffectiveRouteList getEffectiveVirtualHubRoutes(String resourceGroupName, String virtualHubName) {
-        VirtualHubEffectiveRouteListInner inner =
-            this.serviceClient().getEffectiveVirtualHubRoutes(resourceGroupName, virtualHubName);
+        VirtualHubEffectiveRouteListInner inner
+            = this.serviceClient().getEffectiveVirtualHubRoutes(resourceGroupName, virtualHubName);
         if (inner != null) {
             return new VirtualHubEffectiveRouteListImpl(inner, this.manager());
         } else {
@@ -96,15 +93,10 @@ public final class VirtualHubsImpl implements VirtualHubs {
         }
     }
 
-    public VirtualHubEffectiveRouteList getEffectiveVirtualHubRoutes(
-        String resourceGroupName,
-        String virtualHubName,
-        EffectiveRoutesParameters effectiveRoutesParameters,
-        Context context) {
-        VirtualHubEffectiveRouteListInner inner =
-            this
-                .serviceClient()
-                .getEffectiveVirtualHubRoutes(resourceGroupName, virtualHubName, effectiveRoutesParameters, context);
+    public VirtualHubEffectiveRouteList getEffectiveVirtualHubRoutes(String resourceGroupName, String virtualHubName,
+        EffectiveRoutesParameters effectiveRoutesParameters, Context context) {
+        VirtualHubEffectiveRouteListInner inner = this.serviceClient().getEffectiveVirtualHubRoutes(resourceGroupName,
+            virtualHubName, effectiveRoutesParameters, context);
         if (inner != null) {
             return new VirtualHubEffectiveRouteListImpl(inner, this.manager());
         } else {
@@ -112,10 +104,10 @@ public final class VirtualHubsImpl implements VirtualHubs {
         }
     }
 
-    public EffectiveRouteMapRouteList getInboundRoutes(
-        String resourceGroupName, String virtualHubName, GetInboundRoutesParameters getInboundRoutesParameters) {
-        EffectiveRouteMapRouteListInner inner =
-            this.serviceClient().getInboundRoutes(resourceGroupName, virtualHubName, getInboundRoutesParameters);
+    public EffectiveRouteMapRouteList getInboundRoutes(String resourceGroupName, String virtualHubName,
+        GetInboundRoutesParameters getInboundRoutesParameters) {
+        EffectiveRouteMapRouteListInner inner
+            = this.serviceClient().getInboundRoutes(resourceGroupName, virtualHubName, getInboundRoutesParameters);
         if (inner != null) {
             return new EffectiveRouteMapRouteListImpl(inner, this.manager());
         } else {
@@ -123,15 +115,10 @@ public final class VirtualHubsImpl implements VirtualHubs {
         }
     }
 
-    public EffectiveRouteMapRouteList getInboundRoutes(
-        String resourceGroupName,
-        String virtualHubName,
-        GetInboundRoutesParameters getInboundRoutesParameters,
-        Context context) {
-        EffectiveRouteMapRouteListInner inner =
-            this
-                .serviceClient()
-                .getInboundRoutes(resourceGroupName, virtualHubName, getInboundRoutesParameters, context);
+    public EffectiveRouteMapRouteList getInboundRoutes(String resourceGroupName, String virtualHubName,
+        GetInboundRoutesParameters getInboundRoutesParameters, Context context) {
+        EffectiveRouteMapRouteListInner inner = this.serviceClient().getInboundRoutes(resourceGroupName, virtualHubName,
+            getInboundRoutesParameters, context);
         if (inner != null) {
             return new EffectiveRouteMapRouteListImpl(inner, this.manager());
         } else {
@@ -139,10 +126,10 @@ public final class VirtualHubsImpl implements VirtualHubs {
         }
     }
 
-    public EffectiveRouteMapRouteList getOutboundRoutes(
-        String resourceGroupName, String virtualHubName, GetOutboundRoutesParameters getOutboundRoutesParameters) {
-        EffectiveRouteMapRouteListInner inner =
-            this.serviceClient().getOutboundRoutes(resourceGroupName, virtualHubName, getOutboundRoutesParameters);
+    public EffectiveRouteMapRouteList getOutboundRoutes(String resourceGroupName, String virtualHubName,
+        GetOutboundRoutesParameters getOutboundRoutesParameters) {
+        EffectiveRouteMapRouteListInner inner
+            = this.serviceClient().getOutboundRoutes(resourceGroupName, virtualHubName, getOutboundRoutesParameters);
         if (inner != null) {
             return new EffectiveRouteMapRouteListImpl(inner, this.manager());
         } else {
@@ -150,15 +137,10 @@ public final class VirtualHubsImpl implements VirtualHubs {
         }
     }
 
-    public EffectiveRouteMapRouteList getOutboundRoutes(
-        String resourceGroupName,
-        String virtualHubName,
-        GetOutboundRoutesParameters getOutboundRoutesParameters,
-        Context context) {
-        EffectiveRouteMapRouteListInner inner =
-            this
-                .serviceClient()
-                .getOutboundRoutes(resourceGroupName, virtualHubName, getOutboundRoutesParameters, context);
+    public EffectiveRouteMapRouteList getOutboundRoutes(String resourceGroupName, String virtualHubName,
+        GetOutboundRoutesParameters getOutboundRoutesParameters, Context context) {
+        EffectiveRouteMapRouteListInner inner = this.serviceClient().getOutboundRoutes(resourceGroupName,
+            virtualHubName, getOutboundRoutesParameters, context);
         if (inner != null) {
             return new EffectiveRouteMapRouteListImpl(inner, this.manager());
         } else {
@@ -169,18 +151,13 @@ public final class VirtualHubsImpl implements VirtualHubs {
     public VirtualHub getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
         if (virtualHubName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, virtualHubName, Context.NONE).getValue();
     }
@@ -188,18 +165,13 @@ public final class VirtualHubsImpl implements VirtualHubs {
     public Response<VirtualHub> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
         if (virtualHubName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, virtualHubName, context);
     }
@@ -207,18 +179,13 @@ public final class VirtualHubsImpl implements VirtualHubs {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
         if (virtualHubName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
         }
         this.delete(resourceGroupName, virtualHubName, Context.NONE);
     }
@@ -226,18 +193,13 @@ public final class VirtualHubsImpl implements VirtualHubs {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
         if (virtualHubName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
         }
         this.delete(resourceGroupName, virtualHubName, context);
     }

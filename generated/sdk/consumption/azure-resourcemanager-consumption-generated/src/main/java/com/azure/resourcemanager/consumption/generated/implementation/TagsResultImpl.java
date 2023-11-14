@@ -15,8 +15,7 @@ public final class TagsResultImpl implements TagsResult {
 
     private final com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager;
 
-    TagsResultImpl(
-        TagsResultInner innerObject,
+    TagsResultImpl(TagsResultInner innerObject,
         com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

@@ -18,8 +18,8 @@ public final class TagDetailsImpl implements TagDetails {
 
     private final com.azure.resourcemanager.resources.generated.ResourceManager serviceManager;
 
-    TagDetailsImpl(
-        TagDetailsInner innerObject, com.azure.resourcemanager.resources.generated.ResourceManager serviceManager) {
+    TagDetailsImpl(TagDetailsInner innerObject,
+        com.azure.resourcemanager.resources.generated.ResourceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -39,12 +39,8 @@ public final class TagDetailsImpl implements TagDetails {
     public List<TagValue> values() {
         List<TagValueInner> inner = this.innerModel().values();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new TagValueImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(
+                inner.stream().map(inner1 -> new TagValueImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

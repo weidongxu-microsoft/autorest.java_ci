@@ -194,27 +194,19 @@ public final class DataBoxEdgeDeviceImpl
     }
 
     public DataBoxEdgeDevice create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDevices()
-                .createOrUpdateWithResponse(deviceName, resourceGroupName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getDevices()
+            .createOrUpdateWithResponse(deviceName, resourceGroupName, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public DataBoxEdgeDevice create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDevices()
-                .createOrUpdateWithResponse(deviceName, resourceGroupName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getDevices()
+            .createOrUpdateWithResponse(deviceName, resourceGroupName, this.innerModel(), context).getValue();
         return this;
     }
 
-    DataBoxEdgeDeviceImpl(
-        String name, com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
+    DataBoxEdgeDeviceImpl(String name,
+        com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerObject = new DataBoxEdgeDeviceInner();
         this.serviceManager = serviceManager;
         this.deviceName = name;
@@ -226,27 +218,18 @@ public final class DataBoxEdgeDeviceImpl
     }
 
     public DataBoxEdgeDevice apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDevices()
-                .updateWithResponse(deviceName, resourceGroupName, updateParameters, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getDevices()
+            .updateWithResponse(deviceName, resourceGroupName, updateParameters, Context.NONE).getValue();
         return this;
     }
 
     public DataBoxEdgeDevice apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDevices()
-                .updateWithResponse(deviceName, resourceGroupName, updateParameters, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getDevices()
+            .updateWithResponse(deviceName, resourceGroupName, updateParameters, context).getValue();
         return this;
     }
 
-    DataBoxEdgeDeviceImpl(
-        DataBoxEdgeDeviceInner innerObject,
+    DataBoxEdgeDeviceImpl(DataBoxEdgeDeviceInner innerObject,
         com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -255,22 +238,14 @@ public final class DataBoxEdgeDeviceImpl
     }
 
     public DataBoxEdgeDevice refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDevices()
-                .getByResourceGroupWithResponse(resourceGroupName, deviceName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getDevices()
+            .getByResourceGroupWithResponse(resourceGroupName, deviceName, Context.NONE).getValue();
         return this;
     }
 
     public DataBoxEdgeDevice refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDevices()
-                .getByResourceGroupWithResponse(resourceGroupName, deviceName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getDevices()
+            .getByResourceGroupWithResponse(resourceGroupName, deviceName, context).getValue();
         return this;
     }
 
@@ -314,22 +289,20 @@ public final class DataBoxEdgeDeviceImpl
         serviceManager.devices().scanForUpdates(deviceName, resourceGroupName, context);
     }
 
-    public Response<DataBoxEdgeDeviceExtendedInfo> updateExtendedInformationWithResponse(
-        DataBoxEdgeDeviceExtendedInfoPatch parameters, Context context) {
-        return serviceManager
-            .devices()
-            .updateExtendedInformationWithResponse(deviceName, resourceGroupName, parameters, context);
+    public Response<DataBoxEdgeDeviceExtendedInfo>
+        updateExtendedInformationWithResponse(DataBoxEdgeDeviceExtendedInfoPatch parameters, Context context) {
+        return serviceManager.devices().updateExtendedInformationWithResponse(deviceName, resourceGroupName, parameters,
+            context);
     }
 
     public DataBoxEdgeDeviceExtendedInfo updateExtendedInformation(DataBoxEdgeDeviceExtendedInfoPatch parameters) {
         return serviceManager.devices().updateExtendedInformation(deviceName, resourceGroupName, parameters);
     }
 
-    public Response<UploadCertificateResponse> uploadCertificateWithResponse(
-        UploadCertificateRequest parameters, Context context) {
-        return serviceManager
-            .devices()
-            .uploadCertificateWithResponse(deviceName, resourceGroupName, parameters, context);
+    public Response<UploadCertificateResponse> uploadCertificateWithResponse(UploadCertificateRequest parameters,
+        Context context) {
+        return serviceManager.devices().uploadCertificateWithResponse(deviceName, resourceGroupName, parameters,
+            context);
     }
 
     public UploadCertificateResponse uploadCertificate(UploadCertificateRequest parameters) {

@@ -12,8 +12,8 @@ public final class UpdateDomainImpl implements UpdateDomain {
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    UpdateDomainImpl(
-        UpdateDomainInner innerObject, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
+    UpdateDomainImpl(UpdateDomainInner innerObject,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -16,8 +16,7 @@ public final class OutboundNetworkDependenciesEndpointImpl implements OutboundNe
 
     private final com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager;
 
-    OutboundNetworkDependenciesEndpointImpl(
-        OutboundNetworkDependenciesEndpointInner innerObject,
+    OutboundNetworkDependenciesEndpointImpl(OutboundNetworkDependenciesEndpointInner innerObject,
         com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

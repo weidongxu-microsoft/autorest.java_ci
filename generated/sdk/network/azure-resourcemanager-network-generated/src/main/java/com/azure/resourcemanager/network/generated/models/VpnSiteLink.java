@@ -6,18 +6,20 @@ package com.azure.resourcemanager.network.generated.models;
 
 import com.azure.resourcemanager.network.generated.fluent.models.VpnSiteLinkInner;
 
-/** An immutable client-side representation of VpnSiteLink. */
+/**
+ * An immutable client-side representation of VpnSiteLink.
+ */
 public interface VpnSiteLink {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the etag property: A unique read-only string that changes whenever the resource is updated.
-     *
+     * 
      * @return the etag value.
      */
     String etag();
@@ -25,56 +27,56 @@ public interface VpnSiteLink {
     /**
      * Gets the name property: The name of the resource that is unique within a resource group. This name can be used to
      * access the resource.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the type property: Resource type.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the linkProperties property: The link provider properties.
-     *
+     * 
      * @return the linkProperties value.
      */
     VpnLinkProviderProperties linkProperties();
 
     /**
      * Gets the ipAddress property: The ip-address for the vpn-site-link.
-     *
+     * 
      * @return the ipAddress value.
      */
     String ipAddress();
 
     /**
      * Gets the fqdn property: FQDN of vpn-site-link.
-     *
+     * 
      * @return the fqdn value.
      */
     String fqdn();
 
     /**
      * Gets the bgpProperties property: The set of bgp properties.
-     *
+     * 
      * @return the bgpProperties value.
      */
     VpnLinkBgpSettings bgpProperties();
 
     /**
      * Gets the provisioningState property: The provisioning state of the VPN site link resource.
-     *
+     * 
      * @return the provisioningState value.
      */
     ProvisioningState provisioningState();
 
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.VpnSiteLinkInner object.
-     *
+     * 
      * @return the inner object.
      */
     VpnSiteLinkInner innerModel();

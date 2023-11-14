@@ -130,7 +130,10 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-/** Entry point to ComputeManager. Compute Client. */
+/**
+ * Entry point to ComputeManager.
+ * Compute Client.
+ */
 public final class ComputeManager {
     private Operations operations;
 
@@ -235,18 +238,14 @@ public final class ComputeManager {
     private ComputeManager(HttpPipeline httpPipeline, AzureProfile profile, Duration defaultPollInterval) {
         Objects.requireNonNull(httpPipeline, "'httpPipeline' cannot be null.");
         Objects.requireNonNull(profile, "'profile' cannot be null.");
-        this.clientObject =
-            new ComputeManagementClientBuilder()
-                .pipeline(httpPipeline)
-                .endpoint(profile.getEnvironment().getResourceManagerEndpoint())
-                .subscriptionId(profile.getSubscriptionId())
-                .defaultPollInterval(defaultPollInterval)
-                .buildClient();
+        this.clientObject = new ComputeManagementClientBuilder().pipeline(httpPipeline)
+            .endpoint(profile.getEnvironment().getResourceManagerEndpoint()).subscriptionId(profile.getSubscriptionId())
+            .defaultPollInterval(defaultPollInterval).buildClient();
     }
 
     /**
      * Creates an instance of Compute service API entry point.
-     *
+     * 
      * @param credential the credential to use.
      * @param profile the Azure profile for client.
      * @return the Compute service API instance.
@@ -259,7 +258,7 @@ public final class ComputeManager {
 
     /**
      * Creates an instance of Compute service API entry point.
-     *
+     * 
      * @param httpPipeline the {@link HttpPipeline} configured with Azure authentication credential.
      * @param profile the Azure profile for client.
      * @return the Compute service API instance.
@@ -272,14 +271,16 @@ public final class ComputeManager {
 
     /**
      * Gets a Configurable instance that can be used to create ComputeManager with optional configuration.
-     *
+     * 
      * @return the Configurable instance allowing configurations.
      */
     public static Configurable configure() {
         return new ComputeManager.Configurable();
     }
 
-    /** The Configurable allowing configurations to be set. */
+    /**
+     * The Configurable allowing configurations to be set.
+     */
     public static final class Configurable {
         private static final ClientLogger LOGGER = new ClientLogger(Configurable.class);
 
@@ -351,8 +352,8 @@ public final class ComputeManager {
 
         /**
          * Sets the retry options for the HTTP pipeline retry policy.
-         *
-         * <p>This setting has no effect, if retry policy is set via {@link #withRetryPolicy(RetryPolicy)}.
+         * <p>
+         * This setting has no effect, if retry policy is set via {@link #withRetryPolicy(RetryPolicy)}.
          *
          * @param retryOptions the retry options for the HTTP pipeline retry policy.
          * @return the configurable object itself.
@@ -369,8 +370,8 @@ public final class ComputeManager {
          * @return the configurable object itself.
          */
         public Configurable withDefaultPollInterval(Duration defaultPollInterval) {
-            this.defaultPollInterval =
-                Objects.requireNonNull(defaultPollInterval, "'defaultPollInterval' cannot be null.");
+            this.defaultPollInterval
+                = Objects.requireNonNull(defaultPollInterval, "'defaultPollInterval' cannot be null.");
             if (this.defaultPollInterval.isNegative()) {
                 throw LOGGER
                     .logExceptionAsError(new IllegalArgumentException("'defaultPollInterval' cannot be negative"));
@@ -390,21 +391,12 @@ public final class ComputeManager {
             Objects.requireNonNull(profile, "'profile' cannot be null.");
 
             StringBuilder userAgentBuilder = new StringBuilder();
-            userAgentBuilder
-                .append("azsdk-java")
-                .append("-")
-                .append("com.azure.resourcemanager.compute.generated")
-                .append("/")
-                .append("1.0.0-beta.1");
+            userAgentBuilder.append("azsdk-java").append("-").append("com.azure.resourcemanager.compute.generated")
+                .append("/").append("1.0.0-beta.1");
             if (!Configuration.getGlobalConfiguration().get("AZURE_TELEMETRY_DISABLED", false)) {
-                userAgentBuilder
-                    .append(" (")
-                    .append(Configuration.getGlobalConfiguration().get("java.version"))
-                    .append("; ")
-                    .append(Configuration.getGlobalConfiguration().get("os.name"))
-                    .append("; ")
-                    .append(Configuration.getGlobalConfiguration().get("os.version"))
-                    .append("; auto-generated)");
+                userAgentBuilder.append(" (").append(Configuration.getGlobalConfiguration().get("java.version"))
+                    .append("; ").append(Configuration.getGlobalConfiguration().get("os.name")).append("; ")
+                    .append(Configuration.getGlobalConfiguration().get("os.version")).append("; auto-generated)");
             } else {
                 userAgentBuilder.append(" (auto-generated)");
             }
@@ -423,38 +415,25 @@ public final class ComputeManager {
             policies.add(new UserAgentPolicy(userAgentBuilder.toString()));
             policies.add(new AddHeadersFromContextPolicy());
             policies.add(new RequestIdPolicy());
-            policies
-                .addAll(
-                    this
-                        .policies
-                        .stream()
-                        .filter(p -> p.getPipelinePosition() == HttpPipelinePosition.PER_CALL)
-                        .collect(Collectors.toList()));
+            policies.addAll(this.policies.stream().filter(p -> p.getPipelinePosition() == HttpPipelinePosition.PER_CALL)
+                .collect(Collectors.toList()));
             HttpPolicyProviders.addBeforeRetryPolicies(policies);
             policies.add(retryPolicy);
             policies.add(new AddDatePolicy());
             policies.add(new ArmChallengeAuthenticationPolicy(credential, scopes.toArray(new String[0])));
-            policies
-                .addAll(
-                    this
-                        .policies
-                        .stream()
-                        .filter(p -> p.getPipelinePosition() == HttpPipelinePosition.PER_RETRY)
-                        .collect(Collectors.toList()));
+            policies.addAll(this.policies.stream()
+                .filter(p -> p.getPipelinePosition() == HttpPipelinePosition.PER_RETRY).collect(Collectors.toList()));
             HttpPolicyProviders.addAfterRetryPolicies(policies);
             policies.add(new HttpLoggingPolicy(httpLogOptions));
-            HttpPipeline httpPipeline =
-                new HttpPipelineBuilder()
-                    .httpClient(httpClient)
-                    .policies(policies.toArray(new HttpPipelinePolicy[0]))
-                    .build();
+            HttpPipeline httpPipeline = new HttpPipelineBuilder().httpClient(httpClient)
+                .policies(policies.toArray(new HttpPipelinePolicy[0])).build();
             return new ComputeManager(httpPipeline, profile, defaultPollInterval);
         }
     }
 
     /**
      * Gets the resource collection API of Operations.
-     *
+     * 
      * @return Resource collection API of Operations.
      */
     public Operations operations() {
@@ -466,7 +445,7 @@ public final class ComputeManager {
 
     /**
      * Gets the resource collection API of Usages.
-     *
+     * 
      * @return Resource collection API of Usages.
      */
     public Usages usages() {
@@ -478,7 +457,7 @@ public final class ComputeManager {
 
     /**
      * Gets the resource collection API of VirtualMachineSizes.
-     *
+     * 
      * @return Resource collection API of VirtualMachineSizes.
      */
     public VirtualMachineSizes virtualMachineSizes() {
@@ -490,40 +469,39 @@ public final class ComputeManager {
 
     /**
      * Gets the resource collection API of VirtualMachineScaleSets. It manages VirtualMachineScaleSet.
-     *
+     * 
      * @return Resource collection API of VirtualMachineScaleSets.
      */
     public VirtualMachineScaleSets virtualMachineScaleSets() {
         if (this.virtualMachineScaleSets == null) {
-            this.virtualMachineScaleSets =
-                new VirtualMachineScaleSetsImpl(clientObject.getVirtualMachineScaleSets(), this);
+            this.virtualMachineScaleSets
+                = new VirtualMachineScaleSetsImpl(clientObject.getVirtualMachineScaleSets(), this);
         }
         return virtualMachineScaleSets;
     }
 
     /**
      * Gets the resource collection API of VirtualMachineScaleSetExtensions. It manages VirtualMachineScaleSetExtension.
-     *
+     * 
      * @return Resource collection API of VirtualMachineScaleSetExtensions.
      */
     public VirtualMachineScaleSetExtensions virtualMachineScaleSetExtensions() {
         if (this.virtualMachineScaleSetExtensions == null) {
-            this.virtualMachineScaleSetExtensions =
-                new VirtualMachineScaleSetExtensionsImpl(clientObject.getVirtualMachineScaleSetExtensions(), this);
+            this.virtualMachineScaleSetExtensions
+                = new VirtualMachineScaleSetExtensionsImpl(clientObject.getVirtualMachineScaleSetExtensions(), this);
         }
         return virtualMachineScaleSetExtensions;
     }
 
     /**
      * Gets the resource collection API of VirtualMachineScaleSetRollingUpgrades.
-     *
+     * 
      * @return Resource collection API of VirtualMachineScaleSetRollingUpgrades.
      */
     public VirtualMachineScaleSetRollingUpgrades virtualMachineScaleSetRollingUpgrades() {
         if (this.virtualMachineScaleSetRollingUpgrades == null) {
-            this.virtualMachineScaleSetRollingUpgrades =
-                new VirtualMachineScaleSetRollingUpgradesImpl(
-                    clientObject.getVirtualMachineScaleSetRollingUpgrades(), this);
+            this.virtualMachineScaleSetRollingUpgrades = new VirtualMachineScaleSetRollingUpgradesImpl(
+                clientObject.getVirtualMachineScaleSetRollingUpgrades(), this);
         }
         return virtualMachineScaleSetRollingUpgrades;
     }
@@ -531,46 +509,46 @@ public final class ComputeManager {
     /**
      * Gets the resource collection API of VirtualMachineScaleSetVMExtensions. It manages
      * VirtualMachineScaleSetVMExtension.
-     *
+     * 
      * @return Resource collection API of VirtualMachineScaleSetVMExtensions.
      */
     public VirtualMachineScaleSetVMExtensions virtualMachineScaleSetVMExtensions() {
         if (this.virtualMachineScaleSetVMExtensions == null) {
-            this.virtualMachineScaleSetVMExtensions =
-                new VirtualMachineScaleSetVMExtensionsImpl(clientObject.getVirtualMachineScaleSetVMExtensions(), this);
+            this.virtualMachineScaleSetVMExtensions = new VirtualMachineScaleSetVMExtensionsImpl(
+                clientObject.getVirtualMachineScaleSetVMExtensions(), this);
         }
         return virtualMachineScaleSetVMExtensions;
     }
 
     /**
      * Gets the resource collection API of VirtualMachineScaleSetVMs.
-     *
+     * 
      * @return Resource collection API of VirtualMachineScaleSetVMs.
      */
     public VirtualMachineScaleSetVMs virtualMachineScaleSetVMs() {
         if (this.virtualMachineScaleSetVMs == null) {
-            this.virtualMachineScaleSetVMs =
-                new VirtualMachineScaleSetVMsImpl(clientObject.getVirtualMachineScaleSetVMs(), this);
+            this.virtualMachineScaleSetVMs
+                = new VirtualMachineScaleSetVMsImpl(clientObject.getVirtualMachineScaleSetVMs(), this);
         }
         return virtualMachineScaleSetVMs;
     }
 
     /**
      * Gets the resource collection API of VirtualMachineExtensions. It manages VirtualMachineExtension.
-     *
+     * 
      * @return Resource collection API of VirtualMachineExtensions.
      */
     public VirtualMachineExtensions virtualMachineExtensions() {
         if (this.virtualMachineExtensions == null) {
-            this.virtualMachineExtensions =
-                new VirtualMachineExtensionsImpl(clientObject.getVirtualMachineExtensions(), this);
+            this.virtualMachineExtensions
+                = new VirtualMachineExtensionsImpl(clientObject.getVirtualMachineExtensions(), this);
         }
         return virtualMachineExtensions;
     }
 
     /**
      * Gets the resource collection API of VirtualMachines. It manages VirtualMachine.
-     *
+     * 
      * @return Resource collection API of VirtualMachines.
      */
     public VirtualMachines virtualMachines() {
@@ -582,7 +560,7 @@ public final class ComputeManager {
 
     /**
      * Gets the resource collection API of VirtualMachineImages.
-     *
+     * 
      * @return Resource collection API of VirtualMachineImages.
      */
     public VirtualMachineImages virtualMachineImages() {
@@ -594,33 +572,33 @@ public final class ComputeManager {
 
     /**
      * Gets the resource collection API of VirtualMachineImagesEdgeZones.
-     *
+     * 
      * @return Resource collection API of VirtualMachineImagesEdgeZones.
      */
     public VirtualMachineImagesEdgeZones virtualMachineImagesEdgeZones() {
         if (this.virtualMachineImagesEdgeZones == null) {
-            this.virtualMachineImagesEdgeZones =
-                new VirtualMachineImagesEdgeZonesImpl(clientObject.getVirtualMachineImagesEdgeZones(), this);
+            this.virtualMachineImagesEdgeZones
+                = new VirtualMachineImagesEdgeZonesImpl(clientObject.getVirtualMachineImagesEdgeZones(), this);
         }
         return virtualMachineImagesEdgeZones;
     }
 
     /**
      * Gets the resource collection API of VirtualMachineExtensionImages.
-     *
+     * 
      * @return Resource collection API of VirtualMachineExtensionImages.
      */
     public VirtualMachineExtensionImages virtualMachineExtensionImages() {
         if (this.virtualMachineExtensionImages == null) {
-            this.virtualMachineExtensionImages =
-                new VirtualMachineExtensionImagesImpl(clientObject.getVirtualMachineExtensionImages(), this);
+            this.virtualMachineExtensionImages
+                = new VirtualMachineExtensionImagesImpl(clientObject.getVirtualMachineExtensionImages(), this);
         }
         return virtualMachineExtensionImages;
     }
 
     /**
      * Gets the resource collection API of AvailabilitySets. It manages AvailabilitySet.
-     *
+     * 
      * @return Resource collection API of AvailabilitySets.
      */
     public AvailabilitySets availabilitySets() {
@@ -632,20 +610,20 @@ public final class ComputeManager {
 
     /**
      * Gets the resource collection API of ProximityPlacementGroups. It manages ProximityPlacementGroup.
-     *
+     * 
      * @return Resource collection API of ProximityPlacementGroups.
      */
     public ProximityPlacementGroups proximityPlacementGroups() {
         if (this.proximityPlacementGroups == null) {
-            this.proximityPlacementGroups =
-                new ProximityPlacementGroupsImpl(clientObject.getProximityPlacementGroups(), this);
+            this.proximityPlacementGroups
+                = new ProximityPlacementGroupsImpl(clientObject.getProximityPlacementGroups(), this);
         }
         return proximityPlacementGroups;
     }
 
     /**
      * Gets the resource collection API of DedicatedHostGroups. It manages DedicatedHostGroup.
-     *
+     * 
      * @return Resource collection API of DedicatedHostGroups.
      */
     public DedicatedHostGroups dedicatedHostGroups() {
@@ -657,7 +635,7 @@ public final class ComputeManager {
 
     /**
      * Gets the resource collection API of DedicatedHosts. It manages DedicatedHost.
-     *
+     * 
      * @return Resource collection API of DedicatedHosts.
      */
     public DedicatedHosts dedicatedHosts() {
@@ -669,7 +647,7 @@ public final class ComputeManager {
 
     /**
      * Gets the resource collection API of SshPublicKeys. It manages SshPublicKeyResource.
-     *
+     * 
      * @return Resource collection API of SshPublicKeys.
      */
     public SshPublicKeys sshPublicKeys() {
@@ -681,7 +659,7 @@ public final class ComputeManager {
 
     /**
      * Gets the resource collection API of Images. It manages Image.
-     *
+     * 
      * @return Resource collection API of Images.
      */
     public Images images() {
@@ -693,20 +671,20 @@ public final class ComputeManager {
 
     /**
      * Gets the resource collection API of RestorePointCollections. It manages RestorePointCollection.
-     *
+     * 
      * @return Resource collection API of RestorePointCollections.
      */
     public RestorePointCollections restorePointCollections() {
         if (this.restorePointCollections == null) {
-            this.restorePointCollections =
-                new RestorePointCollectionsImpl(clientObject.getRestorePointCollections(), this);
+            this.restorePointCollections
+                = new RestorePointCollectionsImpl(clientObject.getRestorePointCollections(), this);
         }
         return restorePointCollections;
     }
 
     /**
      * Gets the resource collection API of RestorePoints. It manages RestorePoint.
-     *
+     * 
      * @return Resource collection API of RestorePoints.
      */
     public RestorePoints restorePoints() {
@@ -718,20 +696,20 @@ public final class ComputeManager {
 
     /**
      * Gets the resource collection API of CapacityReservationGroups. It manages CapacityReservationGroup.
-     *
+     * 
      * @return Resource collection API of CapacityReservationGroups.
      */
     public CapacityReservationGroups capacityReservationGroups() {
         if (this.capacityReservationGroups == null) {
-            this.capacityReservationGroups =
-                new CapacityReservationGroupsImpl(clientObject.getCapacityReservationGroups(), this);
+            this.capacityReservationGroups
+                = new CapacityReservationGroupsImpl(clientObject.getCapacityReservationGroups(), this);
         }
         return capacityReservationGroups;
     }
 
     /**
      * Gets the resource collection API of CapacityReservations. It manages CapacityReservation.
-     *
+     * 
      * @return Resource collection API of CapacityReservations.
      */
     public CapacityReservations capacityReservations() {
@@ -743,7 +721,7 @@ public final class ComputeManager {
 
     /**
      * Gets the resource collection API of LogAnalytics.
-     *
+     * 
      * @return Resource collection API of LogAnalytics.
      */
     public LogAnalytics logAnalytics() {
@@ -755,34 +733,33 @@ public final class ComputeManager {
 
     /**
      * Gets the resource collection API of VirtualMachineRunCommands. It manages VirtualMachineRunCommand.
-     *
+     * 
      * @return Resource collection API of VirtualMachineRunCommands.
      */
     public VirtualMachineRunCommands virtualMachineRunCommands() {
         if (this.virtualMachineRunCommands == null) {
-            this.virtualMachineRunCommands =
-                new VirtualMachineRunCommandsImpl(clientObject.getVirtualMachineRunCommands(), this);
+            this.virtualMachineRunCommands
+                = new VirtualMachineRunCommandsImpl(clientObject.getVirtualMachineRunCommands(), this);
         }
         return virtualMachineRunCommands;
     }
 
     /**
      * Gets the resource collection API of VirtualMachineScaleSetVMRunCommands.
-     *
+     * 
      * @return Resource collection API of VirtualMachineScaleSetVMRunCommands.
      */
     public VirtualMachineScaleSetVMRunCommands virtualMachineScaleSetVMRunCommands() {
         if (this.virtualMachineScaleSetVMRunCommands == null) {
-            this.virtualMachineScaleSetVMRunCommands =
-                new VirtualMachineScaleSetVMRunCommandsImpl(
-                    clientObject.getVirtualMachineScaleSetVMRunCommands(), this);
+            this.virtualMachineScaleSetVMRunCommands = new VirtualMachineScaleSetVMRunCommandsImpl(
+                clientObject.getVirtualMachineScaleSetVMRunCommands(), this);
         }
         return virtualMachineScaleSetVMRunCommands;
     }
 
     /**
      * Gets the resource collection API of Disks. It manages Disk.
-     *
+     * 
      * @return Resource collection API of Disks.
      */
     public Disks disks() {
@@ -794,7 +771,7 @@ public final class ComputeManager {
 
     /**
      * Gets the resource collection API of DiskAccesses. It manages DiskAccess.
-     *
+     * 
      * @return Resource collection API of DiskAccesses.
      */
     public DiskAccesses diskAccesses() {
@@ -806,7 +783,7 @@ public final class ComputeManager {
 
     /**
      * Gets the resource collection API of DiskEncryptionSets. It manages DiskEncryptionSet.
-     *
+     * 
      * @return Resource collection API of DiskEncryptionSets.
      */
     public DiskEncryptionSets diskEncryptionSets() {
@@ -818,7 +795,7 @@ public final class ComputeManager {
 
     /**
      * Gets the resource collection API of DiskRestorePoints.
-     *
+     * 
      * @return Resource collection API of DiskRestorePoints.
      */
     public DiskRestorePoints diskRestorePoints() {
@@ -830,7 +807,7 @@ public final class ComputeManager {
 
     /**
      * Gets the resource collection API of Snapshots. It manages Snapshot.
-     *
+     * 
      * @return Resource collection API of Snapshots.
      */
     public Snapshots snapshots() {
@@ -842,7 +819,7 @@ public final class ComputeManager {
 
     /**
      * Gets the resource collection API of ResourceSkus.
-     *
+     * 
      * @return Resource collection API of ResourceSkus.
      */
     public ResourceSkus resourceSkus() {
@@ -854,7 +831,7 @@ public final class ComputeManager {
 
     /**
      * Gets the resource collection API of Galleries. It manages Gallery.
-     *
+     * 
      * @return Resource collection API of Galleries.
      */
     public Galleries galleries() {
@@ -866,7 +843,7 @@ public final class ComputeManager {
 
     /**
      * Gets the resource collection API of GalleryImages. It manages GalleryImage.
-     *
+     * 
      * @return Resource collection API of GalleryImages.
      */
     public GalleryImages galleryImages() {
@@ -878,7 +855,7 @@ public final class ComputeManager {
 
     /**
      * Gets the resource collection API of GalleryImageVersions. It manages GalleryImageVersion.
-     *
+     * 
      * @return Resource collection API of GalleryImageVersions.
      */
     public GalleryImageVersions galleryImageVersions() {
@@ -890,7 +867,7 @@ public final class ComputeManager {
 
     /**
      * Gets the resource collection API of GalleryApplications. It manages GalleryApplication.
-     *
+     * 
      * @return Resource collection API of GalleryApplications.
      */
     public GalleryApplications galleryApplications() {
@@ -902,33 +879,33 @@ public final class ComputeManager {
 
     /**
      * Gets the resource collection API of GalleryApplicationVersions. It manages GalleryApplicationVersion.
-     *
+     * 
      * @return Resource collection API of GalleryApplicationVersions.
      */
     public GalleryApplicationVersions galleryApplicationVersions() {
         if (this.galleryApplicationVersions == null) {
-            this.galleryApplicationVersions =
-                new GalleryApplicationVersionsImpl(clientObject.getGalleryApplicationVersions(), this);
+            this.galleryApplicationVersions
+                = new GalleryApplicationVersionsImpl(clientObject.getGalleryApplicationVersions(), this);
         }
         return galleryApplicationVersions;
     }
 
     /**
      * Gets the resource collection API of GallerySharingProfiles.
-     *
+     * 
      * @return Resource collection API of GallerySharingProfiles.
      */
     public GallerySharingProfiles gallerySharingProfiles() {
         if (this.gallerySharingProfiles == null) {
-            this.gallerySharingProfiles =
-                new GallerySharingProfilesImpl(clientObject.getGallerySharingProfiles(), this);
+            this.gallerySharingProfiles
+                = new GallerySharingProfilesImpl(clientObject.getGallerySharingProfiles(), this);
         }
         return gallerySharingProfiles;
     }
 
     /**
      * Gets the resource collection API of SharedGalleries.
-     *
+     * 
      * @return Resource collection API of SharedGalleries.
      */
     public SharedGalleries sharedGalleries() {
@@ -940,7 +917,7 @@ public final class ComputeManager {
 
     /**
      * Gets the resource collection API of SharedGalleryImages.
-     *
+     * 
      * @return Resource collection API of SharedGalleryImages.
      */
     public SharedGalleryImages sharedGalleryImages() {
@@ -952,20 +929,20 @@ public final class ComputeManager {
 
     /**
      * Gets the resource collection API of SharedGalleryImageVersions.
-     *
+     * 
      * @return Resource collection API of SharedGalleryImageVersions.
      */
     public SharedGalleryImageVersions sharedGalleryImageVersions() {
         if (this.sharedGalleryImageVersions == null) {
-            this.sharedGalleryImageVersions =
-                new SharedGalleryImageVersionsImpl(clientObject.getSharedGalleryImageVersions(), this);
+            this.sharedGalleryImageVersions
+                = new SharedGalleryImageVersionsImpl(clientObject.getSharedGalleryImageVersions(), this);
         }
         return sharedGalleryImageVersions;
     }
 
     /**
      * Gets the resource collection API of CommunityGalleries.
-     *
+     * 
      * @return Resource collection API of CommunityGalleries.
      */
     public CommunityGalleries communityGalleries() {
@@ -977,46 +954,46 @@ public final class ComputeManager {
 
     /**
      * Gets the resource collection API of CommunityGalleryImages.
-     *
+     * 
      * @return Resource collection API of CommunityGalleryImages.
      */
     public CommunityGalleryImages communityGalleryImages() {
         if (this.communityGalleryImages == null) {
-            this.communityGalleryImages =
-                new CommunityGalleryImagesImpl(clientObject.getCommunityGalleryImages(), this);
+            this.communityGalleryImages
+                = new CommunityGalleryImagesImpl(clientObject.getCommunityGalleryImages(), this);
         }
         return communityGalleryImages;
     }
 
     /**
      * Gets the resource collection API of CommunityGalleryImageVersions.
-     *
+     * 
      * @return Resource collection API of CommunityGalleryImageVersions.
      */
     public CommunityGalleryImageVersions communityGalleryImageVersions() {
         if (this.communityGalleryImageVersions == null) {
-            this.communityGalleryImageVersions =
-                new CommunityGalleryImageVersionsImpl(clientObject.getCommunityGalleryImageVersions(), this);
+            this.communityGalleryImageVersions
+                = new CommunityGalleryImageVersionsImpl(clientObject.getCommunityGalleryImageVersions(), this);
         }
         return communityGalleryImageVersions;
     }
 
     /**
      * Gets the resource collection API of CloudServiceRoleInstances.
-     *
+     * 
      * @return Resource collection API of CloudServiceRoleInstances.
      */
     public CloudServiceRoleInstances cloudServiceRoleInstances() {
         if (this.cloudServiceRoleInstances == null) {
-            this.cloudServiceRoleInstances =
-                new CloudServiceRoleInstancesImpl(clientObject.getCloudServiceRoleInstances(), this);
+            this.cloudServiceRoleInstances
+                = new CloudServiceRoleInstancesImpl(clientObject.getCloudServiceRoleInstances(), this);
         }
         return cloudServiceRoleInstances;
     }
 
     /**
      * Gets the resource collection API of CloudServiceRoles.
-     *
+     * 
      * @return Resource collection API of CloudServiceRoles.
      */
     public CloudServiceRoles cloudServiceRoles() {
@@ -1028,7 +1005,7 @@ public final class ComputeManager {
 
     /**
      * Gets the resource collection API of CloudServices. It manages CloudService.
-     *
+     * 
      * @return Resource collection API of CloudServices.
      */
     public CloudServices cloudServices() {
@@ -1040,26 +1017,26 @@ public final class ComputeManager {
 
     /**
      * Gets the resource collection API of CloudServicesUpdateDomains.
-     *
+     * 
      * @return Resource collection API of CloudServicesUpdateDomains.
      */
     public CloudServicesUpdateDomains cloudServicesUpdateDomains() {
         if (this.cloudServicesUpdateDomains == null) {
-            this.cloudServicesUpdateDomains =
-                new CloudServicesUpdateDomainsImpl(clientObject.getCloudServicesUpdateDomains(), this);
+            this.cloudServicesUpdateDomains
+                = new CloudServicesUpdateDomainsImpl(clientObject.getCloudServicesUpdateDomains(), this);
         }
         return cloudServicesUpdateDomains;
     }
 
     /**
      * Gets the resource collection API of CloudServiceOperatingSystems.
-     *
+     * 
      * @return Resource collection API of CloudServiceOperatingSystems.
      */
     public CloudServiceOperatingSystems cloudServiceOperatingSystems() {
         if (this.cloudServiceOperatingSystems == null) {
-            this.cloudServiceOperatingSystems =
-                new CloudServiceOperatingSystemsImpl(clientObject.getCloudServiceOperatingSystems(), this);
+            this.cloudServiceOperatingSystems
+                = new CloudServiceOperatingSystemsImpl(clientObject.getCloudServiceOperatingSystems(), this);
         }
         return cloudServiceOperatingSystems;
     }
@@ -1067,7 +1044,7 @@ public final class ComputeManager {
     /**
      * Gets wrapped service client ComputeManagementClient providing direct access to the underlying auto-generated API
      * implementation, based on Azure REST API.
-     *
+     * 
      * @return Wrapped service client ComputeManagementClient.
      */
     public ComputeManagementClient serviceClient() {

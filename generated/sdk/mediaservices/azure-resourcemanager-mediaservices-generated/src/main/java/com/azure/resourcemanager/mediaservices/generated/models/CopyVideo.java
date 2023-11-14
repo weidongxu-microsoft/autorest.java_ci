@@ -8,16 +8,22 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** A codec flag, which tells the encoder to copy the input video bitstream without re-encoding. */
+/**
+ * A codec flag, which tells the encoder to copy the input video bitstream without re-encoding.
+ */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
 @JsonTypeName("#Microsoft.Media.CopyVideo")
 @Fluent
 public final class CopyVideo extends Codec {
-    /** Creates an instance of CopyVideo class. */
+    /**
+     * Creates an instance of CopyVideo class.
+     */
     public CopyVideo() {
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public CopyVideo withLabel(String label) {
         super.withLabel(label);
@@ -26,7 +32,7 @@ public final class CopyVideo extends Codec {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Deny assignment permissions. */
+/**
+ * Deny assignment permissions.
+ */
 @Fluent
 public final class DenyAssignmentPermission {
     /*
@@ -35,13 +37,15 @@ public final class DenyAssignmentPermission {
     @JsonProperty(value = "notDataActions")
     private List<String> notDataActions;
 
-    /** Creates an instance of DenyAssignmentPermission class. */
+    /**
+     * Creates an instance of DenyAssignmentPermission class.
+     */
     public DenyAssignmentPermission() {
     }
 
     /**
      * Get the actions property: Actions to which the deny assignment does not grant access.
-     *
+     * 
      * @return the actions value.
      */
     public List<String> actions() {
@@ -50,7 +54,7 @@ public final class DenyAssignmentPermission {
 
     /**
      * Set the actions property: Actions to which the deny assignment does not grant access.
-     *
+     * 
      * @param actions the actions value to set.
      * @return the DenyAssignmentPermission object itself.
      */
@@ -61,7 +65,7 @@ public final class DenyAssignmentPermission {
 
     /**
      * Get the notActions property: Actions to exclude from that the deny assignment does not grant access.
-     *
+     * 
      * @return the notActions value.
      */
     public List<String> notActions() {
@@ -70,7 +74,7 @@ public final class DenyAssignmentPermission {
 
     /**
      * Set the notActions property: Actions to exclude from that the deny assignment does not grant access.
-     *
+     * 
      * @param notActions the notActions value to set.
      * @return the DenyAssignmentPermission object itself.
      */
@@ -81,7 +85,7 @@ public final class DenyAssignmentPermission {
 
     /**
      * Get the dataActions property: Data actions to which the deny assignment does not grant access.
-     *
+     * 
      * @return the dataActions value.
      */
     public List<String> dataActions() {
@@ -90,7 +94,7 @@ public final class DenyAssignmentPermission {
 
     /**
      * Set the dataActions property: Data actions to which the deny assignment does not grant access.
-     *
+     * 
      * @param dataActions the dataActions value to set.
      * @return the DenyAssignmentPermission object itself.
      */
@@ -101,7 +105,7 @@ public final class DenyAssignmentPermission {
 
     /**
      * Get the notDataActions property: Data actions to exclude from that the deny assignment does not grant access.
-     *
+     * 
      * @return the notDataActions value.
      */
     public List<String> notDataActions() {
@@ -110,7 +114,7 @@ public final class DenyAssignmentPermission {
 
     /**
      * Set the notDataActions property: Data actions to exclude from that the deny assignment does not grant access.
-     *
+     * 
      * @param notDataActions the notDataActions value to set.
      * @return the DenyAssignmentPermission object itself.
      */
@@ -121,7 +125,7 @@ public final class DenyAssignmentPermission {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

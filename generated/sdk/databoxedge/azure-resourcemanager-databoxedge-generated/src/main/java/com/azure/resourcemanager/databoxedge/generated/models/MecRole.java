@@ -11,7 +11,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** MEC role. */
+/**
+ * MEC role.
+ */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "kind")
 @JsonTypeName("MEC")
 @Fluent
@@ -22,13 +24,15 @@ public final class MecRole extends RoleInner {
     @JsonProperty(value = "properties")
     private MecRoleProperties innerProperties;
 
-    /** Creates an instance of MecRole class. */
+    /**
+     * Creates an instance of MecRole class.
+     */
     public MecRole() {
     }
 
     /**
      * Get the innerProperties property: Properties specific to MEC role.
-     *
+     * 
      * @return the innerProperties value.
      */
     private MecRoleProperties innerProperties() {
@@ -37,7 +41,7 @@ public final class MecRole extends RoleInner {
 
     /**
      * Get the connectionString property: Activation key of the MEC.
-     *
+     * 
      * @return the connectionString value.
      */
     public AsymmetricEncryptedSecret connectionString() {
@@ -46,7 +50,7 @@ public final class MecRole extends RoleInner {
 
     /**
      * Set the connectionString property: Activation key of the MEC.
-     *
+     * 
      * @param connectionString the connectionString value to set.
      * @return the MecRole object itself.
      */
@@ -60,7 +64,7 @@ public final class MecRole extends RoleInner {
 
     /**
      * Get the controllerEndpoint property: Controller Endpoint.
-     *
+     * 
      * @return the controllerEndpoint value.
      */
     public String controllerEndpoint() {
@@ -69,7 +73,7 @@ public final class MecRole extends RoleInner {
 
     /**
      * Set the controllerEndpoint property: Controller Endpoint.
-     *
+     * 
      * @param controllerEndpoint the controllerEndpoint value to set.
      * @return the MecRole object itself.
      */
@@ -83,7 +87,7 @@ public final class MecRole extends RoleInner {
 
     /**
      * Get the resourceUniqueId property: Unique Id of the Resource.
-     *
+     * 
      * @return the resourceUniqueId value.
      */
     public String resourceUniqueId() {
@@ -92,7 +96,7 @@ public final class MecRole extends RoleInner {
 
     /**
      * Set the resourceUniqueId property: Unique Id of the Resource.
-     *
+     * 
      * @param resourceUniqueId the resourceUniqueId value to set.
      * @return the MecRole object itself.
      */
@@ -106,7 +110,7 @@ public final class MecRole extends RoleInner {
 
     /**
      * Get the roleStatus property: Role status.
-     *
+     * 
      * @return the roleStatus value.
      */
     public RoleStatus roleStatus() {
@@ -115,7 +119,7 @@ public final class MecRole extends RoleInner {
 
     /**
      * Set the roleStatus property: Role status.
-     *
+     * 
      * @param roleStatus the roleStatus value to set.
      * @return the MecRole object itself.
      */
@@ -129,7 +133,7 @@ public final class MecRole extends RoleInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

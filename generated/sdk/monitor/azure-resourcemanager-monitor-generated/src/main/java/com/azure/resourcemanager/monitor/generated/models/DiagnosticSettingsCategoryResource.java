@@ -6,32 +6,34 @@ package com.azure.resourcemanager.monitor.generated.models;
 
 import com.azure.resourcemanager.monitor.generated.fluent.models.DiagnosticSettingsCategoryResourceInner;
 
-/** An immutable client-side representation of DiagnosticSettingsCategoryResource. */
+/**
+ * An immutable client-side representation of DiagnosticSettingsCategoryResource.
+ */
 public interface DiagnosticSettingsCategoryResource {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the name property: The name of the resource.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the type property: The type of the resource.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the categoryType property: The type of the diagnostic settings category.
-     *
+     * 
      * @return the categoryType value.
      */
     CategoryType categoryType();
@@ -39,7 +41,7 @@ public interface DiagnosticSettingsCategoryResource {
     /**
      * Gets the inner com.azure.resourcemanager.monitor.generated.fluent.models.DiagnosticSettingsCategoryResourceInner
      * object.
-     *
+     * 
      * @return the inner object.
      */
     DiagnosticSettingsCategoryResourceInner innerModel();

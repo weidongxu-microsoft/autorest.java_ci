@@ -11,7 +11,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.List;
 
-/** Represents an Asset for input into a Job. */
+/**
+ * Represents an Asset for input into a Job.
+ */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
 @JsonTypeName("#Microsoft.Media.JobInputAsset")
 @Fluent
@@ -22,13 +24,15 @@ public final class JobInputAsset extends JobInputClip {
     @JsonProperty(value = "assetName", required = true)
     private String assetName;
 
-    /** Creates an instance of JobInputAsset class. */
+    /**
+     * Creates an instance of JobInputAsset class.
+     */
     public JobInputAsset() {
     }
 
     /**
      * Get the assetName property: The name of the input Asset.
-     *
+     * 
      * @return the assetName value.
      */
     public String assetName() {
@@ -37,7 +41,7 @@ public final class JobInputAsset extends JobInputClip {
 
     /**
      * Set the assetName property: The name of the input Asset.
-     *
+     * 
      * @param assetName the assetName value to set.
      * @return the JobInputAsset object itself.
      */
@@ -46,35 +50,45 @@ public final class JobInputAsset extends JobInputClip {
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public JobInputAsset withFiles(List<String> files) {
         super.withFiles(files);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public JobInputAsset withStart(ClipTime start) {
         super.withStart(start);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public JobInputAsset withEnd(ClipTime end) {
         super.withEnd(end);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public JobInputAsset withLabel(String label) {
         super.withLabel(label);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public JobInputAsset withInputDefinitions(List<InputDefinition> inputDefinitions) {
         super.withInputDefinitions(inputDefinitions);
@@ -83,16 +97,15 @@ public final class JobInputAsset extends JobInputClip {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override
     public void validate() {
         super.validate();
         if (assetName() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property assetName in model JobInputAsset"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property assetName in model JobInputAsset"));
         }
     }
 

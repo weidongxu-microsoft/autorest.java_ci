@@ -7,7 +7,9 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The EdgeUsageDataEventHub model. */
+/**
+ * The EdgeUsageDataEventHub model.
+ */
 @Fluent
 public final class EdgeUsageDataEventHub {
     /*
@@ -28,13 +30,15 @@ public final class EdgeUsageDataEventHub {
     @JsonProperty(value = "token")
     private String token;
 
-    /** Creates an instance of EdgeUsageDataEventHub class. */
+    /**
+     * Creates an instance of EdgeUsageDataEventHub class.
+     */
     public EdgeUsageDataEventHub() {
     }
 
     /**
      * Get the name property: Name of the Event Hub where usage will be reported.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -43,7 +47,7 @@ public final class EdgeUsageDataEventHub {
 
     /**
      * Set the name property: Name of the Event Hub where usage will be reported.
-     *
+     * 
      * @param name the name value to set.
      * @return the EdgeUsageDataEventHub object itself.
      */
@@ -54,7 +58,7 @@ public final class EdgeUsageDataEventHub {
 
     /**
      * Get the namespace property: Namespace of the Event Hub where usage will be reported.
-     *
+     * 
      * @return the namespace value.
      */
     public String namespace() {
@@ -63,7 +67,7 @@ public final class EdgeUsageDataEventHub {
 
     /**
      * Set the namespace property: Namespace of the Event Hub where usage will be reported.
-     *
+     * 
      * @param namespace the namespace value to set.
      * @return the EdgeUsageDataEventHub object itself.
      */
@@ -74,7 +78,7 @@ public final class EdgeUsageDataEventHub {
 
     /**
      * Get the token property: SAS token needed to interact with Event Hub.
-     *
+     * 
      * @return the token value.
      */
     public String token() {
@@ -83,7 +87,7 @@ public final class EdgeUsageDataEventHub {
 
     /**
      * Set the token property: SAS token needed to interact with Event Hub.
-     *
+     * 
      * @param token the token value to set.
      * @return the EdgeUsageDataEventHub object itself.
      */
@@ -94,7 +98,7 @@ public final class EdgeUsageDataEventHub {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

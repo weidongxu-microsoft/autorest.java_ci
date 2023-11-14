@@ -7,11 +7,13 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 
-/** Resource collection API of VpnLinkConnections. */
+/**
+ * Resource collection API of VpnLinkConnections.
+ */
 public interface VpnLinkConnections {
     /**
      * Resets the VpnLink connection specified.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param gatewayName The name of the gateway.
      * @param connectionName The name of the vpn connection.
@@ -20,12 +22,12 @@ public interface VpnLinkConnections {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void resetConnection(
-        String resourceGroupName, String gatewayName, String connectionName, String linkConnectionName);
+    void resetConnection(String resourceGroupName, String gatewayName, String connectionName,
+        String linkConnectionName);
 
     /**
      * Resets the VpnLink connection specified.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param gatewayName The name of the gateway.
      * @param connectionName The name of the vpn connection.
@@ -35,16 +37,12 @@ public interface VpnLinkConnections {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void resetConnection(
-        String resourceGroupName,
-        String gatewayName,
-        String connectionName,
-        String linkConnectionName,
+    void resetConnection(String resourceGroupName, String gatewayName, String connectionName, String linkConnectionName,
         Context context);
 
     /**
      * Lists IKE Security Associations for Vpn Site Link Connection in the specified resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param gatewayName The name of the gateway.
      * @param connectionName The name of the vpn connection.
@@ -58,7 +56,7 @@ public interface VpnLinkConnections {
 
     /**
      * Lists IKE Security Associations for Vpn Site Link Connection in the specified resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param gatewayName The name of the gateway.
      * @param connectionName The name of the vpn connection.
@@ -69,16 +67,12 @@ public interface VpnLinkConnections {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response.
      */
-    String getIkeSas(
-        String resourceGroupName,
-        String gatewayName,
-        String connectionName,
-        String linkConnectionName,
+    String getIkeSas(String resourceGroupName, String gatewayName, String connectionName, String linkConnectionName,
         Context context);
 
     /**
      * Retrieves all vpn site link connections for a particular virtual wan vpn gateway vpn connection.
-     *
+     * 
      * @param resourceGroupName The resource group name of the vpn gateway.
      * @param gatewayName The name of the gateway.
      * @param connectionName The name of the vpn connection.
@@ -86,14 +80,14 @@ public interface VpnLinkConnections {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return result of the request to list all vpn connections to a virtual wan vpn gateway as paginated response with
-     *     {@link PagedIterable}.
+     * {@link PagedIterable}.
      */
-    PagedIterable<VpnSiteLinkConnection> listByVpnConnection(
-        String resourceGroupName, String gatewayName, String connectionName);
+    PagedIterable<VpnSiteLinkConnection> listByVpnConnection(String resourceGroupName, String gatewayName,
+        String connectionName);
 
     /**
      * Retrieves all vpn site link connections for a particular virtual wan vpn gateway vpn connection.
-     *
+     * 
      * @param resourceGroupName The resource group name of the vpn gateway.
      * @param gatewayName The name of the gateway.
      * @param connectionName The name of the vpn connection.
@@ -102,8 +96,8 @@ public interface VpnLinkConnections {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return result of the request to list all vpn connections to a virtual wan vpn gateway as paginated response with
-     *     {@link PagedIterable}.
+     * {@link PagedIterable}.
      */
-    PagedIterable<VpnSiteLinkConnection> listByVpnConnection(
-        String resourceGroupName, String gatewayName, String connectionName, Context context);
+    PagedIterable<VpnSiteLinkConnection> listByVpnConnection(String resourceGroupName, String gatewayName,
+        String connectionName, Context context);
 }

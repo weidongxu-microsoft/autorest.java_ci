@@ -11,7 +11,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.List;
 
-/** Specifies a configuration for PlayReady licenses. */
+/**
+ * Specifies a configuration for PlayReady licenses.
+ */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
 @JsonTypeName("#Microsoft.Media.ContentKeyPolicyPlayReadyConfiguration")
 @Fluent
@@ -28,13 +30,15 @@ public final class ContentKeyPolicyPlayReadyConfiguration extends ContentKeyPoli
     @JsonProperty(value = "responseCustomData")
     private String responseCustomData;
 
-    /** Creates an instance of ContentKeyPolicyPlayReadyConfiguration class. */
+    /**
+     * Creates an instance of ContentKeyPolicyPlayReadyConfiguration class.
+     */
     public ContentKeyPolicyPlayReadyConfiguration() {
     }
 
     /**
      * Get the licenses property: The PlayReady licenses.
-     *
+     * 
      * @return the licenses value.
      */
     public List<ContentKeyPolicyPlayReadyLicense> licenses() {
@@ -43,7 +47,7 @@ public final class ContentKeyPolicyPlayReadyConfiguration extends ContentKeyPoli
 
     /**
      * Set the licenses property: The PlayReady licenses.
-     *
+     * 
      * @param licenses the licenses value to set.
      * @return the ContentKeyPolicyPlayReadyConfiguration object itself.
      */
@@ -54,7 +58,7 @@ public final class ContentKeyPolicyPlayReadyConfiguration extends ContentKeyPoli
 
     /**
      * Get the responseCustomData property: The custom response data.
-     *
+     * 
      * @return the responseCustomData value.
      */
     public String responseCustomData() {
@@ -63,7 +67,7 @@ public final class ContentKeyPolicyPlayReadyConfiguration extends ContentKeyPoli
 
     /**
      * Set the responseCustomData property: The custom response data.
-     *
+     * 
      * @param responseCustomData the responseCustomData value to set.
      * @return the ContentKeyPolicyPlayReadyConfiguration object itself.
      */
@@ -74,17 +78,15 @@ public final class ContentKeyPolicyPlayReadyConfiguration extends ContentKeyPoli
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override
     public void validate() {
         super.validate();
         if (licenses() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property licenses in model ContentKeyPolicyPlayReadyConfiguration"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property licenses in model ContentKeyPolicyPlayReadyConfiguration"));
         } else {
             licenses().forEach(e -> e.validate());
         }

@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The JSON-serialized array of Certificate objects. */
+/**
+ * The JSON-serialized array of Certificate objects.
+ */
 @Fluent
 public final class CertificateListDescriptionInner {
     /*
@@ -17,13 +19,15 @@ public final class CertificateListDescriptionInner {
     @JsonProperty(value = "value")
     private List<CertificateDescriptionInner> value;
 
-    /** Creates an instance of CertificateListDescriptionInner class. */
+    /**
+     * Creates an instance of CertificateListDescriptionInner class.
+     */
     public CertificateListDescriptionInner() {
     }
 
     /**
      * Get the value property: The array of Certificate objects.
-     *
+     * 
      * @return the value value.
      */
     public List<CertificateDescriptionInner> value() {
@@ -32,7 +36,7 @@ public final class CertificateListDescriptionInner {
 
     /**
      * Set the value property: The array of Certificate objects.
-     *
+     * 
      * @param value the value value to set.
      * @return the CertificateListDescriptionInner object itself.
      */
@@ -43,7 +47,7 @@ public final class CertificateListDescriptionInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

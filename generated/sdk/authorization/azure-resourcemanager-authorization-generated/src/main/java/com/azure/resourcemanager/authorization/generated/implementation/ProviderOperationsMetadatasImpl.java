@@ -21,22 +21,18 @@ public final class ProviderOperationsMetadatasImpl implements ProviderOperations
 
     private final com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager;
 
-    public ProviderOperationsMetadatasImpl(
-        ProviderOperationsMetadatasClient innerClient,
+    public ProviderOperationsMetadatasImpl(ProviderOperationsMetadatasClient innerClient,
         com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<ProviderOperationsMetadata> getWithResponse(
-        String resourceProviderNamespace, String expand, Context context) {
-        Response<ProviderOperationsMetadataInner> inner =
-            this.serviceClient().getWithResponse(resourceProviderNamespace, expand, context);
+    public Response<ProviderOperationsMetadata> getWithResponse(String resourceProviderNamespace, String expand,
+        Context context) {
+        Response<ProviderOperationsMetadataInner> inner
+            = this.serviceClient().getWithResponse(resourceProviderNamespace, expand, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ProviderOperationsMetadataImpl(inner.getValue(), this.manager()));
         } else {
             return null;

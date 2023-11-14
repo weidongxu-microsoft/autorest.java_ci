@@ -9,7 +9,9 @@ import com.azure.resourcemanager.monitor.generated.fluent.models.LogSearchRuleRe
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Represents a collection of Log Search rule resources. */
+/**
+ * Represents a collection of Log Search rule resources.
+ */
 @Fluent
 public final class LogSearchRuleResourceCollection {
     /*
@@ -18,13 +20,15 @@ public final class LogSearchRuleResourceCollection {
     @JsonProperty(value = "value")
     private List<LogSearchRuleResourceInner> value;
 
-    /** Creates an instance of LogSearchRuleResourceCollection class. */
+    /**
+     * Creates an instance of LogSearchRuleResourceCollection class.
+     */
     public LogSearchRuleResourceCollection() {
     }
 
     /**
      * Get the value property: The values for the Log Search Rule resources.
-     *
+     * 
      * @return the value value.
      */
     public List<LogSearchRuleResourceInner> value() {
@@ -33,7 +37,7 @@ public final class LogSearchRuleResourceCollection {
 
     /**
      * Set the value property: The values for the Log Search Rule resources.
-     *
+     * 
      * @param value the value value to set.
      * @return the LogSearchRuleResourceCollection object itself.
      */
@@ -44,7 +48,7 @@ public final class LogSearchRuleResourceCollection {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -10,8 +10,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * Result of the request to list Storage operations. It contains a list of operations and a URL link to get the next set
- * of results.
+ * Result of the request to list Storage operations. It contains a list of operations and a URL link to get the next
+ * set of results.
  */
 @Fluent
 public final class OperationListResult {
@@ -21,13 +21,15 @@ public final class OperationListResult {
     @JsonProperty(value = "value")
     private List<OperationInner> value;
 
-    /** Creates an instance of OperationListResult class. */
+    /**
+     * Creates an instance of OperationListResult class.
+     */
     public OperationListResult() {
     }
 
     /**
      * Get the value property: List of Storage operations supported by the Storage resource provider.
-     *
+     * 
      * @return the value value.
      */
     public List<OperationInner> value() {
@@ -36,7 +38,7 @@ public final class OperationListResult {
 
     /**
      * Set the value property: List of Storage operations supported by the Storage resource provider.
-     *
+     * 
      * @param value the value value to set.
      * @return the OperationListResult object itself.
      */
@@ -47,7 +49,7 @@ public final class OperationListResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

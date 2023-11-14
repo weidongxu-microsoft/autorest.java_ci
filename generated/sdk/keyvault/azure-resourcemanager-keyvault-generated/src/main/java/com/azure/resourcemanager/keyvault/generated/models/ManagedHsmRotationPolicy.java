@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The ManagedHsmRotationPolicy model. */
+/**
+ * The ManagedHsmRotationPolicy model.
+ */
 @Fluent
 public final class ManagedHsmRotationPolicy {
     /*
@@ -23,13 +25,15 @@ public final class ManagedHsmRotationPolicy {
     @JsonProperty(value = "lifetimeActions")
     private List<ManagedHsmLifetimeAction> lifetimeActions;
 
-    /** Creates an instance of ManagedHsmRotationPolicy class. */
+    /**
+     * Creates an instance of ManagedHsmRotationPolicy class.
+     */
     public ManagedHsmRotationPolicy() {
     }
 
     /**
      * Get the attributes property: The attributes of key rotation policy.
-     *
+     * 
      * @return the attributes value.
      */
     public ManagedHsmKeyRotationPolicyAttributes attributes() {
@@ -38,7 +42,7 @@ public final class ManagedHsmRotationPolicy {
 
     /**
      * Set the attributes property: The attributes of key rotation policy.
-     *
+     * 
      * @param attributes the attributes value to set.
      * @return the ManagedHsmRotationPolicy object itself.
      */
@@ -49,7 +53,7 @@ public final class ManagedHsmRotationPolicy {
 
     /**
      * Get the lifetimeActions property: The lifetimeActions for key rotation action.
-     *
+     * 
      * @return the lifetimeActions value.
      */
     public List<ManagedHsmLifetimeAction> lifetimeActions() {
@@ -58,7 +62,7 @@ public final class ManagedHsmRotationPolicy {
 
     /**
      * Set the lifetimeActions property: The lifetimeActions for key rotation action.
-     *
+     * 
      * @param lifetimeActions the lifetimeActions value to set.
      * @return the ManagedHsmRotationPolicy object itself.
      */
@@ -69,7 +73,7 @@ public final class ManagedHsmRotationPolicy {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

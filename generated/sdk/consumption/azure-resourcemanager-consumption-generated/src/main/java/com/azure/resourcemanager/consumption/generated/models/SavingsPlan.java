@@ -8,7 +8,9 @@ import com.azure.core.annotation.Immutable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.math.BigDecimal;
 
-/** The properties of the SavingsPlan. */
+/**
+ * The properties of the SavingsPlan.
+ */
 @Immutable
 public final class SavingsPlan {
     /*
@@ -29,13 +31,15 @@ public final class SavingsPlan {
     @JsonProperty(value = "effectivePrice", access = JsonProperty.Access.WRITE_ONLY)
     private BigDecimal effectivePrice;
 
-    /** Creates an instance of SavingsPlan class. */
+    /**
+     * Creates an instance of SavingsPlan class.
+     */
     public SavingsPlan() {
     }
 
     /**
      * Get the term property: SavingsPlan term.
-     *
+     * 
      * @return the term value.
      */
     public String term() {
@@ -44,7 +48,7 @@ public final class SavingsPlan {
 
     /**
      * Get the marketPrice property: SavingsPlan Market Price.
-     *
+     * 
      * @return the marketPrice value.
      */
     public BigDecimal marketPrice() {
@@ -53,7 +57,7 @@ public final class SavingsPlan {
 
     /**
      * Get the effectivePrice property: SavingsPlan Effective Price.
-     *
+     * 
      * @return the effectivePrice value.
      */
     public BigDecimal effectivePrice() {
@@ -62,7 +66,7 @@ public final class SavingsPlan {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

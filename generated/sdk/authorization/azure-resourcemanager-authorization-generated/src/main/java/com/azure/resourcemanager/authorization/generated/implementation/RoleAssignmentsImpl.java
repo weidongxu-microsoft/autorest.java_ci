@@ -22,46 +22,23 @@ public final class RoleAssignmentsImpl implements RoleAssignments {
 
     private final com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager;
 
-    public RoleAssignmentsImpl(
-        RoleAssignmentsClient innerClient,
+    public RoleAssignmentsImpl(RoleAssignmentsClient innerClient,
         com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public PagedIterable<RoleAssignment> listForResource(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName) {
-        PagedIterable<RoleAssignmentInner> inner =
-            this
-                .serviceClient()
-                .listForResource(
-                    resourceGroupName, resourceProviderNamespace, parentResourcePath, resourceType, resourceName);
+    public PagedIterable<RoleAssignment> listForResource(String resourceGroupName, String resourceProviderNamespace,
+        String parentResourcePath, String resourceType, String resourceName) {
+        PagedIterable<RoleAssignmentInner> inner = this.serviceClient().listForResource(resourceGroupName,
+            resourceProviderNamespace, parentResourcePath, resourceType, resourceName);
         return Utils.mapPage(inner, inner1 -> new RoleAssignmentImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<RoleAssignment> listForResource(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
-        String filter,
-        Context context) {
-        PagedIterable<RoleAssignmentInner> inner =
-            this
-                .serviceClient()
-                .listForResource(
-                    resourceGroupName,
-                    resourceProviderNamespace,
-                    parentResourcePath,
-                    resourceType,
-                    resourceName,
-                    filter,
-                    context);
+    public PagedIterable<RoleAssignment> listForResource(String resourceGroupName, String resourceProviderNamespace,
+        String parentResourcePath, String resourceType, String resourceName, String filter, Context context) {
+        PagedIterable<RoleAssignmentInner> inner = this.serviceClient().listForResource(resourceGroupName,
+            resourceProviderNamespace, parentResourcePath, resourceType, resourceName, filter, context);
         return Utils.mapPage(inner, inner1 -> new RoleAssignmentImpl(inner1, this.manager()));
     }
 
@@ -71,20 +48,17 @@ public final class RoleAssignmentsImpl implements RoleAssignments {
     }
 
     public PagedIterable<RoleAssignment> listByResourceGroup(String resourceGroupName, String filter, Context context) {
-        PagedIterable<RoleAssignmentInner> inner =
-            this.serviceClient().listByResourceGroup(resourceGroupName, filter, context);
+        PagedIterable<RoleAssignmentInner> inner
+            = this.serviceClient().listByResourceGroup(resourceGroupName, filter, context);
         return Utils.mapPage(inner, inner1 -> new RoleAssignmentImpl(inner1, this.manager()));
     }
 
-    public Response<RoleAssignment> deleteByResourceGroupWithResponse(
-        String scope, String roleAssignmentName, Context context) {
-        Response<RoleAssignmentInner> inner =
-            this.serviceClient().deleteWithResponse(scope, roleAssignmentName, context);
+    public Response<RoleAssignment> deleteByResourceGroupWithResponse(String scope, String roleAssignmentName,
+        Context context) {
+        Response<RoleAssignmentInner> inner
+            = this.serviceClient().deleteWithResponse(scope, roleAssignmentName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new RoleAssignmentImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -103,10 +77,7 @@ public final class RoleAssignmentsImpl implements RoleAssignments {
     public Response<RoleAssignment> getWithResponse(String scope, String roleAssignmentName, Context context) {
         Response<RoleAssignmentInner> inner = this.serviceClient().getWithResponse(scope, roleAssignmentName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new RoleAssignmentImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -125,10 +96,7 @@ public final class RoleAssignmentsImpl implements RoleAssignments {
     public Response<RoleAssignment> deleteByIdWithResponse(String roleId, Context context) {
         Response<RoleAssignmentInner> inner = this.serviceClient().deleteByIdWithResponse(roleId, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new RoleAssignmentImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -144,14 +112,11 @@ public final class RoleAssignmentsImpl implements RoleAssignments {
         }
     }
 
-    public Response<RoleAssignment> createByIdWithResponse(
-        String roleId, RoleAssignmentCreateParameters parameters, Context context) {
+    public Response<RoleAssignment> createByIdWithResponse(String roleId, RoleAssignmentCreateParameters parameters,
+        Context context) {
         Response<RoleAssignmentInner> inner = this.serviceClient().createByIdWithResponse(roleId, parameters, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new RoleAssignmentImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -170,10 +135,7 @@ public final class RoleAssignmentsImpl implements RoleAssignments {
     public Response<RoleAssignment> getByIdWithResponse(String roleId, Context context) {
         Response<RoleAssignmentInner> inner = this.serviceClient().getByIdWithResponse(roleId, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new RoleAssignmentImpl(inner.getValue(), this.manager()));
         } else {
             return null;

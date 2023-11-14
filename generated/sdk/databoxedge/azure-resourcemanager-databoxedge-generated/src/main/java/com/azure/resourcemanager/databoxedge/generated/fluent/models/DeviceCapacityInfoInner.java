@@ -14,7 +14,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.Map;
 
-/** Object for Capturing DeviceCapacityInfo. */
+/**
+ * Object for Capturing DeviceCapacityInfo.
+ */
 @Fluent
 public final class DeviceCapacityInfoInner extends ArmBaseModel {
     /*
@@ -29,13 +31,15 @@ public final class DeviceCapacityInfoInner extends ArmBaseModel {
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
-    /** Creates an instance of DeviceCapacityInfoInner class. */
+    /**
+     * Creates an instance of DeviceCapacityInfoInner class.
+     */
     public DeviceCapacityInfoInner() {
     }
 
     /**
      * Get the innerProperties property: The device capacity properties.
-     *
+     * 
      * @return the innerProperties value.
      */
     private DeviceCapacityInfoProperties innerProperties() {
@@ -44,7 +48,7 @@ public final class DeviceCapacityInfoInner extends ArmBaseModel {
 
     /**
      * Get the systemData property: Metadata pertaining to device capacity info.
-     *
+     * 
      * @return the systemData value.
      */
     public SystemData systemData() {
@@ -53,7 +57,7 @@ public final class DeviceCapacityInfoInner extends ArmBaseModel {
 
     /**
      * Get the timestamp property: Timestamp of request in UTC.
-     *
+     * 
      * @return the timestamp value.
      */
     public OffsetDateTime timestamp() {
@@ -62,7 +66,7 @@ public final class DeviceCapacityInfoInner extends ArmBaseModel {
 
     /**
      * Set the timestamp property: Timestamp of request in UTC.
-     *
+     * 
      * @param timestamp the timestamp value to set.
      * @return the DeviceCapacityInfoInner object itself.
      */
@@ -76,7 +80,7 @@ public final class DeviceCapacityInfoInner extends ArmBaseModel {
 
     /**
      * Get the clusterStorageCapacityInfo property: Cluster capacity data for storage resources (CSV).
-     *
+     * 
      * @return the clusterStorageCapacityInfo value.
      */
     public ClusterStorageViewData clusterStorageCapacityInfo() {
@@ -85,7 +89,7 @@ public final class DeviceCapacityInfoInner extends ArmBaseModel {
 
     /**
      * Set the clusterStorageCapacityInfo property: Cluster capacity data for storage resources (CSV).
-     *
+     * 
      * @param clusterStorageCapacityInfo the clusterStorageCapacityInfo value to set.
      * @return the DeviceCapacityInfoInner object itself.
      */
@@ -99,7 +103,7 @@ public final class DeviceCapacityInfoInner extends ArmBaseModel {
 
     /**
      * Get the clusterComputeCapacityInfo property: Cluster capacity data for compute resources (Memory and GPU).
-     *
+     * 
      * @return the clusterComputeCapacityInfo value.
      */
     public ClusterCapacityViewData clusterComputeCapacityInfo() {
@@ -108,7 +112,7 @@ public final class DeviceCapacityInfoInner extends ArmBaseModel {
 
     /**
      * Set the clusterComputeCapacityInfo property: Cluster capacity data for compute resources (Memory and GPU).
-     *
+     * 
      * @param clusterComputeCapacityInfo the clusterComputeCapacityInfo value to set.
      * @return the DeviceCapacityInfoInner object itself.
      */
@@ -122,7 +126,7 @@ public final class DeviceCapacityInfoInner extends ArmBaseModel {
 
     /**
      * Get the nodeCapacityInfos property: The dictionary of individual node names and node capacities in the cluster.
-     *
+     * 
      * @return the nodeCapacityInfos value.
      */
     public Map<String, HostCapacity> nodeCapacityInfos() {
@@ -131,7 +135,7 @@ public final class DeviceCapacityInfoInner extends ArmBaseModel {
 
     /**
      * Set the nodeCapacityInfos property: The dictionary of individual node names and node capacities in the cluster.
-     *
+     * 
      * @param nodeCapacityInfos the nodeCapacityInfos value to set.
      * @return the DeviceCapacityInfoInner object itself.
      */
@@ -145,7 +149,7 @@ public final class DeviceCapacityInfoInner extends ArmBaseModel {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

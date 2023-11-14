@@ -9,7 +9,9 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** Describes the properties for an output image file. */
+/**
+ * Describes the properties for an output image file.
+ */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
     include = JsonTypeInfo.As.PROPERTY,
@@ -18,15 +20,18 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @JsonTypeName("#Microsoft.Media.ImageFormat")
 @JsonSubTypes({
     @JsonSubTypes.Type(name = "#Microsoft.Media.JpgFormat", value = JpgFormat.class),
-    @JsonSubTypes.Type(name = "#Microsoft.Media.PngFormat", value = PngFormat.class)
-})
+    @JsonSubTypes.Type(name = "#Microsoft.Media.PngFormat", value = PngFormat.class) })
 @Fluent
 public class ImageFormat extends Format {
-    /** Creates an instance of ImageFormat class. */
+    /**
+     * Creates an instance of ImageFormat class.
+     */
     public ImageFormat() {
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ImageFormat withFilenamePattern(String filenamePattern) {
         super.withFilenamePattern(filenamePattern);
@@ -35,7 +40,7 @@ public class ImageFormat extends Format {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

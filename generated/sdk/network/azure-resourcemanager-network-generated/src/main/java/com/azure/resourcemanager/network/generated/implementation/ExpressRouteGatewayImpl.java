@@ -61,12 +61,8 @@ public final class ExpressRouteGatewayImpl
     public List<ExpressRouteConnection> expressRouteConnections() {
         List<ExpressRouteConnectionInner> inner = this.innerModel().expressRouteConnections();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new ExpressRouteConnectionImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new ExpressRouteConnectionImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -116,20 +112,14 @@ public final class ExpressRouteGatewayImpl
     }
 
     public ExpressRouteGateway create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getExpressRouteGateways()
-                .createOrUpdate(resourceGroupName, expressRouteGatewayName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getExpressRouteGateways().createOrUpdate(resourceGroupName,
+            expressRouteGatewayName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public ExpressRouteGateway create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getExpressRouteGateways()
-                .createOrUpdate(resourceGroupName, expressRouteGatewayName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getExpressRouteGateways().createOrUpdate(resourceGroupName,
+            expressRouteGatewayName, this.innerModel(), context);
         return this;
     }
 
@@ -145,26 +135,18 @@ public final class ExpressRouteGatewayImpl
     }
 
     public ExpressRouteGateway apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getExpressRouteGateways()
-                .updateTags(
-                    resourceGroupName, expressRouteGatewayName, updateExpressRouteGatewayParameters, Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getExpressRouteGateways().updateTags(resourceGroupName,
+            expressRouteGatewayName, updateExpressRouteGatewayParameters, Context.NONE);
         return this;
     }
 
     public ExpressRouteGateway apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getExpressRouteGateways()
-                .updateTags(resourceGroupName, expressRouteGatewayName, updateExpressRouteGatewayParameters, context);
+        this.innerObject = serviceManager.serviceClient().getExpressRouteGateways().updateTags(resourceGroupName,
+            expressRouteGatewayName, updateExpressRouteGatewayParameters, context);
         return this;
     }
 
-    ExpressRouteGatewayImpl(
-        ExpressRouteGatewayInner innerObject,
+    ExpressRouteGatewayImpl(ExpressRouteGatewayInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -173,22 +155,14 @@ public final class ExpressRouteGatewayImpl
     }
 
     public ExpressRouteGateway refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getExpressRouteGateways()
-                .getByResourceGroupWithResponse(resourceGroupName, expressRouteGatewayName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getExpressRouteGateways()
+            .getByResourceGroupWithResponse(resourceGroupName, expressRouteGatewayName, Context.NONE).getValue();
         return this;
     }
 
     public ExpressRouteGateway refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getExpressRouteGateways()
-                .getByResourceGroupWithResponse(resourceGroupName, expressRouteGatewayName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getExpressRouteGateways()
+            .getByResourceGroupWithResponse(resourceGroupName, expressRouteGatewayName, context).getValue();
         return this;
     }
 
@@ -212,14 +186,14 @@ public final class ExpressRouteGatewayImpl
         }
     }
 
-    public ExpressRouteGatewayImpl withAutoScaleConfiguration(
-        ExpressRouteGatewayPropertiesAutoScaleConfiguration autoScaleConfiguration) {
+    public ExpressRouteGatewayImpl
+        withAutoScaleConfiguration(ExpressRouteGatewayPropertiesAutoScaleConfiguration autoScaleConfiguration) {
         this.innerModel().withAutoScaleConfiguration(autoScaleConfiguration);
         return this;
     }
 
-    public ExpressRouteGatewayImpl withExpressRouteConnections(
-        List<ExpressRouteConnectionInner> expressRouteConnections) {
+    public ExpressRouteGatewayImpl
+        withExpressRouteConnections(List<ExpressRouteConnectionInner> expressRouteConnections) {
         this.innerModel().withExpressRouteConnections(expressRouteConnections);
         return this;
     }

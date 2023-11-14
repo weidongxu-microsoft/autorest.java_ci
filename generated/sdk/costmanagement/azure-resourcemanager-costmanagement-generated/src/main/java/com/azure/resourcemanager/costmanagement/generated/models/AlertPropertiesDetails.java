@@ -9,7 +9,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.math.BigDecimal;
 import java.util.List;
 
-/** Alert details. */
+/**
+ * Alert details.
+ */
 @Fluent
 public final class AlertPropertiesDetails {
     /*
@@ -108,13 +110,15 @@ public final class AlertPropertiesDetails {
     @JsonProperty(value = "overridingAlert")
     private String overridingAlert;
 
-    /** Creates an instance of AlertPropertiesDetails class. */
+    /**
+     * Creates an instance of AlertPropertiesDetails class.
+     */
     public AlertPropertiesDetails() {
     }
 
     /**
      * Get the timeGrainType property: Type of timegrain cadence.
-     *
+     * 
      * @return the timeGrainType value.
      */
     public AlertTimeGrainType timeGrainType() {
@@ -123,7 +127,7 @@ public final class AlertPropertiesDetails {
 
     /**
      * Set the timeGrainType property: Type of timegrain cadence.
-     *
+     * 
      * @param timeGrainType the timeGrainType value to set.
      * @return the AlertPropertiesDetails object itself.
      */
@@ -134,7 +138,7 @@ public final class AlertPropertiesDetails {
 
     /**
      * Get the periodStartDate property: datetime of periodStartDate.
-     *
+     * 
      * @return the periodStartDate value.
      */
     public String periodStartDate() {
@@ -143,7 +147,7 @@ public final class AlertPropertiesDetails {
 
     /**
      * Set the periodStartDate property: datetime of periodStartDate.
-     *
+     * 
      * @param periodStartDate the periodStartDate value to set.
      * @return the AlertPropertiesDetails object itself.
      */
@@ -154,7 +158,7 @@ public final class AlertPropertiesDetails {
 
     /**
      * Get the triggeredBy property: notificationId that triggered this alert.
-     *
+     * 
      * @return the triggeredBy value.
      */
     public String triggeredBy() {
@@ -163,7 +167,7 @@ public final class AlertPropertiesDetails {
 
     /**
      * Set the triggeredBy property: notificationId that triggered this alert.
-     *
+     * 
      * @param triggeredBy the triggeredBy value to set.
      * @return the AlertPropertiesDetails object itself.
      */
@@ -174,7 +178,7 @@ public final class AlertPropertiesDetails {
 
     /**
      * Get the resourceGroupFilter property: array of resourceGroups to filter by.
-     *
+     * 
      * @return the resourceGroupFilter value.
      */
     public List<Object> resourceGroupFilter() {
@@ -183,7 +187,7 @@ public final class AlertPropertiesDetails {
 
     /**
      * Set the resourceGroupFilter property: array of resourceGroups to filter by.
-     *
+     * 
      * @param resourceGroupFilter the resourceGroupFilter value to set.
      * @return the AlertPropertiesDetails object itself.
      */
@@ -194,7 +198,7 @@ public final class AlertPropertiesDetails {
 
     /**
      * Get the resourceFilter property: array of resources to filter by.
-     *
+     * 
      * @return the resourceFilter value.
      */
     public List<Object> resourceFilter() {
@@ -203,7 +207,7 @@ public final class AlertPropertiesDetails {
 
     /**
      * Set the resourceFilter property: array of resources to filter by.
-     *
+     * 
      * @param resourceFilter the resourceFilter value to set.
      * @return the AlertPropertiesDetails object itself.
      */
@@ -214,7 +218,7 @@ public final class AlertPropertiesDetails {
 
     /**
      * Get the meterFilter property: array of meters to filter by.
-     *
+     * 
      * @return the meterFilter value.
      */
     public List<Object> meterFilter() {
@@ -223,7 +227,7 @@ public final class AlertPropertiesDetails {
 
     /**
      * Set the meterFilter property: array of meters to filter by.
-     *
+     * 
      * @param meterFilter the meterFilter value to set.
      * @return the AlertPropertiesDetails object itself.
      */
@@ -234,7 +238,7 @@ public final class AlertPropertiesDetails {
 
     /**
      * Get the tagFilter property: tags to filter by.
-     *
+     * 
      * @return the tagFilter value.
      */
     public Object tagFilter() {
@@ -243,7 +247,7 @@ public final class AlertPropertiesDetails {
 
     /**
      * Set the tagFilter property: tags to filter by.
-     *
+     * 
      * @param tagFilter the tagFilter value to set.
      * @return the AlertPropertiesDetails object itself.
      */
@@ -254,7 +258,7 @@ public final class AlertPropertiesDetails {
 
     /**
      * Get the threshold property: notification threshold percentage as a decimal which activated this alert.
-     *
+     * 
      * @return the threshold value.
      */
     public BigDecimal threshold() {
@@ -263,7 +267,7 @@ public final class AlertPropertiesDetails {
 
     /**
      * Set the threshold property: notification threshold percentage as a decimal which activated this alert.
-     *
+     * 
      * @param threshold the threshold value to set.
      * @return the AlertPropertiesDetails object itself.
      */
@@ -274,7 +278,7 @@ public final class AlertPropertiesDetails {
 
     /**
      * Get the operator property: operator used to compare currentSpend with amount.
-     *
+     * 
      * @return the operator value.
      */
     public AlertOperator operator() {
@@ -283,7 +287,7 @@ public final class AlertPropertiesDetails {
 
     /**
      * Set the operator property: operator used to compare currentSpend with amount.
-     *
+     * 
      * @param operator the operator value to set.
      * @return the AlertPropertiesDetails object itself.
      */
@@ -294,7 +298,7 @@ public final class AlertPropertiesDetails {
 
     /**
      * Get the amount property: budget threshold amount.
-     *
+     * 
      * @return the amount value.
      */
     public BigDecimal amount() {
@@ -303,7 +307,7 @@ public final class AlertPropertiesDetails {
 
     /**
      * Set the amount property: budget threshold amount.
-     *
+     * 
      * @param amount the amount value to set.
      * @return the AlertPropertiesDetails object itself.
      */
@@ -314,7 +318,7 @@ public final class AlertPropertiesDetails {
 
     /**
      * Get the unit property: unit of currency being used.
-     *
+     * 
      * @return the unit value.
      */
     public String unit() {
@@ -323,7 +327,7 @@ public final class AlertPropertiesDetails {
 
     /**
      * Set the unit property: unit of currency being used.
-     *
+     * 
      * @param unit the unit value to set.
      * @return the AlertPropertiesDetails object itself.
      */
@@ -334,7 +338,7 @@ public final class AlertPropertiesDetails {
 
     /**
      * Get the currentSpend property: current spend.
-     *
+     * 
      * @return the currentSpend value.
      */
     public BigDecimal currentSpend() {
@@ -343,7 +347,7 @@ public final class AlertPropertiesDetails {
 
     /**
      * Set the currentSpend property: current spend.
-     *
+     * 
      * @param currentSpend the currentSpend value to set.
      * @return the AlertPropertiesDetails object itself.
      */
@@ -354,7 +358,7 @@ public final class AlertPropertiesDetails {
 
     /**
      * Get the contactEmails property: list of emails to contact.
-     *
+     * 
      * @return the contactEmails value.
      */
     public List<String> contactEmails() {
@@ -363,7 +367,7 @@ public final class AlertPropertiesDetails {
 
     /**
      * Set the contactEmails property: list of emails to contact.
-     *
+     * 
      * @param contactEmails the contactEmails value to set.
      * @return the AlertPropertiesDetails object itself.
      */
@@ -374,7 +378,7 @@ public final class AlertPropertiesDetails {
 
     /**
      * Get the contactGroups property: list of action groups to broadcast to.
-     *
+     * 
      * @return the contactGroups value.
      */
     public List<String> contactGroups() {
@@ -383,7 +387,7 @@ public final class AlertPropertiesDetails {
 
     /**
      * Set the contactGroups property: list of action groups to broadcast to.
-     *
+     * 
      * @param contactGroups the contactGroups value to set.
      * @return the AlertPropertiesDetails object itself.
      */
@@ -394,7 +398,7 @@ public final class AlertPropertiesDetails {
 
     /**
      * Get the contactRoles property: list of contact roles.
-     *
+     * 
      * @return the contactRoles value.
      */
     public List<String> contactRoles() {
@@ -403,7 +407,7 @@ public final class AlertPropertiesDetails {
 
     /**
      * Set the contactRoles property: list of contact roles.
-     *
+     * 
      * @param contactRoles the contactRoles value to set.
      * @return the AlertPropertiesDetails object itself.
      */
@@ -414,7 +418,7 @@ public final class AlertPropertiesDetails {
 
     /**
      * Get the overridingAlert property: overriding alert.
-     *
+     * 
      * @return the overridingAlert value.
      */
     public String overridingAlert() {
@@ -423,7 +427,7 @@ public final class AlertPropertiesDetails {
 
     /**
      * Set the overridingAlert property: overriding alert.
-     *
+     * 
      * @param overridingAlert the overridingAlert value to set.
      * @return the AlertPropertiesDetails object itself.
      */
@@ -434,7 +438,7 @@ public final class AlertPropertiesDetails {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

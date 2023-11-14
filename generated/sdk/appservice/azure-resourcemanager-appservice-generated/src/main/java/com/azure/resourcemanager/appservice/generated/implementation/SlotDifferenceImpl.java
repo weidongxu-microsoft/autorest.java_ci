@@ -12,8 +12,7 @@ public final class SlotDifferenceImpl implements SlotDifference {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    SlotDifferenceImpl(
-        SlotDifferenceInner innerObject,
+    SlotDifferenceImpl(SlotDifferenceInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

@@ -13,7 +13,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.Map;
 
-/** The properties of Device Capacity Info. */
+/**
+ * The properties of Device Capacity Info.
+ */
 @Fluent
 public final class DeviceCapacityInfoProperties {
     /*
@@ -41,13 +43,15 @@ public final class DeviceCapacityInfoProperties {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, HostCapacity> nodeCapacityInfos;
 
-    /** Creates an instance of DeviceCapacityInfoProperties class. */
+    /**
+     * Creates an instance of DeviceCapacityInfoProperties class.
+     */
     public DeviceCapacityInfoProperties() {
     }
 
     /**
      * Get the timestamp property: Timestamp of request in UTC.
-     *
+     * 
      * @return the timestamp value.
      */
     public OffsetDateTime timestamp() {
@@ -56,7 +60,7 @@ public final class DeviceCapacityInfoProperties {
 
     /**
      * Set the timestamp property: Timestamp of request in UTC.
-     *
+     * 
      * @param timestamp the timestamp value to set.
      * @return the DeviceCapacityInfoProperties object itself.
      */
@@ -67,7 +71,7 @@ public final class DeviceCapacityInfoProperties {
 
     /**
      * Get the clusterStorageCapacityInfo property: Cluster capacity data for storage resources (CSV).
-     *
+     * 
      * @return the clusterStorageCapacityInfo value.
      */
     public ClusterStorageViewData clusterStorageCapacityInfo() {
@@ -76,19 +80,19 @@ public final class DeviceCapacityInfoProperties {
 
     /**
      * Set the clusterStorageCapacityInfo property: Cluster capacity data for storage resources (CSV).
-     *
+     * 
      * @param clusterStorageCapacityInfo the clusterStorageCapacityInfo value to set.
      * @return the DeviceCapacityInfoProperties object itself.
      */
-    public DeviceCapacityInfoProperties withClusterStorageCapacityInfo(
-        ClusterStorageViewData clusterStorageCapacityInfo) {
+    public DeviceCapacityInfoProperties
+        withClusterStorageCapacityInfo(ClusterStorageViewData clusterStorageCapacityInfo) {
         this.clusterStorageCapacityInfo = clusterStorageCapacityInfo;
         return this;
     }
 
     /**
      * Get the clusterComputeCapacityInfo property: Cluster capacity data for compute resources (Memory and GPU).
-     *
+     * 
      * @return the clusterComputeCapacityInfo value.
      */
     public ClusterCapacityViewData clusterComputeCapacityInfo() {
@@ -97,19 +101,19 @@ public final class DeviceCapacityInfoProperties {
 
     /**
      * Set the clusterComputeCapacityInfo property: Cluster capacity data for compute resources (Memory and GPU).
-     *
+     * 
      * @param clusterComputeCapacityInfo the clusterComputeCapacityInfo value to set.
      * @return the DeviceCapacityInfoProperties object itself.
      */
-    public DeviceCapacityInfoProperties withClusterComputeCapacityInfo(
-        ClusterCapacityViewData clusterComputeCapacityInfo) {
+    public DeviceCapacityInfoProperties
+        withClusterComputeCapacityInfo(ClusterCapacityViewData clusterComputeCapacityInfo) {
         this.clusterComputeCapacityInfo = clusterComputeCapacityInfo;
         return this;
     }
 
     /**
      * Get the nodeCapacityInfos property: The dictionary of individual node names and node capacities in the cluster.
-     *
+     * 
      * @return the nodeCapacityInfos value.
      */
     public Map<String, HostCapacity> nodeCapacityInfos() {
@@ -118,7 +122,7 @@ public final class DeviceCapacityInfoProperties {
 
     /**
      * Set the nodeCapacityInfos property: The dictionary of individual node names and node capacities in the cluster.
-     *
+     * 
      * @param nodeCapacityInfos the nodeCapacityInfos value to set.
      * @return the DeviceCapacityInfoProperties object itself.
      */
@@ -129,7 +133,7 @@ public final class DeviceCapacityInfoProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
@@ -140,14 +144,11 @@ public final class DeviceCapacityInfoProperties {
             clusterComputeCapacityInfo().validate();
         }
         if (nodeCapacityInfos() != null) {
-            nodeCapacityInfos()
-                .values()
-                .forEach(
-                    e -> {
-                        if (e != null) {
-                            e.validate();
-                        }
-                    });
+            nodeCapacityInfos().values().forEach(e -> {
+                if (e != null) {
+                    e.validate();
+                }
+            });
         }
     }
 }

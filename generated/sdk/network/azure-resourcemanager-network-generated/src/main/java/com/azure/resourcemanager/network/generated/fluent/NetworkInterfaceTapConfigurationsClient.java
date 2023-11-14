@@ -19,7 +19,7 @@ import com.azure.resourcemanager.network.generated.fluent.models.NetworkInterfac
 public interface NetworkInterfaceTapConfigurationsClient {
     /**
      * Deletes the specified tap configuration from the NetworkInterface.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkInterfaceName The name of the network interface.
      * @param tapConfigurationName The name of the tap configuration.
@@ -29,12 +29,12 @@ public interface NetworkInterfaceTapConfigurationsClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginDelete(
-        String resourceGroupName, String networkInterfaceName, String tapConfigurationName);
+    SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String networkInterfaceName,
+        String tapConfigurationName);
 
     /**
      * Deletes the specified tap configuration from the NetworkInterface.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkInterfaceName The name of the network interface.
      * @param tapConfigurationName The name of the tap configuration.
@@ -45,12 +45,12 @@ public interface NetworkInterfaceTapConfigurationsClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginDelete(
-        String resourceGroupName, String networkInterfaceName, String tapConfigurationName, Context context);
+    SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String networkInterfaceName,
+        String tapConfigurationName, Context context);
 
     /**
      * Deletes the specified tap configuration from the NetworkInterface.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkInterfaceName The name of the network interface.
      * @param tapConfigurationName The name of the tap configuration.
@@ -63,7 +63,7 @@ public interface NetworkInterfaceTapConfigurationsClient {
 
     /**
      * Deletes the specified tap configuration from the NetworkInterface.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkInterfaceName The name of the network interface.
      * @param tapConfigurationName The name of the tap configuration.
@@ -77,7 +77,7 @@ public interface NetworkInterfaceTapConfigurationsClient {
 
     /**
      * Get the specified tap configuration on a network interface.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkInterfaceName The name of the network interface.
      * @param tapConfigurationName The name of the tap configuration.
@@ -88,12 +88,12 @@ public interface NetworkInterfaceTapConfigurationsClient {
      * @return the specified tap configuration on a network interface along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<NetworkInterfaceTapConfigurationInner> getWithResponse(
-        String resourceGroupName, String networkInterfaceName, String tapConfigurationName, Context context);
+    Response<NetworkInterfaceTapConfigurationInner> getWithResponse(String resourceGroupName,
+        String networkInterfaceName, String tapConfigurationName, Context context);
 
     /**
      * Get the specified tap configuration on a network interface.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkInterfaceName The name of the network interface.
      * @param tapConfigurationName The name of the tap configuration.
@@ -103,12 +103,12 @@ public interface NetworkInterfaceTapConfigurationsClient {
      * @return the specified tap configuration on a network interface.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    NetworkInterfaceTapConfigurationInner get(
-        String resourceGroupName, String networkInterfaceName, String tapConfigurationName);
+    NetworkInterfaceTapConfigurationInner get(String resourceGroupName, String networkInterfaceName,
+        String tapConfigurationName);
 
     /**
      * Creates or updates a Tap configuration in the specified NetworkInterface.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkInterfaceName The name of the network interface.
      * @param tapConfigurationName The name of the tap configuration.
@@ -120,15 +120,12 @@ public interface NetworkInterfaceTapConfigurationsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<NetworkInterfaceTapConfigurationInner>, NetworkInterfaceTapConfigurationInner>
-        beginCreateOrUpdate(
-            String resourceGroupName,
-            String networkInterfaceName,
-            String tapConfigurationName,
+        beginCreateOrUpdate(String resourceGroupName, String networkInterfaceName, String tapConfigurationName,
             NetworkInterfaceTapConfigurationInner tapConfigurationParameters);
 
     /**
      * Creates or updates a Tap configuration in the specified NetworkInterface.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkInterfaceName The name of the network interface.
      * @param tapConfigurationName The name of the tap configuration.
@@ -141,16 +138,12 @@ public interface NetworkInterfaceTapConfigurationsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<NetworkInterfaceTapConfigurationInner>, NetworkInterfaceTapConfigurationInner>
-        beginCreateOrUpdate(
-            String resourceGroupName,
-            String networkInterfaceName,
-            String tapConfigurationName,
-            NetworkInterfaceTapConfigurationInner tapConfigurationParameters,
-            Context context);
+        beginCreateOrUpdate(String resourceGroupName, String networkInterfaceName, String tapConfigurationName,
+            NetworkInterfaceTapConfigurationInner tapConfigurationParameters, Context context);
 
     /**
      * Creates or updates a Tap configuration in the specified NetworkInterface.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkInterfaceName The name of the network interface.
      * @param tapConfigurationName The name of the tap configuration.
@@ -161,15 +154,12 @@ public interface NetworkInterfaceTapConfigurationsClient {
      * @return tap configuration in a Network Interface.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    NetworkInterfaceTapConfigurationInner createOrUpdate(
-        String resourceGroupName,
-        String networkInterfaceName,
-        String tapConfigurationName,
-        NetworkInterfaceTapConfigurationInner tapConfigurationParameters);
+    NetworkInterfaceTapConfigurationInner createOrUpdate(String resourceGroupName, String networkInterfaceName,
+        String tapConfigurationName, NetworkInterfaceTapConfigurationInner tapConfigurationParameters);
 
     /**
      * Creates or updates a Tap configuration in the specified NetworkInterface.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkInterfaceName The name of the network interface.
      * @param tapConfigurationName The name of the tap configuration.
@@ -181,16 +171,12 @@ public interface NetworkInterfaceTapConfigurationsClient {
      * @return tap configuration in a Network Interface.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    NetworkInterfaceTapConfigurationInner createOrUpdate(
-        String resourceGroupName,
-        String networkInterfaceName,
-        String tapConfigurationName,
-        NetworkInterfaceTapConfigurationInner tapConfigurationParameters,
-        Context context);
+    NetworkInterfaceTapConfigurationInner createOrUpdate(String resourceGroupName, String networkInterfaceName,
+        String tapConfigurationName, NetworkInterfaceTapConfigurationInner tapConfigurationParameters, Context context);
 
     /**
      * Get all Tap configurations in a network interface.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkInterfaceName The name of the network interface.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -203,7 +189,7 @@ public interface NetworkInterfaceTapConfigurationsClient {
 
     /**
      * Get all Tap configurations in a network interface.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkInterfaceName The name of the network interface.
      * @param context The context to associate with this operation.
@@ -213,6 +199,6 @@ public interface NetworkInterfaceTapConfigurationsClient {
      * @return all Tap configurations in a network interface as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<NetworkInterfaceTapConfigurationInner> list(
-        String resourceGroupName, String networkInterfaceName, Context context);
+    PagedIterable<NetworkInterfaceTapConfigurationInner> list(String resourceGroupName, String networkInterfaceName,
+        Context context);
 }

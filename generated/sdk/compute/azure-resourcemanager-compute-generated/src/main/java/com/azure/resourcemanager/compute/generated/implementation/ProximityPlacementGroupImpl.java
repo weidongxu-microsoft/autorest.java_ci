@@ -128,28 +128,21 @@ public final class ProximityPlacementGroupImpl
     }
 
     public ProximityPlacementGroup create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getProximityPlacementGroups()
-                .createOrUpdateWithResponse(
-                    resourceGroupName, proximityPlacementGroupName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getProximityPlacementGroups()
+            .createOrUpdateWithResponse(resourceGroupName, proximityPlacementGroupName, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public ProximityPlacementGroup create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getProximityPlacementGroups()
-                .createOrUpdateWithResponse(resourceGroupName, proximityPlacementGroupName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getProximityPlacementGroups()
+            .createOrUpdateWithResponse(resourceGroupName, proximityPlacementGroupName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
-    ProximityPlacementGroupImpl(
-        String name, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
+    ProximityPlacementGroupImpl(String name,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = new ProximityPlacementGroupInner();
         this.serviceManager = serviceManager;
         this.proximityPlacementGroupName = name;
@@ -161,27 +154,19 @@ public final class ProximityPlacementGroupImpl
     }
 
     public ProximityPlacementGroup apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getProximityPlacementGroups()
-                .updateWithResponse(resourceGroupName, proximityPlacementGroupName, updateParameters, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getProximityPlacementGroups()
+            .updateWithResponse(resourceGroupName, proximityPlacementGroupName, updateParameters, Context.NONE)
+            .getValue();
         return this;
     }
 
     public ProximityPlacementGroup apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getProximityPlacementGroups()
-                .updateWithResponse(resourceGroupName, proximityPlacementGroupName, updateParameters, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getProximityPlacementGroups()
+            .updateWithResponse(resourceGroupName, proximityPlacementGroupName, updateParameters, context).getValue();
         return this;
     }
 
-    ProximityPlacementGroupImpl(
-        ProximityPlacementGroupInner innerObject,
+    ProximityPlacementGroupImpl(ProximityPlacementGroupInner innerObject,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -191,25 +176,15 @@ public final class ProximityPlacementGroupImpl
 
     public ProximityPlacementGroup refresh() {
         String localIncludeColocationStatus = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getProximityPlacementGroups()
-                .getByResourceGroupWithResponse(
-                    resourceGroupName, proximityPlacementGroupName, localIncludeColocationStatus, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getProximityPlacementGroups().getByResourceGroupWithResponse(
+            resourceGroupName, proximityPlacementGroupName, localIncludeColocationStatus, Context.NONE).getValue();
         return this;
     }
 
     public ProximityPlacementGroup refresh(Context context) {
         String localIncludeColocationStatus = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getProximityPlacementGroups()
-                .getByResourceGroupWithResponse(
-                    resourceGroupName, proximityPlacementGroupName, localIncludeColocationStatus, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getProximityPlacementGroups().getByResourceGroupWithResponse(
+            resourceGroupName, proximityPlacementGroupName, localIncludeColocationStatus, context).getValue();
         return this;
     }
 
@@ -238,8 +213,8 @@ public final class ProximityPlacementGroupImpl
         return this;
     }
 
-    public ProximityPlacementGroupImpl withProximityPlacementGroupType(
-        ProximityPlacementGroupType proximityPlacementGroupType) {
+    public ProximityPlacementGroupImpl
+        withProximityPlacementGroupType(ProximityPlacementGroupType proximityPlacementGroupType) {
         this.innerModel().withProximityPlacementGroupType(proximityPlacementGroupType);
         return this;
     }

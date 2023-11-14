@@ -8,19 +8,23 @@ import com.azure.core.annotation.Immutable;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** Specifies that the content key ID is in the PlayReady header. */
+/**
+ * Specifies that the content key ID is in the PlayReady header.
+ */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
 @JsonTypeName("#Microsoft.Media.ContentKeyPolicyPlayReadyContentEncryptionKeyFromHeader")
 @Immutable
 public final class ContentKeyPolicyPlayReadyContentEncryptionKeyFromHeader
     extends ContentKeyPolicyPlayReadyContentKeyLocation {
-    /** Creates an instance of ContentKeyPolicyPlayReadyContentEncryptionKeyFromHeader class. */
+    /**
+     * Creates an instance of ContentKeyPolicyPlayReadyContentEncryptionKeyFromHeader class.
+     */
     public ContentKeyPolicyPlayReadyContentEncryptionKeyFromHeader() {
     }
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

@@ -7,18 +7,20 @@ package com.azure.resourcemanager.eventhubs.generated.models;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.AvailableClustersListInner;
 import java.util.List;
 
-/** An immutable client-side representation of AvailableClustersList. */
+/**
+ * An immutable client-side representation of AvailableClustersList.
+ */
 public interface AvailableClustersList {
     /**
      * Gets the value property: The count of readily available and pre-provisioned Event Hubs Clusters per region.
-     *
+     * 
      * @return the value value.
      */
     List<AvailableCluster> value();
 
     /**
      * Gets the inner com.azure.resourcemanager.eventhubs.generated.fluent.models.AvailableClustersListInner object.
-     *
+     * 
      * @return the inner object.
      */
     AvailableClustersListInner innerModel();

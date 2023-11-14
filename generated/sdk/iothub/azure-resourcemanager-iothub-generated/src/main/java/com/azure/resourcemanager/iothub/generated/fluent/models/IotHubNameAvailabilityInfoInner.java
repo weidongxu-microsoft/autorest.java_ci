@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.iothub.generated.models.IotHubNameUnavailabilityReason;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The properties indicating whether a given IoT hub name is available. */
+/**
+ * The properties indicating whether a given IoT hub name is available.
+ */
 @Fluent
 public final class IotHubNameAvailabilityInfoInner {
     /*
@@ -29,13 +31,15 @@ public final class IotHubNameAvailabilityInfoInner {
     @JsonProperty(value = "message")
     private String message;
 
-    /** Creates an instance of IotHubNameAvailabilityInfoInner class. */
+    /**
+     * Creates an instance of IotHubNameAvailabilityInfoInner class.
+     */
     public IotHubNameAvailabilityInfoInner() {
     }
 
     /**
      * Get the nameAvailable property: The value which indicates whether the provided name is available.
-     *
+     * 
      * @return the nameAvailable value.
      */
     public Boolean nameAvailable() {
@@ -44,7 +48,7 @@ public final class IotHubNameAvailabilityInfoInner {
 
     /**
      * Get the reason property: The reason for unavailability.
-     *
+     * 
      * @return the reason value.
      */
     public IotHubNameUnavailabilityReason reason() {
@@ -53,7 +57,7 @@ public final class IotHubNameAvailabilityInfoInner {
 
     /**
      * Get the message property: The detailed reason message.
-     *
+     * 
      * @return the message value.
      */
     public String message() {
@@ -62,7 +66,7 @@ public final class IotHubNameAvailabilityInfoInner {
 
     /**
      * Set the message property: The detailed reason message.
-     *
+     * 
      * @param message the message value to set.
      * @return the IotHubNameAvailabilityInfoInner object itself.
      */
@@ -73,7 +77,7 @@ public final class IotHubNameAvailabilityInfoInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -9,93 +9,103 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.resources.generated.fluent.models.ResourceGroupInner;
 import java.util.Map;
 
-/** An immutable client-side representation of ResourceGroup. */
+/**
+ * An immutable client-side representation of ResourceGroup.
+ */
 public interface ResourceGroup {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the name property: The name of the resource.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the type property: The type of the resource.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the location property: The geo-location where the resource lives.
-     *
+     * 
      * @return the location value.
      */
     String location();
 
     /**
      * Gets the tags property: Resource tags.
-     *
+     * 
      * @return the tags value.
      */
     Map<String, String> tags();
 
     /**
      * Gets the properties property: The resource group properties.
-     *
+     * 
      * @return the properties value.
      */
     ResourceGroupProperties properties();
 
     /**
      * Gets the managedBy property: The ID of the resource that manages this resource group.
-     *
+     * 
      * @return the managedBy value.
      */
     String managedBy();
 
     /**
      * Gets the region of the resource.
-     *
+     * 
      * @return the region of the resource.
      */
     Region region();
 
     /**
      * Gets the name of the resource region.
-     *
+     * 
      * @return the name of the resource region.
      */
     String regionName();
 
     /**
      * Gets the inner com.azure.resourcemanager.resources.generated.fluent.models.ResourceGroupInner object.
-     *
+     * 
      * @return the inner object.
      */
     ResourceGroupInner innerModel();
 
-    /** The entirety of the ResourceGroup definition. */
+    /**
+     * The entirety of the ResourceGroup definition.
+     */
     interface Definition extends DefinitionStages.Blank, DefinitionStages.WithLocation, DefinitionStages.WithCreate {
     }
 
-    /** The ResourceGroup definition stages. */
+    /**
+     * The ResourceGroup definition stages.
+     */
     interface DefinitionStages {
-        /** The first stage of the ResourceGroup definition. */
+        /**
+         * The first stage of the ResourceGroup definition.
+         */
         interface Blank extends WithLocation {
         }
 
-        /** The stage of the ResourceGroup definition allowing to specify location. */
+        /**
+         * The stage of the ResourceGroup definition allowing to specify location.
+         */
         interface WithLocation {
             /**
              * Specifies the region for the resource.
-             *
+             * 
              * @param location The geo-location where the resource lives.
              * @return the next definition stage.
              */
@@ -103,7 +113,7 @@ public interface ResourceGroup {
 
             /**
              * Specifies the region for the resource.
-             *
+             * 
              * @param location The geo-location where the resource lives.
              * @return the next definition stage.
              */
@@ -118,47 +128,53 @@ public interface ResourceGroup {
             extends DefinitionStages.WithTags, DefinitionStages.WithProperties, DefinitionStages.WithManagedBy {
             /**
              * Executes the create request.
-             *
+             * 
              * @return the created resource.
              */
             ResourceGroup create();
 
             /**
              * Executes the create request.
-             *
+             * 
              * @param context The context to associate with this operation.
              * @return the created resource.
              */
             ResourceGroup create(Context context);
         }
 
-        /** The stage of the ResourceGroup definition allowing to specify tags. */
+        /**
+         * The stage of the ResourceGroup definition allowing to specify tags.
+         */
         interface WithTags {
             /**
              * Specifies the tags property: Resource tags..
-             *
+             * 
              * @param tags Resource tags.
              * @return the next definition stage.
              */
             WithCreate withTags(Map<String, String> tags);
         }
 
-        /** The stage of the ResourceGroup definition allowing to specify properties. */
+        /**
+         * The stage of the ResourceGroup definition allowing to specify properties.
+         */
         interface WithProperties {
             /**
              * Specifies the properties property: The resource group properties..
-             *
+             * 
              * @param properties The resource group properties.
              * @return the next definition stage.
              */
             WithCreate withProperties(ResourceGroupProperties properties);
         }
 
-        /** The stage of the ResourceGroup definition allowing to specify managedBy. */
+        /**
+         * The stage of the ResourceGroup definition allowing to specify managedBy.
+         */
         interface WithManagedBy {
             /**
              * Specifies the managedBy property: The ID of the resource that manages this resource group..
-             *
+             * 
              * @param managedBy The ID of the resource that manages this resource group.
              * @return the next definition stage.
              */
@@ -168,70 +184,82 @@ public interface ResourceGroup {
 
     /**
      * Begins update for the ResourceGroup resource.
-     *
+     * 
      * @return the stage of resource update.
      */
     ResourceGroup.Update update();
 
-    /** The template for ResourceGroup update. */
+    /**
+     * The template for ResourceGroup update.
+     */
     interface Update
         extends UpdateStages.WithTags, UpdateStages.WithName, UpdateStages.WithProperties, UpdateStages.WithManagedBy {
         /**
          * Executes the update request.
-         *
+         * 
          * @return the updated resource.
          */
         ResourceGroup apply();
 
         /**
          * Executes the update request.
-         *
+         * 
          * @param context The context to associate with this operation.
          * @return the updated resource.
          */
         ResourceGroup apply(Context context);
     }
 
-    /** The ResourceGroup update stages. */
+    /**
+     * The ResourceGroup update stages.
+     */
     interface UpdateStages {
-        /** The stage of the ResourceGroup update allowing to specify tags. */
+        /**
+         * The stage of the ResourceGroup update allowing to specify tags.
+         */
         interface WithTags {
             /**
              * Specifies the tags property: The tags attached to the resource group..
-             *
+             * 
              * @param tags The tags attached to the resource group.
              * @return the next definition stage.
              */
             Update withTags(Map<String, String> tags);
         }
 
-        /** The stage of the ResourceGroup update allowing to specify name. */
+        /**
+         * The stage of the ResourceGroup update allowing to specify name.
+         */
         interface WithName {
             /**
              * Specifies the name property: The name of the resource group..
-             *
+             * 
              * @param name The name of the resource group.
              * @return the next definition stage.
              */
             Update withName(String name);
         }
 
-        /** The stage of the ResourceGroup update allowing to specify properties. */
+        /**
+         * The stage of the ResourceGroup update allowing to specify properties.
+         */
         interface WithProperties {
             /**
              * Specifies the properties property: The resource group properties..
-             *
+             * 
              * @param properties The resource group properties.
              * @return the next definition stage.
              */
             Update withProperties(ResourceGroupProperties properties);
         }
 
-        /** The stage of the ResourceGroup update allowing to specify managedBy. */
+        /**
+         * The stage of the ResourceGroup update allowing to specify managedBy.
+         */
         interface WithManagedBy {
             /**
              * Specifies the managedBy property: The ID of the resource that manages this resource group..
-             *
+             * 
              * @param managedBy The ID of the resource that manages this resource group.
              * @return the next definition stage.
              */
@@ -241,14 +269,14 @@ public interface ResourceGroup {
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @return the refreshed resource.
      */
     ResourceGroup refresh();
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @return the refreshed resource.
      */
@@ -256,7 +284,7 @@ public interface ResourceGroup {
 
     /**
      * Captures the specified resource group as a template.
-     *
+     * 
      * @param parameters Parameters for exporting the template.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -267,7 +295,7 @@ public interface ResourceGroup {
 
     /**
      * Captures the specified resource group as a template.
-     *
+     * 
      * @param parameters Parameters for exporting the template.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

@@ -15,8 +15,7 @@ public final class PerformanceTierPropertiesImpl implements PerformanceTierPrope
 
     private final com.azure.resourcemanager.postgresql.generated.PostgreSqlManager serviceManager;
 
-    PerformanceTierPropertiesImpl(
-        PerformanceTierPropertiesInner innerObject,
+    PerformanceTierPropertiesImpl(PerformanceTierPropertiesInner innerObject,
         com.azure.resourcemanager.postgresql.generated.PostgreSqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

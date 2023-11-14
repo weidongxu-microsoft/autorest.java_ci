@@ -13,18 +13,24 @@ import java.util.Collection;
  * for processing TransformOutputs. The default priority is Normal.
  */
 public final class Priority extends ExpandableStringEnum<Priority> {
-    /** Static value Low for Priority. */
+    /**
+     * Static value Low for Priority.
+     */
     public static final Priority LOW = fromString("Low");
 
-    /** Static value Normal for Priority. */
+    /**
+     * Static value Normal for Priority.
+     */
     public static final Priority NORMAL = fromString("Normal");
 
-    /** Static value High for Priority. */
+    /**
+     * Static value High for Priority.
+     */
     public static final Priority HIGH = fromString("High");
 
     /**
      * Creates a new instance of Priority value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -33,7 +39,7 @@ public final class Priority extends ExpandableStringEnum<Priority> {
 
     /**
      * Creates or finds a Priority from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding Priority.
      */
@@ -44,7 +50,7 @@ public final class Priority extends ExpandableStringEnum<Priority> {
 
     /**
      * Gets known Priority values.
-     *
+     * 
      * @return known Priority values.
      */
     public static Collection<Priority> values() {

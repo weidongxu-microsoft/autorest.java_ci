@@ -21,8 +21,7 @@ public final class VirtualApplianceSitesImpl implements VirtualApplianceSites {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public VirtualApplianceSitesImpl(
-        VirtualApplianceSitesClient innerClient,
+    public VirtualApplianceSitesImpl(VirtualApplianceSitesClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -36,15 +35,12 @@ public final class VirtualApplianceSitesImpl implements VirtualApplianceSites {
         this.serviceClient().delete(resourceGroupName, networkVirtualApplianceName, siteName, context);
     }
 
-    public Response<VirtualApplianceSite> getWithResponse(
-        String resourceGroupName, String networkVirtualApplianceName, String siteName, Context context) {
-        Response<VirtualApplianceSiteInner> inner =
-            this.serviceClient().getWithResponse(resourceGroupName, networkVirtualApplianceName, siteName, context);
+    public Response<VirtualApplianceSite> getWithResponse(String resourceGroupName, String networkVirtualApplianceName,
+        String siteName, Context context) {
+        Response<VirtualApplianceSiteInner> inner
+            = this.serviceClient().getWithResponse(resourceGroupName, networkVirtualApplianceName, siteName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new VirtualApplianceSiteImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -52,8 +48,8 @@ public final class VirtualApplianceSitesImpl implements VirtualApplianceSites {
     }
 
     public VirtualApplianceSite get(String resourceGroupName, String networkVirtualApplianceName, String siteName) {
-        VirtualApplianceSiteInner inner =
-            this.serviceClient().get(resourceGroupName, networkVirtualApplianceName, siteName);
+        VirtualApplianceSiteInner inner
+            = this.serviceClient().get(resourceGroupName, networkVirtualApplianceName, siteName);
         if (inner != null) {
             return new VirtualApplianceSiteImpl(inner, this.manager());
         } else {
@@ -62,46 +58,33 @@ public final class VirtualApplianceSitesImpl implements VirtualApplianceSites {
     }
 
     public PagedIterable<VirtualApplianceSite> list(String resourceGroupName, String networkVirtualApplianceName) {
-        PagedIterable<VirtualApplianceSiteInner> inner =
-            this.serviceClient().list(resourceGroupName, networkVirtualApplianceName);
+        PagedIterable<VirtualApplianceSiteInner> inner
+            = this.serviceClient().list(resourceGroupName, networkVirtualApplianceName);
         return Utils.mapPage(inner, inner1 -> new VirtualApplianceSiteImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<VirtualApplianceSite> list(
-        String resourceGroupName, String networkVirtualApplianceName, Context context) {
-        PagedIterable<VirtualApplianceSiteInner> inner =
-            this.serviceClient().list(resourceGroupName, networkVirtualApplianceName, context);
+    public PagedIterable<VirtualApplianceSite> list(String resourceGroupName, String networkVirtualApplianceName,
+        Context context) {
+        PagedIterable<VirtualApplianceSiteInner> inner
+            = this.serviceClient().list(resourceGroupName, networkVirtualApplianceName, context);
         return Utils.mapPage(inner, inner1 -> new VirtualApplianceSiteImpl(inner1, this.manager()));
     }
 
     public VirtualApplianceSite getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String networkVirtualApplianceName = Utils.getValueFromIdByName(id, "networkVirtualAppliances");
         if (networkVirtualApplianceName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'networkVirtualAppliances'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'networkVirtualAppliances'.", id)));
         }
         String siteName = Utils.getValueFromIdByName(id, "virtualApplianceSites");
         if (siteName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'virtualApplianceSites'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'virtualApplianceSites'.", id)));
         }
         return this.getWithResponse(resourceGroupName, networkVirtualApplianceName, siteName, Context.NONE).getValue();
     }
@@ -109,31 +92,18 @@ public final class VirtualApplianceSitesImpl implements VirtualApplianceSites {
     public Response<VirtualApplianceSite> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String networkVirtualApplianceName = Utils.getValueFromIdByName(id, "networkVirtualAppliances");
         if (networkVirtualApplianceName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'networkVirtualAppliances'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'networkVirtualAppliances'.", id)));
         }
         String siteName = Utils.getValueFromIdByName(id, "virtualApplianceSites");
         if (siteName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'virtualApplianceSites'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'virtualApplianceSites'.", id)));
         }
         return this.getWithResponse(resourceGroupName, networkVirtualApplianceName, siteName, context);
     }
@@ -141,31 +111,18 @@ public final class VirtualApplianceSitesImpl implements VirtualApplianceSites {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String networkVirtualApplianceName = Utils.getValueFromIdByName(id, "networkVirtualAppliances");
         if (networkVirtualApplianceName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'networkVirtualAppliances'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'networkVirtualAppliances'.", id)));
         }
         String siteName = Utils.getValueFromIdByName(id, "virtualApplianceSites");
         if (siteName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'virtualApplianceSites'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'virtualApplianceSites'.", id)));
         }
         this.delete(resourceGroupName, networkVirtualApplianceName, siteName, Context.NONE);
     }
@@ -173,31 +130,18 @@ public final class VirtualApplianceSitesImpl implements VirtualApplianceSites {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String networkVirtualApplianceName = Utils.getValueFromIdByName(id, "networkVirtualAppliances");
         if (networkVirtualApplianceName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'networkVirtualAppliances'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'networkVirtualAppliances'.", id)));
         }
         String siteName = Utils.getValueFromIdByName(id, "virtualApplianceSites");
         if (siteName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'virtualApplianceSites'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'virtualApplianceSites'.", id)));
         }
         this.delete(resourceGroupName, networkVirtualApplianceName, siteName, context);
     }

@@ -12,8 +12,8 @@ public final class LocalizableStringImpl implements LocalizableString {
 
     private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    LocalizableStringImpl(
-        LocalizableStringInner innerObject, com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
+    LocalizableStringImpl(LocalizableStringInner innerObject,
+        com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

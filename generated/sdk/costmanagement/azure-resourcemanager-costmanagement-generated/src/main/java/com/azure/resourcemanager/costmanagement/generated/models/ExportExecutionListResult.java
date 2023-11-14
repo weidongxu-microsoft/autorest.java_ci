@@ -7,11 +7,13 @@ package com.azure.resourcemanager.costmanagement.generated.models;
 import com.azure.resourcemanager.costmanagement.generated.fluent.models.ExportExecutionListResultInner;
 import java.util.List;
 
-/** An immutable client-side representation of ExportExecutionListResult. */
+/**
+ * An immutable client-side representation of ExportExecutionListResult.
+ */
 public interface ExportExecutionListResult {
     /**
      * Gets the value property: The list of export executions.
-     *
+     * 
      * @return the value value.
      */
     List<ExportExecution> value();
@@ -19,7 +21,7 @@ public interface ExportExecutionListResult {
     /**
      * Gets the inner com.azure.resourcemanager.costmanagement.generated.fluent.models.ExportExecutionListResultInner
      * object.
-     *
+     * 
      * @return the inner object.
      */
     ExportExecutionListResultInner innerModel();

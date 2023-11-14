@@ -17,8 +17,7 @@ public final class MarketplaceImpl implements Marketplace {
 
     private final com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager;
 
-    MarketplaceImpl(
-        MarketplaceInner innerObject,
+    MarketplaceImpl(MarketplaceInner innerObject,
         com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

@@ -13,11 +13,13 @@ import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.DiagnosticProactiveLogCollectionSettingsInner;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.DiagnosticRemoteSupportSettingsInner;
 
-/** An instance of this class provides access to all the operations defined in DiagnosticSettingsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in DiagnosticSettingsClient.
+ */
 public interface DiagnosticSettingsClient {
     /**
      * Gets the proactive log collection settings of the specified Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param context The context to associate with this operation.
@@ -25,7 +27,7 @@ public interface DiagnosticSettingsClient {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the proactive log collection settings of the specified Data Box Edge/Data Box Gateway device along with
-     *     {@link Response}.
+     * {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<DiagnosticProactiveLogCollectionSettingsInner> getDiagnosticProactiveLogCollectionSettingsWithResponse(
@@ -33,7 +35,7 @@ public interface DiagnosticSettingsClient {
 
     /**
      * Gets the proactive log collection settings of the specified Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -42,12 +44,12 @@ public interface DiagnosticSettingsClient {
      * @return the proactive log collection settings of the specified Data Box Edge/Data Box Gateway device.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    DiagnosticProactiveLogCollectionSettingsInner getDiagnosticProactiveLogCollectionSettings(
-        String deviceName, String resourceGroupName);
+    DiagnosticProactiveLogCollectionSettingsInner getDiagnosticProactiveLogCollectionSettings(String deviceName,
+        String resourceGroupName);
 
     /**
      * Updates the proactive log collection settings on a Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param proactiveLogCollectionSettings The proactive log collection settings.
@@ -58,14 +60,12 @@ public interface DiagnosticSettingsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<DiagnosticProactiveLogCollectionSettingsInner>, DiagnosticProactiveLogCollectionSettingsInner>
-        beginUpdateDiagnosticProactiveLogCollectionSettings(
-            String deviceName,
-            String resourceGroupName,
+        beginUpdateDiagnosticProactiveLogCollectionSettings(String deviceName, String resourceGroupName,
             DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings);
 
     /**
      * Updates the proactive log collection settings on a Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param proactiveLogCollectionSettings The proactive log collection settings.
@@ -77,15 +77,12 @@ public interface DiagnosticSettingsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<DiagnosticProactiveLogCollectionSettingsInner>, DiagnosticProactiveLogCollectionSettingsInner>
-        beginUpdateDiagnosticProactiveLogCollectionSettings(
-            String deviceName,
-            String resourceGroupName,
-            DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings,
-            Context context);
+        beginUpdateDiagnosticProactiveLogCollectionSettings(String deviceName, String resourceGroupName,
+            DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings, Context context);
 
     /**
      * Updates the proactive log collection settings on a Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param proactiveLogCollectionSettings The proactive log collection settings.
@@ -95,14 +92,12 @@ public interface DiagnosticSettingsClient {
      * @return the diagnostic proactive log collection settings of a device.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    DiagnosticProactiveLogCollectionSettingsInner updateDiagnosticProactiveLogCollectionSettings(
-        String deviceName,
-        String resourceGroupName,
-        DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings);
+    DiagnosticProactiveLogCollectionSettingsInner updateDiagnosticProactiveLogCollectionSettings(String deviceName,
+        String resourceGroupName, DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings);
 
     /**
      * Updates the proactive log collection settings on a Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param proactiveLogCollectionSettings The proactive log collection settings.
@@ -113,15 +108,13 @@ public interface DiagnosticSettingsClient {
      * @return the diagnostic proactive log collection settings of a device.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    DiagnosticProactiveLogCollectionSettingsInner updateDiagnosticProactiveLogCollectionSettings(
-        String deviceName,
-        String resourceGroupName,
-        DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings,
+    DiagnosticProactiveLogCollectionSettingsInner updateDiagnosticProactiveLogCollectionSettings(String deviceName,
+        String resourceGroupName, DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings,
         Context context);
 
     /**
      * Gets the diagnostic remote support settings of the specified Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param context The context to associate with this operation.
@@ -129,15 +122,15 @@ public interface DiagnosticSettingsClient {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the diagnostic remote support settings of the specified Data Box Edge/Data Box Gateway device along with
-     *     {@link Response}.
+     * {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<DiagnosticRemoteSupportSettingsInner> getDiagnosticRemoteSupportSettingsWithResponse(
-        String deviceName, String resourceGroupName, Context context);
+    Response<DiagnosticRemoteSupportSettingsInner> getDiagnosticRemoteSupportSettingsWithResponse(String deviceName,
+        String resourceGroupName, Context context);
 
     /**
      * Gets the diagnostic remote support settings of the specified Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -146,12 +139,12 @@ public interface DiagnosticSettingsClient {
      * @return the diagnostic remote support settings of the specified Data Box Edge/Data Box Gateway device.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    DiagnosticRemoteSupportSettingsInner getDiagnosticRemoteSupportSettings(
-        String deviceName, String resourceGroupName);
+    DiagnosticRemoteSupportSettingsInner getDiagnosticRemoteSupportSettings(String deviceName,
+        String resourceGroupName);
 
     /**
      * Updates the diagnostic remote support settings on a Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param diagnosticRemoteSupportSettings The diagnostic remote support settings.
@@ -162,14 +155,12 @@ public interface DiagnosticSettingsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<DiagnosticRemoteSupportSettingsInner>, DiagnosticRemoteSupportSettingsInner>
-        beginUpdateDiagnosticRemoteSupportSettings(
-            String deviceName,
-            String resourceGroupName,
+        beginUpdateDiagnosticRemoteSupportSettings(String deviceName, String resourceGroupName,
             DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings);
 
     /**
      * Updates the diagnostic remote support settings on a Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param diagnosticRemoteSupportSettings The diagnostic remote support settings.
@@ -181,15 +172,12 @@ public interface DiagnosticSettingsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<DiagnosticRemoteSupportSettingsInner>, DiagnosticRemoteSupportSettingsInner>
-        beginUpdateDiagnosticRemoteSupportSettings(
-            String deviceName,
-            String resourceGroupName,
-            DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings,
-            Context context);
+        beginUpdateDiagnosticRemoteSupportSettings(String deviceName, String resourceGroupName,
+            DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings, Context context);
 
     /**
      * Updates the diagnostic remote support settings on a Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param diagnosticRemoteSupportSettings The diagnostic remote support settings.
@@ -199,14 +187,12 @@ public interface DiagnosticSettingsClient {
      * @return the remote support settings of a device.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    DiagnosticRemoteSupportSettingsInner updateDiagnosticRemoteSupportSettings(
-        String deviceName,
-        String resourceGroupName,
-        DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings);
+    DiagnosticRemoteSupportSettingsInner updateDiagnosticRemoteSupportSettings(String deviceName,
+        String resourceGroupName, DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings);
 
     /**
      * Updates the diagnostic remote support settings on a Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param diagnosticRemoteSupportSettings The diagnostic remote support settings.
@@ -217,9 +203,7 @@ public interface DiagnosticSettingsClient {
      * @return the remote support settings of a device.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    DiagnosticRemoteSupportSettingsInner updateDiagnosticRemoteSupportSettings(
-        String deviceName,
-        String resourceGroupName,
-        DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings,
+    DiagnosticRemoteSupportSettingsInner updateDiagnosticRemoteSupportSettings(String deviceName,
+        String resourceGroupName, DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings,
         Context context);
 }

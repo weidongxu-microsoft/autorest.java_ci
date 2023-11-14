@@ -12,8 +12,7 @@ public final class ConnectionSharedKeyImpl implements ConnectionSharedKey {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    ConnectionSharedKeyImpl(
-        ConnectionSharedKeyInner innerObject,
+    ConnectionSharedKeyImpl(ConnectionSharedKeyInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

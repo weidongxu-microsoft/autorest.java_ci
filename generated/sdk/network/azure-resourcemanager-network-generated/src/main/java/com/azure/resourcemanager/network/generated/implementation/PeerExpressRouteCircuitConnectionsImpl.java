@@ -21,32 +21,28 @@ public final class PeerExpressRouteCircuitConnectionsImpl implements PeerExpress
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public PeerExpressRouteCircuitConnectionsImpl(
-        PeerExpressRouteCircuitConnectionsClient innerClient,
+    public PeerExpressRouteCircuitConnectionsImpl(PeerExpressRouteCircuitConnectionsClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<PeerExpressRouteCircuitConnection> getWithResponse(
-        String resourceGroupName, String circuitName, String peeringName, String connectionName, Context context) {
-        Response<PeerExpressRouteCircuitConnectionInner> inner =
-            this.serviceClient().getWithResponse(resourceGroupName, circuitName, peeringName, connectionName, context);
+    public Response<PeerExpressRouteCircuitConnection> getWithResponse(String resourceGroupName, String circuitName,
+        String peeringName, String connectionName, Context context) {
+        Response<PeerExpressRouteCircuitConnectionInner> inner = this.serviceClient().getWithResponse(resourceGroupName,
+            circuitName, peeringName, connectionName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new PeerExpressRouteCircuitConnectionImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public PeerExpressRouteCircuitConnection get(
-        String resourceGroupName, String circuitName, String peeringName, String connectionName) {
-        PeerExpressRouteCircuitConnectionInner inner =
-            this.serviceClient().get(resourceGroupName, circuitName, peeringName, connectionName);
+    public PeerExpressRouteCircuitConnection get(String resourceGroupName, String circuitName, String peeringName,
+        String connectionName) {
+        PeerExpressRouteCircuitConnectionInner inner
+            = this.serviceClient().get(resourceGroupName, circuitName, peeringName, connectionName);
         if (inner != null) {
             return new PeerExpressRouteCircuitConnectionImpl(inner, this.manager());
         } else {
@@ -54,17 +50,17 @@ public final class PeerExpressRouteCircuitConnectionsImpl implements PeerExpress
         }
     }
 
-    public PagedIterable<PeerExpressRouteCircuitConnection> list(
-        String resourceGroupName, String circuitName, String peeringName) {
-        PagedIterable<PeerExpressRouteCircuitConnectionInner> inner =
-            this.serviceClient().list(resourceGroupName, circuitName, peeringName);
+    public PagedIterable<PeerExpressRouteCircuitConnection> list(String resourceGroupName, String circuitName,
+        String peeringName) {
+        PagedIterable<PeerExpressRouteCircuitConnectionInner> inner
+            = this.serviceClient().list(resourceGroupName, circuitName, peeringName);
         return Utils.mapPage(inner, inner1 -> new PeerExpressRouteCircuitConnectionImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<PeerExpressRouteCircuitConnection> list(
-        String resourceGroupName, String circuitName, String peeringName, Context context) {
-        PagedIterable<PeerExpressRouteCircuitConnectionInner> inner =
-            this.serviceClient().list(resourceGroupName, circuitName, peeringName, context);
+    public PagedIterable<PeerExpressRouteCircuitConnection> list(String resourceGroupName, String circuitName,
+        String peeringName, Context context) {
+        PagedIterable<PeerExpressRouteCircuitConnectionInner> inner
+            = this.serviceClient().list(resourceGroupName, circuitName, peeringName, context);
         return Utils.mapPage(inner, inner1 -> new PeerExpressRouteCircuitConnectionImpl(inner1, this.manager()));
     }
 

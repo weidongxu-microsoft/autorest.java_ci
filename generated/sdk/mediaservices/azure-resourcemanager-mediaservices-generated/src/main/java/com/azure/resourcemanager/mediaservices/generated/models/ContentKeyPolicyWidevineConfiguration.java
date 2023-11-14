@@ -10,7 +10,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** Specifies a configuration for Widevine licenses. */
+/**
+ * Specifies a configuration for Widevine licenses.
+ */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
 @JsonTypeName("#Microsoft.Media.ContentKeyPolicyWidevineConfiguration")
 @Fluent
@@ -21,13 +23,15 @@ public final class ContentKeyPolicyWidevineConfiguration extends ContentKeyPolic
     @JsonProperty(value = "widevineTemplate", required = true)
     private String widevineTemplate;
 
-    /** Creates an instance of ContentKeyPolicyWidevineConfiguration class. */
+    /**
+     * Creates an instance of ContentKeyPolicyWidevineConfiguration class.
+     */
     public ContentKeyPolicyWidevineConfiguration() {
     }
 
     /**
      * Get the widevineTemplate property: The Widevine template.
-     *
+     * 
      * @return the widevineTemplate value.
      */
     public String widevineTemplate() {
@@ -36,7 +40,7 @@ public final class ContentKeyPolicyWidevineConfiguration extends ContentKeyPolic
 
     /**
      * Set the widevineTemplate property: The Widevine template.
-     *
+     * 
      * @param widevineTemplate the widevineTemplate value to set.
      * @return the ContentKeyPolicyWidevineConfiguration object itself.
      */
@@ -47,17 +51,15 @@ public final class ContentKeyPolicyWidevineConfiguration extends ContentKeyPolic
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override
     public void validate() {
         super.validate();
         if (widevineTemplate() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property widevineTemplate in model ContentKeyPolicyWidevineConfiguration"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property widevineTemplate in model ContentKeyPolicyWidevineConfiguration"));
         }
     }
 

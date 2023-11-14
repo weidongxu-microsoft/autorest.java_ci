@@ -65,12 +65,8 @@ public final class VpnGatewayImpl implements VpnGateway, VpnGateway.Definition, 
     public List<VpnConnection> connections() {
         List<VpnConnectionInner> inner = this.innerModel().connections();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new VpnConnectionImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new VpnConnectionImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -108,12 +104,8 @@ public final class VpnGatewayImpl implements VpnGateway, VpnGateway.Definition, 
     public List<VpnGatewayNatRule> natRules() {
         List<VpnGatewayNatRuleInner> inner = this.innerModel().natRules();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new VpnGatewayNatRuleImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new VpnGatewayNatRuleImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -151,20 +143,14 @@ public final class VpnGatewayImpl implements VpnGateway, VpnGateway.Definition, 
     }
 
     public VpnGateway create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVpnGateways()
-                .createOrUpdate(resourceGroupName, gatewayName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getVpnGateways().createOrUpdate(resourceGroupName,
+            gatewayName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public VpnGateway create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVpnGateways()
-                .createOrUpdate(resourceGroupName, gatewayName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getVpnGateways().createOrUpdate(resourceGroupName,
+            gatewayName, this.innerModel(), context);
         return this;
     }
 
@@ -180,25 +166,19 @@ public final class VpnGatewayImpl implements VpnGateway, VpnGateway.Definition, 
     }
 
     public VpnGateway apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVpnGateways()
-                .updateTags(resourceGroupName, gatewayName, updateVpnGatewayParameters, Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getVpnGateways().updateTags(resourceGroupName, gatewayName,
+            updateVpnGatewayParameters, Context.NONE);
         return this;
     }
 
     public VpnGateway apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVpnGateways()
-                .updateTags(resourceGroupName, gatewayName, updateVpnGatewayParameters, context);
+        this.innerObject = serviceManager.serviceClient().getVpnGateways().updateTags(resourceGroupName, gatewayName,
+            updateVpnGatewayParameters, context);
         return this;
     }
 
-    VpnGatewayImpl(
-        VpnGatewayInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    VpnGatewayImpl(VpnGatewayInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
@@ -206,22 +186,14 @@ public final class VpnGatewayImpl implements VpnGateway, VpnGateway.Definition, 
     }
 
     public VpnGateway refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVpnGateways()
-                .getByResourceGroupWithResponse(resourceGroupName, gatewayName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getVpnGateways()
+            .getByResourceGroupWithResponse(resourceGroupName, gatewayName, Context.NONE).getValue();
         return this;
     }
 
     public VpnGateway refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVpnGateways()
-                .getByResourceGroupWithResponse(resourceGroupName, gatewayName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getVpnGateways()
+            .getByResourceGroupWithResponse(resourceGroupName, gatewayName, context).getValue();
         return this;
     }
 

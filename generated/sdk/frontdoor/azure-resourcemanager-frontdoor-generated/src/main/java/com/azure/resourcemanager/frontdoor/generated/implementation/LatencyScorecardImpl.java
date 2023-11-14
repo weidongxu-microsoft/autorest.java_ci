@@ -17,8 +17,7 @@ public final class LatencyScorecardImpl implements LatencyScorecard {
 
     private final com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager;
 
-    LatencyScorecardImpl(
-        LatencyScorecardInner innerObject,
+    LatencyScorecardImpl(LatencyScorecardInner innerObject,
         com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

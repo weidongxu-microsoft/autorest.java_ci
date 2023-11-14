@@ -14,8 +14,8 @@ public final class OperationImpl implements Operation {
 
     private final com.azure.resourcemanager.hdinsight.generated.HDInsightManager serviceManager;
 
-    OperationImpl(
-        OperationInner innerObject, com.azure.resourcemanager.hdinsight.generated.HDInsightManager serviceManager) {
+    OperationImpl(OperationInner innerObject,
+        com.azure.resourcemanager.hdinsight.generated.HDInsightManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

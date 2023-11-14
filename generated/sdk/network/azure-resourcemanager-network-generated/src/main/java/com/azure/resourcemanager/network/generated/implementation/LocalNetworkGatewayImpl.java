@@ -106,20 +106,14 @@ public final class LocalNetworkGatewayImpl
     }
 
     public LocalNetworkGateway create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getLocalNetworkGateways()
-                .createOrUpdate(resourceGroupName, localNetworkGatewayName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getLocalNetworkGateways().createOrUpdate(resourceGroupName,
+            localNetworkGatewayName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public LocalNetworkGateway create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getLocalNetworkGateways()
-                .createOrUpdate(resourceGroupName, localNetworkGatewayName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getLocalNetworkGateways().createOrUpdate(resourceGroupName,
+            localNetworkGatewayName, this.innerModel(), context);
         return this;
     }
 
@@ -135,27 +129,19 @@ public final class LocalNetworkGatewayImpl
     }
 
     public LocalNetworkGateway apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getLocalNetworkGateways()
-                .updateTagsWithResponse(resourceGroupName, localNetworkGatewayName, updateParameters, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getLocalNetworkGateways()
+            .updateTagsWithResponse(resourceGroupName, localNetworkGatewayName, updateParameters, Context.NONE)
+            .getValue();
         return this;
     }
 
     public LocalNetworkGateway apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getLocalNetworkGateways()
-                .updateTagsWithResponse(resourceGroupName, localNetworkGatewayName, updateParameters, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getLocalNetworkGateways()
+            .updateTagsWithResponse(resourceGroupName, localNetworkGatewayName, updateParameters, context).getValue();
         return this;
     }
 
-    LocalNetworkGatewayImpl(
-        LocalNetworkGatewayInner innerObject,
+    LocalNetworkGatewayImpl(LocalNetworkGatewayInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -164,22 +150,14 @@ public final class LocalNetworkGatewayImpl
     }
 
     public LocalNetworkGateway refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getLocalNetworkGateways()
-                .getByResourceGroupWithResponse(resourceGroupName, localNetworkGatewayName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getLocalNetworkGateways()
+            .getByResourceGroupWithResponse(resourceGroupName, localNetworkGatewayName, Context.NONE).getValue();
         return this;
     }
 
     public LocalNetworkGateway refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getLocalNetworkGateways()
-                .getByResourceGroupWithResponse(resourceGroupName, localNetworkGatewayName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getLocalNetworkGateways()
+            .getByResourceGroupWithResponse(resourceGroupName, localNetworkGatewayName, context).getValue();
         return this;
     }
 

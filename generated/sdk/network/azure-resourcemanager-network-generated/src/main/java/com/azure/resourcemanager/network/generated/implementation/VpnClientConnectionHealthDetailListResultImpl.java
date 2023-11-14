@@ -15,8 +15,7 @@ public final class VpnClientConnectionHealthDetailListResultImpl implements VpnC
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    VpnClientConnectionHealthDetailListResultImpl(
-        VpnClientConnectionHealthDetailListResultInner innerObject,
+    VpnClientConnectionHealthDetailListResultImpl(VpnClientConnectionHealthDetailListResultInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

@@ -88,20 +88,14 @@ public final class VaultImpl implements Vault, Vault.Definition, Vault.Update {
     }
 
     public Vault create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVaults()
-                .createOrUpdate(resourceGroupName, vaultName, createParameters, Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getVaults().createOrUpdate(resourceGroupName, vaultName,
+            createParameters, Context.NONE);
         return this;
     }
 
     public Vault create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVaults()
-                .createOrUpdate(resourceGroupName, vaultName, createParameters, context);
+        this.innerObject = serviceManager.serviceClient().getVaults().createOrUpdate(resourceGroupName, vaultName,
+            createParameters, context);
         return this;
     }
 
@@ -118,22 +112,14 @@ public final class VaultImpl implements Vault, Vault.Definition, Vault.Update {
     }
 
     public Vault apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVaults()
-                .updateWithResponse(resourceGroupName, vaultName, updateParameters, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getVaults()
+            .updateWithResponse(resourceGroupName, vaultName, updateParameters, Context.NONE).getValue();
         return this;
     }
 
     public Vault apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVaults()
-                .updateWithResponse(resourceGroupName, vaultName, updateParameters, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getVaults()
+            .updateWithResponse(resourceGroupName, vaultName, updateParameters, context).getValue();
         return this;
     }
 
@@ -145,22 +131,14 @@ public final class VaultImpl implements Vault, Vault.Definition, Vault.Update {
     }
 
     public Vault refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVaults()
-                .getByResourceGroupWithResponse(resourceGroupName, vaultName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getVaults()
+            .getByResourceGroupWithResponse(resourceGroupName, vaultName, Context.NONE).getValue();
         return this;
     }
 
     public Vault refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVaults()
-                .getByResourceGroupWithResponse(resourceGroupName, vaultName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getVaults()
+            .getByResourceGroupWithResponse(resourceGroupName, vaultName, context).getValue();
         return this;
     }
 

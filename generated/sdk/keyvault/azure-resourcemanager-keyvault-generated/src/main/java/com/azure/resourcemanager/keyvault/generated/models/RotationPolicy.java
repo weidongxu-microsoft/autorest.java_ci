@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The RotationPolicy model. */
+/**
+ * The RotationPolicy model.
+ */
 @Fluent
 public final class RotationPolicy {
     /*
@@ -23,13 +25,15 @@ public final class RotationPolicy {
     @JsonProperty(value = "lifetimeActions")
     private List<LifetimeAction> lifetimeActions;
 
-    /** Creates an instance of RotationPolicy class. */
+    /**
+     * Creates an instance of RotationPolicy class.
+     */
     public RotationPolicy() {
     }
 
     /**
      * Get the attributes property: The attributes of key rotation policy.
-     *
+     * 
      * @return the attributes value.
      */
     public KeyRotationPolicyAttributes attributes() {
@@ -38,7 +42,7 @@ public final class RotationPolicy {
 
     /**
      * Set the attributes property: The attributes of key rotation policy.
-     *
+     * 
      * @param attributes the attributes value to set.
      * @return the RotationPolicy object itself.
      */
@@ -49,7 +53,7 @@ public final class RotationPolicy {
 
     /**
      * Get the lifetimeActions property: The lifetimeActions for key rotation action.
-     *
+     * 
      * @return the lifetimeActions value.
      */
     public List<LifetimeAction> lifetimeActions() {
@@ -58,7 +62,7 @@ public final class RotationPolicy {
 
     /**
      * Set the lifetimeActions property: The lifetimeActions for key rotation action.
-     *
+     * 
      * @param lifetimeActions the lifetimeActions value to set.
      * @return the RotationPolicy object itself.
      */
@@ -69,7 +73,7 @@ public final class RotationPolicy {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

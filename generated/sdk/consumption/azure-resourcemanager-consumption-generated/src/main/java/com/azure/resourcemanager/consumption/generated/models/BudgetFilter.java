@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** May be used to filter budgets by resource group, resource, or meter. */
+/**
+ * May be used to filter budgets by resource group, resource, or meter.
+ */
 @Fluent
 public final class BudgetFilter {
     /*
@@ -29,13 +31,15 @@ public final class BudgetFilter {
     @JsonProperty(value = "tags")
     private BudgetComparisonExpression tags;
 
-    /** Creates an instance of BudgetFilter class. */
+    /**
+     * Creates an instance of BudgetFilter class.
+     */
     public BudgetFilter() {
     }
 
     /**
      * Get the and property: The logical "AND" expression. Must have at least 2 items.
-     *
+     * 
      * @return the and value.
      */
     public List<BudgetFilterProperties> and() {
@@ -44,7 +48,7 @@ public final class BudgetFilter {
 
     /**
      * Set the and property: The logical "AND" expression. Must have at least 2 items.
-     *
+     * 
      * @param and the and value to set.
      * @return the BudgetFilter object itself.
      */
@@ -55,7 +59,7 @@ public final class BudgetFilter {
 
     /**
      * Get the dimensions property: Has comparison expression for a dimension.
-     *
+     * 
      * @return the dimensions value.
      */
     public BudgetComparisonExpression dimensions() {
@@ -64,7 +68,7 @@ public final class BudgetFilter {
 
     /**
      * Set the dimensions property: Has comparison expression for a dimension.
-     *
+     * 
      * @param dimensions the dimensions value to set.
      * @return the BudgetFilter object itself.
      */
@@ -75,7 +79,7 @@ public final class BudgetFilter {
 
     /**
      * Get the tags property: Has comparison expression for a tag.
-     *
+     * 
      * @return the tags value.
      */
     public BudgetComparisonExpression tags() {
@@ -84,7 +88,7 @@ public final class BudgetFilter {
 
     /**
      * Set the tags property: Has comparison expression for a tag.
-     *
+     * 
      * @param tags the tags value to set.
      * @return the BudgetFilter object itself.
      */
@@ -95,7 +99,7 @@ public final class BudgetFilter {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

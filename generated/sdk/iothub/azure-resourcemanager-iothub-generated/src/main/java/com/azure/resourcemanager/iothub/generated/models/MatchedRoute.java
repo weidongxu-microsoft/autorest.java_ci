@@ -7,7 +7,9 @@ package com.azure.resourcemanager.iothub.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Routes that matched. */
+/**
+ * Routes that matched.
+ */
 @Fluent
 public final class MatchedRoute {
     /*
@@ -16,13 +18,15 @@ public final class MatchedRoute {
     @JsonProperty(value = "properties")
     private RouteProperties properties;
 
-    /** Creates an instance of MatchedRoute class. */
+    /**
+     * Creates an instance of MatchedRoute class.
+     */
     public MatchedRoute() {
     }
 
     /**
      * Get the properties property: Properties of routes that matched.
-     *
+     * 
      * @return the properties value.
      */
     public RouteProperties properties() {
@@ -31,7 +35,7 @@ public final class MatchedRoute {
 
     /**
      * Set the properties property: Properties of routes that matched.
-     *
+     * 
      * @param properties the properties value to set.
      * @return the MatchedRoute object itself.
      */
@@ -42,7 +46,7 @@ public final class MatchedRoute {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

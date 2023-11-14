@@ -10,7 +10,9 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** A TrackSelection to select audio tracks. */
+/**
+ * A TrackSelection to select audio tracks.
+ */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
     include = JsonTypeInfo.As.PROPERTY,
@@ -21,25 +23,26 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
     @JsonSubTypes.Type(
         name = "#Microsoft.Media.SelectAudioTrackByAttribute",
         value = SelectAudioTrackByAttribute.class),
-    @JsonSubTypes.Type(name = "#Microsoft.Media.SelectAudioTrackById", value = SelectAudioTrackById.class)
-})
+    @JsonSubTypes.Type(name = "#Microsoft.Media.SelectAudioTrackById", value = SelectAudioTrackById.class) })
 @Fluent
 public class AudioTrackDescriptor extends TrackDescriptor {
     /*
-     * Optional designation for single channel audio tracks.  Can be used to combine the tracks into stereo or
+     * Optional designation for single channel audio tracks. Can be used to combine the tracks into stereo or
      * multi-channel audio tracks.
      */
     @JsonProperty(value = "channelMapping")
     private ChannelMapping channelMapping;
 
-    /** Creates an instance of AudioTrackDescriptor class. */
+    /**
+     * Creates an instance of AudioTrackDescriptor class.
+     */
     public AudioTrackDescriptor() {
     }
 
     /**
-     * Get the channelMapping property: Optional designation for single channel audio tracks. Can be used to combine the
-     * tracks into stereo or multi-channel audio tracks.
-     *
+     * Get the channelMapping property: Optional designation for single channel audio tracks. Can be used to combine
+     * the tracks into stereo or multi-channel audio tracks.
+     * 
      * @return the channelMapping value.
      */
     public ChannelMapping channelMapping() {
@@ -47,9 +50,9 @@ public class AudioTrackDescriptor extends TrackDescriptor {
     }
 
     /**
-     * Set the channelMapping property: Optional designation for single channel audio tracks. Can be used to combine the
-     * tracks into stereo or multi-channel audio tracks.
-     *
+     * Set the channelMapping property: Optional designation for single channel audio tracks. Can be used to combine
+     * the tracks into stereo or multi-channel audio tracks.
+     * 
      * @param channelMapping the channelMapping value to set.
      * @return the AudioTrackDescriptor object itself.
      */
@@ -60,7 +63,7 @@ public class AudioTrackDescriptor extends TrackDescriptor {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

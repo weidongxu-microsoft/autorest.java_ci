@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Set disk storage settings for SQL Server. */
+/**
+ * Set disk storage settings for SQL Server.
+ */
 @Fluent
 public final class SqlStorageSettings {
     /*
@@ -29,13 +31,15 @@ public final class SqlStorageSettings {
     @JsonProperty(value = "useStoragePool")
     private Boolean useStoragePool;
 
-    /** Creates an instance of SqlStorageSettings class. */
+    /**
+     * Creates an instance of SqlStorageSettings class.
+     */
     public SqlStorageSettings() {
     }
 
     /**
      * Get the luns property: Logical Unit Numbers for the disks.
-     *
+     * 
      * @return the luns value.
      */
     public List<Integer> luns() {
@@ -44,7 +48,7 @@ public final class SqlStorageSettings {
 
     /**
      * Set the luns property: Logical Unit Numbers for the disks.
-     *
+     * 
      * @param luns the luns value to set.
      * @return the SqlStorageSettings object itself.
      */
@@ -55,7 +59,7 @@ public final class SqlStorageSettings {
 
     /**
      * Get the defaultFilePath property: SQL Server default file path.
-     *
+     * 
      * @return the defaultFilePath value.
      */
     public String defaultFilePath() {
@@ -64,7 +68,7 @@ public final class SqlStorageSettings {
 
     /**
      * Set the defaultFilePath property: SQL Server default file path.
-     *
+     * 
      * @param defaultFilePath the defaultFilePath value to set.
      * @return the SqlStorageSettings object itself.
      */
@@ -75,7 +79,7 @@ public final class SqlStorageSettings {
 
     /**
      * Get the useStoragePool property: Use storage pool to build a drive if true or not provided.
-     *
+     * 
      * @return the useStoragePool value.
      */
     public Boolean useStoragePool() {
@@ -84,7 +88,7 @@ public final class SqlStorageSettings {
 
     /**
      * Set the useStoragePool property: Use storage pool to build a drive if true or not provided.
-     *
+     * 
      * @param useStoragePool the useStoragePool value to set.
      * @return the SqlStorageSettings object itself.
      */
@@ -95,7 +99,7 @@ public final class SqlStorageSettings {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

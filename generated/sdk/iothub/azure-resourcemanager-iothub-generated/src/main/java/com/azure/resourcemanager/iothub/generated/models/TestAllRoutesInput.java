@@ -7,7 +7,9 @@ package com.azure.resourcemanager.iothub.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Input for testing all routes. */
+/**
+ * Input for testing all routes.
+ */
 @Fluent
 public final class TestAllRoutesInput {
     /*
@@ -28,13 +30,15 @@ public final class TestAllRoutesInput {
     @JsonProperty(value = "twin")
     private RoutingTwin twin;
 
-    /** Creates an instance of TestAllRoutesInput class. */
+    /**
+     * Creates an instance of TestAllRoutesInput class.
+     */
     public TestAllRoutesInput() {
     }
 
     /**
      * Get the routingSource property: Routing source.
-     *
+     * 
      * @return the routingSource value.
      */
     public RoutingSource routingSource() {
@@ -43,7 +47,7 @@ public final class TestAllRoutesInput {
 
     /**
      * Set the routingSource property: Routing source.
-     *
+     * 
      * @param routingSource the routingSource value to set.
      * @return the TestAllRoutesInput object itself.
      */
@@ -54,7 +58,7 @@ public final class TestAllRoutesInput {
 
     /**
      * Get the message property: Routing message.
-     *
+     * 
      * @return the message value.
      */
     public RoutingMessage message() {
@@ -63,7 +67,7 @@ public final class TestAllRoutesInput {
 
     /**
      * Set the message property: Routing message.
-     *
+     * 
      * @param message the message value to set.
      * @return the TestAllRoutesInput object itself.
      */
@@ -74,7 +78,7 @@ public final class TestAllRoutesInput {
 
     /**
      * Get the twin property: Routing Twin Reference.
-     *
+     * 
      * @return the twin value.
      */
     public RoutingTwin twin() {
@@ -83,7 +87,7 @@ public final class TestAllRoutesInput {
 
     /**
      * Set the twin property: Routing Twin Reference.
-     *
+     * 
      * @param twin the twin value to set.
      * @return the TestAllRoutesInput object itself.
      */
@@ -94,7 +98,7 @@ public final class TestAllRoutesInput {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -7,39 +7,41 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkManagerCommitInner;
 import java.util.List;
 
-/** An immutable client-side representation of NetworkManagerCommit. */
+/**
+ * An immutable client-side representation of NetworkManagerCommit.
+ */
 public interface NetworkManagerCommit {
     /**
      * Gets the commitId property: Commit Id.
-     *
+     * 
      * @return the commitId value.
      */
     String commitId();
 
     /**
      * Gets the targetLocations property: List of target locations.
-     *
+     * 
      * @return the targetLocations value.
      */
     List<String> targetLocations();
 
     /**
      * Gets the configurationIds property: List of configuration ids.
-     *
+     * 
      * @return the configurationIds value.
      */
     List<String> configurationIds();
 
     /**
      * Gets the commitType property: Commit Type.
-     *
+     * 
      * @return the commitType value.
      */
     ConfigurationType commitType();
 
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.NetworkManagerCommitInner object.
-     *
+     * 
      * @return the inner object.
      */
     NetworkManagerCommitInner innerModel();

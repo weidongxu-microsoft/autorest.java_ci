@@ -8,20 +8,28 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Denotes whether move operation is in progress. */
+/**
+ * Denotes whether move operation is in progress.
+ */
 public final class ResourceMoveStatus extends ExpandableStringEnum<ResourceMoveStatus> {
-    /** Static value None for ResourceMoveStatus. */
+    /**
+     * Static value None for ResourceMoveStatus.
+     */
     public static final ResourceMoveStatus NONE = fromString("None");
 
-    /** Static value ResourceMoveInProgress for ResourceMoveStatus. */
+    /**
+     * Static value ResourceMoveInProgress for ResourceMoveStatus.
+     */
     public static final ResourceMoveStatus RESOURCE_MOVE_IN_PROGRESS = fromString("ResourceMoveInProgress");
 
-    /** Static value ResourceMoveFailed for ResourceMoveStatus. */
+    /**
+     * Static value ResourceMoveFailed for ResourceMoveStatus.
+     */
     public static final ResourceMoveStatus RESOURCE_MOVE_FAILED = fromString("ResourceMoveFailed");
 
     /**
      * Creates a new instance of ResourceMoveStatus value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -30,7 +38,7 @@ public final class ResourceMoveStatus extends ExpandableStringEnum<ResourceMoveS
 
     /**
      * Creates or finds a ResourceMoveStatus from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding ResourceMoveStatus.
      */
@@ -41,7 +49,7 @@ public final class ResourceMoveStatus extends ExpandableStringEnum<ResourceMoveS
 
     /**
      * Gets known ResourceMoveStatus values.
-     *
+     * 
      * @return known ResourceMoveStatus values.
      */
     public static Collection<ResourceMoveStatus> values() {

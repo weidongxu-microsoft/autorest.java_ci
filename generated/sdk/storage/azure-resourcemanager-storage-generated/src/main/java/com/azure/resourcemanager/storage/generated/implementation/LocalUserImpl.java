@@ -100,22 +100,16 @@ public final class LocalUserImpl implements LocalUser, LocalUser.Definition, Loc
     }
 
     public LocalUser create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getLocalUsersOperations()
-                .createOrUpdateWithResponse(resourceGroupName, accountName, username, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getLocalUsersOperations()
+            .createOrUpdateWithResponse(resourceGroupName, accountName, username, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public LocalUser create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getLocalUsersOperations()
-                .createOrUpdateWithResponse(resourceGroupName, accountName, username, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getLocalUsersOperations()
+            .createOrUpdateWithResponse(resourceGroupName, accountName, username, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
@@ -130,27 +124,21 @@ public final class LocalUserImpl implements LocalUser, LocalUser.Definition, Loc
     }
 
     public LocalUser apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getLocalUsersOperations()
-                .createOrUpdateWithResponse(resourceGroupName, accountName, username, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getLocalUsersOperations()
+            .createOrUpdateWithResponse(resourceGroupName, accountName, username, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public LocalUser apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getLocalUsersOperations()
-                .createOrUpdateWithResponse(resourceGroupName, accountName, username, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getLocalUsersOperations()
+            .createOrUpdateWithResponse(resourceGroupName, accountName, username, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
-    LocalUserImpl(
-        LocalUserInner innerObject, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
+    LocalUserImpl(LocalUserInner innerObject,
+        com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
@@ -159,29 +147,20 @@ public final class LocalUserImpl implements LocalUser, LocalUser.Definition, Loc
     }
 
     public LocalUser refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getLocalUsersOperations()
-                .getWithResponse(resourceGroupName, accountName, username, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getLocalUsersOperations()
+            .getWithResponse(resourceGroupName, accountName, username, Context.NONE).getValue();
         return this;
     }
 
     public LocalUser refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getLocalUsersOperations()
-                .getWithResponse(resourceGroupName, accountName, username, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getLocalUsersOperations()
+            .getWithResponse(resourceGroupName, accountName, username, context).getValue();
         return this;
     }
 
     public Response<LocalUserKeys> listKeysWithResponse(Context context) {
-        return serviceManager
-            .localUsersOperations()
-            .listKeysWithResponse(resourceGroupName, accountName, username, context);
+        return serviceManager.localUsersOperations().listKeysWithResponse(resourceGroupName, accountName, username,
+            context);
     }
 
     public LocalUserKeys listKeys() {
@@ -189,9 +168,8 @@ public final class LocalUserImpl implements LocalUser, LocalUser.Definition, Loc
     }
 
     public Response<LocalUserRegeneratePasswordResult> regeneratePasswordWithResponse(Context context) {
-        return serviceManager
-            .localUsersOperations()
-            .regeneratePasswordWithResponse(resourceGroupName, accountName, username, context);
+        return serviceManager.localUsersOperations().regeneratePasswordWithResponse(resourceGroupName, accountName,
+            username, context);
     }
 
     public LocalUserRegeneratePasswordResult regeneratePassword() {

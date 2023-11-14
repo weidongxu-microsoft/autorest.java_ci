@@ -18,8 +18,8 @@ public final class ServersMigrationsImpl implements ServersMigrations {
 
     private final com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager;
 
-    public ServersMigrationsImpl(
-        ServersMigrationsClient innerClient, com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager) {
+    public ServersMigrationsImpl(ServersMigrationsClient innerClient,
+        com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }

@@ -7,17 +7,19 @@ package com.azure.resourcemanager.compute.generated.models;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.compute.generated.fluent.models.SharingUpdateInner;
 
-/** Resource collection API of GallerySharingProfiles. */
+/**
+ * Resource collection API of GallerySharingProfiles.
+ */
 public interface GallerySharingProfiles {
     /**
      * Update sharing profile of a gallery.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery.
      * @param sharingUpdate Parameters supplied to the update gallery sharing profile.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the gallery sharing profile update.
      */
@@ -25,17 +27,17 @@ public interface GallerySharingProfiles {
 
     /**
      * Update sharing profile of a gallery.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery.
      * @param sharingUpdate Parameters supplied to the update gallery sharing profile.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the gallery sharing profile update.
      */
-    SharingUpdate update(
-        String resourceGroupName, String galleryName, SharingUpdateInner sharingUpdate, Context context);
+    SharingUpdate update(String resourceGroupName, String galleryName, SharingUpdateInner sharingUpdate,
+        Context context);
 }

@@ -8,17 +8,23 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Links to the next set of results. */
+/**
+ * Links to the next set of results.
+ */
 public final class SkuAvailability extends ExpandableStringEnum<SkuAvailability> {
-    /** Static value Available for SkuAvailability. */
+    /**
+     * Static value Available for SkuAvailability.
+     */
     public static final SkuAvailability AVAILABLE = fromString("Available");
 
-    /** Static value Unavailable for SkuAvailability. */
+    /**
+     * Static value Unavailable for SkuAvailability.
+     */
     public static final SkuAvailability UNAVAILABLE = fromString("Unavailable");
 
     /**
      * Creates a new instance of SkuAvailability value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -27,7 +33,7 @@ public final class SkuAvailability extends ExpandableStringEnum<SkuAvailability>
 
     /**
      * Creates or finds a SkuAvailability from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding SkuAvailability.
      */
@@ -38,7 +44,7 @@ public final class SkuAvailability extends ExpandableStringEnum<SkuAvailability>
 
     /**
      * Gets known SkuAvailability values.
-     *
+     * 
      * @return known SkuAvailability values.
      */
     public static Collection<SkuAvailability> values() {

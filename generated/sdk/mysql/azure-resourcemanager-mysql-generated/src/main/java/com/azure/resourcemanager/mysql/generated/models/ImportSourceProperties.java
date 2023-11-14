@@ -7,7 +7,9 @@ package com.azure.resourcemanager.mysql.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Import source related properties. */
+/**
+ * Import source related properties.
+ */
 @Fluent
 public final class ImportSourceProperties {
     /*
@@ -34,13 +36,15 @@ public final class ImportSourceProperties {
     @JsonProperty(value = "dataDirPath")
     private String dataDirPath;
 
-    /** Creates an instance of ImportSourceProperties class. */
+    /**
+     * Creates an instance of ImportSourceProperties class.
+     */
     public ImportSourceProperties() {
     }
 
     /**
      * Get the storageType property: Storage type of import source.
-     *
+     * 
      * @return the storageType value.
      */
     public ImportSourceStorageType storageType() {
@@ -49,7 +53,7 @@ public final class ImportSourceProperties {
 
     /**
      * Set the storageType property: Storage type of import source.
-     *
+     * 
      * @param storageType the storageType value to set.
      * @return the ImportSourceProperties object itself.
      */
@@ -60,7 +64,7 @@ public final class ImportSourceProperties {
 
     /**
      * Get the storageUrl property: Uri of the import source storage.
-     *
+     * 
      * @return the storageUrl value.
      */
     public String storageUrl() {
@@ -69,7 +73,7 @@ public final class ImportSourceProperties {
 
     /**
      * Set the storageUrl property: Uri of the import source storage.
-     *
+     * 
      * @param storageUrl the storageUrl value to set.
      * @return the ImportSourceProperties object itself.
      */
@@ -79,9 +83,9 @@ public final class ImportSourceProperties {
     }
 
     /**
-     * Get the sasToken property: Sas token for accessing source storage. Read and list permissions are required for sas
-     * token.
-     *
+     * Get the sasToken property: Sas token for accessing source storage. Read and list permissions are required for
+     * sas token.
+     * 
      * @return the sasToken value.
      */
     public String sasToken() {
@@ -89,9 +93,9 @@ public final class ImportSourceProperties {
     }
 
     /**
-     * Set the sasToken property: Sas token for accessing source storage. Read and list permissions are required for sas
-     * token.
-     *
+     * Set the sasToken property: Sas token for accessing source storage. Read and list permissions are required for
+     * sas token.
+     * 
      * @param sasToken the sasToken value to set.
      * @return the ImportSourceProperties object itself.
      */
@@ -102,7 +106,7 @@ public final class ImportSourceProperties {
 
     /**
      * Get the dataDirPath property: Relative path of data directory in storage.
-     *
+     * 
      * @return the dataDirPath value.
      */
     public String dataDirPath() {
@@ -111,7 +115,7 @@ public final class ImportSourceProperties {
 
     /**
      * Set the dataDirPath property: Relative path of data directory in storage.
-     *
+     * 
      * @param dataDirPath the dataDirPath value to set.
      * @return the ImportSourceProperties object itself.
      */
@@ -122,7 +126,7 @@ public final class ImportSourceProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

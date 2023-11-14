@@ -11,7 +11,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** Specifies a RSA key for token validation. */
+/**
+ * Specifies a RSA key for token validation.
+ */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
 @JsonTypeName("#Microsoft.Media.ContentKeyPolicyRsaTokenKey")
 @Fluent
@@ -28,13 +30,15 @@ public final class ContentKeyPolicyRsaTokenKey extends ContentKeyPolicyRestricti
     @JsonProperty(value = "modulus", required = true)
     private byte[] modulus;
 
-    /** Creates an instance of ContentKeyPolicyRsaTokenKey class. */
+    /**
+     * Creates an instance of ContentKeyPolicyRsaTokenKey class.
+     */
     public ContentKeyPolicyRsaTokenKey() {
     }
 
     /**
      * Get the exponent property: The RSA Parameter exponent.
-     *
+     * 
      * @return the exponent value.
      */
     public byte[] exponent() {
@@ -43,7 +47,7 @@ public final class ContentKeyPolicyRsaTokenKey extends ContentKeyPolicyRestricti
 
     /**
      * Set the exponent property: The RSA Parameter exponent.
-     *
+     * 
      * @param exponent the exponent value to set.
      * @return the ContentKeyPolicyRsaTokenKey object itself.
      */
@@ -54,7 +58,7 @@ public final class ContentKeyPolicyRsaTokenKey extends ContentKeyPolicyRestricti
 
     /**
      * Get the modulus property: The RSA Parameter modulus.
-     *
+     * 
      * @return the modulus value.
      */
     public byte[] modulus() {
@@ -63,7 +67,7 @@ public final class ContentKeyPolicyRsaTokenKey extends ContentKeyPolicyRestricti
 
     /**
      * Set the modulus property: The RSA Parameter modulus.
-     *
+     * 
      * @param modulus the modulus value to set.
      * @return the ContentKeyPolicyRsaTokenKey object itself.
      */
@@ -74,23 +78,19 @@ public final class ContentKeyPolicyRsaTokenKey extends ContentKeyPolicyRestricti
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override
     public void validate() {
         super.validate();
         if (exponent() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property exponent in model ContentKeyPolicyRsaTokenKey"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property exponent in model ContentKeyPolicyRsaTokenKey"));
         }
         if (modulus() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property modulus in model ContentKeyPolicyRsaTokenKey"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property modulus in model ContentKeyPolicyRsaTokenKey"));
         }
     }
 

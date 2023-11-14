@@ -13,8 +13,7 @@ public final class CheckNameAvailabilityResultImpl implements CheckNameAvailabil
 
     private final com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager;
 
-    CheckNameAvailabilityResultImpl(
-        CheckNameAvailabilityResultInner innerObject,
+    CheckNameAvailabilityResultImpl(CheckNameAvailabilityResultInner innerObject,
         com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

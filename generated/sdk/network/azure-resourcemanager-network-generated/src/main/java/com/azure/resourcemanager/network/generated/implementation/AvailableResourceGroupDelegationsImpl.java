@@ -19,8 +19,7 @@ public final class AvailableResourceGroupDelegationsImpl implements AvailableRes
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public AvailableResourceGroupDelegationsImpl(
-        AvailableResourceGroupDelegationsClient innerClient,
+    public AvailableResourceGroupDelegationsImpl(AvailableResourceGroupDelegationsClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;

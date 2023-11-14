@@ -9,7 +9,9 @@ import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Properties that contain a private workbook. */
+/**
+ * Properties that contain a private workbook.
+ */
 @Fluent
 public final class MyWorkbookProperties {
     /*
@@ -61,13 +63,15 @@ public final class MyWorkbookProperties {
     @JsonProperty(value = "sourceId")
     private String sourceId;
 
-    /** Creates an instance of MyWorkbookProperties class. */
+    /**
+     * Creates an instance of MyWorkbookProperties class.
+     */
     public MyWorkbookProperties() {
     }
 
     /**
      * Get the displayName property: The user-defined name of the private workbook.
-     *
+     * 
      * @return the displayName value.
      */
     public String displayName() {
@@ -76,7 +80,7 @@ public final class MyWorkbookProperties {
 
     /**
      * Set the displayName property: The user-defined name of the private workbook.
-     *
+     * 
      * @param displayName the displayName value to set.
      * @return the MyWorkbookProperties object itself.
      */
@@ -88,7 +92,7 @@ public final class MyWorkbookProperties {
     /**
      * Get the serializedData property: Configuration of this particular private workbook. Configuration data is a
      * string containing valid JSON.
-     *
+     * 
      * @return the serializedData value.
      */
     public String serializedData() {
@@ -98,7 +102,7 @@ public final class MyWorkbookProperties {
     /**
      * Set the serializedData property: Configuration of this particular private workbook. Configuration data is a
      * string containing valid JSON.
-     *
+     * 
      * @param serializedData the serializedData value to set.
      * @return the MyWorkbookProperties object itself.
      */
@@ -110,7 +114,7 @@ public final class MyWorkbookProperties {
     /**
      * Get the version property: This instance's version of the data model. This can change as new features are added
      * that can be marked private workbook.
-     *
+     * 
      * @return the version value.
      */
     public String version() {
@@ -120,7 +124,7 @@ public final class MyWorkbookProperties {
     /**
      * Set the version property: This instance's version of the data model. This can change as new features are added
      * that can be marked private workbook.
-     *
+     * 
      * @param version the version value to set.
      * @return the MyWorkbookProperties object itself.
      */
@@ -132,7 +136,7 @@ public final class MyWorkbookProperties {
     /**
      * Get the timeModified property: Date and time in UTC of the last modification that was made to this private
      * workbook definition.
-     *
+     * 
      * @return the timeModified value.
      */
     public String timeModified() {
@@ -141,7 +145,7 @@ public final class MyWorkbookProperties {
 
     /**
      * Get the category property: Workbook category, as defined by the user at creation time.
-     *
+     * 
      * @return the category value.
      */
     public String category() {
@@ -150,7 +154,7 @@ public final class MyWorkbookProperties {
 
     /**
      * Set the category property: Workbook category, as defined by the user at creation time.
-     *
+     * 
      * @param category the category value to set.
      * @return the MyWorkbookProperties object itself.
      */
@@ -161,7 +165,7 @@ public final class MyWorkbookProperties {
 
     /**
      * Get the tags property: A list of 0 or more tags that are associated with this private workbook definition.
-     *
+     * 
      * @return the tags value.
      */
     public List<String> tags() {
@@ -170,7 +174,7 @@ public final class MyWorkbookProperties {
 
     /**
      * Set the tags property: A list of 0 or more tags that are associated with this private workbook definition.
-     *
+     * 
      * @param tags the tags value to set.
      * @return the MyWorkbookProperties object itself.
      */
@@ -181,7 +185,7 @@ public final class MyWorkbookProperties {
 
     /**
      * Get the userId property: Unique user id of the specific user that owns this private workbook.
-     *
+     * 
      * @return the userId value.
      */
     public String userId() {
@@ -190,7 +194,7 @@ public final class MyWorkbookProperties {
 
     /**
      * Get the sourceId property: Optional resourceId for a source resource.
-     *
+     * 
      * @return the sourceId value.
      */
     public String sourceId() {
@@ -199,7 +203,7 @@ public final class MyWorkbookProperties {
 
     /**
      * Set the sourceId property: Optional resourceId for a source resource.
-     *
+     * 
      * @param sourceId the sourceId value to set.
      * @return the MyWorkbookProperties object itself.
      */
@@ -210,26 +214,21 @@ public final class MyWorkbookProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (displayName() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property displayName in model MyWorkbookProperties"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property displayName in model MyWorkbookProperties"));
         }
         if (serializedData() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property serializedData in model MyWorkbookProperties"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property serializedData in model MyWorkbookProperties"));
         }
         if (category() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property category in model MyWorkbookProperties"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property category in model MyWorkbookProperties"));
         }
     }
 

@@ -12,8 +12,7 @@ public final class DnsNameAvailabilityResultImpl implements DnsNameAvailabilityR
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    DnsNameAvailabilityResultImpl(
-        DnsNameAvailabilityResultInner innerObject,
+    DnsNameAvailabilityResultImpl(DnsNameAvailabilityResultInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

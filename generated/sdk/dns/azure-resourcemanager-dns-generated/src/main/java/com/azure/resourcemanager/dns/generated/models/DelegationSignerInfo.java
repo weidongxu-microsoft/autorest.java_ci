@@ -7,7 +7,9 @@ package com.azure.resourcemanager.dns.generated.models;
 import com.azure.core.annotation.Immutable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The delegation signer information. */
+/**
+ * The delegation signer information.
+ */
 @Immutable
 public final class DelegationSignerInfo {
     /*
@@ -29,14 +31,16 @@ public final class DelegationSignerInfo {
     @JsonProperty(value = "record", access = JsonProperty.Access.WRITE_ONLY)
     private String record;
 
-    /** Creates an instance of DelegationSignerInfo class. */
+    /**
+     * Creates an instance of DelegationSignerInfo class.
+     */
     public DelegationSignerInfo() {
     }
 
     /**
      * Get the digestAlgorithmType property: The digest algorithm type represents the standard digest algorithm number
      * used to construct the digest. See: https://www.iana.org/assignments/ds-rr-types/ds-rr-types.xhtml.
-     *
+     * 
      * @return the digestAlgorithmType value.
      */
     public Integer digestAlgorithmType() {
@@ -46,7 +50,7 @@ public final class DelegationSignerInfo {
     /**
      * Get the digestValue property: The digest value is a cryptographic hash value of the referenced DNSKEY Resource
      * Record.
-     *
+     * 
      * @return the digestValue value.
      */
     public String digestValue() {
@@ -55,7 +59,7 @@ public final class DelegationSignerInfo {
 
     /**
      * Get the record property: The record represents a delegation signer (DS) record.
-     *
+     * 
      * @return the record value.
      */
     public String record() {
@@ -64,7 +68,7 @@ public final class DelegationSignerInfo {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

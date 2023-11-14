@@ -90,27 +90,19 @@ public final class DiagnosticSettingsResourceImpl
     }
 
     public DiagnosticSettingsResource create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDiagnosticSettingsOperations()
-                .createOrUpdateWithResponse(resourceUri, name, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getDiagnosticSettingsOperations()
+            .createOrUpdateWithResponse(resourceUri, name, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public DiagnosticSettingsResource create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDiagnosticSettingsOperations()
-                .createOrUpdateWithResponse(resourceUri, name, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getDiagnosticSettingsOperations()
+            .createOrUpdateWithResponse(resourceUri, name, this.innerModel(), context).getValue();
         return this;
     }
 
-    DiagnosticSettingsResourceImpl(
-        String name, com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
+    DiagnosticSettingsResourceImpl(String name,
+        com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = new DiagnosticSettingsResourceInner();
         this.serviceManager = serviceManager;
         this.name = name;
@@ -121,59 +113,36 @@ public final class DiagnosticSettingsResourceImpl
     }
 
     public DiagnosticSettingsResource apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDiagnosticSettingsOperations()
-                .createOrUpdateWithResponse(resourceUri, name, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getDiagnosticSettingsOperations()
+            .createOrUpdateWithResponse(resourceUri, name, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public DiagnosticSettingsResource apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDiagnosticSettingsOperations()
-                .createOrUpdateWithResponse(resourceUri, name, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getDiagnosticSettingsOperations()
+            .createOrUpdateWithResponse(resourceUri, name, this.innerModel(), context).getValue();
         return this;
     }
 
-    DiagnosticSettingsResourceImpl(
-        DiagnosticSettingsResourceInner innerObject,
+    DiagnosticSettingsResourceImpl(DiagnosticSettingsResourceInner innerObject,
         com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceUri =
-            Utils
-                .getValueFromIdByParameterName(
-                    innerObject.id(),
-                    "/{resourceUri}/providers/Microsoft.Insights/diagnosticSettings/{name}",
-                    "resourceUri");
-        this.name =
-            Utils
-                .getValueFromIdByParameterName(
-                    innerObject.id(), "/{resourceUri}/providers/Microsoft.Insights/diagnosticSettings/{name}", "name");
+        this.resourceUri = Utils.getValueFromIdByParameterName(innerObject.id(),
+            "/{resourceUri}/providers/Microsoft.Insights/diagnosticSettings/{name}", "resourceUri");
+        this.name = Utils.getValueFromIdByParameterName(innerObject.id(),
+            "/{resourceUri}/providers/Microsoft.Insights/diagnosticSettings/{name}", "name");
     }
 
     public DiagnosticSettingsResource refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDiagnosticSettingsOperations()
-                .getWithResponse(resourceUri, name, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getDiagnosticSettingsOperations()
+            .getWithResponse(resourceUri, name, Context.NONE).getValue();
         return this;
     }
 
     public DiagnosticSettingsResource refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDiagnosticSettingsOperations()
-                .getWithResponse(resourceUri, name, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getDiagnosticSettingsOperations()
+            .getWithResponse(resourceUri, name, context).getValue();
         return this;
     }
 

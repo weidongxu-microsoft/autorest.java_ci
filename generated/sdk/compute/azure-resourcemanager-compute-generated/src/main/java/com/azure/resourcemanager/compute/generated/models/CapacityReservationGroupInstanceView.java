@@ -8,7 +8,9 @@ import com.azure.core.annotation.Immutable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The CapacityReservationGroupInstanceView model. */
+/**
+ * The CapacityReservationGroupInstanceView model.
+ */
 @Immutable
 public final class CapacityReservationGroupInstanceView {
     /*
@@ -17,14 +19,16 @@ public final class CapacityReservationGroupInstanceView {
     @JsonProperty(value = "capacityReservations", access = JsonProperty.Access.WRITE_ONLY)
     private List<CapacityReservationInstanceViewWithName> capacityReservations;
 
-    /** Creates an instance of CapacityReservationGroupInstanceView class. */
+    /**
+     * Creates an instance of CapacityReservationGroupInstanceView class.
+     */
     public CapacityReservationGroupInstanceView() {
     }
 
     /**
      * Get the capacityReservations property: List of instance view of the capacity reservations under the capacity
      * reservation group.
-     *
+     * 
      * @return the capacityReservations value.
      */
     public List<CapacityReservationInstanceViewWithName> capacityReservations() {
@@ -33,7 +37,7 @@ public final class CapacityReservationGroupInstanceView {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

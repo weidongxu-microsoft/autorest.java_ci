@@ -7,7 +7,9 @@ package com.azure.resourcemanager.dns.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** A PTR record. */
+/**
+ * A PTR record.
+ */
 @Fluent
 public final class PtrRecord {
     /*
@@ -16,13 +18,15 @@ public final class PtrRecord {
     @JsonProperty(value = "ptrdname")
     private String ptrdname;
 
-    /** Creates an instance of PtrRecord class. */
+    /**
+     * Creates an instance of PtrRecord class.
+     */
     public PtrRecord() {
     }
 
     /**
      * Get the ptrdname property: The PTR target domain name for this PTR record.
-     *
+     * 
      * @return the ptrdname value.
      */
     public String ptrdname() {
@@ -31,7 +35,7 @@ public final class PtrRecord {
 
     /**
      * Set the ptrdname property: The PTR target domain name for this PTR record.
-     *
+     * 
      * @param ptrdname the ptrdname value to set.
      * @return the PtrRecord object itself.
      */
@@ -42,7 +46,7 @@ public final class PtrRecord {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

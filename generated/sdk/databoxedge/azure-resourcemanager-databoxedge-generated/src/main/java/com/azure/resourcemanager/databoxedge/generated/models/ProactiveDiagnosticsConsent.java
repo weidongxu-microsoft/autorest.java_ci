@@ -8,17 +8,23 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Proactive diagnostic collection consent flag. */
+/**
+ * Proactive diagnostic collection consent flag.
+ */
 public final class ProactiveDiagnosticsConsent extends ExpandableStringEnum<ProactiveDiagnosticsConsent> {
-    /** Static value Enabled for ProactiveDiagnosticsConsent. */
+    /**
+     * Static value Enabled for ProactiveDiagnosticsConsent.
+     */
     public static final ProactiveDiagnosticsConsent ENABLED = fromString("Enabled");
 
-    /** Static value Disabled for ProactiveDiagnosticsConsent. */
+    /**
+     * Static value Disabled for ProactiveDiagnosticsConsent.
+     */
     public static final ProactiveDiagnosticsConsent DISABLED = fromString("Disabled");
 
     /**
      * Creates a new instance of ProactiveDiagnosticsConsent value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -27,7 +33,7 @@ public final class ProactiveDiagnosticsConsent extends ExpandableStringEnum<Proa
 
     /**
      * Creates or finds a ProactiveDiagnosticsConsent from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding ProactiveDiagnosticsConsent.
      */
@@ -38,7 +44,7 @@ public final class ProactiveDiagnosticsConsent extends ExpandableStringEnum<Proa
 
     /**
      * Gets known ProactiveDiagnosticsConsent values.
-     *
+     * 
      * @return known ProactiveDiagnosticsConsent values.
      */
     public static Collection<ProactiveDiagnosticsConsent> values() {

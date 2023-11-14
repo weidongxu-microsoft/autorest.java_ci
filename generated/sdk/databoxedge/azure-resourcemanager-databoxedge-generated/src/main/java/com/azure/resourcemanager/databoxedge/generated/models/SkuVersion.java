@@ -8,17 +8,23 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Availability of the Sku as preview/stable. */
+/**
+ * Availability of the Sku as preview/stable.
+ */
 public final class SkuVersion extends ExpandableStringEnum<SkuVersion> {
-    /** Static value Stable for SkuVersion. */
+    /**
+     * Static value Stable for SkuVersion.
+     */
     public static final SkuVersion STABLE = fromString("Stable");
 
-    /** Static value Preview for SkuVersion. */
+    /**
+     * Static value Preview for SkuVersion.
+     */
     public static final SkuVersion PREVIEW = fromString("Preview");
 
     /**
      * Creates a new instance of SkuVersion value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -27,7 +33,7 @@ public final class SkuVersion extends ExpandableStringEnum<SkuVersion> {
 
     /**
      * Creates or finds a SkuVersion from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding SkuVersion.
      */
@@ -38,7 +44,7 @@ public final class SkuVersion extends ExpandableStringEnum<SkuVersion> {
 
     /**
      * Gets known SkuVersion values.
-     *
+     * 
      * @return known SkuVersion values.
      */
     public static Collection<SkuVersion> values() {

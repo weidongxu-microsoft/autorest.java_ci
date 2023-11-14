@@ -12,8 +12,7 @@ public final class BastionSessionStateImpl implements BastionSessionState {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    BastionSessionStateImpl(
-        BastionSessionStateInner innerObject,
+    BastionSessionStateImpl(BastionSessionStateInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

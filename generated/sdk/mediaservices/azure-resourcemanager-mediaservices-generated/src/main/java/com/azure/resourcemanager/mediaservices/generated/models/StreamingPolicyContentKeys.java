@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Class to specify properties of all content keys in Streaming Policy. */
+/**
+ * Class to specify properties of all content keys in Streaming Policy.
+ */
 @Fluent
 public final class StreamingPolicyContentKeys {
     /*
@@ -23,13 +25,15 @@ public final class StreamingPolicyContentKeys {
     @JsonProperty(value = "keyToTrackMappings")
     private List<StreamingPolicyContentKey> keyToTrackMappings;
 
-    /** Creates an instance of StreamingPolicyContentKeys class. */
+    /**
+     * Creates an instance of StreamingPolicyContentKeys class.
+     */
     public StreamingPolicyContentKeys() {
     }
 
     /**
      * Get the defaultKey property: Default content key for an encryption scheme.
-     *
+     * 
      * @return the defaultKey value.
      */
     public DefaultKey defaultKey() {
@@ -38,7 +42,7 @@ public final class StreamingPolicyContentKeys {
 
     /**
      * Set the defaultKey property: Default content key for an encryption scheme.
-     *
+     * 
      * @param defaultKey the defaultKey value to set.
      * @return the StreamingPolicyContentKeys object itself.
      */
@@ -49,7 +53,7 @@ public final class StreamingPolicyContentKeys {
 
     /**
      * Get the keyToTrackMappings property: Representing tracks needs separate content key.
-     *
+     * 
      * @return the keyToTrackMappings value.
      */
     public List<StreamingPolicyContentKey> keyToTrackMappings() {
@@ -58,7 +62,7 @@ public final class StreamingPolicyContentKeys {
 
     /**
      * Set the keyToTrackMappings property: Representing tracks needs separate content key.
-     *
+     * 
      * @param keyToTrackMappings the keyToTrackMappings value to set.
      * @return the StreamingPolicyContentKeys object itself.
      */
@@ -69,7 +73,7 @@ public final class StreamingPolicyContentKeys {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

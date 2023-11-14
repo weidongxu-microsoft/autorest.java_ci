@@ -12,8 +12,7 @@ public final class ComputeOperationValueImpl implements ComputeOperationValue {
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    ComputeOperationValueImpl(
-        ComputeOperationValueInner innerObject,
+    ComputeOperationValueImpl(ComputeOperationValueInner innerObject,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

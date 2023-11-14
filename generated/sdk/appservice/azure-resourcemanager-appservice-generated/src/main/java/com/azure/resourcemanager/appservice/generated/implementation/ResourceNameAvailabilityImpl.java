@@ -13,8 +13,7 @@ public final class ResourceNameAvailabilityImpl implements ResourceNameAvailabil
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    ResourceNameAvailabilityImpl(
-        ResourceNameAvailabilityInner innerObject,
+    ResourceNameAvailabilityImpl(ResourceNameAvailabilityInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

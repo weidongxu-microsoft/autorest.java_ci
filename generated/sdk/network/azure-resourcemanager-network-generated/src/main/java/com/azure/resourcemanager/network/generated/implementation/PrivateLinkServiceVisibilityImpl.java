@@ -12,8 +12,7 @@ public final class PrivateLinkServiceVisibilityImpl implements PrivateLinkServic
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    PrivateLinkServiceVisibilityImpl(
-        PrivateLinkServiceVisibilityInner innerObject,
+    PrivateLinkServiceVisibilityImpl(PrivateLinkServiceVisibilityInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

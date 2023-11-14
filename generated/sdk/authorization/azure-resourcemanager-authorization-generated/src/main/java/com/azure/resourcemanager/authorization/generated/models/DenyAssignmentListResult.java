@@ -9,7 +9,9 @@ import com.azure.resourcemanager.authorization.generated.fluent.models.DenyAssig
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Deny assignment list operation result. */
+/**
+ * Deny assignment list operation result.
+ */
 @Fluent
 public final class DenyAssignmentListResult {
     /*
@@ -24,13 +26,15 @@ public final class DenyAssignmentListResult {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
-    /** Creates an instance of DenyAssignmentListResult class. */
+    /**
+     * Creates an instance of DenyAssignmentListResult class.
+     */
     public DenyAssignmentListResult() {
     }
 
     /**
      * Get the value property: Deny assignment list.
-     *
+     * 
      * @return the value value.
      */
     public List<DenyAssignmentInner> value() {
@@ -39,7 +43,7 @@ public final class DenyAssignmentListResult {
 
     /**
      * Set the value property: Deny assignment list.
-     *
+     * 
      * @param value the value value to set.
      * @return the DenyAssignmentListResult object itself.
      */
@@ -50,7 +54,7 @@ public final class DenyAssignmentListResult {
 
     /**
      * Get the nextLink property: The URL to use for getting the next set of results.
-     *
+     * 
      * @return the nextLink value.
      */
     public String nextLink() {
@@ -59,7 +63,7 @@ public final class DenyAssignmentListResult {
 
     /**
      * Set the nextLink property: The URL to use for getting the next set of results.
-     *
+     * 
      * @param nextLink the nextLink value to set.
      * @return the DenyAssignmentListResult object itself.
      */
@@ -70,7 +74,7 @@ public final class DenyAssignmentListResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

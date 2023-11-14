@@ -8,26 +8,38 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * The provisioning state of the shared private link resource. Can be Updating, Deleting, Failed, Succeeded or
+ * The provisioning state of the shared private link resource. Valid values are Updating, Deleting, Failed, Succeeded or
  * Incomplete.
  */
 public enum SharedPrivateLinkResourceProvisioningState {
-    /** Enum value Updating. */
+    /**
+     * Enum value Updating.
+     */
     UPDATING("Updating"),
 
-    /** Enum value Deleting. */
+    /**
+     * Enum value Deleting.
+     */
     DELETING("Deleting"),
 
-    /** Enum value Failed. */
+    /**
+     * Enum value Failed.
+     */
     FAILED("Failed"),
 
-    /** Enum value Succeeded. */
+    /**
+     * Enum value Succeeded.
+     */
     SUCCEEDED("Succeeded"),
 
-    /** Enum value Incomplete. */
+    /**
+     * Enum value Incomplete.
+     */
     INCOMPLETE("Incomplete");
 
-    /** The actual serialized value for a SharedPrivateLinkResourceProvisioningState instance. */
+    /**
+     * The actual serialized value for a SharedPrivateLinkResourceProvisioningState instance.
+     */
     private final String value;
 
     SharedPrivateLinkResourceProvisioningState(String value) {
@@ -36,7 +48,7 @@ public enum SharedPrivateLinkResourceProvisioningState {
 
     /**
      * Parses a serialized value to a SharedPrivateLinkResourceProvisioningState instance.
-     *
+     * 
      * @param value the serialized value to parse.
      * @return the parsed SharedPrivateLinkResourceProvisioningState object, or null if unable to parse.
      */
@@ -54,7 +66,9 @@ public enum SharedPrivateLinkResourceProvisioningState {
         return null;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @JsonValue
     @Override
     public String toString() {

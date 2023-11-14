@@ -12,8 +12,7 @@ public final class AvailableServiceAliasImpl implements AvailableServiceAlias {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    AvailableServiceAliasImpl(
-        AvailableServiceAliasInner innerObject,
+    AvailableServiceAliasImpl(AvailableServiceAliasInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

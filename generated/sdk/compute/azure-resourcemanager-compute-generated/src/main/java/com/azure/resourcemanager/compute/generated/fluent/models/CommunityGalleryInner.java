@@ -7,14 +7,20 @@ package com.azure.resourcemanager.compute.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.compute.generated.models.PirCommunityGalleryResource;
 
-/** Specifies information about the Community Gallery that you want to create or update. */
+/**
+ * Specifies information about the Community Gallery that you want to create or update.
+ */
 @Fluent
 public final class CommunityGalleryInner extends PirCommunityGalleryResource {
-    /** Creates an instance of CommunityGalleryInner class. */
+    /**
+     * Creates an instance of CommunityGalleryInner class.
+     */
     public CommunityGalleryInner() {
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public CommunityGalleryInner withUniqueId(String uniqueId) {
         super.withUniqueId(uniqueId);
@@ -23,7 +29,7 @@ public final class CommunityGalleryInner extends PirCommunityGalleryResource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

@@ -14,8 +14,7 @@ public final class LanguageExtensionImpl implements LanguageExtension {
 
     private final com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager;
 
-    LanguageExtensionImpl(
-        LanguageExtensionInner innerObject,
+    LanguageExtensionImpl(LanguageExtensionInner innerObject,
         com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -27,6 +26,10 @@ public final class LanguageExtensionImpl implements LanguageExtension {
 
     public LanguageExtensionImageName languageExtensionImageName() {
         return this.innerModel().languageExtensionImageName();
+    }
+
+    public String languageExtensionCustomImageName() {
+        return this.innerModel().languageExtensionCustomImageName();
     }
 
     public LanguageExtensionInner innerModel() {

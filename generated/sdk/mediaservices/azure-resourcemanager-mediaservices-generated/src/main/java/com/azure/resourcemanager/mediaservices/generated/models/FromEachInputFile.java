@@ -17,11 +17,15 @@ import java.util.List;
 @JsonTypeName("#Microsoft.Media.FromEachInputFile")
 @Fluent
 public final class FromEachInputFile extends InputDefinition {
-    /** Creates an instance of FromEachInputFile class. */
+    /**
+     * Creates an instance of FromEachInputFile class.
+     */
     public FromEachInputFile() {
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public FromEachInputFile withIncludedTracks(List<TrackDescriptor> includedTracks) {
         super.withIncludedTracks(includedTracks);
@@ -30,7 +34,7 @@ public final class FromEachInputFile extends InputDefinition {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

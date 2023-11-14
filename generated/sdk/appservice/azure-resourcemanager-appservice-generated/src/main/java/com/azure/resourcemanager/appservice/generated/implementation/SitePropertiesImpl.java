@@ -8,9 +8,11 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.SiteConfigIn
 import com.azure.resourcemanager.appservice.generated.fluent.models.SitePropertiesInner;
 import com.azure.resourcemanager.appservice.generated.models.ClientCertMode;
 import com.azure.resourcemanager.appservice.generated.models.CloningInfo;
+import com.azure.resourcemanager.appservice.generated.models.DaprConfig;
 import com.azure.resourcemanager.appservice.generated.models.HostingEnvironmentProfile;
 import com.azure.resourcemanager.appservice.generated.models.HostnameSslState;
 import com.azure.resourcemanager.appservice.generated.models.RedundancyMode;
+import com.azure.resourcemanager.appservice.generated.models.ResourceConfig;
 import com.azure.resourcemanager.appservice.generated.models.SiteAvailabilityState;
 import com.azure.resourcemanager.appservice.generated.models.SiteConfig;
 import com.azure.resourcemanager.appservice.generated.models.SiteProperties;
@@ -26,8 +28,7 @@ public final class SitePropertiesImpl implements SiteProperties {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    SitePropertiesImpl(
-        SitePropertiesInner innerObject,
+    SitePropertiesImpl(SitePropertiesInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -119,6 +120,18 @@ public final class SitePropertiesImpl implements SiteProperties {
         } else {
             return null;
         }
+    }
+
+    public DaprConfig daprConfig() {
+        return this.innerModel().daprConfig();
+    }
+
+    public String workloadProfileName() {
+        return this.innerModel().workloadProfileName();
+    }
+
+    public ResourceConfig resourceConfig() {
+        return this.innerModel().resourceConfig();
     }
 
     public List<String> trafficManagerHostNames() {

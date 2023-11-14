@@ -13,18 +13,24 @@ import java.util.Collection;
  * &lt;br&gt;&lt;br&gt; **Private** &lt;br&gt;&lt;br&gt; **Groups** &lt;br&gt;&lt;br&gt; **Community**.
  */
 public final class GallerySharingPermissionTypes extends ExpandableStringEnum<GallerySharingPermissionTypes> {
-    /** Static value Private for GallerySharingPermissionTypes. */
+    /**
+     * Static value Private for GallerySharingPermissionTypes.
+     */
     public static final GallerySharingPermissionTypes PRIVATE = fromString("Private");
 
-    /** Static value Groups for GallerySharingPermissionTypes. */
+    /**
+     * Static value Groups for GallerySharingPermissionTypes.
+     */
     public static final GallerySharingPermissionTypes GROUPS = fromString("Groups");
 
-    /** Static value Community for GallerySharingPermissionTypes. */
+    /**
+     * Static value Community for GallerySharingPermissionTypes.
+     */
     public static final GallerySharingPermissionTypes COMMUNITY = fromString("Community");
 
     /**
      * Creates a new instance of GallerySharingPermissionTypes value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -33,7 +39,7 @@ public final class GallerySharingPermissionTypes extends ExpandableStringEnum<Ga
 
     /**
      * Creates or finds a GallerySharingPermissionTypes from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding GallerySharingPermissionTypes.
      */
@@ -44,7 +50,7 @@ public final class GallerySharingPermissionTypes extends ExpandableStringEnum<Ga
 
     /**
      * Gets known GallerySharingPermissionTypes values.
-     *
+     * 
      * @return known GallerySharingPermissionTypes values.
      */
     public static Collection<GallerySharingPermissionTypes> values() {

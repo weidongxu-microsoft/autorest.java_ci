@@ -65,22 +65,14 @@ public final class StorageQueueImpl implements StorageQueue, StorageQueue.Defini
     }
 
     public StorageQueue create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getQueues()
-                .createWithResponse(resourceGroupName, accountName, queueName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getQueues()
+            .createWithResponse(resourceGroupName, accountName, queueName, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public StorageQueue create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getQueues()
-                .createWithResponse(resourceGroupName, accountName, queueName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getQueues()
+            .createWithResponse(resourceGroupName, accountName, queueName, this.innerModel(), context).getValue();
         return this;
     }
 
@@ -95,27 +87,19 @@ public final class StorageQueueImpl implements StorageQueue, StorageQueue.Defini
     }
 
     public StorageQueue apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getQueues()
-                .updateWithResponse(resourceGroupName, accountName, queueName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getQueues()
+            .updateWithResponse(resourceGroupName, accountName, queueName, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public StorageQueue apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getQueues()
-                .updateWithResponse(resourceGroupName, accountName, queueName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getQueues()
+            .updateWithResponse(resourceGroupName, accountName, queueName, this.innerModel(), context).getValue();
         return this;
     }
 
-    StorageQueueImpl(
-        StorageQueueInner innerObject, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
+    StorageQueueImpl(StorageQueueInner innerObject,
+        com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
@@ -124,22 +108,14 @@ public final class StorageQueueImpl implements StorageQueue, StorageQueue.Defini
     }
 
     public StorageQueue refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getQueues()
-                .getWithResponse(resourceGroupName, accountName, queueName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getQueues()
+            .getWithResponse(resourceGroupName, accountName, queueName, Context.NONE).getValue();
         return this;
     }
 
     public StorageQueue refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getQueues()
-                .getWithResponse(resourceGroupName, accountName, queueName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getQueues()
+            .getWithResponse(resourceGroupName, accountName, queueName, context).getValue();
         return this;
     }
 

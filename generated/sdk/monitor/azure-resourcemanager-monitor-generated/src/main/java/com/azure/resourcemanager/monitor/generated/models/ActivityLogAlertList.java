@@ -9,7 +9,9 @@ import com.azure.resourcemanager.monitor.generated.fluent.models.ActivityLogAler
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** A list of activity log alerts. */
+/**
+ * A list of activity log alerts.
+ */
 @Fluent
 public final class ActivityLogAlertList {
     /*
@@ -24,13 +26,15 @@ public final class ActivityLogAlertList {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
-    /** Creates an instance of ActivityLogAlertList class. */
+    /**
+     * Creates an instance of ActivityLogAlertList class.
+     */
     public ActivityLogAlertList() {
     }
 
     /**
      * Get the value property: The list of activity log alerts.
-     *
+     * 
      * @return the value value.
      */
     public List<ActivityLogAlertResourceInner> value() {
@@ -39,7 +43,7 @@ public final class ActivityLogAlertList {
 
     /**
      * Set the value property: The list of activity log alerts.
-     *
+     * 
      * @param value the value value to set.
      * @return the ActivityLogAlertList object itself.
      */
@@ -50,7 +54,7 @@ public final class ActivityLogAlertList {
 
     /**
      * Get the nextLink property: Provides the link to retrieve the next set of elements.
-     *
+     * 
      * @return the nextLink value.
      */
     public String nextLink() {
@@ -59,7 +63,7 @@ public final class ActivityLogAlertList {
 
     /**
      * Set the nextLink property: Provides the link to retrieve the next set of elements.
-     *
+     * 
      * @param nextLink the nextLink value to set.
      * @return the ActivityLogAlertList object itself.
      */
@@ -70,7 +74,7 @@ public final class ActivityLogAlertList {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

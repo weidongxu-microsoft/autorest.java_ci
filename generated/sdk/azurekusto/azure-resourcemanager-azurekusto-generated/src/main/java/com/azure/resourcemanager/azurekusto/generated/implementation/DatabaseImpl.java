@@ -12,8 +12,8 @@ public final class DatabaseImpl implements Database {
 
     private final com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager;
 
-    DatabaseImpl(
-        DatabaseInner innerObject, com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager) {
+    DatabaseImpl(DatabaseInner innerObject,
+        com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

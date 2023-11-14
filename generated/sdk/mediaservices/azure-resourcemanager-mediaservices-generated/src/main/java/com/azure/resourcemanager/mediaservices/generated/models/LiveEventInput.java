@@ -9,7 +9,9 @@ import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The live event input. */
+/**
+ * The live event input.
+ */
 @Fluent
 public final class LiveEventInput {
     /*
@@ -51,14 +53,16 @@ public final class LiveEventInput {
     @JsonProperty(value = "timedMetadataEndpoints")
     private List<LiveEventTimedMetadataEndpoint> timedMetadataEndpoints;
 
-    /** Creates an instance of LiveEventInput class. */
+    /**
+     * Creates an instance of LiveEventInput class.
+     */
     public LiveEventInput() {
     }
 
     /**
-     * Get the streamingProtocol property: The input protocol for the live event. This is specified at creation time and
-     * cannot be updated.
-     *
+     * Get the streamingProtocol property: The input protocol for the live event. This is specified at creation time
+     * and cannot be updated.
+     * 
      * @return the streamingProtocol value.
      */
     public LiveEventInputProtocol streamingProtocol() {
@@ -66,9 +70,9 @@ public final class LiveEventInput {
     }
 
     /**
-     * Set the streamingProtocol property: The input protocol for the live event. This is specified at creation time and
-     * cannot be updated.
-     *
+     * Set the streamingProtocol property: The input protocol for the live event. This is specified at creation time
+     * and cannot be updated.
+     * 
      * @param streamingProtocol the streamingProtocol value to set.
      * @return the LiveEventInput object itself.
      */
@@ -79,7 +83,7 @@ public final class LiveEventInput {
 
     /**
      * Get the accessControl property: Access control for live event input.
-     *
+     * 
      * @return the accessControl value.
      */
     public LiveEventInputAccessControl accessControl() {
@@ -88,7 +92,7 @@ public final class LiveEventInput {
 
     /**
      * Set the accessControl property: Access control for live event input.
-     *
+     * 
      * @param accessControl the accessControl value to set.
      * @return the LiveEventInput object itself.
      */
@@ -101,7 +105,7 @@ public final class LiveEventInput {
      * Get the keyFrameIntervalDuration property: ISO 8601 time duration of the key frame interval duration of the
      * input. This value sets the EXT-X-TARGETDURATION property in the HLS output. For example, use PT2S to indicate 2
      * seconds. Leave the value empty for encoding live events.
-     *
+     * 
      * @return the keyFrameIntervalDuration value.
      */
     public String keyFrameIntervalDuration() {
@@ -112,7 +116,7 @@ public final class LiveEventInput {
      * Set the keyFrameIntervalDuration property: ISO 8601 time duration of the key frame interval duration of the
      * input. This value sets the EXT-X-TARGETDURATION property in the HLS output. For example, use PT2S to indicate 2
      * seconds. Leave the value empty for encoding live events.
-     *
+     * 
      * @param keyFrameIntervalDuration the keyFrameIntervalDuration value to set.
      * @return the LiveEventInput object itself.
      */
@@ -124,7 +128,7 @@ public final class LiveEventInput {
     /**
      * Get the accessToken property: A UUID in string form to uniquely identify the stream. This can be specified at
      * creation time but cannot be updated. If omitted, the service will generate a unique value.
-     *
+     * 
      * @return the accessToken value.
      */
     public String accessToken() {
@@ -134,7 +138,7 @@ public final class LiveEventInput {
     /**
      * Set the accessToken property: A UUID in string form to uniquely identify the stream. This can be specified at
      * creation time but cannot be updated. If omitted, the service will generate a unique value.
-     *
+     * 
      * @param accessToken the accessToken value to set.
      * @return the LiveEventInput object itself.
      */
@@ -145,7 +149,7 @@ public final class LiveEventInput {
 
     /**
      * Get the endpoints property: The input endpoints for the live event.
-     *
+     * 
      * @return the endpoints value.
      */
     public List<LiveEventEndpoint> endpoints() {
@@ -154,7 +158,7 @@ public final class LiveEventInput {
 
     /**
      * Set the endpoints property: The input endpoints for the live event.
-     *
+     * 
      * @param endpoints the endpoints value to set.
      * @return the LiveEventInput object itself.
      */
@@ -165,7 +169,7 @@ public final class LiveEventInput {
 
     /**
      * Get the timedMetadataEndpoints property: The metadata endpoints for the live event.
-     *
+     * 
      * @return the timedMetadataEndpoints value.
      */
     public List<LiveEventTimedMetadataEndpoint> timedMetadataEndpoints() {
@@ -174,7 +178,7 @@ public final class LiveEventInput {
 
     /**
      * Set the timedMetadataEndpoints property: The metadata endpoints for the live event.
-     *
+     * 
      * @param timedMetadataEndpoints the timedMetadataEndpoints value to set.
      * @return the LiveEventInput object itself.
      */
@@ -185,15 +189,13 @@ public final class LiveEventInput {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (streamingProtocol() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property streamingProtocol in model LiveEventInput"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property streamingProtocol in model LiveEventInput"));
         }
         if (accessControl() != null) {
             accessControl().validate();

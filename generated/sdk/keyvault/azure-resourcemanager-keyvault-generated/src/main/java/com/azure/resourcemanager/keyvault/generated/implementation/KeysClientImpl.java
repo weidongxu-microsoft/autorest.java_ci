@@ -33,17 +33,23 @@ import com.azure.resourcemanager.keyvault.generated.models.KeyCreateParameters;
 import com.azure.resourcemanager.keyvault.generated.models.KeyListResult;
 import reactor.core.publisher.Mono;
 
-/** An instance of this class provides access to all the operations defined in KeysClient. */
+/**
+ * An instance of this class provides access to all the operations defined in KeysClient.
+ */
 public final class KeysClientImpl implements KeysClient {
-    /** The proxy service used to perform REST calls. */
+    /**
+     * The proxy service used to perform REST calls.
+     */
     private final KeysService service;
 
-    /** The service client containing this operation class. */
+    /**
+     * The service client containing this operation class.
+     */
     private final KeyVaultManagementClientImpl client;
 
     /**
      * Initializes an instance of KeysClientImpl.
-     *
+     * 
      * @param client the instance of the service client containing this operation class.
      */
     KeysClientImpl(KeyVaultManagementClientImpl client) {
@@ -58,112 +64,80 @@ public final class KeysClientImpl implements KeysClient {
     @Host("{$host}")
     @ServiceInterface(name = "KeyVaultManagementCl")
     public interface KeysService {
-        @Headers({"Content-Type: application/json"})
-        @Put(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/vaults/{vaultName}/keys/{keyName}")
-        @ExpectedResponses({200})
+        @Headers({ "Content-Type: application/json" })
+        @Put("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/vaults/{vaultName}/keys/{keyName}")
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<KeyInner>> createIfNotExist(
-            @HostParam("$host") String endpoint,
+        Mono<Response<KeyInner>> createIfNotExist(@HostParam("$host") String endpoint,
             @PathParam("subscriptionId") String subscriptionId,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("vaultName") String vaultName,
-            @PathParam("keyName") String keyName,
-            @QueryParam("api-version") String apiVersion,
-            @BodyParam("application/json") KeyCreateParameters parameters,
-            @HeaderParam("Accept") String accept,
+            @PathParam("resourceGroupName") String resourceGroupName, @PathParam("vaultName") String vaultName,
+            @PathParam("keyName") String keyName, @QueryParam("api-version") String apiVersion,
+            @BodyParam("application/json") KeyCreateParameters parameters, @HeaderParam("Accept") String accept,
             Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/vaults/{vaultName}/keys/{keyName}")
-        @ExpectedResponses({200})
+        @Headers({ "Content-Type: application/json" })
+        @Get("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/vaults/{vaultName}/keys/{keyName}")
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<KeyInner>> get(
-            @HostParam("$host") String endpoint,
+        Mono<Response<KeyInner>> get(@HostParam("$host") String endpoint,
             @PathParam("subscriptionId") String subscriptionId,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("vaultName") String vaultName,
-            @PathParam("keyName") String keyName,
-            @QueryParam("api-version") String apiVersion,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @PathParam("resourceGroupName") String resourceGroupName, @PathParam("vaultName") String vaultName,
+            @PathParam("keyName") String keyName, @QueryParam("api-version") String apiVersion,
+            @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/vaults/{vaultName}/keys")
-        @ExpectedResponses({200})
+        @Headers({ "Content-Type: application/json" })
+        @Get("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/vaults/{vaultName}/keys")
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<KeyListResult>> list(
-            @HostParam("$host") String endpoint,
+        Mono<Response<KeyListResult>> list(@HostParam("$host") String endpoint,
             @PathParam("subscriptionId") String subscriptionId,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("vaultName") String vaultName,
-            @QueryParam("api-version") String apiVersion,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @PathParam("resourceGroupName") String resourceGroupName, @PathParam("vaultName") String vaultName,
+            @QueryParam("api-version") String apiVersion, @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/vaults/{vaultName}/keys/{keyName}/versions/{keyVersion}")
-        @ExpectedResponses({200})
+        @Headers({ "Content-Type: application/json" })
+        @Get("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/vaults/{vaultName}/keys/{keyName}/versions/{keyVersion}")
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<KeyInner>> getVersion(
-            @HostParam("$host") String endpoint,
+        Mono<Response<KeyInner>> getVersion(@HostParam("$host") String endpoint,
             @PathParam("subscriptionId") String subscriptionId,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("vaultName") String vaultName,
-            @PathParam("keyName") String keyName,
-            @PathParam("keyVersion") String keyVersion,
-            @QueryParam("api-version") String apiVersion,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @PathParam("resourceGroupName") String resourceGroupName, @PathParam("vaultName") String vaultName,
+            @PathParam("keyName") String keyName, @PathParam("keyVersion") String keyVersion,
+            @QueryParam("api-version") String apiVersion, @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/vaults/{vaultName}/keys/{keyName}/versions")
-        @ExpectedResponses({200})
+        @Headers({ "Content-Type: application/json" })
+        @Get("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/vaults/{vaultName}/keys/{keyName}/versions")
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<KeyListResult>> listVersions(
-            @HostParam("$host") String endpoint,
+        Mono<Response<KeyListResult>> listVersions(@HostParam("$host") String endpoint,
             @PathParam("subscriptionId") String subscriptionId,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("vaultName") String vaultName,
-            @PathParam("keyName") String keyName,
-            @QueryParam("api-version") String apiVersion,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @PathParam("resourceGroupName") String resourceGroupName, @PathParam("vaultName") String vaultName,
+            @PathParam("keyName") String keyName, @QueryParam("api-version") String apiVersion,
+            @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
+        @Headers({ "Content-Type: application/json" })
         @Get("{nextLink}")
-        @ExpectedResponses({200})
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<KeyListResult>> listNext(
-            @PathParam(value = "nextLink", encoded = true) String nextLink,
-            @HostParam("$host") String endpoint,
-            @HeaderParam("Accept") String accept,
-            Context context);
+        Mono<Response<KeyListResult>> listNext(@PathParam(value = "nextLink", encoded = true) String nextLink,
+            @HostParam("$host") String endpoint, @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
+        @Headers({ "Content-Type: application/json" })
         @Get("{nextLink}")
-        @ExpectedResponses({200})
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<KeyListResult>> listVersionsNext(
-            @PathParam(value = "nextLink", encoded = true) String nextLink,
-            @HostParam("$host") String endpoint,
-            @HeaderParam("Accept") String accept,
-            Context context);
+        Mono<Response<KeyListResult>> listVersionsNext(@PathParam(value = "nextLink", encoded = true) String nextLink,
+            @HostParam("$host") String endpoint, @HeaderParam("Accept") String accept, Context context);
     }
 
     /**
      * Creates the first version of a new key if it does not exist. If it already exists, then the existing key is
      * returned without any write operations being performed. This API does not create subsequent versions, and does not
      * update existing keys.
-     *
+     * 
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the key vault which contains the key to be created.
      * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
-     *     running the service. The value provided should not include personally identifiable or sensitive information.
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param parameters The parameters used to create the specified key.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -171,19 +145,15 @@ public final class KeysClientImpl implements KeysClient {
      * @return the key resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<KeyInner>> createIfNotExistWithResponseAsync(
-        String resourceGroupName, String vaultName, String keyName, KeyCreateParameters parameters) {
+    private Mono<Response<KeyInner>> createIfNotExistWithResponseAsync(String resourceGroupName, String vaultName,
+        String keyName, KeyCreateParameters parameters) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -202,19 +172,8 @@ public final class KeysClientImpl implements KeysClient {
         }
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .createIfNotExist(
-                            this.client.getEndpoint(),
-                            this.client.getSubscriptionId(),
-                            resourceGroupName,
-                            vaultName,
-                            keyName,
-                            this.client.getApiVersion(),
-                            parameters,
-                            accept,
-                            context))
+            .withContext(context -> service.createIfNotExist(this.client.getEndpoint(), this.client.getSubscriptionId(),
+                resourceGroupName, vaultName, keyName, this.client.getApiVersion(), parameters, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
@@ -222,11 +181,11 @@ public final class KeysClientImpl implements KeysClient {
      * Creates the first version of a new key if it does not exist. If it already exists, then the existing key is
      * returned without any write operations being performed. This API does not create subsequent versions, and does not
      * update existing keys.
-     *
+     * 
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the key vault which contains the key to be created.
      * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
-     *     running the service. The value provided should not include personally identifiable or sensitive information.
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param parameters The parameters used to create the specified key.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -235,19 +194,15 @@ public final class KeysClientImpl implements KeysClient {
      * @return the key resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<KeyInner>> createIfNotExistWithResponseAsync(
-        String resourceGroupName, String vaultName, String keyName, KeyCreateParameters parameters, Context context) {
+    private Mono<Response<KeyInner>> createIfNotExistWithResponseAsync(String resourceGroupName, String vaultName,
+        String keyName, KeyCreateParameters parameters, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -266,28 +221,19 @@ public final class KeysClientImpl implements KeysClient {
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .createIfNotExist(
-                this.client.getEndpoint(),
-                this.client.getSubscriptionId(),
-                resourceGroupName,
-                vaultName,
-                keyName,
-                this.client.getApiVersion(),
-                parameters,
-                accept,
-                context);
+        return service.createIfNotExist(this.client.getEndpoint(), this.client.getSubscriptionId(), resourceGroupName,
+            vaultName, keyName, this.client.getApiVersion(), parameters, accept, context);
     }
 
     /**
      * Creates the first version of a new key if it does not exist. If it already exists, then the existing key is
      * returned without any write operations being performed. This API does not create subsequent versions, and does not
      * update existing keys.
-     *
+     * 
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the key vault which contains the key to be created.
      * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
-     *     running the service. The value provided should not include personally identifiable or sensitive information.
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param parameters The parameters used to create the specified key.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -295,8 +241,8 @@ public final class KeysClientImpl implements KeysClient {
      * @return the key resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<KeyInner> createIfNotExistAsync(
-        String resourceGroupName, String vaultName, String keyName, KeyCreateParameters parameters) {
+    private Mono<KeyInner> createIfNotExistAsync(String resourceGroupName, String vaultName, String keyName,
+        KeyCreateParameters parameters) {
         return createIfNotExistWithResponseAsync(resourceGroupName, vaultName, keyName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
@@ -305,11 +251,11 @@ public final class KeysClientImpl implements KeysClient {
      * Creates the first version of a new key if it does not exist. If it already exists, then the existing key is
      * returned without any write operations being performed. This API does not create subsequent versions, and does not
      * update existing keys.
-     *
+     * 
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the key vault which contains the key to be created.
      * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
-     *     running the service. The value provided should not include personally identifiable or sensitive information.
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param parameters The parameters used to create the specified key.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -318,8 +264,8 @@ public final class KeysClientImpl implements KeysClient {
      * @return the key resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<KeyInner> createIfNotExistWithResponse(
-        String resourceGroupName, String vaultName, String keyName, KeyCreateParameters parameters, Context context) {
+    public Response<KeyInner> createIfNotExistWithResponse(String resourceGroupName, String vaultName, String keyName,
+        KeyCreateParameters parameters, Context context) {
         return createIfNotExistWithResponseAsync(resourceGroupName, vaultName, keyName, parameters, context).block();
     }
 
@@ -327,11 +273,11 @@ public final class KeysClientImpl implements KeysClient {
      * Creates the first version of a new key if it does not exist. If it already exists, then the existing key is
      * returned without any write operations being performed. This API does not create subsequent versions, and does not
      * update existing keys.
-     *
+     * 
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the key vault which contains the key to be created.
      * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
-     *     running the service. The value provided should not include personally identifiable or sensitive information.
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param parameters The parameters used to create the specified key.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -339,14 +285,14 @@ public final class KeysClientImpl implements KeysClient {
      * @return the key resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public KeyInner createIfNotExist(
-        String resourceGroupName, String vaultName, String keyName, KeyCreateParameters parameters) {
+    public KeyInner createIfNotExist(String resourceGroupName, String vaultName, String keyName,
+        KeyCreateParameters parameters) {
         return createIfNotExistWithResponse(resourceGroupName, vaultName, keyName, parameters, Context.NONE).getValue();
     }
 
     /**
      * Gets the current version of the specified key from the specified key vault.
-     *
+     * 
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the vault which contains the key to be retrieved.
      * @param keyName The name of the key to be retrieved.
@@ -354,21 +300,17 @@ public final class KeysClientImpl implements KeysClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the current version of the specified key from the specified key vault along with {@link Response} on
-     *     successful completion of {@link Mono}.
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<KeyInner>> getWithResponseAsync(String resourceGroupName, String vaultName, String keyName) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -382,24 +324,14 @@ public final class KeysClientImpl implements KeysClient {
         }
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .get(
-                            this.client.getEndpoint(),
-                            this.client.getSubscriptionId(),
-                            resourceGroupName,
-                            vaultName,
-                            keyName,
-                            this.client.getApiVersion(),
-                            accept,
-                            context))
+            .withContext(context -> service.get(this.client.getEndpoint(), this.client.getSubscriptionId(),
+                resourceGroupName, vaultName, keyName, this.client.getApiVersion(), accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Gets the current version of the specified key from the specified key vault.
-     *
+     * 
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the vault which contains the key to be retrieved.
      * @param keyName The name of the key to be retrieved.
@@ -408,22 +340,18 @@ public final class KeysClientImpl implements KeysClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the current version of the specified key from the specified key vault along with {@link Response} on
-     *     successful completion of {@link Mono}.
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<KeyInner>> getWithResponseAsync(
-        String resourceGroupName, String vaultName, String keyName, Context context) {
+    private Mono<Response<KeyInner>> getWithResponseAsync(String resourceGroupName, String vaultName, String keyName,
+        Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -437,29 +365,21 @@ public final class KeysClientImpl implements KeysClient {
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .get(
-                this.client.getEndpoint(),
-                this.client.getSubscriptionId(),
-                resourceGroupName,
-                vaultName,
-                keyName,
-                this.client.getApiVersion(),
-                accept,
-                context);
+        return service.get(this.client.getEndpoint(), this.client.getSubscriptionId(), resourceGroupName, vaultName,
+            keyName, this.client.getApiVersion(), accept, context);
     }
 
     /**
      * Gets the current version of the specified key from the specified key vault.
-     *
+     * 
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the vault which contains the key to be retrieved.
      * @param keyName The name of the key to be retrieved.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the current version of the specified key from the specified key vault on successful completion of {@link
-     *     Mono}.
+     * @return the current version of the specified key from the specified key vault on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<KeyInner> getAsync(String resourceGroupName, String vaultName, String keyName) {
@@ -469,7 +389,7 @@ public final class KeysClientImpl implements KeysClient {
 
     /**
      * Gets the current version of the specified key from the specified key vault.
-     *
+     * 
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the vault which contains the key to be retrieved.
      * @param keyName The name of the key to be retrieved.
@@ -480,14 +400,14 @@ public final class KeysClientImpl implements KeysClient {
      * @return the current version of the specified key from the specified key vault along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<KeyInner> getWithResponse(
-        String resourceGroupName, String vaultName, String keyName, Context context) {
+    public Response<KeyInner> getWithResponse(String resourceGroupName, String vaultName, String keyName,
+        Context context) {
         return getWithResponseAsync(resourceGroupName, vaultName, keyName, context).block();
     }
 
     /**
      * Gets the current version of the specified key from the specified key vault.
-     *
+     * 
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the vault which contains the key to be retrieved.
      * @param keyName The name of the key to be retrieved.
@@ -503,7 +423,7 @@ public final class KeysClientImpl implements KeysClient {
 
     /**
      * Lists the keys in the specified key vault.
-     *
+     * 
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the vault which contains the keys to be retrieved.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -514,16 +434,12 @@ public final class KeysClientImpl implements KeysClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<KeyInner>> listSinglePageAsync(String resourceGroupName, String vaultName) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -534,32 +450,16 @@ public final class KeysClientImpl implements KeysClient {
         }
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .list(
-                            this.client.getEndpoint(),
-                            this.client.getSubscriptionId(),
-                            resourceGroupName,
-                            vaultName,
-                            this.client.getApiVersion(),
-                            accept,
-                            context))
-            .<PagedResponse<KeyInner>>map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null))
+            .withContext(context -> service.list(this.client.getEndpoint(), this.client.getSubscriptionId(),
+                resourceGroupName, vaultName, this.client.getApiVersion(), accept, context))
+            .<PagedResponse<KeyInner>>map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(),
+                res.getHeaders(), res.getValue().value(), res.getValue().nextLink(), null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Lists the keys in the specified key vault.
-     *
+     * 
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the vault which contains the keys to be retrieved.
      * @param context The context to associate with this operation.
@@ -569,19 +469,15 @@ public final class KeysClientImpl implements KeysClient {
      * @return the page of keys along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<KeyInner>> listSinglePageAsync(
-        String resourceGroupName, String vaultName, Context context) {
+    private Mono<PagedResponse<KeyInner>> listSinglePageAsync(String resourceGroupName, String vaultName,
+        Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -593,28 +489,15 @@ public final class KeysClientImpl implements KeysClient {
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .list(
-                this.client.getEndpoint(),
-                this.client.getSubscriptionId(),
-                resourceGroupName,
-                vaultName,
-                this.client.getApiVersion(),
-                accept,
-                context)
-            .map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null));
+            .list(this.client.getEndpoint(), this.client.getSubscriptionId(), resourceGroupName, vaultName,
+                this.client.getApiVersion(), accept, context)
+            .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
+                res.getValue().value(), res.getValue().nextLink(), null));
     }
 
     /**
      * Lists the keys in the specified key vault.
-     *
+     * 
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the vault which contains the keys to be retrieved.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -624,13 +507,13 @@ public final class KeysClientImpl implements KeysClient {
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<KeyInner> listAsync(String resourceGroupName, String vaultName) {
-        return new PagedFlux<>(
-            () -> listSinglePageAsync(resourceGroupName, vaultName), nextLink -> listNextSinglePageAsync(nextLink));
+        return new PagedFlux<>(() -> listSinglePageAsync(resourceGroupName, vaultName),
+            nextLink -> listNextSinglePageAsync(nextLink));
     }
 
     /**
      * Lists the keys in the specified key vault.
-     *
+     * 
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the vault which contains the keys to be retrieved.
      * @param context The context to associate with this operation.
@@ -641,14 +524,13 @@ public final class KeysClientImpl implements KeysClient {
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<KeyInner> listAsync(String resourceGroupName, String vaultName, Context context) {
-        return new PagedFlux<>(
-            () -> listSinglePageAsync(resourceGroupName, vaultName, context),
+        return new PagedFlux<>(() -> listSinglePageAsync(resourceGroupName, vaultName, context),
             nextLink -> listNextSinglePageAsync(nextLink, context));
     }
 
     /**
      * Lists the keys in the specified key vault.
-     *
+     * 
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the vault which contains the keys to be retrieved.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -663,7 +545,7 @@ public final class KeysClientImpl implements KeysClient {
 
     /**
      * Lists the keys in the specified key vault.
-     *
+     * 
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the vault which contains the keys to be retrieved.
      * @param context The context to associate with this operation.
@@ -679,7 +561,7 @@ public final class KeysClientImpl implements KeysClient {
 
     /**
      * Gets the specified version of the specified key in the specified key vault.
-     *
+     * 
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the vault which contains the key version to be retrieved.
      * @param keyName The name of the key version to be retrieved.
@@ -688,22 +570,18 @@ public final class KeysClientImpl implements KeysClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified version of the specified key in the specified key vault along with {@link Response} on
-     *     successful completion of {@link Mono}.
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<KeyInner>> getVersionWithResponseAsync(
-        String resourceGroupName, String vaultName, String keyName, String keyVersion) {
+    private Mono<Response<KeyInner>> getVersionWithResponseAsync(String resourceGroupName, String vaultName,
+        String keyName, String keyVersion) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -720,25 +598,14 @@ public final class KeysClientImpl implements KeysClient {
         }
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .getVersion(
-                            this.client.getEndpoint(),
-                            this.client.getSubscriptionId(),
-                            resourceGroupName,
-                            vaultName,
-                            keyName,
-                            keyVersion,
-                            this.client.getApiVersion(),
-                            accept,
-                            context))
+            .withContext(context -> service.getVersion(this.client.getEndpoint(), this.client.getSubscriptionId(),
+                resourceGroupName, vaultName, keyName, keyVersion, this.client.getApiVersion(), accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Gets the specified version of the specified key in the specified key vault.
-     *
+     * 
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the vault which contains the key version to be retrieved.
      * @param keyName The name of the key version to be retrieved.
@@ -748,22 +615,18 @@ public final class KeysClientImpl implements KeysClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified version of the specified key in the specified key vault along with {@link Response} on
-     *     successful completion of {@link Mono}.
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<KeyInner>> getVersionWithResponseAsync(
-        String resourceGroupName, String vaultName, String keyName, String keyVersion, Context context) {
+    private Mono<Response<KeyInner>> getVersionWithResponseAsync(String resourceGroupName, String vaultName,
+        String keyName, String keyVersion, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -780,22 +643,13 @@ public final class KeysClientImpl implements KeysClient {
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .getVersion(
-                this.client.getEndpoint(),
-                this.client.getSubscriptionId(),
-                resourceGroupName,
-                vaultName,
-                keyName,
-                keyVersion,
-                this.client.getApiVersion(),
-                accept,
-                context);
+        return service.getVersion(this.client.getEndpoint(), this.client.getSubscriptionId(), resourceGroupName,
+            vaultName, keyName, keyVersion, this.client.getApiVersion(), accept, context);
     }
 
     /**
      * Gets the specified version of the specified key in the specified key vault.
-     *
+     * 
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the vault which contains the key version to be retrieved.
      * @param keyName The name of the key version to be retrieved.
@@ -803,19 +657,19 @@ public final class KeysClientImpl implements KeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified version of the specified key in the specified key vault on successful completion of {@link
-     *     Mono}.
+     * @return the specified version of the specified key in the specified key vault on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<KeyInner> getVersionAsync(
-        String resourceGroupName, String vaultName, String keyName, String keyVersion) {
+    private Mono<KeyInner> getVersionAsync(String resourceGroupName, String vaultName, String keyName,
+        String keyVersion) {
         return getVersionWithResponseAsync(resourceGroupName, vaultName, keyName, keyVersion)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
      * Gets the specified version of the specified key in the specified key vault.
-     *
+     * 
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the vault which contains the key version to be retrieved.
      * @param keyName The name of the key version to be retrieved.
@@ -827,14 +681,14 @@ public final class KeysClientImpl implements KeysClient {
      * @return the specified version of the specified key in the specified key vault along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<KeyInner> getVersionWithResponse(
-        String resourceGroupName, String vaultName, String keyName, String keyVersion, Context context) {
+    public Response<KeyInner> getVersionWithResponse(String resourceGroupName, String vaultName, String keyName,
+        String keyVersion, Context context) {
         return getVersionWithResponseAsync(resourceGroupName, vaultName, keyName, keyVersion, context).block();
     }
 
     /**
      * Gets the specified version of the specified key in the specified key vault.
-     *
+     * 
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the vault which contains the key version to be retrieved.
      * @param keyName The name of the key version to be retrieved.
@@ -851,7 +705,7 @@ public final class KeysClientImpl implements KeysClient {
 
     /**
      * Lists the versions of the specified key in the specified key vault.
-     *
+     * 
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the vault which contains the key versions to be retrieved.
      * @param keyName The name of the key versions to be retrieved.
@@ -861,19 +715,15 @@ public final class KeysClientImpl implements KeysClient {
      * @return the page of keys along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<KeyInner>> listVersionsSinglePageAsync(
-        String resourceGroupName, String vaultName, String keyName) {
+    private Mono<PagedResponse<KeyInner>> listVersionsSinglePageAsync(String resourceGroupName, String vaultName,
+        String keyName) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -887,33 +737,16 @@ public final class KeysClientImpl implements KeysClient {
         }
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .listVersions(
-                            this.client.getEndpoint(),
-                            this.client.getSubscriptionId(),
-                            resourceGroupName,
-                            vaultName,
-                            keyName,
-                            this.client.getApiVersion(),
-                            accept,
-                            context))
-            .<PagedResponse<KeyInner>>map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null))
+            .withContext(context -> service.listVersions(this.client.getEndpoint(), this.client.getSubscriptionId(),
+                resourceGroupName, vaultName, keyName, this.client.getApiVersion(), accept, context))
+            .<PagedResponse<KeyInner>>map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(),
+                res.getHeaders(), res.getValue().value(), res.getValue().nextLink(), null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Lists the versions of the specified key in the specified key vault.
-     *
+     * 
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the vault which contains the key versions to be retrieved.
      * @param keyName The name of the key versions to be retrieved.
@@ -924,19 +757,15 @@ public final class KeysClientImpl implements KeysClient {
      * @return the page of keys along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<KeyInner>> listVersionsSinglePageAsync(
-        String resourceGroupName, String vaultName, String keyName, Context context) {
+    private Mono<PagedResponse<KeyInner>> listVersionsSinglePageAsync(String resourceGroupName, String vaultName,
+        String keyName, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -951,29 +780,15 @@ public final class KeysClientImpl implements KeysClient {
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .listVersions(
-                this.client.getEndpoint(),
-                this.client.getSubscriptionId(),
-                resourceGroupName,
-                vaultName,
-                keyName,
-                this.client.getApiVersion(),
-                accept,
-                context)
-            .map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null));
+            .listVersions(this.client.getEndpoint(), this.client.getSubscriptionId(), resourceGroupName, vaultName,
+                keyName, this.client.getApiVersion(), accept, context)
+            .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
+                res.getValue().value(), res.getValue().nextLink(), null));
     }
 
     /**
      * Lists the versions of the specified key in the specified key vault.
-     *
+     * 
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the vault which contains the key versions to be retrieved.
      * @param keyName The name of the key versions to be retrieved.
@@ -984,14 +799,13 @@ public final class KeysClientImpl implements KeysClient {
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<KeyInner> listVersionsAsync(String resourceGroupName, String vaultName, String keyName) {
-        return new PagedFlux<>(
-            () -> listVersionsSinglePageAsync(resourceGroupName, vaultName, keyName),
+        return new PagedFlux<>(() -> listVersionsSinglePageAsync(resourceGroupName, vaultName, keyName),
             nextLink -> listVersionsNextSinglePageAsync(nextLink));
     }
 
     /**
      * Lists the versions of the specified key in the specified key vault.
-     *
+     * 
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the vault which contains the key versions to be retrieved.
      * @param keyName The name of the key versions to be retrieved.
@@ -1002,16 +816,15 @@ public final class KeysClientImpl implements KeysClient {
      * @return the page of keys as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<KeyInner> listVersionsAsync(
-        String resourceGroupName, String vaultName, String keyName, Context context) {
-        return new PagedFlux<>(
-            () -> listVersionsSinglePageAsync(resourceGroupName, vaultName, keyName, context),
+    private PagedFlux<KeyInner> listVersionsAsync(String resourceGroupName, String vaultName, String keyName,
+        Context context) {
+        return new PagedFlux<>(() -> listVersionsSinglePageAsync(resourceGroupName, vaultName, keyName, context),
             nextLink -> listVersionsNextSinglePageAsync(nextLink, context));
     }
 
     /**
      * Lists the versions of the specified key in the specified key vault.
-     *
+     * 
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the vault which contains the key versions to be retrieved.
      * @param keyName The name of the key versions to be retrieved.
@@ -1027,7 +840,7 @@ public final class KeysClientImpl implements KeysClient {
 
     /**
      * Lists the versions of the specified key in the specified key vault.
-     *
+     * 
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the vault which contains the key versions to be retrieved.
      * @param keyName The name of the key versions to be retrieved.
@@ -1038,16 +851,17 @@ public final class KeysClientImpl implements KeysClient {
      * @return the page of keys as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    public PagedIterable<KeyInner> listVersions(
-        String resourceGroupName, String vaultName, String keyName, Context context) {
+    public PagedIterable<KeyInner> listVersions(String resourceGroupName, String vaultName, String keyName,
+        Context context) {
         return new PagedIterable<>(listVersionsAsync(resourceGroupName, vaultName, keyName, context));
     }
 
     /**
      * Get the next page of items.
-     *
+     * 
      * @param nextLink The URL to get the next list of items
-     *     <p>The nextLink parameter.
+     * 
+     * The nextLink parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1059,31 +873,22 @@ public final class KeysClientImpl implements KeysClient {
             return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
         }
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         final String accept = "application/json";
-        return FluxUtil
-            .withContext(context -> service.listNext(nextLink, this.client.getEndpoint(), accept, context))
-            .<PagedResponse<KeyInner>>map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null))
+        return FluxUtil.withContext(context -> service.listNext(nextLink, this.client.getEndpoint(), accept, context))
+            .<PagedResponse<KeyInner>>map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(),
+                res.getHeaders(), res.getValue().value(), res.getValue().nextLink(), null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Get the next page of items.
-     *
+     * 
      * @param nextLink The URL to get the next list of items
-     *     <p>The nextLink parameter.
+     * 
+     * The nextLink parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1096,31 +901,22 @@ public final class KeysClientImpl implements KeysClient {
             return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
         }
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .listNext(nextLink, this.client.getEndpoint(), accept, context)
-            .map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null));
+        return service.listNext(nextLink, this.client.getEndpoint(), accept, context)
+            .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
+                res.getValue().value(), res.getValue().nextLink(), null));
     }
 
     /**
      * Get the next page of items.
-     *
+     * 
      * @param nextLink The URL to get the next list of items
-     *     <p>The nextLink parameter.
+     * 
+     * The nextLink parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1132,31 +928,23 @@ public final class KeysClientImpl implements KeysClient {
             return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
         }
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.listVersionsNext(nextLink, this.client.getEndpoint(), accept, context))
-            .<PagedResponse<KeyInner>>map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null))
+            .<PagedResponse<KeyInner>>map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(),
+                res.getHeaders(), res.getValue().value(), res.getValue().nextLink(), null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Get the next page of items.
-     *
+     * 
      * @param nextLink The URL to get the next list of items
-     *     <p>The nextLink parameter.
+     * 
+     * The nextLink parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1169,23 +957,13 @@ public final class KeysClientImpl implements KeysClient {
             return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
         }
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .listVersionsNext(nextLink, this.client.getEndpoint(), accept, context)
-            .map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null));
+        return service.listVersionsNext(nextLink, this.client.getEndpoint(), accept, context)
+            .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
+                res.getValue().value(), res.getValue().nextLink(), null));
     }
 }

@@ -61,37 +61,21 @@ public final class SharedPrivateLinkResourceImpl
     }
 
     public SharedPrivateLinkResource create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSharedPrivateLinkResources()
-                .createOrUpdate(
-                    resourceGroupName,
-                    searchServiceName,
-                    sharedPrivateLinkResourceName,
-                    this.innerModel(),
-                    createClientRequestId,
-                    Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getSharedPrivateLinkResources().createOrUpdate(
+            resourceGroupName, searchServiceName, sharedPrivateLinkResourceName, this.innerModel(),
+            createClientRequestId, Context.NONE);
         return this;
     }
 
     public SharedPrivateLinkResource create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSharedPrivateLinkResources()
-                .createOrUpdate(
-                    resourceGroupName,
-                    searchServiceName,
-                    sharedPrivateLinkResourceName,
-                    this.innerModel(),
-                    createClientRequestId,
-                    context);
+        this.innerObject
+            = serviceManager.serviceClient().getSharedPrivateLinkResources().createOrUpdate(resourceGroupName,
+                searchServiceName, sharedPrivateLinkResourceName, this.innerModel(), createClientRequestId, context);
         return this;
     }
 
-    SharedPrivateLinkResourceImpl(
-        String name, com.azure.resourcemanager.search.generated.SearchManager serviceManager) {
+    SharedPrivateLinkResourceImpl(String name,
+        com.azure.resourcemanager.search.generated.SearchManager serviceManager) {
         this.innerObject = new SharedPrivateLinkResourceInner();
         this.serviceManager = serviceManager;
         this.sharedPrivateLinkResourceName = name;
@@ -104,37 +88,20 @@ public final class SharedPrivateLinkResourceImpl
     }
 
     public SharedPrivateLinkResource apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSharedPrivateLinkResources()
-                .createOrUpdate(
-                    resourceGroupName,
-                    searchServiceName,
-                    sharedPrivateLinkResourceName,
-                    this.innerModel(),
-                    updateClientRequestId,
-                    Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getSharedPrivateLinkResources().createOrUpdate(
+            resourceGroupName, searchServiceName, sharedPrivateLinkResourceName, this.innerModel(),
+            updateClientRequestId, Context.NONE);
         return this;
     }
 
     public SharedPrivateLinkResource apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSharedPrivateLinkResources()
-                .createOrUpdate(
-                    resourceGroupName,
-                    searchServiceName,
-                    sharedPrivateLinkResourceName,
-                    this.innerModel(),
-                    updateClientRequestId,
-                    context);
+        this.innerObject
+            = serviceManager.serviceClient().getSharedPrivateLinkResources().createOrUpdate(resourceGroupName,
+                searchServiceName, sharedPrivateLinkResourceName, this.innerModel(), updateClientRequestId, context);
         return this;
     }
 
-    SharedPrivateLinkResourceImpl(
-        SharedPrivateLinkResourceInner innerObject,
+    SharedPrivateLinkResourceImpl(SharedPrivateLinkResourceInner innerObject,
         com.azure.resourcemanager.search.generated.SearchManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -145,29 +112,17 @@ public final class SharedPrivateLinkResourceImpl
 
     public SharedPrivateLinkResource refresh() {
         UUID localClientRequestId = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSharedPrivateLinkResources()
-                .getWithResponse(
-                    resourceGroupName,
-                    searchServiceName,
-                    sharedPrivateLinkResourceName,
-                    localClientRequestId,
-                    Context.NONE)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getSharedPrivateLinkResources().getWithResponse(resourceGroupName,
+                searchServiceName, sharedPrivateLinkResourceName, localClientRequestId, Context.NONE).getValue();
         return this;
     }
 
     public SharedPrivateLinkResource refresh(Context context) {
         UUID localClientRequestId = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSharedPrivateLinkResources()
-                .getWithResponse(
-                    resourceGroupName, searchServiceName, sharedPrivateLinkResourceName, localClientRequestId, context)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getSharedPrivateLinkResources().getWithResponse(resourceGroupName,
+                searchServiceName, sharedPrivateLinkResourceName, localClientRequestId, context).getValue();
         return this;
     }
 

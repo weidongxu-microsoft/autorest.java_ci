@@ -25,8 +25,7 @@ public final class AppServiceEnvironmentPatchResourceImpl implements AppServiceE
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    AppServiceEnvironmentPatchResourceImpl(
-        AppServiceEnvironmentPatchResourceInner innerObject,
+    AppServiceEnvironmentPatchResourceImpl(AppServiceEnvironmentPatchResourceInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

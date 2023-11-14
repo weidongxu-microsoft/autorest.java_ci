@@ -15,8 +15,8 @@ public final class WebJobImpl implements WebJob {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    WebJobImpl(
-        WebJobInner innerObject, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
+    WebJobImpl(WebJobInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

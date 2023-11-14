@@ -12,8 +12,8 @@ public final class DeletedAccountImpl implements DeletedAccount {
 
     private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
-    DeletedAccountImpl(
-        DeletedAccountInner innerObject, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
+    DeletedAccountImpl(DeletedAccountInner innerObject,
+        com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

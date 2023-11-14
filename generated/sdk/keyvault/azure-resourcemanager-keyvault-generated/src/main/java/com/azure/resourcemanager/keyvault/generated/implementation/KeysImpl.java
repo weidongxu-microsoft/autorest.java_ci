@@ -21,8 +21,8 @@ public final class KeysImpl implements Keys {
 
     private final com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager;
 
-    public KeysImpl(
-        KeysClient innerClient, com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager) {
+    public KeysImpl(KeysClient innerClient,
+        com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -30,10 +30,7 @@ public final class KeysImpl implements Keys {
     public Response<Key> getWithResponse(String resourceGroupName, String vaultName, String keyName, Context context) {
         Response<KeyInner> inner = this.serviceClient().getWithResponse(resourceGroupName, vaultName, keyName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new KeyImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -59,15 +56,12 @@ public final class KeysImpl implements Keys {
         return Utils.mapPage(inner, inner1 -> new KeyImpl(inner1, this.manager()));
     }
 
-    public Response<Key> getVersionWithResponse(
-        String resourceGroupName, String vaultName, String keyName, String keyVersion, Context context) {
-        Response<KeyInner> inner =
-            this.serviceClient().getVersionWithResponse(resourceGroupName, vaultName, keyName, keyVersion, context);
+    public Response<Key> getVersionWithResponse(String resourceGroupName, String vaultName, String keyName,
+        String keyVersion, Context context) {
+        Response<KeyInner> inner
+            = this.serviceClient().getVersionWithResponse(resourceGroupName, vaultName, keyName, keyVersion, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new KeyImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -88,35 +82,28 @@ public final class KeysImpl implements Keys {
         return Utils.mapPage(inner, inner1 -> new KeyImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<Key> listVersions(
-        String resourceGroupName, String vaultName, String keyName, Context context) {
-        PagedIterable<KeyInner> inner =
-            this.serviceClient().listVersions(resourceGroupName, vaultName, keyName, context);
+    public PagedIterable<Key> listVersions(String resourceGroupName, String vaultName, String keyName,
+        Context context) {
+        PagedIterable<KeyInner> inner
+            = this.serviceClient().listVersions(resourceGroupName, vaultName, keyName, context);
         return Utils.mapPage(inner, inner1 -> new KeyImpl(inner1, this.manager()));
     }
 
     public Key getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String vaultName = Utils.getValueFromIdByName(id, "vaults");
         if (vaultName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'vaults'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'vaults'.", id)));
         }
         String keyName = Utils.getValueFromIdByName(id, "keys");
         if (keyName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'keys'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'keys'.", id)));
         }
         return this.getWithResponse(resourceGroupName, vaultName, keyName, Context.NONE).getValue();
     }
@@ -124,25 +111,18 @@ public final class KeysImpl implements Keys {
     public Response<Key> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String vaultName = Utils.getValueFromIdByName(id, "vaults");
         if (vaultName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'vaults'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'vaults'.", id)));
         }
         String keyName = Utils.getValueFromIdByName(id, "keys");
         if (keyName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'keys'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'keys'.", id)));
         }
         return this.getWithResponse(resourceGroupName, vaultName, keyName, context);
     }

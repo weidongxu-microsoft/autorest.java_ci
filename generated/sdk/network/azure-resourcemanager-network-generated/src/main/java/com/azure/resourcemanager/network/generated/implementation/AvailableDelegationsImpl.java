@@ -19,8 +19,7 @@ public final class AvailableDelegationsImpl implements AvailableDelegations {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public AvailableDelegationsImpl(
-        AvailableDelegationsClient innerClient,
+    public AvailableDelegationsImpl(AvailableDelegationsClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;

@@ -6,46 +6,48 @@ package com.azure.resourcemanager.monitor.generated.models;
 
 import com.azure.resourcemanager.monitor.generated.fluent.models.MetricNamespaceInner;
 
-/** An immutable client-side representation of MetricNamespace. */
+/**
+ * An immutable client-side representation of MetricNamespace.
+ */
 public interface MetricNamespace {
     /**
      * Gets the id property: The ID of the metric namespace.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the type property: The type of the namespace.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the name property: The escaped name of the namespace.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the classification property: Kind of namespace.
-     *
+     * 
      * @return the classification value.
      */
     NamespaceClassification classification();
 
     /**
      * Gets the properties property: Properties which include the fully qualified namespace name.
-     *
+     * 
      * @return the properties value.
      */
     MetricNamespaceName properties();
 
     /**
      * Gets the inner com.azure.resourcemanager.monitor.generated.fluent.models.MetricNamespaceInner object.
-     *
+     * 
      * @return the inner object.
      */
     MetricNamespaceInner innerModel();

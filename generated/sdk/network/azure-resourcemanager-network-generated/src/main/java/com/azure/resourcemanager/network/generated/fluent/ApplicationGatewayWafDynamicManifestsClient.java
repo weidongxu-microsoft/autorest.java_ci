@@ -17,7 +17,7 @@ import com.azure.resourcemanager.network.generated.fluent.models.ApplicationGate
 public interface ApplicationGatewayWafDynamicManifestsClient {
     /**
      * Gets the regional application gateway waf manifest.
-     *
+     * 
      * @param location The region where the nrp are located at.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -29,7 +29,7 @@ public interface ApplicationGatewayWafDynamicManifestsClient {
 
     /**
      * Gets the regional application gateway waf manifest.
-     *
+     * 
      * @param location The region where the nrp are located at.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

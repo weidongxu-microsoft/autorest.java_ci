@@ -15,8 +15,7 @@ public final class PeerExpressRouteCircuitConnectionImpl implements PeerExpressR
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    PeerExpressRouteCircuitConnectionImpl(
-        PeerExpressRouteCircuitConnectionInner innerObject,
+    PeerExpressRouteCircuitConnectionImpl(PeerExpressRouteCircuitConnectionInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

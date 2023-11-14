@@ -10,7 +10,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 import java.util.Map;
 
-/** Host Capacity Data. */
+/**
+ * Host Capacity Data.
+ */
 @Fluent
 public final class HostCapacity {
     /*
@@ -50,13 +52,15 @@ public final class HostCapacity {
     @JsonProperty(value = "numaNodesData")
     private List<NumaNodeData> numaNodesData;
 
-    /** Creates an instance of HostCapacity class. */
+    /**
+     * Creates an instance of HostCapacity class.
+     */
     public HostCapacity() {
     }
 
     /**
      * Get the hostname property: The name of the host.
-     *
+     * 
      * @return the hostname value.
      */
     public String hostname() {
@@ -65,7 +69,7 @@ public final class HostCapacity {
 
     /**
      * Set the hostname property: The name of the host.
-     *
+     * 
      * @param hostname the hostname value to set.
      * @return the HostCapacity object itself.
      */
@@ -77,7 +81,7 @@ public final class HostCapacity {
     /**
      * Get the effectiveAvailableMemoryMbOnHost property: The available memory on the host accounting for VM placement
      * size and any host VM reservations.
-     *
+     * 
      * @return the effectiveAvailableMemoryMbOnHost value.
      */
     public Long effectiveAvailableMemoryMbOnHost() {
@@ -87,7 +91,7 @@ public final class HostCapacity {
     /**
      * Set the effectiveAvailableMemoryMbOnHost property: The available memory on the host accounting for VM placement
      * size and any host VM reservations.
-     *
+     * 
      * @param effectiveAvailableMemoryMbOnHost the effectiveAvailableMemoryMbOnHost value to set.
      * @return the HostCapacity object itself.
      */
@@ -99,7 +103,7 @@ public final class HostCapacity {
     /**
      * Get the availableGpuCount property: The available amount of GPUs on the host to use after accounting for GPUS
      * used by reservations on the host.
-     *
+     * 
      * @return the availableGpuCount value.
      */
     public Integer availableGpuCount() {
@@ -109,7 +113,7 @@ public final class HostCapacity {
     /**
      * Set the availableGpuCount property: The available amount of GPUs on the host to use after accounting for GPUS
      * used by reservations on the host.
-     *
+     * 
      * @param availableGpuCount the availableGpuCount value to set.
      * @return the HostCapacity object itself.
      */
@@ -120,7 +124,7 @@ public final class HostCapacity {
 
     /**
      * Get the vmUsedMemory property: The VM used memory per VmId.
-     *
+     * 
      * @return the vmUsedMemory value.
      */
     public Map<String, VmMemory> vmUsedMemory() {
@@ -129,7 +133,7 @@ public final class HostCapacity {
 
     /**
      * Set the vmUsedMemory property: The VM used memory per VmId.
-     *
+     * 
      * @param vmUsedMemory the vmUsedMemory value to set.
      * @return the HostCapacity object itself.
      */
@@ -140,7 +144,7 @@ public final class HostCapacity {
 
     /**
      * Get the gpuType property: The GPU type of the VM.
-     *
+     * 
      * @return the gpuType value.
      */
     public String gpuType() {
@@ -149,7 +153,7 @@ public final class HostCapacity {
 
     /**
      * Set the gpuType property: The GPU type of the VM.
-     *
+     * 
      * @param gpuType the gpuType value to set.
      * @return the HostCapacity object itself.
      */
@@ -160,7 +164,7 @@ public final class HostCapacity {
 
     /**
      * Get the numaNodesData property: The numa nodes information for Hpn VMs.
-     *
+     * 
      * @return the numaNodesData value.
      */
     public List<NumaNodeData> numaNodesData() {
@@ -169,7 +173,7 @@ public final class HostCapacity {
 
     /**
      * Set the numaNodesData property: The numa nodes information for Hpn VMs.
-     *
+     * 
      * @param numaNodesData the numaNodesData value to set.
      * @return the HostCapacity object itself.
      */
@@ -180,19 +184,16 @@ public final class HostCapacity {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (vmUsedMemory() != null) {
-            vmUsedMemory()
-                .values()
-                .forEach(
-                    e -> {
-                        if (e != null) {
-                            e.validate();
-                        }
-                    });
+            vmUsedMemory().values().forEach(e -> {
+                if (e != null) {
+                    e.validate();
+                }
+            });
         }
         if (numaNodesData() != null) {
             numaNodesData().forEach(e -> e.validate());

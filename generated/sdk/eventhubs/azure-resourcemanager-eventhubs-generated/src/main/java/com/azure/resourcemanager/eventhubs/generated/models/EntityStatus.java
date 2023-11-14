@@ -7,36 +7,58 @@ package com.azure.resourcemanager.eventhubs.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Enumerates the possible values for the status of the Event Hub. */
+/**
+ * Enumerates the possible values for the status of the Event Hub.
+ */
 public enum EntityStatus {
-    /** Enum value Active. */
+    /**
+     * Enum value Active.
+     */
     ACTIVE("Active"),
 
-    /** Enum value Disabled. */
+    /**
+     * Enum value Disabled.
+     */
     DISABLED("Disabled"),
 
-    /** Enum value Restoring. */
+    /**
+     * Enum value Restoring.
+     */
     RESTORING("Restoring"),
 
-    /** Enum value SendDisabled. */
+    /**
+     * Enum value SendDisabled.
+     */
     SEND_DISABLED("SendDisabled"),
 
-    /** Enum value ReceiveDisabled. */
+    /**
+     * Enum value ReceiveDisabled.
+     */
     RECEIVE_DISABLED("ReceiveDisabled"),
 
-    /** Enum value Creating. */
+    /**
+     * Enum value Creating.
+     */
     CREATING("Creating"),
 
-    /** Enum value Deleting. */
+    /**
+     * Enum value Deleting.
+     */
     DELETING("Deleting"),
 
-    /** Enum value Renaming. */
+    /**
+     * Enum value Renaming.
+     */
     RENAMING("Renaming"),
 
-    /** Enum value Unknown. */
+    /**
+     * Enum value Unknown.
+     */
     UNKNOWN("Unknown");
 
-    /** The actual serialized value for a EntityStatus instance. */
+    /**
+     * The actual serialized value for a EntityStatus instance.
+     */
     private final String value;
 
     EntityStatus(String value) {
@@ -45,7 +67,7 @@ public enum EntityStatus {
 
     /**
      * Parses a serialized value to a EntityStatus instance.
-     *
+     * 
      * @param value the serialized value to parse.
      * @return the parsed EntityStatus object, or null if unable to parse.
      */
@@ -63,7 +85,9 @@ public enum EntityStatus {
         return null;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @JsonValue
     @Override
     public String toString() {

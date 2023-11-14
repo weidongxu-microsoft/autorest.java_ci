@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Class to specify properties of content key. */
+/**
+ * Class to specify properties of content key.
+ */
 @Fluent
 public final class StreamingPolicyContentKey {
     /*
@@ -29,13 +31,15 @@ public final class StreamingPolicyContentKey {
     @JsonProperty(value = "tracks")
     private List<TrackSelection> tracks;
 
-    /** Creates an instance of StreamingPolicyContentKey class. */
+    /**
+     * Creates an instance of StreamingPolicyContentKey class.
+     */
     public StreamingPolicyContentKey() {
     }
 
     /**
      * Get the label property: Label can be used to specify Content Key when creating a Streaming Locator.
-     *
+     * 
      * @return the label value.
      */
     public String label() {
@@ -44,7 +48,7 @@ public final class StreamingPolicyContentKey {
 
     /**
      * Set the label property: Label can be used to specify Content Key when creating a Streaming Locator.
-     *
+     * 
      * @param label the label value to set.
      * @return the StreamingPolicyContentKey object itself.
      */
@@ -55,7 +59,7 @@ public final class StreamingPolicyContentKey {
 
     /**
      * Get the policyName property: Policy used by Content Key.
-     *
+     * 
      * @return the policyName value.
      */
     public String policyName() {
@@ -64,7 +68,7 @@ public final class StreamingPolicyContentKey {
 
     /**
      * Set the policyName property: Policy used by Content Key.
-     *
+     * 
      * @param policyName the policyName value to set.
      * @return the StreamingPolicyContentKey object itself.
      */
@@ -75,7 +79,7 @@ public final class StreamingPolicyContentKey {
 
     /**
      * Get the tracks property: Tracks which use this content key.
-     *
+     * 
      * @return the tracks value.
      */
     public List<TrackSelection> tracks() {
@@ -84,7 +88,7 @@ public final class StreamingPolicyContentKey {
 
     /**
      * Set the tracks property: Tracks which use this content key.
-     *
+     * 
      * @param tracks the tracks value to set.
      * @return the StreamingPolicyContentKey object itself.
      */
@@ -95,7 +99,7 @@ public final class StreamingPolicyContentKey {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

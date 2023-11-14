@@ -41,23 +41,28 @@ import java.nio.ByteBuffer;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-/** An instance of this class provides access to all the operations defined in RestorePointCollectionsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in RestorePointCollectionsClient.
+ */
 public final class RestorePointCollectionsClientImpl implements RestorePointCollectionsClient {
-    /** The proxy service used to perform REST calls. */
+    /**
+     * The proxy service used to perform REST calls.
+     */
     private final RestorePointCollectionsService service;
 
-    /** The service client containing this operation class. */
+    /**
+     * The service client containing this operation class.
+     */
     private final ComputeManagementClientImpl client;
 
     /**
      * Initializes an instance of RestorePointCollectionsClientImpl.
-     *
+     * 
      * @param client the instance of the service client containing this operation class.
      */
     RestorePointCollectionsClientImpl(ComputeManagementClientImpl client) {
-        this.service =
-            RestProxy
-                .create(RestorePointCollectionsService.class, client.getHttpPipeline(), client.getSerializerAdapter());
+        this.service = RestProxy.create(RestorePointCollectionsService.class, client.getHttpPipeline(),
+            client.getSerializerAdapter());
         this.client = client;
     }
 
@@ -68,114 +73,89 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
     @Host("{$host}")
     @ServiceInterface(name = "ComputeManagementCli")
     public interface RestorePointCollectionsService {
-        @Headers({"Content-Type: application/json"})
-        @Put(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/restorePointCollections/{restorePointCollectionName}")
-        @ExpectedResponses({200, 201})
+        @Headers({ "Content-Type: application/json" })
+        @Put("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/restorePointCollections/{restorePointCollectionName}")
+        @ExpectedResponses({ 200, 201 })
         @UnexpectedResponseExceptionType(ApiErrorException.class)
-        Mono<Response<RestorePointCollectionInner>> createOrUpdate(
-            @HostParam("$host") String endpoint,
+        Mono<Response<RestorePointCollectionInner>> createOrUpdate(@HostParam("$host") String endpoint,
             @PathParam("subscriptionId") String subscriptionId,
             @PathParam("resourceGroupName") String resourceGroupName,
             @PathParam("restorePointCollectionName") String restorePointCollectionName,
             @QueryParam("api-version") String apiVersion,
-            @BodyParam("application/json") RestorePointCollectionInner parameters,
-            @HeaderParam("Accept") String accept,
+            @BodyParam("application/json") RestorePointCollectionInner parameters, @HeaderParam("Accept") String accept,
             Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Patch(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/restorePointCollections/{restorePointCollectionName}")
-        @ExpectedResponses({200})
+        @Headers({ "Content-Type: application/json" })
+        @Patch("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/restorePointCollections/{restorePointCollectionName}")
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ApiErrorException.class)
-        Mono<Response<RestorePointCollectionInner>> update(
-            @HostParam("$host") String endpoint,
+        Mono<Response<RestorePointCollectionInner>> update(@HostParam("$host") String endpoint,
             @PathParam("subscriptionId") String subscriptionId,
             @PathParam("resourceGroupName") String resourceGroupName,
             @PathParam("restorePointCollectionName") String restorePointCollectionName,
             @QueryParam("api-version") String apiVersion,
             @BodyParam("application/json") RestorePointCollectionUpdate parameters,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Delete(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/restorePointCollections/{restorePointCollectionName}")
-        @ExpectedResponses({200, 202, 204})
+        @Headers({ "Content-Type: application/json" })
+        @Delete("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/restorePointCollections/{restorePointCollectionName}")
+        @ExpectedResponses({ 200, 202, 204 })
         @UnexpectedResponseExceptionType(ApiErrorException.class)
-        Mono<Response<Flux<ByteBuffer>>> delete(
-            @HostParam("$host") String endpoint,
+        Mono<Response<Flux<ByteBuffer>>> delete(@HostParam("$host") String endpoint,
             @PathParam("subscriptionId") String subscriptionId,
             @PathParam("resourceGroupName") String resourceGroupName,
             @PathParam("restorePointCollectionName") String restorePointCollectionName,
-            @QueryParam("api-version") String apiVersion,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @QueryParam("api-version") String apiVersion, @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/restorePointCollections/{restorePointCollectionName}")
-        @ExpectedResponses({200})
+        @Headers({ "Content-Type: application/json" })
+        @Get("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/restorePointCollections/{restorePointCollectionName}")
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ApiErrorException.class)
-        Mono<Response<RestorePointCollectionInner>> getByResourceGroup(
-            @HostParam("$host") String endpoint,
+        Mono<Response<RestorePointCollectionInner>> getByResourceGroup(@HostParam("$host") String endpoint,
             @PathParam("subscriptionId") String subscriptionId,
             @PathParam("resourceGroupName") String resourceGroupName,
             @PathParam("restorePointCollectionName") String restorePointCollectionName,
             @QueryParam("$expand") RestorePointCollectionExpandOptions expand,
-            @QueryParam("api-version") String apiVersion,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @QueryParam("api-version") String apiVersion, @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/restorePointCollections")
-        @ExpectedResponses({200})
+        @Headers({ "Content-Type: application/json" })
+        @Get("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/restorePointCollections")
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ApiErrorException.class)
-        Mono<Response<RestorePointCollectionListResult>> listByResourceGroup(
-            @HostParam("$host") String endpoint,
+        Mono<Response<RestorePointCollectionListResult>> listByResourceGroup(@HostParam("$host") String endpoint,
             @PathParam("subscriptionId") String subscriptionId,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @QueryParam("api-version") String apiVersion,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @PathParam("resourceGroupName") String resourceGroupName, @QueryParam("api-version") String apiVersion,
+            @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
+        @Headers({ "Content-Type: application/json" })
         @Get("/subscriptions/{subscriptionId}/providers/Microsoft.Compute/restorePointCollections")
-        @ExpectedResponses({200})
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ApiErrorException.class)
-        Mono<Response<RestorePointCollectionListResult>> list(
-            @HostParam("$host") String endpoint,
-            @QueryParam("api-version") String apiVersion,
-            @PathParam("subscriptionId") String subscriptionId,
-            @HeaderParam("Accept") String accept,
-            Context context);
+        Mono<Response<RestorePointCollectionListResult>> list(@HostParam("$host") String endpoint,
+            @QueryParam("api-version") String apiVersion, @PathParam("subscriptionId") String subscriptionId,
+            @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
+        @Headers({ "Content-Type: application/json" })
         @Get("{nextLink}")
-        @ExpectedResponses({200})
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ApiErrorException.class)
         Mono<Response<RestorePointCollectionListResult>> listNext(
-            @PathParam(value = "nextLink", encoded = true) String nextLink,
-            @HostParam("$host") String endpoint,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @PathParam(value = "nextLink", encoded = true) String nextLink, @HostParam("$host") String endpoint,
+            @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
+        @Headers({ "Content-Type: application/json" })
         @Get("{nextLink}")
-        @ExpectedResponses({200})
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ApiErrorException.class)
         Mono<Response<RestorePointCollectionListResult>> listAllNext(
-            @PathParam(value = "nextLink", encoded = true) String nextLink,
-            @HostParam("$host") String endpoint,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @PathParam(value = "nextLink", encoded = true) String nextLink, @HostParam("$host") String endpoint,
+            @HeaderParam("Accept") String accept, Context context);
     }
 
     /**
      * The operation to create or update the restore point collection. Please refer to https://aka.ms/RestorePoints for
      * more details. When updating a restore point collection, only tags may be modified.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the restore point collection.
      * @param parameters Parameters supplied to the Create or Update restore point collection operation.
@@ -183,32 +163,26 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return create or update Restore Point collection parameters along with {@link Response} on successful completion
-     *     of {@link Mono}.
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<RestorePointCollectionInner>> createOrUpdateWithResponseAsync(
-        String resourceGroupName, String restorePointCollectionName, RestorePointCollectionInner parameters) {
+    private Mono<Response<RestorePointCollectionInner>> createOrUpdateWithResponseAsync(String resourceGroupName,
+        String restorePointCollectionName, RestorePointCollectionInner parameters) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
         if (restorePointCollectionName == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter restorePointCollectionName is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter restorePointCollectionName is required and cannot be null."));
         }
         if (parameters == null) {
             return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
@@ -218,25 +192,15 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
         final String apiVersion = "2023-07-01";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .createOrUpdate(
-                            this.client.getEndpoint(),
-                            this.client.getSubscriptionId(),
-                            resourceGroupName,
-                            restorePointCollectionName,
-                            apiVersion,
-                            parameters,
-                            accept,
-                            context))
+            .withContext(context -> service.createOrUpdate(this.client.getEndpoint(), this.client.getSubscriptionId(),
+                resourceGroupName, restorePointCollectionName, apiVersion, parameters, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * The operation to create or update the restore point collection. Please refer to https://aka.ms/RestorePoints for
      * more details. When updating a restore point collection, only tags may be modified.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the restore point collection.
      * @param parameters Parameters supplied to the Create or Update restore point collection operation.
@@ -245,35 +209,26 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return create or update Restore Point collection parameters along with {@link Response} on successful completion
-     *     of {@link Mono}.
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<RestorePointCollectionInner>> createOrUpdateWithResponseAsync(
-        String resourceGroupName,
-        String restorePointCollectionName,
-        RestorePointCollectionInner parameters,
-        Context context) {
+    private Mono<Response<RestorePointCollectionInner>> createOrUpdateWithResponseAsync(String resourceGroupName,
+        String restorePointCollectionName, RestorePointCollectionInner parameters, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
         if (restorePointCollectionName == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter restorePointCollectionName is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter restorePointCollectionName is required and cannot be null."));
         }
         if (parameters == null) {
             return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
@@ -283,22 +238,14 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
         final String apiVersion = "2023-07-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .createOrUpdate(
-                this.client.getEndpoint(),
-                this.client.getSubscriptionId(),
-                resourceGroupName,
-                restorePointCollectionName,
-                apiVersion,
-                parameters,
-                accept,
-                context);
+        return service.createOrUpdate(this.client.getEndpoint(), this.client.getSubscriptionId(), resourceGroupName,
+            restorePointCollectionName, apiVersion, parameters, accept, context);
     }
 
     /**
      * The operation to create or update the restore point collection. Please refer to https://aka.ms/RestorePoints for
      * more details. When updating a restore point collection, only tags may be modified.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the restore point collection.
      * @param parameters Parameters supplied to the Create or Update restore point collection operation.
@@ -308,8 +255,8 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
      * @return create or update Restore Point collection parameters on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<RestorePointCollectionInner> createOrUpdateAsync(
-        String resourceGroupName, String restorePointCollectionName, RestorePointCollectionInner parameters) {
+    private Mono<RestorePointCollectionInner> createOrUpdateAsync(String resourceGroupName,
+        String restorePointCollectionName, RestorePointCollectionInner parameters) {
         return createOrUpdateWithResponseAsync(resourceGroupName, restorePointCollectionName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
@@ -317,7 +264,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
     /**
      * The operation to create or update the restore point collection. Please refer to https://aka.ms/RestorePoints for
      * more details. When updating a restore point collection, only tags may be modified.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the restore point collection.
      * @param parameters Parameters supplied to the Create or Update restore point collection operation.
@@ -328,11 +275,8 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
      * @return create or update Restore Point collection parameters along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<RestorePointCollectionInner> createOrUpdateWithResponse(
-        String resourceGroupName,
-        String restorePointCollectionName,
-        RestorePointCollectionInner parameters,
-        Context context) {
+    public Response<RestorePointCollectionInner> createOrUpdateWithResponse(String resourceGroupName,
+        String restorePointCollectionName, RestorePointCollectionInner parameters, Context context) {
         return createOrUpdateWithResponseAsync(resourceGroupName, restorePointCollectionName, parameters, context)
             .block();
     }
@@ -340,7 +284,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
     /**
      * The operation to create or update the restore point collection. Please refer to https://aka.ms/RestorePoints for
      * more details. When updating a restore point collection, only tags may be modified.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the restore point collection.
      * @param parameters Parameters supplied to the Create or Update restore point collection operation.
@@ -350,15 +294,15 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
      * @return create or update Restore Point collection parameters.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public RestorePointCollectionInner createOrUpdate(
-        String resourceGroupName, String restorePointCollectionName, RestorePointCollectionInner parameters) {
+    public RestorePointCollectionInner createOrUpdate(String resourceGroupName, String restorePointCollectionName,
+        RestorePointCollectionInner parameters) {
         return createOrUpdateWithResponse(resourceGroupName, restorePointCollectionName, parameters, Context.NONE)
             .getValue();
     }
 
     /**
      * The operation to update the restore point collection.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the restore point collection.
      * @param parameters Parameters supplied to the Update restore point collection operation.
@@ -366,32 +310,26 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return create or update Restore Point collection parameters along with {@link Response} on successful completion
-     *     of {@link Mono}.
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<RestorePointCollectionInner>> updateWithResponseAsync(
-        String resourceGroupName, String restorePointCollectionName, RestorePointCollectionUpdate parameters) {
+    private Mono<Response<RestorePointCollectionInner>> updateWithResponseAsync(String resourceGroupName,
+        String restorePointCollectionName, RestorePointCollectionUpdate parameters) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
         if (restorePointCollectionName == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter restorePointCollectionName is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter restorePointCollectionName is required and cannot be null."));
         }
         if (parameters == null) {
             return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
@@ -401,24 +339,14 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
         final String apiVersion = "2023-07-01";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .update(
-                            this.client.getEndpoint(),
-                            this.client.getSubscriptionId(),
-                            resourceGroupName,
-                            restorePointCollectionName,
-                            apiVersion,
-                            parameters,
-                            accept,
-                            context))
+            .withContext(context -> service.update(this.client.getEndpoint(), this.client.getSubscriptionId(),
+                resourceGroupName, restorePointCollectionName, apiVersion, parameters, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * The operation to update the restore point collection.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the restore point collection.
      * @param parameters Parameters supplied to the Update restore point collection operation.
@@ -427,35 +355,26 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return create or update Restore Point collection parameters along with {@link Response} on successful completion
-     *     of {@link Mono}.
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<RestorePointCollectionInner>> updateWithResponseAsync(
-        String resourceGroupName,
-        String restorePointCollectionName,
-        RestorePointCollectionUpdate parameters,
-        Context context) {
+    private Mono<Response<RestorePointCollectionInner>> updateWithResponseAsync(String resourceGroupName,
+        String restorePointCollectionName, RestorePointCollectionUpdate parameters, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
         if (restorePointCollectionName == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter restorePointCollectionName is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter restorePointCollectionName is required and cannot be null."));
         }
         if (parameters == null) {
             return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
@@ -465,21 +384,13 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
         final String apiVersion = "2023-07-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .update(
-                this.client.getEndpoint(),
-                this.client.getSubscriptionId(),
-                resourceGroupName,
-                restorePointCollectionName,
-                apiVersion,
-                parameters,
-                accept,
-                context);
+        return service.update(this.client.getEndpoint(), this.client.getSubscriptionId(), resourceGroupName,
+            restorePointCollectionName, apiVersion, parameters, accept, context);
     }
 
     /**
      * The operation to update the restore point collection.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the restore point collection.
      * @param parameters Parameters supplied to the Update restore point collection operation.
@@ -489,15 +400,15 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
      * @return create or update Restore Point collection parameters on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<RestorePointCollectionInner> updateAsync(
-        String resourceGroupName, String restorePointCollectionName, RestorePointCollectionUpdate parameters) {
+    private Mono<RestorePointCollectionInner> updateAsync(String resourceGroupName, String restorePointCollectionName,
+        RestorePointCollectionUpdate parameters) {
         return updateWithResponseAsync(resourceGroupName, restorePointCollectionName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
      * The operation to update the restore point collection.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the restore point collection.
      * @param parameters Parameters supplied to the Update restore point collection operation.
@@ -508,17 +419,14 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
      * @return create or update Restore Point collection parameters along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<RestorePointCollectionInner> updateWithResponse(
-        String resourceGroupName,
-        String restorePointCollectionName,
-        RestorePointCollectionUpdate parameters,
-        Context context) {
+    public Response<RestorePointCollectionInner> updateWithResponse(String resourceGroupName,
+        String restorePointCollectionName, RestorePointCollectionUpdate parameters, Context context) {
         return updateWithResponseAsync(resourceGroupName, restorePointCollectionName, parameters, context).block();
     }
 
     /**
      * The operation to update the restore point collection.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the restore point collection.
      * @param parameters Parameters supplied to the Update restore point collection operation.
@@ -528,15 +436,15 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
      * @return create or update Restore Point collection parameters.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public RestorePointCollectionInner update(
-        String resourceGroupName, String restorePointCollectionName, RestorePointCollectionUpdate parameters) {
+    public RestorePointCollectionInner update(String resourceGroupName, String restorePointCollectionName,
+        RestorePointCollectionUpdate parameters) {
         return updateWithResponse(resourceGroupName, restorePointCollectionName, parameters, Context.NONE).getValue();
     }
 
     /**
      * The operation to delete the restore point collection. This operation will also delete all the contained restore
      * points.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the Restore Point Collection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -545,51 +453,36 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
      * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
-        String resourceGroupName, String restorePointCollectionName) {
+    private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(String resourceGroupName,
+        String restorePointCollectionName) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
         if (restorePointCollectionName == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter restorePointCollectionName is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter restorePointCollectionName is required and cannot be null."));
         }
         final String apiVersion = "2023-07-01";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .delete(
-                            this.client.getEndpoint(),
-                            this.client.getSubscriptionId(),
-                            resourceGroupName,
-                            restorePointCollectionName,
-                            apiVersion,
-                            accept,
-                            context))
+            .withContext(context -> service.delete(this.client.getEndpoint(), this.client.getSubscriptionId(),
+                resourceGroupName, restorePointCollectionName, apiVersion, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * The operation to delete the restore point collection. This operation will also delete all the contained restore
      * points.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the Restore Point Collection.
      * @param context The context to associate with this operation.
@@ -599,48 +492,35 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
      * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
-        String resourceGroupName, String restorePointCollectionName, Context context) {
+    private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(String resourceGroupName,
+        String restorePointCollectionName, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
         if (restorePointCollectionName == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter restorePointCollectionName is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter restorePointCollectionName is required and cannot be null."));
         }
         final String apiVersion = "2023-07-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .delete(
-                this.client.getEndpoint(),
-                this.client.getSubscriptionId(),
-                resourceGroupName,
-                restorePointCollectionName,
-                apiVersion,
-                accept,
-                context);
+        return service.delete(this.client.getEndpoint(), this.client.getSubscriptionId(), resourceGroupName,
+            restorePointCollectionName, apiVersion, accept, context);
     }
 
     /**
      * The operation to delete the restore point collection. This operation will also delete all the contained restore
      * points.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the Restore Point Collection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -649,19 +529,17 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
      * @return the {@link PollerFlux} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
-        String resourceGroupName, String restorePointCollectionName) {
+    private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(String resourceGroupName,
+        String restorePointCollectionName) {
         Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(resourceGroupName, restorePointCollectionName);
-        return this
-            .client
-            .<Void, Void>getLroResult(
-                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
+        return this.client.<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class,
+            this.client.getContext());
     }
 
     /**
      * The operation to delete the restore point collection. This operation will also delete all the contained restore
      * points.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the Restore Point Collection.
      * @param context The context to associate with this operation.
@@ -671,20 +549,19 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
      * @return the {@link PollerFlux} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
-        String resourceGroupName, String restorePointCollectionName, Context context) {
+    private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(String resourceGroupName,
+        String restorePointCollectionName, Context context) {
         context = this.client.mergeContext(context);
-        Mono<Response<Flux<ByteBuffer>>> mono =
-            deleteWithResponseAsync(resourceGroupName, restorePointCollectionName, context);
-        return this
-            .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, context);
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = deleteWithResponseAsync(resourceGroupName, restorePointCollectionName, context);
+        return this.client.<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class,
+            context);
     }
 
     /**
      * The operation to delete the restore point collection. This operation will also delete all the contained restore
      * points.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the Restore Point Collection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -700,7 +577,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
     /**
      * The operation to delete the restore point collection. This operation will also delete all the contained restore
      * points.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the Restore Point Collection.
      * @param context The context to associate with this operation.
@@ -710,15 +587,15 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<PollResult<Void>, Void> beginDelete(
-        String resourceGroupName, String restorePointCollectionName, Context context) {
+    public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String restorePointCollectionName,
+        Context context) {
         return this.beginDeleteAsync(resourceGroupName, restorePointCollectionName, context).getSyncPoller();
     }
 
     /**
      * The operation to delete the restore point collection. This operation will also delete all the contained restore
      * points.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the Restore Point Collection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -728,15 +605,14 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String restorePointCollectionName) {
-        return beginDeleteAsync(resourceGroupName, restorePointCollectionName)
-            .last()
+        return beginDeleteAsync(resourceGroupName, restorePointCollectionName).last()
             .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
      * The operation to delete the restore point collection. This operation will also delete all the contained restore
      * points.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the Restore Point Collection.
      * @param context The context to associate with this operation.
@@ -747,15 +623,14 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String restorePointCollectionName, Context context) {
-        return beginDeleteAsync(resourceGroupName, restorePointCollectionName, context)
-            .last()
+        return beginDeleteAsync(resourceGroupName, restorePointCollectionName, context).last()
             .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
      * The operation to delete the restore point collection. This operation will also delete all the contained restore
      * points.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the Restore Point Collection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -770,7 +645,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
     /**
      * The operation to delete the restore point collection. This operation will also delete all the contained restore
      * points.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the Restore Point Collection.
      * @param context The context to associate with this operation.
@@ -785,120 +660,88 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
 
     /**
      * The operation to get the restore point collection.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the restore point collection.
      * @param expand The expand expression to apply on the operation. If expand=restorePoints, server will return all
-     *     contained restore points in the restorePointCollection.
+     * contained restore points in the restorePointCollection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return create or update Restore Point collection parameters along with {@link Response} on successful completion
-     *     of {@link Mono}.
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<RestorePointCollectionInner>> getByResourceGroupWithResponseAsync(
-        String resourceGroupName, String restorePointCollectionName, RestorePointCollectionExpandOptions expand) {
+    private Mono<Response<RestorePointCollectionInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
+        String restorePointCollectionName, RestorePointCollectionExpandOptions expand) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
         if (restorePointCollectionName == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter restorePointCollectionName is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter restorePointCollectionName is required and cannot be null."));
         }
         final String apiVersion = "2023-07-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
-                context ->
-                    service
-                        .getByResourceGroup(
-                            this.client.getEndpoint(),
-                            this.client.getSubscriptionId(),
-                            resourceGroupName,
-                            restorePointCollectionName,
-                            expand,
-                            apiVersion,
-                            accept,
-                            context))
+                context -> service.getByResourceGroup(this.client.getEndpoint(), this.client.getSubscriptionId(),
+                    resourceGroupName, restorePointCollectionName, expand, apiVersion, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * The operation to get the restore point collection.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the restore point collection.
      * @param expand The expand expression to apply on the operation. If expand=restorePoints, server will return all
-     *     contained restore points in the restorePointCollection.
+     * contained restore points in the restorePointCollection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return create or update Restore Point collection parameters along with {@link Response} on successful completion
-     *     of {@link Mono}.
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<RestorePointCollectionInner>> getByResourceGroupWithResponseAsync(
-        String resourceGroupName,
-        String restorePointCollectionName,
-        RestorePointCollectionExpandOptions expand,
-        Context context) {
+    private Mono<Response<RestorePointCollectionInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
+        String restorePointCollectionName, RestorePointCollectionExpandOptions expand, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
         if (restorePointCollectionName == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter restorePointCollectionName is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter restorePointCollectionName is required and cannot be null."));
         }
         final String apiVersion = "2023-07-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .getByResourceGroup(
-                this.client.getEndpoint(),
-                this.client.getSubscriptionId(),
-                resourceGroupName,
-                restorePointCollectionName,
-                expand,
-                apiVersion,
-                accept,
-                context);
+        return service.getByResourceGroup(this.client.getEndpoint(), this.client.getSubscriptionId(), resourceGroupName,
+            restorePointCollectionName, expand, apiVersion, accept, context);
     }
 
     /**
      * The operation to get the restore point collection.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the restore point collection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -907,8 +750,8 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
      * @return create or update Restore Point collection parameters on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<RestorePointCollectionInner> getByResourceGroupAsync(
-        String resourceGroupName, String restorePointCollectionName) {
+    private Mono<RestorePointCollectionInner> getByResourceGroupAsync(String resourceGroupName,
+        String restorePointCollectionName) {
         final RestorePointCollectionExpandOptions expand = null;
         return getByResourceGroupWithResponseAsync(resourceGroupName, restorePointCollectionName, expand)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
@@ -916,11 +759,11 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
 
     /**
      * The operation to get the restore point collection.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the restore point collection.
      * @param expand The expand expression to apply on the operation. If expand=restorePoints, server will return all
-     *     contained restore points in the restorePointCollection.
+     * contained restore points in the restorePointCollection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -928,18 +771,15 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
      * @return create or update Restore Point collection parameters along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<RestorePointCollectionInner> getByResourceGroupWithResponse(
-        String resourceGroupName,
-        String restorePointCollectionName,
-        RestorePointCollectionExpandOptions expand,
-        Context context) {
+    public Response<RestorePointCollectionInner> getByResourceGroupWithResponse(String resourceGroupName,
+        String restorePointCollectionName, RestorePointCollectionExpandOptions expand, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, restorePointCollectionName, expand, context)
             .block();
     }
 
     /**
      * The operation to get the restore point collection.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the restore point collection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -956,28 +796,24 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
 
     /**
      * Gets the list of restore point collections in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the list of restore point collections in a resource group along with {@link PagedResponse} on successful
-     *     completion of {@link Mono}.
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<RestorePointCollectionInner>> listByResourceGroupSinglePageAsync(
-        String resourceGroupName) {
+    private Mono<PagedResponse<RestorePointCollectionInner>>
+        listByResourceGroupSinglePageAsync(String resourceGroupName) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -986,53 +822,34 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
         final String apiVersion = "2023-07-01";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .listByResourceGroup(
-                            this.client.getEndpoint(),
-                            this.client.getSubscriptionId(),
-                            resourceGroupName,
-                            apiVersion,
-                            accept,
-                            context))
-            .<PagedResponse<RestorePointCollectionInner>>map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null))
+            .withContext(context -> service.listByResourceGroup(this.client.getEndpoint(),
+                this.client.getSubscriptionId(), resourceGroupName, apiVersion, accept, context))
+            .<PagedResponse<RestorePointCollectionInner>>map(res -> new PagedResponseBase<>(res.getRequest(),
+                res.getStatusCode(), res.getHeaders(), res.getValue().value(), res.getValue().nextLink(), null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Gets the list of restore point collections in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the list of restore point collections in a resource group along with {@link PagedResponse} on successful
-     *     completion of {@link Mono}.
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<RestorePointCollectionInner>> listByResourceGroupSinglePageAsync(
-        String resourceGroupName, Context context) {
+    private Mono<PagedResponse<RestorePointCollectionInner>>
+        listByResourceGroupSinglePageAsync(String resourceGroupName, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -1042,27 +859,15 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .listByResourceGroup(
-                this.client.getEndpoint(),
-                this.client.getSubscriptionId(),
-                resourceGroupName,
-                apiVersion,
-                accept,
-                context)
-            .map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null));
+            .listByResourceGroup(this.client.getEndpoint(), this.client.getSubscriptionId(), resourceGroupName,
+                apiVersion, accept, context)
+            .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
+                res.getValue().value(), res.getValue().nextLink(), null));
     }
 
     /**
      * Gets the list of restore point collections in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -1071,13 +876,13 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<RestorePointCollectionInner> listByResourceGroupAsync(String resourceGroupName) {
-        return new PagedFlux<>(
-            () -> listByResourceGroupSinglePageAsync(resourceGroupName), nextLink -> listNextSinglePageAsync(nextLink));
+        return new PagedFlux<>(() -> listByResourceGroupSinglePageAsync(resourceGroupName),
+            nextLink -> listNextSinglePageAsync(nextLink));
     }
 
     /**
      * Gets the list of restore point collections in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1087,20 +892,19 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<RestorePointCollectionInner> listByResourceGroupAsync(String resourceGroupName, Context context) {
-        return new PagedFlux<>(
-            () -> listByResourceGroupSinglePageAsync(resourceGroupName, context),
+        return new PagedFlux<>(() -> listByResourceGroupSinglePageAsync(resourceGroupName, context),
             nextLink -> listNextSinglePageAsync(nextLink, context));
     }
 
     /**
      * Gets the list of restore point collections in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of restore point collections in a resource group as paginated response with {@link
-     *     PagedIterable}.
+     * @return the list of restore point collections in a resource group as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<RestorePointCollectionInner> listByResourceGroup(String resourceGroupName) {
@@ -1109,14 +913,14 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
 
     /**
      * Gets the list of restore point collections in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of restore point collections in a resource group as paginated response with {@link
-     *     PagedIterable}.
+     * @return the list of restore point collections in a resource group as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<RestorePointCollectionInner> listByResourceGroup(String resourceGroupName, Context context) {
@@ -1127,42 +931,29 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
      * Gets the list of restore point collections in the subscription. Use nextLink property in the response to get the
      * next page of restore point collections. Do this till nextLink is not null to fetch all the restore point
      * collections.
-     *
+     * 
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the list of restore point collections in the subscription along with {@link PagedResponse} on successful
-     *     completion of {@link Mono}.
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RestorePointCollectionInner>> listSinglePageAsync() {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         final String apiVersion = "2023-07-01";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .list(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), accept, context))
-            .<PagedResponse<RestorePointCollectionInner>>map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null))
+            .withContext(context -> service.list(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(),
+                accept, context))
+            .<PagedResponse<RestorePointCollectionInner>>map(res -> new PagedResponseBase<>(res.getRequest(),
+                res.getStatusCode(), res.getHeaders(), res.getValue().value(), res.getValue().nextLink(), null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
@@ -1170,49 +961,37 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
      * Gets the list of restore point collections in the subscription. Use nextLink property in the response to get the
      * next page of restore point collections. Do this till nextLink is not null to fetch all the restore point
      * collections.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the list of restore point collections in the subscription along with {@link PagedResponse} on successful
-     *     completion of {@link Mono}.
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RestorePointCollectionInner>> listSinglePageAsync(Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         final String apiVersion = "2023-07-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .list(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), accept, context)
-            .map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null));
+        return service.list(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), accept, context)
+            .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
+                res.getValue().value(), res.getValue().nextLink(), null));
     }
 
     /**
      * Gets the list of restore point collections in the subscription. Use nextLink property in the response to get the
      * next page of restore point collections. Do this till nextLink is not null to fetch all the restore point
      * collections.
-     *
+     * 
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the list of restore point collections in the subscription as paginated response with {@link PagedFlux}.
@@ -1226,7 +1005,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
      * Gets the list of restore point collections in the subscription. Use nextLink property in the response to get the
      * next page of restore point collections. Do this till nextLink is not null to fetch all the restore point
      * collections.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -1235,19 +1014,19 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<RestorePointCollectionInner> listAsync(Context context) {
-        return new PagedFlux<>(
-            () -> listSinglePageAsync(context), nextLink -> listAllNextSinglePageAsync(nextLink, context));
+        return new PagedFlux<>(() -> listSinglePageAsync(context),
+            nextLink -> listAllNextSinglePageAsync(nextLink, context));
     }
 
     /**
      * Gets the list of restore point collections in the subscription. Use nextLink property in the response to get the
      * next page of restore point collections. Do this till nextLink is not null to fetch all the restore point
      * collections.
-     *
+     * 
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of restore point collections in the subscription as paginated response with {@link
-     *     PagedIterable}.
+     * @return the list of restore point collections in the subscription as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<RestorePointCollectionInner> list() {
@@ -1258,13 +1037,13 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
      * Gets the list of restore point collections in the subscription. Use nextLink property in the response to get the
      * next page of restore point collections. Do this till nextLink is not null to fetch all the restore point
      * collections.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of restore point collections in the subscription as paginated response with {@link
-     *     PagedIterable}.
+     * @return the list of restore point collections in the subscription as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<RestorePointCollectionInner> list(Context context) {
@@ -1273,14 +1052,15 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
 
     /**
      * Get the next page of items.
-     *
+     * 
      * @param nextLink The URL to get the next list of items
-     *     <p>The nextLink parameter.
+     * 
+     * The nextLink parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the List restore point collection operation response along with {@link PagedResponse} on successful
-     *     completion of {@link Mono}.
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RestorePointCollectionInner>> listNextSinglePageAsync(String nextLink) {
@@ -1288,37 +1068,28 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
             return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
         }
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         final String accept = "application/json";
-        return FluxUtil
-            .withContext(context -> service.listNext(nextLink, this.client.getEndpoint(), accept, context))
-            .<PagedResponse<RestorePointCollectionInner>>map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null))
+        return FluxUtil.withContext(context -> service.listNext(nextLink, this.client.getEndpoint(), accept, context))
+            .<PagedResponse<RestorePointCollectionInner>>map(res -> new PagedResponseBase<>(res.getRequest(),
+                res.getStatusCode(), res.getHeaders(), res.getValue().value(), res.getValue().nextLink(), null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Get the next page of items.
-     *
+     * 
      * @param nextLink The URL to get the next list of items
-     *     <p>The nextLink parameter.
+     * 
+     * The nextLink parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the List restore point collection operation response along with {@link PagedResponse} on successful
-     *     completion of {@link Mono}.
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RestorePointCollectionInner>> listNextSinglePageAsync(String nextLink, Context context) {
@@ -1326,36 +1097,27 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
             return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
         }
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .listNext(nextLink, this.client.getEndpoint(), accept, context)
-            .map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null));
+        return service.listNext(nextLink, this.client.getEndpoint(), accept, context)
+            .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
+                res.getValue().value(), res.getValue().nextLink(), null));
     }
 
     /**
      * Get the next page of items.
-     *
+     * 
      * @param nextLink The URL to get the next list of items
-     *     <p>The nextLink parameter.
+     * 
+     * The nextLink parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the List restore point collection operation response along with {@link PagedResponse} on successful
-     *     completion of {@link Mono}.
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RestorePointCollectionInner>> listAllNextSinglePageAsync(String nextLink) {
@@ -1363,62 +1125,44 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
             return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
         }
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.listAllNext(nextLink, this.client.getEndpoint(), accept, context))
-            .<PagedResponse<RestorePointCollectionInner>>map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null))
+            .<PagedResponse<RestorePointCollectionInner>>map(res -> new PagedResponseBase<>(res.getRequest(),
+                res.getStatusCode(), res.getHeaders(), res.getValue().value(), res.getValue().nextLink(), null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Get the next page of items.
-     *
+     * 
      * @param nextLink The URL to get the next list of items
-     *     <p>The nextLink parameter.
+     * 
+     * The nextLink parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the List restore point collection operation response along with {@link PagedResponse} on successful
-     *     completion of {@link Mono}.
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<RestorePointCollectionInner>> listAllNextSinglePageAsync(
-        String nextLink, Context context) {
+    private Mono<PagedResponse<RestorePointCollectionInner>> listAllNextSinglePageAsync(String nextLink,
+        Context context) {
         if (nextLink == null) {
             return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
         }
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .listAllNext(nextLink, this.client.getEndpoint(), accept, context)
-            .map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null));
+        return service.listAllNext(nextLink, this.client.getEndpoint(), accept, context)
+            .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
+                res.getValue().value(), res.getValue().nextLink(), null));
     }
 }

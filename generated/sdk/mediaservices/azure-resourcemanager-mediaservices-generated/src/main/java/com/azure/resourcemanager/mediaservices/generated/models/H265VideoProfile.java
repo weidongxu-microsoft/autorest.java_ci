@@ -8,20 +8,28 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** We currently support Main. Default is Auto. */
+/**
+ * We currently support Main. Default is Auto.
+ */
 public final class H265VideoProfile extends ExpandableStringEnum<H265VideoProfile> {
-    /** Static value Auto for H265VideoProfile. */
+    /**
+     * Static value Auto for H265VideoProfile.
+     */
     public static final H265VideoProfile AUTO = fromString("Auto");
 
-    /** Static value Main for H265VideoProfile. */
+    /**
+     * Static value Main for H265VideoProfile.
+     */
     public static final H265VideoProfile MAIN = fromString("Main");
 
-    /** Static value Main10 for H265VideoProfile. */
+    /**
+     * Static value Main10 for H265VideoProfile.
+     */
     public static final H265VideoProfile MAIN10 = fromString("Main10");
 
     /**
      * Creates a new instance of H265VideoProfile value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -30,7 +38,7 @@ public final class H265VideoProfile extends ExpandableStringEnum<H265VideoProfil
 
     /**
      * Creates or finds a H265VideoProfile from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding H265VideoProfile.
      */
@@ -41,7 +49,7 @@ public final class H265VideoProfile extends ExpandableStringEnum<H265VideoProfil
 
     /**
      * Gets known H265VideoProfile values.
-     *
+     * 
      * @return known H265VideoProfile values.
      */
     public static Collection<H265VideoProfile> values() {

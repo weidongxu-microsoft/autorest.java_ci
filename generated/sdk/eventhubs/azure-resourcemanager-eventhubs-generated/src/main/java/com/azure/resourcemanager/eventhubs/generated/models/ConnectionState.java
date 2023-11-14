@@ -7,7 +7,9 @@ package com.azure.resourcemanager.eventhubs.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** ConnectionState information. */
+/**
+ * ConnectionState information.
+ */
 @Fluent
 public final class ConnectionState {
     /*
@@ -22,13 +24,15 @@ public final class ConnectionState {
     @JsonProperty(value = "description")
     private String description;
 
-    /** Creates an instance of ConnectionState class. */
+    /**
+     * Creates an instance of ConnectionState class.
+     */
     public ConnectionState() {
     }
 
     /**
      * Get the status property: Status of the connection.
-     *
+     * 
      * @return the status value.
      */
     public PrivateLinkConnectionStatus status() {
@@ -37,7 +41,7 @@ public final class ConnectionState {
 
     /**
      * Set the status property: Status of the connection.
-     *
+     * 
      * @param status the status value to set.
      * @return the ConnectionState object itself.
      */
@@ -48,7 +52,7 @@ public final class ConnectionState {
 
     /**
      * Get the description property: Description of the connection state.
-     *
+     * 
      * @return the description value.
      */
     public String description() {
@@ -57,7 +61,7 @@ public final class ConnectionState {
 
     /**
      * Set the description property: Description of the connection state.
-     *
+     * 
      * @param description the description value to set.
      * @return the ConnectionState object itself.
      */
@@ -68,7 +72,7 @@ public final class ConnectionState {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -6,11 +6,13 @@ package com.azure.resourcemanager.network.generated.models;
 
 import com.azure.resourcemanager.network.generated.fluent.models.PrivateEndpointConnectionPropertiesInner;
 
-/** An immutable client-side representation of PrivateEndpointConnectionProperties. */
+/**
+ * An immutable client-side representation of PrivateEndpointConnectionProperties.
+ */
 public interface PrivateEndpointConnectionProperties {
     /**
      * Gets the privateEndpoint property: The resource of private end point.
-     *
+     * 
      * @return the privateEndpoint value.
      */
     PrivateEndpoint privateEndpoint();
@@ -18,28 +20,28 @@ public interface PrivateEndpointConnectionProperties {
     /**
      * Gets the privateLinkServiceConnectionState property: A collection of information about the state of the
      * connection between service consumer and provider.
-     *
+     * 
      * @return the privateLinkServiceConnectionState value.
      */
     PrivateLinkServiceConnectionState privateLinkServiceConnectionState();
 
     /**
      * Gets the provisioningState property: The provisioning state of the private endpoint connection resource.
-     *
+     * 
      * @return the provisioningState value.
      */
     ProvisioningState provisioningState();
 
     /**
      * Gets the linkIdentifier property: The consumer link id.
-     *
+     * 
      * @return the linkIdentifier value.
      */
     String linkIdentifier();
 
     /**
      * Gets the privateEndpointLocation property: The location of the private endpoint.
-     *
+     * 
      * @return the privateEndpointLocation value.
      */
     String privateEndpointLocation();
@@ -47,7 +49,7 @@ public interface PrivateEndpointConnectionProperties {
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.PrivateEndpointConnectionPropertiesInner
      * object.
-     *
+     * 
      * @return the inner object.
      */
     PrivateEndpointConnectionPropertiesInner innerModel();

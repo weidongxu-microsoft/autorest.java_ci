@@ -7,7 +7,9 @@ package com.azure.resourcemanager.eventhubs.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** NetworkSecurityPerimeter related information. */
+/**
+ * NetworkSecurityPerimeter related information.
+ */
 @Fluent
 public final class NetworkSecurityPerimeter {
     /*
@@ -28,13 +30,15 @@ public final class NetworkSecurityPerimeter {
     @JsonProperty(value = "location")
     private String location;
 
-    /** Creates an instance of NetworkSecurityPerimeter class. */
+    /**
+     * Creates an instance of NetworkSecurityPerimeter class.
+     */
     public NetworkSecurityPerimeter() {
     }
 
     /**
      * Get the id property: Fully qualified identifier of the resource.
-     *
+     * 
      * @return the id value.
      */
     public String id() {
@@ -43,7 +47,7 @@ public final class NetworkSecurityPerimeter {
 
     /**
      * Set the id property: Fully qualified identifier of the resource.
-     *
+     * 
      * @param id the id value to set.
      * @return the NetworkSecurityPerimeter object itself.
      */
@@ -54,7 +58,7 @@ public final class NetworkSecurityPerimeter {
 
     /**
      * Get the perimeterGuid property: Guid of the resource.
-     *
+     * 
      * @return the perimeterGuid value.
      */
     public String perimeterGuid() {
@@ -63,7 +67,7 @@ public final class NetworkSecurityPerimeter {
 
     /**
      * Set the perimeterGuid property: Guid of the resource.
-     *
+     * 
      * @param perimeterGuid the perimeterGuid value to set.
      * @return the NetworkSecurityPerimeter object itself.
      */
@@ -74,7 +78,7 @@ public final class NetworkSecurityPerimeter {
 
     /**
      * Get the location property: Location of the resource.
-     *
+     * 
      * @return the location value.
      */
     public String location() {
@@ -83,7 +87,7 @@ public final class NetworkSecurityPerimeter {
 
     /**
      * Set the location property: Location of the resource.
-     *
+     * 
      * @param location the location value to set.
      * @return the NetworkSecurityPerimeter object itself.
      */
@@ -94,7 +98,7 @@ public final class NetworkSecurityPerimeter {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -7,18 +7,20 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCircuitsArpTableListResultInner;
 import java.util.List;
 
-/** An immutable client-side representation of ExpressRouteCircuitsArpTableListResult. */
+/**
+ * An immutable client-side representation of ExpressRouteCircuitsArpTableListResult.
+ */
 public interface ExpressRouteCircuitsArpTableListResult {
     /**
      * Gets the value property: A list of the ARP tables.
-     *
+     * 
      * @return the value value.
      */
     List<ExpressRouteCircuitArpTable> value();
 
     /**
      * Gets the nextLink property: The URL to get the next set of results.
-     *
+     * 
      * @return the nextLink value.
      */
     String nextLink();
@@ -26,7 +28,7 @@ public interface ExpressRouteCircuitsArpTableListResult {
     /**
      * Gets the inner
      * com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCircuitsArpTableListResultInner object.
-     *
+     * 
      * @return the inner object.
      */
     ExpressRouteCircuitsArpTableListResultInner innerModel();

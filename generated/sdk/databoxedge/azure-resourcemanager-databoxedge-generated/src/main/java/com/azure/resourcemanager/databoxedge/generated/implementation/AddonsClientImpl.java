@@ -38,17 +38,23 @@ import java.nio.ByteBuffer;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-/** An instance of this class provides access to all the operations defined in AddonsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in AddonsClient.
+ */
 public final class AddonsClientImpl implements AddonsClient {
-    /** The proxy service used to perform REST calls. */
+    /**
+     * The proxy service used to perform REST calls.
+     */
     private final AddonsService service;
 
-    /** The service client containing this operation class. */
+    /**
+     * The service client containing this operation class.
+     */
     private final DataBoxEdgeManagementClientImpl client;
 
     /**
      * Initializes an instance of AddonsClientImpl.
-     *
+     * 
      * @param client the instance of the service client containing this operation class.
      */
     AddonsClientImpl(DataBoxEdgeManagementClientImpl client) {
@@ -63,84 +69,57 @@ public final class AddonsClientImpl implements AddonsClient {
     @Host("{$host}")
     @ServiceInterface(name = "DataBoxEdgeManagemen")
     public interface AddonsService {
-        @Headers({"Content-Type: application/json"})
-        @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/roles/{roleName}/addons")
-        @ExpectedResponses({200})
+        @Headers({ "Content-Type: application/json" })
+        @Get("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/roles/{roleName}/addons")
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<AddonList>> listByRole(
-            @HostParam("$host") String endpoint,
-            @PathParam("deviceName") String deviceName,
-            @PathParam("roleName") String roleName,
+        Mono<Response<AddonList>> listByRole(@HostParam("$host") String endpoint,
+            @PathParam("deviceName") String deviceName, @PathParam("roleName") String roleName,
             @PathParam("subscriptionId") String subscriptionId,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @QueryParam("api-version") String apiVersion,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @PathParam("resourceGroupName") String resourceGroupName, @QueryParam("api-version") String apiVersion,
+            @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/roles/{roleName}/addons/{addonName}")
-        @ExpectedResponses({200})
+        @Headers({ "Content-Type: application/json" })
+        @Get("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/roles/{roleName}/addons/{addonName}")
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<AddonInner>> get(
-            @HostParam("$host") String endpoint,
-            @PathParam("deviceName") String deviceName,
-            @PathParam("roleName") String roleName,
-            @PathParam("addonName") String addonName,
+        Mono<Response<AddonInner>> get(@HostParam("$host") String endpoint, @PathParam("deviceName") String deviceName,
+            @PathParam("roleName") String roleName, @PathParam("addonName") String addonName,
             @PathParam("subscriptionId") String subscriptionId,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @QueryParam("api-version") String apiVersion,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @PathParam("resourceGroupName") String resourceGroupName, @QueryParam("api-version") String apiVersion,
+            @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Put(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/roles/{roleName}/addons/{addonName}")
-        @ExpectedResponses({200, 202})
+        @Headers({ "Content-Type: application/json" })
+        @Put("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/roles/{roleName}/addons/{addonName}")
+        @ExpectedResponses({ 200, 202 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<Flux<ByteBuffer>>> createOrUpdate(
-            @HostParam("$host") String endpoint,
-            @PathParam("deviceName") String deviceName,
-            @PathParam("roleName") String roleName,
-            @PathParam("addonName") String addonName,
-            @PathParam("subscriptionId") String subscriptionId,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @QueryParam("api-version") String apiVersion,
-            @BodyParam("application/json") AddonInner addon,
-            @HeaderParam("Accept") String accept,
-            Context context);
+        Mono<Response<Flux<ByteBuffer>>> createOrUpdate(@HostParam("$host") String endpoint,
+            @PathParam("deviceName") String deviceName, @PathParam("roleName") String roleName,
+            @PathParam("addonName") String addonName, @PathParam("subscriptionId") String subscriptionId,
+            @PathParam("resourceGroupName") String resourceGroupName, @QueryParam("api-version") String apiVersion,
+            @BodyParam("application/json") AddonInner addon, @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Delete(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/roles/{roleName}/addons/{addonName}")
-        @ExpectedResponses({200, 202, 204})
+        @Headers({ "Content-Type: application/json" })
+        @Delete("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/roles/{roleName}/addons/{addonName}")
+        @ExpectedResponses({ 200, 202, 204 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<Flux<ByteBuffer>>> delete(
-            @HostParam("$host") String endpoint,
-            @PathParam("deviceName") String deviceName,
-            @PathParam("roleName") String roleName,
-            @PathParam("addonName") String addonName,
-            @PathParam("subscriptionId") String subscriptionId,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @QueryParam("api-version") String apiVersion,
-            @HeaderParam("Accept") String accept,
-            Context context);
+        Mono<Response<Flux<ByteBuffer>>> delete(@HostParam("$host") String endpoint,
+            @PathParam("deviceName") String deviceName, @PathParam("roleName") String roleName,
+            @PathParam("addonName") String addonName, @PathParam("subscriptionId") String subscriptionId,
+            @PathParam("resourceGroupName") String resourceGroupName, @QueryParam("api-version") String apiVersion,
+            @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
+        @Headers({ "Content-Type: application/json" })
         @Get("{nextLink}")
-        @ExpectedResponses({200})
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<AddonList>> listByRoleNext(
-            @PathParam(value = "nextLink", encoded = true) String nextLink,
-            @HostParam("$host") String endpoint,
-            @HeaderParam("Accept") String accept,
-            Context context);
+        Mono<Response<AddonList>> listByRoleNext(@PathParam(value = "nextLink", encoded = true) String nextLink,
+            @HostParam("$host") String endpoint, @HeaderParam("Accept") String accept, Context context);
     }
 
     /**
      * Lists all the addons configured in the role.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param resourceGroupName The resource group name.
@@ -148,16 +127,14 @@ public final class AddonsClientImpl implements AddonsClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of all the Role addon on the Azure Stack Edge device along with {@link PagedResponse} on
-     *     successful completion of {@link Mono}.
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<AddonInner>> listByRoleSinglePageAsync(
-        String deviceName, String roleName, String resourceGroupName) {
+    private Mono<PagedResponse<AddonInner>> listByRoleSinglePageAsync(String deviceName, String roleName,
+        String resourceGroupName) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (deviceName == null) {
             return Mono.error(new IllegalArgumentException("Parameter deviceName is required and cannot be null."));
@@ -166,10 +143,8 @@ public final class AddonsClientImpl implements AddonsClient {
             return Mono.error(new IllegalArgumentException("Parameter roleName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -177,33 +152,16 @@ public final class AddonsClientImpl implements AddonsClient {
         }
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .listByRole(
-                            this.client.getEndpoint(),
-                            deviceName,
-                            roleName,
-                            this.client.getSubscriptionId(),
-                            resourceGroupName,
-                            this.client.getApiVersion(),
-                            accept,
-                            context))
-            .<PagedResponse<AddonInner>>map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null))
+            .withContext(context -> service.listByRole(this.client.getEndpoint(), deviceName, roleName,
+                this.client.getSubscriptionId(), resourceGroupName, this.client.getApiVersion(), accept, context))
+            .<PagedResponse<AddonInner>>map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(),
+                res.getHeaders(), res.getValue().value(), res.getValue().nextLink(), null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Lists all the addons configured in the role.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param resourceGroupName The resource group name.
@@ -212,16 +170,14 @@ public final class AddonsClientImpl implements AddonsClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of all the Role addon on the Azure Stack Edge device along with {@link PagedResponse} on
-     *     successful completion of {@link Mono}.
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<AddonInner>> listByRoleSinglePageAsync(
-        String deviceName, String roleName, String resourceGroupName, Context context) {
+    private Mono<PagedResponse<AddonInner>> listByRoleSinglePageAsync(String deviceName, String roleName,
+        String resourceGroupName, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (deviceName == null) {
             return Mono.error(new IllegalArgumentException("Parameter deviceName is required and cannot be null."));
@@ -230,10 +186,8 @@ public final class AddonsClientImpl implements AddonsClient {
             return Mono.error(new IllegalArgumentException("Parameter roleName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -242,48 +196,33 @@ public final class AddonsClientImpl implements AddonsClient {
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .listByRole(
-                this.client.getEndpoint(),
-                deviceName,
-                roleName,
-                this.client.getSubscriptionId(),
-                resourceGroupName,
-                this.client.getApiVersion(),
-                accept,
-                context)
-            .map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null));
+            .listByRole(this.client.getEndpoint(), deviceName, roleName, this.client.getSubscriptionId(),
+                resourceGroupName, this.client.getApiVersion(), accept, context)
+            .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
+                res.getValue().value(), res.getValue().nextLink(), null));
     }
 
     /**
      * Lists all the addons configured in the role.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param resourceGroupName The resource group name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of all the Role addon on the Azure Stack Edge device as paginated response with {@link
-     *     PagedFlux}.
+     * @return collection of all the Role addon on the Azure Stack Edge device as paginated response with
+     * {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<AddonInner> listByRoleAsync(String deviceName, String roleName, String resourceGroupName) {
-        return new PagedFlux<>(
-            () -> listByRoleSinglePageAsync(deviceName, roleName, resourceGroupName),
+        return new PagedFlux<>(() -> listByRoleSinglePageAsync(deviceName, roleName, resourceGroupName),
             nextLink -> listByRoleNextSinglePageAsync(nextLink));
     }
 
     /**
      * Lists all the addons configured in the role.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param resourceGroupName The resource group name.
@@ -291,28 +230,27 @@ public final class AddonsClientImpl implements AddonsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of all the Role addon on the Azure Stack Edge device as paginated response with {@link
-     *     PagedFlux}.
+     * @return collection of all the Role addon on the Azure Stack Edge device as paginated response with
+     * {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<AddonInner> listByRoleAsync(
-        String deviceName, String roleName, String resourceGroupName, Context context) {
-        return new PagedFlux<>(
-            () -> listByRoleSinglePageAsync(deviceName, roleName, resourceGroupName, context),
+    private PagedFlux<AddonInner> listByRoleAsync(String deviceName, String roleName, String resourceGroupName,
+        Context context) {
+        return new PagedFlux<>(() -> listByRoleSinglePageAsync(deviceName, roleName, resourceGroupName, context),
             nextLink -> listByRoleNextSinglePageAsync(nextLink, context));
     }
 
     /**
      * Lists all the addons configured in the role.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param resourceGroupName The resource group name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of all the Role addon on the Azure Stack Edge device as paginated response with {@link
-     *     PagedIterable}.
+     * @return collection of all the Role addon on the Azure Stack Edge device as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<AddonInner> listByRole(String deviceName, String roleName, String resourceGroupName) {
@@ -321,7 +259,7 @@ public final class AddonsClientImpl implements AddonsClient {
 
     /**
      * Lists all the addons configured in the role.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param resourceGroupName The resource group name.
@@ -329,18 +267,18 @@ public final class AddonsClientImpl implements AddonsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of all the Role addon on the Azure Stack Edge device as paginated response with {@link
-     *     PagedIterable}.
+     * @return collection of all the Role addon on the Azure Stack Edge device as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    public PagedIterable<AddonInner> listByRole(
-        String deviceName, String roleName, String resourceGroupName, Context context) {
+    public PagedIterable<AddonInner> listByRole(String deviceName, String roleName, String resourceGroupName,
+        Context context) {
         return new PagedIterable<>(listByRoleAsync(deviceName, roleName, resourceGroupName, context));
     }
 
     /**
      * Gets a specific addon by name.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param addonName The addon name.
@@ -351,13 +289,11 @@ public final class AddonsClientImpl implements AddonsClient {
      * @return a specific addon by name along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<AddonInner>> getWithResponseAsync(
-        String deviceName, String roleName, String addonName, String resourceGroupName) {
+    private Mono<Response<AddonInner>> getWithResponseAsync(String deviceName, String roleName, String addonName,
+        String resourceGroupName) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (deviceName == null) {
             return Mono.error(new IllegalArgumentException("Parameter deviceName is required and cannot be null."));
@@ -369,10 +305,8 @@ public final class AddonsClientImpl implements AddonsClient {
             return Mono.error(new IllegalArgumentException("Parameter addonName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -380,25 +314,14 @@ public final class AddonsClientImpl implements AddonsClient {
         }
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .get(
-                            this.client.getEndpoint(),
-                            deviceName,
-                            roleName,
-                            addonName,
-                            this.client.getSubscriptionId(),
-                            resourceGroupName,
-                            this.client.getApiVersion(),
-                            accept,
-                            context))
+            .withContext(context -> service.get(this.client.getEndpoint(), deviceName, roleName, addonName,
+                this.client.getSubscriptionId(), resourceGroupName, this.client.getApiVersion(), accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Gets a specific addon by name.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param addonName The addon name.
@@ -410,13 +333,11 @@ public final class AddonsClientImpl implements AddonsClient {
      * @return a specific addon by name along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<AddonInner>> getWithResponseAsync(
-        String deviceName, String roleName, String addonName, String resourceGroupName, Context context) {
+    private Mono<Response<AddonInner>> getWithResponseAsync(String deviceName, String roleName, String addonName,
+        String resourceGroupName, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (deviceName == null) {
             return Mono.error(new IllegalArgumentException("Parameter deviceName is required and cannot be null."));
@@ -428,10 +349,8 @@ public final class AddonsClientImpl implements AddonsClient {
             return Mono.error(new IllegalArgumentException("Parameter addonName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -439,22 +358,13 @@ public final class AddonsClientImpl implements AddonsClient {
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .get(
-                this.client.getEndpoint(),
-                deviceName,
-                roleName,
-                addonName,
-                this.client.getSubscriptionId(),
-                resourceGroupName,
-                this.client.getApiVersion(),
-                accept,
-                context);
+        return service.get(this.client.getEndpoint(), deviceName, roleName, addonName, this.client.getSubscriptionId(),
+            resourceGroupName, this.client.getApiVersion(), accept, context);
     }
 
     /**
      * Gets a specific addon by name.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param addonName The addon name.
@@ -472,7 +382,7 @@ public final class AddonsClientImpl implements AddonsClient {
 
     /**
      * Gets a specific addon by name.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param addonName The addon name.
@@ -484,14 +394,14 @@ public final class AddonsClientImpl implements AddonsClient {
      * @return a specific addon by name along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AddonInner> getWithResponse(
-        String deviceName, String roleName, String addonName, String resourceGroupName, Context context) {
+    public Response<AddonInner> getWithResponse(String deviceName, String roleName, String addonName,
+        String resourceGroupName, Context context) {
         return getWithResponseAsync(deviceName, roleName, addonName, resourceGroupName, context).block();
     }
 
     /**
      * Gets a specific addon by name.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param addonName The addon name.
@@ -508,7 +418,7 @@ public final class AddonsClientImpl implements AddonsClient {
 
     /**
      * Create or update a addon.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param addonName The addon name.
@@ -520,13 +430,11 @@ public final class AddonsClientImpl implements AddonsClient {
      * @return role Addon along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
-        String deviceName, String roleName, String addonName, String resourceGroupName, AddonInner addon) {
+    private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String deviceName, String roleName,
+        String addonName, String resourceGroupName, AddonInner addon) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (deviceName == null) {
             return Mono.error(new IllegalArgumentException("Parameter deviceName is required and cannot be null."));
@@ -538,10 +446,8 @@ public final class AddonsClientImpl implements AddonsClient {
             return Mono.error(new IllegalArgumentException("Parameter addonName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -554,26 +460,15 @@ public final class AddonsClientImpl implements AddonsClient {
         }
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .createOrUpdate(
-                            this.client.getEndpoint(),
-                            deviceName,
-                            roleName,
-                            addonName,
-                            this.client.getSubscriptionId(),
-                            resourceGroupName,
-                            this.client.getApiVersion(),
-                            addon,
-                            accept,
-                            context))
+            .withContext(context -> service.createOrUpdate(this.client.getEndpoint(), deviceName, roleName, addonName,
+                this.client.getSubscriptionId(), resourceGroupName, this.client.getApiVersion(), addon, accept,
+                context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Create or update a addon.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param addonName The addon name.
@@ -586,18 +481,11 @@ public final class AddonsClientImpl implements AddonsClient {
      * @return role Addon along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
-        String deviceName,
-        String roleName,
-        String addonName,
-        String resourceGroupName,
-        AddonInner addon,
-        Context context) {
+    private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String deviceName, String roleName,
+        String addonName, String resourceGroupName, AddonInner addon, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (deviceName == null) {
             return Mono.error(new IllegalArgumentException("Parameter deviceName is required and cannot be null."));
@@ -609,10 +497,8 @@ public final class AddonsClientImpl implements AddonsClient {
             return Mono.error(new IllegalArgumentException("Parameter addonName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -625,23 +511,13 @@ public final class AddonsClientImpl implements AddonsClient {
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .createOrUpdate(
-                this.client.getEndpoint(),
-                deviceName,
-                roleName,
-                addonName,
-                this.client.getSubscriptionId(),
-                resourceGroupName,
-                this.client.getApiVersion(),
-                addon,
-                accept,
-                context);
+        return service.createOrUpdate(this.client.getEndpoint(), deviceName, roleName, addonName,
+            this.client.getSubscriptionId(), resourceGroupName, this.client.getApiVersion(), addon, accept, context);
     }
 
     /**
      * Create or update a addon.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param addonName The addon name.
@@ -653,19 +529,17 @@ public final class AddonsClientImpl implements AddonsClient {
      * @return the {@link PollerFlux} for polling of role Addon.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    private PollerFlux<PollResult<AddonInner>, AddonInner> beginCreateOrUpdateAsync(
-        String deviceName, String roleName, String addonName, String resourceGroupName, AddonInner addon) {
-        Mono<Response<Flux<ByteBuffer>>> mono =
-            createOrUpdateWithResponseAsync(deviceName, roleName, addonName, resourceGroupName, addon);
-        return this
-            .client
-            .<AddonInner, AddonInner>getLroResult(
-                mono, this.client.getHttpPipeline(), AddonInner.class, AddonInner.class, this.client.getContext());
+    private PollerFlux<PollResult<AddonInner>, AddonInner> beginCreateOrUpdateAsync(String deviceName, String roleName,
+        String addonName, String resourceGroupName, AddonInner addon) {
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = createOrUpdateWithResponseAsync(deviceName, roleName, addonName, resourceGroupName, addon);
+        return this.client.<AddonInner, AddonInner>getLroResult(mono, this.client.getHttpPipeline(), AddonInner.class,
+            AddonInner.class, this.client.getContext());
     }
 
     /**
      * Create or update a addon.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param addonName The addon name.
@@ -678,25 +552,18 @@ public final class AddonsClientImpl implements AddonsClient {
      * @return the {@link PollerFlux} for polling of role Addon.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    private PollerFlux<PollResult<AddonInner>, AddonInner> beginCreateOrUpdateAsync(
-        String deviceName,
-        String roleName,
-        String addonName,
-        String resourceGroupName,
-        AddonInner addon,
-        Context context) {
+    private PollerFlux<PollResult<AddonInner>, AddonInner> beginCreateOrUpdateAsync(String deviceName, String roleName,
+        String addonName, String resourceGroupName, AddonInner addon, Context context) {
         context = this.client.mergeContext(context);
-        Mono<Response<Flux<ByteBuffer>>> mono =
-            createOrUpdateWithResponseAsync(deviceName, roleName, addonName, resourceGroupName, addon, context);
-        return this
-            .client
-            .<AddonInner, AddonInner>getLroResult(
-                mono, this.client.getHttpPipeline(), AddonInner.class, AddonInner.class, context);
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = createOrUpdateWithResponseAsync(deviceName, roleName, addonName, resourceGroupName, addon, context);
+        return this.client.<AddonInner, AddonInner>getLroResult(mono, this.client.getHttpPipeline(), AddonInner.class,
+            AddonInner.class, context);
     }
 
     /**
      * Create or update a addon.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param addonName The addon name.
@@ -708,14 +575,14 @@ public final class AddonsClientImpl implements AddonsClient {
      * @return the {@link SyncPoller} for polling of role Addon.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<PollResult<AddonInner>, AddonInner> beginCreateOrUpdate(
-        String deviceName, String roleName, String addonName, String resourceGroupName, AddonInner addon) {
+    public SyncPoller<PollResult<AddonInner>, AddonInner> beginCreateOrUpdate(String deviceName, String roleName,
+        String addonName, String resourceGroupName, AddonInner addon) {
         return this.beginCreateOrUpdateAsync(deviceName, roleName, addonName, resourceGroupName, addon).getSyncPoller();
     }
 
     /**
      * Create or update a addon.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param addonName The addon name.
@@ -728,21 +595,15 @@ public final class AddonsClientImpl implements AddonsClient {
      * @return the {@link SyncPoller} for polling of role Addon.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<PollResult<AddonInner>, AddonInner> beginCreateOrUpdate(
-        String deviceName,
-        String roleName,
-        String addonName,
-        String resourceGroupName,
-        AddonInner addon,
-        Context context) {
-        return this
-            .beginCreateOrUpdateAsync(deviceName, roleName, addonName, resourceGroupName, addon, context)
+    public SyncPoller<PollResult<AddonInner>, AddonInner> beginCreateOrUpdate(String deviceName, String roleName,
+        String addonName, String resourceGroupName, AddonInner addon, Context context) {
+        return this.beginCreateOrUpdateAsync(deviceName, roleName, addonName, resourceGroupName, addon, context)
             .getSyncPoller();
     }
 
     /**
      * Create or update a addon.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param addonName The addon name.
@@ -754,16 +615,15 @@ public final class AddonsClientImpl implements AddonsClient {
      * @return role Addon on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<AddonInner> createOrUpdateAsync(
-        String deviceName, String roleName, String addonName, String resourceGroupName, AddonInner addon) {
-        return beginCreateOrUpdateAsync(deviceName, roleName, addonName, resourceGroupName, addon)
-            .last()
+    private Mono<AddonInner> createOrUpdateAsync(String deviceName, String roleName, String addonName,
+        String resourceGroupName, AddonInner addon) {
+        return beginCreateOrUpdateAsync(deviceName, roleName, addonName, resourceGroupName, addon).last()
             .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
      * Create or update a addon.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param addonName The addon name.
@@ -776,21 +636,15 @@ public final class AddonsClientImpl implements AddonsClient {
      * @return role Addon on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<AddonInner> createOrUpdateAsync(
-        String deviceName,
-        String roleName,
-        String addonName,
-        String resourceGroupName,
-        AddonInner addon,
-        Context context) {
-        return beginCreateOrUpdateAsync(deviceName, roleName, addonName, resourceGroupName, addon, context)
-            .last()
+    private Mono<AddonInner> createOrUpdateAsync(String deviceName, String roleName, String addonName,
+        String resourceGroupName, AddonInner addon, Context context) {
+        return beginCreateOrUpdateAsync(deviceName, roleName, addonName, resourceGroupName, addon, context).last()
             .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
      * Create or update a addon.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param addonName The addon name.
@@ -802,14 +656,14 @@ public final class AddonsClientImpl implements AddonsClient {
      * @return role Addon.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public AddonInner createOrUpdate(
-        String deviceName, String roleName, String addonName, String resourceGroupName, AddonInner addon) {
+    public AddonInner createOrUpdate(String deviceName, String roleName, String addonName, String resourceGroupName,
+        AddonInner addon) {
         return createOrUpdateAsync(deviceName, roleName, addonName, resourceGroupName, addon).block();
     }
 
     /**
      * Create or update a addon.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param addonName The addon name.
@@ -822,19 +676,14 @@ public final class AddonsClientImpl implements AddonsClient {
      * @return role Addon.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public AddonInner createOrUpdate(
-        String deviceName,
-        String roleName,
-        String addonName,
-        String resourceGroupName,
-        AddonInner addon,
-        Context context) {
+    public AddonInner createOrUpdate(String deviceName, String roleName, String addonName, String resourceGroupName,
+        AddonInner addon, Context context) {
         return createOrUpdateAsync(deviceName, roleName, addonName, resourceGroupName, addon, context).block();
     }
 
     /**
      * Deletes the addon on the device.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param addonName The addon name.
@@ -845,13 +694,11 @@ public final class AddonsClientImpl implements AddonsClient {
      * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
-        String deviceName, String roleName, String addonName, String resourceGroupName) {
+    private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(String deviceName, String roleName,
+        String addonName, String resourceGroupName) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (deviceName == null) {
             return Mono.error(new IllegalArgumentException("Parameter deviceName is required and cannot be null."));
@@ -863,10 +710,8 @@ public final class AddonsClientImpl implements AddonsClient {
             return Mono.error(new IllegalArgumentException("Parameter addonName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -874,25 +719,14 @@ public final class AddonsClientImpl implements AddonsClient {
         }
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .delete(
-                            this.client.getEndpoint(),
-                            deviceName,
-                            roleName,
-                            addonName,
-                            this.client.getSubscriptionId(),
-                            resourceGroupName,
-                            this.client.getApiVersion(),
-                            accept,
-                            context))
+            .withContext(context -> service.delete(this.client.getEndpoint(), deviceName, roleName, addonName,
+                this.client.getSubscriptionId(), resourceGroupName, this.client.getApiVersion(), accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Deletes the addon on the device.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param addonName The addon name.
@@ -904,13 +738,11 @@ public final class AddonsClientImpl implements AddonsClient {
      * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
-        String deviceName, String roleName, String addonName, String resourceGroupName, Context context) {
+    private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(String deviceName, String roleName,
+        String addonName, String resourceGroupName, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (deviceName == null) {
             return Mono.error(new IllegalArgumentException("Parameter deviceName is required and cannot be null."));
@@ -922,10 +754,8 @@ public final class AddonsClientImpl implements AddonsClient {
             return Mono.error(new IllegalArgumentException("Parameter addonName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -933,22 +763,13 @@ public final class AddonsClientImpl implements AddonsClient {
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .delete(
-                this.client.getEndpoint(),
-                deviceName,
-                roleName,
-                addonName,
-                this.client.getSubscriptionId(),
-                resourceGroupName,
-                this.client.getApiVersion(),
-                accept,
-                context);
+        return service.delete(this.client.getEndpoint(), deviceName, roleName, addonName,
+            this.client.getSubscriptionId(), resourceGroupName, this.client.getApiVersion(), accept, context);
     }
 
     /**
      * Deletes the addon on the device.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param addonName The addon name.
@@ -959,19 +780,17 @@ public final class AddonsClientImpl implements AddonsClient {
      * @return the {@link PollerFlux} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
-        String deviceName, String roleName, String addonName, String resourceGroupName) {
-        Mono<Response<Flux<ByteBuffer>>> mono =
-            deleteWithResponseAsync(deviceName, roleName, addonName, resourceGroupName);
-        return this
-            .client
-            .<Void, Void>getLroResult(
-                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
+    private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(String deviceName, String roleName, String addonName,
+        String resourceGroupName) {
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = deleteWithResponseAsync(deviceName, roleName, addonName, resourceGroupName);
+        return this.client.<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class,
+            this.client.getContext());
     }
 
     /**
      * Deletes the addon on the device.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param addonName The addon name.
@@ -983,19 +802,18 @@ public final class AddonsClientImpl implements AddonsClient {
      * @return the {@link PollerFlux} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
-        String deviceName, String roleName, String addonName, String resourceGroupName, Context context) {
+    private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(String deviceName, String roleName, String addonName,
+        String resourceGroupName, Context context) {
         context = this.client.mergeContext(context);
-        Mono<Response<Flux<ByteBuffer>>> mono =
-            deleteWithResponseAsync(deviceName, roleName, addonName, resourceGroupName, context);
-        return this
-            .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, context);
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = deleteWithResponseAsync(deviceName, roleName, addonName, resourceGroupName, context);
+        return this.client.<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class,
+            context);
     }
 
     /**
      * Deletes the addon on the device.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param addonName The addon name.
@@ -1006,14 +824,14 @@ public final class AddonsClientImpl implements AddonsClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<PollResult<Void>, Void> beginDelete(
-        String deviceName, String roleName, String addonName, String resourceGroupName) {
+    public SyncPoller<PollResult<Void>, Void> beginDelete(String deviceName, String roleName, String addonName,
+        String resourceGroupName) {
         return this.beginDeleteAsync(deviceName, roleName, addonName, resourceGroupName).getSyncPoller();
     }
 
     /**
      * Deletes the addon on the device.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param addonName The addon name.
@@ -1025,14 +843,14 @@ public final class AddonsClientImpl implements AddonsClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<PollResult<Void>, Void> beginDelete(
-        String deviceName, String roleName, String addonName, String resourceGroupName, Context context) {
+    public SyncPoller<PollResult<Void>, Void> beginDelete(String deviceName, String roleName, String addonName,
+        String resourceGroupName, Context context) {
         return this.beginDeleteAsync(deviceName, roleName, addonName, resourceGroupName, context).getSyncPoller();
     }
 
     /**
      * Deletes the addon on the device.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param addonName The addon name.
@@ -1044,14 +862,13 @@ public final class AddonsClientImpl implements AddonsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String deviceName, String roleName, String addonName, String resourceGroupName) {
-        return beginDeleteAsync(deviceName, roleName, addonName, resourceGroupName)
-            .last()
+        return beginDeleteAsync(deviceName, roleName, addonName, resourceGroupName).last()
             .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
      * Deletes the addon on the device.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param addonName The addon name.
@@ -1063,16 +880,15 @@ public final class AddonsClientImpl implements AddonsClient {
      * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Void> deleteAsync(
-        String deviceName, String roleName, String addonName, String resourceGroupName, Context context) {
-        return beginDeleteAsync(deviceName, roleName, addonName, resourceGroupName, context)
-            .last()
+    private Mono<Void> deleteAsync(String deviceName, String roleName, String addonName, String resourceGroupName,
+        Context context) {
+        return beginDeleteAsync(deviceName, roleName, addonName, resourceGroupName, context).last()
             .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
      * Deletes the addon on the device.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param addonName The addon name.
@@ -1088,7 +904,7 @@ public final class AddonsClientImpl implements AddonsClient {
 
     /**
      * Deletes the addon on the device.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param addonName The addon name.
@@ -1099,21 +915,22 @@ public final class AddonsClientImpl implements AddonsClient {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void delete(
-        String deviceName, String roleName, String addonName, String resourceGroupName, Context context) {
+    public void delete(String deviceName, String roleName, String addonName, String resourceGroupName,
+        Context context) {
         deleteAsync(deviceName, roleName, addonName, resourceGroupName, context).block();
     }
 
     /**
      * Get the next page of items.
-     *
+     * 
      * @param nextLink The URL to get the next list of items
-     *     <p>The nextLink parameter.
+     * 
+     * The nextLink parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of all the Role addon on the Azure Stack Edge device along with {@link PagedResponse} on
-     *     successful completion of {@link Mono}.
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AddonInner>> listByRoleNextSinglePageAsync(String nextLink) {
@@ -1121,37 +938,29 @@ public final class AddonsClientImpl implements AddonsClient {
             return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
         }
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.listByRoleNext(nextLink, this.client.getEndpoint(), accept, context))
-            .<PagedResponse<AddonInner>>map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null))
+            .<PagedResponse<AddonInner>>map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(),
+                res.getHeaders(), res.getValue().value(), res.getValue().nextLink(), null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Get the next page of items.
-     *
+     * 
      * @param nextLink The URL to get the next list of items
-     *     <p>The nextLink parameter.
+     * 
+     * The nextLink parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of all the Role addon on the Azure Stack Edge device along with {@link PagedResponse} on
-     *     successful completion of {@link Mono}.
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AddonInner>> listByRoleNextSinglePageAsync(String nextLink, Context context) {
@@ -1159,23 +968,13 @@ public final class AddonsClientImpl implements AddonsClient {
             return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
         }
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .listByRoleNext(nextLink, this.client.getEndpoint(), accept, context)
-            .map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null));
+        return service.listByRoleNext(nextLink, this.client.getEndpoint(), accept, context)
+            .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
+                res.getValue().value(), res.getValue().nextLink(), null));
     }
 }

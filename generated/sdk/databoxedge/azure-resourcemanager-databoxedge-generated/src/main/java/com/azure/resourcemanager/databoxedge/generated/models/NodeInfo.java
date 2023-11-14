@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Kubernetes node info. */
+/**
+ * Kubernetes node info.
+ */
 @Fluent
 public final class NodeInfo {
     /*
@@ -29,13 +31,15 @@ public final class NodeInfo {
     @JsonProperty(value = "ipConfiguration")
     private List<KubernetesIpConfiguration> ipConfiguration;
 
-    /** Creates an instance of NodeInfo class. */
+    /**
+     * Creates an instance of NodeInfo class.
+     */
     public NodeInfo() {
     }
 
     /**
      * Get the name property: Node name.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -44,7 +48,7 @@ public final class NodeInfo {
 
     /**
      * Get the type property: Node type - Master/Worker.
-     *
+     * 
      * @return the type value.
      */
     public KubernetesNodeType type() {
@@ -53,7 +57,7 @@ public final class NodeInfo {
 
     /**
      * Get the ipConfiguration property: IP Configuration of the Kubernetes node.
-     *
+     * 
      * @return the ipConfiguration value.
      */
     public List<KubernetesIpConfiguration> ipConfiguration() {
@@ -62,7 +66,7 @@ public final class NodeInfo {
 
     /**
      * Set the ipConfiguration property: IP Configuration of the Kubernetes node.
-     *
+     * 
      * @param ipConfiguration the ipConfiguration value to set.
      * @return the NodeInfo object itself.
      */
@@ -73,7 +77,7 @@ public final class NodeInfo {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

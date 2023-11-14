@@ -14,8 +14,8 @@ public final class OperationImpl implements Operation {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    OperationImpl(
-        OperationInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    OperationImpl(OperationInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

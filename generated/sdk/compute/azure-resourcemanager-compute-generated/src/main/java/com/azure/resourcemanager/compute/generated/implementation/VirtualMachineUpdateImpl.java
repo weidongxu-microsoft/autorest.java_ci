@@ -34,8 +34,7 @@ public final class VirtualMachineUpdateImpl implements VirtualMachineUpdate {
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    VirtualMachineUpdateImpl(
-        VirtualMachineUpdateInner innerObject,
+    VirtualMachineUpdateImpl(VirtualMachineUpdateInner innerObject,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

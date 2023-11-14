@@ -11,7 +11,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.Map;
 
-/** Represents a single status change. */
+/**
+ * Represents a single status change.
+ */
 @Fluent
 public final class OrderStatus {
     /*
@@ -46,13 +48,15 @@ public final class OrderStatus {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> additionalOrderDetails;
 
-    /** Creates an instance of OrderStatus class. */
+    /**
+     * Creates an instance of OrderStatus class.
+     */
     public OrderStatus() {
     }
 
     /**
      * Get the status property: Status of the order as per the allowed status types.
-     *
+     * 
      * @return the status value.
      */
     public OrderState status() {
@@ -61,7 +65,7 @@ public final class OrderStatus {
 
     /**
      * Set the status property: Status of the order as per the allowed status types.
-     *
+     * 
      * @param status the status value to set.
      * @return the OrderStatus object itself.
      */
@@ -72,7 +76,7 @@ public final class OrderStatus {
 
     /**
      * Get the updateDateTime property: Time of status update.
-     *
+     * 
      * @return the updateDateTime value.
      */
     public OffsetDateTime updateDateTime() {
@@ -81,7 +85,7 @@ public final class OrderStatus {
 
     /**
      * Get the comments property: Comments related to this status change.
-     *
+     * 
      * @return the comments value.
      */
     public String comments() {
@@ -90,7 +94,7 @@ public final class OrderStatus {
 
     /**
      * Set the comments property: Comments related to this status change.
-     *
+     * 
      * @param comments the comments value to set.
      * @return the OrderStatus object itself.
      */
@@ -101,7 +105,7 @@ public final class OrderStatus {
 
     /**
      * Get the trackingInformation property: Tracking information related to the state in the ordering flow.
-     *
+     * 
      * @return the trackingInformation value.
      */
     public TrackingInfo trackingInformation() {
@@ -109,9 +113,9 @@ public final class OrderStatus {
     }
 
     /**
-     * Get the additionalOrderDetails property: Dictionary to hold generic information which is not stored by the
-     * already existing properties.
-     *
+     * Get the additionalOrderDetails property: Dictionary to hold generic information which is not stored
+     * by the already existing properties.
+     * 
      * @return the additionalOrderDetails value.
      */
     public Map<String, String> additionalOrderDetails() {
@@ -120,14 +124,13 @@ public final class OrderStatus {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (status() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property status in model OrderStatus"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property status in model OrderStatus"));
         }
         if (trackingInformation() != null) {
             trackingInformation().validate();

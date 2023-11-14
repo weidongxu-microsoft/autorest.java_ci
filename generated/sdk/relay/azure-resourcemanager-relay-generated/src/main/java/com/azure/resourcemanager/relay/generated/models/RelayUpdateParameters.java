@@ -12,7 +12,9 @@ import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.Map;
 
-/** Description of a namespace resource. */
+/**
+ * Description of a namespace resource.
+ */
 @Fluent
 public final class RelayUpdateParameters extends ResourceNamespacePatch {
     /*
@@ -27,13 +29,15 @@ public final class RelayUpdateParameters extends ResourceNamespacePatch {
     @JsonProperty(value = "properties")
     private RelayNamespaceProperties innerProperties;
 
-    /** Creates an instance of RelayUpdateParameters class. */
+    /**
+     * Creates an instance of RelayUpdateParameters class.
+     */
     public RelayUpdateParameters() {
     }
 
     /**
      * Get the sku property: SKU of the namespace.
-     *
+     * 
      * @return the sku value.
      */
     public Sku sku() {
@@ -42,7 +46,7 @@ public final class RelayUpdateParameters extends ResourceNamespacePatch {
 
     /**
      * Set the sku property: SKU of the namespace.
-     *
+     * 
      * @param sku the sku value to set.
      * @return the RelayUpdateParameters object itself.
      */
@@ -53,14 +57,16 @@ public final class RelayUpdateParameters extends ResourceNamespacePatch {
 
     /**
      * Get the innerProperties property: Description of Relay namespace.
-     *
+     * 
      * @return the innerProperties value.
      */
     private RelayNamespaceProperties innerProperties() {
         return this.innerProperties;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public RelayUpdateParameters withTags(Map<String, String> tags) {
         super.withTags(tags);
@@ -69,7 +75,7 @@ public final class RelayUpdateParameters extends ResourceNamespacePatch {
 
     /**
      * Get the provisioningState property: Provisioning state of the Namespace.
-     *
+     * 
      * @return the provisioningState value.
      */
     public String provisioningState() {
@@ -78,7 +84,7 @@ public final class RelayUpdateParameters extends ResourceNamespacePatch {
 
     /**
      * Get the status property: Status of the Namespace.
-     *
+     * 
      * @return the status value.
      */
     public String status() {
@@ -87,7 +93,7 @@ public final class RelayUpdateParameters extends ResourceNamespacePatch {
 
     /**
      * Get the createdAt property: The time the namespace was created.
-     *
+     * 
      * @return the createdAt value.
      */
     public OffsetDateTime createdAt() {
@@ -96,7 +102,7 @@ public final class RelayUpdateParameters extends ResourceNamespacePatch {
 
     /**
      * Get the updatedAt property: The time the namespace was updated.
-     *
+     * 
      * @return the updatedAt value.
      */
     public OffsetDateTime updatedAt() {
@@ -105,7 +111,7 @@ public final class RelayUpdateParameters extends ResourceNamespacePatch {
 
     /**
      * Get the serviceBusEndpoint property: Endpoint you can use to perform Service Bus operations.
-     *
+     * 
      * @return the serviceBusEndpoint value.
      */
     public String serviceBusEndpoint() {
@@ -114,7 +120,7 @@ public final class RelayUpdateParameters extends ResourceNamespacePatch {
 
     /**
      * Get the metricId property: Identifier for Azure Insights metrics.
-     *
+     * 
      * @return the metricId value.
      */
     public String metricId() {
@@ -123,7 +129,7 @@ public final class RelayUpdateParameters extends ResourceNamespacePatch {
 
     /**
      * Get the privateEndpointConnections property: List of private endpoint connections.
-     *
+     * 
      * @return the privateEndpointConnections value.
      */
     public List<PrivateEndpointConnectionInner> privateEndpointConnections() {
@@ -132,12 +138,12 @@ public final class RelayUpdateParameters extends ResourceNamespacePatch {
 
     /**
      * Set the privateEndpointConnections property: List of private endpoint connections.
-     *
+     * 
      * @param privateEndpointConnections the privateEndpointConnections value to set.
      * @return the RelayUpdateParameters object itself.
      */
-    public RelayUpdateParameters withPrivateEndpointConnections(
-        List<PrivateEndpointConnectionInner> privateEndpointConnections) {
+    public RelayUpdateParameters
+        withPrivateEndpointConnections(List<PrivateEndpointConnectionInner> privateEndpointConnections) {
         if (this.innerProperties() == null) {
             this.innerProperties = new RelayNamespaceProperties();
         }
@@ -146,9 +152,9 @@ public final class RelayUpdateParameters extends ResourceNamespacePatch {
     }
 
     /**
-     * Get the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
-     * enabled.
-     *
+     * Get the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it
+     * is enabled.
+     * 
      * @return the publicNetworkAccess value.
      */
     public PublicNetworkAccess publicNetworkAccess() {
@@ -156,9 +162,9 @@ public final class RelayUpdateParameters extends ResourceNamespacePatch {
     }
 
     /**
-     * Set the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
-     * enabled.
-     *
+     * Set the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it
+     * is enabled.
+     * 
      * @param publicNetworkAccess the publicNetworkAccess value to set.
      * @return the RelayUpdateParameters object itself.
      */
@@ -172,7 +178,7 @@ public final class RelayUpdateParameters extends ResourceNamespacePatch {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

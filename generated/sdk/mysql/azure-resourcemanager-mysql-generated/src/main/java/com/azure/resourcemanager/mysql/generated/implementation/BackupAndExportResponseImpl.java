@@ -16,8 +16,7 @@ public final class BackupAndExportResponseImpl implements BackupAndExportRespons
 
     private final com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager;
 
-    BackupAndExportResponseImpl(
-        BackupAndExportResponseInner innerObject,
+    BackupAndExportResponseImpl(BackupAndExportResponseInner innerObject,
         com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

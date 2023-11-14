@@ -96,22 +96,14 @@ public final class LogProfileResourceImpl
     private LogProfileResourcePatch updateLogProfilesResource;
 
     public LogProfileResource create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getLogProfiles()
-                .createOrUpdateWithResponse(logProfileName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getLogProfiles()
+            .createOrUpdateWithResponse(logProfileName, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public LogProfileResource create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getLogProfiles()
-                .createOrUpdateWithResponse(logProfileName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getLogProfiles()
+            .createOrUpdateWithResponse(logProfileName, this.innerModel(), context).getValue();
         return this;
     }
 
@@ -127,27 +119,18 @@ public final class LogProfileResourceImpl
     }
 
     public LogProfileResource apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getLogProfiles()
-                .updateWithResponse(logProfileName, updateLogProfilesResource, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getLogProfiles()
+            .updateWithResponse(logProfileName, updateLogProfilesResource, Context.NONE).getValue();
         return this;
     }
 
     public LogProfileResource apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getLogProfiles()
-                .updateWithResponse(logProfileName, updateLogProfilesResource, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getLogProfiles()
+            .updateWithResponse(logProfileName, updateLogProfilesResource, context).getValue();
         return this;
     }
 
-    LogProfileResourceImpl(
-        LogProfileResourceInner innerObject,
+    LogProfileResourceImpl(LogProfileResourceInner innerObject,
         com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -155,14 +138,14 @@ public final class LogProfileResourceImpl
     }
 
     public LogProfileResource refresh() {
-        this.innerObject =
-            serviceManager.serviceClient().getLogProfiles().getWithResponse(logProfileName, Context.NONE).getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getLogProfiles().getWithResponse(logProfileName, Context.NONE).getValue();
         return this;
     }
 
     public LogProfileResource refresh(Context context) {
-        this.innerObject =
-            serviceManager.serviceClient().getLogProfiles().getWithResponse(logProfileName, context).getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getLogProfiles().getWithResponse(logProfileName, context).getValue();
         return this;
     }
 

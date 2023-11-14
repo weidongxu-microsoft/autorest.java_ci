@@ -16,8 +16,7 @@ public final class SettingImpl implements Setting {
 
     private final com.azure.resourcemanager.costmanagement.generated.CostManagementManager serviceManager;
 
-    SettingImpl(
-        SettingInner innerObject,
+    SettingImpl(SettingInner innerObject,
         com.azure.resourcemanager.costmanagement.generated.CostManagementManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

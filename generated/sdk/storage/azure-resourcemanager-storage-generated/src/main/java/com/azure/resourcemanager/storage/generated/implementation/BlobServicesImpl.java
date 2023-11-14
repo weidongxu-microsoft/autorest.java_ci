@@ -21,8 +21,8 @@ public final class BlobServicesImpl implements BlobServices {
 
     private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
-    public BlobServicesImpl(
-        BlobServicesClient innerClient, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
+    public BlobServicesImpl(BlobServicesClient innerClient,
+        com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -33,20 +33,17 @@ public final class BlobServicesImpl implements BlobServices {
     }
 
     public PagedIterable<BlobServiceProperties> list(String resourceGroupName, String accountName, Context context) {
-        PagedIterable<BlobServicePropertiesInner> inner =
-            this.serviceClient().list(resourceGroupName, accountName, context);
+        PagedIterable<BlobServicePropertiesInner> inner
+            = this.serviceClient().list(resourceGroupName, accountName, context);
         return Utils.mapPage(inner, inner1 -> new BlobServicePropertiesImpl(inner1, this.manager()));
     }
 
-    public Response<BlobServiceProperties> getServicePropertiesWithResponse(
-        String resourceGroupName, String accountName, Context context) {
-        Response<BlobServicePropertiesInner> inner =
-            this.serviceClient().getServicePropertiesWithResponse(resourceGroupName, accountName, context);
+    public Response<BlobServiceProperties> getServicePropertiesWithResponse(String resourceGroupName,
+        String accountName, Context context) {
+        Response<BlobServicePropertiesInner> inner
+            = this.serviceClient().getServicePropertiesWithResponse(resourceGroupName, accountName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new BlobServicePropertiesImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -65,19 +62,13 @@ public final class BlobServicesImpl implements BlobServices {
     public BlobServiceProperties getServicePropertiesById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
         }
         return this.getServicePropertiesWithResponse(resourceGroupName, accountName, Context.NONE).getValue();
     }
@@ -85,19 +76,13 @@ public final class BlobServicesImpl implements BlobServices {
     public Response<BlobServiceProperties> getServicePropertiesByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
         }
         return this.getServicePropertiesWithResponse(resourceGroupName, accountName, context);
     }

@@ -17,7 +17,7 @@ import com.azure.resourcemanager.network.generated.fluent.models.NetworkInterfac
 public interface NetworkInterfaceIpConfigurationsClient {
     /**
      * Get all ip configurations in a network interface.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkInterfaceName The name of the network interface.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -30,7 +30,7 @@ public interface NetworkInterfaceIpConfigurationsClient {
 
     /**
      * Get all ip configurations in a network interface.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkInterfaceName The name of the network interface.
      * @param context The context to associate with this operation.
@@ -40,12 +40,12 @@ public interface NetworkInterfaceIpConfigurationsClient {
      * @return all ip configurations in a network interface as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<NetworkInterfaceIpConfigurationInner> list(
-        String resourceGroupName, String networkInterfaceName, Context context);
+    PagedIterable<NetworkInterfaceIpConfigurationInner> list(String resourceGroupName, String networkInterfaceName,
+        Context context);
 
     /**
      * Gets the specified network interface ip configuration.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkInterfaceName The name of the network interface.
      * @param ipConfigurationName The name of the ip configuration name.
@@ -56,12 +56,12 @@ public interface NetworkInterfaceIpConfigurationsClient {
      * @return the specified network interface ip configuration along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<NetworkInterfaceIpConfigurationInner> getWithResponse(
-        String resourceGroupName, String networkInterfaceName, String ipConfigurationName, Context context);
+    Response<NetworkInterfaceIpConfigurationInner> getWithResponse(String resourceGroupName,
+        String networkInterfaceName, String ipConfigurationName, Context context);
 
     /**
      * Gets the specified network interface ip configuration.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkInterfaceName The name of the network interface.
      * @param ipConfigurationName The name of the ip configuration name.
@@ -71,6 +71,6 @@ public interface NetworkInterfaceIpConfigurationsClient {
      * @return the specified network interface ip configuration.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    NetworkInterfaceIpConfigurationInner get(
-        String resourceGroupName, String networkInterfaceName, String ipConfigurationName);
+    NetworkInterfaceIpConfigurationInner get(String resourceGroupName, String networkInterfaceName,
+        String ipConfigurationName);
 }

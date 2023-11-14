@@ -6,32 +6,34 @@ package com.azure.resourcemanager.resources.generated.models;
 
 import com.azure.resourcemanager.resources.generated.fluent.models.DeploymentOperationInner;
 
-/** An immutable client-side representation of DeploymentOperation. */
+/**
+ * An immutable client-side representation of DeploymentOperation.
+ */
 public interface DeploymentOperation {
     /**
      * Gets the id property: Full deployment operation ID.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the operationId property: Deployment operation ID.
-     *
+     * 
      * @return the operationId value.
      */
     String operationId();
 
     /**
      * Gets the properties property: Deployment properties.
-     *
+     * 
      * @return the properties value.
      */
     DeploymentOperationProperties properties();
 
     /**
      * Gets the inner com.azure.resourcemanager.resources.generated.fluent.models.DeploymentOperationInner object.
-     *
+     * 
      * @return the inner object.
      */
     DeploymentOperationInner innerModel();

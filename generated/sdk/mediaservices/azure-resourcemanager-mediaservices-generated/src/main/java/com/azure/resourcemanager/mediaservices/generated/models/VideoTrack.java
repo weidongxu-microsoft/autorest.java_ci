@@ -8,18 +8,22 @@ import com.azure.core.annotation.Immutable;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** Represents a video track in the asset. */
+/**
+ * Represents a video track in the asset.
+ */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
 @JsonTypeName("#Microsoft.Media.VideoTrack")
 @Immutable
 public final class VideoTrack extends TrackBase {
-    /** Creates an instance of VideoTrack class. */
+    /**
+     * Creates an instance of VideoTrack class.
+     */
     public VideoTrack() {
     }
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

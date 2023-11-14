@@ -25,13 +25,15 @@ public final class UtcClipTime extends ClipTime {
     @JsonProperty(value = "time", required = true)
     private OffsetDateTime time;
 
-    /** Creates an instance of UtcClipTime class. */
+    /**
+     * Creates an instance of UtcClipTime class.
+     */
     public UtcClipTime() {
     }
 
     /**
      * Get the time property: The time position on the timeline of the input media based on Utc time.
-     *
+     * 
      * @return the time value.
      */
     public OffsetDateTime time() {
@@ -40,7 +42,7 @@ public final class UtcClipTime extends ClipTime {
 
     /**
      * Set the time property: The time position on the timeline of the input media based on Utc time.
-     *
+     * 
      * @param time the time value to set.
      * @return the UtcClipTime object itself.
      */
@@ -51,16 +53,15 @@ public final class UtcClipTime extends ClipTime {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override
     public void validate() {
         super.validate();
         if (time() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property time in model UtcClipTime"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property time in model UtcClipTime"));
         }
     }
 

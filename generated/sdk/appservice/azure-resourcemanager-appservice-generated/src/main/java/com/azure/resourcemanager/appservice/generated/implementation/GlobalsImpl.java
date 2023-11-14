@@ -25,8 +25,8 @@ public final class GlobalsImpl implements Globals {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    public GlobalsImpl(
-        GlobalsClient innerClient, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
+    public GlobalsImpl(GlobalsClient innerClient,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -34,10 +34,7 @@ public final class GlobalsImpl implements Globals {
     public Response<DeletedSite> getDeletedWebAppWithResponse(String deletedSiteId, Context context) {
         Response<DeletedSiteInner> inner = this.serviceClient().getDeletedWebAppWithResponse(deletedSiteId, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DeletedSiteImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -54,18 +51,11 @@ public final class GlobalsImpl implements Globals {
     }
 
     public Response<List<Snapshot>> getDeletedWebAppSnapshotsWithResponse(String deletedSiteId, Context context) {
-        Response<List<SnapshotInner>> inner =
-            this.serviceClient().getDeletedWebAppSnapshotsWithResponse(deletedSiteId, context);
+        Response<List<SnapshotInner>> inner
+            = this.serviceClient().getDeletedWebAppSnapshotsWithResponse(deletedSiteId, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
-                inner
-                    .getValue()
-                    .stream()
-                    .map(inner1 -> new SnapshotImpl(inner1, this.manager()))
-                    .collect(Collectors.toList()));
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(), inner.getValue()
+                .stream().map(inner1 -> new SnapshotImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return null;
         }
@@ -74,22 +64,17 @@ public final class GlobalsImpl implements Globals {
     public List<Snapshot> getDeletedWebAppSnapshots(String deletedSiteId) {
         List<SnapshotInner> inner = this.serviceClient().getDeletedWebAppSnapshots(deletedSiteId);
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new SnapshotImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(
+                inner.stream().map(inner1 -> new SnapshotImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
     }
 
-    public Response<Void> getSubscriptionOperationWithAsyncResponseWithResponse(
-        String location, String operationId, Context context) {
-        return this
-            .serviceClient()
-            .getSubscriptionOperationWithAsyncResponseWithResponse(location, operationId, context);
+    public Response<Void> getSubscriptionOperationWithAsyncResponseWithResponse(String location, String operationId,
+        Context context) {
+        return this.serviceClient().getSubscriptionOperationWithAsyncResponseWithResponse(location, operationId,
+            context);
     }
 
     public void getSubscriptionOperationWithAsyncResponse(String location, String operationId) {

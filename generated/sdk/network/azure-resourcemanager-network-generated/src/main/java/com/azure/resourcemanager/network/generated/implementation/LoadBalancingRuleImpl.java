@@ -18,8 +18,8 @@ public final class LoadBalancingRuleImpl implements LoadBalancingRule {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    LoadBalancingRuleImpl(
-        LoadBalancingRuleInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    LoadBalancingRuleImpl(LoadBalancingRuleInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

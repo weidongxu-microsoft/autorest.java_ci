@@ -16,8 +16,7 @@ public final class ApplicationGatewayWafDynamicManifestResultImpl
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    ApplicationGatewayWafDynamicManifestResultImpl(
-        ApplicationGatewayWafDynamicManifestResultInner innerObject,
+    ApplicationGatewayWafDynamicManifestResultImpl(ApplicationGatewayWafDynamicManifestResultInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

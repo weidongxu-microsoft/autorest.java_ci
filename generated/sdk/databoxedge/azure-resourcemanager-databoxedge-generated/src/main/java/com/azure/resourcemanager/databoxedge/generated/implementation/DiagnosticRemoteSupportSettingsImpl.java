@@ -16,8 +16,7 @@ public final class DiagnosticRemoteSupportSettingsImpl implements DiagnosticRemo
 
     private final com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager;
 
-    DiagnosticRemoteSupportSettingsImpl(
-        DiagnosticRemoteSupportSettingsInner innerObject,
+    DiagnosticRemoteSupportSettingsImpl(DiagnosticRemoteSupportSettingsInner innerObject,
         com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

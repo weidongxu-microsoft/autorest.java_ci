@@ -15,8 +15,7 @@ public final class ListStreamingLocatorsResponseImpl implements ListStreamingLoc
 
     private final com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager;
 
-    ListStreamingLocatorsResponseImpl(
-        ListStreamingLocatorsResponseInner innerObject,
+    ListStreamingLocatorsResponseImpl(ListStreamingLocatorsResponseInner innerObject,
         com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

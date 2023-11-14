@@ -10,7 +10,9 @@ import com.azure.resourcemanager.postgresql.generated.models.ServerKeyType;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
-/** Properties for a key execution. */
+/**
+ * Properties for a key execution.
+ */
 @Fluent
 public final class ServerKeyProperties {
     /*
@@ -31,13 +33,15 @@ public final class ServerKeyProperties {
     @JsonProperty(value = "creationDate", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime creationDate;
 
-    /** Creates an instance of ServerKeyProperties class. */
+    /**
+     * Creates an instance of ServerKeyProperties class.
+     */
     public ServerKeyProperties() {
     }
 
     /**
      * Get the serverKeyType property: The key type like 'AzureKeyVault'.
-     *
+     * 
      * @return the serverKeyType value.
      */
     public ServerKeyType serverKeyType() {
@@ -46,7 +50,7 @@ public final class ServerKeyProperties {
 
     /**
      * Set the serverKeyType property: The key type like 'AzureKeyVault'.
-     *
+     * 
      * @param serverKeyType the serverKeyType value to set.
      * @return the ServerKeyProperties object itself.
      */
@@ -57,7 +61,7 @@ public final class ServerKeyProperties {
 
     /**
      * Get the uri property: The URI of the key.
-     *
+     * 
      * @return the uri value.
      */
     public String uri() {
@@ -66,7 +70,7 @@ public final class ServerKeyProperties {
 
     /**
      * Set the uri property: The URI of the key.
-     *
+     * 
      * @param uri the uri value to set.
      * @return the ServerKeyProperties object itself.
      */
@@ -77,7 +81,7 @@ public final class ServerKeyProperties {
 
     /**
      * Get the creationDate property: The key creation date.
-     *
+     * 
      * @return the creationDate value.
      */
     public OffsetDateTime creationDate() {
@@ -86,15 +90,13 @@ public final class ServerKeyProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (serverKeyType() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property serverKeyType in model ServerKeyProperties"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property serverKeyType in model ServerKeyProperties"));
         }
     }
 

@@ -20,22 +20,18 @@ public final class NetworkSecurityPerimeterConfigurationsImpl implements Network
 
     private final com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager;
 
-    public NetworkSecurityPerimeterConfigurationsImpl(
-        NetworkSecurityPerimeterConfigurationsClient innerClient,
+    public NetworkSecurityPerimeterConfigurationsImpl(NetworkSecurityPerimeterConfigurationsClient innerClient,
         com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<NetworkSecurityPerimeterConfigurationList> listWithResponse(
-        String resourceGroupName, String namespaceName, Context context) {
-        Response<NetworkSecurityPerimeterConfigurationListInner> inner =
-            this.serviceClient().listWithResponse(resourceGroupName, namespaceName, context);
+    public Response<NetworkSecurityPerimeterConfigurationList> listWithResponse(String resourceGroupName,
+        String namespaceName, Context context) {
+        Response<NetworkSecurityPerimeterConfigurationListInner> inner
+            = this.serviceClient().listWithResponse(resourceGroupName, namespaceName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new NetworkSecurityPerimeterConfigurationListImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -43,8 +39,8 @@ public final class NetworkSecurityPerimeterConfigurationsImpl implements Network
     }
 
     public NetworkSecurityPerimeterConfigurationList list(String resourceGroupName, String namespaceName) {
-        NetworkSecurityPerimeterConfigurationListInner inner =
-            this.serviceClient().list(resourceGroupName, namespaceName);
+        NetworkSecurityPerimeterConfigurationListInner inner
+            = this.serviceClient().list(resourceGroupName, namespaceName);
         if (inner != null) {
             return new NetworkSecurityPerimeterConfigurationListImpl(inner, this.manager());
         } else {

@@ -7,7 +7,9 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The live event metadata insertion endpoint. */
+/**
+ * The live event metadata insertion endpoint.
+ */
 @Fluent
 public final class LiveEventTimedMetadataEndpoint {
     /*
@@ -16,13 +18,15 @@ public final class LiveEventTimedMetadataEndpoint {
     @JsonProperty(value = "url")
     private String url;
 
-    /** Creates an instance of LiveEventTimedMetadataEndpoint class. */
+    /**
+     * Creates an instance of LiveEventTimedMetadataEndpoint class.
+     */
     public LiveEventTimedMetadataEndpoint() {
     }
 
     /**
      * Get the url property: The metadata endpoint URL.
-     *
+     * 
      * @return the url value.
      */
     public String url() {
@@ -31,7 +35,7 @@ public final class LiveEventTimedMetadataEndpoint {
 
     /**
      * Set the url property: The metadata endpoint URL.
-     *
+     * 
      * @param url the url value to set.
      * @return the LiveEventTimedMetadataEndpoint object itself.
      */
@@ -42,7 +46,7 @@ public final class LiveEventTimedMetadataEndpoint {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

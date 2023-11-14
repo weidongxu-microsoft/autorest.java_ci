@@ -10,7 +10,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
 
-/** The properties of the EventHubConsumerGroupInfo object. */
+/**
+ * The properties of the EventHubConsumerGroupInfo object.
+ */
 @Fluent
 public final class EventHubConsumerGroupInfoInner extends ProxyResource {
     /*
@@ -26,13 +28,15 @@ public final class EventHubConsumerGroupInfoInner extends ProxyResource {
     @JsonProperty(value = "etag", access = JsonProperty.Access.WRITE_ONLY)
     private String etag;
 
-    /** Creates an instance of EventHubConsumerGroupInfoInner class. */
+    /**
+     * Creates an instance of EventHubConsumerGroupInfoInner class.
+     */
     public EventHubConsumerGroupInfoInner() {
     }
 
     /**
      * Get the properties property: The tags.
-     *
+     * 
      * @return the properties value.
      */
     public Map<String, Object> properties() {
@@ -41,7 +45,7 @@ public final class EventHubConsumerGroupInfoInner extends ProxyResource {
 
     /**
      * Set the properties property: The tags.
-     *
+     * 
      * @param properties the properties value to set.
      * @return the EventHubConsumerGroupInfoInner object itself.
      */
@@ -52,7 +56,7 @@ public final class EventHubConsumerGroupInfoInner extends ProxyResource {
 
     /**
      * Get the etag property: The etag.
-     *
+     * 
      * @return the etag value.
      */
     public String etag() {
@@ -61,7 +65,7 @@ public final class EventHubConsumerGroupInfoInner extends ProxyResource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

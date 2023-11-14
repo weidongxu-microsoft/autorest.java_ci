@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of VpnGateways. */
+/**
+ * Resource collection API of VpnGateways.
+ */
 public interface VpnGateways {
     /**
      * Retrieves the details of a virtual wan vpn gateway.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @param context The context to associate with this operation.
@@ -25,7 +27,7 @@ public interface VpnGateways {
 
     /**
      * Retrieves the details of a virtual wan vpn gateway.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -37,7 +39,7 @@ public interface VpnGateways {
 
     /**
      * Deletes a virtual wan vpn gateway.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -48,7 +50,7 @@ public interface VpnGateways {
 
     /**
      * Deletes a virtual wan vpn gateway.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @param context The context to associate with this operation.
@@ -60,7 +62,7 @@ public interface VpnGateways {
 
     /**
      * Resets the primary of the vpn gateway in the specified resource group.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -72,7 +74,7 @@ public interface VpnGateways {
 
     /**
      * Resets the primary of the vpn gateway in the specified resource group.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @param ipConfigurationId VpnGateway ipConfigurationId to specify the gateway instance.
@@ -86,7 +88,7 @@ public interface VpnGateways {
 
     /**
      * Starts packet capture on vpn gateway in the specified resource group.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -98,7 +100,7 @@ public interface VpnGateways {
 
     /**
      * Starts packet capture on vpn gateway in the specified resource group.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @param parameters Vpn gateway packet capture parameters supplied to start packet capture on vpn gateway.
@@ -108,15 +110,12 @@ public interface VpnGateways {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response.
      */
-    String startPacketCapture(
-        String resourceGroupName,
-        String gatewayName,
-        VpnGatewayPacketCaptureStartParameters parameters,
-        Context context);
+    String startPacketCapture(String resourceGroupName, String gatewayName,
+        VpnGatewayPacketCaptureStartParameters parameters, Context context);
 
     /**
      * Stops packet capture on vpn gateway in the specified resource group.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -128,7 +127,7 @@ public interface VpnGateways {
 
     /**
      * Stops packet capture on vpn gateway in the specified resource group.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @param parameters Vpn gateway packet capture parameters supplied to stop packet capture on vpn gateway.
@@ -138,15 +137,12 @@ public interface VpnGateways {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response.
      */
-    String stopPacketCapture(
-        String resourceGroupName,
-        String gatewayName,
-        VpnGatewayPacketCaptureStopParameters parameters,
-        Context context);
+    String stopPacketCapture(String resourceGroupName, String gatewayName,
+        VpnGatewayPacketCaptureStopParameters parameters, Context context);
 
     /**
      * Lists all the VpnGateways in a resource group.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -157,7 +153,7 @@ public interface VpnGateways {
 
     /**
      * Lists all the VpnGateways in a resource group.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -169,7 +165,7 @@ public interface VpnGateways {
 
     /**
      * Lists all the VpnGateways in a subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return result of the request to list VpnGateways as paginated response with {@link PagedIterable}.
@@ -178,7 +174,7 @@ public interface VpnGateways {
 
     /**
      * Lists all the VpnGateways in a subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -189,7 +185,7 @@ public interface VpnGateways {
 
     /**
      * Retrieves the details of a virtual wan vpn gateway.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -200,7 +196,7 @@ public interface VpnGateways {
 
     /**
      * Retrieves the details of a virtual wan vpn gateway.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -212,7 +208,7 @@ public interface VpnGateways {
 
     /**
      * Deletes a virtual wan vpn gateway.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -222,7 +218,7 @@ public interface VpnGateways {
 
     /**
      * Deletes a virtual wan vpn gateway.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -233,7 +229,7 @@ public interface VpnGateways {
 
     /**
      * Begins definition for a new VpnGateway resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new VpnGateway definition.
      */

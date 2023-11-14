@@ -22,21 +22,18 @@ public final class AdminKeysImpl implements AdminKeys {
 
     private final com.azure.resourcemanager.search.generated.SearchManager serviceManager;
 
-    public AdminKeysImpl(
-        AdminKeysClient innerClient, com.azure.resourcemanager.search.generated.SearchManager serviceManager) {
+    public AdminKeysImpl(AdminKeysClient innerClient,
+        com.azure.resourcemanager.search.generated.SearchManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<AdminKeyResult> getWithResponse(
-        String resourceGroupName, String searchServiceName, UUID clientRequestId, Context context) {
-        Response<AdminKeyResultInner> inner =
-            this.serviceClient().getWithResponse(resourceGroupName, searchServiceName, clientRequestId, context);
+    public Response<AdminKeyResult> getWithResponse(String resourceGroupName, String searchServiceName,
+        UUID clientRequestId, Context context) {
+        Response<AdminKeyResultInner> inner
+            = this.serviceClient().getWithResponse(resourceGroupName, searchServiceName, clientRequestId, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new AdminKeyResultImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -52,21 +49,12 @@ public final class AdminKeysImpl implements AdminKeys {
         }
     }
 
-    public Response<AdminKeyResult> regenerateWithResponse(
-        String resourceGroupName,
-        String searchServiceName,
-        AdminKeyKind keyKind,
-        UUID clientRequestId,
-        Context context) {
-        Response<AdminKeyResultInner> inner =
-            this
-                .serviceClient()
-                .regenerateWithResponse(resourceGroupName, searchServiceName, keyKind, clientRequestId, context);
+    public Response<AdminKeyResult> regenerateWithResponse(String resourceGroupName, String searchServiceName,
+        AdminKeyKind keyKind, UUID clientRequestId, Context context) {
+        Response<AdminKeyResultInner> inner = this.serviceClient().regenerateWithResponse(resourceGroupName,
+            searchServiceName, keyKind, clientRequestId, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new AdminKeyResultImpl(inner.getValue(), this.manager()));
         } else {
             return null;

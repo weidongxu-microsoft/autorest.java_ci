@@ -21,21 +21,18 @@ public final class VpnSitesImpl implements VpnSites {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public VpnSitesImpl(
-        VpnSitesClient innerClient, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    public VpnSitesImpl(VpnSitesClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<VpnSite> getByResourceGroupWithResponse(
-        String resourceGroupName, String vpnSiteName, Context context) {
-        Response<VpnSiteInner> inner =
-            this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, vpnSiteName, context);
+    public Response<VpnSite> getByResourceGroupWithResponse(String resourceGroupName, String vpnSiteName,
+        Context context) {
+        Response<VpnSiteInner> inner
+            = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, vpnSiteName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new VpnSiteImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -82,18 +79,13 @@ public final class VpnSitesImpl implements VpnSites {
     public VpnSite getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String vpnSiteName = Utils.getValueFromIdByName(id, "vpnSites");
         if (vpnSiteName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'vpnSites'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'vpnSites'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, vpnSiteName, Context.NONE).getValue();
     }
@@ -101,18 +93,13 @@ public final class VpnSitesImpl implements VpnSites {
     public Response<VpnSite> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String vpnSiteName = Utils.getValueFromIdByName(id, "vpnSites");
         if (vpnSiteName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'vpnSites'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'vpnSites'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, vpnSiteName, context);
     }
@@ -120,18 +107,13 @@ public final class VpnSitesImpl implements VpnSites {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String vpnSiteName = Utils.getValueFromIdByName(id, "vpnSites");
         if (vpnSiteName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'vpnSites'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'vpnSites'.", id)));
         }
         this.delete(resourceGroupName, vpnSiteName, Context.NONE);
     }
@@ -139,18 +121,13 @@ public final class VpnSitesImpl implements VpnSites {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String vpnSiteName = Utils.getValueFromIdByName(id, "vpnSites");
         if (vpnSiteName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'vpnSites'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'vpnSites'.", id)));
         }
         this.delete(resourceGroupName, vpnSiteName, context);
     }

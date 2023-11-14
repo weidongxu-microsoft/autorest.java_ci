@@ -14,8 +14,7 @@ public final class DatabasePrincipalImpl implements DatabasePrincipal {
 
     private final com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager;
 
-    DatabasePrincipalImpl(
-        DatabasePrincipalInner innerObject,
+    DatabasePrincipalImpl(DatabasePrincipalInner innerObject,
         com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

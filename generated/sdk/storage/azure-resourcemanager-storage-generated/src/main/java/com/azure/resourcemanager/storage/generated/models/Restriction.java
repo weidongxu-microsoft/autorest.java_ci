@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The restriction because of which SKU cannot be used. */
+/**
+ * The restriction because of which SKU cannot be used.
+ */
 @Fluent
 public final class Restriction {
     /*
@@ -32,13 +34,15 @@ public final class Restriction {
     @JsonProperty(value = "reasonCode")
     private ReasonCode reasonCode;
 
-    /** Creates an instance of Restriction class. */
+    /**
+     * Creates an instance of Restriction class.
+     */
     public Restriction() {
     }
 
     /**
      * Get the type property: The type of restrictions. As of now only possible value for this is location.
-     *
+     * 
      * @return the type value.
      */
     public String type() {
@@ -48,7 +52,7 @@ public final class Restriction {
     /**
      * Get the values property: The value of restrictions. If the restriction type is set to location. This would be
      * different locations where the SKU is restricted.
-     *
+     * 
      * @return the values value.
      */
     public List<String> values() {
@@ -57,9 +61,9 @@ public final class Restriction {
 
     /**
      * Get the reasonCode property: The reason for the restriction. As of now this can be "QuotaId" or
-     * "NotAvailableForSubscription". Quota Id is set when the SKU has requiredQuotas parameter as the subscription does
-     * not belong to that quota. The "NotAvailableForSubscription" is related to capacity at DC.
-     *
+     * "NotAvailableForSubscription". Quota Id is set when the SKU has requiredQuotas parameter as the subscription
+     * does not belong to that quota. The "NotAvailableForSubscription" is related to capacity at DC.
+     * 
      * @return the reasonCode value.
      */
     public ReasonCode reasonCode() {
@@ -68,9 +72,9 @@ public final class Restriction {
 
     /**
      * Set the reasonCode property: The reason for the restriction. As of now this can be "QuotaId" or
-     * "NotAvailableForSubscription". Quota Id is set when the SKU has requiredQuotas parameter as the subscription does
-     * not belong to that quota. The "NotAvailableForSubscription" is related to capacity at DC.
-     *
+     * "NotAvailableForSubscription". Quota Id is set when the SKU has requiredQuotas parameter as the subscription
+     * does not belong to that quota. The "NotAvailableForSubscription" is related to capacity at DC.
+     * 
      * @param reasonCode the reasonCode value to set.
      * @return the Restriction object itself.
      */
@@ -81,7 +85,7 @@ public final class Restriction {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

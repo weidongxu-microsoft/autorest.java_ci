@@ -13,46 +13,48 @@ import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.Map;
 
-/** An immutable client-side representation of VirtualMachineScaleSet. */
+/**
+ * An immutable client-side representation of VirtualMachineScaleSet.
+ */
 public interface VirtualMachineScaleSet {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the name property: The name of the resource.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the type property: The type of the resource.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the location property: The geo-location where the resource lives.
-     *
+     * 
      * @return the location value.
      */
     String location();
 
     /**
      * Gets the tags property: Resource tags.
-     *
+     * 
      * @return the tags value.
      */
     Map<String, String> tags();
 
     /**
      * Gets the sku property: The virtual machine scale set sku.
-     *
+     * 
      * @return the sku value.
      */
     Sku sku();
@@ -63,14 +65,14 @@ public interface VirtualMachineScaleSet {
      * enable the image for programmatic use. In the Azure portal, find the marketplace image that you want to use and
      * then click **Want to deploy programmatically, Get Started -&gt;**. Enter any required information and then click
      * **Save**.
-     *
+     * 
      * @return the plan value.
      */
     Plan plan();
 
     /**
      * Gets the identity property: The identity of the virtual machine scale set, if configured.
-     *
+     * 
      * @return the identity value.
      */
     VirtualMachineScaleSetIdentity identity();
@@ -78,49 +80,49 @@ public interface VirtualMachineScaleSet {
     /**
      * Gets the zones property: The virtual machine scale set zones. NOTE: Availability zones can only be set when you
      * create the scale set.
-     *
+     * 
      * @return the zones value.
      */
     List<String> zones();
 
     /**
      * Gets the extendedLocation property: The extended location of the Virtual Machine Scale Set.
-     *
+     * 
      * @return the extendedLocation value.
      */
     ExtendedLocation extendedLocation();
 
     /**
      * Gets the upgradePolicy property: The upgrade policy.
-     *
+     * 
      * @return the upgradePolicy value.
      */
     UpgradePolicy upgradePolicy();
 
     /**
      * Gets the automaticRepairsPolicy property: Policy for automatic repairs.
-     *
+     * 
      * @return the automaticRepairsPolicy value.
      */
     AutomaticRepairsPolicy automaticRepairsPolicy();
 
     /**
      * Gets the virtualMachineProfile property: The virtual machine profile.
-     *
+     * 
      * @return the virtualMachineProfile value.
      */
     VirtualMachineScaleSetVMProfile virtualMachineProfile();
 
     /**
      * Gets the provisioningState property: The provisioning state, which only appears in the response.
-     *
+     * 
      * @return the provisioningState value.
      */
     String provisioningState();
 
     /**
      * Gets the overprovision property: Specifies whether the Virtual Machine Scale Set should be overprovisioned.
-     *
+     * 
      * @return the overprovision value.
      */
     Boolean overprovision();
@@ -129,14 +131,14 @@ public interface VirtualMachineScaleSet {
      * Gets the doNotRunExtensionsOnOverprovisionedVMs property: When Overprovision is enabled, extensions are launched
      * only on the requested number of VMs which are finally kept. This property will hence ensure that the extensions
      * do not run on the extra overprovisioned VMs.
-     *
+     * 
      * @return the doNotRunExtensionsOnOverprovisionedVMs value.
      */
     Boolean doNotRunExtensionsOnOverprovisionedVMs();
 
     /**
      * Gets the uniqueId property: Specifies the ID which uniquely identifies a Virtual Machine Scale Set.
-     *
+     * 
      * @return the uniqueId value.
      */
     String uniqueId();
@@ -145,7 +147,7 @@ public interface VirtualMachineScaleSet {
      * Gets the singlePlacementGroup property: When true this limits the scale set to a single placement group, of max
      * size 100 virtual machines. NOTE: If singlePlacementGroup is true, it may be modified to false. However, if
      * singlePlacementGroup is false, it may not be modified to true.
-     *
+     * 
      * @return the singlePlacementGroup value.
      */
     Boolean singlePlacementGroup();
@@ -154,14 +156,14 @@ public interface VirtualMachineScaleSet {
      * Gets the zoneBalance property: Whether to force strictly even Virtual Machine distribution cross x-zones in case
      * there is zone outage. zoneBalance property can only be set if the zones property of the scale set contains more
      * than one zone. If there are no zones or only one zone specified, then zoneBalance property should not be set.
-     *
+     * 
      * @return the zoneBalance value.
      */
     Boolean zoneBalance();
 
     /**
      * Gets the platformFaultDomainCount property: Fault Domain count for each placement group.
-     *
+     * 
      * @return the platformFaultDomainCount value.
      */
     Integer platformFaultDomainCount();
@@ -169,7 +171,7 @@ public interface VirtualMachineScaleSet {
     /**
      * Gets the proximityPlacementGroup property: Specifies information about the proximity placement group that the
      * virtual machine scale set should be assigned to. Minimum api-version: 2018-04-01.
-     *
+     * 
      * @return the proximityPlacementGroup value.
      */
     SubResource proximityPlacementGroup();
@@ -177,7 +179,7 @@ public interface VirtualMachineScaleSet {
     /**
      * Gets the hostGroup property: Specifies information about the dedicated host group that the virtual machine scale
      * set resides in. Minimum api-version: 2020-06-01.
-     *
+     * 
      * @return the hostGroup value.
      */
     SubResource hostGroup();
@@ -186,7 +188,7 @@ public interface VirtualMachineScaleSet {
      * Gets the additionalCapabilities property: Specifies additional capabilities enabled or disabled on the Virtual
      * Machines in the Virtual Machine Scale Set. For instance: whether the Virtual Machines have the capability to
      * support attaching managed data disks with UltraSSD_LRS storage account type.
-     *
+     * 
      * @return the additionalCapabilities value.
      */
     AdditionalCapabilities additionalCapabilities();
@@ -194,21 +196,21 @@ public interface VirtualMachineScaleSet {
     /**
      * Gets the scaleInPolicy property: Specifies the policies applied when scaling in Virtual Machines in the Virtual
      * Machine Scale Set.
-     *
+     * 
      * @return the scaleInPolicy value.
      */
     ScaleInPolicy scaleInPolicy();
 
     /**
      * Gets the orchestrationMode property: Specifies the orchestration mode for the virtual machine scale set.
-     *
+     * 
      * @return the orchestrationMode value.
      */
     OrchestrationMode orchestrationMode();
 
     /**
      * Gets the spotRestorePolicy property: Specifies the Spot Restore properties for the virtual machine scale set.
-     *
+     * 
      * @return the spotRestorePolicy value.
      */
     SpotRestorePolicy spotRestorePolicy();
@@ -216,7 +218,7 @@ public interface VirtualMachineScaleSet {
     /**
      * Gets the priorityMixPolicy property: Specifies the desired targets for mixing Spot and Regular priority VMs
      * within the same VMSS Flex instance.
-     *
+     * 
      * @return the priorityMixPolicy value.
      */
     PriorityMixPolicy priorityMixPolicy();
@@ -224,65 +226,70 @@ public interface VirtualMachineScaleSet {
     /**
      * Gets the timeCreated property: Specifies the time at which the Virtual Machine Scale Set resource was created.
      * Minimum api-version: 2021-11-01.
-     *
+     * 
      * @return the timeCreated value.
      */
     OffsetDateTime timeCreated();
 
     /**
      * Gets the constrainedMaximumCapacity property: Optional property which must either be set to True or omitted.
-     *
+     * 
      * @return the constrainedMaximumCapacity value.
      */
     Boolean constrainedMaximumCapacity();
 
     /**
      * Gets the region of the resource.
-     *
+     * 
      * @return the region of the resource.
      */
     Region region();
 
     /**
      * Gets the name of the resource region.
-     *
+     * 
      * @return the name of the resource region.
      */
     String regionName();
 
     /**
      * Gets the name of the resource group.
-     *
+     * 
      * @return the name of the resource group.
      */
     String resourceGroupName();
 
     /**
      * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineScaleSetInner object.
-     *
+     * 
      * @return the inner object.
      */
     VirtualMachineScaleSetInner innerModel();
 
-    /** The entirety of the VirtualMachineScaleSet definition. */
-    interface Definition
-        extends DefinitionStages.Blank,
-            DefinitionStages.WithLocation,
-            DefinitionStages.WithResourceGroup,
-            DefinitionStages.WithCreate {
+    /**
+     * The entirety of the VirtualMachineScaleSet definition.
+     */
+    interface Definition extends DefinitionStages.Blank, DefinitionStages.WithLocation,
+        DefinitionStages.WithResourceGroup, DefinitionStages.WithCreate {
     }
 
-    /** The VirtualMachineScaleSet definition stages. */
+    /**
+     * The VirtualMachineScaleSet definition stages.
+     */
     interface DefinitionStages {
-        /** The first stage of the VirtualMachineScaleSet definition. */
+        /**
+         * The first stage of the VirtualMachineScaleSet definition.
+         */
         interface Blank extends WithLocation {
         }
 
-        /** The stage of the VirtualMachineScaleSet definition allowing to specify location. */
+        /**
+         * The stage of the VirtualMachineScaleSet definition allowing to specify location.
+         */
         interface WithLocation {
             /**
              * Specifies the region for the resource.
-             *
+             * 
              * @param location The geo-location where the resource lives.
              * @return the next definition stage.
              */
@@ -290,18 +297,20 @@ public interface VirtualMachineScaleSet {
 
             /**
              * Specifies the region for the resource.
-             *
+             * 
              * @param location The geo-location where the resource lives.
              * @return the next definition stage.
              */
             WithResourceGroup withRegion(String location);
         }
 
-        /** The stage of the VirtualMachineScaleSet definition allowing to specify parent resource. */
+        /**
+         * The stage of the VirtualMachineScaleSet definition allowing to specify parent resource.
+         */
         interface WithResourceGroup {
             /**
              * Specifies resourceGroupName.
-             *
+             * 
              * @param resourceGroupName The name of the resource group.
              * @return the next definition stage.
              */
@@ -312,68 +321,61 @@ public interface VirtualMachineScaleSet {
          * The stage of the VirtualMachineScaleSet definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
          */
-        interface WithCreate
-            extends DefinitionStages.WithTags,
-                DefinitionStages.WithSku,
-                DefinitionStages.WithPlan,
-                DefinitionStages.WithIdentity,
-                DefinitionStages.WithZones,
-                DefinitionStages.WithExtendedLocation,
-                DefinitionStages.WithUpgradePolicy,
-                DefinitionStages.WithAutomaticRepairsPolicy,
-                DefinitionStages.WithVirtualMachineProfile,
-                DefinitionStages.WithOverprovision,
-                DefinitionStages.WithDoNotRunExtensionsOnOverprovisionedVMs,
-                DefinitionStages.WithSinglePlacementGroup,
-                DefinitionStages.WithZoneBalance,
-                DefinitionStages.WithPlatformFaultDomainCount,
-                DefinitionStages.WithProximityPlacementGroup,
-                DefinitionStages.WithHostGroup,
-                DefinitionStages.WithAdditionalCapabilities,
-                DefinitionStages.WithScaleInPolicy,
-                DefinitionStages.WithOrchestrationMode,
-                DefinitionStages.WithSpotRestorePolicy,
-                DefinitionStages.WithPriorityMixPolicy,
-                DefinitionStages.WithConstrainedMaximumCapacity {
+        interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithSku, DefinitionStages.WithPlan,
+            DefinitionStages.WithIdentity, DefinitionStages.WithZones, DefinitionStages.WithExtendedLocation,
+            DefinitionStages.WithUpgradePolicy, DefinitionStages.WithAutomaticRepairsPolicy,
+            DefinitionStages.WithVirtualMachineProfile, DefinitionStages.WithOverprovision,
+            DefinitionStages.WithDoNotRunExtensionsOnOverprovisionedVMs, DefinitionStages.WithSinglePlacementGroup,
+            DefinitionStages.WithZoneBalance, DefinitionStages.WithPlatformFaultDomainCount,
+            DefinitionStages.WithProximityPlacementGroup, DefinitionStages.WithHostGroup,
+            DefinitionStages.WithAdditionalCapabilities, DefinitionStages.WithScaleInPolicy,
+            DefinitionStages.WithOrchestrationMode, DefinitionStages.WithSpotRestorePolicy,
+            DefinitionStages.WithPriorityMixPolicy, DefinitionStages.WithConstrainedMaximumCapacity {
             /**
              * Executes the create request.
-             *
+             * 
              * @return the created resource.
              */
             VirtualMachineScaleSet create();
 
             /**
              * Executes the create request.
-             *
+             * 
              * @param context The context to associate with this operation.
              * @return the created resource.
              */
             VirtualMachineScaleSet create(Context context);
         }
 
-        /** The stage of the VirtualMachineScaleSet definition allowing to specify tags. */
+        /**
+         * The stage of the VirtualMachineScaleSet definition allowing to specify tags.
+         */
         interface WithTags {
             /**
              * Specifies the tags property: Resource tags..
-             *
+             * 
              * @param tags Resource tags.
              * @return the next definition stage.
              */
             WithCreate withTags(Map<String, String> tags);
         }
 
-        /** The stage of the VirtualMachineScaleSet definition allowing to specify sku. */
+        /**
+         * The stage of the VirtualMachineScaleSet definition allowing to specify sku.
+         */
         interface WithSku {
             /**
              * Specifies the sku property: The virtual machine scale set sku..
-             *
+             * 
              * @param sku The virtual machine scale set sku.
              * @return the next definition stage.
              */
             WithCreate withSku(Sku sku);
         }
 
-        /** The stage of the VirtualMachineScaleSet definition allowing to specify plan. */
+        /**
+         * The stage of the VirtualMachineScaleSet definition allowing to specify plan.
+         */
         interface WithPlan {
             /**
              * Specifies the plan property: Specifies information about the marketplace image used to create the virtual
@@ -381,91 +383,105 @@ public interface VirtualMachineScaleSet {
              * API, you must enable the image for programmatic use. In the Azure portal, find the marketplace image that
              * you want to use and then click **Want to deploy programmatically, Get Started -&gt;**. Enter any required
              * information and then click **Save**..
-             *
+             * 
              * @param plan Specifies information about the marketplace image used to create the virtual machine. This
-             *     element is only used for marketplace images. Before you can use a marketplace image from an API, you
-             *     must enable the image for programmatic use. In the Azure portal, find the marketplace image that you
-             *     want to use and then click **Want to deploy programmatically, Get Started -&gt;**. Enter any required
-             *     information and then click **Save**.
+             * element is only used for marketplace images. Before you can use a marketplace image from an API, you must
+             * enable the image for programmatic use. In the Azure portal, find the marketplace image that you want to
+             * use and then click **Want to deploy programmatically, Get Started -&gt;**. Enter any required information
+             * and then click **Save**.
              * @return the next definition stage.
              */
             WithCreate withPlan(Plan plan);
         }
 
-        /** The stage of the VirtualMachineScaleSet definition allowing to specify identity. */
+        /**
+         * The stage of the VirtualMachineScaleSet definition allowing to specify identity.
+         */
         interface WithIdentity {
             /**
              * Specifies the identity property: The identity of the virtual machine scale set, if configured..
-             *
+             * 
              * @param identity The identity of the virtual machine scale set, if configured.
              * @return the next definition stage.
              */
             WithCreate withIdentity(VirtualMachineScaleSetIdentity identity);
         }
 
-        /** The stage of the VirtualMachineScaleSet definition allowing to specify zones. */
+        /**
+         * The stage of the VirtualMachineScaleSet definition allowing to specify zones.
+         */
         interface WithZones {
             /**
              * Specifies the zones property: The virtual machine scale set zones. NOTE: Availability zones can only be
              * set when you create the scale set.
-             *
+             * 
              * @param zones The virtual machine scale set zones. NOTE: Availability zones can only be set when you
-             *     create the scale set.
+             * create the scale set.
              * @return the next definition stage.
              */
             WithCreate withZones(List<String> zones);
         }
 
-        /** The stage of the VirtualMachineScaleSet definition allowing to specify extendedLocation. */
+        /**
+         * The stage of the VirtualMachineScaleSet definition allowing to specify extendedLocation.
+         */
         interface WithExtendedLocation {
             /**
              * Specifies the extendedLocation property: The extended location of the Virtual Machine Scale Set..
-             *
+             * 
              * @param extendedLocation The extended location of the Virtual Machine Scale Set.
              * @return the next definition stage.
              */
             WithCreate withExtendedLocation(ExtendedLocation extendedLocation);
         }
 
-        /** The stage of the VirtualMachineScaleSet definition allowing to specify upgradePolicy. */
+        /**
+         * The stage of the VirtualMachineScaleSet definition allowing to specify upgradePolicy.
+         */
         interface WithUpgradePolicy {
             /**
              * Specifies the upgradePolicy property: The upgrade policy..
-             *
+             * 
              * @param upgradePolicy The upgrade policy.
              * @return the next definition stage.
              */
             WithCreate withUpgradePolicy(UpgradePolicy upgradePolicy);
         }
 
-        /** The stage of the VirtualMachineScaleSet definition allowing to specify automaticRepairsPolicy. */
+        /**
+         * The stage of the VirtualMachineScaleSet definition allowing to specify automaticRepairsPolicy.
+         */
         interface WithAutomaticRepairsPolicy {
             /**
              * Specifies the automaticRepairsPolicy property: Policy for automatic repairs..
-             *
+             * 
              * @param automaticRepairsPolicy Policy for automatic repairs.
              * @return the next definition stage.
              */
             WithCreate withAutomaticRepairsPolicy(AutomaticRepairsPolicy automaticRepairsPolicy);
         }
 
-        /** The stage of the VirtualMachineScaleSet definition allowing to specify virtualMachineProfile. */
+        /**
+         * The stage of the VirtualMachineScaleSet definition allowing to specify virtualMachineProfile.
+         */
         interface WithVirtualMachineProfile {
             /**
              * Specifies the virtualMachineProfile property: The virtual machine profile..
-             *
+             * 
              * @param virtualMachineProfile The virtual machine profile.
              * @return the next definition stage.
              */
             WithCreate withVirtualMachineProfile(VirtualMachineScaleSetVMProfile virtualMachineProfile);
         }
 
-        /** The stage of the VirtualMachineScaleSet definition allowing to specify overprovision. */
+        /**
+         * The stage of the VirtualMachineScaleSet definition allowing to specify overprovision.
+         */
         interface WithOverprovision {
             /**
              * Specifies the overprovision property: Specifies whether the Virtual Machine Scale Set should be
              * overprovisioned..
-             *
+             * 
              * @param overprovision Specifies whether the Virtual Machine Scale Set should be overprovisioned.
              * @return the next definition stage.
              */
@@ -481,155 +497,177 @@ public interface VirtualMachineScaleSet {
              * Specifies the doNotRunExtensionsOnOverprovisionedVMs property: When Overprovision is enabled, extensions
              * are launched only on the requested number of VMs which are finally kept. This property will hence ensure
              * that the extensions do not run on the extra overprovisioned VMs..
-             *
+             * 
              * @param doNotRunExtensionsOnOverprovisionedVMs When Overprovision is enabled, extensions are launched only
-             *     on the requested number of VMs which are finally kept. This property will hence ensure that the
-             *     extensions do not run on the extra overprovisioned VMs.
+             * on the requested number of VMs which are finally kept. This property will hence ensure that the
+             * extensions do not run on the extra overprovisioned VMs.
              * @return the next definition stage.
              */
             WithCreate withDoNotRunExtensionsOnOverprovisionedVMs(Boolean doNotRunExtensionsOnOverprovisionedVMs);
         }
 
-        /** The stage of the VirtualMachineScaleSet definition allowing to specify singlePlacementGroup. */
+        /**
+         * The stage of the VirtualMachineScaleSet definition allowing to specify singlePlacementGroup.
+         */
         interface WithSinglePlacementGroup {
             /**
              * Specifies the singlePlacementGroup property: When true this limits the scale set to a single placement
              * group, of max size 100 virtual machines. NOTE: If singlePlacementGroup is true, it may be modified to
              * false. However, if singlePlacementGroup is false, it may not be modified to true..
-             *
+             * 
              * @param singlePlacementGroup When true this limits the scale set to a single placement group, of max size
-             *     100 virtual machines. NOTE: If singlePlacementGroup is true, it may be modified to false. However, if
-             *     singlePlacementGroup is false, it may not be modified to true.
+             * 100 virtual machines. NOTE: If singlePlacementGroup is true, it may be modified to false. However, if
+             * singlePlacementGroup is false, it may not be modified to true.
              * @return the next definition stage.
              */
             WithCreate withSinglePlacementGroup(Boolean singlePlacementGroup);
         }
 
-        /** The stage of the VirtualMachineScaleSet definition allowing to specify zoneBalance. */
+        /**
+         * The stage of the VirtualMachineScaleSet definition allowing to specify zoneBalance.
+         */
         interface WithZoneBalance {
             /**
              * Specifies the zoneBalance property: Whether to force strictly even Virtual Machine distribution cross
              * x-zones in case there is zone outage. zoneBalance property can only be set if the zones property of the
              * scale set contains more than one zone. If there are no zones or only one zone specified, then zoneBalance
              * property should not be set..
-             *
+             * 
              * @param zoneBalance Whether to force strictly even Virtual Machine distribution cross x-zones in case
-             *     there is zone outage. zoneBalance property can only be set if the zones property of the scale set
-             *     contains more than one zone. If there are no zones or only one zone specified, then zoneBalance
-             *     property should not be set.
+             * there is zone outage. zoneBalance property can only be set if the zones property of the scale set
+             * contains more than one zone. If there are no zones or only one zone specified, then zoneBalance property
+             * should not be set.
              * @return the next definition stage.
              */
             WithCreate withZoneBalance(Boolean zoneBalance);
         }
 
-        /** The stage of the VirtualMachineScaleSet definition allowing to specify platformFaultDomainCount. */
+        /**
+         * The stage of the VirtualMachineScaleSet definition allowing to specify platformFaultDomainCount.
+         */
         interface WithPlatformFaultDomainCount {
             /**
              * Specifies the platformFaultDomainCount property: Fault Domain count for each placement group..
-             *
+             * 
              * @param platformFaultDomainCount Fault Domain count for each placement group.
              * @return the next definition stage.
              */
             WithCreate withPlatformFaultDomainCount(Integer platformFaultDomainCount);
         }
 
-        /** The stage of the VirtualMachineScaleSet definition allowing to specify proximityPlacementGroup. */
+        /**
+         * The stage of the VirtualMachineScaleSet definition allowing to specify proximityPlacementGroup.
+         */
         interface WithProximityPlacementGroup {
             /**
              * Specifies the proximityPlacementGroup property: Specifies information about the proximity placement group
              * that the virtual machine scale set should be assigned to. Minimum api-version: 2018-04-01..
-             *
+             * 
              * @param proximityPlacementGroup Specifies information about the proximity placement group that the virtual
-             *     machine scale set should be assigned to. Minimum api-version: 2018-04-01.
+             * machine scale set should be assigned to. Minimum api-version: 2018-04-01.
              * @return the next definition stage.
              */
             WithCreate withProximityPlacementGroup(SubResource proximityPlacementGroup);
         }
 
-        /** The stage of the VirtualMachineScaleSet definition allowing to specify hostGroup. */
+        /**
+         * The stage of the VirtualMachineScaleSet definition allowing to specify hostGroup.
+         */
         interface WithHostGroup {
             /**
              * Specifies the hostGroup property: Specifies information about the dedicated host group that the virtual
              * machine scale set resides in. Minimum api-version: 2020-06-01..
-             *
+             * 
              * @param hostGroup Specifies information about the dedicated host group that the virtual machine scale set
-             *     resides in. Minimum api-version: 2020-06-01.
+             * resides in. Minimum api-version: 2020-06-01.
              * @return the next definition stage.
              */
             WithCreate withHostGroup(SubResource hostGroup);
         }
 
-        /** The stage of the VirtualMachineScaleSet definition allowing to specify additionalCapabilities. */
+        /**
+         * The stage of the VirtualMachineScaleSet definition allowing to specify additionalCapabilities.
+         */
         interface WithAdditionalCapabilities {
             /**
              * Specifies the additionalCapabilities property: Specifies additional capabilities enabled or disabled on
              * the Virtual Machines in the Virtual Machine Scale Set. For instance: whether the Virtual Machines have
              * the capability to support attaching managed data disks with UltraSSD_LRS storage account type..
-             *
+             * 
              * @param additionalCapabilities Specifies additional capabilities enabled or disabled on the Virtual
-             *     Machines in the Virtual Machine Scale Set. For instance: whether the Virtual Machines have the
-             *     capability to support attaching managed data disks with UltraSSD_LRS storage account type.
+             * Machines in the Virtual Machine Scale Set. For instance: whether the Virtual Machines have the capability
+             * to support attaching managed data disks with UltraSSD_LRS storage account type.
              * @return the next definition stage.
              */
             WithCreate withAdditionalCapabilities(AdditionalCapabilities additionalCapabilities);
         }
 
-        /** The stage of the VirtualMachineScaleSet definition allowing to specify scaleInPolicy. */
+        /**
+         * The stage of the VirtualMachineScaleSet definition allowing to specify scaleInPolicy.
+         */
         interface WithScaleInPolicy {
             /**
              * Specifies the scaleInPolicy property: Specifies the policies applied when scaling in Virtual Machines in
              * the Virtual Machine Scale Set..
-             *
+             * 
              * @param scaleInPolicy Specifies the policies applied when scaling in Virtual Machines in the Virtual
-             *     Machine Scale Set.
+             * Machine Scale Set.
              * @return the next definition stage.
              */
             WithCreate withScaleInPolicy(ScaleInPolicy scaleInPolicy);
         }
 
-        /** The stage of the VirtualMachineScaleSet definition allowing to specify orchestrationMode. */
+        /**
+         * The stage of the VirtualMachineScaleSet definition allowing to specify orchestrationMode.
+         */
         interface WithOrchestrationMode {
             /**
              * Specifies the orchestrationMode property: Specifies the orchestration mode for the virtual machine scale
              * set..
-             *
+             * 
              * @param orchestrationMode Specifies the orchestration mode for the virtual machine scale set.
              * @return the next definition stage.
              */
             WithCreate withOrchestrationMode(OrchestrationMode orchestrationMode);
         }
 
-        /** The stage of the VirtualMachineScaleSet definition allowing to specify spotRestorePolicy. */
+        /**
+         * The stage of the VirtualMachineScaleSet definition allowing to specify spotRestorePolicy.
+         */
         interface WithSpotRestorePolicy {
             /**
              * Specifies the spotRestorePolicy property: Specifies the Spot Restore properties for the virtual machine
              * scale set..
-             *
+             * 
              * @param spotRestorePolicy Specifies the Spot Restore properties for the virtual machine scale set.
              * @return the next definition stage.
              */
             WithCreate withSpotRestorePolicy(SpotRestorePolicy spotRestorePolicy);
         }
 
-        /** The stage of the VirtualMachineScaleSet definition allowing to specify priorityMixPolicy. */
+        /**
+         * The stage of the VirtualMachineScaleSet definition allowing to specify priorityMixPolicy.
+         */
         interface WithPriorityMixPolicy {
             /**
              * Specifies the priorityMixPolicy property: Specifies the desired targets for mixing Spot and Regular
              * priority VMs within the same VMSS Flex instance..
-             *
+             * 
              * @param priorityMixPolicy Specifies the desired targets for mixing Spot and Regular priority VMs within
-             *     the same VMSS Flex instance.
+             * the same VMSS Flex instance.
              * @return the next definition stage.
              */
             WithCreate withPriorityMixPolicy(PriorityMixPolicy priorityMixPolicy);
         }
 
-        /** The stage of the VirtualMachineScaleSet definition allowing to specify constrainedMaximumCapacity. */
+        /**
+         * The stage of the VirtualMachineScaleSet definition allowing to specify constrainedMaximumCapacity.
+         */
         interface WithConstrainedMaximumCapacity {
             /**
              * Specifies the constrainedMaximumCapacity property: Optional property which must either be set to True or
              * omitted..
-             *
+             * 
              * @param constrainedMaximumCapacity Optional property which must either be set to True or omitted.
              * @return the next definition stage.
              */
@@ -639,130 +677,141 @@ public interface VirtualMachineScaleSet {
 
     /**
      * Begins update for the VirtualMachineScaleSet resource.
-     *
+     * 
      * @return the stage of resource update.
      */
     VirtualMachineScaleSet.Update update();
 
-    /** The template for VirtualMachineScaleSet update. */
+    /**
+     * The template for VirtualMachineScaleSet update.
+     */
     interface Update
-        extends UpdateStages.WithTags,
-            UpdateStages.WithSku,
-            UpdateStages.WithPlan,
-            UpdateStages.WithIdentity,
-            UpdateStages.WithUpgradePolicy,
-            UpdateStages.WithAutomaticRepairsPolicy,
-            UpdateStages.WithVirtualMachineProfile,
-            UpdateStages.WithOverprovision,
-            UpdateStages.WithDoNotRunExtensionsOnOverprovisionedVMs,
-            UpdateStages.WithSinglePlacementGroup,
-            UpdateStages.WithAdditionalCapabilities,
-            UpdateStages.WithScaleInPolicy,
-            UpdateStages.WithProximityPlacementGroup,
-            UpdateStages.WithPriorityMixPolicy,
-            UpdateStages.WithSpotRestorePolicy {
+        extends UpdateStages.WithTags, UpdateStages.WithSku, UpdateStages.WithPlan, UpdateStages.WithIdentity,
+        UpdateStages.WithUpgradePolicy, UpdateStages.WithAutomaticRepairsPolicy, UpdateStages.WithVirtualMachineProfile,
+        UpdateStages.WithOverprovision, UpdateStages.WithDoNotRunExtensionsOnOverprovisionedVMs,
+        UpdateStages.WithSinglePlacementGroup, UpdateStages.WithAdditionalCapabilities, UpdateStages.WithScaleInPolicy,
+        UpdateStages.WithProximityPlacementGroup, UpdateStages.WithPriorityMixPolicy,
+        UpdateStages.WithSpotRestorePolicy {
         /**
          * Executes the update request.
-         *
+         * 
          * @return the updated resource.
          */
         VirtualMachineScaleSet apply();
 
         /**
          * Executes the update request.
-         *
+         * 
          * @param context The context to associate with this operation.
          * @return the updated resource.
          */
         VirtualMachineScaleSet apply(Context context);
     }
 
-    /** The VirtualMachineScaleSet update stages. */
+    /**
+     * The VirtualMachineScaleSet update stages.
+     */
     interface UpdateStages {
-        /** The stage of the VirtualMachineScaleSet update allowing to specify tags. */
+        /**
+         * The stage of the VirtualMachineScaleSet update allowing to specify tags.
+         */
         interface WithTags {
             /**
              * Specifies the tags property: Resource tags.
-             *
+             * 
              * @param tags Resource tags.
              * @return the next definition stage.
              */
             Update withTags(Map<String, String> tags);
         }
 
-        /** The stage of the VirtualMachineScaleSet update allowing to specify sku. */
+        /**
+         * The stage of the VirtualMachineScaleSet update allowing to specify sku.
+         */
         interface WithSku {
             /**
              * Specifies the sku property: The virtual machine scale set sku..
-             *
+             * 
              * @param sku The virtual machine scale set sku.
              * @return the next definition stage.
              */
             Update withSku(Sku sku);
         }
 
-        /** The stage of the VirtualMachineScaleSet update allowing to specify plan. */
+        /**
+         * The stage of the VirtualMachineScaleSet update allowing to specify plan.
+         */
         interface WithPlan {
             /**
              * Specifies the plan property: The purchase plan when deploying a virtual machine scale set from VM
              * Marketplace images..
-             *
+             * 
              * @param plan The purchase plan when deploying a virtual machine scale set from VM Marketplace images.
              * @return the next definition stage.
              */
             Update withPlan(Plan plan);
         }
 
-        /** The stage of the VirtualMachineScaleSet update allowing to specify identity. */
+        /**
+         * The stage of the VirtualMachineScaleSet update allowing to specify identity.
+         */
         interface WithIdentity {
             /**
              * Specifies the identity property: The identity of the virtual machine scale set, if configured..
-             *
+             * 
              * @param identity The identity of the virtual machine scale set, if configured.
              * @return the next definition stage.
              */
             Update withIdentity(VirtualMachineScaleSetIdentity identity);
         }
 
-        /** The stage of the VirtualMachineScaleSet update allowing to specify upgradePolicy. */
+        /**
+         * The stage of the VirtualMachineScaleSet update allowing to specify upgradePolicy.
+         */
         interface WithUpgradePolicy {
             /**
              * Specifies the upgradePolicy property: The upgrade policy..
-             *
+             * 
              * @param upgradePolicy The upgrade policy.
              * @return the next definition stage.
              */
             Update withUpgradePolicy(UpgradePolicy upgradePolicy);
         }
 
-        /** The stage of the VirtualMachineScaleSet update allowing to specify automaticRepairsPolicy. */
+        /**
+         * The stage of the VirtualMachineScaleSet update allowing to specify automaticRepairsPolicy.
+         */
         interface WithAutomaticRepairsPolicy {
             /**
              * Specifies the automaticRepairsPolicy property: Policy for automatic repairs..
-             *
+             * 
              * @param automaticRepairsPolicy Policy for automatic repairs.
              * @return the next definition stage.
              */
             Update withAutomaticRepairsPolicy(AutomaticRepairsPolicy automaticRepairsPolicy);
         }
 
-        /** The stage of the VirtualMachineScaleSet update allowing to specify virtualMachineProfile. */
+        /**
+         * The stage of the VirtualMachineScaleSet update allowing to specify virtualMachineProfile.
+         */
         interface WithVirtualMachineProfile {
             /**
              * Specifies the virtualMachineProfile property: The virtual machine profile..
-             *
+             * 
              * @param virtualMachineProfile The virtual machine profile.
              * @return the next definition stage.
              */
             Update withVirtualMachineProfile(VirtualMachineScaleSetUpdateVMProfile virtualMachineProfile);
         }
 
-        /** The stage of the VirtualMachineScaleSet update allowing to specify overprovision. */
+        /**
+         * The stage of the VirtualMachineScaleSet update allowing to specify overprovision.
+         */
         interface WithOverprovision {
             /**
              * Specifies the overprovision property: Specifies whether the Virtual Machine Scale Set should be
              * overprovisioned..
-             *
+             * 
              * @param overprovision Specifies whether the Virtual Machine Scale Set should be overprovisioned.
              * @return the next definition stage.
              */
@@ -777,91 +826,103 @@ public interface VirtualMachineScaleSet {
              * Specifies the doNotRunExtensionsOnOverprovisionedVMs property: When Overprovision is enabled, extensions
              * are launched only on the requested number of VMs which are finally kept. This property will hence ensure
              * that the extensions do not run on the extra overprovisioned VMs..
-             *
+             * 
              * @param doNotRunExtensionsOnOverprovisionedVMs When Overprovision is enabled, extensions are launched only
-             *     on the requested number of VMs which are finally kept. This property will hence ensure that the
-             *     extensions do not run on the extra overprovisioned VMs.
+             * on the requested number of VMs which are finally kept. This property will hence ensure that the
+             * extensions do not run on the extra overprovisioned VMs.
              * @return the next definition stage.
              */
             Update withDoNotRunExtensionsOnOverprovisionedVMs(Boolean doNotRunExtensionsOnOverprovisionedVMs);
         }
 
-        /** The stage of the VirtualMachineScaleSet update allowing to specify singlePlacementGroup. */
+        /**
+         * The stage of the VirtualMachineScaleSet update allowing to specify singlePlacementGroup.
+         */
         interface WithSinglePlacementGroup {
             /**
              * Specifies the singlePlacementGroup property: When true this limits the scale set to a single placement
              * group, of max size 100 virtual machines. NOTE: If singlePlacementGroup is true, it may be modified to
              * false. However, if singlePlacementGroup is false, it may not be modified to true..
-             *
+             * 
              * @param singlePlacementGroup When true this limits the scale set to a single placement group, of max size
-             *     100 virtual machines. NOTE: If singlePlacementGroup is true, it may be modified to false. However, if
-             *     singlePlacementGroup is false, it may not be modified to true.
+             * 100 virtual machines. NOTE: If singlePlacementGroup is true, it may be modified to false. However, if
+             * singlePlacementGroup is false, it may not be modified to true.
              * @return the next definition stage.
              */
             Update withSinglePlacementGroup(Boolean singlePlacementGroup);
         }
 
-        /** The stage of the VirtualMachineScaleSet update allowing to specify additionalCapabilities. */
+        /**
+         * The stage of the VirtualMachineScaleSet update allowing to specify additionalCapabilities.
+         */
         interface WithAdditionalCapabilities {
             /**
              * Specifies the additionalCapabilities property: Specifies additional capabilities enabled or disabled on
              * the Virtual Machines in the Virtual Machine Scale Set. For instance: whether the Virtual Machines have
              * the capability to support attaching managed data disks with UltraSSD_LRS storage account type..
-             *
+             * 
              * @param additionalCapabilities Specifies additional capabilities enabled or disabled on the Virtual
-             *     Machines in the Virtual Machine Scale Set. For instance: whether the Virtual Machines have the
-             *     capability to support attaching managed data disks with UltraSSD_LRS storage account type.
+             * Machines in the Virtual Machine Scale Set. For instance: whether the Virtual Machines have the capability
+             * to support attaching managed data disks with UltraSSD_LRS storage account type.
              * @return the next definition stage.
              */
             Update withAdditionalCapabilities(AdditionalCapabilities additionalCapabilities);
         }
 
-        /** The stage of the VirtualMachineScaleSet update allowing to specify scaleInPolicy. */
+        /**
+         * The stage of the VirtualMachineScaleSet update allowing to specify scaleInPolicy.
+         */
         interface WithScaleInPolicy {
             /**
              * Specifies the scaleInPolicy property: Specifies the policies applied when scaling in Virtual Machines in
              * the Virtual Machine Scale Set..
-             *
+             * 
              * @param scaleInPolicy Specifies the policies applied when scaling in Virtual Machines in the Virtual
-             *     Machine Scale Set.
+             * Machine Scale Set.
              * @return the next definition stage.
              */
             Update withScaleInPolicy(ScaleInPolicy scaleInPolicy);
         }
 
-        /** The stage of the VirtualMachineScaleSet update allowing to specify proximityPlacementGroup. */
+        /**
+         * The stage of the VirtualMachineScaleSet update allowing to specify proximityPlacementGroup.
+         */
         interface WithProximityPlacementGroup {
             /**
              * Specifies the proximityPlacementGroup property: Specifies information about the proximity placement group
              * that the virtual machine scale set should be assigned to. &lt;br&gt;&lt;br&gt;Minimum api-version:
              * 2018-04-01..
-             *
+             * 
              * @param proximityPlacementGroup Specifies information about the proximity placement group that the virtual
-             *     machine scale set should be assigned to. &lt;br&gt;&lt;br&gt;Minimum api-version: 2018-04-01.
+             * machine scale set should be assigned to. &lt;br&gt;&lt;br&gt;Minimum api-version: 2018-04-01.
              * @return the next definition stage.
              */
             Update withProximityPlacementGroup(SubResource proximityPlacementGroup);
         }
 
-        /** The stage of the VirtualMachineScaleSet update allowing to specify priorityMixPolicy. */
+        /**
+         * The stage of the VirtualMachineScaleSet update allowing to specify priorityMixPolicy.
+         */
         interface WithPriorityMixPolicy {
             /**
              * Specifies the priorityMixPolicy property: Specifies the desired targets for mixing Spot and Regular
              * priority VMs within the same VMSS Flex instance..
-             *
+             * 
              * @param priorityMixPolicy Specifies the desired targets for mixing Spot and Regular priority VMs within
-             *     the same VMSS Flex instance.
+             * the same VMSS Flex instance.
              * @return the next definition stage.
              */
             Update withPriorityMixPolicy(PriorityMixPolicy priorityMixPolicy);
         }
 
-        /** The stage of the VirtualMachineScaleSet update allowing to specify spotRestorePolicy. */
+        /**
+         * The stage of the VirtualMachineScaleSet update allowing to specify spotRestorePolicy.
+         */
         interface WithSpotRestorePolicy {
             /**
              * Specifies the spotRestorePolicy property: Specifies the Spot Restore properties for the virtual machine
              * scale set..
-             *
+             * 
              * @param spotRestorePolicy Specifies the Spot Restore properties for the virtual machine scale set.
              * @return the next definition stage.
              */
@@ -871,14 +932,14 @@ public interface VirtualMachineScaleSet {
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @return the refreshed resource.
      */
     VirtualMachineScaleSet refresh();
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @return the refreshed resource.
      */
@@ -887,9 +948,9 @@ public interface VirtualMachineScaleSet {
     /**
      * Deallocates specific virtual machines in a VM scale set. Shuts down the virtual machines and releases the compute
      * resources. You are not billed for the compute resources that this virtual machine scale set deallocates.
-     *
+     * 
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deallocate();
@@ -897,50 +958,50 @@ public interface VirtualMachineScaleSet {
     /**
      * Deallocates specific virtual machines in a VM scale set. Shuts down the virtual machines and releases the compute
      * resources. You are not billed for the compute resources that this virtual machine scale set deallocates.
-     *
+     * 
      * @param hibernate Optional parameter to hibernate a virtual machine from the VM scale set. (This feature is
-     *     available for VMSS with Flexible OrchestrationMode only).
+     * available for VMSS with Flexible OrchestrationMode only).
      * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deallocate(Boolean hibernate, VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs, Context context);
 
     /**
      * Deletes virtual machines in a VM scale set.
-     *
+     * 
      * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteInstances(VirtualMachineScaleSetVMInstanceRequiredIDs vmInstanceIDs);
 
     /**
      * Deletes virtual machines in a VM scale set.
-     *
+     * 
      * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
      * @param forceDeletion Optional parameter to force delete virtual machines from the VM scale set. (Feature in
-     *     Preview).
+     * Preview).
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void deleteInstances(
-        VirtualMachineScaleSetVMInstanceRequiredIDs vmInstanceIDs, Boolean forceDeletion, Context context);
+    void deleteInstances(VirtualMachineScaleSetVMInstanceRequiredIDs vmInstanceIDs, Boolean forceDeletion,
+        Context context);
 
     /**
      * Power off (stop) one or more virtual machines in a VM scale set. Note that resources are still attached and you
      * are getting charged for the resources. Instead, use deallocate to release resources and avoid charges.
-     *
+     * 
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void powerOff();
@@ -948,77 +1009,76 @@ public interface VirtualMachineScaleSet {
     /**
      * Power off (stop) one or more virtual machines in a VM scale set. Note that resources are still attached and you
      * are getting charged for the resources. Instead, use deallocate to release resources and avoid charges.
-     *
+     * 
      * @param skipShutdown The parameter to request non-graceful VM shutdown. True value for this flag indicates
-     *     non-graceful shutdown whereas false indicates otherwise. Default value for this flag is false if not
-     *     specified.
+     * non-graceful shutdown whereas false indicates otherwise. Default value for this flag is false if not specified.
      * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void powerOff(Boolean skipShutdown, VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs, Context context);
 
     /**
      * Restarts one or more virtual machines in a VM scale set.
-     *
+     * 
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void restart();
 
     /**
      * Restarts one or more virtual machines in a VM scale set.
-     *
+     * 
      * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void restart(VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs, Context context);
 
     /**
      * Starts one or more virtual machines in a VM scale set.
-     *
+     * 
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void start();
 
     /**
      * Starts one or more virtual machines in a VM scale set.
-     *
+     * 
      * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void start(VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs, Context context);
 
     /**
      * Reapplies the Virtual Machine Scale Set Virtual Machine Profile to the Virtual Machine Instances.
-     *
+     * 
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void reapply();
 
     /**
      * Reapplies the Virtual Machine Scale Set Virtual Machine Profile to the Virtual Machine Instances.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void reapply(Context context);
@@ -1026,9 +1086,9 @@ public interface VirtualMachineScaleSet {
     /**
      * Shuts down all the virtual machines in the virtual machine scale set, moves them to a new node, and powers them
      * back on.
-     *
+     * 
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void redeploy();
@@ -1036,12 +1096,12 @@ public interface VirtualMachineScaleSet {
     /**
      * Shuts down all the virtual machines in the virtual machine scale set, moves them to a new node, and powers them
      * back on.
-     *
+     * 
      * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void redeploy(VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs, Context context);
@@ -1050,9 +1110,9 @@ public interface VirtualMachineScaleSet {
      * Perform maintenance on one or more virtual machines in a VM scale set. Operation on instances which are not
      * eligible for perform maintenance will be failed. Please refer to best practices for more details:
      * https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-maintenance-notifications.
-     *
+     * 
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void performMaintenance();
@@ -1061,35 +1121,35 @@ public interface VirtualMachineScaleSet {
      * Perform maintenance on one or more virtual machines in a VM scale set. Operation on instances which are not
      * eligible for perform maintenance will be failed. Please refer to best practices for more details:
      * https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-maintenance-notifications.
-     *
+     * 
      * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void performMaintenance(VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs, Context context);
 
     /**
      * Upgrades one or more virtual machines to the latest SKU set in the VM scale set model.
-     *
+     * 
      * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void updateInstances(VirtualMachineScaleSetVMInstanceRequiredIDs vmInstanceIDs);
 
     /**
      * Upgrades one or more virtual machines to the latest SKU set in the VM scale set model.
-     *
+     * 
      * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void updateInstances(VirtualMachineScaleSetVMInstanceRequiredIDs vmInstanceIDs, Context context);
@@ -1098,9 +1158,9 @@ public interface VirtualMachineScaleSet {
      * Reimages (upgrade the operating system) one or more virtual machines in a VM scale set which don't have a
      * ephemeral OS disk, for virtual machines who have a ephemeral OS disk the virtual machine is reset to initial
      * state.
-     *
+     * 
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void reimage();
@@ -1109,12 +1169,12 @@ public interface VirtualMachineScaleSet {
      * Reimages (upgrade the operating system) one or more virtual machines in a VM scale set which don't have a
      * ephemeral OS disk, for virtual machines who have a ephemeral OS disk the virtual machine is reset to initial
      * state.
-     *
+     * 
      * @param vmScaleSetReimageInput Parameters for Reimaging VM ScaleSet.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void reimage(VirtualMachineScaleSetReimageParameters vmScaleSetReimageInput, Context context);
@@ -1122,9 +1182,9 @@ public interface VirtualMachineScaleSet {
     /**
      * Reimages all the disks ( including data disks ) in the virtual machines in a VM scale set. This operation is only
      * supported for managed disks.
-     *
+     * 
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void reimageAll();
@@ -1132,60 +1192,60 @@ public interface VirtualMachineScaleSet {
     /**
      * Reimages all the disks ( including data disks ) in the virtual machines in a VM scale set. This operation is only
      * supported for managed disks.
-     *
+     * 
      * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void reimageAll(VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs, Context context);
 
     /**
      * Converts SinglePlacementGroup property to false for a existing virtual machine scale set.
-     *
+     * 
      * @param parameters The input object for ConvertToSinglePlacementGroup API.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
-    Response<Void> convertToSinglePlacementGroupWithResponse(
-        VMScaleSetConvertToSinglePlacementGroupInput parameters, Context context);
+    Response<Void> convertToSinglePlacementGroupWithResponse(VMScaleSetConvertToSinglePlacementGroupInput parameters,
+        Context context);
 
     /**
      * Converts SinglePlacementGroup property to false for a existing virtual machine scale set.
-     *
+     * 
      * @param parameters The input object for ConvertToSinglePlacementGroup API.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void convertToSinglePlacementGroup(VMScaleSetConvertToSinglePlacementGroupInput parameters);
 
     /**
      * Changes ServiceState property for a given service.
-     *
+     * 
      * @param parameters The input object for SetOrchestrationServiceState API.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void setOrchestrationServiceState(OrchestrationServiceStateInput parameters);
 
     /**
      * Changes ServiceState property for a given service.
-     *
+     * 
      * @param parameters The input object for SetOrchestrationServiceState API.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void setOrchestrationServiceState(OrchestrationServiceStateInput parameters, Context context);

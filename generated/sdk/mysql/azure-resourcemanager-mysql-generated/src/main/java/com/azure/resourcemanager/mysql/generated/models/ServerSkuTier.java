@@ -8,20 +8,28 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** The tier of the particular SKU, e.g. GeneralPurpose. */
+/**
+ * The tier of the particular SKU, e.g. GeneralPurpose.
+ */
 public final class ServerSkuTier extends ExpandableStringEnum<ServerSkuTier> {
-    /** Static value Burstable for ServerSkuTier. */
+    /**
+     * Static value Burstable for ServerSkuTier.
+     */
     public static final ServerSkuTier BURSTABLE = fromString("Burstable");
 
-    /** Static value GeneralPurpose for ServerSkuTier. */
+    /**
+     * Static value GeneralPurpose for ServerSkuTier.
+     */
     public static final ServerSkuTier GENERAL_PURPOSE = fromString("GeneralPurpose");
 
-    /** Static value MemoryOptimized for ServerSkuTier. */
+    /**
+     * Static value MemoryOptimized for ServerSkuTier.
+     */
     public static final ServerSkuTier MEMORY_OPTIMIZED = fromString("MemoryOptimized");
 
     /**
      * Creates a new instance of ServerSkuTier value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -30,7 +38,7 @@ public final class ServerSkuTier extends ExpandableStringEnum<ServerSkuTier> {
 
     /**
      * Creates or finds a ServerSkuTier from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding ServerSkuTier.
      */
@@ -41,7 +49,7 @@ public final class ServerSkuTier extends ExpandableStringEnum<ServerSkuTier> {
 
     /**
      * Gets known ServerSkuTier values.
-     *
+     * 
      * @return known ServerSkuTier values.
      */
     public static Collection<ServerSkuTier> values() {

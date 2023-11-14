@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
-/** Single item in List or Get Consumer group operation. */
+/**
+ * Single item in List or Get Consumer group operation.
+ */
 @Fluent
 public final class ConsumerGroupProperties {
     /*
@@ -31,13 +33,15 @@ public final class ConsumerGroupProperties {
     @JsonProperty(value = "userMetadata")
     private String userMetadata;
 
-    /** Creates an instance of ConsumerGroupProperties class. */
+    /**
+     * Creates an instance of ConsumerGroupProperties class.
+     */
     public ConsumerGroupProperties() {
     }
 
     /**
      * Get the createdAt property: Exact time the message was created.
-     *
+     * 
      * @return the createdAt value.
      */
     public OffsetDateTime createdAt() {
@@ -46,7 +50,7 @@ public final class ConsumerGroupProperties {
 
     /**
      * Get the updatedAt property: The exact time the message was updated.
-     *
+     * 
      * @return the updatedAt value.
      */
     public OffsetDateTime updatedAt() {
@@ -57,7 +61,7 @@ public final class ConsumerGroupProperties {
      * Get the userMetadata property: User Metadata is a placeholder to store user-defined string data with maximum
      * length 1024. e.g. it can be used to store descriptive data, such as list of teams and their contact information
      * also user-defined configuration settings can be stored.
-     *
+     * 
      * @return the userMetadata value.
      */
     public String userMetadata() {
@@ -68,7 +72,7 @@ public final class ConsumerGroupProperties {
      * Set the userMetadata property: User Metadata is a placeholder to store user-defined string data with maximum
      * length 1024. e.g. it can be used to store descriptive data, such as list of teams and their contact information
      * also user-defined configuration settings can be stored.
-     *
+     * 
      * @param userMetadata the userMetadata value to set.
      * @return the ConsumerGroupProperties object itself.
      */
@@ -79,7 +83,7 @@ public final class ConsumerGroupProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

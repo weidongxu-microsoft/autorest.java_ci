@@ -14,8 +14,7 @@ public final class PermissionImpl implements Permission {
 
     private final com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager;
 
-    PermissionImpl(
-        PermissionInner innerObject,
+    PermissionImpl(PermissionInner innerObject,
         com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

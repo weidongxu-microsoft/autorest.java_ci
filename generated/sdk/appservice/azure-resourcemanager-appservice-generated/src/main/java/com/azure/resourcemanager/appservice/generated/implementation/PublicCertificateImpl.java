@@ -68,29 +68,21 @@ public final class PublicCertificateImpl
     }
 
     public PublicCertificate create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApps()
-                .createOrUpdatePublicCertificateWithResponse(
-                    resourceGroupName, name, publicCertificateName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getWebApps().createOrUpdatePublicCertificateWithResponse(resourceGroupName,
+                name, publicCertificateName, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public PublicCertificate create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApps()
-                .createOrUpdatePublicCertificateWithResponse(
-                    resourceGroupName, name, publicCertificateName, this.innerModel(), context)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getWebApps().createOrUpdatePublicCertificateWithResponse(resourceGroupName,
+                name, publicCertificateName, this.innerModel(), context).getValue();
         return this;
     }
 
-    PublicCertificateImpl(
-        String name, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
+    PublicCertificateImpl(String name,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = new PublicCertificateInner();
         this.serviceManager = serviceManager;
         this.publicCertificateName = name;
@@ -101,29 +93,20 @@ public final class PublicCertificateImpl
     }
 
     public PublicCertificate apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApps()
-                .createOrUpdatePublicCertificateWithResponse(
-                    resourceGroupName, name, publicCertificateName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getWebApps().createOrUpdatePublicCertificateWithResponse(resourceGroupName,
+                name, publicCertificateName, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public PublicCertificate apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApps()
-                .createOrUpdatePublicCertificateWithResponse(
-                    resourceGroupName, name, publicCertificateName, this.innerModel(), context)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getWebApps().createOrUpdatePublicCertificateWithResponse(resourceGroupName,
+                name, publicCertificateName, this.innerModel(), context).getValue();
         return this;
     }
 
-    PublicCertificateImpl(
-        PublicCertificateInner innerObject,
+    PublicCertificateImpl(PublicCertificateInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -133,22 +116,14 @@ public final class PublicCertificateImpl
     }
 
     public PublicCertificate refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApps()
-                .getPublicCertificateWithResponse(resourceGroupName, name, publicCertificateName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getWebApps()
+            .getPublicCertificateWithResponse(resourceGroupName, name, publicCertificateName, Context.NONE).getValue();
         return this;
     }
 
     public PublicCertificate refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApps()
-                .getPublicCertificateWithResponse(resourceGroupName, name, publicCertificateName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getWebApps()
+            .getPublicCertificateWithResponse(resourceGroupName, name, publicCertificateName, context).getValue();
         return this;
     }
 

@@ -15,8 +15,7 @@ public final class VnetValidationFailureDetailsImpl implements VnetValidationFai
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    VnetValidationFailureDetailsImpl(
-        VnetValidationFailureDetailsInner innerObject,
+    VnetValidationFailureDetailsImpl(VnetValidationFailureDetailsInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

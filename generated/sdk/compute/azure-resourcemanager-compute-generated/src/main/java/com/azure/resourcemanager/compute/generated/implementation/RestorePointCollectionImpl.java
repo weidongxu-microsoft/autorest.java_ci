@@ -64,12 +64,8 @@ public final class RestorePointCollectionImpl
     public List<RestorePoint> restorePoints() {
         List<RestorePointInner> inner = this.innerModel().restorePoints();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new RestorePointImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new RestorePointImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -107,23 +103,16 @@ public final class RestorePointCollectionImpl
     }
 
     public RestorePointCollection create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getRestorePointCollections()
-                .createOrUpdateWithResponse(
-                    resourceGroupName, restorePointCollectionName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getRestorePointCollections()
+            .createOrUpdateWithResponse(resourceGroupName, restorePointCollectionName, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public RestorePointCollection create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getRestorePointCollections()
-                .createOrUpdateWithResponse(resourceGroupName, restorePointCollectionName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getRestorePointCollections()
+            .createOrUpdateWithResponse(resourceGroupName, restorePointCollectionName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
@@ -139,27 +128,19 @@ public final class RestorePointCollectionImpl
     }
 
     public RestorePointCollection apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getRestorePointCollections()
-                .updateWithResponse(resourceGroupName, restorePointCollectionName, updateParameters, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getRestorePointCollections()
+            .updateWithResponse(resourceGroupName, restorePointCollectionName, updateParameters, Context.NONE)
+            .getValue();
         return this;
     }
 
     public RestorePointCollection apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getRestorePointCollections()
-                .updateWithResponse(resourceGroupName, restorePointCollectionName, updateParameters, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getRestorePointCollections()
+            .updateWithResponse(resourceGroupName, restorePointCollectionName, updateParameters, context).getValue();
         return this;
     }
 
-    RestorePointCollectionImpl(
-        RestorePointCollectionInner innerObject,
+    RestorePointCollectionImpl(RestorePointCollectionInner innerObject,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -169,24 +150,17 @@ public final class RestorePointCollectionImpl
 
     public RestorePointCollection refresh() {
         RestorePointCollectionExpandOptions localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getRestorePointCollections()
-                .getByResourceGroupWithResponse(
-                    resourceGroupName, restorePointCollectionName, localExpand, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getRestorePointCollections()
+            .getByResourceGroupWithResponse(resourceGroupName, restorePointCollectionName, localExpand, Context.NONE)
+            .getValue();
         return this;
     }
 
     public RestorePointCollection refresh(Context context) {
         RestorePointCollectionExpandOptions localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getRestorePointCollections()
-                .getByResourceGroupWithResponse(resourceGroupName, restorePointCollectionName, localExpand, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getRestorePointCollections()
+            .getByResourceGroupWithResponse(resourceGroupName, restorePointCollectionName, localExpand, context)
+            .getValue();
         return this;
     }
 

@@ -9,11 +9,13 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.costmanagement.generated.fluent.models.SettingInner;
 
-/** Resource collection API of Settings. */
+/**
+ * Resource collection API of Settings.
+ */
 public interface Settings {
     /**
      * Lists all of the settings that have been customized.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return result of listing settings as paginated response with {@link PagedIterable}.
@@ -22,7 +24,7 @@ public interface Settings {
 
     /**
      * Lists all of the settings that have been customized.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -33,7 +35,7 @@ public interface Settings {
 
     /**
      * Retrieves the current value for a specific setting.
-     *
+     * 
      * @param settingName Name of the setting. Allowed values: myscope.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -45,7 +47,7 @@ public interface Settings {
 
     /**
      * Retrieves the current value for a specific setting.
-     *
+     * 
      * @param settingName Name of the setting. Allowed values: myscope.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -56,7 +58,7 @@ public interface Settings {
 
     /**
      * Sets a new value for a specific setting.
-     *
+     * 
      * @param settingName Name of the setting. Allowed values: myscope.
      * @param parameters Body supplied to the CreateOrUpdate setting operation.
      * @param context The context to associate with this operation.
@@ -69,7 +71,7 @@ public interface Settings {
 
     /**
      * Sets a new value for a specific setting.
-     *
+     * 
      * @param settingName Name of the setting. Allowed values: myscope.
      * @param parameters Body supplied to the CreateOrUpdate setting operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -81,7 +83,7 @@ public interface Settings {
 
     /**
      * Remove the current value for a specific setting and reverts back to the default value, if applicable.
-     *
+     * 
      * @param settingName Name of the setting. Allowed values: myscope.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -93,7 +95,7 @@ public interface Settings {
 
     /**
      * Remove the current value for a specific setting and reverts back to the default value, if applicable.
-     *
+     * 
      * @param settingName Name of the setting. Allowed values: myscope.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

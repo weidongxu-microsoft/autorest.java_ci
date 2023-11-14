@@ -7,7 +7,9 @@ package com.azure.resourcemanager.dns.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** An SRV record. */
+/**
+ * An SRV record.
+ */
 @Fluent
 public final class SrvRecord {
     /*
@@ -34,13 +36,15 @@ public final class SrvRecord {
     @JsonProperty(value = "target")
     private String target;
 
-    /** Creates an instance of SrvRecord class. */
+    /**
+     * Creates an instance of SrvRecord class.
+     */
     public SrvRecord() {
     }
 
     /**
      * Get the priority property: The priority value for this SRV record.
-     *
+     * 
      * @return the priority value.
      */
     public Integer priority() {
@@ -49,7 +53,7 @@ public final class SrvRecord {
 
     /**
      * Set the priority property: The priority value for this SRV record.
-     *
+     * 
      * @param priority the priority value to set.
      * @return the SrvRecord object itself.
      */
@@ -60,7 +64,7 @@ public final class SrvRecord {
 
     /**
      * Get the weight property: The weight value for this SRV record.
-     *
+     * 
      * @return the weight value.
      */
     public Integer weight() {
@@ -69,7 +73,7 @@ public final class SrvRecord {
 
     /**
      * Set the weight property: The weight value for this SRV record.
-     *
+     * 
      * @param weight the weight value to set.
      * @return the SrvRecord object itself.
      */
@@ -80,7 +84,7 @@ public final class SrvRecord {
 
     /**
      * Get the port property: The port value for this SRV record.
-     *
+     * 
      * @return the port value.
      */
     public Integer port() {
@@ -89,7 +93,7 @@ public final class SrvRecord {
 
     /**
      * Set the port property: The port value for this SRV record.
-     *
+     * 
      * @param port the port value to set.
      * @return the SrvRecord object itself.
      */
@@ -100,7 +104,7 @@ public final class SrvRecord {
 
     /**
      * Get the target property: The target domain name for this SRV record.
-     *
+     * 
      * @return the target value.
      */
     public String target() {
@@ -109,7 +113,7 @@ public final class SrvRecord {
 
     /**
      * Set the target property: The target domain name for this SRV record.
-     *
+     * 
      * @param target the target value to set.
      * @return the SrvRecord object itself.
      */
@@ -120,7 +124,7 @@ public final class SrvRecord {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

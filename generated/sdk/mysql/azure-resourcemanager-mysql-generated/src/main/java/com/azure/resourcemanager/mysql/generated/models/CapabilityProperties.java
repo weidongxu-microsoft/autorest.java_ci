@@ -7,39 +7,41 @@ package com.azure.resourcemanager.mysql.generated.models;
 import com.azure.resourcemanager.mysql.generated.fluent.models.CapabilityPropertiesInner;
 import java.util.List;
 
-/** An immutable client-side representation of CapabilityProperties. */
+/**
+ * An immutable client-side representation of CapabilityProperties.
+ */
 public interface CapabilityProperties {
     /**
      * Gets the zone property: zone name.
-     *
+     * 
      * @return the zone value.
      */
     String zone();
 
     /**
      * Gets the supportedHAMode property: Supported high availability mode.
-     *
+     * 
      * @return the supportedHAMode value.
      */
     List<String> supportedHAMode();
 
     /**
      * Gets the supportedGeoBackupRegions property: supported geo backup regions.
-     *
+     * 
      * @return the supportedGeoBackupRegions value.
      */
     List<String> supportedGeoBackupRegions();
 
     /**
      * Gets the supportedFlexibleServerEditions property: A list of supported flexible server editions.
-     *
+     * 
      * @return the supportedFlexibleServerEditions value.
      */
     List<ServerEditionCapability> supportedFlexibleServerEditions();
 
     /**
      * Gets the inner com.azure.resourcemanager.mysql.generated.fluent.models.CapabilityPropertiesInner object.
-     *
+     * 
      * @return the inner object.
      */
     CapabilityPropertiesInner innerModel();

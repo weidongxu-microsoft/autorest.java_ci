@@ -14,7 +14,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 import java.util.Map;
 
-/** Describes a DNS zone. */
+/**
+ * Describes a DNS zone.
+ */
 @Fluent
 public final class ZoneInner extends Resource {
     /*
@@ -35,13 +37,15 @@ public final class ZoneInner extends Resource {
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
-    /** Creates an instance of ZoneInner class. */
+    /**
+     * Creates an instance of ZoneInner class.
+     */
     public ZoneInner() {
     }
 
     /**
      * Get the etag property: The etag of the zone.
-     *
+     * 
      * @return the etag value.
      */
     public String etag() {
@@ -50,7 +54,7 @@ public final class ZoneInner extends Resource {
 
     /**
      * Set the etag property: The etag of the zone.
-     *
+     * 
      * @param etag the etag value to set.
      * @return the ZoneInner object itself.
      */
@@ -61,7 +65,7 @@ public final class ZoneInner extends Resource {
 
     /**
      * Get the innerProperties property: The properties of the zone.
-     *
+     * 
      * @return the innerProperties value.
      */
     private ZoneProperties innerProperties() {
@@ -70,21 +74,25 @@ public final class ZoneInner extends Resource {
 
     /**
      * Get the systemData property: Metadata pertaining to creation and last modification of the resource.
-     *
+     * 
      * @return the systemData value.
      */
     public SystemData systemData() {
         return this.systemData;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ZoneInner withLocation(String location) {
         super.withLocation(location);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ZoneInner withTags(Map<String, String> tags) {
         super.withTags(tags);
@@ -94,7 +102,7 @@ public final class ZoneInner extends Resource {
     /**
      * Get the maxNumberOfRecordSets property: The maximum number of record sets that can be created in this DNS zone.
      * This is a read-only property and any attempt to set this value will be ignored.
-     *
+     * 
      * @return the maxNumberOfRecordSets value.
      */
     public Long maxNumberOfRecordSets() {
@@ -102,9 +110,9 @@ public final class ZoneInner extends Resource {
     }
 
     /**
-     * Get the maxNumberOfRecordsPerRecordSet property: The maximum number of records per record set that can be created
-     * in this DNS zone. This is a read-only property and any attempt to set this value will be ignored.
-     *
+     * Get the maxNumberOfRecordsPerRecordSet property: The maximum number of records per record set that can be
+     * created in this DNS zone. This is a read-only property and any attempt to set this value will be ignored.
+     * 
      * @return the maxNumberOfRecordsPerRecordSet value.
      */
     public Long maxNumberOfRecordsPerRecordSet() {
@@ -114,7 +122,7 @@ public final class ZoneInner extends Resource {
     /**
      * Get the numberOfRecordSets property: The current number of record sets in this DNS zone. This is a read-only
      * property and any attempt to set this value will be ignored.
-     *
+     * 
      * @return the numberOfRecordSets value.
      */
     public Long numberOfRecordSets() {
@@ -122,9 +130,9 @@ public final class ZoneInner extends Resource {
     }
 
     /**
-     * Get the nameServers property: The name servers for this DNS zone. This is a read-only property and any attempt to
-     * set this value will be ignored.
-     *
+     * Get the nameServers property: The name servers for this DNS zone. This is a read-only property and any attempt
+     * to set this value will be ignored.
+     * 
      * @return the nameServers value.
      */
     public List<String> nameServers() {
@@ -133,7 +141,7 @@ public final class ZoneInner extends Resource {
 
     /**
      * Get the zoneType property: The type of this DNS zone (Public or Private).
-     *
+     * 
      * @return the zoneType value.
      */
     public ZoneType zoneType() {
@@ -142,7 +150,7 @@ public final class ZoneInner extends Resource {
 
     /**
      * Set the zoneType property: The type of this DNS zone (Public or Private).
-     *
+     * 
      * @param zoneType the zoneType value to set.
      * @return the ZoneInner object itself.
      */
@@ -155,9 +163,9 @@ public final class ZoneInner extends Resource {
     }
 
     /**
-     * Get the registrationVirtualNetworks property: A list of references to virtual networks that register hostnames in
-     * this DNS zone. This is a only when ZoneType is Private.
-     *
+     * Get the registrationVirtualNetworks property: A list of references to virtual networks that register hostnames
+     * in this DNS zone. This is a only when ZoneType is Private.
+     * 
      * @return the registrationVirtualNetworks value.
      */
     public List<SubResource> registrationVirtualNetworks() {
@@ -165,9 +173,9 @@ public final class ZoneInner extends Resource {
     }
 
     /**
-     * Set the registrationVirtualNetworks property: A list of references to virtual networks that register hostnames in
-     * this DNS zone. This is a only when ZoneType is Private.
-     *
+     * Set the registrationVirtualNetworks property: A list of references to virtual networks that register hostnames
+     * in this DNS zone. This is a only when ZoneType is Private.
+     * 
      * @param registrationVirtualNetworks the registrationVirtualNetworks value to set.
      * @return the ZoneInner object itself.
      */
@@ -180,9 +188,9 @@ public final class ZoneInner extends Resource {
     }
 
     /**
-     * Get the resolutionVirtualNetworks property: A list of references to virtual networks that resolve records in this
-     * DNS zone. This is a only when ZoneType is Private.
-     *
+     * Get the resolutionVirtualNetworks property: A list of references to virtual networks that resolve records in
+     * this DNS zone. This is a only when ZoneType is Private.
+     * 
      * @return the resolutionVirtualNetworks value.
      */
     public List<SubResource> resolutionVirtualNetworks() {
@@ -190,9 +198,9 @@ public final class ZoneInner extends Resource {
     }
 
     /**
-     * Set the resolutionVirtualNetworks property: A list of references to virtual networks that resolve records in this
-     * DNS zone. This is a only when ZoneType is Private.
-     *
+     * Set the resolutionVirtualNetworks property: A list of references to virtual networks that resolve records in
+     * this DNS zone. This is a only when ZoneType is Private.
+     * 
      * @param resolutionVirtualNetworks the resolutionVirtualNetworks value to set.
      * @return the ZoneInner object itself.
      */
@@ -206,7 +214,7 @@ public final class ZoneInner extends Resource {
 
     /**
      * Get the signingKeys property: The list of signing keys.
-     *
+     * 
      * @return the signingKeys value.
      */
     public List<SigningKey> signingKeys() {
@@ -215,7 +223,7 @@ public final class ZoneInner extends Resource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

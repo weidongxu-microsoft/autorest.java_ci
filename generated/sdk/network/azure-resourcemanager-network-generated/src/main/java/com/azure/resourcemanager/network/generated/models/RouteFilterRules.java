@@ -9,11 +9,13 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.RouteFilterRuleInner;
 
-/** Resource collection API of RouteFilterRules. */
+/**
+ * Resource collection API of RouteFilterRules.
+ */
 public interface RouteFilterRules {
     /**
      * Deletes the specified rule from a route filter.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param routeFilterName The name of the route filter.
      * @param ruleName The name of the rule.
@@ -25,7 +27,7 @@ public interface RouteFilterRules {
 
     /**
      * Deletes the specified rule from a route filter.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param routeFilterName The name of the route filter.
      * @param ruleName The name of the rule.
@@ -38,7 +40,7 @@ public interface RouteFilterRules {
 
     /**
      * Gets the specified rule from a route filter.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param routeFilterName The name of the route filter.
      * @param ruleName The name of the rule.
@@ -48,12 +50,12 @@ public interface RouteFilterRules {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified rule from a route filter along with {@link Response}.
      */
-    Response<RouteFilterRule> getWithResponse(
-        String resourceGroupName, String routeFilterName, String ruleName, Context context);
+    Response<RouteFilterRule> getWithResponse(String resourceGroupName, String routeFilterName, String ruleName,
+        Context context);
 
     /**
      * Gets the specified rule from a route filter.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param routeFilterName The name of the route filter.
      * @param ruleName The name of the rule.
@@ -66,7 +68,7 @@ public interface RouteFilterRules {
 
     /**
      * Creates or updates a route in the specified route filter.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param routeFilterName The name of the route filter.
      * @param ruleName The name of the route filter rule.
@@ -76,15 +78,12 @@ public interface RouteFilterRules {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return route Filter Rule Resource.
      */
-    RouteFilterRule createOrUpdate(
-        String resourceGroupName,
-        String routeFilterName,
-        String ruleName,
+    RouteFilterRule createOrUpdate(String resourceGroupName, String routeFilterName, String ruleName,
         RouteFilterRuleInner routeFilterRuleParameters);
 
     /**
      * Creates or updates a route in the specified route filter.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param routeFilterName The name of the route filter.
      * @param ruleName The name of the route filter rule.
@@ -95,16 +94,12 @@ public interface RouteFilterRules {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return route Filter Rule Resource.
      */
-    RouteFilterRule createOrUpdate(
-        String resourceGroupName,
-        String routeFilterName,
-        String ruleName,
-        RouteFilterRuleInner routeFilterRuleParameters,
-        Context context);
+    RouteFilterRule createOrUpdate(String resourceGroupName, String routeFilterName, String ruleName,
+        RouteFilterRuleInner routeFilterRuleParameters, Context context);
 
     /**
      * Gets all RouteFilterRules in a route filter.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param routeFilterName The name of the route filter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -116,7 +111,7 @@ public interface RouteFilterRules {
 
     /**
      * Gets all RouteFilterRules in a route filter.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param routeFilterName The name of the route filter.
      * @param context The context to associate with this operation.

@@ -8,23 +8,33 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Event level. */
+/**
+ * Event level.
+ */
 public final class LiveEventStreamEventLevel extends ExpandableStringEnum<LiveEventStreamEventLevel> {
-    /** Static value Critical for LiveEventStreamEventLevel. */
+    /**
+     * Static value Critical for LiveEventStreamEventLevel.
+     */
     public static final LiveEventStreamEventLevel CRITICAL = fromString("Critical");
 
-    /** Static value Error for LiveEventStreamEventLevel. */
+    /**
+     * Static value Error for LiveEventStreamEventLevel.
+     */
     public static final LiveEventStreamEventLevel ERROR = fromString("Error");
 
-    /** Static value Warning for LiveEventStreamEventLevel. */
+    /**
+     * Static value Warning for LiveEventStreamEventLevel.
+     */
     public static final LiveEventStreamEventLevel WARNING = fromString("Warning");
 
-    /** Static value Information for LiveEventStreamEventLevel. */
+    /**
+     * Static value Information for LiveEventStreamEventLevel.
+     */
     public static final LiveEventStreamEventLevel INFORMATION = fromString("Information");
 
     /**
      * Creates a new instance of LiveEventStreamEventLevel value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -33,7 +43,7 @@ public final class LiveEventStreamEventLevel extends ExpandableStringEnum<LiveEv
 
     /**
      * Creates or finds a LiveEventStreamEventLevel from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding LiveEventStreamEventLevel.
      */
@@ -44,7 +54,7 @@ public final class LiveEventStreamEventLevel extends ExpandableStringEnum<LiveEv
 
     /**
      * Gets known LiveEventStreamEventLevel values.
-     *
+     * 
      * @return known LiveEventStreamEventLevel values.
      */
     public static Collection<LiveEventStreamEventLevel> values() {

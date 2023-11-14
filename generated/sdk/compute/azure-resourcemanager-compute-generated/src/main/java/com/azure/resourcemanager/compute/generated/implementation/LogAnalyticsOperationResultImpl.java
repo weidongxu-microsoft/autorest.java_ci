@@ -13,8 +13,7 @@ public final class LogAnalyticsOperationResultImpl implements LogAnalyticsOperat
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    LogAnalyticsOperationResultImpl(
-        LogAnalyticsOperationResultInner innerObject,
+    LogAnalyticsOperationResultImpl(LogAnalyticsOperationResultInner innerObject,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

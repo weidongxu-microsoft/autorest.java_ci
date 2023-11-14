@@ -8,17 +8,23 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for ExternalCloudProviderType. */
+/**
+ * Defines values for ExternalCloudProviderType.
+ */
 public final class ExternalCloudProviderType extends ExpandableStringEnum<ExternalCloudProviderType> {
-    /** Static value externalSubscriptions for ExternalCloudProviderType. */
+    /**
+     * Static value externalSubscriptions for ExternalCloudProviderType.
+     */
     public static final ExternalCloudProviderType EXTERNAL_SUBSCRIPTIONS = fromString("externalSubscriptions");
 
-    /** Static value externalBillingAccounts for ExternalCloudProviderType. */
+    /**
+     * Static value externalBillingAccounts for ExternalCloudProviderType.
+     */
     public static final ExternalCloudProviderType EXTERNAL_BILLING_ACCOUNTS = fromString("externalBillingAccounts");
 
     /**
      * Creates a new instance of ExternalCloudProviderType value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -27,7 +33,7 @@ public final class ExternalCloudProviderType extends ExpandableStringEnum<Extern
 
     /**
      * Creates or finds a ExternalCloudProviderType from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding ExternalCloudProviderType.
      */
@@ -38,7 +44,7 @@ public final class ExternalCloudProviderType extends ExpandableStringEnum<Extern
 
     /**
      * Gets known ExternalCloudProviderType values.
-     *
+     * 
      * @return known ExternalCloudProviderType values.
      */
     public static Collection<ExternalCloudProviderType> values() {

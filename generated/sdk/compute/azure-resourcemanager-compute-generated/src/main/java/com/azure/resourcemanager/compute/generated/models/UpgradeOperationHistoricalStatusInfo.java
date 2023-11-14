@@ -6,25 +6,27 @@ package com.azure.resourcemanager.compute.generated.models;
 
 import com.azure.resourcemanager.compute.generated.fluent.models.UpgradeOperationHistoricalStatusInfoInner;
 
-/** An immutable client-side representation of UpgradeOperationHistoricalStatusInfo. */
+/**
+ * An immutable client-side representation of UpgradeOperationHistoricalStatusInfo.
+ */
 public interface UpgradeOperationHistoricalStatusInfo {
     /**
      * Gets the properties property: Information about the properties of the upgrade operation.
-     *
+     * 
      * @return the properties value.
      */
     UpgradeOperationHistoricalStatusInfoProperties properties();
 
     /**
      * Gets the type property: Resource type.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the location property: Resource location.
-     *
+     * 
      * @return the location value.
      */
     String location();
@@ -32,7 +34,7 @@ public interface UpgradeOperationHistoricalStatusInfo {
     /**
      * Gets the inner
      * com.azure.resourcemanager.compute.generated.fluent.models.UpgradeOperationHistoricalStatusInfoInner object.
-     *
+     * 
      * @return the inner object.
      */
     UpgradeOperationHistoricalStatusInfoInner innerModel();

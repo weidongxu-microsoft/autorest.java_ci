@@ -21,8 +21,7 @@ public final class KubeEnvironmentsImpl implements KubeEnvironments {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    public KubeEnvironmentsImpl(
-        KubeEnvironmentsClient innerClient,
+    public KubeEnvironmentsImpl(KubeEnvironmentsClient innerClient,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -44,20 +43,17 @@ public final class KubeEnvironmentsImpl implements KubeEnvironments {
     }
 
     public PagedIterable<KubeEnvironment> listByResourceGroup(String resourceGroupName, Context context) {
-        PagedIterable<KubeEnvironmentInner> inner =
-            this.serviceClient().listByResourceGroup(resourceGroupName, context);
+        PagedIterable<KubeEnvironmentInner> inner
+            = this.serviceClient().listByResourceGroup(resourceGroupName, context);
         return Utils.mapPage(inner, inner1 -> new KubeEnvironmentImpl(inner1, this.manager()));
     }
 
-    public Response<KubeEnvironment> getByResourceGroupWithResponse(
-        String resourceGroupName, String name, Context context) {
-        Response<KubeEnvironmentInner> inner =
-            this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, name, context);
+    public Response<KubeEnvironment> getByResourceGroupWithResponse(String resourceGroupName, String name,
+        Context context) {
+        Response<KubeEnvironmentInner> inner
+            = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, name, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new KubeEnvironmentImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -84,20 +80,13 @@ public final class KubeEnvironmentsImpl implements KubeEnvironments {
     public KubeEnvironment getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String name = Utils.getValueFromIdByName(id, "kubeEnvironments");
         if (name == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'kubeEnvironments'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'kubeEnvironments'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, name, Context.NONE).getValue();
     }
@@ -105,20 +94,13 @@ public final class KubeEnvironmentsImpl implements KubeEnvironments {
     public Response<KubeEnvironment> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String name = Utils.getValueFromIdByName(id, "kubeEnvironments");
         if (name == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'kubeEnvironments'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'kubeEnvironments'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, name, context);
     }
@@ -126,20 +108,13 @@ public final class KubeEnvironmentsImpl implements KubeEnvironments {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String name = Utils.getValueFromIdByName(id, "kubeEnvironments");
         if (name == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'kubeEnvironments'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'kubeEnvironments'.", id)));
         }
         this.delete(resourceGroupName, name, Context.NONE);
     }
@@ -147,20 +122,13 @@ public final class KubeEnvironmentsImpl implements KubeEnvironments {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String name = Utils.getValueFromIdByName(id, "kubeEnvironments");
         if (name == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'kubeEnvironments'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'kubeEnvironments'.", id)));
         }
         this.delete(resourceGroupName, name, context);
     }

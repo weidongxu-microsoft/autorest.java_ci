@@ -6,32 +6,34 @@ package com.azure.resourcemanager.appservice.generated.models;
 
 import com.azure.resourcemanager.appservice.generated.fluent.models.CapabilityInner;
 
-/** An immutable client-side representation of Capability. */
+/**
+ * An immutable client-side representation of Capability.
+ */
 public interface Capability {
     /**
      * Gets the name property: Name of the SKU capability.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the value property: Value of the SKU capability.
-     *
+     * 
      * @return the value value.
      */
     String value();
 
     /**
      * Gets the reason property: Reason of the SKU capability.
-     *
+     * 
      * @return the reason value.
      */
     String reason();
 
     /**
      * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.CapabilityInner object.
-     *
+     * 
      * @return the inner object.
      */
     CapabilityInner innerModel();

@@ -8,33 +8,35 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Describes a policy that determines how resources within the search service are to be encrypted with Customer Managed
- * Keys.
+ * Describes a policy that determines how resources within the search service are to be encrypted with customer=managed
+ * keys.
  */
 @Fluent
 public final class EncryptionWithCmk {
     /*
-     * Describes how a search service should enforce having one or more non customer encrypted resources.
+     * Describes how a search service should enforce having one or more non-customer-encrypted resources.
      */
     @JsonProperty(value = "enforcement")
     private SearchEncryptionWithCmk enforcement;
 
     /*
-     * Describes whether the search service is compliant or not with respect to having non customer encrypted
-     * resources. If a service has more than one non customer encrypted resource and 'Enforcement' is 'enabled' then
+     * Describes whether the search service is compliant or not with respect to having non-customer-encrypted
+     * resources. If a service has more than one non-customer-encrypted resource and 'Enforcement' is 'enabled' then
      * the service will be marked as 'nonCompliant'.
      */
     @JsonProperty(value = "encryptionComplianceStatus", access = JsonProperty.Access.WRITE_ONLY)
     private SearchEncryptionComplianceStatus encryptionComplianceStatus;
 
-    /** Creates an instance of EncryptionWithCmk class. */
+    /**
+     * Creates an instance of EncryptionWithCmk class.
+     */
     public EncryptionWithCmk() {
     }
 
     /**
-     * Get the enforcement property: Describes how a search service should enforce having one or more non customer
-     * encrypted resources.
-     *
+     * Get the enforcement property: Describes how a search service should enforce having one or more
+     * non-customer-encrypted resources.
+     * 
      * @return the enforcement value.
      */
     public SearchEncryptionWithCmk enforcement() {
@@ -42,9 +44,9 @@ public final class EncryptionWithCmk {
     }
 
     /**
-     * Set the enforcement property: Describes how a search service should enforce having one or more non customer
-     * encrypted resources.
-     *
+     * Set the enforcement property: Describes how a search service should enforce having one or more
+     * non-customer-encrypted resources.
+     * 
      * @param enforcement the enforcement value to set.
      * @return the EncryptionWithCmk object itself.
      */
@@ -55,9 +57,9 @@ public final class EncryptionWithCmk {
 
     /**
      * Get the encryptionComplianceStatus property: Describes whether the search service is compliant or not with
-     * respect to having non customer encrypted resources. If a service has more than one non customer encrypted
+     * respect to having non-customer-encrypted resources. If a service has more than one non-customer-encrypted
      * resource and 'Enforcement' is 'enabled' then the service will be marked as 'nonCompliant'.
-     *
+     * 
      * @return the encryptionComplianceStatus value.
      */
     public SearchEncryptionComplianceStatus encryptionComplianceStatus() {
@@ -66,7 +68,7 @@ public final class EncryptionWithCmk {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

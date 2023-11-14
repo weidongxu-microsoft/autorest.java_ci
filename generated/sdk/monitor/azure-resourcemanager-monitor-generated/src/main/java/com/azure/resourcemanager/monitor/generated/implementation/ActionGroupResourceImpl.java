@@ -186,22 +186,14 @@ public final class ActionGroupResourceImpl
     }
 
     public ActionGroupResource create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getActionGroups()
-                .createOrUpdateWithResponse(resourceGroupName, actionGroupName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getActionGroups()
+            .createOrUpdateWithResponse(resourceGroupName, actionGroupName, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public ActionGroupResource create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getActionGroups()
-                .createOrUpdateWithResponse(resourceGroupName, actionGroupName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getActionGroups()
+            .createOrUpdateWithResponse(resourceGroupName, actionGroupName, this.innerModel(), context).getValue();
         return this;
     }
 
@@ -217,27 +209,18 @@ public final class ActionGroupResourceImpl
     }
 
     public ActionGroupResource apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getActionGroups()
-                .updateWithResponse(resourceGroupName, actionGroupName, updateActionGroupPatch, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getActionGroups()
+            .updateWithResponse(resourceGroupName, actionGroupName, updateActionGroupPatch, Context.NONE).getValue();
         return this;
     }
 
     public ActionGroupResource apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getActionGroups()
-                .updateWithResponse(resourceGroupName, actionGroupName, updateActionGroupPatch, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getActionGroups()
+            .updateWithResponse(resourceGroupName, actionGroupName, updateActionGroupPatch, context).getValue();
         return this;
     }
 
-    ActionGroupResourceImpl(
-        ActionGroupResourceInner innerObject,
+    ActionGroupResourceImpl(ActionGroupResourceInner innerObject,
         com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -246,29 +229,20 @@ public final class ActionGroupResourceImpl
     }
 
     public ActionGroupResource refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getActionGroups()
-                .getByResourceGroupWithResponse(resourceGroupName, actionGroupName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getActionGroups()
+            .getByResourceGroupWithResponse(resourceGroupName, actionGroupName, Context.NONE).getValue();
         return this;
     }
 
     public ActionGroupResource refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getActionGroups()
-                .getByResourceGroupWithResponse(resourceGroupName, actionGroupName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getActionGroups()
+            .getByResourceGroupWithResponse(resourceGroupName, actionGroupName, context).getValue();
         return this;
     }
 
     public Response<Void> enableReceiverWithResponse(EnableRequest enableRequest, Context context) {
-        return serviceManager
-            .actionGroups()
-            .enableReceiverWithResponse(resourceGroupName, actionGroupName, enableRequest, context);
+        return serviceManager.actionGroups().enableReceiverWithResponse(resourceGroupName, actionGroupName,
+            enableRequest, context);
     }
 
     public void enableReceiver(EnableRequest enableRequest) {
@@ -330,8 +304,8 @@ public final class ActionGroupResourceImpl
         return this;
     }
 
-    public ActionGroupResourceImpl withAutomationRunbookReceivers(
-        List<AutomationRunbookReceiver> automationRunbookReceivers) {
+    public ActionGroupResourceImpl
+        withAutomationRunbookReceivers(List<AutomationRunbookReceiver> automationRunbookReceivers) {
         this.innerModel().withAutomationRunbookReceivers(automationRunbookReceivers);
         return this;
     }

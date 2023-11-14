@@ -110,20 +110,14 @@ public final class TableImpl implements Table, Table.Definition, Table.Update {
     }
 
     public Table create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getTables()
-                .createOrUpdate(resourceGroupName, workspaceName, tableName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getTables().createOrUpdate(resourceGroupName, workspaceName,
+            tableName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public Table create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getTables()
-                .createOrUpdate(resourceGroupName, workspaceName, tableName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getTables().createOrUpdate(resourceGroupName, workspaceName,
+            tableName, this.innerModel(), context);
         return this;
     }
 
@@ -138,25 +132,18 @@ public final class TableImpl implements Table, Table.Definition, Table.Update {
     }
 
     public Table apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getTables()
-                .update(resourceGroupName, workspaceName, tableName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getTables().update(resourceGroupName, workspaceName,
+            tableName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public Table apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getTables()
-                .update(resourceGroupName, workspaceName, tableName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getTables().update(resourceGroupName, workspaceName,
+            tableName, this.innerModel(), context);
         return this;
     }
 
-    TableImpl(
-        TableInner innerObject,
+    TableImpl(TableInner innerObject,
         com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -166,22 +153,14 @@ public final class TableImpl implements Table, Table.Definition, Table.Update {
     }
 
     public Table refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getTables()
-                .getWithResponse(resourceGroupName, workspaceName, tableName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getTables()
+            .getWithResponse(resourceGroupName, workspaceName, tableName, Context.NONE).getValue();
         return this;
     }
 
     public Table refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getTables()
-                .getWithResponse(resourceGroupName, workspaceName, tableName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getTables()
+            .getWithResponse(resourceGroupName, workspaceName, tableName, context).getValue();
         return this;
     }
 

@@ -27,13 +27,15 @@ public final class MarketplacesListResult {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
-    /** Creates an instance of MarketplacesListResult class. */
+    /**
+     * Creates an instance of MarketplacesListResult class.
+     */
     public MarketplacesListResult() {
     }
 
     /**
      * Get the value property: The list of marketplaces.
-     *
+     * 
      * @return the value value.
      */
     public List<MarketplaceInner> value() {
@@ -42,7 +44,7 @@ public final class MarketplacesListResult {
 
     /**
      * Get the nextLink property: The link (url) to the next page of results.
-     *
+     * 
      * @return the nextLink value.
      */
     public String nextLink() {
@@ -51,7 +53,7 @@ public final class MarketplacesListResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

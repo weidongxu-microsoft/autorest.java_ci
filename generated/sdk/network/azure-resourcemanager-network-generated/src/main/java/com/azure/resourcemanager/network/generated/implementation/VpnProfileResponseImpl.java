@@ -12,8 +12,7 @@ public final class VpnProfileResponseImpl implements VpnProfileResponse {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    VpnProfileResponseImpl(
-        VpnProfileResponseInner innerObject,
+    VpnProfileResponseImpl(VpnProfileResponseInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

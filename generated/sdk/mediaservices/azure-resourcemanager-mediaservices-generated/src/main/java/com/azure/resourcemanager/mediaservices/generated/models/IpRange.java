@@ -7,7 +7,9 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The IP address range in the CIDR scheme. */
+/**
+ * The IP address range in the CIDR scheme.
+ */
 @Fluent
 public final class IpRange {
     /*
@@ -28,13 +30,15 @@ public final class IpRange {
     @JsonProperty(value = "subnetPrefixLength")
     private Integer subnetPrefixLength;
 
-    /** Creates an instance of IpRange class. */
+    /**
+     * Creates an instance of IpRange class.
+     */
     public IpRange() {
     }
 
     /**
      * Get the name property: The friendly name for the IP address range.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -43,7 +47,7 @@ public final class IpRange {
 
     /**
      * Set the name property: The friendly name for the IP address range.
-     *
+     * 
      * @param name the name value to set.
      * @return the IpRange object itself.
      */
@@ -54,7 +58,7 @@ public final class IpRange {
 
     /**
      * Get the address property: The IP address.
-     *
+     * 
      * @return the address value.
      */
     public String address() {
@@ -63,7 +67,7 @@ public final class IpRange {
 
     /**
      * Set the address property: The IP address.
-     *
+     * 
      * @param address the address value to set.
      * @return the IpRange object itself.
      */
@@ -74,7 +78,7 @@ public final class IpRange {
 
     /**
      * Get the subnetPrefixLength property: The subnet mask prefix length (see CIDR notation).
-     *
+     * 
      * @return the subnetPrefixLength value.
      */
     public Integer subnetPrefixLength() {
@@ -83,7 +87,7 @@ public final class IpRange {
 
     /**
      * Set the subnetPrefixLength property: The subnet mask prefix length (see CIDR notation).
-     *
+     * 
      * @param subnetPrefixLength the subnetPrefixLength value to set.
      * @return the IpRange object itself.
      */
@@ -94,7 +98,7 @@ public final class IpRange {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

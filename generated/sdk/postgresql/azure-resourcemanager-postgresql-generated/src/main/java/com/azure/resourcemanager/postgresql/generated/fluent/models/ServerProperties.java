@@ -17,7 +17,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
 
-/** The properties of a server. */
+/**
+ * The properties of a server.
+ */
 @Fluent
 public final class ServerProperties {
     /*
@@ -112,14 +114,16 @@ public final class ServerProperties {
     @JsonProperty(value = "privateEndpointConnections", access = JsonProperty.Access.WRITE_ONLY)
     private List<ServerPrivateEndpointConnection> privateEndpointConnections;
 
-    /** Creates an instance of ServerProperties class. */
+    /**
+     * Creates an instance of ServerProperties class.
+     */
     public ServerProperties() {
     }
 
     /**
      * Get the administratorLogin property: The administrator's login name of a server. Can only be specified when the
      * server is being created (and is required for creation).
-     *
+     * 
      * @return the administratorLogin value.
      */
     public String administratorLogin() {
@@ -129,7 +133,7 @@ public final class ServerProperties {
     /**
      * Set the administratorLogin property: The administrator's login name of a server. Can only be specified when the
      * server is being created (and is required for creation).
-     *
+     * 
      * @param administratorLogin the administratorLogin value to set.
      * @return the ServerProperties object itself.
      */
@@ -140,7 +144,7 @@ public final class ServerProperties {
 
     /**
      * Get the version property: Server version.
-     *
+     * 
      * @return the version value.
      */
     public ServerVersion version() {
@@ -149,7 +153,7 @@ public final class ServerProperties {
 
     /**
      * Set the version property: Server version.
-     *
+     * 
      * @param version the version value to set.
      * @return the ServerProperties object itself.
      */
@@ -160,7 +164,7 @@ public final class ServerProperties {
 
     /**
      * Get the sslEnforcement property: Enable ssl enforcement or not when connect to server.
-     *
+     * 
      * @return the sslEnforcement value.
      */
     public SslEnforcementEnum sslEnforcement() {
@@ -169,7 +173,7 @@ public final class ServerProperties {
 
     /**
      * Set the sslEnforcement property: Enable ssl enforcement or not when connect to server.
-     *
+     * 
      * @param sslEnforcement the sslEnforcement value to set.
      * @return the ServerProperties object itself.
      */
@@ -180,7 +184,7 @@ public final class ServerProperties {
 
     /**
      * Get the minimalTlsVersion property: Enforce a minimal Tls version for the server.
-     *
+     * 
      * @return the minimalTlsVersion value.
      */
     public MinimalTlsVersionEnum minimalTlsVersion() {
@@ -189,7 +193,7 @@ public final class ServerProperties {
 
     /**
      * Set the minimalTlsVersion property: Enforce a minimal Tls version for the server.
-     *
+     * 
      * @param minimalTlsVersion the minimalTlsVersion value to set.
      * @return the ServerProperties object itself.
      */
@@ -201,7 +205,7 @@ public final class ServerProperties {
     /**
      * Get the byokEnforcement property: Status showing whether the server data encryption is enabled with
      * customer-managed keys.
-     *
+     * 
      * @return the byokEnforcement value.
      */
     public String byokEnforcement() {
@@ -210,7 +214,7 @@ public final class ServerProperties {
 
     /**
      * Get the infrastructureEncryption property: Status showing whether the server enabled infrastructure encryption.
-     *
+     * 
      * @return the infrastructureEncryption value.
      */
     public InfrastructureEncryption infrastructureEncryption() {
@@ -219,7 +223,7 @@ public final class ServerProperties {
 
     /**
      * Set the infrastructureEncryption property: Status showing whether the server enabled infrastructure encryption.
-     *
+     * 
      * @param infrastructureEncryption the infrastructureEncryption value to set.
      * @return the ServerProperties object itself.
      */
@@ -230,7 +234,7 @@ public final class ServerProperties {
 
     /**
      * Get the userVisibleState property: A state of a server that is visible to user.
-     *
+     * 
      * @return the userVisibleState value.
      */
     public ServerState userVisibleState() {
@@ -239,7 +243,7 @@ public final class ServerProperties {
 
     /**
      * Set the userVisibleState property: A state of a server that is visible to user.
-     *
+     * 
      * @param userVisibleState the userVisibleState value to set.
      * @return the ServerProperties object itself.
      */
@@ -250,7 +254,7 @@ public final class ServerProperties {
 
     /**
      * Get the fullyQualifiedDomainName property: The fully qualified domain name of a server.
-     *
+     * 
      * @return the fullyQualifiedDomainName value.
      */
     public String fullyQualifiedDomainName() {
@@ -259,7 +263,7 @@ public final class ServerProperties {
 
     /**
      * Set the fullyQualifiedDomainName property: The fully qualified domain name of a server.
-     *
+     * 
      * @param fullyQualifiedDomainName the fullyQualifiedDomainName value to set.
      * @return the ServerProperties object itself.
      */
@@ -270,7 +274,7 @@ public final class ServerProperties {
 
     /**
      * Get the earliestRestoreDate property: Earliest restore point creation time (ISO8601 format).
-     *
+     * 
      * @return the earliestRestoreDate value.
      */
     public OffsetDateTime earliestRestoreDate() {
@@ -279,7 +283,7 @@ public final class ServerProperties {
 
     /**
      * Set the earliestRestoreDate property: Earliest restore point creation time (ISO8601 format).
-     *
+     * 
      * @param earliestRestoreDate the earliestRestoreDate value to set.
      * @return the ServerProperties object itself.
      */
@@ -290,7 +294,7 @@ public final class ServerProperties {
 
     /**
      * Get the storageProfile property: Storage profile of a server.
-     *
+     * 
      * @return the storageProfile value.
      */
     public StorageProfile storageProfile() {
@@ -299,7 +303,7 @@ public final class ServerProperties {
 
     /**
      * Set the storageProfile property: Storage profile of a server.
-     *
+     * 
      * @param storageProfile the storageProfile value to set.
      * @return the ServerProperties object itself.
      */
@@ -310,7 +314,7 @@ public final class ServerProperties {
 
     /**
      * Get the replicationRole property: The replication role of the server.
-     *
+     * 
      * @return the replicationRole value.
      */
     public String replicationRole() {
@@ -319,7 +323,7 @@ public final class ServerProperties {
 
     /**
      * Set the replicationRole property: The replication role of the server.
-     *
+     * 
      * @param replicationRole the replicationRole value to set.
      * @return the ServerProperties object itself.
      */
@@ -330,7 +334,7 @@ public final class ServerProperties {
 
     /**
      * Get the masterServerId property: The master server id of a replica server.
-     *
+     * 
      * @return the masterServerId value.
      */
     public String masterServerId() {
@@ -339,7 +343,7 @@ public final class ServerProperties {
 
     /**
      * Set the masterServerId property: The master server id of a replica server.
-     *
+     * 
      * @param masterServerId the masterServerId value to set.
      * @return the ServerProperties object itself.
      */
@@ -350,7 +354,7 @@ public final class ServerProperties {
 
     /**
      * Get the replicaCapacity property: The maximum number of replicas that a master server can have.
-     *
+     * 
      * @return the replicaCapacity value.
      */
     public Integer replicaCapacity() {
@@ -359,7 +363,7 @@ public final class ServerProperties {
 
     /**
      * Set the replicaCapacity property: The maximum number of replicas that a master server can have.
-     *
+     * 
      * @param replicaCapacity the replicaCapacity value to set.
      * @return the ServerProperties object itself.
      */
@@ -371,7 +375,7 @@ public final class ServerProperties {
     /**
      * Get the publicNetworkAccess property: Whether or not public network access is allowed for this server. Value is
      * optional but if passed in, must be 'Enabled' or 'Disabled'.
-     *
+     * 
      * @return the publicNetworkAccess value.
      */
     public PublicNetworkAccessEnum publicNetworkAccess() {
@@ -381,7 +385,7 @@ public final class ServerProperties {
     /**
      * Set the publicNetworkAccess property: Whether or not public network access is allowed for this server. Value is
      * optional but if passed in, must be 'Enabled' or 'Disabled'.
-     *
+     * 
      * @param publicNetworkAccess the publicNetworkAccess value to set.
      * @return the ServerProperties object itself.
      */
@@ -392,7 +396,7 @@ public final class ServerProperties {
 
     /**
      * Get the privateEndpointConnections property: List of private endpoint connections on a server.
-     *
+     * 
      * @return the privateEndpointConnections value.
      */
     public List<ServerPrivateEndpointConnection> privateEndpointConnections() {
@@ -401,7 +405,7 @@ public final class ServerProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

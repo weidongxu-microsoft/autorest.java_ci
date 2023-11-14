@@ -8,14 +8,18 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** A message indicating if changes on the service provider require any updates on the consumer. */
+/**
+ * A message indicating if changes on the service provider require any updates on the consumer.
+ */
 public final class ActionsRequired extends ExpandableStringEnum<ActionsRequired> {
-    /** Static value None for ActionsRequired. */
+    /**
+     * Static value None for ActionsRequired.
+     */
     public static final ActionsRequired NONE = fromString("None");
 
     /**
      * Creates a new instance of ActionsRequired value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -24,7 +28,7 @@ public final class ActionsRequired extends ExpandableStringEnum<ActionsRequired>
 
     /**
      * Creates or finds a ActionsRequired from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding ActionsRequired.
      */
@@ -35,7 +39,7 @@ public final class ActionsRequired extends ExpandableStringEnum<ActionsRequired>
 
     /**
      * Gets known ActionsRequired values.
-     *
+     * 
      * @return known ActionsRequired values.
      */
     public static Collection<ActionsRequired> values() {

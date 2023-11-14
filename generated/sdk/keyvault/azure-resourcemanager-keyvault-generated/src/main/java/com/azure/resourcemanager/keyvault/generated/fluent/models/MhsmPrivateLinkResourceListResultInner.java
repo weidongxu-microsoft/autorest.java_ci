@@ -9,7 +9,9 @@ import com.azure.resourcemanager.keyvault.generated.models.MhsmPrivateLinkResour
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** A list of private link resources. */
+/**
+ * A list of private link resources.
+ */
 @Fluent
 public final class MhsmPrivateLinkResourceListResultInner {
     /*
@@ -18,13 +20,15 @@ public final class MhsmPrivateLinkResourceListResultInner {
     @JsonProperty(value = "value")
     private List<MhsmPrivateLinkResource> value;
 
-    /** Creates an instance of MhsmPrivateLinkResourceListResultInner class. */
+    /**
+     * Creates an instance of MhsmPrivateLinkResourceListResultInner class.
+     */
     public MhsmPrivateLinkResourceListResultInner() {
     }
 
     /**
      * Get the value property: Array of private link resources.
-     *
+     * 
      * @return the value value.
      */
     public List<MhsmPrivateLinkResource> value() {
@@ -33,7 +37,7 @@ public final class MhsmPrivateLinkResourceListResultInner {
 
     /**
      * Set the value property: Array of private link resources.
-     *
+     * 
      * @param value the value value to set.
      * @return the MhsmPrivateLinkResourceListResultInner object itself.
      */
@@ -44,7 +48,7 @@ public final class MhsmPrivateLinkResourceListResultInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

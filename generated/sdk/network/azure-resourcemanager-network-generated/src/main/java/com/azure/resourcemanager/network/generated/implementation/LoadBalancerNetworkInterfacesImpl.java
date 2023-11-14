@@ -19,8 +19,7 @@ public final class LoadBalancerNetworkInterfacesImpl implements LoadBalancerNetw
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public LoadBalancerNetworkInterfacesImpl(
-        LoadBalancerNetworkInterfacesClient innerClient,
+    public LoadBalancerNetworkInterfacesImpl(LoadBalancerNetworkInterfacesClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -32,8 +31,8 @@ public final class LoadBalancerNetworkInterfacesImpl implements LoadBalancerNetw
     }
 
     public PagedIterable<NetworkInterface> list(String resourceGroupName, String loadBalancerName, Context context) {
-        PagedIterable<NetworkInterfaceInner> inner =
-            this.serviceClient().list(resourceGroupName, loadBalancerName, context);
+        PagedIterable<NetworkInterfaceInner> inner
+            = this.serviceClient().list(resourceGroupName, loadBalancerName, context);
         return Utils.mapPage(inner, inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
     }
 

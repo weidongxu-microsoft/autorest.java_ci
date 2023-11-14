@@ -31,13 +31,15 @@ public final class TransformInner extends ProxyResource {
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
-    /** Creates an instance of TransformInner class. */
+    /**
+     * Creates an instance of TransformInner class.
+     */
     public TransformInner() {
     }
 
     /**
      * Get the innerProperties property: The resource properties.
-     *
+     * 
      * @return the innerProperties value.
      */
     private TransformProperties innerProperties() {
@@ -46,7 +48,7 @@ public final class TransformInner extends ProxyResource {
 
     /**
      * Get the systemData property: The system metadata relating to this resource.
-     *
+     * 
      * @return the systemData value.
      */
     public SystemData systemData() {
@@ -54,8 +56,9 @@ public final class TransformInner extends ProxyResource {
     }
 
     /**
-     * Get the created property: The UTC date and time when the Transform was created, in 'YYYY-MM-DDThh:mm:ssZ' format.
-     *
+     * Get the created property: The UTC date and time when the Transform was created, in 'YYYY-MM-DDThh:mm:ssZ'
+     * format.
+     * 
      * @return the created value.
      */
     public OffsetDateTime created() {
@@ -64,7 +67,7 @@ public final class TransformInner extends ProxyResource {
 
     /**
      * Get the description property: An optional verbose description of the Transform.
-     *
+     * 
      * @return the description value.
      */
     public String description() {
@@ -73,7 +76,7 @@ public final class TransformInner extends ProxyResource {
 
     /**
      * Set the description property: An optional verbose description of the Transform.
-     *
+     * 
      * @param description the description value to set.
      * @return the TransformInner object itself.
      */
@@ -88,7 +91,7 @@ public final class TransformInner extends ProxyResource {
     /**
      * Get the lastModified property: The UTC date and time when the Transform was last updated, in
      * 'YYYY-MM-DDThh:mm:ssZ' format.
-     *
+     * 
      * @return the lastModified value.
      */
     public OffsetDateTime lastModified() {
@@ -97,7 +100,7 @@ public final class TransformInner extends ProxyResource {
 
     /**
      * Get the outputs property: An array of one or more TransformOutputs that the Transform should generate.
-     *
+     * 
      * @return the outputs value.
      */
     public List<TransformOutput> outputs() {
@@ -106,7 +109,7 @@ public final class TransformInner extends ProxyResource {
 
     /**
      * Set the outputs property: An array of one or more TransformOutputs that the Transform should generate.
-     *
+     * 
      * @param outputs the outputs value to set.
      * @return the TransformInner object itself.
      */
@@ -120,7 +123,7 @@ public final class TransformInner extends ProxyResource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

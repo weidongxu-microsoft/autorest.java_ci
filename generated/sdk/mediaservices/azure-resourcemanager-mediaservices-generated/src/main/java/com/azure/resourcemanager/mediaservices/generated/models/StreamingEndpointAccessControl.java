@@ -7,7 +7,9 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Streaming endpoint access control definition. */
+/**
+ * Streaming endpoint access control definition.
+ */
 @Fluent
 public final class StreamingEndpointAccessControl {
     /*
@@ -22,13 +24,15 @@ public final class StreamingEndpointAccessControl {
     @JsonProperty(value = "ip")
     private IpAccessControl ip;
 
-    /** Creates an instance of StreamingEndpointAccessControl class. */
+    /**
+     * Creates an instance of StreamingEndpointAccessControl class.
+     */
     public StreamingEndpointAccessControl() {
     }
 
     /**
      * Get the akamai property: The access control of Akamai.
-     *
+     * 
      * @return the akamai value.
      */
     public AkamaiAccessControl akamai() {
@@ -37,7 +41,7 @@ public final class StreamingEndpointAccessControl {
 
     /**
      * Set the akamai property: The access control of Akamai.
-     *
+     * 
      * @param akamai the akamai value to set.
      * @return the StreamingEndpointAccessControl object itself.
      */
@@ -48,7 +52,7 @@ public final class StreamingEndpointAccessControl {
 
     /**
      * Get the ip property: The IP access control of the streaming endpoint.
-     *
+     * 
      * @return the ip value.
      */
     public IpAccessControl ip() {
@@ -57,7 +61,7 @@ public final class StreamingEndpointAccessControl {
 
     /**
      * Set the ip property: The IP access control of the streaming endpoint.
-     *
+     * 
      * @param ip the ip value to set.
      * @return the StreamingEndpointAccessControl object itself.
      */
@@ -68,7 +72,7 @@ public final class StreamingEndpointAccessControl {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

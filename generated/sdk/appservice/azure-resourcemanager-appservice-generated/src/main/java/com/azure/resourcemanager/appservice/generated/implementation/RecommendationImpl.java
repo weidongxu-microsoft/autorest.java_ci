@@ -19,8 +19,7 @@ public final class RecommendationImpl implements Recommendation {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    RecommendationImpl(
-        RecommendationInner innerObject,
+    RecommendationImpl(RecommendationInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

@@ -11,11 +11,14 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.QueryResultsInner;
 import com.azure.resourcemanager.network.generated.models.IdpsQueryObject;
 
-/** An instance of this class provides access to all the operations defined in FirewallPolicyIdpsSignaturesClient. */
+/**
+ * An instance of this class provides access to all the operations defined in FirewallPolicyIdpsSignaturesClient.
+ */
 public interface FirewallPolicyIdpsSignaturesClient {
     /**
-     * Retrieves the current status of IDPS signatures for the relevant policy.
-     *
+     * Retrieves the current status of IDPS signatures for the relevant policy. Maximal amount of returned signatures is
+     * 1000.
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @param parameters Will describe the query to run against the IDPS signatures DB.
@@ -26,12 +29,13 @@ public interface FirewallPolicyIdpsSignaturesClient {
      * @return query result along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<QueryResultsInner> listWithResponse(
-        String resourceGroupName, String firewallPolicyName, IdpsQueryObject parameters, Context context);
+    Response<QueryResultsInner> listWithResponse(String resourceGroupName, String firewallPolicyName,
+        IdpsQueryObject parameters, Context context);
 
     /**
-     * Retrieves the current status of IDPS signatures for the relevant policy.
-     *
+     * Retrieves the current status of IDPS signatures for the relevant policy. Maximal amount of returned signatures is
+     * 1000.
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @param parameters Will describe the query to run against the IDPS signatures DB.

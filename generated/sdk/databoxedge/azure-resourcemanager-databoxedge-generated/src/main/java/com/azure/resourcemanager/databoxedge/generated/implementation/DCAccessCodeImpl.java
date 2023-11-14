@@ -12,8 +12,7 @@ public final class DCAccessCodeImpl implements DCAccessCode {
 
     private final com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager;
 
-    DCAccessCodeImpl(
-        DCAccessCodeInner innerObject,
+    DCAccessCodeImpl(DCAccessCodeInner innerObject,
         com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

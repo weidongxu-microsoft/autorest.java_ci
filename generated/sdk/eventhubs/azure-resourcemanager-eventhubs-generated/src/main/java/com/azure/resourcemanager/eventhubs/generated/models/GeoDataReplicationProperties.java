@@ -8,12 +8,14 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** GeoDR Replication properties. */
+/**
+ * GeoDR Replication properties.
+ */
 @Fluent
 public final class GeoDataReplicationProperties {
     /*
      * The maximum acceptable lag for data replication operations from the primary replica to a quorum of secondary
-     * replicas.  When the lag exceeds the configured amount, operations on the primary replica will be failed. The
+     * replicas. When the lag exceeds the configured amount, operations on the primary replica will be failed. The
      * allowed values are 0 and 5 minutes to 1 day.
      */
     @JsonProperty(value = "maxReplicationLagDurationInSeconds")
@@ -25,7 +27,9 @@ public final class GeoDataReplicationProperties {
     @JsonProperty(value = "locations")
     private List<NamespaceReplicaLocation> locations;
 
-    /** Creates an instance of GeoDataReplicationProperties class. */
+    /**
+     * Creates an instance of GeoDataReplicationProperties class.
+     */
     public GeoDataReplicationProperties() {
     }
 
@@ -33,7 +37,7 @@ public final class GeoDataReplicationProperties {
      * Get the maxReplicationLagDurationInSeconds property: The maximum acceptable lag for data replication operations
      * from the primary replica to a quorum of secondary replicas. When the lag exceeds the configured amount,
      * operations on the primary replica will be failed. The allowed values are 0 and 5 minutes to 1 day.
-     *
+     * 
      * @return the maxReplicationLagDurationInSeconds value.
      */
     public Integer maxReplicationLagDurationInSeconds() {
@@ -44,19 +48,19 @@ public final class GeoDataReplicationProperties {
      * Set the maxReplicationLagDurationInSeconds property: The maximum acceptable lag for data replication operations
      * from the primary replica to a quorum of secondary replicas. When the lag exceeds the configured amount,
      * operations on the primary replica will be failed. The allowed values are 0 and 5 minutes to 1 day.
-     *
+     * 
      * @param maxReplicationLagDurationInSeconds the maxReplicationLagDurationInSeconds value to set.
      * @return the GeoDataReplicationProperties object itself.
      */
-    public GeoDataReplicationProperties withMaxReplicationLagDurationInSeconds(
-        Integer maxReplicationLagDurationInSeconds) {
+    public GeoDataReplicationProperties
+        withMaxReplicationLagDurationInSeconds(Integer maxReplicationLagDurationInSeconds) {
         this.maxReplicationLagDurationInSeconds = maxReplicationLagDurationInSeconds;
         return this;
     }
 
     /**
      * Get the locations property: A list of regions where replicas of the namespace are maintained.
-     *
+     * 
      * @return the locations value.
      */
     public List<NamespaceReplicaLocation> locations() {
@@ -65,7 +69,7 @@ public final class GeoDataReplicationProperties {
 
     /**
      * Set the locations property: A list of regions where replicas of the namespace are maintained.
-     *
+     * 
      * @param locations the locations value to set.
      * @return the GeoDataReplicationProperties object itself.
      */
@@ -76,7 +80,7 @@ public final class GeoDataReplicationProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

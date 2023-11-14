@@ -9,11 +9,13 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCrossConnectionPeeringInner;
 
-/** Resource collection API of ExpressRouteCrossConnectionPeerings. */
+/**
+ * Resource collection API of ExpressRouteCrossConnectionPeerings.
+ */
 public interface ExpressRouteCrossConnectionPeerings {
     /**
      * Gets all peerings in a specified ExpressRouteCrossConnection.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -25,7 +27,7 @@ public interface ExpressRouteCrossConnectionPeerings {
 
     /**
      * Gets all peerings in a specified ExpressRouteCrossConnection.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
      * @param context The context to associate with this operation.
@@ -34,12 +36,12 @@ public interface ExpressRouteCrossConnectionPeerings {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all peerings in a specified ExpressRouteCrossConnection as paginated response with {@link PagedIterable}.
      */
-    PagedIterable<ExpressRouteCrossConnectionPeering> list(
-        String resourceGroupName, String crossConnectionName, Context context);
+    PagedIterable<ExpressRouteCrossConnectionPeering> list(String resourceGroupName, String crossConnectionName,
+        Context context);
 
     /**
      * Deletes the specified peering from the ExpressRouteCrossConnection.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
      * @param peeringName The name of the peering.
@@ -51,7 +53,7 @@ public interface ExpressRouteCrossConnectionPeerings {
 
     /**
      * Deletes the specified peering from the ExpressRouteCrossConnection.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
      * @param peeringName The name of the peering.
@@ -64,7 +66,7 @@ public interface ExpressRouteCrossConnectionPeerings {
 
     /**
      * Gets the specified peering for the ExpressRouteCrossConnection.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
      * @param peeringName The name of the peering.
@@ -74,12 +76,12 @@ public interface ExpressRouteCrossConnectionPeerings {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified peering for the ExpressRouteCrossConnection along with {@link Response}.
      */
-    Response<ExpressRouteCrossConnectionPeering> getWithResponse(
-        String resourceGroupName, String crossConnectionName, String peeringName, Context context);
+    Response<ExpressRouteCrossConnectionPeering> getWithResponse(String resourceGroupName, String crossConnectionName,
+        String peeringName, Context context);
 
     /**
      * Gets the specified peering for the ExpressRouteCrossConnection.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
      * @param peeringName The name of the peering.
@@ -92,41 +94,34 @@ public interface ExpressRouteCrossConnectionPeerings {
 
     /**
      * Creates or updates a peering in the specified ExpressRouteCrossConnection.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
      * @param peeringName The name of the peering.
      * @param peeringParameters Parameters supplied to the create or update ExpressRouteCrossConnection peering
-     *     operation.
+     * operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return peering in an ExpressRoute Cross Connection resource.
      */
-    ExpressRouteCrossConnectionPeering createOrUpdate(
-        String resourceGroupName,
-        String crossConnectionName,
-        String peeringName,
-        ExpressRouteCrossConnectionPeeringInner peeringParameters);
+    ExpressRouteCrossConnectionPeering createOrUpdate(String resourceGroupName, String crossConnectionName,
+        String peeringName, ExpressRouteCrossConnectionPeeringInner peeringParameters);
 
     /**
      * Creates or updates a peering in the specified ExpressRouteCrossConnection.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
      * @param peeringName The name of the peering.
      * @param peeringParameters Parameters supplied to the create or update ExpressRouteCrossConnection peering
-     *     operation.
+     * operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return peering in an ExpressRoute Cross Connection resource.
      */
-    ExpressRouteCrossConnectionPeering createOrUpdate(
-        String resourceGroupName,
-        String crossConnectionName,
-        String peeringName,
-        ExpressRouteCrossConnectionPeeringInner peeringParameters,
-        Context context);
+    ExpressRouteCrossConnectionPeering createOrUpdate(String resourceGroupName, String crossConnectionName,
+        String peeringName, ExpressRouteCrossConnectionPeeringInner peeringParameters, Context context);
 }

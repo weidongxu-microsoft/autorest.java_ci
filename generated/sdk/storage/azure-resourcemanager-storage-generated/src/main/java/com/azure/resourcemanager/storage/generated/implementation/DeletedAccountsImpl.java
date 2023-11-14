@@ -21,8 +21,8 @@ public final class DeletedAccountsImpl implements DeletedAccounts {
 
     private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
-    public DeletedAccountsImpl(
-        DeletedAccountsClient innerClient, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
+    public DeletedAccountsImpl(DeletedAccountsClient innerClient,
+        com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -38,13 +38,10 @@ public final class DeletedAccountsImpl implements DeletedAccounts {
     }
 
     public Response<DeletedAccount> getWithResponse(String deletedAccountName, String location, Context context) {
-        Response<DeletedAccountInner> inner =
-            this.serviceClient().getWithResponse(deletedAccountName, location, context);
+        Response<DeletedAccountInner> inner
+            = this.serviceClient().getWithResponse(deletedAccountName, location, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DeletedAccountImpl(inner.getValue(), this.manager()));
         } else {
             return null;

@@ -19,8 +19,7 @@ public final class DeviceCapacityInfoImpl implements DeviceCapacityInfo {
 
     private final com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager;
 
-    DeviceCapacityInfoImpl(
-        DeviceCapacityInfoInner innerObject,
+    DeviceCapacityInfoImpl(DeviceCapacityInfoInner innerObject,
         com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

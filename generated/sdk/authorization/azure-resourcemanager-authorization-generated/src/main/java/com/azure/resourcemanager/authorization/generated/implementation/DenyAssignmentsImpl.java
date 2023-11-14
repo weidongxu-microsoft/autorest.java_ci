@@ -21,46 +21,23 @@ public final class DenyAssignmentsImpl implements DenyAssignments {
 
     private final com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager;
 
-    public DenyAssignmentsImpl(
-        DenyAssignmentsClient innerClient,
+    public DenyAssignmentsImpl(DenyAssignmentsClient innerClient,
         com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public PagedIterable<DenyAssignment> listForResource(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName) {
-        PagedIterable<DenyAssignmentInner> inner =
-            this
-                .serviceClient()
-                .listForResource(
-                    resourceGroupName, resourceProviderNamespace, parentResourcePath, resourceType, resourceName);
+    public PagedIterable<DenyAssignment> listForResource(String resourceGroupName, String resourceProviderNamespace,
+        String parentResourcePath, String resourceType, String resourceName) {
+        PagedIterable<DenyAssignmentInner> inner = this.serviceClient().listForResource(resourceGroupName,
+            resourceProviderNamespace, parentResourcePath, resourceType, resourceName);
         return Utils.mapPage(inner, inner1 -> new DenyAssignmentImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<DenyAssignment> listForResource(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
-        String filter,
-        Context context) {
-        PagedIterable<DenyAssignmentInner> inner =
-            this
-                .serviceClient()
-                .listForResource(
-                    resourceGroupName,
-                    resourceProviderNamespace,
-                    parentResourcePath,
-                    resourceType,
-                    resourceName,
-                    filter,
-                    context);
+    public PagedIterable<DenyAssignment> listForResource(String resourceGroupName, String resourceProviderNamespace,
+        String parentResourcePath, String resourceType, String resourceName, String filter, Context context) {
+        PagedIterable<DenyAssignmentInner> inner = this.serviceClient().listForResource(resourceGroupName,
+            resourceProviderNamespace, parentResourcePath, resourceType, resourceName, filter, context);
         return Utils.mapPage(inner, inner1 -> new DenyAssignmentImpl(inner1, this.manager()));
     }
 
@@ -70,8 +47,8 @@ public final class DenyAssignmentsImpl implements DenyAssignments {
     }
 
     public PagedIterable<DenyAssignment> listByResourceGroup(String resourceGroupName, String filter, Context context) {
-        PagedIterable<DenyAssignmentInner> inner =
-            this.serviceClient().listByResourceGroup(resourceGroupName, filter, context);
+        PagedIterable<DenyAssignmentInner> inner
+            = this.serviceClient().listByResourceGroup(resourceGroupName, filter, context);
         return Utils.mapPage(inner, inner1 -> new DenyAssignmentImpl(inner1, this.manager()));
     }
 
@@ -88,10 +65,7 @@ public final class DenyAssignmentsImpl implements DenyAssignments {
     public Response<DenyAssignment> getWithResponse(String scope, String denyAssignmentId, Context context) {
         Response<DenyAssignmentInner> inner = this.serviceClient().getWithResponse(scope, denyAssignmentId, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DenyAssignmentImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -110,10 +84,7 @@ public final class DenyAssignmentsImpl implements DenyAssignments {
     public Response<DenyAssignment> getByIdWithResponse(String denyAssignmentId, Context context) {
         Response<DenyAssignmentInner> inner = this.serviceClient().getByIdWithResponse(denyAssignmentId, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DenyAssignmentImpl(inner.getValue(), this.manager()));
         } else {
             return null;

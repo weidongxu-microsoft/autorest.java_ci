@@ -14,7 +14,9 @@ import com.azure.resourcemanager.monitor.generated.models.Source;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
-/** Log Search Rule Definition. */
+/**
+ * Log Search Rule Definition.
+ */
 @Fluent
 public final class LogSearchRule {
     /*
@@ -83,13 +85,15 @@ public final class LogSearchRule {
     @JsonProperty(value = "action", required = true)
     private Action action;
 
-    /** Creates an instance of LogSearchRule class. */
+    /**
+     * Creates an instance of LogSearchRule class.
+     */
     public LogSearchRule() {
     }
 
     /**
      * Get the createdWithApiVersion property: The api-version used when creating this alert rule.
-     *
+     * 
      * @return the createdWithApiVersion value.
      */
     public String createdWithApiVersion() {
@@ -98,7 +102,7 @@ public final class LogSearchRule {
 
     /**
      * Get the isLegacyLogAnalyticsRule property: True if alert rule is legacy Log Analytic rule.
-     *
+     * 
      * @return the isLegacyLogAnalyticsRule value.
      */
     public Boolean isLegacyLogAnalyticsRule() {
@@ -107,7 +111,7 @@ public final class LogSearchRule {
 
     /**
      * Get the description property: The description of the Log Search rule.
-     *
+     * 
      * @return the description value.
      */
     public String description() {
@@ -116,7 +120,7 @@ public final class LogSearchRule {
 
     /**
      * Set the description property: The description of the Log Search rule.
-     *
+     * 
      * @param description the description value to set.
      * @return the LogSearchRule object itself.
      */
@@ -127,7 +131,7 @@ public final class LogSearchRule {
 
     /**
      * Get the displayName property: The display name of the alert rule.
-     *
+     * 
      * @return the displayName value.
      */
     public String displayName() {
@@ -136,7 +140,7 @@ public final class LogSearchRule {
 
     /**
      * Set the displayName property: The display name of the alert rule.
-     *
+     * 
      * @param displayName the displayName value to set.
      * @return the LogSearchRule object itself.
      */
@@ -146,9 +150,9 @@ public final class LogSearchRule {
     }
 
     /**
-     * Get the autoMitigate property: The flag that indicates whether the alert should be automatically resolved or not.
-     * The default is false.
-     *
+     * Get the autoMitigate property: The flag that indicates whether the alert should be automatically resolved or
+     * not. The default is false.
+     * 
      * @return the autoMitigate value.
      */
     public Boolean autoMitigate() {
@@ -156,9 +160,9 @@ public final class LogSearchRule {
     }
 
     /**
-     * Set the autoMitigate property: The flag that indicates whether the alert should be automatically resolved or not.
-     * The default is false.
-     *
+     * Set the autoMitigate property: The flag that indicates whether the alert should be automatically resolved or
+     * not. The default is false.
+     * 
      * @param autoMitigate the autoMitigate value to set.
      * @return the LogSearchRule object itself.
      */
@@ -170,7 +174,7 @@ public final class LogSearchRule {
     /**
      * Get the enabled property: The flag which indicates whether the Log Search rule is enabled. Value should be true
      * or false.
-     *
+     * 
      * @return the enabled value.
      */
     public Enabled enabled() {
@@ -180,7 +184,7 @@ public final class LogSearchRule {
     /**
      * Set the enabled property: The flag which indicates whether the Log Search rule is enabled. Value should be true
      * or false.
-     *
+     * 
      * @param enabled the enabled value to set.
      * @return the LogSearchRule object itself.
      */
@@ -191,7 +195,7 @@ public final class LogSearchRule {
 
     /**
      * Get the lastUpdatedTime property: Last time the rule was updated in IS08601 format.
-     *
+     * 
      * @return the lastUpdatedTime value.
      */
     public OffsetDateTime lastUpdatedTime() {
@@ -200,7 +204,7 @@ public final class LogSearchRule {
 
     /**
      * Get the provisioningState property: Provisioning state of the scheduled query rule.
-     *
+     * 
      * @return the provisioningState value.
      */
     public ProvisioningState provisioningState() {
@@ -209,7 +213,7 @@ public final class LogSearchRule {
 
     /**
      * Get the source property: Data Source against which rule will Query Data.
-     *
+     * 
      * @return the source value.
      */
     public Source source() {
@@ -218,7 +222,7 @@ public final class LogSearchRule {
 
     /**
      * Set the source property: Data Source against which rule will Query Data.
-     *
+     * 
      * @param source the source value to set.
      * @return the LogSearchRule object itself.
      */
@@ -228,8 +232,9 @@ public final class LogSearchRule {
     }
 
     /**
-     * Get the schedule property: Schedule (Frequency, Time Window) for rule. Required for action type - AlertingAction.
-     *
+     * Get the schedule property: Schedule (Frequency, Time Window) for rule. Required for action type -
+     * AlertingAction.
+     * 
      * @return the schedule value.
      */
     public Schedule schedule() {
@@ -237,8 +242,9 @@ public final class LogSearchRule {
     }
 
     /**
-     * Set the schedule property: Schedule (Frequency, Time Window) for rule. Required for action type - AlertingAction.
-     *
+     * Set the schedule property: Schedule (Frequency, Time Window) for rule. Required for action type -
+     * AlertingAction.
+     * 
      * @param schedule the schedule value to set.
      * @return the LogSearchRule object itself.
      */
@@ -249,7 +255,7 @@ public final class LogSearchRule {
 
     /**
      * Get the action property: Action needs to be taken on rule execution.
-     *
+     * 
      * @return the action value.
      */
     public Action action() {
@@ -258,7 +264,7 @@ public final class LogSearchRule {
 
     /**
      * Set the action property: Action needs to be taken on rule execution.
-     *
+     * 
      * @param action the action value to set.
      * @return the LogSearchRule object itself.
      */
@@ -269,14 +275,13 @@ public final class LogSearchRule {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (source() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property source in model LogSearchRule"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property source in model LogSearchRule"));
         } else {
             source().validate();
         }
@@ -284,9 +289,8 @@ public final class LogSearchRule {
             schedule().validate();
         }
         if (action() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property action in model LogSearchRule"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property action in model LogSearchRule"));
         } else {
             action().validate();
         }

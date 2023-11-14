@@ -8,14 +8,18 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** The operator to use for comparison. */
+/**
+ * The operator to use for comparison.
+ */
 public final class BudgetOperatorType extends ExpandableStringEnum<BudgetOperatorType> {
-    /** Static value In for BudgetOperatorType. */
+    /**
+     * Static value In for BudgetOperatorType.
+     */
     public static final BudgetOperatorType IN = fromString("In");
 
     /**
      * Creates a new instance of BudgetOperatorType value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -24,7 +28,7 @@ public final class BudgetOperatorType extends ExpandableStringEnum<BudgetOperato
 
     /**
      * Creates or finds a BudgetOperatorType from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding BudgetOperatorType.
      */
@@ -35,7 +39,7 @@ public final class BudgetOperatorType extends ExpandableStringEnum<BudgetOperato
 
     /**
      * Gets known BudgetOperatorType values.
-     *
+     * 
      * @return known BudgetOperatorType values.
      */
     public static Collection<BudgetOperatorType> values() {

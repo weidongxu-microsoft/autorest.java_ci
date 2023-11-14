@@ -7,11 +7,13 @@ package com.azure.resourcemanager.monitor.generated.models;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 
-/** Resource collection API of MetricNamespaces. */
+/**
+ * Resource collection API of MetricNamespaces.
+ */
 public interface MetricNamespaces {
     /**
      * Lists the metric namespaces for the resource.
-     *
+     * 
      * @param resourceUri The identifier of the resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -22,7 +24,7 @@ public interface MetricNamespaces {
 
     /**
      * Lists the metric namespaces for the resource.
-     *
+     * 
      * @param resourceUri The identifier of the resource.
      * @param startTime The ISO 8601 conform Date start time from which to query for metric namespaces.
      * @param context The context to associate with this operation.

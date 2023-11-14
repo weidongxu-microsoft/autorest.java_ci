@@ -11,53 +11,55 @@ import com.azure.resourcemanager.compute.generated.fluent.models.CloudServiceInn
 import java.util.List;
 import java.util.Map;
 
-/** An immutable client-side representation of CloudService. */
+/**
+ * An immutable client-side representation of CloudService.
+ */
 public interface CloudService {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the name property: The name of the resource.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the type property: The type of the resource.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the location property: The geo-location where the resource lives.
-     *
+     * 
      * @return the location value.
      */
     String location();
 
     /**
      * Gets the tags property: Resource tags.
-     *
+     * 
      * @return the tags value.
      */
     Map<String, String> tags();
 
     /**
      * Gets the properties property: Cloud service properties.
-     *
+     * 
      * @return the properties value.
      */
     CloudServiceProperties properties();
 
     /**
      * Gets the systemData property: The system meta data relating to this resource.
-     *
+     * 
      * @return the systemData value.
      */
     SystemData systemData();
@@ -65,58 +67,63 @@ public interface CloudService {
     /**
      * Gets the zones property: List of logical availability zone of the resource. List should contain only 1 zone where
      * cloud service should be provisioned. This field is optional.
-     *
+     * 
      * @return the zones value.
      */
     List<String> zones();
 
     /**
      * Gets the region of the resource.
-     *
+     * 
      * @return the region of the resource.
      */
     Region region();
 
     /**
      * Gets the name of the resource region.
-     *
+     * 
      * @return the name of the resource region.
      */
     String regionName();
 
     /**
      * Gets the name of the resource group.
-     *
+     * 
      * @return the name of the resource group.
      */
     String resourceGroupName();
 
     /**
      * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.CloudServiceInner object.
-     *
+     * 
      * @return the inner object.
      */
     CloudServiceInner innerModel();
 
-    /** The entirety of the CloudService definition. */
-    interface Definition
-        extends DefinitionStages.Blank,
-            DefinitionStages.WithLocation,
-            DefinitionStages.WithResourceGroup,
-            DefinitionStages.WithCreate {
+    /**
+     * The entirety of the CloudService definition.
+     */
+    interface Definition extends DefinitionStages.Blank, DefinitionStages.WithLocation,
+        DefinitionStages.WithResourceGroup, DefinitionStages.WithCreate {
     }
 
-    /** The CloudService definition stages. */
+    /**
+     * The CloudService definition stages.
+     */
     interface DefinitionStages {
-        /** The first stage of the CloudService definition. */
+        /**
+         * The first stage of the CloudService definition.
+         */
         interface Blank extends WithLocation {
         }
 
-        /** The stage of the CloudService definition allowing to specify location. */
+        /**
+         * The stage of the CloudService definition allowing to specify location.
+         */
         interface WithLocation {
             /**
              * Specifies the region for the resource.
-             *
+             * 
              * @param location The geo-location where the resource lives.
              * @return the next definition stage.
              */
@@ -124,18 +131,20 @@ public interface CloudService {
 
             /**
              * Specifies the region for the resource.
-             *
+             * 
              * @param location The geo-location where the resource lives.
              * @return the next definition stage.
              */
             WithResourceGroup withRegion(String location);
         }
 
-        /** The stage of the CloudService definition allowing to specify parent resource. */
+        /**
+         * The stage of the CloudService definition allowing to specify parent resource.
+         */
         interface WithResourceGroup {
             /**
              * Specifies resourceGroupName.
-             *
+             * 
              * @param resourceGroupName Name of the resource group.
              * @return the next definition stage.
              */
@@ -146,68 +155,73 @@ public interface CloudService {
          * The stage of the CloudService definition which contains all the minimum required properties for the resource
          * to be created, but also allows for any other optional properties to be specified.
          */
-        interface WithCreate
-            extends DefinitionStages.WithTags,
-                DefinitionStages.WithProperties,
-                DefinitionStages.WithSystemData,
-                DefinitionStages.WithZones {
+        interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithProperties,
+            DefinitionStages.WithSystemData, DefinitionStages.WithZones {
             /**
              * Executes the create request.
-             *
+             * 
              * @return the created resource.
              */
             CloudService create();
 
             /**
              * Executes the create request.
-             *
+             * 
              * @param context The context to associate with this operation.
              * @return the created resource.
              */
             CloudService create(Context context);
         }
 
-        /** The stage of the CloudService definition allowing to specify tags. */
+        /**
+         * The stage of the CloudService definition allowing to specify tags.
+         */
         interface WithTags {
             /**
              * Specifies the tags property: Resource tags..
-             *
+             * 
              * @param tags Resource tags.
              * @return the next definition stage.
              */
             WithCreate withTags(Map<String, String> tags);
         }
 
-        /** The stage of the CloudService definition allowing to specify properties. */
+        /**
+         * The stage of the CloudService definition allowing to specify properties.
+         */
         interface WithProperties {
             /**
              * Specifies the properties property: Cloud service properties.
-             *
+             * 
              * @param properties Cloud service properties.
              * @return the next definition stage.
              */
             WithCreate withProperties(CloudServiceProperties properties);
         }
 
-        /** The stage of the CloudService definition allowing to specify systemData. */
+        /**
+         * The stage of the CloudService definition allowing to specify systemData.
+         */
         interface WithSystemData {
             /**
              * Specifies the systemData property: The system meta data relating to this resource..
-             *
+             * 
              * @param systemData The system meta data relating to this resource.
              * @return the next definition stage.
              */
             WithCreate withSystemData(SystemData systemData);
         }
 
-        /** The stage of the CloudService definition allowing to specify zones. */
+        /**
+         * The stage of the CloudService definition allowing to specify zones.
+         */
         interface WithZones {
             /**
              * Specifies the zones property: List of logical availability zone of the resource. List should contain only
              * 1 zone where cloud service should be provisioned. This field is optional..
-             *
+             * 
              * @param zones List of logical availability zone of the resource. List should contain only 1 zone where
-             *     cloud service should be provisioned. This field is optional.
+             * cloud service should be provisioned. This field is optional.
              * @return the next definition stage.
              */
             WithCreate withZones(List<String> zones);
@@ -216,36 +230,42 @@ public interface CloudService {
 
     /**
      * Begins update for the CloudService resource.
-     *
+     * 
      * @return the stage of resource update.
      */
     CloudService.Update update();
 
-    /** The template for CloudService update. */
+    /**
+     * The template for CloudService update.
+     */
     interface Update extends UpdateStages.WithTags {
         /**
          * Executes the update request.
-         *
+         * 
          * @return the updated resource.
          */
         CloudService apply();
 
         /**
          * Executes the update request.
-         *
+         * 
          * @param context The context to associate with this operation.
          * @return the updated resource.
          */
         CloudService apply(Context context);
     }
 
-    /** The CloudService update stages. */
+    /**
+     * The CloudService update stages.
+     */
     interface UpdateStages {
-        /** The stage of the CloudService update allowing to specify tags. */
+        /**
+         * The stage of the CloudService update allowing to specify tags.
+         */
         interface WithTags {
             /**
              * Specifies the tags property: Resource tags.
-             *
+             * 
              * @param tags Resource tags.
              * @return the next definition stage.
              */
@@ -255,14 +275,14 @@ public interface CloudService {
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @return the refreshed resource.
      */
     CloudService refresh();
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @return the refreshed resource.
      */
@@ -270,20 +290,20 @@ public interface CloudService {
 
     /**
      * Starts the cloud service.
-     *
+     * 
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void start();
 
     /**
      * Starts the cloud service.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void start(Context context);
@@ -291,9 +311,9 @@ public interface CloudService {
     /**
      * Power off the cloud service. Note that resources are still attached and you are getting charged for the
      * resources.
-     *
+     * 
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void powerOff();
@@ -301,53 +321,53 @@ public interface CloudService {
     /**
      * Power off the cloud service. Note that resources are still attached and you are getting charged for the
      * resources.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void powerOff(Context context);
 
     /**
      * Restarts one or more role instances in a cloud service.
-     *
+     * 
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void restart();
 
     /**
      * Restarts one or more role instances in a cloud service.
-     *
+     * 
      * @param parameters List of cloud service role instance names.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void restart(RoleInstances parameters, Context context);
 
     /**
      * Reimage asynchronous operation reinstalls the operating system on instances of web roles or worker roles.
-     *
+     * 
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void reimage();
 
     /**
      * Reimage asynchronous operation reinstalls the operating system on instances of web roles or worker roles.
-     *
+     * 
      * @param parameters List of cloud service role instance names.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void reimage(RoleInstances parameters, Context context);
@@ -356,9 +376,9 @@ public interface CloudService {
      * Rebuild Role Instances reinstalls the operating system on instances of web roles or worker roles and initializes
      * the storage resources that are used by them. If you do not want to initialize storage resources, you can use
      * Reimage Role Instances.
-     *
+     * 
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void rebuild();
@@ -367,33 +387,33 @@ public interface CloudService {
      * Rebuild Role Instances reinstalls the operating system on instances of web roles or worker roles and initializes
      * the storage resources that are used by them. If you do not want to initialize storage resources, you can use
      * Reimage Role Instances.
-     *
+     * 
      * @param parameters List of cloud service role instance names.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void rebuild(RoleInstances parameters, Context context);
 
     /**
      * Deletes role instances in a cloud service.
-     *
+     * 
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteInstances();
 
     /**
      * Deletes role instances in a cloud service.
-     *
+     * 
      * @param parameters List of cloud service role instance names.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteInstances(RoleInstances parameters, Context context);

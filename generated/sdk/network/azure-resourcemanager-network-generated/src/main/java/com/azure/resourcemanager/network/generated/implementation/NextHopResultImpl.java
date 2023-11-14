@@ -13,8 +13,8 @@ public final class NextHopResultImpl implements NextHopResult {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    NextHopResultImpl(
-        NextHopResultInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    NextHopResultImpl(NextHopResultInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

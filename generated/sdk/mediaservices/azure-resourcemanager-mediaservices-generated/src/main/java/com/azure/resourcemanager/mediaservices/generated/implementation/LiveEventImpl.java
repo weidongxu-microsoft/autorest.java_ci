@@ -157,21 +157,14 @@ public final class LiveEventImpl implements LiveEvent, LiveEvent.Definition, Liv
     }
 
     public LiveEvent create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getLiveEvents()
-                .create(
-                    resourceGroupName, accountName, liveEventName, this.innerModel(), createAutoStart, Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getLiveEvents().create(resourceGroupName, accountName,
+            liveEventName, this.innerModel(), createAutoStart, Context.NONE);
         return this;
     }
 
     public LiveEvent create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getLiveEvents()
-                .create(resourceGroupName, accountName, liveEventName, this.innerModel(), createAutoStart, context);
+        this.innerObject = serviceManager.serviceClient().getLiveEvents().create(resourceGroupName, accountName,
+            liveEventName, this.innerModel(), createAutoStart, context);
         return this;
     }
 
@@ -187,25 +180,18 @@ public final class LiveEventImpl implements LiveEvent, LiveEvent.Definition, Liv
     }
 
     public LiveEvent apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getLiveEvents()
-                .update(resourceGroupName, accountName, liveEventName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getLiveEvents().update(resourceGroupName, accountName,
+            liveEventName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public LiveEvent apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getLiveEvents()
-                .update(resourceGroupName, accountName, liveEventName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getLiveEvents().update(resourceGroupName, accountName,
+            liveEventName, this.innerModel(), context);
         return this;
     }
 
-    LiveEventImpl(
-        LiveEventInner innerObject,
+    LiveEventImpl(LiveEventInner innerObject,
         com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -215,22 +201,14 @@ public final class LiveEventImpl implements LiveEvent, LiveEvent.Definition, Liv
     }
 
     public LiveEvent refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getLiveEvents()
-                .getWithResponse(resourceGroupName, accountName, liveEventName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getLiveEvents()
+            .getWithResponse(resourceGroupName, accountName, liveEventName, Context.NONE).getValue();
         return this;
     }
 
     public LiveEvent refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getLiveEvents()
-                .getWithResponse(resourceGroupName, accountName, liveEventName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getLiveEvents()
+            .getWithResponse(resourceGroupName, accountName, liveEventName, context).getValue();
         return this;
     }
 
@@ -287,9 +265,8 @@ public final class LiveEventImpl implements LiveEvent, LiveEvent.Definition, Liv
     }
 
     public PagedIterable<LiveEventTrackEvent> listGetTrackIngestHeartbeats(Context context) {
-        return serviceManager
-            .liveEvents()
-            .listGetTrackIngestHeartbeats(resourceGroupName, accountName, liveEventName, context);
+        return serviceManager.liveEvents().listGetTrackIngestHeartbeats(resourceGroupName, accountName, liveEventName,
+            context);
     }
 
     public LiveEventImpl withRegion(Region location) {

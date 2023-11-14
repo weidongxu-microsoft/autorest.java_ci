@@ -10,10 +10,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** Specify action need to be taken when rule type is Alert. */
+/**
+ * Specify action need to be taken when rule type is Alert.
+ */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "odata.type")
-@JsonTypeName(
-    "Microsoft.WindowsAzure.Management.Monitoring.Alerts.Models.Microsoft.AppInsights.Nexus.DataContracts.Resources.ScheduledQueryRules.AlertingAction")
+@JsonTypeName("Microsoft.WindowsAzure.Management.Monitoring.Alerts.Models.Microsoft.AppInsights.Nexus.DataContracts.Resources.ScheduledQueryRules.AlertingAction")
 @Fluent
 public final class AlertingAction extends Action {
     /*
@@ -40,13 +41,15 @@ public final class AlertingAction extends Action {
     @JsonProperty(value = "trigger", required = true)
     private TriggerCondition trigger;
 
-    /** Creates an instance of AlertingAction class. */
+    /**
+     * Creates an instance of AlertingAction class.
+     */
     public AlertingAction() {
     }
 
     /**
      * Get the severity property: Severity of the alert.
-     *
+     * 
      * @return the severity value.
      */
     public AlertSeverity severity() {
@@ -55,7 +58,7 @@ public final class AlertingAction extends Action {
 
     /**
      * Set the severity property: Severity of the alert.
-     *
+     * 
      * @param severity the severity value to set.
      * @return the AlertingAction object itself.
      */
@@ -66,7 +69,7 @@ public final class AlertingAction extends Action {
 
     /**
      * Get the aznsAction property: Azure action group reference.
-     *
+     * 
      * @return the aznsAction value.
      */
     public AzNsActionGroup aznsAction() {
@@ -75,7 +78,7 @@ public final class AlertingAction extends Action {
 
     /**
      * Set the aznsAction property: Azure action group reference.
-     *
+     * 
      * @param aznsAction the aznsAction value to set.
      * @return the AlertingAction object itself.
      */
@@ -86,7 +89,7 @@ public final class AlertingAction extends Action {
 
     /**
      * Get the throttlingInMin property: time (in minutes) for which Alerts should be throttled or suppressed.
-     *
+     * 
      * @return the throttlingInMin value.
      */
     public Integer throttlingInMin() {
@@ -95,7 +98,7 @@ public final class AlertingAction extends Action {
 
     /**
      * Set the throttlingInMin property: time (in minutes) for which Alerts should be throttled or suppressed.
-     *
+     * 
      * @param throttlingInMin the throttlingInMin value to set.
      * @return the AlertingAction object itself.
      */
@@ -106,7 +109,7 @@ public final class AlertingAction extends Action {
 
     /**
      * Get the trigger property: The trigger condition that results in the alert rule being.
-     *
+     * 
      * @return the trigger value.
      */
     public TriggerCondition trigger() {
@@ -115,7 +118,7 @@ public final class AlertingAction extends Action {
 
     /**
      * Set the trigger property: The trigger condition that results in the alert rule being.
-     *
+     * 
      * @param trigger the trigger value to set.
      * @return the AlertingAction object itself.
      */
@@ -126,24 +129,22 @@ public final class AlertingAction extends Action {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override
     public void validate() {
         super.validate();
         if (severity() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property severity in model AlertingAction"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property severity in model AlertingAction"));
         }
         if (aznsAction() != null) {
             aznsAction().validate();
         }
         if (trigger() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property trigger in model AlertingAction"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property trigger in model AlertingAction"));
         } else {
             trigger().validate();
         }

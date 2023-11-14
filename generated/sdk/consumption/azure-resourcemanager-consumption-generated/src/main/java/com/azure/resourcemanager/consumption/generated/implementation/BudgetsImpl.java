@@ -21,8 +21,8 @@ public final class BudgetsImpl implements Budgets {
 
     private final com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager;
 
-    public BudgetsImpl(
-        BudgetsClient innerClient, com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager) {
+    public BudgetsImpl(BudgetsClient innerClient,
+        com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -40,10 +40,7 @@ public final class BudgetsImpl implements Budgets {
     public Response<Budget> getWithResponse(String scope, String budgetName, Context context) {
         Response<BudgetInner> inner = this.serviceClient().getWithResponse(scope, budgetName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new BudgetImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -68,97 +65,65 @@ public final class BudgetsImpl implements Budgets {
     }
 
     public Budget getById(String id) {
-        String scope =
-            Utils
-                .getValueFromIdByParameterName(
-                    id, "/{scope}/providers/Microsoft.Consumption/budgets/{budgetName}", "scope");
+        String scope = Utils.getValueFromIdByParameterName(id,
+            "/{scope}/providers/Microsoft.Consumption/budgets/{budgetName}", "scope");
         if (scope == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'scope'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'scope'.", id)));
         }
-        String budgetName =
-            Utils
-                .getValueFromIdByParameterName(
-                    id, "/{scope}/providers/Microsoft.Consumption/budgets/{budgetName}", "budgetName");
+        String budgetName = Utils.getValueFromIdByParameterName(id,
+            "/{scope}/providers/Microsoft.Consumption/budgets/{budgetName}", "budgetName");
         if (budgetName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'budgets'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'budgets'.", id)));
         }
         return this.getWithResponse(scope, budgetName, Context.NONE).getValue();
     }
 
     public Response<Budget> getByIdWithResponse(String id, Context context) {
-        String scope =
-            Utils
-                .getValueFromIdByParameterName(
-                    id, "/{scope}/providers/Microsoft.Consumption/budgets/{budgetName}", "scope");
+        String scope = Utils.getValueFromIdByParameterName(id,
+            "/{scope}/providers/Microsoft.Consumption/budgets/{budgetName}", "scope");
         if (scope == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'scope'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'scope'.", id)));
         }
-        String budgetName =
-            Utils
-                .getValueFromIdByParameterName(
-                    id, "/{scope}/providers/Microsoft.Consumption/budgets/{budgetName}", "budgetName");
+        String budgetName = Utils.getValueFromIdByParameterName(id,
+            "/{scope}/providers/Microsoft.Consumption/budgets/{budgetName}", "budgetName");
         if (budgetName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'budgets'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'budgets'.", id)));
         }
         return this.getWithResponse(scope, budgetName, context);
     }
 
     public void deleteById(String id) {
-        String scope =
-            Utils
-                .getValueFromIdByParameterName(
-                    id, "/{scope}/providers/Microsoft.Consumption/budgets/{budgetName}", "scope");
+        String scope = Utils.getValueFromIdByParameterName(id,
+            "/{scope}/providers/Microsoft.Consumption/budgets/{budgetName}", "scope");
         if (scope == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'scope'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'scope'.", id)));
         }
-        String budgetName =
-            Utils
-                .getValueFromIdByParameterName(
-                    id, "/{scope}/providers/Microsoft.Consumption/budgets/{budgetName}", "budgetName");
+        String budgetName = Utils.getValueFromIdByParameterName(id,
+            "/{scope}/providers/Microsoft.Consumption/budgets/{budgetName}", "budgetName");
         if (budgetName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'budgets'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'budgets'.", id)));
         }
         this.deleteByResourceGroupWithResponse(scope, budgetName, Context.NONE);
     }
 
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
-        String scope =
-            Utils
-                .getValueFromIdByParameterName(
-                    id, "/{scope}/providers/Microsoft.Consumption/budgets/{budgetName}", "scope");
+        String scope = Utils.getValueFromIdByParameterName(id,
+            "/{scope}/providers/Microsoft.Consumption/budgets/{budgetName}", "scope");
         if (scope == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'scope'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'scope'.", id)));
         }
-        String budgetName =
-            Utils
-                .getValueFromIdByParameterName(
-                    id, "/{scope}/providers/Microsoft.Consumption/budgets/{budgetName}", "budgetName");
+        String budgetName = Utils.getValueFromIdByParameterName(id,
+            "/{scope}/providers/Microsoft.Consumption/budgets/{budgetName}", "budgetName");
         if (budgetName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'budgets'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'budgets'.", id)));
         }
         return this.deleteByResourceGroupWithResponse(scope, budgetName, context);
     }

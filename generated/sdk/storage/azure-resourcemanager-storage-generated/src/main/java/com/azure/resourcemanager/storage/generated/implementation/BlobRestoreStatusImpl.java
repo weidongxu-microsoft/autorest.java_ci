@@ -14,8 +14,8 @@ public final class BlobRestoreStatusImpl implements BlobRestoreStatus {
 
     private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
-    BlobRestoreStatusImpl(
-        BlobRestoreStatusInner innerObject, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
+    BlobRestoreStatusImpl(BlobRestoreStatusInner innerObject,
+        com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

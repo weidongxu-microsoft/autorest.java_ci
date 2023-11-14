@@ -10,7 +10,9 @@ import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.mysql.generated.models.AdministratorType;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Represents a Administrator. */
+/**
+ * Represents a Administrator.
+ */
 @Fluent
 public final class AzureADAdministratorInner extends ProxyResource {
     /*
@@ -25,13 +27,15 @@ public final class AzureADAdministratorInner extends ProxyResource {
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
-    /** Creates an instance of AzureADAdministratorInner class. */
+    /**
+     * Creates an instance of AzureADAdministratorInner class.
+     */
     public AzureADAdministratorInner() {
     }
 
     /**
      * Get the innerProperties property: The properties of an administrator.
-     *
+     * 
      * @return the innerProperties value.
      */
     private AdministratorProperties innerProperties() {
@@ -40,7 +44,7 @@ public final class AzureADAdministratorInner extends ProxyResource {
 
     /**
      * Get the systemData property: Azure Resource Manager metadata containing createdBy and modifiedBy information.
-     *
+     * 
      * @return the systemData value.
      */
     public SystemData systemData() {
@@ -49,7 +53,7 @@ public final class AzureADAdministratorInner extends ProxyResource {
 
     /**
      * Get the administratorType property: Type of the sever administrator.
-     *
+     * 
      * @return the administratorType value.
      */
     public AdministratorType administratorType() {
@@ -58,7 +62,7 @@ public final class AzureADAdministratorInner extends ProxyResource {
 
     /**
      * Set the administratorType property: Type of the sever administrator.
-     *
+     * 
      * @param administratorType the administratorType value to set.
      * @return the AzureADAdministratorInner object itself.
      */
@@ -72,7 +76,7 @@ public final class AzureADAdministratorInner extends ProxyResource {
 
     /**
      * Get the login property: Login name of the server administrator.
-     *
+     * 
      * @return the login value.
      */
     public String login() {
@@ -81,7 +85,7 @@ public final class AzureADAdministratorInner extends ProxyResource {
 
     /**
      * Set the login property: Login name of the server administrator.
-     *
+     * 
      * @param login the login value to set.
      * @return the AzureADAdministratorInner object itself.
      */
@@ -95,7 +99,7 @@ public final class AzureADAdministratorInner extends ProxyResource {
 
     /**
      * Get the sid property: SID (object ID) of the server administrator.
-     *
+     * 
      * @return the sid value.
      */
     public String sid() {
@@ -104,7 +108,7 @@ public final class AzureADAdministratorInner extends ProxyResource {
 
     /**
      * Set the sid property: SID (object ID) of the server administrator.
-     *
+     * 
      * @param sid the sid value to set.
      * @return the AzureADAdministratorInner object itself.
      */
@@ -118,7 +122,7 @@ public final class AzureADAdministratorInner extends ProxyResource {
 
     /**
      * Get the tenantId property: Tenant ID of the administrator.
-     *
+     * 
      * @return the tenantId value.
      */
     public String tenantId() {
@@ -127,7 +131,7 @@ public final class AzureADAdministratorInner extends ProxyResource {
 
     /**
      * Set the tenantId property: Tenant ID of the administrator.
-     *
+     * 
      * @param tenantId the tenantId value to set.
      * @return the AzureADAdministratorInner object itself.
      */
@@ -141,7 +145,7 @@ public final class AzureADAdministratorInner extends ProxyResource {
 
     /**
      * Get the identityResourceId property: The resource id of the identity used for AAD Authentication.
-     *
+     * 
      * @return the identityResourceId value.
      */
     public String identityResourceId() {
@@ -150,7 +154,7 @@ public final class AzureADAdministratorInner extends ProxyResource {
 
     /**
      * Set the identityResourceId property: The resource id of the identity used for AAD Authentication.
-     *
+     * 
      * @param identityResourceId the identityResourceId value to set.
      * @return the AzureADAdministratorInner object itself.
      */
@@ -164,7 +168,7 @@ public final class AzureADAdministratorInner extends ProxyResource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -11,7 +11,9 @@ import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.UUID;
 
-/** Properties of the managed HSM Pool. */
+/**
+ * Properties of the managed HSM Pool.
+ */
 @Fluent
 public final class ManagedHsmProperties {
     /*
@@ -108,14 +110,16 @@ public final class ManagedHsmProperties {
     @JsonProperty(value = "securityDomainProperties", access = JsonProperty.Access.WRITE_ONLY)
     private ManagedHsmSecurityDomainProperties securityDomainProperties;
 
-    /** Creates an instance of ManagedHsmProperties class. */
+    /**
+     * Creates an instance of ManagedHsmProperties class.
+     */
     public ManagedHsmProperties() {
     }
 
     /**
      * Get the tenantId property: The Azure Active Directory tenant ID that should be used for authenticating requests
      * to the managed HSM pool.
-     *
+     * 
      * @return the tenantId value.
      */
     public UUID tenantId() {
@@ -125,7 +129,7 @@ public final class ManagedHsmProperties {
     /**
      * Set the tenantId property: The Azure Active Directory tenant ID that should be used for authenticating requests
      * to the managed HSM pool.
-     *
+     * 
      * @param tenantId the tenantId value to set.
      * @return the ManagedHsmProperties object itself.
      */
@@ -136,7 +140,7 @@ public final class ManagedHsmProperties {
 
     /**
      * Get the initialAdminObjectIds property: Array of initial administrators object ids for this managed hsm pool.
-     *
+     * 
      * @return the initialAdminObjectIds value.
      */
     public List<String> initialAdminObjectIds() {
@@ -145,7 +149,7 @@ public final class ManagedHsmProperties {
 
     /**
      * Set the initialAdminObjectIds property: Array of initial administrators object ids for this managed hsm pool.
-     *
+     * 
      * @param initialAdminObjectIds the initialAdminObjectIds value to set.
      * @return the ManagedHsmProperties object itself.
      */
@@ -156,7 +160,7 @@ public final class ManagedHsmProperties {
 
     /**
      * Get the hsmUri property: The URI of the managed hsm pool for performing operations on keys.
-     *
+     * 
      * @return the hsmUri value.
      */
     public String hsmUri() {
@@ -166,7 +170,7 @@ public final class ManagedHsmProperties {
     /**
      * Get the enableSoftDelete property: Property to specify whether the 'soft delete' functionality is enabled for
      * this managed HSM pool. Soft delete is enabled by default for all managed HSMs and is immutable.
-     *
+     * 
      * @return the enableSoftDelete value.
      */
     public Boolean enableSoftDelete() {
@@ -176,7 +180,7 @@ public final class ManagedHsmProperties {
     /**
      * Set the enableSoftDelete property: Property to specify whether the 'soft delete' functionality is enabled for
      * this managed HSM pool. Soft delete is enabled by default for all managed HSMs and is immutable.
-     *
+     * 
      * @param enableSoftDelete the enableSoftDelete value to set.
      * @return the ManagedHsmProperties object itself.
      */
@@ -186,10 +190,10 @@ public final class ManagedHsmProperties {
     }
 
     /**
-     * Get the softDeleteRetentionInDays property: Soft deleted data retention days. When you delete an HSM or a key, it
-     * will remain recoverable for the configured retention period or for a default period of 90 days. It accepts values
-     * between 7 and 90.
-     *
+     * Get the softDeleteRetentionInDays property: Soft deleted data retention days. When you delete an HSM or a key,
+     * it will remain recoverable for the configured retention period or for a default period of 90 days. It accepts
+     * values between 7 and 90.
+     * 
      * @return the softDeleteRetentionInDays value.
      */
     public Integer softDeleteRetentionInDays() {
@@ -197,10 +201,10 @@ public final class ManagedHsmProperties {
     }
 
     /**
-     * Set the softDeleteRetentionInDays property: Soft deleted data retention days. When you delete an HSM or a key, it
-     * will remain recoverable for the configured retention period or for a default period of 90 days. It accepts values
-     * between 7 and 90.
-     *
+     * Set the softDeleteRetentionInDays property: Soft deleted data retention days. When you delete an HSM or a key,
+     * it will remain recoverable for the configured retention period or for a default period of 90 days. It accepts
+     * values between 7 and 90.
+     * 
      * @param softDeleteRetentionInDays the softDeleteRetentionInDays value to set.
      * @return the ManagedHsmProperties object itself.
      */
@@ -214,7 +218,7 @@ public final class ManagedHsmProperties {
      * managed HSM pool. Setting this property to true activates protection against purge for this managed HSM pool and
      * its content - only the Managed HSM service may initiate a hard, irrecoverable deletion. Enabling this
      * functionality is irreversible.
-     *
+     * 
      * @return the enablePurgeProtection value.
      */
     public Boolean enablePurgeProtection() {
@@ -226,7 +230,7 @@ public final class ManagedHsmProperties {
      * managed HSM pool. Setting this property to true activates protection against purge for this managed HSM pool and
      * its content - only the Managed HSM service may initiate a hard, irrecoverable deletion. Enabling this
      * functionality is irreversible.
-     *
+     * 
      * @param enablePurgeProtection the enablePurgeProtection value to set.
      * @return the ManagedHsmProperties object itself.
      */
@@ -238,7 +242,7 @@ public final class ManagedHsmProperties {
     /**
      * Get the createMode property: The create mode to indicate whether the resource is being created or is being
      * recovered from a deleted resource.
-     *
+     * 
      * @return the createMode value.
      */
     public CreateMode createMode() {
@@ -248,7 +252,7 @@ public final class ManagedHsmProperties {
     /**
      * Set the createMode property: The create mode to indicate whether the resource is being created or is being
      * recovered from a deleted resource.
-     *
+     * 
      * @param createMode the createMode value to set.
      * @return the ManagedHsmProperties object itself.
      */
@@ -259,7 +263,7 @@ public final class ManagedHsmProperties {
 
     /**
      * Get the statusMessage property: Resource Status Message.
-     *
+     * 
      * @return the statusMessage value.
      */
     public String statusMessage() {
@@ -268,7 +272,7 @@ public final class ManagedHsmProperties {
 
     /**
      * Get the provisioningState property: Provisioning state.
-     *
+     * 
      * @return the provisioningState value.
      */
     public ProvisioningState provisioningState() {
@@ -276,8 +280,9 @@ public final class ManagedHsmProperties {
     }
 
     /**
-     * Get the networkAcls property: Rules governing the accessibility of the key vault from specific network locations.
-     *
+     * Get the networkAcls property: Rules governing the accessibility of the key vault from specific network
+     * locations.
+     * 
      * @return the networkAcls value.
      */
     public MhsmNetworkRuleSet networkAcls() {
@@ -285,8 +290,9 @@ public final class ManagedHsmProperties {
     }
 
     /**
-     * Set the networkAcls property: Rules governing the accessibility of the key vault from specific network locations.
-     *
+     * Set the networkAcls property: Rules governing the accessibility of the key vault from specific network
+     * locations.
+     * 
      * @param networkAcls the networkAcls value to set.
      * @return the ManagedHsmProperties object itself.
      */
@@ -297,7 +303,7 @@ public final class ManagedHsmProperties {
 
     /**
      * Get the regions property: List of all regions associated with the managed hsm pool.
-     *
+     * 
      * @return the regions value.
      */
     public List<MhsmGeoReplicatedRegionInner> regions() {
@@ -306,7 +312,7 @@ public final class ManagedHsmProperties {
 
     /**
      * Set the regions property: List of all regions associated with the managed hsm pool.
-     *
+     * 
      * @param regions the regions value to set.
      * @return the ManagedHsmProperties object itself.
      */
@@ -316,9 +322,9 @@ public final class ManagedHsmProperties {
     }
 
     /**
-     * Get the privateEndpointConnections property: List of private endpoint connections associated with the managed hsm
-     * pool.
-     *
+     * Get the privateEndpointConnections property: List of private endpoint connections associated with the managed
+     * hsm pool.
+     * 
      * @return the privateEndpointConnections value.
      */
     public List<MhsmPrivateEndpointConnectionItem> privateEndpointConnections() {
@@ -327,7 +333,7 @@ public final class ManagedHsmProperties {
 
     /**
      * Get the publicNetworkAccess property: Control permission to the managed HSM from public networks.
-     *
+     * 
      * @return the publicNetworkAccess value.
      */
     public PublicNetworkAccess publicNetworkAccess() {
@@ -336,7 +342,7 @@ public final class ManagedHsmProperties {
 
     /**
      * Set the publicNetworkAccess property: Control permission to the managed HSM from public networks.
-     *
+     * 
      * @param publicNetworkAccess the publicNetworkAccess value to set.
      * @return the ManagedHsmProperties object itself.
      */
@@ -347,7 +353,7 @@ public final class ManagedHsmProperties {
 
     /**
      * Get the scheduledPurgeDate property: The scheduled purge date in UTC.
-     *
+     * 
      * @return the scheduledPurgeDate value.
      */
     public OffsetDateTime scheduledPurgeDate() {
@@ -356,7 +362,7 @@ public final class ManagedHsmProperties {
 
     /**
      * Get the securityDomainProperties property: Managed HSM security domain properties.
-     *
+     * 
      * @return the securityDomainProperties value.
      */
     public ManagedHsmSecurityDomainProperties securityDomainProperties() {
@@ -365,7 +371,7 @@ public final class ManagedHsmProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

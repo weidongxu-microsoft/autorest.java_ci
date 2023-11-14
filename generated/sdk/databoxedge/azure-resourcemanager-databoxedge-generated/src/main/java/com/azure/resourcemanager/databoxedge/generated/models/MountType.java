@@ -8,17 +8,23 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Mounting type. */
+/**
+ * Mounting type.
+ */
 public final class MountType extends ExpandableStringEnum<MountType> {
-    /** Static value Volume for MountType. */
+    /**
+     * Static value Volume for MountType.
+     */
     public static final MountType VOLUME = fromString("Volume");
 
-    /** Static value HostPath for MountType. */
+    /**
+     * Static value HostPath for MountType.
+     */
     public static final MountType HOST_PATH = fromString("HostPath");
 
     /**
      * Creates a new instance of MountType value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -27,7 +33,7 @@ public final class MountType extends ExpandableStringEnum<MountType> {
 
     /**
      * Creates or finds a MountType from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding MountType.
      */
@@ -38,7 +44,7 @@ public final class MountType extends ExpandableStringEnum<MountType> {
 
     /**
      * Gets known MountType values.
-     *
+     * 
      * @return known MountType values.
      */
     public static Collection<MountType> values() {

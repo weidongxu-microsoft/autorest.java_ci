@@ -7,7 +7,9 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** scale units definition. */
+/**
+ * scale units definition.
+ */
 @Fluent
 public final class StreamingEntityScaleUnit {
     /*
@@ -16,13 +18,15 @@ public final class StreamingEntityScaleUnit {
     @JsonProperty(value = "scaleUnit")
     private Integer scaleUnit;
 
-    /** Creates an instance of StreamingEntityScaleUnit class. */
+    /**
+     * Creates an instance of StreamingEntityScaleUnit class.
+     */
     public StreamingEntityScaleUnit() {
     }
 
     /**
      * Get the scaleUnit property: The scale unit number of the streaming endpoint.
-     *
+     * 
      * @return the scaleUnit value.
      */
     public Integer scaleUnit() {
@@ -31,7 +35,7 @@ public final class StreamingEntityScaleUnit {
 
     /**
      * Set the scaleUnit property: The scale unit number of the streaming endpoint.
-     *
+     * 
      * @param scaleUnit the scaleUnit value to set.
      * @return the StreamingEntityScaleUnit object itself.
      */
@@ -42,7 +46,7 @@ public final class StreamingEntityScaleUnit {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -19,8 +19,7 @@ public final class MetricDefinitionsImpl implements MetricDefinitions {
 
     private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    public MetricDefinitionsImpl(
-        MetricDefinitionsClient innerClient,
+    public MetricDefinitionsImpl(MetricDefinitionsClient innerClient,
         com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;

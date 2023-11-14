@@ -12,7 +12,9 @@ import com.azure.resourcemanager.mysql.generated.models.ServerVersionCapabilityV
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Represents a location capability set. */
+/**
+ * Represents a location capability set.
+ */
 @Immutable
 public final class CapabilityInner extends ProxyResource {
     /*
@@ -27,13 +29,15 @@ public final class CapabilityInner extends ProxyResource {
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
-    /** Creates an instance of CapabilityInner class. */
+    /**
+     * Creates an instance of CapabilityInner class.
+     */
     public CapabilityInner() {
     }
 
     /**
      * Get the innerProperties property: The properties of a location capability set.
-     *
+     * 
      * @return the innerProperties value.
      */
     private CapabilityPropertiesV2 innerProperties() {
@@ -42,7 +46,7 @@ public final class CapabilityInner extends ProxyResource {
 
     /**
      * Get the systemData property: Azure Resource Manager metadata containing createdBy and modifiedBy information.
-     *
+     * 
      * @return the systemData value.
      */
     public SystemData systemData() {
@@ -51,7 +55,7 @@ public final class CapabilityInner extends ProxyResource {
 
     /**
      * Get the supportedGeoBackupRegions property: supported geo backup regions.
-     *
+     * 
      * @return the supportedGeoBackupRegions value.
      */
     public List<String> supportedGeoBackupRegions() {
@@ -60,7 +64,7 @@ public final class CapabilityInner extends ProxyResource {
 
     /**
      * Get the supportedFlexibleServerEditions property: A list of supported flexible server editions.
-     *
+     * 
      * @return the supportedFlexibleServerEditions value.
      */
     public List<ServerEditionCapabilityV2> supportedFlexibleServerEditions() {
@@ -69,7 +73,7 @@ public final class CapabilityInner extends ProxyResource {
 
     /**
      * Get the supportedServerVersions property: A list of supported server versions.
-     *
+     * 
      * @return the supportedServerVersions value.
      */
     public List<ServerVersionCapabilityV2> supportedServerVersions() {
@@ -78,7 +82,7 @@ public final class CapabilityInner extends ProxyResource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

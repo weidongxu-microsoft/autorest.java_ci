@@ -8,39 +8,41 @@ import com.azure.resourcemanager.network.generated.fluent.models.TopologyInner;
 import java.time.OffsetDateTime;
 import java.util.List;
 
-/** An immutable client-side representation of Topology. */
+/**
+ * An immutable client-side representation of Topology.
+ */
 public interface Topology {
     /**
      * Gets the id property: GUID representing the operation id.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the createdDateTime property: The datetime when the topology was initially created for the resource group.
-     *
+     * 
      * @return the createdDateTime value.
      */
     OffsetDateTime createdDateTime();
 
     /**
      * Gets the lastModified property: The datetime when the topology was last modified.
-     *
+     * 
      * @return the lastModified value.
      */
     OffsetDateTime lastModified();
 
     /**
      * Gets the resources property: A list of topology resources.
-     *
+     * 
      * @return the resources value.
      */
     List<TopologyResource> resources();
 
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.TopologyInner object.
-     *
+     * 
      * @return the inner object.
      */
     TopologyInner innerModel();

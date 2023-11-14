@@ -15,8 +15,7 @@ public final class BgpPeerStatusListResultImpl implements BgpPeerStatusListResul
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    BgpPeerStatusListResultImpl(
-        BgpPeerStatusListResultInner innerObject,
+    BgpPeerStatusListResultImpl(BgpPeerStatusListResultInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

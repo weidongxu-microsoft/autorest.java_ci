@@ -14,8 +14,8 @@ public final class DomainTopicImpl implements DomainTopic {
 
     private final com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager;
 
-    DomainTopicImpl(
-        DomainTopicInner innerObject, com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager) {
+    DomainTopicImpl(DomainTopicInner innerObject,
+        com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

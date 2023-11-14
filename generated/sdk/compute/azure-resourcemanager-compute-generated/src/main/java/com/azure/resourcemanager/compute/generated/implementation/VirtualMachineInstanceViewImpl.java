@@ -23,8 +23,7 @@ public final class VirtualMachineInstanceViewImpl implements VirtualMachineInsta
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    VirtualMachineInstanceViewImpl(
-        VirtualMachineInstanceViewInner innerObject,
+    VirtualMachineInstanceViewImpl(VirtualMachineInstanceViewInner innerObject,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

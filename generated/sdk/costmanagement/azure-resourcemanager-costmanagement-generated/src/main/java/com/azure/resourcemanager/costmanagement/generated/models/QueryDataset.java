@@ -10,7 +10,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 import java.util.Map;
 
-/** The definition of data present in the query. */
+/**
+ * The definition of data present in the query.
+ */
 @Fluent
 public final class QueryDataset {
     /*
@@ -40,13 +42,15 @@ public final class QueryDataset {
     @JsonProperty(value = "filter")
     private QueryFilter filter;
 
-    /** Creates an instance of QueryDataset class. */
+    /**
+     * Creates an instance of QueryDataset class.
+     */
     public QueryDataset() {
     }
 
     /**
      * Get the granularity property: The granularity of rows in the query.
-     *
+     * 
      * @return the granularity value.
      */
     public GranularityType granularity() {
@@ -55,7 +59,7 @@ public final class QueryDataset {
 
     /**
      * Set the granularity property: The granularity of rows in the query.
-     *
+     * 
      * @param granularity the granularity value to set.
      * @return the QueryDataset object itself.
      */
@@ -67,7 +71,7 @@ public final class QueryDataset {
     /**
      * Get the aggregation property: Dictionary of aggregation expression to use in the query. The key of each item in
      * the dictionary is the alias for the aggregated column. Query can have up to 2 aggregation clauses.
-     *
+     * 
      * @return the aggregation value.
      */
     public Map<String, QueryAggregation> aggregation() {
@@ -77,7 +81,7 @@ public final class QueryDataset {
     /**
      * Set the aggregation property: Dictionary of aggregation expression to use in the query. The key of each item in
      * the dictionary is the alias for the aggregated column. Query can have up to 2 aggregation clauses.
-     *
+     * 
      * @param aggregation the aggregation value to set.
      * @return the QueryDataset object itself.
      */
@@ -89,7 +93,7 @@ public final class QueryDataset {
     /**
      * Get the grouping property: Array of group by expression to use in the query. Query can have up to 2 group by
      * clauses.
-     *
+     * 
      * @return the grouping value.
      */
     public List<QueryGrouping> grouping() {
@@ -99,7 +103,7 @@ public final class QueryDataset {
     /**
      * Set the grouping property: Array of group by expression to use in the query. Query can have up to 2 group by
      * clauses.
-     *
+     * 
      * @param grouping the grouping value to set.
      * @return the QueryDataset object itself.
      */
@@ -111,7 +115,7 @@ public final class QueryDataset {
     /**
      * Get the filter property: The filter expression to use in the query. Please reference our Query API REST
      * documentation for how to properly format the filter.
-     *
+     * 
      * @return the filter value.
      */
     public QueryFilter filter() {
@@ -121,7 +125,7 @@ public final class QueryDataset {
     /**
      * Set the filter property: The filter expression to use in the query. Please reference our Query API REST
      * documentation for how to properly format the filter.
-     *
+     * 
      * @param filter the filter value to set.
      * @return the QueryDataset object itself.
      */
@@ -132,19 +136,16 @@ public final class QueryDataset {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (aggregation() != null) {
-            aggregation()
-                .values()
-                .forEach(
-                    e -> {
-                        if (e != null) {
-                            e.validate();
-                        }
-                    });
+            aggregation().values().forEach(e -> {
+                if (e != null) {
+                    e.validate();
+                }
+            });
         }
         if (grouping() != null) {
             grouping().forEach(e -> e.validate());

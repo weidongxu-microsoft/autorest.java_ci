@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of ScheduledQueryRules. */
+/**
+ * Resource collection API of ScheduledQueryRules.
+ */
 public interface ScheduledQueryRules {
     /**
      * Gets an Log Search rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @param context The context to associate with this operation.
@@ -21,12 +23,12 @@ public interface ScheduledQueryRules {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return an Log Search rule along with {@link Response}.
      */
-    Response<LogSearchRuleResource> getByResourceGroupWithResponse(
-        String resourceGroupName, String ruleName, Context context);
+    Response<LogSearchRuleResource> getByResourceGroupWithResponse(String resourceGroupName, String ruleName,
+        Context context);
 
     /**
      * Gets an Log Search rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -38,7 +40,7 @@ public interface ScheduledQueryRules {
 
     /**
      * Deletes a Log Search rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @param context The context to associate with this operation.
@@ -51,7 +53,7 @@ public interface ScheduledQueryRules {
 
     /**
      * Deletes a Log Search rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -62,7 +64,7 @@ public interface ScheduledQueryRules {
 
     /**
      * List the Log Search rules within a subscription group.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return represents a collection of Log Search rule resources as paginated response with {@link PagedIterable}.
@@ -71,9 +73,9 @@ public interface ScheduledQueryRules {
 
     /**
      * List the Log Search rules within a subscription group.
-     *
+     * 
      * @param filter The filter to apply on the operation. For more information please see
-     *     https://msdn.microsoft.com/en-us/library/azure/dn931934.aspx.
+     * https://msdn.microsoft.com/en-us/library/azure/dn931934.aspx.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -84,7 +86,7 @@ public interface ScheduledQueryRules {
 
     /**
      * List the Log Search rules within a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -95,10 +97,10 @@ public interface ScheduledQueryRules {
 
     /**
      * List the Log Search rules within a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param filter The filter to apply on the operation. For more information please see
-     *     https://msdn.microsoft.com/en-us/library/azure/dn931934.aspx.
+     * https://msdn.microsoft.com/en-us/library/azure/dn931934.aspx.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -109,7 +111,7 @@ public interface ScheduledQueryRules {
 
     /**
      * Gets an Log Search rule.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -120,7 +122,7 @@ public interface ScheduledQueryRules {
 
     /**
      * Gets an Log Search rule.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -132,7 +134,7 @@ public interface ScheduledQueryRules {
 
     /**
      * Deletes a Log Search rule.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -142,7 +144,7 @@ public interface ScheduledQueryRules {
 
     /**
      * Deletes a Log Search rule.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -154,7 +156,7 @@ public interface ScheduledQueryRules {
 
     /**
      * Begins definition for a new LogSearchRuleResource resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new LogSearchRuleResource definition.
      */

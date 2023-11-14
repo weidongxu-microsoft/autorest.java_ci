@@ -7,7 +7,9 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Wraps data-residency related information for edge-resource and this should be used with ARM layer. */
+/**
+ * Wraps data-residency related information for edge-resource and this should be used with ARM layer.
+ */
 @Fluent
 public final class DataResidency {
     /*
@@ -16,13 +18,15 @@ public final class DataResidency {
     @JsonProperty(value = "type")
     private DataResidencyType type;
 
-    /** Creates an instance of DataResidency class. */
+    /**
+     * Creates an instance of DataResidency class.
+     */
     public DataResidency() {
     }
 
     /**
      * Get the type property: DataResidencyType enum.
-     *
+     * 
      * @return the type value.
      */
     public DataResidencyType type() {
@@ -31,7 +35,7 @@ public final class DataResidency {
 
     /**
      * Set the type property: DataResidencyType enum.
-     *
+     * 
      * @param type the type value to set.
      * @return the DataResidency object itself.
      */
@@ -42,7 +46,7 @@ public final class DataResidency {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

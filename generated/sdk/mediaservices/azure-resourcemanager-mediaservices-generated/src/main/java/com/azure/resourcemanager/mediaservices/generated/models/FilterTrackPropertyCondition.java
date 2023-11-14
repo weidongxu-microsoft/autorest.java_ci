@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The class to specify one track property condition. */
+/**
+ * The class to specify one track property condition.
+ */
 @Fluent
 public final class FilterTrackPropertyCondition {
     /*
@@ -29,13 +31,15 @@ public final class FilterTrackPropertyCondition {
     @JsonProperty(value = "operation", required = true)
     private FilterTrackPropertyCompareOperation operation;
 
-    /** Creates an instance of FilterTrackPropertyCondition class. */
+    /**
+     * Creates an instance of FilterTrackPropertyCondition class.
+     */
     public FilterTrackPropertyCondition() {
     }
 
     /**
      * Get the property property: The track property type.
-     *
+     * 
      * @return the property value.
      */
     public FilterTrackPropertyType property() {
@@ -44,7 +48,7 @@ public final class FilterTrackPropertyCondition {
 
     /**
      * Set the property property: The track property type.
-     *
+     * 
      * @param property the property value to set.
      * @return the FilterTrackPropertyCondition object itself.
      */
@@ -55,7 +59,7 @@ public final class FilterTrackPropertyCondition {
 
     /**
      * Get the value property: The track property value.
-     *
+     * 
      * @return the value value.
      */
     public String value() {
@@ -64,7 +68,7 @@ public final class FilterTrackPropertyCondition {
 
     /**
      * Set the value property: The track property value.
-     *
+     * 
      * @param value the value value to set.
      * @return the FilterTrackPropertyCondition object itself.
      */
@@ -75,7 +79,7 @@ public final class FilterTrackPropertyCondition {
 
     /**
      * Get the operation property: The track property condition operation.
-     *
+     * 
      * @return the operation value.
      */
     public FilterTrackPropertyCompareOperation operation() {
@@ -84,7 +88,7 @@ public final class FilterTrackPropertyCondition {
 
     /**
      * Set the operation property: The track property condition operation.
-     *
+     * 
      * @param operation the operation value to set.
      * @return the FilterTrackPropertyCondition object itself.
      */
@@ -95,27 +99,21 @@ public final class FilterTrackPropertyCondition {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (property() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property property in model FilterTrackPropertyCondition"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property property in model FilterTrackPropertyCondition"));
         }
         if (value() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property value in model FilterTrackPropertyCondition"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property value in model FilterTrackPropertyCondition"));
         }
         if (operation() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property operation in model FilterTrackPropertyCondition"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property operation in model FilterTrackPropertyCondition"));
         }
     }
 

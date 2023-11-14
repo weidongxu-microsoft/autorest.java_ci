@@ -7,11 +7,13 @@ package com.azure.resourcemanager.eventhubs.generated.models;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of PrivateLinkResources. */
+/**
+ * Resource collection API of PrivateLinkResources.
+ */
 public interface PrivateLinkResources {
     /**
      * Gets lists of resources that supports Privatelinks.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param context The context to associate with this operation.
@@ -20,12 +22,12 @@ public interface PrivateLinkResources {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return lists of resources that supports Privatelinks along with {@link Response}.
      */
-    Response<PrivateLinkResourcesListResult> getWithResponse(
-        String resourceGroupName, String namespaceName, Context context);
+    Response<PrivateLinkResourcesListResult> getWithResponse(String resourceGroupName, String namespaceName,
+        Context context);
 
     /**
      * Gets lists of resources that supports Privatelinks.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

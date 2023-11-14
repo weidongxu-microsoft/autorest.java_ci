@@ -14,8 +14,7 @@ public final class DiagnosticProactiveLogCollectionSettingsImpl implements Diagn
 
     private final com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager;
 
-    DiagnosticProactiveLogCollectionSettingsImpl(
-        DiagnosticProactiveLogCollectionSettingsInner innerObject,
+    DiagnosticProactiveLogCollectionSettingsImpl(DiagnosticProactiveLogCollectionSettingsInner innerObject,
         com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

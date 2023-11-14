@@ -9,7 +9,9 @@ import com.azure.resourcemanager.eventhubs.generated.fluent.models.Authorization
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The response from the List namespace operation. */
+/**
+ * The response from the List namespace operation.
+ */
 @Fluent
 public final class AuthorizationRuleListResult {
     /*
@@ -24,13 +26,15 @@ public final class AuthorizationRuleListResult {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
-    /** Creates an instance of AuthorizationRuleListResult class. */
+    /**
+     * Creates an instance of AuthorizationRuleListResult class.
+     */
     public AuthorizationRuleListResult() {
     }
 
     /**
      * Get the value property: Result of the List Authorization Rules operation.
-     *
+     * 
      * @return the value value.
      */
     public List<AuthorizationRuleInner> value() {
@@ -39,7 +43,7 @@ public final class AuthorizationRuleListResult {
 
     /**
      * Set the value property: Result of the List Authorization Rules operation.
-     *
+     * 
      * @param value the value value to set.
      * @return the AuthorizationRuleListResult object itself.
      */
@@ -51,7 +55,7 @@ public final class AuthorizationRuleListResult {
     /**
      * Get the nextLink property: Link to the next set of results. Not empty if Value contains an incomplete list of
      * Authorization Rules.
-     *
+     * 
      * @return the nextLink value.
      */
     public String nextLink() {
@@ -61,7 +65,7 @@ public final class AuthorizationRuleListResult {
     /**
      * Set the nextLink property: Link to the next set of results. Not empty if Value contains an incomplete list of
      * Authorization Rules.
-     *
+     * 
      * @param nextLink the nextLink value to set.
      * @return the AuthorizationRuleListResult object itself.
      */
@@ -72,7 +76,7 @@ public final class AuthorizationRuleListResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

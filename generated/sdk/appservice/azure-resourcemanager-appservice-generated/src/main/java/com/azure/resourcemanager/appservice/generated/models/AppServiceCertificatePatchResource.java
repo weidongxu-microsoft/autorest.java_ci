@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AppServiceCertificate;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Key Vault container ARM resource for a certificate that is purchased through Azure. */
+/**
+ * Key Vault container ARM resource for a certificate that is purchased through Azure.
+ */
 @Fluent
 public final class AppServiceCertificatePatchResource extends ProxyOnlyResource {
     /*
@@ -17,20 +19,24 @@ public final class AppServiceCertificatePatchResource extends ProxyOnlyResource 
     @JsonProperty(value = "properties")
     private AppServiceCertificate innerProperties;
 
-    /** Creates an instance of AppServiceCertificatePatchResource class. */
+    /**
+     * Creates an instance of AppServiceCertificatePatchResource class.
+     */
     public AppServiceCertificatePatchResource() {
     }
 
     /**
      * Get the innerProperties property: Core resource properties.
-     *
+     * 
      * @return the innerProperties value.
      */
     private AppServiceCertificate innerProperties() {
         return this.innerProperties;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public AppServiceCertificatePatchResource withKind(String kind) {
         super.withKind(kind);
@@ -39,7 +45,7 @@ public final class AppServiceCertificatePatchResource extends ProxyOnlyResource 
 
     /**
      * Get the keyVaultId property: Key Vault resource Id.
-     *
+     * 
      * @return the keyVaultId value.
      */
     public String keyVaultId() {
@@ -48,7 +54,7 @@ public final class AppServiceCertificatePatchResource extends ProxyOnlyResource 
 
     /**
      * Set the keyVaultId property: Key Vault resource Id.
-     *
+     * 
      * @param keyVaultId the keyVaultId value to set.
      * @return the AppServiceCertificatePatchResource object itself.
      */
@@ -62,7 +68,7 @@ public final class AppServiceCertificatePatchResource extends ProxyOnlyResource 
 
     /**
      * Get the keyVaultSecretName property: Key Vault secret name.
-     *
+     * 
      * @return the keyVaultSecretName value.
      */
     public String keyVaultSecretName() {
@@ -71,7 +77,7 @@ public final class AppServiceCertificatePatchResource extends ProxyOnlyResource 
 
     /**
      * Set the keyVaultSecretName property: Key Vault secret name.
-     *
+     * 
      * @param keyVaultSecretName the keyVaultSecretName value to set.
      * @return the AppServiceCertificatePatchResource object itself.
      */
@@ -85,7 +91,7 @@ public final class AppServiceCertificatePatchResource extends ProxyOnlyResource 
 
     /**
      * Get the provisioningState property: Status of the Key Vault secret.
-     *
+     * 
      * @return the provisioningState value.
      */
     public KeyVaultSecretStatus provisioningState() {
@@ -94,7 +100,7 @@ public final class AppServiceCertificatePatchResource extends ProxyOnlyResource 
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

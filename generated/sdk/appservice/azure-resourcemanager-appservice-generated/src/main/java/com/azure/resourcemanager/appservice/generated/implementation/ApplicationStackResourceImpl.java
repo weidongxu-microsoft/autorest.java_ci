@@ -16,8 +16,7 @@ public final class ApplicationStackResourceImpl implements ApplicationStackResou
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    ApplicationStackResourceImpl(
-        ApplicationStackResourceInner innerObject,
+    ApplicationStackResourceImpl(ApplicationStackResourceInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

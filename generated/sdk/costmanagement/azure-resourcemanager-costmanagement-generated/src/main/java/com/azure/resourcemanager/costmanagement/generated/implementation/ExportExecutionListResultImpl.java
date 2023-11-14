@@ -15,8 +15,7 @@ public final class ExportExecutionListResultImpl implements ExportExecutionListR
 
     private final com.azure.resourcemanager.costmanagement.generated.CostManagementManager serviceManager;
 
-    ExportExecutionListResultImpl(
-        ExportExecutionListResultInner innerObject,
+    ExportExecutionListResultImpl(ExportExecutionListResultInner innerObject,
         com.azure.resourcemanager.costmanagement.generated.CostManagementManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

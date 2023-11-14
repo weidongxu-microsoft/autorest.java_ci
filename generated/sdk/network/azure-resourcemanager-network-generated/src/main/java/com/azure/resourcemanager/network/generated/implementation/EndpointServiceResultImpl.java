@@ -12,8 +12,7 @@ public final class EndpointServiceResultImpl implements EndpointServiceResult {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    EndpointServiceResultImpl(
-        EndpointServiceResultInner innerObject,
+    EndpointServiceResultImpl(EndpointServiceResultInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

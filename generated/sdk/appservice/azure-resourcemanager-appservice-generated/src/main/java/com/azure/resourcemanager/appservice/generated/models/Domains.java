@@ -9,33 +9,35 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.NameIdentifierInner;
 
-/** Resource collection API of Domains. */
+/**
+ * Resource collection API of Domains.
+ */
 public interface Domains {
     /**
      * Check if a domain is available for registration.
-     *
-     * <p>Description for Check if a domain is available for registration.
-     *
+     * 
+     * Description for Check if a domain is available for registration.
+     * 
      * @param identifier Name of the domain.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return domain availability check result along with {@link Response}.
      */
-    Response<DomainAvailabilityCheckResult> checkAvailabilityWithResponse(
-        NameIdentifierInner identifier, Context context);
+    Response<DomainAvailabilityCheckResult> checkAvailabilityWithResponse(NameIdentifierInner identifier,
+        Context context);
 
     /**
      * Check if a domain is available for registration.
-     *
-     * <p>Description for Check if a domain is available for registration.
-     *
+     * 
+     * Description for Check if a domain is available for registration.
+     * 
      * @param identifier Name of the domain.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return domain availability check result.
      */
@@ -43,11 +45,11 @@ public interface Domains {
 
     /**
      * Get all domains in a subscription.
-     *
-     * <p>Description for Get all domains in a subscription.
-     *
+     * 
+     * Description for Get all domains in a subscription.
+     * 
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of domains as paginated response with {@link PagedIterable}.
      */
@@ -55,13 +57,13 @@ public interface Domains {
 
     /**
      * Get all domains in a subscription.
-     *
-     * <p>Description for Get all domains in a subscription.
-     *
+     * 
+     * Description for Get all domains in a subscription.
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of domains as paginated response with {@link PagedIterable}.
      */
@@ -69,13 +71,13 @@ public interface Domains {
 
     /**
      * Generate a single sign-on request for the domain management portal.
-     *
-     * <p>Description for Generate a single sign-on request for the domain management portal.
-     *
+     * 
+     * Description for Generate a single sign-on request for the domain management portal.
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return single sign-on request information for domain management along with {@link Response}.
      */
@@ -83,11 +85,11 @@ public interface Domains {
 
     /**
      * Generate a single sign-on request for the domain management portal.
-     *
-     * <p>Description for Generate a single sign-on request for the domain management portal.
-     *
+     * 
+     * Description for Generate a single sign-on request for the domain management portal.
+     * 
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return single sign-on request information for domain management.
      */
@@ -95,13 +97,13 @@ public interface Domains {
 
     /**
      * Get domain name recommendations based on keywords.
-     *
-     * <p>Description for Get domain name recommendations based on keywords.
-     *
+     * 
+     * Description for Get domain name recommendations based on keywords.
+     * 
      * @param parameters Search parameters for domain name recommendations.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of domain name identifiers as paginated response with {@link PagedIterable}.
      */
@@ -109,14 +111,14 @@ public interface Domains {
 
     /**
      * Get domain name recommendations based on keywords.
-     *
-     * <p>Description for Get domain name recommendations based on keywords.
-     *
+     * 
+     * Description for Get domain name recommendations based on keywords.
+     * 
      * @param parameters Search parameters for domain name recommendations.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of domain name identifiers as paginated response with {@link PagedIterable}.
      */
@@ -124,13 +126,13 @@ public interface Domains {
 
     /**
      * Get all domains in a resource group.
-     *
-     * <p>Description for Get all domains in a resource group.
-     *
+     * 
+     * Description for Get all domains in a resource group.
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of domains as paginated response with {@link PagedIterable}.
      */
@@ -138,14 +140,14 @@ public interface Domains {
 
     /**
      * Get all domains in a resource group.
-     *
-     * <p>Description for Get all domains in a resource group.
-     *
+     * 
+     * Description for Get all domains in a resource group.
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of domains as paginated response with {@link PagedIterable}.
      */
@@ -153,15 +155,15 @@ public interface Domains {
 
     /**
      * Get a domain.
-     *
-     * <p>Description for Get a domain.
-     *
+     * 
+     * Description for Get a domain.
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return information about a domain along with {@link Response}.
      */
@@ -169,14 +171,14 @@ public interface Domains {
 
     /**
      * Get a domain.
-     *
-     * <p>Description for Get a domain.
-     *
+     * 
+     * Description for Get a domain.
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return information about a domain.
      */
@@ -184,47 +186,47 @@ public interface Domains {
 
     /**
      * Delete a domain.
-     *
-     * <p>Description for Delete a domain.
-     *
+     * 
+     * Description for Delete a domain.
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
      * @param forceHardDeleteDomain Specify &lt;code&gt;true&lt;/code&gt; to delete the domain immediately. The default
-     *     is &lt;code&gt;false&lt;/code&gt; which deletes the domain after 24 hours.
+     * is &lt;code&gt;false&lt;/code&gt; which deletes the domain after 24 hours.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
-    Response<Void> deleteWithResponse(
-        String resourceGroupName, String domainName, Boolean forceHardDeleteDomain, Context context);
+    Response<Void> deleteWithResponse(String resourceGroupName, String domainName, Boolean forceHardDeleteDomain,
+        Context context);
 
     /**
      * Delete a domain.
-     *
-     * <p>Description for Delete a domain.
-     *
+     * 
+     * Description for Delete a domain.
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void delete(String resourceGroupName, String domainName);
 
     /**
      * Lists domain ownership identifiers.
-     *
-     * <p>Description for Lists domain ownership identifiers.
-     *
+     * 
+     * Description for Lists domain ownership identifiers.
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of domain ownership identifiers as paginated response with {@link PagedIterable}.
      */
@@ -232,50 +234,50 @@ public interface Domains {
 
     /**
      * Lists domain ownership identifiers.
-     *
-     * <p>Description for Lists domain ownership identifiers.
-     *
+     * 
+     * Description for Lists domain ownership identifiers.
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of domain ownership identifiers as paginated response with {@link PagedIterable}.
      */
-    PagedIterable<DomainOwnershipIdentifier> listOwnershipIdentifiers(
-        String resourceGroupName, String domainName, Context context);
+    PagedIterable<DomainOwnershipIdentifier> listOwnershipIdentifiers(String resourceGroupName, String domainName,
+        Context context);
 
     /**
      * Get ownership identifier for domain
-     *
-     * <p>Description for Get ownership identifier for domain.
-     *
+     * 
+     * Description for Get ownership identifier for domain.
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
      * @param name Name of identifier.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return domain ownership Identifier along with {@link Response}.
      */
-    Response<DomainOwnershipIdentifier> getOwnershipIdentifierWithResponse(
-        String resourceGroupName, String domainName, String name, Context context);
+    Response<DomainOwnershipIdentifier> getOwnershipIdentifierWithResponse(String resourceGroupName, String domainName,
+        String name, Context context);
 
     /**
      * Get ownership identifier for domain
-     *
-     * <p>Description for Get ownership identifier for domain.
-     *
+     * 
+     * Description for Get ownership identifier for domain.
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
      * @param name Name of identifier.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return domain ownership Identifier.
      */
@@ -283,48 +285,48 @@ public interface Domains {
 
     /**
      * Delete ownership identifier for domain
-     *
-     * <p>Description for Delete ownership identifier for domain.
-     *
+     * 
+     * Description for Delete ownership identifier for domain.
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
      * @param name Name of identifier.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
-    Response<Void> deleteOwnershipIdentifierWithResponse(
-        String resourceGroupName, String domainName, String name, Context context);
+    Response<Void> deleteOwnershipIdentifierWithResponse(String resourceGroupName, String domainName, String name,
+        Context context);
 
     /**
      * Delete ownership identifier for domain
-     *
-     * <p>Description for Delete ownership identifier for domain.
-     *
+     * 
+     * Description for Delete ownership identifier for domain.
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
      * @param name Name of identifier.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteOwnershipIdentifier(String resourceGroupName, String domainName, String name);
 
     /**
      * Renew a domain.
-     *
-     * <p>Description for Renew a domain.
-     *
+     * 
+     * Description for Renew a domain.
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -332,29 +334,29 @@ public interface Domains {
 
     /**
      * Renew a domain.
-     *
-     * <p>Description for Renew a domain.
-     *
+     * 
+     * Description for Renew a domain.
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void renew(String resourceGroupName, String domainName);
 
     /**
      * Transfer out domain to another registrar.
-     *
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
-     *     status code 400.
+     * status code 400.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return information about a domain along with {@link Response}.
      */
@@ -362,14 +364,14 @@ public interface Domains {
 
     /**
      * Transfer out domain to another registrar.
-     *
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
-     *     status code 400.
+     * status code 400.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return information about a domain.
      */
@@ -377,13 +379,13 @@ public interface Domains {
 
     /**
      * Get a domain.
-     *
-     * <p>Description for Get a domain.
-     *
+     * 
+     * Description for Get a domain.
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return information about a domain along with {@link Response}.
      */
@@ -391,14 +393,14 @@ public interface Domains {
 
     /**
      * Get a domain.
-     *
-     * <p>Description for Get a domain.
-     *
+     * 
+     * Description for Get a domain.
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return information about a domain along with {@link Response}.
      */
@@ -406,13 +408,13 @@ public interface Domains {
 
     /**
      * Get ownership identifier for domain
-     *
-     * <p>Description for Get ownership identifier for domain.
-     *
+     * 
+     * Description for Get ownership identifier for domain.
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return domain ownership Identifier along with {@link Response}.
      */
@@ -420,14 +422,14 @@ public interface Domains {
 
     /**
      * Get ownership identifier for domain
-     *
-     * <p>Description for Get ownership identifier for domain.
-     *
+     * 
+     * Description for Get ownership identifier for domain.
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return domain ownership Identifier along with {@link Response}.
      */
@@ -435,29 +437,29 @@ public interface Domains {
 
     /**
      * Delete a domain.
-     *
-     * <p>Description for Delete a domain.
-     *
+     * 
+     * Description for Delete a domain.
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteById(String id);
 
     /**
      * Delete a domain.
-     *
-     * <p>Description for Delete a domain.
-     *
+     * 
+     * Description for Delete a domain.
+     * 
      * @param id the resource ID.
      * @param forceHardDeleteDomain Specify &lt;code&gt;true&lt;/code&gt; to delete the domain immediately. The default
-     *     is &lt;code&gt;false&lt;/code&gt; which deletes the domain after 24 hours.
+     * is &lt;code&gt;false&lt;/code&gt; which deletes the domain after 24 hours.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -465,27 +467,27 @@ public interface Domains {
 
     /**
      * Delete ownership identifier for domain
-     *
-     * <p>Description for Delete ownership identifier for domain.
-     *
+     * 
+     * Description for Delete ownership identifier for domain.
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteOwnershipIdentifierById(String id);
 
     /**
      * Delete ownership identifier for domain
-     *
-     * <p>Description for Delete ownership identifier for domain.
-     *
+     * 
+     * Description for Delete ownership identifier for domain.
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -493,7 +495,7 @@ public interface Domains {
 
     /**
      * Begins definition for a new Domain resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new Domain definition.
      */
@@ -501,7 +503,7 @@ public interface Domains {
 
     /**
      * Begins definition for a new DomainOwnershipIdentifier resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new DomainOwnershipIdentifier definition.
      */

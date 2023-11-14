@@ -6,11 +6,13 @@ package com.azure.resourcemanager.network.generated.models;
 
 import com.azure.core.util.Context;
 
-/** Resource collection API of VpnServerConfigurationsAssociatedWithVirtualWans. */
+/**
+ * Resource collection API of VpnServerConfigurationsAssociatedWithVirtualWans.
+ */
 public interface VpnServerConfigurationsAssociatedWithVirtualWans {
     /**
      * Gives the list of VpnServerConfigurations associated with Virtual Wan in a resource group.
-     *
+     * 
      * @param resourceGroupName The resource group name.
      * @param virtualWanName The name of the VirtualWAN whose associated VpnServerConfigurations is needed.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -22,7 +24,7 @@ public interface VpnServerConfigurationsAssociatedWithVirtualWans {
 
     /**
      * Gives the list of VpnServerConfigurations associated with Virtual Wan in a resource group.
-     *
+     * 
      * @param resourceGroupName The resource group name.
      * @param virtualWanName The name of the VirtualWAN whose associated VpnServerConfigurations is needed.
      * @param context The context to associate with this operation.

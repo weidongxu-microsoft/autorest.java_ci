@@ -12,8 +12,7 @@ public final class LocalUserRegeneratePasswordResultImpl implements LocalUserReg
 
     private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
-    LocalUserRegeneratePasswordResultImpl(
-        LocalUserRegeneratePasswordResultInner innerObject,
+    LocalUserRegeneratePasswordResultImpl(LocalUserRegeneratePasswordResultInner innerObject,
         com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

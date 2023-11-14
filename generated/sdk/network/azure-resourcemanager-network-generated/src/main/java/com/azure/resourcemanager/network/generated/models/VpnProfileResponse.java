@@ -6,18 +6,20 @@ package com.azure.resourcemanager.network.generated.models;
 
 import com.azure.resourcemanager.network.generated.fluent.models.VpnProfileResponseInner;
 
-/** An immutable client-side representation of VpnProfileResponse. */
+/**
+ * An immutable client-side representation of VpnProfileResponse.
+ */
 public interface VpnProfileResponse {
     /**
      * Gets the profileUrl property: URL to the VPN profile.
-     *
+     * 
      * @return the profileUrl value.
      */
     String profileUrl();
 
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.VpnProfileResponseInner object.
-     *
+     * 
      * @return the inner object.
      */
     VpnProfileResponseInner innerModel();

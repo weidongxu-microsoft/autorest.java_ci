@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of ExpressRoutePorts. */
+/**
+ * Resource collection API of ExpressRoutePorts.
+ */
 public interface ExpressRoutePorts {
     /**
      * Deletes the specified ExpressRoutePort resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the ExpressRoutePort resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -23,7 +25,7 @@ public interface ExpressRoutePorts {
 
     /**
      * Deletes the specified ExpressRoutePort resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the ExpressRoutePort resource.
      * @param context The context to associate with this operation.
@@ -35,7 +37,7 @@ public interface ExpressRoutePorts {
 
     /**
      * Retrieves the requested ExpressRoutePort resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of ExpressRoutePort.
      * @param context The context to associate with this operation.
@@ -44,12 +46,12 @@ public interface ExpressRoutePorts {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return expressRoute Port along with {@link Response}.
      */
-    Response<ExpressRoutePort> getByResourceGroupWithResponse(
-        String resourceGroupName, String expressRoutePortName, Context context);
+    Response<ExpressRoutePort> getByResourceGroupWithResponse(String resourceGroupName, String expressRoutePortName,
+        Context context);
 
     /**
      * Retrieves the requested ExpressRoutePort resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of ExpressRoutePort.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -61,7 +63,7 @@ public interface ExpressRoutePorts {
 
     /**
      * List all the ExpressRoutePort resources in the specified resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -72,7 +74,7 @@ public interface ExpressRoutePorts {
 
     /**
      * List all the ExpressRoutePort resources in the specified resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -84,7 +86,7 @@ public interface ExpressRoutePorts {
 
     /**
      * List all the ExpressRoutePort resources in the specified subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return expressRoute Port List Result as paginated response with {@link PagedIterable}.
@@ -93,7 +95,7 @@ public interface ExpressRoutePorts {
 
     /**
      * List all the ExpressRoutePort resources in the specified subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -104,7 +106,7 @@ public interface ExpressRoutePorts {
 
     /**
      * Generate a letter of authorization for the requested ExpressRoutePort resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of ExpressRoutePort.
      * @param request Request parameters supplied to generate a letter of authorization.
@@ -114,15 +116,12 @@ public interface ExpressRoutePorts {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return response for GenerateExpressRoutePortsLOA API service call along with {@link Response}.
      */
-    Response<GenerateExpressRoutePortsLoaResult> generateLoaWithResponse(
-        String resourceGroupName,
-        String expressRoutePortName,
-        GenerateExpressRoutePortsLoaRequest request,
-        Context context);
+    Response<GenerateExpressRoutePortsLoaResult> generateLoaWithResponse(String resourceGroupName,
+        String expressRoutePortName, GenerateExpressRoutePortsLoaRequest request, Context context);
 
     /**
      * Generate a letter of authorization for the requested ExpressRoutePort resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of ExpressRoutePort.
      * @param request Request parameters supplied to generate a letter of authorization.
@@ -131,12 +130,12 @@ public interface ExpressRoutePorts {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return response for GenerateExpressRoutePortsLOA API service call.
      */
-    GenerateExpressRoutePortsLoaResult generateLoa(
-        String resourceGroupName, String expressRoutePortName, GenerateExpressRoutePortsLoaRequest request);
+    GenerateExpressRoutePortsLoaResult generateLoa(String resourceGroupName, String expressRoutePortName,
+        GenerateExpressRoutePortsLoaRequest request);
 
     /**
      * Retrieves the requested ExpressRoutePort resource.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -147,7 +146,7 @@ public interface ExpressRoutePorts {
 
     /**
      * Retrieves the requested ExpressRoutePort resource.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -159,7 +158,7 @@ public interface ExpressRoutePorts {
 
     /**
      * Deletes the specified ExpressRoutePort resource.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -169,7 +168,7 @@ public interface ExpressRoutePorts {
 
     /**
      * Deletes the specified ExpressRoutePort resource.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -180,7 +179,7 @@ public interface ExpressRoutePorts {
 
     /**
      * Begins definition for a new ExpressRoutePort resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new ExpressRoutePort definition.
      */

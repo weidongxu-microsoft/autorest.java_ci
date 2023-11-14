@@ -13,8 +13,7 @@ public final class RunCommandDocumentBaseImpl implements RunCommandDocumentBase 
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    RunCommandDocumentBaseImpl(
-        RunCommandDocumentBaseInner innerObject,
+    RunCommandDocumentBaseImpl(RunCommandDocumentBaseInner innerObject,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

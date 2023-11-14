@@ -34,8 +34,7 @@ public final class VirtualMachineScaleSetVMImpl implements VirtualMachineScaleSe
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    VirtualMachineScaleSetVMImpl(
-        VirtualMachineScaleSetVMInner innerObject,
+    VirtualMachineScaleSetVMImpl(VirtualMachineScaleSetVMInner innerObject,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -81,12 +80,8 @@ public final class VirtualMachineScaleSetVMImpl implements VirtualMachineScaleSe
     public List<VirtualMachineExtension> resources() {
         List<VirtualMachineExtensionInner> inner = this.innerModel().resources();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new VirtualMachineExtensionImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new VirtualMachineExtensionImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

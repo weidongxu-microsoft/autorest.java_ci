@@ -25,13 +25,15 @@ public final class ContentKeyPolicyPlayReadyExplicitAnalogTelevisionRestriction 
     @JsonProperty(value = "configurationData", required = true)
     private int configurationData;
 
-    /** Creates an instance of ContentKeyPolicyPlayReadyExplicitAnalogTelevisionRestriction class. */
+    /**
+     * Creates an instance of ContentKeyPolicyPlayReadyExplicitAnalogTelevisionRestriction class.
+     */
     public ContentKeyPolicyPlayReadyExplicitAnalogTelevisionRestriction() {
     }
 
     /**
      * Get the bestEffort property: Indicates whether this restriction is enforced on a Best Effort basis.
-     *
+     * 
      * @return the bestEffort value.
      */
     public boolean bestEffort() {
@@ -40,7 +42,7 @@ public final class ContentKeyPolicyPlayReadyExplicitAnalogTelevisionRestriction 
 
     /**
      * Set the bestEffort property: Indicates whether this restriction is enforced on a Best Effort basis.
-     *
+     * 
      * @param bestEffort the bestEffort value to set.
      * @return the ContentKeyPolicyPlayReadyExplicitAnalogTelevisionRestriction object itself.
      */
@@ -51,7 +53,7 @@ public final class ContentKeyPolicyPlayReadyExplicitAnalogTelevisionRestriction 
 
     /**
      * Get the configurationData property: Configures the restriction control bits. Must be between 0 and 3 inclusive.
-     *
+     * 
      * @return the configurationData value.
      */
     public int configurationData() {
@@ -60,7 +62,7 @@ public final class ContentKeyPolicyPlayReadyExplicitAnalogTelevisionRestriction 
 
     /**
      * Set the configurationData property: Configures the restriction control bits. Must be between 0 and 3 inclusive.
-     *
+     * 
      * @param configurationData the configurationData value to set.
      * @return the ContentKeyPolicyPlayReadyExplicitAnalogTelevisionRestriction object itself.
      */
@@ -71,7 +73,7 @@ public final class ContentKeyPolicyPlayReadyExplicitAnalogTelevisionRestriction 
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

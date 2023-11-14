@@ -30,24 +30,28 @@ import com.azure.resourcemanager.postgresql.generated.fluent.models.PerformanceT
 import com.azure.resourcemanager.postgresql.generated.models.PerformanceTierListResult;
 import reactor.core.publisher.Mono;
 
-/** An instance of this class provides access to all the operations defined in ServerBasedPerformanceTiersClient. */
+/**
+ * An instance of this class provides access to all the operations defined in ServerBasedPerformanceTiersClient.
+ */
 public final class ServerBasedPerformanceTiersClientImpl implements ServerBasedPerformanceTiersClient {
-    /** The proxy service used to perform REST calls. */
+    /**
+     * The proxy service used to perform REST calls.
+     */
     private final ServerBasedPerformanceTiersService service;
 
-    /** The service client containing this operation class. */
+    /**
+     * The service client containing this operation class.
+     */
     private final PostgreSqlManagementClientImpl client;
 
     /**
      * Initializes an instance of ServerBasedPerformanceTiersClientImpl.
-     *
+     * 
      * @param client the instance of the service client containing this operation class.
      */
     ServerBasedPerformanceTiersClientImpl(PostgreSqlManagementClientImpl client) {
-        this.service =
-            RestProxy
-                .create(
-                    ServerBasedPerformanceTiersService.class, client.getHttpPipeline(), client.getSerializerAdapter());
+        this.service = RestProxy.create(ServerBasedPerformanceTiersService.class, client.getHttpPipeline(),
+            client.getSerializerAdapter());
         this.client = client;
     }
 
@@ -58,24 +62,19 @@ public final class ServerBasedPerformanceTiersClientImpl implements ServerBasedP
     @Host("{$host}")
     @ServiceInterface(name = "PostgreSqlManagement")
     public interface ServerBasedPerformanceTiersService {
-        @Headers({"Content-Type: application/json"})
-        @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforPostgreSQL/servers/{serverName}/performanceTiers")
-        @ExpectedResponses({200})
+        @Headers({ "Content-Type: application/json" })
+        @Get("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforPostgreSQL/servers/{serverName}/performanceTiers")
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<PerformanceTierListResult>> list(
-            @HostParam("$host") String endpoint,
-            @QueryParam("api-version") String apiVersion,
-            @PathParam("subscriptionId") String subscriptionId,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("serverName") String serverName,
-            @HeaderParam("Accept") String accept,
-            Context context);
+        Mono<Response<PerformanceTierListResult>> list(@HostParam("$host") String endpoint,
+            @QueryParam("api-version") String apiVersion, @PathParam("subscriptionId") String subscriptionId,
+            @PathParam("resourceGroupName") String resourceGroupName, @PathParam("serverName") String serverName,
+            @HeaderParam("Accept") String accept, Context context);
     }
 
     /**
      * List all the performance tiers for a PostgreSQL server.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -84,19 +83,15 @@ public final class ServerBasedPerformanceTiersClientImpl implements ServerBasedP
      * @return a list of performance tiers along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<PerformanceTierPropertiesInner>> listSinglePageAsync(
-        String resourceGroupName, String serverName) {
+    private Mono<PagedResponse<PerformanceTierPropertiesInner>> listSinglePageAsync(String resourceGroupName,
+        String serverName) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -108,27 +103,16 @@ public final class ServerBasedPerformanceTiersClientImpl implements ServerBasedP
         final String apiVersion = "2017-12-01";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .list(
-                            this.client.getEndpoint(),
-                            apiVersion,
-                            this.client.getSubscriptionId(),
-                            resourceGroupName,
-                            serverName,
-                            accept,
-                            context))
-            .<PagedResponse<PerformanceTierPropertiesInner>>map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(), res.getStatusCode(), res.getHeaders(), res.getValue().value(), null, null))
+            .withContext(context -> service.list(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(),
+                resourceGroupName, serverName, accept, context))
+            .<PagedResponse<PerformanceTierPropertiesInner>>map(res -> new PagedResponseBase<>(res.getRequest(),
+                res.getStatusCode(), res.getHeaders(), res.getValue().value(), null, null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * List all the performance tiers for a PostgreSQL server.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param context The context to associate with this operation.
@@ -138,19 +122,15 @@ public final class ServerBasedPerformanceTiersClientImpl implements ServerBasedP
      * @return a list of performance tiers along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<PerformanceTierPropertiesInner>> listSinglePageAsync(
-        String resourceGroupName, String serverName, Context context) {
+    private Mono<PagedResponse<PerformanceTierPropertiesInner>> listSinglePageAsync(String resourceGroupName,
+        String serverName, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -163,23 +143,15 @@ public final class ServerBasedPerformanceTiersClientImpl implements ServerBasedP
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .list(
-                this.client.getEndpoint(),
-                apiVersion,
-                this.client.getSubscriptionId(),
-                resourceGroupName,
-                serverName,
-                accept,
-                context)
-            .map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(), res.getStatusCode(), res.getHeaders(), res.getValue().value(), null, null));
+            .list(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), resourceGroupName, serverName,
+                accept, context)
+            .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
+                res.getValue().value(), null, null));
     }
 
     /**
      * List all the performance tiers for a PostgreSQL server.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -194,7 +166,7 @@ public final class ServerBasedPerformanceTiersClientImpl implements ServerBasedP
 
     /**
      * List all the performance tiers for a PostgreSQL server.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param context The context to associate with this operation.
@@ -204,14 +176,14 @@ public final class ServerBasedPerformanceTiersClientImpl implements ServerBasedP
      * @return a list of performance tiers as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<PerformanceTierPropertiesInner> listAsync(
-        String resourceGroupName, String serverName, Context context) {
+    private PagedFlux<PerformanceTierPropertiesInner> listAsync(String resourceGroupName, String serverName,
+        Context context) {
         return new PagedFlux<>(() -> listSinglePageAsync(resourceGroupName, serverName, context));
     }
 
     /**
      * List all the performance tiers for a PostgreSQL server.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -226,7 +198,7 @@ public final class ServerBasedPerformanceTiersClientImpl implements ServerBasedP
 
     /**
      * List all the performance tiers for a PostgreSQL server.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param context The context to associate with this operation.
@@ -236,8 +208,8 @@ public final class ServerBasedPerformanceTiersClientImpl implements ServerBasedP
      * @return a list of performance tiers as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    public PagedIterable<PerformanceTierPropertiesInner> list(
-        String resourceGroupName, String serverName, Context context) {
+    public PagedIterable<PerformanceTierPropertiesInner> list(String resourceGroupName, String serverName,
+        Context context) {
         return new PagedIterable<>(listAsync(resourceGroupName, serverName, context));
     }
 }

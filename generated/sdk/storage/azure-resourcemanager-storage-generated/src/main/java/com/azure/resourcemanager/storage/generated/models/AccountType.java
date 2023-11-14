@@ -8,17 +8,23 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Specifies the Active Directory account type for Azure Storage. */
+/**
+ * Specifies the Active Directory account type for Azure Storage.
+ */
 public final class AccountType extends ExpandableStringEnum<AccountType> {
-    /** Static value User for AccountType. */
+    /**
+     * Static value User for AccountType.
+     */
     public static final AccountType USER = fromString("User");
 
-    /** Static value Computer for AccountType. */
+    /**
+     * Static value Computer for AccountType.
+     */
     public static final AccountType COMPUTER = fromString("Computer");
 
     /**
      * Creates a new instance of AccountType value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -27,7 +33,7 @@ public final class AccountType extends ExpandableStringEnum<AccountType> {
 
     /**
      * Creates or finds a AccountType from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding AccountType.
      */
@@ -38,7 +44,7 @@ public final class AccountType extends ExpandableStringEnum<AccountType> {
 
     /**
      * Gets known AccountType values.
-     *
+     * 
      * @return known AccountType values.
      */
     public static Collection<AccountType> values() {

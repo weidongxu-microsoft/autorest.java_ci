@@ -20,21 +20,17 @@ public final class ExpressRouteProviderPortsLocationsImpl implements ExpressRout
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public ExpressRouteProviderPortsLocationsImpl(
-        ExpressRouteProviderPortsLocationsClient innerClient,
+    public ExpressRouteProviderPortsLocationsImpl(ExpressRouteProviderPortsLocationsClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
     public Response<ExpressRouteProviderPortListResult> listWithResponse(String filter, Context context) {
-        Response<ExpressRouteProviderPortListResultInner> inner =
-            this.serviceClient().listWithResponse(filter, context);
+        Response<ExpressRouteProviderPortListResultInner> inner
+            = this.serviceClient().listWithResponse(filter, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ExpressRouteProviderPortListResultImpl(inner.getValue(), this.manager()));
         } else {
             return null;

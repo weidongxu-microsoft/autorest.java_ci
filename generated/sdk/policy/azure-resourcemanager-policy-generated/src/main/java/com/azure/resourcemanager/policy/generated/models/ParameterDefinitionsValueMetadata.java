@@ -12,7 +12,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.HashMap;
 import java.util.Map;
 
-/** General metadata for the parameter. */
+/**
+ * General metadata for the parameter.
+ */
 @Fluent
 public final class ParameterDefinitionsValueMetadata {
     /*
@@ -45,15 +47,18 @@ public final class ParameterDefinitionsValueMetadata {
     /*
      * General metadata for the parameter.
      */
-    @JsonIgnore private Map<String, Object> additionalProperties;
+    @JsonIgnore
+    private Map<String, Object> additionalProperties;
 
-    /** Creates an instance of ParameterDefinitionsValueMetadata class. */
+    /**
+     * Creates an instance of ParameterDefinitionsValueMetadata class.
+     */
     public ParameterDefinitionsValueMetadata() {
     }
 
     /**
      * Get the displayName property: The display name for the parameter.
-     *
+     * 
      * @return the displayName value.
      */
     public String displayName() {
@@ -62,7 +67,7 @@ public final class ParameterDefinitionsValueMetadata {
 
     /**
      * Set the displayName property: The display name for the parameter.
-     *
+     * 
      * @param displayName the displayName value to set.
      * @return the ParameterDefinitionsValueMetadata object itself.
      */
@@ -73,7 +78,7 @@ public final class ParameterDefinitionsValueMetadata {
 
     /**
      * Get the description property: The description of the parameter.
-     *
+     * 
      * @return the description value.
      */
     public String description() {
@@ -82,7 +87,7 @@ public final class ParameterDefinitionsValueMetadata {
 
     /**
      * Set the description property: The description of the parameter.
-     *
+     * 
      * @param description the description value to set.
      * @return the ParameterDefinitionsValueMetadata object itself.
      */
@@ -94,7 +99,7 @@ public final class ParameterDefinitionsValueMetadata {
     /**
      * Get the strongType property: Used when assigning the policy definition through the portal. Provides a context
      * aware list of values for the user to choose from.
-     *
+     * 
      * @return the strongType value.
      */
     public String strongType() {
@@ -104,7 +109,7 @@ public final class ParameterDefinitionsValueMetadata {
     /**
      * Set the strongType property: Used when assigning the policy definition through the portal. Provides a context
      * aware list of values for the user to choose from.
-     *
+     * 
      * @param strongType the strongType value to set.
      * @return the ParameterDefinitionsValueMetadata object itself.
      */
@@ -117,7 +122,7 @@ public final class ParameterDefinitionsValueMetadata {
      * Get the assignPermissions property: Set to true to have Azure portal create role assignments on the resource ID
      * or resource scope value of this parameter during policy assignment. This property is useful in case you wish to
      * assign permissions outside the assignment scope.
-     *
+     * 
      * @return the assignPermissions value.
      */
     public Boolean assignPermissions() {
@@ -128,7 +133,7 @@ public final class ParameterDefinitionsValueMetadata {
      * Set the assignPermissions property: Set to true to have Azure portal create role assignments on the resource ID
      * or resource scope value of this parameter during policy assignment. This property is useful in case you wish to
      * assign permissions outside the assignment scope.
-     *
+     * 
      * @param assignPermissions the assignPermissions value to set.
      * @return the ParameterDefinitionsValueMetadata object itself.
      */
@@ -139,7 +144,7 @@ public final class ParameterDefinitionsValueMetadata {
 
     /**
      * Get the additionalProperties property: General metadata for the parameter.
-     *
+     * 
      * @return the additionalProperties value.
      */
     @JsonAnyGetter
@@ -149,7 +154,7 @@ public final class ParameterDefinitionsValueMetadata {
 
     /**
      * Set the additionalProperties property: General metadata for the parameter.
-     *
+     * 
      * @param additionalProperties the additionalProperties value to set.
      * @return the ParameterDefinitionsValueMetadata object itself.
      */
@@ -168,7 +173,7 @@ public final class ParameterDefinitionsValueMetadata {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

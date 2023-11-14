@@ -7,46 +7,48 @@ package com.azure.resourcemanager.appservice.generated.models;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DomainOwnershipIdentifierInner;
 
-/** An immutable client-side representation of DomainOwnershipIdentifier. */
+/**
+ * An immutable client-side representation of DomainOwnershipIdentifier.
+ */
 public interface DomainOwnershipIdentifier {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the name property: The name of the resource.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the type property: The type of the resource.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the kind property: Kind of resource.
-     *
+     * 
      * @return the kind value.
      */
     String kind();
 
     /**
      * Gets the ownershipId property: Ownership Id.
-     *
+     * 
      * @return the ownershipId value.
      */
     String ownershipId();
 
     /**
      * Gets the name of the resource group.
-     *
+     * 
      * @return the name of the resource group.
      */
     String resourceGroupName();
@@ -54,27 +56,35 @@ public interface DomainOwnershipIdentifier {
     /**
      * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.DomainOwnershipIdentifierInner
      * object.
-     *
+     * 
      * @return the inner object.
      */
     DomainOwnershipIdentifierInner innerModel();
 
-    /** The entirety of the DomainOwnershipIdentifier definition. */
+    /**
+     * The entirety of the DomainOwnershipIdentifier definition.
+     */
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
 
-    /** The DomainOwnershipIdentifier definition stages. */
+    /**
+     * The DomainOwnershipIdentifier definition stages.
+     */
     interface DefinitionStages {
-        /** The first stage of the DomainOwnershipIdentifier definition. */
+        /**
+         * The first stage of the DomainOwnershipIdentifier definition.
+         */
         interface Blank extends WithParentResource {
         }
 
-        /** The stage of the DomainOwnershipIdentifier definition allowing to specify parent resource. */
+        /**
+         * The stage of the DomainOwnershipIdentifier definition allowing to specify parent resource.
+         */
         interface WithParentResource {
             /**
              * Specifies resourceGroupName, domainName.
-             *
+             * 
              * @param resourceGroupName Name of the resource group to which the resource belongs.
              * @param domainName Name of domain.
              * @return the next definition stage.
@@ -89,36 +99,40 @@ public interface DomainOwnershipIdentifier {
         interface WithCreate extends DefinitionStages.WithKind, DefinitionStages.WithOwnershipId {
             /**
              * Executes the create request.
-             *
+             * 
              * @return the created resource.
              */
             DomainOwnershipIdentifier create();
 
             /**
              * Executes the create request.
-             *
+             * 
              * @param context The context to associate with this operation.
              * @return the created resource.
              */
             DomainOwnershipIdentifier create(Context context);
         }
 
-        /** The stage of the DomainOwnershipIdentifier definition allowing to specify kind. */
+        /**
+         * The stage of the DomainOwnershipIdentifier definition allowing to specify kind.
+         */
         interface WithKind {
             /**
              * Specifies the kind property: Kind of resource..
-             *
+             * 
              * @param kind Kind of resource.
              * @return the next definition stage.
              */
             WithCreate withKind(String kind);
         }
 
-        /** The stage of the DomainOwnershipIdentifier definition allowing to specify ownershipId. */
+        /**
+         * The stage of the DomainOwnershipIdentifier definition allowing to specify ownershipId.
+         */
         interface WithOwnershipId {
             /**
              * Specifies the ownershipId property: Ownership Id..
-             *
+             * 
              * @param ownershipId Ownership Id.
              * @return the next definition stage.
              */
@@ -128,47 +142,55 @@ public interface DomainOwnershipIdentifier {
 
     /**
      * Begins update for the DomainOwnershipIdentifier resource.
-     *
+     * 
      * @return the stage of resource update.
      */
     DomainOwnershipIdentifier.Update update();
 
-    /** The template for DomainOwnershipIdentifier update. */
+    /**
+     * The template for DomainOwnershipIdentifier update.
+     */
     interface Update extends UpdateStages.WithKind, UpdateStages.WithOwnershipId {
         /**
          * Executes the update request.
-         *
+         * 
          * @return the updated resource.
          */
         DomainOwnershipIdentifier apply();
 
         /**
          * Executes the update request.
-         *
+         * 
          * @param context The context to associate with this operation.
          * @return the updated resource.
          */
         DomainOwnershipIdentifier apply(Context context);
     }
 
-    /** The DomainOwnershipIdentifier update stages. */
+    /**
+     * The DomainOwnershipIdentifier update stages.
+     */
     interface UpdateStages {
-        /** The stage of the DomainOwnershipIdentifier update allowing to specify kind. */
+        /**
+         * The stage of the DomainOwnershipIdentifier update allowing to specify kind.
+         */
         interface WithKind {
             /**
              * Specifies the kind property: Kind of resource..
-             *
+             * 
              * @param kind Kind of resource.
              * @return the next definition stage.
              */
             Update withKind(String kind);
         }
 
-        /** The stage of the DomainOwnershipIdentifier update allowing to specify ownershipId. */
+        /**
+         * The stage of the DomainOwnershipIdentifier update allowing to specify ownershipId.
+         */
         interface WithOwnershipId {
             /**
              * Specifies the ownershipId property: Ownership Id..
-             *
+             * 
              * @param ownershipId Ownership Id.
              * @return the next definition stage.
              */
@@ -178,14 +200,14 @@ public interface DomainOwnershipIdentifier {
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @return the refreshed resource.
      */
     DomainOwnershipIdentifier refresh();
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @return the refreshed resource.
      */

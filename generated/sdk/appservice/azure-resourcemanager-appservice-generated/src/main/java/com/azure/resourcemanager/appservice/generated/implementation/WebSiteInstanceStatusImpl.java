@@ -16,8 +16,7 @@ public final class WebSiteInstanceStatusImpl implements WebSiteInstanceStatus {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    WebSiteInstanceStatusImpl(
-        WebSiteInstanceStatusInner innerObject,
+    WebSiteInstanceStatusImpl(WebSiteInstanceStatusInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

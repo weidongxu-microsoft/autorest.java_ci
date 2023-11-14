@@ -9,101 +9,111 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.SecurityAdminConfigurationInner;
 import java.util.List;
 
-/** An immutable client-side representation of SecurityAdminConfiguration. */
+/**
+ * An immutable client-side representation of SecurityAdminConfiguration.
+ */
 public interface SecurityAdminConfiguration {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the name property: The name of the resource.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the type property: The type of the resource.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the etag property: A unique read-only string that changes whenever the resource is updated.
-     *
+     * 
      * @return the etag value.
      */
     String etag();
 
     /**
      * Gets the systemData property: The system metadata related to this resource.
-     *
+     * 
      * @return the systemData value.
      */
     SystemData systemData();
 
     /**
      * Gets the description property: A description of the security configuration.
-     *
+     * 
      * @return the description value.
      */
     String description();
 
     /**
      * Gets the applyOnNetworkIntentPolicyBasedServices property: Enum list of network intent policy based services.
-     *
+     * 
      * @return the applyOnNetworkIntentPolicyBasedServices value.
      */
     List<NetworkIntentPolicyBasedService> applyOnNetworkIntentPolicyBasedServices();
 
     /**
      * Gets the provisioningState property: The provisioning state of the resource.
-     *
+     * 
      * @return the provisioningState value.
      */
     ProvisioningState provisioningState();
 
     /**
      * Gets the resourceGuid property: Unique identifier for this resource.
-     *
+     * 
      * @return the resourceGuid value.
      */
     String resourceGuid();
 
     /**
      * Gets the name of the resource group.
-     *
+     * 
      * @return the name of the resource group.
      */
     String resourceGroupName();
 
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.SecurityAdminConfigurationInner object.
-     *
+     * 
      * @return the inner object.
      */
     SecurityAdminConfigurationInner innerModel();
 
-    /** The entirety of the SecurityAdminConfiguration definition. */
+    /**
+     * The entirety of the SecurityAdminConfiguration definition.
+     */
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
 
-    /** The SecurityAdminConfiguration definition stages. */
+    /**
+     * The SecurityAdminConfiguration definition stages.
+     */
     interface DefinitionStages {
-        /** The first stage of the SecurityAdminConfiguration definition. */
+        /**
+         * The first stage of the SecurityAdminConfiguration definition.
+         */
         interface Blank extends WithParentResource {
         }
 
-        /** The stage of the SecurityAdminConfiguration definition allowing to specify parent resource. */
+        /**
+         * The stage of the SecurityAdminConfiguration definition allowing to specify parent resource.
+         */
         interface WithParentResource {
             /**
              * Specifies resourceGroupName, networkManagerName.
-             *
+             * 
              * @param resourceGroupName The name of the resource group.
              * @param networkManagerName The name of the network manager.
              * @return the next definition stage.
@@ -119,25 +129,27 @@ public interface SecurityAdminConfiguration {
             extends DefinitionStages.WithDescription, DefinitionStages.WithApplyOnNetworkIntentPolicyBasedServices {
             /**
              * Executes the create request.
-             *
+             * 
              * @return the created resource.
              */
             SecurityAdminConfiguration create();
 
             /**
              * Executes the create request.
-             *
+             * 
              * @param context The context to associate with this operation.
              * @return the created resource.
              */
             SecurityAdminConfiguration create(Context context);
         }
 
-        /** The stage of the SecurityAdminConfiguration definition allowing to specify description. */
+        /**
+         * The stage of the SecurityAdminConfiguration definition allowing to specify description.
+         */
         interface WithDescription {
             /**
              * Specifies the description property: A description of the security configuration..
-             *
+             * 
              * @param description A description of the security configuration.
              * @return the next definition stage.
              */
@@ -152,7 +164,7 @@ public interface SecurityAdminConfiguration {
             /**
              * Specifies the applyOnNetworkIntentPolicyBasedServices property: Enum list of network intent policy based
              * services..
-             *
+             * 
              * @param applyOnNetworkIntentPolicyBasedServices Enum list of network intent policy based services.
              * @return the next definition stage.
              */
@@ -163,36 +175,42 @@ public interface SecurityAdminConfiguration {
 
     /**
      * Begins update for the SecurityAdminConfiguration resource.
-     *
+     * 
      * @return the stage of resource update.
      */
     SecurityAdminConfiguration.Update update();
 
-    /** The template for SecurityAdminConfiguration update. */
+    /**
+     * The template for SecurityAdminConfiguration update.
+     */
     interface Update extends UpdateStages.WithDescription, UpdateStages.WithApplyOnNetworkIntentPolicyBasedServices {
         /**
          * Executes the update request.
-         *
+         * 
          * @return the updated resource.
          */
         SecurityAdminConfiguration apply();
 
         /**
          * Executes the update request.
-         *
+         * 
          * @param context The context to associate with this operation.
          * @return the updated resource.
          */
         SecurityAdminConfiguration apply(Context context);
     }
 
-    /** The SecurityAdminConfiguration update stages. */
+    /**
+     * The SecurityAdminConfiguration update stages.
+     */
     interface UpdateStages {
-        /** The stage of the SecurityAdminConfiguration update allowing to specify description. */
+        /**
+         * The stage of the SecurityAdminConfiguration update allowing to specify description.
+         */
         interface WithDescription {
             /**
              * Specifies the description property: A description of the security configuration..
-             *
+             * 
              * @param description A description of the security configuration.
              * @return the next definition stage.
              */
@@ -207,7 +225,7 @@ public interface SecurityAdminConfiguration {
             /**
              * Specifies the applyOnNetworkIntentPolicyBasedServices property: Enum list of network intent policy based
              * services..
-             *
+             * 
              * @param applyOnNetworkIntentPolicyBasedServices Enum list of network intent policy based services.
              * @return the next definition stage.
              */
@@ -218,14 +236,14 @@ public interface SecurityAdminConfiguration {
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @return the refreshed resource.
      */
     SecurityAdminConfiguration refresh();
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @return the refreshed resource.
      */

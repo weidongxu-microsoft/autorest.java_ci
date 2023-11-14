@@ -15,8 +15,7 @@ public final class ListPathsResponseImpl implements ListPathsResponse {
 
     private final com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager;
 
-    ListPathsResponseImpl(
-        ListPathsResponseInner innerObject,
+    ListPathsResponseImpl(ListPathsResponseInner innerObject,
         com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

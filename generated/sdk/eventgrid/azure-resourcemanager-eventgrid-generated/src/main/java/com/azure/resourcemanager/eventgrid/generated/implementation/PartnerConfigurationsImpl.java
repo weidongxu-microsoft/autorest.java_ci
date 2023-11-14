@@ -23,21 +23,17 @@ public final class PartnerConfigurationsImpl implements PartnerConfigurations {
 
     private final com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager;
 
-    public PartnerConfigurationsImpl(
-        PartnerConfigurationsClient innerClient,
+    public PartnerConfigurationsImpl(PartnerConfigurationsClient innerClient,
         com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
     public Response<PartnerConfiguration> getByResourceGroupWithResponse(String resourceGroupName, Context context) {
-        Response<PartnerConfigurationInner> inner =
-            this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, context);
+        Response<PartnerConfigurationInner> inner
+            = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new PartnerConfigurationImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -53,10 +49,10 @@ public final class PartnerConfigurationsImpl implements PartnerConfigurations {
         }
     }
 
-    public PartnerConfiguration createOrUpdate(
-        String resourceGroupName, PartnerConfigurationInner partnerConfigurationInfo) {
-        PartnerConfigurationInner inner =
-            this.serviceClient().createOrUpdate(resourceGroupName, partnerConfigurationInfo);
+    public PartnerConfiguration createOrUpdate(String resourceGroupName,
+        PartnerConfigurationInner partnerConfigurationInfo) {
+        PartnerConfigurationInner inner
+            = this.serviceClient().createOrUpdate(resourceGroupName, partnerConfigurationInfo);
         if (inner != null) {
             return new PartnerConfigurationImpl(inner, this.manager());
         } else {
@@ -64,10 +60,10 @@ public final class PartnerConfigurationsImpl implements PartnerConfigurations {
         }
     }
 
-    public PartnerConfiguration createOrUpdate(
-        String resourceGroupName, PartnerConfigurationInner partnerConfigurationInfo, Context context) {
-        PartnerConfigurationInner inner =
-            this.serviceClient().createOrUpdate(resourceGroupName, partnerConfigurationInfo, context);
+    public PartnerConfiguration createOrUpdate(String resourceGroupName,
+        PartnerConfigurationInner partnerConfigurationInfo, Context context) {
+        PartnerConfigurationInner inner
+            = this.serviceClient().createOrUpdate(resourceGroupName, partnerConfigurationInfo, context);
         if (inner != null) {
             return new PartnerConfigurationImpl(inner, this.manager());
         } else {
@@ -83,10 +79,10 @@ public final class PartnerConfigurationsImpl implements PartnerConfigurations {
         this.serviceClient().delete(resourceGroupName, context);
     }
 
-    public PartnerConfiguration update(
-        String resourceGroupName, PartnerConfigurationUpdateParameters partnerConfigurationUpdateParameters) {
-        PartnerConfigurationInner inner =
-            this.serviceClient().update(resourceGroupName, partnerConfigurationUpdateParameters);
+    public PartnerConfiguration update(String resourceGroupName,
+        PartnerConfigurationUpdateParameters partnerConfigurationUpdateParameters) {
+        PartnerConfigurationInner inner
+            = this.serviceClient().update(resourceGroupName, partnerConfigurationUpdateParameters);
         if (inner != null) {
             return new PartnerConfigurationImpl(inner, this.manager());
         } else {
@@ -94,12 +90,10 @@ public final class PartnerConfigurationsImpl implements PartnerConfigurations {
         }
     }
 
-    public PartnerConfiguration update(
-        String resourceGroupName,
-        PartnerConfigurationUpdateParameters partnerConfigurationUpdateParameters,
-        Context context) {
-        PartnerConfigurationInner inner =
-            this.serviceClient().update(resourceGroupName, partnerConfigurationUpdateParameters, context);
+    public PartnerConfiguration update(String resourceGroupName,
+        PartnerConfigurationUpdateParameters partnerConfigurationUpdateParameters, Context context) {
+        PartnerConfigurationInner inner
+            = this.serviceClient().update(resourceGroupName, partnerConfigurationUpdateParameters, context);
         if (inner != null) {
             return new PartnerConfigurationImpl(inner, this.manager());
         } else {
@@ -113,8 +107,8 @@ public final class PartnerConfigurationsImpl implements PartnerConfigurations {
     }
 
     public PagedIterable<PartnerConfiguration> listByResourceGroup(String resourceGroupName, Context context) {
-        PagedIterable<PartnerConfigurationInner> inner =
-            this.serviceClient().listByResourceGroup(resourceGroupName, context);
+        PagedIterable<PartnerConfigurationInner> inner
+            = this.serviceClient().listByResourceGroup(resourceGroupName, context);
         return Utils.mapPage(inner, inner1 -> new PartnerConfigurationImpl(inner1, this.manager()));
     }
 
@@ -128,15 +122,12 @@ public final class PartnerConfigurationsImpl implements PartnerConfigurations {
         return Utils.mapPage(inner, inner1 -> new PartnerConfigurationImpl(inner1, this.manager()));
     }
 
-    public Response<PartnerConfiguration> authorizePartnerWithResponse(
-        String resourceGroupName, Partner partnerInfo, Context context) {
-        Response<PartnerConfigurationInner> inner =
-            this.serviceClient().authorizePartnerWithResponse(resourceGroupName, partnerInfo, context);
+    public Response<PartnerConfiguration> authorizePartnerWithResponse(String resourceGroupName, Partner partnerInfo,
+        Context context) {
+        Response<PartnerConfigurationInner> inner
+            = this.serviceClient().authorizePartnerWithResponse(resourceGroupName, partnerInfo, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new PartnerConfigurationImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -152,15 +143,12 @@ public final class PartnerConfigurationsImpl implements PartnerConfigurations {
         }
     }
 
-    public Response<PartnerConfiguration> unauthorizePartnerWithResponse(
-        String resourceGroupName, Partner partnerInfo, Context context) {
-        Response<PartnerConfigurationInner> inner =
-            this.serviceClient().unauthorizePartnerWithResponse(resourceGroupName, partnerInfo, context);
+    public Response<PartnerConfiguration> unauthorizePartnerWithResponse(String resourceGroupName, Partner partnerInfo,
+        Context context) {
+        Response<PartnerConfigurationInner> inner
+            = this.serviceClient().unauthorizePartnerWithResponse(resourceGroupName, partnerInfo, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new PartnerConfigurationImpl(inner.getValue(), this.manager()));
         } else {
             return null;

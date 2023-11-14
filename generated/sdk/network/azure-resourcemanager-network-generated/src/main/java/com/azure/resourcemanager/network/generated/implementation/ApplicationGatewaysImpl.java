@@ -34,8 +34,7 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public ApplicationGatewaysImpl(
-        ApplicationGatewaysClient innerClient,
+    public ApplicationGatewaysImpl(ApplicationGatewaysClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -49,15 +48,12 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
         this.serviceClient().delete(resourceGroupName, applicationGatewayName, context);
     }
 
-    public Response<ApplicationGateway> getByResourceGroupWithResponse(
-        String resourceGroupName, String applicationGatewayName, Context context) {
-        Response<ApplicationGatewayInner> inner =
-            this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, applicationGatewayName, context);
+    public Response<ApplicationGateway> getByResourceGroupWithResponse(String resourceGroupName,
+        String applicationGatewayName, Context context) {
+        Response<ApplicationGatewayInner> inner
+            = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, applicationGatewayName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ApplicationGatewayImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -65,8 +61,8 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
     }
 
     public ApplicationGateway getByResourceGroup(String resourceGroupName, String applicationGatewayName) {
-        ApplicationGatewayInner inner =
-            this.serviceClient().getByResourceGroup(resourceGroupName, applicationGatewayName);
+        ApplicationGatewayInner inner
+            = this.serviceClient().getByResourceGroup(resourceGroupName, applicationGatewayName);
         if (inner != null) {
             return new ApplicationGatewayImpl(inner, this.manager());
         } else {
@@ -80,8 +76,8 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
     }
 
     public PagedIterable<ApplicationGateway> listByResourceGroup(String resourceGroupName, Context context) {
-        PagedIterable<ApplicationGatewayInner> inner =
-            this.serviceClient().listByResourceGroup(resourceGroupName, context);
+        PagedIterable<ApplicationGatewayInner> inner
+            = this.serviceClient().listByResourceGroup(resourceGroupName, context);
         return Utils.mapPage(inner, inner1 -> new ApplicationGatewayImpl(inner1, this.manager()));
     }
 
@@ -112,8 +108,8 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
     }
 
     public ApplicationGatewayBackendHealth backendHealth(String resourceGroupName, String applicationGatewayName) {
-        ApplicationGatewayBackendHealthInner inner =
-            this.serviceClient().backendHealth(resourceGroupName, applicationGatewayName);
+        ApplicationGatewayBackendHealthInner inner
+            = this.serviceClient().backendHealth(resourceGroupName, applicationGatewayName);
         if (inner != null) {
             return new ApplicationGatewayBackendHealthImpl(inner, this.manager());
         } else {
@@ -121,10 +117,10 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
         }
     }
 
-    public ApplicationGatewayBackendHealth backendHealth(
-        String resourceGroupName, String applicationGatewayName, String expand, Context context) {
-        ApplicationGatewayBackendHealthInner inner =
-            this.serviceClient().backendHealth(resourceGroupName, applicationGatewayName, expand, context);
+    public ApplicationGatewayBackendHealth backendHealth(String resourceGroupName, String applicationGatewayName,
+        String expand, Context context) {
+        ApplicationGatewayBackendHealthInner inner
+            = this.serviceClient().backendHealth(resourceGroupName, applicationGatewayName, expand, context);
         if (inner != null) {
             return new ApplicationGatewayBackendHealthImpl(inner, this.manager());
         } else {
@@ -132,10 +128,10 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
         }
     }
 
-    public ApplicationGatewayBackendHealthOnDemand backendHealthOnDemand(
-        String resourceGroupName, String applicationGatewayName, ApplicationGatewayOnDemandProbe probeRequest) {
-        ApplicationGatewayBackendHealthOnDemandInner inner =
-            this.serviceClient().backendHealthOnDemand(resourceGroupName, applicationGatewayName, probeRequest);
+    public ApplicationGatewayBackendHealthOnDemand backendHealthOnDemand(String resourceGroupName,
+        String applicationGatewayName, ApplicationGatewayOnDemandProbe probeRequest) {
+        ApplicationGatewayBackendHealthOnDemandInner inner
+            = this.serviceClient().backendHealthOnDemand(resourceGroupName, applicationGatewayName, probeRequest);
         if (inner != null) {
             return new ApplicationGatewayBackendHealthOnDemandImpl(inner, this.manager());
         } else {
@@ -143,16 +139,10 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
         }
     }
 
-    public ApplicationGatewayBackendHealthOnDemand backendHealthOnDemand(
-        String resourceGroupName,
-        String applicationGatewayName,
-        ApplicationGatewayOnDemandProbe probeRequest,
-        String expand,
-        Context context) {
-        ApplicationGatewayBackendHealthOnDemandInner inner =
-            this
-                .serviceClient()
-                .backendHealthOnDemand(resourceGroupName, applicationGatewayName, probeRequest, expand, context);
+    public ApplicationGatewayBackendHealthOnDemand backendHealthOnDemand(String resourceGroupName,
+        String applicationGatewayName, ApplicationGatewayOnDemandProbe probeRequest, String expand, Context context) {
+        ApplicationGatewayBackendHealthOnDemandInner inner = this.serviceClient()
+            .backendHealthOnDemand(resourceGroupName, applicationGatewayName, probeRequest, expand, context);
         if (inner != null) {
             return new ApplicationGatewayBackendHealthOnDemandImpl(inner, this.manager());
         } else {
@@ -199,15 +189,12 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
         }
     }
 
-    public Response<ApplicationGatewayAvailableWafRuleSetsResult> listAvailableWafRuleSetsWithResponse(
-        Context context) {
-        Response<ApplicationGatewayAvailableWafRuleSetsResultInner> inner =
-            this.serviceClient().listAvailableWafRuleSetsWithResponse(context);
+    public Response<ApplicationGatewayAvailableWafRuleSetsResult>
+        listAvailableWafRuleSetsWithResponse(Context context) {
+        Response<ApplicationGatewayAvailableWafRuleSetsResultInner> inner
+            = this.serviceClient().listAvailableWafRuleSetsWithResponse(context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ApplicationGatewayAvailableWafRuleSetsResultImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -224,13 +211,10 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
     }
 
     public Response<ApplicationGatewayAvailableSslOptions> listAvailableSslOptionsWithResponse(Context context) {
-        Response<ApplicationGatewayAvailableSslOptionsInner> inner =
-            this.serviceClient().listAvailableSslOptionsWithResponse(context);
+        Response<ApplicationGatewayAvailableSslOptionsInner> inner
+            = this.serviceClient().listAvailableSslOptionsWithResponse(context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ApplicationGatewayAvailableSslOptionsImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -247,26 +231,23 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
     }
 
     public PagedIterable<ApplicationGatewaySslPredefinedPolicy> listAvailableSslPredefinedPolicies() {
-        PagedIterable<ApplicationGatewaySslPredefinedPolicyInner> inner =
-            this.serviceClient().listAvailableSslPredefinedPolicies();
+        PagedIterable<ApplicationGatewaySslPredefinedPolicyInner> inner
+            = this.serviceClient().listAvailableSslPredefinedPolicies();
         return Utils.mapPage(inner, inner1 -> new ApplicationGatewaySslPredefinedPolicyImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ApplicationGatewaySslPredefinedPolicy> listAvailableSslPredefinedPolicies(Context context) {
-        PagedIterable<ApplicationGatewaySslPredefinedPolicyInner> inner =
-            this.serviceClient().listAvailableSslPredefinedPolicies(context);
+        PagedIterable<ApplicationGatewaySslPredefinedPolicyInner> inner
+            = this.serviceClient().listAvailableSslPredefinedPolicies(context);
         return Utils.mapPage(inner, inner1 -> new ApplicationGatewaySslPredefinedPolicyImpl(inner1, this.manager()));
     }
 
-    public Response<ApplicationGatewaySslPredefinedPolicy> getSslPredefinedPolicyWithResponse(
-        String predefinedPolicyName, Context context) {
-        Response<ApplicationGatewaySslPredefinedPolicyInner> inner =
-            this.serviceClient().getSslPredefinedPolicyWithResponse(predefinedPolicyName, context);
+    public Response<ApplicationGatewaySslPredefinedPolicy>
+        getSslPredefinedPolicyWithResponse(String predefinedPolicyName, Context context) {
+        Response<ApplicationGatewaySslPredefinedPolicyInner> inner
+            = this.serviceClient().getSslPredefinedPolicyWithResponse(predefinedPolicyName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ApplicationGatewaySslPredefinedPolicyImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -274,8 +255,8 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
     }
 
     public ApplicationGatewaySslPredefinedPolicy getSslPredefinedPolicy(String predefinedPolicyName) {
-        ApplicationGatewaySslPredefinedPolicyInner inner =
-            this.serviceClient().getSslPredefinedPolicy(predefinedPolicyName);
+        ApplicationGatewaySslPredefinedPolicyInner inner
+            = this.serviceClient().getSslPredefinedPolicy(predefinedPolicyName);
         if (inner != null) {
             return new ApplicationGatewaySslPredefinedPolicyImpl(inner, this.manager());
         } else {
@@ -286,20 +267,13 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
     public ApplicationGateway getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String applicationGatewayName = Utils.getValueFromIdByName(id, "applicationGateways");
         if (applicationGatewayName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'applicationGateways'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'applicationGateways'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, applicationGatewayName, Context.NONE).getValue();
     }
@@ -307,20 +281,13 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
     public Response<ApplicationGateway> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String applicationGatewayName = Utils.getValueFromIdByName(id, "applicationGateways");
         if (applicationGatewayName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'applicationGateways'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'applicationGateways'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, applicationGatewayName, context);
     }
@@ -328,20 +295,13 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String applicationGatewayName = Utils.getValueFromIdByName(id, "applicationGateways");
         if (applicationGatewayName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'applicationGateways'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'applicationGateways'.", id)));
         }
         this.delete(resourceGroupName, applicationGatewayName, Context.NONE);
     }
@@ -349,20 +309,13 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String applicationGatewayName = Utils.getValueFromIdByName(id, "applicationGateways");
         if (applicationGatewayName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'applicationGateways'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'applicationGateways'.", id)));
         }
         this.delete(resourceGroupName, applicationGatewayName, context);
     }

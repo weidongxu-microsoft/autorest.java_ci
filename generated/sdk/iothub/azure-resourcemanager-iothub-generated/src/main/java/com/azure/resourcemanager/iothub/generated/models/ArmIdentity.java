@@ -9,7 +9,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
 
-/** The ArmIdentity model. */
+/**
+ * The ArmIdentity model.
+ */
 @Fluent
 public final class ArmIdentity {
     /*
@@ -39,13 +41,15 @@ public final class ArmIdentity {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, ArmUserIdentity> userAssignedIdentities;
 
-    /** Creates an instance of ArmIdentity class. */
+    /**
+     * Creates an instance of ArmIdentity class.
+     */
     public ArmIdentity() {
     }
 
     /**
      * Get the principalId property: Principal Id.
-     *
+     * 
      * @return the principalId value.
      */
     public String principalId() {
@@ -54,7 +58,7 @@ public final class ArmIdentity {
 
     /**
      * Get the tenantId property: Tenant Id.
-     *
+     * 
      * @return the tenantId value.
      */
     public String tenantId() {
@@ -65,7 +69,7 @@ public final class ArmIdentity {
      * Get the type property: The type of identity used for the resource. The type 'SystemAssigned, UserAssigned'
      * includes both an implicitly created identity and a set of user assigned identities. The type 'None' will remove
      * any identities from the service.
-     *
+     * 
      * @return the type value.
      */
     public ResourceIdentityType type() {
@@ -76,7 +80,7 @@ public final class ArmIdentity {
      * Set the type property: The type of identity used for the resource. The type 'SystemAssigned, UserAssigned'
      * includes both an implicitly created identity and a set of user assigned identities. The type 'None' will remove
      * any identities from the service.
-     *
+     * 
      * @param type the type value to set.
      * @return the ArmIdentity object itself.
      */
@@ -87,7 +91,7 @@ public final class ArmIdentity {
 
     /**
      * Get the userAssignedIdentities property: Dictionary of &lt;ArmUserIdentity&gt;.
-     *
+     * 
      * @return the userAssignedIdentities value.
      */
     public Map<String, ArmUserIdentity> userAssignedIdentities() {
@@ -96,7 +100,7 @@ public final class ArmIdentity {
 
     /**
      * Set the userAssignedIdentities property: Dictionary of &lt;ArmUserIdentity&gt;.
-     *
+     * 
      * @param userAssignedIdentities the userAssignedIdentities value to set.
      * @return the ArmIdentity object itself.
      */
@@ -107,19 +111,16 @@ public final class ArmIdentity {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (userAssignedIdentities() != null) {
-            userAssignedIdentities()
-                .values()
-                .forEach(
-                    e -> {
-                        if (e != null) {
-                            e.validate();
-                        }
-                    });
+            userAssignedIdentities().values().forEach(e -> {
+                if (e != null) {
+                    e.validate();
+                }
+            });
         }
     }
 }

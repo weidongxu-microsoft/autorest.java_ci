@@ -10,7 +10,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** Properties of the throttling policy. */
+/**
+ * Properties of the throttling policy.
+ */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
 @JsonTypeName("ThrottlingPolicy")
 @Fluent
@@ -28,14 +30,16 @@ public final class ThrottlingPolicy extends ApplicationGroupPolicy {
     @JsonProperty(value = "metricId", required = true)
     private MetricId metricId;
 
-    /** Creates an instance of ThrottlingPolicy class. */
+    /**
+     * Creates an instance of ThrottlingPolicy class.
+     */
     public ThrottlingPolicy() {
     }
 
     /**
-     * Get the rateLimitThreshold property: The Threshold limit above which the application group will be throttled.Rate
-     * limit is always per second.
-     *
+     * Get the rateLimitThreshold property: The Threshold limit above which the application group will be
+     * throttled.Rate limit is always per second.
+     * 
      * @return the rateLimitThreshold value.
      */
     public long rateLimitThreshold() {
@@ -43,9 +47,9 @@ public final class ThrottlingPolicy extends ApplicationGroupPolicy {
     }
 
     /**
-     * Set the rateLimitThreshold property: The Threshold limit above which the application group will be throttled.Rate
-     * limit is always per second.
-     *
+     * Set the rateLimitThreshold property: The Threshold limit above which the application group will be
+     * throttled.Rate limit is always per second.
+     * 
      * @param rateLimitThreshold the rateLimitThreshold value to set.
      * @return the ThrottlingPolicy object itself.
      */
@@ -57,7 +61,7 @@ public final class ThrottlingPolicy extends ApplicationGroupPolicy {
     /**
      * Get the metricId property: Metric Id on which the throttle limit should be set, MetricId can be discovered by
      * hovering over Metric in the Metrics section of Event Hub Namespace inside Azure Portal.
-     *
+     * 
      * @return the metricId value.
      */
     public MetricId metricId() {
@@ -67,7 +71,7 @@ public final class ThrottlingPolicy extends ApplicationGroupPolicy {
     /**
      * Set the metricId property: Metric Id on which the throttle limit should be set, MetricId can be discovered by
      * hovering over Metric in the Metrics section of Event Hub Namespace inside Azure Portal.
-     *
+     * 
      * @param metricId the metricId value to set.
      * @return the ThrottlingPolicy object itself.
      */
@@ -76,7 +80,9 @@ public final class ThrottlingPolicy extends ApplicationGroupPolicy {
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ThrottlingPolicy withName(String name) {
         super.withName(name);
@@ -85,16 +91,15 @@ public final class ThrottlingPolicy extends ApplicationGroupPolicy {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override
     public void validate() {
         super.validate();
         if (metricId() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property metricId in model ThrottlingPolicy"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property metricId in model ThrottlingPolicy"));
         }
     }
 

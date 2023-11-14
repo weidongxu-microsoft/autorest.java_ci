@@ -15,8 +15,7 @@ public final class ChargesListResultImpl implements ChargesListResult {
 
     private final com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager;
 
-    ChargesListResultImpl(
-        ChargesListResultInner innerObject,
+    ChargesListResultImpl(ChargesListResultInner innerObject,
         com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

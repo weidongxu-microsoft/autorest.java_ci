@@ -102,23 +102,16 @@ public final class WcfRelayImpl implements WcfRelay, WcfRelay.Definition, WcfRel
     }
 
     public WcfRelay create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWcfRelays()
-                .createOrUpdateWithResponse(
-                    resourceGroupName, namespaceName, relayName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getWcfRelays()
+            .createOrUpdateWithResponse(resourceGroupName, namespaceName, relayName, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public WcfRelay create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWcfRelays()
-                .createOrUpdateWithResponse(resourceGroupName, namespaceName, relayName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getWcfRelays()
+            .createOrUpdateWithResponse(resourceGroupName, namespaceName, relayName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
@@ -133,23 +126,16 @@ public final class WcfRelayImpl implements WcfRelay, WcfRelay.Definition, WcfRel
     }
 
     public WcfRelay apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWcfRelays()
-                .createOrUpdateWithResponse(
-                    resourceGroupName, namespaceName, relayName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getWcfRelays()
+            .createOrUpdateWithResponse(resourceGroupName, namespaceName, relayName, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public WcfRelay apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWcfRelays()
-                .createOrUpdateWithResponse(resourceGroupName, namespaceName, relayName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getWcfRelays()
+            .createOrUpdateWithResponse(resourceGroupName, namespaceName, relayName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
@@ -162,22 +148,14 @@ public final class WcfRelayImpl implements WcfRelay, WcfRelay.Definition, WcfRel
     }
 
     public WcfRelay refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWcfRelays()
-                .getWithResponse(resourceGroupName, namespaceName, relayName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getWcfRelays()
+            .getWithResponse(resourceGroupName, namespaceName, relayName, Context.NONE).getValue();
         return this;
     }
 
     public WcfRelay refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWcfRelays()
-                .getWithResponse(resourceGroupName, namespaceName, relayName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getWcfRelays()
+            .getWithResponse(resourceGroupName, namespaceName, relayName, context).getValue();
         return this;
     }
 

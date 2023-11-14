@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The filter expression to be used in the report. */
+/**
+ * The filter expression to be used in the report.
+ */
 @Fluent
 public final class ReportConfigFilter {
     /*
@@ -47,13 +49,15 @@ public final class ReportConfigFilter {
     @JsonProperty(value = "tagValue")
     private ReportConfigComparisonExpression tagValue;
 
-    /** Creates an instance of ReportConfigFilter class. */
+    /**
+     * Creates an instance of ReportConfigFilter class.
+     */
     public ReportConfigFilter() {
     }
 
     /**
      * Get the and property: The logical "AND" expression. Must have at least 2 items.
-     *
+     * 
      * @return the and value.
      */
     public List<ReportConfigFilter> and() {
@@ -62,7 +66,7 @@ public final class ReportConfigFilter {
 
     /**
      * Set the and property: The logical "AND" expression. Must have at least 2 items.
-     *
+     * 
      * @param and the and value to set.
      * @return the ReportConfigFilter object itself.
      */
@@ -73,7 +77,7 @@ public final class ReportConfigFilter {
 
     /**
      * Get the or property: The logical "OR" expression. Must have at least 2 items.
-     *
+     * 
      * @return the or value.
      */
     public List<ReportConfigFilter> or() {
@@ -82,7 +86,7 @@ public final class ReportConfigFilter {
 
     /**
      * Set the or property: The logical "OR" expression. Must have at least 2 items.
-     *
+     * 
      * @param or the or value to set.
      * @return the ReportConfigFilter object itself.
      */
@@ -93,7 +97,7 @@ public final class ReportConfigFilter {
 
     /**
      * Get the dimensions property: Has comparison expression for a dimension.
-     *
+     * 
      * @return the dimensions value.
      */
     public ReportConfigComparisonExpression dimensions() {
@@ -102,7 +106,7 @@ public final class ReportConfigFilter {
 
     /**
      * Set the dimensions property: Has comparison expression for a dimension.
-     *
+     * 
      * @param dimensions the dimensions value to set.
      * @return the ReportConfigFilter object itself.
      */
@@ -113,7 +117,7 @@ public final class ReportConfigFilter {
 
     /**
      * Get the tags property: Has comparison expression for a tag.
-     *
+     * 
      * @return the tags value.
      */
     public ReportConfigComparisonExpression tags() {
@@ -122,7 +126,7 @@ public final class ReportConfigFilter {
 
     /**
      * Set the tags property: Has comparison expression for a tag.
-     *
+     * 
      * @param tags the tags value to set.
      * @return the ReportConfigFilter object itself.
      */
@@ -133,7 +137,7 @@ public final class ReportConfigFilter {
 
     /**
      * Get the tagKey property: Has comparison expression for a tag key.
-     *
+     * 
      * @return the tagKey value.
      */
     public ReportConfigComparisonExpression tagKey() {
@@ -142,7 +146,7 @@ public final class ReportConfigFilter {
 
     /**
      * Set the tagKey property: Has comparison expression for a tag key.
-     *
+     * 
      * @param tagKey the tagKey value to set.
      * @return the ReportConfigFilter object itself.
      */
@@ -153,7 +157,7 @@ public final class ReportConfigFilter {
 
     /**
      * Get the tagValue property: Has comparison expression for a tag value.
-     *
+     * 
      * @return the tagValue value.
      */
     public ReportConfigComparisonExpression tagValue() {
@@ -162,7 +166,7 @@ public final class ReportConfigFilter {
 
     /**
      * Set the tagValue property: Has comparison expression for a tag value.
-     *
+     * 
      * @param tagValue the tagValue value to set.
      * @return the ReportConfigFilter object itself.
      */
@@ -173,7 +177,7 @@ public final class ReportConfigFilter {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

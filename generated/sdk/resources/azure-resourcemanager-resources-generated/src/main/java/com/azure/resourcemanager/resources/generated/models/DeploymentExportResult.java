@@ -6,18 +6,20 @@ package com.azure.resourcemanager.resources.generated.models;
 
 import com.azure.resourcemanager.resources.generated.fluent.models.DeploymentExportResultInner;
 
-/** An immutable client-side representation of DeploymentExportResult. */
+/**
+ * An immutable client-side representation of DeploymentExportResult.
+ */
 public interface DeploymentExportResult {
     /**
      * Gets the template property: The template content.
-     *
+     * 
      * @return the template value.
      */
     Object template();
 
     /**
      * Gets the inner com.azure.resourcemanager.resources.generated.fluent.models.DeploymentExportResultInner object.
-     *
+     * 
      * @return the inner object.
      */
     DeploymentExportResultInner innerModel();

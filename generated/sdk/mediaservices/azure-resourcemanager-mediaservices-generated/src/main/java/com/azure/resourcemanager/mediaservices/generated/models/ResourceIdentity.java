@@ -7,7 +7,9 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The ResourceIdentity model. */
+/**
+ * The ResourceIdentity model.
+ */
 @Fluent
 public final class ResourceIdentity {
     /*
@@ -22,14 +24,16 @@ public final class ResourceIdentity {
     @JsonProperty(value = "useSystemAssignedIdentity", required = true)
     private boolean useSystemAssignedIdentity;
 
-    /** Creates an instance of ResourceIdentity class. */
+    /**
+     * Creates an instance of ResourceIdentity class.
+     */
     public ResourceIdentity() {
     }
 
     /**
      * Get the userAssignedIdentity property: The user assigned managed identity's ARM ID to use when accessing a
      * resource.
-     *
+     * 
      * @return the userAssignedIdentity value.
      */
     public String userAssignedIdentity() {
@@ -39,7 +43,7 @@ public final class ResourceIdentity {
     /**
      * Set the userAssignedIdentity property: The user assigned managed identity's ARM ID to use when accessing a
      * resource.
-     *
+     * 
      * @param userAssignedIdentity the userAssignedIdentity value to set.
      * @return the ResourceIdentity object itself.
      */
@@ -51,7 +55,7 @@ public final class ResourceIdentity {
     /**
      * Get the useSystemAssignedIdentity property: Indicates whether to use System Assigned Managed Identity. Mutual
      * exclusive with User Assigned Managed Identity.
-     *
+     * 
      * @return the useSystemAssignedIdentity value.
      */
     public boolean useSystemAssignedIdentity() {
@@ -61,7 +65,7 @@ public final class ResourceIdentity {
     /**
      * Set the useSystemAssignedIdentity property: Indicates whether to use System Assigned Managed Identity. Mutual
      * exclusive with User Assigned Managed Identity.
-     *
+     * 
      * @param useSystemAssignedIdentity the useSystemAssignedIdentity value to set.
      * @return the ResourceIdentity object itself.
      */
@@ -72,7 +76,7 @@ public final class ResourceIdentity {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

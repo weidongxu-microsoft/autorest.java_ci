@@ -9,7 +9,9 @@ import com.azure.resourcemanager.costmanagement.generated.fluent.models.Dimensio
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Result of listing dimensions. It contains a list of available dimensions. */
+/**
+ * Result of listing dimensions. It contains a list of available dimensions.
+ */
 @Immutable
 public final class DimensionsListResult {
     /*
@@ -18,13 +20,15 @@ public final class DimensionsListResult {
     @JsonProperty(value = "value", access = JsonProperty.Access.WRITE_ONLY)
     private List<DimensionInner> value;
 
-    /** Creates an instance of DimensionsListResult class. */
+    /**
+     * Creates an instance of DimensionsListResult class.
+     */
     public DimensionsListResult() {
     }
 
     /**
      * Get the value property: The list of dimensions.
-     *
+     * 
      * @return the value value.
      */
     public List<DimensionInner> value() {
@@ -33,7 +37,7 @@ public final class DimensionsListResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

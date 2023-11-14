@@ -7,13 +7,16 @@ package com.azure.resourcemanager.keyvault.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.keyvault.generated.models.ManagedHsmResource;
 import com.azure.resourcemanager.keyvault.generated.models.ManagedHsmSku;
+import com.azure.resourcemanager.keyvault.generated.models.ManagedServiceIdentity;
 import com.azure.resourcemanager.keyvault.generated.models.MhsmPrivateEndpoint;
 import com.azure.resourcemanager.keyvault.generated.models.MhsmPrivateLinkServiceConnectionState;
 import com.azure.resourcemanager.keyvault.generated.models.PrivateEndpointConnectionProvisioningState;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
 
-/** Private endpoint connection resource. */
+/**
+ * Private endpoint connection resource.
+ */
 @Fluent
 public final class MhsmPrivateEndpointConnectionInner extends ManagedHsmResource {
     /*
@@ -28,13 +31,15 @@ public final class MhsmPrivateEndpointConnectionInner extends ManagedHsmResource
     @JsonProperty(value = "etag")
     private String etag;
 
-    /** Creates an instance of MhsmPrivateEndpointConnectionInner class. */
+    /**
+     * Creates an instance of MhsmPrivateEndpointConnectionInner class.
+     */
     public MhsmPrivateEndpointConnectionInner() {
     }
 
     /**
      * Get the innerProperties property: Resource properties.
-     *
+     * 
      * @return the innerProperties value.
      */
     private MhsmPrivateEndpointConnectionProperties innerProperties() {
@@ -43,7 +48,7 @@ public final class MhsmPrivateEndpointConnectionInner extends ManagedHsmResource
 
     /**
      * Get the etag property: Modified whenever there is a change in the state of private endpoint connection.
-     *
+     * 
      * @return the etag value.
      */
     public String etag() {
@@ -52,7 +57,7 @@ public final class MhsmPrivateEndpointConnectionInner extends ManagedHsmResource
 
     /**
      * Set the etag property: Modified whenever there is a change in the state of private endpoint connection.
-     *
+     * 
      * @param etag the etag value to set.
      * @return the MhsmPrivateEndpointConnectionInner object itself.
      */
@@ -61,21 +66,36 @@ public final class MhsmPrivateEndpointConnectionInner extends ManagedHsmResource
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public MhsmPrivateEndpointConnectionInner withSku(ManagedHsmSku sku) {
         super.withSku(sku);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public MhsmPrivateEndpointConnectionInner withIdentity(ManagedServiceIdentity identity) {
+        super.withIdentity(identity);
+        return this;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public MhsmPrivateEndpointConnectionInner withLocation(String location) {
         super.withLocation(location);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public MhsmPrivateEndpointConnectionInner withTags(Map<String, String> tags) {
         super.withTags(tags);
@@ -84,7 +104,7 @@ public final class MhsmPrivateEndpointConnectionInner extends ManagedHsmResource
 
     /**
      * Get the privateEndpoint property: Properties of the private endpoint object.
-     *
+     * 
      * @return the privateEndpoint value.
      */
     public MhsmPrivateEndpoint privateEndpoint() {
@@ -93,7 +113,7 @@ public final class MhsmPrivateEndpointConnectionInner extends ManagedHsmResource
 
     /**
      * Set the privateEndpoint property: Properties of the private endpoint object.
-     *
+     * 
      * @param privateEndpoint the privateEndpoint value to set.
      * @return the MhsmPrivateEndpointConnectionInner object itself.
      */
@@ -107,7 +127,7 @@ public final class MhsmPrivateEndpointConnectionInner extends ManagedHsmResource
 
     /**
      * Get the privateLinkServiceConnectionState property: Approval state of the private link connection.
-     *
+     * 
      * @return the privateLinkServiceConnectionState value.
      */
     public MhsmPrivateLinkServiceConnectionState privateLinkServiceConnectionState() {
@@ -116,12 +136,12 @@ public final class MhsmPrivateEndpointConnectionInner extends ManagedHsmResource
 
     /**
      * Set the privateLinkServiceConnectionState property: Approval state of the private link connection.
-     *
+     * 
      * @param privateLinkServiceConnectionState the privateLinkServiceConnectionState value to set.
      * @return the MhsmPrivateEndpointConnectionInner object itself.
      */
-    public MhsmPrivateEndpointConnectionInner withPrivateLinkServiceConnectionState(
-        MhsmPrivateLinkServiceConnectionState privateLinkServiceConnectionState) {
+    public MhsmPrivateEndpointConnectionInner
+        withPrivateLinkServiceConnectionState(MhsmPrivateLinkServiceConnectionState privateLinkServiceConnectionState) {
         if (this.innerProperties() == null) {
             this.innerProperties = new MhsmPrivateEndpointConnectionProperties();
         }
@@ -131,7 +151,7 @@ public final class MhsmPrivateEndpointConnectionInner extends ManagedHsmResource
 
     /**
      * Get the provisioningState property: Provisioning state of the private endpoint connection.
-     *
+     * 
      * @return the provisioningState value.
      */
     public PrivateEndpointConnectionProvisioningState provisioningState() {
@@ -140,12 +160,12 @@ public final class MhsmPrivateEndpointConnectionInner extends ManagedHsmResource
 
     /**
      * Set the provisioningState property: Provisioning state of the private endpoint connection.
-     *
+     * 
      * @param provisioningState the provisioningState value to set.
      * @return the MhsmPrivateEndpointConnectionInner object itself.
      */
-    public MhsmPrivateEndpointConnectionInner withProvisioningState(
-        PrivateEndpointConnectionProvisioningState provisioningState) {
+    public MhsmPrivateEndpointConnectionInner
+        withProvisioningState(PrivateEndpointConnectionProvisioningState provisioningState) {
         if (this.innerProperties() == null) {
             this.innerProperties = new MhsmPrivateEndpointConnectionProperties();
         }
@@ -155,7 +175,7 @@ public final class MhsmPrivateEndpointConnectionInner extends ManagedHsmResource
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

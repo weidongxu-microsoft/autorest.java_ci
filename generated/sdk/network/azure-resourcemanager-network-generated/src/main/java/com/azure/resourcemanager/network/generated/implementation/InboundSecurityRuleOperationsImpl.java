@@ -15,8 +15,7 @@ public final class InboundSecurityRuleOperationsImpl implements InboundSecurityR
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public InboundSecurityRuleOperationsImpl(
-        InboundSecurityRuleOperationsClient innerClient,
+    public InboundSecurityRuleOperationsImpl(InboundSecurityRuleOperationsClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;

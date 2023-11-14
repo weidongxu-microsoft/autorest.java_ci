@@ -10,7 +10,9 @@ import com.azure.resourcemanager.postgresql.generated.models.ServerSecurityAlert
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Properties of a security alert policy. */
+/**
+ * Properties of a security alert policy.
+ */
 @Fluent
 public final class SecurityAlertPolicyProperties {
     /*
@@ -57,13 +59,15 @@ public final class SecurityAlertPolicyProperties {
     @JsonProperty(value = "retentionDays")
     private Integer retentionDays;
 
-    /** Creates an instance of SecurityAlertPolicyProperties class. */
+    /**
+     * Creates an instance of SecurityAlertPolicyProperties class.
+     */
     public SecurityAlertPolicyProperties() {
     }
 
     /**
      * Get the state property: Specifies the state of the policy, whether it is enabled or disabled.
-     *
+     * 
      * @return the state value.
      */
     public ServerSecurityAlertPolicyState state() {
@@ -72,7 +76,7 @@ public final class SecurityAlertPolicyProperties {
 
     /**
      * Set the state property: Specifies the state of the policy, whether it is enabled or disabled.
-     *
+     * 
      * @param state the state value to set.
      * @return the SecurityAlertPolicyProperties object itself.
      */
@@ -84,7 +88,7 @@ public final class SecurityAlertPolicyProperties {
     /**
      * Get the disabledAlerts property: Specifies an array of alerts that are disabled. Allowed values are:
      * Sql_Injection, Sql_Injection_Vulnerability, Access_Anomaly.
-     *
+     * 
      * @return the disabledAlerts value.
      */
     public List<String> disabledAlerts() {
@@ -94,7 +98,7 @@ public final class SecurityAlertPolicyProperties {
     /**
      * Set the disabledAlerts property: Specifies an array of alerts that are disabled. Allowed values are:
      * Sql_Injection, Sql_Injection_Vulnerability, Access_Anomaly.
-     *
+     * 
      * @param disabledAlerts the disabledAlerts value to set.
      * @return the SecurityAlertPolicyProperties object itself.
      */
@@ -105,7 +109,7 @@ public final class SecurityAlertPolicyProperties {
 
     /**
      * Get the emailAddresses property: Specifies an array of e-mail addresses to which the alert is sent.
-     *
+     * 
      * @return the emailAddresses value.
      */
     public List<String> emailAddresses() {
@@ -114,7 +118,7 @@ public final class SecurityAlertPolicyProperties {
 
     /**
      * Set the emailAddresses property: Specifies an array of e-mail addresses to which the alert is sent.
-     *
+     * 
      * @param emailAddresses the emailAddresses value to set.
      * @return the SecurityAlertPolicyProperties object itself.
      */
@@ -125,7 +129,7 @@ public final class SecurityAlertPolicyProperties {
 
     /**
      * Get the emailAccountAdmins property: Specifies that the alert is sent to the account administrators.
-     *
+     * 
      * @return the emailAccountAdmins value.
      */
     public Boolean emailAccountAdmins() {
@@ -134,7 +138,7 @@ public final class SecurityAlertPolicyProperties {
 
     /**
      * Set the emailAccountAdmins property: Specifies that the alert is sent to the account administrators.
-     *
+     * 
      * @param emailAccountAdmins the emailAccountAdmins value to set.
      * @return the SecurityAlertPolicyProperties object itself.
      */
@@ -146,7 +150,7 @@ public final class SecurityAlertPolicyProperties {
     /**
      * Get the storageEndpoint property: Specifies the blob storage endpoint (e.g.
      * https://MyAccount.blob.core.windows.net). This blob storage will hold all Threat Detection audit logs.
-     *
+     * 
      * @return the storageEndpoint value.
      */
     public String storageEndpoint() {
@@ -156,7 +160,7 @@ public final class SecurityAlertPolicyProperties {
     /**
      * Set the storageEndpoint property: Specifies the blob storage endpoint (e.g.
      * https://MyAccount.blob.core.windows.net). This blob storage will hold all Threat Detection audit logs.
-     *
+     * 
      * @param storageEndpoint the storageEndpoint value to set.
      * @return the SecurityAlertPolicyProperties object itself.
      */
@@ -168,7 +172,7 @@ public final class SecurityAlertPolicyProperties {
     /**
      * Get the storageAccountAccessKey property: Specifies the identifier key of the Threat Detection audit storage
      * account.
-     *
+     * 
      * @return the storageAccountAccessKey value.
      */
     public String storageAccountAccessKey() {
@@ -178,7 +182,7 @@ public final class SecurityAlertPolicyProperties {
     /**
      * Set the storageAccountAccessKey property: Specifies the identifier key of the Threat Detection audit storage
      * account.
-     *
+     * 
      * @param storageAccountAccessKey the storageAccountAccessKey value to set.
      * @return the SecurityAlertPolicyProperties object itself.
      */
@@ -189,7 +193,7 @@ public final class SecurityAlertPolicyProperties {
 
     /**
      * Get the retentionDays property: Specifies the number of days to keep in the Threat Detection audit logs.
-     *
+     * 
      * @return the retentionDays value.
      */
     public Integer retentionDays() {
@@ -198,7 +202,7 @@ public final class SecurityAlertPolicyProperties {
 
     /**
      * Set the retentionDays property: Specifies the number of days to keep in the Threat Detection audit logs.
-     *
+     * 
      * @param retentionDays the retentionDays value to set.
      * @return the SecurityAlertPolicyProperties object itself.
      */
@@ -209,15 +213,13 @@ public final class SecurityAlertPolicyProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (state() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property state in model SecurityAlertPolicyProperties"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property state in model SecurityAlertPolicyProperties"));
         }
     }
 

@@ -19,8 +19,7 @@ public final class MarketplacesImpl implements Marketplaces {
 
     private final com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager;
 
-    public MarketplacesImpl(
-        MarketplacesClient innerClient,
+    public MarketplacesImpl(MarketplacesClient innerClient,
         com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -31,8 +30,8 @@ public final class MarketplacesImpl implements Marketplaces {
         return Utils.mapPage(inner, inner1 -> new MarketplaceImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<Marketplace> list(
-        String scope, String filter, Integer top, String skiptoken, Context context) {
+    public PagedIterable<Marketplace> list(String scope, String filter, Integer top, String skiptoken,
+        Context context) {
         PagedIterable<MarketplaceInner> inner = this.serviceClient().list(scope, filter, top, skiptoken, context);
         return Utils.mapPage(inner, inner1 -> new MarketplaceImpl(inner1, this.manager()));
     }

@@ -14,11 +14,13 @@ import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.network.generated.fluent.models.FirewallPolicyInner;
 import com.azure.resourcemanager.network.generated.models.TagsObject;
 
-/** An instance of this class provides access to all the operations defined in FirewallPoliciesClient. */
+/**
+ * An instance of this class provides access to all the operations defined in FirewallPoliciesClient.
+ */
 public interface FirewallPoliciesClient {
     /**
      * Deletes the specified Firewall Policy.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -31,7 +33,7 @@ public interface FirewallPoliciesClient {
 
     /**
      * Deletes the specified Firewall Policy.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @param context The context to associate with this operation.
@@ -41,12 +43,12 @@ public interface FirewallPoliciesClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginDelete(
-        String resourceGroupName, String firewallPolicyName, Context context);
+    SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String firewallPolicyName,
+        Context context);
 
     /**
      * Deletes the specified Firewall Policy.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -58,7 +60,7 @@ public interface FirewallPoliciesClient {
 
     /**
      * Deletes the specified Firewall Policy.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @param context The context to associate with this operation.
@@ -71,7 +73,7 @@ public interface FirewallPoliciesClient {
 
     /**
      * Gets the specified Firewall Policy.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @param expand Expands referenced resources.
@@ -82,12 +84,12 @@ public interface FirewallPoliciesClient {
      * @return the specified Firewall Policy along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<FirewallPolicyInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String firewallPolicyName, String expand, Context context);
+    Response<FirewallPolicyInner> getByResourceGroupWithResponse(String resourceGroupName, String firewallPolicyName,
+        String expand, Context context);
 
     /**
      * Gets the specified Firewall Policy.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -100,7 +102,7 @@ public interface FirewallPoliciesClient {
 
     /**
      * Creates or updates the specified Firewall Policy.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @param parameters Parameters supplied to the create or update Firewall Policy operation.
@@ -110,12 +112,12 @@ public interface FirewallPoliciesClient {
      * @return the {@link SyncPoller} for polling of firewallPolicy Resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<FirewallPolicyInner>, FirewallPolicyInner> beginCreateOrUpdate(
-        String resourceGroupName, String firewallPolicyName, FirewallPolicyInner parameters);
+    SyncPoller<PollResult<FirewallPolicyInner>, FirewallPolicyInner> beginCreateOrUpdate(String resourceGroupName,
+        String firewallPolicyName, FirewallPolicyInner parameters);
 
     /**
      * Creates or updates the specified Firewall Policy.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @param parameters Parameters supplied to the create or update Firewall Policy operation.
@@ -126,12 +128,12 @@ public interface FirewallPoliciesClient {
      * @return the {@link SyncPoller} for polling of firewallPolicy Resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<FirewallPolicyInner>, FirewallPolicyInner> beginCreateOrUpdate(
-        String resourceGroupName, String firewallPolicyName, FirewallPolicyInner parameters, Context context);
+    SyncPoller<PollResult<FirewallPolicyInner>, FirewallPolicyInner> beginCreateOrUpdate(String resourceGroupName,
+        String firewallPolicyName, FirewallPolicyInner parameters, Context context);
 
     /**
      * Creates or updates the specified Firewall Policy.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @param parameters Parameters supplied to the create or update Firewall Policy operation.
@@ -141,12 +143,12 @@ public interface FirewallPoliciesClient {
      * @return firewallPolicy Resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    FirewallPolicyInner createOrUpdate(
-        String resourceGroupName, String firewallPolicyName, FirewallPolicyInner parameters);
+    FirewallPolicyInner createOrUpdate(String resourceGroupName, String firewallPolicyName,
+        FirewallPolicyInner parameters);
 
     /**
      * Creates or updates the specified Firewall Policy.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @param parameters Parameters supplied to the create or update Firewall Policy operation.
@@ -157,12 +159,12 @@ public interface FirewallPoliciesClient {
      * @return firewallPolicy Resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    FirewallPolicyInner createOrUpdate(
-        String resourceGroupName, String firewallPolicyName, FirewallPolicyInner parameters, Context context);
+    FirewallPolicyInner createOrUpdate(String resourceGroupName, String firewallPolicyName,
+        FirewallPolicyInner parameters, Context context);
 
     /**
      * Updates tags of a Azure Firewall Policy resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @param parameters Parameters supplied to update Azure Firewall Policy tags.
@@ -173,12 +175,12 @@ public interface FirewallPoliciesClient {
      * @return firewallPolicy Resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<FirewallPolicyInner> updateTagsWithResponse(
-        String resourceGroupName, String firewallPolicyName, TagsObject parameters, Context context);
+    Response<FirewallPolicyInner> updateTagsWithResponse(String resourceGroupName, String firewallPolicyName,
+        TagsObject parameters, Context context);
 
     /**
      * Updates tags of a Azure Firewall Policy resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @param parameters Parameters supplied to update Azure Firewall Policy tags.
@@ -192,7 +194,7 @@ public interface FirewallPoliciesClient {
 
     /**
      * Lists all Firewall Policies in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -204,7 +206,7 @@ public interface FirewallPoliciesClient {
 
     /**
      * Lists all Firewall Policies in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -217,7 +219,7 @@ public interface FirewallPoliciesClient {
 
     /**
      * Gets all the Firewall Policies in a subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all the Firewall Policies in a subscription as paginated response with {@link PagedIterable}.
@@ -227,7 +229,7 @@ public interface FirewallPoliciesClient {
 
     /**
      * Gets all the Firewall Policies in a subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

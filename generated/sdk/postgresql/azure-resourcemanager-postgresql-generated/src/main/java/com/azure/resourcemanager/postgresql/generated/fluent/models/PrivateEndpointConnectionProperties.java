@@ -9,7 +9,9 @@ import com.azure.resourcemanager.postgresql.generated.models.PrivateEndpointProp
 import com.azure.resourcemanager.postgresql.generated.models.PrivateLinkServiceConnectionStateProperty;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Properties of a private endpoint connection. */
+/**
+ * Properties of a private endpoint connection.
+ */
 @Fluent
 public final class PrivateEndpointConnectionProperties {
     /*
@@ -30,13 +32,15 @@ public final class PrivateEndpointConnectionProperties {
     @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private String provisioningState;
 
-    /** Creates an instance of PrivateEndpointConnectionProperties class. */
+    /**
+     * Creates an instance of PrivateEndpointConnectionProperties class.
+     */
     public PrivateEndpointConnectionProperties() {
     }
 
     /**
      * Get the privateEndpoint property: Private endpoint which the connection belongs to.
-     *
+     * 
      * @return the privateEndpoint value.
      */
     public PrivateEndpointProperty privateEndpoint() {
@@ -45,7 +49,7 @@ public final class PrivateEndpointConnectionProperties {
 
     /**
      * Set the privateEndpoint property: Private endpoint which the connection belongs to.
-     *
+     * 
      * @param privateEndpoint the privateEndpoint value to set.
      * @return the PrivateEndpointConnectionProperties object itself.
      */
@@ -56,7 +60,7 @@ public final class PrivateEndpointConnectionProperties {
 
     /**
      * Get the privateLinkServiceConnectionState property: Connection state of the private endpoint connection.
-     *
+     * 
      * @return the privateLinkServiceConnectionState value.
      */
     public PrivateLinkServiceConnectionStateProperty privateLinkServiceConnectionState() {
@@ -65,7 +69,7 @@ public final class PrivateEndpointConnectionProperties {
 
     /**
      * Set the privateLinkServiceConnectionState property: Connection state of the private endpoint connection.
-     *
+     * 
      * @param privateLinkServiceConnectionState the privateLinkServiceConnectionState value to set.
      * @return the PrivateEndpointConnectionProperties object itself.
      */
@@ -77,7 +81,7 @@ public final class PrivateEndpointConnectionProperties {
 
     /**
      * Get the provisioningState property: State of the private endpoint connection.
-     *
+     * 
      * @return the provisioningState value.
      */
     public String provisioningState() {
@@ -86,7 +90,7 @@ public final class PrivateEndpointConnectionProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

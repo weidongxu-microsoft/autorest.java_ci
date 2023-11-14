@@ -19,24 +19,23 @@ public final class ApplicationGatewayPrivateLinkResourcesImpl implements Applica
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public ApplicationGatewayPrivateLinkResourcesImpl(
-        ApplicationGatewayPrivateLinkResourcesClient innerClient,
+    public ApplicationGatewayPrivateLinkResourcesImpl(ApplicationGatewayPrivateLinkResourcesClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public PagedIterable<ApplicationGatewayPrivateLinkResource> list(
-        String resourceGroupName, String applicationGatewayName) {
-        PagedIterable<ApplicationGatewayPrivateLinkResourceInner> inner =
-            this.serviceClient().list(resourceGroupName, applicationGatewayName);
+    public PagedIterable<ApplicationGatewayPrivateLinkResource> list(String resourceGroupName,
+        String applicationGatewayName) {
+        PagedIterable<ApplicationGatewayPrivateLinkResourceInner> inner
+            = this.serviceClient().list(resourceGroupName, applicationGatewayName);
         return Utils.mapPage(inner, inner1 -> new ApplicationGatewayPrivateLinkResourceImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<ApplicationGatewayPrivateLinkResource> list(
-        String resourceGroupName, String applicationGatewayName, Context context) {
-        PagedIterable<ApplicationGatewayPrivateLinkResourceInner> inner =
-            this.serviceClient().list(resourceGroupName, applicationGatewayName, context);
+    public PagedIterable<ApplicationGatewayPrivateLinkResource> list(String resourceGroupName,
+        String applicationGatewayName, Context context) {
+        PagedIterable<ApplicationGatewayPrivateLinkResourceInner> inner
+            = this.serviceClient().list(resourceGroupName, applicationGatewayName, context);
         return Utils.mapPage(inner, inner1 -> new ApplicationGatewayPrivateLinkResourceImpl(inner1, this.manager()));
     }
 

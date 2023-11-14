@@ -59,8 +59,7 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    public AppServiceEnvironmentsImpl(
-        AppServiceEnvironmentsClient innerClient,
+    public AppServiceEnvironmentsImpl(AppServiceEnvironmentsClient innerClient,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -77,26 +76,23 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
     }
 
     public PagedIterable<AppServiceEnvironmentResource> listByResourceGroup(String resourceGroupName) {
-        PagedIterable<AppServiceEnvironmentResourceInner> inner =
-            this.serviceClient().listByResourceGroup(resourceGroupName);
+        PagedIterable<AppServiceEnvironmentResourceInner> inner
+            = this.serviceClient().listByResourceGroup(resourceGroupName);
         return Utils.mapPage(inner, inner1 -> new AppServiceEnvironmentResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AppServiceEnvironmentResource> listByResourceGroup(String resourceGroupName, Context context) {
-        PagedIterable<AppServiceEnvironmentResourceInner> inner =
-            this.serviceClient().listByResourceGroup(resourceGroupName, context);
+        PagedIterable<AppServiceEnvironmentResourceInner> inner
+            = this.serviceClient().listByResourceGroup(resourceGroupName, context);
         return Utils.mapPage(inner, inner1 -> new AppServiceEnvironmentResourceImpl(inner1, this.manager()));
     }
 
-    public Response<AppServiceEnvironmentResource> getByResourceGroupWithResponse(
-        String resourceGroupName, String name, Context context) {
-        Response<AppServiceEnvironmentResourceInner> inner =
-            this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, name, context);
+    public Response<AppServiceEnvironmentResource> getByResourceGroupWithResponse(String resourceGroupName, String name,
+        Context context) {
+        Response<AppServiceEnvironmentResourceInner> inner
+            = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, name, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new AppServiceEnvironmentResourceImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -131,13 +127,10 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
     }
 
     public Response<AddressResponse> getVipInfoWithResponse(String resourceGroupName, String name, Context context) {
-        Response<AddressResponseInner> inner =
-            this.serviceClient().getVipInfoWithResponse(resourceGroupName, name, context);
+        Response<AddressResponseInner> inner
+            = this.serviceClient().getVipInfoWithResponse(resourceGroupName, name, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new AddressResponseImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -158,21 +151,18 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         return Utils.mapPage(inner, inner1 -> new SiteImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<Site> changeVnet(
-        String resourceGroupName, String name, VirtualNetworkProfile vnetInfo, Context context) {
+    public PagedIterable<Site> changeVnet(String resourceGroupName, String name, VirtualNetworkProfile vnetInfo,
+        Context context) {
         PagedIterable<SiteInner> inner = this.serviceClient().changeVnet(resourceGroupName, name, vnetInfo, context);
         return Utils.mapPage(inner, inner1 -> new SiteImpl(inner1, this.manager()));
     }
 
-    public Response<CustomDnsSuffixConfiguration> getAseCustomDnsSuffixConfigurationWithResponse(
-        String resourceGroupName, String name, Context context) {
-        Response<CustomDnsSuffixConfigurationInner> inner =
-            this.serviceClient().getAseCustomDnsSuffixConfigurationWithResponse(resourceGroupName, name, context);
+    public Response<CustomDnsSuffixConfiguration>
+        getAseCustomDnsSuffixConfigurationWithResponse(String resourceGroupName, String name, Context context) {
+        Response<CustomDnsSuffixConfigurationInner> inner
+            = this.serviceClient().getAseCustomDnsSuffixConfigurationWithResponse(resourceGroupName, name, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new CustomDnsSuffixConfigurationImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -180,8 +170,8 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
     }
 
     public CustomDnsSuffixConfiguration getAseCustomDnsSuffixConfiguration(String resourceGroupName, String name) {
-        CustomDnsSuffixConfigurationInner inner =
-            this.serviceClient().getAseCustomDnsSuffixConfiguration(resourceGroupName, name);
+        CustomDnsSuffixConfigurationInner inner
+            = this.serviceClient().getAseCustomDnsSuffixConfiguration(resourceGroupName, name);
         if (inner != null) {
             return new CustomDnsSuffixConfigurationImpl(inner, this.manager());
         } else {
@@ -190,32 +180,23 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
     }
 
     public Response<CustomDnsSuffixConfiguration> updateAseCustomDnsSuffixConfigurationWithResponse(
-        String resourceGroupName,
-        String name,
-        CustomDnsSuffixConfigurationInner customDnsSuffixConfiguration,
+        String resourceGroupName, String name, CustomDnsSuffixConfigurationInner customDnsSuffixConfiguration,
         Context context) {
-        Response<CustomDnsSuffixConfigurationInner> inner =
-            this
-                .serviceClient()
-                .updateAseCustomDnsSuffixConfigurationWithResponse(
-                    resourceGroupName, name, customDnsSuffixConfiguration, context);
+        Response<CustomDnsSuffixConfigurationInner> inner
+            = this.serviceClient().updateAseCustomDnsSuffixConfigurationWithResponse(resourceGroupName, name,
+                customDnsSuffixConfiguration, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new CustomDnsSuffixConfigurationImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public CustomDnsSuffixConfiguration updateAseCustomDnsSuffixConfiguration(
-        String resourceGroupName, String name, CustomDnsSuffixConfigurationInner customDnsSuffixConfiguration) {
-        CustomDnsSuffixConfigurationInner inner =
-            this
-                .serviceClient()
-                .updateAseCustomDnsSuffixConfiguration(resourceGroupName, name, customDnsSuffixConfiguration);
+    public CustomDnsSuffixConfiguration updateAseCustomDnsSuffixConfiguration(String resourceGroupName, String name,
+        CustomDnsSuffixConfigurationInner customDnsSuffixConfiguration) {
+        CustomDnsSuffixConfigurationInner inner = this.serviceClient()
+            .updateAseCustomDnsSuffixConfiguration(resourceGroupName, name, customDnsSuffixConfiguration);
         if (inner != null) {
             return new CustomDnsSuffixConfigurationImpl(inner, this.manager());
         } else {
@@ -223,8 +204,8 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         }
     }
 
-    public Response<Object> deleteAseCustomDnsSuffixConfigurationWithResponse(
-        String resourceGroupName, String name, Context context) {
+    public Response<Object> deleteAseCustomDnsSuffixConfigurationWithResponse(String resourceGroupName, String name,
+        Context context) {
         return this.serviceClient().deleteAseCustomDnsSuffixConfigurationWithResponse(resourceGroupName, name, context);
     }
 
@@ -232,15 +213,12 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         return this.serviceClient().deleteAseCustomDnsSuffixConfiguration(resourceGroupName, name);
     }
 
-    public Response<AseV3NetworkingConfiguration> getAseV3NetworkingConfigurationWithResponse(
-        String resourceGroupName, String name, Context context) {
-        Response<AseV3NetworkingConfigurationInner> inner =
-            this.serviceClient().getAseV3NetworkingConfigurationWithResponse(resourceGroupName, name, context);
+    public Response<AseV3NetworkingConfiguration> getAseV3NetworkingConfigurationWithResponse(String resourceGroupName,
+        String name, Context context) {
+        Response<AseV3NetworkingConfigurationInner> inner
+            = this.serviceClient().getAseV3NetworkingConfigurationWithResponse(resourceGroupName, name, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new AseV3NetworkingConfigurationImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -248,8 +226,8 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
     }
 
     public AseV3NetworkingConfiguration getAseV3NetworkingConfiguration(String resourceGroupName, String name) {
-        AseV3NetworkingConfigurationInner inner =
-            this.serviceClient().getAseV3NetworkingConfiguration(resourceGroupName, name);
+        AseV3NetworkingConfigurationInner inner
+            = this.serviceClient().getAseV3NetworkingConfiguration(resourceGroupName, name);
         if (inner != null) {
             return new AseV3NetworkingConfigurationImpl(inner, this.manager());
         } else {
@@ -257,31 +235,22 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         }
     }
 
-    public Response<AseV3NetworkingConfiguration> updateAseNetworkingConfigurationWithResponse(
-        String resourceGroupName,
-        String name,
-        AseV3NetworkingConfigurationInner aseNetworkingConfiguration,
-        Context context) {
-        Response<AseV3NetworkingConfigurationInner> inner =
-            this
-                .serviceClient()
-                .updateAseNetworkingConfigurationWithResponse(
-                    resourceGroupName, name, aseNetworkingConfiguration, context);
+    public Response<AseV3NetworkingConfiguration> updateAseNetworkingConfigurationWithResponse(String resourceGroupName,
+        String name, AseV3NetworkingConfigurationInner aseNetworkingConfiguration, Context context) {
+        Response<AseV3NetworkingConfigurationInner> inner = this.serviceClient()
+            .updateAseNetworkingConfigurationWithResponse(resourceGroupName, name, aseNetworkingConfiguration, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new AseV3NetworkingConfigurationImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public AseV3NetworkingConfiguration updateAseNetworkingConfiguration(
-        String resourceGroupName, String name, AseV3NetworkingConfigurationInner aseNetworkingConfiguration) {
-        AseV3NetworkingConfigurationInner inner =
-            this.serviceClient().updateAseNetworkingConfiguration(resourceGroupName, name, aseNetworkingConfiguration);
+    public AseV3NetworkingConfiguration updateAseNetworkingConfiguration(String resourceGroupName, String name,
+        AseV3NetworkingConfigurationInner aseNetworkingConfiguration) {
+        AseV3NetworkingConfigurationInner inner = this.serviceClient()
+            .updateAseNetworkingConfiguration(resourceGroupName, name, aseNetworkingConfiguration);
         if (inner != null) {
             return new AseV3NetworkingConfigurationImpl(inner, this.manager());
         } else {
@@ -289,19 +258,13 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         }
     }
 
-    public Response<List<HostingEnvironmentDiagnostics>> listDiagnosticsWithResponse(
-        String resourceGroupName, String name, Context context) {
-        Response<List<HostingEnvironmentDiagnosticsInner>> inner =
-            this.serviceClient().listDiagnosticsWithResponse(resourceGroupName, name, context);
+    public Response<List<HostingEnvironmentDiagnostics>> listDiagnosticsWithResponse(String resourceGroupName,
+        String name, Context context) {
+        Response<List<HostingEnvironmentDiagnosticsInner>> inner
+            = this.serviceClient().listDiagnosticsWithResponse(resourceGroupName, name, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
-                inner
-                    .getValue()
-                    .stream()
-                    .map(inner1 -> new HostingEnvironmentDiagnosticsImpl(inner1, this.manager()))
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
+                inner.getValue().stream().map(inner1 -> new HostingEnvironmentDiagnosticsImpl(inner1, this.manager()))
                     .collect(Collectors.toList()));
         } else {
             return null;
@@ -311,36 +274,30 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
     public List<HostingEnvironmentDiagnostics> listDiagnostics(String resourceGroupName, String name) {
         List<HostingEnvironmentDiagnosticsInner> inner = this.serviceClient().listDiagnostics(resourceGroupName, name);
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new HostingEnvironmentDiagnosticsImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(
+                inner.stream().map(inner1 -> new HostingEnvironmentDiagnosticsImpl(inner1, this.manager()))
+                    .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
     }
 
-    public Response<HostingEnvironmentDiagnostics> getDiagnosticsItemWithResponse(
-        String resourceGroupName, String name, String diagnosticsName, Context context) {
-        Response<HostingEnvironmentDiagnosticsInner> inner =
-            this.serviceClient().getDiagnosticsItemWithResponse(resourceGroupName, name, diagnosticsName, context);
+    public Response<HostingEnvironmentDiagnostics> getDiagnosticsItemWithResponse(String resourceGroupName, String name,
+        String diagnosticsName, Context context) {
+        Response<HostingEnvironmentDiagnosticsInner> inner
+            = this.serviceClient().getDiagnosticsItemWithResponse(resourceGroupName, name, diagnosticsName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new HostingEnvironmentDiagnosticsImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public HostingEnvironmentDiagnostics getDiagnosticsItem(
-        String resourceGroupName, String name, String diagnosticsName) {
-        HostingEnvironmentDiagnosticsInner inner =
-            this.serviceClient().getDiagnosticsItem(resourceGroupName, name, diagnosticsName);
+    public HostingEnvironmentDiagnostics getDiagnosticsItem(String resourceGroupName, String name,
+        String diagnosticsName) {
+        HostingEnvironmentDiagnosticsInner inner
+            = this.serviceClient().getDiagnosticsItem(resourceGroupName, name, diagnosticsName);
         if (inner != null) {
             return new HostingEnvironmentDiagnosticsImpl(inner, this.manager());
         } else {
@@ -348,17 +305,17 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         }
     }
 
-    public PagedIterable<InboundEnvironmentEndpoint> getInboundNetworkDependenciesEndpoints(
-        String resourceGroupName, String name) {
-        PagedIterable<InboundEnvironmentEndpointInner> inner =
-            this.serviceClient().getInboundNetworkDependenciesEndpoints(resourceGroupName, name);
+    public PagedIterable<InboundEnvironmentEndpoint> getInboundNetworkDependenciesEndpoints(String resourceGroupName,
+        String name) {
+        PagedIterable<InboundEnvironmentEndpointInner> inner
+            = this.serviceClient().getInboundNetworkDependenciesEndpoints(resourceGroupName, name);
         return Utils.mapPage(inner, inner1 -> new InboundEnvironmentEndpointImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<InboundEnvironmentEndpoint> getInboundNetworkDependenciesEndpoints(
-        String resourceGroupName, String name, Context context) {
-        PagedIterable<InboundEnvironmentEndpointInner> inner =
-            this.serviceClient().getInboundNetworkDependenciesEndpoints(resourceGroupName, name, context);
+    public PagedIterable<InboundEnvironmentEndpoint> getInboundNetworkDependenciesEndpoints(String resourceGroupName,
+        String name, Context context) {
+        PagedIterable<InboundEnvironmentEndpointInner> inner
+            = this.serviceClient().getInboundNetworkDependenciesEndpoints(resourceGroupName, name, context);
         return Utils.mapPage(inner, inner1 -> new InboundEnvironmentEndpointImpl(inner1, this.manager()));
     }
 
@@ -367,22 +324,19 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         return Utils.mapPage(inner, inner1 -> new WorkerPoolResourceImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<WorkerPoolResource> listMultiRolePools(
-        String resourceGroupName, String name, Context context) {
-        PagedIterable<WorkerPoolResourceInner> inner =
-            this.serviceClient().listMultiRolePools(resourceGroupName, name, context);
+    public PagedIterable<WorkerPoolResource> listMultiRolePools(String resourceGroupName, String name,
+        Context context) {
+        PagedIterable<WorkerPoolResourceInner> inner
+            = this.serviceClient().listMultiRolePools(resourceGroupName, name, context);
         return Utils.mapPage(inner, inner1 -> new WorkerPoolResourceImpl(inner1, this.manager()));
     }
 
-    public Response<WorkerPoolResource> getMultiRolePoolWithResponse(
-        String resourceGroupName, String name, Context context) {
-        Response<WorkerPoolResourceInner> inner =
-            this.serviceClient().getMultiRolePoolWithResponse(resourceGroupName, name, context);
+    public Response<WorkerPoolResource> getMultiRolePoolWithResponse(String resourceGroupName, String name,
+        Context context) {
+        Response<WorkerPoolResourceInner> inner
+            = this.serviceClient().getMultiRolePoolWithResponse(resourceGroupName, name, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new WorkerPoolResourceImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -398,10 +352,10 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         }
     }
 
-    public WorkerPoolResource createOrUpdateMultiRolePool(
-        String resourceGroupName, String name, WorkerPoolResourceInner multiRolePoolEnvelope) {
-        WorkerPoolResourceInner inner =
-            this.serviceClient().createOrUpdateMultiRolePool(resourceGroupName, name, multiRolePoolEnvelope);
+    public WorkerPoolResource createOrUpdateMultiRolePool(String resourceGroupName, String name,
+        WorkerPoolResourceInner multiRolePoolEnvelope) {
+        WorkerPoolResourceInner inner
+            = this.serviceClient().createOrUpdateMultiRolePool(resourceGroupName, name, multiRolePoolEnvelope);
         if (inner != null) {
             return new WorkerPoolResourceImpl(inner, this.manager());
         } else {
@@ -409,10 +363,10 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         }
     }
 
-    public WorkerPoolResource createOrUpdateMultiRolePool(
-        String resourceGroupName, String name, WorkerPoolResourceInner multiRolePoolEnvelope, Context context) {
-        WorkerPoolResourceInner inner =
-            this.serviceClient().createOrUpdateMultiRolePool(resourceGroupName, name, multiRolePoolEnvelope, context);
+    public WorkerPoolResource createOrUpdateMultiRolePool(String resourceGroupName, String name,
+        WorkerPoolResourceInner multiRolePoolEnvelope, Context context) {
+        WorkerPoolResourceInner inner
+            = this.serviceClient().createOrUpdateMultiRolePool(resourceGroupName, name, multiRolePoolEnvelope, context);
         if (inner != null) {
             return new WorkerPoolResourceImpl(inner, this.manager());
         } else {
@@ -420,27 +374,22 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         }
     }
 
-    public Response<WorkerPoolResource> updateMultiRolePoolWithResponse(
-        String resourceGroupName, String name, WorkerPoolResourceInner multiRolePoolEnvelope, Context context) {
-        Response<WorkerPoolResourceInner> inner =
-            this
-                .serviceClient()
-                .updateMultiRolePoolWithResponse(resourceGroupName, name, multiRolePoolEnvelope, context);
+    public Response<WorkerPoolResource> updateMultiRolePoolWithResponse(String resourceGroupName, String name,
+        WorkerPoolResourceInner multiRolePoolEnvelope, Context context) {
+        Response<WorkerPoolResourceInner> inner = this.serviceClient()
+            .updateMultiRolePoolWithResponse(resourceGroupName, name, multiRolePoolEnvelope, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new WorkerPoolResourceImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public WorkerPoolResource updateMultiRolePool(
-        String resourceGroupName, String name, WorkerPoolResourceInner multiRolePoolEnvelope) {
-        WorkerPoolResourceInner inner =
-            this.serviceClient().updateMultiRolePool(resourceGroupName, name, multiRolePoolEnvelope);
+    public WorkerPoolResource updateMultiRolePool(String resourceGroupName, String name,
+        WorkerPoolResourceInner multiRolePoolEnvelope) {
+        WorkerPoolResourceInner inner
+            = this.serviceClient().updateMultiRolePool(resourceGroupName, name, multiRolePoolEnvelope);
         if (inner != null) {
             return new WorkerPoolResourceImpl(inner, this.manager());
         } else {
@@ -448,31 +397,31 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         }
     }
 
-    public PagedIterable<ResourceMetricDefinition> listMultiRolePoolInstanceMetricDefinitions(
-        String resourceGroupName, String name, String instance) {
-        PagedIterable<ResourceMetricDefinitionInner> inner =
-            this.serviceClient().listMultiRolePoolInstanceMetricDefinitions(resourceGroupName, name, instance);
+    public PagedIterable<ResourceMetricDefinition> listMultiRolePoolInstanceMetricDefinitions(String resourceGroupName,
+        String name, String instance) {
+        PagedIterable<ResourceMetricDefinitionInner> inner
+            = this.serviceClient().listMultiRolePoolInstanceMetricDefinitions(resourceGroupName, name, instance);
         return Utils.mapPage(inner, inner1 -> new ResourceMetricDefinitionImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<ResourceMetricDefinition> listMultiRolePoolInstanceMetricDefinitions(
-        String resourceGroupName, String name, String instance, Context context) {
-        PagedIterable<ResourceMetricDefinitionInner> inner =
-            this.serviceClient().listMultiRolePoolInstanceMetricDefinitions(resourceGroupName, name, instance, context);
+    public PagedIterable<ResourceMetricDefinition> listMultiRolePoolInstanceMetricDefinitions(String resourceGroupName,
+        String name, String instance, Context context) {
+        PagedIterable<ResourceMetricDefinitionInner> inner = this.serviceClient()
+            .listMultiRolePoolInstanceMetricDefinitions(resourceGroupName, name, instance, context);
         return Utils.mapPage(inner, inner1 -> new ResourceMetricDefinitionImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<ResourceMetricDefinition> listMultiRoleMetricDefinitions(
-        String resourceGroupName, String name) {
-        PagedIterable<ResourceMetricDefinitionInner> inner =
-            this.serviceClient().listMultiRoleMetricDefinitions(resourceGroupName, name);
+    public PagedIterable<ResourceMetricDefinition> listMultiRoleMetricDefinitions(String resourceGroupName,
+        String name) {
+        PagedIterable<ResourceMetricDefinitionInner> inner
+            = this.serviceClient().listMultiRoleMetricDefinitions(resourceGroupName, name);
         return Utils.mapPage(inner, inner1 -> new ResourceMetricDefinitionImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<ResourceMetricDefinition> listMultiRoleMetricDefinitions(
-        String resourceGroupName, String name, Context context) {
-        PagedIterable<ResourceMetricDefinitionInner> inner =
-            this.serviceClient().listMultiRoleMetricDefinitions(resourceGroupName, name, context);
+    public PagedIterable<ResourceMetricDefinition> listMultiRoleMetricDefinitions(String resourceGroupName, String name,
+        Context context) {
+        PagedIterable<ResourceMetricDefinitionInner> inner
+            = this.serviceClient().listMultiRoleMetricDefinitions(resourceGroupName, name, context);
         return Utils.mapPage(inner, inner1 -> new ResourceMetricDefinitionImpl(inner1, this.manager()));
     }
 
@@ -482,13 +431,13 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
     }
 
     public PagedIterable<SkuInfo> listMultiRolePoolSkus(String resourceGroupName, String name, Context context) {
-        PagedIterable<SkuInfoInner> inner =
-            this.serviceClient().listMultiRolePoolSkus(resourceGroupName, name, context);
+        PagedIterable<SkuInfoInner> inner
+            = this.serviceClient().listMultiRolePoolSkus(resourceGroupName, name, context);
         return Utils.mapPage(inner, inner1 -> new SkuInfoImpl(inner1, this.manager()));
     }
 
-    public Response<Void> testUpgradeAvailableNotificationWithResponse(
-        String resourceGroupName, String name, Context context) {
+    public Response<Void> testUpgradeAvailableNotificationWithResponse(String resourceGroupName, String name,
+        Context context) {
         return this.serviceClient().testUpgradeAvailableNotificationWithResponse(resourceGroupName, name, context);
     }
 
@@ -514,20 +463,13 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         return Utils.mapPage(inner, inner1 -> new UsageImpl(inner1, this.manager()));
     }
 
-    public Response<List<Operation>> listOperationsWithResponse(
-        String resourceGroupName, String name, Context context) {
-        Response<List<OperationInner>> inner =
-            this.serviceClient().listOperationsWithResponse(resourceGroupName, name, context);
+    public Response<List<Operation>> listOperationsWithResponse(String resourceGroupName, String name,
+        Context context) {
+        Response<List<OperationInner>> inner
+            = this.serviceClient().listOperationsWithResponse(resourceGroupName, name, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
-                inner
-                    .getValue()
-                    .stream()
-                    .map(inner1 -> new OperationImpl(inner1, this.manager()))
-                    .collect(Collectors.toList()));
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(), inner.getValue()
+                .stream().map(inner1 -> new OperationImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return null;
         }
@@ -536,69 +478,59 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
     public List<Operation> listOperations(String resourceGroupName, String name) {
         List<OperationInner> inner = this.serviceClient().listOperations(resourceGroupName, name);
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new OperationImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(
+                inner.stream().map(inner1 -> new OperationImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
     }
 
-    public PagedIterable<OutboundEnvironmentEndpoint> getOutboundNetworkDependenciesEndpoints(
-        String resourceGroupName, String name) {
-        PagedIterable<OutboundEnvironmentEndpointInner> inner =
-            this.serviceClient().getOutboundNetworkDependenciesEndpoints(resourceGroupName, name);
+    public PagedIterable<OutboundEnvironmentEndpoint> getOutboundNetworkDependenciesEndpoints(String resourceGroupName,
+        String name) {
+        PagedIterable<OutboundEnvironmentEndpointInner> inner
+            = this.serviceClient().getOutboundNetworkDependenciesEndpoints(resourceGroupName, name);
         return Utils.mapPage(inner, inner1 -> new OutboundEnvironmentEndpointImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<OutboundEnvironmentEndpoint> getOutboundNetworkDependenciesEndpoints(
-        String resourceGroupName, String name, Context context) {
-        PagedIterable<OutboundEnvironmentEndpointInner> inner =
-            this.serviceClient().getOutboundNetworkDependenciesEndpoints(resourceGroupName, name, context);
+    public PagedIterable<OutboundEnvironmentEndpoint> getOutboundNetworkDependenciesEndpoints(String resourceGroupName,
+        String name, Context context) {
+        PagedIterable<OutboundEnvironmentEndpointInner> inner
+            = this.serviceClient().getOutboundNetworkDependenciesEndpoints(resourceGroupName, name, context);
         return Utils.mapPage(inner, inner1 -> new OutboundEnvironmentEndpointImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionList(
-        String resourceGroupName, String name) {
-        PagedIterable<RemotePrivateEndpointConnectionArmResourceInner> inner =
-            this.serviceClient().getPrivateEndpointConnectionList(resourceGroupName, name);
-        return Utils
-            .mapPage(inner, inner1 -> new RemotePrivateEndpointConnectionArmResourceImpl(inner1, this.manager()));
+    public PagedIterable<RemotePrivateEndpointConnectionArmResource>
+        getPrivateEndpointConnectionList(String resourceGroupName, String name) {
+        PagedIterable<RemotePrivateEndpointConnectionArmResourceInner> inner
+            = this.serviceClient().getPrivateEndpointConnectionList(resourceGroupName, name);
+        return Utils.mapPage(inner,
+            inner1 -> new RemotePrivateEndpointConnectionArmResourceImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionList(
-        String resourceGroupName, String name, Context context) {
-        PagedIterable<RemotePrivateEndpointConnectionArmResourceInner> inner =
-            this.serviceClient().getPrivateEndpointConnectionList(resourceGroupName, name, context);
-        return Utils
-            .mapPage(inner, inner1 -> new RemotePrivateEndpointConnectionArmResourceImpl(inner1, this.manager()));
+    public PagedIterable<RemotePrivateEndpointConnectionArmResource>
+        getPrivateEndpointConnectionList(String resourceGroupName, String name, Context context) {
+        PagedIterable<RemotePrivateEndpointConnectionArmResourceInner> inner
+            = this.serviceClient().getPrivateEndpointConnectionList(resourceGroupName, name, context);
+        return Utils.mapPage(inner,
+            inner1 -> new RemotePrivateEndpointConnectionArmResourceImpl(inner1, this.manager()));
     }
 
     public Response<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionWithResponse(
         String resourceGroupName, String name, String privateEndpointConnectionName, Context context) {
-        Response<RemotePrivateEndpointConnectionArmResourceInner> inner =
-            this
-                .serviceClient()
-                .getPrivateEndpointConnectionWithResponse(
-                    resourceGroupName, name, privateEndpointConnectionName, context);
+        Response<RemotePrivateEndpointConnectionArmResourceInner> inner = this.serviceClient()
+            .getPrivateEndpointConnectionWithResponse(resourceGroupName, name, privateEndpointConnectionName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new RemotePrivateEndpointConnectionArmResourceImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public RemotePrivateEndpointConnectionArmResource getPrivateEndpointConnection(
-        String resourceGroupName, String name, String privateEndpointConnectionName) {
-        RemotePrivateEndpointConnectionArmResourceInner inner =
-            this.serviceClient().getPrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName);
+    public RemotePrivateEndpointConnectionArmResource getPrivateEndpointConnection(String resourceGroupName,
+        String name, String privateEndpointConnectionName) {
+        RemotePrivateEndpointConnectionArmResourceInner inner
+            = this.serviceClient().getPrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName);
         if (inner != null) {
             return new RemotePrivateEndpointConnectionArmResourceImpl(inner, this.manager());
         } else {
@@ -606,29 +538,24 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         }
     }
 
-    public Object deletePrivateEndpointConnection(
-        String resourceGroupName, String name, String privateEndpointConnectionName) {
-        return this
-            .serviceClient()
-            .deletePrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName);
+    public Object deletePrivateEndpointConnection(String resourceGroupName, String name,
+        String privateEndpointConnectionName) {
+        return this.serviceClient().deletePrivateEndpointConnection(resourceGroupName, name,
+            privateEndpointConnectionName);
     }
 
-    public Object deletePrivateEndpointConnection(
-        String resourceGroupName, String name, String privateEndpointConnectionName, Context context) {
-        return this
-            .serviceClient()
-            .deletePrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName, context);
+    public Object deletePrivateEndpointConnection(String resourceGroupName, String name,
+        String privateEndpointConnectionName, Context context) {
+        return this.serviceClient().deletePrivateEndpointConnection(resourceGroupName, name,
+            privateEndpointConnectionName, context);
     }
 
-    public Response<PrivateLinkResourcesWrapper> getPrivateLinkResourcesWithResponse(
-        String resourceGroupName, String name, Context context) {
-        Response<PrivateLinkResourcesWrapperInner> inner =
-            this.serviceClient().getPrivateLinkResourcesWithResponse(resourceGroupName, name, context);
+    public Response<PrivateLinkResourcesWrapper> getPrivateLinkResourcesWithResponse(String resourceGroupName,
+        String name, Context context) {
+        Response<PrivateLinkResourcesWrapperInner> inner
+            = this.serviceClient().getPrivateLinkResourcesWithResponse(resourceGroupName, name, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new PrivateLinkResourcesWrapperImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -668,8 +595,8 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
     }
 
     public PagedIterable<AppServicePlan> listAppServicePlans(String resourceGroupName, String name, Context context) {
-        PagedIterable<AppServicePlanInner> inner =
-            this.serviceClient().listAppServicePlans(resourceGroupName, name, context);
+        PagedIterable<AppServicePlanInner> inner
+            = this.serviceClient().listAppServicePlans(resourceGroupName, name, context);
         return Utils.mapPage(inner, inner1 -> new AppServicePlanImpl(inner1, this.manager()));
     }
 
@@ -678,10 +605,10 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         return Utils.mapPage(inner, inner1 -> new SiteImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<Site> listWebApps(
-        String resourceGroupName, String name, String propertiesToInclude, Context context) {
-        PagedIterable<SiteInner> inner =
-            this.serviceClient().listWebApps(resourceGroupName, name, propertiesToInclude, context);
+    public PagedIterable<Site> listWebApps(String resourceGroupName, String name, String propertiesToInclude,
+        Context context) {
+        PagedIterable<SiteInner> inner
+            = this.serviceClient().listWebApps(resourceGroupName, name, propertiesToInclude, context);
         return Utils.mapPage(inner, inner1 -> new SiteImpl(inner1, this.manager()));
     }
 
@@ -700,10 +627,10 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         return Utils.mapPage(inner, inner1 -> new CsmUsageQuotaImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<CsmUsageQuota> listUsages(
-        String resourceGroupName, String name, String filter, Context context) {
-        PagedIterable<CsmUsageQuotaInner> inner =
-            this.serviceClient().listUsages(resourceGroupName, name, filter, context);
+    public PagedIterable<CsmUsageQuota> listUsages(String resourceGroupName, String name, String filter,
+        Context context) {
+        PagedIterable<CsmUsageQuotaInner> inner
+            = this.serviceClient().listUsages(resourceGroupName, name, filter, context);
         return Utils.mapPage(inner, inner1 -> new CsmUsageQuotaImpl(inner1, this.manager()));
     }
 
@@ -713,20 +640,17 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
     }
 
     public PagedIterable<WorkerPoolResource> listWorkerPools(String resourceGroupName, String name, Context context) {
-        PagedIterable<WorkerPoolResourceInner> inner =
-            this.serviceClient().listWorkerPools(resourceGroupName, name, context);
+        PagedIterable<WorkerPoolResourceInner> inner
+            = this.serviceClient().listWorkerPools(resourceGroupName, name, context);
         return Utils.mapPage(inner, inner1 -> new WorkerPoolResourceImpl(inner1, this.manager()));
     }
 
-    public Response<WorkerPoolResource> getWorkerPoolWithResponse(
-        String resourceGroupName, String name, String workerPoolName, Context context) {
-        Response<WorkerPoolResourceInner> inner =
-            this.serviceClient().getWorkerPoolWithResponse(resourceGroupName, name, workerPoolName, context);
+    public Response<WorkerPoolResource> getWorkerPoolWithResponse(String resourceGroupName, String name,
+        String workerPoolName, Context context) {
+        Response<WorkerPoolResourceInner> inner
+            = this.serviceClient().getWorkerPoolWithResponse(resourceGroupName, name, workerPoolName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new WorkerPoolResourceImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -742,81 +666,70 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         }
     }
 
-    public PagedIterable<ResourceMetricDefinition> listWorkerPoolInstanceMetricDefinitions(
-        String resourceGroupName, String name, String workerPoolName, String instance) {
-        PagedIterable<ResourceMetricDefinitionInner> inner =
-            this
-                .serviceClient()
-                .listWorkerPoolInstanceMetricDefinitions(resourceGroupName, name, workerPoolName, instance);
+    public PagedIterable<ResourceMetricDefinition> listWorkerPoolInstanceMetricDefinitions(String resourceGroupName,
+        String name, String workerPoolName, String instance) {
+        PagedIterable<ResourceMetricDefinitionInner> inner = this.serviceClient()
+            .listWorkerPoolInstanceMetricDefinitions(resourceGroupName, name, workerPoolName, instance);
         return Utils.mapPage(inner, inner1 -> new ResourceMetricDefinitionImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<ResourceMetricDefinition> listWorkerPoolInstanceMetricDefinitions(
-        String resourceGroupName, String name, String workerPoolName, String instance, Context context) {
-        PagedIterable<ResourceMetricDefinitionInner> inner =
-            this
-                .serviceClient()
-                .listWorkerPoolInstanceMetricDefinitions(resourceGroupName, name, workerPoolName, instance, context);
+    public PagedIterable<ResourceMetricDefinition> listWorkerPoolInstanceMetricDefinitions(String resourceGroupName,
+        String name, String workerPoolName, String instance, Context context) {
+        PagedIterable<ResourceMetricDefinitionInner> inner = this.serviceClient()
+            .listWorkerPoolInstanceMetricDefinitions(resourceGroupName, name, workerPoolName, instance, context);
         return Utils.mapPage(inner, inner1 -> new ResourceMetricDefinitionImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<ResourceMetricDefinition> listWebWorkerMetricDefinitions(
-        String resourceGroupName, String name, String workerPoolName) {
-        PagedIterable<ResourceMetricDefinitionInner> inner =
-            this.serviceClient().listWebWorkerMetricDefinitions(resourceGroupName, name, workerPoolName);
+    public PagedIterable<ResourceMetricDefinition> listWebWorkerMetricDefinitions(String resourceGroupName, String name,
+        String workerPoolName) {
+        PagedIterable<ResourceMetricDefinitionInner> inner
+            = this.serviceClient().listWebWorkerMetricDefinitions(resourceGroupName, name, workerPoolName);
         return Utils.mapPage(inner, inner1 -> new ResourceMetricDefinitionImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<ResourceMetricDefinition> listWebWorkerMetricDefinitions(
-        String resourceGroupName, String name, String workerPoolName, Context context) {
-        PagedIterable<ResourceMetricDefinitionInner> inner =
-            this.serviceClient().listWebWorkerMetricDefinitions(resourceGroupName, name, workerPoolName, context);
+    public PagedIterable<ResourceMetricDefinition> listWebWorkerMetricDefinitions(String resourceGroupName, String name,
+        String workerPoolName, Context context) {
+        PagedIterable<ResourceMetricDefinitionInner> inner
+            = this.serviceClient().listWebWorkerMetricDefinitions(resourceGroupName, name, workerPoolName, context);
         return Utils.mapPage(inner, inner1 -> new ResourceMetricDefinitionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<SkuInfo> listWorkerPoolSkus(String resourceGroupName, String name, String workerPoolName) {
-        PagedIterable<SkuInfoInner> inner =
-            this.serviceClient().listWorkerPoolSkus(resourceGroupName, name, workerPoolName);
+        PagedIterable<SkuInfoInner> inner
+            = this.serviceClient().listWorkerPoolSkus(resourceGroupName, name, workerPoolName);
         return Utils.mapPage(inner, inner1 -> new SkuInfoImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<SkuInfo> listWorkerPoolSkus(
-        String resourceGroupName, String name, String workerPoolName, Context context) {
-        PagedIterable<SkuInfoInner> inner =
-            this.serviceClient().listWorkerPoolSkus(resourceGroupName, name, workerPoolName, context);
+    public PagedIterable<SkuInfo> listWorkerPoolSkus(String resourceGroupName, String name, String workerPoolName,
+        Context context) {
+        PagedIterable<SkuInfoInner> inner
+            = this.serviceClient().listWorkerPoolSkus(resourceGroupName, name, workerPoolName, context);
         return Utils.mapPage(inner, inner1 -> new SkuInfoImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Usage> listWebWorkerUsages(String resourceGroupName, String name, String workerPoolName) {
-        PagedIterable<UsageInner> inner =
-            this.serviceClient().listWebWorkerUsages(resourceGroupName, name, workerPoolName);
+        PagedIterable<UsageInner> inner
+            = this.serviceClient().listWebWorkerUsages(resourceGroupName, name, workerPoolName);
         return Utils.mapPage(inner, inner1 -> new UsageImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<Usage> listWebWorkerUsages(
-        String resourceGroupName, String name, String workerPoolName, Context context) {
-        PagedIterable<UsageInner> inner =
-            this.serviceClient().listWebWorkerUsages(resourceGroupName, name, workerPoolName, context);
+    public PagedIterable<Usage> listWebWorkerUsages(String resourceGroupName, String name, String workerPoolName,
+        Context context) {
+        PagedIterable<UsageInner> inner
+            = this.serviceClient().listWebWorkerUsages(resourceGroupName, name, workerPoolName, context);
         return Utils.mapPage(inner, inner1 -> new UsageImpl(inner1, this.manager()));
     }
 
     public AppServiceEnvironmentResource getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String name = Utils.getValueFromIdByName(id, "hostingEnvironments");
         if (name == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'hostingEnvironments'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'hostingEnvironments'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, name, Context.NONE).getValue();
     }
@@ -824,20 +737,13 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
     public Response<AppServiceEnvironmentResource> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String name = Utils.getValueFromIdByName(id, "hostingEnvironments");
         if (name == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'hostingEnvironments'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'hostingEnvironments'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, name, context);
     }
@@ -845,94 +751,59 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
     public RemotePrivateEndpointConnectionArmResource getPrivateEndpointConnectionById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String name = Utils.getValueFromIdByName(id, "hostingEnvironments");
         if (name == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'hostingEnvironments'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'hostingEnvironments'.", id)));
         }
         String privateEndpointConnectionName = Utils.getValueFromIdByName(id, "privateEndpointConnections");
         if (privateEndpointConnectionName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'privateEndpointConnections'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'privateEndpointConnections'.", id)));
         }
-        return this
-            .getPrivateEndpointConnectionWithResponse(
-                resourceGroupName, name, privateEndpointConnectionName, Context.NONE)
-            .getValue();
+        return this.getPrivateEndpointConnectionWithResponse(resourceGroupName, name, privateEndpointConnectionName,
+            Context.NONE).getValue();
     }
 
-    public Response<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionByIdWithResponse(
-        String id, Context context) {
+    public Response<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionByIdWithResponse(String id,
+        Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String name = Utils.getValueFromIdByName(id, "hostingEnvironments");
         if (name == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'hostingEnvironments'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'hostingEnvironments'.", id)));
         }
         String privateEndpointConnectionName = Utils.getValueFromIdByName(id, "privateEndpointConnections");
         if (privateEndpointConnectionName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'privateEndpointConnections'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'privateEndpointConnections'.", id)));
         }
-        return this
-            .getPrivateEndpointConnectionWithResponse(resourceGroupName, name, privateEndpointConnectionName, context);
+        return this.getPrivateEndpointConnectionWithResponse(resourceGroupName, name, privateEndpointConnectionName,
+            context);
     }
 
     public WorkerPoolResource getWorkerPoolById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String name = Utils.getValueFromIdByName(id, "hostingEnvironments");
         if (name == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'hostingEnvironments'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'hostingEnvironments'.", id)));
         }
         String workerPoolName = Utils.getValueFromIdByName(id, "workerPools");
         if (workerPoolName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'workerPools'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'workerPools'.", id)));
         }
         return this.getWorkerPoolWithResponse(resourceGroupName, name, workerPoolName, Context.NONE).getValue();
     }
@@ -940,27 +811,18 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
     public Response<WorkerPoolResource> getWorkerPoolByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String name = Utils.getValueFromIdByName(id, "hostingEnvironments");
         if (name == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'hostingEnvironments'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'hostingEnvironments'.", id)));
         }
         String workerPoolName = Utils.getValueFromIdByName(id, "workerPools");
         if (workerPoolName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'workerPools'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'workerPools'.", id)));
         }
         return this.getWorkerPoolWithResponse(resourceGroupName, name, workerPoolName, context);
     }
@@ -968,20 +830,13 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String name = Utils.getValueFromIdByName(id, "hostingEnvironments");
         if (name == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'hostingEnvironments'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'hostingEnvironments'.", id)));
         }
         Boolean localForceDelete = null;
         this.delete(resourceGroupName, name, localForceDelete, Context.NONE);
@@ -990,20 +845,13 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
     public void deleteByIdWithResponse(String id, Boolean forceDelete, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String name = Utils.getValueFromIdByName(id, "hostingEnvironments");
         if (name == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'hostingEnvironments'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'hostingEnvironments'.", id)));
         }
         this.delete(resourceGroupName, name, forceDelete, context);
     }
@@ -1011,62 +859,38 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
     public Object deletePrivateEndpointConnectionById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String name = Utils.getValueFromIdByName(id, "hostingEnvironments");
         if (name == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'hostingEnvironments'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'hostingEnvironments'.", id)));
         }
         String privateEndpointConnectionName = Utils.getValueFromIdByName(id, "privateEndpointConnections");
         if (privateEndpointConnectionName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'privateEndpointConnections'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'privateEndpointConnections'.", id)));
         }
-        return this
-            .deletePrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName, Context.NONE);
+        return this.deletePrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName,
+            Context.NONE);
     }
 
     public Object deletePrivateEndpointConnectionByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String name = Utils.getValueFromIdByName(id, "hostingEnvironments");
         if (name == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'hostingEnvironments'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'hostingEnvironments'.", id)));
         }
         String privateEndpointConnectionName = Utils.getValueFromIdByName(id, "privateEndpointConnections");
         if (privateEndpointConnectionName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'privateEndpointConnections'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'privateEndpointConnections'.", id)));
         }
         return this.deletePrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName, context);
     }
@@ -1083,8 +907,8 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         return new AppServiceEnvironmentResourceImpl(name, this.manager());
     }
 
-    public RemotePrivateEndpointConnectionArmResourceImpl defineRemotePrivateEndpointConnectionArmResource(
-        String name) {
+    public RemotePrivateEndpointConnectionArmResourceImpl
+        defineRemotePrivateEndpointConnectionArmResource(String name) {
         return new RemotePrivateEndpointConnectionArmResourceImpl(name, this.manager());
     }
 

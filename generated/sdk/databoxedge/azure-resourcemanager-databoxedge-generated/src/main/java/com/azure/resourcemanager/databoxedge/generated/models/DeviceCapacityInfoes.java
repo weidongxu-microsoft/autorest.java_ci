@@ -7,11 +7,13 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of DeviceCapacityInfoes. */
+/**
+ * Resource collection API of DeviceCapacityInfoes.
+ */
 public interface DeviceCapacityInfoes {
     /**
      * Gets the properties of the specified device capacity info.
-     *
+     * 
      * @param resourceGroupName The resource group name.
      * @param deviceName The device name.
      * @param context The context to associate with this operation.
@@ -20,12 +22,12 @@ public interface DeviceCapacityInfoes {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the properties of the specified device capacity info along with {@link Response}.
      */
-    Response<DeviceCapacityInfo> getDeviceCapacityInfoWithResponse(
-        String resourceGroupName, String deviceName, Context context);
+    Response<DeviceCapacityInfo> getDeviceCapacityInfoWithResponse(String resourceGroupName, String deviceName,
+        Context context);
 
     /**
      * Gets the properties of the specified device capacity info.
-     *
+     * 
      * @param resourceGroupName The resource group name.
      * @param deviceName The device name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

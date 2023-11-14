@@ -12,8 +12,7 @@ public final class StaticSiteUserArmResourceImpl implements StaticSiteUserArmRes
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    StaticSiteUserArmResourceImpl(
-        StaticSiteUserArmResourceInner innerObject,
+    StaticSiteUserArmResourceImpl(StaticSiteUserArmResourceInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

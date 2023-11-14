@@ -12,8 +12,8 @@ public final class CapabilityImpl implements Capability {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    CapabilityImpl(
-        CapabilityInner innerObject, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
+    CapabilityImpl(CapabilityInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

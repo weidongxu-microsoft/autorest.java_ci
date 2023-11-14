@@ -9,7 +9,9 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** Base class for inputs to a Job. */
+/**
+ * Base class for inputs to a Job.
+ */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
     include = JsonTypeInfo.As.PROPERTY,
@@ -19,17 +21,18 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @JsonSubTypes({
     @JsonSubTypes.Type(name = "#Microsoft.Media.JobInputClip", value = JobInputClip.class),
     @JsonSubTypes.Type(name = "#Microsoft.Media.JobInputs", value = JobInputs.class),
-    @JsonSubTypes.Type(name = "#Microsoft.Media.JobInputSequence", value = JobInputSequence.class)
-})
+    @JsonSubTypes.Type(name = "#Microsoft.Media.JobInputSequence", value = JobInputSequence.class) })
 @Immutable
 public class JobInput {
-    /** Creates an instance of JobInput class. */
+    /**
+     * Creates an instance of JobInput class.
+     */
     public JobInput() {
     }
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

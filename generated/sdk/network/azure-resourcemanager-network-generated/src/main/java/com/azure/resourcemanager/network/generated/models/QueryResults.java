@@ -7,25 +7,27 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.resourcemanager.network.generated.fluent.models.QueryResultsInner;
 import java.util.List;
 
-/** An immutable client-side representation of QueryResults. */
+/**
+ * An immutable client-side representation of QueryResults.
+ */
 public interface QueryResults {
     /**
      * Gets the matchingRecordsCount property: Number of total records matching the query.
-     *
+     * 
      * @return the matchingRecordsCount value.
      */
     Long matchingRecordsCount();
 
     /**
      * Gets the signatures property: Array containing the results of the query.
-     *
+     * 
      * @return the signatures value.
      */
     List<SingleQueryResult> signatures();
 
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.QueryResultsInner object.
-     *
+     * 
      * @return the inner object.
      */
     QueryResultsInner innerModel();

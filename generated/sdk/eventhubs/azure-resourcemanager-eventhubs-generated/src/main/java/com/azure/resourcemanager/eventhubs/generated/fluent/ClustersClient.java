@@ -15,11 +15,13 @@ import com.azure.resourcemanager.eventhubs.generated.fluent.models.AvailableClus
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.ClusterInner;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.EHNamespaceIdListResultInner;
 
-/** An instance of this class provides access to all the operations defined in ClustersClient. */
+/**
+ * An instance of this class provides access to all the operations defined in ClustersClient.
+ */
 public interface ClustersClient {
     /**
      * List the quantity of available pre-provisioned Event Hubs Clusters, indexed by Azure region.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -31,7 +33,7 @@ public interface ClustersClient {
 
     /**
      * List the quantity of available pre-provisioned Event Hubs Clusters, indexed by Azure region.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response of the List Available Clusters operation.
@@ -41,7 +43,7 @@ public interface ClustersClient {
 
     /**
      * Lists the available Event Hubs Clusters within an ARM resource group.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response of the List Event Hubs Clusters operation as paginated response with {@link PagedIterable}.
@@ -51,7 +53,7 @@ public interface ClustersClient {
 
     /**
      * Lists the available Event Hubs Clusters within an ARM resource group.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -63,7 +65,7 @@ public interface ClustersClient {
 
     /**
      * Lists the available Event Hubs Clusters within an ARM resource group.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -75,7 +77,7 @@ public interface ClustersClient {
 
     /**
      * Lists the available Event Hubs Clusters within an ARM resource group.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -88,7 +90,7 @@ public interface ClustersClient {
 
     /**
      * Gets the resource description of the specified Event Hubs Cluster.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param clusterName The name of the Event Hubs Cluster.
      * @param context The context to associate with this operation.
@@ -98,12 +100,12 @@ public interface ClustersClient {
      * @return the resource description of the specified Event Hubs Cluster along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<ClusterInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String clusterName, Context context);
+    Response<ClusterInner> getByResourceGroupWithResponse(String resourceGroupName, String clusterName,
+        Context context);
 
     /**
      * Gets the resource description of the specified Event Hubs Cluster.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param clusterName The name of the Event Hubs Cluster.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -116,7 +118,7 @@ public interface ClustersClient {
 
     /**
      * Creates or updates an instance of an Event Hubs Cluster.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param clusterName The name of the Event Hubs Cluster.
      * @param parameters Parameters for creating a eventhub cluster resource.
@@ -126,12 +128,12 @@ public interface ClustersClient {
      * @return the {@link SyncPoller} for polling of single Event Hubs Cluster resource in List or Get operations.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<ClusterInner>, ClusterInner> beginCreateOrUpdate(
-        String resourceGroupName, String clusterName, ClusterInner parameters);
+    SyncPoller<PollResult<ClusterInner>, ClusterInner> beginCreateOrUpdate(String resourceGroupName, String clusterName,
+        ClusterInner parameters);
 
     /**
      * Creates or updates an instance of an Event Hubs Cluster.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param clusterName The name of the Event Hubs Cluster.
      * @param parameters Parameters for creating a eventhub cluster resource.
@@ -142,12 +144,12 @@ public interface ClustersClient {
      * @return the {@link SyncPoller} for polling of single Event Hubs Cluster resource in List or Get operations.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<ClusterInner>, ClusterInner> beginCreateOrUpdate(
-        String resourceGroupName, String clusterName, ClusterInner parameters, Context context);
+    SyncPoller<PollResult<ClusterInner>, ClusterInner> beginCreateOrUpdate(String resourceGroupName, String clusterName,
+        ClusterInner parameters, Context context);
 
     /**
      * Creates or updates an instance of an Event Hubs Cluster.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param clusterName The name of the Event Hubs Cluster.
      * @param parameters Parameters for creating a eventhub cluster resource.
@@ -161,7 +163,7 @@ public interface ClustersClient {
 
     /**
      * Creates or updates an instance of an Event Hubs Cluster.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param clusterName The name of the Event Hubs Cluster.
      * @param parameters Parameters for creating a eventhub cluster resource.
@@ -176,7 +178,7 @@ public interface ClustersClient {
 
     /**
      * Modifies mutable properties on the Event Hubs Cluster. This operation is idempotent.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param clusterName The name of the Event Hubs Cluster.
      * @param parameters The properties of the Event Hubs Cluster which should be updated.
@@ -186,12 +188,12 @@ public interface ClustersClient {
      * @return the {@link SyncPoller} for polling of single Event Hubs Cluster resource in List or Get operations.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<ClusterInner>, ClusterInner> beginUpdate(
-        String resourceGroupName, String clusterName, ClusterInner parameters);
+    SyncPoller<PollResult<ClusterInner>, ClusterInner> beginUpdate(String resourceGroupName, String clusterName,
+        ClusterInner parameters);
 
     /**
      * Modifies mutable properties on the Event Hubs Cluster. This operation is idempotent.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param clusterName The name of the Event Hubs Cluster.
      * @param parameters The properties of the Event Hubs Cluster which should be updated.
@@ -202,12 +204,12 @@ public interface ClustersClient {
      * @return the {@link SyncPoller} for polling of single Event Hubs Cluster resource in List or Get operations.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<ClusterInner>, ClusterInner> beginUpdate(
-        String resourceGroupName, String clusterName, ClusterInner parameters, Context context);
+    SyncPoller<PollResult<ClusterInner>, ClusterInner> beginUpdate(String resourceGroupName, String clusterName,
+        ClusterInner parameters, Context context);
 
     /**
      * Modifies mutable properties on the Event Hubs Cluster. This operation is idempotent.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param clusterName The name of the Event Hubs Cluster.
      * @param parameters The properties of the Event Hubs Cluster which should be updated.
@@ -221,7 +223,7 @@ public interface ClustersClient {
 
     /**
      * Modifies mutable properties on the Event Hubs Cluster. This operation is idempotent.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param clusterName The name of the Event Hubs Cluster.
      * @param parameters The properties of the Event Hubs Cluster which should be updated.
@@ -236,7 +238,7 @@ public interface ClustersClient {
 
     /**
      * Deletes an existing Event Hubs Cluster. This operation is idempotent.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param clusterName The name of the Event Hubs Cluster.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -249,7 +251,7 @@ public interface ClustersClient {
 
     /**
      * Deletes an existing Event Hubs Cluster. This operation is idempotent.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param clusterName The name of the Event Hubs Cluster.
      * @param context The context to associate with this operation.
@@ -263,7 +265,7 @@ public interface ClustersClient {
 
     /**
      * Deletes an existing Event Hubs Cluster. This operation is idempotent.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param clusterName The name of the Event Hubs Cluster.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -275,7 +277,7 @@ public interface ClustersClient {
 
     /**
      * Deletes an existing Event Hubs Cluster. This operation is idempotent.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param clusterName The name of the Event Hubs Cluster.
      * @param context The context to associate with this operation.
@@ -288,7 +290,7 @@ public interface ClustersClient {
 
     /**
      * List all Event Hubs Namespace IDs in an Event Hubs Dedicated Cluster.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param clusterName The name of the Event Hubs Cluster.
      * @param context The context to associate with this operation.
@@ -298,12 +300,12 @@ public interface ClustersClient {
      * @return the response of the List Namespace IDs operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<EHNamespaceIdListResultInner> listNamespacesWithResponse(
-        String resourceGroupName, String clusterName, Context context);
+    Response<EHNamespaceIdListResultInner> listNamespacesWithResponse(String resourceGroupName, String clusterName,
+        Context context);
 
     /**
      * List all Event Hubs Namespace IDs in an Event Hubs Dedicated Cluster.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param clusterName The name of the Event Hubs Cluster.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

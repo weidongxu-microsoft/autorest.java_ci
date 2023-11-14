@@ -21,8 +21,8 @@ public final class RestorePointsImpl implements RestorePoints {
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    public RestorePointsImpl(
-        RestorePointsClient innerClient, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
+    public RestorePointsImpl(RestorePointsClient innerClient,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -31,26 +31,17 @@ public final class RestorePointsImpl implements RestorePoints {
         this.serviceClient().delete(resourceGroupName, restorePointCollectionName, restorePointName);
     }
 
-    public void delete(
-        String resourceGroupName, String restorePointCollectionName, String restorePointName, Context context) {
+    public void delete(String resourceGroupName, String restorePointCollectionName, String restorePointName,
+        Context context) {
         this.serviceClient().delete(resourceGroupName, restorePointCollectionName, restorePointName, context);
     }
 
-    public Response<RestorePoint> getWithResponse(
-        String resourceGroupName,
-        String restorePointCollectionName,
-        String restorePointName,
-        RestorePointExpandOptions expand,
-        Context context) {
-        Response<RestorePointInner> inner =
-            this
-                .serviceClient()
-                .getWithResponse(resourceGroupName, restorePointCollectionName, restorePointName, expand, context);
+    public Response<RestorePoint> getWithResponse(String resourceGroupName, String restorePointCollectionName,
+        String restorePointName, RestorePointExpandOptions expand, Context context) {
+        Response<RestorePointInner> inner = this.serviceClient().getWithResponse(resourceGroupName,
+            restorePointCollectionName, restorePointName, expand, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new RestorePointImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -58,8 +49,8 @@ public final class RestorePointsImpl implements RestorePoints {
     }
 
     public RestorePoint get(String resourceGroupName, String restorePointCollectionName, String restorePointName) {
-        RestorePointInner inner =
-            this.serviceClient().get(resourceGroupName, restorePointCollectionName, restorePointName);
+        RestorePointInner inner
+            = this.serviceClient().get(resourceGroupName, restorePointCollectionName, restorePointName);
         if (inner != null) {
             return new RestorePointImpl(inner, this.manager());
         } else {
@@ -70,28 +61,18 @@ public final class RestorePointsImpl implements RestorePoints {
     public RestorePoint getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String restorePointCollectionName = Utils.getValueFromIdByName(id, "restorePointCollections");
         if (restorePointCollectionName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'restorePointCollections'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'restorePointCollections'.", id)));
         }
         String restorePointName = Utils.getValueFromIdByName(id, "restorePoints");
         if (restorePointName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'restorePoints'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'restorePoints'.", id)));
         }
         RestorePointExpandOptions localExpand = null;
         return this
@@ -102,28 +83,18 @@ public final class RestorePointsImpl implements RestorePoints {
     public Response<RestorePoint> getByIdWithResponse(String id, RestorePointExpandOptions expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String restorePointCollectionName = Utils.getValueFromIdByName(id, "restorePointCollections");
         if (restorePointCollectionName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'restorePointCollections'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'restorePointCollections'.", id)));
         }
         String restorePointName = Utils.getValueFromIdByName(id, "restorePoints");
         if (restorePointName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'restorePoints'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'restorePoints'.", id)));
         }
         return this.getWithResponse(resourceGroupName, restorePointCollectionName, restorePointName, expand, context);
     }
@@ -131,28 +102,18 @@ public final class RestorePointsImpl implements RestorePoints {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String restorePointCollectionName = Utils.getValueFromIdByName(id, "restorePointCollections");
         if (restorePointCollectionName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'restorePointCollections'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'restorePointCollections'.", id)));
         }
         String restorePointName = Utils.getValueFromIdByName(id, "restorePoints");
         if (restorePointName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'restorePoints'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'restorePoints'.", id)));
         }
         this.delete(resourceGroupName, restorePointCollectionName, restorePointName, Context.NONE);
     }
@@ -160,28 +121,18 @@ public final class RestorePointsImpl implements RestorePoints {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String restorePointCollectionName = Utils.getValueFromIdByName(id, "restorePointCollections");
         if (restorePointCollectionName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'restorePointCollections'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'restorePointCollections'.", id)));
         }
         String restorePointName = Utils.getValueFromIdByName(id, "restorePoints");
         if (restorePointName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'restorePoints'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'restorePoints'.", id)));
         }
         this.delete(resourceGroupName, restorePointCollectionName, restorePointName, context);
     }

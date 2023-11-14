@@ -115,21 +115,14 @@ public final class GalleryApplicationImpl
     }
 
     public GalleryApplication create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getGalleryApplications()
-                .createOrUpdate(
-                    resourceGroupName, galleryName, galleryApplicationName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getGalleryApplications().createOrUpdate(resourceGroupName,
+            galleryName, galleryApplicationName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public GalleryApplication create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getGalleryApplications()
-                .createOrUpdate(resourceGroupName, galleryName, galleryApplicationName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getGalleryApplications().createOrUpdate(resourceGroupName,
+            galleryName, galleryApplicationName, this.innerModel(), context);
         return this;
     }
 
@@ -145,25 +138,18 @@ public final class GalleryApplicationImpl
     }
 
     public GalleryApplication apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getGalleryApplications()
-                .update(resourceGroupName, galleryName, galleryApplicationName, updateGalleryApplication, Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getGalleryApplications().update(resourceGroupName,
+            galleryName, galleryApplicationName, updateGalleryApplication, Context.NONE);
         return this;
     }
 
     public GalleryApplication apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getGalleryApplications()
-                .update(resourceGroupName, galleryName, galleryApplicationName, updateGalleryApplication, context);
+        this.innerObject = serviceManager.serviceClient().getGalleryApplications().update(resourceGroupName,
+            galleryName, galleryApplicationName, updateGalleryApplication, context);
         return this;
     }
 
-    GalleryApplicationImpl(
-        GalleryApplicationInner innerObject,
+    GalleryApplicationImpl(GalleryApplicationInner innerObject,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -173,22 +159,14 @@ public final class GalleryApplicationImpl
     }
 
     public GalleryApplication refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getGalleryApplications()
-                .getWithResponse(resourceGroupName, galleryName, galleryApplicationName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getGalleryApplications()
+            .getWithResponse(resourceGroupName, galleryName, galleryApplicationName, Context.NONE).getValue();
         return this;
     }
 
     public GalleryApplication refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getGalleryApplications()
-                .getWithResponse(resourceGroupName, galleryName, galleryApplicationName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getGalleryApplications()
+            .getWithResponse(resourceGroupName, galleryName, galleryApplicationName, context).getValue();
         return this;
     }
 

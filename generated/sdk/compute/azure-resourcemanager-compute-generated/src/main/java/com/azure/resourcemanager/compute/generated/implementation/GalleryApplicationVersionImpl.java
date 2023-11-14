@@ -94,8 +94,8 @@ public final class GalleryApplicationVersionImpl
 
     private GalleryApplicationVersionUpdate updateGalleryApplicationVersion;
 
-    public GalleryApplicationVersionImpl withExistingApplication(
-        String resourceGroupName, String galleryName, String galleryApplicationName) {
+    public GalleryApplicationVersionImpl withExistingApplication(String resourceGroupName, String galleryName,
+        String galleryApplicationName) {
         this.resourceGroupName = resourceGroupName;
         this.galleryName = galleryName;
         this.galleryApplicationName = galleryApplicationName;
@@ -103,37 +103,21 @@ public final class GalleryApplicationVersionImpl
     }
 
     public GalleryApplicationVersion create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getGalleryApplicationVersions()
-                .createOrUpdate(
-                    resourceGroupName,
-                    galleryName,
-                    galleryApplicationName,
-                    galleryApplicationVersionName,
-                    this.innerModel(),
-                    Context.NONE);
+        this.innerObject
+            = serviceManager.serviceClient().getGalleryApplicationVersions().createOrUpdate(resourceGroupName,
+                galleryName, galleryApplicationName, galleryApplicationVersionName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public GalleryApplicationVersion create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getGalleryApplicationVersions()
-                .createOrUpdate(
-                    resourceGroupName,
-                    galleryName,
-                    galleryApplicationName,
-                    galleryApplicationVersionName,
-                    this.innerModel(),
-                    context);
+        this.innerObject
+            = serviceManager.serviceClient().getGalleryApplicationVersions().createOrUpdate(resourceGroupName,
+                galleryName, galleryApplicationName, galleryApplicationVersionName, this.innerModel(), context);
         return this;
     }
 
-    GalleryApplicationVersionImpl(
-        String name, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
+    GalleryApplicationVersionImpl(String name,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = new GalleryApplicationVersionInner();
         this.serviceManager = serviceManager;
         this.galleryApplicationVersionName = name;
@@ -145,37 +129,20 @@ public final class GalleryApplicationVersionImpl
     }
 
     public GalleryApplicationVersion apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getGalleryApplicationVersions()
-                .update(
-                    resourceGroupName,
-                    galleryName,
-                    galleryApplicationName,
-                    galleryApplicationVersionName,
-                    updateGalleryApplicationVersion,
-                    Context.NONE);
+        this.innerObject
+            = serviceManager.serviceClient().getGalleryApplicationVersions().update(resourceGroupName, galleryName,
+                galleryApplicationName, galleryApplicationVersionName, updateGalleryApplicationVersion, Context.NONE);
         return this;
     }
 
     public GalleryApplicationVersion apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getGalleryApplicationVersions()
-                .update(
-                    resourceGroupName,
-                    galleryName,
-                    galleryApplicationName,
-                    galleryApplicationVersionName,
-                    updateGalleryApplicationVersion,
-                    context);
+        this.innerObject
+            = serviceManager.serviceClient().getGalleryApplicationVersions().update(resourceGroupName, galleryName,
+                galleryApplicationName, galleryApplicationVersionName, updateGalleryApplicationVersion, context);
         return this;
     }
 
-    GalleryApplicationVersionImpl(
-        GalleryApplicationVersionInner innerObject,
+    GalleryApplicationVersionImpl(GalleryApplicationVersionInner innerObject,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -187,35 +154,18 @@ public final class GalleryApplicationVersionImpl
 
     public GalleryApplicationVersion refresh() {
         ReplicationStatusTypes localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getGalleryApplicationVersions()
-                .getWithResponse(
-                    resourceGroupName,
-                    galleryName,
-                    galleryApplicationName,
-                    galleryApplicationVersionName,
-                    localExpand,
-                    Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getGalleryApplicationVersions()
+            .getWithResponse(resourceGroupName, galleryName, galleryApplicationName, galleryApplicationVersionName,
+                localExpand, Context.NONE)
+            .getValue();
         return this;
     }
 
     public GalleryApplicationVersion refresh(Context context) {
         ReplicationStatusTypes localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getGalleryApplicationVersions()
-                .getWithResponse(
-                    resourceGroupName,
-                    galleryName,
-                    galleryApplicationName,
-                    galleryApplicationVersionName,
-                    localExpand,
-                    context)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getGalleryApplicationVersions().getWithResponse(resourceGroupName,
+                galleryName, galleryApplicationName, galleryApplicationVersionName, localExpand, context).getValue();
         return this;
     }
 
@@ -239,8 +189,8 @@ public final class GalleryApplicationVersionImpl
         }
     }
 
-    public GalleryApplicationVersionImpl withPublishingProfile(
-        GalleryApplicationVersionPublishingProfile publishingProfile) {
+    public GalleryApplicationVersionImpl
+        withPublishingProfile(GalleryApplicationVersionPublishingProfile publishingProfile) {
         if (isInCreateMode()) {
             this.innerModel().withPublishingProfile(publishingProfile);
             return this;

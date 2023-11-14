@@ -6,11 +6,13 @@ package com.azure.resourcemanager.eventhubs.generated.models;
 
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.AccessKeysInner;
 
-/** An immutable client-side representation of AccessKeys. */
+/**
+ * An immutable client-side representation of AccessKeys.
+ */
 public interface AccessKeys {
     /**
      * Gets the primaryConnectionString property: Primary connection string of the created namespace AuthorizationRule.
-     *
+     * 
      * @return the primaryConnectionString value.
      */
     String primaryConnectionString();
@@ -18,49 +20,49 @@ public interface AccessKeys {
     /**
      * Gets the secondaryConnectionString property: Secondary connection string of the created namespace
      * AuthorizationRule.
-     *
+     * 
      * @return the secondaryConnectionString value.
      */
     String secondaryConnectionString();
 
     /**
      * Gets the aliasPrimaryConnectionString property: Primary connection string of the alias if GEO DR is enabled.
-     *
+     * 
      * @return the aliasPrimaryConnectionString value.
      */
     String aliasPrimaryConnectionString();
 
     /**
      * Gets the aliasSecondaryConnectionString property: Secondary connection string of the alias if GEO DR is enabled.
-     *
+     * 
      * @return the aliasSecondaryConnectionString value.
      */
     String aliasSecondaryConnectionString();
 
     /**
      * Gets the primaryKey property: A base64-encoded 256-bit primary key for signing and validating the SAS token.
-     *
+     * 
      * @return the primaryKey value.
      */
     String primaryKey();
 
     /**
      * Gets the secondaryKey property: A base64-encoded 256-bit primary key for signing and validating the SAS token.
-     *
+     * 
      * @return the secondaryKey value.
      */
     String secondaryKey();
 
     /**
      * Gets the keyName property: A string that describes the AuthorizationRule.
-     *
+     * 
      * @return the keyName value.
      */
     String keyName();
 
     /**
      * Gets the inner com.azure.resourcemanager.eventhubs.generated.fluent.models.AccessKeysInner object.
-     *
+     * 
      * @return the inner object.
      */
     AccessKeysInner innerModel();

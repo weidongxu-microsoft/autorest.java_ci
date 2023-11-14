@@ -11,7 +11,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** Modern reservation recommendation. */
+/**
+ * Modern reservation recommendation.
+ */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "kind")
 @JsonTypeName("modern")
 @Fluent
@@ -22,13 +24,15 @@ public final class ModernReservationRecommendation extends ReservationRecommenda
     @JsonProperty(value = "properties", required = true)
     private ModernReservationRecommendationProperties properties;
 
-    /** Creates an instance of ModernReservationRecommendation class. */
+    /**
+     * Creates an instance of ModernReservationRecommendation class.
+     */
     public ModernReservationRecommendation() {
     }
 
     /**
      * Get the properties property: Properties for modern reservation recommendation.
-     *
+     * 
      * @return the properties value.
      */
     public ModernReservationRecommendationProperties properties() {
@@ -37,7 +41,7 @@ public final class ModernReservationRecommendation extends ReservationRecommenda
 
     /**
      * Set the properties property: Properties for modern reservation recommendation.
-     *
+     * 
      * @param properties the properties value to set.
      * @return the ModernReservationRecommendation object itself.
      */
@@ -48,17 +52,15 @@ public final class ModernReservationRecommendation extends ReservationRecommenda
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override
     public void validate() {
         super.validate();
         if (properties() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property properties in model ModernReservationRecommendation"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property properties in model ModernReservationRecommendation"));
         } else {
             properties().validate();
         }

@@ -12,7 +12,9 @@ import com.azure.resourcemanager.consumption.generated.fluent.models.ModernReser
 import com.azure.resourcemanager.consumption.generated.fluent.models.ReservationTransactionInner;
 import java.math.BigDecimal;
 
-/** An instance of this class provides access to all the operations defined in ReservationTransactionsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in ReservationTransactionsClient.
+ */
 public interface ReservationTransactionsClient {
     /**
      * List of transactions for reserved instances on billing account scope. Note: The refund transactions are posted
@@ -20,7 +22,7 @@ public interface ReservationTransactionsClient {
      * May 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the
      * reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the
      * response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -36,13 +38,12 @@ public interface ReservationTransactionsClient {
      * May 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the
      * reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the
      * response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param filter Filter reservation transactions by date range. The properties/EventDate for start date and end
-     *     date. The filter supports 'le' and 'ge'. Note: API returns data for the entire start date's and end date's
-     *     billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29
-     *     will include data for the entire December 2020 month (i.e. will contain records for dates December 30 and
-     *     31).
+     * date. The filter supports 'le' and 'ge'. Note: API returns data for the entire start date's and end date's
+     * billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29 will
+     * include data for the entire December 2020 month (i.e. will contain records for dates December 30 and 31).
      * @param useMarkupIfPartner Applies mark up to the transactions if the caller is a partner.
      * @param previewMarkupPercentage Preview markup percentage to be applied.
      * @param context The context to associate with this operation.
@@ -52,12 +53,8 @@ public interface ReservationTransactionsClient {
      * @return result of listing reservation recommendations as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<ReservationTransactionInner> list(
-        String billingAccountId,
-        String filter,
-        Boolean useMarkupIfPartner,
-        BigDecimal previewMarkupPercentage,
-        Context context);
+    PagedIterable<ReservationTransactionInner> list(String billingAccountId, String filter, Boolean useMarkupIfPartner,
+        BigDecimal previewMarkupPercentage, Context context);
 
     /**
      * List of transactions for reserved instances on billing profile scope. The refund transactions are posted along
@@ -65,7 +62,7 @@ public interface ReservationTransactionsClient {
      * 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the
      * reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the
      * response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -74,8 +71,8 @@ public interface ReservationTransactionsClient {
      * @return result of listing reservation recommendations as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<ModernReservationTransactionInner> listByBillingProfile(
-        String billingAccountId, String billingProfileId);
+    PagedIterable<ModernReservationTransactionInner> listByBillingProfile(String billingAccountId,
+        String billingProfileId);
 
     /**
      * List of transactions for reserved instances on billing profile scope. The refund transactions are posted along
@@ -83,13 +80,13 @@ public interface ReservationTransactionsClient {
      * 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the
      * reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the
      * response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
      * @param filter Filter reservation transactions by date range. The properties/EventDate for start date and end
-     *     date. The filter supports 'le' and 'ge'. Note: API returns data for the entire start date's and end date's
-     *     billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29
-     *     will include data for entire December 2020 month (i.e. will contain records for dates December 30 and 31).
+     * date. The filter supports 'le' and 'ge'. Note: API returns data for the entire start date's and end date's
+     * billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29 will
+     * include data for entire December 2020 month (i.e. will contain records for dates December 30 and 31).
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -97,6 +94,6 @@ public interface ReservationTransactionsClient {
      * @return result of listing reservation recommendations as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<ModernReservationTransactionInner> listByBillingProfile(
-        String billingAccountId, String billingProfileId, String filter, Context context);
+    PagedIterable<ModernReservationTransactionInner> listByBillingProfile(String billingAccountId,
+        String billingProfileId, String filter, Context context);
 }

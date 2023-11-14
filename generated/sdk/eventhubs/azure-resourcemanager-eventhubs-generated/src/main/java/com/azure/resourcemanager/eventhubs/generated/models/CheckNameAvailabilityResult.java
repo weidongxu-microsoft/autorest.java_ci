@@ -6,11 +6,13 @@ package com.azure.resourcemanager.eventhubs.generated.models;
 
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.CheckNameAvailabilityResultInner;
 
-/** An immutable client-side representation of CheckNameAvailabilityResult. */
+/**
+ * An immutable client-side representation of CheckNameAvailabilityResult.
+ */
 public interface CheckNameAvailabilityResult {
     /**
      * Gets the message property: The detailed info regarding the reason associated with the Namespace.
-     *
+     * 
      * @return the message value.
      */
     String message();
@@ -18,14 +20,14 @@ public interface CheckNameAvailabilityResult {
     /**
      * Gets the nameAvailable property: Value indicating Namespace is availability, true if the Namespace is available;
      * otherwise, false.
-     *
+     * 
      * @return the nameAvailable value.
      */
     Boolean nameAvailable();
 
     /**
      * Gets the reason property: The reason for unavailability of a Namespace.
-     *
+     * 
      * @return the reason value.
      */
     UnavailableReason reason();
@@ -33,7 +35,7 @@ public interface CheckNameAvailabilityResult {
     /**
      * Gets the inner com.azure.resourcemanager.eventhubs.generated.fluent.models.CheckNameAvailabilityResultInner
      * object.
-     *
+     * 
      * @return the inner object.
      */
     CheckNameAvailabilityResultInner innerModel();

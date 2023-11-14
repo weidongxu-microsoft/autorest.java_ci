@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of WorkflowVersions. */
+/**
+ * Resource collection API of WorkflowVersions.
+ */
 public interface WorkflowVersions {
     /**
      * Gets a list of workflow versions.
-     *
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param workflowName The workflow name.
@@ -25,7 +27,7 @@ public interface WorkflowVersions {
 
     /**
      * Gets a list of workflow versions.
-     *
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param workflowName The workflow name.
@@ -36,12 +38,12 @@ public interface WorkflowVersions {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a list of workflow versions as paginated response with {@link PagedIterable}.
      */
-    PagedIterable<WorkflowVersion> list(
-        String resourceGroupName, String name, String workflowName, Integer top, Context context);
+    PagedIterable<WorkflowVersion> list(String resourceGroupName, String name, String workflowName, Integer top,
+        Context context);
 
     /**
      * Gets a workflow version.
-     *
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param workflowName The workflow name.
@@ -52,12 +54,12 @@ public interface WorkflowVersions {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a workflow version along with {@link Response}.
      */
-    Response<WorkflowVersion> getWithResponse(
-        String resourceGroupName, String name, String workflowName, String versionId, Context context);
+    Response<WorkflowVersion> getWithResponse(String resourceGroupName, String name, String workflowName,
+        String versionId, Context context);
 
     /**
      * Gets a workflow version.
-     *
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param workflowName The workflow name.

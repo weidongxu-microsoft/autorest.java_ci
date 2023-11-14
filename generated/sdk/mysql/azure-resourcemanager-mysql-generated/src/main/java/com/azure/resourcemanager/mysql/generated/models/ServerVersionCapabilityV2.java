@@ -7,7 +7,9 @@ package com.azure.resourcemanager.mysql.generated.models;
 import com.azure.core.annotation.Immutable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Server version capabilities. */
+/**
+ * Server version capabilities.
+ */
 @Immutable
 public final class ServerVersionCapabilityV2 {
     /*
@@ -16,13 +18,15 @@ public final class ServerVersionCapabilityV2 {
     @JsonProperty(value = "name", access = JsonProperty.Access.WRITE_ONLY)
     private String name;
 
-    /** Creates an instance of ServerVersionCapabilityV2 class. */
+    /**
+     * Creates an instance of ServerVersionCapabilityV2 class.
+     */
     public ServerVersionCapabilityV2() {
     }
 
     /**
      * Get the name property: server version.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -31,7 +35,7 @@ public final class ServerVersionCapabilityV2 {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

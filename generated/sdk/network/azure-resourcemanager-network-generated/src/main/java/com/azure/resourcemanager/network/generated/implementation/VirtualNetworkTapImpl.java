@@ -59,12 +59,9 @@ public final class VirtualNetworkTapImpl
     public List<NetworkInterfaceTapConfiguration> networkInterfaceTapConfigurations() {
         List<NetworkInterfaceTapConfigurationInner> inner = this.innerModel().networkInterfaceTapConfigurations();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new NetworkInterfaceTapConfigurationImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(
+                inner.stream().map(inner1 -> new NetworkInterfaceTapConfigurationImpl(inner1, this.manager()))
+                    .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -132,20 +129,14 @@ public final class VirtualNetworkTapImpl
     }
 
     public VirtualNetworkTap create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualNetworkTaps()
-                .createOrUpdate(resourceGroupName, tapName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getVirtualNetworkTaps().createOrUpdate(resourceGroupName,
+            tapName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public VirtualNetworkTap create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualNetworkTaps()
-                .createOrUpdate(resourceGroupName, tapName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getVirtualNetworkTaps().createOrUpdate(resourceGroupName,
+            tapName, this.innerModel(), context);
         return this;
     }
 
@@ -161,27 +152,19 @@ public final class VirtualNetworkTapImpl
     }
 
     public VirtualNetworkTap apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualNetworkTaps()
-                .updateTagsWithResponse(resourceGroupName, tapName, updateTapParameters, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getVirtualNetworkTaps()
+            .updateTagsWithResponse(resourceGroupName, tapName, updateTapParameters, Context.NONE).getValue();
         return this;
     }
 
     public VirtualNetworkTap apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualNetworkTaps()
-                .updateTagsWithResponse(resourceGroupName, tapName, updateTapParameters, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getVirtualNetworkTaps()
+            .updateTagsWithResponse(resourceGroupName, tapName, updateTapParameters, context).getValue();
         return this;
     }
 
-    VirtualNetworkTapImpl(
-        VirtualNetworkTapInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    VirtualNetworkTapImpl(VirtualNetworkTapInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
@@ -189,22 +172,14 @@ public final class VirtualNetworkTapImpl
     }
 
     public VirtualNetworkTap refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualNetworkTaps()
-                .getByResourceGroupWithResponse(resourceGroupName, tapName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getVirtualNetworkTaps()
+            .getByResourceGroupWithResponse(resourceGroupName, tapName, Context.NONE).getValue();
         return this;
     }
 
     public VirtualNetworkTap refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualNetworkTaps()
-                .getByResourceGroupWithResponse(resourceGroupName, tapName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getVirtualNetworkTaps()
+            .getByResourceGroupWithResponse(resourceGroupName, tapName, context).getValue();
         return this;
     }
 
@@ -236,8 +211,7 @@ public final class VirtualNetworkTapImpl
 
     public VirtualNetworkTapImpl withDestinationLoadBalancerFrontEndIpConfiguration(
         FrontendIpConfigurationInner destinationLoadBalancerFrontEndIpConfiguration) {
-        this
-            .innerModel()
+        this.innerModel()
             .withDestinationLoadBalancerFrontEndIpConfiguration(destinationLoadBalancerFrontEndIpConfiguration);
         return this;
     }

@@ -12,7 +12,9 @@ import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
-/** Modern Reservation transaction resource. */
+/**
+ * Modern Reservation transaction resource.
+ */
 @Immutable
 public final class ModernReservationTransactionInner extends ReservationTransactionResource {
     /*
@@ -21,13 +23,15 @@ public final class ModernReservationTransactionInner extends ReservationTransact
     @JsonProperty(value = "properties", required = true)
     private ModernReservationTransactionProperties innerProperties = new ModernReservationTransactionProperties();
 
-    /** Creates an instance of ModernReservationTransactionInner class. */
+    /**
+     * Creates an instance of ModernReservationTransactionInner class.
+     */
     public ModernReservationTransactionInner() {
     }
 
     /**
      * Get the innerProperties property: The properties of a modern reservation transaction.
-     *
+     * 
      * @return the innerProperties value.
      */
     private ModernReservationTransactionProperties innerProperties() {
@@ -36,7 +40,7 @@ public final class ModernReservationTransactionInner extends ReservationTransact
 
     /**
      * Get the amount property: The charge of the transaction.
-     *
+     * 
      * @return the amount value.
      */
     public BigDecimal amount() {
@@ -46,7 +50,7 @@ public final class ModernReservationTransactionInner extends ReservationTransact
     /**
      * Get the armSkuName property: This is the ARM Sku name. It can be used to join with the serviceType field in
      * additional info in usage records.
-     *
+     * 
      * @return the armSkuName value.
      */
     public String armSkuName() {
@@ -55,7 +59,7 @@ public final class ModernReservationTransactionInner extends ReservationTransact
 
     /**
      * Get the billingFrequency property: The billing frequency, which can be either one-time or recurring.
-     *
+     * 
      * @return the billingFrequency value.
      */
     public String billingFrequency() {
@@ -64,7 +68,7 @@ public final class ModernReservationTransactionInner extends ReservationTransact
 
     /**
      * Get the billingProfileId property: Billing profile Id.
-     *
+     * 
      * @return the billingProfileId value.
      */
     public String billingProfileId() {
@@ -73,7 +77,7 @@ public final class ModernReservationTransactionInner extends ReservationTransact
 
     /**
      * Get the billingProfileName property: Billing profile name.
-     *
+     * 
      * @return the billingProfileName value.
      */
     public String billingProfileName() {
@@ -82,7 +86,7 @@ public final class ModernReservationTransactionInner extends ReservationTransact
 
     /**
      * Get the currency property: The ISO currency in which the transaction is charged, for example, USD.
-     *
+     * 
      * @return the currency value.
      */
     public String currency() {
@@ -91,7 +95,7 @@ public final class ModernReservationTransactionInner extends ReservationTransact
 
     /**
      * Get the description property: The description of the transaction.
-     *
+     * 
      * @return the description value.
      */
     public String description() {
@@ -100,7 +104,7 @@ public final class ModernReservationTransactionInner extends ReservationTransact
 
     /**
      * Get the eventDate property: The date of the transaction.
-     *
+     * 
      * @return the eventDate value.
      */
     public OffsetDateTime eventDate() {
@@ -109,7 +113,7 @@ public final class ModernReservationTransactionInner extends ReservationTransact
 
     /**
      * Get the eventType property: The type of the transaction (Purchase, Cancel or Refund).
-     *
+     * 
      * @return the eventType value.
      */
     public String eventType() {
@@ -118,7 +122,7 @@ public final class ModernReservationTransactionInner extends ReservationTransact
 
     /**
      * Get the invoice property: Invoice Number.
-     *
+     * 
      * @return the invoice value.
      */
     public String invoice() {
@@ -127,7 +131,7 @@ public final class ModernReservationTransactionInner extends ReservationTransact
 
     /**
      * Get the invoiceId property: Invoice Id as on the invoice where the specific transaction appears.
-     *
+     * 
      * @return the invoiceId value.
      */
     public String invoiceId() {
@@ -136,7 +140,7 @@ public final class ModernReservationTransactionInner extends ReservationTransact
 
     /**
      * Get the invoiceSectionId property: Invoice Section Id.
-     *
+     * 
      * @return the invoiceSectionId value.
      */
     public String invoiceSectionId() {
@@ -145,7 +149,7 @@ public final class ModernReservationTransactionInner extends ReservationTransact
 
     /**
      * Get the invoiceSectionName property: Invoice Section Name.
-     *
+     * 
      * @return the invoiceSectionName value.
      */
     public String invoiceSectionName() {
@@ -154,7 +158,7 @@ public final class ModernReservationTransactionInner extends ReservationTransact
 
     /**
      * Get the purchasingSubscriptionGuid property: The subscription guid that makes the transaction.
-     *
+     * 
      * @return the purchasingSubscriptionGuid value.
      */
     public UUID purchasingSubscriptionGuid() {
@@ -163,7 +167,7 @@ public final class ModernReservationTransactionInner extends ReservationTransact
 
     /**
      * Get the purchasingSubscriptionName property: The subscription name that makes the transaction.
-     *
+     * 
      * @return the purchasingSubscriptionName value.
      */
     public String purchasingSubscriptionName() {
@@ -172,7 +176,7 @@ public final class ModernReservationTransactionInner extends ReservationTransact
 
     /**
      * Get the quantity property: The quantity of the transaction.
-     *
+     * 
      * @return the quantity value.
      */
     public BigDecimal quantity() {
@@ -181,7 +185,7 @@ public final class ModernReservationTransactionInner extends ReservationTransact
 
     /**
      * Get the region property: The region of the transaction.
-     *
+     * 
      * @return the region value.
      */
     public String region() {
@@ -192,7 +196,7 @@ public final class ModernReservationTransactionInner extends ReservationTransact
      * Get the reservationOrderId property: The reservation order ID is the identifier for a reservation purchase. Each
      * reservation order ID represents a single purchase transaction. A reservation order contains reservations. The
      * reservation order specifies the VM size and region for the reservations.
-     *
+     * 
      * @return the reservationOrderId value.
      */
     public String reservationOrderId() {
@@ -201,7 +205,7 @@ public final class ModernReservationTransactionInner extends ReservationTransact
 
     /**
      * Get the reservationOrderName property: The name of the reservation order.
-     *
+     * 
      * @return the reservationOrderName value.
      */
     public String reservationOrderName() {
@@ -210,7 +214,7 @@ public final class ModernReservationTransactionInner extends ReservationTransact
 
     /**
      * Get the term property: This is the term of the transaction.
-     *
+     * 
      * @return the term value.
      */
     public String term() {
@@ -219,17 +223,15 @@ public final class ModernReservationTransactionInner extends ReservationTransact
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override
     public void validate() {
         super.validate();
         if (innerProperties() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property innerProperties in model ModernReservationTransactionInner"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property innerProperties in model ModernReservationTransactionInner"));
         } else {
             innerProperties().validate();
         }

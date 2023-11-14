@@ -8,23 +8,33 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** The kind of the device. */
+/**
+ * The kind of the device.
+ */
 public final class DataBoxEdgeDeviceKind extends ExpandableStringEnum<DataBoxEdgeDeviceKind> {
-    /** Static value AzureDataBoxGateway for DataBoxEdgeDeviceKind. */
+    /**
+     * Static value AzureDataBoxGateway for DataBoxEdgeDeviceKind.
+     */
     public static final DataBoxEdgeDeviceKind AZURE_DATA_BOX_GATEWAY = fromString("AzureDataBoxGateway");
 
-    /** Static value AzureStackEdge for DataBoxEdgeDeviceKind. */
+    /**
+     * Static value AzureStackEdge for DataBoxEdgeDeviceKind.
+     */
     public static final DataBoxEdgeDeviceKind AZURE_STACK_EDGE = fromString("AzureStackEdge");
 
-    /** Static value AzureStackHub for DataBoxEdgeDeviceKind. */
+    /**
+     * Static value AzureStackHub for DataBoxEdgeDeviceKind.
+     */
     public static final DataBoxEdgeDeviceKind AZURE_STACK_HUB = fromString("AzureStackHub");
 
-    /** Static value AzureModularDataCentre for DataBoxEdgeDeviceKind. */
+    /**
+     * Static value AzureModularDataCentre for DataBoxEdgeDeviceKind.
+     */
     public static final DataBoxEdgeDeviceKind AZURE_MODULAR_DATA_CENTRE = fromString("AzureModularDataCentre");
 
     /**
      * Creates a new instance of DataBoxEdgeDeviceKind value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -33,7 +43,7 @@ public final class DataBoxEdgeDeviceKind extends ExpandableStringEnum<DataBoxEdg
 
     /**
      * Creates or finds a DataBoxEdgeDeviceKind from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding DataBoxEdgeDeviceKind.
      */
@@ -44,7 +54,7 @@ public final class DataBoxEdgeDeviceKind extends ExpandableStringEnum<DataBoxEdg
 
     /**
      * Gets known DataBoxEdgeDeviceKind values.
-     *
+     * 
      * @return known DataBoxEdgeDeviceKind values.
      */
     public static Collection<DataBoxEdgeDeviceKind> values() {

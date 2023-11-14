@@ -24,44 +24,28 @@ public final class DiskRestorePointsImpl implements DiskRestorePoints {
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    public DiskRestorePointsImpl(
-        DiskRestorePointsClient innerClient,
+    public DiskRestorePointsImpl(DiskRestorePointsClient innerClient,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<DiskRestorePoint> getWithResponse(
-        String resourceGroupName,
-        String restorePointCollectionName,
-        String vmRestorePointName,
-        String diskRestorePointName,
-        Context context) {
-        Response<DiskRestorePointInner> inner =
-            this
-                .serviceClient()
-                .getWithResponse(
-                    resourceGroupName, restorePointCollectionName, vmRestorePointName, diskRestorePointName, context);
+    public Response<DiskRestorePoint> getWithResponse(String resourceGroupName, String restorePointCollectionName,
+        String vmRestorePointName, String diskRestorePointName, Context context) {
+        Response<DiskRestorePointInner> inner = this.serviceClient().getWithResponse(resourceGroupName,
+            restorePointCollectionName, vmRestorePointName, diskRestorePointName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DiskRestorePointImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public DiskRestorePoint get(
-        String resourceGroupName,
-        String restorePointCollectionName,
-        String vmRestorePointName,
+    public DiskRestorePoint get(String resourceGroupName, String restorePointCollectionName, String vmRestorePointName,
         String diskRestorePointName) {
-        DiskRestorePointInner inner =
-            this
-                .serviceClient()
-                .get(resourceGroupName, restorePointCollectionName, vmRestorePointName, diskRestorePointName);
+        DiskRestorePointInner inner = this.serviceClient().get(resourceGroupName, restorePointCollectionName,
+            vmRestorePointName, diskRestorePointName);
         if (inner != null) {
             return new DiskRestorePointImpl(inner, this.manager());
         } else {
@@ -69,37 +53,24 @@ public final class DiskRestorePointsImpl implements DiskRestorePoints {
         }
     }
 
-    public PagedIterable<DiskRestorePoint> listByRestorePoint(
-        String resourceGroupName, String restorePointCollectionName, String vmRestorePointName) {
-        PagedIterable<DiskRestorePointInner> inner =
-            this.serviceClient().listByRestorePoint(resourceGroupName, restorePointCollectionName, vmRestorePointName);
+    public PagedIterable<DiskRestorePoint> listByRestorePoint(String resourceGroupName,
+        String restorePointCollectionName, String vmRestorePointName) {
+        PagedIterable<DiskRestorePointInner> inner = this.serviceClient().listByRestorePoint(resourceGroupName,
+            restorePointCollectionName, vmRestorePointName);
         return Utils.mapPage(inner, inner1 -> new DiskRestorePointImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<DiskRestorePoint> listByRestorePoint(
-        String resourceGroupName, String restorePointCollectionName, String vmRestorePointName, Context context) {
-        PagedIterable<DiskRestorePointInner> inner =
-            this
-                .serviceClient()
-                .listByRestorePoint(resourceGroupName, restorePointCollectionName, vmRestorePointName, context);
+    public PagedIterable<DiskRestorePoint> listByRestorePoint(String resourceGroupName,
+        String restorePointCollectionName, String vmRestorePointName, Context context) {
+        PagedIterable<DiskRestorePointInner> inner = this.serviceClient().listByRestorePoint(resourceGroupName,
+            restorePointCollectionName, vmRestorePointName, context);
         return Utils.mapPage(inner, inner1 -> new DiskRestorePointImpl(inner1, this.manager()));
     }
 
-    public AccessUri grantAccess(
-        String resourceGroupName,
-        String restorePointCollectionName,
-        String vmRestorePointName,
-        String diskRestorePointName,
-        GrantAccessData grantAccessData) {
-        AccessUriInner inner =
-            this
-                .serviceClient()
-                .grantAccess(
-                    resourceGroupName,
-                    restorePointCollectionName,
-                    vmRestorePointName,
-                    diskRestorePointName,
-                    grantAccessData);
+    public AccessUri grantAccess(String resourceGroupName, String restorePointCollectionName, String vmRestorePointName,
+        String diskRestorePointName, GrantAccessData grantAccessData) {
+        AccessUriInner inner = this.serviceClient().grantAccess(resourceGroupName, restorePointCollectionName,
+            vmRestorePointName, diskRestorePointName, grantAccessData);
         if (inner != null) {
             return new AccessUriImpl(inner, this.manager());
         } else {
@@ -107,23 +78,10 @@ public final class DiskRestorePointsImpl implements DiskRestorePoints {
         }
     }
 
-    public AccessUri grantAccess(
-        String resourceGroupName,
-        String restorePointCollectionName,
-        String vmRestorePointName,
-        String diskRestorePointName,
-        GrantAccessData grantAccessData,
-        Context context) {
-        AccessUriInner inner =
-            this
-                .serviceClient()
-                .grantAccess(
-                    resourceGroupName,
-                    restorePointCollectionName,
-                    vmRestorePointName,
-                    diskRestorePointName,
-                    grantAccessData,
-                    context);
+    public AccessUri grantAccess(String resourceGroupName, String restorePointCollectionName, String vmRestorePointName,
+        String diskRestorePointName, GrantAccessData grantAccessData, Context context) {
+        AccessUriInner inner = this.serviceClient().grantAccess(resourceGroupName, restorePointCollectionName,
+            vmRestorePointName, diskRestorePointName, grantAccessData, context);
         if (inner != null) {
             return new AccessUriImpl(inner, this.manager());
         } else {
@@ -131,26 +89,16 @@ public final class DiskRestorePointsImpl implements DiskRestorePoints {
         }
     }
 
-    public void revokeAccess(
-        String resourceGroupName,
-        String restorePointCollectionName,
-        String vmRestorePointName,
+    public void revokeAccess(String resourceGroupName, String restorePointCollectionName, String vmRestorePointName,
         String diskRestorePointName) {
-        this
-            .serviceClient()
-            .revokeAccess(resourceGroupName, restorePointCollectionName, vmRestorePointName, diskRestorePointName);
+        this.serviceClient().revokeAccess(resourceGroupName, restorePointCollectionName, vmRestorePointName,
+            diskRestorePointName);
     }
 
-    public void revokeAccess(
-        String resourceGroupName,
-        String restorePointCollectionName,
-        String vmRestorePointName,
-        String diskRestorePointName,
-        Context context) {
-        this
-            .serviceClient()
-            .revokeAccess(
-                resourceGroupName, restorePointCollectionName, vmRestorePointName, diskRestorePointName, context);
+    public void revokeAccess(String resourceGroupName, String restorePointCollectionName, String vmRestorePointName,
+        String diskRestorePointName, Context context) {
+        this.serviceClient().revokeAccess(resourceGroupName, restorePointCollectionName, vmRestorePointName,
+            diskRestorePointName, context);
     }
 
     private DiskRestorePointsClient serviceClient() {

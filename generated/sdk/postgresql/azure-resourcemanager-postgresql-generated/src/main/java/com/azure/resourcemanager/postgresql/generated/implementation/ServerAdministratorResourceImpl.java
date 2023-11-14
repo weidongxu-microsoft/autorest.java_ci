@@ -14,8 +14,7 @@ public final class ServerAdministratorResourceImpl implements ServerAdministrato
 
     private final com.azure.resourcemanager.postgresql.generated.PostgreSqlManager serviceManager;
 
-    ServerAdministratorResourceImpl(
-        ServerAdministratorResourceInner innerObject,
+    ServerAdministratorResourceImpl(ServerAdministratorResourceInner innerObject,
         com.azure.resourcemanager.postgresql.generated.PostgreSqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

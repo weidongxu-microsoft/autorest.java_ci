@@ -7,11 +7,13 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.resourcemanager.network.generated.fluent.models.BackendAddressInboundNatRulePortMappingsInner;
 import java.util.List;
 
-/** An immutable client-side representation of BackendAddressInboundNatRulePortMappings. */
+/**
+ * An immutable client-side representation of BackendAddressInboundNatRulePortMappings.
+ */
 public interface BackendAddressInboundNatRulePortMappings {
     /**
      * Gets the inboundNatRulePortMappings property: Collection of inbound NAT rule port mappings.
-     *
+     * 
      * @return the inboundNatRulePortMappings value.
      */
     List<InboundNatRulePortMapping> inboundNatRulePortMappings();
@@ -19,7 +21,7 @@ public interface BackendAddressInboundNatRulePortMappings {
     /**
      * Gets the inner
      * com.azure.resourcemanager.network.generated.fluent.models.BackendAddressInboundNatRulePortMappingsInner object.
-     *
+     * 
      * @return the inner object.
      */
     BackendAddressInboundNatRulePortMappingsInner innerModel();

@@ -7,7 +7,9 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The live event track status. */
+/**
+ * The live event track status.
+ */
 @Fluent
 public final class LiveEventTrackStatus {
     /*
@@ -46,13 +48,15 @@ public final class LiveEventTrackStatus {
     @JsonProperty(value = "requestSucceeded")
     private Long requestSucceeded;
 
-    /** Creates an instance of LiveEventTrackStatus class. */
+    /**
+     * Creates an instance of LiveEventTrackStatus class.
+     */
     public LiveEventTrackStatus() {
     }
 
     /**
      * Get the trackId property: Track Id.
-     *
+     * 
      * @return the trackId value.
      */
     public String trackId() {
@@ -61,7 +65,7 @@ public final class LiveEventTrackStatus {
 
     /**
      * Set the trackId property: Track Id.
-     *
+     * 
      * @param trackId the trackId value to set.
      * @return the LiveEventTrackStatus object itself.
      */
@@ -72,7 +76,7 @@ public final class LiveEventTrackStatus {
 
     /**
      * Get the expectedBitrate property: Expected bitrate for this track.
-     *
+     * 
      * @return the expectedBitrate value.
      */
     public Long expectedBitrate() {
@@ -81,7 +85,7 @@ public final class LiveEventTrackStatus {
 
     /**
      * Set the expectedBitrate property: Expected bitrate for this track.
-     *
+     * 
      * @param expectedBitrate the expectedBitrate value to set.
      * @return the LiveEventTrackStatus object itself.
      */
@@ -92,7 +96,7 @@ public final class LiveEventTrackStatus {
 
     /**
      * Get the incomingBitrate property: Average incoming bitrate for last 20 seconds when live event is running.
-     *
+     * 
      * @return the incomingBitrate value.
      */
     public Long incomingBitrate() {
@@ -101,7 +105,7 @@ public final class LiveEventTrackStatus {
 
     /**
      * Set the incomingBitrate property: Average incoming bitrate for last 20 seconds when live event is running.
-     *
+     * 
      * @param incomingBitrate the incomingBitrate value to set.
      * @return the LiveEventTrackStatus object itself.
      */
@@ -112,7 +116,7 @@ public final class LiveEventTrackStatus {
 
     /**
      * Get the ingestDrift property: Current ingest drift value in seconds for last 1 minute.
-     *
+     * 
      * @return the ingestDrift value.
      */
     public String ingestDrift() {
@@ -121,7 +125,7 @@ public final class LiveEventTrackStatus {
 
     /**
      * Set the ingestDrift property: Current ingest drift value in seconds for last 1 minute.
-     *
+     * 
      * @param ingestDrift the ingestDrift value to set.
      * @return the LiveEventTrackStatus object itself.
      */
@@ -132,7 +136,7 @@ public final class LiveEventTrackStatus {
 
     /**
      * Get the requestReceived property: Total number of timed metadata request received.
-     *
+     * 
      * @return the requestReceived value.
      */
     public Long requestReceived() {
@@ -141,7 +145,7 @@ public final class LiveEventTrackStatus {
 
     /**
      * Set the requestReceived property: Total number of timed metadata request received.
-     *
+     * 
      * @param requestReceived the requestReceived value to set.
      * @return the LiveEventTrackStatus object itself.
      */
@@ -152,7 +156,7 @@ public final class LiveEventTrackStatus {
 
     /**
      * Get the requestSucceeded property: Total number of successful timed metadata request received.
-     *
+     * 
      * @return the requestSucceeded value.
      */
     public Long requestSucceeded() {
@@ -161,7 +165,7 @@ public final class LiveEventTrackStatus {
 
     /**
      * Set the requestSucceeded property: Total number of successful timed metadata request received.
-     *
+     * 
      * @param requestSucceeded the requestSucceeded value to set.
      * @return the LiveEventTrackStatus object itself.
      */
@@ -172,7 +176,7 @@ public final class LiveEventTrackStatus {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

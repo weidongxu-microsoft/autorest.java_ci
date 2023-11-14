@@ -17,7 +17,7 @@ import com.azure.core.util.polling.SyncPoller;
 public interface NetworkSecurityPerimeterConfigurationsOperationsClient {
     /**
      * Refreshes any information about the association.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param resourceAssociationName The ResourceAssociation Name.
@@ -27,12 +27,12 @@ public interface NetworkSecurityPerimeterConfigurationsOperationsClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginCreateOrUpdate(
-        String resourceGroupName, String namespaceName, String resourceAssociationName);
+    SyncPoller<PollResult<Void>, Void> beginCreateOrUpdate(String resourceGroupName, String namespaceName,
+        String resourceAssociationName);
 
     /**
      * Refreshes any information about the association.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param resourceAssociationName The ResourceAssociation Name.
@@ -43,12 +43,12 @@ public interface NetworkSecurityPerimeterConfigurationsOperationsClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginCreateOrUpdate(
-        String resourceGroupName, String namespaceName, String resourceAssociationName, Context context);
+    SyncPoller<PollResult<Void>, Void> beginCreateOrUpdate(String resourceGroupName, String namespaceName,
+        String resourceAssociationName, Context context);
 
     /**
      * Refreshes any information about the association.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param resourceAssociationName The ResourceAssociation Name.
@@ -61,7 +61,7 @@ public interface NetworkSecurityPerimeterConfigurationsOperationsClient {
 
     /**
      * Refreshes any information about the association.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param resourceAssociationName The ResourceAssociation Name.
@@ -71,6 +71,6 @@ public interface NetworkSecurityPerimeterConfigurationsOperationsClient {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void createOrUpdate(
-        String resourceGroupName, String namespaceName, String resourceAssociationName, Context context);
+    void createOrUpdate(String resourceGroupName, String namespaceName, String resourceAssociationName,
+        Context context);
 }

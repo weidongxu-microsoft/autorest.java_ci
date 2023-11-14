@@ -7,7 +7,9 @@ package com.azure.resourcemanager.keyvault.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The ManagedHsmLifetimeAction model. */
+/**
+ * The ManagedHsmLifetimeAction model.
+ */
 @Fluent
 public final class ManagedHsmLifetimeAction {
     /*
@@ -22,13 +24,15 @@ public final class ManagedHsmLifetimeAction {
     @JsonProperty(value = "action")
     private ManagedHsmAction action;
 
-    /** Creates an instance of ManagedHsmLifetimeAction class. */
+    /**
+     * Creates an instance of ManagedHsmLifetimeAction class.
+     */
     public ManagedHsmLifetimeAction() {
     }
 
     /**
      * Get the trigger property: The trigger of key rotation policy lifetimeAction.
-     *
+     * 
      * @return the trigger value.
      */
     public ManagedHsmTrigger trigger() {
@@ -37,7 +41,7 @@ public final class ManagedHsmLifetimeAction {
 
     /**
      * Set the trigger property: The trigger of key rotation policy lifetimeAction.
-     *
+     * 
      * @param trigger the trigger value to set.
      * @return the ManagedHsmLifetimeAction object itself.
      */
@@ -48,7 +52,7 @@ public final class ManagedHsmLifetimeAction {
 
     /**
      * Get the action property: The action of key rotation policy lifetimeAction.
-     *
+     * 
      * @return the action value.
      */
     public ManagedHsmAction action() {
@@ -57,7 +61,7 @@ public final class ManagedHsmLifetimeAction {
 
     /**
      * Set the action property: The action of key rotation policy lifetimeAction.
-     *
+     * 
      * @param action the action value to set.
      * @return the ManagedHsmLifetimeAction object itself.
      */
@@ -68,7 +72,7 @@ public final class ManagedHsmLifetimeAction {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

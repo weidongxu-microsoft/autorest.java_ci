@@ -7,7 +7,9 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The streaming endpoint sku capacity. */
+/**
+ * The streaming endpoint sku capacity.
+ */
 @Fluent
 public final class ArmStreamingEndpointCapacity {
     /*
@@ -34,13 +36,15 @@ public final class ArmStreamingEndpointCapacity {
     @JsonProperty(value = "maximum")
     private Integer maximum;
 
-    /** Creates an instance of ArmStreamingEndpointCapacity class. */
+    /**
+     * Creates an instance of ArmStreamingEndpointCapacity class.
+     */
     public ArmStreamingEndpointCapacity() {
     }
 
     /**
      * Get the scaleType property: The scaleType property.
-     *
+     * 
      * @return the scaleType value.
      */
     public String scaleType() {
@@ -49,7 +53,7 @@ public final class ArmStreamingEndpointCapacity {
 
     /**
      * Get the defaultProperty property: The streaming endpoint default capacity.
-     *
+     * 
      * @return the defaultProperty value.
      */
     public Integer defaultProperty() {
@@ -58,7 +62,7 @@ public final class ArmStreamingEndpointCapacity {
 
     /**
      * Set the defaultProperty property: The streaming endpoint default capacity.
-     *
+     * 
      * @param defaultProperty the defaultProperty value to set.
      * @return the ArmStreamingEndpointCapacity object itself.
      */
@@ -69,7 +73,7 @@ public final class ArmStreamingEndpointCapacity {
 
     /**
      * Get the minimum property: The streaming endpoint minimum capacity.
-     *
+     * 
      * @return the minimum value.
      */
     public Integer minimum() {
@@ -78,7 +82,7 @@ public final class ArmStreamingEndpointCapacity {
 
     /**
      * Set the minimum property: The streaming endpoint minimum capacity.
-     *
+     * 
      * @param minimum the minimum value to set.
      * @return the ArmStreamingEndpointCapacity object itself.
      */
@@ -89,7 +93,7 @@ public final class ArmStreamingEndpointCapacity {
 
     /**
      * Get the maximum property: The streaming endpoint maximum capacity.
-     *
+     * 
      * @return the maximum value.
      */
     public Integer maximum() {
@@ -98,7 +102,7 @@ public final class ArmStreamingEndpointCapacity {
 
     /**
      * Set the maximum property: The streaming endpoint maximum capacity.
-     *
+     * 
      * @param maximum the maximum value to set.
      * @return the ArmStreamingEndpointCapacity object itself.
      */
@@ -109,7 +113,7 @@ public final class ArmStreamingEndpointCapacity {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

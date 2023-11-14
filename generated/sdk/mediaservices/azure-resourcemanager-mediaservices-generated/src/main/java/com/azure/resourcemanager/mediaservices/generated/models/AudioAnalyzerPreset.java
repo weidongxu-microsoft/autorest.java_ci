@@ -22,7 +22,7 @@ import java.util.Map;
     property = "@odata.type",
     defaultImpl = AudioAnalyzerPreset.class)
 @JsonTypeName("#Microsoft.Media.AudioAnalyzerPreset")
-@JsonSubTypes({@JsonSubTypes.Type(name = "#Microsoft.Media.VideoAnalyzerPreset", value = VideoAnalyzerPreset.class)})
+@JsonSubTypes({ @JsonSubTypes.Type(name = "#Microsoft.Media.VideoAnalyzerPreset", value = VideoAnalyzerPreset.class) })
 @Fluent
 public class AudioAnalyzerPreset extends Preset {
     /*
@@ -53,7 +53,9 @@ public class AudioAnalyzerPreset extends Preset {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> experimentalOptions;
 
-    /** Creates an instance of AudioAnalyzerPreset class. */
+    /**
+     * Creates an instance of AudioAnalyzerPreset class.
+     */
     public AudioAnalyzerPreset() {
     }
 
@@ -63,11 +65,11 @@ public class AudioAnalyzerPreset extends Preset {
      * specify it. The language must be specified explicitly for AudioAnalysisMode::Basic, since automatic language
      * detection is not included in basic mode. If the language isn't specified or set to null, automatic language
      * detection will choose the first language detected and process with the selected language for the duration of the
-     * file. It does not currently support dynamically switching between languages after the first language is detected.
-     * The automatic detection works best with audio recordings with clearly discernable speech. If automatic detection
-     * fails to find the language, transcription would fallback to 'en-US'." The list of supported languages is
-     * available here: https://go.microsoft.com/fwlink/?linkid=2109463.
-     *
+     * file. It does not currently support dynamically switching between languages after the first language is
+     * detected. The automatic detection works best with audio recordings with clearly discernable speech. If automatic
+     * detection fails to find the language, transcription would fallback to 'en-US'." The list of supported languages
+     * is available here: https://go.microsoft.com/fwlink/?linkid=2109463.
+     * 
      * @return the audioLanguage value.
      */
     public String audioLanguage() {
@@ -80,11 +82,11 @@ public class AudioAnalyzerPreset extends Preset {
      * specify it. The language must be specified explicitly for AudioAnalysisMode::Basic, since automatic language
      * detection is not included in basic mode. If the language isn't specified or set to null, automatic language
      * detection will choose the first language detected and process with the selected language for the duration of the
-     * file. It does not currently support dynamically switching between languages after the first language is detected.
-     * The automatic detection works best with audio recordings with clearly discernable speech. If automatic detection
-     * fails to find the language, transcription would fallback to 'en-US'." The list of supported languages is
-     * available here: https://go.microsoft.com/fwlink/?linkid=2109463.
-     *
+     * file. It does not currently support dynamically switching between languages after the first language is
+     * detected. The automatic detection works best with audio recordings with clearly discernable speech. If automatic
+     * detection fails to find the language, transcription would fallback to 'en-US'." The list of supported languages
+     * is available here: https://go.microsoft.com/fwlink/?linkid=2109463.
+     * 
      * @param audioLanguage the audioLanguage value to set.
      * @return the AudioAnalyzerPreset object itself.
      */
@@ -96,7 +98,7 @@ public class AudioAnalyzerPreset extends Preset {
     /**
      * Get the mode property: Determines the set of audio analysis operations to be performed. If unspecified, the
      * Standard AudioAnalysisMode would be chosen.
-     *
+     * 
      * @return the mode value.
      */
     public AudioAnalysisMode mode() {
@@ -106,7 +108,7 @@ public class AudioAnalyzerPreset extends Preset {
     /**
      * Set the mode property: Determines the set of audio analysis operations to be performed. If unspecified, the
      * Standard AudioAnalysisMode would be chosen.
-     *
+     * 
      * @param mode the mode value to set.
      * @return the AudioAnalyzerPreset object itself.
      */
@@ -118,7 +120,7 @@ public class AudioAnalyzerPreset extends Preset {
     /**
      * Get the experimentalOptions property: Dictionary containing key value pairs for parameters not exposed in the
      * preset itself.
-     *
+     * 
      * @return the experimentalOptions value.
      */
     public Map<String, String> experimentalOptions() {
@@ -128,7 +130,7 @@ public class AudioAnalyzerPreset extends Preset {
     /**
      * Set the experimentalOptions property: Dictionary containing key value pairs for parameters not exposed in the
      * preset itself.
-     *
+     * 
      * @param experimentalOptions the experimentalOptions value to set.
      * @return the AudioAnalyzerPreset object itself.
      */
@@ -139,7 +141,7 @@ public class AudioAnalyzerPreset extends Preset {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

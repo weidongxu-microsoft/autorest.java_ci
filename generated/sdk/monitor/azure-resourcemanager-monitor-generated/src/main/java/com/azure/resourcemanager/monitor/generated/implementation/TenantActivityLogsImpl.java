@@ -19,8 +19,7 @@ public final class TenantActivityLogsImpl implements TenantActivityLogs {
 
     private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    public TenantActivityLogsImpl(
-        TenantActivityLogsClient innerClient,
+    public TenantActivityLogsImpl(TenantActivityLogsClient innerClient,
         com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;

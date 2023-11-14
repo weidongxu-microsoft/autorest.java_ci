@@ -18,7 +18,7 @@ import com.azure.resourcemanager.network.generated.fluent.models.VpnServerConfig
 public interface VpnServerConfigurationsAssociatedWithVirtualWansClient {
     /**
      * Gives the list of VpnServerConfigurations associated with Virtual Wan in a resource group.
-     *
+     * 
      * @param resourceGroupName The resource group name.
      * @param virtualWanName The name of the VirtualWAN whose associated VpnServerConfigurations is needed.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -27,12 +27,12 @@ public interface VpnServerConfigurationsAssociatedWithVirtualWansClient {
      * @return the {@link SyncPoller} for polling of vpnServerConfigurations list associated with VirtualWan Response.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<VpnServerConfigurationsResponseInner>, VpnServerConfigurationsResponseInner> beginList(
-        String resourceGroupName, String virtualWanName);
+    SyncPoller<PollResult<VpnServerConfigurationsResponseInner>, VpnServerConfigurationsResponseInner>
+        beginList(String resourceGroupName, String virtualWanName);
 
     /**
      * Gives the list of VpnServerConfigurations associated with Virtual Wan in a resource group.
-     *
+     * 
      * @param resourceGroupName The resource group name.
      * @param virtualWanName The name of the VirtualWAN whose associated VpnServerConfigurations is needed.
      * @param context The context to associate with this operation.
@@ -42,12 +42,12 @@ public interface VpnServerConfigurationsAssociatedWithVirtualWansClient {
      * @return the {@link SyncPoller} for polling of vpnServerConfigurations list associated with VirtualWan Response.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<VpnServerConfigurationsResponseInner>, VpnServerConfigurationsResponseInner> beginList(
-        String resourceGroupName, String virtualWanName, Context context);
+    SyncPoller<PollResult<VpnServerConfigurationsResponseInner>, VpnServerConfigurationsResponseInner>
+        beginList(String resourceGroupName, String virtualWanName, Context context);
 
     /**
      * Gives the list of VpnServerConfigurations associated with Virtual Wan in a resource group.
-     *
+     * 
      * @param resourceGroupName The resource group name.
      * @param virtualWanName The name of the VirtualWAN whose associated VpnServerConfigurations is needed.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -60,7 +60,7 @@ public interface VpnServerConfigurationsAssociatedWithVirtualWansClient {
 
     /**
      * Gives the list of VpnServerConfigurations associated with Virtual Wan in a resource group.
-     *
+     * 
      * @param resourceGroupName The resource group name.
      * @param virtualWanName The name of the VirtualWAN whose associated VpnServerConfigurations is needed.
      * @param context The context to associate with this operation.

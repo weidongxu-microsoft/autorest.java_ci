@@ -10,7 +10,9 @@ import com.azure.resourcemanager.mediaservices.generated.models.LiveEventTrackEv
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
-/** The live event track event. */
+/**
+ * The live event track event.
+ */
 @Fluent
 public final class LiveEventTrackEventInner {
     /*
@@ -31,13 +33,15 @@ public final class LiveEventTrackEventInner {
     @JsonProperty(value = "data")
     private LiveEventTrackEventData data;
 
-    /** Creates an instance of LiveEventTrackEventInner class. */
+    /**
+     * Creates an instance of LiveEventTrackEventInner class.
+     */
     public LiveEventTrackEventInner() {
     }
 
     /**
      * Get the eventType property: The type of the track event.
-     *
+     * 
      * @return the eventType value.
      */
     public LiveEventTrackEventType eventType() {
@@ -46,7 +50,7 @@ public final class LiveEventTrackEventInner {
 
     /**
      * Set the eventType property: The type of the track event.
-     *
+     * 
      * @param eventType the eventType value to set.
      * @return the LiveEventTrackEventInner object itself.
      */
@@ -57,7 +61,7 @@ public final class LiveEventTrackEventInner {
 
     /**
      * Get the eventTime property: The time event raised.
-     *
+     * 
      * @return the eventTime value.
      */
     public OffsetDateTime eventTime() {
@@ -66,7 +70,7 @@ public final class LiveEventTrackEventInner {
 
     /**
      * Set the eventTime property: The time event raised.
-     *
+     * 
      * @param eventTime the eventTime value to set.
      * @return the LiveEventTrackEventInner object itself.
      */
@@ -77,7 +81,7 @@ public final class LiveEventTrackEventInner {
 
     /**
      * Get the data property: Event data.
-     *
+     * 
      * @return the data value.
      */
     public LiveEventTrackEventData data() {
@@ -86,7 +90,7 @@ public final class LiveEventTrackEventInner {
 
     /**
      * Set the data property: Event data.
-     *
+     * 
      * @param data the data value to set.
      * @return the LiveEventTrackEventInner object itself.
      */
@@ -97,7 +101,7 @@ public final class LiveEventTrackEventInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -6,34 +6,36 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.GenerateCertResponseInner;
 
-/** An immutable client-side representation of GenerateCertResponse. */
+/**
+ * An immutable client-side representation of GenerateCertResponse.
+ */
 public interface GenerateCertResponse {
     /**
-     * Gets the publicKey property: Gets or sets base64 encoded certificate raw data, this is the public part needed to
-     * be uploaded to cert vault.
-     *
+     * Gets the publicKey property: Gets or sets base64 encoded certificate raw data,
+     * this is the public part needed to be uploaded to cert vault.
+     * 
      * @return the publicKey value.
      */
     String publicKey();
 
     /**
-     * Gets the privateKey property: Gets or sets base64 encoded private part of the certificate, needed to form the
-     * activation key.
-     *
+     * Gets the privateKey property: Gets or sets base64 encoded private part of the certificate,
+     * needed to form the activation key.
+     * 
      * @return the privateKey value.
      */
     String privateKey();
 
     /**
      * Gets the expiryTimeInUtc property: Gets or sets expiry time in UTC.
-     *
+     * 
      * @return the expiryTimeInUtc value.
      */
     String expiryTimeInUtc();
 
     /**
      * Gets the inner com.azure.resourcemanager.databoxedge.generated.fluent.models.GenerateCertResponseInner object.
-     *
+     * 
      * @return the inner object.
      */
     GenerateCertResponseInner innerModel();

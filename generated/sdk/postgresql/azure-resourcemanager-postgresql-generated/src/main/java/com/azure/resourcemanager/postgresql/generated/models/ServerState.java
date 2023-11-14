@@ -8,23 +8,33 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** A state of a server that is visible to user. */
+/**
+ * A state of a server that is visible to user.
+ */
 public final class ServerState extends ExpandableStringEnum<ServerState> {
-    /** Static value Ready for ServerState. */
+    /**
+     * Static value Ready for ServerState.
+     */
     public static final ServerState READY = fromString("Ready");
 
-    /** Static value Dropping for ServerState. */
+    /**
+     * Static value Dropping for ServerState.
+     */
     public static final ServerState DROPPING = fromString("Dropping");
 
-    /** Static value Disabled for ServerState. */
+    /**
+     * Static value Disabled for ServerState.
+     */
     public static final ServerState DISABLED = fromString("Disabled");
 
-    /** Static value Inaccessible for ServerState. */
+    /**
+     * Static value Inaccessible for ServerState.
+     */
     public static final ServerState INACCESSIBLE = fromString("Inaccessible");
 
     /**
      * Creates a new instance of ServerState value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -33,7 +43,7 @@ public final class ServerState extends ExpandableStringEnum<ServerState> {
 
     /**
      * Creates or finds a ServerState from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding ServerState.
      */
@@ -44,7 +54,7 @@ public final class ServerState extends ExpandableStringEnum<ServerState> {
 
     /**
      * Gets known ServerState values.
-     *
+     * 
      * @return known ServerState values.
      */
     public static Collection<ServerState> values() {

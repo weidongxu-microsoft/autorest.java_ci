@@ -10,15 +10,17 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.consumption.generated.fluent.models.ManagementGroupAggregatedCostResultInner;
 
-/** An instance of this class provides access to all the operations defined in AggregatedCostsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in AggregatedCostsClient.
+ */
 public interface AggregatedCostsClient {
     /**
      * Provides the aggregate cost of a management group and all child management groups by current billing period.
-     *
+     * 
      * @param managementGroupId Azure Management Group ID.
      * @param filter May be used to filter aggregated cost by properties/usageStart (Utc time), properties/usageEnd (Utc
-     *     time). The filter supports 'eq', 'lt', 'gt', 'le', 'ge', and 'and'. It does not currently support 'ne', 'or',
-     *     or 'not'. Tag filter is a key value pair string where key and value is separated by a colon (:).
+     * time). The filter supports 'eq', 'lt', 'gt', 'le', 'ge', and 'and'. It does not currently support 'ne', 'or', or
+     * 'not'. Tag filter is a key value pair string where key and value is separated by a colon (:).
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -26,12 +28,12 @@ public interface AggregatedCostsClient {
      * @return a management group aggregated cost resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<ManagementGroupAggregatedCostResultInner> getByManagementGroupWithResponse(
-        String managementGroupId, String filter, Context context);
+    Response<ManagementGroupAggregatedCostResultInner> getByManagementGroupWithResponse(String managementGroupId,
+        String filter, Context context);
 
     /**
      * Provides the aggregate cost of a management group and all child management groups by current billing period.
-     *
+     * 
      * @param managementGroupId Azure Management Group ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -43,7 +45,7 @@ public interface AggregatedCostsClient {
 
     /**
      * Provides the aggregate cost of a management group and all child management groups by specified billing period.
-     *
+     * 
      * @param managementGroupId Azure Management Group ID.
      * @param billingPeriodName Billing Period Name.
      * @param context The context to associate with this operation.
@@ -58,7 +60,7 @@ public interface AggregatedCostsClient {
 
     /**
      * Provides the aggregate cost of a management group and all child management groups by specified billing period.
-     *
+     * 
      * @param managementGroupId Azure Management Group ID.
      * @param billingPeriodName Billing Period Name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -67,6 +69,6 @@ public interface AggregatedCostsClient {
      * @return a management group aggregated cost resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ManagementGroupAggregatedCostResultInner getForBillingPeriodByManagementGroup(
-        String managementGroupId, String billingPeriodName);
+    ManagementGroupAggregatedCostResultInner getForBillingPeriodByManagementGroup(String managementGroupId,
+        String billingPeriodName);
 }

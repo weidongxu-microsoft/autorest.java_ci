@@ -14,11 +14,13 @@ import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.PrivateEndpointConnectionInner;
 import com.azure.resourcemanager.keyvault.generated.models.PrivateEndpointConnectionsPutResponse;
 
-/** An instance of this class provides access to all the operations defined in PrivateEndpointConnectionsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in PrivateEndpointConnectionsClient.
+ */
 public interface PrivateEndpointConnectionsClient {
     /**
      * Gets the specified private endpoint connection associated with the key vault.
-     *
+     * 
      * @param resourceGroupName Name of the resource group that contains the key vault.
      * @param vaultName The name of the key vault.
      * @param privateEndpointConnectionName Name of the private endpoint connection associated with the key vault.
@@ -29,12 +31,12 @@ public interface PrivateEndpointConnectionsClient {
      * @return the specified private endpoint connection associated with the key vault along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<PrivateEndpointConnectionInner> getWithResponse(
-        String resourceGroupName, String vaultName, String privateEndpointConnectionName, Context context);
+    Response<PrivateEndpointConnectionInner> getWithResponse(String resourceGroupName, String vaultName,
+        String privateEndpointConnectionName, Context context);
 
     /**
      * Gets the specified private endpoint connection associated with the key vault.
-     *
+     * 
      * @param resourceGroupName Name of the resource group that contains the key vault.
      * @param vaultName The name of the key vault.
      * @param privateEndpointConnectionName Name of the private endpoint connection associated with the key vault.
@@ -44,12 +46,12 @@ public interface PrivateEndpointConnectionsClient {
      * @return the specified private endpoint connection associated with the key vault.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    PrivateEndpointConnectionInner get(
-        String resourceGroupName, String vaultName, String privateEndpointConnectionName);
+    PrivateEndpointConnectionInner get(String resourceGroupName, String vaultName,
+        String privateEndpointConnectionName);
 
     /**
      * Updates the specified private endpoint connection associated with the key vault.
-     *
+     * 
      * @param resourceGroupName Name of the resource group that contains the key vault.
      * @param vaultName The name of the key vault.
      * @param privateEndpointConnectionName Name of the private endpoint connection associated with the key vault.
@@ -61,16 +63,12 @@ public interface PrivateEndpointConnectionsClient {
      * @return private endpoint connection resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    PrivateEndpointConnectionsPutResponse putWithResponse(
-        String resourceGroupName,
-        String vaultName,
-        String privateEndpointConnectionName,
-        PrivateEndpointConnectionInner properties,
-        Context context);
+    PrivateEndpointConnectionsPutResponse putWithResponse(String resourceGroupName, String vaultName,
+        String privateEndpointConnectionName, PrivateEndpointConnectionInner properties, Context context);
 
     /**
      * Updates the specified private endpoint connection associated with the key vault.
-     *
+     * 
      * @param resourceGroupName Name of the resource group that contains the key vault.
      * @param vaultName The name of the key vault.
      * @param privateEndpointConnectionName Name of the private endpoint connection associated with the key vault.
@@ -81,15 +79,12 @@ public interface PrivateEndpointConnectionsClient {
      * @return private endpoint connection resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    PrivateEndpointConnectionInner put(
-        String resourceGroupName,
-        String vaultName,
-        String privateEndpointConnectionName,
+    PrivateEndpointConnectionInner put(String resourceGroupName, String vaultName, String privateEndpointConnectionName,
         PrivateEndpointConnectionInner properties);
 
     /**
      * Deletes the specified private endpoint connection associated with the key vault.
-     *
+     * 
      * @param resourceGroupName Name of the resource group that contains the key vault.
      * @param vaultName The name of the key vault.
      * @param privateEndpointConnectionName Name of the private endpoint connection associated with the key vault.
@@ -99,12 +94,12 @@ public interface PrivateEndpointConnectionsClient {
      * @return the {@link SyncPoller} for polling of private endpoint connection resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<PrivateEndpointConnectionInner>, PrivateEndpointConnectionInner> beginDelete(
-        String resourceGroupName, String vaultName, String privateEndpointConnectionName);
+    SyncPoller<PollResult<PrivateEndpointConnectionInner>, PrivateEndpointConnectionInner>
+        beginDelete(String resourceGroupName, String vaultName, String privateEndpointConnectionName);
 
     /**
      * Deletes the specified private endpoint connection associated with the key vault.
-     *
+     * 
      * @param resourceGroupName Name of the resource group that contains the key vault.
      * @param vaultName The name of the key vault.
      * @param privateEndpointConnectionName Name of the private endpoint connection associated with the key vault.
@@ -115,12 +110,12 @@ public interface PrivateEndpointConnectionsClient {
      * @return the {@link SyncPoller} for polling of private endpoint connection resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<PrivateEndpointConnectionInner>, PrivateEndpointConnectionInner> beginDelete(
-        String resourceGroupName, String vaultName, String privateEndpointConnectionName, Context context);
+    SyncPoller<PollResult<PrivateEndpointConnectionInner>, PrivateEndpointConnectionInner>
+        beginDelete(String resourceGroupName, String vaultName, String privateEndpointConnectionName, Context context);
 
     /**
      * Deletes the specified private endpoint connection associated with the key vault.
-     *
+     * 
      * @param resourceGroupName Name of the resource group that contains the key vault.
      * @param vaultName The name of the key vault.
      * @param privateEndpointConnectionName Name of the private endpoint connection associated with the key vault.
@@ -130,12 +125,12 @@ public interface PrivateEndpointConnectionsClient {
      * @return private endpoint connection resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    PrivateEndpointConnectionInner delete(
-        String resourceGroupName, String vaultName, String privateEndpointConnectionName);
+    PrivateEndpointConnectionInner delete(String resourceGroupName, String vaultName,
+        String privateEndpointConnectionName);
 
     /**
      * Deletes the specified private endpoint connection associated with the key vault.
-     *
+     * 
      * @param resourceGroupName Name of the resource group that contains the key vault.
      * @param vaultName The name of the key vault.
      * @param privateEndpointConnectionName Name of the private endpoint connection associated with the key vault.
@@ -146,12 +141,12 @@ public interface PrivateEndpointConnectionsClient {
      * @return private endpoint connection resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    PrivateEndpointConnectionInner delete(
-        String resourceGroupName, String vaultName, String privateEndpointConnectionName, Context context);
+    PrivateEndpointConnectionInner delete(String resourceGroupName, String vaultName,
+        String privateEndpointConnectionName, Context context);
 
     /**
      * The List operation gets information about the private endpoint connections associated with the vault.
-     *
+     * 
      * @param resourceGroupName Name of the resource group that contains the key vault.
      * @param vaultName The name of the key vault.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -164,7 +159,7 @@ public interface PrivateEndpointConnectionsClient {
 
     /**
      * The List operation gets information about the private endpoint connections associated with the vault.
-     *
+     * 
      * @param resourceGroupName Name of the resource group that contains the key vault.
      * @param vaultName The name of the key vault.
      * @param context The context to associate with this operation.
@@ -174,6 +169,6 @@ public interface PrivateEndpointConnectionsClient {
      * @return list of private endpoint connections as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<PrivateEndpointConnectionInner> listByResource(
-        String resourceGroupName, String vaultName, Context context);
+    PagedIterable<PrivateEndpointConnectionInner> listByResource(String resourceGroupName, String vaultName,
+        Context context);
 }

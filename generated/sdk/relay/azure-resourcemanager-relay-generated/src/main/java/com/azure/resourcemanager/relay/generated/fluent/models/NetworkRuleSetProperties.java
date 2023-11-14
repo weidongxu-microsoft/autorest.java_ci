@@ -11,7 +11,9 @@ import com.azure.resourcemanager.relay.generated.models.PublicNetworkAccess;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** NetworkRuleSet properties. */
+/**
+ * NetworkRuleSet properties.
+ */
 @Fluent
 public final class NetworkRuleSetProperties {
     /*
@@ -32,13 +34,15 @@ public final class NetworkRuleSetProperties {
     @JsonProperty(value = "ipRules")
     private List<NWRuleSetIpRules> ipRules;
 
-    /** Creates an instance of NetworkRuleSetProperties class. */
+    /**
+     * Creates an instance of NetworkRuleSetProperties class.
+     */
     public NetworkRuleSetProperties() {
     }
 
     /**
      * Get the defaultAction property: Default Action for Network Rule Set.
-     *
+     * 
      * @return the defaultAction value.
      */
     public DefaultAction defaultAction() {
@@ -47,7 +51,7 @@ public final class NetworkRuleSetProperties {
 
     /**
      * Set the defaultAction property: Default Action for Network Rule Set.
-     *
+     * 
      * @param defaultAction the defaultAction value to set.
      * @return the NetworkRuleSetProperties object itself.
      */
@@ -57,9 +61,9 @@ public final class NetworkRuleSetProperties {
     }
 
     /**
-     * Get the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
-     * enabled.
-     *
+     * Get the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it
+     * is enabled.
+     * 
      * @return the publicNetworkAccess value.
      */
     public PublicNetworkAccess publicNetworkAccess() {
@@ -67,9 +71,9 @@ public final class NetworkRuleSetProperties {
     }
 
     /**
-     * Set the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
-     * enabled.
-     *
+     * Set the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it
+     * is enabled.
+     * 
      * @param publicNetworkAccess the publicNetworkAccess value to set.
      * @return the NetworkRuleSetProperties object itself.
      */
@@ -80,7 +84,7 @@ public final class NetworkRuleSetProperties {
 
     /**
      * Get the ipRules property: List of IpRules.
-     *
+     * 
      * @return the ipRules value.
      */
     public List<NWRuleSetIpRules> ipRules() {
@@ -89,7 +93,7 @@ public final class NetworkRuleSetProperties {
 
     /**
      * Set the ipRules property: List of IpRules.
-     *
+     * 
      * @param ipRules the ipRules value to set.
      * @return the NetworkRuleSetProperties object itself.
      */
@@ -100,7 +104,7 @@ public final class NetworkRuleSetProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

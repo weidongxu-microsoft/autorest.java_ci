@@ -20,14 +20,14 @@ public final class LogAnalyticsImpl implements LogAnalytics {
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    public LogAnalyticsImpl(
-        LogAnalyticsClient innerClient, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
+    public LogAnalyticsImpl(LogAnalyticsClient innerClient,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public LogAnalyticsOperationResult exportRequestRateByInterval(
-        String location, RequestRateByIntervalInput parameters) {
+    public LogAnalyticsOperationResult exportRequestRateByInterval(String location,
+        RequestRateByIntervalInput parameters) {
         LogAnalyticsOperationResultInner inner = this.serviceClient().exportRequestRateByInterval(location, parameters);
         if (inner != null) {
             return new LogAnalyticsOperationResultImpl(inner, this.manager());
@@ -36,10 +36,10 @@ public final class LogAnalyticsImpl implements LogAnalytics {
         }
     }
 
-    public LogAnalyticsOperationResult exportRequestRateByInterval(
-        String location, RequestRateByIntervalInput parameters, Context context) {
-        LogAnalyticsOperationResultInner inner =
-            this.serviceClient().exportRequestRateByInterval(location, parameters, context);
+    public LogAnalyticsOperationResult exportRequestRateByInterval(String location,
+        RequestRateByIntervalInput parameters, Context context) {
+        LogAnalyticsOperationResultInner inner
+            = this.serviceClient().exportRequestRateByInterval(location, parameters, context);
         if (inner != null) {
             return new LogAnalyticsOperationResultImpl(inner, this.manager());
         } else {
@@ -56,10 +56,10 @@ public final class LogAnalyticsImpl implements LogAnalytics {
         }
     }
 
-    public LogAnalyticsOperationResult exportThrottledRequests(
-        String location, ThrottledRequestsInput parameters, Context context) {
-        LogAnalyticsOperationResultInner inner =
-            this.serviceClient().exportThrottledRequests(location, parameters, context);
+    public LogAnalyticsOperationResult exportThrottledRequests(String location, ThrottledRequestsInput parameters,
+        Context context) {
+        LogAnalyticsOperationResultInner inner
+            = this.serviceClient().exportThrottledRequests(location, parameters, context);
         if (inner != null) {
             return new LogAnalyticsOperationResultImpl(inner, this.manager());
         } else {

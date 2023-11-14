@@ -14,8 +14,7 @@ public final class AseV3NetworkingConfigurationImpl implements AseV3NetworkingCo
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    AseV3NetworkingConfigurationImpl(
-        AseV3NetworkingConfigurationInner innerObject,
+    AseV3NetworkingConfigurationImpl(AseV3NetworkingConfigurationInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** NUMA node data. */
+/**
+ * NUMA node data.
+ */
 @Fluent
 public final class NumaNodeData {
     /*
@@ -53,13 +55,15 @@ public final class NumaNodeData {
     @JsonProperty(value = "vCpuIndexesForRoot")
     private List<Integer> vCpuIndexesForRoot;
 
-    /** Creates an instance of NumaNodeData class. */
+    /**
+     * Creates an instance of NumaNodeData class.
+     */
     public NumaNodeData() {
     }
 
     /**
      * Get the numaNodeIndex property: The NUMA node index.
-     *
+     * 
      * @return the numaNodeIndex value.
      */
     public Integer numaNodeIndex() {
@@ -68,7 +72,7 @@ public final class NumaNodeData {
 
     /**
      * Set the numaNodeIndex property: The NUMA node index.
-     *
+     * 
      * @param numaNodeIndex the numaNodeIndex value to set.
      * @return the NumaNodeData object itself.
      */
@@ -79,7 +83,7 @@ public final class NumaNodeData {
 
     /**
      * Get the totalMemoryInMb property: The total memory on the NUMA node.
-     *
+     * 
      * @return the totalMemoryInMb value.
      */
     public Long totalMemoryInMb() {
@@ -88,7 +92,7 @@ public final class NumaNodeData {
 
     /**
      * Set the totalMemoryInMb property: The total memory on the NUMA node.
-     *
+     * 
      * @param totalMemoryInMb the totalMemoryInMb value to set.
      * @return the NumaNodeData object itself.
      */
@@ -99,7 +103,7 @@ public final class NumaNodeData {
 
     /**
      * Get the logicalCoreCountPerCore property: The logical cores per core count.
-     *
+     * 
      * @return the logicalCoreCountPerCore value.
      */
     public Integer logicalCoreCountPerCore() {
@@ -108,7 +112,7 @@ public final class NumaNodeData {
 
     /**
      * Set the logicalCoreCountPerCore property: The logical cores per core count.
-     *
+     * 
      * @param logicalCoreCountPerCore the logicalCoreCountPerCore value to set.
      * @return the NumaNodeData object itself.
      */
@@ -119,7 +123,7 @@ public final class NumaNodeData {
 
     /**
      * Get the effectiveAvailableMemoryInMb property: The effective available memory on the NUMA node in MB.
-     *
+     * 
      * @return the effectiveAvailableMemoryInMb value.
      */
     public Long effectiveAvailableMemoryInMb() {
@@ -128,7 +132,7 @@ public final class NumaNodeData {
 
     /**
      * Set the effectiveAvailableMemoryInMb property: The effective available memory on the NUMA node in MB.
-     *
+     * 
      * @param effectiveAvailableMemoryInMb the effectiveAvailableMemoryInMb value to set.
      * @return the NumaNodeData object itself.
      */
@@ -139,7 +143,7 @@ public final class NumaNodeData {
 
     /**
      * Get the freeVCpuIndexesForHpn property: The free VCPU indices for the Hpn VMs.
-     *
+     * 
      * @return the freeVCpuIndexesForHpn value.
      */
     public List<Integer> freeVCpuIndexesForHpn() {
@@ -148,7 +152,7 @@ public final class NumaNodeData {
 
     /**
      * Set the freeVCpuIndexesForHpn property: The free VCPU indices for the Hpn VMs.
-     *
+     * 
      * @param freeVCpuIndexesForHpn the freeVCpuIndexesForHpn value to set.
      * @return the NumaNodeData object itself.
      */
@@ -159,7 +163,7 @@ public final class NumaNodeData {
 
     /**
      * Get the vCpuIndexesForHpn property: The VCPU indices for Hpn VMs.
-     *
+     * 
      * @return the vCpuIndexesForHpn value.
      */
     public List<Integer> vCpuIndexesForHpn() {
@@ -168,7 +172,7 @@ public final class NumaNodeData {
 
     /**
      * Set the vCpuIndexesForHpn property: The VCPU indices for Hpn VMs.
-     *
+     * 
      * @param vCpuIndexesForHpn the vCpuIndexesForHpn value to set.
      * @return the NumaNodeData object itself.
      */
@@ -179,7 +183,7 @@ public final class NumaNodeData {
 
     /**
      * Get the vCpuIndexesForRoot property: The VCPU indices for the root.
-     *
+     * 
      * @return the vCpuIndexesForRoot value.
      */
     public List<Integer> vCpuIndexesForRoot() {
@@ -188,7 +192,7 @@ public final class NumaNodeData {
 
     /**
      * Set the vCpuIndexesForRoot property: The VCPU indices for the root.
-     *
+     * 
      * @param vCpuIndexesForRoot the vCpuIndexesForRoot value to set.
      * @return the NumaNodeData object itself.
      */
@@ -199,7 +203,7 @@ public final class NumaNodeData {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

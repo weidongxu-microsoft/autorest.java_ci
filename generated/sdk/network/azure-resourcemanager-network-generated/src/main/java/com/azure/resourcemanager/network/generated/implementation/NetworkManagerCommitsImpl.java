@@ -18,15 +18,14 @@ public final class NetworkManagerCommitsImpl implements NetworkManagerCommits {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public NetworkManagerCommitsImpl(
-        NetworkManagerCommitsClient innerClient,
+    public NetworkManagerCommitsImpl(NetworkManagerCommitsClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public NetworkManagerCommit post(
-        String resourceGroupName, String networkManagerName, NetworkManagerCommitInner parameters) {
+    public NetworkManagerCommit post(String resourceGroupName, String networkManagerName,
+        NetworkManagerCommitInner parameters) {
         NetworkManagerCommitInner inner = this.serviceClient().post(resourceGroupName, networkManagerName, parameters);
         if (inner != null) {
             return new NetworkManagerCommitImpl(inner, this.manager());
@@ -35,10 +34,10 @@ public final class NetworkManagerCommitsImpl implements NetworkManagerCommits {
         }
     }
 
-    public NetworkManagerCommit post(
-        String resourceGroupName, String networkManagerName, NetworkManagerCommitInner parameters, Context context) {
-        NetworkManagerCommitInner inner =
-            this.serviceClient().post(resourceGroupName, networkManagerName, parameters, context);
+    public NetworkManagerCommit post(String resourceGroupName, String networkManagerName,
+        NetworkManagerCommitInner parameters, Context context) {
+        NetworkManagerCommitInner inner
+            = this.serviceClient().post(resourceGroupName, networkManagerName, parameters, context);
         if (inner != null) {
             return new NetworkManagerCommitImpl(inner, this.manager());
         } else {

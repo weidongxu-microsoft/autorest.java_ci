@@ -6,39 +6,41 @@ package com.azure.resourcemanager.network.generated.models;
 
 import com.azure.resourcemanager.network.generated.fluent.models.AvailablePrivateEndpointTypeInner;
 
-/** An immutable client-side representation of AvailablePrivateEndpointType. */
+/**
+ * An immutable client-side representation of AvailablePrivateEndpointType.
+ */
 public interface AvailablePrivateEndpointType {
     /**
      * Gets the name property: The name of the service and resource.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the id property: A unique identifier of the AvailablePrivateEndpoint Type resource.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the type property: Resource type.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the resourceName property: The name of the service and resource.
-     *
+     * 
      * @return the resourceName value.
      */
     String resourceName();
 
     /**
      * Gets the displayName property: Display name of the resource.
-     *
+     * 
      * @return the displayName value.
      */
     String displayName();
@@ -46,7 +48,7 @@ public interface AvailablePrivateEndpointType {
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.AvailablePrivateEndpointTypeInner
      * object.
-     *
+     * 
      * @return the inner object.
      */
     AvailablePrivateEndpointTypeInner innerModel();

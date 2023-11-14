@@ -20,8 +20,8 @@ public final class TagsImpl implements Tags {
 
     private final com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager;
 
-    public TagsImpl(
-        TagsClient innerClient, com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager) {
+    public TagsImpl(TagsClient innerClient,
+        com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -29,10 +29,7 @@ public final class TagsImpl implements Tags {
     public Response<TagsResult> getWithResponse(String scope, Context context) {
         Response<TagsResultInner> inner = this.serviceClient().getWithResponse(scope, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new TagsResultImpl(inner.getValue(), this.manager()));
         } else {
             return null;

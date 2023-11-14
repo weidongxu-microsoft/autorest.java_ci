@@ -20,22 +20,18 @@ public final class PrivateLinkResourcesImpl implements PrivateLinkResources {
 
     private final com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager;
 
-    public PrivateLinkResourcesImpl(
-        PrivateLinkResourcesClient innerClient,
+    public PrivateLinkResourcesImpl(PrivateLinkResourcesClient innerClient,
         com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<PrivateLinkResourceListResult> listByVaultWithResponse(
-        String resourceGroupName, String vaultName, Context context) {
-        Response<PrivateLinkResourceListResultInner> inner =
-            this.serviceClient().listByVaultWithResponse(resourceGroupName, vaultName, context);
+    public Response<PrivateLinkResourceListResult> listByVaultWithResponse(String resourceGroupName, String vaultName,
+        Context context) {
+        Response<PrivateLinkResourceListResultInner> inner
+            = this.serviceClient().listByVaultWithResponse(resourceGroupName, vaultName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new PrivateLinkResourceListResultImpl(inner.getValue(), this.manager()));
         } else {
             return null;

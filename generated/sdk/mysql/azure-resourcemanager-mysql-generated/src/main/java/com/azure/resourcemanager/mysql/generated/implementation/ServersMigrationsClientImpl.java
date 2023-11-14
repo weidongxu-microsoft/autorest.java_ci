@@ -30,22 +30,28 @@ import java.nio.ByteBuffer;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-/** An instance of this class provides access to all the operations defined in ServersMigrationsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in ServersMigrationsClient.
+ */
 public final class ServersMigrationsClientImpl implements ServersMigrationsClient {
-    /** The proxy service used to perform REST calls. */
+    /**
+     * The proxy service used to perform REST calls.
+     */
     private final ServersMigrationsService service;
 
-    /** The service client containing this operation class. */
+    /**
+     * The service client containing this operation class.
+     */
     private final MySqlManagementClientImpl client;
 
     /**
      * Initializes an instance of ServersMigrationsClientImpl.
-     *
+     * 
      * @param client the instance of the service client containing this operation class.
      */
     ServersMigrationsClientImpl(MySqlManagementClientImpl client) {
-        this.service =
-            RestProxy.create(ServersMigrationsService.class, client.getHttpPipeline(), client.getSerializerAdapter());
+        this.service
+            = RestProxy.create(ServersMigrationsService.class, client.getHttpPipeline(), client.getSerializerAdapter());
         this.client = client;
     }
 
@@ -56,24 +62,19 @@ public final class ServersMigrationsClientImpl implements ServersMigrationsClien
     @Host("{$host}")
     @ServiceInterface(name = "MySqlManagementClien")
     public interface ServersMigrationsService {
-        @Headers({"Content-Type: application/json"})
-        @Post(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMySQL/flexibleServers/{serverName}/cutoverMigration")
-        @ExpectedResponses({200, 202})
+        @Headers({ "Content-Type: application/json" })
+        @Post("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMySQL/flexibleServers/{serverName}/cutoverMigration")
+        @ExpectedResponses({ 200, 202 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<Flux<ByteBuffer>>> cutoverMigration(
-            @HostParam("$host") String endpoint,
-            @QueryParam("api-version") String apiVersion,
-            @PathParam("subscriptionId") String subscriptionId,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("serverName") String serverName,
-            @HeaderParam("Accept") String accept,
-            Context context);
+        Mono<Response<Flux<ByteBuffer>>> cutoverMigration(@HostParam("$host") String endpoint,
+            @QueryParam("api-version") String apiVersion, @PathParam("subscriptionId") String subscriptionId,
+            @PathParam("resourceGroupName") String resourceGroupName, @PathParam("serverName") String serverName,
+            @HeaderParam("Accept") String accept, Context context);
     }
 
     /**
      * Cutover migration for MySQL import, it will switch source elastic server DNS to flexible server.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -82,19 +83,15 @@ public final class ServersMigrationsClientImpl implements ServersMigrationsClien
      * @return represents a server along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> cutoverMigrationWithResponseAsync(
-        String resourceGroupName, String serverName) {
+    private Mono<Response<Flux<ByteBuffer>>> cutoverMigrationWithResponseAsync(String resourceGroupName,
+        String serverName) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -103,25 +100,17 @@ public final class ServersMigrationsClientImpl implements ServersMigrationsClien
         if (serverName == null) {
             return Mono.error(new IllegalArgumentException("Parameter serverName is required and cannot be null."));
         }
+        final String apiVersion = "2023-10-01-preview";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .cutoverMigration(
-                            this.client.getEndpoint(),
-                            this.client.getApiVersion(),
-                            this.client.getSubscriptionId(),
-                            resourceGroupName,
-                            serverName,
-                            accept,
-                            context))
+            .withContext(context -> service.cutoverMigration(this.client.getEndpoint(), apiVersion,
+                this.client.getSubscriptionId(), resourceGroupName, serverName, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Cutover migration for MySQL import, it will switch source elastic server DNS to flexible server.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param context The context to associate with this operation.
@@ -131,19 +120,15 @@ public final class ServersMigrationsClientImpl implements ServersMigrationsClien
      * @return represents a server along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> cutoverMigrationWithResponseAsync(
-        String resourceGroupName, String serverName, Context context) {
+    private Mono<Response<Flux<ByteBuffer>>> cutoverMigrationWithResponseAsync(String resourceGroupName,
+        String serverName, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -152,22 +137,16 @@ public final class ServersMigrationsClientImpl implements ServersMigrationsClien
         if (serverName == null) {
             return Mono.error(new IllegalArgumentException("Parameter serverName is required and cannot be null."));
         }
+        final String apiVersion = "2023-10-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .cutoverMigration(
-                this.client.getEndpoint(),
-                this.client.getApiVersion(),
-                this.client.getSubscriptionId(),
-                resourceGroupName,
-                serverName,
-                accept,
-                context);
+        return service.cutoverMigration(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(),
+            resourceGroupName, serverName, accept, context);
     }
 
     /**
      * Cutover migration for MySQL import, it will switch source elastic server DNS to flexible server.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -176,18 +155,16 @@ public final class ServersMigrationsClientImpl implements ServersMigrationsClien
      * @return the {@link PollerFlux} for polling of represents a server.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    private PollerFlux<PollResult<ServerInner>, ServerInner> beginCutoverMigrationAsync(
-        String resourceGroupName, String serverName) {
+    private PollerFlux<PollResult<ServerInner>, ServerInner> beginCutoverMigrationAsync(String resourceGroupName,
+        String serverName) {
         Mono<Response<Flux<ByteBuffer>>> mono = cutoverMigrationWithResponseAsync(resourceGroupName, serverName);
-        return this
-            .client
-            .<ServerInner, ServerInner>getLroResult(
-                mono, this.client.getHttpPipeline(), ServerInner.class, ServerInner.class, this.client.getContext());
+        return this.client.<ServerInner, ServerInner>getLroResult(mono, this.client.getHttpPipeline(),
+            ServerInner.class, ServerInner.class, this.client.getContext());
     }
 
     /**
      * Cutover migration for MySQL import, it will switch source elastic server DNS to flexible server.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param context The context to associate with this operation.
@@ -197,20 +174,18 @@ public final class ServersMigrationsClientImpl implements ServersMigrationsClien
      * @return the {@link PollerFlux} for polling of represents a server.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    private PollerFlux<PollResult<ServerInner>, ServerInner> beginCutoverMigrationAsync(
-        String resourceGroupName, String serverName, Context context) {
+    private PollerFlux<PollResult<ServerInner>, ServerInner> beginCutoverMigrationAsync(String resourceGroupName,
+        String serverName, Context context) {
         context = this.client.mergeContext(context);
-        Mono<Response<Flux<ByteBuffer>>> mono =
-            cutoverMigrationWithResponseAsync(resourceGroupName, serverName, context);
-        return this
-            .client
-            .<ServerInner, ServerInner>getLroResult(
-                mono, this.client.getHttpPipeline(), ServerInner.class, ServerInner.class, context);
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = cutoverMigrationWithResponseAsync(resourceGroupName, serverName, context);
+        return this.client.<ServerInner, ServerInner>getLroResult(mono, this.client.getHttpPipeline(),
+            ServerInner.class, ServerInner.class, context);
     }
 
     /**
      * Cutover migration for MySQL import, it will switch source elastic server DNS to flexible server.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -219,14 +194,14 @@ public final class ServersMigrationsClientImpl implements ServersMigrationsClien
      * @return the {@link SyncPoller} for polling of represents a server.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<PollResult<ServerInner>, ServerInner> beginCutoverMigration(
-        String resourceGroupName, String serverName) {
+    public SyncPoller<PollResult<ServerInner>, ServerInner> beginCutoverMigration(String resourceGroupName,
+        String serverName) {
         return this.beginCutoverMigrationAsync(resourceGroupName, serverName).getSyncPoller();
     }
 
     /**
      * Cutover migration for MySQL import, it will switch source elastic server DNS to flexible server.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param context The context to associate with this operation.
@@ -236,14 +211,14 @@ public final class ServersMigrationsClientImpl implements ServersMigrationsClien
      * @return the {@link SyncPoller} for polling of represents a server.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<PollResult<ServerInner>, ServerInner> beginCutoverMigration(
-        String resourceGroupName, String serverName, Context context) {
+    public SyncPoller<PollResult<ServerInner>, ServerInner> beginCutoverMigration(String resourceGroupName,
+        String serverName, Context context) {
         return this.beginCutoverMigrationAsync(resourceGroupName, serverName, context).getSyncPoller();
     }
 
     /**
      * Cutover migration for MySQL import, it will switch source elastic server DNS to flexible server.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -253,14 +228,13 @@ public final class ServersMigrationsClientImpl implements ServersMigrationsClien
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ServerInner> cutoverMigrationAsync(String resourceGroupName, String serverName) {
-        return beginCutoverMigrationAsync(resourceGroupName, serverName)
-            .last()
+        return beginCutoverMigrationAsync(resourceGroupName, serverName).last()
             .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
      * Cutover migration for MySQL import, it will switch source elastic server DNS to flexible server.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param context The context to associate with this operation.
@@ -271,14 +245,13 @@ public final class ServersMigrationsClientImpl implements ServersMigrationsClien
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ServerInner> cutoverMigrationAsync(String resourceGroupName, String serverName, Context context) {
-        return beginCutoverMigrationAsync(resourceGroupName, serverName, context)
-            .last()
+        return beginCutoverMigrationAsync(resourceGroupName, serverName, context).last()
             .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
      * Cutover migration for MySQL import, it will switch source elastic server DNS to flexible server.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -293,7 +266,7 @@ public final class ServersMigrationsClientImpl implements ServersMigrationsClien
 
     /**
      * Cutover migration for MySQL import, it will switch source elastic server DNS to flexible server.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param context The context to associate with this operation.

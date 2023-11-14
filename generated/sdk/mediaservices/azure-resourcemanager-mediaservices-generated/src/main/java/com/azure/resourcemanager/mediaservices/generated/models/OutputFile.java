@@ -9,7 +9,9 @@ import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Represents an output file produced. */
+/**
+ * Represents an output file produced.
+ */
 @Fluent
 public final class OutputFile {
     /*
@@ -21,7 +23,9 @@ public final class OutputFile {
     @JsonProperty(value = "labels", required = true)
     private List<String> labels;
 
-    /** Creates an instance of OutputFile class. */
+    /**
+     * Creates an instance of OutputFile class.
+     */
     public OutputFile() {
     }
 
@@ -30,7 +34,7 @@ public final class OutputFile {
      * an output file. For example, if the encoder is producing two video layers with labels v1 and v2, and one audio
      * layer with label a1, then an array like '[v1, a1]' tells the encoder to produce an output file with the video
      * track represented by v1 and the audio track represented by a1.
-     *
+     * 
      * @return the labels value.
      */
     public List<String> labels() {
@@ -42,7 +46,7 @@ public final class OutputFile {
      * an output file. For example, if the encoder is producing two video layers with labels v1 and v2, and one audio
      * layer with label a1, then an array like '[v1, a1]' tells the encoder to produce an output file with the video
      * track represented by v1 and the audio track represented by a1.
-     *
+     * 
      * @param labels the labels value to set.
      * @return the OutputFile object itself.
      */
@@ -53,14 +57,13 @@ public final class OutputFile {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (labels() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property labels in model OutputFile"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property labels in model OutputFile"));
         }
     }
 

@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of FlowLogs. */
+/**
+ * Resource collection API of FlowLogs.
+ */
 public interface FlowLogs {
     /**
      * Gets a flow log resource by name.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param flowLogName The name of the flow log resource.
@@ -22,12 +24,12 @@ public interface FlowLogs {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a flow log resource by name along with {@link Response}.
      */
-    Response<FlowLog> getWithResponse(
-        String resourceGroupName, String networkWatcherName, String flowLogName, Context context);
+    Response<FlowLog> getWithResponse(String resourceGroupName, String networkWatcherName, String flowLogName,
+        Context context);
 
     /**
      * Gets a flow log resource by name.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param flowLogName The name of the flow log resource.
@@ -40,7 +42,7 @@ public interface FlowLogs {
 
     /**
      * Deletes the specified flow log resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param flowLogName The name of the flow log resource.
@@ -52,7 +54,7 @@ public interface FlowLogs {
 
     /**
      * Deletes the specified flow log resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param flowLogName The name of the flow log resource.
@@ -65,7 +67,7 @@ public interface FlowLogs {
 
     /**
      * Lists all flow log resources for the specified Network Watcher.
-     *
+     * 
      * @param resourceGroupName The name of the resource group containing Network Watcher.
      * @param networkWatcherName The name of the Network Watcher resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -77,7 +79,7 @@ public interface FlowLogs {
 
     /**
      * Lists all flow log resources for the specified Network Watcher.
-     *
+     * 
      * @param resourceGroupName The name of the resource group containing Network Watcher.
      * @param networkWatcherName The name of the Network Watcher resource.
      * @param context The context to associate with this operation.
@@ -90,7 +92,7 @@ public interface FlowLogs {
 
     /**
      * Gets a flow log resource by name.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -101,7 +103,7 @@ public interface FlowLogs {
 
     /**
      * Gets a flow log resource by name.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -113,7 +115,7 @@ public interface FlowLogs {
 
     /**
      * Deletes the specified flow log resource.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -123,7 +125,7 @@ public interface FlowLogs {
 
     /**
      * Deletes the specified flow log resource.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -134,7 +136,7 @@ public interface FlowLogs {
 
     /**
      * Begins definition for a new FlowLog resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new FlowLog definition.
      */

@@ -70,24 +70,16 @@ public final class VnetRouteImpl implements VnetRoute, VnetRoute.Definition, Vne
     }
 
     public VnetRoute create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getAppServicePlans()
-                .createOrUpdateVnetRouteWithResponse(
-                    resourceGroupName, name, vnetName, routeName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getAppServicePlans().createOrUpdateVnetRouteWithResponse(resourceGroupName,
+                name, vnetName, routeName, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public VnetRoute create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getAppServicePlans()
-                .createOrUpdateVnetRouteWithResponse(
-                    resourceGroupName, name, vnetName, routeName, this.innerModel(), context)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getAppServicePlans().createOrUpdateVnetRouteWithResponse(resourceGroupName,
+                name, vnetName, routeName, this.innerModel(), context).getValue();
         return this;
     }
 
@@ -102,28 +94,21 @@ public final class VnetRouteImpl implements VnetRoute, VnetRoute.Definition, Vne
     }
 
     public VnetRoute apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getAppServicePlans()
-                .updateVnetRouteWithResponse(
-                    resourceGroupName, name, vnetName, routeName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getAppServicePlans()
+            .updateVnetRouteWithResponse(resourceGroupName, name, vnetName, routeName, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public VnetRoute apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getAppServicePlans()
-                .updateVnetRouteWithResponse(resourceGroupName, name, vnetName, routeName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getAppServicePlans()
+            .updateVnetRouteWithResponse(resourceGroupName, name, vnetName, routeName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
-    VnetRouteImpl(
-        VnetRouteInner innerObject, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
+    VnetRouteImpl(VnetRouteInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

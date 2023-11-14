@@ -17,8 +17,7 @@ public final class PacketCaptureQueryStatusResultImpl implements PacketCaptureQu
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    PacketCaptureQueryStatusResultImpl(
-        PacketCaptureQueryStatusResultInner innerObject,
+    PacketCaptureQueryStatusResultImpl(PacketCaptureQueryStatusResultInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

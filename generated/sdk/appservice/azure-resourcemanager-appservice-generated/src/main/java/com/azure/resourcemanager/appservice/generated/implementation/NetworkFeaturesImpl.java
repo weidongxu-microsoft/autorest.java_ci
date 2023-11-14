@@ -20,8 +20,7 @@ public final class NetworkFeaturesImpl implements NetworkFeatures {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    NetworkFeaturesImpl(
-        NetworkFeaturesInner innerObject,
+    NetworkFeaturesImpl(NetworkFeaturesInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -54,12 +53,9 @@ public final class NetworkFeaturesImpl implements NetworkFeatures {
     public List<RelayServiceConnectionEntity> hybridConnections() {
         List<RelayServiceConnectionEntityInner> inner = this.innerModel().hybridConnections();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new RelayServiceConnectionEntityImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(
+                inner.stream().map(inner1 -> new RelayServiceConnectionEntityImpl(inner1, this.manager()))
+                    .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -68,12 +64,8 @@ public final class NetworkFeaturesImpl implements NetworkFeatures {
     public List<HybridConnection> hybridConnectionsV2() {
         List<HybridConnectionInner> inner = this.innerModel().hybridConnectionsV2();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new HybridConnectionImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new HybridConnectionImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

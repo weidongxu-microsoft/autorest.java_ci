@@ -9,7 +9,9 @@ import com.azure.resourcemanager.mediaservices.generated.fluent.models.LiveEvent
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Get live event status result. */
+/**
+ * Get live event status result.
+ */
 @Fluent
 public final class LiveEventGetStatusResult {
     /*
@@ -18,13 +20,15 @@ public final class LiveEventGetStatusResult {
     @JsonProperty(value = "value")
     private List<LiveEventStatusInner> value;
 
-    /** Creates an instance of LiveEventGetStatusResult class. */
+    /**
+     * Creates an instance of LiveEventGetStatusResult class.
+     */
     public LiveEventGetStatusResult() {
     }
 
     /**
      * Get the value property: The result of the get live event status.
-     *
+     * 
      * @return the value value.
      */
     public List<LiveEventStatusInner> value() {
@@ -33,7 +37,7 @@ public final class LiveEventGetStatusResult {
 
     /**
      * Set the value property: The result of the get live event status.
-     *
+     * 
      * @param value the value value to set.
      * @return the LiveEventGetStatusResult object itself.
      */
@@ -44,7 +48,7 @@ public final class LiveEventGetStatusResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of VirtualWans. */
+/**
+ * Resource collection API of VirtualWans.
+ */
 public interface VirtualWans {
     /**
      * Retrieves the details of a VirtualWAN.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualWan.
      * @param virtualWanName The name of the VirtualWAN being retrieved.
      * @param context The context to associate with this operation.
@@ -21,12 +23,12 @@ public interface VirtualWans {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return virtualWAN Resource along with {@link Response}.
      */
-    Response<VirtualWan> getByResourceGroupWithResponse(
-        String resourceGroupName, String virtualWanName, Context context);
+    Response<VirtualWan> getByResourceGroupWithResponse(String resourceGroupName, String virtualWanName,
+        Context context);
 
     /**
      * Retrieves the details of a VirtualWAN.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualWan.
      * @param virtualWanName The name of the VirtualWAN being retrieved.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -38,7 +40,7 @@ public interface VirtualWans {
 
     /**
      * Deletes a VirtualWAN.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualWan.
      * @param virtualWanName The name of the VirtualWAN being deleted.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -49,7 +51,7 @@ public interface VirtualWans {
 
     /**
      * Deletes a VirtualWAN.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualWan.
      * @param virtualWanName The name of the VirtualWAN being deleted.
      * @param context The context to associate with this operation.
@@ -61,7 +63,7 @@ public interface VirtualWans {
 
     /**
      * Lists all the VirtualWANs in a resource group.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualWan.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -72,7 +74,7 @@ public interface VirtualWans {
 
     /**
      * Lists all the VirtualWANs in a resource group.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualWan.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -84,7 +86,7 @@ public interface VirtualWans {
 
     /**
      * Lists all the VirtualWANs in a subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return result of the request to list VirtualWANs as paginated response with {@link PagedIterable}.
@@ -93,7 +95,7 @@ public interface VirtualWans {
 
     /**
      * Lists all the VirtualWANs in a subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -104,7 +106,7 @@ public interface VirtualWans {
 
     /**
      * Retrieves the details of a VirtualWAN.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -115,7 +117,7 @@ public interface VirtualWans {
 
     /**
      * Retrieves the details of a VirtualWAN.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -127,7 +129,7 @@ public interface VirtualWans {
 
     /**
      * Deletes a VirtualWAN.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -137,7 +139,7 @@ public interface VirtualWans {
 
     /**
      * Deletes a VirtualWAN.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -148,7 +150,7 @@ public interface VirtualWans {
 
     /**
      * Begins definition for a new VirtualWan resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new VirtualWan definition.
      */

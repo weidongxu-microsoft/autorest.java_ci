@@ -24,21 +24,18 @@ public final class SnapshotsImpl implements Snapshots {
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    public SnapshotsImpl(
-        SnapshotsClient innerClient, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
+    public SnapshotsImpl(SnapshotsClient innerClient,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<Snapshot> getByResourceGroupWithResponse(
-        String resourceGroupName, String snapshotName, Context context) {
-        Response<SnapshotInner> inner =
-            this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, snapshotName, context);
+    public Response<Snapshot> getByResourceGroupWithResponse(String resourceGroupName, String snapshotName,
+        Context context) {
+        Response<SnapshotInner> inner
+            = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, snapshotName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new SnapshotImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -91,10 +88,10 @@ public final class SnapshotsImpl implements Snapshots {
         }
     }
 
-    public AccessUri grantAccess(
-        String resourceGroupName, String snapshotName, GrantAccessData grantAccessData, Context context) {
-        AccessUriInner inner =
-            this.serviceClient().grantAccess(resourceGroupName, snapshotName, grantAccessData, context);
+    public AccessUri grantAccess(String resourceGroupName, String snapshotName, GrantAccessData grantAccessData,
+        Context context) {
+        AccessUriInner inner
+            = this.serviceClient().grantAccess(resourceGroupName, snapshotName, grantAccessData, context);
         if (inner != null) {
             return new AccessUriImpl(inner, this.manager());
         } else {
@@ -113,18 +110,13 @@ public final class SnapshotsImpl implements Snapshots {
     public Snapshot getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String snapshotName = Utils.getValueFromIdByName(id, "snapshots");
         if (snapshotName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'snapshots'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'snapshots'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, snapshotName, Context.NONE).getValue();
     }
@@ -132,18 +124,13 @@ public final class SnapshotsImpl implements Snapshots {
     public Response<Snapshot> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String snapshotName = Utils.getValueFromIdByName(id, "snapshots");
         if (snapshotName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'snapshots'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'snapshots'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, snapshotName, context);
     }
@@ -151,18 +138,13 @@ public final class SnapshotsImpl implements Snapshots {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String snapshotName = Utils.getValueFromIdByName(id, "snapshots");
         if (snapshotName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'snapshots'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'snapshots'.", id)));
         }
         this.delete(resourceGroupName, snapshotName, Context.NONE);
     }
@@ -170,18 +152,13 @@ public final class SnapshotsImpl implements Snapshots {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String snapshotName = Utils.getValueFromIdByName(id, "snapshots");
         if (snapshotName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'snapshots'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'snapshots'.", id)));
         }
         this.delete(resourceGroupName, snapshotName, context);
     }

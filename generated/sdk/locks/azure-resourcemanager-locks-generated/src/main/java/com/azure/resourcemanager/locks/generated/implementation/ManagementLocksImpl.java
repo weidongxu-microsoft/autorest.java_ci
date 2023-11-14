@@ -21,15 +21,14 @@ public final class ManagementLocksImpl implements ManagementLocks {
 
     private final com.azure.resourcemanager.locks.generated.ManagementLockManager serviceManager;
 
-    public ManagementLocksImpl(
-        ManagementLocksClient innerClient,
+    public ManagementLocksImpl(ManagementLocksClient innerClient,
         com.azure.resourcemanager.locks.generated.ManagementLockManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<Void> deleteByResourceGroupWithResponse(
-        String resourceGroupName, String lockName, Context context) {
+    public Response<Void> deleteByResourceGroupWithResponse(String resourceGroupName, String lockName,
+        Context context) {
         return this.serviceClient().deleteWithResponse(resourceGroupName, lockName, context);
     }
 
@@ -37,15 +36,12 @@ public final class ManagementLocksImpl implements ManagementLocks {
         this.serviceClient().delete(resourceGroupName, lockName);
     }
 
-    public Response<ManagementLockObject> getByResourceGroupWithResponse(
-        String resourceGroupName, String lockName, Context context) {
-        Response<ManagementLockObjectInner> inner =
-            this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, lockName, context);
+    public Response<ManagementLockObject> getByResourceGroupWithResponse(String resourceGroupName, String lockName,
+        Context context) {
+        Response<ManagementLockObjectInner> inner
+            = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, lockName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ManagementLockObjectImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -61,23 +57,20 @@ public final class ManagementLocksImpl implements ManagementLocks {
         }
     }
 
-    public Response<ManagementLockObject> createOrUpdateByScopeWithResponse(
-        String scope, String lockName, ManagementLockObjectInner parameters, Context context) {
-        Response<ManagementLockObjectInner> inner =
-            this.serviceClient().createOrUpdateByScopeWithResponse(scope, lockName, parameters, context);
+    public Response<ManagementLockObject> createOrUpdateByScopeWithResponse(String scope, String lockName,
+        ManagementLockObjectInner parameters, Context context) {
+        Response<ManagementLockObjectInner> inner
+            = this.serviceClient().createOrUpdateByScopeWithResponse(scope, lockName, parameters, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ManagementLockObjectImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public ManagementLockObject createOrUpdateByScope(
-        String scope, String lockName, ManagementLockObjectInner parameters) {
+    public ManagementLockObject createOrUpdateByScope(String scope, String lockName,
+        ManagementLockObjectInner parameters) {
         ManagementLockObjectInner inner = this.serviceClient().createOrUpdateByScope(scope, lockName, parameters);
         if (inner != null) {
             return new ManagementLockObjectImpl(inner, this.manager());
@@ -95,13 +88,10 @@ public final class ManagementLocksImpl implements ManagementLocks {
     }
 
     public Response<ManagementLockObject> getByScopeWithResponse(String scope, String lockName, Context context) {
-        Response<ManagementLockObjectInner> inner =
-            this.serviceClient().getByScopeWithResponse(scope, lockName, context);
+        Response<ManagementLockObjectInner> inner
+            = this.serviceClient().getByScopeWithResponse(scope, lockName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ManagementLockObjectImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -117,168 +107,83 @@ public final class ManagementLocksImpl implements ManagementLocks {
         }
     }
 
-    public Response<ManagementLockObject> createOrUpdateAtResourceLevelWithResponse(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
-        String lockName,
-        ManagementLockObjectInner parameters,
-        Context context) {
-        Response<ManagementLockObjectInner> inner =
-            this
-                .serviceClient()
-                .createOrUpdateAtResourceLevelWithResponse(
-                    resourceGroupName,
-                    resourceProviderNamespace,
-                    parentResourcePath,
-                    resourceType,
-                    resourceName,
-                    lockName,
-                    parameters,
-                    context);
-        if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
-                new ManagementLockObjectImpl(inner.getValue(), this.manager()));
-        } else {
-            return null;
-        }
-    }
-
-    public ManagementLockObject createOrUpdateAtResourceLevel(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
-        String lockName,
-        ManagementLockObjectInner parameters) {
-        ManagementLockObjectInner inner =
-            this
-                .serviceClient()
-                .createOrUpdateAtResourceLevel(
-                    resourceGroupName,
-                    resourceProviderNamespace,
-                    parentResourcePath,
-                    resourceType,
-                    resourceName,
-                    lockName,
-                    parameters);
-        if (inner != null) {
-            return new ManagementLockObjectImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public Response<Void> deleteAtResourceLevelWithResponse(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
-        String lockName,
-        Context context) {
-        return this
-            .serviceClient()
-            .deleteAtResourceLevelWithResponse(
-                resourceGroupName,
-                resourceProviderNamespace,
-                parentResourcePath,
-                resourceType,
-                resourceName,
-                lockName,
-                context);
-    }
-
-    public void deleteAtResourceLevel(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
-        String lockName) {
-        this
-            .serviceClient()
-            .deleteAtResourceLevel(
-                resourceGroupName, resourceProviderNamespace, parentResourcePath, resourceType, resourceName, lockName);
-    }
-
-    public Response<ManagementLockObject> getAtResourceLevelWithResponse(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
-        String lockName,
-        Context context) {
-        Response<ManagementLockObjectInner> inner =
-            this
-                .serviceClient()
-                .getAtResourceLevelWithResponse(
-                    resourceGroupName,
-                    resourceProviderNamespace,
-                    parentResourcePath,
-                    resourceType,
-                    resourceName,
-                    lockName,
-                    context);
-        if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
-                new ManagementLockObjectImpl(inner.getValue(), this.manager()));
-        } else {
-            return null;
-        }
-    }
-
-    public ManagementLockObject getAtResourceLevel(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
-        String lockName) {
-        ManagementLockObjectInner inner =
-            this
-                .serviceClient()
-                .getAtResourceLevel(
-                    resourceGroupName,
-                    resourceProviderNamespace,
-                    parentResourcePath,
-                    resourceType,
-                    resourceName,
-                    lockName);
-        if (inner != null) {
-            return new ManagementLockObjectImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public Response<ManagementLockObject> createOrUpdateAtSubscriptionLevelWithResponse(
+    public Response<ManagementLockObject> createOrUpdateAtResourceLevelWithResponse(String resourceGroupName,
+        String resourceProviderNamespace, String parentResourcePath, String resourceType, String resourceName,
         String lockName, ManagementLockObjectInner parameters, Context context) {
-        Response<ManagementLockObjectInner> inner =
-            this.serviceClient().createOrUpdateAtSubscriptionLevelWithResponse(lockName, parameters, context);
+        Response<ManagementLockObjectInner> inner = this.serviceClient().createOrUpdateAtResourceLevelWithResponse(
+            resourceGroupName, resourceProviderNamespace, parentResourcePath, resourceType, resourceName, lockName,
+            parameters, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ManagementLockObjectImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public ManagementLockObject createOrUpdateAtSubscriptionLevel(
+    public ManagementLockObject createOrUpdateAtResourceLevel(String resourceGroupName,
+        String resourceProviderNamespace, String parentResourcePath, String resourceType, String resourceName,
         String lockName, ManagementLockObjectInner parameters) {
+        ManagementLockObjectInner inner = this.serviceClient().createOrUpdateAtResourceLevel(resourceGroupName,
+            resourceProviderNamespace, parentResourcePath, resourceType, resourceName, lockName, parameters);
+        if (inner != null) {
+            return new ManagementLockObjectImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<Void> deleteAtResourceLevelWithResponse(String resourceGroupName, String resourceProviderNamespace,
+        String parentResourcePath, String resourceType, String resourceName, String lockName, Context context) {
+        return this.serviceClient().deleteAtResourceLevelWithResponse(resourceGroupName, resourceProviderNamespace,
+            parentResourcePath, resourceType, resourceName, lockName, context);
+    }
+
+    public void deleteAtResourceLevel(String resourceGroupName, String resourceProviderNamespace,
+        String parentResourcePath, String resourceType, String resourceName, String lockName) {
+        this.serviceClient().deleteAtResourceLevel(resourceGroupName, resourceProviderNamespace, parentResourcePath,
+            resourceType, resourceName, lockName);
+    }
+
+    public Response<ManagementLockObject> getAtResourceLevelWithResponse(String resourceGroupName,
+        String resourceProviderNamespace, String parentResourcePath, String resourceType, String resourceName,
+        String lockName, Context context) {
+        Response<ManagementLockObjectInner> inner
+            = this.serviceClient().getAtResourceLevelWithResponse(resourceGroupName, resourceProviderNamespace,
+                parentResourcePath, resourceType, resourceName, lockName, context);
+        if (inner != null) {
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
+                new ManagementLockObjectImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ManagementLockObject getAtResourceLevel(String resourceGroupName, String resourceProviderNamespace,
+        String parentResourcePath, String resourceType, String resourceName, String lockName) {
+        ManagementLockObjectInner inner = this.serviceClient().getAtResourceLevel(resourceGroupName,
+            resourceProviderNamespace, parentResourcePath, resourceType, resourceName, lockName);
+        if (inner != null) {
+            return new ManagementLockObjectImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<ManagementLockObject> createOrUpdateAtSubscriptionLevelWithResponse(String lockName,
+        ManagementLockObjectInner parameters, Context context) {
+        Response<ManagementLockObjectInner> inner
+            = this.serviceClient().createOrUpdateAtSubscriptionLevelWithResponse(lockName, parameters, context);
+        if (inner != null) {
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
+                new ManagementLockObjectImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public ManagementLockObject createOrUpdateAtSubscriptionLevel(String lockName,
+        ManagementLockObjectInner parameters) {
         ManagementLockObjectInner inner = this.serviceClient().createOrUpdateAtSubscriptionLevel(lockName, parameters);
         if (inner != null) {
             return new ManagementLockObjectImpl(inner, this.manager());
@@ -296,13 +201,10 @@ public final class ManagementLocksImpl implements ManagementLocks {
     }
 
     public Response<ManagementLockObject> getAtSubscriptionLevelWithResponse(String lockName, Context context) {
-        Response<ManagementLockObjectInner> inner =
-            this.serviceClient().getAtSubscriptionLevelWithResponse(lockName, context);
+        Response<ManagementLockObjectInner> inner
+            = this.serviceClient().getAtSubscriptionLevelWithResponse(lockName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ManagementLockObjectImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -323,46 +225,25 @@ public final class ManagementLocksImpl implements ManagementLocks {
         return Utils.mapPage(inner, inner1 -> new ManagementLockObjectImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<ManagementLockObject> listByResourceGroup(
-        String resourceGroupName, String filter, Context context) {
-        PagedIterable<ManagementLockObjectInner> inner =
-            this.serviceClient().listByResourceGroup(resourceGroupName, filter, context);
-        return Utils.mapPage(inner, inner1 -> new ManagementLockObjectImpl(inner1, this.manager()));
-    }
-
-    public PagedIterable<ManagementLockObject> listAtResourceLevel(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName) {
-        PagedIterable<ManagementLockObjectInner> inner =
-            this
-                .serviceClient()
-                .listAtResourceLevel(
-                    resourceGroupName, resourceProviderNamespace, parentResourcePath, resourceType, resourceName);
-        return Utils.mapPage(inner, inner1 -> new ManagementLockObjectImpl(inner1, this.manager()));
-    }
-
-    public PagedIterable<ManagementLockObject> listAtResourceLevel(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
-        String filter,
+    public PagedIterable<ManagementLockObject> listByResourceGroup(String resourceGroupName, String filter,
         Context context) {
-        PagedIterable<ManagementLockObjectInner> inner =
-            this
-                .serviceClient()
-                .listAtResourceLevel(
-                    resourceGroupName,
-                    resourceProviderNamespace,
-                    parentResourcePath,
-                    resourceType,
-                    resourceName,
-                    filter,
-                    context);
+        PagedIterable<ManagementLockObjectInner> inner
+            = this.serviceClient().listByResourceGroup(resourceGroupName, filter, context);
+        return Utils.mapPage(inner, inner1 -> new ManagementLockObjectImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<ManagementLockObject> listAtResourceLevel(String resourceGroupName,
+        String resourceProviderNamespace, String parentResourcePath, String resourceType, String resourceName) {
+        PagedIterable<ManagementLockObjectInner> inner = this.serviceClient().listAtResourceLevel(resourceGroupName,
+            resourceProviderNamespace, parentResourcePath, resourceType, resourceName);
+        return Utils.mapPage(inner, inner1 -> new ManagementLockObjectImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<ManagementLockObject> listAtResourceLevel(String resourceGroupName,
+        String resourceProviderNamespace, String parentResourcePath, String resourceType, String resourceName,
+        String filter, Context context) {
+        PagedIterable<ManagementLockObjectInner> inner = this.serviceClient().listAtResourceLevel(resourceGroupName,
+            resourceProviderNamespace, parentResourcePath, resourceType, resourceName, filter, context);
         return Utils.mapPage(inner, inner1 -> new ManagementLockObjectImpl(inner1, this.manager()));
     }
 
@@ -389,18 +270,13 @@ public final class ManagementLocksImpl implements ManagementLocks {
     public ManagementLockObject getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String lockName = Utils.getValueFromIdByName(id, "locks");
         if (lockName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'locks'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'locks'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, lockName, Context.NONE).getValue();
     }
@@ -408,18 +284,13 @@ public final class ManagementLocksImpl implements ManagementLocks {
     public Response<ManagementLockObject> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String lockName = Utils.getValueFromIdByName(id, "locks");
         if (lockName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'locks'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'locks'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, lockName, context);
     }
@@ -427,18 +298,13 @@ public final class ManagementLocksImpl implements ManagementLocks {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String lockName = Utils.getValueFromIdByName(id, "locks");
         if (lockName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'locks'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'locks'.", id)));
         }
         this.deleteByResourceGroupWithResponse(resourceGroupName, lockName, Context.NONE);
     }
@@ -446,18 +312,13 @@ public final class ManagementLocksImpl implements ManagementLocks {
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String lockName = Utils.getValueFromIdByName(id, "locks");
         if (lockName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'locks'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'locks'.", id)));
         }
         return this.deleteByResourceGroupWithResponse(resourceGroupName, lockName, context);
     }

@@ -7,7 +7,9 @@ package com.azure.resourcemanager.frontdoor.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** L7 health probe settings for a backend pool. */
+/**
+ * L7 health probe settings for a backend pool.
+ */
 @Fluent
 public class HealthProbeSettingsUpdateParameters {
     /*
@@ -41,13 +43,15 @@ public class HealthProbeSettingsUpdateParameters {
     @JsonProperty(value = "enabledState")
     private HealthProbeEnabled enabledState;
 
-    /** Creates an instance of HealthProbeSettingsUpdateParameters class. */
+    /**
+     * Creates an instance of HealthProbeSettingsUpdateParameters class.
+     */
     public HealthProbeSettingsUpdateParameters() {
     }
 
     /**
      * Get the path property: The path to use for the health probe. Default is /.
-     *
+     * 
      * @return the path value.
      */
     public String path() {
@@ -56,7 +60,7 @@ public class HealthProbeSettingsUpdateParameters {
 
     /**
      * Set the path property: The path to use for the health probe. Default is /.
-     *
+     * 
      * @param path the path value to set.
      * @return the HealthProbeSettingsUpdateParameters object itself.
      */
@@ -67,7 +71,7 @@ public class HealthProbeSettingsUpdateParameters {
 
     /**
      * Get the protocol property: Protocol scheme to use for this probe.
-     *
+     * 
      * @return the protocol value.
      */
     public FrontDoorProtocol protocol() {
@@ -76,7 +80,7 @@ public class HealthProbeSettingsUpdateParameters {
 
     /**
      * Set the protocol property: Protocol scheme to use for this probe.
-     *
+     * 
      * @param protocol the protocol value to set.
      * @return the HealthProbeSettingsUpdateParameters object itself.
      */
@@ -87,7 +91,7 @@ public class HealthProbeSettingsUpdateParameters {
 
     /**
      * Get the intervalInSeconds property: The number of seconds between health probes.
-     *
+     * 
      * @return the intervalInSeconds value.
      */
     public Integer intervalInSeconds() {
@@ -96,7 +100,7 @@ public class HealthProbeSettingsUpdateParameters {
 
     /**
      * Set the intervalInSeconds property: The number of seconds between health probes.
-     *
+     * 
      * @param intervalInSeconds the intervalInSeconds value to set.
      * @return the HealthProbeSettingsUpdateParameters object itself.
      */
@@ -108,7 +112,7 @@ public class HealthProbeSettingsUpdateParameters {
     /**
      * Get the healthProbeMethod property: Configures which HTTP method to use to probe the backends defined under
      * backendPools.
-     *
+     * 
      * @return the healthProbeMethod value.
      */
     public FrontDoorHealthProbeMethod healthProbeMethod() {
@@ -118,7 +122,7 @@ public class HealthProbeSettingsUpdateParameters {
     /**
      * Set the healthProbeMethod property: Configures which HTTP method to use to probe the backends defined under
      * backendPools.
-     *
+     * 
      * @param healthProbeMethod the healthProbeMethod value to set.
      * @return the HealthProbeSettingsUpdateParameters object itself.
      */
@@ -131,7 +135,7 @@ public class HealthProbeSettingsUpdateParameters {
      * Get the enabledState property: Whether to enable health probes to be made against backends defined under
      * backendPools. Health probes can only be disabled if there is a single enabled backend in single enabled backend
      * pool.
-     *
+     * 
      * @return the enabledState value.
      */
     public HealthProbeEnabled enabledState() {
@@ -142,7 +146,7 @@ public class HealthProbeSettingsUpdateParameters {
      * Set the enabledState property: Whether to enable health probes to be made against backends defined under
      * backendPools. Health probes can only be disabled if there is a single enabled backend in single enabled backend
      * pool.
-     *
+     * 
      * @param enabledState the enabledState value to set.
      * @return the HealthProbeSettingsUpdateParameters object itself.
      */
@@ -153,7 +157,7 @@ public class HealthProbeSettingsUpdateParameters {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

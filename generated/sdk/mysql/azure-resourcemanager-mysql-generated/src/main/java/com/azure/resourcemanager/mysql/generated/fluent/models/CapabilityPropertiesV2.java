@@ -10,7 +10,9 @@ import com.azure.resourcemanager.mysql.generated.models.ServerVersionCapabilityV
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Location capability. */
+/**
+ * Location capability.
+ */
 @Immutable
 public final class CapabilityPropertiesV2 {
     /*
@@ -31,13 +33,15 @@ public final class CapabilityPropertiesV2 {
     @JsonProperty(value = "supportedServerVersions", access = JsonProperty.Access.WRITE_ONLY)
     private List<ServerVersionCapabilityV2> supportedServerVersions;
 
-    /** Creates an instance of CapabilityPropertiesV2 class. */
+    /**
+     * Creates an instance of CapabilityPropertiesV2 class.
+     */
     public CapabilityPropertiesV2() {
     }
 
     /**
      * Get the supportedGeoBackupRegions property: supported geo backup regions.
-     *
+     * 
      * @return the supportedGeoBackupRegions value.
      */
     public List<String> supportedGeoBackupRegions() {
@@ -46,7 +50,7 @@ public final class CapabilityPropertiesV2 {
 
     /**
      * Get the supportedFlexibleServerEditions property: A list of supported flexible server editions.
-     *
+     * 
      * @return the supportedFlexibleServerEditions value.
      */
     public List<ServerEditionCapabilityV2> supportedFlexibleServerEditions() {
@@ -55,7 +59,7 @@ public final class CapabilityPropertiesV2 {
 
     /**
      * Get the supportedServerVersions property: A list of supported server versions.
-     *
+     * 
      * @return the supportedServerVersions value.
      */
     public List<ServerVersionCapabilityV2> supportedServerVersions() {
@@ -64,7 +68,7 @@ public final class CapabilityPropertiesV2 {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

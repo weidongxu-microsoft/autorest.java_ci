@@ -9,51 +9,67 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.time.Duration;
 
-/** Describes the properties of an audio overlay. */
+/**
+ * Describes the properties of an audio overlay.
+ */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
 @JsonTypeName("#Microsoft.Media.AudioOverlay")
 @Fluent
 public final class AudioOverlay extends Overlay {
-    /** Creates an instance of AudioOverlay class. */
+    /**
+     * Creates an instance of AudioOverlay class.
+     */
     public AudioOverlay() {
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public AudioOverlay withInputLabel(String inputLabel) {
         super.withInputLabel(inputLabel);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public AudioOverlay withStart(Duration start) {
         super.withStart(start);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public AudioOverlay withEnd(Duration end) {
         super.withEnd(end);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public AudioOverlay withFadeInDuration(Duration fadeInDuration) {
         super.withFadeInDuration(fadeInDuration);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public AudioOverlay withFadeOutDuration(Duration fadeOutDuration) {
         super.withFadeOutDuration(fadeOutDuration);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public AudioOverlay withAudioGainLevel(Double audioGainLevel) {
         super.withAudioGainLevel(audioGainLevel);
@@ -62,7 +78,7 @@ public final class AudioOverlay extends Overlay {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

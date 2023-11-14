@@ -15,8 +15,8 @@ public final class JobResponseImpl implements JobResponse {
 
     private final com.azure.resourcemanager.iothub.generated.IotHubManager serviceManager;
 
-    JobResponseImpl(
-        JobResponseInner innerObject, com.azure.resourcemanager.iothub.generated.IotHubManager serviceManager) {
+    JobResponseImpl(JobResponseInner innerObject,
+        com.azure.resourcemanager.iothub.generated.IotHubManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

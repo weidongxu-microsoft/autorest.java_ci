@@ -8,41 +8,63 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for AllowedMethods. */
+/**
+ * Defines values for AllowedMethods.
+ */
 public final class AllowedMethods extends ExpandableStringEnum<AllowedMethods> {
-    /** Static value DELETE for AllowedMethods. */
+    /**
+     * Static value DELETE for AllowedMethods.
+     */
     public static final AllowedMethods DELETE = fromString("DELETE");
 
-    /** Static value GET for AllowedMethods. */
+    /**
+     * Static value GET for AllowedMethods.
+     */
     public static final AllowedMethods GET = fromString("GET");
 
-    /** Static value HEAD for AllowedMethods. */
+    /**
+     * Static value HEAD for AllowedMethods.
+     */
     public static final AllowedMethods HEAD = fromString("HEAD");
 
-    /** Static value MERGE for AllowedMethods. */
+    /**
+     * Static value MERGE for AllowedMethods.
+     */
     public static final AllowedMethods MERGE = fromString("MERGE");
 
-    /** Static value POST for AllowedMethods. */
+    /**
+     * Static value POST for AllowedMethods.
+     */
     public static final AllowedMethods POST = fromString("POST");
 
-    /** Static value OPTIONS for AllowedMethods. */
+    /**
+     * Static value OPTIONS for AllowedMethods.
+     */
     public static final AllowedMethods OPTIONS = fromString("OPTIONS");
 
-    /** Static value PUT for AllowedMethods. */
+    /**
+     * Static value PUT for AllowedMethods.
+     */
     public static final AllowedMethods PUT = fromString("PUT");
 
-    /** Static value PATCH for AllowedMethods. */
+    /**
+     * Static value PATCH for AllowedMethods.
+     */
     public static final AllowedMethods PATCH = fromString("PATCH");
 
-    /** Static value CONNECT for AllowedMethods. */
+    /**
+     * Static value CONNECT for AllowedMethods.
+     */
     public static final AllowedMethods CONNECT = fromString("CONNECT");
 
-    /** Static value TRACE for AllowedMethods. */
+    /**
+     * Static value TRACE for AllowedMethods.
+     */
     public static final AllowedMethods TRACE = fromString("TRACE");
 
     /**
      * Creates a new instance of AllowedMethods value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -51,7 +73,7 @@ public final class AllowedMethods extends ExpandableStringEnum<AllowedMethods> {
 
     /**
      * Creates or finds a AllowedMethods from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding AllowedMethods.
      */
@@ -62,7 +84,7 @@ public final class AllowedMethods extends ExpandableStringEnum<AllowedMethods> {
 
     /**
      * Gets known AllowedMethods values.
-     *
+     * 
      * @return known AllowedMethods values.
      */
     public static Collection<AllowedMethods> values() {

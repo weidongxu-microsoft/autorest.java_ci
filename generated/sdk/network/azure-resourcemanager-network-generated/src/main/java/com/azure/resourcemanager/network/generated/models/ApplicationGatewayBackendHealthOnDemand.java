@@ -6,18 +6,20 @@ package com.azure.resourcemanager.network.generated.models;
 
 import com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewayBackendHealthOnDemandInner;
 
-/** An immutable client-side representation of ApplicationGatewayBackendHealthOnDemand. */
+/**
+ * An immutable client-side representation of ApplicationGatewayBackendHealthOnDemand.
+ */
 public interface ApplicationGatewayBackendHealthOnDemand {
     /**
      * Gets the backendAddressPool property: Reference to an ApplicationGatewayBackendAddressPool resource.
-     *
+     * 
      * @return the backendAddressPool value.
      */
     ApplicationGatewayBackendAddressPool backendAddressPool();
 
     /**
      * Gets the backendHealthHttpSettings property: Application gateway BackendHealthHttp settings.
-     *
+     * 
      * @return the backendHealthHttpSettings value.
      */
     ApplicationGatewayBackendHealthHttpSettings backendHealthHttpSettings();
@@ -25,7 +27,7 @@ public interface ApplicationGatewayBackendHealthOnDemand {
     /**
      * Gets the inner
      * com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewayBackendHealthOnDemandInner object.
-     *
+     * 
      * @return the inner object.
      */
     ApplicationGatewayBackendHealthOnDemandInner innerModel();

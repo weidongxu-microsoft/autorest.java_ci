@@ -8,10 +8,8 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.RelayServiceConnectionEntityInner;
 import com.azure.resourcemanager.appservice.generated.models.RelayServiceConnectionEntity;
 
-public final class RelayServiceConnectionEntityImpl
-    implements RelayServiceConnectionEntity,
-        RelayServiceConnectionEntity.Definition,
-        RelayServiceConnectionEntity.Update {
+public final class RelayServiceConnectionEntityImpl implements RelayServiceConnectionEntity,
+    RelayServiceConnectionEntity.Definition, RelayServiceConnectionEntity.Update {
     private RelayServiceConnectionEntityInner innerObject;
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
@@ -85,29 +83,19 @@ public final class RelayServiceConnectionEntityImpl
     }
 
     public RelayServiceConnectionEntity create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApps()
-                .createOrUpdateRelayServiceConnectionWithResponse(
-                    resourceGroupName, name, entityName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getWebApps().createOrUpdateRelayServiceConnectionWithResponse(
+            resourceGroupName, name, entityName, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public RelayServiceConnectionEntity create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApps()
-                .createOrUpdateRelayServiceConnectionWithResponse(
-                    resourceGroupName, name, entityName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getWebApps().createOrUpdateRelayServiceConnectionWithResponse(
+            resourceGroupName, name, entityName, this.innerModel(), context).getValue();
         return this;
     }
 
-    RelayServiceConnectionEntityImpl(
-        String name, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
+    RelayServiceConnectionEntityImpl(String name,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = new RelayServiceConnectionEntityInner();
         this.serviceManager = serviceManager;
         this.entityName = name;
@@ -118,29 +106,20 @@ public final class RelayServiceConnectionEntityImpl
     }
 
     public RelayServiceConnectionEntity apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApps()
-                .updateRelayServiceConnectionWithResponse(
-                    resourceGroupName, name, entityName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getWebApps().updateRelayServiceConnectionWithResponse(resourceGroupName,
+                name, entityName, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public RelayServiceConnectionEntity apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApps()
-                .updateRelayServiceConnectionWithResponse(
-                    resourceGroupName, name, entityName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getWebApps()
+            .updateRelayServiceConnectionWithResponse(resourceGroupName, name, entityName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
-    RelayServiceConnectionEntityImpl(
-        RelayServiceConnectionEntityInner innerObject,
+    RelayServiceConnectionEntityImpl(RelayServiceConnectionEntityInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -150,22 +129,14 @@ public final class RelayServiceConnectionEntityImpl
     }
 
     public RelayServiceConnectionEntity refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApps()
-                .getRelayServiceConnectionWithResponse(resourceGroupName, name, entityName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getWebApps()
+            .getRelayServiceConnectionWithResponse(resourceGroupName, name, entityName, Context.NONE).getValue();
         return this;
     }
 
     public RelayServiceConnectionEntity refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApps()
-                .getRelayServiceConnectionWithResponse(resourceGroupName, name, entityName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getWebApps()
+            .getRelayServiceConnectionWithResponse(resourceGroupName, name, entityName, context).getValue();
         return this;
     }
 

@@ -12,8 +12,7 @@ public final class ApplicationInsightsComponentQuotaStatusImpl implements Applic
 
     private final com.azure.resourcemanager.applicationinsights.generated.ApplicationInsightsManager serviceManager;
 
-    ApplicationInsightsComponentQuotaStatusImpl(
-        ApplicationInsightsComponentQuotaStatusInner innerObject,
+    ApplicationInsightsComponentQuotaStatusImpl(ApplicationInsightsComponentQuotaStatusInner innerObject,
         com.azure.resourcemanager.applicationinsights.generated.ApplicationInsightsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

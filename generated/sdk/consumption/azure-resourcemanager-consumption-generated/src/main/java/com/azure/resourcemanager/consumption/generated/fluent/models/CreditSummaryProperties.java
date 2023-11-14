@@ -10,7 +10,9 @@ import com.azure.resourcemanager.consumption.generated.models.CreditBalanceSumma
 import com.azure.resourcemanager.consumption.generated.models.Reseller;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The properties of the credit summary. */
+/**
+ * The properties of the credit summary.
+ */
 @Immutable
 public final class CreditSummaryProperties {
     /*
@@ -67,13 +69,15 @@ public final class CreditSummaryProperties {
     @JsonProperty(value = "eTag", access = JsonProperty.Access.WRITE_ONLY)
     private String etag;
 
-    /** Creates an instance of CreditSummaryProperties class. */
+    /**
+     * Creates an instance of CreditSummaryProperties class.
+     */
     public CreditSummaryProperties() {
     }
 
     /**
      * Get the balanceSummary property: Summary of balances associated with this credit summary.
-     *
+     * 
      * @return the balanceSummary value.
      */
     public CreditBalanceSummary balanceSummary() {
@@ -82,7 +86,7 @@ public final class CreditSummaryProperties {
 
     /**
      * Get the pendingCreditAdjustments property: Pending credit adjustments.
-     *
+     * 
      * @return the pendingCreditAdjustments value.
      */
     public Amount pendingCreditAdjustments() {
@@ -91,7 +95,7 @@ public final class CreditSummaryProperties {
 
     /**
      * Get the expiredCredit property: Expired credit.
-     *
+     * 
      * @return the expiredCredit value.
      */
     public Amount expiredCredit() {
@@ -100,7 +104,7 @@ public final class CreditSummaryProperties {
 
     /**
      * Get the pendingEligibleCharges property: Pending eligible charges.
-     *
+     * 
      * @return the pendingEligibleCharges value.
      */
     public Amount pendingEligibleCharges() {
@@ -109,7 +113,7 @@ public final class CreditSummaryProperties {
 
     /**
      * Get the creditCurrency property: The credit currency.
-     *
+     * 
      * @return the creditCurrency value.
      */
     public String creditCurrency() {
@@ -118,7 +122,7 @@ public final class CreditSummaryProperties {
 
     /**
      * Get the billingCurrency property: The billing currency.
-     *
+     * 
      * @return the billingCurrency value.
      */
     public String billingCurrency() {
@@ -127,7 +131,7 @@ public final class CreditSummaryProperties {
 
     /**
      * Get the reseller property: Credit's reseller.
-     *
+     * 
      * @return the reseller value.
      */
     public Reseller reseller() {
@@ -137,7 +141,7 @@ public final class CreditSummaryProperties {
     /**
      * Get the isEstimatedBalance property: If true, the listed details are based on an estimation and it will be
      * subjected to change.
-     *
+     * 
      * @return the isEstimatedBalance value.
      */
     public Boolean isEstimatedBalance() {
@@ -146,7 +150,7 @@ public final class CreditSummaryProperties {
 
     /**
      * Get the etag property: The eTag for the resource.
-     *
+     * 
      * @return the etag value.
      */
     public String etag() {
@@ -155,7 +159,7 @@ public final class CreditSummaryProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

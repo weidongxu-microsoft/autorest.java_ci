@@ -7,7 +7,9 @@ package com.azure.resourcemanager.costmanagement.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** defines the type of alert. */
+/**
+ * defines the type of alert.
+ */
 @Fluent
 public final class AlertPropertiesDefinition {
     /*
@@ -28,13 +30,15 @@ public final class AlertPropertiesDefinition {
     @JsonProperty(value = "criteria")
     private AlertCriteria criteria;
 
-    /** Creates an instance of AlertPropertiesDefinition class. */
+    /**
+     * Creates an instance of AlertPropertiesDefinition class.
+     */
     public AlertPropertiesDefinition() {
     }
 
     /**
      * Get the type property: type of alert.
-     *
+     * 
      * @return the type value.
      */
     public AlertType type() {
@@ -43,7 +47,7 @@ public final class AlertPropertiesDefinition {
 
     /**
      * Set the type property: type of alert.
-     *
+     * 
      * @param type the type value to set.
      * @return the AlertPropertiesDefinition object itself.
      */
@@ -54,7 +58,7 @@ public final class AlertPropertiesDefinition {
 
     /**
      * Get the category property: Alert category.
-     *
+     * 
      * @return the category value.
      */
     public AlertCategory category() {
@@ -63,7 +67,7 @@ public final class AlertPropertiesDefinition {
 
     /**
      * Set the category property: Alert category.
-     *
+     * 
      * @param category the category value to set.
      * @return the AlertPropertiesDefinition object itself.
      */
@@ -74,7 +78,7 @@ public final class AlertPropertiesDefinition {
 
     /**
      * Get the criteria property: Criteria that triggered alert.
-     *
+     * 
      * @return the criteria value.
      */
     public AlertCriteria criteria() {
@@ -83,7 +87,7 @@ public final class AlertPropertiesDefinition {
 
     /**
      * Set the criteria property: Criteria that triggered alert.
-     *
+     * 
      * @param criteria the criteria value to set.
      * @return the AlertPropertiesDefinition object itself.
      */
@@ -94,7 +98,7 @@ public final class AlertPropertiesDefinition {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

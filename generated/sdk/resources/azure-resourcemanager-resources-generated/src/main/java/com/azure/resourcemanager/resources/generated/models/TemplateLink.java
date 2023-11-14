@@ -7,7 +7,9 @@ package com.azure.resourcemanager.resources.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Entity representing the reference to the template. */
+/**
+ * Entity representing the reference to the template.
+ */
 @Fluent
 public final class TemplateLink {
     /*
@@ -35,13 +37,15 @@ public final class TemplateLink {
     @JsonProperty(value = "contentVersion")
     private String contentVersion;
 
-    /** Creates an instance of TemplateLink class. */
+    /**
+     * Creates an instance of TemplateLink class.
+     */
     public TemplateLink() {
     }
 
     /**
      * Get the uri property: The URI of the template to deploy. Use either the uri or id property, but not both.
-     *
+     * 
      * @return the uri value.
      */
     public String uri() {
@@ -50,7 +54,7 @@ public final class TemplateLink {
 
     /**
      * Set the uri property: The URI of the template to deploy. Use either the uri or id property, but not both.
-     *
+     * 
      * @param uri the uri value to set.
      * @return the TemplateLink object itself.
      */
@@ -61,7 +65,7 @@ public final class TemplateLink {
 
     /**
      * Get the id property: The resource id of a Template Spec. Use either the id or uri property, but not both.
-     *
+     * 
      * @return the id value.
      */
     public String id() {
@@ -70,7 +74,7 @@ public final class TemplateLink {
 
     /**
      * Set the id property: The resource id of a Template Spec. Use either the id or uri property, but not both.
-     *
+     * 
      * @param id the id value to set.
      * @return the TemplateLink object itself.
      */
@@ -82,7 +86,7 @@ public final class TemplateLink {
     /**
      * Get the relativePath property: Applicable only if this template link references a Template Spec. This
      * relativePath property can optionally be used to reference a Template Spec artifact by path.
-     *
+     * 
      * @return the relativePath value.
      */
     public String relativePath() {
@@ -92,7 +96,7 @@ public final class TemplateLink {
     /**
      * Set the relativePath property: Applicable only if this template link references a Template Spec. This
      * relativePath property can optionally be used to reference a Template Spec artifact by path.
-     *
+     * 
      * @param relativePath the relativePath value to set.
      * @return the TemplateLink object itself.
      */
@@ -103,7 +107,7 @@ public final class TemplateLink {
 
     /**
      * Get the contentVersion property: If included, must match the ContentVersion in the template.
-     *
+     * 
      * @return the contentVersion value.
      */
     public String contentVersion() {
@@ -112,7 +116,7 @@ public final class TemplateLink {
 
     /**
      * Set the contentVersion property: If included, must match the ContentVersion in the template.
-     *
+     * 
      * @param contentVersion the contentVersion value to set.
      * @return the TemplateLink object itself.
      */
@@ -123,7 +127,7 @@ public final class TemplateLink {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -9,7 +9,9 @@ import com.azure.core.management.SubResource;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Represents the properties of the Dns Resource Reference Request. */
+/**
+ * Represents the properties of the Dns Resource Reference Request.
+ */
 @Fluent
 public final class DnsResourceReferenceRequestProperties {
     /*
@@ -18,14 +20,16 @@ public final class DnsResourceReferenceRequestProperties {
     @JsonProperty(value = "targetResources")
     private List<SubResource> targetResources;
 
-    /** Creates an instance of DnsResourceReferenceRequestProperties class. */
+    /**
+     * Creates an instance of DnsResourceReferenceRequestProperties class.
+     */
     public DnsResourceReferenceRequestProperties() {
     }
 
     /**
      * Get the targetResources property: A list of references to azure resources for which referencing dns records need
      * to be queried.
-     *
+     * 
      * @return the targetResources value.
      */
     public List<SubResource> targetResources() {
@@ -35,7 +39,7 @@ public final class DnsResourceReferenceRequestProperties {
     /**
      * Set the targetResources property: A list of references to azure resources for which referencing dns records need
      * to be queried.
-     *
+     * 
      * @param targetResources the targetResources value to set.
      * @return the DnsResourceReferenceRequestProperties object itself.
      */
@@ -46,7 +50,7 @@ public final class DnsResourceReferenceRequestProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

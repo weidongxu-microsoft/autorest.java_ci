@@ -15,7 +15,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.Map;
 
-/** An usage detail resource. */
+/**
+ * An usage detail resource.
+ */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
     include = JsonTypeInfo.As.PROPERTY,
@@ -24,8 +26,7 @@ import java.util.Map;
 @JsonTypeName("UsageDetail")
 @JsonSubTypes({
     @JsonSubTypes.Type(name = "legacy", value = LegacyUsageDetail.class),
-    @JsonSubTypes.Type(name = "modern", value = ModernUsageDetail.class)
-})
+    @JsonSubTypes.Type(name = "modern", value = ModernUsageDetail.class) })
 @Immutable
 public class UsageDetailInner extends ProxyResource {
     /*
@@ -41,13 +42,15 @@ public class UsageDetailInner extends ProxyResource {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> tags;
 
-    /** Creates an instance of UsageDetailInner class. */
+    /**
+     * Creates an instance of UsageDetailInner class.
+     */
     public UsageDetailInner() {
     }
 
     /**
      * Get the etag property: The etag for the resource.
-     *
+     * 
      * @return the etag value.
      */
     public String etag() {
@@ -56,7 +59,7 @@ public class UsageDetailInner extends ProxyResource {
 
     /**
      * Get the tags property: Resource tags.
-     *
+     * 
      * @return the tags value.
      */
     public Map<String, String> tags() {
@@ -65,7 +68,7 @@ public class UsageDetailInner extends ProxyResource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

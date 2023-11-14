@@ -9,7 +9,9 @@ import com.azure.resourcemanager.mediaservices.generated.models.AssetStreamingLo
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The Streaming Locators associated with this Asset. */
+/**
+ * The Streaming Locators associated with this Asset.
+ */
 @Immutable
 public final class ListStreamingLocatorsResponseInner {
     /*
@@ -18,13 +20,15 @@ public final class ListStreamingLocatorsResponseInner {
     @JsonProperty(value = "streamingLocators", access = JsonProperty.Access.WRITE_ONLY)
     private List<AssetStreamingLocator> streamingLocators;
 
-    /** Creates an instance of ListStreamingLocatorsResponseInner class. */
+    /**
+     * Creates an instance of ListStreamingLocatorsResponseInner class.
+     */
     public ListStreamingLocatorsResponseInner() {
     }
 
     /**
      * Get the streamingLocators property: The list of Streaming Locators.
-     *
+     * 
      * @return the streamingLocators value.
      */
     public List<AssetStreamingLocator> streamingLocators() {
@@ -33,7 +37,7 @@ public final class ListStreamingLocatorsResponseInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

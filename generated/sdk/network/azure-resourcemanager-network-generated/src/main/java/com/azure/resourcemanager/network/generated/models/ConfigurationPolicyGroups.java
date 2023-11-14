@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of ConfigurationPolicyGroups. */
+/**
+ * Resource collection API of ConfigurationPolicyGroups.
+ */
 public interface ConfigurationPolicyGroups {
     /**
      * Deletes a ConfigurationPolicyGroup.
-     *
+     * 
      * @param resourceGroupName The resource group name of the ConfigurationPolicyGroup.
      * @param vpnServerConfigurationName The name of the VpnServerConfiguration.
      * @param configurationPolicyGroupName The name of the ConfigurationPolicyGroup.
@@ -24,7 +26,7 @@ public interface ConfigurationPolicyGroups {
 
     /**
      * Deletes a ConfigurationPolicyGroup.
-     *
+     * 
      * @param resourceGroupName The resource group name of the ConfigurationPolicyGroup.
      * @param vpnServerConfigurationName The name of the VpnServerConfiguration.
      * @param configurationPolicyGroupName The name of the ConfigurationPolicyGroup.
@@ -33,15 +35,12 @@ public interface ConfigurationPolicyGroups {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void delete(
-        String resourceGroupName,
-        String vpnServerConfigurationName,
-        String configurationPolicyGroupName,
+    void delete(String resourceGroupName, String vpnServerConfigurationName, String configurationPolicyGroupName,
         Context context);
 
     /**
      * Retrieves the details of a ConfigurationPolicyGroup.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnServerConfiguration.
      * @param vpnServerConfigurationName The name of the VpnServerConfiguration.
      * @param configurationPolicyGroupName The name of the ConfigurationPolicyGroup being retrieved.
@@ -51,15 +50,12 @@ public interface ConfigurationPolicyGroups {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return vpnServerConfigurationPolicyGroup Resource along with {@link Response}.
      */
-    Response<VpnServerConfigurationPolicyGroup> getWithResponse(
-        String resourceGroupName,
-        String vpnServerConfigurationName,
-        String configurationPolicyGroupName,
-        Context context);
+    Response<VpnServerConfigurationPolicyGroup> getWithResponse(String resourceGroupName,
+        String vpnServerConfigurationName, String configurationPolicyGroupName, Context context);
 
     /**
      * Retrieves the details of a ConfigurationPolicyGroup.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnServerConfiguration.
      * @param vpnServerConfigurationName The name of the VpnServerConfiguration.
      * @param configurationPolicyGroupName The name of the ConfigurationPolicyGroup being retrieved.
@@ -68,41 +64,41 @@ public interface ConfigurationPolicyGroups {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return vpnServerConfigurationPolicyGroup Resource.
      */
-    VpnServerConfigurationPolicyGroup get(
-        String resourceGroupName, String vpnServerConfigurationName, String configurationPolicyGroupName);
+    VpnServerConfigurationPolicyGroup get(String resourceGroupName, String vpnServerConfigurationName,
+        String configurationPolicyGroupName);
 
     /**
      * Lists all the configurationPolicyGroups in a resource group for a vpnServerConfiguration.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnServerConfiguration.
      * @param vpnServerConfigurationName The name of the VpnServerConfiguration.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnServerConfigurationPolicyGroups as paginated response with {@link
-     *     PagedIterable}.
+     * @return result of the request to list VpnServerConfigurationPolicyGroups as paginated response with
+     * {@link PagedIterable}.
      */
-    PagedIterable<VpnServerConfigurationPolicyGroup> listByVpnServerConfiguration(
-        String resourceGroupName, String vpnServerConfigurationName);
+    PagedIterable<VpnServerConfigurationPolicyGroup> listByVpnServerConfiguration(String resourceGroupName,
+        String vpnServerConfigurationName);
 
     /**
      * Lists all the configurationPolicyGroups in a resource group for a vpnServerConfiguration.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnServerConfiguration.
      * @param vpnServerConfigurationName The name of the VpnServerConfiguration.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnServerConfigurationPolicyGroups as paginated response with {@link
-     *     PagedIterable}.
+     * @return result of the request to list VpnServerConfigurationPolicyGroups as paginated response with
+     * {@link PagedIterable}.
      */
-    PagedIterable<VpnServerConfigurationPolicyGroup> listByVpnServerConfiguration(
-        String resourceGroupName, String vpnServerConfigurationName, Context context);
+    PagedIterable<VpnServerConfigurationPolicyGroup> listByVpnServerConfiguration(String resourceGroupName,
+        String vpnServerConfigurationName, Context context);
 
     /**
      * Retrieves the details of a ConfigurationPolicyGroup.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -113,7 +109,7 @@ public interface ConfigurationPolicyGroups {
 
     /**
      * Retrieves the details of a ConfigurationPolicyGroup.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -125,7 +121,7 @@ public interface ConfigurationPolicyGroups {
 
     /**
      * Deletes a ConfigurationPolicyGroup.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -135,7 +131,7 @@ public interface ConfigurationPolicyGroups {
 
     /**
      * Deletes a ConfigurationPolicyGroup.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -146,7 +142,7 @@ public interface ConfigurationPolicyGroups {
 
     /**
      * Begins definition for a new VpnServerConfigurationPolicyGroup resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new VpnServerConfigurationPolicyGroup definition.
      */

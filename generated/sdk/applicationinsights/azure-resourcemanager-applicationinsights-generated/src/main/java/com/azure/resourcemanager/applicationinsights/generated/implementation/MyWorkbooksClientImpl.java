@@ -38,22 +38,28 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 import reactor.core.publisher.Mono;
 
-/** An instance of this class provides access to all the operations defined in MyWorkbooksClient. */
+/**
+ * An instance of this class provides access to all the operations defined in MyWorkbooksClient.
+ */
 public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
-    /** The proxy service used to perform REST calls. */
+    /**
+     * The proxy service used to perform REST calls.
+     */
     private final MyWorkbooksService service;
 
-    /** The service client containing this operation class. */
+    /**
+     * The service client containing this operation class.
+     */
     private final ApplicationInsightsManagementClientImpl client;
 
     /**
      * Initializes an instance of MyWorkbooksClientImpl.
-     *
+     * 
      * @param client the instance of the service client containing this operation class.
      */
     MyWorkbooksClientImpl(ApplicationInsightsManagementClientImpl client) {
-        this.service =
-            RestProxy.create(MyWorkbooksService.class, client.getHttpPipeline(), client.getSerializerAdapter());
+        this.service
+            = RestProxy.create(MyWorkbooksService.class, client.getHttpPipeline(), client.getSerializerAdapter());
         this.client = client;
     }
 
@@ -64,123 +70,90 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
     @Host("{$host}")
     @ServiceInterface(name = "ApplicationInsightsM")
     public interface MyWorkbooksService {
-        @Headers({"Content-Type: application/json"})
-        @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/myWorkbooks")
-        @ExpectedResponses({200})
+        @Headers({ "Content-Type: application/json" })
+        @Get("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/myWorkbooks")
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<MyWorkbooksListResult>> listByResourceGroup(
-            @HostParam("$host") String endpoint,
+        Mono<Response<MyWorkbooksListResult>> listByResourceGroup(@HostParam("$host") String endpoint,
             @PathParam("subscriptionId") String subscriptionId,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @QueryParam("category") CategoryType category,
-            @QueryParam("tags") String tags,
-            @QueryParam("canFetchContent") Boolean canFetchContent,
-            @QueryParam("api-version") String apiVersion,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @PathParam("resourceGroupName") String resourceGroupName, @QueryParam("category") CategoryType category,
+            @QueryParam("tags") String tags, @QueryParam("canFetchContent") Boolean canFetchContent,
+            @QueryParam("api-version") String apiVersion, @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
+        @Headers({ "Content-Type: application/json" })
         @Get("/subscriptions/{subscriptionId}/providers/Microsoft.Insights/myWorkbooks")
-        @ExpectedResponses({200})
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<MyWorkbooksListResult>> list(
-            @HostParam("$host") String endpoint,
+        Mono<Response<MyWorkbooksListResult>> list(@HostParam("$host") String endpoint,
+            @PathParam("subscriptionId") String subscriptionId, @QueryParam("category") CategoryType category,
+            @QueryParam("tags") String tags, @QueryParam("canFetchContent") Boolean canFetchContent,
+            @QueryParam("api-version") String apiVersion, @HeaderParam("Accept") String accept, Context context);
+
+        @Headers({ "Content-Type: application/json" })
+        @Get("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/myWorkbooks/{resourceName}")
+        @ExpectedResponses({ 200 })
+        @UnexpectedResponseExceptionType(ManagementException.class)
+        Mono<Response<MyWorkbookInner>> getByResourceGroup(@HostParam("$host") String endpoint,
             @PathParam("subscriptionId") String subscriptionId,
-            @QueryParam("category") CategoryType category,
-            @QueryParam("tags") String tags,
-            @QueryParam("canFetchContent") Boolean canFetchContent,
+            @PathParam("resourceGroupName") String resourceGroupName, @PathParam("resourceName") String resourceName,
+            @QueryParam("api-version") String apiVersion, @HeaderParam("Accept") String accept, Context context);
+
+        @Headers({ "Content-Type: application/json" })
+        @Delete("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/myWorkbooks/{resourceName}")
+        @ExpectedResponses({ 201, 204 })
+        @UnexpectedResponseExceptionType(ManagementException.class)
+        Mono<Response<Void>> delete(@HostParam("$host") String endpoint,
+            @PathParam("subscriptionId") String subscriptionId,
+            @PathParam("resourceGroupName") String resourceGroupName, @PathParam("resourceName") String resourceName,
+            @QueryParam("api-version") String apiVersion, @HeaderParam("Accept") String accept, Context context);
+
+        @Headers({ "Content-Type: application/json" })
+        @Put("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/myWorkbooks/{resourceName}")
+        @ExpectedResponses({ 200, 201 })
+        @UnexpectedResponseExceptionType(ManagementException.class)
+        Mono<Response<MyWorkbookInner>> createOrUpdate(@HostParam("$host") String endpoint,
+            @PathParam("subscriptionId") String subscriptionId,
+            @PathParam("resourceGroupName") String resourceGroupName, @PathParam("resourceName") String resourceName,
             @QueryParam("api-version") String apiVersion,
-            @HeaderParam("Accept") String accept,
+            @BodyParam("application/json") MyWorkbookInner workbookProperties, @HeaderParam("Accept") String accept,
             Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/myWorkbooks/{resourceName}")
-        @ExpectedResponses({200})
+        @Headers({ "Content-Type: application/json" })
+        @Patch("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/myWorkbooks/{resourceName}")
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<MyWorkbookInner>> getByResourceGroup(
-            @HostParam("$host") String endpoint,
+        Mono<Response<MyWorkbookInner>> update(@HostParam("$host") String endpoint,
             @PathParam("subscriptionId") String subscriptionId,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("resourceName") String resourceName,
+            @PathParam("resourceGroupName") String resourceGroupName, @PathParam("resourceName") String resourceName,
             @QueryParam("api-version") String apiVersion,
-            @HeaderParam("Accept") String accept,
-            Context context);
-
-        @Headers({"Content-Type: application/json"})
-        @Delete(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/myWorkbooks/{resourceName}")
-        @ExpectedResponses({201, 204})
-        @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<Void>> delete(
-            @HostParam("$host") String endpoint,
-            @PathParam("subscriptionId") String subscriptionId,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("resourceName") String resourceName,
-            @QueryParam("api-version") String apiVersion,
-            @HeaderParam("Accept") String accept,
-            Context context);
-
-        @Headers({"Content-Type: application/json"})
-        @Put(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/myWorkbooks/{resourceName}")
-        @ExpectedResponses({200, 201})
-        @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<MyWorkbookInner>> createOrUpdate(
-            @HostParam("$host") String endpoint,
-            @PathParam("subscriptionId") String subscriptionId,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("resourceName") String resourceName,
-            @QueryParam("api-version") String apiVersion,
-            @BodyParam("application/json") MyWorkbookInner workbookProperties,
-            @HeaderParam("Accept") String accept,
-            Context context);
-
-        @Headers({"Content-Type: application/json"})
-        @Patch(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/myWorkbooks/{resourceName}")
-        @ExpectedResponses({200})
-        @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<MyWorkbookInner>> update(
-            @HostParam("$host") String endpoint,
-            @PathParam("subscriptionId") String subscriptionId,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("resourceName") String resourceName,
-            @QueryParam("api-version") String apiVersion,
-            @BodyParam("application/json") MyWorkbookInner workbookProperties,
-            @HeaderParam("Accept") String accept,
+            @BodyParam("application/json") MyWorkbookInner workbookProperties, @HeaderParam("Accept") String accept,
             Context context);
     }
 
     /**
      * Get all private workbooks defined within a specified resource group and category.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param category Category of workbook to return.
      * @param tags Tags presents on each workbook returned.
      * @param canFetchContent Flag indicating whether or not to return the full content for each applicable workbook. If
-     *     false, only return summary content for workbooks.
+     * false, only return summary content for workbooks.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private workbooks defined within a specified resource group and category along with {@link
-     *     PagedResponse} on successful completion of {@link Mono}.
+     * @return all private workbooks defined within a specified resource group and category along with
+     * {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<MyWorkbookInner>> listByResourceGroupSinglePageAsync(
-        String resourceGroupName, CategoryType category, List<String> tags, Boolean canFetchContent) {
+    private Mono<PagedResponse<MyWorkbookInner>> listByResourceGroupSinglePageAsync(String resourceGroupName,
+        CategoryType category, List<String> tags, Boolean canFetchContent) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -191,63 +164,42 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
         }
         final String apiVersion = "2015-05-01";
         final String accept = "application/json";
-        String tagsConverted =
-            (tags == null)
-                ? null
-                : tags
-                    .stream()
-                    .map(paramItemValue -> Objects.toString(paramItemValue, ""))
-                    .collect(Collectors.joining(","));
+        String tagsConverted = (tags == null) ? null : tags.stream()
+            .map(paramItemValue -> Objects.toString(paramItemValue, "")).collect(Collectors.joining(","));
         return FluxUtil
             .withContext(
-                context ->
-                    service
-                        .listByResourceGroup(
-                            this.client.getEndpoint(),
-                            this.client.getSubscriptionId(),
-                            resourceGroupName,
-                            category,
-                            tagsConverted,
-                            canFetchContent,
-                            apiVersion,
-                            accept,
-                            context))
-            .<PagedResponse<MyWorkbookInner>>map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(), res.getStatusCode(), res.getHeaders(), res.getValue().value(), null, null))
+                context -> service.listByResourceGroup(this.client.getEndpoint(), this.client.getSubscriptionId(),
+                    resourceGroupName, category, tagsConverted, canFetchContent, apiVersion, accept, context))
+            .<PagedResponse<MyWorkbookInner>>map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(),
+                res.getHeaders(), res.getValue().value(), null, null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Get all private workbooks defined within a specified resource group and category.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param category Category of workbook to return.
      * @param tags Tags presents on each workbook returned.
      * @param canFetchContent Flag indicating whether or not to return the full content for each applicable workbook. If
-     *     false, only return summary content for workbooks.
+     * false, only return summary content for workbooks.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private workbooks defined within a specified resource group and category along with {@link
-     *     PagedResponse} on successful completion of {@link Mono}.
+     * @return all private workbooks defined within a specified resource group and category along with
+     * {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<MyWorkbookInner>> listByResourceGroupSinglePageAsync(
-        String resourceGroupName, CategoryType category, List<String> tags, Boolean canFetchContent, Context context) {
+    private Mono<PagedResponse<MyWorkbookInner>> listByResourceGroupSinglePageAsync(String resourceGroupName,
+        CategoryType category, List<String> tags, Boolean canFetchContent, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -258,62 +210,47 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
         }
         final String apiVersion = "2015-05-01";
         final String accept = "application/json";
-        String tagsConverted =
-            (tags == null)
-                ? null
-                : tags
-                    .stream()
-                    .map(paramItemValue -> Objects.toString(paramItemValue, ""))
-                    .collect(Collectors.joining(","));
+        String tagsConverted = (tags == null) ? null : tags.stream()
+            .map(paramItemValue -> Objects.toString(paramItemValue, "")).collect(Collectors.joining(","));
         context = this.client.mergeContext(context);
         return service
-            .listByResourceGroup(
-                this.client.getEndpoint(),
-                this.client.getSubscriptionId(),
-                resourceGroupName,
-                category,
-                tagsConverted,
-                canFetchContent,
-                apiVersion,
-                accept,
-                context)
-            .map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(), res.getStatusCode(), res.getHeaders(), res.getValue().value(), null, null));
+            .listByResourceGroup(this.client.getEndpoint(), this.client.getSubscriptionId(), resourceGroupName,
+                category, tagsConverted, canFetchContent, apiVersion, accept, context)
+            .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
+                res.getValue().value(), null, null));
     }
 
     /**
      * Get all private workbooks defined within a specified resource group and category.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param category Category of workbook to return.
      * @param tags Tags presents on each workbook returned.
      * @param canFetchContent Flag indicating whether or not to return the full content for each applicable workbook. If
-     *     false, only return summary content for workbooks.
+     * false, only return summary content for workbooks.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all private workbooks defined within a specified resource group and category as paginated response with
-     *     {@link PagedFlux}.
+     * {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<MyWorkbookInner> listByResourceGroupAsync(
-        String resourceGroupName, CategoryType category, List<String> tags, Boolean canFetchContent) {
+    private PagedFlux<MyWorkbookInner> listByResourceGroupAsync(String resourceGroupName, CategoryType category,
+        List<String> tags, Boolean canFetchContent) {
         return new PagedFlux<>(
             () -> listByResourceGroupSinglePageAsync(resourceGroupName, category, tags, canFetchContent));
     }
 
     /**
      * Get all private workbooks defined within a specified resource group and category.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param category Category of workbook to return.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all private workbooks defined within a specified resource group and category as paginated response with
-     *     {@link PagedFlux}.
+     * {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<MyWorkbookInner> listByResourceGroupAsync(String resourceGroupName, CategoryType category) {
@@ -325,36 +262,36 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
 
     /**
      * Get all private workbooks defined within a specified resource group and category.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param category Category of workbook to return.
      * @param tags Tags presents on each workbook returned.
      * @param canFetchContent Flag indicating whether or not to return the full content for each applicable workbook. If
-     *     false, only return summary content for workbooks.
+     * false, only return summary content for workbooks.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all private workbooks defined within a specified resource group and category as paginated response with
-     *     {@link PagedFlux}.
+     * {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<MyWorkbookInner> listByResourceGroupAsync(
-        String resourceGroupName, CategoryType category, List<String> tags, Boolean canFetchContent, Context context) {
+    private PagedFlux<MyWorkbookInner> listByResourceGroupAsync(String resourceGroupName, CategoryType category,
+        List<String> tags, Boolean canFetchContent, Context context) {
         return new PagedFlux<>(
             () -> listByResourceGroupSinglePageAsync(resourceGroupName, category, tags, canFetchContent, context));
     }
 
     /**
      * Get all private workbooks defined within a specified resource group and category.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param category Category of workbook to return.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all private workbooks defined within a specified resource group and category as paginated response with
-     *     {@link PagedIterable}.
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<MyWorkbookInner> listByResourceGroup(String resourceGroupName, CategoryType category) {
@@ -365,156 +302,117 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
 
     /**
      * Get all private workbooks defined within a specified resource group and category.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param category Category of workbook to return.
      * @param tags Tags presents on each workbook returned.
      * @param canFetchContent Flag indicating whether or not to return the full content for each applicable workbook. If
-     *     false, only return summary content for workbooks.
+     * false, only return summary content for workbooks.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all private workbooks defined within a specified resource group and category as paginated response with
-     *     {@link PagedIterable}.
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    public PagedIterable<MyWorkbookInner> listByResourceGroup(
-        String resourceGroupName, CategoryType category, List<String> tags, Boolean canFetchContent, Context context) {
+    public PagedIterable<MyWorkbookInner> listByResourceGroup(String resourceGroupName, CategoryType category,
+        List<String> tags, Boolean canFetchContent, Context context) {
         return new PagedIterable<>(
             listByResourceGroupAsync(resourceGroupName, category, tags, canFetchContent, context));
     }
 
     /**
      * Get all private workbooks defined within a specified subscription and category.
-     *
+     * 
      * @param category Category of workbook to return.
      * @param tags Tags presents on each workbook returned.
      * @param canFetchContent Flag indicating whether or not to return the full content for each applicable workbook. If
-     *     false, only return summary content for workbooks.
+     * false, only return summary content for workbooks.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private workbooks defined within a specified subscription and category along with {@link
-     *     PagedResponse} on successful completion of {@link Mono}.
+     * @return all private workbooks defined within a specified subscription and category along with
+     * {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<MyWorkbookInner>> listSinglePageAsync(
-        CategoryType category, List<String> tags, Boolean canFetchContent) {
+    private Mono<PagedResponse<MyWorkbookInner>> listSinglePageAsync(CategoryType category, List<String> tags,
+        Boolean canFetchContent) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (category == null) {
             return Mono.error(new IllegalArgumentException("Parameter category is required and cannot be null."));
         }
         final String apiVersion = "2015-05-01";
         final String accept = "application/json";
-        String tagsConverted =
-            (tags == null)
-                ? null
-                : tags
-                    .stream()
-                    .map(paramItemValue -> Objects.toString(paramItemValue, ""))
-                    .collect(Collectors.joining(","));
+        String tagsConverted = (tags == null) ? null : tags.stream()
+            .map(paramItemValue -> Objects.toString(paramItemValue, "")).collect(Collectors.joining(","));
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .list(
-                            this.client.getEndpoint(),
-                            this.client.getSubscriptionId(),
-                            category,
-                            tagsConverted,
-                            canFetchContent,
-                            apiVersion,
-                            accept,
-                            context))
-            .<PagedResponse<MyWorkbookInner>>map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(), res.getStatusCode(), res.getHeaders(), res.getValue().value(), null, null))
+            .withContext(context -> service.list(this.client.getEndpoint(), this.client.getSubscriptionId(), category,
+                tagsConverted, canFetchContent, apiVersion, accept, context))
+            .<PagedResponse<MyWorkbookInner>>map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(),
+                res.getHeaders(), res.getValue().value(), null, null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Get all private workbooks defined within a specified subscription and category.
-     *
+     * 
      * @param category Category of workbook to return.
      * @param tags Tags presents on each workbook returned.
      * @param canFetchContent Flag indicating whether or not to return the full content for each applicable workbook. If
-     *     false, only return summary content for workbooks.
+     * false, only return summary content for workbooks.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private workbooks defined within a specified subscription and category along with {@link
-     *     PagedResponse} on successful completion of {@link Mono}.
+     * @return all private workbooks defined within a specified subscription and category along with
+     * {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<MyWorkbookInner>> listSinglePageAsync(
-        CategoryType category, List<String> tags, Boolean canFetchContent, Context context) {
+    private Mono<PagedResponse<MyWorkbookInner>> listSinglePageAsync(CategoryType category, List<String> tags,
+        Boolean canFetchContent, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (category == null) {
             return Mono.error(new IllegalArgumentException("Parameter category is required and cannot be null."));
         }
         final String apiVersion = "2015-05-01";
         final String accept = "application/json";
-        String tagsConverted =
-            (tags == null)
-                ? null
-                : tags
-                    .stream()
-                    .map(paramItemValue -> Objects.toString(paramItemValue, ""))
-                    .collect(Collectors.joining(","));
+        String tagsConverted = (tags == null) ? null : tags.stream()
+            .map(paramItemValue -> Objects.toString(paramItemValue, "")).collect(Collectors.joining(","));
         context = this.client.mergeContext(context);
         return service
-            .list(
-                this.client.getEndpoint(),
-                this.client.getSubscriptionId(),
-                category,
-                tagsConverted,
-                canFetchContent,
-                apiVersion,
-                accept,
-                context)
-            .map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(), res.getStatusCode(), res.getHeaders(), res.getValue().value(), null, null));
+            .list(this.client.getEndpoint(), this.client.getSubscriptionId(), category, tagsConverted, canFetchContent,
+                apiVersion, accept, context)
+            .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
+                res.getValue().value(), null, null));
     }
 
     /**
      * Get all private workbooks defined within a specified subscription and category.
-     *
+     * 
      * @param category Category of workbook to return.
      * @param tags Tags presents on each workbook returned.
      * @param canFetchContent Flag indicating whether or not to return the full content for each applicable workbook. If
-     *     false, only return summary content for workbooks.
+     * false, only return summary content for workbooks.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all private workbooks defined within a specified subscription and category as paginated response with
-     *     {@link PagedFlux}.
+     * {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<MyWorkbookInner> listAsync(CategoryType category, List<String> tags, Boolean canFetchContent) {
@@ -523,13 +421,13 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
 
     /**
      * Get all private workbooks defined within a specified subscription and category.
-     *
+     * 
      * @param category Category of workbook to return.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all private workbooks defined within a specified subscription and category as paginated response with
-     *     {@link PagedFlux}.
+     * {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<MyWorkbookInner> listAsync(CategoryType category) {
@@ -540,33 +438,33 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
 
     /**
      * Get all private workbooks defined within a specified subscription and category.
-     *
+     * 
      * @param category Category of workbook to return.
      * @param tags Tags presents on each workbook returned.
      * @param canFetchContent Flag indicating whether or not to return the full content for each applicable workbook. If
-     *     false, only return summary content for workbooks.
+     * false, only return summary content for workbooks.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all private workbooks defined within a specified subscription and category as paginated response with
-     *     {@link PagedFlux}.
+     * {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<MyWorkbookInner> listAsync(
-        CategoryType category, List<String> tags, Boolean canFetchContent, Context context) {
+    private PagedFlux<MyWorkbookInner> listAsync(CategoryType category, List<String> tags, Boolean canFetchContent,
+        Context context) {
         return new PagedFlux<>(() -> listSinglePageAsync(category, tags, canFetchContent, context));
     }
 
     /**
      * Get all private workbooks defined within a specified subscription and category.
-     *
+     * 
      * @param category Category of workbook to return.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all private workbooks defined within a specified subscription and category as paginated response with
-     *     {@link PagedIterable}.
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<MyWorkbookInner> list(CategoryType category) {
@@ -577,49 +475,45 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
 
     /**
      * Get all private workbooks defined within a specified subscription and category.
-     *
+     * 
      * @param category Category of workbook to return.
      * @param tags Tags presents on each workbook returned.
      * @param canFetchContent Flag indicating whether or not to return the full content for each applicable workbook. If
-     *     false, only return summary content for workbooks.
+     * false, only return summary content for workbooks.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all private workbooks defined within a specified subscription and category as paginated response with
-     *     {@link PagedIterable}.
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    public PagedIterable<MyWorkbookInner> list(
-        CategoryType category, List<String> tags, Boolean canFetchContent, Context context) {
+    public PagedIterable<MyWorkbookInner> list(CategoryType category, List<String> tags, Boolean canFetchContent,
+        Context context) {
         return new PagedIterable<>(listAsync(category, tags, canFetchContent, context));
     }
 
     /**
      * Get a single private workbook by its resourceName.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceName The name of the Application Insights component resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a single private workbook by its resourceName along with {@link Response} on successful completion of
-     *     {@link Mono}.
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<MyWorkbookInner>> getByResourceGroupWithResponseAsync(
-        String resourceGroupName, String resourceName) {
+    private Mono<Response<MyWorkbookInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
+        String resourceName) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -631,23 +525,14 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
         final String apiVersion = "2015-05-01";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .getByResourceGroup(
-                            this.client.getEndpoint(),
-                            this.client.getSubscriptionId(),
-                            resourceGroupName,
-                            resourceName,
-                            apiVersion,
-                            accept,
-                            context))
+            .withContext(context -> service.getByResourceGroup(this.client.getEndpoint(),
+                this.client.getSubscriptionId(), resourceGroupName, resourceName, apiVersion, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Get a single private workbook by its resourceName.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceName The name of the Application Insights component resource.
      * @param context The context to associate with this operation.
@@ -655,22 +540,18 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a single private workbook by its resourceName along with {@link Response} on successful completion of
-     *     {@link Mono}.
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<MyWorkbookInner>> getByResourceGroupWithResponseAsync(
-        String resourceGroupName, String resourceName, Context context) {
+    private Mono<Response<MyWorkbookInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
+        String resourceName, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -682,20 +563,13 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
         final String apiVersion = "2015-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .getByResourceGroup(
-                this.client.getEndpoint(),
-                this.client.getSubscriptionId(),
-                resourceGroupName,
-                resourceName,
-                apiVersion,
-                accept,
-                context);
+        return service.getByResourceGroup(this.client.getEndpoint(), this.client.getSubscriptionId(), resourceGroupName,
+            resourceName, apiVersion, accept, context);
     }
 
     /**
      * Get a single private workbook by its resourceName.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceName The name of the Application Insights component resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -711,7 +585,7 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
 
     /**
      * Get a single private workbook by its resourceName.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceName The name of the Application Insights component resource.
      * @param context The context to associate with this operation.
@@ -721,14 +595,14 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
      * @return a single private workbook by its resourceName along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<MyWorkbookInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String resourceName, Context context) {
+    public Response<MyWorkbookInner> getByResourceGroupWithResponse(String resourceGroupName, String resourceName,
+        Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, resourceName, context).block();
     }
 
     /**
      * Get a single private workbook by its resourceName.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceName The name of the Application Insights component resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -743,7 +617,7 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
 
     /**
      * Delete a private workbook.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceName The name of the Application Insights component resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -754,16 +628,12 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Void>> deleteWithResponseAsync(String resourceGroupName, String resourceName) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -775,23 +645,14 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
         final String apiVersion = "2015-05-01";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .delete(
-                            this.client.getEndpoint(),
-                            this.client.getSubscriptionId(),
-                            resourceGroupName,
-                            resourceName,
-                            apiVersion,
-                            accept,
-                            context))
+            .withContext(context -> service.delete(this.client.getEndpoint(), this.client.getSubscriptionId(),
+                resourceGroupName, resourceName, apiVersion, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Delete a private workbook.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceName The name of the Application Insights component resource.
      * @param context The context to associate with this operation.
@@ -801,19 +662,15 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
      * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Void>> deleteWithResponseAsync(
-        String resourceGroupName, String resourceName, Context context) {
+    private Mono<Response<Void>> deleteWithResponseAsync(String resourceGroupName, String resourceName,
+        Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -825,20 +682,13 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
         final String apiVersion = "2015-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .delete(
-                this.client.getEndpoint(),
-                this.client.getSubscriptionId(),
-                resourceGroupName,
-                resourceName,
-                apiVersion,
-                accept,
-                context);
+        return service.delete(this.client.getEndpoint(), this.client.getSubscriptionId(), resourceGroupName,
+            resourceName, apiVersion, accept, context);
     }
 
     /**
      * Delete a private workbook.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceName The name of the Application Insights component resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -853,7 +703,7 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
 
     /**
      * Delete a private workbook.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceName The name of the Application Insights component resource.
      * @param context The context to associate with this operation.
@@ -869,7 +719,7 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
 
     /**
      * Delete a private workbook.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceName The name of the Application Insights component resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -883,7 +733,7 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
 
     /**
      * Create a new private workbook.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceName The name of the Application Insights component resource.
      * @param workbookProperties Properties that need to be specified to create a new private workbook.
@@ -891,22 +741,18 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return an Application Insights private workbook definition along with {@link Response} on successful completion
-     *     of {@link Mono}.
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<MyWorkbookInner>> createOrUpdateWithResponseAsync(
-        String resourceGroupName, String resourceName, MyWorkbookInner workbookProperties) {
+    private Mono<Response<MyWorkbookInner>> createOrUpdateWithResponseAsync(String resourceGroupName,
+        String resourceName, MyWorkbookInner workbookProperties) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -924,24 +770,14 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
         final String apiVersion = "2015-05-01";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .createOrUpdate(
-                            this.client.getEndpoint(),
-                            this.client.getSubscriptionId(),
-                            resourceGroupName,
-                            resourceName,
-                            apiVersion,
-                            workbookProperties,
-                            accept,
-                            context))
+            .withContext(context -> service.createOrUpdate(this.client.getEndpoint(), this.client.getSubscriptionId(),
+                resourceGroupName, resourceName, apiVersion, workbookProperties, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Create a new private workbook.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceName The name of the Application Insights component resource.
      * @param workbookProperties Properties that need to be specified to create a new private workbook.
@@ -950,22 +786,18 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return an Application Insights private workbook definition along with {@link Response} on successful completion
-     *     of {@link Mono}.
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<MyWorkbookInner>> createOrUpdateWithResponseAsync(
-        String resourceGroupName, String resourceName, MyWorkbookInner workbookProperties, Context context) {
+    private Mono<Response<MyWorkbookInner>> createOrUpdateWithResponseAsync(String resourceGroupName,
+        String resourceName, MyWorkbookInner workbookProperties, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -983,21 +815,13 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
         final String apiVersion = "2015-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .createOrUpdate(
-                this.client.getEndpoint(),
-                this.client.getSubscriptionId(),
-                resourceGroupName,
-                resourceName,
-                apiVersion,
-                workbookProperties,
-                accept,
-                context);
+        return service.createOrUpdate(this.client.getEndpoint(), this.client.getSubscriptionId(), resourceGroupName,
+            resourceName, apiVersion, workbookProperties, accept, context);
     }
 
     /**
      * Create a new private workbook.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceName The name of the Application Insights component resource.
      * @param workbookProperties Properties that need to be specified to create a new private workbook.
@@ -1007,15 +831,15 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
      * @return an Application Insights private workbook definition on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<MyWorkbookInner> createOrUpdateAsync(
-        String resourceGroupName, String resourceName, MyWorkbookInner workbookProperties) {
+    private Mono<MyWorkbookInner> createOrUpdateAsync(String resourceGroupName, String resourceName,
+        MyWorkbookInner workbookProperties) {
         return createOrUpdateWithResponseAsync(resourceGroupName, resourceName, workbookProperties)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
      * Create a new private workbook.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceName The name of the Application Insights component resource.
      * @param workbookProperties Properties that need to be specified to create a new private workbook.
@@ -1026,14 +850,14 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
      * @return an Application Insights private workbook definition along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<MyWorkbookInner> createOrUpdateWithResponse(
-        String resourceGroupName, String resourceName, MyWorkbookInner workbookProperties, Context context) {
+    public Response<MyWorkbookInner> createOrUpdateWithResponse(String resourceGroupName, String resourceName,
+        MyWorkbookInner workbookProperties, Context context) {
         return createOrUpdateWithResponseAsync(resourceGroupName, resourceName, workbookProperties, context).block();
     }
 
     /**
      * Create a new private workbook.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceName The name of the Application Insights component resource.
      * @param workbookProperties Properties that need to be specified to create a new private workbook.
@@ -1043,14 +867,14 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
      * @return an Application Insights private workbook definition.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public MyWorkbookInner createOrUpdate(
-        String resourceGroupName, String resourceName, MyWorkbookInner workbookProperties) {
+    public MyWorkbookInner createOrUpdate(String resourceGroupName, String resourceName,
+        MyWorkbookInner workbookProperties) {
         return createOrUpdateWithResponse(resourceGroupName, resourceName, workbookProperties, Context.NONE).getValue();
     }
 
     /**
      * Updates a private workbook that has already been added.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceName The name of the Application Insights component resource.
      * @param workbookProperties Properties that need to be specified to create a new private workbook.
@@ -1058,22 +882,18 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return an Application Insights private workbook definition along with {@link Response} on successful completion
-     *     of {@link Mono}.
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<MyWorkbookInner>> updateWithResponseAsync(
-        String resourceGroupName, String resourceName, MyWorkbookInner workbookProperties) {
+    private Mono<Response<MyWorkbookInner>> updateWithResponseAsync(String resourceGroupName, String resourceName,
+        MyWorkbookInner workbookProperties) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -1091,24 +911,14 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
         final String apiVersion = "2015-05-01";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .update(
-                            this.client.getEndpoint(),
-                            this.client.getSubscriptionId(),
-                            resourceGroupName,
-                            resourceName,
-                            apiVersion,
-                            workbookProperties,
-                            accept,
-                            context))
+            .withContext(context -> service.update(this.client.getEndpoint(), this.client.getSubscriptionId(),
+                resourceGroupName, resourceName, apiVersion, workbookProperties, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Updates a private workbook that has already been added.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceName The name of the Application Insights component resource.
      * @param workbookProperties Properties that need to be specified to create a new private workbook.
@@ -1117,22 +927,18 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return an Application Insights private workbook definition along with {@link Response} on successful completion
-     *     of {@link Mono}.
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<MyWorkbookInner>> updateWithResponseAsync(
-        String resourceGroupName, String resourceName, MyWorkbookInner workbookProperties, Context context) {
+    private Mono<Response<MyWorkbookInner>> updateWithResponseAsync(String resourceGroupName, String resourceName,
+        MyWorkbookInner workbookProperties, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -1150,21 +956,13 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
         final String apiVersion = "2015-05-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .update(
-                this.client.getEndpoint(),
-                this.client.getSubscriptionId(),
-                resourceGroupName,
-                resourceName,
-                apiVersion,
-                workbookProperties,
-                accept,
-                context);
+        return service.update(this.client.getEndpoint(), this.client.getSubscriptionId(), resourceGroupName,
+            resourceName, apiVersion, workbookProperties, accept, context);
     }
 
     /**
      * Updates a private workbook that has already been added.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceName The name of the Application Insights component resource.
      * @param workbookProperties Properties that need to be specified to create a new private workbook.
@@ -1174,15 +972,15 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
      * @return an Application Insights private workbook definition on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<MyWorkbookInner> updateAsync(
-        String resourceGroupName, String resourceName, MyWorkbookInner workbookProperties) {
+    private Mono<MyWorkbookInner> updateAsync(String resourceGroupName, String resourceName,
+        MyWorkbookInner workbookProperties) {
         return updateWithResponseAsync(resourceGroupName, resourceName, workbookProperties)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
      * Updates a private workbook that has already been added.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceName The name of the Application Insights component resource.
      * @param workbookProperties Properties that need to be specified to create a new private workbook.
@@ -1193,14 +991,14 @@ public final class MyWorkbooksClientImpl implements MyWorkbooksClient {
      * @return an Application Insights private workbook definition along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<MyWorkbookInner> updateWithResponse(
-        String resourceGroupName, String resourceName, MyWorkbookInner workbookProperties, Context context) {
+    public Response<MyWorkbookInner> updateWithResponse(String resourceGroupName, String resourceName,
+        MyWorkbookInner workbookProperties, Context context) {
         return updateWithResponseAsync(resourceGroupName, resourceName, workbookProperties, context).block();
     }
 
     /**
      * Updates a private workbook that has already been added.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceName The name of the Application Insights component resource.
      * @param workbookProperties Properties that need to be specified to create a new private workbook.

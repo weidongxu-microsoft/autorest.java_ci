@@ -9,7 +9,9 @@ import com.azure.core.management.Resource;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
 
-/** An azure resource object. */
+/**
+ * An azure resource object.
+ */
 @Fluent
 public class MyWorkbookResource extends Resource {
     /*
@@ -30,13 +32,15 @@ public class MyWorkbookResource extends Resource {
     @JsonProperty(value = "type")
     private String type;
 
-    /** Creates an instance of MyWorkbookResource class. */
+    /**
+     * Creates an instance of MyWorkbookResource class.
+     */
     public MyWorkbookResource() {
     }
 
     /**
      * Get the id property: Azure resource Id.
-     *
+     * 
      * @return the id value.
      */
     public String id() {
@@ -45,7 +49,7 @@ public class MyWorkbookResource extends Resource {
 
     /**
      * Set the id property: Azure resource Id.
-     *
+     * 
      * @param id the id value to set.
      * @return the MyWorkbookResource object itself.
      */
@@ -56,7 +60,7 @@ public class MyWorkbookResource extends Resource {
 
     /**
      * Get the name property: Azure resource name.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -65,7 +69,7 @@ public class MyWorkbookResource extends Resource {
 
     /**
      * Set the name property: Azure resource name.
-     *
+     * 
      * @param name the name value to set.
      * @return the MyWorkbookResource object itself.
      */
@@ -76,7 +80,7 @@ public class MyWorkbookResource extends Resource {
 
     /**
      * Get the type property: Azure resource type.
-     *
+     * 
      * @return the type value.
      */
     public String type() {
@@ -85,7 +89,7 @@ public class MyWorkbookResource extends Resource {
 
     /**
      * Set the type property: Azure resource type.
-     *
+     * 
      * @param type the type value to set.
      * @return the MyWorkbookResource object itself.
      */
@@ -94,14 +98,18 @@ public class MyWorkbookResource extends Resource {
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public MyWorkbookResource withLocation(String location) {
         super.withLocation(location);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public MyWorkbookResource withTags(Map<String, String> tags) {
         super.withTags(tags);
@@ -110,7 +118,7 @@ public class MyWorkbookResource extends Resource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

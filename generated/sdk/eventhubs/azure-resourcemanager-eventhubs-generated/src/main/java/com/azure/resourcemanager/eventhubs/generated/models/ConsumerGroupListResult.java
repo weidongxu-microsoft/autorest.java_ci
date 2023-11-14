@@ -9,7 +9,9 @@ import com.azure.resourcemanager.eventhubs.generated.fluent.models.ConsumerGroup
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The result to the List Consumer Group operation. */
+/**
+ * The result to the List Consumer Group operation.
+ */
 @Fluent
 public final class ConsumerGroupListResult {
     /*
@@ -24,13 +26,15 @@ public final class ConsumerGroupListResult {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
-    /** Creates an instance of ConsumerGroupListResult class. */
+    /**
+     * Creates an instance of ConsumerGroupListResult class.
+     */
     public ConsumerGroupListResult() {
     }
 
     /**
      * Get the value property: Result of the List Consumer Group operation.
-     *
+     * 
      * @return the value value.
      */
     public List<ConsumerGroupInner> value() {
@@ -39,7 +43,7 @@ public final class ConsumerGroupListResult {
 
     /**
      * Set the value property: Result of the List Consumer Group operation.
-     *
+     * 
      * @param value the value value to set.
      * @return the ConsumerGroupListResult object itself.
      */
@@ -51,7 +55,7 @@ public final class ConsumerGroupListResult {
     /**
      * Get the nextLink property: Link to the next set of results. Not empty if Value contains incomplete list of
      * Consumer Group.
-     *
+     * 
      * @return the nextLink value.
      */
     public String nextLink() {
@@ -61,7 +65,7 @@ public final class ConsumerGroupListResult {
     /**
      * Set the nextLink property: Link to the next set of results. Not empty if Value contains incomplete list of
      * Consumer Group.
-     *
+     * 
      * @param nextLink the nextLink value to set.
      * @return the ConsumerGroupListResult object itself.
      */
@@ -72,7 +76,7 @@ public final class ConsumerGroupListResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

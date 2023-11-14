@@ -7,7 +7,9 @@ package com.azure.resourcemanager.postgresql.generated.fluent.models;
 import com.azure.core.annotation.Immutable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The recoverable server's properties. */
+/**
+ * The recoverable server's properties.
+ */
 @Immutable
 public final class RecoverableServerProperties {
     /*
@@ -46,13 +48,15 @@ public final class RecoverableServerProperties {
     @JsonProperty(value = "version", access = JsonProperty.Access.WRITE_ONLY)
     private String version;
 
-    /** Creates an instance of RecoverableServerProperties class. */
+    /**
+     * Creates an instance of RecoverableServerProperties class.
+     */
     public RecoverableServerProperties() {
     }
 
     /**
      * Get the lastAvailableBackupDateTime property: The last available backup date time.
-     *
+     * 
      * @return the lastAvailableBackupDateTime value.
      */
     public String lastAvailableBackupDateTime() {
@@ -61,7 +65,7 @@ public final class RecoverableServerProperties {
 
     /**
      * Get the serviceLevelObjective property: The service level objective.
-     *
+     * 
      * @return the serviceLevelObjective value.
      */
     public String serviceLevelObjective() {
@@ -70,7 +74,7 @@ public final class RecoverableServerProperties {
 
     /**
      * Get the edition property: Edition of the performance tier.
-     *
+     * 
      * @return the edition value.
      */
     public String edition() {
@@ -79,7 +83,7 @@ public final class RecoverableServerProperties {
 
     /**
      * Get the vCore property: vCore associated with the service level objective.
-     *
+     * 
      * @return the vCore value.
      */
     public Integer vCore() {
@@ -88,7 +92,7 @@ public final class RecoverableServerProperties {
 
     /**
      * Get the hardwareGeneration property: Hardware generation associated with the service level objective.
-     *
+     * 
      * @return the hardwareGeneration value.
      */
     public String hardwareGeneration() {
@@ -97,7 +101,7 @@ public final class RecoverableServerProperties {
 
     /**
      * Get the version property: The PostgreSQL version.
-     *
+     * 
      * @return the version value.
      */
     public String version() {
@@ -106,7 +110,7 @@ public final class RecoverableServerProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -12,7 +12,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
 
-/** The streaming endpoint properties. */
+/**
+ * The streaming endpoint properties.
+ */
 @Fluent
 public final class StreamingEndpointProperties {
     /*
@@ -111,13 +113,15 @@ public final class StreamingEndpointProperties {
     @JsonProperty(value = "lastModified", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime lastModified;
 
-    /** Creates an instance of StreamingEndpointProperties class. */
+    /**
+     * Creates an instance of StreamingEndpointProperties class.
+     */
     public StreamingEndpointProperties() {
     }
 
     /**
      * Get the description property: The streaming endpoint description.
-     *
+     * 
      * @return the description value.
      */
     public String description() {
@@ -126,7 +130,7 @@ public final class StreamingEndpointProperties {
 
     /**
      * Set the description property: The streaming endpoint description.
-     *
+     * 
      * @param description the description value to set.
      * @return the StreamingEndpointProperties object itself.
      */
@@ -137,7 +141,7 @@ public final class StreamingEndpointProperties {
 
     /**
      * Get the scaleUnits property: The number of scale units. Use the Scale operation to adjust this value.
-     *
+     * 
      * @return the scaleUnits value.
      */
     public int scaleUnits() {
@@ -146,7 +150,7 @@ public final class StreamingEndpointProperties {
 
     /**
      * Set the scaleUnits property: The number of scale units. Use the Scale operation to adjust this value.
-     *
+     * 
      * @param scaleUnits the scaleUnits value to set.
      * @return the StreamingEndpointProperties object itself.
      */
@@ -157,7 +161,7 @@ public final class StreamingEndpointProperties {
 
     /**
      * Get the availabilitySetName property: This feature is deprecated, do not set a value for this property.
-     *
+     * 
      * @return the availabilitySetName value.
      */
     public String availabilitySetName() {
@@ -166,7 +170,7 @@ public final class StreamingEndpointProperties {
 
     /**
      * Set the availabilitySetName property: This feature is deprecated, do not set a value for this property.
-     *
+     * 
      * @param availabilitySetName the availabilitySetName value to set.
      * @return the StreamingEndpointProperties object itself.
      */
@@ -177,7 +181,7 @@ public final class StreamingEndpointProperties {
 
     /**
      * Get the accessControl property: The access control definition of the streaming endpoint.
-     *
+     * 
      * @return the accessControl value.
      */
     public StreamingEndpointAccessControl accessControl() {
@@ -186,7 +190,7 @@ public final class StreamingEndpointProperties {
 
     /**
      * Set the accessControl property: The access control definition of the streaming endpoint.
-     *
+     * 
      * @param accessControl the accessControl value to set.
      * @return the StreamingEndpointProperties object itself.
      */
@@ -197,7 +201,7 @@ public final class StreamingEndpointProperties {
 
     /**
      * Get the maxCacheAge property: Max cache age.
-     *
+     * 
      * @return the maxCacheAge value.
      */
     public Long maxCacheAge() {
@@ -206,7 +210,7 @@ public final class StreamingEndpointProperties {
 
     /**
      * Set the maxCacheAge property: Max cache age.
-     *
+     * 
      * @param maxCacheAge the maxCacheAge value to set.
      * @return the StreamingEndpointProperties object itself.
      */
@@ -217,7 +221,7 @@ public final class StreamingEndpointProperties {
 
     /**
      * Get the customHostNames property: The custom host names of the streaming endpoint.
-     *
+     * 
      * @return the customHostNames value.
      */
     public List<String> customHostNames() {
@@ -226,7 +230,7 @@ public final class StreamingEndpointProperties {
 
     /**
      * Set the customHostNames property: The custom host names of the streaming endpoint.
-     *
+     * 
      * @param customHostNames the customHostNames value to set.
      * @return the StreamingEndpointProperties object itself.
      */
@@ -237,7 +241,7 @@ public final class StreamingEndpointProperties {
 
     /**
      * Get the hostname property: The streaming endpoint host name.
-     *
+     * 
      * @return the hostname value.
      */
     public String hostname() {
@@ -246,7 +250,7 @@ public final class StreamingEndpointProperties {
 
     /**
      * Get the cdnEnabled property: The CDN enabled flag.
-     *
+     * 
      * @return the cdnEnabled value.
      */
     public Boolean cdnEnabled() {
@@ -255,7 +259,7 @@ public final class StreamingEndpointProperties {
 
     /**
      * Set the cdnEnabled property: The CDN enabled flag.
-     *
+     * 
      * @param cdnEnabled the cdnEnabled value to set.
      * @return the StreamingEndpointProperties object itself.
      */
@@ -266,7 +270,7 @@ public final class StreamingEndpointProperties {
 
     /**
      * Get the cdnProvider property: The CDN provider name.
-     *
+     * 
      * @return the cdnProvider value.
      */
     public String cdnProvider() {
@@ -275,7 +279,7 @@ public final class StreamingEndpointProperties {
 
     /**
      * Set the cdnProvider property: The CDN provider name.
-     *
+     * 
      * @param cdnProvider the cdnProvider value to set.
      * @return the StreamingEndpointProperties object itself.
      */
@@ -286,7 +290,7 @@ public final class StreamingEndpointProperties {
 
     /**
      * Get the cdnProfile property: The CDN profile name.
-     *
+     * 
      * @return the cdnProfile value.
      */
     public String cdnProfile() {
@@ -295,7 +299,7 @@ public final class StreamingEndpointProperties {
 
     /**
      * Set the cdnProfile property: The CDN profile name.
-     *
+     * 
      * @param cdnProfile the cdnProfile value to set.
      * @return the StreamingEndpointProperties object itself.
      */
@@ -306,7 +310,7 @@ public final class StreamingEndpointProperties {
 
     /**
      * Get the provisioningState property: The provisioning state of the streaming endpoint.
-     *
+     * 
      * @return the provisioningState value.
      */
     public String provisioningState() {
@@ -315,7 +319,7 @@ public final class StreamingEndpointProperties {
 
     /**
      * Get the resourceState property: The resource state of the streaming endpoint.
-     *
+     * 
      * @return the resourceState value.
      */
     public StreamingEndpointResourceState resourceState() {
@@ -324,7 +328,7 @@ public final class StreamingEndpointProperties {
 
     /**
      * Get the crossSiteAccessPolicies property: The streaming endpoint access policies.
-     *
+     * 
      * @return the crossSiteAccessPolicies value.
      */
     public CrossSiteAccessPolicies crossSiteAccessPolicies() {
@@ -333,7 +337,7 @@ public final class StreamingEndpointProperties {
 
     /**
      * Set the crossSiteAccessPolicies property: The streaming endpoint access policies.
-     *
+     * 
      * @param crossSiteAccessPolicies the crossSiteAccessPolicies value to set.
      * @return the StreamingEndpointProperties object itself.
      */
@@ -344,7 +348,7 @@ public final class StreamingEndpointProperties {
 
     /**
      * Get the freeTrialEndTime property: The free trial expiration time.
-     *
+     * 
      * @return the freeTrialEndTime value.
      */
     public OffsetDateTime freeTrialEndTime() {
@@ -353,7 +357,7 @@ public final class StreamingEndpointProperties {
 
     /**
      * Get the created property: The exact time the streaming endpoint was created.
-     *
+     * 
      * @return the created value.
      */
     public OffsetDateTime created() {
@@ -362,7 +366,7 @@ public final class StreamingEndpointProperties {
 
     /**
      * Get the lastModified property: The exact time the streaming endpoint was last modified.
-     *
+     * 
      * @return the lastModified value.
      */
     public OffsetDateTime lastModified() {
@@ -371,7 +375,7 @@ public final class StreamingEndpointProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

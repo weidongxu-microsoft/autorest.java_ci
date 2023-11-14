@@ -8,17 +8,23 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Enable Storage Auto Grow. */
+/**
+ * Enable Storage Auto Grow.
+ */
 public final class StorageAutogrow extends ExpandableStringEnum<StorageAutogrow> {
-    /** Static value Enabled for StorageAutogrow. */
+    /**
+     * Static value Enabled for StorageAutogrow.
+     */
     public static final StorageAutogrow ENABLED = fromString("Enabled");
 
-    /** Static value Disabled for StorageAutogrow. */
+    /**
+     * Static value Disabled for StorageAutogrow.
+     */
     public static final StorageAutogrow DISABLED = fromString("Disabled");
 
     /**
      * Creates a new instance of StorageAutogrow value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -27,7 +33,7 @@ public final class StorageAutogrow extends ExpandableStringEnum<StorageAutogrow>
 
     /**
      * Creates or finds a StorageAutogrow from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding StorageAutogrow.
      */
@@ -38,7 +44,7 @@ public final class StorageAutogrow extends ExpandableStringEnum<StorageAutogrow>
 
     /**
      * Gets known StorageAutogrow values.
-     *
+     * 
      * @return known StorageAutogrow values.
      */
     public static Collection<StorageAutogrow> values() {

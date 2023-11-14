@@ -9,7 +9,9 @@ import com.azure.resourcemanager.keyvault.generated.fluent.models.DeletedManaged
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** List of deleted managed HSM Pools. */
+/**
+ * List of deleted managed HSM Pools.
+ */
 @Fluent
 public final class DeletedManagedHsmListResult {
     /*
@@ -24,13 +26,15 @@ public final class DeletedManagedHsmListResult {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
-    /** Creates an instance of DeletedManagedHsmListResult class. */
+    /**
+     * Creates an instance of DeletedManagedHsmListResult class.
+     */
     public DeletedManagedHsmListResult() {
     }
 
     /**
      * Get the value property: The list of deleted managed HSM Pools.
-     *
+     * 
      * @return the value value.
      */
     public List<DeletedManagedHsmInner> value() {
@@ -39,7 +43,7 @@ public final class DeletedManagedHsmListResult {
 
     /**
      * Set the value property: The list of deleted managed HSM Pools.
-     *
+     * 
      * @param value the value value to set.
      * @return the DeletedManagedHsmListResult object itself.
      */
@@ -50,7 +54,7 @@ public final class DeletedManagedHsmListResult {
 
     /**
      * Get the nextLink property: The URL to get the next set of deleted managed HSM Pools.
-     *
+     * 
      * @return the nextLink value.
      */
     public String nextLink() {
@@ -59,7 +63,7 @@ public final class DeletedManagedHsmListResult {
 
     /**
      * Set the nextLink property: The URL to get the next set of deleted managed HSM Pools.
-     *
+     * 
      * @param nextLink the nextLink value to set.
      * @return the DeletedManagedHsmListResult object itself.
      */
@@ -70,7 +74,7 @@ public final class DeletedManagedHsmListResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

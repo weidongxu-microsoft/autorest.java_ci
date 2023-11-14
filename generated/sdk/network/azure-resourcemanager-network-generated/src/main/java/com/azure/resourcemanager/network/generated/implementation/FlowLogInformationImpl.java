@@ -15,8 +15,7 @@ public final class FlowLogInformationImpl implements FlowLogInformation {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    FlowLogInformationImpl(
-        FlowLogInformationInner innerObject,
+    FlowLogInformationImpl(FlowLogInformationInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

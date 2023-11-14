@@ -13,26 +13,28 @@ import com.azure.core.util.Context;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.AddonInner;
 
-/** An instance of this class provides access to all the operations defined in AddonsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in AddonsClient.
+ */
 public interface AddonsClient {
     /**
      * Lists all the addons configured in the role.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param resourceGroupName The resource group name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of all the Role addon on the Azure Stack Edge device as paginated response with {@link
-     *     PagedIterable}.
+     * @return collection of all the Role addon on the Azure Stack Edge device as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<AddonInner> listByRole(String deviceName, String roleName, String resourceGroupName);
 
     /**
      * Lists all the addons configured in the role.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param resourceGroupName The resource group name.
@@ -40,15 +42,15 @@ public interface AddonsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of all the Role addon on the Azure Stack Edge device as paginated response with {@link
-     *     PagedIterable}.
+     * @return collection of all the Role addon on the Azure Stack Edge device as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<AddonInner> listByRole(String deviceName, String roleName, String resourceGroupName, Context context);
 
     /**
      * Gets a specific addon by name.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param addonName The addon name.
@@ -60,12 +62,12 @@ public interface AddonsClient {
      * @return a specific addon by name along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<AddonInner> getWithResponse(
-        String deviceName, String roleName, String addonName, String resourceGroupName, Context context);
+    Response<AddonInner> getWithResponse(String deviceName, String roleName, String addonName, String resourceGroupName,
+        Context context);
 
     /**
      * Gets a specific addon by name.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param addonName The addon name.
@@ -80,7 +82,7 @@ public interface AddonsClient {
 
     /**
      * Create or update a addon.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param addonName The addon name.
@@ -92,12 +94,12 @@ public interface AddonsClient {
      * @return the {@link SyncPoller} for polling of role Addon.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<AddonInner>, AddonInner> beginCreateOrUpdate(
-        String deviceName, String roleName, String addonName, String resourceGroupName, AddonInner addon);
+    SyncPoller<PollResult<AddonInner>, AddonInner> beginCreateOrUpdate(String deviceName, String roleName,
+        String addonName, String resourceGroupName, AddonInner addon);
 
     /**
      * Create or update a addon.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param addonName The addon name.
@@ -110,17 +112,12 @@ public interface AddonsClient {
      * @return the {@link SyncPoller} for polling of role Addon.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<AddonInner>, AddonInner> beginCreateOrUpdate(
-        String deviceName,
-        String roleName,
-        String addonName,
-        String resourceGroupName,
-        AddonInner addon,
-        Context context);
+    SyncPoller<PollResult<AddonInner>, AddonInner> beginCreateOrUpdate(String deviceName, String roleName,
+        String addonName, String resourceGroupName, AddonInner addon, Context context);
 
     /**
      * Create or update a addon.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param addonName The addon name.
@@ -132,12 +129,12 @@ public interface AddonsClient {
      * @return role Addon.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    AddonInner createOrUpdate(
-        String deviceName, String roleName, String addonName, String resourceGroupName, AddonInner addon);
+    AddonInner createOrUpdate(String deviceName, String roleName, String addonName, String resourceGroupName,
+        AddonInner addon);
 
     /**
      * Create or update a addon.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param addonName The addon name.
@@ -150,17 +147,12 @@ public interface AddonsClient {
      * @return role Addon.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    AddonInner createOrUpdate(
-        String deviceName,
-        String roleName,
-        String addonName,
-        String resourceGroupName,
-        AddonInner addon,
-        Context context);
+    AddonInner createOrUpdate(String deviceName, String roleName, String addonName, String resourceGroupName,
+        AddonInner addon, Context context);
 
     /**
      * Deletes the addon on the device.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param addonName The addon name.
@@ -171,12 +163,12 @@ public interface AddonsClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginDelete(
-        String deviceName, String roleName, String addonName, String resourceGroupName);
+    SyncPoller<PollResult<Void>, Void> beginDelete(String deviceName, String roleName, String addonName,
+        String resourceGroupName);
 
     /**
      * Deletes the addon on the device.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param addonName The addon name.
@@ -188,12 +180,12 @@ public interface AddonsClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginDelete(
-        String deviceName, String roleName, String addonName, String resourceGroupName, Context context);
+    SyncPoller<PollResult<Void>, Void> beginDelete(String deviceName, String roleName, String addonName,
+        String resourceGroupName, Context context);
 
     /**
      * Deletes the addon on the device.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param addonName The addon name.
@@ -207,7 +199,7 @@ public interface AddonsClient {
 
     /**
      * Deletes the addon on the device.
-     *
+     * 
      * @param deviceName The device name.
      * @param roleName The role name.
      * @param addonName The addon name.

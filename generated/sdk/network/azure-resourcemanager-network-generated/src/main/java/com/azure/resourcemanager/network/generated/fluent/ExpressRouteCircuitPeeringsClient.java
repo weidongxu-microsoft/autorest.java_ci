@@ -13,11 +13,13 @@ import com.azure.core.util.Context;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCircuitPeeringInner;
 
-/** An instance of this class provides access to all the operations defined in ExpressRouteCircuitPeeringsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in ExpressRouteCircuitPeeringsClient.
+ */
 public interface ExpressRouteCircuitPeeringsClient {
     /**
      * Deletes the specified peering from the specified express route circuit.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the express route circuit.
      * @param peeringName The name of the peering.
@@ -31,7 +33,7 @@ public interface ExpressRouteCircuitPeeringsClient {
 
     /**
      * Deletes the specified peering from the specified express route circuit.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the express route circuit.
      * @param peeringName The name of the peering.
@@ -42,12 +44,12 @@ public interface ExpressRouteCircuitPeeringsClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginDelete(
-        String resourceGroupName, String circuitName, String peeringName, Context context);
+    SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String circuitName, String peeringName,
+        Context context);
 
     /**
      * Deletes the specified peering from the specified express route circuit.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the express route circuit.
      * @param peeringName The name of the peering.
@@ -60,7 +62,7 @@ public interface ExpressRouteCircuitPeeringsClient {
 
     /**
      * Deletes the specified peering from the specified express route circuit.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the express route circuit.
      * @param peeringName The name of the peering.
@@ -74,7 +76,7 @@ public interface ExpressRouteCircuitPeeringsClient {
 
     /**
      * Gets the specified peering for the express route circuit.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the express route circuit.
      * @param peeringName The name of the peering.
@@ -85,12 +87,12 @@ public interface ExpressRouteCircuitPeeringsClient {
      * @return the specified peering for the express route circuit along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<ExpressRouteCircuitPeeringInner> getWithResponse(
-        String resourceGroupName, String circuitName, String peeringName, Context context);
+    Response<ExpressRouteCircuitPeeringInner> getWithResponse(String resourceGroupName, String circuitName,
+        String peeringName, Context context);
 
     /**
      * Gets the specified peering for the express route circuit.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the express route circuit.
      * @param peeringName The name of the peering.
@@ -104,7 +106,7 @@ public interface ExpressRouteCircuitPeeringsClient {
 
     /**
      * Creates or updates a peering in the specified express route circuits.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the express route circuit.
      * @param peeringName The name of the peering.
@@ -116,14 +118,12 @@ public interface ExpressRouteCircuitPeeringsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<ExpressRouteCircuitPeeringInner>, ExpressRouteCircuitPeeringInner> beginCreateOrUpdate(
-        String resourceGroupName,
-        String circuitName,
-        String peeringName,
+        String resourceGroupName, String circuitName, String peeringName,
         ExpressRouteCircuitPeeringInner peeringParameters);
 
     /**
      * Creates or updates a peering in the specified express route circuits.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the express route circuit.
      * @param peeringName The name of the peering.
@@ -136,15 +136,12 @@ public interface ExpressRouteCircuitPeeringsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<ExpressRouteCircuitPeeringInner>, ExpressRouteCircuitPeeringInner> beginCreateOrUpdate(
-        String resourceGroupName,
-        String circuitName,
-        String peeringName,
-        ExpressRouteCircuitPeeringInner peeringParameters,
-        Context context);
+        String resourceGroupName, String circuitName, String peeringName,
+        ExpressRouteCircuitPeeringInner peeringParameters, Context context);
 
     /**
      * Creates or updates a peering in the specified express route circuits.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the express route circuit.
      * @param peeringName The name of the peering.
@@ -155,15 +152,12 @@ public interface ExpressRouteCircuitPeeringsClient {
      * @return peering in an ExpressRouteCircuit resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ExpressRouteCircuitPeeringInner createOrUpdate(
-        String resourceGroupName,
-        String circuitName,
-        String peeringName,
+    ExpressRouteCircuitPeeringInner createOrUpdate(String resourceGroupName, String circuitName, String peeringName,
         ExpressRouteCircuitPeeringInner peeringParameters);
 
     /**
      * Creates or updates a peering in the specified express route circuits.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the express route circuit.
      * @param peeringName The name of the peering.
@@ -175,16 +169,12 @@ public interface ExpressRouteCircuitPeeringsClient {
      * @return peering in an ExpressRouteCircuit resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ExpressRouteCircuitPeeringInner createOrUpdate(
-        String resourceGroupName,
-        String circuitName,
-        String peeringName,
-        ExpressRouteCircuitPeeringInner peeringParameters,
-        Context context);
+    ExpressRouteCircuitPeeringInner createOrUpdate(String resourceGroupName, String circuitName, String peeringName,
+        ExpressRouteCircuitPeeringInner peeringParameters, Context context);
 
     /**
      * Gets all peerings in a specified express route circuit.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the express route circuit.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -197,7 +187,7 @@ public interface ExpressRouteCircuitPeeringsClient {
 
     /**
      * Gets all peerings in a specified express route circuit.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the express route circuit.
      * @param context The context to associate with this operation.

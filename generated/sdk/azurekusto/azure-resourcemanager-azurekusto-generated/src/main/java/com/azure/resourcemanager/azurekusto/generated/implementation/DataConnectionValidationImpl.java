@@ -14,8 +14,7 @@ public final class DataConnectionValidationImpl implements DataConnectionValidat
 
     private final com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager;
 
-    DataConnectionValidationImpl(
-        DataConnectionValidationInner innerObject,
+    DataConnectionValidationImpl(DataConnectionValidationInner innerObject,
         com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

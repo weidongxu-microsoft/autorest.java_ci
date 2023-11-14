@@ -12,8 +12,7 @@ public final class TemplateHashResultImpl implements TemplateHashResult {
 
     private final com.azure.resourcemanager.resources.generated.ResourceManager serviceManager;
 
-    TemplateHashResultImpl(
-        TemplateHashResultInner innerObject,
+    TemplateHashResultImpl(TemplateHashResultInner innerObject,
         com.azure.resourcemanager.resources.generated.ResourceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

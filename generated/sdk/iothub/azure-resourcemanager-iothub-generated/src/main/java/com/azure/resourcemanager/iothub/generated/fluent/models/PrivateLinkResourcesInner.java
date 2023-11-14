@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The available private link resources for an IotHub. */
+/**
+ * The available private link resources for an IotHub.
+ */
 @Fluent
 public final class PrivateLinkResourcesInner {
     /*
@@ -17,13 +19,15 @@ public final class PrivateLinkResourcesInner {
     @JsonProperty(value = "value")
     private List<GroupIdInformationInner> value;
 
-    /** Creates an instance of PrivateLinkResourcesInner class. */
+    /**
+     * Creates an instance of PrivateLinkResourcesInner class.
+     */
     public PrivateLinkResourcesInner() {
     }
 
     /**
      * Get the value property: The list of available private link resources for an IotHub.
-     *
+     * 
      * @return the value value.
      */
     public List<GroupIdInformationInner> value() {
@@ -32,7 +36,7 @@ public final class PrivateLinkResourcesInner {
 
     /**
      * Set the value property: The list of available private link resources for an IotHub.
-     *
+     * 
      * @param value the value value to set.
      * @return the PrivateLinkResourcesInner object itself.
      */
@@ -43,7 +47,7 @@ public final class PrivateLinkResourcesInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

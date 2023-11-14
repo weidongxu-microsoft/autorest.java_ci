@@ -8,57 +8,59 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of PrivateEndpoints. */
+/**
+ * Resource collection API of PrivateEndpoints.
+ */
 public interface PrivateEndpoints {
     /**
      * Deletes the specified private endpoint.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param privateEndpointName The name of the private endpoint.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteByResourceGroup(String resourceGroupName, String privateEndpointName);
 
     /**
      * Deletes the specified private endpoint.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param privateEndpointName The name of the private endpoint.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void delete(String resourceGroupName, String privateEndpointName, Context context);
 
     /**
      * Gets the specified private endpoint by resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param privateEndpointName The name of the private endpoint.
      * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified private endpoint by resource group along with {@link Response}.
      */
-    Response<PrivateEndpoint> getByResourceGroupWithResponse(
-        String resourceGroupName, String privateEndpointName, String expand, Context context);
+    Response<PrivateEndpoint> getByResourceGroupWithResponse(String resourceGroupName, String privateEndpointName,
+        String expand, Context context);
 
     /**
      * Gets the specified private endpoint by resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param privateEndpointName The name of the private endpoint.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified private endpoint by resource group.
      */
@@ -66,11 +68,11 @@ public interface PrivateEndpoints {
 
     /**
      * Gets all private endpoints in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all private endpoints in a resource group as paginated response with {@link PagedIterable}.
      */
@@ -78,12 +80,12 @@ public interface PrivateEndpoints {
 
     /**
      * Gets all private endpoints in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all private endpoints in a resource group as paginated response with {@link PagedIterable}.
      */
@@ -91,9 +93,9 @@ public interface PrivateEndpoints {
 
     /**
      * Gets all private endpoints in a subscription.
-     *
+     * 
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all private endpoints in a subscription as paginated response with {@link PagedIterable}.
      */
@@ -101,11 +103,11 @@ public interface PrivateEndpoints {
 
     /**
      * Gets all private endpoints in a subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all private endpoints in a subscription as paginated response with {@link PagedIterable}.
      */
@@ -113,11 +115,11 @@ public interface PrivateEndpoints {
 
     /**
      * Gets the specified private endpoint by resource group.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified private endpoint by resource group along with {@link Response}.
      */
@@ -125,13 +127,13 @@ public interface PrivateEndpoints {
 
     /**
      * Gets the specified private endpoint by resource group.
-     *
+     * 
      * @param id the resource ID.
      * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified private endpoint by resource group along with {@link Response}.
      */
@@ -139,30 +141,30 @@ public interface PrivateEndpoints {
 
     /**
      * Deletes the specified private endpoint.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteById(String id);
 
     /**
      * Deletes the specified private endpoint.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteByIdWithResponse(String id, Context context);
 
     /**
      * Begins definition for a new PrivateEndpoint resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new PrivateEndpoint definition.
      */

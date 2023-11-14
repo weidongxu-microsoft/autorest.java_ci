@@ -14,11 +14,13 @@ import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkProfileInner;
 import com.azure.resourcemanager.network.generated.models.TagsObject;
 
-/** An instance of this class provides access to all the operations defined in NetworkProfilesClient. */
+/**
+ * An instance of this class provides access to all the operations defined in NetworkProfilesClient.
+ */
 public interface NetworkProfilesClient {
     /**
      * Deletes the specified network profile.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkProfileName The name of the NetworkProfile.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -31,7 +33,7 @@ public interface NetworkProfilesClient {
 
     /**
      * Deletes the specified network profile.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkProfileName The name of the NetworkProfile.
      * @param context The context to associate with this operation.
@@ -41,12 +43,12 @@ public interface NetworkProfilesClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginDelete(
-        String resourceGroupName, String networkProfileName, Context context);
+    SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String networkProfileName,
+        Context context);
 
     /**
      * Deletes the specified network profile.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkProfileName The name of the NetworkProfile.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -58,7 +60,7 @@ public interface NetworkProfilesClient {
 
     /**
      * Deletes the specified network profile.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkProfileName The name of the NetworkProfile.
      * @param context The context to associate with this operation.
@@ -71,7 +73,7 @@ public interface NetworkProfilesClient {
 
     /**
      * Gets the specified network profile in a specified resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkProfileName The name of the public IP prefix.
      * @param expand Expands referenced resources.
@@ -82,12 +84,12 @@ public interface NetworkProfilesClient {
      * @return the specified network profile in a specified resource group along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<NetworkProfileInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String networkProfileName, String expand, Context context);
+    Response<NetworkProfileInner> getByResourceGroupWithResponse(String resourceGroupName, String networkProfileName,
+        String expand, Context context);
 
     /**
      * Gets the specified network profile in a specified resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkProfileName The name of the public IP prefix.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -100,7 +102,7 @@ public interface NetworkProfilesClient {
 
     /**
      * Creates or updates a network profile.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkProfileName The name of the network profile.
      * @param parameters Parameters supplied to the create or update network profile operation.
@@ -111,12 +113,12 @@ public interface NetworkProfilesClient {
      * @return network profile resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<NetworkProfileInner> createOrUpdateWithResponse(
-        String resourceGroupName, String networkProfileName, NetworkProfileInner parameters, Context context);
+    Response<NetworkProfileInner> createOrUpdateWithResponse(String resourceGroupName, String networkProfileName,
+        NetworkProfileInner parameters, Context context);
 
     /**
      * Creates or updates a network profile.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkProfileName The name of the network profile.
      * @param parameters Parameters supplied to the create or update network profile operation.
@@ -126,12 +128,12 @@ public interface NetworkProfilesClient {
      * @return network profile resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    NetworkProfileInner createOrUpdate(
-        String resourceGroupName, String networkProfileName, NetworkProfileInner parameters);
+    NetworkProfileInner createOrUpdate(String resourceGroupName, String networkProfileName,
+        NetworkProfileInner parameters);
 
     /**
      * Updates network profile tags.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkProfileName The name of the network profile.
      * @param parameters Parameters supplied to update network profile tags.
@@ -142,12 +144,12 @@ public interface NetworkProfilesClient {
      * @return network profile resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<NetworkProfileInner> updateTagsWithResponse(
-        String resourceGroupName, String networkProfileName, TagsObject parameters, Context context);
+    Response<NetworkProfileInner> updateTagsWithResponse(String resourceGroupName, String networkProfileName,
+        TagsObject parameters, Context context);
 
     /**
      * Updates network profile tags.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkProfileName The name of the network profile.
      * @param parameters Parameters supplied to update network profile tags.
@@ -161,7 +163,7 @@ public interface NetworkProfilesClient {
 
     /**
      * Gets all the network profiles in a subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all the network profiles in a subscription as paginated response with {@link PagedIterable}.
@@ -171,7 +173,7 @@ public interface NetworkProfilesClient {
 
     /**
      * Gets all the network profiles in a subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -183,7 +185,7 @@ public interface NetworkProfilesClient {
 
     /**
      * Gets all network profiles in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -195,7 +197,7 @@ public interface NetworkProfilesClient {
 
     /**
      * Gets all network profiles in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

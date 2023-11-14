@@ -9,7 +9,9 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** A TrackSelection to select video tracks. */
+/**
+ * A TrackSelection to select video tracks.
+ */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
     include = JsonTypeInfo.As.PROPERTY,
@@ -20,17 +22,18 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
     @JsonSubTypes.Type(
         name = "#Microsoft.Media.SelectVideoTrackByAttribute",
         value = SelectVideoTrackByAttribute.class),
-    @JsonSubTypes.Type(name = "#Microsoft.Media.SelectVideoTrackById", value = SelectVideoTrackById.class)
-})
+    @JsonSubTypes.Type(name = "#Microsoft.Media.SelectVideoTrackById", value = SelectVideoTrackById.class) })
 @Immutable
 public class VideoTrackDescriptor extends TrackDescriptor {
-    /** Creates an instance of VideoTrackDescriptor class. */
+    /**
+     * Creates an instance of VideoTrackDescriptor class.
+     */
     public VideoTrackDescriptor() {
     }
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

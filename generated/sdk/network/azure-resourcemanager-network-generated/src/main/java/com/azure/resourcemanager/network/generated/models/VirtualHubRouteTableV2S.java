@@ -9,33 +9,35 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualHubRouteTableV2Inner;
 
-/** Resource collection API of VirtualHubRouteTableV2S. */
+/**
+ * Resource collection API of VirtualHubRouteTableV2S.
+ */
 public interface VirtualHubRouteTableV2S {
     /**
      * Retrieves the details of a VirtualHubRouteTableV2.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualHubRouteTableV2.
      * @param virtualHubName The name of the VirtualHub.
      * @param routeTableName The name of the VirtualHubRouteTableV2.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return virtualHubRouteTableV2 Resource along with {@link Response}.
      */
-    Response<VirtualHubRouteTableV2> getWithResponse(
-        String resourceGroupName, String virtualHubName, String routeTableName, Context context);
+    Response<VirtualHubRouteTableV2> getWithResponse(String resourceGroupName, String virtualHubName,
+        String routeTableName, Context context);
 
     /**
      * Retrieves the details of a VirtualHubRouteTableV2.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualHubRouteTableV2.
      * @param virtualHubName The name of the VirtualHub.
      * @param routeTableName The name of the VirtualHubRouteTableV2.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return virtualHubRouteTableV2 Resource.
      */
@@ -43,26 +45,23 @@ public interface VirtualHubRouteTableV2S {
 
     /**
      * Creates a VirtualHubRouteTableV2 resource if it doesn't exist else updates the existing VirtualHubRouteTableV2.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @param routeTableName The name of the VirtualHubRouteTableV2.
      * @param virtualHubRouteTableV2Parameters Parameters supplied to create or update VirtualHubRouteTableV2.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return virtualHubRouteTableV2 Resource.
      */
-    VirtualHubRouteTableV2 createOrUpdate(
-        String resourceGroupName,
-        String virtualHubName,
-        String routeTableName,
+    VirtualHubRouteTableV2 createOrUpdate(String resourceGroupName, String virtualHubName, String routeTableName,
         VirtualHubRouteTableV2Inner virtualHubRouteTableV2Parameters);
 
     /**
      * Creates a VirtualHubRouteTableV2 resource if it doesn't exist else updates the existing VirtualHubRouteTableV2.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @param routeTableName The name of the VirtualHubRouteTableV2.
@@ -70,60 +69,56 @@ public interface VirtualHubRouteTableV2S {
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return virtualHubRouteTableV2 Resource.
      */
-    VirtualHubRouteTableV2 createOrUpdate(
-        String resourceGroupName,
-        String virtualHubName,
-        String routeTableName,
-        VirtualHubRouteTableV2Inner virtualHubRouteTableV2Parameters,
-        Context context);
+    VirtualHubRouteTableV2 createOrUpdate(String resourceGroupName, String virtualHubName, String routeTableName,
+        VirtualHubRouteTableV2Inner virtualHubRouteTableV2Parameters, Context context);
 
     /**
      * Deletes a VirtualHubRouteTableV2.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualHubRouteTableV2.
      * @param virtualHubName The name of the VirtualHub.
      * @param routeTableName The name of the VirtualHubRouteTableV2.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void delete(String resourceGroupName, String virtualHubName, String routeTableName);
 
     /**
      * Deletes a VirtualHubRouteTableV2.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualHubRouteTableV2.
      * @param virtualHubName The name of the VirtualHub.
      * @param routeTableName The name of the VirtualHubRouteTableV2.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void delete(String resourceGroupName, String virtualHubName, String routeTableName, Context context);
 
     /**
      * Retrieves the details of all VirtualHubRouteTableV2s.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return list of VirtualHubRouteTableV2s and a URL nextLink to get the next set of results as paginated response
-     *     with {@link PagedIterable}.
+     * with {@link PagedIterable}.
      */
     PagedIterable<VirtualHubRouteTableV2> list(String resourceGroupName, String virtualHubName);
 
     /**
      * Retrieves the details of all VirtualHubRouteTableV2s.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @param context The context to associate with this operation.
@@ -131,7 +126,7 @@ public interface VirtualHubRouteTableV2S {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return list of VirtualHubRouteTableV2s and a URL nextLink to get the next set of results as paginated response
-     *     with {@link PagedIterable}.
+     * with {@link PagedIterable}.
      */
     PagedIterable<VirtualHubRouteTableV2> list(String resourceGroupName, String virtualHubName, Context context);
 }

@@ -30,22 +30,28 @@ import com.azure.resourcemanager.authorization.generated.fluent.models.DenyAssig
 import com.azure.resourcemanager.authorization.generated.models.DenyAssignmentListResult;
 import reactor.core.publisher.Mono;
 
-/** An instance of this class provides access to all the operations defined in DenyAssignmentsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in DenyAssignmentsClient.
+ */
 public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
-    /** The proxy service used to perform REST calls. */
+    /**
+     * The proxy service used to perform REST calls.
+     */
     private final DenyAssignmentsService service;
 
-    /** The service client containing this operation class. */
+    /**
+     * The service client containing this operation class.
+     */
     private final AuthorizationManagementClientImpl client;
 
     /**
      * Initializes an instance of DenyAssignmentsClientImpl.
-     *
+     * 
      * @param client the instance of the service client containing this operation class.
      */
     DenyAssignmentsClientImpl(AuthorizationManagementClientImpl client) {
-        this.service =
-            RestProxy.create(DenyAssignmentsService.class, client.getHttpPipeline(), client.getSerializerAdapter());
+        this.service
+            = RestProxy.create(DenyAssignmentsService.class, client.getHttpPipeline(), client.getSerializerAdapter());
         this.client = client;
     }
 
@@ -56,177 +62,135 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
     @Host("{$host}")
     @ServiceInterface(name = "AuthorizationManagem")
     public interface DenyAssignmentsService {
-        @Headers({"Content-Type: application/json"})
-        @Get(
-            "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePath}/{resourceType}/{resourceName}/providers/Microsoft.Authorization/denyAssignments")
-        @ExpectedResponses({200})
+        @Headers({ "Content-Type: application/json" })
+        @Get("/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePath}/{resourceType}/{resourceName}/providers/Microsoft.Authorization/denyAssignments")
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<DenyAssignmentListResult>> listForResource(
-            @HostParam("$host") String endpoint,
+        Mono<Response<DenyAssignmentListResult>> listForResource(@HostParam("$host") String endpoint,
             @PathParam("subscriptionId") String subscriptionId,
             @PathParam("resourceGroupName") String resourceGroupName,
             @PathParam(value = "resourceProviderNamespace", encoded = true) String resourceProviderNamespace,
             @PathParam(value = "parentResourcePath", encoded = true) String parentResourcePath,
             @PathParam(value = "resourceType", encoded = true) String resourceType,
-            @PathParam("resourceName") String resourceName,
-            @QueryParam("api-version") String apiVersion,
-            @QueryParam("$filter") String filter,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @PathParam("resourceName") String resourceName, @QueryParam("api-version") String apiVersion,
+            @QueryParam("$filter") String filter, @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Authorization/denyAssignments")
-        @ExpectedResponses({200})
+        @Headers({ "Content-Type: application/json" })
+        @Get("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Authorization/denyAssignments")
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<DenyAssignmentListResult>> listByResourceGroup(
-            @HostParam("$host") String endpoint,
+        Mono<Response<DenyAssignmentListResult>> listByResourceGroup(@HostParam("$host") String endpoint,
             @PathParam("subscriptionId") String subscriptionId,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @QueryParam("api-version") String apiVersion,
-            @QueryParam("$filter") String filter,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @PathParam("resourceGroupName") String resourceGroupName, @QueryParam("api-version") String apiVersion,
+            @QueryParam("$filter") String filter, @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
+        @Headers({ "Content-Type: application/json" })
         @Get("/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/denyAssignments")
-        @ExpectedResponses({200})
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<DenyAssignmentListResult>> list(
-            @HostParam("$host") String endpoint,
-            @PathParam("subscriptionId") String subscriptionId,
-            @QueryParam("api-version") String apiVersion,
-            @QueryParam("$filter") String filter,
-            @HeaderParam("Accept") String accept,
-            Context context);
+        Mono<Response<DenyAssignmentListResult>> list(@HostParam("$host") String endpoint,
+            @PathParam("subscriptionId") String subscriptionId, @QueryParam("api-version") String apiVersion,
+            @QueryParam("$filter") String filter, @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
+        @Headers({ "Content-Type: application/json" })
         @Get("/{scope}/providers/Microsoft.Authorization/denyAssignments/{denyAssignmentId}")
-        @ExpectedResponses({200})
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<DenyAssignmentInner>> get(
-            @HostParam("$host") String endpoint,
+        Mono<Response<DenyAssignmentInner>> get(@HostParam("$host") String endpoint,
             @PathParam(value = "scope", encoded = true) String scope,
-            @PathParam("denyAssignmentId") String denyAssignmentId,
-            @QueryParam("api-version") String apiVersion,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @PathParam("denyAssignmentId") String denyAssignmentId, @QueryParam("api-version") String apiVersion,
+            @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
+        @Headers({ "Content-Type: application/json" })
         @Get("/{denyAssignmentId}")
-        @ExpectedResponses({200})
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<DenyAssignmentInner>> getById(
-            @HostParam("$host") String endpoint,
+        Mono<Response<DenyAssignmentInner>> getById(@HostParam("$host") String endpoint,
             @PathParam(value = "denyAssignmentId", encoded = true) String denyAssignmentId,
-            @QueryParam("api-version") String apiVersion,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @QueryParam("api-version") String apiVersion, @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
+        @Headers({ "Content-Type: application/json" })
         @Get("/{scope}/providers/Microsoft.Authorization/denyAssignments")
-        @ExpectedResponses({200})
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<DenyAssignmentListResult>> listForScope(
-            @HostParam("$host") String endpoint,
-            @PathParam(value = "scope", encoded = true) String scope,
-            @QueryParam("api-version") String apiVersion,
-            @QueryParam("$filter") String filter,
-            @HeaderParam("Accept") String accept,
-            Context context);
+        Mono<Response<DenyAssignmentListResult>> listForScope(@HostParam("$host") String endpoint,
+            @PathParam(value = "scope", encoded = true) String scope, @QueryParam("api-version") String apiVersion,
+            @QueryParam("$filter") String filter, @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
+        @Headers({ "Content-Type: application/json" })
         @Get("{nextLink}")
-        @ExpectedResponses({200})
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<DenyAssignmentListResult>> listForResourceNext(
-            @PathParam(value = "nextLink", encoded = true) String nextLink,
-            @HostParam("$host") String endpoint,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @PathParam(value = "nextLink", encoded = true) String nextLink, @HostParam("$host") String endpoint,
+            @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
+        @Headers({ "Content-Type: application/json" })
         @Get("{nextLink}")
-        @ExpectedResponses({200})
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<DenyAssignmentListResult>> listForResourceGroupNext(
-            @PathParam(value = "nextLink", encoded = true) String nextLink,
-            @HostParam("$host") String endpoint,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @PathParam(value = "nextLink", encoded = true) String nextLink, @HostParam("$host") String endpoint,
+            @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
+        @Headers({ "Content-Type: application/json" })
         @Get("{nextLink}")
-        @ExpectedResponses({200})
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<DenyAssignmentListResult>> listNext(
-            @PathParam(value = "nextLink", encoded = true) String nextLink,
-            @HostParam("$host") String endpoint,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @PathParam(value = "nextLink", encoded = true) String nextLink, @HostParam("$host") String endpoint,
+            @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
+        @Headers({ "Content-Type: application/json" })
         @Get("{nextLink}")
-        @ExpectedResponses({200})
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<DenyAssignmentListResult>> listForScopeNext(
-            @PathParam(value = "nextLink", encoded = true) String nextLink,
-            @HostParam("$host") String endpoint,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @PathParam(value = "nextLink", encoded = true) String nextLink, @HostParam("$host") String endpoint,
+            @HeaderParam("Accept") String accept, Context context);
     }
 
     /**
      * Gets deny assignments for a resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the resource.
      * @param resourceName The name of the resource to get deny assignments for.
      * @param filter The filter to apply on the operation. Use $filter=atScope() to return all deny assignments at or
-     *     above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
-     *     scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
-     *     specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and
-     *     below the scope for the specified principal. This filter is different from the principalId filter as it
-     *     returns not only those deny assignments that contain the specified principal is the Principals list but also
-     *     those deny assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when
-     *     gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
+     * above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
+     * scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
+     * specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and
+     * below the scope for the specified principal. This filter is different from the principalId filter as it returns
+     * not only those deny assignments that contain the specified principal is the Principals list but also those deny
+     * assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when
+     * gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deny assignments for a resource along with {@link PagedResponse} on successful completion of {@link
-     *     Mono}.
+     * @return deny assignments for a resource along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<DenyAssignmentInner>> listForResourceSinglePageAsync(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
+    private Mono<PagedResponse<DenyAssignmentInner>> listForResourceSinglePageAsync(String resourceGroupName,
+        String resourceProviderNamespace, String parentResourcePath, String resourceType, String resourceName,
         String filter) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
         if (resourceProviderNamespace == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter resourceProviderNamespace is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter resourceProviderNamespace is required and cannot be null."));
         }
         if (parentResourcePath == null) {
             return Mono
@@ -241,86 +205,56 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
         final String apiVersion = "2018-07-01-preview";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .listForResource(
-                            this.client.getEndpoint(),
-                            this.client.getSubscriptionId(),
-                            resourceGroupName,
-                            resourceProviderNamespace,
-                            parentResourcePath,
-                            resourceType,
-                            resourceName,
-                            apiVersion,
-                            filter,
-                            accept,
-                            context))
-            .<PagedResponse<DenyAssignmentInner>>map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null))
+            .withContext(context -> service.listForResource(this.client.getEndpoint(), this.client.getSubscriptionId(),
+                resourceGroupName, resourceProviderNamespace, parentResourcePath, resourceType, resourceName,
+                apiVersion, filter, accept, context))
+            .<PagedResponse<DenyAssignmentInner>>map(res -> new PagedResponseBase<>(res.getRequest(),
+                res.getStatusCode(), res.getHeaders(), res.getValue().value(), res.getValue().nextLink(), null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Gets deny assignments for a resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the resource.
      * @param resourceName The name of the resource to get deny assignments for.
      * @param filter The filter to apply on the operation. Use $filter=atScope() to return all deny assignments at or
-     *     above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
-     *     scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
-     *     specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and
-     *     below the scope for the specified principal. This filter is different from the principalId filter as it
-     *     returns not only those deny assignments that contain the specified principal is the Principals list but also
-     *     those deny assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when
-     *     gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
+     * above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
+     * scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
+     * specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and
+     * below the scope for the specified principal. This filter is different from the principalId filter as it returns
+     * not only those deny assignments that contain the specified principal is the Principals list but also those deny
+     * assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when
+     * gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deny assignments for a resource along with {@link PagedResponse} on successful completion of {@link
-     *     Mono}.
+     * @return deny assignments for a resource along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<DenyAssignmentInner>> listForResourceSinglePageAsync(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
-        String filter,
-        Context context) {
+    private Mono<PagedResponse<DenyAssignmentInner>> listForResourceSinglePageAsync(String resourceGroupName,
+        String resourceProviderNamespace, String parentResourcePath, String resourceType, String resourceName,
+        String filter, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
         if (resourceProviderNamespace == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter resourceProviderNamespace is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter resourceProviderNamespace is required and cannot be null."));
         }
         if (parentResourcePath == null) {
             return Mono
@@ -336,73 +270,46 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .listForResource(
-                this.client.getEndpoint(),
-                this.client.getSubscriptionId(),
-                resourceGroupName,
-                resourceProviderNamespace,
-                parentResourcePath,
-                resourceType,
-                resourceName,
-                apiVersion,
-                filter,
-                accept,
+            .listForResource(this.client.getEndpoint(), this.client.getSubscriptionId(), resourceGroupName,
+                resourceProviderNamespace, parentResourcePath, resourceType, resourceName, apiVersion, filter, accept,
                 context)
-            .map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null));
+            .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
+                res.getValue().value(), res.getValue().nextLink(), null));
     }
 
     /**
      * Gets deny assignments for a resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the resource.
      * @param resourceName The name of the resource to get deny assignments for.
      * @param filter The filter to apply on the operation. Use $filter=atScope() to return all deny assignments at or
-     *     above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
-     *     scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
-     *     specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and
-     *     below the scope for the specified principal. This filter is different from the principalId filter as it
-     *     returns not only those deny assignments that contain the specified principal is the Principals list but also
-     *     those deny assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when
-     *     gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
+     * above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
+     * scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
+     * specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and
+     * below the scope for the specified principal. This filter is different from the principalId filter as it returns
+     * not only those deny assignments that contain the specified principal is the Principals list but also those deny
+     * assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when
+     * gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return deny assignments for a resource as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<DenyAssignmentInner> listForResourceAsync(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
+    private PagedFlux<DenyAssignmentInner> listForResourceAsync(String resourceGroupName,
+        String resourceProviderNamespace, String parentResourcePath, String resourceType, String resourceName,
         String filter) {
-        return new PagedFlux<>(
-            () ->
-                listForResourceSinglePageAsync(
-                    resourceGroupName,
-                    resourceProviderNamespace,
-                    parentResourcePath,
-                    resourceType,
-                    resourceName,
-                    filter),
+        return new PagedFlux<>(() -> listForResourceSinglePageAsync(resourceGroupName, resourceProviderNamespace,
+            parentResourcePath, resourceType, resourceName, filter),
             nextLink -> listForResourceNextSinglePageAsync(nextLink));
     }
 
     /**
      * Gets deny assignments for a resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
@@ -414,41 +321,30 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @return deny assignments for a resource as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<DenyAssignmentInner> listForResourceAsync(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName) {
+    private PagedFlux<DenyAssignmentInner> listForResourceAsync(String resourceGroupName,
+        String resourceProviderNamespace, String parentResourcePath, String resourceType, String resourceName) {
         final String filter = null;
-        return new PagedFlux<>(
-            () ->
-                listForResourceSinglePageAsync(
-                    resourceGroupName,
-                    resourceProviderNamespace,
-                    parentResourcePath,
-                    resourceType,
-                    resourceName,
-                    filter),
+        return new PagedFlux<>(() -> listForResourceSinglePageAsync(resourceGroupName, resourceProviderNamespace,
+            parentResourcePath, resourceType, resourceName, filter),
             nextLink -> listForResourceNextSinglePageAsync(nextLink));
     }
 
     /**
      * Gets deny assignments for a resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the resource.
      * @param resourceName The name of the resource to get deny assignments for.
      * @param filter The filter to apply on the operation. Use $filter=atScope() to return all deny assignments at or
-     *     above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
-     *     scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
-     *     specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and
-     *     below the scope for the specified principal. This filter is different from the principalId filter as it
-     *     returns not only those deny assignments that contain the specified principal is the Principals list but also
-     *     those deny assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when
-     *     gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
+     * above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
+     * scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
+     * specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and
+     * below the scope for the specified principal. This filter is different from the principalId filter as it returns
+     * not only those deny assignments that contain the specified principal is the Principals list but also those deny
+     * assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when
+     * gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -456,30 +352,18 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @return deny assignments for a resource as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<DenyAssignmentInner> listForResourceAsync(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
-        String filter,
-        Context context) {
+    private PagedFlux<DenyAssignmentInner> listForResourceAsync(String resourceGroupName,
+        String resourceProviderNamespace, String parentResourcePath, String resourceType, String resourceName,
+        String filter, Context context) {
         return new PagedFlux<>(
-            () ->
-                listForResourceSinglePageAsync(
-                    resourceGroupName,
-                    resourceProviderNamespace,
-                    parentResourcePath,
-                    resourceType,
-                    resourceName,
-                    filter,
-                    context),
+            () -> listForResourceSinglePageAsync(resourceGroupName, resourceProviderNamespace, parentResourcePath,
+                resourceType, resourceName, filter, context),
             nextLink -> listForResourceNextSinglePageAsync(nextLink, context));
     }
 
     /**
      * Gets deny assignments for a resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
@@ -491,34 +375,29 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @return deny assignments for a resource as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    public PagedIterable<DenyAssignmentInner> listForResource(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName) {
+    public PagedIterable<DenyAssignmentInner> listForResource(String resourceGroupName,
+        String resourceProviderNamespace, String parentResourcePath, String resourceType, String resourceName) {
         final String filter = null;
-        return new PagedIterable<>(
-            listForResourceAsync(
-                resourceGroupName, resourceProviderNamespace, parentResourcePath, resourceType, resourceName, filter));
+        return new PagedIterable<>(listForResourceAsync(resourceGroupName, resourceProviderNamespace,
+            parentResourcePath, resourceType, resourceName, filter));
     }
 
     /**
      * Gets deny assignments for a resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the resource.
      * @param resourceName The name of the resource to get deny assignments for.
      * @param filter The filter to apply on the operation. Use $filter=atScope() to return all deny assignments at or
-     *     above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
-     *     scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
-     *     specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and
-     *     below the scope for the specified principal. This filter is different from the principalId filter as it
-     *     returns not only those deny assignments that contain the specified principal is the Principals list but also
-     *     those deny assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when
-     *     gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
+     * above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
+     * scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
+     * specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and
+     * below the scope for the specified principal. This filter is different from the principalId filter as it returns
+     * not only those deny assignments that contain the specified principal is the Principals list but also those deny
+     * assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when
+     * gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -526,57 +405,41 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @return deny assignments for a resource as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    public PagedIterable<DenyAssignmentInner> listForResource(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
-        String filter,
-        Context context) {
-        return new PagedIterable<>(
-            listForResourceAsync(
-                resourceGroupName,
-                resourceProviderNamespace,
-                parentResourcePath,
-                resourceType,
-                resourceName,
-                filter,
-                context));
+    public PagedIterable<DenyAssignmentInner> listForResource(String resourceGroupName,
+        String resourceProviderNamespace, String parentResourcePath, String resourceType, String resourceName,
+        String filter, Context context) {
+        return new PagedIterable<>(listForResourceAsync(resourceGroupName, resourceProviderNamespace,
+            parentResourcePath, resourceType, resourceName, filter, context));
     }
 
     /**
      * Gets deny assignments for a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param filter The filter to apply on the operation. Use $filter=atScope() to return all deny assignments at or
-     *     above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
-     *     scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
-     *     specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and
-     *     below the scope for the specified principal. This filter is different from the principalId filter as it
-     *     returns not only those deny assignments that contain the specified principal is the Principals list but also
-     *     those deny assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when
-     *     gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
+     * above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
+     * scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
+     * specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and
+     * below the scope for the specified principal. This filter is different from the principalId filter as it returns
+     * not only those deny assignments that contain the specified principal is the Principals list but also those deny
+     * assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when
+     * gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deny assignments for a resource group along with {@link PagedResponse} on successful completion of {@link
-     *     Mono}.
+     * @return deny assignments for a resource group along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<DenyAssignmentInner>> listByResourceGroupSinglePageAsync(
-        String resourceGroupName, String filter) {
+    private Mono<PagedResponse<DenyAssignmentInner>> listByResourceGroupSinglePageAsync(String resourceGroupName,
+        String filter) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -585,62 +448,42 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
         final String apiVersion = "2018-07-01-preview";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .listByResourceGroup(
-                            this.client.getEndpoint(),
-                            this.client.getSubscriptionId(),
-                            resourceGroupName,
-                            apiVersion,
-                            filter,
-                            accept,
-                            context))
-            .<PagedResponse<DenyAssignmentInner>>map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null))
+            .withContext(context -> service.listByResourceGroup(this.client.getEndpoint(),
+                this.client.getSubscriptionId(), resourceGroupName, apiVersion, filter, accept, context))
+            .<PagedResponse<DenyAssignmentInner>>map(res -> new PagedResponseBase<>(res.getRequest(),
+                res.getStatusCode(), res.getHeaders(), res.getValue().value(), res.getValue().nextLink(), null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Gets deny assignments for a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param filter The filter to apply on the operation. Use $filter=atScope() to return all deny assignments at or
-     *     above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
-     *     scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
-     *     specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and
-     *     below the scope for the specified principal. This filter is different from the principalId filter as it
-     *     returns not only those deny assignments that contain the specified principal is the Principals list but also
-     *     those deny assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when
-     *     gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
+     * above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
+     * scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
+     * specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and
+     * below the scope for the specified principal. This filter is different from the principalId filter as it returns
+     * not only those deny assignments that contain the specified principal is the Principals list but also those deny
+     * assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when
+     * gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deny assignments for a resource group along with {@link PagedResponse} on successful completion of {@link
-     *     Mono}.
+     * @return deny assignments for a resource group along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<DenyAssignmentInner>> listByResourceGroupSinglePageAsync(
-        String resourceGroupName, String filter, Context context) {
+    private Mono<PagedResponse<DenyAssignmentInner>> listByResourceGroupSinglePageAsync(String resourceGroupName,
+        String filter, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -650,37 +493,24 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .listByResourceGroup(
-                this.client.getEndpoint(),
-                this.client.getSubscriptionId(),
-                resourceGroupName,
-                apiVersion,
-                filter,
-                accept,
-                context)
-            .map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null));
+            .listByResourceGroup(this.client.getEndpoint(), this.client.getSubscriptionId(), resourceGroupName,
+                apiVersion, filter, accept, context)
+            .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
+                res.getValue().value(), res.getValue().nextLink(), null));
     }
 
     /**
      * Gets deny assignments for a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param filter The filter to apply on the operation. Use $filter=atScope() to return all deny assignments at or
-     *     above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
-     *     scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
-     *     specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and
-     *     below the scope for the specified principal. This filter is different from the principalId filter as it
-     *     returns not only those deny assignments that contain the specified principal is the Principals list but also
-     *     those deny assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when
-     *     gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
+     * above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
+     * scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
+     * specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and
+     * below the scope for the specified principal. This filter is different from the principalId filter as it returns
+     * not only those deny assignments that contain the specified principal is the Principals list but also those deny
+     * assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when
+     * gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -688,14 +518,13 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<DenyAssignmentInner> listByResourceGroupAsync(String resourceGroupName, String filter) {
-        return new PagedFlux<>(
-            () -> listByResourceGroupSinglePageAsync(resourceGroupName, filter),
+        return new PagedFlux<>(() -> listByResourceGroupSinglePageAsync(resourceGroupName, filter),
             nextLink -> listForResourceGroupNextSinglePageAsync(nextLink));
     }
 
     /**
      * Gets deny assignments for a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -705,23 +534,22 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<DenyAssignmentInner> listByResourceGroupAsync(String resourceGroupName) {
         final String filter = null;
-        return new PagedFlux<>(
-            () -> listByResourceGroupSinglePageAsync(resourceGroupName, filter),
+        return new PagedFlux<>(() -> listByResourceGroupSinglePageAsync(resourceGroupName, filter),
             nextLink -> listForResourceGroupNextSinglePageAsync(nextLink));
     }
 
     /**
      * Gets deny assignments for a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param filter The filter to apply on the operation. Use $filter=atScope() to return all deny assignments at or
-     *     above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
-     *     scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
-     *     specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and
-     *     below the scope for the specified principal. This filter is different from the principalId filter as it
-     *     returns not only those deny assignments that contain the specified principal is the Principals list but also
-     *     those deny assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when
-     *     gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
+     * above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
+     * scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
+     * specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and
+     * below the scope for the specified principal. This filter is different from the principalId filter as it returns
+     * not only those deny assignments that contain the specified principal is the Principals list but also those deny
+     * assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when
+     * gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -729,16 +557,15 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @return deny assignments for a resource group as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<DenyAssignmentInner> listByResourceGroupAsync(
-        String resourceGroupName, String filter, Context context) {
-        return new PagedFlux<>(
-            () -> listByResourceGroupSinglePageAsync(resourceGroupName, filter, context),
+    private PagedFlux<DenyAssignmentInner> listByResourceGroupAsync(String resourceGroupName, String filter,
+        Context context) {
+        return new PagedFlux<>(() -> listByResourceGroupSinglePageAsync(resourceGroupName, filter, context),
             nextLink -> listForResourceGroupNextSinglePageAsync(nextLink, context));
     }
 
     /**
      * Gets deny assignments for a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -753,16 +580,16 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
 
     /**
      * Gets deny assignments for a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param filter The filter to apply on the operation. Use $filter=atScope() to return all deny assignments at or
-     *     above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
-     *     scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
-     *     specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and
-     *     below the scope for the specified principal. This filter is different from the principalId filter as it
-     *     returns not only those deny assignments that contain the specified principal is the Principals list but also
-     *     those deny assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when
-     *     gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
+     * above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
+     * scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
+     * specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and
+     * below the scope for the specified principal. This filter is different from the principalId filter as it returns
+     * not only those deny assignments that contain the specified principal is the Principals list but also those deny
+     * assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when
+     * gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -770,126 +597,96 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @return deny assignments for a resource group as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    public PagedIterable<DenyAssignmentInner> listByResourceGroup(
-        String resourceGroupName, String filter, Context context) {
+    public PagedIterable<DenyAssignmentInner> listByResourceGroup(String resourceGroupName, String filter,
+        Context context) {
         return new PagedIterable<>(listByResourceGroupAsync(resourceGroupName, filter, context));
     }
 
     /**
      * Gets all deny assignments for the subscription.
-     *
+     * 
      * @param filter The filter to apply on the operation. Use $filter=atScope() to return all deny assignments at or
-     *     above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
-     *     scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
-     *     specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and
-     *     below the scope for the specified principal. This filter is different from the principalId filter as it
-     *     returns not only those deny assignments that contain the specified principal is the Principals list but also
-     *     those deny assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when
-     *     gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
+     * above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
+     * scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
+     * specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and
+     * below the scope for the specified principal. This filter is different from the principalId filter as it returns
+     * not only those deny assignments that contain the specified principal is the Principals list but also those deny
+     * assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when
+     * gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all deny assignments for the subscription along with {@link PagedResponse} on successful completion of
-     *     {@link Mono}.
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DenyAssignmentInner>> listSinglePageAsync(String filter) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         final String apiVersion = "2018-07-01-preview";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .list(
-                            this.client.getEndpoint(),
-                            this.client.getSubscriptionId(),
-                            apiVersion,
-                            filter,
-                            accept,
-                            context))
-            .<PagedResponse<DenyAssignmentInner>>map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null))
+            .withContext(context -> service.list(this.client.getEndpoint(), this.client.getSubscriptionId(), apiVersion,
+                filter, accept, context))
+            .<PagedResponse<DenyAssignmentInner>>map(res -> new PagedResponseBase<>(res.getRequest(),
+                res.getStatusCode(), res.getHeaders(), res.getValue().value(), res.getValue().nextLink(), null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Gets all deny assignments for the subscription.
-     *
+     * 
      * @param filter The filter to apply on the operation. Use $filter=atScope() to return all deny assignments at or
-     *     above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
-     *     scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
-     *     specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and
-     *     below the scope for the specified principal. This filter is different from the principalId filter as it
-     *     returns not only those deny assignments that contain the specified principal is the Principals list but also
-     *     those deny assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when
-     *     gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
+     * above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
+     * scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
+     * specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and
+     * below the scope for the specified principal. This filter is different from the principalId filter as it returns
+     * not only those deny assignments that contain the specified principal is the Principals list but also those deny
+     * assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when
+     * gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all deny assignments for the subscription along with {@link PagedResponse} on successful completion of
-     *     {@link Mono}.
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DenyAssignmentInner>> listSinglePageAsync(String filter, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         final String apiVersion = "2018-07-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
             .list(this.client.getEndpoint(), this.client.getSubscriptionId(), apiVersion, filter, accept, context)
-            .map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null));
+            .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
+                res.getValue().value(), res.getValue().nextLink(), null));
     }
 
     /**
      * Gets all deny assignments for the subscription.
-     *
+     * 
      * @param filter The filter to apply on the operation. Use $filter=atScope() to return all deny assignments at or
-     *     above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
-     *     scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
-     *     specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and
-     *     below the scope for the specified principal. This filter is different from the principalId filter as it
-     *     returns not only those deny assignments that contain the specified principal is the Principals list but also
-     *     those deny assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when
-     *     gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
+     * above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
+     * scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
+     * specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and
+     * below the scope for the specified principal. This filter is different from the principalId filter as it returns
+     * not only those deny assignments that contain the specified principal is the Principals list but also those deny
+     * assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when
+     * gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -902,7 +699,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
 
     /**
      * Gets all deny assignments for the subscription.
-     *
+     * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all deny assignments for the subscription as paginated response with {@link PagedFlux}.
@@ -915,15 +712,15 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
 
     /**
      * Gets all deny assignments for the subscription.
-     *
+     * 
      * @param filter The filter to apply on the operation. Use $filter=atScope() to return all deny assignments at or
-     *     above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
-     *     scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
-     *     specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and
-     *     below the scope for the specified principal. This filter is different from the principalId filter as it
-     *     returns not only those deny assignments that contain the specified principal is the Principals list but also
-     *     those deny assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when
-     *     gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
+     * above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
+     * scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
+     * specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and
+     * below the scope for the specified principal. This filter is different from the principalId filter as it returns
+     * not only those deny assignments that contain the specified principal is the Principals list but also those deny
+     * assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when
+     * gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -932,13 +729,13 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<DenyAssignmentInner> listAsync(String filter, Context context) {
-        return new PagedFlux<>(
-            () -> listSinglePageAsync(filter, context), nextLink -> listNextSinglePageAsync(nextLink, context));
+        return new PagedFlux<>(() -> listSinglePageAsync(filter, context),
+            nextLink -> listNextSinglePageAsync(nextLink, context));
     }
 
     /**
      * Gets all deny assignments for the subscription.
-     *
+     * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all deny assignments for the subscription as paginated response with {@link PagedIterable}.
@@ -951,15 +748,15 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
 
     /**
      * Gets all deny assignments for the subscription.
-     *
+     * 
      * @param filter The filter to apply on the operation. Use $filter=atScope() to return all deny assignments at or
-     *     above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
-     *     scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
-     *     specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and
-     *     below the scope for the specified principal. This filter is different from the principalId filter as it
-     *     returns not only those deny assignments that contain the specified principal is the Principals list but also
-     *     those deny assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when
-     *     gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
+     * above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
+     * scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
+     * specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and
+     * below the scope for the specified principal. This filter is different from the principalId filter as it returns
+     * not only those deny assignments that contain the specified principal is the Principals list but also those deny
+     * assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when
+     * gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -973,7 +770,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
 
     /**
      * Get the specified deny assignment.
-     *
+     * 
      * @param scope The scope of the deny assignment.
      * @param denyAssignmentId The ID of the deny assignment to get.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -984,10 +781,8 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DenyAssignmentInner>> getWithResponseAsync(String scope, String denyAssignmentId) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (scope == null) {
             return Mono.error(new IllegalArgumentException("Parameter scope is required and cannot be null."));
@@ -1006,7 +801,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
 
     /**
      * Get the specified deny assignment.
-     *
+     * 
      * @param scope The scope of the deny assignment.
      * @param denyAssignmentId The ID of the deny assignment to get.
      * @param context The context to associate with this operation.
@@ -1016,13 +811,11 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @return the specified deny assignment along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<DenyAssignmentInner>> getWithResponseAsync(
-        String scope, String denyAssignmentId, Context context) {
+    private Mono<Response<DenyAssignmentInner>> getWithResponseAsync(String scope, String denyAssignmentId,
+        Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (scope == null) {
             return Mono.error(new IllegalArgumentException("Parameter scope is required and cannot be null."));
@@ -1039,7 +832,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
 
     /**
      * Get the specified deny assignment.
-     *
+     * 
      * @param scope The scope of the deny assignment.
      * @param denyAssignmentId The ID of the deny assignment to get.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1054,7 +847,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
 
     /**
      * Get the specified deny assignment.
-     *
+     * 
      * @param scope The scope of the deny assignment.
      * @param denyAssignmentId The ID of the deny assignment to get.
      * @param context The context to associate with this operation.
@@ -1070,7 +863,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
 
     /**
      * Get the specified deny assignment.
-     *
+     * 
      * @param scope The scope of the deny assignment.
      * @param denyAssignmentId The ID of the deny assignment to get.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1085,11 +878,11 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
 
     /**
      * Gets a deny assignment by ID.
-     *
+     * 
      * @param denyAssignmentId The fully qualified deny assignment ID. For example, use the format,
-     *     /subscriptions/{guid}/providers/Microsoft.Authorization/denyAssignments/{denyAssignmentId} for subscription
-     *     level deny assignments, or /providers/Microsoft.Authorization/denyAssignments/{denyAssignmentId} for tenant
-     *     level deny assignments.
+     * /subscriptions/{guid}/providers/Microsoft.Authorization/denyAssignments/{denyAssignmentId} for subscription level
+     * deny assignments, or /providers/Microsoft.Authorization/denyAssignments/{denyAssignmentId} for tenant level deny
+     * assignments.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1098,10 +891,8 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DenyAssignmentInner>> getByIdWithResponseAsync(String denyAssignmentId) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (denyAssignmentId == null) {
             return Mono
@@ -1117,11 +908,11 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
 
     /**
      * Gets a deny assignment by ID.
-     *
+     * 
      * @param denyAssignmentId The fully qualified deny assignment ID. For example, use the format,
-     *     /subscriptions/{guid}/providers/Microsoft.Authorization/denyAssignments/{denyAssignmentId} for subscription
-     *     level deny assignments, or /providers/Microsoft.Authorization/denyAssignments/{denyAssignmentId} for tenant
-     *     level deny assignments.
+     * /subscriptions/{guid}/providers/Microsoft.Authorization/denyAssignments/{denyAssignmentId} for subscription level
+     * deny assignments, or /providers/Microsoft.Authorization/denyAssignments/{denyAssignmentId} for tenant level deny
+     * assignments.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1131,10 +922,8 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DenyAssignmentInner>> getByIdWithResponseAsync(String denyAssignmentId, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (denyAssignmentId == null) {
             return Mono
@@ -1148,11 +937,11 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
 
     /**
      * Gets a deny assignment by ID.
-     *
+     * 
      * @param denyAssignmentId The fully qualified deny assignment ID. For example, use the format,
-     *     /subscriptions/{guid}/providers/Microsoft.Authorization/denyAssignments/{denyAssignmentId} for subscription
-     *     level deny assignments, or /providers/Microsoft.Authorization/denyAssignments/{denyAssignmentId} for tenant
-     *     level deny assignments.
+     * /subscriptions/{guid}/providers/Microsoft.Authorization/denyAssignments/{denyAssignmentId} for subscription level
+     * deny assignments, or /providers/Microsoft.Authorization/denyAssignments/{denyAssignmentId} for tenant level deny
+     * assignments.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1165,11 +954,11 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
 
     /**
      * Gets a deny assignment by ID.
-     *
+     * 
      * @param denyAssignmentId The fully qualified deny assignment ID. For example, use the format,
-     *     /subscriptions/{guid}/providers/Microsoft.Authorization/denyAssignments/{denyAssignmentId} for subscription
-     *     level deny assignments, or /providers/Microsoft.Authorization/denyAssignments/{denyAssignmentId} for tenant
-     *     level deny assignments.
+     * /subscriptions/{guid}/providers/Microsoft.Authorization/denyAssignments/{denyAssignmentId} for subscription level
+     * deny assignments, or /providers/Microsoft.Authorization/denyAssignments/{denyAssignmentId} for tenant level deny
+     * assignments.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1183,11 +972,11 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
 
     /**
      * Gets a deny assignment by ID.
-     *
+     * 
      * @param denyAssignmentId The fully qualified deny assignment ID. For example, use the format,
-     *     /subscriptions/{guid}/providers/Microsoft.Authorization/denyAssignments/{denyAssignmentId} for subscription
-     *     level deny assignments, or /providers/Microsoft.Authorization/denyAssignments/{denyAssignmentId} for tenant
-     *     level deny assignments.
+     * /subscriptions/{guid}/providers/Microsoft.Authorization/denyAssignments/{denyAssignmentId} for subscription level
+     * deny assignments, or /providers/Microsoft.Authorization/denyAssignments/{denyAssignmentId} for tenant level deny
+     * assignments.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1200,16 +989,16 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
 
     /**
      * Gets deny assignments for a scope.
-     *
+     * 
      * @param scope The scope of the deny assignments.
      * @param filter The filter to apply on the operation. Use $filter=atScope() to return all deny assignments at or
-     *     above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
-     *     scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
-     *     specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and
-     *     below the scope for the specified principal. This filter is different from the principalId filter as it
-     *     returns not only those deny assignments that contain the specified principal is the Principals list but also
-     *     those deny assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when
-     *     gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
+     * above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
+     * scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
+     * specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and
+     * below the scope for the specified principal. This filter is different from the principalId filter as it returns
+     * not only those deny assignments that contain the specified principal is the Principals list but also those deny
+     * assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when
+     * gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1218,10 +1007,8 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DenyAssignmentInner>> listForScopeSinglePageAsync(String scope, String filter) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (scope == null) {
             return Mono.error(new IllegalArgumentException("Parameter scope is required and cannot be null."));
@@ -1231,30 +1018,23 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
         return FluxUtil
             .withContext(
                 context -> service.listForScope(this.client.getEndpoint(), scope, apiVersion, filter, accept, context))
-            .<PagedResponse<DenyAssignmentInner>>map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null))
+            .<PagedResponse<DenyAssignmentInner>>map(res -> new PagedResponseBase<>(res.getRequest(),
+                res.getStatusCode(), res.getHeaders(), res.getValue().value(), res.getValue().nextLink(), null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Gets deny assignments for a scope.
-     *
+     * 
      * @param scope The scope of the deny assignments.
      * @param filter The filter to apply on the operation. Use $filter=atScope() to return all deny assignments at or
-     *     above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
-     *     scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
-     *     specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and
-     *     below the scope for the specified principal. This filter is different from the principalId filter as it
-     *     returns not only those deny assignments that contain the specified principal is the Principals list but also
-     *     those deny assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when
-     *     gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
+     * above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
+     * scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
+     * specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and
+     * below the scope for the specified principal. This filter is different from the principalId filter as it returns
+     * not only those deny assignments that contain the specified principal is the Principals list but also those deny
+     * assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when
+     * gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1262,13 +1042,11 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      * @return deny assignments for a scope along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<DenyAssignmentInner>> listForScopeSinglePageAsync(
-        String scope, String filter, Context context) {
+    private Mono<PagedResponse<DenyAssignmentInner>> listForScopeSinglePageAsync(String scope, String filter,
+        Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (scope == null) {
             return Mono.error(new IllegalArgumentException("Parameter scope is required and cannot be null."));
@@ -1276,31 +1054,23 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
         final String apiVersion = "2018-07-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .listForScope(this.client.getEndpoint(), scope, apiVersion, filter, accept, context)
-            .map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null));
+        return service.listForScope(this.client.getEndpoint(), scope, apiVersion, filter, accept, context)
+            .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
+                res.getValue().value(), res.getValue().nextLink(), null));
     }
 
     /**
      * Gets deny assignments for a scope.
-     *
+     * 
      * @param scope The scope of the deny assignments.
      * @param filter The filter to apply on the operation. Use $filter=atScope() to return all deny assignments at or
-     *     above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
-     *     scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
-     *     specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and
-     *     below the scope for the specified principal. This filter is different from the principalId filter as it
-     *     returns not only those deny assignments that contain the specified principal is the Principals list but also
-     *     those deny assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when
-     *     gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
+     * above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
+     * scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
+     * specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and
+     * below the scope for the specified principal. This filter is different from the principalId filter as it returns
+     * not only those deny assignments that contain the specified principal is the Principals list but also those deny
+     * assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when
+     * gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1308,13 +1078,13 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<DenyAssignmentInner> listForScopeAsync(String scope, String filter) {
-        return new PagedFlux<>(
-            () -> listForScopeSinglePageAsync(scope, filter), nextLink -> listForScopeNextSinglePageAsync(nextLink));
+        return new PagedFlux<>(() -> listForScopeSinglePageAsync(scope, filter),
+            nextLink -> listForScopeNextSinglePageAsync(nextLink));
     }
 
     /**
      * Gets deny assignments for a scope.
-     *
+     * 
      * @param scope The scope of the deny assignments.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1324,22 +1094,22 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<DenyAssignmentInner> listForScopeAsync(String scope) {
         final String filter = null;
-        return new PagedFlux<>(
-            () -> listForScopeSinglePageAsync(scope, filter), nextLink -> listForScopeNextSinglePageAsync(nextLink));
+        return new PagedFlux<>(() -> listForScopeSinglePageAsync(scope, filter),
+            nextLink -> listForScopeNextSinglePageAsync(nextLink));
     }
 
     /**
      * Gets deny assignments for a scope.
-     *
+     * 
      * @param scope The scope of the deny assignments.
      * @param filter The filter to apply on the operation. Use $filter=atScope() to return all deny assignments at or
-     *     above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
-     *     scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
-     *     specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and
-     *     below the scope for the specified principal. This filter is different from the principalId filter as it
-     *     returns not only those deny assignments that contain the specified principal is the Principals list but also
-     *     those deny assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when
-     *     gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
+     * above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
+     * scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
+     * specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and
+     * below the scope for the specified principal. This filter is different from the principalId filter as it returns
+     * not only those deny assignments that contain the specified principal is the Principals list but also those deny
+     * assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when
+     * gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1348,14 +1118,13 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<DenyAssignmentInner> listForScopeAsync(String scope, String filter, Context context) {
-        return new PagedFlux<>(
-            () -> listForScopeSinglePageAsync(scope, filter, context),
+        return new PagedFlux<>(() -> listForScopeSinglePageAsync(scope, filter, context),
             nextLink -> listForScopeNextSinglePageAsync(nextLink, context));
     }
 
     /**
      * Gets deny assignments for a scope.
-     *
+     * 
      * @param scope The scope of the deny assignments.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1370,16 +1139,16 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
 
     /**
      * Gets deny assignments for a scope.
-     *
+     * 
      * @param scope The scope of the deny assignments.
      * @param filter The filter to apply on the operation. Use $filter=atScope() to return all deny assignments at or
-     *     above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
-     *     scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
-     *     specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and
-     *     below the scope for the specified principal. This filter is different from the principalId filter as it
-     *     returns not only those deny assignments that contain the specified principal is the Principals list but also
-     *     those deny assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when
-     *     gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
+     * above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
+     * scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
+     * specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and
+     * below the scope for the specified principal. This filter is different from the principalId filter as it returns
+     * not only those deny assignments that contain the specified principal is the Principals list but also those deny
+     * assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when
+     * gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1393,14 +1162,15 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
 
     /**
      * Get the next page of items.
-     *
+     * 
      * @param nextLink The URL to get the next list of items
-     *     <p>The nextLink parameter.
+     * 
+     * The nextLink parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deny assignment list operation result along with {@link PagedResponse} on successful completion of {@link
-     *     Mono}.
+     * @return deny assignment list operation result along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DenyAssignmentInner>> listForResourceNextSinglePageAsync(String nextLink) {
@@ -1408,75 +1178,58 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
             return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
         }
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.listForResourceNext(nextLink, this.client.getEndpoint(), accept, context))
-            .<PagedResponse<DenyAssignmentInner>>map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null))
+            .<PagedResponse<DenyAssignmentInner>>map(res -> new PagedResponseBase<>(res.getRequest(),
+                res.getStatusCode(), res.getHeaders(), res.getValue().value(), res.getValue().nextLink(), null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Get the next page of items.
-     *
+     * 
      * @param nextLink The URL to get the next list of items
-     *     <p>The nextLink parameter.
+     * 
+     * The nextLink parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deny assignment list operation result along with {@link PagedResponse} on successful completion of {@link
-     *     Mono}.
+     * @return deny assignment list operation result along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<DenyAssignmentInner>> listForResourceNextSinglePageAsync(
-        String nextLink, Context context) {
+    private Mono<PagedResponse<DenyAssignmentInner>> listForResourceNextSinglePageAsync(String nextLink,
+        Context context) {
         if (nextLink == null) {
             return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
         }
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .listForResourceNext(nextLink, this.client.getEndpoint(), accept, context)
-            .map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null));
+        return service.listForResourceNext(nextLink, this.client.getEndpoint(), accept, context)
+            .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
+                res.getValue().value(), res.getValue().nextLink(), null));
     }
 
     /**
      * Get the next page of items.
-     *
+     * 
      * @param nextLink The URL to get the next list of items
-     *     <p>The nextLink parameter.
+     * 
+     * The nextLink parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deny assignment list operation result along with {@link PagedResponse} on successful completion of {@link
-     *     Mono}.
+     * @return deny assignment list operation result along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DenyAssignmentInner>> listForResourceGroupNextSinglePageAsync(String nextLink) {
@@ -1484,76 +1237,59 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
             return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
         }
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context -> service.listForResourceGroupNext(nextLink, this.client.getEndpoint(), accept, context))
-            .<PagedResponse<DenyAssignmentInner>>map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null))
+            .<PagedResponse<DenyAssignmentInner>>map(res -> new PagedResponseBase<>(res.getRequest(),
+                res.getStatusCode(), res.getHeaders(), res.getValue().value(), res.getValue().nextLink(), null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Get the next page of items.
-     *
+     * 
      * @param nextLink The URL to get the next list of items
-     *     <p>The nextLink parameter.
+     * 
+     * The nextLink parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deny assignment list operation result along with {@link PagedResponse} on successful completion of {@link
-     *     Mono}.
+     * @return deny assignment list operation result along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<DenyAssignmentInner>> listForResourceGroupNextSinglePageAsync(
-        String nextLink, Context context) {
+    private Mono<PagedResponse<DenyAssignmentInner>> listForResourceGroupNextSinglePageAsync(String nextLink,
+        Context context) {
         if (nextLink == null) {
             return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
         }
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .listForResourceGroupNext(nextLink, this.client.getEndpoint(), accept, context)
-            .map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null));
+        return service.listForResourceGroupNext(nextLink, this.client.getEndpoint(), accept, context)
+            .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
+                res.getValue().value(), res.getValue().nextLink(), null));
     }
 
     /**
      * Get the next page of items.
-     *
+     * 
      * @param nextLink The URL to get the next list of items
-     *     <p>The nextLink parameter.
+     * 
+     * The nextLink parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deny assignment list operation result along with {@link PagedResponse} on successful completion of {@link
-     *     Mono}.
+     * @return deny assignment list operation result along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DenyAssignmentInner>> listNextSinglePageAsync(String nextLink) {
@@ -1561,37 +1297,28 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
             return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
         }
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         final String accept = "application/json";
-        return FluxUtil
-            .withContext(context -> service.listNext(nextLink, this.client.getEndpoint(), accept, context))
-            .<PagedResponse<DenyAssignmentInner>>map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null))
+        return FluxUtil.withContext(context -> service.listNext(nextLink, this.client.getEndpoint(), accept, context))
+            .<PagedResponse<DenyAssignmentInner>>map(res -> new PagedResponseBase<>(res.getRequest(),
+                res.getStatusCode(), res.getHeaders(), res.getValue().value(), res.getValue().nextLink(), null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Get the next page of items.
-     *
+     * 
      * @param nextLink The URL to get the next list of items
-     *     <p>The nextLink parameter.
+     * 
+     * The nextLink parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deny assignment list operation result along with {@link PagedResponse} on successful completion of {@link
-     *     Mono}.
+     * @return deny assignment list operation result along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DenyAssignmentInner>> listNextSinglePageAsync(String nextLink, Context context) {
@@ -1599,36 +1326,27 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
             return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
         }
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .listNext(nextLink, this.client.getEndpoint(), accept, context)
-            .map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null));
+        return service.listNext(nextLink, this.client.getEndpoint(), accept, context)
+            .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
+                res.getValue().value(), res.getValue().nextLink(), null));
     }
 
     /**
      * Get the next page of items.
-     *
+     * 
      * @param nextLink The URL to get the next list of items
-     *     <p>The nextLink parameter.
+     * 
+     * The nextLink parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deny assignment list operation result along with {@link PagedResponse} on successful completion of {@link
-     *     Mono}.
+     * @return deny assignment list operation result along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DenyAssignmentInner>> listForScopeNextSinglePageAsync(String nextLink) {
@@ -1636,37 +1354,29 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
             return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
         }
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.listForScopeNext(nextLink, this.client.getEndpoint(), accept, context))
-            .<PagedResponse<DenyAssignmentInner>>map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null))
+            .<PagedResponse<DenyAssignmentInner>>map(res -> new PagedResponseBase<>(res.getRequest(),
+                res.getStatusCode(), res.getHeaders(), res.getValue().value(), res.getValue().nextLink(), null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Get the next page of items.
-     *
+     * 
      * @param nextLink The URL to get the next list of items
-     *     <p>The nextLink parameter.
+     * 
+     * The nextLink parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return deny assignment list operation result along with {@link PagedResponse} on successful completion of {@link
-     *     Mono}.
+     * @return deny assignment list operation result along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DenyAssignmentInner>> listForScopeNextSinglePageAsync(String nextLink, Context context) {
@@ -1674,23 +1384,13 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
             return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
         }
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .listForScopeNext(nextLink, this.client.getEndpoint(), accept, context)
-            .map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null));
+        return service.listForScopeNext(nextLink, this.client.getEndpoint(), accept, context)
+            .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
+                res.getValue().value(), res.getValue().nextLink(), null));
     }
 }

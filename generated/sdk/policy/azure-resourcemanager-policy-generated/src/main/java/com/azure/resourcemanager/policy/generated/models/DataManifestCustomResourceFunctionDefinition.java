@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The custom resource function definition. */
+/**
+ * The custom resource function definition.
+ */
 @Fluent
 public final class DataManifestCustomResourceFunctionDefinition {
     /*
@@ -37,13 +39,15 @@ public final class DataManifestCustomResourceFunctionDefinition {
     @JsonProperty(value = "allowCustomProperties")
     private Boolean allowCustomProperties;
 
-    /** Creates an instance of DataManifestCustomResourceFunctionDefinition class. */
+    /**
+     * Creates an instance of DataManifestCustomResourceFunctionDefinition class.
+     */
     public DataManifestCustomResourceFunctionDefinition() {
     }
 
     /**
      * Get the name property: The function name as it will appear in the policy rule. eg - 'vault'.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -52,7 +56,7 @@ public final class DataManifestCustomResourceFunctionDefinition {
 
     /**
      * Set the name property: The function name as it will appear in the policy rule. eg - 'vault'.
-     *
+     * 
      * @param name the name value to set.
      * @return the DataManifestCustomResourceFunctionDefinition object itself.
      */
@@ -64,7 +68,7 @@ public final class DataManifestCustomResourceFunctionDefinition {
     /**
      * Get the fullyQualifiedResourceType property: The fully qualified control plane resource type that this function
      * represents. eg - 'Microsoft.KeyVault/vaults'.
-     *
+     * 
      * @return the fullyQualifiedResourceType value.
      */
     public String fullyQualifiedResourceType() {
@@ -74,12 +78,12 @@ public final class DataManifestCustomResourceFunctionDefinition {
     /**
      * Set the fullyQualifiedResourceType property: The fully qualified control plane resource type that this function
      * represents. eg - 'Microsoft.KeyVault/vaults'.
-     *
+     * 
      * @param fullyQualifiedResourceType the fullyQualifiedResourceType value to set.
      * @return the DataManifestCustomResourceFunctionDefinition object itself.
      */
-    public DataManifestCustomResourceFunctionDefinition withFullyQualifiedResourceType(
-        String fullyQualifiedResourceType) {
+    public DataManifestCustomResourceFunctionDefinition
+        withFullyQualifiedResourceType(String fullyQualifiedResourceType) {
         this.fullyQualifiedResourceType = fullyQualifiedResourceType;
         return this;
     }
@@ -87,7 +91,7 @@ public final class DataManifestCustomResourceFunctionDefinition {
     /**
      * Get the defaultProperties property: The top-level properties that can be selected on the function's output. eg -
      * [ "name", "location" ] if vault().name and vault().location are supported.
-     *
+     * 
      * @return the defaultProperties value.
      */
     public List<String> defaultProperties() {
@@ -97,7 +101,7 @@ public final class DataManifestCustomResourceFunctionDefinition {
     /**
      * Set the defaultProperties property: The top-level properties that can be selected on the function's output. eg -
      * [ "name", "location" ] if vault().name and vault().location are supported.
-     *
+     * 
      * @param defaultProperties the defaultProperties value to set.
      * @return the DataManifestCustomResourceFunctionDefinition object itself.
      */
@@ -109,7 +113,7 @@ public final class DataManifestCustomResourceFunctionDefinition {
     /**
      * Get the allowCustomProperties property: A value indicating whether the custom properties within the property bag
      * are allowed. Needs api-version to be specified in the policy rule eg - vault('2019-06-01').
-     *
+     * 
      * @return the allowCustomProperties value.
      */
     public Boolean allowCustomProperties() {
@@ -119,7 +123,7 @@ public final class DataManifestCustomResourceFunctionDefinition {
     /**
      * Set the allowCustomProperties property: A value indicating whether the custom properties within the property bag
      * are allowed. Needs api-version to be specified in the policy rule eg - vault('2019-06-01').
-     *
+     * 
      * @param allowCustomProperties the allowCustomProperties value to set.
      * @return the DataManifestCustomResourceFunctionDefinition object itself.
      */
@@ -130,7 +134,7 @@ public final class DataManifestCustomResourceFunctionDefinition {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

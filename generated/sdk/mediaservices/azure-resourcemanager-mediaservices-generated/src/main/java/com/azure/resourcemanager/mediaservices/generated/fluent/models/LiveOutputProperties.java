@@ -12,7 +12,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.Duration;
 import java.time.OffsetDateTime;
 
-/** The JSON object that contains the properties required to create a live output. */
+/**
+ * The JSON object that contains the properties required to create a live output.
+ */
 @Fluent
 public final class LiveOutputProperties {
     /*
@@ -86,13 +88,15 @@ public final class LiveOutputProperties {
     @JsonProperty(value = "resourceState", access = JsonProperty.Access.WRITE_ONLY)
     private LiveOutputResourceState resourceState;
 
-    /** Creates an instance of LiveOutputProperties class. */
+    /**
+     * Creates an instance of LiveOutputProperties class.
+     */
     public LiveOutputProperties() {
     }
 
     /**
      * Get the description property: The description of the live output.
-     *
+     * 
      * @return the description value.
      */
     public String description() {
@@ -101,7 +105,7 @@ public final class LiveOutputProperties {
 
     /**
      * Set the description property: The description of the live output.
-     *
+     * 
      * @param description the description value to set.
      * @return the LiveOutputProperties object itself.
      */
@@ -112,7 +116,7 @@ public final class LiveOutputProperties {
 
     /**
      * Get the assetName property: The asset that the live output will write to.
-     *
+     * 
      * @return the assetName value.
      */
     public String assetName() {
@@ -121,7 +125,7 @@ public final class LiveOutputProperties {
 
     /**
      * Set the assetName property: The asset that the live output will write to.
-     *
+     * 
      * @param assetName the assetName value to set.
      * @return the LiveOutputProperties object itself.
      */
@@ -134,7 +138,7 @@ public final class LiveOutputProperties {
      * Get the archiveWindowLength property: ISO 8601 time between 1 minute to 25 hours to indicate the maximum content
      * length that can be archived in the asset for this live output. This also sets the maximum content length for the
      * rewind window. For example, use PT1H30M to indicate 1 hour and 30 minutes of archive window.
-     *
+     * 
      * @return the archiveWindowLength value.
      */
     public Duration archiveWindowLength() {
@@ -145,7 +149,7 @@ public final class LiveOutputProperties {
      * Set the archiveWindowLength property: ISO 8601 time between 1 minute to 25 hours to indicate the maximum content
      * length that can be archived in the asset for this live output. This also sets the maximum content length for the
      * rewind window. For example, use PT1H30M to indicate 1 hour and 30 minutes of archive window.
-     *
+     * 
      * @param archiveWindowLength the archiveWindowLength value to set.
      * @return the LiveOutputProperties object itself.
      */
@@ -160,7 +164,7 @@ public final class LiveOutputProperties {
      * archived VOD will have full content with original ArchiveWindowLength. For example, use PT1H30M to indicate 1
      * hour and 30 minutes of rewind window length. Service will use implicit default value 30m only if Live Event
      * enables LL.
-     *
+     * 
      * @return the rewindWindowLength value.
      */
     public Duration rewindWindowLength() {
@@ -173,7 +177,7 @@ public final class LiveOutputProperties {
      * archived VOD will have full content with original ArchiveWindowLength. For example, use PT1H30M to indicate 1
      * hour and 30 minutes of rewind window length. Service will use implicit default value 30m only if Live Event
      * enables LL.
-     *
+     * 
      * @param rewindWindowLength the rewindWindowLength value to set.
      * @return the LiveOutputProperties object itself.
      */
@@ -185,7 +189,7 @@ public final class LiveOutputProperties {
     /**
      * Get the manifestName property: The manifest file name. If not provided, the service will generate one
      * automatically.
-     *
+     * 
      * @return the manifestName value.
      */
     public String manifestName() {
@@ -195,7 +199,7 @@ public final class LiveOutputProperties {
     /**
      * Set the manifestName property: The manifest file name. If not provided, the service will generate one
      * automatically.
-     *
+     * 
      * @param manifestName the manifestName value to set.
      * @return the LiveOutputProperties object itself.
      */
@@ -206,7 +210,7 @@ public final class LiveOutputProperties {
 
     /**
      * Get the hls property: HTTP Live Streaming (HLS) packing setting for the live output.
-     *
+     * 
      * @return the hls value.
      */
     public Hls hls() {
@@ -215,7 +219,7 @@ public final class LiveOutputProperties {
 
     /**
      * Set the hls property: HTTP Live Streaming (HLS) packing setting for the live output.
-     *
+     * 
      * @param hls the hls value to set.
      * @return the LiveOutputProperties object itself.
      */
@@ -227,7 +231,7 @@ public final class LiveOutputProperties {
     /**
      * Get the outputSnapTime property: The initial timestamp that the live output will start at, any content before
      * this value will not be archived.
-     *
+     * 
      * @return the outputSnapTime value.
      */
     public Long outputSnapTime() {
@@ -237,7 +241,7 @@ public final class LiveOutputProperties {
     /**
      * Set the outputSnapTime property: The initial timestamp that the live output will start at, any content before
      * this value will not be archived.
-     *
+     * 
      * @param outputSnapTime the outputSnapTime value to set.
      * @return the LiveOutputProperties object itself.
      */
@@ -248,7 +252,7 @@ public final class LiveOutputProperties {
 
     /**
      * Get the created property: The creation time the live output.
-     *
+     * 
      * @return the created value.
      */
     public OffsetDateTime created() {
@@ -257,7 +261,7 @@ public final class LiveOutputProperties {
 
     /**
      * Get the lastModified property: The time the live output was last modified.
-     *
+     * 
      * @return the lastModified value.
      */
     public OffsetDateTime lastModified() {
@@ -266,7 +270,7 @@ public final class LiveOutputProperties {
 
     /**
      * Get the provisioningState property: The provisioning state of the live output.
-     *
+     * 
      * @return the provisioningState value.
      */
     public String provisioningState() {
@@ -275,7 +279,7 @@ public final class LiveOutputProperties {
 
     /**
      * Get the resourceState property: The resource state of the live output.
-     *
+     * 
      * @return the resourceState value.
      */
     public LiveOutputResourceState resourceState() {
@@ -284,20 +288,17 @@ public final class LiveOutputProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (assetName() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property assetName in model LiveOutputProperties"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property assetName in model LiveOutputProperties"));
         }
         if (archiveWindowLength() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property archiveWindowLength in model LiveOutputProperties"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property archiveWindowLength in model LiveOutputProperties"));
         }
         if (hls() != null) {
             hls().validate();

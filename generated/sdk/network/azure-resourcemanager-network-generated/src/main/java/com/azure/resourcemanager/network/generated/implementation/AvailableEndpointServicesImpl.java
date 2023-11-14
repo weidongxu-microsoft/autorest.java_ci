@@ -19,8 +19,7 @@ public final class AvailableEndpointServicesImpl implements AvailableEndpointSer
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public AvailableEndpointServicesImpl(
-        AvailableEndpointServicesClient innerClient,
+    public AvailableEndpointServicesImpl(AvailableEndpointServicesClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;

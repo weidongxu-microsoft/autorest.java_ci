@@ -21,21 +21,18 @@ public final class ScopeConnectionsImpl implements ScopeConnections {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public ScopeConnectionsImpl(
-        ScopeConnectionsClient innerClient, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    public ScopeConnectionsImpl(ScopeConnectionsClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<ScopeConnection> getWithResponse(
-        String resourceGroupName, String networkManagerName, String scopeConnectionName, Context context) {
-        Response<ScopeConnectionInner> inner =
-            this.serviceClient().getWithResponse(resourceGroupName, networkManagerName, scopeConnectionName, context);
+    public Response<ScopeConnection> getWithResponse(String resourceGroupName, String networkManagerName,
+        String scopeConnectionName, Context context) {
+        Response<ScopeConnectionInner> inner
+            = this.serviceClient().getWithResponse(resourceGroupName, networkManagerName, scopeConnectionName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ScopeConnectionImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -43,8 +40,8 @@ public final class ScopeConnectionsImpl implements ScopeConnections {
     }
 
     public ScopeConnection get(String resourceGroupName, String networkManagerName, String scopeConnectionName) {
-        ScopeConnectionInner inner =
-            this.serviceClient().get(resourceGroupName, networkManagerName, scopeConnectionName);
+        ScopeConnectionInner inner
+            = this.serviceClient().get(resourceGroupName, networkManagerName, scopeConnectionName);
         if (inner != null) {
             return new ScopeConnectionImpl(inner, this.manager());
         } else {
@@ -52,11 +49,10 @@ public final class ScopeConnectionsImpl implements ScopeConnections {
         }
     }
 
-    public Response<Void> deleteWithResponse(
-        String resourceGroupName, String networkManagerName, String scopeConnectionName, Context context) {
-        return this
-            .serviceClient()
-            .deleteWithResponse(resourceGroupName, networkManagerName, scopeConnectionName, context);
+    public Response<Void> deleteWithResponse(String resourceGroupName, String networkManagerName,
+        String scopeConnectionName, Context context) {
+        return this.serviceClient().deleteWithResponse(resourceGroupName, networkManagerName, scopeConnectionName,
+            context);
     }
 
     public void delete(String resourceGroupName, String networkManagerName, String scopeConnectionName) {
@@ -68,69 +64,48 @@ public final class ScopeConnectionsImpl implements ScopeConnections {
         return Utils.mapPage(inner, inner1 -> new ScopeConnectionImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<ScopeConnection> list(
-        String resourceGroupName, String networkManagerName, Integer top, String skipToken, Context context) {
-        PagedIterable<ScopeConnectionInner> inner =
-            this.serviceClient().list(resourceGroupName, networkManagerName, top, skipToken, context);
+    public PagedIterable<ScopeConnection> list(String resourceGroupName, String networkManagerName, Integer top,
+        String skipToken, Context context) {
+        PagedIterable<ScopeConnectionInner> inner
+            = this.serviceClient().list(resourceGroupName, networkManagerName, top, skipToken, context);
         return Utils.mapPage(inner, inner1 -> new ScopeConnectionImpl(inner1, this.manager()));
     }
 
     public ScopeConnection getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String networkManagerName = Utils.getValueFromIdByName(id, "networkManagers");
         if (networkManagerName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'networkManagers'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'networkManagers'.", id)));
         }
         String scopeConnectionName = Utils.getValueFromIdByName(id, "scopeConnections");
         if (scopeConnectionName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'scopeConnections'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'scopeConnections'.", id)));
         }
-        return this
-            .getWithResponse(resourceGroupName, networkManagerName, scopeConnectionName, Context.NONE)
+        return this.getWithResponse(resourceGroupName, networkManagerName, scopeConnectionName, Context.NONE)
             .getValue();
     }
 
     public Response<ScopeConnection> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String networkManagerName = Utils.getValueFromIdByName(id, "networkManagers");
         if (networkManagerName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'networkManagers'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'networkManagers'.", id)));
         }
         String scopeConnectionName = Utils.getValueFromIdByName(id, "scopeConnections");
         if (scopeConnectionName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'scopeConnections'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'scopeConnections'.", id)));
         }
         return this.getWithResponse(resourceGroupName, networkManagerName, scopeConnectionName, context);
     }
@@ -138,28 +113,18 @@ public final class ScopeConnectionsImpl implements ScopeConnections {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String networkManagerName = Utils.getValueFromIdByName(id, "networkManagers");
         if (networkManagerName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'networkManagers'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'networkManagers'.", id)));
         }
         String scopeConnectionName = Utils.getValueFromIdByName(id, "scopeConnections");
         if (scopeConnectionName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'scopeConnections'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'scopeConnections'.", id)));
         }
         this.deleteWithResponse(resourceGroupName, networkManagerName, scopeConnectionName, Context.NONE);
     }
@@ -167,28 +132,18 @@ public final class ScopeConnectionsImpl implements ScopeConnections {
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String networkManagerName = Utils.getValueFromIdByName(id, "networkManagers");
         if (networkManagerName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'networkManagers'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'networkManagers'.", id)));
         }
         String scopeConnectionName = Utils.getValueFromIdByName(id, "scopeConnections");
         if (scopeConnectionName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'scopeConnections'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'scopeConnections'.", id)));
         }
         return this.deleteWithResponse(resourceGroupName, networkManagerName, scopeConnectionName, context);
     }

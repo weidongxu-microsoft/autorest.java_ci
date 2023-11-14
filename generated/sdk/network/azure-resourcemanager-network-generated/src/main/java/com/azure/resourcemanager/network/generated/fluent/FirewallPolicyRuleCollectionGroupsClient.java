@@ -19,7 +19,7 @@ import com.azure.resourcemanager.network.generated.fluent.models.FirewallPolicyR
 public interface FirewallPolicyRuleCollectionGroupsClient {
     /**
      * Deletes the specified FirewallPolicyRuleCollectionGroup.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @param ruleCollectionGroupName The name of the FirewallPolicyRuleCollectionGroup.
@@ -29,12 +29,12 @@ public interface FirewallPolicyRuleCollectionGroupsClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginDelete(
-        String resourceGroupName, String firewallPolicyName, String ruleCollectionGroupName);
+    SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String firewallPolicyName,
+        String ruleCollectionGroupName);
 
     /**
      * Deletes the specified FirewallPolicyRuleCollectionGroup.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @param ruleCollectionGroupName The name of the FirewallPolicyRuleCollectionGroup.
@@ -45,12 +45,12 @@ public interface FirewallPolicyRuleCollectionGroupsClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginDelete(
-        String resourceGroupName, String firewallPolicyName, String ruleCollectionGroupName, Context context);
+    SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String firewallPolicyName,
+        String ruleCollectionGroupName, Context context);
 
     /**
      * Deletes the specified FirewallPolicyRuleCollectionGroup.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @param ruleCollectionGroupName The name of the FirewallPolicyRuleCollectionGroup.
@@ -63,7 +63,7 @@ public interface FirewallPolicyRuleCollectionGroupsClient {
 
     /**
      * Deletes the specified FirewallPolicyRuleCollectionGroup.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @param ruleCollectionGroupName The name of the FirewallPolicyRuleCollectionGroup.
@@ -77,7 +77,7 @@ public interface FirewallPolicyRuleCollectionGroupsClient {
 
     /**
      * Gets the specified FirewallPolicyRuleCollectionGroup.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @param ruleCollectionGroupName The name of the FirewallPolicyRuleCollectionGroup.
@@ -88,12 +88,12 @@ public interface FirewallPolicyRuleCollectionGroupsClient {
      * @return the specified FirewallPolicyRuleCollectionGroup along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<FirewallPolicyRuleCollectionGroupInner> getWithResponse(
-        String resourceGroupName, String firewallPolicyName, String ruleCollectionGroupName, Context context);
+    Response<FirewallPolicyRuleCollectionGroupInner> getWithResponse(String resourceGroupName,
+        String firewallPolicyName, String ruleCollectionGroupName, Context context);
 
     /**
      * Gets the specified FirewallPolicyRuleCollectionGroup.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @param ruleCollectionGroupName The name of the FirewallPolicyRuleCollectionGroup.
@@ -103,12 +103,12 @@ public interface FirewallPolicyRuleCollectionGroupsClient {
      * @return the specified FirewallPolicyRuleCollectionGroup.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    FirewallPolicyRuleCollectionGroupInner get(
-        String resourceGroupName, String firewallPolicyName, String ruleCollectionGroupName);
+    FirewallPolicyRuleCollectionGroupInner get(String resourceGroupName, String firewallPolicyName,
+        String ruleCollectionGroupName);
 
     /**
      * Creates or updates the specified FirewallPolicyRuleCollectionGroup.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @param ruleCollectionGroupName The name of the FirewallPolicyRuleCollectionGroup.
@@ -120,15 +120,12 @@ public interface FirewallPolicyRuleCollectionGroupsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<FirewallPolicyRuleCollectionGroupInner>, FirewallPolicyRuleCollectionGroupInner>
-        beginCreateOrUpdate(
-            String resourceGroupName,
-            String firewallPolicyName,
-            String ruleCollectionGroupName,
+        beginCreateOrUpdate(String resourceGroupName, String firewallPolicyName, String ruleCollectionGroupName,
             FirewallPolicyRuleCollectionGroupInner parameters);
 
     /**
      * Creates or updates the specified FirewallPolicyRuleCollectionGroup.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @param ruleCollectionGroupName The name of the FirewallPolicyRuleCollectionGroup.
@@ -141,16 +138,12 @@ public interface FirewallPolicyRuleCollectionGroupsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<FirewallPolicyRuleCollectionGroupInner>, FirewallPolicyRuleCollectionGroupInner>
-        beginCreateOrUpdate(
-            String resourceGroupName,
-            String firewallPolicyName,
-            String ruleCollectionGroupName,
-            FirewallPolicyRuleCollectionGroupInner parameters,
-            Context context);
+        beginCreateOrUpdate(String resourceGroupName, String firewallPolicyName, String ruleCollectionGroupName,
+            FirewallPolicyRuleCollectionGroupInner parameters, Context context);
 
     /**
      * Creates or updates the specified FirewallPolicyRuleCollectionGroup.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @param ruleCollectionGroupName The name of the FirewallPolicyRuleCollectionGroup.
@@ -161,15 +154,12 @@ public interface FirewallPolicyRuleCollectionGroupsClient {
      * @return rule Collection Group resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    FirewallPolicyRuleCollectionGroupInner createOrUpdate(
-        String resourceGroupName,
-        String firewallPolicyName,
-        String ruleCollectionGroupName,
-        FirewallPolicyRuleCollectionGroupInner parameters);
+    FirewallPolicyRuleCollectionGroupInner createOrUpdate(String resourceGroupName, String firewallPolicyName,
+        String ruleCollectionGroupName, FirewallPolicyRuleCollectionGroupInner parameters);
 
     /**
      * Creates or updates the specified FirewallPolicyRuleCollectionGroup.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @param ruleCollectionGroupName The name of the FirewallPolicyRuleCollectionGroup.
@@ -181,40 +171,36 @@ public interface FirewallPolicyRuleCollectionGroupsClient {
      * @return rule Collection Group resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    FirewallPolicyRuleCollectionGroupInner createOrUpdate(
-        String resourceGroupName,
-        String firewallPolicyName,
-        String ruleCollectionGroupName,
-        FirewallPolicyRuleCollectionGroupInner parameters,
-        Context context);
+    FirewallPolicyRuleCollectionGroupInner createOrUpdate(String resourceGroupName, String firewallPolicyName,
+        String ruleCollectionGroupName, FirewallPolicyRuleCollectionGroupInner parameters, Context context);
 
     /**
      * Lists all FirewallPolicyRuleCollectionGroups in a FirewallPolicy resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListFirewallPolicyRuleCollectionGroups API service call as paginated response with {@link
-     *     PagedIterable}.
+     * @return response for ListFirewallPolicyRuleCollectionGroups API service call as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<FirewallPolicyRuleCollectionGroupInner> list(String resourceGroupName, String firewallPolicyName);
 
     /**
      * Lists all FirewallPolicyRuleCollectionGroups in a FirewallPolicy resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListFirewallPolicyRuleCollectionGroups API service call as paginated response with {@link
-     *     PagedIterable}.
+     * @return response for ListFirewallPolicyRuleCollectionGroups API service call as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<FirewallPolicyRuleCollectionGroupInner> list(
-        String resourceGroupName, String firewallPolicyName, Context context);
+    PagedIterable<FirewallPolicyRuleCollectionGroupInner> list(String resourceGroupName, String firewallPolicyName,
+        Context context);
 }

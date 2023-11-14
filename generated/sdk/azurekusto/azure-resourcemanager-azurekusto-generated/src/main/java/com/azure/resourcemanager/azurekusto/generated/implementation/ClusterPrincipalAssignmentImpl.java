@@ -86,26 +86,19 @@ public final class ClusterPrincipalAssignmentImpl
     }
 
     public ClusterPrincipalAssignment create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getClusterPrincipalAssignments()
-                .createOrUpdate(
-                    resourceGroupName, clusterName, principalAssignmentName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getClusterPrincipalAssignments()
+            .createOrUpdate(resourceGroupName, clusterName, principalAssignmentName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public ClusterPrincipalAssignment create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getClusterPrincipalAssignments()
-                .createOrUpdate(resourceGroupName, clusterName, principalAssignmentName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getClusterPrincipalAssignments()
+            .createOrUpdate(resourceGroupName, clusterName, principalAssignmentName, this.innerModel(), context);
         return this;
     }
 
-    ClusterPrincipalAssignmentImpl(
-        String name, com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager) {
+    ClusterPrincipalAssignmentImpl(String name,
+        com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager) {
         this.innerObject = new ClusterPrincipalAssignmentInner();
         this.serviceManager = serviceManager;
         this.principalAssignmentName = name;
@@ -116,26 +109,18 @@ public final class ClusterPrincipalAssignmentImpl
     }
 
     public ClusterPrincipalAssignment apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getClusterPrincipalAssignments()
-                .createOrUpdate(
-                    resourceGroupName, clusterName, principalAssignmentName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getClusterPrincipalAssignments()
+            .createOrUpdate(resourceGroupName, clusterName, principalAssignmentName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public ClusterPrincipalAssignment apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getClusterPrincipalAssignments()
-                .createOrUpdate(resourceGroupName, clusterName, principalAssignmentName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getClusterPrincipalAssignments()
+            .createOrUpdate(resourceGroupName, clusterName, principalAssignmentName, this.innerModel(), context);
         return this;
     }
 
-    ClusterPrincipalAssignmentImpl(
-        ClusterPrincipalAssignmentInner innerObject,
+    ClusterPrincipalAssignmentImpl(ClusterPrincipalAssignmentInner innerObject,
         com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -145,22 +130,14 @@ public final class ClusterPrincipalAssignmentImpl
     }
 
     public ClusterPrincipalAssignment refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getClusterPrincipalAssignments()
-                .getWithResponse(resourceGroupName, clusterName, principalAssignmentName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getClusterPrincipalAssignments()
+            .getWithResponse(resourceGroupName, clusterName, principalAssignmentName, Context.NONE).getValue();
         return this;
     }
 
     public ClusterPrincipalAssignment refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getClusterPrincipalAssignments()
-                .getWithResponse(resourceGroupName, clusterName, principalAssignmentName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getClusterPrincipalAssignments()
+            .getWithResponse(resourceGroupName, clusterName, principalAssignmentName, context).getValue();
         return this;
     }
 

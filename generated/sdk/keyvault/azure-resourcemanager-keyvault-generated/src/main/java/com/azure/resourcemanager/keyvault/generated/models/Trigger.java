@@ -7,7 +7,9 @@ package com.azure.resourcemanager.keyvault.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The Trigger model. */
+/**
+ * The Trigger model.
+ */
 @Fluent
 public final class Trigger {
     /*
@@ -24,14 +26,16 @@ public final class Trigger {
     @JsonProperty(value = "timeBeforeExpiry")
     private String timeBeforeExpiry;
 
-    /** Creates an instance of Trigger class. */
+    /**
+     * Creates an instance of Trigger class.
+     */
     public Trigger() {
     }
 
     /**
      * Get the timeAfterCreate property: The time duration after key creation to rotate the key. It only applies to
      * rotate. It will be in ISO 8601 duration format. Eg: 'P90D', 'P1Y'.
-     *
+     * 
      * @return the timeAfterCreate value.
      */
     public String timeAfterCreate() {
@@ -41,7 +45,7 @@ public final class Trigger {
     /**
      * Set the timeAfterCreate property: The time duration after key creation to rotate the key. It only applies to
      * rotate. It will be in ISO 8601 duration format. Eg: 'P90D', 'P1Y'.
-     *
+     * 
      * @param timeAfterCreate the timeAfterCreate value to set.
      * @return the Trigger object itself.
      */
@@ -53,7 +57,7 @@ public final class Trigger {
     /**
      * Get the timeBeforeExpiry property: The time duration before key expiring to rotate or notify. It will be in ISO
      * 8601 duration format. Eg: 'P90D', 'P1Y'.
-     *
+     * 
      * @return the timeBeforeExpiry value.
      */
     public String timeBeforeExpiry() {
@@ -63,7 +67,7 @@ public final class Trigger {
     /**
      * Set the timeBeforeExpiry property: The time duration before key expiring to rotate or notify. It will be in ISO
      * 8601 duration format. Eg: 'P90D', 'P1Y'.
-     *
+     * 
      * @param timeBeforeExpiry the timeBeforeExpiry value to set.
      * @return the Trigger object itself.
      */
@@ -74,7 +78,7 @@ public final class Trigger {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

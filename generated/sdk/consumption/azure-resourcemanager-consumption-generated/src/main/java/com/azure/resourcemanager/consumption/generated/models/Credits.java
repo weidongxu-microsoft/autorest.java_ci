@@ -7,11 +7,13 @@ package com.azure.resourcemanager.consumption.generated.models;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of Credits. */
+/**
+ * Resource collection API of Credits.
+ */
 public interface Credits {
     /**
      * The credit summary by billingAccountId and billingProfileId.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
      * @param context The context to associate with this operation.
@@ -24,7 +26,7 @@ public interface Credits {
 
     /**
      * The credit summary by billingAccountId and billingProfileId.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

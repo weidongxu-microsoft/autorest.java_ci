@@ -11,14 +11,16 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** Properties of the Application Group policy. */
+/**
+ * Properties of the Application Group policy.
+ */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
     include = JsonTypeInfo.As.PROPERTY,
     property = "type",
     defaultImpl = ApplicationGroupPolicy.class)
 @JsonTypeName("ApplicationGroupPolicy")
-@JsonSubTypes({@JsonSubTypes.Type(name = "ThrottlingPolicy", value = ThrottlingPolicy.class)})
+@JsonSubTypes({ @JsonSubTypes.Type(name = "ThrottlingPolicy", value = ThrottlingPolicy.class) })
 @Fluent
 public class ApplicationGroupPolicy {
     /*
@@ -27,13 +29,15 @@ public class ApplicationGroupPolicy {
     @JsonProperty(value = "name", required = true)
     private String name;
 
-    /** Creates an instance of ApplicationGroupPolicy class. */
+    /**
+     * Creates an instance of ApplicationGroupPolicy class.
+     */
     public ApplicationGroupPolicy() {
     }
 
     /**
      * Get the name property: The Name of this policy.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -42,7 +46,7 @@ public class ApplicationGroupPolicy {
 
     /**
      * Set the name property: The Name of this policy.
-     *
+     * 
      * @param name the name value to set.
      * @return the ApplicationGroupPolicy object itself.
      */
@@ -53,14 +57,13 @@ public class ApplicationGroupPolicy {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property name in model ApplicationGroupPolicy"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property name in model ApplicationGroupPolicy"));
         }
     }
 

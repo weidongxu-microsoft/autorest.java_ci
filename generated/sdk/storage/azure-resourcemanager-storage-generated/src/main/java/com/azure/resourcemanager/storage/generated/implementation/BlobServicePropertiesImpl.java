@@ -95,22 +95,15 @@ public final class BlobServicePropertiesImpl
     }
 
     public BlobServiceProperties create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getBlobServices()
-                .setServicePropertiesWithResponse(resourceGroupName, accountName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getBlobServices()
+            .setServicePropertiesWithResponse(resourceGroupName, accountName, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public BlobServiceProperties create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getBlobServices()
-                .setServicePropertiesWithResponse(resourceGroupName, accountName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getBlobServices()
+            .setServicePropertiesWithResponse(resourceGroupName, accountName, this.innerModel(), context).getValue();
         return this;
     }
 
@@ -124,27 +117,19 @@ public final class BlobServicePropertiesImpl
     }
 
     public BlobServiceProperties apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getBlobServices()
-                .setServicePropertiesWithResponse(resourceGroupName, accountName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getBlobServices()
+            .setServicePropertiesWithResponse(resourceGroupName, accountName, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public BlobServiceProperties apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getBlobServices()
-                .setServicePropertiesWithResponse(resourceGroupName, accountName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getBlobServices()
+            .setServicePropertiesWithResponse(resourceGroupName, accountName, this.innerModel(), context).getValue();
         return this;
     }
 
-    BlobServicePropertiesImpl(
-        BlobServicePropertiesInner innerObject,
+    BlobServicePropertiesImpl(BlobServicePropertiesInner innerObject,
         com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -153,22 +138,14 @@ public final class BlobServicePropertiesImpl
     }
 
     public BlobServiceProperties refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getBlobServices()
-                .getServicePropertiesWithResponse(resourceGroupName, accountName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getBlobServices()
+            .getServicePropertiesWithResponse(resourceGroupName, accountName, Context.NONE).getValue();
         return this;
     }
 
     public BlobServiceProperties refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getBlobServices()
-                .getServicePropertiesWithResponse(resourceGroupName, accountName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getBlobServices()
+            .getServicePropertiesWithResponse(resourceGroupName, accountName, context).getValue();
         return this;
     }
 
@@ -207,14 +184,14 @@ public final class BlobServicePropertiesImpl
         return this;
     }
 
-    public BlobServicePropertiesImpl withContainerDeleteRetentionPolicy(
-        DeleteRetentionPolicy containerDeleteRetentionPolicy) {
+    public BlobServicePropertiesImpl
+        withContainerDeleteRetentionPolicy(DeleteRetentionPolicy containerDeleteRetentionPolicy) {
         this.innerModel().withContainerDeleteRetentionPolicy(containerDeleteRetentionPolicy);
         return this;
     }
 
-    public BlobServicePropertiesImpl withLastAccessTimeTrackingPolicy(
-        LastAccessTimeTrackingPolicy lastAccessTimeTrackingPolicy) {
+    public BlobServicePropertiesImpl
+        withLastAccessTimeTrackingPolicy(LastAccessTimeTrackingPolicy lastAccessTimeTrackingPolicy) {
         this.innerModel().withLastAccessTimeTrackingPolicy(lastAccessTimeTrackingPolicy);
         return this;
     }

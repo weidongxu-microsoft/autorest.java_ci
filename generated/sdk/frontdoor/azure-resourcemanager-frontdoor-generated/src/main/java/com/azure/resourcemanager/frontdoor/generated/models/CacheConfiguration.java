@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.Duration;
 
-/** Caching settings for a caching-type route. To disable caching, do not provide a cacheConfiguration object. */
+/**
+ * Caching settings for a caching-type route. To disable caching, do not provide a cacheConfiguration object.
+ */
 @Fluent
 public final class CacheConfiguration {
     /*
@@ -36,13 +38,15 @@ public final class CacheConfiguration {
     @JsonProperty(value = "cacheDuration")
     private Duration cacheDuration;
 
-    /** Creates an instance of CacheConfiguration class. */
+    /**
+     * Creates an instance of CacheConfiguration class.
+     */
     public CacheConfiguration() {
     }
 
     /**
      * Get the queryParameterStripDirective property: Treatment of URL query terms when forming the cache key.
-     *
+     * 
      * @return the queryParameterStripDirective value.
      */
     public FrontDoorQuery queryParameterStripDirective() {
@@ -51,7 +55,7 @@ public final class CacheConfiguration {
 
     /**
      * Set the queryParameterStripDirective property: Treatment of URL query terms when forming the cache key.
-     *
+     * 
      * @param queryParameterStripDirective the queryParameterStripDirective value to set.
      * @return the CacheConfiguration object itself.
      */
@@ -62,7 +66,7 @@ public final class CacheConfiguration {
 
     /**
      * Get the queryParameters property: query parameters to include or exclude (comma separated).
-     *
+     * 
      * @return the queryParameters value.
      */
     public String queryParameters() {
@@ -71,7 +75,7 @@ public final class CacheConfiguration {
 
     /**
      * Set the queryParameters property: query parameters to include or exclude (comma separated).
-     *
+     * 
      * @param queryParameters the queryParameters value to set.
      * @return the CacheConfiguration object itself.
      */
@@ -82,7 +86,7 @@ public final class CacheConfiguration {
 
     /**
      * Get the dynamicCompression property: Whether to use dynamic compression for cached content.
-     *
+     * 
      * @return the dynamicCompression value.
      */
     public DynamicCompressionEnabled dynamicCompression() {
@@ -91,7 +95,7 @@ public final class CacheConfiguration {
 
     /**
      * Set the dynamicCompression property: Whether to use dynamic compression for cached content.
-     *
+     * 
      * @param dynamicCompression the dynamicCompression value to set.
      * @return the CacheConfiguration object itself.
      */
@@ -102,8 +106,9 @@ public final class CacheConfiguration {
 
     /**
      * Get the cacheDuration property: The duration for which the content needs to be cached. Allowed format is in ISO
-     * 8601 format (http://en.wikipedia.org/wiki/ISO_8601#Durations). HTTP requires the value to be no more than a year.
-     *
+     * 8601 format (http://en.wikipedia.org/wiki/ISO_8601#Durations). HTTP requires the value to be no more than a
+     * year.
+     * 
      * @return the cacheDuration value.
      */
     public Duration cacheDuration() {
@@ -112,8 +117,9 @@ public final class CacheConfiguration {
 
     /**
      * Set the cacheDuration property: The duration for which the content needs to be cached. Allowed format is in ISO
-     * 8601 format (http://en.wikipedia.org/wiki/ISO_8601#Durations). HTTP requires the value to be no more than a year.
-     *
+     * 8601 format (http://en.wikipedia.org/wiki/ISO_8601#Durations). HTTP requires the value to be no more than a
+     * year.
+     * 
      * @param cacheDuration the cacheDuration value to set.
      * @return the CacheConfiguration object itself.
      */
@@ -124,7 +130,7 @@ public final class CacheConfiguration {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

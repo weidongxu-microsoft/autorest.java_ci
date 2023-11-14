@@ -11,7 +11,9 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** A facet containing additional statistics on the response of a query. Can be either FacetResult or FacetError. */
+/**
+ * A facet containing additional statistics on the response of a query. Can be either FacetResult or FacetError.
+ */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
     include = JsonTypeInfo.As.PROPERTY,
@@ -20,8 +22,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @JsonTypeName("Facet")
 @JsonSubTypes({
     @JsonSubTypes.Type(name = "FacetResult", value = FacetResult.class),
-    @JsonSubTypes.Type(name = "FacetError", value = FacetError.class)
-})
+    @JsonSubTypes.Type(name = "FacetError", value = FacetError.class) })
 @Fluent
 public class Facet {
     /*
@@ -30,13 +31,15 @@ public class Facet {
     @JsonProperty(value = "expression", required = true)
     private String expression;
 
-    /** Creates an instance of Facet class. */
+    /**
+     * Creates an instance of Facet class.
+     */
     public Facet() {
     }
 
     /**
      * Get the expression property: Facet expression, same as in the corresponding facet request.
-     *
+     * 
      * @return the expression value.
      */
     public String expression() {
@@ -45,7 +48,7 @@ public class Facet {
 
     /**
      * Set the expression property: Facet expression, same as in the corresponding facet request.
-     *
+     * 
      * @param expression the expression value to set.
      * @return the Facet object itself.
      */
@@ -56,14 +59,13 @@ public class Facet {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (expression() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property expression in model Facet"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property expression in model Facet"));
         }
     }
 

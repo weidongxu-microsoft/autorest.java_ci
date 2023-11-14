@@ -6,18 +6,20 @@ package com.azure.resourcemanager.appservice.generated.models;
 
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteSealInner;
 
-/** An immutable client-side representation of SiteSeal. */
+/**
+ * An immutable client-side representation of SiteSeal.
+ */
 public interface SiteSeal {
     /**
      * Gets the html property: HTML snippet.
-     *
+     * 
      * @return the html value.
      */
     String html();
 
     /**
      * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.SiteSealInner object.
-     *
+     * 
      * @return the inner object.
      */
     SiteSealInner innerModel();

@@ -21,8 +21,8 @@ public final class WebCategoriesImpl implements WebCategories {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public WebCategoriesImpl(
-        WebCategoriesClient innerClient, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    public WebCategoriesImpl(WebCategoriesClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -30,10 +30,7 @@ public final class WebCategoriesImpl implements WebCategories {
     public Response<AzureWebCategory> getWithResponse(String name, String expand, Context context) {
         Response<AzureWebCategoryInner> inner = this.serviceClient().getWithResponse(name, expand, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new AzureWebCategoryImpl(inner.getValue(), this.manager()));
         } else {
             return null;

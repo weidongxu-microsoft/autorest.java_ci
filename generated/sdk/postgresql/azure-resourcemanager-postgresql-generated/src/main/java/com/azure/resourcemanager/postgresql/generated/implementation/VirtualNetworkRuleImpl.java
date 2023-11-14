@@ -64,25 +64,19 @@ public final class VirtualNetworkRuleImpl
     }
 
     public VirtualNetworkRule create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualNetworkRules()
-                .createOrUpdate(resourceGroupName, serverName, virtualNetworkRuleName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getVirtualNetworkRules().createOrUpdate(resourceGroupName,
+            serverName, virtualNetworkRuleName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public VirtualNetworkRule create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualNetworkRules()
-                .createOrUpdate(resourceGroupName, serverName, virtualNetworkRuleName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getVirtualNetworkRules().createOrUpdate(resourceGroupName,
+            serverName, virtualNetworkRuleName, this.innerModel(), context);
         return this;
     }
 
-    VirtualNetworkRuleImpl(
-        String name, com.azure.resourcemanager.postgresql.generated.PostgreSqlManager serviceManager) {
+    VirtualNetworkRuleImpl(String name,
+        com.azure.resourcemanager.postgresql.generated.PostgreSqlManager serviceManager) {
         this.innerObject = new VirtualNetworkRuleInner();
         this.serviceManager = serviceManager;
         this.virtualNetworkRuleName = name;
@@ -93,25 +87,18 @@ public final class VirtualNetworkRuleImpl
     }
 
     public VirtualNetworkRule apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualNetworkRules()
-                .createOrUpdate(resourceGroupName, serverName, virtualNetworkRuleName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getVirtualNetworkRules().createOrUpdate(resourceGroupName,
+            serverName, virtualNetworkRuleName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public VirtualNetworkRule apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualNetworkRules()
-                .createOrUpdate(resourceGroupName, serverName, virtualNetworkRuleName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getVirtualNetworkRules().createOrUpdate(resourceGroupName,
+            serverName, virtualNetworkRuleName, this.innerModel(), context);
         return this;
     }
 
-    VirtualNetworkRuleImpl(
-        VirtualNetworkRuleInner innerObject,
+    VirtualNetworkRuleImpl(VirtualNetworkRuleInner innerObject,
         com.azure.resourcemanager.postgresql.generated.PostgreSqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -121,22 +108,14 @@ public final class VirtualNetworkRuleImpl
     }
 
     public VirtualNetworkRule refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualNetworkRules()
-                .getWithResponse(resourceGroupName, serverName, virtualNetworkRuleName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getVirtualNetworkRules()
+            .getWithResponse(resourceGroupName, serverName, virtualNetworkRuleName, Context.NONE).getValue();
         return this;
     }
 
     public VirtualNetworkRule refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualNetworkRules()
-                .getWithResponse(resourceGroupName, serverName, virtualNetworkRuleName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getVirtualNetworkRules()
+            .getWithResponse(resourceGroupName, serverName, virtualNetworkRuleName, context).getValue();
         return this;
     }
 

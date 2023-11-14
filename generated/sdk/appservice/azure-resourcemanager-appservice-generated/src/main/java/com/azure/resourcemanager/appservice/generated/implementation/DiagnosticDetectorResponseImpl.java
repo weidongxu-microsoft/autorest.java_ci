@@ -20,8 +20,7 @@ public final class DiagnosticDetectorResponseImpl implements DiagnosticDetectorR
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    DiagnosticDetectorResponseImpl(
-        DiagnosticDetectorResponseInner innerObject,
+    DiagnosticDetectorResponseImpl(DiagnosticDetectorResponseInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

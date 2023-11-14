@@ -36,6 +36,7 @@ import com.azure.resourcemanager.appservice.generated.implementation.DeletedWebA
 import com.azure.resourcemanager.appservice.generated.implementation.DiagnosticsImpl;
 import com.azure.resourcemanager.appservice.generated.implementation.DomainRegistrationProvidersImpl;
 import com.azure.resourcemanager.appservice.generated.implementation.DomainsImpl;
+import com.azure.resourcemanager.appservice.generated.implementation.GetUsagesInLocationsImpl;
 import com.azure.resourcemanager.appservice.generated.implementation.GlobalsImpl;
 import com.azure.resourcemanager.appservice.generated.implementation.KubeEnvironmentsImpl;
 import com.azure.resourcemanager.appservice.generated.implementation.ProvidersImpl;
@@ -67,6 +68,7 @@ import com.azure.resourcemanager.appservice.generated.models.DeletedWebApps;
 import com.azure.resourcemanager.appservice.generated.models.Diagnostics;
 import com.azure.resourcemanager.appservice.generated.models.DomainRegistrationProviders;
 import com.azure.resourcemanager.appservice.generated.models.Domains;
+import com.azure.resourcemanager.appservice.generated.models.GetUsagesInLocations;
 import com.azure.resourcemanager.appservice.generated.models.Globals;
 import com.azure.resourcemanager.appservice.generated.models.KubeEnvironments;
 import com.azure.resourcemanager.appservice.generated.models.Providers;
@@ -92,7 +94,10 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-/** Entry point to AppServiceManager. WebSite Management Client. */
+/**
+ * Entry point to AppServiceManager.
+ * WebSite Management Client.
+ */
 public final class AppServiceManager {
     private AppServiceCertificateOrders appServiceCertificateOrders;
 
@@ -132,6 +137,8 @@ public final class AppServiceManager {
 
     private ResourceProviders resourceProviders;
 
+    private GetUsagesInLocations getUsagesInLocations;
+
     private StaticSites staticSites;
 
     private WebApps webApps;
@@ -159,18 +166,14 @@ public final class AppServiceManager {
     private AppServiceManager(HttpPipeline httpPipeline, AzureProfile profile, Duration defaultPollInterval) {
         Objects.requireNonNull(httpPipeline, "'httpPipeline' cannot be null.");
         Objects.requireNonNull(profile, "'profile' cannot be null.");
-        this.clientObject =
-            new WebSiteManagementClientBuilder()
-                .pipeline(httpPipeline)
-                .endpoint(profile.getEnvironment().getResourceManagerEndpoint())
-                .subscriptionId(profile.getSubscriptionId())
-                .defaultPollInterval(defaultPollInterval)
-                .buildClient();
+        this.clientObject = new WebSiteManagementClientBuilder().pipeline(httpPipeline)
+            .endpoint(profile.getEnvironment().getResourceManagerEndpoint()).subscriptionId(profile.getSubscriptionId())
+            .defaultPollInterval(defaultPollInterval).buildClient();
     }
 
     /**
      * Creates an instance of AppService service API entry point.
-     *
+     * 
      * @param credential the credential to use.
      * @param profile the Azure profile for client.
      * @return the AppService service API instance.
@@ -183,7 +186,7 @@ public final class AppServiceManager {
 
     /**
      * Creates an instance of AppService service API entry point.
-     *
+     * 
      * @param httpPipeline the {@link HttpPipeline} configured with Azure authentication credential.
      * @param profile the Azure profile for client.
      * @return the AppService service API instance.
@@ -196,14 +199,16 @@ public final class AppServiceManager {
 
     /**
      * Gets a Configurable instance that can be used to create AppServiceManager with optional configuration.
-     *
+     * 
      * @return the Configurable instance allowing configurations.
      */
     public static Configurable configure() {
         return new AppServiceManager.Configurable();
     }
 
-    /** The Configurable allowing configurations to be set. */
+    /**
+     * The Configurable allowing configurations to be set.
+     */
     public static final class Configurable {
         private static final ClientLogger LOGGER = new ClientLogger(Configurable.class);
 
@@ -275,8 +280,8 @@ public final class AppServiceManager {
 
         /**
          * Sets the retry options for the HTTP pipeline retry policy.
-         *
-         * <p>This setting has no effect, if retry policy is set via {@link #withRetryPolicy(RetryPolicy)}.
+         * <p>
+         * This setting has no effect, if retry policy is set via {@link #withRetryPolicy(RetryPolicy)}.
          *
          * @param retryOptions the retry options for the HTTP pipeline retry policy.
          * @return the configurable object itself.
@@ -293,8 +298,8 @@ public final class AppServiceManager {
          * @return the configurable object itself.
          */
         public Configurable withDefaultPollInterval(Duration defaultPollInterval) {
-            this.defaultPollInterval =
-                Objects.requireNonNull(defaultPollInterval, "'defaultPollInterval' cannot be null.");
+            this.defaultPollInterval
+                = Objects.requireNonNull(defaultPollInterval, "'defaultPollInterval' cannot be null.");
             if (this.defaultPollInterval.isNegative()) {
                 throw LOGGER
                     .logExceptionAsError(new IllegalArgumentException("'defaultPollInterval' cannot be negative"));
@@ -314,21 +319,12 @@ public final class AppServiceManager {
             Objects.requireNonNull(profile, "'profile' cannot be null.");
 
             StringBuilder userAgentBuilder = new StringBuilder();
-            userAgentBuilder
-                .append("azsdk-java")
-                .append("-")
-                .append("com.azure.resourcemanager.appservice.generated")
-                .append("/")
-                .append("1.0.0-beta.1");
+            userAgentBuilder.append("azsdk-java").append("-").append("com.azure.resourcemanager.appservice.generated")
+                .append("/").append("1.0.0-beta.1");
             if (!Configuration.getGlobalConfiguration().get("AZURE_TELEMETRY_DISABLED", false)) {
-                userAgentBuilder
-                    .append(" (")
-                    .append(Configuration.getGlobalConfiguration().get("java.version"))
-                    .append("; ")
-                    .append(Configuration.getGlobalConfiguration().get("os.name"))
-                    .append("; ")
-                    .append(Configuration.getGlobalConfiguration().get("os.version"))
-                    .append("; auto-generated)");
+                userAgentBuilder.append(" (").append(Configuration.getGlobalConfiguration().get("java.version"))
+                    .append("; ").append(Configuration.getGlobalConfiguration().get("os.name")).append("; ")
+                    .append(Configuration.getGlobalConfiguration().get("os.version")).append("; auto-generated)");
             } else {
                 userAgentBuilder.append(" (auto-generated)");
             }
@@ -347,31 +343,18 @@ public final class AppServiceManager {
             policies.add(new UserAgentPolicy(userAgentBuilder.toString()));
             policies.add(new AddHeadersFromContextPolicy());
             policies.add(new RequestIdPolicy());
-            policies
-                .addAll(
-                    this
-                        .policies
-                        .stream()
-                        .filter(p -> p.getPipelinePosition() == HttpPipelinePosition.PER_CALL)
-                        .collect(Collectors.toList()));
+            policies.addAll(this.policies.stream().filter(p -> p.getPipelinePosition() == HttpPipelinePosition.PER_CALL)
+                .collect(Collectors.toList()));
             HttpPolicyProviders.addBeforeRetryPolicies(policies);
             policies.add(retryPolicy);
             policies.add(new AddDatePolicy());
             policies.add(new ArmChallengeAuthenticationPolicy(credential, scopes.toArray(new String[0])));
-            policies
-                .addAll(
-                    this
-                        .policies
-                        .stream()
-                        .filter(p -> p.getPipelinePosition() == HttpPipelinePosition.PER_RETRY)
-                        .collect(Collectors.toList()));
+            policies.addAll(this.policies.stream()
+                .filter(p -> p.getPipelinePosition() == HttpPipelinePosition.PER_RETRY).collect(Collectors.toList()));
             HttpPolicyProviders.addAfterRetryPolicies(policies);
             policies.add(new HttpLoggingPolicy(httpLogOptions));
-            HttpPipeline httpPipeline =
-                new HttpPipelineBuilder()
-                    .httpClient(httpClient)
-                    .policies(policies.toArray(new HttpPipelinePolicy[0]))
-                    .build();
+            HttpPipeline httpPipeline = new HttpPipelineBuilder().httpClient(httpClient)
+                .policies(policies.toArray(new HttpPipelinePolicy[0])).build();
             return new AppServiceManager(httpPipeline, profile, defaultPollInterval);
         }
     }
@@ -379,46 +362,46 @@ public final class AppServiceManager {
     /**
      * Gets the resource collection API of AppServiceCertificateOrders. It manages AppServiceCertificateOrder,
      * AppServiceCertificateResource.
-     *
+     * 
      * @return Resource collection API of AppServiceCertificateOrders.
      */
     public AppServiceCertificateOrders appServiceCertificateOrders() {
         if (this.appServiceCertificateOrders == null) {
-            this.appServiceCertificateOrders =
-                new AppServiceCertificateOrdersImpl(clientObject.getAppServiceCertificateOrders(), this);
+            this.appServiceCertificateOrders
+                = new AppServiceCertificateOrdersImpl(clientObject.getAppServiceCertificateOrders(), this);
         }
         return appServiceCertificateOrders;
     }
 
     /**
      * Gets the resource collection API of CertificateOrdersDiagnostics.
-     *
+     * 
      * @return Resource collection API of CertificateOrdersDiagnostics.
      */
     public CertificateOrdersDiagnostics certificateOrdersDiagnostics() {
         if (this.certificateOrdersDiagnostics == null) {
-            this.certificateOrdersDiagnostics =
-                new CertificateOrdersDiagnosticsImpl(clientObject.getCertificateOrdersDiagnostics(), this);
+            this.certificateOrdersDiagnostics
+                = new CertificateOrdersDiagnosticsImpl(clientObject.getCertificateOrdersDiagnostics(), this);
         }
         return certificateOrdersDiagnostics;
     }
 
     /**
      * Gets the resource collection API of CertificateRegistrationProviders.
-     *
+     * 
      * @return Resource collection API of CertificateRegistrationProviders.
      */
     public CertificateRegistrationProviders certificateRegistrationProviders() {
         if (this.certificateRegistrationProviders == null) {
-            this.certificateRegistrationProviders =
-                new CertificateRegistrationProvidersImpl(clientObject.getCertificateRegistrationProviders(), this);
+            this.certificateRegistrationProviders
+                = new CertificateRegistrationProvidersImpl(clientObject.getCertificateRegistrationProviders(), this);
         }
         return certificateRegistrationProviders;
     }
 
     /**
      * Gets the resource collection API of Domains. It manages Domain, DomainOwnershipIdentifier.
-     *
+     * 
      * @return Resource collection API of Domains.
      */
     public Domains domains() {
@@ -430,7 +413,7 @@ public final class AppServiceManager {
 
     /**
      * Gets the resource collection API of TopLevelDomains.
-     *
+     * 
      * @return Resource collection API of TopLevelDomains.
      */
     public TopLevelDomains topLevelDomains() {
@@ -442,13 +425,13 @@ public final class AppServiceManager {
 
     /**
      * Gets the resource collection API of DomainRegistrationProviders.
-     *
+     * 
      * @return Resource collection API of DomainRegistrationProviders.
      */
     public DomainRegistrationProviders domainRegistrationProviders() {
         if (this.domainRegistrationProviders == null) {
-            this.domainRegistrationProviders =
-                new DomainRegistrationProvidersImpl(clientObject.getDomainRegistrationProviders(), this);
+            this.domainRegistrationProviders
+                = new DomainRegistrationProvidersImpl(clientObject.getDomainRegistrationProviders(), this);
         }
         return domainRegistrationProviders;
     }
@@ -456,20 +439,20 @@ public final class AppServiceManager {
     /**
      * Gets the resource collection API of AppServiceEnvironments. It manages AppServiceEnvironmentResource,
      * RemotePrivateEndpointConnectionArmResource, WorkerPoolResource.
-     *
+     * 
      * @return Resource collection API of AppServiceEnvironments.
      */
     public AppServiceEnvironments appServiceEnvironments() {
         if (this.appServiceEnvironments == null) {
-            this.appServiceEnvironments =
-                new AppServiceEnvironmentsImpl(clientObject.getAppServiceEnvironments(), this);
+            this.appServiceEnvironments
+                = new AppServiceEnvironmentsImpl(clientObject.getAppServiceEnvironments(), this);
         }
         return appServiceEnvironments;
     }
 
     /**
      * Gets the resource collection API of AppServicePlans. It manages AppServicePlan, VnetRoute.
-     *
+     * 
      * @return Resource collection API of AppServicePlans.
      */
     public AppServicePlans appServicePlans() {
@@ -481,7 +464,7 @@ public final class AppServiceManager {
 
     /**
      * Gets the resource collection API of Certificates. It manages Certificate.
-     *
+     * 
      * @return Resource collection API of Certificates.
      */
     public Certificates certificates() {
@@ -493,7 +476,7 @@ public final class AppServiceManager {
 
     /**
      * Gets the resource collection API of ContainerApps. It manages ContainerApp.
-     *
+     * 
      * @return Resource collection API of ContainerApps.
      */
     public ContainerApps containerApps() {
@@ -505,20 +488,20 @@ public final class AppServiceManager {
 
     /**
      * Gets the resource collection API of ContainerAppsRevisions.
-     *
+     * 
      * @return Resource collection API of ContainerAppsRevisions.
      */
     public ContainerAppsRevisions containerAppsRevisions() {
         if (this.containerAppsRevisions == null) {
-            this.containerAppsRevisions =
-                new ContainerAppsRevisionsImpl(clientObject.getContainerAppsRevisions(), this);
+            this.containerAppsRevisions
+                = new ContainerAppsRevisionsImpl(clientObject.getContainerAppsRevisions(), this);
         }
         return containerAppsRevisions;
     }
 
     /**
      * Gets the resource collection API of DeletedWebApps.
-     *
+     * 
      * @return Resource collection API of DeletedWebApps.
      */
     public DeletedWebApps deletedWebApps() {
@@ -530,7 +513,7 @@ public final class AppServiceManager {
 
     /**
      * Gets the resource collection API of Diagnostics.
-     *
+     * 
      * @return Resource collection API of Diagnostics.
      */
     public Diagnostics diagnostics() {
@@ -542,7 +525,7 @@ public final class AppServiceManager {
 
     /**
      * Gets the resource collection API of Globals.
-     *
+     * 
      * @return Resource collection API of Globals.
      */
     public Globals globals() {
@@ -554,7 +537,7 @@ public final class AppServiceManager {
 
     /**
      * Gets the resource collection API of KubeEnvironments. It manages KubeEnvironment.
-     *
+     * 
      * @return Resource collection API of KubeEnvironments.
      */
     public KubeEnvironments kubeEnvironments() {
@@ -566,7 +549,7 @@ public final class AppServiceManager {
 
     /**
      * Gets the resource collection API of Providers.
-     *
+     * 
      * @return Resource collection API of Providers.
      */
     public Providers providers() {
@@ -578,7 +561,7 @@ public final class AppServiceManager {
 
     /**
      * Gets the resource collection API of Recommendations.
-     *
+     * 
      * @return Resource collection API of Recommendations.
      */
     public Recommendations recommendations() {
@@ -590,20 +573,20 @@ public final class AppServiceManager {
 
     /**
      * Gets the resource collection API of ResourceHealthMetadatas.
-     *
+     * 
      * @return Resource collection API of ResourceHealthMetadatas.
      */
     public ResourceHealthMetadatas resourceHealthMetadatas() {
         if (this.resourceHealthMetadatas == null) {
-            this.resourceHealthMetadatas =
-                new ResourceHealthMetadatasImpl(clientObject.getResourceHealthMetadatas(), this);
+            this.resourceHealthMetadatas
+                = new ResourceHealthMetadatasImpl(clientObject.getResourceHealthMetadatas(), this);
         }
         return resourceHealthMetadatas;
     }
 
     /**
      * Gets the resource collection API of ResourceProviders.
-     *
+     * 
      * @return Resource collection API of ResourceProviders.
      */
     public ResourceProviders resourceProviders() {
@@ -614,10 +597,22 @@ public final class AppServiceManager {
     }
 
     /**
+     * Gets the resource collection API of GetUsagesInLocations.
+     * 
+     * @return Resource collection API of GetUsagesInLocations.
+     */
+    public GetUsagesInLocations getUsagesInLocations() {
+        if (this.getUsagesInLocations == null) {
+            this.getUsagesInLocations = new GetUsagesInLocationsImpl(clientObject.getGetUsagesInLocations(), this);
+        }
+        return getUsagesInLocations;
+    }
+
+    /**
      * Gets the resource collection API of StaticSites. It manages StaticSiteArmResource, DatabaseConnection,
      * StaticSiteUserProvidedFunctionAppArmResource, StaticSiteBasicAuthPropertiesArmResource,
      * StaticSiteCustomDomainOverviewArmResource, StaticSiteLinkedBackendArmResource.
-     *
+     * 
      * @return Resource collection API of StaticSites.
      */
     public StaticSites staticSites() {
@@ -631,7 +626,7 @@ public final class AppServiceManager {
      * Gets the resource collection API of WebApps. It manages Site, Deployment, Identifier, FunctionEnvelope,
      * HostnameBinding, HybridConnection, RelayServiceConnectionEntity, PremierAddOn, PublicCertificate,
      * VnetInfoResource, VnetGateway.
-     *
+     * 
      * @return Resource collection API of WebApps.
      */
     public WebApps webApps() {
@@ -643,7 +638,7 @@ public final class AppServiceManager {
 
     /**
      * Gets the resource collection API of Workflows.
-     *
+     * 
      * @return Resource collection API of Workflows.
      */
     public Workflows workflows() {
@@ -655,7 +650,7 @@ public final class AppServiceManager {
 
     /**
      * Gets the resource collection API of WorkflowRuns.
-     *
+     * 
      * @return Resource collection API of WorkflowRuns.
      */
     public WorkflowRuns workflowRuns() {
@@ -667,7 +662,7 @@ public final class AppServiceManager {
 
     /**
      * Gets the resource collection API of WorkflowRunActions.
-     *
+     * 
      * @return Resource collection API of WorkflowRunActions.
      */
     public WorkflowRunActions workflowRunActions() {
@@ -679,47 +674,46 @@ public final class AppServiceManager {
 
     /**
      * Gets the resource collection API of WorkflowRunActionRepetitions.
-     *
+     * 
      * @return Resource collection API of WorkflowRunActionRepetitions.
      */
     public WorkflowRunActionRepetitions workflowRunActionRepetitions() {
         if (this.workflowRunActionRepetitions == null) {
-            this.workflowRunActionRepetitions =
-                new WorkflowRunActionRepetitionsImpl(clientObject.getWorkflowRunActionRepetitions(), this);
+            this.workflowRunActionRepetitions
+                = new WorkflowRunActionRepetitionsImpl(clientObject.getWorkflowRunActionRepetitions(), this);
         }
         return workflowRunActionRepetitions;
     }
 
     /**
      * Gets the resource collection API of WorkflowRunActionRepetitionsRequestHistories.
-     *
+     * 
      * @return Resource collection API of WorkflowRunActionRepetitionsRequestHistories.
      */
     public WorkflowRunActionRepetitionsRequestHistories workflowRunActionRepetitionsRequestHistories() {
         if (this.workflowRunActionRepetitionsRequestHistories == null) {
-            this.workflowRunActionRepetitionsRequestHistories =
-                new WorkflowRunActionRepetitionsRequestHistoriesImpl(
-                    clientObject.getWorkflowRunActionRepetitionsRequestHistories(), this);
+            this.workflowRunActionRepetitionsRequestHistories = new WorkflowRunActionRepetitionsRequestHistoriesImpl(
+                clientObject.getWorkflowRunActionRepetitionsRequestHistories(), this);
         }
         return workflowRunActionRepetitionsRequestHistories;
     }
 
     /**
      * Gets the resource collection API of WorkflowRunActionScopeRepetitions.
-     *
+     * 
      * @return Resource collection API of WorkflowRunActionScopeRepetitions.
      */
     public WorkflowRunActionScopeRepetitions workflowRunActionScopeRepetitions() {
         if (this.workflowRunActionScopeRepetitions == null) {
-            this.workflowRunActionScopeRepetitions =
-                new WorkflowRunActionScopeRepetitionsImpl(clientObject.getWorkflowRunActionScopeRepetitions(), this);
+            this.workflowRunActionScopeRepetitions
+                = new WorkflowRunActionScopeRepetitionsImpl(clientObject.getWorkflowRunActionScopeRepetitions(), this);
         }
         return workflowRunActionScopeRepetitions;
     }
 
     /**
      * Gets the resource collection API of WorkflowTriggers.
-     *
+     * 
      * @return Resource collection API of WorkflowTriggers.
      */
     public WorkflowTriggers workflowTriggers() {
@@ -731,20 +725,20 @@ public final class AppServiceManager {
 
     /**
      * Gets the resource collection API of WorkflowTriggerHistories.
-     *
+     * 
      * @return Resource collection API of WorkflowTriggerHistories.
      */
     public WorkflowTriggerHistories workflowTriggerHistories() {
         if (this.workflowTriggerHistories == null) {
-            this.workflowTriggerHistories =
-                new WorkflowTriggerHistoriesImpl(clientObject.getWorkflowTriggerHistories(), this);
+            this.workflowTriggerHistories
+                = new WorkflowTriggerHistoriesImpl(clientObject.getWorkflowTriggerHistories(), this);
         }
         return workflowTriggerHistories;
     }
 
     /**
      * Gets the resource collection API of WorkflowVersions.
-     *
+     * 
      * @return Resource collection API of WorkflowVersions.
      */
     public WorkflowVersions workflowVersions() {
@@ -757,7 +751,7 @@ public final class AppServiceManager {
     /**
      * Gets wrapped service client WebSiteManagementClient providing direct access to the underlying auto-generated API
      * implementation, based on Azure REST API.
-     *
+     * 
      * @return Wrapped service client WebSiteManagementClient.
      */
     public WebSiteManagementClient serviceClient() {

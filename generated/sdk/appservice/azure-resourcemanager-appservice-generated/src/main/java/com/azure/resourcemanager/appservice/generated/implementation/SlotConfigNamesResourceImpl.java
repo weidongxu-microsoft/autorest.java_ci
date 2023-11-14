@@ -14,8 +14,7 @@ public final class SlotConfigNamesResourceImpl implements SlotConfigNamesResourc
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    SlotConfigNamesResourceImpl(
-        SlotConfigNamesResourceInner innerObject,
+    SlotConfigNamesResourceImpl(SlotConfigNamesResourceInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

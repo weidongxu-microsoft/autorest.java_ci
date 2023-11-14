@@ -9,7 +9,9 @@ import com.azure.resourcemanager.authorization.generated.fluent.models.Permissio
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Permissions information. */
+/**
+ * Permissions information.
+ */
 @Fluent
 public final class PermissionGetResult {
     /*
@@ -24,13 +26,15 @@ public final class PermissionGetResult {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
-    /** Creates an instance of PermissionGetResult class. */
+    /**
+     * Creates an instance of PermissionGetResult class.
+     */
     public PermissionGetResult() {
     }
 
     /**
      * Get the value property: An array of permissions.
-     *
+     * 
      * @return the value value.
      */
     public List<PermissionInner> value() {
@@ -39,7 +43,7 @@ public final class PermissionGetResult {
 
     /**
      * Set the value property: An array of permissions.
-     *
+     * 
      * @param value the value value to set.
      * @return the PermissionGetResult object itself.
      */
@@ -50,7 +54,7 @@ public final class PermissionGetResult {
 
     /**
      * Get the nextLink property: The URL to use for getting the next set of results.
-     *
+     * 
      * @return the nextLink value.
      */
     public String nextLink() {
@@ -59,7 +63,7 @@ public final class PermissionGetResult {
 
     /**
      * Set the nextLink property: The URL to use for getting the next set of results.
-     *
+     * 
      * @param nextLink the nextLink value to set.
      * @return the PermissionGetResult object itself.
      */
@@ -70,7 +74,7 @@ public final class PermissionGetResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

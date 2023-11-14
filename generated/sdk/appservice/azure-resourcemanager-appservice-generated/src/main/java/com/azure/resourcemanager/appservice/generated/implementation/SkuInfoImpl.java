@@ -14,8 +14,8 @@ public final class SkuInfoImpl implements SkuInfo {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    SkuInfoImpl(
-        SkuInfoInner innerObject, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
+    SkuInfoImpl(SkuInfoInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

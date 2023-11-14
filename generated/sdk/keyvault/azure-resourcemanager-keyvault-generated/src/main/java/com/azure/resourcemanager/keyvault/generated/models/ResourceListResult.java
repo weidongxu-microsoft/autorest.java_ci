@@ -9,7 +9,9 @@ import com.azure.core.management.Resource;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** List of vault resources. */
+/**
+ * List of vault resources.
+ */
 @Fluent
 public final class ResourceListResult {
     /*
@@ -24,13 +26,15 @@ public final class ResourceListResult {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
-    /** Creates an instance of ResourceListResult class. */
+    /**
+     * Creates an instance of ResourceListResult class.
+     */
     public ResourceListResult() {
     }
 
     /**
      * Get the value property: The list of vault resources.
-     *
+     * 
      * @return the value value.
      */
     public List<Resource> value() {
@@ -39,7 +43,7 @@ public final class ResourceListResult {
 
     /**
      * Set the value property: The list of vault resources.
-     *
+     * 
      * @param value the value value to set.
      * @return the ResourceListResult object itself.
      */
@@ -50,7 +54,7 @@ public final class ResourceListResult {
 
     /**
      * Get the nextLink property: The URL to get the next set of vault resources.
-     *
+     * 
      * @return the nextLink value.
      */
     public String nextLink() {
@@ -59,7 +63,7 @@ public final class ResourceListResult {
 
     /**
      * Set the nextLink property: The URL to get the next set of vault resources.
-     *
+     * 
      * @param nextLink the nextLink value to set.
      * @return the ResourceListResult object itself.
      */
@@ -70,7 +74,7 @@ public final class ResourceListResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -10,7 +10,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.List;
 
-/** Represents HTTPS job input. */
+/**
+ * Represents HTTPS job input.
+ */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
 @JsonTypeName("#Microsoft.Media.JobInputHttp")
 @Fluent
@@ -23,7 +25,9 @@ public final class JobInputHttp extends JobInputClip {
     @JsonProperty(value = "baseUri")
     private String baseUri;
 
-    /** Creates an instance of JobInputHttp class. */
+    /**
+     * Creates an instance of JobInputHttp class.
+     */
     public JobInputHttp() {
     }
 
@@ -31,7 +35,7 @@ public final class JobInputHttp extends JobInputClip {
      * Get the baseUri property: Base URI for HTTPS job input. It will be concatenated with provided file names. If no
      * base uri is given, then the provided file list is assumed to be fully qualified uris. Maximum length of 4000
      * characters. The query strings will not be returned in service responses to prevent sensitive data exposure.
-     *
+     * 
      * @return the baseUri value.
      */
     public String baseUri() {
@@ -42,7 +46,7 @@ public final class JobInputHttp extends JobInputClip {
      * Set the baseUri property: Base URI for HTTPS job input. It will be concatenated with provided file names. If no
      * base uri is given, then the provided file list is assumed to be fully qualified uris. Maximum length of 4000
      * characters. The query strings will not be returned in service responses to prevent sensitive data exposure.
-     *
+     * 
      * @param baseUri the baseUri value to set.
      * @return the JobInputHttp object itself.
      */
@@ -51,35 +55,45 @@ public final class JobInputHttp extends JobInputClip {
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public JobInputHttp withFiles(List<String> files) {
         super.withFiles(files);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public JobInputHttp withStart(ClipTime start) {
         super.withStart(start);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public JobInputHttp withEnd(ClipTime end) {
         super.withEnd(end);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public JobInputHttp withLabel(String label) {
         super.withLabel(label);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public JobInputHttp withInputDefinitions(List<InputDefinition> inputDefinitions) {
         super.withInputDefinitions(inputDefinitions);
@@ -88,7 +102,7 @@ public final class JobInputHttp extends JobInputClip {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

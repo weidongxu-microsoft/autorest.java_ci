@@ -19,30 +19,25 @@ public final class WorkflowsImpl implements Workflows {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    public WorkflowsImpl(
-        WorkflowsClient innerClient, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
+    public WorkflowsImpl(WorkflowsClient innerClient,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<Void> regenerateAccessKeyWithResponse(
-        String resourceGroupName,
-        String name,
-        String workflowName,
-        RegenerateActionParameter keyType,
-        Context context) {
-        return this
-            .serviceClient()
-            .regenerateAccessKeyWithResponse(resourceGroupName, name, workflowName, keyType, context);
+    public Response<Void> regenerateAccessKeyWithResponse(String resourceGroupName, String name, String workflowName,
+        RegenerateActionParameter keyType, Context context) {
+        return this.serviceClient().regenerateAccessKeyWithResponse(resourceGroupName, name, workflowName, keyType,
+            context);
     }
 
-    public void regenerateAccessKey(
-        String resourceGroupName, String name, String workflowName, RegenerateActionParameter keyType) {
+    public void regenerateAccessKey(String resourceGroupName, String name, String workflowName,
+        RegenerateActionParameter keyType) {
         this.serviceClient().regenerateAccessKey(resourceGroupName, name, workflowName, keyType);
     }
 
-    public Response<Void> validateWithResponse(
-        String resourceGroupName, String name, String workflowName, Workflow validate, Context context) {
+    public Response<Void> validateWithResponse(String resourceGroupName, String name, String workflowName,
+        Workflow validate, Context context) {
         return this.serviceClient().validateWithResponse(resourceGroupName, name, workflowName, validate, context);
     }
 

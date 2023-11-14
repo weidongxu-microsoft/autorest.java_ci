@@ -17,8 +17,7 @@ public final class EventSummaryImpl implements EventSummary {
 
     private final com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager;
 
-    EventSummaryImpl(
-        EventSummaryInner innerObject,
+    EventSummaryImpl(EventSummaryInner innerObject,
         com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -66,6 +65,14 @@ public final class EventSummaryImpl implements EventSummary {
 
     public Amount closedBalance() {
         return this.innerModel().closedBalance();
+    }
+
+    public String billingAccountId() {
+        return this.innerModel().billingAccountId();
+    }
+
+    public String billingAccountDisplayName() {
+        return this.innerModel().billingAccountDisplayName();
     }
 
     public EventType eventType() {

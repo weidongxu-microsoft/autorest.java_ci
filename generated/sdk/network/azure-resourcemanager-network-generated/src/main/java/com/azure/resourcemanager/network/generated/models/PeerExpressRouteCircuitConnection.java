@@ -7,11 +7,13 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.core.management.SubResource;
 import com.azure.resourcemanager.network.generated.fluent.models.PeerExpressRouteCircuitConnectionInner;
 
-/** An immutable client-side representation of PeerExpressRouteCircuitConnection. */
+/**
+ * An immutable client-side representation of PeerExpressRouteCircuitConnection.
+ */
 public interface PeerExpressRouteCircuitConnection {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.
-     *
+     * 
      * @return the id value.
      */
     String id();
@@ -19,21 +21,21 @@ public interface PeerExpressRouteCircuitConnection {
     /**
      * Gets the name property: The name of the resource that is unique within a resource group. This name can be used to
      * access the resource.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the etag property: A unique read-only string that changes whenever the resource is updated.
-     *
+     * 
      * @return the etag value.
      */
     String etag();
 
     /**
      * Gets the type property: Type of the resource.
-     *
+     * 
      * @return the type value.
      */
     String type();
@@ -41,7 +43,7 @@ public interface PeerExpressRouteCircuitConnection {
     /**
      * Gets the expressRouteCircuitPeering property: Reference to Express Route Circuit Private Peering Resource of the
      * circuit.
-     *
+     * 
      * @return the expressRouteCircuitPeering value.
      */
     SubResource expressRouteCircuitPeering();
@@ -49,28 +51,28 @@ public interface PeerExpressRouteCircuitConnection {
     /**
      * Gets the peerExpressRouteCircuitPeering property: Reference to Express Route Circuit Private Peering Resource of
      * the peered circuit.
-     *
+     * 
      * @return the peerExpressRouteCircuitPeering value.
      */
     SubResource peerExpressRouteCircuitPeering();
 
     /**
      * Gets the addressPrefix property: /29 IP address space to carve out Customer addresses for tunnels.
-     *
+     * 
      * @return the addressPrefix value.
      */
     String addressPrefix();
 
     /**
      * Gets the circuitConnectionStatus property: Express Route Circuit connection state.
-     *
+     * 
      * @return the circuitConnectionStatus value.
      */
     CircuitConnectionStatus circuitConnectionStatus();
 
     /**
      * Gets the connectionName property: The name of the express route circuit connection resource.
-     *
+     * 
      * @return the connectionName value.
      */
     String connectionName();
@@ -78,7 +80,7 @@ public interface PeerExpressRouteCircuitConnection {
     /**
      * Gets the authResourceGuid property: The resource guid of the authorization used for the express route circuit
      * connection.
-     *
+     * 
      * @return the authResourceGuid value.
      */
     String authResourceGuid();
@@ -86,7 +88,7 @@ public interface PeerExpressRouteCircuitConnection {
     /**
      * Gets the provisioningState property: The provisioning state of the peer express route circuit connection
      * resource.
-     *
+     * 
      * @return the provisioningState value.
      */
     ProvisioningState provisioningState();
@@ -94,7 +96,7 @@ public interface PeerExpressRouteCircuitConnection {
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.PeerExpressRouteCircuitConnectionInner
      * object.
-     *
+     * 
      * @return the inner object.
      */
     PeerExpressRouteCircuitConnectionInner innerModel();

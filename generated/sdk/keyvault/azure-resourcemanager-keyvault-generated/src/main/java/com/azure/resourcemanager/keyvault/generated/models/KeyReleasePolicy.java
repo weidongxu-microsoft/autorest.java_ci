@@ -9,9 +9,13 @@ import com.azure.core.util.Base64Url;
 import com.azure.core.util.CoreUtils;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The KeyReleasePolicy model. */
+/**
+ * The KeyReleasePolicy model.
+ */
 @Fluent
 public final class KeyReleasePolicy {
+    private static final byte[] EMPTY_BYTE_ARRAY = new byte[0];
+
     /*
      * Content type and version of key release policy
      */
@@ -24,13 +28,15 @@ public final class KeyReleasePolicy {
     @JsonProperty(value = "data")
     private Base64Url data;
 
-    /** Creates an instance of KeyReleasePolicy class. */
+    /**
+     * Creates an instance of KeyReleasePolicy class.
+     */
     public KeyReleasePolicy() {
     }
 
     /**
      * Get the contentType property: Content type and version of key release policy.
-     *
+     * 
      * @return the contentType value.
      */
     public String contentType() {
@@ -39,7 +45,7 @@ public final class KeyReleasePolicy {
 
     /**
      * Set the contentType property: Content type and version of key release policy.
-     *
+     * 
      * @param contentType the contentType value to set.
      * @return the KeyReleasePolicy object itself.
      */
@@ -50,19 +56,19 @@ public final class KeyReleasePolicy {
 
     /**
      * Get the data property: Blob encoding the policy rules under which the key can be released.
-     *
+     * 
      * @return the data value.
      */
     public byte[] data() {
         if (this.data == null) {
-            return new byte[0];
+            return EMPTY_BYTE_ARRAY;
         }
         return this.data.decodedBytes();
     }
 
     /**
      * Set the data property: Blob encoding the policy rules under which the key can be released.
-     *
+     * 
      * @param data the data value to set.
      * @return the KeyReleasePolicy object itself.
      */
@@ -77,7 +83,7 @@ public final class KeyReleasePolicy {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

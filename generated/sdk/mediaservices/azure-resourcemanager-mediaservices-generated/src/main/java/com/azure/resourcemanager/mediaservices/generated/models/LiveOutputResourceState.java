@@ -8,20 +8,28 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** The resource state of the live output. */
+/**
+ * The resource state of the live output.
+ */
 public final class LiveOutputResourceState extends ExpandableStringEnum<LiveOutputResourceState> {
-    /** Static value Creating for LiveOutputResourceState. */
+    /**
+     * Static value Creating for LiveOutputResourceState.
+     */
     public static final LiveOutputResourceState CREATING = fromString("Creating");
 
-    /** Static value Running for LiveOutputResourceState. */
+    /**
+     * Static value Running for LiveOutputResourceState.
+     */
     public static final LiveOutputResourceState RUNNING = fromString("Running");
 
-    /** Static value Deleting for LiveOutputResourceState. */
+    /**
+     * Static value Deleting for LiveOutputResourceState.
+     */
     public static final LiveOutputResourceState DELETING = fromString("Deleting");
 
     /**
      * Creates a new instance of LiveOutputResourceState value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -30,7 +38,7 @@ public final class LiveOutputResourceState extends ExpandableStringEnum<LiveOutp
 
     /**
      * Creates or finds a LiveOutputResourceState from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding LiveOutputResourceState.
      */
@@ -41,7 +49,7 @@ public final class LiveOutputResourceState extends ExpandableStringEnum<LiveOutp
 
     /**
      * Gets known LiveOutputResourceState values.
-     *
+     * 
      * @return known LiveOutputResourceState values.
      */
     public static Collection<LiveOutputResourceState> values() {

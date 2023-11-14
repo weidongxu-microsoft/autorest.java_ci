@@ -21,32 +21,28 @@ public final class VirtualNetworkGatewayNatRulesImpl implements VirtualNetworkGa
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public VirtualNetworkGatewayNatRulesImpl(
-        VirtualNetworkGatewayNatRulesClient innerClient,
+    public VirtualNetworkGatewayNatRulesImpl(VirtualNetworkGatewayNatRulesClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<VirtualNetworkGatewayNatRule> getWithResponse(
-        String resourceGroupName, String virtualNetworkGatewayName, String natRuleName, Context context) {
-        Response<VirtualNetworkGatewayNatRuleInner> inner =
-            this.serviceClient().getWithResponse(resourceGroupName, virtualNetworkGatewayName, natRuleName, context);
+    public Response<VirtualNetworkGatewayNatRule> getWithResponse(String resourceGroupName,
+        String virtualNetworkGatewayName, String natRuleName, Context context) {
+        Response<VirtualNetworkGatewayNatRuleInner> inner
+            = this.serviceClient().getWithResponse(resourceGroupName, virtualNetworkGatewayName, natRuleName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new VirtualNetworkGatewayNatRuleImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public VirtualNetworkGatewayNatRule get(
-        String resourceGroupName, String virtualNetworkGatewayName, String natRuleName) {
-        VirtualNetworkGatewayNatRuleInner inner =
-            this.serviceClient().get(resourceGroupName, virtualNetworkGatewayName, natRuleName);
+    public VirtualNetworkGatewayNatRule get(String resourceGroupName, String virtualNetworkGatewayName,
+        String natRuleName) {
+        VirtualNetworkGatewayNatRuleInner inner
+            = this.serviceClient().get(resourceGroupName, virtualNetworkGatewayName, natRuleName);
         if (inner != null) {
             return new VirtualNetworkGatewayNatRuleImpl(inner, this.manager());
         } else {
@@ -58,50 +54,40 @@ public final class VirtualNetworkGatewayNatRulesImpl implements VirtualNetworkGa
         this.serviceClient().delete(resourceGroupName, virtualNetworkGatewayName, natRuleName);
     }
 
-    public void delete(
-        String resourceGroupName, String virtualNetworkGatewayName, String natRuleName, Context context) {
+    public void delete(String resourceGroupName, String virtualNetworkGatewayName, String natRuleName,
+        Context context) {
         this.serviceClient().delete(resourceGroupName, virtualNetworkGatewayName, natRuleName, context);
     }
 
-    public PagedIterable<VirtualNetworkGatewayNatRule> listByVirtualNetworkGateway(
-        String resourceGroupName, String virtualNetworkGatewayName) {
-        PagedIterable<VirtualNetworkGatewayNatRuleInner> inner =
-            this.serviceClient().listByVirtualNetworkGateway(resourceGroupName, virtualNetworkGatewayName);
+    public PagedIterable<VirtualNetworkGatewayNatRule> listByVirtualNetworkGateway(String resourceGroupName,
+        String virtualNetworkGatewayName) {
+        PagedIterable<VirtualNetworkGatewayNatRuleInner> inner
+            = this.serviceClient().listByVirtualNetworkGateway(resourceGroupName, virtualNetworkGatewayName);
         return Utils.mapPage(inner, inner1 -> new VirtualNetworkGatewayNatRuleImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<VirtualNetworkGatewayNatRule> listByVirtualNetworkGateway(
-        String resourceGroupName, String virtualNetworkGatewayName, Context context) {
-        PagedIterable<VirtualNetworkGatewayNatRuleInner> inner =
-            this.serviceClient().listByVirtualNetworkGateway(resourceGroupName, virtualNetworkGatewayName, context);
+    public PagedIterable<VirtualNetworkGatewayNatRule> listByVirtualNetworkGateway(String resourceGroupName,
+        String virtualNetworkGatewayName, Context context) {
+        PagedIterable<VirtualNetworkGatewayNatRuleInner> inner
+            = this.serviceClient().listByVirtualNetworkGateway(resourceGroupName, virtualNetworkGatewayName, context);
         return Utils.mapPage(inner, inner1 -> new VirtualNetworkGatewayNatRuleImpl(inner1, this.manager()));
     }
 
     public VirtualNetworkGatewayNatRule getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String virtualNetworkGatewayName = Utils.getValueFromIdByName(id, "virtualNetworkGateways");
         if (virtualNetworkGatewayName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'virtualNetworkGateways'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'virtualNetworkGateways'.", id)));
         }
         String natRuleName = Utils.getValueFromIdByName(id, "natRules");
         if (natRuleName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'natRules'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'natRules'.", id)));
         }
         return this.getWithResponse(resourceGroupName, virtualNetworkGatewayName, natRuleName, Context.NONE).getValue();
     }
@@ -109,28 +95,18 @@ public final class VirtualNetworkGatewayNatRulesImpl implements VirtualNetworkGa
     public Response<VirtualNetworkGatewayNatRule> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String virtualNetworkGatewayName = Utils.getValueFromIdByName(id, "virtualNetworkGateways");
         if (virtualNetworkGatewayName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'virtualNetworkGateways'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'virtualNetworkGateways'.", id)));
         }
         String natRuleName = Utils.getValueFromIdByName(id, "natRules");
         if (natRuleName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'natRules'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'natRules'.", id)));
         }
         return this.getWithResponse(resourceGroupName, virtualNetworkGatewayName, natRuleName, context);
     }
@@ -138,28 +114,18 @@ public final class VirtualNetworkGatewayNatRulesImpl implements VirtualNetworkGa
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String virtualNetworkGatewayName = Utils.getValueFromIdByName(id, "virtualNetworkGateways");
         if (virtualNetworkGatewayName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'virtualNetworkGateways'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'virtualNetworkGateways'.", id)));
         }
         String natRuleName = Utils.getValueFromIdByName(id, "natRules");
         if (natRuleName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'natRules'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'natRules'.", id)));
         }
         this.delete(resourceGroupName, virtualNetworkGatewayName, natRuleName, Context.NONE);
     }
@@ -167,28 +133,18 @@ public final class VirtualNetworkGatewayNatRulesImpl implements VirtualNetworkGa
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String virtualNetworkGatewayName = Utils.getValueFromIdByName(id, "virtualNetworkGateways");
         if (virtualNetworkGatewayName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'virtualNetworkGateways'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'virtualNetworkGateways'.", id)));
         }
         String natRuleName = Utils.getValueFromIdByName(id, "natRules");
         if (natRuleName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'natRules'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'natRules'.", id)));
         }
         this.delete(resourceGroupName, virtualNetworkGatewayName, natRuleName, context);
     }

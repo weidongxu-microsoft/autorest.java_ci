@@ -7,7 +7,9 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Immutable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** A metric dimension. */
+/**
+ * A metric dimension.
+ */
 @Immutable
 public final class MetricDimension {
     /*
@@ -28,13 +30,15 @@ public final class MetricDimension {
     @JsonProperty(value = "toBeExportedForShoebox", access = JsonProperty.Access.WRITE_ONLY)
     private Boolean toBeExportedForShoebox;
 
-    /** Creates an instance of MetricDimension class. */
+    /**
+     * Creates an instance of MetricDimension class.
+     */
     public MetricDimension() {
     }
 
     /**
      * Get the name property: The metric dimension name.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -43,7 +47,7 @@ public final class MetricDimension {
 
     /**
      * Get the displayName property: The display name for the dimension.
-     *
+     * 
      * @return the displayName value.
      */
     public String displayName() {
@@ -52,7 +56,7 @@ public final class MetricDimension {
 
     /**
      * Get the toBeExportedForShoebox property: Whether to export metric to shoebox.
-     *
+     * 
      * @return the toBeExportedForShoebox value.
      */
     public Boolean toBeExportedForShoebox() {
@@ -61,7 +65,7 @@ public final class MetricDimension {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

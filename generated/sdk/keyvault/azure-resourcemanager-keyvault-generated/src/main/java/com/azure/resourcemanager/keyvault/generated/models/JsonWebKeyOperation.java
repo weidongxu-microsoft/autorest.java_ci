@@ -8,35 +8,53 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** The permitted JSON web key operations of the key. For more information, see JsonWebKeyOperation. */
+/**
+ * The permitted JSON web key operations of the key. For more information, see JsonWebKeyOperation.
+ */
 public final class JsonWebKeyOperation extends ExpandableStringEnum<JsonWebKeyOperation> {
-    /** Static value encrypt for JsonWebKeyOperation. */
+    /**
+     * Static value encrypt for JsonWebKeyOperation.
+     */
     public static final JsonWebKeyOperation ENCRYPT = fromString("encrypt");
 
-    /** Static value decrypt for JsonWebKeyOperation. */
+    /**
+     * Static value decrypt for JsonWebKeyOperation.
+     */
     public static final JsonWebKeyOperation DECRYPT = fromString("decrypt");
 
-    /** Static value sign for JsonWebKeyOperation. */
+    /**
+     * Static value sign for JsonWebKeyOperation.
+     */
     public static final JsonWebKeyOperation SIGN = fromString("sign");
 
-    /** Static value verify for JsonWebKeyOperation. */
+    /**
+     * Static value verify for JsonWebKeyOperation.
+     */
     public static final JsonWebKeyOperation VERIFY = fromString("verify");
 
-    /** Static value wrapKey for JsonWebKeyOperation. */
+    /**
+     * Static value wrapKey for JsonWebKeyOperation.
+     */
     public static final JsonWebKeyOperation WRAP_KEY = fromString("wrapKey");
 
-    /** Static value unwrapKey for JsonWebKeyOperation. */
+    /**
+     * Static value unwrapKey for JsonWebKeyOperation.
+     */
     public static final JsonWebKeyOperation UNWRAP_KEY = fromString("unwrapKey");
 
-    /** Static value import for JsonWebKeyOperation. */
+    /**
+     * Static value import for JsonWebKeyOperation.
+     */
     public static final JsonWebKeyOperation IMPORT = fromString("import");
 
-    /** Static value release for JsonWebKeyOperation. */
+    /**
+     * Static value release for JsonWebKeyOperation.
+     */
     public static final JsonWebKeyOperation RELEASE = fromString("release");
 
     /**
      * Creates a new instance of JsonWebKeyOperation value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -45,7 +63,7 @@ public final class JsonWebKeyOperation extends ExpandableStringEnum<JsonWebKeyOp
 
     /**
      * Creates or finds a JsonWebKeyOperation from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding JsonWebKeyOperation.
      */
@@ -56,7 +74,7 @@ public final class JsonWebKeyOperation extends ExpandableStringEnum<JsonWebKeyOp
 
     /**
      * Gets known JsonWebKeyOperation values.
-     *
+     * 
      * @return known JsonWebKeyOperation values.
      */
     public static Collection<JsonWebKeyOperation> values() {

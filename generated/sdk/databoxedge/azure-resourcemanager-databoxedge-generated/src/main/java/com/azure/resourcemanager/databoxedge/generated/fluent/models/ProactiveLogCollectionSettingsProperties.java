@@ -9,7 +9,9 @@ import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.models.ProactiveDiagnosticsConsent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The properties of proactive log collection settings. */
+/**
+ * The properties of proactive log collection settings.
+ */
 @Fluent
 public final class ProactiveLogCollectionSettingsProperties {
     /*
@@ -18,13 +20,15 @@ public final class ProactiveLogCollectionSettingsProperties {
     @JsonProperty(value = "userConsent", required = true)
     private ProactiveDiagnosticsConsent userConsent;
 
-    /** Creates an instance of ProactiveLogCollectionSettingsProperties class. */
+    /**
+     * Creates an instance of ProactiveLogCollectionSettingsProperties class.
+     */
     public ProactiveLogCollectionSettingsProperties() {
     }
 
     /**
      * Get the userConsent property: Proactive diagnostic collection consent flag.
-     *
+     * 
      * @return the userConsent value.
      */
     public ProactiveDiagnosticsConsent userConsent() {
@@ -33,7 +37,7 @@ public final class ProactiveLogCollectionSettingsProperties {
 
     /**
      * Set the userConsent property: Proactive diagnostic collection consent flag.
-     *
+     * 
      * @param userConsent the userConsent value to set.
      * @return the ProactiveLogCollectionSettingsProperties object itself.
      */
@@ -44,15 +48,13 @@ public final class ProactiveLogCollectionSettingsProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (userConsent() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property userConsent in model ProactiveLogCollectionSettingsProperties"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property userConsent in model ProactiveLogCollectionSettingsProperties"));
         }
     }
 

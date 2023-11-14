@@ -12,8 +12,7 @@ public final class ProcessModuleInfoImpl implements ProcessModuleInfo {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    ProcessModuleInfoImpl(
-        ProcessModuleInfoInner innerObject,
+    ProcessModuleInfoImpl(ProcessModuleInfoInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

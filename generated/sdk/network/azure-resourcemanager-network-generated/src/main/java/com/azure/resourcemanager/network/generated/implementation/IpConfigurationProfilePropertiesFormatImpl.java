@@ -15,8 +15,7 @@ public final class IpConfigurationProfilePropertiesFormatImpl implements IpConfi
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    IpConfigurationProfilePropertiesFormatImpl(
-        IpConfigurationProfilePropertiesFormatInner innerObject,
+    IpConfigurationProfilePropertiesFormatImpl(IpConfigurationProfilePropertiesFormatInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

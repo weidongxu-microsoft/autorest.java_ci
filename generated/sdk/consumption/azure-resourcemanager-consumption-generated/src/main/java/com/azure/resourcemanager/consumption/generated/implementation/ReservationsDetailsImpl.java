@@ -19,39 +19,36 @@ public final class ReservationsDetailsImpl implements ReservationsDetails {
 
     private final com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager;
 
-    public ReservationsDetailsImpl(
-        ReservationsDetailsClient innerClient,
+    public ReservationsDetailsImpl(ReservationsDetailsClient innerClient,
         com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
     public PagedIterable<ReservationDetail> listByReservationOrder(String reservationOrderId, String filter) {
-        PagedIterable<ReservationDetailInner> inner =
-            this.serviceClient().listByReservationOrder(reservationOrderId, filter);
+        PagedIterable<ReservationDetailInner> inner
+            = this.serviceClient().listByReservationOrder(reservationOrderId, filter);
         return Utils.mapPage(inner, inner1 -> new ReservationDetailImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<ReservationDetail> listByReservationOrder(
-        String reservationOrderId, String filter, Context context) {
-        PagedIterable<ReservationDetailInner> inner =
-            this.serviceClient().listByReservationOrder(reservationOrderId, filter, context);
+    public PagedIterable<ReservationDetail> listByReservationOrder(String reservationOrderId, String filter,
+        Context context) {
+        PagedIterable<ReservationDetailInner> inner
+            = this.serviceClient().listByReservationOrder(reservationOrderId, filter, context);
         return Utils.mapPage(inner, inner1 -> new ReservationDetailImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<ReservationDetail> listByReservationOrderAndReservation(
-        String reservationOrderId, String reservationId, String filter) {
-        PagedIterable<ReservationDetailInner> inner =
-            this.serviceClient().listByReservationOrderAndReservation(reservationOrderId, reservationId, filter);
+    public PagedIterable<ReservationDetail> listByReservationOrderAndReservation(String reservationOrderId,
+        String reservationId, String filter) {
+        PagedIterable<ReservationDetailInner> inner
+            = this.serviceClient().listByReservationOrderAndReservation(reservationOrderId, reservationId, filter);
         return Utils.mapPage(inner, inner1 -> new ReservationDetailImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<ReservationDetail> listByReservationOrderAndReservation(
-        String reservationOrderId, String reservationId, String filter, Context context) {
-        PagedIterable<ReservationDetailInner> inner =
-            this
-                .serviceClient()
-                .listByReservationOrderAndReservation(reservationOrderId, reservationId, filter, context);
+    public PagedIterable<ReservationDetail> listByReservationOrderAndReservation(String reservationOrderId,
+        String reservationId, String filter, Context context) {
+        PagedIterable<ReservationDetailInner> inner = this.serviceClient()
+            .listByReservationOrderAndReservation(reservationOrderId, reservationId, filter, context);
         return Utils.mapPage(inner, inner1 -> new ReservationDetailImpl(inner1, this.manager()));
     }
 
@@ -60,18 +57,10 @@ public final class ReservationsDetailsImpl implements ReservationsDetails {
         return Utils.mapPage(inner, inner1 -> new ReservationDetailImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<ReservationDetail> list(
-        String resourceScope,
-        String startDate,
-        String endDate,
-        String filter,
-        String reservationId,
-        String reservationOrderId,
-        Context context) {
-        PagedIterable<ReservationDetailInner> inner =
-            this
-                .serviceClient()
-                .list(resourceScope, startDate, endDate, filter, reservationId, reservationOrderId, context);
+    public PagedIterable<ReservationDetail> list(String resourceScope, String startDate, String endDate, String filter,
+        String reservationId, String reservationOrderId, Context context) {
+        PagedIterable<ReservationDetailInner> inner = this.serviceClient().list(resourceScope, startDate, endDate,
+            filter, reservationId, reservationOrderId, context);
         return Utils.mapPage(inner, inner1 -> new ReservationDetailImpl(inner1, this.manager()));
     }
 

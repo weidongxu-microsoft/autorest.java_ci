@@ -8,39 +8,41 @@ import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.MonitoringMetricConfigurationInner;
 import java.util.List;
 
-/** An immutable client-side representation of MonitoringMetricConfiguration. */
+/**
+ * An immutable client-side representation of MonitoringMetricConfiguration.
+ */
 public interface MonitoringMetricConfiguration {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the name property: The name of the resource.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the type property: The type of the resource.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the systemData property: Metadata pertaining to creation and last modification of MonitoringConfiguration.
-     *
+     * 
      * @return the systemData value.
      */
     SystemData systemData();
 
     /**
      * Gets the metricConfigurations property: The metrics configuration details.
-     *
+     * 
      * @return the metricConfigurations value.
      */
     List<MetricConfiguration> metricConfigurations();
@@ -48,7 +50,7 @@ public interface MonitoringMetricConfiguration {
     /**
      * Gets the inner com.azure.resourcemanager.databoxedge.generated.fluent.models.MonitoringMetricConfigurationInner
      * object.
-     *
+     * 
      * @return the inner object.
      */
     MonitoringMetricConfigurationInner innerModel();

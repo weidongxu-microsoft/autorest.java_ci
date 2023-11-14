@@ -7,7 +7,9 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The SubscriptionRegisteredFeatures model. */
+/**
+ * The SubscriptionRegisteredFeatures model.
+ */
 @Fluent
 public final class SubscriptionRegisteredFeatures {
     /*
@@ -22,13 +24,15 @@ public final class SubscriptionRegisteredFeatures {
     @JsonProperty(value = "state")
     private String state;
 
-    /** Creates an instance of SubscriptionRegisteredFeatures class. */
+    /**
+     * Creates an instance of SubscriptionRegisteredFeatures class.
+     */
     public SubscriptionRegisteredFeatures() {
     }
 
     /**
      * Get the name property: The name property.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -37,7 +41,7 @@ public final class SubscriptionRegisteredFeatures {
 
     /**
      * Set the name property: The name property.
-     *
+     * 
      * @param name the name value to set.
      * @return the SubscriptionRegisteredFeatures object itself.
      */
@@ -48,7 +52,7 @@ public final class SubscriptionRegisteredFeatures {
 
     /**
      * Get the state property: The state property.
-     *
+     * 
      * @return the state value.
      */
     public String state() {
@@ -57,7 +61,7 @@ public final class SubscriptionRegisteredFeatures {
 
     /**
      * Set the state property: The state property.
-     *
+     * 
      * @param state the state value to set.
      * @return the SubscriptionRegisteredFeatures object itself.
      */
@@ -68,7 +72,7 @@ public final class SubscriptionRegisteredFeatures {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

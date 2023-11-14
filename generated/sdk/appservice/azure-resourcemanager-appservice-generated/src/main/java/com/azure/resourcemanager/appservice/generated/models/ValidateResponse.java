@@ -6,25 +6,27 @@ package com.azure.resourcemanager.appservice.generated.models;
 
 import com.azure.resourcemanager.appservice.generated.fluent.models.ValidateResponseInner;
 
-/** An immutable client-side representation of ValidateResponse. */
+/**
+ * An immutable client-side representation of ValidateResponse.
+ */
 public interface ValidateResponse {
     /**
      * Gets the status property: Result of validation.
-     *
+     * 
      * @return the status value.
      */
     String status();
 
     /**
      * Gets the error property: Error details for the case when validation fails.
-     *
+     * 
      * @return the error value.
      */
     ValidateResponseError error();
 
     /**
      * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.ValidateResponseInner object.
-     *
+     * 
      * @return the inner object.
      */
     ValidateResponseInner innerModel();

@@ -7,7 +7,9 @@ package com.azure.resourcemanager.eventhubs.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Information of Access Rule in Network Profile. */
+/**
+ * Information of Access Rule in Network Profile.
+ */
 @Fluent
 public final class NspAccessRule {
     /*
@@ -34,13 +36,15 @@ public final class NspAccessRule {
     @JsonProperty(value = "properties", access = JsonProperty.Access.WRITE_ONLY)
     private NspAccessRuleProperties properties;
 
-    /** Creates an instance of NspAccessRule class. */
+    /**
+     * Creates an instance of NspAccessRule class.
+     */
     public NspAccessRule() {
     }
 
     /**
      * Get the id property: Fully qualified identifier of the resource.
-     *
+     * 
      * @return the id value.
      */
     public String id() {
@@ -49,7 +53,7 @@ public final class NspAccessRule {
 
     /**
      * Set the id property: Fully qualified identifier of the resource.
-     *
+     * 
      * @param id the id value to set.
      * @return the NspAccessRule object itself.
      */
@@ -60,7 +64,7 @@ public final class NspAccessRule {
 
     /**
      * Get the name property: Name of the resource.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -69,7 +73,7 @@ public final class NspAccessRule {
 
     /**
      * Set the name property: Name of the resource.
-     *
+     * 
      * @param name the name value to set.
      * @return the NspAccessRule object itself.
      */
@@ -80,7 +84,7 @@ public final class NspAccessRule {
 
     /**
      * Get the type property: Type of the resource.
-     *
+     * 
      * @return the type value.
      */
     public String type() {
@@ -89,7 +93,7 @@ public final class NspAccessRule {
 
     /**
      * Set the type property: Type of the resource.
-     *
+     * 
      * @param type the type value to set.
      * @return the NspAccessRule object itself.
      */
@@ -100,7 +104,7 @@ public final class NspAccessRule {
 
     /**
      * Get the properties property: Properties of Access Rule.
-     *
+     * 
      * @return the properties value.
      */
     public NspAccessRuleProperties properties() {
@@ -109,7 +113,7 @@ public final class NspAccessRule {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

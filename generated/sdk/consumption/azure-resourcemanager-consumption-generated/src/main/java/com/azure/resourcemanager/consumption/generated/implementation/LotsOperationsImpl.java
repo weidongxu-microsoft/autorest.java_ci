@@ -19,23 +19,22 @@ public final class LotsOperationsImpl implements LotsOperations {
 
     private final com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager;
 
-    public LotsOperationsImpl(
-        LotsOperationsClient innerClient,
+    public LotsOperationsImpl(LotsOperationsClient innerClient,
         com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
     public PagedIterable<LotSummary> listByBillingProfile(String billingAccountId, String billingProfileId) {
-        PagedIterable<LotSummaryInner> inner =
-            this.serviceClient().listByBillingProfile(billingAccountId, billingProfileId);
+        PagedIterable<LotSummaryInner> inner
+            = this.serviceClient().listByBillingProfile(billingAccountId, billingProfileId);
         return Utils.mapPage(inner, inner1 -> new LotSummaryImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<LotSummary> listByBillingProfile(
-        String billingAccountId, String billingProfileId, Context context) {
-        PagedIterable<LotSummaryInner> inner =
-            this.serviceClient().listByBillingProfile(billingAccountId, billingProfileId, context);
+    public PagedIterable<LotSummary> listByBillingProfile(String billingAccountId, String billingProfileId,
+        Context context) {
+        PagedIterable<LotSummaryInner> inner
+            = this.serviceClient().listByBillingProfile(billingAccountId, billingProfileId, context);
         return Utils.mapPage(inner, inner1 -> new LotSummaryImpl(inner1, this.manager()));
     }
 
@@ -45,8 +44,8 @@ public final class LotsOperationsImpl implements LotsOperations {
     }
 
     public PagedIterable<LotSummary> listByBillingAccount(String billingAccountId, String filter, Context context) {
-        PagedIterable<LotSummaryInner> inner =
-            this.serviceClient().listByBillingAccount(billingAccountId, filter, context);
+        PagedIterable<LotSummaryInner> inner
+            = this.serviceClient().listByBillingAccount(billingAccountId, filter, context);
         return Utils.mapPage(inner, inner1 -> new LotSummaryImpl(inner1, this.manager()));
     }
 
@@ -55,10 +54,10 @@ public final class LotsOperationsImpl implements LotsOperations {
         return Utils.mapPage(inner, inner1 -> new LotSummaryImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<LotSummary> listByCustomer(
-        String billingAccountId, String customerId, String filter, Context context) {
-        PagedIterable<LotSummaryInner> inner =
-            this.serviceClient().listByCustomer(billingAccountId, customerId, filter, context);
+    public PagedIterable<LotSummary> listByCustomer(String billingAccountId, String customerId, String filter,
+        Context context) {
+        PagedIterable<LotSummaryInner> inner
+            = this.serviceClient().listByCustomer(billingAccountId, customerId, filter, context);
         return Utils.mapPage(inner, inner1 -> new LotSummaryImpl(inner1, this.manager()));
     }
 

@@ -20,21 +20,18 @@ public final class OperationResultsImpl implements OperationResults {
 
     private final com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager;
 
-    public OperationResultsImpl(
-        OperationResultsClient innerClient, com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager) {
+    public OperationResultsImpl(OperationResultsClient innerClient,
+        com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<OperationStatusExtendedResult> getWithResponse(
-        String locationName, String operationId, Context context) {
-        Response<OperationStatusExtendedResultInner> inner =
-            this.serviceClient().getWithResponse(locationName, operationId, context);
+    public Response<OperationStatusExtendedResult> getWithResponse(String locationName, String operationId,
+        Context context) {
+        Response<OperationStatusExtendedResultInner> inner
+            = this.serviceClient().getWithResponse(locationName, operationId, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new OperationStatusExtendedResultImpl(inner.getValue(), this.manager()));
         } else {
             return null;

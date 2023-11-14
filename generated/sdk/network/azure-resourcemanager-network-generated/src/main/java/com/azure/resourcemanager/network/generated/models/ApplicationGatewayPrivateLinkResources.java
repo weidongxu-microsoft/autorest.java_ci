@@ -7,24 +7,26 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 
-/** Resource collection API of ApplicationGatewayPrivateLinkResources. */
+/**
+ * Resource collection API of ApplicationGatewayPrivateLinkResources.
+ */
 public interface ApplicationGatewayPrivateLinkResources {
     /**
      * Lists all private link resources on an application gateway.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param applicationGatewayName The name of the application gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return response for ListApplicationGatewayPrivateLinkResources API service call as paginated response with
-     *     {@link PagedIterable}.
+     * {@link PagedIterable}.
      */
     PagedIterable<ApplicationGatewayPrivateLinkResource> list(String resourceGroupName, String applicationGatewayName);
 
     /**
      * Lists all private link resources on an application gateway.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param applicationGatewayName The name of the application gateway.
      * @param context The context to associate with this operation.
@@ -32,8 +34,8 @@ public interface ApplicationGatewayPrivateLinkResources {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return response for ListApplicationGatewayPrivateLinkResources API service call as paginated response with
-     *     {@link PagedIterable}.
+     * {@link PagedIterable}.
      */
-    PagedIterable<ApplicationGatewayPrivateLinkResource> list(
-        String resourceGroupName, String applicationGatewayName, Context context);
+    PagedIterable<ApplicationGatewayPrivateLinkResource> list(String resourceGroupName, String applicationGatewayName,
+        Context context);
 }

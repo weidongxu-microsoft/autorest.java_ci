@@ -9,7 +9,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.math.BigDecimal;
 import java.util.UUID;
 
-/** The properties of the price sheet. */
+/**
+ * The properties of the price sheet.
+ */
 @Immutable
 public final class PriceSheetProperties {
     /*
@@ -72,13 +74,15 @@ public final class PriceSheetProperties {
     @JsonProperty(value = "savingsPlan", access = JsonProperty.Access.WRITE_ONLY)
     private SavingsPlan savingsPlan;
 
-    /** Creates an instance of PriceSheetProperties class. */
+    /**
+     * Creates an instance of PriceSheetProperties class.
+     */
     public PriceSheetProperties() {
     }
 
     /**
      * Get the billingPeriodId property: The id of the billing period resource that the usage belongs to.
-     *
+     * 
      * @return the billingPeriodId value.
      */
     public String billingPeriodId() {
@@ -87,7 +91,7 @@ public final class PriceSheetProperties {
 
     /**
      * Get the meterId property: The meter id (GUID).
-     *
+     * 
      * @return the meterId value.
      */
     public UUID meterId() {
@@ -97,7 +101,7 @@ public final class PriceSheetProperties {
     /**
      * Get the meterDetails property: The details about the meter. By default this is not populated, unless it's
      * specified in $expand.
-     *
+     * 
      * @return the meterDetails value.
      */
     public MeterDetails meterDetails() {
@@ -106,7 +110,7 @@ public final class PriceSheetProperties {
 
     /**
      * Get the unitOfMeasure property: Unit of measure.
-     *
+     * 
      * @return the unitOfMeasure value.
      */
     public String unitOfMeasure() {
@@ -115,7 +119,7 @@ public final class PriceSheetProperties {
 
     /**
      * Get the includedQuantity property: Included quality for an offer.
-     *
+     * 
      * @return the includedQuantity value.
      */
     public BigDecimal includedQuantity() {
@@ -124,7 +128,7 @@ public final class PriceSheetProperties {
 
     /**
      * Get the partNumber property: Part Number.
-     *
+     * 
      * @return the partNumber value.
      */
     public String partNumber() {
@@ -133,7 +137,7 @@ public final class PriceSheetProperties {
 
     /**
      * Get the unitPrice property: Unit Price.
-     *
+     * 
      * @return the unitPrice value.
      */
     public BigDecimal unitPrice() {
@@ -142,7 +146,7 @@ public final class PriceSheetProperties {
 
     /**
      * Get the currencyCode property: Currency Code.
-     *
+     * 
      * @return the currencyCode value.
      */
     public String currencyCode() {
@@ -151,7 +155,7 @@ public final class PriceSheetProperties {
 
     /**
      * Get the offerId property: Offer Id.
-     *
+     * 
      * @return the offerId value.
      */
     public String offerId() {
@@ -160,7 +164,7 @@ public final class PriceSheetProperties {
 
     /**
      * Get the savingsPlan property: SavingsPlan Details.
-     *
+     * 
      * @return the savingsPlan value.
      */
     public SavingsPlan savingsPlan() {
@@ -169,7 +173,7 @@ public final class PriceSheetProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

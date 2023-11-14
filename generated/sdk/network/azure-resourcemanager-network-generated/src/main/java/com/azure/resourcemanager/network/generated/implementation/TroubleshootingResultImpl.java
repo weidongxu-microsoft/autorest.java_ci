@@ -16,8 +16,7 @@ public final class TroubleshootingResultImpl implements TroubleshootingResult {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    TroubleshootingResultImpl(
-        TroubleshootingResultInner innerObject,
+    TroubleshootingResultImpl(TroubleshootingResultInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

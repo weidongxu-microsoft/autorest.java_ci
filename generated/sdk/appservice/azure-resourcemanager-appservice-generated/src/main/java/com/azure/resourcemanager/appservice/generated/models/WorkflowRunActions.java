@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of WorkflowRunActions. */
+/**
+ * Resource collection API of WorkflowRunActions.
+ */
 public interface WorkflowRunActions {
     /**
      * Gets a list of workflow run actions.
-     *
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param workflowName The workflow name.
@@ -26,7 +28,7 @@ public interface WorkflowRunActions {
 
     /**
      * Gets a list of workflow run actions.
-     *
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param workflowName The workflow name.
@@ -39,18 +41,12 @@ public interface WorkflowRunActions {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a list of workflow run actions as paginated response with {@link PagedIterable}.
      */
-    PagedIterable<WorkflowRunAction> list(
-        String resourceGroupName,
-        String name,
-        String workflowName,
-        String runName,
-        Integer top,
-        String filter,
-        Context context);
+    PagedIterable<WorkflowRunAction> list(String resourceGroupName, String name, String workflowName, String runName,
+        Integer top, String filter, Context context);
 
     /**
      * Gets a workflow run action.
-     *
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param workflowName The workflow name.
@@ -62,12 +58,12 @@ public interface WorkflowRunActions {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a workflow run action along with {@link Response}.
      */
-    Response<WorkflowRunAction> getWithResponse(
-        String resourceGroupName, String name, String workflowName, String runName, String actionName, Context context);
+    Response<WorkflowRunAction> getWithResponse(String resourceGroupName, String name, String workflowName,
+        String runName, String actionName, Context context);
 
     /**
      * Gets a workflow run action.
-     *
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param workflowName The workflow name.
@@ -78,12 +74,12 @@ public interface WorkflowRunActions {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a workflow run action.
      */
-    WorkflowRunAction get(
-        String resourceGroupName, String name, String workflowName, String runName, String actionName);
+    WorkflowRunAction get(String resourceGroupName, String name, String workflowName, String runName,
+        String actionName);
 
     /**
      * Lists a workflow run expression trace.
-     *
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param workflowName The workflow name.
@@ -94,12 +90,12 @@ public interface WorkflowRunActions {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the expression traces as paginated response with {@link PagedIterable}.
      */
-    PagedIterable<ExpressionRoot> listExpressionTraces(
-        String resourceGroupName, String name, String workflowName, String runName, String actionName);
+    PagedIterable<ExpressionRoot> listExpressionTraces(String resourceGroupName, String name, String workflowName,
+        String runName, String actionName);
 
     /**
      * Lists a workflow run expression trace.
-     *
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param workflowName The workflow name.
@@ -111,6 +107,6 @@ public interface WorkflowRunActions {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the expression traces as paginated response with {@link PagedIterable}.
      */
-    PagedIterable<ExpressionRoot> listExpressionTraces(
-        String resourceGroupName, String name, String workflowName, String runName, String actionName, Context context);
+    PagedIterable<ExpressionRoot> listExpressionTraces(String resourceGroupName, String name, String workflowName,
+        String runName, String actionName, Context context);
 }

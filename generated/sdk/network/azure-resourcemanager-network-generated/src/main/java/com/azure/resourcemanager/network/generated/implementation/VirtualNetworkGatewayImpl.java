@@ -172,12 +172,9 @@ public final class VirtualNetworkGatewayImpl
     public List<VirtualNetworkGatewayNatRule> natRules() {
         List<VirtualNetworkGatewayNatRuleInner> inner = this.innerModel().natRules();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new VirtualNetworkGatewayNatRuleImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(
+                inner.stream().map(inner1 -> new VirtualNetworkGatewayNatRuleImpl(inner1, this.manager()))
+                    .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -231,20 +228,14 @@ public final class VirtualNetworkGatewayImpl
     }
 
     public VirtualNetworkGateway create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualNetworkGateways()
-                .createOrUpdate(resourceGroupName, virtualNetworkGatewayName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getVirtualNetworkGateways().createOrUpdate(resourceGroupName,
+            virtualNetworkGatewayName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public VirtualNetworkGateway create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualNetworkGateways()
-                .createOrUpdate(resourceGroupName, virtualNetworkGatewayName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getVirtualNetworkGateways().createOrUpdate(resourceGroupName,
+            virtualNetworkGatewayName, this.innerModel(), context);
         return this;
     }
 
@@ -260,25 +251,18 @@ public final class VirtualNetworkGatewayImpl
     }
 
     public VirtualNetworkGateway apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualNetworkGateways()
-                .updateTags(resourceGroupName, virtualNetworkGatewayName, updateParameters, Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getVirtualNetworkGateways().updateTags(resourceGroupName,
+            virtualNetworkGatewayName, updateParameters, Context.NONE);
         return this;
     }
 
     public VirtualNetworkGateway apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualNetworkGateways()
-                .updateTags(resourceGroupName, virtualNetworkGatewayName, updateParameters, context);
+        this.innerObject = serviceManager.serviceClient().getVirtualNetworkGateways().updateTags(resourceGroupName,
+            virtualNetworkGatewayName, updateParameters, context);
         return this;
     }
 
-    VirtualNetworkGatewayImpl(
-        VirtualNetworkGatewayInner innerObject,
+    VirtualNetworkGatewayImpl(VirtualNetworkGatewayInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -287,22 +271,14 @@ public final class VirtualNetworkGatewayImpl
     }
 
     public VirtualNetworkGateway refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualNetworkGateways()
-                .getByResourceGroupWithResponse(resourceGroupName, virtualNetworkGatewayName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getVirtualNetworkGateways()
+            .getByResourceGroupWithResponse(resourceGroupName, virtualNetworkGatewayName, Context.NONE).getValue();
         return this;
     }
 
     public VirtualNetworkGateway refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualNetworkGateways()
-                .getByResourceGroupWithResponse(resourceGroupName, virtualNetworkGatewayName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getVirtualNetworkGateways()
+            .getByResourceGroupWithResponse(resourceGroupName, virtualNetworkGatewayName, context).getValue();
         return this;
     }
 
@@ -311,9 +287,8 @@ public final class VirtualNetworkGatewayImpl
     }
 
     public VirtualNetworkGateway reset(String gatewayVip, Context context) {
-        return serviceManager
-            .virtualNetworkGateways()
-            .reset(resourceGroupName, virtualNetworkGatewayName, gatewayVip, context);
+        return serviceManager.virtualNetworkGateways().reset(resourceGroupName, virtualNetworkGatewayName, gatewayVip,
+            context);
     }
 
     public void resetVpnClientSharedKey() {
@@ -321,45 +296,38 @@ public final class VirtualNetworkGatewayImpl
     }
 
     public void resetVpnClientSharedKey(Context context) {
-        serviceManager
-            .virtualNetworkGateways()
-            .resetVpnClientSharedKey(resourceGroupName, virtualNetworkGatewayName, context);
+        serviceManager.virtualNetworkGateways().resetVpnClientSharedKey(resourceGroupName, virtualNetworkGatewayName,
+            context);
     }
 
     public String generatevpnclientpackage(VpnClientParameters parameters) {
-        return serviceManager
-            .virtualNetworkGateways()
-            .generatevpnclientpackage(resourceGroupName, virtualNetworkGatewayName, parameters);
+        return serviceManager.virtualNetworkGateways().generatevpnclientpackage(resourceGroupName,
+            virtualNetworkGatewayName, parameters);
     }
 
     public String generatevpnclientpackage(VpnClientParameters parameters, Context context) {
-        return serviceManager
-            .virtualNetworkGateways()
-            .generatevpnclientpackage(resourceGroupName, virtualNetworkGatewayName, parameters, context);
+        return serviceManager.virtualNetworkGateways().generatevpnclientpackage(resourceGroupName,
+            virtualNetworkGatewayName, parameters, context);
     }
 
     public String generateVpnProfile(VpnClientParameters parameters) {
-        return serviceManager
-            .virtualNetworkGateways()
-            .generateVpnProfile(resourceGroupName, virtualNetworkGatewayName, parameters);
+        return serviceManager.virtualNetworkGateways().generateVpnProfile(resourceGroupName, virtualNetworkGatewayName,
+            parameters);
     }
 
     public String generateVpnProfile(VpnClientParameters parameters, Context context) {
-        return serviceManager
-            .virtualNetworkGateways()
-            .generateVpnProfile(resourceGroupName, virtualNetworkGatewayName, parameters, context);
+        return serviceManager.virtualNetworkGateways().generateVpnProfile(resourceGroupName, virtualNetworkGatewayName,
+            parameters, context);
     }
 
     public String getVpnProfilePackageUrl() {
-        return serviceManager
-            .virtualNetworkGateways()
-            .getVpnProfilePackageUrl(resourceGroupName, virtualNetworkGatewayName);
+        return serviceManager.virtualNetworkGateways().getVpnProfilePackageUrl(resourceGroupName,
+            virtualNetworkGatewayName);
     }
 
     public String getVpnProfilePackageUrl(Context context) {
-        return serviceManager
-            .virtualNetworkGateways()
-            .getVpnProfilePackageUrl(resourceGroupName, virtualNetworkGatewayName, context);
+        return serviceManager.virtualNetworkGateways().getVpnProfilePackageUrl(resourceGroupName,
+            virtualNetworkGatewayName, context);
     }
 
     public BgpPeerStatusListResult getBgpPeerStatus() {
@@ -367,21 +335,18 @@ public final class VirtualNetworkGatewayImpl
     }
 
     public BgpPeerStatusListResult getBgpPeerStatus(String peer, Context context) {
-        return serviceManager
-            .virtualNetworkGateways()
-            .getBgpPeerStatus(resourceGroupName, virtualNetworkGatewayName, peer, context);
+        return serviceManager.virtualNetworkGateways().getBgpPeerStatus(resourceGroupName, virtualNetworkGatewayName,
+            peer, context);
     }
 
     public Response<String> supportedVpnDevicesWithResponse(Context context) {
-        return serviceManager
-            .virtualNetworkGateways()
-            .supportedVpnDevicesWithResponse(resourceGroupName, virtualNetworkGatewayName, context);
+        return serviceManager.virtualNetworkGateways().supportedVpnDevicesWithResponse(resourceGroupName,
+            virtualNetworkGatewayName, context);
     }
 
     public String supportedVpnDevices() {
-        return serviceManager
-            .virtualNetworkGateways()
-            .supportedVpnDevices(resourceGroupName, virtualNetworkGatewayName);
+        return serviceManager.virtualNetworkGateways().supportedVpnDevices(resourceGroupName,
+            virtualNetworkGatewayName);
     }
 
     public GatewayRouteListResult getLearnedRoutes() {
@@ -389,34 +354,29 @@ public final class VirtualNetworkGatewayImpl
     }
 
     public GatewayRouteListResult getLearnedRoutes(Context context) {
-        return serviceManager
-            .virtualNetworkGateways()
-            .getLearnedRoutes(resourceGroupName, virtualNetworkGatewayName, context);
+        return serviceManager.virtualNetworkGateways().getLearnedRoutes(resourceGroupName, virtualNetworkGatewayName,
+            context);
     }
 
     public VpnClientIPsecParameters setVpnclientIpsecParameters(VpnClientIPsecParametersInner vpnclientIpsecParams) {
-        return serviceManager
-            .virtualNetworkGateways()
-            .setVpnclientIpsecParameters(resourceGroupName, virtualNetworkGatewayName, vpnclientIpsecParams);
+        return serviceManager.virtualNetworkGateways().setVpnclientIpsecParameters(resourceGroupName,
+            virtualNetworkGatewayName, vpnclientIpsecParams);
     }
 
-    public VpnClientIPsecParameters setVpnclientIpsecParameters(
-        VpnClientIPsecParametersInner vpnclientIpsecParams, Context context) {
-        return serviceManager
-            .virtualNetworkGateways()
-            .setVpnclientIpsecParameters(resourceGroupName, virtualNetworkGatewayName, vpnclientIpsecParams, context);
+    public VpnClientIPsecParameters setVpnclientIpsecParameters(VpnClientIPsecParametersInner vpnclientIpsecParams,
+        Context context) {
+        return serviceManager.virtualNetworkGateways().setVpnclientIpsecParameters(resourceGroupName,
+            virtualNetworkGatewayName, vpnclientIpsecParams, context);
     }
 
     public VpnClientIPsecParameters getVpnclientIpsecParameters() {
-        return serviceManager
-            .virtualNetworkGateways()
-            .getVpnclientIpsecParameters(resourceGroupName, virtualNetworkGatewayName);
+        return serviceManager.virtualNetworkGateways().getVpnclientIpsecParameters(resourceGroupName,
+            virtualNetworkGatewayName);
     }
 
     public VpnClientIPsecParameters getVpnclientIpsecParameters(Context context) {
-        return serviceManager
-            .virtualNetworkGateways()
-            .getVpnclientIpsecParameters(resourceGroupName, virtualNetworkGatewayName, context);
+        return serviceManager.virtualNetworkGateways().getVpnclientIpsecParameters(resourceGroupName,
+            virtualNetworkGatewayName, context);
     }
 
     public String startPacketCapture() {
@@ -424,46 +384,38 @@ public final class VirtualNetworkGatewayImpl
     }
 
     public String startPacketCapture(VpnPacketCaptureStartParameters parameters, Context context) {
-        return serviceManager
-            .virtualNetworkGateways()
-            .startPacketCapture(resourceGroupName, virtualNetworkGatewayName, parameters, context);
+        return serviceManager.virtualNetworkGateways().startPacketCapture(resourceGroupName, virtualNetworkGatewayName,
+            parameters, context);
     }
 
     public String stopPacketCapture(VpnPacketCaptureStopParameters parameters) {
-        return serviceManager
-            .virtualNetworkGateways()
-            .stopPacketCapture(resourceGroupName, virtualNetworkGatewayName, parameters);
+        return serviceManager.virtualNetworkGateways().stopPacketCapture(resourceGroupName, virtualNetworkGatewayName,
+            parameters);
     }
 
     public String stopPacketCapture(VpnPacketCaptureStopParameters parameters, Context context) {
-        return serviceManager
-            .virtualNetworkGateways()
-            .stopPacketCapture(resourceGroupName, virtualNetworkGatewayName, parameters, context);
+        return serviceManager.virtualNetworkGateways().stopPacketCapture(resourceGroupName, virtualNetworkGatewayName,
+            parameters, context);
     }
 
     public VpnClientConnectionHealthDetailListResult getVpnclientConnectionHealth() {
-        return serviceManager
-            .virtualNetworkGateways()
-            .getVpnclientConnectionHealth(resourceGroupName, virtualNetworkGatewayName);
+        return serviceManager.virtualNetworkGateways().getVpnclientConnectionHealth(resourceGroupName,
+            virtualNetworkGatewayName);
     }
 
     public VpnClientConnectionHealthDetailListResult getVpnclientConnectionHealth(Context context) {
-        return serviceManager
-            .virtualNetworkGateways()
-            .getVpnclientConnectionHealth(resourceGroupName, virtualNetworkGatewayName, context);
+        return serviceManager.virtualNetworkGateways().getVpnclientConnectionHealth(resourceGroupName,
+            virtualNetworkGatewayName, context);
     }
 
     public void disconnectVirtualNetworkGatewayVpnConnections(P2SVpnConnectionRequest request) {
-        serviceManager
-            .virtualNetworkGateways()
-            .disconnectVirtualNetworkGatewayVpnConnections(resourceGroupName, virtualNetworkGatewayName, request);
+        serviceManager.virtualNetworkGateways().disconnectVirtualNetworkGatewayVpnConnections(resourceGroupName,
+            virtualNetworkGatewayName, request);
     }
 
     public void disconnectVirtualNetworkGatewayVpnConnections(P2SVpnConnectionRequest request, Context context) {
-        serviceManager
-            .virtualNetworkGateways()
-            .disconnectVirtualNetworkGatewayVpnConnections(
-                resourceGroupName, virtualNetworkGatewayName, request, context);
+        serviceManager.virtualNetworkGateways().disconnectVirtualNetworkGatewayVpnConnections(resourceGroupName,
+            virtualNetworkGatewayName, request, context);
     }
 
     public VirtualNetworkGatewayImpl withRegion(Region location) {
@@ -491,8 +443,8 @@ public final class VirtualNetworkGatewayImpl
         return this;
     }
 
-    public VirtualNetworkGatewayImpl withAutoScaleConfiguration(
-        VirtualNetworkGatewayAutoScaleConfiguration autoScaleConfiguration) {
+    public VirtualNetworkGatewayImpl
+        withAutoScaleConfiguration(VirtualNetworkGatewayAutoScaleConfiguration autoScaleConfiguration) {
         this.innerModel().withAutoScaleConfiguration(autoScaleConfiguration);
         return this;
     }

@@ -8,67 +8,69 @@ import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteSer
 import java.util.List;
 import java.util.Map;
 
-/** An immutable client-side representation of ExpressRouteServiceProvider. */
+/**
+ * An immutable client-side representation of ExpressRouteServiceProvider.
+ */
 public interface ExpressRouteServiceProvider {
     /**
      * Gets the name property: The name of the resource.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the type property: The type of the resource.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the location property: The geo-location where the resource lives.
-     *
+     * 
      * @return the location value.
      */
     String location();
 
     /**
      * Gets the tags property: Resource tags.
-     *
+     * 
      * @return the tags value.
      */
     Map<String, String> tags();
 
     /**
      * Gets the id property: Resource ID.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the peeringLocations property: A list of peering locations.
-     *
+     * 
      * @return the peeringLocations value.
      */
     List<String> peeringLocations();
 
     /**
      * Gets the bandwidthsOffered property: A list of bandwidths offered.
-     *
+     * 
      * @return the bandwidthsOffered value.
      */
     List<ExpressRouteServiceProviderBandwidthsOffered> bandwidthsOffered();
 
     /**
      * Gets the provisioningState property: The provisioning state of the express route service provider resource.
-     *
+     * 
      * @return the provisioningState value.
      */
     ProvisioningState provisioningState();
 
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteServiceProviderInner object.
-     *
+     * 
      * @return the inner object.
      */
     ExpressRouteServiceProviderInner innerModel();

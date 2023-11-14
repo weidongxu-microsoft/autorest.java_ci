@@ -6,11 +6,13 @@ package com.azure.resourcemanager.compute.generated.models;
 
 import com.azure.resourcemanager.compute.generated.fluent.models.RecoveryWalkResponseInner;
 
-/** An immutable client-side representation of RecoveryWalkResponse. */
+/**
+ * An immutable client-side representation of RecoveryWalkResponse.
+ */
 public interface RecoveryWalkResponse {
     /**
      * Gets the walkPerformed property: Whether the recovery walk was performed.
-     *
+     * 
      * @return the walkPerformed value.
      */
     Boolean walkPerformed();
@@ -18,14 +20,14 @@ public interface RecoveryWalkResponse {
     /**
      * Gets the nextPlatformUpdateDomain property: The next update domain that needs to be walked. Null means walk
      * spanning all update domains has been completed.
-     *
+     * 
      * @return the nextPlatformUpdateDomain value.
      */
     Integer nextPlatformUpdateDomain();
 
     /**
      * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.RecoveryWalkResponseInner object.
-     *
+     * 
      * @return the inner object.
      */
     RecoveryWalkResponseInner innerModel();

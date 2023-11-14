@@ -13,7 +13,9 @@ import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.Map;
 
-/** Represents Operation Results API Response. */
+/**
+ * Represents Operation Results API Response.
+ */
 @Fluent
 public final class OperationStatusExtendedResultInner extends OperationStatusResult {
     /*
@@ -23,13 +25,15 @@ public final class OperationStatusExtendedResultInner extends OperationStatusRes
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, Object> properties;
 
-    /** Creates an instance of OperationStatusExtendedResultInner class. */
+    /**
+     * Creates an instance of OperationStatusExtendedResultInner class.
+     */
     public OperationStatusExtendedResultInner() {
     }
 
     /**
      * Get the properties property: The extended properties of Operation Results.
-     *
+     * 
      * @return the properties value.
      */
     public Map<String, Object> properties() {
@@ -38,7 +42,7 @@ public final class OperationStatusExtendedResultInner extends OperationStatusRes
 
     /**
      * Set the properties property: The extended properties of Operation Results.
-     *
+     * 
      * @param properties the properties value to set.
      * @return the OperationStatusExtendedResultInner object itself.
      */
@@ -47,56 +51,72 @@ public final class OperationStatusExtendedResultInner extends OperationStatusRes
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public OperationStatusExtendedResultInner withId(String id) {
         super.withId(id);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public OperationStatusExtendedResultInner withName(String name) {
         super.withName(name);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public OperationStatusExtendedResultInner withStatus(String status) {
         super.withStatus(status);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public OperationStatusExtendedResultInner withPercentComplete(Float percentComplete) {
         super.withPercentComplete(percentComplete);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public OperationStatusExtendedResultInner withStartTime(OffsetDateTime startTime) {
         super.withStartTime(startTime);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public OperationStatusExtendedResultInner withEndTime(OffsetDateTime endTime) {
         super.withEndTime(endTime);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public OperationStatusExtendedResultInner withOperations(List<OperationStatusResult> operations) {
         super.withOperations(operations);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public OperationStatusExtendedResultInner withError(ManagementError error) {
         super.withError(error);
@@ -105,7 +125,7 @@ public final class OperationStatusExtendedResultInner extends OperationStatusRes
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

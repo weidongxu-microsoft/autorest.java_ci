@@ -12,7 +12,9 @@ import com.azure.resourcemanager.databoxedge.generated.models.UserType;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The user properties. */
+/**
+ * The user properties.
+ */
 @Fluent
 public final class UserProperties {
     /*
@@ -33,13 +35,15 @@ public final class UserProperties {
     @JsonProperty(value = "userType", required = true)
     private UserType userType;
 
-    /** Creates an instance of UserProperties class. */
+    /**
+     * Creates an instance of UserProperties class.
+     */
     public UserProperties() {
     }
 
     /**
      * Get the encryptedPassword property: The password details.
-     *
+     * 
      * @return the encryptedPassword value.
      */
     public AsymmetricEncryptedSecret encryptedPassword() {
@@ -48,7 +52,7 @@ public final class UserProperties {
 
     /**
      * Set the encryptedPassword property: The password details.
-     *
+     * 
      * @param encryptedPassword the encryptedPassword value to set.
      * @return the UserProperties object itself.
      */
@@ -60,7 +64,7 @@ public final class UserProperties {
     /**
      * Get the shareAccessRights property: List of shares that the user has rights on. This field should not be
      * specified during user creation.
-     *
+     * 
      * @return the shareAccessRights value.
      */
     public List<ShareAccessRight> shareAccessRights() {
@@ -69,7 +73,7 @@ public final class UserProperties {
 
     /**
      * Get the userType property: Type of the user.
-     *
+     * 
      * @return the userType value.
      */
     public UserType userType() {
@@ -78,7 +82,7 @@ public final class UserProperties {
 
     /**
      * Set the userType property: Type of the user.
-     *
+     * 
      * @param userType the userType value to set.
      * @return the UserProperties object itself.
      */
@@ -89,7 +93,7 @@ public final class UserProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
@@ -100,9 +104,8 @@ public final class UserProperties {
             shareAccessRights().forEach(e -> e.validate());
         }
         if (userType() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property userType in model UserProperties"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property userType in model UserProperties"));
         }
     }
 

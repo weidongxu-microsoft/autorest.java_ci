@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** A list of activity log alert actions. */
+/**
+ * A list of activity log alert actions.
+ */
 @Fluent
 public final class ActivityLogAlertActionList {
     /*
@@ -17,13 +19,15 @@ public final class ActivityLogAlertActionList {
     @JsonProperty(value = "actionGroups")
     private List<ActivityLogAlertActionGroup> actionGroups;
 
-    /** Creates an instance of ActivityLogAlertActionList class. */
+    /**
+     * Creates an instance of ActivityLogAlertActionList class.
+     */
     public ActivityLogAlertActionList() {
     }
 
     /**
      * Get the actionGroups property: The list of activity log alerts.
-     *
+     * 
      * @return the actionGroups value.
      */
     public List<ActivityLogAlertActionGroup> actionGroups() {
@@ -32,7 +36,7 @@ public final class ActivityLogAlertActionList {
 
     /**
      * Set the actionGroups property: The list of activity log alerts.
-     *
+     * 
      * @param actionGroups the actionGroups value to set.
      * @return the ActivityLogAlertActionList object itself.
      */
@@ -43,7 +47,7 @@ public final class ActivityLogAlertActionList {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

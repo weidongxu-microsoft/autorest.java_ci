@@ -6,11 +6,13 @@ package com.azure.resourcemanager.applicationinsights.generated.models;
 
 import com.azure.resourcemanager.applicationinsights.generated.fluent.models.ComponentPurgeResponseInner;
 
-/** An immutable client-side representation of ComponentPurgeResponse. */
+/**
+ * An immutable client-side representation of ComponentPurgeResponse.
+ */
 public interface ComponentPurgeResponse {
     /**
      * Gets the operationId property: Id to use when querying for status for a particular purge operation.
-     *
+     * 
      * @return the operationId value.
      */
     String operationId();
@@ -18,7 +20,7 @@ public interface ComponentPurgeResponse {
     /**
      * Gets the inner com.azure.resourcemanager.applicationinsights.generated.fluent.models.ComponentPurgeResponseInner
      * object.
-     *
+     * 
      * @return the inner object.
      */
     ComponentPurgeResponseInner innerModel();

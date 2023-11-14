@@ -15,8 +15,7 @@ public final class ExpressRouteCircuitsRoutesTableListResultImpl implements Expr
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    ExpressRouteCircuitsRoutesTableListResultImpl(
-        ExpressRouteCircuitsRoutesTableListResultInner innerObject,
+    ExpressRouteCircuitsRoutesTableListResultImpl(ExpressRouteCircuitsRoutesTableListResultInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

@@ -18,8 +18,7 @@ public final class AlertImpl implements Alert {
 
     private final com.azure.resourcemanager.costmanagement.generated.CostManagementManager serviceManager;
 
-    AlertImpl(
-        AlertInner innerObject,
+    AlertImpl(AlertInner innerObject,
         com.azure.resourcemanager.costmanagement.generated.CostManagementManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

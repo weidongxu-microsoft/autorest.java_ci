@@ -14,15 +14,19 @@ import java.util.Collection;
  * can be set for only Confidential VMs.
  */
 public final class SecurityEncryptionTypes extends ExpandableStringEnum<SecurityEncryptionTypes> {
-    /** Static value VMGuestStateOnly for SecurityEncryptionTypes. */
+    /**
+     * Static value VMGuestStateOnly for SecurityEncryptionTypes.
+     */
     public static final SecurityEncryptionTypes VMGUEST_STATE_ONLY = fromString("VMGuestStateOnly");
 
-    /** Static value DiskWithVMGuestState for SecurityEncryptionTypes. */
+    /**
+     * Static value DiskWithVMGuestState for SecurityEncryptionTypes.
+     */
     public static final SecurityEncryptionTypes DISK_WITH_VMGUEST_STATE = fromString("DiskWithVMGuestState");
 
     /**
      * Creates a new instance of SecurityEncryptionTypes value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -31,7 +35,7 @@ public final class SecurityEncryptionTypes extends ExpandableStringEnum<Security
 
     /**
      * Creates or finds a SecurityEncryptionTypes from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding SecurityEncryptionTypes.
      */
@@ -42,7 +46,7 @@ public final class SecurityEncryptionTypes extends ExpandableStringEnum<Security
 
     /**
      * Gets known SecurityEncryptionTypes values.
-     *
+     * 
      * @return known SecurityEncryptionTypes values.
      */
     public static Collection<SecurityEncryptionTypes> values() {

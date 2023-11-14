@@ -11,11 +11,13 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.storage.generated.fluent.models.DeletedAccountInner;
 
-/** An instance of this class provides access to all the operations defined in DeletedAccountsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in DeletedAccountsClient.
+ */
 public interface DeletedAccountsClient {
     /**
      * Lists deleted accounts under the subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response from the List Deleted Accounts operation as paginated response with {@link PagedIterable}.
@@ -25,7 +27,7 @@ public interface DeletedAccountsClient {
 
     /**
      * Lists deleted accounts under the subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -37,7 +39,7 @@ public interface DeletedAccountsClient {
 
     /**
      * Get properties of specified deleted account resource.
-     *
+     * 
      * @param deletedAccountName Name of the deleted storage account.
      * @param location The location of the deleted storage account.
      * @param context The context to associate with this operation.
@@ -51,7 +53,7 @@ public interface DeletedAccountsClient {
 
     /**
      * Get properties of specified deleted account resource.
-     *
+     * 
      * @param deletedAccountName Name of the deleted storage account.
      * @param location The location of the deleted storage account.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

@@ -15,8 +15,7 @@ public final class NetworkSecurityPerimeterConfigurationListImpl implements Netw
 
     private final com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager;
 
-    NetworkSecurityPerimeterConfigurationListImpl(
-        NetworkSecurityPerimeterConfigurationListInner innerObject,
+    NetworkSecurityPerimeterConfigurationListImpl(NetworkSecurityPerimeterConfigurationListInner innerObject,
         com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

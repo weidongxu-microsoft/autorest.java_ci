@@ -9,7 +9,9 @@ import com.azure.resourcemanager.iothub.generated.models.UserSubscriptionQuota;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Json-serialized array of User subscription quota response. */
+/**
+ * Json-serialized array of User subscription quota response.
+ */
 @Fluent
 public final class UserSubscriptionQuotaListResultInner {
     /*
@@ -24,13 +26,15 @@ public final class UserSubscriptionQuotaListResultInner {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
-    /** Creates an instance of UserSubscriptionQuotaListResultInner class. */
+    /**
+     * Creates an instance of UserSubscriptionQuotaListResultInner class.
+     */
     public UserSubscriptionQuotaListResultInner() {
     }
 
     /**
      * Get the value property: The value property.
-     *
+     * 
      * @return the value value.
      */
     public List<UserSubscriptionQuota> value() {
@@ -39,7 +43,7 @@ public final class UserSubscriptionQuotaListResultInner {
 
     /**
      * Set the value property: The value property.
-     *
+     * 
      * @param value the value value to set.
      * @return the UserSubscriptionQuotaListResultInner object itself.
      */
@@ -50,7 +54,7 @@ public final class UserSubscriptionQuotaListResultInner {
 
     /**
      * Get the nextLink property: The nextLink property.
-     *
+     * 
      * @return the nextLink value.
      */
     public String nextLink() {
@@ -59,7 +63,7 @@ public final class UserSubscriptionQuotaListResultInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

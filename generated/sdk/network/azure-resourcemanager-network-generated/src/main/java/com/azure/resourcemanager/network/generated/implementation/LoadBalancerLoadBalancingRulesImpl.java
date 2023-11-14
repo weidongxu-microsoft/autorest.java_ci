@@ -21,8 +21,7 @@ public final class LoadBalancerLoadBalancingRulesImpl implements LoadBalancerLoa
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public LoadBalancerLoadBalancingRulesImpl(
-        LoadBalancerLoadBalancingRulesClient innerClient,
+    public LoadBalancerLoadBalancingRulesImpl(LoadBalancerLoadBalancingRulesClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -34,20 +33,17 @@ public final class LoadBalancerLoadBalancingRulesImpl implements LoadBalancerLoa
     }
 
     public PagedIterable<LoadBalancingRule> list(String resourceGroupName, String loadBalancerName, Context context) {
-        PagedIterable<LoadBalancingRuleInner> inner =
-            this.serviceClient().list(resourceGroupName, loadBalancerName, context);
+        PagedIterable<LoadBalancingRuleInner> inner
+            = this.serviceClient().list(resourceGroupName, loadBalancerName, context);
         return Utils.mapPage(inner, inner1 -> new LoadBalancingRuleImpl(inner1, this.manager()));
     }
 
-    public Response<LoadBalancingRule> getWithResponse(
-        String resourceGroupName, String loadBalancerName, String loadBalancingRuleName, Context context) {
-        Response<LoadBalancingRuleInner> inner =
-            this.serviceClient().getWithResponse(resourceGroupName, loadBalancerName, loadBalancingRuleName, context);
+    public Response<LoadBalancingRule> getWithResponse(String resourceGroupName, String loadBalancerName,
+        String loadBalancingRuleName, Context context) {
+        Response<LoadBalancingRuleInner> inner
+            = this.serviceClient().getWithResponse(resourceGroupName, loadBalancerName, loadBalancingRuleName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new LoadBalancingRuleImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -55,8 +51,8 @@ public final class LoadBalancerLoadBalancingRulesImpl implements LoadBalancerLoa
     }
 
     public LoadBalancingRule get(String resourceGroupName, String loadBalancerName, String loadBalancingRuleName) {
-        LoadBalancingRuleInner inner =
-            this.serviceClient().get(resourceGroupName, loadBalancerName, loadBalancingRuleName);
+        LoadBalancingRuleInner inner
+            = this.serviceClient().get(resourceGroupName, loadBalancerName, loadBalancingRuleName);
         if (inner != null) {
             return new LoadBalancingRuleImpl(inner, this.manager());
         } else {

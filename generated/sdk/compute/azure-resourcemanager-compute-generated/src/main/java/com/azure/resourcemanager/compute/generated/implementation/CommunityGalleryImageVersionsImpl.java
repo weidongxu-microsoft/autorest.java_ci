@@ -21,38 +21,28 @@ public final class CommunityGalleryImageVersionsImpl implements CommunityGallery
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    public CommunityGalleryImageVersionsImpl(
-        CommunityGalleryImageVersionsClient innerClient,
+    public CommunityGalleryImageVersionsImpl(CommunityGalleryImageVersionsClient innerClient,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<CommunityGalleryImageVersion> getWithResponse(
-        String location,
-        String publicGalleryName,
-        String galleryImageName,
-        String galleryImageVersionName,
-        Context context) {
-        Response<CommunityGalleryImageVersionInner> inner =
-            this
-                .serviceClient()
-                .getWithResponse(location, publicGalleryName, galleryImageName, galleryImageVersionName, context);
+    public Response<CommunityGalleryImageVersion> getWithResponse(String location, String publicGalleryName,
+        String galleryImageName, String galleryImageVersionName, Context context) {
+        Response<CommunityGalleryImageVersionInner> inner = this.serviceClient().getWithResponse(location,
+            publicGalleryName, galleryImageName, galleryImageVersionName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new CommunityGalleryImageVersionImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public CommunityGalleryImageVersion get(
-        String location, String publicGalleryName, String galleryImageName, String galleryImageVersionName) {
-        CommunityGalleryImageVersionInner inner =
-            this.serviceClient().get(location, publicGalleryName, galleryImageName, galleryImageVersionName);
+    public CommunityGalleryImageVersion get(String location, String publicGalleryName, String galleryImageName,
+        String galleryImageVersionName) {
+        CommunityGalleryImageVersionInner inner
+            = this.serviceClient().get(location, publicGalleryName, galleryImageName, galleryImageVersionName);
         if (inner != null) {
             return new CommunityGalleryImageVersionImpl(inner, this.manager());
         } else {
@@ -60,17 +50,17 @@ public final class CommunityGalleryImageVersionsImpl implements CommunityGallery
         }
     }
 
-    public PagedIterable<CommunityGalleryImageVersion> list(
-        String location, String publicGalleryName, String galleryImageName) {
-        PagedIterable<CommunityGalleryImageVersionInner> inner =
-            this.serviceClient().list(location, publicGalleryName, galleryImageName);
+    public PagedIterable<CommunityGalleryImageVersion> list(String location, String publicGalleryName,
+        String galleryImageName) {
+        PagedIterable<CommunityGalleryImageVersionInner> inner
+            = this.serviceClient().list(location, publicGalleryName, galleryImageName);
         return Utils.mapPage(inner, inner1 -> new CommunityGalleryImageVersionImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<CommunityGalleryImageVersion> list(
-        String location, String publicGalleryName, String galleryImageName, Context context) {
-        PagedIterable<CommunityGalleryImageVersionInner> inner =
-            this.serviceClient().list(location, publicGalleryName, galleryImageName, context);
+    public PagedIterable<CommunityGalleryImageVersion> list(String location, String publicGalleryName,
+        String galleryImageName, Context context) {
+        PagedIterable<CommunityGalleryImageVersionInner> inner
+            = this.serviceClient().list(location, publicGalleryName, galleryImageName, context);
         return Utils.mapPage(inner, inner1 -> new CommunityGalleryImageVersionImpl(inner1, this.manager()));
     }
 

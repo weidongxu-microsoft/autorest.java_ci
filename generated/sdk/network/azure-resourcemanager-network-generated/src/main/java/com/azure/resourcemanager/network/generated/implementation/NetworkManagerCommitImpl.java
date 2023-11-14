@@ -15,8 +15,7 @@ public final class NetworkManagerCommitImpl implements NetworkManagerCommit {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    NetworkManagerCommitImpl(
-        NetworkManagerCommitInner innerObject,
+    NetworkManagerCommitImpl(NetworkManagerCommitInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

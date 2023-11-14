@@ -11,7 +11,9 @@ import com.azure.resourcemanager.policy.generated.models.PolicyType;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
 
-/** The policy definition. */
+/**
+ * The policy definition.
+ */
 @Fluent
 public final class PolicyDefinitionInner extends ProxyResource {
     /*
@@ -20,13 +22,15 @@ public final class PolicyDefinitionInner extends ProxyResource {
     @JsonProperty(value = "properties")
     private PolicyDefinitionProperties innerProperties;
 
-    /** Creates an instance of PolicyDefinitionInner class. */
+    /**
+     * Creates an instance of PolicyDefinitionInner class.
+     */
     public PolicyDefinitionInner() {
     }
 
     /**
      * Get the innerProperties property: The policy definition properties.
-     *
+     * 
      * @return the innerProperties value.
      */
     private PolicyDefinitionProperties innerProperties() {
@@ -36,7 +40,7 @@ public final class PolicyDefinitionInner extends ProxyResource {
     /**
      * Get the policyType property: The type of policy definition. Possible values are NotSpecified, BuiltIn, Custom,
      * and Static.
-     *
+     * 
      * @return the policyType value.
      */
     public PolicyType policyType() {
@@ -46,7 +50,7 @@ public final class PolicyDefinitionInner extends ProxyResource {
     /**
      * Set the policyType property: The type of policy definition. Possible values are NotSpecified, BuiltIn, Custom,
      * and Static.
-     *
+     * 
      * @param policyType the policyType value to set.
      * @return the PolicyDefinitionInner object itself.
      */
@@ -60,7 +64,7 @@ public final class PolicyDefinitionInner extends ProxyResource {
 
     /**
      * Get the mode property: The policy definition mode. Some examples are All, Indexed, Microsoft.KeyVault.Data.
-     *
+     * 
      * @return the mode value.
      */
     public String mode() {
@@ -69,7 +73,7 @@ public final class PolicyDefinitionInner extends ProxyResource {
 
     /**
      * Set the mode property: The policy definition mode. Some examples are All, Indexed, Microsoft.KeyVault.Data.
-     *
+     * 
      * @param mode the mode value to set.
      * @return the PolicyDefinitionInner object itself.
      */
@@ -83,7 +87,7 @@ public final class PolicyDefinitionInner extends ProxyResource {
 
     /**
      * Get the displayName property: The display name of the policy definition.
-     *
+     * 
      * @return the displayName value.
      */
     public String displayName() {
@@ -92,7 +96,7 @@ public final class PolicyDefinitionInner extends ProxyResource {
 
     /**
      * Set the displayName property: The display name of the policy definition.
-     *
+     * 
      * @param displayName the displayName value to set.
      * @return the PolicyDefinitionInner object itself.
      */
@@ -106,7 +110,7 @@ public final class PolicyDefinitionInner extends ProxyResource {
 
     /**
      * Get the description property: The policy definition description.
-     *
+     * 
      * @return the description value.
      */
     public String description() {
@@ -115,7 +119,7 @@ public final class PolicyDefinitionInner extends ProxyResource {
 
     /**
      * Set the description property: The policy definition description.
-     *
+     * 
      * @param description the description value to set.
      * @return the PolicyDefinitionInner object itself.
      */
@@ -129,7 +133,7 @@ public final class PolicyDefinitionInner extends ProxyResource {
 
     /**
      * Get the policyRule property: The policy rule.
-     *
+     * 
      * @return the policyRule value.
      */
     public Object policyRule() {
@@ -138,7 +142,7 @@ public final class PolicyDefinitionInner extends ProxyResource {
 
     /**
      * Set the policyRule property: The policy rule.
-     *
+     * 
      * @param policyRule the policyRule value to set.
      * @return the PolicyDefinitionInner object itself.
      */
@@ -153,7 +157,7 @@ public final class PolicyDefinitionInner extends ProxyResource {
     /**
      * Get the metadata property: The policy definition metadata. Metadata is an open ended object and is typically a
      * collection of key value pairs.
-     *
+     * 
      * @return the metadata value.
      */
     public Object metadata() {
@@ -163,7 +167,7 @@ public final class PolicyDefinitionInner extends ProxyResource {
     /**
      * Set the metadata property: The policy definition metadata. Metadata is an open ended object and is typically a
      * collection of key value pairs.
-     *
+     * 
      * @param metadata the metadata value to set.
      * @return the PolicyDefinitionInner object itself.
      */
@@ -178,7 +182,7 @@ public final class PolicyDefinitionInner extends ProxyResource {
     /**
      * Get the parameters property: The parameter definitions for parameters used in the policy rule. The keys are the
      * parameter names.
-     *
+     * 
      * @return the parameters value.
      */
     public Map<String, ParameterDefinitionsValue> parameters() {
@@ -188,7 +192,7 @@ public final class PolicyDefinitionInner extends ProxyResource {
     /**
      * Set the parameters property: The parameter definitions for parameters used in the policy rule. The keys are the
      * parameter names.
-     *
+     * 
      * @param parameters the parameters value to set.
      * @return the PolicyDefinitionInner object itself.
      */
@@ -202,7 +206,7 @@ public final class PolicyDefinitionInner extends ProxyResource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

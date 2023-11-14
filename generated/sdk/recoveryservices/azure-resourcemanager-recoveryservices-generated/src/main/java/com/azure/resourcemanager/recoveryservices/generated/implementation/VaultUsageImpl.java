@@ -15,8 +15,7 @@ public final class VaultUsageImpl implements VaultUsage {
 
     private final com.azure.resourcemanager.recoveryservices.generated.RecoveryServicesManager serviceManager;
 
-    VaultUsageImpl(
-        VaultUsageInner innerObject,
+    VaultUsageImpl(VaultUsageInner innerObject,
         com.azure.resourcemanager.recoveryservices.generated.RecoveryServicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

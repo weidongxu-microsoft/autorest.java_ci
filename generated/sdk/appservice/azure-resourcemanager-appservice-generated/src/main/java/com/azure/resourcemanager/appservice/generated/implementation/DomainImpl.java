@@ -183,20 +183,14 @@ public final class DomainImpl implements Domain, Domain.Definition, Domain.Updat
     }
 
     public Domain create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDomains()
-                .createOrUpdate(resourceGroupName, domainName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getDomains().createOrUpdate(resourceGroupName, domainName,
+            this.innerModel(), Context.NONE);
         return this;
     }
 
     public Domain create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDomains()
-                .createOrUpdate(resourceGroupName, domainName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getDomains().createOrUpdate(resourceGroupName, domainName,
+            this.innerModel(), context);
         return this;
     }
 
@@ -212,27 +206,19 @@ public final class DomainImpl implements Domain, Domain.Definition, Domain.Updat
     }
 
     public Domain apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDomains()
-                .updateWithResponse(resourceGroupName, domainName, updateDomain, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getDomains()
+            .updateWithResponse(resourceGroupName, domainName, updateDomain, Context.NONE).getValue();
         return this;
     }
 
     public Domain apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDomains()
-                .updateWithResponse(resourceGroupName, domainName, updateDomain, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getDomains()
+            .updateWithResponse(resourceGroupName, domainName, updateDomain, context).getValue();
         return this;
     }
 
-    DomainImpl(
-        DomainInner innerObject, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
+    DomainImpl(DomainInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
@@ -240,22 +226,14 @@ public final class DomainImpl implements Domain, Domain.Definition, Domain.Updat
     }
 
     public Domain refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDomains()
-                .getByResourceGroupWithResponse(resourceGroupName, domainName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getDomains()
+            .getByResourceGroupWithResponse(resourceGroupName, domainName, Context.NONE).getValue();
         return this;
     }
 
     public Domain refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDomains()
-                .getByResourceGroupWithResponse(resourceGroupName, domainName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getDomains()
+            .getByResourceGroupWithResponse(resourceGroupName, domainName, context).getValue();
         return this;
     }
 

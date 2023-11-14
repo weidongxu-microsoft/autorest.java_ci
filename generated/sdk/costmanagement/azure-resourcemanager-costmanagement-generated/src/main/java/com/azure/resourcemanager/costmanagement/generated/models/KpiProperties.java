@@ -7,7 +7,9 @@ package com.azure.resourcemanager.costmanagement.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Each KPI must contain a 'type' and 'enabled' key. */
+/**
+ * Each KPI must contain a 'type' and 'enabled' key.
+ */
 @Fluent
 public final class KpiProperties {
     /*
@@ -28,13 +30,15 @@ public final class KpiProperties {
     @JsonProperty(value = "enabled")
     private Boolean enabled;
 
-    /** Creates an instance of KpiProperties class. */
+    /**
+     * Creates an instance of KpiProperties class.
+     */
     public KpiProperties() {
     }
 
     /**
      * Get the type property: KPI type (Forecast, Budget).
-     *
+     * 
      * @return the type value.
      */
     public KpiType type() {
@@ -43,7 +47,7 @@ public final class KpiProperties {
 
     /**
      * Set the type property: KPI type (Forecast, Budget).
-     *
+     * 
      * @param type the type value to set.
      * @return the KpiProperties object itself.
      */
@@ -54,7 +58,7 @@ public final class KpiProperties {
 
     /**
      * Get the id property: ID of resource related to metric (budget).
-     *
+     * 
      * @return the id value.
      */
     public String id() {
@@ -63,7 +67,7 @@ public final class KpiProperties {
 
     /**
      * Set the id property: ID of resource related to metric (budget).
-     *
+     * 
      * @param id the id value to set.
      * @return the KpiProperties object itself.
      */
@@ -74,7 +78,7 @@ public final class KpiProperties {
 
     /**
      * Get the enabled property: show the KPI in the UI?.
-     *
+     * 
      * @return the enabled value.
      */
     public Boolean enabled() {
@@ -83,7 +87,7 @@ public final class KpiProperties {
 
     /**
      * Set the enabled property: show the KPI in the UI?.
-     *
+     * 
      * @param enabled the enabled value to set.
      * @return the KpiProperties object itself.
      */
@@ -94,7 +98,7 @@ public final class KpiProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -10,7 +10,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 import java.util.Map;
 
-/** A private link resource. */
+/**
+ * A private link resource.
+ */
 @Fluent
 public final class MhsmPrivateLinkResource extends ManagedHsmResource {
     /*
@@ -19,34 +21,51 @@ public final class MhsmPrivateLinkResource extends ManagedHsmResource {
     @JsonProperty(value = "properties")
     private MhsmPrivateLinkResourceProperties innerProperties;
 
-    /** Creates an instance of MhsmPrivateLinkResource class. */
+    /**
+     * Creates an instance of MhsmPrivateLinkResource class.
+     */
     public MhsmPrivateLinkResource() {
     }
 
     /**
      * Get the innerProperties property: Resource properties.
-     *
+     * 
      * @return the innerProperties value.
      */
     private MhsmPrivateLinkResourceProperties innerProperties() {
         return this.innerProperties;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public MhsmPrivateLinkResource withSku(ManagedHsmSku sku) {
         super.withSku(sku);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public MhsmPrivateLinkResource withIdentity(ManagedServiceIdentity identity) {
+        super.withIdentity(identity);
+        return this;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public MhsmPrivateLinkResource withLocation(String location) {
         super.withLocation(location);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public MhsmPrivateLinkResource withTags(Map<String, String> tags) {
         super.withTags(tags);
@@ -55,7 +74,7 @@ public final class MhsmPrivateLinkResource extends ManagedHsmResource {
 
     /**
      * Get the groupId property: Group identifier of private link resource.
-     *
+     * 
      * @return the groupId value.
      */
     public String groupId() {
@@ -64,7 +83,7 @@ public final class MhsmPrivateLinkResource extends ManagedHsmResource {
 
     /**
      * Get the requiredMembers property: Required member names of private link resource.
-     *
+     * 
      * @return the requiredMembers value.
      */
     public List<String> requiredMembers() {
@@ -73,7 +92,7 @@ public final class MhsmPrivateLinkResource extends ManagedHsmResource {
 
     /**
      * Get the requiredZoneNames property: Required DNS zone names of the the private link resource.
-     *
+     * 
      * @return the requiredZoneNames value.
      */
     public List<String> requiredZoneNames() {
@@ -82,7 +101,7 @@ public final class MhsmPrivateLinkResource extends ManagedHsmResource {
 
     /**
      * Set the requiredZoneNames property: Required DNS zone names of the the private link resource.
-     *
+     * 
      * @param requiredZoneNames the requiredZoneNames value to set.
      * @return the MhsmPrivateLinkResource object itself.
      */
@@ -96,7 +115,7 @@ public final class MhsmPrivateLinkResource extends ManagedHsmResource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

@@ -7,7 +7,9 @@ package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** DC Access code in the case of Self Managed Shipping. */
+/**
+ * DC Access code in the case of Self Managed Shipping.
+ */
 @Fluent
 public final class DCAccessCodeInner {
     /*
@@ -16,13 +18,15 @@ public final class DCAccessCodeInner {
     @JsonProperty(value = "properties")
     private DCAccessCodeProperties innerProperties;
 
-    /** Creates an instance of DCAccessCodeInner class. */
+    /**
+     * Creates an instance of DCAccessCodeInner class.
+     */
     public DCAccessCodeInner() {
     }
 
     /**
      * Get the innerProperties property: DCAccessCode properties.
-     *
+     * 
      * @return the innerProperties value.
      */
     private DCAccessCodeProperties innerProperties() {
@@ -31,7 +35,7 @@ public final class DCAccessCodeInner {
 
     /**
      * Get the authCode property: DCAccess Code for the Self Managed shipment.
-     *
+     * 
      * @return the authCode value.
      */
     public String authCode() {
@@ -40,7 +44,7 @@ public final class DCAccessCodeInner {
 
     /**
      * Set the authCode property: DCAccess Code for the Self Managed shipment.
-     *
+     * 
      * @param authCode the authCode value to set.
      * @return the DCAccessCodeInner object itself.
      */
@@ -54,7 +58,7 @@ public final class DCAccessCodeInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

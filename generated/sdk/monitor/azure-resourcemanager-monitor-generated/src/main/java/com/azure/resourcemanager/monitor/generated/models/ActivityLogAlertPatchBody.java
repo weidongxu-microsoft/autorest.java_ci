@@ -10,7 +10,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
 
-/** An activity log alert object for the body of patch operations. */
+/**
+ * An activity log alert object for the body of patch operations.
+ */
 @Fluent
 public final class ActivityLogAlertPatchBody {
     /*
@@ -26,13 +28,15 @@ public final class ActivityLogAlertPatchBody {
     @JsonProperty(value = "properties")
     private ActivityLogAlertPatch innerProperties;
 
-    /** Creates an instance of ActivityLogAlertPatchBody class. */
+    /**
+     * Creates an instance of ActivityLogAlertPatchBody class.
+     */
     public ActivityLogAlertPatchBody() {
     }
 
     /**
      * Get the tags property: Resource tags.
-     *
+     * 
      * @return the tags value.
      */
     public Map<String, String> tags() {
@@ -41,7 +45,7 @@ public final class ActivityLogAlertPatchBody {
 
     /**
      * Set the tags property: Resource tags.
-     *
+     * 
      * @param tags the tags value to set.
      * @return the ActivityLogAlertPatchBody object itself.
      */
@@ -52,7 +56,7 @@ public final class ActivityLogAlertPatchBody {
 
     /**
      * Get the innerProperties property: The activity log alert settings for an update operation.
-     *
+     * 
      * @return the innerProperties value.
      */
     private ActivityLogAlertPatch innerProperties() {
@@ -62,7 +66,7 @@ public final class ActivityLogAlertPatchBody {
     /**
      * Get the enabled property: Indicates whether this activity log alert is enabled. If an activity log alert is not
      * enabled, then none of its actions will be activated.
-     *
+     * 
      * @return the enabled value.
      */
     public Boolean enabled() {
@@ -72,7 +76,7 @@ public final class ActivityLogAlertPatchBody {
     /**
      * Set the enabled property: Indicates whether this activity log alert is enabled. If an activity log alert is not
      * enabled, then none of its actions will be activated.
-     *
+     * 
      * @param enabled the enabled value to set.
      * @return the ActivityLogAlertPatchBody object itself.
      */
@@ -86,7 +90,7 @@ public final class ActivityLogAlertPatchBody {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

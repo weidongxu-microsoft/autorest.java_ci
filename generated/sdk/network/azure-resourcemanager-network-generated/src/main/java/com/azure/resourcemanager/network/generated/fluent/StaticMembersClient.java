@@ -11,11 +11,13 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.StaticMemberInner;
 
-/** An instance of this class provides access to all the operations defined in StaticMembersClient. */
+/**
+ * An instance of this class provides access to all the operations defined in StaticMembersClient.
+ */
 public interface StaticMembersClient {
     /**
      * Gets the specified static member.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
      * @param networkGroupName The name of the network group.
@@ -27,16 +29,12 @@ public interface StaticMembersClient {
      * @return the specified static member along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<StaticMemberInner> getWithResponse(
-        String resourceGroupName,
-        String networkManagerName,
-        String networkGroupName,
-        String staticMemberName,
-        Context context);
+    Response<StaticMemberInner> getWithResponse(String resourceGroupName, String networkManagerName,
+        String networkGroupName, String staticMemberName, Context context);
 
     /**
      * Gets the specified static member.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
      * @param networkGroupName The name of the network group.
@@ -47,12 +45,12 @@ public interface StaticMembersClient {
      * @return the specified static member.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    StaticMemberInner get(
-        String resourceGroupName, String networkManagerName, String networkGroupName, String staticMemberName);
+    StaticMemberInner get(String resourceGroupName, String networkManagerName, String networkGroupName,
+        String staticMemberName);
 
     /**
      * Creates or updates a static member.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
      * @param networkGroupName The name of the network group.
@@ -65,17 +63,12 @@ public interface StaticMembersClient {
      * @return staticMember Item along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<StaticMemberInner> createOrUpdateWithResponse(
-        String resourceGroupName,
-        String networkManagerName,
-        String networkGroupName,
-        String staticMemberName,
-        StaticMemberInner parameters,
-        Context context);
+    Response<StaticMemberInner> createOrUpdateWithResponse(String resourceGroupName, String networkManagerName,
+        String networkGroupName, String staticMemberName, StaticMemberInner parameters, Context context);
 
     /**
      * Creates or updates a static member.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
      * @param networkGroupName The name of the network group.
@@ -87,16 +80,12 @@ public interface StaticMembersClient {
      * @return staticMember Item.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    StaticMemberInner createOrUpdate(
-        String resourceGroupName,
-        String networkManagerName,
-        String networkGroupName,
-        String staticMemberName,
-        StaticMemberInner parameters);
+    StaticMemberInner createOrUpdate(String resourceGroupName, String networkManagerName, String networkGroupName,
+        String staticMemberName, StaticMemberInner parameters);
 
     /**
      * Deletes a static member.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
      * @param networkGroupName The name of the network group.
@@ -108,16 +97,12 @@ public interface StaticMembersClient {
      * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<Void> deleteWithResponse(
-        String resourceGroupName,
-        String networkManagerName,
-        String networkGroupName,
-        String staticMemberName,
-        Context context);
+    Response<Void> deleteWithResponse(String resourceGroupName, String networkManagerName, String networkGroupName,
+        String staticMemberName, Context context);
 
     /**
      * Deletes a static member.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
      * @param networkGroupName The name of the network group.
@@ -131,7 +116,7 @@ public interface StaticMembersClient {
 
     /**
      * Lists the specified static member.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
      * @param networkGroupName The name of the network group.
@@ -145,15 +130,15 @@ public interface StaticMembersClient {
 
     /**
      * Lists the specified static member.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
      * @param networkGroupName The name of the network group.
      * @param top An optional query parameter which specifies the maximum number of records to be returned by the
-     *     server.
+     * server.
      * @param skipToken SkipToken is only used if a previous operation returned a partial result. If a previous response
-     *     contains a nextLink element, the value of the nextLink element will include a skipToken parameter that
-     *     specifies a starting point to use for subsequent calls.
+     * contains a nextLink element, the value of the nextLink element will include a skipToken parameter that specifies
+     * a starting point to use for subsequent calls.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -161,11 +146,6 @@ public interface StaticMembersClient {
      * @return result of the request to list StaticMember as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<StaticMemberInner> list(
-        String resourceGroupName,
-        String networkManagerName,
-        String networkGroupName,
-        Integer top,
-        String skipToken,
-        Context context);
+    PagedIterable<StaticMemberInner> list(String resourceGroupName, String networkManagerName, String networkGroupName,
+        Integer top, String skipToken, Context context);
 }

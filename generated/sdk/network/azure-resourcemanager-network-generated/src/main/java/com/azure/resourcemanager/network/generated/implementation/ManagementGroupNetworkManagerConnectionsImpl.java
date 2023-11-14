@@ -21,37 +21,28 @@ public final class ManagementGroupNetworkManagerConnectionsImpl implements Manag
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public ManagementGroupNetworkManagerConnectionsImpl(
-        ManagementGroupNetworkManagerConnectionsClient innerClient,
+    public ManagementGroupNetworkManagerConnectionsImpl(ManagementGroupNetworkManagerConnectionsClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<NetworkManagerConnection> createOrUpdateWithResponse(
-        String managementGroupId,
-        String networkManagerConnectionName,
-        NetworkManagerConnectionInner parameters,
-        Context context) {
-        Response<NetworkManagerConnectionInner> inner =
-            this
-                .serviceClient()
-                .createOrUpdateWithResponse(managementGroupId, networkManagerConnectionName, parameters, context);
+    public Response<NetworkManagerConnection> createOrUpdateWithResponse(String managementGroupId,
+        String networkManagerConnectionName, NetworkManagerConnectionInner parameters, Context context) {
+        Response<NetworkManagerConnectionInner> inner = this.serviceClient()
+            .createOrUpdateWithResponse(managementGroupId, networkManagerConnectionName, parameters, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new NetworkManagerConnectionImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public NetworkManagerConnection createOrUpdate(
-        String managementGroupId, String networkManagerConnectionName, NetworkManagerConnectionInner parameters) {
-        NetworkManagerConnectionInner inner =
-            this.serviceClient().createOrUpdate(managementGroupId, networkManagerConnectionName, parameters);
+    public NetworkManagerConnection createOrUpdate(String managementGroupId, String networkManagerConnectionName,
+        NetworkManagerConnectionInner parameters) {
+        NetworkManagerConnectionInner inner
+            = this.serviceClient().createOrUpdate(managementGroupId, networkManagerConnectionName, parameters);
         if (inner != null) {
             return new NetworkManagerConnectionImpl(inner, this.manager());
         } else {
@@ -59,15 +50,12 @@ public final class ManagementGroupNetworkManagerConnectionsImpl implements Manag
         }
     }
 
-    public Response<NetworkManagerConnection> getWithResponse(
-        String managementGroupId, String networkManagerConnectionName, Context context) {
-        Response<NetworkManagerConnectionInner> inner =
-            this.serviceClient().getWithResponse(managementGroupId, networkManagerConnectionName, context);
+    public Response<NetworkManagerConnection> getWithResponse(String managementGroupId,
+        String networkManagerConnectionName, Context context) {
+        Response<NetworkManagerConnectionInner> inner
+            = this.serviceClient().getWithResponse(managementGroupId, networkManagerConnectionName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new NetworkManagerConnectionImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -83,8 +71,8 @@ public final class ManagementGroupNetworkManagerConnectionsImpl implements Manag
         }
     }
 
-    public Response<Void> deleteByResourceGroupWithResponse(
-        String managementGroupId, String networkManagerConnectionName, Context context) {
+    public Response<Void> deleteByResourceGroupWithResponse(String managementGroupId,
+        String networkManagerConnectionName, Context context) {
         return this.serviceClient().deleteWithResponse(managementGroupId, networkManagerConnectionName, context);
     }
 
@@ -97,10 +85,10 @@ public final class ManagementGroupNetworkManagerConnectionsImpl implements Manag
         return Utils.mapPage(inner, inner1 -> new NetworkManagerConnectionImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<NetworkManagerConnection> list(
-        String managementGroupId, Integer top, String skipToken, Context context) {
-        PagedIterable<NetworkManagerConnectionInner> inner =
-            this.serviceClient().list(managementGroupId, top, skipToken, context);
+    public PagedIterable<NetworkManagerConnection> list(String managementGroupId, Integer top, String skipToken,
+        Context context) {
+        PagedIterable<NetworkManagerConnectionInner> inner
+            = this.serviceClient().list(managementGroupId, top, skipToken, context);
         return Utils.mapPage(inner, inner1 -> new NetworkManagerConnectionImpl(inner1, this.manager()));
     }
 

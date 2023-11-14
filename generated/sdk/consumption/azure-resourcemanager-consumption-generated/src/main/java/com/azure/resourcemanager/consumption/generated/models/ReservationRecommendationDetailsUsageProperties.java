@@ -8,7 +8,9 @@ import com.azure.core.annotation.Immutable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Details about historical usage data that has been used for computing the recommendation. */
+/**
+ * Details about historical usage data that has been used for computing the recommendation.
+ */
 @Immutable
 public final class ReservationRecommendationDetailsUsageProperties {
     /*
@@ -30,7 +32,7 @@ public final class ReservationRecommendationDetailsUsageProperties {
     private String lookBackUnitType;
 
     /*
-     * The breakdown of historical resource usage.  The values are in the order of usage between the
+     * The breakdown of historical resource usage. The values are in the order of usage between the
      * firstConsumptionDate and the lastConsumptionDate.
      */
     @JsonProperty(value = "usageData", access = JsonProperty.Access.WRITE_ONLY)
@@ -42,14 +44,16 @@ public final class ReservationRecommendationDetailsUsageProperties {
     @JsonProperty(value = "usageGrain", access = JsonProperty.Access.WRITE_ONLY)
     private String usageGrain;
 
-    /** Creates an instance of ReservationRecommendationDetailsUsageProperties class. */
+    /**
+     * Creates an instance of ReservationRecommendationDetailsUsageProperties class.
+     */
     public ReservationRecommendationDetailsUsageProperties() {
     }
 
     /**
      * Get the firstConsumptionDate property: The first usage date used for looking back for computing the
      * recommendation.
-     *
+     * 
      * @return the firstConsumptionDate value.
      */
     public String firstConsumptionDate() {
@@ -57,8 +61,9 @@ public final class ReservationRecommendationDetailsUsageProperties {
     }
 
     /**
-     * Get the lastConsumptionDate property: The last usage date used for looking back for computing the recommendation.
-     *
+     * Get the lastConsumptionDate property: The last usage date used for looking back for computing the
+     * recommendation.
+     * 
      * @return the lastConsumptionDate value.
      */
     public String lastConsumptionDate() {
@@ -67,7 +72,7 @@ public final class ReservationRecommendationDetailsUsageProperties {
 
     /**
      * Get the lookBackUnitType property: What the usage data values represent ex: virtual machine instance.
-     *
+     * 
      * @return the lookBackUnitType value.
      */
     public String lookBackUnitType() {
@@ -77,7 +82,7 @@ public final class ReservationRecommendationDetailsUsageProperties {
     /**
      * Get the usageData property: The breakdown of historical resource usage. The values are in the order of usage
      * between the firstConsumptionDate and the lastConsumptionDate.
-     *
+     * 
      * @return the usageData value.
      */
     public List<Float> usageData() {
@@ -86,7 +91,7 @@ public final class ReservationRecommendationDetailsUsageProperties {
 
     /**
      * Get the usageGrain property: The grain of the values represented in the usage data ex: hourly.
-     *
+     * 
      * @return the usageGrain value.
      */
     public String usageGrain() {
@@ -95,7 +100,7 @@ public final class ReservationRecommendationDetailsUsageProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -15,8 +15,8 @@ public final class MSDeployLogImpl implements MSDeployLog {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    MSDeployLogImpl(
-        MSDeployLogInner innerObject, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
+    MSDeployLogImpl(MSDeployLogInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

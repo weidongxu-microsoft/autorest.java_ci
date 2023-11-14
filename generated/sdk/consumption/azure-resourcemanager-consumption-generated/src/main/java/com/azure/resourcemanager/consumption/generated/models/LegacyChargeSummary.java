@@ -12,7 +12,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.math.BigDecimal;
 
-/** Legacy charge summary. */
+/**
+ * Legacy charge summary.
+ */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "kind")
 @JsonTypeName("legacy")
 @Fluent
@@ -23,20 +25,24 @@ public final class LegacyChargeSummary extends ChargeSummary {
     @JsonProperty(value = "properties", required = true)
     private LegacyChargeSummaryProperties innerProperties = new LegacyChargeSummaryProperties();
 
-    /** Creates an instance of LegacyChargeSummary class. */
+    /**
+     * Creates an instance of LegacyChargeSummary class.
+     */
     public LegacyChargeSummary() {
     }
 
     /**
      * Get the innerProperties property: Properties for legacy charge summary.
-     *
+     * 
      * @return the innerProperties value.
      */
     private LegacyChargeSummaryProperties innerProperties() {
         return this.innerProperties;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public LegacyChargeSummary withEtag(String etag) {
         super.withEtag(etag);
@@ -45,7 +51,7 @@ public final class LegacyChargeSummary extends ChargeSummary {
 
     /**
      * Get the billingPeriodId property: The id of the billing period resource that the charge belongs to.
-     *
+     * 
      * @return the billingPeriodId value.
      */
     public String billingPeriodId() {
@@ -54,7 +60,7 @@ public final class LegacyChargeSummary extends ChargeSummary {
 
     /**
      * Get the usageStart property: Usage start date.
-     *
+     * 
      * @return the usageStart value.
      */
     public String usageStart() {
@@ -63,7 +69,7 @@ public final class LegacyChargeSummary extends ChargeSummary {
 
     /**
      * Get the usageEnd property: Usage end date.
-     *
+     * 
      * @return the usageEnd value.
      */
     public String usageEnd() {
@@ -72,7 +78,7 @@ public final class LegacyChargeSummary extends ChargeSummary {
 
     /**
      * Get the azureCharges property: Azure Charges.
-     *
+     * 
      * @return the azureCharges value.
      */
     public BigDecimal azureCharges() {
@@ -81,7 +87,7 @@ public final class LegacyChargeSummary extends ChargeSummary {
 
     /**
      * Get the chargesBilledSeparately property: Charges Billed separately.
-     *
+     * 
      * @return the chargesBilledSeparately value.
      */
     public BigDecimal chargesBilledSeparately() {
@@ -90,7 +96,7 @@ public final class LegacyChargeSummary extends ChargeSummary {
 
     /**
      * Get the azureMarketplaceCharges property: Marketplace Charges.
-     *
+     * 
      * @return the azureMarketplaceCharges value.
      */
     public BigDecimal azureMarketplaceCharges() {
@@ -99,7 +105,7 @@ public final class LegacyChargeSummary extends ChargeSummary {
 
     /**
      * Get the currency property: Currency Code.
-     *
+     * 
      * @return the currency value.
      */
     public String currency() {
@@ -108,17 +114,15 @@ public final class LegacyChargeSummary extends ChargeSummary {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override
     public void validate() {
         super.validate();
         if (innerProperties() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property innerProperties in model LegacyChargeSummary"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property innerProperties in model LegacyChargeSummary"));
         } else {
             innerProperties().validate();
         }

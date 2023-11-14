@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
-/** Cluster Compute Data. */
+/**
+ * Cluster Compute Data.
+ */
 @Fluent
 public final class ClusterCapacityViewData {
     /*
@@ -41,13 +43,15 @@ public final class ClusterCapacityViewData {
     @JsonProperty(value = "totalProvisionedNonHpnCores")
     private Long totalProvisionedNonHpnCores;
 
-    /** Creates an instance of ClusterCapacityViewData class. */
+    /**
+     * Creates an instance of ClusterCapacityViewData class.
+     */
     public ClusterCapacityViewData() {
     }
 
     /**
      * Get the fqdn property: The FQDN of the cluster.
-     *
+     * 
      * @return the fqdn value.
      */
     public String fqdn() {
@@ -56,7 +60,7 @@ public final class ClusterCapacityViewData {
 
     /**
      * Set the fqdn property: The FQDN of the cluster.
-     *
+     * 
      * @param fqdn the fqdn value to set.
      * @return the ClusterCapacityViewData object itself.
      */
@@ -67,7 +71,7 @@ public final class ClusterCapacityViewData {
 
     /**
      * Get the gpuCapacity property: The cluster's GPU capacity.
-     *
+     * 
      * @return the gpuCapacity value.
      */
     public ClusterGpuCapacity gpuCapacity() {
@@ -76,7 +80,7 @@ public final class ClusterCapacityViewData {
 
     /**
      * Set the gpuCapacity property: The cluster's GPU capacity.
-     *
+     * 
      * @param gpuCapacity the gpuCapacity value to set.
      * @return the ClusterCapacityViewData object itself.
      */
@@ -87,7 +91,7 @@ public final class ClusterCapacityViewData {
 
     /**
      * Get the memoryCapacity property: The cluster's memory capacity.
-     *
+     * 
      * @return the memoryCapacity value.
      */
     public ClusterMemoryCapacity memoryCapacity() {
@@ -96,7 +100,7 @@ public final class ClusterCapacityViewData {
 
     /**
      * Set the memoryCapacity property: The cluster's memory capacity.
-     *
+     * 
      * @param memoryCapacity the memoryCapacity value to set.
      * @return the ClusterCapacityViewData object itself.
      */
@@ -107,7 +111,7 @@ public final class ClusterCapacityViewData {
 
     /**
      * Get the lastRefreshedTime property: The last time at which the ClusterCapacityViewData was set.
-     *
+     * 
      * @return the lastRefreshedTime value.
      */
     public OffsetDateTime lastRefreshedTime() {
@@ -116,7 +120,7 @@ public final class ClusterCapacityViewData {
 
     /**
      * Set the lastRefreshedTime property: The last time at which the ClusterCapacityViewData was set.
-     *
+     * 
      * @param lastRefreshedTime the lastRefreshedTime value to set.
      * @return the ClusterCapacityViewData object itself.
      */
@@ -127,7 +131,7 @@ public final class ClusterCapacityViewData {
 
     /**
      * Get the totalProvisionedNonHpnCores property: The total # of vCPUs provisioned by non-HPN VM per appliance.
-     *
+     * 
      * @return the totalProvisionedNonHpnCores value.
      */
     public Long totalProvisionedNonHpnCores() {
@@ -136,7 +140,7 @@ public final class ClusterCapacityViewData {
 
     /**
      * Set the totalProvisionedNonHpnCores property: The total # of vCPUs provisioned by non-HPN VM per appliance.
-     *
+     * 
      * @param totalProvisionedNonHpnCores the totalProvisionedNonHpnCores value to set.
      * @return the ClusterCapacityViewData object itself.
      */
@@ -147,7 +151,7 @@ public final class ClusterCapacityViewData {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

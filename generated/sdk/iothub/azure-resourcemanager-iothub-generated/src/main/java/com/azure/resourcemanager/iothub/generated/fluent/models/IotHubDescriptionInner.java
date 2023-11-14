@@ -14,7 +14,9 @@ import com.azure.resourcemanager.iothub.generated.models.IotHubSkuInfo;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
 
-/** The description of the IoT hub. */
+/**
+ * The description of the IoT hub.
+ */
 @Fluent
 public final class IotHubDescriptionInner extends Resource {
     /*
@@ -48,14 +50,16 @@ public final class IotHubDescriptionInner extends Resource {
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
-    /** Creates an instance of IotHubDescriptionInner class. */
+    /**
+     * Creates an instance of IotHubDescriptionInner class.
+     */
     public IotHubDescriptionInner() {
     }
 
     /**
      * Get the etag property: The Etag field is *not* required. If it is provided in the response body, it must also be
      * provided as a header per the normal ETag convention.
-     *
+     * 
      * @return the etag value.
      */
     public String etag() {
@@ -65,7 +69,7 @@ public final class IotHubDescriptionInner extends Resource {
     /**
      * Set the etag property: The Etag field is *not* required. If it is provided in the response body, it must also be
      * provided as a header per the normal ETag convention.
-     *
+     * 
      * @param etag the etag value to set.
      * @return the IotHubDescriptionInner object itself.
      */
@@ -76,7 +80,7 @@ public final class IotHubDescriptionInner extends Resource {
 
     /**
      * Get the properties property: IotHub properties.
-     *
+     * 
      * @return the properties value.
      */
     public IotHubProperties properties() {
@@ -85,7 +89,7 @@ public final class IotHubDescriptionInner extends Resource {
 
     /**
      * Set the properties property: IotHub properties.
-     *
+     * 
      * @param properties the properties value to set.
      * @return the IotHubDescriptionInner object itself.
      */
@@ -96,7 +100,7 @@ public final class IotHubDescriptionInner extends Resource {
 
     /**
      * Get the sku property: IotHub SKU info.
-     *
+     * 
      * @return the sku value.
      */
     public IotHubSkuInfo sku() {
@@ -105,7 +109,7 @@ public final class IotHubDescriptionInner extends Resource {
 
     /**
      * Set the sku property: IotHub SKU info.
-     *
+     * 
      * @param sku the sku value to set.
      * @return the IotHubDescriptionInner object itself.
      */
@@ -116,7 +120,7 @@ public final class IotHubDescriptionInner extends Resource {
 
     /**
      * Get the identity property: The managed identities for the IotHub.
-     *
+     * 
      * @return the identity value.
      */
     public ArmIdentity identity() {
@@ -125,7 +129,7 @@ public final class IotHubDescriptionInner extends Resource {
 
     /**
      * Set the identity property: The managed identities for the IotHub.
-     *
+     * 
      * @param identity the identity value to set.
      * @return the IotHubDescriptionInner object itself.
      */
@@ -136,21 +140,25 @@ public final class IotHubDescriptionInner extends Resource {
 
     /**
      * Get the systemData property: The system meta data relating to this resource.
-     *
+     * 
      * @return the systemData value.
      */
     public SystemData systemData() {
         return this.systemData;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public IotHubDescriptionInner withLocation(String location) {
         super.withLocation(location);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public IotHubDescriptionInner withTags(Map<String, String> tags) {
         super.withTags(tags);
@@ -159,7 +167,7 @@ public final class IotHubDescriptionInner extends Resource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
@@ -167,9 +175,8 @@ public final class IotHubDescriptionInner extends Resource {
             properties().validate();
         }
         if (sku() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property sku in model IotHubDescriptionInner"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property sku in model IotHubDescriptionInner"));
         } else {
             sku().validate();
         }

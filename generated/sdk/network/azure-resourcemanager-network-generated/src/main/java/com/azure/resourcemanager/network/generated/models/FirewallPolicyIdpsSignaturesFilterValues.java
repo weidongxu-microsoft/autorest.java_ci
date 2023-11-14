@@ -7,11 +7,13 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of FirewallPolicyIdpsSignaturesFilterValues. */
+/**
+ * Resource collection API of FirewallPolicyIdpsSignaturesFilterValues.
+ */
 public interface FirewallPolicyIdpsSignaturesFilterValues {
     /**
      * Retrieves the current filter values for the signatures overrides.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @param parameters Describes the filter values possibles for a given column.
@@ -21,15 +23,12 @@ public interface FirewallPolicyIdpsSignaturesFilterValues {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return describes the list of all possible values for a specific filter value along with {@link Response}.
      */
-    Response<SignatureOverridesFilterValuesResponse> listWithResponse(
-        String resourceGroupName,
-        String firewallPolicyName,
-        SignatureOverridesFilterValuesQuery parameters,
-        Context context);
+    Response<SignatureOverridesFilterValuesResponse> listWithResponse(String resourceGroupName,
+        String firewallPolicyName, SignatureOverridesFilterValuesQuery parameters, Context context);
 
     /**
      * Retrieves the current filter values for the signatures overrides.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @param parameters Describes the filter values possibles for a given column.
@@ -38,6 +37,6 @@ public interface FirewallPolicyIdpsSignaturesFilterValues {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return describes the list of all possible values for a specific filter value.
      */
-    SignatureOverridesFilterValuesResponse list(
-        String resourceGroupName, String firewallPolicyName, SignatureOverridesFilterValuesQuery parameters);
+    SignatureOverridesFilterValuesResponse list(String resourceGroupName, String firewallPolicyName,
+        SignatureOverridesFilterValuesQuery parameters);
 }

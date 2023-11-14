@@ -7,7 +7,9 @@ package com.azure.resourcemanager.keyvault.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Properties of the secret. */
+/**
+ * Properties of the secret.
+ */
 @Fluent
 public final class SecretProperties {
     /*
@@ -42,7 +44,9 @@ public final class SecretProperties {
     @JsonProperty(value = "secretUriWithVersion", access = JsonProperty.Access.WRITE_ONLY)
     private String secretUriWithVersion;
 
-    /** Creates an instance of SecretProperties class. */
+    /**
+     * Creates an instance of SecretProperties class.
+     */
     public SecretProperties() {
     }
 
@@ -50,7 +54,7 @@ public final class SecretProperties {
      * Get the value property: The value of the secret. NOTE: 'value' will never be returned from the service, as APIs
      * using this model are is intended for internal use in ARM deployments. Users should use the data-plane REST
      * service for interaction with vault secrets.
-     *
+     * 
      * @return the value value.
      */
     public String value() {
@@ -61,7 +65,7 @@ public final class SecretProperties {
      * Set the value property: The value of the secret. NOTE: 'value' will never be returned from the service, as APIs
      * using this model are is intended for internal use in ARM deployments. Users should use the data-plane REST
      * service for interaction with vault secrets.
-     *
+     * 
      * @param value the value value to set.
      * @return the SecretProperties object itself.
      */
@@ -72,7 +76,7 @@ public final class SecretProperties {
 
     /**
      * Get the contentType property: The content type of the secret.
-     *
+     * 
      * @return the contentType value.
      */
     public String contentType() {
@@ -81,7 +85,7 @@ public final class SecretProperties {
 
     /**
      * Set the contentType property: The content type of the secret.
-     *
+     * 
      * @param contentType the contentType value to set.
      * @return the SecretProperties object itself.
      */
@@ -92,7 +96,7 @@ public final class SecretProperties {
 
     /**
      * Get the attributes property: The attributes of the secret.
-     *
+     * 
      * @return the attributes value.
      */
     public SecretAttributes attributes() {
@@ -101,7 +105,7 @@ public final class SecretProperties {
 
     /**
      * Set the attributes property: The attributes of the secret.
-     *
+     * 
      * @param attributes the attributes value to set.
      * @return the SecretProperties object itself.
      */
@@ -112,7 +116,7 @@ public final class SecretProperties {
 
     /**
      * Get the secretUri property: The URI to retrieve the current version of the secret.
-     *
+     * 
      * @return the secretUri value.
      */
     public String secretUri() {
@@ -121,7 +125,7 @@ public final class SecretProperties {
 
     /**
      * Get the secretUriWithVersion property: The URI to retrieve the specific version of the secret.
-     *
+     * 
      * @return the secretUriWithVersion value.
      */
     public String secretUriWithVersion() {
@@ -130,7 +134,7 @@ public final class SecretProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

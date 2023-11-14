@@ -7,7 +7,7 @@ package com.azure.resourcemanager.network.generated.implementation;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkVirtualApplianceConnectionInner;
 import com.azure.resourcemanager.network.generated.models.NetworkVirtualApplianceConnection;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
-import com.azure.resourcemanager.network.generated.models.RoutingConfigurationNfv;
+import com.azure.resourcemanager.network.generated.models.RoutingConfiguration;
 import java.util.Collections;
 import java.util.List;
 
@@ -16,8 +16,7 @@ public final class NetworkVirtualApplianceConnectionImpl implements NetworkVirtu
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    NetworkVirtualApplianceConnectionImpl(
-        NetworkVirtualApplianceConnectionInner innerObject,
+    NetworkVirtualApplianceConnectionImpl(NetworkVirtualApplianceConnectionInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -60,7 +59,7 @@ public final class NetworkVirtualApplianceConnectionImpl implements NetworkVirtu
         return this.innerModel().enableInternetSecurity();
     }
 
-    public RoutingConfigurationNfv routingConfiguration() {
+    public RoutingConfiguration routingConfiguration() {
         return this.innerModel().routingConfiguration();
     }
 

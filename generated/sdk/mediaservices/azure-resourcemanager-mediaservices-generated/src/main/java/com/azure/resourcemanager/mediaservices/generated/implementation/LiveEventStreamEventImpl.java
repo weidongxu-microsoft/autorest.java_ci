@@ -16,8 +16,7 @@ public final class LiveEventStreamEventImpl implements LiveEventStreamEvent {
 
     private final com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager;
 
-    LiveEventStreamEventImpl(
-        LiveEventStreamEventInner innerObject,
+    LiveEventStreamEventImpl(LiveEventStreamEventInner innerObject,
         com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

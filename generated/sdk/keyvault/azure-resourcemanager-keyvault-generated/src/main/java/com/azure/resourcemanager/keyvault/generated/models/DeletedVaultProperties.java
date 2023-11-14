@@ -10,7 +10,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.Map;
 
-/** Properties of the deleted vault. */
+/**
+ * Properties of the deleted vault.
+ */
 @Immutable
 public final class DeletedVaultProperties {
     /*
@@ -50,13 +52,15 @@ public final class DeletedVaultProperties {
     @JsonProperty(value = "purgeProtectionEnabled", access = JsonProperty.Access.WRITE_ONLY)
     private Boolean purgeProtectionEnabled;
 
-    /** Creates an instance of DeletedVaultProperties class. */
+    /**
+     * Creates an instance of DeletedVaultProperties class.
+     */
     public DeletedVaultProperties() {
     }
 
     /**
      * Get the vaultId property: The resource id of the original vault.
-     *
+     * 
      * @return the vaultId value.
      */
     public String vaultId() {
@@ -65,7 +69,7 @@ public final class DeletedVaultProperties {
 
     /**
      * Get the location property: The location of the original vault.
-     *
+     * 
      * @return the location value.
      */
     public String location() {
@@ -74,7 +78,7 @@ public final class DeletedVaultProperties {
 
     /**
      * Get the deletionDate property: The deleted date.
-     *
+     * 
      * @return the deletionDate value.
      */
     public OffsetDateTime deletionDate() {
@@ -83,7 +87,7 @@ public final class DeletedVaultProperties {
 
     /**
      * Get the scheduledPurgeDate property: The scheduled purged date.
-     *
+     * 
      * @return the scheduledPurgeDate value.
      */
     public OffsetDateTime scheduledPurgeDate() {
@@ -92,7 +96,7 @@ public final class DeletedVaultProperties {
 
     /**
      * Get the tags property: Tags of the original vault.
-     *
+     * 
      * @return the tags value.
      */
     public Map<String, String> tags() {
@@ -101,7 +105,7 @@ public final class DeletedVaultProperties {
 
     /**
      * Get the purgeProtectionEnabled property: Purge protection status of the original vault.
-     *
+     * 
      * @return the purgeProtectionEnabled value.
      */
     public Boolean purgeProtectionEnabled() {
@@ -110,7 +114,7 @@ public final class DeletedVaultProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

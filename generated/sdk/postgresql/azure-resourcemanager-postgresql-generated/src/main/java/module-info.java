@@ -10,10 +10,7 @@ module com.azure.resourcemanager.postgresql.generated {
     exports com.azure.resourcemanager.postgresql.generated.fluent.models;
     exports com.azure.resourcemanager.postgresql.generated.models;
 
-    opens com.azure.resourcemanager.postgresql.generated.fluent.models to
-        com.azure.core,
-        com.fasterxml.jackson.databind;
-    opens com.azure.resourcemanager.postgresql.generated.models to
-        com.azure.core,
-        com.fasterxml.jackson.databind;
+    opens com.azure.resourcemanager.postgresql.generated.fluent.models
+        to com.azure.core, com.fasterxml.jackson.databind;
+    opens com.azure.resourcemanager.postgresql.generated.models to com.azure.core, com.fasterxml.jackson.databind;
 }

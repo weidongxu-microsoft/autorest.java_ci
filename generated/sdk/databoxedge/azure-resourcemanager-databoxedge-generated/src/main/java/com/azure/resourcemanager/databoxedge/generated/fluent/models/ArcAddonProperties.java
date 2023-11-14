@@ -11,7 +11,9 @@ import com.azure.resourcemanager.databoxedge.generated.models.HostPlatformType;
 import com.azure.resourcemanager.databoxedge.generated.models.PlatformType;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Arc addon properties. */
+/**
+ * Arc addon properties.
+ */
 @Fluent
 public final class ArcAddonProperties {
     /*
@@ -62,13 +64,15 @@ public final class ArcAddonProperties {
     @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private AddonState provisioningState;
 
-    /** Creates an instance of ArcAddonProperties class. */
+    /**
+     * Creates an instance of ArcAddonProperties class.
+     */
     public ArcAddonProperties() {
     }
 
     /**
      * Get the subscriptionId property: Arc resource subscription Id.
-     *
+     * 
      * @return the subscriptionId value.
      */
     public String subscriptionId() {
@@ -77,7 +81,7 @@ public final class ArcAddonProperties {
 
     /**
      * Set the subscriptionId property: Arc resource subscription Id.
-     *
+     * 
      * @param subscriptionId the subscriptionId value to set.
      * @return the ArcAddonProperties object itself.
      */
@@ -88,7 +92,7 @@ public final class ArcAddonProperties {
 
     /**
      * Get the resourceGroupName property: Arc resource group name.
-     *
+     * 
      * @return the resourceGroupName value.
      */
     public String resourceGroupName() {
@@ -97,7 +101,7 @@ public final class ArcAddonProperties {
 
     /**
      * Set the resourceGroupName property: Arc resource group name.
-     *
+     * 
      * @param resourceGroupName the resourceGroupName value to set.
      * @return the ArcAddonProperties object itself.
      */
@@ -108,7 +112,7 @@ public final class ArcAddonProperties {
 
     /**
      * Get the resourceName property: Arc resource Name.
-     *
+     * 
      * @return the resourceName value.
      */
     public String resourceName() {
@@ -117,7 +121,7 @@ public final class ArcAddonProperties {
 
     /**
      * Set the resourceName property: Arc resource Name.
-     *
+     * 
      * @param resourceName the resourceName value to set.
      * @return the ArcAddonProperties object itself.
      */
@@ -128,7 +132,7 @@ public final class ArcAddonProperties {
 
     /**
      * Get the resourceLocation property: Arc resource location.
-     *
+     * 
      * @return the resourceLocation value.
      */
     public String resourceLocation() {
@@ -137,7 +141,7 @@ public final class ArcAddonProperties {
 
     /**
      * Set the resourceLocation property: Arc resource location.
-     *
+     * 
      * @param resourceLocation the resourceLocation value to set.
      * @return the ArcAddonProperties object itself.
      */
@@ -148,7 +152,7 @@ public final class ArcAddonProperties {
 
     /**
      * Get the version property: Arc resource version.
-     *
+     * 
      * @return the version value.
      */
     public String version() {
@@ -157,7 +161,7 @@ public final class ArcAddonProperties {
 
     /**
      * Get the hostPlatform property: Host OS supported by the Arc addon.
-     *
+     * 
      * @return the hostPlatform value.
      */
     public PlatformType hostPlatform() {
@@ -166,7 +170,7 @@ public final class ArcAddonProperties {
 
     /**
      * Get the hostPlatformType property: Platform where the runtime is hosted.
-     *
+     * 
      * @return the hostPlatformType value.
      */
     public HostPlatformType hostPlatformType() {
@@ -175,7 +179,7 @@ public final class ArcAddonProperties {
 
     /**
      * Get the provisioningState property: Addon Provisioning State.
-     *
+     * 
      * @return the provisioningState value.
      */
     public AddonState provisioningState() {
@@ -184,32 +188,25 @@ public final class ArcAddonProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (subscriptionId() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property subscriptionId in model ArcAddonProperties"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property subscriptionId in model ArcAddonProperties"));
         }
         if (resourceGroupName() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property resourceGroupName in model ArcAddonProperties"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property resourceGroupName in model ArcAddonProperties"));
         }
         if (resourceName() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property resourceName in model ArcAddonProperties"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property resourceName in model ArcAddonProperties"));
         }
         if (resourceLocation() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property resourceLocation in model ArcAddonProperties"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property resourceLocation in model ArcAddonProperties"));
         }
     }
 

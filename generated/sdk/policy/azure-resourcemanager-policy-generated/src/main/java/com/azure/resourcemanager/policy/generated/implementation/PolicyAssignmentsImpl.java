@@ -21,21 +21,18 @@ public final class PolicyAssignmentsImpl implements PolicyAssignments {
 
     private final com.azure.resourcemanager.policy.generated.PolicyManager serviceManager;
 
-    public PolicyAssignmentsImpl(
-        PolicyAssignmentsClient innerClient, com.azure.resourcemanager.policy.generated.PolicyManager serviceManager) {
+    public PolicyAssignmentsImpl(PolicyAssignmentsClient innerClient,
+        com.azure.resourcemanager.policy.generated.PolicyManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<PolicyAssignment> deleteByResourceGroupWithResponse(
-        String scope, String policyAssignmentName, Context context) {
-        Response<PolicyAssignmentInner> inner =
-            this.serviceClient().deleteWithResponse(scope, policyAssignmentName, context);
+    public Response<PolicyAssignment> deleteByResourceGroupWithResponse(String scope, String policyAssignmentName,
+        Context context) {
+        Response<PolicyAssignmentInner> inner
+            = this.serviceClient().deleteWithResponse(scope, policyAssignmentName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new PolicyAssignmentImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -52,13 +49,10 @@ public final class PolicyAssignmentsImpl implements PolicyAssignments {
     }
 
     public Response<PolicyAssignment> getWithResponse(String scope, String policyAssignmentName, Context context) {
-        Response<PolicyAssignmentInner> inner =
-            this.serviceClient().getWithResponse(scope, policyAssignmentName, context);
+        Response<PolicyAssignmentInner> inner
+            = this.serviceClient().getWithResponse(scope, policyAssignmentName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new PolicyAssignmentImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -79,48 +73,25 @@ public final class PolicyAssignmentsImpl implements PolicyAssignments {
         return Utils.mapPage(inner, inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<PolicyAssignment> listByResourceGroup(
-        String resourceGroupName, String filter, Integer top, Context context) {
-        PagedIterable<PolicyAssignmentInner> inner =
-            this.serviceClient().listByResourceGroup(resourceGroupName, filter, top, context);
-        return Utils.mapPage(inner, inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
-    }
-
-    public PagedIterable<PolicyAssignment> listForResource(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName) {
-        PagedIterable<PolicyAssignmentInner> inner =
-            this
-                .serviceClient()
-                .listForResource(
-                    resourceGroupName, resourceProviderNamespace, parentResourcePath, resourceType, resourceName);
-        return Utils.mapPage(inner, inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
-    }
-
-    public PagedIterable<PolicyAssignment> listForResource(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
-        String filter,
-        Integer top,
+    public PagedIterable<PolicyAssignment> listByResourceGroup(String resourceGroupName, String filter, Integer top,
         Context context) {
-        PagedIterable<PolicyAssignmentInner> inner =
-            this
-                .serviceClient()
-                .listForResource(
-                    resourceGroupName,
-                    resourceProviderNamespace,
-                    parentResourcePath,
-                    resourceType,
-                    resourceName,
-                    filter,
-                    top,
-                    context);
+        PagedIterable<PolicyAssignmentInner> inner
+            = this.serviceClient().listByResourceGroup(resourceGroupName, filter, top, context);
+        return Utils.mapPage(inner, inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<PolicyAssignment> listForResource(String resourceGroupName, String resourceProviderNamespace,
+        String parentResourcePath, String resourceType, String resourceName) {
+        PagedIterable<PolicyAssignmentInner> inner = this.serviceClient().listForResource(resourceGroupName,
+            resourceProviderNamespace, parentResourcePath, resourceType, resourceName);
+        return Utils.mapPage(inner, inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<PolicyAssignment> listForResource(String resourceGroupName, String resourceProviderNamespace,
+        String parentResourcePath, String resourceType, String resourceName, String filter, Integer top,
+        Context context) {
+        PagedIterable<PolicyAssignmentInner> inner = this.serviceClient().listForResource(resourceGroupName,
+            resourceProviderNamespace, parentResourcePath, resourceType, resourceName, filter, top, context);
         return Utils.mapPage(inner, inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
     }
 
@@ -129,10 +100,10 @@ public final class PolicyAssignmentsImpl implements PolicyAssignments {
         return Utils.mapPage(inner, inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<PolicyAssignment> listForManagementGroup(
-        String managementGroupId, String filter, Integer top, Context context) {
-        PagedIterable<PolicyAssignmentInner> inner =
-            this.serviceClient().listForManagementGroup(managementGroupId, filter, top, context);
+    public PagedIterable<PolicyAssignment> listForManagementGroup(String managementGroupId, String filter, Integer top,
+        Context context) {
+        PagedIterable<PolicyAssignmentInner> inner
+            = this.serviceClient().listForManagementGroup(managementGroupId, filter, top, context);
         return Utils.mapPage(inner, inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
     }
 
@@ -147,13 +118,10 @@ public final class PolicyAssignmentsImpl implements PolicyAssignments {
     }
 
     public Response<PolicyAssignment> deleteByIdWithResponse(String policyAssignmentId, Context context) {
-        Response<PolicyAssignmentInner> inner =
-            this.serviceClient().deleteByIdWithResponse(policyAssignmentId, context);
+        Response<PolicyAssignmentInner> inner
+            = this.serviceClient().deleteByIdWithResponse(policyAssignmentId, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new PolicyAssignmentImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -169,15 +137,12 @@ public final class PolicyAssignmentsImpl implements PolicyAssignments {
         }
     }
 
-    public Response<PolicyAssignment> createByIdWithResponse(
-        String policyAssignmentId, PolicyAssignmentInner parameters, Context context) {
-        Response<PolicyAssignmentInner> inner =
-            this.serviceClient().createByIdWithResponse(policyAssignmentId, parameters, context);
+    public Response<PolicyAssignment> createByIdWithResponse(String policyAssignmentId,
+        PolicyAssignmentInner parameters, Context context) {
+        Response<PolicyAssignmentInner> inner
+            = this.serviceClient().createByIdWithResponse(policyAssignmentId, parameters, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new PolicyAssignmentImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -196,10 +161,7 @@ public final class PolicyAssignmentsImpl implements PolicyAssignments {
     public Response<PolicyAssignment> getByIdWithResponse(String policyAssignmentId, Context context) {
         Response<PolicyAssignmentInner> inner = this.serviceClient().getByIdWithResponse(policyAssignmentId, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new PolicyAssignmentImpl(inner.getValue(), this.manager()));
         } else {
             return null;

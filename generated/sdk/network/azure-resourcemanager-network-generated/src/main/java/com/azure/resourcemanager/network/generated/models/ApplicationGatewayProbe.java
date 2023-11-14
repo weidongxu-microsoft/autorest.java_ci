@@ -9,7 +9,9 @@ import com.azure.core.management.SubResource;
 import com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewayProbePropertiesFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Probe of the application gateway. */
+/**
+ * Probe of the application gateway.
+ */
 @Fluent
 public final class ApplicationGatewayProbe extends SubResource {
     /*
@@ -36,13 +38,15 @@ public final class ApplicationGatewayProbe extends SubResource {
     @JsonProperty(value = "type", access = JsonProperty.Access.WRITE_ONLY)
     private String type;
 
-    /** Creates an instance of ApplicationGatewayProbe class. */
+    /**
+     * Creates an instance of ApplicationGatewayProbe class.
+     */
     public ApplicationGatewayProbe() {
     }
 
     /**
      * Get the innerProperties property: Properties of the application gateway probe.
-     *
+     * 
      * @return the innerProperties value.
      */
     private ApplicationGatewayProbePropertiesFormat innerProperties() {
@@ -51,7 +55,7 @@ public final class ApplicationGatewayProbe extends SubResource {
 
     /**
      * Get the name property: Name of the probe that is unique within an Application Gateway.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -60,7 +64,7 @@ public final class ApplicationGatewayProbe extends SubResource {
 
     /**
      * Set the name property: Name of the probe that is unique within an Application Gateway.
-     *
+     * 
      * @param name the name value to set.
      * @return the ApplicationGatewayProbe object itself.
      */
@@ -71,7 +75,7 @@ public final class ApplicationGatewayProbe extends SubResource {
 
     /**
      * Get the etag property: A unique read-only string that changes whenever the resource is updated.
-     *
+     * 
      * @return the etag value.
      */
     public String etag() {
@@ -80,14 +84,16 @@ public final class ApplicationGatewayProbe extends SubResource {
 
     /**
      * Get the type property: Type of the resource.
-     *
+     * 
      * @return the type value.
      */
     public String type() {
         return this.type;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ApplicationGatewayProbe withId(String id) {
         super.withId(id);
@@ -96,7 +102,7 @@ public final class ApplicationGatewayProbe extends SubResource {
 
     /**
      * Get the protocol property: The protocol used for the probe.
-     *
+     * 
      * @return the protocol value.
      */
     public ApplicationGatewayProtocol protocol() {
@@ -105,7 +111,7 @@ public final class ApplicationGatewayProbe extends SubResource {
 
     /**
      * Set the protocol property: The protocol used for the probe.
-     *
+     * 
      * @param protocol the protocol value to set.
      * @return the ApplicationGatewayProbe object itself.
      */
@@ -119,7 +125,7 @@ public final class ApplicationGatewayProbe extends SubResource {
 
     /**
      * Get the host property: Host name to send the probe to.
-     *
+     * 
      * @return the host value.
      */
     public String host() {
@@ -128,7 +134,7 @@ public final class ApplicationGatewayProbe extends SubResource {
 
     /**
      * Set the host property: Host name to send the probe to.
-     *
+     * 
      * @param host the host value to set.
      * @return the ApplicationGatewayProbe object itself.
      */
@@ -143,7 +149,7 @@ public final class ApplicationGatewayProbe extends SubResource {
     /**
      * Get the path property: Relative path of probe. Valid path starts from '/'. Probe is sent to
      * &lt;Protocol&gt;://&lt;host&gt;:&lt;port&gt;&lt;path&gt;.
-     *
+     * 
      * @return the path value.
      */
     public String path() {
@@ -153,7 +159,7 @@ public final class ApplicationGatewayProbe extends SubResource {
     /**
      * Set the path property: Relative path of probe. Valid path starts from '/'. Probe is sent to
      * &lt;Protocol&gt;://&lt;host&gt;:&lt;port&gt;&lt;path&gt;.
-     *
+     * 
      * @param path the path value to set.
      * @return the ApplicationGatewayProbe object itself.
      */
@@ -168,7 +174,7 @@ public final class ApplicationGatewayProbe extends SubResource {
     /**
      * Get the interval property: The probing interval in seconds. This is the time interval between two consecutive
      * probes. Acceptable values are from 1 second to 86400 seconds.
-     *
+     * 
      * @return the interval value.
      */
     public Integer interval() {
@@ -178,7 +184,7 @@ public final class ApplicationGatewayProbe extends SubResource {
     /**
      * Set the interval property: The probing interval in seconds. This is the time interval between two consecutive
      * probes. Acceptable values are from 1 second to 86400 seconds.
-     *
+     * 
      * @param interval the interval value to set.
      * @return the ApplicationGatewayProbe object itself.
      */
@@ -193,7 +199,7 @@ public final class ApplicationGatewayProbe extends SubResource {
     /**
      * Get the timeout property: The probe timeout in seconds. Probe marked as failed if valid response is not received
      * with this timeout period. Acceptable values are from 1 second to 86400 seconds.
-     *
+     * 
      * @return the timeout value.
      */
     public Integer timeout() {
@@ -203,7 +209,7 @@ public final class ApplicationGatewayProbe extends SubResource {
     /**
      * Set the timeout property: The probe timeout in seconds. Probe marked as failed if valid response is not received
      * with this timeout period. Acceptable values are from 1 second to 86400 seconds.
-     *
+     * 
      * @param timeout the timeout value to set.
      * @return the ApplicationGatewayProbe object itself.
      */
@@ -216,9 +222,9 @@ public final class ApplicationGatewayProbe extends SubResource {
     }
 
     /**
-     * Get the unhealthyThreshold property: The probe retry count. Backend server is marked down after consecutive probe
-     * failure count reaches UnhealthyThreshold. Acceptable values are from 1 second to 20.
-     *
+     * Get the unhealthyThreshold property: The probe retry count. Backend server is marked down after consecutive
+     * probe failure count reaches UnhealthyThreshold. Acceptable values are from 1 second to 20.
+     * 
      * @return the unhealthyThreshold value.
      */
     public Integer unhealthyThreshold() {
@@ -226,9 +232,9 @@ public final class ApplicationGatewayProbe extends SubResource {
     }
 
     /**
-     * Set the unhealthyThreshold property: The probe retry count. Backend server is marked down after consecutive probe
-     * failure count reaches UnhealthyThreshold. Acceptable values are from 1 second to 20.
-     *
+     * Set the unhealthyThreshold property: The probe retry count. Backend server is marked down after consecutive
+     * probe failure count reaches UnhealthyThreshold. Acceptable values are from 1 second to 20.
+     * 
      * @param unhealthyThreshold the unhealthyThreshold value to set.
      * @return the ApplicationGatewayProbe object itself.
      */
@@ -243,7 +249,7 @@ public final class ApplicationGatewayProbe extends SubResource {
     /**
      * Get the pickHostnameFromBackendHttpSettings property: Whether the host header should be picked from the backend
      * http settings. Default value is false.
-     *
+     * 
      * @return the pickHostnameFromBackendHttpSettings value.
      */
     public Boolean pickHostnameFromBackendHttpSettings() {
@@ -253,12 +259,12 @@ public final class ApplicationGatewayProbe extends SubResource {
     /**
      * Set the pickHostnameFromBackendHttpSettings property: Whether the host header should be picked from the backend
      * http settings. Default value is false.
-     *
+     * 
      * @param pickHostnameFromBackendHttpSettings the pickHostnameFromBackendHttpSettings value to set.
      * @return the ApplicationGatewayProbe object itself.
      */
-    public ApplicationGatewayProbe withPickHostnameFromBackendHttpSettings(
-        Boolean pickHostnameFromBackendHttpSettings) {
+    public ApplicationGatewayProbe
+        withPickHostnameFromBackendHttpSettings(Boolean pickHostnameFromBackendHttpSettings) {
         if (this.innerProperties() == null) {
             this.innerProperties = new ApplicationGatewayProbePropertiesFormat();
         }
@@ -269,7 +275,7 @@ public final class ApplicationGatewayProbe extends SubResource {
     /**
      * Get the pickHostnameFromBackendSettings property: Whether the server name indication should be picked from the
      * backend settings for Tls protocol. Default value is false.
-     *
+     * 
      * @return the pickHostnameFromBackendSettings value.
      */
     public Boolean pickHostnameFromBackendSettings() {
@@ -279,7 +285,7 @@ public final class ApplicationGatewayProbe extends SubResource {
     /**
      * Set the pickHostnameFromBackendSettings property: Whether the server name indication should be picked from the
      * backend settings for Tls protocol. Default value is false.
-     *
+     * 
      * @param pickHostnameFromBackendSettings the pickHostnameFromBackendSettings value to set.
      * @return the ApplicationGatewayProbe object itself.
      */
@@ -293,7 +299,7 @@ public final class ApplicationGatewayProbe extends SubResource {
 
     /**
      * Get the minServers property: Minimum number of servers that are always marked healthy. Default value is 0.
-     *
+     * 
      * @return the minServers value.
      */
     public Integer minServers() {
@@ -302,7 +308,7 @@ public final class ApplicationGatewayProbe extends SubResource {
 
     /**
      * Set the minServers property: Minimum number of servers that are always marked healthy. Default value is 0.
-     *
+     * 
      * @param minServers the minServers value to set.
      * @return the ApplicationGatewayProbe object itself.
      */
@@ -316,7 +322,7 @@ public final class ApplicationGatewayProbe extends SubResource {
 
     /**
      * Get the match property: Criterion for classifying a healthy probe response.
-     *
+     * 
      * @return the match value.
      */
     public ApplicationGatewayProbeHealthResponseMatch match() {
@@ -325,7 +331,7 @@ public final class ApplicationGatewayProbe extends SubResource {
 
     /**
      * Set the match property: Criterion for classifying a healthy probe response.
-     *
+     * 
      * @param match the match value to set.
      * @return the ApplicationGatewayProbe object itself.
      */
@@ -339,7 +345,7 @@ public final class ApplicationGatewayProbe extends SubResource {
 
     /**
      * Get the provisioningState property: The provisioning state of the probe resource.
-     *
+     * 
      * @return the provisioningState value.
      */
     public ProvisioningState provisioningState() {
@@ -350,7 +356,7 @@ public final class ApplicationGatewayProbe extends SubResource {
      * Get the port property: Custom port which will be used for probing the backend servers. The valid value ranges
      * from 1 to 65535. In case not set, port from http settings will be used. This property is valid for Basic,
      * Standard_v2 and WAF_v2 only.
-     *
+     * 
      * @return the port value.
      */
     public Integer port() {
@@ -361,7 +367,7 @@ public final class ApplicationGatewayProbe extends SubResource {
      * Set the port property: Custom port which will be used for probing the backend servers. The valid value ranges
      * from 1 to 65535. In case not set, port from http settings will be used. This property is valid for Basic,
      * Standard_v2 and WAF_v2 only.
-     *
+     * 
      * @param port the port value to set.
      * @return the ApplicationGatewayProbe object itself.
      */
@@ -375,7 +381,7 @@ public final class ApplicationGatewayProbe extends SubResource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

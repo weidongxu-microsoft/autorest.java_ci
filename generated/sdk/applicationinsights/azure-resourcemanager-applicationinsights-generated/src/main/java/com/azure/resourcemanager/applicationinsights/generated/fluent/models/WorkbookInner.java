@@ -11,7 +11,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 import java.util.Map;
 
-/** An Application Insights workbook definition. */
+/**
+ * An Application Insights workbook definition.
+ */
 @Fluent
 public final class WorkbookInner extends WorkbookResource {
     /*
@@ -26,13 +28,15 @@ public final class WorkbookInner extends WorkbookResource {
     @JsonProperty(value = "properties")
     private WorkbookProperties innerProperties;
 
-    /** Creates an instance of WorkbookInner class. */
+    /**
+     * Creates an instance of WorkbookInner class.
+     */
     public WorkbookInner() {
     }
 
     /**
      * Get the kind property: The kind of workbook. Choices are user and shared.
-     *
+     * 
      * @return the kind value.
      */
     public SharedTypeKind kind() {
@@ -41,7 +45,7 @@ public final class WorkbookInner extends WorkbookResource {
 
     /**
      * Set the kind property: The kind of workbook. Choices are user and shared.
-     *
+     * 
      * @param kind the kind value to set.
      * @return the WorkbookInner object itself.
      */
@@ -52,21 +56,25 @@ public final class WorkbookInner extends WorkbookResource {
 
     /**
      * Get the innerProperties property: Metadata describing a web test for an Azure resource.
-     *
+     * 
      * @return the innerProperties value.
      */
     private WorkbookProperties innerProperties() {
         return this.innerProperties;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public WorkbookInner withLocation(String location) {
         super.withLocation(location);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public WorkbookInner withTags(Map<String, String> tags) {
         super.withTags(tags);
@@ -75,7 +83,7 @@ public final class WorkbookInner extends WorkbookResource {
 
     /**
      * Get the name property: The user-defined name of the workbook.
-     *
+     * 
      * @return the name value.
      */
     public String namePropertiesName() {
@@ -84,7 +92,7 @@ public final class WorkbookInner extends WorkbookResource {
 
     /**
      * Set the name property: The user-defined name of the workbook.
-     *
+     * 
      * @param name the name value to set.
      * @return the WorkbookInner object itself.
      */
@@ -99,7 +107,7 @@ public final class WorkbookInner extends WorkbookResource {
     /**
      * Get the serializedData property: Configuration of this particular workbook. Configuration data is a string
      * containing valid JSON.
-     *
+     * 
      * @return the serializedData value.
      */
     public String serializedData() {
@@ -109,7 +117,7 @@ public final class WorkbookInner extends WorkbookResource {
     /**
      * Set the serializedData property: Configuration of this particular workbook. Configuration data is a string
      * containing valid JSON.
-     *
+     * 
      * @param serializedData the serializedData value to set.
      * @return the WorkbookInner object itself.
      */
@@ -124,7 +132,7 @@ public final class WorkbookInner extends WorkbookResource {
     /**
      * Get the version property: This instance's version of the data model. This can change as new features are added
      * that can be marked workbook.
-     *
+     * 
      * @return the version value.
      */
     public String version() {
@@ -134,7 +142,7 @@ public final class WorkbookInner extends WorkbookResource {
     /**
      * Set the version property: This instance's version of the data model. This can change as new features are added
      * that can be marked workbook.
-     *
+     * 
      * @param version the version value to set.
      * @return the WorkbookInner object itself.
      */
@@ -148,7 +156,7 @@ public final class WorkbookInner extends WorkbookResource {
 
     /**
      * Get the workbookId property: Internally assigned unique id of the workbook definition.
-     *
+     * 
      * @return the workbookId value.
      */
     public String workbookId() {
@@ -157,7 +165,7 @@ public final class WorkbookInner extends WorkbookResource {
 
     /**
      * Set the workbookId property: Internally assigned unique id of the workbook definition.
-     *
+     * 
      * @param workbookId the workbookId value to set.
      * @return the WorkbookInner object itself.
      */
@@ -172,7 +180,7 @@ public final class WorkbookInner extends WorkbookResource {
     /**
      * Get the sharedTypeKind property: Enum indicating if this workbook definition is owned by a specific user or is
      * shared between all users with access to the Application Insights component.
-     *
+     * 
      * @return the sharedTypeKind value.
      */
     public SharedTypeKind sharedTypeKind() {
@@ -182,7 +190,7 @@ public final class WorkbookInner extends WorkbookResource {
     /**
      * Set the sharedTypeKind property: Enum indicating if this workbook definition is owned by a specific user or is
      * shared between all users with access to the Application Insights component.
-     *
+     * 
      * @param sharedTypeKind the sharedTypeKind value to set.
      * @return the WorkbookInner object itself.
      */
@@ -197,7 +205,7 @@ public final class WorkbookInner extends WorkbookResource {
     /**
      * Get the timeModified property: Date and time in UTC of the last modification that was made to this workbook
      * definition.
-     *
+     * 
      * @return the timeModified value.
      */
     public String timeModified() {
@@ -206,7 +214,7 @@ public final class WorkbookInner extends WorkbookResource {
 
     /**
      * Get the category property: Workbook category, as defined by the user at creation time.
-     *
+     * 
      * @return the category value.
      */
     public String category() {
@@ -215,7 +223,7 @@ public final class WorkbookInner extends WorkbookResource {
 
     /**
      * Set the category property: Workbook category, as defined by the user at creation time.
-     *
+     * 
      * @param category the category value to set.
      * @return the WorkbookInner object itself.
      */
@@ -229,7 +237,7 @@ public final class WorkbookInner extends WorkbookResource {
 
     /**
      * Get the tags property: A list of 0 or more tags that are associated with this workbook definition.
-     *
+     * 
      * @return the tags value.
      */
     public List<String> tagsPropertiesTags() {
@@ -238,7 +246,7 @@ public final class WorkbookInner extends WorkbookResource {
 
     /**
      * Set the tags property: A list of 0 or more tags that are associated with this workbook definition.
-     *
+     * 
      * @param tags the tags value to set.
      * @return the WorkbookInner object itself.
      */
@@ -252,7 +260,7 @@ public final class WorkbookInner extends WorkbookResource {
 
     /**
      * Get the userId property: Unique user id of the specific user that owns this workbook.
-     *
+     * 
      * @return the userId value.
      */
     public String userId() {
@@ -261,7 +269,7 @@ public final class WorkbookInner extends WorkbookResource {
 
     /**
      * Set the userId property: Unique user id of the specific user that owns this workbook.
-     *
+     * 
      * @param userId the userId value to set.
      * @return the WorkbookInner object itself.
      */
@@ -275,7 +283,7 @@ public final class WorkbookInner extends WorkbookResource {
 
     /**
      * Get the sourceResourceId property: Optional resourceId for a source resource.
-     *
+     * 
      * @return the sourceResourceId value.
      */
     public String sourceResourceId() {
@@ -284,7 +292,7 @@ public final class WorkbookInner extends WorkbookResource {
 
     /**
      * Set the sourceResourceId property: Optional resourceId for a source resource.
-     *
+     * 
      * @param sourceResourceId the sourceResourceId value to set.
      * @return the WorkbookInner object itself.
      */
@@ -298,7 +306,7 @@ public final class WorkbookInner extends WorkbookResource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

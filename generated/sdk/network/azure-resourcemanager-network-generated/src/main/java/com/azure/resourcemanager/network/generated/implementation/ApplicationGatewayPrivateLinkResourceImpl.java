@@ -14,8 +14,7 @@ public final class ApplicationGatewayPrivateLinkResourceImpl implements Applicat
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    ApplicationGatewayPrivateLinkResourceImpl(
-        ApplicationGatewayPrivateLinkResourceInner innerObject,
+    ApplicationGatewayPrivateLinkResourceImpl(ApplicationGatewayPrivateLinkResourceInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

@@ -125,12 +125,8 @@ public final class EHNamespaceImpl implements EHNamespace, EHNamespace.Definitio
     public List<PrivateEndpointConnection> privateEndpointConnections() {
         List<PrivateEndpointConnectionInner> inner = this.innerModel().privateEndpointConnections();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -178,20 +174,14 @@ public final class EHNamespaceImpl implements EHNamespace, EHNamespace.Definitio
     }
 
     public EHNamespace create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNamespaces()
-                .createOrUpdate(resourceGroupName, namespaceName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getNamespaces().createOrUpdate(resourceGroupName,
+            namespaceName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public EHNamespace create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNamespaces()
-                .createOrUpdate(resourceGroupName, namespaceName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getNamespaces().createOrUpdate(resourceGroupName,
+            namespaceName, this.innerModel(), context);
         return this;
     }
 
@@ -206,27 +196,19 @@ public final class EHNamespaceImpl implements EHNamespace, EHNamespace.Definitio
     }
 
     public EHNamespace apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNamespaces()
-                .updateWithResponse(resourceGroupName, namespaceName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getNamespaces()
+            .updateWithResponse(resourceGroupName, namespaceName, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public EHNamespace apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNamespaces()
-                .updateWithResponse(resourceGroupName, namespaceName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getNamespaces()
+            .updateWithResponse(resourceGroupName, namespaceName, this.innerModel(), context).getValue();
         return this;
     }
 
-    EHNamespaceImpl(
-        EHNamespaceInner innerObject, com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager) {
+    EHNamespaceImpl(EHNamespaceInner innerObject,
+        com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
@@ -234,22 +216,14 @@ public final class EHNamespaceImpl implements EHNamespace, EHNamespace.Definitio
     }
 
     public EHNamespace refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNamespaces()
-                .getByResourceGroupWithResponse(resourceGroupName, namespaceName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getNamespaces()
+            .getByResourceGroupWithResponse(resourceGroupName, namespaceName, Context.NONE).getValue();
         return this;
     }
 
     public EHNamespace refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNamespaces()
-                .getByResourceGroupWithResponse(resourceGroupName, namespaceName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getNamespaces()
+            .getByResourceGroupWithResponse(resourceGroupName, namespaceName, context).getValue();
         return this;
     }
 
@@ -326,8 +300,8 @@ public final class EHNamespaceImpl implements EHNamespace, EHNamespace.Definitio
         return this;
     }
 
-    public EHNamespaceImpl withPrivateEndpointConnections(
-        List<PrivateEndpointConnectionInner> privateEndpointConnections) {
+    public EHNamespaceImpl
+        withPrivateEndpointConnections(List<PrivateEndpointConnectionInner> privateEndpointConnections) {
         this.innerModel().withPrivateEndpointConnections(privateEndpointConnections);
         return this;
     }

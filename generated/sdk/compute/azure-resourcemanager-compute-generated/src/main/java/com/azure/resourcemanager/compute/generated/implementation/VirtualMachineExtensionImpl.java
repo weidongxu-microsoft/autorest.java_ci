@@ -138,25 +138,19 @@ public final class VirtualMachineExtensionImpl
     }
 
     public VirtualMachineExtension create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualMachineExtensions()
-                .createOrUpdate(resourceGroupName, vmName, vmExtensionName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getVirtualMachineExtensions()
+            .createOrUpdate(resourceGroupName, vmName, vmExtensionName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public VirtualMachineExtension create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualMachineExtensions()
-                .createOrUpdate(resourceGroupName, vmName, vmExtensionName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getVirtualMachineExtensions()
+            .createOrUpdate(resourceGroupName, vmName, vmExtensionName, this.innerModel(), context);
         return this;
     }
 
-    VirtualMachineExtensionImpl(
-        String name, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
+    VirtualMachineExtensionImpl(String name,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = new VirtualMachineExtensionInner();
         this.serviceManager = serviceManager;
         this.vmExtensionName = name;
@@ -168,25 +162,18 @@ public final class VirtualMachineExtensionImpl
     }
 
     public VirtualMachineExtension apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualMachineExtensions()
-                .update(resourceGroupName, vmName, vmExtensionName, updateExtensionParameters, Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getVirtualMachineExtensions().update(resourceGroupName,
+            vmName, vmExtensionName, updateExtensionParameters, Context.NONE);
         return this;
     }
 
     public VirtualMachineExtension apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualMachineExtensions()
-                .update(resourceGroupName, vmName, vmExtensionName, updateExtensionParameters, context);
+        this.innerObject = serviceManager.serviceClient().getVirtualMachineExtensions().update(resourceGroupName,
+            vmName, vmExtensionName, updateExtensionParameters, context);
         return this;
     }
 
-    VirtualMachineExtensionImpl(
-        VirtualMachineExtensionInner innerObject,
+    VirtualMachineExtensionImpl(VirtualMachineExtensionInner innerObject,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -197,23 +184,15 @@ public final class VirtualMachineExtensionImpl
 
     public VirtualMachineExtension refresh() {
         String localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualMachineExtensions()
-                .getWithResponse(resourceGroupName, vmName, vmExtensionName, localExpand, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getVirtualMachineExtensions()
+            .getWithResponse(resourceGroupName, vmName, vmExtensionName, localExpand, Context.NONE).getValue();
         return this;
     }
 
     public VirtualMachineExtension refresh(Context context) {
         String localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualMachineExtensions()
-                .getWithResponse(resourceGroupName, vmName, vmExtensionName, localExpand, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getVirtualMachineExtensions()
+            .getWithResponse(resourceGroupName, vmName, vmExtensionName, localExpand, context).getValue();
         return this;
     }
 
@@ -327,8 +306,8 @@ public final class VirtualMachineExtensionImpl
         }
     }
 
-    public VirtualMachineExtensionImpl withProtectedSettingsFromKeyVault(
-        KeyVaultSecretReference protectedSettingsFromKeyVault) {
+    public VirtualMachineExtensionImpl
+        withProtectedSettingsFromKeyVault(KeyVaultSecretReference protectedSettingsFromKeyVault) {
         if (isInCreateMode()) {
             this.innerModel().withProtectedSettingsFromKeyVault(protectedSettingsFromKeyVault);
             return this;

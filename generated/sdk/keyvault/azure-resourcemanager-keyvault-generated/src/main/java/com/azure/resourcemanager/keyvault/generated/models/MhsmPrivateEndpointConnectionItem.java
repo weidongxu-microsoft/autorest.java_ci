@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.MhsmPrivateEndpointConnectionProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Private endpoint connection item. */
+/**
+ * Private endpoint connection item.
+ */
 @Fluent
 public final class MhsmPrivateEndpointConnectionItem {
     /*
@@ -29,13 +31,15 @@ public final class MhsmPrivateEndpointConnectionItem {
     @JsonProperty(value = "properties")
     private MhsmPrivateEndpointConnectionProperties innerProperties;
 
-    /** Creates an instance of MhsmPrivateEndpointConnectionItem class. */
+    /**
+     * Creates an instance of MhsmPrivateEndpointConnectionItem class.
+     */
     public MhsmPrivateEndpointConnectionItem() {
     }
 
     /**
      * Get the id property: Id of private endpoint connection.
-     *
+     * 
      * @return the id value.
      */
     public String id() {
@@ -44,7 +48,7 @@ public final class MhsmPrivateEndpointConnectionItem {
 
     /**
      * Set the id property: Id of private endpoint connection.
-     *
+     * 
      * @param id the id value to set.
      * @return the MhsmPrivateEndpointConnectionItem object itself.
      */
@@ -55,7 +59,7 @@ public final class MhsmPrivateEndpointConnectionItem {
 
     /**
      * Get the etag property: Modified whenever there is a change in the state of private endpoint connection.
-     *
+     * 
      * @return the etag value.
      */
     public String etag() {
@@ -64,7 +68,7 @@ public final class MhsmPrivateEndpointConnectionItem {
 
     /**
      * Set the etag property: Modified whenever there is a change in the state of private endpoint connection.
-     *
+     * 
      * @param etag the etag value to set.
      * @return the MhsmPrivateEndpointConnectionItem object itself.
      */
@@ -75,7 +79,7 @@ public final class MhsmPrivateEndpointConnectionItem {
 
     /**
      * Get the innerProperties property: Private endpoint connection properties.
-     *
+     * 
      * @return the innerProperties value.
      */
     private MhsmPrivateEndpointConnectionProperties innerProperties() {
@@ -84,7 +88,7 @@ public final class MhsmPrivateEndpointConnectionItem {
 
     /**
      * Get the privateEndpoint property: Properties of the private endpoint object.
-     *
+     * 
      * @return the privateEndpoint value.
      */
     public MhsmPrivateEndpoint privateEndpoint() {
@@ -93,7 +97,7 @@ public final class MhsmPrivateEndpointConnectionItem {
 
     /**
      * Set the privateEndpoint property: Properties of the private endpoint object.
-     *
+     * 
      * @param privateEndpoint the privateEndpoint value to set.
      * @return the MhsmPrivateEndpointConnectionItem object itself.
      */
@@ -107,7 +111,7 @@ public final class MhsmPrivateEndpointConnectionItem {
 
     /**
      * Get the privateLinkServiceConnectionState property: Approval state of the private link connection.
-     *
+     * 
      * @return the privateLinkServiceConnectionState value.
      */
     public MhsmPrivateLinkServiceConnectionState privateLinkServiceConnectionState() {
@@ -116,12 +120,12 @@ public final class MhsmPrivateEndpointConnectionItem {
 
     /**
      * Set the privateLinkServiceConnectionState property: Approval state of the private link connection.
-     *
+     * 
      * @param privateLinkServiceConnectionState the privateLinkServiceConnectionState value to set.
      * @return the MhsmPrivateEndpointConnectionItem object itself.
      */
-    public MhsmPrivateEndpointConnectionItem withPrivateLinkServiceConnectionState(
-        MhsmPrivateLinkServiceConnectionState privateLinkServiceConnectionState) {
+    public MhsmPrivateEndpointConnectionItem
+        withPrivateLinkServiceConnectionState(MhsmPrivateLinkServiceConnectionState privateLinkServiceConnectionState) {
         if (this.innerProperties() == null) {
             this.innerProperties = new MhsmPrivateEndpointConnectionProperties();
         }
@@ -131,7 +135,7 @@ public final class MhsmPrivateEndpointConnectionItem {
 
     /**
      * Get the provisioningState property: Provisioning state of the private endpoint connection.
-     *
+     * 
      * @return the provisioningState value.
      */
     public PrivateEndpointConnectionProvisioningState provisioningState() {
@@ -140,12 +144,12 @@ public final class MhsmPrivateEndpointConnectionItem {
 
     /**
      * Set the provisioningState property: Provisioning state of the private endpoint connection.
-     *
+     * 
      * @param provisioningState the provisioningState value to set.
      * @return the MhsmPrivateEndpointConnectionItem object itself.
      */
-    public MhsmPrivateEndpointConnectionItem withProvisioningState(
-        PrivateEndpointConnectionProvisioningState provisioningState) {
+    public MhsmPrivateEndpointConnectionItem
+        withProvisioningState(PrivateEndpointConnectionProvisioningState provisioningState) {
         if (this.innerProperties() == null) {
             this.innerProperties = new MhsmPrivateEndpointConnectionProperties();
         }
@@ -155,7 +159,7 @@ public final class MhsmPrivateEndpointConnectionItem {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

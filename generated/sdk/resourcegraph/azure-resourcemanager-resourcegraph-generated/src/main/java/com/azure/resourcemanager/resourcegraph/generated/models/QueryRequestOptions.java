@@ -7,7 +7,9 @@ package com.azure.resourcemanager.resourcegraph.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The options for query evaluation. */
+/**
+ * The options for query evaluation.
+ */
 @Fluent
 public final class QueryRequestOptions {
     /*
@@ -43,21 +45,16 @@ public final class QueryRequestOptions {
     @JsonProperty(value = "allowPartialScopes")
     private Boolean allowPartialScopes;
 
-    /*
-     * Defines what level of authorization resources should be returned based on the which subscriptions and management
-     * groups are passed as scopes.
+    /**
+     * Creates an instance of QueryRequestOptions class.
      */
-    @JsonProperty(value = "authorizationScopeFilter")
-    private AuthorizationScopeFilter authorizationScopeFilter;
-
-    /** Creates an instance of QueryRequestOptions class. */
     public QueryRequestOptions() {
     }
 
     /**
      * Get the skipToken property: Continuation token for pagination, capturing the next page size and offset, as well
      * as the context of the query.
-     *
+     * 
      * @return the skipToken value.
      */
     public String skipToken() {
@@ -67,7 +64,7 @@ public final class QueryRequestOptions {
     /**
      * Set the skipToken property: Continuation token for pagination, capturing the next page size and offset, as well
      * as the context of the query.
-     *
+     * 
      * @param skipToken the skipToken value to set.
      * @return the QueryRequestOptions object itself.
      */
@@ -79,7 +76,7 @@ public final class QueryRequestOptions {
     /**
      * Get the top property: The maximum number of rows that the query should return. Overrides the page size when
      * ```$skipToken``` property is present.
-     *
+     * 
      * @return the top value.
      */
     public Integer top() {
@@ -89,7 +86,7 @@ public final class QueryRequestOptions {
     /**
      * Set the top property: The maximum number of rows that the query should return. Overrides the page size when
      * ```$skipToken``` property is present.
-     *
+     * 
      * @param top the top value to set.
      * @return the QueryRequestOptions object itself.
      */
@@ -101,7 +98,7 @@ public final class QueryRequestOptions {
     /**
      * Get the skip property: The number of rows to skip from the beginning of the results. Overrides the next page
      * offset when ```$skipToken``` property is present.
-     *
+     * 
      * @return the skip value.
      */
     public Integer skip() {
@@ -111,7 +108,7 @@ public final class QueryRequestOptions {
     /**
      * Set the skip property: The number of rows to skip from the beginning of the results. Overrides the next page
      * offset when ```$skipToken``` property is present.
-     *
+     * 
      * @param skip the skip value to set.
      * @return the QueryRequestOptions object itself.
      */
@@ -122,7 +119,7 @@ public final class QueryRequestOptions {
 
     /**
      * Get the resultFormat property: Defines in which format query result returned.
-     *
+     * 
      * @return the resultFormat value.
      */
     public ResultFormat resultFormat() {
@@ -131,7 +128,7 @@ public final class QueryRequestOptions {
 
     /**
      * Set the resultFormat property: Defines in which format query result returned.
-     *
+     * 
      * @param resultFormat the resultFormat value to set.
      * @return the QueryRequestOptions object itself.
      */
@@ -143,7 +140,7 @@ public final class QueryRequestOptions {
     /**
      * Get the allowPartialScopes property: Only applicable for tenant and management group level queries to decide
      * whether to allow partial scopes for result in case the number of subscriptions exceed allowed limits.
-     *
+     * 
      * @return the allowPartialScopes value.
      */
     public Boolean allowPartialScopes() {
@@ -153,7 +150,7 @@ public final class QueryRequestOptions {
     /**
      * Set the allowPartialScopes property: Only applicable for tenant and management group level queries to decide
      * whether to allow partial scopes for result in case the number of subscriptions exceed allowed limits.
-     *
+     * 
      * @param allowPartialScopes the allowPartialScopes value to set.
      * @return the QueryRequestOptions object itself.
      */
@@ -163,30 +160,8 @@ public final class QueryRequestOptions {
     }
 
     /**
-     * Get the authorizationScopeFilter property: Defines what level of authorization resources should be returned based
-     * on the which subscriptions and management groups are passed as scopes.
-     *
-     * @return the authorizationScopeFilter value.
-     */
-    public AuthorizationScopeFilter authorizationScopeFilter() {
-        return this.authorizationScopeFilter;
-    }
-
-    /**
-     * Set the authorizationScopeFilter property: Defines what level of authorization resources should be returned based
-     * on the which subscriptions and management groups are passed as scopes.
-     *
-     * @param authorizationScopeFilter the authorizationScopeFilter value to set.
-     * @return the QueryRequestOptions object itself.
-     */
-    public QueryRequestOptions withAuthorizationScopeFilter(AuthorizationScopeFilter authorizationScopeFilter) {
-        this.authorizationScopeFilter = authorizationScopeFilter;
-        return this;
-    }
-
-    /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

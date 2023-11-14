@@ -6,6 +6,7 @@ package com.azure.resourcemanager.eventgrid.generated.implementation;
 
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.TopicTypeInfoInner;
 import com.azure.resourcemanager.eventgrid.generated.models.ResourceRegionType;
+import com.azure.resourcemanager.eventgrid.generated.models.TopicTypeAdditionalEnforcedPermission;
 import com.azure.resourcemanager.eventgrid.generated.models.TopicTypeInfo;
 import com.azure.resourcemanager.eventgrid.generated.models.TopicTypeProvisioningState;
 import com.azure.resourcemanager.eventgrid.generated.models.TopicTypeSourceScope;
@@ -17,8 +18,8 @@ public final class TopicTypeInfoImpl implements TopicTypeInfo {
 
     private final com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager;
 
-    TopicTypeInfoImpl(
-        TopicTypeInfoInner innerObject, com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager) {
+    TopicTypeInfoImpl(TopicTypeInfoInner innerObject,
+        com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -79,6 +80,15 @@ public final class TopicTypeInfoImpl implements TopicTypeInfo {
 
     public Boolean areRegionalAndGlobalSourcesSupported() {
         return this.innerModel().areRegionalAndGlobalSourcesSupported();
+    }
+
+    public List<TopicTypeAdditionalEnforcedPermission> additionalEnforcedPermissions() {
+        List<TopicTypeAdditionalEnforcedPermission> inner = this.innerModel().additionalEnforcedPermissions();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
     }
 
     public TopicTypeInfoInner innerModel() {

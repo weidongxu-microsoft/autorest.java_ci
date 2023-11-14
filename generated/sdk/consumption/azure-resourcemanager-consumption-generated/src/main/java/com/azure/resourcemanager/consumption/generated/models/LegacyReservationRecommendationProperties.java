@@ -14,7 +14,9 @@ import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.UUID;
 
-/** The properties of the reservation recommendation. */
+/**
+ * The properties of the reservation recommendation.
+ */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
     include = JsonTypeInfo.As.PROPERTY,
@@ -23,8 +25,7 @@ import java.util.UUID;
 @JsonTypeName("LegacyReservationRecommendationProperties")
 @JsonSubTypes({
     @JsonSubTypes.Type(name = "Single", value = LegacySingleScopeReservationRecommendationProperties.class),
-    @JsonSubTypes.Type(name = "Shared", value = LegacySharedScopeReservationRecommendationProperties.class)
-})
+    @JsonSubTypes.Type(name = "Shared", value = LegacySharedScopeReservationRecommendationProperties.class) })
 @Immutable
 public class LegacyReservationRecommendationProperties {
     /*
@@ -111,13 +112,15 @@ public class LegacyReservationRecommendationProperties {
     @JsonProperty(value = "skuProperties", access = JsonProperty.Access.WRITE_ONLY)
     private List<SkuProperty> skuProperties;
 
-    /** Creates an instance of LegacyReservationRecommendationProperties class. */
+    /**
+     * Creates an instance of LegacyReservationRecommendationProperties class.
+     */
     public LegacyReservationRecommendationProperties() {
     }
 
     /**
      * Get the lookBackPeriod property: The number of days of usage to look back for recommendation.
-     *
+     * 
      * @return the lookBackPeriod value.
      */
     public String lookBackPeriod() {
@@ -126,7 +129,7 @@ public class LegacyReservationRecommendationProperties {
 
     /**
      * Get the instanceFlexibilityRatio property: The instance Flexibility Ratio.
-     *
+     * 
      * @return the instanceFlexibilityRatio value.
      */
     public Float instanceFlexibilityRatio() {
@@ -135,7 +138,7 @@ public class LegacyReservationRecommendationProperties {
 
     /**
      * Get the instanceFlexibilityGroup property: The instance Flexibility Group.
-     *
+     * 
      * @return the instanceFlexibilityGroup value.
      */
     public String instanceFlexibilityGroup() {
@@ -144,7 +147,7 @@ public class LegacyReservationRecommendationProperties {
 
     /**
      * Get the normalizedSize property: The normalized Size.
-     *
+     * 
      * @return the normalizedSize value.
      */
     public String normalizedSize() {
@@ -153,7 +156,7 @@ public class LegacyReservationRecommendationProperties {
 
     /**
      * Get the recommendedQuantityNormalized property: The recommended Quantity Normalized.
-     *
+     * 
      * @return the recommendedQuantityNormalized value.
      */
     public Float recommendedQuantityNormalized() {
@@ -162,7 +165,7 @@ public class LegacyReservationRecommendationProperties {
 
     /**
      * Get the meterId property: The meter id (GUID).
-     *
+     * 
      * @return the meterId value.
      */
     public UUID meterId() {
@@ -171,7 +174,7 @@ public class LegacyReservationRecommendationProperties {
 
     /**
      * Get the resourceType property: The azure resource type.
-     *
+     * 
      * @return the resourceType value.
      */
     public String resourceType() {
@@ -180,7 +183,7 @@ public class LegacyReservationRecommendationProperties {
 
     /**
      * Get the term property: RI recommendations in one or three year terms.
-     *
+     * 
      * @return the term value.
      */
     public String term() {
@@ -189,7 +192,7 @@ public class LegacyReservationRecommendationProperties {
 
     /**
      * Get the costWithNoReservedInstances property: The total amount of cost without reserved instances.
-     *
+     * 
      * @return the costWithNoReservedInstances value.
      */
     public BigDecimal costWithNoReservedInstances() {
@@ -198,7 +201,7 @@ public class LegacyReservationRecommendationProperties {
 
     /**
      * Get the recommendedQuantity property: Recommended quality for reserved instances.
-     *
+     * 
      * @return the recommendedQuantity value.
      */
     public BigDecimal recommendedQuantity() {
@@ -207,7 +210,7 @@ public class LegacyReservationRecommendationProperties {
 
     /**
      * Get the totalCostWithReservedInstances property: The total amount of cost with reserved instances.
-     *
+     * 
      * @return the totalCostWithReservedInstances value.
      */
     public BigDecimal totalCostWithReservedInstances() {
@@ -216,7 +219,7 @@ public class LegacyReservationRecommendationProperties {
 
     /**
      * Get the netSavings property: Total estimated savings with reserved instances.
-     *
+     * 
      * @return the netSavings value.
      */
     public BigDecimal netSavings() {
@@ -225,7 +228,7 @@ public class LegacyReservationRecommendationProperties {
 
     /**
      * Get the firstUsageDate property: The usage date for looking back.
-     *
+     * 
      * @return the firstUsageDate value.
      */
     public OffsetDateTime firstUsageDate() {
@@ -234,7 +237,7 @@ public class LegacyReservationRecommendationProperties {
 
     /**
      * Get the skuProperties property: List of sku properties.
-     *
+     * 
      * @return the skuProperties value.
      */
     public List<SkuProperty> skuProperties() {
@@ -243,7 +246,7 @@ public class LegacyReservationRecommendationProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

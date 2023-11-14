@@ -21,21 +21,18 @@ public final class IpGroupsImpl implements IpGroups {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public IpGroupsImpl(
-        IpGroupsClient innerClient, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    public IpGroupsImpl(IpGroupsClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<IpGroup> getByResourceGroupWithResponse(
-        String resourceGroupName, String ipGroupsName, String expand, Context context) {
-        Response<IpGroupInner> inner =
-            this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, ipGroupsName, expand, context);
+    public Response<IpGroup> getByResourceGroupWithResponse(String resourceGroupName, String ipGroupsName,
+        String expand, Context context) {
+        Response<IpGroupInner> inner
+            = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, ipGroupsName, expand, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new IpGroupImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -82,40 +79,29 @@ public final class IpGroupsImpl implements IpGroups {
     public IpGroup getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String ipGroupsName = Utils.getValueFromIdByName(id, "ipGroups");
         if (ipGroupsName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'ipGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'ipGroups'.", id)));
         }
         String localExpand = null;
-        return this
-            .getByResourceGroupWithResponse(resourceGroupName, ipGroupsName, localExpand, Context.NONE)
+        return this.getByResourceGroupWithResponse(resourceGroupName, ipGroupsName, localExpand, Context.NONE)
             .getValue();
     }
 
     public Response<IpGroup> getByIdWithResponse(String id, String expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String ipGroupsName = Utils.getValueFromIdByName(id, "ipGroups");
         if (ipGroupsName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'ipGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'ipGroups'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, ipGroupsName, expand, context);
     }
@@ -123,18 +109,13 @@ public final class IpGroupsImpl implements IpGroups {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String ipGroupsName = Utils.getValueFromIdByName(id, "ipGroups");
         if (ipGroupsName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'ipGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'ipGroups'.", id)));
         }
         this.delete(resourceGroupName, ipGroupsName, Context.NONE);
     }
@@ -142,18 +123,13 @@ public final class IpGroupsImpl implements IpGroups {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String ipGroupsName = Utils.getValueFromIdByName(id, "ipGroups");
         if (ipGroupsName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'ipGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'ipGroups'.", id)));
         }
         this.delete(resourceGroupName, ipGroupsName, context);
     }

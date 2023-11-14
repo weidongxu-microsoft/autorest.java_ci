@@ -11,7 +11,9 @@ import com.azure.resourcemanager.mediaservices.generated.models.PresentationTime
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The Media Filter properties. */
+/**
+ * The Media Filter properties.
+ */
 @Fluent
 public final class MediaFilterProperties {
     /*
@@ -32,13 +34,15 @@ public final class MediaFilterProperties {
     @JsonProperty(value = "tracks")
     private List<FilterTrackSelection> tracks;
 
-    /** Creates an instance of MediaFilterProperties class. */
+    /**
+     * Creates an instance of MediaFilterProperties class.
+     */
     public MediaFilterProperties() {
     }
 
     /**
      * Get the presentationTimeRange property: The presentation time range.
-     *
+     * 
      * @return the presentationTimeRange value.
      */
     public PresentationTimeRange presentationTimeRange() {
@@ -47,7 +51,7 @@ public final class MediaFilterProperties {
 
     /**
      * Set the presentationTimeRange property: The presentation time range.
-     *
+     * 
      * @param presentationTimeRange the presentationTimeRange value to set.
      * @return the MediaFilterProperties object itself.
      */
@@ -58,7 +62,7 @@ public final class MediaFilterProperties {
 
     /**
      * Get the firstQuality property: The first quality.
-     *
+     * 
      * @return the firstQuality value.
      */
     public FirstQuality firstQuality() {
@@ -67,7 +71,7 @@ public final class MediaFilterProperties {
 
     /**
      * Set the firstQuality property: The first quality.
-     *
+     * 
      * @param firstQuality the firstQuality value to set.
      * @return the MediaFilterProperties object itself.
      */
@@ -78,7 +82,7 @@ public final class MediaFilterProperties {
 
     /**
      * Get the tracks property: The tracks selection conditions.
-     *
+     * 
      * @return the tracks value.
      */
     public List<FilterTrackSelection> tracks() {
@@ -87,7 +91,7 @@ public final class MediaFilterProperties {
 
     /**
      * Set the tracks property: The tracks selection conditions.
-     *
+     * 
      * @param tracks the tracks value to set.
      * @return the MediaFilterProperties object itself.
      */
@@ -98,7 +102,7 @@ public final class MediaFilterProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

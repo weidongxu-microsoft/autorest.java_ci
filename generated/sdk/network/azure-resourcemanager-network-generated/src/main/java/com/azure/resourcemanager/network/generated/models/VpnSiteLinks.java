@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of VpnSiteLinks. */
+/**
+ * Resource collection API of VpnSiteLinks.
+ */
 public interface VpnSiteLinks {
     /**
      * Retrieves the details of a VPN site link.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnSite.
      * @param vpnSiteName The name of the VpnSite.
      * @param vpnSiteLinkName The name of the VpnSiteLink being retrieved.
@@ -22,12 +24,12 @@ public interface VpnSiteLinks {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return vpnSiteLink Resource along with {@link Response}.
      */
-    Response<VpnSiteLink> getWithResponse(
-        String resourceGroupName, String vpnSiteName, String vpnSiteLinkName, Context context);
+    Response<VpnSiteLink> getWithResponse(String resourceGroupName, String vpnSiteName, String vpnSiteLinkName,
+        Context context);
 
     /**
      * Retrieves the details of a VPN site link.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnSite.
      * @param vpnSiteName The name of the VpnSite.
      * @param vpnSiteLinkName The name of the VpnSiteLink being retrieved.
@@ -40,7 +42,7 @@ public interface VpnSiteLinks {
 
     /**
      * Lists all the vpnSiteLinks in a resource group for a vpn site.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnSite.
      * @param vpnSiteName The name of the VpnSite.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -52,7 +54,7 @@ public interface VpnSiteLinks {
 
     /**
      * Lists all the vpnSiteLinks in a resource group for a vpn site.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnSite.
      * @param vpnSiteName The name of the VpnSite.
      * @param context The context to associate with this operation.

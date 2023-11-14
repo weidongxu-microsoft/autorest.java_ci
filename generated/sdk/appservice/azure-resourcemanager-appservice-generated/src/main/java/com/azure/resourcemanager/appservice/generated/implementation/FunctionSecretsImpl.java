@@ -12,8 +12,7 @@ public final class FunctionSecretsImpl implements FunctionSecrets {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    FunctionSecretsImpl(
-        FunctionSecretsInner innerObject,
+    FunctionSecretsImpl(FunctionSecretsInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

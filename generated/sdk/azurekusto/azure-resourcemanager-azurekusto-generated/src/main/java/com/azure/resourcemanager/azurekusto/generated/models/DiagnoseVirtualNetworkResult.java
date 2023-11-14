@@ -7,11 +7,13 @@ package com.azure.resourcemanager.azurekusto.generated.models;
 import com.azure.resourcemanager.azurekusto.generated.fluent.models.DiagnoseVirtualNetworkResultInner;
 import java.util.List;
 
-/** An immutable client-side representation of DiagnoseVirtualNetworkResult. */
+/**
+ * An immutable client-side representation of DiagnoseVirtualNetworkResult.
+ */
 public interface DiagnoseVirtualNetworkResult {
     /**
      * Gets the findings property: The list of network connectivity diagnostic finding.
-     *
+     * 
      * @return the findings value.
      */
     List<String> findings();
@@ -19,7 +21,7 @@ public interface DiagnoseVirtualNetworkResult {
     /**
      * Gets the inner com.azure.resourcemanager.azurekusto.generated.fluent.models.DiagnoseVirtualNetworkResultInner
      * object.
-     *
+     * 
      * @return the inner object.
      */
     DiagnoseVirtualNetworkResultInner innerModel();

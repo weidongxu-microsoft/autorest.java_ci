@@ -16,8 +16,7 @@ public final class ActiveConnectivityConfigurationsListResultImpl
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    ActiveConnectivityConfigurationsListResultImpl(
-        ActiveConnectivityConfigurationsListResultInner innerObject,
+    ActiveConnectivityConfigurationsListResultImpl(ActiveConnectivityConfigurationsListResultInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

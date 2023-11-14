@@ -11,7 +11,9 @@ import com.azure.resourcemanager.dns.generated.models.SigningKey;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Represents the DNSSEC configuration. */
+/**
+ * Represents the DNSSEC configuration.
+ */
 @Fluent
 public final class DnssecConfigInner extends ProxyResource {
     /*
@@ -32,13 +34,15 @@ public final class DnssecConfigInner extends ProxyResource {
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
-    /** Creates an instance of DnssecConfigInner class. */
+    /**
+     * Creates an instance of DnssecConfigInner class.
+     */
     public DnssecConfigInner() {
     }
 
     /**
      * Get the innerProperties property: The DNSSEC properties.
-     *
+     * 
      * @return the innerProperties value.
      */
     private DnssecProperties innerProperties() {
@@ -47,7 +51,7 @@ public final class DnssecConfigInner extends ProxyResource {
 
     /**
      * Get the etag property: The etag of the DNSSEC configuration.
-     *
+     * 
      * @return the etag value.
      */
     public String etag() {
@@ -56,7 +60,7 @@ public final class DnssecConfigInner extends ProxyResource {
 
     /**
      * Set the etag property: The etag of the DNSSEC configuration.
-     *
+     * 
      * @param etag the etag value to set.
      * @return the DnssecConfigInner object itself.
      */
@@ -67,7 +71,7 @@ public final class DnssecConfigInner extends ProxyResource {
 
     /**
      * Get the systemData property: Metadata pertaining to creation and last modification of the resource.
-     *
+     * 
      * @return the systemData value.
      */
     public SystemData systemData() {
@@ -76,7 +80,7 @@ public final class DnssecConfigInner extends ProxyResource {
 
     /**
      * Get the provisioningState property: Provisioning State of the DNSSEC configuration.
-     *
+     * 
      * @return the provisioningState value.
      */
     public String provisioningState() {
@@ -85,7 +89,7 @@ public final class DnssecConfigInner extends ProxyResource {
 
     /**
      * Get the signingKeys property: The list of signing keys.
-     *
+     * 
      * @return the signingKeys value.
      */
     public List<SigningKey> signingKeys() {
@@ -94,7 +98,7 @@ public final class DnssecConfigInner extends ProxyResource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.eventhubs.generated.models.ProvisioningState;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Event Hubs Cluster properties supplied in responses in List or Get operations. */
+/**
+ * Event Hubs Cluster properties supplied in responses in List or Get operations.
+ */
 @Fluent
 public final class ClusterProperties {
     /*
@@ -47,13 +49,15 @@ public final class ClusterProperties {
     @JsonProperty(value = "supportsScaling")
     private Boolean supportsScaling;
 
-    /** Creates an instance of ClusterProperties class. */
+    /**
+     * Creates an instance of ClusterProperties class.
+     */
     public ClusterProperties() {
     }
 
     /**
      * Get the createdAt property: The UTC time when the Event Hubs Cluster was created.
-     *
+     * 
      * @return the createdAt value.
      */
     public String createdAt() {
@@ -62,7 +66,7 @@ public final class ClusterProperties {
 
     /**
      * Get the provisioningState property: Provisioning state of the Cluster.
-     *
+     * 
      * @return the provisioningState value.
      */
     public ProvisioningState provisioningState() {
@@ -71,7 +75,7 @@ public final class ClusterProperties {
 
     /**
      * Get the updatedAt property: The UTC time when the Event Hubs Cluster was last updated.
-     *
+     * 
      * @return the updatedAt value.
      */
     public String updatedAt() {
@@ -81,7 +85,7 @@ public final class ClusterProperties {
     /**
      * Get the metricId property: The metric ID of the cluster resource. Provided by the service and not modifiable by
      * the user.
-     *
+     * 
      * @return the metricId value.
      */
     public String metricId() {
@@ -90,7 +94,7 @@ public final class ClusterProperties {
 
     /**
      * Get the status property: Status of the Cluster resource.
-     *
+     * 
      * @return the status value.
      */
     public String status() {
@@ -99,7 +103,7 @@ public final class ClusterProperties {
 
     /**
      * Get the supportsScaling property: A value that indicates whether Scaling is Supported.
-     *
+     * 
      * @return the supportsScaling value.
      */
     public Boolean supportsScaling() {
@@ -108,7 +112,7 @@ public final class ClusterProperties {
 
     /**
      * Set the supportsScaling property: A value that indicates whether Scaling is Supported.
-     *
+     * 
      * @param supportsScaling the supportsScaling value to set.
      * @return the ClusterProperties object itself.
      */
@@ -119,7 +123,7 @@ public final class ClusterProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

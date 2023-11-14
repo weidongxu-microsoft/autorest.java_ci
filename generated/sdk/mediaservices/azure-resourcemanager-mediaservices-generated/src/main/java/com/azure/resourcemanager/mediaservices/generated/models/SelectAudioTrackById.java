@@ -9,7 +9,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** Select audio tracks from the input by specifying a track identifier. */
+/**
+ * Select audio tracks from the input by specifying a track identifier.
+ */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
 @JsonTypeName("#Microsoft.Media.SelectAudioTrackById")
 @Fluent
@@ -20,13 +22,15 @@ public final class SelectAudioTrackById extends AudioTrackDescriptor {
     @JsonProperty(value = "trackId", required = true)
     private long trackId;
 
-    /** Creates an instance of SelectAudioTrackById class. */
+    /**
+     * Creates an instance of SelectAudioTrackById class.
+     */
     public SelectAudioTrackById() {
     }
 
     /**
      * Get the trackId property: Track identifier to select.
-     *
+     * 
      * @return the trackId value.
      */
     public long trackId() {
@@ -35,7 +39,7 @@ public final class SelectAudioTrackById extends AudioTrackDescriptor {
 
     /**
      * Set the trackId property: Track identifier to select.
-     *
+     * 
      * @param trackId the trackId value to set.
      * @return the SelectAudioTrackById object itself.
      */
@@ -44,7 +48,9 @@ public final class SelectAudioTrackById extends AudioTrackDescriptor {
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public SelectAudioTrackById withChannelMapping(ChannelMapping channelMapping) {
         super.withChannelMapping(channelMapping);
@@ -53,7 +59,7 @@ public final class SelectAudioTrackById extends AudioTrackDescriptor {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

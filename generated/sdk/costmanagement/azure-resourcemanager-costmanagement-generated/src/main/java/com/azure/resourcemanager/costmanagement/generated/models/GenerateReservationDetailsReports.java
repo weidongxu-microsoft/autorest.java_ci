@@ -6,11 +6,13 @@ package com.azure.resourcemanager.costmanagement.generated.models;
 
 import com.azure.core.util.Context;
 
-/** Resource collection API of GenerateReservationDetailsReports. */
+/**
+ * Resource collection API of GenerateReservationDetailsReports.
+ */
 public interface GenerateReservationDetailsReports {
     /**
      * Generates the reservations details report for provided date range asynchronously based on enrollment id.
-     *
+     * 
      * @param billingAccountId Enrollment ID (Legacy BillingAccount ID).
      * @param startDate Start Date.
      * @param endDate End Date.
@@ -23,7 +25,7 @@ public interface GenerateReservationDetailsReports {
 
     /**
      * Generates the reservations details report for provided date range asynchronously based on enrollment id.
-     *
+     * 
      * @param billingAccountId Enrollment ID (Legacy BillingAccount ID).
      * @param startDate Start Date.
      * @param endDate End Date.
@@ -37,7 +39,7 @@ public interface GenerateReservationDetailsReports {
 
     /**
      * Generates the reservations details report for provided date range asynchronously by billing profile.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId BillingProfile ID.
      * @param startDate Start Date.
@@ -47,12 +49,12 @@ public interface GenerateReservationDetailsReports {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the status of the long running operation.
      */
-    OperationStatus byBillingProfileId(
-        String billingAccountId, String billingProfileId, String startDate, String endDate);
+    OperationStatus byBillingProfileId(String billingAccountId, String billingProfileId, String startDate,
+        String endDate);
 
     /**
      * Generates the reservations details report for provided date range asynchronously by billing profile.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId BillingProfile ID.
      * @param startDate Start Date.
@@ -63,6 +65,6 @@ public interface GenerateReservationDetailsReports {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the status of the long running operation.
      */
-    OperationStatus byBillingProfileId(
-        String billingAccountId, String billingProfileId, String startDate, String endDate, Context context);
+    OperationStatus byBillingProfileId(String billingAccountId, String billingProfileId, String startDate,
+        String endDate, Context context);
 }

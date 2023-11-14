@@ -21,8 +21,8 @@ public final class PrivateEndpointsImpl implements PrivateEndpoints {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public PrivateEndpointsImpl(
-        PrivateEndpointsClient innerClient, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    public PrivateEndpointsImpl(PrivateEndpointsClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -35,17 +35,12 @@ public final class PrivateEndpointsImpl implements PrivateEndpoints {
         this.serviceClient().delete(resourceGroupName, privateEndpointName, context);
     }
 
-    public Response<PrivateEndpoint> getByResourceGroupWithResponse(
-        String resourceGroupName, String privateEndpointName, String expand, Context context) {
-        Response<PrivateEndpointInner> inner =
-            this
-                .serviceClient()
-                .getByResourceGroupWithResponse(resourceGroupName, privateEndpointName, expand, context);
+    public Response<PrivateEndpoint> getByResourceGroupWithResponse(String resourceGroupName,
+        String privateEndpointName, String expand, Context context) {
+        Response<PrivateEndpointInner> inner = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName,
+            privateEndpointName, expand, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new PrivateEndpointImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -67,8 +62,8 @@ public final class PrivateEndpointsImpl implements PrivateEndpoints {
     }
 
     public PagedIterable<PrivateEndpoint> listByResourceGroup(String resourceGroupName, Context context) {
-        PagedIterable<PrivateEndpointInner> inner =
-            this.serviceClient().listByResourceGroup(resourceGroupName, context);
+        PagedIterable<PrivateEndpointInner> inner
+            = this.serviceClient().listByResourceGroup(resourceGroupName, context);
         return Utils.mapPage(inner, inner1 -> new PrivateEndpointImpl(inner1, this.manager()));
     }
 
@@ -85,44 +80,29 @@ public final class PrivateEndpointsImpl implements PrivateEndpoints {
     public PrivateEndpoint getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String privateEndpointName = Utils.getValueFromIdByName(id, "privateEndpoints");
         if (privateEndpointName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'privateEndpoints'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'privateEndpoints'.", id)));
         }
         String localExpand = null;
-        return this
-            .getByResourceGroupWithResponse(resourceGroupName, privateEndpointName, localExpand, Context.NONE)
+        return this.getByResourceGroupWithResponse(resourceGroupName, privateEndpointName, localExpand, Context.NONE)
             .getValue();
     }
 
     public Response<PrivateEndpoint> getByIdWithResponse(String id, String expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String privateEndpointName = Utils.getValueFromIdByName(id, "privateEndpoints");
         if (privateEndpointName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'privateEndpoints'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'privateEndpoints'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, privateEndpointName, expand, context);
     }
@@ -130,20 +110,13 @@ public final class PrivateEndpointsImpl implements PrivateEndpoints {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String privateEndpointName = Utils.getValueFromIdByName(id, "privateEndpoints");
         if (privateEndpointName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'privateEndpoints'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'privateEndpoints'.", id)));
         }
         this.delete(resourceGroupName, privateEndpointName, Context.NONE);
     }
@@ -151,20 +124,13 @@ public final class PrivateEndpointsImpl implements PrivateEndpoints {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String privateEndpointName = Utils.getValueFromIdByName(id, "privateEndpoints");
         if (privateEndpointName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'privateEndpoints'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'privateEndpoints'.", id)));
         }
         this.delete(resourceGroupName, privateEndpointName, context);
     }

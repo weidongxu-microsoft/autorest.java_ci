@@ -84,12 +84,8 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
     public List<VirtualMachineExtension> resources() {
         List<VirtualMachineExtensionInner> inner = this.innerModel().resources();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new VirtualMachineExtensionImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new VirtualMachineExtensionImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -253,20 +249,14 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
     }
 
     public VirtualMachine create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualMachines()
-                .createOrUpdate(resourceGroupName, vmName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getVirtualMachines().createOrUpdate(resourceGroupName, vmName,
+            this.innerModel(), Context.NONE);
         return this;
     }
 
     public VirtualMachine create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualMachines()
-                .createOrUpdate(resourceGroupName, vmName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getVirtualMachines().createOrUpdate(resourceGroupName, vmName,
+            this.innerModel(), context);
         return this;
     }
 
@@ -282,25 +272,19 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
     }
 
     public VirtualMachine apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualMachines()
-                .update(resourceGroupName, vmName, updateParameters, Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getVirtualMachines().update(resourceGroupName, vmName,
+            updateParameters, Context.NONE);
         return this;
     }
 
     public VirtualMachine apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualMachines()
-                .update(resourceGroupName, vmName, updateParameters, context);
+        this.innerObject = serviceManager.serviceClient().getVirtualMachines().update(resourceGroupName, vmName,
+            updateParameters, context);
         return this;
     }
 
-    VirtualMachineImpl(
-        VirtualMachineInner innerObject, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
+    VirtualMachineImpl(VirtualMachineInner innerObject,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
@@ -309,23 +293,15 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
 
     public VirtualMachine refresh() {
         InstanceViewTypes localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualMachines()
-                .getByResourceGroupWithResponse(resourceGroupName, vmName, localExpand, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getVirtualMachines()
+            .getByResourceGroupWithResponse(resourceGroupName, vmName, localExpand, Context.NONE).getValue();
         return this;
     }
 
     public VirtualMachine refresh(Context context) {
         InstanceViewTypes localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualMachines()
-                .getByResourceGroupWithResponse(resourceGroupName, vmName, localExpand, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getVirtualMachines()
+            .getByResourceGroupWithResponse(resourceGroupName, vmName, localExpand, context).getValue();
         return this;
     }
 
@@ -409,11 +385,10 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
         serviceManager.virtualMachines().reimage(resourceGroupName, vmName, parameters, context);
     }
 
-    public Response<RetrieveBootDiagnosticsDataResult> retrieveBootDiagnosticsDataWithResponse(
-        Integer sasUriExpirationTimeInMinutes, Context context) {
-        return serviceManager
-            .virtualMachines()
-            .retrieveBootDiagnosticsDataWithResponse(resourceGroupName, vmName, sasUriExpirationTimeInMinutes, context);
+    public Response<RetrieveBootDiagnosticsDataResult>
+        retrieveBootDiagnosticsDataWithResponse(Integer sasUriExpirationTimeInMinutes, Context context) {
+        return serviceManager.virtualMachines().retrieveBootDiagnosticsDataWithResponse(resourceGroupName, vmName,
+            sasUriExpirationTimeInMinutes, context);
     }
 
     public RetrieveBootDiagnosticsDataResult retrieveBootDiagnosticsData() {
@@ -444,13 +419,13 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
         return serviceManager.virtualMachines().assessPatches(resourceGroupName, vmName, context);
     }
 
-    public VirtualMachineInstallPatchesResult installPatches(
-        VirtualMachineInstallPatchesParameters installPatchesInput) {
+    public VirtualMachineInstallPatchesResult
+        installPatches(VirtualMachineInstallPatchesParameters installPatchesInput) {
         return serviceManager.virtualMachines().installPatches(resourceGroupName, vmName, installPatchesInput);
     }
 
-    public VirtualMachineInstallPatchesResult installPatches(
-        VirtualMachineInstallPatchesParameters installPatchesInput, Context context) {
+    public VirtualMachineInstallPatchesResult installPatches(VirtualMachineInstallPatchesParameters installPatchesInput,
+        Context context) {
         return serviceManager.virtualMachines().installPatches(resourceGroupName, vmName, installPatchesInput, context);
     }
 

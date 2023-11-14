@@ -9,8 +9,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
- * Describes Dolby Digital Audio Codec (AC3) audio encoding settings. The current implementation for Dolby Digital Audio
- * support are: Audio channel numbers at 1((mono), 2(stereo), 6(5.1side); Audio sampling frequency rates at:
+ * Describes Dolby Digital Audio Codec (AC3) audio encoding settings. The current implementation for Dolby Digital
+ * Audio support are: Audio channel numbers at 1((mono), 2(stereo), 6(5.1side); Audio sampling frequency rates at:
  * 32K/44.1K/48K Hz; Audio bitrate values as AC3 specification supports: 32000, 40000, 48000, 56000, 64000, 80000,
  * 96000, 112000, 128000, 160000, 192000, 224000, 256000, 320000, 384000, 448000, 512000, 576000, 640000 bps.
  */
@@ -18,32 +18,42 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @JsonTypeName("#Microsoft.Media.DDAudio")
 @Fluent
 public final class DDAudio extends Audio {
-    /** Creates an instance of DDAudio class. */
+    /**
+     * Creates an instance of DDAudio class.
+     */
     public DDAudio() {
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DDAudio withChannels(Integer channels) {
         super.withChannels(channels);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DDAudio withSamplingRate(Integer samplingRate) {
         super.withSamplingRate(samplingRate);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DDAudio withBitrate(Integer bitrate) {
         super.withBitrate(bitrate);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DDAudio withLabel(String label) {
         super.withLabel(label);
@@ -52,7 +62,7 @@ public final class DDAudio extends Audio {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

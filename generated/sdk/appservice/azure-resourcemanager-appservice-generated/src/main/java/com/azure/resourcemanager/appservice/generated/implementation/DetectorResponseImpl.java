@@ -19,8 +19,7 @@ public final class DetectorResponseImpl implements DetectorResponse {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    DetectorResponseImpl(
-        DetectorResponseInner innerObject,
+    DetectorResponseImpl(DetectorResponseInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

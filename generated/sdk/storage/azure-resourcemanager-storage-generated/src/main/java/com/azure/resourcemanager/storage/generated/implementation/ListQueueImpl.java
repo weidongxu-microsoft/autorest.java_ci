@@ -14,8 +14,8 @@ public final class ListQueueImpl implements ListQueue {
 
     private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
-    ListQueueImpl(
-        ListQueueInner innerObject, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
+    ListQueueImpl(ListQueueInner innerObject,
+        com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

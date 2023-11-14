@@ -19,8 +19,7 @@ public final class ApplicationGatewayWafDynamicManifestsImpl implements Applicat
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public ApplicationGatewayWafDynamicManifestsImpl(
-        ApplicationGatewayWafDynamicManifestsClient innerClient,
+    public ApplicationGatewayWafDynamicManifestsImpl(ApplicationGatewayWafDynamicManifestsClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -28,15 +27,15 @@ public final class ApplicationGatewayWafDynamicManifestsImpl implements Applicat
 
     public PagedIterable<ApplicationGatewayWafDynamicManifestResult> get(String location) {
         PagedIterable<ApplicationGatewayWafDynamicManifestResultInner> inner = this.serviceClient().get(location);
-        return Utils
-            .mapPage(inner, inner1 -> new ApplicationGatewayWafDynamicManifestResultImpl(inner1, this.manager()));
+        return Utils.mapPage(inner,
+            inner1 -> new ApplicationGatewayWafDynamicManifestResultImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ApplicationGatewayWafDynamicManifestResult> get(String location, Context context) {
-        PagedIterable<ApplicationGatewayWafDynamicManifestResultInner> inner =
-            this.serviceClient().get(location, context);
-        return Utils
-            .mapPage(inner, inner1 -> new ApplicationGatewayWafDynamicManifestResultImpl(inner1, this.manager()));
+        PagedIterable<ApplicationGatewayWafDynamicManifestResultInner> inner
+            = this.serviceClient().get(location, context);
+        return Utils.mapPage(inner,
+            inner1 -> new ApplicationGatewayWafDynamicManifestResultImpl(inner1, this.manager()));
     }
 
     private ApplicationGatewayWafDynamicManifestsClient serviceClient() {

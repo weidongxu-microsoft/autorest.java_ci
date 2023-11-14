@@ -7,11 +7,13 @@ package com.azure.resourcemanager.keyvault.generated.models;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of PrivateLinkResources. */
+/**
+ * Resource collection API of PrivateLinkResources.
+ */
 public interface PrivateLinkResources {
     /**
      * Gets the private link resources supported for the key vault.
-     *
+     * 
      * @param resourceGroupName Name of the resource group that contains the key vault.
      * @param vaultName The name of the key vault.
      * @param context The context to associate with this operation.
@@ -20,12 +22,12 @@ public interface PrivateLinkResources {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the private link resources supported for the key vault along with {@link Response}.
      */
-    Response<PrivateLinkResourceListResult> listByVaultWithResponse(
-        String resourceGroupName, String vaultName, Context context);
+    Response<PrivateLinkResourceListResult> listByVaultWithResponse(String resourceGroupName, String vaultName,
+        Context context);
 
     /**
      * Gets the private link resources supported for the key vault.
-     *
+     * 
      * @param resourceGroupName Name of the resource group that contains the key vault.
      * @param vaultName The name of the key vault.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

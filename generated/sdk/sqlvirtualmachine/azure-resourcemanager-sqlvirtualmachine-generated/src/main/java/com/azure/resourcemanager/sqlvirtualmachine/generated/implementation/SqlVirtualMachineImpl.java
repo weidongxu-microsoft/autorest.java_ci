@@ -169,25 +169,19 @@ public final class SqlVirtualMachineImpl
     }
 
     public SqlVirtualMachine create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSqlVirtualMachines()
-                .createOrUpdate(resourceGroupName, sqlVirtualMachineName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getSqlVirtualMachines().createOrUpdate(resourceGroupName,
+            sqlVirtualMachineName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public SqlVirtualMachine create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSqlVirtualMachines()
-                .createOrUpdate(resourceGroupName, sqlVirtualMachineName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getSqlVirtualMachines().createOrUpdate(resourceGroupName,
+            sqlVirtualMachineName, this.innerModel(), context);
         return this;
     }
 
-    SqlVirtualMachineImpl(
-        String name, com.azure.resourcemanager.sqlvirtualmachine.generated.SqlVirtualMachineManager serviceManager) {
+    SqlVirtualMachineImpl(String name,
+        com.azure.resourcemanager.sqlvirtualmachine.generated.SqlVirtualMachineManager serviceManager) {
         this.innerObject = new SqlVirtualMachineInner();
         this.serviceManager = serviceManager;
         this.sqlVirtualMachineName = name;
@@ -199,25 +193,18 @@ public final class SqlVirtualMachineImpl
     }
 
     public SqlVirtualMachine apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSqlVirtualMachines()
-                .update(resourceGroupName, sqlVirtualMachineName, updateParameters, Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getSqlVirtualMachines().update(resourceGroupName,
+            sqlVirtualMachineName, updateParameters, Context.NONE);
         return this;
     }
 
     public SqlVirtualMachine apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSqlVirtualMachines()
-                .update(resourceGroupName, sqlVirtualMachineName, updateParameters, context);
+        this.innerObject = serviceManager.serviceClient().getSqlVirtualMachines().update(resourceGroupName,
+            sqlVirtualMachineName, updateParameters, context);
         return this;
     }
 
-    SqlVirtualMachineImpl(
-        SqlVirtualMachineInner innerObject,
+    SqlVirtualMachineImpl(SqlVirtualMachineInner innerObject,
         com.azure.resourcemanager.sqlvirtualmachine.generated.SqlVirtualMachineManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -227,23 +214,16 @@ public final class SqlVirtualMachineImpl
 
     public SqlVirtualMachine refresh() {
         String localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSqlVirtualMachines()
-                .getByResourceGroupWithResponse(resourceGroupName, sqlVirtualMachineName, localExpand, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getSqlVirtualMachines()
+            .getByResourceGroupWithResponse(resourceGroupName, sqlVirtualMachineName, localExpand, Context.NONE)
+            .getValue();
         return this;
     }
 
     public SqlVirtualMachine refresh(Context context) {
         String localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSqlVirtualMachines()
-                .getByResourceGroupWithResponse(resourceGroupName, sqlVirtualMachineName, localExpand, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getSqlVirtualMachines()
+            .getByResourceGroupWithResponse(resourceGroupName, sqlVirtualMachineName, localExpand, context).getValue();
         return this;
     }
 
@@ -349,8 +329,8 @@ public final class SqlVirtualMachineImpl
         return this;
     }
 
-    public SqlVirtualMachineImpl withStorageConfigurationSettings(
-        StorageConfigurationSettings storageConfigurationSettings) {
+    public SqlVirtualMachineImpl
+        withStorageConfigurationSettings(StorageConfigurationSettings storageConfigurationSettings) {
         this.innerModel().withStorageConfigurationSettings(storageConfigurationSettings);
         return this;
     }

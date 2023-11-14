@@ -30,22 +30,28 @@ import com.azure.resourcemanager.consumption.generated.fluent.models.Marketplace
 import com.azure.resourcemanager.consumption.generated.models.MarketplacesListResult;
 import reactor.core.publisher.Mono;
 
-/** An instance of this class provides access to all the operations defined in MarketplacesClient. */
+/**
+ * An instance of this class provides access to all the operations defined in MarketplacesClient.
+ */
 public final class MarketplacesClientImpl implements MarketplacesClient {
-    /** The proxy service used to perform REST calls. */
+    /**
+     * The proxy service used to perform REST calls.
+     */
     private final MarketplacesService service;
 
-    /** The service client containing this operation class. */
+    /**
+     * The service client containing this operation class.
+     */
     private final ConsumptionManagementClientImpl client;
 
     /**
      * Initializes an instance of MarketplacesClientImpl.
-     *
+     * 
      * @param client the instance of the service client containing this operation class.
      */
     MarketplacesClientImpl(ConsumptionManagementClientImpl client) {
-        this.service =
-            RestProxy.create(MarketplacesService.class, client.getHttpPipeline(), client.getSerializerAdapter());
+        this.service
+            = RestProxy.create(MarketplacesService.class, client.getHttpPipeline(), client.getSerializerAdapter());
         this.client = client;
     }
 
@@ -56,114 +62,87 @@ public final class MarketplacesClientImpl implements MarketplacesClient {
     @Host("{$host}")
     @ServiceInterface(name = "ConsumptionManagemen")
     public interface MarketplacesService {
-        @Headers({"Content-Type: application/json"})
+        @Headers({ "Content-Type: application/json" })
         @Get("/{scope}/providers/Microsoft.Consumption/marketplaces")
-        @ExpectedResponses({200, 204})
+        @ExpectedResponses({ 200, 204 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<MarketplacesListResult>> list(
-            @HostParam("$host") String endpoint,
-            @QueryParam("$filter") String filter,
-            @QueryParam("$top") Integer top,
-            @QueryParam("$skiptoken") String skiptoken,
-            @PathParam(value = "scope", encoded = true) String scope,
-            @QueryParam("api-version") String apiVersion,
-            @HeaderParam("Accept") String accept,
-            Context context);
+        Mono<Response<MarketplacesListResult>> list(@HostParam("$host") String endpoint,
+            @QueryParam("$filter") String filter, @QueryParam("$top") Integer top,
+            @QueryParam("$skiptoken") String skiptoken, @PathParam(value = "scope", encoded = true) String scope,
+            @QueryParam("api-version") String apiVersion, @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
+        @Headers({ "Content-Type: application/json" })
         @Get("{nextLink}")
-        @ExpectedResponses({200, 204})
+        @ExpectedResponses({ 200, 204 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<MarketplacesListResult>> listNext(
-            @PathParam(value = "nextLink", encoded = true) String nextLink,
-            @HostParam("$host") String endpoint,
-            @HeaderParam("Accept") String accept,
-            Context context);
+        Mono<Response<MarketplacesListResult>> listNext(@PathParam(value = "nextLink", encoded = true) String nextLink,
+            @HostParam("$host") String endpoint, @HeaderParam("Accept") String accept, Context context);
     }
 
     /**
      * Lists the marketplaces for a scope at the defined scope. Marketplaces are available via this API only for May 1,
      * 2014 or later.
-     *
+     * 
      * @param scope The scope associated with marketplace operations. This includes '/subscriptions/{subscriptionId}/'
-     *     for subscription scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account
-     *     scope, '/providers/Microsoft.Billing/departments/{departmentId}' for Department scope,
-     *     '/providers/Microsoft.Billing/enrollmentAccounts/{enrollmentAccountId}' for EnrollmentAccount scope and
-     *     '/providers/Microsoft.Management/managementGroups/{managementGroupId}' for Management Group scope. For
-     *     subscription, billing account, department, enrollment account and ManagementGroup, you can also add billing
-     *     period to the scope using '/providers/Microsoft.Billing/billingPeriods/{billingPeriodName}'. For e.g. to
-     *     specify billing period at department scope use
-     *     '/providers/Microsoft.Billing/departments/{departmentId}/providers/Microsoft.Billing/billingPeriods/{billingPeriodName}'.
+     * for subscription scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account
+     * scope, '/providers/Microsoft.Billing/departments/{departmentId}' for Department scope,
+     * '/providers/Microsoft.Billing/enrollmentAccounts/{enrollmentAccountId}' for EnrollmentAccount scope and
+     * '/providers/Microsoft.Management/managementGroups/{managementGroupId}' for Management Group scope. For
+     * subscription, billing account, department, enrollment account and ManagementGroup, you can also add billing
+     * period to the scope using '/providers/Microsoft.Billing/billingPeriods/{billingPeriodName}'. For e.g. to specify
+     * billing period at department scope use
+     * '/providers/Microsoft.Billing/departments/{departmentId}/providers/Microsoft.Billing/billingPeriods/{billingPeriodName}'.
      * @param filter May be used to filter marketplaces by properties/usageEnd (Utc time), properties/usageStart (Utc
-     *     time), properties/resourceGroup, properties/instanceName or properties/instanceId. The filter supports 'eq',
-     *     'lt', 'gt', 'le', 'ge', and 'and'. It does not currently support 'ne', 'or', or 'not'.
+     * time), properties/resourceGroup, properties/instanceName or properties/instanceId. The filter supports 'eq',
+     * 'lt', 'gt', 'le', 'ge', and 'and'. It does not currently support 'ne', 'or', or 'not'.
      * @param top May be used to limit the number of results to the most recent N marketplaces.
      * @param skiptoken Skiptoken is only used if a previous operation returned a partial result. If a previous response
-     *     contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that
-     *     specifies a starting point to use for subsequent calls.
+     * contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies
+     * a starting point to use for subsequent calls.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return result of listing marketplaces along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<MarketplaceInner>> listSinglePageAsync(
-        String scope, String filter, Integer top, String skiptoken) {
+    private Mono<PagedResponse<MarketplaceInner>> listSinglePageAsync(String scope, String filter, Integer top,
+        String skiptoken) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (scope == null) {
             return Mono.error(new IllegalArgumentException("Parameter scope is required and cannot be null."));
         }
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .list(
-                            this.client.getEndpoint(),
-                            filter,
-                            top,
-                            skiptoken,
-                            scope,
-                            this.client.getApiVersion(),
-                            accept,
-                            context))
-            .<PagedResponse<MarketplaceInner>>map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null))
+            .withContext(context -> service.list(this.client.getEndpoint(), filter, top, skiptoken, scope,
+                this.client.getApiVersion(), accept, context))
+            .<PagedResponse<MarketplaceInner>>map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(),
+                res.getHeaders(), res.getValue().value(), res.getValue().nextLink(), null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Lists the marketplaces for a scope at the defined scope. Marketplaces are available via this API only for May 1,
      * 2014 or later.
-     *
+     * 
      * @param scope The scope associated with marketplace operations. This includes '/subscriptions/{subscriptionId}/'
-     *     for subscription scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account
-     *     scope, '/providers/Microsoft.Billing/departments/{departmentId}' for Department scope,
-     *     '/providers/Microsoft.Billing/enrollmentAccounts/{enrollmentAccountId}' for EnrollmentAccount scope and
-     *     '/providers/Microsoft.Management/managementGroups/{managementGroupId}' for Management Group scope. For
-     *     subscription, billing account, department, enrollment account and ManagementGroup, you can also add billing
-     *     period to the scope using '/providers/Microsoft.Billing/billingPeriods/{billingPeriodName}'. For e.g. to
-     *     specify billing period at department scope use
-     *     '/providers/Microsoft.Billing/departments/{departmentId}/providers/Microsoft.Billing/billingPeriods/{billingPeriodName}'.
+     * for subscription scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account
+     * scope, '/providers/Microsoft.Billing/departments/{departmentId}' for Department scope,
+     * '/providers/Microsoft.Billing/enrollmentAccounts/{enrollmentAccountId}' for EnrollmentAccount scope and
+     * '/providers/Microsoft.Management/managementGroups/{managementGroupId}' for Management Group scope. For
+     * subscription, billing account, department, enrollment account and ManagementGroup, you can also add billing
+     * period to the scope using '/providers/Microsoft.Billing/billingPeriods/{billingPeriodName}'. For e.g. to specify
+     * billing period at department scope use
+     * '/providers/Microsoft.Billing/departments/{departmentId}/providers/Microsoft.Billing/billingPeriods/{billingPeriodName}'.
      * @param filter May be used to filter marketplaces by properties/usageEnd (Utc time), properties/usageStart (Utc
-     *     time), properties/resourceGroup, properties/instanceName or properties/instanceId. The filter supports 'eq',
-     *     'lt', 'gt', 'le', 'ge', and 'and'. It does not currently support 'ne', 'or', or 'not'.
+     * time), properties/resourceGroup, properties/instanceName or properties/instanceId. The filter supports 'eq',
+     * 'lt', 'gt', 'le', 'ge', and 'and'. It does not currently support 'ne', 'or', or 'not'.
      * @param top May be used to limit the number of results to the most recent N marketplaces.
      * @param skiptoken Skiptoken is only used if a previous operation returned a partial result. If a previous response
-     *     contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that
-     *     specifies a starting point to use for subsequent calls.
+     * contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies
+     * a starting point to use for subsequent calls.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -171,13 +150,11 @@ public final class MarketplacesClientImpl implements MarketplacesClient {
      * @return result of listing marketplaces along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<MarketplaceInner>> listSinglePageAsync(
-        String scope, String filter, Integer top, String skiptoken, Context context) {
+    private Mono<PagedResponse<MarketplaceInner>> listSinglePageAsync(String scope, String filter, Integer top,
+        String skiptoken, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (scope == null) {
             return Mono.error(new IllegalArgumentException("Parameter scope is required and cannot be null."));
@@ -185,39 +162,32 @@ public final class MarketplacesClientImpl implements MarketplacesClient {
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .list(
-                this.client.getEndpoint(), filter, top, skiptoken, scope, this.client.getApiVersion(), accept, context)
-            .map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null));
+            .list(this.client.getEndpoint(), filter, top, skiptoken, scope, this.client.getApiVersion(), accept,
+                context)
+            .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
+                res.getValue().value(), res.getValue().nextLink(), null));
     }
 
     /**
      * Lists the marketplaces for a scope at the defined scope. Marketplaces are available via this API only for May 1,
      * 2014 or later.
-     *
+     * 
      * @param scope The scope associated with marketplace operations. This includes '/subscriptions/{subscriptionId}/'
-     *     for subscription scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account
-     *     scope, '/providers/Microsoft.Billing/departments/{departmentId}' for Department scope,
-     *     '/providers/Microsoft.Billing/enrollmentAccounts/{enrollmentAccountId}' for EnrollmentAccount scope and
-     *     '/providers/Microsoft.Management/managementGroups/{managementGroupId}' for Management Group scope. For
-     *     subscription, billing account, department, enrollment account and ManagementGroup, you can also add billing
-     *     period to the scope using '/providers/Microsoft.Billing/billingPeriods/{billingPeriodName}'. For e.g. to
-     *     specify billing period at department scope use
-     *     '/providers/Microsoft.Billing/departments/{departmentId}/providers/Microsoft.Billing/billingPeriods/{billingPeriodName}'.
+     * for subscription scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account
+     * scope, '/providers/Microsoft.Billing/departments/{departmentId}' for Department scope,
+     * '/providers/Microsoft.Billing/enrollmentAccounts/{enrollmentAccountId}' for EnrollmentAccount scope and
+     * '/providers/Microsoft.Management/managementGroups/{managementGroupId}' for Management Group scope. For
+     * subscription, billing account, department, enrollment account and ManagementGroup, you can also add billing
+     * period to the scope using '/providers/Microsoft.Billing/billingPeriods/{billingPeriodName}'. For e.g. to specify
+     * billing period at department scope use
+     * '/providers/Microsoft.Billing/departments/{departmentId}/providers/Microsoft.Billing/billingPeriods/{billingPeriodName}'.
      * @param filter May be used to filter marketplaces by properties/usageEnd (Utc time), properties/usageStart (Utc
-     *     time), properties/resourceGroup, properties/instanceName or properties/instanceId. The filter supports 'eq',
-     *     'lt', 'gt', 'le', 'ge', and 'and'. It does not currently support 'ne', 'or', or 'not'.
+     * time), properties/resourceGroup, properties/instanceName or properties/instanceId. The filter supports 'eq',
+     * 'lt', 'gt', 'le', 'ge', and 'and'. It does not currently support 'ne', 'or', or 'not'.
      * @param top May be used to limit the number of results to the most recent N marketplaces.
      * @param skiptoken Skiptoken is only used if a previous operation returned a partial result. If a previous response
-     *     contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that
-     *     specifies a starting point to use for subsequent calls.
+     * contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies
+     * a starting point to use for subsequent calls.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -225,23 +195,23 @@ public final class MarketplacesClientImpl implements MarketplacesClient {
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<MarketplaceInner> listAsync(String scope, String filter, Integer top, String skiptoken) {
-        return new PagedFlux<>(
-            () -> listSinglePageAsync(scope, filter, top, skiptoken), nextLink -> listNextSinglePageAsync(nextLink));
+        return new PagedFlux<>(() -> listSinglePageAsync(scope, filter, top, skiptoken),
+            nextLink -> listNextSinglePageAsync(nextLink));
     }
 
     /**
      * Lists the marketplaces for a scope at the defined scope. Marketplaces are available via this API only for May 1,
      * 2014 or later.
-     *
+     * 
      * @param scope The scope associated with marketplace operations. This includes '/subscriptions/{subscriptionId}/'
-     *     for subscription scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account
-     *     scope, '/providers/Microsoft.Billing/departments/{departmentId}' for Department scope,
-     *     '/providers/Microsoft.Billing/enrollmentAccounts/{enrollmentAccountId}' for EnrollmentAccount scope and
-     *     '/providers/Microsoft.Management/managementGroups/{managementGroupId}' for Management Group scope. For
-     *     subscription, billing account, department, enrollment account and ManagementGroup, you can also add billing
-     *     period to the scope using '/providers/Microsoft.Billing/billingPeriods/{billingPeriodName}'. For e.g. to
-     *     specify billing period at department scope use
-     *     '/providers/Microsoft.Billing/departments/{departmentId}/providers/Microsoft.Billing/billingPeriods/{billingPeriodName}'.
+     * for subscription scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account
+     * scope, '/providers/Microsoft.Billing/departments/{departmentId}' for Department scope,
+     * '/providers/Microsoft.Billing/enrollmentAccounts/{enrollmentAccountId}' for EnrollmentAccount scope and
+     * '/providers/Microsoft.Management/managementGroups/{managementGroupId}' for Management Group scope. For
+     * subscription, billing account, department, enrollment account and ManagementGroup, you can also add billing
+     * period to the scope using '/providers/Microsoft.Billing/billingPeriods/{billingPeriodName}'. For e.g. to specify
+     * billing period at department scope use
+     * '/providers/Microsoft.Billing/departments/{departmentId}/providers/Microsoft.Billing/billingPeriods/{billingPeriodName}'.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -252,30 +222,30 @@ public final class MarketplacesClientImpl implements MarketplacesClient {
         final String filter = null;
         final Integer top = null;
         final String skiptoken = null;
-        return new PagedFlux<>(
-            () -> listSinglePageAsync(scope, filter, top, skiptoken), nextLink -> listNextSinglePageAsync(nextLink));
+        return new PagedFlux<>(() -> listSinglePageAsync(scope, filter, top, skiptoken),
+            nextLink -> listNextSinglePageAsync(nextLink));
     }
 
     /**
      * Lists the marketplaces for a scope at the defined scope. Marketplaces are available via this API only for May 1,
      * 2014 or later.
-     *
+     * 
      * @param scope The scope associated with marketplace operations. This includes '/subscriptions/{subscriptionId}/'
-     *     for subscription scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account
-     *     scope, '/providers/Microsoft.Billing/departments/{departmentId}' for Department scope,
-     *     '/providers/Microsoft.Billing/enrollmentAccounts/{enrollmentAccountId}' for EnrollmentAccount scope and
-     *     '/providers/Microsoft.Management/managementGroups/{managementGroupId}' for Management Group scope. For
-     *     subscription, billing account, department, enrollment account and ManagementGroup, you can also add billing
-     *     period to the scope using '/providers/Microsoft.Billing/billingPeriods/{billingPeriodName}'. For e.g. to
-     *     specify billing period at department scope use
-     *     '/providers/Microsoft.Billing/departments/{departmentId}/providers/Microsoft.Billing/billingPeriods/{billingPeriodName}'.
+     * for subscription scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account
+     * scope, '/providers/Microsoft.Billing/departments/{departmentId}' for Department scope,
+     * '/providers/Microsoft.Billing/enrollmentAccounts/{enrollmentAccountId}' for EnrollmentAccount scope and
+     * '/providers/Microsoft.Management/managementGroups/{managementGroupId}' for Management Group scope. For
+     * subscription, billing account, department, enrollment account and ManagementGroup, you can also add billing
+     * period to the scope using '/providers/Microsoft.Billing/billingPeriods/{billingPeriodName}'. For e.g. to specify
+     * billing period at department scope use
+     * '/providers/Microsoft.Billing/departments/{departmentId}/providers/Microsoft.Billing/billingPeriods/{billingPeriodName}'.
      * @param filter May be used to filter marketplaces by properties/usageEnd (Utc time), properties/usageStart (Utc
-     *     time), properties/resourceGroup, properties/instanceName or properties/instanceId. The filter supports 'eq',
-     *     'lt', 'gt', 'le', 'ge', and 'and'. It does not currently support 'ne', 'or', or 'not'.
+     * time), properties/resourceGroup, properties/instanceName or properties/instanceId. The filter supports 'eq',
+     * 'lt', 'gt', 'le', 'ge', and 'and'. It does not currently support 'ne', 'or', or 'not'.
      * @param top May be used to limit the number of results to the most recent N marketplaces.
      * @param skiptoken Skiptoken is only used if a previous operation returned a partial result. If a previous response
-     *     contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that
-     *     specifies a starting point to use for subsequent calls.
+     * contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies
+     * a starting point to use for subsequent calls.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -283,26 +253,25 @@ public final class MarketplacesClientImpl implements MarketplacesClient {
      * @return result of listing marketplaces as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<MarketplaceInner> listAsync(
-        String scope, String filter, Integer top, String skiptoken, Context context) {
-        return new PagedFlux<>(
-            () -> listSinglePageAsync(scope, filter, top, skiptoken, context),
+    private PagedFlux<MarketplaceInner> listAsync(String scope, String filter, Integer top, String skiptoken,
+        Context context) {
+        return new PagedFlux<>(() -> listSinglePageAsync(scope, filter, top, skiptoken, context),
             nextLink -> listNextSinglePageAsync(nextLink, context));
     }
 
     /**
      * Lists the marketplaces for a scope at the defined scope. Marketplaces are available via this API only for May 1,
      * 2014 or later.
-     *
+     * 
      * @param scope The scope associated with marketplace operations. This includes '/subscriptions/{subscriptionId}/'
-     *     for subscription scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account
-     *     scope, '/providers/Microsoft.Billing/departments/{departmentId}' for Department scope,
-     *     '/providers/Microsoft.Billing/enrollmentAccounts/{enrollmentAccountId}' for EnrollmentAccount scope and
-     *     '/providers/Microsoft.Management/managementGroups/{managementGroupId}' for Management Group scope. For
-     *     subscription, billing account, department, enrollment account and ManagementGroup, you can also add billing
-     *     period to the scope using '/providers/Microsoft.Billing/billingPeriods/{billingPeriodName}'. For e.g. to
-     *     specify billing period at department scope use
-     *     '/providers/Microsoft.Billing/departments/{departmentId}/providers/Microsoft.Billing/billingPeriods/{billingPeriodName}'.
+     * for subscription scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account
+     * scope, '/providers/Microsoft.Billing/departments/{departmentId}' for Department scope,
+     * '/providers/Microsoft.Billing/enrollmentAccounts/{enrollmentAccountId}' for EnrollmentAccount scope and
+     * '/providers/Microsoft.Management/managementGroups/{managementGroupId}' for Management Group scope. For
+     * subscription, billing account, department, enrollment account and ManagementGroup, you can also add billing
+     * period to the scope using '/providers/Microsoft.Billing/billingPeriods/{billingPeriodName}'. For e.g. to specify
+     * billing period at department scope use
+     * '/providers/Microsoft.Billing/departments/{departmentId}/providers/Microsoft.Billing/billingPeriods/{billingPeriodName}'.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -319,23 +288,23 @@ public final class MarketplacesClientImpl implements MarketplacesClient {
     /**
      * Lists the marketplaces for a scope at the defined scope. Marketplaces are available via this API only for May 1,
      * 2014 or later.
-     *
+     * 
      * @param scope The scope associated with marketplace operations. This includes '/subscriptions/{subscriptionId}/'
-     *     for subscription scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account
-     *     scope, '/providers/Microsoft.Billing/departments/{departmentId}' for Department scope,
-     *     '/providers/Microsoft.Billing/enrollmentAccounts/{enrollmentAccountId}' for EnrollmentAccount scope and
-     *     '/providers/Microsoft.Management/managementGroups/{managementGroupId}' for Management Group scope. For
-     *     subscription, billing account, department, enrollment account and ManagementGroup, you can also add billing
-     *     period to the scope using '/providers/Microsoft.Billing/billingPeriods/{billingPeriodName}'. For e.g. to
-     *     specify billing period at department scope use
-     *     '/providers/Microsoft.Billing/departments/{departmentId}/providers/Microsoft.Billing/billingPeriods/{billingPeriodName}'.
+     * for subscription scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account
+     * scope, '/providers/Microsoft.Billing/departments/{departmentId}' for Department scope,
+     * '/providers/Microsoft.Billing/enrollmentAccounts/{enrollmentAccountId}' for EnrollmentAccount scope and
+     * '/providers/Microsoft.Management/managementGroups/{managementGroupId}' for Management Group scope. For
+     * subscription, billing account, department, enrollment account and ManagementGroup, you can also add billing
+     * period to the scope using '/providers/Microsoft.Billing/billingPeriods/{billingPeriodName}'. For e.g. to specify
+     * billing period at department scope use
+     * '/providers/Microsoft.Billing/departments/{departmentId}/providers/Microsoft.Billing/billingPeriods/{billingPeriodName}'.
      * @param filter May be used to filter marketplaces by properties/usageEnd (Utc time), properties/usageStart (Utc
-     *     time), properties/resourceGroup, properties/instanceName or properties/instanceId. The filter supports 'eq',
-     *     'lt', 'gt', 'le', 'ge', and 'and'. It does not currently support 'ne', 'or', or 'not'.
+     * time), properties/resourceGroup, properties/instanceName or properties/instanceId. The filter supports 'eq',
+     * 'lt', 'gt', 'le', 'ge', and 'and'. It does not currently support 'ne', 'or', or 'not'.
      * @param top May be used to limit the number of results to the most recent N marketplaces.
      * @param skiptoken Skiptoken is only used if a previous operation returned a partial result. If a previous response
-     *     contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that
-     *     specifies a starting point to use for subsequent calls.
+     * contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies
+     * a starting point to use for subsequent calls.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -343,16 +312,17 @@ public final class MarketplacesClientImpl implements MarketplacesClient {
      * @return result of listing marketplaces as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    public PagedIterable<MarketplaceInner> list(
-        String scope, String filter, Integer top, String skiptoken, Context context) {
+    public PagedIterable<MarketplaceInner> list(String scope, String filter, Integer top, String skiptoken,
+        Context context) {
         return new PagedIterable<>(listAsync(scope, filter, top, skiptoken, context));
     }
 
     /**
      * Get the next page of items.
-     *
+     * 
      * @param nextLink The URL to get the next list of items
-     *     <p>The nextLink parameter.
+     * 
+     * The nextLink parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -364,31 +334,22 @@ public final class MarketplacesClientImpl implements MarketplacesClient {
             return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
         }
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         final String accept = "application/json";
-        return FluxUtil
-            .withContext(context -> service.listNext(nextLink, this.client.getEndpoint(), accept, context))
-            .<PagedResponse<MarketplaceInner>>map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null))
+        return FluxUtil.withContext(context -> service.listNext(nextLink, this.client.getEndpoint(), accept, context))
+            .<PagedResponse<MarketplaceInner>>map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(),
+                res.getHeaders(), res.getValue().value(), res.getValue().nextLink(), null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Get the next page of items.
-     *
+     * 
      * @param nextLink The URL to get the next list of items
-     *     <p>The nextLink parameter.
+     * 
+     * The nextLink parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -401,23 +362,13 @@ public final class MarketplacesClientImpl implements MarketplacesClient {
             return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
         }
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .listNext(nextLink, this.client.getEndpoint(), accept, context)
-            .map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null));
+        return service.listNext(nextLink, this.client.getEndpoint(), accept, context)
+            .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
+                res.getValue().value(), res.getValue().nextLink(), null));
     }
 }

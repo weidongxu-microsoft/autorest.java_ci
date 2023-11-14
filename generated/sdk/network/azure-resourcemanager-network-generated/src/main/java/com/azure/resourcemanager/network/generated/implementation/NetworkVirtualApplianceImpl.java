@@ -9,6 +9,7 @@ import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkVirtualApplianceInner;
 import com.azure.resourcemanager.network.generated.models.DelegationProperties;
+import com.azure.resourcemanager.network.generated.models.InternetIngressPublicIpsProperties;
 import com.azure.resourcemanager.network.generated.models.ManagedServiceIdentity;
 import com.azure.resourcemanager.network.generated.models.NetworkVirtualAppliance;
 import com.azure.resourcemanager.network.generated.models.PartnerManagedResourceProperties;
@@ -120,6 +121,15 @@ public final class NetworkVirtualApplianceImpl
         }
     }
 
+    public List<InternetIngressPublicIpsProperties> internetIngressPublicIps() {
+        List<InternetIngressPublicIpsProperties> inner = this.innerModel().internetIngressPublicIps();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
     public List<SubResource> virtualApplianceSites() {
         List<SubResource> inner = this.innerModel().virtualApplianceSites();
         if (inner != null) {
@@ -195,25 +205,19 @@ public final class NetworkVirtualApplianceImpl
     }
 
     public NetworkVirtualAppliance create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNetworkVirtualAppliances()
-                .createOrUpdate(resourceGroupName, networkVirtualApplianceName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getNetworkVirtualAppliances()
+            .createOrUpdate(resourceGroupName, networkVirtualApplianceName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public NetworkVirtualAppliance create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNetworkVirtualAppliances()
-                .createOrUpdate(resourceGroupName, networkVirtualApplianceName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getNetworkVirtualAppliances()
+            .createOrUpdate(resourceGroupName, networkVirtualApplianceName, this.innerModel(), context);
         return this;
     }
 
-    NetworkVirtualApplianceImpl(
-        String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    NetworkVirtualApplianceImpl(String name,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new NetworkVirtualApplianceInner();
         this.serviceManager = serviceManager;
         this.networkVirtualApplianceName = name;
@@ -225,27 +229,20 @@ public final class NetworkVirtualApplianceImpl
     }
 
     public NetworkVirtualAppliance apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNetworkVirtualAppliances()
-                .updateTagsWithResponse(resourceGroupName, networkVirtualApplianceName, updateParameters, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getNetworkVirtualAppliances()
+            .updateTagsWithResponse(resourceGroupName, networkVirtualApplianceName, updateParameters, Context.NONE)
+            .getValue();
         return this;
     }
 
     public NetworkVirtualAppliance apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNetworkVirtualAppliances()
-                .updateTagsWithResponse(resourceGroupName, networkVirtualApplianceName, updateParameters, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getNetworkVirtualAppliances()
+            .updateTagsWithResponse(resourceGroupName, networkVirtualApplianceName, updateParameters, context)
+            .getValue();
         return this;
     }
 
-    NetworkVirtualApplianceImpl(
-        NetworkVirtualApplianceInner innerObject,
+    NetworkVirtualApplianceImpl(NetworkVirtualApplianceInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -255,24 +252,17 @@ public final class NetworkVirtualApplianceImpl
 
     public NetworkVirtualAppliance refresh() {
         String localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNetworkVirtualAppliances()
-                .getByResourceGroupWithResponse(
-                    resourceGroupName, networkVirtualApplianceName, localExpand, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getNetworkVirtualAppliances()
+            .getByResourceGroupWithResponse(resourceGroupName, networkVirtualApplianceName, localExpand, Context.NONE)
+            .getValue();
         return this;
     }
 
     public NetworkVirtualAppliance refresh(Context context) {
         String localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNetworkVirtualAppliances()
-                .getByResourceGroupWithResponse(resourceGroupName, networkVirtualApplianceName, localExpand, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getNetworkVirtualAppliances()
+            .getByResourceGroupWithResponse(resourceGroupName, networkVirtualApplianceName, localExpand, context)
+            .getValue();
         return this;
     }
 
@@ -336,9 +326,15 @@ public final class NetworkVirtualApplianceImpl
         return this;
     }
 
-    public NetworkVirtualApplianceImpl withAdditionalNics(
-        List<VirtualApplianceAdditionalNicProperties> additionalNics) {
+    public NetworkVirtualApplianceImpl
+        withAdditionalNics(List<VirtualApplianceAdditionalNicProperties> additionalNics) {
         this.innerModel().withAdditionalNics(additionalNics);
+        return this;
+    }
+
+    public NetworkVirtualApplianceImpl
+        withInternetIngressPublicIps(List<InternetIngressPublicIpsProperties> internetIngressPublicIps) {
+        this.innerModel().withInternetIngressPublicIps(internetIngressPublicIps);
         return this;
     }
 
@@ -347,8 +343,8 @@ public final class NetworkVirtualApplianceImpl
         return this;
     }
 
-    public NetworkVirtualApplianceImpl withPartnerManagedResource(
-        PartnerManagedResourceProperties partnerManagedResource) {
+    public NetworkVirtualApplianceImpl
+        withPartnerManagedResource(PartnerManagedResourceProperties partnerManagedResource) {
         this.innerModel().withPartnerManagedResource(partnerManagedResource);
         return this;
     }

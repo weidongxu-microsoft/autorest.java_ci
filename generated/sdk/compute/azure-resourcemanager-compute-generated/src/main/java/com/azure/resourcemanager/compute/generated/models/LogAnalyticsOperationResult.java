@@ -6,18 +6,20 @@ package com.azure.resourcemanager.compute.generated.models;
 
 import com.azure.resourcemanager.compute.generated.fluent.models.LogAnalyticsOperationResultInner;
 
-/** An immutable client-side representation of LogAnalyticsOperationResult. */
+/**
+ * An immutable client-side representation of LogAnalyticsOperationResult.
+ */
 public interface LogAnalyticsOperationResult {
     /**
      * Gets the properties property: LogAnalyticsOutput.
-     *
+     * 
      * @return the properties value.
      */
     LogAnalyticsOutput properties();
 
     /**
      * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.LogAnalyticsOperationResultInner object.
-     *
+     * 
      * @return the inner object.
      */
     LogAnalyticsOperationResultInner innerModel();

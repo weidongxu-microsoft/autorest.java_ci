@@ -12,8 +12,8 @@ public final class KeyInfoImpl implements KeyInfo {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    KeyInfoImpl(
-        KeyInfoInner innerObject, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
+    KeyInfoImpl(KeyInfoInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

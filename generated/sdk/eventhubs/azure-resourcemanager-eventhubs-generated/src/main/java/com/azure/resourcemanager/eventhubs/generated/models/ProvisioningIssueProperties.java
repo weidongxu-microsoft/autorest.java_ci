@@ -7,7 +7,9 @@ package com.azure.resourcemanager.eventhubs.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Properties of Provisioning Issue. */
+/**
+ * Properties of Provisioning Issue.
+ */
 @Fluent
 public final class ProvisioningIssueProperties {
     /*
@@ -22,13 +24,15 @@ public final class ProvisioningIssueProperties {
     @JsonProperty(value = "description")
     private String description;
 
-    /** Creates an instance of ProvisioningIssueProperties class. */
+    /**
+     * Creates an instance of ProvisioningIssueProperties class.
+     */
     public ProvisioningIssueProperties() {
     }
 
     /**
      * Get the issueType property: Type of Issue.
-     *
+     * 
      * @return the issueType value.
      */
     public String issueType() {
@@ -37,7 +41,7 @@ public final class ProvisioningIssueProperties {
 
     /**
      * Set the issueType property: Type of Issue.
-     *
+     * 
      * @param issueType the issueType value to set.
      * @return the ProvisioningIssueProperties object itself.
      */
@@ -48,7 +52,7 @@ public final class ProvisioningIssueProperties {
 
     /**
      * Get the description property: Description of the issue.
-     *
+     * 
      * @return the description value.
      */
     public String description() {
@@ -57,7 +61,7 @@ public final class ProvisioningIssueProperties {
 
     /**
      * Set the description property: Description of the issue.
-     *
+     * 
      * @param description the description value to set.
      * @return the ProvisioningIssueProperties object itself.
      */
@@ -68,7 +72,7 @@ public final class ProvisioningIssueProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

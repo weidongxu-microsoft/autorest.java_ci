@@ -8,26 +8,38 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Access Mode of the resource association. */
+/**
+ * Access Mode of the resource association.
+ */
 public final class ResourceAssociationAccessMode extends ExpandableStringEnum<ResourceAssociationAccessMode> {
-    /** Static value NoAssociationMode for ResourceAssociationAccessMode. */
+    /**
+     * Static value NoAssociationMode for ResourceAssociationAccessMode.
+     */
     public static final ResourceAssociationAccessMode NO_ASSOCIATION_MODE = fromString("NoAssociationMode");
 
-    /** Static value EnforcedMode for ResourceAssociationAccessMode. */
+    /**
+     * Static value EnforcedMode for ResourceAssociationAccessMode.
+     */
     public static final ResourceAssociationAccessMode ENFORCED_MODE = fromString("EnforcedMode");
 
-    /** Static value LearningMode for ResourceAssociationAccessMode. */
+    /**
+     * Static value LearningMode for ResourceAssociationAccessMode.
+     */
     public static final ResourceAssociationAccessMode LEARNING_MODE = fromString("LearningMode");
 
-    /** Static value AuditMode for ResourceAssociationAccessMode. */
+    /**
+     * Static value AuditMode for ResourceAssociationAccessMode.
+     */
     public static final ResourceAssociationAccessMode AUDIT_MODE = fromString("AuditMode");
 
-    /** Static value UnspecifiedMode for ResourceAssociationAccessMode. */
+    /**
+     * Static value UnspecifiedMode for ResourceAssociationAccessMode.
+     */
     public static final ResourceAssociationAccessMode UNSPECIFIED_MODE = fromString("UnspecifiedMode");
 
     /**
      * Creates a new instance of ResourceAssociationAccessMode value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -36,7 +48,7 @@ public final class ResourceAssociationAccessMode extends ExpandableStringEnum<Re
 
     /**
      * Creates or finds a ResourceAssociationAccessMode from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding ResourceAssociationAccessMode.
      */
@@ -47,7 +59,7 @@ public final class ResourceAssociationAccessMode extends ExpandableStringEnum<Re
 
     /**
      * Gets known ResourceAssociationAccessMode values.
-     *
+     * 
      * @return known ResourceAssociationAccessMode values.
      */
     public static Collection<ResourceAssociationAccessMode> values() {

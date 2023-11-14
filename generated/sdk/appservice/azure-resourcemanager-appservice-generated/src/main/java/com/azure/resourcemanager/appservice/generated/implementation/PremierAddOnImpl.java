@@ -101,22 +101,16 @@ public final class PremierAddOnImpl implements PremierAddOn, PremierAddOn.Defini
     }
 
     public PremierAddOn create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApps()
-                .addPremierAddOnWithResponse(resourceGroupName, name, premierAddOnName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getWebApps()
+            .addPremierAddOnWithResponse(resourceGroupName, name, premierAddOnName, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public PremierAddOn create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApps()
-                .addPremierAddOnWithResponse(resourceGroupName, name, premierAddOnName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getWebApps()
+            .addPremierAddOnWithResponse(resourceGroupName, name, premierAddOnName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
@@ -132,28 +126,20 @@ public final class PremierAddOnImpl implements PremierAddOn, PremierAddOn.Defini
     }
 
     public PremierAddOn apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApps()
-                .updatePremierAddOnWithResponse(
-                    resourceGroupName, name, premierAddOnName, updatePremierAddOn, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getWebApps()
+            .updatePremierAddOnWithResponse(resourceGroupName, name, premierAddOnName, updatePremierAddOn, Context.NONE)
+            .getValue();
         return this;
     }
 
     public PremierAddOn apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApps()
-                .updatePremierAddOnWithResponse(resourceGroupName, name, premierAddOnName, updatePremierAddOn, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getWebApps()
+            .updatePremierAddOnWithResponse(resourceGroupName, name, premierAddOnName, updatePremierAddOn, context)
+            .getValue();
         return this;
     }
 
-    PremierAddOnImpl(
-        PremierAddOnInner innerObject,
+    PremierAddOnImpl(PremierAddOnInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -163,22 +149,14 @@ public final class PremierAddOnImpl implements PremierAddOn, PremierAddOn.Defini
     }
 
     public PremierAddOn refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApps()
-                .getPremierAddOnWithResponse(resourceGroupName, name, premierAddOnName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getWebApps()
+            .getPremierAddOnWithResponse(resourceGroupName, name, premierAddOnName, Context.NONE).getValue();
         return this;
     }
 
     public PremierAddOn refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApps()
-                .getPremierAddOnWithResponse(resourceGroupName, name, premierAddOnName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getWebApps()
+            .getPremierAddOnWithResponse(resourceGroupName, name, premierAddOnName, context).getValue();
         return this;
     }
 

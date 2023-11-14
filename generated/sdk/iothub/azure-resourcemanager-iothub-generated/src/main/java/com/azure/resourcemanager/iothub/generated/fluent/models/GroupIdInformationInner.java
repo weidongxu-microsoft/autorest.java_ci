@@ -9,7 +9,9 @@ import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.iothub.generated.models.GroupIdInformationProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The group information for creating a private endpoint on an IotHub. */
+/**
+ * The group information for creating a private endpoint on an IotHub.
+ */
 @Fluent
 public final class GroupIdInformationInner {
     /*
@@ -36,13 +38,15 @@ public final class GroupIdInformationInner {
     @JsonProperty(value = "properties", required = true)
     private GroupIdInformationProperties properties;
 
-    /** Creates an instance of GroupIdInformationInner class. */
+    /**
+     * Creates an instance of GroupIdInformationInner class.
+     */
     public GroupIdInformationInner() {
     }
 
     /**
      * Get the id property: The resource identifier.
-     *
+     * 
      * @return the id value.
      */
     public String id() {
@@ -51,7 +55,7 @@ public final class GroupIdInformationInner {
 
     /**
      * Get the name property: The resource name.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -60,7 +64,7 @@ public final class GroupIdInformationInner {
 
     /**
      * Get the type property: The resource type.
-     *
+     * 
      * @return the type value.
      */
     public String type() {
@@ -69,7 +73,7 @@ public final class GroupIdInformationInner {
 
     /**
      * Get the properties property: The properties for a group information object.
-     *
+     * 
      * @return the properties value.
      */
     public GroupIdInformationProperties properties() {
@@ -78,7 +82,7 @@ public final class GroupIdInformationInner {
 
     /**
      * Set the properties property: The properties for a group information object.
-     *
+     * 
      * @param properties the properties value to set.
      * @return the GroupIdInformationInner object itself.
      */
@@ -89,15 +93,13 @@ public final class GroupIdInformationInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (properties() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property properties in model GroupIdInformationInner"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property properties in model GroupIdInformationInner"));
         } else {
             properties().validate();
         }

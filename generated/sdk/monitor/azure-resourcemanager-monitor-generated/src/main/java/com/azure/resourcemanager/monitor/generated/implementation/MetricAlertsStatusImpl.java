@@ -20,22 +20,18 @@ public final class MetricAlertsStatusImpl implements MetricAlertsStatus {
 
     private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    public MetricAlertsStatusImpl(
-        MetricAlertsStatusClient innerClient,
+    public MetricAlertsStatusImpl(MetricAlertsStatusClient innerClient,
         com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<MetricAlertStatusCollection> listWithResponse(
-        String resourceGroupName, String ruleName, Context context) {
-        Response<MetricAlertStatusCollectionInner> inner =
-            this.serviceClient().listWithResponse(resourceGroupName, ruleName, context);
+    public Response<MetricAlertStatusCollection> listWithResponse(String resourceGroupName, String ruleName,
+        Context context) {
+        Response<MetricAlertStatusCollectionInner> inner
+            = this.serviceClient().listWithResponse(resourceGroupName, ruleName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new MetricAlertStatusCollectionImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -51,15 +47,12 @@ public final class MetricAlertsStatusImpl implements MetricAlertsStatus {
         }
     }
 
-    public Response<MetricAlertStatusCollection> listByNameWithResponse(
-        String resourceGroupName, String ruleName, String statusName, Context context) {
-        Response<MetricAlertStatusCollectionInner> inner =
-            this.serviceClient().listByNameWithResponse(resourceGroupName, ruleName, statusName, context);
+    public Response<MetricAlertStatusCollection> listByNameWithResponse(String resourceGroupName, String ruleName,
+        String statusName, Context context) {
+        Response<MetricAlertStatusCollectionInner> inner
+            = this.serviceClient().listByNameWithResponse(resourceGroupName, ruleName, statusName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new MetricAlertStatusCollectionImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -67,8 +60,8 @@ public final class MetricAlertsStatusImpl implements MetricAlertsStatus {
     }
 
     public MetricAlertStatusCollection listByName(String resourceGroupName, String ruleName, String statusName) {
-        MetricAlertStatusCollectionInner inner =
-            this.serviceClient().listByName(resourceGroupName, ruleName, statusName);
+        MetricAlertStatusCollectionInner inner
+            = this.serviceClient().listByName(resourceGroupName, ruleName, statusName);
         if (inner != null) {
             return new MetricAlertStatusCollectionImpl(inner, this.manager());
         } else {

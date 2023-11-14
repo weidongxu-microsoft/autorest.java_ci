@@ -8,21 +8,29 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
 import java.util.Map;
 
-/** An azure resource object. */
+/**
+ * An azure resource object.
+ */
 @Fluent
 public class WorkbookResource extends Resource {
-    /** Creates an instance of WorkbookResource class. */
+    /**
+     * Creates an instance of WorkbookResource class.
+     */
     public WorkbookResource() {
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public WorkbookResource withLocation(String location) {
         super.withLocation(location);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public WorkbookResource withTags(Map<String, String> tags) {
         super.withTags(tags);
@@ -31,7 +39,7 @@ public class WorkbookResource extends Resource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

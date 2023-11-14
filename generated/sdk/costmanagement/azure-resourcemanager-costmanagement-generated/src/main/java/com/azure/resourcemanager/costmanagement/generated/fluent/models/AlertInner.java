@@ -14,7 +14,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
 
-/** An individual alert. */
+/**
+ * An individual alert.
+ */
 @Fluent
 public final class AlertInner extends ProxyResource {
     /*
@@ -30,13 +32,15 @@ public final class AlertInner extends ProxyResource {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> tags;
 
-    /** Creates an instance of AlertInner class. */
+    /**
+     * Creates an instance of AlertInner class.
+     */
     public AlertInner() {
     }
 
     /**
      * Get the innerProperties property: The properties property.
-     *
+     * 
      * @return the innerProperties value.
      */
     private AlertProperties innerProperties() {
@@ -45,7 +49,7 @@ public final class AlertInner extends ProxyResource {
 
     /**
      * Get the tags property: Resource tags.
-     *
+     * 
      * @return the tags value.
      */
     public Map<String, String> tags() {
@@ -54,7 +58,7 @@ public final class AlertInner extends ProxyResource {
 
     /**
      * Get the definition property: defines the type of alert.
-     *
+     * 
      * @return the definition value.
      */
     public AlertPropertiesDefinition definition() {
@@ -63,7 +67,7 @@ public final class AlertInner extends ProxyResource {
 
     /**
      * Set the definition property: defines the type of alert.
-     *
+     * 
      * @param definition the definition value to set.
      * @return the AlertInner object itself.
      */
@@ -77,7 +81,7 @@ public final class AlertInner extends ProxyResource {
 
     /**
      * Get the description property: Alert description.
-     *
+     * 
      * @return the description value.
      */
     public String description() {
@@ -86,7 +90,7 @@ public final class AlertInner extends ProxyResource {
 
     /**
      * Set the description property: Alert description.
-     *
+     * 
      * @param description the description value to set.
      * @return the AlertInner object itself.
      */
@@ -100,7 +104,7 @@ public final class AlertInner extends ProxyResource {
 
     /**
      * Get the source property: Source of alert.
-     *
+     * 
      * @return the source value.
      */
     public AlertSource source() {
@@ -109,7 +113,7 @@ public final class AlertInner extends ProxyResource {
 
     /**
      * Set the source property: Source of alert.
-     *
+     * 
      * @param source the source value to set.
      * @return the AlertInner object itself.
      */
@@ -123,7 +127,7 @@ public final class AlertInner extends ProxyResource {
 
     /**
      * Get the details property: Alert details.
-     *
+     * 
      * @return the details value.
      */
     public AlertPropertiesDetails details() {
@@ -132,7 +136,7 @@ public final class AlertInner extends ProxyResource {
 
     /**
      * Set the details property: Alert details.
-     *
+     * 
      * @param details the details value to set.
      * @return the AlertInner object itself.
      */
@@ -146,7 +150,7 @@ public final class AlertInner extends ProxyResource {
 
     /**
      * Get the costEntityId property: related budget.
-     *
+     * 
      * @return the costEntityId value.
      */
     public String costEntityId() {
@@ -155,7 +159,7 @@ public final class AlertInner extends ProxyResource {
 
     /**
      * Set the costEntityId property: related budget.
-     *
+     * 
      * @param costEntityId the costEntityId value to set.
      * @return the AlertInner object itself.
      */
@@ -169,7 +173,7 @@ public final class AlertInner extends ProxyResource {
 
     /**
      * Get the status property: alert status.
-     *
+     * 
      * @return the status value.
      */
     public AlertStatus status() {
@@ -178,7 +182,7 @@ public final class AlertInner extends ProxyResource {
 
     /**
      * Set the status property: alert status.
-     *
+     * 
      * @param status the status value to set.
      * @return the AlertInner object itself.
      */
@@ -192,7 +196,7 @@ public final class AlertInner extends ProxyResource {
 
     /**
      * Get the creationTime property: dateTime in which alert was created.
-     *
+     * 
      * @return the creationTime value.
      */
     public String creationTime() {
@@ -201,7 +205,7 @@ public final class AlertInner extends ProxyResource {
 
     /**
      * Set the creationTime property: dateTime in which alert was created.
-     *
+     * 
      * @param creationTime the creationTime value to set.
      * @return the AlertInner object itself.
      */
@@ -215,7 +219,7 @@ public final class AlertInner extends ProxyResource {
 
     /**
      * Get the closeTime property: dateTime in which alert was closed.
-     *
+     * 
      * @return the closeTime value.
      */
     public String closeTime() {
@@ -224,7 +228,7 @@ public final class AlertInner extends ProxyResource {
 
     /**
      * Set the closeTime property: dateTime in which alert was closed.
-     *
+     * 
      * @param closeTime the closeTime value to set.
      * @return the AlertInner object itself.
      */
@@ -238,7 +242,7 @@ public final class AlertInner extends ProxyResource {
 
     /**
      * Get the modificationTime property: dateTime in which alert was last modified.
-     *
+     * 
      * @return the modificationTime value.
      */
     public String modificationTime() {
@@ -247,7 +251,7 @@ public final class AlertInner extends ProxyResource {
 
     /**
      * Set the modificationTime property: dateTime in which alert was last modified.
-     *
+     * 
      * @param modificationTime the modificationTime value to set.
      * @return the AlertInner object itself.
      */
@@ -261,7 +265,7 @@ public final class AlertInner extends ProxyResource {
 
     /**
      * Get the statusModificationUsername property: The statusModificationUserName property.
-     *
+     * 
      * @return the statusModificationUsername value.
      */
     public String statusModificationUsername() {
@@ -270,7 +274,7 @@ public final class AlertInner extends ProxyResource {
 
     /**
      * Set the statusModificationUsername property: The statusModificationUserName property.
-     *
+     * 
      * @param statusModificationUsername the statusModificationUsername value to set.
      * @return the AlertInner object itself.
      */
@@ -284,7 +288,7 @@ public final class AlertInner extends ProxyResource {
 
     /**
      * Get the statusModificationTime property: dateTime in which the alert status was last modified.
-     *
+     * 
      * @return the statusModificationTime value.
      */
     public String statusModificationTime() {
@@ -293,7 +297,7 @@ public final class AlertInner extends ProxyResource {
 
     /**
      * Set the statusModificationTime property: dateTime in which the alert status was last modified.
-     *
+     * 
      * @param statusModificationTime the statusModificationTime value to set.
      * @return the AlertInner object itself.
      */
@@ -307,7 +311,7 @@ public final class AlertInner extends ProxyResource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

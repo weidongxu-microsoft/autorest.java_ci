@@ -9,7 +9,9 @@ import com.azure.core.management.SubResource;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Represents a single Azure resource and its referencing DNS records. */
+/**
+ * Represents a single Azure resource and its referencing DNS records.
+ */
 @Fluent
 public final class DnsResourceReference {
     /*
@@ -24,13 +26,15 @@ public final class DnsResourceReference {
     @JsonProperty(value = "targetResource")
     private SubResource targetResource;
 
-    /** Creates an instance of DnsResourceReference class. */
+    /**
+     * Creates an instance of DnsResourceReference class.
+     */
     public DnsResourceReference() {
     }
 
     /**
      * Get the dnsResources property: A list of dns Records.
-     *
+     * 
      * @return the dnsResources value.
      */
     public List<SubResource> dnsResources() {
@@ -39,7 +43,7 @@ public final class DnsResourceReference {
 
     /**
      * Set the dnsResources property: A list of dns Records.
-     *
+     * 
      * @param dnsResources the dnsResources value to set.
      * @return the DnsResourceReference object itself.
      */
@@ -50,7 +54,7 @@ public final class DnsResourceReference {
 
     /**
      * Get the targetResource property: A reference to an azure resource from where the dns resource value is taken.
-     *
+     * 
      * @return the targetResource value.
      */
     public SubResource targetResource() {
@@ -59,7 +63,7 @@ public final class DnsResourceReference {
 
     /**
      * Set the targetResource property: A reference to an azure resource from where the dns resource value is taken.
-     *
+     * 
      * @param targetResource the targetResource value to set.
      * @return the DnsResourceReference object itself.
      */
@@ -70,7 +74,7 @@ public final class DnsResourceReference {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

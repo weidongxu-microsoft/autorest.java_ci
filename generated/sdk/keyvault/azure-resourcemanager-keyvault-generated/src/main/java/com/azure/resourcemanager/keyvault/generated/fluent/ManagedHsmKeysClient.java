@@ -12,17 +12,19 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.ManagedHsmKeyInner;
 import com.azure.resourcemanager.keyvault.generated.models.ManagedHsmKeyCreateParameters;
 
-/** An instance of this class provides access to all the operations defined in ManagedHsmKeysClient. */
+/**
+ * An instance of this class provides access to all the operations defined in ManagedHsmKeysClient.
+ */
 public interface ManagedHsmKeysClient {
     /**
      * Creates the first version of a new key if it does not exist. If it already exists, then the existing key is
      * returned without any write operations being performed. This API does not create subsequent versions, and does not
      * update existing keys.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
      * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
-     *     running the service. The value provided should not include personally identifiable or sensitive information.
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param parameters The parameters used to create the specified key.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -31,22 +33,18 @@ public interface ManagedHsmKeysClient {
      * @return the key resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<ManagedHsmKeyInner> createIfNotExistWithResponse(
-        String resourceGroupName,
-        String name,
-        String keyName,
-        ManagedHsmKeyCreateParameters parameters,
-        Context context);
+    Response<ManagedHsmKeyInner> createIfNotExistWithResponse(String resourceGroupName, String name, String keyName,
+        ManagedHsmKeyCreateParameters parameters, Context context);
 
     /**
      * Creates the first version of a new key if it does not exist. If it already exists, then the existing key is
      * returned without any write operations being performed. This API does not create subsequent versions, and does not
      * update existing keys.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
      * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
-     *     running the service. The value provided should not include personally identifiable or sensitive information.
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param parameters The parameters used to create the specified key.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -54,16 +52,16 @@ public interface ManagedHsmKeysClient {
      * @return the key resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ManagedHsmKeyInner createIfNotExist(
-        String resourceGroupName, String name, String keyName, ManagedHsmKeyCreateParameters parameters);
+    ManagedHsmKeyInner createIfNotExist(String resourceGroupName, String name, String keyName,
+        ManagedHsmKeyCreateParameters parameters);
 
     /**
      * Gets the current version of the specified key from the specified managed HSM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
      * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
-     *     running the service. The value provided should not include personally identifiable or sensitive information.
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -71,16 +69,16 @@ public interface ManagedHsmKeysClient {
      * @return the current version of the specified key from the specified managed HSM along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<ManagedHsmKeyInner> getWithResponse(
-        String resourceGroupName, String name, String keyName, Context context);
+    Response<ManagedHsmKeyInner> getWithResponse(String resourceGroupName, String name, String keyName,
+        Context context);
 
     /**
      * Gets the current version of the specified key from the specified managed HSM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
      * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
-     *     running the service. The value provided should not include personally identifiable or sensitive information.
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -91,7 +89,7 @@ public interface ManagedHsmKeysClient {
 
     /**
      * Lists the keys in the specified managed HSM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -104,7 +102,7 @@ public interface ManagedHsmKeysClient {
 
     /**
      * Lists the keys in the specified managed HSM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
      * @param context The context to associate with this operation.
@@ -118,11 +116,11 @@ public interface ManagedHsmKeysClient {
 
     /**
      * Gets the specified version of the specified key in the specified managed HSM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
      * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
-     *     running the service. The value provided should not include personally identifiable or sensitive information.
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param keyVersion The version of the key to be retrieved.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -131,16 +129,16 @@ public interface ManagedHsmKeysClient {
      * @return the specified version of the specified key in the specified managed HSM along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<ManagedHsmKeyInner> getVersionWithResponse(
-        String resourceGroupName, String name, String keyName, String keyVersion, Context context);
+    Response<ManagedHsmKeyInner> getVersionWithResponse(String resourceGroupName, String name, String keyName,
+        String keyVersion, Context context);
 
     /**
      * Gets the specified version of the specified key in the specified managed HSM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
      * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
-     *     running the service. The value provided should not include personally identifiable or sensitive information.
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param keyVersion The version of the key to be retrieved.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -152,11 +150,11 @@ public interface ManagedHsmKeysClient {
 
     /**
      * Lists the versions of the specified key in the specified managed HSM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
      * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
-     *     running the service. The value provided should not include personally identifiable or sensitive information.
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -167,11 +165,11 @@ public interface ManagedHsmKeysClient {
 
     /**
      * Lists the versions of the specified key in the specified managed HSM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
      * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
-     *     running the service. The value provided should not include personally identifiable or sensitive information.
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -179,6 +177,6 @@ public interface ManagedHsmKeysClient {
      * @return the page of keys as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<ManagedHsmKeyInner> listVersions(
-        String resourceGroupName, String name, String keyName, Context context);
+    PagedIterable<ManagedHsmKeyInner> listVersions(String resourceGroupName, String name, String keyName,
+        Context context);
 }

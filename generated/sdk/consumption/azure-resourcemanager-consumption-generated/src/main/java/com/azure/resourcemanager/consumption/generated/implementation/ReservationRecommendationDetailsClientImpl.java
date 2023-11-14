@@ -32,24 +32,24 @@ import reactor.core.publisher.Mono;
  * An instance of this class provides access to all the operations defined in ReservationRecommendationDetailsClient.
  */
 public final class ReservationRecommendationDetailsClientImpl implements ReservationRecommendationDetailsClient {
-    /** The proxy service used to perform REST calls. */
+    /**
+     * The proxy service used to perform REST calls.
+     */
     private final ReservationRecommendationDetailsService service;
 
-    /** The service client containing this operation class. */
+    /**
+     * The service client containing this operation class.
+     */
     private final ConsumptionManagementClientImpl client;
 
     /**
      * Initializes an instance of ReservationRecommendationDetailsClientImpl.
-     *
+     * 
      * @param client the instance of the service client containing this operation class.
      */
     ReservationRecommendationDetailsClientImpl(ConsumptionManagementClientImpl client) {
-        this.service =
-            RestProxy
-                .create(
-                    ReservationRecommendationDetailsService.class,
-                    client.getHttpPipeline(),
-                    client.getSerializerAdapter());
+        this.service = RestProxy.create(ReservationRecommendationDetailsService.class, client.getHttpPipeline(),
+            client.getSerializerAdapter());
         this.client = client;
     }
 
@@ -60,60 +60,46 @@ public final class ReservationRecommendationDetailsClientImpl implements Reserva
     @Host("{$host}")
     @ServiceInterface(name = "ConsumptionManagemen")
     public interface ReservationRecommendationDetailsService {
-        @Headers({"Content-Type: application/json"})
+        @Headers({ "Content-Type: application/json" })
         @Get("/{resourceScope}/providers/Microsoft.Consumption/reservationRecommendationDetails")
-        @ExpectedResponses({200, 204})
+        @ExpectedResponses({ 200, 204 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<ReservationRecommendationDetailsModelInner>> get(
-            @HostParam("$host") String endpoint,
+        Mono<Response<ReservationRecommendationDetailsModelInner>> get(@HostParam("$host") String endpoint,
             @QueryParam("api-version") String apiVersion,
-            @PathParam(value = "resourceScope", encoded = true) String resourceScope,
-            @QueryParam("scope") Scope scope,
-            @QueryParam("region") String region,
-            @QueryParam("term") Term term,
-            @QueryParam("lookBackPeriod") LookBackPeriod lookBackPeriod,
-            @QueryParam("product") String product,
-            @QueryParam("$filter") String filter,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @PathParam(value = "resourceScope", encoded = true) String resourceScope, @QueryParam("scope") Scope scope,
+            @QueryParam("region") String region, @QueryParam("term") Term term,
+            @QueryParam("lookBackPeriod") LookBackPeriod lookBackPeriod, @QueryParam("product") String product,
+            @QueryParam("$filter") String filter, @HeaderParam("Accept") String accept, Context context);
     }
 
     /**
      * Details of a reservation recommendation for what-if analysis of reserved instances.
-     *
+     * 
      * @param resourceScope The scope associated with reservation recommendation details operations. This includes
-     *     '/subscriptions/{subscriptionId}/' for subscription scope,
-     *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resource group scope,
-     *     /providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope, and
-     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
-     *     billingProfile scope.
+     * '/subscriptions/{subscriptionId}/' for subscription scope,
+     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resource group scope,
+     * /providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope, and
+     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
+     * billingProfile scope.
      * @param scope Scope of the reservation.
      * @param region Used to select the region the recommendation should be generated for.
      * @param term Specify length of reservation recommendation term.
      * @param lookBackPeriod Filter the time period on which reservation recommendation results are based.
      * @param product Filter the products for which reservation recommendation results are generated. Examples:
-     *     Standard_DS1_v2 (for VM), Premium_SSD_Managed_Disks_P30 (for Managed Disks).
+     * Standard_DS1_v2 (for VM), Premium_SSD_Managed_Disks_P30 (for Managed Disks).
      * @param filter Used to filter reservation recommendation details by: properties/subscriptionId can be specified
-     *     for billing account and billing profile paths.
+     * for billing account and billing profile paths.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return reservation recommendation details along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<ReservationRecommendationDetailsModelInner>> getWithResponseAsync(
-        String resourceScope,
-        Scope scope,
-        String region,
-        Term term,
-        LookBackPeriod lookBackPeriod,
-        String product,
-        String filter) {
+    private Mono<Response<ReservationRecommendationDetailsModelInner>> getWithResponseAsync(String resourceScope,
+        Scope scope, String region, Term term, LookBackPeriod lookBackPeriod, String product, String filter) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceScope == null) {
             return Mono.error(new IllegalArgumentException("Parameter resourceScope is required and cannot be null."));
@@ -135,41 +121,28 @@ public final class ReservationRecommendationDetailsClientImpl implements Reserva
         }
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .get(
-                            this.client.getEndpoint(),
-                            this.client.getApiVersion(),
-                            resourceScope,
-                            scope,
-                            region,
-                            term,
-                            lookBackPeriod,
-                            product,
-                            filter,
-                            accept,
-                            context))
+            .withContext(context -> service.get(this.client.getEndpoint(), this.client.getApiVersion(), resourceScope,
+                scope, region, term, lookBackPeriod, product, filter, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Details of a reservation recommendation for what-if analysis of reserved instances.
-     *
+     * 
      * @param resourceScope The scope associated with reservation recommendation details operations. This includes
-     *     '/subscriptions/{subscriptionId}/' for subscription scope,
-     *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resource group scope,
-     *     /providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope, and
-     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
-     *     billingProfile scope.
+     * '/subscriptions/{subscriptionId}/' for subscription scope,
+     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resource group scope,
+     * /providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope, and
+     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
+     * billingProfile scope.
      * @param scope Scope of the reservation.
      * @param region Used to select the region the recommendation should be generated for.
      * @param term Specify length of reservation recommendation term.
      * @param lookBackPeriod Filter the time period on which reservation recommendation results are based.
      * @param product Filter the products for which reservation recommendation results are generated. Examples:
-     *     Standard_DS1_v2 (for VM), Premium_SSD_Managed_Disks_P30 (for Managed Disks).
+     * Standard_DS1_v2 (for VM), Premium_SSD_Managed_Disks_P30 (for Managed Disks).
      * @param filter Used to filter reservation recommendation details by: properties/subscriptionId can be specified
-     *     for billing account and billing profile paths.
+     * for billing account and billing profile paths.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -177,20 +150,12 @@ public final class ReservationRecommendationDetailsClientImpl implements Reserva
      * @return reservation recommendation details along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<ReservationRecommendationDetailsModelInner>> getWithResponseAsync(
-        String resourceScope,
-        Scope scope,
-        String region,
-        Term term,
-        LookBackPeriod lookBackPeriod,
-        String product,
-        String filter,
+    private Mono<Response<ReservationRecommendationDetailsModelInner>> getWithResponseAsync(String resourceScope,
+        Scope scope, String region, Term term, LookBackPeriod lookBackPeriod, String product, String filter,
         Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceScope == null) {
             return Mono.error(new IllegalArgumentException("Parameter resourceScope is required and cannot be null."));
@@ -212,44 +177,33 @@ public final class ReservationRecommendationDetailsClientImpl implements Reserva
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .get(
-                this.client.getEndpoint(),
-                this.client.getApiVersion(),
-                resourceScope,
-                scope,
-                region,
-                term,
-                lookBackPeriod,
-                product,
-                filter,
-                accept,
-                context);
+        return service.get(this.client.getEndpoint(), this.client.getApiVersion(), resourceScope, scope, region, term,
+            lookBackPeriod, product, filter, accept, context);
     }
 
     /**
      * Details of a reservation recommendation for what-if analysis of reserved instances.
-     *
+     * 
      * @param resourceScope The scope associated with reservation recommendation details operations. This includes
-     *     '/subscriptions/{subscriptionId}/' for subscription scope,
-     *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resource group scope,
-     *     /providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope, and
-     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
-     *     billingProfile scope.
+     * '/subscriptions/{subscriptionId}/' for subscription scope,
+     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resource group scope,
+     * /providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope, and
+     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
+     * billingProfile scope.
      * @param scope Scope of the reservation.
      * @param region Used to select the region the recommendation should be generated for.
      * @param term Specify length of reservation recommendation term.
      * @param lookBackPeriod Filter the time period on which reservation recommendation results are based.
      * @param product Filter the products for which reservation recommendation results are generated. Examples:
-     *     Standard_DS1_v2 (for VM), Premium_SSD_Managed_Disks_P30 (for Managed Disks).
+     * Standard_DS1_v2 (for VM), Premium_SSD_Managed_Disks_P30 (for Managed Disks).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return reservation recommendation details on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<ReservationRecommendationDetailsModelInner> getAsync(
-        String resourceScope, Scope scope, String region, Term term, LookBackPeriod lookBackPeriod, String product) {
+    private Mono<ReservationRecommendationDetailsModelInner> getAsync(String resourceScope, Scope scope, String region,
+        Term term, LookBackPeriod lookBackPeriod, String product) {
         final String filter = null;
         return getWithResponseAsync(resourceScope, scope, region, term, lookBackPeriod, product, filter)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
@@ -257,21 +211,21 @@ public final class ReservationRecommendationDetailsClientImpl implements Reserva
 
     /**
      * Details of a reservation recommendation for what-if analysis of reserved instances.
-     *
+     * 
      * @param resourceScope The scope associated with reservation recommendation details operations. This includes
-     *     '/subscriptions/{subscriptionId}/' for subscription scope,
-     *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resource group scope,
-     *     /providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope, and
-     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
-     *     billingProfile scope.
+     * '/subscriptions/{subscriptionId}/' for subscription scope,
+     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resource group scope,
+     * /providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope, and
+     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
+     * billingProfile scope.
      * @param scope Scope of the reservation.
      * @param region Used to select the region the recommendation should be generated for.
      * @param term Specify length of reservation recommendation term.
      * @param lookBackPeriod Filter the time period on which reservation recommendation results are based.
      * @param product Filter the products for which reservation recommendation results are generated. Examples:
-     *     Standard_DS1_v2 (for VM), Premium_SSD_Managed_Disks_P30 (for Managed Disks).
+     * Standard_DS1_v2 (for VM), Premium_SSD_Managed_Disks_P30 (for Managed Disks).
      * @param filter Used to filter reservation recommendation details by: properties/subscriptionId can be specified
-     *     for billing account and billing profile paths.
+     * for billing account and billing profile paths.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -279,42 +233,35 @@ public final class ReservationRecommendationDetailsClientImpl implements Reserva
      * @return reservation recommendation details along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ReservationRecommendationDetailsModelInner> getWithResponse(
-        String resourceScope,
-        Scope scope,
-        String region,
-        Term term,
-        LookBackPeriod lookBackPeriod,
-        String product,
-        String filter,
-        Context context) {
+    public Response<ReservationRecommendationDetailsModelInner> getWithResponse(String resourceScope, Scope scope,
+        String region, Term term, LookBackPeriod lookBackPeriod, String product, String filter, Context context) {
         return getWithResponseAsync(resourceScope, scope, region, term, lookBackPeriod, product, filter, context)
             .block();
     }
 
     /**
      * Details of a reservation recommendation for what-if analysis of reserved instances.
-     *
+     * 
      * @param resourceScope The scope associated with reservation recommendation details operations. This includes
-     *     '/subscriptions/{subscriptionId}/' for subscription scope,
-     *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resource group scope,
-     *     /providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope, and
-     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
-     *     billingProfile scope.
+     * '/subscriptions/{subscriptionId}/' for subscription scope,
+     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resource group scope,
+     * /providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope, and
+     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
+     * billingProfile scope.
      * @param scope Scope of the reservation.
      * @param region Used to select the region the recommendation should be generated for.
      * @param term Specify length of reservation recommendation term.
      * @param lookBackPeriod Filter the time period on which reservation recommendation results are based.
      * @param product Filter the products for which reservation recommendation results are generated. Examples:
-     *     Standard_DS1_v2 (for VM), Premium_SSD_Managed_Disks_P30 (for Managed Disks).
+     * Standard_DS1_v2 (for VM), Premium_SSD_Managed_Disks_P30 (for Managed Disks).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return reservation recommendation details.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ReservationRecommendationDetailsModelInner get(
-        String resourceScope, Scope scope, String region, Term term, LookBackPeriod lookBackPeriod, String product) {
+    public ReservationRecommendationDetailsModelInner get(String resourceScope, Scope scope, String region, Term term,
+        LookBackPeriod lookBackPeriod, String product) {
         final String filter = null;
         return getWithResponse(resourceScope, scope, region, term, lookBackPeriod, product, filter, Context.NONE)
             .getValue();

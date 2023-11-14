@@ -7,7 +7,9 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The streaming endpoint current sku. */
+/**
+ * The streaming endpoint current sku.
+ */
 @Fluent
 public final class ArmStreamingEndpointCurrentSku {
     /*
@@ -22,13 +24,15 @@ public final class ArmStreamingEndpointCurrentSku {
     @JsonProperty(value = "capacity")
     private Integer capacity;
 
-    /** Creates an instance of ArmStreamingEndpointCurrentSku class. */
+    /**
+     * Creates an instance of ArmStreamingEndpointCurrentSku class.
+     */
     public ArmStreamingEndpointCurrentSku() {
     }
 
     /**
      * Get the name property: The streaming endpoint sku name.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -37,7 +41,7 @@ public final class ArmStreamingEndpointCurrentSku {
 
     /**
      * Get the capacity property: The streaming endpoint sku capacity.
-     *
+     * 
      * @return the capacity value.
      */
     public Integer capacity() {
@@ -46,7 +50,7 @@ public final class ArmStreamingEndpointCurrentSku {
 
     /**
      * Set the capacity property: The streaming endpoint sku capacity.
-     *
+     * 
      * @param capacity the capacity value to set.
      * @return the ArmStreamingEndpointCurrentSku object itself.
      */
@@ -57,7 +61,7 @@ public final class ArmStreamingEndpointCurrentSku {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

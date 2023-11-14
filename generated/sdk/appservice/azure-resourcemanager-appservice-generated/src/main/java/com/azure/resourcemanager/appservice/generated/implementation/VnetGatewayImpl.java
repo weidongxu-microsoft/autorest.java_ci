@@ -59,8 +59,8 @@ public final class VnetGatewayImpl implements VnetGateway, VnetGateway.Definitio
 
     private String slot;
 
-    public VnetGatewayImpl withExistingVirtualNetworkConnection(
-        String resourceGroupName, String name, String vnetName, String slot) {
+    public VnetGatewayImpl withExistingVirtualNetworkConnection(String resourceGroupName, String name, String vnetName,
+        String slot) {
         this.resourceGroupName = resourceGroupName;
         this.name = name;
         this.vnetName = vnetName;
@@ -69,24 +69,16 @@ public final class VnetGatewayImpl implements VnetGateway, VnetGateway.Definitio
     }
 
     public VnetGateway create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApps()
-                .createOrUpdateVnetConnectionGatewaySlotWithResponse(
-                    resourceGroupName, name, vnetName, gatewayName, slot, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getWebApps().createOrUpdateVnetConnectionGatewaySlotWithResponse(
+                resourceGroupName, name, vnetName, gatewayName, slot, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public VnetGateway create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApps()
-                .createOrUpdateVnetConnectionGatewaySlotWithResponse(
-                    resourceGroupName, name, vnetName, gatewayName, slot, this.innerModel(), context)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getWebApps().createOrUpdateVnetConnectionGatewaySlotWithResponse(
+                resourceGroupName, name, vnetName, gatewayName, slot, this.innerModel(), context).getValue();
         return this;
     }
 
@@ -101,29 +93,21 @@ public final class VnetGatewayImpl implements VnetGateway, VnetGateway.Definitio
     }
 
     public VnetGateway apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApps()
-                .updateVnetConnectionGatewaySlotWithResponse(
-                    resourceGroupName, name, vnetName, gatewayName, slot, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getWebApps().updateVnetConnectionGatewaySlotWithResponse(resourceGroupName,
+                name, vnetName, gatewayName, slot, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public VnetGateway apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApps()
-                .updateVnetConnectionGatewaySlotWithResponse(
-                    resourceGroupName, name, vnetName, gatewayName, slot, this.innerModel(), context)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getWebApps().updateVnetConnectionGatewaySlotWithResponse(resourceGroupName,
+                name, vnetName, gatewayName, slot, this.innerModel(), context).getValue();
         return this;
     }
 
-    VnetGatewayImpl(
-        VnetGatewayInner innerObject, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
+    VnetGatewayImpl(VnetGatewayInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
@@ -134,23 +118,16 @@ public final class VnetGatewayImpl implements VnetGateway, VnetGateway.Definitio
     }
 
     public VnetGateway refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApps()
-                .getVnetConnectionGatewaySlotWithResponse(
-                    resourceGroupName, name, vnetName, gatewayName, slot, Context.NONE)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getWebApps().getVnetConnectionGatewaySlotWithResponse(resourceGroupName,
+                name, vnetName, gatewayName, slot, Context.NONE).getValue();
         return this;
     }
 
     public VnetGateway refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApps()
-                .getVnetConnectionGatewaySlotWithResponse(resourceGroupName, name, vnetName, gatewayName, slot, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getWebApps()
+            .getVnetConnectionGatewaySlotWithResponse(resourceGroupName, name, vnetName, gatewayName, slot, context)
+            .getValue();
         return this;
     }
 

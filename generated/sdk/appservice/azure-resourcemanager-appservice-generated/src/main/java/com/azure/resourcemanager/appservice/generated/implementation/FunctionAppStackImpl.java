@@ -16,8 +16,7 @@ public final class FunctionAppStackImpl implements FunctionAppStack {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    FunctionAppStackImpl(
-        FunctionAppStackInner innerObject,
+    FunctionAppStackImpl(FunctionAppStackInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

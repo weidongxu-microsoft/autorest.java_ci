@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of ExpressRouteCircuitAuthorizations. */
+/**
+ * Resource collection API of ExpressRouteCircuitAuthorizations.
+ */
 public interface ExpressRouteCircuitAuthorizations {
     /**
      * Deletes the specified authorization from the specified express route circuit.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the express route circuit.
      * @param authorizationName The name of the authorization.
@@ -24,7 +26,7 @@ public interface ExpressRouteCircuitAuthorizations {
 
     /**
      * Deletes the specified authorization from the specified express route circuit.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the express route circuit.
      * @param authorizationName The name of the authorization.
@@ -37,7 +39,7 @@ public interface ExpressRouteCircuitAuthorizations {
 
     /**
      * Gets the specified authorization from the specified express route circuit.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the express route circuit.
      * @param authorizationName The name of the authorization.
@@ -47,12 +49,12 @@ public interface ExpressRouteCircuitAuthorizations {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified authorization from the specified express route circuit along with {@link Response}.
      */
-    Response<ExpressRouteCircuitAuthorization> getWithResponse(
-        String resourceGroupName, String circuitName, String authorizationName, Context context);
+    Response<ExpressRouteCircuitAuthorization> getWithResponse(String resourceGroupName, String circuitName,
+        String authorizationName, Context context);
 
     /**
      * Gets the specified authorization from the specified express route circuit.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the express route circuit.
      * @param authorizationName The name of the authorization.
@@ -65,7 +67,7 @@ public interface ExpressRouteCircuitAuthorizations {
 
     /**
      * Gets all authorizations in an express route circuit.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the circuit.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -77,7 +79,7 @@ public interface ExpressRouteCircuitAuthorizations {
 
     /**
      * Gets all authorizations in an express route circuit.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the circuit.
      * @param context The context to associate with this operation.
@@ -90,7 +92,7 @@ public interface ExpressRouteCircuitAuthorizations {
 
     /**
      * Gets the specified authorization from the specified express route circuit.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -101,7 +103,7 @@ public interface ExpressRouteCircuitAuthorizations {
 
     /**
      * Gets the specified authorization from the specified express route circuit.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -113,7 +115,7 @@ public interface ExpressRouteCircuitAuthorizations {
 
     /**
      * Deletes the specified authorization from the specified express route circuit.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -123,7 +125,7 @@ public interface ExpressRouteCircuitAuthorizations {
 
     /**
      * Deletes the specified authorization from the specified express route circuit.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -134,7 +136,7 @@ public interface ExpressRouteCircuitAuthorizations {
 
     /**
      * Begins definition for a new ExpressRouteCircuitAuthorization resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new ExpressRouteCircuitAuthorization definition.
      */

@@ -19,8 +19,7 @@ public final class ServiceTagInformationsImpl implements ServiceTagInformations 
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public ServiceTagInformationsImpl(
-        ServiceTagInformationsClient innerClient,
+    public ServiceTagInformationsImpl(ServiceTagInformationsClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -31,10 +30,10 @@ public final class ServiceTagInformationsImpl implements ServiceTagInformations 
         return Utils.mapPage(inner, inner1 -> new ServiceTagInformationImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<ServiceTagInformation> list(
-        String location, Boolean noAddressPrefixes, String tagName, Context context) {
-        PagedIterable<ServiceTagInformationInner> inner =
-            this.serviceClient().list(location, noAddressPrefixes, tagName, context);
+    public PagedIterable<ServiceTagInformation> list(String location, Boolean noAddressPrefixes, String tagName,
+        Context context) {
+        PagedIterable<ServiceTagInformationInner> inner
+            = this.serviceClient().list(location, noAddressPrefixes, tagName, context);
         return Utils.mapPage(inner, inner1 -> new ServiceTagInformationImpl(inner1, this.manager()));
     }
 

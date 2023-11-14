@@ -17,7 +17,9 @@ import com.azure.resourcemanager.databoxedge.generated.models.SkuVersion;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The Sku information. */
+/**
+ * The Sku information.
+ */
 @Immutable
 public final class DataBoxEdgeSkuInner {
     /*
@@ -110,13 +112,15 @@ public final class DataBoxEdgeSkuInner {
     @JsonProperty(value = "capabilities", access = JsonProperty.Access.WRITE_ONLY)
     private List<SkuCapability> capabilities;
 
-    /** Creates an instance of DataBoxEdgeSkuInner class. */
+    /**
+     * Creates an instance of DataBoxEdgeSkuInner class.
+     */
     public DataBoxEdgeSkuInner() {
     }
 
     /**
      * Get the resourceType property: The type of the resource.
-     *
+     * 
      * @return the resourceType value.
      */
     public String resourceType() {
@@ -125,7 +129,7 @@ public final class DataBoxEdgeSkuInner {
 
     /**
      * Get the name property: The Sku name.
-     *
+     * 
      * @return the name value.
      */
     public SkuName name() {
@@ -134,7 +138,7 @@ public final class DataBoxEdgeSkuInner {
 
     /**
      * Get the kind property: The Sku kind.
-     *
+     * 
      * @return the kind value.
      */
     public String kind() {
@@ -143,7 +147,7 @@ public final class DataBoxEdgeSkuInner {
 
     /**
      * Get the tier property: The Sku tier.
-     *
+     * 
      * @return the tier value.
      */
     public SkuTier tier() {
@@ -152,7 +156,7 @@ public final class DataBoxEdgeSkuInner {
 
     /**
      * Get the size property: The Sku kind.
-     *
+     * 
      * @return the size value.
      */
     public String size() {
@@ -161,7 +165,7 @@ public final class DataBoxEdgeSkuInner {
 
     /**
      * Get the family property: The Sku family.
-     *
+     * 
      * @return the family value.
      */
     public String family() {
@@ -170,7 +174,7 @@ public final class DataBoxEdgeSkuInner {
 
     /**
      * Get the locations property: Availability of the Sku for the region.
-     *
+     * 
      * @return the locations value.
      */
     public List<String> locations() {
@@ -179,7 +183,7 @@ public final class DataBoxEdgeSkuInner {
 
     /**
      * Get the apiVersions property: The API versions in which Sku is available.
-     *
+     * 
      * @return the apiVersions value.
      */
     public List<String> apiVersions() {
@@ -188,7 +192,7 @@ public final class DataBoxEdgeSkuInner {
 
     /**
      * Get the locationInfo property: Availability of the Sku for the location/zone/site.
-     *
+     * 
      * @return the locationInfo value.
      */
     public List<SkuLocationInfo> locationInfo() {
@@ -197,7 +201,7 @@ public final class DataBoxEdgeSkuInner {
 
     /**
      * Get the costs property: The pricing info of the Sku.
-     *
+     * 
      * @return the costs value.
      */
     public List<SkuCost> costs() {
@@ -206,7 +210,7 @@ public final class DataBoxEdgeSkuInner {
 
     /**
      * Get the signupOption property: Sku can be signed up by customer or not.
-     *
+     * 
      * @return the signupOption value.
      */
     public SkuSignupOption signupOption() {
@@ -215,7 +219,7 @@ public final class DataBoxEdgeSkuInner {
 
     /**
      * Get the version property: Availability of the Sku as preview/stable.
-     *
+     * 
      * @return the version value.
      */
     public SkuVersion version() {
@@ -224,7 +228,7 @@ public final class DataBoxEdgeSkuInner {
 
     /**
      * Get the availability property: Links to the next set of results.
-     *
+     * 
      * @return the availability value.
      */
     public SkuAvailability availability() {
@@ -233,7 +237,7 @@ public final class DataBoxEdgeSkuInner {
 
     /**
      * Get the shipmentTypes property: List of Shipment Types supported by this SKU.
-     *
+     * 
      * @return the shipmentTypes value.
      */
     public List<ShipmentType> shipmentTypes() {
@@ -242,7 +246,7 @@ public final class DataBoxEdgeSkuInner {
 
     /**
      * Get the capabilities property: The capability info of the SKU.
-     *
+     * 
      * @return the capabilities value.
      */
     public List<SkuCapability> capabilities() {
@@ -251,7 +255,7 @@ public final class DataBoxEdgeSkuInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

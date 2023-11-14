@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of NetworkInterfaces. */
+/**
+ * Resource collection API of NetworkInterfaces.
+ */
 public interface NetworkInterfaces {
     /**
      * Gets information about all network interfaces in a role instance in a cloud service.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param cloudServiceName The name of the cloud service.
      * @param roleInstanceName The name of role instance.
@@ -20,14 +22,14 @@ public interface NetworkInterfaces {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return information about all network interfaces in a role instance in a cloud service as paginated response with
-     *     {@link PagedIterable}.
+     * {@link PagedIterable}.
      */
-    PagedIterable<NetworkInterface> listCloudServiceRoleInstanceNetworkInterfaces(
-        String resourceGroupName, String cloudServiceName, String roleInstanceName);
+    PagedIterable<NetworkInterface> listCloudServiceRoleInstanceNetworkInterfaces(String resourceGroupName,
+        String cloudServiceName, String roleInstanceName);
 
     /**
      * Gets information about all network interfaces in a role instance in a cloud service.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param cloudServiceName The name of the cloud service.
      * @param roleInstanceName The name of role instance.
@@ -36,14 +38,14 @@ public interface NetworkInterfaces {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return information about all network interfaces in a role instance in a cloud service as paginated response with
-     *     {@link PagedIterable}.
+     * {@link PagedIterable}.
      */
-    PagedIterable<NetworkInterface> listCloudServiceRoleInstanceNetworkInterfaces(
-        String resourceGroupName, String cloudServiceName, String roleInstanceName, Context context);
+    PagedIterable<NetworkInterface> listCloudServiceRoleInstanceNetworkInterfaces(String resourceGroupName,
+        String cloudServiceName, String roleInstanceName, Context context);
 
     /**
      * Gets all network interfaces in a cloud service.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param cloudServiceName The name of the cloud service.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -51,12 +53,12 @@ public interface NetworkInterfaces {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all network interfaces in a cloud service as paginated response with {@link PagedIterable}.
      */
-    PagedIterable<NetworkInterface> listCloudServiceNetworkInterfaces(
-        String resourceGroupName, String cloudServiceName);
+    PagedIterable<NetworkInterface> listCloudServiceNetworkInterfaces(String resourceGroupName,
+        String cloudServiceName);
 
     /**
      * Gets all network interfaces in a cloud service.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param cloudServiceName The name of the cloud service.
      * @param context The context to associate with this operation.
@@ -65,12 +67,12 @@ public interface NetworkInterfaces {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all network interfaces in a cloud service as paginated response with {@link PagedIterable}.
      */
-    PagedIterable<NetworkInterface> listCloudServiceNetworkInterfaces(
-        String resourceGroupName, String cloudServiceName, Context context);
+    PagedIterable<NetworkInterface> listCloudServiceNetworkInterfaces(String resourceGroupName, String cloudServiceName,
+        Context context);
 
     /**
      * Get the specified network interface in a cloud service.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param cloudServiceName The name of the cloud service.
      * @param roleInstanceName The name of role instance.
@@ -82,17 +84,12 @@ public interface NetworkInterfaces {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified network interface in a cloud service along with {@link Response}.
      */
-    Response<NetworkInterface> getCloudServiceNetworkInterfaceWithResponse(
-        String resourceGroupName,
-        String cloudServiceName,
-        String roleInstanceName,
-        String networkInterfaceName,
-        String expand,
-        Context context);
+    Response<NetworkInterface> getCloudServiceNetworkInterfaceWithResponse(String resourceGroupName,
+        String cloudServiceName, String roleInstanceName, String networkInterfaceName, String expand, Context context);
 
     /**
      * Get the specified network interface in a cloud service.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param cloudServiceName The name of the cloud service.
      * @param roleInstanceName The name of role instance.
@@ -102,12 +99,12 @@ public interface NetworkInterfaces {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified network interface in a cloud service.
      */
-    NetworkInterface getCloudServiceNetworkInterface(
-        String resourceGroupName, String cloudServiceName, String roleInstanceName, String networkInterfaceName);
+    NetworkInterface getCloudServiceNetworkInterface(String resourceGroupName, String cloudServiceName,
+        String roleInstanceName, String networkInterfaceName);
 
     /**
      * Deletes the specified network interface.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkInterfaceName The name of the network interface.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -118,7 +115,7 @@ public interface NetworkInterfaces {
 
     /**
      * Deletes the specified network interface.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkInterfaceName The name of the network interface.
      * @param context The context to associate with this operation.
@@ -130,7 +127,7 @@ public interface NetworkInterfaces {
 
     /**
      * Gets information about the specified network interface.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkInterfaceName The name of the network interface.
      * @param expand Expands referenced resources.
@@ -140,12 +137,12 @@ public interface NetworkInterfaces {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return information about the specified network interface along with {@link Response}.
      */
-    Response<NetworkInterface> getByResourceGroupWithResponse(
-        String resourceGroupName, String networkInterfaceName, String expand, Context context);
+    Response<NetworkInterface> getByResourceGroupWithResponse(String resourceGroupName, String networkInterfaceName,
+        String expand, Context context);
 
     /**
      * Gets information about the specified network interface.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkInterfaceName The name of the network interface.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -157,7 +154,7 @@ public interface NetworkInterfaces {
 
     /**
      * Gets all network interfaces in a subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all network interfaces in a subscription as paginated response with {@link PagedIterable}.
@@ -166,7 +163,7 @@ public interface NetworkInterfaces {
 
     /**
      * Gets all network interfaces in a subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -177,7 +174,7 @@ public interface NetworkInterfaces {
 
     /**
      * Gets all network interfaces in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -188,7 +185,7 @@ public interface NetworkInterfaces {
 
     /**
      * Gets all network interfaces in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -200,7 +197,7 @@ public interface NetworkInterfaces {
 
     /**
      * Gets all route tables applied to a network interface.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkInterfaceName The name of the network interface.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -212,7 +209,7 @@ public interface NetworkInterfaces {
 
     /**
      * Gets all route tables applied to a network interface.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkInterfaceName The name of the network interface.
      * @param context The context to associate with this operation.
@@ -221,12 +218,12 @@ public interface NetworkInterfaces {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all route tables applied to a network interface.
      */
-    EffectiveRouteListResult getEffectiveRouteTable(
-        String resourceGroupName, String networkInterfaceName, Context context);
+    EffectiveRouteListResult getEffectiveRouteTable(String resourceGroupName, String networkInterfaceName,
+        Context context);
 
     /**
      * Gets all network security groups applied to a network interface.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkInterfaceName The name of the network interface.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -234,12 +231,12 @@ public interface NetworkInterfaces {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all network security groups applied to a network interface.
      */
-    EffectiveNetworkSecurityGroupListResult listEffectiveNetworkSecurityGroups(
-        String resourceGroupName, String networkInterfaceName);
+    EffectiveNetworkSecurityGroupListResult listEffectiveNetworkSecurityGroups(String resourceGroupName,
+        String networkInterfaceName);
 
     /**
      * Gets all network security groups applied to a network interface.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkInterfaceName The name of the network interface.
      * @param context The context to associate with this operation.
@@ -248,12 +245,12 @@ public interface NetworkInterfaces {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all network security groups applied to a network interface.
      */
-    EffectiveNetworkSecurityGroupListResult listEffectiveNetworkSecurityGroups(
-        String resourceGroupName, String networkInterfaceName, Context context);
+    EffectiveNetworkSecurityGroupListResult listEffectiveNetworkSecurityGroups(String resourceGroupName,
+        String networkInterfaceName, Context context);
 
     /**
      * Gets information about all network interfaces in a virtual machine in a virtual machine scale set.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualMachineScaleSetName The name of the virtual machine scale set.
      * @param virtualmachineIndex The virtual machine index.
@@ -261,14 +258,14 @@ public interface NetworkInterfaces {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return information about all network interfaces in a virtual machine in a virtual machine scale set as paginated
-     *     response with {@link PagedIterable}.
+     * response with {@link PagedIterable}.
      */
-    PagedIterable<NetworkInterface> listVirtualMachineScaleSetVMNetworkInterfaces(
-        String resourceGroupName, String virtualMachineScaleSetName, String virtualmachineIndex);
+    PagedIterable<NetworkInterface> listVirtualMachineScaleSetVMNetworkInterfaces(String resourceGroupName,
+        String virtualMachineScaleSetName, String virtualmachineIndex);
 
     /**
      * Gets information about all network interfaces in a virtual machine in a virtual machine scale set.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualMachineScaleSetName The name of the virtual machine scale set.
      * @param virtualmachineIndex The virtual machine index.
@@ -277,14 +274,14 @@ public interface NetworkInterfaces {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return information about all network interfaces in a virtual machine in a virtual machine scale set as paginated
-     *     response with {@link PagedIterable}.
+     * response with {@link PagedIterable}.
      */
-    PagedIterable<NetworkInterface> listVirtualMachineScaleSetVMNetworkInterfaces(
-        String resourceGroupName, String virtualMachineScaleSetName, String virtualmachineIndex, Context context);
+    PagedIterable<NetworkInterface> listVirtualMachineScaleSetVMNetworkInterfaces(String resourceGroupName,
+        String virtualMachineScaleSetName, String virtualmachineIndex, Context context);
 
     /**
      * Gets all network interfaces in a virtual machine scale set.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualMachineScaleSetName The name of the virtual machine scale set.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -292,12 +289,12 @@ public interface NetworkInterfaces {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all network interfaces in a virtual machine scale set as paginated response with {@link PagedIterable}.
      */
-    PagedIterable<NetworkInterface> listVirtualMachineScaleSetNetworkInterfaces(
-        String resourceGroupName, String virtualMachineScaleSetName);
+    PagedIterable<NetworkInterface> listVirtualMachineScaleSetNetworkInterfaces(String resourceGroupName,
+        String virtualMachineScaleSetName);
 
     /**
      * Gets all network interfaces in a virtual machine scale set.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualMachineScaleSetName The name of the virtual machine scale set.
      * @param context The context to associate with this operation.
@@ -306,12 +303,12 @@ public interface NetworkInterfaces {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all network interfaces in a virtual machine scale set as paginated response with {@link PagedIterable}.
      */
-    PagedIterable<NetworkInterface> listVirtualMachineScaleSetNetworkInterfaces(
-        String resourceGroupName, String virtualMachineScaleSetName, Context context);
+    PagedIterable<NetworkInterface> listVirtualMachineScaleSetNetworkInterfaces(String resourceGroupName,
+        String virtualMachineScaleSetName, Context context);
 
     /**
      * Get the specified network interface in a virtual machine scale set.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualMachineScaleSetName The name of the virtual machine scale set.
      * @param virtualmachineIndex The virtual machine index.
@@ -323,17 +320,13 @@ public interface NetworkInterfaces {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified network interface in a virtual machine scale set along with {@link Response}.
      */
-    Response<NetworkInterface> getVirtualMachineScaleSetNetworkInterfaceWithResponse(
-        String resourceGroupName,
-        String virtualMachineScaleSetName,
-        String virtualmachineIndex,
-        String networkInterfaceName,
-        String expand,
+    Response<NetworkInterface> getVirtualMachineScaleSetNetworkInterfaceWithResponse(String resourceGroupName,
+        String virtualMachineScaleSetName, String virtualmachineIndex, String networkInterfaceName, String expand,
         Context context);
 
     /**
      * Get the specified network interface in a virtual machine scale set.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualMachineScaleSetName The name of the virtual machine scale set.
      * @param virtualmachineIndex The virtual machine index.
@@ -343,15 +336,12 @@ public interface NetworkInterfaces {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified network interface in a virtual machine scale set.
      */
-    NetworkInterface getVirtualMachineScaleSetNetworkInterface(
-        String resourceGroupName,
-        String virtualMachineScaleSetName,
-        String virtualmachineIndex,
-        String networkInterfaceName);
+    NetworkInterface getVirtualMachineScaleSetNetworkInterface(String resourceGroupName,
+        String virtualMachineScaleSetName, String virtualmachineIndex, String networkInterfaceName);
 
     /**
      * Get the specified network interface ip configuration in a virtual machine scale set.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualMachineScaleSetName The name of the virtual machine scale set.
      * @param virtualmachineIndex The virtual machine index.
@@ -360,17 +350,14 @@ public interface NetworkInterfaces {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified network interface ip configuration in a virtual machine scale set as paginated response
-     *     with {@link PagedIterable}.
+     * with {@link PagedIterable}.
      */
-    PagedIterable<NetworkInterfaceIpConfiguration> listVirtualMachineScaleSetIpConfigurations(
-        String resourceGroupName,
-        String virtualMachineScaleSetName,
-        String virtualmachineIndex,
-        String networkInterfaceName);
+    PagedIterable<NetworkInterfaceIpConfiguration> listVirtualMachineScaleSetIpConfigurations(String resourceGroupName,
+        String virtualMachineScaleSetName, String virtualmachineIndex, String networkInterfaceName);
 
     /**
      * Get the specified network interface ip configuration in a virtual machine scale set.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualMachineScaleSetName The name of the virtual machine scale set.
      * @param virtualmachineIndex The virtual machine index.
@@ -381,19 +368,15 @@ public interface NetworkInterfaces {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified network interface ip configuration in a virtual machine scale set as paginated response
-     *     with {@link PagedIterable}.
+     * with {@link PagedIterable}.
      */
-    PagedIterable<NetworkInterfaceIpConfiguration> listVirtualMachineScaleSetIpConfigurations(
-        String resourceGroupName,
-        String virtualMachineScaleSetName,
-        String virtualmachineIndex,
-        String networkInterfaceName,
-        String expand,
+    PagedIterable<NetworkInterfaceIpConfiguration> listVirtualMachineScaleSetIpConfigurations(String resourceGroupName,
+        String virtualMachineScaleSetName, String virtualmachineIndex, String networkInterfaceName, String expand,
         Context context);
 
     /**
      * Get the specified network interface ip configuration in a virtual machine scale set.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualMachineScaleSetName The name of the virtual machine scale set.
      * @param virtualmachineIndex The virtual machine index.
@@ -404,21 +387,16 @@ public interface NetworkInterfaces {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified network interface ip configuration in a virtual machine scale set along with {@link
-     *     Response}.
+     * @return the specified network interface ip configuration in a virtual machine scale set along with
+     * {@link Response}.
      */
     Response<NetworkInterfaceIpConfiguration> getVirtualMachineScaleSetIpConfigurationWithResponse(
-        String resourceGroupName,
-        String virtualMachineScaleSetName,
-        String virtualmachineIndex,
-        String networkInterfaceName,
-        String ipConfigurationName,
-        String expand,
-        Context context);
+        String resourceGroupName, String virtualMachineScaleSetName, String virtualmachineIndex,
+        String networkInterfaceName, String ipConfigurationName, String expand, Context context);
 
     /**
      * Get the specified network interface ip configuration in a virtual machine scale set.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualMachineScaleSetName The name of the virtual machine scale set.
      * @param virtualmachineIndex The virtual machine index.
@@ -429,16 +407,13 @@ public interface NetworkInterfaces {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified network interface ip configuration in a virtual machine scale set.
      */
-    NetworkInterfaceIpConfiguration getVirtualMachineScaleSetIpConfiguration(
-        String resourceGroupName,
-        String virtualMachineScaleSetName,
-        String virtualmachineIndex,
-        String networkInterfaceName,
+    NetworkInterfaceIpConfiguration getVirtualMachineScaleSetIpConfiguration(String resourceGroupName,
+        String virtualMachineScaleSetName, String virtualmachineIndex, String networkInterfaceName,
         String ipConfigurationName);
 
     /**
      * Gets information about the specified network interface.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -449,7 +424,7 @@ public interface NetworkInterfaces {
 
     /**
      * Gets information about the specified network interface.
-     *
+     * 
      * @param id the resource ID.
      * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
@@ -462,7 +437,7 @@ public interface NetworkInterfaces {
 
     /**
      * Deletes the specified network interface.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -472,7 +447,7 @@ public interface NetworkInterfaces {
 
     /**
      * Deletes the specified network interface.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -483,7 +458,7 @@ public interface NetworkInterfaces {
 
     /**
      * Begins definition for a new NetworkInterface resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new NetworkInterface definition.
      */

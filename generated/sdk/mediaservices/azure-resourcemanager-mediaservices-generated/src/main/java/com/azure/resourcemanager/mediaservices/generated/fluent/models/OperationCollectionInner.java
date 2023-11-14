@@ -9,7 +9,9 @@ import com.azure.resourcemanager.mediaservices.generated.models.Operation;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** A collection of Operation items. */
+/**
+ * A collection of Operation items.
+ */
 @Fluent
 public final class OperationCollectionInner {
     /*
@@ -18,13 +20,15 @@ public final class OperationCollectionInner {
     @JsonProperty(value = "value")
     private List<Operation> value;
 
-    /** Creates an instance of OperationCollectionInner class. */
+    /**
+     * Creates an instance of OperationCollectionInner class.
+     */
     public OperationCollectionInner() {
     }
 
     /**
      * Get the value property: A collection of Operation items.
-     *
+     * 
      * @return the value value.
      */
     public List<Operation> value() {
@@ -33,7 +37,7 @@ public final class OperationCollectionInner {
 
     /**
      * Set the value property: A collection of Operation items.
-     *
+     * 
      * @param value the value value to set.
      * @return the OperationCollectionInner object itself.
      */
@@ -44,7 +48,7 @@ public final class OperationCollectionInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

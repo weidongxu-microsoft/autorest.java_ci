@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of InboundNatRules. */
+/**
+ * Resource collection API of InboundNatRules.
+ */
 public interface InboundNatRules {
     /**
      * Gets all the inbound NAT rules in a load balancer.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -24,7 +26,7 @@ public interface InboundNatRules {
 
     /**
      * Gets all the inbound NAT rules in a load balancer.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @param context The context to associate with this operation.
@@ -37,7 +39,7 @@ public interface InboundNatRules {
 
     /**
      * Deletes the specified load balancer inbound NAT rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @param inboundNatRuleName The name of the inbound NAT rule.
@@ -49,7 +51,7 @@ public interface InboundNatRules {
 
     /**
      * Deletes the specified load balancer inbound NAT rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @param inboundNatRuleName The name of the inbound NAT rule.
@@ -62,7 +64,7 @@ public interface InboundNatRules {
 
     /**
      * Gets the specified load balancer inbound NAT rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @param inboundNatRuleName The name of the inbound NAT rule.
@@ -73,12 +75,12 @@ public interface InboundNatRules {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified load balancer inbound NAT rule along with {@link Response}.
      */
-    Response<InboundNatRule> getWithResponse(
-        String resourceGroupName, String loadBalancerName, String inboundNatRuleName, String expand, Context context);
+    Response<InboundNatRule> getWithResponse(String resourceGroupName, String loadBalancerName,
+        String inboundNatRuleName, String expand, Context context);
 
     /**
      * Gets the specified load balancer inbound NAT rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @param inboundNatRuleName The name of the inbound NAT rule.
@@ -91,7 +93,7 @@ public interface InboundNatRules {
 
     /**
      * Gets the specified load balancer inbound NAT rule.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -102,7 +104,7 @@ public interface InboundNatRules {
 
     /**
      * Gets the specified load balancer inbound NAT rule.
-     *
+     * 
      * @param id the resource ID.
      * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
@@ -115,7 +117,7 @@ public interface InboundNatRules {
 
     /**
      * Deletes the specified load balancer inbound NAT rule.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -125,7 +127,7 @@ public interface InboundNatRules {
 
     /**
      * Deletes the specified load balancer inbound NAT rule.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -136,7 +138,7 @@ public interface InboundNatRules {
 
     /**
      * Begins definition for a new InboundNatRule resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new InboundNatRule definition.
      */

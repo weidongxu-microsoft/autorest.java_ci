@@ -15,8 +15,7 @@ public final class AzureStoragePropertyDictionaryResourceImpl implements AzureSt
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    AzureStoragePropertyDictionaryResourceImpl(
-        AzureStoragePropertyDictionaryResourceInner innerObject,
+    AzureStoragePropertyDictionaryResourceImpl(AzureStoragePropertyDictionaryResourceInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

@@ -17,8 +17,8 @@ public final class RoleInstanceImpl implements RoleInstance {
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    RoleInstanceImpl(
-        RoleInstanceInner innerObject, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
+    RoleInstanceImpl(RoleInstanceInner innerObject,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

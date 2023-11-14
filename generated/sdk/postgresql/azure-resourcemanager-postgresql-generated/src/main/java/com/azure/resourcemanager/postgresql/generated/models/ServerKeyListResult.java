@@ -9,7 +9,9 @@ import com.azure.resourcemanager.postgresql.generated.fluent.models.ServerKeyInn
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** A list of PostgreSQL Server keys. */
+/**
+ * A list of PostgreSQL Server keys.
+ */
 @Immutable
 public final class ServerKeyListResult {
     /*
@@ -24,13 +26,15 @@ public final class ServerKeyListResult {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
-    /** Creates an instance of ServerKeyListResult class. */
+    /**
+     * Creates an instance of ServerKeyListResult class.
+     */
     public ServerKeyListResult() {
     }
 
     /**
      * Get the value property: A list of PostgreSQL Server keys.
-     *
+     * 
      * @return the value value.
      */
     public List<ServerKeyInner> value() {
@@ -39,7 +43,7 @@ public final class ServerKeyListResult {
 
     /**
      * Get the nextLink property: Link to retrieve next page of results.
-     *
+     * 
      * @return the nextLink value.
      */
     public String nextLink() {
@@ -48,7 +52,7 @@ public final class ServerKeyListResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

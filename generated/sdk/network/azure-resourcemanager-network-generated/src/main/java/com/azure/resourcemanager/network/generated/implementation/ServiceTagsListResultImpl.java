@@ -17,8 +17,7 @@ public final class ServiceTagsListResultImpl implements ServiceTagsListResult {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    ServiceTagsListResultImpl(
-        ServiceTagsListResultInner innerObject,
+    ServiceTagsListResultImpl(ServiceTagsListResultInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -47,12 +46,8 @@ public final class ServiceTagsListResultImpl implements ServiceTagsListResult {
     public List<ServiceTagInformation> values() {
         List<ServiceTagInformationInner> inner = this.innerModel().values();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new ServiceTagInformationImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new ServiceTagInformationImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

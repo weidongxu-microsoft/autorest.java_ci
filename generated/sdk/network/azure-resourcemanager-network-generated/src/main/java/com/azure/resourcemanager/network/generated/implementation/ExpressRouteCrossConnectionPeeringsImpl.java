@@ -21,24 +21,23 @@ public final class ExpressRouteCrossConnectionPeeringsImpl implements ExpressRou
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public ExpressRouteCrossConnectionPeeringsImpl(
-        ExpressRouteCrossConnectionPeeringsClient innerClient,
+    public ExpressRouteCrossConnectionPeeringsImpl(ExpressRouteCrossConnectionPeeringsClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public PagedIterable<ExpressRouteCrossConnectionPeering> list(
-        String resourceGroupName, String crossConnectionName) {
-        PagedIterable<ExpressRouteCrossConnectionPeeringInner> inner =
-            this.serviceClient().list(resourceGroupName, crossConnectionName);
+    public PagedIterable<ExpressRouteCrossConnectionPeering> list(String resourceGroupName,
+        String crossConnectionName) {
+        PagedIterable<ExpressRouteCrossConnectionPeeringInner> inner
+            = this.serviceClient().list(resourceGroupName, crossConnectionName);
         return Utils.mapPage(inner, inner1 -> new ExpressRouteCrossConnectionPeeringImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<ExpressRouteCrossConnectionPeering> list(
-        String resourceGroupName, String crossConnectionName, Context context) {
-        PagedIterable<ExpressRouteCrossConnectionPeeringInner> inner =
-            this.serviceClient().list(resourceGroupName, crossConnectionName, context);
+    public PagedIterable<ExpressRouteCrossConnectionPeering> list(String resourceGroupName, String crossConnectionName,
+        Context context) {
+        PagedIterable<ExpressRouteCrossConnectionPeeringInner> inner
+            = this.serviceClient().list(resourceGroupName, crossConnectionName, context);
         return Utils.mapPage(inner, inner1 -> new ExpressRouteCrossConnectionPeeringImpl(inner1, this.manager()));
     }
 
@@ -50,25 +49,22 @@ public final class ExpressRouteCrossConnectionPeeringsImpl implements ExpressRou
         this.serviceClient().delete(resourceGroupName, crossConnectionName, peeringName, context);
     }
 
-    public Response<ExpressRouteCrossConnectionPeering> getWithResponse(
-        String resourceGroupName, String crossConnectionName, String peeringName, Context context) {
-        Response<ExpressRouteCrossConnectionPeeringInner> inner =
-            this.serviceClient().getWithResponse(resourceGroupName, crossConnectionName, peeringName, context);
+    public Response<ExpressRouteCrossConnectionPeering> getWithResponse(String resourceGroupName,
+        String crossConnectionName, String peeringName, Context context) {
+        Response<ExpressRouteCrossConnectionPeeringInner> inner
+            = this.serviceClient().getWithResponse(resourceGroupName, crossConnectionName, peeringName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ExpressRouteCrossConnectionPeeringImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public ExpressRouteCrossConnectionPeering get(
-        String resourceGroupName, String crossConnectionName, String peeringName) {
-        ExpressRouteCrossConnectionPeeringInner inner =
-            this.serviceClient().get(resourceGroupName, crossConnectionName, peeringName);
+    public ExpressRouteCrossConnectionPeering get(String resourceGroupName, String crossConnectionName,
+        String peeringName) {
+        ExpressRouteCrossConnectionPeeringInner inner
+            = this.serviceClient().get(resourceGroupName, crossConnectionName, peeringName);
         if (inner != null) {
             return new ExpressRouteCrossConnectionPeeringImpl(inner, this.manager());
         } else {
@@ -76,13 +72,10 @@ public final class ExpressRouteCrossConnectionPeeringsImpl implements ExpressRou
         }
     }
 
-    public ExpressRouteCrossConnectionPeering createOrUpdate(
-        String resourceGroupName,
-        String crossConnectionName,
-        String peeringName,
-        ExpressRouteCrossConnectionPeeringInner peeringParameters) {
-        ExpressRouteCrossConnectionPeeringInner inner =
-            this.serviceClient().createOrUpdate(resourceGroupName, crossConnectionName, peeringName, peeringParameters);
+    public ExpressRouteCrossConnectionPeering createOrUpdate(String resourceGroupName, String crossConnectionName,
+        String peeringName, ExpressRouteCrossConnectionPeeringInner peeringParameters) {
+        ExpressRouteCrossConnectionPeeringInner inner = this.serviceClient().createOrUpdate(resourceGroupName,
+            crossConnectionName, peeringName, peeringParameters);
         if (inner != null) {
             return new ExpressRouteCrossConnectionPeeringImpl(inner, this.manager());
         } else {
@@ -90,16 +83,10 @@ public final class ExpressRouteCrossConnectionPeeringsImpl implements ExpressRou
         }
     }
 
-    public ExpressRouteCrossConnectionPeering createOrUpdate(
-        String resourceGroupName,
-        String crossConnectionName,
-        String peeringName,
-        ExpressRouteCrossConnectionPeeringInner peeringParameters,
-        Context context) {
-        ExpressRouteCrossConnectionPeeringInner inner =
-            this
-                .serviceClient()
-                .createOrUpdate(resourceGroupName, crossConnectionName, peeringName, peeringParameters, context);
+    public ExpressRouteCrossConnectionPeering createOrUpdate(String resourceGroupName, String crossConnectionName,
+        String peeringName, ExpressRouteCrossConnectionPeeringInner peeringParameters, Context context) {
+        ExpressRouteCrossConnectionPeeringInner inner = this.serviceClient().createOrUpdate(resourceGroupName,
+            crossConnectionName, peeringName, peeringParameters, context);
         if (inner != null) {
             return new ExpressRouteCrossConnectionPeeringImpl(inner, this.manager());
         } else {

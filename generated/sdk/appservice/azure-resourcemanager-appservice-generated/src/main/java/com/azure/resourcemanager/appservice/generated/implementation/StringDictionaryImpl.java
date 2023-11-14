@@ -14,8 +14,7 @@ public final class StringDictionaryImpl implements StringDictionary {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    StringDictionaryImpl(
-        StringDictionaryInner innerObject,
+    StringDictionaryImpl(StringDictionaryInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

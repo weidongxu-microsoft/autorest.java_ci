@@ -10,7 +10,9 @@ import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.iothub.generated.models.PrivateEndpointConnectionProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The private endpoint connection of an IotHub. */
+/**
+ * The private endpoint connection of an IotHub.
+ */
 @Fluent
 public final class PrivateEndpointConnectionInner extends ProxyResource {
     /*
@@ -19,13 +21,15 @@ public final class PrivateEndpointConnectionInner extends ProxyResource {
     @JsonProperty(value = "properties", required = true)
     private PrivateEndpointConnectionProperties properties;
 
-    /** Creates an instance of PrivateEndpointConnectionInner class. */
+    /**
+     * Creates an instance of PrivateEndpointConnectionInner class.
+     */
     public PrivateEndpointConnectionInner() {
     }
 
     /**
      * Get the properties property: The properties of a private endpoint connection.
-     *
+     * 
      * @return the properties value.
      */
     public PrivateEndpointConnectionProperties properties() {
@@ -34,7 +38,7 @@ public final class PrivateEndpointConnectionInner extends ProxyResource {
 
     /**
      * Set the properties property: The properties of a private endpoint connection.
-     *
+     * 
      * @param properties the properties value to set.
      * @return the PrivateEndpointConnectionInner object itself.
      */
@@ -45,15 +49,13 @@ public final class PrivateEndpointConnectionInner extends ProxyResource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (properties() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property properties in model PrivateEndpointConnectionInner"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property properties in model PrivateEndpointConnectionInner"));
         } else {
             properties().validate();
         }

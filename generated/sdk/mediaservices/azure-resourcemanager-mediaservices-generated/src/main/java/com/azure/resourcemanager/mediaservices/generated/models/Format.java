@@ -11,7 +11,9 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** Base class for output. */
+/**
+ * Base class for output.
+ */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
     include = JsonTypeInfo.As.PROPERTY,
@@ -20,8 +22,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @JsonTypeName("Format")
 @JsonSubTypes({
     @JsonSubTypes.Type(name = "#Microsoft.Media.ImageFormat", value = ImageFormat.class),
-    @JsonSubTypes.Type(name = "#Microsoft.Media.MultiBitrateFormat", value = MultiBitrateFormat.class)
-})
+    @JsonSubTypes.Type(name = "#Microsoft.Media.MultiBitrateFormat", value = MultiBitrateFormat.class) })
 @Fluent
 public class Format {
     /*
@@ -38,7 +39,9 @@ public class Format {
     @JsonProperty(value = "filenamePattern", required = true)
     private String filenamePattern;
 
-    /** Creates an instance of Format class. */
+    /**
+     * Creates an instance of Format class.
+     */
     public Format() {
     }
 
@@ -49,11 +52,11 @@ public class Format {
      * the base name of input video files will be used. If the length of base name of the input video file exceeds 32
      * characters, the base name is truncated to the first 32 characters in total length. {Extension} - The appropriate
      * extension for this format. {Label} - The label assigned to the codec/layer. {Index} - A unique index for
-     * thumbnails. Only applicable to thumbnails. {AudioStream} - string "Audio" plus audio stream number(start from 1).
-     * {Bitrate} - The audio/video bitrate in kbps. Not applicable to thumbnails. {Codec} - The type of the audio/video
-     * codec. {Resolution} - The video resolution. Any unsubstituted macros will be collapsed and removed from the
-     * filename.
-     *
+     * thumbnails. Only applicable to thumbnails. {AudioStream} - string "Audio" plus audio stream number(start from
+     * 1). {Bitrate} - The audio/video bitrate in kbps. Not applicable to thumbnails. {Codec} - The type of the
+     * audio/video codec. {Resolution} - The video resolution. Any unsubstituted macros will be collapsed and removed
+     * from the filename.
+     * 
      * @return the filenamePattern value.
      */
     public String filenamePattern() {
@@ -67,11 +70,11 @@ public class Format {
      * the base name of input video files will be used. If the length of base name of the input video file exceeds 32
      * characters, the base name is truncated to the first 32 characters in total length. {Extension} - The appropriate
      * extension for this format. {Label} - The label assigned to the codec/layer. {Index} - A unique index for
-     * thumbnails. Only applicable to thumbnails. {AudioStream} - string "Audio" plus audio stream number(start from 1).
-     * {Bitrate} - The audio/video bitrate in kbps. Not applicable to thumbnails. {Codec} - The type of the audio/video
-     * codec. {Resolution} - The video resolution. Any unsubstituted macros will be collapsed and removed from the
-     * filename.
-     *
+     * thumbnails. Only applicable to thumbnails. {AudioStream} - string "Audio" plus audio stream number(start from
+     * 1). {Bitrate} - The audio/video bitrate in kbps. Not applicable to thumbnails. {Codec} - The type of the
+     * audio/video codec. {Resolution} - The video resolution. Any unsubstituted macros will be collapsed and removed
+     * from the filename.
+     * 
      * @param filenamePattern the filenamePattern value to set.
      * @return the Format object itself.
      */
@@ -82,14 +85,13 @@ public class Format {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (filenamePattern() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property filenamePattern in model Format"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property filenamePattern in model Format"));
         }
     }
 

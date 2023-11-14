@@ -10,7 +10,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** Select video tracks from the input by specifying an attribute and an attribute filter. */
+/**
+ * Select video tracks from the input by specifying an attribute and an attribute filter.
+ */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
 @JsonTypeName("#Microsoft.Media.SelectVideoTrackByAttribute")
 @Fluent
@@ -28,20 +30,22 @@ public final class SelectVideoTrackByAttribute extends VideoTrackDescriptor {
     private AttributeFilter filter;
 
     /*
-     * The value to filter the tracks by.  Only used when AttributeFilter.ValueEquals is specified for the Filter
-     * property. For TrackAttribute.Bitrate, this should be an integer value in bits per second (e.g: '1500000').  The
+     * The value to filter the tracks by. Only used when AttributeFilter.ValueEquals is specified for the Filter
+     * property. For TrackAttribute.Bitrate, this should be an integer value in bits per second (e.g: '1500000'). The
      * TrackAttribute.Language is not supported for video tracks.
      */
     @JsonProperty(value = "filterValue")
     private String filterValue;
 
-    /** Creates an instance of SelectVideoTrackByAttribute class. */
+    /**
+     * Creates an instance of SelectVideoTrackByAttribute class.
+     */
     public SelectVideoTrackByAttribute() {
     }
 
     /**
      * Get the attribute property: The TrackAttribute to filter the tracks by.
-     *
+     * 
      * @return the attribute value.
      */
     public TrackAttribute attribute() {
@@ -50,7 +54,7 @@ public final class SelectVideoTrackByAttribute extends VideoTrackDescriptor {
 
     /**
      * Set the attribute property: The TrackAttribute to filter the tracks by.
-     *
+     * 
      * @param attribute the attribute value to set.
      * @return the SelectVideoTrackByAttribute object itself.
      */
@@ -62,7 +66,7 @@ public final class SelectVideoTrackByAttribute extends VideoTrackDescriptor {
     /**
      * Get the filter property: The type of AttributeFilter to apply to the TrackAttribute in order to select the
      * tracks.
-     *
+     * 
      * @return the filter value.
      */
     public AttributeFilter filter() {
@@ -72,7 +76,7 @@ public final class SelectVideoTrackByAttribute extends VideoTrackDescriptor {
     /**
      * Set the filter property: The type of AttributeFilter to apply to the TrackAttribute in order to select the
      * tracks.
-     *
+     * 
      * @param filter the filter value to set.
      * @return the SelectVideoTrackByAttribute object itself.
      */
@@ -83,9 +87,9 @@ public final class SelectVideoTrackByAttribute extends VideoTrackDescriptor {
 
     /**
      * Get the filterValue property: The value to filter the tracks by. Only used when AttributeFilter.ValueEquals is
-     * specified for the Filter property. For TrackAttribute.Bitrate, this should be an integer value in bits per second
-     * (e.g: '1500000'). The TrackAttribute.Language is not supported for video tracks.
-     *
+     * specified for the Filter property. For TrackAttribute.Bitrate, this should be an integer value in bits per
+     * second (e.g: '1500000'). The TrackAttribute.Language is not supported for video tracks.
+     * 
      * @return the filterValue value.
      */
     public String filterValue() {
@@ -94,9 +98,9 @@ public final class SelectVideoTrackByAttribute extends VideoTrackDescriptor {
 
     /**
      * Set the filterValue property: The value to filter the tracks by. Only used when AttributeFilter.ValueEquals is
-     * specified for the Filter property. For TrackAttribute.Bitrate, this should be an integer value in bits per second
-     * (e.g: '1500000'). The TrackAttribute.Language is not supported for video tracks.
-     *
+     * specified for the Filter property. For TrackAttribute.Bitrate, this should be an integer value in bits per
+     * second (e.g: '1500000'). The TrackAttribute.Language is not supported for video tracks.
+     * 
      * @param filterValue the filterValue value to set.
      * @return the SelectVideoTrackByAttribute object itself.
      */
@@ -107,23 +111,19 @@ public final class SelectVideoTrackByAttribute extends VideoTrackDescriptor {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override
     public void validate() {
         super.validate();
         if (attribute() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property attribute in model SelectVideoTrackByAttribute"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property attribute in model SelectVideoTrackByAttribute"));
         }
         if (filter() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property filter in model SelectVideoTrackByAttribute"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property filter in model SelectVideoTrackByAttribute"));
         }
     }
 

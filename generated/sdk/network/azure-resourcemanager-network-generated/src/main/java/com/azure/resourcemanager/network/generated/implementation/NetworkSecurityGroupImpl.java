@@ -65,12 +65,8 @@ public final class NetworkSecurityGroupImpl
     public List<SecurityRule> securityRules() {
         List<SecurityRuleInner> inner = this.innerModel().securityRules();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new SecurityRuleImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new SecurityRuleImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -79,12 +75,8 @@ public final class NetworkSecurityGroupImpl
     public List<SecurityRule> defaultSecurityRules() {
         List<SecurityRuleInner> inner = this.innerModel().defaultSecurityRules();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new SecurityRuleImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new SecurityRuleImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -93,12 +85,8 @@ public final class NetworkSecurityGroupImpl
     public List<NetworkInterface> networkInterfaces() {
         List<NetworkInterfaceInner> inner = this.innerModel().networkInterfaces();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new NetworkInterfaceImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new NetworkInterfaceImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -107,9 +95,8 @@ public final class NetworkSecurityGroupImpl
     public List<Subnet> subnets() {
         List<SubnetInner> inner = this.innerModel().subnets();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner.stream().map(inner1 -> new SubnetImpl(inner1, this.manager())).collect(Collectors.toList()));
+            return Collections.unmodifiableList(
+                inner.stream().map(inner1 -> new SubnetImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -118,9 +105,8 @@ public final class NetworkSecurityGroupImpl
     public List<FlowLog> flowLogs() {
         List<FlowLogInner> inner = this.innerModel().flowLogs();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner.stream().map(inner1 -> new FlowLogImpl(inner1, this.manager())).collect(Collectors.toList()));
+            return Collections.unmodifiableList(
+                inner.stream().map(inner1 -> new FlowLogImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -166,20 +152,14 @@ public final class NetworkSecurityGroupImpl
     }
 
     public NetworkSecurityGroup create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNetworkSecurityGroups()
-                .createOrUpdate(resourceGroupName, networkSecurityGroupName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getNetworkSecurityGroups().createOrUpdate(resourceGroupName,
+            networkSecurityGroupName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public NetworkSecurityGroup create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNetworkSecurityGroups()
-                .createOrUpdate(resourceGroupName, networkSecurityGroupName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getNetworkSecurityGroups().createOrUpdate(resourceGroupName,
+            networkSecurityGroupName, this.innerModel(), context);
         return this;
     }
 
@@ -195,27 +175,19 @@ public final class NetworkSecurityGroupImpl
     }
 
     public NetworkSecurityGroup apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNetworkSecurityGroups()
-                .updateTagsWithResponse(resourceGroupName, networkSecurityGroupName, updateParameters, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getNetworkSecurityGroups()
+            .updateTagsWithResponse(resourceGroupName, networkSecurityGroupName, updateParameters, Context.NONE)
+            .getValue();
         return this;
     }
 
     public NetworkSecurityGroup apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNetworkSecurityGroups()
-                .updateTagsWithResponse(resourceGroupName, networkSecurityGroupName, updateParameters, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getNetworkSecurityGroups()
+            .updateTagsWithResponse(resourceGroupName, networkSecurityGroupName, updateParameters, context).getValue();
         return this;
     }
 
-    NetworkSecurityGroupImpl(
-        NetworkSecurityGroupInner innerObject,
+    NetworkSecurityGroupImpl(NetworkSecurityGroupInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -225,23 +197,17 @@ public final class NetworkSecurityGroupImpl
 
     public NetworkSecurityGroup refresh() {
         String localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNetworkSecurityGroups()
-                .getByResourceGroupWithResponse(resourceGroupName, networkSecurityGroupName, localExpand, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getNetworkSecurityGroups()
+            .getByResourceGroupWithResponse(resourceGroupName, networkSecurityGroupName, localExpand, Context.NONE)
+            .getValue();
         return this;
     }
 
     public NetworkSecurityGroup refresh(Context context) {
         String localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNetworkSecurityGroups()
-                .getByResourceGroupWithResponse(resourceGroupName, networkSecurityGroupName, localExpand, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getNetworkSecurityGroups()
+            .getByResourceGroupWithResponse(resourceGroupName, networkSecurityGroupName, localExpand, context)
+            .getValue();
         return this;
     }
 

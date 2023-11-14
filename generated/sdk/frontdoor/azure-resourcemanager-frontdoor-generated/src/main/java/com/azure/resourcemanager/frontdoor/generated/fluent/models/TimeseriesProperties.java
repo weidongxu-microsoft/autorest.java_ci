@@ -11,7 +11,9 @@ import com.azure.resourcemanager.frontdoor.generated.models.TimeseriesType;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Defines the properties of a timeseries. */
+/**
+ * Defines the properties of a timeseries.
+ */
 @Fluent
 public final class TimeseriesProperties {
     /*
@@ -57,13 +59,15 @@ public final class TimeseriesProperties {
     @JsonProperty(value = "timeseriesData")
     private List<TimeseriesDataPoint> timeseriesData;
 
-    /** Creates an instance of TimeseriesProperties class. */
+    /**
+     * Creates an instance of TimeseriesProperties class.
+     */
     public TimeseriesProperties() {
     }
 
     /**
      * Get the endpoint property: The endpoint associated with the Timeseries data point.
-     *
+     * 
      * @return the endpoint value.
      */
     public String endpoint() {
@@ -72,7 +76,7 @@ public final class TimeseriesProperties {
 
     /**
      * Set the endpoint property: The endpoint associated with the Timeseries data point.
-     *
+     * 
      * @param endpoint the endpoint value to set.
      * @return the TimeseriesProperties object itself.
      */
@@ -83,7 +87,7 @@ public final class TimeseriesProperties {
 
     /**
      * Get the startDateTimeUtc property: The start DateTime of the Timeseries in UTC.
-     *
+     * 
      * @return the startDateTimeUtc value.
      */
     public String startDateTimeUtc() {
@@ -92,7 +96,7 @@ public final class TimeseriesProperties {
 
     /**
      * Set the startDateTimeUtc property: The start DateTime of the Timeseries in UTC.
-     *
+     * 
      * @param startDateTimeUtc the startDateTimeUtc value to set.
      * @return the TimeseriesProperties object itself.
      */
@@ -103,7 +107,7 @@ public final class TimeseriesProperties {
 
     /**
      * Get the endDateTimeUtc property: The end DateTime of the Timeseries in UTC.
-     *
+     * 
      * @return the endDateTimeUtc value.
      */
     public String endDateTimeUtc() {
@@ -112,7 +116,7 @@ public final class TimeseriesProperties {
 
     /**
      * Set the endDateTimeUtc property: The end DateTime of the Timeseries in UTC.
-     *
+     * 
      * @param endDateTimeUtc the endDateTimeUtc value to set.
      * @return the TimeseriesProperties object itself.
      */
@@ -123,7 +127,7 @@ public final class TimeseriesProperties {
 
     /**
      * Get the aggregationInterval property: The aggregation interval of the Timeseries.
-     *
+     * 
      * @return the aggregationInterval value.
      */
     public AggregationInterval aggregationInterval() {
@@ -132,7 +136,7 @@ public final class TimeseriesProperties {
 
     /**
      * Set the aggregationInterval property: The aggregation interval of the Timeseries.
-     *
+     * 
      * @param aggregationInterval the aggregationInterval value to set.
      * @return the TimeseriesProperties object itself.
      */
@@ -143,7 +147,7 @@ public final class TimeseriesProperties {
 
     /**
      * Get the timeseriesType property: The type of Timeseries.
-     *
+     * 
      * @return the timeseriesType value.
      */
     public TimeseriesType timeseriesType() {
@@ -152,7 +156,7 @@ public final class TimeseriesProperties {
 
     /**
      * Set the timeseriesType property: The type of Timeseries.
-     *
+     * 
      * @param timeseriesType the timeseriesType value to set.
      * @return the TimeseriesProperties object itself.
      */
@@ -164,7 +168,7 @@ public final class TimeseriesProperties {
     /**
      * Get the country property: The country associated with the Timeseries. Values are country ISO codes as specified
      * here- https://www.iso.org/iso-3166-country-codes.html.
-     *
+     * 
      * @return the country value.
      */
     public String country() {
@@ -174,7 +178,7 @@ public final class TimeseriesProperties {
     /**
      * Set the country property: The country associated with the Timeseries. Values are country ISO codes as specified
      * here- https://www.iso.org/iso-3166-country-codes.html.
-     *
+     * 
      * @param country the country value to set.
      * @return the TimeseriesProperties object itself.
      */
@@ -185,7 +189,7 @@ public final class TimeseriesProperties {
 
     /**
      * Get the timeseriesData property: The set of data points for the timeseries.
-     *
+     * 
      * @return the timeseriesData value.
      */
     public List<TimeseriesDataPoint> timeseriesData() {
@@ -194,7 +198,7 @@ public final class TimeseriesProperties {
 
     /**
      * Set the timeseriesData property: The set of data points for the timeseries.
-     *
+     * 
      * @param timeseriesData the timeseriesData value to set.
      * @return the TimeseriesProperties object itself.
      */
@@ -205,7 +209,7 @@ public final class TimeseriesProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

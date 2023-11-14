@@ -8,17 +8,23 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Type of the track. */
+/**
+ * Type of the track.
+ */
 public final class LiveEventTrackType extends ExpandableStringEnum<LiveEventTrackType> {
-    /** Static value audio for LiveEventTrackType. */
+    /**
+     * Static value audio for LiveEventTrackType.
+     */
     public static final LiveEventTrackType AUDIO = fromString("audio");
 
-    /** Static value video for LiveEventTrackType. */
+    /**
+     * Static value video for LiveEventTrackType.
+     */
     public static final LiveEventTrackType VIDEO = fromString("video");
 
     /**
      * Creates a new instance of LiveEventTrackType value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -27,7 +33,7 @@ public final class LiveEventTrackType extends ExpandableStringEnum<LiveEventTrac
 
     /**
      * Creates or finds a LiveEventTrackType from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding LiveEventTrackType.
      */
@@ -38,7 +44,7 @@ public final class LiveEventTrackType extends ExpandableStringEnum<LiveEventTrac
 
     /**
      * Gets known LiveEventTrackType values.
-     *
+     * 
      * @return known LiveEventTrackType values.
      */
     public static Collection<LiveEventTrackType> values() {

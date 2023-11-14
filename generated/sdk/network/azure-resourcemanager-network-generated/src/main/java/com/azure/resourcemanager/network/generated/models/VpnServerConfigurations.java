@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of VpnServerConfigurations. */
+/**
+ * Resource collection API of VpnServerConfigurations.
+ */
 public interface VpnServerConfigurations {
     /**
      * Retrieves the details of a VpnServerConfiguration.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnServerConfiguration.
      * @param vpnServerConfigurationName The name of the VpnServerConfiguration being retrieved.
      * @param context The context to associate with this operation.
@@ -21,12 +23,12 @@ public interface VpnServerConfigurations {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return vpnServerConfiguration Resource along with {@link Response}.
      */
-    Response<VpnServerConfiguration> getByResourceGroupWithResponse(
-        String resourceGroupName, String vpnServerConfigurationName, Context context);
+    Response<VpnServerConfiguration> getByResourceGroupWithResponse(String resourceGroupName,
+        String vpnServerConfigurationName, Context context);
 
     /**
      * Retrieves the details of a VpnServerConfiguration.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnServerConfiguration.
      * @param vpnServerConfigurationName The name of the VpnServerConfiguration being retrieved.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -38,7 +40,7 @@ public interface VpnServerConfigurations {
 
     /**
      * Deletes a VpnServerConfiguration.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnServerConfiguration.
      * @param vpnServerConfigurationName The name of the VpnServerConfiguration being deleted.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -49,7 +51,7 @@ public interface VpnServerConfigurations {
 
     /**
      * Deletes a VpnServerConfiguration.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnServerConfiguration.
      * @param vpnServerConfigurationName The name of the VpnServerConfiguration being deleted.
      * @param context The context to associate with this operation.
@@ -61,54 +63,54 @@ public interface VpnServerConfigurations {
 
     /**
      * Lists all the vpnServerConfigurations in a resource group.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnServerConfiguration.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list all VpnServerConfigurations as paginated response with {@link
-     *     PagedIterable}.
+     * @return result of the request to list all VpnServerConfigurations as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<VpnServerConfiguration> listByResourceGroup(String resourceGroupName);
 
     /**
      * Lists all the vpnServerConfigurations in a resource group.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnServerConfiguration.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list all VpnServerConfigurations as paginated response with {@link
-     *     PagedIterable}.
+     * @return result of the request to list all VpnServerConfigurations as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<VpnServerConfiguration> listByResourceGroup(String resourceGroupName, Context context);
 
     /**
      * Lists all the VpnServerConfigurations in a subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list all VpnServerConfigurations as paginated response with {@link
-     *     PagedIterable}.
+     * @return result of the request to list all VpnServerConfigurations as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<VpnServerConfiguration> list();
 
     /**
      * Lists all the VpnServerConfigurations in a subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list all VpnServerConfigurations as paginated response with {@link
-     *     PagedIterable}.
+     * @return result of the request to list all VpnServerConfigurations as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<VpnServerConfiguration> list(Context context);
 
     /**
      * Retrieves the details of a VpnServerConfiguration.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -119,7 +121,7 @@ public interface VpnServerConfigurations {
 
     /**
      * Retrieves the details of a VpnServerConfiguration.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -131,7 +133,7 @@ public interface VpnServerConfigurations {
 
     /**
      * Deletes a VpnServerConfiguration.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -141,7 +143,7 @@ public interface VpnServerConfigurations {
 
     /**
      * Deletes a VpnServerConfiguration.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -152,7 +154,7 @@ public interface VpnServerConfigurations {
 
     /**
      * Begins definition for a new VpnServerConfiguration resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new VpnServerConfiguration definition.
      */

@@ -14,8 +14,7 @@ public final class ValidatePropertiesImpl implements ValidateProperties {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    ValidatePropertiesImpl(
-        ValidatePropertiesInner innerObject,
+    ValidatePropertiesImpl(ValidatePropertiesInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

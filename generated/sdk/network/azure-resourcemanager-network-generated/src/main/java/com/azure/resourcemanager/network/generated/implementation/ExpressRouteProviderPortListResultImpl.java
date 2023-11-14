@@ -17,8 +17,7 @@ public final class ExpressRouteProviderPortListResultImpl implements ExpressRout
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    ExpressRouteProviderPortListResultImpl(
-        ExpressRouteProviderPortListResultInner innerObject,
+    ExpressRouteProviderPortListResultImpl(ExpressRouteProviderPortListResultInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -27,12 +26,8 @@ public final class ExpressRouteProviderPortListResultImpl implements ExpressRout
     public List<ExpressRouteProviderPort> value() {
         List<ExpressRouteProviderPortInner> inner = this.innerModel().value();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new ExpressRouteProviderPortImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new ExpressRouteProviderPortImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

@@ -22,8 +22,7 @@ public final class ReservationTransactionsImpl implements ReservationTransaction
 
     private final com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager;
 
-    public ReservationTransactionsImpl(
-        ReservationTransactionsClient innerClient,
+    public ReservationTransactionsImpl(ReservationTransactionsClient innerClient,
         com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -34,28 +33,24 @@ public final class ReservationTransactionsImpl implements ReservationTransaction
         return Utils.mapPage(inner, inner1 -> new ReservationTransactionImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<ReservationTransaction> list(
-        String billingAccountId,
-        String filter,
-        Boolean useMarkupIfPartner,
-        BigDecimal previewMarkupPercentage,
-        Context context) {
-        PagedIterable<ReservationTransactionInner> inner =
-            this.serviceClient().list(billingAccountId, filter, useMarkupIfPartner, previewMarkupPercentage, context);
+    public PagedIterable<ReservationTransaction> list(String billingAccountId, String filter,
+        Boolean useMarkupIfPartner, BigDecimal previewMarkupPercentage, Context context) {
+        PagedIterable<ReservationTransactionInner> inner
+            = this.serviceClient().list(billingAccountId, filter, useMarkupIfPartner, previewMarkupPercentage, context);
         return Utils.mapPage(inner, inner1 -> new ReservationTransactionImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<ModernReservationTransaction> listByBillingProfile(
-        String billingAccountId, String billingProfileId) {
-        PagedIterable<ModernReservationTransactionInner> inner =
-            this.serviceClient().listByBillingProfile(billingAccountId, billingProfileId);
+    public PagedIterable<ModernReservationTransaction> listByBillingProfile(String billingAccountId,
+        String billingProfileId) {
+        PagedIterable<ModernReservationTransactionInner> inner
+            = this.serviceClient().listByBillingProfile(billingAccountId, billingProfileId);
         return Utils.mapPage(inner, inner1 -> new ModernReservationTransactionImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<ModernReservationTransaction> listByBillingProfile(
-        String billingAccountId, String billingProfileId, String filter, Context context) {
-        PagedIterable<ModernReservationTransactionInner> inner =
-            this.serviceClient().listByBillingProfile(billingAccountId, billingProfileId, filter, context);
+    public PagedIterable<ModernReservationTransaction> listByBillingProfile(String billingAccountId,
+        String billingProfileId, String filter, Context context) {
+        PagedIterable<ModernReservationTransactionInner> inner
+            = this.serviceClient().listByBillingProfile(billingAccountId, billingProfileId, filter, context);
         return Utils.mapPage(inner, inner1 -> new ModernReservationTransactionImpl(inner1, this.manager()));
     }
 

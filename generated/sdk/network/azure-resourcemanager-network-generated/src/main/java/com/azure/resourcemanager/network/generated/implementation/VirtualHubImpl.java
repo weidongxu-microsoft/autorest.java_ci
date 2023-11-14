@@ -109,12 +109,8 @@ public final class VirtualHubImpl implements VirtualHub, VirtualHub.Definition, 
     public List<VirtualHubRouteTableV2> virtualHubRouteTableV2S() {
         List<VirtualHubRouteTableV2Inner> inner = this.innerModel().virtualHubRouteTableV2S();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new VirtualHubRouteTableV2Impl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new VirtualHubRouteTableV2Impl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -216,20 +212,14 @@ public final class VirtualHubImpl implements VirtualHub, VirtualHub.Definition, 
     }
 
     public VirtualHub create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualHubs()
-                .createOrUpdate(resourceGroupName, virtualHubName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getVirtualHubs().createOrUpdate(resourceGroupName,
+            virtualHubName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public VirtualHub create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualHubs()
-                .createOrUpdate(resourceGroupName, virtualHubName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getVirtualHubs().createOrUpdate(resourceGroupName,
+            virtualHubName, this.innerModel(), context);
         return this;
     }
 
@@ -245,27 +235,20 @@ public final class VirtualHubImpl implements VirtualHub, VirtualHub.Definition, 
     }
 
     public VirtualHub apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualHubs()
-                .updateTagsWithResponse(resourceGroupName, virtualHubName, updateVirtualHubParameters, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getVirtualHubs()
+            .updateTagsWithResponse(resourceGroupName, virtualHubName, updateVirtualHubParameters, Context.NONE)
+            .getValue();
         return this;
     }
 
     public VirtualHub apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualHubs()
-                .updateTagsWithResponse(resourceGroupName, virtualHubName, updateVirtualHubParameters, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getVirtualHubs()
+            .updateTagsWithResponse(resourceGroupName, virtualHubName, updateVirtualHubParameters, context).getValue();
         return this;
     }
 
-    VirtualHubImpl(
-        VirtualHubInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    VirtualHubImpl(VirtualHubInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
@@ -273,22 +256,14 @@ public final class VirtualHubImpl implements VirtualHub, VirtualHub.Definition, 
     }
 
     public VirtualHub refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualHubs()
-                .getByResourceGroupWithResponse(resourceGroupName, virtualHubName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getVirtualHubs()
+            .getByResourceGroupWithResponse(resourceGroupName, virtualHubName, Context.NONE).getValue();
         return this;
     }
 
     public VirtualHub refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualHubs()
-                .getByResourceGroupWithResponse(resourceGroupName, virtualHubName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getVirtualHubs()
+            .getByResourceGroupWithResponse(resourceGroupName, virtualHubName, context).getValue();
         return this;
     }
 
@@ -296,37 +271,32 @@ public final class VirtualHubImpl implements VirtualHub, VirtualHub.Definition, 
         return serviceManager.virtualHubs().getEffectiveVirtualHubRoutes(resourceGroupName, virtualHubName);
     }
 
-    public VirtualHubEffectiveRouteList getEffectiveVirtualHubRoutes(
-        EffectiveRoutesParameters effectiveRoutesParameters, Context context) {
-        return serviceManager
-            .virtualHubs()
-            .getEffectiveVirtualHubRoutes(resourceGroupName, virtualHubName, effectiveRoutesParameters, context);
+    public VirtualHubEffectiveRouteList
+        getEffectiveVirtualHubRoutes(EffectiveRoutesParameters effectiveRoutesParameters, Context context) {
+        return serviceManager.virtualHubs().getEffectiveVirtualHubRoutes(resourceGroupName, virtualHubName,
+            effectiveRoutesParameters, context);
     }
 
     public EffectiveRouteMapRouteList getInboundRoutes(GetInboundRoutesParameters getInboundRoutesParameters) {
-        return serviceManager
-            .virtualHubs()
-            .getInboundRoutes(resourceGroupName, virtualHubName, getInboundRoutesParameters);
+        return serviceManager.virtualHubs().getInboundRoutes(resourceGroupName, virtualHubName,
+            getInboundRoutesParameters);
     }
 
-    public EffectiveRouteMapRouteList getInboundRoutes(
-        GetInboundRoutesParameters getInboundRoutesParameters, Context context) {
-        return serviceManager
-            .virtualHubs()
-            .getInboundRoutes(resourceGroupName, virtualHubName, getInboundRoutesParameters, context);
+    public EffectiveRouteMapRouteList getInboundRoutes(GetInboundRoutesParameters getInboundRoutesParameters,
+        Context context) {
+        return serviceManager.virtualHubs().getInboundRoutes(resourceGroupName, virtualHubName,
+            getInboundRoutesParameters, context);
     }
 
     public EffectiveRouteMapRouteList getOutboundRoutes(GetOutboundRoutesParameters getOutboundRoutesParameters) {
-        return serviceManager
-            .virtualHubs()
-            .getOutboundRoutes(resourceGroupName, virtualHubName, getOutboundRoutesParameters);
+        return serviceManager.virtualHubs().getOutboundRoutes(resourceGroupName, virtualHubName,
+            getOutboundRoutesParameters);
     }
 
-    public EffectiveRouteMapRouteList getOutboundRoutes(
-        GetOutboundRoutesParameters getOutboundRoutesParameters, Context context) {
-        return serviceManager
-            .virtualHubs()
-            .getOutboundRoutes(resourceGroupName, virtualHubName, getOutboundRoutesParameters, context);
+    public EffectiveRouteMapRouteList getOutboundRoutes(GetOutboundRoutesParameters getOutboundRoutesParameters,
+        Context context) {
+        return serviceManager.virtualHubs().getOutboundRoutes(resourceGroupName, virtualHubName,
+            getOutboundRoutesParameters, context);
     }
 
     public VirtualHubImpl withRegion(Region location) {

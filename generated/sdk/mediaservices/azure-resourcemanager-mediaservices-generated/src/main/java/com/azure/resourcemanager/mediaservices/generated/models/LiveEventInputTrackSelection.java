@@ -33,14 +33,16 @@ public final class LiveEventInputTrackSelection {
     @JsonProperty(value = "value")
     private String value;
 
-    /** Creates an instance of LiveEventInputTrackSelection class. */
+    /**
+     * Creates an instance of LiveEventInputTrackSelection class.
+     */
     public LiveEventInputTrackSelection() {
     }
 
     /**
      * Get the property property: Property name to select. This property is reserved for future use, any value set on
      * this property will be ignored.
-     *
+     * 
      * @return the property value.
      */
     public String property() {
@@ -50,7 +52,7 @@ public final class LiveEventInputTrackSelection {
     /**
      * Set the property property: Property name to select. This property is reserved for future use, any value set on
      * this property will be ignored.
-     *
+     * 
      * @param property the property value to set.
      * @return the LiveEventInputTrackSelection object itself.
      */
@@ -62,7 +64,7 @@ public final class LiveEventInputTrackSelection {
     /**
      * Get the operation property: Comparing operation. This property is reserved for future use, any value set on this
      * property will be ignored.
-     *
+     * 
      * @return the operation value.
      */
     public String operation() {
@@ -72,7 +74,7 @@ public final class LiveEventInputTrackSelection {
     /**
      * Set the operation property: Comparing operation. This property is reserved for future use, any value set on this
      * property will be ignored.
-     *
+     * 
      * @param operation the operation value to set.
      * @return the LiveEventInputTrackSelection object itself.
      */
@@ -82,9 +84,9 @@ public final class LiveEventInputTrackSelection {
     }
 
     /**
-     * Get the value property: Property value to select. This property is reserved for future use, any value set on this
-     * property will be ignored.
-     *
+     * Get the value property: Property value to select. This property is reserved for future use, any value set on
+     * this property will be ignored.
+     * 
      * @return the value value.
      */
     public String value() {
@@ -92,9 +94,9 @@ public final class LiveEventInputTrackSelection {
     }
 
     /**
-     * Set the value property: Property value to select. This property is reserved for future use, any value set on this
-     * property will be ignored.
-     *
+     * Set the value property: Property value to select. This property is reserved for future use, any value set on
+     * this property will be ignored.
+     * 
      * @param value the value value to set.
      * @return the LiveEventInputTrackSelection object itself.
      */
@@ -105,7 +107,7 @@ public final class LiveEventInputTrackSelection {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

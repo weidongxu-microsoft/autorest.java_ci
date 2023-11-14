@@ -9,7 +9,9 @@ import com.azure.resourcemanager.monitor.generated.models.CategoryType;
 import com.azure.resourcemanager.monitor.generated.models.ProxyOnlyResource;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The diagnostic settings category resource. */
+/**
+ * The diagnostic settings category resource.
+ */
 @Fluent
 public final class DiagnosticSettingsCategoryResourceInner extends ProxyOnlyResource {
     /*
@@ -18,13 +20,15 @@ public final class DiagnosticSettingsCategoryResourceInner extends ProxyOnlyReso
     @JsonProperty(value = "properties")
     private DiagnosticSettingsCategory innerProperties;
 
-    /** Creates an instance of DiagnosticSettingsCategoryResourceInner class. */
+    /**
+     * Creates an instance of DiagnosticSettingsCategoryResourceInner class.
+     */
     public DiagnosticSettingsCategoryResourceInner() {
     }
 
     /**
      * Get the innerProperties property: The properties of a Diagnostic Settings Category.
-     *
+     * 
      * @return the innerProperties value.
      */
     private DiagnosticSettingsCategory innerProperties() {
@@ -33,7 +37,7 @@ public final class DiagnosticSettingsCategoryResourceInner extends ProxyOnlyReso
 
     /**
      * Get the categoryType property: The type of the diagnostic settings category.
-     *
+     * 
      * @return the categoryType value.
      */
     public CategoryType categoryType() {
@@ -42,7 +46,7 @@ public final class DiagnosticSettingsCategoryResourceInner extends ProxyOnlyReso
 
     /**
      * Set the categoryType property: The type of the diagnostic settings category.
-     *
+     * 
      * @param categoryType the categoryType value to set.
      * @return the DiagnosticSettingsCategoryResourceInner object itself.
      */
@@ -56,7 +60,7 @@ public final class DiagnosticSettingsCategoryResourceInner extends ProxyOnlyReso
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

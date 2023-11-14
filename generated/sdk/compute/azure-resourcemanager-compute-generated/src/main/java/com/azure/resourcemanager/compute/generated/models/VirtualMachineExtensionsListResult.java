@@ -7,11 +7,13 @@ package com.azure.resourcemanager.compute.generated.models;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineExtensionsListResultInner;
 import java.util.List;
 
-/** An immutable client-side representation of VirtualMachineExtensionsListResult. */
+/**
+ * An immutable client-side representation of VirtualMachineExtensionsListResult.
+ */
 public interface VirtualMachineExtensionsListResult {
     /**
      * Gets the value property: The list of extensions.
-     *
+     * 
      * @return the value value.
      */
     List<VirtualMachineExtension> value();
@@ -19,7 +21,7 @@ public interface VirtualMachineExtensionsListResult {
     /**
      * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineExtensionsListResultInner
      * object.
-     *
+     * 
      * @return the inner object.
      */
     VirtualMachineExtensionsListResultInner innerModel();

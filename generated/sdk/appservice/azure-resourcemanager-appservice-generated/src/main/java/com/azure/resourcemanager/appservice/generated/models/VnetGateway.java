@@ -7,89 +7,99 @@ package com.azure.resourcemanager.appservice.generated.models;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.VnetGatewayInner;
 
-/** An immutable client-side representation of VnetGateway. */
+/**
+ * An immutable client-side representation of VnetGateway.
+ */
 public interface VnetGateway {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the name property: The name of the resource.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the type property: The type of the resource.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the kind property: Kind of resource.
-     *
+     * 
      * @return the kind value.
      */
     String kind();
 
     /**
      * Gets the vnetName property: The Virtual Network name.
-     *
+     * 
      * @return the vnetName value.
      */
     String vnetName();
 
     /**
      * Gets the vpnPackageUri property: The URI where the VPN package can be downloaded.
-     *
+     * 
      * @return the vpnPackageUri value.
      */
     String vpnPackageUri();
 
     /**
      * Gets the name of the resource group.
-     *
+     * 
      * @return the name of the resource group.
      */
     String resourceGroupName();
 
     /**
      * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.VnetGatewayInner object.
-     *
+     * 
      * @return the inner object.
      */
     VnetGatewayInner innerModel();
 
-    /** The entirety of the VnetGateway definition. */
+    /**
+     * The entirety of the VnetGateway definition.
+     */
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
 
-    /** The VnetGateway definition stages. */
+    /**
+     * The VnetGateway definition stages.
+     */
     interface DefinitionStages {
-        /** The first stage of the VnetGateway definition. */
+        /**
+         * The first stage of the VnetGateway definition.
+         */
         interface Blank extends WithParentResource {
         }
 
-        /** The stage of the VnetGateway definition allowing to specify parent resource. */
+        /**
+         * The stage of the VnetGateway definition allowing to specify parent resource.
+         */
         interface WithParentResource {
             /**
              * Specifies resourceGroupName, name, vnetName, slot.
-             *
+             * 
              * @param resourceGroupName Name of the resource group to which the resource belongs.
              * @param name Name of the app.
              * @param vnetName Name of the Virtual Network.
              * @param slot Name of the deployment slot. If a slot is not specified, the API will add or update a gateway
-             *     for the production slot's Virtual Network.
+             * for the production slot's Virtual Network.
              * @return the next definition stage.
              */
-            WithCreate withExistingVirtualNetworkConnection(
-                String resourceGroupName, String name, String vnetName, String slot);
+            WithCreate withExistingVirtualNetworkConnection(String resourceGroupName, String name, String vnetName,
+                String slot);
         }
 
         /**
@@ -100,47 +110,53 @@ public interface VnetGateway {
             extends DefinitionStages.WithKind, DefinitionStages.WithVnetName, DefinitionStages.WithVpnPackageUri {
             /**
              * Executes the create request.
-             *
+             * 
              * @return the created resource.
              */
             VnetGateway create();
 
             /**
              * Executes the create request.
-             *
+             * 
              * @param context The context to associate with this operation.
              * @return the created resource.
              */
             VnetGateway create(Context context);
         }
 
-        /** The stage of the VnetGateway definition allowing to specify kind. */
+        /**
+         * The stage of the VnetGateway definition allowing to specify kind.
+         */
         interface WithKind {
             /**
              * Specifies the kind property: Kind of resource..
-             *
+             * 
              * @param kind Kind of resource.
              * @return the next definition stage.
              */
             WithCreate withKind(String kind);
         }
 
-        /** The stage of the VnetGateway definition allowing to specify vnetName. */
+        /**
+         * The stage of the VnetGateway definition allowing to specify vnetName.
+         */
         interface WithVnetName {
             /**
              * Specifies the vnetName property: The Virtual Network name..
-             *
+             * 
              * @param vnetName The Virtual Network name.
              * @return the next definition stage.
              */
             WithCreate withVnetName(String vnetName);
         }
 
-        /** The stage of the VnetGateway definition allowing to specify vpnPackageUri. */
+        /**
+         * The stage of the VnetGateway definition allowing to specify vpnPackageUri.
+         */
         interface WithVpnPackageUri {
             /**
              * Specifies the vpnPackageUri property: The URI where the VPN package can be downloaded..
-             *
+             * 
              * @param vpnPackageUri The URI where the VPN package can be downloaded.
              * @return the next definition stage.
              */
@@ -150,47 +166,55 @@ public interface VnetGateway {
 
     /**
      * Begins update for the VnetGateway resource.
-     *
+     * 
      * @return the stage of resource update.
      */
     VnetGateway.Update update();
 
-    /** The template for VnetGateway update. */
+    /**
+     * The template for VnetGateway update.
+     */
     interface Update extends UpdateStages.WithKind, UpdateStages.WithVpnPackageUri {
         /**
          * Executes the update request.
-         *
+         * 
          * @return the updated resource.
          */
         VnetGateway apply();
 
         /**
          * Executes the update request.
-         *
+         * 
          * @param context The context to associate with this operation.
          * @return the updated resource.
          */
         VnetGateway apply(Context context);
     }
 
-    /** The VnetGateway update stages. */
+    /**
+     * The VnetGateway update stages.
+     */
     interface UpdateStages {
-        /** The stage of the VnetGateway update allowing to specify kind. */
+        /**
+         * The stage of the VnetGateway update allowing to specify kind.
+         */
         interface WithKind {
             /**
              * Specifies the kind property: Kind of resource..
-             *
+             * 
              * @param kind Kind of resource.
              * @return the next definition stage.
              */
             Update withKind(String kind);
         }
 
-        /** The stage of the VnetGateway update allowing to specify vpnPackageUri. */
+        /**
+         * The stage of the VnetGateway update allowing to specify vpnPackageUri.
+         */
         interface WithVpnPackageUri {
             /**
              * Specifies the vpnPackageUri property: The URI where the VPN package can be downloaded..
-             *
+             * 
              * @param vpnPackageUri The URI where the VPN package can be downloaded.
              * @return the next definition stage.
              */
@@ -200,14 +224,14 @@ public interface VnetGateway {
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @return the refreshed resource.
      */
     VnetGateway refresh();
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @return the refreshed resource.
      */

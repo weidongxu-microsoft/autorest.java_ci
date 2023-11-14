@@ -17,8 +17,7 @@ public final class GlobalAdministratorsImpl implements GlobalAdministrators {
 
     private final com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager;
 
-    public GlobalAdministratorsImpl(
-        GlobalAdministratorsClient innerClient,
+    public GlobalAdministratorsImpl(GlobalAdministratorsClient innerClient,
         com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;

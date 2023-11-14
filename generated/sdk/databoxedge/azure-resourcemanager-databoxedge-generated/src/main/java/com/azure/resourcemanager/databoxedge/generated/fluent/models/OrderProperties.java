@@ -14,7 +14,9 @@ import com.azure.resourcemanager.databoxedge.generated.models.TrackingInfo;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Order properties. */
+/**
+ * Order properties.
+ */
 @Fluent
 public final class OrderProperties {
     /*
@@ -73,13 +75,15 @@ public final class OrderProperties {
     @JsonProperty(value = "shipmentType")
     private ShipmentType shipmentType;
 
-    /** Creates an instance of OrderProperties class. */
+    /**
+     * Creates an instance of OrderProperties class.
+     */
     public OrderProperties() {
     }
 
     /**
      * Get the orderId property: It specify the order resource id.
-     *
+     * 
      * @return the orderId value.
      */
     public String orderId() {
@@ -88,7 +92,7 @@ public final class OrderProperties {
 
     /**
      * Get the contactInformation property: The contact details.
-     *
+     * 
      * @return the contactInformation value.
      */
     public ContactDetails contactInformation() {
@@ -97,7 +101,7 @@ public final class OrderProperties {
 
     /**
      * Set the contactInformation property: The contact details.
-     *
+     * 
      * @param contactInformation the contactInformation value to set.
      * @return the OrderProperties object itself.
      */
@@ -108,7 +112,7 @@ public final class OrderProperties {
 
     /**
      * Get the shippingAddress property: The shipping address.
-     *
+     * 
      * @return the shippingAddress value.
      */
     public Address shippingAddress() {
@@ -117,7 +121,7 @@ public final class OrderProperties {
 
     /**
      * Set the shippingAddress property: The shipping address.
-     *
+     * 
      * @param shippingAddress the shippingAddress value to set.
      * @return the OrderProperties object itself.
      */
@@ -128,7 +132,7 @@ public final class OrderProperties {
 
     /**
      * Get the currentStatus property: Current status of the order.
-     *
+     * 
      * @return the currentStatus value.
      */
     public OrderStatus currentStatus() {
@@ -137,7 +141,7 @@ public final class OrderProperties {
 
     /**
      * Get the orderHistory property: List of status changes in the order.
-     *
+     * 
      * @return the orderHistory value.
      */
     public List<OrderStatus> orderHistory() {
@@ -146,7 +150,7 @@ public final class OrderProperties {
 
     /**
      * Get the serialNumber property: Serial number of the device.
-     *
+     * 
      * @return the serialNumber value.
      */
     public String serialNumber() {
@@ -156,7 +160,7 @@ public final class OrderProperties {
     /**
      * Get the deliveryTrackingInfo property: Tracking information for the package delivered to the customer whether it
      * has an original or a replacement device.
-     *
+     * 
      * @return the deliveryTrackingInfo value.
      */
     public List<TrackingInfo> deliveryTrackingInfo() {
@@ -166,7 +170,7 @@ public final class OrderProperties {
     /**
      * Get the returnTrackingInfo property: Tracking information for the package returned from the customer whether it
      * has an original or a replacement device.
-     *
+     * 
      * @return the returnTrackingInfo value.
      */
     public List<TrackingInfo> returnTrackingInfo() {
@@ -175,7 +179,7 @@ public final class OrderProperties {
 
     /**
      * Get the shipmentType property: ShipmentType of the order.
-     *
+     * 
      * @return the shipmentType value.
      */
     public ShipmentType shipmentType() {
@@ -184,7 +188,7 @@ public final class OrderProperties {
 
     /**
      * Set the shipmentType property: ShipmentType of the order.
-     *
+     * 
      * @param shipmentType the shipmentType value to set.
      * @return the OrderProperties object itself.
      */
@@ -195,15 +199,13 @@ public final class OrderProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (contactInformation() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property contactInformation in model OrderProperties"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property contactInformation in model OrderProperties"));
         } else {
             contactInformation().validate();
         }

@@ -7,7 +7,9 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The ListEdgePoliciesInput model. */
+/**
+ * The ListEdgePoliciesInput model.
+ */
 @Fluent
 public final class ListEdgePoliciesInput {
     /*
@@ -16,13 +18,15 @@ public final class ListEdgePoliciesInput {
     @JsonProperty(value = "deviceId")
     private String deviceId;
 
-    /** Creates an instance of ListEdgePoliciesInput class. */
+    /**
+     * Creates an instance of ListEdgePoliciesInput class.
+     */
     public ListEdgePoliciesInput() {
     }
 
     /**
      * Get the deviceId property: Unique identifier of the edge device.
-     *
+     * 
      * @return the deviceId value.
      */
     public String deviceId() {
@@ -31,7 +35,7 @@ public final class ListEdgePoliciesInput {
 
     /**
      * Set the deviceId property: Unique identifier of the edge device.
-     *
+     * 
      * @param deviceId the deviceId value to set.
      * @return the ListEdgePoliciesInput object itself.
      */
@@ -42,7 +46,7 @@ public final class ListEdgePoliciesInput {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

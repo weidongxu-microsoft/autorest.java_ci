@@ -13,7 +13,6 @@ import com.azure.resourcemanager.monitor.generated.fluent.models.ResponseInner;
 import com.azure.resourcemanager.monitor.generated.models.Metrics;
 import com.azure.resourcemanager.monitor.generated.models.ResponseModel;
 import com.azure.resourcemanager.monitor.generated.models.ResultType;
-import java.time.Duration;
 
 public final class MetricsImpl implements Metrics {
     private static final ClientLogger LOGGER = new ClientLogger(MetricsImpl.class);
@@ -22,44 +21,19 @@ public final class MetricsImpl implements Metrics {
 
     private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    public MetricsImpl(
-        MetricsClient innerClient, com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
+    public MetricsImpl(MetricsClient innerClient,
+        com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<ResponseModel> listWithResponse(
-        String resourceUri,
-        String timespan,
-        Duration interval,
-        String metricnames,
-        String aggregation,
-        Integer top,
-        String orderBy,
-        String filter,
-        ResultType resultType,
-        String metricnamespace,
-        Context context) {
-        Response<ResponseInner> inner =
-            this
-                .serviceClient()
-                .listWithResponse(
-                    resourceUri,
-                    timespan,
-                    interval,
-                    metricnames,
-                    aggregation,
-                    top,
-                    orderBy,
-                    filter,
-                    resultType,
-                    metricnamespace,
-                    context);
+    public Response<ResponseModel> listWithResponse(String resourceUri, String timespan, String interval,
+        String metricnames, String aggregation, Integer top, String orderBy, String filter, ResultType resultType,
+        String metricnamespace, Context context) {
+        Response<ResponseInner> inner = this.serviceClient().listWithResponse(resourceUri, timespan, interval,
+            metricnames, aggregation, top, orderBy, filter, resultType, metricnamespace, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ResponseModelImpl(inner.getValue(), this.manager()));
         } else {
             return null;

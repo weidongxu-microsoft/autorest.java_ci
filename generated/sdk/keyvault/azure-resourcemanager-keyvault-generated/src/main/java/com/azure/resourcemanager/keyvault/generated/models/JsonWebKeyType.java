@@ -8,23 +8,33 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** The type of the key. For valid values, see JsonWebKeyType. */
+/**
+ * The type of the key. For valid values, see JsonWebKeyType.
+ */
 public final class JsonWebKeyType extends ExpandableStringEnum<JsonWebKeyType> {
-    /** Static value EC for JsonWebKeyType. */
+    /**
+     * Static value EC for JsonWebKeyType.
+     */
     public static final JsonWebKeyType EC = fromString("EC");
 
-    /** Static value EC-HSM for JsonWebKeyType. */
+    /**
+     * Static value EC-HSM for JsonWebKeyType.
+     */
     public static final JsonWebKeyType EC_HSM = fromString("EC-HSM");
 
-    /** Static value RSA for JsonWebKeyType. */
+    /**
+     * Static value RSA for JsonWebKeyType.
+     */
     public static final JsonWebKeyType RSA = fromString("RSA");
 
-    /** Static value RSA-HSM for JsonWebKeyType. */
+    /**
+     * Static value RSA-HSM for JsonWebKeyType.
+     */
     public static final JsonWebKeyType RSA_HSM = fromString("RSA-HSM");
 
     /**
      * Creates a new instance of JsonWebKeyType value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -33,7 +43,7 @@ public final class JsonWebKeyType extends ExpandableStringEnum<JsonWebKeyType> {
 
     /**
      * Creates or finds a JsonWebKeyType from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding JsonWebKeyType.
      */
@@ -44,7 +54,7 @@ public final class JsonWebKeyType extends ExpandableStringEnum<JsonWebKeyType> {
 
     /**
      * Gets known JsonWebKeyType values.
-     *
+     * 
      * @return known JsonWebKeyType values.
      */
     public static Collection<JsonWebKeyType> values() {

@@ -7,7 +7,9 @@ package com.azure.resourcemanager.eventhubs.generated.fluent.models;
 import com.azure.core.annotation.Immutable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Namespace/EventHub Connection String. */
+/**
+ * Namespace/EventHub Connection String.
+ */
 @Immutable
 public final class AccessKeysInner {
     /*
@@ -29,7 +31,7 @@ public final class AccessKeysInner {
     private String aliasPrimaryConnectionString;
 
     /*
-     * Secondary  connection string of the alias if GEO DR is enabled
+     * Secondary connection string of the alias if GEO DR is enabled
      */
     @JsonProperty(value = "aliasSecondaryConnectionString", access = JsonProperty.Access.WRITE_ONLY)
     private String aliasSecondaryConnectionString;
@@ -52,13 +54,15 @@ public final class AccessKeysInner {
     @JsonProperty(value = "keyName", access = JsonProperty.Access.WRITE_ONLY)
     private String keyName;
 
-    /** Creates an instance of AccessKeysInner class. */
+    /**
+     * Creates an instance of AccessKeysInner class.
+     */
     public AccessKeysInner() {
     }
 
     /**
      * Get the primaryConnectionString property: Primary connection string of the created namespace AuthorizationRule.
-     *
+     * 
      * @return the primaryConnectionString value.
      */
     public String primaryConnectionString() {
@@ -68,7 +72,7 @@ public final class AccessKeysInner {
     /**
      * Get the secondaryConnectionString property: Secondary connection string of the created namespace
      * AuthorizationRule.
-     *
+     * 
      * @return the secondaryConnectionString value.
      */
     public String secondaryConnectionString() {
@@ -77,7 +81,7 @@ public final class AccessKeysInner {
 
     /**
      * Get the aliasPrimaryConnectionString property: Primary connection string of the alias if GEO DR is enabled.
-     *
+     * 
      * @return the aliasPrimaryConnectionString value.
      */
     public String aliasPrimaryConnectionString() {
@@ -86,7 +90,7 @@ public final class AccessKeysInner {
 
     /**
      * Get the aliasSecondaryConnectionString property: Secondary connection string of the alias if GEO DR is enabled.
-     *
+     * 
      * @return the aliasSecondaryConnectionString value.
      */
     public String aliasSecondaryConnectionString() {
@@ -95,7 +99,7 @@ public final class AccessKeysInner {
 
     /**
      * Get the primaryKey property: A base64-encoded 256-bit primary key for signing and validating the SAS token.
-     *
+     * 
      * @return the primaryKey value.
      */
     public String primaryKey() {
@@ -104,7 +108,7 @@ public final class AccessKeysInner {
 
     /**
      * Get the secondaryKey property: A base64-encoded 256-bit primary key for signing and validating the SAS token.
-     *
+     * 
      * @return the secondaryKey value.
      */
     public String secondaryKey() {
@@ -113,7 +117,7 @@ public final class AccessKeysInner {
 
     /**
      * Get the keyName property: A string that describes the AuthorizationRule.
-     *
+     * 
      * @return the keyName value.
      */
     public String keyName() {
@@ -122,7 +126,7 @@ public final class AccessKeysInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

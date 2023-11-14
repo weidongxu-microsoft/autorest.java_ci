@@ -10,11 +10,13 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.DeviceCapacityInfoInner;
 
-/** An instance of this class provides access to all the operations defined in DeviceCapacityInfoesClient. */
+/**
+ * An instance of this class provides access to all the operations defined in DeviceCapacityInfoesClient.
+ */
 public interface DeviceCapacityInfoesClient {
     /**
      * Gets the properties of the specified device capacity info.
-     *
+     * 
      * @param resourceGroupName The resource group name.
      * @param deviceName The device name.
      * @param context The context to associate with this operation.
@@ -24,12 +26,12 @@ public interface DeviceCapacityInfoesClient {
      * @return the properties of the specified device capacity info along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<DeviceCapacityInfoInner> getDeviceCapacityInfoWithResponse(
-        String resourceGroupName, String deviceName, Context context);
+    Response<DeviceCapacityInfoInner> getDeviceCapacityInfoWithResponse(String resourceGroupName, String deviceName,
+        Context context);
 
     /**
      * Gets the properties of the specified device capacity info.
-     *
+     * 
      * @param resourceGroupName The resource group name.
      * @param deviceName The device name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

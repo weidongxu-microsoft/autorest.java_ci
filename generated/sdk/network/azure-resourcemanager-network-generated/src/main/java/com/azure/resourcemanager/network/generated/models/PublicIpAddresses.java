@@ -8,39 +8,41 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of PublicIpAddresses. */
+/**
+ * Resource collection API of PublicIpAddresses.
+ */
 public interface PublicIpAddresses {
     /**
      * Gets information about all public IP addresses on a cloud service level.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param cloudServiceName The name of the cloud service.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about all public IP addresses on a cloud service level as paginated response with {@link
-     *     PagedIterable}.
+     * @return information about all public IP addresses on a cloud service level as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<PublicIpAddress> listCloudServicePublicIpAddresses(String resourceGroupName, String cloudServiceName);
 
     /**
      * Gets information about all public IP addresses on a cloud service level.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param cloudServiceName The name of the cloud service.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about all public IP addresses on a cloud service level as paginated response with {@link
-     *     PagedIterable}.
+     * @return information about all public IP addresses on a cloud service level as paginated response with
+     * {@link PagedIterable}.
      */
-    PagedIterable<PublicIpAddress> listCloudServicePublicIpAddresses(
-        String resourceGroupName, String cloudServiceName, Context context);
+    PagedIterable<PublicIpAddress> listCloudServicePublicIpAddresses(String resourceGroupName, String cloudServiceName,
+        Context context);
 
     /**
      * Gets information about all public IP addresses in a role instance IP configuration in a cloud service.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param cloudServiceName The name of the cloud service.
      * @param roleInstanceName The name of role instance.
@@ -50,18 +52,14 @@ public interface PublicIpAddresses {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return information about all public IP addresses in a role instance IP configuration in a cloud service as
-     *     paginated response with {@link PagedIterable}.
+     * paginated response with {@link PagedIterable}.
      */
-    PagedIterable<PublicIpAddress> listCloudServiceRoleInstancePublicIpAddresses(
-        String resourceGroupName,
-        String cloudServiceName,
-        String roleInstanceName,
-        String networkInterfaceName,
-        String ipConfigurationName);
+    PagedIterable<PublicIpAddress> listCloudServiceRoleInstancePublicIpAddresses(String resourceGroupName,
+        String cloudServiceName, String roleInstanceName, String networkInterfaceName, String ipConfigurationName);
 
     /**
      * Gets information about all public IP addresses in a role instance IP configuration in a cloud service.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param cloudServiceName The name of the cloud service.
      * @param roleInstanceName The name of role instance.
@@ -72,19 +70,15 @@ public interface PublicIpAddresses {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return information about all public IP addresses in a role instance IP configuration in a cloud service as
-     *     paginated response with {@link PagedIterable}.
+     * paginated response with {@link PagedIterable}.
      */
-    PagedIterable<PublicIpAddress> listCloudServiceRoleInstancePublicIpAddresses(
-        String resourceGroupName,
-        String cloudServiceName,
-        String roleInstanceName,
-        String networkInterfaceName,
-        String ipConfigurationName,
+    PagedIterable<PublicIpAddress> listCloudServiceRoleInstancePublicIpAddresses(String resourceGroupName,
+        String cloudServiceName, String roleInstanceName, String networkInterfaceName, String ipConfigurationName,
         Context context);
 
     /**
      * Get the specified public IP address in a cloud service.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param cloudServiceName The name of the cloud service.
      * @param roleInstanceName The role instance name.
@@ -98,19 +92,13 @@ public interface PublicIpAddresses {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified public IP address in a cloud service along with {@link Response}.
      */
-    Response<PublicIpAddress> getCloudServicePublicIpAddressWithResponse(
-        String resourceGroupName,
-        String cloudServiceName,
-        String roleInstanceName,
-        String networkInterfaceName,
-        String ipConfigurationName,
-        String publicIpAddressName,
-        String expand,
-        Context context);
+    Response<PublicIpAddress> getCloudServicePublicIpAddressWithResponse(String resourceGroupName,
+        String cloudServiceName, String roleInstanceName, String networkInterfaceName, String ipConfigurationName,
+        String publicIpAddressName, String expand, Context context);
 
     /**
      * Get the specified public IP address in a cloud service.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param cloudServiceName The name of the cloud service.
      * @param roleInstanceName The role instance name.
@@ -122,17 +110,12 @@ public interface PublicIpAddresses {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified public IP address in a cloud service.
      */
-    PublicIpAddress getCloudServicePublicIpAddress(
-        String resourceGroupName,
-        String cloudServiceName,
-        String roleInstanceName,
-        String networkInterfaceName,
-        String ipConfigurationName,
-        String publicIpAddressName);
+    PublicIpAddress getCloudServicePublicIpAddress(String resourceGroupName, String cloudServiceName,
+        String roleInstanceName, String networkInterfaceName, String ipConfigurationName, String publicIpAddressName);
 
     /**
      * Deletes the specified public IP address.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param publicIpAddressName The name of the public IP address.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -143,7 +126,7 @@ public interface PublicIpAddresses {
 
     /**
      * Deletes the specified public IP address.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param publicIpAddressName The name of the public IP address.
      * @param context The context to associate with this operation.
@@ -155,7 +138,7 @@ public interface PublicIpAddresses {
 
     /**
      * Gets the specified public IP address in a specified resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param publicIpAddressName The name of the public IP address.
      * @param expand Expands referenced resources.
@@ -165,12 +148,12 @@ public interface PublicIpAddresses {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified public IP address in a specified resource group along with {@link Response}.
      */
-    Response<PublicIpAddress> getByResourceGroupWithResponse(
-        String resourceGroupName, String publicIpAddressName, String expand, Context context);
+    Response<PublicIpAddress> getByResourceGroupWithResponse(String resourceGroupName, String publicIpAddressName,
+        String expand, Context context);
 
     /**
      * Gets the specified public IP address in a specified resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param publicIpAddressName The name of the public IP address.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -182,7 +165,7 @@ public interface PublicIpAddresses {
 
     /**
      * Gets all the public IP addresses in a subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all the public IP addresses in a subscription as paginated response with {@link PagedIterable}.
@@ -191,7 +174,7 @@ public interface PublicIpAddresses {
 
     /**
      * Gets all the public IP addresses in a subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -202,7 +185,7 @@ public interface PublicIpAddresses {
 
     /**
      * Gets all public IP addresses in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -213,7 +196,7 @@ public interface PublicIpAddresses {
 
     /**
      * Gets all public IP addresses in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -225,7 +208,7 @@ public interface PublicIpAddresses {
 
     /**
      * Gets the Ddos Protection Status of a Public IP Address.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param publicIpAddressName The name of the public IP address.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -237,7 +220,7 @@ public interface PublicIpAddresses {
 
     /**
      * Gets the Ddos Protection Status of a Public IP Address.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param publicIpAddressName The name of the public IP address.
      * @param context The context to associate with this operation.
@@ -246,26 +229,26 @@ public interface PublicIpAddresses {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the Ddos Protection Status of a Public IP Address.
      */
-    PublicIpDdosProtectionStatusResult ddosProtectionStatus(
-        String resourceGroupName, String publicIpAddressName, Context context);
+    PublicIpDdosProtectionStatusResult ddosProtectionStatus(String resourceGroupName, String publicIpAddressName,
+        Context context);
 
     /**
      * Gets information about all public IP addresses on a virtual machine scale set level.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualMachineScaleSetName The name of the virtual machine scale set.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return information about all public IP addresses on a virtual machine scale set level as paginated response with
-     *     {@link PagedIterable}.
+     * {@link PagedIterable}.
      */
-    PagedIterable<PublicIpAddress> listVirtualMachineScaleSetPublicIpAddresses(
-        String resourceGroupName, String virtualMachineScaleSetName);
+    PagedIterable<PublicIpAddress> listVirtualMachineScaleSetPublicIpAddresses(String resourceGroupName,
+        String virtualMachineScaleSetName);
 
     /**
      * Gets information about all public IP addresses on a virtual machine scale set level.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualMachineScaleSetName The name of the virtual machine scale set.
      * @param context The context to associate with this operation.
@@ -273,15 +256,15 @@ public interface PublicIpAddresses {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return information about all public IP addresses on a virtual machine scale set level as paginated response with
-     *     {@link PagedIterable}.
+     * {@link PagedIterable}.
      */
-    PagedIterable<PublicIpAddress> listVirtualMachineScaleSetPublicIpAddresses(
-        String resourceGroupName, String virtualMachineScaleSetName, Context context);
+    PagedIterable<PublicIpAddress> listVirtualMachineScaleSetPublicIpAddresses(String resourceGroupName,
+        String virtualMachineScaleSetName, Context context);
 
     /**
      * Gets information about all public IP addresses in a virtual machine IP configuration in a virtual machine scale
      * set.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualMachineScaleSetName The name of the virtual machine scale set.
      * @param virtualmachineIndex The virtual machine index.
@@ -291,19 +274,16 @@ public interface PublicIpAddresses {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return information about all public IP addresses in a virtual machine IP configuration in a virtual machine
-     *     scale set as paginated response with {@link PagedIterable}.
+     * scale set as paginated response with {@link PagedIterable}.
      */
-    PagedIterable<PublicIpAddress> listVirtualMachineScaleSetVMPublicIpAddresses(
-        String resourceGroupName,
-        String virtualMachineScaleSetName,
-        String virtualmachineIndex,
-        String networkInterfaceName,
+    PagedIterable<PublicIpAddress> listVirtualMachineScaleSetVMPublicIpAddresses(String resourceGroupName,
+        String virtualMachineScaleSetName, String virtualmachineIndex, String networkInterfaceName,
         String ipConfigurationName);
 
     /**
      * Gets information about all public IP addresses in a virtual machine IP configuration in a virtual machine scale
      * set.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualMachineScaleSetName The name of the virtual machine scale set.
      * @param virtualmachineIndex The virtual machine index.
@@ -314,19 +294,15 @@ public interface PublicIpAddresses {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return information about all public IP addresses in a virtual machine IP configuration in a virtual machine
-     *     scale set as paginated response with {@link PagedIterable}.
+     * scale set as paginated response with {@link PagedIterable}.
      */
-    PagedIterable<PublicIpAddress> listVirtualMachineScaleSetVMPublicIpAddresses(
-        String resourceGroupName,
-        String virtualMachineScaleSetName,
-        String virtualmachineIndex,
-        String networkInterfaceName,
-        String ipConfigurationName,
-        Context context);
+    PagedIterable<PublicIpAddress> listVirtualMachineScaleSetVMPublicIpAddresses(String resourceGroupName,
+        String virtualMachineScaleSetName, String virtualmachineIndex, String networkInterfaceName,
+        String ipConfigurationName, Context context);
 
     /**
      * Get the specified public IP address in a virtual machine scale set.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualMachineScaleSetName The name of the virtual machine scale set.
      * @param virtualmachineIndex The virtual machine index.
@@ -340,19 +316,13 @@ public interface PublicIpAddresses {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified public IP address in a virtual machine scale set along with {@link Response}.
      */
-    Response<PublicIpAddress> getVirtualMachineScaleSetPublicIpAddressWithResponse(
-        String resourceGroupName,
-        String virtualMachineScaleSetName,
-        String virtualmachineIndex,
-        String networkInterfaceName,
-        String ipConfigurationName,
-        String publicIpAddressName,
-        String expand,
-        Context context);
+    Response<PublicIpAddress> getVirtualMachineScaleSetPublicIpAddressWithResponse(String resourceGroupName,
+        String virtualMachineScaleSetName, String virtualmachineIndex, String networkInterfaceName,
+        String ipConfigurationName, String publicIpAddressName, String expand, Context context);
 
     /**
      * Get the specified public IP address in a virtual machine scale set.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualMachineScaleSetName The name of the virtual machine scale set.
      * @param virtualmachineIndex The virtual machine index.
@@ -364,17 +334,13 @@ public interface PublicIpAddresses {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified public IP address in a virtual machine scale set.
      */
-    PublicIpAddress getVirtualMachineScaleSetPublicIpAddress(
-        String resourceGroupName,
-        String virtualMachineScaleSetName,
-        String virtualmachineIndex,
-        String networkInterfaceName,
-        String ipConfigurationName,
-        String publicIpAddressName);
+    PublicIpAddress getVirtualMachineScaleSetPublicIpAddress(String resourceGroupName,
+        String virtualMachineScaleSetName, String virtualmachineIndex, String networkInterfaceName,
+        String ipConfigurationName, String publicIpAddressName);
 
     /**
      * Gets the specified public IP address in a specified resource group.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -385,7 +351,7 @@ public interface PublicIpAddresses {
 
     /**
      * Gets the specified public IP address in a specified resource group.
-     *
+     * 
      * @param id the resource ID.
      * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
@@ -398,7 +364,7 @@ public interface PublicIpAddresses {
 
     /**
      * Deletes the specified public IP address.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -408,7 +374,7 @@ public interface PublicIpAddresses {
 
     /**
      * Deletes the specified public IP address.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -419,7 +385,7 @@ public interface PublicIpAddresses {
 
     /**
      * Begins definition for a new PublicIpAddress resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new PublicIpAddress definition.
      */

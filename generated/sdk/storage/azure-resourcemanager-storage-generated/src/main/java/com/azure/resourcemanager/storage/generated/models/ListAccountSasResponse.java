@@ -6,18 +6,20 @@ package com.azure.resourcemanager.storage.generated.models;
 
 import com.azure.resourcemanager.storage.generated.fluent.models.ListAccountSasResponseInner;
 
-/** An immutable client-side representation of ListAccountSasResponse. */
+/**
+ * An immutable client-side representation of ListAccountSasResponse.
+ */
 public interface ListAccountSasResponse {
     /**
      * Gets the accountSasToken property: List SAS credentials of storage account.
-     *
+     * 
      * @return the accountSasToken value.
      */
     String accountSasToken();
 
     /**
      * Gets the inner com.azure.resourcemanager.storage.generated.fluent.models.ListAccountSasResponseInner object.
-     *
+     * 
      * @return the inner object.
      */
     ListAccountSasResponseInner innerModel();

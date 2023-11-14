@@ -10,10 +10,8 @@ import com.azure.resourcemanager.network.generated.models.AuthorizationUseStatus
 import com.azure.resourcemanager.network.generated.models.ExpressRouteCircuitAuthorization;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 
-public final class ExpressRouteCircuitAuthorizationImpl
-    implements ExpressRouteCircuitAuthorization,
-        ExpressRouteCircuitAuthorization.Definition,
-        ExpressRouteCircuitAuthorization.Update {
+public final class ExpressRouteCircuitAuthorizationImpl implements ExpressRouteCircuitAuthorization,
+    ExpressRouteCircuitAuthorization.Definition, ExpressRouteCircuitAuthorization.Update {
     private ExpressRouteCircuitAuthorizationInner innerObject;
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
@@ -64,33 +62,27 @@ public final class ExpressRouteCircuitAuthorizationImpl
 
     private String authorizationName;
 
-    public ExpressRouteCircuitAuthorizationImpl withExistingExpressRouteCircuit(
-        String resourceGroupName, String circuitName) {
+    public ExpressRouteCircuitAuthorizationImpl withExistingExpressRouteCircuit(String resourceGroupName,
+        String circuitName) {
         this.resourceGroupName = resourceGroupName;
         this.circuitName = circuitName;
         return this;
     }
 
     public ExpressRouteCircuitAuthorization create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getExpressRouteCircuitAuthorizations()
-                .createOrUpdate(resourceGroupName, circuitName, authorizationName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getExpressRouteCircuitAuthorizations()
+            .createOrUpdate(resourceGroupName, circuitName, authorizationName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public ExpressRouteCircuitAuthorization create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getExpressRouteCircuitAuthorizations()
-                .createOrUpdate(resourceGroupName, circuitName, authorizationName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getExpressRouteCircuitAuthorizations()
+            .createOrUpdate(resourceGroupName, circuitName, authorizationName, this.innerModel(), context);
         return this;
     }
 
-    ExpressRouteCircuitAuthorizationImpl(
-        String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    ExpressRouteCircuitAuthorizationImpl(String name,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new ExpressRouteCircuitAuthorizationInner();
         this.serviceManager = serviceManager;
         this.authorizationName = name;
@@ -101,25 +93,18 @@ public final class ExpressRouteCircuitAuthorizationImpl
     }
 
     public ExpressRouteCircuitAuthorization apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getExpressRouteCircuitAuthorizations()
-                .createOrUpdate(resourceGroupName, circuitName, authorizationName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getExpressRouteCircuitAuthorizations()
+            .createOrUpdate(resourceGroupName, circuitName, authorizationName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public ExpressRouteCircuitAuthorization apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getExpressRouteCircuitAuthorizations()
-                .createOrUpdate(resourceGroupName, circuitName, authorizationName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getExpressRouteCircuitAuthorizations()
+            .createOrUpdate(resourceGroupName, circuitName, authorizationName, this.innerModel(), context);
         return this;
     }
 
-    ExpressRouteCircuitAuthorizationImpl(
-        ExpressRouteCircuitAuthorizationInner innerObject,
+    ExpressRouteCircuitAuthorizationImpl(ExpressRouteCircuitAuthorizationInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -129,22 +114,14 @@ public final class ExpressRouteCircuitAuthorizationImpl
     }
 
     public ExpressRouteCircuitAuthorization refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getExpressRouteCircuitAuthorizations()
-                .getWithResponse(resourceGroupName, circuitName, authorizationName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getExpressRouteCircuitAuthorizations()
+            .getWithResponse(resourceGroupName, circuitName, authorizationName, Context.NONE).getValue();
         return this;
     }
 
     public ExpressRouteCircuitAuthorization refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getExpressRouteCircuitAuthorizations()
-                .getWithResponse(resourceGroupName, circuitName, authorizationName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getExpressRouteCircuitAuthorizations()
+            .getWithResponse(resourceGroupName, circuitName, authorizationName, context).getValue();
         return this;
     }
 
@@ -158,8 +135,8 @@ public final class ExpressRouteCircuitAuthorizationImpl
         return this;
     }
 
-    public ExpressRouteCircuitAuthorizationImpl withAuthorizationUseStatus(
-        AuthorizationUseStatus authorizationUseStatus) {
+    public ExpressRouteCircuitAuthorizationImpl
+        withAuthorizationUseStatus(AuthorizationUseStatus authorizationUseStatus) {
         this.innerModel().withAuthorizationUseStatus(authorizationUseStatus);
         return this;
     }

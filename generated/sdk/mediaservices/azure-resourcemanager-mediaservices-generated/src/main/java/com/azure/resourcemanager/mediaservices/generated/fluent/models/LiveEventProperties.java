@@ -17,7 +17,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
 
-/** The live event properties. */
+/**
+ * The live event properties.
+ */
 @Fluent
 public final class LiveEventProperties {
     /*
@@ -105,13 +107,15 @@ public final class LiveEventProperties {
     @JsonProperty(value = "lastModified", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime lastModified;
 
-    /** Creates an instance of LiveEventProperties class. */
+    /**
+     * Creates an instance of LiveEventProperties class.
+     */
     public LiveEventProperties() {
     }
 
     /**
      * Get the description property: A description for the live event.
-     *
+     * 
      * @return the description value.
      */
     public String description() {
@@ -120,7 +124,7 @@ public final class LiveEventProperties {
 
     /**
      * Set the description property: A description for the live event.
-     *
+     * 
      * @param description the description value to set.
      * @return the LiveEventProperties object itself.
      */
@@ -132,7 +136,7 @@ public final class LiveEventProperties {
     /**
      * Get the input property: Live event input settings. It defines how the live event receives input from a
      * contribution encoder.
-     *
+     * 
      * @return the input value.
      */
     public LiveEventInput input() {
@@ -142,7 +146,7 @@ public final class LiveEventProperties {
     /**
      * Set the input property: Live event input settings. It defines how the live event receives input from a
      * contribution encoder.
-     *
+     * 
      * @param input the input value to set.
      * @return the LiveEventProperties object itself.
      */
@@ -154,7 +158,7 @@ public final class LiveEventProperties {
     /**
      * Get the preview property: Live event preview settings. Preview allows live event producers to preview the live
      * streaming content without creating any live output.
-     *
+     * 
      * @return the preview value.
      */
     public LiveEventPreview preview() {
@@ -164,7 +168,7 @@ public final class LiveEventProperties {
     /**
      * Set the preview property: Live event preview settings. Preview allows live event producers to preview the live
      * streaming content without creating any live output.
-     *
+     * 
      * @param preview the preview value to set.
      * @return the LiveEventProperties object itself.
      */
@@ -174,9 +178,9 @@ public final class LiveEventProperties {
     }
 
     /**
-     * Get the encoding property: Encoding settings for the live event. It configures whether a live encoder is used for
-     * the live event and settings for the live encoder if it is used.
-     *
+     * Get the encoding property: Encoding settings for the live event. It configures whether a live encoder is used
+     * for the live event and settings for the live encoder if it is used.
+     * 
      * @return the encoding value.
      */
     public LiveEventEncoding encoding() {
@@ -184,9 +188,9 @@ public final class LiveEventProperties {
     }
 
     /**
-     * Set the encoding property: Encoding settings for the live event. It configures whether a live encoder is used for
-     * the live event and settings for the live encoder if it is used.
-     *
+     * Set the encoding property: Encoding settings for the live event. It configures whether a live encoder is used
+     * for the live event and settings for the live encoder if it is used.
+     * 
      * @param encoding the encoding value to set.
      * @return the LiveEventProperties object itself.
      */
@@ -198,7 +202,7 @@ public final class LiveEventProperties {
     /**
      * Get the transcriptions property: Live transcription settings for the live event. See
      * https://go.microsoft.com/fwlink/?linkid=2133742 for more information about the live transcription feature.
-     *
+     * 
      * @return the transcriptions value.
      */
     public List<LiveEventTranscription> transcriptions() {
@@ -208,7 +212,7 @@ public final class LiveEventProperties {
     /**
      * Set the transcriptions property: Live transcription settings for the live event. See
      * https://go.microsoft.com/fwlink/?linkid=2133742 for more information about the live transcription feature.
-     *
+     * 
      * @param transcriptions the transcriptions value to set.
      * @return the LiveEventProperties object itself.
      */
@@ -219,7 +223,7 @@ public final class LiveEventProperties {
 
     /**
      * Get the provisioningState property: The provisioning state of the live event.
-     *
+     * 
      * @return the provisioningState value.
      */
     public String provisioningState() {
@@ -229,7 +233,7 @@ public final class LiveEventProperties {
     /**
      * Get the resourceState property: The resource state of the live event. See
      * https://go.microsoft.com/fwlink/?linkid=2139012 for more information.
-     *
+     * 
      * @return the resourceState value.
      */
     public LiveEventResourceState resourceState() {
@@ -238,7 +242,7 @@ public final class LiveEventProperties {
 
     /**
      * Get the crossSiteAccessPolicies property: Live event cross site access policies.
-     *
+     * 
      * @return the crossSiteAccessPolicies value.
      */
     public CrossSiteAccessPolicies crossSiteAccessPolicies() {
@@ -247,7 +251,7 @@ public final class LiveEventProperties {
 
     /**
      * Set the crossSiteAccessPolicies property: Live event cross site access policies.
-     *
+     * 
      * @param crossSiteAccessPolicies the crossSiteAccessPolicies value to set.
      * @return the LiveEventProperties object itself.
      */
@@ -259,7 +263,7 @@ public final class LiveEventProperties {
     /**
      * Get the useStaticHostname property: Specifies whether a static hostname would be assigned to the live event
      * preview and ingest endpoints. This value can only be updated if the live event is in Standby state.
-     *
+     * 
      * @return the useStaticHostname value.
      */
     public Boolean useStaticHostname() {
@@ -269,7 +273,7 @@ public final class LiveEventProperties {
     /**
      * Set the useStaticHostname property: Specifies whether a static hostname would be assigned to the live event
      * preview and ingest endpoints. This value can only be updated if the live event is in Standby state.
-     *
+     * 
      * @param useStaticHostname the useStaticHostname value to set.
      * @return the LiveEventProperties object itself.
      */
@@ -283,7 +287,7 @@ public final class LiveEventProperties {
      * part of the hostname assigned to the live event preview and ingest endpoints. The final hostname would be a
      * combination of this prefix, the media service account name and a short code for the Azure Media Services data
      * center.
-     *
+     * 
      * @return the hostnamePrefix value.
      */
     public String hostnamePrefix() {
@@ -295,7 +299,7 @@ public final class LiveEventProperties {
      * part of the hostname assigned to the live event preview and ingest endpoints. The final hostname would be a
      * combination of this prefix, the media service account name and a short code for the Azure Media Services data
      * center.
-     *
+     * 
      * @param hostnamePrefix the hostnamePrefix value to set.
      * @return the LiveEventProperties object itself.
      */
@@ -307,7 +311,7 @@ public final class LiveEventProperties {
     /**
      * Get the streamOptions property: The options to use for the LiveEvent. This value is specified at creation time
      * and cannot be updated. The valid values for the array entry values are 'Default' and 'LowLatency'.
-     *
+     * 
      * @return the streamOptions value.
      */
     public List<StreamOptionsFlag> streamOptions() {
@@ -317,7 +321,7 @@ public final class LiveEventProperties {
     /**
      * Set the streamOptions property: The options to use for the LiveEvent. This value is specified at creation time
      * and cannot be updated. The valid values for the array entry values are 'Default' and 'LowLatency'.
-     *
+     * 
      * @param streamOptions the streamOptions value to set.
      * @return the LiveEventProperties object itself.
      */
@@ -328,7 +332,7 @@ public final class LiveEventProperties {
 
     /**
      * Get the created property: The creation time for the live event.
-     *
+     * 
      * @return the created value.
      */
     public OffsetDateTime created() {
@@ -337,7 +341,7 @@ public final class LiveEventProperties {
 
     /**
      * Get the lastModified property: The last modified time of the live event.
-     *
+     * 
      * @return the lastModified value.
      */
     public OffsetDateTime lastModified() {
@@ -346,14 +350,13 @@ public final class LiveEventProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (input() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property input in model LiveEventProperties"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property input in model LiveEventProperties"));
         } else {
             input().validate();
         }

@@ -19,8 +19,8 @@ public final class BalanceImpl implements Balance {
 
     private final com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager;
 
-    BalanceImpl(
-        BalanceInner innerObject, com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager) {
+    BalanceImpl(BalanceInner innerObject,
+        com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

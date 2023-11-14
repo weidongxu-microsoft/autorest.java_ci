@@ -35,13 +35,10 @@ public final class ZonesImpl implements Zones {
     }
 
     public Response<Zone> getByResourceGroupWithResponse(String resourceGroupName, String zoneName, Context context) {
-        Response<ZoneInner> inner =
-            this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, zoneName, context);
+        Response<ZoneInner> inner
+            = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, zoneName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ZoneImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -80,18 +77,13 @@ public final class ZonesImpl implements Zones {
     public Zone getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String zoneName = Utils.getValueFromIdByName(id, "dnsZones");
         if (zoneName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'dnsZones'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'dnsZones'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, zoneName, Context.NONE).getValue();
     }
@@ -99,18 +91,13 @@ public final class ZonesImpl implements Zones {
     public Response<Zone> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String zoneName = Utils.getValueFromIdByName(id, "dnsZones");
         if (zoneName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'dnsZones'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'dnsZones'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, zoneName, context);
     }
@@ -118,18 +105,13 @@ public final class ZonesImpl implements Zones {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String zoneName = Utils.getValueFromIdByName(id, "dnsZones");
         if (zoneName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'dnsZones'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'dnsZones'.", id)));
         }
         String localIfMatch = null;
         this.delete(resourceGroupName, zoneName, localIfMatch, Context.NONE);
@@ -138,18 +120,13 @@ public final class ZonesImpl implements Zones {
     public void deleteByIdWithResponse(String id, String ifMatch, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String zoneName = Utils.getValueFromIdByName(id, "dnsZones");
         if (zoneName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'dnsZones'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'dnsZones'.", id)));
         }
         this.delete(resourceGroupName, zoneName, ifMatch, context);
     }

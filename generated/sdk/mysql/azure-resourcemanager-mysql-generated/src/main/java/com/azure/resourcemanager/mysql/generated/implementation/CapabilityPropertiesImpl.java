@@ -15,8 +15,8 @@ public final class CapabilityPropertiesImpl implements CapabilityProperties {
 
     private final com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager;
 
-    CapabilityPropertiesImpl(
-        CapabilityPropertiesInner innerObject, com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager) {
+    CapabilityPropertiesImpl(CapabilityPropertiesInner innerObject,
+        com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

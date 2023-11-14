@@ -9,7 +9,9 @@ import com.azure.resourcemanager.costmanagement.generated.models.ExportExecution
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Result of listing exports execution history of a export by name. */
+/**
+ * Result of listing exports execution history of a export by name.
+ */
 @Immutable
 public final class ExportExecutionListResultInner {
     /*
@@ -18,13 +20,15 @@ public final class ExportExecutionListResultInner {
     @JsonProperty(value = "value", access = JsonProperty.Access.WRITE_ONLY)
     private List<ExportExecution> value;
 
-    /** Creates an instance of ExportExecutionListResultInner class. */
+    /**
+     * Creates an instance of ExportExecutionListResultInner class.
+     */
     public ExportExecutionListResultInner() {
     }
 
     /**
      * Get the value property: The list of export executions.
-     *
+     * 
      * @return the value value.
      */
     public List<ExportExecution> value() {
@@ -33,7 +37,7 @@ public final class ExportExecutionListResultInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

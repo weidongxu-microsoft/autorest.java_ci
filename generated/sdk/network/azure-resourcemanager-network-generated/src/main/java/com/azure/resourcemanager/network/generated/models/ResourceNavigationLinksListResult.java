@@ -7,18 +7,20 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.resourcemanager.network.generated.fluent.models.ResourceNavigationLinksListResultInner;
 import java.util.List;
 
-/** An immutable client-side representation of ResourceNavigationLinksListResult. */
+/**
+ * An immutable client-side representation of ResourceNavigationLinksListResult.
+ */
 public interface ResourceNavigationLinksListResult {
     /**
      * Gets the value property: The resource navigation links in a subnet.
-     *
+     * 
      * @return the value value.
      */
     List<ResourceNavigationLink> value();
 
     /**
      * Gets the nextLink property: The URL to get the next set of results.
-     *
+     * 
      * @return the nextLink value.
      */
     String nextLink();
@@ -26,7 +28,7 @@ public interface ResourceNavigationLinksListResult {
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.ResourceNavigationLinksListResultInner
      * object.
-     *
+     * 
      * @return the inner object.
      */
     ResourceNavigationLinksListResultInner innerModel();

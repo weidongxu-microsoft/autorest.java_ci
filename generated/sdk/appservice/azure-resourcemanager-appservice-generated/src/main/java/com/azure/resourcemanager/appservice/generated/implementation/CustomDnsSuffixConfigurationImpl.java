@@ -13,8 +13,7 @@ public final class CustomDnsSuffixConfigurationImpl implements CustomDnsSuffixCo
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    CustomDnsSuffixConfigurationImpl(
-        CustomDnsSuffixConfigurationInner innerObject,
+    CustomDnsSuffixConfigurationImpl(CustomDnsSuffixConfigurationInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

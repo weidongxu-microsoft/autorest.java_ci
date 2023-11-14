@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of PrivateEndpointConnections. */
+/**
+ * Resource collection API of PrivateEndpointConnections.
+ */
 public interface PrivateEndpointConnections {
     /**
      * Gets the specified private endpoint connection associated with the key vault.
-     *
+     * 
      * @param resourceGroupName Name of the resource group that contains the key vault.
      * @param vaultName The name of the key vault.
      * @param privateEndpointConnectionName Name of the private endpoint connection associated with the key vault.
@@ -22,12 +24,12 @@ public interface PrivateEndpointConnections {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified private endpoint connection associated with the key vault along with {@link Response}.
      */
-    Response<PrivateEndpointConnection> getWithResponse(
-        String resourceGroupName, String vaultName, String privateEndpointConnectionName, Context context);
+    Response<PrivateEndpointConnection> getWithResponse(String resourceGroupName, String vaultName,
+        String privateEndpointConnectionName, Context context);
 
     /**
      * Gets the specified private endpoint connection associated with the key vault.
-     *
+     * 
      * @param resourceGroupName Name of the resource group that contains the key vault.
      * @param vaultName The name of the key vault.
      * @param privateEndpointConnectionName Name of the private endpoint connection associated with the key vault.
@@ -40,7 +42,7 @@ public interface PrivateEndpointConnections {
 
     /**
      * Deletes the specified private endpoint connection associated with the key vault.
-     *
+     * 
      * @param resourceGroupName Name of the resource group that contains the key vault.
      * @param vaultName The name of the key vault.
      * @param privateEndpointConnectionName Name of the private endpoint connection associated with the key vault.
@@ -53,7 +55,7 @@ public interface PrivateEndpointConnections {
 
     /**
      * Deletes the specified private endpoint connection associated with the key vault.
-     *
+     * 
      * @param resourceGroupName Name of the resource group that contains the key vault.
      * @param vaultName The name of the key vault.
      * @param privateEndpointConnectionName Name of the private endpoint connection associated with the key vault.
@@ -63,12 +65,12 @@ public interface PrivateEndpointConnections {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return private endpoint connection resource.
      */
-    PrivateEndpointConnection delete(
-        String resourceGroupName, String vaultName, String privateEndpointConnectionName, Context context);
+    PrivateEndpointConnection delete(String resourceGroupName, String vaultName, String privateEndpointConnectionName,
+        Context context);
 
     /**
      * The List operation gets information about the private endpoint connections associated with the vault.
-     *
+     * 
      * @param resourceGroupName Name of the resource group that contains the key vault.
      * @param vaultName The name of the key vault.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -80,7 +82,7 @@ public interface PrivateEndpointConnections {
 
     /**
      * The List operation gets information about the private endpoint connections associated with the vault.
-     *
+     * 
      * @param resourceGroupName Name of the resource group that contains the key vault.
      * @param vaultName The name of the key vault.
      * @param context The context to associate with this operation.
@@ -89,12 +91,12 @@ public interface PrivateEndpointConnections {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return list of private endpoint connections as paginated response with {@link PagedIterable}.
      */
-    PagedIterable<PrivateEndpointConnection> listByResource(
-        String resourceGroupName, String vaultName, Context context);
+    PagedIterable<PrivateEndpointConnection> listByResource(String resourceGroupName, String vaultName,
+        Context context);
 
     /**
      * Gets the specified private endpoint connection associated with the key vault.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -105,7 +107,7 @@ public interface PrivateEndpointConnections {
 
     /**
      * Gets the specified private endpoint connection associated with the key vault.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -117,7 +119,7 @@ public interface PrivateEndpointConnections {
 
     /**
      * Deletes the specified private endpoint connection associated with the key vault.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -128,7 +130,7 @@ public interface PrivateEndpointConnections {
 
     /**
      * Deletes the specified private endpoint connection associated with the key vault.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -140,7 +142,7 @@ public interface PrivateEndpointConnections {
 
     /**
      * Begins definition for a new PrivateEndpointConnection resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new PrivateEndpointConnection definition.
      */

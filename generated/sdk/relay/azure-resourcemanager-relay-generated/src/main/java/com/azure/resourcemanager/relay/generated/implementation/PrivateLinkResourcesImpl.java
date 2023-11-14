@@ -22,21 +22,18 @@ public final class PrivateLinkResourcesImpl implements PrivateLinkResources {
 
     private final com.azure.resourcemanager.relay.generated.RelayManager serviceManager;
 
-    public PrivateLinkResourcesImpl(
-        PrivateLinkResourcesClient innerClient, com.azure.resourcemanager.relay.generated.RelayManager serviceManager) {
+    public PrivateLinkResourcesImpl(PrivateLinkResourcesClient innerClient,
+        com.azure.resourcemanager.relay.generated.RelayManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<PrivateLinkResource> getWithResponse(
-        String resourceGroupName, String namespaceName, String privateLinkResourceName, Context context) {
-        Response<PrivateLinkResourceInner> inner =
-            this.serviceClient().getWithResponse(resourceGroupName, namespaceName, privateLinkResourceName, context);
+    public Response<PrivateLinkResource> getWithResponse(String resourceGroupName, String namespaceName,
+        String privateLinkResourceName, Context context) {
+        Response<PrivateLinkResourceInner> inner
+            = this.serviceClient().getWithResponse(resourceGroupName, namespaceName, privateLinkResourceName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new PrivateLinkResourceImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -44,8 +41,8 @@ public final class PrivateLinkResourcesImpl implements PrivateLinkResources {
     }
 
     public PrivateLinkResource get(String resourceGroupName, String namespaceName, String privateLinkResourceName) {
-        PrivateLinkResourceInner inner =
-            this.serviceClient().get(resourceGroupName, namespaceName, privateLinkResourceName);
+        PrivateLinkResourceInner inner
+            = this.serviceClient().get(resourceGroupName, namespaceName, privateLinkResourceName);
         if (inner != null) {
             return new PrivateLinkResourceImpl(inner, this.manager());
         } else {
@@ -53,15 +50,12 @@ public final class PrivateLinkResourcesImpl implements PrivateLinkResources {
         }
     }
 
-    public Response<PrivateLinkResourcesListResult> listWithResponse(
-        String resourceGroupName, String namespaceName, Context context) {
-        Response<PrivateLinkResourcesListResultInner> inner =
-            this.serviceClient().listWithResponse(resourceGroupName, namespaceName, context);
+    public Response<PrivateLinkResourcesListResult> listWithResponse(String resourceGroupName, String namespaceName,
+        Context context) {
+        Response<PrivateLinkResourcesListResultInner> inner
+            = this.serviceClient().listWithResponse(resourceGroupName, namespaceName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new PrivateLinkResourcesListResultImpl(inner.getValue(), this.manager()));
         } else {
             return null;

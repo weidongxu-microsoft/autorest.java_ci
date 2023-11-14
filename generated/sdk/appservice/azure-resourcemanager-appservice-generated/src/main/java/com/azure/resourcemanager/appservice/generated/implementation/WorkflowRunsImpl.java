@@ -21,8 +21,7 @@ public final class WorkflowRunsImpl implements WorkflowRuns {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    public WorkflowRunsImpl(
-        WorkflowRunsClient innerClient,
+    public WorkflowRunsImpl(WorkflowRunsClient innerClient,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -33,22 +32,19 @@ public final class WorkflowRunsImpl implements WorkflowRuns {
         return Utils.mapPage(inner, inner1 -> new WorkflowRunImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<WorkflowRun> list(
-        String resourceGroupName, String name, String workflowName, Integer top, String filter, Context context) {
-        PagedIterable<WorkflowRunInner> inner =
-            this.serviceClient().list(resourceGroupName, name, workflowName, top, filter, context);
+    public PagedIterable<WorkflowRun> list(String resourceGroupName, String name, String workflowName, Integer top,
+        String filter, Context context) {
+        PagedIterable<WorkflowRunInner> inner
+            = this.serviceClient().list(resourceGroupName, name, workflowName, top, filter, context);
         return Utils.mapPage(inner, inner1 -> new WorkflowRunImpl(inner1, this.manager()));
     }
 
-    public Response<WorkflowRun> getWithResponse(
-        String resourceGroupName, String name, String workflowName, String runName, Context context) {
-        Response<WorkflowRunInner> inner =
-            this.serviceClient().getWithResponse(resourceGroupName, name, workflowName, runName, context);
+    public Response<WorkflowRun> getWithResponse(String resourceGroupName, String name, String workflowName,
+        String runName, Context context) {
+        Response<WorkflowRunInner> inner
+            = this.serviceClient().getWithResponse(resourceGroupName, name, workflowName, runName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new WorkflowRunImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -64,8 +60,8 @@ public final class WorkflowRunsImpl implements WorkflowRuns {
         }
     }
 
-    public Response<Void> cancelWithResponse(
-        String resourceGroupName, String name, String workflowName, String runName, Context context) {
+    public Response<Void> cancelWithResponse(String resourceGroupName, String name, String workflowName, String runName,
+        Context context) {
         return this.serviceClient().cancelWithResponse(resourceGroupName, name, workflowName, runName, context);
     }
 

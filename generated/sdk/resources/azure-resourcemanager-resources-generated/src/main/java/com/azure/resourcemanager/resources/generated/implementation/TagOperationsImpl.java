@@ -26,8 +26,8 @@ public final class TagOperationsImpl implements TagOperations {
 
     private final com.azure.resourcemanager.resources.generated.ResourceManager serviceManager;
 
-    public TagOperationsImpl(
-        TagOperationsClient innerClient, com.azure.resourcemanager.resources.generated.ResourceManager serviceManager) {
+    public TagOperationsImpl(TagOperationsClient innerClient,
+        com.azure.resourcemanager.resources.generated.ResourceManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -41,13 +41,10 @@ public final class TagOperationsImpl implements TagOperations {
     }
 
     public Response<TagValue> createOrUpdateValueWithResponse(String tagName, String tagValue, Context context) {
-        Response<TagValueInner> inner =
-            this.serviceClient().createOrUpdateValueWithResponse(tagName, tagValue, context);
+        Response<TagValueInner> inner
+            = this.serviceClient().createOrUpdateValueWithResponse(tagName, tagValue, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new TagValueImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -66,10 +63,7 @@ public final class TagOperationsImpl implements TagOperations {
     public Response<TagDetails> createOrUpdateWithResponse(String tagName, Context context) {
         Response<TagDetailsInner> inner = this.serviceClient().createOrUpdateWithResponse(tagName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new TagDetailsImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -103,15 +97,12 @@ public final class TagOperationsImpl implements TagOperations {
         return Utils.mapPage(inner, inner1 -> new TagDetailsImpl(inner1, this.manager()));
     }
 
-    public Response<TagsResource> createOrUpdateAtScopeWithResponse(
-        String scope, TagsResourceInner parameters, Context context) {
-        Response<TagsResourceInner> inner =
-            this.serviceClient().createOrUpdateAtScopeWithResponse(scope, parameters, context);
+    public Response<TagsResource> createOrUpdateAtScopeWithResponse(String scope, TagsResourceInner parameters,
+        Context context) {
+        Response<TagsResourceInner> inner
+            = this.serviceClient().createOrUpdateAtScopeWithResponse(scope, parameters, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new TagsResourceImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -127,14 +118,11 @@ public final class TagOperationsImpl implements TagOperations {
         }
     }
 
-    public Response<TagsResource> updateAtScopeWithResponse(
-        String scope, TagsPatchResource parameters, Context context) {
+    public Response<TagsResource> updateAtScopeWithResponse(String scope, TagsPatchResource parameters,
+        Context context) {
         Response<TagsResourceInner> inner = this.serviceClient().updateAtScopeWithResponse(scope, parameters, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new TagsResourceImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -153,10 +141,7 @@ public final class TagOperationsImpl implements TagOperations {
     public Response<TagsResource> getAtScopeWithResponse(String scope, Context context) {
         Response<TagsResourceInner> inner = this.serviceClient().getAtScopeWithResponse(scope, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new TagsResourceImpl(inner.getValue(), this.manager()));
         } else {
             return null;

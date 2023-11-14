@@ -12,8 +12,7 @@ public final class IntelligencePackImpl implements IntelligencePack {
 
     private final com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager;
 
-    IntelligencePackImpl(
-        IntelligencePackInner innerObject,
+    IntelligencePackImpl(IntelligencePackInner innerObject,
         com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

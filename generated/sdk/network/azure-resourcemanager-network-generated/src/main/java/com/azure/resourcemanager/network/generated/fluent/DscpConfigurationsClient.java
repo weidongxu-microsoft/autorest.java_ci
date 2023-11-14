@@ -13,11 +13,13 @@ import com.azure.core.util.Context;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.network.generated.fluent.models.DscpConfigurationInner;
 
-/** An instance of this class provides access to all the operations defined in DscpConfigurationsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in DscpConfigurationsClient.
+ */
 public interface DscpConfigurationsClient {
     /**
      * Creates or updates a DSCP Configuration.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param dscpConfigurationName The name of the resource.
      * @param parameters Parameters supplied to the create or update dscp configuration operation.
@@ -25,15 +27,15 @@ public interface DscpConfigurationsClient {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of differentiated Services Code Point configuration for any given
-     *     network interface.
+     * network interface.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<DscpConfigurationInner>, DscpConfigurationInner> beginCreateOrUpdate(
-        String resourceGroupName, String dscpConfigurationName, DscpConfigurationInner parameters);
+    SyncPoller<PollResult<DscpConfigurationInner>, DscpConfigurationInner> beginCreateOrUpdate(String resourceGroupName,
+        String dscpConfigurationName, DscpConfigurationInner parameters);
 
     /**
      * Creates or updates a DSCP Configuration.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param dscpConfigurationName The name of the resource.
      * @param parameters Parameters supplied to the create or update dscp configuration operation.
@@ -42,15 +44,15 @@ public interface DscpConfigurationsClient {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of differentiated Services Code Point configuration for any given
-     *     network interface.
+     * network interface.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<DscpConfigurationInner>, DscpConfigurationInner> beginCreateOrUpdate(
-        String resourceGroupName, String dscpConfigurationName, DscpConfigurationInner parameters, Context context);
+    SyncPoller<PollResult<DscpConfigurationInner>, DscpConfigurationInner> beginCreateOrUpdate(String resourceGroupName,
+        String dscpConfigurationName, DscpConfigurationInner parameters, Context context);
 
     /**
      * Creates or updates a DSCP Configuration.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param dscpConfigurationName The name of the resource.
      * @param parameters Parameters supplied to the create or update dscp configuration operation.
@@ -60,12 +62,12 @@ public interface DscpConfigurationsClient {
      * @return differentiated Services Code Point configuration for any given network interface.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    DscpConfigurationInner createOrUpdate(
-        String resourceGroupName, String dscpConfigurationName, DscpConfigurationInner parameters);
+    DscpConfigurationInner createOrUpdate(String resourceGroupName, String dscpConfigurationName,
+        DscpConfigurationInner parameters);
 
     /**
      * Creates or updates a DSCP Configuration.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param dscpConfigurationName The name of the resource.
      * @param parameters Parameters supplied to the create or update dscp configuration operation.
@@ -76,12 +78,12 @@ public interface DscpConfigurationsClient {
      * @return differentiated Services Code Point configuration for any given network interface.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    DscpConfigurationInner createOrUpdate(
-        String resourceGroupName, String dscpConfigurationName, DscpConfigurationInner parameters, Context context);
+    DscpConfigurationInner createOrUpdate(String resourceGroupName, String dscpConfigurationName,
+        DscpConfigurationInner parameters, Context context);
 
     /**
      * Deletes a DSCP Configuration.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param dscpConfigurationName The name of the resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -94,7 +96,7 @@ public interface DscpConfigurationsClient {
 
     /**
      * Deletes a DSCP Configuration.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param dscpConfigurationName The name of the resource.
      * @param context The context to associate with this operation.
@@ -104,12 +106,12 @@ public interface DscpConfigurationsClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginDelete(
-        String resourceGroupName, String dscpConfigurationName, Context context);
+    SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String dscpConfigurationName,
+        Context context);
 
     /**
      * Deletes a DSCP Configuration.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param dscpConfigurationName The name of the resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -121,7 +123,7 @@ public interface DscpConfigurationsClient {
 
     /**
      * Deletes a DSCP Configuration.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param dscpConfigurationName The name of the resource.
      * @param context The context to associate with this operation.
@@ -134,7 +136,7 @@ public interface DscpConfigurationsClient {
 
     /**
      * Gets a DSCP Configuration.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param dscpConfigurationName The name of the resource.
      * @param context The context to associate with this operation.
@@ -144,12 +146,12 @@ public interface DscpConfigurationsClient {
      * @return a DSCP Configuration along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<DscpConfigurationInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String dscpConfigurationName, Context context);
+    Response<DscpConfigurationInner> getByResourceGroupWithResponse(String resourceGroupName,
+        String dscpConfigurationName, Context context);
 
     /**
      * Gets a DSCP Configuration.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param dscpConfigurationName The name of the resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -162,7 +164,7 @@ public interface DscpConfigurationsClient {
 
     /**
      * Gets a DSCP Configuration.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -174,7 +176,7 @@ public interface DscpConfigurationsClient {
 
     /**
      * Gets a DSCP Configuration.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -187,7 +189,7 @@ public interface DscpConfigurationsClient {
 
     /**
      * Gets all dscp configurations in a subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all dscp configurations in a subscription as paginated response with {@link PagedIterable}.
@@ -197,7 +199,7 @@ public interface DscpConfigurationsClient {
 
     /**
      * Gets all dscp configurations in a subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

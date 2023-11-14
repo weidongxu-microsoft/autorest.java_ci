@@ -15,8 +15,7 @@ public final class PrivateLinkResourcesWrapperImpl implements PrivateLinkResourc
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    PrivateLinkResourcesWrapperImpl(
-        PrivateLinkResourcesWrapperInner innerObject,
+    PrivateLinkResourcesWrapperImpl(PrivateLinkResourcesWrapperInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

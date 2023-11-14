@@ -10,7 +10,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** Represents an Asset used as a JobOutput. */
+/**
+ * Represents an Asset used as a JobOutput.
+ */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
 @JsonTypeName("#Microsoft.Media.JobOutputAsset")
 @Fluent
@@ -21,13 +23,15 @@ public final class JobOutputAsset extends JobOutput {
     @JsonProperty(value = "assetName", required = true)
     private String assetName;
 
-    /** Creates an instance of JobOutputAsset class. */
+    /**
+     * Creates an instance of JobOutputAsset class.
+     */
     public JobOutputAsset() {
     }
 
     /**
      * Get the assetName property: The name of the output Asset.
-     *
+     * 
      * @return the assetName value.
      */
     public String assetName() {
@@ -36,7 +40,7 @@ public final class JobOutputAsset extends JobOutput {
 
     /**
      * Set the assetName property: The name of the output Asset.
-     *
+     * 
      * @param assetName the assetName value to set.
      * @return the JobOutputAsset object itself.
      */
@@ -45,14 +49,18 @@ public final class JobOutputAsset extends JobOutput {
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public JobOutputAsset withPresetOverride(Preset presetOverride) {
         super.withPresetOverride(presetOverride);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public JobOutputAsset withLabel(String label) {
         super.withLabel(label);
@@ -61,16 +69,15 @@ public final class JobOutputAsset extends JobOutput {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override
     public void validate() {
         super.validate();
         if (assetName() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property assetName in model JobOutputAsset"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property assetName in model JobOutputAsset"));
         }
     }
 

@@ -7,11 +7,14 @@ package com.azure.resourcemanager.search.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Describes the current state of an existing Private Link Service connection to the Azure Private Endpoint. */
+/**
+ * Describes the current state of an existing Private Link Service connection to the Azure Private Endpoint.
+ */
 @Fluent
 public final class PrivateEndpointConnectionPropertiesPrivateLinkServiceConnectionState {
     /*
-     * Status of the the private link service connection. Can be Pending, Approved, Rejected, or Disconnected.
+     * Status of the the private link service connection. Valid values are Pending, Approved, Rejected, or
+     * Disconnected.
      */
     @JsonProperty(value = "status")
     private PrivateLinkServiceConnectionStatus status;
@@ -28,14 +31,16 @@ public final class PrivateEndpointConnectionPropertiesPrivateLinkServiceConnecti
     @JsonProperty(value = "actionsRequired")
     private String actionsRequired;
 
-    /** Creates an instance of PrivateEndpointConnectionPropertiesPrivateLinkServiceConnectionState class. */
+    /**
+     * Creates an instance of PrivateEndpointConnectionPropertiesPrivateLinkServiceConnectionState class.
+     */
     public PrivateEndpointConnectionPropertiesPrivateLinkServiceConnectionState() {
     }
 
     /**
-     * Get the status property: Status of the the private link service connection. Can be Pending, Approved, Rejected,
-     * or Disconnected.
-     *
+     * Get the status property: Status of the the private link service connection. Valid values are Pending, Approved,
+     * Rejected, or Disconnected.
+     * 
      * @return the status value.
      */
     public PrivateLinkServiceConnectionStatus status() {
@@ -43,21 +48,21 @@ public final class PrivateEndpointConnectionPropertiesPrivateLinkServiceConnecti
     }
 
     /**
-     * Set the status property: Status of the the private link service connection. Can be Pending, Approved, Rejected,
-     * or Disconnected.
-     *
+     * Set the status property: Status of the the private link service connection. Valid values are Pending, Approved,
+     * Rejected, or Disconnected.
+     * 
      * @param status the status value to set.
      * @return the PrivateEndpointConnectionPropertiesPrivateLinkServiceConnectionState object itself.
      */
-    public PrivateEndpointConnectionPropertiesPrivateLinkServiceConnectionState withStatus(
-        PrivateLinkServiceConnectionStatus status) {
+    public PrivateEndpointConnectionPropertiesPrivateLinkServiceConnectionState
+        withStatus(PrivateLinkServiceConnectionStatus status) {
         this.status = status;
         return this;
     }
 
     /**
      * Get the description property: The description for the private link service connection state.
-     *
+     * 
      * @return the description value.
      */
     public String description() {
@@ -66,7 +71,7 @@ public final class PrivateEndpointConnectionPropertiesPrivateLinkServiceConnecti
 
     /**
      * Set the description property: The description for the private link service connection state.
-     *
+     * 
      * @param description the description value to set.
      * @return the PrivateEndpointConnectionPropertiesPrivateLinkServiceConnectionState object itself.
      */
@@ -77,7 +82,7 @@ public final class PrivateEndpointConnectionPropertiesPrivateLinkServiceConnecti
 
     /**
      * Get the actionsRequired property: A description of any extra actions that may be required.
-     *
+     * 
      * @return the actionsRequired value.
      */
     public String actionsRequired() {
@@ -86,19 +91,19 @@ public final class PrivateEndpointConnectionPropertiesPrivateLinkServiceConnecti
 
     /**
      * Set the actionsRequired property: A description of any extra actions that may be required.
-     *
+     * 
      * @param actionsRequired the actionsRequired value to set.
      * @return the PrivateEndpointConnectionPropertiesPrivateLinkServiceConnectionState object itself.
      */
-    public PrivateEndpointConnectionPropertiesPrivateLinkServiceConnectionState withActionsRequired(
-        String actionsRequired) {
+    public PrivateEndpointConnectionPropertiesPrivateLinkServiceConnectionState
+        withActionsRequired(String actionsRequired) {
         this.actionsRequired = actionsRequired;
         return this;
     }
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

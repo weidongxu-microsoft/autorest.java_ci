@@ -25,8 +25,7 @@ public final class AppServiceEnvironmentImpl implements AppServiceEnvironment {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    AppServiceEnvironmentImpl(
-        AppServiceEnvironmentInner innerObject,
+    AppServiceEnvironmentImpl(AppServiceEnvironmentInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

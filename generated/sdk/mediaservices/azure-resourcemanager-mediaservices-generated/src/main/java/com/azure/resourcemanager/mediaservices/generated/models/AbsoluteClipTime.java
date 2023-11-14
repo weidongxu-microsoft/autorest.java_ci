@@ -26,14 +26,16 @@ public final class AbsoluteClipTime extends ClipTime {
     @JsonProperty(value = "time", required = true)
     private Duration time;
 
-    /** Creates an instance of AbsoluteClipTime class. */
+    /**
+     * Creates an instance of AbsoluteClipTime class.
+     */
     public AbsoluteClipTime() {
     }
 
     /**
      * Get the time property: The time position on the timeline of the input media. It is usually specified as an
      * ISO8601 period. e.g PT30S for 30 seconds.
-     *
+     * 
      * @return the time value.
      */
     public Duration time() {
@@ -43,7 +45,7 @@ public final class AbsoluteClipTime extends ClipTime {
     /**
      * Set the time property: The time position on the timeline of the input media. It is usually specified as an
      * ISO8601 period. e.g PT30S for 30 seconds.
-     *
+     * 
      * @param time the time value to set.
      * @return the AbsoluteClipTime object itself.
      */
@@ -54,16 +56,15 @@ public final class AbsoluteClipTime extends ClipTime {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override
     public void validate() {
         super.validate();
         if (time() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property time in model AbsoluteClipTime"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property time in model AbsoluteClipTime"));
         }
     }
 

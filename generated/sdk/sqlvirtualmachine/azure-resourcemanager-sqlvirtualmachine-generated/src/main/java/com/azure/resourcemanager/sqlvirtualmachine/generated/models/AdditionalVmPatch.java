@@ -8,17 +8,23 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Additional Patch to be enable or enabled on the SQL Virtual Machine. */
+/**
+ * Additional Patch to be enable or enabled on the SQL Virtual Machine.
+ */
 public final class AdditionalVmPatch extends ExpandableStringEnum<AdditionalVmPatch> {
-    /** Static value NotSet for AdditionalVmPatch. */
+    /**
+     * Static value NotSet for AdditionalVmPatch.
+     */
     public static final AdditionalVmPatch NOT_SET = fromString("NotSet");
 
-    /** Static value MicrosoftUpdate for AdditionalVmPatch. */
+    /**
+     * Static value MicrosoftUpdate for AdditionalVmPatch.
+     */
     public static final AdditionalVmPatch MICROSOFT_UPDATE = fromString("MicrosoftUpdate");
 
     /**
      * Creates a new instance of AdditionalVmPatch value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -27,7 +33,7 @@ public final class AdditionalVmPatch extends ExpandableStringEnum<AdditionalVmPa
 
     /**
      * Creates or finds a AdditionalVmPatch from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding AdditionalVmPatch.
      */
@@ -38,7 +44,7 @@ public final class AdditionalVmPatch extends ExpandableStringEnum<AdditionalVmPa
 
     /**
      * Gets known AdditionalVmPatch values.
-     *
+     * 
      * @return known AdditionalVmPatch values.
      */
     public static Collection<AdditionalVmPatch> values() {

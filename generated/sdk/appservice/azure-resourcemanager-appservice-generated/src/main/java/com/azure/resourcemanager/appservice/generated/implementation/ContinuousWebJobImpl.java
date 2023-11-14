@@ -16,8 +16,7 @@ public final class ContinuousWebJobImpl implements ContinuousWebJob {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    ContinuousWebJobImpl(
-        ContinuousWebJobInner innerObject,
+    ContinuousWebJobImpl(ContinuousWebJobInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

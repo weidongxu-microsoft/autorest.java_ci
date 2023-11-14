@@ -15,8 +15,7 @@ public final class PreconfiguredEndpointImpl implements PreconfiguredEndpoint {
 
     private final com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager;
 
-    PreconfiguredEndpointImpl(
-        PreconfiguredEndpointInner innerObject,
+    PreconfiguredEndpointImpl(PreconfiguredEndpointInner innerObject,
         com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

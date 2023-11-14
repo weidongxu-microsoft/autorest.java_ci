@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of Galleries. */
+/**
+ * Resource collection API of Galleries.
+ */
 public interface Galleries {
     /**
      * Retrieves information about a Shared Image Gallery.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery.
      * @param select The select expression to apply on the operation.
@@ -20,26 +22,22 @@ public interface Galleries {
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the Shared Image Gallery that you want to create or update along with {@link
-     *     Response}.
+     * @return specifies information about the Shared Image Gallery that you want to create or update along with
+     * {@link Response}.
      */
-    Response<Gallery> getByResourceGroupWithResponse(
-        String resourceGroupName,
-        String galleryName,
-        SelectPermissions select,
-        GalleryExpandParams expand,
-        Context context);
+    Response<Gallery> getByResourceGroupWithResponse(String resourceGroupName, String galleryName,
+        SelectPermissions select, GalleryExpandParams expand, Context context);
 
     /**
      * Retrieves information about a Shared Image Gallery.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the Shared Image Gallery that you want to create or update.
      */
@@ -47,36 +45,36 @@ public interface Galleries {
 
     /**
      * Delete a Shared Image Gallery.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery to be deleted.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteByResourceGroup(String resourceGroupName, String galleryName);
 
     /**
      * Delete a Shared Image Gallery.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery to be deleted.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void delete(String resourceGroupName, String galleryName, Context context);
 
     /**
      * List galleries under a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the List Galleries operation response as paginated response with {@link PagedIterable}.
      */
@@ -84,12 +82,12 @@ public interface Galleries {
 
     /**
      * List galleries under a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the List Galleries operation response as paginated response with {@link PagedIterable}.
      */
@@ -97,9 +95,9 @@ public interface Galleries {
 
     /**
      * List galleries under a subscription.
-     *
+     * 
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the List Galleries operation response as paginated response with {@link PagedIterable}.
      */
@@ -107,11 +105,11 @@ public interface Galleries {
 
     /**
      * List galleries under a subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the List Galleries operation response as paginated response with {@link PagedIterable}.
      */
@@ -119,60 +117,60 @@ public interface Galleries {
 
     /**
      * Retrieves information about a Shared Image Gallery.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the Shared Image Gallery that you want to create or update along with {@link
-     *     Response}.
+     * @return specifies information about the Shared Image Gallery that you want to create or update along with
+     * {@link Response}.
      */
     Gallery getById(String id);
 
     /**
      * Retrieves information about a Shared Image Gallery.
-     *
+     * 
      * @param id the resource ID.
      * @param select The select expression to apply on the operation.
      * @param expand The expand query option to apply on the operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the Shared Image Gallery that you want to create or update along with {@link
-     *     Response}.
+     * @return specifies information about the Shared Image Gallery that you want to create or update along with
+     * {@link Response}.
      */
-    Response<Gallery> getByIdWithResponse(
-        String id, SelectPermissions select, GalleryExpandParams expand, Context context);
+    Response<Gallery> getByIdWithResponse(String id, SelectPermissions select, GalleryExpandParams expand,
+        Context context);
 
     /**
      * Delete a Shared Image Gallery.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteById(String id);
 
     /**
      * Delete a Shared Image Gallery.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteByIdWithResponse(String id, Context context);
 
     /**
      * Begins definition for a new Gallery resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new Gallery definition.
      */

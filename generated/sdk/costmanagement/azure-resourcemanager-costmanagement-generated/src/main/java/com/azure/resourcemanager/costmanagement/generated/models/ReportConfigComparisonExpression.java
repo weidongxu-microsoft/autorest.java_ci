@@ -9,7 +9,9 @@ import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The comparison expression to be used in the report. */
+/**
+ * The comparison expression to be used in the report.
+ */
 @Fluent
 public final class ReportConfigComparisonExpression {
     /*
@@ -30,13 +32,15 @@ public final class ReportConfigComparisonExpression {
     @JsonProperty(value = "values", required = true)
     private List<String> values;
 
-    /** Creates an instance of ReportConfigComparisonExpression class. */
+    /**
+     * Creates an instance of ReportConfigComparisonExpression class.
+     */
     public ReportConfigComparisonExpression() {
     }
 
     /**
      * Get the name property: The name of the column to use in comparison.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -45,7 +49,7 @@ public final class ReportConfigComparisonExpression {
 
     /**
      * Set the name property: The name of the column to use in comparison.
-     *
+     * 
      * @param name the name value to set.
      * @return the ReportConfigComparisonExpression object itself.
      */
@@ -56,7 +60,7 @@ public final class ReportConfigComparisonExpression {
 
     /**
      * Get the operator property: The operator to use for comparison.
-     *
+     * 
      * @return the operator value.
      */
     public OperatorType operator() {
@@ -65,7 +69,7 @@ public final class ReportConfigComparisonExpression {
 
     /**
      * Set the operator property: The operator to use for comparison.
-     *
+     * 
      * @param operator the operator value to set.
      * @return the ReportConfigComparisonExpression object itself.
      */
@@ -76,7 +80,7 @@ public final class ReportConfigComparisonExpression {
 
     /**
      * Get the values property: Array of values to use for comparison.
-     *
+     * 
      * @return the values value.
      */
     public List<String> values() {
@@ -85,7 +89,7 @@ public final class ReportConfigComparisonExpression {
 
     /**
      * Set the values property: Array of values to use for comparison.
-     *
+     * 
      * @param values the values value to set.
      * @return the ReportConfigComparisonExpression object itself.
      */
@@ -96,27 +100,21 @@ public final class ReportConfigComparisonExpression {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property name in model ReportConfigComparisonExpression"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property name in model ReportConfigComparisonExpression"));
         }
         if (operator() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property operator in model ReportConfigComparisonExpression"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property operator in model ReportConfigComparisonExpression"));
         }
         if (values() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property values in model ReportConfigComparisonExpression"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property values in model ReportConfigComparisonExpression"));
         }
     }
 

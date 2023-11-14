@@ -12,11 +12,13 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.monitor.generated.fluent.models.AlertRuleResourceInner;
 import com.azure.resourcemanager.monitor.generated.models.AlertRuleResourcePatch;
 
-/** An instance of this class provides access to all the operations defined in AlertRulesClient. */
+/**
+ * An instance of this class provides access to all the operations defined in AlertRulesClient.
+ */
 public interface AlertRulesClient {
     /**
      * Creates or updates a classic metric alert rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @param parameters The parameters of the rule to create or update.
@@ -27,12 +29,12 @@ public interface AlertRulesClient {
      * @return the alert rule resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<AlertRuleResourceInner> createOrUpdateWithResponse(
-        String resourceGroupName, String ruleName, AlertRuleResourceInner parameters, Context context);
+    Response<AlertRuleResourceInner> createOrUpdateWithResponse(String resourceGroupName, String ruleName,
+        AlertRuleResourceInner parameters, Context context);
 
     /**
      * Creates or updates a classic metric alert rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @param parameters The parameters of the rule to create or update.
@@ -46,7 +48,7 @@ public interface AlertRulesClient {
 
     /**
      * Deletes a classic metric alert rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @param context The context to associate with this operation.
@@ -60,7 +62,7 @@ public interface AlertRulesClient {
 
     /**
      * Deletes a classic metric alert rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -72,7 +74,7 @@ public interface AlertRulesClient {
 
     /**
      * Gets a classic metric alert rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @param context The context to associate with this operation.
@@ -82,12 +84,12 @@ public interface AlertRulesClient {
      * @return a classic metric alert rule along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<AlertRuleResourceInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String ruleName, Context context);
+    Response<AlertRuleResourceInner> getByResourceGroupWithResponse(String resourceGroupName, String ruleName,
+        Context context);
 
     /**
      * Gets a classic metric alert rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -100,7 +102,7 @@ public interface AlertRulesClient {
 
     /**
      * Updates an existing classic metric AlertRuleResource. To update other fields use the CreateOrUpdate method.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @param alertRulesResource Parameters supplied to the operation.
@@ -111,12 +113,12 @@ public interface AlertRulesClient {
      * @return the alert rule resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<AlertRuleResourceInner> updateWithResponse(
-        String resourceGroupName, String ruleName, AlertRuleResourcePatch alertRulesResource, Context context);
+    Response<AlertRuleResourceInner> updateWithResponse(String resourceGroupName, String ruleName,
+        AlertRuleResourcePatch alertRulesResource, Context context);
 
     /**
      * Updates an existing classic metric AlertRuleResource. To update other fields use the CreateOrUpdate method.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @param alertRulesResource Parameters supplied to the operation.
@@ -130,7 +132,7 @@ public interface AlertRulesClient {
 
     /**
      * List the classic metric alert rules within a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -142,7 +144,7 @@ public interface AlertRulesClient {
 
     /**
      * List the classic metric alert rules within a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -155,7 +157,7 @@ public interface AlertRulesClient {
 
     /**
      * List the classic metric alert rules within a subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return represents a collection of alert rule resources as paginated response with {@link PagedIterable}.
@@ -165,7 +167,7 @@ public interface AlertRulesClient {
 
     /**
      * List the classic metric alert rules within a subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

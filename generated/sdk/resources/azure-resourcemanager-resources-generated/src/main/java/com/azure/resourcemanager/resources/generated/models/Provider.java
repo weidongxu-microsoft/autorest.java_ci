@@ -7,46 +7,48 @@ package com.azure.resourcemanager.resources.generated.models;
 import com.azure.resourcemanager.resources.generated.fluent.models.ProviderInner;
 import java.util.List;
 
-/** An immutable client-side representation of Provider. */
+/**
+ * An immutable client-side representation of Provider.
+ */
 public interface Provider {
     /**
      * Gets the id property: The provider ID.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the namespace property: The namespace of the resource provider.
-     *
+     * 
      * @return the namespace value.
      */
     String namespace();
 
     /**
      * Gets the registrationState property: The registration state of the resource provider.
-     *
+     * 
      * @return the registrationState value.
      */
     String registrationState();
 
     /**
      * Gets the registrationPolicy property: The registration policy of the resource provider.
-     *
+     * 
      * @return the registrationPolicy value.
      */
     String registrationPolicy();
 
     /**
      * Gets the resourceTypes property: The collection of provider resource types.
-     *
+     * 
      * @return the resourceTypes value.
      */
     List<ProviderResourceType> resourceTypes();
 
     /**
      * Gets the inner com.azure.resourcemanager.resources.generated.fluent.models.ProviderInner object.
-     *
+     * 
      * @return the inner object.
      */
     ProviderInner innerModel();

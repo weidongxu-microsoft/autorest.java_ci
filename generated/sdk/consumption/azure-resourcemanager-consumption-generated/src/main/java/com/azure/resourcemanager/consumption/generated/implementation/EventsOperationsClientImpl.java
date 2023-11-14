@@ -30,22 +30,28 @@ import com.azure.resourcemanager.consumption.generated.fluent.models.EventSummar
 import com.azure.resourcemanager.consumption.generated.models.Events;
 import reactor.core.publisher.Mono;
 
-/** An instance of this class provides access to all the operations defined in EventsOperationsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in EventsOperationsClient.
+ */
 public final class EventsOperationsClientImpl implements EventsOperationsClient {
-    /** The proxy service used to perform REST calls. */
+    /**
+     * The proxy service used to perform REST calls.
+     */
     private final EventsOperationsService service;
 
-    /** The service client containing this operation class. */
+    /**
+     * The service client containing this operation class.
+     */
     private final ConsumptionManagementClientImpl client;
 
     /**
      * Initializes an instance of EventsOperationsClientImpl.
-     *
+     * 
      * @param client the instance of the service client containing this operation class.
      */
     EventsOperationsClientImpl(ConsumptionManagementClientImpl client) {
-        this.service =
-            RestProxy.create(EventsOperationsService.class, client.getHttpPipeline(), client.getSerializerAdapter());
+        this.service
+            = RestProxy.create(EventsOperationsService.class, client.getHttpPipeline(), client.getSerializerAdapter());
         this.client = client;
     }
 
@@ -56,58 +62,43 @@ public final class EventsOperationsClientImpl implements EventsOperationsClient 
     @Host("{$host}")
     @ServiceInterface(name = "ConsumptionManagemen")
     public interface EventsOperationsService {
-        @Headers({"Content-Type: application/json"})
-        @Get(
-            "/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}/providers/Microsoft.Consumption/events")
-        @ExpectedResponses({200})
+        @Headers({ "Content-Type: application/json" })
+        @Get("/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}/providers/Microsoft.Consumption/events")
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<Events>> listByBillingProfile(
-            @HostParam("$host") String endpoint,
+        Mono<Response<Events>> listByBillingProfile(@HostParam("$host") String endpoint,
             @PathParam("billingAccountId") String billingAccountId,
-            @PathParam("billingProfileId") String billingProfileId,
-            @QueryParam("api-version") String apiVersion,
-            @QueryParam("startDate") String startDate,
-            @QueryParam("endDate") String endDate,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @PathParam("billingProfileId") String billingProfileId, @QueryParam("api-version") String apiVersion,
+            @QueryParam("startDate") String startDate, @QueryParam("endDate") String endDate,
+            @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
+        @Headers({ "Content-Type: application/json" })
         @Get("/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/providers/Microsoft.Consumption/events")
-        @ExpectedResponses({200})
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<Events>> listByBillingAccount(
-            @HostParam("$host") String endpoint,
-            @PathParam("billingAccountId") String billingAccountId,
-            @QueryParam("api-version") String apiVersion,
-            @QueryParam("$filter") String filter,
-            @HeaderParam("Accept") String accept,
-            Context context);
+        Mono<Response<Events>> listByBillingAccount(@HostParam("$host") String endpoint,
+            @PathParam("billingAccountId") String billingAccountId, @QueryParam("api-version") String apiVersion,
+            @QueryParam("$filter") String filter, @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
+        @Headers({ "Content-Type: application/json" })
         @Get("{nextLink}")
-        @ExpectedResponses({200})
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<Events>> listByBillingProfileNext(
-            @PathParam(value = "nextLink", encoded = true) String nextLink,
-            @HostParam("$host") String endpoint,
-            @HeaderParam("Accept") String accept,
-            Context context);
+        Mono<Response<Events>> listByBillingProfileNext(@PathParam(value = "nextLink", encoded = true) String nextLink,
+            @HostParam("$host") String endpoint, @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
+        @Headers({ "Content-Type: application/json" })
         @Get("{nextLink}")
-        @ExpectedResponses({200})
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<Events>> listByBillingAccountNext(
-            @PathParam(value = "nextLink", encoded = true) String nextLink,
-            @HostParam("$host") String endpoint,
-            @HeaderParam("Accept") String accept,
-            Context context);
+        Mono<Response<Events>> listByBillingAccountNext(@PathParam(value = "nextLink", encoded = true) String nextLink,
+            @HostParam("$host") String endpoint, @HeaderParam("Accept") String accept, Context context);
     }
 
     /**
      * Lists the events that decrements Azure credits or Microsoft Azure consumption commitment for a billing account or
      * a billing profile for a given start and end date.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
      * @param startDate Start date.
@@ -115,17 +106,15 @@ public final class EventsOperationsClientImpl implements EventsOperationsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing event summary along with {@link PagedResponse} on successful completion of {@link
-     *     Mono}.
+     * @return result of listing event summary along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<EventSummaryInner>> listByBillingProfileSinglePageAsync(
-        String billingAccountId, String billingProfileId, String startDate, String endDate) {
+    private Mono<PagedResponse<EventSummaryInner>> listByBillingProfileSinglePageAsync(String billingAccountId,
+        String billingProfileId, String startDate, String endDate) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (billingAccountId == null) {
             return Mono
@@ -143,34 +132,17 @@ public final class EventsOperationsClientImpl implements EventsOperationsClient 
         }
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .listByBillingProfile(
-                            this.client.getEndpoint(),
-                            billingAccountId,
-                            billingProfileId,
-                            this.client.getApiVersion(),
-                            startDate,
-                            endDate,
-                            accept,
-                            context))
-            .<PagedResponse<EventSummaryInner>>map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null))
+            .withContext(context -> service.listByBillingProfile(this.client.getEndpoint(), billingAccountId,
+                billingProfileId, this.client.getApiVersion(), startDate, endDate, accept, context))
+            .<PagedResponse<EventSummaryInner>>map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(),
+                res.getHeaders(), res.getValue().value(), res.getValue().nextLink(), null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Lists the events that decrements Azure credits or Microsoft Azure consumption commitment for a billing account or
      * a billing profile for a given start and end date.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
      * @param startDate Start date.
@@ -179,17 +151,15 @@ public final class EventsOperationsClientImpl implements EventsOperationsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing event summary along with {@link PagedResponse} on successful completion of {@link
-     *     Mono}.
+     * @return result of listing event summary along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<EventSummaryInner>> listByBillingProfileSinglePageAsync(
-        String billingAccountId, String billingProfileId, String startDate, String endDate, Context context) {
+    private Mono<PagedResponse<EventSummaryInner>> listByBillingProfileSinglePageAsync(String billingAccountId,
+        String billingProfileId, String startDate, String endDate, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (billingAccountId == null) {
             return Mono
@@ -208,30 +178,16 @@ public final class EventsOperationsClientImpl implements EventsOperationsClient 
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .listByBillingProfile(
-                this.client.getEndpoint(),
-                billingAccountId,
-                billingProfileId,
-                this.client.getApiVersion(),
-                startDate,
-                endDate,
-                accept,
-                context)
-            .map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null));
+            .listByBillingProfile(this.client.getEndpoint(), billingAccountId, billingProfileId,
+                this.client.getApiVersion(), startDate, endDate, accept, context)
+            .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
+                res.getValue().value(), res.getValue().nextLink(), null));
     }
 
     /**
      * Lists the events that decrements Azure credits or Microsoft Azure consumption commitment for a billing account or
      * a billing profile for a given start and end date.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
      * @param startDate Start date.
@@ -242,8 +198,8 @@ public final class EventsOperationsClientImpl implements EventsOperationsClient 
      * @return result of listing event summary as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<EventSummaryInner> listByBillingProfileAsync(
-        String billingAccountId, String billingProfileId, String startDate, String endDate) {
+    private PagedFlux<EventSummaryInner> listByBillingProfileAsync(String billingAccountId, String billingProfileId,
+        String startDate, String endDate) {
         return new PagedFlux<>(
             () -> listByBillingProfileSinglePageAsync(billingAccountId, billingProfileId, startDate, endDate),
             nextLink -> listByBillingProfileNextSinglePageAsync(nextLink));
@@ -252,7 +208,7 @@ public final class EventsOperationsClientImpl implements EventsOperationsClient 
     /**
      * Lists the events that decrements Azure credits or Microsoft Azure consumption commitment for a billing account or
      * a billing profile for a given start and end date.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
      * @param startDate Start date.
@@ -264,8 +220,8 @@ public final class EventsOperationsClientImpl implements EventsOperationsClient 
      * @return result of listing event summary as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<EventSummaryInner> listByBillingProfileAsync(
-        String billingAccountId, String billingProfileId, String startDate, String endDate, Context context) {
+    private PagedFlux<EventSummaryInner> listByBillingProfileAsync(String billingAccountId, String billingProfileId,
+        String startDate, String endDate, Context context) {
         return new PagedFlux<>(
             () -> listByBillingProfileSinglePageAsync(billingAccountId, billingProfileId, startDate, endDate, context),
             nextLink -> listByBillingProfileNextSinglePageAsync(nextLink, context));
@@ -274,7 +230,7 @@ public final class EventsOperationsClientImpl implements EventsOperationsClient 
     /**
      * Lists the events that decrements Azure credits or Microsoft Azure consumption commitment for a billing account or
      * a billing profile for a given start and end date.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
      * @param startDate Start date.
@@ -285,15 +241,15 @@ public final class EventsOperationsClientImpl implements EventsOperationsClient 
      * @return result of listing event summary as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    public PagedIterable<EventSummaryInner> listByBillingProfile(
-        String billingAccountId, String billingProfileId, String startDate, String endDate) {
+    public PagedIterable<EventSummaryInner> listByBillingProfile(String billingAccountId, String billingProfileId,
+        String startDate, String endDate) {
         return new PagedIterable<>(listByBillingProfileAsync(billingAccountId, billingProfileId, startDate, endDate));
     }
 
     /**
      * Lists the events that decrements Azure credits or Microsoft Azure consumption commitment for a billing account or
      * a billing profile for a given start and end date.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
      * @param startDate Start date.
@@ -305,8 +261,8 @@ public final class EventsOperationsClientImpl implements EventsOperationsClient 
      * @return result of listing event summary as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    public PagedIterable<EventSummaryInner> listByBillingProfile(
-        String billingAccountId, String billingProfileId, String startDate, String endDate, Context context) {
+    public PagedIterable<EventSummaryInner> listByBillingProfile(String billingAccountId, String billingProfileId,
+        String startDate, String endDate, Context context) {
         return new PagedIterable<>(
             listByBillingProfileAsync(billingAccountId, billingProfileId, startDate, endDate, context));
     }
@@ -314,25 +270,23 @@ public final class EventsOperationsClientImpl implements EventsOperationsClient 
     /**
      * Lists the events that decrements Azure credits or Microsoft Azure consumption commitment for a billing account or
      * a billing profile for a given start and end date.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param filter May be used to filter the events by lotId, lotSource etc. The filter supports 'eq', 'lt', 'gt',
-     *     'le', 'ge', and 'and'. It does not currently support 'ne', 'or', or 'not'. Tag filter is a key value pair
-     *     string where key and value is separated by a colon (:).
+     * 'le', 'ge', and 'and'. It does not currently support 'ne', 'or', or 'not'. Tag filter is a key value pair string
+     * where key and value is separated by a colon (:).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing event summary along with {@link PagedResponse} on successful completion of {@link
-     *     Mono}.
+     * @return result of listing event summary along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<EventSummaryInner>> listByBillingAccountSinglePageAsync(
-        String billingAccountId, String filter) {
+    private Mono<PagedResponse<EventSummaryInner>> listByBillingAccountSinglePageAsync(String billingAccountId,
+        String filter) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (billingAccountId == null) {
             return Mono
@@ -340,51 +294,34 @@ public final class EventsOperationsClientImpl implements EventsOperationsClient 
         }
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .listByBillingAccount(
-                            this.client.getEndpoint(),
-                            billingAccountId,
-                            this.client.getApiVersion(),
-                            filter,
-                            accept,
-                            context))
-            .<PagedResponse<EventSummaryInner>>map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null))
+            .withContext(context -> service.listByBillingAccount(this.client.getEndpoint(), billingAccountId,
+                this.client.getApiVersion(), filter, accept, context))
+            .<PagedResponse<EventSummaryInner>>map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(),
+                res.getHeaders(), res.getValue().value(), res.getValue().nextLink(), null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Lists the events that decrements Azure credits or Microsoft Azure consumption commitment for a billing account or
      * a billing profile for a given start and end date.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param filter May be used to filter the events by lotId, lotSource etc. The filter supports 'eq', 'lt', 'gt',
-     *     'le', 'ge', and 'and'. It does not currently support 'ne', 'or', or 'not'. Tag filter is a key value pair
-     *     string where key and value is separated by a colon (:).
+     * 'le', 'ge', and 'and'. It does not currently support 'ne', 'or', or 'not'. Tag filter is a key value pair string
+     * where key and value is separated by a colon (:).
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing event summary along with {@link PagedResponse} on successful completion of {@link
-     *     Mono}.
+     * @return result of listing event summary along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<EventSummaryInner>> listByBillingAccountSinglePageAsync(
-        String billingAccountId, String filter, Context context) {
+    private Mono<PagedResponse<EventSummaryInner>> listByBillingAccountSinglePageAsync(String billingAccountId,
+        String filter, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (billingAccountId == null) {
             return Mono
@@ -393,27 +330,20 @@ public final class EventsOperationsClientImpl implements EventsOperationsClient 
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .listByBillingAccount(
-                this.client.getEndpoint(), billingAccountId, this.client.getApiVersion(), filter, accept, context)
-            .map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null));
+            .listByBillingAccount(this.client.getEndpoint(), billingAccountId, this.client.getApiVersion(), filter,
+                accept, context)
+            .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
+                res.getValue().value(), res.getValue().nextLink(), null));
     }
 
     /**
      * Lists the events that decrements Azure credits or Microsoft Azure consumption commitment for a billing account or
      * a billing profile for a given start and end date.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param filter May be used to filter the events by lotId, lotSource etc. The filter supports 'eq', 'lt', 'gt',
-     *     'le', 'ge', and 'and'. It does not currently support 'ne', 'or', or 'not'. Tag filter is a key value pair
-     *     string where key and value is separated by a colon (:).
+     * 'le', 'ge', and 'and'. It does not currently support 'ne', 'or', or 'not'. Tag filter is a key value pair string
+     * where key and value is separated by a colon (:).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -421,15 +351,14 @@ public final class EventsOperationsClientImpl implements EventsOperationsClient 
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<EventSummaryInner> listByBillingAccountAsync(String billingAccountId, String filter) {
-        return new PagedFlux<>(
-            () -> listByBillingAccountSinglePageAsync(billingAccountId, filter),
+        return new PagedFlux<>(() -> listByBillingAccountSinglePageAsync(billingAccountId, filter),
             nextLink -> listByBillingAccountNextSinglePageAsync(nextLink));
     }
 
     /**
      * Lists the events that decrements Azure credits or Microsoft Azure consumption commitment for a billing account or
      * a billing profile for a given start and end date.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -439,19 +368,18 @@ public final class EventsOperationsClientImpl implements EventsOperationsClient 
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<EventSummaryInner> listByBillingAccountAsync(String billingAccountId) {
         final String filter = null;
-        return new PagedFlux<>(
-            () -> listByBillingAccountSinglePageAsync(billingAccountId, filter),
+        return new PagedFlux<>(() -> listByBillingAccountSinglePageAsync(billingAccountId, filter),
             nextLink -> listByBillingAccountNextSinglePageAsync(nextLink));
     }
 
     /**
      * Lists the events that decrements Azure credits or Microsoft Azure consumption commitment for a billing account or
      * a billing profile for a given start and end date.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param filter May be used to filter the events by lotId, lotSource etc. The filter supports 'eq', 'lt', 'gt',
-     *     'le', 'ge', and 'and'. It does not currently support 'ne', 'or', or 'not'. Tag filter is a key value pair
-     *     string where key and value is separated by a colon (:).
+     * 'le', 'ge', and 'and'. It does not currently support 'ne', 'or', or 'not'. Tag filter is a key value pair string
+     * where key and value is separated by a colon (:).
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -459,17 +387,16 @@ public final class EventsOperationsClientImpl implements EventsOperationsClient 
      * @return result of listing event summary as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<EventSummaryInner> listByBillingAccountAsync(
-        String billingAccountId, String filter, Context context) {
-        return new PagedFlux<>(
-            () -> listByBillingAccountSinglePageAsync(billingAccountId, filter, context),
+    private PagedFlux<EventSummaryInner> listByBillingAccountAsync(String billingAccountId, String filter,
+        Context context) {
+        return new PagedFlux<>(() -> listByBillingAccountSinglePageAsync(billingAccountId, filter, context),
             nextLink -> listByBillingAccountNextSinglePageAsync(nextLink, context));
     }
 
     /**
      * Lists the events that decrements Azure credits or Microsoft Azure consumption commitment for a billing account or
      * a billing profile for a given start and end date.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -485,11 +412,11 @@ public final class EventsOperationsClientImpl implements EventsOperationsClient 
     /**
      * Lists the events that decrements Azure credits or Microsoft Azure consumption commitment for a billing account or
      * a billing profile for a given start and end date.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param filter May be used to filter the events by lotId, lotSource etc. The filter supports 'eq', 'lt', 'gt',
-     *     'le', 'ge', and 'and'. It does not currently support 'ne', 'or', or 'not'. Tag filter is a key value pair
-     *     string where key and value is separated by a colon (:).
+     * 'le', 'ge', and 'and'. It does not currently support 'ne', 'or', or 'not'. Tag filter is a key value pair string
+     * where key and value is separated by a colon (:).
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -497,21 +424,22 @@ public final class EventsOperationsClientImpl implements EventsOperationsClient 
      * @return result of listing event summary as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    public PagedIterable<EventSummaryInner> listByBillingAccount(
-        String billingAccountId, String filter, Context context) {
+    public PagedIterable<EventSummaryInner> listByBillingAccount(String billingAccountId, String filter,
+        Context context) {
         return new PagedIterable<>(listByBillingAccountAsync(billingAccountId, filter, context));
     }
 
     /**
      * Get the next page of items.
-     *
+     * 
      * @param nextLink The URL to get the next list of items
-     *     <p>The nextLink parameter.
+     * 
+     * The nextLink parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing event summary along with {@link PagedResponse} on successful completion of {@link
-     *     Mono}.
+     * @return result of listing event summary along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EventSummaryInner>> listByBillingProfileNextSinglePageAsync(String nextLink) {
@@ -519,76 +447,59 @@ public final class EventsOperationsClientImpl implements EventsOperationsClient 
             return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
         }
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context -> service.listByBillingProfileNext(nextLink, this.client.getEndpoint(), accept, context))
-            .<PagedResponse<EventSummaryInner>>map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null))
+            .<PagedResponse<EventSummaryInner>>map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(),
+                res.getHeaders(), res.getValue().value(), res.getValue().nextLink(), null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Get the next page of items.
-     *
+     * 
      * @param nextLink The URL to get the next list of items
-     *     <p>The nextLink parameter.
+     * 
+     * The nextLink parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing event summary along with {@link PagedResponse} on successful completion of {@link
-     *     Mono}.
+     * @return result of listing event summary along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<EventSummaryInner>> listByBillingProfileNextSinglePageAsync(
-        String nextLink, Context context) {
+    private Mono<PagedResponse<EventSummaryInner>> listByBillingProfileNextSinglePageAsync(String nextLink,
+        Context context) {
         if (nextLink == null) {
             return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
         }
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .listByBillingProfileNext(nextLink, this.client.getEndpoint(), accept, context)
-            .map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null));
+        return service.listByBillingProfileNext(nextLink, this.client.getEndpoint(), accept, context)
+            .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
+                res.getValue().value(), res.getValue().nextLink(), null));
     }
 
     /**
      * Get the next page of items.
-     *
+     * 
      * @param nextLink The URL to get the next list of items
-     *     <p>The nextLink parameter.
+     * 
+     * The nextLink parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing event summary along with {@link PagedResponse} on successful completion of {@link
-     *     Mono}.
+     * @return result of listing event summary along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EventSummaryInner>> listByBillingAccountNextSinglePageAsync(String nextLink) {
@@ -596,63 +507,45 @@ public final class EventsOperationsClientImpl implements EventsOperationsClient 
             return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
         }
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context -> service.listByBillingAccountNext(nextLink, this.client.getEndpoint(), accept, context))
-            .<PagedResponse<EventSummaryInner>>map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null))
+            .<PagedResponse<EventSummaryInner>>map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(),
+                res.getHeaders(), res.getValue().value(), res.getValue().nextLink(), null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Get the next page of items.
-     *
+     * 
      * @param nextLink The URL to get the next list of items
-     *     <p>The nextLink parameter.
+     * 
+     * The nextLink parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing event summary along with {@link PagedResponse} on successful completion of {@link
-     *     Mono}.
+     * @return result of listing event summary along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<EventSummaryInner>> listByBillingAccountNextSinglePageAsync(
-        String nextLink, Context context) {
+    private Mono<PagedResponse<EventSummaryInner>> listByBillingAccountNextSinglePageAsync(String nextLink,
+        Context context) {
         if (nextLink == null) {
             return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
         }
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .listByBillingAccountNext(nextLink, this.client.getEndpoint(), accept, context)
-            .map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null));
+        return service.listByBillingAccountNext(nextLink, this.client.getEndpoint(), accept, context)
+            .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
+                res.getValue().value(), res.getValue().nextLink(), null));
     }
 }

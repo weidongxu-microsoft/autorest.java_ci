@@ -7,7 +7,9 @@ package com.azure.resourcemanager.eventhubs.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Properties supplied for Subnet. */
+/**
+ * Properties supplied for Subnet.
+ */
 @Fluent
 public final class Subnet {
     /*
@@ -16,13 +18,15 @@ public final class Subnet {
     @JsonProperty(value = "id")
     private String id;
 
-    /** Creates an instance of Subnet class. */
+    /**
+     * Creates an instance of Subnet class.
+     */
     public Subnet() {
     }
 
     /**
      * Get the id property: Resource ID of Virtual Network Subnet.
-     *
+     * 
      * @return the id value.
      */
     public String id() {
@@ -31,7 +35,7 @@ public final class Subnet {
 
     /**
      * Set the id property: Resource ID of Virtual Network Subnet.
-     *
+     * 
      * @param id the id value to set.
      * @return the Subnet object itself.
      */
@@ -42,7 +46,7 @@ public final class Subnet {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -15,8 +15,7 @@ public final class HubVirtualNetworkConnectionImpl implements HubVirtualNetworkC
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    HubVirtualNetworkConnectionImpl(
-        HubVirtualNetworkConnectionInner innerObject,
+    HubVirtualNetworkConnectionImpl(HubVirtualNetworkConnectionInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

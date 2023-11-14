@@ -16,28 +16,44 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * partition, up to 12 partitions.'.
  */
 public enum SkuName {
-    /** Enum value free. */
+    /**
+     * Enum value free.
+     */
     FREE("free"),
 
-    /** Enum value basic. */
+    /**
+     * Enum value basic.
+     */
     BASIC("basic"),
 
-    /** Enum value standard. */
+    /**
+     * Enum value standard.
+     */
     STANDARD("standard"),
 
-    /** Enum value standard2. */
+    /**
+     * Enum value standard2.
+     */
     STANDARD2("standard2"),
 
-    /** Enum value standard3. */
+    /**
+     * Enum value standard3.
+     */
     STANDARD3("standard3"),
 
-    /** Enum value storage_optimized_l1. */
+    /**
+     * Enum value storage_optimized_l1.
+     */
     STORAGE_OPTIMIZED_L1("storage_optimized_l1"),
 
-    /** Enum value storage_optimized_l2. */
+    /**
+     * Enum value storage_optimized_l2.
+     */
     STORAGE_OPTIMIZED_L2("storage_optimized_l2");
 
-    /** The actual serialized value for a SkuName instance. */
+    /**
+     * The actual serialized value for a SkuName instance.
+     */
     private final String value;
 
     SkuName(String value) {
@@ -46,7 +62,7 @@ public enum SkuName {
 
     /**
      * Parses a serialized value to a SkuName instance.
-     *
+     * 
      * @param value the serialized value to parse.
      * @return the parsed SkuName object, or null if unable to parse.
      */
@@ -64,7 +80,9 @@ public enum SkuName {
         return null;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @JsonValue
     @Override
     public String toString() {

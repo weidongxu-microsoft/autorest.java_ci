@@ -62,29 +62,22 @@ public final class VirtualApplianceSiteImpl
 
     private String siteName;
 
-    public VirtualApplianceSiteImpl withExistingNetworkVirtualAppliance(
-        String resourceGroupName, String networkVirtualApplianceName) {
+    public VirtualApplianceSiteImpl withExistingNetworkVirtualAppliance(String resourceGroupName,
+        String networkVirtualApplianceName) {
         this.resourceGroupName = resourceGroupName;
         this.networkVirtualApplianceName = networkVirtualApplianceName;
         return this;
     }
 
     public VirtualApplianceSite create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualApplianceSites()
-                .createOrUpdate(
-                    resourceGroupName, networkVirtualApplianceName, siteName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getVirtualApplianceSites().createOrUpdate(resourceGroupName,
+            networkVirtualApplianceName, siteName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public VirtualApplianceSite create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualApplianceSites()
-                .createOrUpdate(resourceGroupName, networkVirtualApplianceName, siteName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getVirtualApplianceSites().createOrUpdate(resourceGroupName,
+            networkVirtualApplianceName, siteName, this.innerModel(), context);
         return this;
     }
 
@@ -99,26 +92,18 @@ public final class VirtualApplianceSiteImpl
     }
 
     public VirtualApplianceSite apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualApplianceSites()
-                .createOrUpdate(
-                    resourceGroupName, networkVirtualApplianceName, siteName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getVirtualApplianceSites().createOrUpdate(resourceGroupName,
+            networkVirtualApplianceName, siteName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public VirtualApplianceSite apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualApplianceSites()
-                .createOrUpdate(resourceGroupName, networkVirtualApplianceName, siteName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getVirtualApplianceSites().createOrUpdate(resourceGroupName,
+            networkVirtualApplianceName, siteName, this.innerModel(), context);
         return this;
     }
 
-    VirtualApplianceSiteImpl(
-        VirtualApplianceSiteInner innerObject,
+    VirtualApplianceSiteImpl(VirtualApplianceSiteInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -128,22 +113,14 @@ public final class VirtualApplianceSiteImpl
     }
 
     public VirtualApplianceSite refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualApplianceSites()
-                .getWithResponse(resourceGroupName, networkVirtualApplianceName, siteName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getVirtualApplianceSites()
+            .getWithResponse(resourceGroupName, networkVirtualApplianceName, siteName, Context.NONE).getValue();
         return this;
     }
 
     public VirtualApplianceSite refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualApplianceSites()
-                .getWithResponse(resourceGroupName, networkVirtualApplianceName, siteName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getVirtualApplianceSites()
+            .getWithResponse(resourceGroupName, networkVirtualApplianceName, siteName, context).getValue();
         return this;
     }
 

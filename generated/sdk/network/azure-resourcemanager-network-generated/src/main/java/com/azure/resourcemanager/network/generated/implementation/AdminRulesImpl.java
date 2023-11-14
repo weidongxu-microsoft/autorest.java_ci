@@ -21,74 +21,42 @@ public final class AdminRulesImpl implements AdminRules {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public AdminRulesImpl(
-        AdminRulesClient innerClient, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    public AdminRulesImpl(AdminRulesClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public PagedIterable<BaseAdminRule> list(
-        String resourceGroupName, String networkManagerName, String configurationName, String ruleCollectionName) {
-        PagedIterable<BaseAdminRuleInner> inner =
-            this.serviceClient().list(resourceGroupName, networkManagerName, configurationName, ruleCollectionName);
+    public PagedIterable<BaseAdminRule> list(String resourceGroupName, String networkManagerName,
+        String configurationName, String ruleCollectionName) {
+        PagedIterable<BaseAdminRuleInner> inner
+            = this.serviceClient().list(resourceGroupName, networkManagerName, configurationName, ruleCollectionName);
         return Utils.mapPage(inner, inner1 -> new BaseAdminRuleImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<BaseAdminRule> list(
-        String resourceGroupName,
-        String networkManagerName,
-        String configurationName,
-        String ruleCollectionName,
-        Integer top,
-        String skipToken,
-        Context context) {
-        PagedIterable<BaseAdminRuleInner> inner =
-            this
-                .serviceClient()
-                .list(
-                    resourceGroupName,
-                    networkManagerName,
-                    configurationName,
-                    ruleCollectionName,
-                    top,
-                    skipToken,
-                    context);
+    public PagedIterable<BaseAdminRule> list(String resourceGroupName, String networkManagerName,
+        String configurationName, String ruleCollectionName, Integer top, String skipToken, Context context) {
+        PagedIterable<BaseAdminRuleInner> inner = this.serviceClient().list(resourceGroupName, networkManagerName,
+            configurationName, ruleCollectionName, top, skipToken, context);
         return Utils.mapPage(inner, inner1 -> new BaseAdminRuleImpl(inner1, this.manager()));
     }
 
-    public Response<BaseAdminRule> getWithResponse(
-        String resourceGroupName,
-        String networkManagerName,
-        String configurationName,
-        String ruleCollectionName,
-        String ruleName,
-        Context context) {
-        Response<BaseAdminRuleInner> inner =
-            this
-                .serviceClient()
-                .getWithResponse(
-                    resourceGroupName, networkManagerName, configurationName, ruleCollectionName, ruleName, context);
+    public Response<BaseAdminRule> getWithResponse(String resourceGroupName, String networkManagerName,
+        String configurationName, String ruleCollectionName, String ruleName, Context context) {
+        Response<BaseAdminRuleInner> inner = this.serviceClient().getWithResponse(resourceGroupName, networkManagerName,
+            configurationName, ruleCollectionName, ruleName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new BaseAdminRuleImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public BaseAdminRule get(
-        String resourceGroupName,
-        String networkManagerName,
-        String configurationName,
-        String ruleCollectionName,
-        String ruleName) {
-        BaseAdminRuleInner inner =
-            this
-                .serviceClient()
-                .get(resourceGroupName, networkManagerName, configurationName, ruleCollectionName, ruleName);
+    public BaseAdminRule get(String resourceGroupName, String networkManagerName, String configurationName,
+        String ruleCollectionName, String ruleName) {
+        BaseAdminRuleInner inner = this.serviceClient().get(resourceGroupName, networkManagerName, configurationName,
+            ruleCollectionName, ruleName);
         if (inner != null) {
             return new BaseAdminRuleImpl(inner, this.manager());
         } else {
@@ -96,48 +64,23 @@ public final class AdminRulesImpl implements AdminRules {
         }
     }
 
-    public Response<BaseAdminRule> createOrUpdateWithResponse(
-        String resourceGroupName,
-        String networkManagerName,
-        String configurationName,
-        String ruleCollectionName,
-        String ruleName,
-        BaseAdminRuleInner adminRule,
+    public Response<BaseAdminRule> createOrUpdateWithResponse(String resourceGroupName, String networkManagerName,
+        String configurationName, String ruleCollectionName, String ruleName, BaseAdminRuleInner adminRule,
         Context context) {
-        Response<BaseAdminRuleInner> inner =
-            this
-                .serviceClient()
-                .createOrUpdateWithResponse(
-                    resourceGroupName,
-                    networkManagerName,
-                    configurationName,
-                    ruleCollectionName,
-                    ruleName,
-                    adminRule,
-                    context);
+        Response<BaseAdminRuleInner> inner = this.serviceClient().createOrUpdateWithResponse(resourceGroupName,
+            networkManagerName, configurationName, ruleCollectionName, ruleName, adminRule, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new BaseAdminRuleImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public BaseAdminRule createOrUpdate(
-        String resourceGroupName,
-        String networkManagerName,
-        String configurationName,
-        String ruleCollectionName,
-        String ruleName,
-        BaseAdminRuleInner adminRule) {
-        BaseAdminRuleInner inner =
-            this
-                .serviceClient()
-                .createOrUpdate(
-                    resourceGroupName, networkManagerName, configurationName, ruleCollectionName, ruleName, adminRule);
+    public BaseAdminRule createOrUpdate(String resourceGroupName, String networkManagerName, String configurationName,
+        String ruleCollectionName, String ruleName, BaseAdminRuleInner adminRule) {
+        BaseAdminRuleInner inner = this.serviceClient().createOrUpdate(resourceGroupName, networkManagerName,
+            configurationName, ruleCollectionName, ruleName, adminRule);
         if (inner != null) {
             return new BaseAdminRuleImpl(inner, this.manager());
         } else {
@@ -145,29 +88,16 @@ public final class AdminRulesImpl implements AdminRules {
         }
     }
 
-    public void delete(
-        String resourceGroupName,
-        String networkManagerName,
-        String configurationName,
-        String ruleCollectionName,
-        String ruleName) {
-        this
-            .serviceClient()
-            .delete(resourceGroupName, networkManagerName, configurationName, ruleCollectionName, ruleName);
+    public void delete(String resourceGroupName, String networkManagerName, String configurationName,
+        String ruleCollectionName, String ruleName) {
+        this.serviceClient().delete(resourceGroupName, networkManagerName, configurationName, ruleCollectionName,
+            ruleName);
     }
 
-    public void delete(
-        String resourceGroupName,
-        String networkManagerName,
-        String configurationName,
-        String ruleCollectionName,
-        String ruleName,
-        Boolean force,
-        Context context) {
-        this
-            .serviceClient()
-            .delete(
-                resourceGroupName, networkManagerName, configurationName, ruleCollectionName, ruleName, force, context);
+    public void delete(String resourceGroupName, String networkManagerName, String configurationName,
+        String ruleCollectionName, String ruleName, Boolean force, Context context) {
+        this.serviceClient().delete(resourceGroupName, networkManagerName, configurationName, ruleCollectionName,
+            ruleName, force, context);
     }
 
     private AdminRulesClient serviceClient() {

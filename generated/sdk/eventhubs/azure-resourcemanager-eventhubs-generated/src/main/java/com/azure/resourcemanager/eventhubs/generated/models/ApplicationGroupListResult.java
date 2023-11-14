@@ -9,7 +9,9 @@ import com.azure.resourcemanager.eventhubs.generated.fluent.models.ApplicationGr
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The response from the List Application Groups operation. */
+/**
+ * The response from the List Application Groups operation.
+ */
 @Fluent
 public final class ApplicationGroupListResult {
     /*
@@ -24,13 +26,15 @@ public final class ApplicationGroupListResult {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
-    /** Creates an instance of ApplicationGroupListResult class. */
+    /**
+     * Creates an instance of ApplicationGroupListResult class.
+     */
     public ApplicationGroupListResult() {
     }
 
     /**
      * Get the value property: Result of the List Application Groups operation.
-     *
+     * 
      * @return the value value.
      */
     public List<ApplicationGroupInner> value() {
@@ -39,7 +43,7 @@ public final class ApplicationGroupListResult {
 
     /**
      * Set the value property: Result of the List Application Groups operation.
-     *
+     * 
      * @param value the value value to set.
      * @return the ApplicationGroupListResult object itself.
      */
@@ -51,7 +55,7 @@ public final class ApplicationGroupListResult {
     /**
      * Get the nextLink property: Link to the next set of results. Not empty if Value contains an incomplete list of
      * Authorization Rules.
-     *
+     * 
      * @return the nextLink value.
      */
     public String nextLink() {
@@ -60,7 +64,7 @@ public final class ApplicationGroupListResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

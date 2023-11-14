@@ -8,81 +8,83 @@ import com.azure.resourcemanager.resources.generated.fluent.models.GenericResour
 import java.time.OffsetDateTime;
 import java.util.Map;
 
-/** An immutable client-side representation of GenericResourceExpanded. */
+/**
+ * An immutable client-side representation of GenericResourceExpanded.
+ */
 public interface GenericResourceExpanded {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the name property: The name of the resource.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the type property: The type of the resource.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the location property: The geo-location where the resource lives.
-     *
+     * 
      * @return the location value.
      */
     String location();
 
     /**
      * Gets the tags property: Resource tags.
-     *
+     * 
      * @return the tags value.
      */
     Map<String, String> tags();
 
     /**
      * Gets the plan property: The plan of the resource.
-     *
+     * 
      * @return the plan value.
      */
     Plan plan();
 
     /**
      * Gets the properties property: The resource properties.
-     *
+     * 
      * @return the properties value.
      */
     Object properties();
 
     /**
      * Gets the kind property: The kind of the resource.
-     *
+     * 
      * @return the kind value.
      */
     String kind();
 
     /**
      * Gets the managedBy property: ID of the resource that manages this resource.
-     *
+     * 
      * @return the managedBy value.
      */
     String managedBy();
 
     /**
      * Gets the sku property: The SKU of the resource.
-     *
+     * 
      * @return the sku value.
      */
     Sku sku();
 
     /**
      * Gets the identity property: The identity of the resource.
-     *
+     * 
      * @return the identity value.
      */
     Identity identity();
@@ -90,7 +92,7 @@ public interface GenericResourceExpanded {
     /**
      * Gets the createdTime property: The created time of the resource. This is only present if requested via the
      * $expand query parameter.
-     *
+     * 
      * @return the createdTime value.
      */
     OffsetDateTime createdTime();
@@ -98,7 +100,7 @@ public interface GenericResourceExpanded {
     /**
      * Gets the changedTime property: The changed time of the resource. This is only present if requested via the
      * $expand query parameter.
-     *
+     * 
      * @return the changedTime value.
      */
     OffsetDateTime changedTime();
@@ -106,14 +108,14 @@ public interface GenericResourceExpanded {
     /**
      * Gets the provisioningState property: The provisioning state of the resource. This is only present if requested
      * via the $expand query parameter.
-     *
+     * 
      * @return the provisioningState value.
      */
     String provisioningState();
 
     /**
      * Gets the inner com.azure.resourcemanager.resources.generated.fluent.models.GenericResourceExpandedInner object.
-     *
+     * 
      * @return the inner object.
      */
     GenericResourceExpandedInner innerModel();

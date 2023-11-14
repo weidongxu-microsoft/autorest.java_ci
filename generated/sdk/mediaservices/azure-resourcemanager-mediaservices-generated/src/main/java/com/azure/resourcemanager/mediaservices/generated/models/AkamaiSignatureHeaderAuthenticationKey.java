@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
-/** Akamai Signature Header authentication key. */
+/**
+ * Akamai Signature Header authentication key.
+ */
 @Fluent
 public final class AkamaiSignatureHeaderAuthenticationKey {
     /*
@@ -29,13 +31,15 @@ public final class AkamaiSignatureHeaderAuthenticationKey {
     @JsonProperty(value = "expiration")
     private OffsetDateTime expiration;
 
-    /** Creates an instance of AkamaiSignatureHeaderAuthenticationKey class. */
+    /**
+     * Creates an instance of AkamaiSignatureHeaderAuthenticationKey class.
+     */
     public AkamaiSignatureHeaderAuthenticationKey() {
     }
 
     /**
      * Get the identifier property: identifier of the key.
-     *
+     * 
      * @return the identifier value.
      */
     public String identifier() {
@@ -44,7 +48,7 @@ public final class AkamaiSignatureHeaderAuthenticationKey {
 
     /**
      * Set the identifier property: identifier of the key.
-     *
+     * 
      * @param identifier the identifier value to set.
      * @return the AkamaiSignatureHeaderAuthenticationKey object itself.
      */
@@ -55,7 +59,7 @@ public final class AkamaiSignatureHeaderAuthenticationKey {
 
     /**
      * Get the base64Key property: authentication key.
-     *
+     * 
      * @return the base64Key value.
      */
     public String base64Key() {
@@ -64,7 +68,7 @@ public final class AkamaiSignatureHeaderAuthenticationKey {
 
     /**
      * Set the base64Key property: authentication key.
-     *
+     * 
      * @param base64Key the base64Key value to set.
      * @return the AkamaiSignatureHeaderAuthenticationKey object itself.
      */
@@ -75,7 +79,7 @@ public final class AkamaiSignatureHeaderAuthenticationKey {
 
     /**
      * Get the expiration property: The expiration time of the authentication key.
-     *
+     * 
      * @return the expiration value.
      */
     public OffsetDateTime expiration() {
@@ -84,7 +88,7 @@ public final class AkamaiSignatureHeaderAuthenticationKey {
 
     /**
      * Set the expiration property: The expiration time of the authentication key.
-     *
+     * 
      * @param expiration the expiration value to set.
      * @return the AkamaiSignatureHeaderAuthenticationKey object itself.
      */
@@ -95,7 +99,7 @@ public final class AkamaiSignatureHeaderAuthenticationKey {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

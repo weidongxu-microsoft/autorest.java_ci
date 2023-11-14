@@ -9,7 +9,9 @@ import com.azure.core.management.ProxyResource;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
-/** Represents a log file. */
+/**
+ * Represents a log file.
+ */
 @Fluent
 public final class LogFileInner extends ProxyResource {
     /*
@@ -18,13 +20,15 @@ public final class LogFileInner extends ProxyResource {
     @JsonProperty(value = "properties")
     private LogFileProperties innerProperties;
 
-    /** Creates an instance of LogFileInner class. */
+    /**
+     * Creates an instance of LogFileInner class.
+     */
     public LogFileInner() {
     }
 
     /**
      * Get the innerProperties property: The properties of the log file.
-     *
+     * 
      * @return the innerProperties value.
      */
     private LogFileProperties innerProperties() {
@@ -33,7 +37,7 @@ public final class LogFileInner extends ProxyResource {
 
     /**
      * Get the sizeInKB property: Size of the log file.
-     *
+     * 
      * @return the sizeInKB value.
      */
     public Long sizeInKB() {
@@ -42,7 +46,7 @@ public final class LogFileInner extends ProxyResource {
 
     /**
      * Set the sizeInKB property: Size of the log file.
-     *
+     * 
      * @param sizeInKB the sizeInKB value to set.
      * @return the LogFileInner object itself.
      */
@@ -56,7 +60,7 @@ public final class LogFileInner extends ProxyResource {
 
     /**
      * Get the createdTime property: Creation timestamp of the log file.
-     *
+     * 
      * @return the createdTime value.
      */
     public OffsetDateTime createdTime() {
@@ -65,7 +69,7 @@ public final class LogFileInner extends ProxyResource {
 
     /**
      * Get the lastModifiedTime property: Last modified timestamp of the log file.
-     *
+     * 
      * @return the lastModifiedTime value.
      */
     public OffsetDateTime lastModifiedTime() {
@@ -74,7 +78,7 @@ public final class LogFileInner extends ProxyResource {
 
     /**
      * Get the type property: Type of the log file.
-     *
+     * 
      * @return the type value.
      */
     public String typePropertiesType() {
@@ -83,7 +87,7 @@ public final class LogFileInner extends ProxyResource {
 
     /**
      * Set the type property: Type of the log file.
-     *
+     * 
      * @param type the type value to set.
      * @return the LogFileInner object itself.
      */
@@ -97,7 +101,7 @@ public final class LogFileInner extends ProxyResource {
 
     /**
      * Get the url property: The url to download the log file from.
-     *
+     * 
      * @return the url value.
      */
     public String url() {
@@ -106,7 +110,7 @@ public final class LogFileInner extends ProxyResource {
 
     /**
      * Set the url property: The url to download the log file from.
-     *
+     * 
      * @param url the url value to set.
      * @return the LogFileInner object itself.
      */
@@ -120,7 +124,7 @@ public final class LogFileInner extends ProxyResource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -7,18 +7,20 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.resourcemanager.network.generated.fluent.models.EffectiveNetworkSecurityGroupListResultInner;
 import java.util.List;
 
-/** An immutable client-side representation of EffectiveNetworkSecurityGroupListResult. */
+/**
+ * An immutable client-side representation of EffectiveNetworkSecurityGroupListResult.
+ */
 public interface EffectiveNetworkSecurityGroupListResult {
     /**
      * Gets the value property: A list of effective network security groups.
-     *
+     * 
      * @return the value value.
      */
     List<EffectiveNetworkSecurityGroup> value();
 
     /**
      * Gets the nextLink property: The URL to get the next set of results.
-     *
+     * 
      * @return the nextLink value.
      */
     String nextLink();
@@ -26,7 +28,7 @@ public interface EffectiveNetworkSecurityGroupListResult {
     /**
      * Gets the inner
      * com.azure.resourcemanager.network.generated.fluent.models.EffectiveNetworkSecurityGroupListResultInner object.
-     *
+     * 
      * @return the inner object.
      */
     EffectiveNetworkSecurityGroupListResultInner innerModel();

@@ -6,11 +6,13 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.util.Context;
 
-/** Resource collection API of DeviceCapacityChecks. */
+/**
+ * Resource collection API of DeviceCapacityChecks.
+ */
 public interface DeviceCapacityChecks {
     /**
      * Posts the device capacity request info to check feasibility.
-     *
+     * 
      * @param resourceGroupName The resource group name.
      * @param deviceName The device name.
      * @param deviceCapacityRequestInfo The device capacity request info.
@@ -18,12 +20,12 @@ public interface DeviceCapacityChecks {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void checkResourceCreationFeasibility(
-        String resourceGroupName, String deviceName, DeviceCapacityRequestInfo deviceCapacityRequestInfo);
+    void checkResourceCreationFeasibility(String resourceGroupName, String deviceName,
+        DeviceCapacityRequestInfo deviceCapacityRequestInfo);
 
     /**
      * Posts the device capacity request info to check feasibility.
-     *
+     * 
      * @param resourceGroupName The resource group name.
      * @param deviceName The device name.
      * @param deviceCapacityRequestInfo The device capacity request info.
@@ -33,10 +35,6 @@ public interface DeviceCapacityChecks {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void checkResourceCreationFeasibility(
-        String resourceGroupName,
-        String deviceName,
-        DeviceCapacityRequestInfo deviceCapacityRequestInfo,
-        String capacityName,
-        Context context);
+    void checkResourceCreationFeasibility(String resourceGroupName, String deviceName,
+        DeviceCapacityRequestInfo deviceCapacityRequestInfo, String capacityName, Context context);
 }

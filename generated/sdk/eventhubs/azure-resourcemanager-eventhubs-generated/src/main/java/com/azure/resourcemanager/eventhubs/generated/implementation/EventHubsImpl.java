@@ -26,60 +26,43 @@ public final class EventHubsImpl implements EventHubs {
 
     private final com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager;
 
-    public EventHubsImpl(
-        EventHubsClient innerClient, com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager) {
+    public EventHubsImpl(EventHubsClient innerClient,
+        com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public PagedIterable<AuthorizationRule> listAuthorizationRules(
-        String resourceGroupName, String namespaceName, String eventHubName) {
-        PagedIterable<AuthorizationRuleInner> inner =
-            this.serviceClient().listAuthorizationRules(resourceGroupName, namespaceName, eventHubName);
+    public PagedIterable<AuthorizationRule> listAuthorizationRules(String resourceGroupName, String namespaceName,
+        String eventHubName) {
+        PagedIterable<AuthorizationRuleInner> inner
+            = this.serviceClient().listAuthorizationRules(resourceGroupName, namespaceName, eventHubName);
         return Utils.mapPage(inner, inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<AuthorizationRule> listAuthorizationRules(
-        String resourceGroupName, String namespaceName, String eventHubName, Context context) {
-        PagedIterable<AuthorizationRuleInner> inner =
-            this.serviceClient().listAuthorizationRules(resourceGroupName, namespaceName, eventHubName, context);
+    public PagedIterable<AuthorizationRule> listAuthorizationRules(String resourceGroupName, String namespaceName,
+        String eventHubName, Context context) {
+        PagedIterable<AuthorizationRuleInner> inner
+            = this.serviceClient().listAuthorizationRules(resourceGroupName, namespaceName, eventHubName, context);
         return Utils.mapPage(inner, inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
     }
 
-    public Response<AuthorizationRule> createOrUpdateAuthorizationRuleWithResponse(
-        String resourceGroupName,
-        String namespaceName,
-        String eventHubName,
-        String authorizationRuleName,
-        AuthorizationRuleInner parameters,
+    public Response<AuthorizationRule> createOrUpdateAuthorizationRuleWithResponse(String resourceGroupName,
+        String namespaceName, String eventHubName, String authorizationRuleName, AuthorizationRuleInner parameters,
         Context context) {
-        Response<AuthorizationRuleInner> inner =
-            this
-                .serviceClient()
-                .createOrUpdateAuthorizationRuleWithResponse(
-                    resourceGroupName, namespaceName, eventHubName, authorizationRuleName, parameters, context);
+        Response<AuthorizationRuleInner> inner = this.serviceClient().createOrUpdateAuthorizationRuleWithResponse(
+            resourceGroupName, namespaceName, eventHubName, authorizationRuleName, parameters, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new AuthorizationRuleImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public AuthorizationRule createOrUpdateAuthorizationRule(
-        String resourceGroupName,
-        String namespaceName,
-        String eventHubName,
-        String authorizationRuleName,
-        AuthorizationRuleInner parameters) {
-        AuthorizationRuleInner inner =
-            this
-                .serviceClient()
-                .createOrUpdateAuthorizationRule(
-                    resourceGroupName, namespaceName, eventHubName, authorizationRuleName, parameters);
+    public AuthorizationRule createOrUpdateAuthorizationRule(String resourceGroupName, String namespaceName,
+        String eventHubName, String authorizationRuleName, AuthorizationRuleInner parameters) {
+        AuthorizationRuleInner inner = this.serviceClient().createOrUpdateAuthorizationRule(resourceGroupName,
+            namespaceName, eventHubName, authorizationRuleName, parameters);
         if (inner != null) {
             return new AuthorizationRuleImpl(inner, this.manager());
         } else {
@@ -87,34 +70,22 @@ public final class EventHubsImpl implements EventHubs {
         }
     }
 
-    public Response<AuthorizationRule> getAuthorizationRuleWithResponse(
-        String resourceGroupName,
-        String namespaceName,
-        String eventHubName,
-        String authorizationRuleName,
-        Context context) {
-        Response<AuthorizationRuleInner> inner =
-            this
-                .serviceClient()
-                .getAuthorizationRuleWithResponse(
-                    resourceGroupName, namespaceName, eventHubName, authorizationRuleName, context);
+    public Response<AuthorizationRule> getAuthorizationRuleWithResponse(String resourceGroupName, String namespaceName,
+        String eventHubName, String authorizationRuleName, Context context) {
+        Response<AuthorizationRuleInner> inner = this.serviceClient().getAuthorizationRuleWithResponse(
+            resourceGroupName, namespaceName, eventHubName, authorizationRuleName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new AuthorizationRuleImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public AuthorizationRule getAuthorizationRule(
-        String resourceGroupName, String namespaceName, String eventHubName, String authorizationRuleName) {
-        AuthorizationRuleInner inner =
-            this
-                .serviceClient()
-                .getAuthorizationRule(resourceGroupName, namespaceName, eventHubName, authorizationRuleName);
+    public AuthorizationRule getAuthorizationRule(String resourceGroupName, String namespaceName, String eventHubName,
+        String authorizationRuleName) {
+        AuthorizationRuleInner inner = this.serviceClient().getAuthorizationRule(resourceGroupName, namespaceName,
+            eventHubName, authorizationRuleName);
         if (inner != null) {
             return new AuthorizationRuleImpl(inner, this.manager());
         } else {
@@ -122,50 +93,34 @@ public final class EventHubsImpl implements EventHubs {
         }
     }
 
-    public Response<Void> deleteAuthorizationRuleWithResponse(
-        String resourceGroupName,
-        String namespaceName,
-        String eventHubName,
-        String authorizationRuleName,
-        Context context) {
-        return this
-            .serviceClient()
-            .deleteAuthorizationRuleWithResponse(
-                resourceGroupName, namespaceName, eventHubName, authorizationRuleName, context);
+    public Response<Void> deleteAuthorizationRuleWithResponse(String resourceGroupName, String namespaceName,
+        String eventHubName, String authorizationRuleName, Context context) {
+        return this.serviceClient().deleteAuthorizationRuleWithResponse(resourceGroupName, namespaceName, eventHubName,
+            authorizationRuleName, context);
     }
 
-    public void deleteAuthorizationRule(
-        String resourceGroupName, String namespaceName, String eventHubName, String authorizationRuleName) {
-        this
-            .serviceClient()
-            .deleteAuthorizationRule(resourceGroupName, namespaceName, eventHubName, authorizationRuleName);
+    public void deleteAuthorizationRule(String resourceGroupName, String namespaceName, String eventHubName,
+        String authorizationRuleName) {
+        this.serviceClient().deleteAuthorizationRule(resourceGroupName, namespaceName, eventHubName,
+            authorizationRuleName);
     }
 
-    public Response<AccessKeys> listKeysWithResponse(
-        String resourceGroupName,
-        String namespaceName,
-        String eventHubName,
-        String authorizationRuleName,
-        Context context) {
-        Response<AccessKeysInner> inner =
-            this
-                .serviceClient()
-                .listKeysWithResponse(resourceGroupName, namespaceName, eventHubName, authorizationRuleName, context);
+    public Response<AccessKeys> listKeysWithResponse(String resourceGroupName, String namespaceName,
+        String eventHubName, String authorizationRuleName, Context context) {
+        Response<AccessKeysInner> inner = this.serviceClient().listKeysWithResponse(resourceGroupName, namespaceName,
+            eventHubName, authorizationRuleName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new AccessKeysImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public AccessKeys listKeys(
-        String resourceGroupName, String namespaceName, String eventHubName, String authorizationRuleName) {
-        AccessKeysInner inner =
-            this.serviceClient().listKeys(resourceGroupName, namespaceName, eventHubName, authorizationRuleName);
+    public AccessKeys listKeys(String resourceGroupName, String namespaceName, String eventHubName,
+        String authorizationRuleName) {
+        AccessKeysInner inner
+            = this.serviceClient().listKeys(resourceGroupName, namespaceName, eventHubName, authorizationRuleName);
         if (inner != null) {
             return new AccessKeysImpl(inner, this.manager());
         } else {
@@ -173,39 +128,22 @@ public final class EventHubsImpl implements EventHubs {
         }
     }
 
-    public Response<AccessKeys> regenerateKeysWithResponse(
-        String resourceGroupName,
-        String namespaceName,
-        String eventHubName,
-        String authorizationRuleName,
-        RegenerateAccessKeyParameters parameters,
-        Context context) {
-        Response<AccessKeysInner> inner =
-            this
-                .serviceClient()
-                .regenerateKeysWithResponse(
-                    resourceGroupName, namespaceName, eventHubName, authorizationRuleName, parameters, context);
+    public Response<AccessKeys> regenerateKeysWithResponse(String resourceGroupName, String namespaceName,
+        String eventHubName, String authorizationRuleName, RegenerateAccessKeyParameters parameters, Context context) {
+        Response<AccessKeysInner> inner = this.serviceClient().regenerateKeysWithResponse(resourceGroupName,
+            namespaceName, eventHubName, authorizationRuleName, parameters, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new AccessKeysImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public AccessKeys regenerateKeys(
-        String resourceGroupName,
-        String namespaceName,
-        String eventHubName,
-        String authorizationRuleName,
-        RegenerateAccessKeyParameters parameters) {
-        AccessKeysInner inner =
-            this
-                .serviceClient()
-                .regenerateKeys(resourceGroupName, namespaceName, eventHubName, authorizationRuleName, parameters);
+    public AccessKeys regenerateKeys(String resourceGroupName, String namespaceName, String eventHubName,
+        String authorizationRuleName, RegenerateAccessKeyParameters parameters) {
+        AccessKeysInner inner = this.serviceClient().regenerateKeys(resourceGroupName, namespaceName, eventHubName,
+            authorizationRuleName, parameters);
         if (inner != null) {
             return new AccessKeysImpl(inner, this.manager());
         } else {
@@ -218,15 +156,15 @@ public final class EventHubsImpl implements EventHubs {
         return Utils.mapPage(inner, inner1 -> new EventhubImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<Eventhub> listByNamespace(
-        String resourceGroupName, String namespaceName, Integer skip, Integer top, Context context) {
-        PagedIterable<EventhubInner> inner =
-            this.serviceClient().listByNamespace(resourceGroupName, namespaceName, skip, top, context);
+    public PagedIterable<Eventhub> listByNamespace(String resourceGroupName, String namespaceName, Integer skip,
+        Integer top, Context context) {
+        PagedIterable<EventhubInner> inner
+            = this.serviceClient().listByNamespace(resourceGroupName, namespaceName, skip, top, context);
         return Utils.mapPage(inner, inner1 -> new EventhubImpl(inner1, this.manager()));
     }
 
-    public Response<Void> deleteWithResponse(
-        String resourceGroupName, String namespaceName, String eventHubName, Context context) {
+    public Response<Void> deleteWithResponse(String resourceGroupName, String namespaceName, String eventHubName,
+        Context context) {
         return this.serviceClient().deleteWithResponse(resourceGroupName, namespaceName, eventHubName, context);
     }
 
@@ -234,15 +172,12 @@ public final class EventHubsImpl implements EventHubs {
         this.serviceClient().delete(resourceGroupName, namespaceName, eventHubName);
     }
 
-    public Response<Eventhub> getWithResponse(
-        String resourceGroupName, String namespaceName, String eventHubName, Context context) {
-        Response<EventhubInner> inner =
-            this.serviceClient().getWithResponse(resourceGroupName, namespaceName, eventHubName, context);
+    public Response<Eventhub> getWithResponse(String resourceGroupName, String namespaceName, String eventHubName,
+        Context context) {
+        Response<EventhubInner> inner
+            = this.serviceClient().getWithResponse(resourceGroupName, namespaceName, eventHubName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new EventhubImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -261,25 +196,18 @@ public final class EventHubsImpl implements EventHubs {
     public Eventhub getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
         String eventHubName = Utils.getValueFromIdByName(id, "eventhubs");
         if (eventHubName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'eventhubs'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'eventhubs'.", id)));
         }
         return this.getWithResponse(resourceGroupName, namespaceName, eventHubName, Context.NONE).getValue();
     }
@@ -287,25 +215,18 @@ public final class EventHubsImpl implements EventHubs {
     public Response<Eventhub> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
         String eventHubName = Utils.getValueFromIdByName(id, "eventhubs");
         if (eventHubName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'eventhubs'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'eventhubs'.", id)));
         }
         return this.getWithResponse(resourceGroupName, namespaceName, eventHubName, context);
     }
@@ -313,25 +234,18 @@ public final class EventHubsImpl implements EventHubs {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
         String eventHubName = Utils.getValueFromIdByName(id, "eventhubs");
         if (eventHubName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'eventhubs'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'eventhubs'.", id)));
         }
         this.deleteWithResponse(resourceGroupName, namespaceName, eventHubName, Context.NONE);
     }
@@ -339,25 +253,18 @@ public final class EventHubsImpl implements EventHubs {
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
         String eventHubName = Utils.getValueFromIdByName(id, "eventhubs");
         if (eventHubName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'eventhubs'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'eventhubs'.", id)));
         }
         return this.deleteWithResponse(resourceGroupName, namespaceName, eventHubName, context);
     }

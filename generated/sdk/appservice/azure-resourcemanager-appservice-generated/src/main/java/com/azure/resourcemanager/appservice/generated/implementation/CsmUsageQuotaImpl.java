@@ -14,8 +14,7 @@ public final class CsmUsageQuotaImpl implements CsmUsageQuota {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    CsmUsageQuotaImpl(
-        CsmUsageQuotaInner innerObject,
+    CsmUsageQuotaImpl(CsmUsageQuotaInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

@@ -18,8 +18,7 @@ public final class DiagnosticAnalysisImpl implements DiagnosticAnalysis {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    DiagnosticAnalysisImpl(
-        DiagnosticAnalysisInner innerObject,
+    DiagnosticAnalysisImpl(DiagnosticAnalysisInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

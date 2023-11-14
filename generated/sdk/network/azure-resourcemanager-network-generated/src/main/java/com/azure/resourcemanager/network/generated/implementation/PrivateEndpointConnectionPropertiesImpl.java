@@ -16,8 +16,7 @@ public final class PrivateEndpointConnectionPropertiesImpl implements PrivateEnd
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    PrivateEndpointConnectionPropertiesImpl(
-        PrivateEndpointConnectionPropertiesInner innerObject,
+    PrivateEndpointConnectionPropertiesImpl(PrivateEndpointConnectionPropertiesInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

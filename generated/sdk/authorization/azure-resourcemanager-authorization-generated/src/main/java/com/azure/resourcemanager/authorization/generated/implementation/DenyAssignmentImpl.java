@@ -16,8 +16,7 @@ public final class DenyAssignmentImpl implements DenyAssignment {
 
     private final com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager;
 
-    DenyAssignmentImpl(
-        DenyAssignmentInner innerObject,
+    DenyAssignmentImpl(DenyAssignmentInner innerObject,
         com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

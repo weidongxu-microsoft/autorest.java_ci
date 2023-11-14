@@ -15,8 +15,8 @@ public final class LocalUserKeysImpl implements LocalUserKeys {
 
     private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
-    LocalUserKeysImpl(
-        LocalUserKeysInner innerObject, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
+    LocalUserKeysImpl(LocalUserKeysInner innerObject,
+        com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -14,8 +14,8 @@ public final class DeploymentImpl implements Deployment, Deployment.Definition {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    DeploymentImpl(
-        DeploymentInner innerObject, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
+    DeploymentImpl(DeploymentInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -93,22 +93,14 @@ public final class DeploymentImpl implements Deployment, Deployment.Definition {
     }
 
     public Deployment create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApps()
-                .createDeploymentWithResponse(resourceGroupName, name, id, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getWebApps()
+            .createDeploymentWithResponse(resourceGroupName, name, id, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public Deployment create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApps()
-                .createDeploymentWithResponse(resourceGroupName, name, id, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getWebApps()
+            .createDeploymentWithResponse(resourceGroupName, name, id, this.innerModel(), context).getValue();
         return this;
     }
 
@@ -119,22 +111,14 @@ public final class DeploymentImpl implements Deployment, Deployment.Definition {
     }
 
     public Deployment refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApps()
-                .getDeploymentWithResponse(resourceGroupName, name, id, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getWebApps()
+            .getDeploymentWithResponse(resourceGroupName, name, id, Context.NONE).getValue();
         return this;
     }
 
     public Deployment refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApps()
-                .getDeploymentWithResponse(resourceGroupName, name, id, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getWebApps()
+            .getDeploymentWithResponse(resourceGroupName, name, id, context).getValue();
         return this;
     }
 

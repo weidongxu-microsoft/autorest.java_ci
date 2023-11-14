@@ -14,7 +14,9 @@ import com.azure.resourcemanager.mediaservices.generated.models.NoEncryption;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
-/** A Streaming Policy resource. */
+/**
+ * A Streaming Policy resource.
+ */
 @Fluent
 public final class StreamingPolicyInner extends ProxyResource {
     /*
@@ -29,13 +31,15 @@ public final class StreamingPolicyInner extends ProxyResource {
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
-    /** Creates an instance of StreamingPolicyInner class. */
+    /**
+     * Creates an instance of StreamingPolicyInner class.
+     */
     public StreamingPolicyInner() {
     }
 
     /**
      * Get the innerProperties property: Class to specify properties of Streaming Policy.
-     *
+     * 
      * @return the innerProperties value.
      */
     private StreamingPolicyProperties innerProperties() {
@@ -44,7 +48,7 @@ public final class StreamingPolicyInner extends ProxyResource {
 
     /**
      * Get the systemData property: The system metadata relating to this resource.
-     *
+     * 
      * @return the systemData value.
      */
     public SystemData systemData() {
@@ -53,7 +57,7 @@ public final class StreamingPolicyInner extends ProxyResource {
 
     /**
      * Get the created property: Creation time of Streaming Policy.
-     *
+     * 
      * @return the created value.
      */
     public OffsetDateTime created() {
@@ -62,7 +66,7 @@ public final class StreamingPolicyInner extends ProxyResource {
 
     /**
      * Get the defaultContentKeyPolicyName property: Default ContentKey used by current Streaming Policy.
-     *
+     * 
      * @return the defaultContentKeyPolicyName value.
      */
     public String defaultContentKeyPolicyName() {
@@ -71,7 +75,7 @@ public final class StreamingPolicyInner extends ProxyResource {
 
     /**
      * Set the defaultContentKeyPolicyName property: Default ContentKey used by current Streaming Policy.
-     *
+     * 
      * @param defaultContentKeyPolicyName the defaultContentKeyPolicyName value to set.
      * @return the StreamingPolicyInner object itself.
      */
@@ -85,7 +89,7 @@ public final class StreamingPolicyInner extends ProxyResource {
 
     /**
      * Get the envelopeEncryption property: Configuration of EnvelopeEncryption.
-     *
+     * 
      * @return the envelopeEncryption value.
      */
     public EnvelopeEncryption envelopeEncryption() {
@@ -94,7 +98,7 @@ public final class StreamingPolicyInner extends ProxyResource {
 
     /**
      * Set the envelopeEncryption property: Configuration of EnvelopeEncryption.
-     *
+     * 
      * @param envelopeEncryption the envelopeEncryption value to set.
      * @return the StreamingPolicyInner object itself.
      */
@@ -108,7 +112,7 @@ public final class StreamingPolicyInner extends ProxyResource {
 
     /**
      * Get the commonEncryptionCenc property: Configuration of CommonEncryptionCenc.
-     *
+     * 
      * @return the commonEncryptionCenc value.
      */
     public CommonEncryptionCenc commonEncryptionCenc() {
@@ -117,7 +121,7 @@ public final class StreamingPolicyInner extends ProxyResource {
 
     /**
      * Set the commonEncryptionCenc property: Configuration of CommonEncryptionCenc.
-     *
+     * 
      * @param commonEncryptionCenc the commonEncryptionCenc value to set.
      * @return the StreamingPolicyInner object itself.
      */
@@ -131,7 +135,7 @@ public final class StreamingPolicyInner extends ProxyResource {
 
     /**
      * Get the commonEncryptionCbcs property: Configuration of CommonEncryptionCbcs.
-     *
+     * 
      * @return the commonEncryptionCbcs value.
      */
     public CommonEncryptionCbcs commonEncryptionCbcs() {
@@ -140,7 +144,7 @@ public final class StreamingPolicyInner extends ProxyResource {
 
     /**
      * Set the commonEncryptionCbcs property: Configuration of CommonEncryptionCbcs.
-     *
+     * 
      * @param commonEncryptionCbcs the commonEncryptionCbcs value to set.
      * @return the StreamingPolicyInner object itself.
      */
@@ -154,7 +158,7 @@ public final class StreamingPolicyInner extends ProxyResource {
 
     /**
      * Get the noEncryption property: Configurations of NoEncryption.
-     *
+     * 
      * @return the noEncryption value.
      */
     public NoEncryption noEncryption() {
@@ -163,7 +167,7 @@ public final class StreamingPolicyInner extends ProxyResource {
 
     /**
      * Set the noEncryption property: Configurations of NoEncryption.
-     *
+     * 
      * @param noEncryption the noEncryption value to set.
      * @return the StreamingPolicyInner object itself.
      */
@@ -177,7 +181,7 @@ public final class StreamingPolicyInner extends ProxyResource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

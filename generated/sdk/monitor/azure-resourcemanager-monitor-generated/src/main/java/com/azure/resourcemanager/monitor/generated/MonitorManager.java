@@ -82,7 +82,10 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-/** Entry point to MonitorManager. Monitor Management Client. */
+/**
+ * Entry point to MonitorManager.
+ * Monitor Management Client.
+ */
 public final class MonitorManager {
     private AutoscaleSettings autoscaleSettings;
 
@@ -139,18 +142,14 @@ public final class MonitorManager {
     private MonitorManager(HttpPipeline httpPipeline, AzureProfile profile, Duration defaultPollInterval) {
         Objects.requireNonNull(httpPipeline, "'httpPipeline' cannot be null.");
         Objects.requireNonNull(profile, "'profile' cannot be null.");
-        this.clientObject =
-            new MonitorClientBuilder()
-                .pipeline(httpPipeline)
-                .endpoint(profile.getEnvironment().getResourceManagerEndpoint())
-                .subscriptionId(profile.getSubscriptionId())
-                .defaultPollInterval(defaultPollInterval)
-                .buildClient();
+        this.clientObject = new MonitorClientBuilder().pipeline(httpPipeline)
+            .endpoint(profile.getEnvironment().getResourceManagerEndpoint()).subscriptionId(profile.getSubscriptionId())
+            .defaultPollInterval(defaultPollInterval).buildClient();
     }
 
     /**
      * Creates an instance of Monitor service API entry point.
-     *
+     * 
      * @param credential the credential to use.
      * @param profile the Azure profile for client.
      * @return the Monitor service API instance.
@@ -163,7 +162,7 @@ public final class MonitorManager {
 
     /**
      * Creates an instance of Monitor service API entry point.
-     *
+     * 
      * @param httpPipeline the {@link HttpPipeline} configured with Azure authentication credential.
      * @param profile the Azure profile for client.
      * @return the Monitor service API instance.
@@ -176,14 +175,16 @@ public final class MonitorManager {
 
     /**
      * Gets a Configurable instance that can be used to create MonitorManager with optional configuration.
-     *
+     * 
      * @return the Configurable instance allowing configurations.
      */
     public static Configurable configure() {
         return new MonitorManager.Configurable();
     }
 
-    /** The Configurable allowing configurations to be set. */
+    /**
+     * The Configurable allowing configurations to be set.
+     */
     public static final class Configurable {
         private static final ClientLogger LOGGER = new ClientLogger(Configurable.class);
 
@@ -255,8 +256,8 @@ public final class MonitorManager {
 
         /**
          * Sets the retry options for the HTTP pipeline retry policy.
-         *
-         * <p>This setting has no effect, if retry policy is set via {@link #withRetryPolicy(RetryPolicy)}.
+         * <p>
+         * This setting has no effect, if retry policy is set via {@link #withRetryPolicy(RetryPolicy)}.
          *
          * @param retryOptions the retry options for the HTTP pipeline retry policy.
          * @return the configurable object itself.
@@ -273,8 +274,8 @@ public final class MonitorManager {
          * @return the configurable object itself.
          */
         public Configurable withDefaultPollInterval(Duration defaultPollInterval) {
-            this.defaultPollInterval =
-                Objects.requireNonNull(defaultPollInterval, "'defaultPollInterval' cannot be null.");
+            this.defaultPollInterval
+                = Objects.requireNonNull(defaultPollInterval, "'defaultPollInterval' cannot be null.");
             if (this.defaultPollInterval.isNegative()) {
                 throw LOGGER
                     .logExceptionAsError(new IllegalArgumentException("'defaultPollInterval' cannot be negative"));
@@ -294,21 +295,12 @@ public final class MonitorManager {
             Objects.requireNonNull(profile, "'profile' cannot be null.");
 
             StringBuilder userAgentBuilder = new StringBuilder();
-            userAgentBuilder
-                .append("azsdk-java")
-                .append("-")
-                .append("com.azure.resourcemanager.monitor.generated")
-                .append("/")
-                .append("1.0.0-beta.1");
+            userAgentBuilder.append("azsdk-java").append("-").append("com.azure.resourcemanager.monitor.generated")
+                .append("/").append("1.0.0-beta.1");
             if (!Configuration.getGlobalConfiguration().get("AZURE_TELEMETRY_DISABLED", false)) {
-                userAgentBuilder
-                    .append(" (")
-                    .append(Configuration.getGlobalConfiguration().get("java.version"))
-                    .append("; ")
-                    .append(Configuration.getGlobalConfiguration().get("os.name"))
-                    .append("; ")
-                    .append(Configuration.getGlobalConfiguration().get("os.version"))
-                    .append("; auto-generated)");
+                userAgentBuilder.append(" (").append(Configuration.getGlobalConfiguration().get("java.version"))
+                    .append("; ").append(Configuration.getGlobalConfiguration().get("os.name")).append("; ")
+                    .append(Configuration.getGlobalConfiguration().get("os.version")).append("; auto-generated)");
             } else {
                 userAgentBuilder.append(" (auto-generated)");
             }
@@ -327,38 +319,25 @@ public final class MonitorManager {
             policies.add(new UserAgentPolicy(userAgentBuilder.toString()));
             policies.add(new AddHeadersFromContextPolicy());
             policies.add(new RequestIdPolicy());
-            policies
-                .addAll(
-                    this
-                        .policies
-                        .stream()
-                        .filter(p -> p.getPipelinePosition() == HttpPipelinePosition.PER_CALL)
-                        .collect(Collectors.toList()));
+            policies.addAll(this.policies.stream().filter(p -> p.getPipelinePosition() == HttpPipelinePosition.PER_CALL)
+                .collect(Collectors.toList()));
             HttpPolicyProviders.addBeforeRetryPolicies(policies);
             policies.add(retryPolicy);
             policies.add(new AddDatePolicy());
             policies.add(new ArmChallengeAuthenticationPolicy(credential, scopes.toArray(new String[0])));
-            policies
-                .addAll(
-                    this
-                        .policies
-                        .stream()
-                        .filter(p -> p.getPipelinePosition() == HttpPipelinePosition.PER_RETRY)
-                        .collect(Collectors.toList()));
+            policies.addAll(this.policies.stream()
+                .filter(p -> p.getPipelinePosition() == HttpPipelinePosition.PER_RETRY).collect(Collectors.toList()));
             HttpPolicyProviders.addAfterRetryPolicies(policies);
             policies.add(new HttpLoggingPolicy(httpLogOptions));
-            HttpPipeline httpPipeline =
-                new HttpPipelineBuilder()
-                    .httpClient(httpClient)
-                    .policies(policies.toArray(new HttpPipelinePolicy[0]))
-                    .build();
+            HttpPipeline httpPipeline = new HttpPipelineBuilder().httpClient(httpClient)
+                .policies(policies.toArray(new HttpPipelinePolicy[0])).build();
             return new MonitorManager(httpPipeline, profile, defaultPollInterval);
         }
     }
 
     /**
      * Gets the resource collection API of AutoscaleSettings. It manages AutoscaleSettingResource.
-     *
+     * 
      * @return Resource collection API of AutoscaleSettings.
      */
     public AutoscaleSettings autoscaleSettings() {
@@ -370,7 +349,7 @@ public final class MonitorManager {
 
     /**
      * Gets the resource collection API of Operations.
-     *
+     * 
      * @return Resource collection API of Operations.
      */
     public Operations operations() {
@@ -382,7 +361,7 @@ public final class MonitorManager {
 
     /**
      * Gets the resource collection API of AlertRuleIncidents.
-     *
+     * 
      * @return Resource collection API of AlertRuleIncidents.
      */
     public AlertRuleIncidents alertRuleIncidents() {
@@ -394,7 +373,7 @@ public final class MonitorManager {
 
     /**
      * Gets the resource collection API of AlertRules. It manages AlertRuleResource.
-     *
+     * 
      * @return Resource collection API of AlertRules.
      */
     public AlertRules alertRules() {
@@ -406,7 +385,7 @@ public final class MonitorManager {
 
     /**
      * Gets the resource collection API of LogProfiles. It manages LogProfileResource.
-     *
+     * 
      * @return Resource collection API of LogProfiles.
      */
     public LogProfiles logProfiles() {
@@ -418,33 +397,33 @@ public final class MonitorManager {
 
     /**
      * Gets the resource collection API of DiagnosticSettingsOperations. It manages DiagnosticSettingsResource.
-     *
+     * 
      * @return Resource collection API of DiagnosticSettingsOperations.
      */
     public DiagnosticSettingsOperations diagnosticSettingsOperations() {
         if (this.diagnosticSettingsOperations == null) {
-            this.diagnosticSettingsOperations =
-                new DiagnosticSettingsOperationsImpl(clientObject.getDiagnosticSettingsOperations(), this);
+            this.diagnosticSettingsOperations
+                = new DiagnosticSettingsOperationsImpl(clientObject.getDiagnosticSettingsOperations(), this);
         }
         return diagnosticSettingsOperations;
     }
 
     /**
      * Gets the resource collection API of DiagnosticSettingsCategories.
-     *
+     * 
      * @return Resource collection API of DiagnosticSettingsCategories.
      */
     public DiagnosticSettingsCategories diagnosticSettingsCategories() {
         if (this.diagnosticSettingsCategories == null) {
-            this.diagnosticSettingsCategories =
-                new DiagnosticSettingsCategoriesImpl(clientObject.getDiagnosticSettingsCategories(), this);
+            this.diagnosticSettingsCategories
+                = new DiagnosticSettingsCategoriesImpl(clientObject.getDiagnosticSettingsCategories(), this);
         }
         return diagnosticSettingsCategories;
     }
 
     /**
      * Gets the resource collection API of ActionGroups. It manages ActionGroupResource.
-     *
+     * 
      * @return Resource collection API of ActionGroups.
      */
     public ActionGroups actionGroups() {
@@ -456,7 +435,7 @@ public final class MonitorManager {
 
     /**
      * Gets the resource collection API of ActivityLogAlerts. It manages ActivityLogAlertResource.
-     *
+     * 
      * @return Resource collection API of ActivityLogAlerts.
      */
     public ActivityLogAlerts activityLogAlerts() {
@@ -468,7 +447,7 @@ public final class MonitorManager {
 
     /**
      * Gets the resource collection API of ActivityLogs.
-     *
+     * 
      * @return Resource collection API of ActivityLogs.
      */
     public ActivityLogs activityLogs() {
@@ -480,7 +459,7 @@ public final class MonitorManager {
 
     /**
      * Gets the resource collection API of EventCategories.
-     *
+     * 
      * @return Resource collection API of EventCategories.
      */
     public EventCategories eventCategories() {
@@ -492,7 +471,7 @@ public final class MonitorManager {
 
     /**
      * Gets the resource collection API of TenantActivityLogs.
-     *
+     * 
      * @return Resource collection API of TenantActivityLogs.
      */
     public TenantActivityLogs tenantActivityLogs() {
@@ -504,7 +483,7 @@ public final class MonitorManager {
 
     /**
      * Gets the resource collection API of MetricDefinitions.
-     *
+     * 
      * @return Resource collection API of MetricDefinitions.
      */
     public MetricDefinitions metricDefinitions() {
@@ -516,7 +495,7 @@ public final class MonitorManager {
 
     /**
      * Gets the resource collection API of Metrics.
-     *
+     * 
      * @return Resource collection API of Metrics.
      */
     public Metrics metrics() {
@@ -528,7 +507,7 @@ public final class MonitorManager {
 
     /**
      * Gets the resource collection API of Baselines.
-     *
+     * 
      * @return Resource collection API of Baselines.
      */
     public Baselines baselines() {
@@ -540,7 +519,7 @@ public final class MonitorManager {
 
     /**
      * Gets the resource collection API of MetricAlerts. It manages MetricAlertResource.
-     *
+     * 
      * @return Resource collection API of MetricAlerts.
      */
     public MetricAlerts metricAlerts() {
@@ -552,7 +531,7 @@ public final class MonitorManager {
 
     /**
      * Gets the resource collection API of MetricAlertsStatus.
-     *
+     * 
      * @return Resource collection API of MetricAlertsStatus.
      */
     public MetricAlertsStatus metricAlertsStatus() {
@@ -564,7 +543,7 @@ public final class MonitorManager {
 
     /**
      * Gets the resource collection API of ScheduledQueryRules. It manages LogSearchRuleResource.
-     *
+     * 
      * @return Resource collection API of ScheduledQueryRules.
      */
     public ScheduledQueryRules scheduledQueryRules() {
@@ -576,7 +555,7 @@ public final class MonitorManager {
 
     /**
      * Gets the resource collection API of MetricNamespaces.
-     *
+     * 
      * @return Resource collection API of MetricNamespaces.
      */
     public MetricNamespaces metricNamespaces() {
@@ -588,7 +567,7 @@ public final class MonitorManager {
 
     /**
      * Gets the resource collection API of VMInsights.
-     *
+     * 
      * @return Resource collection API of VMInsights.
      */
     public VMInsights vMInsights() {
@@ -600,7 +579,7 @@ public final class MonitorManager {
 
     /**
      * Gets the resource collection API of PrivateLinkScopes. It manages AzureMonitorPrivateLinkScope.
-     *
+     * 
      * @return Resource collection API of PrivateLinkScopes.
      */
     public PrivateLinkScopes privateLinkScopes() {
@@ -612,20 +591,20 @@ public final class MonitorManager {
 
     /**
      * Gets the resource collection API of PrivateLinkScopeOperationStatus.
-     *
+     * 
      * @return Resource collection API of PrivateLinkScopeOperationStatus.
      */
     public PrivateLinkScopeOperationStatus privateLinkScopeOperationStatus() {
         if (this.privateLinkScopeOperationStatus == null) {
-            this.privateLinkScopeOperationStatus =
-                new PrivateLinkScopeOperationStatusImpl(clientObject.getPrivateLinkScopeOperationStatus(), this);
+            this.privateLinkScopeOperationStatus
+                = new PrivateLinkScopeOperationStatusImpl(clientObject.getPrivateLinkScopeOperationStatus(), this);
         }
         return privateLinkScopeOperationStatus;
     }
 
     /**
      * Gets the resource collection API of PrivateLinkResources.
-     *
+     * 
      * @return Resource collection API of PrivateLinkResources.
      */
     public PrivateLinkResources privateLinkResources() {
@@ -637,26 +616,26 @@ public final class MonitorManager {
 
     /**
      * Gets the resource collection API of PrivateEndpointConnections. It manages PrivateEndpointConnection.
-     *
+     * 
      * @return Resource collection API of PrivateEndpointConnections.
      */
     public PrivateEndpointConnections privateEndpointConnections() {
         if (this.privateEndpointConnections == null) {
-            this.privateEndpointConnections =
-                new PrivateEndpointConnectionsImpl(clientObject.getPrivateEndpointConnections(), this);
+            this.privateEndpointConnections
+                = new PrivateEndpointConnectionsImpl(clientObject.getPrivateEndpointConnections(), this);
         }
         return privateEndpointConnections;
     }
 
     /**
      * Gets the resource collection API of PrivateLinkScopedResources. It manages ScopedResource.
-     *
+     * 
      * @return Resource collection API of PrivateLinkScopedResources.
      */
     public PrivateLinkScopedResources privateLinkScopedResources() {
         if (this.privateLinkScopedResources == null) {
-            this.privateLinkScopedResources =
-                new PrivateLinkScopedResourcesImpl(clientObject.getPrivateLinkScopedResources(), this);
+            this.privateLinkScopedResources
+                = new PrivateLinkScopedResourcesImpl(clientObject.getPrivateLinkScopedResources(), this);
         }
         return privateLinkScopedResources;
     }
@@ -664,7 +643,7 @@ public final class MonitorManager {
     /**
      * Gets wrapped service client MonitorClient providing direct access to the underlying auto-generated API
      * implementation, based on Azure REST API.
-     *
+     * 
      * @return Wrapped service client MonitorClient.
      */
     public MonitorClient serviceClient() {

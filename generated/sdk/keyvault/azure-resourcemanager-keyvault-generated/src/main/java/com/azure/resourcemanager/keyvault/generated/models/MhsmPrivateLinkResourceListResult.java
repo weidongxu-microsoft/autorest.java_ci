@@ -7,11 +7,13 @@ package com.azure.resourcemanager.keyvault.generated.models;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.MhsmPrivateLinkResourceListResultInner;
 import java.util.List;
 
-/** An immutable client-side representation of MhsmPrivateLinkResourceListResult. */
+/**
+ * An immutable client-side representation of MhsmPrivateLinkResourceListResult.
+ */
 public interface MhsmPrivateLinkResourceListResult {
     /**
      * Gets the value property: Array of private link resources.
-     *
+     * 
      * @return the value value.
      */
     List<MhsmPrivateLinkResource> value();
@@ -19,7 +21,7 @@ public interface MhsmPrivateLinkResourceListResult {
     /**
      * Gets the inner com.azure.resourcemanager.keyvault.generated.fluent.models.MhsmPrivateLinkResourceListResultInner
      * object.
-     *
+     * 
      * @return the inner object.
      */
     MhsmPrivateLinkResourceListResultInner innerModel();

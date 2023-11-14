@@ -11,7 +11,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 import java.util.Map;
 
-/** The autoscale setting object for patch operations. */
+/**
+ * The autoscale setting object for patch operations.
+ */
 @Fluent
 public final class AutoscaleSettingResourcePatch {
     /*
@@ -27,13 +29,15 @@ public final class AutoscaleSettingResourcePatch {
     @JsonProperty(value = "properties")
     private AutoscaleSetting innerProperties;
 
-    /** Creates an instance of AutoscaleSettingResourcePatch class. */
+    /**
+     * Creates an instance of AutoscaleSettingResourcePatch class.
+     */
     public AutoscaleSettingResourcePatch() {
     }
 
     /**
      * Get the tags property: Resource tags.
-     *
+     * 
      * @return the tags value.
      */
     public Map<String, String> tags() {
@@ -42,7 +46,7 @@ public final class AutoscaleSettingResourcePatch {
 
     /**
      * Set the tags property: Resource tags.
-     *
+     * 
      * @param tags the tags value to set.
      * @return the AutoscaleSettingResourcePatch object itself.
      */
@@ -53,7 +57,7 @@ public final class AutoscaleSettingResourcePatch {
 
     /**
      * Get the innerProperties property: The autoscale setting properties of the update operation.
-     *
+     * 
      * @return the innerProperties value.
      */
     private AutoscaleSetting innerProperties() {
@@ -61,9 +65,9 @@ public final class AutoscaleSettingResourcePatch {
     }
 
     /**
-     * Get the profiles property: the collection of automatic scaling profiles that specify different scaling parameters
-     * for different time periods. A maximum of 20 profiles can be specified.
-     *
+     * Get the profiles property: the collection of automatic scaling profiles that specify different scaling
+     * parameters for different time periods. A maximum of 20 profiles can be specified.
+     * 
      * @return the profiles value.
      */
     public List<AutoscaleProfile> profiles() {
@@ -71,9 +75,9 @@ public final class AutoscaleSettingResourcePatch {
     }
 
     /**
-     * Set the profiles property: the collection of automatic scaling profiles that specify different scaling parameters
-     * for different time periods. A maximum of 20 profiles can be specified.
-     *
+     * Set the profiles property: the collection of automatic scaling profiles that specify different scaling
+     * parameters for different time periods. A maximum of 20 profiles can be specified.
+     * 
      * @param profiles the profiles value to set.
      * @return the AutoscaleSettingResourcePatch object itself.
      */
@@ -87,7 +91,7 @@ public final class AutoscaleSettingResourcePatch {
 
     /**
      * Get the notifications property: the collection of notifications.
-     *
+     * 
      * @return the notifications value.
      */
     public List<AutoscaleNotification> notifications() {
@@ -96,7 +100,7 @@ public final class AutoscaleSettingResourcePatch {
 
     /**
      * Set the notifications property: the collection of notifications.
-     *
+     * 
      * @param notifications the notifications value to set.
      * @return the AutoscaleSettingResourcePatch object itself.
      */
@@ -111,7 +115,7 @@ public final class AutoscaleSettingResourcePatch {
     /**
      * Get the enabled property: the enabled flag. Specifies whether automatic scaling is enabled for the resource. The
      * default value is 'false'.
-     *
+     * 
      * @return the enabled value.
      */
     public Boolean enabled() {
@@ -121,7 +125,7 @@ public final class AutoscaleSettingResourcePatch {
     /**
      * Set the enabled property: the enabled flag. Specifies whether automatic scaling is enabled for the resource. The
      * default value is 'false'.
-     *
+     * 
      * @param enabled the enabled value to set.
      * @return the AutoscaleSettingResourcePatch object itself.
      */
@@ -135,7 +139,7 @@ public final class AutoscaleSettingResourcePatch {
 
     /**
      * Get the name property: the name of the autoscale setting.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -144,7 +148,7 @@ public final class AutoscaleSettingResourcePatch {
 
     /**
      * Set the name property: the name of the autoscale setting.
-     *
+     * 
      * @param name the name value to set.
      * @return the AutoscaleSettingResourcePatch object itself.
      */
@@ -159,7 +163,7 @@ public final class AutoscaleSettingResourcePatch {
     /**
      * Get the targetResourceUri property: the resource identifier of the resource that the autoscale setting should be
      * added to.
-     *
+     * 
      * @return the targetResourceUri value.
      */
     public String targetResourceUri() {
@@ -169,7 +173,7 @@ public final class AutoscaleSettingResourcePatch {
     /**
      * Set the targetResourceUri property: the resource identifier of the resource that the autoscale setting should be
      * added to.
-     *
+     * 
      * @param targetResourceUri the targetResourceUri value to set.
      * @return the AutoscaleSettingResourcePatch object itself.
      */
@@ -184,7 +188,7 @@ public final class AutoscaleSettingResourcePatch {
     /**
      * Get the targetResourceLocation property: the location of the resource that the autoscale setting should be added
      * to.
-     *
+     * 
      * @return the targetResourceLocation value.
      */
     public String targetResourceLocation() {
@@ -194,7 +198,7 @@ public final class AutoscaleSettingResourcePatch {
     /**
      * Set the targetResourceLocation property: the location of the resource that the autoscale setting should be added
      * to.
-     *
+     * 
      * @param targetResourceLocation the targetResourceLocation value to set.
      * @return the AutoscaleSettingResourcePatch object itself.
      */
@@ -208,7 +212,7 @@ public final class AutoscaleSettingResourcePatch {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -10,7 +10,9 @@ import com.azure.core.management.SystemData;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
 
-/** Managed HSM resource. */
+/**
+ * Managed HSM resource.
+ */
 @Fluent
 public class ManagedHsmResource extends Resource {
     /*
@@ -25,13 +27,21 @@ public class ManagedHsmResource extends Resource {
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
-    /** Creates an instance of ManagedHsmResource class. */
+    /*
+     * Managed service identity (system assigned and/or user assigned identities)
+     */
+    @JsonProperty(value = "identity")
+    private ManagedServiceIdentity identity;
+
+    /**
+     * Creates an instance of ManagedHsmResource class.
+     */
     public ManagedHsmResource() {
     }
 
     /**
      * Get the sku property: SKU details.
-     *
+     * 
      * @return the sku value.
      */
     public ManagedHsmSku sku() {
@@ -40,7 +50,7 @@ public class ManagedHsmResource extends Resource {
 
     /**
      * Set the sku property: SKU details.
-     *
+     * 
      * @param sku the sku value to set.
      * @return the ManagedHsmResource object itself.
      */
@@ -51,21 +61,45 @@ public class ManagedHsmResource extends Resource {
 
     /**
      * Get the systemData property: Metadata pertaining to creation and last modification of the key vault resource.
-     *
+     * 
      * @return the systemData value.
      */
     public SystemData systemData() {
         return this.systemData;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * Get the identity property: Managed service identity (system assigned and/or user assigned identities).
+     * 
+     * @return the identity value.
+     */
+    public ManagedServiceIdentity identity() {
+        return this.identity;
+    }
+
+    /**
+     * Set the identity property: Managed service identity (system assigned and/or user assigned identities).
+     * 
+     * @param identity the identity value to set.
+     * @return the ManagedHsmResource object itself.
+     */
+    public ManagedHsmResource withIdentity(ManagedServiceIdentity identity) {
+        this.identity = identity;
+        return this;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ManagedHsmResource withLocation(String location) {
         super.withLocation(location);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ManagedHsmResource withTags(Map<String, String> tags) {
         super.withTags(tags);
@@ -74,12 +108,15 @@ public class ManagedHsmResource extends Resource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (sku() != null) {
             sku().validate();
+        }
+        if (identity() != null) {
+            identity().validate();
         }
     }
 }

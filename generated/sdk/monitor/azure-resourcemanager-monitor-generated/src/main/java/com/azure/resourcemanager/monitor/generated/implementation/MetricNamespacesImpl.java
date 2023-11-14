@@ -19,8 +19,8 @@ public final class MetricNamespacesImpl implements MetricNamespaces {
 
     private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    public MetricNamespacesImpl(
-        MetricNamespacesClient innerClient, com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
+    public MetricNamespacesImpl(MetricNamespacesClient innerClient,
+        com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }

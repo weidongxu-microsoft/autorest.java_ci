@@ -11,7 +11,9 @@ import com.azure.resourcemanager.databoxedge.generated.models.NetworkAdapter;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The network settings of a device. */
+/**
+ * The network settings of a device.
+ */
 @Immutable
 public final class NetworkSettingsInner extends ArmBaseModel {
     /*
@@ -26,13 +28,15 @@ public final class NetworkSettingsInner extends ArmBaseModel {
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
-    /** Creates an instance of NetworkSettingsInner class. */
+    /**
+     * Creates an instance of NetworkSettingsInner class.
+     */
     public NetworkSettingsInner() {
     }
 
     /**
      * Get the innerProperties property: The properties of network settings of a device.
-     *
+     * 
      * @return the innerProperties value.
      */
     private NetworkSettingsProperties innerProperties() {
@@ -41,7 +45,7 @@ public final class NetworkSettingsInner extends ArmBaseModel {
 
     /**
      * Get the systemData property: Metadata pertaining to creation and last modification of NetworkSettings.
-     *
+     * 
      * @return the systemData value.
      */
     public SystemData systemData() {
@@ -50,7 +54,7 @@ public final class NetworkSettingsInner extends ArmBaseModel {
 
     /**
      * Get the networkAdapters property: The network adapter list on the device.
-     *
+     * 
      * @return the networkAdapters value.
      */
     public List<NetworkAdapter> networkAdapters() {
@@ -59,7 +63,7 @@ public final class NetworkSettingsInner extends ArmBaseModel {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

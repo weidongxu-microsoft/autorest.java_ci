@@ -14,18 +14,24 @@ import java.util.Collection;
  */
 public final class RoutingStorageContainerPropertiesEncoding
     extends ExpandableStringEnum<RoutingStorageContainerPropertiesEncoding> {
-    /** Static value Avro for RoutingStorageContainerPropertiesEncoding. */
+    /**
+     * Static value Avro for RoutingStorageContainerPropertiesEncoding.
+     */
     public static final RoutingStorageContainerPropertiesEncoding AVRO = fromString("Avro");
 
-    /** Static value AvroDeflate for RoutingStorageContainerPropertiesEncoding. */
+    /**
+     * Static value AvroDeflate for RoutingStorageContainerPropertiesEncoding.
+     */
     public static final RoutingStorageContainerPropertiesEncoding AVRO_DEFLATE = fromString("AvroDeflate");
 
-    /** Static value JSON for RoutingStorageContainerPropertiesEncoding. */
+    /**
+     * Static value JSON for RoutingStorageContainerPropertiesEncoding.
+     */
     public static final RoutingStorageContainerPropertiesEncoding JSON = fromString("JSON");
 
     /**
      * Creates a new instance of RoutingStorageContainerPropertiesEncoding value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -34,7 +40,7 @@ public final class RoutingStorageContainerPropertiesEncoding
 
     /**
      * Creates or finds a RoutingStorageContainerPropertiesEncoding from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding RoutingStorageContainerPropertiesEncoding.
      */
@@ -45,7 +51,7 @@ public final class RoutingStorageContainerPropertiesEncoding
 
     /**
      * Gets known RoutingStorageContainerPropertiesEncoding values.
-     *
+     * 
      * @return known RoutingStorageContainerPropertiesEncoding values.
      */
     public static Collection<RoutingStorageContainerPropertiesEncoding> values() {

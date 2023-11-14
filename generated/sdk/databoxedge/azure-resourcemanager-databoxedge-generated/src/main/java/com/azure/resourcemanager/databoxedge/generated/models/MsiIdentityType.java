@@ -8,20 +8,28 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Identity type. */
+/**
+ * Identity type.
+ */
 public final class MsiIdentityType extends ExpandableStringEnum<MsiIdentityType> {
-    /** Static value None for MsiIdentityType. */
+    /**
+     * Static value None for MsiIdentityType.
+     */
     public static final MsiIdentityType NONE = fromString("None");
 
-    /** Static value SystemAssigned for MsiIdentityType. */
+    /**
+     * Static value SystemAssigned for MsiIdentityType.
+     */
     public static final MsiIdentityType SYSTEM_ASSIGNED = fromString("SystemAssigned");
 
-    /** Static value UserAssigned for MsiIdentityType. */
+    /**
+     * Static value UserAssigned for MsiIdentityType.
+     */
     public static final MsiIdentityType USER_ASSIGNED = fromString("UserAssigned");
 
     /**
      * Creates a new instance of MsiIdentityType value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -30,7 +38,7 @@ public final class MsiIdentityType extends ExpandableStringEnum<MsiIdentityType>
 
     /**
      * Creates or finds a MsiIdentityType from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding MsiIdentityType.
      */
@@ -41,7 +49,7 @@ public final class MsiIdentityType extends ExpandableStringEnum<MsiIdentityType>
 
     /**
      * Gets known MsiIdentityType values.
-     *
+     * 
      * @return known MsiIdentityType values.
      */
     public static Collection<MsiIdentityType> values() {

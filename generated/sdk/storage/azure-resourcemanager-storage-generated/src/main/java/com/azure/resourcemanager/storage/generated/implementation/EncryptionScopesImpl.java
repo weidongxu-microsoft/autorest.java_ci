@@ -22,21 +22,18 @@ public final class EncryptionScopesImpl implements EncryptionScopes {
 
     private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
-    public EncryptionScopesImpl(
-        EncryptionScopesClient innerClient, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
+    public EncryptionScopesImpl(EncryptionScopesClient innerClient,
+        com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<EncryptionScope> getWithResponse(
-        String resourceGroupName, String accountName, String encryptionScopeName, Context context) {
-        Response<EncryptionScopeInner> inner =
-            this.serviceClient().getWithResponse(resourceGroupName, accountName, encryptionScopeName, context);
+    public Response<EncryptionScope> getWithResponse(String resourceGroupName, String accountName,
+        String encryptionScopeName, Context context) {
+        Response<EncryptionScopeInner> inner
+            = this.serviceClient().getWithResponse(resourceGroupName, accountName, encryptionScopeName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new EncryptionScopeImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -57,43 +54,28 @@ public final class EncryptionScopesImpl implements EncryptionScopes {
         return Utils.mapPage(inner, inner1 -> new EncryptionScopeImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<EncryptionScope> list(
-        String resourceGroupName,
-        String accountName,
-        Integer maxpagesize,
-        String filter,
-        ListEncryptionScopesInclude include,
-        Context context) {
-        PagedIterable<EncryptionScopeInner> inner =
-            this.serviceClient().list(resourceGroupName, accountName, maxpagesize, filter, include, context);
+    public PagedIterable<EncryptionScope> list(String resourceGroupName, String accountName, Integer maxpagesize,
+        String filter, ListEncryptionScopesInclude include, Context context) {
+        PagedIterable<EncryptionScopeInner> inner
+            = this.serviceClient().list(resourceGroupName, accountName, maxpagesize, filter, include, context);
         return Utils.mapPage(inner, inner1 -> new EncryptionScopeImpl(inner1, this.manager()));
     }
 
     public EncryptionScope getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
         }
         String encryptionScopeName = Utils.getValueFromIdByName(id, "encryptionScopes");
         if (encryptionScopeName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'encryptionScopes'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'encryptionScopes'.", id)));
         }
         return this.getWithResponse(resourceGroupName, accountName, encryptionScopeName, Context.NONE).getValue();
     }
@@ -101,28 +83,18 @@ public final class EncryptionScopesImpl implements EncryptionScopes {
     public Response<EncryptionScope> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
         }
         String encryptionScopeName = Utils.getValueFromIdByName(id, "encryptionScopes");
         if (encryptionScopeName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'encryptionScopes'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'encryptionScopes'.", id)));
         }
         return this.getWithResponse(resourceGroupName, accountName, encryptionScopeName, context);
     }

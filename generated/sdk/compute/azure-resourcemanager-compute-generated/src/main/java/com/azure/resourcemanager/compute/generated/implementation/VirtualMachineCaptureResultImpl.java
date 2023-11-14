@@ -14,8 +14,7 @@ public final class VirtualMachineCaptureResultImpl implements VirtualMachineCapt
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    VirtualMachineCaptureResultImpl(
-        VirtualMachineCaptureResultInner innerObject,
+    VirtualMachineCaptureResultImpl(VirtualMachineCaptureResultInner innerObject,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

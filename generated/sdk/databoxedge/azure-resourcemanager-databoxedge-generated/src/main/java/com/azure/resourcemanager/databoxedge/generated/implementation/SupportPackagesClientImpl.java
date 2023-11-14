@@ -31,22 +31,28 @@ import java.nio.ByteBuffer;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-/** An instance of this class provides access to all the operations defined in SupportPackagesClient. */
+/**
+ * An instance of this class provides access to all the operations defined in SupportPackagesClient.
+ */
 public final class SupportPackagesClientImpl implements SupportPackagesClient {
-    /** The proxy service used to perform REST calls. */
+    /**
+     * The proxy service used to perform REST calls.
+     */
     private final SupportPackagesService service;
 
-    /** The service client containing this operation class. */
+    /**
+     * The service client containing this operation class.
+     */
     private final DataBoxEdgeManagementClientImpl client;
 
     /**
      * Initializes an instance of SupportPackagesClientImpl.
-     *
+     * 
      * @param client the instance of the service client containing this operation class.
      */
     SupportPackagesClientImpl(DataBoxEdgeManagementClientImpl client) {
-        this.service =
-            RestProxy.create(SupportPackagesService.class, client.getHttpPipeline(), client.getSerializerAdapter());
+        this.service
+            = RestProxy.create(SupportPackagesService.class, client.getHttpPipeline(), client.getSerializerAdapter());
         this.client = client;
     }
 
@@ -57,25 +63,20 @@ public final class SupportPackagesClientImpl implements SupportPackagesClient {
     @Host("{$host}")
     @ServiceInterface(name = "DataBoxEdgeManagemen")
     public interface SupportPackagesService {
-        @Headers({"Content-Type: application/json"})
-        @Post(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/triggerSupportPackage")
-        @ExpectedResponses({200, 202})
+        @Headers({ "Content-Type: application/json" })
+        @Post("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/triggerSupportPackage")
+        @ExpectedResponses({ 200, 202 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<Flux<ByteBuffer>>> triggerSupportPackage(
-            @HostParam("$host") String endpoint,
-            @PathParam("deviceName") String deviceName,
-            @PathParam("subscriptionId") String subscriptionId,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @QueryParam("api-version") String apiVersion,
+        Mono<Response<Flux<ByteBuffer>>> triggerSupportPackage(@HostParam("$host") String endpoint,
+            @PathParam("deviceName") String deviceName, @PathParam("subscriptionId") String subscriptionId,
+            @PathParam("resourceGroupName") String resourceGroupName, @QueryParam("api-version") String apiVersion,
             @BodyParam("application/json") TriggerSupportPackageRequest triggerSupportPackageRequest,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @HeaderParam("Accept") String accept, Context context);
     }
 
     /**
      * Triggers support package on the device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param triggerSupportPackageRequest The trigger support package request object.
@@ -85,55 +86,40 @@ public final class SupportPackagesClientImpl implements SupportPackagesClient {
      * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> triggerSupportPackageWithResponseAsync(
-        String deviceName, String resourceGroupName, TriggerSupportPackageRequest triggerSupportPackageRequest) {
+    private Mono<Response<Flux<ByteBuffer>>> triggerSupportPackageWithResponseAsync(String deviceName,
+        String resourceGroupName, TriggerSupportPackageRequest triggerSupportPackageRequest) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (deviceName == null) {
             return Mono.error(new IllegalArgumentException("Parameter deviceName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
         if (triggerSupportPackageRequest == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter triggerSupportPackageRequest is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter triggerSupportPackageRequest is required and cannot be null."));
         } else {
             triggerSupportPackageRequest.validate();
         }
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .triggerSupportPackage(
-                            this.client.getEndpoint(),
-                            deviceName,
-                            this.client.getSubscriptionId(),
-                            resourceGroupName,
-                            this.client.getApiVersion(),
-                            triggerSupportPackageRequest,
-                            accept,
-                            context))
+            .withContext(context -> service.triggerSupportPackage(this.client.getEndpoint(), deviceName,
+                this.client.getSubscriptionId(), resourceGroupName, this.client.getApiVersion(),
+                triggerSupportPackageRequest, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Triggers support package on the device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param triggerSupportPackageRequest The trigger support package request object.
@@ -144,55 +130,38 @@ public final class SupportPackagesClientImpl implements SupportPackagesClient {
      * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> triggerSupportPackageWithResponseAsync(
-        String deviceName,
-        String resourceGroupName,
-        TriggerSupportPackageRequest triggerSupportPackageRequest,
-        Context context) {
+    private Mono<Response<Flux<ByteBuffer>>> triggerSupportPackageWithResponseAsync(String deviceName,
+        String resourceGroupName, TriggerSupportPackageRequest triggerSupportPackageRequest, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (deviceName == null) {
             return Mono.error(new IllegalArgumentException("Parameter deviceName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
         if (triggerSupportPackageRequest == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter triggerSupportPackageRequest is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter triggerSupportPackageRequest is required and cannot be null."));
         } else {
             triggerSupportPackageRequest.validate();
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .triggerSupportPackage(
-                this.client.getEndpoint(),
-                deviceName,
-                this.client.getSubscriptionId(),
-                resourceGroupName,
-                this.client.getApiVersion(),
-                triggerSupportPackageRequest,
-                accept,
-                context);
+        return service.triggerSupportPackage(this.client.getEndpoint(), deviceName, this.client.getSubscriptionId(),
+            resourceGroupName, this.client.getApiVersion(), triggerSupportPackageRequest, accept, context);
     }
 
     /**
      * Triggers support package on the device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param triggerSupportPackageRequest The trigger support package request object.
@@ -202,19 +171,17 @@ public final class SupportPackagesClientImpl implements SupportPackagesClient {
      * @return the {@link PollerFlux} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    private PollerFlux<PollResult<Void>, Void> beginTriggerSupportPackageAsync(
-        String deviceName, String resourceGroupName, TriggerSupportPackageRequest triggerSupportPackageRequest) {
-        Mono<Response<Flux<ByteBuffer>>> mono =
-            triggerSupportPackageWithResponseAsync(deviceName, resourceGroupName, triggerSupportPackageRequest);
-        return this
-            .client
-            .<Void, Void>getLroResult(
-                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
+    private PollerFlux<PollResult<Void>, Void> beginTriggerSupportPackageAsync(String deviceName,
+        String resourceGroupName, TriggerSupportPackageRequest triggerSupportPackageRequest) {
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = triggerSupportPackageWithResponseAsync(deviceName, resourceGroupName, triggerSupportPackageRequest);
+        return this.client.<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class,
+            this.client.getContext());
     }
 
     /**
      * Triggers support package on the device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param triggerSupportPackageRequest The trigger support package request object.
@@ -225,23 +192,18 @@ public final class SupportPackagesClientImpl implements SupportPackagesClient {
      * @return the {@link PollerFlux} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    private PollerFlux<PollResult<Void>, Void> beginTriggerSupportPackageAsync(
-        String deviceName,
-        String resourceGroupName,
-        TriggerSupportPackageRequest triggerSupportPackageRequest,
-        Context context) {
+    private PollerFlux<PollResult<Void>, Void> beginTriggerSupportPackageAsync(String deviceName,
+        String resourceGroupName, TriggerSupportPackageRequest triggerSupportPackageRequest, Context context) {
         context = this.client.mergeContext(context);
-        Mono<Response<Flux<ByteBuffer>>> mono =
-            triggerSupportPackageWithResponseAsync(
-                deviceName, resourceGroupName, triggerSupportPackageRequest, context);
-        return this
-            .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, context);
+        Mono<Response<Flux<ByteBuffer>>> mono = triggerSupportPackageWithResponseAsync(deviceName, resourceGroupName,
+            triggerSupportPackageRequest, context);
+        return this.client.<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class,
+            context);
     }
 
     /**
      * Triggers support package on the device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param triggerSupportPackageRequest The trigger support package request object.
@@ -251,16 +213,15 @@ public final class SupportPackagesClientImpl implements SupportPackagesClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<PollResult<Void>, Void> beginTriggerSupportPackage(
-        String deviceName, String resourceGroupName, TriggerSupportPackageRequest triggerSupportPackageRequest) {
-        return this
-            .beginTriggerSupportPackageAsync(deviceName, resourceGroupName, triggerSupportPackageRequest)
+    public SyncPoller<PollResult<Void>, Void> beginTriggerSupportPackage(String deviceName, String resourceGroupName,
+        TriggerSupportPackageRequest triggerSupportPackageRequest) {
+        return this.beginTriggerSupportPackageAsync(deviceName, resourceGroupName, triggerSupportPackageRequest)
             .getSyncPoller();
     }
 
     /**
      * Triggers support package on the device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param triggerSupportPackageRequest The trigger support package request object.
@@ -271,11 +232,8 @@ public final class SupportPackagesClientImpl implements SupportPackagesClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<PollResult<Void>, Void> beginTriggerSupportPackage(
-        String deviceName,
-        String resourceGroupName,
-        TriggerSupportPackageRequest triggerSupportPackageRequest,
-        Context context) {
+    public SyncPoller<PollResult<Void>, Void> beginTriggerSupportPackage(String deviceName, String resourceGroupName,
+        TriggerSupportPackageRequest triggerSupportPackageRequest, Context context) {
         return this
             .beginTriggerSupportPackageAsync(deviceName, resourceGroupName, triggerSupportPackageRequest, context)
             .getSyncPoller();
@@ -283,7 +241,7 @@ public final class SupportPackagesClientImpl implements SupportPackagesClient {
 
     /**
      * Triggers support package on the device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param triggerSupportPackageRequest The trigger support package request object.
@@ -293,16 +251,15 @@ public final class SupportPackagesClientImpl implements SupportPackagesClient {
      * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Void> triggerSupportPackageAsync(
-        String deviceName, String resourceGroupName, TriggerSupportPackageRequest triggerSupportPackageRequest) {
-        return beginTriggerSupportPackageAsync(deviceName, resourceGroupName, triggerSupportPackageRequest)
-            .last()
+    private Mono<Void> triggerSupportPackageAsync(String deviceName, String resourceGroupName,
+        TriggerSupportPackageRequest triggerSupportPackageRequest) {
+        return beginTriggerSupportPackageAsync(deviceName, resourceGroupName, triggerSupportPackageRequest).last()
             .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
      * Triggers support package on the device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param triggerSupportPackageRequest The trigger support package request object.
@@ -313,19 +270,15 @@ public final class SupportPackagesClientImpl implements SupportPackagesClient {
      * @return A {@link Mono} that completes when a successful response is received.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Void> triggerSupportPackageAsync(
-        String deviceName,
-        String resourceGroupName,
-        TriggerSupportPackageRequest triggerSupportPackageRequest,
-        Context context) {
+    private Mono<Void> triggerSupportPackageAsync(String deviceName, String resourceGroupName,
+        TriggerSupportPackageRequest triggerSupportPackageRequest, Context context) {
         return beginTriggerSupportPackageAsync(deviceName, resourceGroupName, triggerSupportPackageRequest, context)
-            .last()
-            .flatMap(this.client::getLroFinalResultOrError);
+            .last().flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
      * Triggers support package on the device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param triggerSupportPackageRequest The trigger support package request object.
@@ -334,14 +287,14 @@ public final class SupportPackagesClientImpl implements SupportPackagesClient {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void triggerSupportPackage(
-        String deviceName, String resourceGroupName, TriggerSupportPackageRequest triggerSupportPackageRequest) {
+    public void triggerSupportPackage(String deviceName, String resourceGroupName,
+        TriggerSupportPackageRequest triggerSupportPackageRequest) {
         triggerSupportPackageAsync(deviceName, resourceGroupName, triggerSupportPackageRequest).block();
     }
 
     /**
      * Triggers support package on the device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param triggerSupportPackageRequest The trigger support package request object.
@@ -351,11 +304,8 @@ public final class SupportPackagesClientImpl implements SupportPackagesClient {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void triggerSupportPackage(
-        String deviceName,
-        String resourceGroupName,
-        TriggerSupportPackageRequest triggerSupportPackageRequest,
-        Context context) {
+    public void triggerSupportPackage(String deviceName, String resourceGroupName,
+        TriggerSupportPackageRequest triggerSupportPackageRequest, Context context) {
         triggerSupportPackageAsync(deviceName, resourceGroupName, triggerSupportPackageRequest, context).block();
     }
 }

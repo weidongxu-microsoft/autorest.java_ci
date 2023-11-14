@@ -40,8 +40,7 @@ public final class StorageAccountPropertiesImpl implements StorageAccountPropert
 
     private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
-    StorageAccountPropertiesImpl(
-        StorageAccountPropertiesInner innerObject,
+    StorageAccountPropertiesImpl(StorageAccountPropertiesInner innerObject,
         com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -146,12 +145,8 @@ public final class StorageAccountPropertiesImpl implements StorageAccountPropert
     public List<PrivateEndpointConnection> privateEndpointConnections() {
         List<PrivateEndpointConnectionInner> inner = this.innerModel().privateEndpointConnections();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

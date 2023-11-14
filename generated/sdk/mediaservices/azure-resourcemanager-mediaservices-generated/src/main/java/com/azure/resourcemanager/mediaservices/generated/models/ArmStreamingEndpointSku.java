@@ -7,7 +7,9 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Immutable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The streaming endpoint sku. */
+/**
+ * The streaming endpoint sku.
+ */
 @Immutable
 public final class ArmStreamingEndpointSku {
     /*
@@ -16,13 +18,15 @@ public final class ArmStreamingEndpointSku {
     @JsonProperty(value = "name", access = JsonProperty.Access.WRITE_ONLY)
     private String name;
 
-    /** Creates an instance of ArmStreamingEndpointSku class. */
+    /**
+     * Creates an instance of ArmStreamingEndpointSku class.
+     */
     public ArmStreamingEndpointSku() {
     }
 
     /**
      * Get the name property: The streaming endpoint sku name.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -31,7 +35,7 @@ public final class ArmStreamingEndpointSku {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

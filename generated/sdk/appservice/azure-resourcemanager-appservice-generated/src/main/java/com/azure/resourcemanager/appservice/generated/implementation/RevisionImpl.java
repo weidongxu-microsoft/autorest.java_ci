@@ -18,8 +18,8 @@ public final class RevisionImpl implements Revision {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    RevisionImpl(
-        RevisionInner innerObject, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
+    RevisionImpl(RevisionInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -8,18 +8,22 @@ import com.azure.core.annotation.Immutable;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** Represents a configuration for non-DRM keys. */
+/**
+ * Represents a configuration for non-DRM keys.
+ */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
 @JsonTypeName("#Microsoft.Media.ContentKeyPolicyClearKeyConfiguration")
 @Immutable
 public final class ContentKeyPolicyClearKeyConfiguration extends ContentKeyPolicyConfiguration {
-    /** Creates an instance of ContentKeyPolicyClearKeyConfiguration class. */
+    /**
+     * Creates an instance of ContentKeyPolicyClearKeyConfiguration class.
+     */
     public ContentKeyPolicyClearKeyConfiguration() {
     }
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

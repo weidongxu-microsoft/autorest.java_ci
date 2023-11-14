@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Properties of Access Rule. */
+/**
+ * Properties of Access Rule.
+ */
 @Fluent
 public final class NspAccessRuleProperties {
     /*
@@ -41,13 +43,15 @@ public final class NspAccessRuleProperties {
     @JsonProperty(value = "fullyQualifiedDomainNames", access = JsonProperty.Access.WRITE_ONLY)
     private List<String> fullyQualifiedDomainNames;
 
-    /** Creates an instance of NspAccessRuleProperties class. */
+    /**
+     * Creates an instance of NspAccessRuleProperties class.
+     */
     public NspAccessRuleProperties() {
     }
 
     /**
      * Get the direction property: Direction of Access Rule.
-     *
+     * 
      * @return the direction value.
      */
     public NspAccessRuleDirection direction() {
@@ -56,7 +60,7 @@ public final class NspAccessRuleProperties {
 
     /**
      * Set the direction property: Direction of Access Rule.
-     *
+     * 
      * @param direction the direction value to set.
      * @return the NspAccessRuleProperties object itself.
      */
@@ -67,7 +71,7 @@ public final class NspAccessRuleProperties {
 
     /**
      * Get the addressPrefixes property: Address prefixes in the CIDR format for inbound rules.
-     *
+     * 
      * @return the addressPrefixes value.
      */
     public List<String> addressPrefixes() {
@@ -76,7 +80,7 @@ public final class NspAccessRuleProperties {
 
     /**
      * Set the addressPrefixes property: Address prefixes in the CIDR format for inbound rules.
-     *
+     * 
      * @param addressPrefixes the addressPrefixes value to set.
      * @return the NspAccessRuleProperties object itself.
      */
@@ -87,7 +91,7 @@ public final class NspAccessRuleProperties {
 
     /**
      * Get the subscriptions property: Subscriptions for inbound rules.
-     *
+     * 
      * @return the subscriptions value.
      */
     public List<NspAccessRulePropertiesSubscriptionsItem> subscriptions() {
@@ -96,7 +100,7 @@ public final class NspAccessRuleProperties {
 
     /**
      * Set the subscriptions property: Subscriptions for inbound rules.
-     *
+     * 
      * @param subscriptions the subscriptions value to set.
      * @return the NspAccessRuleProperties object itself.
      */
@@ -107,7 +111,7 @@ public final class NspAccessRuleProperties {
 
     /**
      * Get the networkSecurityPerimeters property: NetworkSecurityPerimeters for inbound rules.
-     *
+     * 
      * @return the networkSecurityPerimeters value.
      */
     public List<NetworkSecurityPerimeter> networkSecurityPerimeters() {
@@ -116,7 +120,7 @@ public final class NspAccessRuleProperties {
 
     /**
      * Get the fullyQualifiedDomainNames property: FQDN for outbound rules.
-     *
+     * 
      * @return the fullyQualifiedDomainNames value.
      */
     public List<String> fullyQualifiedDomainNames() {
@@ -125,7 +129,7 @@ public final class NspAccessRuleProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

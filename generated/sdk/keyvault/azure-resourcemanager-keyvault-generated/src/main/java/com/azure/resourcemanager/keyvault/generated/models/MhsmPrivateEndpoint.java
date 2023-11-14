@@ -7,7 +7,9 @@ package com.azure.resourcemanager.keyvault.generated.models;
 import com.azure.core.annotation.Immutable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Private endpoint object properties. */
+/**
+ * Private endpoint object properties.
+ */
 @Immutable
 public final class MhsmPrivateEndpoint {
     /*
@@ -16,13 +18,15 @@ public final class MhsmPrivateEndpoint {
     @JsonProperty(value = "id", access = JsonProperty.Access.WRITE_ONLY)
     private String id;
 
-    /** Creates an instance of MhsmPrivateEndpoint class. */
+    /**
+     * Creates an instance of MhsmPrivateEndpoint class.
+     */
     public MhsmPrivateEndpoint() {
     }
 
     /**
      * Get the id property: Full identifier of the private endpoint resource.
-     *
+     * 
      * @return the id value.
      */
     public String id() {
@@ -31,7 +35,7 @@ public final class MhsmPrivateEndpoint {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

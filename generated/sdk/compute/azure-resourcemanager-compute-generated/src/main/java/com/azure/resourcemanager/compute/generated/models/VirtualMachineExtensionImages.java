@@ -8,11 +8,13 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import java.util.List;
 
-/** Resource collection API of VirtualMachineExtensionImages. */
+/**
+ * Resource collection API of VirtualMachineExtensionImages.
+ */
 public interface VirtualMachineExtensionImages {
     /**
      * Gets a virtual machine extension image.
-     *
+     * 
      * @param location The name of a supported Azure region.
      * @param publisherName The publisherName parameter.
      * @param type The type parameter.
@@ -20,23 +22,23 @@ public interface VirtualMachineExtensionImages {
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a virtual machine extension image along with {@link Response}.
      */
-    Response<VirtualMachineExtensionImage> getWithResponse(
-        String location, String publisherName, String type, String version, Context context);
+    Response<VirtualMachineExtensionImage> getWithResponse(String location, String publisherName, String type,
+        String version, Context context);
 
     /**
      * Gets a virtual machine extension image.
-     *
+     * 
      * @param location The name of a supported Azure region.
      * @param publisherName The publisherName parameter.
      * @param type The type parameter.
      * @param version The version parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a virtual machine extension image.
      */
@@ -44,27 +46,27 @@ public interface VirtualMachineExtensionImages {
 
     /**
      * Gets a list of virtual machine extension image types.
-     *
+     * 
      * @param location The name of a supported Azure region.
      * @param publisherName The publisherName parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a list of virtual machine extension image types along with {@link Response}.
      */
-    Response<List<VirtualMachineExtensionImage>> listTypesWithResponse(
-        String location, String publisherName, Context context);
+    Response<List<VirtualMachineExtensionImage>> listTypesWithResponse(String location, String publisherName,
+        Context context);
 
     /**
      * Gets a list of virtual machine extension image types.
-     *
+     * 
      * @param location The name of a supported Azure region.
      * @param publisherName The publisherName parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a list of virtual machine extension image types.
      */
@@ -72,7 +74,7 @@ public interface VirtualMachineExtensionImages {
 
     /**
      * Gets a list of virtual machine extension image versions.
-     *
+     * 
      * @param location The name of a supported Azure region.
      * @param publisherName The publisherName parameter.
      * @param type The type parameter.
@@ -82,28 +84,22 @@ public interface VirtualMachineExtensionImages {
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a list of virtual machine extension image versions along with {@link Response}.
      */
-    Response<List<VirtualMachineExtensionImage>> listVersionsWithResponse(
-        String location,
-        String publisherName,
-        String type,
-        String filter,
-        Integer top,
-        String orderby,
-        Context context);
+    Response<List<VirtualMachineExtensionImage>> listVersionsWithResponse(String location, String publisherName,
+        String type, String filter, Integer top, String orderby, Context context);
 
     /**
      * Gets a list of virtual machine extension image versions.
-     *
+     * 
      * @param location The name of a supported Azure region.
      * @param publisherName The publisherName parameter.
      * @param type The type parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a list of virtual machine extension image versions.
      */

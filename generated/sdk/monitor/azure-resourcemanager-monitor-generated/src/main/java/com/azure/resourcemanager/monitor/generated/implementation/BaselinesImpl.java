@@ -21,8 +21,8 @@ public final class BaselinesImpl implements Baselines {
 
     private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    public BaselinesImpl(
-        BaselinesClient innerClient, com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
+    public BaselinesImpl(BaselinesClient innerClient,
+        com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -32,31 +32,11 @@ public final class BaselinesImpl implements Baselines {
         return Utils.mapPage(inner, inner1 -> new SingleMetricBaselineImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<SingleMetricBaseline> list(
-        String resourceUri,
-        String metricnames,
-        String metricnamespace,
-        String timespan,
-        Duration interval,
-        String aggregation,
-        String sensitivities,
-        String filter,
-        ResultType resultType,
-        Context context) {
-        PagedIterable<SingleMetricBaselineInner> inner =
-            this
-                .serviceClient()
-                .list(
-                    resourceUri,
-                    metricnames,
-                    metricnamespace,
-                    timespan,
-                    interval,
-                    aggregation,
-                    sensitivities,
-                    filter,
-                    resultType,
-                    context);
+    public PagedIterable<SingleMetricBaseline> list(String resourceUri, String metricnames, String metricnamespace,
+        String timespan, Duration interval, String aggregation, String sensitivities, String filter,
+        ResultType resultType, Context context) {
+        PagedIterable<SingleMetricBaselineInner> inner = this.serviceClient().list(resourceUri, metricnames,
+            metricnamespace, timespan, interval, aggregation, sensitivities, filter, resultType, context);
         return Utils.mapPage(inner, inner1 -> new SingleMetricBaselineImpl(inner1, this.manager()));
     }
 

@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of LoadBalancerLoadBalancingRules. */
+/**
+ * Resource collection API of LoadBalancerLoadBalancingRules.
+ */
 public interface LoadBalancerLoadBalancingRules {
     /**
      * Gets all the load balancing rules in a load balancer.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -24,7 +26,7 @@ public interface LoadBalancerLoadBalancingRules {
 
     /**
      * Gets all the load balancing rules in a load balancer.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @param context The context to associate with this operation.
@@ -37,7 +39,7 @@ public interface LoadBalancerLoadBalancingRules {
 
     /**
      * Gets the specified load balancer load balancing rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @param loadBalancingRuleName The name of the load balancing rule.
@@ -47,12 +49,12 @@ public interface LoadBalancerLoadBalancingRules {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified load balancer load balancing rule along with {@link Response}.
      */
-    Response<LoadBalancingRule> getWithResponse(
-        String resourceGroupName, String loadBalancerName, String loadBalancingRuleName, Context context);
+    Response<LoadBalancingRule> getWithResponse(String resourceGroupName, String loadBalancerName,
+        String loadBalancingRuleName, Context context);
 
     /**
      * Gets the specified load balancer load balancing rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @param loadBalancingRuleName The name of the load balancing rule.

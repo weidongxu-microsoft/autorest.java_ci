@@ -10,10 +10,6 @@ module com.azure.resourcemanager.compute.generated {
     exports com.azure.resourcemanager.compute.generated.fluent.models;
     exports com.azure.resourcemanager.compute.generated.models;
 
-    opens com.azure.resourcemanager.compute.generated.fluent.models to
-        com.azure.core,
-        com.fasterxml.jackson.databind;
-    opens com.azure.resourcemanager.compute.generated.models to
-        com.azure.core,
-        com.fasterxml.jackson.databind;
+    opens com.azure.resourcemanager.compute.generated.fluent.models to com.azure.core, com.fasterxml.jackson.databind;
+    opens com.azure.resourcemanager.compute.generated.models to com.azure.core, com.fasterxml.jackson.databind;
 }

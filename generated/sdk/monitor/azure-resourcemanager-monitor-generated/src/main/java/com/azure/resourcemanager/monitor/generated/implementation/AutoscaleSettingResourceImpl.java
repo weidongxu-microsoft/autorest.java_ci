@@ -112,27 +112,20 @@ public final class AutoscaleSettingResourceImpl
     }
 
     public AutoscaleSettingResource create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getAutoscaleSettings()
-                .createOrUpdateWithResponse(resourceGroupName, autoscaleSettingName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getAutoscaleSettings()
+            .createOrUpdateWithResponse(resourceGroupName, autoscaleSettingName, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public AutoscaleSettingResource create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getAutoscaleSettings()
-                .createOrUpdateWithResponse(resourceGroupName, autoscaleSettingName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getAutoscaleSettings()
+            .createOrUpdateWithResponse(resourceGroupName, autoscaleSettingName, this.innerModel(), context).getValue();
         return this;
     }
 
-    AutoscaleSettingResourceImpl(
-        String name, com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
+    AutoscaleSettingResourceImpl(String name,
+        com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = new AutoscaleSettingResourceInner();
         this.serviceManager = serviceManager;
         this.autoscaleSettingName = name;
@@ -144,28 +137,20 @@ public final class AutoscaleSettingResourceImpl
     }
 
     public AutoscaleSettingResource apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getAutoscaleSettings()
-                .updateWithResponse(
-                    resourceGroupName, autoscaleSettingName, updateAutoscaleSettingResource, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getAutoscaleSettings()
+            .updateWithResponse(resourceGroupName, autoscaleSettingName, updateAutoscaleSettingResource, Context.NONE)
+            .getValue();
         return this;
     }
 
     public AutoscaleSettingResource apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getAutoscaleSettings()
-                .updateWithResponse(resourceGroupName, autoscaleSettingName, updateAutoscaleSettingResource, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getAutoscaleSettings()
+            .updateWithResponse(resourceGroupName, autoscaleSettingName, updateAutoscaleSettingResource, context)
+            .getValue();
         return this;
     }
 
-    AutoscaleSettingResourceImpl(
-        AutoscaleSettingResourceInner innerObject,
+    AutoscaleSettingResourceImpl(AutoscaleSettingResourceInner innerObject,
         com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -174,22 +159,14 @@ public final class AutoscaleSettingResourceImpl
     }
 
     public AutoscaleSettingResource refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getAutoscaleSettings()
-                .getByResourceGroupWithResponse(resourceGroupName, autoscaleSettingName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getAutoscaleSettings()
+            .getByResourceGroupWithResponse(resourceGroupName, autoscaleSettingName, Context.NONE).getValue();
         return this;
     }
 
     public AutoscaleSettingResource refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getAutoscaleSettings()
-                .getByResourceGroupWithResponse(resourceGroupName, autoscaleSettingName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getAutoscaleSettings()
+            .getByResourceGroupWithResponse(resourceGroupName, autoscaleSettingName, context).getValue();
         return this;
     }
 

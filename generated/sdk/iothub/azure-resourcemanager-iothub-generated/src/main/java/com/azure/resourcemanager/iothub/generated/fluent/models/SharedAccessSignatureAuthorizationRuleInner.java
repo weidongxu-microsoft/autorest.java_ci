@@ -9,7 +9,9 @@ import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.iothub.generated.models.AccessRights;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The properties of an IoT hub shared access policy. */
+/**
+ * The properties of an IoT hub shared access policy.
+ */
 @Fluent
 public final class SharedAccessSignatureAuthorizationRuleInner {
     /*
@@ -36,13 +38,15 @@ public final class SharedAccessSignatureAuthorizationRuleInner {
     @JsonProperty(value = "rights", required = true)
     private AccessRights rights;
 
-    /** Creates an instance of SharedAccessSignatureAuthorizationRuleInner class. */
+    /**
+     * Creates an instance of SharedAccessSignatureAuthorizationRuleInner class.
+     */
     public SharedAccessSignatureAuthorizationRuleInner() {
     }
 
     /**
      * Get the keyName property: The name of the shared access policy.
-     *
+     * 
      * @return the keyName value.
      */
     public String keyName() {
@@ -51,7 +55,7 @@ public final class SharedAccessSignatureAuthorizationRuleInner {
 
     /**
      * Set the keyName property: The name of the shared access policy.
-     *
+     * 
      * @param keyName the keyName value to set.
      * @return the SharedAccessSignatureAuthorizationRuleInner object itself.
      */
@@ -62,7 +66,7 @@ public final class SharedAccessSignatureAuthorizationRuleInner {
 
     /**
      * Get the primaryKey property: The primary key.
-     *
+     * 
      * @return the primaryKey value.
      */
     public String primaryKey() {
@@ -71,7 +75,7 @@ public final class SharedAccessSignatureAuthorizationRuleInner {
 
     /**
      * Set the primaryKey property: The primary key.
-     *
+     * 
      * @param primaryKey the primaryKey value to set.
      * @return the SharedAccessSignatureAuthorizationRuleInner object itself.
      */
@@ -82,7 +86,7 @@ public final class SharedAccessSignatureAuthorizationRuleInner {
 
     /**
      * Get the secondaryKey property: The secondary key.
-     *
+     * 
      * @return the secondaryKey value.
      */
     public String secondaryKey() {
@@ -91,7 +95,7 @@ public final class SharedAccessSignatureAuthorizationRuleInner {
 
     /**
      * Set the secondaryKey property: The secondary key.
-     *
+     * 
      * @param secondaryKey the secondaryKey value to set.
      * @return the SharedAccessSignatureAuthorizationRuleInner object itself.
      */
@@ -102,7 +106,7 @@ public final class SharedAccessSignatureAuthorizationRuleInner {
 
     /**
      * Get the rights property: The permissions assigned to the shared access policy.
-     *
+     * 
      * @return the rights value.
      */
     public AccessRights rights() {
@@ -111,7 +115,7 @@ public final class SharedAccessSignatureAuthorizationRuleInner {
 
     /**
      * Set the rights property: The permissions assigned to the shared access policy.
-     *
+     * 
      * @param rights the rights value to set.
      * @return the SharedAccessSignatureAuthorizationRuleInner object itself.
      */
@@ -122,21 +126,17 @@ public final class SharedAccessSignatureAuthorizationRuleInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (keyName() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property keyName in model SharedAccessSignatureAuthorizationRuleInner"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property keyName in model SharedAccessSignatureAuthorizationRuleInner"));
         }
         if (rights() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property rights in model SharedAccessSignatureAuthorizationRuleInner"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property rights in model SharedAccessSignatureAuthorizationRuleInner"));
         }
     }
 

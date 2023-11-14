@@ -88,20 +88,14 @@ public final class DdosCustomPolicyImpl
     }
 
     public DdosCustomPolicy create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDdosCustomPolicies()
-                .createOrUpdate(resourceGroupName, ddosCustomPolicyName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getDdosCustomPolicies().createOrUpdate(resourceGroupName,
+            ddosCustomPolicyName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public DdosCustomPolicy create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDdosCustomPolicies()
-                .createOrUpdate(resourceGroupName, ddosCustomPolicyName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getDdosCustomPolicies().createOrUpdate(resourceGroupName,
+            ddosCustomPolicyName, this.innerModel(), context);
         return this;
     }
 
@@ -117,27 +111,19 @@ public final class DdosCustomPolicyImpl
     }
 
     public DdosCustomPolicy apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDdosCustomPolicies()
-                .updateTagsWithResponse(resourceGroupName, ddosCustomPolicyName, updateParameters, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getDdosCustomPolicies()
+            .updateTagsWithResponse(resourceGroupName, ddosCustomPolicyName, updateParameters, Context.NONE).getValue();
         return this;
     }
 
     public DdosCustomPolicy apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDdosCustomPolicies()
-                .updateTagsWithResponse(resourceGroupName, ddosCustomPolicyName, updateParameters, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getDdosCustomPolicies()
+            .updateTagsWithResponse(resourceGroupName, ddosCustomPolicyName, updateParameters, context).getValue();
         return this;
     }
 
-    DdosCustomPolicyImpl(
-        DdosCustomPolicyInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    DdosCustomPolicyImpl(DdosCustomPolicyInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
@@ -145,22 +131,14 @@ public final class DdosCustomPolicyImpl
     }
 
     public DdosCustomPolicy refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDdosCustomPolicies()
-                .getByResourceGroupWithResponse(resourceGroupName, ddosCustomPolicyName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getDdosCustomPolicies()
+            .getByResourceGroupWithResponse(resourceGroupName, ddosCustomPolicyName, Context.NONE).getValue();
         return this;
     }
 
     public DdosCustomPolicy refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDdosCustomPolicies()
-                .getByResourceGroupWithResponse(resourceGroupName, ddosCustomPolicyName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getDdosCustomPolicies()
+            .getByResourceGroupWithResponse(resourceGroupName, ddosCustomPolicyName, context).getValue();
         return this;
     }
 

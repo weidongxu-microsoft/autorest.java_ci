@@ -72,7 +72,10 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-/** Entry point to StorageManager. The Azure Storage Management API. */
+/**
+ * Entry point to StorageManager.
+ * The Azure Storage Management API.
+ */
 public final class StorageManager {
     private Operations operations;
 
@@ -119,18 +122,14 @@ public final class StorageManager {
     private StorageManager(HttpPipeline httpPipeline, AzureProfile profile, Duration defaultPollInterval) {
         Objects.requireNonNull(httpPipeline, "'httpPipeline' cannot be null.");
         Objects.requireNonNull(profile, "'profile' cannot be null.");
-        this.clientObject =
-            new StorageManagementClientBuilder()
-                .pipeline(httpPipeline)
-                .endpoint(profile.getEnvironment().getResourceManagerEndpoint())
-                .subscriptionId(profile.getSubscriptionId())
-                .defaultPollInterval(defaultPollInterval)
-                .buildClient();
+        this.clientObject = new StorageManagementClientBuilder().pipeline(httpPipeline)
+            .endpoint(profile.getEnvironment().getResourceManagerEndpoint()).subscriptionId(profile.getSubscriptionId())
+            .defaultPollInterval(defaultPollInterval).buildClient();
     }
 
     /**
      * Creates an instance of Storage service API entry point.
-     *
+     * 
      * @param credential the credential to use.
      * @param profile the Azure profile for client.
      * @return the Storage service API instance.
@@ -143,7 +142,7 @@ public final class StorageManager {
 
     /**
      * Creates an instance of Storage service API entry point.
-     *
+     * 
      * @param httpPipeline the {@link HttpPipeline} configured with Azure authentication credential.
      * @param profile the Azure profile for client.
      * @return the Storage service API instance.
@@ -156,14 +155,16 @@ public final class StorageManager {
 
     /**
      * Gets a Configurable instance that can be used to create StorageManager with optional configuration.
-     *
+     * 
      * @return the Configurable instance allowing configurations.
      */
     public static Configurable configure() {
         return new StorageManager.Configurable();
     }
 
-    /** The Configurable allowing configurations to be set. */
+    /**
+     * The Configurable allowing configurations to be set.
+     */
     public static final class Configurable {
         private static final ClientLogger LOGGER = new ClientLogger(Configurable.class);
 
@@ -235,8 +236,8 @@ public final class StorageManager {
 
         /**
          * Sets the retry options for the HTTP pipeline retry policy.
-         *
-         * <p>This setting has no effect, if retry policy is set via {@link #withRetryPolicy(RetryPolicy)}.
+         * <p>
+         * This setting has no effect, if retry policy is set via {@link #withRetryPolicy(RetryPolicy)}.
          *
          * @param retryOptions the retry options for the HTTP pipeline retry policy.
          * @return the configurable object itself.
@@ -253,8 +254,8 @@ public final class StorageManager {
          * @return the configurable object itself.
          */
         public Configurable withDefaultPollInterval(Duration defaultPollInterval) {
-            this.defaultPollInterval =
-                Objects.requireNonNull(defaultPollInterval, "'defaultPollInterval' cannot be null.");
+            this.defaultPollInterval
+                = Objects.requireNonNull(defaultPollInterval, "'defaultPollInterval' cannot be null.");
             if (this.defaultPollInterval.isNegative()) {
                 throw LOGGER
                     .logExceptionAsError(new IllegalArgumentException("'defaultPollInterval' cannot be negative"));
@@ -274,21 +275,12 @@ public final class StorageManager {
             Objects.requireNonNull(profile, "'profile' cannot be null.");
 
             StringBuilder userAgentBuilder = new StringBuilder();
-            userAgentBuilder
-                .append("azsdk-java")
-                .append("-")
-                .append("com.azure.resourcemanager.storage.generated")
-                .append("/")
-                .append("1.0.0-beta.1");
+            userAgentBuilder.append("azsdk-java").append("-").append("com.azure.resourcemanager.storage.generated")
+                .append("/").append("1.0.0-beta.1");
             if (!Configuration.getGlobalConfiguration().get("AZURE_TELEMETRY_DISABLED", false)) {
-                userAgentBuilder
-                    .append(" (")
-                    .append(Configuration.getGlobalConfiguration().get("java.version"))
-                    .append("; ")
-                    .append(Configuration.getGlobalConfiguration().get("os.name"))
-                    .append("; ")
-                    .append(Configuration.getGlobalConfiguration().get("os.version"))
-                    .append("; auto-generated)");
+                userAgentBuilder.append(" (").append(Configuration.getGlobalConfiguration().get("java.version"))
+                    .append("; ").append(Configuration.getGlobalConfiguration().get("os.name")).append("; ")
+                    .append(Configuration.getGlobalConfiguration().get("os.version")).append("; auto-generated)");
             } else {
                 userAgentBuilder.append(" (auto-generated)");
             }
@@ -307,38 +299,25 @@ public final class StorageManager {
             policies.add(new UserAgentPolicy(userAgentBuilder.toString()));
             policies.add(new AddHeadersFromContextPolicy());
             policies.add(new RequestIdPolicy());
-            policies
-                .addAll(
-                    this
-                        .policies
-                        .stream()
-                        .filter(p -> p.getPipelinePosition() == HttpPipelinePosition.PER_CALL)
-                        .collect(Collectors.toList()));
+            policies.addAll(this.policies.stream().filter(p -> p.getPipelinePosition() == HttpPipelinePosition.PER_CALL)
+                .collect(Collectors.toList()));
             HttpPolicyProviders.addBeforeRetryPolicies(policies);
             policies.add(retryPolicy);
             policies.add(new AddDatePolicy());
             policies.add(new ArmChallengeAuthenticationPolicy(credential, scopes.toArray(new String[0])));
-            policies
-                .addAll(
-                    this
-                        .policies
-                        .stream()
-                        .filter(p -> p.getPipelinePosition() == HttpPipelinePosition.PER_RETRY)
-                        .collect(Collectors.toList()));
+            policies.addAll(this.policies.stream()
+                .filter(p -> p.getPipelinePosition() == HttpPipelinePosition.PER_RETRY).collect(Collectors.toList()));
             HttpPolicyProviders.addAfterRetryPolicies(policies);
             policies.add(new HttpLoggingPolicy(httpLogOptions));
-            HttpPipeline httpPipeline =
-                new HttpPipelineBuilder()
-                    .httpClient(httpClient)
-                    .policies(policies.toArray(new HttpPipelinePolicy[0]))
-                    .build();
+            HttpPipeline httpPipeline = new HttpPipelineBuilder().httpClient(httpClient)
+                .policies(policies.toArray(new HttpPipelinePolicy[0])).build();
             return new StorageManager(httpPipeline, profile, defaultPollInterval);
         }
     }
 
     /**
      * Gets the resource collection API of Operations.
-     *
+     * 
      * @return Resource collection API of Operations.
      */
     public Operations operations() {
@@ -350,7 +329,7 @@ public final class StorageManager {
 
     /**
      * Gets the resource collection API of Skus.
-     *
+     * 
      * @return Resource collection API of Skus.
      */
     public Skus skus() {
@@ -362,7 +341,7 @@ public final class StorageManager {
 
     /**
      * Gets the resource collection API of StorageAccounts. It manages StorageAccount.
-     *
+     * 
      * @return Resource collection API of StorageAccounts.
      */
     public StorageAccounts storageAccounts() {
@@ -374,7 +353,7 @@ public final class StorageManager {
 
     /**
      * Gets the resource collection API of DeletedAccounts.
-     *
+     * 
      * @return Resource collection API of DeletedAccounts.
      */
     public DeletedAccounts deletedAccounts() {
@@ -386,7 +365,7 @@ public final class StorageManager {
 
     /**
      * Gets the resource collection API of Usages.
-     *
+     * 
      * @return Resource collection API of Usages.
      */
     public Usages usages() {
@@ -398,7 +377,7 @@ public final class StorageManager {
 
     /**
      * Gets the resource collection API of ManagementPolicies. It manages ManagementPolicy.
-     *
+     * 
      * @return Resource collection API of ManagementPolicies.
      */
     public ManagementPolicies managementPolicies() {
@@ -410,7 +389,7 @@ public final class StorageManager {
 
     /**
      * Gets the resource collection API of BlobInventoryPolicies. It manages BlobInventoryPolicy.
-     *
+     * 
      * @return Resource collection API of BlobInventoryPolicies.
      */
     public BlobInventoryPolicies blobInventoryPolicies() {
@@ -422,20 +401,20 @@ public final class StorageManager {
 
     /**
      * Gets the resource collection API of PrivateEndpointConnections. It manages PrivateEndpointConnection.
-     *
+     * 
      * @return Resource collection API of PrivateEndpointConnections.
      */
     public PrivateEndpointConnections privateEndpointConnections() {
         if (this.privateEndpointConnections == null) {
-            this.privateEndpointConnections =
-                new PrivateEndpointConnectionsImpl(clientObject.getPrivateEndpointConnections(), this);
+            this.privateEndpointConnections
+                = new PrivateEndpointConnectionsImpl(clientObject.getPrivateEndpointConnections(), this);
         }
         return privateEndpointConnections;
     }
 
     /**
      * Gets the resource collection API of PrivateLinkResources.
-     *
+     * 
      * @return Resource collection API of PrivateLinkResources.
      */
     public PrivateLinkResources privateLinkResources() {
@@ -447,21 +426,20 @@ public final class StorageManager {
 
     /**
      * Gets the resource collection API of ObjectReplicationPoliciesOperations. It manages ObjectReplicationPolicy.
-     *
+     * 
      * @return Resource collection API of ObjectReplicationPoliciesOperations.
      */
     public ObjectReplicationPoliciesOperations objectReplicationPoliciesOperations() {
         if (this.objectReplicationPoliciesOperations == null) {
-            this.objectReplicationPoliciesOperations =
-                new ObjectReplicationPoliciesOperationsImpl(
-                    clientObject.getObjectReplicationPoliciesOperations(), this);
+            this.objectReplicationPoliciesOperations = new ObjectReplicationPoliciesOperationsImpl(
+                clientObject.getObjectReplicationPoliciesOperations(), this);
         }
         return objectReplicationPoliciesOperations;
     }
 
     /**
      * Gets the resource collection API of LocalUsersOperations. It manages LocalUser.
-     *
+     * 
      * @return Resource collection API of LocalUsersOperations.
      */
     public LocalUsersOperations localUsersOperations() {
@@ -473,7 +451,7 @@ public final class StorageManager {
 
     /**
      * Gets the resource collection API of EncryptionScopes. It manages EncryptionScope.
-     *
+     * 
      * @return Resource collection API of EncryptionScopes.
      */
     public EncryptionScopes encryptionScopes() {
@@ -485,7 +463,7 @@ public final class StorageManager {
 
     /**
      * Gets the resource collection API of BlobServices. It manages BlobServiceProperties.
-     *
+     * 
      * @return Resource collection API of BlobServices.
      */
     public BlobServices blobServices() {
@@ -497,7 +475,7 @@ public final class StorageManager {
 
     /**
      * Gets the resource collection API of BlobContainers. It manages BlobContainer, ImmutabilityPolicy.
-     *
+     * 
      * @return Resource collection API of BlobContainers.
      */
     public BlobContainers blobContainers() {
@@ -509,7 +487,7 @@ public final class StorageManager {
 
     /**
      * Gets the resource collection API of FileServices. It manages FileServiceProperties.
-     *
+     * 
      * @return Resource collection API of FileServices.
      */
     public FileServices fileServices() {
@@ -521,7 +499,7 @@ public final class StorageManager {
 
     /**
      * Gets the resource collection API of FileShares. It manages FileShare.
-     *
+     * 
      * @return Resource collection API of FileShares.
      */
     public FileShares fileShares() {
@@ -533,7 +511,7 @@ public final class StorageManager {
 
     /**
      * Gets the resource collection API of QueueServices. It manages QueueServiceProperties.
-     *
+     * 
      * @return Resource collection API of QueueServices.
      */
     public QueueServices queueServices() {
@@ -545,7 +523,7 @@ public final class StorageManager {
 
     /**
      * Gets the resource collection API of Queues. It manages StorageQueue.
-     *
+     * 
      * @return Resource collection API of Queues.
      */
     public Queues queues() {
@@ -557,7 +535,7 @@ public final class StorageManager {
 
     /**
      * Gets the resource collection API of TableServices. It manages TableServiceProperties.
-     *
+     * 
      * @return Resource collection API of TableServices.
      */
     public TableServices tableServices() {
@@ -569,7 +547,7 @@ public final class StorageManager {
 
     /**
      * Gets the resource collection API of Tables. It manages Table.
-     *
+     * 
      * @return Resource collection API of Tables.
      */
     public Tables tables() {
@@ -582,7 +560,7 @@ public final class StorageManager {
     /**
      * Gets wrapped service client StorageManagementClient providing direct access to the underlying auto-generated API
      * implementation, based on Azure REST API.
-     *
+     * 
      * @return Wrapped service client StorageManagementClient.
      */
     public StorageManagementClient serviceClient() {

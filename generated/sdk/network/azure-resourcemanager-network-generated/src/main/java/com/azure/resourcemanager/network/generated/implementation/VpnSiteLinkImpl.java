@@ -15,8 +15,8 @@ public final class VpnSiteLinkImpl implements VpnSiteLink {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    VpnSiteLinkImpl(
-        VpnSiteLinkInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    VpnSiteLinkImpl(VpnSiteLinkInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

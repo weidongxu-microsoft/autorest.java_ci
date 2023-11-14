@@ -10,7 +10,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 import java.util.UUID;
 
-/** Class for content key in Streaming Locator. */
+/**
+ * Class for content key in Streaming Locator.
+ */
 @Fluent
 public final class StreamingLocatorContentKey {
     /*
@@ -49,13 +51,15 @@ public final class StreamingLocatorContentKey {
     @JsonProperty(value = "tracks", access = JsonProperty.Access.WRITE_ONLY)
     private List<TrackSelection> tracks;
 
-    /** Creates an instance of StreamingLocatorContentKey class. */
+    /**
+     * Creates an instance of StreamingLocatorContentKey class.
+     */
     public StreamingLocatorContentKey() {
     }
 
     /**
      * Get the id property: ID of Content Key.
-     *
+     * 
      * @return the id value.
      */
     public UUID id() {
@@ -64,7 +68,7 @@ public final class StreamingLocatorContentKey {
 
     /**
      * Set the id property: ID of Content Key.
-     *
+     * 
      * @param id the id value to set.
      * @return the StreamingLocatorContentKey object itself.
      */
@@ -75,7 +79,7 @@ public final class StreamingLocatorContentKey {
 
     /**
      * Get the type property: Encryption type of Content Key.
-     *
+     * 
      * @return the type value.
      */
     public StreamingLocatorContentKeyType type() {
@@ -84,7 +88,7 @@ public final class StreamingLocatorContentKey {
 
     /**
      * Get the labelReferenceInStreamingPolicy property: Label of Content Key as specified in the Streaming Policy.
-     *
+     * 
      * @return the labelReferenceInStreamingPolicy value.
      */
     public String labelReferenceInStreamingPolicy() {
@@ -93,7 +97,7 @@ public final class StreamingLocatorContentKey {
 
     /**
      * Set the labelReferenceInStreamingPolicy property: Label of Content Key as specified in the Streaming Policy.
-     *
+     * 
      * @param labelReferenceInStreamingPolicy the labelReferenceInStreamingPolicy value to set.
      * @return the StreamingLocatorContentKey object itself.
      */
@@ -104,7 +108,7 @@ public final class StreamingLocatorContentKey {
 
     /**
      * Get the value property: Value of Content Key.
-     *
+     * 
      * @return the value value.
      */
     public String value() {
@@ -113,7 +117,7 @@ public final class StreamingLocatorContentKey {
 
     /**
      * Set the value property: Value of Content Key.
-     *
+     * 
      * @param value the value value to set.
      * @return the StreamingLocatorContentKey object itself.
      */
@@ -124,7 +128,7 @@ public final class StreamingLocatorContentKey {
 
     /**
      * Get the policyName property: ContentKeyPolicy used by Content Key.
-     *
+     * 
      * @return the policyName value.
      */
     public String policyName() {
@@ -133,7 +137,7 @@ public final class StreamingLocatorContentKey {
 
     /**
      * Get the tracks property: Tracks which use this Content Key.
-     *
+     * 
      * @return the tracks value.
      */
     public List<TrackSelection> tracks() {
@@ -142,14 +146,13 @@ public final class StreamingLocatorContentKey {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (id() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property id in model StreamingLocatorContentKey"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property id in model StreamingLocatorContentKey"));
         }
         if (tracks() != null) {
             tracks().forEach(e -> e.validate());

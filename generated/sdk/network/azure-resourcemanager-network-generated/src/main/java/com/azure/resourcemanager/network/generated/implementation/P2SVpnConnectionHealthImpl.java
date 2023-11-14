@@ -12,8 +12,7 @@ public final class P2SVpnConnectionHealthImpl implements P2SVpnConnectionHealth 
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    P2SVpnConnectionHealthImpl(
-        P2SVpnConnectionHealthInner innerObject,
+    P2SVpnConnectionHealthImpl(P2SVpnConnectionHealthInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

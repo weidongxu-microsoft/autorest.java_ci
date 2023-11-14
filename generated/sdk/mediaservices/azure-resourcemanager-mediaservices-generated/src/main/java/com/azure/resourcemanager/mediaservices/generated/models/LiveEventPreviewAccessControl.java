@@ -7,7 +7,9 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The IP access control for the live event preview endpoint. */
+/**
+ * The IP access control for the live event preview endpoint.
+ */
 @Fluent
 public final class LiveEventPreviewAccessControl {
     /*
@@ -16,13 +18,15 @@ public final class LiveEventPreviewAccessControl {
     @JsonProperty(value = "ip")
     private IpAccessControl ip;
 
-    /** Creates an instance of LiveEventPreviewAccessControl class. */
+    /**
+     * Creates an instance of LiveEventPreviewAccessControl class.
+     */
     public LiveEventPreviewAccessControl() {
     }
 
     /**
      * Get the ip property: The IP access control properties.
-     *
+     * 
      * @return the ip value.
      */
     public IpAccessControl ip() {
@@ -31,7 +35,7 @@ public final class LiveEventPreviewAccessControl {
 
     /**
      * Set the ip property: The IP access control properties.
-     *
+     * 
      * @param ip the ip value to set.
      * @return the LiveEventPreviewAccessControl object itself.
      */
@@ -42,7 +46,7 @@ public final class LiveEventPreviewAccessControl {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

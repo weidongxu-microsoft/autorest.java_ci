@@ -175,20 +175,14 @@ public final class FirewallPolicyImpl implements FirewallPolicy, FirewallPolicy.
     }
 
     public FirewallPolicy create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getFirewallPolicies()
-                .createOrUpdate(resourceGroupName, firewallPolicyName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getFirewallPolicies().createOrUpdate(resourceGroupName,
+            firewallPolicyName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public FirewallPolicy create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getFirewallPolicies()
-                .createOrUpdate(resourceGroupName, firewallPolicyName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getFirewallPolicies().createOrUpdate(resourceGroupName,
+            firewallPolicyName, this.innerModel(), context);
         return this;
     }
 
@@ -204,27 +198,19 @@ public final class FirewallPolicyImpl implements FirewallPolicy, FirewallPolicy.
     }
 
     public FirewallPolicy apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getFirewallPolicies()
-                .updateTagsWithResponse(resourceGroupName, firewallPolicyName, updateParameters, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getFirewallPolicies()
+            .updateTagsWithResponse(resourceGroupName, firewallPolicyName, updateParameters, Context.NONE).getValue();
         return this;
     }
 
     public FirewallPolicy apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getFirewallPolicies()
-                .updateTagsWithResponse(resourceGroupName, firewallPolicyName, updateParameters, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getFirewallPolicies()
+            .updateTagsWithResponse(resourceGroupName, firewallPolicyName, updateParameters, context).getValue();
         return this;
     }
 
-    FirewallPolicyImpl(
-        FirewallPolicyInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    FirewallPolicyImpl(FirewallPolicyInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
@@ -233,23 +219,16 @@ public final class FirewallPolicyImpl implements FirewallPolicy, FirewallPolicy.
 
     public FirewallPolicy refresh() {
         String localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getFirewallPolicies()
-                .getByResourceGroupWithResponse(resourceGroupName, firewallPolicyName, localExpand, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getFirewallPolicies()
+            .getByResourceGroupWithResponse(resourceGroupName, firewallPolicyName, localExpand, Context.NONE)
+            .getValue();
         return this;
     }
 
     public FirewallPolicy refresh(Context context) {
         String localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getFirewallPolicies()
-                .getByResourceGroupWithResponse(resourceGroupName, firewallPolicyName, localExpand, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getFirewallPolicies()
+            .getByResourceGroupWithResponse(resourceGroupName, firewallPolicyName, localExpand, context).getValue();
         return this;
     }
 

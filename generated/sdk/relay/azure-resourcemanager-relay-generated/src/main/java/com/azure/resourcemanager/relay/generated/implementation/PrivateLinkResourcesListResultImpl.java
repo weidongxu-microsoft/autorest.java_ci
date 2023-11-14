@@ -17,8 +17,7 @@ public final class PrivateLinkResourcesListResultImpl implements PrivateLinkReso
 
     private final com.azure.resourcemanager.relay.generated.RelayManager serviceManager;
 
-    PrivateLinkResourcesListResultImpl(
-        PrivateLinkResourcesListResultInner innerObject,
+    PrivateLinkResourcesListResultImpl(PrivateLinkResourcesListResultInner innerObject,
         com.azure.resourcemanager.relay.generated.RelayManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -27,12 +26,8 @@ public final class PrivateLinkResourcesListResultImpl implements PrivateLinkReso
     public List<PrivateLinkResource> value() {
         List<PrivateLinkResourceInner> inner = this.innerModel().value();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new PrivateLinkResourceImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new PrivateLinkResourceImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

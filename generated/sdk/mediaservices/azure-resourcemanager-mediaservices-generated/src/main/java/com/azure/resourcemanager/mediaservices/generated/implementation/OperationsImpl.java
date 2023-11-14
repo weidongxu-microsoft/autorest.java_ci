@@ -20,8 +20,7 @@ public final class OperationsImpl implements Operations {
 
     private final com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager;
 
-    public OperationsImpl(
-        OperationsClient innerClient,
+    public OperationsImpl(OperationsClient innerClient,
         com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -30,10 +29,7 @@ public final class OperationsImpl implements Operations {
     public Response<OperationCollection> listWithResponse(Context context) {
         Response<OperationCollectionInner> inner = this.serviceClient().listWithResponse(context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new OperationCollectionImpl(inner.getValue(), this.manager()));
         } else {
             return null;

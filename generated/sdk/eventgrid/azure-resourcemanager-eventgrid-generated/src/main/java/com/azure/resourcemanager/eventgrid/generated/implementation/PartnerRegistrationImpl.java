@@ -90,25 +90,19 @@ public final class PartnerRegistrationImpl
     }
 
     public PartnerRegistration create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getPartnerRegistrations()
-                .createOrUpdate(resourceGroupName, partnerRegistrationName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getPartnerRegistrations().createOrUpdate(resourceGroupName,
+            partnerRegistrationName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public PartnerRegistration create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getPartnerRegistrations()
-                .createOrUpdate(resourceGroupName, partnerRegistrationName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getPartnerRegistrations().createOrUpdate(resourceGroupName,
+            partnerRegistrationName, this.innerModel(), context);
         return this;
     }
 
-    PartnerRegistrationImpl(
-        String name, com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager) {
+    PartnerRegistrationImpl(String name,
+        com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager) {
         this.innerObject = new PartnerRegistrationInner();
         this.serviceManager = serviceManager;
         this.partnerRegistrationName = name;
@@ -120,29 +114,18 @@ public final class PartnerRegistrationImpl
     }
 
     public PartnerRegistration apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getPartnerRegistrations()
-                .update(
-                    resourceGroupName,
-                    partnerRegistrationName,
-                    updatePartnerRegistrationUpdateParameters,
-                    Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getPartnerRegistrations().update(resourceGroupName,
+            partnerRegistrationName, updatePartnerRegistrationUpdateParameters, Context.NONE);
         return this;
     }
 
     public PartnerRegistration apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getPartnerRegistrations()
-                .update(resourceGroupName, partnerRegistrationName, updatePartnerRegistrationUpdateParameters, context);
+        this.innerObject = serviceManager.serviceClient().getPartnerRegistrations().update(resourceGroupName,
+            partnerRegistrationName, updatePartnerRegistrationUpdateParameters, context);
         return this;
     }
 
-    PartnerRegistrationImpl(
-        PartnerRegistrationInner innerObject,
+    PartnerRegistrationImpl(PartnerRegistrationInner innerObject,
         com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -151,22 +134,14 @@ public final class PartnerRegistrationImpl
     }
 
     public PartnerRegistration refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getPartnerRegistrations()
-                .getByResourceGroupWithResponse(resourceGroupName, partnerRegistrationName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getPartnerRegistrations()
+            .getByResourceGroupWithResponse(resourceGroupName, partnerRegistrationName, Context.NONE).getValue();
         return this;
     }
 
     public PartnerRegistration refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getPartnerRegistrations()
-                .getByResourceGroupWithResponse(resourceGroupName, partnerRegistrationName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getPartnerRegistrations()
+            .getByResourceGroupWithResponse(resourceGroupName, partnerRegistrationName, context).getValue();
         return this;
     }
 

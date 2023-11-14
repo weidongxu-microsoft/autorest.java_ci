@@ -8,20 +8,28 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Impact of Installing an updateType. */
+/**
+ * Impact of Installing an updateType.
+ */
 public final class InstallationImpact extends ExpandableStringEnum<InstallationImpact> {
-    /** Static value None for InstallationImpact. */
+    /**
+     * Static value None for InstallationImpact.
+     */
     public static final InstallationImpact NONE = fromString("None");
 
-    /** Static value DeviceRebooted for InstallationImpact. */
+    /**
+     * Static value DeviceRebooted for InstallationImpact.
+     */
     public static final InstallationImpact DEVICE_REBOOTED = fromString("DeviceRebooted");
 
-    /** Static value KubernetesWorkloadsDown for InstallationImpact. */
+    /**
+     * Static value KubernetesWorkloadsDown for InstallationImpact.
+     */
     public static final InstallationImpact KUBERNETES_WORKLOADS_DOWN = fromString("KubernetesWorkloadsDown");
 
     /**
      * Creates a new instance of InstallationImpact value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -30,7 +38,7 @@ public final class InstallationImpact extends ExpandableStringEnum<InstallationI
 
     /**
      * Creates or finds a InstallationImpact from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding InstallationImpact.
      */
@@ -41,7 +49,7 @@ public final class InstallationImpact extends ExpandableStringEnum<InstallationI
 
     /**
      * Gets known InstallationImpact values.
-     *
+     * 
      * @return known InstallationImpact values.
      */
     public static Collection<InstallationImpact> values() {

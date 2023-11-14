@@ -16,7 +16,9 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** Compute role. */
+/**
+ * Compute role.
+ */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
     include = JsonTypeInfo.As.PROPERTY,
@@ -27,8 +29,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
     @JsonSubTypes.Type(name = "CloudEdgeManagement", value = CloudEdgeManagementRole.class),
     @JsonSubTypes.Type(name = "IOT", value = IoTRole.class),
     @JsonSubTypes.Type(name = "Kubernetes", value = KubernetesRole.class),
-    @JsonSubTypes.Type(name = "MEC", value = MecRole.class)
-})
+    @JsonSubTypes.Type(name = "MEC", value = MecRole.class) })
 @Immutable
 public class RoleInner extends ArmBaseModel {
     /*
@@ -37,13 +38,15 @@ public class RoleInner extends ArmBaseModel {
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
-    /** Creates an instance of RoleInner class. */
+    /**
+     * Creates an instance of RoleInner class.
+     */
     public RoleInner() {
     }
 
     /**
      * Get the systemData property: Metadata pertaining to creation and last modification of Role.
-     *
+     * 
      * @return the systemData value.
      */
     public SystemData systemData() {
@@ -52,7 +55,7 @@ public class RoleInner extends ArmBaseModel {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

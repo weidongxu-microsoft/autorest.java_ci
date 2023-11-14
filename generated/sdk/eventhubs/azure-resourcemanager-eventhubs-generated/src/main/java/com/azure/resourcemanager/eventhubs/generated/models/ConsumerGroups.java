@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of ConsumerGroups. */
+/**
+ * Resource collection API of ConsumerGroups.
+ */
 public interface ConsumerGroups {
     /**
      * Deletes a consumer group from the specified Event Hub and resource group.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param eventHubName The Event Hub name.
@@ -23,12 +25,12 @@ public interface ConsumerGroups {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
-    Response<Void> deleteWithResponse(
-        String resourceGroupName, String namespaceName, String eventHubName, String consumerGroupName, Context context);
+    Response<Void> deleteWithResponse(String resourceGroupName, String namespaceName, String eventHubName,
+        String consumerGroupName, Context context);
 
     /**
      * Deletes a consumer group from the specified Event Hub and resource group.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param eventHubName The Event Hub name.
@@ -41,7 +43,7 @@ public interface ConsumerGroups {
 
     /**
      * Gets a description for the specified consumer group.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param eventHubName The Event Hub name.
@@ -52,12 +54,12 @@ public interface ConsumerGroups {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a description for the specified consumer group along with {@link Response}.
      */
-    Response<ConsumerGroup> getWithResponse(
-        String resourceGroupName, String namespaceName, String eventHubName, String consumerGroupName, Context context);
+    Response<ConsumerGroup> getWithResponse(String resourceGroupName, String namespaceName, String eventHubName,
+        String consumerGroupName, Context context);
 
     /**
      * Gets a description for the specified consumer group.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param eventHubName The Event Hub name.
@@ -72,7 +74,7 @@ public interface ConsumerGroups {
     /**
      * Gets all the consumer groups in a Namespace. An empty feed is returned if no consumer group exists in the
      * Namespace.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param eventHubName The Event Hub name.
@@ -86,13 +88,13 @@ public interface ConsumerGroups {
     /**
      * Gets all the consumer groups in a Namespace. An empty feed is returned if no consumer group exists in the
      * Namespace.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param eventHubName The Event Hub name.
      * @param skip Skip is only used if a previous operation returned a partial result. If a previous response contains
-     *     a nextLink element, the value of the nextLink element will include a skip parameter that specifies a starting
-     *     point to use for subsequent calls.
+     * a nextLink element, the value of the nextLink element will include a skip parameter that specifies a starting
+     * point to use for subsequent calls.
      * @param top May be used to limit the number of results to the most recent N usageDetails.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -100,17 +102,12 @@ public interface ConsumerGroups {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all the consumer groups in a Namespace as paginated response with {@link PagedIterable}.
      */
-    PagedIterable<ConsumerGroup> listByEventHub(
-        String resourceGroupName,
-        String namespaceName,
-        String eventHubName,
-        Integer skip,
-        Integer top,
-        Context context);
+    PagedIterable<ConsumerGroup> listByEventHub(String resourceGroupName, String namespaceName, String eventHubName,
+        Integer skip, Integer top, Context context);
 
     /**
      * Gets a description for the specified consumer group.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -121,7 +118,7 @@ public interface ConsumerGroups {
 
     /**
      * Gets a description for the specified consumer group.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -133,7 +130,7 @@ public interface ConsumerGroups {
 
     /**
      * Deletes a consumer group from the specified Event Hub and resource group.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -143,7 +140,7 @@ public interface ConsumerGroups {
 
     /**
      * Deletes a consumer group from the specified Event Hub and resource group.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -155,7 +152,7 @@ public interface ConsumerGroups {
 
     /**
      * Begins definition for a new ConsumerGroup resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new ConsumerGroup definition.
      */

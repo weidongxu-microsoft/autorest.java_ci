@@ -13,8 +13,7 @@ public final class DeletedManagedHsmImpl implements DeletedManagedHsm {
 
     private final com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager;
 
-    DeletedManagedHsmImpl(
-        DeletedManagedHsmInner innerObject,
+    DeletedManagedHsmImpl(DeletedManagedHsmInner innerObject,
         com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

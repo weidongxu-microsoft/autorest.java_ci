@@ -21,35 +21,28 @@ public final class FirewallPolicyIdpsSignaturesFilterValuesImpl implements Firew
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public FirewallPolicyIdpsSignaturesFilterValuesImpl(
-        FirewallPolicyIdpsSignaturesFilterValuesClient innerClient,
+    public FirewallPolicyIdpsSignaturesFilterValuesImpl(FirewallPolicyIdpsSignaturesFilterValuesClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<SignatureOverridesFilterValuesResponse> listWithResponse(
-        String resourceGroupName,
-        String firewallPolicyName,
-        SignatureOverridesFilterValuesQuery parameters,
-        Context context) {
-        Response<SignatureOverridesFilterValuesResponseInner> inner =
-            this.serviceClient().listWithResponse(resourceGroupName, firewallPolicyName, parameters, context);
+    public Response<SignatureOverridesFilterValuesResponse> listWithResponse(String resourceGroupName,
+        String firewallPolicyName, SignatureOverridesFilterValuesQuery parameters, Context context) {
+        Response<SignatureOverridesFilterValuesResponseInner> inner
+            = this.serviceClient().listWithResponse(resourceGroupName, firewallPolicyName, parameters, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new SignatureOverridesFilterValuesResponseImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public SignatureOverridesFilterValuesResponse list(
-        String resourceGroupName, String firewallPolicyName, SignatureOverridesFilterValuesQuery parameters) {
-        SignatureOverridesFilterValuesResponseInner inner =
-            this.serviceClient().list(resourceGroupName, firewallPolicyName, parameters);
+    public SignatureOverridesFilterValuesResponse list(String resourceGroupName, String firewallPolicyName,
+        SignatureOverridesFilterValuesQuery parameters) {
+        SignatureOverridesFilterValuesResponseInner inner
+            = this.serviceClient().list(resourceGroupName, firewallPolicyName, parameters);
         if (inner != null) {
             return new SignatureOverridesFilterValuesResponseImpl(inner, this.manager());
         } else {

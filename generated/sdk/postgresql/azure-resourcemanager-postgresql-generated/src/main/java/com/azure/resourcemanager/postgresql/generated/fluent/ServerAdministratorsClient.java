@@ -18,25 +18,27 @@ import java.nio.ByteBuffer;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-/** An instance of this class provides access to all the operations defined in ServerAdministratorsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in ServerAdministratorsClient.
+ */
 public interface ServerAdministratorsClient {
     /**
      * Gets information about a AAD server administrator.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return information about a AAD server administrator along with {@link Response} on successful completion of
-     *     {@link Mono}.
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Mono<Response<ServerAdministratorResourceInner>> getWithResponseAsync(String resourceGroupName, String serverName);
 
     /**
      * Gets information about a AAD server administrator.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -49,7 +51,7 @@ public interface ServerAdministratorsClient {
 
     /**
      * Gets information about a AAD server administrator.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param context The context to associate with this operation.
@@ -59,12 +61,12 @@ public interface ServerAdministratorsClient {
      * @return information about a AAD server administrator along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<ServerAdministratorResourceInner> getWithResponse(
-        String resourceGroupName, String serverName, Context context);
+    Response<ServerAdministratorResourceInner> getWithResponse(String resourceGroupName, String serverName,
+        Context context);
 
     /**
      * Gets information about a AAD server administrator.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -78,7 +80,7 @@ public interface ServerAdministratorsClient {
     /**
      * Creates or update active directory administrator on an existing server. The update action will overwrite the
      * existing administrator.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param properties The required parameters for creating or updating an AAD server administrator.
@@ -86,16 +88,16 @@ public interface ServerAdministratorsClient {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return represents a and external administrator to be created along with {@link Response} on successful
-     *     completion of {@link Mono}.
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
-        String resourceGroupName, String serverName, ServerAdministratorResourceInner properties);
+    Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName, String serverName,
+        ServerAdministratorResourceInner properties);
 
     /**
      * Creates or update active directory administrator on an existing server. The update action will overwrite the
      * existing administrator.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param properties The required parameters for creating or updating an AAD server administrator.
@@ -111,7 +113,7 @@ public interface ServerAdministratorsClient {
     /**
      * Creates or update active directory administrator on an existing server. The update action will overwrite the
      * existing administrator.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param properties The required parameters for creating or updating an AAD server administrator.
@@ -121,13 +123,13 @@ public interface ServerAdministratorsClient {
      * @return the {@link SyncPoller} for polling of represents a and external administrator to be created.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<ServerAdministratorResourceInner>, ServerAdministratorResourceInner> beginCreateOrUpdate(
-        String resourceGroupName, String serverName, ServerAdministratorResourceInner properties);
+    SyncPoller<PollResult<ServerAdministratorResourceInner>, ServerAdministratorResourceInner>
+        beginCreateOrUpdate(String resourceGroupName, String serverName, ServerAdministratorResourceInner properties);
 
     /**
      * Creates or update active directory administrator on an existing server. The update action will overwrite the
      * existing administrator.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param properties The required parameters for creating or updating an AAD server administrator.
@@ -144,7 +146,7 @@ public interface ServerAdministratorsClient {
     /**
      * Creates or update active directory administrator on an existing server. The update action will overwrite the
      * existing administrator.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param properties The required parameters for creating or updating an AAD server administrator.
@@ -154,13 +156,13 @@ public interface ServerAdministratorsClient {
      * @return represents a and external administrator to be created on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Mono<ServerAdministratorResourceInner> createOrUpdateAsync(
-        String resourceGroupName, String serverName, ServerAdministratorResourceInner properties);
+    Mono<ServerAdministratorResourceInner> createOrUpdateAsync(String resourceGroupName, String serverName,
+        ServerAdministratorResourceInner properties);
 
     /**
      * Creates or update active directory administrator on an existing server. The update action will overwrite the
      * existing administrator.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param properties The required parameters for creating or updating an AAD server administrator.
@@ -170,13 +172,13 @@ public interface ServerAdministratorsClient {
      * @return represents a and external administrator to be created.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ServerAdministratorResourceInner createOrUpdate(
-        String resourceGroupName, String serverName, ServerAdministratorResourceInner properties);
+    ServerAdministratorResourceInner createOrUpdate(String resourceGroupName, String serverName,
+        ServerAdministratorResourceInner properties);
 
     /**
      * Creates or update active directory administrator on an existing server. The update action will overwrite the
      * existing administrator.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param properties The required parameters for creating or updating an AAD server administrator.
@@ -187,12 +189,12 @@ public interface ServerAdministratorsClient {
      * @return represents a and external administrator to be created.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ServerAdministratorResourceInner createOrUpdate(
-        String resourceGroupName, String serverName, ServerAdministratorResourceInner properties, Context context);
+    ServerAdministratorResourceInner createOrUpdate(String resourceGroupName, String serverName,
+        ServerAdministratorResourceInner properties, Context context);
 
     /**
      * Deletes server active directory administrator.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -205,7 +207,7 @@ public interface ServerAdministratorsClient {
 
     /**
      * Deletes server active directory administrator.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -218,7 +220,7 @@ public interface ServerAdministratorsClient {
 
     /**
      * Deletes server active directory administrator.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -231,7 +233,7 @@ public interface ServerAdministratorsClient {
 
     /**
      * Deletes server active directory administrator.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param context The context to associate with this operation.
@@ -245,7 +247,7 @@ public interface ServerAdministratorsClient {
 
     /**
      * Deletes server active directory administrator.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -258,7 +260,7 @@ public interface ServerAdministratorsClient {
 
     /**
      * Deletes server active directory administrator.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -270,7 +272,7 @@ public interface ServerAdministratorsClient {
 
     /**
      * Deletes server active directory administrator.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param context The context to associate with this operation.
@@ -283,43 +285,43 @@ public interface ServerAdministratorsClient {
 
     /**
      * Returns a list of server Administrators.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a list Active Directory Administrators request as paginated response with {@link
-     *     PagedFlux}.
+     * @return the response to a list Active Directory Administrators request as paginated response with
+     * {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedFlux<ServerAdministratorResourceInner> listAsync(String resourceGroupName, String serverName);
 
     /**
      * Returns a list of server Administrators.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a list Active Directory Administrators request as paginated response with {@link
-     *     PagedIterable}.
+     * @return the response to a list Active Directory Administrators request as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<ServerAdministratorResourceInner> list(String resourceGroupName, String serverName);
 
     /**
      * Returns a list of server Administrators.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a list Active Directory Administrators request as paginated response with {@link
-     *     PagedIterable}.
+     * @return the response to a list Active Directory Administrators request as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<ServerAdministratorResourceInner> list(String resourceGroupName, String serverName, Context context);

@@ -8,30 +8,33 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Defines the options for how the data plane API of a Search service authenticates requests. This cannot be set if
+ * Defines the options for how the search service authenticates a data plane request. This cannot be set if
  * 'disableLocalAuth' is set to true.
  */
 @Fluent
 public final class DataPlaneAuthOptions {
     /*
-     * Indicates that only the API key needs to be used for authentication.
+     * Indicates that only the API key can be used for authentication.
      */
     @JsonProperty(value = "apiKeyOnly")
     private Object apiKeyOnly;
 
     /*
-     * Indicates that either the API key or an access token from Azure Active Directory can be used for authentication.
+     * Indicates that either the API key or an access token from a Microsoft Entra ID tenant can be used for
+     * authentication.
      */
     @JsonProperty(value = "aadOrApiKey")
     private DataPlaneAadOrApiKeyAuthOption aadOrApiKey;
 
-    /** Creates an instance of DataPlaneAuthOptions class. */
+    /**
+     * Creates an instance of DataPlaneAuthOptions class.
+     */
     public DataPlaneAuthOptions() {
     }
 
     /**
-     * Get the apiKeyOnly property: Indicates that only the API key needs to be used for authentication.
-     *
+     * Get the apiKeyOnly property: Indicates that only the API key can be used for authentication.
+     * 
      * @return the apiKeyOnly value.
      */
     public Object apiKeyOnly() {
@@ -39,8 +42,8 @@ public final class DataPlaneAuthOptions {
     }
 
     /**
-     * Set the apiKeyOnly property: Indicates that only the API key needs to be used for authentication.
-     *
+     * Set the apiKeyOnly property: Indicates that only the API key can be used for authentication.
+     * 
      * @param apiKeyOnly the apiKeyOnly value to set.
      * @return the DataPlaneAuthOptions object itself.
      */
@@ -50,9 +53,9 @@ public final class DataPlaneAuthOptions {
     }
 
     /**
-     * Get the aadOrApiKey property: Indicates that either the API key or an access token from Azure Active Directory
-     * can be used for authentication.
-     *
+     * Get the aadOrApiKey property: Indicates that either the API key or an access token from a Microsoft Entra ID
+     * tenant can be used for authentication.
+     * 
      * @return the aadOrApiKey value.
      */
     public DataPlaneAadOrApiKeyAuthOption aadOrApiKey() {
@@ -60,9 +63,9 @@ public final class DataPlaneAuthOptions {
     }
 
     /**
-     * Set the aadOrApiKey property: Indicates that either the API key or an access token from Azure Active Directory
-     * can be used for authentication.
-     *
+     * Set the aadOrApiKey property: Indicates that either the API key or an access token from a Microsoft Entra ID
+     * tenant can be used for authentication.
+     * 
      * @param aadOrApiKey the aadOrApiKey value to set.
      * @return the DataPlaneAuthOptions object itself.
      */
@@ -73,7 +76,7 @@ public final class DataPlaneAuthOptions {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

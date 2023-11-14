@@ -15,8 +15,7 @@ public final class ResourceNavigationLinksListResultImpl implements ResourceNavi
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    ResourceNavigationLinksListResultImpl(
-        ResourceNavigationLinksListResultInner innerObject,
+    ResourceNavigationLinksListResultImpl(ResourceNavigationLinksListResultInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

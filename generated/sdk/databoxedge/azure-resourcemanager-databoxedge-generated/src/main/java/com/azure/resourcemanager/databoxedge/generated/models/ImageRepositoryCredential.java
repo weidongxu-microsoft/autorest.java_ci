@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Image repository credential. */
+/**
+ * Image repository credential.
+ */
 @Fluent
 public final class ImageRepositoryCredential {
     /*
@@ -29,13 +31,15 @@ public final class ImageRepositoryCredential {
     @JsonProperty(value = "password")
     private AsymmetricEncryptedSecret password;
 
-    /** Creates an instance of ImageRepositoryCredential class. */
+    /**
+     * Creates an instance of ImageRepositoryCredential class.
+     */
     public ImageRepositoryCredential() {
     }
 
     /**
      * Get the imageRepositoryUrl property: Image repository url (e.g.: mcr.microsoft.com).
-     *
+     * 
      * @return the imageRepositoryUrl value.
      */
     public String imageRepositoryUrl() {
@@ -44,7 +48,7 @@ public final class ImageRepositoryCredential {
 
     /**
      * Set the imageRepositoryUrl property: Image repository url (e.g.: mcr.microsoft.com).
-     *
+     * 
      * @param imageRepositoryUrl the imageRepositoryUrl value to set.
      * @return the ImageRepositoryCredential object itself.
      */
@@ -55,7 +59,7 @@ public final class ImageRepositoryCredential {
 
     /**
      * Get the username property: Repository user name.
-     *
+     * 
      * @return the username value.
      */
     public String username() {
@@ -64,7 +68,7 @@ public final class ImageRepositoryCredential {
 
     /**
      * Set the username property: Repository user name.
-     *
+     * 
      * @param username the username value to set.
      * @return the ImageRepositoryCredential object itself.
      */
@@ -75,7 +79,7 @@ public final class ImageRepositoryCredential {
 
     /**
      * Get the password property: Repository user password.
-     *
+     * 
      * @return the password value.
      */
     public AsymmetricEncryptedSecret password() {
@@ -84,7 +88,7 @@ public final class ImageRepositoryCredential {
 
     /**
      * Set the password property: Repository user password.
-     *
+     * 
      * @param password the password value to set.
      * @return the ImageRepositoryCredential object itself.
      */
@@ -95,21 +99,17 @@ public final class ImageRepositoryCredential {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (imageRepositoryUrl() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property imageRepositoryUrl in model ImageRepositoryCredential"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property imageRepositoryUrl in model ImageRepositoryCredential"));
         }
         if (username() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property username in model ImageRepositoryCredential"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property username in model ImageRepositoryCredential"));
         }
         if (password() != null) {
             password().validate();

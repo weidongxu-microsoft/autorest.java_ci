@@ -20,21 +20,17 @@ public final class CommunityGalleriesImpl implements CommunityGalleries {
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    public CommunityGalleriesImpl(
-        CommunityGalleriesClient innerClient,
+    public CommunityGalleriesImpl(CommunityGalleriesClient innerClient,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
     public Response<CommunityGallery> getWithResponse(String location, String publicGalleryName, Context context) {
-        Response<CommunityGalleryInner> inner =
-            this.serviceClient().getWithResponse(location, publicGalleryName, context);
+        Response<CommunityGalleryInner> inner
+            = this.serviceClient().getWithResponse(location, publicGalleryName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new CommunityGalleryImpl(inner.getValue(), this.manager()));
         } else {
             return null;

@@ -16,8 +16,7 @@ public final class ConnectivityInformationImpl implements ConnectivityInformatio
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    ConnectivityInformationImpl(
-        ConnectivityInformationInner innerObject,
+    ConnectivityInformationImpl(ConnectivityInformationInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

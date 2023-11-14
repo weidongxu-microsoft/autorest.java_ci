@@ -17,26 +17,21 @@ public final class SupportPackagesImpl implements SupportPackages {
 
     private final com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager;
 
-    public SupportPackagesImpl(
-        SupportPackagesClient innerClient,
+    public SupportPackagesImpl(SupportPackagesClient innerClient,
         com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public void triggerSupportPackage(
-        String deviceName, String resourceGroupName, TriggerSupportPackageRequest triggerSupportPackageRequest) {
+    public void triggerSupportPackage(String deviceName, String resourceGroupName,
+        TriggerSupportPackageRequest triggerSupportPackageRequest) {
         this.serviceClient().triggerSupportPackage(deviceName, resourceGroupName, triggerSupportPackageRequest);
     }
 
-    public void triggerSupportPackage(
-        String deviceName,
-        String resourceGroupName,
-        TriggerSupportPackageRequest triggerSupportPackageRequest,
-        Context context) {
-        this
-            .serviceClient()
-            .triggerSupportPackage(deviceName, resourceGroupName, triggerSupportPackageRequest, context);
+    public void triggerSupportPackage(String deviceName, String resourceGroupName,
+        TriggerSupportPackageRequest triggerSupportPackageRequest, Context context) {
+        this.serviceClient().triggerSupportPackage(deviceName, resourceGroupName, triggerSupportPackageRequest,
+            context);
     }
 
     private SupportPackagesClient serviceClient() {

@@ -15,8 +15,7 @@ public final class TriggeredJobHistoryImpl implements TriggeredJobHistory {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    TriggeredJobHistoryImpl(
-        TriggeredJobHistoryInner innerObject,
+    TriggeredJobHistoryImpl(TriggeredJobHistoryInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

@@ -8,20 +8,28 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Indicates what scope Cost Management in the Azure portal should default to. Allowed values: LastUsed. */
+/**
+ * Indicates what scope Cost Management in the Azure portal should default to. Allowed values: LastUsed.
+ */
 public final class SettingsPropertiesStartOn extends ExpandableStringEnum<SettingsPropertiesStartOn> {
-    /** Static value LastUsed for SettingsPropertiesStartOn. */
+    /**
+     * Static value LastUsed for SettingsPropertiesStartOn.
+     */
     public static final SettingsPropertiesStartOn LAST_USED = fromString("LastUsed");
 
-    /** Static value ScopePicker for SettingsPropertiesStartOn. */
+    /**
+     * Static value ScopePicker for SettingsPropertiesStartOn.
+     */
     public static final SettingsPropertiesStartOn SCOPE_PICKER = fromString("ScopePicker");
 
-    /** Static value SpecificScope for SettingsPropertiesStartOn. */
+    /**
+     * Static value SpecificScope for SettingsPropertiesStartOn.
+     */
     public static final SettingsPropertiesStartOn SPECIFIC_SCOPE = fromString("SpecificScope");
 
     /**
      * Creates a new instance of SettingsPropertiesStartOn value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -30,7 +38,7 @@ public final class SettingsPropertiesStartOn extends ExpandableStringEnum<Settin
 
     /**
      * Creates or finds a SettingsPropertiesStartOn from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding SettingsPropertiesStartOn.
      */
@@ -41,7 +49,7 @@ public final class SettingsPropertiesStartOn extends ExpandableStringEnum<Settin
 
     /**
      * Gets known SettingsPropertiesStartOn values.
-     *
+     * 
      * @return known SettingsPropertiesStartOn values.
      */
     public static Collection<SettingsPropertiesStartOn> values() {

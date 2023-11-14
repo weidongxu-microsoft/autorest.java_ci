@@ -19,8 +19,8 @@ public final class SkusImpl implements Skus {
 
     private final com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager;
 
-    public SkusImpl(
-        SkusClient innerClient, com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager) {
+    public SkusImpl(SkusClient innerClient,
+        com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }

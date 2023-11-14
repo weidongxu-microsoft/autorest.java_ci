@@ -12,48 +12,50 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DetectorResponseInner;
 import java.time.OffsetDateTime;
 
-/** An instance of this class provides access to all the operations defined in CertificateOrdersDiagnosticsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in CertificateOrdersDiagnosticsClient.
+ */
 public interface CertificateOrdersDiagnosticsClient {
     /**
      * Microsoft.CertificateRegistration to get the list of detectors for this RP.
-     *
-     * <p>Description for Microsoft.CertificateRegistration to get the list of detectors for this RP.
-     *
+     * 
+     * Description for Microsoft.CertificateRegistration to get the list of detectors for this RP.
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName The certificate order name for which the response is needed.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of detector responses as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<DetectorResponseInner> listAppServiceCertificateOrderDetectorResponse(
-        String resourceGroupName, String certificateOrderName);
+    PagedIterable<DetectorResponseInner> listAppServiceCertificateOrderDetectorResponse(String resourceGroupName,
+        String certificateOrderName);
 
     /**
      * Microsoft.CertificateRegistration to get the list of detectors for this RP.
-     *
-     * <p>Description for Microsoft.CertificateRegistration to get the list of detectors for this RP.
-     *
+     * 
+     * Description for Microsoft.CertificateRegistration to get the list of detectors for this RP.
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName The certificate order name for which the response is needed.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of detector responses as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<DetectorResponseInner> listAppServiceCertificateOrderDetectorResponse(
-        String resourceGroupName, String certificateOrderName, Context context);
+    PagedIterable<DetectorResponseInner> listAppServiceCertificateOrderDetectorResponse(String resourceGroupName,
+        String certificateOrderName, Context context);
 
     /**
      * Microsoft.CertificateRegistration call to get a detector response from App Lens.
-     *
-     * <p>Description for Microsoft.CertificateRegistration call to get a detector response from App Lens.
-     *
+     * 
+     * Description for Microsoft.CertificateRegistration call to get a detector response from App Lens.
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName The certificate order name for which the response is needed.
      * @param detectorName The detector name which needs to be run.
@@ -63,35 +65,30 @@ public interface CertificateOrdersDiagnosticsClient {
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return class representing Response from Detector along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<DetectorResponseInner> getAppServiceCertificateOrderDetectorResponseWithResponse(
-        String resourceGroupName,
-        String certificateOrderName,
-        String detectorName,
-        OffsetDateTime startTime,
-        OffsetDateTime endTime,
-        String timeGrain,
-        Context context);
+    Response<DetectorResponseInner> getAppServiceCertificateOrderDetectorResponseWithResponse(String resourceGroupName,
+        String certificateOrderName, String detectorName, OffsetDateTime startTime, OffsetDateTime endTime,
+        String timeGrain, Context context);
 
     /**
      * Microsoft.CertificateRegistration call to get a detector response from App Lens.
-     *
-     * <p>Description for Microsoft.CertificateRegistration call to get a detector response from App Lens.
-     *
+     * 
+     * Description for Microsoft.CertificateRegistration call to get a detector response from App Lens.
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName The certificate order name for which the response is needed.
      * @param detectorName The detector name which needs to be run.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return class representing Response from Detector.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    DetectorResponseInner getAppServiceCertificateOrderDetectorResponse(
-        String resourceGroupName, String certificateOrderName, String detectorName);
+    DetectorResponseInner getAppServiceCertificateOrderDetectorResponse(String resourceGroupName,
+        String certificateOrderName, String detectorName);
 }

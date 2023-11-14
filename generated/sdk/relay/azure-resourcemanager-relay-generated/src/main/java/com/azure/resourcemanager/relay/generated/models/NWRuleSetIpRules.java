@@ -7,7 +7,9 @@ package com.azure.resourcemanager.relay.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The response from the List namespace operation. */
+/**
+ * The response from the List namespace operation.
+ */
 @Fluent
 public final class NWRuleSetIpRules {
     /*
@@ -22,13 +24,15 @@ public final class NWRuleSetIpRules {
     @JsonProperty(value = "action")
     private NetworkRuleIpAction action;
 
-    /** Creates an instance of NWRuleSetIpRules class. */
+    /**
+     * Creates an instance of NWRuleSetIpRules class.
+     */
     public NWRuleSetIpRules() {
     }
 
     /**
      * Get the ipMask property: IP Mask.
-     *
+     * 
      * @return the ipMask value.
      */
     public String ipMask() {
@@ -37,7 +41,7 @@ public final class NWRuleSetIpRules {
 
     /**
      * Set the ipMask property: IP Mask.
-     *
+     * 
      * @param ipMask the ipMask value to set.
      * @return the NWRuleSetIpRules object itself.
      */
@@ -48,7 +52,7 @@ public final class NWRuleSetIpRules {
 
     /**
      * Get the action property: The IP Filter Action.
-     *
+     * 
      * @return the action value.
      */
     public NetworkRuleIpAction action() {
@@ -57,7 +61,7 @@ public final class NWRuleSetIpRules {
 
     /**
      * Set the action property: The IP Filter Action.
-     *
+     * 
      * @param action the action value to set.
      * @return the NWRuleSetIpRules object itself.
      */
@@ -68,7 +72,7 @@ public final class NWRuleSetIpRules {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -7,18 +7,20 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.resourcemanager.network.generated.fluent.models.ServiceAssociationLinksListResultInner;
 import java.util.List;
 
-/** An immutable client-side representation of ServiceAssociationLinksListResult. */
+/**
+ * An immutable client-side representation of ServiceAssociationLinksListResult.
+ */
 public interface ServiceAssociationLinksListResult {
     /**
      * Gets the value property: The service association links in a subnet.
-     *
+     * 
      * @return the value value.
      */
     List<ServiceAssociationLink> value();
 
     /**
      * Gets the nextLink property: The URL to get the next set of results.
-     *
+     * 
      * @return the nextLink value.
      */
     String nextLink();
@@ -26,7 +28,7 @@ public interface ServiceAssociationLinksListResult {
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.ServiceAssociationLinksListResultInner
      * object.
-     *
+     * 
      * @return the inner object.
      */
     ServiceAssociationLinksListResultInner innerModel();

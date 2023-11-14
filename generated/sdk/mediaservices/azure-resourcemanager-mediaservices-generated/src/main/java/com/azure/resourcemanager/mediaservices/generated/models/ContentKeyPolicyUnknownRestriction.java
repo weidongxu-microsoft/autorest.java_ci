@@ -8,18 +8,22 @@ import com.azure.core.annotation.Immutable;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** Represents a ContentKeyPolicyRestriction that is unavailable in the current API version. */
+/**
+ * Represents a ContentKeyPolicyRestriction that is unavailable in the current API version.
+ */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
 @JsonTypeName("#Microsoft.Media.ContentKeyPolicyUnknownRestriction")
 @Immutable
 public final class ContentKeyPolicyUnknownRestriction extends ContentKeyPolicyRestriction {
-    /** Creates an instance of ContentKeyPolicyUnknownRestriction class. */
+    /**
+     * Creates an instance of ContentKeyPolicyUnknownRestriction class.
+     */
     public ContentKeyPolicyUnknownRestriction() {
     }
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

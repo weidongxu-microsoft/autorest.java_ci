@@ -7,7 +7,9 @@ package com.azure.resourcemanager.consumption.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Details of estimated savings. The costs and savings are estimated for the term. */
+/**
+ * Details of estimated savings. The costs and savings are estimated for the term.
+ */
 @Fluent
 public final class ReservationRecommendationDetailsCalculatedSavingsProperties {
     /*
@@ -53,13 +55,15 @@ public final class ReservationRecommendationDetailsCalculatedSavingsProperties {
     @JsonProperty(value = "savings", access = JsonProperty.Access.WRITE_ONLY)
     private Float savings;
 
-    /** Creates an instance of ReservationRecommendationDetailsCalculatedSavingsProperties class. */
+    /**
+     * Creates an instance of ReservationRecommendationDetailsCalculatedSavingsProperties class.
+     */
     public ReservationRecommendationDetailsCalculatedSavingsProperties() {
     }
 
     /**
      * Get the onDemandCost property: The cost without reservation. Includes hardware and software cost.
-     *
+     * 
      * @return the onDemandCost value.
      */
     public Float onDemandCost() {
@@ -68,7 +72,7 @@ public final class ReservationRecommendationDetailsCalculatedSavingsProperties {
 
     /**
      * Get the overageCost property: Hardware and software cost of the resources not covered by the reservation.
-     *
+     * 
      * @return the overageCost value.
      */
     public Float overageCost() {
@@ -77,7 +81,7 @@ public final class ReservationRecommendationDetailsCalculatedSavingsProperties {
 
     /**
      * Get the quantity property: The quantity for calculated savings.
-     *
+     * 
      * @return the quantity value.
      */
     public Float quantity() {
@@ -86,7 +90,7 @@ public final class ReservationRecommendationDetailsCalculatedSavingsProperties {
 
     /**
      * Get the reservationCost property: Hardware cost of the resources covered by the reservation.
-     *
+     * 
      * @return the reservationCost value.
      */
     public Float reservationCost() {
@@ -96,7 +100,7 @@ public final class ReservationRecommendationDetailsCalculatedSavingsProperties {
     /**
      * Get the totalReservationCost property: Reservation cost + software cost of the resources covered by the
      * reservation + overage cost.
-     *
+     * 
      * @return the totalReservationCost value.
      */
     public Float totalReservationCost() {
@@ -106,7 +110,7 @@ public final class ReservationRecommendationDetailsCalculatedSavingsProperties {
     /**
      * Get the reservedUnitCount property: The number of reserved units used to calculate savings. Always 1 for virtual
      * machines.
-     *
+     * 
      * @return the reservedUnitCount value.
      */
     public Float reservedUnitCount() {
@@ -116,7 +120,7 @@ public final class ReservationRecommendationDetailsCalculatedSavingsProperties {
     /**
      * Set the reservedUnitCount property: The number of reserved units used to calculate savings. Always 1 for virtual
      * machines.
-     *
+     * 
      * @param reservedUnitCount the reservedUnitCount value to set.
      * @return the ReservationRecommendationDetailsCalculatedSavingsProperties object itself.
      */
@@ -128,7 +132,7 @@ public final class ReservationRecommendationDetailsCalculatedSavingsProperties {
     /**
      * Get the savings property: The amount saved by purchasing the recommended quantity of reservation. This is equal
      * to onDemandCost - totalReservationCost.
-     *
+     * 
      * @return the savings value.
      */
     public Float savings() {
@@ -137,7 +141,7 @@ public final class ReservationRecommendationDetailsCalculatedSavingsProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -8,7 +8,9 @@ import com.azure.core.annotation.Immutable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Details of JobOutput errors. */
+/**
+ * Details of JobOutput errors.
+ */
 @Immutable
 public final class JobError {
     /*
@@ -42,13 +44,15 @@ public final class JobError {
     @JsonProperty(value = "details", access = JsonProperty.Access.WRITE_ONLY)
     private List<JobErrorDetail> details;
 
-    /** Creates an instance of JobError class. */
+    /**
+     * Creates an instance of JobError class.
+     */
     public JobError() {
     }
 
     /**
      * Get the code property: Error code describing the error.
-     *
+     * 
      * @return the code value.
      */
     public JobErrorCode code() {
@@ -57,7 +61,7 @@ public final class JobError {
 
     /**
      * Get the message property: A human-readable language-dependent representation of the error.
-     *
+     * 
      * @return the message value.
      */
     public String message() {
@@ -66,7 +70,7 @@ public final class JobError {
 
     /**
      * Get the category property: Helps with categorization of errors.
-     *
+     * 
      * @return the category value.
      */
     public JobErrorCategory category() {
@@ -76,7 +80,7 @@ public final class JobError {
     /**
      * Get the retry property: Indicates that it may be possible to retry the Job. If retry is unsuccessful, please
      * contact Azure support via Azure Portal.
-     *
+     * 
      * @return the retry value.
      */
     public JobRetry retry() {
@@ -85,7 +89,7 @@ public final class JobError {
 
     /**
      * Get the details property: An array of details about specific errors that led to this reported error.
-     *
+     * 
      * @return the details value.
      */
     public List<JobErrorDetail> details() {
@@ -94,7 +98,7 @@ public final class JobError {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

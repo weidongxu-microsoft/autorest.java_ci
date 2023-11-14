@@ -18,7 +18,7 @@ import com.azure.resourcemanager.network.generated.models.SignatureOverridesFilt
 public interface FirewallPolicyIdpsSignaturesFilterValuesClient {
     /**
      * Retrieves the current filter values for the signatures overrides.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @param parameters Describes the filter values possibles for a given column.
@@ -29,15 +29,12 @@ public interface FirewallPolicyIdpsSignaturesFilterValuesClient {
      * @return describes the list of all possible values for a specific filter value along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<SignatureOverridesFilterValuesResponseInner> listWithResponse(
-        String resourceGroupName,
-        String firewallPolicyName,
-        SignatureOverridesFilterValuesQuery parameters,
-        Context context);
+    Response<SignatureOverridesFilterValuesResponseInner> listWithResponse(String resourceGroupName,
+        String firewallPolicyName, SignatureOverridesFilterValuesQuery parameters, Context context);
 
     /**
      * Retrieves the current filter values for the signatures overrides.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @param parameters Describes the filter values possibles for a given column.
@@ -47,6 +44,6 @@ public interface FirewallPolicyIdpsSignaturesFilterValuesClient {
      * @return describes the list of all possible values for a specific filter value.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    SignatureOverridesFilterValuesResponseInner list(
-        String resourceGroupName, String firewallPolicyName, SignatureOverridesFilterValuesQuery parameters);
+    SignatureOverridesFilterValuesResponseInner list(String resourceGroupName, String firewallPolicyName,
+        SignatureOverridesFilterValuesQuery parameters);
 }

@@ -7,18 +7,28 @@ package com.azure.resourcemanager.search.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Describes how a search service should enforce having one or more non customer encrypted resources. */
+/**
+ * Describes how a search service should enforce having one or more non-customer-encrypted resources.
+ */
 public enum SearchEncryptionWithCmk {
-    /** Enum value Disabled. */
+    /**
+     * Enum value Disabled.
+     */
     DISABLED("Disabled"),
 
-    /** Enum value Enabled. */
+    /**
+     * Enum value Enabled.
+     */
     ENABLED("Enabled"),
 
-    /** Enum value Unspecified. */
+    /**
+     * Enum value Unspecified.
+     */
     UNSPECIFIED("Unspecified");
 
-    /** The actual serialized value for a SearchEncryptionWithCmk instance. */
+    /**
+     * The actual serialized value for a SearchEncryptionWithCmk instance.
+     */
     private final String value;
 
     SearchEncryptionWithCmk(String value) {
@@ -27,7 +37,7 @@ public enum SearchEncryptionWithCmk {
 
     /**
      * Parses a serialized value to a SearchEncryptionWithCmk instance.
-     *
+     * 
      * @param value the serialized value to parse.
      * @return the parsed SearchEncryptionWithCmk object, or null if unable to parse.
      */
@@ -45,7 +55,9 @@ public enum SearchEncryptionWithCmk {
         return null;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @JsonValue
     @Override
     public String toString() {

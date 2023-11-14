@@ -9,7 +9,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** Represents an audio track in the asset. */
+/**
+ * Represents an audio track in the asset.
+ */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
 @JsonTypeName("#Microsoft.Media.AudioTrack")
 @Fluent
@@ -56,14 +58,16 @@ public final class AudioTrack extends TrackBase {
     @JsonProperty(value = "bitRate", access = JsonProperty.Access.WRITE_ONLY)
     private Integer bitRate;
 
-    /** Creates an instance of AudioTrack class. */
+    /**
+     * Creates an instance of AudioTrack class.
+     */
     public AudioTrack() {
     }
 
     /**
-     * Get the fileName property: The file name to the source file. This file is located in the storage container of the
-     * asset.
-     *
+     * Get the fileName property: The file name to the source file. This file is located in the storage container of
+     * the asset.
+     * 
      * @return the fileName value.
      */
     public String fileName() {
@@ -71,9 +75,9 @@ public final class AudioTrack extends TrackBase {
     }
 
     /**
-     * Set the fileName property: The file name to the source file. This file is located in the storage container of the
-     * asset.
-     *
+     * Set the fileName property: The file name to the source file. This file is located in the storage container of
+     * the asset.
+     * 
      * @param fileName the fileName value to set.
      * @return the AudioTrack object itself.
      */
@@ -85,7 +89,7 @@ public final class AudioTrack extends TrackBase {
     /**
      * Get the displayName property: The display name of the audio track on a video player. In HLS, this maps to the
      * NAME attribute of EXT-X-MEDIA.
-     *
+     * 
      * @return the displayName value.
      */
     public String displayName() {
@@ -95,7 +99,7 @@ public final class AudioTrack extends TrackBase {
     /**
      * Set the displayName property: The display name of the audio track on a video player. In HLS, this maps to the
      * NAME attribute of EXT-X-MEDIA.
-     *
+     * 
      * @param displayName the displayName value to set.
      * @return the AudioTrack object itself.
      */
@@ -106,7 +110,7 @@ public final class AudioTrack extends TrackBase {
 
     /**
      * Get the languageCode property: The RFC5646 language code for the audio track.
-     *
+     * 
      * @return the languageCode value.
      */
     public String languageCode() {
@@ -115,7 +119,7 @@ public final class AudioTrack extends TrackBase {
 
     /**
      * Set the languageCode property: The RFC5646 language code for the audio track.
-     *
+     * 
      * @param languageCode the languageCode value to set.
      * @return the AudioTrack object itself.
      */
@@ -126,7 +130,7 @@ public final class AudioTrack extends TrackBase {
 
     /**
      * Get the hlsSettings property: The HLS specific setting for the audio track.
-     *
+     * 
      * @return the hlsSettings value.
      */
     public HlsSettings hlsSettings() {
@@ -135,7 +139,7 @@ public final class AudioTrack extends TrackBase {
 
     /**
      * Set the hlsSettings property: The HLS specific setting for the audio track.
-     *
+     * 
      * @param hlsSettings the hlsSettings value to set.
      * @return the AudioTrack object itself.
      */
@@ -146,7 +150,7 @@ public final class AudioTrack extends TrackBase {
 
     /**
      * Get the dashSettings property: The DASH specific setting for the audio track.
-     *
+     * 
      * @return the dashSettings value.
      */
     public DashSettings dashSettings() {
@@ -155,7 +159,7 @@ public final class AudioTrack extends TrackBase {
 
     /**
      * Set the dashSettings property: The DASH specific setting for the audio track.
-     *
+     * 
      * @param dashSettings the dashSettings value to set.
      * @return the AudioTrack object itself.
      */
@@ -166,7 +170,7 @@ public final class AudioTrack extends TrackBase {
 
     /**
      * Get the mpeg4TrackId property: The MPEG-4 audio track ID for the audio track.
-     *
+     * 
      * @return the mpeg4TrackId value.
      */
     public Integer mpeg4TrackId() {
@@ -175,7 +179,7 @@ public final class AudioTrack extends TrackBase {
 
     /**
      * Set the mpeg4TrackId property: The MPEG-4 audio track ID for the audio track.
-     *
+     * 
      * @param mpeg4TrackId the mpeg4TrackId value to set.
      * @return the AudioTrack object itself.
      */
@@ -186,7 +190,7 @@ public final class AudioTrack extends TrackBase {
 
     /**
      * Get the bitRate property: The stream bit rate for the audio track.
-     *
+     * 
      * @return the bitRate value.
      */
     public Integer bitRate() {
@@ -195,7 +199,7 @@ public final class AudioTrack extends TrackBase {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

@@ -8,32 +8,34 @@ import com.azure.resourcemanager.hdinsight.generated.fluent.models.ClusterCreate
 import java.time.Duration;
 import java.util.List;
 
-/** An immutable client-side representation of ClusterCreateValidationResult. */
+/**
+ * An immutable client-side representation of ClusterCreateValidationResult.
+ */
 public interface ClusterCreateValidationResult {
     /**
      * Gets the validationErrors property: The validation errors.
-     *
+     * 
      * @return the validationErrors value.
      */
     List<ValidationErrorInfo> validationErrors();
 
     /**
      * Gets the validationWarnings property: The validation warnings.
-     *
+     * 
      * @return the validationWarnings value.
      */
     List<ValidationErrorInfo> validationWarnings();
 
     /**
      * Gets the estimatedCreationDuration property: The estimated creation duration.
-     *
+     * 
      * @return the estimatedCreationDuration value.
      */
     Duration estimatedCreationDuration();
 
     /**
      * Gets the aaddsResourcesDetails property: The Azure active directory domain service resource details.
-     *
+     * 
      * @return the aaddsResourcesDetails value.
      */
     List<AaddsResourceDetails> aaddsResourcesDetails();
@@ -41,7 +43,7 @@ public interface ClusterCreateValidationResult {
     /**
      * Gets the inner com.azure.resourcemanager.hdinsight.generated.fluent.models.ClusterCreateValidationResultInner
      * object.
-     *
+     * 
      * @return the inner object.
      */
     ClusterCreateValidationResultInner innerModel();

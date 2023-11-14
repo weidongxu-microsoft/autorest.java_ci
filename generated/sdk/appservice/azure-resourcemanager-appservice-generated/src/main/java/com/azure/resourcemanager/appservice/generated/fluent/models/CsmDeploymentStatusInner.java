@@ -11,7 +11,9 @@ import com.azure.resourcemanager.appservice.generated.models.ProxyOnlyResource;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Deployment status response payload. */
+/**
+ * Deployment status response payload.
+ */
 @Fluent
 public final class CsmDeploymentStatusInner extends ProxyOnlyResource {
     /*
@@ -20,20 +22,24 @@ public final class CsmDeploymentStatusInner extends ProxyOnlyResource {
     @JsonProperty(value = "properties")
     private CsmDeploymentStatusProperties innerProperties;
 
-    /** Creates an instance of CsmDeploymentStatusInner class. */
+    /**
+     * Creates an instance of CsmDeploymentStatusInner class.
+     */
     public CsmDeploymentStatusInner() {
     }
 
     /**
      * Get the innerProperties property: CsmDeploymentStatus resource specific properties.
-     *
+     * 
      * @return the innerProperties value.
      */
     private CsmDeploymentStatusProperties innerProperties() {
         return this.innerProperties;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public CsmDeploymentStatusInner withKind(String kind) {
         super.withKind(kind);
@@ -42,7 +48,7 @@ public final class CsmDeploymentStatusInner extends ProxyOnlyResource {
 
     /**
      * Get the deploymentId property: Deployment operation id.
-     *
+     * 
      * @return the deploymentId value.
      */
     public String deploymentId() {
@@ -51,7 +57,7 @@ public final class CsmDeploymentStatusInner extends ProxyOnlyResource {
 
     /**
      * Set the deploymentId property: Deployment operation id.
-     *
+     * 
      * @param deploymentId the deploymentId value to set.
      * @return the CsmDeploymentStatusInner object itself.
      */
@@ -65,7 +71,7 @@ public final class CsmDeploymentStatusInner extends ProxyOnlyResource {
 
     /**
      * Get the status property: Deployment build status.
-     *
+     * 
      * @return the status value.
      */
     public DeploymentBuildStatus status() {
@@ -74,7 +80,7 @@ public final class CsmDeploymentStatusInner extends ProxyOnlyResource {
 
     /**
      * Set the status property: Deployment build status.
-     *
+     * 
      * @param status the status value to set.
      * @return the CsmDeploymentStatusInner object itself.
      */
@@ -88,7 +94,7 @@ public final class CsmDeploymentStatusInner extends ProxyOnlyResource {
 
     /**
      * Get the numberOfInstancesInProgress property: Number of site instances currently being provisioned.
-     *
+     * 
      * @return the numberOfInstancesInProgress value.
      */
     public Integer numberOfInstancesInProgress() {
@@ -97,7 +103,7 @@ public final class CsmDeploymentStatusInner extends ProxyOnlyResource {
 
     /**
      * Set the numberOfInstancesInProgress property: Number of site instances currently being provisioned.
-     *
+     * 
      * @param numberOfInstancesInProgress the numberOfInstancesInProgress value to set.
      * @return the CsmDeploymentStatusInner object itself.
      */
@@ -111,7 +117,7 @@ public final class CsmDeploymentStatusInner extends ProxyOnlyResource {
 
     /**
      * Get the numberOfInstancesSuccessful property: Number of site instances provisioned successfully.
-     *
+     * 
      * @return the numberOfInstancesSuccessful value.
      */
     public Integer numberOfInstancesSuccessful() {
@@ -120,7 +126,7 @@ public final class CsmDeploymentStatusInner extends ProxyOnlyResource {
 
     /**
      * Set the numberOfInstancesSuccessful property: Number of site instances provisioned successfully.
-     *
+     * 
      * @param numberOfInstancesSuccessful the numberOfInstancesSuccessful value to set.
      * @return the CsmDeploymentStatusInner object itself.
      */
@@ -134,7 +140,7 @@ public final class CsmDeploymentStatusInner extends ProxyOnlyResource {
 
     /**
      * Get the numberOfInstancesFailed property: Number of site instances failed to provision.
-     *
+     * 
      * @return the numberOfInstancesFailed value.
      */
     public Integer numberOfInstancesFailed() {
@@ -143,7 +149,7 @@ public final class CsmDeploymentStatusInner extends ProxyOnlyResource {
 
     /**
      * Set the numberOfInstancesFailed property: Number of site instances failed to provision.
-     *
+     * 
      * @param numberOfInstancesFailed the numberOfInstancesFailed value to set.
      * @return the CsmDeploymentStatusInner object itself.
      */
@@ -157,7 +163,7 @@ public final class CsmDeploymentStatusInner extends ProxyOnlyResource {
 
     /**
      * Get the failedInstancesLogs property: List of URLs pointing to logs for instances which failed to provision.
-     *
+     * 
      * @return the failedInstancesLogs value.
      */
     public List<String> failedInstancesLogs() {
@@ -166,7 +172,7 @@ public final class CsmDeploymentStatusInner extends ProxyOnlyResource {
 
     /**
      * Set the failedInstancesLogs property: List of URLs pointing to logs for instances which failed to provision.
-     *
+     * 
      * @param failedInstancesLogs the failedInstancesLogs value to set.
      * @return the CsmDeploymentStatusInner object itself.
      */
@@ -180,7 +186,7 @@ public final class CsmDeploymentStatusInner extends ProxyOnlyResource {
 
     /**
      * Get the errors property: List of errors.
-     *
+     * 
      * @return the errors value.
      */
     public List<ErrorEntity> errors() {
@@ -189,7 +195,7 @@ public final class CsmDeploymentStatusInner extends ProxyOnlyResource {
 
     /**
      * Set the errors property: List of errors.
-     *
+     * 
      * @param errors the errors value to set.
      * @return the CsmDeploymentStatusInner object itself.
      */
@@ -203,7 +209,7 @@ public final class CsmDeploymentStatusInner extends ProxyOnlyResource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

@@ -16,8 +16,8 @@ public final class WebAppStackImpl implements WebAppStack {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    WebAppStackImpl(
-        WebAppStackInner innerObject, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
+    WebAppStackImpl(WebAppStackInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

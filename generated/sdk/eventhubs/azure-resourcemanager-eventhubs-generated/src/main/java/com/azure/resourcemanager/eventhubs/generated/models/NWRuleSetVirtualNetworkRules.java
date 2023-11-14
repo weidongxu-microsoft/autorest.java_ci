@@ -7,7 +7,9 @@ package com.azure.resourcemanager.eventhubs.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The response from the List namespace operation. */
+/**
+ * The response from the List namespace operation.
+ */
 @Fluent
 public final class NWRuleSetVirtualNetworkRules {
     /*
@@ -22,13 +24,15 @@ public final class NWRuleSetVirtualNetworkRules {
     @JsonProperty(value = "ignoreMissingVnetServiceEndpoint")
     private Boolean ignoreMissingVnetServiceEndpoint;
 
-    /** Creates an instance of NWRuleSetVirtualNetworkRules class. */
+    /**
+     * Creates an instance of NWRuleSetVirtualNetworkRules class.
+     */
     public NWRuleSetVirtualNetworkRules() {
     }
 
     /**
      * Get the subnet property: Subnet properties.
-     *
+     * 
      * @return the subnet value.
      */
     public Subnet subnet() {
@@ -37,7 +41,7 @@ public final class NWRuleSetVirtualNetworkRules {
 
     /**
      * Set the subnet property: Subnet properties.
-     *
+     * 
      * @param subnet the subnet value to set.
      * @return the NWRuleSetVirtualNetworkRules object itself.
      */
@@ -49,7 +53,7 @@ public final class NWRuleSetVirtualNetworkRules {
     /**
      * Get the ignoreMissingVnetServiceEndpoint property: Value that indicates whether to ignore missing Vnet Service
      * Endpoint.
-     *
+     * 
      * @return the ignoreMissingVnetServiceEndpoint value.
      */
     public Boolean ignoreMissingVnetServiceEndpoint() {
@@ -59,7 +63,7 @@ public final class NWRuleSetVirtualNetworkRules {
     /**
      * Set the ignoreMissingVnetServiceEndpoint property: Value that indicates whether to ignore missing Vnet Service
      * Endpoint.
-     *
+     * 
      * @param ignoreMissingVnetServiceEndpoint the ignoreMissingVnetServiceEndpoint value to set.
      * @return the NWRuleSetVirtualNetworkRules object itself.
      */
@@ -70,7 +74,7 @@ public final class NWRuleSetVirtualNetworkRules {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

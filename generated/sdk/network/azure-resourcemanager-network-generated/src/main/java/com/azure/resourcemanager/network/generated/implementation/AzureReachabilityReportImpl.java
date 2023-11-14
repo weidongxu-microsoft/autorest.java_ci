@@ -16,8 +16,7 @@ public final class AzureReachabilityReportImpl implements AzureReachabilityRepor
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    AzureReachabilityReportImpl(
-        AzureReachabilityReportInner innerObject,
+    AzureReachabilityReportImpl(AzureReachabilityReportInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

@@ -112,21 +112,14 @@ public final class InboundNatRuleImpl implements InboundNatRule, InboundNatRule.
     }
 
     public InboundNatRule create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getInboundNatRules()
-                .createOrUpdate(
-                    resourceGroupName, loadBalancerName, inboundNatRuleName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getInboundNatRules().createOrUpdate(resourceGroupName,
+            loadBalancerName, inboundNatRuleName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public InboundNatRule create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getInboundNatRules()
-                .createOrUpdate(resourceGroupName, loadBalancerName, inboundNatRuleName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getInboundNatRules().createOrUpdate(resourceGroupName,
+            loadBalancerName, inboundNatRuleName, this.innerModel(), context);
         return this;
     }
 
@@ -141,26 +134,19 @@ public final class InboundNatRuleImpl implements InboundNatRule, InboundNatRule.
     }
 
     public InboundNatRule apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getInboundNatRules()
-                .createOrUpdate(
-                    resourceGroupName, loadBalancerName, inboundNatRuleName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getInboundNatRules().createOrUpdate(resourceGroupName,
+            loadBalancerName, inboundNatRuleName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public InboundNatRule apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getInboundNatRules()
-                .createOrUpdate(resourceGroupName, loadBalancerName, inboundNatRuleName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getInboundNatRules().createOrUpdate(resourceGroupName,
+            loadBalancerName, inboundNatRuleName, this.innerModel(), context);
         return this;
     }
 
-    InboundNatRuleImpl(
-        InboundNatRuleInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    InboundNatRuleImpl(InboundNatRuleInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
@@ -170,23 +156,16 @@ public final class InboundNatRuleImpl implements InboundNatRule, InboundNatRule.
 
     public InboundNatRule refresh() {
         String localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getInboundNatRules()
-                .getWithResponse(resourceGroupName, loadBalancerName, inboundNatRuleName, localExpand, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getInboundNatRules()
+            .getWithResponse(resourceGroupName, loadBalancerName, inboundNatRuleName, localExpand, Context.NONE)
+            .getValue();
         return this;
     }
 
     public InboundNatRule refresh(Context context) {
         String localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getInboundNatRules()
-                .getWithResponse(resourceGroupName, loadBalancerName, inboundNatRuleName, localExpand, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getInboundNatRules()
+            .getWithResponse(resourceGroupName, loadBalancerName, inboundNatRuleName, localExpand, context).getValue();
         return this;
     }
 

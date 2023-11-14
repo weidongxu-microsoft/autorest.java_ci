@@ -16,8 +16,7 @@ public final class ResourceMetricDefinitionImpl implements ResourceMetricDefinit
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    ResourceMetricDefinitionImpl(
-        ResourceMetricDefinitionInner innerObject,
+    ResourceMetricDefinitionImpl(ResourceMetricDefinitionInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

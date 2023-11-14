@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** SKU of the namespace. */
+/**
+ * SKU of the namespace.
+ */
 @Fluent
 public final class Sku {
     /*
@@ -23,13 +25,15 @@ public final class Sku {
     @JsonProperty(value = "tier")
     private SkuTier tier;
 
-    /** Creates an instance of Sku class. */
+    /**
+     * Creates an instance of Sku class.
+     */
     public Sku() {
     }
 
     /**
      * Get the name property: Name of this SKU.
-     *
+     * 
      * @return the name value.
      */
     public SkuName name() {
@@ -38,7 +42,7 @@ public final class Sku {
 
     /**
      * Set the name property: Name of this SKU.
-     *
+     * 
      * @param name the name value to set.
      * @return the Sku object itself.
      */
@@ -49,7 +53,7 @@ public final class Sku {
 
     /**
      * Get the tier property: The tier of this SKU.
-     *
+     * 
      * @return the tier value.
      */
     public SkuTier tier() {
@@ -58,7 +62,7 @@ public final class Sku {
 
     /**
      * Set the tier property: The tier of this SKU.
-     *
+     * 
      * @param tier the tier value to set.
      * @return the Sku object itself.
      */
@@ -69,7 +73,7 @@ public final class Sku {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

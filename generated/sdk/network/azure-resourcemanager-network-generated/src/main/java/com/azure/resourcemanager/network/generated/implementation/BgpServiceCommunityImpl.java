@@ -16,8 +16,7 @@ public final class BgpServiceCommunityImpl implements BgpServiceCommunity {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    BgpServiceCommunityImpl(
-        BgpServiceCommunityInner innerObject,
+    BgpServiceCommunityImpl(BgpServiceCommunityInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

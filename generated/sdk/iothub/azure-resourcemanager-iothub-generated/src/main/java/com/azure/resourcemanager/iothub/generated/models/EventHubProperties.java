@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The properties of the provisioned Event Hub-compatible endpoint used by the IoT hub. */
+/**
+ * The properties of the provisioned Event Hub-compatible endpoint used by the IoT hub.
+ */
 @Fluent
 public final class EventHubProperties {
     /*
@@ -43,14 +45,16 @@ public final class EventHubProperties {
     @JsonProperty(value = "endpoint", access = JsonProperty.Access.WRITE_ONLY)
     private String endpoint;
 
-    /** Creates an instance of EventHubProperties class. */
+    /**
+     * Creates an instance of EventHubProperties class.
+     */
     public EventHubProperties() {
     }
 
     /**
      * Get the retentionTimeInDays property: The retention time for device-to-cloud messages in days. See:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#device-to-cloud-messages.
-     *
+     * 
      * @return the retentionTimeInDays value.
      */
     public Long retentionTimeInDays() {
@@ -60,7 +64,7 @@ public final class EventHubProperties {
     /**
      * Set the retentionTimeInDays property: The retention time for device-to-cloud messages in days. See:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#device-to-cloud-messages.
-     *
+     * 
      * @param retentionTimeInDays the retentionTimeInDays value to set.
      * @return the EventHubProperties object itself.
      */
@@ -73,7 +77,7 @@ public final class EventHubProperties {
      * Get the partitionCount property: The number of partitions for receiving device-to-cloud messages in the Event
      * Hub-compatible endpoint. See:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#device-to-cloud-messages.
-     *
+     * 
      * @return the partitionCount value.
      */
     public Integer partitionCount() {
@@ -84,7 +88,7 @@ public final class EventHubProperties {
      * Set the partitionCount property: The number of partitions for receiving device-to-cloud messages in the Event
      * Hub-compatible endpoint. See:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#device-to-cloud-messages.
-     *
+     * 
      * @param partitionCount the partitionCount value to set.
      * @return the EventHubProperties object itself.
      */
@@ -95,7 +99,7 @@ public final class EventHubProperties {
 
     /**
      * Get the partitionIds property: The partition ids in the Event Hub-compatible endpoint.
-     *
+     * 
      * @return the partitionIds value.
      */
     public List<String> partitionIds() {
@@ -104,7 +108,7 @@ public final class EventHubProperties {
 
     /**
      * Get the path property: The Event Hub-compatible name.
-     *
+     * 
      * @return the path value.
      */
     public String path() {
@@ -113,7 +117,7 @@ public final class EventHubProperties {
 
     /**
      * Get the endpoint property: The Event Hub-compatible endpoint.
-     *
+     * 
      * @return the endpoint value.
      */
     public String endpoint() {
@@ -122,7 +126,7 @@ public final class EventHubProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

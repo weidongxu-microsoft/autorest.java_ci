@@ -6,11 +6,13 @@ package com.azure.resourcemanager.network.generated.models;
 
 import com.azure.resourcemanager.network.generated.fluent.models.PrivateEndpointConnectionInner;
 
-/** An immutable client-side representation of PrivateEndpointConnection. */
+/**
+ * An immutable client-side representation of PrivateEndpointConnection.
+ */
 public interface PrivateEndpointConnection {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.
-     *
+     * 
      * @return the id value.
      */
     String id();
@@ -18,28 +20,28 @@ public interface PrivateEndpointConnection {
     /**
      * Gets the name property: The name of the resource that is unique within a resource group. This name can be used to
      * access the resource.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the type property: The resource type.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the etag property: A unique read-only string that changes whenever the resource is updated.
-     *
+     * 
      * @return the etag value.
      */
     String etag();
 
     /**
      * Gets the privateEndpoint property: The resource of private end point.
-     *
+     * 
      * @return the privateEndpoint value.
      */
     PrivateEndpoint privateEndpoint();
@@ -47,35 +49,35 @@ public interface PrivateEndpointConnection {
     /**
      * Gets the privateLinkServiceConnectionState property: A collection of information about the state of the
      * connection between service consumer and provider.
-     *
+     * 
      * @return the privateLinkServiceConnectionState value.
      */
     PrivateLinkServiceConnectionState privateLinkServiceConnectionState();
 
     /**
      * Gets the provisioningState property: The provisioning state of the private endpoint connection resource.
-     *
+     * 
      * @return the provisioningState value.
      */
     ProvisioningState provisioningState();
 
     /**
      * Gets the linkIdentifier property: The consumer link id.
-     *
+     * 
      * @return the linkIdentifier value.
      */
     String linkIdentifier();
 
     /**
      * Gets the privateEndpointLocation property: The location of the private endpoint.
-     *
+     * 
      * @return the privateEndpointLocation value.
      */
     String privateEndpointLocation();
 
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.PrivateEndpointConnectionInner object.
-     *
+     * 
      * @return the inner object.
      */
     PrivateEndpointConnectionInner innerModel();

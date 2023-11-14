@@ -9,46 +9,48 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.ApplicationSecurityGroupInner;
 import java.util.Map;
 
-/** An immutable client-side representation of ApplicationSecurityGroup. */
+/**
+ * An immutable client-side representation of ApplicationSecurityGroup.
+ */
 public interface ApplicationSecurityGroup {
     /**
      * Gets the name property: The name of the resource.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the type property: The type of the resource.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the location property: The geo-location where the resource lives.
-     *
+     * 
      * @return the location value.
      */
     String location();
 
     /**
      * Gets the tags property: Resource tags.
-     *
+     * 
      * @return the tags value.
      */
     Map<String, String> tags();
 
     /**
      * Gets the etag property: A unique read-only string that changes whenever the resource is updated.
-     *
+     * 
      * @return the etag value.
      */
     String etag();
 
     /**
      * Gets the id property: Resource ID.
-     *
+     * 
      * @return the id value.
      */
     String id();
@@ -57,65 +59,70 @@ public interface ApplicationSecurityGroup {
      * Gets the resourceGuid property: The resource GUID property of the application security group resource. It
      * uniquely identifies a resource, even if the user changes its name or migrate the resource across subscriptions or
      * resource groups.
-     *
+     * 
      * @return the resourceGuid value.
      */
     String resourceGuid();
 
     /**
      * Gets the provisioningState property: The provisioning state of the application security group resource.
-     *
+     * 
      * @return the provisioningState value.
      */
     ProvisioningState provisioningState();
 
     /**
      * Gets the region of the resource.
-     *
+     * 
      * @return the region of the resource.
      */
     Region region();
 
     /**
      * Gets the name of the resource region.
-     *
+     * 
      * @return the name of the resource region.
      */
     String regionName();
 
     /**
      * Gets the name of the resource group.
-     *
+     * 
      * @return the name of the resource group.
      */
     String resourceGroupName();
 
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.ApplicationSecurityGroupInner object.
-     *
+     * 
      * @return the inner object.
      */
     ApplicationSecurityGroupInner innerModel();
 
-    /** The entirety of the ApplicationSecurityGroup definition. */
-    interface Definition
-        extends DefinitionStages.Blank,
-            DefinitionStages.WithLocation,
-            DefinitionStages.WithResourceGroup,
-            DefinitionStages.WithCreate {
+    /**
+     * The entirety of the ApplicationSecurityGroup definition.
+     */
+    interface Definition extends DefinitionStages.Blank, DefinitionStages.WithLocation,
+        DefinitionStages.WithResourceGroup, DefinitionStages.WithCreate {
     }
 
-    /** The ApplicationSecurityGroup definition stages. */
+    /**
+     * The ApplicationSecurityGroup definition stages.
+     */
     interface DefinitionStages {
-        /** The first stage of the ApplicationSecurityGroup definition. */
+        /**
+         * The first stage of the ApplicationSecurityGroup definition.
+         */
         interface Blank extends WithLocation {
         }
 
-        /** The stage of the ApplicationSecurityGroup definition allowing to specify location. */
+        /**
+         * The stage of the ApplicationSecurityGroup definition allowing to specify location.
+         */
         interface WithLocation {
             /**
              * Specifies the region for the resource.
-             *
+             * 
              * @param location The geo-location where the resource lives.
              * @return the next definition stage.
              */
@@ -123,18 +130,20 @@ public interface ApplicationSecurityGroup {
 
             /**
              * Specifies the region for the resource.
-             *
+             * 
              * @param location The geo-location where the resource lives.
              * @return the next definition stage.
              */
             WithResourceGroup withRegion(String location);
         }
 
-        /** The stage of the ApplicationSecurityGroup definition allowing to specify parent resource. */
+        /**
+         * The stage of the ApplicationSecurityGroup definition allowing to specify parent resource.
+         */
         interface WithResourceGroup {
             /**
              * Specifies resourceGroupName.
-             *
+             * 
              * @param resourceGroupName The name of the resource group.
              * @return the next definition stage.
              */
@@ -148,25 +157,27 @@ public interface ApplicationSecurityGroup {
         interface WithCreate extends DefinitionStages.WithTags {
             /**
              * Executes the create request.
-             *
+             * 
              * @return the created resource.
              */
             ApplicationSecurityGroup create();
 
             /**
              * Executes the create request.
-             *
+             * 
              * @param context The context to associate with this operation.
              * @return the created resource.
              */
             ApplicationSecurityGroup create(Context context);
         }
 
-        /** The stage of the ApplicationSecurityGroup definition allowing to specify tags. */
+        /**
+         * The stage of the ApplicationSecurityGroup definition allowing to specify tags.
+         */
         interface WithTags {
             /**
              * Specifies the tags property: Resource tags..
-             *
+             * 
              * @param tags Resource tags.
              * @return the next definition stage.
              */
@@ -176,36 +187,42 @@ public interface ApplicationSecurityGroup {
 
     /**
      * Begins update for the ApplicationSecurityGroup resource.
-     *
+     * 
      * @return the stage of resource update.
      */
     ApplicationSecurityGroup.Update update();
 
-    /** The template for ApplicationSecurityGroup update. */
+    /**
+     * The template for ApplicationSecurityGroup update.
+     */
     interface Update extends UpdateStages.WithTags {
         /**
          * Executes the update request.
-         *
+         * 
          * @return the updated resource.
          */
         ApplicationSecurityGroup apply();
 
         /**
          * Executes the update request.
-         *
+         * 
          * @param context The context to associate with this operation.
          * @return the updated resource.
          */
         ApplicationSecurityGroup apply(Context context);
     }
 
-    /** The ApplicationSecurityGroup update stages. */
+    /**
+     * The ApplicationSecurityGroup update stages.
+     */
     interface UpdateStages {
-        /** The stage of the ApplicationSecurityGroup update allowing to specify tags. */
+        /**
+         * The stage of the ApplicationSecurityGroup update allowing to specify tags.
+         */
         interface WithTags {
             /**
              * Specifies the tags property: Resource tags..
-             *
+             * 
              * @param tags Resource tags.
              * @return the next definition stage.
              */
@@ -215,14 +232,14 @@ public interface ApplicationSecurityGroup {
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @return the refreshed resource.
      */
     ApplicationSecurityGroup refresh();
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @return the refreshed resource.
      */

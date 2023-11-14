@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of ExpressRouteLinks. */
+/**
+ * Resource collection API of ExpressRouteLinks.
+ */
 public interface ExpressRouteLinks {
     /**
      * Retrieves the specified ExpressRouteLink resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the ExpressRoutePort resource.
      * @param linkName The name of the ExpressRouteLink resource.
@@ -22,12 +24,12 @@ public interface ExpressRouteLinks {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return expressRouteLink along with {@link Response}.
      */
-    Response<ExpressRouteLink> getWithResponse(
-        String resourceGroupName, String expressRoutePortName, String linkName, Context context);
+    Response<ExpressRouteLink> getWithResponse(String resourceGroupName, String expressRoutePortName, String linkName,
+        Context context);
 
     /**
      * Retrieves the specified ExpressRouteLink resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the ExpressRoutePort resource.
      * @param linkName The name of the ExpressRouteLink resource.
@@ -40,7 +42,7 @@ public interface ExpressRouteLinks {
 
     /**
      * Retrieve the ExpressRouteLink sub-resources of the specified ExpressRoutePort resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the ExpressRoutePort resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -52,7 +54,7 @@ public interface ExpressRouteLinks {
 
     /**
      * Retrieve the ExpressRouteLink sub-resources of the specified ExpressRoutePort resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the ExpressRoutePort resource.
      * @param context The context to associate with this operation.

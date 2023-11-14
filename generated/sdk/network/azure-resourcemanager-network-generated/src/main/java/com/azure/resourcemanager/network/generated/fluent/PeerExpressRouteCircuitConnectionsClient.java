@@ -17,7 +17,7 @@ import com.azure.resourcemanager.network.generated.fluent.models.PeerExpressRout
 public interface PeerExpressRouteCircuitConnectionsClient {
     /**
      * Gets the specified Peer Express Route Circuit Connection from the specified express route circuit.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the express route circuit.
      * @param peeringName The name of the peering.
@@ -27,15 +27,15 @@ public interface PeerExpressRouteCircuitConnectionsClient {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified Peer Express Route Circuit Connection from the specified express route circuit along with
-     *     {@link Response}.
+     * {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<PeerExpressRouteCircuitConnectionInner> getWithResponse(
-        String resourceGroupName, String circuitName, String peeringName, String connectionName, Context context);
+    Response<PeerExpressRouteCircuitConnectionInner> getWithResponse(String resourceGroupName, String circuitName,
+        String peeringName, String connectionName, Context context);
 
     /**
      * Gets the specified Peer Express Route Circuit Connection from the specified express route circuit.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the express route circuit.
      * @param peeringName The name of the peering.
@@ -46,12 +46,12 @@ public interface PeerExpressRouteCircuitConnectionsClient {
      * @return the specified Peer Express Route Circuit Connection from the specified express route circuit.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    PeerExpressRouteCircuitConnectionInner get(
-        String resourceGroupName, String circuitName, String peeringName, String connectionName);
+    PeerExpressRouteCircuitConnectionInner get(String resourceGroupName, String circuitName, String peeringName,
+        String connectionName);
 
     /**
      * Gets all global reach peer connections associated with a private peering in an express route circuit.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the circuit.
      * @param peeringName The name of the peering.
@@ -59,15 +59,15 @@ public interface PeerExpressRouteCircuitConnectionsClient {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all global reach peer connections associated with a private peering in an express route circuit as
-     *     paginated response with {@link PagedIterable}.
+     * paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<PeerExpressRouteCircuitConnectionInner> list(
-        String resourceGroupName, String circuitName, String peeringName);
+    PagedIterable<PeerExpressRouteCircuitConnectionInner> list(String resourceGroupName, String circuitName,
+        String peeringName);
 
     /**
      * Gets all global reach peer connections associated with a private peering in an express route circuit.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the circuit.
      * @param peeringName The name of the peering.
@@ -76,9 +76,9 @@ public interface PeerExpressRouteCircuitConnectionsClient {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all global reach peer connections associated with a private peering in an express route circuit as
-     *     paginated response with {@link PagedIterable}.
+     * paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<PeerExpressRouteCircuitConnectionInner> list(
-        String resourceGroupName, String circuitName, String peeringName, Context context);
+    PagedIterable<PeerExpressRouteCircuitConnectionInner> list(String resourceGroupName, String circuitName,
+        String peeringName, Context context);
 }

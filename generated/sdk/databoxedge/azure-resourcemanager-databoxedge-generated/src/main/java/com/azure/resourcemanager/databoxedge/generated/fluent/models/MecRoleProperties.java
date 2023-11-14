@@ -10,7 +10,9 @@ import com.azure.resourcemanager.databoxedge.generated.models.AsymmetricEncrypte
 import com.azure.resourcemanager.databoxedge.generated.models.RoleStatus;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** MEC role properties. */
+/**
+ * MEC role properties.
+ */
 @Fluent
 public final class MecRoleProperties {
     /*
@@ -37,13 +39,15 @@ public final class MecRoleProperties {
     @JsonProperty(value = "roleStatus", required = true)
     private RoleStatus roleStatus;
 
-    /** Creates an instance of MecRoleProperties class. */
+    /**
+     * Creates an instance of MecRoleProperties class.
+     */
     public MecRoleProperties() {
     }
 
     /**
      * Get the connectionString property: Activation key of the MEC.
-     *
+     * 
      * @return the connectionString value.
      */
     public AsymmetricEncryptedSecret connectionString() {
@@ -52,7 +56,7 @@ public final class MecRoleProperties {
 
     /**
      * Set the connectionString property: Activation key of the MEC.
-     *
+     * 
      * @param connectionString the connectionString value to set.
      * @return the MecRoleProperties object itself.
      */
@@ -63,7 +67,7 @@ public final class MecRoleProperties {
 
     /**
      * Get the controllerEndpoint property: Controller Endpoint.
-     *
+     * 
      * @return the controllerEndpoint value.
      */
     public String controllerEndpoint() {
@@ -72,7 +76,7 @@ public final class MecRoleProperties {
 
     /**
      * Set the controllerEndpoint property: Controller Endpoint.
-     *
+     * 
      * @param controllerEndpoint the controllerEndpoint value to set.
      * @return the MecRoleProperties object itself.
      */
@@ -83,7 +87,7 @@ public final class MecRoleProperties {
 
     /**
      * Get the resourceUniqueId property: Unique Id of the Resource.
-     *
+     * 
      * @return the resourceUniqueId value.
      */
     public String resourceUniqueId() {
@@ -92,7 +96,7 @@ public final class MecRoleProperties {
 
     /**
      * Set the resourceUniqueId property: Unique Id of the Resource.
-     *
+     * 
      * @param resourceUniqueId the resourceUniqueId value to set.
      * @return the MecRoleProperties object itself.
      */
@@ -103,7 +107,7 @@ public final class MecRoleProperties {
 
     /**
      * Get the roleStatus property: Role status.
-     *
+     * 
      * @return the roleStatus value.
      */
     public RoleStatus roleStatus() {
@@ -112,7 +116,7 @@ public final class MecRoleProperties {
 
     /**
      * Set the roleStatus property: Role status.
-     *
+     * 
      * @param roleStatus the roleStatus value to set.
      * @return the MecRoleProperties object itself.
      */
@@ -123,7 +127,7 @@ public final class MecRoleProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
@@ -131,9 +135,8 @@ public final class MecRoleProperties {
             connectionString().validate();
         }
         if (roleStatus() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property roleStatus in model MecRoleProperties"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property roleStatus in model MecRoleProperties"));
         }
     }
 

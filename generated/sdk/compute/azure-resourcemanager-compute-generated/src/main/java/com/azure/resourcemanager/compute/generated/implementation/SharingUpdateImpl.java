@@ -16,8 +16,8 @@ public final class SharingUpdateImpl implements SharingUpdate {
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    SharingUpdateImpl(
-        SharingUpdateInner innerObject, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
+    SharingUpdateImpl(SharingUpdateInner innerObject,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

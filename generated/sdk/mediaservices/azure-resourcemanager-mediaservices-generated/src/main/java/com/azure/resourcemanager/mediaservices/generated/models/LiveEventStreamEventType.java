@@ -8,39 +8,57 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** The type of the stream event. Format: StreamEvent/{eventType}. */
+/**
+ * The type of the stream event. Format: StreamEvent/{eventType}.
+ */
 public final class LiveEventStreamEventType extends ExpandableStringEnum<LiveEventStreamEventType> {
-    /** Static value StreamEvent/BeginIngest for LiveEventStreamEventType. */
+    /**
+     * Static value StreamEvent/BeginIngest for LiveEventStreamEventType.
+     */
     public static final LiveEventStreamEventType STREAM_EVENT_BEGIN_INGEST = fromString("StreamEvent/BeginIngest");
 
-    /** Static value StreamEvent/EndIngest for LiveEventStreamEventType. */
+    /**
+     * Static value StreamEvent/EndIngest for LiveEventStreamEventType.
+     */
     public static final LiveEventStreamEventType STREAM_EVENT_END_INGEST = fromString("StreamEvent/EndIngest");
 
-    /** Static value StreamEvent/FirstChunkReceived for LiveEventStreamEventType. */
-    public static final LiveEventStreamEventType STREAM_EVENT_FIRST_CHUNK_RECEIVED =
-        fromString("StreamEvent/FirstChunkReceived");
+    /**
+     * Static value StreamEvent/FirstChunkReceived for LiveEventStreamEventType.
+     */
+    public static final LiveEventStreamEventType STREAM_EVENT_FIRST_CHUNK_RECEIVED
+        = fromString("StreamEvent/FirstChunkReceived");
 
-    /** Static value StreamEvent/ChunkDropped for LiveEventStreamEventType. */
+    /**
+     * Static value StreamEvent/ChunkDropped for LiveEventStreamEventType.
+     */
     public static final LiveEventStreamEventType STREAM_EVENT_CHUNK_DROPPED = fromString("StreamEvent/ChunkDropped");
 
-    /** Static value StreamEvent/UnalignedKeyFrames for LiveEventStreamEventType. */
-    public static final LiveEventStreamEventType STREAM_EVENT_UNALIGNED_KEY_FRAMES =
-        fromString("StreamEvent/UnalignedKeyFrames");
+    /**
+     * Static value StreamEvent/UnalignedKeyFrames for LiveEventStreamEventType.
+     */
+    public static final LiveEventStreamEventType STREAM_EVENT_UNALIGNED_KEY_FRAMES
+        = fromString("StreamEvent/UnalignedKeyFrames");
 
-    /** Static value StreamEvent/UnalignedPresentation for LiveEventStreamEventType. */
-    public static final LiveEventStreamEventType STREAM_EVENT_UNALIGNED_PRESENTATION =
-        fromString("StreamEvent/UnalignedPresentation");
+    /**
+     * Static value StreamEvent/UnalignedPresentation for LiveEventStreamEventType.
+     */
+    public static final LiveEventStreamEventType STREAM_EVENT_UNALIGNED_PRESENTATION
+        = fromString("StreamEvent/UnalignedPresentation");
 
-    /** Static value StreamEvent/Discontinuity for LiveEventStreamEventType. */
+    /**
+     * Static value StreamEvent/Discontinuity for LiveEventStreamEventType.
+     */
     public static final LiveEventStreamEventType STREAM_EVENT_DISCONTINUITY = fromString("StreamEvent/Discontinuity");
 
-    /** Static value StreamEvent/InvalidConnection for LiveEventStreamEventType. */
-    public static final LiveEventStreamEventType STREAM_EVENT_INVALID_CONNECTION =
-        fromString("StreamEvent/InvalidConnection");
+    /**
+     * Static value StreamEvent/InvalidConnection for LiveEventStreamEventType.
+     */
+    public static final LiveEventStreamEventType STREAM_EVENT_INVALID_CONNECTION
+        = fromString("StreamEvent/InvalidConnection");
 
     /**
      * Creates a new instance of LiveEventStreamEventType value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -49,7 +67,7 @@ public final class LiveEventStreamEventType extends ExpandableStringEnum<LiveEve
 
     /**
      * Creates or finds a LiveEventStreamEventType from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding LiveEventStreamEventType.
      */
@@ -60,7 +78,7 @@ public final class LiveEventStreamEventType extends ExpandableStringEnum<LiveEve
 
     /**
      * Gets known LiveEventStreamEventType values.
-     *
+     * 
      * @return known LiveEventStreamEventType values.
      */
     public static Collection<LiveEventStreamEventType> values() {

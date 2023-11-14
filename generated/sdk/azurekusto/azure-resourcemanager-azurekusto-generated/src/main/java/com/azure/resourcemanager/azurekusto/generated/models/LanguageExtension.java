@@ -6,25 +6,34 @@ package com.azure.resourcemanager.azurekusto.generated.models;
 
 import com.azure.resourcemanager.azurekusto.generated.fluent.models.LanguageExtensionInner;
 
-/** An immutable client-side representation of LanguageExtension. */
+/**
+ * An immutable client-side representation of LanguageExtension.
+ */
 public interface LanguageExtension {
     /**
      * Gets the languageExtensionName property: The language extension name.
-     *
+     * 
      * @return the languageExtensionName value.
      */
     LanguageExtensionName languageExtensionName();
 
     /**
      * Gets the languageExtensionImageName property: The language extension image name.
-     *
+     * 
      * @return the languageExtensionImageName value.
      */
     LanguageExtensionImageName languageExtensionImageName();
 
     /**
+     * Gets the languageExtensionCustomImageName property: The language extension custom image name.
+     * 
+     * @return the languageExtensionCustomImageName value.
+     */
+    String languageExtensionCustomImageName();
+
+    /**
      * Gets the inner com.azure.resourcemanager.azurekusto.generated.fluent.models.LanguageExtensionInner object.
-     *
+     * 
      * @return the inner object.
      */
     LanguageExtensionInner innerModel();

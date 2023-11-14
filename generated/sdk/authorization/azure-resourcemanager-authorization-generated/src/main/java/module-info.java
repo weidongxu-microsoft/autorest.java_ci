@@ -10,10 +10,7 @@ module com.azure.resourcemanager.authorization.generated {
     exports com.azure.resourcemanager.authorization.generated.fluent.models;
     exports com.azure.resourcemanager.authorization.generated.models;
 
-    opens com.azure.resourcemanager.authorization.generated.fluent.models to
-        com.azure.core,
-        com.fasterxml.jackson.databind;
-    opens com.azure.resourcemanager.authorization.generated.models to
-        com.azure.core,
-        com.fasterxml.jackson.databind;
+    opens com.azure.resourcemanager.authorization.generated.fluent.models
+        to com.azure.core, com.fasterxml.jackson.databind;
+    opens com.azure.resourcemanager.authorization.generated.models to com.azure.core, com.fasterxml.jackson.databind;
 }

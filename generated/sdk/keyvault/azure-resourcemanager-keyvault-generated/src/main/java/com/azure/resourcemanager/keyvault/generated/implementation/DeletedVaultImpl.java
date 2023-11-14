@@ -13,8 +13,8 @@ public final class DeletedVaultImpl implements DeletedVault {
 
     private final com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager;
 
-    DeletedVaultImpl(
-        DeletedVaultInner innerObject, com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager) {
+    DeletedVaultImpl(DeletedVaultInner innerObject,
+        com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

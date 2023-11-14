@@ -20,20 +20,17 @@ public final class CreditsImpl implements Credits {
 
     private final com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager;
 
-    public CreditsImpl(
-        CreditsClient innerClient, com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager) {
+    public CreditsImpl(CreditsClient innerClient,
+        com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
     public Response<CreditSummary> getWithResponse(String billingAccountId, String billingProfileId, Context context) {
-        Response<CreditSummaryInner> inner =
-            this.serviceClient().getWithResponse(billingAccountId, billingProfileId, context);
+        Response<CreditSummaryInner> inner
+            = this.serviceClient().getWithResponse(billingAccountId, billingProfileId, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new CreditSummaryImpl(inner.getValue(), this.manager()));
         } else {
             return null;

@@ -26,60 +26,43 @@ public final class WcfRelaysImpl implements WcfRelays {
 
     private final com.azure.resourcemanager.relay.generated.RelayManager serviceManager;
 
-    public WcfRelaysImpl(
-        WcfRelaysClient innerClient, com.azure.resourcemanager.relay.generated.RelayManager serviceManager) {
+    public WcfRelaysImpl(WcfRelaysClient innerClient,
+        com.azure.resourcemanager.relay.generated.RelayManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public PagedIterable<AuthorizationRule> listAuthorizationRules(
-        String resourceGroupName, String namespaceName, String relayName) {
-        PagedIterable<AuthorizationRuleInner> inner =
-            this.serviceClient().listAuthorizationRules(resourceGroupName, namespaceName, relayName);
+    public PagedIterable<AuthorizationRule> listAuthorizationRules(String resourceGroupName, String namespaceName,
+        String relayName) {
+        PagedIterable<AuthorizationRuleInner> inner
+            = this.serviceClient().listAuthorizationRules(resourceGroupName, namespaceName, relayName);
         return Utils.mapPage(inner, inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<AuthorizationRule> listAuthorizationRules(
-        String resourceGroupName, String namespaceName, String relayName, Context context) {
-        PagedIterable<AuthorizationRuleInner> inner =
-            this.serviceClient().listAuthorizationRules(resourceGroupName, namespaceName, relayName, context);
+    public PagedIterable<AuthorizationRule> listAuthorizationRules(String resourceGroupName, String namespaceName,
+        String relayName, Context context) {
+        PagedIterable<AuthorizationRuleInner> inner
+            = this.serviceClient().listAuthorizationRules(resourceGroupName, namespaceName, relayName, context);
         return Utils.mapPage(inner, inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
     }
 
-    public Response<AuthorizationRule> createOrUpdateAuthorizationRuleWithResponse(
-        String resourceGroupName,
-        String namespaceName,
-        String relayName,
-        String authorizationRuleName,
-        AuthorizationRuleInner parameters,
+    public Response<AuthorizationRule> createOrUpdateAuthorizationRuleWithResponse(String resourceGroupName,
+        String namespaceName, String relayName, String authorizationRuleName, AuthorizationRuleInner parameters,
         Context context) {
-        Response<AuthorizationRuleInner> inner =
-            this
-                .serviceClient()
-                .createOrUpdateAuthorizationRuleWithResponse(
-                    resourceGroupName, namespaceName, relayName, authorizationRuleName, parameters, context);
+        Response<AuthorizationRuleInner> inner = this.serviceClient().createOrUpdateAuthorizationRuleWithResponse(
+            resourceGroupName, namespaceName, relayName, authorizationRuleName, parameters, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new AuthorizationRuleImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public AuthorizationRule createOrUpdateAuthorizationRule(
-        String resourceGroupName,
-        String namespaceName,
-        String relayName,
-        String authorizationRuleName,
-        AuthorizationRuleInner parameters) {
-        AuthorizationRuleInner inner =
-            this
-                .serviceClient()
-                .createOrUpdateAuthorizationRule(
-                    resourceGroupName, namespaceName, relayName, authorizationRuleName, parameters);
+    public AuthorizationRule createOrUpdateAuthorizationRule(String resourceGroupName, String namespaceName,
+        String relayName, String authorizationRuleName, AuthorizationRuleInner parameters) {
+        AuthorizationRuleInner inner = this.serviceClient().createOrUpdateAuthorizationRule(resourceGroupName,
+            namespaceName, relayName, authorizationRuleName, parameters);
         if (inner != null) {
             return new AuthorizationRuleImpl(inner, this.manager());
         } else {
@@ -87,53 +70,34 @@ public final class WcfRelaysImpl implements WcfRelays {
         }
     }
 
-    public Response<Void> deleteAuthorizationRuleWithResponse(
-        String resourceGroupName,
-        String namespaceName,
-        String relayName,
-        String authorizationRuleName,
-        Context context) {
-        return this
-            .serviceClient()
-            .deleteAuthorizationRuleWithResponse(
-                resourceGroupName, namespaceName, relayName, authorizationRuleName, context);
+    public Response<Void> deleteAuthorizationRuleWithResponse(String resourceGroupName, String namespaceName,
+        String relayName, String authorizationRuleName, Context context) {
+        return this.serviceClient().deleteAuthorizationRuleWithResponse(resourceGroupName, namespaceName, relayName,
+            authorizationRuleName, context);
     }
 
-    public void deleteAuthorizationRule(
-        String resourceGroupName, String namespaceName, String relayName, String authorizationRuleName) {
-        this
-            .serviceClient()
-            .deleteAuthorizationRule(resourceGroupName, namespaceName, relayName, authorizationRuleName);
+    public void deleteAuthorizationRule(String resourceGroupName, String namespaceName, String relayName,
+        String authorizationRuleName) {
+        this.serviceClient().deleteAuthorizationRule(resourceGroupName, namespaceName, relayName,
+            authorizationRuleName);
     }
 
-    public Response<AuthorizationRule> getAuthorizationRuleWithResponse(
-        String resourceGroupName,
-        String namespaceName,
-        String relayName,
-        String authorizationRuleName,
-        Context context) {
-        Response<AuthorizationRuleInner> inner =
-            this
-                .serviceClient()
-                .getAuthorizationRuleWithResponse(
-                    resourceGroupName, namespaceName, relayName, authorizationRuleName, context);
+    public Response<AuthorizationRule> getAuthorizationRuleWithResponse(String resourceGroupName, String namespaceName,
+        String relayName, String authorizationRuleName, Context context) {
+        Response<AuthorizationRuleInner> inner = this.serviceClient().getAuthorizationRuleWithResponse(
+            resourceGroupName, namespaceName, relayName, authorizationRuleName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new AuthorizationRuleImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public AuthorizationRule getAuthorizationRule(
-        String resourceGroupName, String namespaceName, String relayName, String authorizationRuleName) {
-        AuthorizationRuleInner inner =
-            this
-                .serviceClient()
-                .getAuthorizationRule(resourceGroupName, namespaceName, relayName, authorizationRuleName);
+    public AuthorizationRule getAuthorizationRule(String resourceGroupName, String namespaceName, String relayName,
+        String authorizationRuleName) {
+        AuthorizationRuleInner inner = this.serviceClient().getAuthorizationRule(resourceGroupName, namespaceName,
+            relayName, authorizationRuleName);
         if (inner != null) {
             return new AuthorizationRuleImpl(inner, this.manager());
         } else {
@@ -141,31 +105,22 @@ public final class WcfRelaysImpl implements WcfRelays {
         }
     }
 
-    public Response<AccessKeys> listKeysWithResponse(
-        String resourceGroupName,
-        String namespaceName,
-        String relayName,
-        String authorizationRuleName,
-        Context context) {
-        Response<AccessKeysInner> inner =
-            this
-                .serviceClient()
-                .listKeysWithResponse(resourceGroupName, namespaceName, relayName, authorizationRuleName, context);
+    public Response<AccessKeys> listKeysWithResponse(String resourceGroupName, String namespaceName, String relayName,
+        String authorizationRuleName, Context context) {
+        Response<AccessKeysInner> inner = this.serviceClient().listKeysWithResponse(resourceGroupName, namespaceName,
+            relayName, authorizationRuleName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new AccessKeysImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public AccessKeys listKeys(
-        String resourceGroupName, String namespaceName, String relayName, String authorizationRuleName) {
-        AccessKeysInner inner =
-            this.serviceClient().listKeys(resourceGroupName, namespaceName, relayName, authorizationRuleName);
+    public AccessKeys listKeys(String resourceGroupName, String namespaceName, String relayName,
+        String authorizationRuleName) {
+        AccessKeysInner inner
+            = this.serviceClient().listKeys(resourceGroupName, namespaceName, relayName, authorizationRuleName);
         if (inner != null) {
             return new AccessKeysImpl(inner, this.manager());
         } else {
@@ -173,39 +128,22 @@ public final class WcfRelaysImpl implements WcfRelays {
         }
     }
 
-    public Response<AccessKeys> regenerateKeysWithResponse(
-        String resourceGroupName,
-        String namespaceName,
-        String relayName,
-        String authorizationRuleName,
-        RegenerateAccessKeyParameters parameters,
-        Context context) {
-        Response<AccessKeysInner> inner =
-            this
-                .serviceClient()
-                .regenerateKeysWithResponse(
-                    resourceGroupName, namespaceName, relayName, authorizationRuleName, parameters, context);
+    public Response<AccessKeys> regenerateKeysWithResponse(String resourceGroupName, String namespaceName,
+        String relayName, String authorizationRuleName, RegenerateAccessKeyParameters parameters, Context context) {
+        Response<AccessKeysInner> inner = this.serviceClient().regenerateKeysWithResponse(resourceGroupName,
+            namespaceName, relayName, authorizationRuleName, parameters, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new AccessKeysImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public AccessKeys regenerateKeys(
-        String resourceGroupName,
-        String namespaceName,
-        String relayName,
-        String authorizationRuleName,
-        RegenerateAccessKeyParameters parameters) {
-        AccessKeysInner inner =
-            this
-                .serviceClient()
-                .regenerateKeys(resourceGroupName, namespaceName, relayName, authorizationRuleName, parameters);
+    public AccessKeys regenerateKeys(String resourceGroupName, String namespaceName, String relayName,
+        String authorizationRuleName, RegenerateAccessKeyParameters parameters) {
+        AccessKeysInner inner = this.serviceClient().regenerateKeys(resourceGroupName, namespaceName, relayName,
+            authorizationRuleName, parameters);
         if (inner != null) {
             return new AccessKeysImpl(inner, this.manager());
         } else {
@@ -219,13 +157,13 @@ public final class WcfRelaysImpl implements WcfRelays {
     }
 
     public PagedIterable<WcfRelay> listByNamespace(String resourceGroupName, String namespaceName, Context context) {
-        PagedIterable<WcfRelayInner> inner =
-            this.serviceClient().listByNamespace(resourceGroupName, namespaceName, context);
+        PagedIterable<WcfRelayInner> inner
+            = this.serviceClient().listByNamespace(resourceGroupName, namespaceName, context);
         return Utils.mapPage(inner, inner1 -> new WcfRelayImpl(inner1, this.manager()));
     }
 
-    public Response<Void> deleteWithResponse(
-        String resourceGroupName, String namespaceName, String relayName, Context context) {
+    public Response<Void> deleteWithResponse(String resourceGroupName, String namespaceName, String relayName,
+        Context context) {
         return this.serviceClient().deleteWithResponse(resourceGroupName, namespaceName, relayName, context);
     }
 
@@ -233,15 +171,12 @@ public final class WcfRelaysImpl implements WcfRelays {
         this.serviceClient().delete(resourceGroupName, namespaceName, relayName);
     }
 
-    public Response<WcfRelay> getWithResponse(
-        String resourceGroupName, String namespaceName, String relayName, Context context) {
-        Response<WcfRelayInner> inner =
-            this.serviceClient().getWithResponse(resourceGroupName, namespaceName, relayName, context);
+    public Response<WcfRelay> getWithResponse(String resourceGroupName, String namespaceName, String relayName,
+        Context context) {
+        Response<WcfRelayInner> inner
+            = this.serviceClient().getWithResponse(resourceGroupName, namespaceName, relayName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new WcfRelayImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -260,25 +195,18 @@ public final class WcfRelaysImpl implements WcfRelays {
     public WcfRelay getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
         String relayName = Utils.getValueFromIdByName(id, "wcfRelays");
         if (relayName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'wcfRelays'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'wcfRelays'.", id)));
         }
         return this.getWithResponse(resourceGroupName, namespaceName, relayName, Context.NONE).getValue();
     }
@@ -286,25 +214,18 @@ public final class WcfRelaysImpl implements WcfRelays {
     public Response<WcfRelay> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
         String relayName = Utils.getValueFromIdByName(id, "wcfRelays");
         if (relayName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'wcfRelays'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'wcfRelays'.", id)));
         }
         return this.getWithResponse(resourceGroupName, namespaceName, relayName, context);
     }
@@ -312,25 +233,18 @@ public final class WcfRelaysImpl implements WcfRelays {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
         String relayName = Utils.getValueFromIdByName(id, "wcfRelays");
         if (relayName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'wcfRelays'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'wcfRelays'.", id)));
         }
         this.deleteWithResponse(resourceGroupName, namespaceName, relayName, Context.NONE);
     }
@@ -338,25 +252,18 @@ public final class WcfRelaysImpl implements WcfRelays {
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
         String relayName = Utils.getValueFromIdByName(id, "wcfRelays");
         if (relayName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'wcfRelays'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'wcfRelays'.", id)));
         }
         return this.deleteWithResponse(resourceGroupName, namespaceName, relayName, context);
     }

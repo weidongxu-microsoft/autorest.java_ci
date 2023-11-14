@@ -10,7 +10,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** The properties used to create a new server by restoring to a different region from a geo replicated backup. */
+/**
+ * The properties used to create a new server by restoring to a different region from a geo replicated backup.
+ */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "createMode")
 @JsonTypeName("GeoRestore")
 @Fluent
@@ -21,13 +23,15 @@ public final class ServerPropertiesForGeoRestore extends ServerPropertiesForCrea
     @JsonProperty(value = "sourceServerId", required = true)
     private String sourceServerId;
 
-    /** Creates an instance of ServerPropertiesForGeoRestore class. */
+    /**
+     * Creates an instance of ServerPropertiesForGeoRestore class.
+     */
     public ServerPropertiesForGeoRestore() {
     }
 
     /**
      * Get the sourceServerId property: The source server id to restore from.
-     *
+     * 
      * @return the sourceServerId value.
      */
     public String sourceServerId() {
@@ -36,7 +40,7 @@ public final class ServerPropertiesForGeoRestore extends ServerPropertiesForCrea
 
     /**
      * Set the sourceServerId property: The source server id to restore from.
-     *
+     * 
      * @param sourceServerId the sourceServerId value to set.
      * @return the ServerPropertiesForGeoRestore object itself.
      */
@@ -45,43 +49,55 @@ public final class ServerPropertiesForGeoRestore extends ServerPropertiesForCrea
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ServerPropertiesForGeoRestore withVersion(ServerVersion version) {
         super.withVersion(version);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ServerPropertiesForGeoRestore withSslEnforcement(SslEnforcementEnum sslEnforcement) {
         super.withSslEnforcement(sslEnforcement);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ServerPropertiesForGeoRestore withMinimalTlsVersion(MinimalTlsVersionEnum minimalTlsVersion) {
         super.withMinimalTlsVersion(minimalTlsVersion);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
-    public ServerPropertiesForGeoRestore withInfrastructureEncryption(
-        InfrastructureEncryption infrastructureEncryption) {
+    public ServerPropertiesForGeoRestore
+        withInfrastructureEncryption(InfrastructureEncryption infrastructureEncryption) {
         super.withInfrastructureEncryption(infrastructureEncryption);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ServerPropertiesForGeoRestore withPublicNetworkAccess(PublicNetworkAccessEnum publicNetworkAccess) {
         super.withPublicNetworkAccess(publicNetworkAccess);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ServerPropertiesForGeoRestore withStorageProfile(StorageProfile storageProfile) {
         super.withStorageProfile(storageProfile);
@@ -90,17 +106,15 @@ public final class ServerPropertiesForGeoRestore extends ServerPropertiesForCrea
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override
     public void validate() {
         super.validate();
         if (sourceServerId() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property sourceServerId in model ServerPropertiesForGeoRestore"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property sourceServerId in model ServerPropertiesForGeoRestore"));
         }
     }
 

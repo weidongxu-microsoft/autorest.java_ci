@@ -12,8 +12,7 @@ public final class GatewaySettingsImpl implements GatewaySettings {
 
     private final com.azure.resourcemanager.hdinsight.generated.HDInsightManager serviceManager;
 
-    GatewaySettingsImpl(
-        GatewaySettingsInner innerObject,
+    GatewaySettingsImpl(GatewaySettingsInner innerObject,
         com.azure.resourcemanager.hdinsight.generated.HDInsightManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

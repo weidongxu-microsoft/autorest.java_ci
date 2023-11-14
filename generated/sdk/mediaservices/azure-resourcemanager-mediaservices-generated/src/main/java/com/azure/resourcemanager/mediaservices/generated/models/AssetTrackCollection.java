@@ -9,7 +9,9 @@ import com.azure.resourcemanager.mediaservices.generated.fluent.models.AssetTrac
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** A collection of AssetTrack items. */
+/**
+ * A collection of AssetTrack items.
+ */
 @Fluent
 public final class AssetTrackCollection {
     /*
@@ -18,13 +20,15 @@ public final class AssetTrackCollection {
     @JsonProperty(value = "value")
     private List<AssetTrackInner> value;
 
-    /** Creates an instance of AssetTrackCollection class. */
+    /**
+     * Creates an instance of AssetTrackCollection class.
+     */
     public AssetTrackCollection() {
     }
 
     /**
      * Get the value property: A collection of AssetTrack items.
-     *
+     * 
      * @return the value value.
      */
     public List<AssetTrackInner> value() {
@@ -33,7 +37,7 @@ public final class AssetTrackCollection {
 
     /**
      * Set the value property: A collection of AssetTrack items.
-     *
+     * 
      * @param value the value value to set.
      * @return the AssetTrackCollection object itself.
      */
@@ -44,7 +48,7 @@ public final class AssetTrackCollection {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

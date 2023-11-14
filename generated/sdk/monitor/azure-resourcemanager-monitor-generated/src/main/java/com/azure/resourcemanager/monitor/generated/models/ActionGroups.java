@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of ActionGroups. */
+/**
+ * Resource collection API of ActionGroups.
+ */
 public interface ActionGroups {
     /**
      * Get an action group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param actionGroupName The name of the action group.
      * @param context The context to associate with this operation.
@@ -21,12 +23,12 @@ public interface ActionGroups {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return an action group along with {@link Response}.
      */
-    Response<ActionGroupResource> getByResourceGroupWithResponse(
-        String resourceGroupName, String actionGroupName, Context context);
+    Response<ActionGroupResource> getByResourceGroupWithResponse(String resourceGroupName, String actionGroupName,
+        Context context);
 
     /**
      * Get an action group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param actionGroupName The name of the action group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -38,7 +40,7 @@ public interface ActionGroups {
 
     /**
      * Delete an action group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param actionGroupName The name of the action group.
      * @param context The context to associate with this operation.
@@ -51,7 +53,7 @@ public interface ActionGroups {
 
     /**
      * Delete an action group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param actionGroupName The name of the action group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -62,7 +64,7 @@ public interface ActionGroups {
 
     /**
      * Get a list of all action groups in a subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a list of all action groups in a subscription as paginated response with {@link PagedIterable}.
@@ -71,7 +73,7 @@ public interface ActionGroups {
 
     /**
      * Get a list of all action groups in a subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -82,7 +84,7 @@ public interface ActionGroups {
 
     /**
      * Get a list of all action groups in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -93,7 +95,7 @@ public interface ActionGroups {
 
     /**
      * Get a list of all action groups in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -106,7 +108,7 @@ public interface ActionGroups {
     /**
      * Enable a receiver in an action group. This changes the receiver's status from Disabled to Enabled. This operation
      * is only supported for Email or SMS receivers.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param actionGroupName The name of the action group.
      * @param enableRequest The receiver to re-enable.
@@ -116,13 +118,13 @@ public interface ActionGroups {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
-    Response<Void> enableReceiverWithResponse(
-        String resourceGroupName, String actionGroupName, EnableRequest enableRequest, Context context);
+    Response<Void> enableReceiverWithResponse(String resourceGroupName, String actionGroupName,
+        EnableRequest enableRequest, Context context);
 
     /**
      * Enable a receiver in an action group. This changes the receiver's status from Disabled to Enabled. This operation
      * is only supported for Email or SMS receivers.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param actionGroupName The name of the action group.
      * @param enableRequest The receiver to re-enable.
@@ -134,7 +136,7 @@ public interface ActionGroups {
 
     /**
      * Get an action group.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -145,7 +147,7 @@ public interface ActionGroups {
 
     /**
      * Get an action group.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -157,7 +159,7 @@ public interface ActionGroups {
 
     /**
      * Delete an action group.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -167,7 +169,7 @@ public interface ActionGroups {
 
     /**
      * Delete an action group.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -179,7 +181,7 @@ public interface ActionGroups {
 
     /**
      * Begins definition for a new ActionGroupResource resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new ActionGroupResource definition.
      */

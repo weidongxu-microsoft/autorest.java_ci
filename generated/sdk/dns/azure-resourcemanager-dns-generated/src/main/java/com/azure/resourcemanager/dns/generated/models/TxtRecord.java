@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** A TXT record. */
+/**
+ * A TXT record.
+ */
 @Fluent
 public final class TxtRecord {
     /*
@@ -17,13 +19,15 @@ public final class TxtRecord {
     @JsonProperty(value = "value")
     private List<String> value;
 
-    /** Creates an instance of TxtRecord class. */
+    /**
+     * Creates an instance of TxtRecord class.
+     */
     public TxtRecord() {
     }
 
     /**
      * Get the value property: The text value of this TXT record.
-     *
+     * 
      * @return the value value.
      */
     public List<String> value() {
@@ -32,7 +36,7 @@ public final class TxtRecord {
 
     /**
      * Set the value property: The text value of this TXT record.
-     *
+     * 
      * @param value the value value to set.
      * @return the TxtRecord object itself.
      */
@@ -43,7 +47,7 @@ public final class TxtRecord {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -9,7 +9,9 @@ import com.azure.resourcemanager.eventhubs.generated.models.AvailableCluster;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The response of the List Available Clusters operation. */
+/**
+ * The response of the List Available Clusters operation.
+ */
 @Fluent
 public final class AvailableClustersListInner {
     /*
@@ -18,13 +20,15 @@ public final class AvailableClustersListInner {
     @JsonProperty(value = "value")
     private List<AvailableCluster> value;
 
-    /** Creates an instance of AvailableClustersListInner class. */
+    /**
+     * Creates an instance of AvailableClustersListInner class.
+     */
     public AvailableClustersListInner() {
     }
 
     /**
      * Get the value property: The count of readily available and pre-provisioned Event Hubs Clusters per region.
-     *
+     * 
      * @return the value value.
      */
     public List<AvailableCluster> value() {
@@ -33,7 +37,7 @@ public final class AvailableClustersListInner {
 
     /**
      * Set the value property: The count of readily available and pre-provisioned Event Hubs Clusters per region.
-     *
+     * 
      * @param value the value value to set.
      * @return the AvailableClustersListInner object itself.
      */
@@ -44,7 +48,7 @@ public final class AvailableClustersListInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -7,11 +7,13 @@ package com.azure.resourcemanager.eventhubs.generated.models;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.NetworkSecurityPerimeterConfigurationListInner;
 import java.util.List;
 
-/** An immutable client-side representation of NetworkSecurityPerimeterConfigurationList. */
+/**
+ * An immutable client-side representation of NetworkSecurityPerimeterConfigurationList.
+ */
 public interface NetworkSecurityPerimeterConfigurationList {
     /**
      * Gets the value property: A collection of NetworkSecurityPerimeterConfigurations.
-     *
+     * 
      * @return the value value.
      */
     List<NetworkSecurityPerimeterConfiguration> value();
@@ -20,7 +22,7 @@ public interface NetworkSecurityPerimeterConfigurationList {
      * Gets the inner
      * com.azure.resourcemanager.eventhubs.generated.fluent.models.NetworkSecurityPerimeterConfigurationListInner
      * object.
-     *
+     * 
      * @return the inner object.
      */
     NetworkSecurityPerimeterConfigurationListInner innerModel();

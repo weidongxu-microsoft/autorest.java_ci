@@ -14,11 +14,13 @@ import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.network.generated.fluent.models.SecurityPartnerProviderInner;
 import com.azure.resourcemanager.network.generated.models.TagsObject;
 
-/** An instance of this class provides access to all the operations defined in SecurityPartnerProvidersClient. */
+/**
+ * An instance of this class provides access to all the operations defined in SecurityPartnerProvidersClient.
+ */
 public interface SecurityPartnerProvidersClient {
     /**
      * Deletes the specified Security Partner Provider.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param securityPartnerProviderName The name of the Security Partner Provider.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -31,7 +33,7 @@ public interface SecurityPartnerProvidersClient {
 
     /**
      * Deletes the specified Security Partner Provider.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param securityPartnerProviderName The name of the Security Partner Provider.
      * @param context The context to associate with this operation.
@@ -41,12 +43,12 @@ public interface SecurityPartnerProvidersClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginDelete(
-        String resourceGroupName, String securityPartnerProviderName, Context context);
+    SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String securityPartnerProviderName,
+        Context context);
 
     /**
      * Deletes the specified Security Partner Provider.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param securityPartnerProviderName The name of the Security Partner Provider.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -58,7 +60,7 @@ public interface SecurityPartnerProvidersClient {
 
     /**
      * Deletes the specified Security Partner Provider.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param securityPartnerProviderName The name of the Security Partner Provider.
      * @param context The context to associate with this operation.
@@ -71,7 +73,7 @@ public interface SecurityPartnerProvidersClient {
 
     /**
      * Gets the specified Security Partner Provider.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param securityPartnerProviderName The name of the Security Partner Provider.
      * @param context The context to associate with this operation.
@@ -81,12 +83,12 @@ public interface SecurityPartnerProvidersClient {
      * @return the specified Security Partner Provider along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<SecurityPartnerProviderInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String securityPartnerProviderName, Context context);
+    Response<SecurityPartnerProviderInner> getByResourceGroupWithResponse(String resourceGroupName,
+        String securityPartnerProviderName, Context context);
 
     /**
      * Gets the specified Security Partner Provider.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param securityPartnerProviderName The name of the Security Partner Provider.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -99,7 +101,7 @@ public interface SecurityPartnerProvidersClient {
 
     /**
      * Creates or updates the specified Security Partner Provider.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param securityPartnerProviderName The name of the Security Partner Provider.
      * @param parameters Parameters supplied to the create or update Security Partner Provider operation.
@@ -114,7 +116,7 @@ public interface SecurityPartnerProvidersClient {
 
     /**
      * Creates or updates the specified Security Partner Provider.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param securityPartnerProviderName The name of the Security Partner Provider.
      * @param parameters Parameters supplied to the create or update Security Partner Provider operation.
@@ -126,14 +128,12 @@ public interface SecurityPartnerProvidersClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<SecurityPartnerProviderInner>, SecurityPartnerProviderInner> beginCreateOrUpdate(
-        String resourceGroupName,
-        String securityPartnerProviderName,
-        SecurityPartnerProviderInner parameters,
+        String resourceGroupName, String securityPartnerProviderName, SecurityPartnerProviderInner parameters,
         Context context);
 
     /**
      * Creates or updates the specified Security Partner Provider.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param securityPartnerProviderName The name of the Security Partner Provider.
      * @param parameters Parameters supplied to the create or update Security Partner Provider operation.
@@ -143,12 +143,12 @@ public interface SecurityPartnerProvidersClient {
      * @return security Partner Provider resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    SecurityPartnerProviderInner createOrUpdate(
-        String resourceGroupName, String securityPartnerProviderName, SecurityPartnerProviderInner parameters);
+    SecurityPartnerProviderInner createOrUpdate(String resourceGroupName, String securityPartnerProviderName,
+        SecurityPartnerProviderInner parameters);
 
     /**
      * Creates or updates the specified Security Partner Provider.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param securityPartnerProviderName The name of the Security Partner Provider.
      * @param parameters Parameters supplied to the create or update Security Partner Provider operation.
@@ -159,15 +159,12 @@ public interface SecurityPartnerProvidersClient {
      * @return security Partner Provider resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    SecurityPartnerProviderInner createOrUpdate(
-        String resourceGroupName,
-        String securityPartnerProviderName,
-        SecurityPartnerProviderInner parameters,
-        Context context);
+    SecurityPartnerProviderInner createOrUpdate(String resourceGroupName, String securityPartnerProviderName,
+        SecurityPartnerProviderInner parameters, Context context);
 
     /**
      * Updates tags of a Security Partner Provider resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param securityPartnerProviderName The name of the Security Partner Provider.
      * @param parameters Parameters supplied to update Security Partner Provider tags.
@@ -178,12 +175,12 @@ public interface SecurityPartnerProvidersClient {
      * @return security Partner Provider resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<SecurityPartnerProviderInner> updateTagsWithResponse(
-        String resourceGroupName, String securityPartnerProviderName, TagsObject parameters, Context context);
+    Response<SecurityPartnerProviderInner> updateTagsWithResponse(String resourceGroupName,
+        String securityPartnerProviderName, TagsObject parameters, Context context);
 
     /**
      * Updates tags of a Security Partner Provider resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param securityPartnerProviderName The name of the Security Partner Provider.
      * @param parameters Parameters supplied to update Security Partner Provider tags.
@@ -193,39 +190,39 @@ public interface SecurityPartnerProvidersClient {
      * @return security Partner Provider resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    SecurityPartnerProviderInner updateTags(
-        String resourceGroupName, String securityPartnerProviderName, TagsObject parameters);
+    SecurityPartnerProviderInner updateTags(String resourceGroupName, String securityPartnerProviderName,
+        TagsObject parameters);
 
     /**
      * Lists all Security Partner Providers in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListSecurityPartnerProviders API service call as paginated response with {@link
-     *     PagedIterable}.
+     * @return response for ListSecurityPartnerProviders API service call as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<SecurityPartnerProviderInner> listByResourceGroup(String resourceGroupName);
 
     /**
      * Lists all Security Partner Providers in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListSecurityPartnerProviders API service call as paginated response with {@link
-     *     PagedIterable}.
+     * @return response for ListSecurityPartnerProviders API service call as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<SecurityPartnerProviderInner> listByResourceGroup(String resourceGroupName, Context context);
 
     /**
      * Gets all the Security Partner Providers in a subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all the Security Partner Providers in a subscription as paginated response with {@link PagedIterable}.
@@ -235,7 +232,7 @@ public interface SecurityPartnerProvidersClient {
 
     /**
      * Gets all the Security Partner Providers in a subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

@@ -9,7 +9,9 @@ import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
-/** The start and end date for recurrence schedule. */
+/**
+ * The start and end date for recurrence schedule.
+ */
 @Fluent
 public final class ExportRecurrencePeriod {
     /*
@@ -24,13 +26,15 @@ public final class ExportRecurrencePeriod {
     @JsonProperty(value = "to")
     private OffsetDateTime to;
 
-    /** Creates an instance of ExportRecurrencePeriod class. */
+    /**
+     * Creates an instance of ExportRecurrencePeriod class.
+     */
     public ExportRecurrencePeriod() {
     }
 
     /**
      * Get the from property: The start date of recurrence.
-     *
+     * 
      * @return the from value.
      */
     public OffsetDateTime from() {
@@ -39,7 +43,7 @@ public final class ExportRecurrencePeriod {
 
     /**
      * Set the from property: The start date of recurrence.
-     *
+     * 
      * @param from the from value to set.
      * @return the ExportRecurrencePeriod object itself.
      */
@@ -50,7 +54,7 @@ public final class ExportRecurrencePeriod {
 
     /**
      * Get the to property: The end date of recurrence.
-     *
+     * 
      * @return the to value.
      */
     public OffsetDateTime to() {
@@ -59,7 +63,7 @@ public final class ExportRecurrencePeriod {
 
     /**
      * Set the to property: The end date of recurrence.
-     *
+     * 
      * @param to the to value to set.
      * @return the ExportRecurrencePeriod object itself.
      */
@@ -70,14 +74,13 @@ public final class ExportRecurrencePeriod {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (from() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property from in model ExportRecurrencePeriod"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property from in model ExportRecurrencePeriod"));
         }
     }
 

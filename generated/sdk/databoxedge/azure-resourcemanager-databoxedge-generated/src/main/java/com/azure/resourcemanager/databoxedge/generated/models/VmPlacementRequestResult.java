@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** List of VM sizes being checked for creation on appliance along with corresponding result. */
+/**
+ * List of VM sizes being checked for creation on appliance along with corresponding result.
+ */
 @Fluent
 public final class VmPlacementRequestResult {
     /*
@@ -35,13 +37,15 @@ public final class VmPlacementRequestResult {
     @JsonProperty(value = "message")
     private String message;
 
-    /** Creates an instance of VmPlacementRequestResult class. */
+    /**
+     * Creates an instance of VmPlacementRequestResult class.
+     */
     public VmPlacementRequestResult() {
     }
 
     /**
      * Get the vmSize property: List of VM sizes being checked.
-     *
+     * 
      * @return the vmSize value.
      */
     public List<String> vmSize() {
@@ -50,7 +54,7 @@ public final class VmPlacementRequestResult {
 
     /**
      * Set the vmSize property: List of VM sizes being checked.
-     *
+     * 
      * @param vmSize the vmSize value to set.
      * @return the VmPlacementRequestResult object itself.
      */
@@ -61,7 +65,7 @@ public final class VmPlacementRequestResult {
 
     /**
      * Get the isFeasible property: Boolean value indicating if the VM(s) in VmSize can be created.
-     *
+     * 
      * @return the isFeasible value.
      */
     public Boolean isFeasible() {
@@ -70,7 +74,7 @@ public final class VmPlacementRequestResult {
 
     /**
      * Set the isFeasible property: Boolean value indicating if the VM(s) in VmSize can be created.
-     *
+     * 
      * @param isFeasible the isFeasible value to set.
      * @return the VmPlacementRequestResult object itself.
      */
@@ -81,7 +85,7 @@ public final class VmPlacementRequestResult {
 
     /**
      * Get the messageCode property: MessageCode indicating reason for success or failure.
-     *
+     * 
      * @return the messageCode value.
      */
     public String messageCode() {
@@ -90,7 +94,7 @@ public final class VmPlacementRequestResult {
 
     /**
      * Set the messageCode property: MessageCode indicating reason for success or failure.
-     *
+     * 
      * @param messageCode the messageCode value to set.
      * @return the VmPlacementRequestResult object itself.
      */
@@ -101,7 +105,7 @@ public final class VmPlacementRequestResult {
 
     /**
      * Get the message property: Localized message to be displayed to the user to explain the check result.
-     *
+     * 
      * @return the message value.
      */
     public String message() {
@@ -110,7 +114,7 @@ public final class VmPlacementRequestResult {
 
     /**
      * Set the message property: Localized message to be displayed to the user to explain the check result.
-     *
+     * 
      * @param message the message value to set.
      * @return the VmPlacementRequestResult object itself.
      */
@@ -121,7 +125,7 @@ public final class VmPlacementRequestResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

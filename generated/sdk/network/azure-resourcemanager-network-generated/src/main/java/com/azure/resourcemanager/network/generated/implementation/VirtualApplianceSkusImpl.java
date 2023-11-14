@@ -21,8 +21,7 @@ public final class VirtualApplianceSkusImpl implements VirtualApplianceSkus {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public VirtualApplianceSkusImpl(
-        VirtualApplianceSkusClient innerClient,
+    public VirtualApplianceSkusImpl(VirtualApplianceSkusClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -41,10 +40,7 @@ public final class VirtualApplianceSkusImpl implements VirtualApplianceSkus {
     public Response<NetworkVirtualApplianceSku> getWithResponse(String skuName, Context context) {
         Response<NetworkVirtualApplianceSkuInner> inner = this.serviceClient().getWithResponse(skuName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new NetworkVirtualApplianceSkuImpl(inner.getValue(), this.manager()));
         } else {
             return null;

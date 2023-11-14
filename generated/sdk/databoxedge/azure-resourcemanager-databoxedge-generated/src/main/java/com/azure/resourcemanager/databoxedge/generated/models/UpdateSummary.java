@@ -9,53 +9,55 @@ import com.azure.resourcemanager.databoxedge.generated.fluent.models.UpdateSumma
 import java.time.OffsetDateTime;
 import java.util.List;
 
-/** An immutable client-side representation of UpdateSummary. */
+/**
+ * An immutable client-side representation of UpdateSummary.
+ */
 public interface UpdateSummary {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the name property: The name of the resource.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the type property: The type of the resource.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the systemData property: Metadata pertaining to creation and last modification of UpdateSummary.
-     *
+     * 
      * @return the systemData value.
      */
     SystemData systemData();
 
     /**
      * Gets the deviceVersionNumber property: The current version of the device in format: 1.2.17312.13.",.
-     *
+     * 
      * @return the deviceVersionNumber value.
      */
     String deviceVersionNumber();
 
     /**
      * Gets the friendlyDeviceVersionName property: The current version of the device in text format.
-     *
+     * 
      * @return the friendlyDeviceVersionName value.
      */
     String friendlyDeviceVersionName();
 
     /**
      * Gets the deviceLastScannedDateTime property: The last time when a scan was done on the device.
-     *
+     * 
      * @return the deviceLastScannedDateTime value.
      */
     OffsetDateTime deviceLastScannedDateTime();
@@ -63,14 +65,14 @@ public interface UpdateSummary {
     /**
      * Gets the lastCompletedScanJobDateTime property: The time when the last scan job was completed
      * (success/cancelled/failed) on the appliance.
-     *
+     * 
      * @return the lastCompletedScanJobDateTime value.
      */
     OffsetDateTime lastCompletedScanJobDateTime();
 
     /**
      * Gets the lastSuccessfulScanJobTime property: Time when the last scan job is successfully completed.
-     *
+     * 
      * @return the lastSuccessfulScanJobTime value.
      */
     OffsetDateTime lastSuccessfulScanJobTime();
@@ -78,7 +80,7 @@ public interface UpdateSummary {
     /**
      * Gets the lastCompletedDownloadJobDateTime property: The time when the last Download job was completed
      * (success/cancelled/failed) on the appliance.
-     *
+     * 
      * @return the lastCompletedDownloadJobDateTime value.
      */
     OffsetDateTime lastCompletedDownloadJobDateTime();
@@ -86,14 +88,14 @@ public interface UpdateSummary {
     /**
      * Gets the lastCompletedDownloadJobId property: JobId of the last ran download job.(Can be
      * success/cancelled/failed).
-     *
+     * 
      * @return the lastCompletedDownloadJobId value.
      */
     String lastCompletedDownloadJobId();
 
     /**
      * Gets the lastDownloadJobStatus property: JobStatus of the last ran download job.
-     *
+     * 
      * @return the lastDownloadJobStatus value.
      */
     JobStatus lastDownloadJobStatus();
@@ -101,7 +103,7 @@ public interface UpdateSummary {
     /**
      * Gets the lastSuccessfulInstallJobDateTime property: The time when the Last Install job was completed successfully
      * on the appliance.
-     *
+     * 
      * @return the lastSuccessfulInstallJobDateTime value.
      */
     OffsetDateTime lastSuccessfulInstallJobDateTime();
@@ -109,21 +111,21 @@ public interface UpdateSummary {
     /**
      * Gets the lastCompletedInstallJobDateTime property: The time when the last Install job was completed
      * (success/cancelled/failed) on the appliance.
-     *
+     * 
      * @return the lastCompletedInstallJobDateTime value.
      */
     OffsetDateTime lastCompletedInstallJobDateTime();
 
     /**
      * Gets the lastCompletedInstallJobId property: JobId of the last ran install job.(Can be success/cancelled/failed).
-     *
+     * 
      * @return the lastCompletedInstallJobId value.
      */
     String lastCompletedInstallJobId();
 
     /**
      * Gets the lastInstallJobStatus property: JobStatus of the last ran install job.
-     *
+     * 
      * @return the lastInstallJobStatus value.
      */
     JobStatus lastInstallJobStatus();
@@ -131,21 +133,21 @@ public interface UpdateSummary {
     /**
      * Gets the totalNumberOfUpdatesAvailable property: The number of updates available for the current device version
      * as per the last device scan.
-     *
+     * 
      * @return the totalNumberOfUpdatesAvailable value.
      */
     Integer totalNumberOfUpdatesAvailable();
 
     /**
      * Gets the totalNumberOfUpdatesPendingDownload property: The total number of items pending download.
-     *
+     * 
      * @return the totalNumberOfUpdatesPendingDownload value.
      */
     Integer totalNumberOfUpdatesPendingDownload();
 
     /**
      * Gets the totalNumberOfUpdatesPendingInstall property: The total number of items pending install.
-     *
+     * 
      * @return the totalNumberOfUpdatesPendingInstall value.
      */
     Integer totalNumberOfUpdatesPendingInstall();
@@ -153,28 +155,28 @@ public interface UpdateSummary {
     /**
      * Gets the rebootBehavior property: Indicates if updates are available and at least one of the updates needs a
      * reboot.
-     *
+     * 
      * @return the rebootBehavior value.
      */
     InstallRebootBehavior rebootBehavior();
 
     /**
      * Gets the ongoingUpdateOperation property: The current update operation.
-     *
+     * 
      * @return the ongoingUpdateOperation value.
      */
     UpdateOperation ongoingUpdateOperation();
 
     /**
      * Gets the inProgressDownloadJobId property: The job ID of the download job in progress.
-     *
+     * 
      * @return the inProgressDownloadJobId value.
      */
     String inProgressDownloadJobId();
 
     /**
      * Gets the inProgressInstallJobId property: The job ID of the install job in progress.
-     *
+     * 
      * @return the inProgressInstallJobId value.
      */
     String inProgressInstallJobId();
@@ -182,7 +184,7 @@ public interface UpdateSummary {
     /**
      * Gets the inProgressDownloadJobStartedDateTime property: The time when the currently running download (if any)
      * started.
-     *
+     * 
      * @return the inProgressDownloadJobStartedDateTime value.
      */
     OffsetDateTime inProgressDownloadJobStartedDateTime();
@@ -190,42 +192,42 @@ public interface UpdateSummary {
     /**
      * Gets the inProgressInstallJobStartedDateTime property: The time when the currently running install (if any)
      * started.
-     *
+     * 
      * @return the inProgressInstallJobStartedDateTime value.
      */
     OffsetDateTime inProgressInstallJobStartedDateTime();
 
     /**
      * Gets the updateTitles property: The list of updates available for install.
-     *
+     * 
      * @return the updateTitles value.
      */
     List<String> updateTitles();
 
     /**
      * Gets the updates property: The list of updates available for install.
-     *
+     * 
      * @return the updates value.
      */
     List<UpdateDetails> updates();
 
     /**
      * Gets the totalUpdateSizeInBytes property: The total size of updates available for download in bytes.
-     *
+     * 
      * @return the totalUpdateSizeInBytes value.
      */
     Double totalUpdateSizeInBytes();
 
     /**
      * Gets the totalTimeInMinutes property: The total time in Minutes.
-     *
+     * 
      * @return the totalTimeInMinutes value.
      */
     Integer totalTimeInMinutes();
 
     /**
      * Gets the inner com.azure.resourcemanager.databoxedge.generated.fluent.models.UpdateSummaryInner object.
-     *
+     * 
      * @return the inner object.
      */
     UpdateSummaryInner innerModel();

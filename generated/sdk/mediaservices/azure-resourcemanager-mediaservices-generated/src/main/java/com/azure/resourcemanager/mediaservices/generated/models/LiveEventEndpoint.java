@@ -7,7 +7,9 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The live event endpoint. */
+/**
+ * The live event endpoint.
+ */
 @Fluent
 public final class LiveEventEndpoint {
     /*
@@ -22,13 +24,15 @@ public final class LiveEventEndpoint {
     @JsonProperty(value = "url")
     private String url;
 
-    /** Creates an instance of LiveEventEndpoint class. */
+    /**
+     * Creates an instance of LiveEventEndpoint class.
+     */
     public LiveEventEndpoint() {
     }
 
     /**
      * Get the protocol property: The endpoint protocol.
-     *
+     * 
      * @return the protocol value.
      */
     public String protocol() {
@@ -37,7 +41,7 @@ public final class LiveEventEndpoint {
 
     /**
      * Set the protocol property: The endpoint protocol.
-     *
+     * 
      * @param protocol the protocol value to set.
      * @return the LiveEventEndpoint object itself.
      */
@@ -48,7 +52,7 @@ public final class LiveEventEndpoint {
 
     /**
      * Get the url property: The endpoint URL.
-     *
+     * 
      * @return the url value.
      */
     public String url() {
@@ -57,7 +61,7 @@ public final class LiveEventEndpoint {
 
     /**
      * Set the url property: The endpoint URL.
-     *
+     * 
      * @param url the url value to set.
      * @return the LiveEventEndpoint object itself.
      */
@@ -68,7 +72,7 @@ public final class LiveEventEndpoint {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -19,8 +19,7 @@ public final class LocationBasedCapabilitiesImpl implements LocationBasedCapabil
 
     private final com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager;
 
-    public LocationBasedCapabilitiesImpl(
-        LocationBasedCapabilitiesClient innerClient,
+    public LocationBasedCapabilitiesImpl(LocationBasedCapabilitiesClient innerClient,
         com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;

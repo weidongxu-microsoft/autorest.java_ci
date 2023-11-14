@@ -7,7 +7,9 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The ArmStreamingEndpointSkuInfo model. */
+/**
+ * The ArmStreamingEndpointSkuInfo model.
+ */
 @Fluent
 public final class ArmStreamingEndpointSkuInfo {
     /*
@@ -28,13 +30,15 @@ public final class ArmStreamingEndpointSkuInfo {
     @JsonProperty(value = "sku")
     private ArmStreamingEndpointSku sku;
 
-    /** Creates an instance of ArmStreamingEndpointSkuInfo class. */
+    /**
+     * Creates an instance of ArmStreamingEndpointSkuInfo class.
+     */
     public ArmStreamingEndpointSkuInfo() {
     }
 
     /**
      * Get the resourceType property: The resourceType property.
-     *
+     * 
      * @return the resourceType value.
      */
     public String resourceType() {
@@ -43,7 +47,7 @@ public final class ArmStreamingEndpointSkuInfo {
 
     /**
      * Set the resourceType property: The resourceType property.
-     *
+     * 
      * @param resourceType the resourceType value to set.
      * @return the ArmStreamingEndpointSkuInfo object itself.
      */
@@ -54,7 +58,7 @@ public final class ArmStreamingEndpointSkuInfo {
 
     /**
      * Get the capacity property: The streaming endpoint sku capacity.
-     *
+     * 
      * @return the capacity value.
      */
     public ArmStreamingEndpointCapacity capacity() {
@@ -63,7 +67,7 @@ public final class ArmStreamingEndpointSkuInfo {
 
     /**
      * Set the capacity property: The streaming endpoint sku capacity.
-     *
+     * 
      * @param capacity the capacity value to set.
      * @return the ArmStreamingEndpointSkuInfo object itself.
      */
@@ -74,7 +78,7 @@ public final class ArmStreamingEndpointSkuInfo {
 
     /**
      * Get the sku property: The streaming endpoint sku.
-     *
+     * 
      * @return the sku value.
      */
     public ArmStreamingEndpointSku sku() {
@@ -83,7 +87,7 @@ public final class ArmStreamingEndpointSkuInfo {
 
     /**
      * Set the sku property: The streaming endpoint sku.
-     *
+     * 
      * @param sku the sku value to set.
      * @return the ArmStreamingEndpointSkuInfo object itself.
      */
@@ -94,7 +98,7 @@ public final class ArmStreamingEndpointSkuInfo {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

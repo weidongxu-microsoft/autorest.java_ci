@@ -10,11 +10,13 @@ import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.Map;
 
-/** An immutable client-side representation of VirtualMachineUpdate. */
+/**
+ * An immutable client-side representation of VirtualMachineUpdate.
+ */
 public interface VirtualMachineUpdate {
     /**
      * Gets the tags property: Resource tags.
-     *
+     * 
      * @return the tags value.
      */
     Map<String, String> tags();
@@ -25,35 +27,35 @@ public interface VirtualMachineUpdate {
      * enable the image for programmatic use. In the Azure portal, find the marketplace image that you want to use and
      * then click **Want to deploy programmatically, Get Started -&gt;**. Enter any required information and then click
      * **Save**.
-     *
+     * 
      * @return the plan value.
      */
     Plan plan();
 
     /**
      * Gets the identity property: The identity of the virtual machine, if configured.
-     *
+     * 
      * @return the identity value.
      */
     VirtualMachineIdentity identity();
 
     /**
      * Gets the zones property: The virtual machine zones.
-     *
+     * 
      * @return the zones value.
      */
     List<String> zones();
 
     /**
      * Gets the hardwareProfile property: Specifies the hardware settings for the virtual machine.
-     *
+     * 
      * @return the hardwareProfile value.
      */
     HardwareProfile hardwareProfile();
 
     /**
      * Gets the storageProfile property: Specifies the storage settings for the virtual machine disks.
-     *
+     * 
      * @return the storageProfile value.
      */
     StorageProfile storageProfile();
@@ -61,7 +63,7 @@ public interface VirtualMachineUpdate {
     /**
      * Gets the additionalCapabilities property: Specifies additional capabilities enabled or disabled on the virtual
      * machine.
-     *
+     * 
      * @return the additionalCapabilities value.
      */
     AdditionalCapabilities additionalCapabilities();
@@ -69,21 +71,21 @@ public interface VirtualMachineUpdate {
     /**
      * Gets the osProfile property: Specifies the operating system settings used while creating the virtual machine.
      * Some of the settings cannot be changed once VM is provisioned.
-     *
+     * 
      * @return the osProfile value.
      */
     OSProfile osProfile();
 
     /**
      * Gets the networkProfile property: Specifies the network interfaces of the virtual machine.
-     *
+     * 
      * @return the networkProfile value.
      */
     NetworkProfile networkProfile();
 
     /**
      * Gets the securityProfile property: Specifies the Security related profile settings for the virtual machine.
-     *
+     * 
      * @return the securityProfile value.
      */
     SecurityProfile securityProfile();
@@ -91,7 +93,7 @@ public interface VirtualMachineUpdate {
     /**
      * Gets the diagnosticsProfile property: Specifies the boot diagnostic settings state. Minimum api-version:
      * 2015-06-15.
-     *
+     * 
      * @return the diagnosticsProfile value.
      */
     DiagnosticsProfile diagnosticsProfile();
@@ -106,7 +108,7 @@ public interface VirtualMachineUpdate {
      * added to availability set at creation time. The availability set to which the VM is being added should be under
      * the same resource group as the availability set resource. An existing VM cannot be added to an availability set.
      * This property cannot exist along with a non-null properties.virtualMachineScaleSet reference.
-     *
+     * 
      * @return the availabilitySet value.
      */
     SubResource availabilitySet();
@@ -117,7 +119,7 @@ public interface VirtualMachineUpdate {
      * allocated to different nodes to maximize availability. Currently, a VM can only be added to virtual machine scale
      * set at creation time. An existing VM cannot be added to a virtual machine scale set. This property cannot exist
      * along with a non-null properties.availabilitySet reference. Minimum api‐version: 2019‐03‐01.
-     *
+     * 
      * @return the virtualMachineScaleSet value.
      */
     SubResource virtualMachineScaleSet();
@@ -125,14 +127,14 @@ public interface VirtualMachineUpdate {
     /**
      * Gets the proximityPlacementGroup property: Specifies information about the proximity placement group that the
      * virtual machine should be assigned to. Minimum api-version: 2018-04-01.
-     *
+     * 
      * @return the proximityPlacementGroup value.
      */
     SubResource proximityPlacementGroup();
 
     /**
      * Gets the priority property: Specifies the priority for the virtual machine. Minimum api-version: 2019-03-01.
-     *
+     * 
      * @return the priority value.
      */
     VirtualMachinePriorityTypes priority();
@@ -142,7 +144,7 @@ public interface VirtualMachineUpdate {
      * scale set. For Azure Spot virtual machines, both 'Deallocate' and 'Delete' are supported and the minimum
      * api-version is 2019-03-01. For Azure Spot scale sets, both 'Deallocate' and 'Delete' are supported and the
      * minimum api-version is 2017-10-30-preview.
-     *
+     * 
      * @return the evictionPolicy value.
      */
     VirtualMachineEvictionPolicyTypes evictionPolicy();
@@ -150,7 +152,7 @@ public interface VirtualMachineUpdate {
     /**
      * Gets the billingProfile property: Specifies the billing related details of a Azure Spot virtual machine. Minimum
      * api-version: 2019-03-01.
-     *
+     * 
      * @return the billingProfile value.
      */
     BillingProfile billingProfile();
@@ -158,7 +160,7 @@ public interface VirtualMachineUpdate {
     /**
      * Gets the host property: Specifies information about the dedicated host that the virtual machine resides in.
      * Minimum api-version: 2018-10-01.
-     *
+     * 
      * @return the host value.
      */
     SubResource host();
@@ -166,21 +168,21 @@ public interface VirtualMachineUpdate {
     /**
      * Gets the hostGroup property: Specifies information about the dedicated host group that the virtual machine
      * resides in. **Note:** User cannot specify both host and hostGroup properties. Minimum api-version: 2020-06-01.
-     *
+     * 
      * @return the hostGroup value.
      */
     SubResource hostGroup();
 
     /**
      * Gets the provisioningState property: The provisioning state, which only appears in the response.
-     *
+     * 
      * @return the provisioningState value.
      */
     String provisioningState();
 
     /**
      * Gets the instanceView property: The virtual machine instance view.
-     *
+     * 
      * @return the instanceView value.
      */
     VirtualMachineInstanceView instanceView();
@@ -195,7 +197,7 @@ public interface VirtualMachineUpdate {
      * &lt;br&gt;&lt;br&gt; [Azure Hybrid Use Benefit for Linux
      * Server](https://docs.microsoft.com/azure/virtual-machines/linux/azure-hybrid-benefit-linux) &lt;br&gt;&lt;br&gt;
      * Minimum api-version: 2015-06-15.
-     *
+     * 
      * @return the licenseType value.
      */
     String licenseType();
@@ -203,7 +205,7 @@ public interface VirtualMachineUpdate {
     /**
      * Gets the vmId property: Specifies the VM unique ID which is a 128-bits identifier that is encoded and stored in
      * all Azure IaaS VMs SMBIOS and can be read using platform BIOS commands.
-     *
+     * 
      * @return the vmId value.
      */
     String vmId();
@@ -212,7 +214,7 @@ public interface VirtualMachineUpdate {
      * Gets the extensionsTimeBudget property: Specifies the time alloted for all extensions to start. The time duration
      * should be between 15 minutes and 120 minutes (inclusive) and should be specified in ISO 8601 format. The default
      * value is 90 minutes (PT1H30M). Minimum api-version: 2020-06-01.
-     *
+     * 
      * @return the extensionsTimeBudget value.
      */
     String extensionsTimeBudget();
@@ -224,14 +226,14 @@ public interface VirtualMachineUpdate {
      * property of this Virtual Machine is set. The Virtual Machine Scale Set that is referenced, must have
      * 'platformFaultDomainCount' greater than 1. This property cannot be updated once the Virtual Machine is created.
      * Fault domain assignment can be viewed in the Virtual Machine Instance View. Minimum api‐version: 2020‐12‐01.
-     *
+     * 
      * @return the platformFaultDomain value.
      */
     Integer platformFaultDomain();
 
     /**
      * Gets the scheduledEventsProfile property: Specifies Scheduled Event related configurations.
-     *
+     * 
      * @return the scheduledEventsProfile value.
      */
     ScheduledEventsProfile scheduledEventsProfile();
@@ -239,7 +241,7 @@ public interface VirtualMachineUpdate {
     /**
      * Gets the userData property: UserData for the VM, which must be base-64 encoded. Customer should not pass any
      * secrets in here. Minimum api-version: 2021-03-01.
-     *
+     * 
      * @return the userData value.
      */
     String userData();
@@ -247,7 +249,7 @@ public interface VirtualMachineUpdate {
     /**
      * Gets the capacityReservation property: Specifies information about the capacity reservation that is used to
      * allocate virtual machine. Minimum api-version: 2021-04-01.
-     *
+     * 
      * @return the capacityReservation value.
      */
     CapacityReservationProfile capacityReservation();
@@ -255,7 +257,7 @@ public interface VirtualMachineUpdate {
     /**
      * Gets the applicationProfile property: Specifies the gallery applications that should be made available to the
      * VM/VMSS.
-     *
+     * 
      * @return the applicationProfile value.
      */
     ApplicationProfile applicationProfile();
@@ -263,14 +265,14 @@ public interface VirtualMachineUpdate {
     /**
      * Gets the timeCreated property: Specifies the time at which the Virtual Machine resource was created. Minimum
      * api-version: 2021-11-01.
-     *
+     * 
      * @return the timeCreated value.
      */
     OffsetDateTime timeCreated();
 
     /**
      * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineUpdateInner object.
-     *
+     * 
      * @return the inner object.
      */
     VirtualMachineUpdateInner innerModel();

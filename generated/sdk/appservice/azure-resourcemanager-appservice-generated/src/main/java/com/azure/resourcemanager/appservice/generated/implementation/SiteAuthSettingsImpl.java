@@ -16,8 +16,7 @@ public final class SiteAuthSettingsImpl implements SiteAuthSettings {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    SiteAuthSettingsImpl(
-        SiteAuthSettingsInner innerObject,
+    SiteAuthSettingsImpl(SiteAuthSettingsInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

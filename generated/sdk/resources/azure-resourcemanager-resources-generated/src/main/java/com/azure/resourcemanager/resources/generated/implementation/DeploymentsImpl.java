@@ -33,8 +33,8 @@ public final class DeploymentsImpl implements Deployments {
 
     private final com.azure.resourcemanager.resources.generated.ResourceManager serviceManager;
 
-    public DeploymentsImpl(
-        DeploymentsClient innerClient, com.azure.resourcemanager.resources.generated.ResourceManager serviceManager) {
+    public DeploymentsImpl(DeploymentsClient innerClient,
+        com.azure.resourcemanager.resources.generated.ResourceManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -64,10 +64,10 @@ public final class DeploymentsImpl implements Deployments {
         }
     }
 
-    public DeploymentExtended createOrUpdateAtScope(
-        String scope, String deploymentName, Deployment parameters, Context context) {
-        DeploymentExtendedInner inner =
-            this.serviceClient().createOrUpdateAtScope(scope, deploymentName, parameters, context);
+    public DeploymentExtended createOrUpdateAtScope(String scope, String deploymentName, Deployment parameters,
+        Context context) {
+        DeploymentExtendedInner inner
+            = this.serviceClient().createOrUpdateAtScope(scope, deploymentName, parameters, context);
         if (inner != null) {
             return new DeploymentExtendedImpl(inner, this.manager());
         } else {
@@ -76,13 +76,10 @@ public final class DeploymentsImpl implements Deployments {
     }
 
     public Response<DeploymentExtended> getAtScopeWithResponse(String scope, String deploymentName, Context context) {
-        Response<DeploymentExtendedInner> inner =
-            this.serviceClient().getAtScopeWithResponse(scope, deploymentName, context);
+        Response<DeploymentExtendedInner> inner
+            = this.serviceClient().getAtScopeWithResponse(scope, deploymentName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DeploymentExtendedImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -115,10 +112,10 @@ public final class DeploymentsImpl implements Deployments {
         }
     }
 
-    public DeploymentValidateResult validateAtScope(
-        String scope, String deploymentName, Deployment parameters, Context context) {
-        DeploymentValidateResultInner inner =
-            this.serviceClient().validateAtScope(scope, deploymentName, parameters, context);
+    public DeploymentValidateResult validateAtScope(String scope, String deploymentName, Deployment parameters,
+        Context context) {
+        DeploymentValidateResultInner inner
+            = this.serviceClient().validateAtScope(scope, deploymentName, parameters, context);
         if (inner != null) {
             return new DeploymentValidateResultImpl(inner, this.manager());
         } else {
@@ -126,15 +123,12 @@ public final class DeploymentsImpl implements Deployments {
         }
     }
 
-    public Response<DeploymentExportResult> exportTemplateAtScopeWithResponse(
-        String scope, String deploymentName, Context context) {
-        Response<DeploymentExportResultInner> inner =
-            this.serviceClient().exportTemplateAtScopeWithResponse(scope, deploymentName, context);
+    public Response<DeploymentExportResult> exportTemplateAtScopeWithResponse(String scope, String deploymentName,
+        Context context) {
+        Response<DeploymentExportResultInner> inner
+            = this.serviceClient().exportTemplateAtScopeWithResponse(scope, deploymentName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DeploymentExportResultImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -185,10 +179,10 @@ public final class DeploymentsImpl implements Deployments {
         }
     }
 
-    public DeploymentExtended createOrUpdateAtTenantScope(
-        String deploymentName, ScopedDeployment parameters, Context context) {
-        DeploymentExtendedInner inner =
-            this.serviceClient().createOrUpdateAtTenantScope(deploymentName, parameters, context);
+    public DeploymentExtended createOrUpdateAtTenantScope(String deploymentName, ScopedDeployment parameters,
+        Context context) {
+        DeploymentExtendedInner inner
+            = this.serviceClient().createOrUpdateAtTenantScope(deploymentName, parameters, context);
         if (inner != null) {
             return new DeploymentExtendedImpl(inner, this.manager());
         } else {
@@ -197,13 +191,10 @@ public final class DeploymentsImpl implements Deployments {
     }
 
     public Response<DeploymentExtended> getAtTenantScopeWithResponse(String deploymentName, Context context) {
-        Response<DeploymentExtendedInner> inner =
-            this.serviceClient().getAtTenantScopeWithResponse(deploymentName, context);
+        Response<DeploymentExtendedInner> inner
+            = this.serviceClient().getAtTenantScopeWithResponse(deploymentName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DeploymentExtendedImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -236,10 +227,10 @@ public final class DeploymentsImpl implements Deployments {
         }
     }
 
-    public DeploymentValidateResult validateAtTenantScope(
-        String deploymentName, ScopedDeployment parameters, Context context) {
-        DeploymentValidateResultInner inner =
-            this.serviceClient().validateAtTenantScope(deploymentName, parameters, context);
+    public DeploymentValidateResult validateAtTenantScope(String deploymentName, ScopedDeployment parameters,
+        Context context) {
+        DeploymentValidateResultInner inner
+            = this.serviceClient().validateAtTenantScope(deploymentName, parameters, context);
         if (inner != null) {
             return new DeploymentValidateResultImpl(inner, this.manager());
         } else {
@@ -256,10 +247,10 @@ public final class DeploymentsImpl implements Deployments {
         }
     }
 
-    public WhatIfOperationResult whatIfAtTenantScope(
-        String deploymentName, ScopedDeploymentWhatIf parameters, Context context) {
-        WhatIfOperationResultInner inner =
-            this.serviceClient().whatIfAtTenantScope(deploymentName, parameters, context);
+    public WhatIfOperationResult whatIfAtTenantScope(String deploymentName, ScopedDeploymentWhatIf parameters,
+        Context context) {
+        WhatIfOperationResultInner inner
+            = this.serviceClient().whatIfAtTenantScope(deploymentName, parameters, context);
         if (inner != null) {
             return new WhatIfOperationResultImpl(inner, this.manager());
         } else {
@@ -267,15 +258,12 @@ public final class DeploymentsImpl implements Deployments {
         }
     }
 
-    public Response<DeploymentExportResult> exportTemplateAtTenantScopeWithResponse(
-        String deploymentName, Context context) {
-        Response<DeploymentExportResultInner> inner =
-            this.serviceClient().exportTemplateAtTenantScopeWithResponse(deploymentName, context);
+    public Response<DeploymentExportResult> exportTemplateAtTenantScopeWithResponse(String deploymentName,
+        Context context) {
+        Response<DeploymentExportResultInner> inner
+            = this.serviceClient().exportTemplateAtTenantScopeWithResponse(deploymentName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DeploymentExportResultImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -309,8 +297,8 @@ public final class DeploymentsImpl implements Deployments {
         this.serviceClient().deleteAtManagementGroupScope(groupId, deploymentName, context);
     }
 
-    public Response<Boolean> checkExistenceAtManagementGroupScopeWithResponse(
-        String groupId, String deploymentName, Context context) {
+    public Response<Boolean> checkExistenceAtManagementGroupScopeWithResponse(String groupId, String deploymentName,
+        Context context) {
         return this.serviceClient().checkExistenceAtManagementGroupScopeWithResponse(groupId, deploymentName, context);
     }
 
@@ -318,10 +306,10 @@ public final class DeploymentsImpl implements Deployments {
         return this.serviceClient().checkExistenceAtManagementGroupScope(groupId, deploymentName);
     }
 
-    public DeploymentExtended createOrUpdateAtManagementGroupScope(
-        String groupId, String deploymentName, ScopedDeployment parameters) {
-        DeploymentExtendedInner inner =
-            this.serviceClient().createOrUpdateAtManagementGroupScope(groupId, deploymentName, parameters);
+    public DeploymentExtended createOrUpdateAtManagementGroupScope(String groupId, String deploymentName,
+        ScopedDeployment parameters) {
+        DeploymentExtendedInner inner
+            = this.serviceClient().createOrUpdateAtManagementGroupScope(groupId, deploymentName, parameters);
         if (inner != null) {
             return new DeploymentExtendedImpl(inner, this.manager());
         } else {
@@ -329,10 +317,10 @@ public final class DeploymentsImpl implements Deployments {
         }
     }
 
-    public DeploymentExtended createOrUpdateAtManagementGroupScope(
-        String groupId, String deploymentName, ScopedDeployment parameters, Context context) {
-        DeploymentExtendedInner inner =
-            this.serviceClient().createOrUpdateAtManagementGroupScope(groupId, deploymentName, parameters, context);
+    public DeploymentExtended createOrUpdateAtManagementGroupScope(String groupId, String deploymentName,
+        ScopedDeployment parameters, Context context) {
+        DeploymentExtendedInner inner
+            = this.serviceClient().createOrUpdateAtManagementGroupScope(groupId, deploymentName, parameters, context);
         if (inner != null) {
             return new DeploymentExtendedImpl(inner, this.manager());
         } else {
@@ -340,15 +328,12 @@ public final class DeploymentsImpl implements Deployments {
         }
     }
 
-    public Response<DeploymentExtended> getAtManagementGroupScopeWithResponse(
-        String groupId, String deploymentName, Context context) {
-        Response<DeploymentExtendedInner> inner =
-            this.serviceClient().getAtManagementGroupScopeWithResponse(groupId, deploymentName, context);
+    public Response<DeploymentExtended> getAtManagementGroupScopeWithResponse(String groupId, String deploymentName,
+        Context context) {
+        Response<DeploymentExtendedInner> inner
+            = this.serviceClient().getAtManagementGroupScopeWithResponse(groupId, deploymentName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DeploymentExtendedImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -364,8 +349,8 @@ public final class DeploymentsImpl implements Deployments {
         }
     }
 
-    public Response<Void> cancelAtManagementGroupScopeWithResponse(
-        String groupId, String deploymentName, Context context) {
+    public Response<Void> cancelAtManagementGroupScopeWithResponse(String groupId, String deploymentName,
+        Context context) {
         return this.serviceClient().cancelAtManagementGroupScopeWithResponse(groupId, deploymentName, context);
     }
 
@@ -373,10 +358,10 @@ public final class DeploymentsImpl implements Deployments {
         this.serviceClient().cancelAtManagementGroupScope(groupId, deploymentName);
     }
 
-    public DeploymentValidateResult validateAtManagementGroupScope(
-        String groupId, String deploymentName, ScopedDeployment parameters) {
-        DeploymentValidateResultInner inner =
-            this.serviceClient().validateAtManagementGroupScope(groupId, deploymentName, parameters);
+    public DeploymentValidateResult validateAtManagementGroupScope(String groupId, String deploymentName,
+        ScopedDeployment parameters) {
+        DeploymentValidateResultInner inner
+            = this.serviceClient().validateAtManagementGroupScope(groupId, deploymentName, parameters);
         if (inner != null) {
             return new DeploymentValidateResultImpl(inner, this.manager());
         } else {
@@ -384,10 +369,10 @@ public final class DeploymentsImpl implements Deployments {
         }
     }
 
-    public DeploymentValidateResult validateAtManagementGroupScope(
-        String groupId, String deploymentName, ScopedDeployment parameters, Context context) {
-        DeploymentValidateResultInner inner =
-            this.serviceClient().validateAtManagementGroupScope(groupId, deploymentName, parameters, context);
+    public DeploymentValidateResult validateAtManagementGroupScope(String groupId, String deploymentName,
+        ScopedDeployment parameters, Context context) {
+        DeploymentValidateResultInner inner
+            = this.serviceClient().validateAtManagementGroupScope(groupId, deploymentName, parameters, context);
         if (inner != null) {
             return new DeploymentValidateResultImpl(inner, this.manager());
         } else {
@@ -395,10 +380,10 @@ public final class DeploymentsImpl implements Deployments {
         }
     }
 
-    public WhatIfOperationResult whatIfAtManagementGroupScope(
-        String groupId, String deploymentName, ScopedDeploymentWhatIf parameters) {
-        WhatIfOperationResultInner inner =
-            this.serviceClient().whatIfAtManagementGroupScope(groupId, deploymentName, parameters);
+    public WhatIfOperationResult whatIfAtManagementGroupScope(String groupId, String deploymentName,
+        ScopedDeploymentWhatIf parameters) {
+        WhatIfOperationResultInner inner
+            = this.serviceClient().whatIfAtManagementGroupScope(groupId, deploymentName, parameters);
         if (inner != null) {
             return new WhatIfOperationResultImpl(inner, this.manager());
         } else {
@@ -406,10 +391,10 @@ public final class DeploymentsImpl implements Deployments {
         }
     }
 
-    public WhatIfOperationResult whatIfAtManagementGroupScope(
-        String groupId, String deploymentName, ScopedDeploymentWhatIf parameters, Context context) {
-        WhatIfOperationResultInner inner =
-            this.serviceClient().whatIfAtManagementGroupScope(groupId, deploymentName, parameters, context);
+    public WhatIfOperationResult whatIfAtManagementGroupScope(String groupId, String deploymentName,
+        ScopedDeploymentWhatIf parameters, Context context) {
+        WhatIfOperationResultInner inner
+            = this.serviceClient().whatIfAtManagementGroupScope(groupId, deploymentName, parameters, context);
         if (inner != null) {
             return new WhatIfOperationResultImpl(inner, this.manager());
         } else {
@@ -417,15 +402,12 @@ public final class DeploymentsImpl implements Deployments {
         }
     }
 
-    public Response<DeploymentExportResult> exportTemplateAtManagementGroupScopeWithResponse(
-        String groupId, String deploymentName, Context context) {
-        Response<DeploymentExportResultInner> inner =
-            this.serviceClient().exportTemplateAtManagementGroupScopeWithResponse(groupId, deploymentName, context);
+    public Response<DeploymentExportResult> exportTemplateAtManagementGroupScopeWithResponse(String groupId,
+        String deploymentName, Context context) {
+        Response<DeploymentExportResultInner> inner
+            = this.serviceClient().exportTemplateAtManagementGroupScopeWithResponse(groupId, deploymentName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DeploymentExportResultImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -433,8 +415,8 @@ public final class DeploymentsImpl implements Deployments {
     }
 
     public DeploymentExportResult exportTemplateAtManagementGroupScope(String groupId, String deploymentName) {
-        DeploymentExportResultInner inner =
-            this.serviceClient().exportTemplateAtManagementGroupScope(groupId, deploymentName);
+        DeploymentExportResultInner inner
+            = this.serviceClient().exportTemplateAtManagementGroupScope(groupId, deploymentName);
         if (inner != null) {
             return new DeploymentExportResultImpl(inner, this.manager());
         } else {
@@ -447,10 +429,10 @@ public final class DeploymentsImpl implements Deployments {
         return Utils.mapPage(inner, inner1 -> new DeploymentExtendedImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<DeploymentExtended> listAtManagementGroupScope(
-        String groupId, String filter, Integer top, Context context) {
-        PagedIterable<DeploymentExtendedInner> inner =
-            this.serviceClient().listAtManagementGroupScope(groupId, filter, top, context);
+    public PagedIterable<DeploymentExtended> listAtManagementGroupScope(String groupId, String filter, Integer top,
+        Context context) {
+        PagedIterable<DeploymentExtendedInner> inner
+            = this.serviceClient().listAtManagementGroupScope(groupId, filter, top, context);
         return Utils.mapPage(inner, inner1 -> new DeploymentExtendedImpl(inner1, this.manager()));
     }
 
@@ -471,8 +453,8 @@ public final class DeploymentsImpl implements Deployments {
     }
 
     public DeploymentExtended createOrUpdateAtSubscriptionScope(String deploymentName, Deployment parameters) {
-        DeploymentExtendedInner inner =
-            this.serviceClient().createOrUpdateAtSubscriptionScope(deploymentName, parameters);
+        DeploymentExtendedInner inner
+            = this.serviceClient().createOrUpdateAtSubscriptionScope(deploymentName, parameters);
         if (inner != null) {
             return new DeploymentExtendedImpl(inner, this.manager());
         } else {
@@ -480,10 +462,10 @@ public final class DeploymentsImpl implements Deployments {
         }
     }
 
-    public DeploymentExtended createOrUpdateAtSubscriptionScope(
-        String deploymentName, Deployment parameters, Context context) {
-        DeploymentExtendedInner inner =
-            this.serviceClient().createOrUpdateAtSubscriptionScope(deploymentName, parameters, context);
+    public DeploymentExtended createOrUpdateAtSubscriptionScope(String deploymentName, Deployment parameters,
+        Context context) {
+        DeploymentExtendedInner inner
+            = this.serviceClient().createOrUpdateAtSubscriptionScope(deploymentName, parameters, context);
         if (inner != null) {
             return new DeploymentExtendedImpl(inner, this.manager());
         } else {
@@ -492,13 +474,10 @@ public final class DeploymentsImpl implements Deployments {
     }
 
     public Response<DeploymentExtended> getAtSubscriptionScopeWithResponse(String deploymentName, Context context) {
-        Response<DeploymentExtendedInner> inner =
-            this.serviceClient().getAtSubscriptionScopeWithResponse(deploymentName, context);
+        Response<DeploymentExtendedInner> inner
+            = this.serviceClient().getAtSubscriptionScopeWithResponse(deploymentName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DeploymentExtendedImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -523,8 +502,8 @@ public final class DeploymentsImpl implements Deployments {
     }
 
     public DeploymentValidateResult validateAtSubscriptionScope(String deploymentName, Deployment parameters) {
-        DeploymentValidateResultInner inner =
-            this.serviceClient().validateAtSubscriptionScope(deploymentName, parameters);
+        DeploymentValidateResultInner inner
+            = this.serviceClient().validateAtSubscriptionScope(deploymentName, parameters);
         if (inner != null) {
             return new DeploymentValidateResultImpl(inner, this.manager());
         } else {
@@ -532,10 +511,10 @@ public final class DeploymentsImpl implements Deployments {
         }
     }
 
-    public DeploymentValidateResult validateAtSubscriptionScope(
-        String deploymentName, Deployment parameters, Context context) {
-        DeploymentValidateResultInner inner =
-            this.serviceClient().validateAtSubscriptionScope(deploymentName, parameters, context);
+    public DeploymentValidateResult validateAtSubscriptionScope(String deploymentName, Deployment parameters,
+        Context context) {
+        DeploymentValidateResultInner inner
+            = this.serviceClient().validateAtSubscriptionScope(deploymentName, parameters, context);
         if (inner != null) {
             return new DeploymentValidateResultImpl(inner, this.manager());
         } else {
@@ -552,10 +531,10 @@ public final class DeploymentsImpl implements Deployments {
         }
     }
 
-    public WhatIfOperationResult whatIfAtSubscriptionScope(
-        String deploymentName, DeploymentWhatIf parameters, Context context) {
-        WhatIfOperationResultInner inner =
-            this.serviceClient().whatIfAtSubscriptionScope(deploymentName, parameters, context);
+    public WhatIfOperationResult whatIfAtSubscriptionScope(String deploymentName, DeploymentWhatIf parameters,
+        Context context) {
+        WhatIfOperationResultInner inner
+            = this.serviceClient().whatIfAtSubscriptionScope(deploymentName, parameters, context);
         if (inner != null) {
             return new WhatIfOperationResultImpl(inner, this.manager());
         } else {
@@ -563,15 +542,12 @@ public final class DeploymentsImpl implements Deployments {
         }
     }
 
-    public Response<DeploymentExportResult> exportTemplateAtSubscriptionScopeWithResponse(
-        String deploymentName, Context context) {
-        Response<DeploymentExportResultInner> inner =
-            this.serviceClient().exportTemplateAtSubscriptionScopeWithResponse(deploymentName, context);
+    public Response<DeploymentExportResult> exportTemplateAtSubscriptionScopeWithResponse(String deploymentName,
+        Context context) {
+        Response<DeploymentExportResultInner> inner
+            = this.serviceClient().exportTemplateAtSubscriptionScopeWithResponse(deploymentName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DeploymentExportResultImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -605,8 +581,8 @@ public final class DeploymentsImpl implements Deployments {
         this.serviceClient().delete(resourceGroupName, deploymentName, context);
     }
 
-    public Response<Boolean> checkExistenceWithResponse(
-        String resourceGroupName, String deploymentName, Context context) {
+    public Response<Boolean> checkExistenceWithResponse(String resourceGroupName, String deploymentName,
+        Context context) {
         return this.serviceClient().checkExistenceWithResponse(resourceGroupName, deploymentName, context);
     }
 
@@ -614,15 +590,12 @@ public final class DeploymentsImpl implements Deployments {
         return this.serviceClient().checkExistence(resourceGroupName, deploymentName);
     }
 
-    public Response<DeploymentExtended> getByResourceGroupWithResponse(
-        String resourceGroupName, String deploymentName, Context context) {
-        Response<DeploymentExtendedInner> inner =
-            this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, deploymentName, context);
+    public Response<DeploymentExtended> getByResourceGroupWithResponse(String resourceGroupName, String deploymentName,
+        Context context) {
+        Response<DeploymentExtendedInner> inner
+            = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, deploymentName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DeploymentExtendedImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -647,8 +620,8 @@ public final class DeploymentsImpl implements Deployments {
     }
 
     public DeploymentValidateResult validate(String resourceGroupName, String deploymentName, Deployment parameters) {
-        DeploymentValidateResultInner inner =
-            this.serviceClient().validate(resourceGroupName, deploymentName, parameters);
+        DeploymentValidateResultInner inner
+            = this.serviceClient().validate(resourceGroupName, deploymentName, parameters);
         if (inner != null) {
             return new DeploymentValidateResultImpl(inner, this.manager());
         } else {
@@ -656,10 +629,10 @@ public final class DeploymentsImpl implements Deployments {
         }
     }
 
-    public DeploymentValidateResult validate(
-        String resourceGroupName, String deploymentName, Deployment parameters, Context context) {
-        DeploymentValidateResultInner inner =
-            this.serviceClient().validate(resourceGroupName, deploymentName, parameters, context);
+    public DeploymentValidateResult validate(String resourceGroupName, String deploymentName, Deployment parameters,
+        Context context) {
+        DeploymentValidateResultInner inner
+            = this.serviceClient().validate(resourceGroupName, deploymentName, parameters, context);
         if (inner != null) {
             return new DeploymentValidateResultImpl(inner, this.manager());
         } else {
@@ -676,10 +649,10 @@ public final class DeploymentsImpl implements Deployments {
         }
     }
 
-    public WhatIfOperationResult whatIf(
-        String resourceGroupName, String deploymentName, DeploymentWhatIf parameters, Context context) {
-        WhatIfOperationResultInner inner =
-            this.serviceClient().whatIf(resourceGroupName, deploymentName, parameters, context);
+    public WhatIfOperationResult whatIf(String resourceGroupName, String deploymentName, DeploymentWhatIf parameters,
+        Context context) {
+        WhatIfOperationResultInner inner
+            = this.serviceClient().whatIf(resourceGroupName, deploymentName, parameters, context);
         if (inner != null) {
             return new WhatIfOperationResultImpl(inner, this.manager());
         } else {
@@ -687,15 +660,12 @@ public final class DeploymentsImpl implements Deployments {
         }
     }
 
-    public Response<DeploymentExportResult> exportTemplateWithResponse(
-        String resourceGroupName, String deploymentName, Context context) {
-        Response<DeploymentExportResultInner> inner =
-            this.serviceClient().exportTemplateWithResponse(resourceGroupName, deploymentName, context);
+    public Response<DeploymentExportResult> exportTemplateWithResponse(String resourceGroupName, String deploymentName,
+        Context context) {
+        Response<DeploymentExportResultInner> inner
+            = this.serviceClient().exportTemplateWithResponse(resourceGroupName, deploymentName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DeploymentExportResultImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -716,21 +686,18 @@ public final class DeploymentsImpl implements Deployments {
         return Utils.mapPage(inner, inner1 -> new DeploymentExtendedImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<DeploymentExtended> listByResourceGroup(
-        String resourceGroupName, String filter, Integer top, Context context) {
-        PagedIterable<DeploymentExtendedInner> inner =
-            this.serviceClient().listByResourceGroup(resourceGroupName, filter, top, context);
+    public PagedIterable<DeploymentExtended> listByResourceGroup(String resourceGroupName, String filter, Integer top,
+        Context context) {
+        PagedIterable<DeploymentExtendedInner> inner
+            = this.serviceClient().listByResourceGroup(resourceGroupName, filter, top, context);
         return Utils.mapPage(inner, inner1 -> new DeploymentExtendedImpl(inner1, this.manager()));
     }
 
     public Response<TemplateHashResult> calculateTemplateHashWithResponse(Object template, Context context) {
-        Response<TemplateHashResultInner> inner =
-            this.serviceClient().calculateTemplateHashWithResponse(template, context);
+        Response<TemplateHashResultInner> inner
+            = this.serviceClient().calculateTemplateHashWithResponse(template, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new TemplateHashResultImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -749,18 +716,13 @@ public final class DeploymentsImpl implements Deployments {
     public DeploymentExtended getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
         }
         String deploymentName = Utils.getValueFromIdByName(id, "deployments");
         if (deploymentName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'deployments'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'deployments'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, deploymentName, Context.NONE).getValue();
     }
@@ -768,18 +730,13 @@ public final class DeploymentsImpl implements Deployments {
     public Response<DeploymentExtended> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
         }
         String deploymentName = Utils.getValueFromIdByName(id, "deployments");
         if (deploymentName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'deployments'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'deployments'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, deploymentName, context);
     }
@@ -787,18 +744,13 @@ public final class DeploymentsImpl implements Deployments {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
         }
         String deploymentName = Utils.getValueFromIdByName(id, "deployments");
         if (deploymentName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'deployments'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'deployments'.", id)));
         }
         this.delete(resourceGroupName, deploymentName, Context.NONE);
     }
@@ -806,18 +758,13 @@ public final class DeploymentsImpl implements Deployments {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
         }
         String deploymentName = Utils.getValueFromIdByName(id, "deployments");
         if (deploymentName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'deployments'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'deployments'.", id)));
         }
         this.delete(resourceGroupName, deploymentName, context);
     }

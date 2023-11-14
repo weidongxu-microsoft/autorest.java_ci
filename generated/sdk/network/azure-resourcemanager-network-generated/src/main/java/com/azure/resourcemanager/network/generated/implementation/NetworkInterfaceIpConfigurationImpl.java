@@ -33,8 +33,7 @@ public final class NetworkInterfaceIpConfigurationImpl implements NetworkInterfa
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    NetworkInterfaceIpConfigurationImpl(
-        NetworkInterfaceIpConfigurationInner innerObject,
+    NetworkInterfaceIpConfigurationImpl(NetworkInterfaceIpConfigurationInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -63,12 +62,8 @@ public final class NetworkInterfaceIpConfigurationImpl implements NetworkInterfa
     public List<VirtualNetworkTap> virtualNetworkTaps() {
         List<VirtualNetworkTapInner> inner = this.innerModel().virtualNetworkTaps();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new VirtualNetworkTapImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new VirtualNetworkTapImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -86,12 +81,8 @@ public final class NetworkInterfaceIpConfigurationImpl implements NetworkInterfa
     public List<BackendAddressPool> loadBalancerBackendAddressPools() {
         List<BackendAddressPoolInner> inner = this.innerModel().loadBalancerBackendAddressPools();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new BackendAddressPoolImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new BackendAddressPoolImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -100,12 +91,8 @@ public final class NetworkInterfaceIpConfigurationImpl implements NetworkInterfa
     public List<InboundNatRule> loadBalancerInboundNatRules() {
         List<InboundNatRuleInner> inner = this.innerModel().loadBalancerInboundNatRules();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new InboundNatRuleImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new InboundNatRuleImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -148,12 +135,8 @@ public final class NetworkInterfaceIpConfigurationImpl implements NetworkInterfa
     public List<ApplicationSecurityGroup> applicationSecurityGroups() {
         List<ApplicationSecurityGroupInner> inner = this.innerModel().applicationSecurityGroups();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new ApplicationSecurityGroupImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new ApplicationSecurityGroupImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

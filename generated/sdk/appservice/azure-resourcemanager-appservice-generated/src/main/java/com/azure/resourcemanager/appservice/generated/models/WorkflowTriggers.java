@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of WorkflowTriggers. */
+/**
+ * Resource collection API of WorkflowTriggers.
+ */
 public interface WorkflowTriggers {
     /**
      * Gets a list of workflow triggers.
-     *
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param workflowName The workflow name.
@@ -25,7 +27,7 @@ public interface WorkflowTriggers {
 
     /**
      * Gets a list of workflow triggers.
-     *
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param workflowName The workflow name.
@@ -37,12 +39,12 @@ public interface WorkflowTriggers {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a list of workflow triggers as paginated response with {@link PagedIterable}.
      */
-    PagedIterable<WorkflowTrigger> list(
-        String resourceGroupName, String name, String workflowName, Integer top, String filter, Context context);
+    PagedIterable<WorkflowTrigger> list(String resourceGroupName, String name, String workflowName, Integer top,
+        String filter, Context context);
 
     /**
      * Gets a workflow trigger.
-     *
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param workflowName The workflow name.
@@ -53,12 +55,12 @@ public interface WorkflowTriggers {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a workflow trigger along with {@link Response}.
      */
-    Response<WorkflowTrigger> getWithResponse(
-        String resourceGroupName, String name, String workflowName, String triggerName, Context context);
+    Response<WorkflowTrigger> getWithResponse(String resourceGroupName, String name, String workflowName,
+        String triggerName, Context context);
 
     /**
      * Gets a workflow trigger.
-     *
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param workflowName The workflow name.
@@ -72,7 +74,7 @@ public interface WorkflowTriggers {
 
     /**
      * Get the callback URL for a workflow trigger.
-     *
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param workflowName The workflow name.
@@ -83,12 +85,12 @@ public interface WorkflowTriggers {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the callback URL for a workflow trigger along with {@link Response}.
      */
-    Response<WorkflowTriggerCallbackUrl> listCallbackUrlWithResponse(
-        String resourceGroupName, String name, String workflowName, String triggerName, Context context);
+    Response<WorkflowTriggerCallbackUrl> listCallbackUrlWithResponse(String resourceGroupName, String name,
+        String workflowName, String triggerName, Context context);
 
     /**
      * Get the callback URL for a workflow trigger.
-     *
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param workflowName The workflow name.
@@ -98,12 +100,12 @@ public interface WorkflowTriggers {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the callback URL for a workflow trigger.
      */
-    WorkflowTriggerCallbackUrl listCallbackUrl(
-        String resourceGroupName, String name, String workflowName, String triggerName);
+    WorkflowTriggerCallbackUrl listCallbackUrl(String resourceGroupName, String name, String workflowName,
+        String triggerName);
 
     /**
      * Runs a workflow trigger.
-     *
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param workflowName The workflow name.
@@ -116,7 +118,7 @@ public interface WorkflowTriggers {
 
     /**
      * Runs a workflow trigger.
-     *
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param workflowName The workflow name.
@@ -130,7 +132,7 @@ public interface WorkflowTriggers {
 
     /**
      * Get the trigger schema as JSON.
-     *
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param workflowName The workflow name.
@@ -141,12 +143,12 @@ public interface WorkflowTriggers {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the trigger schema as JSON along with {@link Response}.
      */
-    Response<JsonSchema> getSchemaJsonWithResponse(
-        String resourceGroupName, String name, String workflowName, String triggerName, Context context);
+    Response<JsonSchema> getSchemaJsonWithResponse(String resourceGroupName, String name, String workflowName,
+        String triggerName, Context context);
 
     /**
      * Get the trigger schema as JSON.
-     *
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param workflowName The workflow name.

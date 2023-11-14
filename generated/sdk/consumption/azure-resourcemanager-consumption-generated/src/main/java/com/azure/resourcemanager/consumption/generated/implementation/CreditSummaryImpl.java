@@ -15,8 +15,7 @@ public final class CreditSummaryImpl implements CreditSummary {
 
     private final com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager;
 
-    CreditSummaryImpl(
-        CreditSummaryInner innerObject,
+    CreditSummaryImpl(CreditSummaryInner innerObject,
         com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

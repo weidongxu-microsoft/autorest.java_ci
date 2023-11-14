@@ -7,11 +7,13 @@ package com.azure.resourcemanager.appservice.generated.models;
 import com.azure.resourcemanager.appservice.generated.fluent.models.PrivateLinkResourcesWrapperInner;
 import java.util.List;
 
-/** An immutable client-side representation of PrivateLinkResourcesWrapper. */
+/**
+ * An immutable client-side representation of PrivateLinkResourcesWrapper.
+ */
 public interface PrivateLinkResourcesWrapper {
     /**
      * Gets the value property: The value property.
-     *
+     * 
      * @return the value value.
      */
     List<PrivateLinkResource> value();
@@ -19,7 +21,7 @@ public interface PrivateLinkResourcesWrapper {
     /**
      * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.PrivateLinkResourcesWrapperInner
      * object.
-     *
+     * 
      * @return the inner object.
      */
     PrivateLinkResourcesWrapperInner innerModel();

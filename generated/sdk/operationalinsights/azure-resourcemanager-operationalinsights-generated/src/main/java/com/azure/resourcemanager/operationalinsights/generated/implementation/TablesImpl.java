@@ -21,8 +21,7 @@ public final class TablesImpl implements Tables {
 
     private final com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager;
 
-    public TablesImpl(
-        TablesClient innerClient,
+    public TablesImpl(TablesClient innerClient,
         com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -34,20 +33,17 @@ public final class TablesImpl implements Tables {
     }
 
     public PagedIterable<Table> listByWorkspace(String resourceGroupName, String workspaceName, Context context) {
-        PagedIterable<TableInner> inner =
-            this.serviceClient().listByWorkspace(resourceGroupName, workspaceName, context);
+        PagedIterable<TableInner> inner
+            = this.serviceClient().listByWorkspace(resourceGroupName, workspaceName, context);
         return Utils.mapPage(inner, inner1 -> new TableImpl(inner1, this.manager()));
     }
 
-    public Response<Table> getWithResponse(
-        String resourceGroupName, String workspaceName, String tableName, Context context) {
-        Response<TableInner> inner =
-            this.serviceClient().getWithResponse(resourceGroupName, workspaceName, tableName, context);
+    public Response<Table> getWithResponse(String resourceGroupName, String workspaceName, String tableName,
+        Context context) {
+        Response<TableInner> inner
+            = this.serviceClient().getWithResponse(resourceGroupName, workspaceName, tableName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new TableImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -71,8 +67,8 @@ public final class TablesImpl implements Tables {
         this.serviceClient().delete(resourceGroupName, workspaceName, tableName, context);
     }
 
-    public Response<Void> migrateWithResponse(
-        String resourceGroupName, String workspaceName, String tableName, Context context) {
+    public Response<Void> migrateWithResponse(String resourceGroupName, String workspaceName, String tableName,
+        Context context) {
         return this.serviceClient().migrateWithResponse(resourceGroupName, workspaceName, tableName, context);
     }
 
@@ -80,8 +76,8 @@ public final class TablesImpl implements Tables {
         this.serviceClient().migrate(resourceGroupName, workspaceName, tableName);
     }
 
-    public Response<Void> cancelSearchWithResponse(
-        String resourceGroupName, String workspaceName, String tableName, Context context) {
+    public Response<Void> cancelSearchWithResponse(String resourceGroupName, String workspaceName, String tableName,
+        Context context) {
         return this.serviceClient().cancelSearchWithResponse(resourceGroupName, workspaceName, tableName, context);
     }
 
@@ -92,25 +88,18 @@ public final class TablesImpl implements Tables {
     public Table getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String workspaceName = Utils.getValueFromIdByName(id, "workspaces");
         if (workspaceName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'workspaces'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'workspaces'.", id)));
         }
         String tableName = Utils.getValueFromIdByName(id, "tables");
         if (tableName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'tables'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'tables'.", id)));
         }
         return this.getWithResponse(resourceGroupName, workspaceName, tableName, Context.NONE).getValue();
     }
@@ -118,25 +107,18 @@ public final class TablesImpl implements Tables {
     public Response<Table> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String workspaceName = Utils.getValueFromIdByName(id, "workspaces");
         if (workspaceName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'workspaces'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'workspaces'.", id)));
         }
         String tableName = Utils.getValueFromIdByName(id, "tables");
         if (tableName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'tables'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'tables'.", id)));
         }
         return this.getWithResponse(resourceGroupName, workspaceName, tableName, context);
     }
@@ -144,25 +126,18 @@ public final class TablesImpl implements Tables {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String workspaceName = Utils.getValueFromIdByName(id, "workspaces");
         if (workspaceName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'workspaces'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'workspaces'.", id)));
         }
         String tableName = Utils.getValueFromIdByName(id, "tables");
         if (tableName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'tables'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'tables'.", id)));
         }
         this.delete(resourceGroupName, workspaceName, tableName, Context.NONE);
     }
@@ -170,25 +145,18 @@ public final class TablesImpl implements Tables {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String workspaceName = Utils.getValueFromIdByName(id, "workspaces");
         if (workspaceName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'workspaces'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'workspaces'.", id)));
         }
         String tableName = Utils.getValueFromIdByName(id, "tables");
         if (tableName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'tables'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'tables'.", id)));
         }
         this.delete(resourceGroupName, workspaceName, tableName, context);
     }

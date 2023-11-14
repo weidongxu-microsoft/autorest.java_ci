@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The common properties of the export. */
+/**
+ * The common properties of the export.
+ */
 @Fluent
 public class CommonExportProperties {
     /*
@@ -29,13 +31,15 @@ public class CommonExportProperties {
     @JsonProperty(value = "definition", required = true)
     private ExportDefinition definition;
 
-    /** Creates an instance of CommonExportProperties class. */
+    /**
+     * Creates an instance of CommonExportProperties class.
+     */
     public CommonExportProperties() {
     }
 
     /**
      * Get the format property: The format of the export being delivered.
-     *
+     * 
      * @return the format value.
      */
     public FormatType format() {
@@ -44,7 +48,7 @@ public class CommonExportProperties {
 
     /**
      * Set the format property: The format of the export being delivered.
-     *
+     * 
      * @param format the format value to set.
      * @return the CommonExportProperties object itself.
      */
@@ -55,7 +59,7 @@ public class CommonExportProperties {
 
     /**
      * Get the deliveryInfo property: Has delivery information for the export.
-     *
+     * 
      * @return the deliveryInfo value.
      */
     public ExportDeliveryInfo deliveryInfo() {
@@ -64,7 +68,7 @@ public class CommonExportProperties {
 
     /**
      * Set the deliveryInfo property: Has delivery information for the export.
-     *
+     * 
      * @param deliveryInfo the deliveryInfo value to set.
      * @return the CommonExportProperties object itself.
      */
@@ -75,7 +79,7 @@ public class CommonExportProperties {
 
     /**
      * Get the definition property: Has definition for the export.
-     *
+     * 
      * @return the definition value.
      */
     public ExportDefinition definition() {
@@ -84,7 +88,7 @@ public class CommonExportProperties {
 
     /**
      * Set the definition property: Has definition for the export.
-     *
+     * 
      * @param definition the definition value to set.
      * @return the CommonExportProperties object itself.
      */
@@ -95,23 +99,19 @@ public class CommonExportProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (deliveryInfo() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property deliveryInfo in model CommonExportProperties"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property deliveryInfo in model CommonExportProperties"));
         } else {
             deliveryInfo().validate();
         }
         if (definition() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property definition in model CommonExportProperties"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property definition in model CommonExportProperties"));
         } else {
             definition().validate();
         }

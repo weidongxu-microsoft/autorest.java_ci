@@ -11,8 +11,8 @@ import java.util.List;
 
 /**
  * LiveEventListResult
- *
- * <p>The LiveEvent list result.
+ * 
+ * The LiveEvent list result.
  */
 @Fluent
 public final class LiveEventListResult {
@@ -34,13 +34,15 @@ public final class LiveEventListResult {
     @JsonProperty(value = "@odata.nextLink")
     private String odataNextLink;
 
-    /** Creates an instance of LiveEventListResult class. */
+    /**
+     * Creates an instance of LiveEventListResult class.
+     */
     public LiveEventListResult() {
     }
 
     /**
      * Get the value property: The result of the List Live Event operation.
-     *
+     * 
      * @return the value value.
      */
     public List<LiveEventInner> value() {
@@ -49,7 +51,7 @@ public final class LiveEventListResult {
 
     /**
      * Set the value property: The result of the List Live Event operation.
-     *
+     * 
      * @param value the value value to set.
      * @return the LiveEventListResult object itself.
      */
@@ -60,7 +62,7 @@ public final class LiveEventListResult {
 
     /**
      * Get the odataCount property: The number of result.
-     *
+     * 
      * @return the odataCount value.
      */
     public Integer odataCount() {
@@ -69,7 +71,7 @@ public final class LiveEventListResult {
 
     /**
      * Set the odataCount property: The number of result.
-     *
+     * 
      * @param odataCount the odataCount value to set.
      * @return the LiveEventListResult object itself.
      */
@@ -81,7 +83,7 @@ public final class LiveEventListResult {
     /**
      * Get the odataNextLink property: The link to the next set of results. Not empty if value contains incomplete list
      * of live outputs.
-     *
+     * 
      * @return the odataNextLink value.
      */
     public String odataNextLink() {
@@ -91,7 +93,7 @@ public final class LiveEventListResult {
     /**
      * Set the odataNextLink property: The link to the next set of results. Not empty if value contains incomplete list
      * of live outputs.
-     *
+     * 
      * @param odataNextLink the odataNextLink value to set.
      * @return the LiveEventListResult object itself.
      */
@@ -102,7 +104,7 @@ public final class LiveEventListResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

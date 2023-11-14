@@ -18,8 +18,7 @@ public final class OperationStatusExtendedResultImpl implements OperationStatusE
 
     private final com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager;
 
-    OperationStatusExtendedResultImpl(
-        OperationStatusExtendedResultInner innerObject,
+    OperationStatusExtendedResultImpl(OperationStatusExtendedResultInner innerObject,
         com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

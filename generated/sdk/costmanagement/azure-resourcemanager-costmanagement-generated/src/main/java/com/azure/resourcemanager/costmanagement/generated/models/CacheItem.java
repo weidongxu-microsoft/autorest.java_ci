@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The CacheItem model. */
+/**
+ * The CacheItem model.
+ */
 @Fluent
 public final class CacheItem {
     /*
@@ -49,13 +51,15 @@ public final class CacheItem {
     @JsonProperty(value = "status")
     private String status;
 
-    /** Creates an instance of CacheItem class. */
+    /**
+     * Creates an instance of CacheItem class.
+     */
     public CacheItem() {
     }
 
     /**
      * Get the id property: Resource ID used by Resource Manager to uniquely identify the scope.
-     *
+     * 
      * @return the id value.
      */
     public String id() {
@@ -64,7 +68,7 @@ public final class CacheItem {
 
     /**
      * Set the id property: Resource ID used by Resource Manager to uniquely identify the scope.
-     *
+     * 
      * @param id the id value to set.
      * @return the CacheItem object itself.
      */
@@ -75,7 +79,7 @@ public final class CacheItem {
 
     /**
      * Get the name property: Display name for the scope.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -84,7 +88,7 @@ public final class CacheItem {
 
     /**
      * Set the name property: Display name for the scope.
-     *
+     * 
      * @param name the name value to set.
      * @return the CacheItem object itself.
      */
@@ -96,7 +100,7 @@ public final class CacheItem {
     /**
      * Get the channel property: Indicates the account type. Allowed values include: EA, PAYG, Modern, Internal,
      * Unknown.
-     *
+     * 
      * @return the channel value.
      */
     public String channel() {
@@ -106,7 +110,7 @@ public final class CacheItem {
     /**
      * Set the channel property: Indicates the account type. Allowed values include: EA, PAYG, Modern, Internal,
      * Unknown.
-     *
+     * 
      * @param channel the channel value to set.
      * @return the CacheItem object itself.
      */
@@ -118,7 +122,7 @@ public final class CacheItem {
     /**
      * Get the subchannel property: Indicates the type of modern account. Allowed values include: Individual,
      * Enterprise, Partner, Indirect, NotApplicable.
-     *
+     * 
      * @return the subchannel value.
      */
     public String subchannel() {
@@ -128,7 +132,7 @@ public final class CacheItem {
     /**
      * Set the subchannel property: Indicates the type of modern account. Allowed values include: Individual,
      * Enterprise, Partner, Indirect, NotApplicable.
-     *
+     * 
      * @param subchannel the subchannel value to set.
      * @return the CacheItem object itself.
      */
@@ -138,9 +142,9 @@ public final class CacheItem {
     }
 
     /**
-     * Get the parent property: Resource ID of the parent scope. For instance, subscription's resource ID for a resource
-     * group or a management group resource ID for a subscription.
-     *
+     * Get the parent property: Resource ID of the parent scope. For instance, subscription's resource ID for a
+     * resource group or a management group resource ID for a subscription.
+     * 
      * @return the parent value.
      */
     public String parent() {
@@ -148,9 +152,9 @@ public final class CacheItem {
     }
 
     /**
-     * Set the parent property: Resource ID of the parent scope. For instance, subscription's resource ID for a resource
-     * group or a management group resource ID for a subscription.
-     *
+     * Set the parent property: Resource ID of the parent scope. For instance, subscription's resource ID for a
+     * resource group or a management group resource ID for a subscription.
+     * 
      * @param parent the parent value to set.
      * @return the CacheItem object itself.
      */
@@ -162,7 +166,7 @@ public final class CacheItem {
     /**
      * Get the status property: Indicates the status of the scope. Status only applies to subscriptions and billing
      * accounts.
-     *
+     * 
      * @return the status value.
      */
     public String status() {
@@ -172,7 +176,7 @@ public final class CacheItem {
     /**
      * Set the status property: Indicates the status of the scope. Status only applies to subscriptions and billing
      * accounts.
-     *
+     * 
      * @param status the status value to set.
      * @return the CacheItem object itself.
      */
@@ -183,7 +187,7 @@ public final class CacheItem {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
@@ -196,14 +200,12 @@ public final class CacheItem {
                 .logExceptionAsError(new IllegalArgumentException("Missing required property name in model CacheItem"));
         }
         if (channel() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property channel in model CacheItem"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property channel in model CacheItem"));
         }
         if (subchannel() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property subchannel in model CacheItem"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property subchannel in model CacheItem"));
         }
     }
 

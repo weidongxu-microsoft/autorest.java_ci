@@ -13,8 +13,7 @@ public final class IotHubNameAvailabilityInfoImpl implements IotHubNameAvailabil
 
     private final com.azure.resourcemanager.iothub.generated.IotHubManager serviceManager;
 
-    IotHubNameAvailabilityInfoImpl(
-        IotHubNameAvailabilityInfoInner innerObject,
+    IotHubNameAvailabilityInfoImpl(IotHubNameAvailabilityInfoInner innerObject,
         com.azure.resourcemanager.iothub.generated.IotHubManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

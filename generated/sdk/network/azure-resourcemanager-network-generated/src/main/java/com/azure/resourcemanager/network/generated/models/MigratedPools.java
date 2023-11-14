@@ -7,18 +7,20 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.resourcemanager.network.generated.fluent.models.MigratedPoolsInner;
 import java.util.List;
 
-/** An immutable client-side representation of MigratedPools. */
+/**
+ * An immutable client-side representation of MigratedPools.
+ */
 public interface MigratedPools {
     /**
      * Gets the migratedPools property: A list of pools migrated from Nic based to IP based pool.
-     *
+     * 
      * @return the migratedPools value.
      */
     List<String> migratedPools();
 
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.MigratedPoolsInner object.
-     *
+     * 
      * @return the inner object.
      */
     MigratedPoolsInner innerModel();

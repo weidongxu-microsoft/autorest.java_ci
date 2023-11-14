@@ -7,7 +7,9 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 import com.azure.core.annotation.Immutable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Load balancer configuration. */
+/**
+ * Load balancer configuration.
+ */
 @Immutable
 public final class LoadBalancerConfig {
     /*
@@ -22,13 +24,15 @@ public final class LoadBalancerConfig {
     @JsonProperty(value = "version", access = JsonProperty.Access.WRITE_ONLY)
     private String version;
 
-    /** Creates an instance of LoadBalancerConfig class. */
+    /**
+     * Creates an instance of LoadBalancerConfig class.
+     */
     public LoadBalancerConfig() {
     }
 
     /**
      * Get the type property: Load balancer type.
-     *
+     * 
      * @return the type value.
      */
     public String type() {
@@ -37,7 +41,7 @@ public final class LoadBalancerConfig {
 
     /**
      * Get the version property: Load balancer version.
-     *
+     * 
      * @return the version value.
      */
     public String version() {
@@ -46,7 +50,7 @@ public final class LoadBalancerConfig {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

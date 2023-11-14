@@ -12,8 +12,7 @@ public final class DomainSharedAccessKeysImpl implements DomainSharedAccessKeys 
 
     private final com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager;
 
-    DomainSharedAccessKeysImpl(
-        DomainSharedAccessKeysInner innerObject,
+    DomainSharedAccessKeysImpl(DomainSharedAccessKeysInner innerObject,
         com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

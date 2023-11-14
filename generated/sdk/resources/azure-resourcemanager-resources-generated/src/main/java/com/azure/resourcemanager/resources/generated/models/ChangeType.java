@@ -7,27 +7,43 @@ package com.azure.resourcemanager.resources.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Type of change that will be made to the resource when the deployment is executed. */
+/**
+ * Type of change that will be made to the resource when the deployment is executed.
+ */
 public enum ChangeType {
-    /** Enum value Create. */
+    /**
+     * Enum value Create.
+     */
     CREATE("Create"),
 
-    /** Enum value Delete. */
+    /**
+     * Enum value Delete.
+     */
     DELETE("Delete"),
 
-    /** Enum value Ignore. */
+    /**
+     * Enum value Ignore.
+     */
     IGNORE("Ignore"),
 
-    /** Enum value Deploy. */
+    /**
+     * Enum value Deploy.
+     */
     DEPLOY("Deploy"),
 
-    /** Enum value NoChange. */
+    /**
+     * Enum value NoChange.
+     */
     NO_CHANGE("NoChange"),
 
-    /** Enum value Modify. */
+    /**
+     * Enum value Modify.
+     */
     MODIFY("Modify");
 
-    /** The actual serialized value for a ChangeType instance. */
+    /**
+     * The actual serialized value for a ChangeType instance.
+     */
     private final String value;
 
     ChangeType(String value) {
@@ -36,7 +52,7 @@ public enum ChangeType {
 
     /**
      * Parses a serialized value to a ChangeType instance.
-     *
+     * 
      * @param value the serialized value to parse.
      * @return the parsed ChangeType object, or null if unable to parse.
      */
@@ -54,7 +70,9 @@ public enum ChangeType {
         return null;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @JsonValue
     @Override
     public String toString() {

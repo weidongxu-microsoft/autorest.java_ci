@@ -7,7 +7,9 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The KeyVaultProperties model. */
+/**
+ * The KeyVaultProperties model.
+ */
 @Fluent
 public final class KeyVaultProperties {
     /*
@@ -23,7 +25,9 @@ public final class KeyVaultProperties {
     @JsonProperty(value = "currentKeyIdentifier", access = JsonProperty.Access.WRITE_ONLY)
     private String currentKeyIdentifier;
 
-    /** Creates an instance of KeyVaultProperties class. */
+    /**
+     * Creates an instance of KeyVaultProperties class.
+     */
     public KeyVaultProperties() {
     }
 
@@ -31,7 +35,7 @@ public final class KeyVaultProperties {
      * Get the keyIdentifier property: The URL of the Key Vault key used to encrypt the account. The key may either be
      * versioned (for example https://vault/keys/mykey/version1) or reference a key without a version (for example
      * https://vault/keys/mykey).
-     *
+     * 
      * @return the keyIdentifier value.
      */
     public String keyIdentifier() {
@@ -42,7 +46,7 @@ public final class KeyVaultProperties {
      * Set the keyIdentifier property: The URL of the Key Vault key used to encrypt the account. The key may either be
      * versioned (for example https://vault/keys/mykey/version1) or reference a key without a version (for example
      * https://vault/keys/mykey).
-     *
+     * 
      * @param keyIdentifier the keyIdentifier value to set.
      * @return the KeyVaultProperties object itself.
      */
@@ -54,7 +58,7 @@ public final class KeyVaultProperties {
     /**
      * Get the currentKeyIdentifier property: The current key used to encrypt the Media Services account, including the
      * key version.
-     *
+     * 
      * @return the currentKeyIdentifier value.
      */
     public String currentKeyIdentifier() {
@@ -63,7 +67,7 @@ public final class KeyVaultProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

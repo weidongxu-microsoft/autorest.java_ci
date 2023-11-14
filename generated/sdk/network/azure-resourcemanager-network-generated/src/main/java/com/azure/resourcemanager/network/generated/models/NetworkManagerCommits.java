@@ -7,11 +7,13 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkManagerCommitInner;
 
-/** Resource collection API of NetworkManagerCommits. */
+/**
+ * Resource collection API of NetworkManagerCommits.
+ */
 public interface NetworkManagerCommits {
     /**
      * Post a Network Manager Commit.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
      * @param parameters Parameters supplied to specify which Managed Network commit is.
@@ -20,12 +22,12 @@ public interface NetworkManagerCommits {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return network Manager Commit.
      */
-    NetworkManagerCommit post(
-        String resourceGroupName, String networkManagerName, NetworkManagerCommitInner parameters);
+    NetworkManagerCommit post(String resourceGroupName, String networkManagerName,
+        NetworkManagerCommitInner parameters);
 
     /**
      * Post a Network Manager Commit.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
      * @param parameters Parameters supplied to specify which Managed Network commit is.
@@ -35,6 +37,6 @@ public interface NetworkManagerCommits {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return network Manager Commit.
      */
-    NetworkManagerCommit post(
-        String resourceGroupName, String networkManagerName, NetworkManagerCommitInner parameters, Context context);
+    NetworkManagerCommit post(String resourceGroupName, String networkManagerName, NetworkManagerCommitInner parameters,
+        Context context);
 }

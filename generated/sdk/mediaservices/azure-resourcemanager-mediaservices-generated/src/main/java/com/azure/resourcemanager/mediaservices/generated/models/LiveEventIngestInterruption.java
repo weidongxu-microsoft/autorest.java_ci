@@ -9,7 +9,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.Duration;
 import java.time.OffsetDateTime;
 
-/** The live event ingest interruption data. */
+/**
+ * The live event ingest interruption data.
+ */
 @Fluent
 public final class LiveEventIngestInterruption {
     /*
@@ -36,13 +38,15 @@ public final class LiveEventIngestInterruption {
     @JsonProperty(value = "reason")
     private String reason;
 
-    /** Creates an instance of LiveEventIngestInterruption class. */
+    /**
+     * Creates an instance of LiveEventIngestInterruption class.
+     */
     public LiveEventIngestInterruption() {
     }
 
     /**
      * Get the begin property: UTC time of interruption start, encoder disconnected.
-     *
+     * 
      * @return the begin value.
      */
     public OffsetDateTime begin() {
@@ -51,7 +55,7 @@ public final class LiveEventIngestInterruption {
 
     /**
      * Set the begin property: UTC time of interruption start, encoder disconnected.
-     *
+     * 
      * @param begin the begin value to set.
      * @return the LiveEventIngestInterruption object itself.
      */
@@ -62,7 +66,7 @@ public final class LiveEventIngestInterruption {
 
     /**
      * Get the end property: UTC time of interruption end, encoder re-connected.
-     *
+     * 
      * @return the end value.
      */
     public OffsetDateTime end() {
@@ -71,7 +75,7 @@ public final class LiveEventIngestInterruption {
 
     /**
      * Set the end property: UTC time of interruption end, encoder re-connected.
-     *
+     * 
      * @param end the end value to set.
      * @return the LiveEventIngestInterruption object itself.
      */
@@ -81,9 +85,9 @@ public final class LiveEventIngestInterruption {
     }
 
     /**
-     * Get the duration property: Duration of interruption in ISO 8601 time. For example, use PT1H30M to indicate 1 hour
-     * and 30 minutes.
-     *
+     * Get the duration property: Duration of interruption in ISO 8601 time. For example, use PT1H30M to indicate 1
+     * hour and 30 minutes.
+     * 
      * @return the duration value.
      */
     public Duration duration() {
@@ -91,9 +95,9 @@ public final class LiveEventIngestInterruption {
     }
 
     /**
-     * Set the duration property: Duration of interruption in ISO 8601 time. For example, use PT1H30M to indicate 1 hour
-     * and 30 minutes.
-     *
+     * Set the duration property: Duration of interruption in ISO 8601 time. For example, use PT1H30M to indicate 1
+     * hour and 30 minutes.
+     * 
      * @param duration the duration value to set.
      * @return the LiveEventIngestInterruption object itself.
      */
@@ -104,7 +108,7 @@ public final class LiveEventIngestInterruption {
 
     /**
      * Get the reason property: Interruption reason.
-     *
+     * 
      * @return the reason value.
      */
     public String reason() {
@@ -113,7 +117,7 @@ public final class LiveEventIngestInterruption {
 
     /**
      * Set the reason property: Interruption reason.
-     *
+     * 
      * @param reason the reason value to set.
      * @return the LiveEventIngestInterruption object itself.
      */
@@ -124,7 +128,7 @@ public final class LiveEventIngestInterruption {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

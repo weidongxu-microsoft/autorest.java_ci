@@ -17,8 +17,7 @@ public final class ExpressRouteGatewayListImpl implements ExpressRouteGatewayLis
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    ExpressRouteGatewayListImpl(
-        ExpressRouteGatewayListInner innerObject,
+    ExpressRouteGatewayListImpl(ExpressRouteGatewayListInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -27,12 +26,8 @@ public final class ExpressRouteGatewayListImpl implements ExpressRouteGatewayLis
     public List<ExpressRouteGateway> value() {
         List<ExpressRouteGatewayInner> inner = this.innerModel().value();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new ExpressRouteGatewayImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new ExpressRouteGatewayImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

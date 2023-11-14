@@ -25,21 +25,18 @@ public final class DiskAccessesImpl implements DiskAccesses {
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    public DiskAccessesImpl(
-        DiskAccessesClient innerClient, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
+    public DiskAccessesImpl(DiskAccessesClient innerClient,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<DiskAccess> getByResourceGroupWithResponse(
-        String resourceGroupName, String diskAccessName, Context context) {
-        Response<DiskAccessInner> inner =
-            this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, diskAccessName, context);
+    public Response<DiskAccess> getByResourceGroupWithResponse(String resourceGroupName, String diskAccessName,
+        Context context) {
+        Response<DiskAccessInner> inner
+            = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, diskAccessName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DiskAccessImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -83,15 +80,12 @@ public final class DiskAccessesImpl implements DiskAccesses {
         return Utils.mapPage(inner, inner1 -> new DiskAccessImpl(inner1, this.manager()));
     }
 
-    public Response<PrivateLinkResourceListResult> getPrivateLinkResourcesWithResponse(
-        String resourceGroupName, String diskAccessName, Context context) {
-        Response<PrivateLinkResourceListResultInner> inner =
-            this.serviceClient().getPrivateLinkResourcesWithResponse(resourceGroupName, diskAccessName, context);
+    public Response<PrivateLinkResourceListResult> getPrivateLinkResourcesWithResponse(String resourceGroupName,
+        String diskAccessName, Context context) {
+        Response<PrivateLinkResourceListResultInner> inner
+            = this.serviceClient().getPrivateLinkResourcesWithResponse(resourceGroupName, diskAccessName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new PrivateLinkResourceListResultImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -99,8 +93,8 @@ public final class DiskAccessesImpl implements DiskAccesses {
     }
 
     public PrivateLinkResourceListResult getPrivateLinkResources(String resourceGroupName, String diskAccessName) {
-        PrivateLinkResourceListResultInner inner =
-            this.serviceClient().getPrivateLinkResources(resourceGroupName, diskAccessName);
+        PrivateLinkResourceListResultInner inner
+            = this.serviceClient().getPrivateLinkResources(resourceGroupName, diskAccessName);
         if (inner != null) {
             return new PrivateLinkResourceListResultImpl(inner, this.manager());
         } else {
@@ -108,16 +102,10 @@ public final class DiskAccessesImpl implements DiskAccesses {
         }
     }
 
-    public PrivateEndpointConnection updateAPrivateEndpointConnection(
-        String resourceGroupName,
-        String diskAccessName,
-        String privateEndpointConnectionName,
-        PrivateEndpointConnectionInner privateEndpointConnection) {
-        PrivateEndpointConnectionInner inner =
-            this
-                .serviceClient()
-                .updateAPrivateEndpointConnection(
-                    resourceGroupName, diskAccessName, privateEndpointConnectionName, privateEndpointConnection);
+    public PrivateEndpointConnection updateAPrivateEndpointConnection(String resourceGroupName, String diskAccessName,
+        String privateEndpointConnectionName, PrivateEndpointConnectionInner privateEndpointConnection) {
+        PrivateEndpointConnectionInner inner = this.serviceClient().updateAPrivateEndpointConnection(resourceGroupName,
+            diskAccessName, privateEndpointConnectionName, privateEndpointConnection);
         if (inner != null) {
             return new PrivateEndpointConnectionImpl(inner, this.manager());
         } else {
@@ -125,21 +113,11 @@ public final class DiskAccessesImpl implements DiskAccesses {
         }
     }
 
-    public PrivateEndpointConnection updateAPrivateEndpointConnection(
-        String resourceGroupName,
-        String diskAccessName,
-        String privateEndpointConnectionName,
-        PrivateEndpointConnectionInner privateEndpointConnection,
+    public PrivateEndpointConnection updateAPrivateEndpointConnection(String resourceGroupName, String diskAccessName,
+        String privateEndpointConnectionName, PrivateEndpointConnectionInner privateEndpointConnection,
         Context context) {
-        PrivateEndpointConnectionInner inner =
-            this
-                .serviceClient()
-                .updateAPrivateEndpointConnection(
-                    resourceGroupName,
-                    diskAccessName,
-                    privateEndpointConnectionName,
-                    privateEndpointConnection,
-                    context);
+        PrivateEndpointConnectionInner inner = this.serviceClient().updateAPrivateEndpointConnection(resourceGroupName,
+            diskAccessName, privateEndpointConnectionName, privateEndpointConnection, context);
         if (inner != null) {
             return new PrivateEndpointConnectionImpl(inner, this.manager());
         } else {
@@ -147,30 +125,22 @@ public final class DiskAccessesImpl implements DiskAccesses {
         }
     }
 
-    public Response<PrivateEndpointConnection> getAPrivateEndpointConnectionWithResponse(
-        String resourceGroupName, String diskAccessName, String privateEndpointConnectionName, Context context) {
-        Response<PrivateEndpointConnectionInner> inner =
-            this
-                .serviceClient()
-                .getAPrivateEndpointConnectionWithResponse(
-                    resourceGroupName, diskAccessName, privateEndpointConnectionName, context);
+    public Response<PrivateEndpointConnection> getAPrivateEndpointConnectionWithResponse(String resourceGroupName,
+        String diskAccessName, String privateEndpointConnectionName, Context context) {
+        Response<PrivateEndpointConnectionInner> inner = this.serviceClient().getAPrivateEndpointConnectionWithResponse(
+            resourceGroupName, diskAccessName, privateEndpointConnectionName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new PrivateEndpointConnectionImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public PrivateEndpointConnection getAPrivateEndpointConnection(
-        String resourceGroupName, String diskAccessName, String privateEndpointConnectionName) {
-        PrivateEndpointConnectionInner inner =
-            this
-                .serviceClient()
-                .getAPrivateEndpointConnection(resourceGroupName, diskAccessName, privateEndpointConnectionName);
+    public PrivateEndpointConnection getAPrivateEndpointConnection(String resourceGroupName, String diskAccessName,
+        String privateEndpointConnectionName) {
+        PrivateEndpointConnectionInner inner = this.serviceClient().getAPrivateEndpointConnection(resourceGroupName,
+            diskAccessName, privateEndpointConnectionName);
         if (inner != null) {
             return new PrivateEndpointConnectionImpl(inner, this.manager());
         } else {
@@ -178,50 +148,42 @@ public final class DiskAccessesImpl implements DiskAccesses {
         }
     }
 
-    public void deleteAPrivateEndpointConnection(
-        String resourceGroupName, String diskAccessName, String privateEndpointConnectionName) {
-        this
-            .serviceClient()
-            .deleteAPrivateEndpointConnection(resourceGroupName, diskAccessName, privateEndpointConnectionName);
+    public void deleteAPrivateEndpointConnection(String resourceGroupName, String diskAccessName,
+        String privateEndpointConnectionName) {
+        this.serviceClient().deleteAPrivateEndpointConnection(resourceGroupName, diskAccessName,
+            privateEndpointConnectionName);
     }
 
-    public void deleteAPrivateEndpointConnection(
-        String resourceGroupName, String diskAccessName, String privateEndpointConnectionName, Context context) {
-        this
-            .serviceClient()
-            .deleteAPrivateEndpointConnection(
-                resourceGroupName, diskAccessName, privateEndpointConnectionName, context);
+    public void deleteAPrivateEndpointConnection(String resourceGroupName, String diskAccessName,
+        String privateEndpointConnectionName, Context context) {
+        this.serviceClient().deleteAPrivateEndpointConnection(resourceGroupName, diskAccessName,
+            privateEndpointConnectionName, context);
     }
 
-    public PagedIterable<PrivateEndpointConnection> listPrivateEndpointConnections(
-        String resourceGroupName, String diskAccessName) {
-        PagedIterable<PrivateEndpointConnectionInner> inner =
-            this.serviceClient().listPrivateEndpointConnections(resourceGroupName, diskAccessName);
+    public PagedIterable<PrivateEndpointConnection> listPrivateEndpointConnections(String resourceGroupName,
+        String diskAccessName) {
+        PagedIterable<PrivateEndpointConnectionInner> inner
+            = this.serviceClient().listPrivateEndpointConnections(resourceGroupName, diskAccessName);
         return Utils.mapPage(inner, inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<PrivateEndpointConnection> listPrivateEndpointConnections(
-        String resourceGroupName, String diskAccessName, Context context) {
-        PagedIterable<PrivateEndpointConnectionInner> inner =
-            this.serviceClient().listPrivateEndpointConnections(resourceGroupName, diskAccessName, context);
+    public PagedIterable<PrivateEndpointConnection> listPrivateEndpointConnections(String resourceGroupName,
+        String diskAccessName, Context context) {
+        PagedIterable<PrivateEndpointConnectionInner> inner
+            = this.serviceClient().listPrivateEndpointConnections(resourceGroupName, diskAccessName, context);
         return Utils.mapPage(inner, inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager()));
     }
 
     public DiskAccess getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String diskAccessName = Utils.getValueFromIdByName(id, "diskAccesses");
         if (diskAccessName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'diskAccesses'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'diskAccesses'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, diskAccessName, Context.NONE).getValue();
     }
@@ -229,18 +191,13 @@ public final class DiskAccessesImpl implements DiskAccesses {
     public Response<DiskAccess> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String diskAccessName = Utils.getValueFromIdByName(id, "diskAccesses");
         if (diskAccessName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'diskAccesses'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'diskAccesses'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, diskAccessName, context);
     }
@@ -248,18 +205,13 @@ public final class DiskAccessesImpl implements DiskAccesses {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String diskAccessName = Utils.getValueFromIdByName(id, "diskAccesses");
         if (diskAccessName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'diskAccesses'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'diskAccesses'.", id)));
         }
         this.delete(resourceGroupName, diskAccessName, Context.NONE);
     }
@@ -267,18 +219,13 @@ public final class DiskAccessesImpl implements DiskAccesses {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String diskAccessName = Utils.getValueFromIdByName(id, "diskAccesses");
         if (diskAccessName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'diskAccesses'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'diskAccesses'.", id)));
         }
         this.delete(resourceGroupName, diskAccessName, context);
     }

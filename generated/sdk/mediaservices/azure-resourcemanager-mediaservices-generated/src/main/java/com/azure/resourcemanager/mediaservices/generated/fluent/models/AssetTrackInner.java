@@ -10,7 +10,9 @@ import com.azure.resourcemanager.mediaservices.generated.models.ProvisioningStat
 import com.azure.resourcemanager.mediaservices.generated.models.TrackBase;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** An Asset Track resource. */
+/**
+ * An Asset Track resource.
+ */
 @Fluent
 public final class AssetTrackInner extends ProxyResource {
     /*
@@ -19,13 +21,15 @@ public final class AssetTrackInner extends ProxyResource {
     @JsonProperty(value = "properties")
     private AssetTrackProperties innerProperties;
 
-    /** Creates an instance of AssetTrackInner class. */
+    /**
+     * Creates an instance of AssetTrackInner class.
+     */
     public AssetTrackInner() {
     }
 
     /**
      * Get the innerProperties property: The resource properties.
-     *
+     * 
      * @return the innerProperties value.
      */
     private AssetTrackProperties innerProperties() {
@@ -34,7 +38,7 @@ public final class AssetTrackInner extends ProxyResource {
 
     /**
      * Get the track property: Detailed information about a track in the asset.
-     *
+     * 
      * @return the track value.
      */
     public TrackBase track() {
@@ -43,7 +47,7 @@ public final class AssetTrackInner extends ProxyResource {
 
     /**
      * Set the track property: Detailed information about a track in the asset.
-     *
+     * 
      * @param track the track value to set.
      * @return the AssetTrackInner object itself.
      */
@@ -57,7 +61,7 @@ public final class AssetTrackInner extends ProxyResource {
 
     /**
      * Get the provisioningState property: Provisioning state of the asset track.
-     *
+     * 
      * @return the provisioningState value.
      */
     public ProvisioningState provisioningState() {
@@ -66,7 +70,7 @@ public final class AssetTrackInner extends ProxyResource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

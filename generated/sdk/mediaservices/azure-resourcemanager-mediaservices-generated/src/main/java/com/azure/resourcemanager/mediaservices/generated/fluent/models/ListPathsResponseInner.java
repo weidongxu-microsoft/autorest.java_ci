@@ -9,7 +9,9 @@ import com.azure.resourcemanager.mediaservices.generated.models.StreamingPath;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Class of response for listPaths action. */
+/**
+ * Class of response for listPaths action.
+ */
 @Fluent
 public final class ListPathsResponseInner {
     /*
@@ -24,13 +26,15 @@ public final class ListPathsResponseInner {
     @JsonProperty(value = "downloadPaths")
     private List<String> downloadPaths;
 
-    /** Creates an instance of ListPathsResponseInner class. */
+    /**
+     * Creates an instance of ListPathsResponseInner class.
+     */
     public ListPathsResponseInner() {
     }
 
     /**
      * Get the streamingPaths property: Streaming Paths supported by current Streaming Locator.
-     *
+     * 
      * @return the streamingPaths value.
      */
     public List<StreamingPath> streamingPaths() {
@@ -39,7 +43,7 @@ public final class ListPathsResponseInner {
 
     /**
      * Set the streamingPaths property: Streaming Paths supported by current Streaming Locator.
-     *
+     * 
      * @param streamingPaths the streamingPaths value to set.
      * @return the ListPathsResponseInner object itself.
      */
@@ -50,7 +54,7 @@ public final class ListPathsResponseInner {
 
     /**
      * Get the downloadPaths property: Download Paths supported by current Streaming Locator.
-     *
+     * 
      * @return the downloadPaths value.
      */
     public List<String> downloadPaths() {
@@ -59,7 +63,7 @@ public final class ListPathsResponseInner {
 
     /**
      * Set the downloadPaths property: Download Paths supported by current Streaming Locator.
-     *
+     * 
      * @param downloadPaths the downloadPaths value to set.
      * @return the ListPathsResponseInner object itself.
      */
@@ -70,7 +74,7 @@ public final class ListPathsResponseInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

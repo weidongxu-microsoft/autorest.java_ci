@@ -110,28 +110,20 @@ public final class CapacityReservationGroupImpl
     }
 
     public CapacityReservationGroup create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getCapacityReservationGroups()
-                .createOrUpdateWithResponse(
-                    resourceGroupName, capacityReservationGroupName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getCapacityReservationGroups().createOrUpdateWithResponse(
+            resourceGroupName, capacityReservationGroupName, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public CapacityReservationGroup create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getCapacityReservationGroups()
-                .createOrUpdateWithResponse(resourceGroupName, capacityReservationGroupName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getCapacityReservationGroups()
+            .createOrUpdateWithResponse(resourceGroupName, capacityReservationGroupName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
-    CapacityReservationGroupImpl(
-        String name, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
+    CapacityReservationGroupImpl(String name,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = new CapacityReservationGroupInner();
         this.serviceManager = serviceManager;
         this.capacityReservationGroupName = name;
@@ -143,27 +135,19 @@ public final class CapacityReservationGroupImpl
     }
 
     public CapacityReservationGroup apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getCapacityReservationGroups()
-                .updateWithResponse(resourceGroupName, capacityReservationGroupName, updateParameters, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getCapacityReservationGroups()
+            .updateWithResponse(resourceGroupName, capacityReservationGroupName, updateParameters, Context.NONE)
+            .getValue();
         return this;
     }
 
     public CapacityReservationGroup apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getCapacityReservationGroups()
-                .updateWithResponse(resourceGroupName, capacityReservationGroupName, updateParameters, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getCapacityReservationGroups()
+            .updateWithResponse(resourceGroupName, capacityReservationGroupName, updateParameters, context).getValue();
         return this;
     }
 
-    CapacityReservationGroupImpl(
-        CapacityReservationGroupInner innerObject,
+    CapacityReservationGroupImpl(CapacityReservationGroupInner innerObject,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -173,24 +157,17 @@ public final class CapacityReservationGroupImpl
 
     public CapacityReservationGroup refresh() {
         CapacityReservationGroupInstanceViewTypes localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getCapacityReservationGroups()
-                .getByResourceGroupWithResponse(
-                    resourceGroupName, capacityReservationGroupName, localExpand, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getCapacityReservationGroups()
+            .getByResourceGroupWithResponse(resourceGroupName, capacityReservationGroupName, localExpand, Context.NONE)
+            .getValue();
         return this;
     }
 
     public CapacityReservationGroup refresh(Context context) {
         CapacityReservationGroupInstanceViewTypes localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getCapacityReservationGroups()
-                .getByResourceGroupWithResponse(resourceGroupName, capacityReservationGroupName, localExpand, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getCapacityReservationGroups()
+            .getByResourceGroupWithResponse(resourceGroupName, capacityReservationGroupName, localExpand, context)
+            .getValue();
         return this;
     }
 

@@ -9,7 +9,9 @@ import com.azure.resourcemanager.postgresql.generated.fluent.models.ServerInner;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** A list of servers. */
+/**
+ * A list of servers.
+ */
 @Fluent
 public final class ServerListResult {
     /*
@@ -18,13 +20,15 @@ public final class ServerListResult {
     @JsonProperty(value = "value")
     private List<ServerInner> value;
 
-    /** Creates an instance of ServerListResult class. */
+    /**
+     * Creates an instance of ServerListResult class.
+     */
     public ServerListResult() {
     }
 
     /**
      * Get the value property: The list of servers.
-     *
+     * 
      * @return the value value.
      */
     public List<ServerInner> value() {
@@ -33,7 +37,7 @@ public final class ServerListResult {
 
     /**
      * Set the value property: The list of servers.
-     *
+     * 
      * @param value the value value to set.
      * @return the ServerListResult object itself.
      */
@@ -44,7 +48,7 @@ public final class ServerListResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -21,22 +21,18 @@ public final class DiskEncryptionSetsImpl implements DiskEncryptionSets {
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    public DiskEncryptionSetsImpl(
-        DiskEncryptionSetsClient innerClient,
+    public DiskEncryptionSetsImpl(DiskEncryptionSetsClient innerClient,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<DiskEncryptionSet> getByResourceGroupWithResponse(
-        String resourceGroupName, String diskEncryptionSetName, Context context) {
-        Response<DiskEncryptionSetInner> inner =
-            this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, diskEncryptionSetName, context);
+    public Response<DiskEncryptionSet> getByResourceGroupWithResponse(String resourceGroupName,
+        String diskEncryptionSetName, Context context) {
+        Response<DiskEncryptionSetInner> inner
+            = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, diskEncryptionSetName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DiskEncryptionSetImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -44,8 +40,8 @@ public final class DiskEncryptionSetsImpl implements DiskEncryptionSets {
     }
 
     public DiskEncryptionSet getByResourceGroup(String resourceGroupName, String diskEncryptionSetName) {
-        DiskEncryptionSetInner inner =
-            this.serviceClient().getByResourceGroup(resourceGroupName, diskEncryptionSetName);
+        DiskEncryptionSetInner inner
+            = this.serviceClient().getByResourceGroup(resourceGroupName, diskEncryptionSetName);
         if (inner != null) {
             return new DiskEncryptionSetImpl(inner, this.manager());
         } else {
@@ -67,8 +63,8 @@ public final class DiskEncryptionSetsImpl implements DiskEncryptionSets {
     }
 
     public PagedIterable<DiskEncryptionSet> listByResourceGroup(String resourceGroupName, Context context) {
-        PagedIterable<DiskEncryptionSetInner> inner =
-            this.serviceClient().listByResourceGroup(resourceGroupName, context);
+        PagedIterable<DiskEncryptionSetInner> inner
+            = this.serviceClient().listByResourceGroup(resourceGroupName, context);
         return Utils.mapPage(inner, inner1 -> new DiskEncryptionSetImpl(inner1, this.manager()));
     }
 
@@ -86,28 +82,21 @@ public final class DiskEncryptionSetsImpl implements DiskEncryptionSets {
         return this.serviceClient().listAssociatedResources(resourceGroupName, diskEncryptionSetName);
     }
 
-    public PagedIterable<String> listAssociatedResources(
-        String resourceGroupName, String diskEncryptionSetName, Context context) {
+    public PagedIterable<String> listAssociatedResources(String resourceGroupName, String diskEncryptionSetName,
+        Context context) {
         return this.serviceClient().listAssociatedResources(resourceGroupName, diskEncryptionSetName, context);
     }
 
     public DiskEncryptionSet getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String diskEncryptionSetName = Utils.getValueFromIdByName(id, "diskEncryptionSets");
         if (diskEncryptionSetName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'diskEncryptionSets'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'diskEncryptionSets'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, diskEncryptionSetName, Context.NONE).getValue();
     }
@@ -115,20 +104,13 @@ public final class DiskEncryptionSetsImpl implements DiskEncryptionSets {
     public Response<DiskEncryptionSet> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String diskEncryptionSetName = Utils.getValueFromIdByName(id, "diskEncryptionSets");
         if (diskEncryptionSetName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'diskEncryptionSets'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'diskEncryptionSets'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, diskEncryptionSetName, context);
     }
@@ -136,20 +118,13 @@ public final class DiskEncryptionSetsImpl implements DiskEncryptionSets {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String diskEncryptionSetName = Utils.getValueFromIdByName(id, "diskEncryptionSets");
         if (diskEncryptionSetName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'diskEncryptionSets'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'diskEncryptionSets'.", id)));
         }
         this.delete(resourceGroupName, diskEncryptionSetName, Context.NONE);
     }
@@ -157,20 +132,13 @@ public final class DiskEncryptionSetsImpl implements DiskEncryptionSets {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String diskEncryptionSetName = Utils.getValueFromIdByName(id, "diskEncryptionSets");
         if (diskEncryptionSetName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'diskEncryptionSets'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'diskEncryptionSets'.", id)));
         }
         this.delete(resourceGroupName, diskEncryptionSetName, context);
     }

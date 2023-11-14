@@ -9,7 +9,9 @@ import com.azure.resourcemanager.databoxedge.generated.fluent.models.MonitoringM
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Collection of metric configurations. */
+/**
+ * Collection of metric configurations.
+ */
 @Immutable
 public final class MonitoringMetricConfigurationList {
     /*
@@ -24,13 +26,15 @@ public final class MonitoringMetricConfigurationList {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
-    /** Creates an instance of MonitoringMetricConfigurationList class. */
+    /**
+     * Creates an instance of MonitoringMetricConfigurationList class.
+     */
     public MonitoringMetricConfigurationList() {
     }
 
     /**
      * Get the value property: The list of metric configurations.
-     *
+     * 
      * @return the value value.
      */
     public List<MonitoringMetricConfigurationInner> value() {
@@ -39,7 +43,7 @@ public final class MonitoringMetricConfigurationList {
 
     /**
      * Get the nextLink property: Link to the next set of results.
-     *
+     * 
      * @return the nextLink value.
      */
     public String nextLink() {
@@ -48,7 +52,7 @@ public final class MonitoringMetricConfigurationList {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

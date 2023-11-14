@@ -13,9 +13,10 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
  * The preview of Virtual Machine Cloud Management from the Azure supports deploying and managing VMs on your Azure
- * Stack Edge device from Azure Portal. For more information, refer to:
- * https://docs.microsoft.com/en-us/azure/databox-online/azure-stack-edge-gpu-virtual-machine-overview By using this
- * feature, you agree to the preview legal terms. See the
+ * Stack Edge device from Azure Portal.
+ * For more information, refer to:
+ * https://docs.microsoft.com/en-us/azure/databox-online/azure-stack-edge-gpu-virtual-machine-overview
+ * By using this feature, you agree to the preview legal terms. See the
  * https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/ for additional details.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "kind")
@@ -28,13 +29,15 @@ public final class CloudEdgeManagementRole extends RoleInner {
     @JsonProperty(value = "properties")
     private CloudEdgeManagementRoleProperties innerProperties;
 
-    /** Creates an instance of CloudEdgeManagementRole class. */
+    /**
+     * Creates an instance of CloudEdgeManagementRole class.
+     */
     public CloudEdgeManagementRole() {
     }
 
     /**
      * Get the innerProperties property: Properties specific to CloudEdgeManagementRole role.
-     *
+     * 
      * @return the innerProperties value.
      */
     private CloudEdgeManagementRoleProperties innerProperties() {
@@ -43,7 +46,7 @@ public final class CloudEdgeManagementRole extends RoleInner {
 
     /**
      * Get the localManagementStatus property: Local Edge Management Status.
-     *
+     * 
      * @return the localManagementStatus value.
      */
     public RoleStatus localManagementStatus() {
@@ -52,7 +55,7 @@ public final class CloudEdgeManagementRole extends RoleInner {
 
     /**
      * Get the edgeProfile property: Edge Profile of the resource.
-     *
+     * 
      * @return the edgeProfile value.
      */
     public EdgeProfile edgeProfile() {
@@ -61,7 +64,7 @@ public final class CloudEdgeManagementRole extends RoleInner {
 
     /**
      * Get the roleStatus property: Role status.
-     *
+     * 
      * @return the roleStatus value.
      */
     public RoleStatus roleStatus() {
@@ -70,7 +73,7 @@ public final class CloudEdgeManagementRole extends RoleInner {
 
     /**
      * Set the roleStatus property: Role status.
-     *
+     * 
      * @param roleStatus the roleStatus value to set.
      * @return the CloudEdgeManagementRole object itself.
      */
@@ -84,7 +87,7 @@ public final class CloudEdgeManagementRole extends RoleInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

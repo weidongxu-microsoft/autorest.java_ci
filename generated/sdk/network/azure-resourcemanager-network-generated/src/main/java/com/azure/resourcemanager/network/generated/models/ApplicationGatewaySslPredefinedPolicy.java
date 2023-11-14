@@ -7,32 +7,34 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewaySslPredefinedPolicyInner;
 import java.util.List;
 
-/** An immutable client-side representation of ApplicationGatewaySslPredefinedPolicy. */
+/**
+ * An immutable client-side representation of ApplicationGatewaySslPredefinedPolicy.
+ */
 public interface ApplicationGatewaySslPredefinedPolicy {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the name property: Name of the Ssl predefined policy.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the cipherSuites property: Ssl cipher suites to be enabled in the specified order for application gateway.
-     *
+     * 
      * @return the cipherSuites value.
      */
     List<ApplicationGatewaySslCipherSuite> cipherSuites();
 
     /**
      * Gets the minProtocolVersion property: Minimum version of Ssl protocol to be supported on application gateway.
-     *
+     * 
      * @return the minProtocolVersion value.
      */
     ApplicationGatewaySslProtocol minProtocolVersion();
@@ -40,7 +42,7 @@ public interface ApplicationGatewaySslPredefinedPolicy {
     /**
      * Gets the inner
      * com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewaySslPredefinedPolicyInner object.
-     *
+     * 
      * @return the inner object.
      */
     ApplicationGatewaySslPredefinedPolicyInner innerModel();

@@ -23,21 +23,17 @@ public final class CloudServiceOperatingSystemsImpl implements CloudServiceOpera
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    public CloudServiceOperatingSystemsImpl(
-        CloudServiceOperatingSystemsClient innerClient,
+    public CloudServiceOperatingSystemsImpl(CloudServiceOperatingSystemsClient innerClient,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
     public Response<OSVersion> getOSVersionWithResponse(String location, String osVersionName, Context context) {
-        Response<OSVersionInner> inner =
-            this.serviceClient().getOSVersionWithResponse(location, osVersionName, context);
+        Response<OSVersionInner> inner
+            = this.serviceClient().getOSVersionWithResponse(location, osVersionName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new OSVersionImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -66,10 +62,7 @@ public final class CloudServiceOperatingSystemsImpl implements CloudServiceOpera
     public Response<OSFamily> getOSFamilyWithResponse(String location, String osFamilyName, Context context) {
         Response<OSFamilyInner> inner = this.serviceClient().getOSFamilyWithResponse(location, osFamilyName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new OSFamilyImpl(inner.getValue(), this.manager()));
         } else {
             return null;

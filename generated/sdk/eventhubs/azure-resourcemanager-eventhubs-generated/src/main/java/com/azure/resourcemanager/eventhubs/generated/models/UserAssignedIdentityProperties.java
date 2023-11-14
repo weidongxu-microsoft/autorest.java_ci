@@ -7,7 +7,9 @@ package com.azure.resourcemanager.eventhubs.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The UserAssignedIdentityProperties model. */
+/**
+ * The UserAssignedIdentityProperties model.
+ */
 @Fluent
 public final class UserAssignedIdentityProperties {
     /*
@@ -16,13 +18,15 @@ public final class UserAssignedIdentityProperties {
     @JsonProperty(value = "userAssignedIdentity")
     private String userAssignedIdentity;
 
-    /** Creates an instance of UserAssignedIdentityProperties class. */
+    /**
+     * Creates an instance of UserAssignedIdentityProperties class.
+     */
     public UserAssignedIdentityProperties() {
     }
 
     /**
      * Get the userAssignedIdentity property: ARM ID of user Identity selected for encryption.
-     *
+     * 
      * @return the userAssignedIdentity value.
      */
     public String userAssignedIdentity() {
@@ -31,7 +35,7 @@ public final class UserAssignedIdentityProperties {
 
     /**
      * Set the userAssignedIdentity property: ARM ID of user Identity selected for encryption.
-     *
+     * 
      * @param userAssignedIdentity the userAssignedIdentity value to set.
      * @return the UserAssignedIdentityProperties object itself.
      */
@@ -42,7 +46,7 @@ public final class UserAssignedIdentityProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

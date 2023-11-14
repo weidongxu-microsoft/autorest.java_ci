@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.mediaservices.generated.models.EdgeUsageDataCollectionPolicy;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The EdgePolicies model. */
+/**
+ * The EdgePolicies model.
+ */
 @Fluent
 public final class EdgePoliciesInner {
     /*
@@ -17,13 +19,15 @@ public final class EdgePoliciesInner {
     @JsonProperty(value = "usageDataCollectionPolicy")
     private EdgeUsageDataCollectionPolicy usageDataCollectionPolicy;
 
-    /** Creates an instance of EdgePoliciesInner class. */
+    /**
+     * Creates an instance of EdgePoliciesInner class.
+     */
     public EdgePoliciesInner() {
     }
 
     /**
      * Get the usageDataCollectionPolicy property: The usageDataCollectionPolicy property.
-     *
+     * 
      * @return the usageDataCollectionPolicy value.
      */
     public EdgeUsageDataCollectionPolicy usageDataCollectionPolicy() {
@@ -32,7 +36,7 @@ public final class EdgePoliciesInner {
 
     /**
      * Set the usageDataCollectionPolicy property: The usageDataCollectionPolicy property.
-     *
+     * 
      * @param usageDataCollectionPolicy the usageDataCollectionPolicy value to set.
      * @return the EdgePoliciesInner object itself.
      */
@@ -43,7 +47,7 @@ public final class EdgePoliciesInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

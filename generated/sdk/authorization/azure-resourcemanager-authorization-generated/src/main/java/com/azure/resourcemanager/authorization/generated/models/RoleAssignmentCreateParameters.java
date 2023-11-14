@@ -9,7 +9,9 @@ import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.authorization.generated.fluent.models.RoleAssignmentProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Role assignment create parameters. */
+/**
+ * Role assignment create parameters.
+ */
 @Fluent
 public final class RoleAssignmentCreateParameters {
     /*
@@ -18,13 +20,15 @@ public final class RoleAssignmentCreateParameters {
     @JsonProperty(value = "properties", required = true)
     private RoleAssignmentProperties innerProperties = new RoleAssignmentProperties();
 
-    /** Creates an instance of RoleAssignmentCreateParameters class. */
+    /**
+     * Creates an instance of RoleAssignmentCreateParameters class.
+     */
     public RoleAssignmentCreateParameters() {
     }
 
     /**
      * Get the innerProperties property: Role assignment properties.
-     *
+     * 
      * @return the innerProperties value.
      */
     private RoleAssignmentProperties innerProperties() {
@@ -33,7 +37,7 @@ public final class RoleAssignmentCreateParameters {
 
     /**
      * Get the roleDefinitionId property: The role definition ID used in the role assignment.
-     *
+     * 
      * @return the roleDefinitionId value.
      */
     public String roleDefinitionId() {
@@ -42,7 +46,7 @@ public final class RoleAssignmentCreateParameters {
 
     /**
      * Set the roleDefinitionId property: The role definition ID used in the role assignment.
-     *
+     * 
      * @param roleDefinitionId the roleDefinitionId value to set.
      * @return the RoleAssignmentCreateParameters object itself.
      */
@@ -57,7 +61,7 @@ public final class RoleAssignmentCreateParameters {
     /**
      * Get the principalId property: The principal ID assigned to the role. This maps to the ID inside the Active
      * Directory. It can point to a user, service principal, or security group.
-     *
+     * 
      * @return the principalId value.
      */
     public String principalId() {
@@ -67,7 +71,7 @@ public final class RoleAssignmentCreateParameters {
     /**
      * Set the principalId property: The principal ID assigned to the role. This maps to the ID inside the Active
      * Directory. It can point to a user, service principal, or security group.
-     *
+     * 
      * @param principalId the principalId value to set.
      * @return the RoleAssignmentCreateParameters object itself.
      */
@@ -81,7 +85,7 @@ public final class RoleAssignmentCreateParameters {
 
     /**
      * Get the principalType property: The principal type of the assigned principal ID.
-     *
+     * 
      * @return the principalType value.
      */
     public PrincipalType principalType() {
@@ -90,7 +94,7 @@ public final class RoleAssignmentCreateParameters {
 
     /**
      * Set the principalType property: The principal type of the assigned principal ID.
-     *
+     * 
      * @param principalType the principalType value to set.
      * @return the RoleAssignmentCreateParameters object itself.
      */
@@ -104,7 +108,7 @@ public final class RoleAssignmentCreateParameters {
 
     /**
      * Get the canDelegate property: The delegation flag used for creating a role assignment.
-     *
+     * 
      * @return the canDelegate value.
      */
     public Boolean canDelegate() {
@@ -113,7 +117,7 @@ public final class RoleAssignmentCreateParameters {
 
     /**
      * Set the canDelegate property: The delegation flag used for creating a role assignment.
-     *
+     * 
      * @param canDelegate the canDelegate value to set.
      * @return the RoleAssignmentCreateParameters object itself.
      */
@@ -127,15 +131,13 @@ public final class RoleAssignmentCreateParameters {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (innerProperties() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property innerProperties in model RoleAssignmentCreateParameters"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property innerProperties in model RoleAssignmentCreateParameters"));
         } else {
             innerProperties().validate();
         }

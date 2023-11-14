@@ -14,8 +14,7 @@ public final class DeploymentValidateResultImpl implements DeploymentValidateRes
 
     private final com.azure.resourcemanager.resources.generated.ResourceManager serviceManager;
 
-    DeploymentValidateResultImpl(
-        DeploymentValidateResultInner innerObject,
+    DeploymentValidateResultImpl(DeploymentValidateResultInner innerObject,
         com.azure.resourcemanager.resources.generated.ResourceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

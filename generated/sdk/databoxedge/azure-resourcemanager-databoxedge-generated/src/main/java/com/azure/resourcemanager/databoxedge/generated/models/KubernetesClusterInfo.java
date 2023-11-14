@@ -9,7 +9,9 @@ import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Kubernetes cluster configuration. */
+/**
+ * Kubernetes cluster configuration.
+ */
 @Fluent
 public final class KubernetesClusterInfo {
     /*
@@ -30,13 +32,15 @@ public final class KubernetesClusterInfo {
     @JsonProperty(value = "version", required = true)
     private String version;
 
-    /** Creates an instance of KubernetesClusterInfo class. */
+    /**
+     * Creates an instance of KubernetesClusterInfo class.
+     */
     public KubernetesClusterInfo() {
     }
 
     /**
      * Get the etcdInfo property: Etcd configuration.
-     *
+     * 
      * @return the etcdInfo value.
      */
     public EtcdInfo etcdInfo() {
@@ -45,7 +49,7 @@ public final class KubernetesClusterInfo {
 
     /**
      * Get the nodes property: Kubernetes cluster nodes.
-     *
+     * 
      * @return the nodes value.
      */
     public List<NodeInfo> nodes() {
@@ -54,7 +58,7 @@ public final class KubernetesClusterInfo {
 
     /**
      * Get the version property: Kubernetes cluster version.
-     *
+     * 
      * @return the version value.
      */
     public String version() {
@@ -63,7 +67,7 @@ public final class KubernetesClusterInfo {
 
     /**
      * Set the version property: Kubernetes cluster version.
-     *
+     * 
      * @param version the version value to set.
      * @return the KubernetesClusterInfo object itself.
      */
@@ -74,7 +78,7 @@ public final class KubernetesClusterInfo {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
@@ -85,9 +89,8 @@ public final class KubernetesClusterInfo {
             nodes().forEach(e -> e.validate());
         }
         if (version() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property version in model KubernetesClusterInfo"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property version in model KubernetesClusterInfo"));
         }
     }
 

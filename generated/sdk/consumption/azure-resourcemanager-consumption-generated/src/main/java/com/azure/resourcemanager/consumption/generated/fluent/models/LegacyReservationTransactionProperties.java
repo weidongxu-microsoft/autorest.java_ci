@@ -10,7 +10,9 @@ import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
-/** The properties of a legacy reservation transaction. */
+/**
+ * The properties of a legacy reservation transaction.
+ */
 @Immutable
 public final class LegacyReservationTransactionProperties {
     /*
@@ -153,13 +155,15 @@ public final class LegacyReservationTransactionProperties {
     @JsonProperty(value = "overage", access = JsonProperty.Access.WRITE_ONLY)
     private BigDecimal overage;
 
-    /** Creates an instance of LegacyReservationTransactionProperties class. */
+    /**
+     * Creates an instance of LegacyReservationTransactionProperties class.
+     */
     public LegacyReservationTransactionProperties() {
     }
 
     /**
      * Get the eventDate property: The date of the transaction.
-     *
+     * 
      * @return the eventDate value.
      */
     public OffsetDateTime eventDate() {
@@ -170,7 +174,7 @@ public final class LegacyReservationTransactionProperties {
      * Get the reservationOrderId property: The reservation order ID is the identifier for a reservation purchase. Each
      * reservation order ID represents a single purchase transaction. A reservation order contains reservations. The
      * reservation order specifies the VM size and region for the reservations.
-     *
+     * 
      * @return the reservationOrderId value.
      */
     public String reservationOrderId() {
@@ -179,7 +183,7 @@ public final class LegacyReservationTransactionProperties {
 
     /**
      * Get the description property: The description of the transaction.
-     *
+     * 
      * @return the description value.
      */
     public String description() {
@@ -188,7 +192,7 @@ public final class LegacyReservationTransactionProperties {
 
     /**
      * Get the eventType property: The type of the transaction (Purchase, Cancel or Refund).
-     *
+     * 
      * @return the eventType value.
      */
     public String eventType() {
@@ -197,7 +201,7 @@ public final class LegacyReservationTransactionProperties {
 
     /**
      * Get the quantity property: The quantity of the transaction.
-     *
+     * 
      * @return the quantity value.
      */
     public BigDecimal quantity() {
@@ -206,7 +210,7 @@ public final class LegacyReservationTransactionProperties {
 
     /**
      * Get the amount property: The charge of the transaction.
-     *
+     * 
      * @return the amount value.
      */
     public BigDecimal amount() {
@@ -215,7 +219,7 @@ public final class LegacyReservationTransactionProperties {
 
     /**
      * Get the currency property: The ISO currency in which the transaction is charged, for example, USD.
-     *
+     * 
      * @return the currency value.
      */
     public String currency() {
@@ -224,7 +228,7 @@ public final class LegacyReservationTransactionProperties {
 
     /**
      * Get the reservationOrderName property: The name of the reservation order.
-     *
+     * 
      * @return the reservationOrderName value.
      */
     public String reservationOrderName() {
@@ -233,7 +237,7 @@ public final class LegacyReservationTransactionProperties {
 
     /**
      * Get the purchasingEnrollment property: The purchasing enrollment.
-     *
+     * 
      * @return the purchasingEnrollment value.
      */
     public String purchasingEnrollment() {
@@ -242,7 +246,7 @@ public final class LegacyReservationTransactionProperties {
 
     /**
      * Get the purchasingSubscriptionGuid property: The subscription guid that makes the transaction.
-     *
+     * 
      * @return the purchasingSubscriptionGuid value.
      */
     public UUID purchasingSubscriptionGuid() {
@@ -251,7 +255,7 @@ public final class LegacyReservationTransactionProperties {
 
     /**
      * Get the purchasingSubscriptionName property: The subscription name that makes the transaction.
-     *
+     * 
      * @return the purchasingSubscriptionName value.
      */
     public String purchasingSubscriptionName() {
@@ -261,7 +265,7 @@ public final class LegacyReservationTransactionProperties {
     /**
      * Get the armSkuName property: This is the ARM Sku name. It can be used to join with the serviceType field in
      * additional info in usage records.
-     *
+     * 
      * @return the armSkuName value.
      */
     public String armSkuName() {
@@ -270,7 +274,7 @@ public final class LegacyReservationTransactionProperties {
 
     /**
      * Get the term property: This is the term of the transaction.
-     *
+     * 
      * @return the term value.
      */
     public String term() {
@@ -279,7 +283,7 @@ public final class LegacyReservationTransactionProperties {
 
     /**
      * Get the region property: The region of the transaction.
-     *
+     * 
      * @return the region value.
      */
     public String region() {
@@ -288,7 +292,7 @@ public final class LegacyReservationTransactionProperties {
 
     /**
      * Get the accountName property: The name of the account that makes the transaction.
-     *
+     * 
      * @return the accountName value.
      */
     public String accountName() {
@@ -297,7 +301,7 @@ public final class LegacyReservationTransactionProperties {
 
     /**
      * Get the accountOwnerEmail property: The email of the account owner that makes the transaction.
-     *
+     * 
      * @return the accountOwnerEmail value.
      */
     public String accountOwnerEmail() {
@@ -306,7 +310,7 @@ public final class LegacyReservationTransactionProperties {
 
     /**
      * Get the departmentName property: The department name.
-     *
+     * 
      * @return the departmentName value.
      */
     public String departmentName() {
@@ -316,7 +320,7 @@ public final class LegacyReservationTransactionProperties {
     /**
      * Get the costCenter property: The cost center of this department if it is a department and a cost center is
      * provided.
-     *
+     * 
      * @return the costCenter value.
      */
     public String costCenter() {
@@ -325,7 +329,7 @@ public final class LegacyReservationTransactionProperties {
 
     /**
      * Get the currentEnrollment property: The current enrollment.
-     *
+     * 
      * @return the currentEnrollment value.
      */
     public String currentEnrollment() {
@@ -334,7 +338,7 @@ public final class LegacyReservationTransactionProperties {
 
     /**
      * Get the billingFrequency property: The billing frequency, which can be either one-time or recurring.
-     *
+     * 
      * @return the billingFrequency value.
      */
     public String billingFrequency() {
@@ -343,7 +347,7 @@ public final class LegacyReservationTransactionProperties {
 
     /**
      * Get the billingMonth property: The billing month(yyyyMMdd), on which the event initiated.
-     *
+     * 
      * @return the billingMonth value.
      */
     public Integer billingMonth() {
@@ -352,7 +356,7 @@ public final class LegacyReservationTransactionProperties {
 
     /**
      * Get the monetaryCommitment property: The monetary commitment amount at the enrollment scope.
-     *
+     * 
      * @return the monetaryCommitment value.
      */
     public BigDecimal monetaryCommitment() {
@@ -361,7 +365,7 @@ public final class LegacyReservationTransactionProperties {
 
     /**
      * Get the overage property: The overage amount at the enrollment scope.
-     *
+     * 
      * @return the overage value.
      */
     public BigDecimal overage() {
@@ -370,7 +374,7 @@ public final class LegacyReservationTransactionProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

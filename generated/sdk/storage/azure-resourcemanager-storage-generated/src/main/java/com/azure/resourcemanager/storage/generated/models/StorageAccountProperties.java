@@ -8,11 +8,13 @@ import com.azure.resourcemanager.storage.generated.fluent.models.StorageAccountP
 import java.time.OffsetDateTime;
 import java.util.List;
 
-/** An immutable client-side representation of StorageAccountProperties. */
+/**
+ * An immutable client-side representation of StorageAccountProperties.
+ */
 public interface StorageAccountProperties {
     /**
      * Gets the provisioningState property: Gets the status of the storage account at the time the operation was called.
-     *
+     * 
      * @return the provisioningState value.
      */
     ProvisioningState provisioningState();
@@ -20,14 +22,14 @@ public interface StorageAccountProperties {
     /**
      * Gets the primaryEndpoints property: Gets the URLs that are used to perform a retrieval of a public blob, queue,
      * or table object. Note that Standard_ZRS and Premium_LRS accounts only return the blob endpoint.
-     *
+     * 
      * @return the primaryEndpoints value.
      */
     Endpoints primaryEndpoints();
 
     /**
      * Gets the primaryLocation property: Gets the location of the primary data center for the storage account.
-     *
+     * 
      * @return the primaryLocation value.
      */
     String primaryLocation();
@@ -35,7 +37,7 @@ public interface StorageAccountProperties {
     /**
      * Gets the statusOfPrimary property: Gets the status indicating whether the primary location of the storage account
      * is available or unavailable.
-     *
+     * 
      * @return the statusOfPrimary value.
      */
     AccountStatus statusOfPrimary();
@@ -44,7 +46,7 @@ public interface StorageAccountProperties {
      * Gets the lastGeoFailoverTime property: Gets the timestamp of the most recent instance of a failover to the
      * secondary location. Only the most recent timestamp is retained. This element is not returned if there has never
      * been a failover instance. Only available if the accountType is Standard_GRS or Standard_RAGRS.
-     *
+     * 
      * @return the lastGeoFailoverTime value.
      */
     OffsetDateTime lastGeoFailoverTime();
@@ -52,7 +54,7 @@ public interface StorageAccountProperties {
     /**
      * Gets the secondaryLocation property: Gets the location of the geo-replicated secondary for the storage account.
      * Only available if the accountType is Standard_GRS or Standard_RAGRS.
-     *
+     * 
      * @return the secondaryLocation value.
      */
     String secondaryLocation();
@@ -60,42 +62,42 @@ public interface StorageAccountProperties {
     /**
      * Gets the statusOfSecondary property: Gets the status indicating whether the secondary location of the storage
      * account is available or unavailable. Only available if the SKU name is Standard_GRS or Standard_RAGRS.
-     *
+     * 
      * @return the statusOfSecondary value.
      */
     AccountStatus statusOfSecondary();
 
     /**
      * Gets the creationTime property: Gets the creation date and time of the storage account in UTC.
-     *
+     * 
      * @return the creationTime value.
      */
     OffsetDateTime creationTime();
 
     /**
      * Gets the customDomain property: Gets the custom domain the user assigned to this storage account.
-     *
+     * 
      * @return the customDomain value.
      */
     CustomDomain customDomain();
 
     /**
      * Gets the sasPolicy property: SasPolicy assigned to the storage account.
-     *
+     * 
      * @return the sasPolicy value.
      */
     SasPolicy sasPolicy();
 
     /**
      * Gets the keyPolicy property: KeyPolicy assigned to the storage account.
-     *
+     * 
      * @return the keyPolicy value.
      */
     KeyPolicy keyPolicy();
 
     /**
      * Gets the keyCreationTime property: Storage account keys creation time.
-     *
+     * 
      * @return the keyCreationTime value.
      */
     KeyCreationTime keyCreationTime();
@@ -104,14 +106,14 @@ public interface StorageAccountProperties {
      * Gets the secondaryEndpoints property: Gets the URLs that are used to perform a retrieval of a public blob, queue,
      * or table object from the secondary location of the storage account. Only available if the SKU name is
      * Standard_RAGRS.
-     *
+     * 
      * @return the secondaryEndpoints value.
      */
     Endpoints secondaryEndpoints();
 
     /**
      * Gets the encryption property: Encryption settings to be used for server-side encryption for the storage account.
-     *
+     * 
      * @return the encryption value.
      */
     Encryption encryption();
@@ -120,7 +122,7 @@ public interface StorageAccountProperties {
      * Gets the accessTier property: Required for storage accounts where kind = BlobStorage. The access tier is used for
      * billing. The 'Premium' access tier is the default value for premium block blobs storage account type and it
      * cannot be changed for the premium block blobs storage account type.
-     *
+     * 
      * @return the accessTier value.
      */
     AccessTier accessTier();
@@ -128,49 +130,49 @@ public interface StorageAccountProperties {
     /**
      * Gets the azureFilesIdentityBasedAuthentication property: Provides the identity based authentication settings for
      * Azure Files.
-     *
+     * 
      * @return the azureFilesIdentityBasedAuthentication value.
      */
     AzureFilesIdentityBasedAuthentication azureFilesIdentityBasedAuthentication();
 
     /**
      * Gets the enableHttpsTrafficOnly property: Allows https traffic only to storage service if sets to true.
-     *
+     * 
      * @return the enableHttpsTrafficOnly value.
      */
     Boolean enableHttpsTrafficOnly();
 
     /**
      * Gets the networkRuleSet property: Network rule set.
-     *
+     * 
      * @return the networkRuleSet value.
      */
     NetworkRuleSet networkRuleSet();
 
     /**
      * Gets the isSftpEnabled property: Enables Secure File Transfer Protocol, if set to true.
-     *
+     * 
      * @return the isSftpEnabled value.
      */
     Boolean isSftpEnabled();
 
     /**
      * Gets the isLocalUserEnabled property: Enables local users feature, if set to true.
-     *
+     * 
      * @return the isLocalUserEnabled value.
      */
     Boolean isLocalUserEnabled();
 
     /**
      * Gets the isHnsEnabled property: Account HierarchicalNamespace enabled if sets to true.
-     *
+     * 
      * @return the isHnsEnabled value.
      */
     Boolean isHnsEnabled();
 
     /**
      * Gets the geoReplicationStats property: Geo Replication Stats.
-     *
+     * 
      * @return the geoReplicationStats value.
      */
     GeoReplicationStats geoReplicationStats();
@@ -178,7 +180,7 @@ public interface StorageAccountProperties {
     /**
      * Gets the failoverInProgress property: If the failover is in progress, the value will be true, otherwise, it will
      * be null.
-     *
+     * 
      * @return the failoverInProgress value.
      */
     Boolean failoverInProgress();
@@ -186,7 +188,7 @@ public interface StorageAccountProperties {
     /**
      * Gets the largeFileSharesState property: Allow large file shares if sets to Enabled. It cannot be disabled once it
      * is enabled.
-     *
+     * 
      * @return the largeFileSharesState value.
      */
     LargeFileSharesState largeFileSharesState();
@@ -194,7 +196,7 @@ public interface StorageAccountProperties {
     /**
      * Gets the privateEndpointConnections property: List of private endpoint connection associated with the specified
      * storage account.
-     *
+     * 
      * @return the privateEndpointConnections value.
      */
     List<PrivateEndpointConnection> privateEndpointConnections();
@@ -202,14 +204,14 @@ public interface StorageAccountProperties {
     /**
      * Gets the routingPreference property: Maintains information about the network routing choice opted by the user for
      * data transfer.
-     *
+     * 
      * @return the routingPreference value.
      */
     RoutingPreference routingPreference();
 
     /**
      * Gets the blobRestoreStatus property: Blob restore status.
-     *
+     * 
      * @return the blobRestoreStatus value.
      */
     BlobRestoreStatus blobRestoreStatus();
@@ -217,7 +219,7 @@ public interface StorageAccountProperties {
     /**
      * Gets the allowBlobPublicAccess property: Allow or disallow public access to all blobs or containers in the
      * storage account. The default interpretation is false for this property.
-     *
+     * 
      * @return the allowBlobPublicAccess value.
      */
     Boolean allowBlobPublicAccess();
@@ -225,7 +227,7 @@ public interface StorageAccountProperties {
     /**
      * Gets the minimumTlsVersion property: Set the minimum TLS version to be permitted on requests to storage. The
      * default interpretation is TLS 1.0 for this property.
-     *
+     * 
      * @return the minimumTlsVersion value.
      */
     MinimumTlsVersion minimumTlsVersion();
@@ -234,14 +236,14 @@ public interface StorageAccountProperties {
      * Gets the allowSharedKeyAccess property: Indicates whether the storage account permits requests to be authorized
      * with the account access key via Shared Key. If false, then all requests, including shared access signatures, must
      * be authorized with Azure Active Directory (Azure AD). The default value is null, which is equivalent to true.
-     *
+     * 
      * @return the allowSharedKeyAccess value.
      */
     Boolean allowSharedKeyAccess();
 
     /**
      * Gets the enableNfsV3 property: NFS 3.0 protocol support enabled if set to true.
-     *
+     * 
      * @return the enableNfsV3 value.
      */
     Boolean enableNfsV3();
@@ -251,7 +253,7 @@ public interface StorageAccountProperties {
      * property to true for new or existing accounts only if object replication policies will involve storage accounts
      * in different AAD tenants. The default interpretation is false for new accounts to follow best security practices
      * by default.
-     *
+     * 
      * @return the allowCrossTenantReplication value.
      */
     Boolean allowCrossTenantReplication();
@@ -259,7 +261,7 @@ public interface StorageAccountProperties {
     /**
      * Gets the defaultToOAuthAuthentication property: A boolean flag which indicates whether the default authentication
      * is OAuth or not. The default interpretation is false for this property.
-     *
+     * 
      * @return the defaultToOAuthAuthentication value.
      */
     Boolean defaultToOAuthAuthentication();
@@ -267,7 +269,7 @@ public interface StorageAccountProperties {
     /**
      * Gets the publicNetworkAccess property: Allow or disallow public network access to Storage Account. Value is
      * optional but if passed in, must be 'Enabled' or 'Disabled'.
-     *
+     * 
      * @return the publicNetworkAccess value.
      */
     PublicNetworkAccess publicNetworkAccess();
@@ -276,7 +278,7 @@ public interface StorageAccountProperties {
      * Gets the immutableStorageWithVersioning property: The property is immutable and can only be set to true at the
      * account creation time. When set to true, it enables object level immutability for all the containers in the
      * account by default.
-     *
+     * 
      * @return the immutableStorageWithVersioning value.
      */
     ImmutableStorageAccount immutableStorageWithVersioning();
@@ -284,7 +286,7 @@ public interface StorageAccountProperties {
     /**
      * Gets the allowedCopyScope property: Restrict copy to and from Storage Accounts within an AAD tenant or with
      * Private Links to the same VNet.
-     *
+     * 
      * @return the allowedCopyScope value.
      */
     AllowedCopyScope allowedCopyScope();
@@ -292,7 +294,7 @@ public interface StorageAccountProperties {
     /**
      * Gets the storageAccountSkuConversionStatus property: This property is readOnly and is set by server during
      * asynchronous storage account sku conversion operations.
-     *
+     * 
      * @return the storageAccountSkuConversionStatus value.
      */
     StorageAccountSkuConversionStatus storageAccountSkuConversionStatus();
@@ -301,7 +303,7 @@ public interface StorageAccountProperties {
      * Gets the dnsEndpointType property: Allows you to specify the type of endpoint. Set this to AzureDNSZone to create
      * a large number of accounts in a single subscription, which creates accounts in an Azure DNS Zone and the endpoint
      * URL will have an alphanumeric DNS Zone identifier.
-     *
+     * 
      * @return the dnsEndpointType value.
      */
     DnsEndpointType dnsEndpointType();
@@ -309,7 +311,7 @@ public interface StorageAccountProperties {
     /**
      * Gets the isSkuConversionBlocked property: This property will be set to true or false on an event of ongoing
      * migration. Default value is null.
-     *
+     * 
      * @return the isSkuConversionBlocked value.
      */
     Boolean isSkuConversionBlocked();
@@ -317,14 +319,14 @@ public interface StorageAccountProperties {
     /**
      * Gets the accountMigrationInProgress property: If customer initiated account migration is in progress, the value
      * will be true else it will be null.
-     *
+     * 
      * @return the accountMigrationInProgress value.
      */
     Boolean accountMigrationInProgress();
 
     /**
      * Gets the inner com.azure.resourcemanager.storage.generated.fluent.models.StorageAccountPropertiesInner object.
-     *
+     * 
      * @return the inner object.
      */
     StorageAccountPropertiesInner innerModel();

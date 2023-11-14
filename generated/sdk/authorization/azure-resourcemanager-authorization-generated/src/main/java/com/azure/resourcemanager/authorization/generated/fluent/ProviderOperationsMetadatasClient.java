@@ -11,11 +11,13 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.authorization.generated.fluent.models.ProviderOperationsMetadataInner;
 
-/** An instance of this class provides access to all the operations defined in ProviderOperationsMetadatasClient. */
+/**
+ * An instance of this class provides access to all the operations defined in ProviderOperationsMetadatasClient.
+ */
 public interface ProviderOperationsMetadatasClient {
     /**
      * Gets provider operations metadata for the specified resource provider.
-     *
+     * 
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param expand Specifies whether to expand the values.
      * @param context The context to associate with this operation.
@@ -25,12 +27,12 @@ public interface ProviderOperationsMetadatasClient {
      * @return provider operations metadata for the specified resource provider along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<ProviderOperationsMetadataInner> getWithResponse(
-        String resourceProviderNamespace, String expand, Context context);
+    Response<ProviderOperationsMetadataInner> getWithResponse(String resourceProviderNamespace, String expand,
+        Context context);
 
     /**
      * Gets provider operations metadata for the specified resource provider.
-     *
+     * 
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -42,7 +44,7 @@ public interface ProviderOperationsMetadatasClient {
 
     /**
      * Gets provider operations metadata for all resource providers.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return provider operations metadata for all resource providers as paginated response with {@link PagedIterable}.
@@ -52,7 +54,7 @@ public interface ProviderOperationsMetadatasClient {
 
     /**
      * Gets provider operations metadata for all resource providers.
-     *
+     * 
      * @param expand Specifies whether to expand the values.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

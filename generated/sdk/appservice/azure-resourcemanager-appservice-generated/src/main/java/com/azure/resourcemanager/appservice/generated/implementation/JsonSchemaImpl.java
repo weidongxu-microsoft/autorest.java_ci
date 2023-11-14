@@ -12,8 +12,8 @@ public final class JsonSchemaImpl implements JsonSchema {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    JsonSchemaImpl(
-        JsonSchemaInner innerObject, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
+    JsonSchemaImpl(JsonSchemaInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

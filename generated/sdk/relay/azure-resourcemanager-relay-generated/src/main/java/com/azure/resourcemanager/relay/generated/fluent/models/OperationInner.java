@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.relay.generated.models.OperationDisplay;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** A Relay REST API operation. */
+/**
+ * A Relay REST API operation.
+ */
 @Fluent
 public final class OperationInner {
     /*
@@ -41,13 +43,15 @@ public final class OperationInner {
     @JsonProperty(value = "properties")
     private Object properties;
 
-    /** Creates an instance of OperationInner class. */
+    /**
+     * Creates an instance of OperationInner class.
+     */
     public OperationInner() {
     }
 
     /**
      * Get the name property: Operation name: {provider}/{resource}/{operation}.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -56,7 +60,7 @@ public final class OperationInner {
 
     /**
      * Get the isDataAction property: Indicates whether the operation is a data action.
-     *
+     * 
      * @return the isDataAction value.
      */
     public Boolean isDataAction() {
@@ -65,7 +69,7 @@ public final class OperationInner {
 
     /**
      * Get the display property: Display of the operation.
-     *
+     * 
      * @return the display value.
      */
     public OperationDisplay display() {
@@ -74,7 +78,7 @@ public final class OperationInner {
 
     /**
      * Get the origin property: Origin of the operation.
-     *
+     * 
      * @return the origin value.
      */
     public String origin() {
@@ -83,7 +87,7 @@ public final class OperationInner {
 
     /**
      * Get the properties property: Properties of the operation.
-     *
+     * 
      * @return the properties value.
      */
     public Object properties() {
@@ -92,7 +96,7 @@ public final class OperationInner {
 
     /**
      * Set the properties property: Properties of the operation.
-     *
+     * 
      * @param properties the properties value to set.
      * @return the OperationInner object itself.
      */
@@ -103,7 +107,7 @@ public final class OperationInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -9,7 +9,9 @@ import com.azure.resourcemanager.keyvault.generated.fluent.models.DeletedVaultIn
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** List of vaults. */
+/**
+ * List of vaults.
+ */
 @Fluent
 public final class DeletedVaultListResult {
     /*
@@ -24,13 +26,15 @@ public final class DeletedVaultListResult {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
-    /** Creates an instance of DeletedVaultListResult class. */
+    /**
+     * Creates an instance of DeletedVaultListResult class.
+     */
     public DeletedVaultListResult() {
     }
 
     /**
      * Get the value property: The list of deleted vaults.
-     *
+     * 
      * @return the value value.
      */
     public List<DeletedVaultInner> value() {
@@ -39,7 +43,7 @@ public final class DeletedVaultListResult {
 
     /**
      * Set the value property: The list of deleted vaults.
-     *
+     * 
      * @param value the value value to set.
      * @return the DeletedVaultListResult object itself.
      */
@@ -50,7 +54,7 @@ public final class DeletedVaultListResult {
 
     /**
      * Get the nextLink property: The URL to get the next set of deleted vaults.
-     *
+     * 
      * @return the nextLink value.
      */
     public String nextLink() {
@@ -59,7 +63,7 @@ public final class DeletedVaultListResult {
 
     /**
      * Set the nextLink property: The URL to get the next set of deleted vaults.
-     *
+     * 
      * @param nextLink the nextLink value to set.
      * @return the DeletedVaultListResult object itself.
      */
@@ -70,7 +74,7 @@ public final class DeletedVaultListResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

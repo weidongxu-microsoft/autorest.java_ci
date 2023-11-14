@@ -7,7 +7,9 @@ package com.azure.resourcemanager.eventhubs.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Subscription for inbound rule. */
+/**
+ * Subscription for inbound rule.
+ */
 @Fluent
 public final class NspAccessRulePropertiesSubscriptionsItem {
     /*
@@ -16,13 +18,15 @@ public final class NspAccessRulePropertiesSubscriptionsItem {
     @JsonProperty(value = "id")
     private String id;
 
-    /** Creates an instance of NspAccessRulePropertiesSubscriptionsItem class. */
+    /**
+     * Creates an instance of NspAccessRulePropertiesSubscriptionsItem class.
+     */
     public NspAccessRulePropertiesSubscriptionsItem() {
     }
 
     /**
      * Get the id property: Fully qualified identifier of subscription.
-     *
+     * 
      * @return the id value.
      */
     public String id() {
@@ -31,7 +35,7 @@ public final class NspAccessRulePropertiesSubscriptionsItem {
 
     /**
      * Set the id property: Fully qualified identifier of subscription.
-     *
+     * 
      * @param id the id value to set.
      * @return the NspAccessRulePropertiesSubscriptionsItem object itself.
      */
@@ -42,7 +46,7 @@ public final class NspAccessRulePropertiesSubscriptionsItem {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

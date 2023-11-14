@@ -8,7 +8,9 @@ import com.azure.core.annotation.Immutable;
 import com.azure.core.management.exception.ManagementError;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Error details. */
+/**
+ * Error details.
+ */
 @Immutable
 public final class ErrorDetails extends ManagementError {
     /*
@@ -17,22 +19,24 @@ public final class ErrorDetails extends ManagementError {
     @JsonProperty(value = "httpStatusCode", access = JsonProperty.Access.WRITE_ONLY)
     private String httpStatusCode;
 
-    /** Creates an instance of ErrorDetails class. */
+    /**
+     * Creates an instance of ErrorDetails class.
+     */
     public ErrorDetails() {
     }
 
     /**
      * Get the httpStatusCode property: The HTTP status code.
-     *
+     * 
      * @return the httpStatusCode value.
      */
-    public String httpStatusCode() {
+    public String getHttpStatusCode() {
         return this.httpStatusCode;
     }
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

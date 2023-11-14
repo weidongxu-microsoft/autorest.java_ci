@@ -43,8 +43,8 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 /**
- * Entry point to PolicyManager. To manage and control access to your resources, you can define customized policies and
- * assign them at a scope.
+ * Entry point to PolicyManager.
+ * To manage and control access to your resources, you can define customized policies and assign them at a scope.
  */
 public final class PolicyManager {
     private DataPolicyManifests dataPolicyManifests;
@@ -62,18 +62,14 @@ public final class PolicyManager {
     private PolicyManager(HttpPipeline httpPipeline, AzureProfile profile, Duration defaultPollInterval) {
         Objects.requireNonNull(httpPipeline, "'httpPipeline' cannot be null.");
         Objects.requireNonNull(profile, "'profile' cannot be null.");
-        this.clientObject =
-            new PolicyClientBuilder()
-                .pipeline(httpPipeline)
-                .endpoint(profile.getEnvironment().getResourceManagerEndpoint())
-                .subscriptionId(profile.getSubscriptionId())
-                .defaultPollInterval(defaultPollInterval)
-                .buildClient();
+        this.clientObject = new PolicyClientBuilder().pipeline(httpPipeline)
+            .endpoint(profile.getEnvironment().getResourceManagerEndpoint()).subscriptionId(profile.getSubscriptionId())
+            .defaultPollInterval(defaultPollInterval).buildClient();
     }
 
     /**
      * Creates an instance of Policy service API entry point.
-     *
+     * 
      * @param credential the credential to use.
      * @param profile the Azure profile for client.
      * @return the Policy service API instance.
@@ -86,7 +82,7 @@ public final class PolicyManager {
 
     /**
      * Creates an instance of Policy service API entry point.
-     *
+     * 
      * @param httpPipeline the {@link HttpPipeline} configured with Azure authentication credential.
      * @param profile the Azure profile for client.
      * @return the Policy service API instance.
@@ -99,14 +95,16 @@ public final class PolicyManager {
 
     /**
      * Gets a Configurable instance that can be used to create PolicyManager with optional configuration.
-     *
+     * 
      * @return the Configurable instance allowing configurations.
      */
     public static Configurable configure() {
         return new PolicyManager.Configurable();
     }
 
-    /** The Configurable allowing configurations to be set. */
+    /**
+     * The Configurable allowing configurations to be set.
+     */
     public static final class Configurable {
         private static final ClientLogger LOGGER = new ClientLogger(Configurable.class);
 
@@ -178,8 +176,8 @@ public final class PolicyManager {
 
         /**
          * Sets the retry options for the HTTP pipeline retry policy.
-         *
-         * <p>This setting has no effect, if retry policy is set via {@link #withRetryPolicy(RetryPolicy)}.
+         * <p>
+         * This setting has no effect, if retry policy is set via {@link #withRetryPolicy(RetryPolicy)}.
          *
          * @param retryOptions the retry options for the HTTP pipeline retry policy.
          * @return the configurable object itself.
@@ -196,8 +194,8 @@ public final class PolicyManager {
          * @return the configurable object itself.
          */
         public Configurable withDefaultPollInterval(Duration defaultPollInterval) {
-            this.defaultPollInterval =
-                Objects.requireNonNull(defaultPollInterval, "'defaultPollInterval' cannot be null.");
+            this.defaultPollInterval
+                = Objects.requireNonNull(defaultPollInterval, "'defaultPollInterval' cannot be null.");
             if (this.defaultPollInterval.isNegative()) {
                 throw LOGGER
                     .logExceptionAsError(new IllegalArgumentException("'defaultPollInterval' cannot be negative"));
@@ -217,21 +215,12 @@ public final class PolicyManager {
             Objects.requireNonNull(profile, "'profile' cannot be null.");
 
             StringBuilder userAgentBuilder = new StringBuilder();
-            userAgentBuilder
-                .append("azsdk-java")
-                .append("-")
-                .append("com.azure.resourcemanager.policy.generated")
-                .append("/")
-                .append("1.0.0-beta.1");
+            userAgentBuilder.append("azsdk-java").append("-").append("com.azure.resourcemanager.policy.generated")
+                .append("/").append("1.0.0-beta.1");
             if (!Configuration.getGlobalConfiguration().get("AZURE_TELEMETRY_DISABLED", false)) {
-                userAgentBuilder
-                    .append(" (")
-                    .append(Configuration.getGlobalConfiguration().get("java.version"))
-                    .append("; ")
-                    .append(Configuration.getGlobalConfiguration().get("os.name"))
-                    .append("; ")
-                    .append(Configuration.getGlobalConfiguration().get("os.version"))
-                    .append("; auto-generated)");
+                userAgentBuilder.append(" (").append(Configuration.getGlobalConfiguration().get("java.version"))
+                    .append("; ").append(Configuration.getGlobalConfiguration().get("os.name")).append("; ")
+                    .append(Configuration.getGlobalConfiguration().get("os.version")).append("; auto-generated)");
             } else {
                 userAgentBuilder.append(" (auto-generated)");
             }
@@ -250,38 +239,25 @@ public final class PolicyManager {
             policies.add(new UserAgentPolicy(userAgentBuilder.toString()));
             policies.add(new AddHeadersFromContextPolicy());
             policies.add(new RequestIdPolicy());
-            policies
-                .addAll(
-                    this
-                        .policies
-                        .stream()
-                        .filter(p -> p.getPipelinePosition() == HttpPipelinePosition.PER_CALL)
-                        .collect(Collectors.toList()));
+            policies.addAll(this.policies.stream().filter(p -> p.getPipelinePosition() == HttpPipelinePosition.PER_CALL)
+                .collect(Collectors.toList()));
             HttpPolicyProviders.addBeforeRetryPolicies(policies);
             policies.add(retryPolicy);
             policies.add(new AddDatePolicy());
             policies.add(new ArmChallengeAuthenticationPolicy(credential, scopes.toArray(new String[0])));
-            policies
-                .addAll(
-                    this
-                        .policies
-                        .stream()
-                        .filter(p -> p.getPipelinePosition() == HttpPipelinePosition.PER_RETRY)
-                        .collect(Collectors.toList()));
+            policies.addAll(this.policies.stream()
+                .filter(p -> p.getPipelinePosition() == HttpPipelinePosition.PER_RETRY).collect(Collectors.toList()));
             HttpPolicyProviders.addAfterRetryPolicies(policies);
             policies.add(new HttpLoggingPolicy(httpLogOptions));
-            HttpPipeline httpPipeline =
-                new HttpPipelineBuilder()
-                    .httpClient(httpClient)
-                    .policies(policies.toArray(new HttpPipelinePolicy[0]))
-                    .build();
+            HttpPipeline httpPipeline = new HttpPipelineBuilder().httpClient(httpClient)
+                .policies(policies.toArray(new HttpPipelinePolicy[0])).build();
             return new PolicyManager(httpPipeline, profile, defaultPollInterval);
         }
     }
 
     /**
      * Gets the resource collection API of DataPolicyManifests.
-     *
+     * 
      * @return Resource collection API of DataPolicyManifests.
      */
     public DataPolicyManifests dataPolicyManifests() {
@@ -293,7 +269,7 @@ public final class PolicyManager {
 
     /**
      * Gets the resource collection API of PolicyAssignments. It manages PolicyAssignment.
-     *
+     * 
      * @return Resource collection API of PolicyAssignments.
      */
     public PolicyAssignments policyAssignments() {
@@ -305,7 +281,7 @@ public final class PolicyManager {
 
     /**
      * Gets the resource collection API of PolicyDefinitions. It manages PolicyDefinition.
-     *
+     * 
      * @return Resource collection API of PolicyDefinitions.
      */
     public PolicyDefinitions policyDefinitions() {
@@ -317,7 +293,7 @@ public final class PolicyManager {
 
     /**
      * Gets the resource collection API of PolicySetDefinitions. It manages PolicySetDefinition.
-     *
+     * 
      * @return Resource collection API of PolicySetDefinitions.
      */
     public PolicySetDefinitions policySetDefinitions() {
@@ -329,7 +305,7 @@ public final class PolicyManager {
 
     /**
      * Gets the resource collection API of PolicyExemptions. It manages PolicyExemption.
-     *
+     * 
      * @return Resource collection API of PolicyExemptions.
      */
     public PolicyExemptions policyExemptions() {
@@ -342,7 +318,7 @@ public final class PolicyManager {
     /**
      * Gets wrapped service client PolicyClient providing direct access to the underlying auto-generated API
      * implementation, based on Azure REST API.
-     *
+     * 
      * @return Wrapped service client PolicyClient.
      */
     public PolicyClient serviceClient() {

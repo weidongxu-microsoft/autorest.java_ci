@@ -10,7 +10,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.Duration;
 import java.time.OffsetDateTime;
 
-/** The PlayReady license. */
+/**
+ * The PlayReady license.
+ */
 @Fluent
 public final class ContentKeyPolicyPlayReadyLicense {
     /*
@@ -79,13 +81,15 @@ public final class ContentKeyPolicyPlayReadyLicense {
     @JsonProperty(value = "contentType", required = true)
     private ContentKeyPolicyPlayReadyContentType contentType;
 
-    /** Creates an instance of ContentKeyPolicyPlayReadyLicense class. */
+    /**
+     * Creates an instance of ContentKeyPolicyPlayReadyLicense class.
+     */
     public ContentKeyPolicyPlayReadyLicense() {
     }
 
     /**
      * Get the allowTestDevices property: A flag indicating whether test devices can use the license.
-     *
+     * 
      * @return the allowTestDevices value.
      */
     public boolean allowTestDevices() {
@@ -94,7 +98,7 @@ public final class ContentKeyPolicyPlayReadyLicense {
 
     /**
      * Set the allowTestDevices property: A flag indicating whether test devices can use the license.
-     *
+     * 
      * @param allowTestDevices the allowTestDevices value to set.
      * @return the ContentKeyPolicyPlayReadyLicense object itself.
      */
@@ -105,7 +109,7 @@ public final class ContentKeyPolicyPlayReadyLicense {
 
     /**
      * Get the securityLevel property: The security level.
-     *
+     * 
      * @return the securityLevel value.
      */
     public SecurityLevel securityLevel() {
@@ -114,7 +118,7 @@ public final class ContentKeyPolicyPlayReadyLicense {
 
     /**
      * Set the securityLevel property: The security level.
-     *
+     * 
      * @param securityLevel the securityLevel value to set.
      * @return the ContentKeyPolicyPlayReadyLicense object itself.
      */
@@ -125,7 +129,7 @@ public final class ContentKeyPolicyPlayReadyLicense {
 
     /**
      * Get the beginDate property: The begin date of license.
-     *
+     * 
      * @return the beginDate value.
      */
     public OffsetDateTime beginDate() {
@@ -134,7 +138,7 @@ public final class ContentKeyPolicyPlayReadyLicense {
 
     /**
      * Set the beginDate property: The begin date of license.
-     *
+     * 
      * @param beginDate the beginDate value to set.
      * @return the ContentKeyPolicyPlayReadyLicense object itself.
      */
@@ -145,7 +149,7 @@ public final class ContentKeyPolicyPlayReadyLicense {
 
     /**
      * Get the expirationDate property: The expiration date of license.
-     *
+     * 
      * @return the expirationDate value.
      */
     public OffsetDateTime expirationDate() {
@@ -154,7 +158,7 @@ public final class ContentKeyPolicyPlayReadyLicense {
 
     /**
      * Set the expirationDate property: The expiration date of license.
-     *
+     * 
      * @param expirationDate the expirationDate value to set.
      * @return the ContentKeyPolicyPlayReadyLicense object itself.
      */
@@ -165,7 +169,7 @@ public final class ContentKeyPolicyPlayReadyLicense {
 
     /**
      * Get the relativeBeginDate property: The relative begin date of license.
-     *
+     * 
      * @return the relativeBeginDate value.
      */
     public Duration relativeBeginDate() {
@@ -174,7 +178,7 @@ public final class ContentKeyPolicyPlayReadyLicense {
 
     /**
      * Set the relativeBeginDate property: The relative begin date of license.
-     *
+     * 
      * @param relativeBeginDate the relativeBeginDate value to set.
      * @return the ContentKeyPolicyPlayReadyLicense object itself.
      */
@@ -185,7 +189,7 @@ public final class ContentKeyPolicyPlayReadyLicense {
 
     /**
      * Get the relativeExpirationDate property: The relative expiration date of license.
-     *
+     * 
      * @return the relativeExpirationDate value.
      */
     public Duration relativeExpirationDate() {
@@ -194,7 +198,7 @@ public final class ContentKeyPolicyPlayReadyLicense {
 
     /**
      * Set the relativeExpirationDate property: The relative expiration date of license.
-     *
+     * 
      * @param relativeExpirationDate the relativeExpirationDate value to set.
      * @return the ContentKeyPolicyPlayReadyLicense object itself.
      */
@@ -205,7 +209,7 @@ public final class ContentKeyPolicyPlayReadyLicense {
 
     /**
      * Get the gracePeriod property: The grace period of license.
-     *
+     * 
      * @return the gracePeriod value.
      */
     public Duration gracePeriod() {
@@ -214,7 +218,7 @@ public final class ContentKeyPolicyPlayReadyLicense {
 
     /**
      * Set the gracePeriod property: The grace period of license.
-     *
+     * 
      * @param gracePeriod the gracePeriod value to set.
      * @return the ContentKeyPolicyPlayReadyLicense object itself.
      */
@@ -225,7 +229,7 @@ public final class ContentKeyPolicyPlayReadyLicense {
 
     /**
      * Get the playRight property: The license PlayRight.
-     *
+     * 
      * @return the playRight value.
      */
     public ContentKeyPolicyPlayReadyPlayRight playRight() {
@@ -234,7 +238,7 @@ public final class ContentKeyPolicyPlayReadyLicense {
 
     /**
      * Set the playRight property: The license PlayRight.
-     *
+     * 
      * @param playRight the playRight value to set.
      * @return the ContentKeyPolicyPlayReadyLicense object itself.
      */
@@ -245,7 +249,7 @@ public final class ContentKeyPolicyPlayReadyLicense {
 
     /**
      * Get the licenseType property: The license type.
-     *
+     * 
      * @return the licenseType value.
      */
     public ContentKeyPolicyPlayReadyLicenseType licenseType() {
@@ -254,7 +258,7 @@ public final class ContentKeyPolicyPlayReadyLicense {
 
     /**
      * Set the licenseType property: The license type.
-     *
+     * 
      * @param licenseType the licenseType value to set.
      * @return the ContentKeyPolicyPlayReadyLicense object itself.
      */
@@ -265,7 +269,7 @@ public final class ContentKeyPolicyPlayReadyLicense {
 
     /**
      * Get the contentKeyLocation property: The content key location.
-     *
+     * 
      * @return the contentKeyLocation value.
      */
     public ContentKeyPolicyPlayReadyContentKeyLocation contentKeyLocation() {
@@ -274,19 +278,19 @@ public final class ContentKeyPolicyPlayReadyLicense {
 
     /**
      * Set the contentKeyLocation property: The content key location.
-     *
+     * 
      * @param contentKeyLocation the contentKeyLocation value to set.
      * @return the ContentKeyPolicyPlayReadyLicense object itself.
      */
-    public ContentKeyPolicyPlayReadyLicense withContentKeyLocation(
-        ContentKeyPolicyPlayReadyContentKeyLocation contentKeyLocation) {
+    public ContentKeyPolicyPlayReadyLicense
+        withContentKeyLocation(ContentKeyPolicyPlayReadyContentKeyLocation contentKeyLocation) {
         this.contentKeyLocation = contentKeyLocation;
         return this;
     }
 
     /**
      * Get the contentType property: The PlayReady content type.
-     *
+     * 
      * @return the contentType value.
      */
     public ContentKeyPolicyPlayReadyContentType contentType() {
@@ -295,7 +299,7 @@ public final class ContentKeyPolicyPlayReadyLicense {
 
     /**
      * Set the contentType property: The PlayReady content type.
-     *
+     * 
      * @param contentType the contentType value to set.
      * @return the ContentKeyPolicyPlayReadyLicense object itself.
      */
@@ -306,7 +310,7 @@ public final class ContentKeyPolicyPlayReadyLicense {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
@@ -314,24 +318,18 @@ public final class ContentKeyPolicyPlayReadyLicense {
             playRight().validate();
         }
         if (licenseType() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property licenseType in model ContentKeyPolicyPlayReadyLicense"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property licenseType in model ContentKeyPolicyPlayReadyLicense"));
         }
         if (contentKeyLocation() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property contentKeyLocation in model ContentKeyPolicyPlayReadyLicense"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property contentKeyLocation in model ContentKeyPolicyPlayReadyLicense"));
         } else {
             contentKeyLocation().validate();
         }
         if (contentType() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property contentType in model ContentKeyPolicyPlayReadyLicense"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property contentType in model ContentKeyPolicyPlayReadyLicense"));
         }
     }
 

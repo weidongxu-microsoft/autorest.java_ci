@@ -7,11 +7,13 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.resourcemanager.network.generated.fluent.models.PrivateEndpointPropertiesInner;
 import java.util.List;
 
-/** An immutable client-side representation of PrivateEndpointProperties. */
+/**
+ * An immutable client-side representation of PrivateEndpointProperties.
+ */
 public interface PrivateEndpointProperties {
     /**
      * Gets the subnet property: The ID of the subnet from which the private IP will be allocated.
-     *
+     * 
      * @return the subnet value.
      */
     Subnet subnet();
@@ -19,14 +21,14 @@ public interface PrivateEndpointProperties {
     /**
      * Gets the networkInterfaces property: An array of references to the network interfaces created for this private
      * endpoint.
-     *
+     * 
      * @return the networkInterfaces value.
      */
     List<NetworkInterface> networkInterfaces();
 
     /**
      * Gets the provisioningState property: The provisioning state of the private endpoint resource.
-     *
+     * 
      * @return the provisioningState value.
      */
     ProvisioningState provisioningState();
@@ -34,7 +36,7 @@ public interface PrivateEndpointProperties {
     /**
      * Gets the privateLinkServiceConnections property: A grouping of information about the connection to the remote
      * resource.
-     *
+     * 
      * @return the privateLinkServiceConnections value.
      */
     List<PrivateLinkServiceConnection> privateLinkServiceConnections();
@@ -42,14 +44,14 @@ public interface PrivateEndpointProperties {
     /**
      * Gets the manualPrivateLinkServiceConnections property: A grouping of information about the connection to the
      * remote resource. Used when the network admin does not have access to approve connections to the remote resource.
-     *
+     * 
      * @return the manualPrivateLinkServiceConnections value.
      */
     List<PrivateLinkServiceConnection> manualPrivateLinkServiceConnections();
 
     /**
      * Gets the customDnsConfigs property: An array of custom dns configurations.
-     *
+     * 
      * @return the customDnsConfigs value.
      */
     List<CustomDnsConfigPropertiesFormat> customDnsConfigs();
@@ -57,7 +59,7 @@ public interface PrivateEndpointProperties {
     /**
      * Gets the applicationSecurityGroups property: Application security groups in which the private endpoint IP
      * configuration is included.
-     *
+     * 
      * @return the applicationSecurityGroups value.
      */
     List<ApplicationSecurityGroup> applicationSecurityGroups();
@@ -65,7 +67,7 @@ public interface PrivateEndpointProperties {
     /**
      * Gets the ipConfigurations property: A list of IP configurations of the private endpoint. This will be used to map
      * to the First Party Service's endpoints.
-     *
+     * 
      * @return the ipConfigurations value.
      */
     List<PrivateEndpointIpConfiguration> ipConfigurations();
@@ -73,14 +75,14 @@ public interface PrivateEndpointProperties {
     /**
      * Gets the customNetworkInterfaceName property: The custom name of the network interface attached to the private
      * endpoint.
-     *
+     * 
      * @return the customNetworkInterfaceName value.
      */
     String customNetworkInterfaceName();
 
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.PrivateEndpointPropertiesInner object.
-     *
+     * 
      * @return the inner object.
      */
     PrivateEndpointPropertiesInner innerModel();

@@ -21,8 +21,8 @@ public final class PolicyDefinitionsImpl implements PolicyDefinitions {
 
     private final com.azure.resourcemanager.policy.generated.PolicyManager serviceManager;
 
-    public PolicyDefinitionsImpl(
-        PolicyDefinitionsClient innerClient, com.azure.resourcemanager.policy.generated.PolicyManager serviceManager) {
+    public PolicyDefinitionsImpl(PolicyDefinitionsClient innerClient,
+        com.azure.resourcemanager.policy.generated.PolicyManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -38,10 +38,7 @@ public final class PolicyDefinitionsImpl implements PolicyDefinitions {
     public Response<PolicyDefinition> getWithResponse(String policyDefinitionName, Context context) {
         Response<PolicyDefinitionInner> inner = this.serviceClient().getWithResponse(policyDefinitionName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new PolicyDefinitionImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -58,13 +55,10 @@ public final class PolicyDefinitionsImpl implements PolicyDefinitions {
     }
 
     public Response<PolicyDefinition> getBuiltInWithResponse(String policyDefinitionName, Context context) {
-        Response<PolicyDefinitionInner> inner =
-            this.serviceClient().getBuiltInWithResponse(policyDefinitionName, context);
+        Response<PolicyDefinitionInner> inner
+            = this.serviceClient().getBuiltInWithResponse(policyDefinitionName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new PolicyDefinitionImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -80,28 +74,22 @@ public final class PolicyDefinitionsImpl implements PolicyDefinitions {
         }
     }
 
-    public Response<PolicyDefinition> createOrUpdateAtManagementGroupWithResponse(
-        String policyDefinitionName, String managementGroupId, PolicyDefinitionInner parameters, Context context) {
-        Response<PolicyDefinitionInner> inner =
-            this
-                .serviceClient()
-                .createOrUpdateAtManagementGroupWithResponse(
-                    policyDefinitionName, managementGroupId, parameters, context);
+    public Response<PolicyDefinition> createOrUpdateAtManagementGroupWithResponse(String policyDefinitionName,
+        String managementGroupId, PolicyDefinitionInner parameters, Context context) {
+        Response<PolicyDefinitionInner> inner = this.serviceClient()
+            .createOrUpdateAtManagementGroupWithResponse(policyDefinitionName, managementGroupId, parameters, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new PolicyDefinitionImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public PolicyDefinition createOrUpdateAtManagementGroup(
-        String policyDefinitionName, String managementGroupId, PolicyDefinitionInner parameters) {
-        PolicyDefinitionInner inner =
-            this.serviceClient().createOrUpdateAtManagementGroup(policyDefinitionName, managementGroupId, parameters);
+    public PolicyDefinition createOrUpdateAtManagementGroup(String policyDefinitionName, String managementGroupId,
+        PolicyDefinitionInner parameters) {
+        PolicyDefinitionInner inner
+            = this.serviceClient().createOrUpdateAtManagementGroup(policyDefinitionName, managementGroupId, parameters);
         if (inner != null) {
             return new PolicyDefinitionImpl(inner, this.manager());
         } else {
@@ -109,26 +97,22 @@ public final class PolicyDefinitionsImpl implements PolicyDefinitions {
         }
     }
 
-    public Response<Void> deleteAtManagementGroupWithResponse(
-        String policyDefinitionName, String managementGroupId, Context context) {
-        return this
-            .serviceClient()
-            .deleteAtManagementGroupWithResponse(policyDefinitionName, managementGroupId, context);
+    public Response<Void> deleteAtManagementGroupWithResponse(String policyDefinitionName, String managementGroupId,
+        Context context) {
+        return this.serviceClient().deleteAtManagementGroupWithResponse(policyDefinitionName, managementGroupId,
+            context);
     }
 
     public void deleteAtManagementGroup(String policyDefinitionName, String managementGroupId) {
         this.serviceClient().deleteAtManagementGroup(policyDefinitionName, managementGroupId);
     }
 
-    public Response<PolicyDefinition> getAtManagementGroupWithResponse(
-        String policyDefinitionName, String managementGroupId, Context context) {
-        Response<PolicyDefinitionInner> inner =
-            this.serviceClient().getAtManagementGroupWithResponse(policyDefinitionName, managementGroupId, context);
+    public Response<PolicyDefinition> getAtManagementGroupWithResponse(String policyDefinitionName,
+        String managementGroupId, Context context) {
+        Response<PolicyDefinitionInner> inner
+            = this.serviceClient().getAtManagementGroupWithResponse(policyDefinitionName, managementGroupId, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new PolicyDefinitionImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -136,8 +120,8 @@ public final class PolicyDefinitionsImpl implements PolicyDefinitions {
     }
 
     public PolicyDefinition getAtManagementGroup(String policyDefinitionName, String managementGroupId) {
-        PolicyDefinitionInner inner =
-            this.serviceClient().getAtManagementGroup(policyDefinitionName, managementGroupId);
+        PolicyDefinitionInner inner
+            = this.serviceClient().getAtManagementGroup(policyDefinitionName, managementGroupId);
         if (inner != null) {
             return new PolicyDefinitionImpl(inner, this.manager());
         } else {
@@ -170,22 +154,18 @@ public final class PolicyDefinitionsImpl implements PolicyDefinitions {
         return Utils.mapPage(inner, inner1 -> new PolicyDefinitionImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<PolicyDefinition> listByManagementGroup(
-        String managementGroupId, String filter, Integer top, Context context) {
-        PagedIterable<PolicyDefinitionInner> inner =
-            this.serviceClient().listByManagementGroup(managementGroupId, filter, top, context);
+    public PagedIterable<PolicyDefinition> listByManagementGroup(String managementGroupId, String filter, Integer top,
+        Context context) {
+        PagedIterable<PolicyDefinitionInner> inner
+            = this.serviceClient().listByManagementGroup(managementGroupId, filter, top, context);
         return Utils.mapPage(inner, inner1 -> new PolicyDefinitionImpl(inner1, this.manager()));
     }
 
     public PolicyDefinition getById(String id) {
         String policyDefinitionName = Utils.getValueFromIdByName(id, "policyDefinitions");
         if (policyDefinitionName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'policyDefinitions'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'policyDefinitions'.", id)));
         }
         return this.getWithResponse(policyDefinitionName, Context.NONE).getValue();
     }
@@ -193,12 +173,8 @@ public final class PolicyDefinitionsImpl implements PolicyDefinitions {
     public Response<PolicyDefinition> getByIdWithResponse(String id, Context context) {
         String policyDefinitionName = Utils.getValueFromIdByName(id, "policyDefinitions");
         if (policyDefinitionName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'policyDefinitions'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'policyDefinitions'.", id)));
         }
         return this.getWithResponse(policyDefinitionName, context);
     }
@@ -206,12 +182,8 @@ public final class PolicyDefinitionsImpl implements PolicyDefinitions {
     public void deleteById(String id) {
         String policyDefinitionName = Utils.getValueFromIdByName(id, "policyDefinitions");
         if (policyDefinitionName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'policyDefinitions'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'policyDefinitions'.", id)));
         }
         this.deleteWithResponse(policyDefinitionName, Context.NONE);
     }
@@ -219,12 +191,8 @@ public final class PolicyDefinitionsImpl implements PolicyDefinitions {
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
         String policyDefinitionName = Utils.getValueFromIdByName(id, "policyDefinitions");
         if (policyDefinitionName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'policyDefinitions'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'policyDefinitions'.", id)));
         }
         return this.deleteWithResponse(policyDefinitionName, context);
     }

@@ -20,22 +20,18 @@ public final class PrivateLinkResourcesImpl implements PrivateLinkResources {
 
     private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
-    public PrivateLinkResourcesImpl(
-        PrivateLinkResourcesClient innerClient,
+    public PrivateLinkResourcesImpl(PrivateLinkResourcesClient innerClient,
         com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<PrivateLinkResourceListResult> listByStorageAccountWithResponse(
-        String resourceGroupName, String accountName, Context context) {
-        Response<PrivateLinkResourceListResultInner> inner =
-            this.serviceClient().listByStorageAccountWithResponse(resourceGroupName, accountName, context);
+    public Response<PrivateLinkResourceListResult> listByStorageAccountWithResponse(String resourceGroupName,
+        String accountName, Context context) {
+        Response<PrivateLinkResourceListResultInner> inner
+            = this.serviceClient().listByStorageAccountWithResponse(resourceGroupName, accountName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new PrivateLinkResourceListResultImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -43,8 +39,8 @@ public final class PrivateLinkResourcesImpl implements PrivateLinkResources {
     }
 
     public PrivateLinkResourceListResult listByStorageAccount(String resourceGroupName, String accountName) {
-        PrivateLinkResourceListResultInner inner =
-            this.serviceClient().listByStorageAccount(resourceGroupName, accountName);
+        PrivateLinkResourceListResultInner inner
+            = this.serviceClient().listByStorageAccount(resourceGroupName, accountName);
         if (inner != null) {
             return new PrivateLinkResourceListResultImpl(inner, this.manager());
         } else {

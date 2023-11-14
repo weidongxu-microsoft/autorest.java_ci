@@ -9,7 +9,9 @@ import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Autoscale profile. */
+/**
+ * Autoscale profile.
+ */
 @Fluent
 public final class AutoscaleProfile {
     /*
@@ -43,13 +45,15 @@ public final class AutoscaleProfile {
     @JsonProperty(value = "recurrence")
     private Recurrence recurrence;
 
-    /** Creates an instance of AutoscaleProfile class. */
+    /**
+     * Creates an instance of AutoscaleProfile class.
+     */
     public AutoscaleProfile() {
     }
 
     /**
      * Get the name property: the name of the profile.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -58,7 +62,7 @@ public final class AutoscaleProfile {
 
     /**
      * Set the name property: the name of the profile.
-     *
+     * 
      * @param name the name value to set.
      * @return the AutoscaleProfile object itself.
      */
@@ -69,7 +73,7 @@ public final class AutoscaleProfile {
 
     /**
      * Get the capacity property: the number of instances that can be used during this profile.
-     *
+     * 
      * @return the capacity value.
      */
     public ScaleCapacity capacity() {
@@ -78,7 +82,7 @@ public final class AutoscaleProfile {
 
     /**
      * Set the capacity property: the number of instances that can be used during this profile.
-     *
+     * 
      * @param capacity the capacity value to set.
      * @return the AutoscaleProfile object itself.
      */
@@ -90,7 +94,7 @@ public final class AutoscaleProfile {
     /**
      * Get the rules property: the collection of rules that provide the triggers and parameters for the scaling action.
      * A maximum of 10 rules can be specified.
-     *
+     * 
      * @return the rules value.
      */
     public List<ScaleRule> rules() {
@@ -100,7 +104,7 @@ public final class AutoscaleProfile {
     /**
      * Set the rules property: the collection of rules that provide the triggers and parameters for the scaling action.
      * A maximum of 10 rules can be specified.
-     *
+     * 
      * @param rules the rules value to set.
      * @return the AutoscaleProfile object itself.
      */
@@ -112,7 +116,7 @@ public final class AutoscaleProfile {
     /**
      * Get the fixedDate property: the specific date-time for the profile. This element is not used if the Recurrence
      * element is used.
-     *
+     * 
      * @return the fixedDate value.
      */
     public TimeWindow fixedDate() {
@@ -122,7 +126,7 @@ public final class AutoscaleProfile {
     /**
      * Set the fixedDate property: the specific date-time for the profile. This element is not used if the Recurrence
      * element is used.
-     *
+     * 
      * @param fixedDate the fixedDate value to set.
      * @return the AutoscaleProfile object itself.
      */
@@ -134,7 +138,7 @@ public final class AutoscaleProfile {
     /**
      * Get the recurrence property: the repeating times at which this profile begins. This element is not used if the
      * FixedDate element is used.
-     *
+     * 
      * @return the recurrence value.
      */
     public Recurrence recurrence() {
@@ -144,7 +148,7 @@ public final class AutoscaleProfile {
     /**
      * Set the recurrence property: the repeating times at which this profile begins. This element is not used if the
      * FixedDate element is used.
-     *
+     * 
      * @param recurrence the recurrence value to set.
      * @return the AutoscaleProfile object itself.
      */
@@ -155,26 +159,23 @@ public final class AutoscaleProfile {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property name in model AutoscaleProfile"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property name in model AutoscaleProfile"));
         }
         if (capacity() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property capacity in model AutoscaleProfile"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property capacity in model AutoscaleProfile"));
         } else {
             capacity().validate();
         }
         if (rules() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property rules in model AutoscaleProfile"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property rules in model AutoscaleProfile"));
         } else {
             rules().forEach(e -> e.validate());
         }

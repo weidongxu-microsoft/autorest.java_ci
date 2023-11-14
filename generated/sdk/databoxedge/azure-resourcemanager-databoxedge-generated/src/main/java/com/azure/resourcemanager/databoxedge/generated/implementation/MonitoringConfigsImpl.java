@@ -21,36 +21,32 @@ public final class MonitoringConfigsImpl implements MonitoringConfigs {
 
     private final com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager;
 
-    public MonitoringConfigsImpl(
-        MonitoringConfigsClient innerClient,
+    public MonitoringConfigsImpl(MonitoringConfigsClient innerClient,
         com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public PagedIterable<MonitoringMetricConfiguration> list(
-        String deviceName, String roleName, String resourceGroupName) {
-        PagedIterable<MonitoringMetricConfigurationInner> inner =
-            this.serviceClient().list(deviceName, roleName, resourceGroupName);
+    public PagedIterable<MonitoringMetricConfiguration> list(String deviceName, String roleName,
+        String resourceGroupName) {
+        PagedIterable<MonitoringMetricConfigurationInner> inner
+            = this.serviceClient().list(deviceName, roleName, resourceGroupName);
         return Utils.mapPage(inner, inner1 -> new MonitoringMetricConfigurationImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<MonitoringMetricConfiguration> list(
-        String deviceName, String roleName, String resourceGroupName, Context context) {
-        PagedIterable<MonitoringMetricConfigurationInner> inner =
-            this.serviceClient().list(deviceName, roleName, resourceGroupName, context);
+    public PagedIterable<MonitoringMetricConfiguration> list(String deviceName, String roleName,
+        String resourceGroupName, Context context) {
+        PagedIterable<MonitoringMetricConfigurationInner> inner
+            = this.serviceClient().list(deviceName, roleName, resourceGroupName, context);
         return Utils.mapPage(inner, inner1 -> new MonitoringMetricConfigurationImpl(inner1, this.manager()));
     }
 
-    public Response<MonitoringMetricConfiguration> getWithResponse(
-        String deviceName, String roleName, String resourceGroupName, Context context) {
-        Response<MonitoringMetricConfigurationInner> inner =
-            this.serviceClient().getWithResponse(deviceName, roleName, resourceGroupName, context);
+    public Response<MonitoringMetricConfiguration> getWithResponse(String deviceName, String roleName,
+        String resourceGroupName, Context context) {
+        Response<MonitoringMetricConfigurationInner> inner
+            = this.serviceClient().getWithResponse(deviceName, roleName, resourceGroupName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new MonitoringMetricConfigurationImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -66,13 +62,10 @@ public final class MonitoringConfigsImpl implements MonitoringConfigs {
         }
     }
 
-    public MonitoringMetricConfiguration createOrUpdate(
-        String deviceName,
-        String roleName,
-        String resourceGroupName,
+    public MonitoringMetricConfiguration createOrUpdate(String deviceName, String roleName, String resourceGroupName,
         MonitoringMetricConfigurationInner monitoringMetricConfiguration) {
-        MonitoringMetricConfigurationInner inner =
-            this.serviceClient().createOrUpdate(deviceName, roleName, resourceGroupName, monitoringMetricConfiguration);
+        MonitoringMetricConfigurationInner inner = this.serviceClient().createOrUpdate(deviceName, roleName,
+            resourceGroupName, monitoringMetricConfiguration);
         if (inner != null) {
             return new MonitoringMetricConfigurationImpl(inner, this.manager());
         } else {
@@ -80,16 +73,10 @@ public final class MonitoringConfigsImpl implements MonitoringConfigs {
         }
     }
 
-    public MonitoringMetricConfiguration createOrUpdate(
-        String deviceName,
-        String roleName,
-        String resourceGroupName,
-        MonitoringMetricConfigurationInner monitoringMetricConfiguration,
-        Context context) {
-        MonitoringMetricConfigurationInner inner =
-            this
-                .serviceClient()
-                .createOrUpdate(deviceName, roleName, resourceGroupName, monitoringMetricConfiguration, context);
+    public MonitoringMetricConfiguration createOrUpdate(String deviceName, String roleName, String resourceGroupName,
+        MonitoringMetricConfigurationInner monitoringMetricConfiguration, Context context) {
+        MonitoringMetricConfigurationInner inner = this.serviceClient().createOrUpdate(deviceName, roleName,
+            resourceGroupName, monitoringMetricConfiguration, context);
         if (inner != null) {
             return new MonitoringMetricConfigurationImpl(inner, this.manager());
         } else {

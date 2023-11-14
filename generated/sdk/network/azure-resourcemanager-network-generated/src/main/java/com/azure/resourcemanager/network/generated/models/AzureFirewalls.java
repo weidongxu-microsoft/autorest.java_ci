@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of AzureFirewalls. */
+/**
+ * Resource collection API of AzureFirewalls.
+ */
 public interface AzureFirewalls {
     /**
      * Deletes the specified Azure Firewall.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param azureFirewallName The name of the Azure Firewall.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -23,7 +25,7 @@ public interface AzureFirewalls {
 
     /**
      * Deletes the specified Azure Firewall.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param azureFirewallName The name of the Azure Firewall.
      * @param context The context to associate with this operation.
@@ -35,7 +37,7 @@ public interface AzureFirewalls {
 
     /**
      * Gets the specified Azure Firewall.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param azureFirewallName The name of the Azure Firewall.
      * @param context The context to associate with this operation.
@@ -44,12 +46,12 @@ public interface AzureFirewalls {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified Azure Firewall along with {@link Response}.
      */
-    Response<AzureFirewall> getByResourceGroupWithResponse(
-        String resourceGroupName, String azureFirewallName, Context context);
+    Response<AzureFirewall> getByResourceGroupWithResponse(String resourceGroupName, String azureFirewallName,
+        Context context);
 
     /**
      * Gets the specified Azure Firewall.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param azureFirewallName The name of the Azure Firewall.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -61,7 +63,7 @@ public interface AzureFirewalls {
 
     /**
      * Lists all Azure Firewalls in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -72,7 +74,7 @@ public interface AzureFirewalls {
 
     /**
      * Lists all Azure Firewalls in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -84,7 +86,7 @@ public interface AzureFirewalls {
 
     /**
      * Gets all the Azure Firewalls in a subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all the Azure Firewalls in a subscription as paginated response with {@link PagedIterable}.
@@ -93,7 +95,7 @@ public interface AzureFirewalls {
 
     /**
      * Gets all the Azure Firewalls in a subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -104,7 +106,7 @@ public interface AzureFirewalls {
 
     /**
      * Retrieves a list of all IP prefixes that azure firewall has learned to not SNAT.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param azureFirewallName The name of the azure firewall.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -116,7 +118,7 @@ public interface AzureFirewalls {
 
     /**
      * Retrieves a list of all IP prefixes that azure firewall has learned to not SNAT.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param azureFirewallName The name of the azure firewall.
      * @param context The context to associate with this operation.
@@ -129,7 +131,7 @@ public interface AzureFirewalls {
 
     /**
      * Runs a packet capture on AzureFirewall.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param azureFirewallName The name of the Azure Firewall.
      * @param parameters Parameters supplied to run packet capture on azure firewall.
@@ -141,7 +143,7 @@ public interface AzureFirewalls {
 
     /**
      * Runs a packet capture on AzureFirewall.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param azureFirewallName The name of the Azure Firewall.
      * @param parameters Parameters supplied to run packet capture on azure firewall.
@@ -150,15 +152,12 @@ public interface AzureFirewalls {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void packetCapture(
-        String resourceGroupName,
-        String azureFirewallName,
-        FirewallPacketCaptureParameters parameters,
+    void packetCapture(String resourceGroupName, String azureFirewallName, FirewallPacketCaptureParameters parameters,
         Context context);
 
     /**
      * Gets the specified Azure Firewall.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -169,7 +168,7 @@ public interface AzureFirewalls {
 
     /**
      * Gets the specified Azure Firewall.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -181,7 +180,7 @@ public interface AzureFirewalls {
 
     /**
      * Deletes the specified Azure Firewall.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -191,7 +190,7 @@ public interface AzureFirewalls {
 
     /**
      * Deletes the specified Azure Firewall.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -202,7 +201,7 @@ public interface AzureFirewalls {
 
     /**
      * Begins definition for a new AzureFirewall resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new AzureFirewall definition.
      */

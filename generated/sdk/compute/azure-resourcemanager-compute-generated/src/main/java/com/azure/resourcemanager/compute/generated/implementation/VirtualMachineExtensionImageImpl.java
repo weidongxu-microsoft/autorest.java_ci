@@ -14,8 +14,7 @@ public final class VirtualMachineExtensionImageImpl implements VirtualMachineExt
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    VirtualMachineExtensionImageImpl(
-        VirtualMachineExtensionImageInner innerObject,
+    VirtualMachineExtensionImageImpl(VirtualMachineExtensionImageInner innerObject,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

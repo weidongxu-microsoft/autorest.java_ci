@@ -14,8 +14,7 @@ public final class MSDeployStatusImpl implements MSDeployStatus {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    MSDeployStatusImpl(
-        MSDeployStatusInner innerObject,
+    MSDeployStatusImpl(MSDeployStatusInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

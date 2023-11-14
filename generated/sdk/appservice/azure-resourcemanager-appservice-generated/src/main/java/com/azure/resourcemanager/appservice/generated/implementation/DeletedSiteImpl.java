@@ -12,8 +12,8 @@ public final class DeletedSiteImpl implements DeletedSite {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    DeletedSiteImpl(
-        DeletedSiteInner innerObject, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
+    DeletedSiteImpl(DeletedSiteInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

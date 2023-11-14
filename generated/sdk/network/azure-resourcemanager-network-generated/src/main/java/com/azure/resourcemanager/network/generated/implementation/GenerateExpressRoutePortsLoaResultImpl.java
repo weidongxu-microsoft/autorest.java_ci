@@ -12,8 +12,7 @@ public final class GenerateExpressRoutePortsLoaResultImpl implements GenerateExp
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    GenerateExpressRoutePortsLoaResultImpl(
-        GenerateExpressRoutePortsLoaResultInner innerObject,
+    GenerateExpressRoutePortsLoaResultImpl(GenerateExpressRoutePortsLoaResultInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Parameter supplied to check Namespace name availability operation. */
+/**
+ * Parameter supplied to check Namespace name availability operation.
+ */
 @Fluent
 public final class CheckNameAvailabilityParameter {
     /*
@@ -17,13 +19,15 @@ public final class CheckNameAvailabilityParameter {
     @JsonProperty(value = "name", required = true)
     private String name;
 
-    /** Creates an instance of CheckNameAvailabilityParameter class. */
+    /**
+     * Creates an instance of CheckNameAvailabilityParameter class.
+     */
     public CheckNameAvailabilityParameter() {
     }
 
     /**
      * Get the name property: Name to check the namespace name availability.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -32,7 +36,7 @@ public final class CheckNameAvailabilityParameter {
 
     /**
      * Set the name property: Name to check the namespace name availability.
-     *
+     * 
      * @param name the name value to set.
      * @return the CheckNameAvailabilityParameter object itself.
      */
@@ -43,15 +47,13 @@ public final class CheckNameAvailabilityParameter {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property name in model CheckNameAvailabilityParameter"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property name in model CheckNameAvailabilityParameter"));
         }
     }
 

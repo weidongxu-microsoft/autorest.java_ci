@@ -15,8 +15,7 @@ public final class StorageAccountListKeysResultImpl implements StorageAccountLis
 
     private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
-    StorageAccountListKeysResultImpl(
-        StorageAccountListKeysResultInner innerObject,
+    StorageAccountListKeysResultImpl(StorageAccountListKeysResultInner innerObject,
         com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

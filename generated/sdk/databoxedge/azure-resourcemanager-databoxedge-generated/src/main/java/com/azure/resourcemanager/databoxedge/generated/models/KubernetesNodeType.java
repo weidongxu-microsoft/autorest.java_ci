@@ -8,20 +8,28 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Node type - Master/Worker. */
+/**
+ * Node type - Master/Worker.
+ */
 public final class KubernetesNodeType extends ExpandableStringEnum<KubernetesNodeType> {
-    /** Static value Invalid for KubernetesNodeType. */
+    /**
+     * Static value Invalid for KubernetesNodeType.
+     */
     public static final KubernetesNodeType INVALID = fromString("Invalid");
 
-    /** Static value Master for KubernetesNodeType. */
+    /**
+     * Static value Master for KubernetesNodeType.
+     */
     public static final KubernetesNodeType MASTER = fromString("Master");
 
-    /** Static value Worker for KubernetesNodeType. */
+    /**
+     * Static value Worker for KubernetesNodeType.
+     */
     public static final KubernetesNodeType WORKER = fromString("Worker");
 
     /**
      * Creates a new instance of KubernetesNodeType value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -30,7 +38,7 @@ public final class KubernetesNodeType extends ExpandableStringEnum<KubernetesNod
 
     /**
      * Creates or finds a KubernetesNodeType from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding KubernetesNodeType.
      */
@@ -41,7 +49,7 @@ public final class KubernetesNodeType extends ExpandableStringEnum<KubernetesNod
 
     /**
      * Gets known KubernetesNodeType values.
-     *
+     * 
      * @return known KubernetesNodeType values.
      */
     public static Collection<KubernetesNodeType> values() {

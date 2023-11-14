@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of VirtualApplianceSites. */
+/**
+ * Resource collection API of VirtualApplianceSites.
+ */
 public interface VirtualApplianceSites {
     /**
      * Deletes the specified site from a Virtual Appliance.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of the Network Virtual Appliance.
      * @param siteName The name of the site.
@@ -24,7 +26,7 @@ public interface VirtualApplianceSites {
 
     /**
      * Deletes the specified site from a Virtual Appliance.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of the Network Virtual Appliance.
      * @param siteName The name of the site.
@@ -37,7 +39,7 @@ public interface VirtualApplianceSites {
 
     /**
      * Gets the specified Virtual Appliance Site.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of the Network Virtual Appliance.
      * @param siteName The name of the site.
@@ -47,12 +49,12 @@ public interface VirtualApplianceSites {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified Virtual Appliance Site along with {@link Response}.
      */
-    Response<VirtualApplianceSite> getWithResponse(
-        String resourceGroupName, String networkVirtualApplianceName, String siteName, Context context);
+    Response<VirtualApplianceSite> getWithResponse(String resourceGroupName, String networkVirtualApplianceName,
+        String siteName, Context context);
 
     /**
      * Gets the specified Virtual Appliance Site.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of the Network Virtual Appliance.
      * @param siteName The name of the site.
@@ -65,35 +67,35 @@ public interface VirtualApplianceSites {
 
     /**
      * Lists all Network Virtual Appliance Sites in a Network Virtual Appliance resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of the Network Virtual Appliance.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListNetworkVirtualApplianceSites API service call as paginated response with {@link
-     *     PagedIterable}.
+     * @return response for ListNetworkVirtualApplianceSites API service call as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<VirtualApplianceSite> list(String resourceGroupName, String networkVirtualApplianceName);
 
     /**
      * Lists all Network Virtual Appliance Sites in a Network Virtual Appliance resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of the Network Virtual Appliance.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListNetworkVirtualApplianceSites API service call as paginated response with {@link
-     *     PagedIterable}.
+     * @return response for ListNetworkVirtualApplianceSites API service call as paginated response with
+     * {@link PagedIterable}.
      */
-    PagedIterable<VirtualApplianceSite> list(
-        String resourceGroupName, String networkVirtualApplianceName, Context context);
+    PagedIterable<VirtualApplianceSite> list(String resourceGroupName, String networkVirtualApplianceName,
+        Context context);
 
     /**
      * Gets the specified Virtual Appliance Site.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -104,7 +106,7 @@ public interface VirtualApplianceSites {
 
     /**
      * Gets the specified Virtual Appliance Site.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -116,7 +118,7 @@ public interface VirtualApplianceSites {
 
     /**
      * Deletes the specified site from a Virtual Appliance.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -126,7 +128,7 @@ public interface VirtualApplianceSites {
 
     /**
      * Deletes the specified site from a Virtual Appliance.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -137,7 +139,7 @@ public interface VirtualApplianceSites {
 
     /**
      * Begins definition for a new VirtualApplianceSite resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new VirtualApplianceSite definition.
      */

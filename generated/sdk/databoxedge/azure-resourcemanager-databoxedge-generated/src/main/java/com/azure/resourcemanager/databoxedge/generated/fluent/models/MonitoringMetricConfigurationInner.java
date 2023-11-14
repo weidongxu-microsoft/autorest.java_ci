@@ -12,7 +12,9 @@ import com.azure.resourcemanager.databoxedge.generated.models.MetricConfiguratio
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The metric setting details for the role. */
+/**
+ * The metric setting details for the role.
+ */
 @Fluent
 public final class MonitoringMetricConfigurationInner extends ArmBaseModel {
     /*
@@ -27,13 +29,15 @@ public final class MonitoringMetricConfigurationInner extends ArmBaseModel {
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
-    /** Creates an instance of MonitoringMetricConfigurationInner class. */
+    /**
+     * Creates an instance of MonitoringMetricConfigurationInner class.
+     */
     public MonitoringMetricConfigurationInner() {
     }
 
     /**
      * Get the innerProperties property: The metric setting properties.
-     *
+     * 
      * @return the innerProperties value.
      */
     private MonitoringMetricConfigurationProperties innerProperties() {
@@ -42,7 +46,7 @@ public final class MonitoringMetricConfigurationInner extends ArmBaseModel {
 
     /**
      * Get the systemData property: Metadata pertaining to creation and last modification of MonitoringConfiguration.
-     *
+     * 
      * @return the systemData value.
      */
     public SystemData systemData() {
@@ -51,7 +55,7 @@ public final class MonitoringMetricConfigurationInner extends ArmBaseModel {
 
     /**
      * Get the metricConfigurations property: The metrics configuration details.
-     *
+     * 
      * @return the metricConfigurations value.
      */
     public List<MetricConfiguration> metricConfigurations() {
@@ -60,7 +64,7 @@ public final class MonitoringMetricConfigurationInner extends ArmBaseModel {
 
     /**
      * Set the metricConfigurations property: The metrics configuration details.
-     *
+     * 
      * @param metricConfigurations the metricConfigurations value to set.
      * @return the MonitoringMetricConfigurationInner object itself.
      */
@@ -74,17 +78,15 @@ public final class MonitoringMetricConfigurationInner extends ArmBaseModel {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override
     public void validate() {
         super.validate();
         if (innerProperties() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property innerProperties in model MonitoringMetricConfigurationInner"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property innerProperties in model MonitoringMetricConfigurationInner"));
         } else {
             innerProperties().validate();
         }

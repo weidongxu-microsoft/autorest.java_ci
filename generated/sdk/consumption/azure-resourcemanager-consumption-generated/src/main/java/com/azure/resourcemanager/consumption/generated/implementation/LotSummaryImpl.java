@@ -9,7 +9,7 @@ import com.azure.resourcemanager.consumption.generated.models.Amount;
 import com.azure.resourcemanager.consumption.generated.models.AmountWithExchangeRate;
 import com.azure.resourcemanager.consumption.generated.models.LotSource;
 import com.azure.resourcemanager.consumption.generated.models.LotSummary;
-import com.azure.resourcemanager.consumption.generated.models.OrgType;
+import com.azure.resourcemanager.consumption.generated.models.OrganizationType;
 import com.azure.resourcemanager.consumption.generated.models.Reseller;
 import com.azure.resourcemanager.consumption.generated.models.Status;
 import java.time.OffsetDateTime;
@@ -19,8 +19,7 @@ public final class LotSummaryImpl implements LotSummary {
 
     private final com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager;
 
-    LotSummaryImpl(
-        LotSummaryInner innerObject,
+    LotSummaryImpl(LotSummaryInner innerObject,
         com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -102,8 +101,8 @@ public final class LotSummaryImpl implements LotSummary {
         return this.innerModel().etagPropertiesEtag();
     }
 
-    public OrgType orgType() {
-        return this.innerModel().orgType();
+    public OrganizationType organizationType() {
+        return this.innerModel().organizationType();
     }
 
     public Amount usedAmount() {

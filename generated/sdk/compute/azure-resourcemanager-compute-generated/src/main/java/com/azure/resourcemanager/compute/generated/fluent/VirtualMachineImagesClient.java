@@ -13,11 +13,13 @@ import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineI
 import com.azure.resourcemanager.compute.generated.fluent.models.VmImagesInEdgeZoneListResultInner;
 import java.util.List;
 
-/** An instance of this class provides access to all the operations defined in VirtualMachineImagesClient. */
+/**
+ * An instance of this class provides access to all the operations defined in VirtualMachineImagesClient.
+ */
 public interface VirtualMachineImagesClient {
     /**
      * Gets a virtual machine image.
-     *
+     * 
      * @param location The name of a supported Azure region.
      * @param publisherName A valid image publisher.
      * @param offer A valid image publisher offer.
@@ -26,17 +28,17 @@ public interface VirtualMachineImagesClient {
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a virtual machine image along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<VirtualMachineImageInner> getWithResponse(
-        String location, String publisherName, String offer, String skus, String version, Context context);
+    Response<VirtualMachineImageInner> getWithResponse(String location, String publisherName, String offer, String skus,
+        String version, Context context);
 
     /**
      * Gets a virtual machine image.
-     *
+     * 
      * @param location The name of a supported Azure region.
      * @param publisherName A valid image publisher.
      * @param offer A valid image publisher offer.
@@ -44,7 +46,7 @@ public interface VirtualMachineImagesClient {
      * @param version A valid image SKU version.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a virtual machine image.
      */
@@ -53,7 +55,7 @@ public interface VirtualMachineImagesClient {
 
     /**
      * Gets a list of all virtual machine image versions for the specified location, publisher, offer, and SKU.
-     *
+     * 
      * @param location The name of a supported Azure region.
      * @param publisherName A valid image publisher.
      * @param offer A valid image publisher offer.
@@ -64,32 +66,25 @@ public interface VirtualMachineImagesClient {
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a list of all virtual machine image versions for the specified location, publisher, offer, and SKU along
-     *     with {@link Response}.
+     * with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<List<VirtualMachineImageResourceInner>> listWithResponse(
-        String location,
-        String publisherName,
-        String offer,
-        String skus,
-        String expand,
-        Integer top,
-        String orderby,
-        Context context);
+    Response<List<VirtualMachineImageResourceInner>> listWithResponse(String location, String publisherName,
+        String offer, String skus, String expand, Integer top, String orderby, Context context);
 
     /**
      * Gets a list of all virtual machine image versions for the specified location, publisher, offer, and SKU.
-     *
+     * 
      * @param location The name of a supported Azure region.
      * @param publisherName A valid image publisher.
      * @param offer A valid image publisher offer.
      * @param skus A valid image SKU.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a list of all virtual machine image versions for the specified location, publisher, offer, and SKU.
      */
@@ -98,29 +93,29 @@ public interface VirtualMachineImagesClient {
 
     /**
      * Gets a list of virtual machine image offers for the specified location and publisher.
-     *
+     * 
      * @param location The name of a supported Azure region.
      * @param publisherName A valid image publisher.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual machine image offers for the specified location and publisher along with {@link
-     *     Response}.
+     * @return a list of virtual machine image offers for the specified location and publisher along with
+     * {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<List<VirtualMachineImageResourceInner>> listOffersWithResponse(
-        String location, String publisherName, Context context);
+    Response<List<VirtualMachineImageResourceInner>> listOffersWithResponse(String location, String publisherName,
+        Context context);
 
     /**
      * Gets a list of virtual machine image offers for the specified location and publisher.
-     *
+     * 
      * @param location The name of a supported Azure region.
      * @param publisherName A valid image publisher.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a list of virtual machine image offers for the specified location and publisher.
      */
@@ -129,12 +124,12 @@ public interface VirtualMachineImagesClient {
 
     /**
      * Gets a list of virtual machine image publishers for the specified Azure location.
-     *
+     * 
      * @param location The name of a supported Azure region.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a list of virtual machine image publishers for the specified Azure location along with {@link Response}.
      */
@@ -143,11 +138,11 @@ public interface VirtualMachineImagesClient {
 
     /**
      * Gets a list of virtual machine image publishers for the specified Azure location.
-     *
+     * 
      * @param location The name of a supported Azure region.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a list of virtual machine image publishers for the specified Azure location.
      */
@@ -156,31 +151,31 @@ public interface VirtualMachineImagesClient {
 
     /**
      * Gets a list of virtual machine image SKUs for the specified location, publisher, and offer.
-     *
+     * 
      * @param location The name of a supported Azure region.
      * @param publisherName A valid image publisher.
      * @param offer A valid image publisher offer.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual machine image SKUs for the specified location, publisher, and offer along with {@link
-     *     Response}.
+     * @return a list of virtual machine image SKUs for the specified location, publisher, and offer along with
+     * {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<List<VirtualMachineImageResourceInner>> listSkusWithResponse(
-        String location, String publisherName, String offer, Context context);
+    Response<List<VirtualMachineImageResourceInner>> listSkusWithResponse(String location, String publisherName,
+        String offer, Context context);
 
     /**
      * Gets a list of virtual machine image SKUs for the specified location, publisher, and offer.
-     *
+     * 
      * @param location The name of a supported Azure region.
      * @param publisherName A valid image publisher.
      * @param offer A valid image publisher offer.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a list of virtual machine image SKUs for the specified location, publisher, and offer.
      */
@@ -189,28 +184,28 @@ public interface VirtualMachineImagesClient {
 
     /**
      * Gets a list of all virtual machine image versions for the specified edge zone.
-     *
+     * 
      * @param location The name of a supported Azure region.
      * @param edgeZone The name of the edge zone.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a list of all virtual machine image versions for the specified edge zone along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<VmImagesInEdgeZoneListResultInner> listByEdgeZoneWithResponse(
-        String location, String edgeZone, Context context);
+    Response<VmImagesInEdgeZoneListResultInner> listByEdgeZoneWithResponse(String location, String edgeZone,
+        Context context);
 
     /**
      * Gets a list of all virtual machine image versions for the specified edge zone.
-     *
+     * 
      * @param location The name of a supported Azure region.
      * @param edgeZone The name of the edge zone.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a list of all virtual machine image versions for the specified edge zone.
      */

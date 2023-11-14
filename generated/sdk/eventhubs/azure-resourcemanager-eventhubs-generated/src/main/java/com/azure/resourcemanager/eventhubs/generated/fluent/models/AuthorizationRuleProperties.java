@@ -10,7 +10,9 @@ import com.azure.resourcemanager.eventhubs.generated.models.AccessRights;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Properties supplied to create or update AuthorizationRule. */
+/**
+ * Properties supplied to create or update AuthorizationRule.
+ */
 @Fluent
 public final class AuthorizationRuleProperties {
     /*
@@ -19,13 +21,15 @@ public final class AuthorizationRuleProperties {
     @JsonProperty(value = "rights", required = true)
     private List<AccessRights> rights;
 
-    /** Creates an instance of AuthorizationRuleProperties class. */
+    /**
+     * Creates an instance of AuthorizationRuleProperties class.
+     */
     public AuthorizationRuleProperties() {
     }
 
     /**
      * Get the rights property: The rights associated with the rule.
-     *
+     * 
      * @return the rights value.
      */
     public List<AccessRights> rights() {
@@ -34,7 +38,7 @@ public final class AuthorizationRuleProperties {
 
     /**
      * Set the rights property: The rights associated with the rule.
-     *
+     * 
      * @param rights the rights value to set.
      * @return the AuthorizationRuleProperties object itself.
      */
@@ -45,15 +49,13 @@ public final class AuthorizationRuleProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (rights() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property rights in model AuthorizationRuleProperties"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property rights in model AuthorizationRuleProperties"));
         }
     }
 

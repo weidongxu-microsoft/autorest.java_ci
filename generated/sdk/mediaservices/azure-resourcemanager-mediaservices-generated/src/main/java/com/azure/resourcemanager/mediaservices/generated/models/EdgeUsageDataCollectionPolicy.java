@@ -7,7 +7,9 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The EdgeUsageDataCollectionPolicy model. */
+/**
+ * The EdgeUsageDataCollectionPolicy model.
+ */
 @Fluent
 public final class EdgeUsageDataCollectionPolicy {
     /*
@@ -34,14 +36,16 @@ public final class EdgeUsageDataCollectionPolicy {
     @JsonProperty(value = "eventHubDetails")
     private EdgeUsageDataEventHub eventHubDetails;
 
-    /** Creates an instance of EdgeUsageDataCollectionPolicy class. */
+    /**
+     * Creates an instance of EdgeUsageDataCollectionPolicy class.
+     */
     public EdgeUsageDataCollectionPolicy() {
     }
 
     /**
      * Get the dataCollectionFrequency property: Usage data collection frequency in ISO 8601 duration format e.g. PT10M
      * , PT5H.
-     *
+     * 
      * @return the dataCollectionFrequency value.
      */
     public String dataCollectionFrequency() {
@@ -51,7 +55,7 @@ public final class EdgeUsageDataCollectionPolicy {
     /**
      * Set the dataCollectionFrequency property: Usage data collection frequency in ISO 8601 duration format e.g. PT10M
      * , PT5H.
-     *
+     * 
      * @param dataCollectionFrequency the dataCollectionFrequency value to set.
      * @return the EdgeUsageDataCollectionPolicy object itself.
      */
@@ -63,7 +67,7 @@ public final class EdgeUsageDataCollectionPolicy {
     /**
      * Get the dataReportingFrequency property: Usage data reporting frequency in ISO 8601 duration format e.g. PT10M ,
      * PT5H.
-     *
+     * 
      * @return the dataReportingFrequency value.
      */
     public String dataReportingFrequency() {
@@ -73,7 +77,7 @@ public final class EdgeUsageDataCollectionPolicy {
     /**
      * Set the dataReportingFrequency property: Usage data reporting frequency in ISO 8601 duration format e.g. PT10M ,
      * PT5H.
-     *
+     * 
      * @param dataReportingFrequency the dataReportingFrequency value to set.
      * @return the EdgeUsageDataCollectionPolicy object itself.
      */
@@ -85,7 +89,7 @@ public final class EdgeUsageDataCollectionPolicy {
     /**
      * Get the maxAllowedUnreportedUsageDuration property: Maximum time for which the functionality of the device will
      * not be hampered for not reporting the usage data.
-     *
+     * 
      * @return the maxAllowedUnreportedUsageDuration value.
      */
     public String maxAllowedUnreportedUsageDuration() {
@@ -95,19 +99,19 @@ public final class EdgeUsageDataCollectionPolicy {
     /**
      * Set the maxAllowedUnreportedUsageDuration property: Maximum time for which the functionality of the device will
      * not be hampered for not reporting the usage data.
-     *
+     * 
      * @param maxAllowedUnreportedUsageDuration the maxAllowedUnreportedUsageDuration value to set.
      * @return the EdgeUsageDataCollectionPolicy object itself.
      */
-    public EdgeUsageDataCollectionPolicy withMaxAllowedUnreportedUsageDuration(
-        String maxAllowedUnreportedUsageDuration) {
+    public EdgeUsageDataCollectionPolicy
+        withMaxAllowedUnreportedUsageDuration(String maxAllowedUnreportedUsageDuration) {
         this.maxAllowedUnreportedUsageDuration = maxAllowedUnreportedUsageDuration;
         return this;
     }
 
     /**
      * Get the eventHubDetails property: Details of Event Hub where the usage will be reported.
-     *
+     * 
      * @return the eventHubDetails value.
      */
     public EdgeUsageDataEventHub eventHubDetails() {
@@ -116,7 +120,7 @@ public final class EdgeUsageDataCollectionPolicy {
 
     /**
      * Set the eventHubDetails property: Details of Event Hub where the usage will be reported.
-     *
+     * 
      * @param eventHubDetails the eventHubDetails value to set.
      * @return the EdgeUsageDataCollectionPolicy object itself.
      */
@@ -127,7 +131,7 @@ public final class EdgeUsageDataCollectionPolicy {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -19,8 +19,8 @@ public final class NodesImpl implements Nodes {
 
     private final com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager;
 
-    public NodesImpl(
-        NodesClient innerClient, com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
+    public NodesImpl(NodesClient innerClient,
+        com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -31,8 +31,8 @@ public final class NodesImpl implements Nodes {
     }
 
     public PagedIterable<Node> listByDataBoxEdgeDevice(String deviceName, String resourceGroupName, Context context) {
-        PagedIterable<NodeInner> inner =
-            this.serviceClient().listByDataBoxEdgeDevice(deviceName, resourceGroupName, context);
+        PagedIterable<NodeInner> inner
+            = this.serviceClient().listByDataBoxEdgeDevice(deviceName, resourceGroupName, context);
         return Utils.mapPage(inner, inner1 -> new NodeImpl(inner1, this.manager()));
     }
 

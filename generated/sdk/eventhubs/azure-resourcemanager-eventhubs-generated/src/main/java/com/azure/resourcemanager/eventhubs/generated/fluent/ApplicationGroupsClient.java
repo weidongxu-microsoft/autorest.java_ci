@@ -11,11 +11,13 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.ApplicationGroupInner;
 
-/** An instance of this class provides access to all the operations defined in ApplicationGroupsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in ApplicationGroupsClient.
+ */
 public interface ApplicationGroupsClient {
     /**
      * Gets a list of application groups for a Namespace.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -28,7 +30,7 @@ public interface ApplicationGroupsClient {
 
     /**
      * Gets a list of application groups for a Namespace.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param context The context to associate with this operation.
@@ -38,12 +40,12 @@ public interface ApplicationGroupsClient {
      * @return a list of application groups for a Namespace as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<ApplicationGroupInner> listByNamespace(
-        String resourceGroupName, String namespaceName, Context context);
+    PagedIterable<ApplicationGroupInner> listByNamespace(String resourceGroupName, String namespaceName,
+        Context context);
 
     /**
      * Creates or updates an ApplicationGroup for a Namespace.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param applicationGroupName The Application Group name.
@@ -55,16 +57,12 @@ public interface ApplicationGroupsClient {
      * @return the Application Group object along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<ApplicationGroupInner> createOrUpdateApplicationGroupWithResponse(
-        String resourceGroupName,
-        String namespaceName,
-        String applicationGroupName,
-        ApplicationGroupInner parameters,
-        Context context);
+    Response<ApplicationGroupInner> createOrUpdateApplicationGroupWithResponse(String resourceGroupName,
+        String namespaceName, String applicationGroupName, ApplicationGroupInner parameters, Context context);
 
     /**
      * Creates or updates an ApplicationGroup for a Namespace.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param applicationGroupName The Application Group name.
@@ -75,12 +73,12 @@ public interface ApplicationGroupsClient {
      * @return the Application Group object.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ApplicationGroupInner createOrUpdateApplicationGroup(
-        String resourceGroupName, String namespaceName, String applicationGroupName, ApplicationGroupInner parameters);
+    ApplicationGroupInner createOrUpdateApplicationGroup(String resourceGroupName, String namespaceName,
+        String applicationGroupName, ApplicationGroupInner parameters);
 
     /**
      * Deletes an ApplicationGroup for a Namespace.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param applicationGroupName The Application Group name.
@@ -91,12 +89,12 @@ public interface ApplicationGroupsClient {
      * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<Void> deleteWithResponse(
-        String resourceGroupName, String namespaceName, String applicationGroupName, Context context);
+    Response<Void> deleteWithResponse(String resourceGroupName, String namespaceName, String applicationGroupName,
+        Context context);
 
     /**
      * Deletes an ApplicationGroup for a Namespace.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param applicationGroupName The Application Group name.
@@ -109,7 +107,7 @@ public interface ApplicationGroupsClient {
 
     /**
      * Gets an ApplicationGroup for a Namespace.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param applicationGroupName The Application Group name.
@@ -120,12 +118,12 @@ public interface ApplicationGroupsClient {
      * @return an ApplicationGroup for a Namespace along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<ApplicationGroupInner> getWithResponse(
-        String resourceGroupName, String namespaceName, String applicationGroupName, Context context);
+    Response<ApplicationGroupInner> getWithResponse(String resourceGroupName, String namespaceName,
+        String applicationGroupName, Context context);
 
     /**
      * Gets an ApplicationGroup for a Namespace.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param applicationGroupName The Application Group name.

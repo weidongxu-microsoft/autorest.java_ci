@@ -13,8 +13,7 @@ public final class MigrateMySqlStatusImpl implements MigrateMySqlStatus {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    MigrateMySqlStatusImpl(
-        MigrateMySqlStatusInner innerObject,
+    MigrateMySqlStatusImpl(MigrateMySqlStatusInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

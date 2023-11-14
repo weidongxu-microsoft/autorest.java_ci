@@ -18,8 +18,7 @@ public final class WorkflowTriggerImpl implements WorkflowTrigger {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    WorkflowTriggerImpl(
-        WorkflowTriggerInner innerObject,
+    WorkflowTriggerImpl(WorkflowTriggerInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

@@ -9,7 +9,9 @@ import com.azure.core.management.SubResource;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkGatewayIpConfigurationPropertiesFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** IP configuration for virtual network gateway. */
+/**
+ * IP configuration for virtual network gateway.
+ */
 @Fluent
 public final class VirtualNetworkGatewayIpConfiguration extends SubResource {
     /*
@@ -30,13 +32,15 @@ public final class VirtualNetworkGatewayIpConfiguration extends SubResource {
     @JsonProperty(value = "etag", access = JsonProperty.Access.WRITE_ONLY)
     private String etag;
 
-    /** Creates an instance of VirtualNetworkGatewayIpConfiguration class. */
+    /**
+     * Creates an instance of VirtualNetworkGatewayIpConfiguration class.
+     */
     public VirtualNetworkGatewayIpConfiguration() {
     }
 
     /**
      * Get the innerProperties property: Properties of the virtual network gateway ip configuration.
-     *
+     * 
      * @return the innerProperties value.
      */
     private VirtualNetworkGatewayIpConfigurationPropertiesFormat innerProperties() {
@@ -46,7 +50,7 @@ public final class VirtualNetworkGatewayIpConfiguration extends SubResource {
     /**
      * Get the name property: The name of the resource that is unique within a resource group. This name can be used to
      * access the resource.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -56,7 +60,7 @@ public final class VirtualNetworkGatewayIpConfiguration extends SubResource {
     /**
      * Set the name property: The name of the resource that is unique within a resource group. This name can be used to
      * access the resource.
-     *
+     * 
      * @param name the name value to set.
      * @return the VirtualNetworkGatewayIpConfiguration object itself.
      */
@@ -67,14 +71,16 @@ public final class VirtualNetworkGatewayIpConfiguration extends SubResource {
 
     /**
      * Get the etag property: A unique read-only string that changes whenever the resource is updated.
-     *
+     * 
      * @return the etag value.
      */
     public String etag() {
         return this.etag;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public VirtualNetworkGatewayIpConfiguration withId(String id) {
         super.withId(id);
@@ -83,7 +89,7 @@ public final class VirtualNetworkGatewayIpConfiguration extends SubResource {
 
     /**
      * Get the privateIpAllocationMethod property: The private IP address allocation method.
-     *
+     * 
      * @return the privateIpAllocationMethod value.
      */
     public IpAllocationMethod privateIpAllocationMethod() {
@@ -92,12 +98,12 @@ public final class VirtualNetworkGatewayIpConfiguration extends SubResource {
 
     /**
      * Set the privateIpAllocationMethod property: The private IP address allocation method.
-     *
+     * 
      * @param privateIpAllocationMethod the privateIpAllocationMethod value to set.
      * @return the VirtualNetworkGatewayIpConfiguration object itself.
      */
-    public VirtualNetworkGatewayIpConfiguration withPrivateIpAllocationMethod(
-        IpAllocationMethod privateIpAllocationMethod) {
+    public VirtualNetworkGatewayIpConfiguration
+        withPrivateIpAllocationMethod(IpAllocationMethod privateIpAllocationMethod) {
         if (this.innerProperties() == null) {
             this.innerProperties = new VirtualNetworkGatewayIpConfigurationPropertiesFormat();
         }
@@ -107,7 +113,7 @@ public final class VirtualNetworkGatewayIpConfiguration extends SubResource {
 
     /**
      * Get the subnet property: The reference to the subnet resource.
-     *
+     * 
      * @return the subnet value.
      */
     public SubResource subnet() {
@@ -116,7 +122,7 @@ public final class VirtualNetworkGatewayIpConfiguration extends SubResource {
 
     /**
      * Set the subnet property: The reference to the subnet resource.
-     *
+     * 
      * @param subnet the subnet value to set.
      * @return the VirtualNetworkGatewayIpConfiguration object itself.
      */
@@ -130,7 +136,7 @@ public final class VirtualNetworkGatewayIpConfiguration extends SubResource {
 
     /**
      * Get the publicIpAddress property: The reference to the public IP resource.
-     *
+     * 
      * @return the publicIpAddress value.
      */
     public SubResource publicIpAddress() {
@@ -139,7 +145,7 @@ public final class VirtualNetworkGatewayIpConfiguration extends SubResource {
 
     /**
      * Set the publicIpAddress property: The reference to the public IP resource.
-     *
+     * 
      * @param publicIpAddress the publicIpAddress value to set.
      * @return the VirtualNetworkGatewayIpConfiguration object itself.
      */
@@ -153,7 +159,7 @@ public final class VirtualNetworkGatewayIpConfiguration extends SubResource {
 
     /**
      * Get the privateIpAddress property: Private IP Address for this gateway.
-     *
+     * 
      * @return the privateIpAddress value.
      */
     public String privateIpAddress() {
@@ -163,7 +169,7 @@ public final class VirtualNetworkGatewayIpConfiguration extends SubResource {
     /**
      * Get the provisioningState property: The provisioning state of the virtual network gateway IP configuration
      * resource.
-     *
+     * 
      * @return the provisioningState value.
      */
     public ProvisioningState provisioningState() {
@@ -172,7 +178,7 @@ public final class VirtualNetworkGatewayIpConfiguration extends SubResource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -21,8 +21,7 @@ public final class ExpressRoutePortsLocationsImpl implements ExpressRoutePortsLo
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public ExpressRoutePortsLocationsImpl(
-        ExpressRoutePortsLocationsClient innerClient,
+    public ExpressRoutePortsLocationsImpl(ExpressRoutePortsLocationsClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -41,10 +40,7 @@ public final class ExpressRoutePortsLocationsImpl implements ExpressRoutePortsLo
     public Response<ExpressRoutePortsLocation> getWithResponse(String locationName, Context context) {
         Response<ExpressRoutePortsLocationInner> inner = this.serviceClient().getWithResponse(locationName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ExpressRoutePortsLocationImpl(inner.getValue(), this.manager()));
         } else {
             return null;

@@ -9,42 +9,44 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import java.util.List;
 
-/** Resource collection API of Workbooks. */
+/**
+ * Resource collection API of Workbooks.
+ */
 public interface Workbooks {
     /**
      * Get all Workbooks defined within a specified resource group and category.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param category Category of workbook to return.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all Workbooks defined within a specified resource group and category as paginated response with {@link
-     *     PagedIterable}.
+     * @return all Workbooks defined within a specified resource group and category as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<Workbook> listByResourceGroup(String resourceGroupName, CategoryType category);
 
     /**
      * Get all Workbooks defined within a specified resource group and category.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param category Category of workbook to return.
      * @param tags Tags presents on each workbook returned.
      * @param canFetchContent Flag indicating whether or not to return the full content for each applicable workbook. If
-     *     false, only return summary content for workbooks.
+     * false, only return summary content for workbooks.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all Workbooks defined within a specified resource group and category as paginated response with {@link
-     *     PagedIterable}.
+     * @return all Workbooks defined within a specified resource group and category as paginated response with
+     * {@link PagedIterable}.
      */
-    PagedIterable<Workbook> listByResourceGroup(
-        String resourceGroupName, CategoryType category, List<String> tags, Boolean canFetchContent, Context context);
+    PagedIterable<Workbook> listByResourceGroup(String resourceGroupName, CategoryType category, List<String> tags,
+        Boolean canFetchContent, Context context);
 
     /**
      * Get a single workbook by its resourceName.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceName The name of the Application Insights component resource.
      * @param context The context to associate with this operation.
@@ -57,7 +59,7 @@ public interface Workbooks {
 
     /**
      * Get a single workbook by its resourceName.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceName The name of the Application Insights component resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -69,7 +71,7 @@ public interface Workbooks {
 
     /**
      * Delete a workbook.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceName The name of the Application Insights component resource.
      * @param context The context to associate with this operation.
@@ -82,7 +84,7 @@ public interface Workbooks {
 
     /**
      * Delete a workbook.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceName The name of the Application Insights component resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -93,7 +95,7 @@ public interface Workbooks {
 
     /**
      * Get a single workbook by its resourceName.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -104,7 +106,7 @@ public interface Workbooks {
 
     /**
      * Get a single workbook by its resourceName.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -116,7 +118,7 @@ public interface Workbooks {
 
     /**
      * Delete a workbook.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -126,7 +128,7 @@ public interface Workbooks {
 
     /**
      * Delete a workbook.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -138,7 +140,7 @@ public interface Workbooks {
 
     /**
      * Begins definition for a new Workbook resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new Workbook definition.
      */

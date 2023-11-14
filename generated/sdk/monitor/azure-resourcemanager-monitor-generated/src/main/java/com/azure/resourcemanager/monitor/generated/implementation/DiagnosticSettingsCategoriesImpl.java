@@ -22,22 +22,18 @@ public final class DiagnosticSettingsCategoriesImpl implements DiagnosticSetting
 
     private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    public DiagnosticSettingsCategoriesImpl(
-        DiagnosticSettingsCategoriesClient innerClient,
+    public DiagnosticSettingsCategoriesImpl(DiagnosticSettingsCategoriesClient innerClient,
         com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<DiagnosticSettingsCategoryResource> getWithResponse(
-        String resourceUri, String name, Context context) {
-        Response<DiagnosticSettingsCategoryResourceInner> inner =
-            this.serviceClient().getWithResponse(resourceUri, name, context);
+    public Response<DiagnosticSettingsCategoryResource> getWithResponse(String resourceUri, String name,
+        Context context) {
+        Response<DiagnosticSettingsCategoryResourceInner> inner
+            = this.serviceClient().getWithResponse(resourceUri, name, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DiagnosticSettingsCategoryResourceImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -53,15 +49,12 @@ public final class DiagnosticSettingsCategoriesImpl implements DiagnosticSetting
         }
     }
 
-    public Response<DiagnosticSettingsCategoryResourceCollection> listWithResponse(
-        String resourceUri, Context context) {
-        Response<DiagnosticSettingsCategoryResourceCollectionInner> inner =
-            this.serviceClient().listWithResponse(resourceUri, context);
+    public Response<DiagnosticSettingsCategoryResourceCollection> listWithResponse(String resourceUri,
+        Context context) {
+        Response<DiagnosticSettingsCategoryResourceCollectionInner> inner
+            = this.serviceClient().listWithResponse(resourceUri, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DiagnosticSettingsCategoryResourceCollectionImpl(inner.getValue(), this.manager()));
         } else {
             return null;

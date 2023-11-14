@@ -7,7 +7,9 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Describes the de-interlacing settings. */
+/**
+ * Describes the de-interlacing settings.
+ */
 @Fluent
 public final class Deinterlace {
     /*
@@ -22,13 +24,15 @@ public final class Deinterlace {
     @JsonProperty(value = "mode")
     private DeinterlaceMode mode;
 
-    /** Creates an instance of Deinterlace class. */
+    /**
+     * Creates an instance of Deinterlace class.
+     */
     public Deinterlace() {
     }
 
     /**
      * Get the parity property: The field parity for de-interlacing, defaults to Auto.
-     *
+     * 
      * @return the parity value.
      */
     public DeinterlaceParity parity() {
@@ -37,7 +41,7 @@ public final class Deinterlace {
 
     /**
      * Set the parity property: The field parity for de-interlacing, defaults to Auto.
-     *
+     * 
      * @param parity the parity value to set.
      * @return the Deinterlace object itself.
      */
@@ -48,7 +52,7 @@ public final class Deinterlace {
 
     /**
      * Get the mode property: The deinterlacing mode. Defaults to AutoPixelAdaptive.
-     *
+     * 
      * @return the mode value.
      */
     public DeinterlaceMode mode() {
@@ -57,7 +61,7 @@ public final class Deinterlace {
 
     /**
      * Set the mode property: The deinterlacing mode. Defaults to AutoPixelAdaptive.
-     *
+     * 
      * @param mode the mode value to set.
      * @return the Deinterlace object itself.
      */
@@ -68,7 +72,7 @@ public final class Deinterlace {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -10,7 +10,9 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** Describes the basic properties of all codecs. */
+/**
+ * Describes the basic properties of all codecs.
+ */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
     include = JsonTypeInfo.As.PROPERTY,
@@ -21,8 +23,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
     @JsonSubTypes.Type(name = "#Microsoft.Media.Audio", value = Audio.class),
     @JsonSubTypes.Type(name = "#Microsoft.Media.Video", value = Video.class),
     @JsonSubTypes.Type(name = "#Microsoft.Media.CopyVideo", value = CopyVideo.class),
-    @JsonSubTypes.Type(name = "#Microsoft.Media.CopyAudio", value = CopyAudio.class)
-})
+    @JsonSubTypes.Type(name = "#Microsoft.Media.CopyAudio", value = CopyAudio.class) })
 @Fluent
 public class Codec {
     /*
@@ -31,13 +32,15 @@ public class Codec {
     @JsonProperty(value = "label")
     private String label;
 
-    /** Creates an instance of Codec class. */
+    /**
+     * Creates an instance of Codec class.
+     */
     public Codec() {
     }
 
     /**
      * Get the label property: An optional label for the codec. The label can be used to control muxing behavior.
-     *
+     * 
      * @return the label value.
      */
     public String label() {
@@ -46,7 +49,7 @@ public class Codec {
 
     /**
      * Set the label property: An optional label for the codec. The label can be used to control muxing behavior.
-     *
+     * 
      * @param label the label value to set.
      * @return the Codec object itself.
      */
@@ -57,7 +60,7 @@ public class Codec {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -11,7 +11,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
 
-/** The parameters used to create a key. */
+/**
+ * The parameters used to create a key.
+ */
 @Fluent
 public final class ManagedHsmKeyCreateParameters {
     /*
@@ -27,13 +29,15 @@ public final class ManagedHsmKeyCreateParameters {
     @JsonProperty(value = "properties", required = true)
     private ManagedHsmKeyProperties properties;
 
-    /** Creates an instance of ManagedHsmKeyCreateParameters class. */
+    /**
+     * Creates an instance of ManagedHsmKeyCreateParameters class.
+     */
     public ManagedHsmKeyCreateParameters() {
     }
 
     /**
      * Get the tags property: The tags that will be assigned to the key.
-     *
+     * 
      * @return the tags value.
      */
     public Map<String, String> tags() {
@@ -42,7 +46,7 @@ public final class ManagedHsmKeyCreateParameters {
 
     /**
      * Set the tags property: The tags that will be assigned to the key.
-     *
+     * 
      * @param tags the tags value to set.
      * @return the ManagedHsmKeyCreateParameters object itself.
      */
@@ -53,7 +57,7 @@ public final class ManagedHsmKeyCreateParameters {
 
     /**
      * Get the properties property: The properties of the key to be created.
-     *
+     * 
      * @return the properties value.
      */
     public ManagedHsmKeyProperties properties() {
@@ -62,7 +66,7 @@ public final class ManagedHsmKeyCreateParameters {
 
     /**
      * Set the properties property: The properties of the key to be created.
-     *
+     * 
      * @param properties the properties value to set.
      * @return the ManagedHsmKeyCreateParameters object itself.
      */
@@ -73,15 +77,13 @@ public final class ManagedHsmKeyCreateParameters {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (properties() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property properties in model ManagedHsmKeyCreateParameters"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property properties in model ManagedHsmKeyCreateParameters"));
         } else {
             properties().validate();
         }

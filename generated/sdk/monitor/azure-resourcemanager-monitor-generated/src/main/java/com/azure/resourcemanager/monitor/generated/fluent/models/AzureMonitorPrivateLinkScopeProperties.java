@@ -8,7 +8,9 @@ import com.azure.core.annotation.Immutable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Properties that define a Azure Monitor PrivateLinkScope resource. */
+/**
+ * Properties that define a Azure Monitor PrivateLinkScope resource.
+ */
 @Immutable
 public final class AzureMonitorPrivateLinkScopeProperties {
     /*
@@ -25,15 +27,17 @@ public final class AzureMonitorPrivateLinkScopeProperties {
     @JsonProperty(value = "privateEndpointConnections", access = JsonProperty.Access.WRITE_ONLY)
     private List<PrivateEndpointConnectionInner> privateEndpointConnections;
 
-    /** Creates an instance of AzureMonitorPrivateLinkScopeProperties class. */
+    /**
+     * Creates an instance of AzureMonitorPrivateLinkScopeProperties class.
+     */
     public AzureMonitorPrivateLinkScopeProperties() {
     }
 
     /**
      * Get the provisioningState property: Current state of this PrivateLinkScope: whether or not is has been
-     * provisioned within the resource group it is defined. Users cannot change this value but are able to read from it.
-     * Values will include Provisioning ,Succeeded, Canceled and Failed.
-     *
+     * provisioned within the resource group it is defined. Users cannot change this value but are able to read from
+     * it. Values will include Provisioning ,Succeeded, Canceled and Failed.
+     * 
      * @return the provisioningState value.
      */
     public String provisioningState() {
@@ -42,7 +46,7 @@ public final class AzureMonitorPrivateLinkScopeProperties {
 
     /**
      * Get the privateEndpointConnections property: List of private endpoint connections.
-     *
+     * 
      * @return the privateEndpointConnections value.
      */
     public List<PrivateEndpointConnectionInner> privateEndpointConnections() {
@@ -51,7 +55,7 @@ public final class AzureMonitorPrivateLinkScopeProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

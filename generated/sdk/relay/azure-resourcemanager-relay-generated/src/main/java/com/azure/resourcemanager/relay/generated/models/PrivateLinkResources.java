@@ -7,11 +7,13 @@ package com.azure.resourcemanager.relay.generated.models;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of PrivateLinkResources. */
+/**
+ * Resource collection API of PrivateLinkResources.
+ */
 public interface PrivateLinkResources {
     /**
      * Gets a description for the specified Private Endpoint Connection name.
-     *
+     * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
      * @param privateLinkResourceName The PrivateLinkResource name.
@@ -21,12 +23,12 @@ public interface PrivateLinkResources {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a description for the specified Private Endpoint Connection name along with {@link Response}.
      */
-    Response<PrivateLinkResource> getWithResponse(
-        String resourceGroupName, String namespaceName, String privateLinkResourceName, Context context);
+    Response<PrivateLinkResource> getWithResponse(String resourceGroupName, String namespaceName,
+        String privateLinkResourceName, Context context);
 
     /**
      * Gets a description for the specified Private Endpoint Connection name.
-     *
+     * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
      * @param privateLinkResourceName The PrivateLinkResource name.
@@ -39,7 +41,7 @@ public interface PrivateLinkResources {
 
     /**
      * Gets lists of resources that supports Privatelinks.
-     *
+     * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
      * @param context The context to associate with this operation.
@@ -48,12 +50,12 @@ public interface PrivateLinkResources {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return lists of resources that supports Privatelinks along with {@link Response}.
      */
-    Response<PrivateLinkResourcesListResult> listWithResponse(
-        String resourceGroupName, String namespaceName, Context context);
+    Response<PrivateLinkResourcesListResult> listWithResponse(String resourceGroupName, String namespaceName,
+        Context context);
 
     /**
      * Gets lists of resources that supports Privatelinks.
-     *
+     * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

@@ -27,76 +27,56 @@ public final class NetworkInterfacesImpl implements NetworkInterfaces {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public NetworkInterfacesImpl(
-        NetworkInterfacesClient innerClient,
+    public NetworkInterfacesImpl(NetworkInterfacesClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public PagedIterable<NetworkInterface> listCloudServiceRoleInstanceNetworkInterfaces(
-        String resourceGroupName, String cloudServiceName, String roleInstanceName) {
-        PagedIterable<NetworkInterfaceInner> inner =
-            this
-                .serviceClient()
-                .listCloudServiceRoleInstanceNetworkInterfaces(resourceGroupName, cloudServiceName, roleInstanceName);
+    public PagedIterable<NetworkInterface> listCloudServiceRoleInstanceNetworkInterfaces(String resourceGroupName,
+        String cloudServiceName, String roleInstanceName) {
+        PagedIterable<NetworkInterfaceInner> inner = this.serviceClient()
+            .listCloudServiceRoleInstanceNetworkInterfaces(resourceGroupName, cloudServiceName, roleInstanceName);
         return Utils.mapPage(inner, inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<NetworkInterface> listCloudServiceRoleInstanceNetworkInterfaces(
-        String resourceGroupName, String cloudServiceName, String roleInstanceName, Context context) {
-        PagedIterable<NetworkInterfaceInner> inner =
-            this
-                .serviceClient()
-                .listCloudServiceRoleInstanceNetworkInterfaces(
-                    resourceGroupName, cloudServiceName, roleInstanceName, context);
+    public PagedIterable<NetworkInterface> listCloudServiceRoleInstanceNetworkInterfaces(String resourceGroupName,
+        String cloudServiceName, String roleInstanceName, Context context) {
+        PagedIterable<NetworkInterfaceInner> inner = this.serviceClient().listCloudServiceRoleInstanceNetworkInterfaces(
+            resourceGroupName, cloudServiceName, roleInstanceName, context);
         return Utils.mapPage(inner, inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<NetworkInterface> listCloudServiceNetworkInterfaces(
-        String resourceGroupName, String cloudServiceName) {
-        PagedIterable<NetworkInterfaceInner> inner =
-            this.serviceClient().listCloudServiceNetworkInterfaces(resourceGroupName, cloudServiceName);
+    public PagedIterable<NetworkInterface> listCloudServiceNetworkInterfaces(String resourceGroupName,
+        String cloudServiceName) {
+        PagedIterable<NetworkInterfaceInner> inner
+            = this.serviceClient().listCloudServiceNetworkInterfaces(resourceGroupName, cloudServiceName);
         return Utils.mapPage(inner, inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<NetworkInterface> listCloudServiceNetworkInterfaces(
-        String resourceGroupName, String cloudServiceName, Context context) {
-        PagedIterable<NetworkInterfaceInner> inner =
-            this.serviceClient().listCloudServiceNetworkInterfaces(resourceGroupName, cloudServiceName, context);
+    public PagedIterable<NetworkInterface> listCloudServiceNetworkInterfaces(String resourceGroupName,
+        String cloudServiceName, Context context) {
+        PagedIterable<NetworkInterfaceInner> inner
+            = this.serviceClient().listCloudServiceNetworkInterfaces(resourceGroupName, cloudServiceName, context);
         return Utils.mapPage(inner, inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
     }
 
-    public Response<NetworkInterface> getCloudServiceNetworkInterfaceWithResponse(
-        String resourceGroupName,
-        String cloudServiceName,
-        String roleInstanceName,
-        String networkInterfaceName,
-        String expand,
-        Context context) {
-        Response<NetworkInterfaceInner> inner =
-            this
-                .serviceClient()
-                .getCloudServiceNetworkInterfaceWithResponse(
-                    resourceGroupName, cloudServiceName, roleInstanceName, networkInterfaceName, expand, context);
+    public Response<NetworkInterface> getCloudServiceNetworkInterfaceWithResponse(String resourceGroupName,
+        String cloudServiceName, String roleInstanceName, String networkInterfaceName, String expand, Context context) {
+        Response<NetworkInterfaceInner> inner = this.serviceClient().getCloudServiceNetworkInterfaceWithResponse(
+            resourceGroupName, cloudServiceName, roleInstanceName, networkInterfaceName, expand, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new NetworkInterfaceImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public NetworkInterface getCloudServiceNetworkInterface(
-        String resourceGroupName, String cloudServiceName, String roleInstanceName, String networkInterfaceName) {
-        NetworkInterfaceInner inner =
-            this
-                .serviceClient()
-                .getCloudServiceNetworkInterface(
-                    resourceGroupName, cloudServiceName, roleInstanceName, networkInterfaceName);
+    public NetworkInterface getCloudServiceNetworkInterface(String resourceGroupName, String cloudServiceName,
+        String roleInstanceName, String networkInterfaceName) {
+        NetworkInterfaceInner inner = this.serviceClient().getCloudServiceNetworkInterface(resourceGroupName,
+            cloudServiceName, roleInstanceName, networkInterfaceName);
         if (inner != null) {
             return new NetworkInterfaceImpl(inner, this.manager());
         } else {
@@ -112,17 +92,12 @@ public final class NetworkInterfacesImpl implements NetworkInterfaces {
         this.serviceClient().delete(resourceGroupName, networkInterfaceName, context);
     }
 
-    public Response<NetworkInterface> getByResourceGroupWithResponse(
-        String resourceGroupName, String networkInterfaceName, String expand, Context context) {
-        Response<NetworkInterfaceInner> inner =
-            this
-                .serviceClient()
-                .getByResourceGroupWithResponse(resourceGroupName, networkInterfaceName, expand, context);
+    public Response<NetworkInterface> getByResourceGroupWithResponse(String resourceGroupName,
+        String networkInterfaceName, String expand, Context context) {
+        Response<NetworkInterfaceInner> inner = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName,
+            networkInterfaceName, expand, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new NetworkInterfaceImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -154,14 +129,14 @@ public final class NetworkInterfacesImpl implements NetworkInterfaces {
     }
 
     public PagedIterable<NetworkInterface> listByResourceGroup(String resourceGroupName, Context context) {
-        PagedIterable<NetworkInterfaceInner> inner =
-            this.serviceClient().listByResourceGroup(resourceGroupName, context);
+        PagedIterable<NetworkInterfaceInner> inner
+            = this.serviceClient().listByResourceGroup(resourceGroupName, context);
         return Utils.mapPage(inner, inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
     }
 
     public EffectiveRouteListResult getEffectiveRouteTable(String resourceGroupName, String networkInterfaceName) {
-        EffectiveRouteListResultInner inner =
-            this.serviceClient().getEffectiveRouteTable(resourceGroupName, networkInterfaceName);
+        EffectiveRouteListResultInner inner
+            = this.serviceClient().getEffectiveRouteTable(resourceGroupName, networkInterfaceName);
         if (inner != null) {
             return new EffectiveRouteListResultImpl(inner, this.manager());
         } else {
@@ -169,115 +144,85 @@ public final class NetworkInterfacesImpl implements NetworkInterfaces {
         }
     }
 
-    public EffectiveRouteListResult getEffectiveRouteTable(
-        String resourceGroupName, String networkInterfaceName, Context context) {
-        EffectiveRouteListResultInner inner =
-            this.serviceClient().getEffectiveRouteTable(resourceGroupName, networkInterfaceName, context);
-        if (inner != null) {
-            return new EffectiveRouteListResultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public EffectiveNetworkSecurityGroupListResult listEffectiveNetworkSecurityGroups(
-        String resourceGroupName, String networkInterfaceName) {
-        EffectiveNetworkSecurityGroupListResultInner inner =
-            this.serviceClient().listEffectiveNetworkSecurityGroups(resourceGroupName, networkInterfaceName);
-        if (inner != null) {
-            return new EffectiveNetworkSecurityGroupListResultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public EffectiveNetworkSecurityGroupListResult listEffectiveNetworkSecurityGroups(
-        String resourceGroupName, String networkInterfaceName, Context context) {
-        EffectiveNetworkSecurityGroupListResultInner inner =
-            this.serviceClient().listEffectiveNetworkSecurityGroups(resourceGroupName, networkInterfaceName, context);
-        if (inner != null) {
-            return new EffectiveNetworkSecurityGroupListResultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public PagedIterable<NetworkInterface> listVirtualMachineScaleSetVMNetworkInterfaces(
-        String resourceGroupName, String virtualMachineScaleSetName, String virtualmachineIndex) {
-        PagedIterable<NetworkInterfaceInner> inner =
-            this
-                .serviceClient()
-                .listVirtualMachineScaleSetVMNetworkInterfaces(
-                    resourceGroupName, virtualMachineScaleSetName, virtualmachineIndex);
-        return Utils.mapPage(inner, inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
-    }
-
-    public PagedIterable<NetworkInterface> listVirtualMachineScaleSetVMNetworkInterfaces(
-        String resourceGroupName, String virtualMachineScaleSetName, String virtualmachineIndex, Context context) {
-        PagedIterable<NetworkInterfaceInner> inner =
-            this
-                .serviceClient()
-                .listVirtualMachineScaleSetVMNetworkInterfaces(
-                    resourceGroupName, virtualMachineScaleSetName, virtualmachineIndex, context);
-        return Utils.mapPage(inner, inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
-    }
-
-    public PagedIterable<NetworkInterface> listVirtualMachineScaleSetNetworkInterfaces(
-        String resourceGroupName, String virtualMachineScaleSetName) {
-        PagedIterable<NetworkInterfaceInner> inner =
-            this
-                .serviceClient()
-                .listVirtualMachineScaleSetNetworkInterfaces(resourceGroupName, virtualMachineScaleSetName);
-        return Utils.mapPage(inner, inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
-    }
-
-    public PagedIterable<NetworkInterface> listVirtualMachineScaleSetNetworkInterfaces(
-        String resourceGroupName, String virtualMachineScaleSetName, Context context) {
-        PagedIterable<NetworkInterfaceInner> inner =
-            this
-                .serviceClient()
-                .listVirtualMachineScaleSetNetworkInterfaces(resourceGroupName, virtualMachineScaleSetName, context);
-        return Utils.mapPage(inner, inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
-    }
-
-    public Response<NetworkInterface> getVirtualMachineScaleSetNetworkInterfaceWithResponse(
-        String resourceGroupName,
-        String virtualMachineScaleSetName,
-        String virtualmachineIndex,
-        String networkInterfaceName,
-        String expand,
+    public EffectiveRouteListResult getEffectiveRouteTable(String resourceGroupName, String networkInterfaceName,
         Context context) {
-        Response<NetworkInterfaceInner> inner =
-            this
-                .serviceClient()
-                .getVirtualMachineScaleSetNetworkInterfaceWithResponse(
-                    resourceGroupName,
-                    virtualMachineScaleSetName,
-                    virtualmachineIndex,
-                    networkInterfaceName,
-                    expand,
-                    context);
+        EffectiveRouteListResultInner inner
+            = this.serviceClient().getEffectiveRouteTable(resourceGroupName, networkInterfaceName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new EffectiveRouteListResultImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public EffectiveNetworkSecurityGroupListResult listEffectiveNetworkSecurityGroups(String resourceGroupName,
+        String networkInterfaceName) {
+        EffectiveNetworkSecurityGroupListResultInner inner
+            = this.serviceClient().listEffectiveNetworkSecurityGroups(resourceGroupName, networkInterfaceName);
+        if (inner != null) {
+            return new EffectiveNetworkSecurityGroupListResultImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public EffectiveNetworkSecurityGroupListResult listEffectiveNetworkSecurityGroups(String resourceGroupName,
+        String networkInterfaceName, Context context) {
+        EffectiveNetworkSecurityGroupListResultInner inner
+            = this.serviceClient().listEffectiveNetworkSecurityGroups(resourceGroupName, networkInterfaceName, context);
+        if (inner != null) {
+            return new EffectiveNetworkSecurityGroupListResultImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public PagedIterable<NetworkInterface> listVirtualMachineScaleSetVMNetworkInterfaces(String resourceGroupName,
+        String virtualMachineScaleSetName, String virtualmachineIndex) {
+        PagedIterable<NetworkInterfaceInner> inner = this.serviceClient().listVirtualMachineScaleSetVMNetworkInterfaces(
+            resourceGroupName, virtualMachineScaleSetName, virtualmachineIndex);
+        return Utils.mapPage(inner, inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<NetworkInterface> listVirtualMachineScaleSetVMNetworkInterfaces(String resourceGroupName,
+        String virtualMachineScaleSetName, String virtualmachineIndex, Context context) {
+        PagedIterable<NetworkInterfaceInner> inner = this.serviceClient().listVirtualMachineScaleSetVMNetworkInterfaces(
+            resourceGroupName, virtualMachineScaleSetName, virtualmachineIndex, context);
+        return Utils.mapPage(inner, inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<NetworkInterface> listVirtualMachineScaleSetNetworkInterfaces(String resourceGroupName,
+        String virtualMachineScaleSetName) {
+        PagedIterable<NetworkInterfaceInner> inner = this.serviceClient()
+            .listVirtualMachineScaleSetNetworkInterfaces(resourceGroupName, virtualMachineScaleSetName);
+        return Utils.mapPage(inner, inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<NetworkInterface> listVirtualMachineScaleSetNetworkInterfaces(String resourceGroupName,
+        String virtualMachineScaleSetName, Context context) {
+        PagedIterable<NetworkInterfaceInner> inner = this.serviceClient()
+            .listVirtualMachineScaleSetNetworkInterfaces(resourceGroupName, virtualMachineScaleSetName, context);
+        return Utils.mapPage(inner, inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
+    }
+
+    public Response<NetworkInterface> getVirtualMachineScaleSetNetworkInterfaceWithResponse(String resourceGroupName,
+        String virtualMachineScaleSetName, String virtualmachineIndex, String networkInterfaceName, String expand,
+        Context context) {
+        Response<NetworkInterfaceInner> inner
+            = this.serviceClient().getVirtualMachineScaleSetNetworkInterfaceWithResponse(resourceGroupName,
+                virtualMachineScaleSetName, virtualmachineIndex, networkInterfaceName, expand, context);
+        if (inner != null) {
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new NetworkInterfaceImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public NetworkInterface getVirtualMachineScaleSetNetworkInterface(
-        String resourceGroupName,
-        String virtualMachineScaleSetName,
-        String virtualmachineIndex,
-        String networkInterfaceName) {
-        NetworkInterfaceInner inner =
-            this
-                .serviceClient()
-                .getVirtualMachineScaleSetNetworkInterface(
-                    resourceGroupName, virtualMachineScaleSetName, virtualmachineIndex, networkInterfaceName);
+    public NetworkInterface getVirtualMachineScaleSetNetworkInterface(String resourceGroupName,
+        String virtualMachineScaleSetName, String virtualmachineIndex, String networkInterfaceName) {
+        NetworkInterfaceInner inner = this.serviceClient().getVirtualMachineScaleSetNetworkInterface(resourceGroupName,
+            virtualMachineScaleSetName, virtualmachineIndex, networkInterfaceName);
         if (inner != null) {
             return new NetworkInterfaceImpl(inner, this.manager());
         } else {
@@ -286,83 +231,43 @@ public final class NetworkInterfacesImpl implements NetworkInterfaces {
     }
 
     public PagedIterable<NetworkInterfaceIpConfiguration> listVirtualMachineScaleSetIpConfigurations(
-        String resourceGroupName,
-        String virtualMachineScaleSetName,
-        String virtualmachineIndex,
+        String resourceGroupName, String virtualMachineScaleSetName, String virtualmachineIndex,
         String networkInterfaceName) {
-        PagedIterable<NetworkInterfaceIpConfigurationInner> inner =
-            this
-                .serviceClient()
-                .listVirtualMachineScaleSetIpConfigurations(
-                    resourceGroupName, virtualMachineScaleSetName, virtualmachineIndex, networkInterfaceName);
+        PagedIterable<NetworkInterfaceIpConfigurationInner> inner
+            = this.serviceClient().listVirtualMachineScaleSetIpConfigurations(resourceGroupName,
+                virtualMachineScaleSetName, virtualmachineIndex, networkInterfaceName);
         return Utils.mapPage(inner, inner1 -> new NetworkInterfaceIpConfigurationImpl(inner1, this.manager()));
     }
 
     public PagedIterable<NetworkInterfaceIpConfiguration> listVirtualMachineScaleSetIpConfigurations(
-        String resourceGroupName,
-        String virtualMachineScaleSetName,
-        String virtualmachineIndex,
-        String networkInterfaceName,
-        String expand,
-        Context context) {
-        PagedIterable<NetworkInterfaceIpConfigurationInner> inner =
-            this
-                .serviceClient()
-                .listVirtualMachineScaleSetIpConfigurations(
-                    resourceGroupName,
-                    virtualMachineScaleSetName,
-                    virtualmachineIndex,
-                    networkInterfaceName,
-                    expand,
-                    context);
+        String resourceGroupName, String virtualMachineScaleSetName, String virtualmachineIndex,
+        String networkInterfaceName, String expand, Context context) {
+        PagedIterable<NetworkInterfaceIpConfigurationInner> inner
+            = this.serviceClient().listVirtualMachineScaleSetIpConfigurations(resourceGroupName,
+                virtualMachineScaleSetName, virtualmachineIndex, networkInterfaceName, expand, context);
         return Utils.mapPage(inner, inner1 -> new NetworkInterfaceIpConfigurationImpl(inner1, this.manager()));
     }
 
     public Response<NetworkInterfaceIpConfiguration> getVirtualMachineScaleSetIpConfigurationWithResponse(
-        String resourceGroupName,
-        String virtualMachineScaleSetName,
-        String virtualmachineIndex,
-        String networkInterfaceName,
-        String ipConfigurationName,
-        String expand,
-        Context context) {
-        Response<NetworkInterfaceIpConfigurationInner> inner =
-            this
-                .serviceClient()
-                .getVirtualMachineScaleSetIpConfigurationWithResponse(
-                    resourceGroupName,
-                    virtualMachineScaleSetName,
-                    virtualmachineIndex,
-                    networkInterfaceName,
-                    ipConfigurationName,
-                    expand,
-                    context);
+        String resourceGroupName, String virtualMachineScaleSetName, String virtualmachineIndex,
+        String networkInterfaceName, String ipConfigurationName, String expand, Context context) {
+        Response<NetworkInterfaceIpConfigurationInner> inner = this.serviceClient()
+            .getVirtualMachineScaleSetIpConfigurationWithResponse(resourceGroupName, virtualMachineScaleSetName,
+                virtualmachineIndex, networkInterfaceName, ipConfigurationName, expand, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new NetworkInterfaceIpConfigurationImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public NetworkInterfaceIpConfiguration getVirtualMachineScaleSetIpConfiguration(
-        String resourceGroupName,
-        String virtualMachineScaleSetName,
-        String virtualmachineIndex,
-        String networkInterfaceName,
+    public NetworkInterfaceIpConfiguration getVirtualMachineScaleSetIpConfiguration(String resourceGroupName,
+        String virtualMachineScaleSetName, String virtualmachineIndex, String networkInterfaceName,
         String ipConfigurationName) {
-        NetworkInterfaceIpConfigurationInner inner =
-            this
-                .serviceClient()
-                .getVirtualMachineScaleSetIpConfiguration(
-                    resourceGroupName,
-                    virtualMachineScaleSetName,
-                    virtualmachineIndex,
-                    networkInterfaceName,
-                    ipConfigurationName);
+        NetworkInterfaceIpConfigurationInner inner
+            = this.serviceClient().getVirtualMachineScaleSetIpConfiguration(resourceGroupName,
+                virtualMachineScaleSetName, virtualmachineIndex, networkInterfaceName, ipConfigurationName);
         if (inner != null) {
             return new NetworkInterfaceIpConfigurationImpl(inner, this.manager());
         } else {
@@ -373,44 +278,29 @@ public final class NetworkInterfacesImpl implements NetworkInterfaces {
     public NetworkInterface getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String networkInterfaceName = Utils.getValueFromIdByName(id, "networkInterfaces");
         if (networkInterfaceName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'networkInterfaces'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'networkInterfaces'.", id)));
         }
         String localExpand = null;
-        return this
-            .getByResourceGroupWithResponse(resourceGroupName, networkInterfaceName, localExpand, Context.NONE)
+        return this.getByResourceGroupWithResponse(resourceGroupName, networkInterfaceName, localExpand, Context.NONE)
             .getValue();
     }
 
     public Response<NetworkInterface> getByIdWithResponse(String id, String expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String networkInterfaceName = Utils.getValueFromIdByName(id, "networkInterfaces");
         if (networkInterfaceName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'networkInterfaces'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'networkInterfaces'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, networkInterfaceName, expand, context);
     }
@@ -418,20 +308,13 @@ public final class NetworkInterfacesImpl implements NetworkInterfaces {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String networkInterfaceName = Utils.getValueFromIdByName(id, "networkInterfaces");
         if (networkInterfaceName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'networkInterfaces'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'networkInterfaces'.", id)));
         }
         this.delete(resourceGroupName, networkInterfaceName, Context.NONE);
     }
@@ -439,20 +322,13 @@ public final class NetworkInterfacesImpl implements NetworkInterfaces {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String networkInterfaceName = Utils.getValueFromIdByName(id, "networkInterfaces");
         if (networkInterfaceName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'networkInterfaces'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'networkInterfaces'.", id)));
         }
         this.delete(resourceGroupName, networkInterfaceName, context);
     }

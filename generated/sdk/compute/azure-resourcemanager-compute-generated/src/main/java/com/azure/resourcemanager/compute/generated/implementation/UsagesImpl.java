@@ -19,8 +19,8 @@ public final class UsagesImpl implements Usages {
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    public UsagesImpl(
-        UsagesClient innerClient, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
+    public UsagesImpl(UsagesClient innerClient,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }

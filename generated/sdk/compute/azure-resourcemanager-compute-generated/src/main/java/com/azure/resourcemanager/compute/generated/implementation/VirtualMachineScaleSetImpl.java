@@ -199,20 +199,14 @@ public final class VirtualMachineScaleSetImpl
     }
 
     public VirtualMachineScaleSet create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualMachineScaleSets()
-                .createOrUpdate(resourceGroupName, vmScaleSetName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getVirtualMachineScaleSets().createOrUpdate(resourceGroupName,
+            vmScaleSetName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public VirtualMachineScaleSet create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualMachineScaleSets()
-                .createOrUpdate(resourceGroupName, vmScaleSetName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getVirtualMachineScaleSets().createOrUpdate(resourceGroupName,
+            vmScaleSetName, this.innerModel(), context);
         return this;
     }
 
@@ -228,25 +222,18 @@ public final class VirtualMachineScaleSetImpl
     }
 
     public VirtualMachineScaleSet apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualMachineScaleSets()
-                .update(resourceGroupName, vmScaleSetName, updateParameters, Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getVirtualMachineScaleSets().update(resourceGroupName,
+            vmScaleSetName, updateParameters, Context.NONE);
         return this;
     }
 
     public VirtualMachineScaleSet apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualMachineScaleSets()
-                .update(resourceGroupName, vmScaleSetName, updateParameters, context);
+        this.innerObject = serviceManager.serviceClient().getVirtualMachineScaleSets().update(resourceGroupName,
+            vmScaleSetName, updateParameters, context);
         return this;
     }
 
-    VirtualMachineScaleSetImpl(
-        VirtualMachineScaleSetInner innerObject,
+    VirtualMachineScaleSetImpl(VirtualMachineScaleSetInner innerObject,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -256,23 +243,15 @@ public final class VirtualMachineScaleSetImpl
 
     public VirtualMachineScaleSet refresh() {
         ExpandTypesForGetVMScaleSets localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualMachineScaleSets()
-                .getByResourceGroupWithResponse(resourceGroupName, vmScaleSetName, localExpand, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getVirtualMachineScaleSets()
+            .getByResourceGroupWithResponse(resourceGroupName, vmScaleSetName, localExpand, Context.NONE).getValue();
         return this;
     }
 
     public VirtualMachineScaleSet refresh(Context context) {
         ExpandTypesForGetVMScaleSets localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualMachineScaleSets()
-                .getByResourceGroupWithResponse(resourceGroupName, vmScaleSetName, localExpand, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getVirtualMachineScaleSets()
+            .getByResourceGroupWithResponse(resourceGroupName, vmScaleSetName, localExpand, context).getValue();
         return this;
     }
 
@@ -281,20 +260,18 @@ public final class VirtualMachineScaleSetImpl
     }
 
     public void deallocate(Boolean hibernate, VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs, Context context) {
-        serviceManager
-            .virtualMachineScaleSets()
-            .deallocate(resourceGroupName, vmScaleSetName, hibernate, vmInstanceIDs, context);
+        serviceManager.virtualMachineScaleSets().deallocate(resourceGroupName, vmScaleSetName, hibernate, vmInstanceIDs,
+            context);
     }
 
     public void deleteInstances(VirtualMachineScaleSetVMInstanceRequiredIDs vmInstanceIDs) {
         serviceManager.virtualMachineScaleSets().deleteInstances(resourceGroupName, vmScaleSetName, vmInstanceIDs);
     }
 
-    public void deleteInstances(
-        VirtualMachineScaleSetVMInstanceRequiredIDs vmInstanceIDs, Boolean forceDeletion, Context context) {
-        serviceManager
-            .virtualMachineScaleSets()
-            .deleteInstances(resourceGroupName, vmScaleSetName, vmInstanceIDs, forceDeletion, context);
+    public void deleteInstances(VirtualMachineScaleSetVMInstanceRequiredIDs vmInstanceIDs, Boolean forceDeletion,
+        Context context) {
+        serviceManager.virtualMachineScaleSets().deleteInstances(resourceGroupName, vmScaleSetName, vmInstanceIDs,
+            forceDeletion, context);
     }
 
     public void powerOff() {
@@ -302,9 +279,8 @@ public final class VirtualMachineScaleSetImpl
     }
 
     public void powerOff(Boolean skipShutdown, VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs, Context context) {
-        serviceManager
-            .virtualMachineScaleSets()
-            .powerOff(resourceGroupName, vmScaleSetName, skipShutdown, vmInstanceIDs, context);
+        serviceManager.virtualMachineScaleSets().powerOff(resourceGroupName, vmScaleSetName, skipShutdown,
+            vmInstanceIDs, context);
     }
 
     public void restart() {
@@ -344,9 +320,8 @@ public final class VirtualMachineScaleSetImpl
     }
 
     public void performMaintenance(VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs, Context context) {
-        serviceManager
-            .virtualMachineScaleSets()
-            .performMaintenance(resourceGroupName, vmScaleSetName, vmInstanceIDs, context);
+        serviceManager.virtualMachineScaleSets().performMaintenance(resourceGroupName, vmScaleSetName, vmInstanceIDs,
+            context);
     }
 
     public void updateInstances(VirtualMachineScaleSetVMInstanceRequiredIDs vmInstanceIDs) {
@@ -354,9 +329,8 @@ public final class VirtualMachineScaleSetImpl
     }
 
     public void updateInstances(VirtualMachineScaleSetVMInstanceRequiredIDs vmInstanceIDs, Context context) {
-        serviceManager
-            .virtualMachineScaleSets()
-            .updateInstances(resourceGroupName, vmScaleSetName, vmInstanceIDs, context);
+        serviceManager.virtualMachineScaleSets().updateInstances(resourceGroupName, vmScaleSetName, vmInstanceIDs,
+            context);
     }
 
     public void reimage() {
@@ -364,9 +338,8 @@ public final class VirtualMachineScaleSetImpl
     }
 
     public void reimage(VirtualMachineScaleSetReimageParameters vmScaleSetReimageInput, Context context) {
-        serviceManager
-            .virtualMachineScaleSets()
-            .reimage(resourceGroupName, vmScaleSetName, vmScaleSetReimageInput, context);
+        serviceManager.virtualMachineScaleSets().reimage(resourceGroupName, vmScaleSetName, vmScaleSetReimageInput,
+            context);
     }
 
     public void reimageAll() {
@@ -379,27 +352,23 @@ public final class VirtualMachineScaleSetImpl
 
     public Response<Void> convertToSinglePlacementGroupWithResponse(
         VMScaleSetConvertToSinglePlacementGroupInput parameters, Context context) {
-        return serviceManager
-            .virtualMachineScaleSets()
-            .convertToSinglePlacementGroupWithResponse(resourceGroupName, vmScaleSetName, parameters, context);
+        return serviceManager.virtualMachineScaleSets().convertToSinglePlacementGroupWithResponse(resourceGroupName,
+            vmScaleSetName, parameters, context);
     }
 
     public void convertToSinglePlacementGroup(VMScaleSetConvertToSinglePlacementGroupInput parameters) {
-        serviceManager
-            .virtualMachineScaleSets()
-            .convertToSinglePlacementGroup(resourceGroupName, vmScaleSetName, parameters);
+        serviceManager.virtualMachineScaleSets().convertToSinglePlacementGroup(resourceGroupName, vmScaleSetName,
+            parameters);
     }
 
     public void setOrchestrationServiceState(OrchestrationServiceStateInput parameters) {
-        serviceManager
-            .virtualMachineScaleSets()
-            .setOrchestrationServiceState(resourceGroupName, vmScaleSetName, parameters);
+        serviceManager.virtualMachineScaleSets().setOrchestrationServiceState(resourceGroupName, vmScaleSetName,
+            parameters);
     }
 
     public void setOrchestrationServiceState(OrchestrationServiceStateInput parameters, Context context) {
-        serviceManager
-            .virtualMachineScaleSets()
-            .setOrchestrationServiceState(resourceGroupName, vmScaleSetName, parameters, context);
+        serviceManager.virtualMachineScaleSets().setOrchestrationServiceState(resourceGroupName, vmScaleSetName,
+            parameters, context);
     }
 
     public VirtualMachineScaleSetImpl withRegion(Region location) {
@@ -497,8 +466,8 @@ public final class VirtualMachineScaleSetImpl
         }
     }
 
-    public VirtualMachineScaleSetImpl withDoNotRunExtensionsOnOverprovisionedVMs(
-        Boolean doNotRunExtensionsOnOverprovisionedVMs) {
+    public VirtualMachineScaleSetImpl
+        withDoNotRunExtensionsOnOverprovisionedVMs(Boolean doNotRunExtensionsOnOverprovisionedVMs) {
         if (isInCreateMode()) {
             this.innerModel().withDoNotRunExtensionsOnOverprovisionedVMs(doNotRunExtensionsOnOverprovisionedVMs);
             return this;
@@ -593,8 +562,8 @@ public final class VirtualMachineScaleSetImpl
         return this;
     }
 
-    public VirtualMachineScaleSetImpl withVirtualMachineProfile(
-        VirtualMachineScaleSetUpdateVMProfile virtualMachineProfile) {
+    public VirtualMachineScaleSetImpl
+        withVirtualMachineProfile(VirtualMachineScaleSetUpdateVMProfile virtualMachineProfile) {
         this.updateParameters.withVirtualMachineProfile(virtualMachineProfile);
         return this;
     }

@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The storage account details. */
+/**
+ * The storage account details.
+ */
 @Fluent
 public final class StorageAccount {
     /*
@@ -37,7 +39,9 @@ public final class StorageAccount {
     @JsonProperty(value = "status", access = JsonProperty.Access.WRITE_ONLY)
     private String status;
 
-    /** Creates an instance of StorageAccount class. */
+    /**
+     * Creates an instance of StorageAccount class.
+     */
     public StorageAccount() {
     }
 
@@ -45,7 +49,7 @@ public final class StorageAccount {
      * Get the id property: The ID of the storage account resource. Media Services relies on tables and queues as well
      * as blobs, so the primary storage account must be a Standard Storage account (either Microsoft.ClassicStorage or
      * Microsoft.Storage). Blob only storage accounts can be added as secondary storage accounts.
-     *
+     * 
      * @return the id value.
      */
     public String id() {
@@ -56,7 +60,7 @@ public final class StorageAccount {
      * Set the id property: The ID of the storage account resource. Media Services relies on tables and queues as well
      * as blobs, so the primary storage account must be a Standard Storage account (either Microsoft.ClassicStorage or
      * Microsoft.Storage). Blob only storage accounts can be added as secondary storage accounts.
-     *
+     * 
      * @param id the id value to set.
      * @return the StorageAccount object itself.
      */
@@ -67,7 +71,7 @@ public final class StorageAccount {
 
     /**
      * Get the type property: The type of the storage account.
-     *
+     * 
      * @return the type value.
      */
     public StorageAccountType type() {
@@ -76,7 +80,7 @@ public final class StorageAccount {
 
     /**
      * Set the type property: The type of the storage account.
-     *
+     * 
      * @param type the type value to set.
      * @return the StorageAccount object itself.
      */
@@ -87,7 +91,7 @@ public final class StorageAccount {
 
     /**
      * Get the identity property: The storage account identity.
-     *
+     * 
      * @return the identity value.
      */
     public ResourceIdentity identity() {
@@ -96,7 +100,7 @@ public final class StorageAccount {
 
     /**
      * Set the identity property: The storage account identity.
-     *
+     * 
      * @param identity the identity value to set.
      * @return the StorageAccount object itself.
      */
@@ -107,7 +111,7 @@ public final class StorageAccount {
 
     /**
      * Get the status property: The current status of the storage account mapping.
-     *
+     * 
      * @return the status value.
      */
     public String status() {
@@ -116,14 +120,13 @@ public final class StorageAccount {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (type() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property type in model StorageAccount"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property type in model StorageAccount"));
         }
         if (identity() != null) {
             identity().validate();

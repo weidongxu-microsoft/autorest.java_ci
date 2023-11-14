@@ -93,12 +93,9 @@ public final class ExpressRouteCrossConnectionImpl
     public List<ExpressRouteCrossConnectionPeering> peerings() {
         List<ExpressRouteCrossConnectionPeeringInner> inner = this.innerModel().peerings();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new ExpressRouteCrossConnectionPeeringImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(
+                inner.stream().map(inner1 -> new ExpressRouteCrossConnectionPeeringImpl(inner1, this.manager()))
+                    .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -136,25 +133,19 @@ public final class ExpressRouteCrossConnectionImpl
     }
 
     public ExpressRouteCrossConnection create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getExpressRouteCrossConnections()
-                .createOrUpdate(resourceGroupName, crossConnectionName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getExpressRouteCrossConnections()
+            .createOrUpdate(resourceGroupName, crossConnectionName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public ExpressRouteCrossConnection create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getExpressRouteCrossConnections()
-                .createOrUpdate(resourceGroupName, crossConnectionName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getExpressRouteCrossConnections()
+            .createOrUpdate(resourceGroupName, crossConnectionName, this.innerModel(), context);
         return this;
     }
 
-    ExpressRouteCrossConnectionImpl(
-        String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    ExpressRouteCrossConnectionImpl(String name,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new ExpressRouteCrossConnectionInner();
         this.serviceManager = serviceManager;
         this.crossConnectionName = name;
@@ -166,29 +157,20 @@ public final class ExpressRouteCrossConnectionImpl
     }
 
     public ExpressRouteCrossConnection apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getExpressRouteCrossConnections()
-                .updateTagsWithResponse(
-                    resourceGroupName, crossConnectionName, updateCrossConnectionParameters, Context.NONE)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getExpressRouteCrossConnections().updateTagsWithResponse(resourceGroupName,
+                crossConnectionName, updateCrossConnectionParameters, Context.NONE).getValue();
         return this;
     }
 
     public ExpressRouteCrossConnection apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getExpressRouteCrossConnections()
-                .updateTagsWithResponse(
-                    resourceGroupName, crossConnectionName, updateCrossConnectionParameters, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getExpressRouteCrossConnections()
+            .updateTagsWithResponse(resourceGroupName, crossConnectionName, updateCrossConnectionParameters, context)
+            .getValue();
         return this;
     }
 
-    ExpressRouteCrossConnectionImpl(
-        ExpressRouteCrossConnectionInner innerObject,
+    ExpressRouteCrossConnectionImpl(ExpressRouteCrossConnectionInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -197,22 +179,14 @@ public final class ExpressRouteCrossConnectionImpl
     }
 
     public ExpressRouteCrossConnection refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getExpressRouteCrossConnections()
-                .getByResourceGroupWithResponse(resourceGroupName, crossConnectionName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getExpressRouteCrossConnections()
+            .getByResourceGroupWithResponse(resourceGroupName, crossConnectionName, Context.NONE).getValue();
         return this;
     }
 
     public ExpressRouteCrossConnection refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getExpressRouteCrossConnections()
-                .getByResourceGroupWithResponse(resourceGroupName, crossConnectionName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getExpressRouteCrossConnections()
+            .getByResourceGroupWithResponse(resourceGroupName, crossConnectionName, context).getValue();
         return this;
     }
 
@@ -241,8 +215,8 @@ public final class ExpressRouteCrossConnectionImpl
         return this;
     }
 
-    public ExpressRouteCrossConnectionImpl withServiceProviderProvisioningState(
-        ServiceProviderProvisioningState serviceProviderProvisioningState) {
+    public ExpressRouteCrossConnectionImpl
+        withServiceProviderProvisioningState(ServiceProviderProvisioningState serviceProviderProvisioningState) {
         this.innerModel().withServiceProviderProvisioningState(serviceProviderProvisioningState);
         return this;
     }

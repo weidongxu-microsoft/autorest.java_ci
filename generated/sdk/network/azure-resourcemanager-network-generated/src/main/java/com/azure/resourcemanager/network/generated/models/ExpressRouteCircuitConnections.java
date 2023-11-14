@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of ExpressRouteCircuitConnections. */
+/**
+ * Resource collection API of ExpressRouteCircuitConnections.
+ */
 public interface ExpressRouteCircuitConnections {
     /**
      * Deletes the specified Express Route Circuit Connection from the specified express route circuit.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the express route circuit.
      * @param peeringName The name of the peering.
@@ -25,7 +27,7 @@ public interface ExpressRouteCircuitConnections {
 
     /**
      * Deletes the specified Express Route Circuit Connection from the specified express route circuit.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the express route circuit.
      * @param peeringName The name of the peering.
@@ -35,12 +37,12 @@ public interface ExpressRouteCircuitConnections {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void delete(
-        String resourceGroupName, String circuitName, String peeringName, String connectionName, Context context);
+    void delete(String resourceGroupName, String circuitName, String peeringName, String connectionName,
+        Context context);
 
     /**
      * Gets the specified Express Route Circuit Connection from the specified express route circuit.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the express route circuit.
      * @param peeringName The name of the peering.
@@ -49,15 +51,15 @@ public interface ExpressRouteCircuitConnections {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Express Route Circuit Connection from the specified express route circuit along with {@link
-     *     Response}.
+     * @return the specified Express Route Circuit Connection from the specified express route circuit along with
+     * {@link Response}.
      */
-    Response<ExpressRouteCircuitConnection> getWithResponse(
-        String resourceGroupName, String circuitName, String peeringName, String connectionName, Context context);
+    Response<ExpressRouteCircuitConnection> getWithResponse(String resourceGroupName, String circuitName,
+        String peeringName, String connectionName, Context context);
 
     /**
      * Gets the specified Express Route Circuit Connection from the specified express route circuit.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the express route circuit.
      * @param peeringName The name of the peering.
@@ -67,12 +69,12 @@ public interface ExpressRouteCircuitConnections {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified Express Route Circuit Connection from the specified express route circuit.
      */
-    ExpressRouteCircuitConnection get(
-        String resourceGroupName, String circuitName, String peeringName, String connectionName);
+    ExpressRouteCircuitConnection get(String resourceGroupName, String circuitName, String peeringName,
+        String connectionName);
 
     /**
      * Gets all global reach connections associated with a private peering in an express route circuit.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the circuit.
      * @param peeringName The name of the peering.
@@ -80,13 +82,13 @@ public interface ExpressRouteCircuitConnections {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all global reach connections associated with a private peering in an express route circuit as paginated
-     *     response with {@link PagedIterable}.
+     * response with {@link PagedIterable}.
      */
     PagedIterable<ExpressRouteCircuitConnection> list(String resourceGroupName, String circuitName, String peeringName);
 
     /**
      * Gets all global reach connections associated with a private peering in an express route circuit.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the circuit.
      * @param peeringName The name of the peering.
@@ -95,39 +97,39 @@ public interface ExpressRouteCircuitConnections {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all global reach connections associated with a private peering in an express route circuit as paginated
-     *     response with {@link PagedIterable}.
+     * response with {@link PagedIterable}.
      */
-    PagedIterable<ExpressRouteCircuitConnection> list(
-        String resourceGroupName, String circuitName, String peeringName, Context context);
+    PagedIterable<ExpressRouteCircuitConnection> list(String resourceGroupName, String circuitName, String peeringName,
+        Context context);
 
     /**
      * Gets the specified Express Route Circuit Connection from the specified express route circuit.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Express Route Circuit Connection from the specified express route circuit along with {@link
-     *     Response}.
+     * @return the specified Express Route Circuit Connection from the specified express route circuit along with
+     * {@link Response}.
      */
     ExpressRouteCircuitConnection getById(String id);
 
     /**
      * Gets the specified Express Route Circuit Connection from the specified express route circuit.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Express Route Circuit Connection from the specified express route circuit along with {@link
-     *     Response}.
+     * @return the specified Express Route Circuit Connection from the specified express route circuit along with
+     * {@link Response}.
      */
     Response<ExpressRouteCircuitConnection> getByIdWithResponse(String id, Context context);
 
     /**
      * Deletes the specified Express Route Circuit Connection from the specified express route circuit.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -137,7 +139,7 @@ public interface ExpressRouteCircuitConnections {
 
     /**
      * Deletes the specified Express Route Circuit Connection from the specified express route circuit.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -148,7 +150,7 @@ public interface ExpressRouteCircuitConnections {
 
     /**
      * Begins definition for a new ExpressRouteCircuitConnection resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new ExpressRouteCircuitConnection definition.
      */

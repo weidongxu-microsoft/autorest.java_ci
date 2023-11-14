@@ -8,7 +8,9 @@ import com.azure.core.annotation.Immutable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
-/** The properties of the price sheet download. */
+/**
+ * The properties of the price sheet download.
+ */
 @Immutable
 public final class PricesheetDownloadProperties {
     /*
@@ -23,13 +25,15 @@ public final class PricesheetDownloadProperties {
     @JsonProperty(value = "validTill", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime validTill;
 
-    /** Creates an instance of PricesheetDownloadProperties class. */
+    /**
+     * Creates an instance of PricesheetDownloadProperties class.
+     */
     public PricesheetDownloadProperties() {
     }
 
     /**
      * Get the downloadUrl property: The link (url) to download the pricesheet.
-     *
+     * 
      * @return the downloadUrl value.
      */
     public String downloadUrl() {
@@ -38,7 +42,7 @@ public final class PricesheetDownloadProperties {
 
     /**
      * Get the validTill property: Download link validity.
-     *
+     * 
      * @return the validTill value.
      */
     public OffsetDateTime validTill() {
@@ -47,7 +51,7 @@ public final class PricesheetDownloadProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

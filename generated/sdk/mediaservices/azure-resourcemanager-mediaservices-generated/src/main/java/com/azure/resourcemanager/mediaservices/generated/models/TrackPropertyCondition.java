@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Class to specify one track property condition. */
+/**
+ * Class to specify one track property condition.
+ */
 @Fluent
 public final class TrackPropertyCondition {
     /*
@@ -29,13 +31,15 @@ public final class TrackPropertyCondition {
     @JsonProperty(value = "value")
     private String value;
 
-    /** Creates an instance of TrackPropertyCondition class. */
+    /**
+     * Creates an instance of TrackPropertyCondition class.
+     */
     public TrackPropertyCondition() {
     }
 
     /**
      * Get the property property: Track property type.
-     *
+     * 
      * @return the property value.
      */
     public TrackPropertyType property() {
@@ -44,7 +48,7 @@ public final class TrackPropertyCondition {
 
     /**
      * Set the property property: Track property type.
-     *
+     * 
      * @param property the property value to set.
      * @return the TrackPropertyCondition object itself.
      */
@@ -55,7 +59,7 @@ public final class TrackPropertyCondition {
 
     /**
      * Get the operation property: Track property condition operation.
-     *
+     * 
      * @return the operation value.
      */
     public TrackPropertyCompareOperation operation() {
@@ -64,7 +68,7 @@ public final class TrackPropertyCondition {
 
     /**
      * Set the operation property: Track property condition operation.
-     *
+     * 
      * @param operation the operation value to set.
      * @return the TrackPropertyCondition object itself.
      */
@@ -75,7 +79,7 @@ public final class TrackPropertyCondition {
 
     /**
      * Get the value property: Track property value.
-     *
+     * 
      * @return the value value.
      */
     public String value() {
@@ -84,7 +88,7 @@ public final class TrackPropertyCondition {
 
     /**
      * Set the value property: Track property value.
-     *
+     * 
      * @param value the value value to set.
      * @return the TrackPropertyCondition object itself.
      */
@@ -95,20 +99,17 @@ public final class TrackPropertyCondition {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (property() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property property in model TrackPropertyCondition"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property property in model TrackPropertyCondition"));
         }
         if (operation() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property operation in model TrackPropertyCondition"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property operation in model TrackPropertyCondition"));
         }
     }
 

@@ -21,8 +21,8 @@ public final class VirtualRoutersImpl implements VirtualRouters {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public VirtualRoutersImpl(
-        VirtualRoutersClient innerClient, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    public VirtualRoutersImpl(VirtualRoutersClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -35,15 +35,12 @@ public final class VirtualRoutersImpl implements VirtualRouters {
         this.serviceClient().delete(resourceGroupName, virtualRouterName, context);
     }
 
-    public Response<VirtualRouter> getByResourceGroupWithResponse(
-        String resourceGroupName, String virtualRouterName, String expand, Context context) {
-        Response<VirtualRouterInner> inner =
-            this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, virtualRouterName, expand, context);
+    public Response<VirtualRouter> getByResourceGroupWithResponse(String resourceGroupName, String virtualRouterName,
+        String expand, Context context) {
+        Response<VirtualRouterInner> inner = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName,
+            virtualRouterName, expand, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new VirtualRouterImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -82,42 +79,29 @@ public final class VirtualRoutersImpl implements VirtualRouters {
     public VirtualRouter getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String virtualRouterName = Utils.getValueFromIdByName(id, "virtualRouters");
         if (virtualRouterName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'virtualRouters'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'virtualRouters'.", id)));
         }
         String localExpand = null;
-        return this
-            .getByResourceGroupWithResponse(resourceGroupName, virtualRouterName, localExpand, Context.NONE)
+        return this.getByResourceGroupWithResponse(resourceGroupName, virtualRouterName, localExpand, Context.NONE)
             .getValue();
     }
 
     public Response<VirtualRouter> getByIdWithResponse(String id, String expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String virtualRouterName = Utils.getValueFromIdByName(id, "virtualRouters");
         if (virtualRouterName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'virtualRouters'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'virtualRouters'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, virtualRouterName, expand, context);
     }
@@ -125,19 +109,13 @@ public final class VirtualRoutersImpl implements VirtualRouters {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String virtualRouterName = Utils.getValueFromIdByName(id, "virtualRouters");
         if (virtualRouterName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'virtualRouters'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'virtualRouters'.", id)));
         }
         this.delete(resourceGroupName, virtualRouterName, Context.NONE);
     }
@@ -145,19 +123,13 @@ public final class VirtualRoutersImpl implements VirtualRouters {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String virtualRouterName = Utils.getValueFromIdByName(id, "virtualRouters");
         if (virtualRouterName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'virtualRouters'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'virtualRouters'.", id)));
         }
         this.delete(resourceGroupName, virtualRouterName, context);
     }

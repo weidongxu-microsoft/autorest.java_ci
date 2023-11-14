@@ -7,18 +7,20 @@ package com.azure.resourcemanager.eventhubs.generated.models;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.EHNamespaceIdListResultInner;
 import java.util.List;
 
-/** An immutable client-side representation of EHNamespaceIdListResult. */
+/**
+ * An immutable client-side representation of EHNamespaceIdListResult.
+ */
 public interface EHNamespaceIdListResult {
     /**
      * Gets the value property: Result of the List Namespace IDs operation.
-     *
+     * 
      * @return the value value.
      */
     List<EHNamespaceIdContainer> value();
 
     /**
      * Gets the inner com.azure.resourcemanager.eventhubs.generated.fluent.models.EHNamespaceIdListResultInner object.
-     *
+     * 
      * @return the inner object.
      */
     EHNamespaceIdListResultInner innerModel();

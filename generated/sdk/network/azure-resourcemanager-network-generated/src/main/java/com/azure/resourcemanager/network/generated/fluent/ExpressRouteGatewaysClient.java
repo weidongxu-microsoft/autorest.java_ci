@@ -14,11 +14,13 @@ import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteGat
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteGatewayListInner;
 import com.azure.resourcemanager.network.generated.models.TagsObject;
 
-/** An instance of this class provides access to all the operations defined in ExpressRouteGatewaysClient. */
+/**
+ * An instance of this class provides access to all the operations defined in ExpressRouteGatewaysClient.
+ */
 public interface ExpressRouteGatewaysClient {
     /**
      * Lists ExpressRoute gateways under a given subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -30,7 +32,7 @@ public interface ExpressRouteGatewaysClient {
 
     /**
      * Lists ExpressRoute gateways under a given subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return list of ExpressRoute gateways.
@@ -40,7 +42,7 @@ public interface ExpressRouteGatewaysClient {
 
     /**
      * Lists ExpressRoute gateways in a given resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -53,7 +55,7 @@ public interface ExpressRouteGatewaysClient {
 
     /**
      * Lists ExpressRoute gateways in a given resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -65,7 +67,7 @@ public interface ExpressRouteGatewaysClient {
 
     /**
      * Creates or updates a ExpressRoute gateway in a specified resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.
      * @param putExpressRouteGatewayParameters Parameters required in an ExpressRoute gateway PUT operation.
@@ -76,13 +78,12 @@ public interface ExpressRouteGatewaysClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<ExpressRouteGatewayInner>, ExpressRouteGatewayInner> beginCreateOrUpdate(
-        String resourceGroupName,
-        String expressRouteGatewayName,
+        String resourceGroupName, String expressRouteGatewayName,
         ExpressRouteGatewayInner putExpressRouteGatewayParameters);
 
     /**
      * Creates or updates a ExpressRoute gateway in a specified resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.
      * @param putExpressRouteGatewayParameters Parameters required in an ExpressRoute gateway PUT operation.
@@ -94,14 +95,12 @@ public interface ExpressRouteGatewaysClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<ExpressRouteGatewayInner>, ExpressRouteGatewayInner> beginCreateOrUpdate(
-        String resourceGroupName,
-        String expressRouteGatewayName,
-        ExpressRouteGatewayInner putExpressRouteGatewayParameters,
-        Context context);
+        String resourceGroupName, String expressRouteGatewayName,
+        ExpressRouteGatewayInner putExpressRouteGatewayParameters, Context context);
 
     /**
      * Creates or updates a ExpressRoute gateway in a specified resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.
      * @param putExpressRouteGatewayParameters Parameters required in an ExpressRoute gateway PUT operation.
@@ -111,14 +110,12 @@ public interface ExpressRouteGatewaysClient {
      * @return expressRoute gateway resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ExpressRouteGatewayInner createOrUpdate(
-        String resourceGroupName,
-        String expressRouteGatewayName,
+    ExpressRouteGatewayInner createOrUpdate(String resourceGroupName, String expressRouteGatewayName,
         ExpressRouteGatewayInner putExpressRouteGatewayParameters);
 
     /**
      * Creates or updates a ExpressRoute gateway in a specified resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.
      * @param putExpressRouteGatewayParameters Parameters required in an ExpressRoute gateway PUT operation.
@@ -129,15 +126,12 @@ public interface ExpressRouteGatewaysClient {
      * @return expressRoute gateway resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ExpressRouteGatewayInner createOrUpdate(
-        String resourceGroupName,
-        String expressRouteGatewayName,
-        ExpressRouteGatewayInner putExpressRouteGatewayParameters,
-        Context context);
+    ExpressRouteGatewayInner createOrUpdate(String resourceGroupName, String expressRouteGatewayName,
+        ExpressRouteGatewayInner putExpressRouteGatewayParameters, Context context);
 
     /**
      * Updates express route gateway tags.
-     *
+     * 
      * @param resourceGroupName The resource group name of the ExpressRouteGateway.
      * @param expressRouteGatewayName The name of the gateway.
      * @param expressRouteGatewayParameters Parameters supplied to update a virtual wan express route gateway tags.
@@ -147,12 +141,12 @@ public interface ExpressRouteGatewaysClient {
      * @return the {@link SyncPoller} for polling of expressRoute gateway resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<ExpressRouteGatewayInner>, ExpressRouteGatewayInner> beginUpdateTags(
-        String resourceGroupName, String expressRouteGatewayName, TagsObject expressRouteGatewayParameters);
+    SyncPoller<PollResult<ExpressRouteGatewayInner>, ExpressRouteGatewayInner> beginUpdateTags(String resourceGroupName,
+        String expressRouteGatewayName, TagsObject expressRouteGatewayParameters);
 
     /**
      * Updates express route gateway tags.
-     *
+     * 
      * @param resourceGroupName The resource group name of the ExpressRouteGateway.
      * @param expressRouteGatewayName The name of the gateway.
      * @param expressRouteGatewayParameters Parameters supplied to update a virtual wan express route gateway tags.
@@ -163,15 +157,12 @@ public interface ExpressRouteGatewaysClient {
      * @return the {@link SyncPoller} for polling of expressRoute gateway resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<ExpressRouteGatewayInner>, ExpressRouteGatewayInner> beginUpdateTags(
-        String resourceGroupName,
-        String expressRouteGatewayName,
-        TagsObject expressRouteGatewayParameters,
-        Context context);
+    SyncPoller<PollResult<ExpressRouteGatewayInner>, ExpressRouteGatewayInner> beginUpdateTags(String resourceGroupName,
+        String expressRouteGatewayName, TagsObject expressRouteGatewayParameters, Context context);
 
     /**
      * Updates express route gateway tags.
-     *
+     * 
      * @param resourceGroupName The resource group name of the ExpressRouteGateway.
      * @param expressRouteGatewayName The name of the gateway.
      * @param expressRouteGatewayParameters Parameters supplied to update a virtual wan express route gateway tags.
@@ -181,12 +172,12 @@ public interface ExpressRouteGatewaysClient {
      * @return expressRoute gateway resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ExpressRouteGatewayInner updateTags(
-        String resourceGroupName, String expressRouteGatewayName, TagsObject expressRouteGatewayParameters);
+    ExpressRouteGatewayInner updateTags(String resourceGroupName, String expressRouteGatewayName,
+        TagsObject expressRouteGatewayParameters);
 
     /**
      * Updates express route gateway tags.
-     *
+     * 
      * @param resourceGroupName The resource group name of the ExpressRouteGateway.
      * @param expressRouteGatewayName The name of the gateway.
      * @param expressRouteGatewayParameters Parameters supplied to update a virtual wan express route gateway tags.
@@ -197,15 +188,12 @@ public interface ExpressRouteGatewaysClient {
      * @return expressRoute gateway resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ExpressRouteGatewayInner updateTags(
-        String resourceGroupName,
-        String expressRouteGatewayName,
-        TagsObject expressRouteGatewayParameters,
-        Context context);
+    ExpressRouteGatewayInner updateTags(String resourceGroupName, String expressRouteGatewayName,
+        TagsObject expressRouteGatewayParameters, Context context);
 
     /**
      * Fetches the details of a ExpressRoute gateway in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.
      * @param context The context to associate with this operation.
@@ -215,12 +203,12 @@ public interface ExpressRouteGatewaysClient {
      * @return expressRoute gateway resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<ExpressRouteGatewayInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String expressRouteGatewayName, Context context);
+    Response<ExpressRouteGatewayInner> getByResourceGroupWithResponse(String resourceGroupName,
+        String expressRouteGatewayName, Context context);
 
     /**
      * Fetches the details of a ExpressRoute gateway in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -234,7 +222,7 @@ public interface ExpressRouteGatewaysClient {
     /**
      * Deletes the specified ExpressRoute gateway in a resource group. An ExpressRoute gateway resource can only be
      * deleted when there are no connection subresources.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -248,7 +236,7 @@ public interface ExpressRouteGatewaysClient {
     /**
      * Deletes the specified ExpressRoute gateway in a resource group. An ExpressRoute gateway resource can only be
      * deleted when there are no connection subresources.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.
      * @param context The context to associate with this operation.
@@ -258,13 +246,13 @@ public interface ExpressRouteGatewaysClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginDelete(
-        String resourceGroupName, String expressRouteGatewayName, Context context);
+    SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String expressRouteGatewayName,
+        Context context);
 
     /**
      * Deletes the specified ExpressRoute gateway in a resource group. An ExpressRoute gateway resource can only be
      * deleted when there are no connection subresources.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -277,7 +265,7 @@ public interface ExpressRouteGatewaysClient {
     /**
      * Deletes the specified ExpressRoute gateway in a resource group. An ExpressRoute gateway resource can only be
      * deleted when there are no connection subresources.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.
      * @param context The context to associate with this operation.

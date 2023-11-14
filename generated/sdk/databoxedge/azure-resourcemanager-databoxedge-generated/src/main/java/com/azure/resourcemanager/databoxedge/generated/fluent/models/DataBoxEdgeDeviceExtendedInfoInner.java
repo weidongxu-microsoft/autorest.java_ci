@@ -13,7 +13,9 @@ import com.azure.resourcemanager.databoxedge.generated.models.Secret;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
 
-/** The extended Info of the Data Box Edge/Gateway device. */
+/**
+ * The extended Info of the Data Box Edge/Gateway device.
+ */
 @Fluent
 public final class DataBoxEdgeDeviceExtendedInfoInner extends ArmBaseModel {
     /*
@@ -28,13 +30,15 @@ public final class DataBoxEdgeDeviceExtendedInfoInner extends ArmBaseModel {
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
-    /** Creates an instance of DataBoxEdgeDeviceExtendedInfoInner class. */
+    /**
+     * Creates an instance of DataBoxEdgeDeviceExtendedInfoInner class.
+     */
     public DataBoxEdgeDeviceExtendedInfoInner() {
     }
 
     /**
      * Get the innerProperties property: The extended info properties.
-     *
+     * 
      * @return the innerProperties value.
      */
     private DataBoxEdgeDeviceExtendedInfoProperties innerProperties() {
@@ -43,7 +47,7 @@ public final class DataBoxEdgeDeviceExtendedInfoInner extends ArmBaseModel {
 
     /**
      * Get the systemData property: Metadata pertaining to creation and last modification of DataBoxEdgeDevice.
-     *
+     * 
      * @return the systemData value.
      */
     public SystemData systemData() {
@@ -52,7 +56,7 @@ public final class DataBoxEdgeDeviceExtendedInfoInner extends ArmBaseModel {
 
     /**
      * Get the encryptionKeyThumbprint property: The digital signature of encrypted certificate.
-     *
+     * 
      * @return the encryptionKeyThumbprint value.
      */
     public String encryptionKeyThumbprint() {
@@ -61,7 +65,7 @@ public final class DataBoxEdgeDeviceExtendedInfoInner extends ArmBaseModel {
 
     /**
      * Set the encryptionKeyThumbprint property: The digital signature of encrypted certificate.
-     *
+     * 
      * @param encryptionKeyThumbprint the encryptionKeyThumbprint value to set.
      * @return the DataBoxEdgeDeviceExtendedInfoInner object itself.
      */
@@ -76,7 +80,7 @@ public final class DataBoxEdgeDeviceExtendedInfoInner extends ArmBaseModel {
     /**
      * Get the encryptionKey property: The public part of the encryption certificate. Client uses this to encrypt any
      * secret.
-     *
+     * 
      * @return the encryptionKey value.
      */
     public String encryptionKey() {
@@ -86,7 +90,7 @@ public final class DataBoxEdgeDeviceExtendedInfoInner extends ArmBaseModel {
     /**
      * Set the encryptionKey property: The public part of the encryption certificate. Client uses this to encrypt any
      * secret.
-     *
+     * 
      * @param encryptionKey the encryptionKey value to set.
      * @return the DataBoxEdgeDeviceExtendedInfoInner object itself.
      */
@@ -100,7 +104,7 @@ public final class DataBoxEdgeDeviceExtendedInfoInner extends ArmBaseModel {
 
     /**
      * Get the resourceKey property: The Resource ID of the Resource.
-     *
+     * 
      * @return the resourceKey value.
      */
     public String resourceKey() {
@@ -109,7 +113,7 @@ public final class DataBoxEdgeDeviceExtendedInfoInner extends ArmBaseModel {
 
     /**
      * Get the clientSecretStoreId property: The Key Vault ARM Id for client secrets.
-     *
+     * 
      * @return the clientSecretStoreId value.
      */
     public String clientSecretStoreId() {
@@ -118,7 +122,7 @@ public final class DataBoxEdgeDeviceExtendedInfoInner extends ArmBaseModel {
 
     /**
      * Set the clientSecretStoreId property: The Key Vault ARM Id for client secrets.
-     *
+     * 
      * @param clientSecretStoreId the clientSecretStoreId value to set.
      * @return the DataBoxEdgeDeviceExtendedInfoInner object itself.
      */
@@ -132,7 +136,7 @@ public final class DataBoxEdgeDeviceExtendedInfoInner extends ArmBaseModel {
 
     /**
      * Get the clientSecretStoreUrl property: The url to access the Client Key Vault.
-     *
+     * 
      * @return the clientSecretStoreUrl value.
      */
     public String clientSecretStoreUrl() {
@@ -141,7 +145,7 @@ public final class DataBoxEdgeDeviceExtendedInfoInner extends ArmBaseModel {
 
     /**
      * Set the clientSecretStoreUrl property: The url to access the Client Key Vault.
-     *
+     * 
      * @param clientSecretStoreUrl the clientSecretStoreUrl value to set.
      * @return the DataBoxEdgeDeviceExtendedInfoInner object itself.
      */
@@ -155,7 +159,7 @@ public final class DataBoxEdgeDeviceExtendedInfoInner extends ArmBaseModel {
 
     /**
      * Get the channelIntegrityKeyName property: The name of Channel Integrity Key stored in the Client Key Vault.
-     *
+     * 
      * @return the channelIntegrityKeyName value.
      */
     public String channelIntegrityKeyName() {
@@ -164,7 +168,7 @@ public final class DataBoxEdgeDeviceExtendedInfoInner extends ArmBaseModel {
 
     /**
      * Set the channelIntegrityKeyName property: The name of Channel Integrity Key stored in the Client Key Vault.
-     *
+     * 
      * @param channelIntegrityKeyName the channelIntegrityKeyName value to set.
      * @return the DataBoxEdgeDeviceExtendedInfoInner object itself.
      */
@@ -177,8 +181,9 @@ public final class DataBoxEdgeDeviceExtendedInfoInner extends ArmBaseModel {
     }
 
     /**
-     * Get the channelIntegrityKeyVersion property: The version of Channel Integrity Key stored in the Client Key Vault.
-     *
+     * Get the channelIntegrityKeyVersion property: The version of Channel Integrity Key stored in the Client Key
+     * Vault.
+     * 
      * @return the channelIntegrityKeyVersion value.
      */
     public String channelIntegrityKeyVersion() {
@@ -186,8 +191,9 @@ public final class DataBoxEdgeDeviceExtendedInfoInner extends ArmBaseModel {
     }
 
     /**
-     * Set the channelIntegrityKeyVersion property: The version of Channel Integrity Key stored in the Client Key Vault.
-     *
+     * Set the channelIntegrityKeyVersion property: The version of Channel Integrity Key stored in the Client Key
+     * Vault.
+     * 
      * @param channelIntegrityKeyVersion the channelIntegrityKeyVersion value to set.
      * @return the DataBoxEdgeDeviceExtendedInfoInner object itself.
      */
@@ -201,7 +207,7 @@ public final class DataBoxEdgeDeviceExtendedInfoInner extends ArmBaseModel {
 
     /**
      * Get the keyVaultSyncStatus property: Key vault sync status.
-     *
+     * 
      * @return the keyVaultSyncStatus value.
      */
     public KeyVaultSyncStatus keyVaultSyncStatus() {
@@ -210,7 +216,7 @@ public final class DataBoxEdgeDeviceExtendedInfoInner extends ArmBaseModel {
 
     /**
      * Set the keyVaultSyncStatus property: Key vault sync status.
-     *
+     * 
      * @param keyVaultSyncStatus the keyVaultSyncStatus value to set.
      * @return the DataBoxEdgeDeviceExtendedInfoInner object itself.
      */
@@ -224,7 +230,7 @@ public final class DataBoxEdgeDeviceExtendedInfoInner extends ArmBaseModel {
 
     /**
      * Get the deviceSecrets property: Device secrets, will be returned only with ODataFilter $expand=deviceSecrets.
-     *
+     * 
      * @return the deviceSecrets value.
      */
     public Map<String, Secret> deviceSecrets() {
@@ -233,7 +239,7 @@ public final class DataBoxEdgeDeviceExtendedInfoInner extends ArmBaseModel {
 
     /**
      * Get the clusterWitnessType property: Cluster Witness Type.
-     *
+     * 
      * @return the clusterWitnessType value.
      */
     public ClusterWitnessType clusterWitnessType() {
@@ -242,7 +248,7 @@ public final class DataBoxEdgeDeviceExtendedInfoInner extends ArmBaseModel {
 
     /**
      * Get the fileShareWitnessLocation property: The witness location of file share.
-     *
+     * 
      * @return the fileShareWitnessLocation value.
      */
     public String fileShareWitnessLocation() {
@@ -251,7 +257,7 @@ public final class DataBoxEdgeDeviceExtendedInfoInner extends ArmBaseModel {
 
     /**
      * Get the fileShareWitnessUsername property: The username of file share.
-     *
+     * 
      * @return the fileShareWitnessUsername value.
      */
     public String fileShareWitnessUsername() {
@@ -260,7 +266,7 @@ public final class DataBoxEdgeDeviceExtendedInfoInner extends ArmBaseModel {
 
     /**
      * Get the cloudWitnessStorageAccountName property: The Cloud Witness Storage account name.
-     *
+     * 
      * @return the cloudWitnessStorageAccountName value.
      */
     public String cloudWitnessStorageAccountName() {
@@ -269,7 +275,7 @@ public final class DataBoxEdgeDeviceExtendedInfoInner extends ArmBaseModel {
 
     /**
      * Get the cloudWitnessContainerName property: The Container for cloud witness in the storage account.
-     *
+     * 
      * @return the cloudWitnessContainerName value.
      */
     public String cloudWitnessContainerName() {
@@ -278,7 +284,7 @@ public final class DataBoxEdgeDeviceExtendedInfoInner extends ArmBaseModel {
 
     /**
      * Get the cloudWitnessStorageEndpoint property: The Azure service endpoint of the cloud witness storage account.
-     *
+     * 
      * @return the cloudWitnessStorageEndpoint value.
      */
     public String cloudWitnessStorageEndpoint() {
@@ -287,7 +293,7 @@ public final class DataBoxEdgeDeviceExtendedInfoInner extends ArmBaseModel {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

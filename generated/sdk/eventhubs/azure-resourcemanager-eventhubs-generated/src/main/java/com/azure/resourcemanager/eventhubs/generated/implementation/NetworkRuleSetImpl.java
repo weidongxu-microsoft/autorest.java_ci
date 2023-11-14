@@ -19,8 +19,7 @@ public final class NetworkRuleSetImpl implements NetworkRuleSet {
 
     private final com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager;
 
-    NetworkRuleSetImpl(
-        NetworkRuleSetInner innerObject,
+    NetworkRuleSetImpl(NetworkRuleSetInner innerObject,
         com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

@@ -25,22 +25,28 @@ import com.azure.resourcemanager.postgresql.generated.fluent.RecoverableServersC
 import com.azure.resourcemanager.postgresql.generated.fluent.models.RecoverableServerResourceInner;
 import reactor.core.publisher.Mono;
 
-/** An instance of this class provides access to all the operations defined in RecoverableServersClient. */
+/**
+ * An instance of this class provides access to all the operations defined in RecoverableServersClient.
+ */
 public final class RecoverableServersClientImpl implements RecoverableServersClient {
-    /** The proxy service used to perform REST calls. */
+    /**
+     * The proxy service used to perform REST calls.
+     */
     private final RecoverableServersService service;
 
-    /** The service client containing this operation class. */
+    /**
+     * The service client containing this operation class.
+     */
     private final PostgreSqlManagementClientImpl client;
 
     /**
      * Initializes an instance of RecoverableServersClientImpl.
-     *
+     * 
      * @param client the instance of the service client containing this operation class.
      */
     RecoverableServersClientImpl(PostgreSqlManagementClientImpl client) {
-        this.service =
-            RestProxy.create(RecoverableServersService.class, client.getHttpPipeline(), client.getSerializerAdapter());
+        this.service = RestProxy.create(RecoverableServersService.class, client.getHttpPipeline(),
+            client.getSerializerAdapter());
         this.client = client;
     }
 
@@ -51,24 +57,19 @@ public final class RecoverableServersClientImpl implements RecoverableServersCli
     @Host("{$host}")
     @ServiceInterface(name = "PostgreSqlManagement")
     public interface RecoverableServersService {
-        @Headers({"Content-Type: application/json"})
-        @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforPostgreSQL/servers/{serverName}/recoverableServers")
-        @ExpectedResponses({200})
+        @Headers({ "Content-Type: application/json" })
+        @Get("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforPostgreSQL/servers/{serverName}/recoverableServers")
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<RecoverableServerResourceInner>> get(
-            @HostParam("$host") String endpoint,
-            @QueryParam("api-version") String apiVersion,
-            @PathParam("subscriptionId") String subscriptionId,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("serverName") String serverName,
-            @HeaderParam("Accept") String accept,
-            Context context);
+        Mono<Response<RecoverableServerResourceInner>> get(@HostParam("$host") String endpoint,
+            @QueryParam("api-version") String apiVersion, @PathParam("subscriptionId") String subscriptionId,
+            @PathParam("resourceGroupName") String resourceGroupName, @PathParam("serverName") String serverName,
+            @HeaderParam("Accept") String accept, Context context);
     }
 
     /**
      * Gets a recoverable PostgreSQL Server.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -77,19 +78,15 @@ public final class RecoverableServersClientImpl implements RecoverableServersCli
      * @return a recoverable PostgreSQL Server along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Mono<Response<RecoverableServerResourceInner>> getWithResponseAsync(
-        String resourceGroupName, String serverName) {
+    public Mono<Response<RecoverableServerResourceInner>> getWithResponseAsync(String resourceGroupName,
+        String serverName) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -101,23 +98,14 @@ public final class RecoverableServersClientImpl implements RecoverableServersCli
         final String apiVersion = "2017-12-01";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .get(
-                            this.client.getEndpoint(),
-                            apiVersion,
-                            this.client.getSubscriptionId(),
-                            resourceGroupName,
-                            serverName,
-                            accept,
-                            context))
+            .withContext(context -> service.get(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(),
+                resourceGroupName, serverName, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Gets a recoverable PostgreSQL Server.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param context The context to associate with this operation.
@@ -127,19 +115,15 @@ public final class RecoverableServersClientImpl implements RecoverableServersCli
      * @return a recoverable PostgreSQL Server along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<RecoverableServerResourceInner>> getWithResponseAsync(
-        String resourceGroupName, String serverName, Context context) {
+    private Mono<Response<RecoverableServerResourceInner>> getWithResponseAsync(String resourceGroupName,
+        String serverName, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -151,20 +135,13 @@ public final class RecoverableServersClientImpl implements RecoverableServersCli
         final String apiVersion = "2017-12-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .get(
-                this.client.getEndpoint(),
-                apiVersion,
-                this.client.getSubscriptionId(),
-                resourceGroupName,
-                serverName,
-                accept,
-                context);
+        return service.get(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), resourceGroupName,
+            serverName, accept, context);
     }
 
     /**
      * Gets a recoverable PostgreSQL Server.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -179,7 +156,7 @@ public final class RecoverableServersClientImpl implements RecoverableServersCli
 
     /**
      * Gets a recoverable PostgreSQL Server.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param context The context to associate with this operation.
@@ -189,14 +166,14 @@ public final class RecoverableServersClientImpl implements RecoverableServersCli
      * @return a recoverable PostgreSQL Server along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<RecoverableServerResourceInner> getWithResponse(
-        String resourceGroupName, String serverName, Context context) {
+    public Response<RecoverableServerResourceInner> getWithResponse(String resourceGroupName, String serverName,
+        Context context) {
         return getWithResponseAsync(resourceGroupName, serverName, context).block();
     }
 
     /**
      * Gets a recoverable PostgreSQL Server.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

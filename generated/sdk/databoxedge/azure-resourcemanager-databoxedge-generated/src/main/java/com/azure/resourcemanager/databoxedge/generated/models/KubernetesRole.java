@@ -12,12 +12,14 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
- * The limited preview of Kubernetes Cluster Management from the Azure supports: 1. Using a simple turn-key option in
- * Azure Portal, deploy a Kubernetes cluster on your Azure Stack Edge device. 2. Configure Kubernetes cluster running on
- * your device with Arc enabled Kubernetes with a click of a button in the Azure Portal. Azure Arc enables organizations
- * to view, manage, and govern their on-premises Kubernetes clusters using the Azure Portal, command line tools, and
- * APIs. 3. Easily configure Persistent Volumes using SMB and NFS shares for storing container data. For more
- * information, refer to the document here:
+ * The limited preview of Kubernetes Cluster Management from the Azure supports:
+ * 1. Using a simple turn-key option in Azure Portal, deploy a Kubernetes cluster on your Azure Stack Edge device.
+ * 2. Configure Kubernetes cluster running on your device with Arc enabled Kubernetes with a click of a button in the
+ * Azure Portal.
+ * Azure Arc enables organizations to view, manage, and govern their on-premises Kubernetes clusters using the Azure
+ * Portal, command line tools, and APIs.
+ * 3. Easily configure Persistent Volumes using SMB and NFS shares for storing container data.
+ * For more information, refer to the document here:
  * https://databoxupdatepackages.blob.core.windows.net/documentation/Microsoft-Azure-Stack-Edge-K8-Cloud-Management-20210323.pdf
  * Or Demo:
  * https://databoxupdatepackages.blob.core.windows.net/documentation/Microsoft-Azure-Stack-Edge-K8S-Cloud-Management-20210323.mp4
@@ -34,13 +36,15 @@ public final class KubernetesRole extends RoleInner {
     @JsonProperty(value = "properties")
     private KubernetesRoleProperties innerProperties;
 
-    /** Creates an instance of KubernetesRole class. */
+    /**
+     * Creates an instance of KubernetesRole class.
+     */
     public KubernetesRole() {
     }
 
     /**
      * Get the innerProperties property: Properties specific to Kubernetes role.
-     *
+     * 
      * @return the innerProperties value.
      */
     private KubernetesRoleProperties innerProperties() {
@@ -49,7 +53,7 @@ public final class KubernetesRole extends RoleInner {
 
     /**
      * Get the hostPlatform property: Host OS supported by the Kubernetes role.
-     *
+     * 
      * @return the hostPlatform value.
      */
     public PlatformType hostPlatform() {
@@ -58,7 +62,7 @@ public final class KubernetesRole extends RoleInner {
 
     /**
      * Set the hostPlatform property: Host OS supported by the Kubernetes role.
-     *
+     * 
      * @param hostPlatform the hostPlatform value to set.
      * @return the KubernetesRole object itself.
      */
@@ -72,7 +76,7 @@ public final class KubernetesRole extends RoleInner {
 
     /**
      * Get the provisioningState property: State of Kubernetes deployment.
-     *
+     * 
      * @return the provisioningState value.
      */
     public KubernetesState provisioningState() {
@@ -81,7 +85,7 @@ public final class KubernetesRole extends RoleInner {
 
     /**
      * Get the hostPlatformType property: Platform where the runtime is hosted.
-     *
+     * 
      * @return the hostPlatformType value.
      */
     public HostPlatformType hostPlatformType() {
@@ -90,7 +94,7 @@ public final class KubernetesRole extends RoleInner {
 
     /**
      * Get the kubernetesClusterInfo property: Kubernetes cluster configuration.
-     *
+     * 
      * @return the kubernetesClusterInfo value.
      */
     public KubernetesClusterInfo kubernetesClusterInfo() {
@@ -99,7 +103,7 @@ public final class KubernetesRole extends RoleInner {
 
     /**
      * Set the kubernetesClusterInfo property: Kubernetes cluster configuration.
-     *
+     * 
      * @param kubernetesClusterInfo the kubernetesClusterInfo value to set.
      * @return the KubernetesRole object itself.
      */
@@ -113,7 +117,7 @@ public final class KubernetesRole extends RoleInner {
 
     /**
      * Get the kubernetesRoleResources property: Kubernetes role resources.
-     *
+     * 
      * @return the kubernetesRoleResources value.
      */
     public KubernetesRoleResources kubernetesRoleResources() {
@@ -122,7 +126,7 @@ public final class KubernetesRole extends RoleInner {
 
     /**
      * Set the kubernetesRoleResources property: Kubernetes role resources.
-     *
+     * 
      * @param kubernetesRoleResources the kubernetesRoleResources value to set.
      * @return the KubernetesRole object itself.
      */
@@ -136,7 +140,7 @@ public final class KubernetesRole extends RoleInner {
 
     /**
      * Get the roleStatus property: Role status.
-     *
+     * 
      * @return the roleStatus value.
      */
     public RoleStatus roleStatus() {
@@ -145,7 +149,7 @@ public final class KubernetesRole extends RoleInner {
 
     /**
      * Set the roleStatus property: Role status.
-     *
+     * 
      * @param roleStatus the roleStatus value to set.
      * @return the KubernetesRole object itself.
      */
@@ -159,7 +163,7 @@ public final class KubernetesRole extends RoleInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

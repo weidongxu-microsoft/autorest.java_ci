@@ -66,22 +66,14 @@ public final class TableImpl implements Table, Table.Definition, Table.Update {
     }
 
     public Table create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getTables()
-                .createWithResponse(resourceGroupName, accountName, tableName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getTables()
+            .createWithResponse(resourceGroupName, accountName, tableName, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public Table create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getTables()
-                .createWithResponse(resourceGroupName, accountName, tableName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getTables()
+            .createWithResponse(resourceGroupName, accountName, tableName, this.innerModel(), context).getValue();
         return this;
     }
 
@@ -96,22 +88,14 @@ public final class TableImpl implements Table, Table.Definition, Table.Update {
     }
 
     public Table apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getTables()
-                .updateWithResponse(resourceGroupName, accountName, tableName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getTables()
+            .updateWithResponse(resourceGroupName, accountName, tableName, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public Table apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getTables()
-                .updateWithResponse(resourceGroupName, accountName, tableName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getTables()
+            .updateWithResponse(resourceGroupName, accountName, tableName, this.innerModel(), context).getValue();
         return this;
     }
 
@@ -124,22 +108,14 @@ public final class TableImpl implements Table, Table.Definition, Table.Update {
     }
 
     public Table refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getTables()
-                .getWithResponse(resourceGroupName, accountName, tableName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getTables()
+            .getWithResponse(resourceGroupName, accountName, tableName, Context.NONE).getValue();
         return this;
     }
 
     public Table refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getTables()
-                .getWithResponse(resourceGroupName, accountName, tableName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getTables()
+            .getWithResponse(resourceGroupName, accountName, tableName, context).getValue();
         return this;
     }
 

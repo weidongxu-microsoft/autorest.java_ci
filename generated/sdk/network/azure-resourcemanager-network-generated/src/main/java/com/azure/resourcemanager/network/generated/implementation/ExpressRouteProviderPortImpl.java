@@ -14,8 +14,7 @@ public final class ExpressRouteProviderPortImpl implements ExpressRouteProviderP
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    ExpressRouteProviderPortImpl(
-        ExpressRouteProviderPortInner innerObject,
+    ExpressRouteProviderPortImpl(ExpressRouteProviderPortInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

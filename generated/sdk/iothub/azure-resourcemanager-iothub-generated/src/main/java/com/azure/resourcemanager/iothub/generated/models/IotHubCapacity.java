@@ -7,7 +7,9 @@ package com.azure.resourcemanager.iothub.generated.models;
 import com.azure.core.annotation.Immutable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** IoT Hub capacity information. */
+/**
+ * IoT Hub capacity information.
+ */
 @Immutable
 public final class IotHubCapacity {
     /*
@@ -34,13 +36,15 @@ public final class IotHubCapacity {
     @JsonProperty(value = "scaleType", access = JsonProperty.Access.WRITE_ONLY)
     private IotHubScaleType scaleType;
 
-    /** Creates an instance of IotHubCapacity class. */
+    /**
+     * Creates an instance of IotHubCapacity class.
+     */
     public IotHubCapacity() {
     }
 
     /**
      * Get the minimum property: The minimum number of units.
-     *
+     * 
      * @return the minimum value.
      */
     public Long minimum() {
@@ -49,7 +53,7 @@ public final class IotHubCapacity {
 
     /**
      * Get the maximum property: The maximum number of units.
-     *
+     * 
      * @return the maximum value.
      */
     public Long maximum() {
@@ -58,7 +62,7 @@ public final class IotHubCapacity {
 
     /**
      * Get the defaultProperty property: The default number of units.
-     *
+     * 
      * @return the defaultProperty value.
      */
     public Long defaultProperty() {
@@ -67,7 +71,7 @@ public final class IotHubCapacity {
 
     /**
      * Get the scaleType property: The type of the scaling enabled.
-     *
+     * 
      * @return the scaleType value.
      */
     public IotHubScaleType scaleType() {
@@ -76,7 +80,7 @@ public final class IotHubCapacity {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

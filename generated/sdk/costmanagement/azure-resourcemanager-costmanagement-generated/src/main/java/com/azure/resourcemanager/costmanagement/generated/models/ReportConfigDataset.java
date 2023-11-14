@@ -10,7 +10,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 import java.util.Map;
 
-/** The definition of data present in the report. */
+/**
+ * The definition of data present in the report.
+ */
 @Fluent
 public final class ReportConfigDataset {
     /*
@@ -52,13 +54,15 @@ public final class ReportConfigDataset {
     @JsonProperty(value = "filter")
     private ReportConfigFilter filter;
 
-    /** Creates an instance of ReportConfigDataset class. */
+    /**
+     * Creates an instance of ReportConfigDataset class.
+     */
     public ReportConfigDataset() {
     }
 
     /**
      * Get the granularity property: The granularity of rows in the report.
-     *
+     * 
      * @return the granularity value.
      */
     public ReportGranularityType granularity() {
@@ -67,7 +71,7 @@ public final class ReportConfigDataset {
 
     /**
      * Set the granularity property: The granularity of rows in the report.
-     *
+     * 
      * @param granularity the granularity value to set.
      * @return the ReportConfigDataset object itself.
      */
@@ -79,7 +83,7 @@ public final class ReportConfigDataset {
     /**
      * Get the configuration property: Has configuration information for the data in the report. The configuration will
      * be ignored if aggregation and grouping are provided.
-     *
+     * 
      * @return the configuration value.
      */
     public ReportConfigDatasetConfiguration configuration() {
@@ -89,7 +93,7 @@ public final class ReportConfigDataset {
     /**
      * Set the configuration property: Has configuration information for the data in the report. The configuration will
      * be ignored if aggregation and grouping are provided.
-     *
+     * 
      * @param configuration the configuration value to set.
      * @return the ReportConfigDataset object itself.
      */
@@ -101,7 +105,7 @@ public final class ReportConfigDataset {
     /**
      * Get the aggregation property: Dictionary of aggregation expression to use in the report. The key of each item in
      * the dictionary is the alias for the aggregated column. Report can have up to 2 aggregation clauses.
-     *
+     * 
      * @return the aggregation value.
      */
     public Map<String, ReportConfigAggregation> aggregation() {
@@ -111,7 +115,7 @@ public final class ReportConfigDataset {
     /**
      * Set the aggregation property: Dictionary of aggregation expression to use in the report. The key of each item in
      * the dictionary is the alias for the aggregated column. Report can have up to 2 aggregation clauses.
-     *
+     * 
      * @param aggregation the aggregation value to set.
      * @return the ReportConfigDataset object itself.
      */
@@ -123,7 +127,7 @@ public final class ReportConfigDataset {
     /**
      * Get the grouping property: Array of group by expression to use in the report. Report can have up to 2 group by
      * clauses.
-     *
+     * 
      * @return the grouping value.
      */
     public List<ReportConfigGrouping> grouping() {
@@ -133,7 +137,7 @@ public final class ReportConfigDataset {
     /**
      * Set the grouping property: Array of group by expression to use in the report. Report can have up to 2 group by
      * clauses.
-     *
+     * 
      * @param grouping the grouping value to set.
      * @return the ReportConfigDataset object itself.
      */
@@ -144,7 +148,7 @@ public final class ReportConfigDataset {
 
     /**
      * Get the sorting property: Array of order by expression to use in the report.
-     *
+     * 
      * @return the sorting value.
      */
     public List<ReportConfigSorting> sorting() {
@@ -153,7 +157,7 @@ public final class ReportConfigDataset {
 
     /**
      * Set the sorting property: Array of order by expression to use in the report.
-     *
+     * 
      * @param sorting the sorting value to set.
      * @return the ReportConfigDataset object itself.
      */
@@ -164,7 +168,7 @@ public final class ReportConfigDataset {
 
     /**
      * Get the filter property: Has filter expression to use in the report.
-     *
+     * 
      * @return the filter value.
      */
     public ReportConfigFilter filter() {
@@ -173,7 +177,7 @@ public final class ReportConfigDataset {
 
     /**
      * Set the filter property: Has filter expression to use in the report.
-     *
+     * 
      * @param filter the filter value to set.
      * @return the ReportConfigDataset object itself.
      */
@@ -184,7 +188,7 @@ public final class ReportConfigDataset {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
@@ -192,14 +196,11 @@ public final class ReportConfigDataset {
             configuration().validate();
         }
         if (aggregation() != null) {
-            aggregation()
-                .values()
-                .forEach(
-                    e -> {
-                        if (e != null) {
-                            e.validate();
-                        }
-                    });
+            aggregation().values().forEach(e -> {
+                if (e != null) {
+                    e.validate();
+                }
+            });
         }
         if (grouping() != null) {
             grouping().forEach(e -> e.validate());

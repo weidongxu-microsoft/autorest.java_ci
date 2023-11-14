@@ -7,11 +7,13 @@ package com.azure.resourcemanager.operationalinsights.generated.models;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.SavedSearchesListResultInner;
 import java.util.List;
 
-/** An immutable client-side representation of SavedSearchesListResult. */
+/**
+ * An immutable client-side representation of SavedSearchesListResult.
+ */
 public interface SavedSearchesListResult {
     /**
      * Gets the value property: The array of result values.
-     *
+     * 
      * @return the value value.
      */
     List<SavedSearch> value();
@@ -19,7 +21,7 @@ public interface SavedSearchesListResult {
     /**
      * Gets the inner com.azure.resourcemanager.operationalinsights.generated.fluent.models.SavedSearchesListResultInner
      * object.
-     *
+     * 
      * @return the inner object.
      */
     SavedSearchesListResultInner innerModel();

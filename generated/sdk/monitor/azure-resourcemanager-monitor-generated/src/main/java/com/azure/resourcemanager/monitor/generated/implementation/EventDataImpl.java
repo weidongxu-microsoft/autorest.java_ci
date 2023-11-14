@@ -20,8 +20,8 @@ public final class EventDataImpl implements EventData {
 
     private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    EventDataImpl(
-        EventDataInner innerObject, com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
+    EventDataImpl(EventDataInner innerObject,
+        com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

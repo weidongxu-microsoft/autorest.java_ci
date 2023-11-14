@@ -7,7 +7,9 @@ package com.azure.resourcemanager.dns.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** An MX record. */
+/**
+ * An MX record.
+ */
 @Fluent
 public final class MxRecord {
     /*
@@ -22,13 +24,15 @@ public final class MxRecord {
     @JsonProperty(value = "exchange")
     private String exchange;
 
-    /** Creates an instance of MxRecord class. */
+    /**
+     * Creates an instance of MxRecord class.
+     */
     public MxRecord() {
     }
 
     /**
      * Get the preference property: The preference value for this MX record.
-     *
+     * 
      * @return the preference value.
      */
     public Integer preference() {
@@ -37,7 +41,7 @@ public final class MxRecord {
 
     /**
      * Set the preference property: The preference value for this MX record.
-     *
+     * 
      * @param preference the preference value to set.
      * @return the MxRecord object itself.
      */
@@ -48,7 +52,7 @@ public final class MxRecord {
 
     /**
      * Get the exchange property: The domain name of the mail host for this MX record.
-     *
+     * 
      * @return the exchange value.
      */
     public String exchange() {
@@ -57,7 +61,7 @@ public final class MxRecord {
 
     /**
      * Set the exchange property: The domain name of the mail host for this MX record.
-     *
+     * 
      * @param exchange the exchange value to set.
      * @return the MxRecord object itself.
      */
@@ -68,7 +72,7 @@ public final class MxRecord {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

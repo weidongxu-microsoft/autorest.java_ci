@@ -7,7 +7,9 @@ package com.azure.resourcemanager.consumption.generated.models;
 import com.azure.core.annotation.Immutable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The properties of the meter detail. */
+/**
+ * The properties of the meter detail.
+ */
 @Immutable
 public final class MeterDetailsResponse {
     /*
@@ -40,13 +42,15 @@ public final class MeterDetailsResponse {
     @JsonProperty(value = "serviceFamily", access = JsonProperty.Access.WRITE_ONLY)
     private String serviceFamily;
 
-    /** Creates an instance of MeterDetailsResponse class. */
+    /**
+     * Creates an instance of MeterDetailsResponse class.
+     */
     public MeterDetailsResponse() {
     }
 
     /**
      * Get the meterName property: The name of the meter, within the given meter category.
-     *
+     * 
      * @return the meterName value.
      */
     public String meterName() {
@@ -55,7 +59,7 @@ public final class MeterDetailsResponse {
 
     /**
      * Get the meterCategory property: The category of the meter, for example, 'Cloud services', 'Networking', etc..
-     *
+     * 
      * @return the meterCategory value.
      */
     public String meterCategory() {
@@ -65,7 +69,7 @@ public final class MeterDetailsResponse {
     /**
      * Get the meterSubCategory property: The subcategory of the meter, for example, 'A6 Cloud services', 'ExpressRoute
      * (IXP)', etc..
-     *
+     * 
      * @return the meterSubCategory value.
      */
     public String meterSubCategory() {
@@ -75,7 +79,7 @@ public final class MeterDetailsResponse {
     /**
      * Get the unitOfMeasure property: The unit in which the meter consumption is charged, for example, 'Hours', 'GB',
      * etc.
-     *
+     * 
      * @return the unitOfMeasure value.
      */
     public String unitOfMeasure() {
@@ -84,7 +88,7 @@ public final class MeterDetailsResponse {
 
     /**
      * Get the serviceFamily property: The service family.
-     *
+     * 
      * @return the serviceFamily value.
      */
     public String serviceFamily() {
@@ -93,7 +97,7 @@ public final class MeterDetailsResponse {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -8,17 +8,23 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Direction of Access Rule. */
+/**
+ * Direction of Access Rule.
+ */
 public final class NspAccessRuleDirection extends ExpandableStringEnum<NspAccessRuleDirection> {
-    /** Static value Inbound for NspAccessRuleDirection. */
+    /**
+     * Static value Inbound for NspAccessRuleDirection.
+     */
     public static final NspAccessRuleDirection INBOUND = fromString("Inbound");
 
-    /** Static value Outbound for NspAccessRuleDirection. */
+    /**
+     * Static value Outbound for NspAccessRuleDirection.
+     */
     public static final NspAccessRuleDirection OUTBOUND = fromString("Outbound");
 
     /**
      * Creates a new instance of NspAccessRuleDirection value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -27,7 +33,7 @@ public final class NspAccessRuleDirection extends ExpandableStringEnum<NspAccess
 
     /**
      * Creates or finds a NspAccessRuleDirection from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding NspAccessRuleDirection.
      */
@@ -38,7 +44,7 @@ public final class NspAccessRuleDirection extends ExpandableStringEnum<NspAccess
 
     /**
      * Gets known NspAccessRuleDirection values.
-     *
+     * 
      * @return known NspAccessRuleDirection values.
      */
     public static Collection<NspAccessRuleDirection> values() {

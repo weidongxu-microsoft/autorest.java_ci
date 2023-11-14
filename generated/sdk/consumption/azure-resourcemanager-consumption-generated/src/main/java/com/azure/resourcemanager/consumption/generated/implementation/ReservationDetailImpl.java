@@ -16,8 +16,7 @@ public final class ReservationDetailImpl implements ReservationDetail {
 
     private final com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager;
 
-    ReservationDetailImpl(
-        ReservationDetailInner innerObject,
+    ReservationDetailImpl(ReservationDetailInner innerObject,
         com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

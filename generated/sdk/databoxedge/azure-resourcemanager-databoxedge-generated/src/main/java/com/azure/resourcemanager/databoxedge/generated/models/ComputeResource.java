@@ -7,7 +7,9 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Compute infrastructure Resource. */
+/**
+ * Compute infrastructure Resource.
+ */
 @Fluent
 public final class ComputeResource {
     /*
@@ -22,13 +24,15 @@ public final class ComputeResource {
     @JsonProperty(value = "memoryInGB", required = true)
     private long memoryInGB;
 
-    /** Creates an instance of ComputeResource class. */
+    /**
+     * Creates an instance of ComputeResource class.
+     */
     public ComputeResource() {
     }
 
     /**
      * Get the processorCount property: Processor count.
-     *
+     * 
      * @return the processorCount value.
      */
     public int processorCount() {
@@ -37,7 +41,7 @@ public final class ComputeResource {
 
     /**
      * Set the processorCount property: Processor count.
-     *
+     * 
      * @param processorCount the processorCount value to set.
      * @return the ComputeResource object itself.
      */
@@ -48,7 +52,7 @@ public final class ComputeResource {
 
     /**
      * Get the memoryInGB property: Memory in GB.
-     *
+     * 
      * @return the memoryInGB value.
      */
     public long memoryInGB() {
@@ -57,7 +61,7 @@ public final class ComputeResource {
 
     /**
      * Set the memoryInGB property: Memory in GB.
-     *
+     * 
      * @param memoryInGB the memoryInGB value to set.
      * @return the ComputeResource object itself.
      */
@@ -68,7 +72,7 @@ public final class ComputeResource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

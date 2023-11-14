@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Kubernetes role storage resource. */
+/**
+ * Kubernetes role storage resource.
+ */
 @Fluent
 public final class KubernetesRoleStorage {
     /*
@@ -23,13 +25,15 @@ public final class KubernetesRoleStorage {
     @JsonProperty(value = "endpoints")
     private List<MountPointMap> endpoints;
 
-    /** Creates an instance of KubernetesRoleStorage class. */
+    /**
+     * Creates an instance of KubernetesRoleStorage class.
+     */
     public KubernetesRoleStorage() {
     }
 
     /**
      * Get the storageClasses property: Kubernetes storage class info.
-     *
+     * 
      * @return the storageClasses value.
      */
     public List<KubernetesRoleStorageClassInfo> storageClasses() {
@@ -38,7 +42,7 @@ public final class KubernetesRoleStorage {
 
     /**
      * Get the endpoints property: Mount points of shares in role(s).
-     *
+     * 
      * @return the endpoints value.
      */
     public List<MountPointMap> endpoints() {
@@ -47,7 +51,7 @@ public final class KubernetesRoleStorage {
 
     /**
      * Set the endpoints property: Mount points of shares in role(s).
-     *
+     * 
      * @param endpoints the endpoints value to set.
      * @return the KubernetesRoleStorage object itself.
      */
@@ -58,7 +62,7 @@ public final class KubernetesRoleStorage {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -6,11 +6,13 @@ package com.azure.resourcemanager.mysql.generated.models;
 
 import com.azure.core.util.Context;
 
-/** Resource collection API of ServersMigrations. */
+/**
+ * Resource collection API of ServersMigrations.
+ */
 public interface ServersMigrations {
     /**
      * Cutover migration for MySQL import, it will switch source elastic server DNS to flexible server.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -22,7 +24,7 @@ public interface ServersMigrations {
 
     /**
      * Cutover migration for MySQL import, it will switch source elastic server DNS to flexible server.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param context The context to associate with this operation.

@@ -11,13 +11,15 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.consumption.generated.fluent.models.ReservationSummaryInner;
 import com.azure.resourcemanager.consumption.generated.models.Datagrain;
 
-/** An instance of this class provides access to all the operations defined in ReservationsSummariesClient. */
+/**
+ * An instance of this class provides access to all the operations defined in ReservationsSummariesClient.
+ */
 public interface ReservationsSummariesClient {
     /**
      * Lists the reservations summaries for daily or monthly grain. Note: ARM has a payload size limit of 12MB, so
      * currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made
      * with smaller date ranges.
-     *
+     * 
      * @param reservationOrderId Order Id of the reservation.
      * @param grain Can be daily or monthly.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -32,11 +34,11 @@ public interface ReservationsSummariesClient {
      * Lists the reservations summaries for daily or monthly grain. Note: ARM has a payload size limit of 12MB, so
      * currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made
      * with smaller date ranges.
-     *
+     * 
      * @param reservationOrderId Order Id of the reservation.
      * @param grain Can be daily or monthly.
      * @param filter Required only for daily grain. The properties/UsageDate for start date and end date. The filter
-     *     supports 'le' and 'ge'.
+     * supports 'le' and 'ge'.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -44,14 +46,14 @@ public interface ReservationsSummariesClient {
      * @return result of listing reservation summaries as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<ReservationSummaryInner> listByReservationOrder(
-        String reservationOrderId, Datagrain grain, String filter, Context context);
+    PagedIterable<ReservationSummaryInner> listByReservationOrder(String reservationOrderId, Datagrain grain,
+        String filter, Context context);
 
     /**
      * Lists the reservations summaries for daily or monthly grain. Note: ARM has a payload size limit of 12MB, so
      * currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made
      * with smaller date ranges.
-     *
+     * 
      * @param reservationOrderId Order Id of the reservation.
      * @param reservationId Id of the reservation.
      * @param grain Can be daily or monthly.
@@ -61,19 +63,19 @@ public interface ReservationsSummariesClient {
      * @return result of listing reservation summaries as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<ReservationSummaryInner> listByReservationOrderAndReservation(
-        String reservationOrderId, String reservationId, Datagrain grain);
+    PagedIterable<ReservationSummaryInner> listByReservationOrderAndReservation(String reservationOrderId,
+        String reservationId, Datagrain grain);
 
     /**
      * Lists the reservations summaries for daily or monthly grain. Note: ARM has a payload size limit of 12MB, so
      * currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call should be made
      * with smaller date ranges.
-     *
+     * 
      * @param reservationOrderId Order Id of the reservation.
      * @param reservationId Id of the reservation.
      * @param grain Can be daily or monthly.
      * @param filter Required only for daily grain. The properties/UsageDate for start date and end date. The filter
-     *     supports 'le' and 'ge'.
+     * supports 'le' and 'ge'.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -81,18 +83,18 @@ public interface ReservationsSummariesClient {
      * @return result of listing reservation summaries as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<ReservationSummaryInner> listByReservationOrderAndReservation(
-        String reservationOrderId, String reservationId, Datagrain grain, String filter, Context context);
+    PagedIterable<ReservationSummaryInner> listByReservationOrderAndReservation(String reservationOrderId,
+        String reservationId, Datagrain grain, String filter, Context context);
 
     /**
      * Lists the reservations summaries for the defined scope daily or monthly grain. Note: ARM has a payload size limit
      * of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call
      * should be made with smaller date ranges.
-     *
+     * 
      * @param resourceScope The scope associated with reservations summaries operations. This includes
-     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and
-     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
-     *     BillingProfile scope (modern).
+     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and
+     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
+     * BillingProfile scope (modern).
      * @param grain Can be daily or monthly.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -106,20 +108,20 @@ public interface ReservationsSummariesClient {
      * Lists the reservations summaries for the defined scope daily or monthly grain. Note: ARM has a payload size limit
      * of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. In such cases, API call
      * should be made with smaller date ranges.
-     *
+     * 
      * @param resourceScope The scope associated with reservations summaries operations. This includes
-     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and
-     *     '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
-     *     BillingProfile scope (modern).
+     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and
+     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
+     * BillingProfile scope (modern).
      * @param grain Can be daily or monthly.
      * @param startDate Start date. Only applicable when querying with billing profile.
      * @param endDate End date. Only applicable when querying with billing profile.
      * @param filter Required only for daily grain. The properties/UsageDate for start date and end date. The filter
-     *     supports 'le' and 'ge'. Not applicable when querying with billing profile.
+     * supports 'le' and 'ge'. Not applicable when querying with billing profile.
      * @param reservationId Reservation Id GUID. Only valid if reservationOrderId is also provided. Filter to a specific
-     *     reservation.
+     * reservation.
      * @param reservationOrderId Reservation Order Id GUID. Required if reservationId is provided. Filter to a specific
-     *     reservation order.
+     * reservation order.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -127,13 +129,6 @@ public interface ReservationsSummariesClient {
      * @return result of listing reservation summaries as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<ReservationSummaryInner> list(
-        String resourceScope,
-        Datagrain grain,
-        String startDate,
-        String endDate,
-        String filter,
-        String reservationId,
-        String reservationOrderId,
-        Context context);
+    PagedIterable<ReservationSummaryInner> list(String resourceScope, Datagrain grain, String startDate, String endDate,
+        String filter, String reservationId, String reservationOrderId, Context context);
 }

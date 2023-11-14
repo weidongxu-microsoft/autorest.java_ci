@@ -7,7 +7,9 @@ package com.azure.resourcemanager.eventhubs.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** A value that indicates whether capture description is enabled. */
+/**
+ * A value that indicates whether capture description is enabled.
+ */
 @Fluent
 public final class CaptureIdentity {
     /*
@@ -23,13 +25,15 @@ public final class CaptureIdentity {
     @JsonProperty(value = "userAssignedIdentity")
     private String userAssignedIdentity;
 
-    /** Creates an instance of CaptureIdentity class. */
+    /**
+     * Creates an instance of CaptureIdentity class.
+     */
     public CaptureIdentity() {
     }
 
     /**
      * Get the type property: Type of Azure Active Directory Managed Identity.
-     *
+     * 
      * @return the type value.
      */
     public CaptureIdentityType type() {
@@ -38,7 +42,7 @@ public final class CaptureIdentity {
 
     /**
      * Set the type property: Type of Azure Active Directory Managed Identity.
-     *
+     * 
      * @param type the type value to set.
      * @return the CaptureIdentity object itself.
      */
@@ -51,7 +55,7 @@ public final class CaptureIdentity {
      * Get the userAssignedIdentity property: ARM ID of Managed User Identity. This property is required is the type is
      * UserAssignedIdentity. If type is SystemAssigned, then the System Assigned Identity Associated with the namespace
      * will be used.
-     *
+     * 
      * @return the userAssignedIdentity value.
      */
     public String userAssignedIdentity() {
@@ -62,7 +66,7 @@ public final class CaptureIdentity {
      * Set the userAssignedIdentity property: ARM ID of Managed User Identity. This property is required is the type is
      * UserAssignedIdentity. If type is SystemAssigned, then the System Assigned Identity Associated with the namespace
      * will be used.
-     *
+     * 
      * @param userAssignedIdentity the userAssignedIdentity value to set.
      * @return the CaptureIdentity object itself.
      */
@@ -73,7 +77,7 @@ public final class CaptureIdentity {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

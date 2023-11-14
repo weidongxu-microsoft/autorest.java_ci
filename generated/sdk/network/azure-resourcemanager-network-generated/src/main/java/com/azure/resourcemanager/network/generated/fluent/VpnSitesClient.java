@@ -14,11 +14,13 @@ import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.network.generated.fluent.models.VpnSiteInner;
 import com.azure.resourcemanager.network.generated.models.TagsObject;
 
-/** An instance of this class provides access to all the operations defined in VpnSitesClient. */
+/**
+ * An instance of this class provides access to all the operations defined in VpnSitesClient.
+ */
 public interface VpnSitesClient {
     /**
      * Retrieves the details of a VPN site.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnSite.
      * @param vpnSiteName The name of the VpnSite being retrieved.
      * @param context The context to associate with this operation.
@@ -28,12 +30,12 @@ public interface VpnSitesClient {
      * @return vpnSite Resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<VpnSiteInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String vpnSiteName, Context context);
+    Response<VpnSiteInner> getByResourceGroupWithResponse(String resourceGroupName, String vpnSiteName,
+        Context context);
 
     /**
      * Retrieves the details of a VPN site.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnSite.
      * @param vpnSiteName The name of the VpnSite being retrieved.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -46,7 +48,7 @@ public interface VpnSitesClient {
 
     /**
      * Creates a VpnSite resource if it doesn't exist else updates the existing VpnSite.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnSite.
      * @param vpnSiteName The name of the VpnSite being created or updated.
      * @param vpnSiteParameters Parameters supplied to create or update VpnSite.
@@ -56,12 +58,12 @@ public interface VpnSitesClient {
      * @return the {@link SyncPoller} for polling of vpnSite Resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<VpnSiteInner>, VpnSiteInner> beginCreateOrUpdate(
-        String resourceGroupName, String vpnSiteName, VpnSiteInner vpnSiteParameters);
+    SyncPoller<PollResult<VpnSiteInner>, VpnSiteInner> beginCreateOrUpdate(String resourceGroupName, String vpnSiteName,
+        VpnSiteInner vpnSiteParameters);
 
     /**
      * Creates a VpnSite resource if it doesn't exist else updates the existing VpnSite.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnSite.
      * @param vpnSiteName The name of the VpnSite being created or updated.
      * @param vpnSiteParameters Parameters supplied to create or update VpnSite.
@@ -72,12 +74,12 @@ public interface VpnSitesClient {
      * @return the {@link SyncPoller} for polling of vpnSite Resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<VpnSiteInner>, VpnSiteInner> beginCreateOrUpdate(
-        String resourceGroupName, String vpnSiteName, VpnSiteInner vpnSiteParameters, Context context);
+    SyncPoller<PollResult<VpnSiteInner>, VpnSiteInner> beginCreateOrUpdate(String resourceGroupName, String vpnSiteName,
+        VpnSiteInner vpnSiteParameters, Context context);
 
     /**
      * Creates a VpnSite resource if it doesn't exist else updates the existing VpnSite.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnSite.
      * @param vpnSiteName The name of the VpnSite being created or updated.
      * @param vpnSiteParameters Parameters supplied to create or update VpnSite.
@@ -91,7 +93,7 @@ public interface VpnSitesClient {
 
     /**
      * Creates a VpnSite resource if it doesn't exist else updates the existing VpnSite.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnSite.
      * @param vpnSiteName The name of the VpnSite being created or updated.
      * @param vpnSiteParameters Parameters supplied to create or update VpnSite.
@@ -102,12 +104,12 @@ public interface VpnSitesClient {
      * @return vpnSite Resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    VpnSiteInner createOrUpdate(
-        String resourceGroupName, String vpnSiteName, VpnSiteInner vpnSiteParameters, Context context);
+    VpnSiteInner createOrUpdate(String resourceGroupName, String vpnSiteName, VpnSiteInner vpnSiteParameters,
+        Context context);
 
     /**
      * Updates VpnSite tags.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnSite.
      * @param vpnSiteName The name of the VpnSite being updated.
      * @param vpnSiteParameters Parameters supplied to update VpnSite tags.
@@ -118,12 +120,12 @@ public interface VpnSitesClient {
      * @return vpnSite Resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<VpnSiteInner> updateTagsWithResponse(
-        String resourceGroupName, String vpnSiteName, TagsObject vpnSiteParameters, Context context);
+    Response<VpnSiteInner> updateTagsWithResponse(String resourceGroupName, String vpnSiteName,
+        TagsObject vpnSiteParameters, Context context);
 
     /**
      * Updates VpnSite tags.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnSite.
      * @param vpnSiteName The name of the VpnSite being updated.
      * @param vpnSiteParameters Parameters supplied to update VpnSite tags.
@@ -137,7 +139,7 @@ public interface VpnSitesClient {
 
     /**
      * Deletes a VpnSite.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnSite.
      * @param vpnSiteName The name of the VpnSite being deleted.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -150,7 +152,7 @@ public interface VpnSitesClient {
 
     /**
      * Deletes a VpnSite.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnSite.
      * @param vpnSiteName The name of the VpnSite being deleted.
      * @param context The context to associate with this operation.
@@ -164,7 +166,7 @@ public interface VpnSitesClient {
 
     /**
      * Deletes a VpnSite.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnSite.
      * @param vpnSiteName The name of the VpnSite being deleted.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -176,7 +178,7 @@ public interface VpnSitesClient {
 
     /**
      * Deletes a VpnSite.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnSite.
      * @param vpnSiteName The name of the VpnSite being deleted.
      * @param context The context to associate with this operation.
@@ -189,7 +191,7 @@ public interface VpnSitesClient {
 
     /**
      * Lists all the vpnSites in a resource group.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnSite.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -201,7 +203,7 @@ public interface VpnSitesClient {
 
     /**
      * Lists all the vpnSites in a resource group.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnSite.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -214,7 +216,7 @@ public interface VpnSitesClient {
 
     /**
      * Lists all the VpnSites in a subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return result of the request to list VpnSites as paginated response with {@link PagedIterable}.
@@ -224,7 +226,7 @@ public interface VpnSitesClient {
 
     /**
      * Lists all the VpnSites in a subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

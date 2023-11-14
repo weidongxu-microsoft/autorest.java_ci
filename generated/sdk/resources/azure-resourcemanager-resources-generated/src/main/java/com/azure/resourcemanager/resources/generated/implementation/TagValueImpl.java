@@ -13,8 +13,8 @@ public final class TagValueImpl implements TagValue {
 
     private final com.azure.resourcemanager.resources.generated.ResourceManager serviceManager;
 
-    TagValueImpl(
-        TagValueInner innerObject, com.azure.resourcemanager.resources.generated.ResourceManager serviceManager) {
+    TagValueImpl(TagValueInner innerObject,
+        com.azure.resourcemanager.resources.generated.ResourceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

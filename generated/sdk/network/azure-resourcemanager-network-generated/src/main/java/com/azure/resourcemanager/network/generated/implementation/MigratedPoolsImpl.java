@@ -14,8 +14,8 @@ public final class MigratedPoolsImpl implements MigratedPools {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    MigratedPoolsImpl(
-        MigratedPoolsInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    MigratedPoolsImpl(MigratedPoolsInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

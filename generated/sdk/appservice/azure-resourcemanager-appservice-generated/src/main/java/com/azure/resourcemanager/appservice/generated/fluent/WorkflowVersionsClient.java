@@ -11,11 +11,13 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.WorkflowVersionInner;
 
-/** An instance of this class provides access to all the operations defined in WorkflowVersionsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in WorkflowVersionsClient.
+ */
 public interface WorkflowVersionsClient {
     /**
      * Gets a list of workflow versions.
-     *
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param workflowName The workflow name.
@@ -29,7 +31,7 @@ public interface WorkflowVersionsClient {
 
     /**
      * Gets a list of workflow versions.
-     *
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param workflowName The workflow name.
@@ -41,12 +43,12 @@ public interface WorkflowVersionsClient {
      * @return a list of workflow versions as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<WorkflowVersionInner> list(
-        String resourceGroupName, String name, String workflowName, Integer top, Context context);
+    PagedIterable<WorkflowVersionInner> list(String resourceGroupName, String name, String workflowName, Integer top,
+        Context context);
 
     /**
      * Gets a workflow version.
-     *
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param workflowName The workflow name.
@@ -58,12 +60,12 @@ public interface WorkflowVersionsClient {
      * @return a workflow version along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<WorkflowVersionInner> getWithResponse(
-        String resourceGroupName, String name, String workflowName, String versionId, Context context);
+    Response<WorkflowVersionInner> getWithResponse(String resourceGroupName, String name, String workflowName,
+        String versionId, Context context);
 
     /**
      * Gets a workflow version.
-     *
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param workflowName The workflow name.

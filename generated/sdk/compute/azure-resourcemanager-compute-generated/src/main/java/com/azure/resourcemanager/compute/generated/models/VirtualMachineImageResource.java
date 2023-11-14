@@ -7,25 +7,27 @@ package com.azure.resourcemanager.compute.generated.models;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineImageResourceInner;
 import java.util.Map;
 
-/** An immutable client-side representation of VirtualMachineImageResource. */
+/**
+ * An immutable client-side representation of VirtualMachineImageResource.
+ */
 public interface VirtualMachineImageResource {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the name property: The name of the resource.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the location property: The supported Azure location of the resource.
-     *
+     * 
      * @return the location value.
      */
     String location();
@@ -34,21 +36,21 @@ public interface VirtualMachineImageResource {
      * Gets the tags property: Specifies the tags that are assigned to the virtual machine. For more information about
      * using tags, see [Using tags to organize your Azure
      * resources](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags.md).
-     *
+     * 
      * @return the tags value.
      */
     Map<String, String> tags();
 
     /**
      * Gets the extendedLocation property: The extended location of the Virtual Machine.
-     *
+     * 
      * @return the extendedLocation value.
      */
     ExtendedLocation extendedLocation();
 
     /**
      * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineImageResourceInner object.
-     *
+     * 
      * @return the inner object.
      */
     VirtualMachineImageResourceInner innerModel();

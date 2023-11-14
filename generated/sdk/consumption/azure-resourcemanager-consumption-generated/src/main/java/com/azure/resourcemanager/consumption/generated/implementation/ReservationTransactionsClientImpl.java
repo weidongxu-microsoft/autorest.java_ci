@@ -33,23 +33,28 @@ import com.azure.resourcemanager.consumption.generated.models.ReservationTransac
 import java.math.BigDecimal;
 import reactor.core.publisher.Mono;
 
-/** An instance of this class provides access to all the operations defined in ReservationTransactionsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in ReservationTransactionsClient.
+ */
 public final class ReservationTransactionsClientImpl implements ReservationTransactionsClient {
-    /** The proxy service used to perform REST calls. */
+    /**
+     * The proxy service used to perform REST calls.
+     */
     private final ReservationTransactionsService service;
 
-    /** The service client containing this operation class. */
+    /**
+     * The service client containing this operation class.
+     */
     private final ConsumptionManagementClientImpl client;
 
     /**
      * Initializes an instance of ReservationTransactionsClientImpl.
-     *
+     * 
      * @param client the instance of the service client containing this operation class.
      */
     ReservationTransactionsClientImpl(ConsumptionManagementClientImpl client) {
-        this.service =
-            RestProxy
-                .create(ReservationTransactionsService.class, client.getHttpPipeline(), client.getSerializerAdapter());
+        this.service = RestProxy.create(ReservationTransactionsService.class, client.getHttpPipeline(),
+            client.getSerializerAdapter());
         this.client = client;
     }
 
@@ -60,54 +65,42 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
     @Host("{$host}")
     @ServiceInterface(name = "ConsumptionManagemen")
     public interface ReservationTransactionsService {
-        @Headers({"Content-Type: application/json"})
-        @Get(
-            "/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/providers/Microsoft.Consumption/reservationTransactions")
-        @ExpectedResponses({200})
+        @Headers({ "Content-Type: application/json" })
+        @Get("/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/providers/Microsoft.Consumption/reservationTransactions")
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<ReservationTransactionsListResult>> list(
-            @HostParam("$host") String endpoint,
-            @QueryParam("$filter") String filter,
-            @QueryParam("api-version") String apiVersion,
+        Mono<Response<ReservationTransactionsListResult>> list(@HostParam("$host") String endpoint,
+            @QueryParam("$filter") String filter, @QueryParam("api-version") String apiVersion,
             @QueryParam("useMarkupIfPartner") Boolean useMarkupIfPartner,
             @QueryParam("previewMarkupPercentage") BigDecimal previewMarkupPercentage,
-            @PathParam("billingAccountId") String billingAccountId,
-            @HeaderParam("Accept") String accept,
+            @PathParam("billingAccountId") String billingAccountId, @HeaderParam("Accept") String accept,
             Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Get(
-            "/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}/providers/Microsoft.Consumption/reservationTransactions")
-        @ExpectedResponses({200})
+        @Headers({ "Content-Type: application/json" })
+        @Get("/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}/providers/Microsoft.Consumption/reservationTransactions")
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<ModernReservationTransactionsListResult>> listByBillingProfile(
-            @HostParam("$host") String endpoint,
-            @QueryParam("$filter") String filter,
-            @QueryParam("api-version") String apiVersion,
-            @PathParam("billingAccountId") String billingAccountId,
-            @PathParam("billingProfileId") String billingProfileId,
-            @HeaderParam("Accept") String accept,
+            @HostParam("$host") String endpoint, @QueryParam("$filter") String filter,
+            @QueryParam("api-version") String apiVersion, @PathParam("billingAccountId") String billingAccountId,
+            @PathParam("billingProfileId") String billingProfileId, @HeaderParam("Accept") String accept,
             Context context);
 
-        @Headers({"Content-Type: application/json"})
+        @Headers({ "Content-Type: application/json" })
         @Get("{nextLink}")
-        @ExpectedResponses({200})
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<ReservationTransactionsListResult>> listNext(
-            @PathParam(value = "nextLink", encoded = true) String nextLink,
-            @HostParam("$host") String endpoint,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @PathParam(value = "nextLink", encoded = true) String nextLink, @HostParam("$host") String endpoint,
+            @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
+        @Headers({ "Content-Type: application/json" })
         @Get("{nextLink}")
-        @ExpectedResponses({200})
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<ModernReservationTransactionsListResult>> listByBillingProfileNext(
-            @PathParam(value = "nextLink", encoded = true) String nextLink,
-            @HostParam("$host") String endpoint,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @PathParam(value = "nextLink", encoded = true) String nextLink, @HostParam("$host") String endpoint,
+            @HeaderParam("Accept") String accept, Context context);
     }
 
     /**
@@ -116,29 +109,26 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
      * May 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the
      * reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the
      * response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param filter Filter reservation transactions by date range. The properties/EventDate for start date and end
-     *     date. The filter supports 'le' and 'ge'. Note: API returns data for the entire start date's and end date's
-     *     billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29
-     *     will include data for the entire December 2020 month (i.e. will contain records for dates December 30 and
-     *     31).
+     * date. The filter supports 'le' and 'ge'. Note: API returns data for the entire start date's and end date's
+     * billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29 will
+     * include data for the entire December 2020 month (i.e. will contain records for dates December 30 and 31).
      * @param useMarkupIfPartner Applies mark up to the transactions if the caller is a partner.
      * @param previewMarkupPercentage Preview markup percentage to be applied.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return result of listing reservation recommendations along with {@link PagedResponse} on successful completion
-     *     of {@link Mono}.
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<ReservationTransactionInner>> listSinglePageAsync(
-        String billingAccountId, String filter, Boolean useMarkupIfPartner, BigDecimal previewMarkupPercentage) {
+    private Mono<PagedResponse<ReservationTransactionInner>> listSinglePageAsync(String billingAccountId, String filter,
+        Boolean useMarkupIfPartner, BigDecimal previewMarkupPercentage) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (billingAccountId == null) {
             return Mono
@@ -146,27 +136,10 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
         }
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .list(
-                            this.client.getEndpoint(),
-                            filter,
-                            this.client.getApiVersion(),
-                            useMarkupIfPartner,
-                            previewMarkupPercentage,
-                            billingAccountId,
-                            accept,
-                            context))
-            .<PagedResponse<ReservationTransactionInner>>map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null))
+            .withContext(context -> service.list(this.client.getEndpoint(), filter, this.client.getApiVersion(),
+                useMarkupIfPartner, previewMarkupPercentage, billingAccountId, accept, context))
+            .<PagedResponse<ReservationTransactionInner>>map(res -> new PagedResponseBase<>(res.getRequest(),
+                res.getStatusCode(), res.getHeaders(), res.getValue().value(), res.getValue().nextLink(), null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
@@ -176,13 +149,12 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
      * May 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the
      * reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the
      * response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param filter Filter reservation transactions by date range. The properties/EventDate for start date and end
-     *     date. The filter supports 'le' and 'ge'. Note: API returns data for the entire start date's and end date's
-     *     billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29
-     *     will include data for the entire December 2020 month (i.e. will contain records for dates December 30 and
-     *     31).
+     * date. The filter supports 'le' and 'ge'. Note: API returns data for the entire start date's and end date's
+     * billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29 will
+     * include data for the entire December 2020 month (i.e. will contain records for dates December 30 and 31).
      * @param useMarkupIfPartner Applies mark up to the transactions if the caller is a partner.
      * @param previewMarkupPercentage Preview markup percentage to be applied.
      * @param context The context to associate with this operation.
@@ -190,20 +162,14 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return result of listing reservation recommendations along with {@link PagedResponse} on successful completion
-     *     of {@link Mono}.
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<ReservationTransactionInner>> listSinglePageAsync(
-        String billingAccountId,
-        String filter,
-        Boolean useMarkupIfPartner,
-        BigDecimal previewMarkupPercentage,
-        Context context) {
+    private Mono<PagedResponse<ReservationTransactionInner>> listSinglePageAsync(String billingAccountId, String filter,
+        Boolean useMarkupIfPartner, BigDecimal previewMarkupPercentage, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (billingAccountId == null) {
             return Mono
@@ -212,24 +178,10 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .list(
-                this.client.getEndpoint(),
-                filter,
-                this.client.getApiVersion(),
-                useMarkupIfPartner,
-                previewMarkupPercentage,
-                billingAccountId,
-                accept,
-                context)
-            .map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null));
+            .list(this.client.getEndpoint(), filter, this.client.getApiVersion(), useMarkupIfPartner,
+                previewMarkupPercentage, billingAccountId, accept, context)
+            .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
+                res.getValue().value(), res.getValue().nextLink(), null));
     }
 
     /**
@@ -238,13 +190,12 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
      * May 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the
      * reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the
      * response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param filter Filter reservation transactions by date range. The properties/EventDate for start date and end
-     *     date. The filter supports 'le' and 'ge'. Note: API returns data for the entire start date's and end date's
-     *     billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29
-     *     will include data for the entire December 2020 month (i.e. will contain records for dates December 30 and
-     *     31).
+     * date. The filter supports 'le' and 'ge'. Note: API returns data for the entire start date's and end date's
+     * billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29 will
+     * include data for the entire December 2020 month (i.e. will contain records for dates December 30 and 31).
      * @param useMarkupIfPartner Applies mark up to the transactions if the caller is a partner.
      * @param previewMarkupPercentage Preview markup percentage to be applied.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -253,8 +204,8 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
      * @return result of listing reservation recommendations as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<ReservationTransactionInner> listAsync(
-        String billingAccountId, String filter, Boolean useMarkupIfPartner, BigDecimal previewMarkupPercentage) {
+    private PagedFlux<ReservationTransactionInner> listAsync(String billingAccountId, String filter,
+        Boolean useMarkupIfPartner, BigDecimal previewMarkupPercentage) {
         return new PagedFlux<>(
             () -> listSinglePageAsync(billingAccountId, filter, useMarkupIfPartner, previewMarkupPercentage),
             nextLink -> listNextSinglePageAsync(nextLink));
@@ -266,7 +217,7 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
      * May 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the
      * reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the
      * response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -289,13 +240,12 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
      * May 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the
      * reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the
      * response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param filter Filter reservation transactions by date range. The properties/EventDate for start date and end
-     *     date. The filter supports 'le' and 'ge'. Note: API returns data for the entire start date's and end date's
-     *     billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29
-     *     will include data for the entire December 2020 month (i.e. will contain records for dates December 30 and
-     *     31).
+     * date. The filter supports 'le' and 'ge'. Note: API returns data for the entire start date's and end date's
+     * billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29 will
+     * include data for the entire December 2020 month (i.e. will contain records for dates December 30 and 31).
      * @param useMarkupIfPartner Applies mark up to the transactions if the caller is a partner.
      * @param previewMarkupPercentage Preview markup percentage to be applied.
      * @param context The context to associate with this operation.
@@ -305,12 +255,8 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
      * @return result of listing reservation recommendations as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<ReservationTransactionInner> listAsync(
-        String billingAccountId,
-        String filter,
-        Boolean useMarkupIfPartner,
-        BigDecimal previewMarkupPercentage,
-        Context context) {
+    private PagedFlux<ReservationTransactionInner> listAsync(String billingAccountId, String filter,
+        Boolean useMarkupIfPartner, BigDecimal previewMarkupPercentage, Context context) {
         return new PagedFlux<>(
             () -> listSinglePageAsync(billingAccountId, filter, useMarkupIfPartner, previewMarkupPercentage, context),
             nextLink -> listNextSinglePageAsync(nextLink, context));
@@ -322,7 +268,7 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
      * May 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the
      * reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the
      * response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -343,13 +289,12 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
      * May 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the
      * reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the
      * response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param filter Filter reservation transactions by date range. The properties/EventDate for start date and end
-     *     date. The filter supports 'le' and 'ge'. Note: API returns data for the entire start date's and end date's
-     *     billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29
-     *     will include data for the entire December 2020 month (i.e. will contain records for dates December 30 and
-     *     31).
+     * date. The filter supports 'le' and 'ge'. Note: API returns data for the entire start date's and end date's
+     * billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29 will
+     * include data for the entire December 2020 month (i.e. will contain records for dates December 30 and 31).
      * @param useMarkupIfPartner Applies mark up to the transactions if the caller is a partner.
      * @param previewMarkupPercentage Preview markup percentage to be applied.
      * @param context The context to associate with this operation.
@@ -359,12 +304,8 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
      * @return result of listing reservation recommendations as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    public PagedIterable<ReservationTransactionInner> list(
-        String billingAccountId,
-        String filter,
-        Boolean useMarkupIfPartner,
-        BigDecimal previewMarkupPercentage,
-        Context context) {
+    public PagedIterable<ReservationTransactionInner> list(String billingAccountId, String filter,
+        Boolean useMarkupIfPartner, BigDecimal previewMarkupPercentage, Context context) {
         return new PagedIterable<>(
             listAsync(billingAccountId, filter, useMarkupIfPartner, previewMarkupPercentage, context));
     }
@@ -375,27 +316,25 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
      * 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the
      * reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the
      * response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
      * @param filter Filter reservation transactions by date range. The properties/EventDate for start date and end
-     *     date. The filter supports 'le' and 'ge'. Note: API returns data for the entire start date's and end date's
-     *     billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29
-     *     will include data for entire December 2020 month (i.e. will contain records for dates December 30 and 31).
+     * date. The filter supports 'le' and 'ge'. Note: API returns data for the entire start date's and end date's
+     * billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29 will
+     * include data for entire December 2020 month (i.e. will contain records for dates December 30 and 31).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return result of listing reservation recommendations along with {@link PagedResponse} on successful completion
-     *     of {@link Mono}.
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<ModernReservationTransactionInner>> listByBillingProfileSinglePageAsync(
-        String billingAccountId, String billingProfileId, String filter) {
+    private Mono<PagedResponse<ModernReservationTransactionInner>>
+        listByBillingProfileSinglePageAsync(String billingAccountId, String billingProfileId, String filter) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (billingAccountId == null) {
             return Mono
@@ -407,26 +346,10 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
         }
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .listByBillingProfile(
-                            this.client.getEndpoint(),
-                            filter,
-                            this.client.getApiVersion(),
-                            billingAccountId,
-                            billingProfileId,
-                            accept,
-                            context))
-            .<PagedResponse<ModernReservationTransactionInner>>map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null))
+            .withContext(context -> service.listByBillingProfile(this.client.getEndpoint(), filter,
+                this.client.getApiVersion(), billingAccountId, billingProfileId, accept, context))
+            .<PagedResponse<ModernReservationTransactionInner>>map(res -> new PagedResponseBase<>(res.getRequest(),
+                res.getStatusCode(), res.getHeaders(), res.getValue().value(), res.getValue().nextLink(), null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
@@ -436,28 +359,26 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
      * 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the
      * reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the
      * response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
      * @param filter Filter reservation transactions by date range. The properties/EventDate for start date and end
-     *     date. The filter supports 'le' and 'ge'. Note: API returns data for the entire start date's and end date's
-     *     billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29
-     *     will include data for entire December 2020 month (i.e. will contain records for dates December 30 and 31).
+     * date. The filter supports 'le' and 'ge'. Note: API returns data for the entire start date's and end date's
+     * billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29 will
+     * include data for entire December 2020 month (i.e. will contain records for dates December 30 and 31).
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return result of listing reservation recommendations along with {@link PagedResponse} on successful completion
-     *     of {@link Mono}.
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ModernReservationTransactionInner>> listByBillingProfileSinglePageAsync(
         String billingAccountId, String billingProfileId, String filter, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (billingAccountId == null) {
             return Mono
@@ -470,23 +391,10 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .listByBillingProfile(
-                this.client.getEndpoint(),
-                filter,
-                this.client.getApiVersion(),
-                billingAccountId,
-                billingProfileId,
-                accept,
-                context)
-            .map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null));
+            .listByBillingProfile(this.client.getEndpoint(), filter, this.client.getApiVersion(), billingAccountId,
+                billingProfileId, accept, context)
+            .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
+                res.getValue().value(), res.getValue().nextLink(), null));
     }
 
     /**
@@ -495,23 +403,22 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
      * 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the
      * reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the
      * response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
      * @param filter Filter reservation transactions by date range. The properties/EventDate for start date and end
-     *     date. The filter supports 'le' and 'ge'. Note: API returns data for the entire start date's and end date's
-     *     billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29
-     *     will include data for entire December 2020 month (i.e. will contain records for dates December 30 and 31).
+     * date. The filter supports 'le' and 'ge'. Note: API returns data for the entire start date's and end date's
+     * billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29 will
+     * include data for entire December 2020 month (i.e. will contain records for dates December 30 and 31).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return result of listing reservation recommendations as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<ModernReservationTransactionInner> listByBillingProfileAsync(
-        String billingAccountId, String billingProfileId, String filter) {
-        return new PagedFlux<>(
-            () -> listByBillingProfileSinglePageAsync(billingAccountId, billingProfileId, filter),
+    private PagedFlux<ModernReservationTransactionInner> listByBillingProfileAsync(String billingAccountId,
+        String billingProfileId, String filter) {
+        return new PagedFlux<>(() -> listByBillingProfileSinglePageAsync(billingAccountId, billingProfileId, filter),
             nextLink -> listByBillingProfileNextSinglePageAsync(nextLink));
     }
 
@@ -521,7 +428,7 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
      * 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the
      * reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the
      * response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -530,11 +437,10 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
      * @return result of listing reservation recommendations as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<ModernReservationTransactionInner> listByBillingProfileAsync(
-        String billingAccountId, String billingProfileId) {
+    private PagedFlux<ModernReservationTransactionInner> listByBillingProfileAsync(String billingAccountId,
+        String billingProfileId) {
         final String filter = null;
-        return new PagedFlux<>(
-            () -> listByBillingProfileSinglePageAsync(billingAccountId, billingProfileId, filter),
+        return new PagedFlux<>(() -> listByBillingProfileSinglePageAsync(billingAccountId, billingProfileId, filter),
             nextLink -> listByBillingProfileNextSinglePageAsync(nextLink));
     }
 
@@ -544,13 +450,13 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
      * 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the
      * reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the
      * response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
      * @param filter Filter reservation transactions by date range. The properties/EventDate for start date and end
-     *     date. The filter supports 'le' and 'ge'. Note: API returns data for the entire start date's and end date's
-     *     billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29
-     *     will include data for entire December 2020 month (i.e. will contain records for dates December 30 and 31).
+     * date. The filter supports 'le' and 'ge'. Note: API returns data for the entire start date's and end date's
+     * billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29 will
+     * include data for entire December 2020 month (i.e. will contain records for dates December 30 and 31).
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -558,8 +464,8 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
      * @return result of listing reservation recommendations as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<ModernReservationTransactionInner> listByBillingProfileAsync(
-        String billingAccountId, String billingProfileId, String filter, Context context) {
+    private PagedFlux<ModernReservationTransactionInner> listByBillingProfileAsync(String billingAccountId,
+        String billingProfileId, String filter, Context context) {
         return new PagedFlux<>(
             () -> listByBillingProfileSinglePageAsync(billingAccountId, billingProfileId, filter, context),
             nextLink -> listByBillingProfileNextSinglePageAsync(nextLink, context));
@@ -571,7 +477,7 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
      * 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the
      * reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the
      * response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -580,8 +486,8 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
      * @return result of listing reservation recommendations as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    public PagedIterable<ModernReservationTransactionInner> listByBillingProfile(
-        String billingAccountId, String billingProfileId) {
+    public PagedIterable<ModernReservationTransactionInner> listByBillingProfile(String billingAccountId,
+        String billingProfileId) {
         final String filter = null;
         return new PagedIterable<>(listByBillingProfileAsync(billingAccountId, billingProfileId, filter));
     }
@@ -592,13 +498,13 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
      * 2021. This refund transaction will have event date as May 2021 but the billing month as April 2020 when the
      * reservation purchase was made. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the
      * response size exceeds the ARM limit. In such cases, API call should be made with smaller date ranges.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
      * @param filter Filter reservation transactions by date range. The properties/EventDate for start date and end
-     *     date. The filter supports 'le' and 'ge'. Note: API returns data for the entire start date's and end date's
-     *     billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29
-     *     will include data for entire December 2020 month (i.e. will contain records for dates December 30 and 31).
+     * date. The filter supports 'le' and 'ge'. Note: API returns data for the entire start date's and end date's
+     * billing month. For example, filter properties/eventDate+ge+2020-01-01+AND+properties/eventDate+le+2020-12-29 will
+     * include data for entire December 2020 month (i.e. will contain records for dates December 30 and 31).
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -606,21 +512,22 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
      * @return result of listing reservation recommendations as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    public PagedIterable<ModernReservationTransactionInner> listByBillingProfile(
-        String billingAccountId, String billingProfileId, String filter, Context context) {
+    public PagedIterable<ModernReservationTransactionInner> listByBillingProfile(String billingAccountId,
+        String billingProfileId, String filter, Context context) {
         return new PagedIterable<>(listByBillingProfileAsync(billingAccountId, billingProfileId, filter, context));
     }
 
     /**
      * Get the next page of items.
-     *
+     * 
      * @param nextLink The URL to get the next list of items
-     *     <p>The nextLink parameter.
+     * 
+     * The nextLink parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return result of listing reservation recommendations along with {@link PagedResponse} on successful completion
-     *     of {@link Mono}.
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationTransactionInner>> listNextSinglePageAsync(String nextLink) {
@@ -628,37 +535,28 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
             return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
         }
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         final String accept = "application/json";
-        return FluxUtil
-            .withContext(context -> service.listNext(nextLink, this.client.getEndpoint(), accept, context))
-            .<PagedResponse<ReservationTransactionInner>>map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null))
+        return FluxUtil.withContext(context -> service.listNext(nextLink, this.client.getEndpoint(), accept, context))
+            .<PagedResponse<ReservationTransactionInner>>map(res -> new PagedResponseBase<>(res.getRequest(),
+                res.getStatusCode(), res.getHeaders(), res.getValue().value(), res.getValue().nextLink(), null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Get the next page of items.
-     *
+     * 
      * @param nextLink The URL to get the next list of items
-     *     <p>The nextLink parameter.
+     * 
+     * The nextLink parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return result of listing reservation recommendations along with {@link PagedResponse} on successful completion
-     *     of {@link Mono}.
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationTransactionInner>> listNextSinglePageAsync(String nextLink, Context context) {
@@ -666,101 +564,74 @@ public final class ReservationTransactionsClientImpl implements ReservationTrans
             return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
         }
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .listNext(nextLink, this.client.getEndpoint(), accept, context)
-            .map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null));
+        return service.listNext(nextLink, this.client.getEndpoint(), accept, context)
+            .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
+                res.getValue().value(), res.getValue().nextLink(), null));
     }
 
     /**
      * Get the next page of items.
-     *
+     * 
      * @param nextLink The URL to get the next list of items
-     *     <p>The nextLink parameter.
+     * 
+     * The nextLink parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return result of listing reservation recommendations along with {@link PagedResponse} on successful completion
-     *     of {@link Mono}.
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<ModernReservationTransactionInner>> listByBillingProfileNextSinglePageAsync(
-        String nextLink) {
+    private Mono<PagedResponse<ModernReservationTransactionInner>>
+        listByBillingProfileNextSinglePageAsync(String nextLink) {
         if (nextLink == null) {
             return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
         }
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context -> service.listByBillingProfileNext(nextLink, this.client.getEndpoint(), accept, context))
-            .<PagedResponse<ModernReservationTransactionInner>>map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null))
+            .<PagedResponse<ModernReservationTransactionInner>>map(res -> new PagedResponseBase<>(res.getRequest(),
+                res.getStatusCode(), res.getHeaders(), res.getValue().value(), res.getValue().nextLink(), null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Get the next page of items.
-     *
+     * 
      * @param nextLink The URL to get the next list of items
-     *     <p>The nextLink parameter.
+     * 
+     * The nextLink parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return result of listing reservation recommendations along with {@link PagedResponse} on successful completion
-     *     of {@link Mono}.
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<ModernReservationTransactionInner>> listByBillingProfileNextSinglePageAsync(
-        String nextLink, Context context) {
+    private Mono<PagedResponse<ModernReservationTransactionInner>>
+        listByBillingProfileNextSinglePageAsync(String nextLink, Context context) {
         if (nextLink == null) {
             return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
         }
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .listByBillingProfileNext(nextLink, this.client.getEndpoint(), accept, context)
-            .map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null));
+        return service.listByBillingProfileNext(nextLink, this.client.getEndpoint(), accept, context)
+            .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
+                res.getValue().value(), res.getValue().nextLink(), null));
     }
 }

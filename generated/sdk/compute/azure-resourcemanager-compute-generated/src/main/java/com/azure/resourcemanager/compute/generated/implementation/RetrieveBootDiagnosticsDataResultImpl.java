@@ -12,8 +12,7 @@ public final class RetrieveBootDiagnosticsDataResultImpl implements RetrieveBoot
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    RetrieveBootDiagnosticsDataResultImpl(
-        RetrieveBootDiagnosticsDataResultInner innerObject,
+    RetrieveBootDiagnosticsDataResultImpl(RetrieveBootDiagnosticsDataResultInner innerObject,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

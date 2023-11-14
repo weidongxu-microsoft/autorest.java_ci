@@ -15,8 +15,7 @@ public final class NetworkManagerDeploymentStatusListResultImpl implements Netwo
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    NetworkManagerDeploymentStatusListResultImpl(
-        NetworkManagerDeploymentStatusListResultInner innerObject,
+    NetworkManagerDeploymentStatusListResultImpl(NetworkManagerDeploymentStatusListResultInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

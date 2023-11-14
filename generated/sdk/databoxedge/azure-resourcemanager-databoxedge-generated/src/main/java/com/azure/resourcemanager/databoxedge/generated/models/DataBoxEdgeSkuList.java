@@ -9,7 +9,9 @@ import com.azure.resourcemanager.databoxedge.generated.fluent.models.DataBoxEdge
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** List of SKU Information objects. */
+/**
+ * List of SKU Information objects.
+ */
 @Immutable
 public final class DataBoxEdgeSkuList {
     /*
@@ -24,13 +26,15 @@ public final class DataBoxEdgeSkuList {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
-    /** Creates an instance of DataBoxEdgeSkuList class. */
+    /**
+     * Creates an instance of DataBoxEdgeSkuList class.
+     */
     public DataBoxEdgeSkuList() {
     }
 
     /**
      * Get the value property: List of ResourceType Sku.
-     *
+     * 
      * @return the value value.
      */
     public List<DataBoxEdgeSkuInner> value() {
@@ -39,7 +43,7 @@ public final class DataBoxEdgeSkuList {
 
     /**
      * Get the nextLink property: Links to the next set of results.
-     *
+     * 
      * @return the nextLink value.
      */
     public String nextLink() {
@@ -48,7 +52,7 @@ public final class DataBoxEdgeSkuList {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

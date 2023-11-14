@@ -12,7 +12,9 @@ import com.azure.resourcemanager.costmanagement.generated.models.ReportTimeframe
 import com.azure.resourcemanager.costmanagement.generated.models.ReportType;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The definition of a report config. */
+/**
+ * The definition of a report config.
+ */
 @Fluent
 public final class ReportConfigDefinition {
     /*
@@ -47,15 +49,17 @@ public final class ReportConfigDefinition {
     @JsonProperty(value = "includeMonetaryCommitment", access = JsonProperty.Access.WRITE_ONLY)
     private Boolean includeMonetaryCommitment;
 
-    /** Creates an instance of ReportConfigDefinition class. */
+    /**
+     * Creates an instance of ReportConfigDefinition class.
+     */
     public ReportConfigDefinition() {
     }
 
     /**
-     * Get the type property: The type of the report. Usage represents actual usage, forecast represents forecasted data
-     * and UsageAndForecast represents both usage and forecasted data. Actual usage and forecasted data can be
+     * Get the type property: The type of the report. Usage represents actual usage, forecast represents forecasted
+     * data and UsageAndForecast represents both usage and forecasted data. Actual usage and forecasted data can be
      * differentiated based on dates.
-     *
+     * 
      * @return the type value.
      */
     public ReportType type() {
@@ -63,10 +67,10 @@ public final class ReportConfigDefinition {
     }
 
     /**
-     * Set the type property: The type of the report. Usage represents actual usage, forecast represents forecasted data
-     * and UsageAndForecast represents both usage and forecasted data. Actual usage and forecasted data can be
+     * Set the type property: The type of the report. Usage represents actual usage, forecast represents forecasted
+     * data and UsageAndForecast represents both usage and forecasted data. Actual usage and forecasted data can be
      * differentiated based on dates.
-     *
+     * 
      * @param type the type value to set.
      * @return the ReportConfigDefinition object itself.
      */
@@ -78,7 +82,7 @@ public final class ReportConfigDefinition {
     /**
      * Get the timeframe property: The time frame for pulling data for the report. If custom, then a specific time
      * period must be provided.
-     *
+     * 
      * @return the timeframe value.
      */
     public ReportTimeframeType timeframe() {
@@ -88,7 +92,7 @@ public final class ReportConfigDefinition {
     /**
      * Set the timeframe property: The time frame for pulling data for the report. If custom, then a specific time
      * period must be provided.
-     *
+     * 
      * @param timeframe the timeframe value to set.
      * @return the ReportConfigDefinition object itself.
      */
@@ -99,7 +103,7 @@ public final class ReportConfigDefinition {
 
     /**
      * Get the timePeriod property: Has time period for pulling data for the report.
-     *
+     * 
      * @return the timePeriod value.
      */
     public ReportConfigTimePeriod timePeriod() {
@@ -108,7 +112,7 @@ public final class ReportConfigDefinition {
 
     /**
      * Set the timePeriod property: Has time period for pulling data for the report.
-     *
+     * 
      * @param timePeriod the timePeriod value to set.
      * @return the ReportConfigDefinition object itself.
      */
@@ -119,7 +123,7 @@ public final class ReportConfigDefinition {
 
     /**
      * Get the dataSet property: Has definition for data in this report config.
-     *
+     * 
      * @return the dataSet value.
      */
     public ReportConfigDataset dataSet() {
@@ -128,7 +132,7 @@ public final class ReportConfigDefinition {
 
     /**
      * Set the dataSet property: Has definition for data in this report config.
-     *
+     * 
      * @param dataSet the dataSet value to set.
      * @return the ReportConfigDefinition object itself.
      */
@@ -139,7 +143,7 @@ public final class ReportConfigDefinition {
 
     /**
      * Get the includeMonetaryCommitment property: Include monetary commitment.
-     *
+     * 
      * @return the includeMonetaryCommitment value.
      */
     public Boolean includeMonetaryCommitment() {
@@ -148,20 +152,17 @@ public final class ReportConfigDefinition {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (type() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property type in model ReportConfigDefinition"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property type in model ReportConfigDefinition"));
         }
         if (timeframe() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property timeframe in model ReportConfigDefinition"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property timeframe in model ReportConfigDefinition"));
         }
         if (timePeriod() != null) {
             timePeriod().validate();

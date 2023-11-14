@@ -9,7 +9,9 @@ import com.azure.resourcemanager.mediaservices.generated.fluent.models.JobInner;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** A collection of Job items. */
+/**
+ * A collection of Job items.
+ */
 @Fluent
 public final class JobCollection {
     /*
@@ -25,13 +27,15 @@ public final class JobCollection {
     @JsonProperty(value = "@odata.nextLink")
     private String odataNextLink;
 
-    /** Creates an instance of JobCollection class. */
+    /**
+     * Creates an instance of JobCollection class.
+     */
     public JobCollection() {
     }
 
     /**
      * Get the value property: A collection of Job items.
-     *
+     * 
      * @return the value value.
      */
     public List<JobInner> value() {
@@ -40,7 +44,7 @@ public final class JobCollection {
 
     /**
      * Set the value property: A collection of Job items.
-     *
+     * 
      * @param value the value value to set.
      * @return the JobCollection object itself.
      */
@@ -52,7 +56,7 @@ public final class JobCollection {
     /**
      * Get the odataNextLink property: A link to the next page of the collection (when the collection contains too many
      * results to return in one response).
-     *
+     * 
      * @return the odataNextLink value.
      */
     public String odataNextLink() {
@@ -62,7 +66,7 @@ public final class JobCollection {
     /**
      * Set the odataNextLink property: A link to the next page of the collection (when the collection contains too many
      * results to return in one response).
-     *
+     * 
      * @param odataNextLink the odataNextLink value to set.
      * @return the JobCollection object itself.
      */
@@ -73,7 +77,7 @@ public final class JobCollection {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

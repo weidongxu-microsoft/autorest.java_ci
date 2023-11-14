@@ -11,10 +11,8 @@ import com.azure.resourcemanager.network.generated.models.ServiceEndpointPolicyD
 import java.util.Collections;
 import java.util.List;
 
-public final class ServiceEndpointPolicyDefinitionImpl
-    implements ServiceEndpointPolicyDefinition,
-        ServiceEndpointPolicyDefinition.Definition,
-        ServiceEndpointPolicyDefinition.Update {
+public final class ServiceEndpointPolicyDefinitionImpl implements ServiceEndpointPolicyDefinition,
+    ServiceEndpointPolicyDefinition.Definition, ServiceEndpointPolicyDefinition.Update {
     private ServiceEndpointPolicyDefinitionInner innerObject;
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
@@ -74,43 +72,29 @@ public final class ServiceEndpointPolicyDefinitionImpl
 
     private String serviceEndpointPolicyDefinitionName;
 
-    public ServiceEndpointPolicyDefinitionImpl withExistingServiceEndpointPolicy(
-        String resourceGroupName, String serviceEndpointPolicyName) {
+    public ServiceEndpointPolicyDefinitionImpl withExistingServiceEndpointPolicy(String resourceGroupName,
+        String serviceEndpointPolicyName) {
         this.resourceGroupName = resourceGroupName;
         this.serviceEndpointPolicyName = serviceEndpointPolicyName;
         return this;
     }
 
     public ServiceEndpointPolicyDefinition create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getServiceEndpointPolicyDefinitions()
-                .createOrUpdate(
-                    resourceGroupName,
-                    serviceEndpointPolicyName,
-                    serviceEndpointPolicyDefinitionName,
-                    this.innerModel(),
-                    Context.NONE);
+        this.innerObject
+            = serviceManager.serviceClient().getServiceEndpointPolicyDefinitions().createOrUpdate(resourceGroupName,
+                serviceEndpointPolicyName, serviceEndpointPolicyDefinitionName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public ServiceEndpointPolicyDefinition create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getServiceEndpointPolicyDefinitions()
-                .createOrUpdate(
-                    resourceGroupName,
-                    serviceEndpointPolicyName,
-                    serviceEndpointPolicyDefinitionName,
-                    this.innerModel(),
-                    context);
+        this.innerObject
+            = serviceManager.serviceClient().getServiceEndpointPolicyDefinitions().createOrUpdate(resourceGroupName,
+                serviceEndpointPolicyName, serviceEndpointPolicyDefinitionName, this.innerModel(), context);
         return this;
     }
 
-    ServiceEndpointPolicyDefinitionImpl(
-        String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    ServiceEndpointPolicyDefinitionImpl(String name,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new ServiceEndpointPolicyDefinitionInner();
         this.serviceManager = serviceManager;
         this.serviceEndpointPolicyDefinitionName = name;
@@ -121,63 +105,40 @@ public final class ServiceEndpointPolicyDefinitionImpl
     }
 
     public ServiceEndpointPolicyDefinition apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getServiceEndpointPolicyDefinitions()
-                .createOrUpdate(
-                    resourceGroupName,
-                    serviceEndpointPolicyName,
-                    serviceEndpointPolicyDefinitionName,
-                    this.innerModel(),
-                    Context.NONE);
+        this.innerObject
+            = serviceManager.serviceClient().getServiceEndpointPolicyDefinitions().createOrUpdate(resourceGroupName,
+                serviceEndpointPolicyName, serviceEndpointPolicyDefinitionName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public ServiceEndpointPolicyDefinition apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getServiceEndpointPolicyDefinitions()
-                .createOrUpdate(
-                    resourceGroupName,
-                    serviceEndpointPolicyName,
-                    serviceEndpointPolicyDefinitionName,
-                    this.innerModel(),
-                    context);
+        this.innerObject
+            = serviceManager.serviceClient().getServiceEndpointPolicyDefinitions().createOrUpdate(resourceGroupName,
+                serviceEndpointPolicyName, serviceEndpointPolicyDefinitionName, this.innerModel(), context);
         return this;
     }
 
-    ServiceEndpointPolicyDefinitionImpl(
-        ServiceEndpointPolicyDefinitionInner innerObject,
+    ServiceEndpointPolicyDefinitionImpl(ServiceEndpointPolicyDefinitionInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
         this.serviceEndpointPolicyName = Utils.getValueFromIdByName(innerObject.id(), "serviceEndpointPolicies");
-        this.serviceEndpointPolicyDefinitionName =
-            Utils.getValueFromIdByName(innerObject.id(), "serviceEndpointPolicyDefinitions");
+        this.serviceEndpointPolicyDefinitionName
+            = Utils.getValueFromIdByName(innerObject.id(), "serviceEndpointPolicyDefinitions");
     }
 
     public ServiceEndpointPolicyDefinition refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getServiceEndpointPolicyDefinitions()
-                .getWithResponse(
-                    resourceGroupName, serviceEndpointPolicyName, serviceEndpointPolicyDefinitionName, Context.NONE)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getServiceEndpointPolicyDefinitions().getWithResponse(resourceGroupName,
+                serviceEndpointPolicyName, serviceEndpointPolicyDefinitionName, Context.NONE).getValue();
         return this;
     }
 
     public ServiceEndpointPolicyDefinition refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getServiceEndpointPolicyDefinitions()
-                .getWithResponse(
-                    resourceGroupName, serviceEndpointPolicyName, serviceEndpointPolicyDefinitionName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getServiceEndpointPolicyDefinitions()
+            .getWithResponse(resourceGroupName, serviceEndpointPolicyName, serviceEndpointPolicyDefinitionName, context)
+            .getValue();
         return this;
     }
 

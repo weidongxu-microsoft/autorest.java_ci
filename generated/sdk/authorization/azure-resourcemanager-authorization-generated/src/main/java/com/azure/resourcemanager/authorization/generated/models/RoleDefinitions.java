@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of RoleDefinitions. */
+/**
+ * Resource collection API of RoleDefinitions.
+ */
 public interface RoleDefinitions {
     /**
      * Deletes a role definition.
-     *
+     * 
      * @param scope The scope of the role definition.
      * @param roleDefinitionId The ID of the role definition to delete.
      * @param context The context to associate with this operation.
@@ -25,7 +27,7 @@ public interface RoleDefinitions {
 
     /**
      * Deletes a role definition.
-     *
+     * 
      * @param scope The scope of the role definition.
      * @param roleDefinitionId The ID of the role definition to delete.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -37,7 +39,7 @@ public interface RoleDefinitions {
 
     /**
      * Get role definition by name (GUID).
-     *
+     * 
      * @param scope The scope of the role definition.
      * @param roleDefinitionId The ID of the role definition.
      * @param context The context to associate with this operation.
@@ -50,7 +52,7 @@ public interface RoleDefinitions {
 
     /**
      * Get role definition by name (GUID).
-     *
+     * 
      * @param scope The scope of the role definition.
      * @param roleDefinitionId The ID of the role definition.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -62,38 +64,38 @@ public interface RoleDefinitions {
 
     /**
      * Get all role definitions that are applicable at scope and above.
-     *
+     * 
      * @param scope The scope of the role definition.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all role definitions that are applicable at scope and above as paginated response with {@link
-     *     PagedIterable}.
+     * @return all role definitions that are applicable at scope and above as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<RoleDefinition> list(String scope);
 
     /**
      * Get all role definitions that are applicable at scope and above.
-     *
+     * 
      * @param scope The scope of the role definition.
      * @param filter The filter to apply on the operation. Use atScopeAndBelow filter to search below the given scope as
-     *     well.
+     * well.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all role definitions that are applicable at scope and above as paginated response with {@link
-     *     PagedIterable}.
+     * @return all role definitions that are applicable at scope and above as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<RoleDefinition> list(String scope, String filter, Context context);
 
     /**
      * Gets a role definition by ID.
-     *
+     * 
      * @param roleId The fully qualified role definition ID. Use the format,
-     *     /subscriptions/{guid}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for subscription
-     *     level role definitions, or /providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for tenant
-     *     level role definitions.
+     * /subscriptions/{guid}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for subscription level
+     * role definitions, or /providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for tenant level role
+     * definitions.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -104,11 +106,11 @@ public interface RoleDefinitions {
 
     /**
      * Gets a role definition by ID.
-     *
+     * 
      * @param roleId The fully qualified role definition ID. Use the format,
-     *     /subscriptions/{guid}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for subscription
-     *     level role definitions, or /providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for tenant
-     *     level role definitions.
+     * /subscriptions/{guid}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for subscription level
+     * role definitions, or /providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for tenant level role
+     * definitions.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -118,7 +120,7 @@ public interface RoleDefinitions {
 
     /**
      * Deletes a role definition.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -129,7 +131,7 @@ public interface RoleDefinitions {
 
     /**
      * Deletes a role definition.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -141,7 +143,7 @@ public interface RoleDefinitions {
 
     /**
      * Begins definition for a new RoleDefinition resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new RoleDefinition definition.
      */

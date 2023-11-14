@@ -19,8 +19,7 @@ public final class PacketCaptureResultImpl implements PacketCaptureResult {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    PacketCaptureResultImpl(
-        PacketCaptureResultInner innerObject,
+    PacketCaptureResultImpl(PacketCaptureResultInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

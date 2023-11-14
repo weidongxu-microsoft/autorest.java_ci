@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The definition of a query. */
+/**
+ * The definition of a query.
+ */
 @Fluent
 public final class QueryDefinition {
     /*
@@ -35,13 +37,15 @@ public final class QueryDefinition {
     @JsonProperty(value = "dataset", required = true)
     private QueryDataset dataset;
 
-    /** Creates an instance of QueryDefinition class. */
+    /**
+     * Creates an instance of QueryDefinition class.
+     */
     public QueryDefinition() {
     }
 
     /**
      * Get the type property: The type of the query.
-     *
+     * 
      * @return the type value.
      */
     public ExportType type() {
@@ -50,7 +54,7 @@ public final class QueryDefinition {
 
     /**
      * Set the type property: The type of the query.
-     *
+     * 
      * @param type the type value to set.
      * @return the QueryDefinition object itself.
      */
@@ -60,9 +64,9 @@ public final class QueryDefinition {
     }
 
     /**
-     * Get the timeframe property: The time frame for pulling data for the query. If custom, then a specific time period
-     * must be provided.
-     *
+     * Get the timeframe property: The time frame for pulling data for the query. If custom, then a specific time
+     * period must be provided.
+     * 
      * @return the timeframe value.
      */
     public TimeframeType timeframe() {
@@ -70,9 +74,9 @@ public final class QueryDefinition {
     }
 
     /**
-     * Set the timeframe property: The time frame for pulling data for the query. If custom, then a specific time period
-     * must be provided.
-     *
+     * Set the timeframe property: The time frame for pulling data for the query. If custom, then a specific time
+     * period must be provided.
+     * 
      * @param timeframe the timeframe value to set.
      * @return the QueryDefinition object itself.
      */
@@ -83,7 +87,7 @@ public final class QueryDefinition {
 
     /**
      * Get the timePeriod property: Has time period for pulling data for the query.
-     *
+     * 
      * @return the timePeriod value.
      */
     public QueryTimePeriod timePeriod() {
@@ -92,7 +96,7 @@ public final class QueryDefinition {
 
     /**
      * Set the timePeriod property: Has time period for pulling data for the query.
-     *
+     * 
      * @param timePeriod the timePeriod value to set.
      * @return the QueryDefinition object itself.
      */
@@ -103,7 +107,7 @@ public final class QueryDefinition {
 
     /**
      * Get the dataset property: Has definition for data in this query.
-     *
+     * 
      * @return the dataset value.
      */
     public QueryDataset dataset() {
@@ -112,7 +116,7 @@ public final class QueryDefinition {
 
     /**
      * Set the dataset property: Has definition for data in this query.
-     *
+     * 
      * @param dataset the dataset value to set.
      * @return the QueryDefinition object itself.
      */
@@ -123,27 +127,24 @@ public final class QueryDefinition {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (type() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property type in model QueryDefinition"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property type in model QueryDefinition"));
         }
         if (timeframe() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property timeframe in model QueryDefinition"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property timeframe in model QueryDefinition"));
         }
         if (timePeriod() != null) {
             timePeriod().validate();
         }
         if (dataset() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property dataset in model QueryDefinition"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property dataset in model QueryDefinition"));
         } else {
             dataset().validate();
         }

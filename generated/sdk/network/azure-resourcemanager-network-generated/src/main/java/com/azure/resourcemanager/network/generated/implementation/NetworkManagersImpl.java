@@ -21,21 +21,18 @@ public final class NetworkManagersImpl implements NetworkManagers {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public NetworkManagersImpl(
-        NetworkManagersClient innerClient, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    public NetworkManagersImpl(NetworkManagersClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<NetworkManager> getByResourceGroupWithResponse(
-        String resourceGroupName, String networkManagerName, Context context) {
-        Response<NetworkManagerInner> inner =
-            this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, networkManagerName, context);
+    public Response<NetworkManager> getByResourceGroupWithResponse(String resourceGroupName, String networkManagerName,
+        Context context) {
+        Response<NetworkManagerInner> inner
+            = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, networkManagerName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new NetworkManagerImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -74,29 +71,23 @@ public final class NetworkManagersImpl implements NetworkManagers {
         return Utils.mapPage(inner, inner1 -> new NetworkManagerImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<NetworkManager> listByResourceGroup(
-        String resourceGroupName, Integer top, String skipToken, Context context) {
-        PagedIterable<NetworkManagerInner> inner =
-            this.serviceClient().listByResourceGroup(resourceGroupName, top, skipToken, context);
+    public PagedIterable<NetworkManager> listByResourceGroup(String resourceGroupName, Integer top, String skipToken,
+        Context context) {
+        PagedIterable<NetworkManagerInner> inner
+            = this.serviceClient().listByResourceGroup(resourceGroupName, top, skipToken, context);
         return Utils.mapPage(inner, inner1 -> new NetworkManagerImpl(inner1, this.manager()));
     }
 
     public NetworkManager getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String networkManagerName = Utils.getValueFromIdByName(id, "networkManagers");
         if (networkManagerName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'networkManagers'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'networkManagers'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, networkManagerName, Context.NONE).getValue();
     }
@@ -104,19 +95,13 @@ public final class NetworkManagersImpl implements NetworkManagers {
     public Response<NetworkManager> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String networkManagerName = Utils.getValueFromIdByName(id, "networkManagers");
         if (networkManagerName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'networkManagers'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'networkManagers'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, networkManagerName, context);
     }
@@ -124,19 +109,13 @@ public final class NetworkManagersImpl implements NetworkManagers {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String networkManagerName = Utils.getValueFromIdByName(id, "networkManagers");
         if (networkManagerName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'networkManagers'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'networkManagers'.", id)));
         }
         Boolean localForce = null;
         this.delete(resourceGroupName, networkManagerName, localForce, Context.NONE);
@@ -145,19 +124,13 @@ public final class NetworkManagersImpl implements NetworkManagers {
     public void deleteByIdWithResponse(String id, Boolean force, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String networkManagerName = Utils.getValueFromIdByName(id, "networkManagers");
         if (networkManagerName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'networkManagers'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'networkManagers'.", id)));
         }
         this.delete(resourceGroupName, networkManagerName, force, context);
     }

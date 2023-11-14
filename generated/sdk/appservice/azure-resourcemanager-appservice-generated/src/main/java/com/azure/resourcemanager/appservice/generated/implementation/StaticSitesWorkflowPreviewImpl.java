@@ -12,8 +12,7 @@ public final class StaticSitesWorkflowPreviewImpl implements StaticSitesWorkflow
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    StaticSitesWorkflowPreviewImpl(
-        StaticSitesWorkflowPreviewInner innerObject,
+    StaticSitesWorkflowPreviewImpl(StaticSitesWorkflowPreviewInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

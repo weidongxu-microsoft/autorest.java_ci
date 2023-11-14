@@ -7,7 +7,9 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The KeyDelivery model. */
+/**
+ * The KeyDelivery model.
+ */
 @Fluent
 public final class KeyDelivery {
     /*
@@ -16,13 +18,15 @@ public final class KeyDelivery {
     @JsonProperty(value = "accessControl")
     private AccessControl accessControl;
 
-    /** Creates an instance of KeyDelivery class. */
+    /**
+     * Creates an instance of KeyDelivery class.
+     */
     public KeyDelivery() {
     }
 
     /**
      * Get the accessControl property: The access control properties for Key Delivery.
-     *
+     * 
      * @return the accessControl value.
      */
     public AccessControl accessControl() {
@@ -31,7 +35,7 @@ public final class KeyDelivery {
 
     /**
      * Set the accessControl property: The access control properties for Key Delivery.
-     *
+     * 
      * @param accessControl the accessControl value to set.
      * @return the KeyDelivery object itself.
      */
@@ -42,7 +46,7 @@ public final class KeyDelivery {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

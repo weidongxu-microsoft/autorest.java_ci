@@ -46,14 +46,16 @@ public final class RoutingEndpoints {
     @JsonProperty(value = "cosmosDBSqlContainers")
     private List<RoutingCosmosDBSqlApiProperties> cosmosDBSqlContainers;
 
-    /** Creates an instance of RoutingEndpoints class. */
+    /**
+     * Creates an instance of RoutingEndpoints class.
+     */
     public RoutingEndpoints() {
     }
 
     /**
      * Get the serviceBusQueues property: The list of Service Bus queue endpoints that IoT hub routes the messages to,
      * based on the routing rules.
-     *
+     * 
      * @return the serviceBusQueues value.
      */
     public List<RoutingServiceBusQueueEndpointProperties> serviceBusQueues() {
@@ -63,7 +65,7 @@ public final class RoutingEndpoints {
     /**
      * Set the serviceBusQueues property: The list of Service Bus queue endpoints that IoT hub routes the messages to,
      * based on the routing rules.
-     *
+     * 
      * @param serviceBusQueues the serviceBusQueues value to set.
      * @return the RoutingEndpoints object itself.
      */
@@ -75,7 +77,7 @@ public final class RoutingEndpoints {
     /**
      * Get the serviceBusTopics property: The list of Service Bus topic endpoints that the IoT hub routes the messages
      * to, based on the routing rules.
-     *
+     * 
      * @return the serviceBusTopics value.
      */
     public List<RoutingServiceBusTopicEndpointProperties> serviceBusTopics() {
@@ -85,7 +87,7 @@ public final class RoutingEndpoints {
     /**
      * Set the serviceBusTopics property: The list of Service Bus topic endpoints that the IoT hub routes the messages
      * to, based on the routing rules.
-     *
+     * 
      * @param serviceBusTopics the serviceBusTopics value to set.
      * @return the RoutingEndpoints object itself.
      */
@@ -97,7 +99,7 @@ public final class RoutingEndpoints {
     /**
      * Get the eventHubs property: The list of Event Hubs endpoints that IoT hub routes messages to, based on the
      * routing rules. This list does not include the built-in Event Hubs endpoint.
-     *
+     * 
      * @return the eventHubs value.
      */
     public List<RoutingEventHubProperties> eventHubs() {
@@ -107,7 +109,7 @@ public final class RoutingEndpoints {
     /**
      * Set the eventHubs property: The list of Event Hubs endpoints that IoT hub routes messages to, based on the
      * routing rules. This list does not include the built-in Event Hubs endpoint.
-     *
+     * 
      * @param eventHubs the eventHubs value to set.
      * @return the RoutingEndpoints object itself.
      */
@@ -119,7 +121,7 @@ public final class RoutingEndpoints {
     /**
      * Get the storageContainers property: The list of storage container endpoints that IoT hub routes messages to,
      * based on the routing rules.
-     *
+     * 
      * @return the storageContainers value.
      */
     public List<RoutingStorageContainerProperties> storageContainers() {
@@ -129,7 +131,7 @@ public final class RoutingEndpoints {
     /**
      * Set the storageContainers property: The list of storage container endpoints that IoT hub routes messages to,
      * based on the routing rules.
-     *
+     * 
      * @param storageContainers the storageContainers value to set.
      * @return the RoutingEndpoints object itself.
      */
@@ -141,7 +143,7 @@ public final class RoutingEndpoints {
     /**
      * Get the cosmosDBSqlContainers property: The list of Cosmos DB container endpoints that IoT hub routes messages
      * to, based on the routing rules.
-     *
+     * 
      * @return the cosmosDBSqlContainers value.
      */
     public List<RoutingCosmosDBSqlApiProperties> cosmosDBSqlContainers() {
@@ -151,7 +153,7 @@ public final class RoutingEndpoints {
     /**
      * Set the cosmosDBSqlContainers property: The list of Cosmos DB container endpoints that IoT hub routes messages
      * to, based on the routing rules.
-     *
+     * 
      * @param cosmosDBSqlContainers the cosmosDBSqlContainers value to set.
      * @return the RoutingEndpoints object itself.
      */
@@ -162,7 +164,7 @@ public final class RoutingEndpoints {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

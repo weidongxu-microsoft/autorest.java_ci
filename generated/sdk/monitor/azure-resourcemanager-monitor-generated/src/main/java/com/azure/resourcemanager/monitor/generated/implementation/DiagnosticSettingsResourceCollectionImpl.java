@@ -17,8 +17,7 @@ public final class DiagnosticSettingsResourceCollectionImpl implements Diagnosti
 
     private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    DiagnosticSettingsResourceCollectionImpl(
-        DiagnosticSettingsResourceCollectionInner innerObject,
+    DiagnosticSettingsResourceCollectionImpl(DiagnosticSettingsResourceCollectionInner innerObject,
         com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -27,12 +26,9 @@ public final class DiagnosticSettingsResourceCollectionImpl implements Diagnosti
     public List<DiagnosticSettingsResource> value() {
         List<DiagnosticSettingsResourceInner> inner = this.innerModel().value();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new DiagnosticSettingsResourceImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(
+                inner.stream().map(inner1 -> new DiagnosticSettingsResourceImpl(inner1, this.manager()))
+                    .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

@@ -9,6 +9,7 @@ import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.MhsmPrivateEndpointConnectionInner;
 import com.azure.resourcemanager.keyvault.generated.models.ManagedHsmSku;
+import com.azure.resourcemanager.keyvault.generated.models.ManagedServiceIdentity;
 import com.azure.resourcemanager.keyvault.generated.models.MhsmPrivateEndpoint;
 import com.azure.resourcemanager.keyvault.generated.models.MhsmPrivateEndpointConnection;
 import com.azure.resourcemanager.keyvault.generated.models.MhsmPrivateLinkServiceConnectionState;
@@ -16,10 +17,8 @@ import com.azure.resourcemanager.keyvault.generated.models.PrivateEndpointConnec
 import java.util.Collections;
 import java.util.Map;
 
-public final class MhsmPrivateEndpointConnectionImpl
-    implements MhsmPrivateEndpointConnection,
-        MhsmPrivateEndpointConnection.Definition,
-        MhsmPrivateEndpointConnection.Update {
+public final class MhsmPrivateEndpointConnectionImpl implements MhsmPrivateEndpointConnection,
+    MhsmPrivateEndpointConnection.Definition, MhsmPrivateEndpointConnection.Update {
     private MhsmPrivateEndpointConnectionInner innerObject;
 
     private final com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager;
@@ -55,6 +54,10 @@ public final class MhsmPrivateEndpointConnectionImpl
 
     public SystemData systemData() {
         return this.innerModel().systemData();
+    }
+
+    public ManagedServiceIdentity identity() {
+        return this.innerModel().identity();
     }
 
     public String etag() {
@@ -106,28 +109,21 @@ public final class MhsmPrivateEndpointConnectionImpl
     }
 
     public MhsmPrivateEndpointConnection create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getMhsmPrivateEndpointConnections()
-                .putWithResponse(
-                    resourceGroupName, name, privateEndpointConnectionName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getMhsmPrivateEndpointConnections()
+            .putWithResponse(resourceGroupName, name, privateEndpointConnectionName, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public MhsmPrivateEndpointConnection create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getMhsmPrivateEndpointConnections()
-                .putWithResponse(resourceGroupName, name, privateEndpointConnectionName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getMhsmPrivateEndpointConnections()
+            .putWithResponse(resourceGroupName, name, privateEndpointConnectionName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
-    MhsmPrivateEndpointConnectionImpl(
-        String name, com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager) {
+    MhsmPrivateEndpointConnectionImpl(String name,
+        com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager) {
         this.innerObject = new MhsmPrivateEndpointConnectionInner();
         this.serviceManager = serviceManager;
         this.privateEndpointConnectionName = name;
@@ -138,28 +134,20 @@ public final class MhsmPrivateEndpointConnectionImpl
     }
 
     public MhsmPrivateEndpointConnection apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getMhsmPrivateEndpointConnections()
-                .putWithResponse(
-                    resourceGroupName, name, privateEndpointConnectionName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getMhsmPrivateEndpointConnections()
+            .putWithResponse(resourceGroupName, name, privateEndpointConnectionName, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public MhsmPrivateEndpointConnection apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getMhsmPrivateEndpointConnections()
-                .putWithResponse(resourceGroupName, name, privateEndpointConnectionName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getMhsmPrivateEndpointConnections()
+            .putWithResponse(resourceGroupName, name, privateEndpointConnectionName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
-    MhsmPrivateEndpointConnectionImpl(
-        MhsmPrivateEndpointConnectionInner innerObject,
+    MhsmPrivateEndpointConnectionImpl(MhsmPrivateEndpointConnectionInner innerObject,
         com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -169,22 +157,14 @@ public final class MhsmPrivateEndpointConnectionImpl
     }
 
     public MhsmPrivateEndpointConnection refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getMhsmPrivateEndpointConnections()
-                .getWithResponse(resourceGroupName, name, privateEndpointConnectionName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getMhsmPrivateEndpointConnections()
+            .getWithResponse(resourceGroupName, name, privateEndpointConnectionName, Context.NONE).getValue();
         return this;
     }
 
     public MhsmPrivateEndpointConnection refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getMhsmPrivateEndpointConnections()
-                .getWithResponse(resourceGroupName, name, privateEndpointConnectionName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getMhsmPrivateEndpointConnections()
+            .getWithResponse(resourceGroupName, name, privateEndpointConnectionName, context).getValue();
         return this;
     }
 
@@ -208,6 +188,11 @@ public final class MhsmPrivateEndpointConnectionImpl
         return this;
     }
 
+    public MhsmPrivateEndpointConnectionImpl withIdentity(ManagedServiceIdentity identity) {
+        this.innerModel().withIdentity(identity);
+        return this;
+    }
+
     public MhsmPrivateEndpointConnectionImpl withEtag(String etag) {
         this.innerModel().withEtag(etag);
         return this;
@@ -218,14 +203,14 @@ public final class MhsmPrivateEndpointConnectionImpl
         return this;
     }
 
-    public MhsmPrivateEndpointConnectionImpl withPrivateLinkServiceConnectionState(
-        MhsmPrivateLinkServiceConnectionState privateLinkServiceConnectionState) {
+    public MhsmPrivateEndpointConnectionImpl
+        withPrivateLinkServiceConnectionState(MhsmPrivateLinkServiceConnectionState privateLinkServiceConnectionState) {
         this.innerModel().withPrivateLinkServiceConnectionState(privateLinkServiceConnectionState);
         return this;
     }
 
-    public MhsmPrivateEndpointConnectionImpl withProvisioningState(
-        PrivateEndpointConnectionProvisioningState provisioningState) {
+    public MhsmPrivateEndpointConnectionImpl
+        withProvisioningState(PrivateEndpointConnectionProvisioningState provisioningState) {
         this.innerModel().withProvisioningState(provisioningState);
         return this;
     }

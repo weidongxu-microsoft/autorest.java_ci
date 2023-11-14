@@ -13,8 +13,7 @@ public final class BastionActiveSessionImpl implements BastionActiveSession {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    BastionActiveSessionImpl(
-        BastionActiveSessionInner innerObject,
+    BastionActiveSessionImpl(BastionActiveSessionInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

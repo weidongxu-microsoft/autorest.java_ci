@@ -9,7 +9,9 @@ import com.azure.resourcemanager.dns.generated.models.SigningKey;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Represents the DNSSEC properties. */
+/**
+ * Represents the DNSSEC properties.
+ */
 @Immutable
 public final class DnssecProperties {
     /*
@@ -24,13 +26,15 @@ public final class DnssecProperties {
     @JsonProperty(value = "signingKeys", access = JsonProperty.Access.WRITE_ONLY)
     private List<SigningKey> signingKeys;
 
-    /** Creates an instance of DnssecProperties class. */
+    /**
+     * Creates an instance of DnssecProperties class.
+     */
     public DnssecProperties() {
     }
 
     /**
      * Get the provisioningState property: Provisioning State of the DNSSEC configuration.
-     *
+     * 
      * @return the provisioningState value.
      */
     public String provisioningState() {
@@ -39,7 +43,7 @@ public final class DnssecProperties {
 
     /**
      * Get the signingKeys property: The list of signing keys.
-     *
+     * 
      * @return the signingKeys value.
      */
     public List<SigningKey> signingKeys() {
@@ -48,7 +52,7 @@ public final class DnssecProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

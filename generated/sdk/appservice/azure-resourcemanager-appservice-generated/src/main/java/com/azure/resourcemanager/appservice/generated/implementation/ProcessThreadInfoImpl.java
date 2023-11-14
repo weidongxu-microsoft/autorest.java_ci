@@ -13,8 +13,7 @@ public final class ProcessThreadInfoImpl implements ProcessThreadInfo {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    ProcessThreadInfoImpl(
-        ProcessThreadInfoInner innerObject,
+    ProcessThreadInfoImpl(ProcessThreadInfoInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

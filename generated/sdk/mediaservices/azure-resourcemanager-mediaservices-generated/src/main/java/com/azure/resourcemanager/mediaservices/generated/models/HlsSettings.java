@@ -7,7 +7,9 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The HLS setting for a track. */
+/**
+ * The HLS setting for a track.
+ */
 @Fluent
 public final class HlsSettings {
     /*
@@ -28,13 +30,15 @@ public final class HlsSettings {
     @JsonProperty(value = "characteristics")
     private String characteristics;
 
-    /** Creates an instance of HlsSettings class. */
+    /**
+     * Creates an instance of HlsSettings class.
+     */
     public HlsSettings() {
     }
 
     /**
      * Get the defaultProperty property: The default for the HLS setting.
-     *
+     * 
      * @return the defaultProperty value.
      */
     public Boolean defaultProperty() {
@@ -43,7 +47,7 @@ public final class HlsSettings {
 
     /**
      * Set the defaultProperty property: The default for the HLS setting.
-     *
+     * 
      * @param defaultProperty the defaultProperty value to set.
      * @return the HlsSettings object itself.
      */
@@ -54,7 +58,7 @@ public final class HlsSettings {
 
     /**
      * Get the forced property: The forced for the HLS setting.
-     *
+     * 
      * @return the forced value.
      */
     public Boolean forced() {
@@ -63,7 +67,7 @@ public final class HlsSettings {
 
     /**
      * Set the forced property: The forced for the HLS setting.
-     *
+     * 
      * @param forced the forced value to set.
      * @return the HlsSettings object itself.
      */
@@ -74,7 +78,7 @@ public final class HlsSettings {
 
     /**
      * Get the characteristics property: The characteristics for the HLS setting.
-     *
+     * 
      * @return the characteristics value.
      */
     public String characteristics() {
@@ -83,7 +87,7 @@ public final class HlsSettings {
 
     /**
      * Set the characteristics property: The characteristics for the HLS setting.
-     *
+     * 
      * @param characteristics the characteristics value to set.
      * @return the HlsSettings object itself.
      */
@@ -94,7 +98,7 @@ public final class HlsSettings {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

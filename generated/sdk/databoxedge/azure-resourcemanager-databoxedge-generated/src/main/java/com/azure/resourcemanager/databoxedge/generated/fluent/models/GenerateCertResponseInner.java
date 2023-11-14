@@ -7,7 +7,9 @@ package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Used in activation key generation flow. */
+/**
+ * Used in activation key generation flow.
+ */
 @Fluent
 public final class GenerateCertResponseInner {
     /*
@@ -30,14 +32,16 @@ public final class GenerateCertResponseInner {
     @JsonProperty(value = "expiryTimeInUTC")
     private String expiryTimeInUtc;
 
-    /** Creates an instance of GenerateCertResponseInner class. */
+    /**
+     * Creates an instance of GenerateCertResponseInner class.
+     */
     public GenerateCertResponseInner() {
     }
 
     /**
-     * Get the publicKey property: Gets or sets base64 encoded certificate raw data, this is the public part needed to
-     * be uploaded to cert vault.
-     *
+     * Get the publicKey property: Gets or sets base64 encoded certificate raw data,
+     * this is the public part needed to be uploaded to cert vault.
+     * 
      * @return the publicKey value.
      */
     public String publicKey() {
@@ -45,9 +49,9 @@ public final class GenerateCertResponseInner {
     }
 
     /**
-     * Set the publicKey property: Gets or sets base64 encoded certificate raw data, this is the public part needed to
-     * be uploaded to cert vault.
-     *
+     * Set the publicKey property: Gets or sets base64 encoded certificate raw data,
+     * this is the public part needed to be uploaded to cert vault.
+     * 
      * @param publicKey the publicKey value to set.
      * @return the GenerateCertResponseInner object itself.
      */
@@ -57,9 +61,9 @@ public final class GenerateCertResponseInner {
     }
 
     /**
-     * Get the privateKey property: Gets or sets base64 encoded private part of the certificate, needed to form the
-     * activation key.
-     *
+     * Get the privateKey property: Gets or sets base64 encoded private part of the certificate,
+     * needed to form the activation key.
+     * 
      * @return the privateKey value.
      */
     public String privateKey() {
@@ -67,9 +71,9 @@ public final class GenerateCertResponseInner {
     }
 
     /**
-     * Set the privateKey property: Gets or sets base64 encoded private part of the certificate, needed to form the
-     * activation key.
-     *
+     * Set the privateKey property: Gets or sets base64 encoded private part of the certificate,
+     * needed to form the activation key.
+     * 
      * @param privateKey the privateKey value to set.
      * @return the GenerateCertResponseInner object itself.
      */
@@ -80,7 +84,7 @@ public final class GenerateCertResponseInner {
 
     /**
      * Get the expiryTimeInUtc property: Gets or sets expiry time in UTC.
-     *
+     * 
      * @return the expiryTimeInUtc value.
      */
     public String expiryTimeInUtc() {
@@ -89,7 +93,7 @@ public final class GenerateCertResponseInner {
 
     /**
      * Set the expiryTimeInUtc property: Gets or sets expiry time in UTC.
-     *
+     * 
      * @param expiryTimeInUtc the expiryTimeInUtc value to set.
      * @return the GenerateCertResponseInner object itself.
      */
@@ -100,7 +104,7 @@ public final class GenerateCertResponseInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

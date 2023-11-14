@@ -19,8 +19,7 @@ public final class CertificateRegistrationProvidersImpl implements CertificateRe
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    public CertificateRegistrationProvidersImpl(
-        CertificateRegistrationProvidersClient innerClient,
+    public CertificateRegistrationProvidersImpl(CertificateRegistrationProvidersClient innerClient,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;

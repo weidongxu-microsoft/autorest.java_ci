@@ -13,8 +13,8 @@ public final class CheckNameResultImpl implements CheckNameResult {
 
     private final com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager;
 
-    CheckNameResultImpl(
-        CheckNameResultInner innerObject, com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager) {
+    CheckNameResultImpl(CheckNameResultInner innerObject,
+        com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

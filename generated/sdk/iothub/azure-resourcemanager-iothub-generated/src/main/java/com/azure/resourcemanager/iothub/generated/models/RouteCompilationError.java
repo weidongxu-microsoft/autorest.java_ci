@@ -7,7 +7,9 @@ package com.azure.resourcemanager.iothub.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Compilation error when evaluating route. */
+/**
+ * Compilation error when evaluating route.
+ */
 @Fluent
 public final class RouteCompilationError {
     /*
@@ -28,13 +30,15 @@ public final class RouteCompilationError {
     @JsonProperty(value = "location")
     private RouteErrorRange location;
 
-    /** Creates an instance of RouteCompilationError class. */
+    /**
+     * Creates an instance of RouteCompilationError class.
+     */
     public RouteCompilationError() {
     }
 
     /**
      * Get the message property: Route error message.
-     *
+     * 
      * @return the message value.
      */
     public String message() {
@@ -43,7 +47,7 @@ public final class RouteCompilationError {
 
     /**
      * Set the message property: Route error message.
-     *
+     * 
      * @param message the message value to set.
      * @return the RouteCompilationError object itself.
      */
@@ -54,7 +58,7 @@ public final class RouteCompilationError {
 
     /**
      * Get the severity property: Severity of the route error.
-     *
+     * 
      * @return the severity value.
      */
     public RouteErrorSeverity severity() {
@@ -63,7 +67,7 @@ public final class RouteCompilationError {
 
     /**
      * Set the severity property: Severity of the route error.
-     *
+     * 
      * @param severity the severity value to set.
      * @return the RouteCompilationError object itself.
      */
@@ -74,7 +78,7 @@ public final class RouteCompilationError {
 
     /**
      * Get the location property: Location where the route error happened.
-     *
+     * 
      * @return the location value.
      */
     public RouteErrorRange location() {
@@ -83,7 +87,7 @@ public final class RouteCompilationError {
 
     /**
      * Set the location property: Location where the route error happened.
-     *
+     * 
      * @param location the location value to set.
      * @return the RouteCompilationError object itself.
      */
@@ -94,7 +98,7 @@ public final class RouteCompilationError {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -10,13 +10,15 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.monitor.generated.fluent.models.VMInsightsOnboardingStatusInner;
 
-/** An instance of this class provides access to all the operations defined in VMInsightsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in VMInsightsClient.
+ */
 public interface VMInsightsClient {
     /**
      * Retrieves the VM Insights onboarding status for the specified resource or resource scope.
-     *
+     * 
      * @param resourceUri The fully qualified Azure Resource manager identifier of the resource, or scope, whose status
-     *     to retrieve.
+     * to retrieve.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -28,9 +30,9 @@ public interface VMInsightsClient {
 
     /**
      * Retrieves the VM Insights onboarding status for the specified resource or resource scope.
-     *
+     * 
      * @param resourceUri The fully qualified Azure Resource manager identifier of the resource, or scope, whose status
-     *     to retrieve.
+     * to retrieve.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.

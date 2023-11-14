@@ -8,17 +8,23 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** The type of key used to encrypt the Account Key. */
+/**
+ * The type of key used to encrypt the Account Key.
+ */
 public final class AccountEncryptionKeyType extends ExpandableStringEnum<AccountEncryptionKeyType> {
-    /** Static value SystemKey for AccountEncryptionKeyType. */
+    /**
+     * Static value SystemKey for AccountEncryptionKeyType.
+     */
     public static final AccountEncryptionKeyType SYSTEM_KEY = fromString("SystemKey");
 
-    /** Static value CustomerKey for AccountEncryptionKeyType. */
+    /**
+     * Static value CustomerKey for AccountEncryptionKeyType.
+     */
     public static final AccountEncryptionKeyType CUSTOMER_KEY = fromString("CustomerKey");
 
     /**
      * Creates a new instance of AccountEncryptionKeyType value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -27,7 +33,7 @@ public final class AccountEncryptionKeyType extends ExpandableStringEnum<Account
 
     /**
      * Creates or finds a AccountEncryptionKeyType from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding AccountEncryptionKeyType.
      */
@@ -38,7 +44,7 @@ public final class AccountEncryptionKeyType extends ExpandableStringEnum<Account
 
     /**
      * Gets known AccountEncryptionKeyType values.
-     *
+     * 
      * @return known AccountEncryptionKeyType values.
      */
     public static Collection<AccountEncryptionKeyType> values() {

@@ -11,11 +11,13 @@ import com.azure.core.util.Context;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.databoxedge.generated.models.DeviceCapacityRequestInfo;
 
-/** An instance of this class provides access to all the operations defined in DeviceCapacityChecksClient. */
+/**
+ * An instance of this class provides access to all the operations defined in DeviceCapacityChecksClient.
+ */
 public interface DeviceCapacityChecksClient {
     /**
      * Posts the device capacity request info to check feasibility.
-     *
+     * 
      * @param resourceGroupName The resource group name.
      * @param deviceName The device name.
      * @param deviceCapacityRequestInfo The device capacity request info.
@@ -25,12 +27,12 @@ public interface DeviceCapacityChecksClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginCheckResourceCreationFeasibility(
-        String resourceGroupName, String deviceName, DeviceCapacityRequestInfo deviceCapacityRequestInfo);
+    SyncPoller<PollResult<Void>, Void> beginCheckResourceCreationFeasibility(String resourceGroupName,
+        String deviceName, DeviceCapacityRequestInfo deviceCapacityRequestInfo);
 
     /**
      * Posts the device capacity request info to check feasibility.
-     *
+     * 
      * @param resourceGroupName The resource group name.
      * @param deviceName The device name.
      * @param deviceCapacityRequestInfo The device capacity request info.
@@ -42,16 +44,12 @@ public interface DeviceCapacityChecksClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginCheckResourceCreationFeasibility(
-        String resourceGroupName,
-        String deviceName,
-        DeviceCapacityRequestInfo deviceCapacityRequestInfo,
-        String capacityName,
-        Context context);
+    SyncPoller<PollResult<Void>, Void> beginCheckResourceCreationFeasibility(String resourceGroupName,
+        String deviceName, DeviceCapacityRequestInfo deviceCapacityRequestInfo, String capacityName, Context context);
 
     /**
      * Posts the device capacity request info to check feasibility.
-     *
+     * 
      * @param resourceGroupName The resource group name.
      * @param deviceName The device name.
      * @param deviceCapacityRequestInfo The device capacity request info.
@@ -60,12 +58,12 @@ public interface DeviceCapacityChecksClient {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void checkResourceCreationFeasibility(
-        String resourceGroupName, String deviceName, DeviceCapacityRequestInfo deviceCapacityRequestInfo);
+    void checkResourceCreationFeasibility(String resourceGroupName, String deviceName,
+        DeviceCapacityRequestInfo deviceCapacityRequestInfo);
 
     /**
      * Posts the device capacity request info to check feasibility.
-     *
+     * 
      * @param resourceGroupName The resource group name.
      * @param deviceName The device name.
      * @param deviceCapacityRequestInfo The device capacity request info.
@@ -76,10 +74,6 @@ public interface DeviceCapacityChecksClient {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void checkResourceCreationFeasibility(
-        String resourceGroupName,
-        String deviceName,
-        DeviceCapacityRequestInfo deviceCapacityRequestInfo,
-        String capacityName,
-        Context context);
+    void checkResourceCreationFeasibility(String resourceGroupName, String deviceName,
+        DeviceCapacityRequestInfo deviceCapacityRequestInfo, String capacityName, Context context);
 }

@@ -201,20 +201,14 @@ public final class PublicIpAddressImpl implements PublicIpAddress, PublicIpAddre
     }
 
     public PublicIpAddress create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getPublicIpAddresses()
-                .createOrUpdate(resourceGroupName, publicIpAddressName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getPublicIpAddresses().createOrUpdate(resourceGroupName,
+            publicIpAddressName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public PublicIpAddress create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getPublicIpAddresses()
-                .createOrUpdate(resourceGroupName, publicIpAddressName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getPublicIpAddresses().createOrUpdate(resourceGroupName,
+            publicIpAddressName, this.innerModel(), context);
         return this;
     }
 
@@ -230,27 +224,19 @@ public final class PublicIpAddressImpl implements PublicIpAddress, PublicIpAddre
     }
 
     public PublicIpAddress apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getPublicIpAddresses()
-                .updateTagsWithResponse(resourceGroupName, publicIpAddressName, updateParameters, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getPublicIpAddresses()
+            .updateTagsWithResponse(resourceGroupName, publicIpAddressName, updateParameters, Context.NONE).getValue();
         return this;
     }
 
     public PublicIpAddress apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getPublicIpAddresses()
-                .updateTagsWithResponse(resourceGroupName, publicIpAddressName, updateParameters, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getPublicIpAddresses()
+            .updateTagsWithResponse(resourceGroupName, publicIpAddressName, updateParameters, context).getValue();
         return this;
     }
 
-    PublicIpAddressImpl(
-        PublicIpAddressInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    PublicIpAddressImpl(PublicIpAddressInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
@@ -259,23 +245,16 @@ public final class PublicIpAddressImpl implements PublicIpAddress, PublicIpAddre
 
     public PublicIpAddress refresh() {
         String localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getPublicIpAddresses()
-                .getByResourceGroupWithResponse(resourceGroupName, publicIpAddressName, localExpand, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getPublicIpAddresses()
+            .getByResourceGroupWithResponse(resourceGroupName, publicIpAddressName, localExpand, Context.NONE)
+            .getValue();
         return this;
     }
 
     public PublicIpAddress refresh(Context context) {
         String localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getPublicIpAddresses()
-                .getByResourceGroupWithResponse(resourceGroupName, publicIpAddressName, localExpand, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getPublicIpAddresses()
+            .getByResourceGroupWithResponse(resourceGroupName, publicIpAddressName, localExpand, context).getValue();
         return this;
     }
 

@@ -14,8 +14,8 @@ public final class HostKeysImpl implements HostKeys {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    HostKeysImpl(
-        HostKeysInner innerObject, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
+    HostKeysImpl(HostKeysInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

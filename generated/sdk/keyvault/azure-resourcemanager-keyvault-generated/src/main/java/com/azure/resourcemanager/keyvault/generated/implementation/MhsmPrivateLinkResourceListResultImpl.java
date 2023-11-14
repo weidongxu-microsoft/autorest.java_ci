@@ -15,8 +15,7 @@ public final class MhsmPrivateLinkResourceListResultImpl implements MhsmPrivateL
 
     private final com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager;
 
-    MhsmPrivateLinkResourceListResultImpl(
-        MhsmPrivateLinkResourceListResultInner innerObject,
+    MhsmPrivateLinkResourceListResultImpl(MhsmPrivateLinkResourceListResultInner innerObject,
         com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The delivery information associated with a export. */
+/**
+ * The delivery information associated with a export.
+ */
 @Fluent
 public final class ExportDeliveryInfo {
     /*
@@ -17,13 +19,15 @@ public final class ExportDeliveryInfo {
     @JsonProperty(value = "destination", required = true)
     private ExportDeliveryDestination destination;
 
-    /** Creates an instance of ExportDeliveryInfo class. */
+    /**
+     * Creates an instance of ExportDeliveryInfo class.
+     */
     public ExportDeliveryInfo() {
     }
 
     /**
      * Get the destination property: Has destination for the export being delivered.
-     *
+     * 
      * @return the destination value.
      */
     public ExportDeliveryDestination destination() {
@@ -32,7 +36,7 @@ public final class ExportDeliveryInfo {
 
     /**
      * Set the destination property: Has destination for the export being delivered.
-     *
+     * 
      * @param destination the destination value to set.
      * @return the ExportDeliveryInfo object itself.
      */
@@ -43,14 +47,13 @@ public final class ExportDeliveryInfo {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (destination() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property destination in model ExportDeliveryInfo"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property destination in model ExportDeliveryInfo"));
         } else {
             destination().validate();
         }

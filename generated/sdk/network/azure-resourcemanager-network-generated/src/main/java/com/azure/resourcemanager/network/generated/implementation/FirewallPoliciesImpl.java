@@ -21,8 +21,8 @@ public final class FirewallPoliciesImpl implements FirewallPolicies {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public FirewallPoliciesImpl(
-        FirewallPoliciesClient innerClient, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    public FirewallPoliciesImpl(FirewallPoliciesClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -35,15 +35,12 @@ public final class FirewallPoliciesImpl implements FirewallPolicies {
         this.serviceClient().delete(resourceGroupName, firewallPolicyName, context);
     }
 
-    public Response<FirewallPolicy> getByResourceGroupWithResponse(
-        String resourceGroupName, String firewallPolicyName, String expand, Context context) {
-        Response<FirewallPolicyInner> inner =
-            this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, firewallPolicyName, expand, context);
+    public Response<FirewallPolicy> getByResourceGroupWithResponse(String resourceGroupName, String firewallPolicyName,
+        String expand, Context context) {
+        Response<FirewallPolicyInner> inner = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName,
+            firewallPolicyName, expand, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new FirewallPolicyImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -82,44 +79,29 @@ public final class FirewallPoliciesImpl implements FirewallPolicies {
     public FirewallPolicy getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String firewallPolicyName = Utils.getValueFromIdByName(id, "firewallPolicies");
         if (firewallPolicyName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'firewallPolicies'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'firewallPolicies'.", id)));
         }
         String localExpand = null;
-        return this
-            .getByResourceGroupWithResponse(resourceGroupName, firewallPolicyName, localExpand, Context.NONE)
+        return this.getByResourceGroupWithResponse(resourceGroupName, firewallPolicyName, localExpand, Context.NONE)
             .getValue();
     }
 
     public Response<FirewallPolicy> getByIdWithResponse(String id, String expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String firewallPolicyName = Utils.getValueFromIdByName(id, "firewallPolicies");
         if (firewallPolicyName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'firewallPolicies'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'firewallPolicies'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, firewallPolicyName, expand, context);
     }
@@ -127,20 +109,13 @@ public final class FirewallPoliciesImpl implements FirewallPolicies {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String firewallPolicyName = Utils.getValueFromIdByName(id, "firewallPolicies");
         if (firewallPolicyName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'firewallPolicies'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'firewallPolicies'.", id)));
         }
         this.delete(resourceGroupName, firewallPolicyName, Context.NONE);
     }
@@ -148,20 +123,13 @@ public final class FirewallPoliciesImpl implements FirewallPolicies {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String firewallPolicyName = Utils.getValueFromIdByName(id, "firewallPolicies");
         if (firewallPolicyName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'firewallPolicies'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'firewallPolicies'.", id)));
         }
         this.delete(resourceGroupName, firewallPolicyName, context);
     }

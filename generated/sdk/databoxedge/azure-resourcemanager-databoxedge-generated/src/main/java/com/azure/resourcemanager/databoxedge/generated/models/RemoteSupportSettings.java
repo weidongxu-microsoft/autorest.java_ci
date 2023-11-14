@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
-/** RemoteApplicationType for which remote support settings is being modified. */
+/**
+ * RemoteApplicationType for which remote support settings is being modified.
+ */
 @Fluent
 public final class RemoteSupportSettings {
     /*
@@ -29,13 +31,15 @@ public final class RemoteSupportSettings {
     @JsonProperty(value = "expirationTimeStampInUTC")
     private OffsetDateTime expirationTimestampInUtc;
 
-    /** Creates an instance of RemoteSupportSettings class. */
+    /**
+     * Creates an instance of RemoteSupportSettings class.
+     */
     public RemoteSupportSettings() {
     }
 
     /**
      * Get the remoteApplicationType property: Remote application type.
-     *
+     * 
      * @return the remoteApplicationType value.
      */
     public RemoteApplicationType remoteApplicationType() {
@@ -44,7 +48,7 @@ public final class RemoteSupportSettings {
 
     /**
      * Set the remoteApplicationType property: Remote application type.
-     *
+     * 
      * @param remoteApplicationType the remoteApplicationType value to set.
      * @return the RemoteSupportSettings object itself.
      */
@@ -55,7 +59,7 @@ public final class RemoteSupportSettings {
 
     /**
      * Get the accessLevel property: Access level allowed for this remote application type.
-     *
+     * 
      * @return the accessLevel value.
      */
     public AccessLevel accessLevel() {
@@ -64,7 +68,7 @@ public final class RemoteSupportSettings {
 
     /**
      * Set the accessLevel property: Access level allowed for this remote application type.
-     *
+     * 
      * @param accessLevel the accessLevel value to set.
      * @return the RemoteSupportSettings object itself.
      */
@@ -75,7 +79,7 @@ public final class RemoteSupportSettings {
 
     /**
      * Get the expirationTimestampInUtc property: Expiration time stamp.
-     *
+     * 
      * @return the expirationTimestampInUtc value.
      */
     public OffsetDateTime expirationTimestampInUtc() {
@@ -84,7 +88,7 @@ public final class RemoteSupportSettings {
 
     /**
      * Set the expirationTimestampInUtc property: Expiration time stamp.
-     *
+     * 
      * @param expirationTimestampInUtc the expirationTimestampInUtc value to set.
      * @return the RemoteSupportSettings object itself.
      */
@@ -95,7 +99,7 @@ public final class RemoteSupportSettings {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

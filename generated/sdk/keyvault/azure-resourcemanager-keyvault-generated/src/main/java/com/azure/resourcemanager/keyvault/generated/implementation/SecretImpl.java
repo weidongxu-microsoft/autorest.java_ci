@@ -86,22 +86,15 @@ public final class SecretImpl implements Secret, Secret.Definition, Secret.Updat
     }
 
     public Secret create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSecrets()
-                .createOrUpdateWithResponse(resourceGroupName, vaultName, secretName, createParameters, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getSecrets()
+            .createOrUpdateWithResponse(resourceGroupName, vaultName, secretName, createParameters, Context.NONE)
+            .getValue();
         return this;
     }
 
     public Secret create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSecrets()
-                .createOrUpdateWithResponse(resourceGroupName, vaultName, secretName, createParameters, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getSecrets()
+            .createOrUpdateWithResponse(resourceGroupName, vaultName, secretName, createParameters, context).getValue();
         return this;
     }
 
@@ -118,22 +111,14 @@ public final class SecretImpl implements Secret, Secret.Definition, Secret.Updat
     }
 
     public Secret apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSecrets()
-                .updateWithResponse(resourceGroupName, vaultName, secretName, updateParameters, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getSecrets()
+            .updateWithResponse(resourceGroupName, vaultName, secretName, updateParameters, Context.NONE).getValue();
         return this;
     }
 
     public Secret apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSecrets()
-                .updateWithResponse(resourceGroupName, vaultName, secretName, updateParameters, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getSecrets()
+            .updateWithResponse(resourceGroupName, vaultName, secretName, updateParameters, context).getValue();
         return this;
     }
 
@@ -146,22 +131,14 @@ public final class SecretImpl implements Secret, Secret.Definition, Secret.Updat
     }
 
     public Secret refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSecrets()
-                .getWithResponse(resourceGroupName, vaultName, secretName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getSecrets()
+            .getWithResponse(resourceGroupName, vaultName, secretName, Context.NONE).getValue();
         return this;
     }
 
     public Secret refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSecrets()
-                .getWithResponse(resourceGroupName, vaultName, secretName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getSecrets()
+            .getWithResponse(resourceGroupName, vaultName, secretName, context).getValue();
         return this;
     }
 

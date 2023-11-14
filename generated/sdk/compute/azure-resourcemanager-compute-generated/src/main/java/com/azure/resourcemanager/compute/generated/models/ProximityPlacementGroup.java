@@ -10,39 +10,41 @@ import com.azure.resourcemanager.compute.generated.fluent.models.ProximityPlacem
 import java.util.List;
 import java.util.Map;
 
-/** An immutable client-side representation of ProximityPlacementGroup. */
+/**
+ * An immutable client-side representation of ProximityPlacementGroup.
+ */
 public interface ProximityPlacementGroup {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the name property: The name of the resource.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the type property: The type of the resource.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the location property: The geo-location where the resource lives.
-     *
+     * 
      * @return the location value.
      */
     String location();
 
     /**
      * Gets the tags property: Resource tags.
-     *
+     * 
      * @return the tags value.
      */
     Map<String, String> tags();
@@ -50,7 +52,7 @@ public interface ProximityPlacementGroup {
     /**
      * Gets the zones property: Specifies the Availability Zone where virtual machine, virtual machine scale set or
      * availability set associated with the proximity placement group can be created.
-     *
+     * 
      * @return the zones value.
      */
     List<String> zones();
@@ -59,14 +61,14 @@ public interface ProximityPlacementGroup {
      * Gets the proximityPlacementGroupType property: Specifies the type of the proximity placement group. Possible
      * values are: **Standard** : Co-locate resources within an Azure region or Availability Zone. **Ultra** : For
      * future use.
-     *
+     * 
      * @return the proximityPlacementGroupType value.
      */
     ProximityPlacementGroupType proximityPlacementGroupType();
 
     /**
      * Gets the virtualMachines property: A list of references to all virtual machines in the proximity placement group.
-     *
+     * 
      * @return the virtualMachines value.
      */
     List<SubResourceWithColocationStatus> virtualMachines();
@@ -74,7 +76,7 @@ public interface ProximityPlacementGroup {
     /**
      * Gets the virtualMachineScaleSets property: A list of references to all virtual machine scale sets in the
      * proximity placement group.
-     *
+     * 
      * @return the virtualMachineScaleSets value.
      */
     List<SubResourceWithColocationStatus> virtualMachineScaleSets();
@@ -82,72 +84,77 @@ public interface ProximityPlacementGroup {
     /**
      * Gets the availabilitySets property: A list of references to all availability sets in the proximity placement
      * group.
-     *
+     * 
      * @return the availabilitySets value.
      */
     List<SubResourceWithColocationStatus> availabilitySets();
 
     /**
      * Gets the colocationStatus property: Describes colocation status of the Proximity Placement Group.
-     *
+     * 
      * @return the colocationStatus value.
      */
     InstanceViewStatus colocationStatus();
 
     /**
      * Gets the intent property: Specifies the user intent of the proximity placement group.
-     *
+     * 
      * @return the intent value.
      */
     ProximityPlacementGroupPropertiesIntent intent();
 
     /**
      * Gets the region of the resource.
-     *
+     * 
      * @return the region of the resource.
      */
     Region region();
 
     /**
      * Gets the name of the resource region.
-     *
+     * 
      * @return the name of the resource region.
      */
     String regionName();
 
     /**
      * Gets the name of the resource group.
-     *
+     * 
      * @return the name of the resource group.
      */
     String resourceGroupName();
 
     /**
      * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.ProximityPlacementGroupInner object.
-     *
+     * 
      * @return the inner object.
      */
     ProximityPlacementGroupInner innerModel();
 
-    /** The entirety of the ProximityPlacementGroup definition. */
-    interface Definition
-        extends DefinitionStages.Blank,
-            DefinitionStages.WithLocation,
-            DefinitionStages.WithResourceGroup,
-            DefinitionStages.WithCreate {
+    /**
+     * The entirety of the ProximityPlacementGroup definition.
+     */
+    interface Definition extends DefinitionStages.Blank, DefinitionStages.WithLocation,
+        DefinitionStages.WithResourceGroup, DefinitionStages.WithCreate {
     }
 
-    /** The ProximityPlacementGroup definition stages. */
+    /**
+     * The ProximityPlacementGroup definition stages.
+     */
     interface DefinitionStages {
-        /** The first stage of the ProximityPlacementGroup definition. */
+        /**
+         * The first stage of the ProximityPlacementGroup definition.
+         */
         interface Blank extends WithLocation {
         }
 
-        /** The stage of the ProximityPlacementGroup definition allowing to specify location. */
+        /**
+         * The stage of the ProximityPlacementGroup definition allowing to specify location.
+         */
         interface WithLocation {
             /**
              * Specifies the region for the resource.
-             *
+             * 
              * @param location The geo-location where the resource lives.
              * @return the next definition stage.
              */
@@ -155,18 +162,20 @@ public interface ProximityPlacementGroup {
 
             /**
              * Specifies the region for the resource.
-             *
+             * 
              * @param location The geo-location where the resource lives.
              * @return the next definition stage.
              */
             WithResourceGroup withRegion(String location);
         }
 
-        /** The stage of the ProximityPlacementGroup definition allowing to specify parent resource. */
+        /**
+         * The stage of the ProximityPlacementGroup definition allowing to specify parent resource.
+         */
         interface WithResourceGroup {
             /**
              * Specifies resourceGroupName.
-             *
+             * 
              * @param resourceGroupName The name of the resource group.
              * @return the next definition stage.
              */
@@ -177,83 +186,90 @@ public interface ProximityPlacementGroup {
          * The stage of the ProximityPlacementGroup definition which contains all the minimum required properties for
          * the resource to be created, but also allows for any other optional properties to be specified.
          */
-        interface WithCreate
-            extends DefinitionStages.WithTags,
-                DefinitionStages.WithZones,
-                DefinitionStages.WithProximityPlacementGroupType,
-                DefinitionStages.WithColocationStatus,
-                DefinitionStages.WithIntent {
+        interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithZones,
+            DefinitionStages.WithProximityPlacementGroupType, DefinitionStages.WithColocationStatus,
+            DefinitionStages.WithIntent {
             /**
              * Executes the create request.
-             *
+             * 
              * @return the created resource.
              */
             ProximityPlacementGroup create();
 
             /**
              * Executes the create request.
-             *
+             * 
              * @param context The context to associate with this operation.
              * @return the created resource.
              */
             ProximityPlacementGroup create(Context context);
         }
 
-        /** The stage of the ProximityPlacementGroup definition allowing to specify tags. */
+        /**
+         * The stage of the ProximityPlacementGroup definition allowing to specify tags.
+         */
         interface WithTags {
             /**
              * Specifies the tags property: Resource tags..
-             *
+             * 
              * @param tags Resource tags.
              * @return the next definition stage.
              */
             WithCreate withTags(Map<String, String> tags);
         }
 
-        /** The stage of the ProximityPlacementGroup definition allowing to specify zones. */
+        /**
+         * The stage of the ProximityPlacementGroup definition allowing to specify zones.
+         */
         interface WithZones {
             /**
              * Specifies the zones property: Specifies the Availability Zone where virtual machine, virtual machine
              * scale set or availability set associated with the proximity placement group can be created..
-             *
+             * 
              * @param zones Specifies the Availability Zone where virtual machine, virtual machine scale set or
-             *     availability set associated with the proximity placement group can be created.
+             * availability set associated with the proximity placement group can be created.
              * @return the next definition stage.
              */
             WithCreate withZones(List<String> zones);
         }
 
-        /** The stage of the ProximityPlacementGroup definition allowing to specify proximityPlacementGroupType. */
+        /**
+         * The stage of the ProximityPlacementGroup definition allowing to specify proximityPlacementGroupType.
+         */
         interface WithProximityPlacementGroupType {
             /**
              * Specifies the proximityPlacementGroupType property: Specifies the type of the proximity placement group.
              * Possible values are: **Standard** : Co-locate resources within an Azure region or Availability Zone.
              * **Ultra** : For future use..
-             *
+             * 
              * @param proximityPlacementGroupType Specifies the type of the proximity placement group. Possible values
-             *     are: **Standard** : Co-locate resources within an Azure region or Availability Zone. **Ultra** : For
-             *     future use.
+             * are: **Standard** : Co-locate resources within an Azure region or Availability Zone. **Ultra** : For
+             * future use.
              * @return the next definition stage.
              */
             WithCreate withProximityPlacementGroupType(ProximityPlacementGroupType proximityPlacementGroupType);
         }
 
-        /** The stage of the ProximityPlacementGroup definition allowing to specify colocationStatus. */
+        /**
+         * The stage of the ProximityPlacementGroup definition allowing to specify colocationStatus.
+         */
         interface WithColocationStatus {
             /**
              * Specifies the colocationStatus property: Describes colocation status of the Proximity Placement Group..
-             *
+             * 
              * @param colocationStatus Describes colocation status of the Proximity Placement Group.
              * @return the next definition stage.
              */
             WithCreate withColocationStatus(InstanceViewStatus colocationStatus);
         }
 
-        /** The stage of the ProximityPlacementGroup definition allowing to specify intent. */
+        /**
+         * The stage of the ProximityPlacementGroup definition allowing to specify intent.
+         */
         interface WithIntent {
             /**
              * Specifies the intent property: Specifies the user intent of the proximity placement group..
-             *
+             * 
              * @param intent Specifies the user intent of the proximity placement group.
              * @return the next definition stage.
              */
@@ -263,36 +279,42 @@ public interface ProximityPlacementGroup {
 
     /**
      * Begins update for the ProximityPlacementGroup resource.
-     *
+     * 
      * @return the stage of resource update.
      */
     ProximityPlacementGroup.Update update();
 
-    /** The template for ProximityPlacementGroup update. */
+    /**
+     * The template for ProximityPlacementGroup update.
+     */
     interface Update extends UpdateStages.WithTags {
         /**
          * Executes the update request.
-         *
+         * 
          * @return the updated resource.
          */
         ProximityPlacementGroup apply();
 
         /**
          * Executes the update request.
-         *
+         * 
          * @param context The context to associate with this operation.
          * @return the updated resource.
          */
         ProximityPlacementGroup apply(Context context);
     }
 
-    /** The ProximityPlacementGroup update stages. */
+    /**
+     * The ProximityPlacementGroup update stages.
+     */
     interface UpdateStages {
-        /** The stage of the ProximityPlacementGroup update allowing to specify tags. */
+        /**
+         * The stage of the ProximityPlacementGroup update allowing to specify tags.
+         */
         interface WithTags {
             /**
              * Specifies the tags property: Resource tags.
-             *
+             * 
              * @param tags Resource tags.
              * @return the next definition stage.
              */
@@ -302,14 +324,14 @@ public interface ProximityPlacementGroup {
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @return the refreshed resource.
      */
     ProximityPlacementGroup refresh();
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @return the refreshed resource.
      */

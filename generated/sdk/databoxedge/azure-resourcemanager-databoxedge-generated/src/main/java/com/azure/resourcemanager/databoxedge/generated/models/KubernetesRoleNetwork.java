@@ -7,7 +7,9 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 import com.azure.core.annotation.Immutable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Kubernetes role network resource. */
+/**
+ * Kubernetes role network resource.
+ */
 @Immutable
 public final class KubernetesRoleNetwork {
     /*
@@ -22,13 +24,15 @@ public final class KubernetesRoleNetwork {
     @JsonProperty(value = "loadBalancerConfig", access = JsonProperty.Access.WRITE_ONLY)
     private LoadBalancerConfig loadBalancerConfig;
 
-    /** Creates an instance of KubernetesRoleNetwork class. */
+    /**
+     * Creates an instance of KubernetesRoleNetwork class.
+     */
     public KubernetesRoleNetwork() {
     }
 
     /**
      * Get the cniConfig property: Cni configuration.
-     *
+     * 
      * @return the cniConfig value.
      */
     public CniConfig cniConfig() {
@@ -37,7 +41,7 @@ public final class KubernetesRoleNetwork {
 
     /**
      * Get the loadBalancerConfig property: Load balancer configuration.
-     *
+     * 
      * @return the loadBalancerConfig value.
      */
     public LoadBalancerConfig loadBalancerConfig() {
@@ -46,7 +50,7 @@ public final class KubernetesRoleNetwork {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

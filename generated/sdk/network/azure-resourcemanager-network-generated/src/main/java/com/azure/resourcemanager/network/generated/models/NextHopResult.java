@@ -6,18 +6,20 @@ package com.azure.resourcemanager.network.generated.models;
 
 import com.azure.resourcemanager.network.generated.fluent.models.NextHopResultInner;
 
-/** An immutable client-side representation of NextHopResult. */
+/**
+ * An immutable client-side representation of NextHopResult.
+ */
 public interface NextHopResult {
     /**
      * Gets the nextHopType property: Next hop type.
-     *
+     * 
      * @return the nextHopType value.
      */
     NextHopType nextHopType();
 
     /**
      * Gets the nextHopIpAddress property: Next hop IP Address.
-     *
+     * 
      * @return the nextHopIpAddress value.
      */
     String nextHopIpAddress();
@@ -26,14 +28,14 @@ public interface NextHopResult {
      * Gets the routeTableId property: The resource identifier for the route table associated with the route being
      * returned. If the route being returned does not correspond to any user created routes then this field will be the
      * string 'System Route'.
-     *
+     * 
      * @return the routeTableId value.
      */
     String routeTableId();
 
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.NextHopResultInner object.
-     *
+     * 
      * @return the inner object.
      */
     NextHopResultInner innerModel();

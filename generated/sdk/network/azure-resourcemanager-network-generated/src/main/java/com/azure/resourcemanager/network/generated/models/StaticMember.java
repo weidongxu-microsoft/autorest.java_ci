@@ -8,101 +8,111 @@ import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.StaticMemberInner;
 
-/** An immutable client-side representation of StaticMember. */
+/**
+ * An immutable client-side representation of StaticMember.
+ */
 public interface StaticMember {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the name property: The name of the resource.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the type property: The type of the resource.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the etag property: A unique read-only string that changes whenever the resource is updated.
-     *
+     * 
      * @return the etag value.
      */
     String etag();
 
     /**
      * Gets the systemData property: The system metadata related to this resource.
-     *
+     * 
      * @return the systemData value.
      */
     SystemData systemData();
 
     /**
      * Gets the resourceId property: Resource Id.
-     *
+     * 
      * @return the resourceId value.
      */
     String resourceId();
 
     /**
      * Gets the region property: Resource region.
-     *
+     * 
      * @return the region value.
      */
     String region();
 
     /**
      * Gets the provisioningState property: The provisioning state of the scope assignment resource.
-     *
+     * 
      * @return the provisioningState value.
      */
     ProvisioningState provisioningState();
 
     /**
      * Gets the name of the resource group.
-     *
+     * 
      * @return the name of the resource group.
      */
     String resourceGroupName();
 
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.StaticMemberInner object.
-     *
+     * 
      * @return the inner object.
      */
     StaticMemberInner innerModel();
 
-    /** The entirety of the StaticMember definition. */
+    /**
+     * The entirety of the StaticMember definition.
+     */
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
 
-    /** The StaticMember definition stages. */
+    /**
+     * The StaticMember definition stages.
+     */
     interface DefinitionStages {
-        /** The first stage of the StaticMember definition. */
+        /**
+         * The first stage of the StaticMember definition.
+         */
         interface Blank extends WithParentResource {
         }
 
-        /** The stage of the StaticMember definition allowing to specify parent resource. */
+        /**
+         * The stage of the StaticMember definition allowing to specify parent resource.
+         */
         interface WithParentResource {
             /**
              * Specifies resourceGroupName, networkManagerName, networkGroupName.
-             *
+             * 
              * @param resourceGroupName The name of the resource group.
              * @param networkManagerName The name of the network manager.
              * @param networkGroupName The name of the network group.
              * @return the next definition stage.
              */
-            WithCreate withExistingNetworkGroup(
-                String resourceGroupName, String networkManagerName, String networkGroupName);
+            WithCreate withExistingNetworkGroup(String resourceGroupName, String networkManagerName,
+                String networkGroupName);
         }
 
         /**
@@ -112,25 +122,27 @@ public interface StaticMember {
         interface WithCreate extends DefinitionStages.WithResourceId {
             /**
              * Executes the create request.
-             *
+             * 
              * @return the created resource.
              */
             StaticMember create();
 
             /**
              * Executes the create request.
-             *
+             * 
              * @param context The context to associate with this operation.
              * @return the created resource.
              */
             StaticMember create(Context context);
         }
 
-        /** The stage of the StaticMember definition allowing to specify resourceId. */
+        /**
+         * The stage of the StaticMember definition allowing to specify resourceId.
+         */
         interface WithResourceId {
             /**
              * Specifies the resourceId property: Resource Id..
-             *
+             * 
              * @param resourceId Resource Id.
              * @return the next definition stage.
              */
@@ -140,36 +152,42 @@ public interface StaticMember {
 
     /**
      * Begins update for the StaticMember resource.
-     *
+     * 
      * @return the stage of resource update.
      */
     StaticMember.Update update();
 
-    /** The template for StaticMember update. */
+    /**
+     * The template for StaticMember update.
+     */
     interface Update extends UpdateStages.WithResourceId {
         /**
          * Executes the update request.
-         *
+         * 
          * @return the updated resource.
          */
         StaticMember apply();
 
         /**
          * Executes the update request.
-         *
+         * 
          * @param context The context to associate with this operation.
          * @return the updated resource.
          */
         StaticMember apply(Context context);
     }
 
-    /** The StaticMember update stages. */
+    /**
+     * The StaticMember update stages.
+     */
     interface UpdateStages {
-        /** The stage of the StaticMember update allowing to specify resourceId. */
+        /**
+         * The stage of the StaticMember update allowing to specify resourceId.
+         */
         interface WithResourceId {
             /**
              * Specifies the resourceId property: Resource Id..
-             *
+             * 
              * @param resourceId Resource Id.
              * @return the next definition stage.
              */
@@ -179,14 +197,14 @@ public interface StaticMember {
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @return the refreshed resource.
      */
     StaticMember refresh();
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @return the refreshed resource.
      */

@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The group by expression to be used in the report. */
+/**
+ * The group by expression to be used in the report.
+ */
 @Fluent
 public final class ReportConfigGrouping {
     /*
@@ -23,13 +25,15 @@ public final class ReportConfigGrouping {
     @JsonProperty(value = "name", required = true)
     private String name;
 
-    /** Creates an instance of ReportConfigGrouping class. */
+    /**
+     * Creates an instance of ReportConfigGrouping class.
+     */
     public ReportConfigGrouping() {
     }
 
     /**
      * Get the type property: Has type of the column to group.
-     *
+     * 
      * @return the type value.
      */
     public ReportConfigColumnType type() {
@@ -38,7 +42,7 @@ public final class ReportConfigGrouping {
 
     /**
      * Set the type property: Has type of the column to group.
-     *
+     * 
      * @param type the type value to set.
      * @return the ReportConfigGrouping object itself.
      */
@@ -48,8 +52,9 @@ public final class ReportConfigGrouping {
     }
 
     /**
-     * Get the name property: The name of the column to group. This version supports subscription lowest possible grain.
-     *
+     * Get the name property: The name of the column to group. This version supports subscription lowest possible
+     * grain.
+     * 
      * @return the name value.
      */
     public String name() {
@@ -57,8 +62,9 @@ public final class ReportConfigGrouping {
     }
 
     /**
-     * Set the name property: The name of the column to group. This version supports subscription lowest possible grain.
-     *
+     * Set the name property: The name of the column to group. This version supports subscription lowest possible
+     * grain.
+     * 
      * @param name the name value to set.
      * @return the ReportConfigGrouping object itself.
      */
@@ -69,19 +75,17 @@ public final class ReportConfigGrouping {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (type() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property type in model ReportConfigGrouping"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property type in model ReportConfigGrouping"));
         }
         if (name() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property name in model ReportConfigGrouping"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property name in model ReportConfigGrouping"));
         }
     }
 

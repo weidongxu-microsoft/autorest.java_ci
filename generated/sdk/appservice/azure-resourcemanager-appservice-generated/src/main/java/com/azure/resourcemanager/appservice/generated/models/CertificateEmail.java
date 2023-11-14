@@ -7,25 +7,27 @@ package com.azure.resourcemanager.appservice.generated.models;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CertificateEmailInner;
 import java.time.OffsetDateTime;
 
-/** An immutable client-side representation of CertificateEmail. */
+/**
+ * An immutable client-side representation of CertificateEmail.
+ */
 public interface CertificateEmail {
     /**
      * Gets the emailId property: Email id.
-     *
+     * 
      * @return the emailId value.
      */
     String emailId();
 
     /**
      * Gets the timestamp property: Time stamp.
-     *
+     * 
      * @return the timestamp value.
      */
     OffsetDateTime timestamp();
 
     /**
      * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.CertificateEmailInner object.
-     *
+     * 
      * @return the inner object.
      */
     CertificateEmailInner innerModel();

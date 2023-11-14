@@ -11,10 +11,8 @@ import com.azure.resourcemanager.network.generated.models.NetworkInterfaceTapCon
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkTap;
 
-public final class NetworkInterfaceTapConfigurationImpl
-    implements NetworkInterfaceTapConfiguration,
-        NetworkInterfaceTapConfiguration.Definition,
-        NetworkInterfaceTapConfiguration.Update {
+public final class NetworkInterfaceTapConfigurationImpl implements NetworkInterfaceTapConfiguration,
+    NetworkInterfaceTapConfiguration.Definition, NetworkInterfaceTapConfiguration.Update {
     private NetworkInterfaceTapConfigurationInner innerObject;
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
@@ -66,35 +64,27 @@ public final class NetworkInterfaceTapConfigurationImpl
 
     private String tapConfigurationName;
 
-    public NetworkInterfaceTapConfigurationImpl withExistingNetworkInterface(
-        String resourceGroupName, String networkInterfaceName) {
+    public NetworkInterfaceTapConfigurationImpl withExistingNetworkInterface(String resourceGroupName,
+        String networkInterfaceName) {
         this.resourceGroupName = resourceGroupName;
         this.networkInterfaceName = networkInterfaceName;
         return this;
     }
 
     public NetworkInterfaceTapConfiguration create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNetworkInterfaceTapConfigurations()
-                .createOrUpdate(
-                    resourceGroupName, networkInterfaceName, tapConfigurationName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getNetworkInterfaceTapConfigurations().createOrUpdate(
+            resourceGroupName, networkInterfaceName, tapConfigurationName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public NetworkInterfaceTapConfiguration create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNetworkInterfaceTapConfigurations()
-                .createOrUpdate(
-                    resourceGroupName, networkInterfaceName, tapConfigurationName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getNetworkInterfaceTapConfigurations()
+            .createOrUpdate(resourceGroupName, networkInterfaceName, tapConfigurationName, this.innerModel(), context);
         return this;
     }
 
-    NetworkInterfaceTapConfigurationImpl(
-        String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    NetworkInterfaceTapConfigurationImpl(String name,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new NetworkInterfaceTapConfigurationInner();
         this.serviceManager = serviceManager;
         this.tapConfigurationName = name;
@@ -105,27 +95,18 @@ public final class NetworkInterfaceTapConfigurationImpl
     }
 
     public NetworkInterfaceTapConfiguration apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNetworkInterfaceTapConfigurations()
-                .createOrUpdate(
-                    resourceGroupName, networkInterfaceName, tapConfigurationName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getNetworkInterfaceTapConfigurations().createOrUpdate(
+            resourceGroupName, networkInterfaceName, tapConfigurationName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public NetworkInterfaceTapConfiguration apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNetworkInterfaceTapConfigurations()
-                .createOrUpdate(
-                    resourceGroupName, networkInterfaceName, tapConfigurationName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getNetworkInterfaceTapConfigurations()
+            .createOrUpdate(resourceGroupName, networkInterfaceName, tapConfigurationName, this.innerModel(), context);
         return this;
     }
 
-    NetworkInterfaceTapConfigurationImpl(
-        NetworkInterfaceTapConfigurationInner innerObject,
+    NetworkInterfaceTapConfigurationImpl(NetworkInterfaceTapConfigurationInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -135,22 +116,14 @@ public final class NetworkInterfaceTapConfigurationImpl
     }
 
     public NetworkInterfaceTapConfiguration refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNetworkInterfaceTapConfigurations()
-                .getWithResponse(resourceGroupName, networkInterfaceName, tapConfigurationName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getNetworkInterfaceTapConfigurations()
+            .getWithResponse(resourceGroupName, networkInterfaceName, tapConfigurationName, Context.NONE).getValue();
         return this;
     }
 
     public NetworkInterfaceTapConfiguration refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNetworkInterfaceTapConfigurations()
-                .getWithResponse(resourceGroupName, networkInterfaceName, tapConfigurationName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getNetworkInterfaceTapConfigurations()
+            .getWithResponse(resourceGroupName, networkInterfaceName, tapConfigurationName, context).getValue();
         return this;
     }
 

@@ -17,8 +17,7 @@ public final class VMInsightsOnboardingStatusImpl implements VMInsightsOnboardin
 
     private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    VMInsightsOnboardingStatusImpl(
-        VMInsightsOnboardingStatusInner innerObject,
+    VMInsightsOnboardingStatusImpl(VMInsightsOnboardingStatusInner innerObject,
         com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

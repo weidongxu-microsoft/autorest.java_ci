@@ -8,11 +8,13 @@ import com.azure.core.management.SubResource;
 import com.azure.resourcemanager.network.generated.fluent.models.OutboundRuleInner;
 import java.util.List;
 
-/** An immutable client-side representation of OutboundRule. */
+/**
+ * An immutable client-side representation of OutboundRule.
+ */
 public interface OutboundRule {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.
-     *
+     * 
      * @return the id value.
      */
     String id();
@@ -20,35 +22,35 @@ public interface OutboundRule {
     /**
      * Gets the name property: The name of the resource that is unique within the set of outbound rules used by the load
      * balancer. This name can be used to access the resource.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the etag property: A unique read-only string that changes whenever the resource is updated.
-     *
+     * 
      * @return the etag value.
      */
     String etag();
 
     /**
      * Gets the type property: Type of the resource.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the allocatedOutboundPorts property: The number of outbound ports to be used for NAT.
-     *
+     * 
      * @return the allocatedOutboundPorts value.
      */
     Integer allocatedOutboundPorts();
 
     /**
      * Gets the frontendIpConfigurations property: The Frontend IP addresses of the load balancer.
-     *
+     * 
      * @return the frontendIpConfigurations value.
      */
     List<SubResource> frontendIpConfigurations();
@@ -56,21 +58,21 @@ public interface OutboundRule {
     /**
      * Gets the backendAddressPool property: A reference to a pool of DIPs. Outbound traffic is randomly load balanced
      * across IPs in the backend IPs.
-     *
+     * 
      * @return the backendAddressPool value.
      */
     SubResource backendAddressPool();
 
     /**
      * Gets the provisioningState property: The provisioning state of the outbound rule resource.
-     *
+     * 
      * @return the provisioningState value.
      */
     ProvisioningState provisioningState();
 
     /**
      * Gets the protocol property: The protocol for the outbound rule in load balancer.
-     *
+     * 
      * @return the protocol value.
      */
     LoadBalancerOutboundRuleProtocol protocol();
@@ -78,21 +80,21 @@ public interface OutboundRule {
     /**
      * Gets the enableTcpReset property: Receive bidirectional TCP Reset on TCP flow idle timeout or unexpected
      * connection termination. This element is only used when the protocol is set to TCP.
-     *
+     * 
      * @return the enableTcpReset value.
      */
     Boolean enableTcpReset();
 
     /**
      * Gets the idleTimeoutInMinutes property: The timeout for the TCP idle connection.
-     *
+     * 
      * @return the idleTimeoutInMinutes value.
      */
     Integer idleTimeoutInMinutes();
 
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.OutboundRuleInner object.
-     *
+     * 
      * @return the inner object.
      */
     OutboundRuleInner innerModel();

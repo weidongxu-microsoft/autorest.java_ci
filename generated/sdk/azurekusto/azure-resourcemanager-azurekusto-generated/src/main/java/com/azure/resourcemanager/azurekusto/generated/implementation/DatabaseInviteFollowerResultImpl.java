@@ -12,8 +12,7 @@ public final class DatabaseInviteFollowerResultImpl implements DatabaseInviteFol
 
     private final com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager;
 
-    DatabaseInviteFollowerResultImpl(
-        DatabaseInviteFollowerResultInner innerObject,
+    DatabaseInviteFollowerResultImpl(DatabaseInviteFollowerResultInner innerObject,
         com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

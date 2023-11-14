@@ -21,8 +21,8 @@ public final class DnssecConfigsImpl implements DnssecConfigs {
 
     private final com.azure.resourcemanager.dns.generated.DnsManager serviceManager;
 
-    public DnssecConfigsImpl(
-        DnssecConfigsClient innerClient, com.azure.resourcemanager.dns.generated.DnsManager serviceManager) {
+    public DnssecConfigsImpl(DnssecConfigsClient innerClient,
+        com.azure.resourcemanager.dns.generated.DnsManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -36,10 +36,10 @@ public final class DnssecConfigsImpl implements DnssecConfigs {
         }
     }
 
-    public DnssecConfig createOrUpdate(
-        String resourceGroupName, String zoneName, String ifMatch, String ifNoneMatch, Context context) {
-        DnssecConfigInner inner =
-            this.serviceClient().createOrUpdate(resourceGroupName, zoneName, ifMatch, ifNoneMatch, context);
+    public DnssecConfig createOrUpdate(String resourceGroupName, String zoneName, String ifMatch, String ifNoneMatch,
+        Context context) {
+        DnssecConfigInner inner
+            = this.serviceClient().createOrUpdate(resourceGroupName, zoneName, ifMatch, ifNoneMatch, context);
         if (inner != null) {
             return new DnssecConfigImpl(inner, this.manager());
         } else {
@@ -58,10 +58,7 @@ public final class DnssecConfigsImpl implements DnssecConfigs {
     public Response<DnssecConfig> getWithResponse(String resourceGroupName, String zoneName, Context context) {
         Response<DnssecConfigInner> inner = this.serviceClient().getWithResponse(resourceGroupName, zoneName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DnssecConfigImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -83,8 +80,8 @@ public final class DnssecConfigsImpl implements DnssecConfigs {
     }
 
     public PagedIterable<DnssecConfig> listByDnsZone(String resourceGroupName, String zoneName, Context context) {
-        PagedIterable<DnssecConfigInner> inner =
-            this.serviceClient().listByDnsZone(resourceGroupName, zoneName, context);
+        PagedIterable<DnssecConfigInner> inner
+            = this.serviceClient().listByDnsZone(resourceGroupName, zoneName, context);
         return Utils.mapPage(inner, inner1 -> new DnssecConfigImpl(inner1, this.manager()));
     }
 

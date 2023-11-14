@@ -17,8 +17,7 @@ public final class PartnerConfigurationImpl implements PartnerConfiguration {
 
     private final com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager;
 
-    PartnerConfigurationImpl(
-        PartnerConfigurationInner innerObject,
+    PartnerConfigurationImpl(PartnerConfigurationInner innerObject,
         com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

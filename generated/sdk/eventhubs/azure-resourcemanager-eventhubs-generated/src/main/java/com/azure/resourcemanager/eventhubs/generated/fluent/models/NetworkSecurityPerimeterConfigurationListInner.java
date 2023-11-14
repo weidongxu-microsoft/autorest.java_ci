@@ -9,7 +9,9 @@ import com.azure.resourcemanager.eventhubs.generated.models.NetworkSecurityPerim
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Result of the List NetworkSecurityPerimeterConfiguration operation. */
+/**
+ * Result of the List NetworkSecurityPerimeterConfiguration operation.
+ */
 @Immutable
 public final class NetworkSecurityPerimeterConfigurationListInner {
     /*
@@ -18,13 +20,15 @@ public final class NetworkSecurityPerimeterConfigurationListInner {
     @JsonProperty(value = "value", access = JsonProperty.Access.WRITE_ONLY)
     private List<NetworkSecurityPerimeterConfiguration> value;
 
-    /** Creates an instance of NetworkSecurityPerimeterConfigurationListInner class. */
+    /**
+     * Creates an instance of NetworkSecurityPerimeterConfigurationListInner class.
+     */
     public NetworkSecurityPerimeterConfigurationListInner() {
     }
 
     /**
      * Get the value property: A collection of NetworkSecurityPerimeterConfigurations.
-     *
+     * 
      * @return the value value.
      */
     public List<NetworkSecurityPerimeterConfiguration> value() {
@@ -33,7 +37,7 @@ public final class NetworkSecurityPerimeterConfigurationListInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

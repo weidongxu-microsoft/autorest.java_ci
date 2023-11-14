@@ -124,20 +124,14 @@ public final class VirtualWanImpl implements VirtualWan, VirtualWan.Definition, 
     }
 
     public VirtualWan create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualWans()
-                .createOrUpdate(resourceGroupName, virtualWanName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getVirtualWans().createOrUpdate(resourceGroupName,
+            virtualWanName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public VirtualWan create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualWans()
-                .createOrUpdate(resourceGroupName, virtualWanName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getVirtualWans().createOrUpdate(resourceGroupName,
+            virtualWanName, this.innerModel(), context);
         return this;
     }
 
@@ -153,27 +147,19 @@ public final class VirtualWanImpl implements VirtualWan, VirtualWan.Definition, 
     }
 
     public VirtualWan apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualWans()
-                .updateTagsWithResponse(resourceGroupName, virtualWanName, updateWanParameters, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getVirtualWans()
+            .updateTagsWithResponse(resourceGroupName, virtualWanName, updateWanParameters, Context.NONE).getValue();
         return this;
     }
 
     public VirtualWan apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualWans()
-                .updateTagsWithResponse(resourceGroupName, virtualWanName, updateWanParameters, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getVirtualWans()
+            .updateTagsWithResponse(resourceGroupName, virtualWanName, updateWanParameters, context).getValue();
         return this;
     }
 
-    VirtualWanImpl(
-        VirtualWanInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    VirtualWanImpl(VirtualWanInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
@@ -181,22 +167,14 @@ public final class VirtualWanImpl implements VirtualWan, VirtualWan.Definition, 
     }
 
     public VirtualWan refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualWans()
-                .getByResourceGroupWithResponse(resourceGroupName, virtualWanName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getVirtualWans()
+            .getByResourceGroupWithResponse(resourceGroupName, virtualWanName, Context.NONE).getValue();
         return this;
     }
 
     public VirtualWan refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualWans()
-                .getByResourceGroupWithResponse(resourceGroupName, virtualWanName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getVirtualWans()
+            .getByResourceGroupWithResponse(resourceGroupName, virtualWanName, context).getValue();
         return this;
     }
 

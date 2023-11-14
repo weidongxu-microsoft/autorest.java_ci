@@ -81,8 +81,8 @@ public final class DatabasePrincipalAssignmentImpl
 
     private String principalAssignmentName;
 
-    public DatabasePrincipalAssignmentImpl withExistingDatabase(
-        String resourceGroupName, String clusterName, String databaseName) {
+    public DatabasePrincipalAssignmentImpl withExistingDatabase(String resourceGroupName, String clusterName,
+        String databaseName) {
         this.resourceGroupName = resourceGroupName;
         this.clusterName = clusterName;
         this.databaseName = databaseName;
@@ -90,32 +90,19 @@ public final class DatabasePrincipalAssignmentImpl
     }
 
     public DatabasePrincipalAssignment create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDatabasePrincipalAssignments()
-                .createOrUpdate(
-                    resourceGroupName,
-                    clusterName,
-                    databaseName,
-                    principalAssignmentName,
-                    this.innerModel(),
-                    Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getDatabasePrincipalAssignments().createOrUpdate(
+            resourceGroupName, clusterName, databaseName, principalAssignmentName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public DatabasePrincipalAssignment create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDatabasePrincipalAssignments()
-                .createOrUpdate(
-                    resourceGroupName, clusterName, databaseName, principalAssignmentName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getDatabasePrincipalAssignments().createOrUpdate(
+            resourceGroupName, clusterName, databaseName, principalAssignmentName, this.innerModel(), context);
         return this;
     }
 
-    DatabasePrincipalAssignmentImpl(
-        String name, com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager) {
+    DatabasePrincipalAssignmentImpl(String name,
+        com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager) {
         this.innerObject = new DatabasePrincipalAssignmentInner();
         this.serviceManager = serviceManager;
         this.principalAssignmentName = name;
@@ -126,32 +113,18 @@ public final class DatabasePrincipalAssignmentImpl
     }
 
     public DatabasePrincipalAssignment apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDatabasePrincipalAssignments()
-                .createOrUpdate(
-                    resourceGroupName,
-                    clusterName,
-                    databaseName,
-                    principalAssignmentName,
-                    this.innerModel(),
-                    Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getDatabasePrincipalAssignments().createOrUpdate(
+            resourceGroupName, clusterName, databaseName, principalAssignmentName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public DatabasePrincipalAssignment apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDatabasePrincipalAssignments()
-                .createOrUpdate(
-                    resourceGroupName, clusterName, databaseName, principalAssignmentName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getDatabasePrincipalAssignments().createOrUpdate(
+            resourceGroupName, clusterName, databaseName, principalAssignmentName, this.innerModel(), context);
         return this;
     }
 
-    DatabasePrincipalAssignmentImpl(
-        DatabasePrincipalAssignmentInner innerObject,
+    DatabasePrincipalAssignmentImpl(DatabasePrincipalAssignmentInner innerObject,
         com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -162,22 +135,15 @@ public final class DatabasePrincipalAssignmentImpl
     }
 
     public DatabasePrincipalAssignment refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDatabasePrincipalAssignments()
-                .getWithResponse(resourceGroupName, clusterName, databaseName, principalAssignmentName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getDatabasePrincipalAssignments()
+            .getWithResponse(resourceGroupName, clusterName, databaseName, principalAssignmentName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public DatabasePrincipalAssignment refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDatabasePrincipalAssignments()
-                .getWithResponse(resourceGroupName, clusterName, databaseName, principalAssignmentName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getDatabasePrincipalAssignments()
+            .getWithResponse(resourceGroupName, clusterName, databaseName, principalAssignmentName, context).getValue();
         return this;
     }
 

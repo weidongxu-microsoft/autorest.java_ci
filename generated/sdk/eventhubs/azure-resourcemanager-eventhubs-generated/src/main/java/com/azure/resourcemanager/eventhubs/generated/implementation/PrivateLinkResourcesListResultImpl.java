@@ -15,8 +15,7 @@ public final class PrivateLinkResourcesListResultImpl implements PrivateLinkReso
 
     private final com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager;
 
-    PrivateLinkResourcesListResultImpl(
-        PrivateLinkResourcesListResultInner innerObject,
+    PrivateLinkResourcesListResultImpl(PrivateLinkResourcesListResultInner innerObject,
         com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

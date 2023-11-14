@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.keyvault.generated.models.GeoReplicationRegionProvisioningState;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** A region that this managed HSM Pool has been extended to. */
+/**
+ * A region that this managed HSM Pool has been extended to.
+ */
 @Fluent
 public final class MhsmGeoReplicatedRegionInner {
     /*
@@ -29,13 +31,15 @@ public final class MhsmGeoReplicatedRegionInner {
     @JsonProperty(value = "isPrimary")
     private Boolean isPrimary;
 
-    /** Creates an instance of MhsmGeoReplicatedRegionInner class. */
+    /**
+     * Creates an instance of MhsmGeoReplicatedRegionInner class.
+     */
     public MhsmGeoReplicatedRegionInner() {
     }
 
     /**
      * Get the name property: Name of the geo replicated region.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -44,7 +48,7 @@ public final class MhsmGeoReplicatedRegionInner {
 
     /**
      * Set the name property: Name of the geo replicated region.
-     *
+     * 
      * @param name the name value to set.
      * @return the MhsmGeoReplicatedRegionInner object itself.
      */
@@ -55,7 +59,7 @@ public final class MhsmGeoReplicatedRegionInner {
 
     /**
      * Get the provisioningState property: Provisioning state of the geo replicated region.
-     *
+     * 
      * @return the provisioningState value.
      */
     public GeoReplicationRegionProvisioningState provisioningState() {
@@ -65,7 +69,7 @@ public final class MhsmGeoReplicatedRegionInner {
     /**
      * Get the isPrimary property: A boolean value that indicates whether the region is the primary region or a
      * secondary region.
-     *
+     * 
      * @return the isPrimary value.
      */
     public Boolean isPrimary() {
@@ -75,7 +79,7 @@ public final class MhsmGeoReplicatedRegionInner {
     /**
      * Set the isPrimary property: A boolean value that indicates whether the region is the primary region or a
      * secondary region.
-     *
+     * 
      * @param isPrimary the isPrimary value to set.
      * @return the MhsmGeoReplicatedRegionInner object itself.
      */
@@ -86,7 +90,7 @@ public final class MhsmGeoReplicatedRegionInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

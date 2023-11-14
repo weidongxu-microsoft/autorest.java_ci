@@ -16,11 +16,13 @@ import com.azure.resourcemanager.network.generated.models.TagsObject;
 import com.azure.resourcemanager.network.generated.models.VpnGatewayPacketCaptureStartParameters;
 import com.azure.resourcemanager.network.generated.models.VpnGatewayPacketCaptureStopParameters;
 
-/** An instance of this class provides access to all the operations defined in VpnGatewaysClient. */
+/**
+ * An instance of this class provides access to all the operations defined in VpnGatewaysClient.
+ */
 public interface VpnGatewaysClient {
     /**
      * Retrieves the details of a virtual wan vpn gateway.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @param context The context to associate with this operation.
@@ -30,12 +32,12 @@ public interface VpnGatewaysClient {
      * @return vpnGateway Resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<VpnGatewayInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String gatewayName, Context context);
+    Response<VpnGatewayInner> getByResourceGroupWithResponse(String resourceGroupName, String gatewayName,
+        Context context);
 
     /**
      * Retrieves the details of a virtual wan vpn gateway.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -48,7 +50,7 @@ public interface VpnGatewaysClient {
 
     /**
      * Creates a virtual wan vpn gateway if it doesn't exist else updates the existing gateway.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @param vpnGatewayParameters Parameters supplied to create or Update a virtual wan vpn gateway.
@@ -58,12 +60,12 @@ public interface VpnGatewaysClient {
      * @return the {@link SyncPoller} for polling of vpnGateway Resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<VpnGatewayInner>, VpnGatewayInner> beginCreateOrUpdate(
-        String resourceGroupName, String gatewayName, VpnGatewayInner vpnGatewayParameters);
+    SyncPoller<PollResult<VpnGatewayInner>, VpnGatewayInner> beginCreateOrUpdate(String resourceGroupName,
+        String gatewayName, VpnGatewayInner vpnGatewayParameters);
 
     /**
      * Creates a virtual wan vpn gateway if it doesn't exist else updates the existing gateway.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @param vpnGatewayParameters Parameters supplied to create or Update a virtual wan vpn gateway.
@@ -74,12 +76,12 @@ public interface VpnGatewaysClient {
      * @return the {@link SyncPoller} for polling of vpnGateway Resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<VpnGatewayInner>, VpnGatewayInner> beginCreateOrUpdate(
-        String resourceGroupName, String gatewayName, VpnGatewayInner vpnGatewayParameters, Context context);
+    SyncPoller<PollResult<VpnGatewayInner>, VpnGatewayInner> beginCreateOrUpdate(String resourceGroupName,
+        String gatewayName, VpnGatewayInner vpnGatewayParameters, Context context);
 
     /**
      * Creates a virtual wan vpn gateway if it doesn't exist else updates the existing gateway.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @param vpnGatewayParameters Parameters supplied to create or Update a virtual wan vpn gateway.
@@ -93,7 +95,7 @@ public interface VpnGatewaysClient {
 
     /**
      * Creates a virtual wan vpn gateway if it doesn't exist else updates the existing gateway.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @param vpnGatewayParameters Parameters supplied to create or Update a virtual wan vpn gateway.
@@ -104,12 +106,12 @@ public interface VpnGatewaysClient {
      * @return vpnGateway Resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    VpnGatewayInner createOrUpdate(
-        String resourceGroupName, String gatewayName, VpnGatewayInner vpnGatewayParameters, Context context);
+    VpnGatewayInner createOrUpdate(String resourceGroupName, String gatewayName, VpnGatewayInner vpnGatewayParameters,
+        Context context);
 
     /**
      * Updates virtual wan vpn gateway tags.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @param vpnGatewayParameters Parameters supplied to update a virtual wan vpn gateway tags.
@@ -119,12 +121,12 @@ public interface VpnGatewaysClient {
      * @return the {@link SyncPoller} for polling of vpnGateway Resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<VpnGatewayInner>, VpnGatewayInner> beginUpdateTags(
-        String resourceGroupName, String gatewayName, TagsObject vpnGatewayParameters);
+    SyncPoller<PollResult<VpnGatewayInner>, VpnGatewayInner> beginUpdateTags(String resourceGroupName,
+        String gatewayName, TagsObject vpnGatewayParameters);
 
     /**
      * Updates virtual wan vpn gateway tags.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @param vpnGatewayParameters Parameters supplied to update a virtual wan vpn gateway tags.
@@ -135,12 +137,12 @@ public interface VpnGatewaysClient {
      * @return the {@link SyncPoller} for polling of vpnGateway Resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<VpnGatewayInner>, VpnGatewayInner> beginUpdateTags(
-        String resourceGroupName, String gatewayName, TagsObject vpnGatewayParameters, Context context);
+    SyncPoller<PollResult<VpnGatewayInner>, VpnGatewayInner> beginUpdateTags(String resourceGroupName,
+        String gatewayName, TagsObject vpnGatewayParameters, Context context);
 
     /**
      * Updates virtual wan vpn gateway tags.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @param vpnGatewayParameters Parameters supplied to update a virtual wan vpn gateway tags.
@@ -154,7 +156,7 @@ public interface VpnGatewaysClient {
 
     /**
      * Updates virtual wan vpn gateway tags.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @param vpnGatewayParameters Parameters supplied to update a virtual wan vpn gateway tags.
@@ -165,12 +167,12 @@ public interface VpnGatewaysClient {
      * @return vpnGateway Resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    VpnGatewayInner updateTags(
-        String resourceGroupName, String gatewayName, TagsObject vpnGatewayParameters, Context context);
+    VpnGatewayInner updateTags(String resourceGroupName, String gatewayName, TagsObject vpnGatewayParameters,
+        Context context);
 
     /**
      * Deletes a virtual wan vpn gateway.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -183,7 +185,7 @@ public interface VpnGatewaysClient {
 
     /**
      * Deletes a virtual wan vpn gateway.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @param context The context to associate with this operation.
@@ -197,7 +199,7 @@ public interface VpnGatewaysClient {
 
     /**
      * Deletes a virtual wan vpn gateway.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -209,7 +211,7 @@ public interface VpnGatewaysClient {
 
     /**
      * Deletes a virtual wan vpn gateway.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @param context The context to associate with this operation.
@@ -222,7 +224,7 @@ public interface VpnGatewaysClient {
 
     /**
      * Resets the primary of the vpn gateway in the specified resource group.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -235,7 +237,7 @@ public interface VpnGatewaysClient {
 
     /**
      * Resets the primary of the vpn gateway in the specified resource group.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @param ipConfigurationId VpnGateway ipConfigurationId to specify the gateway instance.
@@ -246,12 +248,12 @@ public interface VpnGatewaysClient {
      * @return the {@link SyncPoller} for polling of vpnGateway Resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<VpnGatewayInner>, VpnGatewayInner> beginReset(
-        String resourceGroupName, String gatewayName, String ipConfigurationId, Context context);
+    SyncPoller<PollResult<VpnGatewayInner>, VpnGatewayInner> beginReset(String resourceGroupName, String gatewayName,
+        String ipConfigurationId, Context context);
 
     /**
      * Resets the primary of the vpn gateway in the specified resource group.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -264,7 +266,7 @@ public interface VpnGatewaysClient {
 
     /**
      * Resets the primary of the vpn gateway in the specified resource group.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @param ipConfigurationId VpnGateway ipConfigurationId to specify the gateway instance.
@@ -279,7 +281,7 @@ public interface VpnGatewaysClient {
 
     /**
      * Starts packet capture on vpn gateway in the specified resource group.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -292,7 +294,7 @@ public interface VpnGatewaysClient {
 
     /**
      * Starts packet capture on vpn gateway in the specified resource group.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @param parameters Vpn gateway packet capture parameters supplied to start packet capture on vpn gateway.
@@ -303,15 +305,12 @@ public interface VpnGatewaysClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<String>, String> beginStartPacketCapture(
-        String resourceGroupName,
-        String gatewayName,
-        VpnGatewayPacketCaptureStartParameters parameters,
-        Context context);
+    SyncPoller<PollResult<String>, String> beginStartPacketCapture(String resourceGroupName, String gatewayName,
+        VpnGatewayPacketCaptureStartParameters parameters, Context context);
 
     /**
      * Starts packet capture on vpn gateway in the specified resource group.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -324,7 +323,7 @@ public interface VpnGatewaysClient {
 
     /**
      * Starts packet capture on vpn gateway in the specified resource group.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @param parameters Vpn gateway packet capture parameters supplied to start packet capture on vpn gateway.
@@ -335,15 +334,12 @@ public interface VpnGatewaysClient {
      * @return the response.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    String startPacketCapture(
-        String resourceGroupName,
-        String gatewayName,
-        VpnGatewayPacketCaptureStartParameters parameters,
-        Context context);
+    String startPacketCapture(String resourceGroupName, String gatewayName,
+        VpnGatewayPacketCaptureStartParameters parameters, Context context);
 
     /**
      * Stops packet capture on vpn gateway in the specified resource group.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -356,7 +352,7 @@ public interface VpnGatewaysClient {
 
     /**
      * Stops packet capture on vpn gateway in the specified resource group.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @param parameters Vpn gateway packet capture parameters supplied to stop packet capture on vpn gateway.
@@ -367,15 +363,12 @@ public interface VpnGatewaysClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<String>, String> beginStopPacketCapture(
-        String resourceGroupName,
-        String gatewayName,
-        VpnGatewayPacketCaptureStopParameters parameters,
-        Context context);
+    SyncPoller<PollResult<String>, String> beginStopPacketCapture(String resourceGroupName, String gatewayName,
+        VpnGatewayPacketCaptureStopParameters parameters, Context context);
 
     /**
      * Stops packet capture on vpn gateway in the specified resource group.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -388,7 +381,7 @@ public interface VpnGatewaysClient {
 
     /**
      * Stops packet capture on vpn gateway in the specified resource group.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @param parameters Vpn gateway packet capture parameters supplied to stop packet capture on vpn gateway.
@@ -399,15 +392,12 @@ public interface VpnGatewaysClient {
      * @return the response.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    String stopPacketCapture(
-        String resourceGroupName,
-        String gatewayName,
-        VpnGatewayPacketCaptureStopParameters parameters,
-        Context context);
+    String stopPacketCapture(String resourceGroupName, String gatewayName,
+        VpnGatewayPacketCaptureStopParameters parameters, Context context);
 
     /**
      * Lists all the VpnGateways in a resource group.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -419,7 +409,7 @@ public interface VpnGatewaysClient {
 
     /**
      * Lists all the VpnGateways in a resource group.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -432,7 +422,7 @@ public interface VpnGatewaysClient {
 
     /**
      * Lists all the VpnGateways in a subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return result of the request to list VpnGateways as paginated response with {@link PagedIterable}.
@@ -442,7 +432,7 @@ public interface VpnGatewaysClient {
 
     /**
      * Lists all the VpnGateways in a subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

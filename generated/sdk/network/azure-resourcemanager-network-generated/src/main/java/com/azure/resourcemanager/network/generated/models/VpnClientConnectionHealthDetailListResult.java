@@ -7,11 +7,13 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.resourcemanager.network.generated.fluent.models.VpnClientConnectionHealthDetailListResultInner;
 import java.util.List;
 
-/** An immutable client-side representation of VpnClientConnectionHealthDetailListResult. */
+/**
+ * An immutable client-side representation of VpnClientConnectionHealthDetailListResult.
+ */
 public interface VpnClientConnectionHealthDetailListResult {
     /**
      * Gets the value property: List of vpn client connection health.
-     *
+     * 
      * @return the value value.
      */
     List<VpnClientConnectionHealthDetail> value();
@@ -19,7 +21,7 @@ public interface VpnClientConnectionHealthDetailListResult {
     /**
      * Gets the inner
      * com.azure.resourcemanager.network.generated.fluent.models.VpnClientConnectionHealthDetailListResultInner object.
-     *
+     * 
      * @return the inner object.
      */
     VpnClientConnectionHealthDetailListResultInner innerModel();

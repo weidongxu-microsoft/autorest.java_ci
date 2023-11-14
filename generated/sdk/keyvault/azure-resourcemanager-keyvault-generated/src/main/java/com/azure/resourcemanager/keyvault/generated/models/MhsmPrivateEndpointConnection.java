@@ -10,102 +10,111 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.MhsmPrivateEndpointConnectionInner;
 import java.util.Map;
 
-/** An immutable client-side representation of MhsmPrivateEndpointConnection. */
+/**
+ * An immutable client-side representation of MhsmPrivateEndpointConnection.
+ */
 public interface MhsmPrivateEndpointConnection {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the name property: The name of the resource.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the type property: The type of the resource.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the location property: The geo-location where the resource lives.
-     *
+     * 
      * @return the location value.
      */
     String location();
 
     /**
      * Gets the tags property: Resource tags.
-     *
+     * 
      * @return the tags value.
      */
     Map<String, String> tags();
 
     /**
      * Gets the sku property: SKU details.
-     *
+     * 
      * @return the sku value.
      */
     ManagedHsmSku sku();
 
     /**
      * Gets the systemData property: Metadata pertaining to creation and last modification of the key vault resource.
-     *
+     * 
      * @return the systemData value.
      */
     SystemData systemData();
 
     /**
+     * Gets the identity property: Managed service identity (system assigned and/or user assigned identities).
+     * 
+     * @return the identity value.
+     */
+    ManagedServiceIdentity identity();
+
+    /**
      * Gets the etag property: Modified whenever there is a change in the state of private endpoint connection.
-     *
+     * 
      * @return the etag value.
      */
     String etag();
 
     /**
      * Gets the privateEndpoint property: Properties of the private endpoint object.
-     *
+     * 
      * @return the privateEndpoint value.
      */
     MhsmPrivateEndpoint privateEndpoint();
 
     /**
      * Gets the privateLinkServiceConnectionState property: Approval state of the private link connection.
-     *
+     * 
      * @return the privateLinkServiceConnectionState value.
      */
     MhsmPrivateLinkServiceConnectionState privateLinkServiceConnectionState();
 
     /**
      * Gets the provisioningState property: Provisioning state of the private endpoint connection.
-     *
+     * 
      * @return the provisioningState value.
      */
     PrivateEndpointConnectionProvisioningState provisioningState();
 
     /**
      * Gets the region of the resource.
-     *
+     * 
      * @return the region of the resource.
      */
     Region region();
 
     /**
      * Gets the name of the resource region.
-     *
+     * 
      * @return the name of the resource region.
      */
     String regionName();
 
     /**
      * Gets the name of the resource group.
-     *
+     * 
      * @return the name of the resource group.
      */
     String resourceGroupName();
@@ -113,30 +122,35 @@ public interface MhsmPrivateEndpointConnection {
     /**
      * Gets the inner com.azure.resourcemanager.keyvault.generated.fluent.models.MhsmPrivateEndpointConnectionInner
      * object.
-     *
+     * 
      * @return the inner object.
      */
     MhsmPrivateEndpointConnectionInner innerModel();
 
-    /** The entirety of the MhsmPrivateEndpointConnection definition. */
-    interface Definition
-        extends DefinitionStages.Blank,
-            DefinitionStages.WithLocation,
-            DefinitionStages.WithParentResource,
-            DefinitionStages.WithCreate {
+    /**
+     * The entirety of the MhsmPrivateEndpointConnection definition.
+     */
+    interface Definition extends DefinitionStages.Blank, DefinitionStages.WithLocation,
+        DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
 
-    /** The MhsmPrivateEndpointConnection definition stages. */
+    /**
+     * The MhsmPrivateEndpointConnection definition stages.
+     */
     interface DefinitionStages {
-        /** The first stage of the MhsmPrivateEndpointConnection definition. */
+        /**
+         * The first stage of the MhsmPrivateEndpointConnection definition.
+         */
         interface Blank extends WithLocation {
         }
 
-        /** The stage of the MhsmPrivateEndpointConnection definition allowing to specify location. */
+        /**
+         * The stage of the MhsmPrivateEndpointConnection definition allowing to specify location.
+         */
         interface WithLocation {
             /**
              * Specifies the region for the resource.
-             *
+             * 
              * @param location The geo-location where the resource lives.
              * @return the next definition stage.
              */
@@ -144,18 +158,20 @@ public interface MhsmPrivateEndpointConnection {
 
             /**
              * Specifies the region for the resource.
-             *
+             * 
              * @param location The geo-location where the resource lives.
              * @return the next definition stage.
              */
             WithParentResource withRegion(String location);
         }
 
-        /** The stage of the MhsmPrivateEndpointConnection definition allowing to specify parent resource. */
+        /**
+         * The stage of the MhsmPrivateEndpointConnection definition allowing to specify parent resource.
+         */
         interface WithParentResource {
             /**
              * Specifies resourceGroupName, name.
-             *
+             * 
              * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
              * @param name Name of the managed HSM Pool.
              * @return the next definition stage.
@@ -167,68 +183,86 @@ public interface MhsmPrivateEndpointConnection {
          * The stage of the MhsmPrivateEndpointConnection definition which contains all the minimum required properties
          * for the resource to be created, but also allows for any other optional properties to be specified.
          */
-        interface WithCreate
-            extends DefinitionStages.WithTags,
-                DefinitionStages.WithSku,
-                DefinitionStages.WithEtag,
-                DefinitionStages.WithPrivateEndpoint,
-                DefinitionStages.WithPrivateLinkServiceConnectionState,
-                DefinitionStages.WithProvisioningState {
+        interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithSku, DefinitionStages.WithIdentity,
+            DefinitionStages.WithEtag, DefinitionStages.WithPrivateEndpoint,
+            DefinitionStages.WithPrivateLinkServiceConnectionState, DefinitionStages.WithProvisioningState {
             /**
              * Executes the create request.
-             *
+             * 
              * @return the created resource.
              */
             MhsmPrivateEndpointConnection create();
 
             /**
              * Executes the create request.
-             *
+             * 
              * @param context The context to associate with this operation.
              * @return the created resource.
              */
             MhsmPrivateEndpointConnection create(Context context);
         }
 
-        /** The stage of the MhsmPrivateEndpointConnection definition allowing to specify tags. */
+        /**
+         * The stage of the MhsmPrivateEndpointConnection definition allowing to specify tags.
+         */
         interface WithTags {
             /**
              * Specifies the tags property: Resource tags..
-             *
+             * 
              * @param tags Resource tags.
              * @return the next definition stage.
              */
             WithCreate withTags(Map<String, String> tags);
         }
 
-        /** The stage of the MhsmPrivateEndpointConnection definition allowing to specify sku. */
+        /**
+         * The stage of the MhsmPrivateEndpointConnection definition allowing to specify sku.
+         */
         interface WithSku {
             /**
              * Specifies the sku property: SKU details.
-             *
+             * 
              * @param sku SKU details.
              * @return the next definition stage.
              */
             WithCreate withSku(ManagedHsmSku sku);
         }
 
-        /** The stage of the MhsmPrivateEndpointConnection definition allowing to specify etag. */
+        /**
+         * The stage of the MhsmPrivateEndpointConnection definition allowing to specify identity.
+         */
+        interface WithIdentity {
+            /**
+             * Specifies the identity property: Managed service identity (system assigned and/or user assigned
+             * identities).
+             * 
+             * @param identity Managed service identity (system assigned and/or user assigned identities).
+             * @return the next definition stage.
+             */
+            WithCreate withIdentity(ManagedServiceIdentity identity);
+        }
+
+        /**
+         * The stage of the MhsmPrivateEndpointConnection definition allowing to specify etag.
+         */
         interface WithEtag {
             /**
              * Specifies the etag property: Modified whenever there is a change in the state of private endpoint
              * connection..
-             *
+             * 
              * @param etag Modified whenever there is a change in the state of private endpoint connection.
              * @return the next definition stage.
              */
             WithCreate withEtag(String etag);
         }
 
-        /** The stage of the MhsmPrivateEndpointConnection definition allowing to specify privateEndpoint. */
+        /**
+         * The stage of the MhsmPrivateEndpointConnection definition allowing to specify privateEndpoint.
+         */
         interface WithPrivateEndpoint {
             /**
              * Specifies the privateEndpoint property: Properties of the private endpoint object..
-             *
+             * 
              * @param privateEndpoint Properties of the private endpoint object.
              * @return the next definition stage.
              */
@@ -242,7 +276,7 @@ public interface MhsmPrivateEndpointConnection {
         interface WithPrivateLinkServiceConnectionState {
             /**
              * Specifies the privateLinkServiceConnectionState property: Approval state of the private link connection..
-             *
+             * 
              * @param privateLinkServiceConnectionState Approval state of the private link connection.
              * @return the next definition stage.
              */
@@ -250,11 +284,13 @@ public interface MhsmPrivateEndpointConnection {
                 MhsmPrivateLinkServiceConnectionState privateLinkServiceConnectionState);
         }
 
-        /** The stage of the MhsmPrivateEndpointConnection definition allowing to specify provisioningState. */
+        /**
+         * The stage of the MhsmPrivateEndpointConnection definition allowing to specify provisioningState.
+         */
         interface WithProvisioningState {
             /**
              * Specifies the provisioningState property: Provisioning state of the private endpoint connection..
-             *
+             * 
              * @param provisioningState Provisioning state of the private endpoint connection.
              * @return the next definition stage.
              */
@@ -264,76 +300,98 @@ public interface MhsmPrivateEndpointConnection {
 
     /**
      * Begins update for the MhsmPrivateEndpointConnection resource.
-     *
+     * 
      * @return the stage of resource update.
      */
     MhsmPrivateEndpointConnection.Update update();
 
-    /** The template for MhsmPrivateEndpointConnection update. */
-    interface Update
-        extends UpdateStages.WithTags,
-            UpdateStages.WithSku,
-            UpdateStages.WithEtag,
-            UpdateStages.WithPrivateEndpoint,
-            UpdateStages.WithPrivateLinkServiceConnectionState,
-            UpdateStages.WithProvisioningState {
+    /**
+     * The template for MhsmPrivateEndpointConnection update.
+     */
+    interface Update extends UpdateStages.WithTags, UpdateStages.WithSku, UpdateStages.WithIdentity,
+        UpdateStages.WithEtag, UpdateStages.WithPrivateEndpoint, UpdateStages.WithPrivateLinkServiceConnectionState,
+        UpdateStages.WithProvisioningState {
         /**
          * Executes the update request.
-         *
+         * 
          * @return the updated resource.
          */
         MhsmPrivateEndpointConnection apply();
 
         /**
          * Executes the update request.
-         *
+         * 
          * @param context The context to associate with this operation.
          * @return the updated resource.
          */
         MhsmPrivateEndpointConnection apply(Context context);
     }
 
-    /** The MhsmPrivateEndpointConnection update stages. */
+    /**
+     * The MhsmPrivateEndpointConnection update stages.
+     */
     interface UpdateStages {
-        /** The stage of the MhsmPrivateEndpointConnection update allowing to specify tags. */
+        /**
+         * The stage of the MhsmPrivateEndpointConnection update allowing to specify tags.
+         */
         interface WithTags {
             /**
              * Specifies the tags property: Resource tags..
-             *
+             * 
              * @param tags Resource tags.
              * @return the next definition stage.
              */
             Update withTags(Map<String, String> tags);
         }
 
-        /** The stage of the MhsmPrivateEndpointConnection update allowing to specify sku. */
+        /**
+         * The stage of the MhsmPrivateEndpointConnection update allowing to specify sku.
+         */
         interface WithSku {
             /**
              * Specifies the sku property: SKU details.
-             *
+             * 
              * @param sku SKU details.
              * @return the next definition stage.
              */
             Update withSku(ManagedHsmSku sku);
         }
 
-        /** The stage of the MhsmPrivateEndpointConnection update allowing to specify etag. */
+        /**
+         * The stage of the MhsmPrivateEndpointConnection update allowing to specify identity.
+         */
+        interface WithIdentity {
+            /**
+             * Specifies the identity property: Managed service identity (system assigned and/or user assigned
+             * identities).
+             * 
+             * @param identity Managed service identity (system assigned and/or user assigned identities).
+             * @return the next definition stage.
+             */
+            Update withIdentity(ManagedServiceIdentity identity);
+        }
+
+        /**
+         * The stage of the MhsmPrivateEndpointConnection update allowing to specify etag.
+         */
         interface WithEtag {
             /**
              * Specifies the etag property: Modified whenever there is a change in the state of private endpoint
              * connection..
-             *
+             * 
              * @param etag Modified whenever there is a change in the state of private endpoint connection.
              * @return the next definition stage.
              */
             Update withEtag(String etag);
         }
 
-        /** The stage of the MhsmPrivateEndpointConnection update allowing to specify privateEndpoint. */
+        /**
+         * The stage of the MhsmPrivateEndpointConnection update allowing to specify privateEndpoint.
+         */
         interface WithPrivateEndpoint {
             /**
              * Specifies the privateEndpoint property: Properties of the private endpoint object..
-             *
+             * 
              * @param privateEndpoint Properties of the private endpoint object.
              * @return the next definition stage.
              */
@@ -346,7 +404,7 @@ public interface MhsmPrivateEndpointConnection {
         interface WithPrivateLinkServiceConnectionState {
             /**
              * Specifies the privateLinkServiceConnectionState property: Approval state of the private link connection..
-             *
+             * 
              * @param privateLinkServiceConnectionState Approval state of the private link connection.
              * @return the next definition stage.
              */
@@ -354,11 +412,13 @@ public interface MhsmPrivateEndpointConnection {
                 MhsmPrivateLinkServiceConnectionState privateLinkServiceConnectionState);
         }
 
-        /** The stage of the MhsmPrivateEndpointConnection update allowing to specify provisioningState. */
+        /**
+         * The stage of the MhsmPrivateEndpointConnection update allowing to specify provisioningState.
+         */
         interface WithProvisioningState {
             /**
              * Specifies the provisioningState property: Provisioning state of the private endpoint connection..
-             *
+             * 
              * @param provisioningState Provisioning state of the private endpoint connection.
              * @return the next definition stage.
              */
@@ -368,14 +428,14 @@ public interface MhsmPrivateEndpointConnection {
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @return the refreshed resource.
      */
     MhsmPrivateEndpointConnection refresh();
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @return the refreshed resource.
      */

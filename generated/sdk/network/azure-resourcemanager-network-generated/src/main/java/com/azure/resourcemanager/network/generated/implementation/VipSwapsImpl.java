@@ -22,8 +22,8 @@ public final class VipSwapsImpl implements VipSwaps {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public VipSwapsImpl(
-        VipSwapsClient innerClient, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    public VipSwapsImpl(VipSwapsClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -31,10 +31,7 @@ public final class VipSwapsImpl implements VipSwaps {
     public Response<SwapResource> getWithResponse(String groupName, String resourceName, Context context) {
         Response<SwapResourceInner> inner = this.serviceClient().getWithResponse(groupName, resourceName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new SwapResourceImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -59,13 +56,10 @@ public final class VipSwapsImpl implements VipSwaps {
     }
 
     public Response<SwapResourceListResult> listWithResponse(String groupName, String resourceName, Context context) {
-        Response<SwapResourceListResultInner> inner =
-            this.serviceClient().listWithResponse(groupName, resourceName, context);
+        Response<SwapResourceListResultInner> inner
+            = this.serviceClient().listWithResponse(groupName, resourceName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new SwapResourceListResultImpl(inner.getValue(), this.manager()));
         } else {
             return null;

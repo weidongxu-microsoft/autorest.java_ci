@@ -91,24 +91,14 @@ public final class ChannelImpl implements Channel, Channel.Definition, Channel.U
     }
 
     public Channel create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getChannels()
-                .createOrUpdateWithResponse(
-                    resourceGroupName, partnerNamespaceName, channelName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getChannels().createOrUpdateWithResponse(resourceGroupName,
+            partnerNamespaceName, channelName, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public Channel create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getChannels()
-                .createOrUpdateWithResponse(
-                    resourceGroupName, partnerNamespaceName, channelName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getChannels().createOrUpdateWithResponse(resourceGroupName,
+            partnerNamespaceName, channelName, this.innerModel(), context).getValue();
         return this;
     }
 
@@ -123,29 +113,19 @@ public final class ChannelImpl implements Channel, Channel.Definition, Channel.U
     }
 
     public Channel apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getChannels()
-                .createOrUpdateWithResponse(
-                    resourceGroupName, partnerNamespaceName, channelName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getChannels().createOrUpdateWithResponse(resourceGroupName,
+            partnerNamespaceName, channelName, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public Channel apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getChannels()
-                .createOrUpdateWithResponse(
-                    resourceGroupName, partnerNamespaceName, channelName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getChannels().createOrUpdateWithResponse(resourceGroupName,
+            partnerNamespaceName, channelName, this.innerModel(), context).getValue();
         return this;
     }
 
-    ChannelImpl(
-        ChannelInner innerObject, com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager) {
+    ChannelImpl(ChannelInner innerObject,
+        com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
@@ -154,29 +134,20 @@ public final class ChannelImpl implements Channel, Channel.Definition, Channel.U
     }
 
     public Channel refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getChannels()
-                .getWithResponse(resourceGroupName, partnerNamespaceName, channelName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getChannels()
+            .getWithResponse(resourceGroupName, partnerNamespaceName, channelName, Context.NONE).getValue();
         return this;
     }
 
     public Channel refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getChannels()
-                .getWithResponse(resourceGroupName, partnerNamespaceName, channelName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getChannels()
+            .getWithResponse(resourceGroupName, partnerNamespaceName, channelName, context).getValue();
         return this;
     }
 
     public Response<EventSubscriptionFullUrl> getFullUrlWithResponse(Context context) {
-        return serviceManager
-            .channels()
-            .getFullUrlWithResponse(resourceGroupName, partnerNamespaceName, channelName, context);
+        return serviceManager.channels().getFullUrlWithResponse(resourceGroupName, partnerNamespaceName, channelName,
+            context);
     }
 
     public EventSubscriptionFullUrl getFullUrl() {

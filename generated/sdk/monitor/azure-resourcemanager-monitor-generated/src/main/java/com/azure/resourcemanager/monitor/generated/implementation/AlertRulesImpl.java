@@ -21,14 +21,14 @@ public final class AlertRulesImpl implements AlertRules {
 
     private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    public AlertRulesImpl(
-        AlertRulesClient innerClient, com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
+    public AlertRulesImpl(AlertRulesClient innerClient,
+        com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<Void> deleteByResourceGroupWithResponse(
-        String resourceGroupName, String ruleName, Context context) {
+    public Response<Void> deleteByResourceGroupWithResponse(String resourceGroupName, String ruleName,
+        Context context) {
         return this.serviceClient().deleteWithResponse(resourceGroupName, ruleName, context);
     }
 
@@ -36,15 +36,12 @@ public final class AlertRulesImpl implements AlertRules {
         this.serviceClient().delete(resourceGroupName, ruleName);
     }
 
-    public Response<AlertRuleResource> getByResourceGroupWithResponse(
-        String resourceGroupName, String ruleName, Context context) {
-        Response<AlertRuleResourceInner> inner =
-            this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, ruleName, context);
+    public Response<AlertRuleResource> getByResourceGroupWithResponse(String resourceGroupName, String ruleName,
+        Context context) {
+        Response<AlertRuleResourceInner> inner
+            = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, ruleName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new AlertRuleResourceImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -66,8 +63,8 @@ public final class AlertRulesImpl implements AlertRules {
     }
 
     public PagedIterable<AlertRuleResource> listByResourceGroup(String resourceGroupName, Context context) {
-        PagedIterable<AlertRuleResourceInner> inner =
-            this.serviceClient().listByResourceGroup(resourceGroupName, context);
+        PagedIterable<AlertRuleResourceInner> inner
+            = this.serviceClient().listByResourceGroup(resourceGroupName, context);
         return Utils.mapPage(inner, inner1 -> new AlertRuleResourceImpl(inner1, this.manager()));
     }
 
@@ -84,18 +81,13 @@ public final class AlertRulesImpl implements AlertRules {
     public AlertRuleResource getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
         }
         String ruleName = Utils.getValueFromIdByName(id, "alertrules");
         if (ruleName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'alertrules'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'alertrules'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, ruleName, Context.NONE).getValue();
     }
@@ -103,18 +95,13 @@ public final class AlertRulesImpl implements AlertRules {
     public Response<AlertRuleResource> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
         }
         String ruleName = Utils.getValueFromIdByName(id, "alertrules");
         if (ruleName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'alertrules'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'alertrules'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, ruleName, context);
     }
@@ -122,18 +109,13 @@ public final class AlertRulesImpl implements AlertRules {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
         }
         String ruleName = Utils.getValueFromIdByName(id, "alertrules");
         if (ruleName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'alertrules'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'alertrules'.", id)));
         }
         this.deleteByResourceGroupWithResponse(resourceGroupName, ruleName, Context.NONE);
     }
@@ -141,18 +123,13 @@ public final class AlertRulesImpl implements AlertRules {
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
         }
         String ruleName = Utils.getValueFromIdByName(id, "alertrules");
         if (ruleName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'alertrules'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'alertrules'.", id)));
         }
         return this.deleteByResourceGroupWithResponse(resourceGroupName, ruleName, context);
     }

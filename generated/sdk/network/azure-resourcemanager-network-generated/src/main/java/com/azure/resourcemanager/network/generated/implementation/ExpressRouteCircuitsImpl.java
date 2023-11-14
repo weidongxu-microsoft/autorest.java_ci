@@ -29,8 +29,7 @@ public final class ExpressRouteCircuitsImpl implements ExpressRouteCircuits {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public ExpressRouteCircuitsImpl(
-        ExpressRouteCircuitsClient innerClient,
+    public ExpressRouteCircuitsImpl(ExpressRouteCircuitsClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -44,15 +43,12 @@ public final class ExpressRouteCircuitsImpl implements ExpressRouteCircuits {
         this.serviceClient().delete(resourceGroupName, circuitName, context);
     }
 
-    public Response<ExpressRouteCircuit> getByResourceGroupWithResponse(
-        String resourceGroupName, String circuitName, Context context) {
-        Response<ExpressRouteCircuitInner> inner =
-            this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, circuitName, context);
+    public Response<ExpressRouteCircuit> getByResourceGroupWithResponse(String resourceGroupName, String circuitName,
+        Context context) {
+        Response<ExpressRouteCircuitInner> inner
+            = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, circuitName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ExpressRouteCircuitImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -68,10 +64,10 @@ public final class ExpressRouteCircuitsImpl implements ExpressRouteCircuits {
         }
     }
 
-    public ExpressRouteCircuitsArpTableListResult listArpTable(
-        String resourceGroupName, String circuitName, String peeringName, String devicePath) {
-        ExpressRouteCircuitsArpTableListResultInner inner =
-            this.serviceClient().listArpTable(resourceGroupName, circuitName, peeringName, devicePath);
+    public ExpressRouteCircuitsArpTableListResult listArpTable(String resourceGroupName, String circuitName,
+        String peeringName, String devicePath) {
+        ExpressRouteCircuitsArpTableListResultInner inner
+            = this.serviceClient().listArpTable(resourceGroupName, circuitName, peeringName, devicePath);
         if (inner != null) {
             return new ExpressRouteCircuitsArpTableListResultImpl(inner, this.manager());
         } else {
@@ -79,10 +75,10 @@ public final class ExpressRouteCircuitsImpl implements ExpressRouteCircuits {
         }
     }
 
-    public ExpressRouteCircuitsArpTableListResult listArpTable(
-        String resourceGroupName, String circuitName, String peeringName, String devicePath, Context context) {
-        ExpressRouteCircuitsArpTableListResultInner inner =
-            this.serviceClient().listArpTable(resourceGroupName, circuitName, peeringName, devicePath, context);
+    public ExpressRouteCircuitsArpTableListResult listArpTable(String resourceGroupName, String circuitName,
+        String peeringName, String devicePath, Context context) {
+        ExpressRouteCircuitsArpTableListResultInner inner
+            = this.serviceClient().listArpTable(resourceGroupName, circuitName, peeringName, devicePath, context);
         if (inner != null) {
             return new ExpressRouteCircuitsArpTableListResultImpl(inner, this.manager());
         } else {
@@ -90,10 +86,10 @@ public final class ExpressRouteCircuitsImpl implements ExpressRouteCircuits {
         }
     }
 
-    public ExpressRouteCircuitsRoutesTableListResult listRoutesTable(
-        String resourceGroupName, String circuitName, String peeringName, String devicePath) {
-        ExpressRouteCircuitsRoutesTableListResultInner inner =
-            this.serviceClient().listRoutesTable(resourceGroupName, circuitName, peeringName, devicePath);
+    public ExpressRouteCircuitsRoutesTableListResult listRoutesTable(String resourceGroupName, String circuitName,
+        String peeringName, String devicePath) {
+        ExpressRouteCircuitsRoutesTableListResultInner inner
+            = this.serviceClient().listRoutesTable(resourceGroupName, circuitName, peeringName, devicePath);
         if (inner != null) {
             return new ExpressRouteCircuitsRoutesTableListResultImpl(inner, this.manager());
         } else {
@@ -101,10 +97,10 @@ public final class ExpressRouteCircuitsImpl implements ExpressRouteCircuits {
         }
     }
 
-    public ExpressRouteCircuitsRoutesTableListResult listRoutesTable(
-        String resourceGroupName, String circuitName, String peeringName, String devicePath, Context context) {
-        ExpressRouteCircuitsRoutesTableListResultInner inner =
-            this.serviceClient().listRoutesTable(resourceGroupName, circuitName, peeringName, devicePath, context);
+    public ExpressRouteCircuitsRoutesTableListResult listRoutesTable(String resourceGroupName, String circuitName,
+        String peeringName, String devicePath, Context context) {
+        ExpressRouteCircuitsRoutesTableListResultInner inner
+            = this.serviceClient().listRoutesTable(resourceGroupName, circuitName, peeringName, devicePath, context);
         if (inner != null) {
             return new ExpressRouteCircuitsRoutesTableListResultImpl(inner, this.manager());
         } else {
@@ -112,10 +108,10 @@ public final class ExpressRouteCircuitsImpl implements ExpressRouteCircuits {
         }
     }
 
-    public ExpressRouteCircuitsRoutesTableSummaryListResult listRoutesTableSummary(
-        String resourceGroupName, String circuitName, String peeringName, String devicePath) {
-        ExpressRouteCircuitsRoutesTableSummaryListResultInner inner =
-            this.serviceClient().listRoutesTableSummary(resourceGroupName, circuitName, peeringName, devicePath);
+    public ExpressRouteCircuitsRoutesTableSummaryListResult listRoutesTableSummary(String resourceGroupName,
+        String circuitName, String peeringName, String devicePath) {
+        ExpressRouteCircuitsRoutesTableSummaryListResultInner inner
+            = this.serviceClient().listRoutesTableSummary(resourceGroupName, circuitName, peeringName, devicePath);
         if (inner != null) {
             return new ExpressRouteCircuitsRoutesTableSummaryListResultImpl(inner, this.manager());
         } else {
@@ -123,12 +119,10 @@ public final class ExpressRouteCircuitsImpl implements ExpressRouteCircuits {
         }
     }
 
-    public ExpressRouteCircuitsRoutesTableSummaryListResult listRoutesTableSummary(
-        String resourceGroupName, String circuitName, String peeringName, String devicePath, Context context) {
-        ExpressRouteCircuitsRoutesTableSummaryListResultInner inner =
-            this
-                .serviceClient()
-                .listRoutesTableSummary(resourceGroupName, circuitName, peeringName, devicePath, context);
+    public ExpressRouteCircuitsRoutesTableSummaryListResult listRoutesTableSummary(String resourceGroupName,
+        String circuitName, String peeringName, String devicePath, Context context) {
+        ExpressRouteCircuitsRoutesTableSummaryListResultInner inner = this.serviceClient()
+            .listRoutesTableSummary(resourceGroupName, circuitName, peeringName, devicePath, context);
         if (inner != null) {
             return new ExpressRouteCircuitsRoutesTableSummaryListResultImpl(inner, this.manager());
         } else {
@@ -136,15 +130,12 @@ public final class ExpressRouteCircuitsImpl implements ExpressRouteCircuits {
         }
     }
 
-    public Response<ExpressRouteCircuitStats> getStatsWithResponse(
-        String resourceGroupName, String circuitName, Context context) {
-        Response<ExpressRouteCircuitStatsInner> inner =
-            this.serviceClient().getStatsWithResponse(resourceGroupName, circuitName, context);
+    public Response<ExpressRouteCircuitStats> getStatsWithResponse(String resourceGroupName, String circuitName,
+        Context context) {
+        Response<ExpressRouteCircuitStatsInner> inner
+            = this.serviceClient().getStatsWithResponse(resourceGroupName, circuitName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ExpressRouteCircuitStatsImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -160,15 +151,12 @@ public final class ExpressRouteCircuitsImpl implements ExpressRouteCircuits {
         }
     }
 
-    public Response<ExpressRouteCircuitStats> getPeeringStatsWithResponse(
-        String resourceGroupName, String circuitName, String peeringName, Context context) {
-        Response<ExpressRouteCircuitStatsInner> inner =
-            this.serviceClient().getPeeringStatsWithResponse(resourceGroupName, circuitName, peeringName, context);
+    public Response<ExpressRouteCircuitStats> getPeeringStatsWithResponse(String resourceGroupName, String circuitName,
+        String peeringName, Context context) {
+        Response<ExpressRouteCircuitStatsInner> inner
+            = this.serviceClient().getPeeringStatsWithResponse(resourceGroupName, circuitName, peeringName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ExpressRouteCircuitStatsImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -176,8 +164,8 @@ public final class ExpressRouteCircuitsImpl implements ExpressRouteCircuits {
     }
 
     public ExpressRouteCircuitStats getPeeringStats(String resourceGroupName, String circuitName, String peeringName) {
-        ExpressRouteCircuitStatsInner inner =
-            this.serviceClient().getPeeringStats(resourceGroupName, circuitName, peeringName);
+        ExpressRouteCircuitStatsInner inner
+            = this.serviceClient().getPeeringStats(resourceGroupName, circuitName, peeringName);
         if (inner != null) {
             return new ExpressRouteCircuitStatsImpl(inner, this.manager());
         } else {
@@ -191,8 +179,8 @@ public final class ExpressRouteCircuitsImpl implements ExpressRouteCircuits {
     }
 
     public PagedIterable<ExpressRouteCircuit> listByResourceGroup(String resourceGroupName, Context context) {
-        PagedIterable<ExpressRouteCircuitInner> inner =
-            this.serviceClient().listByResourceGroup(resourceGroupName, context);
+        PagedIterable<ExpressRouteCircuitInner> inner
+            = this.serviceClient().listByResourceGroup(resourceGroupName, context);
         return Utils.mapPage(inner, inner1 -> new ExpressRouteCircuitImpl(inner1, this.manager()));
     }
 
@@ -209,21 +197,13 @@ public final class ExpressRouteCircuitsImpl implements ExpressRouteCircuits {
     public ExpressRouteCircuit getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String circuitName = Utils.getValueFromIdByName(id, "expressRouteCircuits");
         if (circuitName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'expressRouteCircuits'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'expressRouteCircuits'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, circuitName, Context.NONE).getValue();
     }
@@ -231,21 +211,13 @@ public final class ExpressRouteCircuitsImpl implements ExpressRouteCircuits {
     public Response<ExpressRouteCircuit> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String circuitName = Utils.getValueFromIdByName(id, "expressRouteCircuits");
         if (circuitName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'expressRouteCircuits'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'expressRouteCircuits'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, circuitName, context);
     }
@@ -253,21 +225,13 @@ public final class ExpressRouteCircuitsImpl implements ExpressRouteCircuits {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String circuitName = Utils.getValueFromIdByName(id, "expressRouteCircuits");
         if (circuitName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'expressRouteCircuits'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'expressRouteCircuits'.", id)));
         }
         this.delete(resourceGroupName, circuitName, Context.NONE);
     }
@@ -275,21 +239,13 @@ public final class ExpressRouteCircuitsImpl implements ExpressRouteCircuits {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String circuitName = Utils.getValueFromIdByName(id, "expressRouteCircuits");
         if (circuitName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'expressRouteCircuits'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'expressRouteCircuits'.", id)));
         }
         this.delete(resourceGroupName, circuitName, context);
     }

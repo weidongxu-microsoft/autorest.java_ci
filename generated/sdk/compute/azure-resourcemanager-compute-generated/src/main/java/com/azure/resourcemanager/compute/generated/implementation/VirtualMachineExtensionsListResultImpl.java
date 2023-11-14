@@ -17,8 +17,7 @@ public final class VirtualMachineExtensionsListResultImpl implements VirtualMach
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    VirtualMachineExtensionsListResultImpl(
-        VirtualMachineExtensionsListResultInner innerObject,
+    VirtualMachineExtensionsListResultImpl(VirtualMachineExtensionsListResultInner innerObject,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -27,12 +26,8 @@ public final class VirtualMachineExtensionsListResultImpl implements VirtualMach
     public List<VirtualMachineExtension> value() {
         List<VirtualMachineExtensionInner> inner = this.innerModel().value();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new VirtualMachineExtensionImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new VirtualMachineExtensionImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

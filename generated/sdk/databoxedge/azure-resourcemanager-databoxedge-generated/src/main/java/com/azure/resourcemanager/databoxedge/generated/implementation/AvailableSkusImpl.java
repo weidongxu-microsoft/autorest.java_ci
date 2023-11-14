@@ -19,8 +19,7 @@ public final class AvailableSkusImpl implements AvailableSkus {
 
     private final com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager;
 
-    public AvailableSkusImpl(
-        AvailableSkusClient innerClient,
+    public AvailableSkusImpl(AvailableSkusClient innerClient,
         com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;

@@ -13,8 +13,8 @@ public final class GroupIdInformationImpl implements GroupIdInformation {
 
     private final com.azure.resourcemanager.iothub.generated.IotHubManager serviceManager;
 
-    GroupIdInformationImpl(
-        GroupIdInformationInner innerObject, com.azure.resourcemanager.iothub.generated.IotHubManager serviceManager) {
+    GroupIdInformationImpl(GroupIdInformationInner innerObject,
+        com.azure.resourcemanager.iothub.generated.IotHubManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

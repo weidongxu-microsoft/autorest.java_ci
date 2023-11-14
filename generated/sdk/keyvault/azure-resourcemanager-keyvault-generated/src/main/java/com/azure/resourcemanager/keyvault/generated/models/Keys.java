@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of Keys. */
+/**
+ * Resource collection API of Keys.
+ */
 public interface Keys {
     /**
      * Gets the current version of the specified key from the specified key vault.
-     *
+     * 
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the vault which contains the key to be retrieved.
      * @param keyName The name of the key to be retrieved.
@@ -26,7 +28,7 @@ public interface Keys {
 
     /**
      * Gets the current version of the specified key from the specified key vault.
-     *
+     * 
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the vault which contains the key to be retrieved.
      * @param keyName The name of the key to be retrieved.
@@ -39,7 +41,7 @@ public interface Keys {
 
     /**
      * Lists the keys in the specified key vault.
-     *
+     * 
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the vault which contains the keys to be retrieved.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -51,7 +53,7 @@ public interface Keys {
 
     /**
      * Lists the keys in the specified key vault.
-     *
+     * 
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the vault which contains the keys to be retrieved.
      * @param context The context to associate with this operation.
@@ -64,7 +66,7 @@ public interface Keys {
 
     /**
      * Gets the specified version of the specified key in the specified key vault.
-     *
+     * 
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the vault which contains the key version to be retrieved.
      * @param keyName The name of the key version to be retrieved.
@@ -75,12 +77,12 @@ public interface Keys {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified version of the specified key in the specified key vault along with {@link Response}.
      */
-    Response<Key> getVersionWithResponse(
-        String resourceGroupName, String vaultName, String keyName, String keyVersion, Context context);
+    Response<Key> getVersionWithResponse(String resourceGroupName, String vaultName, String keyName, String keyVersion,
+        Context context);
 
     /**
      * Gets the specified version of the specified key in the specified key vault.
-     *
+     * 
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the vault which contains the key version to be retrieved.
      * @param keyName The name of the key version to be retrieved.
@@ -94,7 +96,7 @@ public interface Keys {
 
     /**
      * Lists the versions of the specified key in the specified key vault.
-     *
+     * 
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the vault which contains the key versions to be retrieved.
      * @param keyName The name of the key versions to be retrieved.
@@ -107,7 +109,7 @@ public interface Keys {
 
     /**
      * Lists the versions of the specified key in the specified key vault.
-     *
+     * 
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the vault which contains the key versions to be retrieved.
      * @param keyName The name of the key versions to be retrieved.
@@ -121,7 +123,7 @@ public interface Keys {
 
     /**
      * Gets the current version of the specified key from the specified key vault.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -132,7 +134,7 @@ public interface Keys {
 
     /**
      * Gets the current version of the specified key from the specified key vault.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -144,7 +146,7 @@ public interface Keys {
 
     /**
      * Begins definition for a new Key resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new Key definition.
      */

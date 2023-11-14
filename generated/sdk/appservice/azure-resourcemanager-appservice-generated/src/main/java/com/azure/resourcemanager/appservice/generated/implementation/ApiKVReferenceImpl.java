@@ -15,8 +15,7 @@ public final class ApiKVReferenceImpl implements ApiKVReference {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    ApiKVReferenceImpl(
-        ApiKVReferenceInner innerObject,
+    ApiKVReferenceImpl(ApiKVReferenceInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

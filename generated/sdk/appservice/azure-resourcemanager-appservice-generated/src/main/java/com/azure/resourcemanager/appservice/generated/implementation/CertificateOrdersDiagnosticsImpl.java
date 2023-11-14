@@ -22,61 +22,44 @@ public final class CertificateOrdersDiagnosticsImpl implements CertificateOrders
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    public CertificateOrdersDiagnosticsImpl(
-        CertificateOrdersDiagnosticsClient innerClient,
+    public CertificateOrdersDiagnosticsImpl(CertificateOrdersDiagnosticsClient innerClient,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public PagedIterable<DetectorResponse> listAppServiceCertificateOrderDetectorResponse(
-        String resourceGroupName, String certificateOrderName) {
-        PagedIterable<DetectorResponseInner> inner =
-            this
-                .serviceClient()
-                .listAppServiceCertificateOrderDetectorResponse(resourceGroupName, certificateOrderName);
+    public PagedIterable<DetectorResponse> listAppServiceCertificateOrderDetectorResponse(String resourceGroupName,
+        String certificateOrderName) {
+        PagedIterable<DetectorResponseInner> inner = this.serviceClient()
+            .listAppServiceCertificateOrderDetectorResponse(resourceGroupName, certificateOrderName);
         return Utils.mapPage(inner, inner1 -> new DetectorResponseImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<DetectorResponse> listAppServiceCertificateOrderDetectorResponse(
-        String resourceGroupName, String certificateOrderName, Context context) {
-        PagedIterable<DetectorResponseInner> inner =
-            this
-                .serviceClient()
-                .listAppServiceCertificateOrderDetectorResponse(resourceGroupName, certificateOrderName, context);
+    public PagedIterable<DetectorResponse> listAppServiceCertificateOrderDetectorResponse(String resourceGroupName,
+        String certificateOrderName, Context context) {
+        PagedIterable<DetectorResponseInner> inner = this.serviceClient()
+            .listAppServiceCertificateOrderDetectorResponse(resourceGroupName, certificateOrderName, context);
         return Utils.mapPage(inner, inner1 -> new DetectorResponseImpl(inner1, this.manager()));
     }
 
     public Response<DetectorResponse> getAppServiceCertificateOrderDetectorResponseWithResponse(
-        String resourceGroupName,
-        String certificateOrderName,
-        String detectorName,
-        OffsetDateTime startTime,
-        OffsetDateTime endTime,
-        String timeGrain,
-        Context context) {
-        Response<DetectorResponseInner> inner =
-            this
-                .serviceClient()
-                .getAppServiceCertificateOrderDetectorResponseWithResponse(
-                    resourceGroupName, certificateOrderName, detectorName, startTime, endTime, timeGrain, context);
+        String resourceGroupName, String certificateOrderName, String detectorName, OffsetDateTime startTime,
+        OffsetDateTime endTime, String timeGrain, Context context) {
+        Response<DetectorResponseInner> inner
+            = this.serviceClient().getAppServiceCertificateOrderDetectorResponseWithResponse(resourceGroupName,
+                certificateOrderName, detectorName, startTime, endTime, timeGrain, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DetectorResponseImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public DetectorResponse getAppServiceCertificateOrderDetectorResponse(
-        String resourceGroupName, String certificateOrderName, String detectorName) {
-        DetectorResponseInner inner =
-            this
-                .serviceClient()
-                .getAppServiceCertificateOrderDetectorResponse(resourceGroupName, certificateOrderName, detectorName);
+    public DetectorResponse getAppServiceCertificateOrderDetectorResponse(String resourceGroupName,
+        String certificateOrderName, String detectorName) {
+        DetectorResponseInner inner = this.serviceClient()
+            .getAppServiceCertificateOrderDetectorResponse(resourceGroupName, certificateOrderName, detectorName);
         if (inner != null) {
             return new DetectorResponseImpl(inner, this.manager());
         } else {

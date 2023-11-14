@@ -24,17 +24,18 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
     @JsonSubTypes.Type(
         name = "#Microsoft.Media.BuiltInStandardEncoderPreset",
         value = BuiltInStandardEncoderPreset.class),
-    @JsonSubTypes.Type(name = "#Microsoft.Media.StandardEncoderPreset", value = StandardEncoderPreset.class)
-})
+    @JsonSubTypes.Type(name = "#Microsoft.Media.StandardEncoderPreset", value = StandardEncoderPreset.class) })
 @Immutable
 public class Preset {
-    /** Creates an instance of Preset class. */
+    /**
+     * Creates an instance of Preset class.
+     */
     public Preset() {
     }
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

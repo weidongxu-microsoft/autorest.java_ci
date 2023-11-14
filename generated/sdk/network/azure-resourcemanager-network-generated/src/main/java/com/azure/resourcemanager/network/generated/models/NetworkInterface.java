@@ -14,109 +14,111 @@ import com.azure.resourcemanager.network.generated.fluent.models.PrivateLinkServ
 import java.util.List;
 import java.util.Map;
 
-/** An immutable client-side representation of NetworkInterface. */
+/**
+ * An immutable client-side representation of NetworkInterface.
+ */
 public interface NetworkInterface {
     /**
      * Gets the name property: The name of the resource.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the type property: The type of the resource.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the location property: The geo-location where the resource lives.
-     *
+     * 
      * @return the location value.
      */
     String location();
 
     /**
      * Gets the tags property: Resource tags.
-     *
+     * 
      * @return the tags value.
      */
     Map<String, String> tags();
 
     /**
      * Gets the extendedLocation property: The extended location of the network interface.
-     *
+     * 
      * @return the extendedLocation value.
      */
     ExtendedLocation extendedLocation();
 
     /**
      * Gets the etag property: A unique read-only string that changes whenever the resource is updated.
-     *
+     * 
      * @return the etag value.
      */
     String etag();
 
     /**
      * Gets the id property: Resource ID.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the virtualMachine property: The reference to a virtual machine.
-     *
+     * 
      * @return the virtualMachine value.
      */
     SubResource virtualMachine();
 
     /**
      * Gets the networkSecurityGroup property: The reference to the NetworkSecurityGroup resource.
-     *
+     * 
      * @return the networkSecurityGroup value.
      */
     NetworkSecurityGroup networkSecurityGroup();
 
     /**
      * Gets the privateEndpoint property: A reference to the private endpoint to which the network interface is linked.
-     *
+     * 
      * @return the privateEndpoint value.
      */
     PrivateEndpoint privateEndpoint();
 
     /**
      * Gets the ipConfigurations property: A list of IPConfigurations of the network interface.
-     *
+     * 
      * @return the ipConfigurations value.
      */
     List<NetworkInterfaceIpConfiguration> ipConfigurations();
 
     /**
      * Gets the tapConfigurations property: A list of TapConfigurations of the network interface.
-     *
+     * 
      * @return the tapConfigurations value.
      */
     List<NetworkInterfaceTapConfiguration> tapConfigurations();
 
     /**
      * Gets the dnsSettings property: The DNS settings in network interface.
-     *
+     * 
      * @return the dnsSettings value.
      */
     NetworkInterfaceDnsSettings dnsSettings();
 
     /**
      * Gets the macAddress property: The MAC address of the network interface.
-     *
+     * 
      * @return the macAddress value.
      */
     String macAddress();
 
     /**
      * Gets the primary property: Whether this is a primary network interface on a virtual machine.
-     *
+     * 
      * @return the primary value.
      */
     Boolean primary();
@@ -124,7 +126,7 @@ public interface NetworkInterface {
     /**
      * Gets the vnetEncryptionSupported property: Whether the virtual machine this nic is attached to supports
      * encryption.
-     *
+     * 
      * @return the vnetEncryptionSupported value.
      */
     Boolean vnetEncryptionSupported();
@@ -132,28 +134,28 @@ public interface NetworkInterface {
     /**
      * Gets the enableAcceleratedNetworking property: If the network interface is configured for accelerated networking.
      * Not applicable to VM sizes which require accelerated networking.
-     *
+     * 
      * @return the enableAcceleratedNetworking value.
      */
     Boolean enableAcceleratedNetworking();
 
     /**
      * Gets the disableTcpStateTracking property: Indicates whether to disable tcp state tracking.
-     *
+     * 
      * @return the disableTcpStateTracking value.
      */
     Boolean disableTcpStateTracking();
 
     /**
      * Gets the enableIpForwarding property: Indicates whether IP forwarding is enabled on this network interface.
-     *
+     * 
      * @return the enableIpForwarding value.
      */
     Boolean enableIpForwarding();
 
     /**
      * Gets the hostedWorkloads property: A list of references to linked BareMetal resources.
-     *
+     * 
      * @return the hostedWorkloads value.
      */
     List<String> hostedWorkloads();
@@ -161,114 +163,119 @@ public interface NetworkInterface {
     /**
      * Gets the dscpConfiguration property: A reference to the dscp configuration to which the network interface is
      * linked.
-     *
+     * 
      * @return the dscpConfiguration value.
      */
     SubResource dscpConfiguration();
 
     /**
      * Gets the resourceGuid property: The resource GUID property of the network interface resource.
-     *
+     * 
      * @return the resourceGuid value.
      */
     String resourceGuid();
 
     /**
      * Gets the provisioningState property: The provisioning state of the network interface resource.
-     *
+     * 
      * @return the provisioningState value.
      */
     ProvisioningState provisioningState();
 
     /**
      * Gets the workloadType property: WorkloadType of the NetworkInterface for BareMetal resources.
-     *
+     * 
      * @return the workloadType value.
      */
     String workloadType();
 
     /**
      * Gets the nicType property: Type of Network Interface resource.
-     *
+     * 
      * @return the nicType value.
      */
     NetworkInterfaceNicType nicType();
 
     /**
      * Gets the privateLinkService property: Privatelinkservice of the network interface resource.
-     *
+     * 
      * @return the privateLinkService value.
      */
     PrivateLinkService privateLinkService();
 
     /**
      * Gets the migrationPhase property: Migration phase of Network Interface resource.
-     *
+     * 
      * @return the migrationPhase value.
      */
     NetworkInterfaceMigrationPhase migrationPhase();
 
     /**
      * Gets the auxiliaryMode property: Auxiliary mode of Network Interface resource.
-     *
+     * 
      * @return the auxiliaryMode value.
      */
     NetworkInterfaceAuxiliaryMode auxiliaryMode();
 
     /**
      * Gets the auxiliarySku property: Auxiliary sku of Network Interface resource.
-     *
+     * 
      * @return the auxiliarySku value.
      */
     NetworkInterfaceAuxiliarySku auxiliarySku();
 
     /**
      * Gets the region of the resource.
-     *
+     * 
      * @return the region of the resource.
      */
     Region region();
 
     /**
      * Gets the name of the resource region.
-     *
+     * 
      * @return the name of the resource region.
      */
     String regionName();
 
     /**
      * Gets the name of the resource group.
-     *
+     * 
      * @return the name of the resource group.
      */
     String resourceGroupName();
 
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.NetworkInterfaceInner object.
-     *
+     * 
      * @return the inner object.
      */
     NetworkInterfaceInner innerModel();
 
-    /** The entirety of the NetworkInterface definition. */
-    interface Definition
-        extends DefinitionStages.Blank,
-            DefinitionStages.WithLocation,
-            DefinitionStages.WithResourceGroup,
-            DefinitionStages.WithCreate {
+    /**
+     * The entirety of the NetworkInterface definition.
+     */
+    interface Definition extends DefinitionStages.Blank, DefinitionStages.WithLocation,
+        DefinitionStages.WithResourceGroup, DefinitionStages.WithCreate {
     }
 
-    /** The NetworkInterface definition stages. */
+    /**
+     * The NetworkInterface definition stages.
+     */
     interface DefinitionStages {
-        /** The first stage of the NetworkInterface definition. */
+        /**
+         * The first stage of the NetworkInterface definition.
+         */
         interface Blank extends WithLocation {
         }
 
-        /** The stage of the NetworkInterface definition allowing to specify location. */
+        /**
+         * The stage of the NetworkInterface definition allowing to specify location.
+         */
         interface WithLocation {
             /**
              * Specifies the region for the resource.
-             *
+             * 
              * @param location The geo-location where the resource lives.
              * @return the next definition stage.
              */
@@ -276,18 +283,20 @@ public interface NetworkInterface {
 
             /**
              * Specifies the region for the resource.
-             *
+             * 
              * @param location The geo-location where the resource lives.
              * @return the next definition stage.
              */
             WithResourceGroup withRegion(String location);
         }
 
-        /** The stage of the NetworkInterface definition allowing to specify parent resource. */
+        /**
+         * The stage of the NetworkInterface definition allowing to specify parent resource.
+         */
         interface WithResourceGroup {
             /**
              * Specifies resourceGroupName.
-             *
+             * 
              * @param resourceGroupName The name of the resource group.
              * @return the next definition stage.
              */
@@ -298,188 +307,207 @@ public interface NetworkInterface {
          * The stage of the NetworkInterface definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
          */
-        interface WithCreate
-            extends DefinitionStages.WithTags,
-                DefinitionStages.WithExtendedLocation,
-                DefinitionStages.WithNetworkSecurityGroup,
-                DefinitionStages.WithIpConfigurations,
-                DefinitionStages.WithDnsSettings,
-                DefinitionStages.WithEnableAcceleratedNetworking,
-                DefinitionStages.WithDisableTcpStateTracking,
-                DefinitionStages.WithEnableIpForwarding,
-                DefinitionStages.WithWorkloadType,
-                DefinitionStages.WithNicType,
-                DefinitionStages.WithPrivateLinkService,
-                DefinitionStages.WithMigrationPhase,
-                DefinitionStages.WithAuxiliaryMode,
-                DefinitionStages.WithAuxiliarySku {
+        interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithExtendedLocation,
+            DefinitionStages.WithNetworkSecurityGroup, DefinitionStages.WithIpConfigurations,
+            DefinitionStages.WithDnsSettings, DefinitionStages.WithEnableAcceleratedNetworking,
+            DefinitionStages.WithDisableTcpStateTracking, DefinitionStages.WithEnableIpForwarding,
+            DefinitionStages.WithWorkloadType, DefinitionStages.WithNicType, DefinitionStages.WithPrivateLinkService,
+            DefinitionStages.WithMigrationPhase, DefinitionStages.WithAuxiliaryMode, DefinitionStages.WithAuxiliarySku {
             /**
              * Executes the create request.
-             *
+             * 
              * @return the created resource.
              */
             NetworkInterface create();
 
             /**
              * Executes the create request.
-             *
+             * 
              * @param context The context to associate with this operation.
              * @return the created resource.
              */
             NetworkInterface create(Context context);
         }
 
-        /** The stage of the NetworkInterface definition allowing to specify tags. */
+        /**
+         * The stage of the NetworkInterface definition allowing to specify tags.
+         */
         interface WithTags {
             /**
              * Specifies the tags property: Resource tags..
-             *
+             * 
              * @param tags Resource tags.
              * @return the next definition stage.
              */
             WithCreate withTags(Map<String, String> tags);
         }
 
-        /** The stage of the NetworkInterface definition allowing to specify extendedLocation. */
+        /**
+         * The stage of the NetworkInterface definition allowing to specify extendedLocation.
+         */
         interface WithExtendedLocation {
             /**
              * Specifies the extendedLocation property: The extended location of the network interface..
-             *
+             * 
              * @param extendedLocation The extended location of the network interface.
              * @return the next definition stage.
              */
             WithCreate withExtendedLocation(ExtendedLocation extendedLocation);
         }
 
-        /** The stage of the NetworkInterface definition allowing to specify networkSecurityGroup. */
+        /**
+         * The stage of the NetworkInterface definition allowing to specify networkSecurityGroup.
+         */
         interface WithNetworkSecurityGroup {
             /**
              * Specifies the networkSecurityGroup property: The reference to the NetworkSecurityGroup resource..
-             *
+             * 
              * @param networkSecurityGroup The reference to the NetworkSecurityGroup resource.
              * @return the next definition stage.
              */
             WithCreate withNetworkSecurityGroup(NetworkSecurityGroupInner networkSecurityGroup);
         }
 
-        /** The stage of the NetworkInterface definition allowing to specify ipConfigurations. */
+        /**
+         * The stage of the NetworkInterface definition allowing to specify ipConfigurations.
+         */
         interface WithIpConfigurations {
             /**
              * Specifies the ipConfigurations property: A list of IPConfigurations of the network interface..
-             *
+             * 
              * @param ipConfigurations A list of IPConfigurations of the network interface.
              * @return the next definition stage.
              */
             WithCreate withIpConfigurations(List<NetworkInterfaceIpConfigurationInner> ipConfigurations);
         }
 
-        /** The stage of the NetworkInterface definition allowing to specify dnsSettings. */
+        /**
+         * The stage of the NetworkInterface definition allowing to specify dnsSettings.
+         */
         interface WithDnsSettings {
             /**
              * Specifies the dnsSettings property: The DNS settings in network interface..
-             *
+             * 
              * @param dnsSettings The DNS settings in network interface.
              * @return the next definition stage.
              */
             WithCreate withDnsSettings(NetworkInterfaceDnsSettings dnsSettings);
         }
 
-        /** The stage of the NetworkInterface definition allowing to specify enableAcceleratedNetworking. */
+        /**
+         * The stage of the NetworkInterface definition allowing to specify enableAcceleratedNetworking.
+         */
         interface WithEnableAcceleratedNetworking {
             /**
              * Specifies the enableAcceleratedNetworking property: If the network interface is configured for
              * accelerated networking. Not applicable to VM sizes which require accelerated networking..
-             *
+             * 
              * @param enableAcceleratedNetworking If the network interface is configured for accelerated networking. Not
-             *     applicable to VM sizes which require accelerated networking.
+             * applicable to VM sizes which require accelerated networking.
              * @return the next definition stage.
              */
             WithCreate withEnableAcceleratedNetworking(Boolean enableAcceleratedNetworking);
         }
 
-        /** The stage of the NetworkInterface definition allowing to specify disableTcpStateTracking. */
+        /**
+         * The stage of the NetworkInterface definition allowing to specify disableTcpStateTracking.
+         */
         interface WithDisableTcpStateTracking {
             /**
              * Specifies the disableTcpStateTracking property: Indicates whether to disable tcp state tracking..
-             *
+             * 
              * @param disableTcpStateTracking Indicates whether to disable tcp state tracking.
              * @return the next definition stage.
              */
             WithCreate withDisableTcpStateTracking(Boolean disableTcpStateTracking);
         }
 
-        /** The stage of the NetworkInterface definition allowing to specify enableIpForwarding. */
+        /**
+         * The stage of the NetworkInterface definition allowing to specify enableIpForwarding.
+         */
         interface WithEnableIpForwarding {
             /**
              * Specifies the enableIpForwarding property: Indicates whether IP forwarding is enabled on this network
              * interface..
-             *
+             * 
              * @param enableIpForwarding Indicates whether IP forwarding is enabled on this network interface.
              * @return the next definition stage.
              */
             WithCreate withEnableIpForwarding(Boolean enableIpForwarding);
         }
 
-        /** The stage of the NetworkInterface definition allowing to specify workloadType. */
+        /**
+         * The stage of the NetworkInterface definition allowing to specify workloadType.
+         */
         interface WithWorkloadType {
             /**
              * Specifies the workloadType property: WorkloadType of the NetworkInterface for BareMetal resources.
-             *
+             * 
              * @param workloadType WorkloadType of the NetworkInterface for BareMetal resources.
              * @return the next definition stage.
              */
             WithCreate withWorkloadType(String workloadType);
         }
 
-        /** The stage of the NetworkInterface definition allowing to specify nicType. */
+        /**
+         * The stage of the NetworkInterface definition allowing to specify nicType.
+         */
         interface WithNicType {
             /**
              * Specifies the nicType property: Type of Network Interface resource..
-             *
+             * 
              * @param nicType Type of Network Interface resource.
              * @return the next definition stage.
              */
             WithCreate withNicType(NetworkInterfaceNicType nicType);
         }
 
-        /** The stage of the NetworkInterface definition allowing to specify privateLinkService. */
+        /**
+         * The stage of the NetworkInterface definition allowing to specify privateLinkService.
+         */
         interface WithPrivateLinkService {
             /**
              * Specifies the privateLinkService property: Privatelinkservice of the network interface resource..
-             *
+             * 
              * @param privateLinkService Privatelinkservice of the network interface resource.
              * @return the next definition stage.
              */
             WithCreate withPrivateLinkService(PrivateLinkServiceInner privateLinkService);
         }
 
-        /** The stage of the NetworkInterface definition allowing to specify migrationPhase. */
+        /**
+         * The stage of the NetworkInterface definition allowing to specify migrationPhase.
+         */
         interface WithMigrationPhase {
             /**
              * Specifies the migrationPhase property: Migration phase of Network Interface resource..
-             *
+             * 
              * @param migrationPhase Migration phase of Network Interface resource.
              * @return the next definition stage.
              */
             WithCreate withMigrationPhase(NetworkInterfaceMigrationPhase migrationPhase);
         }
 
-        /** The stage of the NetworkInterface definition allowing to specify auxiliaryMode. */
+        /**
+         * The stage of the NetworkInterface definition allowing to specify auxiliaryMode.
+         */
         interface WithAuxiliaryMode {
             /**
              * Specifies the auxiliaryMode property: Auxiliary mode of Network Interface resource..
-             *
+             * 
              * @param auxiliaryMode Auxiliary mode of Network Interface resource.
              * @return the next definition stage.
              */
             WithCreate withAuxiliaryMode(NetworkInterfaceAuxiliaryMode auxiliaryMode);
         }
 
-        /** The stage of the NetworkInterface definition allowing to specify auxiliarySku. */
+        /**
+         * The stage of the NetworkInterface definition allowing to specify auxiliarySku.
+         */
         interface WithAuxiliarySku {
             /**
              * Specifies the auxiliarySku property: Auxiliary sku of Network Interface resource..
-             *
+             * 
              * @param auxiliarySku Auxiliary sku of Network Interface resource.
              * @return the next definition stage.
              */
@@ -489,36 +517,42 @@ public interface NetworkInterface {
 
     /**
      * Begins update for the NetworkInterface resource.
-     *
+     * 
      * @return the stage of resource update.
      */
     NetworkInterface.Update update();
 
-    /** The template for NetworkInterface update. */
+    /**
+     * The template for NetworkInterface update.
+     */
     interface Update extends UpdateStages.WithTags {
         /**
          * Executes the update request.
-         *
+         * 
          * @return the updated resource.
          */
         NetworkInterface apply();
 
         /**
          * Executes the update request.
-         *
+         * 
          * @param context The context to associate with this operation.
          * @return the updated resource.
          */
         NetworkInterface apply(Context context);
     }
 
-    /** The NetworkInterface update stages. */
+    /**
+     * The NetworkInterface update stages.
+     */
     interface UpdateStages {
-        /** The stage of the NetworkInterface update allowing to specify tags. */
+        /**
+         * The stage of the NetworkInterface update allowing to specify tags.
+         */
         interface WithTags {
             /**
              * Specifies the tags property: Resource tags..
-             *
+             * 
              * @param tags Resource tags.
              * @return the next definition stage.
              */
@@ -528,14 +562,14 @@ public interface NetworkInterface {
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @return the refreshed resource.
      */
     NetworkInterface refresh();
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @return the refreshed resource.
      */
@@ -543,7 +577,7 @@ public interface NetworkInterface {
 
     /**
      * Gets all route tables applied to a network interface.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all route tables applied to a network interface.
@@ -552,7 +586,7 @@ public interface NetworkInterface {
 
     /**
      * Gets all route tables applied to a network interface.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -563,7 +597,7 @@ public interface NetworkInterface {
 
     /**
      * Gets all network security groups applied to a network interface.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all network security groups applied to a network interface.
@@ -572,7 +606,7 @@ public interface NetworkInterface {
 
     /**
      * Gets all network security groups applied to a network interface.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

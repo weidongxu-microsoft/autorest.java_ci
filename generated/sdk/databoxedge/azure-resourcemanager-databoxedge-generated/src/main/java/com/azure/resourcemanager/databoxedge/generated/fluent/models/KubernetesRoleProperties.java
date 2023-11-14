@@ -14,7 +14,9 @@ import com.azure.resourcemanager.databoxedge.generated.models.PlatformType;
 import com.azure.resourcemanager.databoxedge.generated.models.RoleStatus;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Kubernetes role properties. */
+/**
+ * Kubernetes role properties.
+ */
 @Fluent
 public final class KubernetesRoleProperties {
     /*
@@ -53,13 +55,15 @@ public final class KubernetesRoleProperties {
     @JsonProperty(value = "roleStatus", required = true)
     private RoleStatus roleStatus;
 
-    /** Creates an instance of KubernetesRoleProperties class. */
+    /**
+     * Creates an instance of KubernetesRoleProperties class.
+     */
     public KubernetesRoleProperties() {
     }
 
     /**
      * Get the hostPlatform property: Host OS supported by the Kubernetes role.
-     *
+     * 
      * @return the hostPlatform value.
      */
     public PlatformType hostPlatform() {
@@ -68,7 +72,7 @@ public final class KubernetesRoleProperties {
 
     /**
      * Set the hostPlatform property: Host OS supported by the Kubernetes role.
-     *
+     * 
      * @param hostPlatform the hostPlatform value to set.
      * @return the KubernetesRoleProperties object itself.
      */
@@ -79,7 +83,7 @@ public final class KubernetesRoleProperties {
 
     /**
      * Get the provisioningState property: State of Kubernetes deployment.
-     *
+     * 
      * @return the provisioningState value.
      */
     public KubernetesState provisioningState() {
@@ -88,7 +92,7 @@ public final class KubernetesRoleProperties {
 
     /**
      * Get the hostPlatformType property: Platform where the runtime is hosted.
-     *
+     * 
      * @return the hostPlatformType value.
      */
     public HostPlatformType hostPlatformType() {
@@ -97,7 +101,7 @@ public final class KubernetesRoleProperties {
 
     /**
      * Get the kubernetesClusterInfo property: Kubernetes cluster configuration.
-     *
+     * 
      * @return the kubernetesClusterInfo value.
      */
     public KubernetesClusterInfo kubernetesClusterInfo() {
@@ -106,7 +110,7 @@ public final class KubernetesRoleProperties {
 
     /**
      * Set the kubernetesClusterInfo property: Kubernetes cluster configuration.
-     *
+     * 
      * @param kubernetesClusterInfo the kubernetesClusterInfo value to set.
      * @return the KubernetesRoleProperties object itself.
      */
@@ -117,7 +121,7 @@ public final class KubernetesRoleProperties {
 
     /**
      * Get the kubernetesRoleResources property: Kubernetes role resources.
-     *
+     * 
      * @return the kubernetesRoleResources value.
      */
     public KubernetesRoleResources kubernetesRoleResources() {
@@ -126,7 +130,7 @@ public final class KubernetesRoleProperties {
 
     /**
      * Set the kubernetesRoleResources property: Kubernetes role resources.
-     *
+     * 
      * @param kubernetesRoleResources the kubernetesRoleResources value to set.
      * @return the KubernetesRoleProperties object itself.
      */
@@ -137,7 +141,7 @@ public final class KubernetesRoleProperties {
 
     /**
      * Get the roleStatus property: Role status.
-     *
+     * 
      * @return the roleStatus value.
      */
     public RoleStatus roleStatus() {
@@ -146,7 +150,7 @@ public final class KubernetesRoleProperties {
 
     /**
      * Set the roleStatus property: Role status.
-     *
+     * 
      * @param roleStatus the roleStatus value to set.
      * @return the KubernetesRoleProperties object itself.
      */
@@ -157,37 +161,29 @@ public final class KubernetesRoleProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (hostPlatform() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property hostPlatform in model KubernetesRoleProperties"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property hostPlatform in model KubernetesRoleProperties"));
         }
         if (kubernetesClusterInfo() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property kubernetesClusterInfo in model KubernetesRoleProperties"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property kubernetesClusterInfo in model KubernetesRoleProperties"));
         } else {
             kubernetesClusterInfo().validate();
         }
         if (kubernetesRoleResources() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property kubernetesRoleResources in model KubernetesRoleProperties"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property kubernetesRoleResources in model KubernetesRoleProperties"));
         } else {
             kubernetesRoleResources().validate();
         }
         if (roleStatus() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property roleStatus in model KubernetesRoleProperties"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property roleStatus in model KubernetesRoleProperties"));
         }
     }
 

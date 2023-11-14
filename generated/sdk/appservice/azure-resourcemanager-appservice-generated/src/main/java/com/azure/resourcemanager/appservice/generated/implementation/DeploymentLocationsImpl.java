@@ -20,8 +20,7 @@ public final class DeploymentLocationsImpl implements DeploymentLocations {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    DeploymentLocationsImpl(
-        DeploymentLocationsInner innerObject,
+    DeploymentLocationsImpl(DeploymentLocationsInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -30,12 +29,8 @@ public final class DeploymentLocationsImpl implements DeploymentLocations {
     public List<GeoRegion> locations() {
         List<GeoRegionInner> inner = this.innerModel().locations();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new GeoRegionImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(
+                inner.stream().map(inner1 -> new GeoRegionImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -44,12 +39,8 @@ public final class DeploymentLocationsImpl implements DeploymentLocations {
     public List<AppServiceEnvironment> hostingEnvironments() {
         List<AppServiceEnvironmentInner> inner = this.innerModel().hostingEnvironments();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new AppServiceEnvironmentImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new AppServiceEnvironmentImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

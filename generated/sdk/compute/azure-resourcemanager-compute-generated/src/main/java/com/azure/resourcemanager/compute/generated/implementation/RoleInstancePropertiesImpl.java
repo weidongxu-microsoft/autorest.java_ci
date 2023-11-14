@@ -15,8 +15,7 @@ public final class RoleInstancePropertiesImpl implements RoleInstanceProperties 
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    RoleInstancePropertiesImpl(
-        RoleInstancePropertiesInner innerObject,
+    RoleInstancePropertiesImpl(RoleInstancePropertiesInner innerObject,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

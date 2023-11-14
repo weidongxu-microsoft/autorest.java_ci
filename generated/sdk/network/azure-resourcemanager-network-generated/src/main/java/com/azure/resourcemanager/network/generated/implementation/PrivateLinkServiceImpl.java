@@ -67,12 +67,8 @@ public final class PrivateLinkServiceImpl
     public List<FrontendIpConfiguration> loadBalancerFrontendIpConfigurations() {
         List<FrontendIpConfigurationInner> inner = this.innerModel().loadBalancerFrontendIpConfigurations();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new FrontendIpConfigurationImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new FrontendIpConfigurationImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -81,12 +77,9 @@ public final class PrivateLinkServiceImpl
     public List<PrivateLinkServiceIpConfiguration> ipConfigurations() {
         List<PrivateLinkServiceIpConfigurationInner> inner = this.innerModel().ipConfigurations();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new PrivateLinkServiceIpConfigurationImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(
+                inner.stream().map(inner1 -> new PrivateLinkServiceIpConfigurationImpl(inner1, this.manager()))
+                    .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -95,12 +88,8 @@ public final class PrivateLinkServiceImpl
     public List<NetworkInterface> networkInterfaces() {
         List<NetworkInterfaceInner> inner = this.innerModel().networkInterfaces();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new NetworkInterfaceImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new NetworkInterfaceImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -113,12 +102,8 @@ public final class PrivateLinkServiceImpl
     public List<PrivateEndpointConnection> privateEndpointConnections() {
         List<PrivateEndpointConnectionInner> inner = this.innerModel().privateEndpointConnections();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -179,20 +164,14 @@ public final class PrivateLinkServiceImpl
     }
 
     public PrivateLinkService create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getPrivateLinkServices()
-                .createOrUpdate(resourceGroupName, serviceName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getPrivateLinkServices().createOrUpdate(resourceGroupName,
+            serviceName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public PrivateLinkService create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getPrivateLinkServices()
-                .createOrUpdate(resourceGroupName, serviceName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getPrivateLinkServices().createOrUpdate(resourceGroupName,
+            serviceName, this.innerModel(), context);
         return this;
     }
 
@@ -207,25 +186,18 @@ public final class PrivateLinkServiceImpl
     }
 
     public PrivateLinkService apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getPrivateLinkServices()
-                .createOrUpdate(resourceGroupName, serviceName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getPrivateLinkServices().createOrUpdate(resourceGroupName,
+            serviceName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public PrivateLinkService apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getPrivateLinkServices()
-                .createOrUpdate(resourceGroupName, serviceName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getPrivateLinkServices().createOrUpdate(resourceGroupName,
+            serviceName, this.innerModel(), context);
         return this;
     }
 
-    PrivateLinkServiceImpl(
-        PrivateLinkServiceInner innerObject,
+    PrivateLinkServiceImpl(PrivateLinkServiceInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -235,23 +207,15 @@ public final class PrivateLinkServiceImpl
 
     public PrivateLinkService refresh() {
         String localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getPrivateLinkServices()
-                .getByResourceGroupWithResponse(resourceGroupName, serviceName, localExpand, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getPrivateLinkServices()
+            .getByResourceGroupWithResponse(resourceGroupName, serviceName, localExpand, Context.NONE).getValue();
         return this;
     }
 
     public PrivateLinkService refresh(Context context) {
         String localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getPrivateLinkServices()
-                .getByResourceGroupWithResponse(resourceGroupName, serviceName, localExpand, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getPrivateLinkServices()
+            .getByResourceGroupWithResponse(resourceGroupName, serviceName, localExpand, context).getValue();
         return this;
     }
 

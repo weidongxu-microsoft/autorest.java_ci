@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of PacketCaptures. */
+/**
+ * Resource collection API of PacketCaptures.
+ */
 public interface PacketCaptures {
     /**
      * Create and start a packet capture on the specified VM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param packetCaptureName The name of the packet capture session.
@@ -22,12 +24,12 @@ public interface PacketCaptures {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return information about packet capture session.
      */
-    PacketCaptureResult create(
-        String resourceGroupName, String networkWatcherName, String packetCaptureName, PacketCapture parameters);
+    PacketCaptureResult create(String resourceGroupName, String networkWatcherName, String packetCaptureName,
+        PacketCapture parameters);
 
     /**
      * Create and start a packet capture on the specified VM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param packetCaptureName The name of the packet capture session.
@@ -38,16 +40,12 @@ public interface PacketCaptures {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return information about packet capture session.
      */
-    PacketCaptureResult create(
-        String resourceGroupName,
-        String networkWatcherName,
-        String packetCaptureName,
-        PacketCapture parameters,
-        Context context);
+    PacketCaptureResult create(String resourceGroupName, String networkWatcherName, String packetCaptureName,
+        PacketCapture parameters, Context context);
 
     /**
      * Gets a packet capture session by name.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param packetCaptureName The name of the packet capture session.
@@ -57,12 +55,12 @@ public interface PacketCaptures {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a packet capture session by name along with {@link Response}.
      */
-    Response<PacketCaptureResult> getWithResponse(
-        String resourceGroupName, String networkWatcherName, String packetCaptureName, Context context);
+    Response<PacketCaptureResult> getWithResponse(String resourceGroupName, String networkWatcherName,
+        String packetCaptureName, Context context);
 
     /**
      * Gets a packet capture session by name.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param packetCaptureName The name of the packet capture session.
@@ -75,7 +73,7 @@ public interface PacketCaptures {
 
     /**
      * Deletes the specified packet capture session.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param packetCaptureName The name of the packet capture session.
@@ -87,7 +85,7 @@ public interface PacketCaptures {
 
     /**
      * Deletes the specified packet capture session.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param packetCaptureName The name of the packet capture session.
@@ -100,7 +98,7 @@ public interface PacketCaptures {
 
     /**
      * Stops a specified packet capture session.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param packetCaptureName The name of the packet capture session.
@@ -112,7 +110,7 @@ public interface PacketCaptures {
 
     /**
      * Stops a specified packet capture session.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param packetCaptureName The name of the packet capture session.
@@ -125,7 +123,7 @@ public interface PacketCaptures {
 
     /**
      * Query the status of a running packet capture session.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the Network Watcher resource.
      * @param packetCaptureName The name given to the packet capture session.
@@ -134,12 +132,12 @@ public interface PacketCaptures {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return status of packet capture session.
      */
-    PacketCaptureQueryStatusResult getStatus(
-        String resourceGroupName, String networkWatcherName, String packetCaptureName);
+    PacketCaptureQueryStatusResult getStatus(String resourceGroupName, String networkWatcherName,
+        String packetCaptureName);
 
     /**
      * Query the status of a running packet capture session.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the Network Watcher resource.
      * @param packetCaptureName The name given to the packet capture session.
@@ -149,12 +147,12 @@ public interface PacketCaptures {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return status of packet capture session.
      */
-    PacketCaptureQueryStatusResult getStatus(
-        String resourceGroupName, String networkWatcherName, String packetCaptureName, Context context);
+    PacketCaptureQueryStatusResult getStatus(String resourceGroupName, String networkWatcherName,
+        String packetCaptureName, Context context);
 
     /**
      * Lists all packet capture sessions within the specified resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the Network Watcher resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -166,7 +164,7 @@ public interface PacketCaptures {
 
     /**
      * Lists all packet capture sessions within the specified resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the Network Watcher resource.
      * @param context The context to associate with this operation.

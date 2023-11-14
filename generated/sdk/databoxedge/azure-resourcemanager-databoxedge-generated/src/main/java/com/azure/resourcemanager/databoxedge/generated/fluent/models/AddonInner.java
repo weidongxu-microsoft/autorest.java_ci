@@ -14,7 +14,9 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** Role Addon. */
+/**
+ * Role Addon.
+ */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
     include = JsonTypeInfo.As.PROPERTY,
@@ -23,8 +25,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @JsonTypeName("Addon")
 @JsonSubTypes({
     @JsonSubTypes.Type(name = "ArcForKubernetes", value = ArcAddon.class),
-    @JsonSubTypes.Type(name = "IotEdge", value = IoTAddon.class)
-})
+    @JsonSubTypes.Type(name = "IotEdge", value = IoTAddon.class) })
 @Immutable
 public class AddonInner extends ArmBaseModel {
     /*
@@ -33,13 +34,15 @@ public class AddonInner extends ArmBaseModel {
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
-    /** Creates an instance of AddonInner class. */
+    /**
+     * Creates an instance of AddonInner class.
+     */
     public AddonInner() {
     }
 
     /**
      * Get the systemData property: Metadata pertaining to creation and last modification of Addon.
-     *
+     * 
      * @return the systemData value.
      */
     public SystemData systemData() {
@@ -48,7 +51,7 @@ public class AddonInner extends ArmBaseModel {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

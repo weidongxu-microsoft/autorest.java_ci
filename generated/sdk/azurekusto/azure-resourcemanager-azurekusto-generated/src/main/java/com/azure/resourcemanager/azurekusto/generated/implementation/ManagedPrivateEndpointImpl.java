@@ -77,26 +77,19 @@ public final class ManagedPrivateEndpointImpl
     }
 
     public ManagedPrivateEndpoint create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getManagedPrivateEndpoints()
-                .createOrUpdate(
-                    resourceGroupName, clusterName, managedPrivateEndpointName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getManagedPrivateEndpoints().createOrUpdate(resourceGroupName,
+            clusterName, managedPrivateEndpointName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public ManagedPrivateEndpoint create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getManagedPrivateEndpoints()
-                .createOrUpdate(resourceGroupName, clusterName, managedPrivateEndpointName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getManagedPrivateEndpoints().createOrUpdate(resourceGroupName,
+            clusterName, managedPrivateEndpointName, this.innerModel(), context);
         return this;
     }
 
-    ManagedPrivateEndpointImpl(
-        String name, com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager) {
+    ManagedPrivateEndpointImpl(String name,
+        com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager) {
         this.innerObject = new ManagedPrivateEndpointInner();
         this.serviceManager = serviceManager;
         this.managedPrivateEndpointName = name;
@@ -107,25 +100,18 @@ public final class ManagedPrivateEndpointImpl
     }
 
     public ManagedPrivateEndpoint apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getManagedPrivateEndpoints()
-                .update(resourceGroupName, clusterName, managedPrivateEndpointName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getManagedPrivateEndpoints().update(resourceGroupName,
+            clusterName, managedPrivateEndpointName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public ManagedPrivateEndpoint apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getManagedPrivateEndpoints()
-                .update(resourceGroupName, clusterName, managedPrivateEndpointName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getManagedPrivateEndpoints().update(resourceGroupName,
+            clusterName, managedPrivateEndpointName, this.innerModel(), context);
         return this;
     }
 
-    ManagedPrivateEndpointImpl(
-        ManagedPrivateEndpointInner innerObject,
+    ManagedPrivateEndpointImpl(ManagedPrivateEndpointInner innerObject,
         com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -135,22 +121,14 @@ public final class ManagedPrivateEndpointImpl
     }
 
     public ManagedPrivateEndpoint refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getManagedPrivateEndpoints()
-                .getWithResponse(resourceGroupName, clusterName, managedPrivateEndpointName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getManagedPrivateEndpoints()
+            .getWithResponse(resourceGroupName, clusterName, managedPrivateEndpointName, Context.NONE).getValue();
         return this;
     }
 
     public ManagedPrivateEndpoint refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getManagedPrivateEndpoints()
-                .getWithResponse(resourceGroupName, clusterName, managedPrivateEndpointName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getManagedPrivateEndpoints()
+            .getWithResponse(resourceGroupName, clusterName, managedPrivateEndpointName, context).getValue();
         return this;
     }
 

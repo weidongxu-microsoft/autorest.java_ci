@@ -9,7 +9,9 @@ import com.azure.resourcemanager.postgresql.generated.fluent.models.DatabaseInne
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** A List of databases. */
+/**
+ * A List of databases.
+ */
 @Fluent
 public final class DatabaseListResult {
     /*
@@ -18,13 +20,15 @@ public final class DatabaseListResult {
     @JsonProperty(value = "value")
     private List<DatabaseInner> value;
 
-    /** Creates an instance of DatabaseListResult class. */
+    /**
+     * Creates an instance of DatabaseListResult class.
+     */
     public DatabaseListResult() {
     }
 
     /**
      * Get the value property: The list of databases housed in a server.
-     *
+     * 
      * @return the value value.
      */
     public List<DatabaseInner> value() {
@@ -33,7 +37,7 @@ public final class DatabaseListResult {
 
     /**
      * Set the value property: The list of databases housed in a server.
-     *
+     * 
      * @param value the value value to set.
      * @return the DatabaseListResult object itself.
      */
@@ -44,7 +48,7 @@ public final class DatabaseListResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

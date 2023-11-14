@@ -62,29 +62,21 @@ public final class ManagementPolicyImpl
     }
 
     public ManagementPolicy create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getManagementPolicies()
-                .createOrUpdateWithResponse(
-                    resourceGroupName, accountName, managementPolicyName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getManagementPolicies().createOrUpdateWithResponse(resourceGroupName,
+                accountName, managementPolicyName, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public ManagementPolicy create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getManagementPolicies()
-                .createOrUpdateWithResponse(
-                    resourceGroupName, accountName, managementPolicyName, this.innerModel(), context)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getManagementPolicies().createOrUpdateWithResponse(resourceGroupName,
+                accountName, managementPolicyName, this.innerModel(), context).getValue();
         return this;
     }
 
-    ManagementPolicyImpl(
-        ManagementPolicyName name, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
+    ManagementPolicyImpl(ManagementPolicyName name,
+        com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = new ManagementPolicyInner();
         this.serviceManager = serviceManager;
         this.managementPolicyName = name;
@@ -95,54 +87,38 @@ public final class ManagementPolicyImpl
     }
 
     public ManagementPolicy apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getManagementPolicies()
-                .createOrUpdateWithResponse(
-                    resourceGroupName, accountName, managementPolicyName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getManagementPolicies().createOrUpdateWithResponse(resourceGroupName,
+                accountName, managementPolicyName, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public ManagementPolicy apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getManagementPolicies()
-                .createOrUpdateWithResponse(
-                    resourceGroupName, accountName, managementPolicyName, this.innerModel(), context)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getManagementPolicies().createOrUpdateWithResponse(resourceGroupName,
+                accountName, managementPolicyName, this.innerModel(), context).getValue();
         return this;
     }
 
-    ManagementPolicyImpl(
-        ManagementPolicyInner innerObject, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
+    ManagementPolicyImpl(ManagementPolicyInner innerObject,
+        com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
         this.accountName = Utils.getValueFromIdByName(innerObject.id(), "storageAccounts");
-        this.managementPolicyName =
-            ManagementPolicyName.fromString(Utils.getValueFromIdByName(innerObject.id(), "managementPolicies"));
+        this.managementPolicyName
+            = ManagementPolicyName.fromString(Utils.getValueFromIdByName(innerObject.id(), "managementPolicies"));
     }
 
     public ManagementPolicy refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getManagementPolicies()
-                .getWithResponse(resourceGroupName, accountName, managementPolicyName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getManagementPolicies()
+            .getWithResponse(resourceGroupName, accountName, managementPolicyName, Context.NONE).getValue();
         return this;
     }
 
     public ManagementPolicy refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getManagementPolicies()
-                .getWithResponse(resourceGroupName, accountName, managementPolicyName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getManagementPolicies()
+            .getWithResponse(resourceGroupName, accountName, managementPolicyName, context).getValue();
         return this;
     }
 

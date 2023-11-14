@@ -6,12 +6,14 @@ package com.azure.resourcemanager.compute.generated.models;
 
 import com.azure.resourcemanager.compute.generated.fluent.models.SshPublicKeyGenerateKeyPairResultInner;
 
-/** An immutable client-side representation of SshPublicKeyGenerateKeyPairResult. */
+/**
+ * An immutable client-side representation of SshPublicKeyGenerateKeyPairResult.
+ */
 public interface SshPublicKeyGenerateKeyPairResult {
     /**
      * Gets the privateKey property: Private key portion of the key pair used to authenticate to a virtual machine
      * through ssh. The private key is returned in RFC3447 format and should be treated as a secret.
-     *
+     * 
      * @return the privateKey value.
      */
     String privateKey();
@@ -19,7 +21,7 @@ public interface SshPublicKeyGenerateKeyPairResult {
     /**
      * Gets the publicKey property: Public key portion of the key pair used to authenticate to a virtual machine through
      * ssh. The public key is in ssh-rsa format.
-     *
+     * 
      * @return the publicKey value.
      */
     String publicKey();
@@ -27,7 +29,7 @@ public interface SshPublicKeyGenerateKeyPairResult {
     /**
      * Gets the id property: The ARM resource id in the form of
      * /subscriptions/{SubscriptionId}/resourceGroups/{ResourceGroupName}/providers/Microsoft.Compute/sshPublicKeys/{SshPublicKeyName}.
-     *
+     * 
      * @return the id value.
      */
     String id();
@@ -35,7 +37,7 @@ public interface SshPublicKeyGenerateKeyPairResult {
     /**
      * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.SshPublicKeyGenerateKeyPairResultInner
      * object.
-     *
+     * 
      * @return the inner object.
      */
     SshPublicKeyGenerateKeyPairResultInner innerModel();

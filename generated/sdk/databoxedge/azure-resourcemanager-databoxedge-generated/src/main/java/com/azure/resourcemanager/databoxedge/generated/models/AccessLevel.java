@@ -8,23 +8,33 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Access level allowed for this remote application type. */
+/**
+ * Access level allowed for this remote application type.
+ */
 public final class AccessLevel extends ExpandableStringEnum<AccessLevel> {
-    /** Static value None for AccessLevel. */
+    /**
+     * Static value None for AccessLevel.
+     */
     public static final AccessLevel NONE = fromString("None");
 
-    /** Static value ReadOnly for AccessLevel. */
+    /**
+     * Static value ReadOnly for AccessLevel.
+     */
     public static final AccessLevel READ_ONLY = fromString("ReadOnly");
 
-    /** Static value ReadWrite for AccessLevel. */
+    /**
+     * Static value ReadWrite for AccessLevel.
+     */
     public static final AccessLevel READ_WRITE = fromString("ReadWrite");
 
-    /** Static value FullAccess for AccessLevel. */
+    /**
+     * Static value FullAccess for AccessLevel.
+     */
     public static final AccessLevel FULL_ACCESS = fromString("FullAccess");
 
     /**
      * Creates a new instance of AccessLevel value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -33,7 +43,7 @@ public final class AccessLevel extends ExpandableStringEnum<AccessLevel> {
 
     /**
      * Creates or finds a AccessLevel from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding AccessLevel.
      */
@@ -44,7 +54,7 @@ public final class AccessLevel extends ExpandableStringEnum<AccessLevel> {
 
     /**
      * Gets known AccessLevel values.
-     *
+     * 
      * @return known AccessLevel values.
      */
     public static Collection<AccessLevel> values() {

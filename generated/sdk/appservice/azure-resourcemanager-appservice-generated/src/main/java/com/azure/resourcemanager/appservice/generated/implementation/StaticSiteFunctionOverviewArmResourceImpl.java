@@ -13,8 +13,7 @@ public final class StaticSiteFunctionOverviewArmResourceImpl implements StaticSi
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    StaticSiteFunctionOverviewArmResourceImpl(
-        StaticSiteFunctionOverviewArmResourceInner innerObject,
+    StaticSiteFunctionOverviewArmResourceImpl(StaticSiteFunctionOverviewArmResourceInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

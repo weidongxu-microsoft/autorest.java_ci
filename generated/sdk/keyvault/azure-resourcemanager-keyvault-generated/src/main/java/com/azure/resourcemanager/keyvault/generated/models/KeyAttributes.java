@@ -7,7 +7,9 @@ package com.azure.resourcemanager.keyvault.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The object attributes managed by the Azure Key Vault service. */
+/**
+ * The object attributes managed by the Azure Key Vault service.
+ */
 @Fluent
 public final class KeyAttributes {
     /*
@@ -54,13 +56,15 @@ public final class KeyAttributes {
     @JsonProperty(value = "exportable")
     private Boolean exportable;
 
-    /** Creates an instance of KeyAttributes class. */
+    /**
+     * Creates an instance of KeyAttributes class.
+     */
     public KeyAttributes() {
     }
 
     /**
      * Get the enabled property: Determines whether or not the object is enabled.
-     *
+     * 
      * @return the enabled value.
      */
     public Boolean enabled() {
@@ -69,7 +73,7 @@ public final class KeyAttributes {
 
     /**
      * Set the enabled property: Determines whether or not the object is enabled.
-     *
+     * 
      * @param enabled the enabled value to set.
      * @return the KeyAttributes object itself.
      */
@@ -80,7 +84,7 @@ public final class KeyAttributes {
 
     /**
      * Get the notBefore property: Not before date in seconds since 1970-01-01T00:00:00Z.
-     *
+     * 
      * @return the notBefore value.
      */
     public Long notBefore() {
@@ -89,7 +93,7 @@ public final class KeyAttributes {
 
     /**
      * Set the notBefore property: Not before date in seconds since 1970-01-01T00:00:00Z.
-     *
+     * 
      * @param notBefore the notBefore value to set.
      * @return the KeyAttributes object itself.
      */
@@ -100,7 +104,7 @@ public final class KeyAttributes {
 
     /**
      * Get the expires property: Expiry date in seconds since 1970-01-01T00:00:00Z.
-     *
+     * 
      * @return the expires value.
      */
     public Long expires() {
@@ -109,7 +113,7 @@ public final class KeyAttributes {
 
     /**
      * Set the expires property: Expiry date in seconds since 1970-01-01T00:00:00Z.
-     *
+     * 
      * @param expires the expires value to set.
      * @return the KeyAttributes object itself.
      */
@@ -120,7 +124,7 @@ public final class KeyAttributes {
 
     /**
      * Get the created property: Creation time in seconds since 1970-01-01T00:00:00Z.
-     *
+     * 
      * @return the created value.
      */
     public Long created() {
@@ -129,7 +133,7 @@ public final class KeyAttributes {
 
     /**
      * Get the updated property: Last updated time in seconds since 1970-01-01T00:00:00Z.
-     *
+     * 
      * @return the updated value.
      */
     public Long updated() {
@@ -140,7 +144,7 @@ public final class KeyAttributes {
      * Get the recoveryLevel property: The deletion recovery level currently in effect for the object. If it contains
      * 'Purgeable', then the object can be permanently deleted by a privileged user; otherwise, only the system can
      * purge the object at the end of the retention interval.
-     *
+     * 
      * @return the recoveryLevel value.
      */
     public DeletionRecoveryLevel recoveryLevel() {
@@ -149,7 +153,7 @@ public final class KeyAttributes {
 
     /**
      * Get the exportable property: Indicates if the private key can be exported.
-     *
+     * 
      * @return the exportable value.
      */
     public Boolean exportable() {
@@ -158,7 +162,7 @@ public final class KeyAttributes {
 
     /**
      * Set the exportable property: Indicates if the private key can be exported.
-     *
+     * 
      * @param exportable the exportable value to set.
      * @return the KeyAttributes object itself.
      */
@@ -169,7 +173,7 @@ public final class KeyAttributes {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

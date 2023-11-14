@@ -14,7 +14,9 @@ import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.UUID;
 
-/** The properties of the reservation recommendation. */
+/**
+ * The properties of the reservation recommendation.
+ */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
     include = JsonTypeInfo.As.PROPERTY,
@@ -23,8 +25,7 @@ import java.util.UUID;
 @JsonTypeName("ModernReservationRecommendationProperties")
 @JsonSubTypes({
     @JsonSubTypes.Type(name = "Single", value = ModernSingleScopeReservationRecommendationProperties.class),
-    @JsonSubTypes.Type(name = "Shared", value = ModernSharedScopeReservationRecommendationProperties.class)
-})
+    @JsonSubTypes.Type(name = "Shared", value = ModernSharedScopeReservationRecommendationProperties.class) })
 @Immutable
 public class ModernReservationRecommendationProperties {
     /*
@@ -123,13 +124,15 @@ public class ModernReservationRecommendationProperties {
     @JsonProperty(value = "skuName", access = JsonProperty.Access.WRITE_ONLY)
     private String skuName;
 
-    /** Creates an instance of ModernReservationRecommendationProperties class. */
+    /**
+     * Creates an instance of ModernReservationRecommendationProperties class.
+     */
     public ModernReservationRecommendationProperties() {
     }
 
     /**
      * Get the location property: Resource Location.
-     *
+     * 
      * @return the location value.
      */
     public String location() {
@@ -138,7 +141,7 @@ public class ModernReservationRecommendationProperties {
 
     /**
      * Get the lookBackPeriod property: The number of days of usage to look back for recommendation.
-     *
+     * 
      * @return the lookBackPeriod value.
      */
     public Integer lookBackPeriod() {
@@ -147,7 +150,7 @@ public class ModernReservationRecommendationProperties {
 
     /**
      * Get the instanceFlexibilityRatio property: The instance Flexibility Ratio.
-     *
+     * 
      * @return the instanceFlexibilityRatio value.
      */
     public Float instanceFlexibilityRatio() {
@@ -156,7 +159,7 @@ public class ModernReservationRecommendationProperties {
 
     /**
      * Get the instanceFlexibilityGroup property: The instance Flexibility Group.
-     *
+     * 
      * @return the instanceFlexibilityGroup value.
      */
     public String instanceFlexibilityGroup() {
@@ -165,7 +168,7 @@ public class ModernReservationRecommendationProperties {
 
     /**
      * Get the normalizedSize property: The normalized Size.
-     *
+     * 
      * @return the normalizedSize value.
      */
     public String normalizedSize() {
@@ -174,7 +177,7 @@ public class ModernReservationRecommendationProperties {
 
     /**
      * Get the recommendedQuantityNormalized property: The recommended Quantity Normalized.
-     *
+     * 
      * @return the recommendedQuantityNormalized value.
      */
     public Float recommendedQuantityNormalized() {
@@ -183,7 +186,7 @@ public class ModernReservationRecommendationProperties {
 
     /**
      * Get the meterId property: The meter id (GUID).
-     *
+     * 
      * @return the meterId value.
      */
     public UUID meterId() {
@@ -192,7 +195,7 @@ public class ModernReservationRecommendationProperties {
 
     /**
      * Get the term property: RI recommendations in one or three year terms.
-     *
+     * 
      * @return the term value.
      */
     public String term() {
@@ -201,7 +204,7 @@ public class ModernReservationRecommendationProperties {
 
     /**
      * Get the costWithNoReservedInstances property: The total amount of cost without reserved instances.
-     *
+     * 
      * @return the costWithNoReservedInstances value.
      */
     public Amount costWithNoReservedInstances() {
@@ -210,7 +213,7 @@ public class ModernReservationRecommendationProperties {
 
     /**
      * Get the recommendedQuantity property: Recommended quality for reserved instances.
-     *
+     * 
      * @return the recommendedQuantity value.
      */
     public BigDecimal recommendedQuantity() {
@@ -219,7 +222,7 @@ public class ModernReservationRecommendationProperties {
 
     /**
      * Get the resourceType property: Resource type.
-     *
+     * 
      * @return the resourceType value.
      */
     public String resourceType() {
@@ -228,7 +231,7 @@ public class ModernReservationRecommendationProperties {
 
     /**
      * Get the totalCostWithReservedInstances property: The total amount of cost with reserved instances.
-     *
+     * 
      * @return the totalCostWithReservedInstances value.
      */
     public Amount totalCostWithReservedInstances() {
@@ -237,7 +240,7 @@ public class ModernReservationRecommendationProperties {
 
     /**
      * Get the netSavings property: Total estimated savings with reserved instances.
-     *
+     * 
      * @return the netSavings value.
      */
     public Amount netSavings() {
@@ -246,7 +249,7 @@ public class ModernReservationRecommendationProperties {
 
     /**
      * Get the firstUsageDate property: The usage date for looking back.
-     *
+     * 
      * @return the firstUsageDate value.
      */
     public OffsetDateTime firstUsageDate() {
@@ -255,7 +258,7 @@ public class ModernReservationRecommendationProperties {
 
     /**
      * Get the skuProperties property: List of sku properties.
-     *
+     * 
      * @return the skuProperties value.
      */
     public List<SkuProperty> skuProperties() {
@@ -264,7 +267,7 @@ public class ModernReservationRecommendationProperties {
 
     /**
      * Get the skuName property: This is the ARM Sku name.
-     *
+     * 
      * @return the skuName value.
      */
     public String skuName() {
@@ -273,7 +276,7 @@ public class ModernReservationRecommendationProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

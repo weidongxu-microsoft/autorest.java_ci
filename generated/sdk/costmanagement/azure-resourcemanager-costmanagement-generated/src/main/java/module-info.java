@@ -10,10 +10,7 @@ module com.azure.resourcemanager.costmanagement.generated {
     exports com.azure.resourcemanager.costmanagement.generated.fluent.models;
     exports com.azure.resourcemanager.costmanagement.generated.models;
 
-    opens com.azure.resourcemanager.costmanagement.generated.fluent.models to
-        com.azure.core,
-        com.fasterxml.jackson.databind;
-    opens com.azure.resourcemanager.costmanagement.generated.models to
-        com.azure.core,
-        com.fasterxml.jackson.databind;
+    opens com.azure.resourcemanager.costmanagement.generated.fluent.models
+        to com.azure.core, com.fasterxml.jackson.databind;
+    opens com.azure.resourcemanager.costmanagement.generated.models to com.azure.core, com.fasterxml.jackson.databind;
 }

@@ -12,8 +12,7 @@ public final class GenerateCertResponseImpl implements GenerateCertResponse {
 
     private final com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager;
 
-    GenerateCertResponseImpl(
-        GenerateCertResponseInner innerObject,
+    GenerateCertResponseImpl(GenerateCertResponseInner innerObject,
         com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

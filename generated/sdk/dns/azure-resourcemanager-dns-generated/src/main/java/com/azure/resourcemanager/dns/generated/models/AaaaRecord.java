@@ -7,7 +7,9 @@ package com.azure.resourcemanager.dns.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** An AAAA record. */
+/**
+ * An AAAA record.
+ */
 @Fluent
 public final class AaaaRecord {
     /*
@@ -16,13 +18,15 @@ public final class AaaaRecord {
     @JsonProperty(value = "ipv6Address")
     private String ipv6Address;
 
-    /** Creates an instance of AaaaRecord class. */
+    /**
+     * Creates an instance of AaaaRecord class.
+     */
     public AaaaRecord() {
     }
 
     /**
      * Get the ipv6Address property: The IPv6 address of this AAAA record.
-     *
+     * 
      * @return the ipv6Address value.
      */
     public String ipv6Address() {
@@ -31,7 +35,7 @@ public final class AaaaRecord {
 
     /**
      * Set the ipv6Address property: The IPv6 address of this AAAA record.
-     *
+     * 
      * @param ipv6Address the ipv6Address value to set.
      * @return the AaaaRecord object itself.
      */
@@ -42,7 +46,7 @@ public final class AaaaRecord {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

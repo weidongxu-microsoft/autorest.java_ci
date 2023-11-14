@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The definition of a forecast. */
+/**
+ * The definition of a forecast.
+ */
 @Fluent
 public final class ForecastDefinition {
     /*
@@ -47,13 +49,15 @@ public final class ForecastDefinition {
     @JsonProperty(value = "includeFreshPartialCost")
     private Boolean includeFreshPartialCost;
 
-    /** Creates an instance of ForecastDefinition class. */
+    /**
+     * Creates an instance of ForecastDefinition class.
+     */
     public ForecastDefinition() {
     }
 
     /**
      * Get the type property: The type of the forecast.
-     *
+     * 
      * @return the type value.
      */
     public ForecastType type() {
@@ -62,7 +66,7 @@ public final class ForecastDefinition {
 
     /**
      * Set the type property: The type of the forecast.
-     *
+     * 
      * @param type the type value to set.
      * @return the ForecastDefinition object itself.
      */
@@ -74,7 +78,7 @@ public final class ForecastDefinition {
     /**
      * Get the timeframe property: The time frame for pulling data for the forecast. If custom, then a specific time
      * period must be provided.
-     *
+     * 
      * @return the timeframe value.
      */
     public ForecastTimeframeType timeframe() {
@@ -84,7 +88,7 @@ public final class ForecastDefinition {
     /**
      * Set the timeframe property: The time frame for pulling data for the forecast. If custom, then a specific time
      * period must be provided.
-     *
+     * 
      * @param timeframe the timeframe value to set.
      * @return the ForecastDefinition object itself.
      */
@@ -95,7 +99,7 @@ public final class ForecastDefinition {
 
     /**
      * Get the timePeriod property: Has time period for pulling data for the forecast.
-     *
+     * 
      * @return the timePeriod value.
      */
     public QueryTimePeriod timePeriod() {
@@ -104,7 +108,7 @@ public final class ForecastDefinition {
 
     /**
      * Set the timePeriod property: Has time period for pulling data for the forecast.
-     *
+     * 
      * @param timePeriod the timePeriod value to set.
      * @return the ForecastDefinition object itself.
      */
@@ -115,7 +119,7 @@ public final class ForecastDefinition {
 
     /**
      * Get the dataset property: Has definition for data in this forecast.
-     *
+     * 
      * @return the dataset value.
      */
     public QueryDataset dataset() {
@@ -124,7 +128,7 @@ public final class ForecastDefinition {
 
     /**
      * Set the dataset property: Has definition for data in this forecast.
-     *
+     * 
      * @param dataset the dataset value to set.
      * @return the ForecastDefinition object itself.
      */
@@ -135,7 +139,7 @@ public final class ForecastDefinition {
 
     /**
      * Get the includeActualCost property: a boolean determining if actualCost will be included.
-     *
+     * 
      * @return the includeActualCost value.
      */
     public Boolean includeActualCost() {
@@ -144,7 +148,7 @@ public final class ForecastDefinition {
 
     /**
      * Set the includeActualCost property: a boolean determining if actualCost will be included.
-     *
+     * 
      * @param includeActualCost the includeActualCost value to set.
      * @return the ForecastDefinition object itself.
      */
@@ -155,7 +159,7 @@ public final class ForecastDefinition {
 
     /**
      * Get the includeFreshPartialCost property: a boolean determining if FreshPartialCost will be included.
-     *
+     * 
      * @return the includeFreshPartialCost value.
      */
     public Boolean includeFreshPartialCost() {
@@ -164,7 +168,7 @@ public final class ForecastDefinition {
 
     /**
      * Set the includeFreshPartialCost property: a boolean determining if FreshPartialCost will be included.
-     *
+     * 
      * @param includeFreshPartialCost the includeFreshPartialCost value to set.
      * @return the ForecastDefinition object itself.
      */
@@ -175,27 +179,24 @@ public final class ForecastDefinition {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (type() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property type in model ForecastDefinition"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property type in model ForecastDefinition"));
         }
         if (timeframe() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property timeframe in model ForecastDefinition"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property timeframe in model ForecastDefinition"));
         }
         if (timePeriod() != null) {
             timePeriod().validate();
         }
         if (dataset() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property dataset in model ForecastDefinition"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property dataset in model ForecastDefinition"));
         } else {
             dataset().validate();
         }

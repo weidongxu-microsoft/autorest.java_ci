@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of DnssecConfigs. */
+/**
+ * Resource collection API of DnssecConfigs.
+ */
 public interface DnssecConfigs {
     /**
      * Creates or updates the DNSSEC configuration on a DNS zone.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -24,25 +26,25 @@ public interface DnssecConfigs {
 
     /**
      * Creates or updates the DNSSEC configuration on a DNS zone.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param ifMatch The etag of the DNSSEC configuration. Omit this value to always overwrite the DNSSEC
-     *     configuration. Specify the last-seen etag value to prevent accidentally overwriting any concurrent changes.
+     * configuration. Specify the last-seen etag value to prevent accidentally overwriting any concurrent changes.
      * @param ifNoneMatch Set to '*' to allow this DNSSEC configuration to be created, but to prevent updating existing
-     *     DNSSEC configuration. Other values will be ignored.
+     * DNSSEC configuration. Other values will be ignored.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return represents the DNSSEC configuration.
      */
-    DnssecConfig createOrUpdate(
-        String resourceGroupName, String zoneName, String ifMatch, String ifNoneMatch, Context context);
+    DnssecConfig createOrUpdate(String resourceGroupName, String zoneName, String ifMatch, String ifNoneMatch,
+        Context context);
 
     /**
      * Deletes the DNSSEC configuration on a DNS zone. This operation cannot be undone.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -53,11 +55,11 @@ public interface DnssecConfigs {
 
     /**
      * Deletes the DNSSEC configuration on a DNS zone. This operation cannot be undone.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param ifMatch The etag of this DNSSEC configuration. Omit this value to always delete the DNSSEC configuration.
-     *     Specify the last-seen etag value to prevent accidentally deleting any concurrent changes.
+     * Specify the last-seen etag value to prevent accidentally deleting any concurrent changes.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -67,7 +69,7 @@ public interface DnssecConfigs {
 
     /**
      * Gets the DNSSEC configuration.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param context The context to associate with this operation.
@@ -80,7 +82,7 @@ public interface DnssecConfigs {
 
     /**
      * Gets the DNSSEC configuration.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -92,7 +94,7 @@ public interface DnssecConfigs {
 
     /**
      * Lists the DNSSEC configurations in a DNS zone.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -104,7 +106,7 @@ public interface DnssecConfigs {
 
     /**
      * Lists the DNSSEC configurations in a DNS zone.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param context The context to associate with this operation.

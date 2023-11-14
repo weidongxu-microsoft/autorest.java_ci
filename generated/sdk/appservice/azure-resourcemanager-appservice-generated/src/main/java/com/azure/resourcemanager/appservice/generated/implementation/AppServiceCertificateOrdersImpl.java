@@ -36,8 +36,7 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    public AppServiceCertificateOrdersImpl(
-        AppServiceCertificateOrdersClient innerClient,
+    public AppServiceCertificateOrdersImpl(AppServiceCertificateOrdersClient innerClient,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -63,26 +62,23 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
     }
 
     public PagedIterable<AppServiceCertificateOrder> listByResourceGroup(String resourceGroupName) {
-        PagedIterable<AppServiceCertificateOrderInner> inner =
-            this.serviceClient().listByResourceGroup(resourceGroupName);
+        PagedIterable<AppServiceCertificateOrderInner> inner
+            = this.serviceClient().listByResourceGroup(resourceGroupName);
         return Utils.mapPage(inner, inner1 -> new AppServiceCertificateOrderImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AppServiceCertificateOrder> listByResourceGroup(String resourceGroupName, Context context) {
-        PagedIterable<AppServiceCertificateOrderInner> inner =
-            this.serviceClient().listByResourceGroup(resourceGroupName, context);
+        PagedIterable<AppServiceCertificateOrderInner> inner
+            = this.serviceClient().listByResourceGroup(resourceGroupName, context);
         return Utils.mapPage(inner, inner1 -> new AppServiceCertificateOrderImpl(inner1, this.manager()));
     }
 
-    public Response<AppServiceCertificateOrder> getByResourceGroupWithResponse(
-        String resourceGroupName, String certificateOrderName, Context context) {
-        Response<AppServiceCertificateOrderInner> inner =
-            this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, certificateOrderName, context);
+    public Response<AppServiceCertificateOrder> getByResourceGroupWithResponse(String resourceGroupName,
+        String certificateOrderName, Context context) {
+        Response<AppServiceCertificateOrderInner> inner
+            = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, certificateOrderName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new AppServiceCertificateOrderImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -90,8 +86,8 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
     }
 
     public AppServiceCertificateOrder getByResourceGroup(String resourceGroupName, String certificateOrderName) {
-        AppServiceCertificateOrderInner inner =
-            this.serviceClient().getByResourceGroup(resourceGroupName, certificateOrderName);
+        AppServiceCertificateOrderInner inner
+            = this.serviceClient().getByResourceGroup(resourceGroupName, certificateOrderName);
         if (inner != null) {
             return new AppServiceCertificateOrderImpl(inner, this.manager());
         } else {
@@ -99,8 +95,8 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
         }
     }
 
-    public Response<Void> deleteByResourceGroupWithResponse(
-        String resourceGroupName, String certificateOrderName, Context context) {
+    public Response<Void> deleteByResourceGroupWithResponse(String resourceGroupName, String certificateOrderName,
+        Context context) {
         return this.serviceClient().deleteWithResponse(resourceGroupName, certificateOrderName, context);
     }
 
@@ -108,39 +104,36 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
         this.serviceClient().delete(resourceGroupName, certificateOrderName);
     }
 
-    public PagedIterable<AppServiceCertificateResource> listCertificates(
-        String resourceGroupName, String certificateOrderName) {
-        PagedIterable<AppServiceCertificateResourceInner> inner =
-            this.serviceClient().listCertificates(resourceGroupName, certificateOrderName);
+    public PagedIterable<AppServiceCertificateResource> listCertificates(String resourceGroupName,
+        String certificateOrderName) {
+        PagedIterable<AppServiceCertificateResourceInner> inner
+            = this.serviceClient().listCertificates(resourceGroupName, certificateOrderName);
         return Utils.mapPage(inner, inner1 -> new AppServiceCertificateResourceImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<AppServiceCertificateResource> listCertificates(
-        String resourceGroupName, String certificateOrderName, Context context) {
-        PagedIterable<AppServiceCertificateResourceInner> inner =
-            this.serviceClient().listCertificates(resourceGroupName, certificateOrderName, context);
+    public PagedIterable<AppServiceCertificateResource> listCertificates(String resourceGroupName,
+        String certificateOrderName, Context context) {
+        PagedIterable<AppServiceCertificateResourceInner> inner
+            = this.serviceClient().listCertificates(resourceGroupName, certificateOrderName, context);
         return Utils.mapPage(inner, inner1 -> new AppServiceCertificateResourceImpl(inner1, this.manager()));
     }
 
-    public Response<AppServiceCertificateResource> getCertificateWithResponse(
-        String resourceGroupName, String certificateOrderName, String name, Context context) {
-        Response<AppServiceCertificateResourceInner> inner =
-            this.serviceClient().getCertificateWithResponse(resourceGroupName, certificateOrderName, name, context);
+    public Response<AppServiceCertificateResource> getCertificateWithResponse(String resourceGroupName,
+        String certificateOrderName, String name, Context context) {
+        Response<AppServiceCertificateResourceInner> inner
+            = this.serviceClient().getCertificateWithResponse(resourceGroupName, certificateOrderName, name, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new AppServiceCertificateResourceImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public AppServiceCertificateResource getCertificate(
-        String resourceGroupName, String certificateOrderName, String name) {
-        AppServiceCertificateResourceInner inner =
-            this.serviceClient().getCertificate(resourceGroupName, certificateOrderName, name);
+    public AppServiceCertificateResource getCertificate(String resourceGroupName, String certificateOrderName,
+        String name) {
+        AppServiceCertificateResourceInner inner
+            = this.serviceClient().getCertificate(resourceGroupName, certificateOrderName, name);
         if (inner != null) {
             return new AppServiceCertificateResourceImpl(inner, this.manager());
         } else {
@@ -148,53 +141,40 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
         }
     }
 
-    public Response<Void> deleteCertificateWithResponse(
-        String resourceGroupName, String certificateOrderName, String name, Context context) {
-        return this
-            .serviceClient()
-            .deleteCertificateWithResponse(resourceGroupName, certificateOrderName, name, context);
+    public Response<Void> deleteCertificateWithResponse(String resourceGroupName, String certificateOrderName,
+        String name, Context context) {
+        return this.serviceClient().deleteCertificateWithResponse(resourceGroupName, certificateOrderName, name,
+            context);
     }
 
     public void deleteCertificate(String resourceGroupName, String certificateOrderName, String name) {
         this.serviceClient().deleteCertificate(resourceGroupName, certificateOrderName, name);
     }
 
-    public Response<Void> reissueWithResponse(
-        String resourceGroupName,
-        String certificateOrderName,
-        ReissueCertificateOrderRequest reissueCertificateOrderRequest,
-        Context context) {
-        return this
-            .serviceClient()
-            .reissueWithResponse(resourceGroupName, certificateOrderName, reissueCertificateOrderRequest, context);
+    public Response<Void> reissueWithResponse(String resourceGroupName, String certificateOrderName,
+        ReissueCertificateOrderRequest reissueCertificateOrderRequest, Context context) {
+        return this.serviceClient().reissueWithResponse(resourceGroupName, certificateOrderName,
+            reissueCertificateOrderRequest, context);
     }
 
-    public void reissue(
-        String resourceGroupName,
-        String certificateOrderName,
+    public void reissue(String resourceGroupName, String certificateOrderName,
         ReissueCertificateOrderRequest reissueCertificateOrderRequest) {
         this.serviceClient().reissue(resourceGroupName, certificateOrderName, reissueCertificateOrderRequest);
     }
 
-    public Response<Void> renewWithResponse(
-        String resourceGroupName,
-        String certificateOrderName,
-        RenewCertificateOrderRequest renewCertificateOrderRequest,
-        Context context) {
-        return this
-            .serviceClient()
-            .renewWithResponse(resourceGroupName, certificateOrderName, renewCertificateOrderRequest, context);
+    public Response<Void> renewWithResponse(String resourceGroupName, String certificateOrderName,
+        RenewCertificateOrderRequest renewCertificateOrderRequest, Context context) {
+        return this.serviceClient().renewWithResponse(resourceGroupName, certificateOrderName,
+            renewCertificateOrderRequest, context);
     }
 
-    public void renew(
-        String resourceGroupName,
-        String certificateOrderName,
+    public void renew(String resourceGroupName, String certificateOrderName,
         RenewCertificateOrderRequest renewCertificateOrderRequest) {
         this.serviceClient().renew(resourceGroupName, certificateOrderName, renewCertificateOrderRequest);
     }
 
-    public Response<Void> resendEmailWithResponse(
-        String resourceGroupName, String certificateOrderName, Context context) {
+    public Response<Void> resendEmailWithResponse(String resourceGroupName, String certificateOrderName,
+        Context context) {
         return this.serviceClient().resendEmailWithResponse(resourceGroupName, certificateOrderName, context);
     }
 
@@ -202,39 +182,33 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
         this.serviceClient().resendEmail(resourceGroupName, certificateOrderName);
     }
 
-    public Response<Void> resendRequestEmailsWithResponse(
-        String resourceGroupName, String certificateOrderName, NameIdentifierInner nameIdentifier, Context context) {
-        return this
-            .serviceClient()
-            .resendRequestEmailsWithResponse(resourceGroupName, certificateOrderName, nameIdentifier, context);
+    public Response<Void> resendRequestEmailsWithResponse(String resourceGroupName, String certificateOrderName,
+        NameIdentifierInner nameIdentifier, Context context) {
+        return this.serviceClient().resendRequestEmailsWithResponse(resourceGroupName, certificateOrderName,
+            nameIdentifier, context);
     }
 
-    public void resendRequestEmails(
-        String resourceGroupName, String certificateOrderName, NameIdentifierInner nameIdentifier) {
+    public void resendRequestEmails(String resourceGroupName, String certificateOrderName,
+        NameIdentifierInner nameIdentifier) {
         this.serviceClient().resendRequestEmails(resourceGroupName, certificateOrderName, nameIdentifier);
     }
 
-    public Response<SiteSeal> retrieveSiteSealWithResponse(
-        String resourceGroupName, String certificateOrderName, SiteSealRequest siteSealRequest, Context context) {
-        Response<SiteSealInner> inner =
-            this
-                .serviceClient()
-                .retrieveSiteSealWithResponse(resourceGroupName, certificateOrderName, siteSealRequest, context);
+    public Response<SiteSeal> retrieveSiteSealWithResponse(String resourceGroupName, String certificateOrderName,
+        SiteSealRequest siteSealRequest, Context context) {
+        Response<SiteSealInner> inner = this.serviceClient().retrieveSiteSealWithResponse(resourceGroupName,
+            certificateOrderName, siteSealRequest, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new SiteSealImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public SiteSeal retrieveSiteSeal(
-        String resourceGroupName, String certificateOrderName, SiteSealRequest siteSealRequest) {
-        SiteSealInner inner =
-            this.serviceClient().retrieveSiteSeal(resourceGroupName, certificateOrderName, siteSealRequest);
+    public SiteSeal retrieveSiteSeal(String resourceGroupName, String certificateOrderName,
+        SiteSealRequest siteSealRequest) {
+        SiteSealInner inner
+            = this.serviceClient().retrieveSiteSeal(resourceGroupName, certificateOrderName, siteSealRequest);
         if (inner != null) {
             return new SiteSealImpl(inner, this.manager());
         } else {
@@ -242,8 +216,8 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
         }
     }
 
-    public Response<Void> verifyDomainOwnershipWithResponse(
-        String resourceGroupName, String certificateOrderName, Context context) {
+    public Response<Void> verifyDomainOwnershipWithResponse(String resourceGroupName, String certificateOrderName,
+        Context context) {
         return this.serviceClient().verifyDomainOwnershipWithResponse(resourceGroupName, certificateOrderName, context);
     }
 
@@ -251,19 +225,13 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
         this.serviceClient().verifyDomainOwnership(resourceGroupName, certificateOrderName);
     }
 
-    public Response<List<CertificateOrderAction>> retrieveCertificateActionsWithResponse(
-        String resourceGroupName, String name, Context context) {
-        Response<List<CertificateOrderActionInner>> inner =
-            this.serviceClient().retrieveCertificateActionsWithResponse(resourceGroupName, name, context);
+    public Response<List<CertificateOrderAction>> retrieveCertificateActionsWithResponse(String resourceGroupName,
+        String name, Context context) {
+        Response<List<CertificateOrderActionInner>> inner
+            = this.serviceClient().retrieveCertificateActionsWithResponse(resourceGroupName, name, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
-                inner
-                    .getValue()
-                    .stream()
-                    .map(inner1 -> new CertificateOrderActionImpl(inner1, this.manager()))
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
+                inner.getValue().stream().map(inner1 -> new CertificateOrderActionImpl(inner1, this.manager()))
                     .collect(Collectors.toList()));
         } else {
             return null;
@@ -271,49 +239,34 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
     }
 
     public List<CertificateOrderAction> retrieveCertificateActions(String resourceGroupName, String name) {
-        List<CertificateOrderActionInner> inner =
-            this.serviceClient().retrieveCertificateActions(resourceGroupName, name);
+        List<CertificateOrderActionInner> inner
+            = this.serviceClient().retrieveCertificateActions(resourceGroupName, name);
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new CertificateOrderActionImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new CertificateOrderActionImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
     }
 
-    public Response<List<CertificateEmail>> retrieveCertificateEmailHistoryWithResponse(
-        String resourceGroupName, String name, Context context) {
-        Response<List<CertificateEmailInner>> inner =
-            this.serviceClient().retrieveCertificateEmailHistoryWithResponse(resourceGroupName, name, context);
+    public Response<List<CertificateEmail>> retrieveCertificateEmailHistoryWithResponse(String resourceGroupName,
+        String name, Context context) {
+        Response<List<CertificateEmailInner>> inner
+            = this.serviceClient().retrieveCertificateEmailHistoryWithResponse(resourceGroupName, name, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
-                inner
-                    .getValue()
-                    .stream()
-                    .map(inner1 -> new CertificateEmailImpl(inner1, this.manager()))
-                    .collect(Collectors.toList()));
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(), inner.getValue()
+                .stream().map(inner1 -> new CertificateEmailImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return null;
         }
     }
 
     public List<CertificateEmail> retrieveCertificateEmailHistory(String resourceGroupName, String name) {
-        List<CertificateEmailInner> inner =
-            this.serviceClient().retrieveCertificateEmailHistory(resourceGroupName, name);
+        List<CertificateEmailInner> inner
+            = this.serviceClient().retrieveCertificateEmailHistory(resourceGroupName, name);
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new CertificateEmailImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new CertificateEmailImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -322,20 +275,13 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
     public AppServiceCertificateOrder getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String certificateOrderName = Utils.getValueFromIdByName(id, "certificateOrders");
         if (certificateOrderName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'certificateOrders'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'certificateOrders'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, certificateOrderName, Context.NONE).getValue();
     }
@@ -343,20 +289,13 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
     public Response<AppServiceCertificateOrder> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String certificateOrderName = Utils.getValueFromIdByName(id, "certificateOrders");
         if (certificateOrderName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'certificateOrders'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'certificateOrders'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, certificateOrderName, context);
     }
@@ -364,27 +303,18 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
     public AppServiceCertificateResource getCertificateById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String certificateOrderName = Utils.getValueFromIdByName(id, "certificateOrders");
         if (certificateOrderName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'certificateOrders'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'certificateOrders'.", id)));
         }
         String name = Utils.getValueFromIdByName(id, "certificates");
         if (name == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'certificates'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'certificates'.", id)));
         }
         return this.getCertificateWithResponse(resourceGroupName, certificateOrderName, name, Context.NONE).getValue();
     }
@@ -392,27 +322,18 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
     public Response<AppServiceCertificateResource> getCertificateByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String certificateOrderName = Utils.getValueFromIdByName(id, "certificateOrders");
         if (certificateOrderName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'certificateOrders'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'certificateOrders'.", id)));
         }
         String name = Utils.getValueFromIdByName(id, "certificates");
         if (name == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'certificates'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'certificates'.", id)));
         }
         return this.getCertificateWithResponse(resourceGroupName, certificateOrderName, name, context);
     }
@@ -420,20 +341,13 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String certificateOrderName = Utils.getValueFromIdByName(id, "certificateOrders");
         if (certificateOrderName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'certificateOrders'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'certificateOrders'.", id)));
         }
         this.deleteByResourceGroupWithResponse(resourceGroupName, certificateOrderName, Context.NONE);
     }
@@ -441,20 +355,13 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String certificateOrderName = Utils.getValueFromIdByName(id, "certificateOrders");
         if (certificateOrderName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'certificateOrders'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'certificateOrders'.", id)));
         }
         return this.deleteByResourceGroupWithResponse(resourceGroupName, certificateOrderName, context);
     }
@@ -462,27 +369,18 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
     public void deleteCertificateById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String certificateOrderName = Utils.getValueFromIdByName(id, "certificateOrders");
         if (certificateOrderName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'certificateOrders'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'certificateOrders'.", id)));
         }
         String name = Utils.getValueFromIdByName(id, "certificates");
         if (name == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'certificates'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'certificates'.", id)));
         }
         this.deleteCertificateWithResponse(resourceGroupName, certificateOrderName, name, Context.NONE);
     }
@@ -490,27 +388,18 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
     public Response<Void> deleteCertificateByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String certificateOrderName = Utils.getValueFromIdByName(id, "certificateOrders");
         if (certificateOrderName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'certificateOrders'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'certificateOrders'.", id)));
         }
         String name = Utils.getValueFromIdByName(id, "certificates");
         if (name == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'certificates'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'certificates'.", id)));
         }
         return this.deleteCertificateWithResponse(resourceGroupName, certificateOrderName, name, context);
     }

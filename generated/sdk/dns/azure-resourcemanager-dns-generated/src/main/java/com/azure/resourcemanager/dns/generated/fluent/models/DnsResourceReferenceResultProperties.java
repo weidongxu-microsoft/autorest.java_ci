@@ -22,14 +22,16 @@ public final class DnsResourceReferenceResultProperties {
     @JsonProperty(value = "dnsResourceReferences")
     private List<DnsResourceReference> dnsResourceReferences;
 
-    /** Creates an instance of DnsResourceReferenceResultProperties class. */
+    /**
+     * Creates an instance of DnsResourceReferenceResultProperties class.
+     */
     public DnsResourceReferenceResultProperties() {
     }
 
     /**
      * Get the dnsResourceReferences property: The result of dns resource reference request. A list of dns resource
      * references for each of the azure resource in the request.
-     *
+     * 
      * @return the dnsResourceReferences value.
      */
     public List<DnsResourceReference> dnsResourceReferences() {
@@ -39,19 +41,19 @@ public final class DnsResourceReferenceResultProperties {
     /**
      * Set the dnsResourceReferences property: The result of dns resource reference request. A list of dns resource
      * references for each of the azure resource in the request.
-     *
+     * 
      * @param dnsResourceReferences the dnsResourceReferences value to set.
      * @return the DnsResourceReferenceResultProperties object itself.
      */
-    public DnsResourceReferenceResultProperties withDnsResourceReferences(
-        List<DnsResourceReference> dnsResourceReferences) {
+    public DnsResourceReferenceResultProperties
+        withDnsResourceReferences(List<DnsResourceReference> dnsResourceReferences) {
         this.dnsResourceReferences = dnsResourceReferences;
         return this;
     }
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

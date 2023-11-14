@@ -8,23 +8,33 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Remote application type. */
+/**
+ * Remote application type.
+ */
 public final class RemoteApplicationType extends ExpandableStringEnum<RemoteApplicationType> {
-    /** Static value Powershell for RemoteApplicationType. */
+    /**
+     * Static value Powershell for RemoteApplicationType.
+     */
     public static final RemoteApplicationType POWERSHELL = fromString("Powershell");
 
-    /** Static value WAC for RemoteApplicationType. */
+    /**
+     * Static value WAC for RemoteApplicationType.
+     */
     public static final RemoteApplicationType WAC = fromString("WAC");
 
-    /** Static value LocalUI for RemoteApplicationType. */
+    /**
+     * Static value LocalUI for RemoteApplicationType.
+     */
     public static final RemoteApplicationType LOCAL_UI = fromString("LocalUI");
 
-    /** Static value AllApplications for RemoteApplicationType. */
+    /**
+     * Static value AllApplications for RemoteApplicationType.
+     */
     public static final RemoteApplicationType ALL_APPLICATIONS = fromString("AllApplications");
 
     /**
      * Creates a new instance of RemoteApplicationType value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -33,7 +43,7 @@ public final class RemoteApplicationType extends ExpandableStringEnum<RemoteAppl
 
     /**
      * Creates or finds a RemoteApplicationType from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding RemoteApplicationType.
      */
@@ -44,7 +54,7 @@ public final class RemoteApplicationType extends ExpandableStringEnum<RemoteAppl
 
     /**
      * Gets known RemoteApplicationType values.
-     *
+     * 
      * @return known RemoteApplicationType values.
      */
     public static Collection<RemoteApplicationType> values() {

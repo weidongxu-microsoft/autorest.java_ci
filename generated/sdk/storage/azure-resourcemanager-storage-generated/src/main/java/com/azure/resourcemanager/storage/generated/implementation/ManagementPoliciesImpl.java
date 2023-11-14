@@ -21,30 +21,26 @@ public final class ManagementPoliciesImpl implements ManagementPolicies {
 
     private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
-    public ManagementPoliciesImpl(
-        ManagementPoliciesClient innerClient,
+    public ManagementPoliciesImpl(ManagementPoliciesClient innerClient,
         com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<ManagementPolicy> getWithResponse(
-        String resourceGroupName, String accountName, ManagementPolicyName managementPolicyName, Context context) {
-        Response<ManagementPolicyInner> inner =
-            this.serviceClient().getWithResponse(resourceGroupName, accountName, managementPolicyName, context);
+    public Response<ManagementPolicy> getWithResponse(String resourceGroupName, String accountName,
+        ManagementPolicyName managementPolicyName, Context context) {
+        Response<ManagementPolicyInner> inner
+            = this.serviceClient().getWithResponse(resourceGroupName, accountName, managementPolicyName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ManagementPolicyImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public ManagementPolicy get(
-        String resourceGroupName, String accountName, ManagementPolicyName managementPolicyName) {
+    public ManagementPolicy get(String resourceGroupName, String accountName,
+        ManagementPolicyName managementPolicyName) {
         ManagementPolicyInner inner = this.serviceClient().get(resourceGroupName, accountName, managementPolicyName);
         if (inner != null) {
             return new ManagementPolicyImpl(inner, this.manager());
@@ -53,8 +49,8 @@ public final class ManagementPoliciesImpl implements ManagementPolicies {
         }
     }
 
-    public Response<Void> deleteWithResponse(
-        String resourceGroupName, String accountName, ManagementPolicyName managementPolicyName, Context context) {
+    public Response<Void> deleteWithResponse(String resourceGroupName, String accountName,
+        ManagementPolicyName managementPolicyName, Context context) {
         return this.serviceClient().deleteWithResponse(resourceGroupName, accountName, managementPolicyName, context);
     }
 
@@ -65,28 +61,18 @@ public final class ManagementPoliciesImpl implements ManagementPolicies {
     public ManagementPolicy getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
         }
         String managementPolicyNameLocal = Utils.getValueFromIdByName(id, "managementPolicies");
         if (managementPolicyNameLocal == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'managementPolicies'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'managementPolicies'.", id)));
         }
         ManagementPolicyName managementPolicyName = ManagementPolicyName.fromString(managementPolicyNameLocal);
         return this.getWithResponse(resourceGroupName, accountName, managementPolicyName, Context.NONE).getValue();
@@ -95,28 +81,18 @@ public final class ManagementPoliciesImpl implements ManagementPolicies {
     public Response<ManagementPolicy> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
         }
         String managementPolicyNameLocal = Utils.getValueFromIdByName(id, "managementPolicies");
         if (managementPolicyNameLocal == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'managementPolicies'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'managementPolicies'.", id)));
         }
         ManagementPolicyName managementPolicyName = ManagementPolicyName.fromString(managementPolicyNameLocal);
         return this.getWithResponse(resourceGroupName, accountName, managementPolicyName, context);
@@ -125,28 +101,18 @@ public final class ManagementPoliciesImpl implements ManagementPolicies {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
         }
         String managementPolicyNameLocal = Utils.getValueFromIdByName(id, "managementPolicies");
         if (managementPolicyNameLocal == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'managementPolicies'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'managementPolicies'.", id)));
         }
         ManagementPolicyName managementPolicyName = ManagementPolicyName.fromString(managementPolicyNameLocal);
         this.deleteWithResponse(resourceGroupName, accountName, managementPolicyName, Context.NONE);
@@ -155,28 +121,18 @@ public final class ManagementPoliciesImpl implements ManagementPolicies {
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
         }
         String managementPolicyNameLocal = Utils.getValueFromIdByName(id, "managementPolicies");
         if (managementPolicyNameLocal == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'managementPolicies'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'managementPolicies'.", id)));
         }
         ManagementPolicyName managementPolicyName = ManagementPolicyName.fromString(managementPolicyNameLocal);
         return this.deleteWithResponse(resourceGroupName, accountName, managementPolicyName, context);

@@ -7,16 +7,20 @@ package com.azure.resourcemanager.monitor.generated.models;
 import com.azure.core.annotation.Immutable;
 import com.azure.core.management.ProxyResource;
 
-/** A proxy only azure resource object. */
+/**
+ * A proxy only azure resource object.
+ */
 @Immutable
 public class ProxyOnlyResource extends ProxyResource {
-    /** Creates an instance of ProxyOnlyResource class. */
+    /**
+     * Creates an instance of ProxyOnlyResource class.
+     */
     public ProxyOnlyResource() {
     }
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

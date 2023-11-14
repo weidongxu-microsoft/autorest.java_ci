@@ -8,17 +8,23 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Current state of the live event. See https://go.microsoft.com/fwlink/?linkid=2139012 for more information. */
+/**
+ * Current state of the live event. See https://go.microsoft.com/fwlink/?linkid=2139012 for more information.
+ */
 public final class LiveEventState extends ExpandableStringEnum<LiveEventState> {
-    /** Static value Stopped for LiveEventState. */
+    /**
+     * Static value Stopped for LiveEventState.
+     */
     public static final LiveEventState STOPPED = fromString("Stopped");
 
-    /** Static value Running for LiveEventState. */
+    /**
+     * Static value Running for LiveEventState.
+     */
     public static final LiveEventState RUNNING = fromString("Running");
 
     /**
      * Creates a new instance of LiveEventState value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -27,7 +33,7 @@ public final class LiveEventState extends ExpandableStringEnum<LiveEventState> {
 
     /**
      * Creates or finds a LiveEventState from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding LiveEventState.
      */
@@ -38,7 +44,7 @@ public final class LiveEventState extends ExpandableStringEnum<LiveEventState> {
 
     /**
      * Gets known LiveEventState values.
-     *
+     * 
      * @return known LiveEventState values.
      */
     public static Collection<LiveEventState> values() {

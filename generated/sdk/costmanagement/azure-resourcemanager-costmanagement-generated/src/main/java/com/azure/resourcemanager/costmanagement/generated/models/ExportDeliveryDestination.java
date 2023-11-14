@@ -35,13 +35,15 @@ public final class ExportDeliveryDestination {
     @JsonProperty(value = "rootFolderPath")
     private String rootFolderPath;
 
-    /** Creates an instance of ExportDeliveryDestination class. */
+    /**
+     * Creates an instance of ExportDeliveryDestination class.
+     */
     public ExportDeliveryDestination() {
     }
 
     /**
      * Get the resourceId property: The resource id of the storage account where exports will be delivered.
-     *
+     * 
      * @return the resourceId value.
      */
     public String resourceId() {
@@ -50,7 +52,7 @@ public final class ExportDeliveryDestination {
 
     /**
      * Set the resourceId property: The resource id of the storage account where exports will be delivered.
-     *
+     * 
      * @param resourceId the resourceId value to set.
      * @return the ExportDeliveryDestination object itself.
      */
@@ -61,7 +63,7 @@ public final class ExportDeliveryDestination {
 
     /**
      * Get the container property: The name of the container where exports will be uploaded.
-     *
+     * 
      * @return the container value.
      */
     public String container() {
@@ -70,7 +72,7 @@ public final class ExportDeliveryDestination {
 
     /**
      * Set the container property: The name of the container where exports will be uploaded.
-     *
+     * 
      * @param container the container value to set.
      * @return the ExportDeliveryDestination object itself.
      */
@@ -81,7 +83,7 @@ public final class ExportDeliveryDestination {
 
     /**
      * Get the rootFolderPath property: The name of the directory where exports will be uploaded.
-     *
+     * 
      * @return the rootFolderPath value.
      */
     public String rootFolderPath() {
@@ -90,7 +92,7 @@ public final class ExportDeliveryDestination {
 
     /**
      * Set the rootFolderPath property: The name of the directory where exports will be uploaded.
-     *
+     * 
      * @param rootFolderPath the rootFolderPath value to set.
      * @return the ExportDeliveryDestination object itself.
      */
@@ -101,21 +103,17 @@ public final class ExportDeliveryDestination {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (resourceId() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property resourceId in model ExportDeliveryDestination"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property resourceId in model ExportDeliveryDestination"));
         }
         if (container() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property container in model ExportDeliveryDestination"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property container in model ExportDeliveryDestination"));
         }
     }
 

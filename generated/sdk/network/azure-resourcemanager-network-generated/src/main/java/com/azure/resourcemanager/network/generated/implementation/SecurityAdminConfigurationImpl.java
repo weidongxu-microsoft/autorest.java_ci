@@ -78,37 +78,27 @@ public final class SecurityAdminConfigurationImpl
 
     private String configurationName;
 
-    public SecurityAdminConfigurationImpl withExistingNetworkManager(
-        String resourceGroupName, String networkManagerName) {
+    public SecurityAdminConfigurationImpl withExistingNetworkManager(String resourceGroupName,
+        String networkManagerName) {
         this.resourceGroupName = resourceGroupName;
         this.networkManagerName = networkManagerName;
         return this;
     }
 
     public SecurityAdminConfiguration create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSecurityAdminConfigurations()
-                .createOrUpdateWithResponse(
-                    resourceGroupName, networkManagerName, configurationName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getSecurityAdminConfigurations().createOrUpdateWithResponse(
+            resourceGroupName, networkManagerName, configurationName, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public SecurityAdminConfiguration create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSecurityAdminConfigurations()
-                .createOrUpdateWithResponse(
-                    resourceGroupName, networkManagerName, configurationName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getSecurityAdminConfigurations().createOrUpdateWithResponse(
+            resourceGroupName, networkManagerName, configurationName, this.innerModel(), context).getValue();
         return this;
     }
 
-    SecurityAdminConfigurationImpl(
-        String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    SecurityAdminConfigurationImpl(String name,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new SecurityAdminConfigurationInner();
         this.serviceManager = serviceManager;
         this.configurationName = name;
@@ -119,29 +109,18 @@ public final class SecurityAdminConfigurationImpl
     }
 
     public SecurityAdminConfiguration apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSecurityAdminConfigurations()
-                .createOrUpdateWithResponse(
-                    resourceGroupName, networkManagerName, configurationName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getSecurityAdminConfigurations().createOrUpdateWithResponse(
+            resourceGroupName, networkManagerName, configurationName, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public SecurityAdminConfiguration apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSecurityAdminConfigurations()
-                .createOrUpdateWithResponse(
-                    resourceGroupName, networkManagerName, configurationName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getSecurityAdminConfigurations().createOrUpdateWithResponse(
+            resourceGroupName, networkManagerName, configurationName, this.innerModel(), context).getValue();
         return this;
     }
 
-    SecurityAdminConfigurationImpl(
-        SecurityAdminConfigurationInner innerObject,
+    SecurityAdminConfigurationImpl(SecurityAdminConfigurationInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -151,22 +130,14 @@ public final class SecurityAdminConfigurationImpl
     }
 
     public SecurityAdminConfiguration refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSecurityAdminConfigurations()
-                .getWithResponse(resourceGroupName, networkManagerName, configurationName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getSecurityAdminConfigurations()
+            .getWithResponse(resourceGroupName, networkManagerName, configurationName, Context.NONE).getValue();
         return this;
     }
 
     public SecurityAdminConfiguration refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSecurityAdminConfigurations()
-                .getWithResponse(resourceGroupName, networkManagerName, configurationName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getSecurityAdminConfigurations()
+            .getWithResponse(resourceGroupName, networkManagerName, configurationName, context).getValue();
         return this;
     }
 

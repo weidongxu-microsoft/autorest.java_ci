@@ -9,7 +9,9 @@ import com.azure.resourcemanager.keyvault.generated.fluent.models.VaultInner;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** List of vaults. */
+/**
+ * List of vaults.
+ */
 @Fluent
 public final class VaultListResult {
     /*
@@ -24,13 +26,15 @@ public final class VaultListResult {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
-    /** Creates an instance of VaultListResult class. */
+    /**
+     * Creates an instance of VaultListResult class.
+     */
     public VaultListResult() {
     }
 
     /**
      * Get the value property: The list of vaults.
-     *
+     * 
      * @return the value value.
      */
     public List<VaultInner> value() {
@@ -39,7 +43,7 @@ public final class VaultListResult {
 
     /**
      * Set the value property: The list of vaults.
-     *
+     * 
      * @param value the value value to set.
      * @return the VaultListResult object itself.
      */
@@ -50,7 +54,7 @@ public final class VaultListResult {
 
     /**
      * Get the nextLink property: The URL to get the next set of vaults.
-     *
+     * 
      * @return the nextLink value.
      */
     public String nextLink() {
@@ -59,7 +63,7 @@ public final class VaultListResult {
 
     /**
      * Set the nextLink property: The URL to get the next set of vaults.
-     *
+     * 
      * @param nextLink the nextLink value to set.
      * @return the VaultListResult object itself.
      */
@@ -70,7 +74,7 @@ public final class VaultListResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

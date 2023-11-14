@@ -8,15 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of Certificates. */
+/**
+ * Resource collection API of Certificates.
+ */
 public interface Certificates {
     /**
      * Get all certificates for a subscription.
-     *
-     * <p>Description for Get all certificates for a subscription.
-     *
+     * 
+     * Description for Get all certificates for a subscription.
+     * 
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of certificates as paginated response with {@link PagedIterable}.
      */
@@ -24,15 +26,15 @@ public interface Certificates {
 
     /**
      * Get all certificates for a subscription.
-     *
-     * <p>Description for Get all certificates for a subscription.
-     *
+     * 
+     * Description for Get all certificates for a subscription.
+     * 
      * @param filter Return only information specified in the filter (using OData syntax). For example:
-     *     $filter=KeyVaultId eq 'KeyVaultId'.
+     * $filter=KeyVaultId eq 'KeyVaultId'.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of certificates as paginated response with {@link PagedIterable}.
      */
@@ -40,13 +42,13 @@ public interface Certificates {
 
     /**
      * Get all certificates in a resource group.
-     *
-     * <p>Description for Get all certificates in a resource group.
-     *
+     * 
+     * Description for Get all certificates in a resource group.
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of certificates as paginated response with {@link PagedIterable}.
      */
@@ -54,14 +56,14 @@ public interface Certificates {
 
     /**
      * Get all certificates in a resource group.
-     *
-     * <p>Description for Get all certificates in a resource group.
-     *
+     * 
+     * Description for Get all certificates in a resource group.
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of certificates as paginated response with {@link PagedIterable}.
      */
@@ -69,15 +71,15 @@ public interface Certificates {
 
     /**
      * Get a certificate.
-     *
-     * <p>Description for Get a certificate.
-     *
+     * 
+     * Description for Get a certificate.
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return sSL certificate for an app along with {@link Response}.
      */
@@ -85,14 +87,14 @@ public interface Certificates {
 
     /**
      * Get a certificate.
-     *
-     * <p>Description for Get a certificate.
-     *
+     * 
+     * Description for Get a certificate.
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return sSL certificate for an app.
      */
@@ -100,15 +102,15 @@ public interface Certificates {
 
     /**
      * Delete a certificate.
-     *
-     * <p>Description for Delete a certificate.
-     *
+     * 
+     * Description for Delete a certificate.
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -116,27 +118,27 @@ public interface Certificates {
 
     /**
      * Delete a certificate.
-     *
-     * <p>Description for Delete a certificate.
-     *
+     * 
+     * Description for Delete a certificate.
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the certificate.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteByResourceGroup(String resourceGroupName, String name);
 
     /**
      * Get a certificate.
-     *
-     * <p>Description for Get a certificate.
-     *
+     * 
+     * Description for Get a certificate.
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return sSL certificate for an app along with {@link Response}.
      */
@@ -144,14 +146,14 @@ public interface Certificates {
 
     /**
      * Get a certificate.
-     *
-     * <p>Description for Get a certificate.
-     *
+     * 
+     * Description for Get a certificate.
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return sSL certificate for an app along with {@link Response}.
      */
@@ -159,27 +161,27 @@ public interface Certificates {
 
     /**
      * Delete a certificate.
-     *
-     * <p>Description for Delete a certificate.
-     *
+     * 
+     * Description for Delete a certificate.
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteById(String id);
 
     /**
      * Delete a certificate.
-     *
-     * <p>Description for Delete a certificate.
-     *
+     * 
+     * Description for Delete a certificate.
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -187,7 +189,7 @@ public interface Certificates {
 
     /**
      * Begins definition for a new Certificate resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new Certificate definition.
      */

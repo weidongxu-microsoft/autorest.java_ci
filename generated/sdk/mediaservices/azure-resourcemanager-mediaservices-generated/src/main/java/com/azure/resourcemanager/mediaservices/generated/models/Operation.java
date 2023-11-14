@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** An operation. */
+/**
+ * An operation.
+ */
 @Fluent
 public final class Operation {
     /*
@@ -47,13 +49,15 @@ public final class Operation {
     @JsonProperty(value = "actionType")
     private ActionType actionType;
 
-    /** Creates an instance of Operation class. */
+    /**
+     * Creates an instance of Operation class.
+     */
     public Operation() {
     }
 
     /**
      * Get the name property: The operation name.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -62,7 +66,7 @@ public final class Operation {
 
     /**
      * Set the name property: The operation name.
-     *
+     * 
      * @param name the name value to set.
      * @return the Operation object itself.
      */
@@ -73,7 +77,7 @@ public final class Operation {
 
     /**
      * Get the display property: The operation display name.
-     *
+     * 
      * @return the display value.
      */
     public OperationDisplay display() {
@@ -82,7 +86,7 @@ public final class Operation {
 
     /**
      * Set the display property: The operation display name.
-     *
+     * 
      * @param display the display value to set.
      * @return the Operation object itself.
      */
@@ -93,7 +97,7 @@ public final class Operation {
 
     /**
      * Get the origin property: Origin of the operation.
-     *
+     * 
      * @return the origin value.
      */
     public String origin() {
@@ -102,7 +106,7 @@ public final class Operation {
 
     /**
      * Set the origin property: Origin of the operation.
-     *
+     * 
      * @param origin the origin value to set.
      * @return the Operation object itself.
      */
@@ -113,7 +117,7 @@ public final class Operation {
 
     /**
      * Get the properties property: Operation properties format.
-     *
+     * 
      * @return the properties value.
      */
     public Properties properties() {
@@ -122,7 +126,7 @@ public final class Operation {
 
     /**
      * Set the properties property: Operation properties format.
-     *
+     * 
      * @param properties the properties value to set.
      * @return the Operation object itself.
      */
@@ -133,7 +137,7 @@ public final class Operation {
 
     /**
      * Get the isDataAction property: Whether the operation applies to data-plane.
-     *
+     * 
      * @return the isDataAction value.
      */
     public Boolean isDataAction() {
@@ -142,7 +146,7 @@ public final class Operation {
 
     /**
      * Set the isDataAction property: Whether the operation applies to data-plane.
-     *
+     * 
      * @param isDataAction the isDataAction value to set.
      * @return the Operation object itself.
      */
@@ -153,7 +157,7 @@ public final class Operation {
 
     /**
      * Get the actionType property: Indicates the action type.
-     *
+     * 
      * @return the actionType value.
      */
     public ActionType actionType() {
@@ -162,7 +166,7 @@ public final class Operation {
 
     /**
      * Set the actionType property: Indicates the action type.
-     *
+     * 
      * @param actionType the actionType value to set.
      * @return the Operation object itself.
      */
@@ -173,7 +177,7 @@ public final class Operation {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

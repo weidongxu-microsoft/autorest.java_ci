@@ -90,29 +90,23 @@ public final class DatabaseConnectionImpl
     }
 
     public DatabaseConnection create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getStaticSites()
-                .createOrUpdateBuildDatabaseConnectionWithResponse(
-                    resourceGroupName, name, environmentName, databaseConnectionName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getStaticSites()
+            .createOrUpdateBuildDatabaseConnectionWithResponse(resourceGroupName, name, environmentName,
+                databaseConnectionName, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public DatabaseConnection create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getStaticSites()
-                .createOrUpdateBuildDatabaseConnectionWithResponse(
-                    resourceGroupName, name, environmentName, databaseConnectionName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getStaticSites()
+            .createOrUpdateBuildDatabaseConnectionWithResponse(resourceGroupName, name, environmentName,
+                databaseConnectionName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
-    DatabaseConnectionImpl(
-        String name, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
+    DatabaseConnectionImpl(String name,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = new DatabaseConnectionInner();
         this.serviceManager = serviceManager;
         this.databaseConnectionName = name;
@@ -124,39 +118,23 @@ public final class DatabaseConnectionImpl
     }
 
     public DatabaseConnection apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getStaticSites()
-                .updateBuildDatabaseConnectionWithResponse(
-                    resourceGroupName,
-                    name,
-                    environmentName,
-                    databaseConnectionName,
-                    updateDatabaseConnectionRequestEnvelope,
-                    Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager
+            .serviceClient().getStaticSites().updateBuildDatabaseConnectionWithResponse(resourceGroupName, name,
+                environmentName, databaseConnectionName, updateDatabaseConnectionRequestEnvelope, Context.NONE)
+            .getValue();
         return this;
     }
 
     public DatabaseConnection apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getStaticSites()
-                .updateBuildDatabaseConnectionWithResponse(
-                    resourceGroupName,
-                    name,
-                    environmentName,
-                    databaseConnectionName,
-                    updateDatabaseConnectionRequestEnvelope,
-                    context)
+        this.innerObject
+            = serviceManager
+                .serviceClient().getStaticSites().updateBuildDatabaseConnectionWithResponse(resourceGroupName, name,
+                    environmentName, databaseConnectionName, updateDatabaseConnectionRequestEnvelope, context)
                 .getValue();
         return this;
     }
 
-    DatabaseConnectionImpl(
-        DatabaseConnectionInner innerObject,
+    DatabaseConnectionImpl(DatabaseConnectionInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -167,38 +145,27 @@ public final class DatabaseConnectionImpl
     }
 
     public DatabaseConnection refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getStaticSites()
-                .getBuildDatabaseConnectionWithResponse(
-                    resourceGroupName, name, environmentName, databaseConnectionName, Context.NONE)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getStaticSites().getBuildDatabaseConnectionWithResponse(resourceGroupName,
+                name, environmentName, databaseConnectionName, Context.NONE).getValue();
         return this;
     }
 
     public DatabaseConnection refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getStaticSites()
-                .getBuildDatabaseConnectionWithResponse(
-                    resourceGroupName, name, environmentName, databaseConnectionName, context)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getStaticSites().getBuildDatabaseConnectionWithResponse(resourceGroupName,
+                name, environmentName, databaseConnectionName, context).getValue();
         return this;
     }
 
     public Response<DatabaseConnection> getBuildDatabaseConnectionWithDetailsWithResponse(Context context) {
-        return serviceManager
-            .staticSites()
-            .getBuildDatabaseConnectionWithDetailsWithResponse(
-                resourceGroupName, name, environmentName, databaseConnectionName, context);
+        return serviceManager.staticSites().getBuildDatabaseConnectionWithDetailsWithResponse(resourceGroupName, name,
+            environmentName, databaseConnectionName, context);
     }
 
     public DatabaseConnection getBuildDatabaseConnectionWithDetails() {
-        return serviceManager
-            .staticSites()
-            .getBuildDatabaseConnectionWithDetails(resourceGroupName, name, environmentName, databaseConnectionName);
+        return serviceManager.staticSites().getBuildDatabaseConnectionWithDetails(resourceGroupName, name,
+            environmentName, databaseConnectionName);
     }
 
     public DatabaseConnectionImpl withKind(String kind) {

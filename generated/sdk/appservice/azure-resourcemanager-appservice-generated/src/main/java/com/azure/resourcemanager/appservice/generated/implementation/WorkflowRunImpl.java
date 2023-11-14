@@ -20,8 +20,8 @@ public final class WorkflowRunImpl implements WorkflowRun {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    WorkflowRunImpl(
-        WorkflowRunInner innerObject, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
+    WorkflowRunImpl(WorkflowRunInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

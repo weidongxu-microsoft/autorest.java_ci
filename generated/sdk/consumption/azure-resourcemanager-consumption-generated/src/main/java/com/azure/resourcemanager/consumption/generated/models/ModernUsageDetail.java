@@ -15,7 +15,9 @@ import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
-/** Modern usage detail. */
+/**
+ * Modern usage detail.
+ */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "kind")
 @JsonTypeName("modern")
 @Immutable
@@ -26,13 +28,15 @@ public final class ModernUsageDetail extends UsageDetailInner {
     @JsonProperty(value = "properties", required = true)
     private ModernUsageDetailProperties innerProperties = new ModernUsageDetailProperties();
 
-    /** Creates an instance of ModernUsageDetail class. */
+    /**
+     * Creates an instance of ModernUsageDetail class.
+     */
     public ModernUsageDetail() {
     }
 
     /**
      * Get the innerProperties property: Properties for modern usage details.
-     *
+     * 
      * @return the innerProperties value.
      */
     private ModernUsageDetailProperties innerProperties() {
@@ -41,7 +45,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
 
     /**
      * Get the billingAccountId property: Billing Account identifier.
-     *
+     * 
      * @return the billingAccountId value.
      */
     public String billingAccountId() {
@@ -50,7 +54,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
 
     /**
      * Get the effectivePrice property: Effective Price that's charged for the usage.
-     *
+     * 
      * @return the effectivePrice value.
      */
     public BigDecimal effectivePrice() {
@@ -59,7 +63,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
 
     /**
      * Get the pricingModel property: Identifier that indicates how the meter is priced.
-     *
+     * 
      * @return the pricingModel value.
      */
     public PricingModelType pricingModel() {
@@ -68,7 +72,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
 
     /**
      * Get the billingAccountName property: Name of the Billing Account.
-     *
+     * 
      * @return the billingAccountName value.
      */
     public String billingAccountName() {
@@ -77,7 +81,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
 
     /**
      * Get the billingPeriodStartDate property: Billing Period Start Date as in the invoice.
-     *
+     * 
      * @return the billingPeriodStartDate value.
      */
     public OffsetDateTime billingPeriodStartDate() {
@@ -86,7 +90,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
 
     /**
      * Get the billingPeriodEndDate property: Billing Period End Date as in the invoice.
-     *
+     * 
      * @return the billingPeriodEndDate value.
      */
     public OffsetDateTime billingPeriodEndDate() {
@@ -95,9 +99,9 @@ public final class ModernUsageDetail extends UsageDetailInner {
 
     /**
      * Get the billingProfileId property: Identifier for the billing profile that groups costs across invoices in the a
-     * singular billing currency across across the customers who have onboarded the Microsoft customer agreement and the
-     * customers in CSP who have made entitlement purchases like SaaS, Marketplace, RI, etc.
-     *
+     * singular billing currency across across the customers who have onboarded the Microsoft customer agreement and
+     * the customers in CSP who have made entitlement purchases like SaaS, Marketplace, RI, etc.
+     * 
      * @return the billingProfileId value.
      */
     public String billingProfileId() {
@@ -106,9 +110,9 @@ public final class ModernUsageDetail extends UsageDetailInner {
 
     /**
      * Get the billingProfileName property: Name of the billing profile that groups costs across invoices in the a
-     * singular billing currency across across the customers who have onboarded the Microsoft customer agreement and the
-     * customers in CSP who have made entitlement purchases like SaaS, Marketplace, RI, etc.
-     *
+     * singular billing currency across across the customers who have onboarded the Microsoft customer agreement and
+     * the customers in CSP who have made entitlement purchases like SaaS, Marketplace, RI, etc.
+     * 
      * @return the billingProfileName value.
      */
     public String billingProfileName() {
@@ -117,7 +121,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
 
     /**
      * Get the subscriptionGuid property: Unique Microsoft generated identifier for the Azure Subscription.
-     *
+     * 
      * @return the subscriptionGuid value.
      */
     public String subscriptionGuid() {
@@ -126,7 +130,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
 
     /**
      * Get the subscriptionName property: Name of the Azure Subscription.
-     *
+     * 
      * @return the subscriptionName value.
      */
     public String subscriptionName() {
@@ -135,7 +139,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
 
     /**
      * Get the date property: Date for the usage record.
-     *
+     * 
      * @return the date value.
      */
     public OffsetDateTime date() {
@@ -145,7 +149,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
     /**
      * Get the product property: Name of the product that has accrued charges by consumption or purchase as listed in
      * the invoice. Not available for Marketplace.
-     *
+     * 
      * @return the product value.
      */
     public String product() {
@@ -156,7 +160,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
      * Get the meterId property: The meter id (GUID). Not available for marketplace. For reserved instance this
      * represents the primary meter for which the reservation was purchased. For the actual VM Size for which the
      * reservation is purchased see productOrderName.
-     *
+     * 
      * @return the meterId value.
      */
     public UUID meterId() {
@@ -165,7 +169,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
 
     /**
      * Get the meterName property: Identifies the name of the meter against which consumption is measured.
-     *
+     * 
      * @return the meterName value.
      */
     public String meterName() {
@@ -175,7 +179,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
     /**
      * Get the meterRegion property: Identifies the location of the datacenter for certain services that are priced
      * based on datacenter location.
-     *
+     * 
      * @return the meterRegion value.
      */
     public String meterRegion() {
@@ -184,7 +188,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
 
     /**
      * Get the meterCategory property: Identifies the top-level service for the usage.
-     *
+     * 
      * @return the meterCategory value.
      */
     public String meterCategory() {
@@ -193,7 +197,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
 
     /**
      * Get the meterSubCategory property: Defines the type or sub-category of Azure service that can affect the rate.
-     *
+     * 
      * @return the meterSubCategory value.
      */
     public String meterSubCategory() {
@@ -203,7 +207,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
     /**
      * Get the serviceFamily property: List the service family for the product purchased or charged (Example: Storage ;
      * Compute).
-     *
+     * 
      * @return the serviceFamily value.
      */
     public String serviceFamily() {
@@ -213,7 +217,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
     /**
      * Get the quantity property: Measure the quantity purchased or consumed.The amount of the meter used during the
      * billing period.
-     *
+     * 
      * @return the quantity value.
      */
     public BigDecimal quantity() {
@@ -223,7 +227,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
     /**
      * Get the unitOfMeasure property: Identifies the Unit that the service is charged in. For example, GB, hours,
      * 10,000 s.
-     *
+     * 
      * @return the unitOfMeasure value.
      */
     public String unitOfMeasure() {
@@ -232,7 +236,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
 
     /**
      * Get the instanceName property: Instance Name.
-     *
+     * 
      * @return the instanceName value.
      */
     public String instanceName() {
@@ -241,7 +245,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
 
     /**
      * Get the costInUsd property: Estimated extendedCost or blended cost before tax in USD.
-     *
+     * 
      * @return the costInUsd value.
      */
     public BigDecimal costInUsd() {
@@ -250,7 +254,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
 
     /**
      * Get the unitPrice property: Unit Price is the price applicable to you. (your EA or other contract price).
-     *
+     * 
      * @return the unitPrice value.
      */
     public BigDecimal unitPrice() {
@@ -259,7 +263,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
 
     /**
      * Get the billingCurrencyCode property: The currency defining the billed cost.
-     *
+     * 
      * @return the billingCurrencyCode value.
      */
     public String billingCurrencyCode() {
@@ -268,7 +272,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
 
     /**
      * Get the resourceLocation property: Name of the resource location.
-     *
+     * 
      * @return the resourceLocation value.
      */
     public String resourceLocation() {
@@ -276,9 +280,9 @@ public final class ModernUsageDetail extends UsageDetailInner {
     }
 
     /**
-     * Get the consumedService property: Consumed service name. Name of the azure resource provider that emits the usage
-     * or was purchased. This value is not provided for marketplace usage.
-     *
+     * Get the consumedService property: Consumed service name. Name of the azure resource provider that emits the
+     * usage or was purchased. This value is not provided for marketplace usage.
+     * 
      * @return the consumedService value.
      */
     public String consumedService() {
@@ -287,7 +291,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
 
     /**
      * Get the serviceInfo1 property: Service-specific metadata.
-     *
+     * 
      * @return the serviceInfo1 value.
      */
     public String serviceInfo1() {
@@ -296,7 +300,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
 
     /**
      * Get the serviceInfo2 property: Legacy field with optional service-specific metadata.
-     *
+     * 
      * @return the serviceInfo2 value.
      */
     public String serviceInfo2() {
@@ -307,7 +311,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
      * Get the additionalInfo property: Additional details of this usage item. Use this field to get usage line item
      * specific details such as the actual VM Size (ServiceType) or the ratio in which the reservation discount is
      * applied.
-     *
+     * 
      * @return the additionalInfo value.
      */
     public String additionalInfo() {
@@ -315,9 +319,9 @@ public final class ModernUsageDetail extends UsageDetailInner {
     }
 
     /**
-     * Get the invoiceSectionId property: Identifier of the project that is being charged in the invoice. Not applicable
-     * for Microsoft Customer Agreements onboarded by partners.
-     *
+     * Get the invoiceSectionId property: Identifier of the project that is being charged in the invoice. Not
+     * applicable for Microsoft Customer Agreements onboarded by partners.
+     * 
      * @return the invoiceSectionId value.
      */
     public String invoiceSectionId() {
@@ -325,9 +329,9 @@ public final class ModernUsageDetail extends UsageDetailInner {
     }
 
     /**
-     * Get the invoiceSectionName property: Name of the project that is being charged in the invoice. Not applicable for
-     * Microsoft Customer Agreements onboarded by partners.
-     *
+     * Get the invoiceSectionName property: Name of the project that is being charged in the invoice. Not applicable
+     * for Microsoft Customer Agreements onboarded by partners.
+     * 
      * @return the invoiceSectionName value.
      */
     public String invoiceSectionName() {
@@ -337,7 +341,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
     /**
      * Get the costCenter property: The cost center of this department if it is a department and a cost center is
      * provided.
-     *
+     * 
      * @return the costCenter value.
      */
     public String costCenter() {
@@ -347,7 +351,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
     /**
      * Get the resourceGroup property: Name of the Azure resource group used for cohesive lifecycle management of
      * resources.
-     *
+     * 
      * @return the resourceGroup value.
      */
     public String resourceGroup() {
@@ -357,7 +361,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
     /**
      * Get the reservationId property: ARM resource id of the reservation. Only applies to records relevant to
      * reservations.
-     *
+     * 
      * @return the reservationId value.
      */
     public String reservationId() {
@@ -365,9 +369,9 @@ public final class ModernUsageDetail extends UsageDetailInner {
     }
 
     /**
-     * Get the reservationName property: User provided display name of the reservation. Last known name for a particular
-     * day is populated in the daily data. Only applies to records relevant to reservations.
-     *
+     * Get the reservationName property: User provided display name of the reservation. Last known name for a
+     * particular day is populated in the daily data. Only applies to records relevant to reservations.
+     * 
      * @return the reservationName value.
      */
     public String reservationName() {
@@ -377,7 +381,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
     /**
      * Get the productOrderId property: The identifier for the asset or Azure plan name that the subscription belongs
      * to. For example: Azure Plan. For reservations this is the Reservation Order ID.
-     *
+     * 
      * @return the productOrderId value.
      */
     public String productOrderId() {
@@ -386,7 +390,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
 
     /**
      * Get the productOrderName property: Product Order Name. For reservations this is the SKU that was purchased.
-     *
+     * 
      * @return the productOrderName value.
      */
     public String productOrderName() {
@@ -395,7 +399,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
 
     /**
      * Get the isAzureCreditEligible property: Determines if the cost is eligible to be paid for using Azure credits.
-     *
+     * 
      * @return the isAzureCreditEligible value.
      */
     public Boolean isAzureCreditEligible() {
@@ -403,10 +407,10 @@ public final class ModernUsageDetail extends UsageDetailInner {
     }
 
     /**
-     * Get the term property: Term (in months). Displays the term for the validity of the offer. For example. In case of
-     * reserved instances it displays 12 months for yearly term of reserved instance. For one time purchases or
+     * Get the term property: Term (in months). Displays the term for the validity of the offer. For example. In case
+     * of reserved instances it displays 12 months for yearly term of reserved instance. For one time purchases or
      * recurring purchases, the terms displays 1 month; This is not applicable for Azure consumption.
-     *
+     * 
      * @return the term value.
      */
     public String term() {
@@ -416,7 +420,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
     /**
      * Get the publisherName property: Name of the publisher of the service including Microsoft or Third Party
      * publishers.
-     *
+     * 
      * @return the publisherName value.
      */
     public String publisherName() {
@@ -426,7 +430,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
     /**
      * Get the publisherType property: Type of publisher that identifies if the publisher is first party, third party
      * reseller or third party agency.
-     *
+     * 
      * @return the publisherType value.
      */
     public String publisherType() {
@@ -436,7 +440,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
     /**
      * Get the chargeType property: Indicates a charge represents credits, usage, a Marketplace purchase, a reservation
      * fee, or a refund.
-     *
+     * 
      * @return the chargeType value.
      */
     public String chargeType() {
@@ -447,7 +451,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
      * Get the frequency property: Indicates how frequently this charge will occur. OneTime for purchases which only
      * happen once, Monthly for fees which recur every month, and UsageBased for charges based on how much a service is
      * used.
-     *
+     * 
      * @return the frequency value.
      */
     public String frequency() {
@@ -456,7 +460,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
 
     /**
      * Get the costInBillingCurrency property: ExtendedCost or blended cost before tax in billed currency.
-     *
+     * 
      * @return the costInBillingCurrency value.
      */
     public BigDecimal costInBillingCurrency() {
@@ -466,7 +470,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
     /**
      * Get the costInPricingCurrency property: ExtendedCost or blended cost before tax in pricing currency to correlate
      * with prices.
-     *
+     * 
      * @return the costInPricingCurrency value.
      */
     public BigDecimal costInPricingCurrency() {
@@ -475,7 +479,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
 
     /**
      * Get the exchangeRate property: Exchange rate used in conversion from pricing currency to billing currency.
-     *
+     * 
      * @return the exchangeRate value.
      */
     public String exchangeRate() {
@@ -485,7 +489,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
     /**
      * Get the exchangeRateDate property: Date on which exchange rate used in conversion from pricing currency to
      * billing currency.
-     *
+     * 
      * @return the exchangeRateDate value.
      */
     public OffsetDateTime exchangeRateDate() {
@@ -494,7 +498,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
 
     /**
      * Get the invoiceId property: Invoice ID as on the invoice where the specific transaction appears.
-     *
+     * 
      * @return the invoiceId value.
      */
     public String invoiceId() {
@@ -504,7 +508,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
     /**
      * Get the previousInvoiceId property: Reference to an original invoice there is a refund (negative cost). This is
      * populated only when there is a refund.
-     *
+     * 
      * @return the previousInvoiceId value.
      */
     public String previousInvoiceId() {
@@ -513,7 +517,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
 
     /**
      * Get the pricingCurrencyCode property: Pricing Billing Currency.
-     *
+     * 
      * @return the pricingCurrencyCode value.
      */
     public String pricingCurrencyCode() {
@@ -523,7 +527,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
     /**
      * Get the productIdentifier property: Identifier for the product that has accrued charges by consumption or
      * purchase . This is the concatenated key of productId and SkuId in partner center.
-     *
+     * 
      * @return the productIdentifier value.
      */
     public String productIdentifier() {
@@ -532,7 +536,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
 
     /**
      * Get the resourceLocationNormalized property: Resource Location Normalized.
-     *
+     * 
      * @return the resourceLocationNormalized value.
      */
     public String resourceLocationNormalized() {
@@ -542,7 +546,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
     /**
      * Get the servicePeriodStartDate property: Start date for the rating period when the service usage was rated for
      * charges. The prices for Azure services are determined for the rating period.
-     *
+     * 
      * @return the servicePeriodStartDate value.
      */
     public OffsetDateTime servicePeriodStartDate() {
@@ -552,7 +556,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
     /**
      * Get the servicePeriodEndDate property: End date for the period when the service usage was rated for charges. The
      * prices for Azure services are determined based on the rating period.
-     *
+     * 
      * @return the servicePeriodEndDate value.
      */
     public OffsetDateTime servicePeriodEndDate() {
@@ -561,7 +565,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
 
     /**
      * Get the customerTenantId property: Identifier of the customer's AAD tenant.
-     *
+     * 
      * @return the customerTenantId value.
      */
     public String customerTenantId() {
@@ -570,7 +574,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
 
     /**
      * Get the customerName property: Name of the customer's AAD tenant.
-     *
+     * 
      * @return the customerName value.
      */
     public String customerName() {
@@ -579,7 +583,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
 
     /**
      * Get the partnerTenantId property: Identifier for the partner's AAD tenant.
-     *
+     * 
      * @return the partnerTenantId value.
      */
     public String partnerTenantId() {
@@ -588,7 +592,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
 
     /**
      * Get the partnerName property: Name of the partner' AAD tenant.
-     *
+     * 
      * @return the partnerName value.
      */
     public String partnerName() {
@@ -597,7 +601,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
 
     /**
      * Get the resellerMpnId property: MPNId for the reseller associated with the subscription.
-     *
+     * 
      * @return the resellerMpnId value.
      */
     public String resellerMpnId() {
@@ -606,7 +610,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
 
     /**
      * Get the resellerName property: Reseller Name.
-     *
+     * 
      * @return the resellerName value.
      */
     public String resellerName() {
@@ -615,7 +619,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
 
     /**
      * Get the publisherId property: Publisher Id.
-     *
+     * 
      * @return the publisherId value.
      */
     public String publisherId() {
@@ -624,7 +628,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
 
     /**
      * Get the marketPrice property: Market Price that's charged for the usage.
-     *
+     * 
      * @return the marketPrice value.
      */
     public BigDecimal marketPrice() {
@@ -633,7 +637,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
 
     /**
      * Get the exchangeRatePricingToBilling property: Exchange Rate from pricing currency to billing currency.
-     *
+     * 
      * @return the exchangeRatePricingToBilling value.
      */
     public BigDecimal exchangeRatePricingToBilling() {
@@ -642,7 +646,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
 
     /**
      * Get the paygCostInBillingCurrency property: The amount of PayG cost before tax in billing currency.
-     *
+     * 
      * @return the paygCostInBillingCurrency value.
      */
     public BigDecimal paygCostInBillingCurrency() {
@@ -651,7 +655,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
 
     /**
      * Get the paygCostInUsd property: The amount of PayG cost before tax in US Dollar currency.
-     *
+     * 
      * @return the paygCostInUsd value.
      */
     public BigDecimal paygCostInUsd() {
@@ -661,7 +665,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
     /**
      * Get the partnerEarnedCreditRate property: Rate of discount applied if there is a partner earned credit (PEC)
      * based on partner admin link access.
-     *
+     * 
      * @return the partnerEarnedCreditRate value.
      */
     public BigDecimal partnerEarnedCreditRate() {
@@ -670,7 +674,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
 
     /**
      * Get the partnerEarnedCreditApplied property: Flag to indicate if partner earned credit has been applied or not.
-     *
+     * 
      * @return the partnerEarnedCreditApplied value.
      */
     public String partnerEarnedCreditApplied() {
@@ -679,7 +683,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
 
     /**
      * Get the payGPrice property: Retail price for the resource.
-     *
+     * 
      * @return the payGPrice value.
      */
     public BigDecimal payGPrice() {
@@ -688,7 +692,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
 
     /**
      * Get the benefitId property: Unique identifier for the applicable benefit.
-     *
+     * 
      * @return the benefitId value.
      */
     public String benefitId() {
@@ -697,7 +701,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
 
     /**
      * Get the benefitName property: Name of the applicable benefit.
-     *
+     * 
      * @return the benefitName value.
      */
     public String benefitName() {
@@ -707,7 +711,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
     /**
      * Get the provider property: Identifier for Product Category or Line Of Business, Ex - Azure, Microsoft 365, AWS
      * e.t.c.
-     *
+     * 
      * @return the provider value.
      */
     public String provider() {
@@ -716,7 +720,7 @@ public final class ModernUsageDetail extends UsageDetailInner {
 
     /**
      * Get the costAllocationRuleName property: Name for Cost Allocation Rule.
-     *
+     * 
      * @return the costAllocationRuleName value.
      */
     public String costAllocationRuleName() {
@@ -725,17 +729,15 @@ public final class ModernUsageDetail extends UsageDetailInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override
     public void validate() {
         super.validate();
         if (innerProperties() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property innerProperties in model ModernUsageDetail"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property innerProperties in model ModernUsageDetail"));
         } else {
             innerProperties().validate();
         }

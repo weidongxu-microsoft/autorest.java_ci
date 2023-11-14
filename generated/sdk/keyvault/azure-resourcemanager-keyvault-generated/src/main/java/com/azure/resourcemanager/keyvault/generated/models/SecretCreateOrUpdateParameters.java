@@ -10,7 +10,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
 
-/** Parameters for creating or updating a secret. */
+/**
+ * Parameters for creating or updating a secret.
+ */
 @Fluent
 public final class SecretCreateOrUpdateParameters {
     /*
@@ -26,13 +28,15 @@ public final class SecretCreateOrUpdateParameters {
     @JsonProperty(value = "properties", required = true)
     private SecretProperties properties;
 
-    /** Creates an instance of SecretCreateOrUpdateParameters class. */
+    /**
+     * Creates an instance of SecretCreateOrUpdateParameters class.
+     */
     public SecretCreateOrUpdateParameters() {
     }
 
     /**
      * Get the tags property: The tags that will be assigned to the secret.
-     *
+     * 
      * @return the tags value.
      */
     public Map<String, String> tags() {
@@ -41,7 +45,7 @@ public final class SecretCreateOrUpdateParameters {
 
     /**
      * Set the tags property: The tags that will be assigned to the secret.
-     *
+     * 
      * @param tags the tags value to set.
      * @return the SecretCreateOrUpdateParameters object itself.
      */
@@ -52,7 +56,7 @@ public final class SecretCreateOrUpdateParameters {
 
     /**
      * Get the properties property: Properties of the secret.
-     *
+     * 
      * @return the properties value.
      */
     public SecretProperties properties() {
@@ -61,7 +65,7 @@ public final class SecretCreateOrUpdateParameters {
 
     /**
      * Set the properties property: Properties of the secret.
-     *
+     * 
      * @param properties the properties value to set.
      * @return the SecretCreateOrUpdateParameters object itself.
      */
@@ -72,15 +76,13 @@ public final class SecretCreateOrUpdateParameters {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (properties() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property properties in model SecretCreateOrUpdateParameters"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property properties in model SecretCreateOrUpdateParameters"));
         } else {
             properties().validate();
         }

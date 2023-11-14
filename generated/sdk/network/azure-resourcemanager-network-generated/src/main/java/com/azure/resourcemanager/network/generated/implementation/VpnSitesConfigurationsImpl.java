@@ -17,8 +17,7 @@ public final class VpnSitesConfigurationsImpl implements VpnSitesConfigurations 
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public VpnSitesConfigurationsImpl(
-        VpnSitesConfigurationsClient innerClient,
+    public VpnSitesConfigurationsImpl(VpnSitesConfigurationsClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -28,8 +27,8 @@ public final class VpnSitesConfigurationsImpl implements VpnSitesConfigurations 
         this.serviceClient().download(resourceGroupName, virtualWanName, request);
     }
 
-    public void download(
-        String resourceGroupName, String virtualWanName, GetVpnSitesConfigurationRequest request, Context context) {
+    public void download(String resourceGroupName, String virtualWanName, GetVpnSitesConfigurationRequest request,
+        Context context) {
         this.serviceClient().download(resourceGroupName, virtualWanName, request, context);
     }
 

@@ -14,8 +14,8 @@ public final class StringListImpl implements StringList {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    StringListImpl(
-        StringListInner innerObject, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
+    StringListImpl(StringListInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

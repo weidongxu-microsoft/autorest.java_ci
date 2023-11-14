@@ -7,7 +7,9 @@ package com.azure.resourcemanager.policy.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Identity for the resource. */
+/**
+ * Identity for the resource.
+ */
 @Fluent
 public final class Identity {
     /*
@@ -28,13 +30,15 @@ public final class Identity {
     @JsonProperty(value = "type")
     private ResourceIdentityType type;
 
-    /** Creates an instance of Identity class. */
+    /**
+     * Creates an instance of Identity class.
+     */
     public Identity() {
     }
 
     /**
      * Get the principalId property: The principal ID of the resource identity.
-     *
+     * 
      * @return the principalId value.
      */
     public String principalId() {
@@ -43,7 +47,7 @@ public final class Identity {
 
     /**
      * Get the tenantId property: The tenant ID of the resource identity.
-     *
+     * 
      * @return the tenantId value.
      */
     public String tenantId() {
@@ -53,7 +57,7 @@ public final class Identity {
     /**
      * Get the type property: The identity type. This is the only required field when adding a system assigned identity
      * to a resource.
-     *
+     * 
      * @return the type value.
      */
     public ResourceIdentityType type() {
@@ -63,7 +67,7 @@ public final class Identity {
     /**
      * Set the type property: The identity type. This is the only required field when adding a system assigned identity
      * to a resource.
-     *
+     * 
      * @param type the type value to set.
      * @return the Identity object itself.
      */
@@ -74,7 +78,7 @@ public final class Identity {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -8,36 +8,38 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of LocationBasedCapabilitySets. */
+/**
+ * Resource collection API of LocationBasedCapabilitySets.
+ */
 public interface LocationBasedCapabilitySets {
     /**
      * Get capabilities at specified location in a given subscription.
-     *
+     * 
      * @param locationName The name of the location.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return capabilities at specified location in a given subscription as paginated response with {@link
-     *     PagedIterable}.
+     * @return capabilities at specified location in a given subscription as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<Capability> list(String locationName);
 
     /**
      * Get capabilities at specified location in a given subscription.
-     *
+     * 
      * @param locationName The name of the location.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return capabilities at specified location in a given subscription as paginated response with {@link
-     *     PagedIterable}.
+     * @return capabilities at specified location in a given subscription as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<Capability> list(String locationName, Context context);
 
     /**
      * Get capabilities at specified location in a given subscription.
-     *
+     * 
      * @param locationName The name of the location.
      * @param capabilitySetName Name of capability set.
      * @param context The context to associate with this operation.
@@ -50,7 +52,7 @@ public interface LocationBasedCapabilitySets {
 
     /**
      * Get capabilities at specified location in a given subscription.
-     *
+     * 
      * @param locationName The name of the location.
      * @param capabilitySetName Name of capability set.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

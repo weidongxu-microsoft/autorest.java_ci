@@ -7,11 +7,13 @@ package com.azure.resourcemanager.azurekusto.generated.models;
 import com.azure.resourcemanager.azurekusto.generated.fluent.models.DatabasePrincipalListResultInner;
 import java.util.List;
 
-/** An immutable client-side representation of DatabasePrincipalListResult. */
+/**
+ * An immutable client-side representation of DatabasePrincipalListResult.
+ */
 public interface DatabasePrincipalListResult {
     /**
      * Gets the value property: The list of Kusto database principals.
-     *
+     * 
      * @return the value value.
      */
     List<DatabasePrincipal> value();
@@ -19,7 +21,7 @@ public interface DatabasePrincipalListResult {
     /**
      * Gets the inner com.azure.resourcemanager.azurekusto.generated.fluent.models.DatabasePrincipalListResultInner
      * object.
-     *
+     * 
      * @return the inner object.
      */
     DatabasePrincipalListResultInner innerModel();

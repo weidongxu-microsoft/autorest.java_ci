@@ -9,7 +9,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
-/** Properties of the Streaming Locator. */
+/**
+ * Properties of the Streaming Locator.
+ */
 @Immutable
 public final class AssetStreamingLocator {
     /*
@@ -60,13 +62,15 @@ public final class AssetStreamingLocator {
     @JsonProperty(value = "defaultContentKeyPolicyName", access = JsonProperty.Access.WRITE_ONLY)
     private String defaultContentKeyPolicyName;
 
-    /** Creates an instance of AssetStreamingLocator class. */
+    /**
+     * Creates an instance of AssetStreamingLocator class.
+     */
     public AssetStreamingLocator() {
     }
 
     /**
      * Get the name property: Streaming Locator name.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -75,7 +79,7 @@ public final class AssetStreamingLocator {
 
     /**
      * Get the assetName property: Asset Name.
-     *
+     * 
      * @return the assetName value.
      */
     public String assetName() {
@@ -84,7 +88,7 @@ public final class AssetStreamingLocator {
 
     /**
      * Get the created property: The creation time of the Streaming Locator.
-     *
+     * 
      * @return the created value.
      */
     public OffsetDateTime created() {
@@ -93,7 +97,7 @@ public final class AssetStreamingLocator {
 
     /**
      * Get the startTime property: The start time of the Streaming Locator.
-     *
+     * 
      * @return the startTime value.
      */
     public OffsetDateTime startTime() {
@@ -102,7 +106,7 @@ public final class AssetStreamingLocator {
 
     /**
      * Get the endTime property: The end time of the Streaming Locator.
-     *
+     * 
      * @return the endTime value.
      */
     public OffsetDateTime endTime() {
@@ -111,7 +115,7 @@ public final class AssetStreamingLocator {
 
     /**
      * Get the streamingLocatorId property: StreamingLocatorId of the Streaming Locator.
-     *
+     * 
      * @return the streamingLocatorId value.
      */
     public UUID streamingLocatorId() {
@@ -120,7 +124,7 @@ public final class AssetStreamingLocator {
 
     /**
      * Get the streamingPolicyName property: Name of the Streaming Policy used by this Streaming Locator.
-     *
+     * 
      * @return the streamingPolicyName value.
      */
     public String streamingPolicyName() {
@@ -130,7 +134,7 @@ public final class AssetStreamingLocator {
     /**
      * Get the defaultContentKeyPolicyName property: Name of the default ContentKeyPolicy used by this Streaming
      * Locator.
-     *
+     * 
      * @return the defaultContentKeyPolicyName value.
      */
     public String defaultContentKeyPolicyName() {
@@ -139,7 +143,7 @@ public final class AssetStreamingLocator {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

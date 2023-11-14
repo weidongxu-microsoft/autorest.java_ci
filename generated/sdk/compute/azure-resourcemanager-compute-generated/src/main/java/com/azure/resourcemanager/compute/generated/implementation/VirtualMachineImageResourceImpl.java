@@ -15,8 +15,7 @@ public final class VirtualMachineImageResourceImpl implements VirtualMachineImag
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    VirtualMachineImageResourceImpl(
-        VirtualMachineImageResourceInner innerObject,
+    VirtualMachineImageResourceImpl(VirtualMachineImageResourceInner innerObject,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

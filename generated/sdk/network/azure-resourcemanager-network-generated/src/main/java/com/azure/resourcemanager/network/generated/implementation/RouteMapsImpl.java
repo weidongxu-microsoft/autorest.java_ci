@@ -21,21 +21,18 @@ public final class RouteMapsImpl implements RouteMaps {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public RouteMapsImpl(
-        RouteMapsClient innerClient, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    public RouteMapsImpl(RouteMapsClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<RouteMap> getWithResponse(
-        String resourceGroupName, String virtualHubName, String routeMapName, Context context) {
-        Response<RouteMapInner> inner =
-            this.serviceClient().getWithResponse(resourceGroupName, virtualHubName, routeMapName, context);
+    public Response<RouteMap> getWithResponse(String resourceGroupName, String virtualHubName, String routeMapName,
+        Context context) {
+        Response<RouteMapInner> inner
+            = this.serviceClient().getWithResponse(resourceGroupName, virtualHubName, routeMapName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new RouteMapImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -72,25 +69,18 @@ public final class RouteMapsImpl implements RouteMaps {
     public RouteMap getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
         if (virtualHubName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
         }
         String routeMapName = Utils.getValueFromIdByName(id, "routeMaps");
         if (routeMapName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'routeMaps'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'routeMaps'.", id)));
         }
         return this.getWithResponse(resourceGroupName, virtualHubName, routeMapName, Context.NONE).getValue();
     }
@@ -98,25 +88,18 @@ public final class RouteMapsImpl implements RouteMaps {
     public Response<RouteMap> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
         if (virtualHubName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
         }
         String routeMapName = Utils.getValueFromIdByName(id, "routeMaps");
         if (routeMapName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'routeMaps'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'routeMaps'.", id)));
         }
         return this.getWithResponse(resourceGroupName, virtualHubName, routeMapName, context);
     }
@@ -124,25 +107,18 @@ public final class RouteMapsImpl implements RouteMaps {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
         if (virtualHubName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
         }
         String routeMapName = Utils.getValueFromIdByName(id, "routeMaps");
         if (routeMapName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'routeMaps'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'routeMaps'.", id)));
         }
         this.delete(resourceGroupName, virtualHubName, routeMapName, Context.NONE);
     }
@@ -150,25 +126,18 @@ public final class RouteMapsImpl implements RouteMaps {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
         if (virtualHubName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
         }
         String routeMapName = Utils.getValueFromIdByName(id, "routeMaps");
         if (routeMapName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'routeMaps'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'routeMaps'.", id)));
         }
         this.delete(resourceGroupName, virtualHubName, routeMapName, context);
     }

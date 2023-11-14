@@ -8,32 +8,48 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** State of Kubernetes deployment. */
+/**
+ * State of Kubernetes deployment.
+ */
 public final class KubernetesState extends ExpandableStringEnum<KubernetesState> {
-    /** Static value Invalid for KubernetesState. */
+    /**
+     * Static value Invalid for KubernetesState.
+     */
     public static final KubernetesState INVALID = fromString("Invalid");
 
-    /** Static value Creating for KubernetesState. */
+    /**
+     * Static value Creating for KubernetesState.
+     */
     public static final KubernetesState CREATING = fromString("Creating");
 
-    /** Static value Created for KubernetesState. */
+    /**
+     * Static value Created for KubernetesState.
+     */
     public static final KubernetesState CREATED = fromString("Created");
 
-    /** Static value Updating for KubernetesState. */
+    /**
+     * Static value Updating for KubernetesState.
+     */
     public static final KubernetesState UPDATING = fromString("Updating");
 
-    /** Static value Reconfiguring for KubernetesState. */
+    /**
+     * Static value Reconfiguring for KubernetesState.
+     */
     public static final KubernetesState RECONFIGURING = fromString("Reconfiguring");
 
-    /** Static value Failed for KubernetesState. */
+    /**
+     * Static value Failed for KubernetesState.
+     */
     public static final KubernetesState FAILED = fromString("Failed");
 
-    /** Static value Deleting for KubernetesState. */
+    /**
+     * Static value Deleting for KubernetesState.
+     */
     public static final KubernetesState DELETING = fromString("Deleting");
 
     /**
      * Creates a new instance of KubernetesState value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -42,7 +58,7 @@ public final class KubernetesState extends ExpandableStringEnum<KubernetesState>
 
     /**
      * Creates or finds a KubernetesState from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding KubernetesState.
      */
@@ -53,7 +69,7 @@ public final class KubernetesState extends ExpandableStringEnum<KubernetesState>
 
     /**
      * Gets known KubernetesState values.
-     *
+     * 
      * @return known KubernetesState values.
      */
     public static Collection<KubernetesState> values() {

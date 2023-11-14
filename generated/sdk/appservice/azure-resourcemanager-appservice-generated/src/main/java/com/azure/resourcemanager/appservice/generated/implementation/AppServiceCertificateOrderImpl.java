@@ -184,25 +184,19 @@ public final class AppServiceCertificateOrderImpl
     }
 
     public AppServiceCertificateOrder create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getAppServiceCertificateOrders()
-                .createOrUpdate(resourceGroupName, certificateOrderName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getAppServiceCertificateOrders()
+            .createOrUpdate(resourceGroupName, certificateOrderName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public AppServiceCertificateOrder create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getAppServiceCertificateOrders()
-                .createOrUpdate(resourceGroupName, certificateOrderName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getAppServiceCertificateOrders()
+            .createOrUpdate(resourceGroupName, certificateOrderName, this.innerModel(), context);
         return this;
     }
 
-    AppServiceCertificateOrderImpl(
-        String name, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
+    AppServiceCertificateOrderImpl(String name,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = new AppServiceCertificateOrderInner();
         this.serviceManager = serviceManager;
         this.certificateOrderName = name;
@@ -214,29 +208,20 @@ public final class AppServiceCertificateOrderImpl
     }
 
     public AppServiceCertificateOrder apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getAppServiceCertificateOrders()
-                .updateWithResponse(
-                    resourceGroupName, certificateOrderName, updateCertificateDistinguishedName, Context.NONE)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getAppServiceCertificateOrders().updateWithResponse(resourceGroupName,
+                certificateOrderName, updateCertificateDistinguishedName, Context.NONE).getValue();
         return this;
     }
 
     public AppServiceCertificateOrder apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getAppServiceCertificateOrders()
-                .updateWithResponse(
-                    resourceGroupName, certificateOrderName, updateCertificateDistinguishedName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getAppServiceCertificateOrders()
+            .updateWithResponse(resourceGroupName, certificateOrderName, updateCertificateDistinguishedName, context)
+            .getValue();
         return this;
     }
 
-    AppServiceCertificateOrderImpl(
-        AppServiceCertificateOrderInner innerObject,
+    AppServiceCertificateOrderImpl(AppServiceCertificateOrderInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -245,55 +230,42 @@ public final class AppServiceCertificateOrderImpl
     }
 
     public AppServiceCertificateOrder refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getAppServiceCertificateOrders()
-                .getByResourceGroupWithResponse(resourceGroupName, certificateOrderName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getAppServiceCertificateOrders()
+            .getByResourceGroupWithResponse(resourceGroupName, certificateOrderName, Context.NONE).getValue();
         return this;
     }
 
     public AppServiceCertificateOrder refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getAppServiceCertificateOrders()
-                .getByResourceGroupWithResponse(resourceGroupName, certificateOrderName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getAppServiceCertificateOrders()
+            .getByResourceGroupWithResponse(resourceGroupName, certificateOrderName, context).getValue();
         return this;
     }
 
-    public Response<Void> reissueWithResponse(
-        ReissueCertificateOrderRequest reissueCertificateOrderRequest, Context context) {
-        return serviceManager
-            .appServiceCertificateOrders()
-            .reissueWithResponse(resourceGroupName, certificateOrderName, reissueCertificateOrderRequest, context);
+    public Response<Void> reissueWithResponse(ReissueCertificateOrderRequest reissueCertificateOrderRequest,
+        Context context) {
+        return serviceManager.appServiceCertificateOrders().reissueWithResponse(resourceGroupName, certificateOrderName,
+            reissueCertificateOrderRequest, context);
     }
 
     public void reissue(ReissueCertificateOrderRequest reissueCertificateOrderRequest) {
-        serviceManager
-            .appServiceCertificateOrders()
-            .reissue(resourceGroupName, certificateOrderName, reissueCertificateOrderRequest);
+        serviceManager.appServiceCertificateOrders().reissue(resourceGroupName, certificateOrderName,
+            reissueCertificateOrderRequest);
     }
 
-    public Response<Void> renewWithResponse(
-        RenewCertificateOrderRequest renewCertificateOrderRequest, Context context) {
-        return serviceManager
-            .appServiceCertificateOrders()
-            .renewWithResponse(resourceGroupName, certificateOrderName, renewCertificateOrderRequest, context);
+    public Response<Void> renewWithResponse(RenewCertificateOrderRequest renewCertificateOrderRequest,
+        Context context) {
+        return serviceManager.appServiceCertificateOrders().renewWithResponse(resourceGroupName, certificateOrderName,
+            renewCertificateOrderRequest, context);
     }
 
     public void renew(RenewCertificateOrderRequest renewCertificateOrderRequest) {
-        serviceManager
-            .appServiceCertificateOrders()
-            .renew(resourceGroupName, certificateOrderName, renewCertificateOrderRequest);
+        serviceManager.appServiceCertificateOrders().renew(resourceGroupName, certificateOrderName,
+            renewCertificateOrderRequest);
     }
 
     public Response<Void> resendEmailWithResponse(Context context) {
-        return serviceManager
-            .appServiceCertificateOrders()
-            .resendEmailWithResponse(resourceGroupName, certificateOrderName, context);
+        return serviceManager.appServiceCertificateOrders().resendEmailWithResponse(resourceGroupName,
+            certificateOrderName, context);
     }
 
     public void resendEmail() {
@@ -301,33 +273,28 @@ public final class AppServiceCertificateOrderImpl
     }
 
     public Response<Void> resendRequestEmailsWithResponse(NameIdentifierInner nameIdentifier, Context context) {
-        return serviceManager
-            .appServiceCertificateOrders()
-            .resendRequestEmailsWithResponse(resourceGroupName, certificateOrderName, nameIdentifier, context);
+        return serviceManager.appServiceCertificateOrders().resendRequestEmailsWithResponse(resourceGroupName,
+            certificateOrderName, nameIdentifier, context);
     }
 
     public void resendRequestEmails(NameIdentifierInner nameIdentifier) {
-        serviceManager
-            .appServiceCertificateOrders()
-            .resendRequestEmails(resourceGroupName, certificateOrderName, nameIdentifier);
+        serviceManager.appServiceCertificateOrders().resendRequestEmails(resourceGroupName, certificateOrderName,
+            nameIdentifier);
     }
 
     public Response<SiteSeal> retrieveSiteSealWithResponse(SiteSealRequest siteSealRequest, Context context) {
-        return serviceManager
-            .appServiceCertificateOrders()
-            .retrieveSiteSealWithResponse(resourceGroupName, certificateOrderName, siteSealRequest, context);
+        return serviceManager.appServiceCertificateOrders().retrieveSiteSealWithResponse(resourceGroupName,
+            certificateOrderName, siteSealRequest, context);
     }
 
     public SiteSeal retrieveSiteSeal(SiteSealRequest siteSealRequest) {
-        return serviceManager
-            .appServiceCertificateOrders()
-            .retrieveSiteSeal(resourceGroupName, certificateOrderName, siteSealRequest);
+        return serviceManager.appServiceCertificateOrders().retrieveSiteSeal(resourceGroupName, certificateOrderName,
+            siteSealRequest);
     }
 
     public Response<Void> verifyDomainOwnershipWithResponse(Context context) {
-        return serviceManager
-            .appServiceCertificateOrders()
-            .verifyDomainOwnershipWithResponse(resourceGroupName, certificateOrderName, context);
+        return serviceManager.appServiceCertificateOrders().verifyDomainOwnershipWithResponse(resourceGroupName,
+            certificateOrderName, context);
     }
 
     public void verifyDomainOwnership() {

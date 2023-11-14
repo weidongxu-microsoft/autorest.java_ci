@@ -12,8 +12,8 @@ public final class EventTypeImpl implements EventType {
 
     private final com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager;
 
-    EventTypeImpl(
-        EventTypeInner innerObject, com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager) {
+    EventTypeImpl(EventTypeInner innerObject,
+        com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

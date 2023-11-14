@@ -7,7 +7,9 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Update Specific attributes. */
+/**
+ * Update Specific attributes.
+ */
 @Fluent
 public final class UpdateDetails {
     /*
@@ -64,13 +66,15 @@ public final class UpdateDetails {
     @JsonProperty(value = "status")
     private UpdateStatus status;
 
-    /** Creates an instance of UpdateDetails class. */
+    /**
+     * Creates an instance of UpdateDetails class.
+     */
     public UpdateDetails() {
     }
 
     /**
      * Get the updateTitle property: Title of the Update.
-     *
+     * 
      * @return the updateTitle value.
      */
     public String updateTitle() {
@@ -79,7 +83,7 @@ public final class UpdateDetails {
 
     /**
      * Set the updateTitle property: Title of the Update.
-     *
+     * 
      * @param updateTitle the updateTitle value to set.
      * @return the UpdateDetails object itself.
      */
@@ -90,7 +94,7 @@ public final class UpdateDetails {
 
     /**
      * Get the updateSize property: Size of the update(In Bytes).
-     *
+     * 
      * @return the updateSize value.
      */
     public Double updateSize() {
@@ -99,7 +103,7 @@ public final class UpdateDetails {
 
     /**
      * Set the updateSize property: Size of the update(In Bytes).
-     *
+     * 
      * @param updateSize the updateSize value to set.
      * @return the UpdateDetails object itself.
      */
@@ -110,7 +114,7 @@ public final class UpdateDetails {
 
     /**
      * Get the updateType property: Type of the Update.
-     *
+     * 
      * @return the updateType value.
      */
     public UpdateType updateType() {
@@ -119,7 +123,7 @@ public final class UpdateDetails {
 
     /**
      * Set the updateType property: Type of the Update.
-     *
+     * 
      * @param updateType the updateType value to set.
      * @return the UpdateDetails object itself.
      */
@@ -130,7 +134,7 @@ public final class UpdateDetails {
 
     /**
      * Get the targetVersion property: Target Version number.
-     *
+     * 
      * @return the targetVersion value.
      */
     public String targetVersion() {
@@ -139,7 +143,7 @@ public final class UpdateDetails {
 
     /**
      * Set the targetVersion property: Target Version number.
-     *
+     * 
      * @param targetVersion the targetVersion value to set.
      * @return the UpdateDetails object itself.
      */
@@ -150,7 +154,7 @@ public final class UpdateDetails {
 
     /**
      * Get the friendlyVersionNumber property: Friendly Version Number.
-     *
+     * 
      * @return the friendlyVersionNumber value.
      */
     public String friendlyVersionNumber() {
@@ -159,7 +163,7 @@ public final class UpdateDetails {
 
     /**
      * Set the friendlyVersionNumber property: Friendly Version Number.
-     *
+     * 
      * @param friendlyVersionNumber the friendlyVersionNumber value to set.
      * @return the UpdateDetails object itself.
      */
@@ -170,7 +174,7 @@ public final class UpdateDetails {
 
     /**
      * Get the estimatedInstallTimeInMins property: Estimated Install Time for the update.
-     *
+     * 
      * @return the estimatedInstallTimeInMins value.
      */
     public Integer estimatedInstallTimeInMins() {
@@ -179,7 +183,7 @@ public final class UpdateDetails {
 
     /**
      * Set the estimatedInstallTimeInMins property: Estimated Install Time for the update.
-     *
+     * 
      * @param estimatedInstallTimeInMins the estimatedInstallTimeInMins value to set.
      * @return the UpdateDetails object itself.
      */
@@ -191,7 +195,7 @@ public final class UpdateDetails {
     /**
      * Get the rebootBehavior property: Indicates if updates are available and at least one of the updates needs a
      * reboot.
-     *
+     * 
      * @return the rebootBehavior value.
      */
     public InstallRebootBehavior rebootBehavior() {
@@ -201,7 +205,7 @@ public final class UpdateDetails {
     /**
      * Set the rebootBehavior property: Indicates if updates are available and at least one of the updates needs a
      * reboot.
-     *
+     * 
      * @param rebootBehavior the rebootBehavior value to set.
      * @return the UpdateDetails object itself.
      */
@@ -212,7 +216,7 @@ public final class UpdateDetails {
 
     /**
      * Get the installationImpact property: Impact of Installing an updateType.
-     *
+     * 
      * @return the installationImpact value.
      */
     public InstallationImpact installationImpact() {
@@ -221,7 +225,7 @@ public final class UpdateDetails {
 
     /**
      * Set the installationImpact property: Impact of Installing an updateType.
-     *
+     * 
      * @param installationImpact the installationImpact value to set.
      * @return the UpdateDetails object itself.
      */
@@ -232,7 +236,7 @@ public final class UpdateDetails {
 
     /**
      * Get the status property: Status of the update.
-     *
+     * 
      * @return the status value.
      */
     public UpdateStatus status() {
@@ -241,7 +245,7 @@ public final class UpdateDetails {
 
     /**
      * Set the status property: Status of the update.
-     *
+     * 
      * @param status the status value to set.
      * @return the UpdateDetails object itself.
      */
@@ -252,7 +256,7 @@ public final class UpdateDetails {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

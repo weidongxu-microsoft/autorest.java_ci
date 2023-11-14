@@ -7,7 +7,9 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** HTTP Live Streaming (HLS) packing setting for the live output. */
+/**
+ * HTTP Live Streaming (HLS) packing setting for the live output.
+ */
 @Fluent
 public final class Hls {
     /*
@@ -17,14 +19,16 @@ public final class Hls {
     @JsonProperty(value = "fragmentsPerTsSegment")
     private Integer fragmentsPerTsSegment;
 
-    /** Creates an instance of Hls class. */
+    /**
+     * Creates an instance of Hls class.
+     */
     public Hls() {
     }
 
     /**
-     * Get the fragmentsPerTsSegment property: The number of fragments in an HTTP Live Streaming (HLS) TS segment in the
-     * output of the live event. This value does not affect the packing ratio for HLS CMAF output.
-     *
+     * Get the fragmentsPerTsSegment property: The number of fragments in an HTTP Live Streaming (HLS) TS segment in
+     * the output of the live event. This value does not affect the packing ratio for HLS CMAF output.
+     * 
      * @return the fragmentsPerTsSegment value.
      */
     public Integer fragmentsPerTsSegment() {
@@ -32,9 +36,9 @@ public final class Hls {
     }
 
     /**
-     * Set the fragmentsPerTsSegment property: The number of fragments in an HTTP Live Streaming (HLS) TS segment in the
-     * output of the live event. This value does not affect the packing ratio for HLS CMAF output.
-     *
+     * Set the fragmentsPerTsSegment property: The number of fragments in an HTTP Live Streaming (HLS) TS segment in
+     * the output of the live event. This value does not affect the packing ratio for HLS CMAF output.
+     * 
      * @param fragmentsPerTsSegment the fragmentsPerTsSegment value to set.
      * @return the Hls object itself.
      */
@@ -45,7 +49,7 @@ public final class Hls {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

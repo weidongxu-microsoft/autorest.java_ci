@@ -21,8 +21,8 @@ public final class ProvidersImpl implements Providers {
 
     private final com.azure.resourcemanager.resources.generated.ResourceManager serviceManager;
 
-    public ProvidersImpl(
-        ProvidersClient innerClient, com.azure.resourcemanager.resources.generated.ResourceManager serviceManager) {
+    public ProvidersImpl(ProvidersClient innerClient,
+        com.azure.resourcemanager.resources.generated.ResourceManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -30,10 +30,7 @@ public final class ProvidersImpl implements Providers {
     public Response<Provider> unregisterWithResponse(String resourceProviderNamespace, Context context) {
         Response<ProviderInner> inner = this.serviceClient().unregisterWithResponse(resourceProviderNamespace, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ProviderImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -49,11 +46,10 @@ public final class ProvidersImpl implements Providers {
         }
     }
 
-    public Response<Void> registerAtManagementGroupScopeWithResponse(
-        String resourceProviderNamespace, String groupId, Context context) {
-        return this
-            .serviceClient()
-            .registerAtManagementGroupScopeWithResponse(resourceProviderNamespace, groupId, context);
+    public Response<Void> registerAtManagementGroupScopeWithResponse(String resourceProviderNamespace, String groupId,
+        Context context) {
+        return this.serviceClient().registerAtManagementGroupScopeWithResponse(resourceProviderNamespace, groupId,
+            context);
     }
 
     public void registerAtManagementGroupScope(String resourceProviderNamespace, String groupId) {
@@ -63,10 +59,7 @@ public final class ProvidersImpl implements Providers {
     public Response<Provider> registerWithResponse(String resourceProviderNamespace, Context context) {
         Response<ProviderInner> inner = this.serviceClient().registerWithResponse(resourceProviderNamespace, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ProviderImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -103,13 +96,10 @@ public final class ProvidersImpl implements Providers {
     }
 
     public Response<Provider> getWithResponse(String resourceProviderNamespace, String expand, Context context) {
-        Response<ProviderInner> inner =
-            this.serviceClient().getWithResponse(resourceProviderNamespace, expand, context);
+        Response<ProviderInner> inner
+            = this.serviceClient().getWithResponse(resourceProviderNamespace, expand, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ProviderImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -125,15 +115,12 @@ public final class ProvidersImpl implements Providers {
         }
     }
 
-    public Response<Provider> getAtTenantScopeWithResponse(
-        String resourceProviderNamespace, String expand, Context context) {
-        Response<ProviderInner> inner =
-            this.serviceClient().getAtTenantScopeWithResponse(resourceProviderNamespace, expand, context);
+    public Response<Provider> getAtTenantScopeWithResponse(String resourceProviderNamespace, String expand,
+        Context context) {
+        Response<ProviderInner> inner
+            = this.serviceClient().getAtTenantScopeWithResponse(resourceProviderNamespace, expand, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ProviderImpl(inner.getValue(), this.manager()));
         } else {
             return null;

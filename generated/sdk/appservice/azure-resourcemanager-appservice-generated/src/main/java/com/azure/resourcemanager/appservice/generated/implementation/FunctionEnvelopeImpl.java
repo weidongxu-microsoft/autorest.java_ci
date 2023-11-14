@@ -18,8 +18,7 @@ public final class FunctionEnvelopeImpl implements FunctionEnvelope, FunctionEnv
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    FunctionEnvelopeImpl(
-        FunctionEnvelopeInner innerObject,
+    FunctionEnvelopeImpl(FunctionEnvelopeInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -119,20 +118,14 @@ public final class FunctionEnvelopeImpl implements FunctionEnvelope, FunctionEnv
     }
 
     public FunctionEnvelope create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApps()
-                .createFunction(resourceGroupName, name, functionName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getWebApps().createFunction(resourceGroupName, name,
+            functionName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public FunctionEnvelope create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApps()
-                .createFunction(resourceGroupName, name, functionName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getWebApps().createFunction(resourceGroupName, name,
+            functionName, this.innerModel(), context);
         return this;
     }
 
@@ -143,22 +136,14 @@ public final class FunctionEnvelopeImpl implements FunctionEnvelope, FunctionEnv
     }
 
     public FunctionEnvelope refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApps()
-                .getFunctionWithResponse(resourceGroupName, name, functionName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getWebApps()
+            .getFunctionWithResponse(resourceGroupName, name, functionName, Context.NONE).getValue();
         return this;
     }
 
     public FunctionEnvelope refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApps()
-                .getFunctionWithResponse(resourceGroupName, name, functionName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getWebApps()
+            .getFunctionWithResponse(resourceGroupName, name, functionName, context).getValue();
         return this;
     }
 

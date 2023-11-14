@@ -16,8 +16,7 @@ public final class TriggeredWebJobImpl implements TriggeredWebJob {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    TriggeredWebJobImpl(
-        TriggeredWebJobInner innerObject,
+    TriggeredWebJobImpl(TriggeredWebJobInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

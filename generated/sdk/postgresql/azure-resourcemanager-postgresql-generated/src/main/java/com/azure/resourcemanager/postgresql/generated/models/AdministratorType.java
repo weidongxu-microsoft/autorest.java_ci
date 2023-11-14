@@ -7,12 +7,18 @@ package com.azure.resourcemanager.postgresql.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** The type of administrator. */
+/**
+ * The type of administrator.
+ */
 public enum AdministratorType {
-    /** Enum value ActiveDirectory. */
+    /**
+     * Enum value ActiveDirectory.
+     */
     ACTIVE_DIRECTORY("ActiveDirectory");
 
-    /** The actual serialized value for a AdministratorType instance. */
+    /**
+     * The actual serialized value for a AdministratorType instance.
+     */
     private final String value;
 
     AdministratorType(String value) {
@@ -21,7 +27,7 @@ public enum AdministratorType {
 
     /**
      * Parses a serialized value to a AdministratorType instance.
-     *
+     * 
      * @param value the serialized value to parse.
      * @return the parsed AdministratorType object, or null if unable to parse.
      */
@@ -39,7 +45,9 @@ public enum AdministratorType {
         return null;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @JsonValue
     @Override
     public String toString() {

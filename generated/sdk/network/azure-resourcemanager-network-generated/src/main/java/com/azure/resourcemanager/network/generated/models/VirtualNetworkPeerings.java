@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of VirtualNetworkPeerings. */
+/**
+ * Resource collection API of VirtualNetworkPeerings.
+ */
 public interface VirtualNetworkPeerings {
     /**
      * Deletes the specified virtual network peering.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param virtualNetworkPeeringName The name of the virtual network peering.
@@ -24,7 +26,7 @@ public interface VirtualNetworkPeerings {
 
     /**
      * Deletes the specified virtual network peering.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param virtualNetworkPeeringName The name of the virtual network peering.
@@ -37,7 +39,7 @@ public interface VirtualNetworkPeerings {
 
     /**
      * Gets the specified virtual network peering.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param virtualNetworkPeeringName The name of the virtual network peering.
@@ -47,12 +49,12 @@ public interface VirtualNetworkPeerings {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified virtual network peering along with {@link Response}.
      */
-    Response<VirtualNetworkPeering> getWithResponse(
-        String resourceGroupName, String virtualNetworkName, String virtualNetworkPeeringName, Context context);
+    Response<VirtualNetworkPeering> getWithResponse(String resourceGroupName, String virtualNetworkName,
+        String virtualNetworkPeeringName, Context context);
 
     /**
      * Gets the specified virtual network peering.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param virtualNetworkPeeringName The name of the virtual network peering.
@@ -65,7 +67,7 @@ public interface VirtualNetworkPeerings {
 
     /**
      * Gets all virtual network peerings in a virtual network.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -77,7 +79,7 @@ public interface VirtualNetworkPeerings {
 
     /**
      * Gets all virtual network peerings in a virtual network.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param context The context to associate with this operation.
@@ -90,7 +92,7 @@ public interface VirtualNetworkPeerings {
 
     /**
      * Gets the specified virtual network peering.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -101,7 +103,7 @@ public interface VirtualNetworkPeerings {
 
     /**
      * Gets the specified virtual network peering.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -113,7 +115,7 @@ public interface VirtualNetworkPeerings {
 
     /**
      * Deletes the specified virtual network peering.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -123,7 +125,7 @@ public interface VirtualNetworkPeerings {
 
     /**
      * Deletes the specified virtual network peering.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -134,7 +136,7 @@ public interface VirtualNetworkPeerings {
 
     /**
      * Begins definition for a new VirtualNetworkPeering resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new VirtualNetworkPeering definition.
      */

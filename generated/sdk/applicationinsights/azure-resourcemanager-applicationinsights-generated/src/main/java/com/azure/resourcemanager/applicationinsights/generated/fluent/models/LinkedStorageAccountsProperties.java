@@ -7,7 +7,9 @@ package com.azure.resourcemanager.applicationinsights.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** An Application Insights component linked storage account. */
+/**
+ * An Application Insights component linked storage account.
+ */
 @Fluent
 public final class LinkedStorageAccountsProperties {
     /*
@@ -16,13 +18,15 @@ public final class LinkedStorageAccountsProperties {
     @JsonProperty(value = "linkedStorageAccount")
     private String linkedStorageAccount;
 
-    /** Creates an instance of LinkedStorageAccountsProperties class. */
+    /**
+     * Creates an instance of LinkedStorageAccountsProperties class.
+     */
     public LinkedStorageAccountsProperties() {
     }
 
     /**
      * Get the linkedStorageAccount property: Linked storage account resource ID.
-     *
+     * 
      * @return the linkedStorageAccount value.
      */
     public String linkedStorageAccount() {
@@ -31,7 +35,7 @@ public final class LinkedStorageAccountsProperties {
 
     /**
      * Set the linkedStorageAccount property: Linked storage account resource ID.
-     *
+     * 
      * @param linkedStorageAccount the linkedStorageAccount value to set.
      * @return the LinkedStorageAccountsProperties object itself.
      */
@@ -42,7 +46,7 @@ public final class LinkedStorageAccountsProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -9,7 +9,9 @@ import com.azure.resourcemanager.costmanagement.generated.models.QueryColumn;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The QueryProperties model. */
+/**
+ * The QueryProperties model.
+ */
 @Fluent
 public final class QueryProperties {
     /*
@@ -30,13 +32,15 @@ public final class QueryProperties {
     @JsonProperty(value = "rows")
     private List<List<Object>> rows;
 
-    /** Creates an instance of QueryProperties class. */
+    /**
+     * Creates an instance of QueryProperties class.
+     */
     public QueryProperties() {
     }
 
     /**
      * Get the nextLink property: The link (url) to the next page of results.
-     *
+     * 
      * @return the nextLink value.
      */
     public String nextLink() {
@@ -45,7 +49,7 @@ public final class QueryProperties {
 
     /**
      * Set the nextLink property: The link (url) to the next page of results.
-     *
+     * 
      * @param nextLink the nextLink value to set.
      * @return the QueryProperties object itself.
      */
@@ -56,7 +60,7 @@ public final class QueryProperties {
 
     /**
      * Get the columns property: Array of columns.
-     *
+     * 
      * @return the columns value.
      */
     public List<QueryColumn> columns() {
@@ -65,7 +69,7 @@ public final class QueryProperties {
 
     /**
      * Set the columns property: Array of columns.
-     *
+     * 
      * @param columns the columns value to set.
      * @return the QueryProperties object itself.
      */
@@ -76,7 +80,7 @@ public final class QueryProperties {
 
     /**
      * Get the rows property: Array of rows.
-     *
+     * 
      * @return the rows value.
      */
     public List<List<Object>> rows() {
@@ -85,7 +89,7 @@ public final class QueryProperties {
 
     /**
      * Set the rows property: Array of rows.
-     *
+     * 
      * @param rows the rows value to set.
      * @return the QueryProperties object itself.
      */
@@ -96,7 +100,7 @@ public final class QueryProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

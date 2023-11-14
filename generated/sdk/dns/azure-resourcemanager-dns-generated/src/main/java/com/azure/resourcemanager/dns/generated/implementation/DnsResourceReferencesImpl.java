@@ -21,21 +21,18 @@ public final class DnsResourceReferencesImpl implements DnsResourceReferences {
 
     private final com.azure.resourcemanager.dns.generated.DnsManager serviceManager;
 
-    public DnsResourceReferencesImpl(
-        DnsResourceReferencesClient innerClient, com.azure.resourcemanager.dns.generated.DnsManager serviceManager) {
+    public DnsResourceReferencesImpl(DnsResourceReferencesClient innerClient,
+        com.azure.resourcemanager.dns.generated.DnsManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<DnsResourceReferenceResult> getByTargetResourcesWithResponse(
-        DnsResourceReferenceRequest parameters, Context context) {
-        Response<DnsResourceReferenceResultInner> inner =
-            this.serviceClient().getByTargetResourcesWithResponse(parameters, context);
+    public Response<DnsResourceReferenceResult> getByTargetResourcesWithResponse(DnsResourceReferenceRequest parameters,
+        Context context) {
+        Response<DnsResourceReferenceResultInner> inner
+            = this.serviceClient().getByTargetResourcesWithResponse(parameters, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DnsResourceReferenceResultImpl(inner.getValue(), this.manager()));
         } else {
             return null;

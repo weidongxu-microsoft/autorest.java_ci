@@ -8,7 +8,9 @@ import com.azure.core.annotation.Immutable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The service metric specifications. */
+/**
+ * The service metric specifications.
+ */
 @Immutable
 public final class ServiceSpecification {
     /*
@@ -23,13 +25,15 @@ public final class ServiceSpecification {
     @JsonProperty(value = "metricSpecifications", access = JsonProperty.Access.WRITE_ONLY)
     private List<MetricSpecification> metricSpecifications;
 
-    /** Creates an instance of ServiceSpecification class. */
+    /**
+     * Creates an instance of ServiceSpecification class.
+     */
     public ServiceSpecification() {
     }
 
     /**
      * Get the logSpecifications property: List of log specifications.
-     *
+     * 
      * @return the logSpecifications value.
      */
     public List<LogSpecification> logSpecifications() {
@@ -38,7 +42,7 @@ public final class ServiceSpecification {
 
     /**
      * Get the metricSpecifications property: List of metric specifications.
-     *
+     * 
      * @return the metricSpecifications value.
      */
     public List<MetricSpecification> metricSpecifications() {
@@ -47,7 +51,7 @@ public final class ServiceSpecification {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

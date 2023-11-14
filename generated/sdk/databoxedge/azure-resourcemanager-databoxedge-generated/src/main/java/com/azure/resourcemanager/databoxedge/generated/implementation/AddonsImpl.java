@@ -21,8 +21,8 @@ public final class AddonsImpl implements Addons {
 
     private final com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager;
 
-    public AddonsImpl(
-        AddonsClient innerClient, com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
+    public AddonsImpl(AddonsClient innerClient,
+        com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -32,22 +32,19 @@ public final class AddonsImpl implements Addons {
         return Utils.mapPage(inner, inner1 -> new AddonImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<Addon> listByRole(
-        String deviceName, String roleName, String resourceGroupName, Context context) {
-        PagedIterable<AddonInner> inner =
-            this.serviceClient().listByRole(deviceName, roleName, resourceGroupName, context);
+    public PagedIterable<Addon> listByRole(String deviceName, String roleName, String resourceGroupName,
+        Context context) {
+        PagedIterable<AddonInner> inner
+            = this.serviceClient().listByRole(deviceName, roleName, resourceGroupName, context);
         return Utils.mapPage(inner, inner1 -> new AddonImpl(inner1, this.manager()));
     }
 
-    public Response<Addon> getWithResponse(
-        String deviceName, String roleName, String addonName, String resourceGroupName, Context context) {
-        Response<AddonInner> inner =
-            this.serviceClient().getWithResponse(deviceName, roleName, addonName, resourceGroupName, context);
+    public Response<Addon> getWithResponse(String deviceName, String roleName, String addonName,
+        String resourceGroupName, Context context) {
+        Response<AddonInner> inner
+            = this.serviceClient().getWithResponse(deviceName, roleName, addonName, resourceGroupName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new AddonImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -63,10 +60,10 @@ public final class AddonsImpl implements Addons {
         }
     }
 
-    public Addon createOrUpdate(
-        String deviceName, String roleName, String addonName, String resourceGroupName, AddonInner addon) {
-        AddonInner inner =
-            this.serviceClient().createOrUpdate(deviceName, roleName, addonName, resourceGroupName, addon);
+    public Addon createOrUpdate(String deviceName, String roleName, String addonName, String resourceGroupName,
+        AddonInner addon) {
+        AddonInner inner
+            = this.serviceClient().createOrUpdate(deviceName, roleName, addonName, resourceGroupName, addon);
         if (inner != null) {
             return new AddonImpl(inner, this.manager());
         } else {
@@ -74,15 +71,10 @@ public final class AddonsImpl implements Addons {
         }
     }
 
-    public Addon createOrUpdate(
-        String deviceName,
-        String roleName,
-        String addonName,
-        String resourceGroupName,
-        AddonInner addon,
-        Context context) {
-        AddonInner inner =
-            this.serviceClient().createOrUpdate(deviceName, roleName, addonName, resourceGroupName, addon, context);
+    public Addon createOrUpdate(String deviceName, String roleName, String addonName, String resourceGroupName,
+        AddonInner addon, Context context) {
+        AddonInner inner
+            = this.serviceClient().createOrUpdate(deviceName, roleName, addonName, resourceGroupName, addon, context);
         if (inner != null) {
             return new AddonImpl(inner, this.manager());
         } else {
@@ -94,8 +86,8 @@ public final class AddonsImpl implements Addons {
         this.serviceClient().delete(deviceName, roleName, addonName, resourceGroupName);
     }
 
-    public void delete(
-        String deviceName, String roleName, String addonName, String resourceGroupName, Context context) {
+    public void delete(String deviceName, String roleName, String addonName, String resourceGroupName,
+        Context context) {
         this.serviceClient().delete(deviceName, roleName, addonName, resourceGroupName, context);
     }
 

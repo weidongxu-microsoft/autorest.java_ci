@@ -12,7 +12,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** Arc Addon. */
+/**
+ * Arc Addon.
+ */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "kind")
 @JsonTypeName("ArcForKubernetes")
 @Fluent
@@ -23,13 +25,15 @@ public final class ArcAddon extends AddonInner {
     @JsonProperty(value = "properties", required = true)
     private ArcAddonProperties innerProperties = new ArcAddonProperties();
 
-    /** Creates an instance of ArcAddon class. */
+    /**
+     * Creates an instance of ArcAddon class.
+     */
     public ArcAddon() {
     }
 
     /**
      * Get the innerProperties property: Properties specific to Arc addon.
-     *
+     * 
      * @return the innerProperties value.
      */
     private ArcAddonProperties innerProperties() {
@@ -38,7 +42,7 @@ public final class ArcAddon extends AddonInner {
 
     /**
      * Get the subscriptionId property: Arc resource subscription Id.
-     *
+     * 
      * @return the subscriptionId value.
      */
     public String subscriptionId() {
@@ -47,7 +51,7 @@ public final class ArcAddon extends AddonInner {
 
     /**
      * Set the subscriptionId property: Arc resource subscription Id.
-     *
+     * 
      * @param subscriptionId the subscriptionId value to set.
      * @return the ArcAddon object itself.
      */
@@ -61,7 +65,7 @@ public final class ArcAddon extends AddonInner {
 
     /**
      * Get the resourceGroupName property: Arc resource group name.
-     *
+     * 
      * @return the resourceGroupName value.
      */
     public String resourceGroupName() {
@@ -70,7 +74,7 @@ public final class ArcAddon extends AddonInner {
 
     /**
      * Set the resourceGroupName property: Arc resource group name.
-     *
+     * 
      * @param resourceGroupName the resourceGroupName value to set.
      * @return the ArcAddon object itself.
      */
@@ -84,7 +88,7 @@ public final class ArcAddon extends AddonInner {
 
     /**
      * Get the resourceName property: Arc resource Name.
-     *
+     * 
      * @return the resourceName value.
      */
     public String resourceName() {
@@ -93,7 +97,7 @@ public final class ArcAddon extends AddonInner {
 
     /**
      * Set the resourceName property: Arc resource Name.
-     *
+     * 
      * @param resourceName the resourceName value to set.
      * @return the ArcAddon object itself.
      */
@@ -107,7 +111,7 @@ public final class ArcAddon extends AddonInner {
 
     /**
      * Get the resourceLocation property: Arc resource location.
-     *
+     * 
      * @return the resourceLocation value.
      */
     public String resourceLocation() {
@@ -116,7 +120,7 @@ public final class ArcAddon extends AddonInner {
 
     /**
      * Set the resourceLocation property: Arc resource location.
-     *
+     * 
      * @param resourceLocation the resourceLocation value to set.
      * @return the ArcAddon object itself.
      */
@@ -130,7 +134,7 @@ public final class ArcAddon extends AddonInner {
 
     /**
      * Get the version property: Arc resource version.
-     *
+     * 
      * @return the version value.
      */
     public String version() {
@@ -139,7 +143,7 @@ public final class ArcAddon extends AddonInner {
 
     /**
      * Get the hostPlatform property: Host OS supported by the Arc addon.
-     *
+     * 
      * @return the hostPlatform value.
      */
     public PlatformType hostPlatform() {
@@ -148,7 +152,7 @@ public final class ArcAddon extends AddonInner {
 
     /**
      * Get the hostPlatformType property: Platform where the runtime is hosted.
-     *
+     * 
      * @return the hostPlatformType value.
      */
     public HostPlatformType hostPlatformType() {
@@ -157,7 +161,7 @@ public final class ArcAddon extends AddonInner {
 
     /**
      * Get the provisioningState property: Addon Provisioning State.
-     *
+     * 
      * @return the provisioningState value.
      */
     public AddonState provisioningState() {
@@ -166,16 +170,15 @@ public final class ArcAddon extends AddonInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override
     public void validate() {
         super.validate();
         if (innerProperties() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property innerProperties in model ArcAddon"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property innerProperties in model ArcAddon"));
         } else {
             innerProperties().validate();
         }

@@ -21,10 +21,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public final class WebApplicationFirewallPolicyImpl
-    implements WebApplicationFirewallPolicy,
-        WebApplicationFirewallPolicy.Definition,
-        WebApplicationFirewallPolicy.Update {
+public final class WebApplicationFirewallPolicyImpl implements WebApplicationFirewallPolicy,
+    WebApplicationFirewallPolicy.Definition, WebApplicationFirewallPolicy.Update {
     private WebApplicationFirewallPolicyInner innerObject;
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
@@ -74,12 +72,8 @@ public final class WebApplicationFirewallPolicyImpl
     public List<ApplicationGateway> applicationGateways() {
         List<ApplicationGatewayInner> inner = this.innerModel().applicationGateways();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new ApplicationGatewayImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new ApplicationGatewayImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -145,27 +139,19 @@ public final class WebApplicationFirewallPolicyImpl
     }
 
     public WebApplicationFirewallPolicy create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApplicationFirewallPolicies()
-                .createOrUpdateWithResponse(resourceGroupName, policyName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getWebApplicationFirewallPolicies()
+            .createOrUpdateWithResponse(resourceGroupName, policyName, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public WebApplicationFirewallPolicy create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApplicationFirewallPolicies()
-                .createOrUpdateWithResponse(resourceGroupName, policyName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getWebApplicationFirewallPolicies()
+            .createOrUpdateWithResponse(resourceGroupName, policyName, this.innerModel(), context).getValue();
         return this;
     }
 
-    WebApplicationFirewallPolicyImpl(
-        String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    WebApplicationFirewallPolicyImpl(String name,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new WebApplicationFirewallPolicyInner();
         this.serviceManager = serviceManager;
         this.policyName = name;
@@ -176,52 +162,35 @@ public final class WebApplicationFirewallPolicyImpl
     }
 
     public WebApplicationFirewallPolicy apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApplicationFirewallPolicies()
-                .createOrUpdateWithResponse(resourceGroupName, policyName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getWebApplicationFirewallPolicies()
+            .createOrUpdateWithResponse(resourceGroupName, policyName, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public WebApplicationFirewallPolicy apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApplicationFirewallPolicies()
-                .createOrUpdateWithResponse(resourceGroupName, policyName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getWebApplicationFirewallPolicies()
+            .createOrUpdateWithResponse(resourceGroupName, policyName, this.innerModel(), context).getValue();
         return this;
     }
 
-    WebApplicationFirewallPolicyImpl(
-        WebApplicationFirewallPolicyInner innerObject,
+    WebApplicationFirewallPolicyImpl(WebApplicationFirewallPolicyInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.policyName =
-            Utils.getValueFromIdByName(innerObject.id(), "ApplicationGatewayWebApplicationFirewallPolicies");
+        this.policyName
+            = Utils.getValueFromIdByName(innerObject.id(), "ApplicationGatewayWebApplicationFirewallPolicies");
     }
 
     public WebApplicationFirewallPolicy refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApplicationFirewallPolicies()
-                .getByResourceGroupWithResponse(resourceGroupName, policyName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getWebApplicationFirewallPolicies()
+            .getByResourceGroupWithResponse(resourceGroupName, policyName, Context.NONE).getValue();
         return this;
     }
 
     public WebApplicationFirewallPolicy refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApplicationFirewallPolicies()
-                .getByResourceGroupWithResponse(resourceGroupName, policyName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getWebApplicationFirewallPolicies()
+            .getByResourceGroupWithResponse(resourceGroupName, policyName, context).getValue();
         return this;
     }
 

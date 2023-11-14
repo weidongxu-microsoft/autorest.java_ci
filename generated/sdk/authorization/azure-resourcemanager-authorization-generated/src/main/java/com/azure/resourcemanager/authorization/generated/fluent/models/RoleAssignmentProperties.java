@@ -9,7 +9,9 @@ import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.authorization.generated.models.PrincipalType;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Role assignment properties. */
+/**
+ * Role assignment properties.
+ */
 @Fluent
 public final class RoleAssignmentProperties {
     /*
@@ -37,13 +39,15 @@ public final class RoleAssignmentProperties {
     @JsonProperty(value = "canDelegate")
     private Boolean canDelegate;
 
-    /** Creates an instance of RoleAssignmentProperties class. */
+    /**
+     * Creates an instance of RoleAssignmentProperties class.
+     */
     public RoleAssignmentProperties() {
     }
 
     /**
      * Get the roleDefinitionId property: The role definition ID used in the role assignment.
-     *
+     * 
      * @return the roleDefinitionId value.
      */
     public String roleDefinitionId() {
@@ -52,7 +56,7 @@ public final class RoleAssignmentProperties {
 
     /**
      * Set the roleDefinitionId property: The role definition ID used in the role assignment.
-     *
+     * 
      * @param roleDefinitionId the roleDefinitionId value to set.
      * @return the RoleAssignmentProperties object itself.
      */
@@ -64,7 +68,7 @@ public final class RoleAssignmentProperties {
     /**
      * Get the principalId property: The principal ID assigned to the role. This maps to the ID inside the Active
      * Directory. It can point to a user, service principal, or security group.
-     *
+     * 
      * @return the principalId value.
      */
     public String principalId() {
@@ -74,7 +78,7 @@ public final class RoleAssignmentProperties {
     /**
      * Set the principalId property: The principal ID assigned to the role. This maps to the ID inside the Active
      * Directory. It can point to a user, service principal, or security group.
-     *
+     * 
      * @param principalId the principalId value to set.
      * @return the RoleAssignmentProperties object itself.
      */
@@ -85,7 +89,7 @@ public final class RoleAssignmentProperties {
 
     /**
      * Get the principalType property: The principal type of the assigned principal ID.
-     *
+     * 
      * @return the principalType value.
      */
     public PrincipalType principalType() {
@@ -94,7 +98,7 @@ public final class RoleAssignmentProperties {
 
     /**
      * Set the principalType property: The principal type of the assigned principal ID.
-     *
+     * 
      * @param principalType the principalType value to set.
      * @return the RoleAssignmentProperties object itself.
      */
@@ -105,7 +109,7 @@ public final class RoleAssignmentProperties {
 
     /**
      * Get the canDelegate property: The delegation flag used for creating a role assignment.
-     *
+     * 
      * @return the canDelegate value.
      */
     public Boolean canDelegate() {
@@ -114,7 +118,7 @@ public final class RoleAssignmentProperties {
 
     /**
      * Set the canDelegate property: The delegation flag used for creating a role assignment.
-     *
+     * 
      * @param canDelegate the canDelegate value to set.
      * @return the RoleAssignmentProperties object itself.
      */
@@ -125,21 +129,17 @@ public final class RoleAssignmentProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (roleDefinitionId() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property roleDefinitionId in model RoleAssignmentProperties"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property roleDefinitionId in model RoleAssignmentProperties"));
         }
         if (principalId() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property principalId in model RoleAssignmentProperties"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property principalId in model RoleAssignmentProperties"));
         }
     }
 

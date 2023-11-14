@@ -22,8 +22,7 @@ public final class SharedGalleryImagesImpl implements SharedGalleryImages {
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    public SharedGalleryImagesImpl(
-        SharedGalleryImagesClient innerClient,
+    public SharedGalleryImagesImpl(SharedGalleryImagesClient innerClient,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -34,22 +33,19 @@ public final class SharedGalleryImagesImpl implements SharedGalleryImages {
         return Utils.mapPage(inner, inner1 -> new SharedGalleryImageImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<SharedGalleryImage> list(
-        String location, String galleryUniqueName, SharedToValues sharedTo, Context context) {
-        PagedIterable<SharedGalleryImageInner> inner =
-            this.serviceClient().list(location, galleryUniqueName, sharedTo, context);
+    public PagedIterable<SharedGalleryImage> list(String location, String galleryUniqueName, SharedToValues sharedTo,
+        Context context) {
+        PagedIterable<SharedGalleryImageInner> inner
+            = this.serviceClient().list(location, galleryUniqueName, sharedTo, context);
         return Utils.mapPage(inner, inner1 -> new SharedGalleryImageImpl(inner1, this.manager()));
     }
 
-    public Response<SharedGalleryImage> getWithResponse(
-        String location, String galleryUniqueName, String galleryImageName, Context context) {
-        Response<SharedGalleryImageInner> inner =
-            this.serviceClient().getWithResponse(location, galleryUniqueName, galleryImageName, context);
+    public Response<SharedGalleryImage> getWithResponse(String location, String galleryUniqueName,
+        String galleryImageName, Context context) {
+        Response<SharedGalleryImageInner> inner
+            = this.serviceClient().getWithResponse(location, galleryUniqueName, galleryImageName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new SharedGalleryImageImpl(inner.getValue(), this.manager()));
         } else {
             return null;

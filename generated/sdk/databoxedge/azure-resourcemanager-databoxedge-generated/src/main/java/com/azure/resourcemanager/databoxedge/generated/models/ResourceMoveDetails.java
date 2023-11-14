@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
-/** Fields for tracking resource move. */
+/**
+ * Fields for tracking resource move.
+ */
 @Fluent
 public final class ResourceMoveDetails {
     /*
@@ -23,13 +25,15 @@ public final class ResourceMoveDetails {
     @JsonProperty(value = "operationInProgressLockTimeoutInUTC")
     private OffsetDateTime operationInProgressLockTimeoutInUtc;
 
-    /** Creates an instance of ResourceMoveDetails class. */
+    /**
+     * Creates an instance of ResourceMoveDetails class.
+     */
     public ResourceMoveDetails() {
     }
 
     /**
      * Get the operationInProgress property: Denotes whether move operation is in progress.
-     *
+     * 
      * @return the operationInProgress value.
      */
     public ResourceMoveStatus operationInProgress() {
@@ -38,7 +42,7 @@ public final class ResourceMoveDetails {
 
     /**
      * Set the operationInProgress property: Denotes whether move operation is in progress.
-     *
+     * 
      * @param operationInProgress the operationInProgress value to set.
      * @return the ResourceMoveDetails object itself.
      */
@@ -49,7 +53,7 @@ public final class ResourceMoveDetails {
 
     /**
      * Get the operationInProgressLockTimeoutInUtc property: Denotes the timeout of the operation to finish.
-     *
+     * 
      * @return the operationInProgressLockTimeoutInUtc value.
      */
     public OffsetDateTime operationInProgressLockTimeoutInUtc() {
@@ -58,19 +62,19 @@ public final class ResourceMoveDetails {
 
     /**
      * Set the operationInProgressLockTimeoutInUtc property: Denotes the timeout of the operation to finish.
-     *
+     * 
      * @param operationInProgressLockTimeoutInUtc the operationInProgressLockTimeoutInUtc value to set.
      * @return the ResourceMoveDetails object itself.
      */
-    public ResourceMoveDetails withOperationInProgressLockTimeoutInUtc(
-        OffsetDateTime operationInProgressLockTimeoutInUtc) {
+    public ResourceMoveDetails
+        withOperationInProgressLockTimeoutInUtc(OffsetDateTime operationInProgressLockTimeoutInUtc) {
         this.operationInProgressLockTimeoutInUtc = operationInProgressLockTimeoutInUtc;
         return this;
     }
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

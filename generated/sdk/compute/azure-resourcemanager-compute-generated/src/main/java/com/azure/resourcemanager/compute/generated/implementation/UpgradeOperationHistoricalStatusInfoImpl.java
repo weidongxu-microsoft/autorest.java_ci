@@ -13,8 +13,7 @@ public final class UpgradeOperationHistoricalStatusInfoImpl implements UpgradeOp
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    UpgradeOperationHistoricalStatusInfoImpl(
-        UpgradeOperationHistoricalStatusInfoInner innerObject,
+    UpgradeOperationHistoricalStatusInfoImpl(UpgradeOperationHistoricalStatusInfoInner innerObject,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

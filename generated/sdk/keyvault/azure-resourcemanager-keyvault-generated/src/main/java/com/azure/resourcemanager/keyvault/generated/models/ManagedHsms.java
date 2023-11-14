@@ -8,42 +8,44 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of ManagedHsms. */
+/**
+ * Resource collection API of ManagedHsms.
+ */
 public interface ManagedHsms {
     /**
      * Deletes the specified managed HSM Pool.
-     *
+     * 
      * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
      * @param name The name of the managed HSM Pool to delete.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteByResourceGroup(String resourceGroupName, String name);
 
     /**
      * Deletes the specified managed HSM Pool.
-     *
+     * 
      * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
      * @param name The name of the managed HSM Pool to delete.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void delete(String resourceGroupName, String name, Context context);
 
     /**
      * Gets the specified managed HSM Pool.
-     *
+     * 
      * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
      * @param name The name of the managed HSM Pool.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified managed HSM Pool along with {@link Response}.
      */
@@ -51,12 +53,12 @@ public interface ManagedHsms {
 
     /**
      * Gets the specified managed HSM Pool.
-     *
+     * 
      * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
      * @param name The name of the managed HSM Pool.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified managed HSM Pool.
      */
@@ -65,11 +67,11 @@ public interface ManagedHsms {
     /**
      * The List operation gets information about the managed HSM Pools associated with the subscription and within the
      * specified resource group.
-     *
+     * 
      * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return list of managed HSM Pools as paginated response with {@link PagedIterable}.
      */
@@ -78,13 +80,13 @@ public interface ManagedHsms {
     /**
      * The List operation gets information about the managed HSM Pools associated with the subscription and within the
      * specified resource group.
-     *
+     * 
      * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
      * @param top Maximum number of results to return.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return list of managed HSM Pools as paginated response with {@link PagedIterable}.
      */
@@ -92,9 +94,9 @@ public interface ManagedHsms {
 
     /**
      * The List operation gets information about the managed HSM Pools associated with the subscription.
-     *
+     * 
      * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return list of managed HSM Pools as paginated response with {@link PagedIterable}.
      */
@@ -102,12 +104,12 @@ public interface ManagedHsms {
 
     /**
      * The List operation gets information about the managed HSM Pools associated with the subscription.
-     *
+     * 
      * @param top Maximum number of results to return.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return list of managed HSM Pools as paginated response with {@link PagedIterable}.
      */
@@ -115,9 +117,9 @@ public interface ManagedHsms {
 
     /**
      * The List operation gets information about the deleted managed HSMs associated with the subscription.
-     *
+     * 
      * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return list of deleted managed HSM Pools as paginated response with {@link PagedIterable}.
      */
@@ -125,11 +127,11 @@ public interface ManagedHsms {
 
     /**
      * The List operation gets information about the deleted managed HSMs associated with the subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return list of deleted managed HSM Pools as paginated response with {@link PagedIterable}.
      */
@@ -137,13 +139,13 @@ public interface ManagedHsms {
 
     /**
      * Gets the specified deleted managed HSM.
-     *
+     * 
      * @param name The name of the deleted managed HSM.
      * @param location The location of the deleted managed HSM.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified deleted managed HSM along with {@link Response}.
      */
@@ -151,12 +153,12 @@ public interface ManagedHsms {
 
     /**
      * Gets the specified deleted managed HSM.
-     *
+     * 
      * @param name The name of the deleted managed HSM.
      * @param location The location of the deleted managed HSM.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified deleted managed HSM.
      */
@@ -164,32 +166,32 @@ public interface ManagedHsms {
 
     /**
      * Permanently deletes the specified managed HSM.
-     *
+     * 
      * @param name The name of the soft-deleted managed HSM.
      * @param location The location of the soft-deleted managed HSM.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void purgeDeleted(String name, String location);
 
     /**
      * Permanently deletes the specified managed HSM.
-     *
+     * 
      * @param name The name of the soft-deleted managed HSM.
      * @param location The location of the soft-deleted managed HSM.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void purgeDeleted(String name, String location, Context context);
 
     /**
      * Checks that the managed hsm name is valid and is not already in use.
-     *
+     * 
      * @param mhsmName The name of the managed hsm.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -197,12 +199,12 @@ public interface ManagedHsms {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the CheckMhsmNameAvailability operation response along with {@link Response}.
      */
-    Response<CheckMhsmNameAvailabilityResult> checkMhsmNameAvailabilityWithResponse(
-        CheckMhsmNameAvailabilityParameters mhsmName, Context context);
+    Response<CheckMhsmNameAvailabilityResult>
+        checkMhsmNameAvailabilityWithResponse(CheckMhsmNameAvailabilityParameters mhsmName, Context context);
 
     /**
      * Checks that the managed hsm name is valid and is not already in use.
-     *
+     * 
      * @param mhsmName The name of the managed hsm.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -213,11 +215,11 @@ public interface ManagedHsms {
 
     /**
      * Gets the specified managed HSM Pool.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified managed HSM Pool along with {@link Response}.
      */
@@ -225,12 +227,12 @@ public interface ManagedHsms {
 
     /**
      * Gets the specified managed HSM Pool.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified managed HSM Pool along with {@link Response}.
      */
@@ -238,30 +240,30 @@ public interface ManagedHsms {
 
     /**
      * Deletes the specified managed HSM Pool.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteById(String id);
 
     /**
      * Deletes the specified managed HSM Pool.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteByIdWithResponse(String id, Context context);
 
     /**
      * Begins definition for a new ManagedHsm resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new ManagedHsm definition.
      */

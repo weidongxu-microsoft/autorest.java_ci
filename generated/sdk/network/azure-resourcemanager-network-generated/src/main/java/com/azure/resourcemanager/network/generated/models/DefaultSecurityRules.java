@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of DefaultSecurityRules. */
+/**
+ * Resource collection API of DefaultSecurityRules.
+ */
 public interface DefaultSecurityRules {
     /**
      * Gets all default security rules in a network security group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkSecurityGroupName The name of the network security group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -24,7 +26,7 @@ public interface DefaultSecurityRules {
 
     /**
      * Gets all default security rules in a network security group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkSecurityGroupName The name of the network security group.
      * @param context The context to associate with this operation.
@@ -37,7 +39,7 @@ public interface DefaultSecurityRules {
 
     /**
      * Get the specified default network security rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkSecurityGroupName The name of the network security group.
      * @param defaultSecurityRuleName The name of the default security rule.
@@ -47,12 +49,12 @@ public interface DefaultSecurityRules {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified default network security rule along with {@link Response}.
      */
-    Response<SecurityRule> getWithResponse(
-        String resourceGroupName, String networkSecurityGroupName, String defaultSecurityRuleName, Context context);
+    Response<SecurityRule> getWithResponse(String resourceGroupName, String networkSecurityGroupName,
+        String defaultSecurityRuleName, Context context);
 
     /**
      * Get the specified default network security rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkSecurityGroupName The name of the network security group.
      * @param defaultSecurityRuleName The name of the default security rule.

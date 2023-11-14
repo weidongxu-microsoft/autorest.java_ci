@@ -14,13 +14,15 @@ import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ContainerAppInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SecretsCollectionInner;
 
-/** An instance of this class provides access to all the operations defined in ContainerAppsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in ContainerAppsClient.
+ */
 public interface ContainerAppsClient {
     /**
      * Get the Container Apps in a given subscription.
-     *
+     * 
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the Container Apps in a given subscription as paginated response with {@link PagedIterable}.
      */
@@ -29,11 +31,11 @@ public interface ContainerAppsClient {
 
     /**
      * Get the Container Apps in a given subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the Container Apps in a given subscription as paginated response with {@link PagedIterable}.
      */
@@ -42,11 +44,11 @@ public interface ContainerAppsClient {
 
     /**
      * Get the Container Apps in a given resource group.
-     *
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the Container Apps in a given resource group as paginated response with {@link PagedIterable}.
      */
@@ -55,12 +57,12 @@ public interface ContainerAppsClient {
 
     /**
      * Get the Container Apps in a given resource group.
-     *
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the Container Apps in a given resource group as paginated response with {@link PagedIterable}.
      */
@@ -69,15 +71,15 @@ public interface ContainerAppsClient {
 
     /**
      * Get the properties of a Container App.
-     *
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
-     *     status code 404.
+     * status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the properties of a Container App along with {@link Response}.
      */
@@ -86,14 +88,14 @@ public interface ContainerAppsClient {
 
     /**
      * Get the properties of a Container App.
-     *
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server on
-     *     status code 404.
+     * status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the properties of a Container App.
      */
@@ -102,52 +104,52 @@ public interface ContainerAppsClient {
 
     /**
      * Create or update a Container App.
-     *
-     * <p>Description for Create or update a Container App.
-     *
+     * 
+     * Description for Create or update a Container App.
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
      * @param containerAppEnvelope Container App.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of container App.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<ContainerAppInner>, ContainerAppInner> beginCreateOrUpdate(
-        String resourceGroupName, String name, ContainerAppInner containerAppEnvelope);
+    SyncPoller<PollResult<ContainerAppInner>, ContainerAppInner> beginCreateOrUpdate(String resourceGroupName,
+        String name, ContainerAppInner containerAppEnvelope);
 
     /**
      * Create or update a Container App.
-     *
-     * <p>Description for Create or update a Container App.
-     *
+     * 
+     * Description for Create or update a Container App.
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
      * @param containerAppEnvelope Container App.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of container App.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<ContainerAppInner>, ContainerAppInner> beginCreateOrUpdate(
-        String resourceGroupName, String name, ContainerAppInner containerAppEnvelope, Context context);
+    SyncPoller<PollResult<ContainerAppInner>, ContainerAppInner> beginCreateOrUpdate(String resourceGroupName,
+        String name, ContainerAppInner containerAppEnvelope, Context context);
 
     /**
      * Create or update a Container App.
-     *
-     * <p>Description for Create or update a Container App.
-     *
+     * 
+     * Description for Create or update a Container App.
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
      * @param containerAppEnvelope Container App.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return container App.
      */
@@ -156,33 +158,33 @@ public interface ContainerAppsClient {
 
     /**
      * Create or update a Container App.
-     *
-     * <p>Description for Create or update a Container App.
-     *
+     * 
+     * Description for Create or update a Container App.
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
      * @param containerAppEnvelope Container App.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return container App.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ContainerAppInner createOrUpdate(
-        String resourceGroupName, String name, ContainerAppInner containerAppEnvelope, Context context);
+    ContainerAppInner createOrUpdate(String resourceGroupName, String name, ContainerAppInner containerAppEnvelope,
+        Context context);
 
     /**
      * Delete a Container App.
-     *
-     * <p>Description for Delete a Container App.
-     *
+     * 
+     * Description for Delete a Container App.
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
@@ -191,15 +193,15 @@ public interface ContainerAppsClient {
 
     /**
      * Delete a Container App.
-     *
-     * <p>Description for Delete a Container App.
-     *
+     * 
+     * Description for Delete a Container App.
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
@@ -208,14 +210,14 @@ public interface ContainerAppsClient {
 
     /**
      * Delete a Container App.
-     *
-     * <p>Description for Delete a Container App.
-     *
+     * 
+     * Description for Delete a Container App.
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
@@ -223,15 +225,15 @@ public interface ContainerAppsClient {
 
     /**
      * Delete a Container App.
-     *
-     * <p>Description for Delete a Container App.
-     *
+     * 
+     * Description for Delete a Container App.
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
@@ -239,12 +241,12 @@ public interface ContainerAppsClient {
 
     /**
      * List secrets for a container app.
-     *
+     * 
      * @param name Name of the Container App.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return container App Secrets Collection ARM resource along with {@link Response}.
      */
@@ -253,11 +255,11 @@ public interface ContainerAppsClient {
 
     /**
      * List secrets for a container app.
-     *
+     * 
      * @param name Name of the Container App.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return container App Secrets Collection ARM resource.
      */

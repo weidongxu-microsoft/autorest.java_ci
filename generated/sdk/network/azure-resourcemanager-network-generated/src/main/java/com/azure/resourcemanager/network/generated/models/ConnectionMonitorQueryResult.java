@@ -7,18 +7,20 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.resourcemanager.network.generated.fluent.models.ConnectionMonitorQueryResultInner;
 import java.util.List;
 
-/** An immutable client-side representation of ConnectionMonitorQueryResult. */
+/**
+ * An immutable client-side representation of ConnectionMonitorQueryResult.
+ */
 public interface ConnectionMonitorQueryResult {
     /**
      * Gets the sourceStatus property: Status of connection monitor source.
-     *
+     * 
      * @return the sourceStatus value.
      */
     ConnectionMonitorSourceStatus sourceStatus();
 
     /**
      * Gets the states property: Information about connection states.
-     *
+     * 
      * @return the states value.
      */
     List<ConnectionStateSnapshot> states();
@@ -26,7 +28,7 @@ public interface ConnectionMonitorQueryResult {
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.ConnectionMonitorQueryResultInner
      * object.
-     *
+     * 
      * @return the inner object.
      */
     ConnectionMonitorQueryResultInner innerModel();

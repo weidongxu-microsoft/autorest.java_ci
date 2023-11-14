@@ -16,8 +16,7 @@ public final class VirtualHubRouteTableV2Impl implements VirtualHubRouteTableV2 
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    VirtualHubRouteTableV2Impl(
-        VirtualHubRouteTableV2Inner innerObject,
+    VirtualHubRouteTableV2Impl(VirtualHubRouteTableV2Inner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

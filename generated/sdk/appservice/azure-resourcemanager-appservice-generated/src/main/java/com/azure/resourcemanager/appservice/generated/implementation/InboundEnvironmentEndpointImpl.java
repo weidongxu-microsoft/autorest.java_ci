@@ -14,8 +14,7 @@ public final class InboundEnvironmentEndpointImpl implements InboundEnvironmentE
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    InboundEnvironmentEndpointImpl(
-        InboundEnvironmentEndpointInner innerObject,
+    InboundEnvironmentEndpointImpl(InboundEnvironmentEndpointInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

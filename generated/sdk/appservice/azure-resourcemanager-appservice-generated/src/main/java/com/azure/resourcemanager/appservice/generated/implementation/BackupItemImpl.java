@@ -17,8 +17,8 @@ public final class BackupItemImpl implements BackupItem {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    BackupItemImpl(
-        BackupItemInner innerObject, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
+    BackupItemImpl(BackupItemInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -11,7 +11,9 @@ import com.azure.resourcemanager.eventhubs.generated.models.ProvisioningStateDR;
 import com.azure.resourcemanager.eventhubs.generated.models.RoleDisasterRecovery;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Single item in List or Get Alias(Disaster Recovery configuration) operation. */
+/**
+ * Single item in List or Get Alias(Disaster Recovery configuration) operation.
+ */
 @Fluent
 public final class ArmDisasterRecoveryInner extends ProxyResource {
     /*
@@ -32,14 +34,16 @@ public final class ArmDisasterRecoveryInner extends ProxyResource {
     @JsonProperty(value = "location", access = JsonProperty.Access.WRITE_ONLY)
     private String location;
 
-    /** Creates an instance of ArmDisasterRecoveryInner class. */
+    /**
+     * Creates an instance of ArmDisasterRecoveryInner class.
+     */
     public ArmDisasterRecoveryInner() {
     }
 
     /**
      * Get the innerProperties property: Properties required to the Create Or Update Alias(Disaster Recovery
      * configurations).
-     *
+     * 
      * @return the innerProperties value.
      */
     private ArmDisasterRecoveryProperties innerProperties() {
@@ -48,7 +52,7 @@ public final class ArmDisasterRecoveryInner extends ProxyResource {
 
     /**
      * Get the systemData property: The system meta data relating to this resource.
-     *
+     * 
      * @return the systemData value.
      */
     public SystemData systemData() {
@@ -57,7 +61,7 @@ public final class ArmDisasterRecoveryInner extends ProxyResource {
 
     /**
      * Get the location property: The geo-location where the resource lives.
-     *
+     * 
      * @return the location value.
      */
     public String location() {
@@ -67,7 +71,7 @@ public final class ArmDisasterRecoveryInner extends ProxyResource {
     /**
      * Get the provisioningState property: Provisioning state of the Alias(Disaster Recovery configuration) - possible
      * values 'Accepted' or 'Succeeded' or 'Failed'.
-     *
+     * 
      * @return the provisioningState value.
      */
     public ProvisioningStateDR provisioningState() {
@@ -77,7 +81,7 @@ public final class ArmDisasterRecoveryInner extends ProxyResource {
     /**
      * Get the partnerNamespace property: ARM Id of the Primary/Secondary eventhub namespace name, which is part of GEO
      * DR pairing.
-     *
+     * 
      * @return the partnerNamespace value.
      */
     public String partnerNamespace() {
@@ -87,7 +91,7 @@ public final class ArmDisasterRecoveryInner extends ProxyResource {
     /**
      * Set the partnerNamespace property: ARM Id of the Primary/Secondary eventhub namespace name, which is part of GEO
      * DR pairing.
-     *
+     * 
      * @param partnerNamespace the partnerNamespace value to set.
      * @return the ArmDisasterRecoveryInner object itself.
      */
@@ -101,7 +105,7 @@ public final class ArmDisasterRecoveryInner extends ProxyResource {
 
     /**
      * Get the alternateName property: Alternate name specified when alias and namespace names are same.
-     *
+     * 
      * @return the alternateName value.
      */
     public String alternateName() {
@@ -110,7 +114,7 @@ public final class ArmDisasterRecoveryInner extends ProxyResource {
 
     /**
      * Set the alternateName property: Alternate name specified when alias and namespace names are same.
-     *
+     * 
      * @param alternateName the alternateName value to set.
      * @return the ArmDisasterRecoveryInner object itself.
      */
@@ -125,7 +129,7 @@ public final class ArmDisasterRecoveryInner extends ProxyResource {
     /**
      * Get the role property: role of namespace in GEO DR - possible values 'Primary' or 'PrimaryNotReplicating' or
      * 'Secondary'.
-     *
+     * 
      * @return the role value.
      */
     public RoleDisasterRecovery role() {
@@ -134,7 +138,7 @@ public final class ArmDisasterRecoveryInner extends ProxyResource {
 
     /**
      * Get the pendingReplicationOperationsCount property: Number of entities pending to be replicated.
-     *
+     * 
      * @return the pendingReplicationOperationsCount value.
      */
     public Long pendingReplicationOperationsCount() {
@@ -143,7 +147,7 @@ public final class ArmDisasterRecoveryInner extends ProxyResource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

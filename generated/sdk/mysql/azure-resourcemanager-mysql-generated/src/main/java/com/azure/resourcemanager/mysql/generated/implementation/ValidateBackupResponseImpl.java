@@ -12,8 +12,7 @@ public final class ValidateBackupResponseImpl implements ValidateBackupResponse 
 
     private final com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager;
 
-    ValidateBackupResponseImpl(
-        ValidateBackupResponseInner innerObject,
+    ValidateBackupResponseImpl(ValidateBackupResponseInner innerObject,
         com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

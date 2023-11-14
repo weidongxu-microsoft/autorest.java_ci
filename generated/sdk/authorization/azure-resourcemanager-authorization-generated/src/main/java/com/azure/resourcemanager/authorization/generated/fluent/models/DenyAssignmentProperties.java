@@ -10,7 +10,9 @@ import com.azure.resourcemanager.authorization.generated.models.Principal;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Deny assignment properties. */
+/**
+ * Deny assignment properties.
+ */
 @Fluent
 public final class DenyAssignmentProperties {
     /*
@@ -61,13 +63,15 @@ public final class DenyAssignmentProperties {
     @JsonProperty(value = "isSystemProtected")
     private Boolean isSystemProtected;
 
-    /** Creates an instance of DenyAssignmentProperties class. */
+    /**
+     * Creates an instance of DenyAssignmentProperties class.
+     */
     public DenyAssignmentProperties() {
     }
 
     /**
      * Get the denyAssignmentName property: The display name of the deny assignment.
-     *
+     * 
      * @return the denyAssignmentName value.
      */
     public String denyAssignmentName() {
@@ -76,7 +80,7 @@ public final class DenyAssignmentProperties {
 
     /**
      * Set the denyAssignmentName property: The display name of the deny assignment.
-     *
+     * 
      * @param denyAssignmentName the denyAssignmentName value to set.
      * @return the DenyAssignmentProperties object itself.
      */
@@ -87,7 +91,7 @@ public final class DenyAssignmentProperties {
 
     /**
      * Get the description property: The description of the deny assignment.
-     *
+     * 
      * @return the description value.
      */
     public String description() {
@@ -96,7 +100,7 @@ public final class DenyAssignmentProperties {
 
     /**
      * Set the description property: The description of the deny assignment.
-     *
+     * 
      * @param description the description value to set.
      * @return the DenyAssignmentProperties object itself.
      */
@@ -107,7 +111,7 @@ public final class DenyAssignmentProperties {
 
     /**
      * Get the permissions property: An array of permissions that are denied by the deny assignment.
-     *
+     * 
      * @return the permissions value.
      */
     public List<DenyAssignmentPermission> permissions() {
@@ -116,7 +120,7 @@ public final class DenyAssignmentProperties {
 
     /**
      * Set the permissions property: An array of permissions that are denied by the deny assignment.
-     *
+     * 
      * @param permissions the permissions value to set.
      * @return the DenyAssignmentProperties object itself.
      */
@@ -127,7 +131,7 @@ public final class DenyAssignmentProperties {
 
     /**
      * Get the scope property: The deny assignment scope.
-     *
+     * 
      * @return the scope value.
      */
     public String scope() {
@@ -136,7 +140,7 @@ public final class DenyAssignmentProperties {
 
     /**
      * Set the scope property: The deny assignment scope.
-     *
+     * 
      * @param scope the scope value to set.
      * @return the DenyAssignmentProperties object itself.
      */
@@ -148,7 +152,7 @@ public final class DenyAssignmentProperties {
     /**
      * Get the doNotApplyToChildScopes property: Determines if the deny assignment applies to child scopes. Default
      * value is false.
-     *
+     * 
      * @return the doNotApplyToChildScopes value.
      */
     public Boolean doNotApplyToChildScopes() {
@@ -158,7 +162,7 @@ public final class DenyAssignmentProperties {
     /**
      * Set the doNotApplyToChildScopes property: Determines if the deny assignment applies to child scopes. Default
      * value is false.
-     *
+     * 
      * @param doNotApplyToChildScopes the doNotApplyToChildScopes value to set.
      * @return the DenyAssignmentProperties object itself.
      */
@@ -169,7 +173,7 @@ public final class DenyAssignmentProperties {
 
     /**
      * Get the principals property: Array of principals to which the deny assignment applies.
-     *
+     * 
      * @return the principals value.
      */
     public List<Principal> principals() {
@@ -178,7 +182,7 @@ public final class DenyAssignmentProperties {
 
     /**
      * Set the principals property: Array of principals to which the deny assignment applies.
-     *
+     * 
      * @param principals the principals value to set.
      * @return the DenyAssignmentProperties object itself.
      */
@@ -189,7 +193,7 @@ public final class DenyAssignmentProperties {
 
     /**
      * Get the excludePrincipals property: Array of principals to which the deny assignment does not apply.
-     *
+     * 
      * @return the excludePrincipals value.
      */
     public List<Principal> excludePrincipals() {
@@ -198,7 +202,7 @@ public final class DenyAssignmentProperties {
 
     /**
      * Set the excludePrincipals property: Array of principals to which the deny assignment does not apply.
-     *
+     * 
      * @param excludePrincipals the excludePrincipals value to set.
      * @return the DenyAssignmentProperties object itself.
      */
@@ -210,7 +214,7 @@ public final class DenyAssignmentProperties {
     /**
      * Get the isSystemProtected property: Specifies whether this deny assignment was created by Azure and cannot be
      * edited or deleted.
-     *
+     * 
      * @return the isSystemProtected value.
      */
     public Boolean isSystemProtected() {
@@ -220,7 +224,7 @@ public final class DenyAssignmentProperties {
     /**
      * Set the isSystemProtected property: Specifies whether this deny assignment was created by Azure and cannot be
      * edited or deleted.
-     *
+     * 
      * @param isSystemProtected the isSystemProtected value to set.
      * @return the DenyAssignmentProperties object itself.
      */
@@ -231,7 +235,7 @@ public final class DenyAssignmentProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

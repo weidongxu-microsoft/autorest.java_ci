@@ -20,23 +20,22 @@ public final class PrivateLinkResourcesImpl implements PrivateLinkResources {
 
     private final com.azure.resourcemanager.search.generated.SearchManager serviceManager;
 
-    public PrivateLinkResourcesImpl(
-        PrivateLinkResourcesClient innerClient,
+    public PrivateLinkResourcesImpl(PrivateLinkResourcesClient innerClient,
         com.azure.resourcemanager.search.generated.SearchManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
     public PagedIterable<PrivateLinkResource> listSupported(String resourceGroupName, String searchServiceName) {
-        PagedIterable<PrivateLinkResourceInner> inner =
-            this.serviceClient().listSupported(resourceGroupName, searchServiceName);
+        PagedIterable<PrivateLinkResourceInner> inner
+            = this.serviceClient().listSupported(resourceGroupName, searchServiceName);
         return Utils.mapPage(inner, inner1 -> new PrivateLinkResourceImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<PrivateLinkResource> listSupported(
-        String resourceGroupName, String searchServiceName, UUID clientRequestId, Context context) {
-        PagedIterable<PrivateLinkResourceInner> inner =
-            this.serviceClient().listSupported(resourceGroupName, searchServiceName, clientRequestId, context);
+    public PagedIterable<PrivateLinkResource> listSupported(String resourceGroupName, String searchServiceName,
+        UUID clientRequestId, Context context) {
+        PagedIterable<PrivateLinkResourceInner> inner
+            = this.serviceClient().listSupported(resourceGroupName, searchServiceName, clientRequestId, context);
         return Utils.mapPage(inner, inner1 -> new PrivateLinkResourceImpl(inner1, this.manager()));
     }
 

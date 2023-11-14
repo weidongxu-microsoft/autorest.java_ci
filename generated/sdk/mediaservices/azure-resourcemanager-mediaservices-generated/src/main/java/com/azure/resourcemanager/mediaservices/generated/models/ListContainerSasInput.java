@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
-/** The parameters to the list SAS request. */
+/**
+ * The parameters to the list SAS request.
+ */
 @Fluent
 public final class ListContainerSasInput {
     /*
@@ -18,18 +20,20 @@ public final class ListContainerSasInput {
     private AssetContainerPermission permissions;
 
     /*
-     * The SAS URL expiration time.  This must be less than 24 hours from the current time.
+     * The SAS URL expiration time. This must be less than 24 hours from the current time.
      */
     @JsonProperty(value = "expiryTime")
     private OffsetDateTime expiryTime;
 
-    /** Creates an instance of ListContainerSasInput class. */
+    /**
+     * Creates an instance of ListContainerSasInput class.
+     */
     public ListContainerSasInput() {
     }
 
     /**
      * Get the permissions property: The permissions to set on the SAS URL.
-     *
+     * 
      * @return the permissions value.
      */
     public AssetContainerPermission permissions() {
@@ -38,7 +42,7 @@ public final class ListContainerSasInput {
 
     /**
      * Set the permissions property: The permissions to set on the SAS URL.
-     *
+     * 
      * @param permissions the permissions value to set.
      * @return the ListContainerSasInput object itself.
      */
@@ -48,8 +52,9 @@ public final class ListContainerSasInput {
     }
 
     /**
-     * Get the expiryTime property: The SAS URL expiration time. This must be less than 24 hours from the current time.
-     *
+     * Get the expiryTime property: The SAS URL expiration time. This must be less than 24 hours from the current
+     * time.
+     * 
      * @return the expiryTime value.
      */
     public OffsetDateTime expiryTime() {
@@ -57,8 +62,9 @@ public final class ListContainerSasInput {
     }
 
     /**
-     * Set the expiryTime property: The SAS URL expiration time. This must be less than 24 hours from the current time.
-     *
+     * Set the expiryTime property: The SAS URL expiration time. This must be less than 24 hours from the current
+     * time.
+     * 
      * @param expiryTime the expiryTime value to set.
      * @return the ListContainerSasInput object itself.
      */
@@ -69,7 +75,7 @@ public final class ListContainerSasInput {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -10,10 +10,6 @@ module com.azure.resourcemanager.dns.generated {
     exports com.azure.resourcemanager.dns.generated.fluent.models;
     exports com.azure.resourcemanager.dns.generated.models;
 
-    opens com.azure.resourcemanager.dns.generated.fluent.models to
-        com.azure.core,
-        com.fasterxml.jackson.databind;
-    opens com.azure.resourcemanager.dns.generated.models to
-        com.azure.core,
-        com.fasterxml.jackson.databind;
+    opens com.azure.resourcemanager.dns.generated.fluent.models to com.azure.core, com.fasterxml.jackson.databind;
+    opens com.azure.resourcemanager.dns.generated.models to com.azure.core, com.fasterxml.jackson.databind;
 }

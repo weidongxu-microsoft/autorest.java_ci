@@ -19,8 +19,7 @@ public final class ReservationRecommendationsImpl implements ReservationRecommen
 
     private final com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager;
 
-    public ReservationRecommendationsImpl(
-        ReservationRecommendationsClient innerClient,
+    public ReservationRecommendationsImpl(ReservationRecommendationsClient innerClient,
         com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;

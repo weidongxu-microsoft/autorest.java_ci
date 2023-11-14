@@ -9,7 +9,9 @@ import com.azure.resourcemanager.costmanagement.generated.models.Status;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
-/** The status of the long running operation. */
+/**
+ * The status of the long running operation.
+ */
 @Fluent
 public final class OperationStatusInner {
     /*
@@ -24,13 +26,15 @@ public final class OperationStatusInner {
     @JsonProperty(value = "properties")
     private ReportUrl innerProperties;
 
-    /** Creates an instance of OperationStatusInner class. */
+    /**
+     * Creates an instance of OperationStatusInner class.
+     */
     public OperationStatusInner() {
     }
 
     /**
      * Get the status property: The status of the long running operation.
-     *
+     * 
      * @return the status value.
      */
     public Status status() {
@@ -39,7 +43,7 @@ public final class OperationStatusInner {
 
     /**
      * Set the status property: The status of the long running operation.
-     *
+     * 
      * @param status the status value to set.
      * @return the OperationStatusInner object itself.
      */
@@ -50,7 +54,7 @@ public final class OperationStatusInner {
 
     /**
      * Get the innerProperties property: The properties of the resource generated.
-     *
+     * 
      * @return the innerProperties value.
      */
     private ReportUrl innerProperties() {
@@ -59,7 +63,7 @@ public final class OperationStatusInner {
 
     /**
      * Get the reportUrl property: The URL to download the generated report.
-     *
+     * 
      * @return the reportUrl value.
      */
     public String reportUrl() {
@@ -68,7 +72,7 @@ public final class OperationStatusInner {
 
     /**
      * Set the reportUrl property: The URL to download the generated report.
-     *
+     * 
      * @param reportUrl the reportUrl value to set.
      * @return the OperationStatusInner object itself.
      */
@@ -82,7 +86,7 @@ public final class OperationStatusInner {
 
     /**
      * Get the validUntil property: The time at which report URL becomes invalid.
-     *
+     * 
      * @return the validUntil value.
      */
     public OffsetDateTime validUntil() {
@@ -91,7 +95,7 @@ public final class OperationStatusInner {
 
     /**
      * Set the validUntil property: The time at which report URL becomes invalid.
-     *
+     * 
      * @param validUntil the validUntil value to set.
      * @return the OperationStatusInner object itself.
      */
@@ -105,7 +109,7 @@ public final class OperationStatusInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

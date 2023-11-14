@@ -9,7 +9,9 @@ import com.azure.resourcemanager.dns.generated.fluent.models.RecordSetInner;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The response to a record set List operation. */
+/**
+ * The response to a record set List operation.
+ */
 @Fluent
 public final class RecordSetListResult {
     /*
@@ -24,13 +26,15 @@ public final class RecordSetListResult {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
-    /** Creates an instance of RecordSetListResult class. */
+    /**
+     * Creates an instance of RecordSetListResult class.
+     */
     public RecordSetListResult() {
     }
 
     /**
      * Get the value property: Information about the record sets in the response.
-     *
+     * 
      * @return the value value.
      */
     public List<RecordSetInner> value() {
@@ -39,7 +43,7 @@ public final class RecordSetListResult {
 
     /**
      * Set the value property: Information about the record sets in the response.
-     *
+     * 
      * @param value the value value to set.
      * @return the RecordSetListResult object itself.
      */
@@ -50,7 +54,7 @@ public final class RecordSetListResult {
 
     /**
      * Get the nextLink property: The continuation token for the next page of results.
-     *
+     * 
      * @return the nextLink value.
      */
     public String nextLink() {
@@ -59,7 +63,7 @@ public final class RecordSetListResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

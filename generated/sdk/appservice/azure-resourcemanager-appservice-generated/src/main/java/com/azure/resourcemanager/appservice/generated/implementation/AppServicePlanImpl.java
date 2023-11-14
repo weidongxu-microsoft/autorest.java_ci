@@ -186,20 +186,14 @@ public final class AppServicePlanImpl implements AppServicePlan, AppServicePlan.
     }
 
     public AppServicePlan create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getAppServicePlans()
-                .createOrUpdate(resourceGroupName, name, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getAppServicePlans().createOrUpdate(resourceGroupName, name,
+            this.innerModel(), Context.NONE);
         return this;
     }
 
     public AppServicePlan create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getAppServicePlans()
-                .createOrUpdate(resourceGroupName, name, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getAppServicePlans().createOrUpdate(resourceGroupName, name,
+            this.innerModel(), context);
         return this;
     }
 
@@ -215,27 +209,18 @@ public final class AppServicePlanImpl implements AppServicePlan, AppServicePlan.
     }
 
     public AppServicePlan apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getAppServicePlans()
-                .updateWithResponse(resourceGroupName, name, updateAppServicePlan, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getAppServicePlans()
+            .updateWithResponse(resourceGroupName, name, updateAppServicePlan, Context.NONE).getValue();
         return this;
     }
 
     public AppServicePlan apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getAppServicePlans()
-                .updateWithResponse(resourceGroupName, name, updateAppServicePlan, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getAppServicePlans()
+            .updateWithResponse(resourceGroupName, name, updateAppServicePlan, context).getValue();
         return this;
     }
 
-    AppServicePlanImpl(
-        AppServicePlanInner innerObject,
+    AppServicePlanImpl(AppServicePlanInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -244,29 +229,20 @@ public final class AppServicePlanImpl implements AppServicePlan, AppServicePlan.
     }
 
     public AppServicePlan refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getAppServicePlans()
-                .getByResourceGroupWithResponse(resourceGroupName, name, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getAppServicePlans()
+            .getByResourceGroupWithResponse(resourceGroupName, name, Context.NONE).getValue();
         return this;
     }
 
     public AppServicePlan refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getAppServicePlans()
-                .getByResourceGroupWithResponse(resourceGroupName, name, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getAppServicePlans()
+            .getByResourceGroupWithResponse(resourceGroupName, name, context).getValue();
         return this;
     }
 
     public Response<Void> restartWebAppsWithResponse(Boolean softRestart, Context context) {
-        return serviceManager
-            .appServicePlans()
-            .restartWebAppsWithResponse(resourceGroupName, name, softRestart, context);
+        return serviceManager.appServicePlans().restartWebAppsWithResponse(resourceGroupName, name, softRestart,
+            context);
     }
 
     public void restartWebApps() {

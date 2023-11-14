@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of DdosProtectionPlans. */
+/**
+ * Resource collection API of DdosProtectionPlans.
+ */
 public interface DdosProtectionPlans {
     /**
      * Deletes the specified DDoS protection plan.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param ddosProtectionPlanName The name of the DDoS protection plan.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -23,7 +25,7 @@ public interface DdosProtectionPlans {
 
     /**
      * Deletes the specified DDoS protection plan.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param ddosProtectionPlanName The name of the DDoS protection plan.
      * @param context The context to associate with this operation.
@@ -35,7 +37,7 @@ public interface DdosProtectionPlans {
 
     /**
      * Gets information about the specified DDoS protection plan.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param ddosProtectionPlanName The name of the DDoS protection plan.
      * @param context The context to associate with this operation.
@@ -44,12 +46,12 @@ public interface DdosProtectionPlans {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return information about the specified DDoS protection plan along with {@link Response}.
      */
-    Response<DdosProtectionPlan> getByResourceGroupWithResponse(
-        String resourceGroupName, String ddosProtectionPlanName, Context context);
+    Response<DdosProtectionPlan> getByResourceGroupWithResponse(String resourceGroupName, String ddosProtectionPlanName,
+        Context context);
 
     /**
      * Gets information about the specified DDoS protection plan.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param ddosProtectionPlanName The name of the DDoS protection plan.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -61,7 +63,7 @@ public interface DdosProtectionPlans {
 
     /**
      * Gets all DDoS protection plans in a subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all DDoS protection plans in a subscription as paginated response with {@link PagedIterable}.
@@ -70,7 +72,7 @@ public interface DdosProtectionPlans {
 
     /**
      * Gets all DDoS protection plans in a subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -81,7 +83,7 @@ public interface DdosProtectionPlans {
 
     /**
      * Gets all the DDoS protection plans in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -92,7 +94,7 @@ public interface DdosProtectionPlans {
 
     /**
      * Gets all the DDoS protection plans in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -104,7 +106,7 @@ public interface DdosProtectionPlans {
 
     /**
      * Gets information about the specified DDoS protection plan.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -115,7 +117,7 @@ public interface DdosProtectionPlans {
 
     /**
      * Gets information about the specified DDoS protection plan.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -127,7 +129,7 @@ public interface DdosProtectionPlans {
 
     /**
      * Deletes the specified DDoS protection plan.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -137,7 +139,7 @@ public interface DdosProtectionPlans {
 
     /**
      * Deletes the specified DDoS protection plan.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -148,7 +150,7 @@ public interface DdosProtectionPlans {
 
     /**
      * Begins definition for a new DdosProtectionPlan resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new DdosProtectionPlan definition.
      */

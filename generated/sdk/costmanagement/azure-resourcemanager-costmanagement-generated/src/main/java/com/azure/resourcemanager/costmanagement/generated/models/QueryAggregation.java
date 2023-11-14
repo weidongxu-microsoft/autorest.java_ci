@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The aggregation expression to be used in the query. */
+/**
+ * The aggregation expression to be used in the query.
+ */
 @Fluent
 public final class QueryAggregation {
     /*
@@ -23,13 +25,15 @@ public final class QueryAggregation {
     @JsonProperty(value = "function", required = true)
     private FunctionType function;
 
-    /** Creates an instance of QueryAggregation class. */
+    /**
+     * Creates an instance of QueryAggregation class.
+     */
     public QueryAggregation() {
     }
 
     /**
      * Get the name property: The name of the column to aggregate.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -38,7 +42,7 @@ public final class QueryAggregation {
 
     /**
      * Set the name property: The name of the column to aggregate.
-     *
+     * 
      * @param name the name value to set.
      * @return the QueryAggregation object itself.
      */
@@ -49,7 +53,7 @@ public final class QueryAggregation {
 
     /**
      * Get the function property: The name of the aggregation function to use.
-     *
+     * 
      * @return the function value.
      */
     public FunctionType function() {
@@ -58,7 +62,7 @@ public final class QueryAggregation {
 
     /**
      * Set the function property: The name of the aggregation function to use.
-     *
+     * 
      * @param function the function value to set.
      * @return the QueryAggregation object itself.
      */
@@ -69,19 +73,17 @@ public final class QueryAggregation {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property name in model QueryAggregation"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property name in model QueryAggregation"));
         }
         if (function() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property function in model QueryAggregation"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property function in model QueryAggregation"));
         }
     }
 

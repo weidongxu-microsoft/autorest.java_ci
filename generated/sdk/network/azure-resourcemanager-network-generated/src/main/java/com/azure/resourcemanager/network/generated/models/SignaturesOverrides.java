@@ -6,18 +6,20 @@ package com.azure.resourcemanager.network.generated.models;
 
 import com.azure.resourcemanager.network.generated.fluent.models.SignaturesOverridesInner;
 
-/** An immutable client-side representation of SignaturesOverrides. */
+/**
+ * An immutable client-side representation of SignaturesOverrides.
+ */
 public interface SignaturesOverrides {
     /**
      * Gets the name property: Contains the name of the resource (default).
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the id property: Will contain the resource id of the signature override resource.
-     *
+     * 
      * @return the id value.
      */
     String id();
@@ -25,21 +27,21 @@ public interface SignaturesOverrides {
     /**
      * Gets the type property: Will contain the type of the resource:
      * Microsoft.Network/firewallPolicies/intrusionDetectionSignaturesOverrides.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the properties property: Will contain the properties of the resource (the actual signature overrides).
-     *
+     * 
      * @return the properties value.
      */
     SignaturesOverridesProperties properties();
 
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.SignaturesOverridesInner object.
-     *
+     * 
      * @return the inner object.
      */
     SignaturesOverridesInner innerModel();

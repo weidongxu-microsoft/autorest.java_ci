@@ -9,23 +9,31 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.List;
 
-/** Describes the properties for an output ISO MP4 file. */
+/**
+ * Describes the properties for an output ISO MP4 file.
+ */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
 @JsonTypeName("#Microsoft.Media.Mp4Format")
 @Fluent
 public final class Mp4Format extends MultiBitrateFormat {
-    /** Creates an instance of Mp4Format class. */
+    /**
+     * Creates an instance of Mp4Format class.
+     */
     public Mp4Format() {
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Mp4Format withOutputFiles(List<OutputFile> outputFiles) {
         super.withOutputFiles(outputFiles);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Mp4Format withFilenamePattern(String filenamePattern) {
         super.withFilenamePattern(filenamePattern);
@@ -34,7 +42,7 @@ public final class Mp4Format extends MultiBitrateFormat {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

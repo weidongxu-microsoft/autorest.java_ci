@@ -9,7 +9,9 @@ import com.azure.resourcemanager.postgresql.generated.fluent.models.LogFileInner
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** A list of log files. */
+/**
+ * A list of log files.
+ */
 @Fluent
 public final class LogFileListResult {
     /*
@@ -18,13 +20,15 @@ public final class LogFileListResult {
     @JsonProperty(value = "value")
     private List<LogFileInner> value;
 
-    /** Creates an instance of LogFileListResult class. */
+    /**
+     * Creates an instance of LogFileListResult class.
+     */
     public LogFileListResult() {
     }
 
     /**
      * Get the value property: The list of log files.
-     *
+     * 
      * @return the value value.
      */
     public List<LogFileInner> value() {
@@ -33,7 +37,7 @@ public final class LogFileListResult {
 
     /**
      * Set the value property: The list of log files.
-     *
+     * 
      * @param value the value value to set.
      * @return the LogFileListResult object itself.
      */
@@ -44,7 +48,7 @@ public final class LogFileListResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

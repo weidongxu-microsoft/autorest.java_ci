@@ -10,7 +10,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
 
-/** The Data Box Edge/Gateway device patch. */
+/**
+ * The Data Box Edge/Gateway device patch.
+ */
 @Fluent
 public final class DataBoxEdgeDevicePatch {
     /*
@@ -32,13 +34,15 @@ public final class DataBoxEdgeDevicePatch {
     @JsonProperty(value = "properties")
     private DataBoxEdgeDevicePropertiesPatch innerProperties;
 
-    /** Creates an instance of DataBoxEdgeDevicePatch class. */
+    /**
+     * Creates an instance of DataBoxEdgeDevicePatch class.
+     */
     public DataBoxEdgeDevicePatch() {
     }
 
     /**
      * Get the tags property: The tags attached to the Data Box Edge/Gateway resource.
-     *
+     * 
      * @return the tags value.
      */
     public Map<String, String> tags() {
@@ -47,7 +51,7 @@ public final class DataBoxEdgeDevicePatch {
 
     /**
      * Set the tags property: The tags attached to the Data Box Edge/Gateway resource.
-     *
+     * 
      * @param tags the tags value to set.
      * @return the DataBoxEdgeDevicePatch object itself.
      */
@@ -58,7 +62,7 @@ public final class DataBoxEdgeDevicePatch {
 
     /**
      * Get the identity property: Msi identity of the resource.
-     *
+     * 
      * @return the identity value.
      */
     public ResourceIdentity identity() {
@@ -67,7 +71,7 @@ public final class DataBoxEdgeDevicePatch {
 
     /**
      * Set the identity property: Msi identity of the resource.
-     *
+     * 
      * @param identity the identity value to set.
      * @return the DataBoxEdgeDevicePatch object itself.
      */
@@ -78,7 +82,7 @@ public final class DataBoxEdgeDevicePatch {
 
     /**
      * Get the innerProperties property: The properties associated with the Data Box Edge/Gateway resource.
-     *
+     * 
      * @return the innerProperties value.
      */
     private DataBoxEdgeDevicePropertiesPatch innerProperties() {
@@ -87,7 +91,7 @@ public final class DataBoxEdgeDevicePatch {
 
     /**
      * Get the edgeProfile property: Edge Profile property of the Data Box Edge/Gateway device.
-     *
+     * 
      * @return the edgeProfile value.
      */
     public EdgeProfilePatch edgeProfile() {
@@ -96,7 +100,7 @@ public final class DataBoxEdgeDevicePatch {
 
     /**
      * Set the edgeProfile property: Edge Profile property of the Data Box Edge/Gateway device.
-     *
+     * 
      * @param edgeProfile the edgeProfile value to set.
      * @return the DataBoxEdgeDevicePatch object itself.
      */
@@ -110,7 +114,7 @@ public final class DataBoxEdgeDevicePatch {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

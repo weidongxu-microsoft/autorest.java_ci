@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The Asset Storage container SAS URLs. */
+/**
+ * The Asset Storage container SAS URLs.
+ */
 @Fluent
 public final class AssetContainerSasInner {
     /*
@@ -17,13 +19,15 @@ public final class AssetContainerSasInner {
     @JsonProperty(value = "assetContainerSasUrls")
     private List<String> assetContainerSasUrls;
 
-    /** Creates an instance of AssetContainerSasInner class. */
+    /**
+     * Creates an instance of AssetContainerSasInner class.
+     */
     public AssetContainerSasInner() {
     }
 
     /**
      * Get the assetContainerSasUrls property: The list of Asset container SAS URLs.
-     *
+     * 
      * @return the assetContainerSasUrls value.
      */
     public List<String> assetContainerSasUrls() {
@@ -32,7 +36,7 @@ public final class AssetContainerSasInner {
 
     /**
      * Set the assetContainerSasUrls property: The list of Asset container SAS URLs.
-     *
+     * 
      * @param assetContainerSasUrls the assetContainerSasUrls value to set.
      * @return the AssetContainerSasInner object itself.
      */
@@ -43,7 +47,7 @@ public final class AssetContainerSasInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -6,18 +6,20 @@ package com.azure.resourcemanager.network.generated.models;
 
 import com.azure.resourcemanager.network.generated.fluent.models.ConnectionResetSharedKeyInner;
 
-/** An immutable client-side representation of ConnectionResetSharedKey. */
+/**
+ * An immutable client-side representation of ConnectionResetSharedKey.
+ */
 public interface ConnectionResetSharedKey {
     /**
      * Gets the keyLength property: The virtual network connection reset shared key length, should between 1 and 128.
-     *
+     * 
      * @return the keyLength value.
      */
     int keyLength();
 
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.ConnectionResetSharedKeyInner object.
-     *
+     * 
      * @return the inner object.
      */
     ConnectionResetSharedKeyInner innerModel();

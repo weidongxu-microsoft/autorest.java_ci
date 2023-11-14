@@ -11,11 +11,13 @@ import com.azure.core.util.Context;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.mysql.generated.fluent.models.ServerInner;
 
-/** An instance of this class provides access to all the operations defined in ServersMigrationsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in ServersMigrationsClient.
+ */
 public interface ServersMigrationsClient {
     /**
      * Cutover migration for MySQL import, it will switch source elastic server DNS to flexible server.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -28,7 +30,7 @@ public interface ServersMigrationsClient {
 
     /**
      * Cutover migration for MySQL import, it will switch source elastic server DNS to flexible server.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param context The context to associate with this operation.
@@ -38,12 +40,12 @@ public interface ServersMigrationsClient {
      * @return the {@link SyncPoller} for polling of represents a server.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<ServerInner>, ServerInner> beginCutoverMigration(
-        String resourceGroupName, String serverName, Context context);
+    SyncPoller<PollResult<ServerInner>, ServerInner> beginCutoverMigration(String resourceGroupName, String serverName,
+        Context context);
 
     /**
      * Cutover migration for MySQL import, it will switch source elastic server DNS to flexible server.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -56,7 +58,7 @@ public interface ServersMigrationsClient {
 
     /**
      * Cutover migration for MySQL import, it will switch source elastic server DNS to flexible server.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param context The context to associate with this operation.

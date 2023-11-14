@@ -16,8 +16,7 @@ public final class VerifiedPartnerImpl implements VerifiedPartner {
 
     private final com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager;
 
-    VerifiedPartnerImpl(
-        VerifiedPartnerInner innerObject,
+    VerifiedPartnerImpl(VerifiedPartnerInner innerObject,
         com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

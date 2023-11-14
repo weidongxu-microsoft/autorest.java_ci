@@ -13,27 +13,39 @@ import java.util.Collection;
  * not be applicable.
  */
 public final class KeyVaultSyncStatus extends ExpandableStringEnum<KeyVaultSyncStatus> {
-    /** Static value KeyVaultSynced for KeyVaultSyncStatus. */
+    /**
+     * Static value KeyVaultSynced for KeyVaultSyncStatus.
+     */
     public static final KeyVaultSyncStatus KEY_VAULT_SYNCED = fromString("KeyVaultSynced");
 
-    /** Static value KeyVaultSyncFailed for KeyVaultSyncStatus. */
+    /**
+     * Static value KeyVaultSyncFailed for KeyVaultSyncStatus.
+     */
     public static final KeyVaultSyncStatus KEY_VAULT_SYNC_FAILED = fromString("KeyVaultSyncFailed");
 
-    /** Static value KeyVaultNotConfigured for KeyVaultSyncStatus. */
+    /**
+     * Static value KeyVaultNotConfigured for KeyVaultSyncStatus.
+     */
     public static final KeyVaultSyncStatus KEY_VAULT_NOT_CONFIGURED = fromString("KeyVaultNotConfigured");
 
-    /** Static value KeyVaultSyncPending for KeyVaultSyncStatus. */
+    /**
+     * Static value KeyVaultSyncPending for KeyVaultSyncStatus.
+     */
     public static final KeyVaultSyncStatus KEY_VAULT_SYNC_PENDING = fromString("KeyVaultSyncPending");
 
-    /** Static value KeyVaultSyncing for KeyVaultSyncStatus. */
+    /**
+     * Static value KeyVaultSyncing for KeyVaultSyncStatus.
+     */
     public static final KeyVaultSyncStatus KEY_VAULT_SYNCING = fromString("KeyVaultSyncing");
 
-    /** Static value KeyVaultNotSynced for KeyVaultSyncStatus. */
+    /**
+     * Static value KeyVaultNotSynced for KeyVaultSyncStatus.
+     */
     public static final KeyVaultSyncStatus KEY_VAULT_NOT_SYNCED = fromString("KeyVaultNotSynced");
 
     /**
      * Creates a new instance of KeyVaultSyncStatus value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -42,7 +54,7 @@ public final class KeyVaultSyncStatus extends ExpandableStringEnum<KeyVaultSyncS
 
     /**
      * Creates or finds a KeyVaultSyncStatus from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding KeyVaultSyncStatus.
      */
@@ -53,7 +65,7 @@ public final class KeyVaultSyncStatus extends ExpandableStringEnum<KeyVaultSyncS
 
     /**
      * Gets known KeyVaultSyncStatus values.
-     *
+     * 
      * @return known KeyVaultSyncStatus values.
      */
     public static Collection<KeyVaultSyncStatus> values() {

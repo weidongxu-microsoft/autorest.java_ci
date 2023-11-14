@@ -13,8 +13,7 @@ public final class DomainAvailabilityCheckResultImpl implements DomainAvailabili
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    DomainAvailabilityCheckResultImpl(
-        DomainAvailabilityCheckResultInner innerObject,
+    DomainAvailabilityCheckResultImpl(DomainAvailabilityCheckResultInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

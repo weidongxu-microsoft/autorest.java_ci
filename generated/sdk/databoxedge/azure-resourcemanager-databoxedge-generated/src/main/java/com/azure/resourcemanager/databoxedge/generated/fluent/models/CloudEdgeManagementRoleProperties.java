@@ -10,7 +10,9 @@ import com.azure.resourcemanager.databoxedge.generated.models.EdgeProfile;
 import com.azure.resourcemanager.databoxedge.generated.models.RoleStatus;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** CloudEdgeManagement Role properties. */
+/**
+ * CloudEdgeManagement Role properties.
+ */
 @Fluent
 public final class CloudEdgeManagementRoleProperties {
     /*
@@ -31,13 +33,15 @@ public final class CloudEdgeManagementRoleProperties {
     @JsonProperty(value = "roleStatus", required = true)
     private RoleStatus roleStatus;
 
-    /** Creates an instance of CloudEdgeManagementRoleProperties class. */
+    /**
+     * Creates an instance of CloudEdgeManagementRoleProperties class.
+     */
     public CloudEdgeManagementRoleProperties() {
     }
 
     /**
      * Get the localManagementStatus property: Local Edge Management Status.
-     *
+     * 
      * @return the localManagementStatus value.
      */
     public RoleStatus localManagementStatus() {
@@ -46,7 +50,7 @@ public final class CloudEdgeManagementRoleProperties {
 
     /**
      * Get the edgeProfile property: Edge Profile of the resource.
-     *
+     * 
      * @return the edgeProfile value.
      */
     public EdgeProfile edgeProfile() {
@@ -55,7 +59,7 @@ public final class CloudEdgeManagementRoleProperties {
 
     /**
      * Get the roleStatus property: Role status.
-     *
+     * 
      * @return the roleStatus value.
      */
     public RoleStatus roleStatus() {
@@ -64,7 +68,7 @@ public final class CloudEdgeManagementRoleProperties {
 
     /**
      * Set the roleStatus property: Role status.
-     *
+     * 
      * @param roleStatus the roleStatus value to set.
      * @return the CloudEdgeManagementRoleProperties object itself.
      */
@@ -75,7 +79,7 @@ public final class CloudEdgeManagementRoleProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
@@ -83,10 +87,8 @@ public final class CloudEdgeManagementRoleProperties {
             edgeProfile().validate();
         }
         if (roleStatus() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property roleStatus in model CloudEdgeManagementRoleProperties"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property roleStatus in model CloudEdgeManagementRoleProperties"));
         }
     }
 

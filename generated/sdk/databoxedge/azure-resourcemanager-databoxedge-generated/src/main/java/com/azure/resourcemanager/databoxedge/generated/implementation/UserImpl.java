@@ -77,20 +77,14 @@ public final class UserImpl implements User, User.Definition, User.Update {
     }
 
     public User create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getUsers()
-                .createOrUpdate(deviceName, name, resourceGroupName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getUsers().createOrUpdate(deviceName, name, resourceGroupName,
+            this.innerModel(), Context.NONE);
         return this;
     }
 
     public User create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getUsers()
-                .createOrUpdate(deviceName, name, resourceGroupName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getUsers().createOrUpdate(deviceName, name, resourceGroupName,
+            this.innerModel(), context);
         return this;
     }
 
@@ -105,20 +99,14 @@ public final class UserImpl implements User, User.Definition, User.Update {
     }
 
     public User apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getUsers()
-                .createOrUpdate(deviceName, name, resourceGroupName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getUsers().createOrUpdate(deviceName, name, resourceGroupName,
+            this.innerModel(), Context.NONE);
         return this;
     }
 
     public User apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getUsers()
-                .createOrUpdate(deviceName, name, resourceGroupName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getUsers().createOrUpdate(deviceName, name, resourceGroupName,
+            this.innerModel(), context);
         return this;
     }
 
@@ -131,22 +119,14 @@ public final class UserImpl implements User, User.Definition, User.Update {
     }
 
     public User refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getUsers()
-                .getWithResponse(deviceName, name, resourceGroupName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getUsers()
+            .getWithResponse(deviceName, name, resourceGroupName, Context.NONE).getValue();
         return this;
     }
 
     public User refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getUsers()
-                .getWithResponse(deviceName, name, resourceGroupName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getUsers()
+            .getWithResponse(deviceName, name, resourceGroupName, context).getValue();
         return this;
     }
 

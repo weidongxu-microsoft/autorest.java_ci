@@ -12,8 +12,7 @@ public final class VaultExtendedInfoResourceImpl implements VaultExtendedInfoRes
 
     private final com.azure.resourcemanager.recoveryservices.generated.RecoveryServicesManager serviceManager;
 
-    VaultExtendedInfoResourceImpl(
-        VaultExtendedInfoResourceInner innerObject,
+    VaultExtendedInfoResourceImpl(VaultExtendedInfoResourceInner innerObject,
         com.azure.resourcemanager.recoveryservices.generated.RecoveryServicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

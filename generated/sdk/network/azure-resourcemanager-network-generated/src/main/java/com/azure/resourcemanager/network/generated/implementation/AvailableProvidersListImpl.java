@@ -15,8 +15,7 @@ public final class AvailableProvidersListImpl implements AvailableProvidersList 
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    AvailableProvidersListImpl(
-        AvailableProvidersListInner innerObject,
+    AvailableProvidersListImpl(AvailableProvidersListInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

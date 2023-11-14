@@ -16,8 +16,7 @@ public final class RestoreRequestImpl implements RestoreRequest {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    RestoreRequestImpl(
-        RestoreRequestInner innerObject,
+    RestoreRequestImpl(RestoreRequestInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

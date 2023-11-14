@@ -9,7 +9,9 @@ import com.azure.resourcemanager.postgresql.generated.fluent.models.ServerAdmini
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The response to a list Active Directory Administrators request. */
+/**
+ * The response to a list Active Directory Administrators request.
+ */
 @Fluent
 public final class ServerAdministratorResourceListResult {
     /*
@@ -18,13 +20,15 @@ public final class ServerAdministratorResourceListResult {
     @JsonProperty(value = "value")
     private List<ServerAdministratorResourceInner> value;
 
-    /** Creates an instance of ServerAdministratorResourceListResult class. */
+    /**
+     * Creates an instance of ServerAdministratorResourceListResult class.
+     */
     public ServerAdministratorResourceListResult() {
     }
 
     /**
      * Get the value property: The list of server Active Directory Administrators for the server.
-     *
+     * 
      * @return the value value.
      */
     public List<ServerAdministratorResourceInner> value() {
@@ -33,7 +37,7 @@ public final class ServerAdministratorResourceListResult {
 
     /**
      * Set the value property: The list of server Active Directory Administrators for the server.
-     *
+     * 
      * @param value the value value to set.
      * @return the ServerAdministratorResourceListResult object itself.
      */
@@ -44,7 +48,7 @@ public final class ServerAdministratorResourceListResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

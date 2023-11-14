@@ -7,7 +7,9 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Class for NoEncryption scheme. */
+/**
+ * Class for NoEncryption scheme.
+ */
 @Fluent
 public final class NoEncryption {
     /*
@@ -16,13 +18,15 @@ public final class NoEncryption {
     @JsonProperty(value = "enabledProtocols")
     private EnabledProtocols enabledProtocols;
 
-    /** Creates an instance of NoEncryption class. */
+    /**
+     * Creates an instance of NoEncryption class.
+     */
     public NoEncryption() {
     }
 
     /**
      * Get the enabledProtocols property: Representing supported protocols.
-     *
+     * 
      * @return the enabledProtocols value.
      */
     public EnabledProtocols enabledProtocols() {
@@ -31,7 +35,7 @@ public final class NoEncryption {
 
     /**
      * Set the enabledProtocols property: Representing supported protocols.
-     *
+     * 
      * @param enabledProtocols the enabledProtocols value to set.
      * @return the NoEncryption object itself.
      */
@@ -42,7 +46,7 @@ public final class NoEncryption {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

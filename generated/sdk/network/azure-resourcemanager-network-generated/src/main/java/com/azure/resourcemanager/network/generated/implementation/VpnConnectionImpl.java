@@ -24,8 +24,8 @@ public final class VpnConnectionImpl implements VpnConnection {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    VpnConnectionImpl(
-        VpnConnectionInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    VpnConnectionImpl(VpnConnectionInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -123,12 +123,8 @@ public final class VpnConnectionImpl implements VpnConnection {
     public List<VpnSiteLinkConnection> vpnLinkConnections() {
         List<VpnSiteLinkConnectionInner> inner = this.innerModel().vpnLinkConnections();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new VpnSiteLinkConnectionImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new VpnSiteLinkConnectionImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

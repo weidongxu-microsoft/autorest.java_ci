@@ -8,34 +8,36 @@ import com.azure.core.management.exception.ManagementError;
 import com.azure.resourcemanager.resources.generated.fluent.models.WhatIfOperationResultInner;
 import java.util.List;
 
-/** An immutable client-side representation of WhatIfOperationResult. */
+/**
+ * An immutable client-side representation of WhatIfOperationResult.
+ */
 public interface WhatIfOperationResult {
     /**
      * Gets the status property: Status of the What-If operation.
-     *
+     * 
      * @return the status value.
      */
     String status();
 
     /**
      * Gets the error property: Error Response
-     *
-     * <p>Error when What-If operation fails.
-     *
+     * 
+     * Error when What-If operation fails.
+     * 
      * @return the error value.
      */
     ManagementError error();
 
     /**
      * Gets the changes property: List of resource changes predicted by What-If operation.
-     *
+     * 
      * @return the changes value.
      */
     List<WhatIfChange> changes();
 
     /**
      * Gets the inner com.azure.resourcemanager.resources.generated.fluent.models.WhatIfOperationResultInner object.
-     *
+     * 
      * @return the inner object.
      */
     WhatIfOperationResultInner innerModel();

@@ -18,8 +18,7 @@ public final class GallerySharingProfilesImpl implements GallerySharingProfiles 
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    public GallerySharingProfilesImpl(
-        GallerySharingProfilesClient innerClient,
+    public GallerySharingProfilesImpl(GallerySharingProfilesClient innerClient,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -34,8 +33,8 @@ public final class GallerySharingProfilesImpl implements GallerySharingProfiles 
         }
     }
 
-    public SharingUpdate update(
-        String resourceGroupName, String galleryName, SharingUpdateInner sharingUpdate, Context context) {
+    public SharingUpdate update(String resourceGroupName, String galleryName, SharingUpdateInner sharingUpdate,
+        Context context) {
         SharingUpdateInner inner = this.serviceClient().update(resourceGroupName, galleryName, sharingUpdate, context);
         if (inner != null) {
             return new SharingUpdateImpl(inner, this.manager());

@@ -13,7 +13,9 @@ import com.azure.resourcemanager.mediaservices.generated.models.PresentationTime
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** An Asset Filter. */
+/**
+ * An Asset Filter.
+ */
 @Fluent
 public final class AssetFilterInner extends ProxyResource {
     /*
@@ -28,13 +30,15 @@ public final class AssetFilterInner extends ProxyResource {
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
-    /** Creates an instance of AssetFilterInner class. */
+    /**
+     * Creates an instance of AssetFilterInner class.
+     */
     public AssetFilterInner() {
     }
 
     /**
      * Get the innerProperties property: The Media Filter properties.
-     *
+     * 
      * @return the innerProperties value.
      */
     private MediaFilterProperties innerProperties() {
@@ -43,7 +47,7 @@ public final class AssetFilterInner extends ProxyResource {
 
     /**
      * Get the systemData property: The system metadata relating to this resource.
-     *
+     * 
      * @return the systemData value.
      */
     public SystemData systemData() {
@@ -52,7 +56,7 @@ public final class AssetFilterInner extends ProxyResource {
 
     /**
      * Get the presentationTimeRange property: The presentation time range.
-     *
+     * 
      * @return the presentationTimeRange value.
      */
     public PresentationTimeRange presentationTimeRange() {
@@ -61,7 +65,7 @@ public final class AssetFilterInner extends ProxyResource {
 
     /**
      * Set the presentationTimeRange property: The presentation time range.
-     *
+     * 
      * @param presentationTimeRange the presentationTimeRange value to set.
      * @return the AssetFilterInner object itself.
      */
@@ -75,7 +79,7 @@ public final class AssetFilterInner extends ProxyResource {
 
     /**
      * Get the firstQuality property: The first quality.
-     *
+     * 
      * @return the firstQuality value.
      */
     public FirstQuality firstQuality() {
@@ -84,7 +88,7 @@ public final class AssetFilterInner extends ProxyResource {
 
     /**
      * Set the firstQuality property: The first quality.
-     *
+     * 
      * @param firstQuality the firstQuality value to set.
      * @return the AssetFilterInner object itself.
      */
@@ -98,7 +102,7 @@ public final class AssetFilterInner extends ProxyResource {
 
     /**
      * Get the tracks property: The tracks selection conditions.
-     *
+     * 
      * @return the tracks value.
      */
     public List<FilterTrackSelection> tracks() {
@@ -107,7 +111,7 @@ public final class AssetFilterInner extends ProxyResource {
 
     /**
      * Set the tracks property: The tracks selection conditions.
-     *
+     * 
      * @param tracks the tracks value to set.
      * @return the AssetFilterInner object itself.
      */
@@ -121,7 +125,7 @@ public final class AssetFilterInner extends ProxyResource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -21,8 +21,8 @@ public final class InboundNatRulesImpl implements InboundNatRules {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public InboundNatRulesImpl(
-        InboundNatRulesClient innerClient, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    public InboundNatRulesImpl(InboundNatRulesClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -33,8 +33,8 @@ public final class InboundNatRulesImpl implements InboundNatRules {
     }
 
     public PagedIterable<InboundNatRule> list(String resourceGroupName, String loadBalancerName, Context context) {
-        PagedIterable<InboundNatRuleInner> inner =
-            this.serviceClient().list(resourceGroupName, loadBalancerName, context);
+        PagedIterable<InboundNatRuleInner> inner
+            = this.serviceClient().list(resourceGroupName, loadBalancerName, context);
         return Utils.mapPage(inner, inner1 -> new InboundNatRuleImpl(inner1, this.manager()));
     }
 
@@ -46,17 +46,12 @@ public final class InboundNatRulesImpl implements InboundNatRules {
         this.serviceClient().delete(resourceGroupName, loadBalancerName, inboundNatRuleName, context);
     }
 
-    public Response<InboundNatRule> getWithResponse(
-        String resourceGroupName, String loadBalancerName, String inboundNatRuleName, String expand, Context context) {
-        Response<InboundNatRuleInner> inner =
-            this
-                .serviceClient()
-                .getWithResponse(resourceGroupName, loadBalancerName, inboundNatRuleName, expand, context);
+    public Response<InboundNatRule> getWithResponse(String resourceGroupName, String loadBalancerName,
+        String inboundNatRuleName, String expand, Context context) {
+        Response<InboundNatRuleInner> inner = this.serviceClient().getWithResponse(resourceGroupName, loadBalancerName,
+            inboundNatRuleName, expand, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new InboundNatRuleImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -75,56 +70,39 @@ public final class InboundNatRulesImpl implements InboundNatRules {
     public InboundNatRule getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String loadBalancerName = Utils.getValueFromIdByName(id, "loadBalancers");
         if (loadBalancerName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'loadBalancers'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'loadBalancers'.", id)));
         }
         String inboundNatRuleName = Utils.getValueFromIdByName(id, "inboundNatRules");
         if (inboundNatRuleName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'inboundNatRules'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'inboundNatRules'.", id)));
         }
         String localExpand = null;
-        return this
-            .getWithResponse(resourceGroupName, loadBalancerName, inboundNatRuleName, localExpand, Context.NONE)
+        return this.getWithResponse(resourceGroupName, loadBalancerName, inboundNatRuleName, localExpand, Context.NONE)
             .getValue();
     }
 
     public Response<InboundNatRule> getByIdWithResponse(String id, String expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String loadBalancerName = Utils.getValueFromIdByName(id, "loadBalancers");
         if (loadBalancerName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'loadBalancers'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'loadBalancers'.", id)));
         }
         String inboundNatRuleName = Utils.getValueFromIdByName(id, "inboundNatRules");
         if (inboundNatRuleName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'inboundNatRules'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'inboundNatRules'.", id)));
         }
         return this.getWithResponse(resourceGroupName, loadBalancerName, inboundNatRuleName, expand, context);
     }
@@ -132,26 +110,18 @@ public final class InboundNatRulesImpl implements InboundNatRules {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String loadBalancerName = Utils.getValueFromIdByName(id, "loadBalancers");
         if (loadBalancerName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'loadBalancers'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'loadBalancers'.", id)));
         }
         String inboundNatRuleName = Utils.getValueFromIdByName(id, "inboundNatRules");
         if (inboundNatRuleName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'inboundNatRules'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'inboundNatRules'.", id)));
         }
         this.delete(resourceGroupName, loadBalancerName, inboundNatRuleName, Context.NONE);
     }
@@ -159,26 +129,18 @@ public final class InboundNatRulesImpl implements InboundNatRules {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String loadBalancerName = Utils.getValueFromIdByName(id, "loadBalancers");
         if (loadBalancerName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'loadBalancers'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'loadBalancers'.", id)));
         }
         String inboundNatRuleName = Utils.getValueFromIdByName(id, "inboundNatRules");
         if (inboundNatRuleName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'inboundNatRules'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'inboundNatRules'.", id)));
         }
         this.delete(resourceGroupName, loadBalancerName, inboundNatRuleName, context);
     }

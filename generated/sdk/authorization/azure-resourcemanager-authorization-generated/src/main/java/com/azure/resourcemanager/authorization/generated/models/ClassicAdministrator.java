@@ -6,46 +6,48 @@ package com.azure.resourcemanager.authorization.generated.models;
 
 import com.azure.resourcemanager.authorization.generated.fluent.models.ClassicAdministratorInner;
 
-/** An immutable client-side representation of ClassicAdministrator. */
+/**
+ * An immutable client-side representation of ClassicAdministrator.
+ */
 public interface ClassicAdministrator {
     /**
      * Gets the id property: The ID of the administrator.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the name property: The name of the administrator.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the type property: The type of the administrator.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the emailAddress property: The email address of the administrator.
-     *
+     * 
      * @return the emailAddress value.
      */
     String emailAddress();
 
     /**
      * Gets the role property: The role of the administrator.
-     *
+     * 
      * @return the role value.
      */
     String role();
 
     /**
      * Gets the inner com.azure.resourcemanager.authorization.generated.fluent.models.ClassicAdministratorInner object.
-     *
+     * 
      * @return the inner object.
      */
     ClassicAdministratorInner innerModel();

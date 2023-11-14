@@ -13,8 +13,8 @@ import com.azure.resourcemanager.network.generated.models.VpnServerConfiguration
 
 public final class VpnServerConfigurationsAssociatedWithVirtualWansImpl
     implements VpnServerConfigurationsAssociatedWithVirtualWans {
-    private static final ClientLogger LOGGER =
-        new ClientLogger(VpnServerConfigurationsAssociatedWithVirtualWansImpl.class);
+    private static final ClientLogger LOGGER
+        = new ClientLogger(VpnServerConfigurationsAssociatedWithVirtualWansImpl.class);
 
     private final VpnServerConfigurationsAssociatedWithVirtualWansClient innerClient;
 
@@ -37,8 +37,8 @@ public final class VpnServerConfigurationsAssociatedWithVirtualWansImpl
     }
 
     public VpnServerConfigurationsResponse list(String resourceGroupName, String virtualWanName, Context context) {
-        VpnServerConfigurationsResponseInner inner =
-            this.serviceClient().list(resourceGroupName, virtualWanName, context);
+        VpnServerConfigurationsResponseInner inner
+            = this.serviceClient().list(resourceGroupName, virtualWanName, context);
         if (inner != null) {
             return new VpnServerConfigurationsResponseImpl(inner, this.manager());
         } else {

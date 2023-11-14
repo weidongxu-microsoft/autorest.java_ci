@@ -9,7 +9,9 @@ import com.azure.resourcemanager.postgresql.generated.fluent.models.ServerSecuri
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** A list of the server's security alert policies. */
+/**
+ * A list of the server's security alert policies.
+ */
 @Immutable
 public final class ServerSecurityAlertPolicyListResult {
     /*
@@ -24,13 +26,15 @@ public final class ServerSecurityAlertPolicyListResult {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
-    /** Creates an instance of ServerSecurityAlertPolicyListResult class. */
+    /**
+     * Creates an instance of ServerSecurityAlertPolicyListResult class.
+     */
     public ServerSecurityAlertPolicyListResult() {
     }
 
     /**
      * Get the value property: Array of results.
-     *
+     * 
      * @return the value value.
      */
     public List<ServerSecurityAlertPolicyInner> value() {
@@ -39,7 +43,7 @@ public final class ServerSecurityAlertPolicyListResult {
 
     /**
      * Get the nextLink property: Link to retrieve next page of results.
-     *
+     * 
      * @return the nextLink value.
      */
     public String nextLink() {
@@ -48,7 +52,7 @@ public final class ServerSecurityAlertPolicyListResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

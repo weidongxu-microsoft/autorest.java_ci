@@ -15,8 +15,8 @@ public final class OperationResultImpl implements OperationResult {
 
     private final com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager;
 
-    OperationResultImpl(
-        OperationResultInner innerObject, com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager) {
+    OperationResultImpl(OperationResultInner innerObject,
+        com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

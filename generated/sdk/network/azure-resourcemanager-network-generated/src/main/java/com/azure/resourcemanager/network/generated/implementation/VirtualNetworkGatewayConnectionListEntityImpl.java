@@ -26,8 +26,7 @@ public final class VirtualNetworkGatewayConnectionListEntityImpl implements Virt
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    VirtualNetworkGatewayConnectionListEntityImpl(
-        VirtualNetworkGatewayConnectionListEntityInner innerObject,
+    VirtualNetworkGatewayConnectionListEntityImpl(VirtualNetworkGatewayConnectionListEntityInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

@@ -19,8 +19,8 @@ public final class EventCategoriesImpl implements EventCategories {
 
     private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    public EventCategoriesImpl(
-        EventCategoriesClient innerClient, com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
+    public EventCategoriesImpl(EventCategoriesClient innerClient,
+        com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }

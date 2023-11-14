@@ -29,8 +29,7 @@ public final class VirtualMachinePropertiesImpl implements VirtualMachinePropert
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    VirtualMachinePropertiesImpl(
-        VirtualMachinePropertiesInner innerObject,
+    VirtualMachinePropertiesImpl(VirtualMachinePropertiesInner innerObject,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

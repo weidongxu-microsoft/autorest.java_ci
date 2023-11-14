@@ -13,18 +13,24 @@ import java.util.Collection;
  * then Inbound and Outbound communication is controlled by the network security perimeter and profile's access rules.
  */
 public final class PublicNetworkAccessFlag extends ExpandableStringEnum<PublicNetworkAccessFlag> {
-    /** Static value Enabled for PublicNetworkAccessFlag. */
+    /**
+     * Static value Enabled for PublicNetworkAccessFlag.
+     */
     public static final PublicNetworkAccessFlag ENABLED = fromString("Enabled");
 
-    /** Static value Disabled for PublicNetworkAccessFlag. */
+    /**
+     * Static value Disabled for PublicNetworkAccessFlag.
+     */
     public static final PublicNetworkAccessFlag DISABLED = fromString("Disabled");
 
-    /** Static value SecuredByPerimeter for PublicNetworkAccessFlag. */
+    /**
+     * Static value SecuredByPerimeter for PublicNetworkAccessFlag.
+     */
     public static final PublicNetworkAccessFlag SECURED_BY_PERIMETER = fromString("SecuredByPerimeter");
 
     /**
      * Creates a new instance of PublicNetworkAccessFlag value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -33,7 +39,7 @@ public final class PublicNetworkAccessFlag extends ExpandableStringEnum<PublicNe
 
     /**
      * Creates or finds a PublicNetworkAccessFlag from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding PublicNetworkAccessFlag.
      */
@@ -44,7 +50,7 @@ public final class PublicNetworkAccessFlag extends ExpandableStringEnum<PublicNe
 
     /**
      * Gets known PublicNetworkAccessFlag values.
-     *
+     * 
      * @return known PublicNetworkAccessFlag values.
      */
     public static Collection<PublicNetworkAccessFlag> values() {

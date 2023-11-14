@@ -94,24 +94,16 @@ public final class HostnameBindingImpl implements HostnameBinding, HostnameBindi
     }
 
     public HostnameBinding create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApps()
-                .createOrUpdateHostnameBindingWithResponse(
-                    resourceGroupName, name, hostname, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getWebApps().createOrUpdateHostnameBindingWithResponse(resourceGroupName,
+                name, hostname, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public HostnameBinding create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApps()
-                .createOrUpdateHostnameBindingWithResponse(
-                    resourceGroupName, name, hostname, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getWebApps()
+            .createOrUpdateHostnameBindingWithResponse(resourceGroupName, name, hostname, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
@@ -126,29 +118,20 @@ public final class HostnameBindingImpl implements HostnameBinding, HostnameBindi
     }
 
     public HostnameBinding apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApps()
-                .createOrUpdateHostnameBindingWithResponse(
-                    resourceGroupName, name, hostname, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getWebApps().createOrUpdateHostnameBindingWithResponse(resourceGroupName,
+                name, hostname, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public HostnameBinding apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApps()
-                .createOrUpdateHostnameBindingWithResponse(
-                    resourceGroupName, name, hostname, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getWebApps()
+            .createOrUpdateHostnameBindingWithResponse(resourceGroupName, name, hostname, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
-    HostnameBindingImpl(
-        HostnameBindingInner innerObject,
+    HostnameBindingImpl(HostnameBindingInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -158,22 +141,14 @@ public final class HostnameBindingImpl implements HostnameBinding, HostnameBindi
     }
 
     public HostnameBinding refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApps()
-                .getHostnameBindingWithResponse(resourceGroupName, name, hostname, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getWebApps()
+            .getHostnameBindingWithResponse(resourceGroupName, name, hostname, Context.NONE).getValue();
         return this;
     }
 
     public HostnameBinding refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApps()
-                .getHostnameBindingWithResponse(resourceGroupName, name, hostname, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getWebApps()
+            .getHostnameBindingWithResponse(resourceGroupName, name, hostname, context).getValue();
         return this;
     }
 
@@ -202,8 +177,8 @@ public final class HostnameBindingImpl implements HostnameBinding, HostnameBindi
         return this;
     }
 
-    public HostnameBindingImpl withCustomHostnameDnsRecordType(
-        CustomHostnameDnsRecordType customHostnameDnsRecordType) {
+    public HostnameBindingImpl
+        withCustomHostnameDnsRecordType(CustomHostnameDnsRecordType customHostnameDnsRecordType) {
         this.innerModel().withCustomHostnameDnsRecordType(customHostnameDnsRecordType);
         return this;
     }

@@ -98,12 +98,9 @@ public final class NetworkInterfaceImpl
     public List<NetworkInterfaceIpConfiguration> ipConfigurations() {
         List<NetworkInterfaceIpConfigurationInner> inner = this.innerModel().ipConfigurations();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new NetworkInterfaceIpConfigurationImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(
+                inner.stream().map(inner1 -> new NetworkInterfaceIpConfigurationImpl(inner1, this.manager()))
+                    .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -112,12 +109,9 @@ public final class NetworkInterfaceImpl
     public List<NetworkInterfaceTapConfiguration> tapConfigurations() {
         List<NetworkInterfaceTapConfigurationInner> inner = this.innerModel().tapConfigurations();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new NetworkInterfaceTapConfigurationImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(
+                inner.stream().map(inner1 -> new NetworkInterfaceTapConfigurationImpl(inner1, this.manager()))
+                    .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -233,20 +227,14 @@ public final class NetworkInterfaceImpl
     }
 
     public NetworkInterface create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNetworkInterfaces()
-                .createOrUpdate(resourceGroupName, networkInterfaceName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getNetworkInterfaces().createOrUpdate(resourceGroupName,
+            networkInterfaceName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public NetworkInterface create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNetworkInterfaces()
-                .createOrUpdate(resourceGroupName, networkInterfaceName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getNetworkInterfaces().createOrUpdate(resourceGroupName,
+            networkInterfaceName, this.innerModel(), context);
         return this;
     }
 
@@ -262,27 +250,19 @@ public final class NetworkInterfaceImpl
     }
 
     public NetworkInterface apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNetworkInterfaces()
-                .updateTagsWithResponse(resourceGroupName, networkInterfaceName, updateParameters, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getNetworkInterfaces()
+            .updateTagsWithResponse(resourceGroupName, networkInterfaceName, updateParameters, Context.NONE).getValue();
         return this;
     }
 
     public NetworkInterface apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNetworkInterfaces()
-                .updateTagsWithResponse(resourceGroupName, networkInterfaceName, updateParameters, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getNetworkInterfaces()
+            .updateTagsWithResponse(resourceGroupName, networkInterfaceName, updateParameters, context).getValue();
         return this;
     }
 
-    NetworkInterfaceImpl(
-        NetworkInterfaceInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    NetworkInterfaceImpl(NetworkInterfaceInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
@@ -291,23 +271,16 @@ public final class NetworkInterfaceImpl
 
     public NetworkInterface refresh() {
         String localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNetworkInterfaces()
-                .getByResourceGroupWithResponse(resourceGroupName, networkInterfaceName, localExpand, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getNetworkInterfaces()
+            .getByResourceGroupWithResponse(resourceGroupName, networkInterfaceName, localExpand, Context.NONE)
+            .getValue();
         return this;
     }
 
     public NetworkInterface refresh(Context context) {
         String localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNetworkInterfaces()
-                .getByResourceGroupWithResponse(resourceGroupName, networkInterfaceName, localExpand, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getNetworkInterfaces()
+            .getByResourceGroupWithResponse(resourceGroupName, networkInterfaceName, localExpand, context).getValue();
         return this;
     }
 
@@ -316,21 +289,18 @@ public final class NetworkInterfaceImpl
     }
 
     public EffectiveRouteListResult getEffectiveRouteTable(Context context) {
-        return serviceManager
-            .networkInterfaces()
-            .getEffectiveRouteTable(resourceGroupName, networkInterfaceName, context);
+        return serviceManager.networkInterfaces().getEffectiveRouteTable(resourceGroupName, networkInterfaceName,
+            context);
     }
 
     public EffectiveNetworkSecurityGroupListResult listEffectiveNetworkSecurityGroups() {
-        return serviceManager
-            .networkInterfaces()
-            .listEffectiveNetworkSecurityGroups(resourceGroupName, networkInterfaceName);
+        return serviceManager.networkInterfaces().listEffectiveNetworkSecurityGroups(resourceGroupName,
+            networkInterfaceName);
     }
 
     public EffectiveNetworkSecurityGroupListResult listEffectiveNetworkSecurityGroups(Context context) {
-        return serviceManager
-            .networkInterfaces()
-            .listEffectiveNetworkSecurityGroups(resourceGroupName, networkInterfaceName, context);
+        return serviceManager.networkInterfaces().listEffectiveNetworkSecurityGroups(resourceGroupName,
+            networkInterfaceName, context);
     }
 
     public NetworkInterfaceImpl withRegion(Region location) {

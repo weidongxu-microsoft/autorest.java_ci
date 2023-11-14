@@ -9,7 +9,9 @@ import com.azure.resourcemanager.keyvault.generated.models.OperationDisplay;
 import com.azure.resourcemanager.keyvault.generated.models.ServiceSpecification;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Key Vault REST API operation definition. */
+/**
+ * Key Vault REST API operation definition.
+ */
 @Fluent
 public final class OperationInner {
     /*
@@ -42,13 +44,15 @@ public final class OperationInner {
     @JsonProperty(value = "isDataAction")
     private Boolean isDataAction;
 
-    /** Creates an instance of OperationInner class. */
+    /**
+     * Creates an instance of OperationInner class.
+     */
     public OperationInner() {
     }
 
     /**
      * Get the name property: Operation name: {provider}/{resource}/{operation}.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -57,7 +61,7 @@ public final class OperationInner {
 
     /**
      * Set the name property: Operation name: {provider}/{resource}/{operation}.
-     *
+     * 
      * @param name the name value to set.
      * @return the OperationInner object itself.
      */
@@ -68,7 +72,7 @@ public final class OperationInner {
 
     /**
      * Get the display property: Display metadata associated with the operation.
-     *
+     * 
      * @return the display value.
      */
     public OperationDisplay display() {
@@ -77,7 +81,7 @@ public final class OperationInner {
 
     /**
      * Set the display property: Display metadata associated with the operation.
-     *
+     * 
      * @param display the display value to set.
      * @return the OperationInner object itself.
      */
@@ -88,7 +92,7 @@ public final class OperationInner {
 
     /**
      * Get the origin property: The origin of operations.
-     *
+     * 
      * @return the origin value.
      */
     public String origin() {
@@ -97,7 +101,7 @@ public final class OperationInner {
 
     /**
      * Set the origin property: The origin of operations.
-     *
+     * 
      * @param origin the origin value to set.
      * @return the OperationInner object itself.
      */
@@ -108,7 +112,7 @@ public final class OperationInner {
 
     /**
      * Get the innerOperationProperties property: Properties of operation, include metric specifications.
-     *
+     * 
      * @return the innerOperationProperties value.
      */
     private OperationProperties innerOperationProperties() {
@@ -117,7 +121,7 @@ public final class OperationInner {
 
     /**
      * Get the isDataAction property: Property to specify whether the action is a data action.
-     *
+     * 
      * @return the isDataAction value.
      */
     public Boolean isDataAction() {
@@ -126,7 +130,7 @@ public final class OperationInner {
 
     /**
      * Set the isDataAction property: Property to specify whether the action is a data action.
-     *
+     * 
      * @param isDataAction the isDataAction value to set.
      * @return the OperationInner object itself.
      */
@@ -137,7 +141,7 @@ public final class OperationInner {
 
     /**
      * Get the serviceSpecification property: One property of operation, include metric specifications.
-     *
+     * 
      * @return the serviceSpecification value.
      */
     public ServiceSpecification serviceSpecification() {
@@ -146,7 +150,7 @@ public final class OperationInner {
 
     /**
      * Set the serviceSpecification property: One property of operation, include metric specifications.
-     *
+     * 
      * @param serviceSpecification the serviceSpecification value to set.
      * @return the OperationInner object itself.
      */
@@ -160,7 +164,7 @@ public final class OperationInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -9,7 +9,9 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** Base class for content key ID location. A derived class must be used to represent the location. */
+/**
+ * Base class for content key ID location. A derived class must be used to represent the location.
+ */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
     include = JsonTypeInfo.As.PROPERTY,
@@ -22,17 +24,18 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
         value = ContentKeyPolicyPlayReadyContentEncryptionKeyFromHeader.class),
     @JsonSubTypes.Type(
         name = "#Microsoft.Media.ContentKeyPolicyPlayReadyContentEncryptionKeyFromKeyIdentifier",
-        value = ContentKeyPolicyPlayReadyContentEncryptionKeyFromKeyIdentifier.class)
-})
+        value = ContentKeyPolicyPlayReadyContentEncryptionKeyFromKeyIdentifier.class) })
 @Immutable
 public class ContentKeyPolicyPlayReadyContentKeyLocation {
-    /** Creates an instance of ContentKeyPolicyPlayReadyContentKeyLocation class. */
+    /**
+     * Creates an instance of ContentKeyPolicyPlayReadyContentKeyLocation class.
+     */
     public ContentKeyPolicyPlayReadyContentKeyLocation() {
     }
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** A rule governing the accessibility of a managed hsm pool from a specific virtual network. */
+/**
+ * A rule governing the accessibility of a managed hsm pool from a specific virtual network.
+ */
 @Fluent
 public final class MhsmVirtualNetworkRule {
     /*
@@ -18,14 +20,16 @@ public final class MhsmVirtualNetworkRule {
     @JsonProperty(value = "id", required = true)
     private String id;
 
-    /** Creates an instance of MhsmVirtualNetworkRule class. */
+    /**
+     * Creates an instance of MhsmVirtualNetworkRule class.
+     */
     public MhsmVirtualNetworkRule() {
     }
 
     /**
      * Get the id property: Full resource id of a vnet subnet, such as
      * '/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworks/test-vnet/subnets/subnet1'.
-     *
+     * 
      * @return the id value.
      */
     public String id() {
@@ -35,7 +39,7 @@ public final class MhsmVirtualNetworkRule {
     /**
      * Set the id property: Full resource id of a vnet subnet, such as
      * '/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworks/test-vnet/subnets/subnet1'.
-     *
+     * 
      * @param id the id value to set.
      * @return the MhsmVirtualNetworkRule object itself.
      */
@@ -46,14 +50,13 @@ public final class MhsmVirtualNetworkRule {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (id() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property id in model MhsmVirtualNetworkRule"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property id in model MhsmVirtualNetworkRule"));
         }
     }
 

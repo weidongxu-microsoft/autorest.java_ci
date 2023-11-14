@@ -15,8 +15,7 @@ public final class AvailableClustersListImpl implements AvailableClustersList {
 
     private final com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager;
 
-    AvailableClustersListImpl(
-        AvailableClustersListInner innerObject,
+    AvailableClustersListImpl(AvailableClustersListInner innerObject,
         com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

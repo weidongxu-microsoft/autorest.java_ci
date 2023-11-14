@@ -9,7 +9,9 @@ import com.azure.resourcemanager.keyvault.generated.fluent.models.ManagedHsmInne
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** List of managed HSM Pools. */
+/**
+ * List of managed HSM Pools.
+ */
 @Fluent
 public final class ManagedHsmListResult {
     /*
@@ -24,13 +26,15 @@ public final class ManagedHsmListResult {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
-    /** Creates an instance of ManagedHsmListResult class. */
+    /**
+     * Creates an instance of ManagedHsmListResult class.
+     */
     public ManagedHsmListResult() {
     }
 
     /**
      * Get the value property: The list of managed HSM Pools.
-     *
+     * 
      * @return the value value.
      */
     public List<ManagedHsmInner> value() {
@@ -39,7 +43,7 @@ public final class ManagedHsmListResult {
 
     /**
      * Set the value property: The list of managed HSM Pools.
-     *
+     * 
      * @param value the value value to set.
      * @return the ManagedHsmListResult object itself.
      */
@@ -50,7 +54,7 @@ public final class ManagedHsmListResult {
 
     /**
      * Get the nextLink property: The URL to get the next set of managed HSM Pools.
-     *
+     * 
      * @return the nextLink value.
      */
     public String nextLink() {
@@ -59,7 +63,7 @@ public final class ManagedHsmListResult {
 
     /**
      * Set the nextLink property: The URL to get the next set of managed HSM Pools.
-     *
+     * 
      * @param nextLink the nextLink value to set.
      * @return the ManagedHsmListResult object itself.
      */
@@ -70,7 +74,7 @@ public final class ManagedHsmListResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

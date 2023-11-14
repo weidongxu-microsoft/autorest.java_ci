@@ -36,22 +36,18 @@ public final class VirtualNetworkGatewaysImpl implements VirtualNetworkGateways 
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public VirtualNetworkGatewaysImpl(
-        VirtualNetworkGatewaysClient innerClient,
+    public VirtualNetworkGatewaysImpl(VirtualNetworkGatewaysClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<VirtualNetworkGateway> getByResourceGroupWithResponse(
-        String resourceGroupName, String virtualNetworkGatewayName, Context context) {
-        Response<VirtualNetworkGatewayInner> inner =
-            this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, virtualNetworkGatewayName, context);
+    public Response<VirtualNetworkGateway> getByResourceGroupWithResponse(String resourceGroupName,
+        String virtualNetworkGatewayName, Context context) {
+        Response<VirtualNetworkGatewayInner> inner = this.serviceClient()
+            .getByResourceGroupWithResponse(resourceGroupName, virtualNetworkGatewayName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new VirtualNetworkGatewayImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -59,8 +55,8 @@ public final class VirtualNetworkGatewaysImpl implements VirtualNetworkGateways 
     }
 
     public VirtualNetworkGateway getByResourceGroup(String resourceGroupName, String virtualNetworkGatewayName) {
-        VirtualNetworkGatewayInner inner =
-            this.serviceClient().getByResourceGroup(resourceGroupName, virtualNetworkGatewayName);
+        VirtualNetworkGatewayInner inner
+            = this.serviceClient().getByResourceGroup(resourceGroupName, virtualNetworkGatewayName);
         if (inner != null) {
             return new VirtualNetworkGatewayImpl(inner, this.manager());
         } else {
@@ -82,25 +78,25 @@ public final class VirtualNetworkGatewaysImpl implements VirtualNetworkGateways 
     }
 
     public PagedIterable<VirtualNetworkGateway> listByResourceGroup(String resourceGroupName, Context context) {
-        PagedIterable<VirtualNetworkGatewayInner> inner =
-            this.serviceClient().listByResourceGroup(resourceGroupName, context);
+        PagedIterable<VirtualNetworkGatewayInner> inner
+            = this.serviceClient().listByResourceGroup(resourceGroupName, context);
         return Utils.mapPage(inner, inner1 -> new VirtualNetworkGatewayImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<VirtualNetworkGatewayConnectionListEntity> listConnections(
-        String resourceGroupName, String virtualNetworkGatewayName) {
-        PagedIterable<VirtualNetworkGatewayConnectionListEntityInner> inner =
-            this.serviceClient().listConnections(resourceGroupName, virtualNetworkGatewayName);
-        return Utils
-            .mapPage(inner, inner1 -> new VirtualNetworkGatewayConnectionListEntityImpl(inner1, this.manager()));
+    public PagedIterable<VirtualNetworkGatewayConnectionListEntity> listConnections(String resourceGroupName,
+        String virtualNetworkGatewayName) {
+        PagedIterable<VirtualNetworkGatewayConnectionListEntityInner> inner
+            = this.serviceClient().listConnections(resourceGroupName, virtualNetworkGatewayName);
+        return Utils.mapPage(inner,
+            inner1 -> new VirtualNetworkGatewayConnectionListEntityImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<VirtualNetworkGatewayConnectionListEntity> listConnections(
-        String resourceGroupName, String virtualNetworkGatewayName, Context context) {
-        PagedIterable<VirtualNetworkGatewayConnectionListEntityInner> inner =
-            this.serviceClient().listConnections(resourceGroupName, virtualNetworkGatewayName, context);
-        return Utils
-            .mapPage(inner, inner1 -> new VirtualNetworkGatewayConnectionListEntityImpl(inner1, this.manager()));
+    public PagedIterable<VirtualNetworkGatewayConnectionListEntity> listConnections(String resourceGroupName,
+        String virtualNetworkGatewayName, Context context) {
+        PagedIterable<VirtualNetworkGatewayConnectionListEntityInner> inner
+            = this.serviceClient().listConnections(resourceGroupName, virtualNetworkGatewayName, context);
+        return Utils.mapPage(inner,
+            inner1 -> new VirtualNetworkGatewayConnectionListEntityImpl(inner1, this.manager()));
     }
 
     public VirtualNetworkGateway reset(String resourceGroupName, String virtualNetworkGatewayName) {
@@ -112,10 +108,10 @@ public final class VirtualNetworkGatewaysImpl implements VirtualNetworkGateways 
         }
     }
 
-    public VirtualNetworkGateway reset(
-        String resourceGroupName, String virtualNetworkGatewayName, String gatewayVip, Context context) {
-        VirtualNetworkGatewayInner inner =
-            this.serviceClient().reset(resourceGroupName, virtualNetworkGatewayName, gatewayVip, context);
+    public VirtualNetworkGateway reset(String resourceGroupName, String virtualNetworkGatewayName, String gatewayVip,
+        Context context) {
+        VirtualNetworkGatewayInner inner
+            = this.serviceClient().reset(resourceGroupName, virtualNetworkGatewayName, gatewayVip, context);
         if (inner != null) {
             return new VirtualNetworkGatewayImpl(inner, this.manager());
         } else {
@@ -131,28 +127,26 @@ public final class VirtualNetworkGatewaysImpl implements VirtualNetworkGateways 
         this.serviceClient().resetVpnClientSharedKey(resourceGroupName, virtualNetworkGatewayName, context);
     }
 
-    public String generatevpnclientpackage(
-        String resourceGroupName, String virtualNetworkGatewayName, VpnClientParameters parameters) {
+    public String generatevpnclientpackage(String resourceGroupName, String virtualNetworkGatewayName,
+        VpnClientParameters parameters) {
         return this.serviceClient().generatevpnclientpackage(resourceGroupName, virtualNetworkGatewayName, parameters);
     }
 
-    public String generatevpnclientpackage(
-        String resourceGroupName, String virtualNetworkGatewayName, VpnClientParameters parameters, Context context) {
-        return this
-            .serviceClient()
-            .generatevpnclientpackage(resourceGroupName, virtualNetworkGatewayName, parameters, context);
+    public String generatevpnclientpackage(String resourceGroupName, String virtualNetworkGatewayName,
+        VpnClientParameters parameters, Context context) {
+        return this.serviceClient().generatevpnclientpackage(resourceGroupName, virtualNetworkGatewayName, parameters,
+            context);
     }
 
-    public String generateVpnProfile(
-        String resourceGroupName, String virtualNetworkGatewayName, VpnClientParameters parameters) {
+    public String generateVpnProfile(String resourceGroupName, String virtualNetworkGatewayName,
+        VpnClientParameters parameters) {
         return this.serviceClient().generateVpnProfile(resourceGroupName, virtualNetworkGatewayName, parameters);
     }
 
-    public String generateVpnProfile(
-        String resourceGroupName, String virtualNetworkGatewayName, VpnClientParameters parameters, Context context) {
-        return this
-            .serviceClient()
-            .generateVpnProfile(resourceGroupName, virtualNetworkGatewayName, parameters, context);
+    public String generateVpnProfile(String resourceGroupName, String virtualNetworkGatewayName,
+        VpnClientParameters parameters, Context context) {
+        return this.serviceClient().generateVpnProfile(resourceGroupName, virtualNetworkGatewayName, parameters,
+            context);
     }
 
     public String getVpnProfilePackageUrl(String resourceGroupName, String virtualNetworkGatewayName) {
@@ -164,8 +158,8 @@ public final class VirtualNetworkGatewaysImpl implements VirtualNetworkGateways 
     }
 
     public BgpPeerStatusListResult getBgpPeerStatus(String resourceGroupName, String virtualNetworkGatewayName) {
-        BgpPeerStatusListResultInner inner =
-            this.serviceClient().getBgpPeerStatus(resourceGroupName, virtualNetworkGatewayName);
+        BgpPeerStatusListResultInner inner
+            = this.serviceClient().getBgpPeerStatus(resourceGroupName, virtualNetworkGatewayName);
         if (inner != null) {
             return new BgpPeerStatusListResultImpl(inner, this.manager());
         } else {
@@ -173,10 +167,10 @@ public final class VirtualNetworkGatewaysImpl implements VirtualNetworkGateways 
         }
     }
 
-    public BgpPeerStatusListResult getBgpPeerStatus(
-        String resourceGroupName, String virtualNetworkGatewayName, String peer, Context context) {
-        BgpPeerStatusListResultInner inner =
-            this.serviceClient().getBgpPeerStatus(resourceGroupName, virtualNetworkGatewayName, peer, context);
+    public BgpPeerStatusListResult getBgpPeerStatus(String resourceGroupName, String virtualNetworkGatewayName,
+        String peer, Context context) {
+        BgpPeerStatusListResultInner inner
+            = this.serviceClient().getBgpPeerStatus(resourceGroupName, virtualNetworkGatewayName, peer, context);
         if (inner != null) {
             return new BgpPeerStatusListResultImpl(inner, this.manager());
         } else {
@@ -184,11 +178,10 @@ public final class VirtualNetworkGatewaysImpl implements VirtualNetworkGateways 
         }
     }
 
-    public Response<String> supportedVpnDevicesWithResponse(
-        String resourceGroupName, String virtualNetworkGatewayName, Context context) {
-        return this
-            .serviceClient()
-            .supportedVpnDevicesWithResponse(resourceGroupName, virtualNetworkGatewayName, context);
+    public Response<String> supportedVpnDevicesWithResponse(String resourceGroupName, String virtualNetworkGatewayName,
+        Context context) {
+        return this.serviceClient().supportedVpnDevicesWithResponse(resourceGroupName, virtualNetworkGatewayName,
+            context);
     }
 
     public String supportedVpnDevices(String resourceGroupName, String virtualNetworkGatewayName) {
@@ -196,8 +189,8 @@ public final class VirtualNetworkGatewaysImpl implements VirtualNetworkGateways 
     }
 
     public GatewayRouteListResult getLearnedRoutes(String resourceGroupName, String virtualNetworkGatewayName) {
-        GatewayRouteListResultInner inner =
-            this.serviceClient().getLearnedRoutes(resourceGroupName, virtualNetworkGatewayName);
+        GatewayRouteListResultInner inner
+            = this.serviceClient().getLearnedRoutes(resourceGroupName, virtualNetworkGatewayName);
         if (inner != null) {
             return new GatewayRouteListResultImpl(inner, this.manager());
         } else {
@@ -205,64 +198,43 @@ public final class VirtualNetworkGatewaysImpl implements VirtualNetworkGateways 
         }
     }
 
-    public GatewayRouteListResult getLearnedRoutes(
-        String resourceGroupName, String virtualNetworkGatewayName, Context context) {
-        GatewayRouteListResultInner inner =
-            this.serviceClient().getLearnedRoutes(resourceGroupName, virtualNetworkGatewayName, context);
-        if (inner != null) {
-            return new GatewayRouteListResultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public GatewayRouteListResult getAdvertisedRoutes(
-        String resourceGroupName, String virtualNetworkGatewayName, String peer) {
-        GatewayRouteListResultInner inner =
-            this.serviceClient().getAdvertisedRoutes(resourceGroupName, virtualNetworkGatewayName, peer);
-        if (inner != null) {
-            return new GatewayRouteListResultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public GatewayRouteListResult getAdvertisedRoutes(
-        String resourceGroupName, String virtualNetworkGatewayName, String peer, Context context) {
-        GatewayRouteListResultInner inner =
-            this.serviceClient().getAdvertisedRoutes(resourceGroupName, virtualNetworkGatewayName, peer, context);
-        if (inner != null) {
-            return new GatewayRouteListResultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public VpnClientIPsecParameters setVpnclientIpsecParameters(
-        String resourceGroupName,
-        String virtualNetworkGatewayName,
-        VpnClientIPsecParametersInner vpnclientIpsecParams) {
-        VpnClientIPsecParametersInner inner =
-            this
-                .serviceClient()
-                .setVpnclientIpsecParameters(resourceGroupName, virtualNetworkGatewayName, vpnclientIpsecParams);
-        if (inner != null) {
-            return new VpnClientIPsecParametersImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public VpnClientIPsecParameters setVpnclientIpsecParameters(
-        String resourceGroupName,
-        String virtualNetworkGatewayName,
-        VpnClientIPsecParametersInner vpnclientIpsecParams,
+    public GatewayRouteListResult getLearnedRoutes(String resourceGroupName, String virtualNetworkGatewayName,
         Context context) {
-        VpnClientIPsecParametersInner inner =
-            this
-                .serviceClient()
-                .setVpnclientIpsecParameters(
-                    resourceGroupName, virtualNetworkGatewayName, vpnclientIpsecParams, context);
+        GatewayRouteListResultInner inner
+            = this.serviceClient().getLearnedRoutes(resourceGroupName, virtualNetworkGatewayName, context);
+        if (inner != null) {
+            return new GatewayRouteListResultImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public GatewayRouteListResult getAdvertisedRoutes(String resourceGroupName, String virtualNetworkGatewayName,
+        String peer) {
+        GatewayRouteListResultInner inner
+            = this.serviceClient().getAdvertisedRoutes(resourceGroupName, virtualNetworkGatewayName, peer);
+        if (inner != null) {
+            return new GatewayRouteListResultImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public GatewayRouteListResult getAdvertisedRoutes(String resourceGroupName, String virtualNetworkGatewayName,
+        String peer, Context context) {
+        GatewayRouteListResultInner inner
+            = this.serviceClient().getAdvertisedRoutes(resourceGroupName, virtualNetworkGatewayName, peer, context);
+        if (inner != null) {
+            return new GatewayRouteListResultImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public VpnClientIPsecParameters setVpnclientIpsecParameters(String resourceGroupName,
+        String virtualNetworkGatewayName, VpnClientIPsecParametersInner vpnclientIpsecParams) {
+        VpnClientIPsecParametersInner inner = this.serviceClient().setVpnclientIpsecParameters(resourceGroupName,
+            virtualNetworkGatewayName, vpnclientIpsecParams);
         if (inner != null) {
             return new VpnClientIPsecParametersImpl(inner, this.manager());
         } else {
@@ -270,10 +242,10 @@ public final class VirtualNetworkGatewaysImpl implements VirtualNetworkGateways 
         }
     }
 
-    public VpnClientIPsecParameters getVpnclientIpsecParameters(
-        String resourceGroupName, String virtualNetworkGatewayName) {
-        VpnClientIPsecParametersInner inner =
-            this.serviceClient().getVpnclientIpsecParameters(resourceGroupName, virtualNetworkGatewayName);
+    public VpnClientIPsecParameters setVpnclientIpsecParameters(String resourceGroupName,
+        String virtualNetworkGatewayName, VpnClientIPsecParametersInner vpnclientIpsecParams, Context context) {
+        VpnClientIPsecParametersInner inner = this.serviceClient().setVpnclientIpsecParameters(resourceGroupName,
+            virtualNetworkGatewayName, vpnclientIpsecParams, context);
         if (inner != null) {
             return new VpnClientIPsecParametersImpl(inner, this.manager());
         } else {
@@ -281,10 +253,10 @@ public final class VirtualNetworkGatewaysImpl implements VirtualNetworkGateways 
         }
     }
 
-    public VpnClientIPsecParameters getVpnclientIpsecParameters(
-        String resourceGroupName, String virtualNetworkGatewayName, Context context) {
-        VpnClientIPsecParametersInner inner =
-            this.serviceClient().getVpnclientIpsecParameters(resourceGroupName, virtualNetworkGatewayName, context);
+    public VpnClientIPsecParameters getVpnclientIpsecParameters(String resourceGroupName,
+        String virtualNetworkGatewayName) {
+        VpnClientIPsecParametersInner inner
+            = this.serviceClient().getVpnclientIpsecParameters(resourceGroupName, virtualNetworkGatewayName);
         if (inner != null) {
             return new VpnClientIPsecParametersImpl(inner, this.manager());
         } else {
@@ -292,57 +264,54 @@ public final class VirtualNetworkGatewaysImpl implements VirtualNetworkGateways 
         }
     }
 
-    public Response<String> vpnDeviceConfigurationScriptWithResponse(
-        String resourceGroupName,
-        String virtualNetworkGatewayConnectionName,
-        VpnDeviceScriptParameters parameters,
-        Context context) {
-        return this
-            .serviceClient()
-            .vpnDeviceConfigurationScriptWithResponse(
-                resourceGroupName, virtualNetworkGatewayConnectionName, parameters, context);
+    public VpnClientIPsecParameters getVpnclientIpsecParameters(String resourceGroupName,
+        String virtualNetworkGatewayName, Context context) {
+        VpnClientIPsecParametersInner inner
+            = this.serviceClient().getVpnclientIpsecParameters(resourceGroupName, virtualNetworkGatewayName, context);
+        if (inner != null) {
+            return new VpnClientIPsecParametersImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
-    public String vpnDeviceConfigurationScript(
-        String resourceGroupName, String virtualNetworkGatewayConnectionName, VpnDeviceScriptParameters parameters) {
-        return this
-            .serviceClient()
-            .vpnDeviceConfigurationScript(resourceGroupName, virtualNetworkGatewayConnectionName, parameters);
+    public Response<String> vpnDeviceConfigurationScriptWithResponse(String resourceGroupName,
+        String virtualNetworkGatewayConnectionName, VpnDeviceScriptParameters parameters, Context context) {
+        return this.serviceClient().vpnDeviceConfigurationScriptWithResponse(resourceGroupName,
+            virtualNetworkGatewayConnectionName, parameters, context);
+    }
+
+    public String vpnDeviceConfigurationScript(String resourceGroupName, String virtualNetworkGatewayConnectionName,
+        VpnDeviceScriptParameters parameters) {
+        return this.serviceClient().vpnDeviceConfigurationScript(resourceGroupName, virtualNetworkGatewayConnectionName,
+            parameters);
     }
 
     public String startPacketCapture(String resourceGroupName, String virtualNetworkGatewayName) {
         return this.serviceClient().startPacketCapture(resourceGroupName, virtualNetworkGatewayName);
     }
 
-    public String startPacketCapture(
-        String resourceGroupName,
-        String virtualNetworkGatewayName,
-        VpnPacketCaptureStartParameters parameters,
-        Context context) {
-        return this
-            .serviceClient()
-            .startPacketCapture(resourceGroupName, virtualNetworkGatewayName, parameters, context);
+    public String startPacketCapture(String resourceGroupName, String virtualNetworkGatewayName,
+        VpnPacketCaptureStartParameters parameters, Context context) {
+        return this.serviceClient().startPacketCapture(resourceGroupName, virtualNetworkGatewayName, parameters,
+            context);
     }
 
-    public String stopPacketCapture(
-        String resourceGroupName, String virtualNetworkGatewayName, VpnPacketCaptureStopParameters parameters) {
+    public String stopPacketCapture(String resourceGroupName, String virtualNetworkGatewayName,
+        VpnPacketCaptureStopParameters parameters) {
         return this.serviceClient().stopPacketCapture(resourceGroupName, virtualNetworkGatewayName, parameters);
     }
 
-    public String stopPacketCapture(
-        String resourceGroupName,
-        String virtualNetworkGatewayName,
-        VpnPacketCaptureStopParameters parameters,
-        Context context) {
-        return this
-            .serviceClient()
-            .stopPacketCapture(resourceGroupName, virtualNetworkGatewayName, parameters, context);
+    public String stopPacketCapture(String resourceGroupName, String virtualNetworkGatewayName,
+        VpnPacketCaptureStopParameters parameters, Context context) {
+        return this.serviceClient().stopPacketCapture(resourceGroupName, virtualNetworkGatewayName, parameters,
+            context);
     }
 
-    public VpnClientConnectionHealthDetailListResult getVpnclientConnectionHealth(
-        String resourceGroupName, String virtualNetworkGatewayName) {
-        VpnClientConnectionHealthDetailListResultInner inner =
-            this.serviceClient().getVpnclientConnectionHealth(resourceGroupName, virtualNetworkGatewayName);
+    public VpnClientConnectionHealthDetailListResult getVpnclientConnectionHealth(String resourceGroupName,
+        String virtualNetworkGatewayName) {
+        VpnClientConnectionHealthDetailListResultInner inner
+            = this.serviceClient().getVpnclientConnectionHealth(resourceGroupName, virtualNetworkGatewayName);
         if (inner != null) {
             return new VpnClientConnectionHealthDetailListResultImpl(inner, this.manager());
         } else {
@@ -350,10 +319,10 @@ public final class VirtualNetworkGatewaysImpl implements VirtualNetworkGateways 
         }
     }
 
-    public VpnClientConnectionHealthDetailListResult getVpnclientConnectionHealth(
-        String resourceGroupName, String virtualNetworkGatewayName, Context context) {
-        VpnClientConnectionHealthDetailListResultInner inner =
-            this.serviceClient().getVpnclientConnectionHealth(resourceGroupName, virtualNetworkGatewayName, context);
+    public VpnClientConnectionHealthDetailListResult getVpnclientConnectionHealth(String resourceGroupName,
+        String virtualNetworkGatewayName, Context context) {
+        VpnClientConnectionHealthDetailListResultInner inner
+            = this.serviceClient().getVpnclientConnectionHealth(resourceGroupName, virtualNetworkGatewayName, context);
         if (inner != null) {
             return new VpnClientConnectionHealthDetailListResultImpl(inner, this.manager());
         } else {
@@ -361,63 +330,43 @@ public final class VirtualNetworkGatewaysImpl implements VirtualNetworkGateways 
         }
     }
 
-    public void disconnectVirtualNetworkGatewayVpnConnections(
-        String resourceGroupName, String virtualNetworkGatewayName, P2SVpnConnectionRequest request) {
-        this
-            .serviceClient()
-            .disconnectVirtualNetworkGatewayVpnConnections(resourceGroupName, virtualNetworkGatewayName, request);
+    public void disconnectVirtualNetworkGatewayVpnConnections(String resourceGroupName,
+        String virtualNetworkGatewayName, P2SVpnConnectionRequest request) {
+        this.serviceClient().disconnectVirtualNetworkGatewayVpnConnections(resourceGroupName, virtualNetworkGatewayName,
+            request);
     }
 
-    public void disconnectVirtualNetworkGatewayVpnConnections(
-        String resourceGroupName, String virtualNetworkGatewayName, P2SVpnConnectionRequest request, Context context) {
-        this
-            .serviceClient()
-            .disconnectVirtualNetworkGatewayVpnConnections(
-                resourceGroupName, virtualNetworkGatewayName, request, context);
+    public void disconnectVirtualNetworkGatewayVpnConnections(String resourceGroupName,
+        String virtualNetworkGatewayName, P2SVpnConnectionRequest request, Context context) {
+        this.serviceClient().disconnectVirtualNetworkGatewayVpnConnections(resourceGroupName, virtualNetworkGatewayName,
+            request, context);
     }
 
     public VirtualNetworkGateway getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String virtualNetworkGatewayName = Utils.getValueFromIdByName(id, "virtualNetworkGateways");
         if (virtualNetworkGatewayName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'virtualNetworkGateways'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'virtualNetworkGateways'.", id)));
         }
-        return this
-            .getByResourceGroupWithResponse(resourceGroupName, virtualNetworkGatewayName, Context.NONE)
+        return this.getByResourceGroupWithResponse(resourceGroupName, virtualNetworkGatewayName, Context.NONE)
             .getValue();
     }
 
     public Response<VirtualNetworkGateway> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String virtualNetworkGatewayName = Utils.getValueFromIdByName(id, "virtualNetworkGateways");
         if (virtualNetworkGatewayName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'virtualNetworkGateways'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'virtualNetworkGateways'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, virtualNetworkGatewayName, context);
     }
@@ -425,21 +374,13 @@ public final class VirtualNetworkGatewaysImpl implements VirtualNetworkGateways 
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String virtualNetworkGatewayName = Utils.getValueFromIdByName(id, "virtualNetworkGateways");
         if (virtualNetworkGatewayName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'virtualNetworkGateways'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'virtualNetworkGateways'.", id)));
         }
         this.delete(resourceGroupName, virtualNetworkGatewayName, Context.NONE);
     }
@@ -447,21 +388,13 @@ public final class VirtualNetworkGatewaysImpl implements VirtualNetworkGateways 
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String virtualNetworkGatewayName = Utils.getValueFromIdByName(id, "virtualNetworkGateways");
         if (virtualNetworkGatewayName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'virtualNetworkGateways'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'virtualNetworkGateways'.", id)));
         }
         this.delete(resourceGroupName, virtualNetworkGatewayName, context);
     }

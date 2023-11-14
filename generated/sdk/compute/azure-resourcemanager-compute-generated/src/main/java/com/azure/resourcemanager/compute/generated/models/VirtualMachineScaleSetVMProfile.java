@@ -7,7 +7,9 @@ package com.azure.resourcemanager.compute.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Describes a virtual machine scale set virtual machine profile. */
+/**
+ * Describes a virtual machine scale set virtual machine profile.
+ */
 @Fluent
 public final class VirtualMachineScaleSetVMProfile {
     /*
@@ -125,13 +127,15 @@ public final class VirtualMachineScaleSetVMProfile {
     @JsonProperty(value = "securityPostureReference")
     private SecurityPostureReference securityPostureReference;
 
-    /** Creates an instance of VirtualMachineScaleSetVMProfile class. */
+    /**
+     * Creates an instance of VirtualMachineScaleSetVMProfile class.
+     */
     public VirtualMachineScaleSetVMProfile() {
     }
 
     /**
      * Get the osProfile property: Specifies the operating system settings for the virtual machines in the scale set.
-     *
+     * 
      * @return the osProfile value.
      */
     public VirtualMachineScaleSetOSProfile osProfile() {
@@ -140,7 +144,7 @@ public final class VirtualMachineScaleSetVMProfile {
 
     /**
      * Set the osProfile property: Specifies the operating system settings for the virtual machines in the scale set.
-     *
+     * 
      * @param osProfile the osProfile value to set.
      * @return the VirtualMachineScaleSetVMProfile object itself.
      */
@@ -151,7 +155,7 @@ public final class VirtualMachineScaleSetVMProfile {
 
     /**
      * Get the storageProfile property: Specifies the storage settings for the virtual machine disks.
-     *
+     * 
      * @return the storageProfile value.
      */
     public VirtualMachineScaleSetStorageProfile storageProfile() {
@@ -160,7 +164,7 @@ public final class VirtualMachineScaleSetVMProfile {
 
     /**
      * Set the storageProfile property: Specifies the storage settings for the virtual machine disks.
-     *
+     * 
      * @param storageProfile the storageProfile value to set.
      * @return the VirtualMachineScaleSetVMProfile object itself.
      */
@@ -172,7 +176,7 @@ public final class VirtualMachineScaleSetVMProfile {
     /**
      * Get the networkProfile property: Specifies properties of the network interfaces of the virtual machines in the
      * scale set.
-     *
+     * 
      * @return the networkProfile value.
      */
     public VirtualMachineScaleSetNetworkProfile networkProfile() {
@@ -182,7 +186,7 @@ public final class VirtualMachineScaleSetVMProfile {
     /**
      * Set the networkProfile property: Specifies properties of the network interfaces of the virtual machines in the
      * scale set.
-     *
+     * 
      * @param networkProfile the networkProfile value to set.
      * @return the VirtualMachineScaleSetVMProfile object itself.
      */
@@ -192,9 +196,9 @@ public final class VirtualMachineScaleSetVMProfile {
     }
 
     /**
-     * Get the securityProfile property: Specifies the Security related profile settings for the virtual machines in the
-     * scale set.
-     *
+     * Get the securityProfile property: Specifies the Security related profile settings for the virtual machines in
+     * the scale set.
+     * 
      * @return the securityProfile value.
      */
     public SecurityProfile securityProfile() {
@@ -202,9 +206,9 @@ public final class VirtualMachineScaleSetVMProfile {
     }
 
     /**
-     * Set the securityProfile property: Specifies the Security related profile settings for the virtual machines in the
-     * scale set.
-     *
+     * Set the securityProfile property: Specifies the Security related profile settings for the virtual machines in
+     * the scale set.
+     * 
      * @param securityProfile the securityProfile value to set.
      * @return the VirtualMachineScaleSetVMProfile object itself.
      */
@@ -216,7 +220,7 @@ public final class VirtualMachineScaleSetVMProfile {
     /**
      * Get the diagnosticsProfile property: Specifies the boot diagnostic settings state. Minimum api-version:
      * 2015-06-15.
-     *
+     * 
      * @return the diagnosticsProfile value.
      */
     public DiagnosticsProfile diagnosticsProfile() {
@@ -226,7 +230,7 @@ public final class VirtualMachineScaleSetVMProfile {
     /**
      * Set the diagnosticsProfile property: Specifies the boot diagnostic settings state. Minimum api-version:
      * 2015-06-15.
-     *
+     * 
      * @param diagnosticsProfile the diagnosticsProfile value to set.
      * @return the VirtualMachineScaleSetVMProfile object itself.
      */
@@ -238,7 +242,7 @@ public final class VirtualMachineScaleSetVMProfile {
     /**
      * Get the extensionProfile property: Specifies a collection of settings for extensions installed on virtual
      * machines in the scale set.
-     *
+     * 
      * @return the extensionProfile value.
      */
     public VirtualMachineScaleSetExtensionProfile extensionProfile() {
@@ -248,27 +252,27 @@ public final class VirtualMachineScaleSetVMProfile {
     /**
      * Set the extensionProfile property: Specifies a collection of settings for extensions installed on virtual
      * machines in the scale set.
-     *
+     * 
      * @param extensionProfile the extensionProfile value to set.
      * @return the VirtualMachineScaleSetVMProfile object itself.
      */
-    public VirtualMachineScaleSetVMProfile withExtensionProfile(
-        VirtualMachineScaleSetExtensionProfile extensionProfile) {
+    public VirtualMachineScaleSetVMProfile
+        withExtensionProfile(VirtualMachineScaleSetExtensionProfile extensionProfile) {
         this.extensionProfile = extensionProfile;
         return this;
     }
 
     /**
      * Get the licenseType property: Specifies that the image or disk that is being used was licensed on-premises.
-     * &lt;br&gt;&lt;br&gt; Possible values for Windows Server operating system are: &lt;br&gt;&lt;br&gt; Windows_Client
-     * &lt;br&gt;&lt;br&gt; Windows_Server &lt;br&gt;&lt;br&gt; Possible values for Linux Server operating system are:
-     * &lt;br&gt;&lt;br&gt; RHEL_BYOS (for RHEL) &lt;br&gt;&lt;br&gt; SLES_BYOS (for SUSE) &lt;br&gt;&lt;br&gt; For more
-     * information, see [Azure Hybrid Use Benefit for Windows
+     * &lt;br&gt;&lt;br&gt; Possible values for Windows Server operating system are: &lt;br&gt;&lt;br&gt;
+     * Windows_Client &lt;br&gt;&lt;br&gt; Windows_Server &lt;br&gt;&lt;br&gt; Possible values for Linux Server
+     * operating system are: &lt;br&gt;&lt;br&gt; RHEL_BYOS (for RHEL) &lt;br&gt;&lt;br&gt; SLES_BYOS (for SUSE)
+     * &lt;br&gt;&lt;br&gt; For more information, see [Azure Hybrid Use Benefit for Windows
      * Server](https://docs.microsoft.com/azure/virtual-machines/windows/hybrid-use-benefit-licensing)
      * &lt;br&gt;&lt;br&gt; [Azure Hybrid Use Benefit for Linux
      * Server](https://docs.microsoft.com/azure/virtual-machines/linux/azure-hybrid-benefit-linux) &lt;br&gt;&lt;br&gt;
      * Minimum api-version: 2015-06-15.
-     *
+     * 
      * @return the licenseType value.
      */
     public String licenseType() {
@@ -277,15 +281,15 @@ public final class VirtualMachineScaleSetVMProfile {
 
     /**
      * Set the licenseType property: Specifies that the image or disk that is being used was licensed on-premises.
-     * &lt;br&gt;&lt;br&gt; Possible values for Windows Server operating system are: &lt;br&gt;&lt;br&gt; Windows_Client
-     * &lt;br&gt;&lt;br&gt; Windows_Server &lt;br&gt;&lt;br&gt; Possible values for Linux Server operating system are:
-     * &lt;br&gt;&lt;br&gt; RHEL_BYOS (for RHEL) &lt;br&gt;&lt;br&gt; SLES_BYOS (for SUSE) &lt;br&gt;&lt;br&gt; For more
-     * information, see [Azure Hybrid Use Benefit for Windows
+     * &lt;br&gt;&lt;br&gt; Possible values for Windows Server operating system are: &lt;br&gt;&lt;br&gt;
+     * Windows_Client &lt;br&gt;&lt;br&gt; Windows_Server &lt;br&gt;&lt;br&gt; Possible values for Linux Server
+     * operating system are: &lt;br&gt;&lt;br&gt; RHEL_BYOS (for RHEL) &lt;br&gt;&lt;br&gt; SLES_BYOS (for SUSE)
+     * &lt;br&gt;&lt;br&gt; For more information, see [Azure Hybrid Use Benefit for Windows
      * Server](https://docs.microsoft.com/azure/virtual-machines/windows/hybrid-use-benefit-licensing)
      * &lt;br&gt;&lt;br&gt; [Azure Hybrid Use Benefit for Linux
      * Server](https://docs.microsoft.com/azure/virtual-machines/linux/azure-hybrid-benefit-linux) &lt;br&gt;&lt;br&gt;
      * Minimum api-version: 2015-06-15.
-     *
+     * 
      * @param licenseType the licenseType value to set.
      * @return the VirtualMachineScaleSetVMProfile object itself.
      */
@@ -295,9 +299,9 @@ public final class VirtualMachineScaleSetVMProfile {
     }
 
     /**
-     * Get the priority property: Specifies the priority for the virtual machines in the scale set. Minimum api-version:
-     * 2017-10-30-preview.
-     *
+     * Get the priority property: Specifies the priority for the virtual machines in the scale set. Minimum
+     * api-version: 2017-10-30-preview.
+     * 
      * @return the priority value.
      */
     public VirtualMachinePriorityTypes priority() {
@@ -305,9 +309,9 @@ public final class VirtualMachineScaleSetVMProfile {
     }
 
     /**
-     * Set the priority property: Specifies the priority for the virtual machines in the scale set. Minimum api-version:
-     * 2017-10-30-preview.
-     *
+     * Set the priority property: Specifies the priority for the virtual machines in the scale set. Minimum
+     * api-version: 2017-10-30-preview.
+     * 
      * @param priority the priority value to set.
      * @return the VirtualMachineScaleSetVMProfile object itself.
      */
@@ -321,7 +325,7 @@ public final class VirtualMachineScaleSetVMProfile {
      * scale set. For Azure Spot virtual machines, both 'Deallocate' and 'Delete' are supported and the minimum
      * api-version is 2019-03-01. For Azure Spot scale sets, both 'Deallocate' and 'Delete' are supported and the
      * minimum api-version is 2017-10-30-preview.
-     *
+     * 
      * @return the evictionPolicy value.
      */
     public VirtualMachineEvictionPolicyTypes evictionPolicy() {
@@ -333,7 +337,7 @@ public final class VirtualMachineScaleSetVMProfile {
      * scale set. For Azure Spot virtual machines, both 'Deallocate' and 'Delete' are supported and the minimum
      * api-version is 2019-03-01. For Azure Spot scale sets, both 'Deallocate' and 'Delete' are supported and the
      * minimum api-version is 2017-10-30-preview.
-     *
+     * 
      * @param evictionPolicy the evictionPolicy value to set.
      * @return the VirtualMachineScaleSetVMProfile object itself.
      */
@@ -343,9 +347,9 @@ public final class VirtualMachineScaleSetVMProfile {
     }
 
     /**
-     * Get the billingProfile property: Specifies the billing related details of a Azure Spot VMSS. Minimum api-version:
-     * 2019-03-01.
-     *
+     * Get the billingProfile property: Specifies the billing related details of a Azure Spot VMSS. Minimum
+     * api-version: 2019-03-01.
+     * 
      * @return the billingProfile value.
      */
     public BillingProfile billingProfile() {
@@ -353,9 +357,9 @@ public final class VirtualMachineScaleSetVMProfile {
     }
 
     /**
-     * Set the billingProfile property: Specifies the billing related details of a Azure Spot VMSS. Minimum api-version:
-     * 2019-03-01.
-     *
+     * Set the billingProfile property: Specifies the billing related details of a Azure Spot VMSS. Minimum
+     * api-version: 2019-03-01.
+     * 
      * @param billingProfile the billingProfile value to set.
      * @return the VirtualMachineScaleSetVMProfile object itself.
      */
@@ -366,7 +370,7 @@ public final class VirtualMachineScaleSetVMProfile {
 
     /**
      * Get the scheduledEventsProfile property: Specifies Scheduled Event related configurations.
-     *
+     * 
      * @return the scheduledEventsProfile value.
      */
     public ScheduledEventsProfile scheduledEventsProfile() {
@@ -375,7 +379,7 @@ public final class VirtualMachineScaleSetVMProfile {
 
     /**
      * Set the scheduledEventsProfile property: Specifies Scheduled Event related configurations.
-     *
+     * 
      * @param scheduledEventsProfile the scheduledEventsProfile value to set.
      * @return the VirtualMachineScaleSetVMProfile object itself.
      */
@@ -387,7 +391,7 @@ public final class VirtualMachineScaleSetVMProfile {
     /**
      * Get the userData property: UserData for the virtual machines in the scale set, which must be base-64 encoded.
      * Customer should not pass any secrets in here. Minimum api-version: 2021-03-01.
-     *
+     * 
      * @return the userData value.
      */
     public String userData() {
@@ -397,7 +401,7 @@ public final class VirtualMachineScaleSetVMProfile {
     /**
      * Set the userData property: UserData for the virtual machines in the scale set, which must be base-64 encoded.
      * Customer should not pass any secrets in here. Minimum api-version: 2021-03-01.
-     *
+     * 
      * @param userData the userData value to set.
      * @return the VirtualMachineScaleSetVMProfile object itself.
      */
@@ -409,7 +413,7 @@ public final class VirtualMachineScaleSetVMProfile {
     /**
      * Get the capacityReservation property: Specifies the capacity reservation related details of a scale set. Minimum
      * api-version: 2021-04-01.
-     *
+     * 
      * @return the capacityReservation value.
      */
     public CapacityReservationProfile capacityReservation() {
@@ -419,7 +423,7 @@ public final class VirtualMachineScaleSetVMProfile {
     /**
      * Set the capacityReservation property: Specifies the capacity reservation related details of a scale set. Minimum
      * api-version: 2021-04-01.
-     *
+     * 
      * @param capacityReservation the capacityReservation value to set.
      * @return the VirtualMachineScaleSetVMProfile object itself.
      */
@@ -431,7 +435,7 @@ public final class VirtualMachineScaleSetVMProfile {
     /**
      * Get the applicationProfile property: Specifies the gallery applications that should be made available to the
      * VM/VMSS.
-     *
+     * 
      * @return the applicationProfile value.
      */
     public ApplicationProfile applicationProfile() {
@@ -441,7 +445,7 @@ public final class VirtualMachineScaleSetVMProfile {
     /**
      * Set the applicationProfile property: Specifies the gallery applications that should be made available to the
      * VM/VMSS.
-     *
+     * 
      * @param applicationProfile the applicationProfile value to set.
      * @return the VirtualMachineScaleSetVMProfile object itself.
      */
@@ -453,7 +457,7 @@ public final class VirtualMachineScaleSetVMProfile {
     /**
      * Get the hardwareProfile property: Specifies the hardware profile related details of a scale set. Minimum
      * api-version: 2021-11-01.
-     *
+     * 
      * @return the hardwareProfile value.
      */
     public VirtualMachineScaleSetHardwareProfile hardwareProfile() {
@@ -463,7 +467,7 @@ public final class VirtualMachineScaleSetVMProfile {
     /**
      * Set the hardwareProfile property: Specifies the hardware profile related details of a scale set. Minimum
      * api-version: 2021-11-01.
-     *
+     * 
      * @param hardwareProfile the hardwareProfile value to set.
      * @return the VirtualMachineScaleSetVMProfile object itself.
      */
@@ -476,7 +480,7 @@ public final class VirtualMachineScaleSetVMProfile {
      * Get the serviceArtifactReference property: Specifies the service artifact reference id used to set same image
      * version for all virtual machines in the scale set when using 'latest' image version. Minimum api-version:
      * 2022-11-01.
-     *
+     * 
      * @return the serviceArtifactReference value.
      */
     public ServiceArtifactReference serviceArtifactReference() {
@@ -487,12 +491,12 @@ public final class VirtualMachineScaleSetVMProfile {
      * Set the serviceArtifactReference property: Specifies the service artifact reference id used to set same image
      * version for all virtual machines in the scale set when using 'latest' image version. Minimum api-version:
      * 2022-11-01.
-     *
+     * 
      * @param serviceArtifactReference the serviceArtifactReference value to set.
      * @return the VirtualMachineScaleSetVMProfile object itself.
      */
-    public VirtualMachineScaleSetVMProfile withServiceArtifactReference(
-        ServiceArtifactReference serviceArtifactReference) {
+    public VirtualMachineScaleSetVMProfile
+        withServiceArtifactReference(ServiceArtifactReference serviceArtifactReference) {
         this.serviceArtifactReference = serviceArtifactReference;
         return this;
     }
@@ -500,7 +504,7 @@ public final class VirtualMachineScaleSetVMProfile {
     /**
      * Get the securityPostureReference property: Specifies the security posture to be used for all virtual machines in
      * the scale set. Minimum api-version: 2023-03-01.
-     *
+     * 
      * @return the securityPostureReference value.
      */
     public SecurityPostureReference securityPostureReference() {
@@ -510,19 +514,19 @@ public final class VirtualMachineScaleSetVMProfile {
     /**
      * Set the securityPostureReference property: Specifies the security posture to be used for all virtual machines in
      * the scale set. Minimum api-version: 2023-03-01.
-     *
+     * 
      * @param securityPostureReference the securityPostureReference value to set.
      * @return the VirtualMachineScaleSetVMProfile object itself.
      */
-    public VirtualMachineScaleSetVMProfile withSecurityPostureReference(
-        SecurityPostureReference securityPostureReference) {
+    public VirtualMachineScaleSetVMProfile
+        withSecurityPostureReference(SecurityPostureReference securityPostureReference) {
         this.securityPostureReference = securityPostureReference;
         return this;
     }
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

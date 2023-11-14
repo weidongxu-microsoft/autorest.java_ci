@@ -7,33 +7,35 @@ package com.azure.resourcemanager.storage.generated.models;
 import com.azure.resourcemanager.storage.generated.fluent.models.SkuInformationInner;
 import java.util.List;
 
-/** An immutable client-side representation of SkuInformation. */
+/**
+ * An immutable client-side representation of SkuInformation.
+ */
 public interface SkuInformation {
     /**
      * Gets the name property: The SKU name. Required for account creation; optional for update. Note that in older
      * versions, SKU name was called accountType.
-     *
+     * 
      * @return the name value.
      */
     SkuName name();
 
     /**
      * Gets the tier property: The SKU tier. This is based on the SKU name.
-     *
+     * 
      * @return the tier value.
      */
     SkuTier tier();
 
     /**
      * Gets the resourceType property: The type of the resource, usually it is 'storageAccounts'.
-     *
+     * 
      * @return the resourceType value.
      */
     String resourceType();
 
     /**
      * Gets the kind property: Indicates the type of storage account.
-     *
+     * 
      * @return the kind value.
      */
     Kind kind();
@@ -41,7 +43,7 @@ public interface SkuInformation {
     /**
      * Gets the locations property: The set of locations that the SKU is available. This will be supported and
      * registered Azure Geo Regions (e.g. West US, East US, Southeast Asia, etc.).
-     *
+     * 
      * @return the locations value.
      */
     List<String> locations();
@@ -49,7 +51,7 @@ public interface SkuInformation {
     /**
      * Gets the capabilities property: The capability information in the specified SKU, including file encryption,
      * network ACLs, change notification, etc.
-     *
+     * 
      * @return the capabilities value.
      */
     List<SkuCapability> capabilities();
@@ -57,14 +59,14 @@ public interface SkuInformation {
     /**
      * Gets the restrictions property: The restrictions because of which SKU cannot be used. This is empty if there are
      * no restrictions.
-     *
+     * 
      * @return the restrictions value.
      */
     List<Restriction> restrictions();
 
     /**
      * Gets the inner com.azure.resourcemanager.storage.generated.fluent.models.SkuInformationInner object.
-     *
+     * 
      * @return the inner object.
      */
     SkuInformationInner innerModel();

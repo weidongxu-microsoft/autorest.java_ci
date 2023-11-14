@@ -12,8 +12,7 @@ public final class NameIdentifierImpl implements NameIdentifier {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    NameIdentifierImpl(
-        NameIdentifierInner innerObject,
+    NameIdentifierImpl(NameIdentifierInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

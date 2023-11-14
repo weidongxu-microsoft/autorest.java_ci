@@ -8,26 +8,38 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Status of the update. */
+/**
+ * Status of the update.
+ */
 public final class UpdateStatus extends ExpandableStringEnum<UpdateStatus> {
-    /** Static value DownloadPending for UpdateStatus. */
+    /**
+     * Static value DownloadPending for UpdateStatus.
+     */
     public static final UpdateStatus DOWNLOAD_PENDING = fromString("DownloadPending");
 
-    /** Static value DownloadStarted for UpdateStatus. */
+    /**
+     * Static value DownloadStarted for UpdateStatus.
+     */
     public static final UpdateStatus DOWNLOAD_STARTED = fromString("DownloadStarted");
 
-    /** Static value DownloadCompleted for UpdateStatus. */
+    /**
+     * Static value DownloadCompleted for UpdateStatus.
+     */
     public static final UpdateStatus DOWNLOAD_COMPLETED = fromString("DownloadCompleted");
 
-    /** Static value InstallStarted for UpdateStatus. */
+    /**
+     * Static value InstallStarted for UpdateStatus.
+     */
     public static final UpdateStatus INSTALL_STARTED = fromString("InstallStarted");
 
-    /** Static value InstallCompleted for UpdateStatus. */
+    /**
+     * Static value InstallCompleted for UpdateStatus.
+     */
     public static final UpdateStatus INSTALL_COMPLETED = fromString("InstallCompleted");
 
     /**
      * Creates a new instance of UpdateStatus value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -36,7 +48,7 @@ public final class UpdateStatus extends ExpandableStringEnum<UpdateStatus> {
 
     /**
      * Creates or finds a UpdateStatus from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding UpdateStatus.
      */
@@ -47,7 +59,7 @@ public final class UpdateStatus extends ExpandableStringEnum<UpdateStatus> {
 
     /**
      * Gets known UpdateStatus values.
-     *
+     * 
      * @return known UpdateStatus values.
      */
     public static Collection<UpdateStatus> values() {

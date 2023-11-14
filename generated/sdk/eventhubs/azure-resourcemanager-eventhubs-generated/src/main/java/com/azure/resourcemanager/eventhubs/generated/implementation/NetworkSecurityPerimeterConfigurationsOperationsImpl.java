@@ -11,8 +11,8 @@ import com.azure.resourcemanager.eventhubs.generated.models.NetworkSecurityPerim
 
 public final class NetworkSecurityPerimeterConfigurationsOperationsImpl
     implements NetworkSecurityPerimeterConfigurationsOperations {
-    private static final ClientLogger LOGGER =
-        new ClientLogger(NetworkSecurityPerimeterConfigurationsOperationsImpl.class);
+    private static final ClientLogger LOGGER
+        = new ClientLogger(NetworkSecurityPerimeterConfigurationsOperationsImpl.class);
 
     private final NetworkSecurityPerimeterConfigurationsOperationsClient innerClient;
 
@@ -29,8 +29,8 @@ public final class NetworkSecurityPerimeterConfigurationsOperationsImpl
         this.serviceClient().createOrUpdate(resourceGroupName, namespaceName, resourceAssociationName);
     }
 
-    public void createOrUpdate(
-        String resourceGroupName, String namespaceName, String resourceAssociationName, Context context) {
+    public void createOrUpdate(String resourceGroupName, String namespaceName, String resourceAssociationName,
+        Context context) {
         this.serviceClient().createOrUpdate(resourceGroupName, namespaceName, resourceAssociationName, context);
     }
 

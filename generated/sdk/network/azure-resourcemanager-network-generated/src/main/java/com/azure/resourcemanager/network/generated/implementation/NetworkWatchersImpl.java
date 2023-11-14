@@ -52,21 +52,18 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public NetworkWatchersImpl(
-        NetworkWatchersClient innerClient, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    public NetworkWatchersImpl(NetworkWatchersClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<NetworkWatcher> getByResourceGroupWithResponse(
-        String resourceGroupName, String networkWatcherName, Context context) {
-        Response<NetworkWatcherInner> inner =
-            this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, networkWatcherName, context);
+    public Response<NetworkWatcher> getByResourceGroupWithResponse(String resourceGroupName, String networkWatcherName,
+        Context context) {
+        Response<NetworkWatcherInner> inner
+            = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, networkWatcherName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new NetworkWatcherImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -110,15 +107,12 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
         return Utils.mapPage(inner, inner1 -> new NetworkWatcherImpl(inner1, this.manager()));
     }
 
-    public Response<Topology> getTopologyWithResponse(
-        String resourceGroupName, String networkWatcherName, TopologyParameters parameters, Context context) {
-        Response<TopologyInner> inner =
-            this.serviceClient().getTopologyWithResponse(resourceGroupName, networkWatcherName, parameters, context);
+    public Response<Topology> getTopologyWithResponse(String resourceGroupName, String networkWatcherName,
+        TopologyParameters parameters, Context context) {
+        Response<TopologyInner> inner
+            = this.serviceClient().getTopologyWithResponse(resourceGroupName, networkWatcherName, parameters, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new TopologyImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -134,10 +128,10 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
         }
     }
 
-    public VerificationIpFlowResult verifyIpFlow(
-        String resourceGroupName, String networkWatcherName, VerificationIpFlowParameters parameters) {
-        VerificationIpFlowResultInner inner =
-            this.serviceClient().verifyIpFlow(resourceGroupName, networkWatcherName, parameters);
+    public VerificationIpFlowResult verifyIpFlow(String resourceGroupName, String networkWatcherName,
+        VerificationIpFlowParameters parameters) {
+        VerificationIpFlowResultInner inner
+            = this.serviceClient().verifyIpFlow(resourceGroupName, networkWatcherName, parameters);
         if (inner != null) {
             return new VerificationIpFlowResultImpl(inner, this.manager());
         } else {
@@ -145,10 +139,10 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
         }
     }
 
-    public VerificationIpFlowResult verifyIpFlow(
-        String resourceGroupName, String networkWatcherName, VerificationIpFlowParameters parameters, Context context) {
-        VerificationIpFlowResultInner inner =
-            this.serviceClient().verifyIpFlow(resourceGroupName, networkWatcherName, parameters, context);
+    public VerificationIpFlowResult verifyIpFlow(String resourceGroupName, String networkWatcherName,
+        VerificationIpFlowParameters parameters, Context context) {
+        VerificationIpFlowResultInner inner
+            = this.serviceClient().verifyIpFlow(resourceGroupName, networkWatcherName, parameters, context);
         if (inner != null) {
             return new VerificationIpFlowResultImpl(inner, this.manager());
         } else {
@@ -165,10 +159,10 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
         }
     }
 
-    public NextHopResult getNextHop(
-        String resourceGroupName, String networkWatcherName, NextHopParameters parameters, Context context) {
-        NextHopResultInner inner =
-            this.serviceClient().getNextHop(resourceGroupName, networkWatcherName, parameters, context);
+    public NextHopResult getNextHop(String resourceGroupName, String networkWatcherName, NextHopParameters parameters,
+        Context context) {
+        NextHopResultInner inner
+            = this.serviceClient().getNextHop(resourceGroupName, networkWatcherName, parameters, context);
         if (inner != null) {
             return new NextHopResultImpl(inner, this.manager());
         } else {
@@ -176,10 +170,10 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
         }
     }
 
-    public SecurityGroupViewResult getVMSecurityRules(
-        String resourceGroupName, String networkWatcherName, SecurityGroupViewParameters parameters) {
-        SecurityGroupViewResultInner inner =
-            this.serviceClient().getVMSecurityRules(resourceGroupName, networkWatcherName, parameters);
+    public SecurityGroupViewResult getVMSecurityRules(String resourceGroupName, String networkWatcherName,
+        SecurityGroupViewParameters parameters) {
+        SecurityGroupViewResultInner inner
+            = this.serviceClient().getVMSecurityRules(resourceGroupName, networkWatcherName, parameters);
         if (inner != null) {
             return new SecurityGroupViewResultImpl(inner, this.manager());
         } else {
@@ -187,10 +181,10 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
         }
     }
 
-    public SecurityGroupViewResult getVMSecurityRules(
-        String resourceGroupName, String networkWatcherName, SecurityGroupViewParameters parameters, Context context) {
-        SecurityGroupViewResultInner inner =
-            this.serviceClient().getVMSecurityRules(resourceGroupName, networkWatcherName, parameters, context);
+    public SecurityGroupViewResult getVMSecurityRules(String resourceGroupName, String networkWatcherName,
+        SecurityGroupViewParameters parameters, Context context) {
+        SecurityGroupViewResultInner inner
+            = this.serviceClient().getVMSecurityRules(resourceGroupName, networkWatcherName, parameters, context);
         if (inner != null) {
             return new SecurityGroupViewResultImpl(inner, this.manager());
         } else {
@@ -198,10 +192,10 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
         }
     }
 
-    public TroubleshootingResult getTroubleshooting(
-        String resourceGroupName, String networkWatcherName, TroubleshootingParameters parameters) {
-        TroubleshootingResultInner inner =
-            this.serviceClient().getTroubleshooting(resourceGroupName, networkWatcherName, parameters);
+    public TroubleshootingResult getTroubleshooting(String resourceGroupName, String networkWatcherName,
+        TroubleshootingParameters parameters) {
+        TroubleshootingResultInner inner
+            = this.serviceClient().getTroubleshooting(resourceGroupName, networkWatcherName, parameters);
         if (inner != null) {
             return new TroubleshootingResultImpl(inner, this.manager());
         } else {
@@ -209,10 +203,10 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
         }
     }
 
-    public TroubleshootingResult getTroubleshooting(
-        String resourceGroupName, String networkWatcherName, TroubleshootingParameters parameters, Context context) {
-        TroubleshootingResultInner inner =
-            this.serviceClient().getTroubleshooting(resourceGroupName, networkWatcherName, parameters, context);
+    public TroubleshootingResult getTroubleshooting(String resourceGroupName, String networkWatcherName,
+        TroubleshootingParameters parameters, Context context) {
+        TroubleshootingResultInner inner
+            = this.serviceClient().getTroubleshooting(resourceGroupName, networkWatcherName, parameters, context);
         if (inner != null) {
             return new TroubleshootingResultImpl(inner, this.manager());
         } else {
@@ -220,10 +214,10 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
         }
     }
 
-    public TroubleshootingResult getTroubleshootingResult(
-        String resourceGroupName, String networkWatcherName, QueryTroubleshootingParameters parameters) {
-        TroubleshootingResultInner inner =
-            this.serviceClient().getTroubleshootingResult(resourceGroupName, networkWatcherName, parameters);
+    public TroubleshootingResult getTroubleshootingResult(String resourceGroupName, String networkWatcherName,
+        QueryTroubleshootingParameters parameters) {
+        TroubleshootingResultInner inner
+            = this.serviceClient().getTroubleshootingResult(resourceGroupName, networkWatcherName, parameters);
         if (inner != null) {
             return new TroubleshootingResultImpl(inner, this.manager());
         } else {
@@ -231,13 +225,10 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
         }
     }
 
-    public TroubleshootingResult getTroubleshootingResult(
-        String resourceGroupName,
-        String networkWatcherName,
-        QueryTroubleshootingParameters parameters,
-        Context context) {
-        TroubleshootingResultInner inner =
-            this.serviceClient().getTroubleshootingResult(resourceGroupName, networkWatcherName, parameters, context);
+    public TroubleshootingResult getTroubleshootingResult(String resourceGroupName, String networkWatcherName,
+        QueryTroubleshootingParameters parameters, Context context) {
+        TroubleshootingResultInner inner
+            = this.serviceClient().getTroubleshootingResult(resourceGroupName, networkWatcherName, parameters, context);
         if (inner != null) {
             return new TroubleshootingResultImpl(inner, this.manager());
         } else {
@@ -245,10 +236,10 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
         }
     }
 
-    public FlowLogInformation setFlowLogConfiguration(
-        String resourceGroupName, String networkWatcherName, FlowLogInformationInner parameters) {
-        FlowLogInformationInner inner =
-            this.serviceClient().setFlowLogConfiguration(resourceGroupName, networkWatcherName, parameters);
+    public FlowLogInformation setFlowLogConfiguration(String resourceGroupName, String networkWatcherName,
+        FlowLogInformationInner parameters) {
+        FlowLogInformationInner inner
+            = this.serviceClient().setFlowLogConfiguration(resourceGroupName, networkWatcherName, parameters);
         if (inner != null) {
             return new FlowLogInformationImpl(inner, this.manager());
         } else {
@@ -256,10 +247,10 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
         }
     }
 
-    public FlowLogInformation setFlowLogConfiguration(
-        String resourceGroupName, String networkWatcherName, FlowLogInformationInner parameters, Context context) {
-        FlowLogInformationInner inner =
-            this.serviceClient().setFlowLogConfiguration(resourceGroupName, networkWatcherName, parameters, context);
+    public FlowLogInformation setFlowLogConfiguration(String resourceGroupName, String networkWatcherName,
+        FlowLogInformationInner parameters, Context context) {
+        FlowLogInformationInner inner
+            = this.serviceClient().setFlowLogConfiguration(resourceGroupName, networkWatcherName, parameters, context);
         if (inner != null) {
             return new FlowLogInformationImpl(inner, this.manager());
         } else {
@@ -267,10 +258,10 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
         }
     }
 
-    public FlowLogInformation getFlowLogStatus(
-        String resourceGroupName, String networkWatcherName, FlowLogStatusParameters parameters) {
-        FlowLogInformationInner inner =
-            this.serviceClient().getFlowLogStatus(resourceGroupName, networkWatcherName, parameters);
+    public FlowLogInformation getFlowLogStatus(String resourceGroupName, String networkWatcherName,
+        FlowLogStatusParameters parameters) {
+        FlowLogInformationInner inner
+            = this.serviceClient().getFlowLogStatus(resourceGroupName, networkWatcherName, parameters);
         if (inner != null) {
             return new FlowLogInformationImpl(inner, this.manager());
         } else {
@@ -278,10 +269,10 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
         }
     }
 
-    public FlowLogInformation getFlowLogStatus(
-        String resourceGroupName, String networkWatcherName, FlowLogStatusParameters parameters, Context context) {
-        FlowLogInformationInner inner =
-            this.serviceClient().getFlowLogStatus(resourceGroupName, networkWatcherName, parameters, context);
+    public FlowLogInformation getFlowLogStatus(String resourceGroupName, String networkWatcherName,
+        FlowLogStatusParameters parameters, Context context) {
+        FlowLogInformationInner inner
+            = this.serviceClient().getFlowLogStatus(resourceGroupName, networkWatcherName, parameters, context);
         if (inner != null) {
             return new FlowLogInformationImpl(inner, this.manager());
         } else {
@@ -289,10 +280,10 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
         }
     }
 
-    public ConnectivityInformation checkConnectivity(
-        String resourceGroupName, String networkWatcherName, ConnectivityParameters parameters) {
-        ConnectivityInformationInner inner =
-            this.serviceClient().checkConnectivity(resourceGroupName, networkWatcherName, parameters);
+    public ConnectivityInformation checkConnectivity(String resourceGroupName, String networkWatcherName,
+        ConnectivityParameters parameters) {
+        ConnectivityInformationInner inner
+            = this.serviceClient().checkConnectivity(resourceGroupName, networkWatcherName, parameters);
         if (inner != null) {
             return new ConnectivityInformationImpl(inner, this.manager());
         } else {
@@ -300,10 +291,10 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
         }
     }
 
-    public ConnectivityInformation checkConnectivity(
-        String resourceGroupName, String networkWatcherName, ConnectivityParameters parameters, Context context) {
-        ConnectivityInformationInner inner =
-            this.serviceClient().checkConnectivity(resourceGroupName, networkWatcherName, parameters, context);
+    public ConnectivityInformation checkConnectivity(String resourceGroupName, String networkWatcherName,
+        ConnectivityParameters parameters, Context context) {
+        ConnectivityInformationInner inner
+            = this.serviceClient().checkConnectivity(resourceGroupName, networkWatcherName, parameters, context);
         if (inner != null) {
             return new ConnectivityInformationImpl(inner, this.manager());
         } else {
@@ -311,10 +302,10 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
         }
     }
 
-    public AzureReachabilityReport getAzureReachabilityReport(
-        String resourceGroupName, String networkWatcherName, AzureReachabilityReportParameters parameters) {
-        AzureReachabilityReportInner inner =
-            this.serviceClient().getAzureReachabilityReport(resourceGroupName, networkWatcherName, parameters);
+    public AzureReachabilityReport getAzureReachabilityReport(String resourceGroupName, String networkWatcherName,
+        AzureReachabilityReportParameters parameters) {
+        AzureReachabilityReportInner inner
+            = this.serviceClient().getAzureReachabilityReport(resourceGroupName, networkWatcherName, parameters);
         if (inner != null) {
             return new AzureReachabilityReportImpl(inner, this.manager());
         } else {
@@ -322,13 +313,10 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
         }
     }
 
-    public AzureReachabilityReport getAzureReachabilityReport(
-        String resourceGroupName,
-        String networkWatcherName,
-        AzureReachabilityReportParameters parameters,
-        Context context) {
-        AzureReachabilityReportInner inner =
-            this.serviceClient().getAzureReachabilityReport(resourceGroupName, networkWatcherName, parameters, context);
+    public AzureReachabilityReport getAzureReachabilityReport(String resourceGroupName, String networkWatcherName,
+        AzureReachabilityReportParameters parameters, Context context) {
+        AzureReachabilityReportInner inner = this.serviceClient().getAzureReachabilityReport(resourceGroupName,
+            networkWatcherName, parameters, context);
         if (inner != null) {
             return new AzureReachabilityReportImpl(inner, this.manager());
         } else {
@@ -336,10 +324,10 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
         }
     }
 
-    public AvailableProvidersList listAvailableProviders(
-        String resourceGroupName, String networkWatcherName, AvailableProvidersListParameters parameters) {
-        AvailableProvidersListInner inner =
-            this.serviceClient().listAvailableProviders(resourceGroupName, networkWatcherName, parameters);
+    public AvailableProvidersList listAvailableProviders(String resourceGroupName, String networkWatcherName,
+        AvailableProvidersListParameters parameters) {
+        AvailableProvidersListInner inner
+            = this.serviceClient().listAvailableProviders(resourceGroupName, networkWatcherName, parameters);
         if (inner != null) {
             return new AvailableProvidersListImpl(inner, this.manager());
         } else {
@@ -347,13 +335,10 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
         }
     }
 
-    public AvailableProvidersList listAvailableProviders(
-        String resourceGroupName,
-        String networkWatcherName,
-        AvailableProvidersListParameters parameters,
-        Context context) {
-        AvailableProvidersListInner inner =
-            this.serviceClient().listAvailableProviders(resourceGroupName, networkWatcherName, parameters, context);
+    public AvailableProvidersList listAvailableProviders(String resourceGroupName, String networkWatcherName,
+        AvailableProvidersListParameters parameters, Context context) {
+        AvailableProvidersListInner inner
+            = this.serviceClient().listAvailableProviders(resourceGroupName, networkWatcherName, parameters, context);
         if (inner != null) {
             return new AvailableProvidersListImpl(inner, this.manager());
         } else {
@@ -361,10 +346,10 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
         }
     }
 
-    public NetworkConfigurationDiagnosticResponse getNetworkConfigurationDiagnostic(
-        String resourceGroupName, String networkWatcherName, NetworkConfigurationDiagnosticParameters parameters) {
-        NetworkConfigurationDiagnosticResponseInner inner =
-            this.serviceClient().getNetworkConfigurationDiagnostic(resourceGroupName, networkWatcherName, parameters);
+    public NetworkConfigurationDiagnosticResponse getNetworkConfigurationDiagnostic(String resourceGroupName,
+        String networkWatcherName, NetworkConfigurationDiagnosticParameters parameters) {
+        NetworkConfigurationDiagnosticResponseInner inner
+            = this.serviceClient().getNetworkConfigurationDiagnostic(resourceGroupName, networkWatcherName, parameters);
         if (inner != null) {
             return new NetworkConfigurationDiagnosticResponseImpl(inner, this.manager());
         } else {
@@ -372,15 +357,10 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
         }
     }
 
-    public NetworkConfigurationDiagnosticResponse getNetworkConfigurationDiagnostic(
-        String resourceGroupName,
-        String networkWatcherName,
-        NetworkConfigurationDiagnosticParameters parameters,
-        Context context) {
-        NetworkConfigurationDiagnosticResponseInner inner =
-            this
-                .serviceClient()
-                .getNetworkConfigurationDiagnostic(resourceGroupName, networkWatcherName, parameters, context);
+    public NetworkConfigurationDiagnosticResponse getNetworkConfigurationDiagnostic(String resourceGroupName,
+        String networkWatcherName, NetworkConfigurationDiagnosticParameters parameters, Context context) {
+        NetworkConfigurationDiagnosticResponseInner inner = this.serviceClient()
+            .getNetworkConfigurationDiagnostic(resourceGroupName, networkWatcherName, parameters, context);
         if (inner != null) {
             return new NetworkConfigurationDiagnosticResponseImpl(inner, this.manager());
         } else {
@@ -391,19 +371,13 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
     public NetworkWatcher getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String networkWatcherName = Utils.getValueFromIdByName(id, "networkWatchers");
         if (networkWatcherName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'networkWatchers'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'networkWatchers'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, networkWatcherName, Context.NONE).getValue();
     }
@@ -411,19 +385,13 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
     public Response<NetworkWatcher> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String networkWatcherName = Utils.getValueFromIdByName(id, "networkWatchers");
         if (networkWatcherName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'networkWatchers'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'networkWatchers'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, networkWatcherName, context);
     }
@@ -431,19 +399,13 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String networkWatcherName = Utils.getValueFromIdByName(id, "networkWatchers");
         if (networkWatcherName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'networkWatchers'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'networkWatchers'.", id)));
         }
         this.delete(resourceGroupName, networkWatcherName, Context.NONE);
     }
@@ -451,19 +413,13 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String networkWatcherName = Utils.getValueFromIdByName(id, "networkWatchers");
         if (networkWatcherName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'networkWatchers'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'networkWatchers'.", id)));
         }
         this.delete(resourceGroupName, networkWatcherName, context);
     }

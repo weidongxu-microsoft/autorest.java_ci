@@ -18,8 +18,7 @@ public final class VirtualMachineScaleSetVMExtensionsListResultImpl
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    VirtualMachineScaleSetVMExtensionsListResultImpl(
-        VirtualMachineScaleSetVMExtensionsListResultInner innerObject,
+    VirtualMachineScaleSetVMExtensionsListResultImpl(VirtualMachineScaleSetVMExtensionsListResultInner innerObject,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -28,12 +27,9 @@ public final class VirtualMachineScaleSetVMExtensionsListResultImpl
     public List<VirtualMachineScaleSetVMExtension> value() {
         List<VirtualMachineScaleSetVMExtensionInner> inner = this.innerModel().value();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new VirtualMachineScaleSetVMExtensionImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(
+                inner.stream().map(inner1 -> new VirtualMachineScaleSetVMExtensionImpl(inner1, this.manager()))
+                    .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

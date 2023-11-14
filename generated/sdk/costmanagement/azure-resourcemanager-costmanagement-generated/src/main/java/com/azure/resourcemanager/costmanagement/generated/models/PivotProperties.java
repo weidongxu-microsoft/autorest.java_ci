@@ -7,7 +7,9 @@ package com.azure.resourcemanager.costmanagement.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Each pivot must contain a 'type' and 'name'. */
+/**
+ * Each pivot must contain a 'type' and 'name'.
+ */
 @Fluent
 public final class PivotProperties {
     /*
@@ -22,13 +24,15 @@ public final class PivotProperties {
     @JsonProperty(value = "name")
     private String name;
 
-    /** Creates an instance of PivotProperties class. */
+    /**
+     * Creates an instance of PivotProperties class.
+     */
     public PivotProperties() {
     }
 
     /**
      * Get the type property: Data type to show in view.
-     *
+     * 
      * @return the type value.
      */
     public PivotType type() {
@@ -37,7 +41,7 @@ public final class PivotProperties {
 
     /**
      * Set the type property: Data type to show in view.
-     *
+     * 
      * @param type the type value to set.
      * @return the PivotProperties object itself.
      */
@@ -48,7 +52,7 @@ public final class PivotProperties {
 
     /**
      * Get the name property: Data field to show in view.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -57,7 +61,7 @@ public final class PivotProperties {
 
     /**
      * Set the name property: Data field to show in view.
-     *
+     * 
      * @param name the name value to set.
      * @return the PivotProperties object itself.
      */
@@ -68,7 +72,7 @@ public final class PivotProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -10,7 +10,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.List;
 
-/** Describes a list of inputs to a Job. */
+/**
+ * Describes a list of inputs to a Job.
+ */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
 @JsonTypeName("#Microsoft.Media.JobInputs")
 @Fluent
@@ -21,13 +23,15 @@ public final class JobInputs extends JobInput {
     @JsonProperty(value = "inputs")
     private List<JobInput> inputs;
 
-    /** Creates an instance of JobInputs class. */
+    /**
+     * Creates an instance of JobInputs class.
+     */
     public JobInputs() {
     }
 
     /**
      * Get the inputs property: List of inputs to a Job.
-     *
+     * 
      * @return the inputs value.
      */
     public List<JobInput> inputs() {
@@ -36,7 +40,7 @@ public final class JobInputs extends JobInput {
 
     /**
      * Set the inputs property: List of inputs to a Job.
-     *
+     * 
      * @param inputs the inputs value to set.
      * @return the JobInputs object itself.
      */
@@ -47,7 +51,7 @@ public final class JobInputs extends JobInput {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

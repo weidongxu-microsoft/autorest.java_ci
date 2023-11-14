@@ -9,7 +9,9 @@ import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.UUID;
 
-/** The Asset File Storage encryption metadata. */
+/**
+ * The Asset File Storage encryption metadata.
+ */
 @Fluent
 public final class AssetFileEncryptionMetadata {
     /*
@@ -30,13 +32,15 @@ public final class AssetFileEncryptionMetadata {
     @JsonProperty(value = "assetFileId", required = true)
     private UUID assetFileId;
 
-    /** Creates an instance of AssetFileEncryptionMetadata class. */
+    /**
+     * Creates an instance of AssetFileEncryptionMetadata class.
+     */
     public AssetFileEncryptionMetadata() {
     }
 
     /**
      * Get the initializationVector property: The Asset File initialization vector.
-     *
+     * 
      * @return the initializationVector value.
      */
     public String initializationVector() {
@@ -45,7 +49,7 @@ public final class AssetFileEncryptionMetadata {
 
     /**
      * Set the initializationVector property: The Asset File initialization vector.
-     *
+     * 
      * @param initializationVector the initializationVector value to set.
      * @return the AssetFileEncryptionMetadata object itself.
      */
@@ -56,7 +60,7 @@ public final class AssetFileEncryptionMetadata {
 
     /**
      * Get the assetFileName property: The Asset File name.
-     *
+     * 
      * @return the assetFileName value.
      */
     public String assetFileName() {
@@ -65,7 +69,7 @@ public final class AssetFileEncryptionMetadata {
 
     /**
      * Set the assetFileName property: The Asset File name.
-     *
+     * 
      * @param assetFileName the assetFileName value to set.
      * @return the AssetFileEncryptionMetadata object itself.
      */
@@ -76,7 +80,7 @@ public final class AssetFileEncryptionMetadata {
 
     /**
      * Get the assetFileId property: The Asset File Id.
-     *
+     * 
      * @return the assetFileId value.
      */
     public UUID assetFileId() {
@@ -85,7 +89,7 @@ public final class AssetFileEncryptionMetadata {
 
     /**
      * Set the assetFileId property: The Asset File Id.
-     *
+     * 
      * @param assetFileId the assetFileId value to set.
      * @return the AssetFileEncryptionMetadata object itself.
      */
@@ -96,15 +100,13 @@ public final class AssetFileEncryptionMetadata {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (assetFileId() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property assetFileId in model AssetFileEncryptionMetadata"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property assetFileId in model AssetFileEncryptionMetadata"));
         }
     }
 

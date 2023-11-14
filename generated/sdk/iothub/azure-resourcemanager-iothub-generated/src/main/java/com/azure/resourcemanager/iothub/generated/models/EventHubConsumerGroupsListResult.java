@@ -9,7 +9,9 @@ import com.azure.resourcemanager.iothub.generated.fluent.models.EventHubConsumer
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The JSON-serialized array of Event Hub-compatible consumer group names with a next link. */
+/**
+ * The JSON-serialized array of Event Hub-compatible consumer group names with a next link.
+ */
 @Fluent
 public final class EventHubConsumerGroupsListResult {
     /*
@@ -24,13 +26,15 @@ public final class EventHubConsumerGroupsListResult {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
-    /** Creates an instance of EventHubConsumerGroupsListResult class. */
+    /**
+     * Creates an instance of EventHubConsumerGroupsListResult class.
+     */
     public EventHubConsumerGroupsListResult() {
     }
 
     /**
      * Get the value property: List of consumer groups objects.
-     *
+     * 
      * @return the value value.
      */
     public List<EventHubConsumerGroupInfoInner> value() {
@@ -39,7 +43,7 @@ public final class EventHubConsumerGroupsListResult {
 
     /**
      * Set the value property: List of consumer groups objects.
-     *
+     * 
      * @param value the value value to set.
      * @return the EventHubConsumerGroupsListResult object itself.
      */
@@ -50,7 +54,7 @@ public final class EventHubConsumerGroupsListResult {
 
     /**
      * Get the nextLink property: The next link.
-     *
+     * 
      * @return the nextLink value.
      */
     public String nextLink() {
@@ -59,7 +63,7 @@ public final class EventHubConsumerGroupsListResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -8,17 +8,23 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Enumerates the possible values for cleanup policy. */
+/**
+ * Enumerates the possible values for cleanup policy.
+ */
 public final class CleanupPolicyRetentionDescription extends ExpandableStringEnum<CleanupPolicyRetentionDescription> {
-    /** Static value Delete for CleanupPolicyRetentionDescription. */
+    /**
+     * Static value Delete for CleanupPolicyRetentionDescription.
+     */
     public static final CleanupPolicyRetentionDescription DELETE = fromString("Delete");
 
-    /** Static value Compact for CleanupPolicyRetentionDescription. */
+    /**
+     * Static value Compact for CleanupPolicyRetentionDescription.
+     */
     public static final CleanupPolicyRetentionDescription COMPACT = fromString("Compact");
 
     /**
      * Creates a new instance of CleanupPolicyRetentionDescription value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -27,7 +33,7 @@ public final class CleanupPolicyRetentionDescription extends ExpandableStringEnu
 
     /**
      * Creates or finds a CleanupPolicyRetentionDescription from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding CleanupPolicyRetentionDescription.
      */
@@ -38,7 +44,7 @@ public final class CleanupPolicyRetentionDescription extends ExpandableStringEnu
 
     /**
      * Gets known CleanupPolicyRetentionDescription values.
-     *
+     * 
      * @return known CleanupPolicyRetentionDescription values.
      */
     public static Collection<CleanupPolicyRetentionDescription> values() {

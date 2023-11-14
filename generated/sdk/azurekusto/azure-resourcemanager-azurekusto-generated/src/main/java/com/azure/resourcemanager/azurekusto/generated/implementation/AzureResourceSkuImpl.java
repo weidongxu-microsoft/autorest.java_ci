@@ -14,8 +14,8 @@ public final class AzureResourceSkuImpl implements AzureResourceSku {
 
     private final com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager;
 
-    AzureResourceSkuImpl(
-        AzureResourceSkuInner innerObject, com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager) {
+    AzureResourceSkuImpl(AzureResourceSkuInner innerObject,
+        com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

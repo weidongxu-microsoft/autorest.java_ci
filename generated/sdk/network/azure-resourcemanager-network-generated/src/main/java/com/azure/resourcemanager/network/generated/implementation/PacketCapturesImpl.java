@@ -24,16 +24,16 @@ public final class PacketCapturesImpl implements PacketCaptures {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public PacketCapturesImpl(
-        PacketCapturesClient innerClient, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    public PacketCapturesImpl(PacketCapturesClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public PacketCaptureResult create(
-        String resourceGroupName, String networkWatcherName, String packetCaptureName, PacketCapture parameters) {
-        PacketCaptureResultInner inner =
-            this.serviceClient().create(resourceGroupName, networkWatcherName, packetCaptureName, parameters);
+    public PacketCaptureResult create(String resourceGroupName, String networkWatcherName, String packetCaptureName,
+        PacketCapture parameters) {
+        PacketCaptureResultInner inner
+            = this.serviceClient().create(resourceGroupName, networkWatcherName, packetCaptureName, parameters);
         if (inner != null) {
             return new PacketCaptureResultImpl(inner, this.manager());
         } else {
@@ -41,14 +41,10 @@ public final class PacketCapturesImpl implements PacketCaptures {
         }
     }
 
-    public PacketCaptureResult create(
-        String resourceGroupName,
-        String networkWatcherName,
-        String packetCaptureName,
-        PacketCapture parameters,
-        Context context) {
-        PacketCaptureResultInner inner =
-            this.serviceClient().create(resourceGroupName, networkWatcherName, packetCaptureName, parameters, context);
+    public PacketCaptureResult create(String resourceGroupName, String networkWatcherName, String packetCaptureName,
+        PacketCapture parameters, Context context) {
+        PacketCaptureResultInner inner = this.serviceClient().create(resourceGroupName, networkWatcherName,
+            packetCaptureName, parameters, context);
         if (inner != null) {
             return new PacketCaptureResultImpl(inner, this.manager());
         } else {
@@ -56,15 +52,12 @@ public final class PacketCapturesImpl implements PacketCaptures {
         }
     }
 
-    public Response<PacketCaptureResult> getWithResponse(
-        String resourceGroupName, String networkWatcherName, String packetCaptureName, Context context) {
-        Response<PacketCaptureResultInner> inner =
-            this.serviceClient().getWithResponse(resourceGroupName, networkWatcherName, packetCaptureName, context);
+    public Response<PacketCaptureResult> getWithResponse(String resourceGroupName, String networkWatcherName,
+        String packetCaptureName, Context context) {
+        Response<PacketCaptureResultInner> inner
+            = this.serviceClient().getWithResponse(resourceGroupName, networkWatcherName, packetCaptureName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new PacketCaptureResultImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -72,8 +65,8 @@ public final class PacketCapturesImpl implements PacketCaptures {
     }
 
     public PacketCaptureResult get(String resourceGroupName, String networkWatcherName, String packetCaptureName) {
-        PacketCaptureResultInner inner =
-            this.serviceClient().get(resourceGroupName, networkWatcherName, packetCaptureName);
+        PacketCaptureResultInner inner
+            = this.serviceClient().get(resourceGroupName, networkWatcherName, packetCaptureName);
         if (inner != null) {
             return new PacketCaptureResultImpl(inner, this.manager());
         } else {
@@ -97,10 +90,10 @@ public final class PacketCapturesImpl implements PacketCaptures {
         this.serviceClient().stop(resourceGroupName, networkWatcherName, packetCaptureName, context);
     }
 
-    public PacketCaptureQueryStatusResult getStatus(
-        String resourceGroupName, String networkWatcherName, String packetCaptureName) {
-        PacketCaptureQueryStatusResultInner inner =
-            this.serviceClient().getStatus(resourceGroupName, networkWatcherName, packetCaptureName);
+    public PacketCaptureQueryStatusResult getStatus(String resourceGroupName, String networkWatcherName,
+        String packetCaptureName) {
+        PacketCaptureQueryStatusResultInner inner
+            = this.serviceClient().getStatus(resourceGroupName, networkWatcherName, packetCaptureName);
         if (inner != null) {
             return new PacketCaptureQueryStatusResultImpl(inner, this.manager());
         } else {
@@ -108,10 +101,10 @@ public final class PacketCapturesImpl implements PacketCaptures {
         }
     }
 
-    public PacketCaptureQueryStatusResult getStatus(
-        String resourceGroupName, String networkWatcherName, String packetCaptureName, Context context) {
-        PacketCaptureQueryStatusResultInner inner =
-            this.serviceClient().getStatus(resourceGroupName, networkWatcherName, packetCaptureName, context);
+    public PacketCaptureQueryStatusResult getStatus(String resourceGroupName, String networkWatcherName,
+        String packetCaptureName, Context context) {
+        PacketCaptureQueryStatusResultInner inner
+            = this.serviceClient().getStatus(resourceGroupName, networkWatcherName, packetCaptureName, context);
         if (inner != null) {
             return new PacketCaptureQueryStatusResultImpl(inner, this.manager());
         } else {
@@ -120,15 +113,15 @@ public final class PacketCapturesImpl implements PacketCaptures {
     }
 
     public PagedIterable<PacketCaptureResult> list(String resourceGroupName, String networkWatcherName) {
-        PagedIterable<PacketCaptureResultInner> inner =
-            this.serviceClient().list(resourceGroupName, networkWatcherName);
+        PagedIterable<PacketCaptureResultInner> inner
+            = this.serviceClient().list(resourceGroupName, networkWatcherName);
         return Utils.mapPage(inner, inner1 -> new PacketCaptureResultImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<PacketCaptureResult> list(
-        String resourceGroupName, String networkWatcherName, Context context) {
-        PagedIterable<PacketCaptureResultInner> inner =
-            this.serviceClient().list(resourceGroupName, networkWatcherName, context);
+    public PagedIterable<PacketCaptureResult> list(String resourceGroupName, String networkWatcherName,
+        Context context) {
+        PagedIterable<PacketCaptureResultInner> inner
+            = this.serviceClient().list(resourceGroupName, networkWatcherName, context);
         return Utils.mapPage(inner, inner1 -> new PacketCaptureResultImpl(inner1, this.manager()));
     }
 

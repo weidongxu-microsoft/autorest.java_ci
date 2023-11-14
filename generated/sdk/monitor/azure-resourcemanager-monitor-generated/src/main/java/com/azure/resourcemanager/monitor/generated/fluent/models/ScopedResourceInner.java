@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** A private link scoped resource. */
+/**
+ * A private link scoped resource.
+ */
 @Fluent
 public final class ScopedResourceInner extends ProxyResource {
     /*
@@ -17,13 +19,15 @@ public final class ScopedResourceInner extends ProxyResource {
     @JsonProperty(value = "properties")
     private ScopedResourceProperties innerProperties;
 
-    /** Creates an instance of ScopedResourceInner class. */
+    /**
+     * Creates an instance of ScopedResourceInner class.
+     */
     public ScopedResourceInner() {
     }
 
     /**
      * Get the innerProperties property: Resource properties.
-     *
+     * 
      * @return the innerProperties value.
      */
     private ScopedResourceProperties innerProperties() {
@@ -32,7 +36,7 @@ public final class ScopedResourceInner extends ProxyResource {
 
     /**
      * Get the linkedResourceId property: The resource id of the scoped Azure monitor resource.
-     *
+     * 
      * @return the linkedResourceId value.
      */
     public String linkedResourceId() {
@@ -41,7 +45,7 @@ public final class ScopedResourceInner extends ProxyResource {
 
     /**
      * Set the linkedResourceId property: The resource id of the scoped Azure monitor resource.
-     *
+     * 
      * @param linkedResourceId the linkedResourceId value to set.
      * @return the ScopedResourceInner object itself.
      */
@@ -55,7 +59,7 @@ public final class ScopedResourceInner extends ProxyResource {
 
     /**
      * Get the provisioningState property: State of the private endpoint connection.
-     *
+     * 
      * @return the provisioningState value.
      */
     public String provisioningState() {
@@ -64,7 +68,7 @@ public final class ScopedResourceInner extends ProxyResource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

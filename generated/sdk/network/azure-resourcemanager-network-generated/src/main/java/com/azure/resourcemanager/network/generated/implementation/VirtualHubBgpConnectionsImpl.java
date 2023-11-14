@@ -25,22 +25,18 @@ public final class VirtualHubBgpConnectionsImpl implements VirtualHubBgpConnecti
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public VirtualHubBgpConnectionsImpl(
-        VirtualHubBgpConnectionsClient innerClient,
+    public VirtualHubBgpConnectionsImpl(VirtualHubBgpConnectionsClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<BgpConnection> getWithResponse(
-        String resourceGroupName, String virtualHubName, String connectionName, Context context) {
-        Response<BgpConnectionInner> inner =
-            this.serviceClient().getWithResponse(resourceGroupName, virtualHubName, connectionName, context);
+    public Response<BgpConnection> getWithResponse(String resourceGroupName, String virtualHubName,
+        String connectionName, Context context) {
+        Response<BgpConnectionInner> inner
+            = this.serviceClient().getWithResponse(resourceGroupName, virtualHubName, connectionName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new BgpConnectionImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -74,10 +70,10 @@ public final class VirtualHubBgpConnectionsImpl implements VirtualHubBgpConnecti
         return Utils.mapPage(inner, inner1 -> new BgpConnectionImpl(inner1, this.manager()));
     }
 
-    public Map<String, List<PeerRoute>> listLearnedRoutes(
-        String resourceGroupName, String hubName, String connectionName) {
-        Map<String, List<PeerRoute>> inner =
-            this.serviceClient().listLearnedRoutes(resourceGroupName, hubName, connectionName);
+    public Map<String, List<PeerRoute>> listLearnedRoutes(String resourceGroupName, String hubName,
+        String connectionName) {
+        Map<String, List<PeerRoute>> inner
+            = this.serviceClient().listLearnedRoutes(resourceGroupName, hubName, connectionName);
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
@@ -85,10 +81,10 @@ public final class VirtualHubBgpConnectionsImpl implements VirtualHubBgpConnecti
         }
     }
 
-    public Map<String, List<PeerRoute>> listLearnedRoutes(
-        String resourceGroupName, String hubName, String connectionName, Context context) {
-        Map<String, List<PeerRoute>> inner =
-            this.serviceClient().listLearnedRoutes(resourceGroupName, hubName, connectionName, context);
+    public Map<String, List<PeerRoute>> listLearnedRoutes(String resourceGroupName, String hubName,
+        String connectionName, Context context) {
+        Map<String, List<PeerRoute>> inner
+            = this.serviceClient().listLearnedRoutes(resourceGroupName, hubName, connectionName, context);
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
@@ -96,10 +92,10 @@ public final class VirtualHubBgpConnectionsImpl implements VirtualHubBgpConnecti
         }
     }
 
-    public Map<String, List<PeerRoute>> listAdvertisedRoutes(
-        String resourceGroupName, String hubName, String connectionName) {
-        Map<String, List<PeerRoute>> inner =
-            this.serviceClient().listAdvertisedRoutes(resourceGroupName, hubName, connectionName);
+    public Map<String, List<PeerRoute>> listAdvertisedRoutes(String resourceGroupName, String hubName,
+        String connectionName) {
+        Map<String, List<PeerRoute>> inner
+            = this.serviceClient().listAdvertisedRoutes(resourceGroupName, hubName, connectionName);
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
@@ -107,10 +103,10 @@ public final class VirtualHubBgpConnectionsImpl implements VirtualHubBgpConnecti
         }
     }
 
-    public Map<String, List<PeerRoute>> listAdvertisedRoutes(
-        String resourceGroupName, String hubName, String connectionName, Context context) {
-        Map<String, List<PeerRoute>> inner =
-            this.serviceClient().listAdvertisedRoutes(resourceGroupName, hubName, connectionName, context);
+    public Map<String, List<PeerRoute>> listAdvertisedRoutes(String resourceGroupName, String hubName,
+        String connectionName, Context context) {
+        Map<String, List<PeerRoute>> inner
+            = this.serviceClient().listAdvertisedRoutes(resourceGroupName, hubName, connectionName, context);
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
@@ -121,26 +117,18 @@ public final class VirtualHubBgpConnectionsImpl implements VirtualHubBgpConnecti
     public BgpConnection getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
         if (virtualHubName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
         }
         String connectionName = Utils.getValueFromIdByName(id, "bgpConnections");
         if (connectionName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'bgpConnections'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'bgpConnections'.", id)));
         }
         return this.getWithResponse(resourceGroupName, virtualHubName, connectionName, Context.NONE).getValue();
     }
@@ -148,26 +136,18 @@ public final class VirtualHubBgpConnectionsImpl implements VirtualHubBgpConnecti
     public Response<BgpConnection> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
         if (virtualHubName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
         }
         String connectionName = Utils.getValueFromIdByName(id, "bgpConnections");
         if (connectionName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'bgpConnections'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'bgpConnections'.", id)));
         }
         return this.getWithResponse(resourceGroupName, virtualHubName, connectionName, context);
     }
@@ -175,26 +155,18 @@ public final class VirtualHubBgpConnectionsImpl implements VirtualHubBgpConnecti
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
         if (virtualHubName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
         }
         String connectionName = Utils.getValueFromIdByName(id, "bgpConnections");
         if (connectionName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'bgpConnections'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'bgpConnections'.", id)));
         }
         this.delete(resourceGroupName, virtualHubName, connectionName, Context.NONE);
     }
@@ -202,26 +174,18 @@ public final class VirtualHubBgpConnectionsImpl implements VirtualHubBgpConnecti
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
         if (virtualHubName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
         }
         String connectionName = Utils.getValueFromIdByName(id, "bgpConnections");
         if (connectionName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'bgpConnections'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'bgpConnections'.", id)));
         }
         this.delete(resourceGroupName, virtualHubName, connectionName, context);
     }

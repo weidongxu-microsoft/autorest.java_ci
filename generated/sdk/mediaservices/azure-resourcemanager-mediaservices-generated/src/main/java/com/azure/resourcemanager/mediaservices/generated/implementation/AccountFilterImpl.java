@@ -77,27 +77,21 @@ public final class AccountFilterImpl implements AccountFilter, AccountFilter.Def
     }
 
     public AccountFilter create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getAccountFilters()
-                .createOrUpdateWithResponse(resourceGroupName, accountName, filterName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getAccountFilters()
+            .createOrUpdateWithResponse(resourceGroupName, accountName, filterName, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public AccountFilter create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getAccountFilters()
-                .createOrUpdateWithResponse(resourceGroupName, accountName, filterName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getAccountFilters()
+            .createOrUpdateWithResponse(resourceGroupName, accountName, filterName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
-    AccountFilterImpl(
-        String name, com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager) {
+    AccountFilterImpl(String name,
+        com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager) {
         this.innerObject = new AccountFilterInner();
         this.serviceManager = serviceManager;
         this.filterName = name;
@@ -108,27 +102,18 @@ public final class AccountFilterImpl implements AccountFilter, AccountFilter.Def
     }
 
     public AccountFilter apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getAccountFilters()
-                .updateWithResponse(resourceGroupName, accountName, filterName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getAccountFilters()
+            .updateWithResponse(resourceGroupName, accountName, filterName, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public AccountFilter apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getAccountFilters()
-                .updateWithResponse(resourceGroupName, accountName, filterName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getAccountFilters()
+            .updateWithResponse(resourceGroupName, accountName, filterName, this.innerModel(), context).getValue();
         return this;
     }
 
-    AccountFilterImpl(
-        AccountFilterInner innerObject,
+    AccountFilterImpl(AccountFilterInner innerObject,
         com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -138,22 +123,14 @@ public final class AccountFilterImpl implements AccountFilter, AccountFilter.Def
     }
 
     public AccountFilter refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getAccountFilters()
-                .getWithResponse(resourceGroupName, accountName, filterName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getAccountFilters()
+            .getWithResponse(resourceGroupName, accountName, filterName, Context.NONE).getValue();
         return this;
     }
 
     public AccountFilter refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getAccountFilters()
-                .getWithResponse(resourceGroupName, accountName, filterName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getAccountFilters()
+            .getWithResponse(resourceGroupName, accountName, filterName, context).getValue();
         return this;
     }
 

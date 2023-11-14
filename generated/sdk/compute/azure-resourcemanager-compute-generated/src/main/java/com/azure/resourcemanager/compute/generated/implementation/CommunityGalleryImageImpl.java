@@ -24,8 +24,7 @@ public final class CommunityGalleryImageImpl implements CommunityGalleryImage {
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    CommunityGalleryImageImpl(
-        CommunityGalleryImageInner innerObject,
+    CommunityGalleryImageImpl(CommunityGalleryImageInner innerObject,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

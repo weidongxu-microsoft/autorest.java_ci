@@ -24,25 +24,26 @@ import java.util.List;
 @JsonTypeName("#Microsoft.Media.MultiBitrateFormat")
 @JsonSubTypes({
     @JsonSubTypes.Type(name = "#Microsoft.Media.Mp4Format", value = Mp4Format.class),
-    @JsonSubTypes.Type(name = "#Microsoft.Media.TransportStreamFormat", value = TransportStreamFormat.class)
-})
+    @JsonSubTypes.Type(name = "#Microsoft.Media.TransportStreamFormat", value = TransportStreamFormat.class) })
 @Fluent
 public class MultiBitrateFormat extends Format {
     /*
-     * The list of output files to produce.  Each entry in the list is a set of audio and video layer labels to be
+     * The list of output files to produce. Each entry in the list is a set of audio and video layer labels to be
      * muxed together .
      */
     @JsonProperty(value = "outputFiles")
     private List<OutputFile> outputFiles;
 
-    /** Creates an instance of MultiBitrateFormat class. */
+    /**
+     * Creates an instance of MultiBitrateFormat class.
+     */
     public MultiBitrateFormat() {
     }
 
     /**
      * Get the outputFiles property: The list of output files to produce. Each entry in the list is a set of audio and
      * video layer labels to be muxed together .
-     *
+     * 
      * @return the outputFiles value.
      */
     public List<OutputFile> outputFiles() {
@@ -52,7 +53,7 @@ public class MultiBitrateFormat extends Format {
     /**
      * Set the outputFiles property: The list of output files to produce. Each entry in the list is a set of audio and
      * video layer labels to be muxed together .
-     *
+     * 
      * @param outputFiles the outputFiles value to set.
      * @return the MultiBitrateFormat object itself.
      */
@@ -61,7 +62,9 @@ public class MultiBitrateFormat extends Format {
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public MultiBitrateFormat withFilenamePattern(String filenamePattern) {
         super.withFilenamePattern(filenamePattern);
@@ -70,7 +73,7 @@ public class MultiBitrateFormat extends Format {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

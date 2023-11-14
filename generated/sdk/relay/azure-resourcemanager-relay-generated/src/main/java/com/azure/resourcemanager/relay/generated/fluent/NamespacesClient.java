@@ -20,11 +20,13 @@ import com.azure.resourcemanager.relay.generated.models.CheckNameAvailability;
 import com.azure.resourcemanager.relay.generated.models.RegenerateAccessKeyParameters;
 import com.azure.resourcemanager.relay.generated.models.RelayUpdateParameters;
 
-/** An instance of this class provides access to all the operations defined in NamespacesClient. */
+/**
+ * An instance of this class provides access to all the operations defined in NamespacesClient.
+ */
 public interface NamespacesClient {
     /**
      * Authorization rules for a namespace.
-     *
+     * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -37,7 +39,7 @@ public interface NamespacesClient {
 
     /**
      * Authorization rules for a namespace.
-     *
+     * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
      * @param context The context to associate with this operation.
@@ -47,12 +49,12 @@ public interface NamespacesClient {
      * @return the response from the list namespace operation as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<AuthorizationRuleInner> listAuthorizationRules(
-        String resourceGroupName, String namespaceName, Context context);
+    PagedIterable<AuthorizationRuleInner> listAuthorizationRules(String resourceGroupName, String namespaceName,
+        Context context);
 
     /**
      * Creates or updates an authorization rule for a namespace.
-     *
+     * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
      * @param authorizationRuleName The authorization rule name.
@@ -64,16 +66,12 @@ public interface NamespacesClient {
      * @return single item in a List or Get AuthorizationRule operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<AuthorizationRuleInner> createOrUpdateAuthorizationRuleWithResponse(
-        String resourceGroupName,
-        String namespaceName,
-        String authorizationRuleName,
-        AuthorizationRuleInner parameters,
-        Context context);
+    Response<AuthorizationRuleInner> createOrUpdateAuthorizationRuleWithResponse(String resourceGroupName,
+        String namespaceName, String authorizationRuleName, AuthorizationRuleInner parameters, Context context);
 
     /**
      * Creates or updates an authorization rule for a namespace.
-     *
+     * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
      * @param authorizationRuleName The authorization rule name.
@@ -84,15 +82,12 @@ public interface NamespacesClient {
      * @return single item in a List or Get AuthorizationRule operation.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    AuthorizationRuleInner createOrUpdateAuthorizationRule(
-        String resourceGroupName,
-        String namespaceName,
-        String authorizationRuleName,
-        AuthorizationRuleInner parameters);
+    AuthorizationRuleInner createOrUpdateAuthorizationRule(String resourceGroupName, String namespaceName,
+        String authorizationRuleName, AuthorizationRuleInner parameters);
 
     /**
      * Deletes a namespace authorization rule.
-     *
+     * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
      * @param authorizationRuleName The authorization rule name.
@@ -103,12 +98,12 @@ public interface NamespacesClient {
      * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<Void> deleteAuthorizationRuleWithResponse(
-        String resourceGroupName, String namespaceName, String authorizationRuleName, Context context);
+    Response<Void> deleteAuthorizationRuleWithResponse(String resourceGroupName, String namespaceName,
+        String authorizationRuleName, Context context);
 
     /**
      * Deletes a namespace authorization rule.
-     *
+     * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
      * @param authorizationRuleName The authorization rule name.
@@ -121,7 +116,7 @@ public interface NamespacesClient {
 
     /**
      * Authorization rule for a namespace by name.
-     *
+     * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
      * @param authorizationRuleName The authorization rule name.
@@ -132,12 +127,12 @@ public interface NamespacesClient {
      * @return single item in a List or Get AuthorizationRule operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<AuthorizationRuleInner> getAuthorizationRuleWithResponse(
-        String resourceGroupName, String namespaceName, String authorizationRuleName, Context context);
+    Response<AuthorizationRuleInner> getAuthorizationRuleWithResponse(String resourceGroupName, String namespaceName,
+        String authorizationRuleName, Context context);
 
     /**
      * Authorization rule for a namespace by name.
-     *
+     * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
      * @param authorizationRuleName The authorization rule name.
@@ -147,12 +142,12 @@ public interface NamespacesClient {
      * @return single item in a List or Get AuthorizationRule operation.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    AuthorizationRuleInner getAuthorizationRule(
-        String resourceGroupName, String namespaceName, String authorizationRuleName);
+    AuthorizationRuleInner getAuthorizationRule(String resourceGroupName, String namespaceName,
+        String authorizationRuleName);
 
     /**
      * Primary and secondary connection strings to the namespace.
-     *
+     * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
      * @param authorizationRuleName The authorization rule name.
@@ -163,12 +158,12 @@ public interface NamespacesClient {
      * @return namespace/Relay Connection String along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<AccessKeysInner> listKeysWithResponse(
-        String resourceGroupName, String namespaceName, String authorizationRuleName, Context context);
+    Response<AccessKeysInner> listKeysWithResponse(String resourceGroupName, String namespaceName,
+        String authorizationRuleName, Context context);
 
     /**
      * Primary and secondary connection strings to the namespace.
-     *
+     * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
      * @param authorizationRuleName The authorization rule name.
@@ -182,7 +177,7 @@ public interface NamespacesClient {
 
     /**
      * Regenerates the primary or secondary connection strings to the namespace.
-     *
+     * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
      * @param authorizationRuleName The authorization rule name.
@@ -194,16 +189,12 @@ public interface NamespacesClient {
      * @return namespace/Relay Connection String along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<AccessKeysInner> regenerateKeysWithResponse(
-        String resourceGroupName,
-        String namespaceName,
-        String authorizationRuleName,
-        RegenerateAccessKeyParameters parameters,
-        Context context);
+    Response<AccessKeysInner> regenerateKeysWithResponse(String resourceGroupName, String namespaceName,
+        String authorizationRuleName, RegenerateAccessKeyParameters parameters, Context context);
 
     /**
      * Regenerates the primary or secondary connection strings to the namespace.
-     *
+     * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
      * @param authorizationRuleName The authorization rule name.
@@ -214,15 +205,12 @@ public interface NamespacesClient {
      * @return namespace/Relay Connection String.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    AccessKeysInner regenerateKeys(
-        String resourceGroupName,
-        String namespaceName,
-        String authorizationRuleName,
+    AccessKeysInner regenerateKeys(String resourceGroupName, String namespaceName, String authorizationRuleName,
         RegenerateAccessKeyParameters parameters);
 
     /**
      * Check the specified namespace name availability.
-     *
+     * 
      * @param parameters Parameters to check availability of the specified namespace name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -231,12 +219,12 @@ public interface NamespacesClient {
      * @return description of the check name availability request properties along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<CheckNameAvailabilityResultInner> checkNameAvailabilityWithResponse(
-        CheckNameAvailability parameters, Context context);
+    Response<CheckNameAvailabilityResultInner> checkNameAvailabilityWithResponse(CheckNameAvailability parameters,
+        Context context);
 
     /**
      * Check the specified namespace name availability.
-     *
+     * 
      * @param parameters Parameters to check availability of the specified namespace name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -248,7 +236,7 @@ public interface NamespacesClient {
 
     /**
      * Lists all the available namespaces within the subscription regardless of the resourceGroups.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response from the list namespace operation as paginated response with {@link PagedIterable}.
@@ -258,7 +246,7 @@ public interface NamespacesClient {
 
     /**
      * Lists all the available namespaces within the subscription regardless of the resourceGroups.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -270,7 +258,7 @@ public interface NamespacesClient {
 
     /**
      * Lists all the available namespaces within the ResourceGroup.
-     *
+     * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -282,7 +270,7 @@ public interface NamespacesClient {
 
     /**
      * Lists all the available namespaces within the ResourceGroup.
-     *
+     * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -295,7 +283,7 @@ public interface NamespacesClient {
 
     /**
      * Create Azure Relay namespace.
-     *
+     * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
      * @param parameters Parameters supplied to create a namespace resource.
@@ -305,12 +293,12 @@ public interface NamespacesClient {
      * @return the {@link SyncPoller} for polling of description of a namespace resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<RelayNamespaceInner>, RelayNamespaceInner> beginCreateOrUpdate(
-        String resourceGroupName, String namespaceName, RelayNamespaceInner parameters);
+    SyncPoller<PollResult<RelayNamespaceInner>, RelayNamespaceInner> beginCreateOrUpdate(String resourceGroupName,
+        String namespaceName, RelayNamespaceInner parameters);
 
     /**
      * Create Azure Relay namespace.
-     *
+     * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
      * @param parameters Parameters supplied to create a namespace resource.
@@ -321,12 +309,12 @@ public interface NamespacesClient {
      * @return the {@link SyncPoller} for polling of description of a namespace resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<RelayNamespaceInner>, RelayNamespaceInner> beginCreateOrUpdate(
-        String resourceGroupName, String namespaceName, RelayNamespaceInner parameters, Context context);
+    SyncPoller<PollResult<RelayNamespaceInner>, RelayNamespaceInner> beginCreateOrUpdate(String resourceGroupName,
+        String namespaceName, RelayNamespaceInner parameters, Context context);
 
     /**
      * Create Azure Relay namespace.
-     *
+     * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
      * @param parameters Parameters supplied to create a namespace resource.
@@ -340,7 +328,7 @@ public interface NamespacesClient {
 
     /**
      * Create Azure Relay namespace.
-     *
+     * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
      * @param parameters Parameters supplied to create a namespace resource.
@@ -351,12 +339,12 @@ public interface NamespacesClient {
      * @return description of a namespace resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    RelayNamespaceInner createOrUpdate(
-        String resourceGroupName, String namespaceName, RelayNamespaceInner parameters, Context context);
+    RelayNamespaceInner createOrUpdate(String resourceGroupName, String namespaceName, RelayNamespaceInner parameters,
+        Context context);
 
     /**
      * Deletes an existing namespace. This operation also removes all associated resources under the namespace.
-     *
+     * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -369,7 +357,7 @@ public interface NamespacesClient {
 
     /**
      * Deletes an existing namespace. This operation also removes all associated resources under the namespace.
-     *
+     * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
      * @param context The context to associate with this operation.
@@ -383,7 +371,7 @@ public interface NamespacesClient {
 
     /**
      * Deletes an existing namespace. This operation also removes all associated resources under the namespace.
-     *
+     * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -395,7 +383,7 @@ public interface NamespacesClient {
 
     /**
      * Deletes an existing namespace. This operation also removes all associated resources under the namespace.
-     *
+     * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
      * @param context The context to associate with this operation.
@@ -408,7 +396,7 @@ public interface NamespacesClient {
 
     /**
      * Returns the description for the specified namespace.
-     *
+     * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
      * @param context The context to associate with this operation.
@@ -418,12 +406,12 @@ public interface NamespacesClient {
      * @return description of a namespace resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<RelayNamespaceInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String namespaceName, Context context);
+    Response<RelayNamespaceInner> getByResourceGroupWithResponse(String resourceGroupName, String namespaceName,
+        Context context);
 
     /**
      * Returns the description for the specified namespace.
-     *
+     * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -437,7 +425,7 @@ public interface NamespacesClient {
     /**
      * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is
      * idempotent.
-     *
+     * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
      * @param parameters Parameters for updating a namespace resource.
@@ -448,13 +436,13 @@ public interface NamespacesClient {
      * @return description of a namespace resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<RelayNamespaceInner> updateWithResponse(
-        String resourceGroupName, String namespaceName, RelayUpdateParameters parameters, Context context);
+    Response<RelayNamespaceInner> updateWithResponse(String resourceGroupName, String namespaceName,
+        RelayUpdateParameters parameters, Context context);
 
     /**
      * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is
      * idempotent.
-     *
+     * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
      * @param parameters Parameters for updating a namespace resource.
@@ -468,7 +456,7 @@ public interface NamespacesClient {
 
     /**
      * Create or update NetworkRuleSet for a Namespace.
-     *
+     * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
      * @param parameters The Namespace IpFilterRule.
@@ -479,12 +467,12 @@ public interface NamespacesClient {
      * @return description of topic resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<NetworkRuleSetInner> createOrUpdateNetworkRuleSetWithResponse(
-        String resourceGroupName, String namespaceName, NetworkRuleSetInner parameters, Context context);
+    Response<NetworkRuleSetInner> createOrUpdateNetworkRuleSetWithResponse(String resourceGroupName,
+        String namespaceName, NetworkRuleSetInner parameters, Context context);
 
     /**
      * Create or update NetworkRuleSet for a Namespace.
-     *
+     * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
      * @param parameters The Namespace IpFilterRule.
@@ -494,12 +482,12 @@ public interface NamespacesClient {
      * @return description of topic resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    NetworkRuleSetInner createOrUpdateNetworkRuleSet(
-        String resourceGroupName, String namespaceName, NetworkRuleSetInner parameters);
+    NetworkRuleSetInner createOrUpdateNetworkRuleSet(String resourceGroupName, String namespaceName,
+        NetworkRuleSetInner parameters);
 
     /**
      * Gets NetworkRuleSet for a Namespace.
-     *
+     * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
      * @param context The context to associate with this operation.
@@ -509,12 +497,12 @@ public interface NamespacesClient {
      * @return networkRuleSet for a Namespace along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<NetworkRuleSetInner> getNetworkRuleSetWithResponse(
-        String resourceGroupName, String namespaceName, Context context);
+    Response<NetworkRuleSetInner> getNetworkRuleSetWithResponse(String resourceGroupName, String namespaceName,
+        Context context);
 
     /**
      * Gets NetworkRuleSet for a Namespace.
-     *
+     * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

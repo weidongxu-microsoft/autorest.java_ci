@@ -8,14 +8,18 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Application Group Policy types. */
+/**
+ * Application Group Policy types.
+ */
 public final class ApplicationGroupPolicyType extends ExpandableStringEnum<ApplicationGroupPolicyType> {
-    /** Static value ThrottlingPolicy for ApplicationGroupPolicyType. */
+    /**
+     * Static value ThrottlingPolicy for ApplicationGroupPolicyType.
+     */
     public static final ApplicationGroupPolicyType THROTTLING_POLICY = fromString("ThrottlingPolicy");
 
     /**
      * Creates a new instance of ApplicationGroupPolicyType value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -24,7 +28,7 @@ public final class ApplicationGroupPolicyType extends ExpandableStringEnum<Appli
 
     /**
      * Creates or finds a ApplicationGroupPolicyType from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding ApplicationGroupPolicyType.
      */
@@ -35,7 +39,7 @@ public final class ApplicationGroupPolicyType extends ExpandableStringEnum<Appli
 
     /**
      * Gets known ApplicationGroupPolicyType values.
-     *
+     * 
      * @return known ApplicationGroupPolicyType values.
      */
     public static Collection<ApplicationGroupPolicyType> values() {

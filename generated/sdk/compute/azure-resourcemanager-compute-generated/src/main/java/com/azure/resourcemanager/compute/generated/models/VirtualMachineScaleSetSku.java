@@ -6,32 +6,34 @@ package com.azure.resourcemanager.compute.generated.models;
 
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineScaleSetSkuInner;
 
-/** An immutable client-side representation of VirtualMachineScaleSetSku. */
+/**
+ * An immutable client-side representation of VirtualMachineScaleSetSku.
+ */
 public interface VirtualMachineScaleSetSku {
     /**
      * Gets the resourceType property: The type of resource the sku applies to.
-     *
+     * 
      * @return the resourceType value.
      */
     String resourceType();
 
     /**
      * Gets the sku property: The Sku.
-     *
+     * 
      * @return the sku value.
      */
     Sku sku();
 
     /**
      * Gets the capacity property: Specifies the number of virtual machines in the scale set.
-     *
+     * 
      * @return the capacity value.
      */
     VirtualMachineScaleSetSkuCapacity capacity();
 
     /**
      * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineScaleSetSkuInner object.
-     *
+     * 
      * @return the inner object.
      */
     VirtualMachineScaleSetSkuInner innerModel();

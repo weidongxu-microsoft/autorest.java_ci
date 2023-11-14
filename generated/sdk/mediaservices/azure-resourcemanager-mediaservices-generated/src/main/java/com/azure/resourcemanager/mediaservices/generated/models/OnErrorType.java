@@ -14,15 +14,19 @@ import java.util.Collection;
  * failures of outputs that are specified with 'ContinueJob'. The default is 'StopProcessingJob'.
  */
 public final class OnErrorType extends ExpandableStringEnum<OnErrorType> {
-    /** Static value StopProcessingJob for OnErrorType. */
+    /**
+     * Static value StopProcessingJob for OnErrorType.
+     */
     public static final OnErrorType STOP_PROCESSING_JOB = fromString("StopProcessingJob");
 
-    /** Static value ContinueJob for OnErrorType. */
+    /**
+     * Static value ContinueJob for OnErrorType.
+     */
     public static final OnErrorType CONTINUE_JOB = fromString("ContinueJob");
 
     /**
      * Creates a new instance of OnErrorType value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -31,7 +35,7 @@ public final class OnErrorType extends ExpandableStringEnum<OnErrorType> {
 
     /**
      * Creates or finds a OnErrorType from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding OnErrorType.
      */
@@ -42,7 +46,7 @@ public final class OnErrorType extends ExpandableStringEnum<OnErrorType> {
 
     /**
      * Gets known OnErrorType values.
-     *
+     * 
      * @return known OnErrorType values.
      */
     public static Collection<OnErrorType> values() {

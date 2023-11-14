@@ -12,7 +12,9 @@ import com.azure.resourcemanager.costmanagement.generated.models.ExportSchedule;
 import com.azure.resourcemanager.costmanagement.generated.models.FormatType;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The properties of the export. */
+/**
+ * The properties of the export.
+ */
 @Fluent
 public final class ExportProperties extends CommonExportProperties {
     /*
@@ -21,13 +23,15 @@ public final class ExportProperties extends CommonExportProperties {
     @JsonProperty(value = "schedule")
     private ExportSchedule schedule;
 
-    /** Creates an instance of ExportProperties class. */
+    /**
+     * Creates an instance of ExportProperties class.
+     */
     public ExportProperties() {
     }
 
     /**
      * Get the schedule property: Has schedule information for the export.
-     *
+     * 
      * @return the schedule value.
      */
     public ExportSchedule schedule() {
@@ -36,7 +40,7 @@ public final class ExportProperties extends CommonExportProperties {
 
     /**
      * Set the schedule property: Has schedule information for the export.
-     *
+     * 
      * @param schedule the schedule value to set.
      * @return the ExportProperties object itself.
      */
@@ -45,21 +49,27 @@ public final class ExportProperties extends CommonExportProperties {
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ExportProperties withFormat(FormatType format) {
         super.withFormat(format);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ExportProperties withDeliveryInfo(ExportDeliveryInfo deliveryInfo) {
         super.withDeliveryInfo(deliveryInfo);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ExportProperties withDefinition(ExportDefinition definition) {
         super.withDefinition(definition);
@@ -68,7 +78,7 @@ public final class ExportProperties extends CommonExportProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

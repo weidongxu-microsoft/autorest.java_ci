@@ -25,23 +25,28 @@ import com.azure.resourcemanager.databoxedge.generated.fluent.DeviceCapacityInfo
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.DeviceCapacityInfoInner;
 import reactor.core.publisher.Mono;
 
-/** An instance of this class provides access to all the operations defined in DeviceCapacityInfoesClient. */
+/**
+ * An instance of this class provides access to all the operations defined in DeviceCapacityInfoesClient.
+ */
 public final class DeviceCapacityInfoesClientImpl implements DeviceCapacityInfoesClient {
-    /** The proxy service used to perform REST calls. */
+    /**
+     * The proxy service used to perform REST calls.
+     */
     private final DeviceCapacityInfoesService service;
 
-    /** The service client containing this operation class. */
+    /**
+     * The service client containing this operation class.
+     */
     private final DataBoxEdgeManagementClientImpl client;
 
     /**
      * Initializes an instance of DeviceCapacityInfoesClientImpl.
-     *
+     * 
      * @param client the instance of the service client containing this operation class.
      */
     DeviceCapacityInfoesClientImpl(DataBoxEdgeManagementClientImpl client) {
-        this.service =
-            RestProxy
-                .create(DeviceCapacityInfoesService.class, client.getHttpPipeline(), client.getSerializerAdapter());
+        this.service = RestProxy.create(DeviceCapacityInfoesService.class, client.getHttpPipeline(),
+            client.getSerializerAdapter());
         this.client = client;
     }
 
@@ -52,46 +57,37 @@ public final class DeviceCapacityInfoesClientImpl implements DeviceCapacityInfoe
     @Host("{$host}")
     @ServiceInterface(name = "DataBoxEdgeManagemen")
     public interface DeviceCapacityInfoesService {
-        @Headers({"Content-Type: application/json"})
-        @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/deviceCapacityInfo/default")
-        @ExpectedResponses({200})
+        @Headers({ "Content-Type: application/json" })
+        @Get("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/deviceCapacityInfo/default")
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<DeviceCapacityInfoInner>> getDeviceCapacityInfo(
-            @HostParam("$host") String endpoint,
+        Mono<Response<DeviceCapacityInfoInner>> getDeviceCapacityInfo(@HostParam("$host") String endpoint,
             @PathParam("subscriptionId") String subscriptionId,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @QueryParam("api-version") String apiVersion,
-            @PathParam("deviceName") String deviceName,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @PathParam("resourceGroupName") String resourceGroupName, @QueryParam("api-version") String apiVersion,
+            @PathParam("deviceName") String deviceName, @HeaderParam("Accept") String accept, Context context);
     }
 
     /**
      * Gets the properties of the specified device capacity info.
-     *
+     * 
      * @param resourceGroupName The resource group name.
      * @param deviceName The device name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the properties of the specified device capacity info along with {@link Response} on successful completion
-     *     of {@link Mono}.
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<DeviceCapacityInfoInner>> getDeviceCapacityInfoWithResponseAsync(
-        String resourceGroupName, String deviceName) {
+    private Mono<Response<DeviceCapacityInfoInner>> getDeviceCapacityInfoWithResponseAsync(String resourceGroupName,
+        String deviceName) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -103,22 +99,14 @@ public final class DeviceCapacityInfoesClientImpl implements DeviceCapacityInfoe
         final String accept = "application/json";
         return FluxUtil
             .withContext(
-                context ->
-                    service
-                        .getDeviceCapacityInfo(
-                            this.client.getEndpoint(),
-                            this.client.getSubscriptionId(),
-                            resourceGroupName,
-                            this.client.getApiVersion(),
-                            deviceName,
-                            accept,
-                            context))
+                context -> service.getDeviceCapacityInfo(this.client.getEndpoint(), this.client.getSubscriptionId(),
+                    resourceGroupName, this.client.getApiVersion(), deviceName, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Gets the properties of the specified device capacity info.
-     *
+     * 
      * @param resourceGroupName The resource group name.
      * @param deviceName The device name.
      * @param context The context to associate with this operation.
@@ -126,22 +114,18 @@ public final class DeviceCapacityInfoesClientImpl implements DeviceCapacityInfoe
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the properties of the specified device capacity info along with {@link Response} on successful completion
-     *     of {@link Mono}.
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<DeviceCapacityInfoInner>> getDeviceCapacityInfoWithResponseAsync(
-        String resourceGroupName, String deviceName, Context context) {
+    private Mono<Response<DeviceCapacityInfoInner>> getDeviceCapacityInfoWithResponseAsync(String resourceGroupName,
+        String deviceName, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -152,20 +136,13 @@ public final class DeviceCapacityInfoesClientImpl implements DeviceCapacityInfoe
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .getDeviceCapacityInfo(
-                this.client.getEndpoint(),
-                this.client.getSubscriptionId(),
-                resourceGroupName,
-                this.client.getApiVersion(),
-                deviceName,
-                accept,
-                context);
+        return service.getDeviceCapacityInfo(this.client.getEndpoint(), this.client.getSubscriptionId(),
+            resourceGroupName, this.client.getApiVersion(), deviceName, accept, context);
     }
 
     /**
      * Gets the properties of the specified device capacity info.
-     *
+     * 
      * @param resourceGroupName The resource group name.
      * @param deviceName The device name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -181,7 +158,7 @@ public final class DeviceCapacityInfoesClientImpl implements DeviceCapacityInfoe
 
     /**
      * Gets the properties of the specified device capacity info.
-     *
+     * 
      * @param resourceGroupName The resource group name.
      * @param deviceName The device name.
      * @param context The context to associate with this operation.
@@ -191,14 +168,14 @@ public final class DeviceCapacityInfoesClientImpl implements DeviceCapacityInfoe
      * @return the properties of the specified device capacity info along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DeviceCapacityInfoInner> getDeviceCapacityInfoWithResponse(
-        String resourceGroupName, String deviceName, Context context) {
+    public Response<DeviceCapacityInfoInner> getDeviceCapacityInfoWithResponse(String resourceGroupName,
+        String deviceName, Context context) {
         return getDeviceCapacityInfoWithResponseAsync(resourceGroupName, deviceName, context).block();
     }
 
     /**
      * Gets the properties of the specified device capacity info.
-     *
+     * 
      * @param resourceGroupName The resource group name.
      * @param deviceName The device name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

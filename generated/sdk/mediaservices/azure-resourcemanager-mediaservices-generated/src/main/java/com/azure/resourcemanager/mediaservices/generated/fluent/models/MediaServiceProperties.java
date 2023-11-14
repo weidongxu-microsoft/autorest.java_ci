@@ -16,7 +16,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 import java.util.UUID;
 
-/** Properties of the Media Services account. */
+/**
+ * Properties of the Media Services account.
+ */
 @Fluent
 public final class MediaServiceProperties {
     /*
@@ -74,13 +76,15 @@ public final class MediaServiceProperties {
     @JsonProperty(value = "minimumTlsVersion")
     private MinimumTlsVersion minimumTlsVersion;
 
-    /** Creates an instance of MediaServiceProperties class. */
+    /**
+     * Creates an instance of MediaServiceProperties class.
+     */
     public MediaServiceProperties() {
     }
 
     /**
      * Get the mediaServiceId property: The Media Services account ID.
-     *
+     * 
      * @return the mediaServiceId value.
      */
     public UUID mediaServiceId() {
@@ -89,7 +93,7 @@ public final class MediaServiceProperties {
 
     /**
      * Get the storageAccounts property: The storage accounts for this resource.
-     *
+     * 
      * @return the storageAccounts value.
      */
     public List<StorageAccount> storageAccounts() {
@@ -98,7 +102,7 @@ public final class MediaServiceProperties {
 
     /**
      * Set the storageAccounts property: The storage accounts for this resource.
-     *
+     * 
      * @param storageAccounts the storageAccounts value to set.
      * @return the MediaServiceProperties object itself.
      */
@@ -109,7 +113,7 @@ public final class MediaServiceProperties {
 
     /**
      * Get the storageAuthentication property: The storageAuthentication property.
-     *
+     * 
      * @return the storageAuthentication value.
      */
     public StorageAuthentication storageAuthentication() {
@@ -118,7 +122,7 @@ public final class MediaServiceProperties {
 
     /**
      * Set the storageAuthentication property: The storageAuthentication property.
-     *
+     * 
      * @param storageAuthentication the storageAuthentication value to set.
      * @return the MediaServiceProperties object itself.
      */
@@ -129,7 +133,7 @@ public final class MediaServiceProperties {
 
     /**
      * Get the encryption property: The account encryption properties.
-     *
+     * 
      * @return the encryption value.
      */
     public AccountEncryption encryption() {
@@ -138,7 +142,7 @@ public final class MediaServiceProperties {
 
     /**
      * Set the encryption property: The account encryption properties.
-     *
+     * 
      * @param encryption the encryption value to set.
      * @return the MediaServiceProperties object itself.
      */
@@ -149,7 +153,7 @@ public final class MediaServiceProperties {
 
     /**
      * Get the keyDelivery property: The Key Delivery properties for Media Services account.
-     *
+     * 
      * @return the keyDelivery value.
      */
     public KeyDelivery keyDelivery() {
@@ -158,7 +162,7 @@ public final class MediaServiceProperties {
 
     /**
      * Set the keyDelivery property: The Key Delivery properties for Media Services account.
-     *
+     * 
      * @param keyDelivery the keyDelivery value to set.
      * @return the MediaServiceProperties object itself.
      */
@@ -170,7 +174,7 @@ public final class MediaServiceProperties {
     /**
      * Get the publicNetworkAccess property: Whether or not public network access is allowed for resources under the
      * Media Services account.
-     *
+     * 
      * @return the publicNetworkAccess value.
      */
     public PublicNetworkAccess publicNetworkAccess() {
@@ -180,7 +184,7 @@ public final class MediaServiceProperties {
     /**
      * Set the publicNetworkAccess property: Whether or not public network access is allowed for resources under the
      * Media Services account.
-     *
+     * 
      * @param publicNetworkAccess the publicNetworkAccess value to set.
      * @return the MediaServiceProperties object itself.
      */
@@ -191,7 +195,7 @@ public final class MediaServiceProperties {
 
     /**
      * Get the provisioningState property: Provisioning state of the Media Services account.
-     *
+     * 
      * @return the provisioningState value.
      */
     public ProvisioningState provisioningState() {
@@ -201,7 +205,7 @@ public final class MediaServiceProperties {
     /**
      * Get the privateEndpointConnections property: The Private Endpoint Connections created for the Media Service
      * account.
-     *
+     * 
      * @return the privateEndpointConnections value.
      */
     public List<PrivateEndpointConnectionInner> privateEndpointConnections() {
@@ -211,7 +215,7 @@ public final class MediaServiceProperties {
     /**
      * Get the minimumTlsVersion property: The minimum TLS version allowed for this account's requests. This is an
      * optional property. If unspecified, a secure default value will be used.
-     *
+     * 
      * @return the minimumTlsVersion value.
      */
     public MinimumTlsVersion minimumTlsVersion() {
@@ -221,7 +225,7 @@ public final class MediaServiceProperties {
     /**
      * Set the minimumTlsVersion property: The minimum TLS version allowed for this account's requests. This is an
      * optional property. If unspecified, a secure default value will be used.
-     *
+     * 
      * @param minimumTlsVersion the minimumTlsVersion value to set.
      * @return the MediaServiceProperties object itself.
      */
@@ -232,7 +236,7 @@ public final class MediaServiceProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

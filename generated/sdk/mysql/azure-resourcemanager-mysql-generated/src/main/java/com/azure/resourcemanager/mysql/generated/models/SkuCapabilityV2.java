@@ -8,7 +8,9 @@ import com.azure.core.annotation.Immutable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Sku capability. */
+/**
+ * Sku capability.
+ */
 @Immutable
 public final class SkuCapabilityV2 {
     /*
@@ -47,13 +49,15 @@ public final class SkuCapabilityV2 {
     @JsonProperty(value = "supportedHAMode", access = JsonProperty.Access.WRITE_ONLY)
     private List<String> supportedHAMode;
 
-    /** Creates an instance of SkuCapabilityV2 class. */
+    /**
+     * Creates an instance of SkuCapabilityV2 class.
+     */
     public SkuCapabilityV2() {
     }
 
     /**
      * Get the name property: vCore name.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -62,7 +66,7 @@ public final class SkuCapabilityV2 {
 
     /**
      * Get the vCores property: supported vCores.
-     *
+     * 
      * @return the vCores value.
      */
     public Long vCores() {
@@ -71,7 +75,7 @@ public final class SkuCapabilityV2 {
 
     /**
      * Get the supportedIops property: supported IOPS.
-     *
+     * 
      * @return the supportedIops value.
      */
     public Long supportedIops() {
@@ -80,7 +84,7 @@ public final class SkuCapabilityV2 {
 
     /**
      * Get the supportedMemoryPerVCoreMB property: supported memory per vCore in MB.
-     *
+     * 
      * @return the supportedMemoryPerVCoreMB value.
      */
     public Long supportedMemoryPerVCoreMB() {
@@ -89,7 +93,7 @@ public final class SkuCapabilityV2 {
 
     /**
      * Get the supportedZones property: Supported zones.
-     *
+     * 
      * @return the supportedZones value.
      */
     public List<String> supportedZones() {
@@ -98,7 +102,7 @@ public final class SkuCapabilityV2 {
 
     /**
      * Get the supportedHAMode property: Supported high availability mode.
-     *
+     * 
      * @return the supportedHAMode value.
      */
     public List<String> supportedHAMode() {
@@ -107,7 +111,7 @@ public final class SkuCapabilityV2 {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -7,7 +7,9 @@ package com.azure.resourcemanager.monitor.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** An Azure activity log alert for patch operations. */
+/**
+ * An Azure activity log alert for patch operations.
+ */
 @Fluent
 public final class ActivityLogAlertPatch {
     /*
@@ -17,14 +19,16 @@ public final class ActivityLogAlertPatch {
     @JsonProperty(value = "enabled")
     private Boolean enabled;
 
-    /** Creates an instance of ActivityLogAlertPatch class. */
+    /**
+     * Creates an instance of ActivityLogAlertPatch class.
+     */
     public ActivityLogAlertPatch() {
     }
 
     /**
      * Get the enabled property: Indicates whether this activity log alert is enabled. If an activity log alert is not
      * enabled, then none of its actions will be activated.
-     *
+     * 
      * @return the enabled value.
      */
     public Boolean enabled() {
@@ -34,7 +38,7 @@ public final class ActivityLogAlertPatch {
     /**
      * Set the enabled property: Indicates whether this activity log alert is enabled. If an activity log alert is not
      * enabled, then none of its actions will be activated.
-     *
+     * 
      * @param enabled the enabled value to set.
      * @return the ActivityLogAlertPatch object itself.
      */
@@ -45,7 +49,7 @@ public final class ActivityLogAlertPatch {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

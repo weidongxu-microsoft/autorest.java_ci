@@ -49,279 +49,327 @@ import java.time.Duration;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-/** Initializes a new instance of the ConsumptionManagementClientImpl type. */
+/**
+ * Initializes a new instance of the ConsumptionManagementClientImpl type.
+ */
 @ServiceClient(builder = ConsumptionManagementClientBuilder.class)
 public final class ConsumptionManagementClientImpl implements ConsumptionManagementClient {
-    /** Azure Subscription ID. */
+    /**
+     * Azure Subscription ID.
+     */
     private final String subscriptionId;
 
     /**
      * Gets Azure Subscription ID.
-     *
+     * 
      * @return the subscriptionId value.
      */
     public String getSubscriptionId() {
         return this.subscriptionId;
     }
 
-    /** server parameter. */
+    /**
+     * server parameter.
+     */
     private final String endpoint;
 
     /**
      * Gets server parameter.
-     *
+     * 
      * @return the endpoint value.
      */
     public String getEndpoint() {
         return this.endpoint;
     }
 
-    /** Api Version. */
+    /**
+     * Api Version.
+     */
     private final String apiVersion;
 
     /**
      * Gets Api Version.
-     *
+     * 
      * @return the apiVersion value.
      */
     public String getApiVersion() {
         return this.apiVersion;
     }
 
-    /** The HTTP pipeline to send requests through. */
+    /**
+     * The HTTP pipeline to send requests through.
+     */
     private final HttpPipeline httpPipeline;
 
     /**
      * Gets The HTTP pipeline to send requests through.
-     *
+     * 
      * @return the httpPipeline value.
      */
     public HttpPipeline getHttpPipeline() {
         return this.httpPipeline;
     }
 
-    /** The serializer to serialize an object into a string. */
+    /**
+     * The serializer to serialize an object into a string.
+     */
     private final SerializerAdapter serializerAdapter;
 
     /**
      * Gets The serializer to serialize an object into a string.
-     *
+     * 
      * @return the serializerAdapter value.
      */
     SerializerAdapter getSerializerAdapter() {
         return this.serializerAdapter;
     }
 
-    /** The default poll interval for long-running operation. */
+    /**
+     * The default poll interval for long-running operation.
+     */
     private final Duration defaultPollInterval;
 
     /**
      * Gets The default poll interval for long-running operation.
-     *
+     * 
      * @return the defaultPollInterval value.
      */
     public Duration getDefaultPollInterval() {
         return this.defaultPollInterval;
     }
 
-    /** The UsageDetailsClient object to access its operations. */
+    /**
+     * The UsageDetailsClient object to access its operations.
+     */
     private final UsageDetailsClient usageDetails;
 
     /**
      * Gets the UsageDetailsClient object to access its operations.
-     *
+     * 
      * @return the UsageDetailsClient object.
      */
     public UsageDetailsClient getUsageDetails() {
         return this.usageDetails;
     }
 
-    /** The MarketplacesClient object to access its operations. */
+    /**
+     * The MarketplacesClient object to access its operations.
+     */
     private final MarketplacesClient marketplaces;
 
     /**
      * Gets the MarketplacesClient object to access its operations.
-     *
+     * 
      * @return the MarketplacesClient object.
      */
     public MarketplacesClient getMarketplaces() {
         return this.marketplaces;
     }
 
-    /** The BudgetsClient object to access its operations. */
+    /**
+     * The BudgetsClient object to access its operations.
+     */
     private final BudgetsClient budgets;
 
     /**
      * Gets the BudgetsClient object to access its operations.
-     *
+     * 
      * @return the BudgetsClient object.
      */
     public BudgetsClient getBudgets() {
         return this.budgets;
     }
 
-    /** The TagsClient object to access its operations. */
+    /**
+     * The TagsClient object to access its operations.
+     */
     private final TagsClient tags;
 
     /**
      * Gets the TagsClient object to access its operations.
-     *
+     * 
      * @return the TagsClient object.
      */
     public TagsClient getTags() {
         return this.tags;
     }
 
-    /** The ChargesClient object to access its operations. */
+    /**
+     * The ChargesClient object to access its operations.
+     */
     private final ChargesClient charges;
 
     /**
      * Gets the ChargesClient object to access its operations.
-     *
+     * 
      * @return the ChargesClient object.
      */
     public ChargesClient getCharges() {
         return this.charges;
     }
 
-    /** The BalancesClient object to access its operations. */
+    /**
+     * The BalancesClient object to access its operations.
+     */
     private final BalancesClient balances;
 
     /**
      * Gets the BalancesClient object to access its operations.
-     *
+     * 
      * @return the BalancesClient object.
      */
     public BalancesClient getBalances() {
         return this.balances;
     }
 
-    /** The ReservationsSummariesClient object to access its operations. */
+    /**
+     * The ReservationsSummariesClient object to access its operations.
+     */
     private final ReservationsSummariesClient reservationsSummaries;
 
     /**
      * Gets the ReservationsSummariesClient object to access its operations.
-     *
+     * 
      * @return the ReservationsSummariesClient object.
      */
     public ReservationsSummariesClient getReservationsSummaries() {
         return this.reservationsSummaries;
     }
 
-    /** The ReservationsDetailsClient object to access its operations. */
+    /**
+     * The ReservationsDetailsClient object to access its operations.
+     */
     private final ReservationsDetailsClient reservationsDetails;
 
     /**
      * Gets the ReservationsDetailsClient object to access its operations.
-     *
+     * 
      * @return the ReservationsDetailsClient object.
      */
     public ReservationsDetailsClient getReservationsDetails() {
         return this.reservationsDetails;
     }
 
-    /** The ReservationRecommendationsClient object to access its operations. */
+    /**
+     * The ReservationRecommendationsClient object to access its operations.
+     */
     private final ReservationRecommendationsClient reservationRecommendations;
 
     /**
      * Gets the ReservationRecommendationsClient object to access its operations.
-     *
+     * 
      * @return the ReservationRecommendationsClient object.
      */
     public ReservationRecommendationsClient getReservationRecommendations() {
         return this.reservationRecommendations;
     }
 
-    /** The ReservationRecommendationDetailsClient object to access its operations. */
+    /**
+     * The ReservationRecommendationDetailsClient object to access its operations.
+     */
     private final ReservationRecommendationDetailsClient reservationRecommendationDetails;
 
     /**
      * Gets the ReservationRecommendationDetailsClient object to access its operations.
-     *
+     * 
      * @return the ReservationRecommendationDetailsClient object.
      */
     public ReservationRecommendationDetailsClient getReservationRecommendationDetails() {
         return this.reservationRecommendationDetails;
     }
 
-    /** The ReservationTransactionsClient object to access its operations. */
+    /**
+     * The ReservationTransactionsClient object to access its operations.
+     */
     private final ReservationTransactionsClient reservationTransactions;
 
     /**
      * Gets the ReservationTransactionsClient object to access its operations.
-     *
+     * 
      * @return the ReservationTransactionsClient object.
      */
     public ReservationTransactionsClient getReservationTransactions() {
         return this.reservationTransactions;
     }
 
-    /** The PriceSheetsClient object to access its operations. */
+    /**
+     * The PriceSheetsClient object to access its operations.
+     */
     private final PriceSheetsClient priceSheets;
 
     /**
      * Gets the PriceSheetsClient object to access its operations.
-     *
+     * 
      * @return the PriceSheetsClient object.
      */
     public PriceSheetsClient getPriceSheets() {
         return this.priceSheets;
     }
 
-    /** The OperationsClient object to access its operations. */
+    /**
+     * The OperationsClient object to access its operations.
+     */
     private final OperationsClient operations;
 
     /**
      * Gets the OperationsClient object to access its operations.
-     *
+     * 
      * @return the OperationsClient object.
      */
     public OperationsClient getOperations() {
         return this.operations;
     }
 
-    /** The AggregatedCostsClient object to access its operations. */
+    /**
+     * The AggregatedCostsClient object to access its operations.
+     */
     private final AggregatedCostsClient aggregatedCosts;
 
     /**
      * Gets the AggregatedCostsClient object to access its operations.
-     *
+     * 
      * @return the AggregatedCostsClient object.
      */
     public AggregatedCostsClient getAggregatedCosts() {
         return this.aggregatedCosts;
     }
 
-    /** The EventsOperationsClient object to access its operations. */
+    /**
+     * The EventsOperationsClient object to access its operations.
+     */
     private final EventsOperationsClient eventsOperations;
 
     /**
      * Gets the EventsOperationsClient object to access its operations.
-     *
+     * 
      * @return the EventsOperationsClient object.
      */
     public EventsOperationsClient getEventsOperations() {
         return this.eventsOperations;
     }
 
-    /** The LotsOperationsClient object to access its operations. */
+    /**
+     * The LotsOperationsClient object to access its operations.
+     */
     private final LotsOperationsClient lotsOperations;
 
     /**
      * Gets the LotsOperationsClient object to access its operations.
-     *
+     * 
      * @return the LotsOperationsClient object.
      */
     public LotsOperationsClient getLotsOperations() {
         return this.lotsOperations;
     }
 
-    /** The CreditsClient object to access its operations. */
+    /**
+     * The CreditsClient object to access its operations.
+     */
     private final CreditsClient credits;
 
     /**
      * Gets the CreditsClient object to access its operations.
-     *
+     * 
      * @return the CreditsClient object.
      */
     public CreditsClient getCredits() {
@@ -330,7 +378,7 @@ public final class ConsumptionManagementClientImpl implements ConsumptionManagem
 
     /**
      * Initializes an instance of ConsumptionManagementClient client.
-     *
+     * 
      * @param httpPipeline The HTTP pipeline to send requests through.
      * @param serializerAdapter The serializer to serialize an object into a string.
      * @param defaultPollInterval The default poll interval for long-running operation.
@@ -338,13 +386,8 @@ public final class ConsumptionManagementClientImpl implements ConsumptionManagem
      * @param subscriptionId Azure Subscription ID.
      * @param endpoint server parameter.
      */
-    ConsumptionManagementClientImpl(
-        HttpPipeline httpPipeline,
-        SerializerAdapter serializerAdapter,
-        Duration defaultPollInterval,
-        AzureEnvironment environment,
-        String subscriptionId,
-        String endpoint) {
+    ConsumptionManagementClientImpl(HttpPipeline httpPipeline, SerializerAdapter serializerAdapter,
+        Duration defaultPollInterval, AzureEnvironment environment, String subscriptionId, String endpoint) {
         this.httpPipeline = httpPipeline;
         this.serializerAdapter = serializerAdapter;
         this.defaultPollInterval = defaultPollInterval;
@@ -372,7 +415,7 @@ public final class ConsumptionManagementClientImpl implements ConsumptionManagem
 
     /**
      * Gets default client context.
-     *
+     * 
      * @return the default client context.
      */
     public Context getContext() {
@@ -381,7 +424,7 @@ public final class ConsumptionManagementClientImpl implements ConsumptionManagem
 
     /**
      * Merges default client context with provided context.
-     *
+     * 
      * @param context the context to be merged with default client context.
      * @return the merged context.
      */
@@ -391,7 +434,7 @@ public final class ConsumptionManagementClientImpl implements ConsumptionManagem
 
     /**
      * Gets long running operation result.
-     *
+     * 
      * @param activationResponse the response of activation operation.
      * @param httpPipeline the http pipeline.
      * @param pollResultType type of poll result.
@@ -401,26 +444,15 @@ public final class ConsumptionManagementClientImpl implements ConsumptionManagem
      * @param <U> type of final result.
      * @return poller flux for poll result and final result.
      */
-    public <T, U> PollerFlux<PollResult<T>, U> getLroResult(
-        Mono<Response<Flux<ByteBuffer>>> activationResponse,
-        HttpPipeline httpPipeline,
-        Type pollResultType,
-        Type finalResultType,
-        Context context) {
-        return PollerFactory
-            .create(
-                serializerAdapter,
-                httpPipeline,
-                pollResultType,
-                finalResultType,
-                defaultPollInterval,
-                activationResponse,
-                context);
+    public <T, U> PollerFlux<PollResult<T>, U> getLroResult(Mono<Response<Flux<ByteBuffer>>> activationResponse,
+        HttpPipeline httpPipeline, Type pollResultType, Type finalResultType, Context context) {
+        return PollerFactory.create(serializerAdapter, httpPipeline, pollResultType, finalResultType,
+            defaultPollInterval, activationResponse, context);
     }
 
     /**
      * Gets the final result, or an error, based on last async poll response.
-     *
+     * 
      * @param response the last async poll response.
      * @param <T> type of poll result.
      * @param <U> type of final result.
@@ -433,19 +465,16 @@ public final class ConsumptionManagementClientImpl implements ConsumptionManagem
             HttpResponse errorResponse = null;
             PollResult.Error lroError = response.getValue().getError();
             if (lroError != null) {
-                errorResponse =
-                    new HttpResponseImpl(
-                        lroError.getResponseStatusCode(), lroError.getResponseHeaders(), lroError.getResponseBody());
+                errorResponse = new HttpResponseImpl(lroError.getResponseStatusCode(), lroError.getResponseHeaders(),
+                    lroError.getResponseBody());
 
                 errorMessage = response.getValue().getError().getMessage();
                 String errorBody = response.getValue().getError().getResponseBody();
                 if (errorBody != null) {
                     // try to deserialize error body to ManagementError
                     try {
-                        managementError =
-                            this
-                                .getSerializerAdapter()
-                                .deserialize(errorBody, ManagementError.class, SerializerEncoding.JSON);
+                        managementError = this.getSerializerAdapter().deserialize(errorBody, ManagementError.class,
+                            SerializerEncoding.JSON);
                         if (managementError.getCode() == null || managementError.getMessage() == null) {
                             managementError = null;
                         }

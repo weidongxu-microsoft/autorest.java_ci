@@ -14,8 +14,7 @@ public final class SharedGalleryImageVersionImpl implements SharedGalleryImageVe
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    SharedGalleryImageVersionImpl(
-        SharedGalleryImageVersionInner innerObject,
+    SharedGalleryImageVersionImpl(SharedGalleryImageVersionInner innerObject,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

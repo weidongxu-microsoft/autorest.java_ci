@@ -6,25 +6,27 @@ package com.azure.resourcemanager.compute.generated.models;
 
 import com.azure.resourcemanager.compute.generated.fluent.models.RoleInstancePropertiesInner;
 
-/** An immutable client-side representation of RoleInstanceProperties. */
+/**
+ * An immutable client-side representation of RoleInstanceProperties.
+ */
 public interface RoleInstanceProperties {
     /**
      * Gets the networkProfile property: Describes the network profile for the role instance.
-     *
+     * 
      * @return the networkProfile value.
      */
     RoleInstanceNetworkProfile networkProfile();
 
     /**
      * Gets the instanceView property: The instance view of the role instance.
-     *
+     * 
      * @return the instanceView value.
      */
     RoleInstanceView instanceView();
 
     /**
      * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.RoleInstancePropertiesInner object.
-     *
+     * 
      * @return the inner object.
      */
     RoleInstancePropertiesInner innerModel();

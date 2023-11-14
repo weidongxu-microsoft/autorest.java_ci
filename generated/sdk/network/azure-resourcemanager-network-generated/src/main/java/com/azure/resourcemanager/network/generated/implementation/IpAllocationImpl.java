@@ -118,20 +118,14 @@ public final class IpAllocationImpl implements IpAllocation, IpAllocation.Defini
     }
 
     public IpAllocation create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getIpAllocations()
-                .createOrUpdate(resourceGroupName, ipAllocationName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getIpAllocations().createOrUpdate(resourceGroupName,
+            ipAllocationName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public IpAllocation create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getIpAllocations()
-                .createOrUpdate(resourceGroupName, ipAllocationName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getIpAllocations().createOrUpdate(resourceGroupName,
+            ipAllocationName, this.innerModel(), context);
         return this;
     }
 
@@ -147,27 +141,19 @@ public final class IpAllocationImpl implements IpAllocation, IpAllocation.Defini
     }
 
     public IpAllocation apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getIpAllocations()
-                .updateTagsWithResponse(resourceGroupName, ipAllocationName, updateParameters, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getIpAllocations()
+            .updateTagsWithResponse(resourceGroupName, ipAllocationName, updateParameters, Context.NONE).getValue();
         return this;
     }
 
     public IpAllocation apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getIpAllocations()
-                .updateTagsWithResponse(resourceGroupName, ipAllocationName, updateParameters, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getIpAllocations()
+            .updateTagsWithResponse(resourceGroupName, ipAllocationName, updateParameters, context).getValue();
         return this;
     }
 
-    IpAllocationImpl(
-        IpAllocationInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    IpAllocationImpl(IpAllocationInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
@@ -176,23 +162,15 @@ public final class IpAllocationImpl implements IpAllocation, IpAllocation.Defini
 
     public IpAllocation refresh() {
         String localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getIpAllocations()
-                .getByResourceGroupWithResponse(resourceGroupName, ipAllocationName, localExpand, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getIpAllocations()
+            .getByResourceGroupWithResponse(resourceGroupName, ipAllocationName, localExpand, Context.NONE).getValue();
         return this;
     }
 
     public IpAllocation refresh(Context context) {
         String localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getIpAllocations()
-                .getByResourceGroupWithResponse(resourceGroupName, ipAllocationName, localExpand, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getIpAllocations()
+            .getByResourceGroupWithResponse(resourceGroupName, ipAllocationName, localExpand, context).getValue();
         return this;
     }
 

@@ -9,7 +9,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
 
-/** The live event ingestion telemetry data. */
+/**
+ * The live event ingestion telemetry data.
+ */
 @Fluent
 public final class LiveEventIngestion {
     /*
@@ -42,13 +44,15 @@ public final class LiveEventIngestion {
     @JsonProperty(value = "ingestInterruptions")
     private List<LiveEventIngestInterruption> ingestInterruptions;
 
-    /** Creates an instance of LiveEventIngestion class. */
+    /**
+     * Creates an instance of LiveEventIngestion class.
+     */
     public LiveEventIngestion() {
     }
 
     /**
      * Get the streamName property: Ingestion stream name.
-     *
+     * 
      * @return the streamName value.
      */
     public String streamName() {
@@ -57,7 +61,7 @@ public final class LiveEventIngestion {
 
     /**
      * Set the streamName property: Ingestion stream name.
-     *
+     * 
      * @param streamName the streamName value to set.
      * @return the LiveEventIngestion object itself.
      */
@@ -68,7 +72,7 @@ public final class LiveEventIngestion {
 
     /**
      * Get the begin property: Ingestion begin time in UTC.
-     *
+     * 
      * @return the begin value.
      */
     public OffsetDateTime begin() {
@@ -77,7 +81,7 @@ public final class LiveEventIngestion {
 
     /**
      * Set the begin property: Ingestion begin time in UTC.
-     *
+     * 
      * @param begin the begin value to set.
      * @return the LiveEventIngestion object itself.
      */
@@ -88,7 +92,7 @@ public final class LiveEventIngestion {
 
     /**
      * Get the end property: Ingestion end time in UTC. Empty if it's not stopped yet.
-     *
+     * 
      * @return the end value.
      */
     public OffsetDateTime end() {
@@ -97,7 +101,7 @@ public final class LiveEventIngestion {
 
     /**
      * Set the end property: Ingestion end time in UTC. Empty if it's not stopped yet.
-     *
+     * 
      * @param end the end value to set.
      * @return the LiveEventIngestion object itself.
      */
@@ -109,7 +113,7 @@ public final class LiveEventIngestion {
     /**
      * Get the endReason property: Reason why ingestion stops. Empty if it's not stopped yet. E.g) Service Stopped. No
      * Ingestion.
-     *
+     * 
      * @return the endReason value.
      */
     public String endReason() {
@@ -119,7 +123,7 @@ public final class LiveEventIngestion {
     /**
      * Set the endReason property: Reason why ingestion stops. Empty if it's not stopped yet. E.g) Service Stopped. No
      * Ingestion.
-     *
+     * 
      * @param endReason the endReason value to set.
      * @return the LiveEventIngestion object itself.
      */
@@ -130,7 +134,7 @@ public final class LiveEventIngestion {
 
     /**
      * Get the ingestInterruptions property: IngestInterruption entry list.
-     *
+     * 
      * @return the ingestInterruptions value.
      */
     public List<LiveEventIngestInterruption> ingestInterruptions() {
@@ -139,7 +143,7 @@ public final class LiveEventIngestion {
 
     /**
      * Set the ingestInterruptions property: IngestInterruption entry list.
-     *
+     * 
      * @param ingestInterruptions the ingestInterruptions value to set.
      * @return the LiveEventIngestion object itself.
      */
@@ -150,7 +154,7 @@ public final class LiveEventIngestion {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

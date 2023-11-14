@@ -11,7 +11,9 @@ import com.azure.resourcemanager.monitor.generated.models.ActivityLogAlertAllOfC
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** An Azure activity log alert. */
+/**
+ * An Azure activity log alert.
+ */
 @Fluent
 public final class ActivityLogAlert {
     /*
@@ -46,14 +48,16 @@ public final class ActivityLogAlert {
     @JsonProperty(value = "description")
     private String description;
 
-    /** Creates an instance of ActivityLogAlert class. */
+    /**
+     * Creates an instance of ActivityLogAlert class.
+     */
     public ActivityLogAlert() {
     }
 
     /**
      * Get the scopes property: A list of resourceIds that will be used as prefixes. The alert will only apply to
      * activityLogs with resourceIds that fall under one of these prefixes. This list must include at least one item.
-     *
+     * 
      * @return the scopes value.
      */
     public List<String> scopes() {
@@ -63,7 +67,7 @@ public final class ActivityLogAlert {
     /**
      * Set the scopes property: A list of resourceIds that will be used as prefixes. The alert will only apply to
      * activityLogs with resourceIds that fall under one of these prefixes. This list must include at least one item.
-     *
+     * 
      * @param scopes the scopes value to set.
      * @return the ActivityLogAlert object itself.
      */
@@ -75,7 +79,7 @@ public final class ActivityLogAlert {
     /**
      * Get the enabled property: Indicates whether this activity log alert is enabled. If an activity log alert is not
      * enabled, then none of its actions will be activated.
-     *
+     * 
      * @return the enabled value.
      */
     public Boolean enabled() {
@@ -85,7 +89,7 @@ public final class ActivityLogAlert {
     /**
      * Set the enabled property: Indicates whether this activity log alert is enabled. If an activity log alert is not
      * enabled, then none of its actions will be activated.
-     *
+     * 
      * @param enabled the enabled value to set.
      * @return the ActivityLogAlert object itself.
      */
@@ -96,7 +100,7 @@ public final class ActivityLogAlert {
 
     /**
      * Get the condition property: The condition that will cause this alert to activate.
-     *
+     * 
      * @return the condition value.
      */
     public ActivityLogAlertAllOfCondition condition() {
@@ -105,7 +109,7 @@ public final class ActivityLogAlert {
 
     /**
      * Set the condition property: The condition that will cause this alert to activate.
-     *
+     * 
      * @param condition the condition value to set.
      * @return the ActivityLogAlert object itself.
      */
@@ -116,7 +120,7 @@ public final class ActivityLogAlert {
 
     /**
      * Get the actions property: The actions that will activate when the condition is met.
-     *
+     * 
      * @return the actions value.
      */
     public ActivityLogAlertActionList actions() {
@@ -125,7 +129,7 @@ public final class ActivityLogAlert {
 
     /**
      * Set the actions property: The actions that will activate when the condition is met.
-     *
+     * 
      * @param actions the actions value to set.
      * @return the ActivityLogAlert object itself.
      */
@@ -136,7 +140,7 @@ public final class ActivityLogAlert {
 
     /**
      * Get the description property: A description of this activity log alert.
-     *
+     * 
      * @return the description value.
      */
     public String description() {
@@ -145,7 +149,7 @@ public final class ActivityLogAlert {
 
     /**
      * Set the description property: A description of this activity log alert.
-     *
+     * 
      * @param description the description value to set.
      * @return the ActivityLogAlert object itself.
      */
@@ -156,26 +160,23 @@ public final class ActivityLogAlert {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (scopes() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property scopes in model ActivityLogAlert"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property scopes in model ActivityLogAlert"));
         }
         if (condition() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property condition in model ActivityLogAlert"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property condition in model ActivityLogAlert"));
         } else {
             condition().validate();
         }
         if (actions() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property actions in model ActivityLogAlert"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property actions in model ActivityLogAlert"));
         } else {
             actions().validate();
         }

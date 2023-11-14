@@ -62,22 +62,28 @@ import java.nio.ByteBuffer;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-/** An instance of this class provides access to all the operations defined in NetworkWatchersClient. */
+/**
+ * An instance of this class provides access to all the operations defined in NetworkWatchersClient.
+ */
 public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
-    /** The proxy service used to perform REST calls. */
+    /**
+     * The proxy service used to perform REST calls.
+     */
     private final NetworkWatchersService service;
 
-    /** The service client containing this operation class. */
+    /**
+     * The service client containing this operation class.
+     */
     private final NetworkManagementClientImpl client;
 
     /**
      * Initializes an instance of NetworkWatchersClientImpl.
-     *
+     * 
      * @param client the instance of the service client containing this operation class.
      */
     NetworkWatchersClientImpl(NetworkManagementClientImpl client) {
-        this.service =
-            RestProxy.create(NetworkWatchersService.class, client.getHttpPipeline(), client.getSerializerAdapter());
+        this.service
+            = RestProxy.create(NetworkWatchersService.class, client.getHttpPipeline(), client.getSerializerAdapter());
         this.client = client;
     }
 
@@ -88,272 +94,197 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
     public interface NetworkWatchersService {
-        @Headers({"Content-Type: application/json"})
-        @Put(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}")
-        @ExpectedResponses({200, 201})
+        @Headers({ "Content-Type: application/json" })
+        @Put("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}")
+        @ExpectedResponses({ 200, 201 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<NetworkWatcherInner>> createOrUpdate(
-            @HostParam("$host") String endpoint,
+        Mono<Response<NetworkWatcherInner>> createOrUpdate(@HostParam("$host") String endpoint,
             @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("networkWatcherName") String networkWatcherName,
-            @QueryParam("api-version") String apiVersion,
+            @PathParam("networkWatcherName") String networkWatcherName, @QueryParam("api-version") String apiVersion,
             @PathParam("subscriptionId") String subscriptionId,
-            @BodyParam("application/json") NetworkWatcherInner parameters,
-            @HeaderParam("Accept") String accept,
+            @BodyParam("application/json") NetworkWatcherInner parameters, @HeaderParam("Accept") String accept,
             Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}")
-        @ExpectedResponses({200})
+        @Headers({ "Content-Type: application/json" })
+        @Get("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}")
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<NetworkWatcherInner>> getByResourceGroup(
-            @HostParam("$host") String endpoint,
+        Mono<Response<NetworkWatcherInner>> getByResourceGroup(@HostParam("$host") String endpoint,
             @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("networkWatcherName") String networkWatcherName,
-            @QueryParam("api-version") String apiVersion,
-            @PathParam("subscriptionId") String subscriptionId,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @PathParam("networkWatcherName") String networkWatcherName, @QueryParam("api-version") String apiVersion,
+            @PathParam("subscriptionId") String subscriptionId, @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Delete(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}")
-        @ExpectedResponses({202, 204})
+        @Headers({ "Content-Type: application/json" })
+        @Delete("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}")
+        @ExpectedResponses({ 202, 204 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<Flux<ByteBuffer>>> delete(
-            @HostParam("$host") String endpoint,
+        Mono<Response<Flux<ByteBuffer>>> delete(@HostParam("$host") String endpoint,
             @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("networkWatcherName") String networkWatcherName,
-            @QueryParam("api-version") String apiVersion,
-            @PathParam("subscriptionId") String subscriptionId,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @PathParam("networkWatcherName") String networkWatcherName, @QueryParam("api-version") String apiVersion,
+            @PathParam("subscriptionId") String subscriptionId, @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Patch(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}")
-        @ExpectedResponses({200})
+        @Headers({ "Content-Type: application/json" })
+        @Patch("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}")
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<NetworkWatcherInner>> updateTags(
-            @HostParam("$host") String endpoint,
+        Mono<Response<NetworkWatcherInner>> updateTags(@HostParam("$host") String endpoint,
             @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("networkWatcherName") String networkWatcherName,
-            @QueryParam("api-version") String apiVersion,
-            @PathParam("subscriptionId") String subscriptionId,
-            @BodyParam("application/json") TagsObject parameters,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @PathParam("networkWatcherName") String networkWatcherName, @QueryParam("api-version") String apiVersion,
+            @PathParam("subscriptionId") String subscriptionId, @BodyParam("application/json") TagsObject parameters,
+            @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers")
-        @ExpectedResponses({200})
+        @Headers({ "Content-Type: application/json" })
+        @Get("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers")
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<NetworkWatcherListResult>> listByResourceGroup(
-            @HostParam("$host") String endpoint,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @QueryParam("api-version") String apiVersion,
-            @PathParam("subscriptionId") String subscriptionId,
-            @HeaderParam("Accept") String accept,
-            Context context);
+        Mono<Response<NetworkWatcherListResult>> listByResourceGroup(@HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName, @QueryParam("api-version") String apiVersion,
+            @PathParam("subscriptionId") String subscriptionId, @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
+        @Headers({ "Content-Type: application/json" })
         @Get("/subscriptions/{subscriptionId}/providers/Microsoft.Network/networkWatchers")
-        @ExpectedResponses({200})
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<NetworkWatcherListResult>> list(
-            @HostParam("$host") String endpoint,
-            @QueryParam("api-version") String apiVersion,
+        Mono<Response<NetworkWatcherListResult>> list(@HostParam("$host") String endpoint,
+            @QueryParam("api-version") String apiVersion, @PathParam("subscriptionId") String subscriptionId,
+            @HeaderParam("Accept") String accept, Context context);
+
+        @Headers({ "Content-Type: application/json" })
+        @Post("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/topology")
+        @ExpectedResponses({ 200 })
+        @UnexpectedResponseExceptionType(ManagementException.class)
+        Mono<Response<TopologyInner>> getTopology(@HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName,
+            @PathParam("networkWatcherName") String networkWatcherName, @QueryParam("api-version") String apiVersion,
             @PathParam("subscriptionId") String subscriptionId,
-            @HeaderParam("Accept") String accept,
+            @BodyParam("application/json") TopologyParameters parameters, @HeaderParam("Accept") String accept,
             Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Post(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/topology")
-        @ExpectedResponses({200})
+        @Headers({ "Content-Type: application/json" })
+        @Post("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/ipFlowVerify")
+        @ExpectedResponses({ 200, 202 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<TopologyInner>> getTopology(
-            @HostParam("$host") String endpoint,
+        Mono<Response<Flux<ByteBuffer>>> verifyIpFlow(@HostParam("$host") String endpoint,
             @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("networkWatcherName") String networkWatcherName,
-            @QueryParam("api-version") String apiVersion,
-            @PathParam("subscriptionId") String subscriptionId,
-            @BodyParam("application/json") TopologyParameters parameters,
-            @HeaderParam("Accept") String accept,
-            Context context);
-
-        @Headers({"Content-Type: application/json"})
-        @Post(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/ipFlowVerify")
-        @ExpectedResponses({200, 202})
-        @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<Flux<ByteBuffer>>> verifyIpFlow(
-            @HostParam("$host") String endpoint,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("networkWatcherName") String networkWatcherName,
-            @QueryParam("api-version") String apiVersion,
+            @PathParam("networkWatcherName") String networkWatcherName, @QueryParam("api-version") String apiVersion,
             @PathParam("subscriptionId") String subscriptionId,
             @BodyParam("application/json") VerificationIpFlowParameters parameters,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Post(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/nextHop")
-        @ExpectedResponses({200, 202})
+        @Headers({ "Content-Type: application/json" })
+        @Post("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/nextHop")
+        @ExpectedResponses({ 200, 202 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<Flux<ByteBuffer>>> getNextHop(
-            @HostParam("$host") String endpoint,
+        Mono<Response<Flux<ByteBuffer>>> getNextHop(@HostParam("$host") String endpoint,
             @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("networkWatcherName") String networkWatcherName,
-            @QueryParam("api-version") String apiVersion,
+            @PathParam("networkWatcherName") String networkWatcherName, @QueryParam("api-version") String apiVersion,
             @PathParam("subscriptionId") String subscriptionId,
-            @BodyParam("application/json") NextHopParameters parameters,
-            @HeaderParam("Accept") String accept,
+            @BodyParam("application/json") NextHopParameters parameters, @HeaderParam("Accept") String accept,
             Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Post(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/securityGroupView")
-        @ExpectedResponses({200, 202})
+        @Headers({ "Content-Type: application/json" })
+        @Post("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/securityGroupView")
+        @ExpectedResponses({ 200, 202 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<Flux<ByteBuffer>>> getVMSecurityRules(
-            @HostParam("$host") String endpoint,
+        Mono<Response<Flux<ByteBuffer>>> getVMSecurityRules(@HostParam("$host") String endpoint,
             @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("networkWatcherName") String networkWatcherName,
-            @QueryParam("api-version") String apiVersion,
+            @PathParam("networkWatcherName") String networkWatcherName, @QueryParam("api-version") String apiVersion,
             @PathParam("subscriptionId") String subscriptionId,
-            @BodyParam("application/json") SecurityGroupViewParameters parameters,
-            @HeaderParam("Accept") String accept,
+            @BodyParam("application/json") SecurityGroupViewParameters parameters, @HeaderParam("Accept") String accept,
             Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Post(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/troubleshoot")
-        @ExpectedResponses({200, 202})
+        @Headers({ "Content-Type: application/json" })
+        @Post("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/troubleshoot")
+        @ExpectedResponses({ 200, 202 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<Flux<ByteBuffer>>> getTroubleshooting(
-            @HostParam("$host") String endpoint,
+        Mono<Response<Flux<ByteBuffer>>> getTroubleshooting(@HostParam("$host") String endpoint,
             @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("networkWatcherName") String networkWatcherName,
-            @QueryParam("api-version") String apiVersion,
+            @PathParam("networkWatcherName") String networkWatcherName, @QueryParam("api-version") String apiVersion,
             @PathParam("subscriptionId") String subscriptionId,
-            @BodyParam("application/json") TroubleshootingParameters parameters,
-            @HeaderParam("Accept") String accept,
+            @BodyParam("application/json") TroubleshootingParameters parameters, @HeaderParam("Accept") String accept,
             Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Post(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/queryTroubleshootResult")
-        @ExpectedResponses({200, 202})
+        @Headers({ "Content-Type: application/json" })
+        @Post("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/queryTroubleshootResult")
+        @ExpectedResponses({ 200, 202 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<Flux<ByteBuffer>>> getTroubleshootingResult(
-            @HostParam("$host") String endpoint,
+        Mono<Response<Flux<ByteBuffer>>> getTroubleshootingResult(@HostParam("$host") String endpoint,
             @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("networkWatcherName") String networkWatcherName,
-            @QueryParam("api-version") String apiVersion,
+            @PathParam("networkWatcherName") String networkWatcherName, @QueryParam("api-version") String apiVersion,
             @PathParam("subscriptionId") String subscriptionId,
             @BodyParam("application/json") QueryTroubleshootingParameters parameters,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Post(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/configureFlowLog")
-        @ExpectedResponses({200, 202})
+        @Headers({ "Content-Type: application/json" })
+        @Post("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/configureFlowLog")
+        @ExpectedResponses({ 200, 202 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<Flux<ByteBuffer>>> setFlowLogConfiguration(
-            @HostParam("$host") String endpoint,
+        Mono<Response<Flux<ByteBuffer>>> setFlowLogConfiguration(@HostParam("$host") String endpoint,
             @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("networkWatcherName") String networkWatcherName,
-            @QueryParam("api-version") String apiVersion,
+            @PathParam("networkWatcherName") String networkWatcherName, @QueryParam("api-version") String apiVersion,
             @PathParam("subscriptionId") String subscriptionId,
-            @BodyParam("application/json") FlowLogInformationInner parameters,
-            @HeaderParam("Accept") String accept,
+            @BodyParam("application/json") FlowLogInformationInner parameters, @HeaderParam("Accept") String accept,
             Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Post(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/queryFlowLogStatus")
-        @ExpectedResponses({200, 202})
+        @Headers({ "Content-Type: application/json" })
+        @Post("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/queryFlowLogStatus")
+        @ExpectedResponses({ 200, 202 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<Flux<ByteBuffer>>> getFlowLogStatus(
-            @HostParam("$host") String endpoint,
+        Mono<Response<Flux<ByteBuffer>>> getFlowLogStatus(@HostParam("$host") String endpoint,
             @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("networkWatcherName") String networkWatcherName,
-            @QueryParam("api-version") String apiVersion,
+            @PathParam("networkWatcherName") String networkWatcherName, @QueryParam("api-version") String apiVersion,
             @PathParam("subscriptionId") String subscriptionId,
-            @BodyParam("application/json") FlowLogStatusParameters parameters,
-            @HeaderParam("Accept") String accept,
+            @BodyParam("application/json") FlowLogStatusParameters parameters, @HeaderParam("Accept") String accept,
             Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Post(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/connectivityCheck")
-        @ExpectedResponses({200, 202})
+        @Headers({ "Content-Type: application/json" })
+        @Post("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/connectivityCheck")
+        @ExpectedResponses({ 200, 202 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<Flux<ByteBuffer>>> checkConnectivity(
-            @HostParam("$host") String endpoint,
+        Mono<Response<Flux<ByteBuffer>>> checkConnectivity(@HostParam("$host") String endpoint,
             @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("networkWatcherName") String networkWatcherName,
-            @QueryParam("api-version") String apiVersion,
+            @PathParam("networkWatcherName") String networkWatcherName, @QueryParam("api-version") String apiVersion,
             @PathParam("subscriptionId") String subscriptionId,
-            @BodyParam("application/json") ConnectivityParameters parameters,
-            @HeaderParam("Accept") String accept,
+            @BodyParam("application/json") ConnectivityParameters parameters, @HeaderParam("Accept") String accept,
             Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Post(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/azureReachabilityReport")
-        @ExpectedResponses({200, 202})
+        @Headers({ "Content-Type: application/json" })
+        @Post("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/azureReachabilityReport")
+        @ExpectedResponses({ 200, 202 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<Flux<ByteBuffer>>> getAzureReachabilityReport(
-            @HostParam("$host") String endpoint,
+        Mono<Response<Flux<ByteBuffer>>> getAzureReachabilityReport(@HostParam("$host") String endpoint,
             @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("networkWatcherName") String networkWatcherName,
-            @QueryParam("api-version") String apiVersion,
+            @PathParam("networkWatcherName") String networkWatcherName, @QueryParam("api-version") String apiVersion,
             @PathParam("subscriptionId") String subscriptionId,
             @BodyParam("application/json") AzureReachabilityReportParameters parameters,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Post(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/availableProvidersList")
-        @ExpectedResponses({200, 202})
+        @Headers({ "Content-Type: application/json" })
+        @Post("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/availableProvidersList")
+        @ExpectedResponses({ 200, 202 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<Flux<ByteBuffer>>> listAvailableProviders(
-            @HostParam("$host") String endpoint,
+        Mono<Response<Flux<ByteBuffer>>> listAvailableProviders(@HostParam("$host") String endpoint,
             @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("networkWatcherName") String networkWatcherName,
-            @QueryParam("api-version") String apiVersion,
+            @PathParam("networkWatcherName") String networkWatcherName, @QueryParam("api-version") String apiVersion,
             @PathParam("subscriptionId") String subscriptionId,
             @BodyParam("application/json") AvailableProvidersListParameters parameters,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Post(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/networkConfigurationDiagnostic")
-        @ExpectedResponses({200, 202})
+        @Headers({ "Content-Type: application/json" })
+        @Post("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/networkConfigurationDiagnostic")
+        @ExpectedResponses({ 200, 202 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<Flux<ByteBuffer>>> getNetworkConfigurationDiagnostic(
-            @HostParam("$host") String endpoint,
+        Mono<Response<Flux<ByteBuffer>>> getNetworkConfigurationDiagnostic(@HostParam("$host") String endpoint,
             @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("networkWatcherName") String networkWatcherName,
-            @QueryParam("api-version") String apiVersion,
+            @PathParam("networkWatcherName") String networkWatcherName, @QueryParam("api-version") String apiVersion,
             @PathParam("subscriptionId") String subscriptionId,
             @BodyParam("application/json") NetworkConfigurationDiagnosticParameters parameters,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @HeaderParam("Accept") String accept, Context context);
     }
 
     /**
      * Creates or updates a network watcher in the specified resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters that define the network watcher resource.
@@ -363,13 +294,11 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return network watcher in a resource group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<NetworkWatcherInner>> createOrUpdateWithResponseAsync(
-        String resourceGroupName, String networkWatcherName, NetworkWatcherInner parameters) {
+    private Mono<Response<NetworkWatcherInner>> createOrUpdateWithResponseAsync(String resourceGroupName,
+        String networkWatcherName, NetworkWatcherInner parameters) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -380,37 +309,25 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
                 .error(new IllegalArgumentException("Parameter networkWatcherName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (parameters == null) {
             return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-05-01";
+        final String apiVersion = "2023-06-01";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .createOrUpdate(
-                            this.client.getEndpoint(),
-                            resourceGroupName,
-                            networkWatcherName,
-                            apiVersion,
-                            this.client.getSubscriptionId(),
-                            parameters,
-                            accept,
-                            context))
+            .withContext(context -> service.createOrUpdate(this.client.getEndpoint(), resourceGroupName,
+                networkWatcherName, apiVersion, this.client.getSubscriptionId(), parameters, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Creates or updates a network watcher in the specified resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters that define the network watcher resource.
@@ -421,13 +338,11 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return network watcher in a resource group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<NetworkWatcherInner>> createOrUpdateWithResponseAsync(
-        String resourceGroupName, String networkWatcherName, NetworkWatcherInner parameters, Context context) {
+    private Mono<Response<NetworkWatcherInner>> createOrUpdateWithResponseAsync(String resourceGroupName,
+        String networkWatcherName, NetworkWatcherInner parameters, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -438,34 +353,24 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
                 .error(new IllegalArgumentException("Parameter networkWatcherName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (parameters == null) {
             return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-05-01";
+        final String apiVersion = "2023-06-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .createOrUpdate(
-                this.client.getEndpoint(),
-                resourceGroupName,
-                networkWatcherName,
-                apiVersion,
-                this.client.getSubscriptionId(),
-                parameters,
-                accept,
-                context);
+        return service.createOrUpdate(this.client.getEndpoint(), resourceGroupName, networkWatcherName, apiVersion,
+            this.client.getSubscriptionId(), parameters, accept, context);
     }
 
     /**
      * Creates or updates a network watcher in the specified resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters that define the network watcher resource.
@@ -475,15 +380,15 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return network watcher in a resource group on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<NetworkWatcherInner> createOrUpdateAsync(
-        String resourceGroupName, String networkWatcherName, NetworkWatcherInner parameters) {
+    private Mono<NetworkWatcherInner> createOrUpdateAsync(String resourceGroupName, String networkWatcherName,
+        NetworkWatcherInner parameters) {
         return createOrUpdateWithResponseAsync(resourceGroupName, networkWatcherName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
      * Creates or updates a network watcher in the specified resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters that define the network watcher resource.
@@ -494,14 +399,14 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return network watcher in a resource group along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<NetworkWatcherInner> createOrUpdateWithResponse(
-        String resourceGroupName, String networkWatcherName, NetworkWatcherInner parameters, Context context) {
+    public Response<NetworkWatcherInner> createOrUpdateWithResponse(String resourceGroupName, String networkWatcherName,
+        NetworkWatcherInner parameters, Context context) {
         return createOrUpdateWithResponseAsync(resourceGroupName, networkWatcherName, parameters, context).block();
     }
 
     /**
      * Creates or updates a network watcher in the specified resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters that define the network watcher resource.
@@ -511,30 +416,28 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return network watcher in a resource group.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public NetworkWatcherInner createOrUpdate(
-        String resourceGroupName, String networkWatcherName, NetworkWatcherInner parameters) {
+    public NetworkWatcherInner createOrUpdate(String resourceGroupName, String networkWatcherName,
+        NetworkWatcherInner parameters) {
         return createOrUpdateWithResponse(resourceGroupName, networkWatcherName, parameters, Context.NONE).getValue();
     }
 
     /**
      * Gets the specified network watcher by resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified network watcher by resource group along with {@link Response} on successful completion of
-     *     {@link Mono}.
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<NetworkWatcherInner>> getByResourceGroupWithResponseAsync(
-        String resourceGroupName, String networkWatcherName) {
+    private Mono<Response<NetworkWatcherInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
+        String networkWatcherName) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -545,31 +448,20 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
                 .error(new IllegalArgumentException("Parameter networkWatcherName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-05-01";
+        final String apiVersion = "2023-06-01";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .getByResourceGroup(
-                            this.client.getEndpoint(),
-                            resourceGroupName,
-                            networkWatcherName,
-                            apiVersion,
-                            this.client.getSubscriptionId(),
-                            accept,
-                            context))
+            .withContext(context -> service.getByResourceGroup(this.client.getEndpoint(), resourceGroupName,
+                networkWatcherName, apiVersion, this.client.getSubscriptionId(), accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Gets the specified network watcher by resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param context The context to associate with this operation.
@@ -577,16 +469,14 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified network watcher by resource group along with {@link Response} on successful completion of
-     *     {@link Mono}.
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<NetworkWatcherInner>> getByResourceGroupWithResponseAsync(
-        String resourceGroupName, String networkWatcherName, Context context) {
+    private Mono<Response<NetworkWatcherInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
+        String networkWatcherName, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -597,28 +487,19 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
                 .error(new IllegalArgumentException("Parameter networkWatcherName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-05-01";
+        final String apiVersion = "2023-06-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .getByResourceGroup(
-                this.client.getEndpoint(),
-                resourceGroupName,
-                networkWatcherName,
-                apiVersion,
-                this.client.getSubscriptionId(),
-                accept,
-                context);
+        return service.getByResourceGroup(this.client.getEndpoint(), resourceGroupName, networkWatcherName, apiVersion,
+            this.client.getSubscriptionId(), accept, context);
     }
 
     /**
      * Gets the specified network watcher by resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -634,7 +515,7 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
 
     /**
      * Gets the specified network watcher by resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param context The context to associate with this operation.
@@ -644,14 +525,14 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return the specified network watcher by resource group along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<NetworkWatcherInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String networkWatcherName, Context context) {
+    public Response<NetworkWatcherInner> getByResourceGroupWithResponse(String resourceGroupName,
+        String networkWatcherName, Context context) {
         return getByResourceGroupWithResponseAsync(resourceGroupName, networkWatcherName, context).block();
     }
 
     /**
      * Gets the specified network watcher by resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -666,7 +547,7 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
 
     /**
      * Deletes the specified network watcher resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -675,13 +556,11 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
-        String resourceGroupName, String networkWatcherName) {
+    private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(String resourceGroupName,
+        String networkWatcherName) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -692,31 +571,20 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
                 .error(new IllegalArgumentException("Parameter networkWatcherName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-05-01";
+        final String apiVersion = "2023-06-01";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .delete(
-                            this.client.getEndpoint(),
-                            resourceGroupName,
-                            networkWatcherName,
-                            apiVersion,
-                            this.client.getSubscriptionId(),
-                            accept,
-                            context))
+            .withContext(context -> service.delete(this.client.getEndpoint(), resourceGroupName, networkWatcherName,
+                apiVersion, this.client.getSubscriptionId(), accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Deletes the specified network watcher resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param context The context to associate with this operation.
@@ -726,13 +594,11 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
-        String resourceGroupName, String networkWatcherName, Context context) {
+    private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(String resourceGroupName,
+        String networkWatcherName, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -743,28 +609,19 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
                 .error(new IllegalArgumentException("Parameter networkWatcherName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-05-01";
+        final String apiVersion = "2023-06-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .delete(
-                this.client.getEndpoint(),
-                resourceGroupName,
-                networkWatcherName,
-                apiVersion,
-                this.client.getSubscriptionId(),
-                accept,
-                context);
+        return service.delete(this.client.getEndpoint(), resourceGroupName, networkWatcherName, apiVersion,
+            this.client.getSubscriptionId(), accept, context);
     }
 
     /**
      * Deletes the specified network watcher resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -775,15 +632,13 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(String resourceGroupName, String networkWatcherName) {
         Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(resourceGroupName, networkWatcherName);
-        return this
-            .client
-            .<Void, Void>getLroResult(
-                mono, this.client.getHttpPipeline(), Void.class, Void.class, this.client.getContext());
+        return this.client.<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class,
+            this.client.getContext());
     }
 
     /**
      * Deletes the specified network watcher resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param context The context to associate with this operation.
@@ -793,18 +648,17 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return the {@link PollerFlux} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
-        String resourceGroupName, String networkWatcherName, Context context) {
+    private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(String resourceGroupName, String networkWatcherName,
+        Context context) {
         context = this.client.mergeContext(context);
         Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(resourceGroupName, networkWatcherName, context);
-        return this
-            .client
-            .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, context);
+        return this.client.<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class,
+            context);
     }
 
     /**
      * Deletes the specified network watcher resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -819,7 +673,7 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
 
     /**
      * Deletes the specified network watcher resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param context The context to associate with this operation.
@@ -829,14 +683,14 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<PollResult<Void>, Void> beginDelete(
-        String resourceGroupName, String networkWatcherName, Context context) {
+    public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String networkWatcherName,
+        Context context) {
         return this.beginDeleteAsync(resourceGroupName, networkWatcherName, context).getSyncPoller();
     }
 
     /**
      * Deletes the specified network watcher resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -846,14 +700,13 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String networkWatcherName) {
-        return beginDeleteAsync(resourceGroupName, networkWatcherName)
-            .last()
+        return beginDeleteAsync(resourceGroupName, networkWatcherName).last()
             .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
      * Deletes the specified network watcher resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param context The context to associate with this operation.
@@ -864,14 +717,13 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> deleteAsync(String resourceGroupName, String networkWatcherName, Context context) {
-        return beginDeleteAsync(resourceGroupName, networkWatcherName, context)
-            .last()
+        return beginDeleteAsync(resourceGroupName, networkWatcherName, context).last()
             .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
      * Deletes the specified network watcher resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -885,7 +737,7 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
 
     /**
      * Deletes the specified network watcher resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param context The context to associate with this operation.
@@ -900,7 +752,7 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
 
     /**
      * Updates a network watcher tags.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters supplied to update network watcher tags.
@@ -910,13 +762,11 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return network watcher in a resource group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<NetworkWatcherInner>> updateTagsWithResponseAsync(
-        String resourceGroupName, String networkWatcherName, TagsObject parameters) {
+    private Mono<Response<NetworkWatcherInner>> updateTagsWithResponseAsync(String resourceGroupName,
+        String networkWatcherName, TagsObject parameters) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -927,37 +777,25 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
                 .error(new IllegalArgumentException("Parameter networkWatcherName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (parameters == null) {
             return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-05-01";
+        final String apiVersion = "2023-06-01";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .updateTags(
-                            this.client.getEndpoint(),
-                            resourceGroupName,
-                            networkWatcherName,
-                            apiVersion,
-                            this.client.getSubscriptionId(),
-                            parameters,
-                            accept,
-                            context))
+            .withContext(context -> service.updateTags(this.client.getEndpoint(), resourceGroupName, networkWatcherName,
+                apiVersion, this.client.getSubscriptionId(), parameters, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Updates a network watcher tags.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters supplied to update network watcher tags.
@@ -968,13 +806,11 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return network watcher in a resource group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<NetworkWatcherInner>> updateTagsWithResponseAsync(
-        String resourceGroupName, String networkWatcherName, TagsObject parameters, Context context) {
+    private Mono<Response<NetworkWatcherInner>> updateTagsWithResponseAsync(String resourceGroupName,
+        String networkWatcherName, TagsObject parameters, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -985,34 +821,24 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
                 .error(new IllegalArgumentException("Parameter networkWatcherName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (parameters == null) {
             return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-05-01";
+        final String apiVersion = "2023-06-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .updateTags(
-                this.client.getEndpoint(),
-                resourceGroupName,
-                networkWatcherName,
-                apiVersion,
-                this.client.getSubscriptionId(),
-                parameters,
-                accept,
-                context);
+        return service.updateTags(this.client.getEndpoint(), resourceGroupName, networkWatcherName, apiVersion,
+            this.client.getSubscriptionId(), parameters, accept, context);
     }
 
     /**
      * Updates a network watcher tags.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters supplied to update network watcher tags.
@@ -1022,15 +848,15 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return network watcher in a resource group on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<NetworkWatcherInner> updateTagsAsync(
-        String resourceGroupName, String networkWatcherName, TagsObject parameters) {
+    private Mono<NetworkWatcherInner> updateTagsAsync(String resourceGroupName, String networkWatcherName,
+        TagsObject parameters) {
         return updateTagsWithResponseAsync(resourceGroupName, networkWatcherName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
      * Updates a network watcher tags.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters supplied to update network watcher tags.
@@ -1041,14 +867,14 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return network watcher in a resource group along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<NetworkWatcherInner> updateTagsWithResponse(
-        String resourceGroupName, String networkWatcherName, TagsObject parameters, Context context) {
+    public Response<NetworkWatcherInner> updateTagsWithResponse(String resourceGroupName, String networkWatcherName,
+        TagsObject parameters, Context context) {
         return updateTagsWithResponseAsync(resourceGroupName, networkWatcherName, parameters, context).block();
     }
 
     /**
      * Updates a network watcher tags.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters supplied to update network watcher tags.
@@ -1064,102 +890,77 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
 
     /**
      * Gets all network watchers by resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all network watchers by resource group along with {@link PagedResponse} on successful completion of
-     *     {@link Mono}.
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkWatcherInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-05-01";
+        final String apiVersion = "2023-06-01";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .listByResourceGroup(
-                            this.client.getEndpoint(),
-                            resourceGroupName,
-                            apiVersion,
-                            this.client.getSubscriptionId(),
-                            accept,
-                            context))
-            .<PagedResponse<NetworkWatcherInner>>map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(), res.getStatusCode(), res.getHeaders(), res.getValue().value(), null, null))
+            .withContext(context -> service.listByResourceGroup(this.client.getEndpoint(), resourceGroupName,
+                apiVersion, this.client.getSubscriptionId(), accept, context))
+            .<PagedResponse<NetworkWatcherInner>>map(res -> new PagedResponseBase<>(res.getRequest(),
+                res.getStatusCode(), res.getHeaders(), res.getValue().value(), null, null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Gets all network watchers by resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all network watchers by resource group along with {@link PagedResponse} on successful completion of
-     *     {@link Mono}.
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<NetworkWatcherInner>> listByResourceGroupSinglePageAsync(
-        String resourceGroupName, Context context) {
+    private Mono<PagedResponse<NetworkWatcherInner>> listByResourceGroupSinglePageAsync(String resourceGroupName,
+        Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-05-01";
+        final String apiVersion = "2023-06-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .listByResourceGroup(
-                this.client.getEndpoint(),
-                resourceGroupName,
-                apiVersion,
-                this.client.getSubscriptionId(),
-                accept,
-                context)
-            .map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(), res.getStatusCode(), res.getHeaders(), res.getValue().value(), null, null));
+            .listByResourceGroup(this.client.getEndpoint(), resourceGroupName, apiVersion,
+                this.client.getSubscriptionId(), accept, context)
+            .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
+                res.getValue().value(), null, null));
     }
 
     /**
      * Gets all network watchers by resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1173,7 +974,7 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
 
     /**
      * Gets all network watchers by resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1188,7 +989,7 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
 
     /**
      * Gets all network watchers by resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1202,7 +1003,7 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
 
     /**
      * Gets all network watchers by resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1217,78 +1018,63 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
 
     /**
      * Gets all network watchers by subscription.
-     *
+     * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all network watchers by subscription along with {@link PagedResponse} on successful completion of {@link
-     *     Mono}.
+     * @return all network watchers by subscription along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkWatcherInner>> listSinglePageAsync() {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-05-01";
+        final String apiVersion = "2023-06-01";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .list(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), accept, context))
-            .<PagedResponse<NetworkWatcherInner>>map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(), res.getStatusCode(), res.getHeaders(), res.getValue().value(), null, null))
+            .withContext(context -> service.list(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(),
+                accept, context))
+            .<PagedResponse<NetworkWatcherInner>>map(res -> new PagedResponseBase<>(res.getRequest(),
+                res.getStatusCode(), res.getHeaders(), res.getValue().value(), null, null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Gets all network watchers by subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all network watchers by subscription along with {@link PagedResponse} on successful completion of {@link
-     *     Mono}.
+     * @return all network watchers by subscription along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkWatcherInner>> listSinglePageAsync(Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-05-01";
+        final String apiVersion = "2023-06-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .list(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), accept, context)
-            .map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(), res.getStatusCode(), res.getHeaders(), res.getValue().value(), null, null));
+        return service.list(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), accept, context)
+            .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
+                res.getValue().value(), null, null));
     }
 
     /**
      * Gets all network watchers by subscription.
-     *
+     * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all network watchers by subscription as paginated response with {@link PagedFlux}.
@@ -1300,7 +1086,7 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
 
     /**
      * Gets all network watchers by subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1314,7 +1100,7 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
 
     /**
      * Gets all network watchers by subscription.
-     *
+     * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all network watchers by subscription as paginated response with {@link PagedIterable}.
@@ -1326,7 +1112,7 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
 
     /**
      * Gets all network watchers by subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1340,7 +1126,7 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
 
     /**
      * Gets the current network topology by resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters that define the representation of topology.
@@ -1348,16 +1134,14 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the current network topology by resource group along with {@link Response} on successful completion of
-     *     {@link Mono}.
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<TopologyInner>> getTopologyWithResponseAsync(
-        String resourceGroupName, String networkWatcherName, TopologyParameters parameters) {
+    private Mono<Response<TopologyInner>> getTopologyWithResponseAsync(String resourceGroupName,
+        String networkWatcherName, TopologyParameters parameters) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -1368,37 +1152,25 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
                 .error(new IllegalArgumentException("Parameter networkWatcherName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (parameters == null) {
             return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-05-01";
+        final String apiVersion = "2023-06-01";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .getTopology(
-                            this.client.getEndpoint(),
-                            resourceGroupName,
-                            networkWatcherName,
-                            apiVersion,
-                            this.client.getSubscriptionId(),
-                            parameters,
-                            accept,
-                            context))
+            .withContext(context -> service.getTopology(this.client.getEndpoint(), resourceGroupName,
+                networkWatcherName, apiVersion, this.client.getSubscriptionId(), parameters, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Gets the current network topology by resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters that define the representation of topology.
@@ -1407,16 +1179,14 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the current network topology by resource group along with {@link Response} on successful completion of
-     *     {@link Mono}.
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<TopologyInner>> getTopologyWithResponseAsync(
-        String resourceGroupName, String networkWatcherName, TopologyParameters parameters, Context context) {
+    private Mono<Response<TopologyInner>> getTopologyWithResponseAsync(String resourceGroupName,
+        String networkWatcherName, TopologyParameters parameters, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -1427,34 +1197,24 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
                 .error(new IllegalArgumentException("Parameter networkWatcherName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (parameters == null) {
             return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-05-01";
+        final String apiVersion = "2023-06-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .getTopology(
-                this.client.getEndpoint(),
-                resourceGroupName,
-                networkWatcherName,
-                apiVersion,
-                this.client.getSubscriptionId(),
-                parameters,
-                accept,
-                context);
+        return service.getTopology(this.client.getEndpoint(), resourceGroupName, networkWatcherName, apiVersion,
+            this.client.getSubscriptionId(), parameters, accept, context);
     }
 
     /**
      * Gets the current network topology by resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters that define the representation of topology.
@@ -1464,15 +1224,15 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return the current network topology by resource group on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<TopologyInner> getTopologyAsync(
-        String resourceGroupName, String networkWatcherName, TopologyParameters parameters) {
+    private Mono<TopologyInner> getTopologyAsync(String resourceGroupName, String networkWatcherName,
+        TopologyParameters parameters) {
         return getTopologyWithResponseAsync(resourceGroupName, networkWatcherName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
      * Gets the current network topology by resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters that define the representation of topology.
@@ -1483,14 +1243,14 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return the current network topology by resource group along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<TopologyInner> getTopologyWithResponse(
-        String resourceGroupName, String networkWatcherName, TopologyParameters parameters, Context context) {
+    public Response<TopologyInner> getTopologyWithResponse(String resourceGroupName, String networkWatcherName,
+        TopologyParameters parameters, Context context) {
         return getTopologyWithResponseAsync(resourceGroupName, networkWatcherName, parameters, context).block();
     }
 
     /**
      * Gets the current network topology by resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters that define the representation of topology.
@@ -1500,14 +1260,14 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return the current network topology by resource group.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public TopologyInner getTopology(
-        String resourceGroupName, String networkWatcherName, TopologyParameters parameters) {
+    public TopologyInner getTopology(String resourceGroupName, String networkWatcherName,
+        TopologyParameters parameters) {
         return getTopologyWithResponse(resourceGroupName, networkWatcherName, parameters, Context.NONE).getValue();
     }
 
     /**
      * Verify IP flow from the specified VM to a location given the currently configured NSG rules.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters that define the IP flow to be verified.
@@ -1515,16 +1275,14 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return results of IP flow verification on the target resource along with {@link Response} on successful
-     *     completion of {@link Mono}.
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> verifyIpFlowWithResponseAsync(
-        String resourceGroupName, String networkWatcherName, VerificationIpFlowParameters parameters) {
+    private Mono<Response<Flux<ByteBuffer>>> verifyIpFlowWithResponseAsync(String resourceGroupName,
+        String networkWatcherName, VerificationIpFlowParameters parameters) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -1535,37 +1293,25 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
                 .error(new IllegalArgumentException("Parameter networkWatcherName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (parameters == null) {
             return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-05-01";
+        final String apiVersion = "2023-06-01";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .verifyIpFlow(
-                            this.client.getEndpoint(),
-                            resourceGroupName,
-                            networkWatcherName,
-                            apiVersion,
-                            this.client.getSubscriptionId(),
-                            parameters,
-                            accept,
-                            context))
+            .withContext(context -> service.verifyIpFlow(this.client.getEndpoint(), resourceGroupName,
+                networkWatcherName, apiVersion, this.client.getSubscriptionId(), parameters, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Verify IP flow from the specified VM to a location given the currently configured NSG rules.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters that define the IP flow to be verified.
@@ -1574,16 +1320,14 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return results of IP flow verification on the target resource along with {@link Response} on successful
-     *     completion of {@link Mono}.
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> verifyIpFlowWithResponseAsync(
-        String resourceGroupName, String networkWatcherName, VerificationIpFlowParameters parameters, Context context) {
+    private Mono<Response<Flux<ByteBuffer>>> verifyIpFlowWithResponseAsync(String resourceGroupName,
+        String networkWatcherName, VerificationIpFlowParameters parameters, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -1594,34 +1338,24 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
                 .error(new IllegalArgumentException("Parameter networkWatcherName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (parameters == null) {
             return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-05-01";
+        final String apiVersion = "2023-06-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .verifyIpFlow(
-                this.client.getEndpoint(),
-                resourceGroupName,
-                networkWatcherName,
-                apiVersion,
-                this.client.getSubscriptionId(),
-                parameters,
-                accept,
-                context);
+        return service.verifyIpFlow(this.client.getEndpoint(), resourceGroupName, networkWatcherName, apiVersion,
+            this.client.getSubscriptionId(), parameters, accept, context);
     }
 
     /**
      * Verify IP flow from the specified VM to a location given the currently configured NSG rules.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters that define the IP flow to be verified.
@@ -1633,21 +1367,16 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<VerificationIpFlowResultInner>, VerificationIpFlowResultInner> beginVerifyIpFlowAsync(
         String resourceGroupName, String networkWatcherName, VerificationIpFlowParameters parameters) {
-        Mono<Response<Flux<ByteBuffer>>> mono =
-            verifyIpFlowWithResponseAsync(resourceGroupName, networkWatcherName, parameters);
-        return this
-            .client
-            .<VerificationIpFlowResultInner, VerificationIpFlowResultInner>getLroResult(
-                mono,
-                this.client.getHttpPipeline(),
-                VerificationIpFlowResultInner.class,
-                VerificationIpFlowResultInner.class,
-                this.client.getContext());
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = verifyIpFlowWithResponseAsync(resourceGroupName, networkWatcherName, parameters);
+        return this.client.<VerificationIpFlowResultInner, VerificationIpFlowResultInner>getLroResult(mono,
+            this.client.getHttpPipeline(), VerificationIpFlowResultInner.class, VerificationIpFlowResultInner.class,
+            this.client.getContext());
     }
 
     /**
      * Verify IP flow from the specified VM to a location given the currently configured NSG rules.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters that define the IP flow to be verified.
@@ -1661,21 +1390,16 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
     private PollerFlux<PollResult<VerificationIpFlowResultInner>, VerificationIpFlowResultInner> beginVerifyIpFlowAsync(
         String resourceGroupName, String networkWatcherName, VerificationIpFlowParameters parameters, Context context) {
         context = this.client.mergeContext(context);
-        Mono<Response<Flux<ByteBuffer>>> mono =
-            verifyIpFlowWithResponseAsync(resourceGroupName, networkWatcherName, parameters, context);
-        return this
-            .client
-            .<VerificationIpFlowResultInner, VerificationIpFlowResultInner>getLroResult(
-                mono,
-                this.client.getHttpPipeline(),
-                VerificationIpFlowResultInner.class,
-                VerificationIpFlowResultInner.class,
-                context);
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = verifyIpFlowWithResponseAsync(resourceGroupName, networkWatcherName, parameters, context);
+        return this.client.<VerificationIpFlowResultInner, VerificationIpFlowResultInner>getLroResult(mono,
+            this.client.getHttpPipeline(), VerificationIpFlowResultInner.class, VerificationIpFlowResultInner.class,
+            context);
     }
 
     /**
      * Verify IP flow from the specified VM to a location given the currently configured NSG rules.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters that define the IP flow to be verified.
@@ -1692,7 +1416,7 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
 
     /**
      * Verify IP flow from the specified VM to a location given the currently configured NSG rules.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters that define the IP flow to be verified.
@@ -1710,7 +1434,7 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
 
     /**
      * Verify IP flow from the specified VM to a location given the currently configured NSG rules.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters that define the IP flow to be verified.
@@ -1720,16 +1444,15 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return results of IP flow verification on the target resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<VerificationIpFlowResultInner> verifyIpFlowAsync(
-        String resourceGroupName, String networkWatcherName, VerificationIpFlowParameters parameters) {
-        return beginVerifyIpFlowAsync(resourceGroupName, networkWatcherName, parameters)
-            .last()
+    private Mono<VerificationIpFlowResultInner> verifyIpFlowAsync(String resourceGroupName, String networkWatcherName,
+        VerificationIpFlowParameters parameters) {
+        return beginVerifyIpFlowAsync(resourceGroupName, networkWatcherName, parameters).last()
             .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
      * Verify IP flow from the specified VM to a location given the currently configured NSG rules.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters that define the IP flow to be verified.
@@ -1740,16 +1463,15 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return results of IP flow verification on the target resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<VerificationIpFlowResultInner> verifyIpFlowAsync(
-        String resourceGroupName, String networkWatcherName, VerificationIpFlowParameters parameters, Context context) {
-        return beginVerifyIpFlowAsync(resourceGroupName, networkWatcherName, parameters, context)
-            .last()
+    private Mono<VerificationIpFlowResultInner> verifyIpFlowAsync(String resourceGroupName, String networkWatcherName,
+        VerificationIpFlowParameters parameters, Context context) {
+        return beginVerifyIpFlowAsync(resourceGroupName, networkWatcherName, parameters, context).last()
             .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
      * Verify IP flow from the specified VM to a location given the currently configured NSG rules.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters that define the IP flow to be verified.
@@ -1759,14 +1481,14 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return results of IP flow verification on the target resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public VerificationIpFlowResultInner verifyIpFlow(
-        String resourceGroupName, String networkWatcherName, VerificationIpFlowParameters parameters) {
+    public VerificationIpFlowResultInner verifyIpFlow(String resourceGroupName, String networkWatcherName,
+        VerificationIpFlowParameters parameters) {
         return verifyIpFlowAsync(resourceGroupName, networkWatcherName, parameters).block();
     }
 
     /**
      * Verify IP flow from the specified VM to a location given the currently configured NSG rules.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters that define the IP flow to be verified.
@@ -1777,14 +1499,14 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return results of IP flow verification on the target resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public VerificationIpFlowResultInner verifyIpFlow(
-        String resourceGroupName, String networkWatcherName, VerificationIpFlowParameters parameters, Context context) {
+    public VerificationIpFlowResultInner verifyIpFlow(String resourceGroupName, String networkWatcherName,
+        VerificationIpFlowParameters parameters, Context context) {
         return verifyIpFlowAsync(resourceGroupName, networkWatcherName, parameters, context).block();
     }
 
     /**
      * Gets the next hop from the specified VM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters that define the source and destination endpoint.
@@ -1794,13 +1516,11 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return the next hop from the specified VM along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> getNextHopWithResponseAsync(
-        String resourceGroupName, String networkWatcherName, NextHopParameters parameters) {
+    private Mono<Response<Flux<ByteBuffer>>> getNextHopWithResponseAsync(String resourceGroupName,
+        String networkWatcherName, NextHopParameters parameters) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -1811,37 +1531,25 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
                 .error(new IllegalArgumentException("Parameter networkWatcherName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (parameters == null) {
             return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-05-01";
+        final String apiVersion = "2023-06-01";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .getNextHop(
-                            this.client.getEndpoint(),
-                            resourceGroupName,
-                            networkWatcherName,
-                            apiVersion,
-                            this.client.getSubscriptionId(),
-                            parameters,
-                            accept,
-                            context))
+            .withContext(context -> service.getNextHop(this.client.getEndpoint(), resourceGroupName, networkWatcherName,
+                apiVersion, this.client.getSubscriptionId(), parameters, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Gets the next hop from the specified VM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters that define the source and destination endpoint.
@@ -1852,13 +1560,11 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return the next hop from the specified VM along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> getNextHopWithResponseAsync(
-        String resourceGroupName, String networkWatcherName, NextHopParameters parameters, Context context) {
+    private Mono<Response<Flux<ByteBuffer>>> getNextHopWithResponseAsync(String resourceGroupName,
+        String networkWatcherName, NextHopParameters parameters, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -1869,34 +1575,24 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
                 .error(new IllegalArgumentException("Parameter networkWatcherName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (parameters == null) {
             return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-05-01";
+        final String apiVersion = "2023-06-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .getNextHop(
-                this.client.getEndpoint(),
-                resourceGroupName,
-                networkWatcherName,
-                apiVersion,
-                this.client.getSubscriptionId(),
-                parameters,
-                accept,
-                context);
+        return service.getNextHop(this.client.getEndpoint(), resourceGroupName, networkWatcherName, apiVersion,
+            this.client.getSubscriptionId(), parameters, accept, context);
     }
 
     /**
      * Gets the next hop from the specified VM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters that define the source and destination endpoint.
@@ -1906,23 +1602,17 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return the {@link PollerFlux} for polling of the next hop from the specified VM.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    private PollerFlux<PollResult<NextHopResultInner>, NextHopResultInner> beginGetNextHopAsync(
-        String resourceGroupName, String networkWatcherName, NextHopParameters parameters) {
-        Mono<Response<Flux<ByteBuffer>>> mono =
-            getNextHopWithResponseAsync(resourceGroupName, networkWatcherName, parameters);
-        return this
-            .client
-            .<NextHopResultInner, NextHopResultInner>getLroResult(
-                mono,
-                this.client.getHttpPipeline(),
-                NextHopResultInner.class,
-                NextHopResultInner.class,
-                this.client.getContext());
+    private PollerFlux<PollResult<NextHopResultInner>, NextHopResultInner>
+        beginGetNextHopAsync(String resourceGroupName, String networkWatcherName, NextHopParameters parameters) {
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = getNextHopWithResponseAsync(resourceGroupName, networkWatcherName, parameters);
+        return this.client.<NextHopResultInner, NextHopResultInner>getLroResult(mono, this.client.getHttpPipeline(),
+            NextHopResultInner.class, NextHopResultInner.class, this.client.getContext());
     }
 
     /**
      * Gets the next hop from the specified VM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters that define the source and destination endpoint.
@@ -1936,17 +1626,15 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
     private PollerFlux<PollResult<NextHopResultInner>, NextHopResultInner> beginGetNextHopAsync(
         String resourceGroupName, String networkWatcherName, NextHopParameters parameters, Context context) {
         context = this.client.mergeContext(context);
-        Mono<Response<Flux<ByteBuffer>>> mono =
-            getNextHopWithResponseAsync(resourceGroupName, networkWatcherName, parameters, context);
-        return this
-            .client
-            .<NextHopResultInner, NextHopResultInner>getLroResult(
-                mono, this.client.getHttpPipeline(), NextHopResultInner.class, NextHopResultInner.class, context);
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = getNextHopWithResponseAsync(resourceGroupName, networkWatcherName, parameters, context);
+        return this.client.<NextHopResultInner, NextHopResultInner>getLroResult(mono, this.client.getHttpPipeline(),
+            NextHopResultInner.class, NextHopResultInner.class, context);
     }
 
     /**
      * Gets the next hop from the specified VM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters that define the source and destination endpoint.
@@ -1956,14 +1644,14 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return the {@link SyncPoller} for polling of the next hop from the specified VM.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<PollResult<NextHopResultInner>, NextHopResultInner> beginGetNextHop(
-        String resourceGroupName, String networkWatcherName, NextHopParameters parameters) {
+    public SyncPoller<PollResult<NextHopResultInner>, NextHopResultInner> beginGetNextHop(String resourceGroupName,
+        String networkWatcherName, NextHopParameters parameters) {
         return this.beginGetNextHopAsync(resourceGroupName, networkWatcherName, parameters).getSyncPoller();
     }
 
     /**
      * Gets the next hop from the specified VM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters that define the source and destination endpoint.
@@ -1974,14 +1662,14 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return the {@link SyncPoller} for polling of the next hop from the specified VM.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<PollResult<NextHopResultInner>, NextHopResultInner> beginGetNextHop(
-        String resourceGroupName, String networkWatcherName, NextHopParameters parameters, Context context) {
+    public SyncPoller<PollResult<NextHopResultInner>, NextHopResultInner> beginGetNextHop(String resourceGroupName,
+        String networkWatcherName, NextHopParameters parameters, Context context) {
         return this.beginGetNextHopAsync(resourceGroupName, networkWatcherName, parameters, context).getSyncPoller();
     }
 
     /**
      * Gets the next hop from the specified VM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters that define the source and destination endpoint.
@@ -1991,16 +1679,15 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return the next hop from the specified VM on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<NextHopResultInner> getNextHopAsync(
-        String resourceGroupName, String networkWatcherName, NextHopParameters parameters) {
-        return beginGetNextHopAsync(resourceGroupName, networkWatcherName, parameters)
-            .last()
+    private Mono<NextHopResultInner> getNextHopAsync(String resourceGroupName, String networkWatcherName,
+        NextHopParameters parameters) {
+        return beginGetNextHopAsync(resourceGroupName, networkWatcherName, parameters).last()
             .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
      * Gets the next hop from the specified VM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters that define the source and destination endpoint.
@@ -2011,16 +1698,15 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return the next hop from the specified VM on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<NextHopResultInner> getNextHopAsync(
-        String resourceGroupName, String networkWatcherName, NextHopParameters parameters, Context context) {
-        return beginGetNextHopAsync(resourceGroupName, networkWatcherName, parameters, context)
-            .last()
+    private Mono<NextHopResultInner> getNextHopAsync(String resourceGroupName, String networkWatcherName,
+        NextHopParameters parameters, Context context) {
+        return beginGetNextHopAsync(resourceGroupName, networkWatcherName, parameters, context).last()
             .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
      * Gets the next hop from the specified VM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters that define the source and destination endpoint.
@@ -2030,14 +1716,14 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return the next hop from the specified VM.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public NextHopResultInner getNextHop(
-        String resourceGroupName, String networkWatcherName, NextHopParameters parameters) {
+    public NextHopResultInner getNextHop(String resourceGroupName, String networkWatcherName,
+        NextHopParameters parameters) {
         return getNextHopAsync(resourceGroupName, networkWatcherName, parameters).block();
     }
 
     /**
      * Gets the next hop from the specified VM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters that define the source and destination endpoint.
@@ -2048,14 +1734,14 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return the next hop from the specified VM.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public NextHopResultInner getNextHop(
-        String resourceGroupName, String networkWatcherName, NextHopParameters parameters, Context context) {
+    public NextHopResultInner getNextHop(String resourceGroupName, String networkWatcherName,
+        NextHopParameters parameters, Context context) {
         return getNextHopAsync(resourceGroupName, networkWatcherName, parameters, context).block();
     }
 
     /**
      * Gets the configured and effective security group rules on the specified VM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters that define the VM to check security groups for.
@@ -2063,16 +1749,14 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the configured and effective security group rules on the specified VM along with {@link Response} on
-     *     successful completion of {@link Mono}.
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> getVMSecurityRulesWithResponseAsync(
-        String resourceGroupName, String networkWatcherName, SecurityGroupViewParameters parameters) {
+    private Mono<Response<Flux<ByteBuffer>>> getVMSecurityRulesWithResponseAsync(String resourceGroupName,
+        String networkWatcherName, SecurityGroupViewParameters parameters) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -2083,37 +1767,25 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
                 .error(new IllegalArgumentException("Parameter networkWatcherName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (parameters == null) {
             return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-05-01";
+        final String apiVersion = "2023-06-01";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .getVMSecurityRules(
-                            this.client.getEndpoint(),
-                            resourceGroupName,
-                            networkWatcherName,
-                            apiVersion,
-                            this.client.getSubscriptionId(),
-                            parameters,
-                            accept,
-                            context))
+            .withContext(context -> service.getVMSecurityRules(this.client.getEndpoint(), resourceGroupName,
+                networkWatcherName, apiVersion, this.client.getSubscriptionId(), parameters, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Gets the configured and effective security group rules on the specified VM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters that define the VM to check security groups for.
@@ -2122,16 +1794,14 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the configured and effective security group rules on the specified VM along with {@link Response} on
-     *     successful completion of {@link Mono}.
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> getVMSecurityRulesWithResponseAsync(
-        String resourceGroupName, String networkWatcherName, SecurityGroupViewParameters parameters, Context context) {
+    private Mono<Response<Flux<ByteBuffer>>> getVMSecurityRulesWithResponseAsync(String resourceGroupName,
+        String networkWatcherName, SecurityGroupViewParameters parameters, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -2142,34 +1812,24 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
                 .error(new IllegalArgumentException("Parameter networkWatcherName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (parameters == null) {
             return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-05-01";
+        final String apiVersion = "2023-06-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .getVMSecurityRules(
-                this.client.getEndpoint(),
-                resourceGroupName,
-                networkWatcherName,
-                apiVersion,
-                this.client.getSubscriptionId(),
-                parameters,
-                accept,
-                context);
+        return service.getVMSecurityRules(this.client.getEndpoint(), resourceGroupName, networkWatcherName, apiVersion,
+            this.client.getSubscriptionId(), parameters, accept, context);
     }
 
     /**
      * Gets the configured and effective security group rules on the specified VM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters that define the VM to check security groups for.
@@ -2177,27 +1837,22 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link PollerFlux} for polling of the configured and effective security group rules on the specified
-     *     VM.
+     * VM.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<SecurityGroupViewResultInner>, SecurityGroupViewResultInner>
-        beginGetVMSecurityRulesAsync(
-            String resourceGroupName, String networkWatcherName, SecurityGroupViewParameters parameters) {
-        Mono<Response<Flux<ByteBuffer>>> mono =
-            getVMSecurityRulesWithResponseAsync(resourceGroupName, networkWatcherName, parameters);
-        return this
-            .client
-            .<SecurityGroupViewResultInner, SecurityGroupViewResultInner>getLroResult(
-                mono,
-                this.client.getHttpPipeline(),
-                SecurityGroupViewResultInner.class,
-                SecurityGroupViewResultInner.class,
-                this.client.getContext());
+        beginGetVMSecurityRulesAsync(String resourceGroupName, String networkWatcherName,
+            SecurityGroupViewParameters parameters) {
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = getVMSecurityRulesWithResponseAsync(resourceGroupName, networkWatcherName, parameters);
+        return this.client.<SecurityGroupViewResultInner, SecurityGroupViewResultInner>getLroResult(mono,
+            this.client.getHttpPipeline(), SecurityGroupViewResultInner.class, SecurityGroupViewResultInner.class,
+            this.client.getContext());
     }
 
     /**
      * Gets the configured and effective security group rules on the specified VM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters that define the VM to check security groups for.
@@ -2206,31 +1861,23 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link PollerFlux} for polling of the configured and effective security group rules on the specified
-     *     VM.
+     * VM.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<SecurityGroupViewResultInner>, SecurityGroupViewResultInner>
-        beginGetVMSecurityRulesAsync(
-            String resourceGroupName,
-            String networkWatcherName,
-            SecurityGroupViewParameters parameters,
-            Context context) {
+        beginGetVMSecurityRulesAsync(String resourceGroupName, String networkWatcherName,
+            SecurityGroupViewParameters parameters, Context context) {
         context = this.client.mergeContext(context);
-        Mono<Response<Flux<ByteBuffer>>> mono =
-            getVMSecurityRulesWithResponseAsync(resourceGroupName, networkWatcherName, parameters, context);
-        return this
-            .client
-            .<SecurityGroupViewResultInner, SecurityGroupViewResultInner>getLroResult(
-                mono,
-                this.client.getHttpPipeline(),
-                SecurityGroupViewResultInner.class,
-                SecurityGroupViewResultInner.class,
-                context);
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = getVMSecurityRulesWithResponseAsync(resourceGroupName, networkWatcherName, parameters, context);
+        return this.client.<SecurityGroupViewResultInner, SecurityGroupViewResultInner>getLroResult(mono,
+            this.client.getHttpPipeline(), SecurityGroupViewResultInner.class, SecurityGroupViewResultInner.class,
+            context);
     }
 
     /**
      * Gets the configured and effective security group rules on the specified VM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters that define the VM to check security groups for.
@@ -2238,7 +1885,7 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of the configured and effective security group rules on the specified
-     *     VM.
+     * VM.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<SecurityGroupViewResultInner>, SecurityGroupViewResultInner> beginGetVMSecurityRules(
@@ -2248,7 +1895,7 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
 
     /**
      * Gets the configured and effective security group rules on the specified VM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters that define the VM to check security groups for.
@@ -2257,39 +1904,37 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of the configured and effective security group rules on the specified
-     *     VM.
+     * VM.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<SecurityGroupViewResultInner>, SecurityGroupViewResultInner> beginGetVMSecurityRules(
         String resourceGroupName, String networkWatcherName, SecurityGroupViewParameters parameters, Context context) {
-        return this
-            .beginGetVMSecurityRulesAsync(resourceGroupName, networkWatcherName, parameters, context)
+        return this.beginGetVMSecurityRulesAsync(resourceGroupName, networkWatcherName, parameters, context)
             .getSyncPoller();
     }
 
     /**
      * Gets the configured and effective security group rules on the specified VM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters that define the VM to check security groups for.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the configured and effective security group rules on the specified VM on successful completion of {@link
-     *     Mono}.
+     * @return the configured and effective security group rules on the specified VM on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<SecurityGroupViewResultInner> getVMSecurityRulesAsync(
-        String resourceGroupName, String networkWatcherName, SecurityGroupViewParameters parameters) {
-        return beginGetVMSecurityRulesAsync(resourceGroupName, networkWatcherName, parameters)
-            .last()
+    private Mono<SecurityGroupViewResultInner> getVMSecurityRulesAsync(String resourceGroupName,
+        String networkWatcherName, SecurityGroupViewParameters parameters) {
+        return beginGetVMSecurityRulesAsync(resourceGroupName, networkWatcherName, parameters).last()
             .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
      * Gets the configured and effective security group rules on the specified VM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters that define the VM to check security groups for.
@@ -2297,20 +1942,19 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the configured and effective security group rules on the specified VM on successful completion of {@link
-     *     Mono}.
+     * @return the configured and effective security group rules on the specified VM on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<SecurityGroupViewResultInner> getVMSecurityRulesAsync(
-        String resourceGroupName, String networkWatcherName, SecurityGroupViewParameters parameters, Context context) {
-        return beginGetVMSecurityRulesAsync(resourceGroupName, networkWatcherName, parameters, context)
-            .last()
+    private Mono<SecurityGroupViewResultInner> getVMSecurityRulesAsync(String resourceGroupName,
+        String networkWatcherName, SecurityGroupViewParameters parameters, Context context) {
+        return beginGetVMSecurityRulesAsync(resourceGroupName, networkWatcherName, parameters, context).last()
             .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
      * Gets the configured and effective security group rules on the specified VM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters that define the VM to check security groups for.
@@ -2320,14 +1964,14 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return the configured and effective security group rules on the specified VM.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public SecurityGroupViewResultInner getVMSecurityRules(
-        String resourceGroupName, String networkWatcherName, SecurityGroupViewParameters parameters) {
+    public SecurityGroupViewResultInner getVMSecurityRules(String resourceGroupName, String networkWatcherName,
+        SecurityGroupViewParameters parameters) {
         return getVMSecurityRulesAsync(resourceGroupName, networkWatcherName, parameters).block();
     }
 
     /**
      * Gets the configured and effective security group rules on the specified VM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters that define the VM to check security groups for.
@@ -2338,14 +1982,14 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return the configured and effective security group rules on the specified VM.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public SecurityGroupViewResultInner getVMSecurityRules(
-        String resourceGroupName, String networkWatcherName, SecurityGroupViewParameters parameters, Context context) {
+    public SecurityGroupViewResultInner getVMSecurityRules(String resourceGroupName, String networkWatcherName,
+        SecurityGroupViewParameters parameters, Context context) {
         return getVMSecurityRulesAsync(resourceGroupName, networkWatcherName, parameters, context).block();
     }
 
     /**
      * Initiate troubleshooting on a specified resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that define the resource to troubleshoot.
@@ -2353,16 +1997,14 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return troubleshooting information gained from specified resource along with {@link Response} on successful
-     *     completion of {@link Mono}.
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> getTroubleshootingWithResponseAsync(
-        String resourceGroupName, String networkWatcherName, TroubleshootingParameters parameters) {
+    private Mono<Response<Flux<ByteBuffer>>> getTroubleshootingWithResponseAsync(String resourceGroupName,
+        String networkWatcherName, TroubleshootingParameters parameters) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -2373,37 +2015,25 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
                 .error(new IllegalArgumentException("Parameter networkWatcherName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (parameters == null) {
             return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-05-01";
+        final String apiVersion = "2023-06-01";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .getTroubleshooting(
-                            this.client.getEndpoint(),
-                            resourceGroupName,
-                            networkWatcherName,
-                            apiVersion,
-                            this.client.getSubscriptionId(),
-                            parameters,
-                            accept,
-                            context))
+            .withContext(context -> service.getTroubleshooting(this.client.getEndpoint(), resourceGroupName,
+                networkWatcherName, apiVersion, this.client.getSubscriptionId(), parameters, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Initiate troubleshooting on a specified resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that define the resource to troubleshoot.
@@ -2412,16 +2042,14 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return troubleshooting information gained from specified resource along with {@link Response} on successful
-     *     completion of {@link Mono}.
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> getTroubleshootingWithResponseAsync(
-        String resourceGroupName, String networkWatcherName, TroubleshootingParameters parameters, Context context) {
+    private Mono<Response<Flux<ByteBuffer>>> getTroubleshootingWithResponseAsync(String resourceGroupName,
+        String networkWatcherName, TroubleshootingParameters parameters, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -2432,34 +2060,24 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
                 .error(new IllegalArgumentException("Parameter networkWatcherName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (parameters == null) {
             return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-05-01";
+        final String apiVersion = "2023-06-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .getTroubleshooting(
-                this.client.getEndpoint(),
-                resourceGroupName,
-                networkWatcherName,
-                apiVersion,
-                this.client.getSubscriptionId(),
-                parameters,
-                accept,
-                context);
+        return service.getTroubleshooting(this.client.getEndpoint(), resourceGroupName, networkWatcherName, apiVersion,
+            this.client.getSubscriptionId(), parameters, accept, context);
     }
 
     /**
      * Initiate troubleshooting on a specified resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that define the resource to troubleshoot.
@@ -2471,21 +2089,16 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<TroubleshootingResultInner>, TroubleshootingResultInner> beginGetTroubleshootingAsync(
         String resourceGroupName, String networkWatcherName, TroubleshootingParameters parameters) {
-        Mono<Response<Flux<ByteBuffer>>> mono =
-            getTroubleshootingWithResponseAsync(resourceGroupName, networkWatcherName, parameters);
-        return this
-            .client
-            .<TroubleshootingResultInner, TroubleshootingResultInner>getLroResult(
-                mono,
-                this.client.getHttpPipeline(),
-                TroubleshootingResultInner.class,
-                TroubleshootingResultInner.class,
-                this.client.getContext());
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = getTroubleshootingWithResponseAsync(resourceGroupName, networkWatcherName, parameters);
+        return this.client.<TroubleshootingResultInner, TroubleshootingResultInner>getLroResult(mono,
+            this.client.getHttpPipeline(), TroubleshootingResultInner.class, TroubleshootingResultInner.class,
+            this.client.getContext());
     }
 
     /**
      * Initiate troubleshooting on a specified resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that define the resource to troubleshoot.
@@ -2499,21 +2112,15 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
     private PollerFlux<PollResult<TroubleshootingResultInner>, TroubleshootingResultInner> beginGetTroubleshootingAsync(
         String resourceGroupName, String networkWatcherName, TroubleshootingParameters parameters, Context context) {
         context = this.client.mergeContext(context);
-        Mono<Response<Flux<ByteBuffer>>> mono =
-            getTroubleshootingWithResponseAsync(resourceGroupName, networkWatcherName, parameters, context);
-        return this
-            .client
-            .<TroubleshootingResultInner, TroubleshootingResultInner>getLroResult(
-                mono,
-                this.client.getHttpPipeline(),
-                TroubleshootingResultInner.class,
-                TroubleshootingResultInner.class,
-                context);
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = getTroubleshootingWithResponseAsync(resourceGroupName, networkWatcherName, parameters, context);
+        return this.client.<TroubleshootingResultInner, TroubleshootingResultInner>getLroResult(mono,
+            this.client.getHttpPipeline(), TroubleshootingResultInner.class, TroubleshootingResultInner.class, context);
     }
 
     /**
      * Initiate troubleshooting on a specified resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that define the resource to troubleshoot.
@@ -2530,7 +2137,7 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
 
     /**
      * Initiate troubleshooting on a specified resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that define the resource to troubleshoot.
@@ -2543,14 +2150,13 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<TroubleshootingResultInner>, TroubleshootingResultInner> beginGetTroubleshooting(
         String resourceGroupName, String networkWatcherName, TroubleshootingParameters parameters, Context context) {
-        return this
-            .beginGetTroubleshootingAsync(resourceGroupName, networkWatcherName, parameters, context)
+        return this.beginGetTroubleshootingAsync(resourceGroupName, networkWatcherName, parameters, context)
             .getSyncPoller();
     }
 
     /**
      * Initiate troubleshooting on a specified resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that define the resource to troubleshoot.
@@ -2560,16 +2166,15 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return troubleshooting information gained from specified resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<TroubleshootingResultInner> getTroubleshootingAsync(
-        String resourceGroupName, String networkWatcherName, TroubleshootingParameters parameters) {
-        return beginGetTroubleshootingAsync(resourceGroupName, networkWatcherName, parameters)
-            .last()
+    private Mono<TroubleshootingResultInner> getTroubleshootingAsync(String resourceGroupName,
+        String networkWatcherName, TroubleshootingParameters parameters) {
+        return beginGetTroubleshootingAsync(resourceGroupName, networkWatcherName, parameters).last()
             .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
      * Initiate troubleshooting on a specified resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that define the resource to troubleshoot.
@@ -2580,16 +2185,15 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return troubleshooting information gained from specified resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<TroubleshootingResultInner> getTroubleshootingAsync(
-        String resourceGroupName, String networkWatcherName, TroubleshootingParameters parameters, Context context) {
-        return beginGetTroubleshootingAsync(resourceGroupName, networkWatcherName, parameters, context)
-            .last()
+    private Mono<TroubleshootingResultInner> getTroubleshootingAsync(String resourceGroupName,
+        String networkWatcherName, TroubleshootingParameters parameters, Context context) {
+        return beginGetTroubleshootingAsync(resourceGroupName, networkWatcherName, parameters, context).last()
             .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
      * Initiate troubleshooting on a specified resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that define the resource to troubleshoot.
@@ -2599,14 +2203,14 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return troubleshooting information gained from specified resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public TroubleshootingResultInner getTroubleshooting(
-        String resourceGroupName, String networkWatcherName, TroubleshootingParameters parameters) {
+    public TroubleshootingResultInner getTroubleshooting(String resourceGroupName, String networkWatcherName,
+        TroubleshootingParameters parameters) {
         return getTroubleshootingAsync(resourceGroupName, networkWatcherName, parameters).block();
     }
 
     /**
      * Initiate troubleshooting on a specified resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that define the resource to troubleshoot.
@@ -2617,14 +2221,14 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return troubleshooting information gained from specified resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public TroubleshootingResultInner getTroubleshooting(
-        String resourceGroupName, String networkWatcherName, TroubleshootingParameters parameters, Context context) {
+    public TroubleshootingResultInner getTroubleshooting(String resourceGroupName, String networkWatcherName,
+        TroubleshootingParameters parameters, Context context) {
         return getTroubleshootingAsync(resourceGroupName, networkWatcherName, parameters, context).block();
     }
 
     /**
      * Get the last completed troubleshooting result on a specified resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that define the resource to query the troubleshooting result.
@@ -2632,16 +2236,14 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the last completed troubleshooting result on a specified resource along with {@link Response} on
-     *     successful completion of {@link Mono}.
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> getTroubleshootingResultWithResponseAsync(
-        String resourceGroupName, String networkWatcherName, QueryTroubleshootingParameters parameters) {
+    private Mono<Response<Flux<ByteBuffer>>> getTroubleshootingResultWithResponseAsync(String resourceGroupName,
+        String networkWatcherName, QueryTroubleshootingParameters parameters) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -2652,37 +2254,25 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
                 .error(new IllegalArgumentException("Parameter networkWatcherName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (parameters == null) {
             return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-05-01";
+        final String apiVersion = "2023-06-01";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .getTroubleshootingResult(
-                            this.client.getEndpoint(),
-                            resourceGroupName,
-                            networkWatcherName,
-                            apiVersion,
-                            this.client.getSubscriptionId(),
-                            parameters,
-                            accept,
-                            context))
+            .withContext(context -> service.getTroubleshootingResult(this.client.getEndpoint(), resourceGroupName,
+                networkWatcherName, apiVersion, this.client.getSubscriptionId(), parameters, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Get the last completed troubleshooting result on a specified resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that define the resource to query the troubleshooting result.
@@ -2691,19 +2281,14 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the last completed troubleshooting result on a specified resource along with {@link Response} on
-     *     successful completion of {@link Mono}.
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> getTroubleshootingResultWithResponseAsync(
-        String resourceGroupName,
-        String networkWatcherName,
-        QueryTroubleshootingParameters parameters,
-        Context context) {
+    private Mono<Response<Flux<ByteBuffer>>> getTroubleshootingResultWithResponseAsync(String resourceGroupName,
+        String networkWatcherName, QueryTroubleshootingParameters parameters, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -2714,34 +2299,24 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
                 .error(new IllegalArgumentException("Parameter networkWatcherName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (parameters == null) {
             return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-05-01";
+        final String apiVersion = "2023-06-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .getTroubleshootingResult(
-                this.client.getEndpoint(),
-                resourceGroupName,
-                networkWatcherName,
-                apiVersion,
-                this.client.getSubscriptionId(),
-                parameters,
-                accept,
-                context);
+        return service.getTroubleshootingResult(this.client.getEndpoint(), resourceGroupName, networkWatcherName,
+            apiVersion, this.client.getSubscriptionId(), parameters, accept, context);
     }
 
     /**
      * Get the last completed troubleshooting result on a specified resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that define the resource to query the troubleshooting result.
@@ -2752,23 +2327,18 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<TroubleshootingResultInner>, TroubleshootingResultInner>
-        beginGetTroubleshootingResultAsync(
-            String resourceGroupName, String networkWatcherName, QueryTroubleshootingParameters parameters) {
-        Mono<Response<Flux<ByteBuffer>>> mono =
-            getTroubleshootingResultWithResponseAsync(resourceGroupName, networkWatcherName, parameters);
-        return this
-            .client
-            .<TroubleshootingResultInner, TroubleshootingResultInner>getLroResult(
-                mono,
-                this.client.getHttpPipeline(),
-                TroubleshootingResultInner.class,
-                TroubleshootingResultInner.class,
-                this.client.getContext());
+        beginGetTroubleshootingResultAsync(String resourceGroupName, String networkWatcherName,
+            QueryTroubleshootingParameters parameters) {
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = getTroubleshootingResultWithResponseAsync(resourceGroupName, networkWatcherName, parameters);
+        return this.client.<TroubleshootingResultInner, TroubleshootingResultInner>getLroResult(mono,
+            this.client.getHttpPipeline(), TroubleshootingResultInner.class, TroubleshootingResultInner.class,
+            this.client.getContext());
     }
 
     /**
      * Get the last completed troubleshooting result on a specified resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that define the resource to query the troubleshooting result.
@@ -2780,27 +2350,18 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<TroubleshootingResultInner>, TroubleshootingResultInner>
-        beginGetTroubleshootingResultAsync(
-            String resourceGroupName,
-            String networkWatcherName,
-            QueryTroubleshootingParameters parameters,
-            Context context) {
+        beginGetTroubleshootingResultAsync(String resourceGroupName, String networkWatcherName,
+            QueryTroubleshootingParameters parameters, Context context) {
         context = this.client.mergeContext(context);
-        Mono<Response<Flux<ByteBuffer>>> mono =
-            getTroubleshootingResultWithResponseAsync(resourceGroupName, networkWatcherName, parameters, context);
-        return this
-            .client
-            .<TroubleshootingResultInner, TroubleshootingResultInner>getLroResult(
-                mono,
-                this.client.getHttpPipeline(),
-                TroubleshootingResultInner.class,
-                TroubleshootingResultInner.class,
-                context);
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = getTroubleshootingResultWithResponseAsync(resourceGroupName, networkWatcherName, parameters, context);
+        return this.client.<TroubleshootingResultInner, TroubleshootingResultInner>getLroResult(mono,
+            this.client.getHttpPipeline(), TroubleshootingResultInner.class, TroubleshootingResultInner.class, context);
     }
 
     /**
      * Get the last completed troubleshooting result on a specified resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that define the resource to query the troubleshooting result.
@@ -2812,14 +2373,13 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<TroubleshootingResultInner>, TroubleshootingResultInner> beginGetTroubleshootingResult(
         String resourceGroupName, String networkWatcherName, QueryTroubleshootingParameters parameters) {
-        return this
-            .beginGetTroubleshootingResultAsync(resourceGroupName, networkWatcherName, parameters)
+        return this.beginGetTroubleshootingResultAsync(resourceGroupName, networkWatcherName, parameters)
             .getSyncPoller();
     }
 
     /**
      * Get the last completed troubleshooting result on a specified resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that define the resource to query the troubleshooting result.
@@ -2831,38 +2391,34 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<TroubleshootingResultInner>, TroubleshootingResultInner> beginGetTroubleshootingResult(
-        String resourceGroupName,
-        String networkWatcherName,
-        QueryTroubleshootingParameters parameters,
+        String resourceGroupName, String networkWatcherName, QueryTroubleshootingParameters parameters,
         Context context) {
-        return this
-            .beginGetTroubleshootingResultAsync(resourceGroupName, networkWatcherName, parameters, context)
+        return this.beginGetTroubleshootingResultAsync(resourceGroupName, networkWatcherName, parameters, context)
             .getSyncPoller();
     }
 
     /**
      * Get the last completed troubleshooting result on a specified resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that define the resource to query the troubleshooting result.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the last completed troubleshooting result on a specified resource on successful completion of {@link
-     *     Mono}.
+     * @return the last completed troubleshooting result on a specified resource on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<TroubleshootingResultInner> getTroubleshootingResultAsync(
-        String resourceGroupName, String networkWatcherName, QueryTroubleshootingParameters parameters) {
-        return beginGetTroubleshootingResultAsync(resourceGroupName, networkWatcherName, parameters)
-            .last()
+    private Mono<TroubleshootingResultInner> getTroubleshootingResultAsync(String resourceGroupName,
+        String networkWatcherName, QueryTroubleshootingParameters parameters) {
+        return beginGetTroubleshootingResultAsync(resourceGroupName, networkWatcherName, parameters).last()
             .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
      * Get the last completed troubleshooting result on a specified resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that define the resource to query the troubleshooting result.
@@ -2870,23 +2426,19 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the last completed troubleshooting result on a specified resource on successful completion of {@link
-     *     Mono}.
+     * @return the last completed troubleshooting result on a specified resource on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<TroubleshootingResultInner> getTroubleshootingResultAsync(
-        String resourceGroupName,
-        String networkWatcherName,
-        QueryTroubleshootingParameters parameters,
-        Context context) {
-        return beginGetTroubleshootingResultAsync(resourceGroupName, networkWatcherName, parameters, context)
-            .last()
+    private Mono<TroubleshootingResultInner> getTroubleshootingResultAsync(String resourceGroupName,
+        String networkWatcherName, QueryTroubleshootingParameters parameters, Context context) {
+        return beginGetTroubleshootingResultAsync(resourceGroupName, networkWatcherName, parameters, context).last()
             .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
      * Get the last completed troubleshooting result on a specified resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that define the resource to query the troubleshooting result.
@@ -2896,14 +2448,14 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return the last completed troubleshooting result on a specified resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public TroubleshootingResultInner getTroubleshootingResult(
-        String resourceGroupName, String networkWatcherName, QueryTroubleshootingParameters parameters) {
+    public TroubleshootingResultInner getTroubleshootingResult(String resourceGroupName, String networkWatcherName,
+        QueryTroubleshootingParameters parameters) {
         return getTroubleshootingResultAsync(resourceGroupName, networkWatcherName, parameters).block();
     }
 
     /**
      * Get the last completed troubleshooting result on a specified resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that define the resource to query the troubleshooting result.
@@ -2914,17 +2466,14 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return the last completed troubleshooting result on a specified resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public TroubleshootingResultInner getTroubleshootingResult(
-        String resourceGroupName,
-        String networkWatcherName,
-        QueryTroubleshootingParameters parameters,
-        Context context) {
+    public TroubleshootingResultInner getTroubleshootingResult(String resourceGroupName, String networkWatcherName,
+        QueryTroubleshootingParameters parameters, Context context) {
         return getTroubleshootingResultAsync(resourceGroupName, networkWatcherName, parameters, context).block();
     }
 
     /**
      * Configures flow log and traffic analytics (optional) on a specified resource.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that define the configuration of flow log.
@@ -2932,16 +2481,14 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return information on the configuration of flow log and traffic analytics (optional) along with {@link Response}
-     *     on successful completion of {@link Mono}.
+     * on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> setFlowLogConfigurationWithResponseAsync(
-        String resourceGroupName, String networkWatcherName, FlowLogInformationInner parameters) {
+    private Mono<Response<Flux<ByteBuffer>>> setFlowLogConfigurationWithResponseAsync(String resourceGroupName,
+        String networkWatcherName, FlowLogInformationInner parameters) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -2952,37 +2499,25 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
                 .error(new IllegalArgumentException("Parameter networkWatcherName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (parameters == null) {
             return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-05-01";
+        final String apiVersion = "2023-06-01";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .setFlowLogConfiguration(
-                            this.client.getEndpoint(),
-                            resourceGroupName,
-                            networkWatcherName,
-                            apiVersion,
-                            this.client.getSubscriptionId(),
-                            parameters,
-                            accept,
-                            context))
+            .withContext(context -> service.setFlowLogConfiguration(this.client.getEndpoint(), resourceGroupName,
+                networkWatcherName, apiVersion, this.client.getSubscriptionId(), parameters, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Configures flow log and traffic analytics (optional) on a specified resource.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that define the configuration of flow log.
@@ -2991,16 +2526,14 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return information on the configuration of flow log and traffic analytics (optional) along with {@link Response}
-     *     on successful completion of {@link Mono}.
+     * on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> setFlowLogConfigurationWithResponseAsync(
-        String resourceGroupName, String networkWatcherName, FlowLogInformationInner parameters, Context context) {
+    private Mono<Response<Flux<ByteBuffer>>> setFlowLogConfigurationWithResponseAsync(String resourceGroupName,
+        String networkWatcherName, FlowLogInformationInner parameters, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -3011,34 +2544,24 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
                 .error(new IllegalArgumentException("Parameter networkWatcherName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (parameters == null) {
             return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-05-01";
+        final String apiVersion = "2023-06-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .setFlowLogConfiguration(
-                this.client.getEndpoint(),
-                resourceGroupName,
-                networkWatcherName,
-                apiVersion,
-                this.client.getSubscriptionId(),
-                parameters,
-                accept,
-                context);
+        return service.setFlowLogConfiguration(this.client.getEndpoint(), resourceGroupName, networkWatcherName,
+            apiVersion, this.client.getSubscriptionId(), parameters, accept, context);
     }
 
     /**
      * Configures flow log and traffic analytics (optional) on a specified resource.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that define the configuration of flow log.
@@ -3046,26 +2569,21 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link PollerFlux} for polling of information on the configuration of flow log and traffic analytics
-     *     (optional).
+     * (optional).
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<FlowLogInformationInner>, FlowLogInformationInner> beginSetFlowLogConfigurationAsync(
         String resourceGroupName, String networkWatcherName, FlowLogInformationInner parameters) {
-        Mono<Response<Flux<ByteBuffer>>> mono =
-            setFlowLogConfigurationWithResponseAsync(resourceGroupName, networkWatcherName, parameters);
-        return this
-            .client
-            .<FlowLogInformationInner, FlowLogInformationInner>getLroResult(
-                mono,
-                this.client.getHttpPipeline(),
-                FlowLogInformationInner.class,
-                FlowLogInformationInner.class,
-                this.client.getContext());
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = setFlowLogConfigurationWithResponseAsync(resourceGroupName, networkWatcherName, parameters);
+        return this.client.<FlowLogInformationInner, FlowLogInformationInner>getLroResult(mono,
+            this.client.getHttpPipeline(), FlowLogInformationInner.class, FlowLogInformationInner.class,
+            this.client.getContext());
     }
 
     /**
      * Configures flow log and traffic analytics (optional) on a specified resource.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that define the configuration of flow log.
@@ -3074,27 +2592,21 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link PollerFlux} for polling of information on the configuration of flow log and traffic analytics
-     *     (optional).
+     * (optional).
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<FlowLogInformationInner>, FlowLogInformationInner> beginSetFlowLogConfigurationAsync(
         String resourceGroupName, String networkWatcherName, FlowLogInformationInner parameters, Context context) {
         context = this.client.mergeContext(context);
-        Mono<Response<Flux<ByteBuffer>>> mono =
-            setFlowLogConfigurationWithResponseAsync(resourceGroupName, networkWatcherName, parameters, context);
-        return this
-            .client
-            .<FlowLogInformationInner, FlowLogInformationInner>getLroResult(
-                mono,
-                this.client.getHttpPipeline(),
-                FlowLogInformationInner.class,
-                FlowLogInformationInner.class,
-                context);
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = setFlowLogConfigurationWithResponseAsync(resourceGroupName, networkWatcherName, parameters, context);
+        return this.client.<FlowLogInformationInner, FlowLogInformationInner>getLroResult(mono,
+            this.client.getHttpPipeline(), FlowLogInformationInner.class, FlowLogInformationInner.class, context);
     }
 
     /**
      * Configures flow log and traffic analytics (optional) on a specified resource.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that define the configuration of flow log.
@@ -3102,19 +2614,18 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of information on the configuration of flow log and traffic analytics
-     *     (optional).
+     * (optional).
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<FlowLogInformationInner>, FlowLogInformationInner> beginSetFlowLogConfiguration(
         String resourceGroupName, String networkWatcherName, FlowLogInformationInner parameters) {
-        return this
-            .beginSetFlowLogConfigurationAsync(resourceGroupName, networkWatcherName, parameters)
+        return this.beginSetFlowLogConfigurationAsync(resourceGroupName, networkWatcherName, parameters)
             .getSyncPoller();
     }
 
     /**
      * Configures flow log and traffic analytics (optional) on a specified resource.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that define the configuration of flow log.
@@ -3123,19 +2634,18 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of information on the configuration of flow log and traffic analytics
-     *     (optional).
+     * (optional).
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<FlowLogInformationInner>, FlowLogInformationInner> beginSetFlowLogConfiguration(
         String resourceGroupName, String networkWatcherName, FlowLogInformationInner parameters, Context context) {
-        return this
-            .beginSetFlowLogConfigurationAsync(resourceGroupName, networkWatcherName, parameters, context)
+        return this.beginSetFlowLogConfigurationAsync(resourceGroupName, networkWatcherName, parameters, context)
             .getSyncPoller();
     }
 
     /**
      * Configures flow log and traffic analytics (optional) on a specified resource.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that define the configuration of flow log.
@@ -3143,19 +2653,18 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return information on the configuration of flow log and traffic analytics (optional) on successful completion of
-     *     {@link Mono}.
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<FlowLogInformationInner> setFlowLogConfigurationAsync(
-        String resourceGroupName, String networkWatcherName, FlowLogInformationInner parameters) {
-        return beginSetFlowLogConfigurationAsync(resourceGroupName, networkWatcherName, parameters)
-            .last()
+    private Mono<FlowLogInformationInner> setFlowLogConfigurationAsync(String resourceGroupName,
+        String networkWatcherName, FlowLogInformationInner parameters) {
+        return beginSetFlowLogConfigurationAsync(resourceGroupName, networkWatcherName, parameters).last()
             .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
      * Configures flow log and traffic analytics (optional) on a specified resource.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that define the configuration of flow log.
@@ -3164,19 +2673,18 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return information on the configuration of flow log and traffic analytics (optional) on successful completion of
-     *     {@link Mono}.
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<FlowLogInformationInner> setFlowLogConfigurationAsync(
-        String resourceGroupName, String networkWatcherName, FlowLogInformationInner parameters, Context context) {
-        return beginSetFlowLogConfigurationAsync(resourceGroupName, networkWatcherName, parameters, context)
-            .last()
+    private Mono<FlowLogInformationInner> setFlowLogConfigurationAsync(String resourceGroupName,
+        String networkWatcherName, FlowLogInformationInner parameters, Context context) {
+        return beginSetFlowLogConfigurationAsync(resourceGroupName, networkWatcherName, parameters, context).last()
             .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
      * Configures flow log and traffic analytics (optional) on a specified resource.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that define the configuration of flow log.
@@ -3186,14 +2694,14 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return information on the configuration of flow log and traffic analytics (optional).
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public FlowLogInformationInner setFlowLogConfiguration(
-        String resourceGroupName, String networkWatcherName, FlowLogInformationInner parameters) {
+    public FlowLogInformationInner setFlowLogConfiguration(String resourceGroupName, String networkWatcherName,
+        FlowLogInformationInner parameters) {
         return setFlowLogConfigurationAsync(resourceGroupName, networkWatcherName, parameters).block();
     }
 
     /**
      * Configures flow log and traffic analytics (optional) on a specified resource.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that define the configuration of flow log.
@@ -3204,14 +2712,14 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return information on the configuration of flow log and traffic analytics (optional).
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public FlowLogInformationInner setFlowLogConfiguration(
-        String resourceGroupName, String networkWatcherName, FlowLogInformationInner parameters, Context context) {
+    public FlowLogInformationInner setFlowLogConfiguration(String resourceGroupName, String networkWatcherName,
+        FlowLogInformationInner parameters, Context context) {
         return setFlowLogConfigurationAsync(resourceGroupName, networkWatcherName, parameters, context).block();
     }
 
     /**
      * Queries status of flow log and traffic analytics (optional) on a specified resource.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that define a resource to query flow log and traffic analytics (optional) status.
@@ -3219,16 +2727,14 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return information on the configuration of flow log and traffic analytics (optional) along with {@link Response}
-     *     on successful completion of {@link Mono}.
+     * on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> getFlowLogStatusWithResponseAsync(
-        String resourceGroupName, String networkWatcherName, FlowLogStatusParameters parameters) {
+    private Mono<Response<Flux<ByteBuffer>>> getFlowLogStatusWithResponseAsync(String resourceGroupName,
+        String networkWatcherName, FlowLogStatusParameters parameters) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -3239,37 +2745,25 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
                 .error(new IllegalArgumentException("Parameter networkWatcherName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (parameters == null) {
             return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-05-01";
+        final String apiVersion = "2023-06-01";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .getFlowLogStatus(
-                            this.client.getEndpoint(),
-                            resourceGroupName,
-                            networkWatcherName,
-                            apiVersion,
-                            this.client.getSubscriptionId(),
-                            parameters,
-                            accept,
-                            context))
+            .withContext(context -> service.getFlowLogStatus(this.client.getEndpoint(), resourceGroupName,
+                networkWatcherName, apiVersion, this.client.getSubscriptionId(), parameters, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Queries status of flow log and traffic analytics (optional) on a specified resource.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that define a resource to query flow log and traffic analytics (optional) status.
@@ -3278,16 +2772,14 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return information on the configuration of flow log and traffic analytics (optional) along with {@link Response}
-     *     on successful completion of {@link Mono}.
+     * on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> getFlowLogStatusWithResponseAsync(
-        String resourceGroupName, String networkWatcherName, FlowLogStatusParameters parameters, Context context) {
+    private Mono<Response<Flux<ByteBuffer>>> getFlowLogStatusWithResponseAsync(String resourceGroupName,
+        String networkWatcherName, FlowLogStatusParameters parameters, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -3298,34 +2790,24 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
                 .error(new IllegalArgumentException("Parameter networkWatcherName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (parameters == null) {
             return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-05-01";
+        final String apiVersion = "2023-06-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .getFlowLogStatus(
-                this.client.getEndpoint(),
-                resourceGroupName,
-                networkWatcherName,
-                apiVersion,
-                this.client.getSubscriptionId(),
-                parameters,
-                accept,
-                context);
+        return service.getFlowLogStatus(this.client.getEndpoint(), resourceGroupName, networkWatcherName, apiVersion,
+            this.client.getSubscriptionId(), parameters, accept, context);
     }
 
     /**
      * Queries status of flow log and traffic analytics (optional) on a specified resource.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that define a resource to query flow log and traffic analytics (optional) status.
@@ -3333,26 +2815,21 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link PollerFlux} for polling of information on the configuration of flow log and traffic analytics
-     *     (optional).
+     * (optional).
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<FlowLogInformationInner>, FlowLogInformationInner> beginGetFlowLogStatusAsync(
         String resourceGroupName, String networkWatcherName, FlowLogStatusParameters parameters) {
-        Mono<Response<Flux<ByteBuffer>>> mono =
-            getFlowLogStatusWithResponseAsync(resourceGroupName, networkWatcherName, parameters);
-        return this
-            .client
-            .<FlowLogInformationInner, FlowLogInformationInner>getLroResult(
-                mono,
-                this.client.getHttpPipeline(),
-                FlowLogInformationInner.class,
-                FlowLogInformationInner.class,
-                this.client.getContext());
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = getFlowLogStatusWithResponseAsync(resourceGroupName, networkWatcherName, parameters);
+        return this.client.<FlowLogInformationInner, FlowLogInformationInner>getLroResult(mono,
+            this.client.getHttpPipeline(), FlowLogInformationInner.class, FlowLogInformationInner.class,
+            this.client.getContext());
     }
 
     /**
      * Queries status of flow log and traffic analytics (optional) on a specified resource.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that define a resource to query flow log and traffic analytics (optional) status.
@@ -3361,27 +2838,21 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link PollerFlux} for polling of information on the configuration of flow log and traffic analytics
-     *     (optional).
+     * (optional).
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<FlowLogInformationInner>, FlowLogInformationInner> beginGetFlowLogStatusAsync(
         String resourceGroupName, String networkWatcherName, FlowLogStatusParameters parameters, Context context) {
         context = this.client.mergeContext(context);
-        Mono<Response<Flux<ByteBuffer>>> mono =
-            getFlowLogStatusWithResponseAsync(resourceGroupName, networkWatcherName, parameters, context);
-        return this
-            .client
-            .<FlowLogInformationInner, FlowLogInformationInner>getLroResult(
-                mono,
-                this.client.getHttpPipeline(),
-                FlowLogInformationInner.class,
-                FlowLogInformationInner.class,
-                context);
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = getFlowLogStatusWithResponseAsync(resourceGroupName, networkWatcherName, parameters, context);
+        return this.client.<FlowLogInformationInner, FlowLogInformationInner>getLroResult(mono,
+            this.client.getHttpPipeline(), FlowLogInformationInner.class, FlowLogInformationInner.class, context);
     }
 
     /**
      * Queries status of flow log and traffic analytics (optional) on a specified resource.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that define a resource to query flow log and traffic analytics (optional) status.
@@ -3389,17 +2860,17 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of information on the configuration of flow log and traffic analytics
-     *     (optional).
+     * (optional).
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<PollResult<FlowLogInformationInner>, FlowLogInformationInner> beginGetFlowLogStatus(
-        String resourceGroupName, String networkWatcherName, FlowLogStatusParameters parameters) {
+    public SyncPoller<PollResult<FlowLogInformationInner>, FlowLogInformationInner>
+        beginGetFlowLogStatus(String resourceGroupName, String networkWatcherName, FlowLogStatusParameters parameters) {
         return this.beginGetFlowLogStatusAsync(resourceGroupName, networkWatcherName, parameters).getSyncPoller();
     }
 
     /**
      * Queries status of flow log and traffic analytics (optional) on a specified resource.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that define a resource to query flow log and traffic analytics (optional) status.
@@ -3408,19 +2879,18 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of information on the configuration of flow log and traffic analytics
-     *     (optional).
+     * (optional).
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<FlowLogInformationInner>, FlowLogInformationInner> beginGetFlowLogStatus(
         String resourceGroupName, String networkWatcherName, FlowLogStatusParameters parameters, Context context) {
-        return this
-            .beginGetFlowLogStatusAsync(resourceGroupName, networkWatcherName, parameters, context)
+        return this.beginGetFlowLogStatusAsync(resourceGroupName, networkWatcherName, parameters, context)
             .getSyncPoller();
     }
 
     /**
      * Queries status of flow log and traffic analytics (optional) on a specified resource.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that define a resource to query flow log and traffic analytics (optional) status.
@@ -3428,19 +2898,18 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return information on the configuration of flow log and traffic analytics (optional) on successful completion of
-     *     {@link Mono}.
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<FlowLogInformationInner> getFlowLogStatusAsync(
-        String resourceGroupName, String networkWatcherName, FlowLogStatusParameters parameters) {
-        return beginGetFlowLogStatusAsync(resourceGroupName, networkWatcherName, parameters)
-            .last()
+    private Mono<FlowLogInformationInner> getFlowLogStatusAsync(String resourceGroupName, String networkWatcherName,
+        FlowLogStatusParameters parameters) {
+        return beginGetFlowLogStatusAsync(resourceGroupName, networkWatcherName, parameters).last()
             .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
      * Queries status of flow log and traffic analytics (optional) on a specified resource.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that define a resource to query flow log and traffic analytics (optional) status.
@@ -3449,19 +2918,18 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return information on the configuration of flow log and traffic analytics (optional) on successful completion of
-     *     {@link Mono}.
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<FlowLogInformationInner> getFlowLogStatusAsync(
-        String resourceGroupName, String networkWatcherName, FlowLogStatusParameters parameters, Context context) {
-        return beginGetFlowLogStatusAsync(resourceGroupName, networkWatcherName, parameters, context)
-            .last()
+    private Mono<FlowLogInformationInner> getFlowLogStatusAsync(String resourceGroupName, String networkWatcherName,
+        FlowLogStatusParameters parameters, Context context) {
+        return beginGetFlowLogStatusAsync(resourceGroupName, networkWatcherName, parameters, context).last()
             .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
      * Queries status of flow log and traffic analytics (optional) on a specified resource.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that define a resource to query flow log and traffic analytics (optional) status.
@@ -3471,14 +2939,14 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return information on the configuration of flow log and traffic analytics (optional).
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public FlowLogInformationInner getFlowLogStatus(
-        String resourceGroupName, String networkWatcherName, FlowLogStatusParameters parameters) {
+    public FlowLogInformationInner getFlowLogStatus(String resourceGroupName, String networkWatcherName,
+        FlowLogStatusParameters parameters) {
         return getFlowLogStatusAsync(resourceGroupName, networkWatcherName, parameters).block();
     }
 
     /**
      * Queries status of flow log and traffic analytics (optional) on a specified resource.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that define a resource to query flow log and traffic analytics (optional) status.
@@ -3489,32 +2957,30 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return information on the configuration of flow log and traffic analytics (optional).
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public FlowLogInformationInner getFlowLogStatus(
-        String resourceGroupName, String networkWatcherName, FlowLogStatusParameters parameters, Context context) {
+    public FlowLogInformationInner getFlowLogStatus(String resourceGroupName, String networkWatcherName,
+        FlowLogStatusParameters parameters, Context context) {
         return getFlowLogStatusAsync(resourceGroupName, networkWatcherName, parameters, context).block();
     }
 
     /**
      * Verifies the possibility of establishing a direct TCP connection from a virtual machine to a given endpoint
      * including another VM or an arbitrary remote server.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that determine how the connectivity check will be performed.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information on the connectivity status along with {@link Response} on successful completion of {@link
-     *     Mono}.
+     * @return information on the connectivity status along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> checkConnectivityWithResponseAsync(
-        String resourceGroupName, String networkWatcherName, ConnectivityParameters parameters) {
+    private Mono<Response<Flux<ByteBuffer>>> checkConnectivityWithResponseAsync(String resourceGroupName,
+        String networkWatcherName, ConnectivityParameters parameters) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -3525,38 +2991,26 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
                 .error(new IllegalArgumentException("Parameter networkWatcherName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (parameters == null) {
             return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-05-01";
+        final String apiVersion = "2023-06-01";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .checkConnectivity(
-                            this.client.getEndpoint(),
-                            resourceGroupName,
-                            networkWatcherName,
-                            apiVersion,
-                            this.client.getSubscriptionId(),
-                            parameters,
-                            accept,
-                            context))
+            .withContext(context -> service.checkConnectivity(this.client.getEndpoint(), resourceGroupName,
+                networkWatcherName, apiVersion, this.client.getSubscriptionId(), parameters, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Verifies the possibility of establishing a direct TCP connection from a virtual machine to a given endpoint
      * including another VM or an arbitrary remote server.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that determine how the connectivity check will be performed.
@@ -3564,17 +3018,15 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information on the connectivity status along with {@link Response} on successful completion of {@link
-     *     Mono}.
+     * @return information on the connectivity status along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> checkConnectivityWithResponseAsync(
-        String resourceGroupName, String networkWatcherName, ConnectivityParameters parameters, Context context) {
+    private Mono<Response<Flux<ByteBuffer>>> checkConnectivityWithResponseAsync(String resourceGroupName,
+        String networkWatcherName, ConnectivityParameters parameters, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -3585,35 +3037,25 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
                 .error(new IllegalArgumentException("Parameter networkWatcherName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (parameters == null) {
             return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-05-01";
+        final String apiVersion = "2023-06-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .checkConnectivity(
-                this.client.getEndpoint(),
-                resourceGroupName,
-                networkWatcherName,
-                apiVersion,
-                this.client.getSubscriptionId(),
-                parameters,
-                accept,
-                context);
+        return service.checkConnectivity(this.client.getEndpoint(), resourceGroupName, networkWatcherName, apiVersion,
+            this.client.getSubscriptionId(), parameters, accept, context);
     }
 
     /**
      * Verifies the possibility of establishing a direct TCP connection from a virtual machine to a given endpoint
      * including another VM or an arbitrary remote server.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that determine how the connectivity check will be performed.
@@ -3624,24 +3066,19 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<ConnectivityInformationInner>, ConnectivityInformationInner>
-        beginCheckConnectivityAsync(
-            String resourceGroupName, String networkWatcherName, ConnectivityParameters parameters) {
-        Mono<Response<Flux<ByteBuffer>>> mono =
-            checkConnectivityWithResponseAsync(resourceGroupName, networkWatcherName, parameters);
-        return this
-            .client
-            .<ConnectivityInformationInner, ConnectivityInformationInner>getLroResult(
-                mono,
-                this.client.getHttpPipeline(),
-                ConnectivityInformationInner.class,
-                ConnectivityInformationInner.class,
-                this.client.getContext());
+        beginCheckConnectivityAsync(String resourceGroupName, String networkWatcherName,
+            ConnectivityParameters parameters) {
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = checkConnectivityWithResponseAsync(resourceGroupName, networkWatcherName, parameters);
+        return this.client.<ConnectivityInformationInner, ConnectivityInformationInner>getLroResult(mono,
+            this.client.getHttpPipeline(), ConnectivityInformationInner.class, ConnectivityInformationInner.class,
+            this.client.getContext());
     }
 
     /**
      * Verifies the possibility of establishing a direct TCP connection from a virtual machine to a given endpoint
      * including another VM or an arbitrary remote server.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that determine how the connectivity check will be performed.
@@ -3653,25 +3090,20 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<ConnectivityInformationInner>, ConnectivityInformationInner>
-        beginCheckConnectivityAsync(
-            String resourceGroupName, String networkWatcherName, ConnectivityParameters parameters, Context context) {
+        beginCheckConnectivityAsync(String resourceGroupName, String networkWatcherName,
+            ConnectivityParameters parameters, Context context) {
         context = this.client.mergeContext(context);
-        Mono<Response<Flux<ByteBuffer>>> mono =
-            checkConnectivityWithResponseAsync(resourceGroupName, networkWatcherName, parameters, context);
-        return this
-            .client
-            .<ConnectivityInformationInner, ConnectivityInformationInner>getLroResult(
-                mono,
-                this.client.getHttpPipeline(),
-                ConnectivityInformationInner.class,
-                ConnectivityInformationInner.class,
-                context);
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = checkConnectivityWithResponseAsync(resourceGroupName, networkWatcherName, parameters, context);
+        return this.client.<ConnectivityInformationInner, ConnectivityInformationInner>getLroResult(mono,
+            this.client.getHttpPipeline(), ConnectivityInformationInner.class, ConnectivityInformationInner.class,
+            context);
     }
 
     /**
      * Verifies the possibility of establishing a direct TCP connection from a virtual machine to a given endpoint
      * including another VM or an arbitrary remote server.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that determine how the connectivity check will be performed.
@@ -3681,15 +3113,15 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return the {@link SyncPoller} for polling of information on the connectivity status.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<PollResult<ConnectivityInformationInner>, ConnectivityInformationInner> beginCheckConnectivity(
-        String resourceGroupName, String networkWatcherName, ConnectivityParameters parameters) {
+    public SyncPoller<PollResult<ConnectivityInformationInner>, ConnectivityInformationInner>
+        beginCheckConnectivity(String resourceGroupName, String networkWatcherName, ConnectivityParameters parameters) {
         return this.beginCheckConnectivityAsync(resourceGroupName, networkWatcherName, parameters).getSyncPoller();
     }
 
     /**
      * Verifies the possibility of establishing a direct TCP connection from a virtual machine to a given endpoint
      * including another VM or an arbitrary remote server.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that determine how the connectivity check will be performed.
@@ -3702,15 +3134,14 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<ConnectivityInformationInner>, ConnectivityInformationInner> beginCheckConnectivity(
         String resourceGroupName, String networkWatcherName, ConnectivityParameters parameters, Context context) {
-        return this
-            .beginCheckConnectivityAsync(resourceGroupName, networkWatcherName, parameters, context)
+        return this.beginCheckConnectivityAsync(resourceGroupName, networkWatcherName, parameters, context)
             .getSyncPoller();
     }
 
     /**
      * Verifies the possibility of establishing a direct TCP connection from a virtual machine to a given endpoint
      * including another VM or an arbitrary remote server.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that determine how the connectivity check will be performed.
@@ -3720,17 +3151,16 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return information on the connectivity status on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<ConnectivityInformationInner> checkConnectivityAsync(
-        String resourceGroupName, String networkWatcherName, ConnectivityParameters parameters) {
-        return beginCheckConnectivityAsync(resourceGroupName, networkWatcherName, parameters)
-            .last()
+    private Mono<ConnectivityInformationInner> checkConnectivityAsync(String resourceGroupName,
+        String networkWatcherName, ConnectivityParameters parameters) {
+        return beginCheckConnectivityAsync(resourceGroupName, networkWatcherName, parameters).last()
             .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
      * Verifies the possibility of establishing a direct TCP connection from a virtual machine to a given endpoint
      * including another VM or an arbitrary remote server.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that determine how the connectivity check will be performed.
@@ -3741,17 +3171,16 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return information on the connectivity status on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<ConnectivityInformationInner> checkConnectivityAsync(
-        String resourceGroupName, String networkWatcherName, ConnectivityParameters parameters, Context context) {
-        return beginCheckConnectivityAsync(resourceGroupName, networkWatcherName, parameters, context)
-            .last()
+    private Mono<ConnectivityInformationInner> checkConnectivityAsync(String resourceGroupName,
+        String networkWatcherName, ConnectivityParameters parameters, Context context) {
+        return beginCheckConnectivityAsync(resourceGroupName, networkWatcherName, parameters, context).last()
             .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
      * Verifies the possibility of establishing a direct TCP connection from a virtual machine to a given endpoint
      * including another VM or an arbitrary remote server.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that determine how the connectivity check will be performed.
@@ -3761,15 +3190,15 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return information on the connectivity status.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ConnectivityInformationInner checkConnectivity(
-        String resourceGroupName, String networkWatcherName, ConnectivityParameters parameters) {
+    public ConnectivityInformationInner checkConnectivity(String resourceGroupName, String networkWatcherName,
+        ConnectivityParameters parameters) {
         return checkConnectivityAsync(resourceGroupName, networkWatcherName, parameters).block();
     }
 
     /**
      * Verifies the possibility of establishing a direct TCP connection from a virtual machine to a given endpoint
      * including another VM or an arbitrary remote server.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that determine how the connectivity check will be performed.
@@ -3780,15 +3209,15 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return information on the connectivity status.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ConnectivityInformationInner checkConnectivity(
-        String resourceGroupName, String networkWatcherName, ConnectivityParameters parameters, Context context) {
+    public ConnectivityInformationInner checkConnectivity(String resourceGroupName, String networkWatcherName,
+        ConnectivityParameters parameters, Context context) {
         return checkConnectivityAsync(resourceGroupName, networkWatcherName, parameters, context).block();
     }
 
     /**
      * NOTE: This feature is currently in preview and still being tested for stability. Gets the relative latency score
      * for internet service providers from a specified location to Azure regions.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that determine Azure reachability report configuration.
@@ -3798,13 +3227,11 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return azure reachability report details along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> getAzureReachabilityReportWithResponseAsync(
-        String resourceGroupName, String networkWatcherName, AzureReachabilityReportParameters parameters) {
+    private Mono<Response<Flux<ByteBuffer>>> getAzureReachabilityReportWithResponseAsync(String resourceGroupName,
+        String networkWatcherName, AzureReachabilityReportParameters parameters) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -3815,38 +3242,26 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
                 .error(new IllegalArgumentException("Parameter networkWatcherName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (parameters == null) {
             return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-05-01";
+        final String apiVersion = "2023-06-01";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .getAzureReachabilityReport(
-                            this.client.getEndpoint(),
-                            resourceGroupName,
-                            networkWatcherName,
-                            apiVersion,
-                            this.client.getSubscriptionId(),
-                            parameters,
-                            accept,
-                            context))
+            .withContext(context -> service.getAzureReachabilityReport(this.client.getEndpoint(), resourceGroupName,
+                networkWatcherName, apiVersion, this.client.getSubscriptionId(), parameters, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * NOTE: This feature is currently in preview and still being tested for stability. Gets the relative latency score
      * for internet service providers from a specified location to Azure regions.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that determine Azure reachability report configuration.
@@ -3857,16 +3272,11 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return azure reachability report details along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> getAzureReachabilityReportWithResponseAsync(
-        String resourceGroupName,
-        String networkWatcherName,
-        AzureReachabilityReportParameters parameters,
-        Context context) {
+    private Mono<Response<Flux<ByteBuffer>>> getAzureReachabilityReportWithResponseAsync(String resourceGroupName,
+        String networkWatcherName, AzureReachabilityReportParameters parameters, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -3877,35 +3287,25 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
                 .error(new IllegalArgumentException("Parameter networkWatcherName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (parameters == null) {
             return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-05-01";
+        final String apiVersion = "2023-06-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .getAzureReachabilityReport(
-                this.client.getEndpoint(),
-                resourceGroupName,
-                networkWatcherName,
-                apiVersion,
-                this.client.getSubscriptionId(),
-                parameters,
-                accept,
-                context);
+        return service.getAzureReachabilityReport(this.client.getEndpoint(), resourceGroupName, networkWatcherName,
+            apiVersion, this.client.getSubscriptionId(), parameters, accept, context);
     }
 
     /**
      * NOTE: This feature is currently in preview and still being tested for stability. Gets the relative latency score
      * for internet service providers from a specified location to Azure regions.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that determine Azure reachability report configuration.
@@ -3916,24 +3316,19 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<AzureReachabilityReportInner>, AzureReachabilityReportInner>
-        beginGetAzureReachabilityReportAsync(
-            String resourceGroupName, String networkWatcherName, AzureReachabilityReportParameters parameters) {
-        Mono<Response<Flux<ByteBuffer>>> mono =
-            getAzureReachabilityReportWithResponseAsync(resourceGroupName, networkWatcherName, parameters);
-        return this
-            .client
-            .<AzureReachabilityReportInner, AzureReachabilityReportInner>getLroResult(
-                mono,
-                this.client.getHttpPipeline(),
-                AzureReachabilityReportInner.class,
-                AzureReachabilityReportInner.class,
-                this.client.getContext());
+        beginGetAzureReachabilityReportAsync(String resourceGroupName, String networkWatcherName,
+            AzureReachabilityReportParameters parameters) {
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = getAzureReachabilityReportWithResponseAsync(resourceGroupName, networkWatcherName, parameters);
+        return this.client.<AzureReachabilityReportInner, AzureReachabilityReportInner>getLroResult(mono,
+            this.client.getHttpPipeline(), AzureReachabilityReportInner.class, AzureReachabilityReportInner.class,
+            this.client.getContext());
     }
 
     /**
      * NOTE: This feature is currently in preview and still being tested for stability. Gets the relative latency score
      * for internet service providers from a specified location to Azure regions.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that determine Azure reachability report configuration.
@@ -3945,28 +3340,20 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<AzureReachabilityReportInner>, AzureReachabilityReportInner>
-        beginGetAzureReachabilityReportAsync(
-            String resourceGroupName,
-            String networkWatcherName,
-            AzureReachabilityReportParameters parameters,
-            Context context) {
+        beginGetAzureReachabilityReportAsync(String resourceGroupName, String networkWatcherName,
+            AzureReachabilityReportParameters parameters, Context context) {
         context = this.client.mergeContext(context);
-        Mono<Response<Flux<ByteBuffer>>> mono =
-            getAzureReachabilityReportWithResponseAsync(resourceGroupName, networkWatcherName, parameters, context);
-        return this
-            .client
-            .<AzureReachabilityReportInner, AzureReachabilityReportInner>getLroResult(
-                mono,
-                this.client.getHttpPipeline(),
-                AzureReachabilityReportInner.class,
-                AzureReachabilityReportInner.class,
-                context);
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = getAzureReachabilityReportWithResponseAsync(resourceGroupName, networkWatcherName, parameters, context);
+        return this.client.<AzureReachabilityReportInner, AzureReachabilityReportInner>getLroResult(mono,
+            this.client.getHttpPipeline(), AzureReachabilityReportInner.class, AzureReachabilityReportInner.class,
+            context);
     }
 
     /**
      * NOTE: This feature is currently in preview and still being tested for stability. Gets the relative latency score
      * for internet service providers from a specified location to Azure regions.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that determine Azure reachability report configuration.
@@ -3977,17 +3364,16 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<AzureReachabilityReportInner>, AzureReachabilityReportInner>
-        beginGetAzureReachabilityReport(
-            String resourceGroupName, String networkWatcherName, AzureReachabilityReportParameters parameters) {
-        return this
-            .beginGetAzureReachabilityReportAsync(resourceGroupName, networkWatcherName, parameters)
+        beginGetAzureReachabilityReport(String resourceGroupName, String networkWatcherName,
+            AzureReachabilityReportParameters parameters) {
+        return this.beginGetAzureReachabilityReportAsync(resourceGroupName, networkWatcherName, parameters)
             .getSyncPoller();
     }
 
     /**
      * NOTE: This feature is currently in preview and still being tested for stability. Gets the relative latency score
      * for internet service providers from a specified location to Azure regions.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that determine Azure reachability report configuration.
@@ -3999,20 +3385,16 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<AzureReachabilityReportInner>, AzureReachabilityReportInner>
-        beginGetAzureReachabilityReport(
-            String resourceGroupName,
-            String networkWatcherName,
-            AzureReachabilityReportParameters parameters,
-            Context context) {
-        return this
-            .beginGetAzureReachabilityReportAsync(resourceGroupName, networkWatcherName, parameters, context)
+        beginGetAzureReachabilityReport(String resourceGroupName, String networkWatcherName,
+            AzureReachabilityReportParameters parameters, Context context) {
+        return this.beginGetAzureReachabilityReportAsync(resourceGroupName, networkWatcherName, parameters, context)
             .getSyncPoller();
     }
 
     /**
      * NOTE: This feature is currently in preview and still being tested for stability. Gets the relative latency score
      * for internet service providers from a specified location to Azure regions.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that determine Azure reachability report configuration.
@@ -4022,17 +3404,16 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return azure reachability report details on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<AzureReachabilityReportInner> getAzureReachabilityReportAsync(
-        String resourceGroupName, String networkWatcherName, AzureReachabilityReportParameters parameters) {
-        return beginGetAzureReachabilityReportAsync(resourceGroupName, networkWatcherName, parameters)
-            .last()
+    private Mono<AzureReachabilityReportInner> getAzureReachabilityReportAsync(String resourceGroupName,
+        String networkWatcherName, AzureReachabilityReportParameters parameters) {
+        return beginGetAzureReachabilityReportAsync(resourceGroupName, networkWatcherName, parameters).last()
             .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
      * NOTE: This feature is currently in preview and still being tested for stability. Gets the relative latency score
      * for internet service providers from a specified location to Azure regions.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that determine Azure reachability report configuration.
@@ -4043,20 +3424,16 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return azure reachability report details on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<AzureReachabilityReportInner> getAzureReachabilityReportAsync(
-        String resourceGroupName,
-        String networkWatcherName,
-        AzureReachabilityReportParameters parameters,
-        Context context) {
-        return beginGetAzureReachabilityReportAsync(resourceGroupName, networkWatcherName, parameters, context)
-            .last()
+    private Mono<AzureReachabilityReportInner> getAzureReachabilityReportAsync(String resourceGroupName,
+        String networkWatcherName, AzureReachabilityReportParameters parameters, Context context) {
+        return beginGetAzureReachabilityReportAsync(resourceGroupName, networkWatcherName, parameters, context).last()
             .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
      * NOTE: This feature is currently in preview and still being tested for stability. Gets the relative latency score
      * for internet service providers from a specified location to Azure regions.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that determine Azure reachability report configuration.
@@ -4066,15 +3443,15 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return azure reachability report details.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public AzureReachabilityReportInner getAzureReachabilityReport(
-        String resourceGroupName, String networkWatcherName, AzureReachabilityReportParameters parameters) {
+    public AzureReachabilityReportInner getAzureReachabilityReport(String resourceGroupName, String networkWatcherName,
+        AzureReachabilityReportParameters parameters) {
         return getAzureReachabilityReportAsync(resourceGroupName, networkWatcherName, parameters).block();
     }
 
     /**
      * NOTE: This feature is currently in preview and still being tested for stability. Gets the relative latency score
      * for internet service providers from a specified location to Azure regions.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that determine Azure reachability report configuration.
@@ -4085,35 +3462,30 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return azure reachability report details.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public AzureReachabilityReportInner getAzureReachabilityReport(
-        String resourceGroupName,
-        String networkWatcherName,
-        AzureReachabilityReportParameters parameters,
-        Context context) {
+    public AzureReachabilityReportInner getAzureReachabilityReport(String resourceGroupName, String networkWatcherName,
+        AzureReachabilityReportParameters parameters, Context context) {
         return getAzureReachabilityReportAsync(resourceGroupName, networkWatcherName, parameters, context).block();
     }
 
     /**
      * NOTE: This feature is currently in preview and still being tested for stability. Lists all available internet
      * service providers for a specified Azure region.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that scope the list of available providers.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of available countries with details along with {@link Response} on successful completion of {@link
-     *     Mono}.
+     * @return list of available countries with details along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> listAvailableProvidersWithResponseAsync(
-        String resourceGroupName, String networkWatcherName, AvailableProvidersListParameters parameters) {
+    private Mono<Response<Flux<ByteBuffer>>> listAvailableProvidersWithResponseAsync(String resourceGroupName,
+        String networkWatcherName, AvailableProvidersListParameters parameters) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -4124,38 +3496,26 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
                 .error(new IllegalArgumentException("Parameter networkWatcherName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (parameters == null) {
             return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-05-01";
+        final String apiVersion = "2023-06-01";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .listAvailableProviders(
-                            this.client.getEndpoint(),
-                            resourceGroupName,
-                            networkWatcherName,
-                            apiVersion,
-                            this.client.getSubscriptionId(),
-                            parameters,
-                            accept,
-                            context))
+            .withContext(context -> service.listAvailableProviders(this.client.getEndpoint(), resourceGroupName,
+                networkWatcherName, apiVersion, this.client.getSubscriptionId(), parameters, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * NOTE: This feature is currently in preview and still being tested for stability. Lists all available internet
      * service providers for a specified Azure region.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that scope the list of available providers.
@@ -4163,20 +3523,15 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of available countries with details along with {@link Response} on successful completion of {@link
-     *     Mono}.
+     * @return list of available countries with details along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> listAvailableProvidersWithResponseAsync(
-        String resourceGroupName,
-        String networkWatcherName,
-        AvailableProvidersListParameters parameters,
-        Context context) {
+    private Mono<Response<Flux<ByteBuffer>>> listAvailableProvidersWithResponseAsync(String resourceGroupName,
+        String networkWatcherName, AvailableProvidersListParameters parameters, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -4187,35 +3542,25 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
                 .error(new IllegalArgumentException("Parameter networkWatcherName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (parameters == null) {
             return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-05-01";
+        final String apiVersion = "2023-06-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .listAvailableProviders(
-                this.client.getEndpoint(),
-                resourceGroupName,
-                networkWatcherName,
-                apiVersion,
-                this.client.getSubscriptionId(),
-                parameters,
-                accept,
-                context);
+        return service.listAvailableProviders(this.client.getEndpoint(), resourceGroupName, networkWatcherName,
+            apiVersion, this.client.getSubscriptionId(), parameters, accept, context);
     }
 
     /**
      * NOTE: This feature is currently in preview and still being tested for stability. Lists all available internet
      * service providers for a specified Azure region.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that scope the list of available providers.
@@ -4226,24 +3571,19 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<AvailableProvidersListInner>, AvailableProvidersListInner>
-        beginListAvailableProvidersAsync(
-            String resourceGroupName, String networkWatcherName, AvailableProvidersListParameters parameters) {
-        Mono<Response<Flux<ByteBuffer>>> mono =
-            listAvailableProvidersWithResponseAsync(resourceGroupName, networkWatcherName, parameters);
-        return this
-            .client
-            .<AvailableProvidersListInner, AvailableProvidersListInner>getLroResult(
-                mono,
-                this.client.getHttpPipeline(),
-                AvailableProvidersListInner.class,
-                AvailableProvidersListInner.class,
-                this.client.getContext());
+        beginListAvailableProvidersAsync(String resourceGroupName, String networkWatcherName,
+            AvailableProvidersListParameters parameters) {
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = listAvailableProvidersWithResponseAsync(resourceGroupName, networkWatcherName, parameters);
+        return this.client.<AvailableProvidersListInner, AvailableProvidersListInner>getLroResult(mono,
+            this.client.getHttpPipeline(), AvailableProvidersListInner.class, AvailableProvidersListInner.class,
+            this.client.getContext());
     }
 
     /**
      * NOTE: This feature is currently in preview and still being tested for stability. Lists all available internet
      * service providers for a specified Azure region.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that scope the list of available providers.
@@ -4255,28 +3595,20 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<AvailableProvidersListInner>, AvailableProvidersListInner>
-        beginListAvailableProvidersAsync(
-            String resourceGroupName,
-            String networkWatcherName,
-            AvailableProvidersListParameters parameters,
-            Context context) {
+        beginListAvailableProvidersAsync(String resourceGroupName, String networkWatcherName,
+            AvailableProvidersListParameters parameters, Context context) {
         context = this.client.mergeContext(context);
-        Mono<Response<Flux<ByteBuffer>>> mono =
-            listAvailableProvidersWithResponseAsync(resourceGroupName, networkWatcherName, parameters, context);
-        return this
-            .client
-            .<AvailableProvidersListInner, AvailableProvidersListInner>getLroResult(
-                mono,
-                this.client.getHttpPipeline(),
-                AvailableProvidersListInner.class,
-                AvailableProvidersListInner.class,
-                context);
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = listAvailableProvidersWithResponseAsync(resourceGroupName, networkWatcherName, parameters, context);
+        return this.client.<AvailableProvidersListInner, AvailableProvidersListInner>getLroResult(mono,
+            this.client.getHttpPipeline(), AvailableProvidersListInner.class, AvailableProvidersListInner.class,
+            context);
     }
 
     /**
      * NOTE: This feature is currently in preview and still being tested for stability. Lists all available internet
      * service providers for a specified Azure region.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that scope the list of available providers.
@@ -4294,7 +3626,7 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
     /**
      * NOTE: This feature is currently in preview and still being tested for stability. Lists all available internet
      * service providers for a specified Azure region.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that scope the list of available providers.
@@ -4306,19 +3638,16 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<AvailableProvidersListInner>, AvailableProvidersListInner> beginListAvailableProviders(
-        String resourceGroupName,
-        String networkWatcherName,
-        AvailableProvidersListParameters parameters,
+        String resourceGroupName, String networkWatcherName, AvailableProvidersListParameters parameters,
         Context context) {
-        return this
-            .beginListAvailableProvidersAsync(resourceGroupName, networkWatcherName, parameters, context)
+        return this.beginListAvailableProvidersAsync(resourceGroupName, networkWatcherName, parameters, context)
             .getSyncPoller();
     }
 
     /**
      * NOTE: This feature is currently in preview and still being tested for stability. Lists all available internet
      * service providers for a specified Azure region.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that scope the list of available providers.
@@ -4328,17 +3657,16 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return list of available countries with details on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<AvailableProvidersListInner> listAvailableProvidersAsync(
-        String resourceGroupName, String networkWatcherName, AvailableProvidersListParameters parameters) {
-        return beginListAvailableProvidersAsync(resourceGroupName, networkWatcherName, parameters)
-            .last()
+    private Mono<AvailableProvidersListInner> listAvailableProvidersAsync(String resourceGroupName,
+        String networkWatcherName, AvailableProvidersListParameters parameters) {
+        return beginListAvailableProvidersAsync(resourceGroupName, networkWatcherName, parameters).last()
             .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
      * NOTE: This feature is currently in preview and still being tested for stability. Lists all available internet
      * service providers for a specified Azure region.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that scope the list of available providers.
@@ -4349,20 +3677,16 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return list of available countries with details on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<AvailableProvidersListInner> listAvailableProvidersAsync(
-        String resourceGroupName,
-        String networkWatcherName,
-        AvailableProvidersListParameters parameters,
-        Context context) {
-        return beginListAvailableProvidersAsync(resourceGroupName, networkWatcherName, parameters, context)
-            .last()
+    private Mono<AvailableProvidersListInner> listAvailableProvidersAsync(String resourceGroupName,
+        String networkWatcherName, AvailableProvidersListParameters parameters, Context context) {
+        return beginListAvailableProvidersAsync(resourceGroupName, networkWatcherName, parameters, context).last()
             .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
      * NOTE: This feature is currently in preview and still being tested for stability. Lists all available internet
      * service providers for a specified Azure region.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that scope the list of available providers.
@@ -4372,15 +3696,15 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return list of available countries with details.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public AvailableProvidersListInner listAvailableProviders(
-        String resourceGroupName, String networkWatcherName, AvailableProvidersListParameters parameters) {
+    public AvailableProvidersListInner listAvailableProviders(String resourceGroupName, String networkWatcherName,
+        AvailableProvidersListParameters parameters) {
         return listAvailableProvidersAsync(resourceGroupName, networkWatcherName, parameters).block();
     }
 
     /**
      * NOTE: This feature is currently in preview and still being tested for stability. Lists all available internet
      * service providers for a specified Azure region.
-     *
+     * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
      * @param parameters Parameters that scope the list of available providers.
@@ -4391,11 +3715,8 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return list of available countries with details.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public AvailableProvidersListInner listAvailableProviders(
-        String resourceGroupName,
-        String networkWatcherName,
-        AvailableProvidersListParameters parameters,
-        Context context) {
+    public AvailableProvidersListInner listAvailableProviders(String resourceGroupName, String networkWatcherName,
+        AvailableProvidersListParameters parameters, Context context) {
         return listAvailableProvidersAsync(resourceGroupName, networkWatcherName, parameters, context).block();
     }
 
@@ -4404,7 +3725,7 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * detailed information on what security rules were applied to a specified traffic flow and the result of evaluating
      * these rules. Customers must provide details of a flow like source, destination, protocol, etc. The API returns
      * whether traffic was allowed or denied, the rules evaluated for the specified flow and the evaluation results.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters to get network configuration diagnostic.
@@ -4412,16 +3733,14 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return network Configuration Diagnostic data to help customers understand and debug network behavior along with
-     *     {@link Response} on successful completion of {@link Mono}.
+     * {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> getNetworkConfigurationDiagnosticWithResponseAsync(
         String resourceGroupName, String networkWatcherName, NetworkConfigurationDiagnosticParameters parameters) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -4432,31 +3751,20 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
                 .error(new IllegalArgumentException("Parameter networkWatcherName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (parameters == null) {
             return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-05-01";
+        final String apiVersion = "2023-06-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
-                context ->
-                    service
-                        .getNetworkConfigurationDiagnostic(
-                            this.client.getEndpoint(),
-                            resourceGroupName,
-                            networkWatcherName,
-                            apiVersion,
-                            this.client.getSubscriptionId(),
-                            parameters,
-                            accept,
-                            context))
+                context -> service.getNetworkConfigurationDiagnostic(this.client.getEndpoint(), resourceGroupName,
+                    networkWatcherName, apiVersion, this.client.getSubscriptionId(), parameters, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
@@ -4465,7 +3773,7 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * detailed information on what security rules were applied to a specified traffic flow and the result of evaluating
      * these rules. Customers must provide details of a flow like source, destination, protocol, etc. The API returns
      * whether traffic was allowed or denied, the rules evaluated for the specified flow and the evaluation results.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters to get network configuration diagnostic.
@@ -4474,19 +3782,15 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return network Configuration Diagnostic data to help customers understand and debug network behavior along with
-     *     {@link Response} on successful completion of {@link Mono}.
+     * {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> getNetworkConfigurationDiagnosticWithResponseAsync(
-        String resourceGroupName,
-        String networkWatcherName,
-        NetworkConfigurationDiagnosticParameters parameters,
+        String resourceGroupName, String networkWatcherName, NetworkConfigurationDiagnosticParameters parameters,
         Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -4497,29 +3801,19 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
                 .error(new IllegalArgumentException("Parameter networkWatcherName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (parameters == null) {
             return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-05-01";
+        final String apiVersion = "2023-06-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .getNetworkConfigurationDiagnostic(
-                this.client.getEndpoint(),
-                resourceGroupName,
-                networkWatcherName,
-                apiVersion,
-                this.client.getSubscriptionId(),
-                parameters,
-                accept,
-                context);
+        return service.getNetworkConfigurationDiagnostic(this.client.getEndpoint(), resourceGroupName,
+            networkWatcherName, apiVersion, this.client.getSubscriptionId(), parameters, accept, context);
     }
 
     /**
@@ -4527,7 +3821,7 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * detailed information on what security rules were applied to a specified traffic flow and the result of evaluating
      * these rules. Customers must provide details of a flow like source, destination, protocol, etc. The API returns
      * whether traffic was allowed or denied, the rules evaluated for the specified flow and the evaluation results.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters to get network configuration diagnostic.
@@ -4535,23 +3829,19 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link PollerFlux} for polling of network Configuration Diagnostic data to help customers understand
-     *     and debug network behavior.
+     * and debug network behavior.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    private PollerFlux<
-            PollResult<NetworkConfigurationDiagnosticResponseInner>, NetworkConfigurationDiagnosticResponseInner>
-        beginGetNetworkConfigurationDiagnosticAsync(
-            String resourceGroupName, String networkWatcherName, NetworkConfigurationDiagnosticParameters parameters) {
-        Mono<Response<Flux<ByteBuffer>>> mono =
-            getNetworkConfigurationDiagnosticWithResponseAsync(resourceGroupName, networkWatcherName, parameters);
-        return this
-            .client
+    private
+        PollerFlux<PollResult<NetworkConfigurationDiagnosticResponseInner>, NetworkConfigurationDiagnosticResponseInner>
+        beginGetNetworkConfigurationDiagnosticAsync(String resourceGroupName, String networkWatcherName,
+            NetworkConfigurationDiagnosticParameters parameters) {
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = getNetworkConfigurationDiagnosticWithResponseAsync(resourceGroupName, networkWatcherName, parameters);
+        return this.client
             .<NetworkConfigurationDiagnosticResponseInner, NetworkConfigurationDiagnosticResponseInner>getLroResult(
-                mono,
-                this.client.getHttpPipeline(),
-                NetworkConfigurationDiagnosticResponseInner.class,
-                NetworkConfigurationDiagnosticResponseInner.class,
-                this.client.getContext());
+                mono, this.client.getHttpPipeline(), NetworkConfigurationDiagnosticResponseInner.class,
+                NetworkConfigurationDiagnosticResponseInner.class, this.client.getContext());
     }
 
     /**
@@ -4559,7 +3849,7 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * detailed information on what security rules were applied to a specified traffic flow and the result of evaluating
      * these rules. Customers must provide details of a flow like source, destination, protocol, etc. The API returns
      * whether traffic was allowed or denied, the rules evaluated for the specified flow and the evaluation results.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters to get network configuration diagnostic.
@@ -4568,28 +3858,20 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link PollerFlux} for polling of network Configuration Diagnostic data to help customers understand
-     *     and debug network behavior.
+     * and debug network behavior.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    private PollerFlux<
-            PollResult<NetworkConfigurationDiagnosticResponseInner>, NetworkConfigurationDiagnosticResponseInner>
-        beginGetNetworkConfigurationDiagnosticAsync(
-            String resourceGroupName,
-            String networkWatcherName,
-            NetworkConfigurationDiagnosticParameters parameters,
-            Context context) {
+    private
+        PollerFlux<PollResult<NetworkConfigurationDiagnosticResponseInner>, NetworkConfigurationDiagnosticResponseInner>
+        beginGetNetworkConfigurationDiagnosticAsync(String resourceGroupName, String networkWatcherName,
+            NetworkConfigurationDiagnosticParameters parameters, Context context) {
         context = this.client.mergeContext(context);
-        Mono<Response<Flux<ByteBuffer>>> mono =
-            getNetworkConfigurationDiagnosticWithResponseAsync(
-                resourceGroupName, networkWatcherName, parameters, context);
-        return this
-            .client
+        Mono<Response<Flux<ByteBuffer>>> mono = getNetworkConfigurationDiagnosticWithResponseAsync(resourceGroupName,
+            networkWatcherName, parameters, context);
+        return this.client
             .<NetworkConfigurationDiagnosticResponseInner, NetworkConfigurationDiagnosticResponseInner>getLroResult(
-                mono,
-                this.client.getHttpPipeline(),
-                NetworkConfigurationDiagnosticResponseInner.class,
-                NetworkConfigurationDiagnosticResponseInner.class,
-                context);
+                mono, this.client.getHttpPipeline(), NetworkConfigurationDiagnosticResponseInner.class,
+                NetworkConfigurationDiagnosticResponseInner.class, context);
     }
 
     /**
@@ -4597,7 +3879,7 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * detailed information on what security rules were applied to a specified traffic flow and the result of evaluating
      * these rules. Customers must provide details of a flow like source, destination, protocol, etc. The API returns
      * whether traffic was allowed or denied, the rules evaluated for the specified flow and the evaluation results.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters to get network configuration diagnostic.
@@ -4605,15 +3887,14 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of network Configuration Diagnostic data to help customers understand
-     *     and debug network behavior.
+     * and debug network behavior.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<
-            PollResult<NetworkConfigurationDiagnosticResponseInner>, NetworkConfigurationDiagnosticResponseInner>
-        beginGetNetworkConfigurationDiagnostic(
-            String resourceGroupName, String networkWatcherName, NetworkConfigurationDiagnosticParameters parameters) {
-        return this
-            .beginGetNetworkConfigurationDiagnosticAsync(resourceGroupName, networkWatcherName, parameters)
+    public
+        SyncPoller<PollResult<NetworkConfigurationDiagnosticResponseInner>, NetworkConfigurationDiagnosticResponseInner>
+        beginGetNetworkConfigurationDiagnostic(String resourceGroupName, String networkWatcherName,
+            NetworkConfigurationDiagnosticParameters parameters) {
+        return this.beginGetNetworkConfigurationDiagnosticAsync(resourceGroupName, networkWatcherName, parameters)
             .getSyncPoller();
     }
 
@@ -4622,7 +3903,7 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * detailed information on what security rules were applied to a specified traffic flow and the result of evaluating
      * these rules. Customers must provide details of a flow like source, destination, protocol, etc. The API returns
      * whether traffic was allowed or denied, the rules evaluated for the specified flow and the evaluation results.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters to get network configuration diagnostic.
@@ -4631,16 +3912,13 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of network Configuration Diagnostic data to help customers understand
-     *     and debug network behavior.
+     * and debug network behavior.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<
-            PollResult<NetworkConfigurationDiagnosticResponseInner>, NetworkConfigurationDiagnosticResponseInner>
-        beginGetNetworkConfigurationDiagnostic(
-            String resourceGroupName,
-            String networkWatcherName,
-            NetworkConfigurationDiagnosticParameters parameters,
-            Context context) {
+    public
+        SyncPoller<PollResult<NetworkConfigurationDiagnosticResponseInner>, NetworkConfigurationDiagnosticResponseInner>
+        beginGetNetworkConfigurationDiagnostic(String resourceGroupName, String networkWatcherName,
+            NetworkConfigurationDiagnosticParameters parameters, Context context) {
         return this
             .beginGetNetworkConfigurationDiagnosticAsync(resourceGroupName, networkWatcherName, parameters, context)
             .getSyncPoller();
@@ -4651,7 +3929,7 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * detailed information on what security rules were applied to a specified traffic flow and the result of evaluating
      * these rules. Customers must provide details of a flow like source, destination, protocol, etc. The API returns
      * whether traffic was allowed or denied, the rules evaluated for the specified flow and the evaluation results.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters to get network configuration diagnostic.
@@ -4659,13 +3937,12 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return network Configuration Diagnostic data to help customers understand and debug network behavior on
-     *     successful completion of {@link Mono}.
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<NetworkConfigurationDiagnosticResponseInner> getNetworkConfigurationDiagnosticAsync(
         String resourceGroupName, String networkWatcherName, NetworkConfigurationDiagnosticParameters parameters) {
-        return beginGetNetworkConfigurationDiagnosticAsync(resourceGroupName, networkWatcherName, parameters)
-            .last()
+        return beginGetNetworkConfigurationDiagnosticAsync(resourceGroupName, networkWatcherName, parameters).last()
             .flatMap(this.client::getLroFinalResultOrError);
     }
 
@@ -4674,7 +3951,7 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * detailed information on what security rules were applied to a specified traffic flow and the result of evaluating
      * these rules. Customers must provide details of a flow like source, destination, protocol, etc. The API returns
      * whether traffic was allowed or denied, the rules evaluated for the specified flow and the evaluation results.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters to get network configuration diagnostic.
@@ -4683,17 +3960,14 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return network Configuration Diagnostic data to help customers understand and debug network behavior on
-     *     successful completion of {@link Mono}.
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<NetworkConfigurationDiagnosticResponseInner> getNetworkConfigurationDiagnosticAsync(
-        String resourceGroupName,
-        String networkWatcherName,
-        NetworkConfigurationDiagnosticParameters parameters,
+        String resourceGroupName, String networkWatcherName, NetworkConfigurationDiagnosticParameters parameters,
         Context context) {
         return beginGetNetworkConfigurationDiagnosticAsync(resourceGroupName, networkWatcherName, parameters, context)
-            .last()
-            .flatMap(this.client::getLroFinalResultOrError);
+            .last().flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
@@ -4701,7 +3975,7 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * detailed information on what security rules were applied to a specified traffic flow and the result of evaluating
      * these rules. Customers must provide details of a flow like source, destination, protocol, etc. The API returns
      * whether traffic was allowed or denied, the rules evaluated for the specified flow and the evaluation results.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters to get network configuration diagnostic.
@@ -4711,8 +3985,8 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return network Configuration Diagnostic data to help customers understand and debug network behavior.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public NetworkConfigurationDiagnosticResponseInner getNetworkConfigurationDiagnostic(
-        String resourceGroupName, String networkWatcherName, NetworkConfigurationDiagnosticParameters parameters) {
+    public NetworkConfigurationDiagnosticResponseInner getNetworkConfigurationDiagnostic(String resourceGroupName,
+        String networkWatcherName, NetworkConfigurationDiagnosticParameters parameters) {
         return getNetworkConfigurationDiagnosticAsync(resourceGroupName, networkWatcherName, parameters).block();
     }
 
@@ -4721,7 +3995,7 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * detailed information on what security rules were applied to a specified traffic flow and the result of evaluating
      * these rules. Customers must provide details of a flow like source, destination, protocol, etc. The API returns
      * whether traffic was allowed or denied, the rules evaluated for the specified flow and the evaluation results.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param parameters Parameters to get network configuration diagnostic.
@@ -4732,11 +4006,8 @@ public final class NetworkWatchersClientImpl implements NetworkWatchersClient {
      * @return network Configuration Diagnostic data to help customers understand and debug network behavior.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public NetworkConfigurationDiagnosticResponseInner getNetworkConfigurationDiagnostic(
-        String resourceGroupName,
-        String networkWatcherName,
-        NetworkConfigurationDiagnosticParameters parameters,
-        Context context) {
+    public NetworkConfigurationDiagnosticResponseInner getNetworkConfigurationDiagnostic(String resourceGroupName,
+        String networkWatcherName, NetworkConfigurationDiagnosticParameters parameters, Context context) {
         return getNetworkConfigurationDiagnosticAsync(resourceGroupName, networkWatcherName, parameters, context)
             .block();
     }

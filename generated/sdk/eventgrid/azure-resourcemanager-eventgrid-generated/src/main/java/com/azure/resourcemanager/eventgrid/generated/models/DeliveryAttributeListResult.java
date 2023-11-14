@@ -7,11 +7,13 @@ package com.azure.resourcemanager.eventgrid.generated.models;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.DeliveryAttributeListResultInner;
 import java.util.List;
 
-/** An immutable client-side representation of DeliveryAttributeListResult. */
+/**
+ * An immutable client-side representation of DeliveryAttributeListResult.
+ */
 public interface DeliveryAttributeListResult {
     /**
      * Gets the value property: A collection of DeliveryAttributeMapping.
-     *
+     * 
      * @return the value value.
      */
     List<DeliveryAttributeMapping> value();
@@ -19,7 +21,7 @@ public interface DeliveryAttributeListResult {
     /**
      * Gets the inner com.azure.resourcemanager.eventgrid.generated.fluent.models.DeliveryAttributeListResultInner
      * object.
-     *
+     * 
      * @return the inner object.
      */
     DeliveryAttributeListResultInner innerModel();

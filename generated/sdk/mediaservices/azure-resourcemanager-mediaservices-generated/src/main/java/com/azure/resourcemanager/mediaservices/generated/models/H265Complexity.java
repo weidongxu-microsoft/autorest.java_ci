@@ -14,18 +14,24 @@ import java.util.Collection;
  * The default value is Balanced.
  */
 public final class H265Complexity extends ExpandableStringEnum<H265Complexity> {
-    /** Static value Speed for H265Complexity. */
+    /**
+     * Static value Speed for H265Complexity.
+     */
     public static final H265Complexity SPEED = fromString("Speed");
 
-    /** Static value Balanced for H265Complexity. */
+    /**
+     * Static value Balanced for H265Complexity.
+     */
     public static final H265Complexity BALANCED = fromString("Balanced");
 
-    /** Static value Quality for H265Complexity. */
+    /**
+     * Static value Quality for H265Complexity.
+     */
     public static final H265Complexity QUALITY = fromString("Quality");
 
     /**
      * Creates a new instance of H265Complexity value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -34,7 +40,7 @@ public final class H265Complexity extends ExpandableStringEnum<H265Complexity> {
 
     /**
      * Creates or finds a H265Complexity from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding H265Complexity.
      */
@@ -45,7 +51,7 @@ public final class H265Complexity extends ExpandableStringEnum<H265Complexity> {
 
     /**
      * Gets known H265Complexity values.
-     *
+     * 
      * @return known H265Complexity values.
      */
     public static Collection<H265Complexity> values() {

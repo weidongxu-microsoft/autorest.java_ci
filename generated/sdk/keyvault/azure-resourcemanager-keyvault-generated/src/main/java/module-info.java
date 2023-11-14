@@ -10,10 +10,6 @@ module com.azure.resourcemanager.keyvault.generated {
     exports com.azure.resourcemanager.keyvault.generated.fluent.models;
     exports com.azure.resourcemanager.keyvault.generated.models;
 
-    opens com.azure.resourcemanager.keyvault.generated.fluent.models to
-        com.azure.core,
-        com.fasterxml.jackson.databind;
-    opens com.azure.resourcemanager.keyvault.generated.models to
-        com.azure.core,
-        com.fasterxml.jackson.databind;
+    opens com.azure.resourcemanager.keyvault.generated.fluent.models to com.azure.core, com.fasterxml.jackson.databind;
+    opens com.azure.resourcemanager.keyvault.generated.models to com.azure.core, com.fasterxml.jackson.databind;
 }

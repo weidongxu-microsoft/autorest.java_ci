@@ -19,8 +19,7 @@ public final class ClassicAdministratorsImpl implements ClassicAdministrators {
 
     private final com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager;
 
-    public ClassicAdministratorsImpl(
-        ClassicAdministratorsClient innerClient,
+    public ClassicAdministratorsImpl(ClassicAdministratorsClient innerClient,
         com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;

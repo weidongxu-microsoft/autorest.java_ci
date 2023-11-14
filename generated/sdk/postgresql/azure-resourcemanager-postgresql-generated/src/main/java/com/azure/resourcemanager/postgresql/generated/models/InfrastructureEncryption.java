@@ -13,15 +13,19 @@ import java.util.Collection;
  * Value is optional but if passed in, must be 'Disabled' or 'Enabled'.
  */
 public final class InfrastructureEncryption extends ExpandableStringEnum<InfrastructureEncryption> {
-    /** Static value Enabled for InfrastructureEncryption. */
+    /**
+     * Static value Enabled for InfrastructureEncryption.
+     */
     public static final InfrastructureEncryption ENABLED = fromString("Enabled");
 
-    /** Static value Disabled for InfrastructureEncryption. */
+    /**
+     * Static value Disabled for InfrastructureEncryption.
+     */
     public static final InfrastructureEncryption DISABLED = fromString("Disabled");
 
     /**
      * Creates a new instance of InfrastructureEncryption value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -30,7 +34,7 @@ public final class InfrastructureEncryption extends ExpandableStringEnum<Infrast
 
     /**
      * Creates or finds a InfrastructureEncryption from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding InfrastructureEncryption.
      */
@@ -41,7 +45,7 @@ public final class InfrastructureEncryption extends ExpandableStringEnum<Infrast
 
     /**
      * Gets known InfrastructureEncryption values.
-     *
+     * 
      * @return known InfrastructureEncryption values.
      */
     public static Collection<InfrastructureEncryption> values() {

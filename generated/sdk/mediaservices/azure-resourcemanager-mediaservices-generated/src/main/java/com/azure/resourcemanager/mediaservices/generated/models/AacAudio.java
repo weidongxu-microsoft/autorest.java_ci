@@ -9,7 +9,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** Describes Advanced Audio Codec (AAC) audio encoding settings. */
+/**
+ * Describes Advanced Audio Codec (AAC) audio encoding settings.
+ */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
 @JsonTypeName("#Microsoft.Media.AacAudio")
 @Fluent
@@ -20,13 +22,15 @@ public final class AacAudio extends Audio {
     @JsonProperty(value = "profile")
     private AacAudioProfile profile;
 
-    /** Creates an instance of AacAudio class. */
+    /**
+     * Creates an instance of AacAudio class.
+     */
     public AacAudio() {
     }
 
     /**
      * Get the profile property: The encoding profile to be used when encoding audio with AAC.
-     *
+     * 
      * @return the profile value.
      */
     public AacAudioProfile profile() {
@@ -35,7 +39,7 @@ public final class AacAudio extends Audio {
 
     /**
      * Set the profile property: The encoding profile to be used when encoding audio with AAC.
-     *
+     * 
      * @param profile the profile value to set.
      * @return the AacAudio object itself.
      */
@@ -44,28 +48,36 @@ public final class AacAudio extends Audio {
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public AacAudio withChannels(Integer channels) {
         super.withChannels(channels);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public AacAudio withSamplingRate(Integer samplingRate) {
         super.withSamplingRate(samplingRate);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public AacAudio withBitrate(Integer bitrate) {
         super.withBitrate(bitrate);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public AacAudio withLabel(String label) {
         super.withLabel(label);
@@ -74,7 +86,7 @@ public final class AacAudio extends Audio {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

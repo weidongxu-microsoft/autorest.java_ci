@@ -12,8 +12,7 @@ public final class DomainControlCenterSsoRequestImpl implements DomainControlCen
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    DomainControlCenterSsoRequestImpl(
-        DomainControlCenterSsoRequestInner innerObject,
+    DomainControlCenterSsoRequestImpl(DomainControlCenterSsoRequestInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

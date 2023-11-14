@@ -13,8 +13,7 @@ public final class VaultAccessPolicyParametersImpl implements VaultAccessPolicyP
 
     private final com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager;
 
-    VaultAccessPolicyParametersImpl(
-        VaultAccessPolicyParametersInner innerObject,
+    VaultAccessPolicyParametersImpl(VaultAccessPolicyParametersInner innerObject,
         com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

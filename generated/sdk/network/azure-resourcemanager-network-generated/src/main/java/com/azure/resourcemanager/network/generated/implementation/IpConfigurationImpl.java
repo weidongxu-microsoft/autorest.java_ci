@@ -18,8 +18,8 @@ public final class IpConfigurationImpl implements IpConfiguration {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    IpConfigurationImpl(
-        IpConfigurationInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    IpConfigurationImpl(IpConfigurationInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

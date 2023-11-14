@@ -20,20 +20,17 @@ public final class VMInsightsImpl implements VMInsights {
 
     private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    public VMInsightsImpl(
-        VMInsightsClient innerClient, com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
+    public VMInsightsImpl(VMInsightsClient innerClient,
+        com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
     public Response<VMInsightsOnboardingStatus> getOnboardingStatusWithResponse(String resourceUri, Context context) {
-        Response<VMInsightsOnboardingStatusInner> inner =
-            this.serviceClient().getOnboardingStatusWithResponse(resourceUri, context);
+        Response<VMInsightsOnboardingStatusInner> inner
+            = this.serviceClient().getOnboardingStatusWithResponse(resourceUri, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new VMInsightsOnboardingStatusImpl(inner.getValue(), this.manager()));
         } else {
             return null;

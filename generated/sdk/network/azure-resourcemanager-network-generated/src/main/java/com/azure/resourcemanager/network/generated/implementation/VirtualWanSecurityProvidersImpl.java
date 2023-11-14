@@ -15,8 +15,7 @@ public final class VirtualWanSecurityProvidersImpl implements VirtualWanSecurity
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    VirtualWanSecurityProvidersImpl(
-        VirtualWanSecurityProvidersInner innerObject,
+    VirtualWanSecurityProvidersImpl(VirtualWanSecurityProvidersInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

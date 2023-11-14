@@ -7,27 +7,29 @@ package com.azure.resourcemanager.resources.generated.models;
 import com.azure.core.management.exception.ManagementError;
 import com.azure.resourcemanager.resources.generated.fluent.models.ResourceGroupExportResultInner;
 
-/** An immutable client-side representation of ResourceGroupExportResult. */
+/**
+ * An immutable client-side representation of ResourceGroupExportResult.
+ */
 public interface ResourceGroupExportResult {
     /**
      * Gets the template property: The template content.
-     *
+     * 
      * @return the template value.
      */
     Object template();
 
     /**
      * Gets the error property: Error Response
-     *
-     * <p>The template export error.
-     *
+     * 
+     * The template export error.
+     * 
      * @return the error value.
      */
     ManagementError error();
 
     /**
      * Gets the inner com.azure.resourcemanager.resources.generated.fluent.models.ResourceGroupExportResultInner object.
-     *
+     * 
      * @return the inner object.
      */
     ResourceGroupExportResultInner innerModel();

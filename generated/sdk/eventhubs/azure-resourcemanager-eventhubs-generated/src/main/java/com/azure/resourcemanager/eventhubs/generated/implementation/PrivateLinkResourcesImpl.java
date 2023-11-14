@@ -20,22 +20,18 @@ public final class PrivateLinkResourcesImpl implements PrivateLinkResources {
 
     private final com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager;
 
-    public PrivateLinkResourcesImpl(
-        PrivateLinkResourcesClient innerClient,
+    public PrivateLinkResourcesImpl(PrivateLinkResourcesClient innerClient,
         com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<PrivateLinkResourcesListResult> getWithResponse(
-        String resourceGroupName, String namespaceName, Context context) {
-        Response<PrivateLinkResourcesListResultInner> inner =
-            this.serviceClient().getWithResponse(resourceGroupName, namespaceName, context);
+    public Response<PrivateLinkResourcesListResult> getWithResponse(String resourceGroupName, String namespaceName,
+        Context context) {
+        Response<PrivateLinkResourcesListResultInner> inner
+            = this.serviceClient().getWithResponse(resourceGroupName, namespaceName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new PrivateLinkResourcesListResultImpl(inner.getValue(), this.manager()));
         } else {
             return null;

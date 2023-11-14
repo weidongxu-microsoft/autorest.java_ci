@@ -16,8 +16,7 @@ public final class PrivateDnsZoneGroupImpl implements PrivateDnsZoneGroup {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    PrivateDnsZoneGroupImpl(
-        PrivateDnsZoneGroupInner innerObject,
+    PrivateDnsZoneGroupImpl(PrivateDnsZoneGroupInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

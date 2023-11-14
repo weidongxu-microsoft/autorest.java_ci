@@ -17,8 +17,8 @@ public final class IotHubsImpl implements IotHubs {
 
     private final com.azure.resourcemanager.iothub.generated.IotHubManager serviceManager;
 
-    public IotHubsImpl(
-        IotHubsClient innerClient, com.azure.resourcemanager.iothub.generated.IotHubManager serviceManager) {
+    public IotHubsImpl(IotHubsClient innerClient,
+        com.azure.resourcemanager.iothub.generated.IotHubManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -27,8 +27,8 @@ public final class IotHubsImpl implements IotHubs {
         this.serviceClient().manualFailover(iotHubName, resourceGroupName, failoverInput);
     }
 
-    public void manualFailover(
-        String iotHubName, String resourceGroupName, FailoverInput failoverInput, Context context) {
+    public void manualFailover(String iotHubName, String resourceGroupName, FailoverInput failoverInput,
+        Context context) {
         this.serviceClient().manualFailover(iotHubName, resourceGroupName, failoverInput, context);
     }
 

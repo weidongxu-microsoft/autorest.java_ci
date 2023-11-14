@@ -7,7 +7,9 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The DASH setting for a track. */
+/**
+ * The DASH setting for a track.
+ */
 @Fluent
 public final class DashSettings {
     /*
@@ -16,13 +18,15 @@ public final class DashSettings {
     @JsonProperty(value = "role")
     private String role;
 
-    /** Creates an instance of DashSettings class. */
+    /**
+     * Creates an instance of DashSettings class.
+     */
     public DashSettings() {
     }
 
     /**
      * Get the role property: The role for the DASH setting.
-     *
+     * 
      * @return the role value.
      */
     public String role() {
@@ -31,7 +35,7 @@ public final class DashSettings {
 
     /**
      * Set the role property: The role for the DASH setting.
-     *
+     * 
      * @param role the role value to set.
      * @return the DashSettings object itself.
      */
@@ -42,7 +46,7 @@ public final class DashSettings {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -7,60 +7,62 @@ package com.azure.resourcemanager.appservice.generated.models;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AseV3NetworkingConfigurationInner;
 import java.util.List;
 
-/** An immutable client-side representation of AseV3NetworkingConfiguration. */
+/**
+ * An immutable client-side representation of AseV3NetworkingConfiguration.
+ */
 public interface AseV3NetworkingConfiguration {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the name property: The name of the resource.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the type property: The type of the resource.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the kind property: Kind of resource.
-     *
+     * 
      * @return the kind value.
      */
     String kind();
 
     /**
      * Gets the windowsOutboundIpAddresses property: The windowsOutboundIpAddresses property.
-     *
+     * 
      * @return the windowsOutboundIpAddresses value.
      */
     List<String> windowsOutboundIpAddresses();
 
     /**
      * Gets the linuxOutboundIpAddresses property: The linuxOutboundIpAddresses property.
-     *
+     * 
      * @return the linuxOutboundIpAddresses value.
      */
     List<String> linuxOutboundIpAddresses();
 
     /**
      * Gets the externalInboundIpAddresses property: The externalInboundIpAddresses property.
-     *
+     * 
      * @return the externalInboundIpAddresses value.
      */
     List<String> externalInboundIpAddresses();
 
     /**
      * Gets the internalInboundIpAddresses property: The internalInboundIpAddresses property.
-     *
+     * 
      * @return the internalInboundIpAddresses value.
      */
     List<String> internalInboundIpAddresses();
@@ -68,21 +70,21 @@ public interface AseV3NetworkingConfiguration {
     /**
      * Gets the allowNewPrivateEndpointConnections property: Property to enable and disable new private endpoint
      * connection creation on ASE.
-     *
+     * 
      * @return the allowNewPrivateEndpointConnections value.
      */
     Boolean allowNewPrivateEndpointConnections();
 
     /**
      * Gets the ftpEnabled property: Property to enable and disable FTP on ASEV3.
-     *
+     * 
      * @return the ftpEnabled value.
      */
     Boolean ftpEnabled();
 
     /**
      * Gets the remoteDebugEnabled property: Property to enable and disable Remote Debug on ASEV3.
-     *
+     * 
      * @return the remoteDebugEnabled value.
      */
     Boolean remoteDebugEnabled();
@@ -90,7 +92,7 @@ public interface AseV3NetworkingConfiguration {
     /**
      * Gets the inboundIpAddressOverride property: Customer provided Inbound IP Address. Only able to be set on Ase
      * create.
-     *
+     * 
      * @return the inboundIpAddressOverride value.
      */
     String inboundIpAddressOverride();
@@ -98,7 +100,7 @@ public interface AseV3NetworkingConfiguration {
     /**
      * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.AseV3NetworkingConfigurationInner
      * object.
-     *
+     * 
      * @return the inner object.
      */
     AseV3NetworkingConfigurationInner innerModel();

@@ -15,8 +15,7 @@ public final class SiteLogsConfigImpl implements SiteLogsConfig {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    SiteLogsConfigImpl(
-        SiteLogsConfigInner innerObject,
+    SiteLogsConfigImpl(SiteLogsConfigInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

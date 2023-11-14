@@ -7,7 +7,9 @@ package com.azure.resourcemanager.mediaservices.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The response from the check name availability request. */
+/**
+ * The response from the check name availability request.
+ */
 @Fluent
 public final class EntityNameAvailabilityCheckOutputInner {
     /*
@@ -28,13 +30,15 @@ public final class EntityNameAvailabilityCheckOutputInner {
     @JsonProperty(value = "message")
     private String message;
 
-    /** Creates an instance of EntityNameAvailabilityCheckOutputInner class. */
+    /**
+     * Creates an instance of EntityNameAvailabilityCheckOutputInner class.
+     */
     public EntityNameAvailabilityCheckOutputInner() {
     }
 
     /**
      * Get the nameAvailable property: Specifies if the name is available.
-     *
+     * 
      * @return the nameAvailable value.
      */
     public boolean nameAvailable() {
@@ -43,7 +47,7 @@ public final class EntityNameAvailabilityCheckOutputInner {
 
     /**
      * Set the nameAvailable property: Specifies if the name is available.
-     *
+     * 
      * @param nameAvailable the nameAvailable value to set.
      * @return the EntityNameAvailabilityCheckOutputInner object itself.
      */
@@ -54,7 +58,7 @@ public final class EntityNameAvailabilityCheckOutputInner {
 
     /**
      * Get the reason property: Specifies the reason if the name is not available.
-     *
+     * 
      * @return the reason value.
      */
     public String reason() {
@@ -63,7 +67,7 @@ public final class EntityNameAvailabilityCheckOutputInner {
 
     /**
      * Set the reason property: Specifies the reason if the name is not available.
-     *
+     * 
      * @param reason the reason value to set.
      * @return the EntityNameAvailabilityCheckOutputInner object itself.
      */
@@ -74,7 +78,7 @@ public final class EntityNameAvailabilityCheckOutputInner {
 
     /**
      * Get the message property: Specifies the detailed reason if the name is not available.
-     *
+     * 
      * @return the message value.
      */
     public String message() {
@@ -83,7 +87,7 @@ public final class EntityNameAvailabilityCheckOutputInner {
 
     /**
      * Set the message property: Specifies the detailed reason if the name is not available.
-     *
+     * 
      * @param message the message value to set.
      * @return the EntityNameAvailabilityCheckOutputInner object itself.
      */
@@ -94,7 +98,7 @@ public final class EntityNameAvailabilityCheckOutputInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

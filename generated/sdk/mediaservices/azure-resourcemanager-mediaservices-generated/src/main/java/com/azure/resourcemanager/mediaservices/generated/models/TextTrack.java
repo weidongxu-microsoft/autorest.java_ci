@@ -49,14 +49,16 @@ public final class TextTrack extends TrackBase {
     @JsonProperty(value = "hlsSettings")
     private HlsSettings hlsSettings;
 
-    /** Creates an instance of TextTrack class. */
+    /**
+     * Creates an instance of TextTrack class.
+     */
     public TextTrack() {
     }
 
     /**
-     * Get the fileName property: The file name to the source file. This file is located in the storage container of the
-     * asset.
-     *
+     * Get the fileName property: The file name to the source file. This file is located in the storage container of
+     * the asset.
+     * 
      * @return the fileName value.
      */
     public String fileName() {
@@ -64,9 +66,9 @@ public final class TextTrack extends TrackBase {
     }
 
     /**
-     * Set the fileName property: The file name to the source file. This file is located in the storage container of the
-     * asset.
-     *
+     * Set the fileName property: The file name to the source file. This file is located in the storage container of
+     * the asset.
+     * 
      * @param fileName the fileName value to set.
      * @return the TextTrack object itself.
      */
@@ -76,9 +78,9 @@ public final class TextTrack extends TrackBase {
     }
 
     /**
-     * Get the displayName property: The display name of the text track on a video player. In HLS, this maps to the NAME
-     * attribute of EXT-X-MEDIA.
-     *
+     * Get the displayName property: The display name of the text track on a video player. In HLS, this maps to the
+     * NAME attribute of EXT-X-MEDIA.
+     * 
      * @return the displayName value.
      */
     public String displayName() {
@@ -86,9 +88,9 @@ public final class TextTrack extends TrackBase {
     }
 
     /**
-     * Set the displayName property: The display name of the text track on a video player. In HLS, this maps to the NAME
-     * attribute of EXT-X-MEDIA.
-     *
+     * Set the displayName property: The display name of the text track on a video player. In HLS, this maps to the
+     * NAME attribute of EXT-X-MEDIA.
+     * 
      * @param displayName the displayName value to set.
      * @return the TextTrack object itself.
      */
@@ -99,7 +101,7 @@ public final class TextTrack extends TrackBase {
 
     /**
      * Get the languageCode property: The RFC5646 language code for the text track.
-     *
+     * 
      * @return the languageCode value.
      */
     public String languageCode() {
@@ -110,7 +112,7 @@ public final class TextTrack extends TrackBase {
      * Get the playerVisibility property: When PlayerVisibility is set to "Visible", the text track will be present in
      * the DASH manifest or HLS playlist when requested by a client. When the PlayerVisibility is set to "Hidden", the
      * text will not be available to the client. The default value is "Visible".
-     *
+     * 
      * @return the playerVisibility value.
      */
     public Visibility playerVisibility() {
@@ -121,7 +123,7 @@ public final class TextTrack extends TrackBase {
      * Set the playerVisibility property: When PlayerVisibility is set to "Visible", the text track will be present in
      * the DASH manifest or HLS playlist when requested by a client. When the PlayerVisibility is set to "Hidden", the
      * text will not be available to the client. The default value is "Visible".
-     *
+     * 
      * @param playerVisibility the playerVisibility value to set.
      * @return the TextTrack object itself.
      */
@@ -132,7 +134,7 @@ public final class TextTrack extends TrackBase {
 
     /**
      * Get the hlsSettings property: The HLS specific setting for the text track.
-     *
+     * 
      * @return the hlsSettings value.
      */
     public HlsSettings hlsSettings() {
@@ -141,7 +143,7 @@ public final class TextTrack extends TrackBase {
 
     /**
      * Set the hlsSettings property: The HLS specific setting for the text track.
-     *
+     * 
      * @param hlsSettings the hlsSettings value to set.
      * @return the TextTrack object itself.
      */
@@ -152,7 +154,7 @@ public final class TextTrack extends TrackBase {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

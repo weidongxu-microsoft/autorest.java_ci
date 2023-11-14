@@ -12,8 +12,7 @@ public final class AutoApprovedPrivateLinkServiceImpl implements AutoApprovedPri
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    AutoApprovedPrivateLinkServiceImpl(
-        AutoApprovedPrivateLinkServiceInner innerObject,
+    AutoApprovedPrivateLinkServiceImpl(AutoApprovedPrivateLinkServiceInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

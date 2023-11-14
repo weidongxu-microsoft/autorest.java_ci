@@ -8,17 +8,23 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Severity of the route error. */
+/**
+ * Severity of the route error.
+ */
 public final class RouteErrorSeverity extends ExpandableStringEnum<RouteErrorSeverity> {
-    /** Static value error for RouteErrorSeverity. */
+    /**
+     * Static value error for RouteErrorSeverity.
+     */
     public static final RouteErrorSeverity ERROR = fromString("error");
 
-    /** Static value warning for RouteErrorSeverity. */
+    /**
+     * Static value warning for RouteErrorSeverity.
+     */
     public static final RouteErrorSeverity WARNING = fromString("warning");
 
     /**
      * Creates a new instance of RouteErrorSeverity value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -27,7 +33,7 @@ public final class RouteErrorSeverity extends ExpandableStringEnum<RouteErrorSev
 
     /**
      * Creates or finds a RouteErrorSeverity from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding RouteErrorSeverity.
      */
@@ -38,7 +44,7 @@ public final class RouteErrorSeverity extends ExpandableStringEnum<RouteErrorSev
 
     /**
      * Gets known RouteErrorSeverity values.
-     *
+     * 
      * @return known RouteErrorSeverity values.
      */
     public static Collection<RouteErrorSeverity> values() {

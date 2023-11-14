@@ -13,21 +13,29 @@ import java.util.Collection;
  * Metrics section of Event Hub Namespace inside Azure Portal.
  */
 public final class MetricId extends ExpandableStringEnum<MetricId> {
-    /** Static value IncomingBytes for MetricId. */
+    /**
+     * Static value IncomingBytes for MetricId.
+     */
     public static final MetricId INCOMING_BYTES = fromString("IncomingBytes");
 
-    /** Static value OutgoingBytes for MetricId. */
+    /**
+     * Static value OutgoingBytes for MetricId.
+     */
     public static final MetricId OUTGOING_BYTES = fromString("OutgoingBytes");
 
-    /** Static value IncomingMessages for MetricId. */
+    /**
+     * Static value IncomingMessages for MetricId.
+     */
     public static final MetricId INCOMING_MESSAGES = fromString("IncomingMessages");
 
-    /** Static value OutgoingMessages for MetricId. */
+    /**
+     * Static value OutgoingMessages for MetricId.
+     */
     public static final MetricId OUTGOING_MESSAGES = fromString("OutgoingMessages");
 
     /**
      * Creates a new instance of MetricId value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -36,7 +44,7 @@ public final class MetricId extends ExpandableStringEnum<MetricId> {
 
     /**
      * Creates or finds a MetricId from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding MetricId.
      */
@@ -47,7 +55,7 @@ public final class MetricId extends ExpandableStringEnum<MetricId> {
 
     /**
      * Gets known MetricId values.
-     *
+     * 
      * @return known MetricId values.
      */
     public static Collection<MetricId> values() {

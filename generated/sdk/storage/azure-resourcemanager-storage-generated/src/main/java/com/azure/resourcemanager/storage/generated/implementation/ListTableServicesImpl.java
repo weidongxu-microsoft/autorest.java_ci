@@ -17,8 +17,8 @@ public final class ListTableServicesImpl implements ListTableServices {
 
     private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
-    ListTableServicesImpl(
-        ListTableServicesInner innerObject, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
+    ListTableServicesImpl(ListTableServicesInner innerObject,
+        com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -26,12 +26,8 @@ public final class ListTableServicesImpl implements ListTableServices {
     public List<TableServiceProperties> value() {
         List<TableServicePropertiesInner> inner = this.innerModel().value();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new TableServicePropertiesImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new TableServicePropertiesImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

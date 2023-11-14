@@ -13,8 +13,8 @@ public final class TagsResourceImpl implements TagsResource {
 
     private final com.azure.resourcemanager.resources.generated.ResourceManager serviceManager;
 
-    TagsResourceImpl(
-        TagsResourceInner innerObject, com.azure.resourcemanager.resources.generated.ResourceManager serviceManager) {
+    TagsResourceImpl(TagsResourceInner innerObject,
+        com.azure.resourcemanager.resources.generated.ResourceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

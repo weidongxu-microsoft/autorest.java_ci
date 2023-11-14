@@ -58,14 +58,16 @@ public final class NaptrRecord {
     @JsonProperty(value = "replacement")
     private String replacement;
 
-    /** Creates an instance of NaptrRecord class. */
+    /**
+     * Creates an instance of NaptrRecord class.
+     */
     public NaptrRecord() {
     }
 
     /**
      * Get the order property: The order in which the NAPTR records MUST be processed in order to accurately represent
      * the ordered list of rules. The ordering is from lowest to highest. Valid values: 0-65535.
-     *
+     * 
      * @return the order value.
      */
     public Integer order() {
@@ -75,7 +77,7 @@ public final class NaptrRecord {
     /**
      * Set the order property: The order in which the NAPTR records MUST be processed in order to accurately represent
      * the ordered list of rules. The ordering is from lowest to highest. Valid values: 0-65535.
-     *
+     * 
      * @param order the order value to set.
      * @return the NaptrRecord object itself.
      */
@@ -87,7 +89,7 @@ public final class NaptrRecord {
     /**
      * Get the preference property: The preference specifies the order in which NAPTR records with equal 'order' values
      * should be processed, low numbers being processed before high numbers. Valid values: 0-65535.
-     *
+     * 
      * @return the preference value.
      */
     public Integer preference() {
@@ -97,7 +99,7 @@ public final class NaptrRecord {
     /**
      * Set the preference property: The preference specifies the order in which NAPTR records with equal 'order' values
      * should be processed, low numbers being processed before high numbers. Valid values: 0-65535.
-     *
+     * 
      * @param preference the preference value to set.
      * @return the NaptrRecord object itself.
      */
@@ -110,7 +112,7 @@ public final class NaptrRecord {
      * Get the flags property: The flags specific to DDDS applications. Values currently defined in RFC 3404 are
      * uppercase and lowercase letters "A", "P", "S", and "U", and the empty string, "". Enclose Flags in quotation
      * marks.
-     *
+     * 
      * @return the flags value.
      */
     public String flags() {
@@ -121,7 +123,7 @@ public final class NaptrRecord {
      * Set the flags property: The flags specific to DDDS applications. Values currently defined in RFC 3404 are
      * uppercase and lowercase letters "A", "P", "S", and "U", and the empty string, "". Enclose Flags in quotation
      * marks.
-     *
+     * 
      * @param flags the flags value to set.
      * @return the NaptrRecord object itself.
      */
@@ -132,7 +134,7 @@ public final class NaptrRecord {
 
     /**
      * Get the services property: The services specific to DDDS applications. Enclose Services in quotation marks.
-     *
+     * 
      * @return the services value.
      */
     public String services() {
@@ -141,7 +143,7 @@ public final class NaptrRecord {
 
     /**
      * Set the services property: The services specific to DDDS applications. Enclose Services in quotation marks.
-     *
+     * 
      * @param services the services value to set.
      * @return the NaptrRecord object itself.
      */
@@ -155,7 +157,7 @@ public final class NaptrRecord {
      * output value. For example: an IP phone system might use a regular expression to convert a phone number that is
      * entered by a user into a SIP URI. Enclose the regular expression in quotation marks. Specify either a value for
      * 'regexp' or a value for 'replacement'.
-     *
+     * 
      * @return the regexp value.
      */
     public String regexp() {
@@ -167,7 +169,7 @@ public final class NaptrRecord {
      * output value. For example: an IP phone system might use a regular expression to convert a phone number that is
      * entered by a user into a SIP URI. Enclose the regular expression in quotation marks. Specify either a value for
      * 'regexp' or a value for 'replacement'.
-     *
+     * 
      * @param regexp the regexp value to set.
      * @return the NaptrRecord object itself.
      */
@@ -181,7 +183,7 @@ public final class NaptrRecord {
      * that you want the DDDS application to submit a DNS query for. The DDDS application replaces the input value with
      * the value specified for replacement. Specify either a value for 'regexp' or a value for 'replacement'. If you
      * specify a value for 'regexp', specify a dot (.) for 'replacement'.
-     *
+     * 
      * @return the replacement value.
      */
     public String replacement() {
@@ -193,7 +195,7 @@ public final class NaptrRecord {
      * that you want the DDDS application to submit a DNS query for. The DDDS application replaces the input value with
      * the value specified for replacement. Specify either a value for 'regexp' or a value for 'replacement'. If you
      * specify a value for 'regexp', specify a dot (.) for 'replacement'.
-     *
+     * 
      * @param replacement the replacement value to set.
      * @return the NaptrRecord object itself.
      */
@@ -204,7 +206,7 @@ public final class NaptrRecord {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

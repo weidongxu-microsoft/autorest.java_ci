@@ -22,52 +22,42 @@ public final class SharedGalleryImageVersionsImpl implements SharedGalleryImageV
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    public SharedGalleryImageVersionsImpl(
-        SharedGalleryImageVersionsClient innerClient,
+    public SharedGalleryImageVersionsImpl(SharedGalleryImageVersionsClient innerClient,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public PagedIterable<SharedGalleryImageVersion> list(
-        String location, String galleryUniqueName, String galleryImageName) {
-        PagedIterable<SharedGalleryImageVersionInner> inner =
-            this.serviceClient().list(location, galleryUniqueName, galleryImageName);
+    public PagedIterable<SharedGalleryImageVersion> list(String location, String galleryUniqueName,
+        String galleryImageName) {
+        PagedIterable<SharedGalleryImageVersionInner> inner
+            = this.serviceClient().list(location, galleryUniqueName, galleryImageName);
         return Utils.mapPage(inner, inner1 -> new SharedGalleryImageVersionImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<SharedGalleryImageVersion> list(
-        String location, String galleryUniqueName, String galleryImageName, SharedToValues sharedTo, Context context) {
-        PagedIterable<SharedGalleryImageVersionInner> inner =
-            this.serviceClient().list(location, galleryUniqueName, galleryImageName, sharedTo, context);
+    public PagedIterable<SharedGalleryImageVersion> list(String location, String galleryUniqueName,
+        String galleryImageName, SharedToValues sharedTo, Context context) {
+        PagedIterable<SharedGalleryImageVersionInner> inner
+            = this.serviceClient().list(location, galleryUniqueName, galleryImageName, sharedTo, context);
         return Utils.mapPage(inner, inner1 -> new SharedGalleryImageVersionImpl(inner1, this.manager()));
     }
 
-    public Response<SharedGalleryImageVersion> getWithResponse(
-        String location,
-        String galleryUniqueName,
-        String galleryImageName,
-        String galleryImageVersionName,
-        Context context) {
-        Response<SharedGalleryImageVersionInner> inner =
-            this
-                .serviceClient()
-                .getWithResponse(location, galleryUniqueName, galleryImageName, galleryImageVersionName, context);
+    public Response<SharedGalleryImageVersion> getWithResponse(String location, String galleryUniqueName,
+        String galleryImageName, String galleryImageVersionName, Context context) {
+        Response<SharedGalleryImageVersionInner> inner = this.serviceClient().getWithResponse(location,
+            galleryUniqueName, galleryImageName, galleryImageVersionName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new SharedGalleryImageVersionImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public SharedGalleryImageVersion get(
-        String location, String galleryUniqueName, String galleryImageName, String galleryImageVersionName) {
-        SharedGalleryImageVersionInner inner =
-            this.serviceClient().get(location, galleryUniqueName, galleryImageName, galleryImageVersionName);
+    public SharedGalleryImageVersion get(String location, String galleryUniqueName, String galleryImageName,
+        String galleryImageVersionName) {
+        SharedGalleryImageVersionInner inner
+            = this.serviceClient().get(location, galleryUniqueName, galleryImageName, galleryImageVersionName);
         if (inner != null) {
             return new SharedGalleryImageVersionImpl(inner, this.manager());
         } else {

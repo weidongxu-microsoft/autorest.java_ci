@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The configuration of dataset in the report. */
+/**
+ * The configuration of dataset in the report.
+ */
 @Fluent
 public final class ReportConfigDatasetConfiguration {
     /*
@@ -18,14 +20,16 @@ public final class ReportConfigDatasetConfiguration {
     @JsonProperty(value = "columns")
     private List<String> columns;
 
-    /** Creates an instance of ReportConfigDatasetConfiguration class. */
+    /**
+     * Creates an instance of ReportConfigDatasetConfiguration class.
+     */
     public ReportConfigDatasetConfiguration() {
     }
 
     /**
      * Get the columns property: Array of column names to be included in the report. Any valid report column name is
      * allowed. If not provided, then report includes all columns.
-     *
+     * 
      * @return the columns value.
      */
     public List<String> columns() {
@@ -35,7 +39,7 @@ public final class ReportConfigDatasetConfiguration {
     /**
      * Set the columns property: Array of column names to be included in the report. Any valid report column name is
      * allowed. If not provided, then report includes all columns.
-     *
+     * 
      * @param columns the columns value to set.
      * @return the ReportConfigDatasetConfiguration object itself.
      */
@@ -46,7 +50,7 @@ public final class ReportConfigDatasetConfiguration {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

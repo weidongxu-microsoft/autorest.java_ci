@@ -7,18 +7,20 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.resourcemanager.network.generated.fluent.models.SecurityGroupViewResultInner;
 import java.util.List;
 
-/** An immutable client-side representation of SecurityGroupViewResult. */
+/**
+ * An immutable client-side representation of SecurityGroupViewResult.
+ */
 public interface SecurityGroupViewResult {
     /**
      * Gets the networkInterfaces property: List of network interfaces on the specified VM.
-     *
+     * 
      * @return the networkInterfaces value.
      */
     List<SecurityGroupNetworkInterface> networkInterfaces();
 
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.SecurityGroupViewResultInner object.
-     *
+     * 
      * @return the inner object.
      */
     SecurityGroupViewResultInner innerModel();

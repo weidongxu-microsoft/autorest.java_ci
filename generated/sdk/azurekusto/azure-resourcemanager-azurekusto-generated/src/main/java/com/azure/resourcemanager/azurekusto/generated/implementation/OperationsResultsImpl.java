@@ -20,8 +20,7 @@ public final class OperationsResultsImpl implements OperationsResults {
 
     private final com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager;
 
-    public OperationsResultsImpl(
-        OperationsResultsClient innerClient,
+    public OperationsResultsImpl(OperationsResultsClient innerClient,
         com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -30,10 +29,7 @@ public final class OperationsResultsImpl implements OperationsResults {
     public Response<OperationResult> getWithResponse(String location, String operationId, Context context) {
         Response<OperationResultInner> inner = this.serviceClient().getWithResponse(location, operationId, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new OperationResultImpl(inner.getValue(), this.manager()));
         } else {
             return null;

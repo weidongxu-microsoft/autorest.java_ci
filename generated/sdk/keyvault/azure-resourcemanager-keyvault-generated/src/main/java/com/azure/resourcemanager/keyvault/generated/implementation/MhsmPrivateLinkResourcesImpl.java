@@ -20,22 +20,18 @@ public final class MhsmPrivateLinkResourcesImpl implements MhsmPrivateLinkResour
 
     private final com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager;
 
-    public MhsmPrivateLinkResourcesImpl(
-        MhsmPrivateLinkResourcesClient innerClient,
+    public MhsmPrivateLinkResourcesImpl(MhsmPrivateLinkResourcesClient innerClient,
         com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<MhsmPrivateLinkResourceListResult> listByMhsmResourceWithResponse(
-        String resourceGroupName, String name, Context context) {
-        Response<MhsmPrivateLinkResourceListResultInner> inner =
-            this.serviceClient().listByMhsmResourceWithResponse(resourceGroupName, name, context);
+    public Response<MhsmPrivateLinkResourceListResult> listByMhsmResourceWithResponse(String resourceGroupName,
+        String name, Context context) {
+        Response<MhsmPrivateLinkResourceListResultInner> inner
+            = this.serviceClient().listByMhsmResourceWithResponse(resourceGroupName, name, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new MhsmPrivateLinkResourceListResultImpl(inner.getValue(), this.manager()));
         } else {
             return null;

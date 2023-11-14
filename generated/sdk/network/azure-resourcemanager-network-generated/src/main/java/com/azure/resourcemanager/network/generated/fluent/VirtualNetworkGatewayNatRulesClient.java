@@ -13,11 +13,13 @@ import com.azure.core.util.Context;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkGatewayNatRuleInner;
 
-/** An instance of this class provides access to all the operations defined in VirtualNetworkGatewayNatRulesClient. */
+/**
+ * An instance of this class provides access to all the operations defined in VirtualNetworkGatewayNatRulesClient.
+ */
 public interface VirtualNetworkGatewayNatRulesClient {
     /**
      * Retrieves the details of a nat rule.
-     *
+     * 
      * @param resourceGroupName The resource group name of the Virtual Network Gateway.
      * @param virtualNetworkGatewayName The name of the gateway.
      * @param natRuleName The name of the nat rule.
@@ -28,12 +30,12 @@ public interface VirtualNetworkGatewayNatRulesClient {
      * @return virtualNetworkGatewayNatRule Resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<VirtualNetworkGatewayNatRuleInner> getWithResponse(
-        String resourceGroupName, String virtualNetworkGatewayName, String natRuleName, Context context);
+    Response<VirtualNetworkGatewayNatRuleInner> getWithResponse(String resourceGroupName,
+        String virtualNetworkGatewayName, String natRuleName, Context context);
 
     /**
      * Retrieves the details of a nat rule.
-     *
+     * 
      * @param resourceGroupName The resource group name of the Virtual Network Gateway.
      * @param virtualNetworkGatewayName The name of the gateway.
      * @param natRuleName The name of the nat rule.
@@ -43,12 +45,12 @@ public interface VirtualNetworkGatewayNatRulesClient {
      * @return virtualNetworkGatewayNatRule Resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    VirtualNetworkGatewayNatRuleInner get(
-        String resourceGroupName, String virtualNetworkGatewayName, String natRuleName);
+    VirtualNetworkGatewayNatRuleInner get(String resourceGroupName, String virtualNetworkGatewayName,
+        String natRuleName);
 
     /**
      * Creates a nat rule to a scalable virtual network gateway if it doesn't exist else updates the existing nat rules.
-     *
+     * 
      * @param resourceGroupName The resource group name of the Virtual Network Gateway.
      * @param virtualNetworkGatewayName The name of the gateway.
      * @param natRuleName The name of the nat rule.
@@ -60,14 +62,12 @@ public interface VirtualNetworkGatewayNatRulesClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<VirtualNetworkGatewayNatRuleInner>, VirtualNetworkGatewayNatRuleInner> beginCreateOrUpdate(
-        String resourceGroupName,
-        String virtualNetworkGatewayName,
-        String natRuleName,
+        String resourceGroupName, String virtualNetworkGatewayName, String natRuleName,
         VirtualNetworkGatewayNatRuleInner natRuleParameters);
 
     /**
      * Creates a nat rule to a scalable virtual network gateway if it doesn't exist else updates the existing nat rules.
-     *
+     * 
      * @param resourceGroupName The resource group name of the Virtual Network Gateway.
      * @param virtualNetworkGatewayName The name of the gateway.
      * @param natRuleName The name of the nat rule.
@@ -80,15 +80,12 @@ public interface VirtualNetworkGatewayNatRulesClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<VirtualNetworkGatewayNatRuleInner>, VirtualNetworkGatewayNatRuleInner> beginCreateOrUpdate(
-        String resourceGroupName,
-        String virtualNetworkGatewayName,
-        String natRuleName,
-        VirtualNetworkGatewayNatRuleInner natRuleParameters,
-        Context context);
+        String resourceGroupName, String virtualNetworkGatewayName, String natRuleName,
+        VirtualNetworkGatewayNatRuleInner natRuleParameters, Context context);
 
     /**
      * Creates a nat rule to a scalable virtual network gateway if it doesn't exist else updates the existing nat rules.
-     *
+     * 
      * @param resourceGroupName The resource group name of the Virtual Network Gateway.
      * @param virtualNetworkGatewayName The name of the gateway.
      * @param natRuleName The name of the nat rule.
@@ -99,15 +96,12 @@ public interface VirtualNetworkGatewayNatRulesClient {
      * @return virtualNetworkGatewayNatRule Resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    VirtualNetworkGatewayNatRuleInner createOrUpdate(
-        String resourceGroupName,
-        String virtualNetworkGatewayName,
-        String natRuleName,
-        VirtualNetworkGatewayNatRuleInner natRuleParameters);
+    VirtualNetworkGatewayNatRuleInner createOrUpdate(String resourceGroupName, String virtualNetworkGatewayName,
+        String natRuleName, VirtualNetworkGatewayNatRuleInner natRuleParameters);
 
     /**
      * Creates a nat rule to a scalable virtual network gateway if it doesn't exist else updates the existing nat rules.
-     *
+     * 
      * @param resourceGroupName The resource group name of the Virtual Network Gateway.
      * @param virtualNetworkGatewayName The name of the gateway.
      * @param natRuleName The name of the nat rule.
@@ -119,16 +113,12 @@ public interface VirtualNetworkGatewayNatRulesClient {
      * @return virtualNetworkGatewayNatRule Resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    VirtualNetworkGatewayNatRuleInner createOrUpdate(
-        String resourceGroupName,
-        String virtualNetworkGatewayName,
-        String natRuleName,
-        VirtualNetworkGatewayNatRuleInner natRuleParameters,
-        Context context);
+    VirtualNetworkGatewayNatRuleInner createOrUpdate(String resourceGroupName, String virtualNetworkGatewayName,
+        String natRuleName, VirtualNetworkGatewayNatRuleInner natRuleParameters, Context context);
 
     /**
      * Deletes a nat rule.
-     *
+     * 
      * @param resourceGroupName The resource group name of the Virtual Network Gateway.
      * @param virtualNetworkGatewayName The name of the gateway.
      * @param natRuleName The name of the nat rule.
@@ -138,12 +128,12 @@ public interface VirtualNetworkGatewayNatRulesClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginDelete(
-        String resourceGroupName, String virtualNetworkGatewayName, String natRuleName);
+    SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String virtualNetworkGatewayName,
+        String natRuleName);
 
     /**
      * Deletes a nat rule.
-     *
+     * 
      * @param resourceGroupName The resource group name of the Virtual Network Gateway.
      * @param virtualNetworkGatewayName The name of the gateway.
      * @param natRuleName The name of the nat rule.
@@ -154,12 +144,12 @@ public interface VirtualNetworkGatewayNatRulesClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginDelete(
-        String resourceGroupName, String virtualNetworkGatewayName, String natRuleName, Context context);
+    SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String virtualNetworkGatewayName,
+        String natRuleName, Context context);
 
     /**
      * Deletes a nat rule.
-     *
+     * 
      * @param resourceGroupName The resource group name of the Virtual Network Gateway.
      * @param virtualNetworkGatewayName The name of the gateway.
      * @param natRuleName The name of the nat rule.
@@ -172,7 +162,7 @@ public interface VirtualNetworkGatewayNatRulesClient {
 
     /**
      * Deletes a nat rule.
-     *
+     * 
      * @param resourceGroupName The resource group name of the Virtual Network Gateway.
      * @param virtualNetworkGatewayName The name of the gateway.
      * @param natRuleName The name of the nat rule.
@@ -186,22 +176,22 @@ public interface VirtualNetworkGatewayNatRulesClient {
 
     /**
      * Retrieves all nat rules for a particular virtual network gateway.
-     *
+     * 
      * @param resourceGroupName The resource group name of the virtual network gateway.
      * @param virtualNetworkGatewayName The name of the gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return result of the request to list all nat rules to a virtual network gateway as paginated response with
-     *     {@link PagedIterable}.
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<VirtualNetworkGatewayNatRuleInner> listByVirtualNetworkGateway(
-        String resourceGroupName, String virtualNetworkGatewayName);
+    PagedIterable<VirtualNetworkGatewayNatRuleInner> listByVirtualNetworkGateway(String resourceGroupName,
+        String virtualNetworkGatewayName);
 
     /**
      * Retrieves all nat rules for a particular virtual network gateway.
-     *
+     * 
      * @param resourceGroupName The resource group name of the virtual network gateway.
      * @param virtualNetworkGatewayName The name of the gateway.
      * @param context The context to associate with this operation.
@@ -209,9 +199,9 @@ public interface VirtualNetworkGatewayNatRulesClient {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return result of the request to list all nat rules to a virtual network gateway as paginated response with
-     *     {@link PagedIterable}.
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<VirtualNetworkGatewayNatRuleInner> listByVirtualNetworkGateway(
-        String resourceGroupName, String virtualNetworkGatewayName, Context context);
+    PagedIterable<VirtualNetworkGatewayNatRuleInner> listByVirtualNetworkGateway(String resourceGroupName,
+        String virtualNetworkGatewayName, Context context);
 }

@@ -8,20 +8,28 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Defines values for LookBackPeriod. */
+/**
+ * Defines values for LookBackPeriod.
+ */
 public final class LookBackPeriod extends ExpandableStringEnum<LookBackPeriod> {
-    /** Static value Last7Days for LookBackPeriod. */
+    /**
+     * Static value Last7Days for LookBackPeriod.
+     */
     public static final LookBackPeriod LAST7DAYS = fromString("Last7Days");
 
-    /** Static value Last30Days for LookBackPeriod. */
+    /**
+     * Static value Last30Days for LookBackPeriod.
+     */
     public static final LookBackPeriod LAST30DAYS = fromString("Last30Days");
 
-    /** Static value Last60Days for LookBackPeriod. */
+    /**
+     * Static value Last60Days for LookBackPeriod.
+     */
     public static final LookBackPeriod LAST60DAYS = fromString("Last60Days");
 
     /**
      * Creates a new instance of LookBackPeriod value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -30,7 +38,7 @@ public final class LookBackPeriod extends ExpandableStringEnum<LookBackPeriod> {
 
     /**
      * Creates or finds a LookBackPeriod from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding LookBackPeriod.
      */
@@ -41,7 +49,7 @@ public final class LookBackPeriod extends ExpandableStringEnum<LookBackPeriod> {
 
     /**
      * Gets known LookBackPeriod values.
-     *
+     * 
      * @return known LookBackPeriod values.
      */
     public static Collection<LookBackPeriod> values() {

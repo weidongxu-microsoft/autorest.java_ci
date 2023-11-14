@@ -18,7 +18,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
 
-/** The properties of the view. */
+/**
+ * The properties of the view.
+ */
 @Fluent
 public final class ViewProperties {
     /*
@@ -106,13 +108,15 @@ public final class ViewProperties {
     @JsonProperty(value = "pivots")
     private List<PivotProperties> pivots;
 
-    /** Creates an instance of ViewProperties class. */
+    /**
+     * Creates an instance of ViewProperties class.
+     */
     public ViewProperties() {
     }
 
     /**
      * Get the displayName property: User input name of the view. Required.
-     *
+     * 
      * @return the displayName value.
      */
     public String displayName() {
@@ -121,7 +125,7 @@ public final class ViewProperties {
 
     /**
      * Set the displayName property: User input name of the view. Required.
-     *
+     * 
      * @param displayName the displayName value to set.
      * @return the ViewProperties object itself.
      */
@@ -131,12 +135,13 @@ public final class ViewProperties {
     }
 
     /**
-     * Get the scope property: Cost Management scope to save the view on. This includes 'subscriptions/{subscriptionId}'
-     * for subscription scope, 'subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup
-     * scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope,
-     * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for Department scope,
-     * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}' for
-     * EnrollmentAccount scope,
+     * Get the scope property: Cost Management scope to save the view on. This includes
+     * 'subscriptions/{subscriptionId}' for subscription scope,
+     * 'subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup scope,
+     * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope,
+     * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for Department
+     * scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}'
+     * for EnrollmentAccount scope,
      * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
      * BillingProfile scope,
      * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
@@ -145,7 +150,7 @@ public final class ViewProperties {
      * ExternalBillingAccount scope, and
      * '/providers/Microsoft.CostManagement/externalSubscriptions/{externalSubscriptionName}' for ExternalSubscription
      * scope.
-     *
+     * 
      * @return the scope value.
      */
     public String scope() {
@@ -153,12 +158,13 @@ public final class ViewProperties {
     }
 
     /**
-     * Set the scope property: Cost Management scope to save the view on. This includes 'subscriptions/{subscriptionId}'
-     * for subscription scope, 'subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup
-     * scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope,
-     * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for Department scope,
-     * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}' for
-     * EnrollmentAccount scope,
+     * Set the scope property: Cost Management scope to save the view on. This includes
+     * 'subscriptions/{subscriptionId}' for subscription scope,
+     * 'subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup scope,
+     * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope,
+     * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for Department
+     * scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}'
+     * for EnrollmentAccount scope,
      * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
      * BillingProfile scope,
      * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
@@ -167,7 +173,7 @@ public final class ViewProperties {
      * ExternalBillingAccount scope, and
      * '/providers/Microsoft.CostManagement/externalSubscriptions/{externalSubscriptionName}' for ExternalSubscription
      * scope.
-     *
+     * 
      * @param scope the scope value to set.
      * @return the ViewProperties object itself.
      */
@@ -178,7 +184,7 @@ public final class ViewProperties {
 
     /**
      * Get the createdOn property: Date the user created this view.
-     *
+     * 
      * @return the createdOn value.
      */
     public OffsetDateTime createdOn() {
@@ -187,7 +193,7 @@ public final class ViewProperties {
 
     /**
      * Get the modifiedOn property: Date when the user last modified this view.
-     *
+     * 
      * @return the modifiedOn value.
      */
     public OffsetDateTime modifiedOn() {
@@ -196,7 +202,7 @@ public final class ViewProperties {
 
     /**
      * Get the dateRange property: Selected date range for viewing cost in.
-     *
+     * 
      * @return the dateRange value.
      */
     public String dateRange() {
@@ -205,7 +211,7 @@ public final class ViewProperties {
 
     /**
      * Get the currency property: Selected currency.
-     *
+     * 
      * @return the currency value.
      */
     public String currency() {
@@ -214,7 +220,7 @@ public final class ViewProperties {
 
     /**
      * Get the innerQuery property: Query body configuration. Required.
-     *
+     * 
      * @return the innerQuery value.
      */
     private ReportConfigDefinition innerQuery() {
@@ -223,7 +229,7 @@ public final class ViewProperties {
 
     /**
      * Get the chart property: Chart type of the main view in Cost Analysis. Required.
-     *
+     * 
      * @return the chart value.
      */
     public ChartType chart() {
@@ -232,7 +238,7 @@ public final class ViewProperties {
 
     /**
      * Set the chart property: Chart type of the main view in Cost Analysis. Required.
-     *
+     * 
      * @param chart the chart value to set.
      * @return the ViewProperties object itself.
      */
@@ -243,7 +249,7 @@ public final class ViewProperties {
 
     /**
      * Get the accumulated property: Show costs accumulated over time.
-     *
+     * 
      * @return the accumulated value.
      */
     public AccumulatedType accumulated() {
@@ -252,7 +258,7 @@ public final class ViewProperties {
 
     /**
      * Set the accumulated property: Show costs accumulated over time.
-     *
+     * 
      * @param accumulated the accumulated value to set.
      * @return the ViewProperties object itself.
      */
@@ -263,7 +269,7 @@ public final class ViewProperties {
 
     /**
      * Get the metric property: Metric to use when displaying costs.
-     *
+     * 
      * @return the metric value.
      */
     public MetricType metric() {
@@ -272,7 +278,7 @@ public final class ViewProperties {
 
     /**
      * Set the metric property: Metric to use when displaying costs.
-     *
+     * 
      * @param metric the metric value to set.
      * @return the ViewProperties object itself.
      */
@@ -283,7 +289,7 @@ public final class ViewProperties {
 
     /**
      * Get the kpis property: List of KPIs to show in Cost Analysis UI.
-     *
+     * 
      * @return the kpis value.
      */
     public List<KpiProperties> kpis() {
@@ -292,7 +298,7 @@ public final class ViewProperties {
 
     /**
      * Set the kpis property: List of KPIs to show in Cost Analysis UI.
-     *
+     * 
      * @param kpis the kpis value to set.
      * @return the ViewProperties object itself.
      */
@@ -303,7 +309,7 @@ public final class ViewProperties {
 
     /**
      * Get the pivots property: Configuration of 3 sub-views in the Cost Analysis UI.
-     *
+     * 
      * @return the pivots value.
      */
     public List<PivotProperties> pivots() {
@@ -312,7 +318,7 @@ public final class ViewProperties {
 
     /**
      * Set the pivots property: Configuration of 3 sub-views in the Cost Analysis UI.
-     *
+     * 
      * @param pivots the pivots value to set.
      * @return the ViewProperties object itself.
      */
@@ -322,10 +328,10 @@ public final class ViewProperties {
     }
 
     /**
-     * Get the type property: The type of the report. Usage represents actual usage, forecast represents forecasted data
-     * and UsageAndForecast represents both usage and forecasted data. Actual usage and forecasted data can be
+     * Get the type property: The type of the report. Usage represents actual usage, forecast represents forecasted
+     * data and UsageAndForecast represents both usage and forecasted data. Actual usage and forecasted data can be
      * differentiated based on dates.
-     *
+     * 
      * @return the type value.
      */
     public ReportType type() {
@@ -333,10 +339,10 @@ public final class ViewProperties {
     }
 
     /**
-     * Set the type property: The type of the report. Usage represents actual usage, forecast represents forecasted data
-     * and UsageAndForecast represents both usage and forecasted data. Actual usage and forecasted data can be
+     * Set the type property: The type of the report. Usage represents actual usage, forecast represents forecasted
+     * data and UsageAndForecast represents both usage and forecasted data. Actual usage and forecasted data can be
      * differentiated based on dates.
-     *
+     * 
      * @param type the type value to set.
      * @return the ViewProperties object itself.
      */
@@ -351,7 +357,7 @@ public final class ViewProperties {
     /**
      * Get the timeframe property: The time frame for pulling data for the report. If custom, then a specific time
      * period must be provided.
-     *
+     * 
      * @return the timeframe value.
      */
     public ReportTimeframeType timeframe() {
@@ -361,7 +367,7 @@ public final class ViewProperties {
     /**
      * Set the timeframe property: The time frame for pulling data for the report. If custom, then a specific time
      * period must be provided.
-     *
+     * 
      * @param timeframe the timeframe value to set.
      * @return the ViewProperties object itself.
      */
@@ -375,7 +381,7 @@ public final class ViewProperties {
 
     /**
      * Get the timePeriod property: Has time period for pulling data for the report.
-     *
+     * 
      * @return the timePeriod value.
      */
     public ReportConfigTimePeriod timePeriod() {
@@ -384,7 +390,7 @@ public final class ViewProperties {
 
     /**
      * Set the timePeriod property: Has time period for pulling data for the report.
-     *
+     * 
      * @param timePeriod the timePeriod value to set.
      * @return the ViewProperties object itself.
      */
@@ -398,7 +404,7 @@ public final class ViewProperties {
 
     /**
      * Get the dataSet property: Has definition for data in this report config.
-     *
+     * 
      * @return the dataSet value.
      */
     public ReportConfigDataset dataSet() {
@@ -407,7 +413,7 @@ public final class ViewProperties {
 
     /**
      * Set the dataSet property: Has definition for data in this report config.
-     *
+     * 
      * @param dataSet the dataSet value to set.
      * @return the ViewProperties object itself.
      */
@@ -421,7 +427,7 @@ public final class ViewProperties {
 
     /**
      * Get the includeMonetaryCommitment property: Include monetary commitment.
-     *
+     * 
      * @return the includeMonetaryCommitment value.
      */
     public Boolean includeMonetaryCommitment() {
@@ -430,7 +436,7 @@ public final class ViewProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

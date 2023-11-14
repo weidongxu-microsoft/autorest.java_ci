@@ -20,8 +20,7 @@ public final class UsageDetailsImpl implements UsageDetails {
 
     private final com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager;
 
-    public UsageDetailsImpl(
-        UsageDetailsClient innerClient,
+    public UsageDetailsImpl(UsageDetailsClient innerClient,
         com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -32,10 +31,10 @@ public final class UsageDetailsImpl implements UsageDetails {
         return Utils.mapPage(inner, inner1 -> new UsageDetailImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<UsageDetail> list(
-        String scope, String expand, String filter, String skiptoken, Integer top, Metrictype metric, Context context) {
-        PagedIterable<UsageDetailInner> inner =
-            this.serviceClient().list(scope, expand, filter, skiptoken, top, metric, context);
+    public PagedIterable<UsageDetail> list(String scope, String expand, String filter, String skiptoken, Integer top,
+        Metrictype metric, Context context) {
+        PagedIterable<UsageDetailInner> inner
+            = this.serviceClient().list(scope, expand, filter, skiptoken, top, metric, context);
         return Utils.mapPage(inner, inner1 -> new UsageDetailImpl(inner1, this.manager()));
     }
 

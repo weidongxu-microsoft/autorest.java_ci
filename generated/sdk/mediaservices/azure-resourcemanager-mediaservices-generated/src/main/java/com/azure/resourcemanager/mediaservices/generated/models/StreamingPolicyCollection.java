@@ -9,7 +9,9 @@ import com.azure.resourcemanager.mediaservices.generated.fluent.models.Streaming
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** A collection of StreamingPolicy items. */
+/**
+ * A collection of StreamingPolicy items.
+ */
 @Fluent
 public final class StreamingPolicyCollection {
     /*
@@ -25,13 +27,15 @@ public final class StreamingPolicyCollection {
     @JsonProperty(value = "@odata.nextLink")
     private String odataNextLink;
 
-    /** Creates an instance of StreamingPolicyCollection class. */
+    /**
+     * Creates an instance of StreamingPolicyCollection class.
+     */
     public StreamingPolicyCollection() {
     }
 
     /**
      * Get the value property: A collection of StreamingPolicy items.
-     *
+     * 
      * @return the value value.
      */
     public List<StreamingPolicyInner> value() {
@@ -40,7 +44,7 @@ public final class StreamingPolicyCollection {
 
     /**
      * Set the value property: A collection of StreamingPolicy items.
-     *
+     * 
      * @param value the value value to set.
      * @return the StreamingPolicyCollection object itself.
      */
@@ -52,7 +56,7 @@ public final class StreamingPolicyCollection {
     /**
      * Get the odataNextLink property: A link to the next page of the collection (when the collection contains too many
      * results to return in one response).
-     *
+     * 
      * @return the odataNextLink value.
      */
     public String odataNextLink() {
@@ -62,7 +66,7 @@ public final class StreamingPolicyCollection {
     /**
      * Set the odataNextLink property: A link to the next page of the collection (when the collection contains too many
      * results to return in one response).
-     *
+     * 
      * @param odataNextLink the odataNextLink value to set.
      * @return the StreamingPolicyCollection object itself.
      */
@@ -73,7 +77,7 @@ public final class StreamingPolicyCollection {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

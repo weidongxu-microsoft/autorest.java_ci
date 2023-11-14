@@ -10,11 +10,13 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.ResourceNavigationLinksListResultInner;
 
-/** An instance of this class provides access to all the operations defined in ResourceNavigationLinksClient. */
+/**
+ * An instance of this class provides access to all the operations defined in ResourceNavigationLinksClient.
+ */
 public interface ResourceNavigationLinksClient {
     /**
      * Gets a list of resource navigation links for a subnet.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
@@ -25,12 +27,12 @@ public interface ResourceNavigationLinksClient {
      * @return a list of resource navigation links for a subnet along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<ResourceNavigationLinksListResultInner> listWithResponse(
-        String resourceGroupName, String virtualNetworkName, String subnetName, Context context);
+    Response<ResourceNavigationLinksListResultInner> listWithResponse(String resourceGroupName,
+        String virtualNetworkName, String subnetName, Context context);
 
     /**
      * Gets a list of resource navigation links for a subnet.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.

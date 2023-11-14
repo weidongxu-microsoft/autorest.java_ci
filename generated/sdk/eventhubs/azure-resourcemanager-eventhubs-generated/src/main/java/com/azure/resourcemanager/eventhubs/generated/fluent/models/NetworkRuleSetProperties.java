@@ -12,7 +12,9 @@ import com.azure.resourcemanager.eventhubs.generated.models.PublicNetworkAccessF
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** NetworkRuleSet properties. */
+/**
+ * NetworkRuleSet properties.
+ */
 @Fluent
 public final class NetworkRuleSetProperties {
     /*
@@ -47,14 +49,16 @@ public final class NetworkRuleSetProperties {
     @JsonProperty(value = "publicNetworkAccess")
     private PublicNetworkAccessFlag publicNetworkAccess;
 
-    /** Creates an instance of NetworkRuleSetProperties class. */
+    /**
+     * Creates an instance of NetworkRuleSetProperties class.
+     */
     public NetworkRuleSetProperties() {
     }
 
     /**
      * Get the trustedServiceAccessEnabled property: Value that indicates whether Trusted Service Access is Enabled or
      * not.
-     *
+     * 
      * @return the trustedServiceAccessEnabled value.
      */
     public Boolean trustedServiceAccessEnabled() {
@@ -64,7 +68,7 @@ public final class NetworkRuleSetProperties {
     /**
      * Set the trustedServiceAccessEnabled property: Value that indicates whether Trusted Service Access is Enabled or
      * not.
-     *
+     * 
      * @param trustedServiceAccessEnabled the trustedServiceAccessEnabled value to set.
      * @return the NetworkRuleSetProperties object itself.
      */
@@ -75,7 +79,7 @@ public final class NetworkRuleSetProperties {
 
     /**
      * Get the defaultAction property: Default Action for Network Rule Set.
-     *
+     * 
      * @return the defaultAction value.
      */
     public DefaultAction defaultAction() {
@@ -84,7 +88,7 @@ public final class NetworkRuleSetProperties {
 
     /**
      * Set the defaultAction property: Default Action for Network Rule Set.
-     *
+     * 
      * @param defaultAction the defaultAction value to set.
      * @return the NetworkRuleSetProperties object itself.
      */
@@ -95,7 +99,7 @@ public final class NetworkRuleSetProperties {
 
     /**
      * Get the virtualNetworkRules property: List VirtualNetwork Rules.
-     *
+     * 
      * @return the virtualNetworkRules value.
      */
     public List<NWRuleSetVirtualNetworkRules> virtualNetworkRules() {
@@ -104,7 +108,7 @@ public final class NetworkRuleSetProperties {
 
     /**
      * Set the virtualNetworkRules property: List VirtualNetwork Rules.
-     *
+     * 
      * @param virtualNetworkRules the virtualNetworkRules value to set.
      * @return the NetworkRuleSetProperties object itself.
      */
@@ -115,7 +119,7 @@ public final class NetworkRuleSetProperties {
 
     /**
      * Get the ipRules property: List of IpRules.
-     *
+     * 
      * @return the ipRules value.
      */
     public List<NWRuleSetIpRules> ipRules() {
@@ -124,7 +128,7 @@ public final class NetworkRuleSetProperties {
 
     /**
      * Set the ipRules property: List of IpRules.
-     *
+     * 
      * @param ipRules the ipRules value to set.
      * @return the NetworkRuleSetProperties object itself.
      */
@@ -134,10 +138,10 @@ public final class NetworkRuleSetProperties {
     }
 
     /**
-     * Get the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
-     * enabled. If value is SecuredByPerimeter then Inbound and Outbound communication is controlled by the network
+     * Get the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it
+     * is enabled. If value is SecuredByPerimeter then Inbound and Outbound communication is controlled by the network
      * security perimeter and profile's access rules.
-     *
+     * 
      * @return the publicNetworkAccess value.
      */
     public PublicNetworkAccessFlag publicNetworkAccess() {
@@ -145,10 +149,10 @@ public final class NetworkRuleSetProperties {
     }
 
     /**
-     * Set the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
-     * enabled. If value is SecuredByPerimeter then Inbound and Outbound communication is controlled by the network
+     * Set the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it
+     * is enabled. If value is SecuredByPerimeter then Inbound and Outbound communication is controlled by the network
      * security perimeter and profile's access rules.
-     *
+     * 
      * @param publicNetworkAccess the publicNetworkAccess value to set.
      * @return the NetworkRuleSetProperties object itself.
      */
@@ -159,7 +163,7 @@ public final class NetworkRuleSetProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

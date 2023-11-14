@@ -8,20 +8,28 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** If provisioned storage is posix compliant. */
+/**
+ * If provisioned storage is posix compliant.
+ */
 public final class PosixComplianceStatus extends ExpandableStringEnum<PosixComplianceStatus> {
-    /** Static value Invalid for PosixComplianceStatus. */
+    /**
+     * Static value Invalid for PosixComplianceStatus.
+     */
     public static final PosixComplianceStatus INVALID = fromString("Invalid");
 
-    /** Static value Enabled for PosixComplianceStatus. */
+    /**
+     * Static value Enabled for PosixComplianceStatus.
+     */
     public static final PosixComplianceStatus ENABLED = fromString("Enabled");
 
-    /** Static value Disabled for PosixComplianceStatus. */
+    /**
+     * Static value Disabled for PosixComplianceStatus.
+     */
     public static final PosixComplianceStatus DISABLED = fromString("Disabled");
 
     /**
      * Creates a new instance of PosixComplianceStatus value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -30,7 +38,7 @@ public final class PosixComplianceStatus extends ExpandableStringEnum<PosixCompl
 
     /**
      * Creates or finds a PosixComplianceStatus from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding PosixComplianceStatus.
      */
@@ -41,7 +49,7 @@ public final class PosixComplianceStatus extends ExpandableStringEnum<PosixCompl
 
     /**
      * Gets known PosixComplianceStatus values.
-     *
+     * 
      * @return known PosixComplianceStatus values.
      */
     public static Collection<PosixComplianceStatus> values() {

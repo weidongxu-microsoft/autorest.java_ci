@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The properties related to service bus queue endpoint types. */
+/**
+ * The properties related to service bus queue endpoint types.
+ */
 @Fluent
 public final class RoutingServiceBusQueueEndpointProperties {
     /*
@@ -49,7 +51,7 @@ public final class RoutingServiceBusQueueEndpointProperties {
 
     /*
      * The name that identifies this endpoint. The name can only include alphanumeric characters, periods, underscores,
-     * hyphens and has a maximum length of 64 characters. The following names are reserved:  events, fileNotifications,
+     * hyphens and has a maximum length of 64 characters. The following names are reserved: events, fileNotifications,
      * $default. Endpoint names must be unique across endpoint types. The name need not be the same as the actual queue
      * name.
      */
@@ -68,13 +70,15 @@ public final class RoutingServiceBusQueueEndpointProperties {
     @JsonProperty(value = "resourceGroup")
     private String resourceGroup;
 
-    /** Creates an instance of RoutingServiceBusQueueEndpointProperties class. */
+    /**
+     * Creates an instance of RoutingServiceBusQueueEndpointProperties class.
+     */
     public RoutingServiceBusQueueEndpointProperties() {
     }
 
     /**
      * Get the id property: Id of the service bus queue endpoint.
-     *
+     * 
      * @return the id value.
      */
     public String id() {
@@ -83,7 +87,7 @@ public final class RoutingServiceBusQueueEndpointProperties {
 
     /**
      * Set the id property: Id of the service bus queue endpoint.
-     *
+     * 
      * @param id the id value to set.
      * @return the RoutingServiceBusQueueEndpointProperties object itself.
      */
@@ -94,7 +98,7 @@ public final class RoutingServiceBusQueueEndpointProperties {
 
     /**
      * Get the connectionString property: The connection string of the service bus queue endpoint.
-     *
+     * 
      * @return the connectionString value.
      */
     public String connectionString() {
@@ -103,7 +107,7 @@ public final class RoutingServiceBusQueueEndpointProperties {
 
     /**
      * Set the connectionString property: The connection string of the service bus queue endpoint.
-     *
+     * 
      * @param connectionString the connectionString value to set.
      * @return the RoutingServiceBusQueueEndpointProperties object itself.
      */
@@ -114,7 +118,7 @@ public final class RoutingServiceBusQueueEndpointProperties {
 
     /**
      * Get the endpointUri property: The url of the service bus queue endpoint. It must include the protocol sb://.
-     *
+     * 
      * @return the endpointUri value.
      */
     public String endpointUri() {
@@ -123,7 +127,7 @@ public final class RoutingServiceBusQueueEndpointProperties {
 
     /**
      * Set the endpointUri property: The url of the service bus queue endpoint. It must include the protocol sb://.
-     *
+     * 
      * @param endpointUri the endpointUri value to set.
      * @return the RoutingServiceBusQueueEndpointProperties object itself.
      */
@@ -134,7 +138,7 @@ public final class RoutingServiceBusQueueEndpointProperties {
 
     /**
      * Get the entityPath property: Queue name on the service bus namespace.
-     *
+     * 
      * @return the entityPath value.
      */
     public String entityPath() {
@@ -143,7 +147,7 @@ public final class RoutingServiceBusQueueEndpointProperties {
 
     /**
      * Set the entityPath property: Queue name on the service bus namespace.
-     *
+     * 
      * @param entityPath the entityPath value to set.
      * @return the RoutingServiceBusQueueEndpointProperties object itself.
      */
@@ -154,7 +158,7 @@ public final class RoutingServiceBusQueueEndpointProperties {
 
     /**
      * Get the authenticationType property: Method used to authenticate against the service bus queue endpoint.
-     *
+     * 
      * @return the authenticationType value.
      */
     public AuthenticationType authenticationType() {
@@ -163,7 +167,7 @@ public final class RoutingServiceBusQueueEndpointProperties {
 
     /**
      * Set the authenticationType property: Method used to authenticate against the service bus queue endpoint.
-     *
+     * 
      * @param authenticationType the authenticationType value to set.
      * @return the RoutingServiceBusQueueEndpointProperties object itself.
      */
@@ -174,7 +178,7 @@ public final class RoutingServiceBusQueueEndpointProperties {
 
     /**
      * Get the identity property: Managed identity properties of routing service bus queue endpoint.
-     *
+     * 
      * @return the identity value.
      */
     public ManagedIdentity identity() {
@@ -183,7 +187,7 @@ public final class RoutingServiceBusQueueEndpointProperties {
 
     /**
      * Set the identity property: Managed identity properties of routing service bus queue endpoint.
-     *
+     * 
      * @param identity the identity value to set.
      * @return the RoutingServiceBusQueueEndpointProperties object itself.
      */
@@ -193,11 +197,11 @@ public final class RoutingServiceBusQueueEndpointProperties {
     }
 
     /**
-     * Get the name property: The name that identifies this endpoint. The name can only include alphanumeric characters,
-     * periods, underscores, hyphens and has a maximum length of 64 characters. The following names are reserved:
-     * events, fileNotifications, $default. Endpoint names must be unique across endpoint types. The name need not be
-     * the same as the actual queue name.
-     *
+     * Get the name property: The name that identifies this endpoint. The name can only include alphanumeric
+     * characters, periods, underscores, hyphens and has a maximum length of 64 characters. The following names are
+     * reserved: events, fileNotifications, $default. Endpoint names must be unique across endpoint types. The name
+     * need not be the same as the actual queue name.
+     * 
      * @return the name value.
      */
     public String name() {
@@ -205,11 +209,11 @@ public final class RoutingServiceBusQueueEndpointProperties {
     }
 
     /**
-     * Set the name property: The name that identifies this endpoint. The name can only include alphanumeric characters,
-     * periods, underscores, hyphens and has a maximum length of 64 characters. The following names are reserved:
-     * events, fileNotifications, $default. Endpoint names must be unique across endpoint types. The name need not be
-     * the same as the actual queue name.
-     *
+     * Set the name property: The name that identifies this endpoint. The name can only include alphanumeric
+     * characters, periods, underscores, hyphens and has a maximum length of 64 characters. The following names are
+     * reserved: events, fileNotifications, $default. Endpoint names must be unique across endpoint types. The name
+     * need not be the same as the actual queue name.
+     * 
      * @param name the name value to set.
      * @return the RoutingServiceBusQueueEndpointProperties object itself.
      */
@@ -220,7 +224,7 @@ public final class RoutingServiceBusQueueEndpointProperties {
 
     /**
      * Get the subscriptionId property: The subscription identifier of the service bus queue endpoint.
-     *
+     * 
      * @return the subscriptionId value.
      */
     public String subscriptionId() {
@@ -229,7 +233,7 @@ public final class RoutingServiceBusQueueEndpointProperties {
 
     /**
      * Set the subscriptionId property: The subscription identifier of the service bus queue endpoint.
-     *
+     * 
      * @param subscriptionId the subscriptionId value to set.
      * @return the RoutingServiceBusQueueEndpointProperties object itself.
      */
@@ -240,7 +244,7 @@ public final class RoutingServiceBusQueueEndpointProperties {
 
     /**
      * Get the resourceGroup property: The name of the resource group of the service bus queue endpoint.
-     *
+     * 
      * @return the resourceGroup value.
      */
     public String resourceGroup() {
@@ -249,7 +253,7 @@ public final class RoutingServiceBusQueueEndpointProperties {
 
     /**
      * Set the resourceGroup property: The name of the resource group of the service bus queue endpoint.
-     *
+     * 
      * @param resourceGroup the resourceGroup value to set.
      * @return the RoutingServiceBusQueueEndpointProperties object itself.
      */
@@ -260,7 +264,7 @@ public final class RoutingServiceBusQueueEndpointProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
@@ -268,10 +272,8 @@ public final class RoutingServiceBusQueueEndpointProperties {
             identity().validate();
         }
         if (name() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property name in model RoutingServiceBusQueueEndpointProperties"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property name in model RoutingServiceBusQueueEndpointProperties"));
         }
     }
 

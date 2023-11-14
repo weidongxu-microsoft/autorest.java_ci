@@ -10,11 +10,13 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.mysql.generated.fluent.models.OperationStatusExtendedResultInner;
 
-/** An instance of this class provides access to all the operations defined in OperationResultsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in OperationResultsClient.
+ */
 public interface OperationResultsClient {
     /**
      * Get the operation result for a long running operation.
-     *
+     * 
      * @param locationName The name of the location.
      * @param operationId The operation Id.
      * @param context The context to associate with this operation.
@@ -24,12 +26,12 @@ public interface OperationResultsClient {
      * @return the operation result for a long running operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<OperationStatusExtendedResultInner> getWithResponse(
-        String locationName, String operationId, Context context);
+    Response<OperationStatusExtendedResultInner> getWithResponse(String locationName, String operationId,
+        Context context);
 
     /**
      * Get the operation result for a long running operation.
-     *
+     * 
      * @param locationName The name of the location.
      * @param operationId The operation Id.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

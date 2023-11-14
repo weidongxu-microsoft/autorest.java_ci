@@ -6,39 +6,41 @@ package com.azure.resourcemanager.appservice.generated.models;
 
 import com.azure.resourcemanager.appservice.generated.fluent.models.TldLegalAgreementInner;
 
-/** An immutable client-side representation of TldLegalAgreement. */
+/**
+ * An immutable client-side representation of TldLegalAgreement.
+ */
 public interface TldLegalAgreement {
     /**
      * Gets the agreementKey property: Unique identifier for the agreement.
-     *
+     * 
      * @return the agreementKey value.
      */
     String agreementKey();
 
     /**
      * Gets the title property: Agreement title.
-     *
+     * 
      * @return the title value.
      */
     String title();
 
     /**
      * Gets the content property: Agreement details.
-     *
+     * 
      * @return the content value.
      */
     String content();
 
     /**
      * Gets the url property: URL where a copy of the agreement details is hosted.
-     *
+     * 
      * @return the url value.
      */
     String url();
 
     /**
      * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.TldLegalAgreementInner object.
-     *
+     * 
      * @return the inner object.
      */
     TldLegalAgreementInner innerModel();

@@ -9,7 +9,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
 
-/** Describes a request to update a DNS zone. */
+/**
+ * Describes a request to update a DNS zone.
+ */
 @Fluent
 public final class ZoneUpdate {
     /*
@@ -19,13 +21,15 @@ public final class ZoneUpdate {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> tags;
 
-    /** Creates an instance of ZoneUpdate class. */
+    /**
+     * Creates an instance of ZoneUpdate class.
+     */
     public ZoneUpdate() {
     }
 
     /**
      * Get the tags property: Resource tags.
-     *
+     * 
      * @return the tags value.
      */
     public Map<String, String> tags() {
@@ -34,7 +38,7 @@ public final class ZoneUpdate {
 
     /**
      * Set the tags property: Resource tags.
-     *
+     * 
      * @param tags the tags value to set.
      * @return the ZoneUpdate object itself.
      */
@@ -45,7 +49,7 @@ public final class ZoneUpdate {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

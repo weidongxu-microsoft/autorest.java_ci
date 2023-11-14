@@ -11,7 +11,9 @@ import com.azure.resourcemanager.costmanagement.generated.models.SettingsPropert
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** State of the myscope setting. */
+/**
+ * State of the myscope setting.
+ */
 @Fluent
 public final class SettingInner extends ProxySettingResource {
     /*
@@ -20,13 +22,15 @@ public final class SettingInner extends ProxySettingResource {
     @JsonProperty(value = "properties")
     private SettingsProperties innerProperties;
 
-    /** Creates an instance of SettingInner class. */
+    /**
+     * Creates an instance of SettingInner class.
+     */
     public SettingInner() {
     }
 
     /**
      * Get the innerProperties property: The properties of the setting.
-     *
+     * 
      * @return the innerProperties value.
      */
     private SettingsProperties innerProperties() {
@@ -36,7 +40,7 @@ public final class SettingInner extends ProxySettingResource {
     /**
      * Get the scope property: Sets the default scope the current user will see when they sign into Azure Cost
      * Management in the Azure portal.
-     *
+     * 
      * @return the scope value.
      */
     public String scope() {
@@ -46,7 +50,7 @@ public final class SettingInner extends ProxySettingResource {
     /**
      * Set the scope property: Sets the default scope the current user will see when they sign into Azure Cost
      * Management in the Azure portal.
-     *
+     * 
      * @param scope the scope value to set.
      * @return the SettingInner object itself.
      */
@@ -61,7 +65,7 @@ public final class SettingInner extends ProxySettingResource {
     /**
      * Get the startOn property: Indicates what scope Cost Management in the Azure portal should default to. Allowed
      * values: LastUsed.
-     *
+     * 
      * @return the startOn value.
      */
     public SettingsPropertiesStartOn startOn() {
@@ -71,7 +75,7 @@ public final class SettingInner extends ProxySettingResource {
     /**
      * Set the startOn property: Indicates what scope Cost Management in the Azure portal should default to. Allowed
      * values: LastUsed.
-     *
+     * 
      * @param startOn the startOn value to set.
      * @return the SettingInner object itself.
      */
@@ -85,7 +89,7 @@ public final class SettingInner extends ProxySettingResource {
 
     /**
      * Get the cache property: Array of scopes with additional details used by Cost Management in the Azure portal.
-     *
+     * 
      * @return the cache value.
      */
     public List<CacheItem> cache() {
@@ -94,7 +98,7 @@ public final class SettingInner extends ProxySettingResource {
 
     /**
      * Set the cache property: Array of scopes with additional details used by Cost Management in the Azure portal.
-     *
+     * 
      * @param cache the cache value to set.
      * @return the SettingInner object itself.
      */
@@ -108,7 +112,7 @@ public final class SettingInner extends ProxySettingResource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

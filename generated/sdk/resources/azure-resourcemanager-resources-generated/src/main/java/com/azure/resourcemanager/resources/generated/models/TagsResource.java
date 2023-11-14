@@ -6,39 +6,41 @@ package com.azure.resourcemanager.resources.generated.models;
 
 import com.azure.resourcemanager.resources.generated.fluent.models.TagsResourceInner;
 
-/** An immutable client-side representation of TagsResource. */
+/**
+ * An immutable client-side representation of TagsResource.
+ */
 public interface TagsResource {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the name property: The name of the resource.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the type property: The type of the resource.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the properties property: The set of tags.
-     *
+     * 
      * @return the properties value.
      */
     Tags properties();
 
     /**
      * Gets the inner com.azure.resourcemanager.resources.generated.fluent.models.TagsResourceInner object.
-     *
+     * 
      * @return the inner object.
      */
     TagsResourceInner innerModel();

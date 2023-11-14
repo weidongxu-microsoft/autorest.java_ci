@@ -19,8 +19,7 @@ public final class UsagesImpl implements Usages {
 
     private final com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager;
 
-    public UsagesImpl(
-        UsagesClient innerClient,
+    public UsagesImpl(UsagesClient innerClient,
         com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;

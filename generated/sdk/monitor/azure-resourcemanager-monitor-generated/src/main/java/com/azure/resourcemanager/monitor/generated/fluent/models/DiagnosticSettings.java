@@ -10,7 +10,9 @@ import com.azure.resourcemanager.monitor.generated.models.MetricSettings;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The diagnostic settings. */
+/**
+ * The diagnostic settings.
+ */
 @Fluent
 public final class DiagnosticSettings {
     /*
@@ -52,7 +54,8 @@ public final class DiagnosticSettings {
     /*
      * The full ARM resource ID of the Log Analytics workspace to which you would like to send Diagnostic Logs.
      * Example:
-     * /subscriptions/4b9e8510-67ab-4e9a-95a9-e2f1e570ea9c/resourceGroups/insights-integration/providers/Microsoft.OperationalInsights/workspaces/viruela2
+     * /subscriptions/4b9e8510-67ab-4e9a-95a9-e2f1e570ea9c/resourceGroups/insights-integration/providers/Microsoft.
+     * OperationalInsights/workspaces/viruela2
      */
     @JsonProperty(value = "workspaceId")
     private String workspaceId;
@@ -65,14 +68,16 @@ public final class DiagnosticSettings {
     @JsonProperty(value = "logAnalyticsDestinationType")
     private String logAnalyticsDestinationType;
 
-    /** Creates an instance of DiagnosticSettings class. */
+    /**
+     * Creates an instance of DiagnosticSettings class.
+     */
     public DiagnosticSettings() {
     }
 
     /**
      * Get the storageAccountId property: The resource ID of the storage account to which you would like to send
      * Diagnostic Logs.
-     *
+     * 
      * @return the storageAccountId value.
      */
     public String storageAccountId() {
@@ -82,7 +87,7 @@ public final class DiagnosticSettings {
     /**
      * Set the storageAccountId property: The resource ID of the storage account to which you would like to send
      * Diagnostic Logs.
-     *
+     * 
      * @param storageAccountId the storageAccountId value to set.
      * @return the DiagnosticSettings object itself.
      */
@@ -94,7 +99,7 @@ public final class DiagnosticSettings {
     /**
      * Get the serviceBusRuleId property: The service bus rule Id of the diagnostic setting. This is here to maintain
      * backwards compatibility.
-     *
+     * 
      * @return the serviceBusRuleId value.
      */
     public String serviceBusRuleId() {
@@ -104,7 +109,7 @@ public final class DiagnosticSettings {
     /**
      * Set the serviceBusRuleId property: The service bus rule Id of the diagnostic setting. This is here to maintain
      * backwards compatibility.
-     *
+     * 
      * @param serviceBusRuleId the serviceBusRuleId value to set.
      * @return the DiagnosticSettings object itself.
      */
@@ -115,7 +120,7 @@ public final class DiagnosticSettings {
 
     /**
      * Get the eventHubAuthorizationRuleId property: The resource Id for the event hub authorization rule.
-     *
+     * 
      * @return the eventHubAuthorizationRuleId value.
      */
     public String eventHubAuthorizationRuleId() {
@@ -124,7 +129,7 @@ public final class DiagnosticSettings {
 
     /**
      * Set the eventHubAuthorizationRuleId property: The resource Id for the event hub authorization rule.
-     *
+     * 
      * @param eventHubAuthorizationRuleId the eventHubAuthorizationRuleId value to set.
      * @return the DiagnosticSettings object itself.
      */
@@ -136,7 +141,7 @@ public final class DiagnosticSettings {
     /**
      * Get the eventHubName property: The name of the event hub. If none is specified, the default event hub will be
      * selected.
-     *
+     * 
      * @return the eventHubName value.
      */
     public String eventHubName() {
@@ -146,7 +151,7 @@ public final class DiagnosticSettings {
     /**
      * Set the eventHubName property: The name of the event hub. If none is specified, the default event hub will be
      * selected.
-     *
+     * 
      * @param eventHubName the eventHubName value to set.
      * @return the DiagnosticSettings object itself.
      */
@@ -157,7 +162,7 @@ public final class DiagnosticSettings {
 
     /**
      * Get the metrics property: The list of metric settings.
-     *
+     * 
      * @return the metrics value.
      */
     public List<MetricSettings> metrics() {
@@ -166,7 +171,7 @@ public final class DiagnosticSettings {
 
     /**
      * Set the metrics property: The list of metric settings.
-     *
+     * 
      * @param metrics the metrics value to set.
      * @return the DiagnosticSettings object itself.
      */
@@ -177,7 +182,7 @@ public final class DiagnosticSettings {
 
     /**
      * Get the logs property: The list of logs settings.
-     *
+     * 
      * @return the logs value.
      */
     public List<LogSettings> logs() {
@@ -186,7 +191,7 @@ public final class DiagnosticSettings {
 
     /**
      * Set the logs property: The list of logs settings.
-     *
+     * 
      * @param logs the logs value to set.
      * @return the DiagnosticSettings object itself.
      */
@@ -199,7 +204,7 @@ public final class DiagnosticSettings {
      * Get the workspaceId property: The full ARM resource ID of the Log Analytics workspace to which you would like to
      * send Diagnostic Logs. Example:
      * /subscriptions/4b9e8510-67ab-4e9a-95a9-e2f1e570ea9c/resourceGroups/insights-integration/providers/Microsoft.OperationalInsights/workspaces/viruela2.
-     *
+     * 
      * @return the workspaceId value.
      */
     public String workspaceId() {
@@ -210,7 +215,7 @@ public final class DiagnosticSettings {
      * Set the workspaceId property: The full ARM resource ID of the Log Analytics workspace to which you would like to
      * send Diagnostic Logs. Example:
      * /subscriptions/4b9e8510-67ab-4e9a-95a9-e2f1e570ea9c/resourceGroups/insights-integration/providers/Microsoft.OperationalInsights/workspaces/viruela2.
-     *
+     * 
      * @param workspaceId the workspaceId value to set.
      * @return the DiagnosticSettings object itself.
      */
@@ -224,7 +229,7 @@ public final class DiagnosticSettings {
      * the default destination type, i.e. AzureDiagnostics, or use a destination type constructed as follows:
      * &lt;normalized service identity&gt;_&lt;normalized category name&gt;. Possible values are: Dedicated and null
      * (null is default.).
-     *
+     * 
      * @return the logAnalyticsDestinationType value.
      */
     public String logAnalyticsDestinationType() {
@@ -236,7 +241,7 @@ public final class DiagnosticSettings {
      * the default destination type, i.e. AzureDiagnostics, or use a destination type constructed as follows:
      * &lt;normalized service identity&gt;_&lt;normalized category name&gt;. Possible values are: Dedicated and null
      * (null is default.).
-     *
+     * 
      * @param logAnalyticsDestinationType the logAnalyticsDestinationType value to set.
      * @return the DiagnosticSettings object itself.
      */
@@ -247,7 +252,7 @@ public final class DiagnosticSettings {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

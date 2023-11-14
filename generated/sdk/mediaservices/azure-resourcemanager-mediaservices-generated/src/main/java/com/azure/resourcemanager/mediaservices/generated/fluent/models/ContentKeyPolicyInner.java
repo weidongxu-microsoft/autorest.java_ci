@@ -13,7 +13,9 @@ import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.UUID;
 
-/** A Content Key Policy resource. */
+/**
+ * A Content Key Policy resource.
+ */
 @Fluent
 public final class ContentKeyPolicyInner extends ProxyResource {
     /*
@@ -28,13 +30,15 @@ public final class ContentKeyPolicyInner extends ProxyResource {
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
-    /** Creates an instance of ContentKeyPolicyInner class. */
+    /**
+     * Creates an instance of ContentKeyPolicyInner class.
+     */
     public ContentKeyPolicyInner() {
     }
 
     /**
      * Get the innerProperties property: The properties of the Content Key Policy.
-     *
+     * 
      * @return the innerProperties value.
      */
     private ContentKeyPolicyPropertiesInner innerProperties() {
@@ -43,7 +47,7 @@ public final class ContentKeyPolicyInner extends ProxyResource {
 
     /**
      * Get the systemData property: The system metadata relating to this resource.
-     *
+     * 
      * @return the systemData value.
      */
     public SystemData systemData() {
@@ -52,7 +56,7 @@ public final class ContentKeyPolicyInner extends ProxyResource {
 
     /**
      * Get the policyId property: The legacy Policy ID.
-     *
+     * 
      * @return the policyId value.
      */
     public UUID policyId() {
@@ -61,7 +65,7 @@ public final class ContentKeyPolicyInner extends ProxyResource {
 
     /**
      * Get the created property: The creation date of the Policy.
-     *
+     * 
      * @return the created value.
      */
     public OffsetDateTime created() {
@@ -70,7 +74,7 @@ public final class ContentKeyPolicyInner extends ProxyResource {
 
     /**
      * Get the lastModified property: The last modified date of the Policy.
-     *
+     * 
      * @return the lastModified value.
      */
     public OffsetDateTime lastModified() {
@@ -79,7 +83,7 @@ public final class ContentKeyPolicyInner extends ProxyResource {
 
     /**
      * Get the description property: A description for the Policy.
-     *
+     * 
      * @return the description value.
      */
     public String description() {
@@ -88,7 +92,7 @@ public final class ContentKeyPolicyInner extends ProxyResource {
 
     /**
      * Set the description property: A description for the Policy.
-     *
+     * 
      * @param description the description value to set.
      * @return the ContentKeyPolicyInner object itself.
      */
@@ -102,7 +106,7 @@ public final class ContentKeyPolicyInner extends ProxyResource {
 
     /**
      * Get the options property: The Key Policy options.
-     *
+     * 
      * @return the options value.
      */
     public List<ContentKeyPolicyOption> options() {
@@ -111,7 +115,7 @@ public final class ContentKeyPolicyInner extends ProxyResource {
 
     /**
      * Set the options property: The Key Policy options.
-     *
+     * 
      * @param options the options value to set.
      * @return the ContentKeyPolicyInner object itself.
      */
@@ -125,7 +129,7 @@ public final class ContentKeyPolicyInner extends ProxyResource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

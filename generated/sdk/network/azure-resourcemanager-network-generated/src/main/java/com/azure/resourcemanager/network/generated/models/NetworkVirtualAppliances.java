@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of NetworkVirtualAppliances. */
+/**
+ * Resource collection API of NetworkVirtualAppliances.
+ */
 public interface NetworkVirtualAppliances {
     /**
      * Deletes the specified Network Virtual Appliance.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of Network Virtual Appliance.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -23,7 +25,7 @@ public interface NetworkVirtualAppliances {
 
     /**
      * Deletes the specified Network Virtual Appliance.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of Network Virtual Appliance.
      * @param context The context to associate with this operation.
@@ -35,7 +37,7 @@ public interface NetworkVirtualAppliances {
 
     /**
      * Gets the specified Network Virtual Appliance.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of Network Virtual Appliance.
      * @param expand Expands referenced resources.
@@ -45,12 +47,12 @@ public interface NetworkVirtualAppliances {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified Network Virtual Appliance along with {@link Response}.
      */
-    Response<NetworkVirtualAppliance> getByResourceGroupWithResponse(
-        String resourceGroupName, String networkVirtualApplianceName, String expand, Context context);
+    Response<NetworkVirtualAppliance> getByResourceGroupWithResponse(String resourceGroupName,
+        String networkVirtualApplianceName, String expand, Context context);
 
     /**
      * Gets the specified Network Virtual Appliance.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of Network Virtual Appliance.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -62,32 +64,32 @@ public interface NetworkVirtualAppliances {
 
     /**
      * Lists all Network Virtual Appliances in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListNetworkVirtualAppliances API service call as paginated response with {@link
-     *     PagedIterable}.
+     * @return response for ListNetworkVirtualAppliances API service call as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<NetworkVirtualAppliance> listByResourceGroup(String resourceGroupName);
 
     /**
      * Lists all Network Virtual Appliances in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListNetworkVirtualAppliances API service call as paginated response with {@link
-     *     PagedIterable}.
+     * @return response for ListNetworkVirtualAppliances API service call as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<NetworkVirtualAppliance> listByResourceGroup(String resourceGroupName, Context context);
 
     /**
      * Gets all Network Virtual Appliances in a subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all Network Virtual Appliances in a subscription as paginated response with {@link PagedIterable}.
@@ -96,7 +98,7 @@ public interface NetworkVirtualAppliances {
 
     /**
      * Gets all Network Virtual Appliances in a subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -107,7 +109,7 @@ public interface NetworkVirtualAppliances {
 
     /**
      * Gets the specified Network Virtual Appliance.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -118,7 +120,7 @@ public interface NetworkVirtualAppliances {
 
     /**
      * Gets the specified Network Virtual Appliance.
-     *
+     * 
      * @param id the resource ID.
      * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
@@ -131,7 +133,7 @@ public interface NetworkVirtualAppliances {
 
     /**
      * Deletes the specified Network Virtual Appliance.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -141,7 +143,7 @@ public interface NetworkVirtualAppliances {
 
     /**
      * Deletes the specified Network Virtual Appliance.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -152,7 +154,7 @@ public interface NetworkVirtualAppliances {
 
     /**
      * Begins definition for a new NetworkVirtualAppliance resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new NetworkVirtualAppliance definition.
      */

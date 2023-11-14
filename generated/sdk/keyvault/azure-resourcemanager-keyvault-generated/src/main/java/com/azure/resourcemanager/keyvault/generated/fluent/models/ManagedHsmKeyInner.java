@@ -17,7 +17,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 import java.util.Map;
 
-/** The key resource. */
+/**
+ * The key resource.
+ */
 @Fluent
 public final class ManagedHsmKeyInner extends ProxyResourceWithoutSystemData {
     /*
@@ -26,20 +28,24 @@ public final class ManagedHsmKeyInner extends ProxyResourceWithoutSystemData {
     @JsonProperty(value = "properties", required = true)
     private ManagedHsmKeyProperties innerProperties = new ManagedHsmKeyProperties();
 
-    /** Creates an instance of ManagedHsmKeyInner class. */
+    /**
+     * Creates an instance of ManagedHsmKeyInner class.
+     */
     public ManagedHsmKeyInner() {
     }
 
     /**
      * Get the innerProperties property: The properties of the key.
-     *
+     * 
      * @return the innerProperties value.
      */
     private ManagedHsmKeyProperties innerProperties() {
         return this.innerProperties;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ManagedHsmKeyInner withTags(Map<String, String> tags) {
         super.withTags(tags);
@@ -48,7 +54,7 @@ public final class ManagedHsmKeyInner extends ProxyResourceWithoutSystemData {
 
     /**
      * Get the attributes property: The attributes of the key.
-     *
+     * 
      * @return the attributes value.
      */
     public ManagedHsmKeyAttributes attributes() {
@@ -57,7 +63,7 @@ public final class ManagedHsmKeyInner extends ProxyResourceWithoutSystemData {
 
     /**
      * Set the attributes property: The attributes of the key.
-     *
+     * 
      * @param attributes the attributes value to set.
      * @return the ManagedHsmKeyInner object itself.
      */
@@ -71,7 +77,7 @@ public final class ManagedHsmKeyInner extends ProxyResourceWithoutSystemData {
 
     /**
      * Get the kty property: The type of the key. For valid values, see JsonWebKeyType.
-     *
+     * 
      * @return the kty value.
      */
     public JsonWebKeyType kty() {
@@ -80,7 +86,7 @@ public final class ManagedHsmKeyInner extends ProxyResourceWithoutSystemData {
 
     /**
      * Set the kty property: The type of the key. For valid values, see JsonWebKeyType.
-     *
+     * 
      * @param kty the kty value to set.
      * @return the ManagedHsmKeyInner object itself.
      */
@@ -94,7 +100,7 @@ public final class ManagedHsmKeyInner extends ProxyResourceWithoutSystemData {
 
     /**
      * Get the keyOps property: The keyOps property.
-     *
+     * 
      * @return the keyOps value.
      */
     public List<JsonWebKeyOperation> keyOps() {
@@ -103,7 +109,7 @@ public final class ManagedHsmKeyInner extends ProxyResourceWithoutSystemData {
 
     /**
      * Set the keyOps property: The keyOps property.
-     *
+     * 
      * @param keyOps the keyOps value to set.
      * @return the ManagedHsmKeyInner object itself.
      */
@@ -117,7 +123,7 @@ public final class ManagedHsmKeyInner extends ProxyResourceWithoutSystemData {
 
     /**
      * Get the keySize property: The key size in bits. For example: 2048, 3072, or 4096 for RSA.
-     *
+     * 
      * @return the keySize value.
      */
     public Integer keySize() {
@@ -126,7 +132,7 @@ public final class ManagedHsmKeyInner extends ProxyResourceWithoutSystemData {
 
     /**
      * Set the keySize property: The key size in bits. For example: 2048, 3072, or 4096 for RSA.
-     *
+     * 
      * @param keySize the keySize value to set.
      * @return the ManagedHsmKeyInner object itself.
      */
@@ -140,7 +146,7 @@ public final class ManagedHsmKeyInner extends ProxyResourceWithoutSystemData {
 
     /**
      * Get the curveName property: The elliptic curve name. For valid values, see JsonWebKeyCurveName.
-     *
+     * 
      * @return the curveName value.
      */
     public JsonWebKeyCurveName curveName() {
@@ -149,7 +155,7 @@ public final class ManagedHsmKeyInner extends ProxyResourceWithoutSystemData {
 
     /**
      * Set the curveName property: The elliptic curve name. For valid values, see JsonWebKeyCurveName.
-     *
+     * 
      * @param curveName the curveName value to set.
      * @return the ManagedHsmKeyInner object itself.
      */
@@ -163,7 +169,7 @@ public final class ManagedHsmKeyInner extends ProxyResourceWithoutSystemData {
 
     /**
      * Get the keyUri property: The URI to retrieve the current version of the key.
-     *
+     * 
      * @return the keyUri value.
      */
     public String keyUri() {
@@ -172,7 +178,7 @@ public final class ManagedHsmKeyInner extends ProxyResourceWithoutSystemData {
 
     /**
      * Get the keyUriWithVersion property: The URI to retrieve the specific version of the key.
-     *
+     * 
      * @return the keyUriWithVersion value.
      */
     public String keyUriWithVersion() {
@@ -182,7 +188,7 @@ public final class ManagedHsmKeyInner extends ProxyResourceWithoutSystemData {
     /**
      * Get the rotationPolicy property: Key rotation policy in response. It will be used for both output and input.
      * Omitted if empty.
-     *
+     * 
      * @return the rotationPolicy value.
      */
     public ManagedHsmRotationPolicy rotationPolicy() {
@@ -192,7 +198,7 @@ public final class ManagedHsmKeyInner extends ProxyResourceWithoutSystemData {
     /**
      * Set the rotationPolicy property: Key rotation policy in response. It will be used for both output and input.
      * Omitted if empty.
-     *
+     * 
      * @param rotationPolicy the rotationPolicy value to set.
      * @return the ManagedHsmKeyInner object itself.
      */
@@ -207,7 +213,7 @@ public final class ManagedHsmKeyInner extends ProxyResourceWithoutSystemData {
     /**
      * Get the releasePolicy property: Key release policy in response. It will be used for both output and input.
      * Omitted if empty.
-     *
+     * 
      * @return the releasePolicy value.
      */
     public ManagedHsmKeyReleasePolicy releasePolicy() {
@@ -217,7 +223,7 @@ public final class ManagedHsmKeyInner extends ProxyResourceWithoutSystemData {
     /**
      * Set the releasePolicy property: Key release policy in response. It will be used for both output and input.
      * Omitted if empty.
-     *
+     * 
      * @param releasePolicy the releasePolicy value to set.
      * @return the ManagedHsmKeyInner object itself.
      */
@@ -231,17 +237,15 @@ public final class ManagedHsmKeyInner extends ProxyResourceWithoutSystemData {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override
     public void validate() {
         super.validate();
         if (innerProperties() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property innerProperties in model ManagedHsmKeyInner"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property innerProperties in model ManagedHsmKeyInner"));
         } else {
             innerProperties().validate();
         }

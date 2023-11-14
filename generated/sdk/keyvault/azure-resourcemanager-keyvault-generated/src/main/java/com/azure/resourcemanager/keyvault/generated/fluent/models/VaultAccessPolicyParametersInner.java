@@ -10,7 +10,9 @@ import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.keyvault.generated.models.VaultAccessPolicyProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Parameters for updating the access policy in a vault. */
+/**
+ * Parameters for updating the access policy in a vault.
+ */
 @Fluent
 public final class VaultAccessPolicyParametersInner extends ProxyResource {
     /*
@@ -25,13 +27,15 @@ public final class VaultAccessPolicyParametersInner extends ProxyResource {
     @JsonProperty(value = "properties", required = true)
     private VaultAccessPolicyProperties properties;
 
-    /** Creates an instance of VaultAccessPolicyParametersInner class. */
+    /**
+     * Creates an instance of VaultAccessPolicyParametersInner class.
+     */
     public VaultAccessPolicyParametersInner() {
     }
 
     /**
      * Get the location property: The resource type of the access policy.
-     *
+     * 
      * @return the location value.
      */
     public String location() {
@@ -40,7 +44,7 @@ public final class VaultAccessPolicyParametersInner extends ProxyResource {
 
     /**
      * Get the properties property: Properties of the access policy.
-     *
+     * 
      * @return the properties value.
      */
     public VaultAccessPolicyProperties properties() {
@@ -49,7 +53,7 @@ public final class VaultAccessPolicyParametersInner extends ProxyResource {
 
     /**
      * Set the properties property: Properties of the access policy.
-     *
+     * 
      * @param properties the properties value to set.
      * @return the VaultAccessPolicyParametersInner object itself.
      */
@@ -60,15 +64,13 @@ public final class VaultAccessPolicyParametersInner extends ProxyResource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (properties() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property properties in model VaultAccessPolicyParametersInner"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property properties in model VaultAccessPolicyParametersInner"));
         } else {
             properties().validate();
         }

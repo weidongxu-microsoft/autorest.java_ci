@@ -8,17 +8,23 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** The type of the column in the report. */
+/**
+ * The type of the column in the report.
+ */
 public final class ReportConfigColumnType extends ExpandableStringEnum<ReportConfigColumnType> {
-    /** Static value Tag for ReportConfigColumnType. */
+    /**
+     * Static value Tag for ReportConfigColumnType.
+     */
     public static final ReportConfigColumnType TAG = fromString("Tag");
 
-    /** Static value Dimension for ReportConfigColumnType. */
+    /**
+     * Static value Dimension for ReportConfigColumnType.
+     */
     public static final ReportConfigColumnType DIMENSION = fromString("Dimension");
 
     /**
      * Creates a new instance of ReportConfigColumnType value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -27,7 +33,7 @@ public final class ReportConfigColumnType extends ExpandableStringEnum<ReportCon
 
     /**
      * Creates or finds a ReportConfigColumnType from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding ReportConfigColumnType.
      */
@@ -38,7 +44,7 @@ public final class ReportConfigColumnType extends ExpandableStringEnum<ReportCon
 
     /**
      * Gets known ReportConfigColumnType values.
-     *
+     * 
      * @return known ReportConfigColumnType values.
      */
     public static Collection<ReportConfigColumnType> values() {

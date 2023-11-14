@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The metric dimension. */
+/**
+ * The metric dimension.
+ */
 @Fluent
 public final class MetricDimension {
     /*
@@ -23,13 +25,15 @@ public final class MetricDimension {
     @JsonProperty(value = "sourceName", required = true)
     private String sourceName;
 
-    /** Creates an instance of MetricDimension class. */
+    /**
+     * Creates an instance of MetricDimension class.
+     */
     public MetricDimension() {
     }
 
     /**
      * Get the sourceType property: The dimension type.
-     *
+     * 
      * @return the sourceType value.
      */
     public String sourceType() {
@@ -38,7 +42,7 @@ public final class MetricDimension {
 
     /**
      * Set the sourceType property: The dimension type.
-     *
+     * 
      * @param sourceType the sourceType value to set.
      * @return the MetricDimension object itself.
      */
@@ -49,7 +53,7 @@ public final class MetricDimension {
 
     /**
      * Get the sourceName property: The dimension value.
-     *
+     * 
      * @return the sourceName value.
      */
     public String sourceName() {
@@ -58,7 +62,7 @@ public final class MetricDimension {
 
     /**
      * Set the sourceName property: The dimension value.
-     *
+     * 
      * @param sourceName the sourceName value to set.
      * @return the MetricDimension object itself.
      */
@@ -69,19 +73,17 @@ public final class MetricDimension {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (sourceType() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property sourceType in model MetricDimension"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property sourceType in model MetricDimension"));
         }
         if (sourceName() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property sourceName in model MetricDimension"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property sourceName in model MetricDimension"));
         }
     }
 

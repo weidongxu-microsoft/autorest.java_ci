@@ -12,10 +12,8 @@ import com.azure.resourcemanager.network.generated.models.ExpressRouteCircuitCon
 import com.azure.resourcemanager.network.generated.models.Ipv6CircuitConnectionConfig;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 
-public final class ExpressRouteCircuitConnectionImpl
-    implements ExpressRouteCircuitConnection,
-        ExpressRouteCircuitConnection.Definition,
-        ExpressRouteCircuitConnection.Update {
+public final class ExpressRouteCircuitConnectionImpl implements ExpressRouteCircuitConnection,
+    ExpressRouteCircuitConnection.Definition, ExpressRouteCircuitConnection.Update {
     private ExpressRouteCircuitConnectionInner innerObject;
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
@@ -84,8 +82,8 @@ public final class ExpressRouteCircuitConnectionImpl
 
     private String connectionName;
 
-    public ExpressRouteCircuitConnectionImpl withExistingPeering(
-        String resourceGroupName, String circuitName, String peeringName) {
+    public ExpressRouteCircuitConnectionImpl withExistingPeering(String resourceGroupName, String circuitName,
+        String peeringName) {
         this.resourceGroupName = resourceGroupName;
         this.circuitName = circuitName;
         this.peeringName = peeringName;
@@ -93,27 +91,19 @@ public final class ExpressRouteCircuitConnectionImpl
     }
 
     public ExpressRouteCircuitConnection create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getExpressRouteCircuitConnections()
-                .createOrUpdate(
-                    resourceGroupName, circuitName, peeringName, connectionName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getExpressRouteCircuitConnections().createOrUpdate(
+            resourceGroupName, circuitName, peeringName, connectionName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public ExpressRouteCircuitConnection create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getExpressRouteCircuitConnections()
-                .createOrUpdate(
-                    resourceGroupName, circuitName, peeringName, connectionName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getExpressRouteCircuitConnections()
+            .createOrUpdate(resourceGroupName, circuitName, peeringName, connectionName, this.innerModel(), context);
         return this;
     }
 
-    ExpressRouteCircuitConnectionImpl(
-        String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    ExpressRouteCircuitConnectionImpl(String name,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new ExpressRouteCircuitConnectionInner();
         this.serviceManager = serviceManager;
         this.connectionName = name;
@@ -124,27 +114,18 @@ public final class ExpressRouteCircuitConnectionImpl
     }
 
     public ExpressRouteCircuitConnection apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getExpressRouteCircuitConnections()
-                .createOrUpdate(
-                    resourceGroupName, circuitName, peeringName, connectionName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getExpressRouteCircuitConnections().createOrUpdate(
+            resourceGroupName, circuitName, peeringName, connectionName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public ExpressRouteCircuitConnection apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getExpressRouteCircuitConnections()
-                .createOrUpdate(
-                    resourceGroupName, circuitName, peeringName, connectionName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getExpressRouteCircuitConnections()
+            .createOrUpdate(resourceGroupName, circuitName, peeringName, connectionName, this.innerModel(), context);
         return this;
     }
 
-    ExpressRouteCircuitConnectionImpl(
-        ExpressRouteCircuitConnectionInner innerObject,
+    ExpressRouteCircuitConnectionImpl(ExpressRouteCircuitConnectionInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -155,22 +136,14 @@ public final class ExpressRouteCircuitConnectionImpl
     }
 
     public ExpressRouteCircuitConnection refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getExpressRouteCircuitConnections()
-                .getWithResponse(resourceGroupName, circuitName, peeringName, connectionName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getExpressRouteCircuitConnections()
+            .getWithResponse(resourceGroupName, circuitName, peeringName, connectionName, Context.NONE).getValue();
         return this;
     }
 
     public ExpressRouteCircuitConnection refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getExpressRouteCircuitConnections()
-                .getWithResponse(resourceGroupName, circuitName, peeringName, connectionName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getExpressRouteCircuitConnections()
+            .getWithResponse(resourceGroupName, circuitName, peeringName, connectionName, context).getValue();
         return this;
     }
 
@@ -184,8 +157,8 @@ public final class ExpressRouteCircuitConnectionImpl
         return this;
     }
 
-    public ExpressRouteCircuitConnectionImpl withPeerExpressRouteCircuitPeering(
-        SubResource peerExpressRouteCircuitPeering) {
+    public ExpressRouteCircuitConnectionImpl
+        withPeerExpressRouteCircuitPeering(SubResource peerExpressRouteCircuitPeering) {
         this.innerModel().withPeerExpressRouteCircuitPeering(peerExpressRouteCircuitPeering);
         return this;
     }
@@ -200,8 +173,8 @@ public final class ExpressRouteCircuitConnectionImpl
         return this;
     }
 
-    public ExpressRouteCircuitConnectionImpl withIpv6CircuitConnectionConfig(
-        Ipv6CircuitConnectionConfig ipv6CircuitConnectionConfig) {
+    public ExpressRouteCircuitConnectionImpl
+        withIpv6CircuitConnectionConfig(Ipv6CircuitConnectionConfig ipv6CircuitConnectionConfig) {
         this.innerModel().withIpv6CircuitConnectionConfig(ipv6CircuitConnectionConfig);
         return this;
     }

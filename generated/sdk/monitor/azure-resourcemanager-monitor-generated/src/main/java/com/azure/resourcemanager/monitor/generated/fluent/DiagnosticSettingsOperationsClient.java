@@ -11,11 +11,13 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.monitor.generated.fluent.models.DiagnosticSettingsResourceCollectionInner;
 import com.azure.resourcemanager.monitor.generated.fluent.models.DiagnosticSettingsResourceInner;
 
-/** An instance of this class provides access to all the operations defined in DiagnosticSettingsOperationsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in DiagnosticSettingsOperationsClient.
+ */
 public interface DiagnosticSettingsOperationsClient {
     /**
      * Gets the active diagnostic settings for the specified resource.
-     *
+     * 
      * @param resourceUri The identifier of the resource.
      * @param name The name of the diagnostic setting.
      * @param context The context to associate with this operation.
@@ -29,7 +31,7 @@ public interface DiagnosticSettingsOperationsClient {
 
     /**
      * Gets the active diagnostic settings for the specified resource.
-     *
+     * 
      * @param resourceUri The identifier of the resource.
      * @param name The name of the diagnostic setting.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -42,7 +44,7 @@ public interface DiagnosticSettingsOperationsClient {
 
     /**
      * Creates or updates diagnostic settings for the specified resource.
-     *
+     * 
      * @param resourceUri The identifier of the resource.
      * @param name The name of the diagnostic setting.
      * @param parameters Parameters supplied to the operation.
@@ -53,12 +55,12 @@ public interface DiagnosticSettingsOperationsClient {
      * @return the diagnostic setting resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<DiagnosticSettingsResourceInner> createOrUpdateWithResponse(
-        String resourceUri, String name, DiagnosticSettingsResourceInner parameters, Context context);
+    Response<DiagnosticSettingsResourceInner> createOrUpdateWithResponse(String resourceUri, String name,
+        DiagnosticSettingsResourceInner parameters, Context context);
 
     /**
      * Creates or updates diagnostic settings for the specified resource.
-     *
+     * 
      * @param resourceUri The identifier of the resource.
      * @param name The name of the diagnostic setting.
      * @param parameters Parameters supplied to the operation.
@@ -68,12 +70,12 @@ public interface DiagnosticSettingsOperationsClient {
      * @return the diagnostic setting resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    DiagnosticSettingsResourceInner createOrUpdate(
-        String resourceUri, String name, DiagnosticSettingsResourceInner parameters);
+    DiagnosticSettingsResourceInner createOrUpdate(String resourceUri, String name,
+        DiagnosticSettingsResourceInner parameters);
 
     /**
      * Deletes existing diagnostic settings for the specified resource.
-     *
+     * 
      * @param resourceUri The identifier of the resource.
      * @param name The name of the diagnostic setting.
      * @param context The context to associate with this operation.
@@ -87,7 +89,7 @@ public interface DiagnosticSettingsOperationsClient {
 
     /**
      * Deletes existing diagnostic settings for the specified resource.
-     *
+     * 
      * @param resourceUri The identifier of the resource.
      * @param name The name of the diagnostic setting.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -99,7 +101,7 @@ public interface DiagnosticSettingsOperationsClient {
 
     /**
      * Gets the active diagnostic settings list for the specified resource.
-     *
+     * 
      * @param resourceUri The identifier of the resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -112,7 +114,7 @@ public interface DiagnosticSettingsOperationsClient {
 
     /**
      * Gets the active diagnostic settings list for the specified resource.
-     *
+     * 
      * @param resourceUri The identifier of the resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

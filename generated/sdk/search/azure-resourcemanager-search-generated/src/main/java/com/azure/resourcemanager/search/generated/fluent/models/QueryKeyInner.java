@@ -7,7 +7,9 @@ package com.azure.resourcemanager.search.generated.fluent.models;
 import com.azure.core.annotation.Immutable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Describes an API key for a given Azure Cognitive Search service that has permissions for query operations only. */
+/**
+ * Describes an API key for a given search service that has permissions for query operations only.
+ */
 @Immutable
 public final class QueryKeyInner {
     /*
@@ -22,13 +24,15 @@ public final class QueryKeyInner {
     @JsonProperty(value = "key", access = JsonProperty.Access.WRITE_ONLY)
     private String key;
 
-    /** Creates an instance of QueryKeyInner class. */
+    /**
+     * Creates an instance of QueryKeyInner class.
+     */
     public QueryKeyInner() {
     }
 
     /**
      * Get the name property: The name of the query API key; may be empty.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -37,7 +41,7 @@ public final class QueryKeyInner {
 
     /**
      * Get the key property: The value of the query API key.
-     *
+     * 
      * @return the key value.
      */
     public String key() {
@@ -46,7 +50,7 @@ public final class QueryKeyInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

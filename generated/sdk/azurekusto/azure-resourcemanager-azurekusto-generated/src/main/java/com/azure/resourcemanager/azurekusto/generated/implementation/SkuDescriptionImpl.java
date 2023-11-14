@@ -15,8 +15,8 @@ public final class SkuDescriptionImpl implements SkuDescription {
 
     private final com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager;
 
-    SkuDescriptionImpl(
-        SkuDescriptionInner innerObject, com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager) {
+    SkuDescriptionImpl(SkuDescriptionInner innerObject,
+        com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

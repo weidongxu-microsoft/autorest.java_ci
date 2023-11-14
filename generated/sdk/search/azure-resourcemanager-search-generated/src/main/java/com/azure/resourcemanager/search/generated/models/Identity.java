@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Identity for the resource. */
+/**
+ * Identity for the resource.
+ */
 @Fluent
 public final class Identity {
     /*
@@ -29,13 +31,15 @@ public final class Identity {
     @JsonProperty(value = "type", required = true)
     private IdentityType type;
 
-    /** Creates an instance of Identity class. */
+    /**
+     * Creates an instance of Identity class.
+     */
     public Identity() {
     }
 
     /**
      * Get the principalId property: The principal ID of the system-assigned identity of the search service.
-     *
+     * 
      * @return the principalId value.
      */
     public String principalId() {
@@ -44,7 +48,7 @@ public final class Identity {
 
     /**
      * Get the tenantId property: The tenant ID of the system-assigned identity of the search service.
-     *
+     * 
      * @return the tenantId value.
      */
     public String tenantId() {
@@ -53,7 +57,7 @@ public final class Identity {
 
     /**
      * Get the type property: The identity type.
-     *
+     * 
      * @return the type value.
      */
     public IdentityType type() {
@@ -62,7 +66,7 @@ public final class Identity {
 
     /**
      * Set the type property: The identity type.
-     *
+     * 
      * @param type the type value to set.
      * @return the Identity object itself.
      */
@@ -73,7 +77,7 @@ public final class Identity {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

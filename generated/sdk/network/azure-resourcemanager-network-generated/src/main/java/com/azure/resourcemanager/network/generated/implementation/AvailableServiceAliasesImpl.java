@@ -19,8 +19,7 @@ public final class AvailableServiceAliasesImpl implements AvailableServiceAliase
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public AvailableServiceAliasesImpl(
-        AvailableServiceAliasesClient innerClient,
+    public AvailableServiceAliasesImpl(AvailableServiceAliasesClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -37,15 +36,15 @@ public final class AvailableServiceAliasesImpl implements AvailableServiceAliase
     }
 
     public PagedIterable<AvailableServiceAlias> listByResourceGroup(String resourceGroupName, String location) {
-        PagedIterable<AvailableServiceAliasInner> inner =
-            this.serviceClient().listByResourceGroup(resourceGroupName, location);
+        PagedIterable<AvailableServiceAliasInner> inner
+            = this.serviceClient().listByResourceGroup(resourceGroupName, location);
         return Utils.mapPage(inner, inner1 -> new AvailableServiceAliasImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<AvailableServiceAlias> listByResourceGroup(
-        String resourceGroupName, String location, Context context) {
-        PagedIterable<AvailableServiceAliasInner> inner =
-            this.serviceClient().listByResourceGroup(resourceGroupName, location, context);
+    public PagedIterable<AvailableServiceAlias> listByResourceGroup(String resourceGroupName, String location,
+        Context context) {
+        PagedIterable<AvailableServiceAliasInner> inner
+            = this.serviceClient().listByResourceGroup(resourceGroupName, location, context);
         return Utils.mapPage(inner, inner1 -> new AvailableServiceAliasImpl(inner1, this.manager()));
     }
 

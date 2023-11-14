@@ -21,8 +21,8 @@ public final class ProcessInfoImpl implements ProcessInfo {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    ProcessInfoImpl(
-        ProcessInfoInner innerObject, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
+    ProcessInfoImpl(ProcessInfoInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -87,12 +87,8 @@ public final class ProcessInfoImpl implements ProcessInfo {
     public List<ProcessThreadInfo> threads() {
         List<ProcessThreadInfoInner> inner = this.innerModel().threads();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new ProcessThreadInfoImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new ProcessThreadInfoImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -110,12 +106,8 @@ public final class ProcessInfoImpl implements ProcessInfo {
     public List<ProcessModuleInfo> modules() {
         List<ProcessModuleInfoInner> inner = this.innerModel().modules();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new ProcessModuleInfoImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new ProcessModuleInfoImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

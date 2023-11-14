@@ -21,8 +21,7 @@ public final class NetworkInterfaceTapConfigurationsImpl implements NetworkInter
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public NetworkInterfaceTapConfigurationsImpl(
-        NetworkInterfaceTapConfigurationsClient innerClient,
+    public NetworkInterfaceTapConfigurationsImpl(NetworkInterfaceTapConfigurationsClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -32,32 +31,27 @@ public final class NetworkInterfaceTapConfigurationsImpl implements NetworkInter
         this.serviceClient().delete(resourceGroupName, networkInterfaceName, tapConfigurationName);
     }
 
-    public void delete(
-        String resourceGroupName, String networkInterfaceName, String tapConfigurationName, Context context) {
+    public void delete(String resourceGroupName, String networkInterfaceName, String tapConfigurationName,
+        Context context) {
         this.serviceClient().delete(resourceGroupName, networkInterfaceName, tapConfigurationName, context);
     }
 
-    public Response<NetworkInterfaceTapConfiguration> getWithResponse(
-        String resourceGroupName, String networkInterfaceName, String tapConfigurationName, Context context) {
-        Response<NetworkInterfaceTapConfigurationInner> inner =
-            this
-                .serviceClient()
-                .getWithResponse(resourceGroupName, networkInterfaceName, tapConfigurationName, context);
+    public Response<NetworkInterfaceTapConfiguration> getWithResponse(String resourceGroupName,
+        String networkInterfaceName, String tapConfigurationName, Context context) {
+        Response<NetworkInterfaceTapConfigurationInner> inner = this.serviceClient().getWithResponse(resourceGroupName,
+            networkInterfaceName, tapConfigurationName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new NetworkInterfaceTapConfigurationImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public NetworkInterfaceTapConfiguration get(
-        String resourceGroupName, String networkInterfaceName, String tapConfigurationName) {
-        NetworkInterfaceTapConfigurationInner inner =
-            this.serviceClient().get(resourceGroupName, networkInterfaceName, tapConfigurationName);
+    public NetworkInterfaceTapConfiguration get(String resourceGroupName, String networkInterfaceName,
+        String tapConfigurationName) {
+        NetworkInterfaceTapConfigurationInner inner
+            = this.serviceClient().get(resourceGroupName, networkInterfaceName, tapConfigurationName);
         if (inner != null) {
             return new NetworkInterfaceTapConfigurationImpl(inner, this.manager());
         } else {
@@ -66,76 +60,53 @@ public final class NetworkInterfaceTapConfigurationsImpl implements NetworkInter
     }
 
     public PagedIterable<NetworkInterfaceTapConfiguration> list(String resourceGroupName, String networkInterfaceName) {
-        PagedIterable<NetworkInterfaceTapConfigurationInner> inner =
-            this.serviceClient().list(resourceGroupName, networkInterfaceName);
+        PagedIterable<NetworkInterfaceTapConfigurationInner> inner
+            = this.serviceClient().list(resourceGroupName, networkInterfaceName);
         return Utils.mapPage(inner, inner1 -> new NetworkInterfaceTapConfigurationImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<NetworkInterfaceTapConfiguration> list(
-        String resourceGroupName, String networkInterfaceName, Context context) {
-        PagedIterable<NetworkInterfaceTapConfigurationInner> inner =
-            this.serviceClient().list(resourceGroupName, networkInterfaceName, context);
+    public PagedIterable<NetworkInterfaceTapConfiguration> list(String resourceGroupName, String networkInterfaceName,
+        Context context) {
+        PagedIterable<NetworkInterfaceTapConfigurationInner> inner
+            = this.serviceClient().list(resourceGroupName, networkInterfaceName, context);
         return Utils.mapPage(inner, inner1 -> new NetworkInterfaceTapConfigurationImpl(inner1, this.manager()));
     }
 
     public NetworkInterfaceTapConfiguration getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String networkInterfaceName = Utils.getValueFromIdByName(id, "networkInterfaces");
         if (networkInterfaceName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'networkInterfaces'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'networkInterfaces'.", id)));
         }
         String tapConfigurationName = Utils.getValueFromIdByName(id, "tapConfigurations");
         if (tapConfigurationName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'tapConfigurations'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'tapConfigurations'.", id)));
         }
-        return this
-            .getWithResponse(resourceGroupName, networkInterfaceName, tapConfigurationName, Context.NONE)
+        return this.getWithResponse(resourceGroupName, networkInterfaceName, tapConfigurationName, Context.NONE)
             .getValue();
     }
 
     public Response<NetworkInterfaceTapConfiguration> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String networkInterfaceName = Utils.getValueFromIdByName(id, "networkInterfaces");
         if (networkInterfaceName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'networkInterfaces'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'networkInterfaces'.", id)));
         }
         String tapConfigurationName = Utils.getValueFromIdByName(id, "tapConfigurations");
         if (tapConfigurationName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'tapConfigurations'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'tapConfigurations'.", id)));
         }
         return this.getWithResponse(resourceGroupName, networkInterfaceName, tapConfigurationName, context);
     }
@@ -143,29 +114,18 @@ public final class NetworkInterfaceTapConfigurationsImpl implements NetworkInter
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String networkInterfaceName = Utils.getValueFromIdByName(id, "networkInterfaces");
         if (networkInterfaceName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'networkInterfaces'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'networkInterfaces'.", id)));
         }
         String tapConfigurationName = Utils.getValueFromIdByName(id, "tapConfigurations");
         if (tapConfigurationName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'tapConfigurations'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'tapConfigurations'.", id)));
         }
         this.delete(resourceGroupName, networkInterfaceName, tapConfigurationName, Context.NONE);
     }
@@ -173,29 +133,18 @@ public final class NetworkInterfaceTapConfigurationsImpl implements NetworkInter
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String networkInterfaceName = Utils.getValueFromIdByName(id, "networkInterfaces");
         if (networkInterfaceName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'networkInterfaces'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'networkInterfaces'.", id)));
         }
         String tapConfigurationName = Utils.getValueFromIdByName(id, "tapConfigurations");
         if (tapConfigurationName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'tapConfigurations'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'tapConfigurations'.", id)));
         }
         this.delete(resourceGroupName, networkInterfaceName, tapConfigurationName, context);
     }

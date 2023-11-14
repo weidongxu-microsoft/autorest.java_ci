@@ -18,7 +18,7 @@ import com.azure.resourcemanager.network.generated.fluent.models.NetworkManagerC
 public interface ManagementGroupNetworkManagerConnectionsClient {
     /**
      * Create a network manager connection on this management group.
-     *
+     * 
      * @param managementGroupId The management group Id which uniquely identify the Microsoft Azure management group.
      * @param networkManagerConnectionName Name for the network manager connection.
      * @param parameters Network manager connection to be created/updated.
@@ -29,15 +29,12 @@ public interface ManagementGroupNetworkManagerConnectionsClient {
      * @return the Network Manager Connection resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<NetworkManagerConnectionInner> createOrUpdateWithResponse(
-        String managementGroupId,
-        String networkManagerConnectionName,
-        NetworkManagerConnectionInner parameters,
-        Context context);
+    Response<NetworkManagerConnectionInner> createOrUpdateWithResponse(String managementGroupId,
+        String networkManagerConnectionName, NetworkManagerConnectionInner parameters, Context context);
 
     /**
      * Create a network manager connection on this management group.
-     *
+     * 
      * @param managementGroupId The management group Id which uniquely identify the Microsoft Azure management group.
      * @param networkManagerConnectionName Name for the network manager connection.
      * @param parameters Network manager connection to be created/updated.
@@ -47,12 +44,12 @@ public interface ManagementGroupNetworkManagerConnectionsClient {
      * @return the Network Manager Connection resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    NetworkManagerConnectionInner createOrUpdate(
-        String managementGroupId, String networkManagerConnectionName, NetworkManagerConnectionInner parameters);
+    NetworkManagerConnectionInner createOrUpdate(String managementGroupId, String networkManagerConnectionName,
+        NetworkManagerConnectionInner parameters);
 
     /**
      * Get a specified connection created by this management group.
-     *
+     * 
      * @param managementGroupId The management group Id which uniquely identify the Microsoft Azure management group.
      * @param networkManagerConnectionName Name for the network manager connection.
      * @param context The context to associate with this operation.
@@ -62,12 +59,12 @@ public interface ManagementGroupNetworkManagerConnectionsClient {
      * @return a specified connection created by this management group along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<NetworkManagerConnectionInner> getWithResponse(
-        String managementGroupId, String networkManagerConnectionName, Context context);
+    Response<NetworkManagerConnectionInner> getWithResponse(String managementGroupId,
+        String networkManagerConnectionName, Context context);
 
     /**
      * Get a specified connection created by this management group.
-     *
+     * 
      * @param managementGroupId The management group Id which uniquely identify the Microsoft Azure management group.
      * @param networkManagerConnectionName Name for the network manager connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -80,7 +77,7 @@ public interface ManagementGroupNetworkManagerConnectionsClient {
 
     /**
      * Delete specified pending connection created by this management group.
-     *
+     * 
      * @param managementGroupId The management group Id which uniquely identify the Microsoft Azure management group.
      * @param networkManagerConnectionName Name for the network manager connection.
      * @param context The context to associate with this operation.
@@ -94,7 +91,7 @@ public interface ManagementGroupNetworkManagerConnectionsClient {
 
     /**
      * Delete specified pending connection created by this management group.
-     *
+     * 
      * @param managementGroupId The management group Id which uniquely identify the Microsoft Azure management group.
      * @param networkManagerConnectionName Name for the network manager connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -106,7 +103,7 @@ public interface ManagementGroupNetworkManagerConnectionsClient {
 
     /**
      * List all network manager connections created by this management group.
-     *
+     * 
      * @param managementGroupId The management group Id which uniquely identify the Microsoft Azure management group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -118,13 +115,13 @@ public interface ManagementGroupNetworkManagerConnectionsClient {
 
     /**
      * List all network manager connections created by this management group.
-     *
+     * 
      * @param managementGroupId The management group Id which uniquely identify the Microsoft Azure management group.
      * @param top An optional query parameter which specifies the maximum number of records to be returned by the
-     *     server.
+     * server.
      * @param skipToken SkipToken is only used if a previous operation returned a partial result. If a previous response
-     *     contains a nextLink element, the value of the nextLink element will include a skipToken parameter that
-     *     specifies a starting point to use for subsequent calls.
+     * contains a nextLink element, the value of the nextLink element will include a skipToken parameter that specifies
+     * a starting point to use for subsequent calls.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -132,6 +129,6 @@ public interface ManagementGroupNetworkManagerConnectionsClient {
      * @return list of network manager connections as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<NetworkManagerConnectionInner> list(
-        String managementGroupId, Integer top, String skipToken, Context context);
+    PagedIterable<NetworkManagerConnectionInner> list(String managementGroupId, Integer top, String skipToken,
+        Context context);
 }

@@ -7,7 +7,9 @@ package com.azure.resourcemanager.eventhubs.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Namespace replication properties. */
+/**
+ * Namespace replication properties.
+ */
 @Fluent
 public final class NamespaceReplicaLocation {
     /*
@@ -29,13 +31,15 @@ public final class NamespaceReplicaLocation {
     @JsonProperty(value = "clusterArmId")
     private String clusterArmId;
 
-    /** Creates an instance of NamespaceReplicaLocation class. */
+    /**
+     * Creates an instance of NamespaceReplicaLocation class.
+     */
     public NamespaceReplicaLocation() {
     }
 
     /**
      * Get the locationName property: Azure regions where a replica of the namespace is maintained.
-     *
+     * 
      * @return the locationName value.
      */
     public String locationName() {
@@ -44,7 +48,7 @@ public final class NamespaceReplicaLocation {
 
     /**
      * Set the locationName property: Azure regions where a replica of the namespace is maintained.
-     *
+     * 
      * @param locationName the locationName value to set.
      * @return the NamespaceReplicaLocation object itself.
      */
@@ -55,7 +59,7 @@ public final class NamespaceReplicaLocation {
 
     /**
      * Get the roleType property: GeoDR Role Types.
-     *
+     * 
      * @return the roleType value.
      */
     public GeoDRRoleType roleType() {
@@ -64,7 +68,7 @@ public final class NamespaceReplicaLocation {
 
     /**
      * Set the roleType property: GeoDR Role Types.
-     *
+     * 
      * @param roleType the roleType value to set.
      * @return the NamespaceReplicaLocation object itself.
      */
@@ -76,7 +80,7 @@ public final class NamespaceReplicaLocation {
     /**
      * Get the clusterArmId property: Optional property that denotes the ARM ID of the Cluster. This is required, if a
      * namespace replica should be placed in a Dedicated Event Hub Cluster.
-     *
+     * 
      * @return the clusterArmId value.
      */
     public String clusterArmId() {
@@ -86,7 +90,7 @@ public final class NamespaceReplicaLocation {
     /**
      * Set the clusterArmId property: Optional property that denotes the ARM ID of the Cluster. This is required, if a
      * namespace replica should be placed in a Dedicated Event Hub Cluster.
-     *
+     * 
      * @param clusterArmId the clusterArmId value to set.
      * @return the NamespaceReplicaLocation object itself.
      */
@@ -97,7 +101,7 @@ public final class NamespaceReplicaLocation {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

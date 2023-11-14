@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Azure action group. */
+/**
+ * Azure action group.
+ */
 @Fluent
 public final class AzNsActionGroup {
     /*
@@ -29,13 +31,15 @@ public final class AzNsActionGroup {
     @JsonProperty(value = "customWebhookPayload")
     private String customWebhookPayload;
 
-    /** Creates an instance of AzNsActionGroup class. */
+    /**
+     * Creates an instance of AzNsActionGroup class.
+     */
     public AzNsActionGroup() {
     }
 
     /**
      * Get the actionGroup property: Azure Action Group reference.
-     *
+     * 
      * @return the actionGroup value.
      */
     public List<String> actionGroup() {
@@ -44,7 +48,7 @@ public final class AzNsActionGroup {
 
     /**
      * Set the actionGroup property: Azure Action Group reference.
-     *
+     * 
      * @param actionGroup the actionGroup value to set.
      * @return the AzNsActionGroup object itself.
      */
@@ -55,7 +59,7 @@ public final class AzNsActionGroup {
 
     /**
      * Get the emailSubject property: Custom subject override for all email ids in Azure action group.
-     *
+     * 
      * @return the emailSubject value.
      */
     public String emailSubject() {
@@ -64,7 +68,7 @@ public final class AzNsActionGroup {
 
     /**
      * Set the emailSubject property: Custom subject override for all email ids in Azure action group.
-     *
+     * 
      * @param emailSubject the emailSubject value to set.
      * @return the AzNsActionGroup object itself.
      */
@@ -75,7 +79,7 @@ public final class AzNsActionGroup {
 
     /**
      * Get the customWebhookPayload property: Custom payload to be sent for all webhook URI in Azure action group.
-     *
+     * 
      * @return the customWebhookPayload value.
      */
     public String customWebhookPayload() {
@@ -84,7 +88,7 @@ public final class AzNsActionGroup {
 
     /**
      * Set the customWebhookPayload property: Custom payload to be sent for all webhook URI in Azure action group.
-     *
+     * 
      * @param customWebhookPayload the customWebhookPayload value to set.
      * @return the AzNsActionGroup object itself.
      */
@@ -95,7 +99,7 @@ public final class AzNsActionGroup {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

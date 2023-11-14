@@ -10,7 +10,9 @@ import com.azure.resourcemanager.compute.generated.models.SubResourceReadOnly;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** capacity reservation group Properties. */
+/**
+ * capacity reservation group Properties.
+ */
 @Immutable
 public final class CapacityReservationGroupProperties {
     /*
@@ -32,14 +34,16 @@ public final class CapacityReservationGroupProperties {
     @JsonProperty(value = "instanceView", access = JsonProperty.Access.WRITE_ONLY)
     private CapacityReservationGroupInstanceView instanceView;
 
-    /** Creates an instance of CapacityReservationGroupProperties class. */
+    /**
+     * Creates an instance of CapacityReservationGroupProperties class.
+     */
     public CapacityReservationGroupProperties() {
     }
 
     /**
      * Get the capacityReservations property: A list of all capacity reservation resource ids that belong to capacity
      * reservation group.
-     *
+     * 
      * @return the capacityReservations value.
      */
     public List<SubResourceReadOnly> capacityReservations() {
@@ -49,7 +53,7 @@ public final class CapacityReservationGroupProperties {
     /**
      * Get the virtualMachinesAssociated property: A list of references to all virtual machines associated to the
      * capacity reservation group.
-     *
+     * 
      * @return the virtualMachinesAssociated value.
      */
     public List<SubResourceReadOnly> virtualMachinesAssociated() {
@@ -59,7 +63,7 @@ public final class CapacityReservationGroupProperties {
     /**
      * Get the instanceView property: The capacity reservation group instance view which has the list of instance views
      * for all the capacity reservations that belong to the capacity reservation group.
-     *
+     * 
      * @return the instanceView value.
      */
     public CapacityReservationGroupInstanceView instanceView() {
@@ -68,7 +72,7 @@ public final class CapacityReservationGroupProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -10,7 +10,9 @@ import com.azure.resourcemanager.databoxedge.generated.models.MetricConfiguratio
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Metrics properties. */
+/**
+ * Metrics properties.
+ */
 @Fluent
 public final class MonitoringMetricConfigurationProperties {
     /*
@@ -19,13 +21,15 @@ public final class MonitoringMetricConfigurationProperties {
     @JsonProperty(value = "metricConfigurations", required = true)
     private List<MetricConfiguration> metricConfigurations;
 
-    /** Creates an instance of MonitoringMetricConfigurationProperties class. */
+    /**
+     * Creates an instance of MonitoringMetricConfigurationProperties class.
+     */
     public MonitoringMetricConfigurationProperties() {
     }
 
     /**
      * Get the metricConfigurations property: The metrics configuration details.
-     *
+     * 
      * @return the metricConfigurations value.
      */
     public List<MetricConfiguration> metricConfigurations() {
@@ -34,28 +38,25 @@ public final class MonitoringMetricConfigurationProperties {
 
     /**
      * Set the metricConfigurations property: The metrics configuration details.
-     *
+     * 
      * @param metricConfigurations the metricConfigurations value to set.
      * @return the MonitoringMetricConfigurationProperties object itself.
      */
-    public MonitoringMetricConfigurationProperties withMetricConfigurations(
-        List<MetricConfiguration> metricConfigurations) {
+    public MonitoringMetricConfigurationProperties
+        withMetricConfigurations(List<MetricConfiguration> metricConfigurations) {
         this.metricConfigurations = metricConfigurations;
         return this;
     }
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (metricConfigurations() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property metricConfigurations in model"
-                            + " MonitoringMetricConfigurationProperties"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property metricConfigurations in model MonitoringMetricConfigurationProperties"));
         } else {
             metricConfigurations().forEach(e -> e.validate());
         }

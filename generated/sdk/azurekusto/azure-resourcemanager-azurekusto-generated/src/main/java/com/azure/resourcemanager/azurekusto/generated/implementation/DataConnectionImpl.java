@@ -12,8 +12,8 @@ public final class DataConnectionImpl implements DataConnection {
 
     private final com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager;
 
-    DataConnectionImpl(
-        DataConnectionInner innerObject, com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager) {
+    DataConnectionImpl(DataConnectionInner innerObject,
+        com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -74,25 +74,19 @@ public final class LinkedServiceImpl implements LinkedService, LinkedService.Def
     }
 
     public LinkedService create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getLinkedServices()
-                .createOrUpdate(resourceGroupName, workspaceName, linkedServiceName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getLinkedServices().createOrUpdate(resourceGroupName,
+            workspaceName, linkedServiceName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public LinkedService create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getLinkedServices()
-                .createOrUpdate(resourceGroupName, workspaceName, linkedServiceName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getLinkedServices().createOrUpdate(resourceGroupName,
+            workspaceName, linkedServiceName, this.innerModel(), context);
         return this;
     }
 
-    LinkedServiceImpl(
-        String name, com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager) {
+    LinkedServiceImpl(String name,
+        com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager) {
         this.innerObject = new LinkedServiceInner();
         this.serviceManager = serviceManager;
         this.linkedServiceName = name;
@@ -103,25 +97,18 @@ public final class LinkedServiceImpl implements LinkedService, LinkedService.Def
     }
 
     public LinkedService apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getLinkedServices()
-                .createOrUpdate(resourceGroupName, workspaceName, linkedServiceName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getLinkedServices().createOrUpdate(resourceGroupName,
+            workspaceName, linkedServiceName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public LinkedService apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getLinkedServices()
-                .createOrUpdate(resourceGroupName, workspaceName, linkedServiceName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getLinkedServices().createOrUpdate(resourceGroupName,
+            workspaceName, linkedServiceName, this.innerModel(), context);
         return this;
     }
 
-    LinkedServiceImpl(
-        LinkedServiceInner innerObject,
+    LinkedServiceImpl(LinkedServiceInner innerObject,
         com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -131,22 +118,14 @@ public final class LinkedServiceImpl implements LinkedService, LinkedService.Def
     }
 
     public LinkedService refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getLinkedServices()
-                .getWithResponse(resourceGroupName, workspaceName, linkedServiceName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getLinkedServices()
+            .getWithResponse(resourceGroupName, workspaceName, linkedServiceName, Context.NONE).getValue();
         return this;
     }
 
     public LinkedService refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getLinkedServices()
-                .getWithResponse(resourceGroupName, workspaceName, linkedServiceName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getLinkedServices()
+            .getWithResponse(resourceGroupName, workspaceName, linkedServiceName, context).getValue();
         return this;
     }
 

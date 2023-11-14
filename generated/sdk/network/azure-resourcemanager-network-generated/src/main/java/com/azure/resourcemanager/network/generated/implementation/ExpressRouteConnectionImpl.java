@@ -15,8 +15,7 @@ public final class ExpressRouteConnectionImpl implements ExpressRouteConnection 
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    ExpressRouteConnectionImpl(
-        ExpressRouteConnectionInner innerObject,
+    ExpressRouteConnectionImpl(ExpressRouteConnectionInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

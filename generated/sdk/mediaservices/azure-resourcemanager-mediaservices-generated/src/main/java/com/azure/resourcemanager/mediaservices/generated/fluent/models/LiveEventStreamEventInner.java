@@ -11,7 +11,9 @@ import com.azure.resourcemanager.mediaservices.generated.models.LiveEventStreamE
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
-/** The live event stream event. */
+/**
+ * The live event stream event.
+ */
 @Fluent
 public final class LiveEventStreamEventInner {
     /*
@@ -38,13 +40,15 @@ public final class LiveEventStreamEventInner {
     @JsonProperty(value = "data")
     private LiveEventStreamEventData data;
 
-    /** Creates an instance of LiveEventStreamEventInner class. */
+    /**
+     * Creates an instance of LiveEventStreamEventInner class.
+     */
     public LiveEventStreamEventInner() {
     }
 
     /**
      * Get the eventType property: The type of the stream event. Format: StreamEvent/{eventType}.
-     *
+     * 
      * @return the eventType value.
      */
     public LiveEventStreamEventType eventType() {
@@ -53,7 +57,7 @@ public final class LiveEventStreamEventInner {
 
     /**
      * Set the eventType property: The type of the stream event. Format: StreamEvent/{eventType}.
-     *
+     * 
      * @param eventType the eventType value to set.
      * @return the LiveEventStreamEventInner object itself.
      */
@@ -64,7 +68,7 @@ public final class LiveEventStreamEventInner {
 
     /**
      * Get the eventTime property: The time event raised.
-     *
+     * 
      * @return the eventTime value.
      */
     public OffsetDateTime eventTime() {
@@ -73,7 +77,7 @@ public final class LiveEventStreamEventInner {
 
     /**
      * Set the eventTime property: The time event raised.
-     *
+     * 
      * @param eventTime the eventTime value to set.
      * @return the LiveEventStreamEventInner object itself.
      */
@@ -84,7 +88,7 @@ public final class LiveEventStreamEventInner {
 
     /**
      * Get the eventLevel property: Event level.
-     *
+     * 
      * @return the eventLevel value.
      */
     public LiveEventStreamEventLevel eventLevel() {
@@ -93,7 +97,7 @@ public final class LiveEventStreamEventInner {
 
     /**
      * Set the eventLevel property: Event level.
-     *
+     * 
      * @param eventLevel the eventLevel value to set.
      * @return the LiveEventStreamEventInner object itself.
      */
@@ -104,7 +108,7 @@ public final class LiveEventStreamEventInner {
 
     /**
      * Get the data property: Event data based on event type.
-     *
+     * 
      * @return the data value.
      */
     public LiveEventStreamEventData data() {
@@ -113,7 +117,7 @@ public final class LiveEventStreamEventInner {
 
     /**
      * Set the data property: Event data based on event type.
-     *
+     * 
      * @param data the data value to set.
      * @return the LiveEventStreamEventInner object itself.
      */
@@ -124,7 +128,7 @@ public final class LiveEventStreamEventInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

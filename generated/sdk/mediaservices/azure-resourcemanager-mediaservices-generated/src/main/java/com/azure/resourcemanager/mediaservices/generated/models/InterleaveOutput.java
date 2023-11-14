@@ -13,15 +13,19 @@ import java.util.Collection;
  * set InterleavedOutput as NonInterleavedOutput to produce audio-only and video-only outputs in separate MP4 files.
  */
 public final class InterleaveOutput extends ExpandableStringEnum<InterleaveOutput> {
-    /** Static value NonInterleavedOutput for InterleaveOutput. */
+    /**
+     * Static value NonInterleavedOutput for InterleaveOutput.
+     */
     public static final InterleaveOutput NON_INTERLEAVED_OUTPUT = fromString("NonInterleavedOutput");
 
-    /** Static value InterleavedOutput for InterleaveOutput. */
+    /**
+     * Static value InterleavedOutput for InterleaveOutput.
+     */
     public static final InterleaveOutput INTERLEAVED_OUTPUT = fromString("InterleavedOutput");
 
     /**
      * Creates a new instance of InterleaveOutput value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -30,7 +34,7 @@ public final class InterleaveOutput extends ExpandableStringEnum<InterleaveOutpu
 
     /**
      * Creates or finds a InterleaveOutput from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding InterleaveOutput.
      */
@@ -41,7 +45,7 @@ public final class InterleaveOutput extends ExpandableStringEnum<InterleaveOutpu
 
     /**
      * Gets known InterleaveOutput values.
-     *
+     * 
      * @return known InterleaveOutput values.
      */
     public static Collection<InterleaveOutput> values() {

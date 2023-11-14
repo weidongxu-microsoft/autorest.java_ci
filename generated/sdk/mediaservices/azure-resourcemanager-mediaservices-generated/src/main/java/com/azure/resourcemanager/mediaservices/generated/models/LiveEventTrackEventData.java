@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
-/** The live event track ingest heart beat event data. */
+/**
+ * The live event track ingest heart beat event data.
+ */
 @Fluent
 public final class LiveEventTrackEventData {
     /*
@@ -118,13 +120,15 @@ public final class LiveEventTrackEventData {
     @JsonProperty(value = "transcriptionLanguage")
     private String transcriptionLanguage;
 
-    /** Creates an instance of LiveEventTrackEventData class. */
+    /**
+     * Creates an instance of LiveEventTrackEventData class.
+     */
     public LiveEventTrackEventData() {
     }
 
     /**
      * Get the trackName property: Name of the track.
-     *
+     * 
      * @return the trackName value.
      */
     public String trackName() {
@@ -133,7 +137,7 @@ public final class LiveEventTrackEventData {
 
     /**
      * Set the trackName property: Name of the track.
-     *
+     * 
      * @param trackName the trackName value to set.
      * @return the LiveEventTrackEventData object itself.
      */
@@ -144,7 +148,7 @@ public final class LiveEventTrackEventData {
 
     /**
      * Get the trackType property: Type of the track.
-     *
+     * 
      * @return the trackType value.
      */
     public LiveEventTrackType trackType() {
@@ -153,7 +157,7 @@ public final class LiveEventTrackEventData {
 
     /**
      * Set the trackType property: Type of the track.
-     *
+     * 
      * @param trackType the trackType value to set.
      * @return the LiveEventTrackEventData object itself.
      */
@@ -164,7 +168,7 @@ public final class LiveEventTrackEventData {
 
     /**
      * Get the bitrate property: Bitrate of the track.
-     *
+     * 
      * @return the bitrate value.
      */
     public Long bitrate() {
@@ -173,7 +177,7 @@ public final class LiveEventTrackEventData {
 
     /**
      * Set the bitrate property: Bitrate of the track.
-     *
+     * 
      * @param bitrate the bitrate value to set.
      * @return the LiveEventTrackEventData object itself.
      */
@@ -184,7 +188,7 @@ public final class LiveEventTrackEventData {
 
     /**
      * Get the incomingBitrate property: Calculated bitrate based on data chunks coming from encoder.
-     *
+     * 
      * @return the incomingBitrate value.
      */
     public Long incomingBitrate() {
@@ -193,7 +197,7 @@ public final class LiveEventTrackEventData {
 
     /**
      * Set the incomingBitrate property: Calculated bitrate based on data chunks coming from encoder.
-     *
+     * 
      * @param incomingBitrate the incomingBitrate value to set.
      * @return the LiveEventTrackEventData object itself.
      */
@@ -204,7 +208,7 @@ public final class LiveEventTrackEventData {
 
     /**
      * Get the lastTimestamp property: Latest timestamp received for a track in last 20 seconds.
-     *
+     * 
      * @return the lastTimestamp value.
      */
     public String lastTimestamp() {
@@ -213,7 +217,7 @@ public final class LiveEventTrackEventData {
 
     /**
      * Set the lastTimestamp property: Latest timestamp received for a track in last 20 seconds.
-     *
+     * 
      * @param lastTimestamp the lastTimestamp value to set.
      * @return the LiveEventTrackEventData object itself.
      */
@@ -224,7 +228,7 @@ public final class LiveEventTrackEventData {
 
     /**
      * Get the timescale property: Timescale in which timestamps are expressed.
-     *
+     * 
      * @return the timescale value.
      */
     public String timescale() {
@@ -233,7 +237,7 @@ public final class LiveEventTrackEventData {
 
     /**
      * Set the timescale property: Timescale in which timestamps are expressed.
-     *
+     * 
      * @param timescale the timescale value to set.
      * @return the LiveEventTrackEventData object itself.
      */
@@ -244,7 +248,7 @@ public final class LiveEventTrackEventData {
 
     /**
      * Get the overlapCount property: Number of data chunks that had overlapped timestamps in last 20 seconds.
-     *
+     * 
      * @return the overlapCount value.
      */
     public Long overlapCount() {
@@ -253,7 +257,7 @@ public final class LiveEventTrackEventData {
 
     /**
      * Set the overlapCount property: Number of data chunks that had overlapped timestamps in last 20 seconds.
-     *
+     * 
      * @param overlapCount the overlapCount value to set.
      * @return the LiveEventTrackEventData object itself.
      */
@@ -264,7 +268,7 @@ public final class LiveEventTrackEventData {
 
     /**
      * Get the discontinuityCount property: Number of discontinuities detected in the last 20 seconds.
-     *
+     * 
      * @return the discontinuityCount value.
      */
     public Long discontinuityCount() {
@@ -273,7 +277,7 @@ public final class LiveEventTrackEventData {
 
     /**
      * Set the discontinuityCount property: Number of discontinuities detected in the last 20 seconds.
-     *
+     * 
      * @param discontinuityCount the discontinuityCount value to set.
      * @return the LiveEventTrackEventData object itself.
      */
@@ -283,9 +287,9 @@ public final class LiveEventTrackEventData {
     }
 
     /**
-     * Get the nonincreasingCount property: Number of data chunks with timestamps in the past that were received in last
-     * 20 seconds.
-     *
+     * Get the nonincreasingCount property: Number of data chunks with timestamps in the past that were received in
+     * last 20 seconds.
+     * 
      * @return the nonincreasingCount value.
      */
     public Long nonincreasingCount() {
@@ -293,9 +297,9 @@ public final class LiveEventTrackEventData {
     }
 
     /**
-     * Set the nonincreasingCount property: Number of data chunks with timestamps in the past that were received in last
-     * 20 seconds.
-     *
+     * Set the nonincreasingCount property: Number of data chunks with timestamps in the past that were received in
+     * last 20 seconds.
+     * 
      * @param nonincreasingCount the nonincreasingCount value to set.
      * @return the LiveEventTrackEventData object itself.
      */
@@ -307,7 +311,7 @@ public final class LiveEventTrackEventData {
     /**
      * Get the unexpectedBitrate property: If expected and actual bitrates differ by more than allowed limit in last 20
      * seconds.
-     *
+     * 
      * @return the unexpectedBitrate value.
      */
     public Boolean unexpectedBitrate() {
@@ -317,7 +321,7 @@ public final class LiveEventTrackEventData {
     /**
      * Set the unexpectedBitrate property: If expected and actual bitrates differ by more than allowed limit in last 20
      * seconds.
-     *
+     * 
      * @param unexpectedBitrate the unexpectedBitrate value to set.
      * @return the LiveEventTrackEventData object itself.
      */
@@ -328,7 +332,7 @@ public final class LiveEventTrackEventData {
 
     /**
      * Get the state property: State of the live event.
-     *
+     * 
      * @return the state value.
      */
     public String state() {
@@ -337,7 +341,7 @@ public final class LiveEventTrackEventData {
 
     /**
      * Set the state property: State of the live event.
-     *
+     * 
      * @param state the state value to set.
      * @return the LiveEventTrackEventData object itself.
      */
@@ -348,7 +352,7 @@ public final class LiveEventTrackEventData {
 
     /**
      * Get the healthy property: Indicates whether ingest is healthy.
-     *
+     * 
      * @return the healthy value.
      */
     public Boolean healthy() {
@@ -357,7 +361,7 @@ public final class LiveEventTrackEventData {
 
     /**
      * Set the healthy property: Indicates whether ingest is healthy.
-     *
+     * 
      * @param healthy the healthy value to set.
      * @return the LiveEventTrackEventData object itself.
      */
@@ -369,7 +373,7 @@ public final class LiveEventTrackEventData {
     /**
      * Get the lastFragmentArrivalTime property: The last timestamp in UTC that a fragment arrived at the ingest
      * endpoint.
-     *
+     * 
      * @return the lastFragmentArrivalTime value.
      */
     public OffsetDateTime lastFragmentArrivalTime() {
@@ -379,7 +383,7 @@ public final class LiveEventTrackEventData {
     /**
      * Set the lastFragmentArrivalTime property: The last timestamp in UTC that a fragment arrived at the ingest
      * endpoint.
-     *
+     * 
      * @param lastFragmentArrivalTime the lastFragmentArrivalTime value to set.
      * @return the LiveEventTrackEventData object itself.
      */
@@ -398,7 +402,7 @@ public final class LiveEventTrackEventData {
      * up and send all 60 seconds or more of data every minute, you will see this value reported as 0. If there was a
      * disconnection or discontinuity from the encoder, this value may still display as 0, as it does not account for
      * breaks in the data - only data that is delayed in timestamps.
-     *
+     * 
      * @return the ingestDriftValue value.
      */
     public String ingestDriftValue() {
@@ -415,7 +419,7 @@ public final class LiveEventTrackEventData {
      * up and send all 60 seconds or more of data every minute, you will see this value reported as 0. If there was a
      * disconnection or discontinuity from the encoder, this value may still display as 0, as it does not account for
      * breaks in the data - only data that is delayed in timestamps.
-     *
+     * 
      * @param ingestDriftValue the ingestDriftValue value to set.
      * @return the LiveEventTrackEventData object itself.
      */
@@ -428,7 +432,7 @@ public final class LiveEventTrackEventData {
      * Get the transcriptionState property: This value is "On" for audio track heartbeats if live transcription is
      * turned on, otherwise you will see an empty string. This state is only applicable to track type of "audio" for
      * Live transcription. All other tracks will have an empty value.
-     *
+     * 
      * @return the transcriptionState value.
      */
     public String transcriptionState() {
@@ -439,7 +443,7 @@ public final class LiveEventTrackEventData {
      * Set the transcriptionState property: This value is "On" for audio track heartbeats if live transcription is
      * turned on, otherwise you will see an empty string. This state is only applicable to track type of "audio" for
      * Live transcription. All other tracks will have an empty value.
-     *
+     * 
      * @param transcriptionState the transcriptionState value to set.
      * @return the LiveEventTrackEventData object itself.
      */
@@ -452,7 +456,7 @@ public final class LiveEventTrackEventData {
      * Get the transcriptionLanguage property: The language code (in BCP-47 format) of the transcription language. For
      * example, "de-de" indicates German (Germany). The value is empty for the video track heartbeats, or when live
      * transcription is turned off.
-     *
+     * 
      * @return the transcriptionLanguage value.
      */
     public String transcriptionLanguage() {
@@ -463,7 +467,7 @@ public final class LiveEventTrackEventData {
      * Set the transcriptionLanguage property: The language code (in BCP-47 format) of the transcription language. For
      * example, "de-de" indicates German (Germany). The value is empty for the video track heartbeats, or when live
      * transcription is turned off.
-     *
+     * 
      * @param transcriptionLanguage the transcriptionLanguage value to set.
      * @return the LiveEventTrackEventData object itself.
      */
@@ -474,7 +478,7 @@ public final class LiveEventTrackEventData {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

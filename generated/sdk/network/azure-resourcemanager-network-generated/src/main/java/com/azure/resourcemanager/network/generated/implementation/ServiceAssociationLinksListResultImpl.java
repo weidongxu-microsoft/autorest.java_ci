@@ -15,8 +15,7 @@ public final class ServiceAssociationLinksListResultImpl implements ServiceAssoc
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    ServiceAssociationLinksListResultImpl(
-        ServiceAssociationLinksListResultInner innerObject,
+    ServiceAssociationLinksListResultImpl(ServiceAssociationLinksListResultInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

@@ -9,7 +9,9 @@ import com.azure.resourcemanager.authorization.generated.fluent.models.ProviderO
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Provider operations metadata list. */
+/**
+ * Provider operations metadata list.
+ */
 @Fluent
 public final class ProviderOperationsMetadataListResult {
     /*
@@ -24,13 +26,15 @@ public final class ProviderOperationsMetadataListResult {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
-    /** Creates an instance of ProviderOperationsMetadataListResult class. */
+    /**
+     * Creates an instance of ProviderOperationsMetadataListResult class.
+     */
     public ProviderOperationsMetadataListResult() {
     }
 
     /**
      * Get the value property: The list of providers.
-     *
+     * 
      * @return the value value.
      */
     public List<ProviderOperationsMetadataInner> value() {
@@ -39,7 +43,7 @@ public final class ProviderOperationsMetadataListResult {
 
     /**
      * Set the value property: The list of providers.
-     *
+     * 
      * @param value the value value to set.
      * @return the ProviderOperationsMetadataListResult object itself.
      */
@@ -50,7 +54,7 @@ public final class ProviderOperationsMetadataListResult {
 
     /**
      * Get the nextLink property: The URL to use for getting the next set of results.
-     *
+     * 
      * @return the nextLink value.
      */
     public String nextLink() {
@@ -59,7 +63,7 @@ public final class ProviderOperationsMetadataListResult {
 
     /**
      * Set the nextLink property: The URL to use for getting the next set of results.
-     *
+     * 
      * @param nextLink the nextLink value to set.
      * @return the ProviderOperationsMetadataListResult object itself.
      */
@@ -70,7 +74,7 @@ public final class ProviderOperationsMetadataListResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

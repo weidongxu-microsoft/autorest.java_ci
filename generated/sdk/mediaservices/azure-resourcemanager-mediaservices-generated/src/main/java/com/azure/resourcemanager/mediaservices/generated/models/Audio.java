@@ -10,7 +10,9 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** Defines the common properties for all audio codecs. */
+/**
+ * Defines the common properties for all audio codecs.
+ */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
     include = JsonTypeInfo.As.PROPERTY,
@@ -19,8 +21,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @JsonTypeName("#Microsoft.Media.Audio")
 @JsonSubTypes({
     @JsonSubTypes.Type(name = "#Microsoft.Media.AacAudio", value = AacAudio.class),
-    @JsonSubTypes.Type(name = "#Microsoft.Media.DDAudio", value = DDAudio.class)
-})
+    @JsonSubTypes.Type(name = "#Microsoft.Media.DDAudio", value = DDAudio.class) })
 @Fluent
 public class Audio extends Codec {
     /*
@@ -41,13 +42,15 @@ public class Audio extends Codec {
     @JsonProperty(value = "bitrate")
     private Integer bitrate;
 
-    /** Creates an instance of Audio class. */
+    /**
+     * Creates an instance of Audio class.
+     */
     public Audio() {
     }
 
     /**
      * Get the channels property: The number of channels in the audio.
-     *
+     * 
      * @return the channels value.
      */
     public Integer channels() {
@@ -56,7 +59,7 @@ public class Audio extends Codec {
 
     /**
      * Set the channels property: The number of channels in the audio.
-     *
+     * 
      * @param channels the channels value to set.
      * @return the Audio object itself.
      */
@@ -67,7 +70,7 @@ public class Audio extends Codec {
 
     /**
      * Get the samplingRate property: The sampling rate to use for encoding in hertz.
-     *
+     * 
      * @return the samplingRate value.
      */
     public Integer samplingRate() {
@@ -76,7 +79,7 @@ public class Audio extends Codec {
 
     /**
      * Set the samplingRate property: The sampling rate to use for encoding in hertz.
-     *
+     * 
      * @param samplingRate the samplingRate value to set.
      * @return the Audio object itself.
      */
@@ -87,7 +90,7 @@ public class Audio extends Codec {
 
     /**
      * Get the bitrate property: The bitrate, in bits per second, of the output encoded audio.
-     *
+     * 
      * @return the bitrate value.
      */
     public Integer bitrate() {
@@ -96,7 +99,7 @@ public class Audio extends Codec {
 
     /**
      * Set the bitrate property: The bitrate, in bits per second, of the output encoded audio.
-     *
+     * 
      * @param bitrate the bitrate value to set.
      * @return the Audio object itself.
      */
@@ -105,7 +108,9 @@ public class Audio extends Codec {
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Audio withLabel(String label) {
         super.withLabel(label);
@@ -114,7 +119,7 @@ public class Audio extends Codec {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

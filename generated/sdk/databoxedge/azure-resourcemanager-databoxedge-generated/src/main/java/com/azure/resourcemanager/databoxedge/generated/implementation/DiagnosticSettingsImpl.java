@@ -22,8 +22,7 @@ public final class DiagnosticSettingsImpl implements DiagnosticSettings {
 
     private final com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager;
 
-    public DiagnosticSettingsImpl(
-        DiagnosticSettingsClient innerClient,
+    public DiagnosticSettingsImpl(DiagnosticSettingsClient innerClient,
         com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -31,25 +30,20 @@ public final class DiagnosticSettingsImpl implements DiagnosticSettings {
 
     public Response<DiagnosticProactiveLogCollectionSettings> getDiagnosticProactiveLogCollectionSettingsWithResponse(
         String deviceName, String resourceGroupName, Context context) {
-        Response<DiagnosticProactiveLogCollectionSettingsInner> inner =
-            this
-                .serviceClient()
-                .getDiagnosticProactiveLogCollectionSettingsWithResponse(deviceName, resourceGroupName, context);
+        Response<DiagnosticProactiveLogCollectionSettingsInner> inner = this.serviceClient()
+            .getDiagnosticProactiveLogCollectionSettingsWithResponse(deviceName, resourceGroupName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DiagnosticProactiveLogCollectionSettingsImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public DiagnosticProactiveLogCollectionSettings getDiagnosticProactiveLogCollectionSettings(
-        String deviceName, String resourceGroupName) {
-        DiagnosticProactiveLogCollectionSettingsInner inner =
-            this.serviceClient().getDiagnosticProactiveLogCollectionSettings(deviceName, resourceGroupName);
+    public DiagnosticProactiveLogCollectionSettings getDiagnosticProactiveLogCollectionSettings(String deviceName,
+        String resourceGroupName) {
+        DiagnosticProactiveLogCollectionSettingsInner inner
+            = this.serviceClient().getDiagnosticProactiveLogCollectionSettings(deviceName, resourceGroupName);
         if (inner != null) {
             return new DiagnosticProactiveLogCollectionSettingsImpl(inner, this.manager());
         } else {
@@ -57,15 +51,11 @@ public final class DiagnosticSettingsImpl implements DiagnosticSettings {
         }
     }
 
-    public DiagnosticProactiveLogCollectionSettings updateDiagnosticProactiveLogCollectionSettings(
-        String deviceName,
-        String resourceGroupName,
-        DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings) {
-        DiagnosticProactiveLogCollectionSettingsInner inner =
-            this
-                .serviceClient()
-                .updateDiagnosticProactiveLogCollectionSettings(
-                    deviceName, resourceGroupName, proactiveLogCollectionSettings);
+    public DiagnosticProactiveLogCollectionSettings updateDiagnosticProactiveLogCollectionSettings(String deviceName,
+        String resourceGroupName, DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings) {
+        DiagnosticProactiveLogCollectionSettingsInner inner
+            = this.serviceClient().updateDiagnosticProactiveLogCollectionSettings(deviceName, resourceGroupName,
+                proactiveLogCollectionSettings);
         if (inner != null) {
             return new DiagnosticProactiveLogCollectionSettingsImpl(inner, this.manager());
         } else {
@@ -73,16 +63,12 @@ public final class DiagnosticSettingsImpl implements DiagnosticSettings {
         }
     }
 
-    public DiagnosticProactiveLogCollectionSettings updateDiagnosticProactiveLogCollectionSettings(
-        String deviceName,
-        String resourceGroupName,
-        DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings,
+    public DiagnosticProactiveLogCollectionSettings updateDiagnosticProactiveLogCollectionSettings(String deviceName,
+        String resourceGroupName, DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings,
         Context context) {
-        DiagnosticProactiveLogCollectionSettingsInner inner =
-            this
-                .serviceClient()
-                .updateDiagnosticProactiveLogCollectionSettings(
-                    deviceName, resourceGroupName, proactiveLogCollectionSettings, context);
+        DiagnosticProactiveLogCollectionSettingsInner inner
+            = this.serviceClient().updateDiagnosticProactiveLogCollectionSettings(deviceName, resourceGroupName,
+                proactiveLogCollectionSettings, context);
         if (inner != null) {
             return new DiagnosticProactiveLogCollectionSettingsImpl(inner, this.manager());
         } else {
@@ -90,25 +76,22 @@ public final class DiagnosticSettingsImpl implements DiagnosticSettings {
         }
     }
 
-    public Response<DiagnosticRemoteSupportSettings> getDiagnosticRemoteSupportSettingsWithResponse(
-        String deviceName, String resourceGroupName, Context context) {
-        Response<DiagnosticRemoteSupportSettingsInner> inner =
-            this.serviceClient().getDiagnosticRemoteSupportSettingsWithResponse(deviceName, resourceGroupName, context);
+    public Response<DiagnosticRemoteSupportSettings> getDiagnosticRemoteSupportSettingsWithResponse(String deviceName,
+        String resourceGroupName, Context context) {
+        Response<DiagnosticRemoteSupportSettingsInner> inner = this.serviceClient()
+            .getDiagnosticRemoteSupportSettingsWithResponse(deviceName, resourceGroupName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DiagnosticRemoteSupportSettingsImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public DiagnosticRemoteSupportSettings getDiagnosticRemoteSupportSettings(
-        String deviceName, String resourceGroupName) {
-        DiagnosticRemoteSupportSettingsInner inner =
-            this.serviceClient().getDiagnosticRemoteSupportSettings(deviceName, resourceGroupName);
+    public DiagnosticRemoteSupportSettings getDiagnosticRemoteSupportSettings(String deviceName,
+        String resourceGroupName) {
+        DiagnosticRemoteSupportSettingsInner inner
+            = this.serviceClient().getDiagnosticRemoteSupportSettings(deviceName, resourceGroupName);
         if (inner != null) {
             return new DiagnosticRemoteSupportSettingsImpl(inner, this.manager());
         } else {
@@ -116,14 +99,10 @@ public final class DiagnosticSettingsImpl implements DiagnosticSettings {
         }
     }
 
-    public DiagnosticRemoteSupportSettings updateDiagnosticRemoteSupportSettings(
-        String deviceName,
-        String resourceGroupName,
-        DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings) {
-        DiagnosticRemoteSupportSettingsInner inner =
-            this
-                .serviceClient()
-                .updateDiagnosticRemoteSupportSettings(deviceName, resourceGroupName, diagnosticRemoteSupportSettings);
+    public DiagnosticRemoteSupportSettings updateDiagnosticRemoteSupportSettings(String deviceName,
+        String resourceGroupName, DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings) {
+        DiagnosticRemoteSupportSettingsInner inner = this.serviceClient()
+            .updateDiagnosticRemoteSupportSettings(deviceName, resourceGroupName, diagnosticRemoteSupportSettings);
         if (inner != null) {
             return new DiagnosticRemoteSupportSettingsImpl(inner, this.manager());
         } else {
@@ -131,16 +110,11 @@ public final class DiagnosticSettingsImpl implements DiagnosticSettings {
         }
     }
 
-    public DiagnosticRemoteSupportSettings updateDiagnosticRemoteSupportSettings(
-        String deviceName,
-        String resourceGroupName,
-        DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings,
+    public DiagnosticRemoteSupportSettings updateDiagnosticRemoteSupportSettings(String deviceName,
+        String resourceGroupName, DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings,
         Context context) {
-        DiagnosticRemoteSupportSettingsInner inner =
-            this
-                .serviceClient()
-                .updateDiagnosticRemoteSupportSettings(
-                    deviceName, resourceGroupName, diagnosticRemoteSupportSettings, context);
+        DiagnosticRemoteSupportSettingsInner inner = this.serviceClient().updateDiagnosticRemoteSupportSettings(
+            deviceName, resourceGroupName, diagnosticRemoteSupportSettings, context);
         if (inner != null) {
             return new DiagnosticRemoteSupportSettingsImpl(inner, this.manager());
         } else {

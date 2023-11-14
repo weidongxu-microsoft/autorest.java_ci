@@ -12,8 +12,7 @@ public final class ExpressRouteCircuitStatsImpl implements ExpressRouteCircuitSt
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    ExpressRouteCircuitStatsImpl(
-        ExpressRouteCircuitStatsInner innerObject,
+    ExpressRouteCircuitStatsImpl(ExpressRouteCircuitStatsInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

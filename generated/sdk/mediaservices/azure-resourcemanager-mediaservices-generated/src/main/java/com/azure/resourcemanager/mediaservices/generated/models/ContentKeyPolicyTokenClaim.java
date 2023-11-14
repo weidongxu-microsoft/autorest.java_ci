@@ -7,7 +7,9 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Represents a token claim. */
+/**
+ * Represents a token claim.
+ */
 @Fluent
 public final class ContentKeyPolicyTokenClaim {
     /*
@@ -22,13 +24,15 @@ public final class ContentKeyPolicyTokenClaim {
     @JsonProperty(value = "claimValue")
     private String claimValue;
 
-    /** Creates an instance of ContentKeyPolicyTokenClaim class. */
+    /**
+     * Creates an instance of ContentKeyPolicyTokenClaim class.
+     */
     public ContentKeyPolicyTokenClaim() {
     }
 
     /**
      * Get the claimType property: Token claim type.
-     *
+     * 
      * @return the claimType value.
      */
     public String claimType() {
@@ -37,7 +41,7 @@ public final class ContentKeyPolicyTokenClaim {
 
     /**
      * Set the claimType property: Token claim type.
-     *
+     * 
      * @param claimType the claimType value to set.
      * @return the ContentKeyPolicyTokenClaim object itself.
      */
@@ -48,7 +52,7 @@ public final class ContentKeyPolicyTokenClaim {
 
     /**
      * Get the claimValue property: Token claim value.
-     *
+     * 
      * @return the claimValue value.
      */
     public String claimValue() {
@@ -57,7 +61,7 @@ public final class ContentKeyPolicyTokenClaim {
 
     /**
      * Set the claimValue property: Token claim value.
-     *
+     * 
      * @param claimValue the claimValue value to set.
      * @return the ContentKeyPolicyTokenClaim object itself.
      */
@@ -68,7 +72,7 @@ public final class ContentKeyPolicyTokenClaim {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

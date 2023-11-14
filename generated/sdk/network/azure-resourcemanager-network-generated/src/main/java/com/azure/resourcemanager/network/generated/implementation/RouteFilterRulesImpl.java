@@ -21,8 +21,8 @@ public final class RouteFilterRulesImpl implements RouteFilterRules {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public RouteFilterRulesImpl(
-        RouteFilterRulesClient innerClient, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    public RouteFilterRulesImpl(RouteFilterRulesClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -35,15 +35,12 @@ public final class RouteFilterRulesImpl implements RouteFilterRules {
         this.serviceClient().delete(resourceGroupName, routeFilterName, ruleName, context);
     }
 
-    public Response<RouteFilterRule> getWithResponse(
-        String resourceGroupName, String routeFilterName, String ruleName, Context context) {
-        Response<RouteFilterRuleInner> inner =
-            this.serviceClient().getWithResponse(resourceGroupName, routeFilterName, ruleName, context);
+    public Response<RouteFilterRule> getWithResponse(String resourceGroupName, String routeFilterName, String ruleName,
+        Context context) {
+        Response<RouteFilterRuleInner> inner
+            = this.serviceClient().getWithResponse(resourceGroupName, routeFilterName, ruleName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new RouteFilterRuleImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -59,15 +56,10 @@ public final class RouteFilterRulesImpl implements RouteFilterRules {
         }
     }
 
-    public RouteFilterRule createOrUpdate(
-        String resourceGroupName,
-        String routeFilterName,
-        String ruleName,
+    public RouteFilterRule createOrUpdate(String resourceGroupName, String routeFilterName, String ruleName,
         RouteFilterRuleInner routeFilterRuleParameters) {
-        RouteFilterRuleInner inner =
-            this
-                .serviceClient()
-                .createOrUpdate(resourceGroupName, routeFilterName, ruleName, routeFilterRuleParameters);
+        RouteFilterRuleInner inner = this.serviceClient().createOrUpdate(resourceGroupName, routeFilterName, ruleName,
+            routeFilterRuleParameters);
         if (inner != null) {
             return new RouteFilterRuleImpl(inner, this.manager());
         } else {
@@ -75,16 +67,10 @@ public final class RouteFilterRulesImpl implements RouteFilterRules {
         }
     }
 
-    public RouteFilterRule createOrUpdate(
-        String resourceGroupName,
-        String routeFilterName,
-        String ruleName,
-        RouteFilterRuleInner routeFilterRuleParameters,
-        Context context) {
-        RouteFilterRuleInner inner =
-            this
-                .serviceClient()
-                .createOrUpdate(resourceGroupName, routeFilterName, ruleName, routeFilterRuleParameters, context);
+    public RouteFilterRule createOrUpdate(String resourceGroupName, String routeFilterName, String ruleName,
+        RouteFilterRuleInner routeFilterRuleParameters, Context context) {
+        RouteFilterRuleInner inner = this.serviceClient().createOrUpdate(resourceGroupName, routeFilterName, ruleName,
+            routeFilterRuleParameters, context);
         if (inner != null) {
             return new RouteFilterRuleImpl(inner, this.manager());
         } else {
@@ -93,15 +79,15 @@ public final class RouteFilterRulesImpl implements RouteFilterRules {
     }
 
     public PagedIterable<RouteFilterRule> listByRouteFilter(String resourceGroupName, String routeFilterName) {
-        PagedIterable<RouteFilterRuleInner> inner =
-            this.serviceClient().listByRouteFilter(resourceGroupName, routeFilterName);
+        PagedIterable<RouteFilterRuleInner> inner
+            = this.serviceClient().listByRouteFilter(resourceGroupName, routeFilterName);
         return Utils.mapPage(inner, inner1 -> new RouteFilterRuleImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<RouteFilterRule> listByRouteFilter(
-        String resourceGroupName, String routeFilterName, Context context) {
-        PagedIterable<RouteFilterRuleInner> inner =
-            this.serviceClient().listByRouteFilter(resourceGroupName, routeFilterName, context);
+    public PagedIterable<RouteFilterRule> listByRouteFilter(String resourceGroupName, String routeFilterName,
+        Context context) {
+        PagedIterable<RouteFilterRuleInner> inner
+            = this.serviceClient().listByRouteFilter(resourceGroupName, routeFilterName, context);
         return Utils.mapPage(inner, inner1 -> new RouteFilterRuleImpl(inner1, this.manager()));
     }
 

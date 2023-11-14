@@ -25,8 +25,7 @@ public final class VirtualMachineScaleSetVMPropertiesImpl implements VirtualMach
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    VirtualMachineScaleSetVMPropertiesImpl(
-        VirtualMachineScaleSetVMPropertiesInner innerObject,
+    VirtualMachineScaleSetVMPropertiesImpl(VirtualMachineScaleSetVMPropertiesInner innerObject,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

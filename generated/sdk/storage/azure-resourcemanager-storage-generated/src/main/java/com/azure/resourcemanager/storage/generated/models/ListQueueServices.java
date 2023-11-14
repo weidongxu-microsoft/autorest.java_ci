@@ -7,18 +7,20 @@ package com.azure.resourcemanager.storage.generated.models;
 import com.azure.resourcemanager.storage.generated.fluent.models.ListQueueServicesInner;
 import java.util.List;
 
-/** An immutable client-side representation of ListQueueServices. */
+/**
+ * An immutable client-side representation of ListQueueServices.
+ */
 public interface ListQueueServices {
     /**
      * Gets the value property: List of queue services returned.
-     *
+     * 
      * @return the value value.
      */
     List<QueueServiceProperties> value();
 
     /**
      * Gets the inner com.azure.resourcemanager.storage.generated.fluent.models.ListQueueServicesInner object.
-     *
+     * 
      * @return the inner object.
      */
     ListQueueServicesInner innerModel();

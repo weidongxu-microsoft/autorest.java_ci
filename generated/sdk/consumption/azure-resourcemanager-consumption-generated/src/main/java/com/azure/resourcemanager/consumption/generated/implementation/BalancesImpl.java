@@ -20,8 +20,8 @@ public final class BalancesImpl implements Balances {
 
     private final com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager;
 
-    public BalancesImpl(
-        BalancesClient innerClient, com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager) {
+    public BalancesImpl(BalancesClient innerClient,
+        com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -29,10 +29,7 @@ public final class BalancesImpl implements Balances {
     public Response<Balance> getByBillingAccountWithResponse(String billingAccountId, Context context) {
         Response<BalanceInner> inner = this.serviceClient().getByBillingAccountWithResponse(billingAccountId, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new BalanceImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -48,17 +45,12 @@ public final class BalancesImpl implements Balances {
         }
     }
 
-    public Response<Balance> getForBillingPeriodByBillingAccountWithResponse(
-        String billingAccountId, String billingPeriodName, Context context) {
-        Response<BalanceInner> inner =
-            this
-                .serviceClient()
-                .getForBillingPeriodByBillingAccountWithResponse(billingAccountId, billingPeriodName, context);
+    public Response<Balance> getForBillingPeriodByBillingAccountWithResponse(String billingAccountId,
+        String billingPeriodName, Context context) {
+        Response<BalanceInner> inner = this.serviceClient()
+            .getForBillingPeriodByBillingAccountWithResponse(billingAccountId, billingPeriodName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new BalanceImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -66,8 +58,8 @@ public final class BalancesImpl implements Balances {
     }
 
     public Balance getForBillingPeriodByBillingAccount(String billingAccountId, String billingPeriodName) {
-        BalanceInner inner =
-            this.serviceClient().getForBillingPeriodByBillingAccount(billingAccountId, billingPeriodName);
+        BalanceInner inner
+            = this.serviceClient().getForBillingPeriodByBillingAccount(billingAccountId, billingPeriodName);
         if (inner != null) {
             return new BalanceImpl(inner, this.manager());
         } else {

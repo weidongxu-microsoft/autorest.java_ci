@@ -12,7 +12,9 @@ import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.UUID;
 
-/** The properties of the Content Key Policy. */
+/**
+ * The properties of the Content Key Policy.
+ */
 @Fluent
 public final class ContentKeyPolicyPropertiesInner {
     /*
@@ -45,13 +47,15 @@ public final class ContentKeyPolicyPropertiesInner {
     @JsonProperty(value = "options", required = true)
     private List<ContentKeyPolicyOption> options;
 
-    /** Creates an instance of ContentKeyPolicyPropertiesInner class. */
+    /**
+     * Creates an instance of ContentKeyPolicyPropertiesInner class.
+     */
     public ContentKeyPolicyPropertiesInner() {
     }
 
     /**
      * Get the policyId property: The legacy Policy ID.
-     *
+     * 
      * @return the policyId value.
      */
     public UUID policyId() {
@@ -60,7 +64,7 @@ public final class ContentKeyPolicyPropertiesInner {
 
     /**
      * Get the created property: The creation date of the Policy.
-     *
+     * 
      * @return the created value.
      */
     public OffsetDateTime created() {
@@ -69,7 +73,7 @@ public final class ContentKeyPolicyPropertiesInner {
 
     /**
      * Get the lastModified property: The last modified date of the Policy.
-     *
+     * 
      * @return the lastModified value.
      */
     public OffsetDateTime lastModified() {
@@ -78,7 +82,7 @@ public final class ContentKeyPolicyPropertiesInner {
 
     /**
      * Get the description property: A description for the Policy.
-     *
+     * 
      * @return the description value.
      */
     public String description() {
@@ -87,7 +91,7 @@ public final class ContentKeyPolicyPropertiesInner {
 
     /**
      * Set the description property: A description for the Policy.
-     *
+     * 
      * @param description the description value to set.
      * @return the ContentKeyPolicyPropertiesInner object itself.
      */
@@ -98,7 +102,7 @@ public final class ContentKeyPolicyPropertiesInner {
 
     /**
      * Get the options property: The Key Policy options.
-     *
+     * 
      * @return the options value.
      */
     public List<ContentKeyPolicyOption> options() {
@@ -107,7 +111,7 @@ public final class ContentKeyPolicyPropertiesInner {
 
     /**
      * Set the options property: The Key Policy options.
-     *
+     * 
      * @param options the options value to set.
      * @return the ContentKeyPolicyPropertiesInner object itself.
      */
@@ -118,15 +122,13 @@ public final class ContentKeyPolicyPropertiesInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (options() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property options in model ContentKeyPolicyPropertiesInner"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property options in model ContentKeyPolicyPropertiesInner"));
         } else {
             options().forEach(e -> e.validate());
         }

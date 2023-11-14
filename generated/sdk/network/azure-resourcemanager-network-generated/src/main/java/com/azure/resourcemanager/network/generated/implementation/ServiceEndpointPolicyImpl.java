@@ -61,12 +61,9 @@ public final class ServiceEndpointPolicyImpl
     public List<ServiceEndpointPolicyDefinition> serviceEndpointPolicyDefinitions() {
         List<ServiceEndpointPolicyDefinitionInner> inner = this.innerModel().serviceEndpointPolicyDefinitions();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new ServiceEndpointPolicyDefinitionImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(
+                inner.stream().map(inner1 -> new ServiceEndpointPolicyDefinitionImpl(inner1, this.manager()))
+                    .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -75,9 +72,8 @@ public final class ServiceEndpointPolicyImpl
     public List<Subnet> subnets() {
         List<SubnetInner> inner = this.innerModel().subnets();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner.stream().map(inner1 -> new SubnetImpl(inner1, this.manager())).collect(Collectors.toList()));
+            return Collections.unmodifiableList(
+                inner.stream().map(inner1 -> new SubnetImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -136,20 +132,14 @@ public final class ServiceEndpointPolicyImpl
     }
 
     public ServiceEndpointPolicy create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getServiceEndpointPolicies()
-                .createOrUpdate(resourceGroupName, serviceEndpointPolicyName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getServiceEndpointPolicies().createOrUpdate(resourceGroupName,
+            serviceEndpointPolicyName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public ServiceEndpointPolicy create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getServiceEndpointPolicies()
-                .createOrUpdate(resourceGroupName, serviceEndpointPolicyName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getServiceEndpointPolicies().createOrUpdate(resourceGroupName,
+            serviceEndpointPolicyName, this.innerModel(), context);
         return this;
     }
 
@@ -165,27 +155,19 @@ public final class ServiceEndpointPolicyImpl
     }
 
     public ServiceEndpointPolicy apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getServiceEndpointPolicies()
-                .updateTagsWithResponse(resourceGroupName, serviceEndpointPolicyName, updateParameters, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getServiceEndpointPolicies()
+            .updateTagsWithResponse(resourceGroupName, serviceEndpointPolicyName, updateParameters, Context.NONE)
+            .getValue();
         return this;
     }
 
     public ServiceEndpointPolicy apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getServiceEndpointPolicies()
-                .updateTagsWithResponse(resourceGroupName, serviceEndpointPolicyName, updateParameters, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getServiceEndpointPolicies()
+            .updateTagsWithResponse(resourceGroupName, serviceEndpointPolicyName, updateParameters, context).getValue();
         return this;
     }
 
-    ServiceEndpointPolicyImpl(
-        ServiceEndpointPolicyInner innerObject,
+    ServiceEndpointPolicyImpl(ServiceEndpointPolicyInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -195,23 +177,17 @@ public final class ServiceEndpointPolicyImpl
 
     public ServiceEndpointPolicy refresh() {
         String localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getServiceEndpointPolicies()
-                .getByResourceGroupWithResponse(resourceGroupName, serviceEndpointPolicyName, localExpand, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getServiceEndpointPolicies()
+            .getByResourceGroupWithResponse(resourceGroupName, serviceEndpointPolicyName, localExpand, Context.NONE)
+            .getValue();
         return this;
     }
 
     public ServiceEndpointPolicy refresh(Context context) {
         String localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getServiceEndpointPolicies()
-                .getByResourceGroupWithResponse(resourceGroupName, serviceEndpointPolicyName, localExpand, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getServiceEndpointPolicies()
+            .getByResourceGroupWithResponse(resourceGroupName, serviceEndpointPolicyName, localExpand, context)
+            .getValue();
         return this;
     }
 
@@ -246,8 +222,8 @@ public final class ServiceEndpointPolicyImpl
         return this;
     }
 
-    public ServiceEndpointPolicyImpl withContextualServiceEndpointPolicies(
-        List<String> contextualServiceEndpointPolicies) {
+    public ServiceEndpointPolicyImpl
+        withContextualServiceEndpointPolicies(List<String> contextualServiceEndpointPolicies) {
         this.innerModel().withContextualServiceEndpointPolicies(contextualServiceEndpointPolicies);
         return this;
     }

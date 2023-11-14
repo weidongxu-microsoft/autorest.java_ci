@@ -11,7 +11,9 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.time.Duration;
 import java.util.List;
 
-/** Describes the properties for producing a series of JPEG images from the input video. */
+/**
+ * Describes the properties for producing a series of JPEG images from the input video.
+ */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
 @JsonTypeName("#Microsoft.Media.JpgImage")
 @Fluent
@@ -23,7 +25,7 @@ public final class JpgImage extends Image {
     private List<JpgLayer> layers;
 
     /*
-     * Sets the number of columns used in thumbnail sprite image.  The number of rows are automatically calculated and
+     * Sets the number of columns used in thumbnail sprite image. The number of rows are automatically calculated and
      * a VTT file is generated with the coordinate mappings for each thumbnail in the sprite. Note: this value should
      * be a positive integer and a proper value is recommended so that the output image resolution will not go beyond
      * JPEG maximum pixel resolution limit 65535x65535.
@@ -31,13 +33,15 @@ public final class JpgImage extends Image {
     @JsonProperty(value = "spriteColumn")
     private Integer spriteColumn;
 
-    /** Creates an instance of JpgImage class. */
+    /**
+     * Creates an instance of JpgImage class.
+     */
     public JpgImage() {
     }
 
     /**
      * Get the layers property: A collection of output JPEG image layers to be produced by the encoder.
-     *
+     * 
      * @return the layers value.
      */
     public List<JpgLayer> layers() {
@@ -46,7 +50,7 @@ public final class JpgImage extends Image {
 
     /**
      * Set the layers property: A collection of output JPEG image layers to be produced by the encoder.
-     *
+     * 
      * @param layers the layers value to set.
      * @return the JpgImage object itself.
      */
@@ -56,11 +60,11 @@ public final class JpgImage extends Image {
     }
 
     /**
-     * Get the spriteColumn property: Sets the number of columns used in thumbnail sprite image. The number of rows are
-     * automatically calculated and a VTT file is generated with the coordinate mappings for each thumbnail in the
+     * Get the spriteColumn property: Sets the number of columns used in thumbnail sprite image. The number of rows
+     * are automatically calculated and a VTT file is generated with the coordinate mappings for each thumbnail in the
      * sprite. Note: this value should be a positive integer and a proper value is recommended so that the output image
      * resolution will not go beyond JPEG maximum pixel resolution limit 65535x65535.
-     *
+     * 
      * @return the spriteColumn value.
      */
     public Integer spriteColumn() {
@@ -68,11 +72,11 @@ public final class JpgImage extends Image {
     }
 
     /**
-     * Set the spriteColumn property: Sets the number of columns used in thumbnail sprite image. The number of rows are
-     * automatically calculated and a VTT file is generated with the coordinate mappings for each thumbnail in the
+     * Set the spriteColumn property: Sets the number of columns used in thumbnail sprite image. The number of rows
+     * are automatically calculated and a VTT file is generated with the coordinate mappings for each thumbnail in the
      * sprite. Note: this value should be a positive integer and a proper value is recommended so that the output image
      * resolution will not go beyond JPEG maximum pixel resolution limit 65535x65535.
-     *
+     * 
      * @param spriteColumn the spriteColumn value to set.
      * @return the JpgImage object itself.
      */
@@ -81,49 +85,63 @@ public final class JpgImage extends Image {
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public JpgImage withStart(String start) {
         super.withStart(start);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public JpgImage withStep(String step) {
         super.withStep(step);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public JpgImage withRange(String range) {
         super.withRange(range);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public JpgImage withKeyFrameInterval(Duration keyFrameInterval) {
         super.withKeyFrameInterval(keyFrameInterval);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public JpgImage withStretchMode(StretchMode stretchMode) {
         super.withStretchMode(stretchMode);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public JpgImage withSyncMode(VideoSyncMode syncMode) {
         super.withSyncMode(syncMode);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public JpgImage withLabel(String label) {
         super.withLabel(label);
@@ -132,7 +150,7 @@ public final class JpgImage extends Image {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

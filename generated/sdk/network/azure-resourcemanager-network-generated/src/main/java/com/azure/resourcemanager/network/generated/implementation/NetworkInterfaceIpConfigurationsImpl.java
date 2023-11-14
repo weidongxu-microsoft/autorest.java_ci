@@ -21,45 +21,41 @@ public final class NetworkInterfaceIpConfigurationsImpl implements NetworkInterf
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public NetworkInterfaceIpConfigurationsImpl(
-        NetworkInterfaceIpConfigurationsClient innerClient,
+    public NetworkInterfaceIpConfigurationsImpl(NetworkInterfaceIpConfigurationsClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
     public PagedIterable<NetworkInterfaceIpConfiguration> list(String resourceGroupName, String networkInterfaceName) {
-        PagedIterable<NetworkInterfaceIpConfigurationInner> inner =
-            this.serviceClient().list(resourceGroupName, networkInterfaceName);
+        PagedIterable<NetworkInterfaceIpConfigurationInner> inner
+            = this.serviceClient().list(resourceGroupName, networkInterfaceName);
         return Utils.mapPage(inner, inner1 -> new NetworkInterfaceIpConfigurationImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<NetworkInterfaceIpConfiguration> list(
-        String resourceGroupName, String networkInterfaceName, Context context) {
-        PagedIterable<NetworkInterfaceIpConfigurationInner> inner =
-            this.serviceClient().list(resourceGroupName, networkInterfaceName, context);
+    public PagedIterable<NetworkInterfaceIpConfiguration> list(String resourceGroupName, String networkInterfaceName,
+        Context context) {
+        PagedIterable<NetworkInterfaceIpConfigurationInner> inner
+            = this.serviceClient().list(resourceGroupName, networkInterfaceName, context);
         return Utils.mapPage(inner, inner1 -> new NetworkInterfaceIpConfigurationImpl(inner1, this.manager()));
     }
 
-    public Response<NetworkInterfaceIpConfiguration> getWithResponse(
-        String resourceGroupName, String networkInterfaceName, String ipConfigurationName, Context context) {
-        Response<NetworkInterfaceIpConfigurationInner> inner =
-            this.serviceClient().getWithResponse(resourceGroupName, networkInterfaceName, ipConfigurationName, context);
+    public Response<NetworkInterfaceIpConfiguration> getWithResponse(String resourceGroupName,
+        String networkInterfaceName, String ipConfigurationName, Context context) {
+        Response<NetworkInterfaceIpConfigurationInner> inner = this.serviceClient().getWithResponse(resourceGroupName,
+            networkInterfaceName, ipConfigurationName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new NetworkInterfaceIpConfigurationImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public NetworkInterfaceIpConfiguration get(
-        String resourceGroupName, String networkInterfaceName, String ipConfigurationName) {
-        NetworkInterfaceIpConfigurationInner inner =
-            this.serviceClient().get(resourceGroupName, networkInterfaceName, ipConfigurationName);
+    public NetworkInterfaceIpConfiguration get(String resourceGroupName, String networkInterfaceName,
+        String ipConfigurationName) {
+        NetworkInterfaceIpConfigurationInner inner
+            = this.serviceClient().get(resourceGroupName, networkInterfaceName, ipConfigurationName);
         if (inner != null) {
             return new NetworkInterfaceIpConfigurationImpl(inner, this.manager());
         } else {

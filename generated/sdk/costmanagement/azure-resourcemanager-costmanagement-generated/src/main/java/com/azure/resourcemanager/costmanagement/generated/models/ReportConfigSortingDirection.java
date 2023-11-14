@@ -8,17 +8,23 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Direction of sort. */
+/**
+ * Direction of sort.
+ */
 public final class ReportConfigSortingDirection extends ExpandableStringEnum<ReportConfigSortingDirection> {
-    /** Static value Ascending for ReportConfigSortingDirection. */
+    /**
+     * Static value Ascending for ReportConfigSortingDirection.
+     */
     public static final ReportConfigSortingDirection ASCENDING = fromString("Ascending");
 
-    /** Static value Descending for ReportConfigSortingDirection. */
+    /**
+     * Static value Descending for ReportConfigSortingDirection.
+     */
     public static final ReportConfigSortingDirection DESCENDING = fromString("Descending");
 
     /**
      * Creates a new instance of ReportConfigSortingDirection value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -27,7 +33,7 @@ public final class ReportConfigSortingDirection extends ExpandableStringEnum<Rep
 
     /**
      * Creates or finds a ReportConfigSortingDirection from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding ReportConfigSortingDirection.
      */
@@ -38,7 +44,7 @@ public final class ReportConfigSortingDirection extends ExpandableStringEnum<Rep
 
     /**
      * Gets known ReportConfigSortingDirection values.
-     *
+     * 
      * @return known ReportConfigSortingDirection values.
      */
     public static Collection<ReportConfigSortingDirection> values() {

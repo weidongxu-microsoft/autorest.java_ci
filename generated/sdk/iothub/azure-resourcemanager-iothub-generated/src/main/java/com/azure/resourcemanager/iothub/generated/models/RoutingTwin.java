@@ -7,7 +7,9 @@ package com.azure.resourcemanager.iothub.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Twin reference input parameter. This is an optional parameter. */
+/**
+ * Twin reference input parameter. This is an optional parameter.
+ */
 @Fluent
 public final class RoutingTwin {
     /*
@@ -22,13 +24,15 @@ public final class RoutingTwin {
     @JsonProperty(value = "properties")
     private RoutingTwinProperties properties;
 
-    /** Creates an instance of RoutingTwin class. */
+    /**
+     * Creates an instance of RoutingTwin class.
+     */
     public RoutingTwin() {
     }
 
     /**
      * Get the tags property: Twin Tags.
-     *
+     * 
      * @return the tags value.
      */
     public Object tags() {
@@ -37,7 +41,7 @@ public final class RoutingTwin {
 
     /**
      * Set the tags property: Twin Tags.
-     *
+     * 
      * @param tags the tags value to set.
      * @return the RoutingTwin object itself.
      */
@@ -48,7 +52,7 @@ public final class RoutingTwin {
 
     /**
      * Get the properties property: The properties property.
-     *
+     * 
      * @return the properties value.
      */
     public RoutingTwinProperties properties() {
@@ -57,7 +61,7 @@ public final class RoutingTwin {
 
     /**
      * Set the properties property: The properties property.
-     *
+     * 
      * @param properties the properties value to set.
      * @return the RoutingTwin object itself.
      */
@@ -68,7 +72,7 @@ public final class RoutingTwin {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

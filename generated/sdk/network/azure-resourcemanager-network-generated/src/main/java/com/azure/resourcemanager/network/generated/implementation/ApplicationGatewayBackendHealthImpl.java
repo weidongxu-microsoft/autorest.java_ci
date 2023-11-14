@@ -15,8 +15,7 @@ public final class ApplicationGatewayBackendHealthImpl implements ApplicationGat
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    ApplicationGatewayBackendHealthImpl(
-        ApplicationGatewayBackendHealthInner innerObject,
+    ApplicationGatewayBackendHealthImpl(ApplicationGatewayBackendHealthInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

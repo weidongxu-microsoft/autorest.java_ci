@@ -15,8 +15,7 @@ public final class NetworkConfigurationDiagnosticResponseImpl implements Network
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    NetworkConfigurationDiagnosticResponseImpl(
-        NetworkConfigurationDiagnosticResponseInner innerObject,
+    NetworkConfigurationDiagnosticResponseImpl(NetworkConfigurationDiagnosticResponseInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

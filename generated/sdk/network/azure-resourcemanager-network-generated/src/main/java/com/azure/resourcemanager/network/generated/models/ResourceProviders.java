@@ -8,96 +8,125 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of ResourceProviders. */
+/**
+ * Resource collection API of ResourceProviders.
+ */
 public interface ResourceProviders {
     /**
      * Creates a Bastion Shareable Links for all the VMs specified in the request.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param bastionHostname The name of the Bastion Host.
-     * @param bslRequest Post request for all the Bastion Shareable Link endpoints.
+     * @param bslRequest Post request for Create/Delete/Get Bastion Shareable Link endpoints.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return response for all the Bastion Shareable Link endpoints as paginated response with {@link PagedIterable}.
      */
-    PagedIterable<BastionShareableLink> putBastionShareableLink(
-        String resourceGroupName, String bastionHostname, BastionShareableLinkListRequest bslRequest);
+    PagedIterable<BastionShareableLink> putBastionShareableLink(String resourceGroupName, String bastionHostname,
+        BastionShareableLinkListRequest bslRequest);
 
     /**
      * Creates a Bastion Shareable Links for all the VMs specified in the request.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param bastionHostname The name of the Bastion Host.
-     * @param bslRequest Post request for all the Bastion Shareable Link endpoints.
+     * @param bslRequest Post request for Create/Delete/Get Bastion Shareable Link endpoints.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return response for all the Bastion Shareable Link endpoints as paginated response with {@link PagedIterable}.
      */
-    PagedIterable<BastionShareableLink> putBastionShareableLink(
-        String resourceGroupName, String bastionHostname, BastionShareableLinkListRequest bslRequest, Context context);
+    PagedIterable<BastionShareableLink> putBastionShareableLink(String resourceGroupName, String bastionHostname,
+        BastionShareableLinkListRequest bslRequest, Context context);
 
     /**
      * Deletes the Bastion Shareable Links for all the VMs specified in the request.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param bastionHostname The name of the Bastion Host.
-     * @param bslRequest Post request for all the Bastion Shareable Link endpoints.
+     * @param bslRequest Post request for Create/Delete/Get Bastion Shareable Link endpoints.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void deleteBastionShareableLink(
-        String resourceGroupName, String bastionHostname, BastionShareableLinkListRequest bslRequest);
+    void deleteBastionShareableLink(String resourceGroupName, String bastionHostname,
+        BastionShareableLinkListRequest bslRequest);
 
     /**
      * Deletes the Bastion Shareable Links for all the VMs specified in the request.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param bastionHostname The name of the Bastion Host.
-     * @param bslRequest Post request for all the Bastion Shareable Link endpoints.
+     * @param bslRequest Post request for Create/Delete/Get Bastion Shareable Link endpoints.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void deleteBastionShareableLink(
-        String resourceGroupName, String bastionHostname, BastionShareableLinkListRequest bslRequest, Context context);
+    void deleteBastionShareableLink(String resourceGroupName, String bastionHostname,
+        BastionShareableLinkListRequest bslRequest, Context context);
+
+    /**
+     * Deletes the Bastion Shareable Links for all the tokens specified in the request.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param bastionHostname The name of the Bastion Host.
+     * @param bslTokenRequest Post request for Delete Bastion Shareable Link By Token endpoint.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteBastionShareableLinkByToken(String resourceGroupName, String bastionHostname,
+        BastionShareableLinkTokenListRequest bslTokenRequest);
+
+    /**
+     * Deletes the Bastion Shareable Links for all the tokens specified in the request.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param bastionHostname The name of the Bastion Host.
+     * @param bslTokenRequest Post request for Delete Bastion Shareable Link By Token endpoint.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteBastionShareableLinkByToken(String resourceGroupName, String bastionHostname,
+        BastionShareableLinkTokenListRequest bslTokenRequest, Context context);
 
     /**
      * Return the Bastion Shareable Links for all the VMs specified in the request.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param bastionHostname The name of the Bastion Host.
-     * @param bslRequest Post request for all the Bastion Shareable Link endpoints.
+     * @param bslRequest Post request for Create/Delete/Get Bastion Shareable Link endpoints.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return response for all the Bastion Shareable Link endpoints as paginated response with {@link PagedIterable}.
      */
-    PagedIterable<BastionShareableLink> getBastionShareableLink(
-        String resourceGroupName, String bastionHostname, BastionShareableLinkListRequest bslRequest);
+    PagedIterable<BastionShareableLink> getBastionShareableLink(String resourceGroupName, String bastionHostname,
+        BastionShareableLinkListRequest bslRequest);
 
     /**
      * Return the Bastion Shareable Links for all the VMs specified in the request.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param bastionHostname The name of the Bastion Host.
-     * @param bslRequest Post request for all the Bastion Shareable Link endpoints.
+     * @param bslRequest Post request for Create/Delete/Get Bastion Shareable Link endpoints.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return response for all the Bastion Shareable Link endpoints as paginated response with {@link PagedIterable}.
      */
-    PagedIterable<BastionShareableLink> getBastionShareableLink(
-        String resourceGroupName, String bastionHostname, BastionShareableLinkListRequest bslRequest, Context context);
+    PagedIterable<BastionShareableLink> getBastionShareableLink(String resourceGroupName, String bastionHostname,
+        BastionShareableLinkListRequest bslRequest, Context context);
 
     /**
      * Returns the list of currently active sessions on the Bastion.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param bastionHostname The name of the Bastion Host.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -109,7 +138,7 @@ public interface ResourceProviders {
 
     /**
      * Returns the list of currently active sessions on the Bastion.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param bastionHostname The name of the Bastion Host.
      * @param context The context to associate with this operation.
@@ -118,12 +147,12 @@ public interface ResourceProviders {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return response for GetActiveSessions as paginated response with {@link PagedIterable}.
      */
-    PagedIterable<BastionActiveSession> getActiveSessions(
-        String resourceGroupName, String bastionHostname, Context context);
+    PagedIterable<BastionActiveSession> getActiveSessions(String resourceGroupName, String bastionHostname,
+        Context context);
 
     /**
      * Returns the list of currently active sessions on the Bastion.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param bastionHostname The name of the Bastion Host.
      * @param sessionIds The list of sessionids to disconnect.
@@ -132,12 +161,12 @@ public interface ResourceProviders {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return response for DisconnectActiveSessions as paginated response with {@link PagedIterable}.
      */
-    PagedIterable<BastionSessionState> disconnectActiveSessions(
-        String resourceGroupName, String bastionHostname, SessionIds sessionIds);
+    PagedIterable<BastionSessionState> disconnectActiveSessions(String resourceGroupName, String bastionHostname,
+        SessionIds sessionIds);
 
     /**
      * Returns the list of currently active sessions on the Bastion.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param bastionHostname The name of the Bastion Host.
      * @param sessionIds The list of sessionids to disconnect.
@@ -147,30 +176,30 @@ public interface ResourceProviders {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return response for DisconnectActiveSessions as paginated response with {@link PagedIterable}.
      */
-    PagedIterable<BastionSessionState> disconnectActiveSessions(
-        String resourceGroupName, String bastionHostname, SessionIds sessionIds, Context context);
+    PagedIterable<BastionSessionState> disconnectActiveSessions(String resourceGroupName, String bastionHostname,
+        SessionIds sessionIds, Context context);
 
     /**
      * Checks whether a domain name in the cloudapp.azure.com zone is available for use.
-     *
+     * 
      * @param location The location of the domain name.
      * @param domainNameLabel The domain name to be verified. It must conform to the following regular expression:
-     *     ^[a-z][a-z0-9-]{1,61}[a-z0-9]$.
+     * ^[a-z][a-z0-9-]{1,61}[a-z0-9]$.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return response for the CheckDnsNameAvailability API service call along with {@link Response}.
      */
-    Response<DnsNameAvailabilityResult> checkDnsNameAvailabilityWithResponse(
-        String location, String domainNameLabel, Context context);
+    Response<DnsNameAvailabilityResult> checkDnsNameAvailabilityWithResponse(String location, String domainNameLabel,
+        Context context);
 
     /**
      * Checks whether a domain name in the cloudapp.azure.com zone is available for use.
-     *
+     * 
      * @param location The location of the domain name.
      * @param domainNameLabel The domain name to be verified. It must conform to the following regular expression:
-     *     ^[a-z][a-z0-9-]{1,61}[a-z0-9]$.
+     * ^[a-z][a-z0-9-]{1,61}[a-z0-9]$.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -180,7 +209,7 @@ public interface ResourceProviders {
 
     /**
      * Retrieves detail of a provider port.
-     *
+     * 
      * @param providerport The name of the provider port.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -192,7 +221,7 @@ public interface ResourceProviders {
 
     /**
      * Retrieves detail of a provider port.
-     *
+     * 
      * @param providerport The name of the provider port.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -203,12 +232,12 @@ public interface ResourceProviders {
 
     /**
      * Lists active connectivity configurations in a network manager.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
      * @param parameters Active Configuration Parameter.
      * @param top An optional query parameter which specifies the maximum number of records to be returned by the
-     *     server.
+     * server.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -216,15 +245,12 @@ public interface ResourceProviders {
      * @return result of the request to list active connectivity configurations along with {@link Response}.
      */
     Response<ActiveConnectivityConfigurationsListResult> listActiveConnectivityConfigurationsWithResponse(
-        String resourceGroupName,
-        String networkManagerName,
-        ActiveConfigurationParameter parameters,
-        Integer top,
+        String resourceGroupName, String networkManagerName, ActiveConfigurationParameter parameters, Integer top,
         Context context);
 
     /**
      * Lists active connectivity configurations in a network manager.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
      * @param parameters Active Configuration Parameter.
@@ -233,33 +259,29 @@ public interface ResourceProviders {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return result of the request to list active connectivity configurations.
      */
-    ActiveConnectivityConfigurationsListResult listActiveConnectivityConfigurations(
-        String resourceGroupName, String networkManagerName, ActiveConfigurationParameter parameters);
+    ActiveConnectivityConfigurationsListResult listActiveConnectivityConfigurations(String resourceGroupName,
+        String networkManagerName, ActiveConfigurationParameter parameters);
 
     /**
      * Lists active security admin rules in a network manager.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
      * @param parameters Active Configuration Parameter.
      * @param top An optional query parameter which specifies the maximum number of records to be returned by the
-     *     server.
+     * server.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return result of the request to list active security admin rules along with {@link Response}.
      */
-    Response<ActiveSecurityAdminRulesListResult> listActiveSecurityAdminRulesWithResponse(
-        String resourceGroupName,
-        String networkManagerName,
-        ActiveConfigurationParameter parameters,
-        Integer top,
-        Context context);
+    Response<ActiveSecurityAdminRulesListResult> listActiveSecurityAdminRulesWithResponse(String resourceGroupName,
+        String networkManagerName, ActiveConfigurationParameter parameters, Integer top, Context context);
 
     /**
      * Lists active security admin rules in a network manager.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
      * @param parameters Active Configuration Parameter.
@@ -268,35 +290,31 @@ public interface ResourceProviders {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return result of the request to list active security admin rules.
      */
-    ActiveSecurityAdminRulesListResult listActiveSecurityAdminRules(
-        String resourceGroupName, String networkManagerName, ActiveConfigurationParameter parameters);
+    ActiveSecurityAdminRulesListResult listActiveSecurityAdminRules(String resourceGroupName, String networkManagerName,
+        ActiveConfigurationParameter parameters);
 
     /**
      * List all effective connectivity configurations applied on a virtual network.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param parameters Parameters supplied to list correct page.
      * @param top An optional query parameter which specifies the maximum number of records to be returned by the
-     *     server.
+     * server.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list networkManagerEffectiveConnectivityConfiguration along with {@link
-     *     Response}.
+     * @return result of the request to list networkManagerEffectiveConnectivityConfiguration along with
+     * {@link Response}.
      */
     Response<NetworkManagerEffectiveConnectivityConfigurationListResult>
-        listNetworkManagerEffectiveConnectivityConfigurationsWithResponse(
-            String resourceGroupName,
-            String virtualNetworkName,
-            QueryRequestOptions parameters,
-            Integer top,
-            Context context);
+        listNetworkManagerEffectiveConnectivityConfigurationsWithResponse(String resourceGroupName,
+            String virtualNetworkName, QueryRequestOptions parameters, Integer top, Context context);
 
     /**
      * List all effective connectivity configurations applied on a virtual network.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param parameters Parameters supplied to list correct page.
@@ -310,12 +328,12 @@ public interface ResourceProviders {
 
     /**
      * List all effective security admin rules applied on a virtual network.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param parameters Parameters supplied to list correct page.
      * @param top An optional query parameter which specifies the maximum number of records to be returned by the
-     *     server.
+     * server.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -323,16 +341,12 @@ public interface ResourceProviders {
      * @return result of the request to list networkManagerEffectiveSecurityAdminRules along with {@link Response}.
      */
     Response<NetworkManagerEffectiveSecurityAdminRulesListResult>
-        listNetworkManagerEffectiveSecurityAdminRulesWithResponse(
-            String resourceGroupName,
-            String virtualNetworkName,
-            QueryRequestOptions parameters,
-            Integer top,
-            Context context);
+        listNetworkManagerEffectiveSecurityAdminRulesWithResponse(String resourceGroupName, String virtualNetworkName,
+            QueryRequestOptions parameters, Integer top, Context context);
 
     /**
      * List all effective security admin rules applied on a virtual network.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param parameters Parameters supplied to list correct page.
@@ -346,7 +360,7 @@ public interface ResourceProviders {
 
     /**
      * Gives the supported security providers for the virtual wan.
-     *
+     * 
      * @param resourceGroupName The resource group name.
      * @param virtualWanName The name of the VirtualWAN for which supported security providers are needed.
      * @param context The context to associate with this operation.
@@ -355,12 +369,12 @@ public interface ResourceProviders {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of SecurityProviders along with {@link Response}.
      */
-    Response<VirtualWanSecurityProviders> supportedSecurityProvidersWithResponse(
-        String resourceGroupName, String virtualWanName, Context context);
+    Response<VirtualWanSecurityProviders> supportedSecurityProvidersWithResponse(String resourceGroupName,
+        String virtualWanName, Context context);
 
     /**
      * Gives the supported security providers for the virtual wan.
-     *
+     * 
      * @param resourceGroupName The resource group name.
      * @param virtualWanName The name of the VirtualWAN for which supported security providers are needed.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -373,7 +387,7 @@ public interface ResourceProviders {
     /**
      * Generates a unique VPN profile for P2S clients for VirtualWan and associated VpnServerConfiguration combination
      * in the specified resource group.
-     *
+     * 
      * @param resourceGroupName The resource group name.
      * @param virtualWanName The name of the VirtualWAN whose associated VpnServerConfigurations is needed.
      * @param vpnClientParams Parameters supplied to the generate VirtualWan VPN profile generation operation.
@@ -382,13 +396,13 @@ public interface ResourceProviders {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return vpn Profile Response for package generation.
      */
-    VpnProfileResponse generatevirtualwanvpnserverconfigurationvpnprofile(
-        String resourceGroupName, String virtualWanName, VirtualWanVpnProfileParameters vpnClientParams);
+    VpnProfileResponse generatevirtualwanvpnserverconfigurationvpnprofile(String resourceGroupName,
+        String virtualWanName, VirtualWanVpnProfileParameters vpnClientParams);
 
     /**
      * Generates a unique VPN profile for P2S clients for VirtualWan and associated VpnServerConfiguration combination
      * in the specified resource group.
-     *
+     * 
      * @param resourceGroupName The resource group name.
      * @param virtualWanName The name of the VirtualWAN whose associated VpnServerConfigurations is needed.
      * @param vpnClientParams Parameters supplied to the generate VirtualWan VPN profile generation operation.
@@ -398,9 +412,6 @@ public interface ResourceProviders {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return vpn Profile Response for package generation.
      */
-    VpnProfileResponse generatevirtualwanvpnserverconfigurationvpnprofile(
-        String resourceGroupName,
-        String virtualWanName,
-        VirtualWanVpnProfileParameters vpnClientParams,
-        Context context);
+    VpnProfileResponse generatevirtualwanvpnserverconfigurationvpnprofile(String resourceGroupName,
+        String virtualWanName, VirtualWanVpnProfileParameters vpnClientParams, Context context);
 }

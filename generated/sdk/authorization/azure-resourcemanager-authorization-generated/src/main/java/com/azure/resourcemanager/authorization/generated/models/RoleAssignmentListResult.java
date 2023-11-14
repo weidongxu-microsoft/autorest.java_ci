@@ -9,7 +9,9 @@ import com.azure.resourcemanager.authorization.generated.fluent.models.RoleAssig
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Role assignment list operation result. */
+/**
+ * Role assignment list operation result.
+ */
 @Fluent
 public final class RoleAssignmentListResult {
     /*
@@ -24,13 +26,15 @@ public final class RoleAssignmentListResult {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
-    /** Creates an instance of RoleAssignmentListResult class. */
+    /**
+     * Creates an instance of RoleAssignmentListResult class.
+     */
     public RoleAssignmentListResult() {
     }
 
     /**
      * Get the value property: Role assignment list.
-     *
+     * 
      * @return the value value.
      */
     public List<RoleAssignmentInner> value() {
@@ -39,7 +43,7 @@ public final class RoleAssignmentListResult {
 
     /**
      * Set the value property: Role assignment list.
-     *
+     * 
      * @param value the value value to set.
      * @return the RoleAssignmentListResult object itself.
      */
@@ -50,7 +54,7 @@ public final class RoleAssignmentListResult {
 
     /**
      * Get the nextLink property: The URL to use for getting the next set of results.
-     *
+     * 
      * @return the nextLink value.
      */
     public String nextLink() {
@@ -59,7 +63,7 @@ public final class RoleAssignmentListResult {
 
     /**
      * Set the nextLink property: The URL to use for getting the next set of results.
-     *
+     * 
      * @param nextLink the nextLink value to set.
      * @return the RoleAssignmentListResult object itself.
      */
@@ -70,7 +74,7 @@ public final class RoleAssignmentListResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

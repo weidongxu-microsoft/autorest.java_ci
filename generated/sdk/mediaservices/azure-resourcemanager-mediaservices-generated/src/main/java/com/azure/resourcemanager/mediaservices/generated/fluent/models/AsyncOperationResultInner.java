@@ -9,7 +9,9 @@ import com.azure.core.management.exception.ManagementError;
 import com.azure.resourcemanager.mediaservices.generated.models.AsyncOperationStatus;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The status of an async operation. */
+/**
+ * The status of an async operation.
+ */
 @Fluent
 public final class AsyncOperationResultInner {
     /*
@@ -30,13 +32,15 @@ public final class AsyncOperationResultInner {
     @JsonProperty(value = "status")
     private AsyncOperationStatus status;
 
-    /** Creates an instance of AsyncOperationResultInner class. */
+    /**
+     * Creates an instance of AsyncOperationResultInner class.
+     */
     public AsyncOperationResultInner() {
     }
 
     /**
      * Get the error property: The error object.
-     *
+     * 
      * @return the error value.
      */
     public ManagementError error() {
@@ -45,7 +49,7 @@ public final class AsyncOperationResultInner {
 
     /**
      * Set the error property: The error object.
-     *
+     * 
      * @param error the error value to set.
      * @return the AsyncOperationResultInner object itself.
      */
@@ -56,7 +60,7 @@ public final class AsyncOperationResultInner {
 
     /**
      * Get the name property: Operation Id of the async operation.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -65,7 +69,7 @@ public final class AsyncOperationResultInner {
 
     /**
      * Set the name property: Operation Id of the async operation.
-     *
+     * 
      * @param name the name value to set.
      * @return the AsyncOperationResultInner object itself.
      */
@@ -76,7 +80,7 @@ public final class AsyncOperationResultInner {
 
     /**
      * Get the status property: Operation status of the async operation.
-     *
+     * 
      * @return the status value.
      */
     public AsyncOperationStatus status() {
@@ -85,7 +89,7 @@ public final class AsyncOperationResultInner {
 
     /**
      * Set the status property: Operation status of the async operation.
-     *
+     * 
      * @param status the status value to set.
      * @return the AsyncOperationResultInner object itself.
      */
@@ -96,7 +100,7 @@ public final class AsyncOperationResultInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

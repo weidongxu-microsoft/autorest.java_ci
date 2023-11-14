@@ -11,8 +11,8 @@ import java.util.List;
 
 /**
  * LiveOutputListResult
- *
- * <p>The LiveOutput list result.
+ * 
+ * The LiveOutput list result.
  */
 @Fluent
 public final class LiveOutputListResult {
@@ -34,13 +34,15 @@ public final class LiveOutputListResult {
     @JsonProperty(value = "@odata.nextLink")
     private String odataNextLink;
 
-    /** Creates an instance of LiveOutputListResult class. */
+    /**
+     * Creates an instance of LiveOutputListResult class.
+     */
     public LiveOutputListResult() {
     }
 
     /**
      * Get the value property: The result of the List LiveOutput operation.
-     *
+     * 
      * @return the value value.
      */
     public List<LiveOutputInner> value() {
@@ -49,7 +51,7 @@ public final class LiveOutputListResult {
 
     /**
      * Set the value property: The result of the List LiveOutput operation.
-     *
+     * 
      * @param value the value value to set.
      * @return the LiveOutputListResult object itself.
      */
@@ -60,7 +62,7 @@ public final class LiveOutputListResult {
 
     /**
      * Get the odataCount property: The number of result.
-     *
+     * 
      * @return the odataCount value.
      */
     public Integer odataCount() {
@@ -69,7 +71,7 @@ public final class LiveOutputListResult {
 
     /**
      * Set the odataCount property: The number of result.
-     *
+     * 
      * @param odataCount the odataCount value to set.
      * @return the LiveOutputListResult object itself.
      */
@@ -81,7 +83,7 @@ public final class LiveOutputListResult {
     /**
      * Get the odataNextLink property: The link to the next set of results. Not empty if value contains incomplete list
      * of live outputs.
-     *
+     * 
      * @return the odataNextLink value.
      */
     public String odataNextLink() {
@@ -91,7 +93,7 @@ public final class LiveOutputListResult {
     /**
      * Set the odataNextLink property: The link to the next set of results. Not empty if value contains incomplete list
      * of live outputs.
-     *
+     * 
      * @param odataNextLink the odataNextLink value to set.
      * @return the LiveOutputListResult object itself.
      */
@@ -102,7 +104,7 @@ public final class LiveOutputListResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

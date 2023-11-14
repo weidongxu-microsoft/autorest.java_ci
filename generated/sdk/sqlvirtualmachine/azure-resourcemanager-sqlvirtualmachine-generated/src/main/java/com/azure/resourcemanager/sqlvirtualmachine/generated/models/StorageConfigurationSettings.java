@@ -7,7 +7,9 @@ package com.azure.resourcemanager.sqlvirtualmachine.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Storage Configurations for SQL Data, Log and TempDb. */
+/**
+ * Storage Configurations for SQL Data, Log and TempDb.
+ */
 @Fluent
 public final class StorageConfigurationSettings {
     /*
@@ -52,13 +54,15 @@ public final class StorageConfigurationSettings {
     @JsonProperty(value = "enableStorageConfigBlade")
     private Boolean enableStorageConfigBlade;
 
-    /** Creates an instance of StorageConfigurationSettings class. */
+    /**
+     * Creates an instance of StorageConfigurationSettings class.
+     */
     public StorageConfigurationSettings() {
     }
 
     /**
      * Get the sqlDataSettings property: SQL Server Data Storage Settings.
-     *
+     * 
      * @return the sqlDataSettings value.
      */
     public SqlStorageSettings sqlDataSettings() {
@@ -67,7 +71,7 @@ public final class StorageConfigurationSettings {
 
     /**
      * Set the sqlDataSettings property: SQL Server Data Storage Settings.
-     *
+     * 
      * @param sqlDataSettings the sqlDataSettings value to set.
      * @return the StorageConfigurationSettings object itself.
      */
@@ -78,7 +82,7 @@ public final class StorageConfigurationSettings {
 
     /**
      * Get the sqlLogSettings property: SQL Server Log Storage Settings.
-     *
+     * 
      * @return the sqlLogSettings value.
      */
     public SqlStorageSettings sqlLogSettings() {
@@ -87,7 +91,7 @@ public final class StorageConfigurationSettings {
 
     /**
      * Set the sqlLogSettings property: SQL Server Log Storage Settings.
-     *
+     * 
      * @param sqlLogSettings the sqlLogSettings value to set.
      * @return the StorageConfigurationSettings object itself.
      */
@@ -98,7 +102,7 @@ public final class StorageConfigurationSettings {
 
     /**
      * Get the sqlTempDbSettings property: SQL Server TempDb Storage Settings.
-     *
+     * 
      * @return the sqlTempDbSettings value.
      */
     public SqlTempDbSettings sqlTempDbSettings() {
@@ -107,7 +111,7 @@ public final class StorageConfigurationSettings {
 
     /**
      * Set the sqlTempDbSettings property: SQL Server TempDb Storage Settings.
-     *
+     * 
      * @param sqlTempDbSettings the sqlTempDbSettings value to set.
      * @return the StorageConfigurationSettings object itself.
      */
@@ -118,7 +122,7 @@ public final class StorageConfigurationSettings {
 
     /**
      * Get the sqlSystemDbOnDataDisk property: SQL Server SystemDb Storage on DataPool if true.
-     *
+     * 
      * @return the sqlSystemDbOnDataDisk value.
      */
     public Boolean sqlSystemDbOnDataDisk() {
@@ -127,7 +131,7 @@ public final class StorageConfigurationSettings {
 
     /**
      * Set the sqlSystemDbOnDataDisk property: SQL Server SystemDb Storage on DataPool if true.
-     *
+     * 
      * @param sqlSystemDbOnDataDisk the sqlSystemDbOnDataDisk value to set.
      * @return the StorageConfigurationSettings object itself.
      */
@@ -138,7 +142,7 @@ public final class StorageConfigurationSettings {
 
     /**
      * Get the diskConfigurationType property: Disk configuration to apply to SQL Server.
-     *
+     * 
      * @return the diskConfigurationType value.
      */
     public DiskConfigurationType diskConfigurationType() {
@@ -147,7 +151,7 @@ public final class StorageConfigurationSettings {
 
     /**
      * Set the diskConfigurationType property: Disk configuration to apply to SQL Server.
-     *
+     * 
      * @param diskConfigurationType the diskConfigurationType value to set.
      * @return the StorageConfigurationSettings object itself.
      */
@@ -158,7 +162,7 @@ public final class StorageConfigurationSettings {
 
     /**
      * Get the storageWorkloadType property: Storage workload type.
-     *
+     * 
      * @return the storageWorkloadType value.
      */
     public StorageWorkloadType storageWorkloadType() {
@@ -167,7 +171,7 @@ public final class StorageConfigurationSettings {
 
     /**
      * Set the storageWorkloadType property: Storage workload type.
-     *
+     * 
      * @param storageWorkloadType the storageWorkloadType value to set.
      * @return the StorageConfigurationSettings object itself.
      */
@@ -178,7 +182,7 @@ public final class StorageConfigurationSettings {
 
     /**
      * Get the enableStorageConfigBlade property: Enable SQL IaaS Agent storage configuration blade in Azure Portal.
-     *
+     * 
      * @return the enableStorageConfigBlade value.
      */
     public Boolean enableStorageConfigBlade() {
@@ -187,7 +191,7 @@ public final class StorageConfigurationSettings {
 
     /**
      * Set the enableStorageConfigBlade property: Enable SQL IaaS Agent storage configuration blade in Azure Portal.
-     *
+     * 
      * @param enableStorageConfigBlade the enableStorageConfigBlade value to set.
      * @return the StorageConfigurationSettings object itself.
      */
@@ -198,7 +202,7 @@ public final class StorageConfigurationSettings {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

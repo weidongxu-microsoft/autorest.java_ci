@@ -9,7 +9,9 @@ import com.azure.resourcemanager.databoxedge.generated.models.RemoteSupportSetti
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The properties of remote support settings. */
+/**
+ * The properties of remote support settings.
+ */
 @Fluent
 public final class DiagnosticRemoteSupportSettingsProperties {
     /*
@@ -18,13 +20,15 @@ public final class DiagnosticRemoteSupportSettingsProperties {
     @JsonProperty(value = "remoteSupportSettingsList")
     private List<RemoteSupportSettings> remoteSupportSettingsList;
 
-    /** Creates an instance of DiagnosticRemoteSupportSettingsProperties class. */
+    /**
+     * Creates an instance of DiagnosticRemoteSupportSettingsProperties class.
+     */
     public DiagnosticRemoteSupportSettingsProperties() {
     }
 
     /**
      * Get the remoteSupportSettingsList property: Remote support settings list according to the RemoteApplicationType.
-     *
+     * 
      * @return the remoteSupportSettingsList value.
      */
     public List<RemoteSupportSettings> remoteSupportSettingsList() {
@@ -33,19 +37,19 @@ public final class DiagnosticRemoteSupportSettingsProperties {
 
     /**
      * Set the remoteSupportSettingsList property: Remote support settings list according to the RemoteApplicationType.
-     *
+     * 
      * @param remoteSupportSettingsList the remoteSupportSettingsList value to set.
      * @return the DiagnosticRemoteSupportSettingsProperties object itself.
      */
-    public DiagnosticRemoteSupportSettingsProperties withRemoteSupportSettingsList(
-        List<RemoteSupportSettings> remoteSupportSettingsList) {
+    public DiagnosticRemoteSupportSettingsProperties
+        withRemoteSupportSettingsList(List<RemoteSupportSettings> remoteSupportSettingsList) {
         this.remoteSupportSettingsList = remoteSupportSettingsList;
         return this;
     }
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -10,7 +10,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** Describes Forwarding Route. */
+/**
+ * Describes Forwarding Route.
+ */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
 @JsonTypeName("#Microsoft.Azure.FrontDoor.Models.FrontdoorForwardingConfiguration")
 @Fluent
@@ -39,14 +41,16 @@ public final class ForwardingConfiguration extends RouteConfiguration {
     @JsonProperty(value = "backendPool")
     private SubResource backendPool;
 
-    /** Creates an instance of ForwardingConfiguration class. */
+    /**
+     * Creates an instance of ForwardingConfiguration class.
+     */
     public ForwardingConfiguration() {
     }
 
     /**
      * Get the customForwardingPath property: A custom path used to rewrite resource paths matched by this rule. Leave
      * empty to use incoming path.
-     *
+     * 
      * @return the customForwardingPath value.
      */
     public String customForwardingPath() {
@@ -56,7 +60,7 @@ public final class ForwardingConfiguration extends RouteConfiguration {
     /**
      * Set the customForwardingPath property: A custom path used to rewrite resource paths matched by this rule. Leave
      * empty to use incoming path.
-     *
+     * 
      * @param customForwardingPath the customForwardingPath value to set.
      * @return the ForwardingConfiguration object itself.
      */
@@ -67,7 +71,7 @@ public final class ForwardingConfiguration extends RouteConfiguration {
 
     /**
      * Get the forwardingProtocol property: Protocol this rule will use when forwarding traffic to backends.
-     *
+     * 
      * @return the forwardingProtocol value.
      */
     public FrontDoorForwardingProtocol forwardingProtocol() {
@@ -76,7 +80,7 @@ public final class ForwardingConfiguration extends RouteConfiguration {
 
     /**
      * Set the forwardingProtocol property: Protocol this rule will use when forwarding traffic to backends.
-     *
+     * 
      * @param forwardingProtocol the forwardingProtocol value to set.
      * @return the ForwardingConfiguration object itself.
      */
@@ -87,7 +91,7 @@ public final class ForwardingConfiguration extends RouteConfiguration {
 
     /**
      * Get the cacheConfiguration property: The caching configuration associated with this rule.
-     *
+     * 
      * @return the cacheConfiguration value.
      */
     public CacheConfiguration cacheConfiguration() {
@@ -96,7 +100,7 @@ public final class ForwardingConfiguration extends RouteConfiguration {
 
     /**
      * Set the cacheConfiguration property: The caching configuration associated with this rule.
-     *
+     * 
      * @param cacheConfiguration the cacheConfiguration value to set.
      * @return the ForwardingConfiguration object itself.
      */
@@ -107,7 +111,7 @@ public final class ForwardingConfiguration extends RouteConfiguration {
 
     /**
      * Get the backendPool property: A reference to the BackendPool which this rule routes to.
-     *
+     * 
      * @return the backendPool value.
      */
     public SubResource backendPool() {
@@ -116,7 +120,7 @@ public final class ForwardingConfiguration extends RouteConfiguration {
 
     /**
      * Set the backendPool property: A reference to the BackendPool which this rule routes to.
-     *
+     * 
      * @param backendPool the backendPool value to set.
      * @return the ForwardingConfiguration object itself.
      */
@@ -127,7 +131,7 @@ public final class ForwardingConfiguration extends RouteConfiguration {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

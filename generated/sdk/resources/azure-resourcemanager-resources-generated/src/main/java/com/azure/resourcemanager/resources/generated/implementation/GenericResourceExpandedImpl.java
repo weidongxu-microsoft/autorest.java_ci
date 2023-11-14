@@ -18,8 +18,7 @@ public final class GenericResourceExpandedImpl implements GenericResourceExpande
 
     private final com.azure.resourcemanager.resources.generated.ResourceManager serviceManager;
 
-    GenericResourceExpandedImpl(
-        GenericResourceExpandedInner innerObject,
+    GenericResourceExpandedImpl(GenericResourceExpandedInner innerObject,
         com.azure.resourcemanager.resources.generated.ResourceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

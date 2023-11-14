@@ -7,18 +7,20 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteProviderPortListResultInner;
 import java.util.List;
 
-/** An immutable client-side representation of ExpressRouteProviderPortListResult. */
+/**
+ * An immutable client-side representation of ExpressRouteProviderPortListResult.
+ */
 public interface ExpressRouteProviderPortListResult {
     /**
      * Gets the value property: A list of ExpressRouteProviderPort resources.
-     *
+     * 
      * @return the value value.
      */
     List<ExpressRouteProviderPort> value();
 
     /**
      * Gets the nextLink property: The URL to get the next set of results.
-     *
+     * 
      * @return the nextLink value.
      */
     String nextLink();
@@ -26,7 +28,7 @@ public interface ExpressRouteProviderPortListResult {
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteProviderPortListResultInner
      * object.
-     *
+     * 
      * @return the inner object.
      */
     ExpressRouteProviderPortListResultInner innerModel();

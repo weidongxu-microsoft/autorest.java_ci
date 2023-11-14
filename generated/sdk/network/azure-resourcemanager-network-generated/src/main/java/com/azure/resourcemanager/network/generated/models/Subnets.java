@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of Subnets. */
+/**
+ * Resource collection API of Subnets.
+ */
 public interface Subnets {
     /**
      * Deletes the specified subnet.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
@@ -24,7 +26,7 @@ public interface Subnets {
 
     /**
      * Deletes the specified subnet.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
@@ -37,7 +39,7 @@ public interface Subnets {
 
     /**
      * Gets the specified subnet by virtual network and resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
@@ -48,12 +50,12 @@ public interface Subnets {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified subnet by virtual network and resource group along with {@link Response}.
      */
-    Response<Subnet> getWithResponse(
-        String resourceGroupName, String virtualNetworkName, String subnetName, String expand, Context context);
+    Response<Subnet> getWithResponse(String resourceGroupName, String virtualNetworkName, String subnetName,
+        String expand, Context context);
 
     /**
      * Gets the specified subnet by virtual network and resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
@@ -66,83 +68,69 @@ public interface Subnets {
 
     /**
      * Prepares a subnet by applying network intent policies.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
      * @param prepareNetworkPoliciesRequestParameters Parameters supplied to prepare subnet by applying network intent
-     *     policies.
+     * policies.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void prepareNetworkPolicies(
-        String resourceGroupName,
-        String virtualNetworkName,
-        String subnetName,
+    void prepareNetworkPolicies(String resourceGroupName, String virtualNetworkName, String subnetName,
         PrepareNetworkPoliciesRequest prepareNetworkPoliciesRequestParameters);
 
     /**
      * Prepares a subnet by applying network intent policies.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
      * @param prepareNetworkPoliciesRequestParameters Parameters supplied to prepare subnet by applying network intent
-     *     policies.
+     * policies.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void prepareNetworkPolicies(
-        String resourceGroupName,
-        String virtualNetworkName,
-        String subnetName,
-        PrepareNetworkPoliciesRequest prepareNetworkPoliciesRequestParameters,
-        Context context);
+    void prepareNetworkPolicies(String resourceGroupName, String virtualNetworkName, String subnetName,
+        PrepareNetworkPoliciesRequest prepareNetworkPoliciesRequestParameters, Context context);
 
     /**
      * Unprepares a subnet by removing network intent policies.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
      * @param unprepareNetworkPoliciesRequestParameters Parameters supplied to unprepare subnet to remove network intent
-     *     policies.
+     * policies.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void unprepareNetworkPolicies(
-        String resourceGroupName,
-        String virtualNetworkName,
-        String subnetName,
+    void unprepareNetworkPolicies(String resourceGroupName, String virtualNetworkName, String subnetName,
         UnprepareNetworkPoliciesRequest unprepareNetworkPoliciesRequestParameters);
 
     /**
      * Unprepares a subnet by removing network intent policies.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
      * @param unprepareNetworkPoliciesRequestParameters Parameters supplied to unprepare subnet to remove network intent
-     *     policies.
+     * policies.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void unprepareNetworkPolicies(
-        String resourceGroupName,
-        String virtualNetworkName,
-        String subnetName,
-        UnprepareNetworkPoliciesRequest unprepareNetworkPoliciesRequestParameters,
-        Context context);
+    void unprepareNetworkPolicies(String resourceGroupName, String virtualNetworkName, String subnetName,
+        UnprepareNetworkPoliciesRequest unprepareNetworkPoliciesRequestParameters, Context context);
 
     /**
      * Gets all subnets in a virtual network.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -154,7 +142,7 @@ public interface Subnets {
 
     /**
      * Gets all subnets in a virtual network.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param context The context to associate with this operation.
@@ -167,7 +155,7 @@ public interface Subnets {
 
     /**
      * Gets the specified subnet by virtual network and resource group.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -178,7 +166,7 @@ public interface Subnets {
 
     /**
      * Gets the specified subnet by virtual network and resource group.
-     *
+     * 
      * @param id the resource ID.
      * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
@@ -191,7 +179,7 @@ public interface Subnets {
 
     /**
      * Deletes the specified subnet.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -201,7 +189,7 @@ public interface Subnets {
 
     /**
      * Deletes the specified subnet.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -212,7 +200,7 @@ public interface Subnets {
 
     /**
      * Begins definition for a new Subnet resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new Subnet definition.
      */

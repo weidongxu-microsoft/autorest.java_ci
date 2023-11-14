@@ -13,8 +13,7 @@ public final class CheckMhsmNameAvailabilityResultImpl implements CheckMhsmNameA
 
     private final com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager;
 
-    CheckMhsmNameAvailabilityResultImpl(
-        CheckMhsmNameAvailabilityResultInner innerObject,
+    CheckMhsmNameAvailabilityResultImpl(CheckMhsmNameAvailabilityResultInner innerObject,
         com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

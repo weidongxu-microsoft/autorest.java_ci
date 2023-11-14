@@ -8,60 +8,62 @@ import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.mysql.generated.fluent.models.CapabilityInner;
 import java.util.List;
 
-/** An immutable client-side representation of Capability. */
+/**
+ * An immutable client-side representation of Capability.
+ */
 public interface Capability {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the name property: The name of the resource.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the type property: The type of the resource.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the systemData property: Azure Resource Manager metadata containing createdBy and modifiedBy information.
-     *
+     * 
      * @return the systemData value.
      */
     SystemData systemData();
 
     /**
      * Gets the supportedGeoBackupRegions property: supported geo backup regions.
-     *
+     * 
      * @return the supportedGeoBackupRegions value.
      */
     List<String> supportedGeoBackupRegions();
 
     /**
      * Gets the supportedFlexibleServerEditions property: A list of supported flexible server editions.
-     *
+     * 
      * @return the supportedFlexibleServerEditions value.
      */
     List<ServerEditionCapabilityV2> supportedFlexibleServerEditions();
 
     /**
      * Gets the supportedServerVersions property: A list of supported server versions.
-     *
+     * 
      * @return the supportedServerVersions value.
      */
     List<ServerVersionCapabilityV2> supportedServerVersions();
 
     /**
      * Gets the inner com.azure.resourcemanager.mysql.generated.fluent.models.CapabilityInner object.
-     *
+     * 
      * @return the inner object.
      */
     CapabilityInner innerModel();

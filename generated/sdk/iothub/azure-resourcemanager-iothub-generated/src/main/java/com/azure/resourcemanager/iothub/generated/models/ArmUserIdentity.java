@@ -7,7 +7,9 @@ package com.azure.resourcemanager.iothub.generated.models;
 import com.azure.core.annotation.Immutable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The ArmUserIdentity model. */
+/**
+ * The ArmUserIdentity model.
+ */
 @Immutable
 public final class ArmUserIdentity {
     /*
@@ -22,13 +24,15 @@ public final class ArmUserIdentity {
     @JsonProperty(value = "clientId", access = JsonProperty.Access.WRITE_ONLY)
     private String clientId;
 
-    /** Creates an instance of ArmUserIdentity class. */
+    /**
+     * Creates an instance of ArmUserIdentity class.
+     */
     public ArmUserIdentity() {
     }
 
     /**
      * Get the principalId property: The principalId property.
-     *
+     * 
      * @return the principalId value.
      */
     public String principalId() {
@@ -37,7 +41,7 @@ public final class ArmUserIdentity {
 
     /**
      * Get the clientId property: The clientId property.
-     *
+     * 
      * @return the clientId value.
      */
     public String clientId() {
@@ -46,7 +50,7 @@ public final class ArmUserIdentity {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -58,24 +58,16 @@ public final class IdentifierImpl implements Identifier, Identifier.Definition, 
     }
 
     public Identifier create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApps()
-                .createOrUpdateDomainOwnershipIdentifierWithResponse(
-                    resourceGroupName, name, domainOwnershipIdentifierName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getWebApps().createOrUpdateDomainOwnershipIdentifierWithResponse(
+                resourceGroupName, name, domainOwnershipIdentifierName, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public Identifier create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApps()
-                .createOrUpdateDomainOwnershipIdentifierWithResponse(
-                    resourceGroupName, name, domainOwnershipIdentifierName, this.innerModel(), context)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getWebApps().createOrUpdateDomainOwnershipIdentifierWithResponse(
+                resourceGroupName, name, domainOwnershipIdentifierName, this.innerModel(), context).getValue();
         return this;
     }
 
@@ -90,29 +82,21 @@ public final class IdentifierImpl implements Identifier, Identifier.Definition, 
     }
 
     public Identifier apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApps()
-                .updateDomainOwnershipIdentifierWithResponse(
-                    resourceGroupName, name, domainOwnershipIdentifierName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getWebApps().updateDomainOwnershipIdentifierWithResponse(resourceGroupName,
+                name, domainOwnershipIdentifierName, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public Identifier apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApps()
-                .updateDomainOwnershipIdentifierWithResponse(
-                    resourceGroupName, name, domainOwnershipIdentifierName, this.innerModel(), context)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getWebApps().updateDomainOwnershipIdentifierWithResponse(resourceGroupName,
+                name, domainOwnershipIdentifierName, this.innerModel(), context).getValue();
         return this;
     }
 
-    IdentifierImpl(
-        IdentifierInner innerObject, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
+    IdentifierImpl(IdentifierInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
@@ -121,24 +105,16 @@ public final class IdentifierImpl implements Identifier, Identifier.Definition, 
     }
 
     public Identifier refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApps()
-                .getDomainOwnershipIdentifierWithResponse(
-                    resourceGroupName, name, domainOwnershipIdentifierName, Context.NONE)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getWebApps().getDomainOwnershipIdentifierWithResponse(resourceGroupName,
+                name, domainOwnershipIdentifierName, Context.NONE).getValue();
         return this;
     }
 
     public Identifier refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getWebApps()
-                .getDomainOwnershipIdentifierWithResponse(
-                    resourceGroupName, name, domainOwnershipIdentifierName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getWebApps()
+            .getDomainOwnershipIdentifierWithResponse(resourceGroupName, name, domainOwnershipIdentifierName, context)
+            .getValue();
         return this;
     }
 

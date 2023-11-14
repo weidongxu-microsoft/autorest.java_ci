@@ -18,8 +18,7 @@ public final class RollingUpgradeStatusInfoImpl implements RollingUpgradeStatusI
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    RollingUpgradeStatusInfoImpl(
-        RollingUpgradeStatusInfoInner innerObject,
+    RollingUpgradeStatusInfoImpl(RollingUpgradeStatusInfoInner innerObject,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

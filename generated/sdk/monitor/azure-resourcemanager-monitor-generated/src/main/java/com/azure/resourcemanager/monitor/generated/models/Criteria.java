@@ -9,7 +9,9 @@ import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Specifies the criteria for converting log to metric. */
+/**
+ * Specifies the criteria for converting log to metric.
+ */
 @Fluent
 public final class Criteria {
     /*
@@ -24,13 +26,15 @@ public final class Criteria {
     @JsonProperty(value = "dimensions")
     private List<Dimension> dimensions;
 
-    /** Creates an instance of Criteria class. */
+    /**
+     * Creates an instance of Criteria class.
+     */
     public Criteria() {
     }
 
     /**
      * Get the metricName property: Name of the metric.
-     *
+     * 
      * @return the metricName value.
      */
     public String metricName() {
@@ -39,7 +43,7 @@ public final class Criteria {
 
     /**
      * Set the metricName property: Name of the metric.
-     *
+     * 
      * @param metricName the metricName value to set.
      * @return the Criteria object itself.
      */
@@ -50,7 +54,7 @@ public final class Criteria {
 
     /**
      * Get the dimensions property: List of Dimensions for creating metric.
-     *
+     * 
      * @return the dimensions value.
      */
     public List<Dimension> dimensions() {
@@ -59,7 +63,7 @@ public final class Criteria {
 
     /**
      * Set the dimensions property: List of Dimensions for creating metric.
-     *
+     * 
      * @param dimensions the dimensions value to set.
      * @return the Criteria object itself.
      */
@@ -70,14 +74,13 @@ public final class Criteria {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (metricName() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property metricName in model Criteria"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property metricName in model Criteria"));
         }
         if (dimensions() != null) {
             dimensions().forEach(e -> e.validate());

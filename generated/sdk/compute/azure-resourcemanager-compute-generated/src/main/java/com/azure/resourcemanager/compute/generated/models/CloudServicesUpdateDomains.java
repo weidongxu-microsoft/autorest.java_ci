@@ -9,72 +9,70 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.compute.generated.fluent.models.UpdateDomainInner;
 
-/** Resource collection API of CloudServicesUpdateDomains. */
+/**
+ * Resource collection API of CloudServicesUpdateDomains.
+ */
 public interface CloudServicesUpdateDomains {
     /**
      * Updates the role instances in the specified update domain.
-     *
+     * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
      * @param updateDomain Specifies an integer value that identifies the update domain. Update domains are identified
-     *     with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
+     * with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void walkUpdateDomain(String resourceGroupName, String cloudServiceName, int updateDomain);
 
     /**
      * Updates the role instances in the specified update domain.
-     *
+     * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
      * @param updateDomain Specifies an integer value that identifies the update domain. Update domains are identified
-     *     with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
+     * with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
      * @param parameters The update domain object.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void walkUpdateDomain(
-        String resourceGroupName,
-        String cloudServiceName,
-        int updateDomain,
-        UpdateDomainInner parameters,
-        Context context);
+    void walkUpdateDomain(String resourceGroupName, String cloudServiceName, int updateDomain,
+        UpdateDomainInner parameters, Context context);
 
     /**
      * Gets the specified update domain of a cloud service. Use nextLink property in the response to get the next page
      * of update domains. Do this till nextLink is null to fetch all the update domains.
-     *
+     * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
      * @param updateDomain Specifies an integer value that identifies the update domain. Update domains are identified
-     *     with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
+     * with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified update domain of a cloud service along with {@link Response}.
      */
-    Response<UpdateDomain> getUpdateDomainWithResponse(
-        String resourceGroupName, String cloudServiceName, int updateDomain, Context context);
+    Response<UpdateDomain> getUpdateDomainWithResponse(String resourceGroupName, String cloudServiceName,
+        int updateDomain, Context context);
 
     /**
      * Gets the specified update domain of a cloud service. Use nextLink property in the response to get the next page
      * of update domains. Do this till nextLink is null to fetch all the update domains.
-     *
+     * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
      * @param updateDomain Specifies an integer value that identifies the update domain. Update domains are identified
-     *     with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
+     * with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified update domain of a cloud service.
      */
@@ -82,12 +80,12 @@ public interface CloudServicesUpdateDomains {
 
     /**
      * Gets a list of all update domains in a cloud service.
-     *
+     * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a list of all update domains in a cloud service as paginated response with {@link PagedIterable}.
      */
@@ -95,13 +93,13 @@ public interface CloudServicesUpdateDomains {
 
     /**
      * Gets a list of all update domains in a cloud service.
-     *
+     * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a list of all update domains in a cloud service as paginated response with {@link PagedIterable}.
      */

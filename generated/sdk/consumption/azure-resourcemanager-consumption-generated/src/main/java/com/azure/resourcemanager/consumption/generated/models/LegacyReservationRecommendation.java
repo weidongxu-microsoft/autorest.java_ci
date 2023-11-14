@@ -11,7 +11,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** Legacy reservation recommendation. */
+/**
+ * Legacy reservation recommendation.
+ */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "kind")
 @JsonTypeName("legacy")
 @Fluent
@@ -22,13 +24,15 @@ public final class LegacyReservationRecommendation extends ReservationRecommenda
     @JsonProperty(value = "properties", required = true)
     private LegacyReservationRecommendationProperties properties;
 
-    /** Creates an instance of LegacyReservationRecommendation class. */
+    /**
+     * Creates an instance of LegacyReservationRecommendation class.
+     */
     public LegacyReservationRecommendation() {
     }
 
     /**
      * Get the properties property: Properties for legacy reservation recommendation.
-     *
+     * 
      * @return the properties value.
      */
     public LegacyReservationRecommendationProperties properties() {
@@ -37,7 +41,7 @@ public final class LegacyReservationRecommendation extends ReservationRecommenda
 
     /**
      * Set the properties property: Properties for legacy reservation recommendation.
-     *
+     * 
      * @param properties the properties value to set.
      * @return the LegacyReservationRecommendation object itself.
      */
@@ -48,17 +52,15 @@ public final class LegacyReservationRecommendation extends ReservationRecommenda
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override
     public void validate() {
         super.validate();
         if (properties() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property properties in model LegacyReservationRecommendation"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property properties in model LegacyReservationRecommendation"));
         } else {
             properties().validate();
         }

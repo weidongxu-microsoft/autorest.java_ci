@@ -32,13 +32,15 @@ public final class IoTEdgeAgentInfo {
     @JsonProperty(value = "imageRepository")
     private ImageRepositoryCredential imageRepository;
 
-    /** Creates an instance of IoTEdgeAgentInfo class. */
+    /**
+     * Creates an instance of IoTEdgeAgentInfo class.
+     */
     public IoTEdgeAgentInfo() {
     }
 
     /**
      * Get the imageName property: Name of the IoT edge agent image.
-     *
+     * 
      * @return the imageName value.
      */
     public String imageName() {
@@ -47,7 +49,7 @@ public final class IoTEdgeAgentInfo {
 
     /**
      * Set the imageName property: Name of the IoT edge agent image.
-     *
+     * 
      * @param imageName the imageName value to set.
      * @return the IoTEdgeAgentInfo object itself.
      */
@@ -58,7 +60,7 @@ public final class IoTEdgeAgentInfo {
 
     /**
      * Get the tag property: Image Tag.
-     *
+     * 
      * @return the tag value.
      */
     public String tag() {
@@ -67,7 +69,7 @@ public final class IoTEdgeAgentInfo {
 
     /**
      * Set the tag property: Image Tag.
-     *
+     * 
      * @param tag the tag value to set.
      * @return the IoTEdgeAgentInfo object itself.
      */
@@ -78,7 +80,7 @@ public final class IoTEdgeAgentInfo {
 
     /**
      * Get the imageRepository property: Image repository details.
-     *
+     * 
      * @return the imageRepository value.
      */
     public ImageRepositoryCredential imageRepository() {
@@ -87,7 +89,7 @@ public final class IoTEdgeAgentInfo {
 
     /**
      * Set the imageRepository property: Image repository details.
-     *
+     * 
      * @param imageRepository the imageRepository value to set.
      * @return the IoTEdgeAgentInfo object itself.
      */
@@ -98,19 +100,17 @@ public final class IoTEdgeAgentInfo {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (imageName() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property imageName in model IoTEdgeAgentInfo"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property imageName in model IoTEdgeAgentInfo"));
         }
         if (tag() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property tag in model IoTEdgeAgentInfo"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property tag in model IoTEdgeAgentInfo"));
         }
         if (imageRepository() != null) {
             imageRepository().validate();

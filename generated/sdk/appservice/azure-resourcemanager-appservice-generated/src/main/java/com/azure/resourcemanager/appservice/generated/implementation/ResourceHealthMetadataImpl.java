@@ -12,8 +12,7 @@ public final class ResourceHealthMetadataImpl implements ResourceHealthMetadata 
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    ResourceHealthMetadataImpl(
-        ResourceHealthMetadataInner innerObject,
+    ResourceHealthMetadataImpl(ResourceHealthMetadataInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

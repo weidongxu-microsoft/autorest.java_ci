@@ -27,8 +27,8 @@ public final class VirtualNetworksImpl implements VirtualNetworks {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public VirtualNetworksImpl(
-        VirtualNetworksClient innerClient, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    public VirtualNetworksImpl(VirtualNetworksClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -41,15 +41,12 @@ public final class VirtualNetworksImpl implements VirtualNetworks {
         this.serviceClient().delete(resourceGroupName, virtualNetworkName, context);
     }
 
-    public Response<VirtualNetwork> getByResourceGroupWithResponse(
-        String resourceGroupName, String virtualNetworkName, String expand, Context context) {
-        Response<VirtualNetworkInner> inner =
-            this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, virtualNetworkName, expand, context);
+    public Response<VirtualNetwork> getByResourceGroupWithResponse(String resourceGroupName, String virtualNetworkName,
+        String expand, Context context) {
+        Response<VirtualNetworkInner> inner = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName,
+            virtualNetworkName, expand, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new VirtualNetworkImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -85,27 +82,22 @@ public final class VirtualNetworksImpl implements VirtualNetworks {
         return Utils.mapPage(inner, inner1 -> new VirtualNetworkImpl(inner1, this.manager()));
     }
 
-    public Response<IpAddressAvailabilityResult> checkIpAddressAvailabilityWithResponse(
-        String resourceGroupName, String virtualNetworkName, String ipAddress, Context context) {
-        Response<IpAddressAvailabilityResultInner> inner =
-            this
-                .serviceClient()
-                .checkIpAddressAvailabilityWithResponse(resourceGroupName, virtualNetworkName, ipAddress, context);
+    public Response<IpAddressAvailabilityResult> checkIpAddressAvailabilityWithResponse(String resourceGroupName,
+        String virtualNetworkName, String ipAddress, Context context) {
+        Response<IpAddressAvailabilityResultInner> inner = this.serviceClient()
+            .checkIpAddressAvailabilityWithResponse(resourceGroupName, virtualNetworkName, ipAddress, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new IpAddressAvailabilityResultImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public IpAddressAvailabilityResult checkIpAddressAvailability(
-        String resourceGroupName, String virtualNetworkName, String ipAddress) {
-        IpAddressAvailabilityResultInner inner =
-            this.serviceClient().checkIpAddressAvailability(resourceGroupName, virtualNetworkName, ipAddress);
+    public IpAddressAvailabilityResult checkIpAddressAvailability(String resourceGroupName, String virtualNetworkName,
+        String ipAddress) {
+        IpAddressAvailabilityResultInner inner
+            = this.serviceClient().checkIpAddressAvailability(resourceGroupName, virtualNetworkName, ipAddress);
         if (inner != null) {
             return new IpAddressAvailabilityResultImpl(inner, this.manager());
         } else {
@@ -114,73 +106,58 @@ public final class VirtualNetworksImpl implements VirtualNetworks {
     }
 
     public PagedIterable<VirtualNetworkUsage> listUsage(String resourceGroupName, String virtualNetworkName) {
-        PagedIterable<VirtualNetworkUsageInner> inner =
-            this.serviceClient().listUsage(resourceGroupName, virtualNetworkName);
+        PagedIterable<VirtualNetworkUsageInner> inner
+            = this.serviceClient().listUsage(resourceGroupName, virtualNetworkName);
         return Utils.mapPage(inner, inner1 -> new VirtualNetworkUsageImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<VirtualNetworkUsage> listUsage(
-        String resourceGroupName, String virtualNetworkName, Context context) {
-        PagedIterable<VirtualNetworkUsageInner> inner =
-            this.serviceClient().listUsage(resourceGroupName, virtualNetworkName, context);
+    public PagedIterable<VirtualNetworkUsage> listUsage(String resourceGroupName, String virtualNetworkName,
+        Context context) {
+        PagedIterable<VirtualNetworkUsageInner> inner
+            = this.serviceClient().listUsage(resourceGroupName, virtualNetworkName, context);
         return Utils.mapPage(inner, inner1 -> new VirtualNetworkUsageImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<PublicIpDdosProtectionStatusResult> listDdosProtectionStatus(
-        String resourceGroupName, String virtualNetworkName) {
-        PagedIterable<PublicIpDdosProtectionStatusResultInner> inner =
-            this.serviceClient().listDdosProtectionStatus(resourceGroupName, virtualNetworkName);
+    public PagedIterable<PublicIpDdosProtectionStatusResult> listDdosProtectionStatus(String resourceGroupName,
+        String virtualNetworkName) {
+        PagedIterable<PublicIpDdosProtectionStatusResultInner> inner
+            = this.serviceClient().listDdosProtectionStatus(resourceGroupName, virtualNetworkName);
         return Utils.mapPage(inner, inner1 -> new PublicIpDdosProtectionStatusResultImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<PublicIpDdosProtectionStatusResult> listDdosProtectionStatus(
-        String resourceGroupName, String virtualNetworkName, Integer top, String skipToken, Context context) {
-        PagedIterable<PublicIpDdosProtectionStatusResultInner> inner =
-            this
-                .serviceClient()
-                .listDdosProtectionStatus(resourceGroupName, virtualNetworkName, top, skipToken, context);
+    public PagedIterable<PublicIpDdosProtectionStatusResult> listDdosProtectionStatus(String resourceGroupName,
+        String virtualNetworkName, Integer top, String skipToken, Context context) {
+        PagedIterable<PublicIpDdosProtectionStatusResultInner> inner = this.serviceClient()
+            .listDdosProtectionStatus(resourceGroupName, virtualNetworkName, top, skipToken, context);
         return Utils.mapPage(inner, inner1 -> new PublicIpDdosProtectionStatusResultImpl(inner1, this.manager()));
     }
 
     public VirtualNetwork getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String virtualNetworkName = Utils.getValueFromIdByName(id, "virtualNetworks");
         if (virtualNetworkName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'virtualNetworks'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'virtualNetworks'.", id)));
         }
         String localExpand = null;
-        return this
-            .getByResourceGroupWithResponse(resourceGroupName, virtualNetworkName, localExpand, Context.NONE)
+        return this.getByResourceGroupWithResponse(resourceGroupName, virtualNetworkName, localExpand, Context.NONE)
             .getValue();
     }
 
     public Response<VirtualNetwork> getByIdWithResponse(String id, String expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String virtualNetworkName = Utils.getValueFromIdByName(id, "virtualNetworks");
         if (virtualNetworkName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'virtualNetworks'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'virtualNetworks'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, virtualNetworkName, expand, context);
     }
@@ -188,19 +165,13 @@ public final class VirtualNetworksImpl implements VirtualNetworks {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String virtualNetworkName = Utils.getValueFromIdByName(id, "virtualNetworks");
         if (virtualNetworkName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'virtualNetworks'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'virtualNetworks'.", id)));
         }
         this.delete(resourceGroupName, virtualNetworkName, Context.NONE);
     }
@@ -208,19 +179,13 @@ public final class VirtualNetworksImpl implements VirtualNetworks {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String virtualNetworkName = Utils.getValueFromIdByName(id, "virtualNetworks");
         if (virtualNetworkName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'virtualNetworks'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'virtualNetworks'.", id)));
         }
         this.delete(resourceGroupName, virtualNetworkName, context);
     }

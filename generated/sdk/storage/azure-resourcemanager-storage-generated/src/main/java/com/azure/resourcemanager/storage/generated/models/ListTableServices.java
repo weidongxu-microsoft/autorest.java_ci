@@ -7,18 +7,20 @@ package com.azure.resourcemanager.storage.generated.models;
 import com.azure.resourcemanager.storage.generated.fluent.models.ListTableServicesInner;
 import java.util.List;
 
-/** An immutable client-side representation of ListTableServices. */
+/**
+ * An immutable client-side representation of ListTableServices.
+ */
 public interface ListTableServices {
     /**
      * Gets the value property: List of table services returned.
-     *
+     * 
      * @return the value value.
      */
     List<TableServiceProperties> value();
 
     /**
      * Gets the inner com.azure.resourcemanager.storage.generated.fluent.models.ListTableServicesInner object.
-     *
+     * 
      * @return the inner object.
      */
     ListTableServicesInner innerModel();

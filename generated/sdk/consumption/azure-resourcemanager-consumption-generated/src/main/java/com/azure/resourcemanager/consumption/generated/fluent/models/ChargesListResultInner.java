@@ -9,7 +9,9 @@ import com.azure.resourcemanager.consumption.generated.models.ChargeSummary;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Result of listing charge summary. */
+/**
+ * Result of listing charge summary.
+ */
 @Immutable
 public final class ChargesListResultInner {
     /*
@@ -18,13 +20,15 @@ public final class ChargesListResultInner {
     @JsonProperty(value = "value", access = JsonProperty.Access.WRITE_ONLY)
     private List<ChargeSummary> value;
 
-    /** Creates an instance of ChargesListResultInner class. */
+    /**
+     * Creates an instance of ChargesListResultInner class.
+     */
     public ChargesListResultInner() {
     }
 
     /**
      * Get the value property: The list of charge summary.
-     *
+     * 
      * @return the value value.
      */
     public List<ChargeSummary> value() {
@@ -33,7 +37,7 @@ public final class ChargesListResultInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

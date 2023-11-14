@@ -14,8 +14,7 @@ public final class CertificateOrderActionImpl implements CertificateOrderAction 
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    CertificateOrderActionImpl(
-        CertificateOrderActionInner innerObject,
+    CertificateOrderActionImpl(CertificateOrderActionInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

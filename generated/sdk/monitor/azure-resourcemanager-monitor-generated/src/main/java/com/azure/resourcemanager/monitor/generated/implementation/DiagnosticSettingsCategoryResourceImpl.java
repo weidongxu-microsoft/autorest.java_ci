@@ -13,8 +13,7 @@ public final class DiagnosticSettingsCategoryResourceImpl implements DiagnosticS
 
     private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    DiagnosticSettingsCategoryResourceImpl(
-        DiagnosticSettingsCategoryResourceInner innerObject,
+    DiagnosticSettingsCategoryResourceImpl(DiagnosticSettingsCategoryResourceInner innerObject,
         com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

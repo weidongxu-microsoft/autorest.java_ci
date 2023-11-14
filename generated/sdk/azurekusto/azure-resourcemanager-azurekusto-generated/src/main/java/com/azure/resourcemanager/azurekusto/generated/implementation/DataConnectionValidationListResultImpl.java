@@ -15,8 +15,7 @@ public final class DataConnectionValidationListResultImpl implements DataConnect
 
     private final com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager;
 
-    DataConnectionValidationListResultImpl(
-        DataConnectionValidationListResultInner innerObject,
+    DataConnectionValidationListResultImpl(DataConnectionValidationListResultInner innerObject,
         com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

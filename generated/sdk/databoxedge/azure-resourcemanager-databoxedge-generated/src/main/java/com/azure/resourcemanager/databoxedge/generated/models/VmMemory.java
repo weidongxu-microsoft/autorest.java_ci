@@ -7,11 +7,13 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** VmMemory Data. */
+/**
+ * VmMemory Data.
+ */
 @Fluent
 public final class VmMemory {
     /*
-     * The total amount of RAM in the virtual machine, as seen by the guest  operating system. For a virtual machine
+     * The total amount of RAM in the virtual machine, as seen by the guest operating system. For a virtual machine
      * with dynamic memory enabled, this represents the initial memory available at startup.
      */
     @JsonProperty(value = "startupMemoryMB")
@@ -23,15 +25,17 @@ public final class VmMemory {
     @JsonProperty(value = "currentMemoryUsageMB")
     private Long currentMemoryUsageMB;
 
-    /** Creates an instance of VmMemory class. */
+    /**
+     * Creates an instance of VmMemory class.
+     */
     public VmMemory() {
     }
 
     /**
-     * Get the startupMemoryMB property: The total amount of RAM in the virtual machine, as seen by the guest operating
-     * system. For a virtual machine with dynamic memory enabled, this represents the initial memory available at
-     * startup.
-     *
+     * Get the startupMemoryMB property: The total amount of RAM in the virtual machine, as seen by the guest
+     * operating system. For a virtual machine with dynamic memory enabled, this represents the initial memory
+     * available at startup.
+     * 
      * @return the startupMemoryMB value.
      */
     public Long startupMemoryMB() {
@@ -39,10 +43,10 @@ public final class VmMemory {
     }
 
     /**
-     * Set the startupMemoryMB property: The total amount of RAM in the virtual machine, as seen by the guest operating
-     * system. For a virtual machine with dynamic memory enabled, this represents the initial memory available at
-     * startup.
-     *
+     * Set the startupMemoryMB property: The total amount of RAM in the virtual machine, as seen by the guest
+     * operating system. For a virtual machine with dynamic memory enabled, this represents the initial memory
+     * available at startup.
+     * 
      * @param startupMemoryMB the startupMemoryMB value to set.
      * @return the VmMemory object itself.
      */
@@ -53,7 +57,7 @@ public final class VmMemory {
 
     /**
      * Get the currentMemoryUsageMB property: The current memory used by the virtual machine.
-     *
+     * 
      * @return the currentMemoryUsageMB value.
      */
     public Long currentMemoryUsageMB() {
@@ -62,7 +66,7 @@ public final class VmMemory {
 
     /**
      * Set the currentMemoryUsageMB property: The current memory used by the virtual machine.
-     *
+     * 
      * @param currentMemoryUsageMB the currentMemoryUsageMB value to set.
      * @return the VmMemory object itself.
      */
@@ -73,7 +77,7 @@ public final class VmMemory {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

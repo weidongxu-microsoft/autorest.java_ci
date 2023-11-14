@@ -8,20 +8,28 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Encryption type of Content Key. */
+/**
+ * Encryption type of Content Key.
+ */
 public final class StreamingLocatorContentKeyType extends ExpandableStringEnum<StreamingLocatorContentKeyType> {
-    /** Static value CommonEncryptionCenc for StreamingLocatorContentKeyType. */
+    /**
+     * Static value CommonEncryptionCenc for StreamingLocatorContentKeyType.
+     */
     public static final StreamingLocatorContentKeyType COMMON_ENCRYPTION_CENC = fromString("CommonEncryptionCenc");
 
-    /** Static value CommonEncryptionCbcs for StreamingLocatorContentKeyType. */
+    /**
+     * Static value CommonEncryptionCbcs for StreamingLocatorContentKeyType.
+     */
     public static final StreamingLocatorContentKeyType COMMON_ENCRYPTION_CBCS = fromString("CommonEncryptionCbcs");
 
-    /** Static value EnvelopeEncryption for StreamingLocatorContentKeyType. */
+    /**
+     * Static value EnvelopeEncryption for StreamingLocatorContentKeyType.
+     */
     public static final StreamingLocatorContentKeyType ENVELOPE_ENCRYPTION = fromString("EnvelopeEncryption");
 
     /**
      * Creates a new instance of StreamingLocatorContentKeyType value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -30,7 +38,7 @@ public final class StreamingLocatorContentKeyType extends ExpandableStringEnum<S
 
     /**
      * Creates or finds a StreamingLocatorContentKeyType from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding StreamingLocatorContentKeyType.
      */
@@ -41,7 +49,7 @@ public final class StreamingLocatorContentKeyType extends ExpandableStringEnum<S
 
     /**
      * Gets known StreamingLocatorContentKeyType values.
-     *
+     * 
      * @return known StreamingLocatorContentKeyType values.
      */
     public static Collection<StreamingLocatorContentKeyType> values() {

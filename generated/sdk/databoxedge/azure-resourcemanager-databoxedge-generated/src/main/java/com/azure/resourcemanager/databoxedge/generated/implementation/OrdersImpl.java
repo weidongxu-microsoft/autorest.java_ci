@@ -23,8 +23,8 @@ public final class OrdersImpl implements Orders {
 
     private final com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager;
 
-    public OrdersImpl(
-        OrdersClient innerClient, com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
+    public OrdersImpl(OrdersClient innerClient,
+        com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -35,18 +35,15 @@ public final class OrdersImpl implements Orders {
     }
 
     public PagedIterable<Order> listByDataBoxEdgeDevice(String deviceName, String resourceGroupName, Context context) {
-        PagedIterable<OrderInner> inner =
-            this.serviceClient().listByDataBoxEdgeDevice(deviceName, resourceGroupName, context);
+        PagedIterable<OrderInner> inner
+            = this.serviceClient().listByDataBoxEdgeDevice(deviceName, resourceGroupName, context);
         return Utils.mapPage(inner, inner1 -> new OrderImpl(inner1, this.manager()));
     }
 
     public Response<Order> getWithResponse(String deviceName, String resourceGroupName, Context context) {
         Response<OrderInner> inner = this.serviceClient().getWithResponse(deviceName, resourceGroupName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new OrderImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -88,15 +85,12 @@ public final class OrdersImpl implements Orders {
         this.serviceClient().delete(deviceName, resourceGroupName, context);
     }
 
-    public Response<DCAccessCode> listDCAccessCodeWithResponse(
-        String deviceName, String resourceGroupName, Context context) {
-        Response<DCAccessCodeInner> inner =
-            this.serviceClient().listDCAccessCodeWithResponse(deviceName, resourceGroupName, context);
+    public Response<DCAccessCode> listDCAccessCodeWithResponse(String deviceName, String resourceGroupName,
+        Context context) {
+        Response<DCAccessCodeInner> inner
+            = this.serviceClient().listDCAccessCodeWithResponse(deviceName, resourceGroupName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DCAccessCodeImpl(inner.getValue(), this.manager()));
         } else {
             return null;

@@ -34,13 +34,15 @@ public final class JobInner extends ProxyResource {
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
-    /** Creates an instance of JobInner class. */
+    /**
+     * Creates an instance of JobInner class.
+     */
     public JobInner() {
     }
 
     /**
      * Get the innerProperties property: The resource properties.
-     *
+     * 
      * @return the innerProperties value.
      */
     private JobProperties innerProperties() {
@@ -49,7 +51,7 @@ public final class JobInner extends ProxyResource {
 
     /**
      * Get the systemData property: The system metadata relating to this resource.
-     *
+     * 
      * @return the systemData value.
      */
     public SystemData systemData() {
@@ -59,7 +61,7 @@ public final class JobInner extends ProxyResource {
     /**
      * Get the created property: The UTC date and time when the customer has created the Job, in 'YYYY-MM-DDThh:mm:ssZ'
      * format.
-     *
+     * 
      * @return the created value.
      */
     public OffsetDateTime created() {
@@ -68,7 +70,7 @@ public final class JobInner extends ProxyResource {
 
     /**
      * Get the state property: The current state of the job.
-     *
+     * 
      * @return the state value.
      */
     public JobState state() {
@@ -77,7 +79,7 @@ public final class JobInner extends ProxyResource {
 
     /**
      * Get the description property: Optional customer supplied description of the Job.
-     *
+     * 
      * @return the description value.
      */
     public String description() {
@@ -86,7 +88,7 @@ public final class JobInner extends ProxyResource {
 
     /**
      * Set the description property: Optional customer supplied description of the Job.
-     *
+     * 
      * @param description the description value to set.
      * @return the JobInner object itself.
      */
@@ -100,7 +102,7 @@ public final class JobInner extends ProxyResource {
 
     /**
      * Get the input property: The inputs for the Job.
-     *
+     * 
      * @return the input value.
      */
     public JobInput input() {
@@ -109,7 +111,7 @@ public final class JobInner extends ProxyResource {
 
     /**
      * Set the input property: The inputs for the Job.
-     *
+     * 
      * @param input the input value to set.
      * @return the JobInner object itself.
      */
@@ -124,7 +126,7 @@ public final class JobInner extends ProxyResource {
     /**
      * Get the lastModified property: The UTC date and time when the customer has last updated the Job, in
      * 'YYYY-MM-DDThh:mm:ssZ' format.
-     *
+     * 
      * @return the lastModified value.
      */
     public OffsetDateTime lastModified() {
@@ -133,7 +135,7 @@ public final class JobInner extends ProxyResource {
 
     /**
      * Get the outputs property: The outputs for the Job.
-     *
+     * 
      * @return the outputs value.
      */
     public List<JobOutput> outputs() {
@@ -142,7 +144,7 @@ public final class JobInner extends ProxyResource {
 
     /**
      * Set the outputs property: The outputs for the Job.
-     *
+     * 
      * @param outputs the outputs value to set.
      * @return the JobInner object itself.
      */
@@ -157,7 +159,7 @@ public final class JobInner extends ProxyResource {
     /**
      * Get the priority property: Priority with which the job should be processed. Higher priority jobs are processed
      * before lower priority jobs. If not set, the default is normal.
-     *
+     * 
      * @return the priority value.
      */
     public Priority priority() {
@@ -167,7 +169,7 @@ public final class JobInner extends ProxyResource {
     /**
      * Set the priority property: Priority with which the job should be processed. Higher priority jobs are processed
      * before lower priority jobs. If not set, the default is normal.
-     *
+     * 
      * @param priority the priority value to set.
      * @return the JobInner object itself.
      */
@@ -182,7 +184,7 @@ public final class JobInner extends ProxyResource {
     /**
      * Get the correlationData property: Customer provided key, value pairs that will be returned in Job and JobOutput
      * state events.
-     *
+     * 
      * @return the correlationData value.
      */
     public Map<String, String> correlationData() {
@@ -192,7 +194,7 @@ public final class JobInner extends ProxyResource {
     /**
      * Set the correlationData property: Customer provided key, value pairs that will be returned in Job and JobOutput
      * state events.
-     *
+     * 
      * @param correlationData the correlationData value to set.
      * @return the JobInner object itself.
      */
@@ -206,7 +208,7 @@ public final class JobInner extends ProxyResource {
 
     /**
      * Get the startTime property: The UTC date and time at which this Job began processing.
-     *
+     * 
      * @return the startTime value.
      */
     public OffsetDateTime startTime() {
@@ -215,7 +217,7 @@ public final class JobInner extends ProxyResource {
 
     /**
      * Get the endTime property: The UTC date and time at which this Job finished processing.
-     *
+     * 
      * @return the endTime value.
      */
     public OffsetDateTime endTime() {
@@ -224,7 +226,7 @@ public final class JobInner extends ProxyResource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

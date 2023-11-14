@@ -12,8 +12,8 @@ public final class HostInfoImpl implements HostInfo {
 
     private final com.azure.resourcemanager.hdinsight.generated.HDInsightManager serviceManager;
 
-    HostInfoImpl(
-        HostInfoInner innerObject, com.azure.resourcemanager.hdinsight.generated.HDInsightManager serviceManager) {
+    HostInfoImpl(HostInfoInner innerObject,
+        com.azure.resourcemanager.hdinsight.generated.HDInsightManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

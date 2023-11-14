@@ -11,11 +11,13 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.monitor.generated.fluent.models.IncidentInner;
 
-/** An instance of this class provides access to all the operations defined in AlertRuleIncidentsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in AlertRuleIncidentsClient.
+ */
 public interface AlertRuleIncidentsClient {
     /**
      * Gets an incident associated to an alert rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @param incidentName The name of the incident to retrieve.
@@ -26,12 +28,12 @@ public interface AlertRuleIncidentsClient {
      * @return an incident associated to an alert rule along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<IncidentInner> getWithResponse(
-        String resourceGroupName, String ruleName, String incidentName, Context context);
+    Response<IncidentInner> getWithResponse(String resourceGroupName, String ruleName, String incidentName,
+        Context context);
 
     /**
      * Gets an incident associated to an alert rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @param incidentName The name of the incident to retrieve.
@@ -45,7 +47,7 @@ public interface AlertRuleIncidentsClient {
 
     /**
      * Gets a list of incidents associated to an alert rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -58,7 +60,7 @@ public interface AlertRuleIncidentsClient {
 
     /**
      * Gets a list of incidents associated to an alert rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @param context The context to associate with this operation.

@@ -18,8 +18,7 @@ public final class VirtualMachineScaleSetInstanceViewImpl implements VirtualMach
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    VirtualMachineScaleSetInstanceViewImpl(
-        VirtualMachineScaleSetInstanceViewInner innerObject,
+    VirtualMachineScaleSetInstanceViewImpl(VirtualMachineScaleSetInstanceViewInner innerObject,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

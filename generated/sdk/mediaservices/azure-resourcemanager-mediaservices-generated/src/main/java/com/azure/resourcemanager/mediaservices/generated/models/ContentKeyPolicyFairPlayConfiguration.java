@@ -11,7 +11,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** Specifies a configuration for FairPlay licenses. */
+/**
+ * Specifies a configuration for FairPlay licenses.
+ */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
 @JsonTypeName("#Microsoft.Media.ContentKeyPolicyFairPlayConfiguration")
 @Fluent
@@ -52,14 +54,16 @@ public final class ContentKeyPolicyFairPlayConfiguration extends ContentKeyPolic
     @JsonProperty(value = "offlineRentalConfiguration")
     private ContentKeyPolicyFairPlayOfflineRentalConfiguration offlineRentalConfiguration;
 
-    /** Creates an instance of ContentKeyPolicyFairPlayConfiguration class. */
+    /**
+     * Creates an instance of ContentKeyPolicyFairPlayConfiguration class.
+     */
     public ContentKeyPolicyFairPlayConfiguration() {
     }
 
     /**
      * Get the ask property: The key that must be used as FairPlay Application Secret key. This needs to be base64
      * encoded.
-     *
+     * 
      * @return the ask value.
      */
     public byte[] ask() {
@@ -69,7 +73,7 @@ public final class ContentKeyPolicyFairPlayConfiguration extends ContentKeyPolic
     /**
      * Set the ask property: The key that must be used as FairPlay Application Secret key. This needs to be base64
      * encoded.
-     *
+     * 
      * @param ask the ask value to set.
      * @return the ContentKeyPolicyFairPlayConfiguration object itself.
      */
@@ -80,7 +84,7 @@ public final class ContentKeyPolicyFairPlayConfiguration extends ContentKeyPolic
 
     /**
      * Get the fairPlayPfxPassword property: The password encrypting FairPlay certificate in PKCS 12 (pfx) format.
-     *
+     * 
      * @return the fairPlayPfxPassword value.
      */
     public String fairPlayPfxPassword() {
@@ -89,7 +93,7 @@ public final class ContentKeyPolicyFairPlayConfiguration extends ContentKeyPolic
 
     /**
      * Set the fairPlayPfxPassword property: The password encrypting FairPlay certificate in PKCS 12 (pfx) format.
-     *
+     * 
      * @param fairPlayPfxPassword the fairPlayPfxPassword value to set.
      * @return the ContentKeyPolicyFairPlayConfiguration object itself.
      */
@@ -101,7 +105,7 @@ public final class ContentKeyPolicyFairPlayConfiguration extends ContentKeyPolic
     /**
      * Get the fairPlayPfx property: The Base64 representation of FairPlay certificate in PKCS 12 (pfx) format
      * (including private key).
-     *
+     * 
      * @return the fairPlayPfx value.
      */
     public String fairPlayPfx() {
@@ -111,7 +115,7 @@ public final class ContentKeyPolicyFairPlayConfiguration extends ContentKeyPolic
     /**
      * Set the fairPlayPfx property: The Base64 representation of FairPlay certificate in PKCS 12 (pfx) format
      * (including private key).
-     *
+     * 
      * @param fairPlayPfx the fairPlayPfx value to set.
      * @return the ContentKeyPolicyFairPlayConfiguration object itself.
      */
@@ -122,7 +126,7 @@ public final class ContentKeyPolicyFairPlayConfiguration extends ContentKeyPolic
 
     /**
      * Get the rentalAndLeaseKeyType property: The rental and lease key type.
-     *
+     * 
      * @return the rentalAndLeaseKeyType value.
      */
     public ContentKeyPolicyFairPlayRentalAndLeaseKeyType rentalAndLeaseKeyType() {
@@ -131,19 +135,19 @@ public final class ContentKeyPolicyFairPlayConfiguration extends ContentKeyPolic
 
     /**
      * Set the rentalAndLeaseKeyType property: The rental and lease key type.
-     *
+     * 
      * @param rentalAndLeaseKeyType the rentalAndLeaseKeyType value to set.
      * @return the ContentKeyPolicyFairPlayConfiguration object itself.
      */
-    public ContentKeyPolicyFairPlayConfiguration withRentalAndLeaseKeyType(
-        ContentKeyPolicyFairPlayRentalAndLeaseKeyType rentalAndLeaseKeyType) {
+    public ContentKeyPolicyFairPlayConfiguration
+        withRentalAndLeaseKeyType(ContentKeyPolicyFairPlayRentalAndLeaseKeyType rentalAndLeaseKeyType) {
         this.rentalAndLeaseKeyType = rentalAndLeaseKeyType;
         return this;
     }
 
     /**
      * Get the rentalDuration property: The rental duration. Must be greater than or equal to 0.
-     *
+     * 
      * @return the rentalDuration value.
      */
     public long rentalDuration() {
@@ -152,7 +156,7 @@ public final class ContentKeyPolicyFairPlayConfiguration extends ContentKeyPolic
 
     /**
      * Set the rentalDuration property: The rental duration. Must be greater than or equal to 0.
-     *
+     * 
      * @param rentalDuration the rentalDuration value to set.
      * @return the ContentKeyPolicyFairPlayConfiguration object itself.
      */
@@ -163,7 +167,7 @@ public final class ContentKeyPolicyFairPlayConfiguration extends ContentKeyPolic
 
     /**
      * Get the offlineRentalConfiguration property: Offline rental policy.
-     *
+     * 
      * @return the offlineRentalConfiguration value.
      */
     public ContentKeyPolicyFairPlayOfflineRentalConfiguration offlineRentalConfiguration() {
@@ -172,49 +176,39 @@ public final class ContentKeyPolicyFairPlayConfiguration extends ContentKeyPolic
 
     /**
      * Set the offlineRentalConfiguration property: Offline rental policy.
-     *
+     * 
      * @param offlineRentalConfiguration the offlineRentalConfiguration value to set.
      * @return the ContentKeyPolicyFairPlayConfiguration object itself.
      */
-    public ContentKeyPolicyFairPlayConfiguration withOfflineRentalConfiguration(
-        ContentKeyPolicyFairPlayOfflineRentalConfiguration offlineRentalConfiguration) {
+    public ContentKeyPolicyFairPlayConfiguration
+        withOfflineRentalConfiguration(ContentKeyPolicyFairPlayOfflineRentalConfiguration offlineRentalConfiguration) {
         this.offlineRentalConfiguration = offlineRentalConfiguration;
         return this;
     }
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override
     public void validate() {
         super.validate();
         if (ask() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property ask in model ContentKeyPolicyFairPlayConfiguration"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property ask in model ContentKeyPolicyFairPlayConfiguration"));
         }
         if (fairPlayPfxPassword() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property fairPlayPfxPassword in model"
-                            + " ContentKeyPolicyFairPlayConfiguration"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property fairPlayPfxPassword in model ContentKeyPolicyFairPlayConfiguration"));
         }
         if (fairPlayPfx() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property fairPlayPfx in model ContentKeyPolicyFairPlayConfiguration"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property fairPlayPfx in model ContentKeyPolicyFairPlayConfiguration"));
         }
         if (rentalAndLeaseKeyType() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property rentalAndLeaseKeyType in model"
-                            + " ContentKeyPolicyFairPlayConfiguration"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property rentalAndLeaseKeyType in model ContentKeyPolicyFairPlayConfiguration"));
         }
         if (offlineRentalConfiguration() != null) {
             offlineRentalConfiguration().validate();

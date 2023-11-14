@@ -33,22 +33,28 @@ import com.azure.resourcemanager.keyvault.generated.models.ManagedHsmKeyCreatePa
 import com.azure.resourcemanager.keyvault.generated.models.ManagedHsmKeyListResult;
 import reactor.core.publisher.Mono;
 
-/** An instance of this class provides access to all the operations defined in ManagedHsmKeysClient. */
+/**
+ * An instance of this class provides access to all the operations defined in ManagedHsmKeysClient.
+ */
 public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
-    /** The proxy service used to perform REST calls. */
+    /**
+     * The proxy service used to perform REST calls.
+     */
     private final ManagedHsmKeysService service;
 
-    /** The service client containing this operation class. */
+    /**
+     * The service client containing this operation class.
+     */
     private final KeyVaultManagementClientImpl client;
 
     /**
      * Initializes an instance of ManagedHsmKeysClientImpl.
-     *
+     * 
      * @param client the instance of the service client containing this operation class.
      */
     ManagedHsmKeysClientImpl(KeyVaultManagementClientImpl client) {
-        this.service =
-            RestProxy.create(ManagedHsmKeysService.class, client.getHttpPipeline(), client.getSerializerAdapter());
+        this.service
+            = RestProxy.create(ManagedHsmKeysService.class, client.getHttpPipeline(), client.getSerializerAdapter());
         this.client = client;
     }
 
@@ -59,112 +65,81 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
     @Host("{$host}")
     @ServiceInterface(name = "KeyVaultManagementCl")
     public interface ManagedHsmKeysService {
-        @Headers({"Content-Type: application/json"})
-        @Put(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/managedHSMs/{name}/keys/{keyName}")
-        @ExpectedResponses({200})
+        @Headers({ "Content-Type: application/json" })
+        @Put("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/managedHSMs/{name}/keys/{keyName}")
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<ManagedHsmKeyInner>> createIfNotExist(
-            @HostParam("$host") String endpoint,
+        Mono<Response<ManagedHsmKeyInner>> createIfNotExist(@HostParam("$host") String endpoint,
             @PathParam("subscriptionId") String subscriptionId,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("name") String name,
-            @QueryParam("api-version") String apiVersion,
-            @PathParam("keyName") String keyName,
+            @PathParam("resourceGroupName") String resourceGroupName, @PathParam("name") String name,
+            @QueryParam("api-version") String apiVersion, @PathParam("keyName") String keyName,
             @BodyParam("application/json") ManagedHsmKeyCreateParameters parameters,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/managedHSMs/{name}/keys/{keyName}")
-        @ExpectedResponses({200})
+        @Headers({ "Content-Type: application/json" })
+        @Get("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/managedHSMs/{name}/keys/{keyName}")
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<ManagedHsmKeyInner>> get(
-            @HostParam("$host") String endpoint,
+        Mono<Response<ManagedHsmKeyInner>> get(@HostParam("$host") String endpoint,
             @PathParam("subscriptionId") String subscriptionId,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("name") String name,
-            @PathParam("keyName") String keyName,
-            @QueryParam("api-version") String apiVersion,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @PathParam("resourceGroupName") String resourceGroupName, @PathParam("name") String name,
+            @PathParam("keyName") String keyName, @QueryParam("api-version") String apiVersion,
+            @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/managedHSMs/{name}/keys")
-        @ExpectedResponses({200})
+        @Headers({ "Content-Type: application/json" })
+        @Get("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/managedHSMs/{name}/keys")
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<ManagedHsmKeyListResult>> list(
-            @HostParam("$host") String endpoint,
+        Mono<Response<ManagedHsmKeyListResult>> list(@HostParam("$host") String endpoint,
             @PathParam("subscriptionId") String subscriptionId,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("name") String name,
-            @QueryParam("api-version") String apiVersion,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @PathParam("resourceGroupName") String resourceGroupName, @PathParam("name") String name,
+            @QueryParam("api-version") String apiVersion, @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/managedHSMs/{name}/keys/{keyName}/versions/{keyVersion}")
-        @ExpectedResponses({200})
+        @Headers({ "Content-Type: application/json" })
+        @Get("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/managedHSMs/{name}/keys/{keyName}/versions/{keyVersion}")
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<ManagedHsmKeyInner>> getVersion(
-            @HostParam("$host") String endpoint,
+        Mono<Response<ManagedHsmKeyInner>> getVersion(@HostParam("$host") String endpoint,
             @PathParam("subscriptionId") String subscriptionId,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("name") String name,
-            @PathParam("keyName") String keyName,
-            @PathParam("keyVersion") String keyVersion,
-            @QueryParam("api-version") String apiVersion,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @PathParam("resourceGroupName") String resourceGroupName, @PathParam("name") String name,
+            @PathParam("keyName") String keyName, @PathParam("keyVersion") String keyVersion,
+            @QueryParam("api-version") String apiVersion, @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/managedHSMs/{name}/keys/{keyName}/versions")
-        @ExpectedResponses({200})
+        @Headers({ "Content-Type: application/json" })
+        @Get("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/managedHSMs/{name}/keys/{keyName}/versions")
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<ManagedHsmKeyListResult>> listVersions(
-            @HostParam("$host") String endpoint,
+        Mono<Response<ManagedHsmKeyListResult>> listVersions(@HostParam("$host") String endpoint,
             @PathParam("subscriptionId") String subscriptionId,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("name") String name,
-            @PathParam("keyName") String keyName,
-            @QueryParam("api-version") String apiVersion,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @PathParam("resourceGroupName") String resourceGroupName, @PathParam("name") String name,
+            @PathParam("keyName") String keyName, @QueryParam("api-version") String apiVersion,
+            @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
+        @Headers({ "Content-Type: application/json" })
         @Get("{nextLink}")
-        @ExpectedResponses({200})
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<ManagedHsmKeyListResult>> listNext(
-            @PathParam(value = "nextLink", encoded = true) String nextLink,
-            @HostParam("$host") String endpoint,
-            @HeaderParam("Accept") String accept,
-            Context context);
+        Mono<Response<ManagedHsmKeyListResult>> listNext(@PathParam(value = "nextLink", encoded = true) String nextLink,
+            @HostParam("$host") String endpoint, @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
+        @Headers({ "Content-Type: application/json" })
         @Get("{nextLink}")
-        @ExpectedResponses({200})
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<ManagedHsmKeyListResult>> listVersionsNext(
-            @PathParam(value = "nextLink", encoded = true) String nextLink,
-            @HostParam("$host") String endpoint,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @PathParam(value = "nextLink", encoded = true) String nextLink, @HostParam("$host") String endpoint,
+            @HeaderParam("Accept") String accept, Context context);
     }
 
     /**
      * Creates the first version of a new key if it does not exist. If it already exists, then the existing key is
      * returned without any write operations being performed. This API does not create subsequent versions, and does not
      * update existing keys.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
      * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
-     *     running the service. The value provided should not include personally identifiable or sensitive information.
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param parameters The parameters used to create the specified key.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -172,19 +147,15 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
      * @return the key resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<ManagedHsmKeyInner>> createIfNotExistWithResponseAsync(
-        String resourceGroupName, String name, String keyName, ManagedHsmKeyCreateParameters parameters) {
+    private Mono<Response<ManagedHsmKeyInner>> createIfNotExistWithResponseAsync(String resourceGroupName, String name,
+        String keyName, ManagedHsmKeyCreateParameters parameters) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -203,19 +174,8 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
         }
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .createIfNotExist(
-                            this.client.getEndpoint(),
-                            this.client.getSubscriptionId(),
-                            resourceGroupName,
-                            name,
-                            this.client.getApiVersion(),
-                            keyName,
-                            parameters,
-                            accept,
-                            context))
+            .withContext(context -> service.createIfNotExist(this.client.getEndpoint(), this.client.getSubscriptionId(),
+                resourceGroupName, name, this.client.getApiVersion(), keyName, parameters, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
@@ -223,11 +183,11 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
      * Creates the first version of a new key if it does not exist. If it already exists, then the existing key is
      * returned without any write operations being performed. This API does not create subsequent versions, and does not
      * update existing keys.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
      * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
-     *     running the service. The value provided should not include personally identifiable or sensitive information.
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param parameters The parameters used to create the specified key.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -236,23 +196,15 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
      * @return the key resource along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<ManagedHsmKeyInner>> createIfNotExistWithResponseAsync(
-        String resourceGroupName,
-        String name,
-        String keyName,
-        ManagedHsmKeyCreateParameters parameters,
-        Context context) {
+    private Mono<Response<ManagedHsmKeyInner>> createIfNotExistWithResponseAsync(String resourceGroupName, String name,
+        String keyName, ManagedHsmKeyCreateParameters parameters, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -271,28 +223,19 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .createIfNotExist(
-                this.client.getEndpoint(),
-                this.client.getSubscriptionId(),
-                resourceGroupName,
-                name,
-                this.client.getApiVersion(),
-                keyName,
-                parameters,
-                accept,
-                context);
+        return service.createIfNotExist(this.client.getEndpoint(), this.client.getSubscriptionId(), resourceGroupName,
+            name, this.client.getApiVersion(), keyName, parameters, accept, context);
     }
 
     /**
      * Creates the first version of a new key if it does not exist. If it already exists, then the existing key is
      * returned without any write operations being performed. This API does not create subsequent versions, and does not
      * update existing keys.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
      * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
-     *     running the service. The value provided should not include personally identifiable or sensitive information.
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param parameters The parameters used to create the specified key.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -300,8 +243,8 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
      * @return the key resource on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<ManagedHsmKeyInner> createIfNotExistAsync(
-        String resourceGroupName, String name, String keyName, ManagedHsmKeyCreateParameters parameters) {
+    private Mono<ManagedHsmKeyInner> createIfNotExistAsync(String resourceGroupName, String name, String keyName,
+        ManagedHsmKeyCreateParameters parameters) {
         return createIfNotExistWithResponseAsync(resourceGroupName, name, keyName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
@@ -310,11 +253,11 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
      * Creates the first version of a new key if it does not exist. If it already exists, then the existing key is
      * returned without any write operations being performed. This API does not create subsequent versions, and does not
      * update existing keys.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
      * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
-     *     running the service. The value provided should not include personally identifiable or sensitive information.
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param parameters The parameters used to create the specified key.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -323,12 +266,8 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
      * @return the key resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ManagedHsmKeyInner> createIfNotExistWithResponse(
-        String resourceGroupName,
-        String name,
-        String keyName,
-        ManagedHsmKeyCreateParameters parameters,
-        Context context) {
+    public Response<ManagedHsmKeyInner> createIfNotExistWithResponse(String resourceGroupName, String name,
+        String keyName, ManagedHsmKeyCreateParameters parameters, Context context) {
         return createIfNotExistWithResponseAsync(resourceGroupName, name, keyName, parameters, context).block();
     }
 
@@ -336,11 +275,11 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
      * Creates the first version of a new key if it does not exist. If it already exists, then the existing key is
      * returned without any write operations being performed. This API does not create subsequent versions, and does not
      * update existing keys.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
      * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
-     *     running the service. The value provided should not include personally identifiable or sensitive information.
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param parameters The parameters used to create the specified key.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -348,38 +287,34 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
      * @return the key resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ManagedHsmKeyInner createIfNotExist(
-        String resourceGroupName, String name, String keyName, ManagedHsmKeyCreateParameters parameters) {
+    public ManagedHsmKeyInner createIfNotExist(String resourceGroupName, String name, String keyName,
+        ManagedHsmKeyCreateParameters parameters) {
         return createIfNotExistWithResponse(resourceGroupName, name, keyName, parameters, Context.NONE).getValue();
     }
 
     /**
      * Gets the current version of the specified key from the specified managed HSM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
      * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
-     *     running the service. The value provided should not include personally identifiable or sensitive information.
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the current version of the specified key from the specified managed HSM along with {@link Response} on
-     *     successful completion of {@link Mono}.
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<ManagedHsmKeyInner>> getWithResponseAsync(
-        String resourceGroupName, String name, String keyName) {
+    private Mono<Response<ManagedHsmKeyInner>> getWithResponseAsync(String resourceGroupName, String name,
+        String keyName) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -393,49 +328,35 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
         }
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .get(
-                            this.client.getEndpoint(),
-                            this.client.getSubscriptionId(),
-                            resourceGroupName,
-                            name,
-                            keyName,
-                            this.client.getApiVersion(),
-                            accept,
-                            context))
+            .withContext(context -> service.get(this.client.getEndpoint(), this.client.getSubscriptionId(),
+                resourceGroupName, name, keyName, this.client.getApiVersion(), accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Gets the current version of the specified key from the specified managed HSM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
      * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
-     *     running the service. The value provided should not include personally identifiable or sensitive information.
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the current version of the specified key from the specified managed HSM along with {@link Response} on
-     *     successful completion of {@link Mono}.
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<ManagedHsmKeyInner>> getWithResponseAsync(
-        String resourceGroupName, String name, String keyName, Context context) {
+    private Mono<Response<ManagedHsmKeyInner>> getWithResponseAsync(String resourceGroupName, String name,
+        String keyName, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -449,30 +370,22 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .get(
-                this.client.getEndpoint(),
-                this.client.getSubscriptionId(),
-                resourceGroupName,
-                name,
-                keyName,
-                this.client.getApiVersion(),
-                accept,
-                context);
+        return service.get(this.client.getEndpoint(), this.client.getSubscriptionId(), resourceGroupName, name, keyName,
+            this.client.getApiVersion(), accept, context);
     }
 
     /**
      * Gets the current version of the specified key from the specified managed HSM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
      * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
-     *     running the service. The value provided should not include personally identifiable or sensitive information.
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the current version of the specified key from the specified managed HSM on successful completion of
-     *     {@link Mono}.
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ManagedHsmKeyInner> getAsync(String resourceGroupName, String name, String keyName) {
@@ -481,11 +394,11 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
 
     /**
      * Gets the current version of the specified key from the specified managed HSM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
      * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
-     *     running the service. The value provided should not include personally identifiable or sensitive information.
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -493,18 +406,18 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
      * @return the current version of the specified key from the specified managed HSM along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ManagedHsmKeyInner> getWithResponse(
-        String resourceGroupName, String name, String keyName, Context context) {
+    public Response<ManagedHsmKeyInner> getWithResponse(String resourceGroupName, String name, String keyName,
+        Context context) {
         return getWithResponseAsync(resourceGroupName, name, keyName, context).block();
     }
 
     /**
      * Gets the current version of the specified key from the specified managed HSM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
      * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
-     *     running the service. The value provided should not include personally identifiable or sensitive information.
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -517,7 +430,7 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
 
     /**
      * Lists the keys in the specified managed HSM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -528,16 +441,12 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ManagedHsmKeyInner>> listSinglePageAsync(String resourceGroupName, String name) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -548,32 +457,16 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
         }
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .list(
-                            this.client.getEndpoint(),
-                            this.client.getSubscriptionId(),
-                            resourceGroupName,
-                            name,
-                            this.client.getApiVersion(),
-                            accept,
-                            context))
-            .<PagedResponse<ManagedHsmKeyInner>>map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null))
+            .withContext(context -> service.list(this.client.getEndpoint(), this.client.getSubscriptionId(),
+                resourceGroupName, name, this.client.getApiVersion(), accept, context))
+            .<PagedResponse<ManagedHsmKeyInner>>map(res -> new PagedResponseBase<>(res.getRequest(),
+                res.getStatusCode(), res.getHeaders(), res.getValue().value(), res.getValue().nextLink(), null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Lists the keys in the specified managed HSM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
      * @param context The context to associate with this operation.
@@ -583,19 +476,15 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
      * @return the page of keys along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<ManagedHsmKeyInner>> listSinglePageAsync(
-        String resourceGroupName, String name, Context context) {
+    private Mono<PagedResponse<ManagedHsmKeyInner>> listSinglePageAsync(String resourceGroupName, String name,
+        Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -607,28 +496,15 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .list(
-                this.client.getEndpoint(),
-                this.client.getSubscriptionId(),
-                resourceGroupName,
-                name,
-                this.client.getApiVersion(),
-                accept,
-                context)
-            .map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null));
+            .list(this.client.getEndpoint(), this.client.getSubscriptionId(), resourceGroupName, name,
+                this.client.getApiVersion(), accept, context)
+            .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
+                res.getValue().value(), res.getValue().nextLink(), null));
     }
 
     /**
      * Lists the keys in the specified managed HSM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -638,13 +514,13 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ManagedHsmKeyInner> listAsync(String resourceGroupName, String name) {
-        return new PagedFlux<>(
-            () -> listSinglePageAsync(resourceGroupName, name), nextLink -> listNextSinglePageAsync(nextLink));
+        return new PagedFlux<>(() -> listSinglePageAsync(resourceGroupName, name),
+            nextLink -> listNextSinglePageAsync(nextLink));
     }
 
     /**
      * Lists the keys in the specified managed HSM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
      * @param context The context to associate with this operation.
@@ -655,14 +531,13 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ManagedHsmKeyInner> listAsync(String resourceGroupName, String name, Context context) {
-        return new PagedFlux<>(
-            () -> listSinglePageAsync(resourceGroupName, name, context),
+        return new PagedFlux<>(() -> listSinglePageAsync(resourceGroupName, name, context),
             nextLink -> listNextSinglePageAsync(nextLink, context));
     }
 
     /**
      * Lists the keys in the specified managed HSM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -677,7 +552,7 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
 
     /**
      * Lists the keys in the specified managed HSM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
      * @param context The context to associate with this operation.
@@ -693,32 +568,28 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
 
     /**
      * Gets the specified version of the specified key in the specified managed HSM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
      * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
-     *     running the service. The value provided should not include personally identifiable or sensitive information.
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param keyVersion The version of the key to be retrieved.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified version of the specified key in the specified managed HSM along with {@link Response} on
-     *     successful completion of {@link Mono}.
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<ManagedHsmKeyInner>> getVersionWithResponseAsync(
-        String resourceGroupName, String name, String keyName, String keyVersion) {
+    private Mono<Response<ManagedHsmKeyInner>> getVersionWithResponseAsync(String resourceGroupName, String name,
+        String keyName, String keyVersion) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -735,51 +606,36 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
         }
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .getVersion(
-                            this.client.getEndpoint(),
-                            this.client.getSubscriptionId(),
-                            resourceGroupName,
-                            name,
-                            keyName,
-                            keyVersion,
-                            this.client.getApiVersion(),
-                            accept,
-                            context))
+            .withContext(context -> service.getVersion(this.client.getEndpoint(), this.client.getSubscriptionId(),
+                resourceGroupName, name, keyName, keyVersion, this.client.getApiVersion(), accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Gets the specified version of the specified key in the specified managed HSM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
      * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
-     *     running the service. The value provided should not include personally identifiable or sensitive information.
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param keyVersion The version of the key to be retrieved.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified version of the specified key in the specified managed HSM along with {@link Response} on
-     *     successful completion of {@link Mono}.
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<ManagedHsmKeyInner>> getVersionWithResponseAsync(
-        String resourceGroupName, String name, String keyName, String keyVersion, Context context) {
+    private Mono<Response<ManagedHsmKeyInner>> getVersionWithResponseAsync(String resourceGroupName, String name,
+        String keyName, String keyVersion, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -796,47 +652,38 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .getVersion(
-                this.client.getEndpoint(),
-                this.client.getSubscriptionId(),
-                resourceGroupName,
-                name,
-                keyName,
-                keyVersion,
-                this.client.getApiVersion(),
-                accept,
-                context);
+        return service.getVersion(this.client.getEndpoint(), this.client.getSubscriptionId(), resourceGroupName, name,
+            keyName, keyVersion, this.client.getApiVersion(), accept, context);
     }
 
     /**
      * Gets the specified version of the specified key in the specified managed HSM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
      * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
-     *     running the service. The value provided should not include personally identifiable or sensitive information.
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param keyVersion The version of the key to be retrieved.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified version of the specified key in the specified managed HSM on successful completion of
-     *     {@link Mono}.
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<ManagedHsmKeyInner> getVersionAsync(
-        String resourceGroupName, String name, String keyName, String keyVersion) {
+    private Mono<ManagedHsmKeyInner> getVersionAsync(String resourceGroupName, String name, String keyName,
+        String keyVersion) {
         return getVersionWithResponseAsync(resourceGroupName, name, keyName, keyVersion)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
      * Gets the specified version of the specified key in the specified managed HSM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
      * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
-     *     running the service. The value provided should not include personally identifiable or sensitive information.
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param keyVersion The version of the key to be retrieved.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -845,18 +692,18 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
      * @return the specified version of the specified key in the specified managed HSM along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ManagedHsmKeyInner> getVersionWithResponse(
-        String resourceGroupName, String name, String keyName, String keyVersion, Context context) {
+    public Response<ManagedHsmKeyInner> getVersionWithResponse(String resourceGroupName, String name, String keyName,
+        String keyVersion, Context context) {
         return getVersionWithResponseAsync(resourceGroupName, name, keyName, keyVersion, context).block();
     }
 
     /**
      * Gets the specified version of the specified key in the specified managed HSM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
      * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
-     *     running the service. The value provided should not include personally identifiable or sensitive information.
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param keyVersion The version of the key to be retrieved.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -870,30 +717,26 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
 
     /**
      * Lists the versions of the specified key in the specified managed HSM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
      * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
-     *     running the service. The value provided should not include personally identifiable or sensitive information.
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the page of keys along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<ManagedHsmKeyInner>> listVersionsSinglePageAsync(
-        String resourceGroupName, String name, String keyName) {
+    private Mono<PagedResponse<ManagedHsmKeyInner>> listVersionsSinglePageAsync(String resourceGroupName, String name,
+        String keyName) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -907,37 +750,20 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
         }
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .listVersions(
-                            this.client.getEndpoint(),
-                            this.client.getSubscriptionId(),
-                            resourceGroupName,
-                            name,
-                            keyName,
-                            this.client.getApiVersion(),
-                            accept,
-                            context))
-            .<PagedResponse<ManagedHsmKeyInner>>map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null))
+            .withContext(context -> service.listVersions(this.client.getEndpoint(), this.client.getSubscriptionId(),
+                resourceGroupName, name, keyName, this.client.getApiVersion(), accept, context))
+            .<PagedResponse<ManagedHsmKeyInner>>map(res -> new PagedResponseBase<>(res.getRequest(),
+                res.getStatusCode(), res.getHeaders(), res.getValue().value(), res.getValue().nextLink(), null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Lists the versions of the specified key in the specified managed HSM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
      * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
-     *     running the service. The value provided should not include personally identifiable or sensitive information.
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -945,19 +771,15 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
      * @return the page of keys along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<ManagedHsmKeyInner>> listVersionsSinglePageAsync(
-        String resourceGroupName, String name, String keyName, Context context) {
+    private Mono<PagedResponse<ManagedHsmKeyInner>> listVersionsSinglePageAsync(String resourceGroupName, String name,
+        String keyName, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -972,33 +794,19 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .listVersions(
-                this.client.getEndpoint(),
-                this.client.getSubscriptionId(),
-                resourceGroupName,
-                name,
-                keyName,
-                this.client.getApiVersion(),
-                accept,
-                context)
-            .map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null));
+            .listVersions(this.client.getEndpoint(), this.client.getSubscriptionId(), resourceGroupName, name, keyName,
+                this.client.getApiVersion(), accept, context)
+            .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
+                res.getValue().value(), res.getValue().nextLink(), null));
     }
 
     /**
      * Lists the versions of the specified key in the specified managed HSM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
      * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
-     *     running the service. The value provided should not include personally identifiable or sensitive information.
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1006,18 +814,17 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ManagedHsmKeyInner> listVersionsAsync(String resourceGroupName, String name, String keyName) {
-        return new PagedFlux<>(
-            () -> listVersionsSinglePageAsync(resourceGroupName, name, keyName),
+        return new PagedFlux<>(() -> listVersionsSinglePageAsync(resourceGroupName, name, keyName),
             nextLink -> listVersionsNextSinglePageAsync(nextLink));
     }
 
     /**
      * Lists the versions of the specified key in the specified managed HSM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
      * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
-     *     running the service. The value provided should not include personally identifiable or sensitive information.
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1025,20 +832,19 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
      * @return the page of keys as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<ManagedHsmKeyInner> listVersionsAsync(
-        String resourceGroupName, String name, String keyName, Context context) {
-        return new PagedFlux<>(
-            () -> listVersionsSinglePageAsync(resourceGroupName, name, keyName, context),
+    private PagedFlux<ManagedHsmKeyInner> listVersionsAsync(String resourceGroupName, String name, String keyName,
+        Context context) {
+        return new PagedFlux<>(() -> listVersionsSinglePageAsync(resourceGroupName, name, keyName, context),
             nextLink -> listVersionsNextSinglePageAsync(nextLink, context));
     }
 
     /**
      * Lists the versions of the specified key in the specified managed HSM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
      * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
-     *     running the service. The value provided should not include personally identifiable or sensitive information.
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1051,11 +857,11 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
 
     /**
      * Lists the versions of the specified key in the specified managed HSM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
      * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
-     *     running the service. The value provided should not include personally identifiable or sensitive information.
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1063,16 +869,17 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
      * @return the page of keys as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    public PagedIterable<ManagedHsmKeyInner> listVersions(
-        String resourceGroupName, String name, String keyName, Context context) {
+    public PagedIterable<ManagedHsmKeyInner> listVersions(String resourceGroupName, String name, String keyName,
+        Context context) {
         return new PagedIterable<>(listVersionsAsync(resourceGroupName, name, keyName, context));
     }
 
     /**
      * Get the next page of items.
-     *
+     * 
      * @param nextLink The URL to get the next list of items
-     *     <p>The nextLink parameter.
+     * 
+     * The nextLink parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1084,31 +891,22 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
             return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
         }
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         final String accept = "application/json";
-        return FluxUtil
-            .withContext(context -> service.listNext(nextLink, this.client.getEndpoint(), accept, context))
-            .<PagedResponse<ManagedHsmKeyInner>>map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null))
+        return FluxUtil.withContext(context -> service.listNext(nextLink, this.client.getEndpoint(), accept, context))
+            .<PagedResponse<ManagedHsmKeyInner>>map(res -> new PagedResponseBase<>(res.getRequest(),
+                res.getStatusCode(), res.getHeaders(), res.getValue().value(), res.getValue().nextLink(), null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Get the next page of items.
-     *
+     * 
      * @param nextLink The URL to get the next list of items
-     *     <p>The nextLink parameter.
+     * 
+     * The nextLink parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1121,31 +919,22 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
             return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
         }
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .listNext(nextLink, this.client.getEndpoint(), accept, context)
-            .map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null));
+        return service.listNext(nextLink, this.client.getEndpoint(), accept, context)
+            .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
+                res.getValue().value(), res.getValue().nextLink(), null));
     }
 
     /**
      * Get the next page of items.
-     *
+     * 
      * @param nextLink The URL to get the next list of items
-     *     <p>The nextLink parameter.
+     * 
+     * The nextLink parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1157,31 +946,23 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
             return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
         }
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.listVersionsNext(nextLink, this.client.getEndpoint(), accept, context))
-            .<PagedResponse<ManagedHsmKeyInner>>map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null))
+            .<PagedResponse<ManagedHsmKeyInner>>map(res -> new PagedResponseBase<>(res.getRequest(),
+                res.getStatusCode(), res.getHeaders(), res.getValue().value(), res.getValue().nextLink(), null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Get the next page of items.
-     *
+     * 
      * @param nextLink The URL to get the next list of items
-     *     <p>The nextLink parameter.
+     * 
+     * The nextLink parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1194,23 +975,13 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
             return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
         }
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .listVersionsNext(nextLink, this.client.getEndpoint(), accept, context)
-            .map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null));
+        return service.listVersionsNext(nextLink, this.client.getEndpoint(), accept, context)
+            .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
+                res.getValue().value(), res.getValue().nextLink(), null));
     }
 }

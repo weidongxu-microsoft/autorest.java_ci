@@ -13,8 +13,7 @@ public final class StaticSiteUserInvitationResponseResourceImpl implements Stati
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    StaticSiteUserInvitationResponseResourceImpl(
-        StaticSiteUserInvitationResponseResourceInner innerObject,
+    StaticSiteUserInvitationResponseResourceImpl(StaticSiteUserInvitationResponseResourceInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

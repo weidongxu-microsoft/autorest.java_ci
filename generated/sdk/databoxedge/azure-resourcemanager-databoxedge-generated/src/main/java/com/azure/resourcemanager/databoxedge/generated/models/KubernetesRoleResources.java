@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Kubernetes role resources. */
+/**
+ * Kubernetes role resources.
+ */
 @Fluent
 public final class KubernetesRoleResources {
     /*
@@ -29,13 +31,15 @@ public final class KubernetesRoleResources {
     @JsonProperty(value = "network", access = JsonProperty.Access.WRITE_ONLY)
     private KubernetesRoleNetwork network;
 
-    /** Creates an instance of KubernetesRoleResources class. */
+    /**
+     * Creates an instance of KubernetesRoleResources class.
+     */
     public KubernetesRoleResources() {
     }
 
     /**
      * Get the storage property: Kubernetes role storage resource.
-     *
+     * 
      * @return the storage value.
      */
     public KubernetesRoleStorage storage() {
@@ -44,7 +48,7 @@ public final class KubernetesRoleResources {
 
     /**
      * Set the storage property: Kubernetes role storage resource.
-     *
+     * 
      * @param storage the storage value to set.
      * @return the KubernetesRoleResources object itself.
      */
@@ -55,7 +59,7 @@ public final class KubernetesRoleResources {
 
     /**
      * Get the compute property: Kubernetes role compute resource.
-     *
+     * 
      * @return the compute value.
      */
     public KubernetesRoleCompute compute() {
@@ -64,7 +68,7 @@ public final class KubernetesRoleResources {
 
     /**
      * Set the compute property: Kubernetes role compute resource.
-     *
+     * 
      * @param compute the compute value to set.
      * @return the KubernetesRoleResources object itself.
      */
@@ -75,7 +79,7 @@ public final class KubernetesRoleResources {
 
     /**
      * Get the network property: Kubernetes role network resource.
-     *
+     * 
      * @return the network value.
      */
     public KubernetesRoleNetwork network() {
@@ -84,7 +88,7 @@ public final class KubernetesRoleResources {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
@@ -92,9 +96,8 @@ public final class KubernetesRoleResources {
             storage().validate();
         }
         if (compute() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property compute in model KubernetesRoleResources"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property compute in model KubernetesRoleResources"));
         } else {
             compute().validate();
         }

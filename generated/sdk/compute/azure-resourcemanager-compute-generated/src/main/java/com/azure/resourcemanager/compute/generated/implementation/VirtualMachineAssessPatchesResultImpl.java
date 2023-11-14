@@ -18,8 +18,7 @@ public final class VirtualMachineAssessPatchesResultImpl implements VirtualMachi
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    VirtualMachineAssessPatchesResultImpl(
-        VirtualMachineAssessPatchesResultInner innerObject,
+    VirtualMachineAssessPatchesResultImpl(VirtualMachineAssessPatchesResultInner innerObject,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

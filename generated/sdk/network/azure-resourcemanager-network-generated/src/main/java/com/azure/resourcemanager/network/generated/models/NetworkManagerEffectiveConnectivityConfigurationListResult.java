@@ -7,11 +7,13 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkManagerEffectiveConnectivityConfigurationListResultInner;
 import java.util.List;
 
-/** An immutable client-side representation of NetworkManagerEffectiveConnectivityConfigurationListResult. */
+/**
+ * An immutable client-side representation of NetworkManagerEffectiveConnectivityConfigurationListResult.
+ */
 public interface NetworkManagerEffectiveConnectivityConfigurationListResult {
     /**
      * Gets the value property: Gets a page of NetworkManagerEffectiveConnectivityConfiguration.
-     *
+     * 
      * @return the value value.
      */
     List<EffectiveConnectivityConfiguration> value();
@@ -19,7 +21,7 @@ public interface NetworkManagerEffectiveConnectivityConfigurationListResult {
     /**
      * Gets the skipToken property: When present, the value can be passed to a subsequent query call (together with the
      * same query and scopes used in the current request) to retrieve the next page of data.
-     *
+     * 
      * @return the skipToken value.
      */
     String skipToken();
@@ -28,7 +30,7 @@ public interface NetworkManagerEffectiveConnectivityConfigurationListResult {
      * Gets the inner
      * com.azure.resourcemanager.network.generated.fluent.models.NetworkManagerEffectiveConnectivityConfigurationListResultInner
      * object.
-     *
+     * 
      * @return the inner object.
      */
     NetworkManagerEffectiveConnectivityConfigurationListResultInner innerModel();

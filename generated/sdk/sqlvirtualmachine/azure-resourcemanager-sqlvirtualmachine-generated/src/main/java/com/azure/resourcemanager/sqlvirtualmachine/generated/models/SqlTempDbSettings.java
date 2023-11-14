@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Set tempDb storage settings for SQL Server. */
+/**
+ * Set tempDb storage settings for SQL Server.
+ */
 @Fluent
 public final class SqlTempDbSettings {
     /*
@@ -71,13 +73,15 @@ public final class SqlTempDbSettings {
     @JsonProperty(value = "useStoragePool")
     private Boolean useStoragePool;
 
-    /** Creates an instance of SqlTempDbSettings class. */
+    /**
+     * Creates an instance of SqlTempDbSettings class.
+     */
     public SqlTempDbSettings() {
     }
 
     /**
      * Get the dataFileSize property: SQL Server tempdb data file size.
-     *
+     * 
      * @return the dataFileSize value.
      */
     public Integer dataFileSize() {
@@ -86,7 +90,7 @@ public final class SqlTempDbSettings {
 
     /**
      * Set the dataFileSize property: SQL Server tempdb data file size.
-     *
+     * 
      * @param dataFileSize the dataFileSize value to set.
      * @return the SqlTempDbSettings object itself.
      */
@@ -97,7 +101,7 @@ public final class SqlTempDbSettings {
 
     /**
      * Get the dataGrowth property: SQL Server tempdb data file autoGrowth size.
-     *
+     * 
      * @return the dataGrowth value.
      */
     public Integer dataGrowth() {
@@ -106,7 +110,7 @@ public final class SqlTempDbSettings {
 
     /**
      * Set the dataGrowth property: SQL Server tempdb data file autoGrowth size.
-     *
+     * 
      * @param dataGrowth the dataGrowth value to set.
      * @return the SqlTempDbSettings object itself.
      */
@@ -117,7 +121,7 @@ public final class SqlTempDbSettings {
 
     /**
      * Get the logFileSize property: SQL Server tempdb log file size.
-     *
+     * 
      * @return the logFileSize value.
      */
     public Integer logFileSize() {
@@ -126,7 +130,7 @@ public final class SqlTempDbSettings {
 
     /**
      * Set the logFileSize property: SQL Server tempdb log file size.
-     *
+     * 
      * @param logFileSize the logFileSize value to set.
      * @return the SqlTempDbSettings object itself.
      */
@@ -137,7 +141,7 @@ public final class SqlTempDbSettings {
 
     /**
      * Get the logGrowth property: SQL Server tempdb log file autoGrowth size.
-     *
+     * 
      * @return the logGrowth value.
      */
     public Integer logGrowth() {
@@ -146,7 +150,7 @@ public final class SqlTempDbSettings {
 
     /**
      * Set the logGrowth property: SQL Server tempdb log file autoGrowth size.
-     *
+     * 
      * @param logGrowth the logGrowth value to set.
      * @return the SqlTempDbSettings object itself.
      */
@@ -157,7 +161,7 @@ public final class SqlTempDbSettings {
 
     /**
      * Get the dataFileCount property: SQL Server tempdb data file count.
-     *
+     * 
      * @return the dataFileCount value.
      */
     public Integer dataFileCount() {
@@ -166,7 +170,7 @@ public final class SqlTempDbSettings {
 
     /**
      * Set the dataFileCount property: SQL Server tempdb data file count.
-     *
+     * 
      * @param dataFileCount the dataFileCount value to set.
      * @return the SqlTempDbSettings object itself.
      */
@@ -177,7 +181,7 @@ public final class SqlTempDbSettings {
 
     /**
      * Get the persistFolder property: SQL Server tempdb persist folder choice.
-     *
+     * 
      * @return the persistFolder value.
      */
     public Boolean persistFolder() {
@@ -186,7 +190,7 @@ public final class SqlTempDbSettings {
 
     /**
      * Set the persistFolder property: SQL Server tempdb persist folder choice.
-     *
+     * 
      * @param persistFolder the persistFolder value to set.
      * @return the SqlTempDbSettings object itself.
      */
@@ -197,7 +201,7 @@ public final class SqlTempDbSettings {
 
     /**
      * Get the persistFolderPath property: SQL Server tempdb persist folder location.
-     *
+     * 
      * @return the persistFolderPath value.
      */
     public String persistFolderPath() {
@@ -206,7 +210,7 @@ public final class SqlTempDbSettings {
 
     /**
      * Set the persistFolderPath property: SQL Server tempdb persist folder location.
-     *
+     * 
      * @param persistFolderPath the persistFolderPath value to set.
      * @return the SqlTempDbSettings object itself.
      */
@@ -217,7 +221,7 @@ public final class SqlTempDbSettings {
 
     /**
      * Get the luns property: Logical Unit Numbers for the disks.
-     *
+     * 
      * @return the luns value.
      */
     public List<Integer> luns() {
@@ -226,7 +230,7 @@ public final class SqlTempDbSettings {
 
     /**
      * Set the luns property: Logical Unit Numbers for the disks.
-     *
+     * 
      * @param luns the luns value to set.
      * @return the SqlTempDbSettings object itself.
      */
@@ -237,7 +241,7 @@ public final class SqlTempDbSettings {
 
     /**
      * Get the defaultFilePath property: SQL Server default file path.
-     *
+     * 
      * @return the defaultFilePath value.
      */
     public String defaultFilePath() {
@@ -246,7 +250,7 @@ public final class SqlTempDbSettings {
 
     /**
      * Set the defaultFilePath property: SQL Server default file path.
-     *
+     * 
      * @param defaultFilePath the defaultFilePath value to set.
      * @return the SqlTempDbSettings object itself.
      */
@@ -257,7 +261,7 @@ public final class SqlTempDbSettings {
 
     /**
      * Get the useStoragePool property: Use storage pool to build a drive if true or not provided.
-     *
+     * 
      * @return the useStoragePool value.
      */
     public Boolean useStoragePool() {
@@ -266,7 +270,7 @@ public final class SqlTempDbSettings {
 
     /**
      * Set the useStoragePool property: Use storage pool to build a drive if true or not provided.
-     *
+     * 
      * @param useStoragePool the useStoragePool value to set.
      * @return the SqlTempDbSettings object itself.
      */
@@ -277,7 +281,7 @@ public final class SqlTempDbSettings {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

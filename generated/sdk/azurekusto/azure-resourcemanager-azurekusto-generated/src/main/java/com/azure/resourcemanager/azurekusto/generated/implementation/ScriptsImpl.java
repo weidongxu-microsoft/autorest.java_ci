@@ -24,34 +24,31 @@ public final class ScriptsImpl implements Scripts {
 
     private final com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager;
 
-    public ScriptsImpl(
-        ScriptsClient innerClient, com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager) {
+    public ScriptsImpl(ScriptsClient innerClient,
+        com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
     public PagedIterable<Script> listByDatabase(String resourceGroupName, String clusterName, String databaseName) {
-        PagedIterable<ScriptInner> inner =
-            this.serviceClient().listByDatabase(resourceGroupName, clusterName, databaseName);
+        PagedIterable<ScriptInner> inner
+            = this.serviceClient().listByDatabase(resourceGroupName, clusterName, databaseName);
         return Utils.mapPage(inner, inner1 -> new ScriptImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<Script> listByDatabase(
-        String resourceGroupName, String clusterName, String databaseName, Context context) {
-        PagedIterable<ScriptInner> inner =
-            this.serviceClient().listByDatabase(resourceGroupName, clusterName, databaseName, context);
+    public PagedIterable<Script> listByDatabase(String resourceGroupName, String clusterName, String databaseName,
+        Context context) {
+        PagedIterable<ScriptInner> inner
+            = this.serviceClient().listByDatabase(resourceGroupName, clusterName, databaseName, context);
         return Utils.mapPage(inner, inner1 -> new ScriptImpl(inner1, this.manager()));
     }
 
-    public Response<Script> getWithResponse(
-        String resourceGroupName, String clusterName, String databaseName, String scriptName, Context context) {
-        Response<ScriptInner> inner =
-            this.serviceClient().getWithResponse(resourceGroupName, clusterName, databaseName, scriptName, context);
+    public Response<Script> getWithResponse(String resourceGroupName, String clusterName, String databaseName,
+        String scriptName, Context context) {
+        Response<ScriptInner> inner
+            = this.serviceClient().getWithResponse(resourceGroupName, clusterName, databaseName, scriptName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ScriptImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -71,36 +68,27 @@ public final class ScriptsImpl implements Scripts {
         this.serviceClient().delete(resourceGroupName, clusterName, databaseName, scriptName);
     }
 
-    public void delete(
-        String resourceGroupName, String clusterName, String databaseName, String scriptName, Context context) {
+    public void delete(String resourceGroupName, String clusterName, String databaseName, String scriptName,
+        Context context) {
         this.serviceClient().delete(resourceGroupName, clusterName, databaseName, scriptName, context);
     }
 
-    public Response<CheckNameResult> checkNameAvailabilityWithResponse(
-        String resourceGroupName,
-        String clusterName,
-        String databaseName,
-        ScriptCheckNameRequest scriptName,
-        Context context) {
-        Response<CheckNameResultInner> inner =
-            this
-                .serviceClient()
-                .checkNameAvailabilityWithResponse(resourceGroupName, clusterName, databaseName, scriptName, context);
+    public Response<CheckNameResult> checkNameAvailabilityWithResponse(String resourceGroupName, String clusterName,
+        String databaseName, ScriptCheckNameRequest scriptName, Context context) {
+        Response<CheckNameResultInner> inner = this.serviceClient().checkNameAvailabilityWithResponse(resourceGroupName,
+            clusterName, databaseName, scriptName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new CheckNameResultImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public CheckNameResult checkNameAvailability(
-        String resourceGroupName, String clusterName, String databaseName, ScriptCheckNameRequest scriptName) {
-        CheckNameResultInner inner =
-            this.serviceClient().checkNameAvailability(resourceGroupName, clusterName, databaseName, scriptName);
+    public CheckNameResult checkNameAvailability(String resourceGroupName, String clusterName, String databaseName,
+        ScriptCheckNameRequest scriptName) {
+        CheckNameResultInner inner
+            = this.serviceClient().checkNameAvailability(resourceGroupName, clusterName, databaseName, scriptName);
         if (inner != null) {
             return new CheckNameResultImpl(inner, this.manager());
         } else {
@@ -111,32 +99,23 @@ public final class ScriptsImpl implements Scripts {
     public Script getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String clusterName = Utils.getValueFromIdByName(id, "clusters");
         if (clusterName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'clusters'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'clusters'.", id)));
         }
         String databaseName = Utils.getValueFromIdByName(id, "databases");
         if (databaseName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'databases'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'databases'.", id)));
         }
         String scriptName = Utils.getValueFromIdByName(id, "scripts");
         if (scriptName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'scripts'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'scripts'.", id)));
         }
         return this.getWithResponse(resourceGroupName, clusterName, databaseName, scriptName, Context.NONE).getValue();
     }
@@ -144,32 +123,23 @@ public final class ScriptsImpl implements Scripts {
     public Response<Script> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String clusterName = Utils.getValueFromIdByName(id, "clusters");
         if (clusterName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'clusters'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'clusters'.", id)));
         }
         String databaseName = Utils.getValueFromIdByName(id, "databases");
         if (databaseName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'databases'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'databases'.", id)));
         }
         String scriptName = Utils.getValueFromIdByName(id, "scripts");
         if (scriptName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'scripts'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'scripts'.", id)));
         }
         return this.getWithResponse(resourceGroupName, clusterName, databaseName, scriptName, context);
     }
@@ -177,32 +147,23 @@ public final class ScriptsImpl implements Scripts {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String clusterName = Utils.getValueFromIdByName(id, "clusters");
         if (clusterName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'clusters'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'clusters'.", id)));
         }
         String databaseName = Utils.getValueFromIdByName(id, "databases");
         if (databaseName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'databases'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'databases'.", id)));
         }
         String scriptName = Utils.getValueFromIdByName(id, "scripts");
         if (scriptName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'scripts'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'scripts'.", id)));
         }
         this.delete(resourceGroupName, clusterName, databaseName, scriptName, Context.NONE);
     }
@@ -210,32 +171,23 @@ public final class ScriptsImpl implements Scripts {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String clusterName = Utils.getValueFromIdByName(id, "clusters");
         if (clusterName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'clusters'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'clusters'.", id)));
         }
         String databaseName = Utils.getValueFromIdByName(id, "databases");
         if (databaseName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'databases'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'databases'.", id)));
         }
         String scriptName = Utils.getValueFromIdByName(id, "scripts");
         if (scriptName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'scripts'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'scripts'.", id)));
         }
         this.delete(resourceGroupName, clusterName, databaseName, scriptName, context);
     }

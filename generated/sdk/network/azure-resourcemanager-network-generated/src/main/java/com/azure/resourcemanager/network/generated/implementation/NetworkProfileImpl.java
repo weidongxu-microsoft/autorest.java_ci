@@ -60,8 +60,8 @@ public final class NetworkProfileImpl implements NetworkProfile, NetworkProfile.
     }
 
     public List<ContainerNetworkInterfaceConfiguration> containerNetworkInterfaceConfigurations() {
-        List<ContainerNetworkInterfaceConfiguration> inner =
-            this.innerModel().containerNetworkInterfaceConfigurations();
+        List<ContainerNetworkInterfaceConfiguration> inner
+            = this.innerModel().containerNetworkInterfaceConfigurations();
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
@@ -109,22 +109,15 @@ public final class NetworkProfileImpl implements NetworkProfile, NetworkProfile.
     }
 
     public NetworkProfile create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNetworkProfiles()
-                .createOrUpdateWithResponse(resourceGroupName, networkProfileName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getNetworkProfiles()
+            .createOrUpdateWithResponse(resourceGroupName, networkProfileName, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public NetworkProfile create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNetworkProfiles()
-                .createOrUpdateWithResponse(resourceGroupName, networkProfileName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getNetworkProfiles()
+            .createOrUpdateWithResponse(resourceGroupName, networkProfileName, this.innerModel(), context).getValue();
         return this;
     }
 
@@ -140,27 +133,19 @@ public final class NetworkProfileImpl implements NetworkProfile, NetworkProfile.
     }
 
     public NetworkProfile apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNetworkProfiles()
-                .updateTagsWithResponse(resourceGroupName, networkProfileName, updateParameters, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getNetworkProfiles()
+            .updateTagsWithResponse(resourceGroupName, networkProfileName, updateParameters, Context.NONE).getValue();
         return this;
     }
 
     public NetworkProfile apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNetworkProfiles()
-                .updateTagsWithResponse(resourceGroupName, networkProfileName, updateParameters, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getNetworkProfiles()
+            .updateTagsWithResponse(resourceGroupName, networkProfileName, updateParameters, context).getValue();
         return this;
     }
 
-    NetworkProfileImpl(
-        NetworkProfileInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    NetworkProfileImpl(NetworkProfileInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
@@ -169,23 +154,16 @@ public final class NetworkProfileImpl implements NetworkProfile, NetworkProfile.
 
     public NetworkProfile refresh() {
         String localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNetworkProfiles()
-                .getByResourceGroupWithResponse(resourceGroupName, networkProfileName, localExpand, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getNetworkProfiles()
+            .getByResourceGroupWithResponse(resourceGroupName, networkProfileName, localExpand, Context.NONE)
+            .getValue();
         return this;
     }
 
     public NetworkProfile refresh(Context context) {
         String localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNetworkProfiles()
-                .getByResourceGroupWithResponse(resourceGroupName, networkProfileName, localExpand, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getNetworkProfiles()
+            .getByResourceGroupWithResponse(resourceGroupName, networkProfileName, localExpand, context).getValue();
         return this;
     }
 

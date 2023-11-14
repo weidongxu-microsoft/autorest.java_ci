@@ -10,11 +10,13 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.VpnSiteLinkConnectionInner;
 
-/** An instance of this class provides access to all the operations defined in VpnSiteLinkConnectionsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in VpnSiteLinkConnectionsClient.
+ */
 public interface VpnSiteLinkConnectionsClient {
     /**
      * Retrieves the details of a vpn site link connection.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @param connectionName The name of the vpn connection.
@@ -26,16 +28,12 @@ public interface VpnSiteLinkConnectionsClient {
      * @return vpnSiteLinkConnection Resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<VpnSiteLinkConnectionInner> getWithResponse(
-        String resourceGroupName,
-        String gatewayName,
-        String connectionName,
-        String linkConnectionName,
-        Context context);
+    Response<VpnSiteLinkConnectionInner> getWithResponse(String resourceGroupName, String gatewayName,
+        String connectionName, String linkConnectionName, Context context);
 
     /**
      * Retrieves the details of a vpn site link connection.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @param connectionName The name of the vpn connection.
@@ -46,6 +44,6 @@ public interface VpnSiteLinkConnectionsClient {
      * @return vpnSiteLinkConnection Resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    VpnSiteLinkConnectionInner get(
-        String resourceGroupName, String gatewayName, String connectionName, String linkConnectionName);
+    VpnSiteLinkConnectionInner get(String resourceGroupName, String gatewayName, String connectionName,
+        String linkConnectionName);
 }

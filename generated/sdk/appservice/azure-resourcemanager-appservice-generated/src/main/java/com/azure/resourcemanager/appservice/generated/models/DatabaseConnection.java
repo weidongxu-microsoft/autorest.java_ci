@@ -9,39 +9,41 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DatabaseConnectionInner;
 import java.util.List;
 
-/** An immutable client-side representation of DatabaseConnection. */
+/**
+ * An immutable client-side representation of DatabaseConnection.
+ */
 public interface DatabaseConnection {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the name property: The name of the resource.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the type property: The type of the resource.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the kind property: Kind of resource.
-     *
+     * 
      * @return the kind value.
      */
     String kind();
 
     /**
      * Gets the resourceId property: The resource id of the database.
-     *
+     * 
      * @return the resourceId value.
      */
     String resourceId();
@@ -51,62 +53,70 @@ public interface DatabaseConnection {
      * connect to the database. Use of the system-assigned managed identity is indicated with the string
      * 'SystemAssigned', while use of a user-assigned managed identity is indicated with the resource id of the managed
      * identity resource.
-     *
+     * 
      * @return the connectionIdentity value.
      */
     String connectionIdentity();
 
     /**
      * Gets the connectionString property: The connection string to use to connect to the database.
-     *
+     * 
      * @return the connectionString value.
      */
     String connectionString();
 
     /**
      * Gets the region property: The region of the database resource.
-     *
+     * 
      * @return the region value.
      */
     String region();
 
     /**
      * Gets the configurationFiles property: A list of configuration files associated with this database connection.
-     *
+     * 
      * @return the configurationFiles value.
      */
     List<StaticSiteDatabaseConnectionConfigurationFileOverview> configurationFiles();
 
     /**
      * Gets the name of the resource group.
-     *
+     * 
      * @return the name of the resource group.
      */
     String resourceGroupName();
 
     /**
      * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.DatabaseConnectionInner object.
-     *
+     * 
      * @return the inner object.
      */
     DatabaseConnectionInner innerModel();
 
-    /** The entirety of the DatabaseConnection definition. */
+    /**
+     * The entirety of the DatabaseConnection definition.
+     */
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
 
-    /** The DatabaseConnection definition stages. */
+    /**
+     * The DatabaseConnection definition stages.
+     */
     interface DefinitionStages {
-        /** The first stage of the DatabaseConnection definition. */
+        /**
+         * The first stage of the DatabaseConnection definition.
+         */
         interface Blank extends WithParentResource {
         }
 
-        /** The stage of the DatabaseConnection definition allowing to specify parent resource. */
+        /**
+         * The stage of the DatabaseConnection definition allowing to specify parent resource.
+         */
         interface WithParentResource {
             /**
              * Specifies resourceGroupName, name, environmentName.
-             *
+             * 
              * @param resourceGroupName Name of the resource group to which the resource belongs.
              * @param name Name of the static site.
              * @param environmentName The stage site identifier.
@@ -120,82 +130,89 @@ public interface DatabaseConnection {
          * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
-            extends DefinitionStages.WithKind,
-                DefinitionStages.WithResourceId,
-                DefinitionStages.WithConnectionIdentity,
-                DefinitionStages.WithConnectionString,
-                DefinitionStages.WithRegion {
+            extends DefinitionStages.WithKind, DefinitionStages.WithResourceId, DefinitionStages.WithConnectionIdentity,
+            DefinitionStages.WithConnectionString, DefinitionStages.WithRegion {
             /**
              * Executes the create request.
-             *
+             * 
              * @return the created resource.
              */
             DatabaseConnection create();
 
             /**
              * Executes the create request.
-             *
+             * 
              * @param context The context to associate with this operation.
              * @return the created resource.
              */
             DatabaseConnection create(Context context);
         }
 
-        /** The stage of the DatabaseConnection definition allowing to specify kind. */
+        /**
+         * The stage of the DatabaseConnection definition allowing to specify kind.
+         */
         interface WithKind {
             /**
              * Specifies the kind property: Kind of resource..
-             *
+             * 
              * @param kind Kind of resource.
              * @return the next definition stage.
              */
             WithCreate withKind(String kind);
         }
 
-        /** The stage of the DatabaseConnection definition allowing to specify resourceId. */
+        /**
+         * The stage of the DatabaseConnection definition allowing to specify resourceId.
+         */
         interface WithResourceId {
             /**
              * Specifies the resourceId property: The resource id of the database..
-             *
+             * 
              * @param resourceId The resource id of the database.
              * @return the next definition stage.
              */
             WithCreate withResourceId(String resourceId);
         }
 
-        /** The stage of the DatabaseConnection definition allowing to specify connectionIdentity. */
+        /**
+         * The stage of the DatabaseConnection definition allowing to specify connectionIdentity.
+         */
         interface WithConnectionIdentity {
             /**
              * Specifies the connectionIdentity property: If present, the identity is used in conjunction with
              * connection string to connect to the database. Use of the system-assigned managed identity is indicated
              * with the string 'SystemAssigned', while use of a user-assigned managed identity is indicated with the
              * resource id of the managed identity resource..
-             *
+             * 
              * @param connectionIdentity If present, the identity is used in conjunction with connection string to
-             *     connect to the database. Use of the system-assigned managed identity is indicated with the string
-             *     'SystemAssigned', while use of a user-assigned managed identity is indicated with the resource id of
-             *     the managed identity resource.
+             * connect to the database. Use of the system-assigned managed identity is indicated with the string
+             * 'SystemAssigned', while use of a user-assigned managed identity is indicated with the resource id of the
+             * managed identity resource.
              * @return the next definition stage.
              */
             WithCreate withConnectionIdentity(String connectionIdentity);
         }
 
-        /** The stage of the DatabaseConnection definition allowing to specify connectionString. */
+        /**
+         * The stage of the DatabaseConnection definition allowing to specify connectionString.
+         */
         interface WithConnectionString {
             /**
              * Specifies the connectionString property: The connection string to use to connect to the database..
-             *
+             * 
              * @param connectionString The connection string to use to connect to the database.
              * @return the next definition stage.
              */
             WithCreate withConnectionString(String connectionString);
         }
 
-        /** The stage of the DatabaseConnection definition allowing to specify region. */
+        /**
+         * The stage of the DatabaseConnection definition allowing to specify region.
+         */
         interface WithRegion {
             /**
              * Specifies the region property: The region of the database resource..
-             *
+             * 
              * @param region The region of the database resource.
              * @return the next definition stage.
              */
@@ -205,79 +222,88 @@ public interface DatabaseConnection {
 
     /**
      * Begins update for the DatabaseConnection resource.
-     *
+     * 
      * @return the stage of resource update.
      */
     DatabaseConnection.Update update();
 
-    /** The template for DatabaseConnection update. */
-    interface Update
-        extends UpdateStages.WithResourceId,
-            UpdateStages.WithConnectionIdentity,
-            UpdateStages.WithConnectionString,
-            UpdateStages.WithRegion {
+    /**
+     * The template for DatabaseConnection update.
+     */
+    interface Update extends UpdateStages.WithResourceId, UpdateStages.WithConnectionIdentity,
+        UpdateStages.WithConnectionString, UpdateStages.WithRegion {
         /**
          * Executes the update request.
-         *
+         * 
          * @return the updated resource.
          */
         DatabaseConnection apply();
 
         /**
          * Executes the update request.
-         *
+         * 
          * @param context The context to associate with this operation.
          * @return the updated resource.
          */
         DatabaseConnection apply(Context context);
     }
 
-    /** The DatabaseConnection update stages. */
+    /**
+     * The DatabaseConnection update stages.
+     */
     interface UpdateStages {
-        /** The stage of the DatabaseConnection update allowing to specify resourceId. */
+        /**
+         * The stage of the DatabaseConnection update allowing to specify resourceId.
+         */
         interface WithResourceId {
             /**
              * Specifies the resourceId property: The resource id of the database..
-             *
+             * 
              * @param resourceId The resource id of the database.
              * @return the next definition stage.
              */
             Update withResourceId(String resourceId);
         }
 
-        /** The stage of the DatabaseConnection update allowing to specify connectionIdentity. */
+        /**
+         * The stage of the DatabaseConnection update allowing to specify connectionIdentity.
+         */
         interface WithConnectionIdentity {
             /**
              * Specifies the connectionIdentity property: If present, the identity is used in conjunction with
              * connection string to connect to the database. Use of the system-assigned managed identity is indicated
              * with the string 'SystemAssigned', while use of a user-assigned managed identity is indicated with the
              * resource id of the managed identity resource..
-             *
+             * 
              * @param connectionIdentity If present, the identity is used in conjunction with connection string to
-             *     connect to the database. Use of the system-assigned managed identity is indicated with the string
-             *     'SystemAssigned', while use of a user-assigned managed identity is indicated with the resource id of
-             *     the managed identity resource.
+             * connect to the database. Use of the system-assigned managed identity is indicated with the string
+             * 'SystemAssigned', while use of a user-assigned managed identity is indicated with the resource id of the
+             * managed identity resource.
              * @return the next definition stage.
              */
             Update withConnectionIdentity(String connectionIdentity);
         }
 
-        /** The stage of the DatabaseConnection update allowing to specify connectionString. */
+        /**
+         * The stage of the DatabaseConnection update allowing to specify connectionString.
+         */
         interface WithConnectionString {
             /**
              * Specifies the connectionString property: The connection string to use to connect to the database..
-             *
+             * 
              * @param connectionString The connection string to use to connect to the database.
              * @return the next definition stage.
              */
             Update withConnectionString(String connectionString);
         }
 
-        /** The stage of the DatabaseConnection update allowing to specify region. */
+        /**
+         * The stage of the DatabaseConnection update allowing to specify region.
+         */
         interface WithRegion {
             /**
              * Specifies the region property: The region of the database resource..
-             *
+             * 
              * @param region The region of the database resource.
              * @return the next definition stage.
              */
@@ -287,14 +313,14 @@ public interface DatabaseConnection {
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @return the refreshed resource.
      */
     DatabaseConnection refresh();
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @return the refreshed resource.
      */
@@ -302,11 +328,11 @@ public interface DatabaseConnection {
 
     /**
      * Returns details of a database connection for a static site build by name.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return static Site Database Connection resource along with {@link Response}.
      */
@@ -314,9 +340,9 @@ public interface DatabaseConnection {
 
     /**
      * Returns details of a database connection for a static site build by name.
-     *
+     * 
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return static Site Database Connection resource.
      */

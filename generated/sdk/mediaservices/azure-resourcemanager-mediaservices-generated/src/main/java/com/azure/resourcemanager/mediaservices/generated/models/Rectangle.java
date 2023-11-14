@@ -7,7 +7,9 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Describes the properties of a rectangular window applied to the input media before processing it. */
+/**
+ * Describes the properties of a rectangular window applied to the input media before processing it.
+ */
 @Fluent
 public final class Rectangle {
     /*
@@ -38,14 +40,16 @@ public final class Rectangle {
     @JsonProperty(value = "height")
     private String height;
 
-    /** Creates an instance of Rectangle class. */
+    /**
+     * Creates an instance of Rectangle class.
+     */
     public Rectangle() {
     }
 
     /**
      * Get the left property: The number of pixels from the left-margin. This can be absolute pixel value (e.g 100), or
      * relative to the size of the video (For example, 50%).
-     *
+     * 
      * @return the left value.
      */
     public String left() {
@@ -55,7 +59,7 @@ public final class Rectangle {
     /**
      * Set the left property: The number of pixels from the left-margin. This can be absolute pixel value (e.g 100), or
      * relative to the size of the video (For example, 50%).
-     *
+     * 
      * @param left the left value to set.
      * @return the Rectangle object itself.
      */
@@ -67,7 +71,7 @@ public final class Rectangle {
     /**
      * Get the top property: The number of pixels from the top-margin. This can be absolute pixel value (e.g 100), or
      * relative to the size of the video (For example, 50%).
-     *
+     * 
      * @return the top value.
      */
     public String top() {
@@ -77,7 +81,7 @@ public final class Rectangle {
     /**
      * Set the top property: The number of pixels from the top-margin. This can be absolute pixel value (e.g 100), or
      * relative to the size of the video (For example, 50%).
-     *
+     * 
      * @param top the top value to set.
      * @return the Rectangle object itself.
      */
@@ -89,7 +93,7 @@ public final class Rectangle {
     /**
      * Get the width property: The width of the rectangular region in pixels. This can be absolute pixel value (e.g
      * 100), or relative to the size of the video (For example, 50%).
-     *
+     * 
      * @return the width value.
      */
     public String width() {
@@ -99,7 +103,7 @@ public final class Rectangle {
     /**
      * Set the width property: The width of the rectangular region in pixels. This can be absolute pixel value (e.g
      * 100), or relative to the size of the video (For example, 50%).
-     *
+     * 
      * @param width the width value to set.
      * @return the Rectangle object itself.
      */
@@ -111,7 +115,7 @@ public final class Rectangle {
     /**
      * Get the height property: The height of the rectangular region in pixels. This can be absolute pixel value (e.g
      * 100), or relative to the size of the video (For example, 50%).
-     *
+     * 
      * @return the height value.
      */
     public String height() {
@@ -121,7 +125,7 @@ public final class Rectangle {
     /**
      * Set the height property: The height of the rectangular region in pixels. This can be absolute pixel value (e.g
      * 100), or relative to the size of the video (For example, 50%).
-     *
+     * 
      * @param height the height value to set.
      * @return the Rectangle object itself.
      */
@@ -132,7 +136,7 @@ public final class Rectangle {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -13,8 +13,7 @@ public final class VerificationIpFlowResultImpl implements VerificationIpFlowRes
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    VerificationIpFlowResultImpl(
-        VerificationIpFlowResultInner innerObject,
+    VerificationIpFlowResultImpl(VerificationIpFlowResultInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

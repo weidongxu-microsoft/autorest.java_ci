@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.databoxedge.generated.models.EdgeProfilePatch;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The Data Box Edge/Gateway device properties patch. */
+/**
+ * The Data Box Edge/Gateway device properties patch.
+ */
 @Fluent
 public final class DataBoxEdgeDevicePropertiesPatch {
     /*
@@ -17,13 +19,15 @@ public final class DataBoxEdgeDevicePropertiesPatch {
     @JsonProperty(value = "edgeProfile")
     private EdgeProfilePatch edgeProfile;
 
-    /** Creates an instance of DataBoxEdgeDevicePropertiesPatch class. */
+    /**
+     * Creates an instance of DataBoxEdgeDevicePropertiesPatch class.
+     */
     public DataBoxEdgeDevicePropertiesPatch() {
     }
 
     /**
      * Get the edgeProfile property: Edge Profile property of the Data Box Edge/Gateway device.
-     *
+     * 
      * @return the edgeProfile value.
      */
     public EdgeProfilePatch edgeProfile() {
@@ -32,7 +36,7 @@ public final class DataBoxEdgeDevicePropertiesPatch {
 
     /**
      * Set the edgeProfile property: Edge Profile property of the Data Box Edge/Gateway device.
-     *
+     * 
      * @param edgeProfile the edgeProfile value to set.
      * @return the DataBoxEdgeDevicePropertiesPatch object itself.
      */
@@ -43,7 +47,7 @@ public final class DataBoxEdgeDevicePropertiesPatch {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

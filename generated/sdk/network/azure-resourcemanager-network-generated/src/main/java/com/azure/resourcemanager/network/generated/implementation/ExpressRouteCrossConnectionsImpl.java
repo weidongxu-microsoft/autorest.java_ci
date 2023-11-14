@@ -27,8 +27,7 @@ public final class ExpressRouteCrossConnectionsImpl implements ExpressRouteCross
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public ExpressRouteCrossConnectionsImpl(
-        ExpressRouteCrossConnectionsClient innerClient,
+    public ExpressRouteCrossConnectionsImpl(ExpressRouteCrossConnectionsClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -45,26 +44,23 @@ public final class ExpressRouteCrossConnectionsImpl implements ExpressRouteCross
     }
 
     public PagedIterable<ExpressRouteCrossConnection> listByResourceGroup(String resourceGroupName) {
-        PagedIterable<ExpressRouteCrossConnectionInner> inner =
-            this.serviceClient().listByResourceGroup(resourceGroupName);
+        PagedIterable<ExpressRouteCrossConnectionInner> inner
+            = this.serviceClient().listByResourceGroup(resourceGroupName);
         return Utils.mapPage(inner, inner1 -> new ExpressRouteCrossConnectionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ExpressRouteCrossConnection> listByResourceGroup(String resourceGroupName, Context context) {
-        PagedIterable<ExpressRouteCrossConnectionInner> inner =
-            this.serviceClient().listByResourceGroup(resourceGroupName, context);
+        PagedIterable<ExpressRouteCrossConnectionInner> inner
+            = this.serviceClient().listByResourceGroup(resourceGroupName, context);
         return Utils.mapPage(inner, inner1 -> new ExpressRouteCrossConnectionImpl(inner1, this.manager()));
     }
 
-    public Response<ExpressRouteCrossConnection> getByResourceGroupWithResponse(
-        String resourceGroupName, String crossConnectionName, Context context) {
-        Response<ExpressRouteCrossConnectionInner> inner =
-            this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, crossConnectionName, context);
+    public Response<ExpressRouteCrossConnection> getByResourceGroupWithResponse(String resourceGroupName,
+        String crossConnectionName, Context context) {
+        Response<ExpressRouteCrossConnectionInner> inner
+            = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, crossConnectionName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ExpressRouteCrossConnectionImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -72,8 +68,8 @@ public final class ExpressRouteCrossConnectionsImpl implements ExpressRouteCross
     }
 
     public ExpressRouteCrossConnection getByResourceGroup(String resourceGroupName, String crossConnectionName) {
-        ExpressRouteCrossConnectionInner inner =
-            this.serviceClient().getByResourceGroup(resourceGroupName, crossConnectionName);
+        ExpressRouteCrossConnectionInner inner
+            = this.serviceClient().getByResourceGroup(resourceGroupName, crossConnectionName);
         if (inner != null) {
             return new ExpressRouteCrossConnectionImpl(inner, this.manager());
         } else {
@@ -81,10 +77,10 @@ public final class ExpressRouteCrossConnectionsImpl implements ExpressRouteCross
         }
     }
 
-    public ExpressRouteCircuitsArpTableListResult listArpTable(
-        String resourceGroupName, String crossConnectionName, String peeringName, String devicePath) {
-        ExpressRouteCircuitsArpTableListResultInner inner =
-            this.serviceClient().listArpTable(resourceGroupName, crossConnectionName, peeringName, devicePath);
+    public ExpressRouteCircuitsArpTableListResult listArpTable(String resourceGroupName, String crossConnectionName,
+        String peeringName, String devicePath) {
+        ExpressRouteCircuitsArpTableListResultInner inner
+            = this.serviceClient().listArpTable(resourceGroupName, crossConnectionName, peeringName, devicePath);
         if (inner != null) {
             return new ExpressRouteCircuitsArpTableListResultImpl(inner, this.manager());
         } else {
@@ -92,10 +88,10 @@ public final class ExpressRouteCrossConnectionsImpl implements ExpressRouteCross
         }
     }
 
-    public ExpressRouteCircuitsArpTableListResult listArpTable(
-        String resourceGroupName, String crossConnectionName, String peeringName, String devicePath, Context context) {
-        ExpressRouteCircuitsArpTableListResultInner inner =
-            this.serviceClient().listArpTable(resourceGroupName, crossConnectionName, peeringName, devicePath, context);
+    public ExpressRouteCircuitsArpTableListResult listArpTable(String resourceGroupName, String crossConnectionName,
+        String peeringName, String devicePath, Context context) {
+        ExpressRouteCircuitsArpTableListResultInner inner = this.serviceClient().listArpTable(resourceGroupName,
+            crossConnectionName, peeringName, devicePath, context);
         if (inner != null) {
             return new ExpressRouteCircuitsArpTableListResultImpl(inner, this.manager());
         } else {
@@ -103,12 +99,10 @@ public final class ExpressRouteCrossConnectionsImpl implements ExpressRouteCross
         }
     }
 
-    public ExpressRouteCrossConnectionsRoutesTableSummaryListResult listRoutesTableSummary(
-        String resourceGroupName, String crossConnectionName, String peeringName, String devicePath) {
-        ExpressRouteCrossConnectionsRoutesTableSummaryListResultInner inner =
-            this
-                .serviceClient()
-                .listRoutesTableSummary(resourceGroupName, crossConnectionName, peeringName, devicePath);
+    public ExpressRouteCrossConnectionsRoutesTableSummaryListResult listRoutesTableSummary(String resourceGroupName,
+        String crossConnectionName, String peeringName, String devicePath) {
+        ExpressRouteCrossConnectionsRoutesTableSummaryListResultInner inner = this.serviceClient()
+            .listRoutesTableSummary(resourceGroupName, crossConnectionName, peeringName, devicePath);
         if (inner != null) {
             return new ExpressRouteCrossConnectionsRoutesTableSummaryListResultImpl(inner, this.manager());
         } else {
@@ -116,12 +110,10 @@ public final class ExpressRouteCrossConnectionsImpl implements ExpressRouteCross
         }
     }
 
-    public ExpressRouteCrossConnectionsRoutesTableSummaryListResult listRoutesTableSummary(
-        String resourceGroupName, String crossConnectionName, String peeringName, String devicePath, Context context) {
-        ExpressRouteCrossConnectionsRoutesTableSummaryListResultInner inner =
-            this
-                .serviceClient()
-                .listRoutesTableSummary(resourceGroupName, crossConnectionName, peeringName, devicePath, context);
+    public ExpressRouteCrossConnectionsRoutesTableSummaryListResult listRoutesTableSummary(String resourceGroupName,
+        String crossConnectionName, String peeringName, String devicePath, Context context) {
+        ExpressRouteCrossConnectionsRoutesTableSummaryListResultInner inner = this.serviceClient()
+            .listRoutesTableSummary(resourceGroupName, crossConnectionName, peeringName, devicePath, context);
         if (inner != null) {
             return new ExpressRouteCrossConnectionsRoutesTableSummaryListResultImpl(inner, this.manager());
         } else {
@@ -129,10 +121,10 @@ public final class ExpressRouteCrossConnectionsImpl implements ExpressRouteCross
         }
     }
 
-    public ExpressRouteCircuitsRoutesTableListResult listRoutesTable(
-        String resourceGroupName, String crossConnectionName, String peeringName, String devicePath) {
-        ExpressRouteCircuitsRoutesTableListResultInner inner =
-            this.serviceClient().listRoutesTable(resourceGroupName, crossConnectionName, peeringName, devicePath);
+    public ExpressRouteCircuitsRoutesTableListResult listRoutesTable(String resourceGroupName,
+        String crossConnectionName, String peeringName, String devicePath) {
+        ExpressRouteCircuitsRoutesTableListResultInner inner
+            = this.serviceClient().listRoutesTable(resourceGroupName, crossConnectionName, peeringName, devicePath);
         if (inner != null) {
             return new ExpressRouteCircuitsRoutesTableListResultImpl(inner, this.manager());
         } else {
@@ -140,12 +132,10 @@ public final class ExpressRouteCrossConnectionsImpl implements ExpressRouteCross
         }
     }
 
-    public ExpressRouteCircuitsRoutesTableListResult listRoutesTable(
-        String resourceGroupName, String crossConnectionName, String peeringName, String devicePath, Context context) {
-        ExpressRouteCircuitsRoutesTableListResultInner inner =
-            this
-                .serviceClient()
-                .listRoutesTable(resourceGroupName, crossConnectionName, peeringName, devicePath, context);
+    public ExpressRouteCircuitsRoutesTableListResult listRoutesTable(String resourceGroupName,
+        String crossConnectionName, String peeringName, String devicePath, Context context) {
+        ExpressRouteCircuitsRoutesTableListResultInner inner = this.serviceClient().listRoutesTable(resourceGroupName,
+            crossConnectionName, peeringName, devicePath, context);
         if (inner != null) {
             return new ExpressRouteCircuitsRoutesTableListResultImpl(inner, this.manager());
         } else {
@@ -156,22 +146,13 @@ public final class ExpressRouteCrossConnectionsImpl implements ExpressRouteCross
     public ExpressRouteCrossConnection getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String crossConnectionName = Utils.getValueFromIdByName(id, "expressRouteCrossConnections");
         if (crossConnectionName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment"
-                                    + " 'expressRouteCrossConnections'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String.format(
+                "The resource ID '%s' is not valid. Missing path segment 'expressRouteCrossConnections'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, crossConnectionName, Context.NONE).getValue();
     }
@@ -179,22 +160,13 @@ public final class ExpressRouteCrossConnectionsImpl implements ExpressRouteCross
     public Response<ExpressRouteCrossConnection> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String crossConnectionName = Utils.getValueFromIdByName(id, "expressRouteCrossConnections");
         if (crossConnectionName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment"
-                                    + " 'expressRouteCrossConnections'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String.format(
+                "The resource ID '%s' is not valid. Missing path segment 'expressRouteCrossConnections'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, crossConnectionName, context);
     }

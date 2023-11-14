@@ -9,7 +9,9 @@ import com.azure.resourcemanager.applicationinsights.generated.fluent.models.Wor
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Workbook list result. */
+/**
+ * Workbook list result.
+ */
 @Immutable
 public final class WorkbooksListResult {
     /*
@@ -18,13 +20,15 @@ public final class WorkbooksListResult {
     @JsonProperty(value = "value", access = JsonProperty.Access.WRITE_ONLY)
     private List<WorkbookInner> value;
 
-    /** Creates an instance of WorkbooksListResult class. */
+    /**
+     * Creates an instance of WorkbooksListResult class.
+     */
     public WorkbooksListResult() {
     }
 
     /**
      * Get the value property: An array of workbooks.
-     *
+     * 
      * @return the value value.
      */
     public List<WorkbookInner> value() {
@@ -33,7 +37,7 @@ public final class WorkbooksListResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

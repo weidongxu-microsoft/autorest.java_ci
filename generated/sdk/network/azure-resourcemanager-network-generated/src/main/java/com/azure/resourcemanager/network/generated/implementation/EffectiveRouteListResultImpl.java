@@ -15,8 +15,7 @@ public final class EffectiveRouteListResultImpl implements EffectiveRouteListRes
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    EffectiveRouteListResultImpl(
-        EffectiveRouteListResultInner innerObject,
+    EffectiveRouteListResultImpl(EffectiveRouteListResultInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

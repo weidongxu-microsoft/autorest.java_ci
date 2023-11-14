@@ -13,7 +13,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.Duration;
 import java.time.OffsetDateTime;
 
-/** The Live Output. */
+/**
+ * The Live Output.
+ */
 @Fluent
 public final class LiveOutputInner extends ProxyResource {
     /*
@@ -28,13 +30,15 @@ public final class LiveOutputInner extends ProxyResource {
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
-    /** Creates an instance of LiveOutputInner class. */
+    /**
+     * Creates an instance of LiveOutputInner class.
+     */
     public LiveOutputInner() {
     }
 
     /**
      * Get the innerProperties property: Live output properties.
-     *
+     * 
      * @return the innerProperties value.
      */
     private LiveOutputProperties innerProperties() {
@@ -43,7 +47,7 @@ public final class LiveOutputInner extends ProxyResource {
 
     /**
      * Get the systemData property: The system metadata relating to this resource.
-     *
+     * 
      * @return the systemData value.
      */
     public SystemData systemData() {
@@ -52,7 +56,7 @@ public final class LiveOutputInner extends ProxyResource {
 
     /**
      * Get the description property: The description of the live output.
-     *
+     * 
      * @return the description value.
      */
     public String description() {
@@ -61,7 +65,7 @@ public final class LiveOutputInner extends ProxyResource {
 
     /**
      * Set the description property: The description of the live output.
-     *
+     * 
      * @param description the description value to set.
      * @return the LiveOutputInner object itself.
      */
@@ -75,7 +79,7 @@ public final class LiveOutputInner extends ProxyResource {
 
     /**
      * Get the assetName property: The asset that the live output will write to.
-     *
+     * 
      * @return the assetName value.
      */
     public String assetName() {
@@ -84,7 +88,7 @@ public final class LiveOutputInner extends ProxyResource {
 
     /**
      * Set the assetName property: The asset that the live output will write to.
-     *
+     * 
      * @param assetName the assetName value to set.
      * @return the LiveOutputInner object itself.
      */
@@ -100,7 +104,7 @@ public final class LiveOutputInner extends ProxyResource {
      * Get the archiveWindowLength property: ISO 8601 time between 1 minute to 25 hours to indicate the maximum content
      * length that can be archived in the asset for this live output. This also sets the maximum content length for the
      * rewind window. For example, use PT1H30M to indicate 1 hour and 30 minutes of archive window.
-     *
+     * 
      * @return the archiveWindowLength value.
      */
     public Duration archiveWindowLength() {
@@ -111,7 +115,7 @@ public final class LiveOutputInner extends ProxyResource {
      * Set the archiveWindowLength property: ISO 8601 time between 1 minute to 25 hours to indicate the maximum content
      * length that can be archived in the asset for this live output. This also sets the maximum content length for the
      * rewind window. For example, use PT1H30M to indicate 1 hour and 30 minutes of archive window.
-     *
+     * 
      * @param archiveWindowLength the archiveWindowLength value to set.
      * @return the LiveOutputInner object itself.
      */
@@ -129,7 +133,7 @@ public final class LiveOutputInner extends ProxyResource {
      * archived VOD will have full content with original ArchiveWindowLength. For example, use PT1H30M to indicate 1
      * hour and 30 minutes of rewind window length. Service will use implicit default value 30m only if Live Event
      * enables LL.
-     *
+     * 
      * @return the rewindWindowLength value.
      */
     public Duration rewindWindowLength() {
@@ -142,7 +146,7 @@ public final class LiveOutputInner extends ProxyResource {
      * archived VOD will have full content with original ArchiveWindowLength. For example, use PT1H30M to indicate 1
      * hour and 30 minutes of rewind window length. Service will use implicit default value 30m only if Live Event
      * enables LL.
-     *
+     * 
      * @param rewindWindowLength the rewindWindowLength value to set.
      * @return the LiveOutputInner object itself.
      */
@@ -157,7 +161,7 @@ public final class LiveOutputInner extends ProxyResource {
     /**
      * Get the manifestName property: The manifest file name. If not provided, the service will generate one
      * automatically.
-     *
+     * 
      * @return the manifestName value.
      */
     public String manifestName() {
@@ -167,7 +171,7 @@ public final class LiveOutputInner extends ProxyResource {
     /**
      * Set the manifestName property: The manifest file name. If not provided, the service will generate one
      * automatically.
-     *
+     * 
      * @param manifestName the manifestName value to set.
      * @return the LiveOutputInner object itself.
      */
@@ -181,7 +185,7 @@ public final class LiveOutputInner extends ProxyResource {
 
     /**
      * Get the hls property: HTTP Live Streaming (HLS) packing setting for the live output.
-     *
+     * 
      * @return the hls value.
      */
     public Hls hls() {
@@ -190,7 +194,7 @@ public final class LiveOutputInner extends ProxyResource {
 
     /**
      * Set the hls property: HTTP Live Streaming (HLS) packing setting for the live output.
-     *
+     * 
      * @param hls the hls value to set.
      * @return the LiveOutputInner object itself.
      */
@@ -205,7 +209,7 @@ public final class LiveOutputInner extends ProxyResource {
     /**
      * Get the outputSnapTime property: The initial timestamp that the live output will start at, any content before
      * this value will not be archived.
-     *
+     * 
      * @return the outputSnapTime value.
      */
     public Long outputSnapTime() {
@@ -215,7 +219,7 @@ public final class LiveOutputInner extends ProxyResource {
     /**
      * Set the outputSnapTime property: The initial timestamp that the live output will start at, any content before
      * this value will not be archived.
-     *
+     * 
      * @param outputSnapTime the outputSnapTime value to set.
      * @return the LiveOutputInner object itself.
      */
@@ -229,7 +233,7 @@ public final class LiveOutputInner extends ProxyResource {
 
     /**
      * Get the created property: The creation time the live output.
-     *
+     * 
      * @return the created value.
      */
     public OffsetDateTime created() {
@@ -238,7 +242,7 @@ public final class LiveOutputInner extends ProxyResource {
 
     /**
      * Get the lastModified property: The time the live output was last modified.
-     *
+     * 
      * @return the lastModified value.
      */
     public OffsetDateTime lastModified() {
@@ -247,7 +251,7 @@ public final class LiveOutputInner extends ProxyResource {
 
     /**
      * Get the provisioningState property: The provisioning state of the live output.
-     *
+     * 
      * @return the provisioningState value.
      */
     public String provisioningState() {
@@ -256,7 +260,7 @@ public final class LiveOutputInner extends ProxyResource {
 
     /**
      * Get the resourceState property: The resource state of the live output.
-     *
+     * 
      * @return the resourceState value.
      */
     public LiveOutputResourceState resourceState() {
@@ -265,7 +269,7 @@ public final class LiveOutputInner extends ProxyResource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

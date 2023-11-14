@@ -8,7 +8,9 @@ import com.azure.core.annotation.Immutable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.math.BigDecimal;
 
-/** The forecasted cost which is being tracked for a budget. */
+/**
+ * The forecasted cost which is being tracked for a budget.
+ */
 @Immutable
 public final class ForecastSpend {
     /*
@@ -24,14 +26,16 @@ public final class ForecastSpend {
     @JsonProperty(value = "unit", access = JsonProperty.Access.WRITE_ONLY)
     private String unit;
 
-    /** Creates an instance of ForecastSpend class. */
+    /**
+     * Creates an instance of ForecastSpend class.
+     */
     public ForecastSpend() {
     }
 
     /**
-     * Get the amount property: The forecasted cost for the total time period which is being tracked by the budget. This
-     * value is only provided if the budget contains a forecast alert type.
-     *
+     * Get the amount property: The forecasted cost for the total time period which is being tracked by the budget.
+     * This value is only provided if the budget contains a forecast alert type.
+     * 
      * @return the amount value.
      */
     public BigDecimal amount() {
@@ -40,7 +44,7 @@ public final class ForecastSpend {
 
     /**
      * Get the unit property: The unit of measure for the budget amount.
-     *
+     * 
      * @return the unit value.
      */
     public String unit() {
@@ -49,7 +53,7 @@ public final class ForecastSpend {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

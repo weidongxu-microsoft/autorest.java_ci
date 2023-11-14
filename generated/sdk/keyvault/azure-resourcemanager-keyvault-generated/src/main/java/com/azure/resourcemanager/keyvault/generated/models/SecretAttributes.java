@@ -7,28 +7,38 @@ package com.azure.resourcemanager.keyvault.generated.models;
 import com.azure.core.annotation.Fluent;
 import java.time.OffsetDateTime;
 
-/** The secret management attributes. */
+/**
+ * The secret management attributes.
+ */
 @Fluent
 public final class SecretAttributes extends Attributes {
-    /** Creates an instance of SecretAttributes class. */
+    /**
+     * Creates an instance of SecretAttributes class.
+     */
     public SecretAttributes() {
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public SecretAttributes withEnabled(Boolean enabled) {
         super.withEnabled(enabled);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public SecretAttributes withNotBefore(OffsetDateTime notBefore) {
         super.withNotBefore(notBefore);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public SecretAttributes withExpires(OffsetDateTime expires) {
         super.withExpires(expires);
@@ -37,7 +47,7 @@ public final class SecretAttributes extends Attributes {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

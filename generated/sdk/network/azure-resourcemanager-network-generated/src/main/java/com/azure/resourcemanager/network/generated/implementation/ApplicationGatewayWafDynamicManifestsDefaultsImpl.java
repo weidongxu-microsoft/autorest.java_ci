@@ -15,8 +15,8 @@ import com.azure.resourcemanager.network.generated.models.ApplicationGatewayWafD
 
 public final class ApplicationGatewayWafDynamicManifestsDefaultsImpl
     implements ApplicationGatewayWafDynamicManifestsDefaults {
-    private static final ClientLogger LOGGER =
-        new ClientLogger(ApplicationGatewayWafDynamicManifestsDefaultsImpl.class);
+    private static final ClientLogger LOGGER
+        = new ClientLogger(ApplicationGatewayWafDynamicManifestsDefaultsImpl.class);
 
     private final ApplicationGatewayWafDynamicManifestsDefaultsClient innerClient;
 
@@ -30,13 +30,10 @@ public final class ApplicationGatewayWafDynamicManifestsDefaultsImpl
     }
 
     public Response<ApplicationGatewayWafDynamicManifestResult> getWithResponse(String location, Context context) {
-        Response<ApplicationGatewayWafDynamicManifestResultInner> inner =
-            this.serviceClient().getWithResponse(location, context);
+        Response<ApplicationGatewayWafDynamicManifestResultInner> inner
+            = this.serviceClient().getWithResponse(location, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ApplicationGatewayWafDynamicManifestResultImpl(inner.getValue(), this.manager()));
         } else {
             return null;

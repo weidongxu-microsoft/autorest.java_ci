@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
-/** The share properties. */
+/**
+ * The share properties.
+ */
 @Fluent
 public final class SupportPackageRequestProperties {
     /*
@@ -31,13 +33,15 @@ public final class SupportPackageRequestProperties {
     @JsonProperty(value = "include")
     private String include;
 
-    /** Creates an instance of SupportPackageRequestProperties class. */
+    /**
+     * Creates an instance of SupportPackageRequestProperties class.
+     */
     public SupportPackageRequestProperties() {
     }
 
     /**
      * Get the minimumTimestamp property: MinimumTimeStamp from where logs need to be collected.
-     *
+     * 
      * @return the minimumTimestamp value.
      */
     public OffsetDateTime minimumTimestamp() {
@@ -46,7 +50,7 @@ public final class SupportPackageRequestProperties {
 
     /**
      * Set the minimumTimestamp property: MinimumTimeStamp from where logs need to be collected.
-     *
+     * 
      * @param minimumTimestamp the minimumTimestamp value to set.
      * @return the SupportPackageRequestProperties object itself.
      */
@@ -57,7 +61,7 @@ public final class SupportPackageRequestProperties {
 
     /**
      * Get the maximumTimestamp property: Start of the timespan of the log collection.
-     *
+     * 
      * @return the maximumTimestamp value.
      */
     public OffsetDateTime maximumTimestamp() {
@@ -66,7 +70,7 @@ public final class SupportPackageRequestProperties {
 
     /**
      * Set the maximumTimestamp property: Start of the timespan of the log collection.
-     *
+     * 
      * @param maximumTimestamp the maximumTimestamp value to set.
      * @return the SupportPackageRequestProperties object itself.
      */
@@ -76,9 +80,10 @@ public final class SupportPackageRequestProperties {
     }
 
     /**
-     * Get the include property: Type of files, which need to be included in the logs This will contain the type of logs
-     * (Default/DefaultWithDumps/None/All/DefaultWithArchived) or a comma separated list of log types that are required.
-     *
+     * Get the include property: Type of files, which need to be included in the logs
+     * This will contain the type of logs (Default/DefaultWithDumps/None/All/DefaultWithArchived)
+     * or a comma separated list of log types that are required.
+     * 
      * @return the include value.
      */
     public String include() {
@@ -86,9 +91,10 @@ public final class SupportPackageRequestProperties {
     }
 
     /**
-     * Set the include property: Type of files, which need to be included in the logs This will contain the type of logs
-     * (Default/DefaultWithDumps/None/All/DefaultWithArchived) or a comma separated list of log types that are required.
-     *
+     * Set the include property: Type of files, which need to be included in the logs
+     * This will contain the type of logs (Default/DefaultWithDumps/None/All/DefaultWithArchived)
+     * or a comma separated list of log types that are required.
+     * 
      * @param include the include value to set.
      * @return the SupportPackageRequestProperties object itself.
      */
@@ -99,7 +105,7 @@ public final class SupportPackageRequestProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

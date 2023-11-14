@@ -7,7 +7,9 @@ package com.azure.resourcemanager.azurekusto.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Current TCP connectivity information from the Kusto cluster to a single endpoint. */
+/**
+ * Current TCP connectivity information from the Kusto cluster to a single endpoint.
+ */
 @Fluent
 public final class EndpointDetail {
     /*
@@ -16,13 +18,21 @@ public final class EndpointDetail {
     @JsonProperty(value = "port")
     private Integer port;
 
-    /** Creates an instance of EndpointDetail class. */
+    /*
+     * The ip address of the endpoint.
+     */
+    @JsonProperty(value = "ipAddress")
+    private String ipAddress;
+
+    /**
+     * Creates an instance of EndpointDetail class.
+     */
     public EndpointDetail() {
     }
 
     /**
      * Get the port property: The port an endpoint is connected to.
-     *
+     * 
      * @return the port value.
      */
     public Integer port() {
@@ -31,7 +41,7 @@ public final class EndpointDetail {
 
     /**
      * Set the port property: The port an endpoint is connected to.
-     *
+     * 
      * @param port the port value to set.
      * @return the EndpointDetail object itself.
      */
@@ -41,8 +51,28 @@ public final class EndpointDetail {
     }
 
     /**
+     * Get the ipAddress property: The ip address of the endpoint.
+     * 
+     * @return the ipAddress value.
+     */
+    public String ipAddress() {
+        return this.ipAddress;
+    }
+
+    /**
+     * Set the ipAddress property: The ip address of the endpoint.
+     * 
+     * @param ipAddress the ipAddress value to set.
+     * @return the EndpointDetail object itself.
+     */
+    public EndpointDetail withIpAddress(String ipAddress) {
+        this.ipAddress = ipAddress;
+        return this;
+    }
+
+    /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

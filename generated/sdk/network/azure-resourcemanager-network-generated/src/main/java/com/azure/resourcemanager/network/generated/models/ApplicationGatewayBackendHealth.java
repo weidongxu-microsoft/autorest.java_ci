@@ -7,11 +7,13 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewayBackendHealthInner;
 import java.util.List;
 
-/** An immutable client-side representation of ApplicationGatewayBackendHealth. */
+/**
+ * An immutable client-side representation of ApplicationGatewayBackendHealth.
+ */
 public interface ApplicationGatewayBackendHealth {
     /**
      * Gets the backendAddressPools property: A list of ApplicationGatewayBackendHealthPool resources.
-     *
+     * 
      * @return the backendAddressPools value.
      */
     List<ApplicationGatewayBackendHealthPool> backendAddressPools();
@@ -19,7 +21,7 @@ public interface ApplicationGatewayBackendHealth {
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewayBackendHealthInner
      * object.
-     *
+     * 
      * @return the inner object.
      */
     ApplicationGatewayBackendHealthInner innerModel();

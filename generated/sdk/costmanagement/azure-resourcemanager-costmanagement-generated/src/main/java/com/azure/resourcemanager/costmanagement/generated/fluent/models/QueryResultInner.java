@@ -12,7 +12,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 import java.util.Map;
 
-/** Result of query. It contains all columns listed under groupings and aggregation. */
+/**
+ * Result of query. It contains all columns listed under groupings and aggregation.
+ */
 @Fluent
 public final class QueryResultInner extends ProxyResource {
     /*
@@ -47,14 +49,16 @@ public final class QueryResultInner extends ProxyResource {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> tags;
 
-    /** Creates an instance of QueryResultInner class. */
+    /**
+     * Creates an instance of QueryResultInner class.
+     */
     public QueryResultInner() {
     }
 
     /**
      * Get the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to
      * determine whether the user is updating the latest version or not.
-     *
+     * 
      * @return the etag value.
      */
     public String etag() {
@@ -64,7 +68,7 @@ public final class QueryResultInner extends ProxyResource {
     /**
      * Set the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to
      * determine whether the user is updating the latest version or not.
-     *
+     * 
      * @param etag the etag value to set.
      * @return the QueryResultInner object itself.
      */
@@ -75,7 +79,7 @@ public final class QueryResultInner extends ProxyResource {
 
     /**
      * Get the location property: Resource location.
-     *
+     * 
      * @return the location value.
      */
     public String location() {
@@ -84,7 +88,7 @@ public final class QueryResultInner extends ProxyResource {
 
     /**
      * Get the sku property: Resource SKU.
-     *
+     * 
      * @return the sku value.
      */
     public String sku() {
@@ -93,7 +97,7 @@ public final class QueryResultInner extends ProxyResource {
 
     /**
      * Get the innerProperties property: The properties property.
-     *
+     * 
      * @return the innerProperties value.
      */
     private QueryProperties innerProperties() {
@@ -102,7 +106,7 @@ public final class QueryResultInner extends ProxyResource {
 
     /**
      * Get the tags property: Resource tags.
-     *
+     * 
      * @return the tags value.
      */
     public Map<String, String> tags() {
@@ -111,7 +115,7 @@ public final class QueryResultInner extends ProxyResource {
 
     /**
      * Get the nextLink property: The link (url) to the next page of results.
-     *
+     * 
      * @return the nextLink value.
      */
     public String nextLink() {
@@ -120,7 +124,7 @@ public final class QueryResultInner extends ProxyResource {
 
     /**
      * Set the nextLink property: The link (url) to the next page of results.
-     *
+     * 
      * @param nextLink the nextLink value to set.
      * @return the QueryResultInner object itself.
      */
@@ -134,7 +138,7 @@ public final class QueryResultInner extends ProxyResource {
 
     /**
      * Get the columns property: Array of columns.
-     *
+     * 
      * @return the columns value.
      */
     public List<QueryColumn> columns() {
@@ -143,7 +147,7 @@ public final class QueryResultInner extends ProxyResource {
 
     /**
      * Set the columns property: Array of columns.
-     *
+     * 
      * @param columns the columns value to set.
      * @return the QueryResultInner object itself.
      */
@@ -157,7 +161,7 @@ public final class QueryResultInner extends ProxyResource {
 
     /**
      * Get the rows property: Array of rows.
-     *
+     * 
      * @return the rows value.
      */
     public List<List<Object>> rows() {
@@ -166,7 +170,7 @@ public final class QueryResultInner extends ProxyResource {
 
     /**
      * Set the rows property: Array of rows.
-     *
+     * 
      * @param rows the rows value to set.
      * @return the QueryResultInner object itself.
      */
@@ -180,7 +184,7 @@ public final class QueryResultInner extends ProxyResource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

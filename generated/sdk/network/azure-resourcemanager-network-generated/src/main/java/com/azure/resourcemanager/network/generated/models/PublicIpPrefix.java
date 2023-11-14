@@ -12,53 +12,55 @@ import com.azure.resourcemanager.network.generated.fluent.models.PublicIpPrefixI
 import java.util.List;
 import java.util.Map;
 
-/** An immutable client-side representation of PublicIpPrefix. */
+/**
+ * An immutable client-side representation of PublicIpPrefix.
+ */
 public interface PublicIpPrefix {
     /**
      * Gets the name property: The name of the resource.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the type property: The type of the resource.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the location property: The geo-location where the resource lives.
-     *
+     * 
      * @return the location value.
      */
     String location();
 
     /**
      * Gets the tags property: Resource tags.
-     *
+     * 
      * @return the tags value.
      */
     Map<String, String> tags();
 
     /**
      * Gets the extendedLocation property: The extended location of the public ip address.
-     *
+     * 
      * @return the extendedLocation value.
      */
     ExtendedLocation extendedLocation();
 
     /**
      * Gets the sku property: The public IP prefix SKU.
-     *
+     * 
      * @return the sku value.
      */
     PublicIpPrefixSku sku();
 
     /**
      * Gets the etag property: A unique read-only string that changes whenever the resource is updated.
-     *
+     * 
      * @return the etag value.
      */
     String etag();
@@ -66,49 +68,49 @@ public interface PublicIpPrefix {
     /**
      * Gets the zones property: A list of availability zones denoting the IP allocated for the resource needs to come
      * from.
-     *
+     * 
      * @return the zones value.
      */
     List<String> zones();
 
     /**
      * Gets the id property: Resource ID.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the publicIpAddressVersion property: The public IP address version.
-     *
+     * 
      * @return the publicIpAddressVersion value.
      */
     IpVersion publicIpAddressVersion();
 
     /**
      * Gets the ipTags property: The list of tags associated with the public IP prefix.
-     *
+     * 
      * @return the ipTags value.
      */
     List<IpTag> ipTags();
 
     /**
      * Gets the prefixLength property: The Length of the Public IP Prefix.
-     *
+     * 
      * @return the prefixLength value.
      */
     Integer prefixLength();
 
     /**
      * Gets the ipPrefix property: The allocated Prefix.
-     *
+     * 
      * @return the ipPrefix value.
      */
     String ipPrefix();
 
     /**
      * Gets the publicIpAddresses property: The list of all referenced PublicIPAddresses.
-     *
+     * 
      * @return the publicIpAddresses value.
      */
     List<ReferencedPublicIpAddress> publicIpAddresses();
@@ -116,86 +118,91 @@ public interface PublicIpPrefix {
     /**
      * Gets the loadBalancerFrontendIpConfiguration property: The reference to load balancer frontend IP configuration
      * associated with the public IP prefix.
-     *
+     * 
      * @return the loadBalancerFrontendIpConfiguration value.
      */
     SubResource loadBalancerFrontendIpConfiguration();
 
     /**
      * Gets the customIpPrefix property: The customIpPrefix that this prefix is associated with.
-     *
+     * 
      * @return the customIpPrefix value.
      */
     SubResource customIpPrefix();
 
     /**
      * Gets the resourceGuid property: The resource GUID property of the public IP prefix resource.
-     *
+     * 
      * @return the resourceGuid value.
      */
     String resourceGuid();
 
     /**
      * Gets the provisioningState property: The provisioning state of the public IP prefix resource.
-     *
+     * 
      * @return the provisioningState value.
      */
     ProvisioningState provisioningState();
 
     /**
      * Gets the natGateway property: NatGateway of Public IP Prefix.
-     *
+     * 
      * @return the natGateway value.
      */
     NatGateway natGateway();
 
     /**
      * Gets the region of the resource.
-     *
+     * 
      * @return the region of the resource.
      */
     Region region();
 
     /**
      * Gets the name of the resource region.
-     *
+     * 
      * @return the name of the resource region.
      */
     String regionName();
 
     /**
      * Gets the name of the resource group.
-     *
+     * 
      * @return the name of the resource group.
      */
     String resourceGroupName();
 
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.PublicIpPrefixInner object.
-     *
+     * 
      * @return the inner object.
      */
     PublicIpPrefixInner innerModel();
 
-    /** The entirety of the PublicIpPrefix definition. */
-    interface Definition
-        extends DefinitionStages.Blank,
-            DefinitionStages.WithLocation,
-            DefinitionStages.WithResourceGroup,
-            DefinitionStages.WithCreate {
+    /**
+     * The entirety of the PublicIpPrefix definition.
+     */
+    interface Definition extends DefinitionStages.Blank, DefinitionStages.WithLocation,
+        DefinitionStages.WithResourceGroup, DefinitionStages.WithCreate {
     }
 
-    /** The PublicIpPrefix definition stages. */
+    /**
+     * The PublicIpPrefix definition stages.
+     */
     interface DefinitionStages {
-        /** The first stage of the PublicIpPrefix definition. */
+        /**
+         * The first stage of the PublicIpPrefix definition.
+         */
         interface Blank extends WithLocation {
         }
 
-        /** The stage of the PublicIpPrefix definition allowing to specify location. */
+        /**
+         * The stage of the PublicIpPrefix definition allowing to specify location.
+         */
         interface WithLocation {
             /**
              * Specifies the region for the resource.
-             *
+             * 
              * @param location The geo-location where the resource lives.
              * @return the next definition stage.
              */
@@ -203,18 +210,20 @@ public interface PublicIpPrefix {
 
             /**
              * Specifies the region for the resource.
-             *
+             * 
              * @param location The geo-location where the resource lives.
              * @return the next definition stage.
              */
             WithResourceGroup withRegion(String location);
         }
 
-        /** The stage of the PublicIpPrefix definition allowing to specify parent resource. */
+        /**
+         * The stage of the PublicIpPrefix definition allowing to specify parent resource.
+         */
         interface WithResourceGroup {
             /**
              * Specifies resourceGroupName.
-             *
+             * 
              * @param resourceGroupName The name of the resource group.
              * @return the next definition stage.
              */
@@ -226,125 +235,137 @@ public interface PublicIpPrefix {
          * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
-            extends DefinitionStages.WithTags,
-                DefinitionStages.WithExtendedLocation,
-                DefinitionStages.WithSku,
-                DefinitionStages.WithZones,
-                DefinitionStages.WithPublicIpAddressVersion,
-                DefinitionStages.WithIpTags,
-                DefinitionStages.WithPrefixLength,
-                DefinitionStages.WithCustomIpPrefix,
-                DefinitionStages.WithNatGateway {
+            extends DefinitionStages.WithTags, DefinitionStages.WithExtendedLocation, DefinitionStages.WithSku,
+            DefinitionStages.WithZones, DefinitionStages.WithPublicIpAddressVersion, DefinitionStages.WithIpTags,
+            DefinitionStages.WithPrefixLength, DefinitionStages.WithCustomIpPrefix, DefinitionStages.WithNatGateway {
             /**
              * Executes the create request.
-             *
+             * 
              * @return the created resource.
              */
             PublicIpPrefix create();
 
             /**
              * Executes the create request.
-             *
+             * 
              * @param context The context to associate with this operation.
              * @return the created resource.
              */
             PublicIpPrefix create(Context context);
         }
 
-        /** The stage of the PublicIpPrefix definition allowing to specify tags. */
+        /**
+         * The stage of the PublicIpPrefix definition allowing to specify tags.
+         */
         interface WithTags {
             /**
              * Specifies the tags property: Resource tags..
-             *
+             * 
              * @param tags Resource tags.
              * @return the next definition stage.
              */
             WithCreate withTags(Map<String, String> tags);
         }
 
-        /** The stage of the PublicIpPrefix definition allowing to specify extendedLocation. */
+        /**
+         * The stage of the PublicIpPrefix definition allowing to specify extendedLocation.
+         */
         interface WithExtendedLocation {
             /**
              * Specifies the extendedLocation property: The extended location of the public ip address..
-             *
+             * 
              * @param extendedLocation The extended location of the public ip address.
              * @return the next definition stage.
              */
             WithCreate withExtendedLocation(ExtendedLocation extendedLocation);
         }
 
-        /** The stage of the PublicIpPrefix definition allowing to specify sku. */
+        /**
+         * The stage of the PublicIpPrefix definition allowing to specify sku.
+         */
         interface WithSku {
             /**
              * Specifies the sku property: The public IP prefix SKU..
-             *
+             * 
              * @param sku The public IP prefix SKU.
              * @return the next definition stage.
              */
             WithCreate withSku(PublicIpPrefixSku sku);
         }
 
-        /** The stage of the PublicIpPrefix definition allowing to specify zones. */
+        /**
+         * The stage of the PublicIpPrefix definition allowing to specify zones.
+         */
         interface WithZones {
             /**
              * Specifies the zones property: A list of availability zones denoting the IP allocated for the resource
              * needs to come from..
-             *
+             * 
              * @param zones A list of availability zones denoting the IP allocated for the resource needs to come from.
              * @return the next definition stage.
              */
             WithCreate withZones(List<String> zones);
         }
 
-        /** The stage of the PublicIpPrefix definition allowing to specify publicIpAddressVersion. */
+        /**
+         * The stage of the PublicIpPrefix definition allowing to specify publicIpAddressVersion.
+         */
         interface WithPublicIpAddressVersion {
             /**
              * Specifies the publicIpAddressVersion property: The public IP address version..
-             *
+             * 
              * @param publicIpAddressVersion The public IP address version.
              * @return the next definition stage.
              */
             WithCreate withPublicIpAddressVersion(IpVersion publicIpAddressVersion);
         }
 
-        /** The stage of the PublicIpPrefix definition allowing to specify ipTags. */
+        /**
+         * The stage of the PublicIpPrefix definition allowing to specify ipTags.
+         */
         interface WithIpTags {
             /**
              * Specifies the ipTags property: The list of tags associated with the public IP prefix..
-             *
+             * 
              * @param ipTags The list of tags associated with the public IP prefix.
              * @return the next definition stage.
              */
             WithCreate withIpTags(List<IpTag> ipTags);
         }
 
-        /** The stage of the PublicIpPrefix definition allowing to specify prefixLength. */
+        /**
+         * The stage of the PublicIpPrefix definition allowing to specify prefixLength.
+         */
         interface WithPrefixLength {
             /**
              * Specifies the prefixLength property: The Length of the Public IP Prefix..
-             *
+             * 
              * @param prefixLength The Length of the Public IP Prefix.
              * @return the next definition stage.
              */
             WithCreate withPrefixLength(Integer prefixLength);
         }
 
-        /** The stage of the PublicIpPrefix definition allowing to specify customIpPrefix. */
+        /**
+         * The stage of the PublicIpPrefix definition allowing to specify customIpPrefix.
+         */
         interface WithCustomIpPrefix {
             /**
              * Specifies the customIpPrefix property: The customIpPrefix that this prefix is associated with..
-             *
+             * 
              * @param customIpPrefix The customIpPrefix that this prefix is associated with.
              * @return the next definition stage.
              */
             WithCreate withCustomIpPrefix(SubResource customIpPrefix);
         }
 
-        /** The stage of the PublicIpPrefix definition allowing to specify natGateway. */
+        /**
+         * The stage of the PublicIpPrefix definition allowing to specify natGateway.
+         */
         interface WithNatGateway {
             /**
              * Specifies the natGateway property: NatGateway of Public IP Prefix..
-             *
+             * 
              * @param natGateway NatGateway of Public IP Prefix.
              * @return the next definition stage.
              */
@@ -354,36 +375,42 @@ public interface PublicIpPrefix {
 
     /**
      * Begins update for the PublicIpPrefix resource.
-     *
+     * 
      * @return the stage of resource update.
      */
     PublicIpPrefix.Update update();
 
-    /** The template for PublicIpPrefix update. */
+    /**
+     * The template for PublicIpPrefix update.
+     */
     interface Update extends UpdateStages.WithTags {
         /**
          * Executes the update request.
-         *
+         * 
          * @return the updated resource.
          */
         PublicIpPrefix apply();
 
         /**
          * Executes the update request.
-         *
+         * 
          * @param context The context to associate with this operation.
          * @return the updated resource.
          */
         PublicIpPrefix apply(Context context);
     }
 
-    /** The PublicIpPrefix update stages. */
+    /**
+     * The PublicIpPrefix update stages.
+     */
     interface UpdateStages {
-        /** The stage of the PublicIpPrefix update allowing to specify tags. */
+        /**
+         * The stage of the PublicIpPrefix update allowing to specify tags.
+         */
         interface WithTags {
             /**
              * Specifies the tags property: Resource tags..
-             *
+             * 
              * @param tags Resource tags.
              * @return the next definition stage.
              */
@@ -393,14 +420,14 @@ public interface PublicIpPrefix {
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @return the refreshed resource.
      */
     PublicIpPrefix refresh();
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @return the refreshed resource.
      */

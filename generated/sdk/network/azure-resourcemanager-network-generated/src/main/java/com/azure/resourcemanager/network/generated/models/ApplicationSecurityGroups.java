@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of ApplicationSecurityGroups. */
+/**
+ * Resource collection API of ApplicationSecurityGroups.
+ */
 public interface ApplicationSecurityGroups {
     /**
      * Deletes the specified application security group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param applicationSecurityGroupName The name of the application security group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -23,7 +25,7 @@ public interface ApplicationSecurityGroups {
 
     /**
      * Deletes the specified application security group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param applicationSecurityGroupName The name of the application security group.
      * @param context The context to associate with this operation.
@@ -35,7 +37,7 @@ public interface ApplicationSecurityGroups {
 
     /**
      * Gets information about the specified application security group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param applicationSecurityGroupName The name of the application security group.
      * @param context The context to associate with this operation.
@@ -44,12 +46,12 @@ public interface ApplicationSecurityGroups {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return information about the specified application security group along with {@link Response}.
      */
-    Response<ApplicationSecurityGroup> getByResourceGroupWithResponse(
-        String resourceGroupName, String applicationSecurityGroupName, Context context);
+    Response<ApplicationSecurityGroup> getByResourceGroupWithResponse(String resourceGroupName,
+        String applicationSecurityGroupName, Context context);
 
     /**
      * Gets information about the specified application security group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param applicationSecurityGroupName The name of the application security group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -61,7 +63,7 @@ public interface ApplicationSecurityGroups {
 
     /**
      * Gets all application security groups in a subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all application security groups in a subscription as paginated response with {@link PagedIterable}.
@@ -70,7 +72,7 @@ public interface ApplicationSecurityGroups {
 
     /**
      * Gets all application security groups in a subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -81,7 +83,7 @@ public interface ApplicationSecurityGroups {
 
     /**
      * Gets all the application security groups in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -92,7 +94,7 @@ public interface ApplicationSecurityGroups {
 
     /**
      * Gets all the application security groups in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -104,7 +106,7 @@ public interface ApplicationSecurityGroups {
 
     /**
      * Gets information about the specified application security group.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -115,7 +117,7 @@ public interface ApplicationSecurityGroups {
 
     /**
      * Gets information about the specified application security group.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -127,7 +129,7 @@ public interface ApplicationSecurityGroups {
 
     /**
      * Deletes the specified application security group.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -137,7 +139,7 @@ public interface ApplicationSecurityGroups {
 
     /**
      * Deletes the specified application security group.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -148,7 +150,7 @@ public interface ApplicationSecurityGroups {
 
     /**
      * Begins definition for a new ApplicationSecurityGroup resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new ApplicationSecurityGroup definition.
      */

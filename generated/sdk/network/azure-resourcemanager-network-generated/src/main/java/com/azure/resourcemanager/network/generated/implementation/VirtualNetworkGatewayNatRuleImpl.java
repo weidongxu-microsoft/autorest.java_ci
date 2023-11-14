@@ -14,10 +14,8 @@ import com.azure.resourcemanager.network.generated.models.VpnNatRuleType;
 import java.util.Collections;
 import java.util.List;
 
-public final class VirtualNetworkGatewayNatRuleImpl
-    implements VirtualNetworkGatewayNatRule,
-        VirtualNetworkGatewayNatRule.Definition,
-        VirtualNetworkGatewayNatRule.Update {
+public final class VirtualNetworkGatewayNatRuleImpl implements VirtualNetworkGatewayNatRule,
+    VirtualNetworkGatewayNatRule.Definition, VirtualNetworkGatewayNatRule.Update {
     private VirtualNetworkGatewayNatRuleInner innerObject;
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
@@ -90,34 +88,27 @@ public final class VirtualNetworkGatewayNatRuleImpl
 
     private String natRuleName;
 
-    public VirtualNetworkGatewayNatRuleImpl withExistingVirtualNetworkGateway(
-        String resourceGroupName, String virtualNetworkGatewayName) {
+    public VirtualNetworkGatewayNatRuleImpl withExistingVirtualNetworkGateway(String resourceGroupName,
+        String virtualNetworkGatewayName) {
         this.resourceGroupName = resourceGroupName;
         this.virtualNetworkGatewayName = virtualNetworkGatewayName;
         return this;
     }
 
     public VirtualNetworkGatewayNatRule create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualNetworkGatewayNatRules()
-                .createOrUpdate(
-                    resourceGroupName, virtualNetworkGatewayName, natRuleName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getVirtualNetworkGatewayNatRules()
+            .createOrUpdate(resourceGroupName, virtualNetworkGatewayName, natRuleName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public VirtualNetworkGatewayNatRule create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualNetworkGatewayNatRules()
-                .createOrUpdate(resourceGroupName, virtualNetworkGatewayName, natRuleName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getVirtualNetworkGatewayNatRules()
+            .createOrUpdate(resourceGroupName, virtualNetworkGatewayName, natRuleName, this.innerModel(), context);
         return this;
     }
 
-    VirtualNetworkGatewayNatRuleImpl(
-        String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    VirtualNetworkGatewayNatRuleImpl(String name,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new VirtualNetworkGatewayNatRuleInner();
         this.serviceManager = serviceManager;
         this.natRuleName = name;
@@ -128,26 +119,18 @@ public final class VirtualNetworkGatewayNatRuleImpl
     }
 
     public VirtualNetworkGatewayNatRule apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualNetworkGatewayNatRules()
-                .createOrUpdate(
-                    resourceGroupName, virtualNetworkGatewayName, natRuleName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getVirtualNetworkGatewayNatRules()
+            .createOrUpdate(resourceGroupName, virtualNetworkGatewayName, natRuleName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public VirtualNetworkGatewayNatRule apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualNetworkGatewayNatRules()
-                .createOrUpdate(resourceGroupName, virtualNetworkGatewayName, natRuleName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getVirtualNetworkGatewayNatRules()
+            .createOrUpdate(resourceGroupName, virtualNetworkGatewayName, natRuleName, this.innerModel(), context);
         return this;
     }
 
-    VirtualNetworkGatewayNatRuleImpl(
-        VirtualNetworkGatewayNatRuleInner innerObject,
+    VirtualNetworkGatewayNatRuleImpl(VirtualNetworkGatewayNatRuleInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -157,22 +140,14 @@ public final class VirtualNetworkGatewayNatRuleImpl
     }
 
     public VirtualNetworkGatewayNatRule refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualNetworkGatewayNatRules()
-                .getWithResponse(resourceGroupName, virtualNetworkGatewayName, natRuleName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getVirtualNetworkGatewayNatRules()
+            .getWithResponse(resourceGroupName, virtualNetworkGatewayName, natRuleName, Context.NONE).getValue();
         return this;
     }
 
     public VirtualNetworkGatewayNatRule refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualNetworkGatewayNatRules()
-                .getWithResponse(resourceGroupName, virtualNetworkGatewayName, natRuleName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getVirtualNetworkGatewayNatRules()
+            .getWithResponse(resourceGroupName, virtualNetworkGatewayName, natRuleName, context).getValue();
         return this;
     }
 

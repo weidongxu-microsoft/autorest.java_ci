@@ -28,8 +28,7 @@ public final class PrivateLinkServicesImpl implements PrivateLinkServices {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public PrivateLinkServicesImpl(
-        PrivateLinkServicesClient innerClient,
+    public PrivateLinkServicesImpl(PrivateLinkServicesClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -43,15 +42,12 @@ public final class PrivateLinkServicesImpl implements PrivateLinkServices {
         this.serviceClient().delete(resourceGroupName, serviceName, context);
     }
 
-    public Response<PrivateLinkService> getByResourceGroupWithResponse(
-        String resourceGroupName, String serviceName, String expand, Context context) {
-        Response<PrivateLinkServiceInner> inner =
-            this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, serviceName, expand, context);
+    public Response<PrivateLinkService> getByResourceGroupWithResponse(String resourceGroupName, String serviceName,
+        String expand, Context context) {
+        Response<PrivateLinkServiceInner> inner
+            = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, serviceName, expand, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new PrivateLinkServiceImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -73,8 +69,8 @@ public final class PrivateLinkServicesImpl implements PrivateLinkServices {
     }
 
     public PagedIterable<PrivateLinkService> listByResourceGroup(String resourceGroupName, Context context) {
-        PagedIterable<PrivateLinkServiceInner> inner =
-            this.serviceClient().listByResourceGroup(resourceGroupName, context);
+        PagedIterable<PrivateLinkServiceInner> inner
+            = this.serviceClient().listByResourceGroup(resourceGroupName, context);
         return Utils.mapPage(inner, inner1 -> new PrivateLinkServiceImpl(inner1, this.manager()));
     }
 
@@ -88,28 +84,22 @@ public final class PrivateLinkServicesImpl implements PrivateLinkServices {
         return Utils.mapPage(inner, inner1 -> new PrivateLinkServiceImpl(inner1, this.manager()));
     }
 
-    public Response<PrivateEndpointConnection> getPrivateEndpointConnectionWithResponse(
-        String resourceGroupName, String serviceName, String peConnectionName, String expand, Context context) {
-        Response<PrivateEndpointConnectionInner> inner =
-            this
-                .serviceClient()
-                .getPrivateEndpointConnectionWithResponse(
-                    resourceGroupName, serviceName, peConnectionName, expand, context);
+    public Response<PrivateEndpointConnection> getPrivateEndpointConnectionWithResponse(String resourceGroupName,
+        String serviceName, String peConnectionName, String expand, Context context) {
+        Response<PrivateEndpointConnectionInner> inner = this.serviceClient().getPrivateEndpointConnectionWithResponse(
+            resourceGroupName, serviceName, peConnectionName, expand, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new PrivateEndpointConnectionImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public PrivateEndpointConnection getPrivateEndpointConnection(
-        String resourceGroupName, String serviceName, String peConnectionName) {
-        PrivateEndpointConnectionInner inner =
-            this.serviceClient().getPrivateEndpointConnection(resourceGroupName, serviceName, peConnectionName);
+    public PrivateEndpointConnection getPrivateEndpointConnection(String resourceGroupName, String serviceName,
+        String peConnectionName) {
+        PrivateEndpointConnectionInner inner
+            = this.serviceClient().getPrivateEndpointConnection(resourceGroupName, serviceName, peConnectionName);
         if (inner != null) {
             return new PrivateEndpointConnectionImpl(inner, this.manager());
         } else {
@@ -117,37 +107,23 @@ public final class PrivateLinkServicesImpl implements PrivateLinkServices {
         }
     }
 
-    public Response<PrivateEndpointConnection> updatePrivateEndpointConnectionWithResponse(
-        String resourceGroupName,
-        String serviceName,
-        String peConnectionName,
-        PrivateEndpointConnectionInner parameters,
-        Context context) {
-        Response<PrivateEndpointConnectionInner> inner =
-            this
-                .serviceClient()
-                .updatePrivateEndpointConnectionWithResponse(
-                    resourceGroupName, serviceName, peConnectionName, parameters, context);
+    public Response<PrivateEndpointConnection> updatePrivateEndpointConnectionWithResponse(String resourceGroupName,
+        String serviceName, String peConnectionName, PrivateEndpointConnectionInner parameters, Context context) {
+        Response<PrivateEndpointConnectionInner> inner
+            = this.serviceClient().updatePrivateEndpointConnectionWithResponse(resourceGroupName, serviceName,
+                peConnectionName, parameters, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new PrivateEndpointConnectionImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public PrivateEndpointConnection updatePrivateEndpointConnection(
-        String resourceGroupName,
-        String serviceName,
-        String peConnectionName,
-        PrivateEndpointConnectionInner parameters) {
-        PrivateEndpointConnectionInner inner =
-            this
-                .serviceClient()
-                .updatePrivateEndpointConnection(resourceGroupName, serviceName, peConnectionName, parameters);
+    public PrivateEndpointConnection updatePrivateEndpointConnection(String resourceGroupName, String serviceName,
+        String peConnectionName, PrivateEndpointConnectionInner parameters) {
+        PrivateEndpointConnectionInner inner = this.serviceClient().updatePrivateEndpointConnection(resourceGroupName,
+            serviceName, peConnectionName, parameters);
         if (inner != null) {
             return new PrivateEndpointConnectionImpl(inner, this.manager());
         } else {
@@ -159,29 +135,29 @@ public final class PrivateLinkServicesImpl implements PrivateLinkServices {
         this.serviceClient().deletePrivateEndpointConnection(resourceGroupName, serviceName, peConnectionName);
     }
 
-    public void deletePrivateEndpointConnection(
-        String resourceGroupName, String serviceName, String peConnectionName, Context context) {
+    public void deletePrivateEndpointConnection(String resourceGroupName, String serviceName, String peConnectionName,
+        Context context) {
         this.serviceClient().deletePrivateEndpointConnection(resourceGroupName, serviceName, peConnectionName, context);
     }
 
-    public PagedIterable<PrivateEndpointConnection> listPrivateEndpointConnections(
-        String resourceGroupName, String serviceName) {
-        PagedIterable<PrivateEndpointConnectionInner> inner =
-            this.serviceClient().listPrivateEndpointConnections(resourceGroupName, serviceName);
+    public PagedIterable<PrivateEndpointConnection> listPrivateEndpointConnections(String resourceGroupName,
+        String serviceName) {
+        PagedIterable<PrivateEndpointConnectionInner> inner
+            = this.serviceClient().listPrivateEndpointConnections(resourceGroupName, serviceName);
         return Utils.mapPage(inner, inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<PrivateEndpointConnection> listPrivateEndpointConnections(
-        String resourceGroupName, String serviceName, Context context) {
-        PagedIterable<PrivateEndpointConnectionInner> inner =
-            this.serviceClient().listPrivateEndpointConnections(resourceGroupName, serviceName, context);
+    public PagedIterable<PrivateEndpointConnection> listPrivateEndpointConnections(String resourceGroupName,
+        String serviceName, Context context) {
+        PagedIterable<PrivateEndpointConnectionInner> inner
+            = this.serviceClient().listPrivateEndpointConnections(resourceGroupName, serviceName, context);
         return Utils.mapPage(inner, inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager()));
     }
 
-    public PrivateLinkServiceVisibility checkPrivateLinkServiceVisibility(
-        String location, CheckPrivateLinkServiceVisibilityRequest parameters) {
-        PrivateLinkServiceVisibilityInner inner =
-            this.serviceClient().checkPrivateLinkServiceVisibility(location, parameters);
+    public PrivateLinkServiceVisibility checkPrivateLinkServiceVisibility(String location,
+        CheckPrivateLinkServiceVisibilityRequest parameters) {
+        PrivateLinkServiceVisibilityInner inner
+            = this.serviceClient().checkPrivateLinkServiceVisibility(location, parameters);
         if (inner != null) {
             return new PrivateLinkServiceVisibilityImpl(inner, this.manager());
         } else {
@@ -189,10 +165,10 @@ public final class PrivateLinkServicesImpl implements PrivateLinkServices {
         }
     }
 
-    public PrivateLinkServiceVisibility checkPrivateLinkServiceVisibility(
-        String location, CheckPrivateLinkServiceVisibilityRequest parameters, Context context) {
-        PrivateLinkServiceVisibilityInner inner =
-            this.serviceClient().checkPrivateLinkServiceVisibility(location, parameters, context);
+    public PrivateLinkServiceVisibility checkPrivateLinkServiceVisibility(String location,
+        CheckPrivateLinkServiceVisibilityRequest parameters, Context context) {
+        PrivateLinkServiceVisibilityInner inner
+            = this.serviceClient().checkPrivateLinkServiceVisibility(location, parameters, context);
         if (inner != null) {
             return new PrivateLinkServiceVisibilityImpl(inner, this.manager());
         } else {
@@ -200,12 +176,10 @@ public final class PrivateLinkServicesImpl implements PrivateLinkServices {
         }
     }
 
-    public PrivateLinkServiceVisibility checkPrivateLinkServiceVisibilityByResourceGroup(
-        String location, String resourceGroupName, CheckPrivateLinkServiceVisibilityRequest parameters) {
-        PrivateLinkServiceVisibilityInner inner =
-            this
-                .serviceClient()
-                .checkPrivateLinkServiceVisibilityByResourceGroup(location, resourceGroupName, parameters);
+    public PrivateLinkServiceVisibility checkPrivateLinkServiceVisibilityByResourceGroup(String location,
+        String resourceGroupName, CheckPrivateLinkServiceVisibilityRequest parameters) {
+        PrivateLinkServiceVisibilityInner inner = this.serviceClient()
+            .checkPrivateLinkServiceVisibilityByResourceGroup(location, resourceGroupName, parameters);
         if (inner != null) {
             return new PrivateLinkServiceVisibilityImpl(inner, this.manager());
         } else {
@@ -213,15 +187,10 @@ public final class PrivateLinkServicesImpl implements PrivateLinkServices {
         }
     }
 
-    public PrivateLinkServiceVisibility checkPrivateLinkServiceVisibilityByResourceGroup(
-        String location,
-        String resourceGroupName,
-        CheckPrivateLinkServiceVisibilityRequest parameters,
-        Context context) {
-        PrivateLinkServiceVisibilityInner inner =
-            this
-                .serviceClient()
-                .checkPrivateLinkServiceVisibilityByResourceGroup(location, resourceGroupName, parameters, context);
+    public PrivateLinkServiceVisibility checkPrivateLinkServiceVisibilityByResourceGroup(String location,
+        String resourceGroupName, CheckPrivateLinkServiceVisibilityRequest parameters, Context context) {
+        PrivateLinkServiceVisibilityInner inner = this.serviceClient()
+            .checkPrivateLinkServiceVisibilityByResourceGroup(location, resourceGroupName, parameters, context);
         if (inner != null) {
             return new PrivateLinkServiceVisibilityImpl(inner, this.manager());
         } else {
@@ -230,75 +199,58 @@ public final class PrivateLinkServicesImpl implements PrivateLinkServices {
     }
 
     public PagedIterable<AutoApprovedPrivateLinkService> listAutoApprovedPrivateLinkServices(String location) {
-        PagedIterable<AutoApprovedPrivateLinkServiceInner> inner =
-            this.serviceClient().listAutoApprovedPrivateLinkServices(location);
+        PagedIterable<AutoApprovedPrivateLinkServiceInner> inner
+            = this.serviceClient().listAutoApprovedPrivateLinkServices(location);
         return Utils.mapPage(inner, inner1 -> new AutoApprovedPrivateLinkServiceImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<AutoApprovedPrivateLinkService> listAutoApprovedPrivateLinkServices(
-        String location, Context context) {
-        PagedIterable<AutoApprovedPrivateLinkServiceInner> inner =
-            this.serviceClient().listAutoApprovedPrivateLinkServices(location, context);
+    public PagedIterable<AutoApprovedPrivateLinkService> listAutoApprovedPrivateLinkServices(String location,
+        Context context) {
+        PagedIterable<AutoApprovedPrivateLinkServiceInner> inner
+            = this.serviceClient().listAutoApprovedPrivateLinkServices(location, context);
         return Utils.mapPage(inner, inner1 -> new AutoApprovedPrivateLinkServiceImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<AutoApprovedPrivateLinkService> listAutoApprovedPrivateLinkServicesByResourceGroup(
-        String location, String resourceGroupName) {
-        PagedIterable<AutoApprovedPrivateLinkServiceInner> inner =
-            this.serviceClient().listAutoApprovedPrivateLinkServicesByResourceGroup(location, resourceGroupName);
+    public PagedIterable<AutoApprovedPrivateLinkService>
+        listAutoApprovedPrivateLinkServicesByResourceGroup(String location, String resourceGroupName) {
+        PagedIterable<AutoApprovedPrivateLinkServiceInner> inner
+            = this.serviceClient().listAutoApprovedPrivateLinkServicesByResourceGroup(location, resourceGroupName);
         return Utils.mapPage(inner, inner1 -> new AutoApprovedPrivateLinkServiceImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<AutoApprovedPrivateLinkService> listAutoApprovedPrivateLinkServicesByResourceGroup(
-        String location, String resourceGroupName, Context context) {
-        PagedIterable<AutoApprovedPrivateLinkServiceInner> inner =
-            this
-                .serviceClient()
-                .listAutoApprovedPrivateLinkServicesByResourceGroup(location, resourceGroupName, context);
+    public PagedIterable<AutoApprovedPrivateLinkService>
+        listAutoApprovedPrivateLinkServicesByResourceGroup(String location, String resourceGroupName, Context context) {
+        PagedIterable<AutoApprovedPrivateLinkServiceInner> inner = this.serviceClient()
+            .listAutoApprovedPrivateLinkServicesByResourceGroup(location, resourceGroupName, context);
         return Utils.mapPage(inner, inner1 -> new AutoApprovedPrivateLinkServiceImpl(inner1, this.manager()));
     }
 
     public PrivateLinkService getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String serviceName = Utils.getValueFromIdByName(id, "privateLinkServices");
         if (serviceName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'privateLinkServices'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'privateLinkServices'.", id)));
         }
         String localExpand = null;
-        return this
-            .getByResourceGroupWithResponse(resourceGroupName, serviceName, localExpand, Context.NONE)
+        return this.getByResourceGroupWithResponse(resourceGroupName, serviceName, localExpand, Context.NONE)
             .getValue();
     }
 
     public Response<PrivateLinkService> getByIdWithResponse(String id, String expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String serviceName = Utils.getValueFromIdByName(id, "privateLinkServices");
         if (serviceName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'privateLinkServices'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'privateLinkServices'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, serviceName, expand, context);
     }
@@ -306,20 +258,13 @@ public final class PrivateLinkServicesImpl implements PrivateLinkServices {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String serviceName = Utils.getValueFromIdByName(id, "privateLinkServices");
         if (serviceName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'privateLinkServices'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'privateLinkServices'.", id)));
         }
         this.delete(resourceGroupName, serviceName, Context.NONE);
     }
@@ -327,20 +272,13 @@ public final class PrivateLinkServicesImpl implements PrivateLinkServices {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String serviceName = Utils.getValueFromIdByName(id, "privateLinkServices");
         if (serviceName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'privateLinkServices'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'privateLinkServices'.", id)));
         }
         this.delete(resourceGroupName, serviceName, context);
     }

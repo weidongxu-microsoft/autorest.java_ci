@@ -21,8 +21,7 @@ public final class DataPolicyManifestsImpl implements DataPolicyManifests {
 
     private final com.azure.resourcemanager.policy.generated.PolicyManager serviceManager;
 
-    public DataPolicyManifestsImpl(
-        DataPolicyManifestsClient innerClient,
+    public DataPolicyManifestsImpl(DataPolicyManifestsClient innerClient,
         com.azure.resourcemanager.policy.generated.PolicyManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -31,10 +30,7 @@ public final class DataPolicyManifestsImpl implements DataPolicyManifests {
     public Response<DataPolicyManifest> getByPolicyModeWithResponse(String policyMode, Context context) {
         Response<DataPolicyManifestInner> inner = this.serviceClient().getByPolicyModeWithResponse(policyMode, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DataPolicyManifestImpl(inner.getValue(), this.manager()));
         } else {
             return null;

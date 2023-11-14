@@ -9,7 +9,9 @@ import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** An object that defines the blob inventory rule. */
+/**
+ * An object that defines the blob inventory rule.
+ */
 @Fluent
 public final class BlobInventoryPolicyDefinition {
     /*
@@ -58,13 +60,15 @@ public final class BlobInventoryPolicyDefinition {
     @JsonProperty(value = "schemaFields", required = true)
     private List<String> schemaFields;
 
-    /** Creates an instance of BlobInventoryPolicyDefinition class. */
+    /**
+     * Creates an instance of BlobInventoryPolicyDefinition class.
+     */
     public BlobInventoryPolicyDefinition() {
     }
 
     /**
      * Get the filters property: An object that defines the filter set.
-     *
+     * 
      * @return the filters value.
      */
     public BlobInventoryPolicyFilter filters() {
@@ -73,7 +77,7 @@ public final class BlobInventoryPolicyDefinition {
 
     /**
      * Set the filters property: An object that defines the filter set.
-     *
+     * 
      * @param filters the filters value to set.
      * @return the BlobInventoryPolicyDefinition object itself.
      */
@@ -84,7 +88,7 @@ public final class BlobInventoryPolicyDefinition {
 
     /**
      * Get the format property: This is a required field, it specifies the format for the inventory files.
-     *
+     * 
      * @return the format value.
      */
     public Format format() {
@@ -93,7 +97,7 @@ public final class BlobInventoryPolicyDefinition {
 
     /**
      * Set the format property: This is a required field, it specifies the format for the inventory files.
-     *
+     * 
      * @param format the format value to set.
      * @return the BlobInventoryPolicyDefinition object itself.
      */
@@ -104,7 +108,7 @@ public final class BlobInventoryPolicyDefinition {
 
     /**
      * Get the schedule property: This is a required field. This field is used to schedule an inventory formation.
-     *
+     * 
      * @return the schedule value.
      */
     public Schedule schedule() {
@@ -113,7 +117,7 @@ public final class BlobInventoryPolicyDefinition {
 
     /**
      * Set the schedule property: This is a required field. This field is used to schedule an inventory formation.
-     *
+     * 
      * @param schedule the schedule value to set.
      * @return the BlobInventoryPolicyDefinition object itself.
      */
@@ -125,7 +129,7 @@ public final class BlobInventoryPolicyDefinition {
     /**
      * Get the objectType property: This is a required field. This field specifies the scope of the inventory created
      * either at the blob or container level.
-     *
+     * 
      * @return the objectType value.
      */
     public ObjectType objectType() {
@@ -135,7 +139,7 @@ public final class BlobInventoryPolicyDefinition {
     /**
      * Set the objectType property: This is a required field. This field specifies the scope of the inventory created
      * either at the blob or container level.
-     *
+     * 
      * @param objectType the objectType value to set.
      * @return the BlobInventoryPolicyDefinition object itself.
      */
@@ -155,13 +159,13 @@ public final class BlobInventoryPolicyDefinition {
      * ImmutabilityPolicyUntilDate, ImmutabilityPolicyMode, LegalHold, CopyId, CopyStatus, CopySource, CopyProgress,
      * CopyCompletionTime, CopyStatusDescription, CustomerProvidedKeySha256, RehydratePriority, ArchiveStatus,
      * XmsBlobSequenceNumber, EncryptionScope, IncrementalCopy, TagCount'. For Blob object type schema field value
-     * 'DeletedTime' is applicable only for Hns enabled accounts. The valid values for 'Container' definition.objectType
-     * include 'Name, Last-Modified, Metadata, LeaseStatus, LeaseState, LeaseDuration, PublicAccess,
-     * HasImmutabilityPolicy, HasLegalHold, Etag, DefaultEncryptionScope, DenyEncryptionScopeOverride,
+     * 'DeletedTime' is applicable only for Hns enabled accounts. The valid values for 'Container'
+     * definition.objectType include 'Name, Last-Modified, Metadata, LeaseStatus, LeaseState, LeaseDuration,
+     * PublicAccess, HasImmutabilityPolicy, HasLegalHold, Etag, DefaultEncryptionScope, DenyEncryptionScopeOverride,
      * ImmutableStorageWithVersioningEnabled, Deleted, Version, DeletedTime, RemainingRetentionDays'. Schema field
      * values 'Expiry-Time, hdi_isfolder, Owner, Group, Permissions, Acl, DeletionId' are valid only for Hns enabled
      * accounts.Schema field values 'Tags, TagCount' are only valid for Non-Hns accounts.
-     *
+     * 
      * @return the schemaFields value.
      */
     public List<String> schemaFields() {
@@ -179,13 +183,13 @@ public final class BlobInventoryPolicyDefinition {
      * ImmutabilityPolicyUntilDate, ImmutabilityPolicyMode, LegalHold, CopyId, CopyStatus, CopySource, CopyProgress,
      * CopyCompletionTime, CopyStatusDescription, CustomerProvidedKeySha256, RehydratePriority, ArchiveStatus,
      * XmsBlobSequenceNumber, EncryptionScope, IncrementalCopy, TagCount'. For Blob object type schema field value
-     * 'DeletedTime' is applicable only for Hns enabled accounts. The valid values for 'Container' definition.objectType
-     * include 'Name, Last-Modified, Metadata, LeaseStatus, LeaseState, LeaseDuration, PublicAccess,
-     * HasImmutabilityPolicy, HasLegalHold, Etag, DefaultEncryptionScope, DenyEncryptionScopeOverride,
+     * 'DeletedTime' is applicable only for Hns enabled accounts. The valid values for 'Container'
+     * definition.objectType include 'Name, Last-Modified, Metadata, LeaseStatus, LeaseState, LeaseDuration,
+     * PublicAccess, HasImmutabilityPolicy, HasLegalHold, Etag, DefaultEncryptionScope, DenyEncryptionScopeOverride,
      * ImmutableStorageWithVersioningEnabled, Deleted, Version, DeletedTime, RemainingRetentionDays'. Schema field
      * values 'Expiry-Time, hdi_isfolder, Owner, Group, Permissions, Acl, DeletionId' are valid only for Hns enabled
      * accounts.Schema field values 'Tags, TagCount' are only valid for Non-Hns accounts.
-     *
+     * 
      * @param schemaFields the schemaFields value to set.
      * @return the BlobInventoryPolicyDefinition object itself.
      */
@@ -196,7 +200,7 @@ public final class BlobInventoryPolicyDefinition {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
@@ -204,28 +208,20 @@ public final class BlobInventoryPolicyDefinition {
             filters().validate();
         }
         if (format() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property format in model BlobInventoryPolicyDefinition"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property format in model BlobInventoryPolicyDefinition"));
         }
         if (schedule() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property schedule in model BlobInventoryPolicyDefinition"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property schedule in model BlobInventoryPolicyDefinition"));
         }
         if (objectType() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property objectType in model BlobInventoryPolicyDefinition"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property objectType in model BlobInventoryPolicyDefinition"));
         }
         if (schemaFields() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property schemaFields in model BlobInventoryPolicyDefinition"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property schemaFields in model BlobInventoryPolicyDefinition"));
         }
     }
 

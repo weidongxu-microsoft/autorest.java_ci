@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Live event preview settings. */
+/**
+ * Live event preview settings.
+ */
 @Fluent
 public final class LiveEventPreview {
     /*
@@ -47,13 +49,16 @@ public final class LiveEventPreview {
     @JsonProperty(value = "alternativeMediaId")
     private String alternativeMediaId;
 
-    /** Creates an instance of LiveEventPreview class. */
+    /**
+     * Creates an instance of LiveEventPreview class.
+     */
     public LiveEventPreview() {
     }
 
     /**
-     * Get the endpoints property: The endpoints for preview. Do not share the preview URL with the live event audience.
-     *
+     * Get the endpoints property: The endpoints for preview. Do not share the preview URL with the live event
+     * audience.
+     * 
      * @return the endpoints value.
      */
     public List<LiveEventEndpoint> endpoints() {
@@ -61,8 +66,9 @@ public final class LiveEventPreview {
     }
 
     /**
-     * Set the endpoints property: The endpoints for preview. Do not share the preview URL with the live event audience.
-     *
+     * Set the endpoints property: The endpoints for preview. Do not share the preview URL with the live event
+     * audience.
+     * 
      * @param endpoints the endpoints value to set.
      * @return the LiveEventPreview object itself.
      */
@@ -73,7 +79,7 @@ public final class LiveEventPreview {
 
     /**
      * Get the accessControl property: The access control for live event preview.
-     *
+     * 
      * @return the accessControl value.
      */
     public LiveEventPreviewAccessControl accessControl() {
@@ -82,7 +88,7 @@ public final class LiveEventPreview {
 
     /**
      * Set the accessControl property: The access control for live event preview.
-     *
+     * 
      * @param accessControl the accessControl value to set.
      * @return the LiveEventPreview object itself.
      */
@@ -95,7 +101,7 @@ public final class LiveEventPreview {
      * Get the previewLocator property: The identifier of the preview locator in Guid format. Specifying this at
      * creation time allows the caller to know the preview locator url before the event is created. If omitted, the
      * service will generate a random identifier. This value cannot be updated once the live event is created.
-     *
+     * 
      * @return the previewLocator value.
      */
     public String previewLocator() {
@@ -106,7 +112,7 @@ public final class LiveEventPreview {
      * Set the previewLocator property: The identifier of the preview locator in Guid format. Specifying this at
      * creation time allows the caller to know the preview locator url before the event is created. If omitted, the
      * service will generate a random identifier. This value cannot be updated once the live event is created.
-     *
+     * 
      * @param previewLocator the previewLocator value to set.
      * @return the LiveEventPreview object itself.
      */
@@ -116,9 +122,9 @@ public final class LiveEventPreview {
     }
 
     /**
-     * Get the streamingPolicyName property: The name of streaming policy used for the live event preview. This value is
-     * specified at creation time and cannot be updated.
-     *
+     * Get the streamingPolicyName property: The name of streaming policy used for the live event preview. This value
+     * is specified at creation time and cannot be updated.
+     * 
      * @return the streamingPolicyName value.
      */
     public String streamingPolicyName() {
@@ -126,9 +132,9 @@ public final class LiveEventPreview {
     }
 
     /**
-     * Set the streamingPolicyName property: The name of streaming policy used for the live event preview. This value is
-     * specified at creation time and cannot be updated.
-     *
+     * Set the streamingPolicyName property: The name of streaming policy used for the live event preview. This value
+     * is specified at creation time and cannot be updated.
+     * 
      * @param streamingPolicyName the streamingPolicyName value to set.
      * @return the LiveEventPreview object itself.
      */
@@ -142,7 +148,7 @@ public final class LiveEventPreview {
      * created for the preview. This value is specified at creation time and cannot be updated. The identifier can be
      * used in the CustomLicenseAcquisitionUrlTemplate or the CustomKeyAcquisitionUrlTemplate of the StreamingPolicy
      * specified in the StreamingPolicyName field.
-     *
+     * 
      * @return the alternativeMediaId value.
      */
     public String alternativeMediaId() {
@@ -154,7 +160,7 @@ public final class LiveEventPreview {
      * created for the preview. This value is specified at creation time and cannot be updated. The identifier can be
      * used in the CustomLicenseAcquisitionUrlTemplate or the CustomKeyAcquisitionUrlTemplate of the StreamingPolicy
      * specified in the StreamingPolicyName field.
-     *
+     * 
      * @param alternativeMediaId the alternativeMediaId value to set.
      * @return the LiveEventPreview object itself.
      */
@@ -165,7 +171,7 @@ public final class LiveEventPreview {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

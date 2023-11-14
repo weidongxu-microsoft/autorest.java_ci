@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of ProviderOperationsMetadatas. */
+/**
+ * Resource collection API of ProviderOperationsMetadatas.
+ */
 public interface ProviderOperationsMetadatas {
     /**
      * Gets provider operations metadata for the specified resource provider.
-     *
+     * 
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param expand Specifies whether to expand the values.
      * @param context The context to associate with this operation.
@@ -21,12 +23,12 @@ public interface ProviderOperationsMetadatas {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return provider operations metadata for the specified resource provider along with {@link Response}.
      */
-    Response<ProviderOperationsMetadata> getWithResponse(
-        String resourceProviderNamespace, String expand, Context context);
+    Response<ProviderOperationsMetadata> getWithResponse(String resourceProviderNamespace, String expand,
+        Context context);
 
     /**
      * Gets provider operations metadata for the specified resource provider.
-     *
+     * 
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -37,7 +39,7 @@ public interface ProviderOperationsMetadatas {
 
     /**
      * Gets provider operations metadata for all resource providers.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return provider operations metadata for all resource providers as paginated response with {@link PagedIterable}.
@@ -46,7 +48,7 @@ public interface ProviderOperationsMetadatas {
 
     /**
      * Gets provider operations metadata for all resource providers.
-     *
+     * 
      * @param expand Specifies whether to expand the values.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

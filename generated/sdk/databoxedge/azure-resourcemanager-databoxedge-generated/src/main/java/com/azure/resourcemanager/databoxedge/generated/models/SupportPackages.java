@@ -6,11 +6,13 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.util.Context;
 
-/** Resource collection API of SupportPackages. */
+/**
+ * Resource collection API of SupportPackages.
+ */
 public interface SupportPackages {
     /**
      * Triggers support package on the device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param triggerSupportPackageRequest The trigger support package request object.
@@ -18,12 +20,12 @@ public interface SupportPackages {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void triggerSupportPackage(
-        String deviceName, String resourceGroupName, TriggerSupportPackageRequest triggerSupportPackageRequest);
+    void triggerSupportPackage(String deviceName, String resourceGroupName,
+        TriggerSupportPackageRequest triggerSupportPackageRequest);
 
     /**
      * Triggers support package on the device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param triggerSupportPackageRequest The trigger support package request object.
@@ -32,9 +34,6 @@ public interface SupportPackages {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void triggerSupportPackage(
-        String deviceName,
-        String resourceGroupName,
-        TriggerSupportPackageRequest triggerSupportPackageRequest,
-        Context context);
+    void triggerSupportPackage(String deviceName, String resourceGroupName,
+        TriggerSupportPackageRequest triggerSupportPackageRequest, Context context);
 }

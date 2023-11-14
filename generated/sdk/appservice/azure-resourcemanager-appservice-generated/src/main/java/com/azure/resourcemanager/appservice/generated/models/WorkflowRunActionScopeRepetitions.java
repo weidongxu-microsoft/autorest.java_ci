@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of WorkflowRunActionScopeRepetitions. */
+/**
+ * Resource collection API of WorkflowRunActionScopeRepetitions.
+ */
 public interface WorkflowRunActionScopeRepetitions {
     /**
      * List the workflow run action scoped repetitions.
-     *
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param workflowName The workflow name.
@@ -23,12 +25,12 @@ public interface WorkflowRunActionScopeRepetitions {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a collection of workflow run action repetitions as paginated response with {@link PagedIterable}.
      */
-    PagedIterable<WorkflowRunActionRepetitionDefinition> list(
-        String resourceGroupName, String name, String workflowName, String runName, String actionName);
+    PagedIterable<WorkflowRunActionRepetitionDefinition> list(String resourceGroupName, String name,
+        String workflowName, String runName, String actionName);
 
     /**
      * List the workflow run action scoped repetitions.
-     *
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param workflowName The workflow name.
@@ -40,12 +42,12 @@ public interface WorkflowRunActionScopeRepetitions {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a collection of workflow run action repetitions as paginated response with {@link PagedIterable}.
      */
-    PagedIterable<WorkflowRunActionRepetitionDefinition> list(
-        String resourceGroupName, String name, String workflowName, String runName, String actionName, Context context);
+    PagedIterable<WorkflowRunActionRepetitionDefinition> list(String resourceGroupName, String name,
+        String workflowName, String runName, String actionName, Context context);
 
     /**
      * Get a workflow run action scoped repetition.
-     *
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param workflowName The workflow name.
@@ -58,18 +60,12 @@ public interface WorkflowRunActionScopeRepetitions {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a workflow run action scoped repetition along with {@link Response}.
      */
-    Response<WorkflowRunActionRepetitionDefinition> getWithResponse(
-        String resourceGroupName,
-        String name,
-        String workflowName,
-        String runName,
-        String actionName,
-        String repetitionName,
-        Context context);
+    Response<WorkflowRunActionRepetitionDefinition> getWithResponse(String resourceGroupName, String name,
+        String workflowName, String runName, String actionName, String repetitionName, Context context);
 
     /**
      * Get a workflow run action scoped repetition.
-     *
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param workflowName The workflow name.
@@ -81,11 +77,6 @@ public interface WorkflowRunActionScopeRepetitions {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a workflow run action scoped repetition.
      */
-    WorkflowRunActionRepetitionDefinition get(
-        String resourceGroupName,
-        String name,
-        String workflowName,
-        String runName,
-        String actionName,
-        String repetitionName);
+    WorkflowRunActionRepetitionDefinition get(String resourceGroupName, String name, String workflowName,
+        String runName, String actionName, String repetitionName);
 }

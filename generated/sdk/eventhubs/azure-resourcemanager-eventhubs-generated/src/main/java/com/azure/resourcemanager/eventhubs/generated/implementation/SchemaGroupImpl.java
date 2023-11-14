@@ -103,24 +103,16 @@ public final class SchemaGroupImpl implements SchemaGroup, SchemaGroup.Definitio
     }
 
     public SchemaGroup create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSchemaRegistries()
-                .createOrUpdateWithResponse(
-                    resourceGroupName, namespaceName, schemaGroupName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getSchemaRegistries().createOrUpdateWithResponse(resourceGroupName,
+                namespaceName, schemaGroupName, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public SchemaGroup create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSchemaRegistries()
-                .createOrUpdateWithResponse(
-                    resourceGroupName, namespaceName, schemaGroupName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getSchemaRegistries()
+            .createOrUpdateWithResponse(resourceGroupName, namespaceName, schemaGroupName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
@@ -135,29 +127,21 @@ public final class SchemaGroupImpl implements SchemaGroup, SchemaGroup.Definitio
     }
 
     public SchemaGroup apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSchemaRegistries()
-                .createOrUpdateWithResponse(
-                    resourceGroupName, namespaceName, schemaGroupName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getSchemaRegistries().createOrUpdateWithResponse(resourceGroupName,
+                namespaceName, schemaGroupName, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public SchemaGroup apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSchemaRegistries()
-                .createOrUpdateWithResponse(
-                    resourceGroupName, namespaceName, schemaGroupName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getSchemaRegistries()
+            .createOrUpdateWithResponse(resourceGroupName, namespaceName, schemaGroupName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
-    SchemaGroupImpl(
-        SchemaGroupInner innerObject, com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager) {
+    SchemaGroupImpl(SchemaGroupInner innerObject,
+        com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
@@ -166,22 +150,14 @@ public final class SchemaGroupImpl implements SchemaGroup, SchemaGroup.Definitio
     }
 
     public SchemaGroup refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSchemaRegistries()
-                .getWithResponse(resourceGroupName, namespaceName, schemaGroupName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getSchemaRegistries()
+            .getWithResponse(resourceGroupName, namespaceName, schemaGroupName, Context.NONE).getValue();
         return this;
     }
 
     public SchemaGroup refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSchemaRegistries()
-                .getWithResponse(resourceGroupName, namespaceName, schemaGroupName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getSchemaRegistries()
+            .getWithResponse(resourceGroupName, namespaceName, schemaGroupName, context).getValue();
         return this;
     }
 

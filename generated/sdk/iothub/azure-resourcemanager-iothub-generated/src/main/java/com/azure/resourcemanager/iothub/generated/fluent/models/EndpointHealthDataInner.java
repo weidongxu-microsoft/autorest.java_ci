@@ -10,7 +10,9 @@ import com.azure.resourcemanager.iothub.generated.models.EndpointHealthStatus;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
-/** The health data for an endpoint. */
+/**
+ * The health data for an endpoint.
+ */
 @Fluent
 public final class EndpointHealthDataInner {
     /*
@@ -55,13 +57,15 @@ public final class EndpointHealthDataInner {
     @JsonProperty(value = "lastSendAttemptTime")
     private DateTimeRfc1123 lastSendAttemptTime;
 
-    /** Creates an instance of EndpointHealthDataInner class. */
+    /**
+     * Creates an instance of EndpointHealthDataInner class.
+     */
     public EndpointHealthDataInner() {
     }
 
     /**
      * Get the endpointId property: Id of the endpoint.
-     *
+     * 
      * @return the endpointId value.
      */
     public String endpointId() {
@@ -70,7 +74,7 @@ public final class EndpointHealthDataInner {
 
     /**
      * Set the endpointId property: Id of the endpoint.
-     *
+     * 
      * @param endpointId the endpointId value to set.
      * @return the EndpointHealthDataInner object itself.
      */
@@ -85,10 +89,10 @@ public final class EndpointHealthDataInner {
      * messages as expected and IoT Hub is retrying to send data to this endpoint. The status of an unhealthy endpoint
      * will be updated to healthy when IoT Hub has established an eventually consistent state of health. The 'dead'
      * status shows that the endpoint is not accepting messages, after IoT Hub retried sending messages for the retrial
-     * period. See IoT Hub metrics to identify errors and monitor issues with endpoints. The 'unknown' status shows that
-     * the IoT Hub has not established a connection with the endpoint. No messages have been delivered to or rejected
-     * from this endpoint.
-     *
+     * period. See IoT Hub metrics to identify errors and monitor issues with endpoints. The 'unknown' status shows
+     * that the IoT Hub has not established a connection with the endpoint. No messages have been delivered to or
+     * rejected from this endpoint.
+     * 
      * @return the healthStatus value.
      */
     public EndpointHealthStatus healthStatus() {
@@ -101,10 +105,10 @@ public final class EndpointHealthDataInner {
      * messages as expected and IoT Hub is retrying to send data to this endpoint. The status of an unhealthy endpoint
      * will be updated to healthy when IoT Hub has established an eventually consistent state of health. The 'dead'
      * status shows that the endpoint is not accepting messages, after IoT Hub retried sending messages for the retrial
-     * period. See IoT Hub metrics to identify errors and monitor issues with endpoints. The 'unknown' status shows that
-     * the IoT Hub has not established a connection with the endpoint. No messages have been delivered to or rejected
-     * from this endpoint.
-     *
+     * period. See IoT Hub metrics to identify errors and monitor issues with endpoints. The 'unknown' status shows
+     * that the IoT Hub has not established a connection with the endpoint. No messages have been delivered to or
+     * rejected from this endpoint.
+     * 
      * @param healthStatus the healthStatus value to set.
      * @return the EndpointHealthDataInner object itself.
      */
@@ -115,7 +119,7 @@ public final class EndpointHealthDataInner {
 
     /**
      * Get the lastKnownError property: Last error obtained when a message failed to be delivered to iot hub.
-     *
+     * 
      * @return the lastKnownError value.
      */
     public String lastKnownError() {
@@ -124,7 +128,7 @@ public final class EndpointHealthDataInner {
 
     /**
      * Set the lastKnownError property: Last error obtained when a message failed to be delivered to iot hub.
-     *
+     * 
      * @param lastKnownError the lastKnownError value to set.
      * @return the EndpointHealthDataInner object itself.
      */
@@ -135,7 +139,7 @@ public final class EndpointHealthDataInner {
 
     /**
      * Get the lastKnownErrorTime property: Time at which the last known error occurred.
-     *
+     * 
      * @return the lastKnownErrorTime value.
      */
     public OffsetDateTime lastKnownErrorTime() {
@@ -147,7 +151,7 @@ public final class EndpointHealthDataInner {
 
     /**
      * Set the lastKnownErrorTime property: Time at which the last known error occurred.
-     *
+     * 
      * @param lastKnownErrorTime the lastKnownErrorTime value to set.
      * @return the EndpointHealthDataInner object itself.
      */
@@ -162,7 +166,7 @@ public final class EndpointHealthDataInner {
 
     /**
      * Get the lastSuccessfulSendAttemptTime property: Last time iot hub successfully sent a message to the endpoint.
-     *
+     * 
      * @return the lastSuccessfulSendAttemptTime value.
      */
     public OffsetDateTime lastSuccessfulSendAttemptTime() {
@@ -174,7 +178,7 @@ public final class EndpointHealthDataInner {
 
     /**
      * Set the lastSuccessfulSendAttemptTime property: Last time iot hub successfully sent a message to the endpoint.
-     *
+     * 
      * @param lastSuccessfulSendAttemptTime the lastSuccessfulSendAttemptTime value to set.
      * @return the EndpointHealthDataInner object itself.
      */
@@ -189,7 +193,7 @@ public final class EndpointHealthDataInner {
 
     /**
      * Get the lastSendAttemptTime property: Last time iot hub tried to send a message to the endpoint.
-     *
+     * 
      * @return the lastSendAttemptTime value.
      */
     public OffsetDateTime lastSendAttemptTime() {
@@ -201,7 +205,7 @@ public final class EndpointHealthDataInner {
 
     /**
      * Set the lastSendAttemptTime property: Last time iot hub tried to send a message to the endpoint.
-     *
+     * 
      * @param lastSendAttemptTime the lastSendAttemptTime value to set.
      * @return the EndpointHealthDataInner object itself.
      */
@@ -216,7 +220,7 @@ public final class EndpointHealthDataInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

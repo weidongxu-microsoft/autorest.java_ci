@@ -89,20 +89,14 @@ public final class RouteMapImpl implements RouteMap, RouteMap.Definition, RouteM
     }
 
     public RouteMap create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getRouteMaps()
-                .createOrUpdate(resourceGroupName, virtualHubName, routeMapName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getRouteMaps().createOrUpdate(resourceGroupName,
+            virtualHubName, routeMapName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public RouteMap create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getRouteMaps()
-                .createOrUpdate(resourceGroupName, virtualHubName, routeMapName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getRouteMaps().createOrUpdate(resourceGroupName,
+            virtualHubName, routeMapName, this.innerModel(), context);
         return this;
     }
 
@@ -117,20 +111,14 @@ public final class RouteMapImpl implements RouteMap, RouteMap.Definition, RouteM
     }
 
     public RouteMap apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getRouteMaps()
-                .createOrUpdate(resourceGroupName, virtualHubName, routeMapName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getRouteMaps().createOrUpdate(resourceGroupName,
+            virtualHubName, routeMapName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public RouteMap apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getRouteMaps()
-                .createOrUpdate(resourceGroupName, virtualHubName, routeMapName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getRouteMaps().createOrUpdate(resourceGroupName,
+            virtualHubName, routeMapName, this.innerModel(), context);
         return this;
     }
 
@@ -143,22 +131,14 @@ public final class RouteMapImpl implements RouteMap, RouteMap.Definition, RouteM
     }
 
     public RouteMap refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getRouteMaps()
-                .getWithResponse(resourceGroupName, virtualHubName, routeMapName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getRouteMaps()
+            .getWithResponse(resourceGroupName, virtualHubName, routeMapName, Context.NONE).getValue();
         return this;
     }
 
     public RouteMap refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getRouteMaps()
-                .getWithResponse(resourceGroupName, virtualHubName, routeMapName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getRouteMaps()
+            .getWithResponse(resourceGroupName, virtualHubName, routeMapName, context).getValue();
         return this;
     }
 

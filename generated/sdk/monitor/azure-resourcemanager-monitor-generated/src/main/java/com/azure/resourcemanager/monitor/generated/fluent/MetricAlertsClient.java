@@ -12,11 +12,13 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.monitor.generated.fluent.models.MetricAlertResourceInner;
 import com.azure.resourcemanager.monitor.generated.models.MetricAlertResourcePatch;
 
-/** An instance of this class provides access to all the operations defined in MetricAlertsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in MetricAlertsClient.
+ */
 public interface MetricAlertsClient {
     /**
      * Retrieve alert rule definitions in a subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return represents a collection of alert rule resources as paginated response with {@link PagedIterable}.
@@ -26,7 +28,7 @@ public interface MetricAlertsClient {
 
     /**
      * Retrieve alert rule definitions in a subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -38,7 +40,7 @@ public interface MetricAlertsClient {
 
     /**
      * Retrieve alert rule definitions in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -50,7 +52,7 @@ public interface MetricAlertsClient {
 
     /**
      * Retrieve alert rule definitions in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -63,7 +65,7 @@ public interface MetricAlertsClient {
 
     /**
      * Retrieve an alert rule definition.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @param context The context to associate with this operation.
@@ -73,12 +75,12 @@ public interface MetricAlertsClient {
      * @return the metric alert resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<MetricAlertResourceInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String ruleName, Context context);
+    Response<MetricAlertResourceInner> getByResourceGroupWithResponse(String resourceGroupName, String ruleName,
+        Context context);
 
     /**
      * Retrieve an alert rule definition.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -91,7 +93,7 @@ public interface MetricAlertsClient {
 
     /**
      * Create or update an metric alert definition.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @param parameters The parameters of the rule to create or update.
@@ -102,12 +104,12 @@ public interface MetricAlertsClient {
      * @return the metric alert resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<MetricAlertResourceInner> createOrUpdateWithResponse(
-        String resourceGroupName, String ruleName, MetricAlertResourceInner parameters, Context context);
+    Response<MetricAlertResourceInner> createOrUpdateWithResponse(String resourceGroupName, String ruleName,
+        MetricAlertResourceInner parameters, Context context);
 
     /**
      * Create or update an metric alert definition.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @param parameters The parameters of the rule to create or update.
@@ -117,12 +119,12 @@ public interface MetricAlertsClient {
      * @return the metric alert resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    MetricAlertResourceInner createOrUpdate(
-        String resourceGroupName, String ruleName, MetricAlertResourceInner parameters);
+    MetricAlertResourceInner createOrUpdate(String resourceGroupName, String ruleName,
+        MetricAlertResourceInner parameters);
 
     /**
      * Update an metric alert definition.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @param parameters The parameters of the rule to update.
@@ -133,12 +135,12 @@ public interface MetricAlertsClient {
      * @return the metric alert resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<MetricAlertResourceInner> updateWithResponse(
-        String resourceGroupName, String ruleName, MetricAlertResourcePatch parameters, Context context);
+    Response<MetricAlertResourceInner> updateWithResponse(String resourceGroupName, String ruleName,
+        MetricAlertResourcePatch parameters, Context context);
 
     /**
      * Update an metric alert definition.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @param parameters The parameters of the rule to update.
@@ -152,7 +154,7 @@ public interface MetricAlertsClient {
 
     /**
      * Delete an alert rule definition.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @param context The context to associate with this operation.
@@ -166,7 +168,7 @@ public interface MetricAlertsClient {
 
     /**
      * Delete an alert rule definition.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

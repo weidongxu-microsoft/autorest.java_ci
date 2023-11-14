@@ -21,8 +21,8 @@ public final class DiskRestorePointImpl implements DiskRestorePoint {
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    DiskRestorePointImpl(
-        DiskRestorePointInner innerObject, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
+    DiskRestorePointImpl(DiskRestorePointInner innerObject,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

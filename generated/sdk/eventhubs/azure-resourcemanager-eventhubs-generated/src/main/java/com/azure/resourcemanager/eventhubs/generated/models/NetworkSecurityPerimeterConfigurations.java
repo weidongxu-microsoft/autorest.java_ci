@@ -7,11 +7,13 @@ package com.azure.resourcemanager.eventhubs.generated.models;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of NetworkSecurityPerimeterConfigurations. */
+/**
+ * Resource collection API of NetworkSecurityPerimeterConfigurations.
+ */
 public interface NetworkSecurityPerimeterConfigurations {
     /**
      * Gets list of current NetworkSecurityPerimeterConfiguration for Namespace.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param context The context to associate with this operation.
@@ -20,12 +22,12 @@ public interface NetworkSecurityPerimeterConfigurations {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return list of current NetworkSecurityPerimeterConfiguration for Namespace along with {@link Response}.
      */
-    Response<NetworkSecurityPerimeterConfigurationList> listWithResponse(
-        String resourceGroupName, String namespaceName, Context context);
+    Response<NetworkSecurityPerimeterConfigurationList> listWithResponse(String resourceGroupName, String namespaceName,
+        Context context);
 
     /**
      * Gets list of current NetworkSecurityPerimeterConfiguration for Namespace.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

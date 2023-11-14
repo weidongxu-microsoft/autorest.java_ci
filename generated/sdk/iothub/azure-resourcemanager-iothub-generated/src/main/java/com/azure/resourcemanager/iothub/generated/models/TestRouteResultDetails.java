@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Detailed result of testing a route. */
+/**
+ * Detailed result of testing a route.
+ */
 @Fluent
 public final class TestRouteResultDetails {
     /*
@@ -17,13 +19,15 @@ public final class TestRouteResultDetails {
     @JsonProperty(value = "compilationErrors")
     private List<RouteCompilationError> compilationErrors;
 
-    /** Creates an instance of TestRouteResultDetails class. */
+    /**
+     * Creates an instance of TestRouteResultDetails class.
+     */
     public TestRouteResultDetails() {
     }
 
     /**
      * Get the compilationErrors property: JSON-serialized list of route compilation errors.
-     *
+     * 
      * @return the compilationErrors value.
      */
     public List<RouteCompilationError> compilationErrors() {
@@ -32,7 +36,7 @@ public final class TestRouteResultDetails {
 
     /**
      * Set the compilationErrors property: JSON-serialized list of route compilation errors.
-     *
+     * 
      * @param compilationErrors the compilationErrors value to set.
      * @return the TestRouteResultDetails object itself.
      */
@@ -43,7 +47,7 @@ public final class TestRouteResultDetails {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

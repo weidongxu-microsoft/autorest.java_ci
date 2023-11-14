@@ -8,17 +8,23 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** DataResidencyType enum. */
+/**
+ * DataResidencyType enum.
+ */
 public final class DataResidencyType extends ExpandableStringEnum<DataResidencyType> {
-    /** Static value GeoZoneReplication for DataResidencyType. */
+    /**
+     * Static value GeoZoneReplication for DataResidencyType.
+     */
     public static final DataResidencyType GEO_ZONE_REPLICATION = fromString("GeoZoneReplication");
 
-    /** Static value ZoneReplication for DataResidencyType. */
+    /**
+     * Static value ZoneReplication for DataResidencyType.
+     */
     public static final DataResidencyType ZONE_REPLICATION = fromString("ZoneReplication");
 
     /**
      * Creates a new instance of DataResidencyType value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -27,7 +33,7 @@ public final class DataResidencyType extends ExpandableStringEnum<DataResidencyT
 
     /**
      * Creates or finds a DataResidencyType from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding DataResidencyType.
      */
@@ -38,7 +44,7 @@ public final class DataResidencyType extends ExpandableStringEnum<DataResidencyT
 
     /**
      * Gets known DataResidencyType values.
-     *
+     * 
      * @return known DataResidencyType values.
      */
     public static Collection<DataResidencyType> values() {

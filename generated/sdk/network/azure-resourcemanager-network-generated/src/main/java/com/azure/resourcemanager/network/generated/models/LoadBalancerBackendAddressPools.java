@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of LoadBalancerBackendAddressPools. */
+/**
+ * Resource collection API of LoadBalancerBackendAddressPools.
+ */
 public interface LoadBalancerBackendAddressPools {
     /**
      * Gets all the load balancer backed address pools.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -24,7 +26,7 @@ public interface LoadBalancerBackendAddressPools {
 
     /**
      * Gets all the load balancer backed address pools.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @param context The context to associate with this operation.
@@ -37,7 +39,7 @@ public interface LoadBalancerBackendAddressPools {
 
     /**
      * Gets load balancer backend address pool.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @param backendAddressPoolName The name of the backend address pool.
@@ -47,12 +49,12 @@ public interface LoadBalancerBackendAddressPools {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return load balancer backend address pool along with {@link Response}.
      */
-    Response<BackendAddressPool> getWithResponse(
-        String resourceGroupName, String loadBalancerName, String backendAddressPoolName, Context context);
+    Response<BackendAddressPool> getWithResponse(String resourceGroupName, String loadBalancerName,
+        String backendAddressPoolName, Context context);
 
     /**
      * Gets load balancer backend address pool.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @param backendAddressPoolName The name of the backend address pool.
@@ -65,7 +67,7 @@ public interface LoadBalancerBackendAddressPools {
 
     /**
      * Deletes the specified load balancer backend address pool.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @param backendAddressPoolName The name of the backend address pool.
@@ -77,7 +79,7 @@ public interface LoadBalancerBackendAddressPools {
 
     /**
      * Deletes the specified load balancer backend address pool.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @param backendAddressPoolName The name of the backend address pool.
@@ -90,7 +92,7 @@ public interface LoadBalancerBackendAddressPools {
 
     /**
      * Gets load balancer backend address pool.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -101,7 +103,7 @@ public interface LoadBalancerBackendAddressPools {
 
     /**
      * Gets load balancer backend address pool.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -113,7 +115,7 @@ public interface LoadBalancerBackendAddressPools {
 
     /**
      * Deletes the specified load balancer backend address pool.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -123,7 +125,7 @@ public interface LoadBalancerBackendAddressPools {
 
     /**
      * Deletes the specified load balancer backend address pool.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -134,7 +136,7 @@ public interface LoadBalancerBackendAddressPools {
 
     /**
      * Begins definition for a new BackendAddressPool resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new BackendAddressPool definition.
      */

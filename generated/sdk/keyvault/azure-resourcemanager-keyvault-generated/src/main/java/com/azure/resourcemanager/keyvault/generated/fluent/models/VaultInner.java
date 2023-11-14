@@ -12,7 +12,9 @@ import com.azure.resourcemanager.keyvault.generated.models.VaultProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
 
-/** Resource information with extended details. */
+/**
+ * Resource information with extended details.
+ */
 @Fluent
 public final class VaultInner extends Resource {
     /*
@@ -27,13 +29,15 @@ public final class VaultInner extends Resource {
     @JsonProperty(value = "properties", required = true)
     private VaultProperties properties;
 
-    /** Creates an instance of VaultInner class. */
+    /**
+     * Creates an instance of VaultInner class.
+     */
     public VaultInner() {
     }
 
     /**
      * Get the systemData property: System metadata for the key vault.
-     *
+     * 
      * @return the systemData value.
      */
     public SystemData systemData() {
@@ -42,7 +46,7 @@ public final class VaultInner extends Resource {
 
     /**
      * Get the properties property: Properties of the vault.
-     *
+     * 
      * @return the properties value.
      */
     public VaultProperties properties() {
@@ -51,7 +55,7 @@ public final class VaultInner extends Resource {
 
     /**
      * Set the properties property: Properties of the vault.
-     *
+     * 
      * @param properties the properties value to set.
      * @return the VaultInner object itself.
      */
@@ -60,14 +64,18 @@ public final class VaultInner extends Resource {
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public VaultInner withLocation(String location) {
         super.withLocation(location);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public VaultInner withTags(Map<String, String> tags) {
         super.withTags(tags);
@@ -76,14 +84,13 @@ public final class VaultInner extends Resource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (properties() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property properties in model VaultInner"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property properties in model VaultInner"));
         } else {
             properties().validate();
         }

@@ -15,8 +15,7 @@ public final class PrivateAccessImpl implements PrivateAccess {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    PrivateAccessImpl(
-        PrivateAccessInner innerObject,
+    PrivateAccessImpl(PrivateAccessInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

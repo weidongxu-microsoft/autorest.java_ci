@@ -8,14 +8,18 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** The type of the track event. */
+/**
+ * The type of the track event.
+ */
 public final class LiveEventTrackEventType extends ExpandableStringEnum<LiveEventTrackEventType> {
-    /** Static value TrackEvent/IngestHeartbeat for LiveEventTrackEventType. */
+    /**
+     * Static value TrackEvent/IngestHeartbeat for LiveEventTrackEventType.
+     */
     public static final LiveEventTrackEventType TRACK_EVENT_INGEST_HEARTBEAT = fromString("TrackEvent/IngestHeartbeat");
 
     /**
      * Creates a new instance of LiveEventTrackEventType value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -24,7 +28,7 @@ public final class LiveEventTrackEventType extends ExpandableStringEnum<LiveEven
 
     /**
      * Creates or finds a LiveEventTrackEventType from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding LiveEventTrackEventType.
      */
@@ -35,7 +39,7 @@ public final class LiveEventTrackEventType extends ExpandableStringEnum<LiveEven
 
     /**
      * Gets known LiveEventTrackEventType values.
-     *
+     * 
      * @return known LiveEventTrackEventType values.
      */
     public static Collection<LiveEventTrackEventType> values() {

@@ -7,27 +7,43 @@ package com.azure.resourcemanager.eventhubs.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Specifies the reason for the unavailability of the service. */
+/**
+ * Specifies the reason for the unavailability of the service.
+ */
 public enum UnavailableReason {
-    /** Enum value None. */
+    /**
+     * Enum value None.
+     */
     NONE("None"),
 
-    /** Enum value InvalidName. */
+    /**
+     * Enum value InvalidName.
+     */
     INVALID_NAME("InvalidName"),
 
-    /** Enum value SubscriptionIsDisabled. */
+    /**
+     * Enum value SubscriptionIsDisabled.
+     */
     SUBSCRIPTION_IS_DISABLED("SubscriptionIsDisabled"),
 
-    /** Enum value NameInUse. */
+    /**
+     * Enum value NameInUse.
+     */
     NAME_IN_USE("NameInUse"),
 
-    /** Enum value NameInLockdown. */
+    /**
+     * Enum value NameInLockdown.
+     */
     NAME_IN_LOCKDOWN("NameInLockdown"),
 
-    /** Enum value TooManyNamespaceInCurrentSubscription. */
+    /**
+     * Enum value TooManyNamespaceInCurrentSubscription.
+     */
     TOO_MANY_NAMESPACE_IN_CURRENT_SUBSCRIPTION("TooManyNamespaceInCurrentSubscription");
 
-    /** The actual serialized value for a UnavailableReason instance. */
+    /**
+     * The actual serialized value for a UnavailableReason instance.
+     */
     private final String value;
 
     UnavailableReason(String value) {
@@ -36,7 +52,7 @@ public enum UnavailableReason {
 
     /**
      * Parses a serialized value to a UnavailableReason instance.
-     *
+     * 
      * @param value the serialized value to parse.
      * @return the parsed UnavailableReason object, or null if unable to parse.
      */
@@ -54,7 +70,9 @@ public enum UnavailableReason {
         return null;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @JsonValue
     @Override
     public String toString() {

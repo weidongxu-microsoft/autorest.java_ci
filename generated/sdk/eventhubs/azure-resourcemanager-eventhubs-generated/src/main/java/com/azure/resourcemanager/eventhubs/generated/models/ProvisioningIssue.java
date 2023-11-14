@@ -7,7 +7,9 @@ package com.azure.resourcemanager.eventhubs.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Describes Provisioning issue for given NetworkSecurityPerimeterConfiguration. */
+/**
+ * Describes Provisioning issue for given NetworkSecurityPerimeterConfiguration.
+ */
 @Fluent
 public final class ProvisioningIssue {
     /*
@@ -22,13 +24,15 @@ public final class ProvisioningIssue {
     @JsonProperty(value = "properties", access = JsonProperty.Access.WRITE_ONLY)
     private ProvisioningIssueProperties properties;
 
-    /** Creates an instance of ProvisioningIssue class. */
+    /**
+     * Creates an instance of ProvisioningIssue class.
+     */
     public ProvisioningIssue() {
     }
 
     /**
      * Get the name property: Name of the issue.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -37,7 +41,7 @@ public final class ProvisioningIssue {
 
     /**
      * Set the name property: Name of the issue.
-     *
+     * 
      * @param name the name value to set.
      * @return the ProvisioningIssue object itself.
      */
@@ -48,7 +52,7 @@ public final class ProvisioningIssue {
 
     /**
      * Get the properties property: Properties of Provisioning Issue.
-     *
+     * 
      * @return the properties value.
      */
     public ProvisioningIssueProperties properties() {
@@ -57,7 +61,7 @@ public final class ProvisioningIssue {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

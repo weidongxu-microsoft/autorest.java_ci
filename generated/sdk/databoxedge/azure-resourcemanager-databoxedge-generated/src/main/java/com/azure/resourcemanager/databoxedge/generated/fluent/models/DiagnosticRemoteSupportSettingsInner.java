@@ -12,11 +12,13 @@ import com.azure.resourcemanager.databoxedge.generated.models.RemoteSupportSetti
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The remote support settings of a device. */
+/**
+ * The remote support settings of a device.
+ */
 @Fluent
 public final class DiagnosticRemoteSupportSettingsInner extends ArmBaseModel {
     /*
-     * Properties of the remote support  settings.
+     * Properties of the remote support settings.
      */
     @JsonProperty(value = "properties", required = true)
     private DiagnosticRemoteSupportSettingsProperties innerProperties = new DiagnosticRemoteSupportSettingsProperties();
@@ -27,13 +29,15 @@ public final class DiagnosticRemoteSupportSettingsInner extends ArmBaseModel {
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
-    /** Creates an instance of DiagnosticRemoteSupportSettingsInner class. */
+    /**
+     * Creates an instance of DiagnosticRemoteSupportSettingsInner class.
+     */
     public DiagnosticRemoteSupportSettingsInner() {
     }
 
     /**
      * Get the innerProperties property: Properties of the remote support settings.
-     *
+     * 
      * @return the innerProperties value.
      */
     private DiagnosticRemoteSupportSettingsProperties innerProperties() {
@@ -42,7 +46,7 @@ public final class DiagnosticRemoteSupportSettingsInner extends ArmBaseModel {
 
     /**
      * Get the systemData property: Represents resource creation and updation time.
-     *
+     * 
      * @return the systemData value.
      */
     public SystemData systemData() {
@@ -51,7 +55,7 @@ public final class DiagnosticRemoteSupportSettingsInner extends ArmBaseModel {
 
     /**
      * Get the remoteSupportSettingsList property: Remote support settings list according to the RemoteApplicationType.
-     *
+     * 
      * @return the remoteSupportSettingsList value.
      */
     public List<RemoteSupportSettings> remoteSupportSettingsList() {
@@ -60,12 +64,12 @@ public final class DiagnosticRemoteSupportSettingsInner extends ArmBaseModel {
 
     /**
      * Set the remoteSupportSettingsList property: Remote support settings list according to the RemoteApplicationType.
-     *
+     * 
      * @param remoteSupportSettingsList the remoteSupportSettingsList value to set.
      * @return the DiagnosticRemoteSupportSettingsInner object itself.
      */
-    public DiagnosticRemoteSupportSettingsInner withRemoteSupportSettingsList(
-        List<RemoteSupportSettings> remoteSupportSettingsList) {
+    public DiagnosticRemoteSupportSettingsInner
+        withRemoteSupportSettingsList(List<RemoteSupportSettings> remoteSupportSettingsList) {
         if (this.innerProperties() == null) {
             this.innerProperties = new DiagnosticRemoteSupportSettingsProperties();
         }
@@ -75,17 +79,15 @@ public final class DiagnosticRemoteSupportSettingsInner extends ArmBaseModel {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override
     public void validate() {
         super.validate();
         if (innerProperties() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property innerProperties in model DiagnosticRemoteSupportSettingsInner"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property innerProperties in model DiagnosticRemoteSupportSettingsInner"));
         } else {
             innerProperties().validate();
         }

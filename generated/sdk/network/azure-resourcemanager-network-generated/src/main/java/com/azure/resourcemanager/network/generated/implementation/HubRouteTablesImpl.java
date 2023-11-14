@@ -21,21 +21,18 @@ public final class HubRouteTablesImpl implements HubRouteTables {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public HubRouteTablesImpl(
-        HubRouteTablesClient innerClient, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    public HubRouteTablesImpl(HubRouteTablesClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<HubRouteTable> getWithResponse(
-        String resourceGroupName, String virtualHubName, String routeTableName, Context context) {
-        Response<HubRouteTableInner> inner =
-            this.serviceClient().getWithResponse(resourceGroupName, virtualHubName, routeTableName, context);
+    public Response<HubRouteTable> getWithResponse(String resourceGroupName, String virtualHubName,
+        String routeTableName, Context context) {
+        Response<HubRouteTableInner> inner
+            = this.serviceClient().getWithResponse(resourceGroupName, virtualHubName, routeTableName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new HubRouteTableImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -72,26 +69,18 @@ public final class HubRouteTablesImpl implements HubRouteTables {
     public HubRouteTable getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
         if (virtualHubName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
         }
         String routeTableName = Utils.getValueFromIdByName(id, "hubRouteTables");
         if (routeTableName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'hubRouteTables'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'hubRouteTables'.", id)));
         }
         return this.getWithResponse(resourceGroupName, virtualHubName, routeTableName, Context.NONE).getValue();
     }
@@ -99,26 +88,18 @@ public final class HubRouteTablesImpl implements HubRouteTables {
     public Response<HubRouteTable> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
         if (virtualHubName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
         }
         String routeTableName = Utils.getValueFromIdByName(id, "hubRouteTables");
         if (routeTableName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'hubRouteTables'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'hubRouteTables'.", id)));
         }
         return this.getWithResponse(resourceGroupName, virtualHubName, routeTableName, context);
     }
@@ -126,26 +107,18 @@ public final class HubRouteTablesImpl implements HubRouteTables {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
         if (virtualHubName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
         }
         String routeTableName = Utils.getValueFromIdByName(id, "hubRouteTables");
         if (routeTableName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'hubRouteTables'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'hubRouteTables'.", id)));
         }
         this.delete(resourceGroupName, virtualHubName, routeTableName, Context.NONE);
     }
@@ -153,26 +126,18 @@ public final class HubRouteTablesImpl implements HubRouteTables {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
         if (virtualHubName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
         }
         String routeTableName = Utils.getValueFromIdByName(id, "hubRouteTables");
         if (routeTableName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'hubRouteTables'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'hubRouteTables'.", id)));
         }
         this.delete(resourceGroupName, virtualHubName, routeTableName, context);
     }

@@ -6,11 +6,13 @@ package com.azure.resourcemanager.monitor.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.resourcemanager.monitor.generated.models.Metric;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.time.Duration;
 import java.util.List;
 
-/** The response to a metrics query. */
+/**
+ * The response to a metrics query.
+ */
 @Fluent
 public final class ResponseInner {
     /*
@@ -21,17 +23,20 @@ public final class ResponseInner {
 
     /*
      * The timespan for which the data was retrieved. Its value consists of two datetimes concatenated, separated by
-     * '/'.  This may be adjusted in the future and returned back from what was originally requested.
+     * '/'. This may be adjusted in the future and returned back from what was originally requested.
      */
     @JsonProperty(value = "timespan", required = true)
     private String timespan;
 
     /*
-     * The interval (window size) for which the metric data was returned in.  This may be adjusted in the future and
-     * returned back from what was originally requested.  This is not present if a metadata request was made.
+     * The interval (window size) for which the metric data was returned in ISO 8601 duration format with a special
+     * case for 'FULL' value that returns single datapoint for entire time span requested (*Examples: PT15M, PT1H, P1D,
+     * FULL*).
+     * This may be adjusted and different from what was originally requested if AutoAdjustTimegrain=true is specified.
+     * This is not present if a metadata request was made.
      */
     @JsonProperty(value = "interval")
-    private Duration interval;
+    private String interval;
 
     /*
      * The namespace of the metrics being queried
@@ -49,15 +54,17 @@ public final class ResponseInner {
      * the value of the collection.
      */
     @JsonProperty(value = "value", required = true)
-    private List<MetricInner> value;
+    private List<Metric> value;
 
-    /** Creates an instance of ResponseInner class. */
+    /**
+     * Creates an instance of ResponseInner class.
+     */
     public ResponseInner() {
     }
 
     /**
      * Get the cost property: The integer value representing the relative cost of the query.
-     *
+     * 
      * @return the cost value.
      */
     public Integer cost() {
@@ -66,7 +73,7 @@ public final class ResponseInner {
 
     /**
      * Set the cost property: The integer value representing the relative cost of the query.
-     *
+     * 
      * @param cost the cost value to set.
      * @return the ResponseInner object itself.
      */
@@ -79,7 +86,7 @@ public final class ResponseInner {
      * Get the timespan property: The timespan for which the data was retrieved. Its value consists of two datetimes
      * concatenated, separated by '/'. This may be adjusted in the future and returned back from what was originally
      * requested.
-     *
+     * 
      * @return the timespan value.
      */
     public String timespan() {
@@ -90,7 +97,7 @@ public final class ResponseInner {
      * Set the timespan property: The timespan for which the data was retrieved. Its value consists of two datetimes
      * concatenated, separated by '/'. This may be adjusted in the future and returned back from what was originally
      * requested.
-     *
+     * 
      * @param timespan the timespan value to set.
      * @return the ResponseInner object itself.
      */
@@ -100,32 +107,36 @@ public final class ResponseInner {
     }
 
     /**
-     * Get the interval property: The interval (window size) for which the metric data was returned in. This may be
-     * adjusted in the future and returned back from what was originally requested. This is not present if a metadata
-     * request was made.
-     *
+     * Get the interval property: The interval (window size) for which the metric data was returned in ISO 8601
+     * duration format with a special case for 'FULL' value that returns single datapoint for entire time span
+     * requested (*Examples: PT15M, PT1H, P1D, FULL*).
+     * This may be adjusted and different from what was originally requested if AutoAdjustTimegrain=true is specified.
+     * This is not present if a metadata request was made.
+     * 
      * @return the interval value.
      */
-    public Duration interval() {
+    public String interval() {
         return this.interval;
     }
 
     /**
-     * Set the interval property: The interval (window size) for which the metric data was returned in. This may be
-     * adjusted in the future and returned back from what was originally requested. This is not present if a metadata
-     * request was made.
-     *
+     * Set the interval property: The interval (window size) for which the metric data was returned in ISO 8601
+     * duration format with a special case for 'FULL' value that returns single datapoint for entire time span
+     * requested (*Examples: PT15M, PT1H, P1D, FULL*).
+     * This may be adjusted and different from what was originally requested if AutoAdjustTimegrain=true is specified.
+     * This is not present if a metadata request was made.
+     * 
      * @param interval the interval value to set.
      * @return the ResponseInner object itself.
      */
-    public ResponseInner withInterval(Duration interval) {
+    public ResponseInner withInterval(String interval) {
         this.interval = interval;
         return this;
     }
 
     /**
      * Get the namespace property: The namespace of the metrics being queried.
-     *
+     * 
      * @return the namespace value.
      */
     public String namespace() {
@@ -134,7 +145,7 @@ public final class ResponseInner {
 
     /**
      * Set the namespace property: The namespace of the metrics being queried.
-     *
+     * 
      * @param namespace the namespace value to set.
      * @return the ResponseInner object itself.
      */
@@ -145,7 +156,7 @@ public final class ResponseInner {
 
     /**
      * Get the resourceRegion property: The region of the resource being queried for metrics.
-     *
+     * 
      * @return the resourceRegion value.
      */
     public String resourceRegion() {
@@ -154,7 +165,7 @@ public final class ResponseInner {
 
     /**
      * Set the resourceRegion property: The region of the resource being queried for metrics.
-     *
+     * 
      * @param resourceRegion the resourceRegion value to set.
      * @return the ResponseInner object itself.
      */
@@ -165,39 +176,37 @@ public final class ResponseInner {
 
     /**
      * Get the value property: the value of the collection.
-     *
+     * 
      * @return the value value.
      */
-    public List<MetricInner> value() {
+    public List<Metric> value() {
         return this.value;
     }
 
     /**
      * Set the value property: the value of the collection.
-     *
+     * 
      * @param value the value value to set.
      * @return the ResponseInner object itself.
      */
-    public ResponseInner withValue(List<MetricInner> value) {
+    public ResponseInner withValue(List<Metric> value) {
         this.value = value;
         return this;
     }
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (timespan() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property timespan in model ResponseInner"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property timespan in model ResponseInner"));
         }
         if (value() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property value in model ResponseInner"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property value in model ResponseInner"));
         } else {
             value().forEach(e -> e.validate());
         }

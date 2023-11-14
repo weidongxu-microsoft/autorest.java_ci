@@ -13,8 +13,8 @@ public final class BaseAdminRuleImpl implements BaseAdminRule {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    BaseAdminRuleImpl(
-        BaseAdminRuleInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    BaseAdminRuleImpl(BaseAdminRuleInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

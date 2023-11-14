@@ -23,32 +23,28 @@ public final class ConnectionMonitorsImpl implements ConnectionMonitors {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public ConnectionMonitorsImpl(
-        ConnectionMonitorsClient innerClient,
+    public ConnectionMonitorsImpl(ConnectionMonitorsClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<ConnectionMonitorResult> getWithResponse(
-        String resourceGroupName, String networkWatcherName, String connectionMonitorName, Context context) {
-        Response<ConnectionMonitorResultInner> inner =
-            this.serviceClient().getWithResponse(resourceGroupName, networkWatcherName, connectionMonitorName, context);
+    public Response<ConnectionMonitorResult> getWithResponse(String resourceGroupName, String networkWatcherName,
+        String connectionMonitorName, Context context) {
+        Response<ConnectionMonitorResultInner> inner = this.serviceClient().getWithResponse(resourceGroupName,
+            networkWatcherName, connectionMonitorName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ConnectionMonitorResultImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public ConnectionMonitorResult get(
-        String resourceGroupName, String networkWatcherName, String connectionMonitorName) {
-        ConnectionMonitorResultInner inner =
-            this.serviceClient().get(resourceGroupName, networkWatcherName, connectionMonitorName);
+    public ConnectionMonitorResult get(String resourceGroupName, String networkWatcherName,
+        String connectionMonitorName) {
+        ConnectionMonitorResultInner inner
+            = this.serviceClient().get(resourceGroupName, networkWatcherName, connectionMonitorName);
         if (inner != null) {
             return new ConnectionMonitorResultImpl(inner, this.manager());
         } else {
@@ -60,8 +56,8 @@ public final class ConnectionMonitorsImpl implements ConnectionMonitors {
         this.serviceClient().delete(resourceGroupName, networkWatcherName, connectionMonitorName);
     }
 
-    public void delete(
-        String resourceGroupName, String networkWatcherName, String connectionMonitorName, Context context) {
+    public void delete(String resourceGroupName, String networkWatcherName, String connectionMonitorName,
+        Context context) {
         this.serviceClient().delete(resourceGroupName, networkWatcherName, connectionMonitorName, context);
     }
 
@@ -69,8 +65,8 @@ public final class ConnectionMonitorsImpl implements ConnectionMonitors {
         this.serviceClient().stop(resourceGroupName, networkWatcherName, connectionMonitorName);
     }
 
-    public void stop(
-        String resourceGroupName, String networkWatcherName, String connectionMonitorName, Context context) {
+    public void stop(String resourceGroupName, String networkWatcherName, String connectionMonitorName,
+        Context context) {
         this.serviceClient().stop(resourceGroupName, networkWatcherName, connectionMonitorName, context);
     }
 
@@ -78,15 +74,15 @@ public final class ConnectionMonitorsImpl implements ConnectionMonitors {
         this.serviceClient().start(resourceGroupName, networkWatcherName, connectionMonitorName);
     }
 
-    public void start(
-        String resourceGroupName, String networkWatcherName, String connectionMonitorName, Context context) {
+    public void start(String resourceGroupName, String networkWatcherName, String connectionMonitorName,
+        Context context) {
         this.serviceClient().start(resourceGroupName, networkWatcherName, connectionMonitorName, context);
     }
 
-    public ConnectionMonitorQueryResult query(
-        String resourceGroupName, String networkWatcherName, String connectionMonitorName) {
-        ConnectionMonitorQueryResultInner inner =
-            this.serviceClient().query(resourceGroupName, networkWatcherName, connectionMonitorName);
+    public ConnectionMonitorQueryResult query(String resourceGroupName, String networkWatcherName,
+        String connectionMonitorName) {
+        ConnectionMonitorQueryResultInner inner
+            = this.serviceClient().query(resourceGroupName, networkWatcherName, connectionMonitorName);
         if (inner != null) {
             return new ConnectionMonitorQueryResultImpl(inner, this.manager());
         } else {
@@ -94,10 +90,10 @@ public final class ConnectionMonitorsImpl implements ConnectionMonitors {
         }
     }
 
-    public ConnectionMonitorQueryResult query(
-        String resourceGroupName, String networkWatcherName, String connectionMonitorName, Context context) {
-        ConnectionMonitorQueryResultInner inner =
-            this.serviceClient().query(resourceGroupName, networkWatcherName, connectionMonitorName, context);
+    public ConnectionMonitorQueryResult query(String resourceGroupName, String networkWatcherName,
+        String connectionMonitorName, Context context) {
+        ConnectionMonitorQueryResultInner inner
+            = this.serviceClient().query(resourceGroupName, networkWatcherName, connectionMonitorName, context);
         if (inner != null) {
             return new ConnectionMonitorQueryResultImpl(inner, this.manager());
         } else {
@@ -106,74 +102,53 @@ public final class ConnectionMonitorsImpl implements ConnectionMonitors {
     }
 
     public PagedIterable<ConnectionMonitorResult> list(String resourceGroupName, String networkWatcherName) {
-        PagedIterable<ConnectionMonitorResultInner> inner =
-            this.serviceClient().list(resourceGroupName, networkWatcherName);
+        PagedIterable<ConnectionMonitorResultInner> inner
+            = this.serviceClient().list(resourceGroupName, networkWatcherName);
         return Utils.mapPage(inner, inner1 -> new ConnectionMonitorResultImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<ConnectionMonitorResult> list(
-        String resourceGroupName, String networkWatcherName, Context context) {
-        PagedIterable<ConnectionMonitorResultInner> inner =
-            this.serviceClient().list(resourceGroupName, networkWatcherName, context);
+    public PagedIterable<ConnectionMonitorResult> list(String resourceGroupName, String networkWatcherName,
+        Context context) {
+        PagedIterable<ConnectionMonitorResultInner> inner
+            = this.serviceClient().list(resourceGroupName, networkWatcherName, context);
         return Utils.mapPage(inner, inner1 -> new ConnectionMonitorResultImpl(inner1, this.manager()));
     }
 
     public ConnectionMonitorResult getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String networkWatcherName = Utils.getValueFromIdByName(id, "networkWatchers");
         if (networkWatcherName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'networkWatchers'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'networkWatchers'.", id)));
         }
         String connectionMonitorName = Utils.getValueFromIdByName(id, "connectionMonitors");
         if (connectionMonitorName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'connectionMonitors'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'connectionMonitors'.", id)));
         }
-        return this
-            .getWithResponse(resourceGroupName, networkWatcherName, connectionMonitorName, Context.NONE)
+        return this.getWithResponse(resourceGroupName, networkWatcherName, connectionMonitorName, Context.NONE)
             .getValue();
     }
 
     public Response<ConnectionMonitorResult> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String networkWatcherName = Utils.getValueFromIdByName(id, "networkWatchers");
         if (networkWatcherName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'networkWatchers'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'networkWatchers'.", id)));
         }
         String connectionMonitorName = Utils.getValueFromIdByName(id, "connectionMonitors");
         if (connectionMonitorName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'connectionMonitors'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'connectionMonitors'.", id)));
         }
         return this.getWithResponse(resourceGroupName, networkWatcherName, connectionMonitorName, context);
     }
@@ -181,28 +156,18 @@ public final class ConnectionMonitorsImpl implements ConnectionMonitors {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String networkWatcherName = Utils.getValueFromIdByName(id, "networkWatchers");
         if (networkWatcherName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'networkWatchers'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'networkWatchers'.", id)));
         }
         String connectionMonitorName = Utils.getValueFromIdByName(id, "connectionMonitors");
         if (connectionMonitorName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'connectionMonitors'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'connectionMonitors'.", id)));
         }
         this.delete(resourceGroupName, networkWatcherName, connectionMonitorName, Context.NONE);
     }
@@ -210,28 +175,18 @@ public final class ConnectionMonitorsImpl implements ConnectionMonitors {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String networkWatcherName = Utils.getValueFromIdByName(id, "networkWatchers");
         if (networkWatcherName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'networkWatchers'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'networkWatchers'.", id)));
         }
         String connectionMonitorName = Utils.getValueFromIdByName(id, "connectionMonitors");
         if (connectionMonitorName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'connectionMonitors'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'connectionMonitors'.", id)));
         }
         this.delete(resourceGroupName, networkWatcherName, connectionMonitorName, context);
     }

@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of LocalNetworkGateways. */
+/**
+ * Resource collection API of LocalNetworkGateways.
+ */
 public interface LocalNetworkGateways {
     /**
      * Gets the specified local network gateway in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param localNetworkGatewayName The name of the local network gateway.
      * @param context The context to associate with this operation.
@@ -21,12 +23,12 @@ public interface LocalNetworkGateways {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified local network gateway in a resource group along with {@link Response}.
      */
-    Response<LocalNetworkGateway> getByResourceGroupWithResponse(
-        String resourceGroupName, String localNetworkGatewayName, Context context);
+    Response<LocalNetworkGateway> getByResourceGroupWithResponse(String resourceGroupName,
+        String localNetworkGatewayName, Context context);
 
     /**
      * Gets the specified local network gateway in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param localNetworkGatewayName The name of the local network gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -38,7 +40,7 @@ public interface LocalNetworkGateways {
 
     /**
      * Deletes the specified local network gateway.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param localNetworkGatewayName The name of the local network gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -49,7 +51,7 @@ public interface LocalNetworkGateways {
 
     /**
      * Deletes the specified local network gateway.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param localNetworkGatewayName The name of the local network gateway.
      * @param context The context to associate with this operation.
@@ -61,7 +63,7 @@ public interface LocalNetworkGateways {
 
     /**
      * Gets all the local network gateways in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -72,7 +74,7 @@ public interface LocalNetworkGateways {
 
     /**
      * Gets all the local network gateways in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -84,7 +86,7 @@ public interface LocalNetworkGateways {
 
     /**
      * Gets the specified local network gateway in a resource group.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -95,7 +97,7 @@ public interface LocalNetworkGateways {
 
     /**
      * Gets the specified local network gateway in a resource group.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -107,7 +109,7 @@ public interface LocalNetworkGateways {
 
     /**
      * Deletes the specified local network gateway.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -117,7 +119,7 @@ public interface LocalNetworkGateways {
 
     /**
      * Deletes the specified local network gateway.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -128,7 +130,7 @@ public interface LocalNetworkGateways {
 
     /**
      * Begins definition for a new LocalNetworkGateway resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new LocalNetworkGateway definition.
      */

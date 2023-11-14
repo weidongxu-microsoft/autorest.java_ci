@@ -9,7 +9,9 @@ import com.azure.resourcemanager.consumption.generated.fluent.models.Reservation
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Result of listing reservation details. */
+/**
+ * Result of listing reservation details.
+ */
 @Immutable
 public final class ReservationDetailsListResult {
     /*
@@ -24,13 +26,15 @@ public final class ReservationDetailsListResult {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
-    /** Creates an instance of ReservationDetailsListResult class. */
+    /**
+     * Creates an instance of ReservationDetailsListResult class.
+     */
     public ReservationDetailsListResult() {
     }
 
     /**
      * Get the value property: The list of reservation details.
-     *
+     * 
      * @return the value value.
      */
     public List<ReservationDetailInner> value() {
@@ -39,7 +43,7 @@ public final class ReservationDetailsListResult {
 
     /**
      * Get the nextLink property: The link (url) to the next page of results.
-     *
+     * 
      * @return the nextLink value.
      */
     public String nextLink() {
@@ -48,7 +52,7 @@ public final class ReservationDetailsListResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -16,8 +16,7 @@ public final class SingleMetricBaselineImpl implements SingleMetricBaseline {
 
     private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    SingleMetricBaselineImpl(
-        SingleMetricBaselineInner innerObject,
+    SingleMetricBaselineImpl(SingleMetricBaselineInner innerObject,
         com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

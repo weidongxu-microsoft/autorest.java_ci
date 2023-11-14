@@ -21,8 +21,7 @@ public final class ExpressRouteCircuitPeeringsImpl implements ExpressRouteCircui
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public ExpressRouteCircuitPeeringsImpl(
-        ExpressRouteCircuitPeeringsClient innerClient,
+    public ExpressRouteCircuitPeeringsImpl(ExpressRouteCircuitPeeringsClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -36,15 +35,12 @@ public final class ExpressRouteCircuitPeeringsImpl implements ExpressRouteCircui
         this.serviceClient().delete(resourceGroupName, circuitName, peeringName, context);
     }
 
-    public Response<ExpressRouteCircuitPeering> getWithResponse(
-        String resourceGroupName, String circuitName, String peeringName, Context context) {
-        Response<ExpressRouteCircuitPeeringInner> inner =
-            this.serviceClient().getWithResponse(resourceGroupName, circuitName, peeringName, context);
+    public Response<ExpressRouteCircuitPeering> getWithResponse(String resourceGroupName, String circuitName,
+        String peeringName, Context context) {
+        Response<ExpressRouteCircuitPeeringInner> inner
+            = this.serviceClient().getWithResponse(resourceGroupName, circuitName, peeringName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ExpressRouteCircuitPeeringImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -61,43 +57,33 @@ public final class ExpressRouteCircuitPeeringsImpl implements ExpressRouteCircui
     }
 
     public PagedIterable<ExpressRouteCircuitPeering> list(String resourceGroupName, String circuitName) {
-        PagedIterable<ExpressRouteCircuitPeeringInner> inner =
-            this.serviceClient().list(resourceGroupName, circuitName);
+        PagedIterable<ExpressRouteCircuitPeeringInner> inner
+            = this.serviceClient().list(resourceGroupName, circuitName);
         return Utils.mapPage(inner, inner1 -> new ExpressRouteCircuitPeeringImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<ExpressRouteCircuitPeering> list(
-        String resourceGroupName, String circuitName, Context context) {
-        PagedIterable<ExpressRouteCircuitPeeringInner> inner =
-            this.serviceClient().list(resourceGroupName, circuitName, context);
+    public PagedIterable<ExpressRouteCircuitPeering> list(String resourceGroupName, String circuitName,
+        Context context) {
+        PagedIterable<ExpressRouteCircuitPeeringInner> inner
+            = this.serviceClient().list(resourceGroupName, circuitName, context);
         return Utils.mapPage(inner, inner1 -> new ExpressRouteCircuitPeeringImpl(inner1, this.manager()));
     }
 
     public ExpressRouteCircuitPeering getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String circuitName = Utils.getValueFromIdByName(id, "expressRouteCircuits");
         if (circuitName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'expressRouteCircuits'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'expressRouteCircuits'.", id)));
         }
         String peeringName = Utils.getValueFromIdByName(id, "peerings");
         if (peeringName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'peerings'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'peerings'.", id)));
         }
         return this.getWithResponse(resourceGroupName, circuitName, peeringName, Context.NONE).getValue();
     }
@@ -105,28 +91,18 @@ public final class ExpressRouteCircuitPeeringsImpl implements ExpressRouteCircui
     public Response<ExpressRouteCircuitPeering> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String circuitName = Utils.getValueFromIdByName(id, "expressRouteCircuits");
         if (circuitName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'expressRouteCircuits'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'expressRouteCircuits'.", id)));
         }
         String peeringName = Utils.getValueFromIdByName(id, "peerings");
         if (peeringName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'peerings'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'peerings'.", id)));
         }
         return this.getWithResponse(resourceGroupName, circuitName, peeringName, context);
     }
@@ -134,28 +110,18 @@ public final class ExpressRouteCircuitPeeringsImpl implements ExpressRouteCircui
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String circuitName = Utils.getValueFromIdByName(id, "expressRouteCircuits");
         if (circuitName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'expressRouteCircuits'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'expressRouteCircuits'.", id)));
         }
         String peeringName = Utils.getValueFromIdByName(id, "peerings");
         if (peeringName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'peerings'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'peerings'.", id)));
         }
         this.delete(resourceGroupName, circuitName, peeringName, Context.NONE);
     }
@@ -163,28 +129,18 @@ public final class ExpressRouteCircuitPeeringsImpl implements ExpressRouteCircui
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String circuitName = Utils.getValueFromIdByName(id, "expressRouteCircuits");
         if (circuitName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'expressRouteCircuits'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'expressRouteCircuits'.", id)));
         }
         String peeringName = Utils.getValueFromIdByName(id, "peerings");
         if (peeringName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'peerings'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'peerings'.", id)));
         }
         this.delete(resourceGroupName, circuitName, peeringName, context);
     }

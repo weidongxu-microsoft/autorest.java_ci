@@ -8,17 +8,23 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** The operator to use for comparison. */
+/**
+ * The operator to use for comparison.
+ */
 public final class OperatorType extends ExpandableStringEnum<OperatorType> {
-    /** Static value In for OperatorType. */
+    /**
+     * Static value In for OperatorType.
+     */
     public static final OperatorType IN = fromString("In");
 
-    /** Static value Contains for OperatorType. */
+    /**
+     * Static value Contains for OperatorType.
+     */
     public static final OperatorType CONTAINS = fromString("Contains");
 
     /**
      * Creates a new instance of OperatorType value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -27,7 +33,7 @@ public final class OperatorType extends ExpandableStringEnum<OperatorType> {
 
     /**
      * Creates or finds a OperatorType from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding OperatorType.
      */
@@ -38,7 +44,7 @@ public final class OperatorType extends ExpandableStringEnum<OperatorType> {
 
     /**
      * Gets known OperatorType values.
-     *
+     * 
      * @return known OperatorType values.
      */
     public static Collection<OperatorType> values() {

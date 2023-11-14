@@ -7,18 +7,20 @@ package com.azure.resourcemanager.storage.generated.models;
 import com.azure.resourcemanager.storage.generated.fluent.models.FileServiceItemsInner;
 import java.util.List;
 
-/** An immutable client-side representation of FileServiceItems. */
+/**
+ * An immutable client-side representation of FileServiceItems.
+ */
 public interface FileServiceItems {
     /**
      * Gets the value property: List of file services returned.
-     *
+     * 
      * @return the value value.
      */
     List<FileServiceProperties> value();
 
     /**
      * Gets the inner com.azure.resourcemanager.storage.generated.fluent.models.FileServiceItemsInner object.
-     *
+     * 
      * @return the inner object.
      */
     FileServiceItemsInner innerModel();

@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** A rule that provide the triggers and parameters for the scaling action. */
+/**
+ * A rule that provide the triggers and parameters for the scaling action.
+ */
 @Fluent
 public final class ScaleRule {
     /*
@@ -23,13 +25,15 @@ public final class ScaleRule {
     @JsonProperty(value = "scaleAction", required = true)
     private ScaleAction scaleAction;
 
-    /** Creates an instance of ScaleRule class. */
+    /**
+     * Creates an instance of ScaleRule class.
+     */
     public ScaleRule() {
     }
 
     /**
      * Get the metricTrigger property: the trigger that results in a scaling action.
-     *
+     * 
      * @return the metricTrigger value.
      */
     public MetricTrigger metricTrigger() {
@@ -38,7 +42,7 @@ public final class ScaleRule {
 
     /**
      * Set the metricTrigger property: the trigger that results in a scaling action.
-     *
+     * 
      * @param metricTrigger the metricTrigger value to set.
      * @return the ScaleRule object itself.
      */
@@ -49,7 +53,7 @@ public final class ScaleRule {
 
     /**
      * Get the scaleAction property: the parameters for the scaling action.
-     *
+     * 
      * @return the scaleAction value.
      */
     public ScaleAction scaleAction() {
@@ -58,7 +62,7 @@ public final class ScaleRule {
 
     /**
      * Set the scaleAction property: the parameters for the scaling action.
-     *
+     * 
      * @param scaleAction the scaleAction value to set.
      * @return the ScaleRule object itself.
      */
@@ -69,21 +73,19 @@ public final class ScaleRule {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (metricTrigger() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property metricTrigger in model ScaleRule"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property metricTrigger in model ScaleRule"));
         } else {
             metricTrigger().validate();
         }
         if (scaleAction() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property scaleAction in model ScaleRule"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property scaleAction in model ScaleRule"));
         } else {
             scaleAction().validate();
         }

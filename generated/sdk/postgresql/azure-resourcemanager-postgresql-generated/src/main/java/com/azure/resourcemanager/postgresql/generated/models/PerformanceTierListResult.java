@@ -9,7 +9,9 @@ import com.azure.resourcemanager.postgresql.generated.fluent.models.PerformanceT
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** A list of performance tiers. */
+/**
+ * A list of performance tiers.
+ */
 @Fluent
 public final class PerformanceTierListResult {
     /*
@@ -18,13 +20,15 @@ public final class PerformanceTierListResult {
     @JsonProperty(value = "value")
     private List<PerformanceTierPropertiesInner> value;
 
-    /** Creates an instance of PerformanceTierListResult class. */
+    /**
+     * Creates an instance of PerformanceTierListResult class.
+     */
     public PerformanceTierListResult() {
     }
 
     /**
      * Get the value property: The list of performance tiers.
-     *
+     * 
      * @return the value value.
      */
     public List<PerformanceTierPropertiesInner> value() {
@@ -33,7 +37,7 @@ public final class PerformanceTierListResult {
 
     /**
      * Set the value property: The list of performance tiers.
-     *
+     * 
      * @param value the value value to set.
      * @return the PerformanceTierListResult object itself.
      */
@@ -44,7 +48,7 @@ public final class PerformanceTierListResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

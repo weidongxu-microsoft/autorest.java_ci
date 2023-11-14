@@ -11,11 +11,13 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.resources.generated.fluent.models.DeploymentOperationInner;
 
-/** An instance of this class provides access to all the operations defined in DeploymentOperationsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in DeploymentOperationsClient.
+ */
 public interface DeploymentOperationsClient {
     /**
      * Gets a deployments operation.
-     *
+     * 
      * @param scope The resource scope.
      * @param deploymentName The name of the deployment.
      * @param operationId The ID of the operation to get.
@@ -26,12 +28,12 @@ public interface DeploymentOperationsClient {
      * @return a deployments operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<DeploymentOperationInner> getAtScopeWithResponse(
-        String scope, String deploymentName, String operationId, Context context);
+    Response<DeploymentOperationInner> getAtScopeWithResponse(String scope, String deploymentName, String operationId,
+        Context context);
 
     /**
      * Gets a deployments operation.
-     *
+     * 
      * @param scope The resource scope.
      * @param deploymentName The name of the deployment.
      * @param operationId The ID of the operation to get.
@@ -45,7 +47,7 @@ public interface DeploymentOperationsClient {
 
     /**
      * Gets all deployments operations for a deployment.
-     *
+     * 
      * @param scope The resource scope.
      * @param deploymentName The name of the deployment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -58,7 +60,7 @@ public interface DeploymentOperationsClient {
 
     /**
      * Gets all deployments operations for a deployment.
-     *
+     * 
      * @param scope The resource scope.
      * @param deploymentName The name of the deployment.
      * @param top The number of results to return.
@@ -69,12 +71,12 @@ public interface DeploymentOperationsClient {
      * @return all deployments operations for a deployment as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<DeploymentOperationInner> listAtScope(
-        String scope, String deploymentName, Integer top, Context context);
+    PagedIterable<DeploymentOperationInner> listAtScope(String scope, String deploymentName, Integer top,
+        Context context);
 
     /**
      * Gets a deployments operation.
-     *
+     * 
      * @param deploymentName The name of the deployment.
      * @param operationId The ID of the operation to get.
      * @param context The context to associate with this operation.
@@ -84,12 +86,12 @@ public interface DeploymentOperationsClient {
      * @return a deployments operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<DeploymentOperationInner> getAtTenantScopeWithResponse(
-        String deploymentName, String operationId, Context context);
+    Response<DeploymentOperationInner> getAtTenantScopeWithResponse(String deploymentName, String operationId,
+        Context context);
 
     /**
      * Gets a deployments operation.
-     *
+     * 
      * @param deploymentName The name of the deployment.
      * @param operationId The ID of the operation to get.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -102,7 +104,7 @@ public interface DeploymentOperationsClient {
 
     /**
      * Gets all deployments operations for a deployment.
-     *
+     * 
      * @param deploymentName The name of the deployment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -114,7 +116,7 @@ public interface DeploymentOperationsClient {
 
     /**
      * Gets all deployments operations for a deployment.
-     *
+     * 
      * @param deploymentName The name of the deployment.
      * @param top The number of results to return.
      * @param context The context to associate with this operation.
@@ -128,7 +130,7 @@ public interface DeploymentOperationsClient {
 
     /**
      * Gets a deployments operation.
-     *
+     * 
      * @param groupId The management group ID.
      * @param deploymentName The name of the deployment.
      * @param operationId The ID of the operation to get.
@@ -139,12 +141,12 @@ public interface DeploymentOperationsClient {
      * @return a deployments operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<DeploymentOperationInner> getAtManagementGroupScopeWithResponse(
-        String groupId, String deploymentName, String operationId, Context context);
+    Response<DeploymentOperationInner> getAtManagementGroupScopeWithResponse(String groupId, String deploymentName,
+        String operationId, Context context);
 
     /**
      * Gets a deployments operation.
-     *
+     * 
      * @param groupId The management group ID.
      * @param deploymentName The name of the deployment.
      * @param operationId The ID of the operation to get.
@@ -158,7 +160,7 @@ public interface DeploymentOperationsClient {
 
     /**
      * Gets all deployments operations for a deployment.
-     *
+     * 
      * @param groupId The management group ID.
      * @param deploymentName The name of the deployment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -171,7 +173,7 @@ public interface DeploymentOperationsClient {
 
     /**
      * Gets all deployments operations for a deployment.
-     *
+     * 
      * @param groupId The management group ID.
      * @param deploymentName The name of the deployment.
      * @param top The number of results to return.
@@ -182,12 +184,12 @@ public interface DeploymentOperationsClient {
      * @return all deployments operations for a deployment as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<DeploymentOperationInner> listAtManagementGroupScope(
-        String groupId, String deploymentName, Integer top, Context context);
+    PagedIterable<DeploymentOperationInner> listAtManagementGroupScope(String groupId, String deploymentName,
+        Integer top, Context context);
 
     /**
      * Gets a deployments operation.
-     *
+     * 
      * @param deploymentName The name of the deployment.
      * @param operationId The ID of the operation to get.
      * @param context The context to associate with this operation.
@@ -197,12 +199,12 @@ public interface DeploymentOperationsClient {
      * @return a deployments operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<DeploymentOperationInner> getAtSubscriptionScopeWithResponse(
-        String deploymentName, String operationId, Context context);
+    Response<DeploymentOperationInner> getAtSubscriptionScopeWithResponse(String deploymentName, String operationId,
+        Context context);
 
     /**
      * Gets a deployments operation.
-     *
+     * 
      * @param deploymentName The name of the deployment.
      * @param operationId The ID of the operation to get.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -215,7 +217,7 @@ public interface DeploymentOperationsClient {
 
     /**
      * Gets all deployments operations for a deployment.
-     *
+     * 
      * @param deploymentName The name of the deployment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -227,7 +229,7 @@ public interface DeploymentOperationsClient {
 
     /**
      * Gets all deployments operations for a deployment.
-     *
+     * 
      * @param deploymentName The name of the deployment.
      * @param top The number of results to return.
      * @param context The context to associate with this operation.
@@ -237,12 +239,12 @@ public interface DeploymentOperationsClient {
      * @return all deployments operations for a deployment as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<DeploymentOperationInner> listAtSubscriptionScope(
-        String deploymentName, Integer top, Context context);
+    PagedIterable<DeploymentOperationInner> listAtSubscriptionScope(String deploymentName, Integer top,
+        Context context);
 
     /**
      * Gets a deployments operation.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param deploymentName The name of the deployment.
      * @param operationId The ID of the operation to get.
@@ -253,12 +255,12 @@ public interface DeploymentOperationsClient {
      * @return a deployments operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<DeploymentOperationInner> getWithResponse(
-        String resourceGroupName, String deploymentName, String operationId, Context context);
+    Response<DeploymentOperationInner> getWithResponse(String resourceGroupName, String deploymentName,
+        String operationId, Context context);
 
     /**
      * Gets a deployments operation.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param deploymentName The name of the deployment.
      * @param operationId The ID of the operation to get.
@@ -272,7 +274,7 @@ public interface DeploymentOperationsClient {
 
     /**
      * Gets all deployments operations for a deployment.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param deploymentName The name of the deployment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -285,7 +287,7 @@ public interface DeploymentOperationsClient {
 
     /**
      * Gets all deployments operations for a deployment.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param deploymentName The name of the deployment.
      * @param top The number of results to return.
@@ -296,6 +298,6 @@ public interface DeploymentOperationsClient {
      * @return all deployments operations for a deployment as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<DeploymentOperationInner> listByResourceGroup(
-        String resourceGroupName, String deploymentName, Integer top, Context context);
+    PagedIterable<DeploymentOperationInner> listByResourceGroup(String resourceGroupName, String deploymentName,
+        Integer top, Context context);
 }

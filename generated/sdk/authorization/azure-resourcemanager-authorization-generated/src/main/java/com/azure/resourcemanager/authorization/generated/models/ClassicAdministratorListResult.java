@@ -9,7 +9,9 @@ import com.azure.resourcemanager.authorization.generated.fluent.models.ClassicAd
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** ClassicAdministrator list result information. */
+/**
+ * ClassicAdministrator list result information.
+ */
 @Fluent
 public final class ClassicAdministratorListResult {
     /*
@@ -24,13 +26,15 @@ public final class ClassicAdministratorListResult {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
-    /** Creates an instance of ClassicAdministratorListResult class. */
+    /**
+     * Creates an instance of ClassicAdministratorListResult class.
+     */
     public ClassicAdministratorListResult() {
     }
 
     /**
      * Get the value property: An array of administrators.
-     *
+     * 
      * @return the value value.
      */
     public List<ClassicAdministratorInner> value() {
@@ -39,7 +43,7 @@ public final class ClassicAdministratorListResult {
 
     /**
      * Set the value property: An array of administrators.
-     *
+     * 
      * @param value the value value to set.
      * @return the ClassicAdministratorListResult object itself.
      */
@@ -50,7 +54,7 @@ public final class ClassicAdministratorListResult {
 
     /**
      * Get the nextLink property: The URL to use for getting the next set of results.
-     *
+     * 
      * @return the nextLink value.
      */
     public String nextLink() {
@@ -59,7 +63,7 @@ public final class ClassicAdministratorListResult {
 
     /**
      * Set the nextLink property: The URL to use for getting the next set of results.
-     *
+     * 
      * @param nextLink the nextLink value to set.
      * @return the ClassicAdministratorListResult object itself.
      */
@@ -70,7 +74,7 @@ public final class ClassicAdministratorListResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

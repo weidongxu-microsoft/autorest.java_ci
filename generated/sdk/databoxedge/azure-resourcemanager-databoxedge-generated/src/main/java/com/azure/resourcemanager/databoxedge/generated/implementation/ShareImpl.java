@@ -121,20 +121,14 @@ public final class ShareImpl implements Share, Share.Definition, Share.Update {
     }
 
     public Share create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getShares()
-                .createOrUpdate(deviceName, name, resourceGroupName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getShares().createOrUpdate(deviceName, name,
+            resourceGroupName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public Share create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getShares()
-                .createOrUpdate(deviceName, name, resourceGroupName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getShares().createOrUpdate(deviceName, name,
+            resourceGroupName, this.innerModel(), context);
         return this;
     }
 
@@ -149,25 +143,19 @@ public final class ShareImpl implements Share, Share.Definition, Share.Update {
     }
 
     public Share apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getShares()
-                .createOrUpdate(deviceName, name, resourceGroupName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getShares().createOrUpdate(deviceName, name,
+            resourceGroupName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public Share apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getShares()
-                .createOrUpdate(deviceName, name, resourceGroupName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getShares().createOrUpdate(deviceName, name,
+            resourceGroupName, this.innerModel(), context);
         return this;
     }
 
-    ShareImpl(
-        ShareInner innerObject, com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
+    ShareImpl(ShareInner innerObject,
+        com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.deviceName = Utils.getValueFromIdByName(innerObject.id(), "dataBoxEdgeDevices");
@@ -176,22 +164,14 @@ public final class ShareImpl implements Share, Share.Definition, Share.Update {
     }
 
     public Share refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getShares()
-                .getWithResponse(deviceName, name, resourceGroupName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getShares()
+            .getWithResponse(deviceName, name, resourceGroupName, Context.NONE).getValue();
         return this;
     }
 
     public Share refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getShares()
-                .getWithResponse(deviceName, name, resourceGroupName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getShares()
+            .getWithResponse(deviceName, name, resourceGroupName, context).getValue();
         return this;
     }
 

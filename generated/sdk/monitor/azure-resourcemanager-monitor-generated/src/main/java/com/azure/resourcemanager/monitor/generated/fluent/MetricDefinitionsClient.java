@@ -10,11 +10,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.monitor.generated.fluent.models.MetricDefinitionInner;
 
-/** An instance of this class provides access to all the operations defined in MetricDefinitionsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in MetricDefinitionsClient.
+ */
 public interface MetricDefinitionsClient {
     /**
      * Lists the metric definitions for the resource.
-     *
+     * 
      * @param resourceUri The identifier of the resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -26,7 +28,7 @@ public interface MetricDefinitionsClient {
 
     /**
      * Lists the metric definitions for the resource.
-     *
+     * 
      * @param resourceUri The identifier of the resource.
      * @param metricnamespace Metric namespace to query metric definitions for.
      * @param context The context to associate with this operation.

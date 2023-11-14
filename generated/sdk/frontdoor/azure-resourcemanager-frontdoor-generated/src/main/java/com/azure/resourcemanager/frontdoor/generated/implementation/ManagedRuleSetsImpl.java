@@ -19,8 +19,7 @@ public final class ManagedRuleSetsImpl implements ManagedRuleSets {
 
     private final com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager;
 
-    public ManagedRuleSetsImpl(
-        ManagedRuleSetsClient innerClient,
+    public ManagedRuleSetsImpl(ManagedRuleSetsClient innerClient,
         com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;

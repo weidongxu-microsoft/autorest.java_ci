@@ -7,39 +7,41 @@ package com.azure.resourcemanager.sqlvirtualmachine.generated.models;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.fluent.models.SqlVmTroubleshootingInner;
 import java.time.OffsetDateTime;
 
-/** An immutable client-side representation of SqlVmTroubleshooting. */
+/**
+ * An immutable client-side representation of SqlVmTroubleshooting.
+ */
 public interface SqlVmTroubleshooting {
     /**
      * Gets the startTimeUtc property: Start time in UTC timezone.
-     *
+     * 
      * @return the startTimeUtc value.
      */
     OffsetDateTime startTimeUtc();
 
     /**
      * Gets the endTimeUtc property: End time in UTC timezone.
-     *
+     * 
      * @return the endTimeUtc value.
      */
     OffsetDateTime endTimeUtc();
 
     /**
      * Gets the troubleshootingScenario property: SQL VM troubleshooting scenario.
-     *
+     * 
      * @return the troubleshootingScenario value.
      */
     TroubleshootingScenario troubleshootingScenario();
 
     /**
      * Gets the properties property: Troubleshooting properties.
-     *
+     * 
      * @return the properties value.
      */
     TroubleshootingAdditionalProperties properties();
 
     /**
      * Gets the virtualMachineResourceId property: Virtual machine resource id for response.
-     *
+     * 
      * @return the virtualMachineResourceId value.
      */
     String virtualMachineResourceId();
@@ -47,7 +49,7 @@ public interface SqlVmTroubleshooting {
     /**
      * Gets the inner com.azure.resourcemanager.sqlvirtualmachine.generated.fluent.models.SqlVmTroubleshootingInner
      * object.
-     *
+     * 
      * @return the inner object.
      */
     SqlVmTroubleshootingInner innerModel();

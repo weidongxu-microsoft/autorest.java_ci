@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of ConnectionMonitors. */
+/**
+ * Resource collection API of ConnectionMonitors.
+ */
 public interface ConnectionMonitors {
     /**
      * Gets a connection monitor by name.
-     *
+     * 
      * @param resourceGroupName The name of the resource group containing Network Watcher.
      * @param networkWatcherName The name of the Network Watcher resource.
      * @param connectionMonitorName The name of the connection monitor.
@@ -22,12 +24,12 @@ public interface ConnectionMonitors {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a connection monitor by name along with {@link Response}.
      */
-    Response<ConnectionMonitorResult> getWithResponse(
-        String resourceGroupName, String networkWatcherName, String connectionMonitorName, Context context);
+    Response<ConnectionMonitorResult> getWithResponse(String resourceGroupName, String networkWatcherName,
+        String connectionMonitorName, Context context);
 
     /**
      * Gets a connection monitor by name.
-     *
+     * 
      * @param resourceGroupName The name of the resource group containing Network Watcher.
      * @param networkWatcherName The name of the Network Watcher resource.
      * @param connectionMonitorName The name of the connection monitor.
@@ -40,7 +42,7 @@ public interface ConnectionMonitors {
 
     /**
      * Deletes the specified connection monitor.
-     *
+     * 
      * @param resourceGroupName The name of the resource group containing Network Watcher.
      * @param networkWatcherName The name of the Network Watcher resource.
      * @param connectionMonitorName The name of the connection monitor.
@@ -52,7 +54,7 @@ public interface ConnectionMonitors {
 
     /**
      * Deletes the specified connection monitor.
-     *
+     * 
      * @param resourceGroupName The name of the resource group containing Network Watcher.
      * @param networkWatcherName The name of the Network Watcher resource.
      * @param connectionMonitorName The name of the connection monitor.
@@ -65,7 +67,7 @@ public interface ConnectionMonitors {
 
     /**
      * Stops the specified connection monitor.
-     *
+     * 
      * @param resourceGroupName The name of the resource group containing Network Watcher.
      * @param networkWatcherName The name of the Network Watcher resource.
      * @param connectionMonitorName The name of the connection monitor.
@@ -77,7 +79,7 @@ public interface ConnectionMonitors {
 
     /**
      * Stops the specified connection monitor.
-     *
+     * 
      * @param resourceGroupName The name of the resource group containing Network Watcher.
      * @param networkWatcherName The name of the Network Watcher resource.
      * @param connectionMonitorName The name of the connection monitor.
@@ -90,7 +92,7 @@ public interface ConnectionMonitors {
 
     /**
      * Starts the specified connection monitor.
-     *
+     * 
      * @param resourceGroupName The name of the resource group containing Network Watcher.
      * @param networkWatcherName The name of the Network Watcher resource.
      * @param connectionMonitorName The name of the connection monitor.
@@ -102,7 +104,7 @@ public interface ConnectionMonitors {
 
     /**
      * Starts the specified connection monitor.
-     *
+     * 
      * @param resourceGroupName The name of the resource group containing Network Watcher.
      * @param networkWatcherName The name of the Network Watcher resource.
      * @param connectionMonitorName The name of the connection monitor.
@@ -115,7 +117,7 @@ public interface ConnectionMonitors {
 
     /**
      * Query a snapshot of the most recent connection states.
-     *
+     * 
      * @param resourceGroupName The name of the resource group containing Network Watcher.
      * @param networkWatcherName The name of the Network Watcher resource.
      * @param connectionMonitorName The name given to the connection monitor.
@@ -124,12 +126,12 @@ public interface ConnectionMonitors {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return list of connection states snapshots.
      */
-    ConnectionMonitorQueryResult query(
-        String resourceGroupName, String networkWatcherName, String connectionMonitorName);
+    ConnectionMonitorQueryResult query(String resourceGroupName, String networkWatcherName,
+        String connectionMonitorName);
 
     /**
      * Query a snapshot of the most recent connection states.
-     *
+     * 
      * @param resourceGroupName The name of the resource group containing Network Watcher.
      * @param networkWatcherName The name of the Network Watcher resource.
      * @param connectionMonitorName The name given to the connection monitor.
@@ -139,12 +141,12 @@ public interface ConnectionMonitors {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return list of connection states snapshots.
      */
-    ConnectionMonitorQueryResult query(
-        String resourceGroupName, String networkWatcherName, String connectionMonitorName, Context context);
+    ConnectionMonitorQueryResult query(String resourceGroupName, String networkWatcherName,
+        String connectionMonitorName, Context context);
 
     /**
      * Lists all connection monitors for the specified Network Watcher.
-     *
+     * 
      * @param resourceGroupName The name of the resource group containing Network Watcher.
      * @param networkWatcherName The name of the Network Watcher resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -156,7 +158,7 @@ public interface ConnectionMonitors {
 
     /**
      * Lists all connection monitors for the specified Network Watcher.
-     *
+     * 
      * @param resourceGroupName The name of the resource group containing Network Watcher.
      * @param networkWatcherName The name of the Network Watcher resource.
      * @param context The context to associate with this operation.
@@ -169,7 +171,7 @@ public interface ConnectionMonitors {
 
     /**
      * Gets a connection monitor by name.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -180,7 +182,7 @@ public interface ConnectionMonitors {
 
     /**
      * Gets a connection monitor by name.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -192,7 +194,7 @@ public interface ConnectionMonitors {
 
     /**
      * Deletes the specified connection monitor.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -202,7 +204,7 @@ public interface ConnectionMonitors {
 
     /**
      * Deletes the specified connection monitor.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -213,7 +215,7 @@ public interface ConnectionMonitors {
 
     /**
      * Begins definition for a new ConnectionMonitorResult resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new ConnectionMonitorResult definition.
      */

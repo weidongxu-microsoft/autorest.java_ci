@@ -15,8 +15,8 @@ public final class RoleInstanceViewImpl implements RoleInstanceView {
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    RoleInstanceViewImpl(
-        RoleInstanceViewInner innerObject, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
+    RoleInstanceViewImpl(RoleInstanceViewInner innerObject,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

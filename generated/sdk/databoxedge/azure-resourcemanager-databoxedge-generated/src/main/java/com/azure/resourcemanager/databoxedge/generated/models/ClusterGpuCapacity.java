@@ -7,7 +7,9 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Cluster GPU Data. */
+/**
+ * Cluster GPU Data.
+ */
 @Fluent
 public final class ClusterGpuCapacity {
     /*
@@ -40,13 +42,15 @@ public final class ClusterGpuCapacity {
     @JsonProperty(value = "gpuTotalUnitsCount")
     private Integer gpuTotalUnitsCount;
 
-    /** Creates an instance of ClusterGpuCapacity class. */
+    /**
+     * Creates an instance of ClusterGpuCapacity class.
+     */
     public ClusterGpuCapacity() {
     }
 
     /**
      * Get the gpuType property: The cluster GPU Type.
-     *
+     * 
      * @return the gpuType value.
      */
     public String gpuType() {
@@ -55,7 +59,7 @@ public final class ClusterGpuCapacity {
 
     /**
      * Set the gpuType property: The cluster GPU Type.
-     *
+     * 
      * @param gpuType the gpuType value to set.
      * @return the ClusterGpuCapacity object itself.
      */
@@ -66,7 +70,7 @@ public final class ClusterGpuCapacity {
 
     /**
      * Get the gpuUsedUnitsCount property: The used GPU units count in the cluster.
-     *
+     * 
      * @return the gpuUsedUnitsCount value.
      */
     public Integer gpuUsedUnitsCount() {
@@ -75,7 +79,7 @@ public final class ClusterGpuCapacity {
 
     /**
      * Set the gpuUsedUnitsCount property: The used GPU units count in the cluster.
-     *
+     * 
      * @param gpuUsedUnitsCount the gpuUsedUnitsCount value to set.
      * @return the ClusterGpuCapacity object itself.
      */
@@ -86,7 +90,7 @@ public final class ClusterGpuCapacity {
 
     /**
      * Get the gpuFreeUnitsCount property: The free GPU units count in the cluster.
-     *
+     * 
      * @return the gpuFreeUnitsCount value.
      */
     public Integer gpuFreeUnitsCount() {
@@ -95,7 +99,7 @@ public final class ClusterGpuCapacity {
 
     /**
      * Set the gpuFreeUnitsCount property: The free GPU units count in the cluster.
-     *
+     * 
      * @param gpuFreeUnitsCount the gpuFreeUnitsCount value to set.
      * @return the ClusterGpuCapacity object itself.
      */
@@ -106,7 +110,7 @@ public final class ClusterGpuCapacity {
 
     /**
      * Get the gpuReservedForFailoverUnitsCount property: The GPU units count reserved for failover in the cluster.
-     *
+     * 
      * @return the gpuReservedForFailoverUnitsCount value.
      */
     public Integer gpuReservedForFailoverUnitsCount() {
@@ -115,7 +119,7 @@ public final class ClusterGpuCapacity {
 
     /**
      * Set the gpuReservedForFailoverUnitsCount property: The GPU units count reserved for failover in the cluster.
-     *
+     * 
      * @param gpuReservedForFailoverUnitsCount the gpuReservedForFailoverUnitsCount value to set.
      * @return the ClusterGpuCapacity object itself.
      */
@@ -126,7 +130,7 @@ public final class ClusterGpuCapacity {
 
     /**
      * Get the gpuTotalUnitsCount property: The total GPU units count in the cluster.
-     *
+     * 
      * @return the gpuTotalUnitsCount value.
      */
     public Integer gpuTotalUnitsCount() {
@@ -135,7 +139,7 @@ public final class ClusterGpuCapacity {
 
     /**
      * Set the gpuTotalUnitsCount property: The total GPU units count in the cluster.
-     *
+     * 
      * @param gpuTotalUnitsCount the gpuTotalUnitsCount value to set.
      * @return the ClusterGpuCapacity object itself.
      */
@@ -146,7 +150,7 @@ public final class ClusterGpuCapacity {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -21,52 +21,39 @@ public final class ConfigurationPolicyGroupsImpl implements ConfigurationPolicyG
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public ConfigurationPolicyGroupsImpl(
-        ConfigurationPolicyGroupsClient innerClient,
+    public ConfigurationPolicyGroupsImpl(ConfigurationPolicyGroupsClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public void delete(
-        String resourceGroupName, String vpnServerConfigurationName, String configurationPolicyGroupName) {
+    public void delete(String resourceGroupName, String vpnServerConfigurationName,
+        String configurationPolicyGroupName) {
         this.serviceClient().delete(resourceGroupName, vpnServerConfigurationName, configurationPolicyGroupName);
     }
 
-    public void delete(
-        String resourceGroupName,
-        String vpnServerConfigurationName,
-        String configurationPolicyGroupName,
+    public void delete(String resourceGroupName, String vpnServerConfigurationName, String configurationPolicyGroupName,
         Context context) {
-        this
-            .serviceClient()
-            .delete(resourceGroupName, vpnServerConfigurationName, configurationPolicyGroupName, context);
+        this.serviceClient().delete(resourceGroupName, vpnServerConfigurationName, configurationPolicyGroupName,
+            context);
     }
 
-    public Response<VpnServerConfigurationPolicyGroup> getWithResponse(
-        String resourceGroupName,
-        String vpnServerConfigurationName,
-        String configurationPolicyGroupName,
-        Context context) {
-        Response<VpnServerConfigurationPolicyGroupInner> inner =
-            this
-                .serviceClient()
-                .getWithResponse(resourceGroupName, vpnServerConfigurationName, configurationPolicyGroupName, context);
+    public Response<VpnServerConfigurationPolicyGroup> getWithResponse(String resourceGroupName,
+        String vpnServerConfigurationName, String configurationPolicyGroupName, Context context) {
+        Response<VpnServerConfigurationPolicyGroupInner> inner = this.serviceClient().getWithResponse(resourceGroupName,
+            vpnServerConfigurationName, configurationPolicyGroupName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new VpnServerConfigurationPolicyGroupImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public VpnServerConfigurationPolicyGroup get(
-        String resourceGroupName, String vpnServerConfigurationName, String configurationPolicyGroupName) {
-        VpnServerConfigurationPolicyGroupInner inner =
-            this.serviceClient().get(resourceGroupName, vpnServerConfigurationName, configurationPolicyGroupName);
+    public VpnServerConfigurationPolicyGroup get(String resourceGroupName, String vpnServerConfigurationName,
+        String configurationPolicyGroupName) {
+        VpnServerConfigurationPolicyGroupInner inner
+            = this.serviceClient().get(resourceGroupName, vpnServerConfigurationName, configurationPolicyGroupName);
         if (inner != null) {
             return new VpnServerConfigurationPolicyGroupImpl(inner, this.manager());
         } else {
@@ -74,48 +61,35 @@ public final class ConfigurationPolicyGroupsImpl implements ConfigurationPolicyG
         }
     }
 
-    public PagedIterable<VpnServerConfigurationPolicyGroup> listByVpnServerConfiguration(
-        String resourceGroupName, String vpnServerConfigurationName) {
-        PagedIterable<VpnServerConfigurationPolicyGroupInner> inner =
-            this.serviceClient().listByVpnServerConfiguration(resourceGroupName, vpnServerConfigurationName);
+    public PagedIterable<VpnServerConfigurationPolicyGroup> listByVpnServerConfiguration(String resourceGroupName,
+        String vpnServerConfigurationName) {
+        PagedIterable<VpnServerConfigurationPolicyGroupInner> inner
+            = this.serviceClient().listByVpnServerConfiguration(resourceGroupName, vpnServerConfigurationName);
         return Utils.mapPage(inner, inner1 -> new VpnServerConfigurationPolicyGroupImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<VpnServerConfigurationPolicyGroup> listByVpnServerConfiguration(
-        String resourceGroupName, String vpnServerConfigurationName, Context context) {
-        PagedIterable<VpnServerConfigurationPolicyGroupInner> inner =
-            this.serviceClient().listByVpnServerConfiguration(resourceGroupName, vpnServerConfigurationName, context);
+    public PagedIterable<VpnServerConfigurationPolicyGroup> listByVpnServerConfiguration(String resourceGroupName,
+        String vpnServerConfigurationName, Context context) {
+        PagedIterable<VpnServerConfigurationPolicyGroupInner> inner
+            = this.serviceClient().listByVpnServerConfiguration(resourceGroupName, vpnServerConfigurationName, context);
         return Utils.mapPage(inner, inner1 -> new VpnServerConfigurationPolicyGroupImpl(inner1, this.manager()));
     }
 
     public VpnServerConfigurationPolicyGroup getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String vpnServerConfigurationName = Utils.getValueFromIdByName(id, "vpnServerConfigurations");
         if (vpnServerConfigurationName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'vpnServerConfigurations'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'vpnServerConfigurations'.", id)));
         }
         String configurationPolicyGroupName = Utils.getValueFromIdByName(id, "configurationPolicyGroups");
         if (configurationPolicyGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'configurationPolicyGroups'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'configurationPolicyGroups'.", id)));
         }
         return this
             .getWithResponse(resourceGroupName, vpnServerConfigurationName, configurationPolicyGroupName, Context.NONE)
@@ -125,64 +99,38 @@ public final class ConfigurationPolicyGroupsImpl implements ConfigurationPolicyG
     public Response<VpnServerConfigurationPolicyGroup> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String vpnServerConfigurationName = Utils.getValueFromIdByName(id, "vpnServerConfigurations");
         if (vpnServerConfigurationName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'vpnServerConfigurations'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'vpnServerConfigurations'.", id)));
         }
         String configurationPolicyGroupName = Utils.getValueFromIdByName(id, "configurationPolicyGroups");
         if (configurationPolicyGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'configurationPolicyGroups'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'configurationPolicyGroups'.", id)));
         }
-        return this
-            .getWithResponse(resourceGroupName, vpnServerConfigurationName, configurationPolicyGroupName, context);
+        return this.getWithResponse(resourceGroupName, vpnServerConfigurationName, configurationPolicyGroupName,
+            context);
     }
 
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String vpnServerConfigurationName = Utils.getValueFromIdByName(id, "vpnServerConfigurations");
         if (vpnServerConfigurationName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'vpnServerConfigurations'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'vpnServerConfigurations'.", id)));
         }
         String configurationPolicyGroupName = Utils.getValueFromIdByName(id, "configurationPolicyGroups");
         if (configurationPolicyGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'configurationPolicyGroups'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'configurationPolicyGroups'.", id)));
         }
         this.delete(resourceGroupName, vpnServerConfigurationName, configurationPolicyGroupName, Context.NONE);
     }
@@ -190,31 +138,18 @@ public final class ConfigurationPolicyGroupsImpl implements ConfigurationPolicyG
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String vpnServerConfigurationName = Utils.getValueFromIdByName(id, "vpnServerConfigurations");
         if (vpnServerConfigurationName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'vpnServerConfigurations'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'vpnServerConfigurations'.", id)));
         }
         String configurationPolicyGroupName = Utils.getValueFromIdByName(id, "configurationPolicyGroups");
         if (configurationPolicyGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'configurationPolicyGroups'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'configurationPolicyGroups'.", id)));
         }
         this.delete(resourceGroupName, vpnServerConfigurationName, configurationPolicyGroupName, context);
     }

@@ -7,7 +7,9 @@ package com.azure.resourcemanager.monitor.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** A log metrics trigger descriptor. */
+/**
+ * A log metrics trigger descriptor.
+ */
 @Fluent
 public final class LogMetricTrigger {
     /*
@@ -34,13 +36,15 @@ public final class LogMetricTrigger {
     @JsonProperty(value = "metricColumn")
     private String metricColumn;
 
-    /** Creates an instance of LogMetricTrigger class. */
+    /**
+     * Creates an instance of LogMetricTrigger class.
+     */
     public LogMetricTrigger() {
     }
 
     /**
      * Get the thresholdOperator property: Evaluation operation for Metric -'GreaterThan' or 'LessThan' or 'Equal'.
-     *
+     * 
      * @return the thresholdOperator value.
      */
     public ConditionalOperator thresholdOperator() {
@@ -49,7 +53,7 @@ public final class LogMetricTrigger {
 
     /**
      * Set the thresholdOperator property: Evaluation operation for Metric -'GreaterThan' or 'LessThan' or 'Equal'.
-     *
+     * 
      * @param thresholdOperator the thresholdOperator value to set.
      * @return the LogMetricTrigger object itself.
      */
@@ -60,7 +64,7 @@ public final class LogMetricTrigger {
 
     /**
      * Get the threshold property: The threshold of the metric trigger.
-     *
+     * 
      * @return the threshold value.
      */
     public Double threshold() {
@@ -69,7 +73,7 @@ public final class LogMetricTrigger {
 
     /**
      * Set the threshold property: The threshold of the metric trigger.
-     *
+     * 
      * @param threshold the threshold value to set.
      * @return the LogMetricTrigger object itself.
      */
@@ -80,7 +84,7 @@ public final class LogMetricTrigger {
 
     /**
      * Get the metricTriggerType property: Metric Trigger Type - 'Consecutive' or 'Total'.
-     *
+     * 
      * @return the metricTriggerType value.
      */
     public MetricTriggerType metricTriggerType() {
@@ -89,7 +93,7 @@ public final class LogMetricTrigger {
 
     /**
      * Set the metricTriggerType property: Metric Trigger Type - 'Consecutive' or 'Total'.
-     *
+     * 
      * @param metricTriggerType the metricTriggerType value to set.
      * @return the LogMetricTrigger object itself.
      */
@@ -100,7 +104,7 @@ public final class LogMetricTrigger {
 
     /**
      * Get the metricColumn property: Evaluation of metric on a particular column.
-     *
+     * 
      * @return the metricColumn value.
      */
     public String metricColumn() {
@@ -109,7 +113,7 @@ public final class LogMetricTrigger {
 
     /**
      * Set the metricColumn property: Evaluation of metric on a particular column.
-     *
+     * 
      * @param metricColumn the metricColumn value to set.
      * @return the LogMetricTrigger object itself.
      */
@@ -120,7 +124,7 @@ public final class LogMetricTrigger {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

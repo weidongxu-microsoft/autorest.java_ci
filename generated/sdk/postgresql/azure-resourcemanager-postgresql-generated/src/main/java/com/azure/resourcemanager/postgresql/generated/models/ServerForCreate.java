@@ -10,7 +10,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
 
-/** Represents a server to be created. */
+/**
+ * Represents a server to be created.
+ */
 @Fluent
 public final class ServerForCreate {
     /*
@@ -44,13 +46,15 @@ public final class ServerForCreate {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> tags;
 
-    /** Creates an instance of ServerForCreate class. */
+    /**
+     * Creates an instance of ServerForCreate class.
+     */
     public ServerForCreate() {
     }
 
     /**
      * Get the identity property: The Azure Active Directory identity of the server.
-     *
+     * 
      * @return the identity value.
      */
     public ResourceIdentity identity() {
@@ -59,7 +63,7 @@ public final class ServerForCreate {
 
     /**
      * Set the identity property: The Azure Active Directory identity of the server.
-     *
+     * 
      * @param identity the identity value to set.
      * @return the ServerForCreate object itself.
      */
@@ -70,7 +74,7 @@ public final class ServerForCreate {
 
     /**
      * Get the sku property: The SKU (pricing tier) of the server.
-     *
+     * 
      * @return the sku value.
      */
     public Sku sku() {
@@ -79,7 +83,7 @@ public final class ServerForCreate {
 
     /**
      * Set the sku property: The SKU (pricing tier) of the server.
-     *
+     * 
      * @param sku the sku value to set.
      * @return the ServerForCreate object itself.
      */
@@ -90,7 +94,7 @@ public final class ServerForCreate {
 
     /**
      * Get the properties property: Properties of the server.
-     *
+     * 
      * @return the properties value.
      */
     public ServerPropertiesForCreate properties() {
@@ -99,7 +103,7 @@ public final class ServerForCreate {
 
     /**
      * Set the properties property: Properties of the server.
-     *
+     * 
      * @param properties the properties value to set.
      * @return the ServerForCreate object itself.
      */
@@ -110,7 +114,7 @@ public final class ServerForCreate {
 
     /**
      * Get the location property: The location the resource resides in.
-     *
+     * 
      * @return the location value.
      */
     public String location() {
@@ -119,7 +123,7 @@ public final class ServerForCreate {
 
     /**
      * Set the location property: The location the resource resides in.
-     *
+     * 
      * @param location the location value to set.
      * @return the ServerForCreate object itself.
      */
@@ -130,7 +134,7 @@ public final class ServerForCreate {
 
     /**
      * Get the tags property: Application-specific metadata in the form of key-value pairs.
-     *
+     * 
      * @return the tags value.
      */
     public Map<String, String> tags() {
@@ -139,7 +143,7 @@ public final class ServerForCreate {
 
     /**
      * Set the tags property: Application-specific metadata in the form of key-value pairs.
-     *
+     * 
      * @param tags the tags value to set.
      * @return the ServerForCreate object itself.
      */
@@ -150,7 +154,7 @@ public final class ServerForCreate {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
@@ -161,16 +165,14 @@ public final class ServerForCreate {
             sku().validate();
         }
         if (properties() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property properties in model ServerForCreate"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property properties in model ServerForCreate"));
         } else {
             properties().validate();
         }
         if (location() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property location in model ServerForCreate"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property location in model ServerForCreate"));
         }
     }
 

@@ -9,7 +9,9 @@ import com.azure.resourcemanager.eventhubs.generated.fluent.models.EventhubInner
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The result of the List EventHubs operation. */
+/**
+ * The result of the List EventHubs operation.
+ */
 @Fluent
 public final class EventHubListResult {
     /*
@@ -24,13 +26,15 @@ public final class EventHubListResult {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
-    /** Creates an instance of EventHubListResult class. */
+    /**
+     * Creates an instance of EventHubListResult class.
+     */
     public EventHubListResult() {
     }
 
     /**
      * Get the value property: Result of the List EventHubs operation.
-     *
+     * 
      * @return the value value.
      */
     public List<EventhubInner> value() {
@@ -39,7 +43,7 @@ public final class EventHubListResult {
 
     /**
      * Set the value property: Result of the List EventHubs operation.
-     *
+     * 
      * @param value the value value to set.
      * @return the EventHubListResult object itself.
      */
@@ -51,7 +55,7 @@ public final class EventHubListResult {
     /**
      * Get the nextLink property: Link to the next set of results. Not empty if Value contains incomplete list of
      * EventHubs.
-     *
+     * 
      * @return the nextLink value.
      */
     public String nextLink() {
@@ -61,7 +65,7 @@ public final class EventHubListResult {
     /**
      * Set the nextLink property: Link to the next set of results. Not empty if Value contains incomplete list of
      * EventHubs.
-     *
+     * 
      * @param nextLink the nextLink value to set.
      * @return the EventHubListResult object itself.
      */
@@ -72,7 +76,7 @@ public final class EventHubListResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -12,11 +12,13 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.monitor.generated.fluent.models.LogSearchRuleResourceInner;
 import com.azure.resourcemanager.monitor.generated.models.LogSearchRuleResourcePatch;
 
-/** An instance of this class provides access to all the operations defined in ScheduledQueryRulesClient. */
+/**
+ * An instance of this class provides access to all the operations defined in ScheduledQueryRulesClient.
+ */
 public interface ScheduledQueryRulesClient {
     /**
      * Creates or updates an log search rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @param parameters The parameters of the rule to create or update.
@@ -27,12 +29,12 @@ public interface ScheduledQueryRulesClient {
      * @return the Log Search Rule resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<LogSearchRuleResourceInner> createOrUpdateWithResponse(
-        String resourceGroupName, String ruleName, LogSearchRuleResourceInner parameters, Context context);
+    Response<LogSearchRuleResourceInner> createOrUpdateWithResponse(String resourceGroupName, String ruleName,
+        LogSearchRuleResourceInner parameters, Context context);
 
     /**
      * Creates or updates an log search rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @param parameters The parameters of the rule to create or update.
@@ -42,12 +44,12 @@ public interface ScheduledQueryRulesClient {
      * @return the Log Search Rule resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    LogSearchRuleResourceInner createOrUpdate(
-        String resourceGroupName, String ruleName, LogSearchRuleResourceInner parameters);
+    LogSearchRuleResourceInner createOrUpdate(String resourceGroupName, String ruleName,
+        LogSearchRuleResourceInner parameters);
 
     /**
      * Gets an Log Search rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @param context The context to associate with this operation.
@@ -57,12 +59,12 @@ public interface ScheduledQueryRulesClient {
      * @return an Log Search rule along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<LogSearchRuleResourceInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String ruleName, Context context);
+    Response<LogSearchRuleResourceInner> getByResourceGroupWithResponse(String resourceGroupName, String ruleName,
+        Context context);
 
     /**
      * Gets an Log Search rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -75,7 +77,7 @@ public interface ScheduledQueryRulesClient {
 
     /**
      * Update log search Rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @param parameters The parameters of the rule to update.
@@ -86,12 +88,12 @@ public interface ScheduledQueryRulesClient {
      * @return the Log Search Rule resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<LogSearchRuleResourceInner> updateWithResponse(
-        String resourceGroupName, String ruleName, LogSearchRuleResourcePatch parameters, Context context);
+    Response<LogSearchRuleResourceInner> updateWithResponse(String resourceGroupName, String ruleName,
+        LogSearchRuleResourcePatch parameters, Context context);
 
     /**
      * Update log search Rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @param parameters The parameters of the rule to update.
@@ -105,7 +107,7 @@ public interface ScheduledQueryRulesClient {
 
     /**
      * Deletes a Log Search rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @param context The context to associate with this operation.
@@ -119,7 +121,7 @@ public interface ScheduledQueryRulesClient {
 
     /**
      * Deletes a Log Search rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -131,7 +133,7 @@ public interface ScheduledQueryRulesClient {
 
     /**
      * List the Log Search rules within a subscription group.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return represents a collection of Log Search rule resources as paginated response with {@link PagedIterable}.
@@ -141,9 +143,9 @@ public interface ScheduledQueryRulesClient {
 
     /**
      * List the Log Search rules within a subscription group.
-     *
+     * 
      * @param filter The filter to apply on the operation. For more information please see
-     *     https://msdn.microsoft.com/en-us/library/azure/dn931934.aspx.
+     * https://msdn.microsoft.com/en-us/library/azure/dn931934.aspx.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -155,7 +157,7 @@ public interface ScheduledQueryRulesClient {
 
     /**
      * List the Log Search rules within a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -167,10 +169,10 @@ public interface ScheduledQueryRulesClient {
 
     /**
      * List the Log Search rules within a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param filter The filter to apply on the operation. For more information please see
-     *     https://msdn.microsoft.com/en-us/library/azure/dn931934.aspx.
+     * https://msdn.microsoft.com/en-us/library/azure/dn931934.aspx.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -178,6 +180,6 @@ public interface ScheduledQueryRulesClient {
      * @return represents a collection of Log Search rule resources as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<LogSearchRuleResourceInner> listByResourceGroup(
-        String resourceGroupName, String filter, Context context);
+    PagedIterable<LogSearchRuleResourceInner> listByResourceGroup(String resourceGroupName, String filter,
+        Context context);
 }

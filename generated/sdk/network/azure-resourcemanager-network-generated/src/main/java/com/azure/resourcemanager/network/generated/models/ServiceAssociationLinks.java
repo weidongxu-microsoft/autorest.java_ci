@@ -7,11 +7,13 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of ServiceAssociationLinks. */
+/**
+ * Resource collection API of ServiceAssociationLinks.
+ */
 public interface ServiceAssociationLinks {
     /**
      * Gets a list of service association links for a subnet.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
@@ -21,12 +23,12 @@ public interface ServiceAssociationLinks {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a list of service association links for a subnet along with {@link Response}.
      */
-    Response<ServiceAssociationLinksListResult> listWithResponse(
-        String resourceGroupName, String virtualNetworkName, String subnetName, Context context);
+    Response<ServiceAssociationLinksListResult> listWithResponse(String resourceGroupName, String virtualNetworkName,
+        String subnetName, Context context);
 
     /**
      * Gets a list of service association links for a subnet.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.

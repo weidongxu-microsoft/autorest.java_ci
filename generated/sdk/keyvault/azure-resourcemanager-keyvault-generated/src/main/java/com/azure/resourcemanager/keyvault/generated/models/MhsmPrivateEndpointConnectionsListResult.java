@@ -9,7 +9,9 @@ import com.azure.resourcemanager.keyvault.generated.fluent.models.MhsmPrivateEnd
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** List of private endpoint connections associated with a managed HSM Pools. */
+/**
+ * List of private endpoint connections associated with a managed HSM Pools.
+ */
 @Fluent
 public final class MhsmPrivateEndpointConnectionsListResult {
     /*
@@ -24,13 +26,15 @@ public final class MhsmPrivateEndpointConnectionsListResult {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
-    /** Creates an instance of MhsmPrivateEndpointConnectionsListResult class. */
+    /**
+     * Creates an instance of MhsmPrivateEndpointConnectionsListResult class.
+     */
     public MhsmPrivateEndpointConnectionsListResult() {
     }
 
     /**
      * Get the value property: The private endpoint connection associated with a managed HSM Pools.
-     *
+     * 
      * @return the value value.
      */
     public List<MhsmPrivateEndpointConnectionInner> value() {
@@ -39,7 +43,7 @@ public final class MhsmPrivateEndpointConnectionsListResult {
 
     /**
      * Set the value property: The private endpoint connection associated with a managed HSM Pools.
-     *
+     * 
      * @param value the value value to set.
      * @return the MhsmPrivateEndpointConnectionsListResult object itself.
      */
@@ -50,7 +54,7 @@ public final class MhsmPrivateEndpointConnectionsListResult {
 
     /**
      * Get the nextLink property: The URL to get the next set of managed HSM Pools.
-     *
+     * 
      * @return the nextLink value.
      */
     public String nextLink() {
@@ -59,7 +63,7 @@ public final class MhsmPrivateEndpointConnectionsListResult {
 
     /**
      * Set the nextLink property: The URL to get the next set of managed HSM Pools.
-     *
+     * 
      * @param nextLink the nextLink value to set.
      * @return the MhsmPrivateEndpointConnectionsListResult object itself.
      */
@@ -70,7 +74,7 @@ public final class MhsmPrivateEndpointConnectionsListResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

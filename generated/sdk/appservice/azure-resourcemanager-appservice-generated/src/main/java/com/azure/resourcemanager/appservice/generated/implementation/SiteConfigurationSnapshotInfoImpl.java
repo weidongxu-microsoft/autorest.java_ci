@@ -13,8 +13,7 @@ public final class SiteConfigurationSnapshotInfoImpl implements SiteConfiguratio
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    SiteConfigurationSnapshotInfoImpl(
-        SiteConfigurationSnapshotInfoInner innerObject,
+    SiteConfigurationSnapshotInfoImpl(SiteConfigurationSnapshotInfoInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

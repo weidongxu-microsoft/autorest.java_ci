@@ -7,11 +7,13 @@ package com.azure.resourcemanager.compute.generated.models;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineScaleSetVMExtensionsListResultInner;
 import java.util.List;
 
-/** An immutable client-side representation of VirtualMachineScaleSetVMExtensionsListResult. */
+/**
+ * An immutable client-side representation of VirtualMachineScaleSetVMExtensionsListResult.
+ */
 public interface VirtualMachineScaleSetVMExtensionsListResult {
     /**
      * Gets the value property: The list of VMSS VM extensions.
-     *
+     * 
      * @return the value value.
      */
     List<VirtualMachineScaleSetVMExtension> value();
@@ -20,7 +22,7 @@ public interface VirtualMachineScaleSetVMExtensionsListResult {
      * Gets the inner
      * com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineScaleSetVMExtensionsListResultInner
      * object.
-     *
+     * 
      * @return the inner object.
      */
     VirtualMachineScaleSetVMExtensionsListResultInner innerModel();

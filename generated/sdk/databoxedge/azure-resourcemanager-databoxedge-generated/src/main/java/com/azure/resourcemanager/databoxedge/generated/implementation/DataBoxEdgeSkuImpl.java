@@ -23,8 +23,7 @@ public final class DataBoxEdgeSkuImpl implements DataBoxEdgeSku {
 
     private final com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager;
 
-    DataBoxEdgeSkuImpl(
-        DataBoxEdgeSkuInner innerObject,
+    DataBoxEdgeSkuImpl(DataBoxEdgeSkuInner innerObject,
         com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

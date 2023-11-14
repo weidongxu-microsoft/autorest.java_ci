@@ -12,7 +12,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.time.Duration;
 
-/** Describes the basic properties for generating thumbnails from the input video. */
+/**
+ * Describes the basic properties for generating thumbnails from the input video.
+ */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
     include = JsonTypeInfo.As.PROPERTY,
@@ -21,8 +23,7 @@ import java.time.Duration;
 @JsonTypeName("#Microsoft.Media.Image")
 @JsonSubTypes({
     @JsonSubTypes.Type(name = "#Microsoft.Media.JpgImage", value = JpgImage.class),
-    @JsonSubTypes.Type(name = "#Microsoft.Media.PngImage", value = PngImage.class)
-})
+    @JsonSubTypes.Type(name = "#Microsoft.Media.PngImage", value = PngImage.class) })
 @Fluent
 public class Image extends Video {
     /*
@@ -61,7 +62,9 @@ public class Image extends Video {
     @JsonProperty(value = "range")
     private String range;
 
-    /** Creates an instance of Image class. */
+    /**
+     * Creates an instance of Image class.
+     */
     public Image() {
     }
 
@@ -72,7 +75,7 @@ public class Image extends Video {
      * Also supports a macro {Best}, which tells the encoder to select the best thumbnail from the first few seconds of
      * the video and will only produce one thumbnail, no matter what other settings are for Step and Range. The default
      * value is macro {Best}.
-     *
+     * 
      * @return the start value.
      */
     public String start() {
@@ -86,7 +89,7 @@ public class Image extends Video {
      * Also supports a macro {Best}, which tells the encoder to select the best thumbnail from the first few seconds of
      * the video and will only produce one thumbnail, no matter what other settings are for Step and Range. The default
      * value is macro {Best}.
-     *
+     * 
      * @param start the start value to set.
      * @return the Image object itself.
      */
@@ -105,7 +108,7 @@ public class Image extends Video {
      * the first generated thumbnail might be far away from the one specified at start time. Try to select reasonable
      * value for Step if the first thumbnail is expected close to start time, or set Range value at 1 if only one
      * thumbnail is needed at start time.
-     *
+     * 
      * @return the step value.
      */
     public String step() {
@@ -122,7 +125,7 @@ public class Image extends Video {
      * the first generated thumbnail might be far away from the one specified at start time. Try to select reasonable
      * value for Step if the first thumbnail is expected close to start time, or set Range value at 1 if only one
      * thumbnail is needed at start time.
-     *
+     * 
      * @param step the step value to set.
      * @return the Image object itself.
      */
@@ -135,10 +138,10 @@ public class Image extends Video {
      * Get the range property: The position relative to transform preset start time in the input video at which to stop
      * generating thumbnails. The value can be in ISO 8601 format (For example, PT5M30S to stop at 5 minutes and 30
      * seconds from start time), or a frame count (For example, 300 to stop at the 300th frame from the frame at start
-     * time. If this value is 1, it means only producing one thumbnail at start time), or a relative value to the stream
-     * duration (For example, 50% to stop at half of stream duration from start time). The default value is 100%, which
-     * means to stop at the end of the stream.
-     *
+     * time. If this value is 1, it means only producing one thumbnail at start time), or a relative value to the
+     * stream duration (For example, 50% to stop at half of stream duration from start time). The default value is
+     * 100%, which means to stop at the end of the stream.
+     * 
      * @return the range value.
      */
     public String range() {
@@ -149,10 +152,10 @@ public class Image extends Video {
      * Set the range property: The position relative to transform preset start time in the input video at which to stop
      * generating thumbnails. The value can be in ISO 8601 format (For example, PT5M30S to stop at 5 minutes and 30
      * seconds from start time), or a frame count (For example, 300 to stop at the 300th frame from the frame at start
-     * time. If this value is 1, it means only producing one thumbnail at start time), or a relative value to the stream
-     * duration (For example, 50% to stop at half of stream duration from start time). The default value is 100%, which
-     * means to stop at the end of the stream.
-     *
+     * time. If this value is 1, it means only producing one thumbnail at start time), or a relative value to the
+     * stream duration (For example, 50% to stop at half of stream duration from start time). The default value is
+     * 100%, which means to stop at the end of the stream.
+     * 
      * @param range the range value to set.
      * @return the Image object itself.
      */
@@ -161,28 +164,36 @@ public class Image extends Video {
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Image withKeyFrameInterval(Duration keyFrameInterval) {
         super.withKeyFrameInterval(keyFrameInterval);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Image withStretchMode(StretchMode stretchMode) {
         super.withStretchMode(stretchMode);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Image withSyncMode(VideoSyncMode syncMode) {
         super.withSyncMode(syncMode);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Image withLabel(String label) {
         super.withLabel(label);
@@ -191,7 +202,7 @@ public class Image extends Video {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

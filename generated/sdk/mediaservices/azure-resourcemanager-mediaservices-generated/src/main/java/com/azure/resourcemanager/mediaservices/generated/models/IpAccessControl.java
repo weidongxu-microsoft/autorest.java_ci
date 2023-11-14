@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The IP access control. */
+/**
+ * The IP access control.
+ */
 @Fluent
 public final class IpAccessControl {
     /*
@@ -17,13 +19,15 @@ public final class IpAccessControl {
     @JsonProperty(value = "allow")
     private List<IpRange> allow;
 
-    /** Creates an instance of IpAccessControl class. */
+    /**
+     * Creates an instance of IpAccessControl class.
+     */
     public IpAccessControl() {
     }
 
     /**
      * Get the allow property: The IP allow list.
-     *
+     * 
      * @return the allow value.
      */
     public List<IpRange> allow() {
@@ -32,7 +36,7 @@ public final class IpAccessControl {
 
     /**
      * Set the allow property: The IP allow list.
-     *
+     * 
      * @param allow the allow value to set.
      * @return the IpAccessControl object itself.
      */
@@ -43,7 +47,7 @@ public final class IpAccessControl {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

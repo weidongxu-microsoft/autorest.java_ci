@@ -9,11 +9,13 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.VpnConnectionInner;
 
-/** Resource collection API of VpnConnections. */
+/**
+ * Resource collection API of VpnConnections.
+ */
 public interface VpnConnections {
     /**
      * Retrieves the details of a vpn connection.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @param connectionName The name of the vpn connection.
@@ -23,12 +25,12 @@ public interface VpnConnections {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return vpnConnection Resource along with {@link Response}.
      */
-    Response<VpnConnection> getWithResponse(
-        String resourceGroupName, String gatewayName, String connectionName, Context context);
+    Response<VpnConnection> getWithResponse(String resourceGroupName, String gatewayName, String connectionName,
+        Context context);
 
     /**
      * Retrieves the details of a vpn connection.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @param connectionName The name of the vpn connection.
@@ -41,7 +43,7 @@ public interface VpnConnections {
 
     /**
      * Creates a vpn connection to a scalable vpn gateway if it doesn't exist else updates the existing connection.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @param connectionName The name of the connection.
@@ -51,15 +53,12 @@ public interface VpnConnections {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return vpnConnection Resource.
      */
-    VpnConnection createOrUpdate(
-        String resourceGroupName,
-        String gatewayName,
-        String connectionName,
+    VpnConnection createOrUpdate(String resourceGroupName, String gatewayName, String connectionName,
         VpnConnectionInner vpnConnectionParameters);
 
     /**
      * Creates a vpn connection to a scalable vpn gateway if it doesn't exist else updates the existing connection.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @param connectionName The name of the connection.
@@ -70,16 +69,12 @@ public interface VpnConnections {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return vpnConnection Resource.
      */
-    VpnConnection createOrUpdate(
-        String resourceGroupName,
-        String gatewayName,
-        String connectionName,
-        VpnConnectionInner vpnConnectionParameters,
-        Context context);
+    VpnConnection createOrUpdate(String resourceGroupName, String gatewayName, String connectionName,
+        VpnConnectionInner vpnConnectionParameters, Context context);
 
     /**
      * Deletes a vpn connection.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @param connectionName The name of the connection.
@@ -91,7 +86,7 @@ public interface VpnConnections {
 
     /**
      * Deletes a vpn connection.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @param connectionName The name of the connection.
@@ -104,7 +99,7 @@ public interface VpnConnections {
 
     /**
      * Starts packet capture on Vpn connection in the specified resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param gatewayName The name of the gateway.
      * @param vpnConnectionName The name of the vpn connection.
@@ -117,28 +112,24 @@ public interface VpnConnections {
 
     /**
      * Starts packet capture on Vpn connection in the specified resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param gatewayName The name of the gateway.
      * @param vpnConnectionName The name of the vpn connection.
      * @param parameters Vpn Connection packet capture parameters supplied to start packet capture on gateway
-     *     connection.
+     * connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response.
      */
-    String startPacketCapture(
-        String resourceGroupName,
-        String gatewayName,
-        String vpnConnectionName,
-        VpnConnectionPacketCaptureStartParameters parameters,
-        Context context);
+    String startPacketCapture(String resourceGroupName, String gatewayName, String vpnConnectionName,
+        VpnConnectionPacketCaptureStartParameters parameters, Context context);
 
     /**
      * Stops packet capture on Vpn connection in the specified resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param gatewayName The name of the gateway.
      * @param vpnConnectionName The name of the vpn connection.
@@ -151,7 +142,7 @@ public interface VpnConnections {
 
     /**
      * Stops packet capture on Vpn connection in the specified resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param gatewayName The name of the gateway.
      * @param vpnConnectionName The name of the vpn connection.
@@ -162,29 +153,25 @@ public interface VpnConnections {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response.
      */
-    String stopPacketCapture(
-        String resourceGroupName,
-        String gatewayName,
-        String vpnConnectionName,
-        VpnConnectionPacketCaptureStopParameters parameters,
-        Context context);
+    String stopPacketCapture(String resourceGroupName, String gatewayName, String vpnConnectionName,
+        VpnConnectionPacketCaptureStopParameters parameters, Context context);
 
     /**
      * Retrieves all vpn connections for a particular virtual wan vpn gateway.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return result of the request to list all vpn connections to a virtual wan vpn gateway as paginated response with
-     *     {@link PagedIterable}.
+     * {@link PagedIterable}.
      */
     PagedIterable<VpnConnection> listByVpnGateway(String resourceGroupName, String gatewayName);
 
     /**
      * Retrieves all vpn connections for a particular virtual wan vpn gateway.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @param context The context to associate with this operation.
@@ -192,7 +179,7 @@ public interface VpnConnections {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return result of the request to list all vpn connections to a virtual wan vpn gateway as paginated response with
-     *     {@link PagedIterable}.
+     * {@link PagedIterable}.
      */
     PagedIterable<VpnConnection> listByVpnGateway(String resourceGroupName, String gatewayName, Context context);
 }

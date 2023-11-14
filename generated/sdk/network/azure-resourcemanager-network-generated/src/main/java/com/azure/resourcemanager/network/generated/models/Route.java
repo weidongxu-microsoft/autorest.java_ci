@@ -7,11 +7,13 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.RouteInner;
 
-/** An immutable client-side representation of Route. */
+/**
+ * An immutable client-side representation of Route.
+ */
 public interface Route {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.
-     *
+     * 
      * @return the id value.
      */
     String id();
@@ -19,35 +21,35 @@ public interface Route {
     /**
      * Gets the name property: The name of the resource that is unique within a resource group. This name can be used to
      * access the resource.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the etag property: A unique read-only string that changes whenever the resource is updated.
-     *
+     * 
      * @return the etag value.
      */
     String etag();
 
     /**
      * Gets the type property: The type of the resource.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the addressPrefix property: The destination CIDR to which the route applies.
-     *
+     * 
      * @return the addressPrefix value.
      */
     String addressPrefix();
 
     /**
      * Gets the nextHopType property: The type of Azure hop the packet should be sent to.
-     *
+     * 
      * @return the nextHopType value.
      */
     RouteNextHopType nextHopType();
@@ -55,14 +57,14 @@ public interface Route {
     /**
      * Gets the nextHopIpAddress property: The IP address packets should be forwarded to. Next hop values are only
      * allowed in routes where the next hop type is VirtualAppliance.
-     *
+     * 
      * @return the nextHopIpAddress value.
      */
     String nextHopIpAddress();
 
     /**
      * Gets the provisioningState property: The provisioning state of the route resource.
-     *
+     * 
      * @return the provisioningState value.
      */
     ProvisioningState provisioningState();
@@ -70,41 +72,49 @@ public interface Route {
     /**
      * Gets the hasBgpOverride property: A value indicating whether this route overrides overlapping BGP routes
      * regardless of LPM.
-     *
+     * 
      * @return the hasBgpOverride value.
      */
     Boolean hasBgpOverride();
 
     /**
      * Gets the name of the resource group.
-     *
+     * 
      * @return the name of the resource group.
      */
     String resourceGroupName();
 
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.RouteInner object.
-     *
+     * 
      * @return the inner object.
      */
     RouteInner innerModel();
 
-    /** The entirety of the Route definition. */
+    /**
+     * The entirety of the Route definition.
+     */
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
 
-    /** The Route definition stages. */
+    /**
+     * The Route definition stages.
+     */
     interface DefinitionStages {
-        /** The first stage of the Route definition. */
+        /**
+         * The first stage of the Route definition.
+         */
         interface Blank extends WithParentResource {
         }
 
-        /** The stage of the Route definition allowing to specify parent resource. */
+        /**
+         * The stage of the Route definition allowing to specify parent resource.
+         */
         interface WithParentResource {
             /**
              * Specifies resourceGroupName, routeTableName.
-             *
+             * 
              * @param resourceGroupName The name of the resource group.
              * @param routeTableName The name of the route table.
              * @return the next definition stage.
@@ -116,96 +126,104 @@ public interface Route {
          * The stage of the Route definition which contains all the minimum required properties for the resource to be
          * created, but also allows for any other optional properties to be specified.
          */
-        interface WithCreate
-            extends DefinitionStages.WithName,
-                DefinitionStages.WithType,
-                DefinitionStages.WithAddressPrefix,
-                DefinitionStages.WithNextHopType,
-                DefinitionStages.WithNextHopIpAddress,
-                DefinitionStages.WithHasBgpOverride {
+        interface WithCreate extends DefinitionStages.WithName, DefinitionStages.WithType,
+            DefinitionStages.WithAddressPrefix, DefinitionStages.WithNextHopType, DefinitionStages.WithNextHopIpAddress,
+            DefinitionStages.WithHasBgpOverride {
             /**
              * Executes the create request.
-             *
+             * 
              * @return the created resource.
              */
             Route create();
 
             /**
              * Executes the create request.
-             *
+             * 
              * @param context The context to associate with this operation.
              * @return the created resource.
              */
             Route create(Context context);
         }
 
-        /** The stage of the Route definition allowing to specify name. */
+        /**
+         * The stage of the Route definition allowing to specify name.
+         */
         interface WithName {
             /**
              * Specifies the name property: The name of the resource that is unique within a resource group. This name
              * can be used to access the resource..
-             *
+             * 
              * @param name The name of the resource that is unique within a resource group. This name can be used to
-             *     access the resource.
+             * access the resource.
              * @return the next definition stage.
              */
             WithCreate withName(String name);
         }
 
-        /** The stage of the Route definition allowing to specify type. */
+        /**
+         * The stage of the Route definition allowing to specify type.
+         */
         interface WithType {
             /**
              * Specifies the type property: The type of the resource..
-             *
+             * 
              * @param type The type of the resource.
              * @return the next definition stage.
              */
             WithCreate withType(String type);
         }
 
-        /** The stage of the Route definition allowing to specify addressPrefix. */
+        /**
+         * The stage of the Route definition allowing to specify addressPrefix.
+         */
         interface WithAddressPrefix {
             /**
              * Specifies the addressPrefix property: The destination CIDR to which the route applies..
-             *
+             * 
              * @param addressPrefix The destination CIDR to which the route applies.
              * @return the next definition stage.
              */
             WithCreate withAddressPrefix(String addressPrefix);
         }
 
-        /** The stage of the Route definition allowing to specify nextHopType. */
+        /**
+         * The stage of the Route definition allowing to specify nextHopType.
+         */
         interface WithNextHopType {
             /**
              * Specifies the nextHopType property: The type of Azure hop the packet should be sent to..
-             *
+             * 
              * @param nextHopType The type of Azure hop the packet should be sent to.
              * @return the next definition stage.
              */
             WithCreate withNextHopType(RouteNextHopType nextHopType);
         }
 
-        /** The stage of the Route definition allowing to specify nextHopIpAddress. */
+        /**
+         * The stage of the Route definition allowing to specify nextHopIpAddress.
+         */
         interface WithNextHopIpAddress {
             /**
              * Specifies the nextHopIpAddress property: The IP address packets should be forwarded to. Next hop values
              * are only allowed in routes where the next hop type is VirtualAppliance..
-             *
+             * 
              * @param nextHopIpAddress The IP address packets should be forwarded to. Next hop values are only allowed
-             *     in routes where the next hop type is VirtualAppliance.
+             * in routes where the next hop type is VirtualAppliance.
              * @return the next definition stage.
              */
             WithCreate withNextHopIpAddress(String nextHopIpAddress);
         }
 
-        /** The stage of the Route definition allowing to specify hasBgpOverride. */
+        /**
+         * The stage of the Route definition allowing to specify hasBgpOverride.
+         */
         interface WithHasBgpOverride {
             /**
              * Specifies the hasBgpOverride property: A value indicating whether this route overrides overlapping BGP
              * routes regardless of LPM..
-             *
+             * 
              * @param hasBgpOverride A value indicating whether this route overrides overlapping BGP routes regardless
-             *     of LPM.
+             * of LPM.
              * @return the next definition stage.
              */
             WithCreate withHasBgpOverride(Boolean hasBgpOverride);
@@ -214,104 +232,115 @@ public interface Route {
 
     /**
      * Begins update for the Route resource.
-     *
+     * 
      * @return the stage of resource update.
      */
     Route.Update update();
 
-    /** The template for Route update. */
-    interface Update
-        extends UpdateStages.WithName,
-            UpdateStages.WithType,
-            UpdateStages.WithAddressPrefix,
-            UpdateStages.WithNextHopType,
-            UpdateStages.WithNextHopIpAddress,
-            UpdateStages.WithHasBgpOverride {
+    /**
+     * The template for Route update.
+     */
+    interface Update extends UpdateStages.WithName, UpdateStages.WithType, UpdateStages.WithAddressPrefix,
+        UpdateStages.WithNextHopType, UpdateStages.WithNextHopIpAddress, UpdateStages.WithHasBgpOverride {
         /**
          * Executes the update request.
-         *
+         * 
          * @return the updated resource.
          */
         Route apply();
 
         /**
          * Executes the update request.
-         *
+         * 
          * @param context The context to associate with this operation.
          * @return the updated resource.
          */
         Route apply(Context context);
     }
 
-    /** The Route update stages. */
+    /**
+     * The Route update stages.
+     */
     interface UpdateStages {
-        /** The stage of the Route update allowing to specify name. */
+        /**
+         * The stage of the Route update allowing to specify name.
+         */
         interface WithName {
             /**
              * Specifies the name property: The name of the resource that is unique within a resource group. This name
              * can be used to access the resource..
-             *
+             * 
              * @param name The name of the resource that is unique within a resource group. This name can be used to
-             *     access the resource.
+             * access the resource.
              * @return the next definition stage.
              */
             Update withName(String name);
         }
 
-        /** The stage of the Route update allowing to specify type. */
+        /**
+         * The stage of the Route update allowing to specify type.
+         */
         interface WithType {
             /**
              * Specifies the type property: The type of the resource..
-             *
+             * 
              * @param type The type of the resource.
              * @return the next definition stage.
              */
             Update withType(String type);
         }
 
-        /** The stage of the Route update allowing to specify addressPrefix. */
+        /**
+         * The stage of the Route update allowing to specify addressPrefix.
+         */
         interface WithAddressPrefix {
             /**
              * Specifies the addressPrefix property: The destination CIDR to which the route applies..
-             *
+             * 
              * @param addressPrefix The destination CIDR to which the route applies.
              * @return the next definition stage.
              */
             Update withAddressPrefix(String addressPrefix);
         }
 
-        /** The stage of the Route update allowing to specify nextHopType. */
+        /**
+         * The stage of the Route update allowing to specify nextHopType.
+         */
         interface WithNextHopType {
             /**
              * Specifies the nextHopType property: The type of Azure hop the packet should be sent to..
-             *
+             * 
              * @param nextHopType The type of Azure hop the packet should be sent to.
              * @return the next definition stage.
              */
             Update withNextHopType(RouteNextHopType nextHopType);
         }
 
-        /** The stage of the Route update allowing to specify nextHopIpAddress. */
+        /**
+         * The stage of the Route update allowing to specify nextHopIpAddress.
+         */
         interface WithNextHopIpAddress {
             /**
              * Specifies the nextHopIpAddress property: The IP address packets should be forwarded to. Next hop values
              * are only allowed in routes where the next hop type is VirtualAppliance..
-             *
+             * 
              * @param nextHopIpAddress The IP address packets should be forwarded to. Next hop values are only allowed
-             *     in routes where the next hop type is VirtualAppliance.
+             * in routes where the next hop type is VirtualAppliance.
              * @return the next definition stage.
              */
             Update withNextHopIpAddress(String nextHopIpAddress);
         }
 
-        /** The stage of the Route update allowing to specify hasBgpOverride. */
+        /**
+         * The stage of the Route update allowing to specify hasBgpOverride.
+         */
         interface WithHasBgpOverride {
             /**
              * Specifies the hasBgpOverride property: A value indicating whether this route overrides overlapping BGP
              * routes regardless of LPM..
-             *
+             * 
              * @param hasBgpOverride A value indicating whether this route overrides overlapping BGP routes regardless
-             *     of LPM.
+             * of LPM.
              * @return the next definition stage.
              */
             Update withHasBgpOverride(Boolean hasBgpOverride);
@@ -320,14 +349,14 @@ public interface Route {
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @return the refreshed resource.
      */
     Route refresh();
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @return the refreshed resource.
      */

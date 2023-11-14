@@ -21,8 +21,7 @@ public final class DscpConfigurationsImpl implements DscpConfigurations {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public DscpConfigurationsImpl(
-        DscpConfigurationsClient innerClient,
+    public DscpConfigurationsImpl(DscpConfigurationsClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -36,15 +35,12 @@ public final class DscpConfigurationsImpl implements DscpConfigurations {
         this.serviceClient().delete(resourceGroupName, dscpConfigurationName, context);
     }
 
-    public Response<DscpConfiguration> getByResourceGroupWithResponse(
-        String resourceGroupName, String dscpConfigurationName, Context context) {
-        Response<DscpConfigurationInner> inner =
-            this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, dscpConfigurationName, context);
+    public Response<DscpConfiguration> getByResourceGroupWithResponse(String resourceGroupName,
+        String dscpConfigurationName, Context context) {
+        Response<DscpConfigurationInner> inner
+            = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, dscpConfigurationName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DscpConfigurationImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -52,8 +48,8 @@ public final class DscpConfigurationsImpl implements DscpConfigurations {
     }
 
     public DscpConfiguration getByResourceGroup(String resourceGroupName, String dscpConfigurationName) {
-        DscpConfigurationInner inner =
-            this.serviceClient().getByResourceGroup(resourceGroupName, dscpConfigurationName);
+        DscpConfigurationInner inner
+            = this.serviceClient().getByResourceGroup(resourceGroupName, dscpConfigurationName);
         if (inner != null) {
             return new DscpConfigurationImpl(inner, this.manager());
         } else {
@@ -67,8 +63,8 @@ public final class DscpConfigurationsImpl implements DscpConfigurations {
     }
 
     public PagedIterable<DscpConfiguration> listByResourceGroup(String resourceGroupName, Context context) {
-        PagedIterable<DscpConfigurationInner> inner =
-            this.serviceClient().listByResourceGroup(resourceGroupName, context);
+        PagedIterable<DscpConfigurationInner> inner
+            = this.serviceClient().listByResourceGroup(resourceGroupName, context);
         return Utils.mapPage(inner, inner1 -> new DscpConfigurationImpl(inner1, this.manager()));
     }
 
@@ -85,20 +81,13 @@ public final class DscpConfigurationsImpl implements DscpConfigurations {
     public DscpConfiguration getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String dscpConfigurationName = Utils.getValueFromIdByName(id, "dscpConfigurations");
         if (dscpConfigurationName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'dscpConfigurations'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'dscpConfigurations'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, dscpConfigurationName, Context.NONE).getValue();
     }
@@ -106,20 +95,13 @@ public final class DscpConfigurationsImpl implements DscpConfigurations {
     public Response<DscpConfiguration> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String dscpConfigurationName = Utils.getValueFromIdByName(id, "dscpConfigurations");
         if (dscpConfigurationName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'dscpConfigurations'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'dscpConfigurations'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, dscpConfigurationName, context);
     }
@@ -127,20 +109,13 @@ public final class DscpConfigurationsImpl implements DscpConfigurations {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String dscpConfigurationName = Utils.getValueFromIdByName(id, "dscpConfigurations");
         if (dscpConfigurationName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'dscpConfigurations'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'dscpConfigurations'.", id)));
         }
         this.delete(resourceGroupName, dscpConfigurationName, Context.NONE);
     }
@@ -148,20 +123,13 @@ public final class DscpConfigurationsImpl implements DscpConfigurations {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String dscpConfigurationName = Utils.getValueFromIdByName(id, "dscpConfigurations");
         if (dscpConfigurationName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'dscpConfigurations'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'dscpConfigurations'.", id)));
         }
         this.delete(resourceGroupName, dscpConfigurationName, context);
     }

@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of RoutingIntents. */
+/**
+ * Resource collection API of RoutingIntents.
+ */
 public interface RoutingIntents {
     /**
      * Retrieves the details of a RoutingIntent.
-     *
+     * 
      * @param resourceGroupName The resource group name of the RoutingIntent.
      * @param virtualHubName The name of the VirtualHub.
      * @param routingIntentName The name of the RoutingIntent.
@@ -22,12 +24,12 @@ public interface RoutingIntents {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the routing intent child resource of a Virtual hub along with {@link Response}.
      */
-    Response<RoutingIntent> getWithResponse(
-        String resourceGroupName, String virtualHubName, String routingIntentName, Context context);
+    Response<RoutingIntent> getWithResponse(String resourceGroupName, String virtualHubName, String routingIntentName,
+        Context context);
 
     /**
      * Retrieves the details of a RoutingIntent.
-     *
+     * 
      * @param resourceGroupName The resource group name of the RoutingIntent.
      * @param virtualHubName The name of the VirtualHub.
      * @param routingIntentName The name of the RoutingIntent.
@@ -40,7 +42,7 @@ public interface RoutingIntents {
 
     /**
      * Deletes a RoutingIntent.
-     *
+     * 
      * @param resourceGroupName The resource group name of the RoutingIntent.
      * @param virtualHubName The name of the VirtualHub.
      * @param routingIntentName The name of the RoutingIntent.
@@ -52,7 +54,7 @@ public interface RoutingIntents {
 
     /**
      * Deletes a RoutingIntent.
-     *
+     * 
      * @param resourceGroupName The resource group name of the RoutingIntent.
      * @param virtualHubName The name of the VirtualHub.
      * @param routingIntentName The name of the RoutingIntent.
@@ -65,20 +67,20 @@ public interface RoutingIntents {
 
     /**
      * Retrieves the details of all RoutingIntent child resources of the VirtualHub.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return list of the routing intent result and a URL nextLink to get the next set of results as paginated response
-     *     with {@link PagedIterable}.
+     * with {@link PagedIterable}.
      */
     PagedIterable<RoutingIntent> list(String resourceGroupName, String virtualHubName);
 
     /**
      * Retrieves the details of all RoutingIntent child resources of the VirtualHub.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @param context The context to associate with this operation.
@@ -86,13 +88,13 @@ public interface RoutingIntents {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return list of the routing intent result and a URL nextLink to get the next set of results as paginated response
-     *     with {@link PagedIterable}.
+     * with {@link PagedIterable}.
      */
     PagedIterable<RoutingIntent> list(String resourceGroupName, String virtualHubName, Context context);
 
     /**
      * Retrieves the details of a RoutingIntent.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -103,7 +105,7 @@ public interface RoutingIntents {
 
     /**
      * Retrieves the details of a RoutingIntent.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -115,7 +117,7 @@ public interface RoutingIntents {
 
     /**
      * Deletes a RoutingIntent.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -125,7 +127,7 @@ public interface RoutingIntents {
 
     /**
      * Deletes a RoutingIntent.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -136,7 +138,7 @@ public interface RoutingIntents {
 
     /**
      * Begins definition for a new RoutingIntent resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new RoutingIntent definition.
      */

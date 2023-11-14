@@ -20,14 +20,16 @@ public final class LiveEventOutputTranscriptionTrack {
     @JsonProperty(value = "trackName", required = true)
     private String trackName;
 
-    /** Creates an instance of LiveEventOutputTranscriptionTrack class. */
+    /**
+     * Creates an instance of LiveEventOutputTranscriptionTrack class.
+     */
     public LiveEventOutputTranscriptionTrack() {
     }
 
     /**
      * Get the trackName property: The output track name. This property is reserved for future use, any value set on
      * this property will be ignored.
-     *
+     * 
      * @return the trackName value.
      */
     public String trackName() {
@@ -37,7 +39,7 @@ public final class LiveEventOutputTranscriptionTrack {
     /**
      * Set the trackName property: The output track name. This property is reserved for future use, any value set on
      * this property will be ignored.
-     *
+     * 
      * @param trackName the trackName value to set.
      * @return the LiveEventOutputTranscriptionTrack object itself.
      */
@@ -48,15 +50,13 @@ public final class LiveEventOutputTranscriptionTrack {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (trackName() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property trackName in model LiveEventOutputTranscriptionTrack"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property trackName in model LiveEventOutputTranscriptionTrack"));
         }
     }
 

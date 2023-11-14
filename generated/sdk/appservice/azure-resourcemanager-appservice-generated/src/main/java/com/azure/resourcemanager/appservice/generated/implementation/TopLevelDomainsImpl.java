@@ -24,8 +24,7 @@ public final class TopLevelDomainsImpl implements TopLevelDomains {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    public TopLevelDomainsImpl(
-        TopLevelDomainsClient innerClient,
+    public TopLevelDomainsImpl(TopLevelDomainsClient innerClient,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -44,10 +43,7 @@ public final class TopLevelDomainsImpl implements TopLevelDomains {
     public Response<TopLevelDomain> getWithResponse(String name, Context context) {
         Response<TopLevelDomainInner> inner = this.serviceClient().getWithResponse(name, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new TopLevelDomainImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -68,10 +64,10 @@ public final class TopLevelDomainsImpl implements TopLevelDomains {
         return Utils.mapPage(inner, inner1 -> new TldLegalAgreementImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<TldLegalAgreement> listAgreements(
-        String name, TopLevelDomainAgreementOption agreementOption, Context context) {
-        PagedIterable<TldLegalAgreementInner> inner =
-            this.serviceClient().listAgreements(name, agreementOption, context);
+    public PagedIterable<TldLegalAgreement> listAgreements(String name, TopLevelDomainAgreementOption agreementOption,
+        Context context) {
+        PagedIterable<TldLegalAgreementInner> inner
+            = this.serviceClient().listAgreements(name, agreementOption, context);
         return Utils.mapPage(inner, inner1 -> new TldLegalAgreementImpl(inner1, this.manager()));
     }
 

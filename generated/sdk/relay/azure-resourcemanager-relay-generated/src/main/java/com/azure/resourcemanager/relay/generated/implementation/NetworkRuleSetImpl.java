@@ -18,8 +18,8 @@ public final class NetworkRuleSetImpl implements NetworkRuleSet {
 
     private final com.azure.resourcemanager.relay.generated.RelayManager serviceManager;
 
-    NetworkRuleSetImpl(
-        NetworkRuleSetInner innerObject, com.azure.resourcemanager.relay.generated.RelayManager serviceManager) {
+    NetworkRuleSetImpl(NetworkRuleSetInner innerObject,
+        com.azure.resourcemanager.relay.generated.RelayManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

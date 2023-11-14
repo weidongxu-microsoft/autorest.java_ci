@@ -15,7 +15,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 import java.util.Map;
 
-/** The policy set definition properties. */
+/**
+ * The policy set definition properties.
+ */
 @Fluent
 public final class PolicySetDefinitionProperties {
     /*
@@ -37,7 +39,7 @@ public final class PolicySetDefinitionProperties {
     private String description;
 
     /*
-     * The policy set definition metadata.  Metadata is an open ended object and is typically a collection of key value
+     * The policy set definition metadata. Metadata is an open ended object and is typically a collection of key value
      * pairs.
      */
     @JsonProperty(value = "metadata")
@@ -62,14 +64,16 @@ public final class PolicySetDefinitionProperties {
     @JsonProperty(value = "policyDefinitionGroups")
     private List<PolicyDefinitionGroup> policyDefinitionGroups;
 
-    /** Creates an instance of PolicySetDefinitionProperties class. */
+    /**
+     * Creates an instance of PolicySetDefinitionProperties class.
+     */
     public PolicySetDefinitionProperties() {
     }
 
     /**
      * Get the policyType property: The type of policy definition. Possible values are NotSpecified, BuiltIn, Custom,
      * and Static.
-     *
+     * 
      * @return the policyType value.
      */
     public PolicyType policyType() {
@@ -79,7 +83,7 @@ public final class PolicySetDefinitionProperties {
     /**
      * Set the policyType property: The type of policy definition. Possible values are NotSpecified, BuiltIn, Custom,
      * and Static.
-     *
+     * 
      * @param policyType the policyType value to set.
      * @return the PolicySetDefinitionProperties object itself.
      */
@@ -90,7 +94,7 @@ public final class PolicySetDefinitionProperties {
 
     /**
      * Get the displayName property: The display name of the policy set definition.
-     *
+     * 
      * @return the displayName value.
      */
     public String displayName() {
@@ -99,7 +103,7 @@ public final class PolicySetDefinitionProperties {
 
     /**
      * Set the displayName property: The display name of the policy set definition.
-     *
+     * 
      * @param displayName the displayName value to set.
      * @return the PolicySetDefinitionProperties object itself.
      */
@@ -110,7 +114,7 @@ public final class PolicySetDefinitionProperties {
 
     /**
      * Get the description property: The policy set definition description.
-     *
+     * 
      * @return the description value.
      */
     public String description() {
@@ -119,7 +123,7 @@ public final class PolicySetDefinitionProperties {
 
     /**
      * Set the description property: The policy set definition description.
-     *
+     * 
      * @param description the description value to set.
      * @return the PolicySetDefinitionProperties object itself.
      */
@@ -129,9 +133,9 @@ public final class PolicySetDefinitionProperties {
     }
 
     /**
-     * Get the metadata property: The policy set definition metadata. Metadata is an open ended object and is typically
-     * a collection of key value pairs.
-     *
+     * Get the metadata property: The policy set definition metadata. Metadata is an open ended object and is
+     * typically a collection of key value pairs.
+     * 
      * @return the metadata value.
      */
     public Object metadata() {
@@ -139,9 +143,9 @@ public final class PolicySetDefinitionProperties {
     }
 
     /**
-     * Set the metadata property: The policy set definition metadata. Metadata is an open ended object and is typically
-     * a collection of key value pairs.
-     *
+     * Set the metadata property: The policy set definition metadata. Metadata is an open ended object and is
+     * typically a collection of key value pairs.
+     * 
      * @param metadata the metadata value to set.
      * @return the PolicySetDefinitionProperties object itself.
      */
@@ -153,7 +157,7 @@ public final class PolicySetDefinitionProperties {
     /**
      * Get the parameters property: The policy set definition parameters that can be used in policy definition
      * references.
-     *
+     * 
      * @return the parameters value.
      */
     public Map<String, ParameterDefinitionsValue> parameters() {
@@ -163,7 +167,7 @@ public final class PolicySetDefinitionProperties {
     /**
      * Set the parameters property: The policy set definition parameters that can be used in policy definition
      * references.
-     *
+     * 
      * @param parameters the parameters value to set.
      * @return the PolicySetDefinitionProperties object itself.
      */
@@ -174,7 +178,7 @@ public final class PolicySetDefinitionProperties {
 
     /**
      * Get the policyDefinitions property: An array of policy definition references.
-     *
+     * 
      * @return the policyDefinitions value.
      */
     public List<PolicyDefinitionReference> policyDefinitions() {
@@ -183,7 +187,7 @@ public final class PolicySetDefinitionProperties {
 
     /**
      * Set the policyDefinitions property: An array of policy definition references.
-     *
+     * 
      * @param policyDefinitions the policyDefinitions value to set.
      * @return the PolicySetDefinitionProperties object itself.
      */
@@ -195,7 +199,7 @@ public final class PolicySetDefinitionProperties {
     /**
      * Get the policyDefinitionGroups property: The metadata describing groups of policy definition references within
      * the policy set definition.
-     *
+     * 
      * @return the policyDefinitionGroups value.
      */
     public List<PolicyDefinitionGroup> policyDefinitionGroups() {
@@ -205,37 +209,32 @@ public final class PolicySetDefinitionProperties {
     /**
      * Set the policyDefinitionGroups property: The metadata describing groups of policy definition references within
      * the policy set definition.
-     *
+     * 
      * @param policyDefinitionGroups the policyDefinitionGroups value to set.
      * @return the PolicySetDefinitionProperties object itself.
      */
-    public PolicySetDefinitionProperties withPolicyDefinitionGroups(
-        List<PolicyDefinitionGroup> policyDefinitionGroups) {
+    public PolicySetDefinitionProperties
+        withPolicyDefinitionGroups(List<PolicyDefinitionGroup> policyDefinitionGroups) {
         this.policyDefinitionGroups = policyDefinitionGroups;
         return this;
     }
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (parameters() != null) {
-            parameters()
-                .values()
-                .forEach(
-                    e -> {
-                        if (e != null) {
-                            e.validate();
-                        }
-                    });
+            parameters().values().forEach(e -> {
+                if (e != null) {
+                    e.validate();
+                }
+            });
         }
         if (policyDefinitions() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property policyDefinitions in model PolicySetDefinitionProperties"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property policyDefinitions in model PolicySetDefinitionProperties"));
         } else {
             policyDefinitions().forEach(e -> e.validate());
         }

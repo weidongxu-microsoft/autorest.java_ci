@@ -14,15 +14,19 @@ import java.util.Collection;
  * managed by a customer specific solution.
  */
 public final class OutboundDependenciesManagedType extends ExpandableStringEnum<OutboundDependenciesManagedType> {
-    /** Static value Managed for OutboundDependenciesManagedType. */
+    /**
+     * Static value Managed for OutboundDependenciesManagedType.
+     */
     public static final OutboundDependenciesManagedType MANAGED = fromString("Managed");
 
-    /** Static value External for OutboundDependenciesManagedType. */
+    /**
+     * Static value External for OutboundDependenciesManagedType.
+     */
     public static final OutboundDependenciesManagedType EXTERNAL = fromString("External");
 
     /**
      * Creates a new instance of OutboundDependenciesManagedType value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -31,7 +35,7 @@ public final class OutboundDependenciesManagedType extends ExpandableStringEnum<
 
     /**
      * Creates or finds a OutboundDependenciesManagedType from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding OutboundDependenciesManagedType.
      */
@@ -42,7 +46,7 @@ public final class OutboundDependenciesManagedType extends ExpandableStringEnum<
 
     /**
      * Gets known OutboundDependenciesManagedType values.
-     *
+     * 
      * @return known OutboundDependenciesManagedType values.
      */
     public static Collection<OutboundDependenciesManagedType> values() {

@@ -12,8 +12,7 @@ public final class StorageMigrationResponseImpl implements StorageMigrationRespo
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    StorageMigrationResponseImpl(
-        StorageMigrationResponseInner innerObject,
+    StorageMigrationResponseImpl(StorageMigrationResponseInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

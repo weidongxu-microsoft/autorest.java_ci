@@ -10,7 +10,9 @@ import com.azure.resourcemanager.databoxedge.generated.fluent.models.DeviceCapac
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Object for Capturing DeviceCapacityRequestInfo. */
+/**
+ * Object for Capturing DeviceCapacityRequestInfo.
+ */
 @Fluent
 public final class DeviceCapacityRequestInfo {
     /*
@@ -19,13 +21,15 @@ public final class DeviceCapacityRequestInfo {
     @JsonProperty(value = "properties", required = true)
     private DeviceCapacityRequestInfoProperties innerProperties = new DeviceCapacityRequestInfoProperties();
 
-    /** Creates an instance of DeviceCapacityRequestInfo class. */
+    /**
+     * Creates an instance of DeviceCapacityRequestInfo class.
+     */
     public DeviceCapacityRequestInfo() {
     }
 
     /**
      * Get the innerProperties property: The properties of the Device Capacity Request.
-     *
+     * 
      * @return the innerProperties value.
      */
     private DeviceCapacityRequestInfoProperties innerProperties() {
@@ -35,7 +39,7 @@ public final class DeviceCapacityRequestInfo {
     /**
      * Get the vmPlacementQuery property: Array containing the sizes of the VMs for checking if its feasible to create
      * them on the appliance.
-     *
+     * 
      * @return the vmPlacementQuery value.
      */
     public List<List<String>> vmPlacementQuery() {
@@ -45,7 +49,7 @@ public final class DeviceCapacityRequestInfo {
     /**
      * Set the vmPlacementQuery property: Array containing the sizes of the VMs for checking if its feasible to create
      * them on the appliance.
-     *
+     * 
      * @param vmPlacementQuery the vmPlacementQuery value to set.
      * @return the DeviceCapacityRequestInfo object itself.
      */
@@ -60,7 +64,7 @@ public final class DeviceCapacityRequestInfo {
     /**
      * Get the vmPlacementResults property: Array of the VMs of the sizes in VmSizes can be provisioned on the
      * appliance.
-     *
+     * 
      * @return the vmPlacementResults value.
      */
     public List<VmPlacementRequestResult> vmPlacementResults() {
@@ -70,7 +74,7 @@ public final class DeviceCapacityRequestInfo {
     /**
      * Set the vmPlacementResults property: Array of the VMs of the sizes in VmSizes can be provisioned on the
      * appliance.
-     *
+     * 
      * @param vmPlacementResults the vmPlacementResults value to set.
      * @return the DeviceCapacityRequestInfo object itself.
      */
@@ -84,15 +88,13 @@ public final class DeviceCapacityRequestInfo {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (innerProperties() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property innerProperties in model DeviceCapacityRequestInfo"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property innerProperties in model DeviceCapacityRequestInfo"));
         } else {
             innerProperties().validate();
         }

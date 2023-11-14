@@ -29,18 +29,20 @@ public final class VideoAnalyzerPreset extends AudioAnalyzerPreset {
     @JsonProperty(value = "insightsToExtract")
     private InsightsType insightsToExtract;
 
-    /** Creates an instance of VideoAnalyzerPreset class. */
+    /**
+     * Creates an instance of VideoAnalyzerPreset class.
+     */
     public VideoAnalyzerPreset() {
     }
 
     /**
      * Get the insightsToExtract property: Defines the type of insights that you want the service to generate. The
      * allowed values are 'AudioInsightsOnly', 'VideoInsightsOnly', and 'AllInsights'. The default is AllInsights. If
-     * you set this to AllInsights and the input is audio only, then only audio insights are generated. Similarly if the
-     * input is video only, then only video insights are generated. It is recommended that you not use AudioInsightsOnly
-     * if you expect some of your inputs to be video only; or use VideoInsightsOnly if you expect some of your inputs to
-     * be audio only. Your Jobs in such conditions would error out.
-     *
+     * you set this to AllInsights and the input is audio only, then only audio insights are generated. Similarly if
+     * the input is video only, then only video insights are generated. It is recommended that you not use
+     * AudioInsightsOnly if you expect some of your inputs to be video only; or use VideoInsightsOnly if you expect
+     * some of your inputs to be audio only. Your Jobs in such conditions would error out.
+     * 
      * @return the insightsToExtract value.
      */
     public InsightsType insightsToExtract() {
@@ -50,11 +52,11 @@ public final class VideoAnalyzerPreset extends AudioAnalyzerPreset {
     /**
      * Set the insightsToExtract property: Defines the type of insights that you want the service to generate. The
      * allowed values are 'AudioInsightsOnly', 'VideoInsightsOnly', and 'AllInsights'. The default is AllInsights. If
-     * you set this to AllInsights and the input is audio only, then only audio insights are generated. Similarly if the
-     * input is video only, then only video insights are generated. It is recommended that you not use AudioInsightsOnly
-     * if you expect some of your inputs to be video only; or use VideoInsightsOnly if you expect some of your inputs to
-     * be audio only. Your Jobs in such conditions would error out.
-     *
+     * you set this to AllInsights and the input is audio only, then only audio insights are generated. Similarly if
+     * the input is video only, then only video insights are generated. It is recommended that you not use
+     * AudioInsightsOnly if you expect some of your inputs to be video only; or use VideoInsightsOnly if you expect
+     * some of your inputs to be audio only. Your Jobs in such conditions would error out.
+     * 
      * @param insightsToExtract the insightsToExtract value to set.
      * @return the VideoAnalyzerPreset object itself.
      */
@@ -63,21 +65,27 @@ public final class VideoAnalyzerPreset extends AudioAnalyzerPreset {
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public VideoAnalyzerPreset withAudioLanguage(String audioLanguage) {
         super.withAudioLanguage(audioLanguage);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public VideoAnalyzerPreset withMode(AudioAnalysisMode mode) {
         super.withMode(mode);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public VideoAnalyzerPreset withExperimentalOptions(Map<String, String> experimentalOptions) {
         super.withExperimentalOptions(experimentalOptions);
@@ -86,7 +94,7 @@ public final class VideoAnalyzerPreset extends AudioAnalyzerPreset {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

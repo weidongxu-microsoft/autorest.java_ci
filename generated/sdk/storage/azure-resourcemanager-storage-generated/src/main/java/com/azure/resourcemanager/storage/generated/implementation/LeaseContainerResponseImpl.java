@@ -12,8 +12,7 @@ public final class LeaseContainerResponseImpl implements LeaseContainerResponse 
 
     private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
-    LeaseContainerResponseImpl(
-        LeaseContainerResponseInner innerObject,
+    LeaseContainerResponseImpl(LeaseContainerResponseInner innerObject,
         com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

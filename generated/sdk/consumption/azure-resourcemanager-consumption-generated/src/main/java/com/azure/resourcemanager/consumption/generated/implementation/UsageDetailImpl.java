@@ -14,8 +14,7 @@ public final class UsageDetailImpl implements UsageDetail {
 
     private final com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager;
 
-    UsageDetailImpl(
-        UsageDetailInner innerObject,
+    UsageDetailImpl(UsageDetailInner innerObject,
         com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

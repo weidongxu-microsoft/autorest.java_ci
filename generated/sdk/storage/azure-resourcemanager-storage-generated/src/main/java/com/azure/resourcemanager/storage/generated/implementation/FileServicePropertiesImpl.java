@@ -69,22 +69,15 @@ public final class FileServicePropertiesImpl
     }
 
     public FileServiceProperties create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getFileServices()
-                .setServicePropertiesWithResponse(resourceGroupName, accountName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getFileServices()
+            .setServicePropertiesWithResponse(resourceGroupName, accountName, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public FileServiceProperties create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getFileServices()
-                .setServicePropertiesWithResponse(resourceGroupName, accountName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getFileServices()
+            .setServicePropertiesWithResponse(resourceGroupName, accountName, this.innerModel(), context).getValue();
         return this;
     }
 
@@ -98,27 +91,19 @@ public final class FileServicePropertiesImpl
     }
 
     public FileServiceProperties apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getFileServices()
-                .setServicePropertiesWithResponse(resourceGroupName, accountName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getFileServices()
+            .setServicePropertiesWithResponse(resourceGroupName, accountName, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public FileServiceProperties apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getFileServices()
-                .setServicePropertiesWithResponse(resourceGroupName, accountName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getFileServices()
+            .setServicePropertiesWithResponse(resourceGroupName, accountName, this.innerModel(), context).getValue();
         return this;
     }
 
-    FileServicePropertiesImpl(
-        FileServicePropertiesInner innerObject,
+    FileServicePropertiesImpl(FileServicePropertiesInner innerObject,
         com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -127,22 +112,14 @@ public final class FileServicePropertiesImpl
     }
 
     public FileServiceProperties refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getFileServices()
-                .getServicePropertiesWithResponse(resourceGroupName, accountName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getFileServices()
+            .getServicePropertiesWithResponse(resourceGroupName, accountName, Context.NONE).getValue();
         return this;
     }
 
     public FileServiceProperties refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getFileServices()
-                .getServicePropertiesWithResponse(resourceGroupName, accountName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getFileServices()
+            .getServicePropertiesWithResponse(resourceGroupName, accountName, context).getValue();
         return this;
     }
 

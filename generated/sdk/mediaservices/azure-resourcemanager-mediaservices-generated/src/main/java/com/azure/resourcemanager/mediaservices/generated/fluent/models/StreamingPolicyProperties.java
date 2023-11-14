@@ -12,7 +12,9 @@ import com.azure.resourcemanager.mediaservices.generated.models.NoEncryption;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
-/** Class to specify properties of Streaming Policy. */
+/**
+ * Class to specify properties of Streaming Policy.
+ */
 @Fluent
 public final class StreamingPolicyProperties {
     /*
@@ -51,13 +53,15 @@ public final class StreamingPolicyProperties {
     @JsonProperty(value = "noEncryption")
     private NoEncryption noEncryption;
 
-    /** Creates an instance of StreamingPolicyProperties class. */
+    /**
+     * Creates an instance of StreamingPolicyProperties class.
+     */
     public StreamingPolicyProperties() {
     }
 
     /**
      * Get the created property: Creation time of Streaming Policy.
-     *
+     * 
      * @return the created value.
      */
     public OffsetDateTime created() {
@@ -66,7 +70,7 @@ public final class StreamingPolicyProperties {
 
     /**
      * Get the defaultContentKeyPolicyName property: Default ContentKey used by current Streaming Policy.
-     *
+     * 
      * @return the defaultContentKeyPolicyName value.
      */
     public String defaultContentKeyPolicyName() {
@@ -75,7 +79,7 @@ public final class StreamingPolicyProperties {
 
     /**
      * Set the defaultContentKeyPolicyName property: Default ContentKey used by current Streaming Policy.
-     *
+     * 
      * @param defaultContentKeyPolicyName the defaultContentKeyPolicyName value to set.
      * @return the StreamingPolicyProperties object itself.
      */
@@ -86,7 +90,7 @@ public final class StreamingPolicyProperties {
 
     /**
      * Get the envelopeEncryption property: Configuration of EnvelopeEncryption.
-     *
+     * 
      * @return the envelopeEncryption value.
      */
     public EnvelopeEncryption envelopeEncryption() {
@@ -95,7 +99,7 @@ public final class StreamingPolicyProperties {
 
     /**
      * Set the envelopeEncryption property: Configuration of EnvelopeEncryption.
-     *
+     * 
      * @param envelopeEncryption the envelopeEncryption value to set.
      * @return the StreamingPolicyProperties object itself.
      */
@@ -106,7 +110,7 @@ public final class StreamingPolicyProperties {
 
     /**
      * Get the commonEncryptionCenc property: Configuration of CommonEncryptionCenc.
-     *
+     * 
      * @return the commonEncryptionCenc value.
      */
     public CommonEncryptionCenc commonEncryptionCenc() {
@@ -115,7 +119,7 @@ public final class StreamingPolicyProperties {
 
     /**
      * Set the commonEncryptionCenc property: Configuration of CommonEncryptionCenc.
-     *
+     * 
      * @param commonEncryptionCenc the commonEncryptionCenc value to set.
      * @return the StreamingPolicyProperties object itself.
      */
@@ -126,7 +130,7 @@ public final class StreamingPolicyProperties {
 
     /**
      * Get the commonEncryptionCbcs property: Configuration of CommonEncryptionCbcs.
-     *
+     * 
      * @return the commonEncryptionCbcs value.
      */
     public CommonEncryptionCbcs commonEncryptionCbcs() {
@@ -135,7 +139,7 @@ public final class StreamingPolicyProperties {
 
     /**
      * Set the commonEncryptionCbcs property: Configuration of CommonEncryptionCbcs.
-     *
+     * 
      * @param commonEncryptionCbcs the commonEncryptionCbcs value to set.
      * @return the StreamingPolicyProperties object itself.
      */
@@ -146,7 +150,7 @@ public final class StreamingPolicyProperties {
 
     /**
      * Get the noEncryption property: Configurations of NoEncryption.
-     *
+     * 
      * @return the noEncryption value.
      */
     public NoEncryption noEncryption() {
@@ -155,7 +159,7 @@ public final class StreamingPolicyProperties {
 
     /**
      * Set the noEncryption property: Configurations of NoEncryption.
-     *
+     * 
      * @param noEncryption the noEncryption value to set.
      * @return the StreamingPolicyProperties object itself.
      */
@@ -166,7 +170,7 @@ public final class StreamingPolicyProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

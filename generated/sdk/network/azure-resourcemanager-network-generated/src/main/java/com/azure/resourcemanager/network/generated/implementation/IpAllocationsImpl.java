@@ -21,8 +21,8 @@ public final class IpAllocationsImpl implements IpAllocations {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public IpAllocationsImpl(
-        IpAllocationsClient innerClient, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    public IpAllocationsImpl(IpAllocationsClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -35,15 +35,12 @@ public final class IpAllocationsImpl implements IpAllocations {
         this.serviceClient().delete(resourceGroupName, ipAllocationName, context);
     }
 
-    public Response<IpAllocation> getByResourceGroupWithResponse(
-        String resourceGroupName, String ipAllocationName, String expand, Context context) {
-        Response<IpAllocationInner> inner =
-            this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, ipAllocationName, expand, context);
+    public Response<IpAllocation> getByResourceGroupWithResponse(String resourceGroupName, String ipAllocationName,
+        String expand, Context context) {
+        Response<IpAllocationInner> inner
+            = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, ipAllocationName, expand, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new IpAllocationImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -82,40 +79,29 @@ public final class IpAllocationsImpl implements IpAllocations {
     public IpAllocation getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String ipAllocationName = Utils.getValueFromIdByName(id, "IpAllocations");
         if (ipAllocationName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'IpAllocations'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'IpAllocations'.", id)));
         }
         String localExpand = null;
-        return this
-            .getByResourceGroupWithResponse(resourceGroupName, ipAllocationName, localExpand, Context.NONE)
+        return this.getByResourceGroupWithResponse(resourceGroupName, ipAllocationName, localExpand, Context.NONE)
             .getValue();
     }
 
     public Response<IpAllocation> getByIdWithResponse(String id, String expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String ipAllocationName = Utils.getValueFromIdByName(id, "IpAllocations");
         if (ipAllocationName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'IpAllocations'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'IpAllocations'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, ipAllocationName, expand, context);
     }
@@ -123,18 +109,13 @@ public final class IpAllocationsImpl implements IpAllocations {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String ipAllocationName = Utils.getValueFromIdByName(id, "IpAllocations");
         if (ipAllocationName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'IpAllocations'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'IpAllocations'.", id)));
         }
         this.delete(resourceGroupName, ipAllocationName, Context.NONE);
     }
@@ -142,18 +123,13 @@ public final class IpAllocationsImpl implements IpAllocations {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String ipAllocationName = Utils.getValueFromIdByName(id, "IpAllocations");
         if (ipAllocationName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'IpAllocations'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'IpAllocations'.", id)));
         }
         this.delete(resourceGroupName, ipAllocationName, context);
     }

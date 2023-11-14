@@ -14,8 +14,7 @@ public final class CsmOperationDescriptionImpl implements CsmOperationDescriptio
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    CsmOperationDescriptionImpl(
-        CsmOperationDescriptionInner innerObject,
+    CsmOperationDescriptionImpl(CsmOperationDescriptionInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

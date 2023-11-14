@@ -11,7 +11,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
 import java.util.UUID;
 
-/** The MediaServiceIdentity model. */
+/**
+ * The MediaServiceIdentity model.
+ */
 @Fluent
 public final class MediaServiceIdentity {
     /*
@@ -39,13 +41,15 @@ public final class MediaServiceIdentity {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, UserAssignedManagedIdentity> userAssignedIdentities;
 
-    /** Creates an instance of MediaServiceIdentity class. */
+    /**
+     * Creates an instance of MediaServiceIdentity class.
+     */
     public MediaServiceIdentity() {
     }
 
     /**
      * Get the type property: The identity type.
-     *
+     * 
      * @return the type value.
      */
     public String type() {
@@ -54,7 +58,7 @@ public final class MediaServiceIdentity {
 
     /**
      * Set the type property: The identity type.
-     *
+     * 
      * @param type the type value to set.
      * @return the MediaServiceIdentity object itself.
      */
@@ -65,7 +69,7 @@ public final class MediaServiceIdentity {
 
     /**
      * Get the principalId property: The Principal ID of the identity.
-     *
+     * 
      * @return the principalId value.
      */
     public UUID principalId() {
@@ -74,7 +78,7 @@ public final class MediaServiceIdentity {
 
     /**
      * Get the tenantId property: The Tenant ID of the identity.
-     *
+     * 
      * @return the tenantId value.
      */
     public UUID tenantId() {
@@ -83,7 +87,7 @@ public final class MediaServiceIdentity {
 
     /**
      * Get the userAssignedIdentities property: The user assigned managed identities.
-     *
+     * 
      * @return the userAssignedIdentities value.
      */
     public Map<String, UserAssignedManagedIdentity> userAssignedIdentities() {
@@ -92,36 +96,32 @@ public final class MediaServiceIdentity {
 
     /**
      * Set the userAssignedIdentities property: The user assigned managed identities.
-     *
+     * 
      * @param userAssignedIdentities the userAssignedIdentities value to set.
      * @return the MediaServiceIdentity object itself.
      */
-    public MediaServiceIdentity withUserAssignedIdentities(
-        Map<String, UserAssignedManagedIdentity> userAssignedIdentities) {
+    public MediaServiceIdentity
+        withUserAssignedIdentities(Map<String, UserAssignedManagedIdentity> userAssignedIdentities) {
         this.userAssignedIdentities = userAssignedIdentities;
         return this;
     }
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (type() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property type in model MediaServiceIdentity"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property type in model MediaServiceIdentity"));
         }
         if (userAssignedIdentities() != null) {
-            userAssignedIdentities()
-                .values()
-                .forEach(
-                    e -> {
-                        if (e != null) {
-                            e.validate();
-                        }
-                    });
+            userAssignedIdentities().values().forEach(e -> {
+                if (e != null) {
+                    e.validate();
+                }
+            });
         }
     }
 

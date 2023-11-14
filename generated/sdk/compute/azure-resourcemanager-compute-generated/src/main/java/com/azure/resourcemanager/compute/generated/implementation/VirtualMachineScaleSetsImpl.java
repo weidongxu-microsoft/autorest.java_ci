@@ -35,8 +35,7 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    public VirtualMachineScaleSetsImpl(
-        VirtualMachineScaleSetsClient innerClient,
+    public VirtualMachineScaleSetsImpl(VirtualMachineScaleSetsClient innerClient,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -60,15 +59,12 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
         this.serviceClient().delete(resourceGroupName, vmScaleSetName, forceDeletion, context);
     }
 
-    public Response<VirtualMachineScaleSet> getByResourceGroupWithResponse(
-        String resourceGroupName, String vmScaleSetName, ExpandTypesForGetVMScaleSets expand, Context context) {
-        Response<VirtualMachineScaleSetInner> inner =
-            this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, vmScaleSetName, expand, context);
+    public Response<VirtualMachineScaleSet> getByResourceGroupWithResponse(String resourceGroupName,
+        String vmScaleSetName, ExpandTypesForGetVMScaleSets expand, Context context) {
+        Response<VirtualMachineScaleSetInner> inner
+            = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, vmScaleSetName, expand, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new VirtualMachineScaleSetImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -88,38 +84,27 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
         this.serviceClient().deallocate(resourceGroupName, vmScaleSetName);
     }
 
-    public void deallocate(
-        String resourceGroupName,
-        String vmScaleSetName,
-        Boolean hibernate,
-        VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs,
-        Context context) {
+    public void deallocate(String resourceGroupName, String vmScaleSetName, Boolean hibernate,
+        VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs, Context context) {
         this.serviceClient().deallocate(resourceGroupName, vmScaleSetName, hibernate, vmInstanceIDs, context);
     }
 
-    public void deleteInstances(
-        String resourceGroupName, String vmScaleSetName, VirtualMachineScaleSetVMInstanceRequiredIDs vmInstanceIDs) {
+    public void deleteInstances(String resourceGroupName, String vmScaleSetName,
+        VirtualMachineScaleSetVMInstanceRequiredIDs vmInstanceIDs) {
         this.serviceClient().deleteInstances(resourceGroupName, vmScaleSetName, vmInstanceIDs);
     }
 
-    public void deleteInstances(
-        String resourceGroupName,
-        String vmScaleSetName,
-        VirtualMachineScaleSetVMInstanceRequiredIDs vmInstanceIDs,
-        Boolean forceDeletion,
-        Context context) {
+    public void deleteInstances(String resourceGroupName, String vmScaleSetName,
+        VirtualMachineScaleSetVMInstanceRequiredIDs vmInstanceIDs, Boolean forceDeletion, Context context) {
         this.serviceClient().deleteInstances(resourceGroupName, vmScaleSetName, vmInstanceIDs, forceDeletion, context);
     }
 
-    public Response<VirtualMachineScaleSetInstanceView> getInstanceViewWithResponse(
-        String resourceGroupName, String vmScaleSetName, Context context) {
-        Response<VirtualMachineScaleSetInstanceViewInner> inner =
-            this.serviceClient().getInstanceViewWithResponse(resourceGroupName, vmScaleSetName, context);
+    public Response<VirtualMachineScaleSetInstanceView> getInstanceViewWithResponse(String resourceGroupName,
+        String vmScaleSetName, Context context) {
+        Response<VirtualMachineScaleSetInstanceViewInner> inner
+            = this.serviceClient().getInstanceViewWithResponse(resourceGroupName, vmScaleSetName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new VirtualMachineScaleSetInstanceViewImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -127,8 +112,8 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
     }
 
     public VirtualMachineScaleSetInstanceView getInstanceView(String resourceGroupName, String vmScaleSetName) {
-        VirtualMachineScaleSetInstanceViewInner inner =
-            this.serviceClient().getInstanceView(resourceGroupName, vmScaleSetName);
+        VirtualMachineScaleSetInstanceViewInner inner
+            = this.serviceClient().getInstanceView(resourceGroupName, vmScaleSetName);
         if (inner != null) {
             return new VirtualMachineScaleSetInstanceViewImpl(inner, this.manager());
         } else {
@@ -142,8 +127,8 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
     }
 
     public PagedIterable<VirtualMachineScaleSet> listByResourceGroup(String resourceGroupName, Context context) {
-        PagedIterable<VirtualMachineScaleSetInner> inner =
-            this.serviceClient().listByResourceGroup(resourceGroupName, context);
+        PagedIterable<VirtualMachineScaleSetInner> inner
+            = this.serviceClient().listByResourceGroup(resourceGroupName, context);
         return Utils.mapPage(inner, inner1 -> new VirtualMachineScaleSetImpl(inner1, this.manager()));
     }
 
@@ -158,29 +143,29 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
     }
 
     public PagedIterable<VirtualMachineScaleSetSku> listSkus(String resourceGroupName, String vmScaleSetName) {
-        PagedIterable<VirtualMachineScaleSetSkuInner> inner =
-            this.serviceClient().listSkus(resourceGroupName, vmScaleSetName);
+        PagedIterable<VirtualMachineScaleSetSkuInner> inner
+            = this.serviceClient().listSkus(resourceGroupName, vmScaleSetName);
         return Utils.mapPage(inner, inner1 -> new VirtualMachineScaleSetSkuImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<VirtualMachineScaleSetSku> listSkus(
-        String resourceGroupName, String vmScaleSetName, Context context) {
-        PagedIterable<VirtualMachineScaleSetSkuInner> inner =
-            this.serviceClient().listSkus(resourceGroupName, vmScaleSetName, context);
+    public PagedIterable<VirtualMachineScaleSetSku> listSkus(String resourceGroupName, String vmScaleSetName,
+        Context context) {
+        PagedIterable<VirtualMachineScaleSetSkuInner> inner
+            = this.serviceClient().listSkus(resourceGroupName, vmScaleSetName, context);
         return Utils.mapPage(inner, inner1 -> new VirtualMachineScaleSetSkuImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<UpgradeOperationHistoricalStatusInfo> getOSUpgradeHistory(
-        String resourceGroupName, String vmScaleSetName) {
-        PagedIterable<UpgradeOperationHistoricalStatusInfoInner> inner =
-            this.serviceClient().getOSUpgradeHistory(resourceGroupName, vmScaleSetName);
+    public PagedIterable<UpgradeOperationHistoricalStatusInfo> getOSUpgradeHistory(String resourceGroupName,
+        String vmScaleSetName) {
+        PagedIterable<UpgradeOperationHistoricalStatusInfoInner> inner
+            = this.serviceClient().getOSUpgradeHistory(resourceGroupName, vmScaleSetName);
         return Utils.mapPage(inner, inner1 -> new UpgradeOperationHistoricalStatusInfoImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<UpgradeOperationHistoricalStatusInfo> getOSUpgradeHistory(
-        String resourceGroupName, String vmScaleSetName, Context context) {
-        PagedIterable<UpgradeOperationHistoricalStatusInfoInner> inner =
-            this.serviceClient().getOSUpgradeHistory(resourceGroupName, vmScaleSetName, context);
+    public PagedIterable<UpgradeOperationHistoricalStatusInfo> getOSUpgradeHistory(String resourceGroupName,
+        String vmScaleSetName, Context context) {
+        PagedIterable<UpgradeOperationHistoricalStatusInfoInner> inner
+            = this.serviceClient().getOSUpgradeHistory(resourceGroupName, vmScaleSetName, context);
         return Utils.mapPage(inner, inner1 -> new UpgradeOperationHistoricalStatusInfoImpl(inner1, this.manager()));
     }
 
@@ -188,12 +173,8 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
         this.serviceClient().powerOff(resourceGroupName, vmScaleSetName);
     }
 
-    public void powerOff(
-        String resourceGroupName,
-        String vmScaleSetName,
-        Boolean skipShutdown,
-        VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs,
-        Context context) {
+    public void powerOff(String resourceGroupName, String vmScaleSetName, Boolean skipShutdown,
+        VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs, Context context) {
         this.serviceClient().powerOff(resourceGroupName, vmScaleSetName, skipShutdown, vmInstanceIDs, context);
     }
 
@@ -201,11 +182,8 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
         this.serviceClient().restart(resourceGroupName, vmScaleSetName);
     }
 
-    public void restart(
-        String resourceGroupName,
-        String vmScaleSetName,
-        VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs,
-        Context context) {
+    public void restart(String resourceGroupName, String vmScaleSetName,
+        VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs, Context context) {
         this.serviceClient().restart(resourceGroupName, vmScaleSetName, vmInstanceIDs, context);
     }
 
@@ -213,11 +191,8 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
         this.serviceClient().start(resourceGroupName, vmScaleSetName);
     }
 
-    public void start(
-        String resourceGroupName,
-        String vmScaleSetName,
-        VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs,
-        Context context) {
+    public void start(String resourceGroupName, String vmScaleSetName,
+        VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs, Context context) {
         this.serviceClient().start(resourceGroupName, vmScaleSetName, vmInstanceIDs, context);
     }
 
@@ -233,11 +208,8 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
         this.serviceClient().redeploy(resourceGroupName, vmScaleSetName);
     }
 
-    public void redeploy(
-        String resourceGroupName,
-        String vmScaleSetName,
-        VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs,
-        Context context) {
+    public void redeploy(String resourceGroupName, String vmScaleSetName,
+        VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs, Context context) {
         this.serviceClient().redeploy(resourceGroupName, vmScaleSetName, vmInstanceIDs, context);
     }
 
@@ -245,24 +217,18 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
         this.serviceClient().performMaintenance(resourceGroupName, vmScaleSetName);
     }
 
-    public void performMaintenance(
-        String resourceGroupName,
-        String vmScaleSetName,
-        VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs,
-        Context context) {
+    public void performMaintenance(String resourceGroupName, String vmScaleSetName,
+        VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs, Context context) {
         this.serviceClient().performMaintenance(resourceGroupName, vmScaleSetName, vmInstanceIDs, context);
     }
 
-    public void updateInstances(
-        String resourceGroupName, String vmScaleSetName, VirtualMachineScaleSetVMInstanceRequiredIDs vmInstanceIDs) {
+    public void updateInstances(String resourceGroupName, String vmScaleSetName,
+        VirtualMachineScaleSetVMInstanceRequiredIDs vmInstanceIDs) {
         this.serviceClient().updateInstances(resourceGroupName, vmScaleSetName, vmInstanceIDs);
     }
 
-    public void updateInstances(
-        String resourceGroupName,
-        String vmScaleSetName,
-        VirtualMachineScaleSetVMInstanceRequiredIDs vmInstanceIDs,
-        Context context) {
+    public void updateInstances(String resourceGroupName, String vmScaleSetName,
+        VirtualMachineScaleSetVMInstanceRequiredIDs vmInstanceIDs, Context context) {
         this.serviceClient().updateInstances(resourceGroupName, vmScaleSetName, vmInstanceIDs, context);
     }
 
@@ -270,11 +236,8 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
         this.serviceClient().reimage(resourceGroupName, vmScaleSetName);
     }
 
-    public void reimage(
-        String resourceGroupName,
-        String vmScaleSetName,
-        VirtualMachineScaleSetReimageParameters vmScaleSetReimageInput,
-        Context context) {
+    public void reimage(String resourceGroupName, String vmScaleSetName,
+        VirtualMachineScaleSetReimageParameters vmScaleSetReimageInput, Context context) {
         this.serviceClient().reimage(resourceGroupName, vmScaleSetName, vmScaleSetReimageInput, context);
     }
 
@@ -282,44 +245,29 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
         this.serviceClient().reimageAll(resourceGroupName, vmScaleSetName);
     }
 
-    public void reimageAll(
-        String resourceGroupName,
-        String vmScaleSetName,
-        VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs,
-        Context context) {
+    public void reimageAll(String resourceGroupName, String vmScaleSetName,
+        VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs, Context context) {
         this.serviceClient().reimageAll(resourceGroupName, vmScaleSetName, vmInstanceIDs, context);
     }
 
     public Response<RecoveryWalkResponse> forceRecoveryServiceFabricPlatformUpdateDomainWalkWithResponse(
-        String resourceGroupName,
-        String vmScaleSetName,
-        int platformUpdateDomain,
-        String zone,
-        String placementGroupId,
+        String resourceGroupName, String vmScaleSetName, int platformUpdateDomain, String zone, String placementGroupId,
         Context context) {
-        Response<RecoveryWalkResponseInner> inner =
-            this
-                .serviceClient()
-                .forceRecoveryServiceFabricPlatformUpdateDomainWalkWithResponse(
-                    resourceGroupName, vmScaleSetName, platformUpdateDomain, zone, placementGroupId, context);
+        Response<RecoveryWalkResponseInner> inner
+            = this.serviceClient().forceRecoveryServiceFabricPlatformUpdateDomainWalkWithResponse(resourceGroupName,
+                vmScaleSetName, platformUpdateDomain, zone, placementGroupId, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new RecoveryWalkResponseImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public RecoveryWalkResponse forceRecoveryServiceFabricPlatformUpdateDomainWalk(
-        String resourceGroupName, String vmScaleSetName, int platformUpdateDomain) {
-        RecoveryWalkResponseInner inner =
-            this
-                .serviceClient()
-                .forceRecoveryServiceFabricPlatformUpdateDomainWalk(
-                    resourceGroupName, vmScaleSetName, platformUpdateDomain);
+    public RecoveryWalkResponse forceRecoveryServiceFabricPlatformUpdateDomainWalk(String resourceGroupName,
+        String vmScaleSetName, int platformUpdateDomain) {
+        RecoveryWalkResponseInner inner = this.serviceClient().forceRecoveryServiceFabricPlatformUpdateDomainWalk(
+            resourceGroupName, vmScaleSetName, platformUpdateDomain);
         if (inner != null) {
             return new RecoveryWalkResponseImpl(inner, this.manager());
         } else {
@@ -327,75 +275,54 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
         }
     }
 
-    public Response<Void> convertToSinglePlacementGroupWithResponse(
-        String resourceGroupName,
-        String vmScaleSetName,
-        VMScaleSetConvertToSinglePlacementGroupInput parameters,
-        Context context) {
-        return this
-            .serviceClient()
-            .convertToSinglePlacementGroupWithResponse(resourceGroupName, vmScaleSetName, parameters, context);
+    public Response<Void> convertToSinglePlacementGroupWithResponse(String resourceGroupName, String vmScaleSetName,
+        VMScaleSetConvertToSinglePlacementGroupInput parameters, Context context) {
+        return this.serviceClient().convertToSinglePlacementGroupWithResponse(resourceGroupName, vmScaleSetName,
+            parameters, context);
     }
 
-    public void convertToSinglePlacementGroup(
-        String resourceGroupName, String vmScaleSetName, VMScaleSetConvertToSinglePlacementGroupInput parameters) {
+    public void convertToSinglePlacementGroup(String resourceGroupName, String vmScaleSetName,
+        VMScaleSetConvertToSinglePlacementGroupInput parameters) {
         this.serviceClient().convertToSinglePlacementGroup(resourceGroupName, vmScaleSetName, parameters);
     }
 
-    public void setOrchestrationServiceState(
-        String resourceGroupName, String vmScaleSetName, OrchestrationServiceStateInput parameters) {
+    public void setOrchestrationServiceState(String resourceGroupName, String vmScaleSetName,
+        OrchestrationServiceStateInput parameters) {
         this.serviceClient().setOrchestrationServiceState(resourceGroupName, vmScaleSetName, parameters);
     }
 
-    public void setOrchestrationServiceState(
-        String resourceGroupName, String vmScaleSetName, OrchestrationServiceStateInput parameters, Context context) {
+    public void setOrchestrationServiceState(String resourceGroupName, String vmScaleSetName,
+        OrchestrationServiceStateInput parameters, Context context) {
         this.serviceClient().setOrchestrationServiceState(resourceGroupName, vmScaleSetName, parameters, context);
     }
 
     public VirtualMachineScaleSet getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String vmScaleSetName = Utils.getValueFromIdByName(id, "virtualMachineScaleSets");
         if (vmScaleSetName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'virtualMachineScaleSets'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'virtualMachineScaleSets'.", id)));
         }
         ExpandTypesForGetVMScaleSets localExpand = null;
-        return this
-            .getByResourceGroupWithResponse(resourceGroupName, vmScaleSetName, localExpand, Context.NONE)
+        return this.getByResourceGroupWithResponse(resourceGroupName, vmScaleSetName, localExpand, Context.NONE)
             .getValue();
     }
 
-    public Response<VirtualMachineScaleSet> getByIdWithResponse(
-        String id, ExpandTypesForGetVMScaleSets expand, Context context) {
+    public Response<VirtualMachineScaleSet> getByIdWithResponse(String id, ExpandTypesForGetVMScaleSets expand,
+        Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String vmScaleSetName = Utils.getValueFromIdByName(id, "virtualMachineScaleSets");
         if (vmScaleSetName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'virtualMachineScaleSets'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'virtualMachineScaleSets'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, vmScaleSetName, expand, context);
     }
@@ -403,21 +330,13 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String vmScaleSetName = Utils.getValueFromIdByName(id, "virtualMachineScaleSets");
         if (vmScaleSetName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'virtualMachineScaleSets'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'virtualMachineScaleSets'.", id)));
         }
         Boolean localForceDeletion = null;
         this.delete(resourceGroupName, vmScaleSetName, localForceDeletion, Context.NONE);
@@ -426,21 +345,13 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
     public void deleteByIdWithResponse(String id, Boolean forceDeletion, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String vmScaleSetName = Utils.getValueFromIdByName(id, "virtualMachineScaleSets");
         if (vmScaleSetName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'virtualMachineScaleSets'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'virtualMachineScaleSets'.", id)));
         }
         this.delete(resourceGroupName, vmScaleSetName, forceDeletion, context);
     }

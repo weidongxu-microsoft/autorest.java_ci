@@ -9,7 +9,9 @@ import com.azure.resourcemanager.relay.generated.fluent.models.WcfRelayInner;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The response of the list WCF relay operation. */
+/**
+ * The response of the list WCF relay operation.
+ */
 @Fluent
 public final class WcfRelaysListResult {
     /*
@@ -24,13 +26,15 @@ public final class WcfRelaysListResult {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
-    /** Creates an instance of WcfRelaysListResult class. */
+    /**
+     * Creates an instance of WcfRelaysListResult class.
+     */
     public WcfRelaysListResult() {
     }
 
     /**
      * Get the value property: Result of the list WCF relay operation.
-     *
+     * 
      * @return the value value.
      */
     public List<WcfRelayInner> value() {
@@ -39,7 +43,7 @@ public final class WcfRelaysListResult {
 
     /**
      * Set the value property: Result of the list WCF relay operation.
-     *
+     * 
      * @param value the value value to set.
      * @return the WcfRelaysListResult object itself.
      */
@@ -51,7 +55,7 @@ public final class WcfRelaysListResult {
     /**
      * Get the nextLink property: Link to the next set of results. Not empty if value contains incomplete list of WCF
      * relays.
-     *
+     * 
      * @return the nextLink value.
      */
     public String nextLink() {
@@ -61,7 +65,7 @@ public final class WcfRelaysListResult {
     /**
      * Set the nextLink property: Link to the next set of results. Not empty if value contains incomplete list of WCF
      * relays.
-     *
+     * 
      * @param nextLink the nextLink value to set.
      * @return the WcfRelaysListResult object itself.
      */
@@ -72,7 +76,7 @@ public final class WcfRelaysListResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

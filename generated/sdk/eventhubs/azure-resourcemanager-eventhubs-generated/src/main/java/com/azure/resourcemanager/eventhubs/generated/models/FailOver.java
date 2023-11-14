@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.FailOverProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The FailOver model. */
+/**
+ * The FailOver model.
+ */
 @Fluent
 public final class FailOver {
     /*
@@ -17,13 +19,15 @@ public final class FailOver {
     @JsonProperty(value = "properties")
     private FailOverProperties innerProperties;
 
-    /** Creates an instance of FailOver class. */
+    /**
+     * Creates an instance of FailOver class.
+     */
     public FailOver() {
     }
 
     /**
      * Get the innerProperties property: The properties property.
-     *
+     * 
      * @return the innerProperties value.
      */
     private FailOverProperties innerProperties() {
@@ -32,7 +36,7 @@ public final class FailOver {
 
     /**
      * Get the primaryLocation property: Query parameter for the new primary location after failover.
-     *
+     * 
      * @return the primaryLocation value.
      */
     public String primaryLocation() {
@@ -41,7 +45,7 @@ public final class FailOver {
 
     /**
      * Set the primaryLocation property: Query parameter for the new primary location after failover.
-     *
+     * 
      * @param primaryLocation the primaryLocation value to set.
      * @return the FailOver object itself.
      */
@@ -60,7 +64,7 @@ public final class FailOver {
      * maximumGracePeriodInMins &gt; 0: For Planned Geo-Failover/DR Drill, continue replicating data until grace period
      * expires. Any data that is not replicated during the grace period will be discarded. During the replication the
      * namespace stops accepting any new publishing requests.
-     *
+     * 
      * @return the maximumGracePeriodInMins value.
      */
     public Integer maximumGracePeriodInMins() {
@@ -74,7 +78,7 @@ public final class FailOver {
      * maximumGracePeriodInMins &gt; 0: For Planned Geo-Failover/DR Drill, continue replicating data until grace period
      * expires. Any data that is not replicated during the grace period will be discarded. During the replication the
      * namespace stops accepting any new publishing requests.
-     *
+     * 
      * @param maximumGracePeriodInMins the maximumGracePeriodInMins value to set.
      * @return the FailOver object itself.
      */
@@ -88,7 +92,7 @@ public final class FailOver {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

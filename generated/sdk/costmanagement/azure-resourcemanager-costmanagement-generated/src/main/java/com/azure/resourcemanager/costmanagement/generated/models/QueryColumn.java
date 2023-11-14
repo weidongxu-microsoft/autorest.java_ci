@@ -7,7 +7,9 @@ package com.azure.resourcemanager.costmanagement.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The QueryColumn model. */
+/**
+ * The QueryColumn model.
+ */
 @Fluent
 public final class QueryColumn {
     /*
@@ -22,13 +24,15 @@ public final class QueryColumn {
     @JsonProperty(value = "type")
     private String type;
 
-    /** Creates an instance of QueryColumn class. */
+    /**
+     * Creates an instance of QueryColumn class.
+     */
     public QueryColumn() {
     }
 
     /**
      * Get the name property: The name of column.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -37,7 +41,7 @@ public final class QueryColumn {
 
     /**
      * Set the name property: The name of column.
-     *
+     * 
      * @param name the name value to set.
      * @return the QueryColumn object itself.
      */
@@ -48,7 +52,7 @@ public final class QueryColumn {
 
     /**
      * Get the type property: The type of column.
-     *
+     * 
      * @return the type value.
      */
     public String type() {
@@ -57,7 +61,7 @@ public final class QueryColumn {
 
     /**
      * Set the type property: The type of column.
-     *
+     * 
      * @param type the type value to set.
      * @return the QueryColumn object itself.
      */
@@ -68,7 +72,7 @@ public final class QueryColumn {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

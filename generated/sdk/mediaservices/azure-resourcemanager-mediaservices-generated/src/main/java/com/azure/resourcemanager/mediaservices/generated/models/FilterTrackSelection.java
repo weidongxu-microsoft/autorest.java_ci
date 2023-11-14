@@ -10,8 +10,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * Representing a list of FilterTrackPropertyConditions to select a track. The filters are combined using a logical AND
- * operation.
+ * Representing a list of FilterTrackPropertyConditions to select a track. The filters are combined using a logical
+ * AND operation.
  */
 @Fluent
 public final class FilterTrackSelection {
@@ -21,13 +21,15 @@ public final class FilterTrackSelection {
     @JsonProperty(value = "trackSelections", required = true)
     private List<FilterTrackPropertyCondition> trackSelections;
 
-    /** Creates an instance of FilterTrackSelection class. */
+    /**
+     * Creates an instance of FilterTrackSelection class.
+     */
     public FilterTrackSelection() {
     }
 
     /**
      * Get the trackSelections property: The track selections.
-     *
+     * 
      * @return the trackSelections value.
      */
     public List<FilterTrackPropertyCondition> trackSelections() {
@@ -36,7 +38,7 @@ public final class FilterTrackSelection {
 
     /**
      * Set the trackSelections property: The track selections.
-     *
+     * 
      * @param trackSelections the trackSelections value to set.
      * @return the FilterTrackSelection object itself.
      */
@@ -47,15 +49,13 @@ public final class FilterTrackSelection {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (trackSelections() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property trackSelections in model FilterTrackSelection"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property trackSelections in model FilterTrackSelection"));
         } else {
             trackSelections().forEach(e -> e.validate());
         }

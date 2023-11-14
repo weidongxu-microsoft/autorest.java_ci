@@ -7,7 +7,9 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Class to specify DRM configurations of CommonEncryptionCbcs scheme in Streaming Policy. */
+/**
+ * Class to specify DRM configurations of CommonEncryptionCbcs scheme in Streaming Policy.
+ */
 @Fluent
 public final class CbcsDrmConfiguration {
     /*
@@ -28,13 +30,15 @@ public final class CbcsDrmConfiguration {
     @JsonProperty(value = "widevine")
     private StreamingPolicyWidevineConfiguration widevine;
 
-    /** Creates an instance of CbcsDrmConfiguration class. */
+    /**
+     * Creates an instance of CbcsDrmConfiguration class.
+     */
     public CbcsDrmConfiguration() {
     }
 
     /**
      * Get the fairPlay property: FairPlay configurations.
-     *
+     * 
      * @return the fairPlay value.
      */
     public StreamingPolicyFairPlayConfiguration fairPlay() {
@@ -43,7 +47,7 @@ public final class CbcsDrmConfiguration {
 
     /**
      * Set the fairPlay property: FairPlay configurations.
-     *
+     * 
      * @param fairPlay the fairPlay value to set.
      * @return the CbcsDrmConfiguration object itself.
      */
@@ -54,7 +58,7 @@ public final class CbcsDrmConfiguration {
 
     /**
      * Get the playReady property: PlayReady configurations.
-     *
+     * 
      * @return the playReady value.
      */
     public StreamingPolicyPlayReadyConfiguration playReady() {
@@ -63,7 +67,7 @@ public final class CbcsDrmConfiguration {
 
     /**
      * Set the playReady property: PlayReady configurations.
-     *
+     * 
      * @param playReady the playReady value to set.
      * @return the CbcsDrmConfiguration object itself.
      */
@@ -74,7 +78,7 @@ public final class CbcsDrmConfiguration {
 
     /**
      * Get the widevine property: Widevine configurations.
-     *
+     * 
      * @return the widevine value.
      */
     public StreamingPolicyWidevineConfiguration widevine() {
@@ -83,7 +87,7 @@ public final class CbcsDrmConfiguration {
 
     /**
      * Set the widevine property: Widevine configurations.
-     *
+     * 
      * @param widevine the widevine value to set.
      * @return the CbcsDrmConfiguration object itself.
      */
@@ -94,7 +98,7 @@ public final class CbcsDrmConfiguration {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

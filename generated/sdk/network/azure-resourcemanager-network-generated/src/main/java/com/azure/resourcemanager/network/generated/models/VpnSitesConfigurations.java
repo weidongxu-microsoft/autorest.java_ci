@@ -6,11 +6,13 @@ package com.azure.resourcemanager.network.generated.models;
 
 import com.azure.core.util.Context;
 
-/** Resource collection API of VpnSitesConfigurations. */
+/**
+ * Resource collection API of VpnSitesConfigurations.
+ */
 public interface VpnSitesConfigurations {
     /**
      * Gives the sas-url to download the configurations for vpn-sites in a resource group.
-     *
+     * 
      * @param resourceGroupName The resource group name.
      * @param virtualWanName The name of the VirtualWAN for which configuration of all vpn-sites is needed.
      * @param request Parameters supplied to download vpn-sites configuration.
@@ -22,7 +24,7 @@ public interface VpnSitesConfigurations {
 
     /**
      * Gives the sas-url to download the configurations for vpn-sites in a resource group.
-     *
+     * 
      * @param resourceGroupName The resource group name.
      * @param virtualWanName The name of the VirtualWAN for which configuration of all vpn-sites is needed.
      * @param request Parameters supplied to download vpn-sites configuration.
@@ -31,6 +33,6 @@ public interface VpnSitesConfigurations {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void download(
-        String resourceGroupName, String virtualWanName, GetVpnSitesConfigurationRequest request, Context context);
+    void download(String resourceGroupName, String virtualWanName, GetVpnSitesConfigurationRequest request,
+        Context context);
 }

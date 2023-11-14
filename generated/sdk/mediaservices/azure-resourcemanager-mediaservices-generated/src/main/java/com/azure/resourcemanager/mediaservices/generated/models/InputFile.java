@@ -10,7 +10,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.List;
 
-/** An InputDefinition for a single file. TrackSelections are scoped to the file specified. */
+/**
+ * An InputDefinition for a single file. TrackSelections are scoped to the file specified.
+ */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
 @JsonTypeName("#Microsoft.Media.InputFile")
 @Fluent
@@ -21,13 +23,15 @@ public final class InputFile extends InputDefinition {
     @JsonProperty(value = "filename")
     private String filename;
 
-    /** Creates an instance of InputFile class. */
+    /**
+     * Creates an instance of InputFile class.
+     */
     public InputFile() {
     }
 
     /**
      * Get the filename property: Name of the file that this input definition applies to.
-     *
+     * 
      * @return the filename value.
      */
     public String filename() {
@@ -36,7 +40,7 @@ public final class InputFile extends InputDefinition {
 
     /**
      * Set the filename property: Name of the file that this input definition applies to.
-     *
+     * 
      * @param filename the filename value to set.
      * @return the InputFile object itself.
      */
@@ -45,7 +49,9 @@ public final class InputFile extends InputDefinition {
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public InputFile withIncludedTracks(List<TrackDescriptor> includedTracks) {
         super.withIncludedTracks(includedTracks);
@@ -54,7 +60,7 @@ public final class InputFile extends InputDefinition {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

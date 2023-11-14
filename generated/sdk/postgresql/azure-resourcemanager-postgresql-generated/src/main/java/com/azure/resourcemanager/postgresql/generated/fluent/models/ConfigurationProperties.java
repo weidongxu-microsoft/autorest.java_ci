@@ -7,7 +7,9 @@ package com.azure.resourcemanager.postgresql.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The properties of a configuration. */
+/**
+ * The properties of a configuration.
+ */
 @Fluent
 public final class ConfigurationProperties {
     /*
@@ -46,13 +48,15 @@ public final class ConfigurationProperties {
     @JsonProperty(value = "source")
     private String source;
 
-    /** Creates an instance of ConfigurationProperties class. */
+    /**
+     * Creates an instance of ConfigurationProperties class.
+     */
     public ConfigurationProperties() {
     }
 
     /**
      * Get the value property: Value of the configuration.
-     *
+     * 
      * @return the value value.
      */
     public String value() {
@@ -61,7 +65,7 @@ public final class ConfigurationProperties {
 
     /**
      * Set the value property: Value of the configuration.
-     *
+     * 
      * @param value the value value to set.
      * @return the ConfigurationProperties object itself.
      */
@@ -72,7 +76,7 @@ public final class ConfigurationProperties {
 
     /**
      * Get the description property: Description of the configuration.
-     *
+     * 
      * @return the description value.
      */
     public String description() {
@@ -81,7 +85,7 @@ public final class ConfigurationProperties {
 
     /**
      * Get the defaultValue property: Default value of the configuration.
-     *
+     * 
      * @return the defaultValue value.
      */
     public String defaultValue() {
@@ -90,7 +94,7 @@ public final class ConfigurationProperties {
 
     /**
      * Get the dataType property: Data type of the configuration.
-     *
+     * 
      * @return the dataType value.
      */
     public String dataType() {
@@ -99,7 +103,7 @@ public final class ConfigurationProperties {
 
     /**
      * Get the allowedValues property: Allowed values of the configuration.
-     *
+     * 
      * @return the allowedValues value.
      */
     public String allowedValues() {
@@ -108,7 +112,7 @@ public final class ConfigurationProperties {
 
     /**
      * Get the source property: Source of the configuration.
-     *
+     * 
      * @return the source value.
      */
     public String source() {
@@ -117,7 +121,7 @@ public final class ConfigurationProperties {
 
     /**
      * Set the source property: Source of the configuration.
-     *
+     * 
      * @param source the source value to set.
      * @return the ConfigurationProperties object itself.
      */
@@ -128,7 +132,7 @@ public final class ConfigurationProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

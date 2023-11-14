@@ -15,8 +15,8 @@ public final class ProviderImpl implements Provider {
 
     private final com.azure.resourcemanager.resources.generated.ResourceManager serviceManager;
 
-    ProviderImpl(
-        ProviderInner innerObject, com.azure.resourcemanager.resources.generated.ResourceManager serviceManager) {
+    ProviderImpl(ProviderInner innerObject,
+        com.azure.resourcemanager.resources.generated.ResourceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

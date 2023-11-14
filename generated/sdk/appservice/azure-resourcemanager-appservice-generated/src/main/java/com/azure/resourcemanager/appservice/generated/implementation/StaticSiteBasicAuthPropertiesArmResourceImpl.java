@@ -11,10 +11,8 @@ import com.azure.resourcemanager.appservice.generated.models.StaticSiteBasicAuth
 import java.util.Collections;
 import java.util.List;
 
-public final class StaticSiteBasicAuthPropertiesArmResourceImpl
-    implements StaticSiteBasicAuthPropertiesArmResource,
-        StaticSiteBasicAuthPropertiesArmResource.Definition,
-        StaticSiteBasicAuthPropertiesArmResource.Update {
+public final class StaticSiteBasicAuthPropertiesArmResourceImpl implements StaticSiteBasicAuthPropertiesArmResource,
+    StaticSiteBasicAuthPropertiesArmResource.Definition, StaticSiteBasicAuthPropertiesArmResource.Update {
     private StaticSiteBasicAuthPropertiesArmResourceInner innerObject;
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
@@ -85,28 +83,21 @@ public final class StaticSiteBasicAuthPropertiesArmResourceImpl
     }
 
     public StaticSiteBasicAuthPropertiesArmResource create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getStaticSites()
-                .createOrUpdateBasicAuthWithResponse(
-                    resourceGroupName, name, basicAuthName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getStaticSites().createOrUpdateBasicAuthWithResponse(resourceGroupName,
+                name, basicAuthName, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public StaticSiteBasicAuthPropertiesArmResource create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getStaticSites()
-                .createOrUpdateBasicAuthWithResponse(resourceGroupName, name, basicAuthName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getStaticSites()
+            .createOrUpdateBasicAuthWithResponse(resourceGroupName, name, basicAuthName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
-    StaticSiteBasicAuthPropertiesArmResourceImpl(
-        BasicAuthName name, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
+    StaticSiteBasicAuthPropertiesArmResourceImpl(BasicAuthName name,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = new StaticSiteBasicAuthPropertiesArmResourceInner();
         this.serviceManager = serviceManager;
         this.basicAuthName = name;
@@ -117,28 +108,20 @@ public final class StaticSiteBasicAuthPropertiesArmResourceImpl
     }
 
     public StaticSiteBasicAuthPropertiesArmResource apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getStaticSites()
-                .createOrUpdateBasicAuthWithResponse(
-                    resourceGroupName, name, basicAuthName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getStaticSites().createOrUpdateBasicAuthWithResponse(resourceGroupName,
+                name, basicAuthName, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public StaticSiteBasicAuthPropertiesArmResource apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getStaticSites()
-                .createOrUpdateBasicAuthWithResponse(resourceGroupName, name, basicAuthName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getStaticSites()
+            .createOrUpdateBasicAuthWithResponse(resourceGroupName, name, basicAuthName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
-    StaticSiteBasicAuthPropertiesArmResourceImpl(
-        StaticSiteBasicAuthPropertiesArmResourceInner innerObject,
+    StaticSiteBasicAuthPropertiesArmResourceImpl(StaticSiteBasicAuthPropertiesArmResourceInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -148,22 +131,14 @@ public final class StaticSiteBasicAuthPropertiesArmResourceImpl
     }
 
     public StaticSiteBasicAuthPropertiesArmResource refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getStaticSites()
-                .getBasicAuthWithResponse(resourceGroupName, name, basicAuthName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getStaticSites()
+            .getBasicAuthWithResponse(resourceGroupName, name, basicAuthName, Context.NONE).getValue();
         return this;
     }
 
     public StaticSiteBasicAuthPropertiesArmResource refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getStaticSites()
-                .getBasicAuthWithResponse(resourceGroupName, name, basicAuthName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getStaticSites()
+            .getBasicAuthWithResponse(resourceGroupName, name, basicAuthName, context).getValue();
         return this;
     }
 
@@ -182,8 +157,8 @@ public final class StaticSiteBasicAuthPropertiesArmResourceImpl
         return this;
     }
 
-    public StaticSiteBasicAuthPropertiesArmResourceImpl withApplicableEnvironmentsMode(
-        String applicableEnvironmentsMode) {
+    public StaticSiteBasicAuthPropertiesArmResourceImpl
+        withApplicableEnvironmentsMode(String applicableEnvironmentsMode) {
         this.innerModel().withApplicableEnvironmentsMode(applicableEnvironmentsMode);
         return this;
     }

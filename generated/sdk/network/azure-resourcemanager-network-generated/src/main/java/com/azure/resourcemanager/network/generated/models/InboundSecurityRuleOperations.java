@@ -4,11 +4,13 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-/** Resource collection API of InboundSecurityRuleOperations. */
+/**
+ * Resource collection API of InboundSecurityRuleOperations.
+ */
 public interface InboundSecurityRuleOperations {
     /**
      * Begins definition for a new InboundSecurityRule resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new InboundSecurityRule definition.
      */

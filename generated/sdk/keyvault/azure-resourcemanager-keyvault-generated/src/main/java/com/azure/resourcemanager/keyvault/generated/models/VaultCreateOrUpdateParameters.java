@@ -10,7 +10,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
 
-/** Parameters for creating or updating a vault. */
+/**
+ * Parameters for creating or updating a vault.
+ */
 @Fluent
 public final class VaultCreateOrUpdateParameters {
     /*
@@ -32,13 +34,15 @@ public final class VaultCreateOrUpdateParameters {
     @JsonProperty(value = "properties", required = true)
     private VaultProperties properties;
 
-    /** Creates an instance of VaultCreateOrUpdateParameters class. */
+    /**
+     * Creates an instance of VaultCreateOrUpdateParameters class.
+     */
     public VaultCreateOrUpdateParameters() {
     }
 
     /**
      * Get the location property: The supported Azure location where the key vault should be created.
-     *
+     * 
      * @return the location value.
      */
     public String location() {
@@ -47,7 +51,7 @@ public final class VaultCreateOrUpdateParameters {
 
     /**
      * Set the location property: The supported Azure location where the key vault should be created.
-     *
+     * 
      * @param location the location value to set.
      * @return the VaultCreateOrUpdateParameters object itself.
      */
@@ -58,7 +62,7 @@ public final class VaultCreateOrUpdateParameters {
 
     /**
      * Get the tags property: The tags that will be assigned to the key vault.
-     *
+     * 
      * @return the tags value.
      */
     public Map<String, String> tags() {
@@ -67,7 +71,7 @@ public final class VaultCreateOrUpdateParameters {
 
     /**
      * Set the tags property: The tags that will be assigned to the key vault.
-     *
+     * 
      * @param tags the tags value to set.
      * @return the VaultCreateOrUpdateParameters object itself.
      */
@@ -78,7 +82,7 @@ public final class VaultCreateOrUpdateParameters {
 
     /**
      * Get the properties property: Properties of the vault.
-     *
+     * 
      * @return the properties value.
      */
     public VaultProperties properties() {
@@ -87,7 +91,7 @@ public final class VaultCreateOrUpdateParameters {
 
     /**
      * Set the properties property: Properties of the vault.
-     *
+     * 
      * @param properties the properties value to set.
      * @return the VaultCreateOrUpdateParameters object itself.
      */
@@ -98,21 +102,17 @@ public final class VaultCreateOrUpdateParameters {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (location() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property location in model VaultCreateOrUpdateParameters"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property location in model VaultCreateOrUpdateParameters"));
         }
         if (properties() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property properties in model VaultCreateOrUpdateParameters"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property properties in model VaultCreateOrUpdateParameters"));
         } else {
             properties().validate();
         }

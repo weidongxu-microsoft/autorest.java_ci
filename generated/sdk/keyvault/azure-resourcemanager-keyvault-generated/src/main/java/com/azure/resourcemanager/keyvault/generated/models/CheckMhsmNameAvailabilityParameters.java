@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The parameters used to check the availability of the managed hsm name. */
+/**
+ * The parameters used to check the availability of the managed hsm name.
+ */
 @Fluent
 public final class CheckMhsmNameAvailabilityParameters {
     /*
@@ -17,13 +19,15 @@ public final class CheckMhsmNameAvailabilityParameters {
     @JsonProperty(value = "name", required = true)
     private String name;
 
-    /** Creates an instance of CheckMhsmNameAvailabilityParameters class. */
+    /**
+     * Creates an instance of CheckMhsmNameAvailabilityParameters class.
+     */
     public CheckMhsmNameAvailabilityParameters() {
     }
 
     /**
      * Get the name property: The managed hsm name.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -32,7 +36,7 @@ public final class CheckMhsmNameAvailabilityParameters {
 
     /**
      * Set the name property: The managed hsm name.
-     *
+     * 
      * @param name the name value to set.
      * @return the CheckMhsmNameAvailabilityParameters object itself.
      */
@@ -43,15 +47,13 @@ public final class CheckMhsmNameAvailabilityParameters {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property name in model CheckMhsmNameAvailabilityParameters"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property name in model CheckMhsmNameAvailabilityParameters"));
         }
     }
 

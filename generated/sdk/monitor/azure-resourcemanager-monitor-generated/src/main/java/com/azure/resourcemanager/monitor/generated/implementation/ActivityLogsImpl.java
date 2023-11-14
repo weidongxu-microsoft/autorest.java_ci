@@ -19,8 +19,8 @@ public final class ActivityLogsImpl implements ActivityLogs {
 
     private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    public ActivityLogsImpl(
-        ActivityLogsClient innerClient, com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
+    public ActivityLogsImpl(ActivityLogsClient innerClient,
+        com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }

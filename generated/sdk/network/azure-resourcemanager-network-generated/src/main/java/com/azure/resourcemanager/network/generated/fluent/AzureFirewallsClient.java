@@ -16,11 +16,13 @@ import com.azure.resourcemanager.network.generated.fluent.models.IpPrefixesListI
 import com.azure.resourcemanager.network.generated.models.FirewallPacketCaptureParameters;
 import com.azure.resourcemanager.network.generated.models.TagsObject;
 
-/** An instance of this class provides access to all the operations defined in AzureFirewallsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in AzureFirewallsClient.
+ */
 public interface AzureFirewallsClient {
     /**
      * Deletes the specified Azure Firewall.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param azureFirewallName The name of the Azure Firewall.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -33,7 +35,7 @@ public interface AzureFirewallsClient {
 
     /**
      * Deletes the specified Azure Firewall.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param azureFirewallName The name of the Azure Firewall.
      * @param context The context to associate with this operation.
@@ -47,7 +49,7 @@ public interface AzureFirewallsClient {
 
     /**
      * Deletes the specified Azure Firewall.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param azureFirewallName The name of the Azure Firewall.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -59,7 +61,7 @@ public interface AzureFirewallsClient {
 
     /**
      * Deletes the specified Azure Firewall.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param azureFirewallName The name of the Azure Firewall.
      * @param context The context to associate with this operation.
@@ -72,7 +74,7 @@ public interface AzureFirewallsClient {
 
     /**
      * Gets the specified Azure Firewall.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param azureFirewallName The name of the Azure Firewall.
      * @param context The context to associate with this operation.
@@ -82,12 +84,12 @@ public interface AzureFirewallsClient {
      * @return the specified Azure Firewall along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<AzureFirewallInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String azureFirewallName, Context context);
+    Response<AzureFirewallInner> getByResourceGroupWithResponse(String resourceGroupName, String azureFirewallName,
+        Context context);
 
     /**
      * Gets the specified Azure Firewall.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param azureFirewallName The name of the Azure Firewall.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -100,7 +102,7 @@ public interface AzureFirewallsClient {
 
     /**
      * Creates or updates the specified Azure Firewall.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param azureFirewallName The name of the Azure Firewall.
      * @param parameters Parameters supplied to the create or update Azure Firewall operation.
@@ -110,12 +112,12 @@ public interface AzureFirewallsClient {
      * @return the {@link SyncPoller} for polling of azure Firewall resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<AzureFirewallInner>, AzureFirewallInner> beginCreateOrUpdate(
-        String resourceGroupName, String azureFirewallName, AzureFirewallInner parameters);
+    SyncPoller<PollResult<AzureFirewallInner>, AzureFirewallInner> beginCreateOrUpdate(String resourceGroupName,
+        String azureFirewallName, AzureFirewallInner parameters);
 
     /**
      * Creates or updates the specified Azure Firewall.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param azureFirewallName The name of the Azure Firewall.
      * @param parameters Parameters supplied to the create or update Azure Firewall operation.
@@ -126,12 +128,12 @@ public interface AzureFirewallsClient {
      * @return the {@link SyncPoller} for polling of azure Firewall resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<AzureFirewallInner>, AzureFirewallInner> beginCreateOrUpdate(
-        String resourceGroupName, String azureFirewallName, AzureFirewallInner parameters, Context context);
+    SyncPoller<PollResult<AzureFirewallInner>, AzureFirewallInner> beginCreateOrUpdate(String resourceGroupName,
+        String azureFirewallName, AzureFirewallInner parameters, Context context);
 
     /**
      * Creates or updates the specified Azure Firewall.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param azureFirewallName The name of the Azure Firewall.
      * @param parameters Parameters supplied to the create or update Azure Firewall operation.
@@ -141,12 +143,12 @@ public interface AzureFirewallsClient {
      * @return azure Firewall resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    AzureFirewallInner createOrUpdate(
-        String resourceGroupName, String azureFirewallName, AzureFirewallInner parameters);
+    AzureFirewallInner createOrUpdate(String resourceGroupName, String azureFirewallName,
+        AzureFirewallInner parameters);
 
     /**
      * Creates or updates the specified Azure Firewall.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param azureFirewallName The name of the Azure Firewall.
      * @param parameters Parameters supplied to the create or update Azure Firewall operation.
@@ -157,12 +159,12 @@ public interface AzureFirewallsClient {
      * @return azure Firewall resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    AzureFirewallInner createOrUpdate(
-        String resourceGroupName, String azureFirewallName, AzureFirewallInner parameters, Context context);
+    AzureFirewallInner createOrUpdate(String resourceGroupName, String azureFirewallName, AzureFirewallInner parameters,
+        Context context);
 
     /**
      * Updates tags of an Azure Firewall resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param azureFirewallName The name of the Azure Firewall.
      * @param parameters Parameters supplied to update azure firewall tags.
@@ -172,12 +174,12 @@ public interface AzureFirewallsClient {
      * @return the {@link SyncPoller} for polling of azure Firewall resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<AzureFirewallInner>, AzureFirewallInner> beginUpdateTags(
-        String resourceGroupName, String azureFirewallName, TagsObject parameters);
+    SyncPoller<PollResult<AzureFirewallInner>, AzureFirewallInner> beginUpdateTags(String resourceGroupName,
+        String azureFirewallName, TagsObject parameters);
 
     /**
      * Updates tags of an Azure Firewall resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param azureFirewallName The name of the Azure Firewall.
      * @param parameters Parameters supplied to update azure firewall tags.
@@ -188,12 +190,12 @@ public interface AzureFirewallsClient {
      * @return the {@link SyncPoller} for polling of azure Firewall resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<AzureFirewallInner>, AzureFirewallInner> beginUpdateTags(
-        String resourceGroupName, String azureFirewallName, TagsObject parameters, Context context);
+    SyncPoller<PollResult<AzureFirewallInner>, AzureFirewallInner> beginUpdateTags(String resourceGroupName,
+        String azureFirewallName, TagsObject parameters, Context context);
 
     /**
      * Updates tags of an Azure Firewall resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param azureFirewallName The name of the Azure Firewall.
      * @param parameters Parameters supplied to update azure firewall tags.
@@ -207,7 +209,7 @@ public interface AzureFirewallsClient {
 
     /**
      * Updates tags of an Azure Firewall resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param azureFirewallName The name of the Azure Firewall.
      * @param parameters Parameters supplied to update azure firewall tags.
@@ -218,12 +220,12 @@ public interface AzureFirewallsClient {
      * @return azure Firewall resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    AzureFirewallInner updateTags(
-        String resourceGroupName, String azureFirewallName, TagsObject parameters, Context context);
+    AzureFirewallInner updateTags(String resourceGroupName, String azureFirewallName, TagsObject parameters,
+        Context context);
 
     /**
      * Lists all Azure Firewalls in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -235,7 +237,7 @@ public interface AzureFirewallsClient {
 
     /**
      * Lists all Azure Firewalls in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -248,7 +250,7 @@ public interface AzureFirewallsClient {
 
     /**
      * Gets all the Azure Firewalls in a subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all the Azure Firewalls in a subscription as paginated response with {@link PagedIterable}.
@@ -258,7 +260,7 @@ public interface AzureFirewallsClient {
 
     /**
      * Gets all the Azure Firewalls in a subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -270,7 +272,7 @@ public interface AzureFirewallsClient {
 
     /**
      * Retrieves a list of all IP prefixes that azure firewall has learned to not SNAT.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param azureFirewallName The name of the azure firewall.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -279,12 +281,12 @@ public interface AzureFirewallsClient {
      * @return the {@link SyncPoller} for polling of list of SNAT IP Prefixes learnt by firewall to not SNAT.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<IpPrefixesListInner>, IpPrefixesListInner> beginListLearnedPrefixes(
-        String resourceGroupName, String azureFirewallName);
+    SyncPoller<PollResult<IpPrefixesListInner>, IpPrefixesListInner> beginListLearnedPrefixes(String resourceGroupName,
+        String azureFirewallName);
 
     /**
      * Retrieves a list of all IP prefixes that azure firewall has learned to not SNAT.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param azureFirewallName The name of the azure firewall.
      * @param context The context to associate with this operation.
@@ -294,12 +296,12 @@ public interface AzureFirewallsClient {
      * @return the {@link SyncPoller} for polling of list of SNAT IP Prefixes learnt by firewall to not SNAT.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<IpPrefixesListInner>, IpPrefixesListInner> beginListLearnedPrefixes(
-        String resourceGroupName, String azureFirewallName, Context context);
+    SyncPoller<PollResult<IpPrefixesListInner>, IpPrefixesListInner> beginListLearnedPrefixes(String resourceGroupName,
+        String azureFirewallName, Context context);
 
     /**
      * Retrieves a list of all IP prefixes that azure firewall has learned to not SNAT.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param azureFirewallName The name of the azure firewall.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -312,7 +314,7 @@ public interface AzureFirewallsClient {
 
     /**
      * Retrieves a list of all IP prefixes that azure firewall has learned to not SNAT.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param azureFirewallName The name of the azure firewall.
      * @param context The context to associate with this operation.
@@ -326,7 +328,7 @@ public interface AzureFirewallsClient {
 
     /**
      * Runs a packet capture on AzureFirewall.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param azureFirewallName The name of the Azure Firewall.
      * @param parameters Parameters supplied to run packet capture on azure firewall.
@@ -336,12 +338,12 @@ public interface AzureFirewallsClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginPacketCapture(
-        String resourceGroupName, String azureFirewallName, FirewallPacketCaptureParameters parameters);
+    SyncPoller<PollResult<Void>, Void> beginPacketCapture(String resourceGroupName, String azureFirewallName,
+        FirewallPacketCaptureParameters parameters);
 
     /**
      * Runs a packet capture on AzureFirewall.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param azureFirewallName The name of the Azure Firewall.
      * @param parameters Parameters supplied to run packet capture on azure firewall.
@@ -352,15 +354,12 @@ public interface AzureFirewallsClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginPacketCapture(
-        String resourceGroupName,
-        String azureFirewallName,
-        FirewallPacketCaptureParameters parameters,
-        Context context);
+    SyncPoller<PollResult<Void>, Void> beginPacketCapture(String resourceGroupName, String azureFirewallName,
+        FirewallPacketCaptureParameters parameters, Context context);
 
     /**
      * Runs a packet capture on AzureFirewall.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param azureFirewallName The name of the Azure Firewall.
      * @param parameters Parameters supplied to run packet capture on azure firewall.
@@ -373,7 +372,7 @@ public interface AzureFirewallsClient {
 
     /**
      * Runs a packet capture on AzureFirewall.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param azureFirewallName The name of the Azure Firewall.
      * @param parameters Parameters supplied to run packet capture on azure firewall.
@@ -383,9 +382,6 @@ public interface AzureFirewallsClient {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void packetCapture(
-        String resourceGroupName,
-        String azureFirewallName,
-        FirewallPacketCaptureParameters parameters,
+    void packetCapture(String resourceGroupName, String azureFirewallName, FirewallPacketCaptureParameters parameters,
         Context context);
 }

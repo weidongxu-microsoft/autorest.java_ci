@@ -10,11 +10,13 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.PrivateLinkResourceListResultInner;
 
-/** An instance of this class provides access to all the operations defined in PrivateLinkResourcesClient. */
+/**
+ * An instance of this class provides access to all the operations defined in PrivateLinkResourcesClient.
+ */
 public interface PrivateLinkResourcesClient {
     /**
      * Gets the private link resources supported for the key vault.
-     *
+     * 
      * @param resourceGroupName Name of the resource group that contains the key vault.
      * @param vaultName The name of the key vault.
      * @param context The context to associate with this operation.
@@ -24,12 +26,12 @@ public interface PrivateLinkResourcesClient {
      * @return the private link resources supported for the key vault along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<PrivateLinkResourceListResultInner> listByVaultWithResponse(
-        String resourceGroupName, String vaultName, Context context);
+    Response<PrivateLinkResourceListResultInner> listByVaultWithResponse(String resourceGroupName, String vaultName,
+        Context context);
 
     /**
      * Gets the private link resources supported for the key vault.
-     *
+     * 
      * @param resourceGroupName Name of the resource group that contains the key vault.
      * @param vaultName The name of the key vault.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

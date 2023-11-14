@@ -20,7 +20,9 @@ import com.azure.resourcemanager.databoxedge.generated.models.UserAccessRight;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Represents a share on the Data Box Edge/Gateway device. */
+/**
+ * Represents a share on the Data Box Edge/Gateway device.
+ */
 @Fluent
 public final class ShareInner extends ArmBaseModel {
     /*
@@ -35,13 +37,15 @@ public final class ShareInner extends ArmBaseModel {
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
-    /** Creates an instance of ShareInner class. */
+    /**
+     * Creates an instance of ShareInner class.
+     */
     public ShareInner() {
     }
 
     /**
      * Get the innerProperties property: The share properties.
-     *
+     * 
      * @return the innerProperties value.
      */
     private ShareProperties innerProperties() {
@@ -50,7 +54,7 @@ public final class ShareInner extends ArmBaseModel {
 
     /**
      * Get the systemData property: Metadata pertaining to creation and last modification of Share.
-     *
+     * 
      * @return the systemData value.
      */
     public SystemData systemData() {
@@ -59,7 +63,7 @@ public final class ShareInner extends ArmBaseModel {
 
     /**
      * Get the description property: Description for the share.
-     *
+     * 
      * @return the description value.
      */
     public String description() {
@@ -68,7 +72,7 @@ public final class ShareInner extends ArmBaseModel {
 
     /**
      * Set the description property: Description for the share.
-     *
+     * 
      * @param description the description value to set.
      * @return the ShareInner object itself.
      */
@@ -82,7 +86,7 @@ public final class ShareInner extends ArmBaseModel {
 
     /**
      * Get the shareStatus property: Current status of the share.
-     *
+     * 
      * @return the shareStatus value.
      */
     public ShareStatus shareStatus() {
@@ -91,7 +95,7 @@ public final class ShareInner extends ArmBaseModel {
 
     /**
      * Set the shareStatus property: Current status of the share.
-     *
+     * 
      * @param shareStatus the shareStatus value to set.
      * @return the ShareInner object itself.
      */
@@ -105,7 +109,7 @@ public final class ShareInner extends ArmBaseModel {
 
     /**
      * Get the monitoringStatus property: Current monitoring status of the share.
-     *
+     * 
      * @return the monitoringStatus value.
      */
     public MonitoringStatus monitoringStatus() {
@@ -114,7 +118,7 @@ public final class ShareInner extends ArmBaseModel {
 
     /**
      * Set the monitoringStatus property: Current monitoring status of the share.
-     *
+     * 
      * @param monitoringStatus the monitoringStatus value to set.
      * @return the ShareInner object itself.
      */
@@ -128,7 +132,7 @@ public final class ShareInner extends ArmBaseModel {
 
     /**
      * Get the azureContainerInfo property: Azure container mapping for the share.
-     *
+     * 
      * @return the azureContainerInfo value.
      */
     public AzureContainerInfo azureContainerInfo() {
@@ -137,7 +141,7 @@ public final class ShareInner extends ArmBaseModel {
 
     /**
      * Set the azureContainerInfo property: Azure container mapping for the share.
-     *
+     * 
      * @param azureContainerInfo the azureContainerInfo value to set.
      * @return the ShareInner object itself.
      */
@@ -151,7 +155,7 @@ public final class ShareInner extends ArmBaseModel {
 
     /**
      * Get the accessProtocol property: Access protocol to be used by the share.
-     *
+     * 
      * @return the accessProtocol value.
      */
     public ShareAccessProtocol accessProtocol() {
@@ -160,7 +164,7 @@ public final class ShareInner extends ArmBaseModel {
 
     /**
      * Set the accessProtocol property: Access protocol to be used by the share.
-     *
+     * 
      * @param accessProtocol the accessProtocol value to set.
      * @return the ShareInner object itself.
      */
@@ -175,7 +179,7 @@ public final class ShareInner extends ArmBaseModel {
     /**
      * Get the userAccessRights property: Mapping of users and corresponding access rights on the share (required for
      * SMB protocol).
-     *
+     * 
      * @return the userAccessRights value.
      */
     public List<UserAccessRight> userAccessRights() {
@@ -185,7 +189,7 @@ public final class ShareInner extends ArmBaseModel {
     /**
      * Set the userAccessRights property: Mapping of users and corresponding access rights on the share (required for
      * SMB protocol).
-     *
+     * 
      * @param userAccessRights the userAccessRights value to set.
      * @return the ShareInner object itself.
      */
@@ -200,7 +204,7 @@ public final class ShareInner extends ArmBaseModel {
     /**
      * Get the clientAccessRights property: List of IP addresses and corresponding access rights on the share(required
      * for NFS protocol).
-     *
+     * 
      * @return the clientAccessRights value.
      */
     public List<ClientAccessRight> clientAccessRights() {
@@ -210,7 +214,7 @@ public final class ShareInner extends ArmBaseModel {
     /**
      * Set the clientAccessRights property: List of IP addresses and corresponding access rights on the share(required
      * for NFS protocol).
-     *
+     * 
      * @param clientAccessRights the clientAccessRights value to set.
      * @return the ShareInner object itself.
      */
@@ -224,7 +228,7 @@ public final class ShareInner extends ArmBaseModel {
 
     /**
      * Get the refreshDetails property: Details of the refresh job on this share.
-     *
+     * 
      * @return the refreshDetails value.
      */
     public RefreshDetails refreshDetails() {
@@ -233,7 +237,7 @@ public final class ShareInner extends ArmBaseModel {
 
     /**
      * Set the refreshDetails property: Details of the refresh job on this share.
-     *
+     * 
      * @param refreshDetails the refreshDetails value to set.
      * @return the ShareInner object itself.
      */
@@ -247,7 +251,7 @@ public final class ShareInner extends ArmBaseModel {
 
     /**
      * Get the shareMappings property: Share mount point to the role.
-     *
+     * 
      * @return the shareMappings value.
      */
     public List<MountPointMap> shareMappings() {
@@ -256,7 +260,7 @@ public final class ShareInner extends ArmBaseModel {
 
     /**
      * Get the dataPolicy property: Data policy of the share.
-     *
+     * 
      * @return the dataPolicy value.
      */
     public DataPolicy dataPolicy() {
@@ -265,7 +269,7 @@ public final class ShareInner extends ArmBaseModel {
 
     /**
      * Set the dataPolicy property: Data policy of the share.
-     *
+     * 
      * @param dataPolicy the dataPolicy value to set.
      * @return the ShareInner object itself.
      */
@@ -279,16 +283,15 @@ public final class ShareInner extends ArmBaseModel {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override
     public void validate() {
         super.validate();
         if (innerProperties() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property innerProperties in model ShareInner"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property innerProperties in model ShareInner"));
         } else {
             innerProperties().validate();
         }

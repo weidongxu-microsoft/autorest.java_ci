@@ -20,32 +20,28 @@ public final class ServiceAssociationLinksImpl implements ServiceAssociationLink
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public ServiceAssociationLinksImpl(
-        ServiceAssociationLinksClient innerClient,
+    public ServiceAssociationLinksImpl(ServiceAssociationLinksClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<ServiceAssociationLinksListResult> listWithResponse(
-        String resourceGroupName, String virtualNetworkName, String subnetName, Context context) {
-        Response<ServiceAssociationLinksListResultInner> inner =
-            this.serviceClient().listWithResponse(resourceGroupName, virtualNetworkName, subnetName, context);
+    public Response<ServiceAssociationLinksListResult> listWithResponse(String resourceGroupName,
+        String virtualNetworkName, String subnetName, Context context) {
+        Response<ServiceAssociationLinksListResultInner> inner
+            = this.serviceClient().listWithResponse(resourceGroupName, virtualNetworkName, subnetName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ServiceAssociationLinksListResultImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public ServiceAssociationLinksListResult list(
-        String resourceGroupName, String virtualNetworkName, String subnetName) {
-        ServiceAssociationLinksListResultInner inner =
-            this.serviceClient().list(resourceGroupName, virtualNetworkName, subnetName);
+    public ServiceAssociationLinksListResult list(String resourceGroupName, String virtualNetworkName,
+        String subnetName) {
+        ServiceAssociationLinksListResultInner inner
+            = this.serviceClient().list(resourceGroupName, virtualNetworkName, subnetName);
         if (inner != null) {
             return new ServiceAssociationLinksListResultImpl(inner, this.manager());
         } else {

@@ -22,6 +22,7 @@ import com.azure.core.util.polling.LongRunningOperationStatus;
 import com.azure.core.util.polling.PollerFlux;
 import com.azure.core.util.serializer.SerializerAdapter;
 import com.azure.core.util.serializer.SerializerEncoding;
+import com.azure.resourcemanager.mysql.generated.fluent.AdvancedThreatProtectionSettingsClient;
 import com.azure.resourcemanager.mysql.generated.fluent.AzureADAdministratorsClient;
 import com.azure.resourcemanager.mysql.generated.fluent.BackupAndExportsClient;
 import com.azure.resourcemanager.mysql.generated.fluent.BackupsClient;
@@ -50,291 +51,327 @@ import java.time.Duration;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-/** Initializes a new instance of the MySqlManagementClientImpl type. */
+/**
+ * Initializes a new instance of the MySqlManagementClientImpl type.
+ */
 @ServiceClient(builder = MySqlManagementClientBuilder.class)
 public final class MySqlManagementClientImpl implements MySqlManagementClient {
-    /** The ID of the target subscription. The value must be an UUID. */
+    /**
+     * The ID of the target subscription. The value must be an UUID.
+     */
     private final String subscriptionId;
 
     /**
      * Gets The ID of the target subscription. The value must be an UUID.
-     *
+     * 
      * @return the subscriptionId value.
      */
     public String getSubscriptionId() {
         return this.subscriptionId;
     }
 
-    /** server parameter. */
+    /**
+     * server parameter.
+     */
     private final String endpoint;
 
     /**
      * Gets server parameter.
-     *
+     * 
      * @return the endpoint value.
      */
     public String getEndpoint() {
         return this.endpoint;
     }
 
-    /** Api Version. */
-    private final String apiVersion;
-
     /**
-     * Gets Api Version.
-     *
-     * @return the apiVersion value.
+     * The HTTP pipeline to send requests through.
      */
-    public String getApiVersion() {
-        return this.apiVersion;
-    }
-
-    /** The HTTP pipeline to send requests through. */
     private final HttpPipeline httpPipeline;
 
     /**
      * Gets The HTTP pipeline to send requests through.
-     *
+     * 
      * @return the httpPipeline value.
      */
     public HttpPipeline getHttpPipeline() {
         return this.httpPipeline;
     }
 
-    /** The serializer to serialize an object into a string. */
+    /**
+     * The serializer to serialize an object into a string.
+     */
     private final SerializerAdapter serializerAdapter;
 
     /**
      * Gets The serializer to serialize an object into a string.
-     *
+     * 
      * @return the serializerAdapter value.
      */
     SerializerAdapter getSerializerAdapter() {
         return this.serializerAdapter;
     }
 
-    /** The default poll interval for long-running operation. */
+    /**
+     * The default poll interval for long-running operation.
+     */
     private final Duration defaultPollInterval;
 
     /**
      * Gets The default poll interval for long-running operation.
-     *
+     * 
      * @return the defaultPollInterval value.
      */
     public Duration getDefaultPollInterval() {
         return this.defaultPollInterval;
     }
 
-    /** The AzureADAdministratorsClient object to access its operations. */
+    /**
+     * The AzureADAdministratorsClient object to access its operations.
+     */
     private final AzureADAdministratorsClient azureADAdministrators;
 
     /**
      * Gets the AzureADAdministratorsClient object to access its operations.
-     *
+     * 
      * @return the AzureADAdministratorsClient object.
      */
     public AzureADAdministratorsClient getAzureADAdministrators() {
         return this.azureADAdministrators;
     }
 
-    /** The BackupsClient object to access its operations. */
+    /**
+     * The BackupsClient object to access its operations.
+     */
     private final BackupsClient backups;
 
     /**
      * Gets the BackupsClient object to access its operations.
-     *
+     * 
      * @return the BackupsClient object.
      */
     public BackupsClient getBackups() {
         return this.backups;
     }
 
-    /** The BackupAndExportsClient object to access its operations. */
+    /**
+     * The BackupAndExportsClient object to access its operations.
+     */
     private final BackupAndExportsClient backupAndExports;
 
     /**
      * Gets the BackupAndExportsClient object to access its operations.
-     *
+     * 
      * @return the BackupAndExportsClient object.
      */
     public BackupAndExportsClient getBackupAndExports() {
         return this.backupAndExports;
     }
 
-    /** The ConfigurationsClient object to access its operations. */
+    /**
+     * The ConfigurationsClient object to access its operations.
+     */
     private final ConfigurationsClient configurations;
 
     /**
      * Gets the ConfigurationsClient object to access its operations.
-     *
+     * 
      * @return the ConfigurationsClient object.
      */
     public ConfigurationsClient getConfigurations() {
         return this.configurations;
     }
 
-    /** The DatabasesClient object to access its operations. */
+    /**
+     * The DatabasesClient object to access its operations.
+     */
     private final DatabasesClient databases;
 
     /**
      * Gets the DatabasesClient object to access its operations.
-     *
+     * 
      * @return the DatabasesClient object.
      */
     public DatabasesClient getDatabases() {
         return this.databases;
     }
 
-    /** The FirewallRulesClient object to access its operations. */
+    /**
+     * The FirewallRulesClient object to access its operations.
+     */
     private final FirewallRulesClient firewallRules;
 
     /**
      * Gets the FirewallRulesClient object to access its operations.
-     *
+     * 
      * @return the FirewallRulesClient object.
      */
     public FirewallRulesClient getFirewallRules() {
         return this.firewallRules;
     }
 
-    /** The ServersClient object to access its operations. */
+    /**
+     * The ServersClient object to access its operations.
+     */
     private final ServersClient servers;
 
     /**
      * Gets the ServersClient object to access its operations.
-     *
+     * 
      * @return the ServersClient object.
      */
     public ServersClient getServers() {
         return this.servers;
     }
 
-    /** The ReplicasClient object to access its operations. */
+    /**
+     * The ReplicasClient object to access its operations.
+     */
     private final ReplicasClient replicas;
 
     /**
      * Gets the ReplicasClient object to access its operations.
-     *
+     * 
      * @return the ReplicasClient object.
      */
     public ReplicasClient getReplicas() {
         return this.replicas;
     }
 
-    /** The ServersMigrationsClient object to access its operations. */
+    /**
+     * The ServersMigrationsClient object to access its operations.
+     */
     private final ServersMigrationsClient serversMigrations;
 
     /**
      * Gets the ServersMigrationsClient object to access its operations.
-     *
+     * 
      * @return the ServersMigrationsClient object.
      */
     public ServersMigrationsClient getServersMigrations() {
         return this.serversMigrations;
     }
 
-    /** The LogFilesClient object to access its operations. */
+    /**
+     * The LogFilesClient object to access its operations.
+     */
     private final LogFilesClient logFiles;
 
     /**
      * Gets the LogFilesClient object to access its operations.
-     *
+     * 
      * @return the LogFilesClient object.
      */
     public LogFilesClient getLogFiles() {
         return this.logFiles;
     }
 
-    /** The LocationBasedCapabilitiesClient object to access its operations. */
+    /**
+     * The LocationBasedCapabilitiesClient object to access its operations.
+     */
     private final LocationBasedCapabilitiesClient locationBasedCapabilities;
 
     /**
      * Gets the LocationBasedCapabilitiesClient object to access its operations.
-     *
+     * 
      * @return the LocationBasedCapabilitiesClient object.
      */
     public LocationBasedCapabilitiesClient getLocationBasedCapabilities() {
         return this.locationBasedCapabilities;
     }
 
-    /** The LocationBasedCapabilitySetsClient object to access its operations. */
+    /**
+     * The LocationBasedCapabilitySetsClient object to access its operations.
+     */
     private final LocationBasedCapabilitySetsClient locationBasedCapabilitySets;
 
     /**
      * Gets the LocationBasedCapabilitySetsClient object to access its operations.
-     *
+     * 
      * @return the LocationBasedCapabilitySetsClient object.
      */
     public LocationBasedCapabilitySetsClient getLocationBasedCapabilitySets() {
         return this.locationBasedCapabilitySets;
     }
 
-    /** The CheckVirtualNetworkSubnetUsagesClient object to access its operations. */
+    /**
+     * The CheckVirtualNetworkSubnetUsagesClient object to access its operations.
+     */
     private final CheckVirtualNetworkSubnetUsagesClient checkVirtualNetworkSubnetUsages;
 
     /**
      * Gets the CheckVirtualNetworkSubnetUsagesClient object to access its operations.
-     *
+     * 
      * @return the CheckVirtualNetworkSubnetUsagesClient object.
      */
     public CheckVirtualNetworkSubnetUsagesClient getCheckVirtualNetworkSubnetUsages() {
         return this.checkVirtualNetworkSubnetUsages;
     }
 
-    /** The CheckNameAvailabilitiesClient object to access its operations. */
+    /**
+     * The CheckNameAvailabilitiesClient object to access its operations.
+     */
     private final CheckNameAvailabilitiesClient checkNameAvailabilities;
 
     /**
      * Gets the CheckNameAvailabilitiesClient object to access its operations.
-     *
+     * 
      * @return the CheckNameAvailabilitiesClient object.
      */
     public CheckNameAvailabilitiesClient getCheckNameAvailabilities() {
         return this.checkNameAvailabilities;
     }
 
-    /** The CheckNameAvailabilityWithoutLocationsClient object to access its operations. */
+    /**
+     * The CheckNameAvailabilityWithoutLocationsClient object to access its operations.
+     */
     private final CheckNameAvailabilityWithoutLocationsClient checkNameAvailabilityWithoutLocations;
 
     /**
      * Gets the CheckNameAvailabilityWithoutLocationsClient object to access its operations.
-     *
+     * 
      * @return the CheckNameAvailabilityWithoutLocationsClient object.
      */
     public CheckNameAvailabilityWithoutLocationsClient getCheckNameAvailabilityWithoutLocations() {
         return this.checkNameAvailabilityWithoutLocations;
     }
 
-    /** The OperationResultsClient object to access its operations. */
+    /**
+     * The OperationResultsClient object to access its operations.
+     */
     private final OperationResultsClient operationResults;
 
     /**
      * Gets the OperationResultsClient object to access its operations.
-     *
+     * 
      * @return the OperationResultsClient object.
      */
     public OperationResultsClient getOperationResults() {
         return this.operationResults;
     }
 
-    /** The GetPrivateDnsZoneSuffixesClient object to access its operations. */
+    /**
+     * The GetPrivateDnsZoneSuffixesClient object to access its operations.
+     */
     private final GetPrivateDnsZoneSuffixesClient getPrivateDnsZoneSuffixes;
 
     /**
      * Gets the GetPrivateDnsZoneSuffixesClient object to access its operations.
-     *
+     * 
      * @return the GetPrivateDnsZoneSuffixesClient object.
      */
     public GetPrivateDnsZoneSuffixesClient getGetPrivateDnsZoneSuffixes() {
         return this.getPrivateDnsZoneSuffixes;
     }
 
-    /** The OperationsClient object to access its operations. */
+    /**
+     * The OperationsClient object to access its operations.
+     */
     private final OperationsClient operations;
 
     /**
      * Gets the OperationsClient object to access its operations.
-     *
+     * 
      * @return the OperationsClient object.
      */
     public OperationsClient getOperations() {
@@ -342,8 +379,22 @@ public final class MySqlManagementClientImpl implements MySqlManagementClient {
     }
 
     /**
+     * The AdvancedThreatProtectionSettingsClient object to access its operations.
+     */
+    private final AdvancedThreatProtectionSettingsClient advancedThreatProtectionSettings;
+
+    /**
+     * Gets the AdvancedThreatProtectionSettingsClient object to access its operations.
+     * 
+     * @return the AdvancedThreatProtectionSettingsClient object.
+     */
+    public AdvancedThreatProtectionSettingsClient getAdvancedThreatProtectionSettings() {
+        return this.advancedThreatProtectionSettings;
+    }
+
+    /**
      * Initializes an instance of MySqlManagementClient client.
-     *
+     * 
      * @param httpPipeline The HTTP pipeline to send requests through.
      * @param serializerAdapter The serializer to serialize an object into a string.
      * @param defaultPollInterval The default poll interval for long-running operation.
@@ -351,19 +402,13 @@ public final class MySqlManagementClientImpl implements MySqlManagementClient {
      * @param subscriptionId The ID of the target subscription. The value must be an UUID.
      * @param endpoint server parameter.
      */
-    MySqlManagementClientImpl(
-        HttpPipeline httpPipeline,
-        SerializerAdapter serializerAdapter,
-        Duration defaultPollInterval,
-        AzureEnvironment environment,
-        String subscriptionId,
-        String endpoint) {
+    MySqlManagementClientImpl(HttpPipeline httpPipeline, SerializerAdapter serializerAdapter,
+        Duration defaultPollInterval, AzureEnvironment environment, String subscriptionId, String endpoint) {
         this.httpPipeline = httpPipeline;
         this.serializerAdapter = serializerAdapter;
         this.defaultPollInterval = defaultPollInterval;
         this.subscriptionId = subscriptionId;
         this.endpoint = endpoint;
-        this.apiVersion = "2023-06-01-preview";
         this.azureADAdministrators = new AzureADAdministratorsClientImpl(this);
         this.backups = new BackupsClientImpl(this);
         this.backupAndExports = new BackupAndExportsClientImpl(this);
@@ -382,11 +427,12 @@ public final class MySqlManagementClientImpl implements MySqlManagementClient {
         this.operationResults = new OperationResultsClientImpl(this);
         this.getPrivateDnsZoneSuffixes = new GetPrivateDnsZoneSuffixesClientImpl(this);
         this.operations = new OperationsClientImpl(this);
+        this.advancedThreatProtectionSettings = new AdvancedThreatProtectionSettingsClientImpl(this);
     }
 
     /**
      * Gets default client context.
-     *
+     * 
      * @return the default client context.
      */
     public Context getContext() {
@@ -395,7 +441,7 @@ public final class MySqlManagementClientImpl implements MySqlManagementClient {
 
     /**
      * Merges default client context with provided context.
-     *
+     * 
      * @param context the context to be merged with default client context.
      * @return the merged context.
      */
@@ -405,7 +451,7 @@ public final class MySqlManagementClientImpl implements MySqlManagementClient {
 
     /**
      * Gets long running operation result.
-     *
+     * 
      * @param activationResponse the response of activation operation.
      * @param httpPipeline the http pipeline.
      * @param pollResultType type of poll result.
@@ -415,26 +461,15 @@ public final class MySqlManagementClientImpl implements MySqlManagementClient {
      * @param <U> type of final result.
      * @return poller flux for poll result and final result.
      */
-    public <T, U> PollerFlux<PollResult<T>, U> getLroResult(
-        Mono<Response<Flux<ByteBuffer>>> activationResponse,
-        HttpPipeline httpPipeline,
-        Type pollResultType,
-        Type finalResultType,
-        Context context) {
-        return PollerFactory
-            .create(
-                serializerAdapter,
-                httpPipeline,
-                pollResultType,
-                finalResultType,
-                defaultPollInterval,
-                activationResponse,
-                context);
+    public <T, U> PollerFlux<PollResult<T>, U> getLroResult(Mono<Response<Flux<ByteBuffer>>> activationResponse,
+        HttpPipeline httpPipeline, Type pollResultType, Type finalResultType, Context context) {
+        return PollerFactory.create(serializerAdapter, httpPipeline, pollResultType, finalResultType,
+            defaultPollInterval, activationResponse, context);
     }
 
     /**
      * Gets the final result, or an error, based on last async poll response.
-     *
+     * 
      * @param response the last async poll response.
      * @param <T> type of poll result.
      * @param <U> type of final result.
@@ -447,19 +482,16 @@ public final class MySqlManagementClientImpl implements MySqlManagementClient {
             HttpResponse errorResponse = null;
             PollResult.Error lroError = response.getValue().getError();
             if (lroError != null) {
-                errorResponse =
-                    new HttpResponseImpl(
-                        lroError.getResponseStatusCode(), lroError.getResponseHeaders(), lroError.getResponseBody());
+                errorResponse = new HttpResponseImpl(lroError.getResponseStatusCode(), lroError.getResponseHeaders(),
+                    lroError.getResponseBody());
 
                 errorMessage = response.getValue().getError().getMessage();
                 String errorBody = response.getValue().getError().getResponseBody();
                 if (errorBody != null) {
                     // try to deserialize error body to ManagementError
                     try {
-                        managementError =
-                            this
-                                .getSerializerAdapter()
-                                .deserialize(errorBody, ManagementError.class, SerializerEncoding.JSON);
+                        managementError = this.getSerializerAdapter().deserialize(errorBody, ManagementError.class,
+                            SerializerEncoding.JSON);
                         if (managementError.getCode() == null || managementError.getMessage() == null) {
                             managementError = null;
                         }

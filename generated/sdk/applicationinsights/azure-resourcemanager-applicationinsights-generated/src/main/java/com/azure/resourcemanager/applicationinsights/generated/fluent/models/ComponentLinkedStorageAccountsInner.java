@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** An Application Insights component linked storage accounts. */
+/**
+ * An Application Insights component linked storage accounts.
+ */
 @Fluent
 public final class ComponentLinkedStorageAccountsInner extends ProxyResource {
     /*
@@ -17,13 +19,15 @@ public final class ComponentLinkedStorageAccountsInner extends ProxyResource {
     @JsonProperty(value = "properties")
     private LinkedStorageAccountsProperties innerProperties;
 
-    /** Creates an instance of ComponentLinkedStorageAccountsInner class. */
+    /**
+     * Creates an instance of ComponentLinkedStorageAccountsInner class.
+     */
     public ComponentLinkedStorageAccountsInner() {
     }
 
     /**
      * Get the innerProperties property: The properties of the linked storage accounts.
-     *
+     * 
      * @return the innerProperties value.
      */
     private LinkedStorageAccountsProperties innerProperties() {
@@ -32,7 +36,7 @@ public final class ComponentLinkedStorageAccountsInner extends ProxyResource {
 
     /**
      * Get the linkedStorageAccount property: Linked storage account resource ID.
-     *
+     * 
      * @return the linkedStorageAccount value.
      */
     public String linkedStorageAccount() {
@@ -41,7 +45,7 @@ public final class ComponentLinkedStorageAccountsInner extends ProxyResource {
 
     /**
      * Set the linkedStorageAccount property: Linked storage account resource ID.
-     *
+     * 
      * @param linkedStorageAccount the linkedStorageAccount value to set.
      * @return the ComponentLinkedStorageAccountsInner object itself.
      */
@@ -55,7 +59,7 @@ public final class ComponentLinkedStorageAccountsInner extends ProxyResource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

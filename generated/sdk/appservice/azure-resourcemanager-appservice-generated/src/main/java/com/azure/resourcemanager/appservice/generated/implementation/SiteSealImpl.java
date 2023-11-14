@@ -12,8 +12,8 @@ public final class SiteSealImpl implements SiteSeal {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    SiteSealImpl(
-        SiteSealInner innerObject, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
+    SiteSealImpl(SiteSealInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

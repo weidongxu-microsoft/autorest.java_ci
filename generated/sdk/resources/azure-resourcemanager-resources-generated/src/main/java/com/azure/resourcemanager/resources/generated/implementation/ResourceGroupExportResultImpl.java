@@ -13,8 +13,7 @@ public final class ResourceGroupExportResultImpl implements ResourceGroupExportR
 
     private final com.azure.resourcemanager.resources.generated.ResourceManager serviceManager;
 
-    ResourceGroupExportResultImpl(
-        ResourceGroupExportResultInner innerObject,
+    ResourceGroupExportResultImpl(ResourceGroupExportResultInner innerObject,
         com.azure.resourcemanager.resources.generated.ResourceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

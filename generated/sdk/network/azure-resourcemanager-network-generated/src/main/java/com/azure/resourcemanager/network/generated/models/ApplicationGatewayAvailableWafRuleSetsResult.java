@@ -7,11 +7,13 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewayAvailableWafRuleSetsResultInner;
 import java.util.List;
 
-/** An immutable client-side representation of ApplicationGatewayAvailableWafRuleSetsResult. */
+/**
+ * An immutable client-side representation of ApplicationGatewayAvailableWafRuleSetsResult.
+ */
 public interface ApplicationGatewayAvailableWafRuleSetsResult {
     /**
      * Gets the value property: The list of application gateway rule sets.
-     *
+     * 
      * @return the value value.
      */
     List<ApplicationGatewayFirewallRuleSet> value();
@@ -20,7 +22,7 @@ public interface ApplicationGatewayAvailableWafRuleSetsResult {
      * Gets the inner
      * com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewayAvailableWafRuleSetsResultInner
      * object.
-     *
+     * 
      * @return the inner object.
      */
     ApplicationGatewayAvailableWafRuleSetsResultInner innerModel();

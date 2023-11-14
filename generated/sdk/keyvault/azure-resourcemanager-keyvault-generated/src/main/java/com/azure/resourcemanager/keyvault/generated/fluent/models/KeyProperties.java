@@ -14,7 +14,9 @@ import com.azure.resourcemanager.keyvault.generated.models.RotationPolicy;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The properties of the key. */
+/**
+ * The properties of the key.
+ */
 @Fluent
 public final class KeyProperties {
     /*
@@ -71,13 +73,15 @@ public final class KeyProperties {
     @JsonProperty(value = "release_policy")
     private KeyReleasePolicy releasePolicy;
 
-    /** Creates an instance of KeyProperties class. */
+    /**
+     * Creates an instance of KeyProperties class.
+     */
     public KeyProperties() {
     }
 
     /**
      * Get the attributes property: The attributes of the key.
-     *
+     * 
      * @return the attributes value.
      */
     public KeyAttributes attributes() {
@@ -86,7 +90,7 @@ public final class KeyProperties {
 
     /**
      * Set the attributes property: The attributes of the key.
-     *
+     * 
      * @param attributes the attributes value to set.
      * @return the KeyProperties object itself.
      */
@@ -97,7 +101,7 @@ public final class KeyProperties {
 
     /**
      * Get the kty property: The type of the key. For valid values, see JsonWebKeyType.
-     *
+     * 
      * @return the kty value.
      */
     public JsonWebKeyType kty() {
@@ -106,7 +110,7 @@ public final class KeyProperties {
 
     /**
      * Set the kty property: The type of the key. For valid values, see JsonWebKeyType.
-     *
+     * 
      * @param kty the kty value to set.
      * @return the KeyProperties object itself.
      */
@@ -117,7 +121,7 @@ public final class KeyProperties {
 
     /**
      * Get the keyOps property: The keyOps property.
-     *
+     * 
      * @return the keyOps value.
      */
     public List<JsonWebKeyOperation> keyOps() {
@@ -126,7 +130,7 @@ public final class KeyProperties {
 
     /**
      * Set the keyOps property: The keyOps property.
-     *
+     * 
      * @param keyOps the keyOps value to set.
      * @return the KeyProperties object itself.
      */
@@ -137,7 +141,7 @@ public final class KeyProperties {
 
     /**
      * Get the keySize property: The key size in bits. For example: 2048, 3072, or 4096 for RSA.
-     *
+     * 
      * @return the keySize value.
      */
     public Integer keySize() {
@@ -146,7 +150,7 @@ public final class KeyProperties {
 
     /**
      * Set the keySize property: The key size in bits. For example: 2048, 3072, or 4096 for RSA.
-     *
+     * 
      * @param keySize the keySize value to set.
      * @return the KeyProperties object itself.
      */
@@ -157,7 +161,7 @@ public final class KeyProperties {
 
     /**
      * Get the curveName property: The elliptic curve name. For valid values, see JsonWebKeyCurveName.
-     *
+     * 
      * @return the curveName value.
      */
     public JsonWebKeyCurveName curveName() {
@@ -166,7 +170,7 @@ public final class KeyProperties {
 
     /**
      * Set the curveName property: The elliptic curve name. For valid values, see JsonWebKeyCurveName.
-     *
+     * 
      * @param curveName the curveName value to set.
      * @return the KeyProperties object itself.
      */
@@ -177,7 +181,7 @@ public final class KeyProperties {
 
     /**
      * Get the keyUri property: The URI to retrieve the current version of the key.
-     *
+     * 
      * @return the keyUri value.
      */
     public String keyUri() {
@@ -186,7 +190,7 @@ public final class KeyProperties {
 
     /**
      * Get the keyUriWithVersion property: The URI to retrieve the specific version of the key.
-     *
+     * 
      * @return the keyUriWithVersion value.
      */
     public String keyUriWithVersion() {
@@ -196,7 +200,7 @@ public final class KeyProperties {
     /**
      * Get the rotationPolicy property: Key rotation policy in response. It will be used for both output and input.
      * Omitted if empty.
-     *
+     * 
      * @return the rotationPolicy value.
      */
     public RotationPolicy rotationPolicy() {
@@ -206,7 +210,7 @@ public final class KeyProperties {
     /**
      * Set the rotationPolicy property: Key rotation policy in response. It will be used for both output and input.
      * Omitted if empty.
-     *
+     * 
      * @param rotationPolicy the rotationPolicy value to set.
      * @return the KeyProperties object itself.
      */
@@ -218,7 +222,7 @@ public final class KeyProperties {
     /**
      * Get the releasePolicy property: Key release policy in response. It will be used for both output and input.
      * Omitted if empty.
-     *
+     * 
      * @return the releasePolicy value.
      */
     public KeyReleasePolicy releasePolicy() {
@@ -228,7 +232,7 @@ public final class KeyProperties {
     /**
      * Set the releasePolicy property: Key release policy in response. It will be used for both output and input.
      * Omitted if empty.
-     *
+     * 
      * @param releasePolicy the releasePolicy value to set.
      * @return the KeyProperties object itself.
      */
@@ -239,7 +243,7 @@ public final class KeyProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -7,7 +7,9 @@ package com.azure.resourcemanager.keyvault.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Properties of the secret. */
+/**
+ * Properties of the secret.
+ */
 @Fluent
 public final class SecretPatchProperties {
     /*
@@ -28,13 +30,15 @@ public final class SecretPatchProperties {
     @JsonProperty(value = "attributes")
     private SecretAttributes attributes;
 
-    /** Creates an instance of SecretPatchProperties class. */
+    /**
+     * Creates an instance of SecretPatchProperties class.
+     */
     public SecretPatchProperties() {
     }
 
     /**
      * Get the value property: The value of the secret.
-     *
+     * 
      * @return the value value.
      */
     public String value() {
@@ -43,7 +47,7 @@ public final class SecretPatchProperties {
 
     /**
      * Set the value property: The value of the secret.
-     *
+     * 
      * @param value the value value to set.
      * @return the SecretPatchProperties object itself.
      */
@@ -54,7 +58,7 @@ public final class SecretPatchProperties {
 
     /**
      * Get the contentType property: The content type of the secret.
-     *
+     * 
      * @return the contentType value.
      */
     public String contentType() {
@@ -63,7 +67,7 @@ public final class SecretPatchProperties {
 
     /**
      * Set the contentType property: The content type of the secret.
-     *
+     * 
      * @param contentType the contentType value to set.
      * @return the SecretPatchProperties object itself.
      */
@@ -74,7 +78,7 @@ public final class SecretPatchProperties {
 
     /**
      * Get the attributes property: The attributes of the secret.
-     *
+     * 
      * @return the attributes value.
      */
     public SecretAttributes attributes() {
@@ -83,7 +87,7 @@ public final class SecretPatchProperties {
 
     /**
      * Set the attributes property: The attributes of the secret.
-     *
+     * 
      * @param attributes the attributes value to set.
      * @return the SecretPatchProperties object itself.
      */
@@ -94,7 +98,7 @@ public final class SecretPatchProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

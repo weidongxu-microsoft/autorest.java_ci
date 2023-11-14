@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.monitor.generated.models.Enabled;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Log Search Rule Definition for Patching. */
+/**
+ * Log Search Rule Definition for Patching.
+ */
 @Fluent
 public final class LogSearchRulePatch {
     /*
@@ -17,14 +19,16 @@ public final class LogSearchRulePatch {
     @JsonProperty(value = "enabled")
     private Enabled enabled;
 
-    /** Creates an instance of LogSearchRulePatch class. */
+    /**
+     * Creates an instance of LogSearchRulePatch class.
+     */
     public LogSearchRulePatch() {
     }
 
     /**
      * Get the enabled property: The flag which indicates whether the Log Search rule is enabled. Value should be true
      * or false.
-     *
+     * 
      * @return the enabled value.
      */
     public Enabled enabled() {
@@ -34,7 +38,7 @@ public final class LogSearchRulePatch {
     /**
      * Set the enabled property: The flag which indicates whether the Log Search rule is enabled. Value should be true
      * or false.
-     *
+     * 
      * @param enabled the enabled value to set.
      * @return the LogSearchRulePatch object itself.
      */
@@ -45,7 +49,7 @@ public final class LogSearchRulePatch {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

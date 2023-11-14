@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The order by expression to be used in the report. */
+/**
+ * The order by expression to be used in the report.
+ */
 @Fluent
 public final class ReportConfigSorting {
     /*
@@ -23,13 +25,15 @@ public final class ReportConfigSorting {
     @JsonProperty(value = "name", required = true)
     private String name;
 
-    /** Creates an instance of ReportConfigSorting class. */
+    /**
+     * Creates an instance of ReportConfigSorting class.
+     */
     public ReportConfigSorting() {
     }
 
     /**
      * Get the direction property: Direction of sort.
-     *
+     * 
      * @return the direction value.
      */
     public ReportConfigSortingDirection direction() {
@@ -38,7 +42,7 @@ public final class ReportConfigSorting {
 
     /**
      * Set the direction property: Direction of sort.
-     *
+     * 
      * @param direction the direction value to set.
      * @return the ReportConfigSorting object itself.
      */
@@ -49,7 +53,7 @@ public final class ReportConfigSorting {
 
     /**
      * Get the name property: The name of the column to sort.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -58,7 +62,7 @@ public final class ReportConfigSorting {
 
     /**
      * Set the name property: The name of the column to sort.
-     *
+     * 
      * @param name the name value to set.
      * @return the ReportConfigSorting object itself.
      */
@@ -69,14 +73,13 @@ public final class ReportConfigSorting {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property name in model ReportConfigSorting"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property name in model ReportConfigSorting"));
         }
     }
 

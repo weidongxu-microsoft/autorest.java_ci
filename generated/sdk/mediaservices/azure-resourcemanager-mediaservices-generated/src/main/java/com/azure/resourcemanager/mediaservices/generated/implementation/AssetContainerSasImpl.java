@@ -14,8 +14,7 @@ public final class AssetContainerSasImpl implements AssetContainerSas {
 
     private final com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager;
 
-    AssetContainerSasImpl(
-        AssetContainerSasInner innerObject,
+    AssetContainerSasImpl(AssetContainerSasInner innerObject,
         com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

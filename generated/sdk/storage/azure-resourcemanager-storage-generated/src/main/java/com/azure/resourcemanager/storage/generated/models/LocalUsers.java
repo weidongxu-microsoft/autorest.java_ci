@@ -9,7 +9,9 @@ import com.azure.resourcemanager.storage.generated.fluent.models.LocalUserInner;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** List storage account local users. */
+/**
+ * List storage account local users.
+ */
 @Fluent
 public final class LocalUsers {
     /*
@@ -18,13 +20,15 @@ public final class LocalUsers {
     @JsonProperty(value = "value")
     private List<LocalUserInner> value;
 
-    /** Creates an instance of LocalUsers class. */
+    /**
+     * Creates an instance of LocalUsers class.
+     */
     public LocalUsers() {
     }
 
     /**
      * Get the value property: The local users associated with the storage account.
-     *
+     * 
      * @return the value value.
      */
     public List<LocalUserInner> value() {
@@ -33,7 +37,7 @@ public final class LocalUsers {
 
     /**
      * Set the value property: The local users associated with the storage account.
-     *
+     * 
      * @param value the value value to set.
      * @return the LocalUsers object itself.
      */
@@ -44,7 +48,7 @@ public final class LocalUsers {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

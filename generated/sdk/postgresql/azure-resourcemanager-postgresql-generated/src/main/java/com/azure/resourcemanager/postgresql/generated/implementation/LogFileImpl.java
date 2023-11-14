@@ -13,8 +13,8 @@ public final class LogFileImpl implements LogFile {
 
     private final com.azure.resourcemanager.postgresql.generated.PostgreSqlManager serviceManager;
 
-    LogFileImpl(
-        LogFileInner innerObject, com.azure.resourcemanager.postgresql.generated.PostgreSqlManager serviceManager) {
+    LogFileImpl(LogFileInner innerObject,
+        com.azure.resourcemanager.postgresql.generated.PostgreSqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

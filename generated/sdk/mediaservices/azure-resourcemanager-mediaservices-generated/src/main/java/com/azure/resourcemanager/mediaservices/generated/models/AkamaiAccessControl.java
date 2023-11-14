@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Akamai access control. */
+/**
+ * Akamai access control.
+ */
 @Fluent
 public final class AkamaiAccessControl {
     /*
@@ -17,13 +19,15 @@ public final class AkamaiAccessControl {
     @JsonProperty(value = "akamaiSignatureHeaderAuthenticationKeyList")
     private List<AkamaiSignatureHeaderAuthenticationKey> akamaiSignatureHeaderAuthenticationKeyList;
 
-    /** Creates an instance of AkamaiAccessControl class. */
+    /**
+     * Creates an instance of AkamaiAccessControl class.
+     */
     public AkamaiAccessControl() {
     }
 
     /**
      * Get the akamaiSignatureHeaderAuthenticationKeyList property: authentication key list.
-     *
+     * 
      * @return the akamaiSignatureHeaderAuthenticationKeyList value.
      */
     public List<AkamaiSignatureHeaderAuthenticationKey> akamaiSignatureHeaderAuthenticationKeyList() {
@@ -32,7 +36,7 @@ public final class AkamaiAccessControl {
 
     /**
      * Set the akamaiSignatureHeaderAuthenticationKeyList property: authentication key list.
-     *
+     * 
      * @param akamaiSignatureHeaderAuthenticationKeyList the akamaiSignatureHeaderAuthenticationKeyList value to set.
      * @return the AkamaiAccessControl object itself.
      */
@@ -44,7 +48,7 @@ public final class AkamaiAccessControl {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

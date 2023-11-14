@@ -18,8 +18,7 @@ public final class VpnClientIPsecParametersImpl implements VpnClientIPsecParamet
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    VpnClientIPsecParametersImpl(
-        VpnClientIPsecParametersInner innerObject,
+    VpnClientIPsecParametersImpl(VpnClientIPsecParametersInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

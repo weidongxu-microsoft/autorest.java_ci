@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The aggregation expression to be used in the report. */
+/**
+ * The aggregation expression to be used in the report.
+ */
 @Fluent
 public final class ReportConfigAggregation {
     /*
@@ -23,13 +25,15 @@ public final class ReportConfigAggregation {
     @JsonProperty(value = "function", required = true)
     private FunctionType function;
 
-    /** Creates an instance of ReportConfigAggregation class. */
+    /**
+     * Creates an instance of ReportConfigAggregation class.
+     */
     public ReportConfigAggregation() {
     }
 
     /**
      * Get the name property: The name of the column to aggregate.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -38,7 +42,7 @@ public final class ReportConfigAggregation {
 
     /**
      * Set the name property: The name of the column to aggregate.
-     *
+     * 
      * @param name the name value to set.
      * @return the ReportConfigAggregation object itself.
      */
@@ -49,7 +53,7 @@ public final class ReportConfigAggregation {
 
     /**
      * Get the function property: The name of the aggregation function to use.
-     *
+     * 
      * @return the function value.
      */
     public FunctionType function() {
@@ -58,7 +62,7 @@ public final class ReportConfigAggregation {
 
     /**
      * Set the function property: The name of the aggregation function to use.
-     *
+     * 
      * @param function the function value to set.
      * @return the ReportConfigAggregation object itself.
      */
@@ -69,20 +73,17 @@ public final class ReportConfigAggregation {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property name in model ReportConfigAggregation"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property name in model ReportConfigAggregation"));
         }
         if (function() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property function in model ReportConfigAggregation"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property function in model ReportConfigAggregation"));
         }
     }
 

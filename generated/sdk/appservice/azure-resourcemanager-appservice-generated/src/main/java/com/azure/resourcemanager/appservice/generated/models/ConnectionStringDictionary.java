@@ -7,39 +7,41 @@ package com.azure.resourcemanager.appservice.generated.models;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ConnectionStringDictionaryInner;
 import java.util.Map;
 
-/** An immutable client-side representation of ConnectionStringDictionary. */
+/**
+ * An immutable client-side representation of ConnectionStringDictionary.
+ */
 public interface ConnectionStringDictionary {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the name property: The name of the resource.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the type property: The type of the resource.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the kind property: Kind of resource.
-     *
+     * 
      * @return the kind value.
      */
     String kind();
 
     /**
      * Gets the properties property: Connection strings.
-     *
+     * 
      * @return the properties value.
      */
     Map<String, ConnStringValueTypePair> properties();
@@ -47,7 +49,7 @@ public interface ConnectionStringDictionary {
     /**
      * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.ConnectionStringDictionaryInner
      * object.
-     *
+     * 
      * @return the inner object.
      */
     ConnectionStringDictionaryInner innerModel();

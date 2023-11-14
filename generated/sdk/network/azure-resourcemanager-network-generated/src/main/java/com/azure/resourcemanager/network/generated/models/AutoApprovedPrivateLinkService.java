@@ -6,11 +6,13 @@ package com.azure.resourcemanager.network.generated.models;
 
 import com.azure.resourcemanager.network.generated.fluent.models.AutoApprovedPrivateLinkServiceInner;
 
-/** An immutable client-side representation of AutoApprovedPrivateLinkService. */
+/**
+ * An immutable client-side representation of AutoApprovedPrivateLinkService.
+ */
 public interface AutoApprovedPrivateLinkService {
     /**
      * Gets the privateLinkService property: The id of the private link service resource.
-     *
+     * 
      * @return the privateLinkService value.
      */
     String privateLinkService();
@@ -18,7 +20,7 @@ public interface AutoApprovedPrivateLinkService {
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.AutoApprovedPrivateLinkServiceInner
      * object.
-     *
+     * 
      * @return the inner object.
      */
     AutoApprovedPrivateLinkServiceInner innerModel();

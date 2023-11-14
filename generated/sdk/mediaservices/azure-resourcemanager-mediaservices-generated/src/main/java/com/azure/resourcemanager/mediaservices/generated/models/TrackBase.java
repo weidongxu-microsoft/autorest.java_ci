@@ -9,7 +9,9 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** Base type for concrete track types. A derived type must be used to represent the Track. */
+/**
+ * Base type for concrete track types. A derived type must be used to represent the Track.
+ */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
     include = JsonTypeInfo.As.PROPERTY,
@@ -19,17 +21,18 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @JsonSubTypes({
     @JsonSubTypes.Type(name = "#Microsoft.Media.AudioTrack", value = AudioTrack.class),
     @JsonSubTypes.Type(name = "#Microsoft.Media.VideoTrack", value = VideoTrack.class),
-    @JsonSubTypes.Type(name = "#Microsoft.Media.TextTrack", value = TextTrack.class)
-})
+    @JsonSubTypes.Type(name = "#Microsoft.Media.TextTrack", value = TextTrack.class) })
 @Immutable
 public class TrackBase {
-    /** Creates an instance of TrackBase class. */
+    /**
+     * Creates an instance of TrackBase class.
+     */
     public TrackBase() {
     }
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

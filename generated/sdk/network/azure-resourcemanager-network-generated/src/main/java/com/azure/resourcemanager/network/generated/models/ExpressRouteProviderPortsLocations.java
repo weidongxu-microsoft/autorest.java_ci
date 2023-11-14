@@ -7,11 +7,13 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of ExpressRouteProviderPortsLocations. */
+/**
+ * Resource collection API of ExpressRouteProviderPortsLocations.
+ */
 public interface ExpressRouteProviderPortsLocations {
     /**
      * Retrieves all the ExpressRouteProviderPorts in a subscription.
-     *
+     * 
      * @param filter The filter to apply on the operation. For example, you can use $filter=location eq '{state}'.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -23,7 +25,7 @@ public interface ExpressRouteProviderPortsLocations {
 
     /**
      * Retrieves all the ExpressRouteProviderPorts in a subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return response for ListExpressRouteProviderPort API service call.

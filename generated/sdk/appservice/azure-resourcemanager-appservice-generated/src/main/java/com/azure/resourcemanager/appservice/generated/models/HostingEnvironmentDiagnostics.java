@@ -6,18 +6,20 @@ package com.azure.resourcemanager.appservice.generated.models;
 
 import com.azure.resourcemanager.appservice.generated.fluent.models.HostingEnvironmentDiagnosticsInner;
 
-/** An immutable client-side representation of HostingEnvironmentDiagnostics. */
+/**
+ * An immutable client-side representation of HostingEnvironmentDiagnostics.
+ */
 public interface HostingEnvironmentDiagnostics {
     /**
      * Gets the name property: Name/identifier of the diagnostics.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the diagnosticsOutput property: Diagnostics output.
-     *
+     * 
      * @return the diagnosticsOutput value.
      */
     String diagnosticsOutput();
@@ -25,7 +27,7 @@ public interface HostingEnvironmentDiagnostics {
     /**
      * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.HostingEnvironmentDiagnosticsInner
      * object.
-     *
+     * 
      * @return the inner object.
      */
     HostingEnvironmentDiagnosticsInner innerModel();

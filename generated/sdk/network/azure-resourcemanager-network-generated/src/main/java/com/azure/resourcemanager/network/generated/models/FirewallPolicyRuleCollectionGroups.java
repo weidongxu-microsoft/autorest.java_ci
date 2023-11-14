@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of FirewallPolicyRuleCollectionGroups. */
+/**
+ * Resource collection API of FirewallPolicyRuleCollectionGroups.
+ */
 public interface FirewallPolicyRuleCollectionGroups {
     /**
      * Deletes the specified FirewallPolicyRuleCollectionGroup.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @param ruleCollectionGroupName The name of the FirewallPolicyRuleCollectionGroup.
@@ -24,7 +26,7 @@ public interface FirewallPolicyRuleCollectionGroups {
 
     /**
      * Deletes the specified FirewallPolicyRuleCollectionGroup.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @param ruleCollectionGroupName The name of the FirewallPolicyRuleCollectionGroup.
@@ -37,7 +39,7 @@ public interface FirewallPolicyRuleCollectionGroups {
 
     /**
      * Gets the specified FirewallPolicyRuleCollectionGroup.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @param ruleCollectionGroupName The name of the FirewallPolicyRuleCollectionGroup.
@@ -47,12 +49,12 @@ public interface FirewallPolicyRuleCollectionGroups {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified FirewallPolicyRuleCollectionGroup along with {@link Response}.
      */
-    Response<FirewallPolicyRuleCollectionGroup> getWithResponse(
-        String resourceGroupName, String firewallPolicyName, String ruleCollectionGroupName, Context context);
+    Response<FirewallPolicyRuleCollectionGroup> getWithResponse(String resourceGroupName, String firewallPolicyName,
+        String ruleCollectionGroupName, Context context);
 
     /**
      * Gets the specified FirewallPolicyRuleCollectionGroup.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @param ruleCollectionGroupName The name of the FirewallPolicyRuleCollectionGroup.
@@ -61,40 +63,40 @@ public interface FirewallPolicyRuleCollectionGroups {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified FirewallPolicyRuleCollectionGroup.
      */
-    FirewallPolicyRuleCollectionGroup get(
-        String resourceGroupName, String firewallPolicyName, String ruleCollectionGroupName);
+    FirewallPolicyRuleCollectionGroup get(String resourceGroupName, String firewallPolicyName,
+        String ruleCollectionGroupName);
 
     /**
      * Lists all FirewallPolicyRuleCollectionGroups in a FirewallPolicy resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListFirewallPolicyRuleCollectionGroups API service call as paginated response with {@link
-     *     PagedIterable}.
+     * @return response for ListFirewallPolicyRuleCollectionGroups API service call as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<FirewallPolicyRuleCollectionGroup> list(String resourceGroupName, String firewallPolicyName);
 
     /**
      * Lists all FirewallPolicyRuleCollectionGroups in a FirewallPolicy resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListFirewallPolicyRuleCollectionGroups API service call as paginated response with {@link
-     *     PagedIterable}.
+     * @return response for ListFirewallPolicyRuleCollectionGroups API service call as paginated response with
+     * {@link PagedIterable}.
      */
-    PagedIterable<FirewallPolicyRuleCollectionGroup> list(
-        String resourceGroupName, String firewallPolicyName, Context context);
+    PagedIterable<FirewallPolicyRuleCollectionGroup> list(String resourceGroupName, String firewallPolicyName,
+        Context context);
 
     /**
      * Gets the specified FirewallPolicyRuleCollectionGroup.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -105,7 +107,7 @@ public interface FirewallPolicyRuleCollectionGroups {
 
     /**
      * Gets the specified FirewallPolicyRuleCollectionGroup.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -117,7 +119,7 @@ public interface FirewallPolicyRuleCollectionGroups {
 
     /**
      * Deletes the specified FirewallPolicyRuleCollectionGroup.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -127,7 +129,7 @@ public interface FirewallPolicyRuleCollectionGroups {
 
     /**
      * Deletes the specified FirewallPolicyRuleCollectionGroup.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -138,7 +140,7 @@ public interface FirewallPolicyRuleCollectionGroups {
 
     /**
      * Begins definition for a new FirewallPolicyRuleCollectionGroup resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new FirewallPolicyRuleCollectionGroup definition.
      */

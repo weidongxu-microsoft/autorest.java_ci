@@ -17,8 +17,7 @@ public final class ExpressRouteConnectionListImpl implements ExpressRouteConnect
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    ExpressRouteConnectionListImpl(
-        ExpressRouteConnectionListInner innerObject,
+    ExpressRouteConnectionListImpl(ExpressRouteConnectionListInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -27,12 +26,8 @@ public final class ExpressRouteConnectionListImpl implements ExpressRouteConnect
     public List<ExpressRouteConnection> value() {
         List<ExpressRouteConnectionInner> inner = this.innerModel().value();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new ExpressRouteConnectionImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new ExpressRouteConnectionImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

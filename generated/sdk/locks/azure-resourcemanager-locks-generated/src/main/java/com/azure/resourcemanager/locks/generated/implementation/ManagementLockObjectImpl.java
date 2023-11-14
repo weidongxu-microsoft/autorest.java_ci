@@ -69,28 +69,21 @@ public final class ManagementLockObjectImpl
     }
 
     public ManagementLockObject create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getManagementLocks()
-                .createOrUpdateAtResourceGroupLevelWithResponse(
-                    resourceGroupName, lockName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getManagementLocks().createOrUpdateAtResourceGroupLevelWithResponse(
+                resourceGroupName, lockName, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public ManagementLockObject create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getManagementLocks()
-                .createOrUpdateAtResourceGroupLevelWithResponse(resourceGroupName, lockName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getManagementLocks()
+            .createOrUpdateAtResourceGroupLevelWithResponse(resourceGroupName, lockName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
-    ManagementLockObjectImpl(
-        String name, com.azure.resourcemanager.locks.generated.ManagementLockManager serviceManager) {
+    ManagementLockObjectImpl(String name,
+        com.azure.resourcemanager.locks.generated.ManagementLockManager serviceManager) {
         this.innerObject = new ManagementLockObjectInner();
         this.serviceManager = serviceManager;
         this.lockName = name;
@@ -101,28 +94,20 @@ public final class ManagementLockObjectImpl
     }
 
     public ManagementLockObject apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getManagementLocks()
-                .createOrUpdateAtResourceGroupLevelWithResponse(
-                    resourceGroupName, lockName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getManagementLocks().createOrUpdateAtResourceGroupLevelWithResponse(
+                resourceGroupName, lockName, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public ManagementLockObject apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getManagementLocks()
-                .createOrUpdateAtResourceGroupLevelWithResponse(resourceGroupName, lockName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getManagementLocks()
+            .createOrUpdateAtResourceGroupLevelWithResponse(resourceGroupName, lockName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
-    ManagementLockObjectImpl(
-        ManagementLockObjectInner innerObject,
+    ManagementLockObjectImpl(ManagementLockObjectInner innerObject,
         com.azure.resourcemanager.locks.generated.ManagementLockManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -131,22 +116,14 @@ public final class ManagementLockObjectImpl
     }
 
     public ManagementLockObject refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getManagementLocks()
-                .getByResourceGroupWithResponse(resourceGroupName, lockName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getManagementLocks()
+            .getByResourceGroupWithResponse(resourceGroupName, lockName, Context.NONE).getValue();
         return this;
     }
 
     public ManagementLockObject refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getManagementLocks()
-                .getByResourceGroupWithResponse(resourceGroupName, lockName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getManagementLocks()
+            .getByResourceGroupWithResponse(resourceGroupName, lockName, context).getValue();
         return this;
     }
 

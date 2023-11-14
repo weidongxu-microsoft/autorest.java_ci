@@ -19,8 +19,7 @@ public final class AvailablePrivateEndpointTypesImpl implements AvailablePrivate
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public AvailablePrivateEndpointTypesImpl(
-        AvailablePrivateEndpointTypesClient innerClient,
+    public AvailablePrivateEndpointTypesImpl(AvailablePrivateEndpointTypesClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -37,15 +36,15 @@ public final class AvailablePrivateEndpointTypesImpl implements AvailablePrivate
     }
 
     public PagedIterable<AvailablePrivateEndpointType> listByResourceGroup(String location, String resourceGroupName) {
-        PagedIterable<AvailablePrivateEndpointTypeInner> inner =
-            this.serviceClient().listByResourceGroup(location, resourceGroupName);
+        PagedIterable<AvailablePrivateEndpointTypeInner> inner
+            = this.serviceClient().listByResourceGroup(location, resourceGroupName);
         return Utils.mapPage(inner, inner1 -> new AvailablePrivateEndpointTypeImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<AvailablePrivateEndpointType> listByResourceGroup(
-        String location, String resourceGroupName, Context context) {
-        PagedIterable<AvailablePrivateEndpointTypeInner> inner =
-            this.serviceClient().listByResourceGroup(location, resourceGroupName, context);
+    public PagedIterable<AvailablePrivateEndpointType> listByResourceGroup(String location, String resourceGroupName,
+        Context context) {
+        PagedIterable<AvailablePrivateEndpointTypeInner> inner
+            = this.serviceClient().listByResourceGroup(location, resourceGroupName, context);
         return Utils.mapPage(inner, inner1 -> new AvailablePrivateEndpointTypeImpl(inner1, this.manager()));
     }
 

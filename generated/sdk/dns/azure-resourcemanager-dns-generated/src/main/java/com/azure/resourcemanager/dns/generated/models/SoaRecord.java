@@ -7,7 +7,9 @@ package com.azure.resourcemanager.dns.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** An SOA record. */
+/**
+ * An SOA record.
+ */
 @Fluent
 public final class SoaRecord {
     /*
@@ -52,13 +54,15 @@ public final class SoaRecord {
     @JsonProperty(value = "minimumTTL")
     private Long minimumTtl;
 
-    /** Creates an instance of SoaRecord class. */
+    /**
+     * Creates an instance of SoaRecord class.
+     */
     public SoaRecord() {
     }
 
     /**
      * Get the host property: The domain name of the authoritative name server for this SOA record.
-     *
+     * 
      * @return the host value.
      */
     public String host() {
@@ -67,7 +71,7 @@ public final class SoaRecord {
 
     /**
      * Set the host property: The domain name of the authoritative name server for this SOA record.
-     *
+     * 
      * @param host the host value to set.
      * @return the SoaRecord object itself.
      */
@@ -78,7 +82,7 @@ public final class SoaRecord {
 
     /**
      * Get the email property: The email contact for this SOA record.
-     *
+     * 
      * @return the email value.
      */
     public String email() {
@@ -87,7 +91,7 @@ public final class SoaRecord {
 
     /**
      * Set the email property: The email contact for this SOA record.
-     *
+     * 
      * @param email the email value to set.
      * @return the SoaRecord object itself.
      */
@@ -98,7 +102,7 @@ public final class SoaRecord {
 
     /**
      * Get the serialNumber property: The serial number for this SOA record.
-     *
+     * 
      * @return the serialNumber value.
      */
     public Long serialNumber() {
@@ -107,7 +111,7 @@ public final class SoaRecord {
 
     /**
      * Set the serialNumber property: The serial number for this SOA record.
-     *
+     * 
      * @param serialNumber the serialNumber value to set.
      * @return the SoaRecord object itself.
      */
@@ -118,7 +122,7 @@ public final class SoaRecord {
 
     /**
      * Get the refreshTime property: The refresh value for this SOA record.
-     *
+     * 
      * @return the refreshTime value.
      */
     public Long refreshTime() {
@@ -127,7 +131,7 @@ public final class SoaRecord {
 
     /**
      * Set the refreshTime property: The refresh value for this SOA record.
-     *
+     * 
      * @param refreshTime the refreshTime value to set.
      * @return the SoaRecord object itself.
      */
@@ -138,7 +142,7 @@ public final class SoaRecord {
 
     /**
      * Get the retryTime property: The retry time for this SOA record.
-     *
+     * 
      * @return the retryTime value.
      */
     public Long retryTime() {
@@ -147,7 +151,7 @@ public final class SoaRecord {
 
     /**
      * Set the retryTime property: The retry time for this SOA record.
-     *
+     * 
      * @param retryTime the retryTime value to set.
      * @return the SoaRecord object itself.
      */
@@ -158,7 +162,7 @@ public final class SoaRecord {
 
     /**
      * Get the expireTime property: The expire time for this SOA record.
-     *
+     * 
      * @return the expireTime value.
      */
     public Long expireTime() {
@@ -167,7 +171,7 @@ public final class SoaRecord {
 
     /**
      * Set the expireTime property: The expire time for this SOA record.
-     *
+     * 
      * @param expireTime the expireTime value to set.
      * @return the SoaRecord object itself.
      */
@@ -179,7 +183,7 @@ public final class SoaRecord {
     /**
      * Get the minimumTtl property: The minimum value for this SOA record. By convention this is used to determine the
      * negative caching duration.
-     *
+     * 
      * @return the minimumTtl value.
      */
     public Long minimumTtl() {
@@ -189,7 +193,7 @@ public final class SoaRecord {
     /**
      * Set the minimumTtl property: The minimum value for this SOA record. By convention this is used to determine the
      * negative caching duration.
-     *
+     * 
      * @param minimumTtl the minimumTtl value to set.
      * @return the SoaRecord object itself.
      */
@@ -200,7 +204,7 @@ public final class SoaRecord {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

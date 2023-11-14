@@ -13,11 +13,13 @@ import com.azure.resourcemanager.monitor.generated.fluent.models.ActionGroupReso
 import com.azure.resourcemanager.monitor.generated.models.ActionGroupPatchBody;
 import com.azure.resourcemanager.monitor.generated.models.EnableRequest;
 
-/** An instance of this class provides access to all the operations defined in ActionGroupsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in ActionGroupsClient.
+ */
 public interface ActionGroupsClient {
     /**
      * Create a new action group or update an existing one.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param actionGroupName The name of the action group.
      * @param actionGroup The action group to create or use for the update.
@@ -28,12 +30,12 @@ public interface ActionGroupsClient {
      * @return an action group resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<ActionGroupResourceInner> createOrUpdateWithResponse(
-        String resourceGroupName, String actionGroupName, ActionGroupResourceInner actionGroup, Context context);
+    Response<ActionGroupResourceInner> createOrUpdateWithResponse(String resourceGroupName, String actionGroupName,
+        ActionGroupResourceInner actionGroup, Context context);
 
     /**
      * Create a new action group or update an existing one.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param actionGroupName The name of the action group.
      * @param actionGroup The action group to create or use for the update.
@@ -43,12 +45,12 @@ public interface ActionGroupsClient {
      * @return an action group resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ActionGroupResourceInner createOrUpdate(
-        String resourceGroupName, String actionGroupName, ActionGroupResourceInner actionGroup);
+    ActionGroupResourceInner createOrUpdate(String resourceGroupName, String actionGroupName,
+        ActionGroupResourceInner actionGroup);
 
     /**
      * Get an action group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param actionGroupName The name of the action group.
      * @param context The context to associate with this operation.
@@ -58,12 +60,12 @@ public interface ActionGroupsClient {
      * @return an action group along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<ActionGroupResourceInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String actionGroupName, Context context);
+    Response<ActionGroupResourceInner> getByResourceGroupWithResponse(String resourceGroupName, String actionGroupName,
+        Context context);
 
     /**
      * Get an action group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param actionGroupName The name of the action group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -76,7 +78,7 @@ public interface ActionGroupsClient {
 
     /**
      * Delete an action group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param actionGroupName The name of the action group.
      * @param context The context to associate with this operation.
@@ -90,7 +92,7 @@ public interface ActionGroupsClient {
 
     /**
      * Delete an action group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param actionGroupName The name of the action group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -102,7 +104,7 @@ public interface ActionGroupsClient {
 
     /**
      * Updates an existing action group's tags. To update other fields use the CreateOrUpdate method.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param actionGroupName The name of the action group.
      * @param actionGroupPatch Parameters supplied to the operation.
@@ -113,12 +115,12 @@ public interface ActionGroupsClient {
      * @return an action group resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<ActionGroupResourceInner> updateWithResponse(
-        String resourceGroupName, String actionGroupName, ActionGroupPatchBody actionGroupPatch, Context context);
+    Response<ActionGroupResourceInner> updateWithResponse(String resourceGroupName, String actionGroupName,
+        ActionGroupPatchBody actionGroupPatch, Context context);
 
     /**
      * Updates an existing action group's tags. To update other fields use the CreateOrUpdate method.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param actionGroupName The name of the action group.
      * @param actionGroupPatch Parameters supplied to the operation.
@@ -128,12 +130,12 @@ public interface ActionGroupsClient {
      * @return an action group resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ActionGroupResourceInner update(
-        String resourceGroupName, String actionGroupName, ActionGroupPatchBody actionGroupPatch);
+    ActionGroupResourceInner update(String resourceGroupName, String actionGroupName,
+        ActionGroupPatchBody actionGroupPatch);
 
     /**
      * Get a list of all action groups in a subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a list of all action groups in a subscription as paginated response with {@link PagedIterable}.
@@ -143,7 +145,7 @@ public interface ActionGroupsClient {
 
     /**
      * Get a list of all action groups in a subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -155,7 +157,7 @@ public interface ActionGroupsClient {
 
     /**
      * Get a list of all action groups in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -167,7 +169,7 @@ public interface ActionGroupsClient {
 
     /**
      * Get a list of all action groups in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -181,7 +183,7 @@ public interface ActionGroupsClient {
     /**
      * Enable a receiver in an action group. This changes the receiver's status from Disabled to Enabled. This operation
      * is only supported for Email or SMS receivers.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param actionGroupName The name of the action group.
      * @param enableRequest The receiver to re-enable.
@@ -192,13 +194,13 @@ public interface ActionGroupsClient {
      * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<Void> enableReceiverWithResponse(
-        String resourceGroupName, String actionGroupName, EnableRequest enableRequest, Context context);
+    Response<Void> enableReceiverWithResponse(String resourceGroupName, String actionGroupName,
+        EnableRequest enableRequest, Context context);
 
     /**
      * Enable a receiver in an action group. This changes the receiver's status from Disabled to Enabled. This operation
      * is only supported for Email or SMS receivers.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param actionGroupName The name of the action group.
      * @param enableRequest The receiver to re-enable.

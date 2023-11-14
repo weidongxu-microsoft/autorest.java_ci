@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The schedule associated with a export. */
+/**
+ * The schedule associated with a export.
+ */
 @Fluent
 public final class ExportSchedule {
     /*
@@ -30,14 +32,16 @@ public final class ExportSchedule {
     @JsonProperty(value = "recurrencePeriod")
     private ExportRecurrencePeriod recurrencePeriod;
 
-    /** Creates an instance of ExportSchedule class. */
+    /**
+     * Creates an instance of ExportSchedule class.
+     */
     public ExportSchedule() {
     }
 
     /**
      * Get the status property: The status of the schedule. Whether active or not. If inactive, the export's scheduled
      * execution is paused.
-     *
+     * 
      * @return the status value.
      */
     public StatusType status() {
@@ -47,7 +51,7 @@ public final class ExportSchedule {
     /**
      * Set the status property: The status of the schedule. Whether active or not. If inactive, the export's scheduled
      * execution is paused.
-     *
+     * 
      * @param status the status value to set.
      * @return the ExportSchedule object itself.
      */
@@ -58,7 +62,7 @@ public final class ExportSchedule {
 
     /**
      * Get the recurrence property: The schedule recurrence.
-     *
+     * 
      * @return the recurrence value.
      */
     public RecurrenceType recurrence() {
@@ -67,7 +71,7 @@ public final class ExportSchedule {
 
     /**
      * Set the recurrence property: The schedule recurrence.
-     *
+     * 
      * @param recurrence the recurrence value to set.
      * @return the ExportSchedule object itself.
      */
@@ -77,9 +81,9 @@ public final class ExportSchedule {
     }
 
     /**
-     * Get the recurrencePeriod property: Has start and end date of the recurrence. The start date must be in future. If
-     * present, the end date must be greater than start date.
-     *
+     * Get the recurrencePeriod property: Has start and end date of the recurrence. The start date must be in future.
+     * If present, the end date must be greater than start date.
+     * 
      * @return the recurrencePeriod value.
      */
     public ExportRecurrencePeriod recurrencePeriod() {
@@ -87,9 +91,9 @@ public final class ExportSchedule {
     }
 
     /**
-     * Set the recurrencePeriod property: Has start and end date of the recurrence. The start date must be in future. If
-     * present, the end date must be greater than start date.
-     *
+     * Set the recurrencePeriod property: Has start and end date of the recurrence. The start date must be in future.
+     * If present, the end date must be greater than start date.
+     * 
      * @param recurrencePeriod the recurrencePeriod value to set.
      * @return the ExportSchedule object itself.
      */
@@ -100,14 +104,13 @@ public final class ExportSchedule {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (recurrence() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property recurrence in model ExportSchedule"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property recurrence in model ExportSchedule"));
         }
         if (recurrencePeriod() != null) {
             recurrencePeriod().validate();

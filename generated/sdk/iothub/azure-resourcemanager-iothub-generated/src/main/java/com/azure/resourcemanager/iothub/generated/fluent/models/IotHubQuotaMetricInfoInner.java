@@ -7,7 +7,9 @@ package com.azure.resourcemanager.iothub.generated.fluent.models;
 import com.azure.core.annotation.Immutable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Quota metrics properties. */
+/**
+ * Quota metrics properties.
+ */
 @Immutable
 public final class IotHubQuotaMetricInfoInner {
     /*
@@ -28,13 +30,15 @@ public final class IotHubQuotaMetricInfoInner {
     @JsonProperty(value = "maxValue", access = JsonProperty.Access.WRITE_ONLY)
     private Long maxValue;
 
-    /** Creates an instance of IotHubQuotaMetricInfoInner class. */
+    /**
+     * Creates an instance of IotHubQuotaMetricInfoInner class.
+     */
     public IotHubQuotaMetricInfoInner() {
     }
 
     /**
      * Get the name property: The name of the quota metric.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -43,7 +47,7 @@ public final class IotHubQuotaMetricInfoInner {
 
     /**
      * Get the currentValue property: The current value for the quota metric.
-     *
+     * 
      * @return the currentValue value.
      */
     public Long currentValue() {
@@ -52,7 +56,7 @@ public final class IotHubQuotaMetricInfoInner {
 
     /**
      * Get the maxValue property: The maximum value of the quota metric.
-     *
+     * 
      * @return the maxValue value.
      */
     public Long maxValue() {
@@ -61,7 +65,7 @@ public final class IotHubQuotaMetricInfoInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

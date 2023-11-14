@@ -8,10 +8,13 @@ import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.keyvault.generated.models.ManagedHsmProperties;
 import com.azure.resourcemanager.keyvault.generated.models.ManagedHsmResource;
 import com.azure.resourcemanager.keyvault.generated.models.ManagedHsmSku;
+import com.azure.resourcemanager.keyvault.generated.models.ManagedServiceIdentity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
 
-/** Resource information with extended details. */
+/**
+ * Resource information with extended details.
+ */
 @Fluent
 public final class ManagedHsmInner extends ManagedHsmResource {
     /*
@@ -20,13 +23,15 @@ public final class ManagedHsmInner extends ManagedHsmResource {
     @JsonProperty(value = "properties")
     private ManagedHsmProperties properties;
 
-    /** Creates an instance of ManagedHsmInner class. */
+    /**
+     * Creates an instance of ManagedHsmInner class.
+     */
     public ManagedHsmInner() {
     }
 
     /**
      * Get the properties property: Properties of the managed HSM.
-     *
+     * 
      * @return the properties value.
      */
     public ManagedHsmProperties properties() {
@@ -35,7 +40,7 @@ public final class ManagedHsmInner extends ManagedHsmResource {
 
     /**
      * Set the properties property: Properties of the managed HSM.
-     *
+     * 
      * @param properties the properties value to set.
      * @return the ManagedHsmInner object itself.
      */
@@ -44,21 +49,36 @@ public final class ManagedHsmInner extends ManagedHsmResource {
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ManagedHsmInner withSku(ManagedHsmSku sku) {
         super.withSku(sku);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public ManagedHsmInner withIdentity(ManagedServiceIdentity identity) {
+        super.withIdentity(identity);
+        return this;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ManagedHsmInner withLocation(String location) {
         super.withLocation(location);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ManagedHsmInner withTags(Map<String, String> tags) {
         super.withTags(tags);
@@ -67,7 +87,7 @@ public final class ManagedHsmInner extends ManagedHsmResource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

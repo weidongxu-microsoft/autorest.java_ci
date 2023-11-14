@@ -12,8 +12,7 @@ public final class PushSettingsImpl implements PushSettings {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    PushSettingsImpl(
-        PushSettingsInner innerObject,
+    PushSettingsImpl(PushSettingsInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

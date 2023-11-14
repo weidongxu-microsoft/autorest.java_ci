@@ -12,8 +12,8 @@ public final class SharedGalleryImpl implements SharedGallery {
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    SharedGalleryImpl(
-        SharedGalleryInner innerObject, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
+    SharedGalleryImpl(SharedGalleryInner innerObject,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

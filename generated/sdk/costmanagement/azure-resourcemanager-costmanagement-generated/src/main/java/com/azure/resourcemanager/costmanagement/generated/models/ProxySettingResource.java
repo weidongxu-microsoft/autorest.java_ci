@@ -8,7 +8,9 @@ import com.azure.core.annotation.Immutable;
 import com.azure.core.management.ProxyResource;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The Resource model definition. */
+/**
+ * The Resource model definition.
+ */
 @Immutable
 public class ProxySettingResource extends ProxyResource {
     /*
@@ -17,13 +19,15 @@ public class ProxySettingResource extends ProxyResource {
     @JsonProperty(value = "kind", access = JsonProperty.Access.WRITE_ONLY)
     private String kind;
 
-    /** Creates an instance of ProxySettingResource class. */
+    /**
+     * Creates an instance of ProxySettingResource class.
+     */
     public ProxySettingResource() {
     }
 
     /**
      * Get the kind property: Resource kind.
-     *
+     * 
      * @return the kind value.
      */
     public String kind() {
@@ -32,7 +36,7 @@ public class ProxySettingResource extends ProxyResource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

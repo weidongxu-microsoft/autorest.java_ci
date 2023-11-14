@@ -14,11 +14,13 @@ import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.network.generated.fluent.models.PublicIpPrefixInner;
 import com.azure.resourcemanager.network.generated.models.TagsObject;
 
-/** An instance of this class provides access to all the operations defined in PublicIpPrefixesClient. */
+/**
+ * An instance of this class provides access to all the operations defined in PublicIpPrefixesClient.
+ */
 public interface PublicIpPrefixesClient {
     /**
      * Deletes the specified public IP prefix.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param publicIpPrefixName The name of the PublicIpPrefix.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -31,7 +33,7 @@ public interface PublicIpPrefixesClient {
 
     /**
      * Deletes the specified public IP prefix.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param publicIpPrefixName The name of the PublicIpPrefix.
      * @param context The context to associate with this operation.
@@ -41,12 +43,12 @@ public interface PublicIpPrefixesClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginDelete(
-        String resourceGroupName, String publicIpPrefixName, Context context);
+    SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String publicIpPrefixName,
+        Context context);
 
     /**
      * Deletes the specified public IP prefix.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param publicIpPrefixName The name of the PublicIpPrefix.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -58,7 +60,7 @@ public interface PublicIpPrefixesClient {
 
     /**
      * Deletes the specified public IP prefix.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param publicIpPrefixName The name of the PublicIpPrefix.
      * @param context The context to associate with this operation.
@@ -71,7 +73,7 @@ public interface PublicIpPrefixesClient {
 
     /**
      * Gets the specified public IP prefix in a specified resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param publicIpPrefixName The name of the public IP prefix.
      * @param expand Expands referenced resources.
@@ -82,12 +84,12 @@ public interface PublicIpPrefixesClient {
      * @return the specified public IP prefix in a specified resource group along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<PublicIpPrefixInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String publicIpPrefixName, String expand, Context context);
+    Response<PublicIpPrefixInner> getByResourceGroupWithResponse(String resourceGroupName, String publicIpPrefixName,
+        String expand, Context context);
 
     /**
      * Gets the specified public IP prefix in a specified resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param publicIpPrefixName The name of the public IP prefix.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -100,7 +102,7 @@ public interface PublicIpPrefixesClient {
 
     /**
      * Creates or updates a static or dynamic public IP prefix.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param publicIpPrefixName The name of the public IP prefix.
      * @param parameters Parameters supplied to the create or update public IP prefix operation.
@@ -110,12 +112,12 @@ public interface PublicIpPrefixesClient {
      * @return the {@link SyncPoller} for polling of public IP prefix resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<PublicIpPrefixInner>, PublicIpPrefixInner> beginCreateOrUpdate(
-        String resourceGroupName, String publicIpPrefixName, PublicIpPrefixInner parameters);
+    SyncPoller<PollResult<PublicIpPrefixInner>, PublicIpPrefixInner> beginCreateOrUpdate(String resourceGroupName,
+        String publicIpPrefixName, PublicIpPrefixInner parameters);
 
     /**
      * Creates or updates a static or dynamic public IP prefix.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param publicIpPrefixName The name of the public IP prefix.
      * @param parameters Parameters supplied to the create or update public IP prefix operation.
@@ -126,12 +128,12 @@ public interface PublicIpPrefixesClient {
      * @return the {@link SyncPoller} for polling of public IP prefix resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<PublicIpPrefixInner>, PublicIpPrefixInner> beginCreateOrUpdate(
-        String resourceGroupName, String publicIpPrefixName, PublicIpPrefixInner parameters, Context context);
+    SyncPoller<PollResult<PublicIpPrefixInner>, PublicIpPrefixInner> beginCreateOrUpdate(String resourceGroupName,
+        String publicIpPrefixName, PublicIpPrefixInner parameters, Context context);
 
     /**
      * Creates or updates a static or dynamic public IP prefix.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param publicIpPrefixName The name of the public IP prefix.
      * @param parameters Parameters supplied to the create or update public IP prefix operation.
@@ -141,12 +143,12 @@ public interface PublicIpPrefixesClient {
      * @return public IP prefix resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    PublicIpPrefixInner createOrUpdate(
-        String resourceGroupName, String publicIpPrefixName, PublicIpPrefixInner parameters);
+    PublicIpPrefixInner createOrUpdate(String resourceGroupName, String publicIpPrefixName,
+        PublicIpPrefixInner parameters);
 
     /**
      * Creates or updates a static or dynamic public IP prefix.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param publicIpPrefixName The name of the public IP prefix.
      * @param parameters Parameters supplied to the create or update public IP prefix operation.
@@ -157,12 +159,12 @@ public interface PublicIpPrefixesClient {
      * @return public IP prefix resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    PublicIpPrefixInner createOrUpdate(
-        String resourceGroupName, String publicIpPrefixName, PublicIpPrefixInner parameters, Context context);
+    PublicIpPrefixInner createOrUpdate(String resourceGroupName, String publicIpPrefixName,
+        PublicIpPrefixInner parameters, Context context);
 
     /**
      * Updates public IP prefix tags.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param publicIpPrefixName The name of the public IP prefix.
      * @param parameters Parameters supplied to update public IP prefix tags.
@@ -173,12 +175,12 @@ public interface PublicIpPrefixesClient {
      * @return public IP prefix resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<PublicIpPrefixInner> updateTagsWithResponse(
-        String resourceGroupName, String publicIpPrefixName, TagsObject parameters, Context context);
+    Response<PublicIpPrefixInner> updateTagsWithResponse(String resourceGroupName, String publicIpPrefixName,
+        TagsObject parameters, Context context);
 
     /**
      * Updates public IP prefix tags.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param publicIpPrefixName The name of the public IP prefix.
      * @param parameters Parameters supplied to update public IP prefix tags.
@@ -192,7 +194,7 @@ public interface PublicIpPrefixesClient {
 
     /**
      * Gets all the public IP prefixes in a subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all the public IP prefixes in a subscription as paginated response with {@link PagedIterable}.
@@ -202,7 +204,7 @@ public interface PublicIpPrefixesClient {
 
     /**
      * Gets all the public IP prefixes in a subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -214,7 +216,7 @@ public interface PublicIpPrefixesClient {
 
     /**
      * Gets all public IP prefixes in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -226,7 +228,7 @@ public interface PublicIpPrefixesClient {
 
     /**
      * Gets all public IP prefixes in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

@@ -6,25 +6,27 @@ package com.azure.resourcemanager.search.generated.models;
 
 import com.azure.resourcemanager.search.generated.fluent.models.AdminKeyResultInner;
 
-/** An immutable client-side representation of AdminKeyResult. */
+/**
+ * An immutable client-side representation of AdminKeyResult.
+ */
 public interface AdminKeyResult {
     /**
      * Gets the primaryKey property: The primary admin API key of the search service.
-     *
+     * 
      * @return the primaryKey value.
      */
     String primaryKey();
 
     /**
      * Gets the secondaryKey property: The secondary admin API key of the search service.
-     *
+     * 
      * @return the secondaryKey value.
      */
     String secondaryKey();
 
     /**
      * Gets the inner com.azure.resourcemanager.search.generated.fluent.models.AdminKeyResultInner object.
-     *
+     * 
      * @return the inner object.
      */
     AdminKeyResultInner innerModel();

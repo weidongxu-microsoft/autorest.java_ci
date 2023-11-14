@@ -7,11 +7,13 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 
-/** Resource collection API of ApplicationGatewayWafDynamicManifests. */
+/**
+ * Resource collection API of ApplicationGatewayWafDynamicManifests.
+ */
 public interface ApplicationGatewayWafDynamicManifests {
     /**
      * Gets the regional application gateway waf manifest.
-     *
+     * 
      * @param location The region where the nrp are located at.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -22,7 +24,7 @@ public interface ApplicationGatewayWafDynamicManifests {
 
     /**
      * Gets the regional application gateway waf manifest.
-     *
+     * 
      * @param location The region where the nrp are located at.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

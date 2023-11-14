@@ -17,8 +17,7 @@ public final class PriceSheetResultImpl implements PriceSheetResult {
 
     private final com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager;
 
-    PriceSheetResultImpl(
-        PriceSheetResultInner innerObject,
+    PriceSheetResultImpl(PriceSheetResultInner innerObject,
         com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

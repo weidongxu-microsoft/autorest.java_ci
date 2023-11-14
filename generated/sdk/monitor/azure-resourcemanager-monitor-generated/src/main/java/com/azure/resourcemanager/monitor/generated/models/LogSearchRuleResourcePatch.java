@@ -10,7 +10,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
 
-/** The log search rule resource for patch operations. */
+/**
+ * The log search rule resource for patch operations.
+ */
 @Fluent
 public final class LogSearchRuleResourcePatch {
     /*
@@ -26,13 +28,15 @@ public final class LogSearchRuleResourcePatch {
     @JsonProperty(value = "properties")
     private LogSearchRulePatch innerProperties;
 
-    /** Creates an instance of LogSearchRuleResourcePatch class. */
+    /**
+     * Creates an instance of LogSearchRuleResourcePatch class.
+     */
     public LogSearchRuleResourcePatch() {
     }
 
     /**
      * Get the tags property: Resource tags.
-     *
+     * 
      * @return the tags value.
      */
     public Map<String, String> tags() {
@@ -41,7 +45,7 @@ public final class LogSearchRuleResourcePatch {
 
     /**
      * Set the tags property: Resource tags.
-     *
+     * 
      * @param tags the tags value to set.
      * @return the LogSearchRuleResourcePatch object itself.
      */
@@ -52,7 +56,7 @@ public final class LogSearchRuleResourcePatch {
 
     /**
      * Get the innerProperties property: The log search rule properties of the resource.
-     *
+     * 
      * @return the innerProperties value.
      */
     private LogSearchRulePatch innerProperties() {
@@ -62,7 +66,7 @@ public final class LogSearchRuleResourcePatch {
     /**
      * Get the enabled property: The flag which indicates whether the Log Search rule is enabled. Value should be true
      * or false.
-     *
+     * 
      * @return the enabled value.
      */
     public Enabled enabled() {
@@ -72,7 +76,7 @@ public final class LogSearchRuleResourcePatch {
     /**
      * Set the enabled property: The flag which indicates whether the Log Search rule is enabled. Value should be true
      * or false.
-     *
+     * 
      * @param enabled the enabled value to set.
      * @return the LogSearchRuleResourcePatch object itself.
      */
@@ -86,7 +90,7 @@ public final class LogSearchRuleResourcePatch {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

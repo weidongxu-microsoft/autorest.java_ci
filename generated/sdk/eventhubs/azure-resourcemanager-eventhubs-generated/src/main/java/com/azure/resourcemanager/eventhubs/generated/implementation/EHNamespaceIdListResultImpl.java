@@ -15,8 +15,7 @@ public final class EHNamespaceIdListResultImpl implements EHNamespaceIdListResul
 
     private final com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager;
 
-    EHNamespaceIdListResultImpl(
-        EHNamespaceIdListResultInner innerObject,
+    EHNamespaceIdListResultImpl(EHNamespaceIdListResultInner innerObject,
         com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

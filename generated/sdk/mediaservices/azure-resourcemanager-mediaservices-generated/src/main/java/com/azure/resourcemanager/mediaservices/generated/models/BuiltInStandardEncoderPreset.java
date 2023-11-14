@@ -10,7 +10,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** Describes a built-in preset for encoding the input video with the Standard Encoder. */
+/**
+ * Describes a built-in preset for encoding the input video with the Standard Encoder.
+ */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
 @JsonTypeName("#Microsoft.Media.BuiltInStandardEncoderPreset")
 @Fluent
@@ -28,14 +30,16 @@ public final class BuiltInStandardEncoderPreset extends Preset {
     @JsonProperty(value = "presetName", required = true)
     private EncoderNamedPreset presetName;
 
-    /** Creates an instance of BuiltInStandardEncoderPreset class. */
+    /**
+     * Creates an instance of BuiltInStandardEncoderPreset class.
+     */
     public BuiltInStandardEncoderPreset() {
     }
 
     /**
      * Get the configurations property: Optional configuration settings for encoder. Configurations is only supported
      * for ContentAwareEncoding and H265ContentAwareEncoding BuiltInStandardEncoderPreset.
-     *
+     * 
      * @return the configurations value.
      */
     public PresetConfigurations configurations() {
@@ -45,7 +49,7 @@ public final class BuiltInStandardEncoderPreset extends Preset {
     /**
      * Set the configurations property: Optional configuration settings for encoder. Configurations is only supported
      * for ContentAwareEncoding and H265ContentAwareEncoding BuiltInStandardEncoderPreset.
-     *
+     * 
      * @param configurations the configurations value to set.
      * @return the BuiltInStandardEncoderPreset object itself.
      */
@@ -56,7 +60,7 @@ public final class BuiltInStandardEncoderPreset extends Preset {
 
     /**
      * Get the presetName property: The built-in preset to be used for encoding videos.
-     *
+     * 
      * @return the presetName value.
      */
     public EncoderNamedPreset presetName() {
@@ -65,7 +69,7 @@ public final class BuiltInStandardEncoderPreset extends Preset {
 
     /**
      * Set the presetName property: The built-in preset to be used for encoding videos.
-     *
+     * 
      * @param presetName the presetName value to set.
      * @return the BuiltInStandardEncoderPreset object itself.
      */
@@ -76,7 +80,7 @@ public final class BuiltInStandardEncoderPreset extends Preset {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override
@@ -86,10 +90,8 @@ public final class BuiltInStandardEncoderPreset extends Preset {
             configurations().validate();
         }
         if (presetName() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property presetName in model BuiltInStandardEncoderPreset"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property presetName in model BuiltInStandardEncoderPreset"));
         }
     }
 

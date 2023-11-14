@@ -13,8 +13,7 @@ public final class VirtualNetworkUsageImpl implements VirtualNetworkUsage {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    VirtualNetworkUsageImpl(
-        VirtualNetworkUsageInner innerObject,
+    VirtualNetworkUsageImpl(VirtualNetworkUsageInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

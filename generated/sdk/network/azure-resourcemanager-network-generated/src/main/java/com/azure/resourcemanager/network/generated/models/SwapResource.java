@@ -6,39 +6,41 @@ package com.azure.resourcemanager.network.generated.models;
 
 import com.azure.resourcemanager.network.generated.fluent.models.SwapResourceInner;
 
-/** An immutable client-side representation of SwapResource. */
+/**
+ * An immutable client-side representation of SwapResource.
+ */
 public interface SwapResource {
     /**
      * Gets the id property: Resource Id.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the name property: Resource name.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the type property: Resource type.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the properties property: Swap resource properties.
-     *
+     * 
      * @return the properties value.
      */
     SwapResourceProperties properties();
 
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.SwapResourceInner object.
-     *
+     * 
      * @return the inner object.
      */
     SwapResourceInner innerModel();

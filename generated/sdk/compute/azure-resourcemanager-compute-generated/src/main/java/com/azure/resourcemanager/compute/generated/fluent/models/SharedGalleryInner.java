@@ -7,14 +7,20 @@ package com.azure.resourcemanager.compute.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.compute.generated.models.PirSharedGalleryResource;
 
-/** Specifies information about the Shared Gallery that you want to create or update. */
+/**
+ * Specifies information about the Shared Gallery that you want to create or update.
+ */
 @Fluent
 public final class SharedGalleryInner extends PirSharedGalleryResource {
-    /** Creates an instance of SharedGalleryInner class. */
+    /**
+     * Creates an instance of SharedGalleryInner class.
+     */
     public SharedGalleryInner() {
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public SharedGalleryInner withUniqueId(String uniqueId) {
         super.withUniqueId(uniqueId);
@@ -23,7 +29,7 @@ public final class SharedGalleryInner extends PirSharedGalleryResource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

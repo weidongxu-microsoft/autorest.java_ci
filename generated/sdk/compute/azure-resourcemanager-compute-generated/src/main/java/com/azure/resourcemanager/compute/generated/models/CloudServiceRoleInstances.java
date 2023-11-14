@@ -9,38 +9,40 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.util.BinaryData;
 import com.azure.core.util.Context;
 
-/** Resource collection API of CloudServiceRoleInstances. */
+/**
+ * Resource collection API of CloudServiceRoleInstances.
+ */
 public interface CloudServiceRoleInstances {
     /**
      * Deletes a role instance from a cloud service.
-     *
+     * 
      * @param roleInstanceName Name of the role instance.
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void delete(String roleInstanceName, String resourceGroupName, String cloudServiceName);
 
     /**
      * Deletes a role instance from a cloud service.
-     *
+     * 
      * @param roleInstanceName Name of the role instance.
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void delete(String roleInstanceName, String resourceGroupName, String cloudServiceName, Context context);
 
     /**
      * Gets a role instance from a cloud service.
-     *
+     * 
      * @param roleInstanceName Name of the role instance.
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
@@ -48,26 +50,22 @@ public interface CloudServiceRoleInstances {
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a role instance from a cloud service along with {@link Response}.
      */
-    Response<RoleInstance> getWithResponse(
-        String roleInstanceName,
-        String resourceGroupName,
-        String cloudServiceName,
-        InstanceViewTypes expand,
-        Context context);
+    Response<RoleInstance> getWithResponse(String roleInstanceName, String resourceGroupName, String cloudServiceName,
+        InstanceViewTypes expand, Context context);
 
     /**
      * Gets a role instance from a cloud service.
-     *
+     * 
      * @param roleInstanceName Name of the role instance.
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a role instance from a cloud service.
      */
@@ -75,29 +73,29 @@ public interface CloudServiceRoleInstances {
 
     /**
      * Retrieves information about the run-time state of a role instance in a cloud service.
-     *
+     * 
      * @param roleInstanceName Name of the role instance.
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the instance view of the role instance along with {@link Response}.
      */
-    Response<RoleInstanceView> getInstanceViewWithResponse(
-        String roleInstanceName, String resourceGroupName, String cloudServiceName, Context context);
+    Response<RoleInstanceView> getInstanceViewWithResponse(String roleInstanceName, String resourceGroupName,
+        String cloudServiceName, Context context);
 
     /**
      * Retrieves information about the run-time state of a role instance in a cloud service.
-     *
+     * 
      * @param roleInstanceName Name of the role instance.
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the instance view of the role instance.
      */
@@ -106,12 +104,12 @@ public interface CloudServiceRoleInstances {
     /**
      * Gets the list of all role instances in a cloud service. Use nextLink property in the response to get the next
      * page of role instances. Do this till nextLink is null to fetch all the role instances.
-     *
+     * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the list of all role instances in a cloud service as paginated response with {@link PagedIterable}.
      */
@@ -120,43 +118,43 @@ public interface CloudServiceRoleInstances {
     /**
      * Gets the list of all role instances in a cloud service. Use nextLink property in the response to get the next
      * page of role instances. Do this till nextLink is null to fetch all the role instances.
-     *
+     * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
      * @param expand The expand expression to apply to the operation. 'UserData' is not supported for cloud services.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the list of all role instances in a cloud service as paginated response with {@link PagedIterable}.
      */
-    PagedIterable<RoleInstance> list(
-        String resourceGroupName, String cloudServiceName, InstanceViewTypes expand, Context context);
+    PagedIterable<RoleInstance> list(String resourceGroupName, String cloudServiceName, InstanceViewTypes expand,
+        Context context);
 
     /**
      * The Reboot Role Instance asynchronous operation requests a reboot of a role instance in the cloud service.
-     *
+     * 
      * @param roleInstanceName Name of the role instance.
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void restart(String roleInstanceName, String resourceGroupName, String cloudServiceName);
 
     /**
      * The Reboot Role Instance asynchronous operation requests a reboot of a role instance in the cloud service.
-     *
+     * 
      * @param roleInstanceName Name of the role instance.
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void restart(String roleInstanceName, String resourceGroupName, String cloudServiceName, Context context);
@@ -164,13 +162,13 @@ public interface CloudServiceRoleInstances {
     /**
      * The Reimage Role Instance asynchronous operation reinstalls the operating system on instances of web roles or
      * worker roles.
-     *
+     * 
      * @param roleInstanceName Name of the role instance.
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void reimage(String roleInstanceName, String resourceGroupName, String cloudServiceName);
@@ -178,14 +176,14 @@ public interface CloudServiceRoleInstances {
     /**
      * The Reimage Role Instance asynchronous operation reinstalls the operating system on instances of web roles or
      * worker roles.
-     *
+     * 
      * @param roleInstanceName Name of the role instance.
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void reimage(String roleInstanceName, String resourceGroupName, String cloudServiceName, Context context);
@@ -194,13 +192,13 @@ public interface CloudServiceRoleInstances {
      * The Rebuild Role Instance asynchronous operation reinstalls the operating system on instances of web roles or
      * worker roles and initializes the storage resources that are used by them. If you do not want to initialize
      * storage resources, you can use Reimage Role Instance.
-     *
+     * 
      * @param roleInstanceName Name of the role instance.
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void rebuild(String roleInstanceName, String resourceGroupName, String cloudServiceName);
@@ -209,21 +207,21 @@ public interface CloudServiceRoleInstances {
      * The Rebuild Role Instance asynchronous operation reinstalls the operating system on instances of web roles or
      * worker roles and initializes the storage resources that are used by them. If you do not want to initialize
      * storage resources, you can use Reimage Role Instance.
-     *
+     * 
      * @param roleInstanceName Name of the role instance.
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void rebuild(String roleInstanceName, String resourceGroupName, String cloudServiceName, Context context);
 
     /**
      * Gets a remote desktop file for a role instance in a cloud service.
-     *
+     * 
      * @param roleInstanceName Name of the role instance.
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
@@ -233,12 +231,12 @@ public interface CloudServiceRoleInstances {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a remote desktop file for a role instance in a cloud service along with {@link Response}.
      */
-    Response<BinaryData> getRemoteDesktopFileWithResponse(
-        String roleInstanceName, String resourceGroupName, String cloudServiceName, Context context);
+    Response<BinaryData> getRemoteDesktopFileWithResponse(String roleInstanceName, String resourceGroupName,
+        String cloudServiceName, Context context);
 
     /**
      * Gets a remote desktop file for a role instance in a cloud service.
-     *
+     * 
      * @param roleInstanceName Name of the role instance.
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.

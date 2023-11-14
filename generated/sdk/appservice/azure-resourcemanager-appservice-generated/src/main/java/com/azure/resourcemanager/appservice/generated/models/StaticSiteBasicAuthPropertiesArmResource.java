@@ -8,46 +8,48 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteBasicAuthPropertiesArmResourceInner;
 import java.util.List;
 
-/** An immutable client-side representation of StaticSiteBasicAuthPropertiesArmResource. */
+/**
+ * An immutable client-side representation of StaticSiteBasicAuthPropertiesArmResource.
+ */
 public interface StaticSiteBasicAuthPropertiesArmResource {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the name property: The name of the resource.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the type property: The type of the resource.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the kind property: Kind of resource.
-     *
+     * 
      * @return the kind value.
      */
     String kind();
 
     /**
      * Gets the password property: The password for basic auth.
-     *
+     * 
      * @return the password value.
      */
     String password();
 
     /**
      * Gets the secretUrl property: Url to the secret in Key Vault.
-     *
+     * 
      * @return the secretUrl value.
      */
     String secretUrl();
@@ -55,7 +57,7 @@ public interface StaticSiteBasicAuthPropertiesArmResource {
     /**
      * Gets the applicableEnvironmentsMode property: State indicating if basic auth is enabled and for what environments
      * it is active.
-     *
+     * 
      * @return the applicableEnvironmentsMode value.
      */
     String applicableEnvironmentsMode();
@@ -63,21 +65,21 @@ public interface StaticSiteBasicAuthPropertiesArmResource {
     /**
      * Gets the environments property: The list of enabled environments for Basic Auth if ApplicableEnvironmentsMode is
      * set to SpecifiedEnvironments.
-     *
+     * 
      * @return the environments value.
      */
     List<String> environments();
 
     /**
      * Gets the secretState property: State indicating if basic auth has a secret and what type it is.
-     *
+     * 
      * @return the secretState value.
      */
     String secretState();
 
     /**
      * Gets the name of the resource group.
-     *
+     * 
      * @return the name of the resource group.
      */
     String resourceGroupName();
@@ -86,27 +88,35 @@ public interface StaticSiteBasicAuthPropertiesArmResource {
      * Gets the inner
      * com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteBasicAuthPropertiesArmResourceInner
      * object.
-     *
+     * 
      * @return the inner object.
      */
     StaticSiteBasicAuthPropertiesArmResourceInner innerModel();
 
-    /** The entirety of the StaticSiteBasicAuthPropertiesArmResource definition. */
+    /**
+     * The entirety of the StaticSiteBasicAuthPropertiesArmResource definition.
+     */
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
 
-    /** The StaticSiteBasicAuthPropertiesArmResource definition stages. */
+    /**
+     * The StaticSiteBasicAuthPropertiesArmResource definition stages.
+     */
     interface DefinitionStages {
-        /** The first stage of the StaticSiteBasicAuthPropertiesArmResource definition. */
+        /**
+         * The first stage of the StaticSiteBasicAuthPropertiesArmResource definition.
+         */
         interface Blank extends WithParentResource {
         }
 
-        /** The stage of the StaticSiteBasicAuthPropertiesArmResource definition allowing to specify parent resource. */
+        /**
+         * The stage of the StaticSiteBasicAuthPropertiesArmResource definition allowing to specify parent resource.
+         */
         interface WithParentResource {
             /**
              * Specifies resourceGroupName, name.
-             *
+             * 
              * @param resourceGroupName Name of the resource group to which the resource belongs.
              * @param name Name of the static site.
              * @return the next definition stage.
@@ -119,54 +129,57 @@ public interface StaticSiteBasicAuthPropertiesArmResource {
          * properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
-            extends DefinitionStages.WithKind,
-                DefinitionStages.WithPassword,
-                DefinitionStages.WithSecretUrl,
-                DefinitionStages.WithApplicableEnvironmentsMode,
-                DefinitionStages.WithEnvironments {
+            extends DefinitionStages.WithKind, DefinitionStages.WithPassword, DefinitionStages.WithSecretUrl,
+            DefinitionStages.WithApplicableEnvironmentsMode, DefinitionStages.WithEnvironments {
             /**
              * Executes the create request.
-             *
+             * 
              * @return the created resource.
              */
             StaticSiteBasicAuthPropertiesArmResource create();
 
             /**
              * Executes the create request.
-             *
+             * 
              * @param context The context to associate with this operation.
              * @return the created resource.
              */
             StaticSiteBasicAuthPropertiesArmResource create(Context context);
         }
 
-        /** The stage of the StaticSiteBasicAuthPropertiesArmResource definition allowing to specify kind. */
+        /**
+         * The stage of the StaticSiteBasicAuthPropertiesArmResource definition allowing to specify kind.
+         */
         interface WithKind {
             /**
              * Specifies the kind property: Kind of resource..
-             *
+             * 
              * @param kind Kind of resource.
              * @return the next definition stage.
              */
             WithCreate withKind(String kind);
         }
 
-        /** The stage of the StaticSiteBasicAuthPropertiesArmResource definition allowing to specify password. */
+        /**
+         * The stage of the StaticSiteBasicAuthPropertiesArmResource definition allowing to specify password.
+         */
         interface WithPassword {
             /**
              * Specifies the password property: The password for basic auth..
-             *
+             * 
              * @param password The password for basic auth.
              * @return the next definition stage.
              */
             WithCreate withPassword(String password);
         }
 
-        /** The stage of the StaticSiteBasicAuthPropertiesArmResource definition allowing to specify secretUrl. */
+        /**
+         * The stage of the StaticSiteBasicAuthPropertiesArmResource definition allowing to specify secretUrl.
+         */
         interface WithSecretUrl {
             /**
              * Specifies the secretUrl property: Url to the secret in Key Vault..
-             *
+             * 
              * @param secretUrl Url to the secret in Key Vault.
              * @return the next definition stage.
              */
@@ -181,22 +194,24 @@ public interface StaticSiteBasicAuthPropertiesArmResource {
             /**
              * Specifies the applicableEnvironmentsMode property: State indicating if basic auth is enabled and for what
              * environments it is active..
-             *
+             * 
              * @param applicableEnvironmentsMode State indicating if basic auth is enabled and for what environments it
-             *     is active.
+             * is active.
              * @return the next definition stage.
              */
             WithCreate withApplicableEnvironmentsMode(String applicableEnvironmentsMode);
         }
 
-        /** The stage of the StaticSiteBasicAuthPropertiesArmResource definition allowing to specify environments. */
+        /**
+         * The stage of the StaticSiteBasicAuthPropertiesArmResource definition allowing to specify environments.
+         */
         interface WithEnvironments {
             /**
              * Specifies the environments property: The list of enabled environments for Basic Auth if
              * ApplicableEnvironmentsMode is set to SpecifiedEnvironments..
-             *
+             * 
              * @param environments The list of enabled environments for Basic Auth if ApplicableEnvironmentsMode is set
-             *     to SpecifiedEnvironments.
+             * to SpecifiedEnvironments.
              * @return the next definition stage.
              */
             WithCreate withEnvironments(List<String> environments);
@@ -205,63 +220,69 @@ public interface StaticSiteBasicAuthPropertiesArmResource {
 
     /**
      * Begins update for the StaticSiteBasicAuthPropertiesArmResource resource.
-     *
+     * 
      * @return the stage of resource update.
      */
     StaticSiteBasicAuthPropertiesArmResource.Update update();
 
-    /** The template for StaticSiteBasicAuthPropertiesArmResource update. */
-    interface Update
-        extends UpdateStages.WithKind,
-            UpdateStages.WithPassword,
-            UpdateStages.WithSecretUrl,
-            UpdateStages.WithApplicableEnvironmentsMode,
-            UpdateStages.WithEnvironments {
+    /**
+     * The template for StaticSiteBasicAuthPropertiesArmResource update.
+     */
+    interface Update extends UpdateStages.WithKind, UpdateStages.WithPassword, UpdateStages.WithSecretUrl,
+        UpdateStages.WithApplicableEnvironmentsMode, UpdateStages.WithEnvironments {
         /**
          * Executes the update request.
-         *
+         * 
          * @return the updated resource.
          */
         StaticSiteBasicAuthPropertiesArmResource apply();
 
         /**
          * Executes the update request.
-         *
+         * 
          * @param context The context to associate with this operation.
          * @return the updated resource.
          */
         StaticSiteBasicAuthPropertiesArmResource apply(Context context);
     }
 
-    /** The StaticSiteBasicAuthPropertiesArmResource update stages. */
+    /**
+     * The StaticSiteBasicAuthPropertiesArmResource update stages.
+     */
     interface UpdateStages {
-        /** The stage of the StaticSiteBasicAuthPropertiesArmResource update allowing to specify kind. */
+        /**
+         * The stage of the StaticSiteBasicAuthPropertiesArmResource update allowing to specify kind.
+         */
         interface WithKind {
             /**
              * Specifies the kind property: Kind of resource..
-             *
+             * 
              * @param kind Kind of resource.
              * @return the next definition stage.
              */
             Update withKind(String kind);
         }
 
-        /** The stage of the StaticSiteBasicAuthPropertiesArmResource update allowing to specify password. */
+        /**
+         * The stage of the StaticSiteBasicAuthPropertiesArmResource update allowing to specify password.
+         */
         interface WithPassword {
             /**
              * Specifies the password property: The password for basic auth..
-             *
+             * 
              * @param password The password for basic auth.
              * @return the next definition stage.
              */
             Update withPassword(String password);
         }
 
-        /** The stage of the StaticSiteBasicAuthPropertiesArmResource update allowing to specify secretUrl. */
+        /**
+         * The stage of the StaticSiteBasicAuthPropertiesArmResource update allowing to specify secretUrl.
+         */
         interface WithSecretUrl {
             /**
              * Specifies the secretUrl property: Url to the secret in Key Vault..
-             *
+             * 
              * @param secretUrl Url to the secret in Key Vault.
              * @return the next definition stage.
              */
@@ -276,22 +297,24 @@ public interface StaticSiteBasicAuthPropertiesArmResource {
             /**
              * Specifies the applicableEnvironmentsMode property: State indicating if basic auth is enabled and for what
              * environments it is active..
-             *
+             * 
              * @param applicableEnvironmentsMode State indicating if basic auth is enabled and for what environments it
-             *     is active.
+             * is active.
              * @return the next definition stage.
              */
             Update withApplicableEnvironmentsMode(String applicableEnvironmentsMode);
         }
 
-        /** The stage of the StaticSiteBasicAuthPropertiesArmResource update allowing to specify environments. */
+        /**
+         * The stage of the StaticSiteBasicAuthPropertiesArmResource update allowing to specify environments.
+         */
         interface WithEnvironments {
             /**
              * Specifies the environments property: The list of enabled environments for Basic Auth if
              * ApplicableEnvironmentsMode is set to SpecifiedEnvironments..
-             *
+             * 
              * @param environments The list of enabled environments for Basic Auth if ApplicableEnvironmentsMode is set
-             *     to SpecifiedEnvironments.
+             * to SpecifiedEnvironments.
              * @return the next definition stage.
              */
             Update withEnvironments(List<String> environments);
@@ -300,14 +323,14 @@ public interface StaticSiteBasicAuthPropertiesArmResource {
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @return the refreshed resource.
      */
     StaticSiteBasicAuthPropertiesArmResource refresh();
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @return the refreshed resource.
      */

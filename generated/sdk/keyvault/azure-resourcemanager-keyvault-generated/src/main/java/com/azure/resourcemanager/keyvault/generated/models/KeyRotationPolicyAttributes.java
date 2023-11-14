@@ -7,7 +7,9 @@ package com.azure.resourcemanager.keyvault.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The KeyRotationPolicyAttributes model. */
+/**
+ * The KeyRotationPolicyAttributes model.
+ */
 @Fluent
 public final class KeyRotationPolicyAttributes {
     /*
@@ -28,13 +30,15 @@ public final class KeyRotationPolicyAttributes {
     @JsonProperty(value = "expiryTime")
     private String expiryTime;
 
-    /** Creates an instance of KeyRotationPolicyAttributes class. */
+    /**
+     * Creates an instance of KeyRotationPolicyAttributes class.
+     */
     public KeyRotationPolicyAttributes() {
     }
 
     /**
      * Get the created property: Creation time in seconds since 1970-01-01T00:00:00Z.
-     *
+     * 
      * @return the created value.
      */
     public Long created() {
@@ -43,7 +47,7 @@ public final class KeyRotationPolicyAttributes {
 
     /**
      * Get the updated property: Last updated time in seconds since 1970-01-01T00:00:00Z.
-     *
+     * 
      * @return the updated value.
      */
     public Long updated() {
@@ -53,7 +57,7 @@ public final class KeyRotationPolicyAttributes {
     /**
      * Get the expiryTime property: The expiration time for the new key version. It should be in ISO8601 format. Eg:
      * 'P90D', 'P1Y'.
-     *
+     * 
      * @return the expiryTime value.
      */
     public String expiryTime() {
@@ -63,7 +67,7 @@ public final class KeyRotationPolicyAttributes {
     /**
      * Set the expiryTime property: The expiration time for the new key version. It should be in ISO8601 format. Eg:
      * 'P90D', 'P1Y'.
-     *
+     * 
      * @param expiryTime the expiryTime value to set.
      * @return the KeyRotationPolicyAttributes object itself.
      */
@@ -74,7 +78,7 @@ public final class KeyRotationPolicyAttributes {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -20,22 +20,18 @@ public final class PrivateLinkScopeOperationStatusImpl implements PrivateLinkSco
 
     private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    public PrivateLinkScopeOperationStatusImpl(
-        PrivateLinkScopeOperationStatusClient innerClient,
+    public PrivateLinkScopeOperationStatusImpl(PrivateLinkScopeOperationStatusClient innerClient,
         com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<OperationStatus> getByResourceGroupWithResponse(
-        String resourceGroupName, String asyncOperationId, Context context) {
-        Response<OperationStatusInner> inner =
-            this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, asyncOperationId, context);
+    public Response<OperationStatus> getByResourceGroupWithResponse(String resourceGroupName, String asyncOperationId,
+        Context context) {
+        Response<OperationStatusInner> inner
+            = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, asyncOperationId, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new OperationStatusImpl(inner.getValue(), this.manager()));
         } else {
             return null;

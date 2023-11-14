@@ -16,8 +16,7 @@ public final class DimensionImpl implements Dimension {
 
     private final com.azure.resourcemanager.costmanagement.generated.CostManagementManager serviceManager;
 
-    DimensionImpl(
-        DimensionInner innerObject,
+    DimensionImpl(DimensionInner innerObject,
         com.azure.resourcemanager.costmanagement.generated.CostManagementManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

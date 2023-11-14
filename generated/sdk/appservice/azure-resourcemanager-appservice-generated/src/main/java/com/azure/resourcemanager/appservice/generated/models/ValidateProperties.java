@@ -6,18 +6,20 @@ package com.azure.resourcemanager.appservice.generated.models;
 
 import com.azure.resourcemanager.appservice.generated.fluent.models.ValidatePropertiesInner;
 
-/** An immutable client-side representation of ValidateProperties. */
+/**
+ * An immutable client-side representation of ValidateProperties.
+ */
 public interface ValidateProperties {
     /**
      * Gets the serverFarmId property: ARM resource ID of an App Service plan that would host the app.
-     *
+     * 
      * @return the serverFarmId value.
      */
     String serverFarmId();
 
     /**
      * Gets the skuName property: Name of the target SKU for the App Service plan.
-     *
+     * 
      * @return the skuName value.
      */
     String skuName();
@@ -25,7 +27,7 @@ public interface ValidateProperties {
     /**
      * Gets the needLinuxWorkers property: &lt;code&gt;true&lt;/code&gt; if App Service plan is for Linux workers;
      * otherwise, &lt;code&gt;false&lt;/code&gt;.
-     *
+     * 
      * @return the needLinuxWorkers value.
      */
     Boolean needLinuxWorkers();
@@ -33,14 +35,14 @@ public interface ValidateProperties {
     /**
      * Gets the isSpot property: &lt;code&gt;true&lt;/code&gt; if App Service plan is for Spot instances; otherwise,
      * &lt;code&gt;false&lt;/code&gt;.
-     *
+     * 
      * @return the isSpot value.
      */
     Boolean isSpot();
 
     /**
      * Gets the capacity property: Target capacity of the App Service plan (number of VMs).
-     *
+     * 
      * @return the capacity value.
      */
     Integer capacity();
@@ -48,70 +50,70 @@ public interface ValidateProperties {
     /**
      * Gets the hostingEnvironment property: Name of App Service Environment where app or App Service plan should be
      * created.
-     *
+     * 
      * @return the hostingEnvironment value.
      */
     String hostingEnvironment();
 
     /**
      * Gets the isXenon property: &lt;code&gt;true&lt;/code&gt; if App Service plan is running as a windows container.
-     *
+     * 
      * @return the isXenon value.
      */
     Boolean isXenon();
 
     /**
      * Gets the containerRegistryBaseUrl property: Base URL of the container registry.
-     *
+     * 
      * @return the containerRegistryBaseUrl value.
      */
     String containerRegistryBaseUrl();
 
     /**
      * Gets the containerRegistryUsername property: Username for to access the container registry.
-     *
+     * 
      * @return the containerRegistryUsername value.
      */
     String containerRegistryUsername();
 
     /**
      * Gets the containerRegistryPassword property: Password for to access the container registry.
-     *
+     * 
      * @return the containerRegistryPassword value.
      */
     String containerRegistryPassword();
 
     /**
      * Gets the containerImageRepository property: Repository name (image name).
-     *
+     * 
      * @return the containerImageRepository value.
      */
     String containerImageRepository();
 
     /**
      * Gets the containerImageTag property: Image tag.
-     *
+     * 
      * @return the containerImageTag value.
      */
     String containerImageTag();
 
     /**
      * Gets the containerImagePlatform property: Platform (windows or linux).
-     *
+     * 
      * @return the containerImagePlatform value.
      */
     String containerImagePlatform();
 
     /**
      * Gets the appServiceEnvironment property: App Service Environment Properties.
-     *
+     * 
      * @return the appServiceEnvironment value.
      */
     AppServiceEnvironment appServiceEnvironment();
 
     /**
      * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.ValidatePropertiesInner object.
-     *
+     * 
      * @return the inner object.
      */
     ValidatePropertiesInner innerModel();

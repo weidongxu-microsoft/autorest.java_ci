@@ -70,12 +70,8 @@ public final class SecurityRuleImpl implements SecurityRule, SecurityRule.Defini
     public List<ApplicationSecurityGroup> sourceApplicationSecurityGroups() {
         List<ApplicationSecurityGroupInner> inner = this.innerModel().sourceApplicationSecurityGroups();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new ApplicationSecurityGroupImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new ApplicationSecurityGroupImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -97,12 +93,8 @@ public final class SecurityRuleImpl implements SecurityRule, SecurityRule.Defini
     public List<ApplicationSecurityGroup> destinationApplicationSecurityGroups() {
         List<ApplicationSecurityGroupInner> inner = this.innerModel().destinationApplicationSecurityGroups();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new ApplicationSecurityGroupImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new ApplicationSecurityGroupImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -160,30 +152,22 @@ public final class SecurityRuleImpl implements SecurityRule, SecurityRule.Defini
 
     private String securityRuleName;
 
-    public SecurityRuleImpl withExistingNetworkSecurityGroup(
-        String resourceGroupName, String networkSecurityGroupName) {
+    public SecurityRuleImpl withExistingNetworkSecurityGroup(String resourceGroupName,
+        String networkSecurityGroupName) {
         this.resourceGroupName = resourceGroupName;
         this.networkSecurityGroupName = networkSecurityGroupName;
         return this;
     }
 
     public SecurityRule create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSecurityRules()
-                .createOrUpdate(
-                    resourceGroupName, networkSecurityGroupName, securityRuleName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getSecurityRules().createOrUpdate(resourceGroupName,
+            networkSecurityGroupName, securityRuleName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public SecurityRule create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSecurityRules()
-                .createOrUpdate(
-                    resourceGroupName, networkSecurityGroupName, securityRuleName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getSecurityRules().createOrUpdate(resourceGroupName,
+            networkSecurityGroupName, securityRuleName, this.innerModel(), context);
         return this;
     }
 
@@ -198,27 +182,19 @@ public final class SecurityRuleImpl implements SecurityRule, SecurityRule.Defini
     }
 
     public SecurityRule apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSecurityRules()
-                .createOrUpdate(
-                    resourceGroupName, networkSecurityGroupName, securityRuleName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getSecurityRules().createOrUpdate(resourceGroupName,
+            networkSecurityGroupName, securityRuleName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public SecurityRule apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSecurityRules()
-                .createOrUpdate(
-                    resourceGroupName, networkSecurityGroupName, securityRuleName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getSecurityRules().createOrUpdate(resourceGroupName,
+            networkSecurityGroupName, securityRuleName, this.innerModel(), context);
         return this;
     }
 
-    SecurityRuleImpl(
-        SecurityRuleInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    SecurityRuleImpl(SecurityRuleInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
@@ -227,22 +203,14 @@ public final class SecurityRuleImpl implements SecurityRule, SecurityRule.Defini
     }
 
     public SecurityRule refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSecurityRules()
-                .getWithResponse(resourceGroupName, networkSecurityGroupName, securityRuleName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getSecurityRules()
+            .getWithResponse(resourceGroupName, networkSecurityGroupName, securityRuleName, Context.NONE).getValue();
         return this;
     }
 
     public SecurityRule refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSecurityRules()
-                .getWithResponse(resourceGroupName, networkSecurityGroupName, securityRuleName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getSecurityRules()
+            .getWithResponse(resourceGroupName, networkSecurityGroupName, securityRuleName, context).getValue();
         return this;
     }
 
@@ -286,8 +254,8 @@ public final class SecurityRuleImpl implements SecurityRule, SecurityRule.Defini
         return this;
     }
 
-    public SecurityRuleImpl withSourceApplicationSecurityGroups(
-        List<ApplicationSecurityGroupInner> sourceApplicationSecurityGroups) {
+    public SecurityRuleImpl
+        withSourceApplicationSecurityGroups(List<ApplicationSecurityGroupInner> sourceApplicationSecurityGroups) {
         this.innerModel().withSourceApplicationSecurityGroups(sourceApplicationSecurityGroups);
         return this;
     }

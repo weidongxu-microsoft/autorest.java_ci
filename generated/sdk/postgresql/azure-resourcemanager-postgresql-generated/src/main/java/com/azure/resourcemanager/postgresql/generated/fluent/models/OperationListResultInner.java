@@ -9,7 +9,9 @@ import com.azure.resourcemanager.postgresql.generated.models.Operation;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** A list of resource provider operations. */
+/**
+ * A list of resource provider operations.
+ */
 @Fluent
 public final class OperationListResultInner {
     /*
@@ -18,13 +20,15 @@ public final class OperationListResultInner {
     @JsonProperty(value = "value")
     private List<Operation> value;
 
-    /** Creates an instance of OperationListResultInner class. */
+    /**
+     * Creates an instance of OperationListResultInner class.
+     */
     public OperationListResultInner() {
     }
 
     /**
      * Get the value property: The list of resource provider operations.
-     *
+     * 
      * @return the value value.
      */
     public List<Operation> value() {
@@ -33,7 +37,7 @@ public final class OperationListResultInner {
 
     /**
      * Set the value property: The list of resource provider operations.
-     *
+     * 
      * @param value the value value to set.
      * @return the OperationListResultInner object itself.
      */
@@ -44,7 +48,7 @@ public final class OperationListResultInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

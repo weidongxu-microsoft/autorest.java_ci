@@ -12,8 +12,7 @@ public final class SharedKeysImpl implements SharedKeys {
 
     private final com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager;
 
-    SharedKeysImpl(
-        SharedKeysInner innerObject,
+    SharedKeysImpl(SharedKeysInner innerObject,
         com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

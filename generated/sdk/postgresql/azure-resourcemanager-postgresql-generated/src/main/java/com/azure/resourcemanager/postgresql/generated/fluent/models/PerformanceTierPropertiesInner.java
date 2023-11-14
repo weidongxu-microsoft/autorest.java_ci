@@ -9,7 +9,9 @@ import com.azure.resourcemanager.postgresql.generated.models.PerformanceTierServ
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Performance tier properties. */
+/**
+ * Performance tier properties.
+ */
 @Fluent
 public final class PerformanceTierPropertiesInner {
     /*
@@ -60,13 +62,15 @@ public final class PerformanceTierPropertiesInner {
     @JsonProperty(value = "serviceLevelObjectives")
     private List<PerformanceTierServiceLevelObjectives> serviceLevelObjectives;
 
-    /** Creates an instance of PerformanceTierPropertiesInner class. */
+    /**
+     * Creates an instance of PerformanceTierPropertiesInner class.
+     */
     public PerformanceTierPropertiesInner() {
     }
 
     /**
      * Get the id property: ID of the performance tier.
-     *
+     * 
      * @return the id value.
      */
     public String id() {
@@ -75,7 +79,7 @@ public final class PerformanceTierPropertiesInner {
 
     /**
      * Set the id property: ID of the performance tier.
-     *
+     * 
      * @param id the id value to set.
      * @return the PerformanceTierPropertiesInner object itself.
      */
@@ -86,7 +90,7 @@ public final class PerformanceTierPropertiesInner {
 
     /**
      * Get the maxBackupRetentionDays property: Maximum Backup retention in days for the performance tier edition.
-     *
+     * 
      * @return the maxBackupRetentionDays value.
      */
     public Integer maxBackupRetentionDays() {
@@ -95,7 +99,7 @@ public final class PerformanceTierPropertiesInner {
 
     /**
      * Set the maxBackupRetentionDays property: Maximum Backup retention in days for the performance tier edition.
-     *
+     * 
      * @param maxBackupRetentionDays the maxBackupRetentionDays value to set.
      * @return the PerformanceTierPropertiesInner object itself.
      */
@@ -106,7 +110,7 @@ public final class PerformanceTierPropertiesInner {
 
     /**
      * Get the minBackupRetentionDays property: Minimum Backup retention in days for the performance tier edition.
-     *
+     * 
      * @return the minBackupRetentionDays value.
      */
     public Integer minBackupRetentionDays() {
@@ -115,7 +119,7 @@ public final class PerformanceTierPropertiesInner {
 
     /**
      * Set the minBackupRetentionDays property: Minimum Backup retention in days for the performance tier edition.
-     *
+     * 
      * @param minBackupRetentionDays the minBackupRetentionDays value to set.
      * @return the PerformanceTierPropertiesInner object itself.
      */
@@ -126,7 +130,7 @@ public final class PerformanceTierPropertiesInner {
 
     /**
      * Get the maxStorageMB property: Max storage allowed for a server.
-     *
+     * 
      * @return the maxStorageMB value.
      */
     public Integer maxStorageMB() {
@@ -135,7 +139,7 @@ public final class PerformanceTierPropertiesInner {
 
     /**
      * Set the maxStorageMB property: Max storage allowed for a server.
-     *
+     * 
      * @param maxStorageMB the maxStorageMB value to set.
      * @return the PerformanceTierPropertiesInner object itself.
      */
@@ -146,7 +150,7 @@ public final class PerformanceTierPropertiesInner {
 
     /**
      * Get the minLargeStorageMB property: Max storage allowed for a server.
-     *
+     * 
      * @return the minLargeStorageMB value.
      */
     public Integer minLargeStorageMB() {
@@ -155,7 +159,7 @@ public final class PerformanceTierPropertiesInner {
 
     /**
      * Set the minLargeStorageMB property: Max storage allowed for a server.
-     *
+     * 
      * @param minLargeStorageMB the minLargeStorageMB value to set.
      * @return the PerformanceTierPropertiesInner object itself.
      */
@@ -166,7 +170,7 @@ public final class PerformanceTierPropertiesInner {
 
     /**
      * Get the maxLargeStorageMB property: Max storage allowed for a server.
-     *
+     * 
      * @return the maxLargeStorageMB value.
      */
     public Integer maxLargeStorageMB() {
@@ -175,7 +179,7 @@ public final class PerformanceTierPropertiesInner {
 
     /**
      * Set the maxLargeStorageMB property: Max storage allowed for a server.
-     *
+     * 
      * @param maxLargeStorageMB the maxLargeStorageMB value to set.
      * @return the PerformanceTierPropertiesInner object itself.
      */
@@ -186,7 +190,7 @@ public final class PerformanceTierPropertiesInner {
 
     /**
      * Get the minStorageMB property: Max storage allowed for a server.
-     *
+     * 
      * @return the minStorageMB value.
      */
     public Integer minStorageMB() {
@@ -195,7 +199,7 @@ public final class PerformanceTierPropertiesInner {
 
     /**
      * Set the minStorageMB property: Max storage allowed for a server.
-     *
+     * 
      * @param minStorageMB the minStorageMB value to set.
      * @return the PerformanceTierPropertiesInner object itself.
      */
@@ -206,7 +210,7 @@ public final class PerformanceTierPropertiesInner {
 
     /**
      * Get the serviceLevelObjectives property: Service level objectives associated with the performance tier.
-     *
+     * 
      * @return the serviceLevelObjectives value.
      */
     public List<PerformanceTierServiceLevelObjectives> serviceLevelObjectives() {
@@ -215,19 +219,19 @@ public final class PerformanceTierPropertiesInner {
 
     /**
      * Set the serviceLevelObjectives property: Service level objectives associated with the performance tier.
-     *
+     * 
      * @param serviceLevelObjectives the serviceLevelObjectives value to set.
      * @return the PerformanceTierPropertiesInner object itself.
      */
-    public PerformanceTierPropertiesInner withServiceLevelObjectives(
-        List<PerformanceTierServiceLevelObjectives> serviceLevelObjectives) {
+    public PerformanceTierPropertiesInner
+        withServiceLevelObjectives(List<PerformanceTierServiceLevelObjectives> serviceLevelObjectives) {
         this.serviceLevelObjectives = serviceLevelObjectives;
         return this;
     }
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

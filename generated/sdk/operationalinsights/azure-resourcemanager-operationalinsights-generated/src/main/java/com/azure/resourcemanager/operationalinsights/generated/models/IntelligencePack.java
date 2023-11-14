@@ -6,25 +6,27 @@ package com.azure.resourcemanager.operationalinsights.generated.models;
 
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.IntelligencePackInner;
 
-/** An immutable client-side representation of IntelligencePack. */
+/**
+ * An immutable client-side representation of IntelligencePack.
+ */
 public interface IntelligencePack {
     /**
      * Gets the name property: The name of the intelligence pack.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the enabled property: The enabled boolean for the intelligence pack.
-     *
+     * 
      * @return the enabled value.
      */
     Boolean enabled();
 
     /**
      * Gets the displayName property: The display name of the intelligence pack.
-     *
+     * 
      * @return the displayName value.
      */
     String displayName();
@@ -32,7 +34,7 @@ public interface IntelligencePack {
     /**
      * Gets the inner com.azure.resourcemanager.operationalinsights.generated.fluent.models.IntelligencePackInner
      * object.
-     *
+     * 
      * @return the inner object.
      */
     IntelligencePackInner innerModel();

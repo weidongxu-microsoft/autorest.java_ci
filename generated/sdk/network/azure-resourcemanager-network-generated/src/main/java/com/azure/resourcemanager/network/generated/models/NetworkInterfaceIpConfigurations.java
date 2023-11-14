@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of NetworkInterfaceIpConfigurations. */
+/**
+ * Resource collection API of NetworkInterfaceIpConfigurations.
+ */
 public interface NetworkInterfaceIpConfigurations {
     /**
      * Get all ip configurations in a network interface.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkInterfaceName The name of the network interface.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -24,7 +26,7 @@ public interface NetworkInterfaceIpConfigurations {
 
     /**
      * Get all ip configurations in a network interface.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkInterfaceName The name of the network interface.
      * @param context The context to associate with this operation.
@@ -33,12 +35,12 @@ public interface NetworkInterfaceIpConfigurations {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all ip configurations in a network interface as paginated response with {@link PagedIterable}.
      */
-    PagedIterable<NetworkInterfaceIpConfiguration> list(
-        String resourceGroupName, String networkInterfaceName, Context context);
+    PagedIterable<NetworkInterfaceIpConfiguration> list(String resourceGroupName, String networkInterfaceName,
+        Context context);
 
     /**
      * Gets the specified network interface ip configuration.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkInterfaceName The name of the network interface.
      * @param ipConfigurationName The name of the ip configuration name.
@@ -48,12 +50,12 @@ public interface NetworkInterfaceIpConfigurations {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified network interface ip configuration along with {@link Response}.
      */
-    Response<NetworkInterfaceIpConfiguration> getWithResponse(
-        String resourceGroupName, String networkInterfaceName, String ipConfigurationName, Context context);
+    Response<NetworkInterfaceIpConfiguration> getWithResponse(String resourceGroupName, String networkInterfaceName,
+        String ipConfigurationName, Context context);
 
     /**
      * Gets the specified network interface ip configuration.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkInterfaceName The name of the network interface.
      * @param ipConfigurationName The name of the ip configuration name.
@@ -62,6 +64,6 @@ public interface NetworkInterfaceIpConfigurations {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified network interface ip configuration.
      */
-    NetworkInterfaceIpConfiguration get(
-        String resourceGroupName, String networkInterfaceName, String ipConfigurationName);
+    NetworkInterfaceIpConfiguration get(String resourceGroupName, String networkInterfaceName,
+        String ipConfigurationName);
 }

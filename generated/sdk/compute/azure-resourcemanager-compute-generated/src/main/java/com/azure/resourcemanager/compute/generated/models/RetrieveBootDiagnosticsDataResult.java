@@ -6,18 +6,20 @@ package com.azure.resourcemanager.compute.generated.models;
 
 import com.azure.resourcemanager.compute.generated.fluent.models.RetrieveBootDiagnosticsDataResultInner;
 
-/** An immutable client-side representation of RetrieveBootDiagnosticsDataResult. */
+/**
+ * An immutable client-side representation of RetrieveBootDiagnosticsDataResult.
+ */
 public interface RetrieveBootDiagnosticsDataResult {
     /**
      * Gets the consoleScreenshotBlobUri property: The console screenshot blob URI.
-     *
+     * 
      * @return the consoleScreenshotBlobUri value.
      */
     String consoleScreenshotBlobUri();
 
     /**
      * Gets the serialConsoleLogBlobUri property: The serial console log blob URI.
-     *
+     * 
      * @return the serialConsoleLogBlobUri value.
      */
     String serialConsoleLogBlobUri();
@@ -25,7 +27,7 @@ public interface RetrieveBootDiagnosticsDataResult {
     /**
      * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.RetrieveBootDiagnosticsDataResultInner
      * object.
-     *
+     * 
      * @return the inner object.
      */
     RetrieveBootDiagnosticsDataResultInner innerModel();

@@ -8,20 +8,28 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Result of testing route. */
+/**
+ * Result of testing route.
+ */
 public final class TestResultStatus extends ExpandableStringEnum<TestResultStatus> {
-    /** Static value undefined for TestResultStatus. */
+    /**
+     * Static value undefined for TestResultStatus.
+     */
     public static final TestResultStatus UNDEFINED = fromString("undefined");
 
-    /** Static value false for TestResultStatus. */
+    /**
+     * Static value false for TestResultStatus.
+     */
     public static final TestResultStatus FALSE = fromString("false");
 
-    /** Static value true for TestResultStatus. */
+    /**
+     * Static value true for TestResultStatus.
+     */
     public static final TestResultStatus TRUE = fromString("true");
 
     /**
      * Creates a new instance of TestResultStatus value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -30,7 +38,7 @@ public final class TestResultStatus extends ExpandableStringEnum<TestResultStatu
 
     /**
      * Creates or finds a TestResultStatus from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding TestResultStatus.
      */
@@ -41,7 +49,7 @@ public final class TestResultStatus extends ExpandableStringEnum<TestResultStatu
 
     /**
      * Gets known TestResultStatus values.
-     *
+     * 
      * @return known TestResultStatus values.
      */
     public static Collection<TestResultStatus> values() {

@@ -19,8 +19,7 @@ public final class ApplicationGatewayAvailableSslOptionsImpl implements Applicat
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    ApplicationGatewayAvailableSslOptionsImpl(
-        ApplicationGatewayAvailableSslOptionsInner innerObject,
+    ApplicationGatewayAvailableSslOptionsImpl(ApplicationGatewayAvailableSslOptionsInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

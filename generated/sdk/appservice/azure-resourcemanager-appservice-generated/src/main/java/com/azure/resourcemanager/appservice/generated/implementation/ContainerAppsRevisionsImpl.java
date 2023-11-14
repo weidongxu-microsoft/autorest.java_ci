@@ -21,8 +21,7 @@ public final class ContainerAppsRevisionsImpl implements ContainerAppsRevisions 
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    public ContainerAppsRevisionsImpl(
-        ContainerAppsRevisionsClient innerClient,
+    public ContainerAppsRevisionsImpl(ContainerAppsRevisionsClient innerClient,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -34,20 +33,17 @@ public final class ContainerAppsRevisionsImpl implements ContainerAppsRevisions 
     }
 
     public PagedIterable<Revision> listRevisions(String resourceGroupName, String containerAppName, Context context) {
-        PagedIterable<RevisionInner> inner =
-            this.serviceClient().listRevisions(resourceGroupName, containerAppName, context);
+        PagedIterable<RevisionInner> inner
+            = this.serviceClient().listRevisions(resourceGroupName, containerAppName, context);
         return Utils.mapPage(inner, inner1 -> new RevisionImpl(inner1, this.manager()));
     }
 
-    public Response<Revision> getRevisionWithResponse(
-        String resourceGroupName, String containerAppName, String name, Context context) {
-        Response<RevisionInner> inner =
-            this.serviceClient().getRevisionWithResponse(resourceGroupName, containerAppName, name, context);
+    public Response<Revision> getRevisionWithResponse(String resourceGroupName, String containerAppName, String name,
+        Context context) {
+        Response<RevisionInner> inner
+            = this.serviceClient().getRevisionWithResponse(resourceGroupName, containerAppName, name, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new RevisionImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -63,8 +59,8 @@ public final class ContainerAppsRevisionsImpl implements ContainerAppsRevisions 
         }
     }
 
-    public Response<Void> activateRevisionWithResponse(
-        String resourceGroupName, String containerAppName, String name, Context context) {
+    public Response<Void> activateRevisionWithResponse(String resourceGroupName, String containerAppName, String name,
+        Context context) {
         return this.serviceClient().activateRevisionWithResponse(resourceGroupName, containerAppName, name, context);
     }
 
@@ -72,8 +68,8 @@ public final class ContainerAppsRevisionsImpl implements ContainerAppsRevisions 
         this.serviceClient().activateRevision(resourceGroupName, containerAppName, name);
     }
 
-    public Response<Void> deactivateRevisionWithResponse(
-        String resourceGroupName, String containerAppName, String name, Context context) {
+    public Response<Void> deactivateRevisionWithResponse(String resourceGroupName, String containerAppName, String name,
+        Context context) {
         return this.serviceClient().deactivateRevisionWithResponse(resourceGroupName, containerAppName, name, context);
     }
 
@@ -81,8 +77,8 @@ public final class ContainerAppsRevisionsImpl implements ContainerAppsRevisions 
         this.serviceClient().deactivateRevision(resourceGroupName, containerAppName, name);
     }
 
-    public Response<Void> restartRevisionWithResponse(
-        String resourceGroupName, String containerAppName, String name, Context context) {
+    public Response<Void> restartRevisionWithResponse(String resourceGroupName, String containerAppName, String name,
+        Context context) {
         return this.serviceClient().restartRevisionWithResponse(resourceGroupName, containerAppName, name, context);
     }
 

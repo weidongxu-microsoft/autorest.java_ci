@@ -7,7 +7,9 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The input to the sync storage keys request. */
+/**
+ * The input to the sync storage keys request.
+ */
 @Fluent
 public final class SyncStorageKeysInput {
     /*
@@ -16,13 +18,15 @@ public final class SyncStorageKeysInput {
     @JsonProperty(value = "id")
     private String id;
 
-    /** Creates an instance of SyncStorageKeysInput class. */
+    /**
+     * Creates an instance of SyncStorageKeysInput class.
+     */
     public SyncStorageKeysInput() {
     }
 
     /**
      * Get the id property: The ID of the storage account resource.
-     *
+     * 
      * @return the id value.
      */
     public String id() {
@@ -31,7 +35,7 @@ public final class SyncStorageKeysInput {
 
     /**
      * Set the id property: The ID of the storage account resource.
-     *
+     * 
      * @param id the id value to set.
      * @return the SyncStorageKeysInput object itself.
      */
@@ -42,7 +46,7 @@ public final class SyncStorageKeysInput {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

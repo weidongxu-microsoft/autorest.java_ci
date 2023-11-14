@@ -9,7 +9,9 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** Base class for Content Key Policy configuration. A derived class must be used to create a configuration. */
+/**
+ * Base class for Content Key Policy configuration. A derived class must be used to create a configuration.
+ */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
     include = JsonTypeInfo.As.PROPERTY,
@@ -31,17 +33,18 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
         value = ContentKeyPolicyPlayReadyConfiguration.class),
     @JsonSubTypes.Type(
         name = "#Microsoft.Media.ContentKeyPolicyFairPlayConfiguration",
-        value = ContentKeyPolicyFairPlayConfiguration.class)
-})
+        value = ContentKeyPolicyFairPlayConfiguration.class) })
 @Immutable
 public class ContentKeyPolicyConfiguration {
-    /** Creates an instance of ContentKeyPolicyConfiguration class. */
+    /**
+     * Creates an instance of ContentKeyPolicyConfiguration class.
+     */
     public ContentKeyPolicyConfiguration() {
     }
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

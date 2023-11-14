@@ -7,7 +7,9 @@ package com.azure.resourcemanager.authorization.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Classic Administrator properties. */
+/**
+ * Classic Administrator properties.
+ */
 @Fluent
 public final class ClassicAdministratorProperties {
     /*
@@ -22,13 +24,15 @@ public final class ClassicAdministratorProperties {
     @JsonProperty(value = "role")
     private String role;
 
-    /** Creates an instance of ClassicAdministratorProperties class. */
+    /**
+     * Creates an instance of ClassicAdministratorProperties class.
+     */
     public ClassicAdministratorProperties() {
     }
 
     /**
      * Get the emailAddress property: The email address of the administrator.
-     *
+     * 
      * @return the emailAddress value.
      */
     public String emailAddress() {
@@ -37,7 +41,7 @@ public final class ClassicAdministratorProperties {
 
     /**
      * Set the emailAddress property: The email address of the administrator.
-     *
+     * 
      * @param emailAddress the emailAddress value to set.
      * @return the ClassicAdministratorProperties object itself.
      */
@@ -48,7 +52,7 @@ public final class ClassicAdministratorProperties {
 
     /**
      * Get the role property: The role of the administrator.
-     *
+     * 
      * @return the role value.
      */
     public String role() {
@@ -57,7 +61,7 @@ public final class ClassicAdministratorProperties {
 
     /**
      * Set the role property: The role of the administrator.
-     *
+     * 
      * @param role the role value to set.
      * @return the ClassicAdministratorProperties object itself.
      */
@@ -68,7 +72,7 @@ public final class ClassicAdministratorProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

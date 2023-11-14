@@ -21,8 +21,7 @@ public final class LoadBalancerProbesImpl implements LoadBalancerProbes {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public LoadBalancerProbesImpl(
-        LoadBalancerProbesClient innerClient,
+    public LoadBalancerProbesImpl(LoadBalancerProbesClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -38,15 +37,12 @@ public final class LoadBalancerProbesImpl implements LoadBalancerProbes {
         return Utils.mapPage(inner, inner1 -> new ProbeImpl(inner1, this.manager()));
     }
 
-    public Response<Probe> getWithResponse(
-        String resourceGroupName, String loadBalancerName, String probeName, Context context) {
-        Response<ProbeInner> inner =
-            this.serviceClient().getWithResponse(resourceGroupName, loadBalancerName, probeName, context);
+    public Response<Probe> getWithResponse(String resourceGroupName, String loadBalancerName, String probeName,
+        Context context) {
+        Response<ProbeInner> inner
+            = this.serviceClient().getWithResponse(resourceGroupName, loadBalancerName, probeName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ProbeImpl(inner.getValue(), this.manager()));
         } else {
             return null;

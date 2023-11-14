@@ -9,7 +9,9 @@ import com.azure.resourcemanager.keyvault.generated.fluent.models.ManagedHsmKeyI
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The page of keys. */
+/**
+ * The page of keys.
+ */
 @Fluent
 public final class ManagedHsmKeyListResult {
     /*
@@ -24,13 +26,15 @@ public final class ManagedHsmKeyListResult {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
-    /** Creates an instance of ManagedHsmKeyListResult class. */
+    /**
+     * Creates an instance of ManagedHsmKeyListResult class.
+     */
     public ManagedHsmKeyListResult() {
     }
 
     /**
      * Get the value property: The key resources.
-     *
+     * 
      * @return the value value.
      */
     public List<ManagedHsmKeyInner> value() {
@@ -39,7 +43,7 @@ public final class ManagedHsmKeyListResult {
 
     /**
      * Set the value property: The key resources.
-     *
+     * 
      * @param value the value value to set.
      * @return the ManagedHsmKeyListResult object itself.
      */
@@ -50,7 +54,7 @@ public final class ManagedHsmKeyListResult {
 
     /**
      * Get the nextLink property: The URL to get the next page of keys.
-     *
+     * 
      * @return the nextLink value.
      */
     public String nextLink() {
@@ -59,7 +63,7 @@ public final class ManagedHsmKeyListResult {
 
     /**
      * Set the nextLink property: The URL to get the next page of keys.
-     *
+     * 
      * @param nextLink the nextLink value to set.
      * @return the ManagedHsmKeyListResult object itself.
      */
@@ -70,7 +74,7 @@ public final class ManagedHsmKeyListResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

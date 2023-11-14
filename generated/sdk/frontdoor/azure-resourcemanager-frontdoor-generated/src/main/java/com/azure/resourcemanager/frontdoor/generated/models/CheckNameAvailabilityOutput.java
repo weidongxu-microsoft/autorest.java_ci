@@ -6,25 +6,27 @@ package com.azure.resourcemanager.frontdoor.generated.models;
 
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.CheckNameAvailabilityOutputInner;
 
-/** An immutable client-side representation of CheckNameAvailabilityOutput. */
+/**
+ * An immutable client-side representation of CheckNameAvailabilityOutput.
+ */
 public interface CheckNameAvailabilityOutput {
     /**
      * Gets the nameAvailability property: Indicates whether the name is available.
-     *
+     * 
      * @return the nameAvailability value.
      */
     Availability nameAvailability();
 
     /**
      * Gets the reason property: The reason why the name is not available.
-     *
+     * 
      * @return the reason value.
      */
     String reason();
 
     /**
      * Gets the message property: The detailed error message describing why the name is not available.
-     *
+     * 
      * @return the message value.
      */
     String message();
@@ -32,7 +34,7 @@ public interface CheckNameAvailabilityOutput {
     /**
      * Gets the inner com.azure.resourcemanager.frontdoor.generated.fluent.models.CheckNameAvailabilityOutputInner
      * object.
-     *
+     * 
      * @return the inner object.
      */
     CheckNameAvailabilityOutputInner innerModel();

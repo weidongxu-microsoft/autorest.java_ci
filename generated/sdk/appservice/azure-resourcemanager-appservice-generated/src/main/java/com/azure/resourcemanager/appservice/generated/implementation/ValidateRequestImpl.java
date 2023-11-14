@@ -15,8 +15,7 @@ public final class ValidateRequestImpl implements ValidateRequest {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    ValidateRequestImpl(
-        ValidateRequestInner innerObject,
+    ValidateRequestImpl(ValidateRequestInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

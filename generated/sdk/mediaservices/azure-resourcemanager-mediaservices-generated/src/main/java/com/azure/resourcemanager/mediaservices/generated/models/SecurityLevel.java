@@ -8,23 +8,33 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** The security level. */
+/**
+ * The security level.
+ */
 public final class SecurityLevel extends ExpandableStringEnum<SecurityLevel> {
-    /** Static value Unknown for SecurityLevel. */
+    /**
+     * Static value Unknown for SecurityLevel.
+     */
     public static final SecurityLevel UNKNOWN = fromString("Unknown");
 
-    /** Static value SL150 for SecurityLevel. */
+    /**
+     * Static value SL150 for SecurityLevel.
+     */
     public static final SecurityLevel SL150 = fromString("SL150");
 
-    /** Static value SL2000 for SecurityLevel. */
+    /**
+     * Static value SL2000 for SecurityLevel.
+     */
     public static final SecurityLevel SL2000 = fromString("SL2000");
 
-    /** Static value SL3000 for SecurityLevel. */
+    /**
+     * Static value SL3000 for SecurityLevel.
+     */
     public static final SecurityLevel SL3000 = fromString("SL3000");
 
     /**
      * Creates a new instance of SecurityLevel value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -33,7 +43,7 @@ public final class SecurityLevel extends ExpandableStringEnum<SecurityLevel> {
 
     /**
      * Creates or finds a SecurityLevel from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding SecurityLevel.
      */
@@ -44,7 +54,7 @@ public final class SecurityLevel extends ExpandableStringEnum<SecurityLevel> {
 
     /**
      * Gets known SecurityLevel values.
-     *
+     * 
      * @return known SecurityLevel values.
      */
     public static Collection<SecurityLevel> values() {

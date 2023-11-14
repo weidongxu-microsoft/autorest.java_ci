@@ -7,7 +7,9 @@ package com.azure.resourcemanager.eventhubs.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Pre-provisioned and readily available Event Hubs Cluster count per region. */
+/**
+ * Pre-provisioned and readily available Event Hubs Cluster count per region.
+ */
 @Fluent
 public final class AvailableCluster {
     /*
@@ -16,13 +18,15 @@ public final class AvailableCluster {
     @JsonProperty(value = "location")
     private String location;
 
-    /** Creates an instance of AvailableCluster class. */
+    /**
+     * Creates an instance of AvailableCluster class.
+     */
     public AvailableCluster() {
     }
 
     /**
      * Get the location property: Location fo the Available Cluster.
-     *
+     * 
      * @return the location value.
      */
     public String location() {
@@ -31,7 +35,7 @@ public final class AvailableCluster {
 
     /**
      * Set the location property: Location fo the Available Cluster.
-     *
+     * 
      * @param location the location value to set.
      * @return the AvailableCluster object itself.
      */
@@ -42,7 +46,7 @@ public final class AvailableCluster {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

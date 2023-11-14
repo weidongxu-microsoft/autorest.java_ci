@@ -8,30 +8,44 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Specifies the reason for the unavailability of the service. */
+/**
+ * Specifies the reason for the unavailability of the service.
+ */
 public final class UnavailableReason extends ExpandableStringEnum<UnavailableReason> {
-    /** Static value None for UnavailableReason. */
+    /**
+     * Static value None for UnavailableReason.
+     */
     public static final UnavailableReason NONE = fromString("None");
 
-    /** Static value InvalidName for UnavailableReason. */
+    /**
+     * Static value InvalidName for UnavailableReason.
+     */
     public static final UnavailableReason INVALID_NAME = fromString("InvalidName");
 
-    /** Static value SubscriptionIsDisabled for UnavailableReason. */
+    /**
+     * Static value SubscriptionIsDisabled for UnavailableReason.
+     */
     public static final UnavailableReason SUBSCRIPTION_IS_DISABLED = fromString("SubscriptionIsDisabled");
 
-    /** Static value NameInUse for UnavailableReason. */
+    /**
+     * Static value NameInUse for UnavailableReason.
+     */
     public static final UnavailableReason NAME_IN_USE = fromString("NameInUse");
 
-    /** Static value NameInLockdown for UnavailableReason. */
+    /**
+     * Static value NameInLockdown for UnavailableReason.
+     */
     public static final UnavailableReason NAME_IN_LOCKDOWN = fromString("NameInLockdown");
 
-    /** Static value TooManyNamespaceInCurrentSubscription for UnavailableReason. */
-    public static final UnavailableReason TOO_MANY_NAMESPACE_IN_CURRENT_SUBSCRIPTION =
-        fromString("TooManyNamespaceInCurrentSubscription");
+    /**
+     * Static value TooManyNamespaceInCurrentSubscription for UnavailableReason.
+     */
+    public static final UnavailableReason TOO_MANY_NAMESPACE_IN_CURRENT_SUBSCRIPTION
+        = fromString("TooManyNamespaceInCurrentSubscription");
 
     /**
      * Creates a new instance of UnavailableReason value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -40,7 +54,7 @@ public final class UnavailableReason extends ExpandableStringEnum<UnavailableRea
 
     /**
      * Creates or finds a UnavailableReason from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding UnavailableReason.
      */
@@ -51,7 +65,7 @@ public final class UnavailableReason extends ExpandableStringEnum<UnavailableRea
 
     /**
      * Gets known UnavailableReason values.
-     *
+     * 
      * @return known UnavailableReason values.
      */
     public static Collection<UnavailableReason> values() {

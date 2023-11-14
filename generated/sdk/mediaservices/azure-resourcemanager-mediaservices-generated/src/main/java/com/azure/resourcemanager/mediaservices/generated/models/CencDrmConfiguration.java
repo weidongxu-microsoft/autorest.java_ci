@@ -7,7 +7,9 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Class to specify DRM configurations of CommonEncryptionCenc scheme in Streaming Policy. */
+/**
+ * Class to specify DRM configurations of CommonEncryptionCenc scheme in Streaming Policy.
+ */
 @Fluent
 public final class CencDrmConfiguration {
     /*
@@ -22,13 +24,15 @@ public final class CencDrmConfiguration {
     @JsonProperty(value = "widevine")
     private StreamingPolicyWidevineConfiguration widevine;
 
-    /** Creates an instance of CencDrmConfiguration class. */
+    /**
+     * Creates an instance of CencDrmConfiguration class.
+     */
     public CencDrmConfiguration() {
     }
 
     /**
      * Get the playReady property: PlayReady configurations.
-     *
+     * 
      * @return the playReady value.
      */
     public StreamingPolicyPlayReadyConfiguration playReady() {
@@ -37,7 +41,7 @@ public final class CencDrmConfiguration {
 
     /**
      * Set the playReady property: PlayReady configurations.
-     *
+     * 
      * @param playReady the playReady value to set.
      * @return the CencDrmConfiguration object itself.
      */
@@ -48,7 +52,7 @@ public final class CencDrmConfiguration {
 
     /**
      * Get the widevine property: Widevine configurations.
-     *
+     * 
      * @return the widevine value.
      */
     public StreamingPolicyWidevineConfiguration widevine() {
@@ -57,7 +61,7 @@ public final class CencDrmConfiguration {
 
     /**
      * Set the widevine property: Widevine configurations.
-     *
+     * 
      * @param widevine the widevine value to set.
      * @return the CencDrmConfiguration object itself.
      */
@@ -68,7 +72,7 @@ public final class CencDrmConfiguration {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

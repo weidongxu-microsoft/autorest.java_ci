@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of ServiceEndpointPolicyDefinitions. */
+/**
+ * Resource collection API of ServiceEndpointPolicyDefinitions.
+ */
 public interface ServiceEndpointPolicyDefinitions {
     /**
      * Deletes the specified ServiceEndpoint policy definitions.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param serviceEndpointPolicyName The name of the Service Endpoint Policy.
      * @param serviceEndpointPolicyDefinitionName The name of the service endpoint policy definition.
@@ -24,7 +26,7 @@ public interface ServiceEndpointPolicyDefinitions {
 
     /**
      * Deletes the specified ServiceEndpoint policy definitions.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param serviceEndpointPolicyName The name of the Service Endpoint Policy.
      * @param serviceEndpointPolicyDefinitionName The name of the service endpoint policy definition.
@@ -33,15 +35,12 @@ public interface ServiceEndpointPolicyDefinitions {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void delete(
-        String resourceGroupName,
-        String serviceEndpointPolicyName,
-        String serviceEndpointPolicyDefinitionName,
+    void delete(String resourceGroupName, String serviceEndpointPolicyName, String serviceEndpointPolicyDefinitionName,
         Context context);
 
     /**
      * Get the specified service endpoint policy definitions from service endpoint policy.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param serviceEndpointPolicyName The name of the service endpoint policy name.
      * @param serviceEndpointPolicyDefinitionName The name of the service endpoint policy definition name.
@@ -49,18 +48,15 @@ public interface ServiceEndpointPolicyDefinitions {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified service endpoint policy definitions from service endpoint policy along with {@link
-     *     Response}.
+     * @return the specified service endpoint policy definitions from service endpoint policy along with
+     * {@link Response}.
      */
-    Response<ServiceEndpointPolicyDefinition> getWithResponse(
-        String resourceGroupName,
-        String serviceEndpointPolicyName,
-        String serviceEndpointPolicyDefinitionName,
-        Context context);
+    Response<ServiceEndpointPolicyDefinition> getWithResponse(String resourceGroupName,
+        String serviceEndpointPolicyName, String serviceEndpointPolicyDefinitionName, Context context);
 
     /**
      * Get the specified service endpoint policy definitions from service endpoint policy.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param serviceEndpointPolicyName The name of the service endpoint policy name.
      * @param serviceEndpointPolicyDefinitionName The name of the service endpoint policy definition name.
@@ -69,66 +65,66 @@ public interface ServiceEndpointPolicyDefinitions {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified service endpoint policy definitions from service endpoint policy.
      */
-    ServiceEndpointPolicyDefinition get(
-        String resourceGroupName, String serviceEndpointPolicyName, String serviceEndpointPolicyDefinitionName);
+    ServiceEndpointPolicyDefinition get(String resourceGroupName, String serviceEndpointPolicyName,
+        String serviceEndpointPolicyDefinitionName);
 
     /**
      * Gets all service endpoint policy definitions in a service end point policy.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param serviceEndpointPolicyName The name of the service endpoint policy name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all service endpoint policy definitions in a service end point policy as paginated response with {@link
-     *     PagedIterable}.
+     * @return all service endpoint policy definitions in a service end point policy as paginated response with
+     * {@link PagedIterable}.
      */
-    PagedIterable<ServiceEndpointPolicyDefinition> listByResourceGroup(
-        String resourceGroupName, String serviceEndpointPolicyName);
+    PagedIterable<ServiceEndpointPolicyDefinition> listByResourceGroup(String resourceGroupName,
+        String serviceEndpointPolicyName);
 
     /**
      * Gets all service endpoint policy definitions in a service end point policy.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param serviceEndpointPolicyName The name of the service endpoint policy name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all service endpoint policy definitions in a service end point policy as paginated response with {@link
-     *     PagedIterable}.
+     * @return all service endpoint policy definitions in a service end point policy as paginated response with
+     * {@link PagedIterable}.
      */
-    PagedIterable<ServiceEndpointPolicyDefinition> listByResourceGroup(
-        String resourceGroupName, String serviceEndpointPolicyName, Context context);
+    PagedIterable<ServiceEndpointPolicyDefinition> listByResourceGroup(String resourceGroupName,
+        String serviceEndpointPolicyName, Context context);
 
     /**
      * Get the specified service endpoint policy definitions from service endpoint policy.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified service endpoint policy definitions from service endpoint policy along with {@link
-     *     Response}.
+     * @return the specified service endpoint policy definitions from service endpoint policy along with
+     * {@link Response}.
      */
     ServiceEndpointPolicyDefinition getById(String id);
 
     /**
      * Get the specified service endpoint policy definitions from service endpoint policy.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified service endpoint policy definitions from service endpoint policy along with {@link
-     *     Response}.
+     * @return the specified service endpoint policy definitions from service endpoint policy along with
+     * {@link Response}.
      */
     Response<ServiceEndpointPolicyDefinition> getByIdWithResponse(String id, Context context);
 
     /**
      * Deletes the specified ServiceEndpoint policy definitions.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -138,7 +134,7 @@ public interface ServiceEndpointPolicyDefinitions {
 
     /**
      * Deletes the specified ServiceEndpoint policy definitions.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -149,7 +145,7 @@ public interface ServiceEndpointPolicyDefinitions {
 
     /**
      * Begins definition for a new ServiceEndpointPolicyDefinition resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new ServiceEndpointPolicyDefinition definition.
      */

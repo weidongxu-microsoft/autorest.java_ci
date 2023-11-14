@@ -9,7 +9,9 @@ import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Network Rule Set Properties of IotHub. */
+/**
+ * Network Rule Set Properties of IotHub.
+ */
 @Fluent
 public final class NetworkRuleSetProperties {
     /*
@@ -30,13 +32,15 @@ public final class NetworkRuleSetProperties {
     @JsonProperty(value = "ipRules", required = true)
     private List<NetworkRuleSetIpRule> ipRules;
 
-    /** Creates an instance of NetworkRuleSetProperties class. */
+    /**
+     * Creates an instance of NetworkRuleSetProperties class.
+     */
     public NetworkRuleSetProperties() {
     }
 
     /**
      * Get the defaultAction property: Default Action for Network Rule Set.
-     *
+     * 
      * @return the defaultAction value.
      */
     public DefaultAction defaultAction() {
@@ -45,7 +49,7 @@ public final class NetworkRuleSetProperties {
 
     /**
      * Set the defaultAction property: Default Action for Network Rule Set.
-     *
+     * 
      * @param defaultAction the defaultAction value to set.
      * @return the NetworkRuleSetProperties object itself.
      */
@@ -57,7 +61,7 @@ public final class NetworkRuleSetProperties {
     /**
      * Get the applyToBuiltInEventHubEndpoint property: If True, then Network Rule Set is also applied to BuiltIn
      * EventHub EndPoint of IotHub.
-     *
+     * 
      * @return the applyToBuiltInEventHubEndpoint value.
      */
     public boolean applyToBuiltInEventHubEndpoint() {
@@ -67,7 +71,7 @@ public final class NetworkRuleSetProperties {
     /**
      * Set the applyToBuiltInEventHubEndpoint property: If True, then Network Rule Set is also applied to BuiltIn
      * EventHub EndPoint of IotHub.
-     *
+     * 
      * @param applyToBuiltInEventHubEndpoint the applyToBuiltInEventHubEndpoint value to set.
      * @return the NetworkRuleSetProperties object itself.
      */
@@ -78,7 +82,7 @@ public final class NetworkRuleSetProperties {
 
     /**
      * Get the ipRules property: List of IP Rules.
-     *
+     * 
      * @return the ipRules value.
      */
     public List<NetworkRuleSetIpRule> ipRules() {
@@ -87,7 +91,7 @@ public final class NetworkRuleSetProperties {
 
     /**
      * Set the ipRules property: List of IP Rules.
-     *
+     * 
      * @param ipRules the ipRules value to set.
      * @return the NetworkRuleSetProperties object itself.
      */
@@ -98,15 +102,13 @@ public final class NetworkRuleSetProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (ipRules() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property ipRules in model NetworkRuleSetProperties"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property ipRules in model NetworkRuleSetProperties"));
         } else {
             ipRules().forEach(e -> e.validate());
         }

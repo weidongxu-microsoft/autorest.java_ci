@@ -21,22 +21,18 @@ public final class CloudServiceRolesImpl implements CloudServiceRoles {
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    public CloudServiceRolesImpl(
-        CloudServiceRolesClient innerClient,
+    public CloudServiceRolesImpl(CloudServiceRolesClient innerClient,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<CloudServiceRole> getWithResponse(
-        String roleName, String resourceGroupName, String cloudServiceName, Context context) {
-        Response<CloudServiceRoleInner> inner =
-            this.serviceClient().getWithResponse(roleName, resourceGroupName, cloudServiceName, context);
+    public Response<CloudServiceRole> getWithResponse(String roleName, String resourceGroupName,
+        String cloudServiceName, Context context) {
+        Response<CloudServiceRoleInner> inner
+            = this.serviceClient().getWithResponse(roleName, resourceGroupName, cloudServiceName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new CloudServiceRoleImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -58,8 +54,8 @@ public final class CloudServiceRolesImpl implements CloudServiceRoles {
     }
 
     public PagedIterable<CloudServiceRole> list(String resourceGroupName, String cloudServiceName, Context context) {
-        PagedIterable<CloudServiceRoleInner> inner =
-            this.serviceClient().list(resourceGroupName, cloudServiceName, context);
+        PagedIterable<CloudServiceRoleInner> inner
+            = this.serviceClient().list(resourceGroupName, cloudServiceName, context);
         return Utils.mapPage(inner, inner1 -> new CloudServiceRoleImpl(inner1, this.manager()));
     }
 

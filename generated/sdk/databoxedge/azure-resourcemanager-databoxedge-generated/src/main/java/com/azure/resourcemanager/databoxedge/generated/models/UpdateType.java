@@ -8,20 +8,28 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Type of the Update. */
+/**
+ * Type of the Update.
+ */
 public final class UpdateType extends ExpandableStringEnum<UpdateType> {
-    /** Static value Software for UpdateType. */
+    /**
+     * Static value Software for UpdateType.
+     */
     public static final UpdateType SOFTWARE = fromString("Software");
 
-    /** Static value Kubernetes for UpdateType. */
+    /**
+     * Static value Kubernetes for UpdateType.
+     */
     public static final UpdateType KUBERNETES = fromString("Kubernetes");
 
-    /** Static value Firmware for UpdateType. */
+    /**
+     * Static value Firmware for UpdateType.
+     */
     public static final UpdateType FIRMWARE = fromString("Firmware");
 
     /**
      * Creates a new instance of UpdateType value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -30,7 +38,7 @@ public final class UpdateType extends ExpandableStringEnum<UpdateType> {
 
     /**
      * Creates or finds a UpdateType from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding UpdateType.
      */
@@ -41,7 +49,7 @@ public final class UpdateType extends ExpandableStringEnum<UpdateType> {
 
     /**
      * Gets known UpdateType values.
-     *
+     * 
      * @return known UpdateType values.
      */
     public static Collection<UpdateType> values() {

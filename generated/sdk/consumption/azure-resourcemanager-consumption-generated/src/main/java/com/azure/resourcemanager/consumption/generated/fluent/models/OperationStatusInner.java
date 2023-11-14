@@ -9,7 +9,9 @@ import com.azure.resourcemanager.consumption.generated.models.OperationStatusTyp
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
-/** The status of the long running operation. */
+/**
+ * The status of the long running operation.
+ */
 @Fluent
 public final class OperationStatusInner {
     /*
@@ -24,13 +26,15 @@ public final class OperationStatusInner {
     @JsonProperty(value = "properties")
     private PricesheetDownloadProperties innerProperties;
 
-    /** Creates an instance of OperationStatusInner class. */
+    /**
+     * Creates an instance of OperationStatusInner class.
+     */
     public OperationStatusInner() {
     }
 
     /**
      * Get the status property: The status of the long running operation.
-     *
+     * 
      * @return the status value.
      */
     public OperationStatusType status() {
@@ -39,7 +43,7 @@ public final class OperationStatusInner {
 
     /**
      * Set the status property: The status of the long running operation.
-     *
+     * 
      * @param status the status value to set.
      * @return the OperationStatusInner object itself.
      */
@@ -50,7 +54,7 @@ public final class OperationStatusInner {
 
     /**
      * Get the innerProperties property: The properties of the resource generated.
-     *
+     * 
      * @return the innerProperties value.
      */
     private PricesheetDownloadProperties innerProperties() {
@@ -59,7 +63,7 @@ public final class OperationStatusInner {
 
     /**
      * Get the downloadUrl property: The link (url) to download the pricesheet.
-     *
+     * 
      * @return the downloadUrl value.
      */
     public String downloadUrl() {
@@ -68,7 +72,7 @@ public final class OperationStatusInner {
 
     /**
      * Get the validTill property: Download link validity.
-     *
+     * 
      * @return the validTill value.
      */
     public OffsetDateTime validTill() {
@@ -77,7 +81,7 @@ public final class OperationStatusInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

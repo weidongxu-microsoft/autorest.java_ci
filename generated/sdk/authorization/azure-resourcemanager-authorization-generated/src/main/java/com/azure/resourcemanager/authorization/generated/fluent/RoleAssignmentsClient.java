@@ -12,11 +12,13 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.authorization.generated.fluent.models.RoleAssignmentInner;
 import com.azure.resourcemanager.authorization.generated.models.RoleAssignmentCreateParameters;
 
-/** An instance of this class provides access to all the operations defined in RoleAssignmentsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in RoleAssignmentsClient.
+ */
 public interface RoleAssignmentsClient {
     /**
      * Gets role assignments for a resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
@@ -28,24 +30,20 @@ public interface RoleAssignmentsClient {
      * @return role assignments for a resource as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<RoleAssignmentInner> listForResource(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName);
+    PagedIterable<RoleAssignmentInner> listForResource(String resourceGroupName, String resourceProviderNamespace,
+        String parentResourcePath, String resourceType, String resourceName);
 
     /**
      * Gets role assignments for a resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the resource.
      * @param resourceName The name of the resource to get role assignments for.
      * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or
-     *     above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope
-     *     for the specified principal.
+     * above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for
+     * the specified principal.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -53,18 +51,12 @@ public interface RoleAssignmentsClient {
      * @return role assignments for a resource as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<RoleAssignmentInner> listForResource(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
-        String filter,
-        Context context);
+    PagedIterable<RoleAssignmentInner> listForResource(String resourceGroupName, String resourceProviderNamespace,
+        String parentResourcePath, String resourceType, String resourceName, String filter, Context context);
 
     /**
      * Gets role assignments for a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -76,11 +68,11 @@ public interface RoleAssignmentsClient {
 
     /**
      * Gets role assignments for a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or
-     *     above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope
-     *     for the specified principal.
+     * above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for
+     * the specified principal.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -92,7 +84,7 @@ public interface RoleAssignmentsClient {
 
     /**
      * Deletes a role assignment.
-     *
+     * 
      * @param scope The scope of the role assignment to delete.
      * @param roleAssignmentName The name of the role assignment to delete.
      * @param context The context to associate with this operation.
@@ -106,7 +98,7 @@ public interface RoleAssignmentsClient {
 
     /**
      * Deletes a role assignment.
-     *
+     * 
      * @param scope The scope of the role assignment to delete.
      * @param roleAssignmentName The name of the role assignment to delete.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -119,14 +111,14 @@ public interface RoleAssignmentsClient {
 
     /**
      * Creates a role assignment.
-     *
+     * 
      * @param scope The scope of the role assignment to create. The scope can be any REST resource instance. For
-     *     example, use '/subscriptions/{subscription-id}/' for a subscription,
-     *     '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}' for a resource group, and
-     *     '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{resource-provider}/{resource-type}/{resource-name}'
-     *     for a resource.
+     * example, use '/subscriptions/{subscription-id}/' for a subscription,
+     * '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}' for a resource group, and
+     * '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{resource-provider}/{resource-type}/{resource-name}'
+     * for a resource.
      * @param roleAssignmentName A GUID for the role assignment to create. The name must be unique and different for
-     *     each role assignment.
+     * each role assignment.
      * @param parameters Parameters for the role assignment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -135,19 +127,19 @@ public interface RoleAssignmentsClient {
      * @return role Assignments along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<RoleAssignmentInner> createWithResponse(
-        String scope, String roleAssignmentName, RoleAssignmentCreateParameters parameters, Context context);
+    Response<RoleAssignmentInner> createWithResponse(String scope, String roleAssignmentName,
+        RoleAssignmentCreateParameters parameters, Context context);
 
     /**
      * Creates a role assignment.
-     *
+     * 
      * @param scope The scope of the role assignment to create. The scope can be any REST resource instance. For
-     *     example, use '/subscriptions/{subscription-id}/' for a subscription,
-     *     '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}' for a resource group, and
-     *     '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{resource-provider}/{resource-type}/{resource-name}'
-     *     for a resource.
+     * example, use '/subscriptions/{subscription-id}/' for a subscription,
+     * '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}' for a resource group, and
+     * '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{resource-provider}/{resource-type}/{resource-name}'
+     * for a resource.
      * @param roleAssignmentName A GUID for the role assignment to create. The name must be unique and different for
-     *     each role assignment.
+     * each role assignment.
      * @param parameters Parameters for the role assignment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -159,7 +151,7 @@ public interface RoleAssignmentsClient {
 
     /**
      * Get the specified role assignment.
-     *
+     * 
      * @param scope The scope of the role assignment.
      * @param roleAssignmentName The name of the role assignment to get.
      * @param context The context to associate with this operation.
@@ -173,7 +165,7 @@ public interface RoleAssignmentsClient {
 
     /**
      * Get the specified role assignment.
-     *
+     * 
      * @param scope The scope of the role assignment.
      * @param roleAssignmentName The name of the role assignment to get.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -186,7 +178,7 @@ public interface RoleAssignmentsClient {
 
     /**
      * Deletes a role assignment.
-     *
+     * 
      * @param roleId The ID of the role assignment to delete.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -199,7 +191,7 @@ public interface RoleAssignmentsClient {
 
     /**
      * Deletes a role assignment.
-     *
+     * 
      * @param roleId The ID of the role assignment to delete.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -211,7 +203,7 @@ public interface RoleAssignmentsClient {
 
     /**
      * Creates a role assignment by ID.
-     *
+     * 
      * @param roleId The ID of the role assignment to create.
      * @param parameters Parameters for the role assignment.
      * @param context The context to associate with this operation.
@@ -221,12 +213,12 @@ public interface RoleAssignmentsClient {
      * @return role Assignments along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<RoleAssignmentInner> createByIdWithResponse(
-        String roleId, RoleAssignmentCreateParameters parameters, Context context);
+    Response<RoleAssignmentInner> createByIdWithResponse(String roleId, RoleAssignmentCreateParameters parameters,
+        Context context);
 
     /**
      * Creates a role assignment by ID.
-     *
+     * 
      * @param roleId The ID of the role assignment to create.
      * @param parameters Parameters for the role assignment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -239,7 +231,7 @@ public interface RoleAssignmentsClient {
 
     /**
      * Gets a role assignment by ID.
-     *
+     * 
      * @param roleId The ID of the role assignment to get.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -252,7 +244,7 @@ public interface RoleAssignmentsClient {
 
     /**
      * Gets a role assignment by ID.
-     *
+     * 
      * @param roleId The ID of the role assignment to get.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -264,7 +256,7 @@ public interface RoleAssignmentsClient {
 
     /**
      * Gets all role assignments for the subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all role assignments for the subscription as paginated response with {@link PagedIterable}.
@@ -274,10 +266,10 @@ public interface RoleAssignmentsClient {
 
     /**
      * Gets all role assignments for the subscription.
-     *
+     * 
      * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or
-     *     above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope
-     *     for the specified principal.
+     * above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for
+     * the specified principal.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -289,7 +281,7 @@ public interface RoleAssignmentsClient {
 
     /**
      * Gets role assignments for a scope.
-     *
+     * 
      * @param scope The scope of the role assignments.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -301,11 +293,11 @@ public interface RoleAssignmentsClient {
 
     /**
      * Gets role assignments for a scope.
-     *
+     * 
      * @param scope The scope of the role assignments.
      * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or
-     *     above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope
-     *     for the specified principal.
+     * above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for
+     * the specified principal.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

@@ -50,13 +50,15 @@ public final class H265Layer extends H265VideoLayer {
     @JsonProperty(value = "referenceFrames")
     private Integer referenceFrames;
 
-    /** Creates an instance of H265Layer class. */
+    /**
+     * Creates an instance of H265Layer class.
+     */
     public H265Layer() {
     }
 
     /**
      * Get the profile property: We currently support Main. Default is Auto.
-     *
+     * 
      * @return the profile value.
      */
     public H265VideoProfile profile() {
@@ -65,7 +67,7 @@ public final class H265Layer extends H265VideoLayer {
 
     /**
      * Set the profile property: We currently support Main. Default is Auto.
-     *
+     * 
      * @param profile the profile value to set.
      * @return the H265Layer object itself.
      */
@@ -75,10 +77,10 @@ public final class H265Layer extends H265VideoLayer {
     }
 
     /**
-     * Get the level property: We currently support Level up to 6.2. The value can be Auto, or a number that matches the
-     * H.265 profile. If not specified, the default is Auto, which lets the encoder choose the Level that is appropriate
-     * for this layer.
-     *
+     * Get the level property: We currently support Level up to 6.2. The value can be Auto, or a number that matches
+     * the H.265 profile. If not specified, the default is Auto, which lets the encoder choose the Level that is
+     * appropriate for this layer.
+     * 
      * @return the level value.
      */
     public String level() {
@@ -86,10 +88,10 @@ public final class H265Layer extends H265VideoLayer {
     }
 
     /**
-     * Set the level property: We currently support Level up to 6.2. The value can be Auto, or a number that matches the
-     * H.265 profile. If not specified, the default is Auto, which lets the encoder choose the Level that is appropriate
-     * for this layer.
-     *
+     * Set the level property: We currently support Level up to 6.2. The value can be Auto, or a number that matches
+     * the H.265 profile. If not specified, the default is Auto, which lets the encoder choose the Level that is
+     * appropriate for this layer.
+     * 
      * @param level the level value to set.
      * @return the H265Layer object itself.
      */
@@ -101,7 +103,7 @@ public final class H265Layer extends H265VideoLayer {
     /**
      * Get the bufferWindow property: The VBV buffer window length. The value should be in ISO 8601 format. The value
      * should be in the range [0.1-100] seconds. The default is 5 seconds (for example, PT5S).
-     *
+     * 
      * @return the bufferWindow value.
      */
     public Duration bufferWindow() {
@@ -111,7 +113,7 @@ public final class H265Layer extends H265VideoLayer {
     /**
      * Set the bufferWindow property: The VBV buffer window length. The value should be in ISO 8601 format. The value
      * should be in the range [0.1-100] seconds. The default is 5 seconds (for example, PT5S).
-     *
+     * 
      * @param bufferWindow the bufferWindow value to set.
      * @return the H265Layer object itself.
      */
@@ -122,10 +124,10 @@ public final class H265Layer extends H265VideoLayer {
 
     /**
      * Get the crf property: The value of CRF to be used when encoding this layer. This setting takes effect when
-     * RateControlMode of video codec is set at CRF mode. The range of CRF value is between 0 and 51, where lower values
-     * would result in better quality, at the expense of higher file sizes. Higher values mean more compression, but at
-     * some point quality degradation will be noticed. Default value is 28.
-     *
+     * RateControlMode of video codec is set at CRF mode. The range of CRF value is between 0 and 51, where lower
+     * values would result in better quality, at the expense of higher file sizes. Higher values mean more compression,
+     * but at some point quality degradation will be noticed. Default value is 28.
+     * 
      * @return the crf value.
      */
     public Float crf() {
@@ -134,10 +136,10 @@ public final class H265Layer extends H265VideoLayer {
 
     /**
      * Set the crf property: The value of CRF to be used when encoding this layer. This setting takes effect when
-     * RateControlMode of video codec is set at CRF mode. The range of CRF value is between 0 and 51, where lower values
-     * would result in better quality, at the expense of higher file sizes. Higher values mean more compression, but at
-     * some point quality degradation will be noticed. Default value is 28.
-     *
+     * RateControlMode of video codec is set at CRF mode. The range of CRF value is between 0 and 51, where lower
+     * values would result in better quality, at the expense of higher file sizes. Higher values mean more compression,
+     * but at some point quality degradation will be noticed. Default value is 28.
+     * 
      * @param crf the crf value to set.
      * @return the H265Layer object itself.
      */
@@ -149,7 +151,7 @@ public final class H265Layer extends H265VideoLayer {
     /**
      * Get the referenceFrames property: The number of reference frames to be used when encoding this layer. If not
      * specified, the encoder determines an appropriate number based on the encoder complexity setting.
-     *
+     * 
      * @return the referenceFrames value.
      */
     public Integer referenceFrames() {
@@ -159,7 +161,7 @@ public final class H265Layer extends H265VideoLayer {
     /**
      * Set the referenceFrames property: The number of reference frames to be used when encoding this layer. If not
      * specified, the encoder determines an appropriate number based on the encoder complexity setting.
-     *
+     * 
      * @param referenceFrames the referenceFrames value to set.
      * @return the H265Layer object itself.
      */
@@ -168,63 +170,81 @@ public final class H265Layer extends H265VideoLayer {
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public H265Layer withBitrate(int bitrate) {
         super.withBitrate(bitrate);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public H265Layer withMaxBitrate(Integer maxBitrate) {
         super.withMaxBitrate(maxBitrate);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public H265Layer withBFrames(Integer bFrames) {
         super.withBFrames(bFrames);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public H265Layer withFrameRate(String frameRate) {
         super.withFrameRate(frameRate);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public H265Layer withSlices(Integer slices) {
         super.withSlices(slices);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public H265Layer withAdaptiveBFrame(Boolean adaptiveBFrame) {
         super.withAdaptiveBFrame(adaptiveBFrame);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public H265Layer withWidth(String width) {
         super.withWidth(width);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public H265Layer withHeight(String height) {
         super.withHeight(height);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public H265Layer withLabel(String label) {
         super.withLabel(label);
@@ -233,7 +253,7 @@ public final class H265Layer extends H265VideoLayer {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

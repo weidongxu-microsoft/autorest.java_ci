@@ -7,11 +7,13 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of ResourceNavigationLinks. */
+/**
+ * Resource collection API of ResourceNavigationLinks.
+ */
 public interface ResourceNavigationLinks {
     /**
      * Gets a list of resource navigation links for a subnet.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
@@ -21,12 +23,12 @@ public interface ResourceNavigationLinks {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a list of resource navigation links for a subnet along with {@link Response}.
      */
-    Response<ResourceNavigationLinksListResult> listWithResponse(
-        String resourceGroupName, String virtualNetworkName, String subnetName, Context context);
+    Response<ResourceNavigationLinksListResult> listWithResponse(String resourceGroupName, String virtualNetworkName,
+        String subnetName, Context context);
 
     /**
      * Gets a list of resource navigation links for a subnet.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.

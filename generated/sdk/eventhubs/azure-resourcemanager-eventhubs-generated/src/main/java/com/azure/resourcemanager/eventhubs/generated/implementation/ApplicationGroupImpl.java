@@ -89,24 +89,16 @@ public final class ApplicationGroupImpl
     }
 
     public ApplicationGroup create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getApplicationGroups()
-                .createOrUpdateApplicationGroupWithResponse(
-                    resourceGroupName, namespaceName, applicationGroupName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getApplicationGroups().createOrUpdateApplicationGroupWithResponse(
+                resourceGroupName, namespaceName, applicationGroupName, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public ApplicationGroup create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getApplicationGroups()
-                .createOrUpdateApplicationGroupWithResponse(
-                    resourceGroupName, namespaceName, applicationGroupName, this.innerModel(), context)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getApplicationGroups().createOrUpdateApplicationGroupWithResponse(
+                resourceGroupName, namespaceName, applicationGroupName, this.innerModel(), context).getValue();
         return this;
     }
 
@@ -121,29 +113,20 @@ public final class ApplicationGroupImpl
     }
 
     public ApplicationGroup apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getApplicationGroups()
-                .createOrUpdateApplicationGroupWithResponse(
-                    resourceGroupName, namespaceName, applicationGroupName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getApplicationGroups().createOrUpdateApplicationGroupWithResponse(
+                resourceGroupName, namespaceName, applicationGroupName, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public ApplicationGroup apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getApplicationGroups()
-                .createOrUpdateApplicationGroupWithResponse(
-                    resourceGroupName, namespaceName, applicationGroupName, this.innerModel(), context)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getApplicationGroups().createOrUpdateApplicationGroupWithResponse(
+                resourceGroupName, namespaceName, applicationGroupName, this.innerModel(), context).getValue();
         return this;
     }
 
-    ApplicationGroupImpl(
-        ApplicationGroupInner innerObject,
+    ApplicationGroupImpl(ApplicationGroupInner innerObject,
         com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -153,22 +136,14 @@ public final class ApplicationGroupImpl
     }
 
     public ApplicationGroup refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getApplicationGroups()
-                .getWithResponse(resourceGroupName, namespaceName, applicationGroupName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getApplicationGroups()
+            .getWithResponse(resourceGroupName, namespaceName, applicationGroupName, Context.NONE).getValue();
         return this;
     }
 
     public ApplicationGroup refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getApplicationGroups()
-                .getWithResponse(resourceGroupName, namespaceName, applicationGroupName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getApplicationGroups()
+            .getWithResponse(resourceGroupName, namespaceName, applicationGroupName, context).getValue();
         return this;
     }
 

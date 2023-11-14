@@ -15,8 +15,7 @@ public final class EffectiveRouteMapRouteListImpl implements EffectiveRouteMapRo
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    EffectiveRouteMapRouteListImpl(
-        EffectiveRouteMapRouteListInner innerObject,
+    EffectiveRouteMapRouteListImpl(EffectiveRouteMapRouteListInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

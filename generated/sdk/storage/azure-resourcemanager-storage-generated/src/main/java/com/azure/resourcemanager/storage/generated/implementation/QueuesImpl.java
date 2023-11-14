@@ -23,21 +23,18 @@ public final class QueuesImpl implements Queues {
 
     private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
-    public QueuesImpl(
-        QueuesClient innerClient, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
+    public QueuesImpl(QueuesClient innerClient,
+        com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<StorageQueue> getWithResponse(
-        String resourceGroupName, String accountName, String queueName, Context context) {
-        Response<StorageQueueInner> inner =
-            this.serviceClient().getWithResponse(resourceGroupName, accountName, queueName, context);
+    public Response<StorageQueue> getWithResponse(String resourceGroupName, String accountName, String queueName,
+        Context context) {
+        Response<StorageQueueInner> inner
+            = this.serviceClient().getWithResponse(resourceGroupName, accountName, queueName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new StorageQueueImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -53,8 +50,8 @@ public final class QueuesImpl implements Queues {
         }
     }
 
-    public Response<Void> deleteWithResponse(
-        String resourceGroupName, String accountName, String queueName, Context context) {
+    public Response<Void> deleteWithResponse(String resourceGroupName, String accountName, String queueName,
+        Context context) {
         return this.serviceClient().deleteWithResponse(resourceGroupName, accountName, queueName, context);
     }
 
@@ -67,36 +64,28 @@ public final class QueuesImpl implements Queues {
         return Utils.mapPage(inner, inner1 -> new ListQueueImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<ListQueue> list(
-        String resourceGroupName, String accountName, String maxpagesize, String filter, Context context) {
-        PagedIterable<ListQueueInner> inner =
-            this.serviceClient().list(resourceGroupName, accountName, maxpagesize, filter, context);
+    public PagedIterable<ListQueue> list(String resourceGroupName, String accountName, String maxpagesize,
+        String filter, Context context) {
+        PagedIterable<ListQueueInner> inner
+            = this.serviceClient().list(resourceGroupName, accountName, maxpagesize, filter, context);
         return Utils.mapPage(inner, inner1 -> new ListQueueImpl(inner1, this.manager()));
     }
 
     public StorageQueue getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
         }
         String queueName = Utils.getValueFromIdByName(id, "queues");
         if (queueName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'queues'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'queues'.", id)));
         }
         return this.getWithResponse(resourceGroupName, accountName, queueName, Context.NONE).getValue();
     }
@@ -104,26 +93,18 @@ public final class QueuesImpl implements Queues {
     public Response<StorageQueue> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
         }
         String queueName = Utils.getValueFromIdByName(id, "queues");
         if (queueName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'queues'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'queues'.", id)));
         }
         return this.getWithResponse(resourceGroupName, accountName, queueName, context);
     }
@@ -131,26 +112,18 @@ public final class QueuesImpl implements Queues {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
         }
         String queueName = Utils.getValueFromIdByName(id, "queues");
         if (queueName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'queues'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'queues'.", id)));
         }
         this.deleteWithResponse(resourceGroupName, accountName, queueName, Context.NONE);
     }
@@ -158,26 +131,18 @@ public final class QueuesImpl implements Queues {
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
         }
         String queueName = Utils.getValueFromIdByName(id, "queues");
         if (queueName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'queues'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'queues'.", id)));
         }
         return this.deleteWithResponse(resourceGroupName, accountName, queueName, context);
     }

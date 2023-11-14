@@ -9,7 +9,9 @@ import com.azure.resourcemanager.consumption.generated.fluent.models.BudgetInner
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Result of listing budgets. It contains a list of available budgets in the scope provided. */
+/**
+ * Result of listing budgets. It contains a list of available budgets in the scope provided.
+ */
 @Immutable
 public final class BudgetsListResult {
     /*
@@ -24,13 +26,15 @@ public final class BudgetsListResult {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
-    /** Creates an instance of BudgetsListResult class. */
+    /**
+     * Creates an instance of BudgetsListResult class.
+     */
     public BudgetsListResult() {
     }
 
     /**
      * Get the value property: The list of budgets.
-     *
+     * 
      * @return the value value.
      */
     public List<BudgetInner> value() {
@@ -39,7 +43,7 @@ public final class BudgetsListResult {
 
     /**
      * Get the nextLink property: The link (url) to the next page of results.
-     *
+     * 
      * @return the nextLink value.
      */
     public String nextLink() {
@@ -48,7 +52,7 @@ public final class BudgetsListResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

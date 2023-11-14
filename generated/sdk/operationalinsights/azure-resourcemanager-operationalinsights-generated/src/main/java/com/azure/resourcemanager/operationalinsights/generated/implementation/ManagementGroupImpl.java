@@ -13,8 +13,7 @@ public final class ManagementGroupImpl implements ManagementGroup {
 
     private final com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager;
 
-    ManagementGroupImpl(
-        ManagementGroupInner innerObject,
+    ManagementGroupImpl(ManagementGroupInner innerObject,
         com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

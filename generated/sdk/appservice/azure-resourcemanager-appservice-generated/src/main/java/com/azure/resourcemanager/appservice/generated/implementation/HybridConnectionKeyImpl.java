@@ -12,8 +12,7 @@ public final class HybridConnectionKeyImpl implements HybridConnectionKey {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    HybridConnectionKeyImpl(
-        HybridConnectionKeyInner innerObject,
+    HybridConnectionKeyImpl(HybridConnectionKeyInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

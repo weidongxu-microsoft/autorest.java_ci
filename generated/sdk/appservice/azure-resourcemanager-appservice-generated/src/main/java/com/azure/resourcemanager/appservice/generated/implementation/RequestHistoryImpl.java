@@ -15,8 +15,7 @@ public final class RequestHistoryImpl implements RequestHistory {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    RequestHistoryImpl(
-        RequestHistoryInner innerObject,
+    RequestHistoryImpl(RequestHistoryInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

@@ -7,11 +7,13 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of VpnSiteLinkConnections. */
+/**
+ * Resource collection API of VpnSiteLinkConnections.
+ */
 public interface VpnSiteLinkConnections {
     /**
      * Retrieves the details of a vpn site link connection.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @param connectionName The name of the vpn connection.
@@ -22,16 +24,12 @@ public interface VpnSiteLinkConnections {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return vpnSiteLinkConnection Resource along with {@link Response}.
      */
-    Response<VpnSiteLinkConnection> getWithResponse(
-        String resourceGroupName,
-        String gatewayName,
-        String connectionName,
-        String linkConnectionName,
-        Context context);
+    Response<VpnSiteLinkConnection> getWithResponse(String resourceGroupName, String gatewayName, String connectionName,
+        String linkConnectionName, Context context);
 
     /**
      * Retrieves the details of a vpn site link connection.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @param connectionName The name of the vpn connection.
@@ -41,6 +39,6 @@ public interface VpnSiteLinkConnections {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return vpnSiteLinkConnection Resource.
      */
-    VpnSiteLinkConnection get(
-        String resourceGroupName, String gatewayName, String connectionName, String linkConnectionName);
+    VpnSiteLinkConnection get(String resourceGroupName, String gatewayName, String connectionName,
+        String linkConnectionName);
 }

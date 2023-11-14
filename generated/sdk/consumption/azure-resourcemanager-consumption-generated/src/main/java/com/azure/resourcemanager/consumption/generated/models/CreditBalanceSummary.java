@@ -7,7 +7,9 @@ package com.azure.resourcemanager.consumption.generated.models;
 import com.azure.core.annotation.Immutable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Summary of credit balances. */
+/**
+ * Summary of credit balances.
+ */
 @Immutable
 public final class CreditBalanceSummary {
     /*
@@ -28,13 +30,15 @@ public final class CreditBalanceSummary {
     @JsonProperty(value = "estimatedBalanceInBillingCurrency", access = JsonProperty.Access.WRITE_ONLY)
     private AmountWithExchangeRate estimatedBalanceInBillingCurrency;
 
-    /** Creates an instance of CreditBalanceSummary class. */
+    /**
+     * Creates an instance of CreditBalanceSummary class.
+     */
     public CreditBalanceSummary() {
     }
 
     /**
      * Get the estimatedBalance property: Estimated balance.
-     *
+     * 
      * @return the estimatedBalance value.
      */
     public Amount estimatedBalance() {
@@ -43,7 +47,7 @@ public final class CreditBalanceSummary {
 
     /**
      * Get the currentBalance property: Current balance.
-     *
+     * 
      * @return the currentBalance value.
      */
     public Amount currentBalance() {
@@ -52,7 +56,7 @@ public final class CreditBalanceSummary {
 
     /**
      * Get the estimatedBalanceInBillingCurrency property: Estimated balance in billing currency.
-     *
+     * 
      * @return the estimatedBalanceInBillingCurrency value.
      */
     public AmountWithExchangeRate estimatedBalanceInBillingCurrency() {
@@ -61,7 +65,7 @@ public final class CreditBalanceSummary {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

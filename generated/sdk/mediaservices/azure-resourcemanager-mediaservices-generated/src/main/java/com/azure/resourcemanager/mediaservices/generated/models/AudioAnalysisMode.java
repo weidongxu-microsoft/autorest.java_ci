@@ -13,15 +13,19 @@ import java.util.Collection;
  * be chosen.
  */
 public final class AudioAnalysisMode extends ExpandableStringEnum<AudioAnalysisMode> {
-    /** Static value Standard for AudioAnalysisMode. */
+    /**
+     * Static value Standard for AudioAnalysisMode.
+     */
     public static final AudioAnalysisMode STANDARD = fromString("Standard");
 
-    /** Static value Basic for AudioAnalysisMode. */
+    /**
+     * Static value Basic for AudioAnalysisMode.
+     */
     public static final AudioAnalysisMode BASIC = fromString("Basic");
 
     /**
      * Creates a new instance of AudioAnalysisMode value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -30,7 +34,7 @@ public final class AudioAnalysisMode extends ExpandableStringEnum<AudioAnalysisM
 
     /**
      * Creates or finds a AudioAnalysisMode from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding AudioAnalysisMode.
      */
@@ -41,7 +45,7 @@ public final class AudioAnalysisMode extends ExpandableStringEnum<AudioAnalysisM
 
     /**
      * Gets known AudioAnalysisMode values.
-     *
+     * 
      * @return known AudioAnalysisMode values.
      */
     public static Collection<AudioAnalysisMode> values() {

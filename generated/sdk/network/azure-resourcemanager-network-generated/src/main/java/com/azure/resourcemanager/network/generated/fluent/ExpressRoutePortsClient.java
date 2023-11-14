@@ -16,11 +16,13 @@ import com.azure.resourcemanager.network.generated.fluent.models.GenerateExpress
 import com.azure.resourcemanager.network.generated.models.GenerateExpressRoutePortsLoaRequest;
 import com.azure.resourcemanager.network.generated.models.TagsObject;
 
-/** An instance of this class provides access to all the operations defined in ExpressRoutePortsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in ExpressRoutePortsClient.
+ */
 public interface ExpressRoutePortsClient {
     /**
      * Deletes the specified ExpressRoutePort resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the ExpressRoutePort resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -33,7 +35,7 @@ public interface ExpressRoutePortsClient {
 
     /**
      * Deletes the specified ExpressRoutePort resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the ExpressRoutePort resource.
      * @param context The context to associate with this operation.
@@ -43,12 +45,12 @@ public interface ExpressRoutePortsClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginDelete(
-        String resourceGroupName, String expressRoutePortName, Context context);
+    SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String expressRoutePortName,
+        Context context);
 
     /**
      * Deletes the specified ExpressRoutePort resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the ExpressRoutePort resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -60,7 +62,7 @@ public interface ExpressRoutePortsClient {
 
     /**
      * Deletes the specified ExpressRoutePort resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the ExpressRoutePort resource.
      * @param context The context to associate with this operation.
@@ -73,7 +75,7 @@ public interface ExpressRoutePortsClient {
 
     /**
      * Retrieves the requested ExpressRoutePort resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of ExpressRoutePort.
      * @param context The context to associate with this operation.
@@ -83,12 +85,12 @@ public interface ExpressRoutePortsClient {
      * @return expressRoute Port along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<ExpressRoutePortInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String expressRoutePortName, Context context);
+    Response<ExpressRoutePortInner> getByResourceGroupWithResponse(String resourceGroupName,
+        String expressRoutePortName, Context context);
 
     /**
      * Retrieves the requested ExpressRoutePort resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of ExpressRoutePort.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -101,7 +103,7 @@ public interface ExpressRoutePortsClient {
 
     /**
      * Creates or updates the specified ExpressRoutePort resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the ExpressRoutePort resource.
      * @param parameters Parameters supplied to the create ExpressRoutePort operation.
@@ -111,12 +113,12 @@ public interface ExpressRoutePortsClient {
      * @return the {@link SyncPoller} for polling of expressRoute Port.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<ExpressRoutePortInner>, ExpressRoutePortInner> beginCreateOrUpdate(
-        String resourceGroupName, String expressRoutePortName, ExpressRoutePortInner parameters);
+    SyncPoller<PollResult<ExpressRoutePortInner>, ExpressRoutePortInner> beginCreateOrUpdate(String resourceGroupName,
+        String expressRoutePortName, ExpressRoutePortInner parameters);
 
     /**
      * Creates or updates the specified ExpressRoutePort resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the ExpressRoutePort resource.
      * @param parameters Parameters supplied to the create ExpressRoutePort operation.
@@ -127,12 +129,12 @@ public interface ExpressRoutePortsClient {
      * @return the {@link SyncPoller} for polling of expressRoute Port.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<ExpressRoutePortInner>, ExpressRoutePortInner> beginCreateOrUpdate(
-        String resourceGroupName, String expressRoutePortName, ExpressRoutePortInner parameters, Context context);
+    SyncPoller<PollResult<ExpressRoutePortInner>, ExpressRoutePortInner> beginCreateOrUpdate(String resourceGroupName,
+        String expressRoutePortName, ExpressRoutePortInner parameters, Context context);
 
     /**
      * Creates or updates the specified ExpressRoutePort resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the ExpressRoutePort resource.
      * @param parameters Parameters supplied to the create ExpressRoutePort operation.
@@ -142,12 +144,12 @@ public interface ExpressRoutePortsClient {
      * @return expressRoute Port.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ExpressRoutePortInner createOrUpdate(
-        String resourceGroupName, String expressRoutePortName, ExpressRoutePortInner parameters);
+    ExpressRoutePortInner createOrUpdate(String resourceGroupName, String expressRoutePortName,
+        ExpressRoutePortInner parameters);
 
     /**
      * Creates or updates the specified ExpressRoutePort resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the ExpressRoutePort resource.
      * @param parameters Parameters supplied to the create ExpressRoutePort operation.
@@ -158,12 +160,12 @@ public interface ExpressRoutePortsClient {
      * @return expressRoute Port.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ExpressRoutePortInner createOrUpdate(
-        String resourceGroupName, String expressRoutePortName, ExpressRoutePortInner parameters, Context context);
+    ExpressRoutePortInner createOrUpdate(String resourceGroupName, String expressRoutePortName,
+        ExpressRoutePortInner parameters, Context context);
 
     /**
      * Update ExpressRoutePort tags.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the ExpressRoutePort resource.
      * @param parameters Parameters supplied to update ExpressRoutePort resource tags.
@@ -174,12 +176,12 @@ public interface ExpressRoutePortsClient {
      * @return expressRoute Port along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<ExpressRoutePortInner> updateTagsWithResponse(
-        String resourceGroupName, String expressRoutePortName, TagsObject parameters, Context context);
+    Response<ExpressRoutePortInner> updateTagsWithResponse(String resourceGroupName, String expressRoutePortName,
+        TagsObject parameters, Context context);
 
     /**
      * Update ExpressRoutePort tags.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the ExpressRoutePort resource.
      * @param parameters Parameters supplied to update ExpressRoutePort resource tags.
@@ -193,7 +195,7 @@ public interface ExpressRoutePortsClient {
 
     /**
      * List all the ExpressRoutePort resources in the specified resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -205,7 +207,7 @@ public interface ExpressRoutePortsClient {
 
     /**
      * List all the ExpressRoutePort resources in the specified resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -218,7 +220,7 @@ public interface ExpressRoutePortsClient {
 
     /**
      * List all the ExpressRoutePort resources in the specified subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return expressRoute Port List Result as paginated response with {@link PagedIterable}.
@@ -228,7 +230,7 @@ public interface ExpressRoutePortsClient {
 
     /**
      * List all the ExpressRoutePort resources in the specified subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -240,7 +242,7 @@ public interface ExpressRoutePortsClient {
 
     /**
      * Generate a letter of authorization for the requested ExpressRoutePort resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of ExpressRoutePort.
      * @param request Request parameters supplied to generate a letter of authorization.
@@ -251,15 +253,12 @@ public interface ExpressRoutePortsClient {
      * @return response for GenerateExpressRoutePortsLOA API service call along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<GenerateExpressRoutePortsLoaResultInner> generateLoaWithResponse(
-        String resourceGroupName,
-        String expressRoutePortName,
-        GenerateExpressRoutePortsLoaRequest request,
-        Context context);
+    Response<GenerateExpressRoutePortsLoaResultInner> generateLoaWithResponse(String resourceGroupName,
+        String expressRoutePortName, GenerateExpressRoutePortsLoaRequest request, Context context);
 
     /**
      * Generate a letter of authorization for the requested ExpressRoutePort resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of ExpressRoutePort.
      * @param request Request parameters supplied to generate a letter of authorization.
@@ -269,6 +268,6 @@ public interface ExpressRoutePortsClient {
      * @return response for GenerateExpressRoutePortsLOA API service call.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    GenerateExpressRoutePortsLoaResultInner generateLoa(
-        String resourceGroupName, String expressRoutePortName, GenerateExpressRoutePortsLoaRequest request);
+    GenerateExpressRoutePortsLoaResultInner generateLoa(String resourceGroupName, String expressRoutePortName,
+        GenerateExpressRoutePortsLoaRequest request);
 }

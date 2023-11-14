@@ -8,20 +8,28 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** The metric unit. */
+/**
+ * The metric unit.
+ */
 public final class MetricUnit extends ExpandableStringEnum<MetricUnit> {
-    /** Static value Bytes for MetricUnit. */
+    /**
+     * Static value Bytes for MetricUnit.
+     */
     public static final MetricUnit BYTES = fromString("Bytes");
 
-    /** Static value Count for MetricUnit. */
+    /**
+     * Static value Count for MetricUnit.
+     */
     public static final MetricUnit COUNT = fromString("Count");
 
-    /** Static value Milliseconds for MetricUnit. */
+    /**
+     * Static value Milliseconds for MetricUnit.
+     */
     public static final MetricUnit MILLISECONDS = fromString("Milliseconds");
 
     /**
      * Creates a new instance of MetricUnit value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -30,7 +38,7 @@ public final class MetricUnit extends ExpandableStringEnum<MetricUnit> {
 
     /**
      * Creates or finds a MetricUnit from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding MetricUnit.
      */
@@ -41,7 +49,7 @@ public final class MetricUnit extends ExpandableStringEnum<MetricUnit> {
 
     /**
      * Gets known MetricUnit values.
-     *
+     * 
      * @return known MetricUnit values.
      */
     public static Collection<MetricUnit> values() {

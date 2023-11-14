@@ -15,8 +15,7 @@ public final class AddressResponseImpl implements AddressResponse {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    AddressResponseImpl(
-        AddressResponseInner innerObject,
+    AddressResponseImpl(AddressResponseInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

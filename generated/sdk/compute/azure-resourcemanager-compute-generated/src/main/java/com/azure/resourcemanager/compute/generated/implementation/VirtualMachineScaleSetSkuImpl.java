@@ -14,8 +14,7 @@ public final class VirtualMachineScaleSetSkuImpl implements VirtualMachineScaleS
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    VirtualMachineScaleSetSkuImpl(
-        VirtualMachineScaleSetSkuInner innerObject,
+    VirtualMachineScaleSetSkuImpl(VirtualMachineScaleSetSkuInner innerObject,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

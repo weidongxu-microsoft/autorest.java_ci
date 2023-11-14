@@ -12,8 +12,8 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.Map;
 
 /**
- * Describes all the settings to be used when analyzing a video in order to detect (and optionally redact) all the faces
- * present.
+ * Describes all the settings to be used when analyzing a video in order to detect (and optionally redact) all the
+ * faces present.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
 @JsonTypeName("#Microsoft.Media.FaceDetectorPreset")
@@ -56,7 +56,9 @@ public final class FaceDetectorPreset extends Preset {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> experimentalOptions;
 
-    /** Creates an instance of FaceDetectorPreset class. */
+    /**
+     * Creates an instance of FaceDetectorPreset class.
+     */
     public FaceDetectorPreset() {
     }
 
@@ -67,9 +69,9 @@ public final class FaceDetectorPreset extends Preset {
      * ratio. It will only resize if the video is of higher resolution. For example, a 1920x1080 input would be scaled
      * to 640x360 before processing. Switching to "StandardDefinition" will reduce the time it takes to process high
      * resolution video. It may also reduce the cost of using this component (see
-     * https://azure.microsoft.com/en-us/pricing/details/media-services/#analytics for details). However, faces that end
-     * up being too small in the resized video may not be detected.
-     *
+     * https://azure.microsoft.com/en-us/pricing/details/media-services/#analytics for details). However, faces that
+     * end up being too small in the resized video may not be detected.
+     * 
      * @return the resolution value.
      */
     public AnalysisResolution resolution() {
@@ -83,9 +85,9 @@ public final class FaceDetectorPreset extends Preset {
      * ratio. It will only resize if the video is of higher resolution. For example, a 1920x1080 input would be scaled
      * to 640x360 before processing. Switching to "StandardDefinition" will reduce the time it takes to process high
      * resolution video. It may also reduce the cost of using this component (see
-     * https://azure.microsoft.com/en-us/pricing/details/media-services/#analytics for details). However, faces that end
-     * up being too small in the resized video may not be detected.
-     *
+     * https://azure.microsoft.com/en-us/pricing/details/media-services/#analytics for details). However, faces that
+     * end up being too small in the resized video may not be detected.
+     * 
      * @param resolution the resolution value to set.
      * @return the FaceDetectorPreset object itself.
      */
@@ -101,7 +103,7 @@ public final class FaceDetectorPreset extends Preset {
      * detected faces. 3) Redact - This enables a 2-pass process, allowing for selective redaction of a subset of
      * detected faces.It takes in the metadata file from a prior analyze pass, along with the source video, and a
      * user-selected subset of IDs that require redaction.
-     *
+     * 
      * @return the mode value.
      */
     public FaceRedactorMode mode() {
@@ -115,7 +117,7 @@ public final class FaceDetectorPreset extends Preset {
      * detected faces. 3) Redact - This enables a 2-pass process, allowing for selective redaction of a subset of
      * detected faces.It takes in the metadata file from a prior analyze pass, along with the source video, and a
      * user-selected subset of IDs that require redaction.
-     *
+     * 
      * @param mode the mode value to set.
      * @return the FaceDetectorPreset object itself.
      */
@@ -126,7 +128,7 @@ public final class FaceDetectorPreset extends Preset {
 
     /**
      * Get the blurType property: Blur type.
-     *
+     * 
      * @return the blurType value.
      */
     public BlurType blurType() {
@@ -135,7 +137,7 @@ public final class FaceDetectorPreset extends Preset {
 
     /**
      * Set the blurType property: Blur type.
-     *
+     * 
      * @param blurType the blurType value to set.
      * @return the FaceDetectorPreset object itself.
      */
@@ -147,7 +149,7 @@ public final class FaceDetectorPreset extends Preset {
     /**
      * Get the experimentalOptions property: Dictionary containing key value pairs for parameters not exposed in the
      * preset itself.
-     *
+     * 
      * @return the experimentalOptions value.
      */
     public Map<String, String> experimentalOptions() {
@@ -157,7 +159,7 @@ public final class FaceDetectorPreset extends Preset {
     /**
      * Set the experimentalOptions property: Dictionary containing key value pairs for parameters not exposed in the
      * preset itself.
-     *
+     * 
      * @param experimentalOptions the experimentalOptions value to set.
      * @return the FaceDetectorPreset object itself.
      */
@@ -168,7 +170,7 @@ public final class FaceDetectorPreset extends Preset {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

@@ -52,315 +52,369 @@ import java.time.Duration;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-/** Initializes a new instance of the StorageManagementClientImpl type. */
+/**
+ * Initializes a new instance of the StorageManagementClientImpl type.
+ */
 @ServiceClient(builder = StorageManagementClientBuilder.class)
 public final class StorageManagementClientImpl implements StorageManagementClient {
-    /** The ID of the target subscription. */
+    /**
+     * The ID of the target subscription.
+     */
     private final String subscriptionId;
 
     /**
      * Gets The ID of the target subscription.
-     *
+     * 
      * @return the subscriptionId value.
      */
     public String getSubscriptionId() {
         return this.subscriptionId;
     }
 
-    /** server parameter. */
+    /**
+     * server parameter.
+     */
     private final String endpoint;
 
     /**
      * Gets server parameter.
-     *
+     * 
      * @return the endpoint value.
      */
     public String getEndpoint() {
         return this.endpoint;
     }
 
-    /** Api Version. */
+    /**
+     * Api Version.
+     */
     private final String apiVersion;
 
     /**
      * Gets Api Version.
-     *
+     * 
      * @return the apiVersion value.
      */
     public String getApiVersion() {
         return this.apiVersion;
     }
 
-    /** The HTTP pipeline to send requests through. */
+    /**
+     * The HTTP pipeline to send requests through.
+     */
     private final HttpPipeline httpPipeline;
 
     /**
      * Gets The HTTP pipeline to send requests through.
-     *
+     * 
      * @return the httpPipeline value.
      */
     public HttpPipeline getHttpPipeline() {
         return this.httpPipeline;
     }
 
-    /** The serializer to serialize an object into a string. */
+    /**
+     * The serializer to serialize an object into a string.
+     */
     private final SerializerAdapter serializerAdapter;
 
     /**
      * Gets The serializer to serialize an object into a string.
-     *
+     * 
      * @return the serializerAdapter value.
      */
     SerializerAdapter getSerializerAdapter() {
         return this.serializerAdapter;
     }
 
-    /** The default poll interval for long-running operation. */
+    /**
+     * The default poll interval for long-running operation.
+     */
     private final Duration defaultPollInterval;
 
     /**
      * Gets The default poll interval for long-running operation.
-     *
+     * 
      * @return the defaultPollInterval value.
      */
     public Duration getDefaultPollInterval() {
         return this.defaultPollInterval;
     }
 
-    /** The OperationsClient object to access its operations. */
+    /**
+     * The OperationsClient object to access its operations.
+     */
     private final OperationsClient operations;
 
     /**
      * Gets the OperationsClient object to access its operations.
-     *
+     * 
      * @return the OperationsClient object.
      */
     public OperationsClient getOperations() {
         return this.operations;
     }
 
-    /** The SkusClient object to access its operations. */
+    /**
+     * The SkusClient object to access its operations.
+     */
     private final SkusClient skus;
 
     /**
      * Gets the SkusClient object to access its operations.
-     *
+     * 
      * @return the SkusClient object.
      */
     public SkusClient getSkus() {
         return this.skus;
     }
 
-    /** The StorageAccountsClient object to access its operations. */
+    /**
+     * The StorageAccountsClient object to access its operations.
+     */
     private final StorageAccountsClient storageAccounts;
 
     /**
      * Gets the StorageAccountsClient object to access its operations.
-     *
+     * 
      * @return the StorageAccountsClient object.
      */
     public StorageAccountsClient getStorageAccounts() {
         return this.storageAccounts;
     }
 
-    /** The DeletedAccountsClient object to access its operations. */
+    /**
+     * The DeletedAccountsClient object to access its operations.
+     */
     private final DeletedAccountsClient deletedAccounts;
 
     /**
      * Gets the DeletedAccountsClient object to access its operations.
-     *
+     * 
      * @return the DeletedAccountsClient object.
      */
     public DeletedAccountsClient getDeletedAccounts() {
         return this.deletedAccounts;
     }
 
-    /** The UsagesClient object to access its operations. */
+    /**
+     * The UsagesClient object to access its operations.
+     */
     private final UsagesClient usages;
 
     /**
      * Gets the UsagesClient object to access its operations.
-     *
+     * 
      * @return the UsagesClient object.
      */
     public UsagesClient getUsages() {
         return this.usages;
     }
 
-    /** The ManagementPoliciesClient object to access its operations. */
+    /**
+     * The ManagementPoliciesClient object to access its operations.
+     */
     private final ManagementPoliciesClient managementPolicies;
 
     /**
      * Gets the ManagementPoliciesClient object to access its operations.
-     *
+     * 
      * @return the ManagementPoliciesClient object.
      */
     public ManagementPoliciesClient getManagementPolicies() {
         return this.managementPolicies;
     }
 
-    /** The BlobInventoryPoliciesClient object to access its operations. */
+    /**
+     * The BlobInventoryPoliciesClient object to access its operations.
+     */
     private final BlobInventoryPoliciesClient blobInventoryPolicies;
 
     /**
      * Gets the BlobInventoryPoliciesClient object to access its operations.
-     *
+     * 
      * @return the BlobInventoryPoliciesClient object.
      */
     public BlobInventoryPoliciesClient getBlobInventoryPolicies() {
         return this.blobInventoryPolicies;
     }
 
-    /** The PrivateEndpointConnectionsClient object to access its operations. */
+    /**
+     * The PrivateEndpointConnectionsClient object to access its operations.
+     */
     private final PrivateEndpointConnectionsClient privateEndpointConnections;
 
     /**
      * Gets the PrivateEndpointConnectionsClient object to access its operations.
-     *
+     * 
      * @return the PrivateEndpointConnectionsClient object.
      */
     public PrivateEndpointConnectionsClient getPrivateEndpointConnections() {
         return this.privateEndpointConnections;
     }
 
-    /** The PrivateLinkResourcesClient object to access its operations. */
+    /**
+     * The PrivateLinkResourcesClient object to access its operations.
+     */
     private final PrivateLinkResourcesClient privateLinkResources;
 
     /**
      * Gets the PrivateLinkResourcesClient object to access its operations.
-     *
+     * 
      * @return the PrivateLinkResourcesClient object.
      */
     public PrivateLinkResourcesClient getPrivateLinkResources() {
         return this.privateLinkResources;
     }
 
-    /** The ObjectReplicationPoliciesOperationsClient object to access its operations. */
+    /**
+     * The ObjectReplicationPoliciesOperationsClient object to access its operations.
+     */
     private final ObjectReplicationPoliciesOperationsClient objectReplicationPoliciesOperations;
 
     /**
      * Gets the ObjectReplicationPoliciesOperationsClient object to access its operations.
-     *
+     * 
      * @return the ObjectReplicationPoliciesOperationsClient object.
      */
     public ObjectReplicationPoliciesOperationsClient getObjectReplicationPoliciesOperations() {
         return this.objectReplicationPoliciesOperations;
     }
 
-    /** The LocalUsersOperationsClient object to access its operations. */
+    /**
+     * The LocalUsersOperationsClient object to access its operations.
+     */
     private final LocalUsersOperationsClient localUsersOperations;
 
     /**
      * Gets the LocalUsersOperationsClient object to access its operations.
-     *
+     * 
      * @return the LocalUsersOperationsClient object.
      */
     public LocalUsersOperationsClient getLocalUsersOperations() {
         return this.localUsersOperations;
     }
 
-    /** The EncryptionScopesClient object to access its operations. */
+    /**
+     * The EncryptionScopesClient object to access its operations.
+     */
     private final EncryptionScopesClient encryptionScopes;
 
     /**
      * Gets the EncryptionScopesClient object to access its operations.
-     *
+     * 
      * @return the EncryptionScopesClient object.
      */
     public EncryptionScopesClient getEncryptionScopes() {
         return this.encryptionScopes;
     }
 
-    /** The BlobServicesClient object to access its operations. */
+    /**
+     * The BlobServicesClient object to access its operations.
+     */
     private final BlobServicesClient blobServices;
 
     /**
      * Gets the BlobServicesClient object to access its operations.
-     *
+     * 
      * @return the BlobServicesClient object.
      */
     public BlobServicesClient getBlobServices() {
         return this.blobServices;
     }
 
-    /** The BlobContainersClient object to access its operations. */
+    /**
+     * The BlobContainersClient object to access its operations.
+     */
     private final BlobContainersClient blobContainers;
 
     /**
      * Gets the BlobContainersClient object to access its operations.
-     *
+     * 
      * @return the BlobContainersClient object.
      */
     public BlobContainersClient getBlobContainers() {
         return this.blobContainers;
     }
 
-    /** The FileServicesClient object to access its operations. */
+    /**
+     * The FileServicesClient object to access its operations.
+     */
     private final FileServicesClient fileServices;
 
     /**
      * Gets the FileServicesClient object to access its operations.
-     *
+     * 
      * @return the FileServicesClient object.
      */
     public FileServicesClient getFileServices() {
         return this.fileServices;
     }
 
-    /** The FileSharesClient object to access its operations. */
+    /**
+     * The FileSharesClient object to access its operations.
+     */
     private final FileSharesClient fileShares;
 
     /**
      * Gets the FileSharesClient object to access its operations.
-     *
+     * 
      * @return the FileSharesClient object.
      */
     public FileSharesClient getFileShares() {
         return this.fileShares;
     }
 
-    /** The QueueServicesClient object to access its operations. */
+    /**
+     * The QueueServicesClient object to access its operations.
+     */
     private final QueueServicesClient queueServices;
 
     /**
      * Gets the QueueServicesClient object to access its operations.
-     *
+     * 
      * @return the QueueServicesClient object.
      */
     public QueueServicesClient getQueueServices() {
         return this.queueServices;
     }
 
-    /** The QueuesClient object to access its operations. */
+    /**
+     * The QueuesClient object to access its operations.
+     */
     private final QueuesClient queues;
 
     /**
      * Gets the QueuesClient object to access its operations.
-     *
+     * 
      * @return the QueuesClient object.
      */
     public QueuesClient getQueues() {
         return this.queues;
     }
 
-    /** The TableServicesClient object to access its operations. */
+    /**
+     * The TableServicesClient object to access its operations.
+     */
     private final TableServicesClient tableServices;
 
     /**
      * Gets the TableServicesClient object to access its operations.
-     *
+     * 
      * @return the TableServicesClient object.
      */
     public TableServicesClient getTableServices() {
         return this.tableServices;
     }
 
-    /** The TablesClient object to access its operations. */
+    /**
+     * The TablesClient object to access its operations.
+     */
     private final TablesClient tables;
 
     /**
      * Gets the TablesClient object to access its operations.
-     *
+     * 
      * @return the TablesClient object.
      */
     public TablesClient getTables() {
@@ -369,7 +423,7 @@ public final class StorageManagementClientImpl implements StorageManagementClien
 
     /**
      * Initializes an instance of StorageManagementClient client.
-     *
+     * 
      * @param httpPipeline The HTTP pipeline to send requests through.
      * @param serializerAdapter The serializer to serialize an object into a string.
      * @param defaultPollInterval The default poll interval for long-running operation.
@@ -377,13 +431,8 @@ public final class StorageManagementClientImpl implements StorageManagementClien
      * @param subscriptionId The ID of the target subscription.
      * @param endpoint server parameter.
      */
-    StorageManagementClientImpl(
-        HttpPipeline httpPipeline,
-        SerializerAdapter serializerAdapter,
-        Duration defaultPollInterval,
-        AzureEnvironment environment,
-        String subscriptionId,
-        String endpoint) {
+    StorageManagementClientImpl(HttpPipeline httpPipeline, SerializerAdapter serializerAdapter,
+        Duration defaultPollInterval, AzureEnvironment environment, String subscriptionId, String endpoint) {
         this.httpPipeline = httpPipeline;
         this.serializerAdapter = serializerAdapter;
         this.defaultPollInterval = defaultPollInterval;
@@ -414,7 +463,7 @@ public final class StorageManagementClientImpl implements StorageManagementClien
 
     /**
      * Gets default client context.
-     *
+     * 
      * @return the default client context.
      */
     public Context getContext() {
@@ -423,7 +472,7 @@ public final class StorageManagementClientImpl implements StorageManagementClien
 
     /**
      * Merges default client context with provided context.
-     *
+     * 
      * @param context the context to be merged with default client context.
      * @return the merged context.
      */
@@ -433,7 +482,7 @@ public final class StorageManagementClientImpl implements StorageManagementClien
 
     /**
      * Gets long running operation result.
-     *
+     * 
      * @param activationResponse the response of activation operation.
      * @param httpPipeline the http pipeline.
      * @param pollResultType type of poll result.
@@ -443,26 +492,15 @@ public final class StorageManagementClientImpl implements StorageManagementClien
      * @param <U> type of final result.
      * @return poller flux for poll result and final result.
      */
-    public <T, U> PollerFlux<PollResult<T>, U> getLroResult(
-        Mono<Response<Flux<ByteBuffer>>> activationResponse,
-        HttpPipeline httpPipeline,
-        Type pollResultType,
-        Type finalResultType,
-        Context context) {
-        return PollerFactory
-            .create(
-                serializerAdapter,
-                httpPipeline,
-                pollResultType,
-                finalResultType,
-                defaultPollInterval,
-                activationResponse,
-                context);
+    public <T, U> PollerFlux<PollResult<T>, U> getLroResult(Mono<Response<Flux<ByteBuffer>>> activationResponse,
+        HttpPipeline httpPipeline, Type pollResultType, Type finalResultType, Context context) {
+        return PollerFactory.create(serializerAdapter, httpPipeline, pollResultType, finalResultType,
+            defaultPollInterval, activationResponse, context);
     }
 
     /**
      * Gets the final result, or an error, based on last async poll response.
-     *
+     * 
      * @param response the last async poll response.
      * @param <T> type of poll result.
      * @param <U> type of final result.
@@ -475,19 +513,16 @@ public final class StorageManagementClientImpl implements StorageManagementClien
             HttpResponse errorResponse = null;
             PollResult.Error lroError = response.getValue().getError();
             if (lroError != null) {
-                errorResponse =
-                    new HttpResponseImpl(
-                        lroError.getResponseStatusCode(), lroError.getResponseHeaders(), lroError.getResponseBody());
+                errorResponse = new HttpResponseImpl(lroError.getResponseStatusCode(), lroError.getResponseHeaders(),
+                    lroError.getResponseBody());
 
                 errorMessage = response.getValue().getError().getMessage();
                 String errorBody = response.getValue().getError().getResponseBody();
                 if (errorBody != null) {
                     // try to deserialize error body to ManagementError
                     try {
-                        managementError =
-                            this
-                                .getSerializerAdapter()
-                                .deserialize(errorBody, ManagementError.class, SerializerEncoding.JSON);
+                        managementError = this.getSerializerAdapter().deserialize(errorBody, ManagementError.class,
+                            SerializerEncoding.JSON);
                         if (managementError.getCode() == null || managementError.getMessage() == null) {
                             managementError = null;
                         }

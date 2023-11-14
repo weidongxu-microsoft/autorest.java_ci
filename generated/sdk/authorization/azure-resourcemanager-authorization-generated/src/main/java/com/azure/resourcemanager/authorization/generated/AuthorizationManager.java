@@ -47,10 +47,11 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 /**
- * Entry point to AuthorizationManager. Role based access control provides you a way to apply granular level policy
- * administration down to individual resources or resource groups. These operations enable you to manage role
- * definitions and role assignments. A role definition describes the set of actions that can be performed on resources.
- * A role assignment grants access to Azure Active Directory users.
+ * Entry point to AuthorizationManager.
+ * Role based access control provides you a way to apply granular level policy administration down to individual
+ * resources or resource groups. These operations enable you to manage role definitions and role assignments. A role
+ * definition describes the set of actions that can be performed on resources. A role assignment grants access to Azure
+ * Active Directory users.
  */
 public final class AuthorizationManager {
     private ClassicAdministrators classicAdministrators;
@@ -72,18 +73,14 @@ public final class AuthorizationManager {
     private AuthorizationManager(HttpPipeline httpPipeline, AzureProfile profile, Duration defaultPollInterval) {
         Objects.requireNonNull(httpPipeline, "'httpPipeline' cannot be null.");
         Objects.requireNonNull(profile, "'profile' cannot be null.");
-        this.clientObject =
-            new AuthorizationManagementClientBuilder()
-                .pipeline(httpPipeline)
-                .endpoint(profile.getEnvironment().getResourceManagerEndpoint())
-                .subscriptionId(profile.getSubscriptionId())
-                .defaultPollInterval(defaultPollInterval)
-                .buildClient();
+        this.clientObject = new AuthorizationManagementClientBuilder().pipeline(httpPipeline)
+            .endpoint(profile.getEnvironment().getResourceManagerEndpoint()).subscriptionId(profile.getSubscriptionId())
+            .defaultPollInterval(defaultPollInterval).buildClient();
     }
 
     /**
      * Creates an instance of Authorization service API entry point.
-     *
+     * 
      * @param credential the credential to use.
      * @param profile the Azure profile for client.
      * @return the Authorization service API instance.
@@ -96,7 +93,7 @@ public final class AuthorizationManager {
 
     /**
      * Creates an instance of Authorization service API entry point.
-     *
+     * 
      * @param httpPipeline the {@link HttpPipeline} configured with Azure authentication credential.
      * @param profile the Azure profile for client.
      * @return the Authorization service API instance.
@@ -109,14 +106,16 @@ public final class AuthorizationManager {
 
     /**
      * Gets a Configurable instance that can be used to create AuthorizationManager with optional configuration.
-     *
+     * 
      * @return the Configurable instance allowing configurations.
      */
     public static Configurable configure() {
         return new AuthorizationManager.Configurable();
     }
 
-    /** The Configurable allowing configurations to be set. */
+    /**
+     * The Configurable allowing configurations to be set.
+     */
     public static final class Configurable {
         private static final ClientLogger LOGGER = new ClientLogger(Configurable.class);
 
@@ -188,8 +187,8 @@ public final class AuthorizationManager {
 
         /**
          * Sets the retry options for the HTTP pipeline retry policy.
-         *
-         * <p>This setting has no effect, if retry policy is set via {@link #withRetryPolicy(RetryPolicy)}.
+         * <p>
+         * This setting has no effect, if retry policy is set via {@link #withRetryPolicy(RetryPolicy)}.
          *
          * @param retryOptions the retry options for the HTTP pipeline retry policy.
          * @return the configurable object itself.
@@ -206,8 +205,8 @@ public final class AuthorizationManager {
          * @return the configurable object itself.
          */
         public Configurable withDefaultPollInterval(Duration defaultPollInterval) {
-            this.defaultPollInterval =
-                Objects.requireNonNull(defaultPollInterval, "'defaultPollInterval' cannot be null.");
+            this.defaultPollInterval
+                = Objects.requireNonNull(defaultPollInterval, "'defaultPollInterval' cannot be null.");
             if (this.defaultPollInterval.isNegative()) {
                 throw LOGGER
                     .logExceptionAsError(new IllegalArgumentException("'defaultPollInterval' cannot be negative"));
@@ -227,21 +226,12 @@ public final class AuthorizationManager {
             Objects.requireNonNull(profile, "'profile' cannot be null.");
 
             StringBuilder userAgentBuilder = new StringBuilder();
-            userAgentBuilder
-                .append("azsdk-java")
-                .append("-")
-                .append("com.azure.resourcemanager.authorization.generated")
-                .append("/")
-                .append("1.0.0-beta.1");
+            userAgentBuilder.append("azsdk-java").append("-")
+                .append("com.azure.resourcemanager.authorization.generated").append("/").append("1.0.0-beta.1");
             if (!Configuration.getGlobalConfiguration().get("AZURE_TELEMETRY_DISABLED", false)) {
-                userAgentBuilder
-                    .append(" (")
-                    .append(Configuration.getGlobalConfiguration().get("java.version"))
-                    .append("; ")
-                    .append(Configuration.getGlobalConfiguration().get("os.name"))
-                    .append("; ")
-                    .append(Configuration.getGlobalConfiguration().get("os.version"))
-                    .append("; auto-generated)");
+                userAgentBuilder.append(" (").append(Configuration.getGlobalConfiguration().get("java.version"))
+                    .append("; ").append(Configuration.getGlobalConfiguration().get("os.name")).append("; ")
+                    .append(Configuration.getGlobalConfiguration().get("os.version")).append("; auto-generated)");
             } else {
                 userAgentBuilder.append(" (auto-generated)");
             }
@@ -260,38 +250,25 @@ public final class AuthorizationManager {
             policies.add(new UserAgentPolicy(userAgentBuilder.toString()));
             policies.add(new AddHeadersFromContextPolicy());
             policies.add(new RequestIdPolicy());
-            policies
-                .addAll(
-                    this
-                        .policies
-                        .stream()
-                        .filter(p -> p.getPipelinePosition() == HttpPipelinePosition.PER_CALL)
-                        .collect(Collectors.toList()));
+            policies.addAll(this.policies.stream().filter(p -> p.getPipelinePosition() == HttpPipelinePosition.PER_CALL)
+                .collect(Collectors.toList()));
             HttpPolicyProviders.addBeforeRetryPolicies(policies);
             policies.add(retryPolicy);
             policies.add(new AddDatePolicy());
             policies.add(new ArmChallengeAuthenticationPolicy(credential, scopes.toArray(new String[0])));
-            policies
-                .addAll(
-                    this
-                        .policies
-                        .stream()
-                        .filter(p -> p.getPipelinePosition() == HttpPipelinePosition.PER_RETRY)
-                        .collect(Collectors.toList()));
+            policies.addAll(this.policies.stream()
+                .filter(p -> p.getPipelinePosition() == HttpPipelinePosition.PER_RETRY).collect(Collectors.toList()));
             HttpPolicyProviders.addAfterRetryPolicies(policies);
             policies.add(new HttpLoggingPolicy(httpLogOptions));
-            HttpPipeline httpPipeline =
-                new HttpPipelineBuilder()
-                    .httpClient(httpClient)
-                    .policies(policies.toArray(new HttpPipelinePolicy[0]))
-                    .build();
+            HttpPipeline httpPipeline = new HttpPipelineBuilder().httpClient(httpClient)
+                .policies(policies.toArray(new HttpPipelinePolicy[0])).build();
             return new AuthorizationManager(httpPipeline, profile, defaultPollInterval);
         }
     }
 
     /**
      * Gets the resource collection API of ClassicAdministrators.
-     *
+     * 
      * @return Resource collection API of ClassicAdministrators.
      */
     public ClassicAdministrators classicAdministrators() {
@@ -303,7 +280,7 @@ public final class AuthorizationManager {
 
     /**
      * Gets the resource collection API of GlobalAdministrators.
-     *
+     * 
      * @return Resource collection API of GlobalAdministrators.
      */
     public GlobalAdministrators globalAdministrators() {
@@ -315,20 +292,20 @@ public final class AuthorizationManager {
 
     /**
      * Gets the resource collection API of ProviderOperationsMetadatas.
-     *
+     * 
      * @return Resource collection API of ProviderOperationsMetadatas.
      */
     public ProviderOperationsMetadatas providerOperationsMetadatas() {
         if (this.providerOperationsMetadatas == null) {
-            this.providerOperationsMetadatas =
-                new ProviderOperationsMetadatasImpl(clientObject.getProviderOperationsMetadatas(), this);
+            this.providerOperationsMetadatas
+                = new ProviderOperationsMetadatasImpl(clientObject.getProviderOperationsMetadatas(), this);
         }
         return providerOperationsMetadatas;
     }
 
     /**
      * Gets the resource collection API of RoleAssignments. It manages RoleAssignment.
-     *
+     * 
      * @return Resource collection API of RoleAssignments.
      */
     public RoleAssignments roleAssignments() {
@@ -340,7 +317,7 @@ public final class AuthorizationManager {
 
     /**
      * Gets the resource collection API of Permissions.
-     *
+     * 
      * @return Resource collection API of Permissions.
      */
     public Permissions permissions() {
@@ -352,7 +329,7 @@ public final class AuthorizationManager {
 
     /**
      * Gets the resource collection API of RoleDefinitions. It manages RoleDefinition.
-     *
+     * 
      * @return Resource collection API of RoleDefinitions.
      */
     public RoleDefinitions roleDefinitions() {
@@ -364,7 +341,7 @@ public final class AuthorizationManager {
 
     /**
      * Gets the resource collection API of DenyAssignments.
-     *
+     * 
      * @return Resource collection API of DenyAssignments.
      */
     public DenyAssignments denyAssignments() {
@@ -377,7 +354,7 @@ public final class AuthorizationManager {
     /**
      * Gets wrapped service client AuthorizationManagementClient providing direct access to the underlying
      * auto-generated API implementation, based on Azure REST API.
-     *
+     * 
      * @return Wrapped service client AuthorizationManagementClient.
      */
     public AuthorizationManagementClient serviceClient() {

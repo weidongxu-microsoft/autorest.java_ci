@@ -19,8 +19,7 @@ public final class VirtualMachineSizesImpl implements VirtualMachineSizes {
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    public VirtualMachineSizesImpl(
-        VirtualMachineSizesClient innerClient,
+    public VirtualMachineSizesImpl(VirtualMachineSizesClient innerClient,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;

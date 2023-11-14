@@ -19,8 +19,7 @@ public final class PermissionsImpl implements Permissions {
 
     private final com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager;
 
-    public PermissionsImpl(
-        PermissionsClient innerClient,
+    public PermissionsImpl(PermissionsClient innerClient,
         com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -36,37 +35,17 @@ public final class PermissionsImpl implements Permissions {
         return Utils.mapPage(inner, inner1 -> new PermissionImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<Permission> listForResource(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName) {
-        PagedIterable<PermissionInner> inner =
-            this
-                .serviceClient()
-                .listForResource(
-                    resourceGroupName, resourceProviderNamespace, parentResourcePath, resourceType, resourceName);
+    public PagedIterable<Permission> listForResource(String resourceGroupName, String resourceProviderNamespace,
+        String parentResourcePath, String resourceType, String resourceName) {
+        PagedIterable<PermissionInner> inner = this.serviceClient().listForResource(resourceGroupName,
+            resourceProviderNamespace, parentResourcePath, resourceType, resourceName);
         return Utils.mapPage(inner, inner1 -> new PermissionImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<Permission> listForResource(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
-        Context context) {
-        PagedIterable<PermissionInner> inner =
-            this
-                .serviceClient()
-                .listForResource(
-                    resourceGroupName,
-                    resourceProviderNamespace,
-                    parentResourcePath,
-                    resourceType,
-                    resourceName,
-                    context);
+    public PagedIterable<Permission> listForResource(String resourceGroupName, String resourceProviderNamespace,
+        String parentResourcePath, String resourceType, String resourceName, Context context) {
+        PagedIterable<PermissionInner> inner = this.serviceClient().listForResource(resourceGroupName,
+            resourceProviderNamespace, parentResourcePath, resourceType, resourceName, context);
         return Utils.mapPage(inner, inner1 -> new PermissionImpl(inner1, this.manager()));
     }
 

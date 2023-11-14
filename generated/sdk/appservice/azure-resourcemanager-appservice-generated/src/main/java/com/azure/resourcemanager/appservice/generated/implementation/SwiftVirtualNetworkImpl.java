@@ -12,8 +12,7 @@ public final class SwiftVirtualNetworkImpl implements SwiftVirtualNetwork {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    SwiftVirtualNetworkImpl(
-        SwiftVirtualNetworkInner innerObject,
+    SwiftVirtualNetworkImpl(SwiftVirtualNetworkInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

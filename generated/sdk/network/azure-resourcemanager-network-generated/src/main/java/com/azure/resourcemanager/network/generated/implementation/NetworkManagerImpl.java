@@ -112,22 +112,15 @@ public final class NetworkManagerImpl implements NetworkManager, NetworkManager.
     }
 
     public NetworkManager create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNetworkManagers()
-                .createOrUpdateWithResponse(resourceGroupName, networkManagerName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getNetworkManagers()
+            .createOrUpdateWithResponse(resourceGroupName, networkManagerName, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public NetworkManager create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNetworkManagers()
-                .createOrUpdateWithResponse(resourceGroupName, networkManagerName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getNetworkManagers()
+            .createOrUpdateWithResponse(resourceGroupName, networkManagerName, this.innerModel(), context).getValue();
         return this;
     }
 
@@ -143,27 +136,19 @@ public final class NetworkManagerImpl implements NetworkManager, NetworkManager.
     }
 
     public NetworkManager apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNetworkManagers()
-                .patchWithResponse(resourceGroupName, networkManagerName, updateParameters, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getNetworkManagers()
+            .patchWithResponse(resourceGroupName, networkManagerName, updateParameters, Context.NONE).getValue();
         return this;
     }
 
     public NetworkManager apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNetworkManagers()
-                .patchWithResponse(resourceGroupName, networkManagerName, updateParameters, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getNetworkManagers()
+            .patchWithResponse(resourceGroupName, networkManagerName, updateParameters, context).getValue();
         return this;
     }
 
-    NetworkManagerImpl(
-        NetworkManagerInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    NetworkManagerImpl(NetworkManagerInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
@@ -171,22 +156,14 @@ public final class NetworkManagerImpl implements NetworkManager, NetworkManager.
     }
 
     public NetworkManager refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNetworkManagers()
-                .getByResourceGroupWithResponse(resourceGroupName, networkManagerName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getNetworkManagers()
+            .getByResourceGroupWithResponse(resourceGroupName, networkManagerName, Context.NONE).getValue();
         return this;
     }
 
     public NetworkManager refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getNetworkManagers()
-                .getByResourceGroupWithResponse(resourceGroupName, networkManagerName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getNetworkManagers()
+            .getByResourceGroupWithResponse(resourceGroupName, networkManagerName, context).getValue();
         return this;
     }
 
@@ -215,8 +192,8 @@ public final class NetworkManagerImpl implements NetworkManager, NetworkManager.
         return this;
     }
 
-    public NetworkManagerImpl withNetworkManagerScopes(
-        NetworkManagerPropertiesNetworkManagerScopes networkManagerScopes) {
+    public NetworkManagerImpl
+        withNetworkManagerScopes(NetworkManagerPropertiesNetworkManagerScopes networkManagerScopes) {
         this.innerModel().withNetworkManagerScopes(networkManagerScopes);
         return this;
     }

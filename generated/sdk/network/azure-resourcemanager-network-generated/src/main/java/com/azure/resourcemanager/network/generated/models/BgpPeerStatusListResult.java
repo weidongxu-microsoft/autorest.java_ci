@@ -7,18 +7,20 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.resourcemanager.network.generated.fluent.models.BgpPeerStatusListResultInner;
 import java.util.List;
 
-/** An immutable client-side representation of BgpPeerStatusListResult. */
+/**
+ * An immutable client-side representation of BgpPeerStatusListResult.
+ */
 public interface BgpPeerStatusListResult {
     /**
      * Gets the value property: List of BGP peers.
-     *
+     * 
      * @return the value value.
      */
     List<BgpPeerStatus> value();
 
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.BgpPeerStatusListResultInner object.
-     *
+     * 
      * @return the inner object.
      */
     BgpPeerStatusListResultInner innerModel();

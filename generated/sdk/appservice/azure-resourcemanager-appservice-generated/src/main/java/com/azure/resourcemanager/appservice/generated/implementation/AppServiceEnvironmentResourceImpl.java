@@ -27,10 +27,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-public final class AppServiceEnvironmentResourceImpl
-    implements AppServiceEnvironmentResource,
-        AppServiceEnvironmentResource.Definition,
-        AppServiceEnvironmentResource.Update {
+public final class AppServiceEnvironmentResourceImpl implements AppServiceEnvironmentResource,
+    AppServiceEnvironmentResource.Definition, AppServiceEnvironmentResource.Update {
     private AppServiceEnvironmentResourceInner innerObject;
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
@@ -196,25 +194,19 @@ public final class AppServiceEnvironmentResourceImpl
     }
 
     public AppServiceEnvironmentResource create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getAppServiceEnvironments()
-                .createOrUpdate(resourceGroupName, name, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getAppServiceEnvironments().createOrUpdate(resourceGroupName,
+            name, this.innerModel(), Context.NONE);
         return this;
     }
 
     public AppServiceEnvironmentResource create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getAppServiceEnvironments()
-                .createOrUpdate(resourceGroupName, name, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getAppServiceEnvironments().createOrUpdate(resourceGroupName,
+            name, this.innerModel(), context);
         return this;
     }
 
-    AppServiceEnvironmentResourceImpl(
-        String name, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
+    AppServiceEnvironmentResourceImpl(String name,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = new AppServiceEnvironmentResourceInner();
         this.serviceManager = serviceManager;
         this.name = name;
@@ -226,27 +218,18 @@ public final class AppServiceEnvironmentResourceImpl
     }
 
     public AppServiceEnvironmentResource apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getAppServiceEnvironments()
-                .updateWithResponse(resourceGroupName, name, updateHostingEnvironmentEnvelope, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getAppServiceEnvironments()
+            .updateWithResponse(resourceGroupName, name, updateHostingEnvironmentEnvelope, Context.NONE).getValue();
         return this;
     }
 
     public AppServiceEnvironmentResource apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getAppServiceEnvironments()
-                .updateWithResponse(resourceGroupName, name, updateHostingEnvironmentEnvelope, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getAppServiceEnvironments()
+            .updateWithResponse(resourceGroupName, name, updateHostingEnvironmentEnvelope, context).getValue();
         return this;
     }
 
-    AppServiceEnvironmentResourceImpl(
-        AppServiceEnvironmentResourceInner innerObject,
+    AppServiceEnvironmentResourceImpl(AppServiceEnvironmentResourceInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -255,22 +238,14 @@ public final class AppServiceEnvironmentResourceImpl
     }
 
     public AppServiceEnvironmentResource refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getAppServiceEnvironments()
-                .getByResourceGroupWithResponse(resourceGroupName, name, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getAppServiceEnvironments()
+            .getByResourceGroupWithResponse(resourceGroupName, name, Context.NONE).getValue();
         return this;
     }
 
     public AppServiceEnvironmentResource refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getAppServiceEnvironments()
-                .getByResourceGroupWithResponse(resourceGroupName, name, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getAppServiceEnvironments()
+            .getByResourceGroupWithResponse(resourceGroupName, name, context).getValue();
         return this;
     }
 
@@ -283,9 +258,8 @@ public final class AppServiceEnvironmentResourceImpl
     }
 
     public Response<Void> testUpgradeAvailableNotificationWithResponse(Context context) {
-        return serviceManager
-            .appServiceEnvironments()
-            .testUpgradeAvailableNotificationWithResponse(resourceGroupName, name, context);
+        return serviceManager.appServiceEnvironments().testUpgradeAvailableNotificationWithResponse(resourceGroupName,
+            name, context);
     }
 
     public void testUpgradeAvailableNotification() {
@@ -359,8 +333,8 @@ public final class AppServiceEnvironmentResourceImpl
         }
     }
 
-    public AppServiceEnvironmentResourceImpl withInternalLoadBalancingMode(
-        LoadBalancingMode internalLoadBalancingMode) {
+    public AppServiceEnvironmentResourceImpl
+        withInternalLoadBalancingMode(LoadBalancingMode internalLoadBalancingMode) {
         if (isInCreateMode()) {
             this.innerModel().withInternalLoadBalancingMode(internalLoadBalancingMode);
             return this;
@@ -460,8 +434,8 @@ public final class AppServiceEnvironmentResourceImpl
         }
     }
 
-    public AppServiceEnvironmentResourceImpl withCustomDnsSuffixConfiguration(
-        CustomDnsSuffixConfigurationInner customDnsSuffixConfiguration) {
+    public AppServiceEnvironmentResourceImpl
+        withCustomDnsSuffixConfiguration(CustomDnsSuffixConfigurationInner customDnsSuffixConfiguration) {
         if (isInCreateMode()) {
             this.innerModel().withCustomDnsSuffixConfiguration(customDnsSuffixConfiguration);
             return this;
@@ -471,8 +445,8 @@ public final class AppServiceEnvironmentResourceImpl
         }
     }
 
-    public AppServiceEnvironmentResourceImpl withNetworkingConfiguration(
-        AseV3NetworkingConfigurationInner networkingConfiguration) {
+    public AppServiceEnvironmentResourceImpl
+        withNetworkingConfiguration(AseV3NetworkingConfigurationInner networkingConfiguration) {
         if (isInCreateMode()) {
             this.innerModel().withNetworkingConfiguration(networkingConfiguration);
             return this;

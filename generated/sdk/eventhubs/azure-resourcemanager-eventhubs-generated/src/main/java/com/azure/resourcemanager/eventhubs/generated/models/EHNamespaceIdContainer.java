@@ -7,7 +7,9 @@ package com.azure.resourcemanager.eventhubs.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The full ARM ID of an Event Hubs Namespace. */
+/**
+ * The full ARM ID of an Event Hubs Namespace.
+ */
 @Fluent
 public final class EHNamespaceIdContainer {
     /*
@@ -16,13 +18,15 @@ public final class EHNamespaceIdContainer {
     @JsonProperty(value = "id")
     private String id;
 
-    /** Creates an instance of EHNamespaceIdContainer class. */
+    /**
+     * Creates an instance of EHNamespaceIdContainer class.
+     */
     public EHNamespaceIdContainer() {
     }
 
     /**
      * Get the id property: id parameter.
-     *
+     * 
      * @return the id value.
      */
     public String id() {
@@ -31,7 +35,7 @@ public final class EHNamespaceIdContainer {
 
     /**
      * Set the id property: id parameter.
-     *
+     * 
      * @param id the id value to set.
      * @return the EHNamespaceIdContainer object itself.
      */
@@ -42,7 +46,7 @@ public final class EHNamespaceIdContainer {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

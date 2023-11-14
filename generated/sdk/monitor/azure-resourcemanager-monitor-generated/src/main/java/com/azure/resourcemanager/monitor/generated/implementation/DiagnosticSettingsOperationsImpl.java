@@ -22,21 +22,17 @@ public final class DiagnosticSettingsOperationsImpl implements DiagnosticSetting
 
     private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    public DiagnosticSettingsOperationsImpl(
-        DiagnosticSettingsOperationsClient innerClient,
+    public DiagnosticSettingsOperationsImpl(DiagnosticSettingsOperationsClient innerClient,
         com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
     public Response<DiagnosticSettingsResource> getWithResponse(String resourceUri, String name, Context context) {
-        Response<DiagnosticSettingsResourceInner> inner =
-            this.serviceClient().getWithResponse(resourceUri, name, context);
+        Response<DiagnosticSettingsResourceInner> inner
+            = this.serviceClient().getWithResponse(resourceUri, name, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DiagnosticSettingsResourceImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -61,13 +57,10 @@ public final class DiagnosticSettingsOperationsImpl implements DiagnosticSetting
     }
 
     public Response<DiagnosticSettingsResourceCollection> listWithResponse(String resourceUri, Context context) {
-        Response<DiagnosticSettingsResourceCollectionInner> inner =
-            this.serviceClient().listWithResponse(resourceUri, context);
+        Response<DiagnosticSettingsResourceCollectionInner> inner
+            = this.serviceClient().listWithResponse(resourceUri, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DiagnosticSettingsResourceCollectionImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -84,105 +77,65 @@ public final class DiagnosticSettingsOperationsImpl implements DiagnosticSetting
     }
 
     public DiagnosticSettingsResource getById(String id) {
-        String resourceUri =
-            Utils
-                .getValueFromIdByParameterName(
-                    id, "/{resourceUri}/providers/Microsoft.Insights/diagnosticSettings/{name}", "resourceUri");
+        String resourceUri = Utils.getValueFromIdByParameterName(id,
+            "/{resourceUri}/providers/Microsoft.Insights/diagnosticSettings/{name}", "resourceUri");
         if (resourceUri == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'resourceUri'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceUri'.", id)));
         }
-        String name =
-            Utils
-                .getValueFromIdByParameterName(
-                    id, "/{resourceUri}/providers/Microsoft.Insights/diagnosticSettings/{name}", "name");
+        String name = Utils.getValueFromIdByParameterName(id,
+            "/{resourceUri}/providers/Microsoft.Insights/diagnosticSettings/{name}", "name");
         if (name == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'diagnosticSettings'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'diagnosticSettings'.", id)));
         }
         return this.getWithResponse(resourceUri, name, Context.NONE).getValue();
     }
 
     public Response<DiagnosticSettingsResource> getByIdWithResponse(String id, Context context) {
-        String resourceUri =
-            Utils
-                .getValueFromIdByParameterName(
-                    id, "/{resourceUri}/providers/Microsoft.Insights/diagnosticSettings/{name}", "resourceUri");
+        String resourceUri = Utils.getValueFromIdByParameterName(id,
+            "/{resourceUri}/providers/Microsoft.Insights/diagnosticSettings/{name}", "resourceUri");
         if (resourceUri == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'resourceUri'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceUri'.", id)));
         }
-        String name =
-            Utils
-                .getValueFromIdByParameterName(
-                    id, "/{resourceUri}/providers/Microsoft.Insights/diagnosticSettings/{name}", "name");
+        String name = Utils.getValueFromIdByParameterName(id,
+            "/{resourceUri}/providers/Microsoft.Insights/diagnosticSettings/{name}", "name");
         if (name == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'diagnosticSettings'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'diagnosticSettings'.", id)));
         }
         return this.getWithResponse(resourceUri, name, context);
     }
 
     public void deleteById(String id) {
-        String resourceUri =
-            Utils
-                .getValueFromIdByParameterName(
-                    id, "/{resourceUri}/providers/Microsoft.Insights/diagnosticSettings/{name}", "resourceUri");
+        String resourceUri = Utils.getValueFromIdByParameterName(id,
+            "/{resourceUri}/providers/Microsoft.Insights/diagnosticSettings/{name}", "resourceUri");
         if (resourceUri == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'resourceUri'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceUri'.", id)));
         }
-        String name =
-            Utils
-                .getValueFromIdByParameterName(
-                    id, "/{resourceUri}/providers/Microsoft.Insights/diagnosticSettings/{name}", "name");
+        String name = Utils.getValueFromIdByParameterName(id,
+            "/{resourceUri}/providers/Microsoft.Insights/diagnosticSettings/{name}", "name");
         if (name == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'diagnosticSettings'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'diagnosticSettings'.", id)));
         }
         this.deleteByResourceGroupWithResponse(resourceUri, name, Context.NONE);
     }
 
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
-        String resourceUri =
-            Utils
-                .getValueFromIdByParameterName(
-                    id, "/{resourceUri}/providers/Microsoft.Insights/diagnosticSettings/{name}", "resourceUri");
+        String resourceUri = Utils.getValueFromIdByParameterName(id,
+            "/{resourceUri}/providers/Microsoft.Insights/diagnosticSettings/{name}", "resourceUri");
         if (resourceUri == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'resourceUri'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceUri'.", id)));
         }
-        String name =
-            Utils
-                .getValueFromIdByParameterName(
-                    id, "/{resourceUri}/providers/Microsoft.Insights/diagnosticSettings/{name}", "name");
+        String name = Utils.getValueFromIdByParameterName(id,
+            "/{resourceUri}/providers/Microsoft.Insights/diagnosticSettings/{name}", "name");
         if (name == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'diagnosticSettings'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'diagnosticSettings'.", id)));
         }
         return this.deleteByResourceGroupWithResponse(resourceUri, name, context);
     }

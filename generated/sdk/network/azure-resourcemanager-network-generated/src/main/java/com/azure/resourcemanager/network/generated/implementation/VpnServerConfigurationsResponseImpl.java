@@ -14,8 +14,7 @@ public final class VpnServerConfigurationsResponseImpl implements VpnServerConfi
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    VpnServerConfigurationsResponseImpl(
-        VpnServerConfigurationsResponseInner innerObject,
+    VpnServerConfigurationsResponseImpl(VpnServerConfigurationsResponseInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

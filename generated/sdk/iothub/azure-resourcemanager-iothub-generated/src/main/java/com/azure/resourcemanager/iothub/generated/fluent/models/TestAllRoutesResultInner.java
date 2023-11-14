@@ -9,7 +9,9 @@ import com.azure.resourcemanager.iothub.generated.models.MatchedRoute;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Result of testing all routes. */
+/**
+ * Result of testing all routes.
+ */
 @Fluent
 public final class TestAllRoutesResultInner {
     /*
@@ -18,13 +20,15 @@ public final class TestAllRoutesResultInner {
     @JsonProperty(value = "routes")
     private List<MatchedRoute> routes;
 
-    /** Creates an instance of TestAllRoutesResultInner class. */
+    /**
+     * Creates an instance of TestAllRoutesResultInner class.
+     */
     public TestAllRoutesResultInner() {
     }
 
     /**
      * Get the routes property: JSON-serialized array of matched routes.
-     *
+     * 
      * @return the routes value.
      */
     public List<MatchedRoute> routes() {
@@ -33,7 +37,7 @@ public final class TestAllRoutesResultInner {
 
     /**
      * Set the routes property: JSON-serialized array of matched routes.
-     *
+     * 
      * @param routes the routes value to set.
      * @return the TestAllRoutesResultInner object itself.
      */
@@ -44,7 +48,7 @@ public final class TestAllRoutesResultInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

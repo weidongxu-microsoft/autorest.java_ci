@@ -9,7 +9,9 @@ import com.azure.resourcemanager.dns.generated.models.DnsResourceReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Represents the properties of the Dns Resource Reference Result. */
+/**
+ * Represents the properties of the Dns Resource Reference Result.
+ */
 @Fluent
 public final class DnsResourceReferenceResultInner {
     /*
@@ -19,14 +21,16 @@ public final class DnsResourceReferenceResultInner {
     @JsonProperty(value = "properties")
     private DnsResourceReferenceResultProperties innerProperties;
 
-    /** Creates an instance of DnsResourceReferenceResultInner class. */
+    /**
+     * Creates an instance of DnsResourceReferenceResultInner class.
+     */
     public DnsResourceReferenceResultInner() {
     }
 
     /**
      * Get the innerProperties property: The result of dns resource reference request. Returns a list of dns resource
      * references for each of the azure resource in the request.
-     *
+     * 
      * @return the innerProperties value.
      */
     private DnsResourceReferenceResultProperties innerProperties() {
@@ -36,7 +40,7 @@ public final class DnsResourceReferenceResultInner {
     /**
      * Get the dnsResourceReferences property: The result of dns resource reference request. A list of dns resource
      * references for each of the azure resource in the request.
-     *
+     * 
      * @return the dnsResourceReferences value.
      */
     public List<DnsResourceReference> dnsResourceReferences() {
@@ -46,7 +50,7 @@ public final class DnsResourceReferenceResultInner {
     /**
      * Set the dnsResourceReferences property: The result of dns resource reference request. A list of dns resource
      * references for each of the azure resource in the request.
-     *
+     * 
      * @param dnsResourceReferences the dnsResourceReferences value to set.
      * @return the DnsResourceReferenceResultInner object itself.
      */
@@ -60,7 +64,7 @@ public final class DnsResourceReferenceResultInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

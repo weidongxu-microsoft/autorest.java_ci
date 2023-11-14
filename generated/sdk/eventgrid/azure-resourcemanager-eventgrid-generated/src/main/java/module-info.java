@@ -10,10 +10,6 @@ module com.azure.resourcemanager.eventgrid.generated {
     exports com.azure.resourcemanager.eventgrid.generated.fluent.models;
     exports com.azure.resourcemanager.eventgrid.generated.models;
 
-    opens com.azure.resourcemanager.eventgrid.generated.fluent.models to
-        com.azure.core,
-        com.fasterxml.jackson.databind;
-    opens com.azure.resourcemanager.eventgrid.generated.models to
-        com.azure.core,
-        com.fasterxml.jackson.databind;
+    opens com.azure.resourcemanager.eventgrid.generated.fluent.models to com.azure.core, com.fasterxml.jackson.databind;
+    opens com.azure.resourcemanager.eventgrid.generated.models to com.azure.core, com.fasterxml.jackson.databind;
 }

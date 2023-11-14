@@ -14,8 +14,7 @@ public final class StorageAccountMigrationImpl implements StorageAccountMigratio
 
     private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
-    StorageAccountMigrationImpl(
-        StorageAccountMigrationInner innerObject,
+    StorageAccountMigrationImpl(StorageAccountMigrationInner innerObject,
         com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

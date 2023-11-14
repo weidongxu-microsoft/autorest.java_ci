@@ -11,7 +11,9 @@ import com.azure.resourcemanager.consumption.generated.models.CreditBalanceSumma
 import com.azure.resourcemanager.consumption.generated.models.Reseller;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** A credit summary resource. */
+/**
+ * A credit summary resource.
+ */
 @Fluent
 public final class CreditSummaryInner extends ProxyResource {
     /*
@@ -27,13 +29,15 @@ public final class CreditSummaryInner extends ProxyResource {
     @JsonProperty(value = "eTag")
     private String etag;
 
-    /** Creates an instance of CreditSummaryInner class. */
+    /**
+     * Creates an instance of CreditSummaryInner class.
+     */
     public CreditSummaryInner() {
     }
 
     /**
      * Get the innerProperties property: The properties of the credit summary.
-     *
+     * 
      * @return the innerProperties value.
      */
     private CreditSummaryProperties innerProperties() {
@@ -43,7 +47,7 @@ public final class CreditSummaryInner extends ProxyResource {
     /**
      * Get the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to
      * determine whether the user is updating the latest version or not.
-     *
+     * 
      * @return the etag value.
      */
     public String etag() {
@@ -53,7 +57,7 @@ public final class CreditSummaryInner extends ProxyResource {
     /**
      * Set the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to
      * determine whether the user is updating the latest version or not.
-     *
+     * 
      * @param etag the etag value to set.
      * @return the CreditSummaryInner object itself.
      */
@@ -64,7 +68,7 @@ public final class CreditSummaryInner extends ProxyResource {
 
     /**
      * Get the balanceSummary property: Summary of balances associated with this credit summary.
-     *
+     * 
      * @return the balanceSummary value.
      */
     public CreditBalanceSummary balanceSummary() {
@@ -73,7 +77,7 @@ public final class CreditSummaryInner extends ProxyResource {
 
     /**
      * Get the pendingCreditAdjustments property: Pending credit adjustments.
-     *
+     * 
      * @return the pendingCreditAdjustments value.
      */
     public Amount pendingCreditAdjustments() {
@@ -82,7 +86,7 @@ public final class CreditSummaryInner extends ProxyResource {
 
     /**
      * Get the expiredCredit property: Expired credit.
-     *
+     * 
      * @return the expiredCredit value.
      */
     public Amount expiredCredit() {
@@ -91,7 +95,7 @@ public final class CreditSummaryInner extends ProxyResource {
 
     /**
      * Get the pendingEligibleCharges property: Pending eligible charges.
-     *
+     * 
      * @return the pendingEligibleCharges value.
      */
     public Amount pendingEligibleCharges() {
@@ -100,7 +104,7 @@ public final class CreditSummaryInner extends ProxyResource {
 
     /**
      * Get the creditCurrency property: The credit currency.
-     *
+     * 
      * @return the creditCurrency value.
      */
     public String creditCurrency() {
@@ -109,7 +113,7 @@ public final class CreditSummaryInner extends ProxyResource {
 
     /**
      * Get the billingCurrency property: The billing currency.
-     *
+     * 
      * @return the billingCurrency value.
      */
     public String billingCurrency() {
@@ -118,7 +122,7 @@ public final class CreditSummaryInner extends ProxyResource {
 
     /**
      * Get the reseller property: Credit's reseller.
-     *
+     * 
      * @return the reseller value.
      */
     public Reseller reseller() {
@@ -128,7 +132,7 @@ public final class CreditSummaryInner extends ProxyResource {
     /**
      * Get the isEstimatedBalance property: If true, the listed details are based on an estimation and it will be
      * subjected to change.
-     *
+     * 
      * @return the isEstimatedBalance value.
      */
     public Boolean isEstimatedBalance() {
@@ -137,7 +141,7 @@ public final class CreditSummaryInner extends ProxyResource {
 
     /**
      * Get the etag property: The eTag for the resource.
-     *
+     * 
      * @return the etag value.
      */
     public String etagPropertiesEtag() {
@@ -146,7 +150,7 @@ public final class CreditSummaryInner extends ProxyResource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

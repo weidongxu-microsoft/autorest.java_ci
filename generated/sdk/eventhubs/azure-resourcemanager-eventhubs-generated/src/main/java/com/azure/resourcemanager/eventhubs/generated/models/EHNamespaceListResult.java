@@ -9,7 +9,9 @@ import com.azure.resourcemanager.eventhubs.generated.fluent.models.EHNamespaceIn
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The response of the List Namespace operation. */
+/**
+ * The response of the List Namespace operation.
+ */
 @Fluent
 public final class EHNamespaceListResult {
     /*
@@ -24,13 +26,15 @@ public final class EHNamespaceListResult {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
-    /** Creates an instance of EHNamespaceListResult class. */
+    /**
+     * Creates an instance of EHNamespaceListResult class.
+     */
     public EHNamespaceListResult() {
     }
 
     /**
      * Get the value property: Result of the List Namespace operation.
-     *
+     * 
      * @return the value value.
      */
     public List<EHNamespaceInner> value() {
@@ -39,7 +43,7 @@ public final class EHNamespaceListResult {
 
     /**
      * Set the value property: Result of the List Namespace operation.
-     *
+     * 
      * @param value the value value to set.
      * @return the EHNamespaceListResult object itself.
      */
@@ -51,7 +55,7 @@ public final class EHNamespaceListResult {
     /**
      * Get the nextLink property: Link to the next set of results. Not empty if Value contains incomplete list of
      * namespaces.
-     *
+     * 
      * @return the nextLink value.
      */
     public String nextLink() {
@@ -61,7 +65,7 @@ public final class EHNamespaceListResult {
     /**
      * Set the nextLink property: Link to the next set of results. Not empty if Value contains incomplete list of
      * namespaces.
-     *
+     * 
      * @param nextLink the nextLink value to set.
      * @return the EHNamespaceListResult object itself.
      */
@@ -72,7 +76,7 @@ public final class EHNamespaceListResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

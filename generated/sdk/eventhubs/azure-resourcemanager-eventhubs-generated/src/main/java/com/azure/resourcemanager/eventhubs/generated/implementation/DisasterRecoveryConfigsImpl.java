@@ -28,49 +28,42 @@ public final class DisasterRecoveryConfigsImpl implements DisasterRecoveryConfig
 
     private final com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager;
 
-    public DisasterRecoveryConfigsImpl(
-        DisasterRecoveryConfigsClient innerClient,
+    public DisasterRecoveryConfigsImpl(DisasterRecoveryConfigsClient innerClient,
         com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public PagedIterable<AuthorizationRule> listAuthorizationRules(
-        String resourceGroupName, String namespaceName, String alias) {
-        PagedIterable<AuthorizationRuleInner> inner =
-            this.serviceClient().listAuthorizationRules(resourceGroupName, namespaceName, alias);
+    public PagedIterable<AuthorizationRule> listAuthorizationRules(String resourceGroupName, String namespaceName,
+        String alias) {
+        PagedIterable<AuthorizationRuleInner> inner
+            = this.serviceClient().listAuthorizationRules(resourceGroupName, namespaceName, alias);
         return Utils.mapPage(inner, inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<AuthorizationRule> listAuthorizationRules(
-        String resourceGroupName, String namespaceName, String alias, Context context) {
-        PagedIterable<AuthorizationRuleInner> inner =
-            this.serviceClient().listAuthorizationRules(resourceGroupName, namespaceName, alias, context);
+    public PagedIterable<AuthorizationRule> listAuthorizationRules(String resourceGroupName, String namespaceName,
+        String alias, Context context) {
+        PagedIterable<AuthorizationRuleInner> inner
+            = this.serviceClient().listAuthorizationRules(resourceGroupName, namespaceName, alias, context);
         return Utils.mapPage(inner, inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
     }
 
-    public Response<AuthorizationRule> getAuthorizationRuleWithResponse(
-        String resourceGroupName, String namespaceName, String alias, String authorizationRuleName, Context context) {
-        Response<AuthorizationRuleInner> inner =
-            this
-                .serviceClient()
-                .getAuthorizationRuleWithResponse(
-                    resourceGroupName, namespaceName, alias, authorizationRuleName, context);
+    public Response<AuthorizationRule> getAuthorizationRuleWithResponse(String resourceGroupName, String namespaceName,
+        String alias, String authorizationRuleName, Context context) {
+        Response<AuthorizationRuleInner> inner = this.serviceClient()
+            .getAuthorizationRuleWithResponse(resourceGroupName, namespaceName, alias, authorizationRuleName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new AuthorizationRuleImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public AuthorizationRule getAuthorizationRule(
-        String resourceGroupName, String namespaceName, String alias, String authorizationRuleName) {
-        AuthorizationRuleInner inner =
-            this.serviceClient().getAuthorizationRule(resourceGroupName, namespaceName, alias, authorizationRuleName);
+    public AuthorizationRule getAuthorizationRule(String resourceGroupName, String namespaceName, String alias,
+        String authorizationRuleName) {
+        AuthorizationRuleInner inner
+            = this.serviceClient().getAuthorizationRule(resourceGroupName, namespaceName, alias, authorizationRuleName);
         if (inner != null) {
             return new AuthorizationRuleImpl(inner, this.manager());
         } else {
@@ -78,27 +71,22 @@ public final class DisasterRecoveryConfigsImpl implements DisasterRecoveryConfig
         }
     }
 
-    public Response<AccessKeys> listKeysWithResponse(
-        String resourceGroupName, String namespaceName, String alias, String authorizationRuleName, Context context) {
-        Response<AccessKeysInner> inner =
-            this
-                .serviceClient()
-                .listKeysWithResponse(resourceGroupName, namespaceName, alias, authorizationRuleName, context);
+    public Response<AccessKeys> listKeysWithResponse(String resourceGroupName, String namespaceName, String alias,
+        String authorizationRuleName, Context context) {
+        Response<AccessKeysInner> inner = this.serviceClient().listKeysWithResponse(resourceGroupName, namespaceName,
+            alias, authorizationRuleName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new AccessKeysImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public AccessKeys listKeys(
-        String resourceGroupName, String namespaceName, String alias, String authorizationRuleName) {
-        AccessKeysInner inner =
-            this.serviceClient().listKeys(resourceGroupName, namespaceName, alias, authorizationRuleName);
+    public AccessKeys listKeys(String resourceGroupName, String namespaceName, String alias,
+        String authorizationRuleName) {
+        AccessKeysInner inner
+            = this.serviceClient().listKeys(resourceGroupName, namespaceName, alias, authorizationRuleName);
         if (inner != null) {
             return new AccessKeysImpl(inner, this.manager());
         } else {
@@ -106,27 +94,22 @@ public final class DisasterRecoveryConfigsImpl implements DisasterRecoveryConfig
         }
     }
 
-    public Response<CheckNameAvailabilityResult> checkNameAvailabilityWithResponse(
-        String resourceGroupName, String namespaceName, CheckNameAvailabilityParameter parameters, Context context) {
-        Response<CheckNameAvailabilityResultInner> inner =
-            this
-                .serviceClient()
-                .checkNameAvailabilityWithResponse(resourceGroupName, namespaceName, parameters, context);
+    public Response<CheckNameAvailabilityResult> checkNameAvailabilityWithResponse(String resourceGroupName,
+        String namespaceName, CheckNameAvailabilityParameter parameters, Context context) {
+        Response<CheckNameAvailabilityResultInner> inner = this.serviceClient()
+            .checkNameAvailabilityWithResponse(resourceGroupName, namespaceName, parameters, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new CheckNameAvailabilityResultImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public CheckNameAvailabilityResult checkNameAvailability(
-        String resourceGroupName, String namespaceName, CheckNameAvailabilityParameter parameters) {
-        CheckNameAvailabilityResultInner inner =
-            this.serviceClient().checkNameAvailability(resourceGroupName, namespaceName, parameters);
+    public CheckNameAvailabilityResult checkNameAvailability(String resourceGroupName, String namespaceName,
+        CheckNameAvailabilityParameter parameters) {
+        CheckNameAvailabilityResultInner inner
+            = this.serviceClient().checkNameAvailability(resourceGroupName, namespaceName, parameters);
         if (inner != null) {
             return new CheckNameAvailabilityResultImpl(inner, this.manager());
         } else {
@@ -140,13 +123,13 @@ public final class DisasterRecoveryConfigsImpl implements DisasterRecoveryConfig
     }
 
     public PagedIterable<ArmDisasterRecovery> list(String resourceGroupName, String namespaceName, Context context) {
-        PagedIterable<ArmDisasterRecoveryInner> inner =
-            this.serviceClient().list(resourceGroupName, namespaceName, context);
+        PagedIterable<ArmDisasterRecoveryInner> inner
+            = this.serviceClient().list(resourceGroupName, namespaceName, context);
         return Utils.mapPage(inner, inner1 -> new ArmDisasterRecoveryImpl(inner1, this.manager()));
     }
 
-    public Response<Void> deleteWithResponse(
-        String resourceGroupName, String namespaceName, String alias, Context context) {
+    public Response<Void> deleteWithResponse(String resourceGroupName, String namespaceName, String alias,
+        Context context) {
         return this.serviceClient().deleteWithResponse(resourceGroupName, namespaceName, alias, context);
     }
 
@@ -154,15 +137,12 @@ public final class DisasterRecoveryConfigsImpl implements DisasterRecoveryConfig
         this.serviceClient().delete(resourceGroupName, namespaceName, alias);
     }
 
-    public Response<ArmDisasterRecovery> getWithResponse(
-        String resourceGroupName, String namespaceName, String alias, Context context) {
-        Response<ArmDisasterRecoveryInner> inner =
-            this.serviceClient().getWithResponse(resourceGroupName, namespaceName, alias, context);
+    public Response<ArmDisasterRecovery> getWithResponse(String resourceGroupName, String namespaceName, String alias,
+        Context context) {
+        Response<ArmDisasterRecoveryInner> inner
+            = this.serviceClient().getWithResponse(resourceGroupName, namespaceName, alias, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ArmDisasterRecoveryImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -178,8 +158,8 @@ public final class DisasterRecoveryConfigsImpl implements DisasterRecoveryConfig
         }
     }
 
-    public Response<Void> breakPairingWithResponse(
-        String resourceGroupName, String namespaceName, String alias, Context context) {
+    public Response<Void> breakPairingWithResponse(String resourceGroupName, String namespaceName, String alias,
+        Context context) {
         return this.serviceClient().breakPairingWithResponse(resourceGroupName, namespaceName, alias, context);
     }
 
@@ -187,8 +167,8 @@ public final class DisasterRecoveryConfigsImpl implements DisasterRecoveryConfig
         this.serviceClient().breakPairing(resourceGroupName, namespaceName, alias);
     }
 
-    public Response<Void> failOverWithResponse(
-        String resourceGroupName, String namespaceName, String alias, Context context) {
+    public Response<Void> failOverWithResponse(String resourceGroupName, String namespaceName, String alias,
+        Context context) {
         return this.serviceClient().failOverWithResponse(resourceGroupName, namespaceName, alias, context);
     }
 
@@ -199,28 +179,18 @@ public final class DisasterRecoveryConfigsImpl implements DisasterRecoveryConfig
     public ArmDisasterRecovery getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
         String alias = Utils.getValueFromIdByName(id, "disasterRecoveryConfigs");
         if (alias == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'disasterRecoveryConfigs'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'disasterRecoveryConfigs'.", id)));
         }
         return this.getWithResponse(resourceGroupName, namespaceName, alias, Context.NONE).getValue();
     }
@@ -228,28 +198,18 @@ public final class DisasterRecoveryConfigsImpl implements DisasterRecoveryConfig
     public Response<ArmDisasterRecovery> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
         String alias = Utils.getValueFromIdByName(id, "disasterRecoveryConfigs");
         if (alias == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'disasterRecoveryConfigs'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'disasterRecoveryConfigs'.", id)));
         }
         return this.getWithResponse(resourceGroupName, namespaceName, alias, context);
     }
@@ -257,28 +217,18 @@ public final class DisasterRecoveryConfigsImpl implements DisasterRecoveryConfig
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
         String alias = Utils.getValueFromIdByName(id, "disasterRecoveryConfigs");
         if (alias == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'disasterRecoveryConfigs'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'disasterRecoveryConfigs'.", id)));
         }
         this.deleteWithResponse(resourceGroupName, namespaceName, alias, Context.NONE);
     }
@@ -286,28 +236,18 @@ public final class DisasterRecoveryConfigsImpl implements DisasterRecoveryConfig
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
         String alias = Utils.getValueFromIdByName(id, "disasterRecoveryConfigs");
         if (alias == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'disasterRecoveryConfigs'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'disasterRecoveryConfigs'.", id)));
         }
         return this.deleteWithResponse(resourceGroupName, namespaceName, alias, context);
     }

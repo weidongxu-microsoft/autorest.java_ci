@@ -10,7 +10,9 @@ import com.azure.resourcemanager.eventhubs.generated.fluent.models.NetworkSecuri
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Network Security Perimeter related configurations of a given namespace. */
+/**
+ * Network Security Perimeter related configurations of a given namespace.
+ */
 @Immutable
 public final class NetworkSecurityPerimeterConfiguration extends ProxyResource {
     /*
@@ -25,13 +27,15 @@ public final class NetworkSecurityPerimeterConfiguration extends ProxyResource {
     @JsonProperty(value = "location", access = JsonProperty.Access.WRITE_ONLY)
     private String location;
 
-    /** Creates an instance of NetworkSecurityPerimeterConfiguration class. */
+    /**
+     * Creates an instance of NetworkSecurityPerimeterConfiguration class.
+     */
     public NetworkSecurityPerimeterConfiguration() {
     }
 
     /**
      * Get the innerProperties property: Properties of the Network Security Perimeter Configuration.
-     *
+     * 
      * @return the innerProperties value.
      */
     private NetworkSecurityPerimeterConfigurationProperties innerProperties() {
@@ -40,7 +44,7 @@ public final class NetworkSecurityPerimeterConfiguration extends ProxyResource {
 
     /**
      * Get the location property: The geo-location where the resource lives.
-     *
+     * 
      * @return the location value.
      */
     public String location() {
@@ -49,7 +53,7 @@ public final class NetworkSecurityPerimeterConfiguration extends ProxyResource {
 
     /**
      * Get the provisioningState property: Provisioning state of NetworkSecurityPerimeter configuration propagation.
-     *
+     * 
      * @return the provisioningState value.
      */
     public NetworkSecurityPerimeterConfigurationProvisioningState provisioningState() {
@@ -58,12 +62,12 @@ public final class NetworkSecurityPerimeterConfiguration extends ProxyResource {
 
     /**
      * Set the provisioningState property: Provisioning state of NetworkSecurityPerimeter configuration propagation.
-     *
+     * 
      * @param provisioningState the provisioningState value to set.
      * @return the NetworkSecurityPerimeterConfiguration object itself.
      */
-    public NetworkSecurityPerimeterConfiguration withProvisioningState(
-        NetworkSecurityPerimeterConfigurationProvisioningState provisioningState) {
+    public NetworkSecurityPerimeterConfiguration
+        withProvisioningState(NetworkSecurityPerimeterConfigurationProvisioningState provisioningState) {
         if (this.innerProperties() == null) {
             this.innerProperties = new NetworkSecurityPerimeterConfigurationProperties();
         }
@@ -73,7 +77,7 @@ public final class NetworkSecurityPerimeterConfiguration extends ProxyResource {
 
     /**
      * Get the provisioningIssues property: List of Provisioning Issues if any.
-     *
+     * 
      * @return the provisioningIssues value.
      */
     public List<ProvisioningIssue> provisioningIssues() {
@@ -82,7 +86,7 @@ public final class NetworkSecurityPerimeterConfiguration extends ProxyResource {
 
     /**
      * Set the provisioningIssues property: List of Provisioning Issues if any.
-     *
+     * 
      * @param provisioningIssues the provisioningIssues value to set.
      * @return the NetworkSecurityPerimeterConfiguration object itself.
      */
@@ -96,7 +100,7 @@ public final class NetworkSecurityPerimeterConfiguration extends ProxyResource {
 
     /**
      * Get the networkSecurityPerimeter property: NetworkSecurityPerimeter related information.
-     *
+     * 
      * @return the networkSecurityPerimeter value.
      */
     public NetworkSecurityPerimeter networkSecurityPerimeter() {
@@ -105,7 +109,7 @@ public final class NetworkSecurityPerimeterConfiguration extends ProxyResource {
 
     /**
      * Get the resourceAssociation property: Information about resource association.
-     *
+     * 
      * @return the resourceAssociation value.
      */
     public NetworkSecurityPerimeterConfigurationPropertiesResourceAssociation resourceAssociation() {
@@ -114,7 +118,7 @@ public final class NetworkSecurityPerimeterConfiguration extends ProxyResource {
 
     /**
      * Get the profile property: Information about current network profile.
-     *
+     * 
      * @return the profile value.
      */
     public NetworkSecurityPerimeterConfigurationPropertiesProfile profile() {
@@ -124,7 +128,7 @@ public final class NetworkSecurityPerimeterConfiguration extends ProxyResource {
     /**
      * Get the isBackingResource property: True if the EventHub namespace is backed by another Azure resource and not
      * visible to end users.
-     *
+     * 
      * @return the isBackingResource value.
      */
     public Boolean isBackingResource() {
@@ -134,7 +138,7 @@ public final class NetworkSecurityPerimeterConfiguration extends ProxyResource {
     /**
      * Get the applicableFeatures property: Indicates that the NSP controls related to backing association are only
      * applicable to a specific feature in backing resource's data plane.
-     *
+     * 
      * @return the applicableFeatures value.
      */
     public List<String> applicableFeatures() {
@@ -143,7 +147,7 @@ public final class NetworkSecurityPerimeterConfiguration extends ProxyResource {
 
     /**
      * Get the parentAssociationName property: Source Resource Association name.
-     *
+     * 
      * @return the parentAssociationName value.
      */
     public String parentAssociationName() {
@@ -152,7 +156,7 @@ public final class NetworkSecurityPerimeterConfiguration extends ProxyResource {
 
     /**
      * Get the sourceResourceId property: ARM Id of source resource.
-     *
+     * 
      * @return the sourceResourceId value.
      */
     public String sourceResourceId() {
@@ -161,7 +165,7 @@ public final class NetworkSecurityPerimeterConfiguration extends ProxyResource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

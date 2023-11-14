@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of ExpressRoutePortAuthorizations. */
+/**
+ * Resource collection API of ExpressRoutePortAuthorizations.
+ */
 public interface ExpressRoutePortAuthorizations {
     /**
      * Deletes the specified authorization from the specified express route port.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the express route port.
      * @param authorizationName The name of the authorization.
@@ -24,7 +26,7 @@ public interface ExpressRoutePortAuthorizations {
 
     /**
      * Deletes the specified authorization from the specified express route port.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the express route port.
      * @param authorizationName The name of the authorization.
@@ -37,7 +39,7 @@ public interface ExpressRoutePortAuthorizations {
 
     /**
      * Gets the specified authorization from the specified express route port.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the express route port.
      * @param authorizationName The name of the authorization.
@@ -47,12 +49,12 @@ public interface ExpressRoutePortAuthorizations {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified authorization from the specified express route port along with {@link Response}.
      */
-    Response<ExpressRoutePortAuthorization> getWithResponse(
-        String resourceGroupName, String expressRoutePortName, String authorizationName, Context context);
+    Response<ExpressRoutePortAuthorization> getWithResponse(String resourceGroupName, String expressRoutePortName,
+        String authorizationName, Context context);
 
     /**
      * Gets the specified authorization from the specified express route port.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the express route port.
      * @param authorizationName The name of the authorization.
@@ -65,7 +67,7 @@ public interface ExpressRoutePortAuthorizations {
 
     /**
      * Gets all authorizations in an express route port.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the express route port.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -77,7 +79,7 @@ public interface ExpressRoutePortAuthorizations {
 
     /**
      * Gets all authorizations in an express route port.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the express route port.
      * @param context The context to associate with this operation.
@@ -86,12 +88,12 @@ public interface ExpressRoutePortAuthorizations {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all authorizations in an express route port as paginated response with {@link PagedIterable}.
      */
-    PagedIterable<ExpressRoutePortAuthorization> list(
-        String resourceGroupName, String expressRoutePortName, Context context);
+    PagedIterable<ExpressRoutePortAuthorization> list(String resourceGroupName, String expressRoutePortName,
+        Context context);
 
     /**
      * Gets the specified authorization from the specified express route port.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -102,7 +104,7 @@ public interface ExpressRoutePortAuthorizations {
 
     /**
      * Gets the specified authorization from the specified express route port.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -114,7 +116,7 @@ public interface ExpressRoutePortAuthorizations {
 
     /**
      * Deletes the specified authorization from the specified express route port.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -124,7 +126,7 @@ public interface ExpressRoutePortAuthorizations {
 
     /**
      * Deletes the specified authorization from the specified express route port.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -135,7 +137,7 @@ public interface ExpressRoutePortAuthorizations {
 
     /**
      * Begins definition for a new ExpressRoutePortAuthorization resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new ExpressRoutePortAuthorization definition.
      */

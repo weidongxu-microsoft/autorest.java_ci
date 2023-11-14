@@ -11,11 +11,13 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.relay.generated.fluent.models.PrivateLinkResourceInner;
 import com.azure.resourcemanager.relay.generated.fluent.models.PrivateLinkResourcesListResultInner;
 
-/** An instance of this class provides access to all the operations defined in PrivateLinkResourcesClient. */
+/**
+ * An instance of this class provides access to all the operations defined in PrivateLinkResourcesClient.
+ */
 public interface PrivateLinkResourcesClient {
     /**
      * Gets a description for the specified Private Endpoint Connection name.
-     *
+     * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
      * @param privateLinkResourceName The PrivateLinkResource name.
@@ -26,12 +28,12 @@ public interface PrivateLinkResourcesClient {
      * @return a description for the specified Private Endpoint Connection name along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<PrivateLinkResourceInner> getWithResponse(
-        String resourceGroupName, String namespaceName, String privateLinkResourceName, Context context);
+    Response<PrivateLinkResourceInner> getWithResponse(String resourceGroupName, String namespaceName,
+        String privateLinkResourceName, Context context);
 
     /**
      * Gets a description for the specified Private Endpoint Connection name.
-     *
+     * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
      * @param privateLinkResourceName The PrivateLinkResource name.
@@ -45,7 +47,7 @@ public interface PrivateLinkResourcesClient {
 
     /**
      * Gets lists of resources that supports Privatelinks.
-     *
+     * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
      * @param context The context to associate with this operation.
@@ -55,12 +57,12 @@ public interface PrivateLinkResourcesClient {
      * @return lists of resources that supports Privatelinks along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<PrivateLinkResourcesListResultInner> listWithResponse(
-        String resourceGroupName, String namespaceName, Context context);
+    Response<PrivateLinkResourcesListResultInner> listWithResponse(String resourceGroupName, String namespaceName,
+        Context context);
 
     /**
      * Gets lists of resources that supports Privatelinks.
-     *
+     * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param namespaceName The namespace name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

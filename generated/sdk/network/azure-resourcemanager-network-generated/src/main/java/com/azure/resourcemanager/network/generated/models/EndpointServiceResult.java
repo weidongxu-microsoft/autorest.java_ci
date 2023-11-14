@@ -6,32 +6,34 @@ package com.azure.resourcemanager.network.generated.models;
 
 import com.azure.resourcemanager.network.generated.fluent.models.EndpointServiceResultInner;
 
-/** An immutable client-side representation of EndpointServiceResult. */
+/**
+ * An immutable client-side representation of EndpointServiceResult.
+ */
 public interface EndpointServiceResult {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the name property: Name of the endpoint service.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the type property: Type of the endpoint service.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.EndpointServiceResultInner object.
-     *
+     * 
      * @return the inner object.
      */
     EndpointServiceResultInner innerModel();

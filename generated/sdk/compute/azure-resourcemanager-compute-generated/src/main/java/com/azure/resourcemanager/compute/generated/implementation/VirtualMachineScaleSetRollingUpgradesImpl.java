@@ -20,8 +20,7 @@ public final class VirtualMachineScaleSetRollingUpgradesImpl implements VirtualM
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    public VirtualMachineScaleSetRollingUpgradesImpl(
-        VirtualMachineScaleSetRollingUpgradesClient innerClient,
+    public VirtualMachineScaleSetRollingUpgradesImpl(VirtualMachineScaleSetRollingUpgradesClient innerClient,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -51,15 +50,12 @@ public final class VirtualMachineScaleSetRollingUpgradesImpl implements VirtualM
         this.serviceClient().startExtensionUpgrade(resourceGroupName, vmScaleSetName, context);
     }
 
-    public Response<RollingUpgradeStatusInfo> getLatestWithResponse(
-        String resourceGroupName, String vmScaleSetName, Context context) {
-        Response<RollingUpgradeStatusInfoInner> inner =
-            this.serviceClient().getLatestWithResponse(resourceGroupName, vmScaleSetName, context);
+    public Response<RollingUpgradeStatusInfo> getLatestWithResponse(String resourceGroupName, String vmScaleSetName,
+        Context context) {
+        Response<RollingUpgradeStatusInfoInner> inner
+            = this.serviceClient().getLatestWithResponse(resourceGroupName, vmScaleSetName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new RollingUpgradeStatusInfoImpl(inner.getValue(), this.manager()));
         } else {
             return null;

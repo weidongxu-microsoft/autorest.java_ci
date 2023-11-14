@@ -7,7 +7,9 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The LiveEvent action input parameter definition. */
+/**
+ * The LiveEvent action input parameter definition.
+ */
 @Fluent
 public final class LiveEventActionInput {
     /*
@@ -17,14 +19,16 @@ public final class LiveEventActionInput {
     @JsonProperty(value = "removeOutputsOnStop")
     private Boolean removeOutputsOnStop;
 
-    /** Creates an instance of LiveEventActionInput class. */
+    /**
+     * Creates an instance of LiveEventActionInput class.
+     */
     public LiveEventActionInput() {
     }
 
     /**
-     * Get the removeOutputsOnStop property: The flag indicates whether live outputs are automatically deleted when live
-     * event is being stopped. Deleting live outputs do not delete the underlying assets.
-     *
+     * Get the removeOutputsOnStop property: The flag indicates whether live outputs are automatically deleted when
+     * live event is being stopped. Deleting live outputs do not delete the underlying assets.
+     * 
      * @return the removeOutputsOnStop value.
      */
     public Boolean removeOutputsOnStop() {
@@ -32,9 +36,9 @@ public final class LiveEventActionInput {
     }
 
     /**
-     * Set the removeOutputsOnStop property: The flag indicates whether live outputs are automatically deleted when live
-     * event is being stopped. Deleting live outputs do not delete the underlying assets.
-     *
+     * Set the removeOutputsOnStop property: The flag indicates whether live outputs are automatically deleted when
+     * live event is being stopped. Deleting live outputs do not delete the underlying assets.
+     * 
      * @param removeOutputsOnStop the removeOutputsOnStop value to set.
      * @return the LiveEventActionInput object itself.
      */
@@ -45,7 +49,7 @@ public final class LiveEventActionInput {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

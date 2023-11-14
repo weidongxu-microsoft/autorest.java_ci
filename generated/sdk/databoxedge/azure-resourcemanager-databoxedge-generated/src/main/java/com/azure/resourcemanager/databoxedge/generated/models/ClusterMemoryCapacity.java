@@ -7,7 +7,9 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** NodeCapacityInfo defines the required information to determine the placement of a VM. */
+/**
+ * NodeCapacityInfo defines the required information to determine the placement of a VM.
+ */
 @Fluent
 public final class ClusterMemoryCapacity {
     /*
@@ -64,13 +66,15 @@ public final class ClusterMemoryCapacity {
     @JsonProperty(value = "clusterMemoryUsedByVmsMb")
     private Double clusterMemoryUsedByVmsMb;
 
-    /** Creates an instance of ClusterMemoryCapacity class. */
+    /**
+     * Creates an instance of ClusterMemoryCapacity class.
+     */
     public ClusterMemoryCapacity() {
     }
 
     /**
      * Get the clusterFreeMemoryMb property: The free memory in the cluster in MB.
-     *
+     * 
      * @return the clusterFreeMemoryMb value.
      */
     public Double clusterFreeMemoryMb() {
@@ -79,7 +83,7 @@ public final class ClusterMemoryCapacity {
 
     /**
      * Set the clusterFreeMemoryMb property: The free memory in the cluster in MB.
-     *
+     * 
      * @param clusterFreeMemoryMb the clusterFreeMemoryMb value to set.
      * @return the ClusterMemoryCapacity object itself.
      */
@@ -90,7 +94,7 @@ public final class ClusterMemoryCapacity {
 
     /**
      * Get the clusterUsedMemoryMb property: The used memory in the cluster in MB.
-     *
+     * 
      * @return the clusterUsedMemoryMb value.
      */
     public Double clusterUsedMemoryMb() {
@@ -99,7 +103,7 @@ public final class ClusterMemoryCapacity {
 
     /**
      * Set the clusterUsedMemoryMb property: The used memory in the cluster in MB.
-     *
+     * 
      * @param clusterUsedMemoryMb the clusterUsedMemoryMb value to set.
      * @return the ClusterMemoryCapacity object itself.
      */
@@ -110,7 +114,7 @@ public final class ClusterMemoryCapacity {
 
     /**
      * Get the clusterFailoverMemoryMb property: The failover memory in the cluster in MB.
-     *
+     * 
      * @return the clusterFailoverMemoryMb value.
      */
     public Double clusterFailoverMemoryMb() {
@@ -119,7 +123,7 @@ public final class ClusterMemoryCapacity {
 
     /**
      * Set the clusterFailoverMemoryMb property: The failover memory in the cluster in MB.
-     *
+     * 
      * @param clusterFailoverMemoryMb the clusterFailoverMemoryMb value to set.
      * @return the ClusterMemoryCapacity object itself.
      */
@@ -130,7 +134,7 @@ public final class ClusterMemoryCapacity {
 
     /**
      * Get the clusterFragmentationMemoryMb property: The fragmentation memory in the cluster in MB.
-     *
+     * 
      * @return the clusterFragmentationMemoryMb value.
      */
     public Double clusterFragmentationMemoryMb() {
@@ -139,7 +143,7 @@ public final class ClusterMemoryCapacity {
 
     /**
      * Set the clusterFragmentationMemoryMb property: The fragmentation memory in the cluster in MB.
-     *
+     * 
      * @param clusterFragmentationMemoryMb the clusterFragmentationMemoryMb value to set.
      * @return the ClusterMemoryCapacity object itself.
      */
@@ -150,7 +154,7 @@ public final class ClusterMemoryCapacity {
 
     /**
      * Get the clusterHypervReserveMemoryMb property: The memory reserved for Hyper-V in the cluster in MB.
-     *
+     * 
      * @return the clusterHypervReserveMemoryMb value.
      */
     public Double clusterHypervReserveMemoryMb() {
@@ -159,7 +163,7 @@ public final class ClusterMemoryCapacity {
 
     /**
      * Set the clusterHypervReserveMemoryMb property: The memory reserved for Hyper-V in the cluster in MB.
-     *
+     * 
      * @param clusterHypervReserveMemoryMb the clusterHypervReserveMemoryMb value to set.
      * @return the ClusterMemoryCapacity object itself.
      */
@@ -170,7 +174,7 @@ public final class ClusterMemoryCapacity {
 
     /**
      * Get the clusterInfraVmMemoryMb property: The memory of the Infra VM in the cluster in MB.
-     *
+     * 
      * @return the clusterInfraVmMemoryMb value.
      */
     public Double clusterInfraVmMemoryMb() {
@@ -179,7 +183,7 @@ public final class ClusterMemoryCapacity {
 
     /**
      * Set the clusterInfraVmMemoryMb property: The memory of the Infra VM in the cluster in MB.
-     *
+     * 
      * @param clusterInfraVmMemoryMb the clusterInfraVmMemoryMb value to set.
      * @return the ClusterMemoryCapacity object itself.
      */
@@ -190,7 +194,7 @@ public final class ClusterMemoryCapacity {
 
     /**
      * Get the clusterTotalMemoryMb property: The total memory in the cluster in MB.
-     *
+     * 
      * @return the clusterTotalMemoryMb value.
      */
     public Double clusterTotalMemoryMb() {
@@ -199,7 +203,7 @@ public final class ClusterMemoryCapacity {
 
     /**
      * Set the clusterTotalMemoryMb property: The total memory in the cluster in MB.
-     *
+     * 
      * @param clusterTotalMemoryMb the clusterTotalMemoryMb value to set.
      * @return the ClusterMemoryCapacity object itself.
      */
@@ -210,7 +214,7 @@ public final class ClusterMemoryCapacity {
 
     /**
      * Get the clusterNonFailoverVmMb property: The non-failover memory in the cluster in MB.
-     *
+     * 
      * @return the clusterNonFailoverVmMb value.
      */
     public Double clusterNonFailoverVmMb() {
@@ -219,7 +223,7 @@ public final class ClusterMemoryCapacity {
 
     /**
      * Set the clusterNonFailoverVmMb property: The non-failover memory in the cluster in MB.
-     *
+     * 
      * @param clusterNonFailoverVmMb the clusterNonFailoverVmMb value to set.
      * @return the ClusterMemoryCapacity object itself.
      */
@@ -230,7 +234,7 @@ public final class ClusterMemoryCapacity {
 
     /**
      * Get the clusterMemoryUsedByVmsMb property: The memory used by VMs in the cluster in MB.
-     *
+     * 
      * @return the clusterMemoryUsedByVmsMb value.
      */
     public Double clusterMemoryUsedByVmsMb() {
@@ -239,7 +243,7 @@ public final class ClusterMemoryCapacity {
 
     /**
      * Set the clusterMemoryUsedByVmsMb property: The memory used by VMs in the cluster in MB.
-     *
+     * 
      * @param clusterMemoryUsedByVmsMb the clusterMemoryUsedByVmsMb value to set.
      * @return the ClusterMemoryCapacity object itself.
      */
@@ -250,7 +254,7 @@ public final class ClusterMemoryCapacity {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

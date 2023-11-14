@@ -6,28 +6,38 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
 
-/** Describes the settings to produce a PNG image from the input video. */
+/**
+ * Describes the settings to produce a PNG image from the input video.
+ */
 @Fluent
 public final class PngLayer extends Layer {
-    /** Creates an instance of PngLayer class. */
+    /**
+     * Creates an instance of PngLayer class.
+     */
     public PngLayer() {
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public PngLayer withWidth(String width) {
         super.withWidth(width);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public PngLayer withHeight(String height) {
         super.withHeight(height);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public PngLayer withLabel(String label) {
         super.withLabel(label);
@@ -36,7 +46,7 @@ public final class PngLayer extends Layer {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

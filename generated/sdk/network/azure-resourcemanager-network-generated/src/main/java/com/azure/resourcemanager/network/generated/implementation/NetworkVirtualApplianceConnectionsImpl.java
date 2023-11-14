@@ -21,26 +21,17 @@ public final class NetworkVirtualApplianceConnectionsImpl implements NetworkVirt
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public NetworkVirtualApplianceConnectionsImpl(
-        NetworkVirtualApplianceConnectionsClient innerClient,
+    public NetworkVirtualApplianceConnectionsImpl(NetworkVirtualApplianceConnectionsClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public NetworkVirtualApplianceConnection createOrUpdate(
-        String resourceGroupName,
-        String networkVirtualApplianceName,
-        String connectionName,
+    public NetworkVirtualApplianceConnection createOrUpdate(String resourceGroupName,
+        String networkVirtualApplianceName, String connectionName,
         NetworkVirtualApplianceConnectionInner networkVirtualApplianceConnectionParameters) {
-        NetworkVirtualApplianceConnectionInner inner =
-            this
-                .serviceClient()
-                .createOrUpdate(
-                    resourceGroupName,
-                    networkVirtualApplianceName,
-                    connectionName,
-                    networkVirtualApplianceConnectionParameters);
+        NetworkVirtualApplianceConnectionInner inner = this.serviceClient().createOrUpdate(resourceGroupName,
+            networkVirtualApplianceName, connectionName, networkVirtualApplianceConnectionParameters);
         if (inner != null) {
             return new NetworkVirtualApplianceConnectionImpl(inner, this.manager());
         } else {
@@ -48,21 +39,11 @@ public final class NetworkVirtualApplianceConnectionsImpl implements NetworkVirt
         }
     }
 
-    public NetworkVirtualApplianceConnection createOrUpdate(
-        String resourceGroupName,
-        String networkVirtualApplianceName,
-        String connectionName,
-        NetworkVirtualApplianceConnectionInner networkVirtualApplianceConnectionParameters,
-        Context context) {
-        NetworkVirtualApplianceConnectionInner inner =
-            this
-                .serviceClient()
-                .createOrUpdate(
-                    resourceGroupName,
-                    networkVirtualApplianceName,
-                    connectionName,
-                    networkVirtualApplianceConnectionParameters,
-                    context);
+    public NetworkVirtualApplianceConnection createOrUpdate(String resourceGroupName,
+        String networkVirtualApplianceName, String connectionName,
+        NetworkVirtualApplianceConnectionInner networkVirtualApplianceConnectionParameters, Context context) {
+        NetworkVirtualApplianceConnectionInner inner = this.serviceClient().createOrUpdate(resourceGroupName,
+            networkVirtualApplianceName, connectionName, networkVirtualApplianceConnectionParameters, context);
         if (inner != null) {
             return new NetworkVirtualApplianceConnectionImpl(inner, this.manager());
         } else {
@@ -70,27 +51,22 @@ public final class NetworkVirtualApplianceConnectionsImpl implements NetworkVirt
         }
     }
 
-    public Response<NetworkVirtualApplianceConnection> getWithResponse(
-        String resourceGroupName, String networkVirtualApplianceName, String connectionName, Context context) {
-        Response<NetworkVirtualApplianceConnectionInner> inner =
-            this
-                .serviceClient()
-                .getWithResponse(resourceGroupName, networkVirtualApplianceName, connectionName, context);
+    public Response<NetworkVirtualApplianceConnection> getWithResponse(String resourceGroupName,
+        String networkVirtualApplianceName, String connectionName, Context context) {
+        Response<NetworkVirtualApplianceConnectionInner> inner = this.serviceClient().getWithResponse(resourceGroupName,
+            networkVirtualApplianceName, connectionName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new NetworkVirtualApplianceConnectionImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public NetworkVirtualApplianceConnection get(
-        String resourceGroupName, String networkVirtualApplianceName, String connectionName) {
-        NetworkVirtualApplianceConnectionInner inner =
-            this.serviceClient().get(resourceGroupName, networkVirtualApplianceName, connectionName);
+    public NetworkVirtualApplianceConnection get(String resourceGroupName, String networkVirtualApplianceName,
+        String connectionName) {
+        NetworkVirtualApplianceConnectionInner inner
+            = this.serviceClient().get(resourceGroupName, networkVirtualApplianceName, connectionName);
         if (inner != null) {
             return new NetworkVirtualApplianceConnectionImpl(inner, this.manager());
         } else {
@@ -102,22 +78,22 @@ public final class NetworkVirtualApplianceConnectionsImpl implements NetworkVirt
         this.serviceClient().delete(resourceGroupName, networkVirtualApplianceName, connectionName);
     }
 
-    public void delete(
-        String resourceGroupName, String networkVirtualApplianceName, String connectionName, Context context) {
+    public void delete(String resourceGroupName, String networkVirtualApplianceName, String connectionName,
+        Context context) {
         this.serviceClient().delete(resourceGroupName, networkVirtualApplianceName, connectionName, context);
     }
 
-    public PagedIterable<NetworkVirtualApplianceConnection> list(
-        String resourceGroupName, String networkVirtualApplianceName) {
-        PagedIterable<NetworkVirtualApplianceConnectionInner> inner =
-            this.serviceClient().list(resourceGroupName, networkVirtualApplianceName);
+    public PagedIterable<NetworkVirtualApplianceConnection> list(String resourceGroupName,
+        String networkVirtualApplianceName) {
+        PagedIterable<NetworkVirtualApplianceConnectionInner> inner
+            = this.serviceClient().list(resourceGroupName, networkVirtualApplianceName);
         return Utils.mapPage(inner, inner1 -> new NetworkVirtualApplianceConnectionImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<NetworkVirtualApplianceConnection> list(
-        String resourceGroupName, String networkVirtualApplianceName, Context context) {
-        PagedIterable<NetworkVirtualApplianceConnectionInner> inner =
-            this.serviceClient().list(resourceGroupName, networkVirtualApplianceName, context);
+    public PagedIterable<NetworkVirtualApplianceConnection> list(String resourceGroupName,
+        String networkVirtualApplianceName, Context context) {
+        PagedIterable<NetworkVirtualApplianceConnectionInner> inner
+            = this.serviceClient().list(resourceGroupName, networkVirtualApplianceName, context);
         return Utils.mapPage(inner, inner1 -> new NetworkVirtualApplianceConnectionImpl(inner1, this.manager()));
     }
 

@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Billing information related properties of a server. */
+/**
+ * Billing information related properties of a server.
+ */
 @Fluent
 public final class MySqlServerSku {
     /*
@@ -23,13 +25,15 @@ public final class MySqlServerSku {
     @JsonProperty(value = "tier", required = true)
     private ServerSkuTier tier;
 
-    /** Creates an instance of MySqlServerSku class. */
+    /**
+     * Creates an instance of MySqlServerSku class.
+     */
     public MySqlServerSku() {
     }
 
     /**
      * Get the name property: The name of the sku, e.g. Standard_D32s_v3.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -38,7 +42,7 @@ public final class MySqlServerSku {
 
     /**
      * Set the name property: The name of the sku, e.g. Standard_D32s_v3.
-     *
+     * 
      * @param name the name value to set.
      * @return the MySqlServerSku object itself.
      */
@@ -49,7 +53,7 @@ public final class MySqlServerSku {
 
     /**
      * Get the tier property: The tier of the particular SKU, e.g. GeneralPurpose.
-     *
+     * 
      * @return the tier value.
      */
     public ServerSkuTier tier() {
@@ -58,7 +62,7 @@ public final class MySqlServerSku {
 
     /**
      * Set the tier property: The tier of the particular SKU, e.g. GeneralPurpose.
-     *
+     * 
      * @param tier the tier value to set.
      * @return the MySqlServerSku object itself.
      */
@@ -69,19 +73,17 @@ public final class MySqlServerSku {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property name in model MySqlServerSku"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property name in model MySqlServerSku"));
         }
         if (tier() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property tier in model MySqlServerSku"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property tier in model MySqlServerSku"));
         }
     }
 

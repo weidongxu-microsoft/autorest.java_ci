@@ -12,7 +12,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.Map;
 
-/** A export execution. */
+/**
+ * A export execution.
+ */
 @Fluent
 public final class ExportExecution extends ProxyResource {
     /*
@@ -28,13 +30,15 @@ public final class ExportExecution extends ProxyResource {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> tags;
 
-    /** Creates an instance of ExportExecution class. */
+    /**
+     * Creates an instance of ExportExecution class.
+     */
     public ExportExecution() {
     }
 
     /**
      * Get the innerProperties property: The properties of the export execution.
-     *
+     * 
      * @return the innerProperties value.
      */
     private ExportExecutionProperties innerProperties() {
@@ -43,7 +47,7 @@ public final class ExportExecution extends ProxyResource {
 
     /**
      * Get the tags property: Resource tags.
-     *
+     * 
      * @return the tags value.
      */
     public Map<String, String> tags() {
@@ -52,7 +56,7 @@ public final class ExportExecution extends ProxyResource {
 
     /**
      * Get the executionType property: The type of the export execution.
-     *
+     * 
      * @return the executionType value.
      */
     public ExecutionType executionType() {
@@ -61,7 +65,7 @@ public final class ExportExecution extends ProxyResource {
 
     /**
      * Set the executionType property: The type of the export execution.
-     *
+     * 
      * @param executionType the executionType value to set.
      * @return the ExportExecution object itself.
      */
@@ -75,7 +79,7 @@ public final class ExportExecution extends ProxyResource {
 
     /**
      * Get the status property: The status of the export execution.
-     *
+     * 
      * @return the status value.
      */
     public ExecutionStatus status() {
@@ -84,7 +88,7 @@ public final class ExportExecution extends ProxyResource {
 
     /**
      * Set the status property: The status of the export execution.
-     *
+     * 
      * @param status the status value to set.
      * @return the ExportExecution object itself.
      */
@@ -97,9 +101,9 @@ public final class ExportExecution extends ProxyResource {
     }
 
     /**
-     * Get the submittedBy property: The identifier for the entity that executed the export. For OnDemand executions, it
-     * is the email id. For Scheduled executions, it is the constant value - System.
-     *
+     * Get the submittedBy property: The identifier for the entity that executed the export. For OnDemand executions,
+     * it is the email id. For Scheduled executions, it is the constant value - System.
+     * 
      * @return the submittedBy value.
      */
     public String submittedBy() {
@@ -107,9 +111,9 @@ public final class ExportExecution extends ProxyResource {
     }
 
     /**
-     * Set the submittedBy property: The identifier for the entity that executed the export. For OnDemand executions, it
-     * is the email id. For Scheduled executions, it is the constant value - System.
-     *
+     * Set the submittedBy property: The identifier for the entity that executed the export. For OnDemand executions,
+     * it is the email id. For Scheduled executions, it is the constant value - System.
+     * 
      * @param submittedBy the submittedBy value to set.
      * @return the ExportExecution object itself.
      */
@@ -123,7 +127,7 @@ public final class ExportExecution extends ProxyResource {
 
     /**
      * Get the submittedTime property: The time when export was queued to be executed.
-     *
+     * 
      * @return the submittedTime value.
      */
     public OffsetDateTime submittedTime() {
@@ -132,7 +136,7 @@ public final class ExportExecution extends ProxyResource {
 
     /**
      * Set the submittedTime property: The time when export was queued to be executed.
-     *
+     * 
      * @param submittedTime the submittedTime value to set.
      * @return the ExportExecution object itself.
      */
@@ -146,7 +150,7 @@ public final class ExportExecution extends ProxyResource {
 
     /**
      * Get the processingStartTime property: The time when export was picked up to be executed.
-     *
+     * 
      * @return the processingStartTime value.
      */
     public OffsetDateTime processingStartTime() {
@@ -155,7 +159,7 @@ public final class ExportExecution extends ProxyResource {
 
     /**
      * Set the processingStartTime property: The time when export was picked up to be executed.
-     *
+     * 
      * @param processingStartTime the processingStartTime value to set.
      * @return the ExportExecution object itself.
      */
@@ -169,7 +173,7 @@ public final class ExportExecution extends ProxyResource {
 
     /**
      * Get the processingEndTime property: The time when export execution finished.
-     *
+     * 
      * @return the processingEndTime value.
      */
     public OffsetDateTime processingEndTime() {
@@ -178,7 +182,7 @@ public final class ExportExecution extends ProxyResource {
 
     /**
      * Set the processingEndTime property: The time when export execution finished.
-     *
+     * 
      * @param processingEndTime the processingEndTime value to set.
      * @return the ExportExecution object itself.
      */
@@ -192,7 +196,7 @@ public final class ExportExecution extends ProxyResource {
 
     /**
      * Get the fileName property: The name of the file export got written to.
-     *
+     * 
      * @return the fileName value.
      */
     public String fileName() {
@@ -201,7 +205,7 @@ public final class ExportExecution extends ProxyResource {
 
     /**
      * Set the fileName property: The name of the file export got written to.
-     *
+     * 
      * @param fileName the fileName value to set.
      * @return the ExportExecution object itself.
      */
@@ -215,7 +219,7 @@ public final class ExportExecution extends ProxyResource {
 
     /**
      * Get the runSettings property: The common properties of the export.
-     *
+     * 
      * @return the runSettings value.
      */
     public CommonExportProperties runSettings() {
@@ -224,7 +228,7 @@ public final class ExportExecution extends ProxyResource {
 
     /**
      * Set the runSettings property: The common properties of the export.
-     *
+     * 
      * @param runSettings the runSettings value to set.
      * @return the ExportExecution object itself.
      */
@@ -238,7 +242,7 @@ public final class ExportExecution extends ProxyResource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

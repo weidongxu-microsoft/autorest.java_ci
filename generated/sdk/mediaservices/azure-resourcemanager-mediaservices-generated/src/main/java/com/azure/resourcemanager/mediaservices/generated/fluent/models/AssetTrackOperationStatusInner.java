@@ -10,7 +10,9 @@ import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
-/** Status of asset track operation. */
+/**
+ * Status of asset track operation.
+ */
 @Fluent
 public final class AssetTrackOperationStatusInner {
     /*
@@ -49,13 +51,15 @@ public final class AssetTrackOperationStatusInner {
     @JsonProperty(value = "error")
     private ManagementError error;
 
-    /** Creates an instance of AssetTrackOperationStatusInner class. */
+    /**
+     * Creates an instance of AssetTrackOperationStatusInner class.
+     */
     public AssetTrackOperationStatusInner() {
     }
 
     /**
      * Get the name property: Operation identifier.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -64,7 +68,7 @@ public final class AssetTrackOperationStatusInner {
 
     /**
      * Set the name property: Operation identifier.
-     *
+     * 
      * @param name the name value to set.
      * @return the AssetTrackOperationStatusInner object itself.
      */
@@ -75,7 +79,7 @@ public final class AssetTrackOperationStatusInner {
 
     /**
      * Get the id property: Operation resource ID.
-     *
+     * 
      * @return the id value.
      */
     public String id() {
@@ -84,7 +88,7 @@ public final class AssetTrackOperationStatusInner {
 
     /**
      * Set the id property: Operation resource ID.
-     *
+     * 
      * @param id the id value to set.
      * @return the AssetTrackOperationStatusInner object itself.
      */
@@ -95,7 +99,7 @@ public final class AssetTrackOperationStatusInner {
 
     /**
      * Get the startTime property: Operation start time.
-     *
+     * 
      * @return the startTime value.
      */
     public OffsetDateTime startTime() {
@@ -104,7 +108,7 @@ public final class AssetTrackOperationStatusInner {
 
     /**
      * Set the startTime property: Operation start time.
-     *
+     * 
      * @param startTime the startTime value to set.
      * @return the AssetTrackOperationStatusInner object itself.
      */
@@ -115,7 +119,7 @@ public final class AssetTrackOperationStatusInner {
 
     /**
      * Get the endTime property: Operation end time.
-     *
+     * 
      * @return the endTime value.
      */
     public OffsetDateTime endTime() {
@@ -124,7 +128,7 @@ public final class AssetTrackOperationStatusInner {
 
     /**
      * Set the endTime property: Operation end time.
-     *
+     * 
      * @param endTime the endTime value to set.
      * @return the AssetTrackOperationStatusInner object itself.
      */
@@ -135,7 +139,7 @@ public final class AssetTrackOperationStatusInner {
 
     /**
      * Get the status property: Operation status.
-     *
+     * 
      * @return the status value.
      */
     public String status() {
@@ -144,7 +148,7 @@ public final class AssetTrackOperationStatusInner {
 
     /**
      * Set the status property: Operation status.
-     *
+     * 
      * @param status the status value to set.
      * @return the AssetTrackOperationStatusInner object itself.
      */
@@ -155,7 +159,7 @@ public final class AssetTrackOperationStatusInner {
 
     /**
      * Get the error property: The error detail.
-     *
+     * 
      * @return the error value.
      */
     public ManagementError error() {
@@ -164,7 +168,7 @@ public final class AssetTrackOperationStatusInner {
 
     /**
      * Set the error property: The error detail.
-     *
+     * 
      * @param error the error value to set.
      * @return the AssetTrackOperationStatusInner object itself.
      */
@@ -175,21 +179,17 @@ public final class AssetTrackOperationStatusInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property name in model AssetTrackOperationStatusInner"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property name in model AssetTrackOperationStatusInner"));
         }
         if (status() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property status in model AssetTrackOperationStatusInner"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property status in model AssetTrackOperationStatusInner"));
         }
     }
 

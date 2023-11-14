@@ -6,60 +6,62 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.UploadCertificateResponseInner;
 
-/** An immutable client-side representation of UploadCertificateResponse. */
+/**
+ * An immutable client-side representation of UploadCertificateResponse.
+ */
 public interface UploadCertificateResponse {
     /**
      * Gets the authType property: Specifies authentication type.
-     *
+     * 
      * @return the authType value.
      */
     AuthenticationType authType();
 
     /**
      * Gets the resourceId property: The resource ID of the Data Box Edge/Gateway device.
-     *
+     * 
      * @return the resourceId value.
      */
     String resourceId();
 
     /**
      * Gets the aadAuthority property: Azure Active Directory tenant authority.
-     *
+     * 
      * @return the aadAuthority value.
      */
     String aadAuthority();
 
     /**
      * Gets the aadTenantId property: Azure Active Directory tenant ID.
-     *
+     * 
      * @return the aadTenantId value.
      */
     String aadTenantId();
 
     /**
      * Gets the servicePrincipalClientId property: Azure Active Directory service principal client ID.
-     *
+     * 
      * @return the servicePrincipalClientId value.
      */
     String servicePrincipalClientId();
 
     /**
      * Gets the servicePrincipalObjectId property: Azure Active Directory service principal object ID.
-     *
+     * 
      * @return the servicePrincipalObjectId value.
      */
     String servicePrincipalObjectId();
 
     /**
      * Gets the azureManagementEndpointAudience property: The azure management endpoint audience.
-     *
+     * 
      * @return the azureManagementEndpointAudience value.
      */
     String azureManagementEndpointAudience();
 
     /**
      * Gets the aadAudience property: Identifier of the target resource that is the recipient of the requested token.
-     *
+     * 
      * @return the aadAudience value.
      */
     String aadAudience();
@@ -67,7 +69,7 @@ public interface UploadCertificateResponse {
     /**
      * Gets the inner com.azure.resourcemanager.databoxedge.generated.fluent.models.UploadCertificateResponseInner
      * object.
-     *
+     * 
      * @return the inner object.
      */
     UploadCertificateResponseInner innerModel();

@@ -13,8 +13,7 @@ public final class PublicIpDdosProtectionStatusResultImpl implements PublicIpDdo
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    PublicIpDdosProtectionStatusResultImpl(
-        PublicIpDdosProtectionStatusResultInner innerObject,
+    PublicIpDdosProtectionStatusResultImpl(PublicIpDdosProtectionStatusResultInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

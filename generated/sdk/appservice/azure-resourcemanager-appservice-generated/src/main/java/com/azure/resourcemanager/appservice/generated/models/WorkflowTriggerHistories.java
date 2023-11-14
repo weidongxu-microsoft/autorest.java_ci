@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of WorkflowTriggerHistories. */
+/**
+ * Resource collection API of WorkflowTriggerHistories.
+ */
 public interface WorkflowTriggerHistories {
     /**
      * Gets a list of workflow trigger histories.
-     *
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param workflowName The workflow name.
@@ -22,83 +24,72 @@ public interface WorkflowTriggerHistories {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a list of workflow trigger histories as paginated response with {@link PagedIterable}.
      */
-    PagedIterable<WorkflowTriggerHistory> list(
-        String resourceGroupName, String name, String workflowName, String triggerName);
+    PagedIterable<WorkflowTriggerHistory> list(String resourceGroupName, String name, String workflowName,
+        String triggerName);
 
     /**
      * Gets a list of workflow trigger histories.
-     *
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param workflowName The workflow name.
      * @param triggerName The workflow trigger name.
      * @param top The number of items to be included in the result.
      * @param filter The filter to apply on the operation. Options for filters include: Status, StartTime, and
-     *     ClientTrackingId.
+     * ClientTrackingId.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a list of workflow trigger histories as paginated response with {@link PagedIterable}.
      */
-    PagedIterable<WorkflowTriggerHistory> list(
-        String resourceGroupName,
-        String name,
-        String workflowName,
-        String triggerName,
-        Integer top,
-        String filter,
-        Context context);
+    PagedIterable<WorkflowTriggerHistory> list(String resourceGroupName, String name, String workflowName,
+        String triggerName, Integer top, String filter, Context context);
 
     /**
      * Gets a workflow trigger history.
-     *
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param workflowName The workflow name.
      * @param triggerName The workflow trigger name.
      * @param historyName The workflow trigger history name. Corresponds to the run name for triggers that resulted in a
-     *     run.
+     * run.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a workflow trigger history along with {@link Response}.
      */
-    Response<WorkflowTriggerHistory> getWithResponse(
-        String resourceGroupName,
-        String name,
-        String workflowName,
-        String triggerName,
-        String historyName,
-        Context context);
+    Response<WorkflowTriggerHistory> getWithResponse(String resourceGroupName, String name, String workflowName,
+        String triggerName, String historyName, Context context);
 
     /**
      * Gets a workflow trigger history.
-     *
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param workflowName The workflow name.
      * @param triggerName The workflow trigger name.
      * @param historyName The workflow trigger history name. Corresponds to the run name for triggers that resulted in a
-     *     run.
+     * run.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a workflow trigger history.
      */
-    WorkflowTriggerHistory get(
-        String resourceGroupName, String name, String workflowName, String triggerName, String historyName);
+    WorkflowTriggerHistory get(String resourceGroupName, String name, String workflowName, String triggerName,
+        String historyName);
 
     /**
      * Resubmits a workflow run based on the trigger history.
-     *
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param workflowName The workflow name.
      * @param triggerName The workflow trigger name.
      * @param historyName The workflow trigger history name. Corresponds to the run name for triggers that resulted in a
-     *     run.
+     * run.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -107,23 +98,18 @@ public interface WorkflowTriggerHistories {
 
     /**
      * Resubmits a workflow run based on the trigger history.
-     *
+     * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param workflowName The workflow name.
      * @param triggerName The workflow trigger name.
      * @param historyName The workflow trigger history name. Corresponds to the run name for triggers that resulted in a
-     *     run.
+     * run.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void resubmit(
-        String resourceGroupName,
-        String name,
-        String workflowName,
-        String triggerName,
-        String historyName,
+    void resubmit(String resourceGroupName, String name, String workflowName, String triggerName, String historyName,
         Context context);
 }

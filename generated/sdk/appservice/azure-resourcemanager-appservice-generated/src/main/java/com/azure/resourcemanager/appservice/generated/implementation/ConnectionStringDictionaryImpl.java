@@ -15,8 +15,7 @@ public final class ConnectionStringDictionaryImpl implements ConnectionStringDic
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    ConnectionStringDictionaryImpl(
-        ConnectionStringDictionaryInner innerObject,
+    ConnectionStringDictionaryImpl(ConnectionStringDictionaryInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

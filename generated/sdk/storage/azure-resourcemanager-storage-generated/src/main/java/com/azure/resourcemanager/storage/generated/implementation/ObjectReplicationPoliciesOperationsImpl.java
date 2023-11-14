@@ -21,8 +21,7 @@ public final class ObjectReplicationPoliciesOperationsImpl implements ObjectRepl
 
     private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
-    public ObjectReplicationPoliciesOperationsImpl(
-        ObjectReplicationPoliciesOperationsClient innerClient,
+    public ObjectReplicationPoliciesOperationsImpl(ObjectReplicationPoliciesOperationsClient innerClient,
         com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -34,20 +33,17 @@ public final class ObjectReplicationPoliciesOperationsImpl implements ObjectRepl
     }
 
     public PagedIterable<ObjectReplicationPolicy> list(String resourceGroupName, String accountName, Context context) {
-        PagedIterable<ObjectReplicationPolicyInner> inner =
-            this.serviceClient().list(resourceGroupName, accountName, context);
+        PagedIterable<ObjectReplicationPolicyInner> inner
+            = this.serviceClient().list(resourceGroupName, accountName, context);
         return Utils.mapPage(inner, inner1 -> new ObjectReplicationPolicyImpl(inner1, this.manager()));
     }
 
-    public Response<ObjectReplicationPolicy> getWithResponse(
-        String resourceGroupName, String accountName, String objectReplicationPolicyId, Context context) {
-        Response<ObjectReplicationPolicyInner> inner =
-            this.serviceClient().getWithResponse(resourceGroupName, accountName, objectReplicationPolicyId, context);
+    public Response<ObjectReplicationPolicy> getWithResponse(String resourceGroupName, String accountName,
+        String objectReplicationPolicyId, Context context) {
+        Response<ObjectReplicationPolicyInner> inner
+            = this.serviceClient().getWithResponse(resourceGroupName, accountName, objectReplicationPolicyId, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ObjectReplicationPolicyImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -55,8 +51,8 @@ public final class ObjectReplicationPoliciesOperationsImpl implements ObjectRepl
     }
 
     public ObjectReplicationPolicy get(String resourceGroupName, String accountName, String objectReplicationPolicyId) {
-        ObjectReplicationPolicyInner inner =
-            this.serviceClient().get(resourceGroupName, accountName, objectReplicationPolicyId);
+        ObjectReplicationPolicyInner inner
+            = this.serviceClient().get(resourceGroupName, accountName, objectReplicationPolicyId);
         if (inner != null) {
             return new ObjectReplicationPolicyImpl(inner, this.manager());
         } else {
@@ -64,11 +60,10 @@ public final class ObjectReplicationPoliciesOperationsImpl implements ObjectRepl
         }
     }
 
-    public Response<Void> deleteWithResponse(
-        String resourceGroupName, String accountName, String objectReplicationPolicyId, Context context) {
-        return this
-            .serviceClient()
-            .deleteWithResponse(resourceGroupName, accountName, objectReplicationPolicyId, context);
+    public Response<Void> deleteWithResponse(String resourceGroupName, String accountName,
+        String objectReplicationPolicyId, Context context) {
+        return this.serviceClient().deleteWithResponse(resourceGroupName, accountName, objectReplicationPolicyId,
+            context);
     }
 
     public void delete(String resourceGroupName, String accountName, String objectReplicationPolicyId) {
@@ -78,29 +73,18 @@ public final class ObjectReplicationPoliciesOperationsImpl implements ObjectRepl
     public ObjectReplicationPolicy getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
         }
         String objectReplicationPolicyId = Utils.getValueFromIdByName(id, "objectReplicationPolicies");
         if (objectReplicationPolicyId == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'objectReplicationPolicies'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'objectReplicationPolicies'.", id)));
         }
         return this.getWithResponse(resourceGroupName, accountName, objectReplicationPolicyId, Context.NONE).getValue();
     }
@@ -108,29 +92,18 @@ public final class ObjectReplicationPoliciesOperationsImpl implements ObjectRepl
     public Response<ObjectReplicationPolicy> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
         }
         String objectReplicationPolicyId = Utils.getValueFromIdByName(id, "objectReplicationPolicies");
         if (objectReplicationPolicyId == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'objectReplicationPolicies'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'objectReplicationPolicies'.", id)));
         }
         return this.getWithResponse(resourceGroupName, accountName, objectReplicationPolicyId, context);
     }
@@ -138,29 +111,18 @@ public final class ObjectReplicationPoliciesOperationsImpl implements ObjectRepl
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
         }
         String objectReplicationPolicyId = Utils.getValueFromIdByName(id, "objectReplicationPolicies");
         if (objectReplicationPolicyId == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'objectReplicationPolicies'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'objectReplicationPolicies'.", id)));
         }
         this.deleteWithResponse(resourceGroupName, accountName, objectReplicationPolicyId, Context.NONE);
     }
@@ -168,29 +130,18 @@ public final class ObjectReplicationPoliciesOperationsImpl implements ObjectRepl
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
         }
         String objectReplicationPolicyId = Utils.getValueFromIdByName(id, "objectReplicationPolicies");
         if (objectReplicationPolicyId == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'objectReplicationPolicies'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'objectReplicationPolicies'.", id)));
         }
         return this.deleteWithResponse(resourceGroupName, accountName, objectReplicationPolicyId, context);
     }

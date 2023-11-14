@@ -16,8 +16,7 @@ public final class CloudServiceInstanceViewImpl implements CloudServiceInstanceV
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    CloudServiceInstanceViewImpl(
-        CloudServiceInstanceViewInner innerObject,
+    CloudServiceInstanceViewImpl(CloudServiceInstanceViewInner innerObject,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

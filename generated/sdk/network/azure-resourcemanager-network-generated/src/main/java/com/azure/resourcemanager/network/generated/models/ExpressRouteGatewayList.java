@@ -7,18 +7,20 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteGatewayListInner;
 import java.util.List;
 
-/** An immutable client-side representation of ExpressRouteGatewayList. */
+/**
+ * An immutable client-side representation of ExpressRouteGatewayList.
+ */
 public interface ExpressRouteGatewayList {
     /**
      * Gets the value property: List of ExpressRoute gateways.
-     *
+     * 
      * @return the value value.
      */
     List<ExpressRouteGateway> value();
 
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteGatewayListInner object.
-     *
+     * 
      * @return the inner object.
      */
     ExpressRouteGatewayListInner innerModel();

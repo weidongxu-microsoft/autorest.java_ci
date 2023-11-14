@@ -21,22 +21,18 @@ public final class VirtualHubRouteTableV2SImpl implements VirtualHubRouteTableV2
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public VirtualHubRouteTableV2SImpl(
-        VirtualHubRouteTableV2SClient innerClient,
+    public VirtualHubRouteTableV2SImpl(VirtualHubRouteTableV2SClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<VirtualHubRouteTableV2> getWithResponse(
-        String resourceGroupName, String virtualHubName, String routeTableName, Context context) {
-        Response<VirtualHubRouteTableV2Inner> inner =
-            this.serviceClient().getWithResponse(resourceGroupName, virtualHubName, routeTableName, context);
+    public Response<VirtualHubRouteTableV2> getWithResponse(String resourceGroupName, String virtualHubName,
+        String routeTableName, Context context) {
+        Response<VirtualHubRouteTableV2Inner> inner
+            = this.serviceClient().getWithResponse(resourceGroupName, virtualHubName, routeTableName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new VirtualHubRouteTableV2Impl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -52,15 +48,10 @@ public final class VirtualHubRouteTableV2SImpl implements VirtualHubRouteTableV2
         }
     }
 
-    public VirtualHubRouteTableV2 createOrUpdate(
-        String resourceGroupName,
-        String virtualHubName,
-        String routeTableName,
+    public VirtualHubRouteTableV2 createOrUpdate(String resourceGroupName, String virtualHubName, String routeTableName,
         VirtualHubRouteTableV2Inner virtualHubRouteTableV2Parameters) {
-        VirtualHubRouteTableV2Inner inner =
-            this
-                .serviceClient()
-                .createOrUpdate(resourceGroupName, virtualHubName, routeTableName, virtualHubRouteTableV2Parameters);
+        VirtualHubRouteTableV2Inner inner = this.serviceClient().createOrUpdate(resourceGroupName, virtualHubName,
+            routeTableName, virtualHubRouteTableV2Parameters);
         if (inner != null) {
             return new VirtualHubRouteTableV2Impl(inner, this.manager());
         } else {
@@ -68,17 +59,10 @@ public final class VirtualHubRouteTableV2SImpl implements VirtualHubRouteTableV2
         }
     }
 
-    public VirtualHubRouteTableV2 createOrUpdate(
-        String resourceGroupName,
-        String virtualHubName,
-        String routeTableName,
-        VirtualHubRouteTableV2Inner virtualHubRouteTableV2Parameters,
-        Context context) {
-        VirtualHubRouteTableV2Inner inner =
-            this
-                .serviceClient()
-                .createOrUpdate(
-                    resourceGroupName, virtualHubName, routeTableName, virtualHubRouteTableV2Parameters, context);
+    public VirtualHubRouteTableV2 createOrUpdate(String resourceGroupName, String virtualHubName, String routeTableName,
+        VirtualHubRouteTableV2Inner virtualHubRouteTableV2Parameters, Context context) {
+        VirtualHubRouteTableV2Inner inner = this.serviceClient().createOrUpdate(resourceGroupName, virtualHubName,
+            routeTableName, virtualHubRouteTableV2Parameters, context);
         if (inner != null) {
             return new VirtualHubRouteTableV2Impl(inner, this.manager());
         } else {
@@ -99,10 +83,10 @@ public final class VirtualHubRouteTableV2SImpl implements VirtualHubRouteTableV2
         return Utils.mapPage(inner, inner1 -> new VirtualHubRouteTableV2Impl(inner1, this.manager()));
     }
 
-    public PagedIterable<VirtualHubRouteTableV2> list(
-        String resourceGroupName, String virtualHubName, Context context) {
-        PagedIterable<VirtualHubRouteTableV2Inner> inner =
-            this.serviceClient().list(resourceGroupName, virtualHubName, context);
+    public PagedIterable<VirtualHubRouteTableV2> list(String resourceGroupName, String virtualHubName,
+        Context context) {
+        PagedIterable<VirtualHubRouteTableV2Inner> inner
+            = this.serviceClient().list(resourceGroupName, virtualHubName, context);
         return Utils.mapPage(inner, inner1 -> new VirtualHubRouteTableV2Impl(inner1, this.manager()));
     }
 

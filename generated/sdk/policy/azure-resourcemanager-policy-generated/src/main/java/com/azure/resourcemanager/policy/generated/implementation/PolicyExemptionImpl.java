@@ -85,22 +85,14 @@ public final class PolicyExemptionImpl implements PolicyExemption, PolicyExempti
     }
 
     public PolicyExemption create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getPolicyExemptions()
-                .createOrUpdateWithResponse(scope, policyExemptionName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getPolicyExemptions()
+            .createOrUpdateWithResponse(scope, policyExemptionName, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public PolicyExemption create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getPolicyExemptions()
-                .createOrUpdateWithResponse(scope, policyExemptionName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getPolicyExemptions()
+            .createOrUpdateWithResponse(scope, policyExemptionName, this.innerModel(), context).getValue();
         return this;
     }
 
@@ -115,60 +107,36 @@ public final class PolicyExemptionImpl implements PolicyExemption, PolicyExempti
     }
 
     public PolicyExemption apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getPolicyExemptions()
-                .createOrUpdateWithResponse(scope, policyExemptionName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getPolicyExemptions()
+            .createOrUpdateWithResponse(scope, policyExemptionName, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public PolicyExemption apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getPolicyExemptions()
-                .createOrUpdateWithResponse(scope, policyExemptionName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getPolicyExemptions()
+            .createOrUpdateWithResponse(scope, policyExemptionName, this.innerModel(), context).getValue();
         return this;
     }
 
-    PolicyExemptionImpl(
-        PolicyExemptionInner innerObject, com.azure.resourcemanager.policy.generated.PolicyManager serviceManager) {
+    PolicyExemptionImpl(PolicyExemptionInner innerObject,
+        com.azure.resourcemanager.policy.generated.PolicyManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.scope =
-            Utils
-                .getValueFromIdByParameterName(
-                    innerObject.id(),
-                    "/{scope}/providers/Microsoft.Authorization/policyExemptions/{policyExemptionName}",
-                    "scope");
-        this.policyExemptionName =
-            Utils
-                .getValueFromIdByParameterName(
-                    innerObject.id(),
-                    "/{scope}/providers/Microsoft.Authorization/policyExemptions/{policyExemptionName}",
-                    "policyExemptionName");
+        this.scope = Utils.getValueFromIdByParameterName(innerObject.id(),
+            "/{scope}/providers/Microsoft.Authorization/policyExemptions/{policyExemptionName}", "scope");
+        this.policyExemptionName = Utils.getValueFromIdByParameterName(innerObject.id(),
+            "/{scope}/providers/Microsoft.Authorization/policyExemptions/{policyExemptionName}", "policyExemptionName");
     }
 
     public PolicyExemption refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getPolicyExemptions()
-                .getWithResponse(scope, policyExemptionName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getPolicyExemptions()
+            .getWithResponse(scope, policyExemptionName, Context.NONE).getValue();
         return this;
     }
 
     public PolicyExemption refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getPolicyExemptions()
-                .getWithResponse(scope, policyExemptionName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getPolicyExemptions()
+            .getWithResponse(scope, policyExemptionName, context).getValue();
         return this;
     }
 

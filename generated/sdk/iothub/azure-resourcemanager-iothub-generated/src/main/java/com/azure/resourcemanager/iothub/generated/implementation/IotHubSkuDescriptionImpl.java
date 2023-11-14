@@ -14,8 +14,7 @@ public final class IotHubSkuDescriptionImpl implements IotHubSkuDescription {
 
     private final com.azure.resourcemanager.iothub.generated.IotHubManager serviceManager;
 
-    IotHubSkuDescriptionImpl(
-        IotHubSkuDescriptionInner innerObject,
+    IotHubSkuDescriptionImpl(IotHubSkuDescriptionInner innerObject,
         com.azure.resourcemanager.iothub.generated.IotHubManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

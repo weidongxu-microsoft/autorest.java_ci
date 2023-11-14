@@ -11,7 +11,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 import java.util.Map;
 
-/** A private link resource. */
+/**
+ * A private link resource.
+ */
 @Fluent
 public final class PrivateLinkResource extends Resource {
     /*
@@ -20,27 +22,33 @@ public final class PrivateLinkResource extends Resource {
     @JsonProperty(value = "properties")
     private PrivateLinkResourceProperties innerProperties;
 
-    /** Creates an instance of PrivateLinkResource class. */
+    /**
+     * Creates an instance of PrivateLinkResource class.
+     */
     public PrivateLinkResource() {
     }
 
     /**
      * Get the innerProperties property: Resource properties.
-     *
+     * 
      * @return the innerProperties value.
      */
     private PrivateLinkResourceProperties innerProperties() {
         return this.innerProperties;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public PrivateLinkResource withLocation(String location) {
         super.withLocation(location);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public PrivateLinkResource withTags(Map<String, String> tags) {
         super.withTags(tags);
@@ -49,7 +57,7 @@ public final class PrivateLinkResource extends Resource {
 
     /**
      * Get the groupId property: Group identifier of private link resource.
-     *
+     * 
      * @return the groupId value.
      */
     public String groupId() {
@@ -58,7 +66,7 @@ public final class PrivateLinkResource extends Resource {
 
     /**
      * Get the requiredMembers property: Required member names of private link resource.
-     *
+     * 
      * @return the requiredMembers value.
      */
     public List<String> requiredMembers() {
@@ -67,7 +75,7 @@ public final class PrivateLinkResource extends Resource {
 
     /**
      * Get the requiredZoneNames property: Required DNS zone names of the the private link resource.
-     *
+     * 
      * @return the requiredZoneNames value.
      */
     public List<String> requiredZoneNames() {
@@ -76,7 +84,7 @@ public final class PrivateLinkResource extends Resource {
 
     /**
      * Set the requiredZoneNames property: Required DNS zone names of the the private link resource.
-     *
+     * 
      * @param requiredZoneNames the requiredZoneNames value to set.
      * @return the PrivateLinkResource object itself.
      */
@@ -90,7 +98,7 @@ public final class PrivateLinkResource extends Resource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

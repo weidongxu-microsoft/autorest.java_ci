@@ -17,28 +17,21 @@ public final class DeviceCapacityChecksImpl implements DeviceCapacityChecks {
 
     private final com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager;
 
-    public DeviceCapacityChecksImpl(
-        DeviceCapacityChecksClient innerClient,
+    public DeviceCapacityChecksImpl(DeviceCapacityChecksClient innerClient,
         com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public void checkResourceCreationFeasibility(
-        String resourceGroupName, String deviceName, DeviceCapacityRequestInfo deviceCapacityRequestInfo) {
+    public void checkResourceCreationFeasibility(String resourceGroupName, String deviceName,
+        DeviceCapacityRequestInfo deviceCapacityRequestInfo) {
         this.serviceClient().checkResourceCreationFeasibility(resourceGroupName, deviceName, deviceCapacityRequestInfo);
     }
 
-    public void checkResourceCreationFeasibility(
-        String resourceGroupName,
-        String deviceName,
-        DeviceCapacityRequestInfo deviceCapacityRequestInfo,
-        String capacityName,
-        Context context) {
-        this
-            .serviceClient()
-            .checkResourceCreationFeasibility(
-                resourceGroupName, deviceName, deviceCapacityRequestInfo, capacityName, context);
+    public void checkResourceCreationFeasibility(String resourceGroupName, String deviceName,
+        DeviceCapacityRequestInfo deviceCapacityRequestInfo, String capacityName, Context context) {
+        this.serviceClient().checkResourceCreationFeasibility(resourceGroupName, deviceName, deviceCapacityRequestInfo,
+            capacityName, context);
     }
 
     private DeviceCapacityChecksClient serviceClient() {

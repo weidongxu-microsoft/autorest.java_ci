@@ -8,17 +8,23 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** The status of the schedule. Whether active or not. If inactive, the export's scheduled execution is paused. */
+/**
+ * The status of the schedule. Whether active or not. If inactive, the export's scheduled execution is paused.
+ */
 public final class StatusType extends ExpandableStringEnum<StatusType> {
-    /** Static value Active for StatusType. */
+    /**
+     * Static value Active for StatusType.
+     */
     public static final StatusType ACTIVE = fromString("Active");
 
-    /** Static value Inactive for StatusType. */
+    /**
+     * Static value Inactive for StatusType.
+     */
     public static final StatusType INACTIVE = fromString("Inactive");
 
     /**
      * Creates a new instance of StatusType value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -27,7 +33,7 @@ public final class StatusType extends ExpandableStringEnum<StatusType> {
 
     /**
      * Creates or finds a StatusType from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding StatusType.
      */
@@ -38,7 +44,7 @@ public final class StatusType extends ExpandableStringEnum<StatusType> {
 
     /**
      * Gets known StatusType values.
-     *
+     * 
      * @return known StatusType values.
      */
     public static Collection<StatusType> values() {

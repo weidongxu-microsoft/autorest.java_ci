@@ -7,7 +7,9 @@ package com.azure.resourcemanager.consumption.generated.models;
 import com.azure.core.annotation.Immutable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The Sku property. */
+/**
+ * The Sku property.
+ */
 @Immutable
 public final class SkuProperty {
     /*
@@ -22,13 +24,15 @@ public final class SkuProperty {
     @JsonProperty(value = "value", access = JsonProperty.Access.WRITE_ONLY)
     private String value;
 
-    /** Creates an instance of SkuProperty class. */
+    /**
+     * Creates an instance of SkuProperty class.
+     */
     public SkuProperty() {
     }
 
     /**
      * Get the name property: The name of sku property.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -37,7 +41,7 @@ public final class SkuProperty {
 
     /**
      * Get the value property: The value of sku property.
-     *
+     * 
      * @return the value value.
      */
     public String value() {
@@ -46,7 +50,7 @@ public final class SkuProperty {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -15,8 +15,7 @@ public final class VirtualHubEffectiveRouteListImpl implements VirtualHubEffecti
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    VirtualHubEffectiveRouteListImpl(
-        VirtualHubEffectiveRouteListInner innerObject,
+    VirtualHubEffectiveRouteListImpl(VirtualHubEffectiveRouteListInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

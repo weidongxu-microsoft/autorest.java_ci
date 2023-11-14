@@ -10,11 +10,13 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.consumption.generated.fluent.models.CreditSummaryInner;
 
-/** An instance of this class provides access to all the operations defined in CreditsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in CreditsClient.
+ */
 public interface CreditsClient {
     /**
      * The credit summary by billingAccountId and billingProfileId.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
      * @param context The context to associate with this operation.
@@ -28,7 +30,7 @@ public interface CreditsClient {
 
     /**
      * The credit summary by billingAccountId and billingProfileId.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

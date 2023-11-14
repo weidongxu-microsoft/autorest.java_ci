@@ -7,18 +7,20 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.resourcemanager.network.generated.fluent.models.AvailableProvidersListInner;
 import java.util.List;
 
-/** An immutable client-side representation of AvailableProvidersList. */
+/**
+ * An immutable client-side representation of AvailableProvidersList.
+ */
 public interface AvailableProvidersList {
     /**
      * Gets the countries property: List of available countries.
-     *
+     * 
      * @return the countries value.
      */
     List<AvailableProvidersListCountry> countries();
 
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.AvailableProvidersListInner object.
-     *
+     * 
      * @return the inner object.
      */
     AvailableProvidersListInner innerModel();

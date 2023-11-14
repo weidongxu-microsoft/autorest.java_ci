@@ -14,10 +14,8 @@ import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSet
 import java.util.Collections;
 import java.util.List;
 
-public final class VirtualMachineScaleSetVMExtensionImpl
-    implements VirtualMachineScaleSetVMExtension,
-        VirtualMachineScaleSetVMExtension.Definition,
-        VirtualMachineScaleSetVMExtension.Update {
+public final class VirtualMachineScaleSetVMExtensionImpl implements VirtualMachineScaleSetVMExtension,
+    VirtualMachineScaleSetVMExtension.Definition, VirtualMachineScaleSetVMExtension.Update {
     private VirtualMachineScaleSetVMExtensionInner innerObject;
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
@@ -125,8 +123,8 @@ public final class VirtualMachineScaleSetVMExtensionImpl
 
     private VirtualMachineScaleSetVMExtensionUpdate updateExtensionParameters;
 
-    public VirtualMachineScaleSetVMExtensionImpl withExistingVirtualMachine(
-        String resourceGroupName, String vmScaleSetName, String instanceId) {
+    public VirtualMachineScaleSetVMExtensionImpl withExistingVirtualMachine(String resourceGroupName,
+        String vmScaleSetName, String instanceId) {
         this.resourceGroupName = resourceGroupName;
         this.vmScaleSetName = vmScaleSetName;
         this.instanceId = instanceId;
@@ -134,27 +132,19 @@ public final class VirtualMachineScaleSetVMExtensionImpl
     }
 
     public VirtualMachineScaleSetVMExtension create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualMachineScaleSetVMExtensions()
-                .createOrUpdate(
-                    resourceGroupName, vmScaleSetName, instanceId, vmExtensionName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getVirtualMachineScaleSetVMExtensions().createOrUpdate(
+            resourceGroupName, vmScaleSetName, instanceId, vmExtensionName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public VirtualMachineScaleSetVMExtension create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualMachineScaleSetVMExtensions()
-                .createOrUpdate(
-                    resourceGroupName, vmScaleSetName, instanceId, vmExtensionName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getVirtualMachineScaleSetVMExtensions()
+            .createOrUpdate(resourceGroupName, vmScaleSetName, instanceId, vmExtensionName, this.innerModel(), context);
         return this;
     }
 
-    VirtualMachineScaleSetVMExtensionImpl(
-        String name, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
+    VirtualMachineScaleSetVMExtensionImpl(String name,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = new VirtualMachineScaleSetVMExtensionInner();
         this.serviceManager = serviceManager;
         this.vmExtensionName = name;
@@ -166,32 +156,18 @@ public final class VirtualMachineScaleSetVMExtensionImpl
     }
 
     public VirtualMachineScaleSetVMExtension apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualMachineScaleSetVMExtensions()
-                .update(
-                    resourceGroupName,
-                    vmScaleSetName,
-                    instanceId,
-                    vmExtensionName,
-                    updateExtensionParameters,
-                    Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getVirtualMachineScaleSetVMExtensions().update(
+            resourceGroupName, vmScaleSetName, instanceId, vmExtensionName, updateExtensionParameters, Context.NONE);
         return this;
     }
 
     public VirtualMachineScaleSetVMExtension apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualMachineScaleSetVMExtensions()
-                .update(
-                    resourceGroupName, vmScaleSetName, instanceId, vmExtensionName, updateExtensionParameters, context);
+        this.innerObject = serviceManager.serviceClient().getVirtualMachineScaleSetVMExtensions()
+            .update(resourceGroupName, vmScaleSetName, instanceId, vmExtensionName, updateExtensionParameters, context);
         return this;
     }
 
-    VirtualMachineScaleSetVMExtensionImpl(
-        VirtualMachineScaleSetVMExtensionInner innerObject,
+    VirtualMachineScaleSetVMExtensionImpl(VirtualMachineScaleSetVMExtensionInner innerObject,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -203,24 +179,17 @@ public final class VirtualMachineScaleSetVMExtensionImpl
 
     public VirtualMachineScaleSetVMExtension refresh() {
         String localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualMachineScaleSetVMExtensions()
-                .getWithResponse(
-                    resourceGroupName, vmScaleSetName, instanceId, vmExtensionName, localExpand, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getVirtualMachineScaleSetVMExtensions()
+            .getWithResponse(resourceGroupName, vmScaleSetName, instanceId, vmExtensionName, localExpand, Context.NONE)
+            .getValue();
         return this;
     }
 
     public VirtualMachineScaleSetVMExtension refresh(Context context) {
         String localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualMachineScaleSetVMExtensions()
-                .getWithResponse(resourceGroupName, vmScaleSetName, instanceId, vmExtensionName, localExpand, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getVirtualMachineScaleSetVMExtensions()
+            .getWithResponse(resourceGroupName, vmScaleSetName, instanceId, vmExtensionName, localExpand, context)
+            .getValue();
         return this;
     }
 
@@ -329,8 +298,8 @@ public final class VirtualMachineScaleSetVMExtensionImpl
         }
     }
 
-    public VirtualMachineScaleSetVMExtensionImpl withProtectedSettingsFromKeyVault(
-        KeyVaultSecretReference protectedSettingsFromKeyVault) {
+    public VirtualMachineScaleSetVMExtensionImpl
+        withProtectedSettingsFromKeyVault(KeyVaultSecretReference protectedSettingsFromKeyVault) {
         if (isInCreateMode()) {
             this.innerModel().withProtectedSettingsFromKeyVault(protectedSettingsFromKeyVault);
             return this;

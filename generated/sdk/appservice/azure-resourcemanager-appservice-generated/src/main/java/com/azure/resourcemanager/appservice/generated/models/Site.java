@@ -18,88 +18,90 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-/** An immutable client-side representation of Site. */
+/**
+ * An immutable client-side representation of Site.
+ */
 public interface Site {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the name property: The name of the resource.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the type property: The type of the resource.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the location property: The geo-location where the resource lives.
-     *
+     * 
      * @return the location value.
      */
     String location();
 
     /**
      * Gets the tags property: Resource tags.
-     *
+     * 
      * @return the tags value.
      */
     Map<String, String> tags();
 
     /**
      * Gets the identity property: Managed service identity.
-     *
+     * 
      * @return the identity value.
      */
     ManagedServiceIdentity identity();
 
     /**
      * Gets the extendedLocation property: Extended Location.
-     *
+     * 
      * @return the extendedLocation value.
      */
     ExtendedLocation extendedLocation();
 
     /**
      * Gets the kind property: Kind of resource.
-     *
+     * 
      * @return the kind value.
      */
     String kind();
 
     /**
      * Gets the state property: Current state of the app.
-     *
+     * 
      * @return the state value.
      */
     String state();
 
     /**
      * Gets the hostNames property: Hostnames associated with the app.
-     *
+     * 
      * @return the hostNames value.
      */
     List<String> hostNames();
 
     /**
      * Gets the repositorySiteName property: Name of the repository site.
-     *
+     * 
      * @return the repositorySiteName value.
      */
     String repositorySiteName();
 
     /**
      * Gets the usageState property: State indicating whether the app has exceeded its quota usage. Read-only.
-     *
+     * 
      * @return the usageState value.
      */
     UsageState usageState();
@@ -107,29 +109,30 @@ public interface Site {
     /**
      * Gets the enabled property: &lt;code&gt;true&lt;/code&gt; if the app is enabled; otherwise,
      * &lt;code&gt;false&lt;/code&gt;. Setting this value to false disables the app (takes the app offline).
-     *
+     * 
      * @return the enabled value.
      */
     Boolean enabled();
 
     /**
      * Gets the enabledHostNames property: Enabled hostnames for the app.Hostnames need to be assigned (see HostNames)
-     * AND enabled. Otherwise, the app is not served on those hostnames.
-     *
+     * AND enabled. Otherwise,
+     * the app is not served on those hostnames.
+     * 
      * @return the enabledHostNames value.
      */
     List<String> enabledHostNames();
 
     /**
      * Gets the availabilityState property: Management information availability state for the app.
-     *
+     * 
      * @return the availabilityState value.
      */
     SiteAvailabilityState availabilityState();
 
     /**
      * Gets the hostnameSslStates property: Hostname SSL states are used to manage the SSL bindings for app's hostnames.
-     *
+     * 
      * @return the hostnameSslStates value.
      */
     List<HostnameSslState> hostnameSslStates();
@@ -137,35 +140,35 @@ public interface Site {
     /**
      * Gets the serverFarmId property: Resource ID of the associated App Service plan, formatted as:
      * "/subscriptions/{subscriptionID}/resourceGroups/{groupName}/providers/Microsoft.Web/serverfarms/{appServicePlanName}".
-     *
+     * 
      * @return the serverFarmId value.
      */
     String serverFarmId();
 
     /**
      * Gets the reserved property: &lt;code&gt;true&lt;/code&gt; if reserved; otherwise, &lt;code&gt;false&lt;/code&gt;.
-     *
+     * 
      * @return the reserved value.
      */
     Boolean reserved();
 
     /**
      * Gets the isXenon property: Obsolete: Hyper-V sandbox.
-     *
+     * 
      * @return the isXenon value.
      */
     Boolean isXenon();
 
     /**
      * Gets the hyperV property: Hyper-V sandbox.
-     *
+     * 
      * @return the hyperV value.
      */
     Boolean hyperV();
 
     /**
      * Gets the lastModifiedTimeUtc property: Last time the app was modified, in UTC. Read-only.
-     *
+     * 
      * @return the lastModifiedTimeUtc value.
      */
     OffsetDateTime lastModifiedTimeUtc();
@@ -173,35 +176,56 @@ public interface Site {
     /**
      * Gets the vnetRouteAllEnabled property: Virtual Network Route All enabled. This causes all outbound traffic to
      * have Virtual Network Security Groups and User Defined Routes applied.
-     *
+     * 
      * @return the vnetRouteAllEnabled value.
      */
     Boolean vnetRouteAllEnabled();
 
     /**
      * Gets the vnetImagePullEnabled property: To enable pulling image over Virtual Network.
-     *
+     * 
      * @return the vnetImagePullEnabled value.
      */
     Boolean vnetImagePullEnabled();
 
     /**
      * Gets the vnetContentShareEnabled property: To enable accessing content over virtual network.
-     *
+     * 
      * @return the vnetContentShareEnabled value.
      */
     Boolean vnetContentShareEnabled();
 
     /**
      * Gets the siteConfig property: Configuration of the app.
-     *
+     * 
      * @return the siteConfig value.
      */
     SiteConfig siteConfig();
 
     /**
+     * Gets the daprConfig property: Dapr configuration of the app.
+     * 
+     * @return the daprConfig value.
+     */
+    DaprConfig daprConfig();
+
+    /**
+     * Gets the workloadProfileName property: Workload profile name for function app to execute on.
+     * 
+     * @return the workloadProfileName value.
+     */
+    String workloadProfileName();
+
+    /**
+     * Gets the resourceConfig property: Function app resource requirements.
+     * 
+     * @return the resourceConfig value.
+     */
+    ResourceConfig resourceConfig();
+
+    /**
      * Gets the trafficManagerHostNames property: Azure Traffic Manager hostnames associated with the app. Read-only.
-     *
+     * 
      * @return the trafficManagerHostNames value.
      */
     List<String> trafficManagerHostNames();
@@ -209,21 +233,21 @@ public interface Site {
     /**
      * Gets the scmSiteAlsoStopped property: &lt;code&gt;true&lt;/code&gt; to stop SCM (KUDU) site when the app is
      * stopped; otherwise, &lt;code&gt;false&lt;/code&gt;. The default is &lt;code&gt;false&lt;/code&gt;.
-     *
+     * 
      * @return the scmSiteAlsoStopped value.
      */
     Boolean scmSiteAlsoStopped();
 
     /**
      * Gets the targetSwapSlot property: Specifies which deployment slot this app will swap into. Read-only.
-     *
+     * 
      * @return the targetSwapSlot value.
      */
     String targetSwapSlot();
 
     /**
      * Gets the hostingEnvironmentProfile property: App Service Environment to use for the app.
-     *
+     * 
      * @return the hostingEnvironmentProfile value.
      */
     HostingEnvironmentProfile hostingEnvironmentProfile();
@@ -232,7 +256,7 @@ public interface Site {
      * Gets the clientAffinityEnabled property: &lt;code&gt;true&lt;/code&gt; to enable client affinity;
      * &lt;code&gt;false&lt;/code&gt; to stop sending session affinity cookies, which route client requests in the same
      * session to the same instance. Default is &lt;code&gt;true&lt;/code&gt;.
-     *
+     * 
      * @return the clientAffinityEnabled value.
      */
     Boolean clientAffinityEnabled();
@@ -241,32 +265,33 @@ public interface Site {
      * Gets the clientCertEnabled property: &lt;code&gt;true&lt;/code&gt; to enable client certificate authentication
      * (TLS mutual authentication); otherwise, &lt;code&gt;false&lt;/code&gt;. Default is
      * &lt;code&gt;false&lt;/code&gt;.
-     *
+     * 
      * @return the clientCertEnabled value.
      */
     Boolean clientCertEnabled();
 
     /**
-     * Gets the clientCertMode property: This composes with ClientCertEnabled setting. - ClientCertEnabled: false means
-     * ClientCert is ignored. - ClientCertEnabled: true and ClientCertMode: Required means ClientCert is required. -
-     * ClientCertEnabled: true and ClientCertMode: Optional means ClientCert is optional or accepted.
-     *
+     * Gets the clientCertMode property: This composes with ClientCertEnabled setting.
+     * - ClientCertEnabled: false means ClientCert is ignored.
+     * - ClientCertEnabled: true and ClientCertMode: Required means ClientCert is required.
+     * - ClientCertEnabled: true and ClientCertMode: Optional means ClientCert is optional or accepted.
+     * 
      * @return the clientCertMode value.
      */
     ClientCertMode clientCertMode();
 
     /**
      * Gets the clientCertExclusionPaths property: client certificate authentication comma-separated exclusion paths.
-     *
+     * 
      * @return the clientCertExclusionPaths value.
      */
     String clientCertExclusionPaths();
 
     /**
      * Gets the hostNamesDisabled property: &lt;code&gt;true&lt;/code&gt; to disable the public hostnames of the app;
-     * otherwise, &lt;code&gt;false&lt;/code&gt;. If &lt;code&gt;true&lt;/code&gt;, the app is only accessible via API
-     * management process.
-     *
+     * otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * If &lt;code&gt;true&lt;/code&gt;, the app is only accessible via API management process.
+     * 
      * @return the hostNamesDisabled value.
      */
     Boolean hostNamesDisabled();
@@ -274,7 +299,7 @@ public interface Site {
     /**
      * Gets the customDomainVerificationId property: Unique identifier that verifies the custom domains assigned to the
      * app. Customer will add this id to a txt record for verification.
-     *
+     * 
      * @return the customDomainVerificationId value.
      */
     String customDomainVerificationId();
@@ -282,7 +307,7 @@ public interface Site {
     /**
      * Gets the outboundIpAddresses property: List of IP addresses that the app uses for outbound connections (e.g.
      * database access). Includes VIPs from tenants that site can be hosted with current settings. Read-only.
-     *
+     * 
      * @return the outboundIpAddresses value.
      */
     String outboundIpAddresses();
@@ -290,14 +315,14 @@ public interface Site {
     /**
      * Gets the possibleOutboundIpAddresses property: List of IP addresses that the app uses for outbound connections
      * (e.g. database access). Includes VIPs from all tenants except dataComponent. Read-only.
-     *
+     * 
      * @return the possibleOutboundIpAddresses value.
      */
     String possibleOutboundIpAddresses();
 
     /**
      * Gets the containerSize property: Size of the function container.
-     *
+     * 
      * @return the containerSize value.
      */
     Integer containerSize();
@@ -305,35 +330,36 @@ public interface Site {
     /**
      * Gets the dailyMemoryTimeQuota property: Maximum allowed daily memory-time quota (applicable on dynamic apps
      * only).
-     *
+     * 
      * @return the dailyMemoryTimeQuota value.
      */
     Integer dailyMemoryTimeQuota();
 
     /**
      * Gets the suspendedTill property: App suspended till in case memory-time quota is exceeded.
-     *
+     * 
      * @return the suspendedTill value.
      */
     OffsetDateTime suspendedTill();
 
     /**
-     * Gets the maxNumberOfWorkers property: Maximum number of workers. This only applies to Functions container.
-     *
+     * Gets the maxNumberOfWorkers property: Maximum number of workers.
+     * This only applies to Functions container.
+     * 
      * @return the maxNumberOfWorkers value.
      */
     Integer maxNumberOfWorkers();
 
     /**
      * Gets the cloningInfo property: If specified during app creation, the app is cloned from a source app.
-     *
+     * 
      * @return the cloningInfo value.
      */
     CloningInfo cloningInfo();
 
     /**
      * Gets the resourceGroup property: Name of the resource group the app belongs to. Read-only.
-     *
+     * 
      * @return the resourceGroup value.
      */
     String resourceGroup();
@@ -341,21 +367,21 @@ public interface Site {
     /**
      * Gets the isDefaultContainer property: &lt;code&gt;true&lt;/code&gt; if the app is a default container; otherwise,
      * &lt;code&gt;false&lt;/code&gt;.
-     *
+     * 
      * @return the isDefaultContainer value.
      */
     Boolean isDefaultContainer();
 
     /**
      * Gets the defaultHostname property: Default hostname of the app. Read-only.
-     *
+     * 
      * @return the defaultHostname value.
      */
     String defaultHostname();
 
     /**
      * Gets the slotSwapStatus property: Status of the last deployment slot swap operation.
-     *
+     * 
      * @return the slotSwapStatus value.
      */
     SlotSwapStatus slotSwapStatus();
@@ -363,21 +389,21 @@ public interface Site {
     /**
      * Gets the httpsOnly property: HttpsOnly: configures a web site to accept only https requests. Issues redirect for
      * http requests.
-     *
+     * 
      * @return the httpsOnly value.
      */
     Boolean httpsOnly();
 
     /**
      * Gets the redundancyMode property: Site redundancy mode.
-     *
+     * 
      * @return the redundancyMode value.
      */
     RedundancyMode redundancyMode();
 
     /**
      * Gets the inProgressOperationId property: Specifies an operation id if this site has a pending operation.
-     *
+     * 
      * @return the inProgressOperationId value.
      */
     UUID inProgressOperationId();
@@ -385,30 +411,31 @@ public interface Site {
     /**
      * Gets the publicNetworkAccess property: Property to allow or block all public traffic. Allowed Values: 'Enabled',
      * 'Disabled' or an empty string.
-     *
+     * 
      * @return the publicNetworkAccess value.
      */
     String publicNetworkAccess();
 
     /**
      * Gets the storageAccountRequired property: Checks if Customer provided storage account is required.
-     *
+     * 
      * @return the storageAccountRequired value.
      */
     Boolean storageAccountRequired();
 
     /**
      * Gets the keyVaultReferenceIdentity property: Identity to use for Key Vault Reference authentication.
-     *
+     * 
      * @return the keyVaultReferenceIdentity value.
      */
     String keyVaultReferenceIdentity();
 
     /**
      * Gets the virtualNetworkSubnetId property: Azure Resource Manager ID of the Virtual network and subnet to be
-     * joined by Regional VNET Integration. This must be of the form
+     * joined by Regional VNET Integration.
+     * This must be of the form
      * /subscriptions/{subscriptionName}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{vnetName}/subnets/{subnetName}.
-     *
+     * 
      * @return the virtualNetworkSubnetId value.
      */
     String virtualNetworkSubnetId();
@@ -417,58 +444,63 @@ public interface Site {
      * Gets the managedEnvironmentId property: Azure Resource Manager ID of the customer's selected Managed Environment
      * on which to host this app. This must be of the form
      * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.App/managedEnvironments/{managedEnvironmentName}.
-     *
+     * 
      * @return the managedEnvironmentId value.
      */
     String managedEnvironmentId();
 
     /**
      * Gets the region of the resource.
-     *
+     * 
      * @return the region of the resource.
      */
     Region region();
 
     /**
      * Gets the name of the resource region.
-     *
+     * 
      * @return the name of the resource region.
      */
     String regionName();
 
     /**
      * Gets the name of the resource group.
-     *
+     * 
      * @return the name of the resource group.
      */
     String resourceGroupName();
 
     /**
      * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.SiteInner object.
-     *
+     * 
      * @return the inner object.
      */
     SiteInner innerModel();
 
-    /** The entirety of the Site definition. */
-    interface Definition
-        extends DefinitionStages.Blank,
-            DefinitionStages.WithLocation,
-            DefinitionStages.WithResourceGroup,
-            DefinitionStages.WithCreate {
+    /**
+     * The entirety of the Site definition.
+     */
+    interface Definition extends DefinitionStages.Blank, DefinitionStages.WithLocation,
+        DefinitionStages.WithResourceGroup, DefinitionStages.WithCreate {
     }
 
-    /** The Site definition stages. */
+    /**
+     * The Site definition stages.
+     */
     interface DefinitionStages {
-        /** The first stage of the Site definition. */
+        /**
+         * The first stage of the Site definition.
+         */
         interface Blank extends WithLocation {
         }
 
-        /** The stage of the Site definition allowing to specify location. */
+        /**
+         * The stage of the Site definition allowing to specify location.
+         */
         interface WithLocation {
             /**
              * Specifies the region for the resource.
-             *
+             * 
              * @param location The geo-location where the resource lives.
              * @return the next definition stage.
              */
@@ -476,18 +508,20 @@ public interface Site {
 
             /**
              * Specifies the region for the resource.
-             *
+             * 
              * @param location The geo-location where the resource lives.
              * @return the next definition stage.
              */
             WithResourceGroup withRegion(String location);
         }
 
-        /** The stage of the Site definition allowing to specify parent resource. */
+        /**
+         * The stage of the Site definition allowing to specify parent resource.
+         */
         interface WithResourceGroup {
             /**
              * Specifies resourceGroupName.
-             *
+             * 
              * @param resourceGroupName Name of the resource group to which the resource belongs.
              * @return the next definition stage.
              */
@@ -498,449 +532,537 @@ public interface Site {
          * The stage of the Site definition which contains all the minimum required properties for the resource to be
          * created, but also allows for any other optional properties to be specified.
          */
-        interface WithCreate
-            extends DefinitionStages.WithTags,
-                DefinitionStages.WithIdentity,
-                DefinitionStages.WithExtendedLocation,
-                DefinitionStages.WithKind,
-                DefinitionStages.WithEnabled,
-                DefinitionStages.WithHostnameSslStates,
-                DefinitionStages.WithServerFarmId,
-                DefinitionStages.WithReserved,
-                DefinitionStages.WithIsXenon,
-                DefinitionStages.WithHyperV,
-                DefinitionStages.WithVnetRouteAllEnabled,
-                DefinitionStages.WithVnetImagePullEnabled,
-                DefinitionStages.WithVnetContentShareEnabled,
-                DefinitionStages.WithSiteConfig,
-                DefinitionStages.WithScmSiteAlsoStopped,
-                DefinitionStages.WithHostingEnvironmentProfile,
-                DefinitionStages.WithClientAffinityEnabled,
-                DefinitionStages.WithClientCertEnabled,
-                DefinitionStages.WithClientCertMode,
-                DefinitionStages.WithClientCertExclusionPaths,
-                DefinitionStages.WithHostNamesDisabled,
-                DefinitionStages.WithCustomDomainVerificationId,
-                DefinitionStages.WithContainerSize,
-                DefinitionStages.WithDailyMemoryTimeQuota,
-                DefinitionStages.WithCloningInfo,
-                DefinitionStages.WithHttpsOnly,
-                DefinitionStages.WithRedundancyMode,
-                DefinitionStages.WithPublicNetworkAccess,
-                DefinitionStages.WithStorageAccountRequired,
-                DefinitionStages.WithKeyVaultReferenceIdentity,
-                DefinitionStages.WithVirtualNetworkSubnetId,
-                DefinitionStages.WithManagedEnvironmentId {
+        interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithIdentity,
+            DefinitionStages.WithExtendedLocation, DefinitionStages.WithKind, DefinitionStages.WithEnabled,
+            DefinitionStages.WithHostnameSslStates, DefinitionStages.WithServerFarmId, DefinitionStages.WithReserved,
+            DefinitionStages.WithIsXenon, DefinitionStages.WithHyperV, DefinitionStages.WithVnetRouteAllEnabled,
+            DefinitionStages.WithVnetImagePullEnabled, DefinitionStages.WithVnetContentShareEnabled,
+            DefinitionStages.WithSiteConfig, DefinitionStages.WithDaprConfig, DefinitionStages.WithWorkloadProfileName,
+            DefinitionStages.WithResourceConfig, DefinitionStages.WithScmSiteAlsoStopped,
+            DefinitionStages.WithHostingEnvironmentProfile, DefinitionStages.WithClientAffinityEnabled,
+            DefinitionStages.WithClientCertEnabled, DefinitionStages.WithClientCertMode,
+            DefinitionStages.WithClientCertExclusionPaths, DefinitionStages.WithHostNamesDisabled,
+            DefinitionStages.WithCustomDomainVerificationId, DefinitionStages.WithContainerSize,
+            DefinitionStages.WithDailyMemoryTimeQuota, DefinitionStages.WithCloningInfo, DefinitionStages.WithHttpsOnly,
+            DefinitionStages.WithRedundancyMode, DefinitionStages.WithPublicNetworkAccess,
+            DefinitionStages.WithStorageAccountRequired, DefinitionStages.WithKeyVaultReferenceIdentity,
+            DefinitionStages.WithVirtualNetworkSubnetId, DefinitionStages.WithManagedEnvironmentId {
             /**
              * Executes the create request.
-             *
+             * 
              * @return the created resource.
              */
             Site create();
 
             /**
              * Executes the create request.
-             *
+             * 
              * @param context The context to associate with this operation.
              * @return the created resource.
              */
             Site create(Context context);
         }
 
-        /** The stage of the Site definition allowing to specify tags. */
+        /**
+         * The stage of the Site definition allowing to specify tags.
+         */
         interface WithTags {
             /**
              * Specifies the tags property: Resource tags..
-             *
+             * 
              * @param tags Resource tags.
              * @return the next definition stage.
              */
             WithCreate withTags(Map<String, String> tags);
         }
 
-        /** The stage of the Site definition allowing to specify identity. */
+        /**
+         * The stage of the Site definition allowing to specify identity.
+         */
         interface WithIdentity {
             /**
              * Specifies the identity property: Managed service identity..
-             *
+             * 
              * @param identity Managed service identity.
              * @return the next definition stage.
              */
             WithCreate withIdentity(ManagedServiceIdentity identity);
         }
 
-        /** The stage of the Site definition allowing to specify extendedLocation. */
+        /**
+         * The stage of the Site definition allowing to specify extendedLocation.
+         */
         interface WithExtendedLocation {
             /**
              * Specifies the extendedLocation property: Extended Location..
-             *
+             * 
              * @param extendedLocation Extended Location.
              * @return the next definition stage.
              */
             WithCreate withExtendedLocation(ExtendedLocation extendedLocation);
         }
 
-        /** The stage of the Site definition allowing to specify kind. */
+        /**
+         * The stage of the Site definition allowing to specify kind.
+         */
         interface WithKind {
             /**
              * Specifies the kind property: Kind of resource..
-             *
+             * 
              * @param kind Kind of resource.
              * @return the next definition stage.
              */
             WithCreate withKind(String kind);
         }
 
-        /** The stage of the Site definition allowing to specify enabled. */
+        /**
+         * The stage of the Site definition allowing to specify enabled.
+         */
         interface WithEnabled {
             /**
              * Specifies the enabled property: &lt;code&gt;true&lt;/code&gt; if the app is enabled; otherwise,
              * &lt;code&gt;false&lt;/code&gt;. Setting this value to false disables the app (takes the app offline)..
-             *
+             * 
              * @param enabled &lt;code&gt;true&lt;/code&gt; if the app is enabled; otherwise,
-             *     &lt;code&gt;false&lt;/code&gt;. Setting this value to false disables the app (takes the app offline).
+             * &lt;code&gt;false&lt;/code&gt;. Setting this value to false disables the app (takes the app offline).
              * @return the next definition stage.
              */
             WithCreate withEnabled(Boolean enabled);
         }
 
-        /** The stage of the Site definition allowing to specify hostnameSslStates. */
+        /**
+         * The stage of the Site definition allowing to specify hostnameSslStates.
+         */
         interface WithHostnameSslStates {
             /**
              * Specifies the hostnameSslStates property: Hostname SSL states are used to manage the SSL bindings for
              * app's hostnames..
-             *
+             * 
              * @param hostnameSslStates Hostname SSL states are used to manage the SSL bindings for app's hostnames.
              * @return the next definition stage.
              */
             WithCreate withHostnameSslStates(List<HostnameSslState> hostnameSslStates);
         }
 
-        /** The stage of the Site definition allowing to specify serverFarmId. */
+        /**
+         * The stage of the Site definition allowing to specify serverFarmId.
+         */
         interface WithServerFarmId {
             /**
              * Specifies the serverFarmId property: Resource ID of the associated App Service plan, formatted as:
              * "/subscriptions/{subscriptionID}/resourceGroups/{groupName}/providers/Microsoft.Web/serverfarms/{appServicePlanName}"..
-             *
+             * 
              * @param serverFarmId Resource ID of the associated App Service plan, formatted as:
-             *     "/subscriptions/{subscriptionID}/resourceGroups/{groupName}/providers/Microsoft.Web/serverfarms/{appServicePlanName}".
+             * "/subscriptions/{subscriptionID}/resourceGroups/{groupName}/providers/Microsoft.Web/serverfarms/{appServicePlanName}".
              * @return the next definition stage.
              */
             WithCreate withServerFarmId(String serverFarmId);
         }
 
-        /** The stage of the Site definition allowing to specify reserved. */
+        /**
+         * The stage of the Site definition allowing to specify reserved.
+         */
         interface WithReserved {
             /**
              * Specifies the reserved property: &lt;code&gt;true&lt;/code&gt; if reserved; otherwise,
              * &lt;code&gt;false&lt;/code&gt;..
-             *
+             * 
              * @param reserved &lt;code&gt;true&lt;/code&gt; if reserved; otherwise, &lt;code&gt;false&lt;/code&gt;.
              * @return the next definition stage.
              */
             WithCreate withReserved(Boolean reserved);
         }
 
-        /** The stage of the Site definition allowing to specify isXenon. */
+        /**
+         * The stage of the Site definition allowing to specify isXenon.
+         */
         interface WithIsXenon {
             /**
              * Specifies the isXenon property: Obsolete: Hyper-V sandbox..
-             *
+             * 
              * @param isXenon Obsolete: Hyper-V sandbox.
              * @return the next definition stage.
              */
             WithCreate withIsXenon(Boolean isXenon);
         }
 
-        /** The stage of the Site definition allowing to specify hyperV. */
+        /**
+         * The stage of the Site definition allowing to specify hyperV.
+         */
         interface WithHyperV {
             /**
              * Specifies the hyperV property: Hyper-V sandbox..
-             *
+             * 
              * @param hyperV Hyper-V sandbox.
              * @return the next definition stage.
              */
             WithCreate withHyperV(Boolean hyperV);
         }
 
-        /** The stage of the Site definition allowing to specify vnetRouteAllEnabled. */
+        /**
+         * The stage of the Site definition allowing to specify vnetRouteAllEnabled.
+         */
         interface WithVnetRouteAllEnabled {
             /**
              * Specifies the vnetRouteAllEnabled property: Virtual Network Route All enabled. This causes all outbound
              * traffic to have Virtual Network Security Groups and User Defined Routes applied..
-             *
+             * 
              * @param vnetRouteAllEnabled Virtual Network Route All enabled. This causes all outbound traffic to have
-             *     Virtual Network Security Groups and User Defined Routes applied.
+             * Virtual Network Security Groups and User Defined Routes applied.
              * @return the next definition stage.
              */
             WithCreate withVnetRouteAllEnabled(Boolean vnetRouteAllEnabled);
         }
 
-        /** The stage of the Site definition allowing to specify vnetImagePullEnabled. */
+        /**
+         * The stage of the Site definition allowing to specify vnetImagePullEnabled.
+         */
         interface WithVnetImagePullEnabled {
             /**
              * Specifies the vnetImagePullEnabled property: To enable pulling image over Virtual Network.
-             *
+             * 
              * @param vnetImagePullEnabled To enable pulling image over Virtual Network.
              * @return the next definition stage.
              */
             WithCreate withVnetImagePullEnabled(Boolean vnetImagePullEnabled);
         }
 
-        /** The stage of the Site definition allowing to specify vnetContentShareEnabled. */
+        /**
+         * The stage of the Site definition allowing to specify vnetContentShareEnabled.
+         */
         interface WithVnetContentShareEnabled {
             /**
              * Specifies the vnetContentShareEnabled property: To enable accessing content over virtual network.
-             *
+             * 
              * @param vnetContentShareEnabled To enable accessing content over virtual network.
              * @return the next definition stage.
              */
             WithCreate withVnetContentShareEnabled(Boolean vnetContentShareEnabled);
         }
 
-        /** The stage of the Site definition allowing to specify siteConfig. */
+        /**
+         * The stage of the Site definition allowing to specify siteConfig.
+         */
         interface WithSiteConfig {
             /**
              * Specifies the siteConfig property: Configuration of the app..
-             *
+             * 
              * @param siteConfig Configuration of the app.
              * @return the next definition stage.
              */
             WithCreate withSiteConfig(SiteConfigInner siteConfig);
         }
 
-        /** The stage of the Site definition allowing to specify scmSiteAlsoStopped. */
+        /**
+         * The stage of the Site definition allowing to specify daprConfig.
+         */
+        interface WithDaprConfig {
+            /**
+             * Specifies the daprConfig property: Dapr configuration of the app..
+             * 
+             * @param daprConfig Dapr configuration of the app.
+             * @return the next definition stage.
+             */
+            WithCreate withDaprConfig(DaprConfig daprConfig);
+        }
+
+        /**
+         * The stage of the Site definition allowing to specify workloadProfileName.
+         */
+        interface WithWorkloadProfileName {
+            /**
+             * Specifies the workloadProfileName property: Workload profile name for function app to execute on..
+             * 
+             * @param workloadProfileName Workload profile name for function app to execute on.
+             * @return the next definition stage.
+             */
+            WithCreate withWorkloadProfileName(String workloadProfileName);
+        }
+
+        /**
+         * The stage of the Site definition allowing to specify resourceConfig.
+         */
+        interface WithResourceConfig {
+            /**
+             * Specifies the resourceConfig property: Function app resource requirements..
+             * 
+             * @param resourceConfig Function app resource requirements.
+             * @return the next definition stage.
+             */
+            WithCreate withResourceConfig(ResourceConfig resourceConfig);
+        }
+
+        /**
+         * The stage of the Site definition allowing to specify scmSiteAlsoStopped.
+         */
         interface WithScmSiteAlsoStopped {
             /**
              * Specifies the scmSiteAlsoStopped property: &lt;code&gt;true&lt;/code&gt; to stop SCM (KUDU) site when the
              * app is stopped; otherwise, &lt;code&gt;false&lt;/code&gt;. The default is
              * &lt;code&gt;false&lt;/code&gt;..
-             *
+             * 
              * @param scmSiteAlsoStopped &lt;code&gt;true&lt;/code&gt; to stop SCM (KUDU) site when the app is stopped;
-             *     otherwise, &lt;code&gt;false&lt;/code&gt;. The default is &lt;code&gt;false&lt;/code&gt;.
+             * otherwise, &lt;code&gt;false&lt;/code&gt;. The default is &lt;code&gt;false&lt;/code&gt;.
              * @return the next definition stage.
              */
             WithCreate withScmSiteAlsoStopped(Boolean scmSiteAlsoStopped);
         }
 
-        /** The stage of the Site definition allowing to specify hostingEnvironmentProfile. */
+        /**
+         * The stage of the Site definition allowing to specify hostingEnvironmentProfile.
+         */
         interface WithHostingEnvironmentProfile {
             /**
              * Specifies the hostingEnvironmentProfile property: App Service Environment to use for the app..
-             *
+             * 
              * @param hostingEnvironmentProfile App Service Environment to use for the app.
              * @return the next definition stage.
              */
             WithCreate withHostingEnvironmentProfile(HostingEnvironmentProfile hostingEnvironmentProfile);
         }
 
-        /** The stage of the Site definition allowing to specify clientAffinityEnabled. */
+        /**
+         * The stage of the Site definition allowing to specify clientAffinityEnabled.
+         */
         interface WithClientAffinityEnabled {
             /**
              * Specifies the clientAffinityEnabled property: &lt;code&gt;true&lt;/code&gt; to enable client affinity;
              * &lt;code&gt;false&lt;/code&gt; to stop sending session affinity cookies, which route client requests in
              * the same session to the same instance. Default is &lt;code&gt;true&lt;/code&gt;..
-             *
+             * 
              * @param clientAffinityEnabled &lt;code&gt;true&lt;/code&gt; to enable client affinity;
-             *     &lt;code&gt;false&lt;/code&gt; to stop sending session affinity cookies, which route client requests
-             *     in the same session to the same instance. Default is &lt;code&gt;true&lt;/code&gt;.
+             * &lt;code&gt;false&lt;/code&gt; to stop sending session affinity cookies, which route client requests in
+             * the same session to the same instance. Default is &lt;code&gt;true&lt;/code&gt;.
              * @return the next definition stage.
              */
             WithCreate withClientAffinityEnabled(Boolean clientAffinityEnabled);
         }
 
-        /** The stage of the Site definition allowing to specify clientCertEnabled. */
+        /**
+         * The stage of the Site definition allowing to specify clientCertEnabled.
+         */
         interface WithClientCertEnabled {
             /**
              * Specifies the clientCertEnabled property: &lt;code&gt;true&lt;/code&gt; to enable client certificate
              * authentication (TLS mutual authentication); otherwise, &lt;code&gt;false&lt;/code&gt;. Default is
              * &lt;code&gt;false&lt;/code&gt;..
-             *
+             * 
              * @param clientCertEnabled &lt;code&gt;true&lt;/code&gt; to enable client certificate authentication (TLS
-             *     mutual authentication); otherwise, &lt;code&gt;false&lt;/code&gt;. Default is
-             *     &lt;code&gt;false&lt;/code&gt;.
+             * mutual authentication); otherwise, &lt;code&gt;false&lt;/code&gt;. Default is
+             * &lt;code&gt;false&lt;/code&gt;.
              * @return the next definition stage.
              */
             WithCreate withClientCertEnabled(Boolean clientCertEnabled);
         }
 
-        /** The stage of the Site definition allowing to specify clientCertMode. */
+        /**
+         * The stage of the Site definition allowing to specify clientCertMode.
+         */
         interface WithClientCertMode {
             /**
-             * Specifies the clientCertMode property: This composes with ClientCertEnabled setting. - ClientCertEnabled:
-             * false means ClientCert is ignored. - ClientCertEnabled: true and ClientCertMode: Required means
-             * ClientCert is required. - ClientCertEnabled: true and ClientCertMode: Optional means ClientCert is
-             * optional or accepted..
-             *
-             * @param clientCertMode This composes with ClientCertEnabled setting. - ClientCertEnabled: false means
-             *     ClientCert is ignored. - ClientCertEnabled: true and ClientCertMode: Required means ClientCert is
-             *     required. - ClientCertEnabled: true and ClientCertMode: Optional means ClientCert is optional or
-             *     accepted.
+             * Specifies the clientCertMode property: This composes with ClientCertEnabled setting.
+             * - ClientCertEnabled: false means ClientCert is ignored.
+             * - ClientCertEnabled: true and ClientCertMode: Required means ClientCert is required.
+             * - ClientCertEnabled: true and ClientCertMode: Optional means ClientCert is optional or accepted..
+             * 
+             * @param clientCertMode This composes with ClientCertEnabled setting.
+             * - ClientCertEnabled: false means ClientCert is ignored.
+             * - ClientCertEnabled: true and ClientCertMode: Required means ClientCert is required.
+             * - ClientCertEnabled: true and ClientCertMode: Optional means ClientCert is optional or accepted.
              * @return the next definition stage.
              */
             WithCreate withClientCertMode(ClientCertMode clientCertMode);
         }
 
-        /** The stage of the Site definition allowing to specify clientCertExclusionPaths. */
+        /**
+         * The stage of the Site definition allowing to specify clientCertExclusionPaths.
+         */
         interface WithClientCertExclusionPaths {
             /**
              * Specifies the clientCertExclusionPaths property: client certificate authentication comma-separated
              * exclusion paths.
-             *
+             * 
              * @param clientCertExclusionPaths client certificate authentication comma-separated exclusion paths.
              * @return the next definition stage.
              */
             WithCreate withClientCertExclusionPaths(String clientCertExclusionPaths);
         }
 
-        /** The stage of the Site definition allowing to specify hostNamesDisabled. */
+        /**
+         * The stage of the Site definition allowing to specify hostNamesDisabled.
+         */
         interface WithHostNamesDisabled {
             /**
              * Specifies the hostNamesDisabled property: &lt;code&gt;true&lt;/code&gt; to disable the public hostnames
-             * of the app; otherwise, &lt;code&gt;false&lt;/code&gt;. If &lt;code&gt;true&lt;/code&gt;, the app is only
-             * accessible via API management process..
-             *
+             * of the app; otherwise, &lt;code&gt;false&lt;/code&gt;.
+             * If &lt;code&gt;true&lt;/code&gt;, the app is only accessible via API management process..
+             * 
              * @param hostNamesDisabled &lt;code&gt;true&lt;/code&gt; to disable the public hostnames of the app;
-             *     otherwise, &lt;code&gt;false&lt;/code&gt;. If &lt;code&gt;true&lt;/code&gt;, the app is only
-             *     accessible via API management process.
+             * otherwise, &lt;code&gt;false&lt;/code&gt;.
+             * If &lt;code&gt;true&lt;/code&gt;, the app is only accessible via API management process.
              * @return the next definition stage.
              */
             WithCreate withHostNamesDisabled(Boolean hostNamesDisabled);
         }
 
-        /** The stage of the Site definition allowing to specify customDomainVerificationId. */
+        /**
+         * The stage of the Site definition allowing to specify customDomainVerificationId.
+         */
         interface WithCustomDomainVerificationId {
             /**
              * Specifies the customDomainVerificationId property: Unique identifier that verifies the custom domains
              * assigned to the app. Customer will add this id to a txt record for verification..
-             *
+             * 
              * @param customDomainVerificationId Unique identifier that verifies the custom domains assigned to the app.
-             *     Customer will add this id to a txt record for verification.
+             * Customer will add this id to a txt record for verification.
              * @return the next definition stage.
              */
             WithCreate withCustomDomainVerificationId(String customDomainVerificationId);
         }
 
-        /** The stage of the Site definition allowing to specify containerSize. */
+        /**
+         * The stage of the Site definition allowing to specify containerSize.
+         */
         interface WithContainerSize {
             /**
              * Specifies the containerSize property: Size of the function container..
-             *
+             * 
              * @param containerSize Size of the function container.
              * @return the next definition stage.
              */
             WithCreate withContainerSize(Integer containerSize);
         }
 
-        /** The stage of the Site definition allowing to specify dailyMemoryTimeQuota. */
+        /**
+         * The stage of the Site definition allowing to specify dailyMemoryTimeQuota.
+         */
         interface WithDailyMemoryTimeQuota {
             /**
              * Specifies the dailyMemoryTimeQuota property: Maximum allowed daily memory-time quota (applicable on
              * dynamic apps only)..
-             *
+             * 
              * @param dailyMemoryTimeQuota Maximum allowed daily memory-time quota (applicable on dynamic apps only).
              * @return the next definition stage.
              */
             WithCreate withDailyMemoryTimeQuota(Integer dailyMemoryTimeQuota);
         }
 
-        /** The stage of the Site definition allowing to specify cloningInfo. */
+        /**
+         * The stage of the Site definition allowing to specify cloningInfo.
+         */
         interface WithCloningInfo {
             /**
              * Specifies the cloningInfo property: If specified during app creation, the app is cloned from a source
              * app..
-             *
+             * 
              * @param cloningInfo If specified during app creation, the app is cloned from a source app.
              * @return the next definition stage.
              */
             WithCreate withCloningInfo(CloningInfo cloningInfo);
         }
 
-        /** The stage of the Site definition allowing to specify httpsOnly. */
+        /**
+         * The stage of the Site definition allowing to specify httpsOnly.
+         */
         interface WithHttpsOnly {
             /**
              * Specifies the httpsOnly property: HttpsOnly: configures a web site to accept only https requests. Issues
-             * redirect for http requests.
-             *
-             * @param httpsOnly HttpsOnly: configures a web site to accept only https requests. Issues redirect for http
-             *     requests.
+             * redirect for
+             * http requests.
+             * 
+             * @param httpsOnly HttpsOnly: configures a web site to accept only https requests. Issues redirect for
+             * http requests.
              * @return the next definition stage.
              */
             WithCreate withHttpsOnly(Boolean httpsOnly);
         }
 
-        /** The stage of the Site definition allowing to specify redundancyMode. */
+        /**
+         * The stage of the Site definition allowing to specify redundancyMode.
+         */
         interface WithRedundancyMode {
             /**
              * Specifies the redundancyMode property: Site redundancy mode.
-             *
+             * 
              * @param redundancyMode Site redundancy mode.
              * @return the next definition stage.
              */
             WithCreate withRedundancyMode(RedundancyMode redundancyMode);
         }
 
-        /** The stage of the Site definition allowing to specify publicNetworkAccess. */
+        /**
+         * The stage of the Site definition allowing to specify publicNetworkAccess.
+         */
         interface WithPublicNetworkAccess {
             /**
              * Specifies the publicNetworkAccess property: Property to allow or block all public traffic. Allowed
              * Values: 'Enabled', 'Disabled' or an empty string..
-             *
+             * 
              * @param publicNetworkAccess Property to allow or block all public traffic. Allowed Values: 'Enabled',
-             *     'Disabled' or an empty string.
+             * 'Disabled' or an empty string.
              * @return the next definition stage.
              */
             WithCreate withPublicNetworkAccess(String publicNetworkAccess);
         }
 
-        /** The stage of the Site definition allowing to specify storageAccountRequired. */
+        /**
+         * The stage of the Site definition allowing to specify storageAccountRequired.
+         */
         interface WithStorageAccountRequired {
             /**
              * Specifies the storageAccountRequired property: Checks if Customer provided storage account is required.
-             *
+             * 
              * @param storageAccountRequired Checks if Customer provided storage account is required.
              * @return the next definition stage.
              */
             WithCreate withStorageAccountRequired(Boolean storageAccountRequired);
         }
 
-        /** The stage of the Site definition allowing to specify keyVaultReferenceIdentity. */
+        /**
+         * The stage of the Site definition allowing to specify keyVaultReferenceIdentity.
+         */
         interface WithKeyVaultReferenceIdentity {
             /**
              * Specifies the keyVaultReferenceIdentity property: Identity to use for Key Vault Reference
              * authentication..
-             *
+             * 
              * @param keyVaultReferenceIdentity Identity to use for Key Vault Reference authentication.
              * @return the next definition stage.
              */
             WithCreate withKeyVaultReferenceIdentity(String keyVaultReferenceIdentity);
         }
 
-        /** The stage of the Site definition allowing to specify virtualNetworkSubnetId. */
+        /**
+         * The stage of the Site definition allowing to specify virtualNetworkSubnetId.
+         */
         interface WithVirtualNetworkSubnetId {
             /**
              * Specifies the virtualNetworkSubnetId property: Azure Resource Manager ID of the Virtual network and
-             * subnet to be joined by Regional VNET Integration. This must be of the form
+             * subnet to be joined by Regional VNET Integration.
+             * This must be of the form
              * /subscriptions/{subscriptionName}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{vnetName}/subnets/{subnetName}.
-             *
+             * 
              * @param virtualNetworkSubnetId Azure Resource Manager ID of the Virtual network and subnet to be joined by
-             *     Regional VNET Integration. This must be of the form
-             *     /subscriptions/{subscriptionName}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{vnetName}/subnets/{subnetName}.
+             * Regional VNET Integration.
+             * This must be of the form
+             * /subscriptions/{subscriptionName}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{vnetName}/subnets/{subnetName}.
              * @return the next definition stage.
              */
             WithCreate withVirtualNetworkSubnetId(String virtualNetworkSubnetId);
         }
 
-        /** The stage of the Site definition allowing to specify managedEnvironmentId. */
+        /**
+         * The stage of the Site definition allowing to specify managedEnvironmentId.
+         */
         interface WithManagedEnvironmentId {
             /**
              * Specifies the managedEnvironmentId property: Azure Resource Manager ID of the customer's selected Managed
              * Environment on which to host this app. This must be of the form
              * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.App/managedEnvironments/{managedEnvironmentName}.
-             *
+             * 
              * @param managedEnvironmentId Azure Resource Manager ID of the customer's selected Managed Environment on
-             *     which to host this app. This must be of the form
-             *     /subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.App/managedEnvironments/{managedEnvironmentName}.
+             * which to host this app. This must be of the form
+             * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.App/managedEnvironments/{managedEnvironmentName}.
              * @return the next definition stage.
              */
             WithCreate withManagedEnvironmentId(String managedEnvironmentId);
@@ -949,303 +1071,337 @@ public interface Site {
 
     /**
      * Begins update for the Site resource.
-     *
+     * 
      * @return the stage of resource update.
      */
     Site.Update update();
 
-    /** The template for Site update. */
-    interface Update
-        extends UpdateStages.WithKind,
-            UpdateStages.WithIdentity,
-            UpdateStages.WithEnabled,
-            UpdateStages.WithHostnameSslStates,
-            UpdateStages.WithServerFarmId,
-            UpdateStages.WithSiteConfig,
-            UpdateStages.WithScmSiteAlsoStopped,
-            UpdateStages.WithClientAffinityEnabled,
-            UpdateStages.WithClientCertEnabled,
-            UpdateStages.WithClientCertMode,
-            UpdateStages.WithClientCertExclusionPaths,
-            UpdateStages.WithHostNamesDisabled,
-            UpdateStages.WithCustomDomainVerificationId,
-            UpdateStages.WithContainerSize,
-            UpdateStages.WithDailyMemoryTimeQuota,
-            UpdateStages.WithHttpsOnly,
-            UpdateStages.WithRedundancyMode,
-            UpdateStages.WithStorageAccountRequired,
-            UpdateStages.WithKeyVaultReferenceIdentity,
-            UpdateStages.WithVirtualNetworkSubnetId {
+    /**
+     * The template for Site update.
+     */
+    interface Update extends UpdateStages.WithKind, UpdateStages.WithIdentity, UpdateStages.WithEnabled,
+        UpdateStages.WithHostnameSslStates, UpdateStages.WithServerFarmId, UpdateStages.WithSiteConfig,
+        UpdateStages.WithScmSiteAlsoStopped, UpdateStages.WithClientAffinityEnabled, UpdateStages.WithClientCertEnabled,
+        UpdateStages.WithClientCertMode, UpdateStages.WithClientCertExclusionPaths, UpdateStages.WithHostNamesDisabled,
+        UpdateStages.WithCustomDomainVerificationId, UpdateStages.WithContainerSize,
+        UpdateStages.WithDailyMemoryTimeQuota, UpdateStages.WithHttpsOnly, UpdateStages.WithRedundancyMode,
+        UpdateStages.WithStorageAccountRequired, UpdateStages.WithKeyVaultReferenceIdentity,
+        UpdateStages.WithVirtualNetworkSubnetId {
         /**
          * Executes the update request.
-         *
+         * 
          * @return the updated resource.
          */
         Site apply();
 
         /**
          * Executes the update request.
-         *
+         * 
          * @param context The context to associate with this operation.
          * @return the updated resource.
          */
         Site apply(Context context);
     }
 
-    /** The Site update stages. */
+    /**
+     * The Site update stages.
+     */
     interface UpdateStages {
-        /** The stage of the Site update allowing to specify kind. */
+        /**
+         * The stage of the Site update allowing to specify kind.
+         */
         interface WithKind {
             /**
              * Specifies the kind property: Kind of resource..
-             *
+             * 
              * @param kind Kind of resource.
              * @return the next definition stage.
              */
             Update withKind(String kind);
         }
 
-        /** The stage of the Site update allowing to specify identity. */
+        /**
+         * The stage of the Site update allowing to specify identity.
+         */
         interface WithIdentity {
             /**
              * Specifies the identity property: Managed service identity..
-             *
+             * 
              * @param identity Managed service identity.
              * @return the next definition stage.
              */
             Update withIdentity(ManagedServiceIdentity identity);
         }
 
-        /** The stage of the Site update allowing to specify enabled. */
+        /**
+         * The stage of the Site update allowing to specify enabled.
+         */
         interface WithEnabled {
             /**
              * Specifies the enabled property: &lt;code&gt;true&lt;/code&gt; if the app is enabled; otherwise,
              * &lt;code&gt;false&lt;/code&gt;. Setting this value to false disables the app (takes the app offline)..
-             *
+             * 
              * @param enabled &lt;code&gt;true&lt;/code&gt; if the app is enabled; otherwise,
-             *     &lt;code&gt;false&lt;/code&gt;. Setting this value to false disables the app (takes the app offline).
+             * &lt;code&gt;false&lt;/code&gt;. Setting this value to false disables the app (takes the app offline).
              * @return the next definition stage.
              */
             Update withEnabled(Boolean enabled);
         }
 
-        /** The stage of the Site update allowing to specify hostnameSslStates. */
+        /**
+         * The stage of the Site update allowing to specify hostnameSslStates.
+         */
         interface WithHostnameSslStates {
             /**
              * Specifies the hostnameSslStates property: Hostname SSL states are used to manage the SSL bindings for
              * app's hostnames..
-             *
+             * 
              * @param hostnameSslStates Hostname SSL states are used to manage the SSL bindings for app's hostnames.
              * @return the next definition stage.
              */
             Update withHostnameSslStates(List<HostnameSslState> hostnameSslStates);
         }
 
-        /** The stage of the Site update allowing to specify serverFarmId. */
+        /**
+         * The stage of the Site update allowing to specify serverFarmId.
+         */
         interface WithServerFarmId {
             /**
              * Specifies the serverFarmId property: Resource ID of the associated App Service plan, formatted as:
              * "/subscriptions/{subscriptionID}/resourceGroups/{groupName}/providers/Microsoft.Web/serverfarms/{appServicePlanName}"..
-             *
+             * 
              * @param serverFarmId Resource ID of the associated App Service plan, formatted as:
-             *     "/subscriptions/{subscriptionID}/resourceGroups/{groupName}/providers/Microsoft.Web/serverfarms/{appServicePlanName}".
+             * "/subscriptions/{subscriptionID}/resourceGroups/{groupName}/providers/Microsoft.Web/serverfarms/{appServicePlanName}".
              * @return the next definition stage.
              */
             Update withServerFarmId(String serverFarmId);
         }
 
-        /** The stage of the Site update allowing to specify siteConfig. */
+        /**
+         * The stage of the Site update allowing to specify siteConfig.
+         */
         interface WithSiteConfig {
             /**
              * Specifies the siteConfig property: Configuration of the app..
-             *
+             * 
              * @param siteConfig Configuration of the app.
              * @return the next definition stage.
              */
             Update withSiteConfig(SiteConfigInner siteConfig);
         }
 
-        /** The stage of the Site update allowing to specify scmSiteAlsoStopped. */
+        /**
+         * The stage of the Site update allowing to specify scmSiteAlsoStopped.
+         */
         interface WithScmSiteAlsoStopped {
             /**
              * Specifies the scmSiteAlsoStopped property: &lt;code&gt;true&lt;/code&gt; to stop SCM (KUDU) site when the
              * app is stopped; otherwise, &lt;code&gt;false&lt;/code&gt;. The default is
              * &lt;code&gt;false&lt;/code&gt;..
-             *
+             * 
              * @param scmSiteAlsoStopped &lt;code&gt;true&lt;/code&gt; to stop SCM (KUDU) site when the app is stopped;
-             *     otherwise, &lt;code&gt;false&lt;/code&gt;. The default is &lt;code&gt;false&lt;/code&gt;.
+             * otherwise, &lt;code&gt;false&lt;/code&gt;. The default is &lt;code&gt;false&lt;/code&gt;.
              * @return the next definition stage.
              */
             Update withScmSiteAlsoStopped(Boolean scmSiteAlsoStopped);
         }
 
-        /** The stage of the Site update allowing to specify clientAffinityEnabled. */
+        /**
+         * The stage of the Site update allowing to specify clientAffinityEnabled.
+         */
         interface WithClientAffinityEnabled {
             /**
              * Specifies the clientAffinityEnabled property: &lt;code&gt;true&lt;/code&gt; to enable client affinity;
              * &lt;code&gt;false&lt;/code&gt; to stop sending session affinity cookies, which route client requests in
              * the same session to the same instance. Default is &lt;code&gt;true&lt;/code&gt;..
-             *
+             * 
              * @param clientAffinityEnabled &lt;code&gt;true&lt;/code&gt; to enable client affinity;
-             *     &lt;code&gt;false&lt;/code&gt; to stop sending session affinity cookies, which route client requests
-             *     in the same session to the same instance. Default is &lt;code&gt;true&lt;/code&gt;.
+             * &lt;code&gt;false&lt;/code&gt; to stop sending session affinity cookies, which route client requests in
+             * the same session to the same instance. Default is &lt;code&gt;true&lt;/code&gt;.
              * @return the next definition stage.
              */
             Update withClientAffinityEnabled(Boolean clientAffinityEnabled);
         }
 
-        /** The stage of the Site update allowing to specify clientCertEnabled. */
+        /**
+         * The stage of the Site update allowing to specify clientCertEnabled.
+         */
         interface WithClientCertEnabled {
             /**
              * Specifies the clientCertEnabled property: &lt;code&gt;true&lt;/code&gt; to enable client certificate
              * authentication (TLS mutual authentication); otherwise, &lt;code&gt;false&lt;/code&gt;. Default is
              * &lt;code&gt;false&lt;/code&gt;..
-             *
+             * 
              * @param clientCertEnabled &lt;code&gt;true&lt;/code&gt; to enable client certificate authentication (TLS
-             *     mutual authentication); otherwise, &lt;code&gt;false&lt;/code&gt;. Default is
-             *     &lt;code&gt;false&lt;/code&gt;.
+             * mutual authentication); otherwise, &lt;code&gt;false&lt;/code&gt;. Default is
+             * &lt;code&gt;false&lt;/code&gt;.
              * @return the next definition stage.
              */
             Update withClientCertEnabled(Boolean clientCertEnabled);
         }
 
-        /** The stage of the Site update allowing to specify clientCertMode. */
+        /**
+         * The stage of the Site update allowing to specify clientCertMode.
+         */
         interface WithClientCertMode {
             /**
-             * Specifies the clientCertMode property: This composes with ClientCertEnabled setting. - ClientCertEnabled:
-             * false means ClientCert is ignored. - ClientCertEnabled: true and ClientCertMode: Required means
-             * ClientCert is required. - ClientCertEnabled: true and ClientCertMode: Optional means ClientCert is
-             * optional or accepted..
-             *
-             * @param clientCertMode This composes with ClientCertEnabled setting. - ClientCertEnabled: false means
-             *     ClientCert is ignored. - ClientCertEnabled: true and ClientCertMode: Required means ClientCert is
-             *     required. - ClientCertEnabled: true and ClientCertMode: Optional means ClientCert is optional or
-             *     accepted.
+             * Specifies the clientCertMode property: This composes with ClientCertEnabled setting.
+             * - ClientCertEnabled: false means ClientCert is ignored.
+             * - ClientCertEnabled: true and ClientCertMode: Required means ClientCert is required.
+             * - ClientCertEnabled: true and ClientCertMode: Optional means ClientCert is optional or accepted..
+             * 
+             * @param clientCertMode This composes with ClientCertEnabled setting.
+             * - ClientCertEnabled: false means ClientCert is ignored.
+             * - ClientCertEnabled: true and ClientCertMode: Required means ClientCert is required.
+             * - ClientCertEnabled: true and ClientCertMode: Optional means ClientCert is optional or accepted.
              * @return the next definition stage.
              */
             Update withClientCertMode(ClientCertMode clientCertMode);
         }
 
-        /** The stage of the Site update allowing to specify clientCertExclusionPaths. */
+        /**
+         * The stage of the Site update allowing to specify clientCertExclusionPaths.
+         */
         interface WithClientCertExclusionPaths {
             /**
              * Specifies the clientCertExclusionPaths property: client certificate authentication comma-separated
              * exclusion paths.
-             *
+             * 
              * @param clientCertExclusionPaths client certificate authentication comma-separated exclusion paths.
              * @return the next definition stage.
              */
             Update withClientCertExclusionPaths(String clientCertExclusionPaths);
         }
 
-        /** The stage of the Site update allowing to specify hostNamesDisabled. */
+        /**
+         * The stage of the Site update allowing to specify hostNamesDisabled.
+         */
         interface WithHostNamesDisabled {
             /**
              * Specifies the hostNamesDisabled property: &lt;code&gt;true&lt;/code&gt; to disable the public hostnames
-             * of the app; otherwise, &lt;code&gt;false&lt;/code&gt;. If &lt;code&gt;true&lt;/code&gt;, the app is only
-             * accessible via API management process..
-             *
+             * of the app; otherwise, &lt;code&gt;false&lt;/code&gt;.
+             * If &lt;code&gt;true&lt;/code&gt;, the app is only accessible via API management process..
+             * 
              * @param hostNamesDisabled &lt;code&gt;true&lt;/code&gt; to disable the public hostnames of the app;
-             *     otherwise, &lt;code&gt;false&lt;/code&gt;. If &lt;code&gt;true&lt;/code&gt;, the app is only
-             *     accessible via API management process.
+             * otherwise, &lt;code&gt;false&lt;/code&gt;.
+             * If &lt;code&gt;true&lt;/code&gt;, the app is only accessible via API management process.
              * @return the next definition stage.
              */
             Update withHostNamesDisabled(Boolean hostNamesDisabled);
         }
 
-        /** The stage of the Site update allowing to specify customDomainVerificationId. */
+        /**
+         * The stage of the Site update allowing to specify customDomainVerificationId.
+         */
         interface WithCustomDomainVerificationId {
             /**
              * Specifies the customDomainVerificationId property: Unique identifier that verifies the custom domains
              * assigned to the app. Customer will add this id to a txt record for verification..
-             *
+             * 
              * @param customDomainVerificationId Unique identifier that verifies the custom domains assigned to the app.
-             *     Customer will add this id to a txt record for verification.
+             * Customer will add this id to a txt record for verification.
              * @return the next definition stage.
              */
             Update withCustomDomainVerificationId(String customDomainVerificationId);
         }
 
-        /** The stage of the Site update allowing to specify containerSize. */
+        /**
+         * The stage of the Site update allowing to specify containerSize.
+         */
         interface WithContainerSize {
             /**
              * Specifies the containerSize property: Size of the function container..
-             *
+             * 
              * @param containerSize Size of the function container.
              * @return the next definition stage.
              */
             Update withContainerSize(Integer containerSize);
         }
 
-        /** The stage of the Site update allowing to specify dailyMemoryTimeQuota. */
+        /**
+         * The stage of the Site update allowing to specify dailyMemoryTimeQuota.
+         */
         interface WithDailyMemoryTimeQuota {
             /**
              * Specifies the dailyMemoryTimeQuota property: Maximum allowed daily memory-time quota (applicable on
              * dynamic apps only)..
-             *
+             * 
              * @param dailyMemoryTimeQuota Maximum allowed daily memory-time quota (applicable on dynamic apps only).
              * @return the next definition stage.
              */
             Update withDailyMemoryTimeQuota(Integer dailyMemoryTimeQuota);
         }
 
-        /** The stage of the Site update allowing to specify httpsOnly. */
+        /**
+         * The stage of the Site update allowing to specify httpsOnly.
+         */
         interface WithHttpsOnly {
             /**
              * Specifies the httpsOnly property: HttpsOnly: configures a web site to accept only https requests. Issues
-             * redirect for http requests.
-             *
-             * @param httpsOnly HttpsOnly: configures a web site to accept only https requests. Issues redirect for http
-             *     requests.
+             * redirect for
+             * http requests.
+             * 
+             * @param httpsOnly HttpsOnly: configures a web site to accept only https requests. Issues redirect for
+             * http requests.
              * @return the next definition stage.
              */
             Update withHttpsOnly(Boolean httpsOnly);
         }
 
-        /** The stage of the Site update allowing to specify redundancyMode. */
+        /**
+         * The stage of the Site update allowing to specify redundancyMode.
+         */
         interface WithRedundancyMode {
             /**
              * Specifies the redundancyMode property: Site redundancy mode.
-             *
+             * 
              * @param redundancyMode Site redundancy mode.
              * @return the next definition stage.
              */
             Update withRedundancyMode(RedundancyMode redundancyMode);
         }
 
-        /** The stage of the Site update allowing to specify storageAccountRequired. */
+        /**
+         * The stage of the Site update allowing to specify storageAccountRequired.
+         */
         interface WithStorageAccountRequired {
             /**
              * Specifies the storageAccountRequired property: Checks if Customer provided storage account is required.
-             *
+             * 
              * @param storageAccountRequired Checks if Customer provided storage account is required.
              * @return the next definition stage.
              */
             Update withStorageAccountRequired(Boolean storageAccountRequired);
         }
 
-        /** The stage of the Site update allowing to specify keyVaultReferenceIdentity. */
+        /**
+         * The stage of the Site update allowing to specify keyVaultReferenceIdentity.
+         */
         interface WithKeyVaultReferenceIdentity {
             /**
              * Specifies the keyVaultReferenceIdentity property: Identity to use for Key Vault Reference
              * authentication..
-             *
+             * 
              * @param keyVaultReferenceIdentity Identity to use for Key Vault Reference authentication.
              * @return the next definition stage.
              */
             Update withKeyVaultReferenceIdentity(String keyVaultReferenceIdentity);
         }
 
-        /** The stage of the Site update allowing to specify virtualNetworkSubnetId. */
+        /**
+         * The stage of the Site update allowing to specify virtualNetworkSubnetId.
+         */
         interface WithVirtualNetworkSubnetId {
             /**
              * Specifies the virtualNetworkSubnetId property: Azure Resource Manager ID of the Virtual network and
-             * subnet to be joined by Regional VNET Integration. This must be of the form
+             * subnet to be joined by Regional VNET Integration.
+             * This must be of the form
              * /subscriptions/{subscriptionName}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{vnetName}/subnets/{subnetName}.
-             *
+             * 
              * @param virtualNetworkSubnetId Azure Resource Manager ID of the Virtual network and subnet to be joined by
-             *     Regional VNET Integration. This must be of the form
-             *     /subscriptions/{subscriptionName}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{vnetName}/subnets/{subnetName}.
+             * Regional VNET Integration.
+             * This must be of the form
+             * /subscriptions/{subscriptionName}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{vnetName}/subnets/{subnetName}.
              * @return the next definition stage.
              */
             Update withVirtualNetworkSubnetId(String virtualNetworkSubnetId);
@@ -1254,14 +1410,14 @@ public interface Site {
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @return the refreshed resource.
      */
     Site refresh();
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @return the refreshed resource.
      */
@@ -1269,14 +1425,14 @@ public interface Site {
 
     /**
      * Applies the configuration settings from the target slot onto the current slot.
-     *
-     * <p>Description for Applies the configuration settings from the target slot onto the current slot.
-     *
+     * 
+     * Description for Applies the configuration settings from the target slot onto the current slot.
+     * 
      * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -1284,27 +1440,27 @@ public interface Site {
 
     /**
      * Applies the configuration settings from the target slot onto the current slot.
-     *
-     * <p>Description for Applies the configuration settings from the target slot onto the current slot.
-     *
+     * 
+     * Description for Applies the configuration settings from the target slot onto the current slot.
+     * 
      * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void applySlotConfigToProduction(CsmSlotEntity slotSwapEntity);
 
     /**
      * Creates a backup of an app.
-     *
-     * <p>Description for Creates a backup of an app.
-     *
+     * 
+     * Description for Creates a backup of an app.
+     * 
      * @param request Backup configuration. You can use the JSON response from the POST action as input here.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return backup description along with {@link Response}.
      */
@@ -1312,13 +1468,13 @@ public interface Site {
 
     /**
      * Creates a backup of an app.
-     *
-     * <p>Description for Creates a backup of an app.
-     *
+     * 
+     * Description for Creates a backup of an app.
+     * 
      * @param request Backup configuration. You can use the JSON response from the POST action as input here.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return backup description.
      */
@@ -1326,9 +1482,9 @@ public interface Site {
 
     /**
      * Gets the last lines of docker logs for the given site
-     *
-     * <p>Description for Gets the last lines of docker logs for the given site.
-     *
+     * 
+     * Description for Gets the last lines of docker logs for the given site.
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -1339,9 +1495,9 @@ public interface Site {
 
     /**
      * Gets the last lines of docker logs for the given site
-     *
-     * <p>Description for Gets the last lines of docker logs for the given site.
-     *
+     * 
+     * Description for Gets the last lines of docker logs for the given site.
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response.
@@ -1351,15 +1507,15 @@ public interface Site {
     /**
      * Discovers an existing app backup that can be restored from a blob in Azure storage. Use this to get information
      * about the databases stored in a backup.
-     *
-     * <p>Description for Discovers an existing app backup that can be restored from a blob in Azure storage. Use this
-     * to get information about the databases stored in a backup.
-     *
+     * 
+     * Description for Discovers an existing app backup that can be restored from a blob in Azure storage. Use this to
+     * get information about the databases stored in a backup.
+     * 
      * @param request A RestoreRequest object that includes Azure storage URL and blog name for discovery of backup.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return description of a restore request along with {@link Response}.
      */
@@ -1368,14 +1524,14 @@ public interface Site {
     /**
      * Discovers an existing app backup that can be restored from a blob in Azure storage. Use this to get information
      * about the databases stored in a backup.
-     *
-     * <p>Description for Discovers an existing app backup that can be restored from a blob in Azure storage. Use this
-     * to get information about the databases stored in a backup.
-     *
+     * 
+     * Description for Discovers an existing app backup that can be restored from a blob in Azure storage. Use this to
+     * get information about the databases stored in a backup.
+     * 
      * @param request A RestoreRequest object that includes Azure storage URL and blog name for discovery of backup.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return description of a restore request.
      */
@@ -1383,13 +1539,13 @@ public interface Site {
 
     /**
      * Shows whether an app can be cloned to another resource group or subscription.
-     *
-     * <p>Description for Shows whether an app can be cloned to another resource group or subscription.
-     *
+     * 
+     * Description for Shows whether an app can be cloned to another resource group or subscription.
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return represents whether or not an app is cloneable along with {@link Response}.
      */
@@ -1397,11 +1553,11 @@ public interface Site {
 
     /**
      * Shows whether an app can be cloned to another resource group or subscription.
-     *
-     * <p>Description for Shows whether an app can be cloned to another resource group or subscription.
-     *
+     * 
+     * Description for Shows whether an app can be cloned to another resource group or subscription.
+     * 
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return represents whether or not an app is cloneable.
      */
@@ -1409,11 +1565,11 @@ public interface Site {
 
     /**
      * Gets existing backups of an app.
-     *
-     * <p>Description for Gets existing backups of an app.
-     *
+     * 
+     * Description for Gets existing backups of an app.
+     * 
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of backup items as paginated response with {@link PagedIterable}.
      */
@@ -1421,13 +1577,13 @@ public interface Site {
 
     /**
      * Gets existing backups of an app.
-     *
-     * <p>Description for Gets existing backups of an app.
-     *
+     * 
+     * Description for Gets existing backups of an app.
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of backup items as paginated response with {@link PagedIterable}.
      */
@@ -1435,13 +1591,13 @@ public interface Site {
 
     /**
      * This is to allow calling via powershell and ARM template.
-     *
-     * <p>Description for This is to allow calling via powershell and ARM template.
-     *
+     * 
+     * Description for This is to allow calling via powershell and ARM template.
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return function secrets along with {@link Response}.
      */
@@ -1449,11 +1605,11 @@ public interface Site {
 
     /**
      * This is to allow calling via powershell and ARM template.
-     *
-     * <p>Description for This is to allow calling via powershell and ARM template.
-     *
+     * 
+     * Description for This is to allow calling via powershell and ARM template.
+     * 
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return function secrets.
      */
@@ -1461,13 +1617,13 @@ public interface Site {
 
     /**
      * Migrates a local (in-app) MySql database to a remote MySql database.
-     *
-     * <p>Description for Migrates a local (in-app) MySql database to a remote MySql database.
-     *
+     * 
+     * Description for Migrates a local (in-app) MySql database to a remote MySql database.
+     * 
      * @param migrationRequestEnvelope MySql migration options.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return an operation on a resource.
      */
@@ -1475,14 +1631,14 @@ public interface Site {
 
     /**
      * Migrates a local (in-app) MySql database to a remote MySql database.
-     *
-     * <p>Description for Migrates a local (in-app) MySql database to a remote MySql database.
-     *
+     * 
+     * Description for Migrates a local (in-app) MySql database to a remote MySql database.
+     * 
      * @param migrationRequestEnvelope MySql migration options.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return an operation on a resource.
      */
@@ -1490,13 +1646,13 @@ public interface Site {
 
     /**
      * Generates a new publishing password for an app (or deployment slot, if specified).
-     *
-     * <p>Description for Generates a new publishing password for an app (or deployment slot, if specified).
-     *
+     * 
+     * Description for Generates a new publishing password for an app (or deployment slot, if specified).
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -1504,26 +1660,26 @@ public interface Site {
 
     /**
      * Generates a new publishing password for an app (or deployment slot, if specified).
-     *
-     * <p>Description for Generates a new publishing password for an app (or deployment slot, if specified).
-     *
+     * 
+     * Description for Generates a new publishing password for an app (or deployment slot, if specified).
+     * 
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void generateNewSitePublishingPassword();
 
     /**
      * Gets the publishing profile for an app (or deployment slot, if specified).
-     *
-     * <p>Description for Gets the publishing profile for an app (or deployment slot, if specified).
-     *
+     * 
+     * Description for Gets the publishing profile for an app (or deployment slot, if specified).
+     * 
      * @param publishingProfileOptions Specifies publishingProfileOptions for publishing profile. For example, use
-     *     {"format": "FileZilla3"} to get a FileZilla publishing profile.
+     * {"format": "FileZilla3"} to get a FileZilla publishing profile.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response body along with {@link Response}.
      */
@@ -1532,14 +1688,14 @@ public interface Site {
 
     /**
      * Gets the publishing profile for an app (or deployment slot, if specified).
-     *
-     * <p>Description for Gets the publishing profile for an app (or deployment slot, if specified).
-     *
+     * 
+     * Description for Gets the publishing profile for an app (or deployment slot, if specified).
+     * 
      * @param publishingProfileOptions Specifies publishingProfileOptions for publishing profile. For example, use
-     *     {"format": "FileZilla3"} to get a FileZilla publishing profile.
+     * {"format": "FileZilla3"} to get a FileZilla publishing profile.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response.
      */
@@ -1548,14 +1704,14 @@ public interface Site {
     /**
      * Resets the configuration settings of the current slot if they were previously modified by calling the API with
      * POST.
-     *
-     * <p>Description for Resets the configuration settings of the current slot if they were previously modified by
-     * calling the API with POST.
-     *
+     * 
+     * Description for Resets the configuration settings of the current slot if they were previously modified by calling
+     * the API with POST.
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -1564,29 +1720,29 @@ public interface Site {
     /**
      * Resets the configuration settings of the current slot if they were previously modified by calling the API with
      * POST.
-     *
-     * <p>Description for Resets the configuration settings of the current slot if they were previously modified by
-     * calling the API with POST.
-     *
+     * 
+     * Description for Resets the configuration settings of the current slot if they were previously modified by calling
+     * the API with POST.
+     * 
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void resetProductionSlotConfig();
 
     /**
      * Restarts an app (or deployment slot, if specified).
-     *
-     * <p>Description for Restarts an app (or deployment slot, if specified).
-     *
+     * 
+     * Description for Restarts an app (or deployment slot, if specified).
+     * 
      * @param softRestart Specify true to apply the configuration settings and restarts the app only if necessary. By
-     *     default, the API always restarts and reprovisions the app.
+     * default, the API always restarts and reprovisions the app.
      * @param synchronous Specify true to block until the app is restarted. By default, it is set to false, and the API
-     *     responds immediately (asynchronous).
+     * responds immediately (asynchronous).
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -1594,107 +1750,107 @@ public interface Site {
 
     /**
      * Restarts an app (or deployment slot, if specified).
-     *
-     * <p>Description for Restarts an app (or deployment slot, if specified).
-     *
+     * 
+     * Description for Restarts an app (or deployment slot, if specified).
+     * 
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void restart();
 
     /**
      * Restores an app from a backup blob in Azure Storage.
-     *
-     * <p>Description for Restores an app from a backup blob in Azure Storage.
-     *
+     * 
+     * Description for Restores an app from a backup blob in Azure Storage.
+     * 
      * @param request Information on restore request .
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void restoreFromBackupBlob(RestoreRequestInner request);
 
     /**
      * Restores an app from a backup blob in Azure Storage.
-     *
-     * <p>Description for Restores an app from a backup blob in Azure Storage.
-     *
+     * 
+     * Description for Restores an app from a backup blob in Azure Storage.
+     * 
      * @param request Information on restore request .
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void restoreFromBackupBlob(RestoreRequestInner request, Context context);
 
     /**
      * Restores a deleted web app to this web app.
-     *
-     * <p>Description for Restores a deleted web app to this web app.
-     *
+     * 
+     * Description for Restores a deleted web app to this web app.
+     * 
      * @param restoreRequest Deleted web app restore information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void restoreFromDeletedApp(DeletedAppRestoreRequest restoreRequest);
 
     /**
      * Restores a deleted web app to this web app.
-     *
-     * <p>Description for Restores a deleted web app to this web app.
-     *
+     * 
+     * Description for Restores a deleted web app to this web app.
+     * 
      * @param restoreRequest Deleted web app restore information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void restoreFromDeletedApp(DeletedAppRestoreRequest restoreRequest, Context context);
 
     /**
      * Restores a web app from a snapshot.
-     *
-     * <p>Description for Restores a web app from a snapshot.
-     *
+     * 
+     * Description for Restores a web app from a snapshot.
+     * 
      * @param restoreRequest Snapshot restore settings. Snapshot information can be obtained by calling GetDeletedSites
-     *     or GetSiteSnapshots API.
+     * or GetSiteSnapshots API.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void restoreSnapshot(SnapshotRestoreRequest restoreRequest);
 
     /**
      * Restores a web app from a snapshot.
-     *
-     * <p>Description for Restores a web app from a snapshot.
-     *
+     * 
+     * Description for Restores a web app from a snapshot.
+     * 
      * @param restoreRequest Snapshot restore settings. Snapshot information can be obtained by calling GetDeletedSites
-     *     or GetSiteSnapshots API.
+     * or GetSiteSnapshots API.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void restoreSnapshot(SnapshotRestoreRequest restoreRequest, Context context);
 
     /**
      * Get the difference in configuration settings between two web app slots.
-     *
-     * <p>Description for Get the difference in configuration settings between two web app slots.
-     *
+     * 
+     * Description for Get the difference in configuration settings between two web app slots.
+     * 
      * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of slot differences as paginated response with {@link PagedIterable}.
      */
@@ -1702,14 +1858,14 @@ public interface Site {
 
     /**
      * Get the difference in configuration settings between two web app slots.
-     *
-     * <p>Description for Get the difference in configuration settings between two web app slots.
-     *
+     * 
+     * Description for Get the difference in configuration settings between two web app slots.
+     * 
      * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of slot differences as paginated response with {@link PagedIterable}.
      */
@@ -1717,40 +1873,40 @@ public interface Site {
 
     /**
      * Swaps two deployment slots of an app.
-     *
-     * <p>Description for Swaps two deployment slots of an app.
-     *
+     * 
+     * Description for Swaps two deployment slots of an app.
+     * 
      * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void swapSlotWithProduction(CsmSlotEntity slotSwapEntity);
 
     /**
      * Swaps two deployment slots of an app.
-     *
-     * <p>Description for Swaps two deployment slots of an app.
-     *
+     * 
+     * Description for Swaps two deployment slots of an app.
+     * 
      * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void swapSlotWithProduction(CsmSlotEntity slotSwapEntity, Context context);
 
     /**
      * Starts an app (or deployment slot, if specified).
-     *
-     * <p>Description for Starts an app (or deployment slot, if specified).
-     *
+     * 
+     * Description for Starts an app (or deployment slot, if specified).
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -1758,22 +1914,22 @@ public interface Site {
 
     /**
      * Starts an app (or deployment slot, if specified).
-     *
-     * <p>Description for Starts an app (or deployment slot, if specified).
-     *
+     * 
+     * Description for Starts an app (or deployment slot, if specified).
+     * 
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void start();
 
     /**
      * Start capturing network packets for the site.
-     *
-     * <p>Description for Start capturing network packets for the site.
-     *
+     * 
+     * Description for Start capturing network packets for the site.
+     * 
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return array of NetworkTrace.
      */
@@ -1781,16 +1937,16 @@ public interface Site {
 
     /**
      * Start capturing network packets for the site.
-     *
-     * <p>Description for Start capturing network packets for the site.
-     *
+     * 
+     * Description for Start capturing network packets for the site.
+     * 
      * @param durationInSeconds The duration to keep capturing in seconds.
      * @param maxFrameLength The maximum frame length in bytes (Optional).
      * @param sasUrl The Blob URL to store capture file.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return array of NetworkTrace.
      */
@@ -1798,13 +1954,13 @@ public interface Site {
 
     /**
      * Stops an app (or deployment slot, if specified).
-     *
-     * <p>Description for Stops an app (or deployment slot, if specified).
-     *
+     * 
+     * Description for Stops an app (or deployment slot, if specified).
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -1812,24 +1968,24 @@ public interface Site {
 
     /**
      * Stops an app (or deployment slot, if specified).
-     *
-     * <p>Description for Stops an app (or deployment slot, if specified).
-     *
+     * 
+     * Description for Stops an app (or deployment slot, if specified).
+     * 
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void stop();
 
     /**
      * Stop ongoing capturing network packets for the site.
-     *
-     * <p>Description for Stop ongoing capturing network packets for the site.
-     *
+     * 
+     * Description for Stop ongoing capturing network packets for the site.
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -1837,24 +1993,24 @@ public interface Site {
 
     /**
      * Stop ongoing capturing network packets for the site.
-     *
-     * <p>Description for Stop ongoing capturing network packets for the site.
-     *
+     * 
+     * Description for Stop ongoing capturing network packets for the site.
+     * 
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void stopNetworkTrace();
 
     /**
      * Sync web app repository.
-     *
-     * <p>Description for Sync web app repository.
-     *
+     * 
+     * Description for Sync web app repository.
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -1862,24 +2018,24 @@ public interface Site {
 
     /**
      * Sync web app repository.
-     *
-     * <p>Description for Sync web app repository.
-     *
+     * 
+     * Description for Sync web app repository.
+     * 
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void syncRepository();
 
     /**
      * Syncs function trigger metadata to the management database
-     *
-     * <p>Description for Syncs function trigger metadata to the management database.
-     *
+     * 
+     * Description for Syncs function trigger metadata to the management database.
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -1887,25 +2043,25 @@ public interface Site {
 
     /**
      * Syncs function trigger metadata to the management database
-     *
-     * <p>Description for Syncs function trigger metadata to the management database.
-     *
+     * 
+     * Description for Syncs function trigger metadata to the management database.
+     * 
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void syncFunctionTriggers();
 
     /**
      * Creates the artifacts for web site, or a deployment slot.
-     *
-     * <p>Description for Creates the artifacts for web site, or a deployment slot.
-     *
+     * 
+     * Description for Creates the artifacts for web site, or a deployment slot.
+     * 
      * @param workflowArtifacts Application settings and files of the workflow.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -1913,22 +2069,22 @@ public interface Site {
 
     /**
      * Creates the artifacts for web site, or a deployment slot.
-     *
-     * <p>Description for Creates the artifacts for web site, or a deployment slot.
-     *
+     * 
+     * Description for Creates the artifacts for web site, or a deployment slot.
+     * 
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deployWorkflowArtifacts();
 
     /**
      * Lists logic app's connections for web site, or a deployment slot.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return workflow properties definition along with {@link Response}.
      */
@@ -1936,9 +2092,9 @@ public interface Site {
 
     /**
      * Lists logic app's connections for web site, or a deployment slot.
-     *
+     * 
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return workflow properties definition.
      */

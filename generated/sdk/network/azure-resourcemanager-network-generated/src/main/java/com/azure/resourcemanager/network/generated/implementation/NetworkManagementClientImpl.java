@@ -164,7 +164,9 @@ import java.time.Duration;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-/** Initializes a new instance of the NetworkManagementClientImpl type. */
+/**
+ * Initializes a new instance of the NetworkManagementClientImpl type.
+ */
 @ServiceClient(builder = NetworkManagementClientBuilder.class)
 public final class NetworkManagementClientImpl implements NetworkManagementClient {
     /**
@@ -176,1532 +178,1785 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
     /**
      * Gets The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID
      * forms part of the URI for every service call.
-     *
+     * 
      * @return the subscriptionId value.
      */
     public String getSubscriptionId() {
         return this.subscriptionId;
     }
 
-    /** server parameter. */
+    /**
+     * server parameter.
+     */
     private final String endpoint;
 
     /**
      * Gets server parameter.
-     *
+     * 
      * @return the endpoint value.
      */
     public String getEndpoint() {
         return this.endpoint;
     }
 
-    /** The HTTP pipeline to send requests through. */
+    /**
+     * The HTTP pipeline to send requests through.
+     */
     private final HttpPipeline httpPipeline;
 
     /**
      * Gets The HTTP pipeline to send requests through.
-     *
+     * 
      * @return the httpPipeline value.
      */
     public HttpPipeline getHttpPipeline() {
         return this.httpPipeline;
     }
 
-    /** The serializer to serialize an object into a string. */
+    /**
+     * The serializer to serialize an object into a string.
+     */
     private final SerializerAdapter serializerAdapter;
 
     /**
      * Gets The serializer to serialize an object into a string.
-     *
+     * 
      * @return the serializerAdapter value.
      */
     SerializerAdapter getSerializerAdapter() {
         return this.serializerAdapter;
     }
 
-    /** The default poll interval for long-running operation. */
+    /**
+     * The default poll interval for long-running operation.
+     */
     private final Duration defaultPollInterval;
 
     /**
      * Gets The default poll interval for long-running operation.
-     *
+     * 
      * @return the defaultPollInterval value.
      */
     public Duration getDefaultPollInterval() {
         return this.defaultPollInterval;
     }
 
-    /** The ApplicationGatewaysClient object to access its operations. */
+    /**
+     * The ApplicationGatewaysClient object to access its operations.
+     */
     private final ApplicationGatewaysClient applicationGateways;
 
     /**
      * Gets the ApplicationGatewaysClient object to access its operations.
-     *
+     * 
      * @return the ApplicationGatewaysClient object.
      */
     public ApplicationGatewaysClient getApplicationGateways() {
         return this.applicationGateways;
     }
 
-    /** The ApplicationGatewayPrivateLinkResourcesClient object to access its operations. */
+    /**
+     * The ApplicationGatewayPrivateLinkResourcesClient object to access its operations.
+     */
     private final ApplicationGatewayPrivateLinkResourcesClient applicationGatewayPrivateLinkResources;
 
     /**
      * Gets the ApplicationGatewayPrivateLinkResourcesClient object to access its operations.
-     *
+     * 
      * @return the ApplicationGatewayPrivateLinkResourcesClient object.
      */
     public ApplicationGatewayPrivateLinkResourcesClient getApplicationGatewayPrivateLinkResources() {
         return this.applicationGatewayPrivateLinkResources;
     }
 
-    /** The ApplicationGatewayPrivateEndpointConnectionsClient object to access its operations. */
+    /**
+     * The ApplicationGatewayPrivateEndpointConnectionsClient object to access its operations.
+     */
     private final ApplicationGatewayPrivateEndpointConnectionsClient applicationGatewayPrivateEndpointConnections;
 
     /**
      * Gets the ApplicationGatewayPrivateEndpointConnectionsClient object to access its operations.
-     *
+     * 
      * @return the ApplicationGatewayPrivateEndpointConnectionsClient object.
      */
     public ApplicationGatewayPrivateEndpointConnectionsClient getApplicationGatewayPrivateEndpointConnections() {
         return this.applicationGatewayPrivateEndpointConnections;
     }
 
-    /** The ApplicationGatewayWafDynamicManifestsDefaultsClient object to access its operations. */
+    /**
+     * The ApplicationGatewayWafDynamicManifestsDefaultsClient object to access its operations.
+     */
     private final ApplicationGatewayWafDynamicManifestsDefaultsClient applicationGatewayWafDynamicManifestsDefaults;
 
     /**
      * Gets the ApplicationGatewayWafDynamicManifestsDefaultsClient object to access its operations.
-     *
+     * 
      * @return the ApplicationGatewayWafDynamicManifestsDefaultsClient object.
      */
     public ApplicationGatewayWafDynamicManifestsDefaultsClient getApplicationGatewayWafDynamicManifestsDefaults() {
         return this.applicationGatewayWafDynamicManifestsDefaults;
     }
 
-    /** The ApplicationGatewayWafDynamicManifestsClient object to access its operations. */
+    /**
+     * The ApplicationGatewayWafDynamicManifestsClient object to access its operations.
+     */
     private final ApplicationGatewayWafDynamicManifestsClient applicationGatewayWafDynamicManifests;
 
     /**
      * Gets the ApplicationGatewayWafDynamicManifestsClient object to access its operations.
-     *
+     * 
      * @return the ApplicationGatewayWafDynamicManifestsClient object.
      */
     public ApplicationGatewayWafDynamicManifestsClient getApplicationGatewayWafDynamicManifests() {
         return this.applicationGatewayWafDynamicManifests;
     }
 
-    /** The ApplicationSecurityGroupsClient object to access its operations. */
+    /**
+     * The ApplicationSecurityGroupsClient object to access its operations.
+     */
     private final ApplicationSecurityGroupsClient applicationSecurityGroups;
 
     /**
      * Gets the ApplicationSecurityGroupsClient object to access its operations.
-     *
+     * 
      * @return the ApplicationSecurityGroupsClient object.
      */
     public ApplicationSecurityGroupsClient getApplicationSecurityGroups() {
         return this.applicationSecurityGroups;
     }
 
-    /** The AvailableDelegationsClient object to access its operations. */
+    /**
+     * The AvailableDelegationsClient object to access its operations.
+     */
     private final AvailableDelegationsClient availableDelegations;
 
     /**
      * Gets the AvailableDelegationsClient object to access its operations.
-     *
+     * 
      * @return the AvailableDelegationsClient object.
      */
     public AvailableDelegationsClient getAvailableDelegations() {
         return this.availableDelegations;
     }
 
-    /** The AvailableResourceGroupDelegationsClient object to access its operations. */
+    /**
+     * The AvailableResourceGroupDelegationsClient object to access its operations.
+     */
     private final AvailableResourceGroupDelegationsClient availableResourceGroupDelegations;
 
     /**
      * Gets the AvailableResourceGroupDelegationsClient object to access its operations.
-     *
+     * 
      * @return the AvailableResourceGroupDelegationsClient object.
      */
     public AvailableResourceGroupDelegationsClient getAvailableResourceGroupDelegations() {
         return this.availableResourceGroupDelegations;
     }
 
-    /** The AvailableServiceAliasesClient object to access its operations. */
+    /**
+     * The AvailableServiceAliasesClient object to access its operations.
+     */
     private final AvailableServiceAliasesClient availableServiceAliases;
 
     /**
      * Gets the AvailableServiceAliasesClient object to access its operations.
-     *
+     * 
      * @return the AvailableServiceAliasesClient object.
      */
     public AvailableServiceAliasesClient getAvailableServiceAliases() {
         return this.availableServiceAliases;
     }
 
-    /** The AzureFirewallsClient object to access its operations. */
+    /**
+     * The AzureFirewallsClient object to access its operations.
+     */
     private final AzureFirewallsClient azureFirewalls;
 
     /**
      * Gets the AzureFirewallsClient object to access its operations.
-     *
+     * 
      * @return the AzureFirewallsClient object.
      */
     public AzureFirewallsClient getAzureFirewalls() {
         return this.azureFirewalls;
     }
 
-    /** The AzureFirewallFqdnTagsClient object to access its operations. */
+    /**
+     * The AzureFirewallFqdnTagsClient object to access its operations.
+     */
     private final AzureFirewallFqdnTagsClient azureFirewallFqdnTags;
 
     /**
      * Gets the AzureFirewallFqdnTagsClient object to access its operations.
-     *
+     * 
      * @return the AzureFirewallFqdnTagsClient object.
      */
     public AzureFirewallFqdnTagsClient getAzureFirewallFqdnTags() {
         return this.azureFirewallFqdnTags;
     }
 
-    /** The WebCategoriesClient object to access its operations. */
+    /**
+     * The WebCategoriesClient object to access its operations.
+     */
     private final WebCategoriesClient webCategories;
 
     /**
      * Gets the WebCategoriesClient object to access its operations.
-     *
+     * 
      * @return the WebCategoriesClient object.
      */
     public WebCategoriesClient getWebCategories() {
         return this.webCategories;
     }
 
-    /** The BastionHostsClient object to access its operations. */
+    /**
+     * The BastionHostsClient object to access its operations.
+     */
     private final BastionHostsClient bastionHosts;
 
     /**
      * Gets the BastionHostsClient object to access its operations.
-     *
+     * 
      * @return the BastionHostsClient object.
      */
     public BastionHostsClient getBastionHosts() {
         return this.bastionHosts;
     }
 
-    /** The ResourceProvidersClient object to access its operations. */
+    /**
+     * The ResourceProvidersClient object to access its operations.
+     */
     private final ResourceProvidersClient resourceProviders;
 
     /**
      * Gets the ResourceProvidersClient object to access its operations.
-     *
+     * 
      * @return the ResourceProvidersClient object.
      */
     public ResourceProvidersClient getResourceProviders() {
         return this.resourceProviders;
     }
 
-    /** The NetworkInterfacesClient object to access its operations. */
+    /**
+     * The NetworkInterfacesClient object to access its operations.
+     */
     private final NetworkInterfacesClient networkInterfaces;
 
     /**
      * Gets the NetworkInterfacesClient object to access its operations.
-     *
+     * 
      * @return the NetworkInterfacesClient object.
      */
     public NetworkInterfacesClient getNetworkInterfaces() {
         return this.networkInterfaces;
     }
 
-    /** The PublicIpAddressesClient object to access its operations. */
+    /**
+     * The PublicIpAddressesClient object to access its operations.
+     */
     private final PublicIpAddressesClient publicIpAddresses;
 
     /**
      * Gets the PublicIpAddressesClient object to access its operations.
-     *
+     * 
      * @return the PublicIpAddressesClient object.
      */
     public PublicIpAddressesClient getPublicIpAddresses() {
         return this.publicIpAddresses;
     }
 
-    /** The VipSwapsClient object to access its operations. */
+    /**
+     * The VipSwapsClient object to access its operations.
+     */
     private final VipSwapsClient vipSwaps;
 
     /**
      * Gets the VipSwapsClient object to access its operations.
-     *
+     * 
      * @return the VipSwapsClient object.
      */
     public VipSwapsClient getVipSwaps() {
         return this.vipSwaps;
     }
 
-    /** The CustomIpPrefixesClient object to access its operations. */
+    /**
+     * The CustomIpPrefixesClient object to access its operations.
+     */
     private final CustomIpPrefixesClient customIpPrefixes;
 
     /**
      * Gets the CustomIpPrefixesClient object to access its operations.
-     *
+     * 
      * @return the CustomIpPrefixesClient object.
      */
     public CustomIpPrefixesClient getCustomIpPrefixes() {
         return this.customIpPrefixes;
     }
 
-    /** The DdosCustomPoliciesClient object to access its operations. */
+    /**
+     * The DdosCustomPoliciesClient object to access its operations.
+     */
     private final DdosCustomPoliciesClient ddosCustomPolicies;
 
     /**
      * Gets the DdosCustomPoliciesClient object to access its operations.
-     *
+     * 
      * @return the DdosCustomPoliciesClient object.
      */
     public DdosCustomPoliciesClient getDdosCustomPolicies() {
         return this.ddosCustomPolicies;
     }
 
-    /** The DdosProtectionPlansClient object to access its operations. */
+    /**
+     * The DdosProtectionPlansClient object to access its operations.
+     */
     private final DdosProtectionPlansClient ddosProtectionPlans;
 
     /**
      * Gets the DdosProtectionPlansClient object to access its operations.
-     *
+     * 
      * @return the DdosProtectionPlansClient object.
      */
     public DdosProtectionPlansClient getDdosProtectionPlans() {
         return this.ddosProtectionPlans;
     }
 
-    /** The DscpConfigurationsClient object to access its operations. */
+    /**
+     * The DscpConfigurationsClient object to access its operations.
+     */
     private final DscpConfigurationsClient dscpConfigurations;
 
     /**
      * Gets the DscpConfigurationsClient object to access its operations.
-     *
+     * 
      * @return the DscpConfigurationsClient object.
      */
     public DscpConfigurationsClient getDscpConfigurations() {
         return this.dscpConfigurations;
     }
 
-    /** The AvailableEndpointServicesClient object to access its operations. */
+    /**
+     * The AvailableEndpointServicesClient object to access its operations.
+     */
     private final AvailableEndpointServicesClient availableEndpointServices;
 
     /**
      * Gets the AvailableEndpointServicesClient object to access its operations.
-     *
+     * 
      * @return the AvailableEndpointServicesClient object.
      */
     public AvailableEndpointServicesClient getAvailableEndpointServices() {
         return this.availableEndpointServices;
     }
 
-    /** The ExpressRouteCircuitAuthorizationsClient object to access its operations. */
+    /**
+     * The ExpressRouteCircuitAuthorizationsClient object to access its operations.
+     */
     private final ExpressRouteCircuitAuthorizationsClient expressRouteCircuitAuthorizations;
 
     /**
      * Gets the ExpressRouteCircuitAuthorizationsClient object to access its operations.
-     *
+     * 
      * @return the ExpressRouteCircuitAuthorizationsClient object.
      */
     public ExpressRouteCircuitAuthorizationsClient getExpressRouteCircuitAuthorizations() {
         return this.expressRouteCircuitAuthorizations;
     }
 
-    /** The ExpressRouteCircuitPeeringsClient object to access its operations. */
+    /**
+     * The ExpressRouteCircuitPeeringsClient object to access its operations.
+     */
     private final ExpressRouteCircuitPeeringsClient expressRouteCircuitPeerings;
 
     /**
      * Gets the ExpressRouteCircuitPeeringsClient object to access its operations.
-     *
+     * 
      * @return the ExpressRouteCircuitPeeringsClient object.
      */
     public ExpressRouteCircuitPeeringsClient getExpressRouteCircuitPeerings() {
         return this.expressRouteCircuitPeerings;
     }
 
-    /** The ExpressRouteCircuitConnectionsClient object to access its operations. */
+    /**
+     * The ExpressRouteCircuitConnectionsClient object to access its operations.
+     */
     private final ExpressRouteCircuitConnectionsClient expressRouteCircuitConnections;
 
     /**
      * Gets the ExpressRouteCircuitConnectionsClient object to access its operations.
-     *
+     * 
      * @return the ExpressRouteCircuitConnectionsClient object.
      */
     public ExpressRouteCircuitConnectionsClient getExpressRouteCircuitConnections() {
         return this.expressRouteCircuitConnections;
     }
 
-    /** The PeerExpressRouteCircuitConnectionsClient object to access its operations. */
+    /**
+     * The PeerExpressRouteCircuitConnectionsClient object to access its operations.
+     */
     private final PeerExpressRouteCircuitConnectionsClient peerExpressRouteCircuitConnections;
 
     /**
      * Gets the PeerExpressRouteCircuitConnectionsClient object to access its operations.
-     *
+     * 
      * @return the PeerExpressRouteCircuitConnectionsClient object.
      */
     public PeerExpressRouteCircuitConnectionsClient getPeerExpressRouteCircuitConnections() {
         return this.peerExpressRouteCircuitConnections;
     }
 
-    /** The ExpressRouteCircuitsClient object to access its operations. */
+    /**
+     * The ExpressRouteCircuitsClient object to access its operations.
+     */
     private final ExpressRouteCircuitsClient expressRouteCircuits;
 
     /**
      * Gets the ExpressRouteCircuitsClient object to access its operations.
-     *
+     * 
      * @return the ExpressRouteCircuitsClient object.
      */
     public ExpressRouteCircuitsClient getExpressRouteCircuits() {
         return this.expressRouteCircuits;
     }
 
-    /** The ExpressRouteServiceProvidersClient object to access its operations. */
+    /**
+     * The ExpressRouteServiceProvidersClient object to access its operations.
+     */
     private final ExpressRouteServiceProvidersClient expressRouteServiceProviders;
 
     /**
      * Gets the ExpressRouteServiceProvidersClient object to access its operations.
-     *
+     * 
      * @return the ExpressRouteServiceProvidersClient object.
      */
     public ExpressRouteServiceProvidersClient getExpressRouteServiceProviders() {
         return this.expressRouteServiceProviders;
     }
 
-    /** The ExpressRouteCrossConnectionsClient object to access its operations. */
+    /**
+     * The ExpressRouteCrossConnectionsClient object to access its operations.
+     */
     private final ExpressRouteCrossConnectionsClient expressRouteCrossConnections;
 
     /**
      * Gets the ExpressRouteCrossConnectionsClient object to access its operations.
-     *
+     * 
      * @return the ExpressRouteCrossConnectionsClient object.
      */
     public ExpressRouteCrossConnectionsClient getExpressRouteCrossConnections() {
         return this.expressRouteCrossConnections;
     }
 
-    /** The ExpressRouteCrossConnectionPeeringsClient object to access its operations. */
+    /**
+     * The ExpressRouteCrossConnectionPeeringsClient object to access its operations.
+     */
     private final ExpressRouteCrossConnectionPeeringsClient expressRouteCrossConnectionPeerings;
 
     /**
      * Gets the ExpressRouteCrossConnectionPeeringsClient object to access its operations.
-     *
+     * 
      * @return the ExpressRouteCrossConnectionPeeringsClient object.
      */
     public ExpressRouteCrossConnectionPeeringsClient getExpressRouteCrossConnectionPeerings() {
         return this.expressRouteCrossConnectionPeerings;
     }
 
-    /** The ExpressRoutePortsLocationsClient object to access its operations. */
+    /**
+     * The ExpressRoutePortsLocationsClient object to access its operations.
+     */
     private final ExpressRoutePortsLocationsClient expressRoutePortsLocations;
 
     /**
      * Gets the ExpressRoutePortsLocationsClient object to access its operations.
-     *
+     * 
      * @return the ExpressRoutePortsLocationsClient object.
      */
     public ExpressRoutePortsLocationsClient getExpressRoutePortsLocations() {
         return this.expressRoutePortsLocations;
     }
 
-    /** The ExpressRoutePortsClient object to access its operations. */
+    /**
+     * The ExpressRoutePortsClient object to access its operations.
+     */
     private final ExpressRoutePortsClient expressRoutePorts;
 
     /**
      * Gets the ExpressRoutePortsClient object to access its operations.
-     *
+     * 
      * @return the ExpressRoutePortsClient object.
      */
     public ExpressRoutePortsClient getExpressRoutePorts() {
         return this.expressRoutePorts;
     }
 
-    /** The ExpressRouteLinksClient object to access its operations. */
+    /**
+     * The ExpressRouteLinksClient object to access its operations.
+     */
     private final ExpressRouteLinksClient expressRouteLinks;
 
     /**
      * Gets the ExpressRouteLinksClient object to access its operations.
-     *
+     * 
      * @return the ExpressRouteLinksClient object.
      */
     public ExpressRouteLinksClient getExpressRouteLinks() {
         return this.expressRouteLinks;
     }
 
-    /** The ExpressRoutePortAuthorizationsClient object to access its operations. */
+    /**
+     * The ExpressRoutePortAuthorizationsClient object to access its operations.
+     */
     private final ExpressRoutePortAuthorizationsClient expressRoutePortAuthorizations;
 
     /**
      * Gets the ExpressRoutePortAuthorizationsClient object to access its operations.
-     *
+     * 
      * @return the ExpressRoutePortAuthorizationsClient object.
      */
     public ExpressRoutePortAuthorizationsClient getExpressRoutePortAuthorizations() {
         return this.expressRoutePortAuthorizations;
     }
 
-    /** The ExpressRouteProviderPortsLocationsClient object to access its operations. */
+    /**
+     * The ExpressRouteProviderPortsLocationsClient object to access its operations.
+     */
     private final ExpressRouteProviderPortsLocationsClient expressRouteProviderPortsLocations;
 
     /**
      * Gets the ExpressRouteProviderPortsLocationsClient object to access its operations.
-     *
+     * 
      * @return the ExpressRouteProviderPortsLocationsClient object.
      */
     public ExpressRouteProviderPortsLocationsClient getExpressRouteProviderPortsLocations() {
         return this.expressRouteProviderPortsLocations;
     }
 
-    /** The FirewallPoliciesClient object to access its operations. */
+    /**
+     * The FirewallPoliciesClient object to access its operations.
+     */
     private final FirewallPoliciesClient firewallPolicies;
 
     /**
      * Gets the FirewallPoliciesClient object to access its operations.
-     *
+     * 
      * @return the FirewallPoliciesClient object.
      */
     public FirewallPoliciesClient getFirewallPolicies() {
         return this.firewallPolicies;
     }
 
-    /** The FirewallPolicyRuleCollectionGroupsClient object to access its operations. */
+    /**
+     * The FirewallPolicyRuleCollectionGroupsClient object to access its operations.
+     */
     private final FirewallPolicyRuleCollectionGroupsClient firewallPolicyRuleCollectionGroups;
 
     /**
      * Gets the FirewallPolicyRuleCollectionGroupsClient object to access its operations.
-     *
+     * 
      * @return the FirewallPolicyRuleCollectionGroupsClient object.
      */
     public FirewallPolicyRuleCollectionGroupsClient getFirewallPolicyRuleCollectionGroups() {
         return this.firewallPolicyRuleCollectionGroups;
     }
 
-    /** The FirewallPolicyIdpsSignaturesClient object to access its operations. */
+    /**
+     * The FirewallPolicyIdpsSignaturesClient object to access its operations.
+     */
     private final FirewallPolicyIdpsSignaturesClient firewallPolicyIdpsSignatures;
 
     /**
      * Gets the FirewallPolicyIdpsSignaturesClient object to access its operations.
-     *
+     * 
      * @return the FirewallPolicyIdpsSignaturesClient object.
      */
     public FirewallPolicyIdpsSignaturesClient getFirewallPolicyIdpsSignatures() {
         return this.firewallPolicyIdpsSignatures;
     }
 
-    /** The FirewallPolicyIdpsSignaturesOverridesClient object to access its operations. */
+    /**
+     * The FirewallPolicyIdpsSignaturesOverridesClient object to access its operations.
+     */
     private final FirewallPolicyIdpsSignaturesOverridesClient firewallPolicyIdpsSignaturesOverrides;
 
     /**
      * Gets the FirewallPolicyIdpsSignaturesOverridesClient object to access its operations.
-     *
+     * 
      * @return the FirewallPolicyIdpsSignaturesOverridesClient object.
      */
     public FirewallPolicyIdpsSignaturesOverridesClient getFirewallPolicyIdpsSignaturesOverrides() {
         return this.firewallPolicyIdpsSignaturesOverrides;
     }
 
-    /** The FirewallPolicyIdpsSignaturesFilterValuesClient object to access its operations. */
+    /**
+     * The FirewallPolicyIdpsSignaturesFilterValuesClient object to access its operations.
+     */
     private final FirewallPolicyIdpsSignaturesFilterValuesClient firewallPolicyIdpsSignaturesFilterValues;
 
     /**
      * Gets the FirewallPolicyIdpsSignaturesFilterValuesClient object to access its operations.
-     *
+     * 
      * @return the FirewallPolicyIdpsSignaturesFilterValuesClient object.
      */
     public FirewallPolicyIdpsSignaturesFilterValuesClient getFirewallPolicyIdpsSignaturesFilterValues() {
         return this.firewallPolicyIdpsSignaturesFilterValues;
     }
 
-    /** The IpAllocationsClient object to access its operations. */
+    /**
+     * The IpAllocationsClient object to access its operations.
+     */
     private final IpAllocationsClient ipAllocations;
 
     /**
      * Gets the IpAllocationsClient object to access its operations.
-     *
+     * 
      * @return the IpAllocationsClient object.
      */
     public IpAllocationsClient getIpAllocations() {
         return this.ipAllocations;
     }
 
-    /** The IpGroupsClient object to access its operations. */
+    /**
+     * The IpGroupsClient object to access its operations.
+     */
     private final IpGroupsClient ipGroups;
 
     /**
      * Gets the IpGroupsClient object to access its operations.
-     *
+     * 
      * @return the IpGroupsClient object.
      */
     public IpGroupsClient getIpGroups() {
         return this.ipGroups;
     }
 
-    /** The LoadBalancersClient object to access its operations. */
+    /**
+     * The LoadBalancersClient object to access its operations.
+     */
     private final LoadBalancersClient loadBalancers;
 
     /**
      * Gets the LoadBalancersClient object to access its operations.
-     *
+     * 
      * @return the LoadBalancersClient object.
      */
     public LoadBalancersClient getLoadBalancers() {
         return this.loadBalancers;
     }
 
-    /** The LoadBalancerBackendAddressPoolsClient object to access its operations. */
+    /**
+     * The LoadBalancerBackendAddressPoolsClient object to access its operations.
+     */
     private final LoadBalancerBackendAddressPoolsClient loadBalancerBackendAddressPools;
 
     /**
      * Gets the LoadBalancerBackendAddressPoolsClient object to access its operations.
-     *
+     * 
      * @return the LoadBalancerBackendAddressPoolsClient object.
      */
     public LoadBalancerBackendAddressPoolsClient getLoadBalancerBackendAddressPools() {
         return this.loadBalancerBackendAddressPools;
     }
 
-    /** The LoadBalancerFrontendIpConfigurationsClient object to access its operations. */
+    /**
+     * The LoadBalancerFrontendIpConfigurationsClient object to access its operations.
+     */
     private final LoadBalancerFrontendIpConfigurationsClient loadBalancerFrontendIpConfigurations;
 
     /**
      * Gets the LoadBalancerFrontendIpConfigurationsClient object to access its operations.
-     *
+     * 
      * @return the LoadBalancerFrontendIpConfigurationsClient object.
      */
     public LoadBalancerFrontendIpConfigurationsClient getLoadBalancerFrontendIpConfigurations() {
         return this.loadBalancerFrontendIpConfigurations;
     }
 
-    /** The InboundNatRulesClient object to access its operations. */
+    /**
+     * The InboundNatRulesClient object to access its operations.
+     */
     private final InboundNatRulesClient inboundNatRules;
 
     /**
      * Gets the InboundNatRulesClient object to access its operations.
-     *
+     * 
      * @return the InboundNatRulesClient object.
      */
     public InboundNatRulesClient getInboundNatRules() {
         return this.inboundNatRules;
     }
 
-    /** The LoadBalancerLoadBalancingRulesClient object to access its operations. */
+    /**
+     * The LoadBalancerLoadBalancingRulesClient object to access its operations.
+     */
     private final LoadBalancerLoadBalancingRulesClient loadBalancerLoadBalancingRules;
 
     /**
      * Gets the LoadBalancerLoadBalancingRulesClient object to access its operations.
-     *
+     * 
      * @return the LoadBalancerLoadBalancingRulesClient object.
      */
     public LoadBalancerLoadBalancingRulesClient getLoadBalancerLoadBalancingRules() {
         return this.loadBalancerLoadBalancingRules;
     }
 
-    /** The LoadBalancerOutboundRulesClient object to access its operations. */
+    /**
+     * The LoadBalancerOutboundRulesClient object to access its operations.
+     */
     private final LoadBalancerOutboundRulesClient loadBalancerOutboundRules;
 
     /**
      * Gets the LoadBalancerOutboundRulesClient object to access its operations.
-     *
+     * 
      * @return the LoadBalancerOutboundRulesClient object.
      */
     public LoadBalancerOutboundRulesClient getLoadBalancerOutboundRules() {
         return this.loadBalancerOutboundRules;
     }
 
-    /** The LoadBalancerNetworkInterfacesClient object to access its operations. */
+    /**
+     * The LoadBalancerNetworkInterfacesClient object to access its operations.
+     */
     private final LoadBalancerNetworkInterfacesClient loadBalancerNetworkInterfaces;
 
     /**
      * Gets the LoadBalancerNetworkInterfacesClient object to access its operations.
-     *
+     * 
      * @return the LoadBalancerNetworkInterfacesClient object.
      */
     public LoadBalancerNetworkInterfacesClient getLoadBalancerNetworkInterfaces() {
         return this.loadBalancerNetworkInterfaces;
     }
 
-    /** The LoadBalancerProbesClient object to access its operations. */
+    /**
+     * The LoadBalancerProbesClient object to access its operations.
+     */
     private final LoadBalancerProbesClient loadBalancerProbes;
 
     /**
      * Gets the LoadBalancerProbesClient object to access its operations.
-     *
+     * 
      * @return the LoadBalancerProbesClient object.
      */
     public LoadBalancerProbesClient getLoadBalancerProbes() {
         return this.loadBalancerProbes;
     }
 
-    /** The NatGatewaysClient object to access its operations. */
+    /**
+     * The NatGatewaysClient object to access its operations.
+     */
     private final NatGatewaysClient natGateways;
 
     /**
      * Gets the NatGatewaysClient object to access its operations.
-     *
+     * 
      * @return the NatGatewaysClient object.
      */
     public NatGatewaysClient getNatGateways() {
         return this.natGateways;
     }
 
-    /** The NetworkInterfaceIpConfigurationsClient object to access its operations. */
+    /**
+     * The NetworkInterfaceIpConfigurationsClient object to access its operations.
+     */
     private final NetworkInterfaceIpConfigurationsClient networkInterfaceIpConfigurations;
 
     /**
      * Gets the NetworkInterfaceIpConfigurationsClient object to access its operations.
-     *
+     * 
      * @return the NetworkInterfaceIpConfigurationsClient object.
      */
     public NetworkInterfaceIpConfigurationsClient getNetworkInterfaceIpConfigurations() {
         return this.networkInterfaceIpConfigurations;
     }
 
-    /** The NetworkInterfaceLoadBalancersClient object to access its operations. */
+    /**
+     * The NetworkInterfaceLoadBalancersClient object to access its operations.
+     */
     private final NetworkInterfaceLoadBalancersClient networkInterfaceLoadBalancers;
 
     /**
      * Gets the NetworkInterfaceLoadBalancersClient object to access its operations.
-     *
+     * 
      * @return the NetworkInterfaceLoadBalancersClient object.
      */
     public NetworkInterfaceLoadBalancersClient getNetworkInterfaceLoadBalancers() {
         return this.networkInterfaceLoadBalancers;
     }
 
-    /** The NetworkInterfaceTapConfigurationsClient object to access its operations. */
+    /**
+     * The NetworkInterfaceTapConfigurationsClient object to access its operations.
+     */
     private final NetworkInterfaceTapConfigurationsClient networkInterfaceTapConfigurations;
 
     /**
      * Gets the NetworkInterfaceTapConfigurationsClient object to access its operations.
-     *
+     * 
      * @return the NetworkInterfaceTapConfigurationsClient object.
      */
     public NetworkInterfaceTapConfigurationsClient getNetworkInterfaceTapConfigurations() {
         return this.networkInterfaceTapConfigurations;
     }
 
-    /** The NetworkManagersClient object to access its operations. */
+    /**
+     * The NetworkManagersClient object to access its operations.
+     */
     private final NetworkManagersClient networkManagers;
 
     /**
      * Gets the NetworkManagersClient object to access its operations.
-     *
+     * 
      * @return the NetworkManagersClient object.
      */
     public NetworkManagersClient getNetworkManagers() {
         return this.networkManagers;
     }
 
-    /** The NetworkManagerCommitsClient object to access its operations. */
+    /**
+     * The NetworkManagerCommitsClient object to access its operations.
+     */
     private final NetworkManagerCommitsClient networkManagerCommits;
 
     /**
      * Gets the NetworkManagerCommitsClient object to access its operations.
-     *
+     * 
      * @return the NetworkManagerCommitsClient object.
      */
     public NetworkManagerCommitsClient getNetworkManagerCommits() {
         return this.networkManagerCommits;
     }
 
-    /** The NetworkManagerDeploymentStatusOperationsClient object to access its operations. */
+    /**
+     * The NetworkManagerDeploymentStatusOperationsClient object to access its operations.
+     */
     private final NetworkManagerDeploymentStatusOperationsClient networkManagerDeploymentStatusOperations;
 
     /**
      * Gets the NetworkManagerDeploymentStatusOperationsClient object to access its operations.
-     *
+     * 
      * @return the NetworkManagerDeploymentStatusOperationsClient object.
      */
     public NetworkManagerDeploymentStatusOperationsClient getNetworkManagerDeploymentStatusOperations() {
         return this.networkManagerDeploymentStatusOperations;
     }
 
-    /** The SubscriptionNetworkManagerConnectionsClient object to access its operations. */
+    /**
+     * The SubscriptionNetworkManagerConnectionsClient object to access its operations.
+     */
     private final SubscriptionNetworkManagerConnectionsClient subscriptionNetworkManagerConnections;
 
     /**
      * Gets the SubscriptionNetworkManagerConnectionsClient object to access its operations.
-     *
+     * 
      * @return the SubscriptionNetworkManagerConnectionsClient object.
      */
     public SubscriptionNetworkManagerConnectionsClient getSubscriptionNetworkManagerConnections() {
         return this.subscriptionNetworkManagerConnections;
     }
 
-    /** The ManagementGroupNetworkManagerConnectionsClient object to access its operations. */
+    /**
+     * The ManagementGroupNetworkManagerConnectionsClient object to access its operations.
+     */
     private final ManagementGroupNetworkManagerConnectionsClient managementGroupNetworkManagerConnections;
 
     /**
      * Gets the ManagementGroupNetworkManagerConnectionsClient object to access its operations.
-     *
+     * 
      * @return the ManagementGroupNetworkManagerConnectionsClient object.
      */
     public ManagementGroupNetworkManagerConnectionsClient getManagementGroupNetworkManagerConnections() {
         return this.managementGroupNetworkManagerConnections;
     }
 
-    /** The ConnectivityConfigurationsClient object to access its operations. */
+    /**
+     * The ConnectivityConfigurationsClient object to access its operations.
+     */
     private final ConnectivityConfigurationsClient connectivityConfigurations;
 
     /**
      * Gets the ConnectivityConfigurationsClient object to access its operations.
-     *
+     * 
      * @return the ConnectivityConfigurationsClient object.
      */
     public ConnectivityConfigurationsClient getConnectivityConfigurations() {
         return this.connectivityConfigurations;
     }
 
-    /** The NetworkGroupsClient object to access its operations. */
+    /**
+     * The NetworkGroupsClient object to access its operations.
+     */
     private final NetworkGroupsClient networkGroups;
 
     /**
      * Gets the NetworkGroupsClient object to access its operations.
-     *
+     * 
      * @return the NetworkGroupsClient object.
      */
     public NetworkGroupsClient getNetworkGroups() {
         return this.networkGroups;
     }
 
-    /** The StaticMembersClient object to access its operations. */
+    /**
+     * The StaticMembersClient object to access its operations.
+     */
     private final StaticMembersClient staticMembers;
 
     /**
      * Gets the StaticMembersClient object to access its operations.
-     *
+     * 
      * @return the StaticMembersClient object.
      */
     public StaticMembersClient getStaticMembers() {
         return this.staticMembers;
     }
 
-    /** The ScopeConnectionsClient object to access its operations. */
+    /**
+     * The ScopeConnectionsClient object to access its operations.
+     */
     private final ScopeConnectionsClient scopeConnections;
 
     /**
      * Gets the ScopeConnectionsClient object to access its operations.
-     *
+     * 
      * @return the ScopeConnectionsClient object.
      */
     public ScopeConnectionsClient getScopeConnections() {
         return this.scopeConnections;
     }
 
-    /** The SecurityAdminConfigurationsClient object to access its operations. */
+    /**
+     * The SecurityAdminConfigurationsClient object to access its operations.
+     */
     private final SecurityAdminConfigurationsClient securityAdminConfigurations;
 
     /**
      * Gets the SecurityAdminConfigurationsClient object to access its operations.
-     *
+     * 
      * @return the SecurityAdminConfigurationsClient object.
      */
     public SecurityAdminConfigurationsClient getSecurityAdminConfigurations() {
         return this.securityAdminConfigurations;
     }
 
-    /** The AdminRuleCollectionsClient object to access its operations. */
+    /**
+     * The AdminRuleCollectionsClient object to access its operations.
+     */
     private final AdminRuleCollectionsClient adminRuleCollections;
 
     /**
      * Gets the AdminRuleCollectionsClient object to access its operations.
-     *
+     * 
      * @return the AdminRuleCollectionsClient object.
      */
     public AdminRuleCollectionsClient getAdminRuleCollections() {
         return this.adminRuleCollections;
     }
 
-    /** The AdminRulesClient object to access its operations. */
+    /**
+     * The AdminRulesClient object to access its operations.
+     */
     private final AdminRulesClient adminRules;
 
     /**
      * Gets the AdminRulesClient object to access its operations.
-     *
+     * 
      * @return the AdminRulesClient object.
      */
     public AdminRulesClient getAdminRules() {
         return this.adminRules;
     }
 
-    /** The NetworkProfilesClient object to access its operations. */
+    /**
+     * The NetworkProfilesClient object to access its operations.
+     */
     private final NetworkProfilesClient networkProfiles;
 
     /**
      * Gets the NetworkProfilesClient object to access its operations.
-     *
+     * 
      * @return the NetworkProfilesClient object.
      */
     public NetworkProfilesClient getNetworkProfiles() {
         return this.networkProfiles;
     }
 
-    /** The NetworkSecurityGroupsClient object to access its operations. */
+    /**
+     * The NetworkSecurityGroupsClient object to access its operations.
+     */
     private final NetworkSecurityGroupsClient networkSecurityGroups;
 
     /**
      * Gets the NetworkSecurityGroupsClient object to access its operations.
-     *
+     * 
      * @return the NetworkSecurityGroupsClient object.
      */
     public NetworkSecurityGroupsClient getNetworkSecurityGroups() {
         return this.networkSecurityGroups;
     }
 
-    /** The SecurityRulesClient object to access its operations. */
+    /**
+     * The SecurityRulesClient object to access its operations.
+     */
     private final SecurityRulesClient securityRules;
 
     /**
      * Gets the SecurityRulesClient object to access its operations.
-     *
+     * 
      * @return the SecurityRulesClient object.
      */
     public SecurityRulesClient getSecurityRules() {
         return this.securityRules;
     }
 
-    /** The DefaultSecurityRulesClient object to access its operations. */
+    /**
+     * The DefaultSecurityRulesClient object to access its operations.
+     */
     private final DefaultSecurityRulesClient defaultSecurityRules;
 
     /**
      * Gets the DefaultSecurityRulesClient object to access its operations.
-     *
+     * 
      * @return the DefaultSecurityRulesClient object.
      */
     public DefaultSecurityRulesClient getDefaultSecurityRules() {
         return this.defaultSecurityRules;
     }
 
-    /** The NetworkVirtualAppliancesClient object to access its operations. */
+    /**
+     * The NetworkVirtualAppliancesClient object to access its operations.
+     */
     private final NetworkVirtualAppliancesClient networkVirtualAppliances;
 
     /**
      * Gets the NetworkVirtualAppliancesClient object to access its operations.
-     *
+     * 
      * @return the NetworkVirtualAppliancesClient object.
      */
     public NetworkVirtualAppliancesClient getNetworkVirtualAppliances() {
         return this.networkVirtualAppliances;
     }
 
-    /** The VirtualApplianceSitesClient object to access its operations. */
+    /**
+     * The VirtualApplianceSitesClient object to access its operations.
+     */
     private final VirtualApplianceSitesClient virtualApplianceSites;
 
     /**
      * Gets the VirtualApplianceSitesClient object to access its operations.
-     *
+     * 
      * @return the VirtualApplianceSitesClient object.
      */
     public VirtualApplianceSitesClient getVirtualApplianceSites() {
         return this.virtualApplianceSites;
     }
 
-    /** The VirtualApplianceSkusClient object to access its operations. */
+    /**
+     * The VirtualApplianceSkusClient object to access its operations.
+     */
     private final VirtualApplianceSkusClient virtualApplianceSkus;
 
     /**
      * Gets the VirtualApplianceSkusClient object to access its operations.
-     *
+     * 
      * @return the VirtualApplianceSkusClient object.
      */
     public VirtualApplianceSkusClient getVirtualApplianceSkus() {
         return this.virtualApplianceSkus;
     }
 
-    /** The InboundSecurityRuleOperationsClient object to access its operations. */
+    /**
+     * The InboundSecurityRuleOperationsClient object to access its operations.
+     */
     private final InboundSecurityRuleOperationsClient inboundSecurityRuleOperations;
 
     /**
      * Gets the InboundSecurityRuleOperationsClient object to access its operations.
-     *
+     * 
      * @return the InboundSecurityRuleOperationsClient object.
      */
     public InboundSecurityRuleOperationsClient getInboundSecurityRuleOperations() {
         return this.inboundSecurityRuleOperations;
     }
 
-    /** The NetworkWatchersClient object to access its operations. */
+    /**
+     * The NetworkWatchersClient object to access its operations.
+     */
     private final NetworkWatchersClient networkWatchers;
 
     /**
      * Gets the NetworkWatchersClient object to access its operations.
-     *
+     * 
      * @return the NetworkWatchersClient object.
      */
     public NetworkWatchersClient getNetworkWatchers() {
         return this.networkWatchers;
     }
 
-    /** The PacketCapturesClient object to access its operations. */
+    /**
+     * The PacketCapturesClient object to access its operations.
+     */
     private final PacketCapturesClient packetCaptures;
 
     /**
      * Gets the PacketCapturesClient object to access its operations.
-     *
+     * 
      * @return the PacketCapturesClient object.
      */
     public PacketCapturesClient getPacketCaptures() {
         return this.packetCaptures;
     }
 
-    /** The ConnectionMonitorsClient object to access its operations. */
+    /**
+     * The ConnectionMonitorsClient object to access its operations.
+     */
     private final ConnectionMonitorsClient connectionMonitors;
 
     /**
      * Gets the ConnectionMonitorsClient object to access its operations.
-     *
+     * 
      * @return the ConnectionMonitorsClient object.
      */
     public ConnectionMonitorsClient getConnectionMonitors() {
         return this.connectionMonitors;
     }
 
-    /** The FlowLogsClient object to access its operations. */
+    /**
+     * The FlowLogsClient object to access its operations.
+     */
     private final FlowLogsClient flowLogs;
 
     /**
      * Gets the FlowLogsClient object to access its operations.
-     *
+     * 
      * @return the FlowLogsClient object.
      */
     public FlowLogsClient getFlowLogs() {
         return this.flowLogs;
     }
 
-    /** The OperationsClient object to access its operations. */
+    /**
+     * The OperationsClient object to access its operations.
+     */
     private final OperationsClient operations;
 
     /**
      * Gets the OperationsClient object to access its operations.
-     *
+     * 
      * @return the OperationsClient object.
      */
     public OperationsClient getOperations() {
         return this.operations;
     }
 
-    /** The PrivateEndpointsClient object to access its operations. */
+    /**
+     * The PrivateEndpointsClient object to access its operations.
+     */
     private final PrivateEndpointsClient privateEndpoints;
 
     /**
      * Gets the PrivateEndpointsClient object to access its operations.
-     *
+     * 
      * @return the PrivateEndpointsClient object.
      */
     public PrivateEndpointsClient getPrivateEndpoints() {
         return this.privateEndpoints;
     }
 
-    /** The AvailablePrivateEndpointTypesClient object to access its operations. */
+    /**
+     * The AvailablePrivateEndpointTypesClient object to access its operations.
+     */
     private final AvailablePrivateEndpointTypesClient availablePrivateEndpointTypes;
 
     /**
      * Gets the AvailablePrivateEndpointTypesClient object to access its operations.
-     *
+     * 
      * @return the AvailablePrivateEndpointTypesClient object.
      */
     public AvailablePrivateEndpointTypesClient getAvailablePrivateEndpointTypes() {
         return this.availablePrivateEndpointTypes;
     }
 
-    /** The PrivateDnsZoneGroupsClient object to access its operations. */
+    /**
+     * The PrivateDnsZoneGroupsClient object to access its operations.
+     */
     private final PrivateDnsZoneGroupsClient privateDnsZoneGroups;
 
     /**
      * Gets the PrivateDnsZoneGroupsClient object to access its operations.
-     *
+     * 
      * @return the PrivateDnsZoneGroupsClient object.
      */
     public PrivateDnsZoneGroupsClient getPrivateDnsZoneGroups() {
         return this.privateDnsZoneGroups;
     }
 
-    /** The PrivateLinkServicesClient object to access its operations. */
+    /**
+     * The PrivateLinkServicesClient object to access its operations.
+     */
     private final PrivateLinkServicesClient privateLinkServices;
 
     /**
      * Gets the PrivateLinkServicesClient object to access its operations.
-     *
+     * 
      * @return the PrivateLinkServicesClient object.
      */
     public PrivateLinkServicesClient getPrivateLinkServices() {
         return this.privateLinkServices;
     }
 
-    /** The PublicIpPrefixesClient object to access its operations. */
+    /**
+     * The PublicIpPrefixesClient object to access its operations.
+     */
     private final PublicIpPrefixesClient publicIpPrefixes;
 
     /**
      * Gets the PublicIpPrefixesClient object to access its operations.
-     *
+     * 
      * @return the PublicIpPrefixesClient object.
      */
     public PublicIpPrefixesClient getPublicIpPrefixes() {
         return this.publicIpPrefixes;
     }
 
-    /** The RouteFiltersClient object to access its operations. */
+    /**
+     * The RouteFiltersClient object to access its operations.
+     */
     private final RouteFiltersClient routeFilters;
 
     /**
      * Gets the RouteFiltersClient object to access its operations.
-     *
+     * 
      * @return the RouteFiltersClient object.
      */
     public RouteFiltersClient getRouteFilters() {
         return this.routeFilters;
     }
 
-    /** The RouteFilterRulesClient object to access its operations. */
+    /**
+     * The RouteFilterRulesClient object to access its operations.
+     */
     private final RouteFilterRulesClient routeFilterRules;
 
     /**
      * Gets the RouteFilterRulesClient object to access its operations.
-     *
+     * 
      * @return the RouteFilterRulesClient object.
      */
     public RouteFilterRulesClient getRouteFilterRules() {
         return this.routeFilterRules;
     }
 
-    /** The RouteTablesClient object to access its operations. */
+    /**
+     * The RouteTablesClient object to access its operations.
+     */
     private final RouteTablesClient routeTables;
 
     /**
      * Gets the RouteTablesClient object to access its operations.
-     *
+     * 
      * @return the RouteTablesClient object.
      */
     public RouteTablesClient getRouteTables() {
         return this.routeTables;
     }
 
-    /** The RoutesClient object to access its operations. */
+    /**
+     * The RoutesClient object to access its operations.
+     */
     private final RoutesClient routes;
 
     /**
      * Gets the RoutesClient object to access its operations.
-     *
+     * 
      * @return the RoutesClient object.
      */
     public RoutesClient getRoutes() {
         return this.routes;
     }
 
-    /** The SecurityPartnerProvidersClient object to access its operations. */
+    /**
+     * The SecurityPartnerProvidersClient object to access its operations.
+     */
     private final SecurityPartnerProvidersClient securityPartnerProviders;
 
     /**
      * Gets the SecurityPartnerProvidersClient object to access its operations.
-     *
+     * 
      * @return the SecurityPartnerProvidersClient object.
      */
     public SecurityPartnerProvidersClient getSecurityPartnerProviders() {
         return this.securityPartnerProviders;
     }
 
-    /** The BgpServiceCommunitiesClient object to access its operations. */
+    /**
+     * The BgpServiceCommunitiesClient object to access its operations.
+     */
     private final BgpServiceCommunitiesClient bgpServiceCommunities;
 
     /**
      * Gets the BgpServiceCommunitiesClient object to access its operations.
-     *
+     * 
      * @return the BgpServiceCommunitiesClient object.
      */
     public BgpServiceCommunitiesClient getBgpServiceCommunities() {
         return this.bgpServiceCommunities;
     }
 
-    /** The ServiceEndpointPoliciesClient object to access its operations. */
+    /**
+     * The ServiceEndpointPoliciesClient object to access its operations.
+     */
     private final ServiceEndpointPoliciesClient serviceEndpointPolicies;
 
     /**
      * Gets the ServiceEndpointPoliciesClient object to access its operations.
-     *
+     * 
      * @return the ServiceEndpointPoliciesClient object.
      */
     public ServiceEndpointPoliciesClient getServiceEndpointPolicies() {
         return this.serviceEndpointPolicies;
     }
 
-    /** The ServiceEndpointPolicyDefinitionsClient object to access its operations. */
+    /**
+     * The ServiceEndpointPolicyDefinitionsClient object to access its operations.
+     */
     private final ServiceEndpointPolicyDefinitionsClient serviceEndpointPolicyDefinitions;
 
     /**
      * Gets the ServiceEndpointPolicyDefinitionsClient object to access its operations.
-     *
+     * 
      * @return the ServiceEndpointPolicyDefinitionsClient object.
      */
     public ServiceEndpointPolicyDefinitionsClient getServiceEndpointPolicyDefinitions() {
         return this.serviceEndpointPolicyDefinitions;
     }
 
-    /** The ServiceTagsClient object to access its operations. */
+    /**
+     * The ServiceTagsClient object to access its operations.
+     */
     private final ServiceTagsClient serviceTags;
 
     /**
      * Gets the ServiceTagsClient object to access its operations.
-     *
+     * 
      * @return the ServiceTagsClient object.
      */
     public ServiceTagsClient getServiceTags() {
         return this.serviceTags;
     }
 
-    /** The ServiceTagInformationsClient object to access its operations. */
+    /**
+     * The ServiceTagInformationsClient object to access its operations.
+     */
     private final ServiceTagInformationsClient serviceTagInformations;
 
     /**
      * Gets the ServiceTagInformationsClient object to access its operations.
-     *
+     * 
      * @return the ServiceTagInformationsClient object.
      */
     public ServiceTagInformationsClient getServiceTagInformations() {
         return this.serviceTagInformations;
     }
 
-    /** The UsagesClient object to access its operations. */
+    /**
+     * The UsagesClient object to access its operations.
+     */
     private final UsagesClient usages;
 
     /**
      * Gets the UsagesClient object to access its operations.
-     *
+     * 
      * @return the UsagesClient object.
      */
     public UsagesClient getUsages() {
         return this.usages;
     }
 
-    /** The VirtualNetworksClient object to access its operations. */
+    /**
+     * The VirtualNetworksClient object to access its operations.
+     */
     private final VirtualNetworksClient virtualNetworks;
 
     /**
      * Gets the VirtualNetworksClient object to access its operations.
-     *
+     * 
      * @return the VirtualNetworksClient object.
      */
     public VirtualNetworksClient getVirtualNetworks() {
         return this.virtualNetworks;
     }
 
-    /** The SubnetsClient object to access its operations. */
+    /**
+     * The SubnetsClient object to access its operations.
+     */
     private final SubnetsClient subnets;
 
     /**
      * Gets the SubnetsClient object to access its operations.
-     *
+     * 
      * @return the SubnetsClient object.
      */
     public SubnetsClient getSubnets() {
         return this.subnets;
     }
 
-    /** The ResourceNavigationLinksClient object to access its operations. */
+    /**
+     * The ResourceNavigationLinksClient object to access its operations.
+     */
     private final ResourceNavigationLinksClient resourceNavigationLinks;
 
     /**
      * Gets the ResourceNavigationLinksClient object to access its operations.
-     *
+     * 
      * @return the ResourceNavigationLinksClient object.
      */
     public ResourceNavigationLinksClient getResourceNavigationLinks() {
         return this.resourceNavigationLinks;
     }
 
-    /** The ServiceAssociationLinksClient object to access its operations. */
+    /**
+     * The ServiceAssociationLinksClient object to access its operations.
+     */
     private final ServiceAssociationLinksClient serviceAssociationLinks;
 
     /**
      * Gets the ServiceAssociationLinksClient object to access its operations.
-     *
+     * 
      * @return the ServiceAssociationLinksClient object.
      */
     public ServiceAssociationLinksClient getServiceAssociationLinks() {
         return this.serviceAssociationLinks;
     }
 
-    /** The VirtualNetworkPeeringsClient object to access its operations. */
+    /**
+     * The VirtualNetworkPeeringsClient object to access its operations.
+     */
     private final VirtualNetworkPeeringsClient virtualNetworkPeerings;
 
     /**
      * Gets the VirtualNetworkPeeringsClient object to access its operations.
-     *
+     * 
      * @return the VirtualNetworkPeeringsClient object.
      */
     public VirtualNetworkPeeringsClient getVirtualNetworkPeerings() {
         return this.virtualNetworkPeerings;
     }
 
-    /** The VirtualNetworkGatewaysClient object to access its operations. */
+    /**
+     * The VirtualNetworkGatewaysClient object to access its operations.
+     */
     private final VirtualNetworkGatewaysClient virtualNetworkGateways;
 
     /**
      * Gets the VirtualNetworkGatewaysClient object to access its operations.
-     *
+     * 
      * @return the VirtualNetworkGatewaysClient object.
      */
     public VirtualNetworkGatewaysClient getVirtualNetworkGateways() {
         return this.virtualNetworkGateways;
     }
 
-    /** The VirtualNetworkGatewayConnectionsClient object to access its operations. */
+    /**
+     * The VirtualNetworkGatewayConnectionsClient object to access its operations.
+     */
     private final VirtualNetworkGatewayConnectionsClient virtualNetworkGatewayConnections;
 
     /**
      * Gets the VirtualNetworkGatewayConnectionsClient object to access its operations.
-     *
+     * 
      * @return the VirtualNetworkGatewayConnectionsClient object.
      */
     public VirtualNetworkGatewayConnectionsClient getVirtualNetworkGatewayConnections() {
         return this.virtualNetworkGatewayConnections;
     }
 
-    /** The LocalNetworkGatewaysClient object to access its operations. */
+    /**
+     * The LocalNetworkGatewaysClient object to access its operations.
+     */
     private final LocalNetworkGatewaysClient localNetworkGateways;
 
     /**
      * Gets the LocalNetworkGatewaysClient object to access its operations.
-     *
+     * 
      * @return the LocalNetworkGatewaysClient object.
      */
     public LocalNetworkGatewaysClient getLocalNetworkGateways() {
         return this.localNetworkGateways;
     }
 
-    /** The VirtualNetworkGatewayNatRulesClient object to access its operations. */
+    /**
+     * The VirtualNetworkGatewayNatRulesClient object to access its operations.
+     */
     private final VirtualNetworkGatewayNatRulesClient virtualNetworkGatewayNatRules;
 
     /**
      * Gets the VirtualNetworkGatewayNatRulesClient object to access its operations.
-     *
+     * 
      * @return the VirtualNetworkGatewayNatRulesClient object.
      */
     public VirtualNetworkGatewayNatRulesClient getVirtualNetworkGatewayNatRules() {
         return this.virtualNetworkGatewayNatRules;
     }
 
-    /** The VirtualNetworkTapsClient object to access its operations. */
+    /**
+     * The VirtualNetworkTapsClient object to access its operations.
+     */
     private final VirtualNetworkTapsClient virtualNetworkTaps;
 
     /**
      * Gets the VirtualNetworkTapsClient object to access its operations.
-     *
+     * 
      * @return the VirtualNetworkTapsClient object.
      */
     public VirtualNetworkTapsClient getVirtualNetworkTaps() {
         return this.virtualNetworkTaps;
     }
 
-    /** The VirtualRoutersClient object to access its operations. */
+    /**
+     * The VirtualRoutersClient object to access its operations.
+     */
     private final VirtualRoutersClient virtualRouters;
 
     /**
      * Gets the VirtualRoutersClient object to access its operations.
-     *
+     * 
      * @return the VirtualRoutersClient object.
      */
     public VirtualRoutersClient getVirtualRouters() {
         return this.virtualRouters;
     }
 
-    /** The VirtualRouterPeeringsClient object to access its operations. */
+    /**
+     * The VirtualRouterPeeringsClient object to access its operations.
+     */
     private final VirtualRouterPeeringsClient virtualRouterPeerings;
 
     /**
      * Gets the VirtualRouterPeeringsClient object to access its operations.
-     *
+     * 
      * @return the VirtualRouterPeeringsClient object.
      */
     public VirtualRouterPeeringsClient getVirtualRouterPeerings() {
         return this.virtualRouterPeerings;
     }
 
-    /** The VirtualWansClient object to access its operations. */
+    /**
+     * The VirtualWansClient object to access its operations.
+     */
     private final VirtualWansClient virtualWans;
 
     /**
      * Gets the VirtualWansClient object to access its operations.
-     *
+     * 
      * @return the VirtualWansClient object.
      */
     public VirtualWansClient getVirtualWans() {
         return this.virtualWans;
     }
 
-    /** The VpnSitesClient object to access its operations. */
+    /**
+     * The VpnSitesClient object to access its operations.
+     */
     private final VpnSitesClient vpnSites;
 
     /**
      * Gets the VpnSitesClient object to access its operations.
-     *
+     * 
      * @return the VpnSitesClient object.
      */
     public VpnSitesClient getVpnSites() {
         return this.vpnSites;
     }
 
-    /** The VpnSiteLinksClient object to access its operations. */
+    /**
+     * The VpnSiteLinksClient object to access its operations.
+     */
     private final VpnSiteLinksClient vpnSiteLinks;
 
     /**
      * Gets the VpnSiteLinksClient object to access its operations.
-     *
+     * 
      * @return the VpnSiteLinksClient object.
      */
     public VpnSiteLinksClient getVpnSiteLinks() {
         return this.vpnSiteLinks;
     }
 
-    /** The VpnSitesConfigurationsClient object to access its operations. */
+    /**
+     * The VpnSitesConfigurationsClient object to access its operations.
+     */
     private final VpnSitesConfigurationsClient vpnSitesConfigurations;
 
     /**
      * Gets the VpnSitesConfigurationsClient object to access its operations.
-     *
+     * 
      * @return the VpnSitesConfigurationsClient object.
      */
     public VpnSitesConfigurationsClient getVpnSitesConfigurations() {
         return this.vpnSitesConfigurations;
     }
 
-    /** The VpnServerConfigurationsClient object to access its operations. */
+    /**
+     * The VpnServerConfigurationsClient object to access its operations.
+     */
     private final VpnServerConfigurationsClient vpnServerConfigurations;
 
     /**
      * Gets the VpnServerConfigurationsClient object to access its operations.
-     *
+     * 
      * @return the VpnServerConfigurationsClient object.
      */
     public VpnServerConfigurationsClient getVpnServerConfigurations() {
         return this.vpnServerConfigurations;
     }
 
-    /** The ConfigurationPolicyGroupsClient object to access its operations. */
+    /**
+     * The ConfigurationPolicyGroupsClient object to access its operations.
+     */
     private final ConfigurationPolicyGroupsClient configurationPolicyGroups;
 
     /**
      * Gets the ConfigurationPolicyGroupsClient object to access its operations.
-     *
+     * 
      * @return the ConfigurationPolicyGroupsClient object.
      */
     public ConfigurationPolicyGroupsClient getConfigurationPolicyGroups() {
         return this.configurationPolicyGroups;
     }
 
-    /** The VirtualHubsClient object to access its operations. */
+    /**
+     * The VirtualHubsClient object to access its operations.
+     */
     private final VirtualHubsClient virtualHubs;
 
     /**
      * Gets the VirtualHubsClient object to access its operations.
-     *
+     * 
      * @return the VirtualHubsClient object.
      */
     public VirtualHubsClient getVirtualHubs() {
         return this.virtualHubs;
     }
 
-    /** The RouteMapsClient object to access its operations. */
+    /**
+     * The RouteMapsClient object to access its operations.
+     */
     private final RouteMapsClient routeMaps;
 
     /**
      * Gets the RouteMapsClient object to access its operations.
-     *
+     * 
      * @return the RouteMapsClient object.
      */
     public RouteMapsClient getRouteMaps() {
         return this.routeMaps;
     }
 
-    /** The HubVirtualNetworkConnectionsClient object to access its operations. */
+    /**
+     * The HubVirtualNetworkConnectionsClient object to access its operations.
+     */
     private final HubVirtualNetworkConnectionsClient hubVirtualNetworkConnections;
 
     /**
      * Gets the HubVirtualNetworkConnectionsClient object to access its operations.
-     *
+     * 
      * @return the HubVirtualNetworkConnectionsClient object.
      */
     public HubVirtualNetworkConnectionsClient getHubVirtualNetworkConnections() {
         return this.hubVirtualNetworkConnections;
     }
 
-    /** The VpnGatewaysClient object to access its operations. */
+    /**
+     * The VpnGatewaysClient object to access its operations.
+     */
     private final VpnGatewaysClient vpnGateways;
 
     /**
      * Gets the VpnGatewaysClient object to access its operations.
-     *
+     * 
      * @return the VpnGatewaysClient object.
      */
     public VpnGatewaysClient getVpnGateways() {
         return this.vpnGateways;
     }
 
-    /** The VpnLinkConnectionsClient object to access its operations. */
+    /**
+     * The VpnLinkConnectionsClient object to access its operations.
+     */
     private final VpnLinkConnectionsClient vpnLinkConnections;
 
     /**
      * Gets the VpnLinkConnectionsClient object to access its operations.
-     *
+     * 
      * @return the VpnLinkConnectionsClient object.
      */
     public VpnLinkConnectionsClient getVpnLinkConnections() {
         return this.vpnLinkConnections;
     }
 
-    /** The VpnConnectionsClient object to access its operations. */
+    /**
+     * The VpnConnectionsClient object to access its operations.
+     */
     private final VpnConnectionsClient vpnConnections;
 
     /**
      * Gets the VpnConnectionsClient object to access its operations.
-     *
+     * 
      * @return the VpnConnectionsClient object.
      */
     public VpnConnectionsClient getVpnConnections() {
         return this.vpnConnections;
     }
 
-    /** The VpnSiteLinkConnectionsClient object to access its operations. */
+    /**
+     * The VpnSiteLinkConnectionsClient object to access its operations.
+     */
     private final VpnSiteLinkConnectionsClient vpnSiteLinkConnections;
 
     /**
      * Gets the VpnSiteLinkConnectionsClient object to access its operations.
-     *
+     * 
      * @return the VpnSiteLinkConnectionsClient object.
      */
     public VpnSiteLinkConnectionsClient getVpnSiteLinkConnections() {
         return this.vpnSiteLinkConnections;
     }
 
-    /** The NatRulesClient object to access its operations. */
+    /**
+     * The NatRulesClient object to access its operations.
+     */
     private final NatRulesClient natRules;
 
     /**
      * Gets the NatRulesClient object to access its operations.
-     *
+     * 
      * @return the NatRulesClient object.
      */
     public NatRulesClient getNatRules() {
         return this.natRules;
     }
 
-    /** The P2SVpnGatewaysClient object to access its operations. */
+    /**
+     * The P2SVpnGatewaysClient object to access its operations.
+     */
     private final P2SVpnGatewaysClient p2SVpnGateways;
 
     /**
      * Gets the P2SVpnGatewaysClient object to access its operations.
-     *
+     * 
      * @return the P2SVpnGatewaysClient object.
      */
     public P2SVpnGatewaysClient getP2SVpnGateways() {
         return this.p2SVpnGateways;
     }
 
-    /** The VpnServerConfigurationsAssociatedWithVirtualWansClient object to access its operations. */
-    private final VpnServerConfigurationsAssociatedWithVirtualWansClient
-        vpnServerConfigurationsAssociatedWithVirtualWans;
+    /**
+     * The VpnServerConfigurationsAssociatedWithVirtualWansClient object to access its operations.
+     */
+    private final VpnServerConfigurationsAssociatedWithVirtualWansClient vpnServerConfigurationsAssociatedWithVirtualWans;
 
     /**
      * Gets the VpnServerConfigurationsAssociatedWithVirtualWansClient object to access its operations.
-     *
+     * 
      * @return the VpnServerConfigurationsAssociatedWithVirtualWansClient object.
      */
     public VpnServerConfigurationsAssociatedWithVirtualWansClient
@@ -1709,108 +1964,126 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         return this.vpnServerConfigurationsAssociatedWithVirtualWans;
     }
 
-    /** The VirtualHubRouteTableV2SClient object to access its operations. */
+    /**
+     * The VirtualHubRouteTableV2SClient object to access its operations.
+     */
     private final VirtualHubRouteTableV2SClient virtualHubRouteTableV2S;
 
     /**
      * Gets the VirtualHubRouteTableV2SClient object to access its operations.
-     *
+     * 
      * @return the VirtualHubRouteTableV2SClient object.
      */
     public VirtualHubRouteTableV2SClient getVirtualHubRouteTableV2S() {
         return this.virtualHubRouteTableV2S;
     }
 
-    /** The ExpressRouteGatewaysClient object to access its operations. */
+    /**
+     * The ExpressRouteGatewaysClient object to access its operations.
+     */
     private final ExpressRouteGatewaysClient expressRouteGateways;
 
     /**
      * Gets the ExpressRouteGatewaysClient object to access its operations.
-     *
+     * 
      * @return the ExpressRouteGatewaysClient object.
      */
     public ExpressRouteGatewaysClient getExpressRouteGateways() {
         return this.expressRouteGateways;
     }
 
-    /** The ExpressRouteConnectionsClient object to access its operations. */
+    /**
+     * The ExpressRouteConnectionsClient object to access its operations.
+     */
     private final ExpressRouteConnectionsClient expressRouteConnections;
 
     /**
      * Gets the ExpressRouteConnectionsClient object to access its operations.
-     *
+     * 
      * @return the ExpressRouteConnectionsClient object.
      */
     public ExpressRouteConnectionsClient getExpressRouteConnections() {
         return this.expressRouteConnections;
     }
 
-    /** The NetworkVirtualApplianceConnectionsClient object to access its operations. */
+    /**
+     * The NetworkVirtualApplianceConnectionsClient object to access its operations.
+     */
     private final NetworkVirtualApplianceConnectionsClient networkVirtualApplianceConnections;
 
     /**
      * Gets the NetworkVirtualApplianceConnectionsClient object to access its operations.
-     *
+     * 
      * @return the NetworkVirtualApplianceConnectionsClient object.
      */
     public NetworkVirtualApplianceConnectionsClient getNetworkVirtualApplianceConnections() {
         return this.networkVirtualApplianceConnections;
     }
 
-    /** The VirtualHubBgpConnectionsClient object to access its operations. */
+    /**
+     * The VirtualHubBgpConnectionsClient object to access its operations.
+     */
     private final VirtualHubBgpConnectionsClient virtualHubBgpConnections;
 
     /**
      * Gets the VirtualHubBgpConnectionsClient object to access its operations.
-     *
+     * 
      * @return the VirtualHubBgpConnectionsClient object.
      */
     public VirtualHubBgpConnectionsClient getVirtualHubBgpConnections() {
         return this.virtualHubBgpConnections;
     }
 
-    /** The VirtualHubIpConfigurationsClient object to access its operations. */
+    /**
+     * The VirtualHubIpConfigurationsClient object to access its operations.
+     */
     private final VirtualHubIpConfigurationsClient virtualHubIpConfigurations;
 
     /**
      * Gets the VirtualHubIpConfigurationsClient object to access its operations.
-     *
+     * 
      * @return the VirtualHubIpConfigurationsClient object.
      */
     public VirtualHubIpConfigurationsClient getVirtualHubIpConfigurations() {
         return this.virtualHubIpConfigurations;
     }
 
-    /** The HubRouteTablesClient object to access its operations. */
+    /**
+     * The HubRouteTablesClient object to access its operations.
+     */
     private final HubRouteTablesClient hubRouteTables;
 
     /**
      * Gets the HubRouteTablesClient object to access its operations.
-     *
+     * 
      * @return the HubRouteTablesClient object.
      */
     public HubRouteTablesClient getHubRouteTables() {
         return this.hubRouteTables;
     }
 
-    /** The RoutingIntentsClient object to access its operations. */
+    /**
+     * The RoutingIntentsClient object to access its operations.
+     */
     private final RoutingIntentsClient routingIntents;
 
     /**
      * Gets the RoutingIntentsClient object to access its operations.
-     *
+     * 
      * @return the RoutingIntentsClient object.
      */
     public RoutingIntentsClient getRoutingIntents() {
         return this.routingIntents;
     }
 
-    /** The WebApplicationFirewallPoliciesClient object to access its operations. */
+    /**
+     * The WebApplicationFirewallPoliciesClient object to access its operations.
+     */
     private final WebApplicationFirewallPoliciesClient webApplicationFirewallPolicies;
 
     /**
      * Gets the WebApplicationFirewallPoliciesClient object to access its operations.
-     *
+     * 
      * @return the WebApplicationFirewallPoliciesClient object.
      */
     public WebApplicationFirewallPoliciesClient getWebApplicationFirewallPolicies() {
@@ -1819,22 +2092,17 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
 
     /**
      * Initializes an instance of NetworkManagementClient client.
-     *
+     * 
      * @param httpPipeline The HTTP pipeline to send requests through.
      * @param serializerAdapter The serializer to serialize an object into a string.
      * @param defaultPollInterval The default poll interval for long-running operation.
      * @param environment The Azure environment.
      * @param subscriptionId The subscription credentials which uniquely identify the Microsoft Azure subscription. The
-     *     subscription ID forms part of the URI for every service call.
+     * subscription ID forms part of the URI for every service call.
      * @param endpoint server parameter.
      */
-    NetworkManagementClientImpl(
-        HttpPipeline httpPipeline,
-        SerializerAdapter serializerAdapter,
-        Duration defaultPollInterval,
-        AzureEnvironment environment,
-        String subscriptionId,
-        String endpoint) {
+    NetworkManagementClientImpl(HttpPipeline httpPipeline, SerializerAdapter serializerAdapter,
+        Duration defaultPollInterval, AzureEnvironment environment, String subscriptionId, String endpoint) {
         this.httpPipeline = httpPipeline;
         this.serializerAdapter = serializerAdapter;
         this.defaultPollInterval = defaultPollInterval;
@@ -1842,10 +2110,10 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         this.endpoint = endpoint;
         this.applicationGateways = new ApplicationGatewaysClientImpl(this);
         this.applicationGatewayPrivateLinkResources = new ApplicationGatewayPrivateLinkResourcesClientImpl(this);
-        this.applicationGatewayPrivateEndpointConnections =
-            new ApplicationGatewayPrivateEndpointConnectionsClientImpl(this);
-        this.applicationGatewayWafDynamicManifestsDefaults =
-            new ApplicationGatewayWafDynamicManifestsDefaultsClientImpl(this);
+        this.applicationGatewayPrivateEndpointConnections
+            = new ApplicationGatewayPrivateEndpointConnectionsClientImpl(this);
+        this.applicationGatewayWafDynamicManifestsDefaults
+            = new ApplicationGatewayWafDynamicManifestsDefaultsClientImpl(this);
         this.applicationGatewayWafDynamicManifests = new ApplicationGatewayWafDynamicManifestsClientImpl(this);
         this.applicationSecurityGroups = new ApplicationSecurityGroupsClientImpl(this);
         this.availableDelegations = new AvailableDelegationsClientImpl(this);
@@ -1964,8 +2232,8 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         this.vpnSiteLinkConnections = new VpnSiteLinkConnectionsClientImpl(this);
         this.natRules = new NatRulesClientImpl(this);
         this.p2SVpnGateways = new P2SVpnGatewaysClientImpl(this);
-        this.vpnServerConfigurationsAssociatedWithVirtualWans =
-            new VpnServerConfigurationsAssociatedWithVirtualWansClientImpl(this);
+        this.vpnServerConfigurationsAssociatedWithVirtualWans
+            = new VpnServerConfigurationsAssociatedWithVirtualWansClientImpl(this);
         this.virtualHubRouteTableV2S = new VirtualHubRouteTableV2SClientImpl(this);
         this.expressRouteGateways = new ExpressRouteGatewaysClientImpl(this);
         this.expressRouteConnections = new ExpressRouteConnectionsClientImpl(this);
@@ -1979,7 +2247,7 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
 
     /**
      * Gets default client context.
-     *
+     * 
      * @return the default client context.
      */
     public Context getContext() {
@@ -1988,7 +2256,7 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
 
     /**
      * Merges default client context with provided context.
-     *
+     * 
      * @param context the context to be merged with default client context.
      * @return the merged context.
      */
@@ -1998,7 +2266,7 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
 
     /**
      * Gets long running operation result.
-     *
+     * 
      * @param activationResponse the response of activation operation.
      * @param httpPipeline the http pipeline.
      * @param pollResultType type of poll result.
@@ -2008,26 +2276,15 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
      * @param <U> type of final result.
      * @return poller flux for poll result and final result.
      */
-    public <T, U> PollerFlux<PollResult<T>, U> getLroResult(
-        Mono<Response<Flux<ByteBuffer>>> activationResponse,
-        HttpPipeline httpPipeline,
-        Type pollResultType,
-        Type finalResultType,
-        Context context) {
-        return PollerFactory
-            .create(
-                serializerAdapter,
-                httpPipeline,
-                pollResultType,
-                finalResultType,
-                defaultPollInterval,
-                activationResponse,
-                context);
+    public <T, U> PollerFlux<PollResult<T>, U> getLroResult(Mono<Response<Flux<ByteBuffer>>> activationResponse,
+        HttpPipeline httpPipeline, Type pollResultType, Type finalResultType, Context context) {
+        return PollerFactory.create(serializerAdapter, httpPipeline, pollResultType, finalResultType,
+            defaultPollInterval, activationResponse, context);
     }
 
     /**
      * Gets the final result, or an error, based on last async poll response.
-     *
+     * 
      * @param response the last async poll response.
      * @param <T> type of poll result.
      * @param <U> type of final result.
@@ -2040,19 +2297,16 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
             HttpResponse errorResponse = null;
             PollResult.Error lroError = response.getValue().getError();
             if (lroError != null) {
-                errorResponse =
-                    new HttpResponseImpl(
-                        lroError.getResponseStatusCode(), lroError.getResponseHeaders(), lroError.getResponseBody());
+                errorResponse = new HttpResponseImpl(lroError.getResponseStatusCode(), lroError.getResponseHeaders(),
+                    lroError.getResponseBody());
 
                 errorMessage = response.getValue().getError().getMessage();
                 String errorBody = response.getValue().getError().getResponseBody();
                 if (errorBody != null) {
                     // try to deserialize error body to ManagementError
                     try {
-                        managementError =
-                            this
-                                .getSerializerAdapter()
-                                .deserialize(errorBody, ManagementError.class, SerializerEncoding.JSON);
+                        managementError = this.getSerializerAdapter().deserialize(errorBody, ManagementError.class,
+                            SerializerEncoding.JSON);
                         if (managementError.getCode() == null || managementError.getMessage() == null) {
                             managementError = null;
                         }

@@ -26,6 +26,7 @@ import com.azure.resourcemanager.appservice.generated.models.SiteLimits;
 import com.azure.resourcemanager.appservice.generated.models.SiteLoadBalancing;
 import com.azure.resourcemanager.appservice.generated.models.SiteMachineKey;
 import com.azure.resourcemanager.appservice.generated.models.SupportedTlsVersions;
+import com.azure.resourcemanager.appservice.generated.models.TlsCipherSuites;
 import com.azure.resourcemanager.appservice.generated.models.VirtualApplication;
 import java.time.OffsetDateTime;
 import java.util.Collections;
@@ -37,8 +38,8 @@ public final class SiteConfigImpl implements SiteConfig {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    SiteConfigImpl(
-        SiteConfigInner innerObject, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
+    SiteConfigImpl(SiteConfigInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -326,6 +327,10 @@ public final class SiteConfigImpl implements SiteConfig {
 
     public SupportedTlsVersions minTlsVersion() {
         return this.innerModel().minTlsVersion();
+    }
+
+    public TlsCipherSuites minTlsCipherSuite() {
+        return this.innerModel().minTlsCipherSuite();
     }
 
     public SupportedTlsVersions scmMinTlsVersion() {

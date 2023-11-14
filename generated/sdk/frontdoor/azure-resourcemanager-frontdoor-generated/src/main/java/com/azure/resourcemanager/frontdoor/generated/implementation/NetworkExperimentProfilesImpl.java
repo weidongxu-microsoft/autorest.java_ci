@@ -21,8 +21,7 @@ public final class NetworkExperimentProfilesImpl implements NetworkExperimentPro
 
     private final com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager;
 
-    public NetworkExperimentProfilesImpl(
-        NetworkExperimentProfilesClient innerClient,
+    public NetworkExperimentProfilesImpl(NetworkExperimentProfilesClient innerClient,
         com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -48,15 +47,12 @@ public final class NetworkExperimentProfilesImpl implements NetworkExperimentPro
         return Utils.mapPage(inner, inner1 -> new ProfileImpl(inner1, this.manager()));
     }
 
-    public Response<Profile> getByResourceGroupWithResponse(
-        String resourceGroupName, String profileName, Context context) {
-        Response<ProfileInner> inner =
-            this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, profileName, context);
+    public Response<Profile> getByResourceGroupWithResponse(String resourceGroupName, String profileName,
+        Context context) {
+        Response<ProfileInner> inner
+            = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, profileName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ProfileImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -83,21 +79,13 @@ public final class NetworkExperimentProfilesImpl implements NetworkExperimentPro
     public Profile getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String profileName = Utils.getValueFromIdByName(id, "NetworkExperimentProfiles");
         if (profileName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'NetworkExperimentProfiles'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'NetworkExperimentProfiles'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, profileName, Context.NONE).getValue();
     }
@@ -105,21 +93,13 @@ public final class NetworkExperimentProfilesImpl implements NetworkExperimentPro
     public Response<Profile> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String profileName = Utils.getValueFromIdByName(id, "NetworkExperimentProfiles");
         if (profileName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'NetworkExperimentProfiles'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'NetworkExperimentProfiles'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, profileName, context);
     }
@@ -127,21 +107,13 @@ public final class NetworkExperimentProfilesImpl implements NetworkExperimentPro
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String profileName = Utils.getValueFromIdByName(id, "NetworkExperimentProfiles");
         if (profileName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'NetworkExperimentProfiles'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'NetworkExperimentProfiles'.", id)));
         }
         this.delete(resourceGroupName, profileName, Context.NONE);
     }
@@ -149,21 +121,13 @@ public final class NetworkExperimentProfilesImpl implements NetworkExperimentPro
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String profileName = Utils.getValueFromIdByName(id, "NetworkExperimentProfiles");
         if (profileName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'NetworkExperimentProfiles'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'NetworkExperimentProfiles'.", id)));
         }
         this.delete(resourceGroupName, profileName, context);
     }

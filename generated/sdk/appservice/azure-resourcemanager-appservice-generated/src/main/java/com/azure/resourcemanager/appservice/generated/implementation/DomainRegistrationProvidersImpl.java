@@ -19,8 +19,7 @@ public final class DomainRegistrationProvidersImpl implements DomainRegistration
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    public DomainRegistrationProvidersImpl(
-        DomainRegistrationProvidersClient innerClient,
+    public DomainRegistrationProvidersImpl(DomainRegistrationProvidersClient innerClient,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;

@@ -7,11 +7,13 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.resourcemanager.network.generated.fluent.models.ActiveConnectivityConfigurationsListResultInner;
 import java.util.List;
 
-/** An immutable client-side representation of ActiveConnectivityConfigurationsListResult. */
+/**
+ * An immutable client-side representation of ActiveConnectivityConfigurationsListResult.
+ */
 public interface ActiveConnectivityConfigurationsListResult {
     /**
      * Gets the value property: Gets a page of active connectivity configurations.
-     *
+     * 
      * @return the value value.
      */
     List<ActiveConnectivityConfiguration> value();
@@ -19,7 +21,7 @@ public interface ActiveConnectivityConfigurationsListResult {
     /**
      * Gets the skipToken property: When present, the value can be passed to a subsequent query call (together with the
      * same query and scopes used in the current request) to retrieve the next page of data.
-     *
+     * 
      * @return the skipToken value.
      */
     String skipToken();
@@ -27,7 +29,7 @@ public interface ActiveConnectivityConfigurationsListResult {
     /**
      * Gets the inner
      * com.azure.resourcemanager.network.generated.fluent.models.ActiveConnectivityConfigurationsListResultInner object.
-     *
+     * 
      * @return the inner object.
      */
     ActiveConnectivityConfigurationsListResultInner innerModel();

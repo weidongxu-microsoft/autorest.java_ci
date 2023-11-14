@@ -21,8 +21,8 @@ public final class RouteTablesImpl implements RouteTables {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public RouteTablesImpl(
-        RouteTablesClient innerClient, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    public RouteTablesImpl(RouteTablesClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -35,15 +35,12 @@ public final class RouteTablesImpl implements RouteTables {
         this.serviceClient().delete(resourceGroupName, routeTableName, context);
     }
 
-    public Response<RouteTable> getByResourceGroupWithResponse(
-        String resourceGroupName, String routeTableName, String expand, Context context) {
-        Response<RouteTableInner> inner =
-            this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, routeTableName, expand, context);
+    public Response<RouteTable> getByResourceGroupWithResponse(String resourceGroupName, String routeTableName,
+        String expand, Context context) {
+        Response<RouteTableInner> inner
+            = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, routeTableName, expand, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new RouteTableImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -82,40 +79,29 @@ public final class RouteTablesImpl implements RouteTables {
     public RouteTable getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String routeTableName = Utils.getValueFromIdByName(id, "routeTables");
         if (routeTableName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'routeTables'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'routeTables'.", id)));
         }
         String localExpand = null;
-        return this
-            .getByResourceGroupWithResponse(resourceGroupName, routeTableName, localExpand, Context.NONE)
+        return this.getByResourceGroupWithResponse(resourceGroupName, routeTableName, localExpand, Context.NONE)
             .getValue();
     }
 
     public Response<RouteTable> getByIdWithResponse(String id, String expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String routeTableName = Utils.getValueFromIdByName(id, "routeTables");
         if (routeTableName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'routeTables'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'routeTables'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, routeTableName, expand, context);
     }
@@ -123,18 +109,13 @@ public final class RouteTablesImpl implements RouteTables {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String routeTableName = Utils.getValueFromIdByName(id, "routeTables");
         if (routeTableName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'routeTables'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'routeTables'.", id)));
         }
         this.delete(resourceGroupName, routeTableName, Context.NONE);
     }
@@ -142,18 +123,13 @@ public final class RouteTablesImpl implements RouteTables {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String routeTableName = Utils.getValueFromIdByName(id, "routeTables");
         if (routeTableName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'routeTables'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'routeTables'.", id)));
         }
         this.delete(resourceGroupName, routeTableName, context);
     }

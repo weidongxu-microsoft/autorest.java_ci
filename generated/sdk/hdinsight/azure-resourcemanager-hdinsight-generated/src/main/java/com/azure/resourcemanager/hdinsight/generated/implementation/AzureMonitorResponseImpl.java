@@ -13,8 +13,7 @@ public final class AzureMonitorResponseImpl implements AzureMonitorResponse {
 
     private final com.azure.resourcemanager.hdinsight.generated.HDInsightManager serviceManager;
 
-    AzureMonitorResponseImpl(
-        AzureMonitorResponseInner innerObject,
+    AzureMonitorResponseImpl(AzureMonitorResponseInner innerObject,
         com.azure.resourcemanager.hdinsight.generated.HDInsightManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

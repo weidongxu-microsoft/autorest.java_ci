@@ -10,7 +10,9 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** The properties used to create a new server. */
+/**
+ * The properties used to create a new server.
+ */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
     include = JsonTypeInfo.As.PROPERTY,
@@ -21,8 +23,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
     @JsonSubTypes.Type(name = "Default", value = ServerPropertiesForDefaultCreate.class),
     @JsonSubTypes.Type(name = "PointInTimeRestore", value = ServerPropertiesForRestore.class),
     @JsonSubTypes.Type(name = "GeoRestore", value = ServerPropertiesForGeoRestore.class),
-    @JsonSubTypes.Type(name = "Replica", value = ServerPropertiesForReplica.class)
-})
+    @JsonSubTypes.Type(name = "Replica", value = ServerPropertiesForReplica.class) })
 @Fluent
 public class ServerPropertiesForCreate {
     /*
@@ -62,13 +63,15 @@ public class ServerPropertiesForCreate {
     @JsonProperty(value = "storageProfile")
     private StorageProfile storageProfile;
 
-    /** Creates an instance of ServerPropertiesForCreate class. */
+    /**
+     * Creates an instance of ServerPropertiesForCreate class.
+     */
     public ServerPropertiesForCreate() {
     }
 
     /**
      * Get the version property: Server version.
-     *
+     * 
      * @return the version value.
      */
     public ServerVersion version() {
@@ -77,7 +80,7 @@ public class ServerPropertiesForCreate {
 
     /**
      * Set the version property: Server version.
-     *
+     * 
      * @param version the version value to set.
      * @return the ServerPropertiesForCreate object itself.
      */
@@ -88,7 +91,7 @@ public class ServerPropertiesForCreate {
 
     /**
      * Get the sslEnforcement property: Enable ssl enforcement or not when connect to server.
-     *
+     * 
      * @return the sslEnforcement value.
      */
     public SslEnforcementEnum sslEnforcement() {
@@ -97,7 +100,7 @@ public class ServerPropertiesForCreate {
 
     /**
      * Set the sslEnforcement property: Enable ssl enforcement or not when connect to server.
-     *
+     * 
      * @param sslEnforcement the sslEnforcement value to set.
      * @return the ServerPropertiesForCreate object itself.
      */
@@ -108,7 +111,7 @@ public class ServerPropertiesForCreate {
 
     /**
      * Get the minimalTlsVersion property: Enforce a minimal Tls version for the server.
-     *
+     * 
      * @return the minimalTlsVersion value.
      */
     public MinimalTlsVersionEnum minimalTlsVersion() {
@@ -117,7 +120,7 @@ public class ServerPropertiesForCreate {
 
     /**
      * Set the minimalTlsVersion property: Enforce a minimal Tls version for the server.
-     *
+     * 
      * @param minimalTlsVersion the minimalTlsVersion value to set.
      * @return the ServerPropertiesForCreate object itself.
      */
@@ -128,7 +131,7 @@ public class ServerPropertiesForCreate {
 
     /**
      * Get the infrastructureEncryption property: Status showing whether the server enabled infrastructure encryption.
-     *
+     * 
      * @return the infrastructureEncryption value.
      */
     public InfrastructureEncryption infrastructureEncryption() {
@@ -137,7 +140,7 @@ public class ServerPropertiesForCreate {
 
     /**
      * Set the infrastructureEncryption property: Status showing whether the server enabled infrastructure encryption.
-     *
+     * 
      * @param infrastructureEncryption the infrastructureEncryption value to set.
      * @return the ServerPropertiesForCreate object itself.
      */
@@ -149,7 +152,7 @@ public class ServerPropertiesForCreate {
     /**
      * Get the publicNetworkAccess property: Whether or not public network access is allowed for this server. Value is
      * optional but if passed in, must be 'Enabled' or 'Disabled'.
-     *
+     * 
      * @return the publicNetworkAccess value.
      */
     public PublicNetworkAccessEnum publicNetworkAccess() {
@@ -159,7 +162,7 @@ public class ServerPropertiesForCreate {
     /**
      * Set the publicNetworkAccess property: Whether or not public network access is allowed for this server. Value is
      * optional but if passed in, must be 'Enabled' or 'Disabled'.
-     *
+     * 
      * @param publicNetworkAccess the publicNetworkAccess value to set.
      * @return the ServerPropertiesForCreate object itself.
      */
@@ -170,7 +173,7 @@ public class ServerPropertiesForCreate {
 
     /**
      * Get the storageProfile property: Storage profile of a server.
-     *
+     * 
      * @return the storageProfile value.
      */
     public StorageProfile storageProfile() {
@@ -179,7 +182,7 @@ public class ServerPropertiesForCreate {
 
     /**
      * Set the storageProfile property: Storage profile of a server.
-     *
+     * 
      * @param storageProfile the storageProfile value to set.
      * @return the ServerPropertiesForCreate object itself.
      */
@@ -190,7 +193,7 @@ public class ServerPropertiesForCreate {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

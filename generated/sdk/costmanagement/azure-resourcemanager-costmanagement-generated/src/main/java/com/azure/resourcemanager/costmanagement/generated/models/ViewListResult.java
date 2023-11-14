@@ -9,7 +9,9 @@ import com.azure.resourcemanager.costmanagement.generated.fluent.models.ViewInne
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Result of listing views. It contains a list of available views. */
+/**
+ * Result of listing views. It contains a list of available views.
+ */
 @Immutable
 public final class ViewListResult {
     /*
@@ -24,13 +26,15 @@ public final class ViewListResult {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
-    /** Creates an instance of ViewListResult class. */
+    /**
+     * Creates an instance of ViewListResult class.
+     */
     public ViewListResult() {
     }
 
     /**
      * Get the value property: The list of views.
-     *
+     * 
      * @return the value value.
      */
     public List<ViewInner> value() {
@@ -39,7 +43,7 @@ public final class ViewListResult {
 
     /**
      * Get the nextLink property: The link (url) to the next page of results.
-     *
+     * 
      * @return the nextLink value.
      */
     public String nextLink() {
@@ -48,7 +52,7 @@ public final class ViewListResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

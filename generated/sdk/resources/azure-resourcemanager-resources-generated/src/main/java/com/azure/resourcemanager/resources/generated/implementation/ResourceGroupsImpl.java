@@ -24,8 +24,7 @@ public final class ResourceGroupsImpl implements ResourceGroups {
 
     private final com.azure.resourcemanager.resources.generated.ResourceManager serviceManager;
 
-    public ResourceGroupsImpl(
-        ResourceGroupsClient innerClient,
+    public ResourceGroupsImpl(ResourceGroupsClient innerClient,
         com.azure.resourcemanager.resources.generated.ResourceManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -50,10 +49,7 @@ public final class ResourceGroupsImpl implements ResourceGroups {
     public Response<ResourceGroup> getWithResponse(String resourceGroupName, Context context) {
         Response<ResourceGroupInner> inner = this.serviceClient().getWithResponse(resourceGroupName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ResourceGroupImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -78,10 +74,10 @@ public final class ResourceGroupsImpl implements ResourceGroups {
         }
     }
 
-    public ResourceGroupExportResult exportTemplate(
-        String resourceGroupName, ExportTemplateRequest parameters, Context context) {
-        ResourceGroupExportResultInner inner =
-            this.serviceClient().exportTemplate(resourceGroupName, parameters, context);
+    public ResourceGroupExportResult exportTemplate(String resourceGroupName, ExportTemplateRequest parameters,
+        Context context) {
+        ResourceGroupExportResultInner inner
+            = this.serviceClient().exportTemplate(resourceGroupName, parameters, context);
         if (inner != null) {
             return new ResourceGroupExportResultImpl(inner, this.manager());
         } else {
@@ -102,11 +98,8 @@ public final class ResourceGroupsImpl implements ResourceGroups {
     public ResourceGroup getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
         }
         return this.getWithResponse(resourceGroupName, Context.NONE).getValue();
     }
@@ -114,11 +107,8 @@ public final class ResourceGroupsImpl implements ResourceGroups {
     public Response<ResourceGroup> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
         }
         return this.getWithResponse(resourceGroupName, context);
     }
@@ -126,11 +116,8 @@ public final class ResourceGroupsImpl implements ResourceGroups {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
         }
         String localForceDeletionTypes = null;
         this.delete(resourceGroupName, localForceDeletionTypes, Context.NONE);
@@ -139,11 +126,8 @@ public final class ResourceGroupsImpl implements ResourceGroups {
     public void deleteByIdWithResponse(String id, String forceDeletionTypes, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
         }
         this.delete(resourceGroupName, forceDeletionTypes, context);
     }

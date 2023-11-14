@@ -7,7 +7,9 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 import com.azure.core.annotation.Immutable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Cni configuration. */
+/**
+ * Cni configuration.
+ */
 @Immutable
 public final class CniConfig {
     /*
@@ -34,13 +36,15 @@ public final class CniConfig {
     @JsonProperty(value = "serviceSubnet", access = JsonProperty.Access.WRITE_ONLY)
     private String serviceSubnet;
 
-    /** Creates an instance of CniConfig class. */
+    /**
+     * Creates an instance of CniConfig class.
+     */
     public CniConfig() {
     }
 
     /**
      * Get the type property: Cni type.
-     *
+     * 
      * @return the type value.
      */
     public String type() {
@@ -49,7 +53,7 @@ public final class CniConfig {
 
     /**
      * Get the version property: Cni version.
-     *
+     * 
      * @return the version value.
      */
     public String version() {
@@ -58,7 +62,7 @@ public final class CniConfig {
 
     /**
      * Get the podSubnet property: Pod Subnet.
-     *
+     * 
      * @return the podSubnet value.
      */
     public String podSubnet() {
@@ -67,7 +71,7 @@ public final class CniConfig {
 
     /**
      * Get the serviceSubnet property: Service subnet.
-     *
+     * 
      * @return the serviceSubnet value.
      */
     public String serviceSubnet() {
@@ -76,7 +80,7 @@ public final class CniConfig {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

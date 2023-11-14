@@ -14,8 +14,7 @@ public final class ClusterQuotaConfigurationPropertiesImpl implements ClusterQuo
 
     private final com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager;
 
-    ClusterQuotaConfigurationPropertiesImpl(
-        ClusterQuotaConfigurationPropertiesInner innerObject,
+    ClusterQuotaConfigurationPropertiesImpl(ClusterQuotaConfigurationPropertiesInner innerObject,
         com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

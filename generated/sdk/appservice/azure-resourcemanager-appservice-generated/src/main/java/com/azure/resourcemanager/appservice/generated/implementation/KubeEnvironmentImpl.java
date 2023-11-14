@@ -127,20 +127,14 @@ public final class KubeEnvironmentImpl implements KubeEnvironment, KubeEnvironme
     }
 
     public KubeEnvironment create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getKubeEnvironments()
-                .createOrUpdate(resourceGroupName, name, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getKubeEnvironments().createOrUpdate(resourceGroupName, name,
+            this.innerModel(), Context.NONE);
         return this;
     }
 
     public KubeEnvironment create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getKubeEnvironments()
-                .createOrUpdate(resourceGroupName, name, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getKubeEnvironments().createOrUpdate(resourceGroupName, name,
+            this.innerModel(), context);
         return this;
     }
 
@@ -156,27 +150,18 @@ public final class KubeEnvironmentImpl implements KubeEnvironment, KubeEnvironme
     }
 
     public KubeEnvironment apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getKubeEnvironments()
-                .updateWithResponse(resourceGroupName, name, updateKubeEnvironmentEnvelope, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getKubeEnvironments()
+            .updateWithResponse(resourceGroupName, name, updateKubeEnvironmentEnvelope, Context.NONE).getValue();
         return this;
     }
 
     public KubeEnvironment apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getKubeEnvironments()
-                .updateWithResponse(resourceGroupName, name, updateKubeEnvironmentEnvelope, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getKubeEnvironments()
+            .updateWithResponse(resourceGroupName, name, updateKubeEnvironmentEnvelope, context).getValue();
         return this;
     }
 
-    KubeEnvironmentImpl(
-        KubeEnvironmentInner innerObject,
+    KubeEnvironmentImpl(KubeEnvironmentInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -185,22 +170,14 @@ public final class KubeEnvironmentImpl implements KubeEnvironment, KubeEnvironme
     }
 
     public KubeEnvironment refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getKubeEnvironments()
-                .getByResourceGroupWithResponse(resourceGroupName, name, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getKubeEnvironments()
+            .getByResourceGroupWithResponse(resourceGroupName, name, Context.NONE).getValue();
         return this;
     }
 
     public KubeEnvironment refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getKubeEnvironments()
-                .getByResourceGroupWithResponse(resourceGroupName, name, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getKubeEnvironments()
+            .getByResourceGroupWithResponse(resourceGroupName, name, context).getValue();
         return this;
     }
 

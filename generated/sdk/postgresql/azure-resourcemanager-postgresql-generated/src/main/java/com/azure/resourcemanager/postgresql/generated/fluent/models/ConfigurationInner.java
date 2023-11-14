@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Represents a Configuration. */
+/**
+ * Represents a Configuration.
+ */
 @Fluent
 public final class ConfigurationInner extends ProxyResource {
     /*
@@ -17,13 +19,15 @@ public final class ConfigurationInner extends ProxyResource {
     @JsonProperty(value = "properties")
     private ConfigurationProperties innerProperties;
 
-    /** Creates an instance of ConfigurationInner class. */
+    /**
+     * Creates an instance of ConfigurationInner class.
+     */
     public ConfigurationInner() {
     }
 
     /**
      * Get the innerProperties property: The properties of a configuration.
-     *
+     * 
      * @return the innerProperties value.
      */
     private ConfigurationProperties innerProperties() {
@@ -32,7 +36,7 @@ public final class ConfigurationInner extends ProxyResource {
 
     /**
      * Get the value property: Value of the configuration.
-     *
+     * 
      * @return the value value.
      */
     public String value() {
@@ -41,7 +45,7 @@ public final class ConfigurationInner extends ProxyResource {
 
     /**
      * Set the value property: Value of the configuration.
-     *
+     * 
      * @param value the value value to set.
      * @return the ConfigurationInner object itself.
      */
@@ -55,7 +59,7 @@ public final class ConfigurationInner extends ProxyResource {
 
     /**
      * Get the description property: Description of the configuration.
-     *
+     * 
      * @return the description value.
      */
     public String description() {
@@ -64,7 +68,7 @@ public final class ConfigurationInner extends ProxyResource {
 
     /**
      * Get the defaultValue property: Default value of the configuration.
-     *
+     * 
      * @return the defaultValue value.
      */
     public String defaultValue() {
@@ -73,7 +77,7 @@ public final class ConfigurationInner extends ProxyResource {
 
     /**
      * Get the dataType property: Data type of the configuration.
-     *
+     * 
      * @return the dataType value.
      */
     public String dataType() {
@@ -82,7 +86,7 @@ public final class ConfigurationInner extends ProxyResource {
 
     /**
      * Get the allowedValues property: Allowed values of the configuration.
-     *
+     * 
      * @return the allowedValues value.
      */
     public String allowedValues() {
@@ -91,7 +95,7 @@ public final class ConfigurationInner extends ProxyResource {
 
     /**
      * Get the source property: Source of the configuration.
-     *
+     * 
      * @return the source value.
      */
     public String source() {
@@ -100,7 +104,7 @@ public final class ConfigurationInner extends ProxyResource {
 
     /**
      * Set the source property: Source of the configuration.
-     *
+     * 
      * @param source the source value to set.
      * @return the ConfigurationInner object itself.
      */
@@ -114,7 +118,7 @@ public final class ConfigurationInner extends ProxyResource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

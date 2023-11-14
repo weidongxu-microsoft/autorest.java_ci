@@ -8,11 +8,13 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.SignaturesOverridesInner;
 
-/** Resource collection API of FirewallPolicyIdpsSignaturesOverrides. */
+/**
+ * Resource collection API of FirewallPolicyIdpsSignaturesOverrides.
+ */
 public interface FirewallPolicyIdpsSignaturesOverrides {
     /**
      * Will update the status of policy's signature overrides for IDPS.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @param parameters Will contain all properties of the object to put.
@@ -22,12 +24,12 @@ public interface FirewallPolicyIdpsSignaturesOverrides {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return contains all specific policy signatures overrides for the IDPS along with {@link Response}.
      */
-    Response<SignaturesOverrides> patchWithResponse(
-        String resourceGroupName, String firewallPolicyName, SignaturesOverridesInner parameters, Context context);
+    Response<SignaturesOverrides> patchWithResponse(String resourceGroupName, String firewallPolicyName,
+        SignaturesOverridesInner parameters, Context context);
 
     /**
      * Will update the status of policy's signature overrides for IDPS.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @param parameters Will contain all properties of the object to put.
@@ -40,7 +42,7 @@ public interface FirewallPolicyIdpsSignaturesOverrides {
 
     /**
      * Will override/create a new signature overrides for the policy's IDPS.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @param parameters Will contain all properties of the object to put.
@@ -50,12 +52,12 @@ public interface FirewallPolicyIdpsSignaturesOverrides {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return contains all specific policy signatures overrides for the IDPS along with {@link Response}.
      */
-    Response<SignaturesOverrides> putWithResponse(
-        String resourceGroupName, String firewallPolicyName, SignaturesOverridesInner parameters, Context context);
+    Response<SignaturesOverrides> putWithResponse(String resourceGroupName, String firewallPolicyName,
+        SignaturesOverridesInner parameters, Context context);
 
     /**
      * Will override/create a new signature overrides for the policy's IDPS.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @param parameters Will contain all properties of the object to put.
@@ -68,7 +70,7 @@ public interface FirewallPolicyIdpsSignaturesOverrides {
 
     /**
      * Returns all signatures overrides for a specific policy.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @param context The context to associate with this operation.
@@ -81,7 +83,7 @@ public interface FirewallPolicyIdpsSignaturesOverrides {
 
     /**
      * Returns all signatures overrides for a specific policy.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -93,7 +95,7 @@ public interface FirewallPolicyIdpsSignaturesOverrides {
 
     /**
      * Returns all signatures overrides objects for a specific policy as a list containing a single value.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @param context The context to associate with this operation.
@@ -102,12 +104,12 @@ public interface FirewallPolicyIdpsSignaturesOverrides {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return describes an object containing an array with a single item along with {@link Response}.
      */
-    Response<SignaturesOverridesList> listWithResponse(
-        String resourceGroupName, String firewallPolicyName, Context context);
+    Response<SignaturesOverridesList> listWithResponse(String resourceGroupName, String firewallPolicyName,
+        Context context);
 
     /**
      * Returns all signatures overrides objects for a specific policy as a list containing a single value.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

@@ -10,12 +10,14 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.consumption.generated.fluent.models.BalanceInner;
 
-/** An instance of this class provides access to all the operations defined in BalancesClient. */
+/**
+ * An instance of this class provides access to all the operations defined in BalancesClient.
+ */
 public interface BalancesClient {
     /**
      * Gets the balances for a scope by billingAccountId. Balances are available via this API only for May 1, 2014 or
      * later.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -29,7 +31,7 @@ public interface BalancesClient {
     /**
      * Gets the balances for a scope by billingAccountId. Balances are available via this API only for May 1, 2014 or
      * later.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -42,7 +44,7 @@ public interface BalancesClient {
     /**
      * Gets the balances for a scope by billing period and billingAccountId. Balances are available via this API only
      * for May 1, 2014 or later.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param billingPeriodName Billing Period Name.
      * @param context The context to associate with this operation.
@@ -52,13 +54,13 @@ public interface BalancesClient {
      * @return the balances for a scope by billing period and billingAccountId along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<BalanceInner> getForBillingPeriodByBillingAccountWithResponse(
-        String billingAccountId, String billingPeriodName, Context context);
+    Response<BalanceInner> getForBillingPeriodByBillingAccountWithResponse(String billingAccountId,
+        String billingPeriodName, Context context);
 
     /**
      * Gets the balances for a scope by billing period and billingAccountId. Balances are available via this API only
      * for May 1, 2014 or later.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param billingPeriodName Billing Period Name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

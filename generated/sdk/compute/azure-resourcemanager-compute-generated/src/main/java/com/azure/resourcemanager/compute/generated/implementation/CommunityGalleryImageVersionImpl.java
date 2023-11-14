@@ -14,8 +14,7 @@ public final class CommunityGalleryImageVersionImpl implements CommunityGalleryI
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    CommunityGalleryImageVersionImpl(
-        CommunityGalleryImageVersionInner innerObject,
+    CommunityGalleryImageVersionImpl(CommunityGalleryImageVersionInner innerObject,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

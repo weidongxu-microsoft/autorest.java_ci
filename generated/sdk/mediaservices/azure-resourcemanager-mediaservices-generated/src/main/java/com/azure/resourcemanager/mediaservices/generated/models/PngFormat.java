@@ -8,16 +8,22 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** Describes the settings for producing PNG thumbnails. */
+/**
+ * Describes the settings for producing PNG thumbnails.
+ */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
 @JsonTypeName("#Microsoft.Media.PngFormat")
 @Fluent
 public final class PngFormat extends ImageFormat {
-    /** Creates an instance of PngFormat class. */
+    /**
+     * Creates an instance of PngFormat class.
+     */
     public PngFormat() {
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public PngFormat withFilenamePattern(String filenamePattern) {
         super.withFilenamePattern(filenamePattern);
@@ -26,7 +32,7 @@ public final class PngFormat extends ImageFormat {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

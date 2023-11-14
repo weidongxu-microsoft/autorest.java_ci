@@ -9,7 +9,9 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** Base class for Content Key Policy restrictions. A derived class must be used to create a restriction. */
+/**
+ * Base class for Content Key Policy restrictions. A derived class must be used to create a restriction.
+ */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
     include = JsonTypeInfo.As.PROPERTY,
@@ -25,17 +27,18 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
         value = ContentKeyPolicyUnknownRestriction.class),
     @JsonSubTypes.Type(
         name = "#Microsoft.Media.ContentKeyPolicyTokenRestriction",
-        value = ContentKeyPolicyTokenRestriction.class)
-})
+        value = ContentKeyPolicyTokenRestriction.class) })
 @Immutable
 public class ContentKeyPolicyRestriction {
-    /** Creates an instance of ContentKeyPolicyRestriction class. */
+    /**
+     * Creates an instance of ContentKeyPolicyRestriction class.
+     */
     public ContentKeyPolicyRestriction() {
     }
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

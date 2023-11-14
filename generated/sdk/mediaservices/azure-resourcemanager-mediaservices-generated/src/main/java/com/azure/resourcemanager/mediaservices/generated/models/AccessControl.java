@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The AccessControl model. */
+/**
+ * The AccessControl model.
+ */
 @Fluent
 public final class AccessControl {
     /*
@@ -24,13 +26,15 @@ public final class AccessControl {
     @JsonProperty(value = "ipAllowList")
     private List<String> ipAllowList;
 
-    /** Creates an instance of AccessControl class. */
+    /**
+     * Creates an instance of AccessControl class.
+     */
     public AccessControl() {
     }
 
     /**
      * Get the defaultAction property: The behavior for IP access control in Key Delivery.
-     *
+     * 
      * @return the defaultAction value.
      */
     public DefaultAction defaultAction() {
@@ -39,7 +43,7 @@ public final class AccessControl {
 
     /**
      * Set the defaultAction property: The behavior for IP access control in Key Delivery.
-     *
+     * 
      * @param defaultAction the defaultAction value to set.
      * @return the AccessControl object itself.
      */
@@ -51,7 +55,7 @@ public final class AccessControl {
     /**
      * Get the ipAllowList property: The IP allow list for access control in Key Delivery. If the default action is set
      * to 'Allow', the IP allow list must be empty.
-     *
+     * 
      * @return the ipAllowList value.
      */
     public List<String> ipAllowList() {
@@ -61,7 +65,7 @@ public final class AccessControl {
     /**
      * Set the ipAllowList property: The IP allow list for access control in Key Delivery. If the default action is set
      * to 'Allow', the IP allow list must be empty.
-     *
+     * 
      * @param ipAllowList the ipAllowList value to set.
      * @return the AccessControl object itself.
      */
@@ -72,7 +76,7 @@ public final class AccessControl {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

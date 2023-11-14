@@ -21,22 +21,18 @@ public final class CommunityGalleryImagesImpl implements CommunityGalleryImages 
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    public CommunityGalleryImagesImpl(
-        CommunityGalleryImagesClient innerClient,
+    public CommunityGalleryImagesImpl(CommunityGalleryImagesClient innerClient,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<CommunityGalleryImage> getWithResponse(
-        String location, String publicGalleryName, String galleryImageName, Context context) {
-        Response<CommunityGalleryImageInner> inner =
-            this.serviceClient().getWithResponse(location, publicGalleryName, galleryImageName, context);
+    public Response<CommunityGalleryImage> getWithResponse(String location, String publicGalleryName,
+        String galleryImageName, Context context) {
+        Response<CommunityGalleryImageInner> inner
+            = this.serviceClient().getWithResponse(location, publicGalleryName, galleryImageName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new CommunityGalleryImageImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -58,8 +54,8 @@ public final class CommunityGalleryImagesImpl implements CommunityGalleryImages 
     }
 
     public PagedIterable<CommunityGalleryImage> list(String location, String publicGalleryName, Context context) {
-        PagedIterable<CommunityGalleryImageInner> inner =
-            this.serviceClient().list(location, publicGalleryName, context);
+        PagedIterable<CommunityGalleryImageInner> inner
+            = this.serviceClient().list(location, publicGalleryName, context);
         return Utils.mapPage(inner, inner1 -> new CommunityGalleryImageImpl(inner1, this.manager()));
     }
 

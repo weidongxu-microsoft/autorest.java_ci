@@ -7,7 +7,9 @@ package com.azure.resourcemanager.dns.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** A CNAME record. */
+/**
+ * A CNAME record.
+ */
 @Fluent
 public final class CnameRecord {
     /*
@@ -16,13 +18,15 @@ public final class CnameRecord {
     @JsonProperty(value = "cname")
     private String cname;
 
-    /** Creates an instance of CnameRecord class. */
+    /**
+     * Creates an instance of CnameRecord class.
+     */
     public CnameRecord() {
     }
 
     /**
      * Get the cname property: The canonical name for this CNAME record.
-     *
+     * 
      * @return the cname value.
      */
     public String cname() {
@@ -31,7 +35,7 @@ public final class CnameRecord {
 
     /**
      * Set the cname property: The canonical name for this CNAME record.
-     *
+     * 
      * @param cname the cname value to set.
      * @return the CnameRecord object itself.
      */
@@ -42,7 +46,7 @@ public final class CnameRecord {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

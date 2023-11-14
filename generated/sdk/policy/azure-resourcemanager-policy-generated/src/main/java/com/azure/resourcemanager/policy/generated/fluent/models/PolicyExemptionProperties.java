@@ -11,7 +11,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
 
-/** The policy exemption properties. */
+/**
+ * The policy exemption properties.
+ */
 @Fluent
 public final class PolicyExemptionProperties {
     /*
@@ -58,13 +60,15 @@ public final class PolicyExemptionProperties {
     @JsonProperty(value = "metadata")
     private Object metadata;
 
-    /** Creates an instance of PolicyExemptionProperties class. */
+    /**
+     * Creates an instance of PolicyExemptionProperties class.
+     */
     public PolicyExemptionProperties() {
     }
 
     /**
      * Get the policyAssignmentId property: The ID of the policy assignment that is being exempted.
-     *
+     * 
      * @return the policyAssignmentId value.
      */
     public String policyAssignmentId() {
@@ -73,7 +77,7 @@ public final class PolicyExemptionProperties {
 
     /**
      * Set the policyAssignmentId property: The ID of the policy assignment that is being exempted.
-     *
+     * 
      * @param policyAssignmentId the policyAssignmentId value to set.
      * @return the PolicyExemptionProperties object itself.
      */
@@ -83,9 +87,9 @@ public final class PolicyExemptionProperties {
     }
 
     /**
-     * Get the policyDefinitionReferenceIds property: The policy definition reference ID list when the associated policy
-     * assignment is an assignment of a policy set definition.
-     *
+     * Get the policyDefinitionReferenceIds property: The policy definition reference ID list when the associated
+     * policy assignment is an assignment of a policy set definition.
+     * 
      * @return the policyDefinitionReferenceIds value.
      */
     public List<String> policyDefinitionReferenceIds() {
@@ -93,9 +97,9 @@ public final class PolicyExemptionProperties {
     }
 
     /**
-     * Set the policyDefinitionReferenceIds property: The policy definition reference ID list when the associated policy
-     * assignment is an assignment of a policy set definition.
-     *
+     * Set the policyDefinitionReferenceIds property: The policy definition reference ID list when the associated
+     * policy assignment is an assignment of a policy set definition.
+     * 
      * @param policyDefinitionReferenceIds the policyDefinitionReferenceIds value to set.
      * @return the PolicyExemptionProperties object itself.
      */
@@ -106,7 +110,7 @@ public final class PolicyExemptionProperties {
 
     /**
      * Get the exemptionCategory property: The policy exemption category. Possible values are Waiver and Mitigated.
-     *
+     * 
      * @return the exemptionCategory value.
      */
     public ExemptionCategory exemptionCategory() {
@@ -115,7 +119,7 @@ public final class PolicyExemptionProperties {
 
     /**
      * Set the exemptionCategory property: The policy exemption category. Possible values are Waiver and Mitigated.
-     *
+     * 
      * @param exemptionCategory the exemptionCategory value to set.
      * @return the PolicyExemptionProperties object itself.
      */
@@ -127,7 +131,7 @@ public final class PolicyExemptionProperties {
     /**
      * Get the expiresOn property: The expiration date and time (in UTC ISO 8601 format yyyy-MM-ddTHH:mm:ssZ) of the
      * policy exemption.
-     *
+     * 
      * @return the expiresOn value.
      */
     public OffsetDateTime expiresOn() {
@@ -137,7 +141,7 @@ public final class PolicyExemptionProperties {
     /**
      * Set the expiresOn property: The expiration date and time (in UTC ISO 8601 format yyyy-MM-ddTHH:mm:ssZ) of the
      * policy exemption.
-     *
+     * 
      * @param expiresOn the expiresOn value to set.
      * @return the PolicyExemptionProperties object itself.
      */
@@ -148,7 +152,7 @@ public final class PolicyExemptionProperties {
 
     /**
      * Get the displayName property: The display name of the policy exemption.
-     *
+     * 
      * @return the displayName value.
      */
     public String displayName() {
@@ -157,7 +161,7 @@ public final class PolicyExemptionProperties {
 
     /**
      * Set the displayName property: The display name of the policy exemption.
-     *
+     * 
      * @param displayName the displayName value to set.
      * @return the PolicyExemptionProperties object itself.
      */
@@ -168,7 +172,7 @@ public final class PolicyExemptionProperties {
 
     /**
      * Get the description property: The description of the policy exemption.
-     *
+     * 
      * @return the description value.
      */
     public String description() {
@@ -177,7 +181,7 @@ public final class PolicyExemptionProperties {
 
     /**
      * Set the description property: The description of the policy exemption.
-     *
+     * 
      * @param description the description value to set.
      * @return the PolicyExemptionProperties object itself.
      */
@@ -189,7 +193,7 @@ public final class PolicyExemptionProperties {
     /**
      * Get the metadata property: The policy exemption metadata. Metadata is an open ended object and is typically a
      * collection of key value pairs.
-     *
+     * 
      * @return the metadata value.
      */
     public Object metadata() {
@@ -199,7 +203,7 @@ public final class PolicyExemptionProperties {
     /**
      * Set the metadata property: The policy exemption metadata. Metadata is an open ended object and is typically a
      * collection of key value pairs.
-     *
+     * 
      * @param metadata the metadata value to set.
      * @return the PolicyExemptionProperties object itself.
      */
@@ -210,21 +214,17 @@ public final class PolicyExemptionProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (policyAssignmentId() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property policyAssignmentId in model PolicyExemptionProperties"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property policyAssignmentId in model PolicyExemptionProperties"));
         }
         if (exemptionCategory() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property exemptionCategory in model PolicyExemptionProperties"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property exemptionCategory in model PolicyExemptionProperties"));
         }
     }
 

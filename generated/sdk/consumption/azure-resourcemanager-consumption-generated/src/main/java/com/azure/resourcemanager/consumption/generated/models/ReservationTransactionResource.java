@@ -9,7 +9,9 @@ import com.azure.core.management.ProxyResource;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The Resource model definition. */
+/**
+ * The Resource model definition.
+ */
 @Immutable
 public class ReservationTransactionResource extends ProxyResource {
     /*
@@ -18,13 +20,15 @@ public class ReservationTransactionResource extends ProxyResource {
     @JsonProperty(value = "tags", access = JsonProperty.Access.WRITE_ONLY)
     private List<String> tags;
 
-    /** Creates an instance of ReservationTransactionResource class. */
+    /**
+     * Creates an instance of ReservationTransactionResource class.
+     */
     public ReservationTransactionResource() {
     }
 
     /**
      * Get the tags property: Resource tags.
-     *
+     * 
      * @return the tags value.
      */
     public List<String> tags() {
@@ -33,7 +37,7 @@ public class ReservationTransactionResource extends ProxyResource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

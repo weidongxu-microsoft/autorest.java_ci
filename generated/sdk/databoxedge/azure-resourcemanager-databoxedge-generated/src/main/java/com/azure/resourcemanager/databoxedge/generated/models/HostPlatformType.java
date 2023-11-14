@@ -8,17 +8,23 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Platform where the runtime is hosted. */
+/**
+ * Platform where the runtime is hosted.
+ */
 public final class HostPlatformType extends ExpandableStringEnum<HostPlatformType> {
-    /** Static value KubernetesCluster for HostPlatformType. */
+    /**
+     * Static value KubernetesCluster for HostPlatformType.
+     */
     public static final HostPlatformType KUBERNETES_CLUSTER = fromString("KubernetesCluster");
 
-    /** Static value LinuxVM for HostPlatformType. */
+    /**
+     * Static value LinuxVM for HostPlatformType.
+     */
     public static final HostPlatformType LINUX_VM = fromString("LinuxVM");
 
     /**
      * Creates a new instance of HostPlatformType value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -27,7 +33,7 @@ public final class HostPlatformType extends ExpandableStringEnum<HostPlatformTyp
 
     /**
      * Creates or finds a HostPlatformType from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding HostPlatformType.
      */
@@ -38,7 +44,7 @@ public final class HostPlatformType extends ExpandableStringEnum<HostPlatformTyp
 
     /**
      * Gets known HostPlatformType values.
-     *
+     * 
      * @return known HostPlatformType values.
      */
     public static Collection<HostPlatformType> values() {

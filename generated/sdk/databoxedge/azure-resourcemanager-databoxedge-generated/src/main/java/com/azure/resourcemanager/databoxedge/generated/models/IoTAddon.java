@@ -12,7 +12,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** IoT Addon. */
+/**
+ * IoT Addon.
+ */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "kind")
 @JsonTypeName("IotEdge")
 @Fluent
@@ -23,13 +25,15 @@ public final class IoTAddon extends AddonInner {
     @JsonProperty(value = "properties", required = true)
     private IoTAddonProperties innerProperties = new IoTAddonProperties();
 
-    /** Creates an instance of IoTAddon class. */
+    /**
+     * Creates an instance of IoTAddon class.
+     */
     public IoTAddon() {
     }
 
     /**
      * Get the innerProperties property: Properties specific to IOT addon.
-     *
+     * 
      * @return the innerProperties value.
      */
     private IoTAddonProperties innerProperties() {
@@ -38,7 +42,7 @@ public final class IoTAddon extends AddonInner {
 
     /**
      * Get the ioTDeviceDetails property: IoT device metadata to which appliance needs to be connected.
-     *
+     * 
      * @return the ioTDeviceDetails value.
      */
     public IoTDeviceInfo ioTDeviceDetails() {
@@ -47,7 +51,7 @@ public final class IoTAddon extends AddonInner {
 
     /**
      * Set the ioTDeviceDetails property: IoT device metadata to which appliance needs to be connected.
-     *
+     * 
      * @param ioTDeviceDetails the ioTDeviceDetails value to set.
      * @return the IoTAddon object itself.
      */
@@ -61,7 +65,7 @@ public final class IoTAddon extends AddonInner {
 
     /**
      * Get the ioTEdgeDeviceDetails property: IoT edge device to which the IoT Addon needs to be configured.
-     *
+     * 
      * @return the ioTEdgeDeviceDetails value.
      */
     public IoTDeviceInfo ioTEdgeDeviceDetails() {
@@ -70,7 +74,7 @@ public final class IoTAddon extends AddonInner {
 
     /**
      * Set the ioTEdgeDeviceDetails property: IoT edge device to which the IoT Addon needs to be configured.
-     *
+     * 
      * @param ioTEdgeDeviceDetails the ioTEdgeDeviceDetails value to set.
      * @return the IoTAddon object itself.
      */
@@ -84,7 +88,7 @@ public final class IoTAddon extends AddonInner {
 
     /**
      * Get the version property: Version of IoT running on the appliance.
-     *
+     * 
      * @return the version value.
      */
     public String version() {
@@ -93,7 +97,7 @@ public final class IoTAddon extends AddonInner {
 
     /**
      * Get the hostPlatform property: Host OS supported by the IoT addon.
-     *
+     * 
      * @return the hostPlatform value.
      */
     public PlatformType hostPlatform() {
@@ -102,7 +106,7 @@ public final class IoTAddon extends AddonInner {
 
     /**
      * Get the hostPlatformType property: Platform where the runtime is hosted.
-     *
+     * 
      * @return the hostPlatformType value.
      */
     public HostPlatformType hostPlatformType() {
@@ -111,7 +115,7 @@ public final class IoTAddon extends AddonInner {
 
     /**
      * Get the provisioningState property: Addon Provisioning State.
-     *
+     * 
      * @return the provisioningState value.
      */
     public AddonState provisioningState() {
@@ -120,16 +124,15 @@ public final class IoTAddon extends AddonInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override
     public void validate() {
         super.validate();
         if (innerProperties() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property innerProperties in model IoTAddon"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property innerProperties in model IoTAddon"));
         } else {
             innerProperties().validate();
         }

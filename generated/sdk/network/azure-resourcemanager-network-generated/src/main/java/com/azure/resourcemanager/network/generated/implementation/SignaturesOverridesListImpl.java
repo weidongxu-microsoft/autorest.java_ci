@@ -17,8 +17,7 @@ public final class SignaturesOverridesListImpl implements SignaturesOverridesLis
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    SignaturesOverridesListImpl(
-        SignaturesOverridesListInner innerObject,
+    SignaturesOverridesListImpl(SignaturesOverridesListInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -27,12 +26,8 @@ public final class SignaturesOverridesListImpl implements SignaturesOverridesLis
     public List<SignaturesOverrides> value() {
         List<SignaturesOverridesInner> inner = this.innerModel().value();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new SignaturesOverridesImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new SignaturesOverridesImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

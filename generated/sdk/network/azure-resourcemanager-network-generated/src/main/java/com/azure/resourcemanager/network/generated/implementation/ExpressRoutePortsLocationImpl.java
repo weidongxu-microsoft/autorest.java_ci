@@ -17,8 +17,7 @@ public final class ExpressRoutePortsLocationImpl implements ExpressRoutePortsLoc
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    ExpressRoutePortsLocationImpl(
-        ExpressRoutePortsLocationInner innerObject,
+    ExpressRoutePortsLocationImpl(ExpressRoutePortsLocationInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

@@ -30,21 +30,18 @@ public final class DomainsImpl implements Domains {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    public DomainsImpl(
-        DomainsClient innerClient, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
+    public DomainsImpl(DomainsClient innerClient,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<DomainAvailabilityCheckResult> checkAvailabilityWithResponse(
-        NameIdentifierInner identifier, Context context) {
-        Response<DomainAvailabilityCheckResultInner> inner =
-            this.serviceClient().checkAvailabilityWithResponse(identifier, context);
+    public Response<DomainAvailabilityCheckResult> checkAvailabilityWithResponse(NameIdentifierInner identifier,
+        Context context) {
+        Response<DomainAvailabilityCheckResultInner> inner
+            = this.serviceClient().checkAvailabilityWithResponse(identifier, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DomainAvailabilityCheckResultImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -71,13 +68,10 @@ public final class DomainsImpl implements Domains {
     }
 
     public Response<DomainControlCenterSsoRequest> getControlCenterSsoRequestWithResponse(Context context) {
-        Response<DomainControlCenterSsoRequestInner> inner =
-            this.serviceClient().getControlCenterSsoRequestWithResponse(context);
+        Response<DomainControlCenterSsoRequestInner> inner
+            = this.serviceClient().getControlCenterSsoRequestWithResponse(context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DomainControlCenterSsoRequestImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -98,8 +92,8 @@ public final class DomainsImpl implements Domains {
         return Utils.mapPage(inner, inner1 -> new NameIdentifierImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<NameIdentifier> listRecommendations(
-        DomainRecommendationSearchParameters parameters, Context context) {
+    public PagedIterable<NameIdentifier> listRecommendations(DomainRecommendationSearchParameters parameters,
+        Context context) {
         PagedIterable<NameIdentifierInner> inner = this.serviceClient().listRecommendations(parameters, context);
         return Utils.mapPage(inner, inner1 -> new NameIdentifierImpl(inner1, this.manager()));
     }
@@ -114,15 +108,12 @@ public final class DomainsImpl implements Domains {
         return Utils.mapPage(inner, inner1 -> new DomainImpl(inner1, this.manager()));
     }
 
-    public Response<Domain> getByResourceGroupWithResponse(
-        String resourceGroupName, String domainName, Context context) {
-        Response<DomainInner> inner =
-            this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, domainName, context);
+    public Response<Domain> getByResourceGroupWithResponse(String resourceGroupName, String domainName,
+        Context context) {
+        Response<DomainInner> inner
+            = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, domainName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DomainImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -138,8 +129,8 @@ public final class DomainsImpl implements Domains {
         }
     }
 
-    public Response<Void> deleteWithResponse(
-        String resourceGroupName, String domainName, Boolean forceHardDeleteDomain, Context context) {
+    public Response<Void> deleteWithResponse(String resourceGroupName, String domainName, Boolean forceHardDeleteDomain,
+        Context context) {
         return this.serviceClient().deleteWithResponse(resourceGroupName, domainName, forceHardDeleteDomain, context);
     }
 
@@ -147,29 +138,26 @@ public final class DomainsImpl implements Domains {
         this.serviceClient().delete(resourceGroupName, domainName);
     }
 
-    public PagedIterable<DomainOwnershipIdentifier> listOwnershipIdentifiers(
-        String resourceGroupName, String domainName) {
-        PagedIterable<DomainOwnershipIdentifierInner> inner =
-            this.serviceClient().listOwnershipIdentifiers(resourceGroupName, domainName);
+    public PagedIterable<DomainOwnershipIdentifier> listOwnershipIdentifiers(String resourceGroupName,
+        String domainName) {
+        PagedIterable<DomainOwnershipIdentifierInner> inner
+            = this.serviceClient().listOwnershipIdentifiers(resourceGroupName, domainName);
         return Utils.mapPage(inner, inner1 -> new DomainOwnershipIdentifierImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<DomainOwnershipIdentifier> listOwnershipIdentifiers(
-        String resourceGroupName, String domainName, Context context) {
-        PagedIterable<DomainOwnershipIdentifierInner> inner =
-            this.serviceClient().listOwnershipIdentifiers(resourceGroupName, domainName, context);
+    public PagedIterable<DomainOwnershipIdentifier> listOwnershipIdentifiers(String resourceGroupName,
+        String domainName, Context context) {
+        PagedIterable<DomainOwnershipIdentifierInner> inner
+            = this.serviceClient().listOwnershipIdentifiers(resourceGroupName, domainName, context);
         return Utils.mapPage(inner, inner1 -> new DomainOwnershipIdentifierImpl(inner1, this.manager()));
     }
 
-    public Response<DomainOwnershipIdentifier> getOwnershipIdentifierWithResponse(
-        String resourceGroupName, String domainName, String name, Context context) {
-        Response<DomainOwnershipIdentifierInner> inner =
-            this.serviceClient().getOwnershipIdentifierWithResponse(resourceGroupName, domainName, name, context);
+    public Response<DomainOwnershipIdentifier> getOwnershipIdentifierWithResponse(String resourceGroupName,
+        String domainName, String name, Context context) {
+        Response<DomainOwnershipIdentifierInner> inner
+            = this.serviceClient().getOwnershipIdentifierWithResponse(resourceGroupName, domainName, name, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DomainOwnershipIdentifierImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -177,8 +165,8 @@ public final class DomainsImpl implements Domains {
     }
 
     public DomainOwnershipIdentifier getOwnershipIdentifier(String resourceGroupName, String domainName, String name) {
-        DomainOwnershipIdentifierInner inner =
-            this.serviceClient().getOwnershipIdentifier(resourceGroupName, domainName, name);
+        DomainOwnershipIdentifierInner inner
+            = this.serviceClient().getOwnershipIdentifier(resourceGroupName, domainName, name);
         if (inner != null) {
             return new DomainOwnershipIdentifierImpl(inner, this.manager());
         } else {
@@ -186,8 +174,8 @@ public final class DomainsImpl implements Domains {
         }
     }
 
-    public Response<Void> deleteOwnershipIdentifierWithResponse(
-        String resourceGroupName, String domainName, String name, Context context) {
+    public Response<Void> deleteOwnershipIdentifierWithResponse(String resourceGroupName, String domainName,
+        String name, Context context) {
         return this.serviceClient().deleteOwnershipIdentifierWithResponse(resourceGroupName, domainName, name, context);
     }
 
@@ -204,13 +192,10 @@ public final class DomainsImpl implements Domains {
     }
 
     public Response<Domain> transferOutWithResponse(String resourceGroupName, String domainName, Context context) {
-        Response<DomainInner> inner =
-            this.serviceClient().transferOutWithResponse(resourceGroupName, domainName, context);
+        Response<DomainInner> inner
+            = this.serviceClient().transferOutWithResponse(resourceGroupName, domainName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DomainImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -229,18 +214,13 @@ public final class DomainsImpl implements Domains {
     public Domain getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String domainName = Utils.getValueFromIdByName(id, "domains");
         if (domainName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'domains'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'domains'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, domainName, Context.NONE).getValue();
     }
@@ -248,18 +228,13 @@ public final class DomainsImpl implements Domains {
     public Response<Domain> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String domainName = Utils.getValueFromIdByName(id, "domains");
         if (domainName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'domains'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'domains'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, domainName, context);
     }
@@ -267,28 +242,18 @@ public final class DomainsImpl implements Domains {
     public DomainOwnershipIdentifier getOwnershipIdentifierById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String domainName = Utils.getValueFromIdByName(id, "domains");
         if (domainName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'domains'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'domains'.", id)));
         }
         String name = Utils.getValueFromIdByName(id, "domainOwnershipIdentifiers");
         if (name == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'domainOwnershipIdentifiers'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'domainOwnershipIdentifiers'.", id)));
         }
         return this.getOwnershipIdentifierWithResponse(resourceGroupName, domainName, name, Context.NONE).getValue();
     }
@@ -296,28 +261,18 @@ public final class DomainsImpl implements Domains {
     public Response<DomainOwnershipIdentifier> getOwnershipIdentifierByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String domainName = Utils.getValueFromIdByName(id, "domains");
         if (domainName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'domains'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'domains'.", id)));
         }
         String name = Utils.getValueFromIdByName(id, "domainOwnershipIdentifiers");
         if (name == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'domainOwnershipIdentifiers'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'domainOwnershipIdentifiers'.", id)));
         }
         return this.getOwnershipIdentifierWithResponse(resourceGroupName, domainName, name, context);
     }
@@ -325,18 +280,13 @@ public final class DomainsImpl implements Domains {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String domainName = Utils.getValueFromIdByName(id, "domains");
         if (domainName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'domains'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'domains'.", id)));
         }
         Boolean localForceHardDeleteDomain = null;
         this.deleteWithResponse(resourceGroupName, domainName, localForceHardDeleteDomain, Context.NONE);
@@ -345,18 +295,13 @@ public final class DomainsImpl implements Domains {
     public Response<Void> deleteByIdWithResponse(String id, Boolean forceHardDeleteDomain, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String domainName = Utils.getValueFromIdByName(id, "domains");
         if (domainName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'domains'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'domains'.", id)));
         }
         return this.deleteWithResponse(resourceGroupName, domainName, forceHardDeleteDomain, context);
     }
@@ -364,28 +309,18 @@ public final class DomainsImpl implements Domains {
     public void deleteOwnershipIdentifierById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String domainName = Utils.getValueFromIdByName(id, "domains");
         if (domainName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'domains'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'domains'.", id)));
         }
         String name = Utils.getValueFromIdByName(id, "domainOwnershipIdentifiers");
         if (name == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'domainOwnershipIdentifiers'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'domainOwnershipIdentifiers'.", id)));
         }
         this.deleteOwnershipIdentifierWithResponse(resourceGroupName, domainName, name, Context.NONE);
     }
@@ -393,28 +328,18 @@ public final class DomainsImpl implements Domains {
     public Response<Void> deleteOwnershipIdentifierByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String domainName = Utils.getValueFromIdByName(id, "domains");
         if (domainName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'domains'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'domains'.", id)));
         }
         String name = Utils.getValueFromIdByName(id, "domainOwnershipIdentifiers");
         if (name == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'domainOwnershipIdentifiers'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'domainOwnershipIdentifiers'.", id)));
         }
         return this.deleteOwnershipIdentifierWithResponse(resourceGroupName, domainName, name, context);
     }

@@ -12,8 +12,8 @@ public final class AccessUriImpl implements AccessUri {
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    AccessUriImpl(
-        AccessUriInner innerObject, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
+    AccessUriImpl(AccessUriInner innerObject,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

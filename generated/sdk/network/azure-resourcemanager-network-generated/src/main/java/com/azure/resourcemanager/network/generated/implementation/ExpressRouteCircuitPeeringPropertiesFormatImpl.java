@@ -29,8 +29,7 @@ public final class ExpressRouteCircuitPeeringPropertiesFormatImpl
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    ExpressRouteCircuitPeeringPropertiesFormatImpl(
-        ExpressRouteCircuitPeeringPropertiesFormatInner innerObject,
+    ExpressRouteCircuitPeeringPropertiesFormatImpl(ExpressRouteCircuitPeeringPropertiesFormatInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -116,12 +115,9 @@ public final class ExpressRouteCircuitPeeringPropertiesFormatImpl
     public List<ExpressRouteCircuitConnection> connections() {
         List<ExpressRouteCircuitConnectionInner> inner = this.innerModel().connections();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new ExpressRouteCircuitConnectionImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(
+                inner.stream().map(inner1 -> new ExpressRouteCircuitConnectionImpl(inner1, this.manager()))
+                    .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -130,12 +126,9 @@ public final class ExpressRouteCircuitPeeringPropertiesFormatImpl
     public List<PeerExpressRouteCircuitConnection> peeredConnections() {
         List<PeerExpressRouteCircuitConnectionInner> inner = this.innerModel().peeredConnections();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new PeerExpressRouteCircuitConnectionImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(
+                inner.stream().map(inner1 -> new PeerExpressRouteCircuitConnectionImpl(inner1, this.manager()))
+                    .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

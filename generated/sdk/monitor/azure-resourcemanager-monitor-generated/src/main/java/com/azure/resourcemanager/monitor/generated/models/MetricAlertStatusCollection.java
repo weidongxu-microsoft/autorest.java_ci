@@ -7,18 +7,20 @@ package com.azure.resourcemanager.monitor.generated.models;
 import com.azure.resourcemanager.monitor.generated.fluent.models.MetricAlertStatusCollectionInner;
 import java.util.List;
 
-/** An immutable client-side representation of MetricAlertStatusCollection. */
+/**
+ * An immutable client-side representation of MetricAlertStatusCollection.
+ */
 public interface MetricAlertStatusCollection {
     /**
      * Gets the value property: the values for the alert rule resources.
-     *
+     * 
      * @return the value value.
      */
     List<MetricAlertStatus> value();
 
     /**
      * Gets the inner com.azure.resourcemanager.monitor.generated.fluent.models.MetricAlertStatusCollectionInner object.
-     *
+     * 
      * @return the inner object.
      */
     MetricAlertStatusCollectionInner innerModel();

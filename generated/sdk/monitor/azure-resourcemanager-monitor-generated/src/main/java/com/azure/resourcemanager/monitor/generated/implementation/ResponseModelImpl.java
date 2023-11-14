@@ -4,22 +4,19 @@
 
 package com.azure.resourcemanager.monitor.generated.implementation;
 
-import com.azure.resourcemanager.monitor.generated.fluent.models.MetricInner;
 import com.azure.resourcemanager.monitor.generated.fluent.models.ResponseInner;
 import com.azure.resourcemanager.monitor.generated.models.Metric;
 import com.azure.resourcemanager.monitor.generated.models.ResponseModel;
-import java.time.Duration;
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public final class ResponseModelImpl implements ResponseModel {
     private ResponseInner innerObject;
 
     private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    ResponseModelImpl(
-        ResponseInner innerObject, com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
+    ResponseModelImpl(ResponseInner innerObject,
+        com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -32,7 +29,7 @@ public final class ResponseModelImpl implements ResponseModel {
         return this.innerModel().timespan();
     }
 
-    public Duration interval() {
+    public String interval() {
         return this.innerModel().interval();
     }
 
@@ -45,11 +42,9 @@ public final class ResponseModelImpl implements ResponseModel {
     }
 
     public List<Metric> value() {
-        List<MetricInner> inner = this.innerModel().value();
+        List<Metric> inner = this.innerModel().value();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner.stream().map(inner1 -> new MetricImpl(inner1, this.manager())).collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner);
         } else {
             return Collections.emptyList();
         }

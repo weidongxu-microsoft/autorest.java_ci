@@ -9,7 +9,9 @@ import com.azure.resourcemanager.mediaservices.generated.fluent.models.ContentKe
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** A collection of ContentKeyPolicy items. */
+/**
+ * A collection of ContentKeyPolicy items.
+ */
 @Fluent
 public final class ContentKeyPolicyCollection {
     /*
@@ -25,13 +27,15 @@ public final class ContentKeyPolicyCollection {
     @JsonProperty(value = "@odata.nextLink")
     private String odataNextLink;
 
-    /** Creates an instance of ContentKeyPolicyCollection class. */
+    /**
+     * Creates an instance of ContentKeyPolicyCollection class.
+     */
     public ContentKeyPolicyCollection() {
     }
 
     /**
      * Get the value property: A collection of ContentKeyPolicy items.
-     *
+     * 
      * @return the value value.
      */
     public List<ContentKeyPolicyInner> value() {
@@ -40,7 +44,7 @@ public final class ContentKeyPolicyCollection {
 
     /**
      * Set the value property: A collection of ContentKeyPolicy items.
-     *
+     * 
      * @param value the value value to set.
      * @return the ContentKeyPolicyCollection object itself.
      */
@@ -52,7 +56,7 @@ public final class ContentKeyPolicyCollection {
     /**
      * Get the odataNextLink property: A link to the next page of the collection (when the collection contains too many
      * results to return in one response).
-     *
+     * 
      * @return the odataNextLink value.
      */
     public String odataNextLink() {
@@ -62,7 +66,7 @@ public final class ContentKeyPolicyCollection {
     /**
      * Set the odataNextLink property: A link to the next page of the collection (when the collection contains too many
      * results to return in one response).
-     *
+     * 
      * @param odataNextLink the odataNextLink value to set.
      * @return the ContentKeyPolicyCollection object itself.
      */
@@ -73,7 +77,7 @@ public final class ContentKeyPolicyCollection {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

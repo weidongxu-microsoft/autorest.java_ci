@@ -9,7 +9,9 @@ import com.azure.resourcemanager.mediaservices.generated.models.ArmStreamingEndp
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The StreamingEndpointSkuInfoListResult model. */
+/**
+ * The StreamingEndpointSkuInfoListResult model.
+ */
 @Fluent
 public final class StreamingEndpointSkuInfoListResultInner {
     /*
@@ -18,13 +20,15 @@ public final class StreamingEndpointSkuInfoListResultInner {
     @JsonProperty(value = "value")
     private List<ArmStreamingEndpointSkuInfo> value;
 
-    /** Creates an instance of StreamingEndpointSkuInfoListResultInner class. */
+    /**
+     * Creates an instance of StreamingEndpointSkuInfoListResultInner class.
+     */
     public StreamingEndpointSkuInfoListResultInner() {
     }
 
     /**
      * Get the value property: The result of the List StreamingEndpoint skus.
-     *
+     * 
      * @return the value value.
      */
     public List<ArmStreamingEndpointSkuInfo> value() {
@@ -33,7 +37,7 @@ public final class StreamingEndpointSkuInfoListResultInner {
 
     /**
      * Set the value property: The result of the List StreamingEndpoint skus.
-     *
+     * 
      * @param value the value value to set.
      * @return the StreamingEndpointSkuInfoListResultInner object itself.
      */
@@ -44,7 +48,7 @@ public final class StreamingEndpointSkuInfoListResultInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

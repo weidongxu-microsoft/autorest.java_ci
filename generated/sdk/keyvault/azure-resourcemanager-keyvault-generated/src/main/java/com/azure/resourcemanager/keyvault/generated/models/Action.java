@@ -7,22 +7,26 @@ package com.azure.resourcemanager.keyvault.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The Action model. */
+/**
+ * The Action model.
+ */
 @Fluent
 public final class Action {
     /*
-     * The type of the action. The value should be compared case-insensitively.
+     * The type of action.
      */
     @JsonProperty(value = "type")
     private KeyRotationPolicyActionType type;
 
-    /** Creates an instance of Action class. */
+    /**
+     * Creates an instance of Action class.
+     */
     public Action() {
     }
 
     /**
-     * Get the type property: The type of the action. The value should be compared case-insensitively.
-     *
+     * Get the type property: The type of action.
+     * 
      * @return the type value.
      */
     public KeyRotationPolicyActionType type() {
@@ -30,8 +34,8 @@ public final class Action {
     }
 
     /**
-     * Set the type property: The type of the action. The value should be compared case-insensitively.
-     *
+     * Set the type property: The type of action.
+     * 
      * @param type the type value to set.
      * @return the Action object itself.
      */
@@ -42,7 +46,7 @@ public final class Action {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

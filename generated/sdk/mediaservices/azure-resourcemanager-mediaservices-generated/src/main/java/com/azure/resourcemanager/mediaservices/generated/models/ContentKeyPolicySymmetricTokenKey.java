@@ -11,7 +11,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** Specifies a symmetric key for token validation. */
+/**
+ * Specifies a symmetric key for token validation.
+ */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
 @JsonTypeName("#Microsoft.Media.ContentKeyPolicySymmetricTokenKey")
 @Fluent
@@ -22,13 +24,15 @@ public final class ContentKeyPolicySymmetricTokenKey extends ContentKeyPolicyRes
     @JsonProperty(value = "keyValue", required = true)
     private byte[] keyValue;
 
-    /** Creates an instance of ContentKeyPolicySymmetricTokenKey class. */
+    /**
+     * Creates an instance of ContentKeyPolicySymmetricTokenKey class.
+     */
     public ContentKeyPolicySymmetricTokenKey() {
     }
 
     /**
      * Get the keyValue property: The key value of the key.
-     *
+     * 
      * @return the keyValue value.
      */
     public byte[] keyValue() {
@@ -37,7 +41,7 @@ public final class ContentKeyPolicySymmetricTokenKey extends ContentKeyPolicyRes
 
     /**
      * Set the keyValue property: The key value of the key.
-     *
+     * 
      * @param keyValue the keyValue value to set.
      * @return the ContentKeyPolicySymmetricTokenKey object itself.
      */
@@ -48,17 +52,15 @@ public final class ContentKeyPolicySymmetricTokenKey extends ContentKeyPolicyRes
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override
     public void validate() {
         super.validate();
         if (keyValue() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property keyValue in model ContentKeyPolicySymmetricTokenKey"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property keyValue in model ContentKeyPolicySymmetricTokenKey"));
         }
     }
 

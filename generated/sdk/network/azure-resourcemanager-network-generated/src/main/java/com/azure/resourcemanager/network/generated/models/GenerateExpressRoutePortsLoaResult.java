@@ -6,11 +6,13 @@ package com.azure.resourcemanager.network.generated.models;
 
 import com.azure.resourcemanager.network.generated.fluent.models.GenerateExpressRoutePortsLoaResultInner;
 
-/** An immutable client-side representation of GenerateExpressRoutePortsLoaResult. */
+/**
+ * An immutable client-side representation of GenerateExpressRoutePortsLoaResult.
+ */
 public interface GenerateExpressRoutePortsLoaResult {
     /**
      * Gets the encodedContent property: The content as a base64 encoded string.
-     *
+     * 
      * @return the encodedContent value.
      */
     String encodedContent();
@@ -18,7 +20,7 @@ public interface GenerateExpressRoutePortsLoaResult {
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.GenerateExpressRoutePortsLoaResultInner
      * object.
-     *
+     * 
      * @return the inner object.
      */
     GenerateExpressRoutePortsLoaResultInner innerModel();

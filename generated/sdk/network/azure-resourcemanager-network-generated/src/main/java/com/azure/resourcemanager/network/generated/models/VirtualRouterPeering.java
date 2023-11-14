@@ -7,87 +7,97 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualRouterPeeringInner;
 
-/** An immutable client-side representation of VirtualRouterPeering. */
+/**
+ * An immutable client-side representation of VirtualRouterPeering.
+ */
 public interface VirtualRouterPeering {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the name property: Name of the virtual router peering that is unique within a virtual router.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the etag property: A unique read-only string that changes whenever the resource is updated.
-     *
+     * 
      * @return the etag value.
      */
     String etag();
 
     /**
      * Gets the type property: Peering type.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the peerAsn property: Peer ASN.
-     *
+     * 
      * @return the peerAsn value.
      */
     Long peerAsn();
 
     /**
      * Gets the peerIp property: Peer IP.
-     *
+     * 
      * @return the peerIp value.
      */
     String peerIp();
 
     /**
      * Gets the provisioningState property: The provisioning state of the resource.
-     *
+     * 
      * @return the provisioningState value.
      */
     ProvisioningState provisioningState();
 
     /**
      * Gets the name of the resource group.
-     *
+     * 
      * @return the name of the resource group.
      */
     String resourceGroupName();
 
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.VirtualRouterPeeringInner object.
-     *
+     * 
      * @return the inner object.
      */
     VirtualRouterPeeringInner innerModel();
 
-    /** The entirety of the VirtualRouterPeering definition. */
+    /**
+     * The entirety of the VirtualRouterPeering definition.
+     */
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
 
-    /** The VirtualRouterPeering definition stages. */
+    /**
+     * The VirtualRouterPeering definition stages.
+     */
     interface DefinitionStages {
-        /** The first stage of the VirtualRouterPeering definition. */
+        /**
+         * The first stage of the VirtualRouterPeering definition.
+         */
         interface Blank extends WithParentResource {
         }
 
-        /** The stage of the VirtualRouterPeering definition allowing to specify parent resource. */
+        /**
+         * The stage of the VirtualRouterPeering definition allowing to specify parent resource.
+         */
         interface WithParentResource {
             /**
              * Specifies resourceGroupName, virtualRouterName.
-             *
+             * 
              * @param resourceGroupName The name of the resource group.
              * @param virtualRouterName The name of the Virtual Router.
              * @return the next definition stage.
@@ -103,47 +113,53 @@ public interface VirtualRouterPeering {
             extends DefinitionStages.WithName, DefinitionStages.WithPeerAsn, DefinitionStages.WithPeerIp {
             /**
              * Executes the create request.
-             *
+             * 
              * @return the created resource.
              */
             VirtualRouterPeering create();
 
             /**
              * Executes the create request.
-             *
+             * 
              * @param context The context to associate with this operation.
              * @return the created resource.
              */
             VirtualRouterPeering create(Context context);
         }
 
-        /** The stage of the VirtualRouterPeering definition allowing to specify name. */
+        /**
+         * The stage of the VirtualRouterPeering definition allowing to specify name.
+         */
         interface WithName {
             /**
              * Specifies the name property: Name of the virtual router peering that is unique within a virtual router..
-             *
+             * 
              * @param name Name of the virtual router peering that is unique within a virtual router.
              * @return the next definition stage.
              */
             WithCreate withName(String name);
         }
 
-        /** The stage of the VirtualRouterPeering definition allowing to specify peerAsn. */
+        /**
+         * The stage of the VirtualRouterPeering definition allowing to specify peerAsn.
+         */
         interface WithPeerAsn {
             /**
              * Specifies the peerAsn property: Peer ASN..
-             *
+             * 
              * @param peerAsn Peer ASN.
              * @return the next definition stage.
              */
             WithCreate withPeerAsn(Long peerAsn);
         }
 
-        /** The stage of the VirtualRouterPeering definition allowing to specify peerIp. */
+        /**
+         * The stage of the VirtualRouterPeering definition allowing to specify peerIp.
+         */
         interface WithPeerIp {
             /**
              * Specifies the peerIp property: Peer IP..
-             *
+             * 
              * @param peerIp Peer IP.
              * @return the next definition stage.
              */
@@ -153,58 +169,68 @@ public interface VirtualRouterPeering {
 
     /**
      * Begins update for the VirtualRouterPeering resource.
-     *
+     * 
      * @return the stage of resource update.
      */
     VirtualRouterPeering.Update update();
 
-    /** The template for VirtualRouterPeering update. */
+    /**
+     * The template for VirtualRouterPeering update.
+     */
     interface Update extends UpdateStages.WithName, UpdateStages.WithPeerAsn, UpdateStages.WithPeerIp {
         /**
          * Executes the update request.
-         *
+         * 
          * @return the updated resource.
          */
         VirtualRouterPeering apply();
 
         /**
          * Executes the update request.
-         *
+         * 
          * @param context The context to associate with this operation.
          * @return the updated resource.
          */
         VirtualRouterPeering apply(Context context);
     }
 
-    /** The VirtualRouterPeering update stages. */
+    /**
+     * The VirtualRouterPeering update stages.
+     */
     interface UpdateStages {
-        /** The stage of the VirtualRouterPeering update allowing to specify name. */
+        /**
+         * The stage of the VirtualRouterPeering update allowing to specify name.
+         */
         interface WithName {
             /**
              * Specifies the name property: Name of the virtual router peering that is unique within a virtual router..
-             *
+             * 
              * @param name Name of the virtual router peering that is unique within a virtual router.
              * @return the next definition stage.
              */
             Update withName(String name);
         }
 
-        /** The stage of the VirtualRouterPeering update allowing to specify peerAsn. */
+        /**
+         * The stage of the VirtualRouterPeering update allowing to specify peerAsn.
+         */
         interface WithPeerAsn {
             /**
              * Specifies the peerAsn property: Peer ASN..
-             *
+             * 
              * @param peerAsn Peer ASN.
              * @return the next definition stage.
              */
             Update withPeerAsn(Long peerAsn);
         }
 
-        /** The stage of the VirtualRouterPeering update allowing to specify peerIp. */
+        /**
+         * The stage of the VirtualRouterPeering update allowing to specify peerIp.
+         */
         interface WithPeerIp {
             /**
              * Specifies the peerIp property: Peer IP..
-             *
+             * 
              * @param peerIp Peer IP.
              * @return the next definition stage.
              */
@@ -214,14 +240,14 @@ public interface VirtualRouterPeering {
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @return the refreshed resource.
      */
     VirtualRouterPeering refresh();
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @return the refreshed resource.
      */

@@ -7,7 +7,9 @@ package com.azure.resourcemanager.sqlvirtualmachine.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Set a patching window during which Windows and SQL patches will be applied. */
+/**
+ * Set a patching window during which Windows and SQL patches will be applied.
+ */
 @Fluent
 public final class AutoPatchingSettings {
     /*
@@ -40,13 +42,15 @@ public final class AutoPatchingSettings {
     @JsonProperty(value = "additionalVmPatch")
     private AdditionalVmPatch additionalVmPatch;
 
-    /** Creates an instance of AutoPatchingSettings class. */
+    /**
+     * Creates an instance of AutoPatchingSettings class.
+     */
     public AutoPatchingSettings() {
     }
 
     /**
      * Get the enable property: Enable or disable autopatching on SQL virtual machine.
-     *
+     * 
      * @return the enable value.
      */
     public Boolean enable() {
@@ -55,7 +59,7 @@ public final class AutoPatchingSettings {
 
     /**
      * Set the enable property: Enable or disable autopatching on SQL virtual machine.
-     *
+     * 
      * @param enable the enable value to set.
      * @return the AutoPatchingSettings object itself.
      */
@@ -66,7 +70,7 @@ public final class AutoPatchingSettings {
 
     /**
      * Get the dayOfWeek property: Day of week to apply the patch on.
-     *
+     * 
      * @return the dayOfWeek value.
      */
     public DayOfWeek dayOfWeek() {
@@ -75,7 +79,7 @@ public final class AutoPatchingSettings {
 
     /**
      * Set the dayOfWeek property: Day of week to apply the patch on.
-     *
+     * 
      * @param dayOfWeek the dayOfWeek value to set.
      * @return the AutoPatchingSettings object itself.
      */
@@ -86,7 +90,7 @@ public final class AutoPatchingSettings {
 
     /**
      * Get the maintenanceWindowStartingHour property: Hour of the day when patching is initiated. Local VM time.
-     *
+     * 
      * @return the maintenanceWindowStartingHour value.
      */
     public Integer maintenanceWindowStartingHour() {
@@ -95,7 +99,7 @@ public final class AutoPatchingSettings {
 
     /**
      * Set the maintenanceWindowStartingHour property: Hour of the day when patching is initiated. Local VM time.
-     *
+     * 
      * @param maintenanceWindowStartingHour the maintenanceWindowStartingHour value to set.
      * @return the AutoPatchingSettings object itself.
      */
@@ -106,7 +110,7 @@ public final class AutoPatchingSettings {
 
     /**
      * Get the maintenanceWindowDuration property: Duration of patching.
-     *
+     * 
      * @return the maintenanceWindowDuration value.
      */
     public Integer maintenanceWindowDuration() {
@@ -115,7 +119,7 @@ public final class AutoPatchingSettings {
 
     /**
      * Set the maintenanceWindowDuration property: Duration of patching.
-     *
+     * 
      * @param maintenanceWindowDuration the maintenanceWindowDuration value to set.
      * @return the AutoPatchingSettings object itself.
      */
@@ -126,7 +130,7 @@ public final class AutoPatchingSettings {
 
     /**
      * Get the additionalVmPatch property: Additional Patch to be enable or enabled on the SQL Virtual Machine.
-     *
+     * 
      * @return the additionalVmPatch value.
      */
     public AdditionalVmPatch additionalVmPatch() {
@@ -135,7 +139,7 @@ public final class AutoPatchingSettings {
 
     /**
      * Set the additionalVmPatch property: Additional Patch to be enable or enabled on the SQL Virtual Machine.
-     *
+     * 
      * @param additionalVmPatch the additionalVmPatch value to set.
      * @return the AutoPatchingSettings object itself.
      */
@@ -146,7 +150,7 @@ public final class AutoPatchingSettings {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

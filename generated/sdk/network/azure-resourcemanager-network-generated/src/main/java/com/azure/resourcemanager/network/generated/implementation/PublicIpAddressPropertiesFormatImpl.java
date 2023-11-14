@@ -29,8 +29,7 @@ public final class PublicIpAddressPropertiesFormatImpl implements PublicIpAddres
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    PublicIpAddressPropertiesFormatImpl(
-        PublicIpAddressPropertiesFormatInner innerObject,
+    PublicIpAddressPropertiesFormatImpl(PublicIpAddressPropertiesFormatInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

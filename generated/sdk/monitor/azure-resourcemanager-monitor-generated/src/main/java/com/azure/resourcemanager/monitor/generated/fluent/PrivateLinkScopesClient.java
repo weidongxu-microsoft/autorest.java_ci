@@ -14,62 +14,64 @@ import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.monitor.generated.fluent.models.AzureMonitorPrivateLinkScopeInner;
 import com.azure.resourcemanager.monitor.generated.models.TagsResource;
 
-/** An instance of this class provides access to all the operations defined in PrivateLinkScopesClient. */
+/**
+ * An instance of this class provides access to all the operations defined in PrivateLinkScopesClient.
+ */
 public interface PrivateLinkScopesClient {
     /**
      * Gets a list of all Azure Monitor PrivateLinkScopes within a subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all Azure Monitor PrivateLinkScopes within a subscription as paginated response with {@link
-     *     PagedIterable}.
+     * @return a list of all Azure Monitor PrivateLinkScopes within a subscription as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<AzureMonitorPrivateLinkScopeInner> list();
 
     /**
      * Gets a list of all Azure Monitor PrivateLinkScopes within a subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all Azure Monitor PrivateLinkScopes within a subscription as paginated response with {@link
-     *     PagedIterable}.
+     * @return a list of all Azure Monitor PrivateLinkScopes within a subscription as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<AzureMonitorPrivateLinkScopeInner> list(Context context);
 
     /**
      * Gets a list of Azure Monitor PrivateLinkScopes within a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of Azure Monitor PrivateLinkScopes within a resource group as paginated response with {@link
-     *     PagedIterable}.
+     * @return a list of Azure Monitor PrivateLinkScopes within a resource group as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<AzureMonitorPrivateLinkScopeInner> listByResourceGroup(String resourceGroupName);
 
     /**
      * Gets a list of Azure Monitor PrivateLinkScopes within a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of Azure Monitor PrivateLinkScopes within a resource group as paginated response with {@link
-     *     PagedIterable}.
+     * @return a list of Azure Monitor PrivateLinkScopes within a resource group as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<AzureMonitorPrivateLinkScopeInner> listByResourceGroup(String resourceGroupName, Context context);
 
     /**
      * Deletes a Azure Monitor PrivateLinkScope.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -82,7 +84,7 @@ public interface PrivateLinkScopesClient {
 
     /**
      * Deletes a Azure Monitor PrivateLinkScope.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @param context The context to associate with this operation.
@@ -96,7 +98,7 @@ public interface PrivateLinkScopesClient {
 
     /**
      * Deletes a Azure Monitor PrivateLinkScope.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -108,7 +110,7 @@ public interface PrivateLinkScopesClient {
 
     /**
      * Deletes a Azure Monitor PrivateLinkScope.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @param context The context to associate with this operation.
@@ -121,7 +123,7 @@ public interface PrivateLinkScopesClient {
 
     /**
      * Returns a Azure Monitor PrivateLinkScope.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @param context The context to associate with this operation.
@@ -131,12 +133,12 @@ public interface PrivateLinkScopesClient {
      * @return an Azure Monitor PrivateLinkScope definition along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<AzureMonitorPrivateLinkScopeInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String scopeName, Context context);
+    Response<AzureMonitorPrivateLinkScopeInner> getByResourceGroupWithResponse(String resourceGroupName,
+        String scopeName, Context context);
 
     /**
      * Returns a Azure Monitor PrivateLinkScope.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -150,11 +152,11 @@ public interface PrivateLinkScopesClient {
     /**
      * Creates (or updates) a Azure Monitor PrivateLinkScope. Note: You cannot specify a different value for
      * InstrumentationKey nor AppId in the Put operation.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @param azureMonitorPrivateLinkScopePayload Properties that need to be specified to create or update a Azure
-     *     Monitor PrivateLinkScope.
+     * Monitor PrivateLinkScope.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -162,34 +164,29 @@ public interface PrivateLinkScopesClient {
      * @return an Azure Monitor PrivateLinkScope definition along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<AzureMonitorPrivateLinkScopeInner> createOrUpdateWithResponse(
-        String resourceGroupName,
-        String scopeName,
-        AzureMonitorPrivateLinkScopeInner azureMonitorPrivateLinkScopePayload,
-        Context context);
+    Response<AzureMonitorPrivateLinkScopeInner> createOrUpdateWithResponse(String resourceGroupName, String scopeName,
+        AzureMonitorPrivateLinkScopeInner azureMonitorPrivateLinkScopePayload, Context context);
 
     /**
      * Creates (or updates) a Azure Monitor PrivateLinkScope. Note: You cannot specify a different value for
      * InstrumentationKey nor AppId in the Put operation.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @param azureMonitorPrivateLinkScopePayload Properties that need to be specified to create or update a Azure
-     *     Monitor PrivateLinkScope.
+     * Monitor PrivateLinkScope.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return an Azure Monitor PrivateLinkScope definition.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    AzureMonitorPrivateLinkScopeInner createOrUpdate(
-        String resourceGroupName,
-        String scopeName,
+    AzureMonitorPrivateLinkScopeInner createOrUpdate(String resourceGroupName, String scopeName,
         AzureMonitorPrivateLinkScopeInner azureMonitorPrivateLinkScopePayload);
 
     /**
      * Updates an existing PrivateLinkScope's tags. To update other fields use the CreateOrUpdate method.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @param privateLinkScopeTags Updated tag information to set into the PrivateLinkScope instance.
@@ -200,12 +197,12 @@ public interface PrivateLinkScopesClient {
      * @return an Azure Monitor PrivateLinkScope definition along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<AzureMonitorPrivateLinkScopeInner> updateTagsWithResponse(
-        String resourceGroupName, String scopeName, TagsResource privateLinkScopeTags, Context context);
+    Response<AzureMonitorPrivateLinkScopeInner> updateTagsWithResponse(String resourceGroupName, String scopeName,
+        TagsResource privateLinkScopeTags, Context context);
 
     /**
      * Updates an existing PrivateLinkScope's tags. To update other fields use the CreateOrUpdate method.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param scopeName The name of the Azure Monitor PrivateLinkScope resource.
      * @param privateLinkScopeTags Updated tag information to set into the PrivateLinkScope instance.
@@ -215,6 +212,6 @@ public interface PrivateLinkScopesClient {
      * @return an Azure Monitor PrivateLinkScope definition.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    AzureMonitorPrivateLinkScopeInner updateTags(
-        String resourceGroupName, String scopeName, TagsResource privateLinkScopeTags);
+    AzureMonitorPrivateLinkScopeInner updateTags(String resourceGroupName, String scopeName,
+        TagsResource privateLinkScopeTags);
 }

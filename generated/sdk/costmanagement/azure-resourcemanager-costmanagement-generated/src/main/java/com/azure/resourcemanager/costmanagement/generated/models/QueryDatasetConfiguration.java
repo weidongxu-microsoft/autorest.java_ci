@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The configuration of dataset in the query. */
+/**
+ * The configuration of dataset in the query.
+ */
 @Fluent
 public final class QueryDatasetConfiguration {
     /*
@@ -18,14 +20,16 @@ public final class QueryDatasetConfiguration {
     @JsonProperty(value = "columns")
     private List<String> columns;
 
-    /** Creates an instance of QueryDatasetConfiguration class. */
+    /**
+     * Creates an instance of QueryDatasetConfiguration class.
+     */
     public QueryDatasetConfiguration() {
     }
 
     /**
      * Get the columns property: Array of column names to be included in the query. Any valid query column name is
      * allowed. If not provided, then query includes all columns.
-     *
+     * 
      * @return the columns value.
      */
     public List<String> columns() {
@@ -35,7 +39,7 @@ public final class QueryDatasetConfiguration {
     /**
      * Set the columns property: Array of column names to be included in the query. Any valid query column name is
      * allowed. If not provided, then query includes all columns.
-     *
+     * 
      * @param columns the columns value to set.
      * @return the QueryDatasetConfiguration object itself.
      */
@@ -46,7 +50,7 @@ public final class QueryDatasetConfiguration {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

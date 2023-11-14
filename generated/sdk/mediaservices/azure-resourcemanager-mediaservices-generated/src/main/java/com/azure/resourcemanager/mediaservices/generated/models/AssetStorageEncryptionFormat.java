@@ -8,18 +8,24 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** The Asset encryption format. One of None or MediaStorageEncryption. */
+/**
+ * The Asset encryption format. One of None or MediaStorageEncryption.
+ */
 public final class AssetStorageEncryptionFormat extends ExpandableStringEnum<AssetStorageEncryptionFormat> {
-    /** Static value None for AssetStorageEncryptionFormat. */
+    /**
+     * Static value None for AssetStorageEncryptionFormat.
+     */
     public static final AssetStorageEncryptionFormat NONE = fromString("None");
 
-    /** Static value MediaStorageClientEncryption for AssetStorageEncryptionFormat. */
-    public static final AssetStorageEncryptionFormat MEDIA_STORAGE_CLIENT_ENCRYPTION =
-        fromString("MediaStorageClientEncryption");
+    /**
+     * Static value MediaStorageClientEncryption for AssetStorageEncryptionFormat.
+     */
+    public static final AssetStorageEncryptionFormat MEDIA_STORAGE_CLIENT_ENCRYPTION
+        = fromString("MediaStorageClientEncryption");
 
     /**
      * Creates a new instance of AssetStorageEncryptionFormat value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -28,7 +34,7 @@ public final class AssetStorageEncryptionFormat extends ExpandableStringEnum<Ass
 
     /**
      * Creates or finds a AssetStorageEncryptionFormat from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding AssetStorageEncryptionFormat.
      */
@@ -39,7 +45,7 @@ public final class AssetStorageEncryptionFormat extends ExpandableStringEnum<Ass
 
     /**
      * Gets known AssetStorageEncryptionFormat values.
-     *
+     * 
      * @return known AssetStorageEncryptionFormat values.
      */
     public static Collection<AssetStorageEncryptionFormat> values() {

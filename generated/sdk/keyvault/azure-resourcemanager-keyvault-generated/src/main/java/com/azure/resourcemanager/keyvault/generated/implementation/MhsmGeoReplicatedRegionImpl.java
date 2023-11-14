@@ -13,8 +13,7 @@ public final class MhsmGeoReplicatedRegionImpl implements MhsmGeoReplicatedRegio
 
     private final com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager;
 
-    MhsmGeoReplicatedRegionImpl(
-        MhsmGeoReplicatedRegionInner innerObject,
+    MhsmGeoReplicatedRegionImpl(MhsmGeoReplicatedRegionInner innerObject,
         com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

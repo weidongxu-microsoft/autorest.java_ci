@@ -11,10 +11,8 @@ import com.azure.resourcemanager.appservice.generated.models.StaticSiteCustomDom
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteCustomDomainRequestPropertiesArmResource;
 import java.time.OffsetDateTime;
 
-public final class StaticSiteCustomDomainOverviewArmResourceImpl
-    implements StaticSiteCustomDomainOverviewArmResource,
-        StaticSiteCustomDomainOverviewArmResource.Definition,
-        StaticSiteCustomDomainOverviewArmResource.Update {
+public final class StaticSiteCustomDomainOverviewArmResourceImpl implements StaticSiteCustomDomainOverviewArmResource,
+    StaticSiteCustomDomainOverviewArmResource.Definition, StaticSiteCustomDomainOverviewArmResource.Update {
     private StaticSiteCustomDomainOverviewArmResourceInner innerObject;
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
@@ -84,78 +82,45 @@ public final class StaticSiteCustomDomainOverviewArmResourceImpl
     }
 
     public StaticSiteCustomDomainOverviewArmResource create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getStaticSites()
-                .createOrUpdateStaticSiteCustomDomain(
-                    resourceGroupName,
-                    name,
-                    domainName,
-                    createStaticSiteCustomDomainRequestPropertiesEnvelope,
-                    Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getStaticSites().createOrUpdateStaticSiteCustomDomain(
+            resourceGroupName, name, domainName, createStaticSiteCustomDomainRequestPropertiesEnvelope, Context.NONE);
         return this;
     }
 
     public StaticSiteCustomDomainOverviewArmResource create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getStaticSites()
-                .createOrUpdateStaticSiteCustomDomain(
-                    resourceGroupName,
-                    name,
-                    domainName,
-                    createStaticSiteCustomDomainRequestPropertiesEnvelope,
-                    context);
+        this.innerObject = serviceManager.serviceClient().getStaticSites().createOrUpdateStaticSiteCustomDomain(
+            resourceGroupName, name, domainName, createStaticSiteCustomDomainRequestPropertiesEnvelope, context);
         return this;
     }
 
-    StaticSiteCustomDomainOverviewArmResourceImpl(
-        String name, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
+    StaticSiteCustomDomainOverviewArmResourceImpl(String name,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = new StaticSiteCustomDomainOverviewArmResourceInner();
         this.serviceManager = serviceManager;
         this.domainName = name;
-        this.createStaticSiteCustomDomainRequestPropertiesEnvelope =
-            new StaticSiteCustomDomainRequestPropertiesArmResource();
+        this.createStaticSiteCustomDomainRequestPropertiesEnvelope
+            = new StaticSiteCustomDomainRequestPropertiesArmResource();
     }
 
     public StaticSiteCustomDomainOverviewArmResourceImpl update() {
-        this.updateStaticSiteCustomDomainRequestPropertiesEnvelope =
-            new StaticSiteCustomDomainRequestPropertiesArmResource();
+        this.updateStaticSiteCustomDomainRequestPropertiesEnvelope
+            = new StaticSiteCustomDomainRequestPropertiesArmResource();
         return this;
     }
 
     public StaticSiteCustomDomainOverviewArmResource apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getStaticSites()
-                .createOrUpdateStaticSiteCustomDomain(
-                    resourceGroupName,
-                    name,
-                    domainName,
-                    updateStaticSiteCustomDomainRequestPropertiesEnvelope,
-                    Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getStaticSites().createOrUpdateStaticSiteCustomDomain(
+            resourceGroupName, name, domainName, updateStaticSiteCustomDomainRequestPropertiesEnvelope, Context.NONE);
         return this;
     }
 
     public StaticSiteCustomDomainOverviewArmResource apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getStaticSites()
-                .createOrUpdateStaticSiteCustomDomain(
-                    resourceGroupName,
-                    name,
-                    domainName,
-                    updateStaticSiteCustomDomainRequestPropertiesEnvelope,
-                    context);
+        this.innerObject = serviceManager.serviceClient().getStaticSites().createOrUpdateStaticSiteCustomDomain(
+            resourceGroupName, name, domainName, updateStaticSiteCustomDomainRequestPropertiesEnvelope, context);
         return this;
     }
 
-    StaticSiteCustomDomainOverviewArmResourceImpl(
-        StaticSiteCustomDomainOverviewArmResourceInner innerObject,
+    StaticSiteCustomDomainOverviewArmResourceImpl(StaticSiteCustomDomainOverviewArmResourceInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -165,40 +130,28 @@ public final class StaticSiteCustomDomainOverviewArmResourceImpl
     }
 
     public StaticSiteCustomDomainOverviewArmResource refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getStaticSites()
-                .getStaticSiteCustomDomainWithResponse(resourceGroupName, name, domainName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getStaticSites()
+            .getStaticSiteCustomDomainWithResponse(resourceGroupName, name, domainName, Context.NONE).getValue();
         return this;
     }
 
     public StaticSiteCustomDomainOverviewArmResource refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getStaticSites()
-                .getStaticSiteCustomDomainWithResponse(resourceGroupName, name, domainName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getStaticSites()
+            .getStaticSiteCustomDomainWithResponse(resourceGroupName, name, domainName, context).getValue();
         return this;
     }
 
     public void validateCustomDomainCanBeAddedToStaticSite(
         StaticSiteCustomDomainRequestPropertiesArmResource staticSiteCustomDomainRequestPropertiesEnvelope) {
-        serviceManager
-            .staticSites()
-            .validateCustomDomainCanBeAddedToStaticSite(
-                resourceGroupName, name, domainName, staticSiteCustomDomainRequestPropertiesEnvelope);
+        serviceManager.staticSites().validateCustomDomainCanBeAddedToStaticSite(resourceGroupName, name, domainName,
+            staticSiteCustomDomainRequestPropertiesEnvelope);
     }
 
     public void validateCustomDomainCanBeAddedToStaticSite(
         StaticSiteCustomDomainRequestPropertiesArmResource staticSiteCustomDomainRequestPropertiesEnvelope,
         Context context) {
-        serviceManager
-            .staticSites()
-            .validateCustomDomainCanBeAddedToStaticSite(
-                resourceGroupName, name, domainName, staticSiteCustomDomainRequestPropertiesEnvelope, context);
+        serviceManager.staticSites().validateCustomDomainCanBeAddedToStaticSite(resourceGroupName, name, domainName,
+            staticSiteCustomDomainRequestPropertiesEnvelope, context);
     }
 
     public StaticSiteCustomDomainOverviewArmResourceImpl withKind(String kind) {

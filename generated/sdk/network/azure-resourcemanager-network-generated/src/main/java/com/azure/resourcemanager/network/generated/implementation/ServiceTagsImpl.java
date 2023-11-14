@@ -20,8 +20,8 @@ public final class ServiceTagsImpl implements ServiceTags {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public ServiceTagsImpl(
-        ServiceTagsClient innerClient, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    public ServiceTagsImpl(ServiceTagsClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -29,10 +29,7 @@ public final class ServiceTagsImpl implements ServiceTags {
     public Response<ServiceTagsListResult> listWithResponse(String location, Context context) {
         Response<ServiceTagsListResultInner> inner = this.serviceClient().listWithResponse(location, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ServiceTagsListResultImpl(inner.getValue(), this.manager()));
         } else {
             return null;

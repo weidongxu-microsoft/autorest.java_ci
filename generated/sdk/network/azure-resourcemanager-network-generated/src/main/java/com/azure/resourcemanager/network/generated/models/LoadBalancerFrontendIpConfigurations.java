@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of LoadBalancerFrontendIpConfigurations. */
+/**
+ * Resource collection API of LoadBalancerFrontendIpConfigurations.
+ */
 public interface LoadBalancerFrontendIpConfigurations {
     /**
      * Gets all the load balancer frontend IP configurations.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -24,7 +26,7 @@ public interface LoadBalancerFrontendIpConfigurations {
 
     /**
      * Gets all the load balancer frontend IP configurations.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @param context The context to associate with this operation.
@@ -37,7 +39,7 @@ public interface LoadBalancerFrontendIpConfigurations {
 
     /**
      * Gets load balancer frontend IP configuration.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @param frontendIpConfigurationName The name of the frontend IP configuration.
@@ -47,12 +49,12 @@ public interface LoadBalancerFrontendIpConfigurations {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return load balancer frontend IP configuration along with {@link Response}.
      */
-    Response<FrontendIpConfiguration> getWithResponse(
-        String resourceGroupName, String loadBalancerName, String frontendIpConfigurationName, Context context);
+    Response<FrontendIpConfiguration> getWithResponse(String resourceGroupName, String loadBalancerName,
+        String frontendIpConfigurationName, Context context);
 
     /**
      * Gets load balancer frontend IP configuration.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @param frontendIpConfigurationName The name of the frontend IP configuration.

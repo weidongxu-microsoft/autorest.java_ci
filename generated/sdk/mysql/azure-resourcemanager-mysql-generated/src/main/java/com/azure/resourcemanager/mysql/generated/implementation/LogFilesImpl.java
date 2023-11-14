@@ -19,8 +19,8 @@ public final class LogFilesImpl implements LogFiles {
 
     private final com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager;
 
-    public LogFilesImpl(
-        LogFilesClient innerClient, com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager) {
+    public LogFilesImpl(LogFilesClient innerClient,
+        com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }

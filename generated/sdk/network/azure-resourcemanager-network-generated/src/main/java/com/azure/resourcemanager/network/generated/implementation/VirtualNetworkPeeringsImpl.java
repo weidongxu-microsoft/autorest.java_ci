@@ -21,8 +21,7 @@ public final class VirtualNetworkPeeringsImpl implements VirtualNetworkPeerings 
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public VirtualNetworkPeeringsImpl(
-        VirtualNetworkPeeringsClient innerClient,
+    public VirtualNetworkPeeringsImpl(VirtualNetworkPeeringsClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -32,32 +31,27 @@ public final class VirtualNetworkPeeringsImpl implements VirtualNetworkPeerings 
         this.serviceClient().delete(resourceGroupName, virtualNetworkName, virtualNetworkPeeringName);
     }
 
-    public void delete(
-        String resourceGroupName, String virtualNetworkName, String virtualNetworkPeeringName, Context context) {
+    public void delete(String resourceGroupName, String virtualNetworkName, String virtualNetworkPeeringName,
+        Context context) {
         this.serviceClient().delete(resourceGroupName, virtualNetworkName, virtualNetworkPeeringName, context);
     }
 
-    public Response<VirtualNetworkPeering> getWithResponse(
-        String resourceGroupName, String virtualNetworkName, String virtualNetworkPeeringName, Context context) {
-        Response<VirtualNetworkPeeringInner> inner =
-            this
-                .serviceClient()
-                .getWithResponse(resourceGroupName, virtualNetworkName, virtualNetworkPeeringName, context);
+    public Response<VirtualNetworkPeering> getWithResponse(String resourceGroupName, String virtualNetworkName,
+        String virtualNetworkPeeringName, Context context) {
+        Response<VirtualNetworkPeeringInner> inner = this.serviceClient().getWithResponse(resourceGroupName,
+            virtualNetworkName, virtualNetworkPeeringName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new VirtualNetworkPeeringImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public VirtualNetworkPeering get(
-        String resourceGroupName, String virtualNetworkName, String virtualNetworkPeeringName) {
-        VirtualNetworkPeeringInner inner =
-            this.serviceClient().get(resourceGroupName, virtualNetworkName, virtualNetworkPeeringName);
+    public VirtualNetworkPeering get(String resourceGroupName, String virtualNetworkName,
+        String virtualNetworkPeeringName) {
+        VirtualNetworkPeeringInner inner
+            = this.serviceClient().get(resourceGroupName, virtualNetworkName, virtualNetworkPeeringName);
         if (inner != null) {
             return new VirtualNetworkPeeringImpl(inner, this.manager());
         } else {
@@ -66,76 +60,53 @@ public final class VirtualNetworkPeeringsImpl implements VirtualNetworkPeerings 
     }
 
     public PagedIterable<VirtualNetworkPeering> list(String resourceGroupName, String virtualNetworkName) {
-        PagedIterable<VirtualNetworkPeeringInner> inner =
-            this.serviceClient().list(resourceGroupName, virtualNetworkName);
+        PagedIterable<VirtualNetworkPeeringInner> inner
+            = this.serviceClient().list(resourceGroupName, virtualNetworkName);
         return Utils.mapPage(inner, inner1 -> new VirtualNetworkPeeringImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<VirtualNetworkPeering> list(
-        String resourceGroupName, String virtualNetworkName, Context context) {
-        PagedIterable<VirtualNetworkPeeringInner> inner =
-            this.serviceClient().list(resourceGroupName, virtualNetworkName, context);
+    public PagedIterable<VirtualNetworkPeering> list(String resourceGroupName, String virtualNetworkName,
+        Context context) {
+        PagedIterable<VirtualNetworkPeeringInner> inner
+            = this.serviceClient().list(resourceGroupName, virtualNetworkName, context);
         return Utils.mapPage(inner, inner1 -> new VirtualNetworkPeeringImpl(inner1, this.manager()));
     }
 
     public VirtualNetworkPeering getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String virtualNetworkName = Utils.getValueFromIdByName(id, "virtualNetworks");
         if (virtualNetworkName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'virtualNetworks'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'virtualNetworks'.", id)));
         }
         String virtualNetworkPeeringName = Utils.getValueFromIdByName(id, "virtualNetworkPeerings");
         if (virtualNetworkPeeringName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'virtualNetworkPeerings'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'virtualNetworkPeerings'.", id)));
         }
-        return this
-            .getWithResponse(resourceGroupName, virtualNetworkName, virtualNetworkPeeringName, Context.NONE)
+        return this.getWithResponse(resourceGroupName, virtualNetworkName, virtualNetworkPeeringName, Context.NONE)
             .getValue();
     }
 
     public Response<VirtualNetworkPeering> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String virtualNetworkName = Utils.getValueFromIdByName(id, "virtualNetworks");
         if (virtualNetworkName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'virtualNetworks'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'virtualNetworks'.", id)));
         }
         String virtualNetworkPeeringName = Utils.getValueFromIdByName(id, "virtualNetworkPeerings");
         if (virtualNetworkPeeringName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'virtualNetworkPeerings'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'virtualNetworkPeerings'.", id)));
         }
         return this.getWithResponse(resourceGroupName, virtualNetworkName, virtualNetworkPeeringName, context);
     }
@@ -143,29 +114,18 @@ public final class VirtualNetworkPeeringsImpl implements VirtualNetworkPeerings 
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String virtualNetworkName = Utils.getValueFromIdByName(id, "virtualNetworks");
         if (virtualNetworkName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'virtualNetworks'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'virtualNetworks'.", id)));
         }
         String virtualNetworkPeeringName = Utils.getValueFromIdByName(id, "virtualNetworkPeerings");
         if (virtualNetworkPeeringName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'virtualNetworkPeerings'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'virtualNetworkPeerings'.", id)));
         }
         this.delete(resourceGroupName, virtualNetworkName, virtualNetworkPeeringName, Context.NONE);
     }
@@ -173,29 +133,18 @@ public final class VirtualNetworkPeeringsImpl implements VirtualNetworkPeerings 
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String virtualNetworkName = Utils.getValueFromIdByName(id, "virtualNetworks");
         if (virtualNetworkName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'virtualNetworks'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'virtualNetworks'.", id)));
         }
         String virtualNetworkPeeringName = Utils.getValueFromIdByName(id, "virtualNetworkPeerings");
         if (virtualNetworkPeeringName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'virtualNetworkPeerings'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'virtualNetworkPeerings'.", id)));
         }
         this.delete(resourceGroupName, virtualNetworkName, virtualNetworkPeeringName, context);
     }

@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
-/** The URL to download the generated report. */
+/**
+ * The URL to download the generated report.
+ */
 @Fluent
 public final class ReportUrl {
     /*
@@ -23,13 +25,15 @@ public final class ReportUrl {
     @JsonProperty(value = "validUntil")
     private OffsetDateTime validUntil;
 
-    /** Creates an instance of ReportUrl class. */
+    /**
+     * Creates an instance of ReportUrl class.
+     */
     public ReportUrl() {
     }
 
     /**
      * Get the reportUrl property: The URL to download the generated report.
-     *
+     * 
      * @return the reportUrl value.
      */
     public String reportUrl() {
@@ -38,7 +42,7 @@ public final class ReportUrl {
 
     /**
      * Set the reportUrl property: The URL to download the generated report.
-     *
+     * 
      * @param reportUrl the reportUrl value to set.
      * @return the ReportUrl object itself.
      */
@@ -49,7 +53,7 @@ public final class ReportUrl {
 
     /**
      * Get the validUntil property: The time at which report URL becomes invalid.
-     *
+     * 
      * @return the validUntil value.
      */
     public OffsetDateTime validUntil() {
@@ -58,7 +62,7 @@ public final class ReportUrl {
 
     /**
      * Set the validUntil property: The time at which report URL becomes invalid.
-     *
+     * 
      * @param validUntil the validUntil value to set.
      * @return the ReportUrl object itself.
      */
@@ -69,7 +73,7 @@ public final class ReportUrl {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

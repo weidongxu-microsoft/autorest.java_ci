@@ -15,8 +15,7 @@ public final class EffectiveNetworkSecurityGroupListResultImpl implements Effect
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    EffectiveNetworkSecurityGroupListResultImpl(
-        EffectiveNetworkSecurityGroupListResultInner innerObject,
+    EffectiveNetworkSecurityGroupListResultImpl(EffectiveNetworkSecurityGroupListResultInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

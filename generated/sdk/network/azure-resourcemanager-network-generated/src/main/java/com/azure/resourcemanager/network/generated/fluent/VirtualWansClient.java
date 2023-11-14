@@ -14,11 +14,13 @@ import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualWanInner;
 import com.azure.resourcemanager.network.generated.models.TagsObject;
 
-/** An instance of this class provides access to all the operations defined in VirtualWansClient. */
+/**
+ * An instance of this class provides access to all the operations defined in VirtualWansClient.
+ */
 public interface VirtualWansClient {
     /**
      * Retrieves the details of a VirtualWAN.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualWan.
      * @param virtualWanName The name of the VirtualWAN being retrieved.
      * @param context The context to associate with this operation.
@@ -28,12 +30,12 @@ public interface VirtualWansClient {
      * @return virtualWAN Resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<VirtualWanInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String virtualWanName, Context context);
+    Response<VirtualWanInner> getByResourceGroupWithResponse(String resourceGroupName, String virtualWanName,
+        Context context);
 
     /**
      * Retrieves the details of a VirtualWAN.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualWan.
      * @param virtualWanName The name of the VirtualWAN being retrieved.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -46,7 +48,7 @@ public interface VirtualWansClient {
 
     /**
      * Creates a VirtualWAN resource if it doesn't exist else updates the existing VirtualWAN.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualWan.
      * @param virtualWanName The name of the VirtualWAN being created or updated.
      * @param wanParameters Parameters supplied to create or update VirtualWAN.
@@ -56,12 +58,12 @@ public interface VirtualWansClient {
      * @return the {@link SyncPoller} for polling of virtualWAN Resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<VirtualWanInner>, VirtualWanInner> beginCreateOrUpdate(
-        String resourceGroupName, String virtualWanName, VirtualWanInner wanParameters);
+    SyncPoller<PollResult<VirtualWanInner>, VirtualWanInner> beginCreateOrUpdate(String resourceGroupName,
+        String virtualWanName, VirtualWanInner wanParameters);
 
     /**
      * Creates a VirtualWAN resource if it doesn't exist else updates the existing VirtualWAN.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualWan.
      * @param virtualWanName The name of the VirtualWAN being created or updated.
      * @param wanParameters Parameters supplied to create or update VirtualWAN.
@@ -72,12 +74,12 @@ public interface VirtualWansClient {
      * @return the {@link SyncPoller} for polling of virtualWAN Resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<VirtualWanInner>, VirtualWanInner> beginCreateOrUpdate(
-        String resourceGroupName, String virtualWanName, VirtualWanInner wanParameters, Context context);
+    SyncPoller<PollResult<VirtualWanInner>, VirtualWanInner> beginCreateOrUpdate(String resourceGroupName,
+        String virtualWanName, VirtualWanInner wanParameters, Context context);
 
     /**
      * Creates a VirtualWAN resource if it doesn't exist else updates the existing VirtualWAN.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualWan.
      * @param virtualWanName The name of the VirtualWAN being created or updated.
      * @param wanParameters Parameters supplied to create or update VirtualWAN.
@@ -91,7 +93,7 @@ public interface VirtualWansClient {
 
     /**
      * Creates a VirtualWAN resource if it doesn't exist else updates the existing VirtualWAN.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualWan.
      * @param virtualWanName The name of the VirtualWAN being created or updated.
      * @param wanParameters Parameters supplied to create or update VirtualWAN.
@@ -102,12 +104,12 @@ public interface VirtualWansClient {
      * @return virtualWAN Resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    VirtualWanInner createOrUpdate(
-        String resourceGroupName, String virtualWanName, VirtualWanInner wanParameters, Context context);
+    VirtualWanInner createOrUpdate(String resourceGroupName, String virtualWanName, VirtualWanInner wanParameters,
+        Context context);
 
     /**
      * Updates a VirtualWAN tags.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualWan.
      * @param virtualWanName The name of the VirtualWAN being updated.
      * @param wanParameters Parameters supplied to Update VirtualWAN tags.
@@ -118,12 +120,12 @@ public interface VirtualWansClient {
      * @return virtualWAN Resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<VirtualWanInner> updateTagsWithResponse(
-        String resourceGroupName, String virtualWanName, TagsObject wanParameters, Context context);
+    Response<VirtualWanInner> updateTagsWithResponse(String resourceGroupName, String virtualWanName,
+        TagsObject wanParameters, Context context);
 
     /**
      * Updates a VirtualWAN tags.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualWan.
      * @param virtualWanName The name of the VirtualWAN being updated.
      * @param wanParameters Parameters supplied to Update VirtualWAN tags.
@@ -137,7 +139,7 @@ public interface VirtualWansClient {
 
     /**
      * Deletes a VirtualWAN.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualWan.
      * @param virtualWanName The name of the VirtualWAN being deleted.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -150,7 +152,7 @@ public interface VirtualWansClient {
 
     /**
      * Deletes a VirtualWAN.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualWan.
      * @param virtualWanName The name of the VirtualWAN being deleted.
      * @param context The context to associate with this operation.
@@ -164,7 +166,7 @@ public interface VirtualWansClient {
 
     /**
      * Deletes a VirtualWAN.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualWan.
      * @param virtualWanName The name of the VirtualWAN being deleted.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -176,7 +178,7 @@ public interface VirtualWansClient {
 
     /**
      * Deletes a VirtualWAN.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualWan.
      * @param virtualWanName The name of the VirtualWAN being deleted.
      * @param context The context to associate with this operation.
@@ -189,7 +191,7 @@ public interface VirtualWansClient {
 
     /**
      * Lists all the VirtualWANs in a resource group.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualWan.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -201,7 +203,7 @@ public interface VirtualWansClient {
 
     /**
      * Lists all the VirtualWANs in a resource group.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualWan.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -214,7 +216,7 @@ public interface VirtualWansClient {
 
     /**
      * Lists all the VirtualWANs in a subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return result of the request to list VirtualWANs as paginated response with {@link PagedIterable}.
@@ -224,7 +226,7 @@ public interface VirtualWansClient {
 
     /**
      * Lists all the VirtualWANs in a subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

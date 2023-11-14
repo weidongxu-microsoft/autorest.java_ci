@@ -14,8 +14,8 @@ public final class TestRouteResultImpl implements TestRouteResult {
 
     private final com.azure.resourcemanager.iothub.generated.IotHubManager serviceManager;
 
-    TestRouteResultImpl(
-        TestRouteResultInner innerObject, com.azure.resourcemanager.iothub.generated.IotHubManager serviceManager) {
+    TestRouteResultImpl(TestRouteResultInner innerObject,
+        com.azure.resourcemanager.iothub.generated.IotHubManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

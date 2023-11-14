@@ -7,7 +7,9 @@ package com.azure.resourcemanager.keyvault.generated.models;
 import com.azure.core.annotation.Immutable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The security domain properties of the managed hsm. */
+/**
+ * The security domain properties of the managed hsm.
+ */
 @Immutable
 public final class ManagedHsmSecurityDomainProperties {
     /*
@@ -22,13 +24,15 @@ public final class ManagedHsmSecurityDomainProperties {
     @JsonProperty(value = "activationStatusMessage", access = JsonProperty.Access.WRITE_ONLY)
     private String activationStatusMessage;
 
-    /** Creates an instance of ManagedHsmSecurityDomainProperties class. */
+    /**
+     * Creates an instance of ManagedHsmSecurityDomainProperties class.
+     */
     public ManagedHsmSecurityDomainProperties() {
     }
 
     /**
      * Get the activationStatus property: Activation Status.
-     *
+     * 
      * @return the activationStatus value.
      */
     public ActivationStatus activationStatus() {
@@ -37,7 +41,7 @@ public final class ManagedHsmSecurityDomainProperties {
 
     /**
      * Get the activationStatusMessage property: Activation Status Message.
-     *
+     * 
      * @return the activationStatusMessage value.
      */
     public String activationStatusMessage() {
@@ -46,7 +50,7 @@ public final class ManagedHsmSecurityDomainProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

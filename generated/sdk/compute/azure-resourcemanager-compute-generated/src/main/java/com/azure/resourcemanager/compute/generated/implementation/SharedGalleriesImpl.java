@@ -22,8 +22,8 @@ public final class SharedGalleriesImpl implements SharedGalleries {
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    public SharedGalleriesImpl(
-        SharedGalleriesClient innerClient, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
+    public SharedGalleriesImpl(SharedGalleriesClient innerClient,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -41,10 +41,7 @@ public final class SharedGalleriesImpl implements SharedGalleries {
     public Response<SharedGallery> getWithResponse(String location, String galleryUniqueName, Context context) {
         Response<SharedGalleryInner> inner = this.serviceClient().getWithResponse(location, galleryUniqueName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new SharedGalleryImpl(inner.getValue(), this.manager()));
         } else {
             return null;

@@ -10,11 +10,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.BgpServiceCommunityInner;
 
-/** An instance of this class provides access to all the operations defined in BgpServiceCommunitiesClient. */
+/**
+ * An instance of this class provides access to all the operations defined in BgpServiceCommunitiesClient.
+ */
 public interface BgpServiceCommunitiesClient {
     /**
      * Gets all the available bgp service communities.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all the available bgp service communities as paginated response with {@link PagedIterable}.
@@ -24,7 +26,7 @@ public interface BgpServiceCommunitiesClient {
 
     /**
      * Gets all the available bgp service communities.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

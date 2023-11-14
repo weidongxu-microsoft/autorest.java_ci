@@ -21,8 +21,7 @@ public final class LoadBalancerOutboundRulesImpl implements LoadBalancerOutbound
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public LoadBalancerOutboundRulesImpl(
-        LoadBalancerOutboundRulesClient innerClient,
+    public LoadBalancerOutboundRulesImpl(LoadBalancerOutboundRulesClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -34,20 +33,17 @@ public final class LoadBalancerOutboundRulesImpl implements LoadBalancerOutbound
     }
 
     public PagedIterable<OutboundRule> list(String resourceGroupName, String loadBalancerName, Context context) {
-        PagedIterable<OutboundRuleInner> inner =
-            this.serviceClient().list(resourceGroupName, loadBalancerName, context);
+        PagedIterable<OutboundRuleInner> inner
+            = this.serviceClient().list(resourceGroupName, loadBalancerName, context);
         return Utils.mapPage(inner, inner1 -> new OutboundRuleImpl(inner1, this.manager()));
     }
 
-    public Response<OutboundRule> getWithResponse(
-        String resourceGroupName, String loadBalancerName, String outboundRuleName, Context context) {
-        Response<OutboundRuleInner> inner =
-            this.serviceClient().getWithResponse(resourceGroupName, loadBalancerName, outboundRuleName, context);
+    public Response<OutboundRule> getWithResponse(String resourceGroupName, String loadBalancerName,
+        String outboundRuleName, Context context) {
+        Response<OutboundRuleInner> inner
+            = this.serviceClient().getWithResponse(resourceGroupName, loadBalancerName, outboundRuleName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new OutboundRuleImpl(inner.getValue(), this.manager()));
         } else {
             return null;

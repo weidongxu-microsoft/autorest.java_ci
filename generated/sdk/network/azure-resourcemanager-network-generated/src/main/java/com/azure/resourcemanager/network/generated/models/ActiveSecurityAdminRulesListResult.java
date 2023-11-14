@@ -7,11 +7,13 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.resourcemanager.network.generated.fluent.models.ActiveSecurityAdminRulesListResultInner;
 import java.util.List;
 
-/** An immutable client-side representation of ActiveSecurityAdminRulesListResult. */
+/**
+ * An immutable client-side representation of ActiveSecurityAdminRulesListResult.
+ */
 public interface ActiveSecurityAdminRulesListResult {
     /**
      * Gets the value property: Gets a page of active security admin rules.
-     *
+     * 
      * @return the value value.
      */
     List<ActiveBaseSecurityAdminRule> value();
@@ -19,7 +21,7 @@ public interface ActiveSecurityAdminRulesListResult {
     /**
      * Gets the skipToken property: When present, the value can be passed to a subsequent query call (together with the
      * same query and scopes used in the current request) to retrieve the next page of data.
-     *
+     * 
      * @return the skipToken value.
      */
     String skipToken();
@@ -27,7 +29,7 @@ public interface ActiveSecurityAdminRulesListResult {
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.ActiveSecurityAdminRulesListResultInner
      * object.
-     *
+     * 
      * @return the inner object.
      */
     ActiveSecurityAdminRulesListResultInner innerModel();

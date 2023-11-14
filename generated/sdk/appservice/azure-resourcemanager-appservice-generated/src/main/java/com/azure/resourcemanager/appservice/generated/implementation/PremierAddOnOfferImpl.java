@@ -13,8 +13,7 @@ public final class PremierAddOnOfferImpl implements PremierAddOnOffer {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    PremierAddOnOfferImpl(
-        PremierAddOnOfferInner innerObject,
+    PremierAddOnOfferImpl(PremierAddOnOfferInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

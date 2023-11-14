@@ -90,29 +90,20 @@ public final class DataExportImpl implements DataExport, DataExport.Definition, 
     }
 
     public DataExport create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDataExports()
-                .createOrUpdateWithResponse(
-                    resourceGroupName, workspaceName, dataExportName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getDataExports().createOrUpdateWithResponse(resourceGroupName,
+            workspaceName, dataExportName, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public DataExport create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDataExports()
-                .createOrUpdateWithResponse(
-                    resourceGroupName, workspaceName, dataExportName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getDataExports()
+            .createOrUpdateWithResponse(resourceGroupName, workspaceName, dataExportName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
-    DataExportImpl(
-        String name, com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager) {
+    DataExportImpl(String name,
+        com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager) {
         this.innerObject = new DataExportInner();
         this.serviceManager = serviceManager;
         this.dataExportName = name;
@@ -123,29 +114,19 @@ public final class DataExportImpl implements DataExport, DataExport.Definition, 
     }
 
     public DataExport apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDataExports()
-                .createOrUpdateWithResponse(
-                    resourceGroupName, workspaceName, dataExportName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getDataExports().createOrUpdateWithResponse(resourceGroupName,
+            workspaceName, dataExportName, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public DataExport apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDataExports()
-                .createOrUpdateWithResponse(
-                    resourceGroupName, workspaceName, dataExportName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getDataExports()
+            .createOrUpdateWithResponse(resourceGroupName, workspaceName, dataExportName, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
-    DataExportImpl(
-        DataExportInner innerObject,
+    DataExportImpl(DataExportInner innerObject,
         com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -155,22 +136,14 @@ public final class DataExportImpl implements DataExport, DataExport.Definition, 
     }
 
     public DataExport refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDataExports()
-                .getWithResponse(resourceGroupName, workspaceName, dataExportName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getDataExports()
+            .getWithResponse(resourceGroupName, workspaceName, dataExportName, Context.NONE).getValue();
         return this;
     }
 
     public DataExport refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDataExports()
-                .getWithResponse(resourceGroupName, workspaceName, dataExportName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getDataExports()
+            .getWithResponse(resourceGroupName, workspaceName, dataExportName, context).getValue();
         return this;
     }
 

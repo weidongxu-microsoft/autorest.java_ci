@@ -9,7 +9,9 @@ import com.azure.resourcemanager.databoxedge.generated.fluent.models.Subscriptio
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Subscription details for the Edge Profile. */
+/**
+ * Subscription details for the Edge Profile.
+ */
 @Fluent
 public final class EdgeProfileSubscription {
     /*
@@ -48,13 +50,15 @@ public final class EdgeProfileSubscription {
     @JsonProperty(value = "properties")
     private SubscriptionProperties innerProperties;
 
-    /** Creates an instance of EdgeProfileSubscription class. */
+    /**
+     * Creates an instance of EdgeProfileSubscription class.
+     */
     public EdgeProfileSubscription() {
     }
 
     /**
      * Get the registrationId property: Edge Subscription Registration ID.
-     *
+     * 
      * @return the registrationId value.
      */
     public String registrationId() {
@@ -63,7 +67,7 @@ public final class EdgeProfileSubscription {
 
     /**
      * Set the registrationId property: Edge Subscription Registration ID.
-     *
+     * 
      * @param registrationId the registrationId value to set.
      * @return the EdgeProfileSubscription object itself.
      */
@@ -74,7 +78,7 @@ public final class EdgeProfileSubscription {
 
     /**
      * Get the id property: ARM ID of the subscription.
-     *
+     * 
      * @return the id value.
      */
     public String id() {
@@ -83,7 +87,7 @@ public final class EdgeProfileSubscription {
 
     /**
      * Set the id property: ARM ID of the subscription.
-     *
+     * 
      * @param id the id value to set.
      * @return the EdgeProfileSubscription object itself.
      */
@@ -94,7 +98,7 @@ public final class EdgeProfileSubscription {
 
     /**
      * Get the state property: The state property.
-     *
+     * 
      * @return the state value.
      */
     public SubscriptionState state() {
@@ -103,7 +107,7 @@ public final class EdgeProfileSubscription {
 
     /**
      * Set the state property: The state property.
-     *
+     * 
      * @param state the state value to set.
      * @return the EdgeProfileSubscription object itself.
      */
@@ -114,7 +118,7 @@ public final class EdgeProfileSubscription {
 
     /**
      * Get the registrationDate property: The registrationDate property.
-     *
+     * 
      * @return the registrationDate value.
      */
     public String registrationDate() {
@@ -123,7 +127,7 @@ public final class EdgeProfileSubscription {
 
     /**
      * Set the registrationDate property: The registrationDate property.
-     *
+     * 
      * @param registrationDate the registrationDate value to set.
      * @return the EdgeProfileSubscription object itself.
      */
@@ -134,7 +138,7 @@ public final class EdgeProfileSubscription {
 
     /**
      * Get the subscriptionId property: The subscriptionId property.
-     *
+     * 
      * @return the subscriptionId value.
      */
     public String subscriptionId() {
@@ -143,7 +147,7 @@ public final class EdgeProfileSubscription {
 
     /**
      * Set the subscriptionId property: The subscriptionId property.
-     *
+     * 
      * @param subscriptionId the subscriptionId value to set.
      * @return the EdgeProfileSubscription object itself.
      */
@@ -154,7 +158,7 @@ public final class EdgeProfileSubscription {
 
     /**
      * Get the innerProperties property: The properties property.
-     *
+     * 
      * @return the innerProperties value.
      */
     private SubscriptionProperties innerProperties() {
@@ -163,7 +167,7 @@ public final class EdgeProfileSubscription {
 
     /**
      * Get the tenantId property: The tenantId property.
-     *
+     * 
      * @return the tenantId value.
      */
     public String tenantId() {
@@ -172,7 +176,7 @@ public final class EdgeProfileSubscription {
 
     /**
      * Set the tenantId property: The tenantId property.
-     *
+     * 
      * @param tenantId the tenantId value to set.
      * @return the EdgeProfileSubscription object itself.
      */
@@ -186,7 +190,7 @@ public final class EdgeProfileSubscription {
 
     /**
      * Get the locationPlacementId property: The locationPlacementId property.
-     *
+     * 
      * @return the locationPlacementId value.
      */
     public String locationPlacementId() {
@@ -195,7 +199,7 @@ public final class EdgeProfileSubscription {
 
     /**
      * Set the locationPlacementId property: The locationPlacementId property.
-     *
+     * 
      * @param locationPlacementId the locationPlacementId value to set.
      * @return the EdgeProfileSubscription object itself.
      */
@@ -209,7 +213,7 @@ public final class EdgeProfileSubscription {
 
     /**
      * Get the quotaId property: The quotaId property.
-     *
+     * 
      * @return the quotaId value.
      */
     public String quotaId() {
@@ -218,7 +222,7 @@ public final class EdgeProfileSubscription {
 
     /**
      * Set the quotaId property: The quotaId property.
-     *
+     * 
      * @param quotaId the quotaId value to set.
      * @return the EdgeProfileSubscription object itself.
      */
@@ -232,7 +236,7 @@ public final class EdgeProfileSubscription {
 
     /**
      * Get the serializedDetails property: The serializedDetails property.
-     *
+     * 
      * @return the serializedDetails value.
      */
     public String serializedDetails() {
@@ -241,7 +245,7 @@ public final class EdgeProfileSubscription {
 
     /**
      * Set the serializedDetails property: The serializedDetails property.
-     *
+     * 
      * @param serializedDetails the serializedDetails value to set.
      * @return the EdgeProfileSubscription object itself.
      */
@@ -255,7 +259,7 @@ public final class EdgeProfileSubscription {
 
     /**
      * Get the registeredFeatures property: The registeredFeatures property.
-     *
+     * 
      * @return the registeredFeatures value.
      */
     public List<SubscriptionRegisteredFeatures> registeredFeatures() {
@@ -264,7 +268,7 @@ public final class EdgeProfileSubscription {
 
     /**
      * Set the registeredFeatures property: The registeredFeatures property.
-     *
+     * 
      * @param registeredFeatures the registeredFeatures value to set.
      * @return the EdgeProfileSubscription object itself.
      */
@@ -278,7 +282,7 @@ public final class EdgeProfileSubscription {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

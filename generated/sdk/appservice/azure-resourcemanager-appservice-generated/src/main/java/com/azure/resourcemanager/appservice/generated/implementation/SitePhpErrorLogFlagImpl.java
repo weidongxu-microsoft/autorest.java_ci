@@ -12,8 +12,7 @@ public final class SitePhpErrorLogFlagImpl implements SitePhpErrorLogFlag {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    SitePhpErrorLogFlagImpl(
-        SitePhpErrorLogFlagInner innerObject,
+    SitePhpErrorLogFlagImpl(SitePhpErrorLogFlagInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

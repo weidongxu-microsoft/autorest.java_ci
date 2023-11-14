@@ -14,11 +14,13 @@ import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.network.generated.fluent.models.NatGatewayInner;
 import com.azure.resourcemanager.network.generated.models.TagsObject;
 
-/** An instance of this class provides access to all the operations defined in NatGatewaysClient. */
+/**
+ * An instance of this class provides access to all the operations defined in NatGatewaysClient.
+ */
 public interface NatGatewaysClient {
     /**
      * Deletes the specified nat gateway.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param natGatewayName The name of the nat gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -31,7 +33,7 @@ public interface NatGatewaysClient {
 
     /**
      * Deletes the specified nat gateway.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param natGatewayName The name of the nat gateway.
      * @param context The context to associate with this operation.
@@ -45,7 +47,7 @@ public interface NatGatewaysClient {
 
     /**
      * Deletes the specified nat gateway.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param natGatewayName The name of the nat gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -57,7 +59,7 @@ public interface NatGatewaysClient {
 
     /**
      * Deletes the specified nat gateway.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param natGatewayName The name of the nat gateway.
      * @param context The context to associate with this operation.
@@ -70,7 +72,7 @@ public interface NatGatewaysClient {
 
     /**
      * Gets the specified nat gateway in a specified resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param natGatewayName The name of the nat gateway.
      * @param expand Expands referenced resources.
@@ -81,12 +83,12 @@ public interface NatGatewaysClient {
      * @return the specified nat gateway in a specified resource group along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<NatGatewayInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String natGatewayName, String expand, Context context);
+    Response<NatGatewayInner> getByResourceGroupWithResponse(String resourceGroupName, String natGatewayName,
+        String expand, Context context);
 
     /**
      * Gets the specified nat gateway in a specified resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param natGatewayName The name of the nat gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -99,7 +101,7 @@ public interface NatGatewaysClient {
 
     /**
      * Creates or updates a nat gateway.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param natGatewayName The name of the nat gateway.
      * @param parameters Parameters supplied to the create or update nat gateway operation.
@@ -109,12 +111,12 @@ public interface NatGatewaysClient {
      * @return the {@link SyncPoller} for polling of nat Gateway resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<NatGatewayInner>, NatGatewayInner> beginCreateOrUpdate(
-        String resourceGroupName, String natGatewayName, NatGatewayInner parameters);
+    SyncPoller<PollResult<NatGatewayInner>, NatGatewayInner> beginCreateOrUpdate(String resourceGroupName,
+        String natGatewayName, NatGatewayInner parameters);
 
     /**
      * Creates or updates a nat gateway.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param natGatewayName The name of the nat gateway.
      * @param parameters Parameters supplied to the create or update nat gateway operation.
@@ -125,12 +127,12 @@ public interface NatGatewaysClient {
      * @return the {@link SyncPoller} for polling of nat Gateway resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<NatGatewayInner>, NatGatewayInner> beginCreateOrUpdate(
-        String resourceGroupName, String natGatewayName, NatGatewayInner parameters, Context context);
+    SyncPoller<PollResult<NatGatewayInner>, NatGatewayInner> beginCreateOrUpdate(String resourceGroupName,
+        String natGatewayName, NatGatewayInner parameters, Context context);
 
     /**
      * Creates or updates a nat gateway.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param natGatewayName The name of the nat gateway.
      * @param parameters Parameters supplied to the create or update nat gateway operation.
@@ -144,7 +146,7 @@ public interface NatGatewaysClient {
 
     /**
      * Creates or updates a nat gateway.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param natGatewayName The name of the nat gateway.
      * @param parameters Parameters supplied to the create or update nat gateway operation.
@@ -155,12 +157,12 @@ public interface NatGatewaysClient {
      * @return nat Gateway resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    NatGatewayInner createOrUpdate(
-        String resourceGroupName, String natGatewayName, NatGatewayInner parameters, Context context);
+    NatGatewayInner createOrUpdate(String resourceGroupName, String natGatewayName, NatGatewayInner parameters,
+        Context context);
 
     /**
      * Updates nat gateway tags.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param natGatewayName The name of the nat gateway.
      * @param parameters Parameters supplied to update nat gateway tags.
@@ -171,12 +173,12 @@ public interface NatGatewaysClient {
      * @return nat Gateway resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<NatGatewayInner> updateTagsWithResponse(
-        String resourceGroupName, String natGatewayName, TagsObject parameters, Context context);
+    Response<NatGatewayInner> updateTagsWithResponse(String resourceGroupName, String natGatewayName,
+        TagsObject parameters, Context context);
 
     /**
      * Updates nat gateway tags.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param natGatewayName The name of the nat gateway.
      * @param parameters Parameters supplied to update nat gateway tags.
@@ -190,7 +192,7 @@ public interface NatGatewaysClient {
 
     /**
      * Gets all the Nat Gateways in a subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all the Nat Gateways in a subscription as paginated response with {@link PagedIterable}.
@@ -200,7 +202,7 @@ public interface NatGatewaysClient {
 
     /**
      * Gets all the Nat Gateways in a subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -212,7 +214,7 @@ public interface NatGatewaysClient {
 
     /**
      * Gets all nat gateways in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -224,7 +226,7 @@ public interface NatGatewaysClient {
 
     /**
      * Gets all nat gateways in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

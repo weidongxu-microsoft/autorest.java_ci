@@ -9,7 +9,9 @@ import com.azure.resourcemanager.databoxedge.generated.models.SubscriptionRegist
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The SubscriptionProperties model. */
+/**
+ * The SubscriptionProperties model.
+ */
 @Fluent
 public final class SubscriptionProperties {
     /*
@@ -42,13 +44,15 @@ public final class SubscriptionProperties {
     @JsonProperty(value = "registeredFeatures")
     private List<SubscriptionRegisteredFeatures> registeredFeatures;
 
-    /** Creates an instance of SubscriptionProperties class. */
+    /**
+     * Creates an instance of SubscriptionProperties class.
+     */
     public SubscriptionProperties() {
     }
 
     /**
      * Get the tenantId property: The tenantId property.
-     *
+     * 
      * @return the tenantId value.
      */
     public String tenantId() {
@@ -57,7 +61,7 @@ public final class SubscriptionProperties {
 
     /**
      * Set the tenantId property: The tenantId property.
-     *
+     * 
      * @param tenantId the tenantId value to set.
      * @return the SubscriptionProperties object itself.
      */
@@ -68,7 +72,7 @@ public final class SubscriptionProperties {
 
     /**
      * Get the locationPlacementId property: The locationPlacementId property.
-     *
+     * 
      * @return the locationPlacementId value.
      */
     public String locationPlacementId() {
@@ -77,7 +81,7 @@ public final class SubscriptionProperties {
 
     /**
      * Set the locationPlacementId property: The locationPlacementId property.
-     *
+     * 
      * @param locationPlacementId the locationPlacementId value to set.
      * @return the SubscriptionProperties object itself.
      */
@@ -88,7 +92,7 @@ public final class SubscriptionProperties {
 
     /**
      * Get the quotaId property: The quotaId property.
-     *
+     * 
      * @return the quotaId value.
      */
     public String quotaId() {
@@ -97,7 +101,7 @@ public final class SubscriptionProperties {
 
     /**
      * Set the quotaId property: The quotaId property.
-     *
+     * 
      * @param quotaId the quotaId value to set.
      * @return the SubscriptionProperties object itself.
      */
@@ -108,7 +112,7 @@ public final class SubscriptionProperties {
 
     /**
      * Get the serializedDetails property: The serializedDetails property.
-     *
+     * 
      * @return the serializedDetails value.
      */
     public String serializedDetails() {
@@ -117,7 +121,7 @@ public final class SubscriptionProperties {
 
     /**
      * Set the serializedDetails property: The serializedDetails property.
-     *
+     * 
      * @param serializedDetails the serializedDetails value to set.
      * @return the SubscriptionProperties object itself.
      */
@@ -128,7 +132,7 @@ public final class SubscriptionProperties {
 
     /**
      * Get the registeredFeatures property: The registeredFeatures property.
-     *
+     * 
      * @return the registeredFeatures value.
      */
     public List<SubscriptionRegisteredFeatures> registeredFeatures() {
@@ -137,7 +141,7 @@ public final class SubscriptionProperties {
 
     /**
      * Set the registeredFeatures property: The registeredFeatures property.
-     *
+     * 
      * @param registeredFeatures the registeredFeatures value to set.
      * @return the SubscriptionProperties object itself.
      */
@@ -148,7 +152,7 @@ public final class SubscriptionProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -13,10 +13,8 @@ import com.azure.resourcemanager.network.generated.models.VpnServerConfiguration
 import java.util.Collections;
 import java.util.List;
 
-public final class VpnServerConfigurationPolicyGroupImpl
-    implements VpnServerConfigurationPolicyGroup,
-        VpnServerConfigurationPolicyGroup.Definition,
-        VpnServerConfigurationPolicyGroup.Update {
+public final class VpnServerConfigurationPolicyGroupImpl implements VpnServerConfigurationPolicyGroup,
+    VpnServerConfigurationPolicyGroup.Definition, VpnServerConfigurationPolicyGroup.Update {
     private VpnServerConfigurationPolicyGroupInner innerObject;
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
@@ -85,43 +83,28 @@ public final class VpnServerConfigurationPolicyGroupImpl
 
     private String configurationPolicyGroupName;
 
-    public VpnServerConfigurationPolicyGroupImpl withExistingVpnServerConfiguration(
-        String resourceGroupName, String vpnServerConfigurationName) {
+    public VpnServerConfigurationPolicyGroupImpl withExistingVpnServerConfiguration(String resourceGroupName,
+        String vpnServerConfigurationName) {
         this.resourceGroupName = resourceGroupName;
         this.vpnServerConfigurationName = vpnServerConfigurationName;
         return this;
     }
 
     public VpnServerConfigurationPolicyGroup create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getConfigurationPolicyGroups()
-                .createOrUpdate(
-                    resourceGroupName,
-                    vpnServerConfigurationName,
-                    configurationPolicyGroupName,
-                    this.innerModel(),
-                    Context.NONE);
+        this.innerObject
+            = serviceManager.serviceClient().getConfigurationPolicyGroups().createOrUpdate(resourceGroupName,
+                vpnServerConfigurationName, configurationPolicyGroupName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public VpnServerConfigurationPolicyGroup create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getConfigurationPolicyGroups()
-                .createOrUpdate(
-                    resourceGroupName,
-                    vpnServerConfigurationName,
-                    configurationPolicyGroupName,
-                    this.innerModel(),
-                    context);
+        this.innerObject = serviceManager.serviceClient().getConfigurationPolicyGroups().createOrUpdate(
+            resourceGroupName, vpnServerConfigurationName, configurationPolicyGroupName, this.innerModel(), context);
         return this;
     }
 
-    VpnServerConfigurationPolicyGroupImpl(
-        String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    VpnServerConfigurationPolicyGroupImpl(String name,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new VpnServerConfigurationPolicyGroupInner();
         this.serviceManager = serviceManager;
         this.configurationPolicyGroupName = name;
@@ -132,35 +115,19 @@ public final class VpnServerConfigurationPolicyGroupImpl
     }
 
     public VpnServerConfigurationPolicyGroup apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getConfigurationPolicyGroups()
-                .createOrUpdate(
-                    resourceGroupName,
-                    vpnServerConfigurationName,
-                    configurationPolicyGroupName,
-                    this.innerModel(),
-                    Context.NONE);
+        this.innerObject
+            = serviceManager.serviceClient().getConfigurationPolicyGroups().createOrUpdate(resourceGroupName,
+                vpnServerConfigurationName, configurationPolicyGroupName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public VpnServerConfigurationPolicyGroup apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getConfigurationPolicyGroups()
-                .createOrUpdate(
-                    resourceGroupName,
-                    vpnServerConfigurationName,
-                    configurationPolicyGroupName,
-                    this.innerModel(),
-                    context);
+        this.innerObject = serviceManager.serviceClient().getConfigurationPolicyGroups().createOrUpdate(
+            resourceGroupName, vpnServerConfigurationName, configurationPolicyGroupName, this.innerModel(), context);
         return this;
     }
 
-    VpnServerConfigurationPolicyGroupImpl(
-        VpnServerConfigurationPolicyGroupInner innerObject,
+    VpnServerConfigurationPolicyGroupImpl(VpnServerConfigurationPolicyGroupInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -170,23 +137,16 @@ public final class VpnServerConfigurationPolicyGroupImpl
     }
 
     public VpnServerConfigurationPolicyGroup refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getConfigurationPolicyGroups()
-                .getWithResponse(
-                    resourceGroupName, vpnServerConfigurationName, configurationPolicyGroupName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getConfigurationPolicyGroups()
+            .getWithResponse(resourceGroupName, vpnServerConfigurationName, configurationPolicyGroupName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public VpnServerConfigurationPolicyGroup refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getConfigurationPolicyGroups()
-                .getWithResponse(resourceGroupName, vpnServerConfigurationName, configurationPolicyGroupName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getConfigurationPolicyGroups()
+            .getWithResponse(resourceGroupName, vpnServerConfigurationName, configurationPolicyGroupName, context)
+            .getValue();
         return this;
     }
 
@@ -205,8 +165,8 @@ public final class VpnServerConfigurationPolicyGroupImpl
         return this;
     }
 
-    public VpnServerConfigurationPolicyGroupImpl withPolicyMembers(
-        List<VpnServerConfigurationPolicyGroupMember> policyMembers) {
+    public VpnServerConfigurationPolicyGroupImpl
+        withPolicyMembers(List<VpnServerConfigurationPolicyGroupMember> policyMembers) {
         this.innerModel().withPolicyMembers(policyMembers);
         return this;
     }

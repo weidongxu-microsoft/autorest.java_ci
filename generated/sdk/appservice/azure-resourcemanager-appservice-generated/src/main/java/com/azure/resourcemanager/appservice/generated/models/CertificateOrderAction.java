@@ -7,25 +7,27 @@ package com.azure.resourcemanager.appservice.generated.models;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CertificateOrderActionInner;
 import java.time.OffsetDateTime;
 
-/** An immutable client-side representation of CertificateOrderAction. */
+/**
+ * An immutable client-side representation of CertificateOrderAction.
+ */
 public interface CertificateOrderAction {
     /**
      * Gets the actionType property: Action type.
-     *
+     * 
      * @return the actionType value.
      */
     CertificateOrderActionType actionType();
 
     /**
      * Gets the createdAt property: Time at which the certificate action was performed.
-     *
+     * 
      * @return the createdAt value.
      */
     OffsetDateTime createdAt();
 
     /**
      * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.CertificateOrderActionInner object.
-     *
+     * 
      * @return the inner object.
      */
     CertificateOrderActionInner innerModel();

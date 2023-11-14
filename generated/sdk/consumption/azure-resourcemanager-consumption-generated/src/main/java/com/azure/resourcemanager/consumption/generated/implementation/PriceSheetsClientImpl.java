@@ -32,22 +32,28 @@ import java.nio.ByteBuffer;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-/** An instance of this class provides access to all the operations defined in PriceSheetsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in PriceSheetsClient.
+ */
 public final class PriceSheetsClientImpl implements PriceSheetsClient {
-    /** The proxy service used to perform REST calls. */
+    /**
+     * The proxy service used to perform REST calls.
+     */
     private final PriceSheetsService service;
 
-    /** The service client containing this operation class. */
+    /**
+     * The service client containing this operation class.
+     */
     private final ConsumptionManagementClientImpl client;
 
     /**
      * Initializes an instance of PriceSheetsClientImpl.
-     *
+     * 
      * @param client the instance of the service client containing this operation class.
      */
     PriceSheetsClientImpl(ConsumptionManagementClientImpl client) {
-        this.service =
-            RestProxy.create(PriceSheetsService.class, client.getHttpPipeline(), client.getSerializerAdapter());
+        this.service
+            = RestProxy.create(PriceSheetsService.class, client.getHttpPipeline(), client.getSerializerAdapter());
         this.client = client;
     }
 
@@ -58,58 +64,43 @@ public final class PriceSheetsClientImpl implements PriceSheetsClient {
     @Host("{$host}")
     @ServiceInterface(name = "ConsumptionManagemen")
     public interface PriceSheetsService {
-        @Headers({"Content-Type: application/json"})
+        @Headers({ "Content-Type: application/json" })
         @Get("/subscriptions/{subscriptionId}/providers/Microsoft.Consumption/pricesheets/default")
-        @ExpectedResponses({200})
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<PriceSheetResultInner>> get(
-            @HostParam("$host") String endpoint,
-            @QueryParam("$expand") String expand,
-            @QueryParam("$skiptoken") String skiptoken,
-            @QueryParam("$top") Integer top,
-            @PathParam("subscriptionId") String subscriptionId,
-            @QueryParam("api-version") String apiVersion,
-            @HeaderParam("Accept") String accept,
-            Context context);
+        Mono<Response<PriceSheetResultInner>> get(@HostParam("$host") String endpoint,
+            @QueryParam("$expand") String expand, @QueryParam("$skiptoken") String skiptoken,
+            @QueryParam("$top") Integer top, @PathParam("subscriptionId") String subscriptionId,
+            @QueryParam("api-version") String apiVersion, @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Get(
-            "/subscriptions/{subscriptionId}/providers/Microsoft.Billing/billingPeriods/{billingPeriodName}/providers/Microsoft.Consumption/pricesheets/default")
-        @ExpectedResponses({200})
+        @Headers({ "Content-Type: application/json" })
+        @Get("/subscriptions/{subscriptionId}/providers/Microsoft.Billing/billingPeriods/{billingPeriodName}/providers/Microsoft.Consumption/pricesheets/default")
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<PriceSheetResultInner>> getByBillingPeriod(
-            @HostParam("$host") String endpoint,
-            @QueryParam("$expand") String expand,
-            @QueryParam("$skiptoken") String skiptoken,
-            @QueryParam("$top") Integer top,
-            @PathParam("subscriptionId") String subscriptionId,
-            @QueryParam("api-version") String apiVersion,
-            @PathParam("billingPeriodName") String billingPeriodName,
-            @HeaderParam("Accept") String accept,
-            Context context);
+        Mono<Response<PriceSheetResultInner>> getByBillingPeriod(@HostParam("$host") String endpoint,
+            @QueryParam("$expand") String expand, @QueryParam("$skiptoken") String skiptoken,
+            @QueryParam("$top") Integer top, @PathParam("subscriptionId") String subscriptionId,
+            @QueryParam("api-version") String apiVersion, @PathParam("billingPeriodName") String billingPeriodName,
+            @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Post(
-            "/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingPeriods/{billingPeriodName}/providers/Microsoft.Consumption/pricesheets/download")
-        @ExpectedResponses({200, 202})
+        @Headers({ "Content-Type: application/json" })
+        @Post("/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingPeriods/{billingPeriodName}/providers/Microsoft.Consumption/pricesheets/download")
+        @ExpectedResponses({ 200, 202 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<Flux<ByteBuffer>>> downloadByBillingAccountPeriod(
-            @HostParam("$host") String endpoint,
-            @PathParam("billingAccountId") String billingAccountId,
-            @QueryParam("api-version") String apiVersion,
-            @PathParam("billingPeriodName") String billingPeriodName,
-            @HeaderParam("Accept") String accept,
+        Mono<Response<Flux<ByteBuffer>>> downloadByBillingAccountPeriod(@HostParam("$host") String endpoint,
+            @PathParam("billingAccountId") String billingAccountId, @QueryParam("api-version") String apiVersion,
+            @PathParam("billingPeriodName") String billingPeriodName, @HeaderParam("Accept") String accept,
             Context context);
     }
 
     /**
      * Gets the price sheet for a subscription. Price sheet is available via this API only for May 1, 2014 or later.
-     *
+     * 
      * @param expand May be used to expand the properties/meterDetails within a price sheet. By default, these fields
-     *     are not included when returning price sheet.
+     * are not included when returning price sheet.
      * @param skiptoken Skiptoken is only used if a previous operation returned a partial result. If a previous response
-     *     contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that
-     *     specifies a starting point to use for subsequent calls.
+     * contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies
+     * a starting point to use for subsequent calls.
      * @param top May be used to limit the number of results to the top N results.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -119,42 +110,28 @@ public final class PriceSheetsClientImpl implements PriceSheetsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PriceSheetResultInner>> getWithResponseAsync(String expand, String skiptoken, Integer top) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .get(
-                            this.client.getEndpoint(),
-                            expand,
-                            skiptoken,
-                            top,
-                            this.client.getSubscriptionId(),
-                            this.client.getApiVersion(),
-                            accept,
-                            context))
+            .withContext(context -> service.get(this.client.getEndpoint(), expand, skiptoken, top,
+                this.client.getSubscriptionId(), this.client.getApiVersion(), accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Gets the price sheet for a subscription. Price sheet is available via this API only for May 1, 2014 or later.
-     *
+     * 
      * @param expand May be used to expand the properties/meterDetails within a price sheet. By default, these fields
-     *     are not included when returning price sheet.
+     * are not included when returning price sheet.
      * @param skiptoken Skiptoken is only used if a previous operation returned a partial result. If a previous response
-     *     contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that
-     *     specifies a starting point to use for subsequent calls.
+     * contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies
+     * a starting point to use for subsequent calls.
      * @param top May be used to limit the number of results to the top N results.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -163,37 +140,25 @@ public final class PriceSheetsClientImpl implements PriceSheetsClient {
      * @return the price sheet for a subscription along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<PriceSheetResultInner>> getWithResponseAsync(
-        String expand, String skiptoken, Integer top, Context context) {
+    private Mono<Response<PriceSheetResultInner>> getWithResponseAsync(String expand, String skiptoken, Integer top,
+        Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .get(
-                this.client.getEndpoint(),
-                expand,
-                skiptoken,
-                top,
-                this.client.getSubscriptionId(),
-                this.client.getApiVersion(),
-                accept,
-                context);
+        return service.get(this.client.getEndpoint(), expand, skiptoken, top, this.client.getSubscriptionId(),
+            this.client.getApiVersion(), accept, context);
     }
 
     /**
      * Gets the price sheet for a subscription. Price sheet is available via this API only for May 1, 2014 or later.
-     *
+     * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the price sheet for a subscription on successful completion of {@link Mono}.
@@ -208,12 +173,12 @@ public final class PriceSheetsClientImpl implements PriceSheetsClient {
 
     /**
      * Gets the price sheet for a subscription. Price sheet is available via this API only for May 1, 2014 or later.
-     *
+     * 
      * @param expand May be used to expand the properties/meterDetails within a price sheet. By default, these fields
-     *     are not included when returning price sheet.
+     * are not included when returning price sheet.
      * @param skiptoken Skiptoken is only used if a previous operation returned a partial result. If a previous response
-     *     contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that
-     *     specifies a starting point to use for subsequent calls.
+     * contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies
+     * a starting point to use for subsequent calls.
      * @param top May be used to limit the number of results to the top N results.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -222,14 +187,14 @@ public final class PriceSheetsClientImpl implements PriceSheetsClient {
      * @return the price sheet for a subscription along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<PriceSheetResultInner> getWithResponse(
-        String expand, String skiptoken, Integer top, Context context) {
+    public Response<PriceSheetResultInner> getWithResponse(String expand, String skiptoken, Integer top,
+        Context context) {
         return getWithResponseAsync(expand, skiptoken, top, context).block();
     }
 
     /**
      * Gets the price sheet for a subscription. Price sheet is available via this API only for May 1, 2014 or later.
-     *
+     * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the price sheet for a subscription.
@@ -245,34 +210,30 @@ public final class PriceSheetsClientImpl implements PriceSheetsClient {
     /**
      * Get the price sheet for a scope by subscriptionId and billing period. Price sheet is available via this API only
      * for May 1, 2014 or later.
-     *
+     * 
      * @param billingPeriodName Billing Period Name.
      * @param expand May be used to expand the properties/meterDetails within a price sheet. By default, these fields
-     *     are not included when returning price sheet.
+     * are not included when returning price sheet.
      * @param skiptoken Skiptoken is only used if a previous operation returned a partial result. If a previous response
-     *     contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that
-     *     specifies a starting point to use for subsequent calls.
+     * contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies
+     * a starting point to use for subsequent calls.
      * @param top May be used to limit the number of results to the top N results.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the price sheet for a scope by subscriptionId and billing period along with {@link Response} on
-     *     successful completion of {@link Mono}.
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<PriceSheetResultInner>> getByBillingPeriodWithResponseAsync(
-        String billingPeriodName, String expand, String skiptoken, Integer top) {
+    private Mono<Response<PriceSheetResultInner>> getByBillingPeriodWithResponseAsync(String billingPeriodName,
+        String expand, String skiptoken, Integer top) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (billingPeriodName == null) {
             return Mono
@@ -280,54 +241,39 @@ public final class PriceSheetsClientImpl implements PriceSheetsClient {
         }
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .getByBillingPeriod(
-                            this.client.getEndpoint(),
-                            expand,
-                            skiptoken,
-                            top,
-                            this.client.getSubscriptionId(),
-                            this.client.getApiVersion(),
-                            billingPeriodName,
-                            accept,
-                            context))
+            .withContext(context -> service.getByBillingPeriod(this.client.getEndpoint(), expand, skiptoken, top,
+                this.client.getSubscriptionId(), this.client.getApiVersion(), billingPeriodName, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Get the price sheet for a scope by subscriptionId and billing period. Price sheet is available via this API only
      * for May 1, 2014 or later.
-     *
+     * 
      * @param billingPeriodName Billing Period Name.
      * @param expand May be used to expand the properties/meterDetails within a price sheet. By default, these fields
-     *     are not included when returning price sheet.
+     * are not included when returning price sheet.
      * @param skiptoken Skiptoken is only used if a previous operation returned a partial result. If a previous response
-     *     contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that
-     *     specifies a starting point to use for subsequent calls.
+     * contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies
+     * a starting point to use for subsequent calls.
      * @param top May be used to limit the number of results to the top N results.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the price sheet for a scope by subscriptionId and billing period along with {@link Response} on
-     *     successful completion of {@link Mono}.
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<PriceSheetResultInner>> getByBillingPeriodWithResponseAsync(
-        String billingPeriodName, String expand, String skiptoken, Integer top, Context context) {
+    private Mono<Response<PriceSheetResultInner>> getByBillingPeriodWithResponseAsync(String billingPeriodName,
+        String expand, String skiptoken, Integer top, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (billingPeriodName == null) {
             return Mono
@@ -335,29 +281,20 @@ public final class PriceSheetsClientImpl implements PriceSheetsClient {
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .getByBillingPeriod(
-                this.client.getEndpoint(),
-                expand,
-                skiptoken,
-                top,
-                this.client.getSubscriptionId(),
-                this.client.getApiVersion(),
-                billingPeriodName,
-                accept,
-                context);
+        return service.getByBillingPeriod(this.client.getEndpoint(), expand, skiptoken, top,
+            this.client.getSubscriptionId(), this.client.getApiVersion(), billingPeriodName, accept, context);
     }
 
     /**
      * Get the price sheet for a scope by subscriptionId and billing period. Price sheet is available via this API only
      * for May 1, 2014 or later.
-     *
+     * 
      * @param billingPeriodName Billing Period Name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the price sheet for a scope by subscriptionId and billing period on successful completion of {@link
-     *     Mono}.
+     * @return the price sheet for a scope by subscriptionId and billing period on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PriceSheetResultInner> getByBillingPeriodAsync(String billingPeriodName) {
@@ -371,13 +308,13 @@ public final class PriceSheetsClientImpl implements PriceSheetsClient {
     /**
      * Get the price sheet for a scope by subscriptionId and billing period. Price sheet is available via this API only
      * for May 1, 2014 or later.
-     *
+     * 
      * @param billingPeriodName Billing Period Name.
      * @param expand May be used to expand the properties/meterDetails within a price sheet. By default, these fields
-     *     are not included when returning price sheet.
+     * are not included when returning price sheet.
      * @param skiptoken Skiptoken is only used if a previous operation returned a partial result. If a previous response
-     *     contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that
-     *     specifies a starting point to use for subsequent calls.
+     * contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies
+     * a starting point to use for subsequent calls.
      * @param top May be used to limit the number of results to the top N results.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -386,15 +323,15 @@ public final class PriceSheetsClientImpl implements PriceSheetsClient {
      * @return the price sheet for a scope by subscriptionId and billing period along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<PriceSheetResultInner> getByBillingPeriodWithResponse(
-        String billingPeriodName, String expand, String skiptoken, Integer top, Context context) {
+    public Response<PriceSheetResultInner> getByBillingPeriodWithResponse(String billingPeriodName, String expand,
+        String skiptoken, Integer top, Context context) {
         return getByBillingPeriodWithResponseAsync(billingPeriodName, expand, skiptoken, top, context).block();
     }
 
     /**
      * Get the price sheet for a scope by subscriptionId and billing period. Price sheet is available via this API only
      * for May 1, 2014 or later.
-     *
+     * 
      * @param billingPeriodName Billing Period Name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -411,23 +348,21 @@ public final class PriceSheetsClientImpl implements PriceSheetsClient {
 
     /**
      * Generates the pricesheet for the provided billing period asynchronously based on the enrollment id.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param billingPeriodName Billing Period Name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of the long running operation along with {@link Response} on successful completion of {@link
-     *     Mono}.
+     * @return the status of the long running operation along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> downloadByBillingAccountPeriodWithResponseAsync(
-        String billingAccountId, String billingPeriodName) {
+    private Mono<Response<Flux<ByteBuffer>>> downloadByBillingAccountPeriodWithResponseAsync(String billingAccountId,
+        String billingPeriodName) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (billingAccountId == null) {
             return Mono
@@ -439,39 +374,29 @@ public final class PriceSheetsClientImpl implements PriceSheetsClient {
         }
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .downloadByBillingAccountPeriod(
-                            this.client.getEndpoint(),
-                            billingAccountId,
-                            this.client.getApiVersion(),
-                            billingPeriodName,
-                            accept,
-                            context))
+            .withContext(context -> service.downloadByBillingAccountPeriod(this.client.getEndpoint(), billingAccountId,
+                this.client.getApiVersion(), billingPeriodName, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Generates the pricesheet for the provided billing period asynchronously based on the enrollment id.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param billingPeriodName Billing Period Name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of the long running operation along with {@link Response} on successful completion of {@link
-     *     Mono}.
+     * @return the status of the long running operation along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> downloadByBillingAccountPeriodWithResponseAsync(
-        String billingAccountId, String billingPeriodName, Context context) {
+    private Mono<Response<Flux<ByteBuffer>>> downloadByBillingAccountPeriodWithResponseAsync(String billingAccountId,
+        String billingPeriodName, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (billingAccountId == null) {
             return Mono
@@ -483,19 +408,13 @@ public final class PriceSheetsClientImpl implements PriceSheetsClient {
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .downloadByBillingAccountPeriod(
-                this.client.getEndpoint(),
-                billingAccountId,
-                this.client.getApiVersion(),
-                billingPeriodName,
-                accept,
-                context);
+        return service.downloadByBillingAccountPeriod(this.client.getEndpoint(), billingAccountId,
+            this.client.getApiVersion(), billingPeriodName, accept, context);
     }
 
     /**
      * Generates the pricesheet for the provided billing period asynchronously based on the enrollment id.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param billingPeriodName Billing Period Name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -504,23 +423,17 @@ public final class PriceSheetsClientImpl implements PriceSheetsClient {
      * @return the {@link PollerFlux} for polling of the status of the long running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    private PollerFlux<PollResult<OperationStatusInner>, OperationStatusInner> beginDownloadByBillingAccountPeriodAsync(
-        String billingAccountId, String billingPeriodName) {
-        Mono<Response<Flux<ByteBuffer>>> mono =
-            downloadByBillingAccountPeriodWithResponseAsync(billingAccountId, billingPeriodName);
-        return this
-            .client
-            .<OperationStatusInner, OperationStatusInner>getLroResult(
-                mono,
-                this.client.getHttpPipeline(),
-                OperationStatusInner.class,
-                OperationStatusInner.class,
-                this.client.getContext());
+    private PollerFlux<PollResult<OperationStatusInner>, OperationStatusInner>
+        beginDownloadByBillingAccountPeriodAsync(String billingAccountId, String billingPeriodName) {
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = downloadByBillingAccountPeriodWithResponseAsync(billingAccountId, billingPeriodName);
+        return this.client.<OperationStatusInner, OperationStatusInner>getLroResult(mono, this.client.getHttpPipeline(),
+            OperationStatusInner.class, OperationStatusInner.class, this.client.getContext());
     }
 
     /**
      * Generates the pricesheet for the provided billing period asynchronously based on the enrollment id.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param billingPeriodName Billing Period Name.
      * @param context The context to associate with this operation.
@@ -530,20 +443,18 @@ public final class PriceSheetsClientImpl implements PriceSheetsClient {
      * @return the {@link PollerFlux} for polling of the status of the long running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    private PollerFlux<PollResult<OperationStatusInner>, OperationStatusInner> beginDownloadByBillingAccountPeriodAsync(
-        String billingAccountId, String billingPeriodName, Context context) {
+    private PollerFlux<PollResult<OperationStatusInner>, OperationStatusInner>
+        beginDownloadByBillingAccountPeriodAsync(String billingAccountId, String billingPeriodName, Context context) {
         context = this.client.mergeContext(context);
-        Mono<Response<Flux<ByteBuffer>>> mono =
-            downloadByBillingAccountPeriodWithResponseAsync(billingAccountId, billingPeriodName, context);
-        return this
-            .client
-            .<OperationStatusInner, OperationStatusInner>getLroResult(
-                mono, this.client.getHttpPipeline(), OperationStatusInner.class, OperationStatusInner.class, context);
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = downloadByBillingAccountPeriodWithResponseAsync(billingAccountId, billingPeriodName, context);
+        return this.client.<OperationStatusInner, OperationStatusInner>getLroResult(mono, this.client.getHttpPipeline(),
+            OperationStatusInner.class, OperationStatusInner.class, context);
     }
 
     /**
      * Generates the pricesheet for the provided billing period asynchronously based on the enrollment id.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param billingPeriodName Billing Period Name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -552,14 +463,14 @@ public final class PriceSheetsClientImpl implements PriceSheetsClient {
      * @return the {@link SyncPoller} for polling of the status of the long running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<PollResult<OperationStatusInner>, OperationStatusInner> beginDownloadByBillingAccountPeriod(
-        String billingAccountId, String billingPeriodName) {
+    public SyncPoller<PollResult<OperationStatusInner>, OperationStatusInner>
+        beginDownloadByBillingAccountPeriod(String billingAccountId, String billingPeriodName) {
         return this.beginDownloadByBillingAccountPeriodAsync(billingAccountId, billingPeriodName).getSyncPoller();
     }
 
     /**
      * Generates the pricesheet for the provided billing period asynchronously based on the enrollment id.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param billingPeriodName Billing Period Name.
      * @param context The context to associate with this operation.
@@ -569,16 +480,15 @@ public final class PriceSheetsClientImpl implements PriceSheetsClient {
      * @return the {@link SyncPoller} for polling of the status of the long running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<PollResult<OperationStatusInner>, OperationStatusInner> beginDownloadByBillingAccountPeriod(
-        String billingAccountId, String billingPeriodName, Context context) {
-        return this
-            .beginDownloadByBillingAccountPeriodAsync(billingAccountId, billingPeriodName, context)
+    public SyncPoller<PollResult<OperationStatusInner>, OperationStatusInner>
+        beginDownloadByBillingAccountPeriod(String billingAccountId, String billingPeriodName, Context context) {
+        return this.beginDownloadByBillingAccountPeriodAsync(billingAccountId, billingPeriodName, context)
             .getSyncPoller();
     }
 
     /**
      * Generates the pricesheet for the provided billing period asynchronously based on the enrollment id.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param billingPeriodName Billing Period Name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -587,16 +497,15 @@ public final class PriceSheetsClientImpl implements PriceSheetsClient {
      * @return the status of the long running operation on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<OperationStatusInner> downloadByBillingAccountPeriodAsync(
-        String billingAccountId, String billingPeriodName) {
-        return beginDownloadByBillingAccountPeriodAsync(billingAccountId, billingPeriodName)
-            .last()
+    private Mono<OperationStatusInner> downloadByBillingAccountPeriodAsync(String billingAccountId,
+        String billingPeriodName) {
+        return beginDownloadByBillingAccountPeriodAsync(billingAccountId, billingPeriodName).last()
             .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
      * Generates the pricesheet for the provided billing period asynchronously based on the enrollment id.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param billingPeriodName Billing Period Name.
      * @param context The context to associate with this operation.
@@ -606,16 +515,15 @@ public final class PriceSheetsClientImpl implements PriceSheetsClient {
      * @return the status of the long running operation on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<OperationStatusInner> downloadByBillingAccountPeriodAsync(
-        String billingAccountId, String billingPeriodName, Context context) {
-        return beginDownloadByBillingAccountPeriodAsync(billingAccountId, billingPeriodName, context)
-            .last()
+    private Mono<OperationStatusInner> downloadByBillingAccountPeriodAsync(String billingAccountId,
+        String billingPeriodName, Context context) {
+        return beginDownloadByBillingAccountPeriodAsync(billingAccountId, billingPeriodName, context).last()
             .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
      * Generates the pricesheet for the provided billing period asynchronously based on the enrollment id.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param billingPeriodName Billing Period Name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -630,7 +538,7 @@ public final class PriceSheetsClientImpl implements PriceSheetsClient {
 
     /**
      * Generates the pricesheet for the provided billing period asynchronously based on the enrollment id.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param billingPeriodName Billing Period Name.
      * @param context The context to associate with this operation.
@@ -640,8 +548,8 @@ public final class PriceSheetsClientImpl implements PriceSheetsClient {
      * @return the status of the long running operation.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public OperationStatusInner downloadByBillingAccountPeriod(
-        String billingAccountId, String billingPeriodName, Context context) {
+    public OperationStatusInner downloadByBillingAccountPeriod(String billingAccountId, String billingPeriodName,
+        Context context) {
         return downloadByBillingAccountPeriodAsync(billingAccountId, billingPeriodName, context).block();
     }
 }

@@ -15,8 +15,7 @@ public final class GatewayRouteListResultImpl implements GatewayRouteListResult 
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    GatewayRouteListResultImpl(
-        GatewayRouteListResultInner innerObject,
+    GatewayRouteListResultImpl(GatewayRouteListResultInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

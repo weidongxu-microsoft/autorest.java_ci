@@ -19,8 +19,7 @@ public final class AuthorizationOperationsImpl implements AuthorizationOperation
 
     private final com.azure.resourcemanager.locks.generated.ManagementLockManager serviceManager;
 
-    public AuthorizationOperationsImpl(
-        AuthorizationOperationsClient innerClient,
+    public AuthorizationOperationsImpl(AuthorizationOperationsClient innerClient,
         com.azure.resourcemanager.locks.generated.ManagementLockManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;

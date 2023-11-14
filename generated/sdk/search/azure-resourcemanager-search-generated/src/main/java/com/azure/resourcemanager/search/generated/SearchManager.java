@@ -29,16 +29,20 @@ import com.azure.resourcemanager.search.generated.implementation.OperationsImpl;
 import com.azure.resourcemanager.search.generated.implementation.PrivateEndpointConnectionsImpl;
 import com.azure.resourcemanager.search.generated.implementation.PrivateLinkResourcesImpl;
 import com.azure.resourcemanager.search.generated.implementation.QueryKeysImpl;
+import com.azure.resourcemanager.search.generated.implementation.ResourceProvidersImpl;
 import com.azure.resourcemanager.search.generated.implementation.SearchManagementClientBuilder;
 import com.azure.resourcemanager.search.generated.implementation.ServicesImpl;
 import com.azure.resourcemanager.search.generated.implementation.SharedPrivateLinkResourcesImpl;
+import com.azure.resourcemanager.search.generated.implementation.UsagesImpl;
 import com.azure.resourcemanager.search.generated.models.AdminKeys;
 import com.azure.resourcemanager.search.generated.models.Operations;
 import com.azure.resourcemanager.search.generated.models.PrivateEndpointConnections;
 import com.azure.resourcemanager.search.generated.models.PrivateLinkResources;
 import com.azure.resourcemanager.search.generated.models.QueryKeys;
+import com.azure.resourcemanager.search.generated.models.ResourceProviders;
 import com.azure.resourcemanager.search.generated.models.Services;
 import com.azure.resourcemanager.search.generated.models.SharedPrivateLinkResources;
+import com.azure.resourcemanager.search.generated.models.Usages;
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
@@ -46,7 +50,10 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-/** Entry point to SearchManager. Client that can be used to manage Azure Cognitive Search services and API keys. */
+/**
+ * Entry point to SearchManager.
+ * Client that can be used to manage search services and API keys.
+ */
 public final class SearchManager {
     private Operations operations;
 
@@ -62,23 +69,23 @@ public final class SearchManager {
 
     private SharedPrivateLinkResources sharedPrivateLinkResources;
 
+    private Usages usages;
+
+    private ResourceProviders resourceProviders;
+
     private final SearchManagementClient clientObject;
 
     private SearchManager(HttpPipeline httpPipeline, AzureProfile profile, Duration defaultPollInterval) {
         Objects.requireNonNull(httpPipeline, "'httpPipeline' cannot be null.");
         Objects.requireNonNull(profile, "'profile' cannot be null.");
-        this.clientObject =
-            new SearchManagementClientBuilder()
-                .pipeline(httpPipeline)
-                .endpoint(profile.getEnvironment().getResourceManagerEndpoint())
-                .subscriptionId(profile.getSubscriptionId())
-                .defaultPollInterval(defaultPollInterval)
-                .buildClient();
+        this.clientObject = new SearchManagementClientBuilder().pipeline(httpPipeline)
+            .endpoint(profile.getEnvironment().getResourceManagerEndpoint()).subscriptionId(profile.getSubscriptionId())
+            .defaultPollInterval(defaultPollInterval).buildClient();
     }
 
     /**
      * Creates an instance of Search service API entry point.
-     *
+     * 
      * @param credential the credential to use.
      * @param profile the Azure profile for client.
      * @return the Search service API instance.
@@ -91,7 +98,7 @@ public final class SearchManager {
 
     /**
      * Creates an instance of Search service API entry point.
-     *
+     * 
      * @param httpPipeline the {@link HttpPipeline} configured with Azure authentication credential.
      * @param profile the Azure profile for client.
      * @return the Search service API instance.
@@ -104,14 +111,16 @@ public final class SearchManager {
 
     /**
      * Gets a Configurable instance that can be used to create SearchManager with optional configuration.
-     *
+     * 
      * @return the Configurable instance allowing configurations.
      */
     public static Configurable configure() {
         return new SearchManager.Configurable();
     }
 
-    /** The Configurable allowing configurations to be set. */
+    /**
+     * The Configurable allowing configurations to be set.
+     */
     public static final class Configurable {
         private static final ClientLogger LOGGER = new ClientLogger(Configurable.class);
 
@@ -183,8 +192,8 @@ public final class SearchManager {
 
         /**
          * Sets the retry options for the HTTP pipeline retry policy.
-         *
-         * <p>This setting has no effect, if retry policy is set via {@link #withRetryPolicy(RetryPolicy)}.
+         * <p>
+         * This setting has no effect, if retry policy is set via {@link #withRetryPolicy(RetryPolicy)}.
          *
          * @param retryOptions the retry options for the HTTP pipeline retry policy.
          * @return the configurable object itself.
@@ -201,8 +210,8 @@ public final class SearchManager {
          * @return the configurable object itself.
          */
         public Configurable withDefaultPollInterval(Duration defaultPollInterval) {
-            this.defaultPollInterval =
-                Objects.requireNonNull(defaultPollInterval, "'defaultPollInterval' cannot be null.");
+            this.defaultPollInterval
+                = Objects.requireNonNull(defaultPollInterval, "'defaultPollInterval' cannot be null.");
             if (this.defaultPollInterval.isNegative()) {
                 throw LOGGER
                     .logExceptionAsError(new IllegalArgumentException("'defaultPollInterval' cannot be negative"));
@@ -222,21 +231,12 @@ public final class SearchManager {
             Objects.requireNonNull(profile, "'profile' cannot be null.");
 
             StringBuilder userAgentBuilder = new StringBuilder();
-            userAgentBuilder
-                .append("azsdk-java")
-                .append("-")
-                .append("com.azure.resourcemanager.search.generated")
-                .append("/")
-                .append("1.0.0-beta.1");
+            userAgentBuilder.append("azsdk-java").append("-").append("com.azure.resourcemanager.search.generated")
+                .append("/").append("1.0.0-beta.1");
             if (!Configuration.getGlobalConfiguration().get("AZURE_TELEMETRY_DISABLED", false)) {
-                userAgentBuilder
-                    .append(" (")
-                    .append(Configuration.getGlobalConfiguration().get("java.version"))
-                    .append("; ")
-                    .append(Configuration.getGlobalConfiguration().get("os.name"))
-                    .append("; ")
-                    .append(Configuration.getGlobalConfiguration().get("os.version"))
-                    .append("; auto-generated)");
+                userAgentBuilder.append(" (").append(Configuration.getGlobalConfiguration().get("java.version"))
+                    .append("; ").append(Configuration.getGlobalConfiguration().get("os.name")).append("; ")
+                    .append(Configuration.getGlobalConfiguration().get("os.version")).append("; auto-generated)");
             } else {
                 userAgentBuilder.append(" (auto-generated)");
             }
@@ -255,38 +255,25 @@ public final class SearchManager {
             policies.add(new UserAgentPolicy(userAgentBuilder.toString()));
             policies.add(new AddHeadersFromContextPolicy());
             policies.add(new RequestIdPolicy());
-            policies
-                .addAll(
-                    this
-                        .policies
-                        .stream()
-                        .filter(p -> p.getPipelinePosition() == HttpPipelinePosition.PER_CALL)
-                        .collect(Collectors.toList()));
+            policies.addAll(this.policies.stream().filter(p -> p.getPipelinePosition() == HttpPipelinePosition.PER_CALL)
+                .collect(Collectors.toList()));
             HttpPolicyProviders.addBeforeRetryPolicies(policies);
             policies.add(retryPolicy);
             policies.add(new AddDatePolicy());
             policies.add(new ArmChallengeAuthenticationPolicy(credential, scopes.toArray(new String[0])));
-            policies
-                .addAll(
-                    this
-                        .policies
-                        .stream()
-                        .filter(p -> p.getPipelinePosition() == HttpPipelinePosition.PER_RETRY)
-                        .collect(Collectors.toList()));
+            policies.addAll(this.policies.stream()
+                .filter(p -> p.getPipelinePosition() == HttpPipelinePosition.PER_RETRY).collect(Collectors.toList()));
             HttpPolicyProviders.addAfterRetryPolicies(policies);
             policies.add(new HttpLoggingPolicy(httpLogOptions));
-            HttpPipeline httpPipeline =
-                new HttpPipelineBuilder()
-                    .httpClient(httpClient)
-                    .policies(policies.toArray(new HttpPipelinePolicy[0]))
-                    .build();
+            HttpPipeline httpPipeline = new HttpPipelineBuilder().httpClient(httpClient)
+                .policies(policies.toArray(new HttpPipelinePolicy[0])).build();
             return new SearchManager(httpPipeline, profile, defaultPollInterval);
         }
     }
 
     /**
      * Gets the resource collection API of Operations.
-     *
+     * 
      * @return Resource collection API of Operations.
      */
     public Operations operations() {
@@ -298,7 +285,7 @@ public final class SearchManager {
 
     /**
      * Gets the resource collection API of AdminKeys.
-     *
+     * 
      * @return Resource collection API of AdminKeys.
      */
     public AdminKeys adminKeys() {
@@ -310,7 +297,7 @@ public final class SearchManager {
 
     /**
      * Gets the resource collection API of QueryKeys.
-     *
+     * 
      * @return Resource collection API of QueryKeys.
      */
     public QueryKeys queryKeys() {
@@ -322,7 +309,7 @@ public final class SearchManager {
 
     /**
      * Gets the resource collection API of Services. It manages SearchService.
-     *
+     * 
      * @return Resource collection API of Services.
      */
     public Services services() {
@@ -334,7 +321,7 @@ public final class SearchManager {
 
     /**
      * Gets the resource collection API of PrivateLinkResources.
-     *
+     * 
      * @return Resource collection API of PrivateLinkResources.
      */
     public PrivateLinkResources privateLinkResources() {
@@ -346,34 +333,58 @@ public final class SearchManager {
 
     /**
      * Gets the resource collection API of PrivateEndpointConnections.
-     *
+     * 
      * @return Resource collection API of PrivateEndpointConnections.
      */
     public PrivateEndpointConnections privateEndpointConnections() {
         if (this.privateEndpointConnections == null) {
-            this.privateEndpointConnections =
-                new PrivateEndpointConnectionsImpl(clientObject.getPrivateEndpointConnections(), this);
+            this.privateEndpointConnections
+                = new PrivateEndpointConnectionsImpl(clientObject.getPrivateEndpointConnections(), this);
         }
         return privateEndpointConnections;
     }
 
     /**
      * Gets the resource collection API of SharedPrivateLinkResources. It manages SharedPrivateLinkResource.
-     *
+     * 
      * @return Resource collection API of SharedPrivateLinkResources.
      */
     public SharedPrivateLinkResources sharedPrivateLinkResources() {
         if (this.sharedPrivateLinkResources == null) {
-            this.sharedPrivateLinkResources =
-                new SharedPrivateLinkResourcesImpl(clientObject.getSharedPrivateLinkResources(), this);
+            this.sharedPrivateLinkResources
+                = new SharedPrivateLinkResourcesImpl(clientObject.getSharedPrivateLinkResources(), this);
         }
         return sharedPrivateLinkResources;
     }
 
     /**
+     * Gets the resource collection API of Usages.
+     * 
+     * @return Resource collection API of Usages.
+     */
+    public Usages usages() {
+        if (this.usages == null) {
+            this.usages = new UsagesImpl(clientObject.getUsages(), this);
+        }
+        return usages;
+    }
+
+    /**
+     * Gets the resource collection API of ResourceProviders.
+     * 
+     * @return Resource collection API of ResourceProviders.
+     */
+    public ResourceProviders resourceProviders() {
+        if (this.resourceProviders == null) {
+            this.resourceProviders = new ResourceProvidersImpl(clientObject.getResourceProviders(), this);
+        }
+        return resourceProviders;
+    }
+
+    /**
      * Gets wrapped service client SearchManagementClient providing direct access to the underlying auto-generated API
      * implementation, based on Azure REST API.
-     *
+     * 
      * @return Wrapped service client SearchManagementClient.
      */
     public SearchManagementClient serviceClient() {

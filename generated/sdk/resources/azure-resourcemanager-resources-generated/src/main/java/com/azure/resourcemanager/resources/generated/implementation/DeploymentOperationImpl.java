@@ -13,8 +13,7 @@ public final class DeploymentOperationImpl implements DeploymentOperation {
 
     private final com.azure.resourcemanager.resources.generated.ResourceManager serviceManager;
 
-    DeploymentOperationImpl(
-        DeploymentOperationInner innerObject,
+    DeploymentOperationImpl(DeploymentOperationInner innerObject,
         com.azure.resourcemanager.resources.generated.ResourceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

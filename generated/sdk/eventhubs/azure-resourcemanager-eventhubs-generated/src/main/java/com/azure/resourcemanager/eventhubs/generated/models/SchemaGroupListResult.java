@@ -9,7 +9,9 @@ import com.azure.resourcemanager.eventhubs.generated.fluent.models.SchemaGroupIn
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The result of the List SchemaGroup operation. */
+/**
+ * The result of the List SchemaGroup operation.
+ */
 @Fluent
 public final class SchemaGroupListResult {
     /*
@@ -24,13 +26,15 @@ public final class SchemaGroupListResult {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
-    /** Creates an instance of SchemaGroupListResult class. */
+    /**
+     * Creates an instance of SchemaGroupListResult class.
+     */
     public SchemaGroupListResult() {
     }
 
     /**
      * Get the value property: Result of the List SchemaGroups operation.
-     *
+     * 
      * @return the value value.
      */
     public List<SchemaGroupInner> value() {
@@ -39,7 +43,7 @@ public final class SchemaGroupListResult {
 
     /**
      * Set the value property: Result of the List SchemaGroups operation.
-     *
+     * 
      * @param value the value value to set.
      * @return the SchemaGroupListResult object itself.
      */
@@ -49,9 +53,9 @@ public final class SchemaGroupListResult {
     }
 
     /**
-     * Get the nextLink property: Link to the next set of results. Not empty if Value contains incomplete list of Schema
-     * Groups.
-     *
+     * Get the nextLink property: Link to the next set of results. Not empty if Value contains incomplete list of
+     * Schema Groups.
+     * 
      * @return the nextLink value.
      */
     public String nextLink() {
@@ -59,9 +63,9 @@ public final class SchemaGroupListResult {
     }
 
     /**
-     * Set the nextLink property: Link to the next set of results. Not empty if Value contains incomplete list of Schema
-     * Groups.
-     *
+     * Set the nextLink property: Link to the next set of results. Not empty if Value contains incomplete list of
+     * Schema Groups.
+     * 
      * @param nextLink the nextLink value to set.
      * @return the SchemaGroupListResult object itself.
      */
@@ -72,7 +76,7 @@ public final class SchemaGroupListResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

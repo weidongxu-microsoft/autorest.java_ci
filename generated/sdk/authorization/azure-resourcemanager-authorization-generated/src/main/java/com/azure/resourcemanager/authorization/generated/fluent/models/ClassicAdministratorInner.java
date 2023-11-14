@@ -7,7 +7,9 @@ package com.azure.resourcemanager.authorization.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Classic Administrators. */
+/**
+ * Classic Administrators.
+ */
 @Fluent
 public final class ClassicAdministratorInner {
     /*
@@ -34,13 +36,15 @@ public final class ClassicAdministratorInner {
     @JsonProperty(value = "properties")
     private ClassicAdministratorProperties innerProperties;
 
-    /** Creates an instance of ClassicAdministratorInner class. */
+    /**
+     * Creates an instance of ClassicAdministratorInner class.
+     */
     public ClassicAdministratorInner() {
     }
 
     /**
      * Get the id property: The ID of the administrator.
-     *
+     * 
      * @return the id value.
      */
     public String id() {
@@ -49,7 +53,7 @@ public final class ClassicAdministratorInner {
 
     /**
      * Set the id property: The ID of the administrator.
-     *
+     * 
      * @param id the id value to set.
      * @return the ClassicAdministratorInner object itself.
      */
@@ -60,7 +64,7 @@ public final class ClassicAdministratorInner {
 
     /**
      * Get the name property: The name of the administrator.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -69,7 +73,7 @@ public final class ClassicAdministratorInner {
 
     /**
      * Set the name property: The name of the administrator.
-     *
+     * 
      * @param name the name value to set.
      * @return the ClassicAdministratorInner object itself.
      */
@@ -80,7 +84,7 @@ public final class ClassicAdministratorInner {
 
     /**
      * Get the type property: The type of the administrator.
-     *
+     * 
      * @return the type value.
      */
     public String type() {
@@ -89,7 +93,7 @@ public final class ClassicAdministratorInner {
 
     /**
      * Set the type property: The type of the administrator.
-     *
+     * 
      * @param type the type value to set.
      * @return the ClassicAdministratorInner object itself.
      */
@@ -100,7 +104,7 @@ public final class ClassicAdministratorInner {
 
     /**
      * Get the innerProperties property: Properties for the classic administrator.
-     *
+     * 
      * @return the innerProperties value.
      */
     private ClassicAdministratorProperties innerProperties() {
@@ -109,7 +113,7 @@ public final class ClassicAdministratorInner {
 
     /**
      * Get the emailAddress property: The email address of the administrator.
-     *
+     * 
      * @return the emailAddress value.
      */
     public String emailAddress() {
@@ -118,7 +122,7 @@ public final class ClassicAdministratorInner {
 
     /**
      * Set the emailAddress property: The email address of the administrator.
-     *
+     * 
      * @param emailAddress the emailAddress value to set.
      * @return the ClassicAdministratorInner object itself.
      */
@@ -132,7 +136,7 @@ public final class ClassicAdministratorInner {
 
     /**
      * Get the role property: The role of the administrator.
-     *
+     * 
      * @return the role value.
      */
     public String role() {
@@ -141,7 +145,7 @@ public final class ClassicAdministratorInner {
 
     /**
      * Set the role property: The role of the administrator.
-     *
+     * 
      * @param role the role value to set.
      * @return the ClassicAdministratorInner object itself.
      */
@@ -155,7 +159,7 @@ public final class ClassicAdministratorInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

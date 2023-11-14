@@ -14,11 +14,13 @@ import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkTapInner;
 import com.azure.resourcemanager.network.generated.models.TagsObject;
 
-/** An instance of this class provides access to all the operations defined in VirtualNetworkTapsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in VirtualNetworkTapsClient.
+ */
 public interface VirtualNetworkTapsClient {
     /**
      * Deletes the specified virtual network tap.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param tapName The name of the virtual network tap.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -31,7 +33,7 @@ public interface VirtualNetworkTapsClient {
 
     /**
      * Deletes the specified virtual network tap.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param tapName The name of the virtual network tap.
      * @param context The context to associate with this operation.
@@ -45,7 +47,7 @@ public interface VirtualNetworkTapsClient {
 
     /**
      * Deletes the specified virtual network tap.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param tapName The name of the virtual network tap.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -57,7 +59,7 @@ public interface VirtualNetworkTapsClient {
 
     /**
      * Deletes the specified virtual network tap.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param tapName The name of the virtual network tap.
      * @param context The context to associate with this operation.
@@ -70,7 +72,7 @@ public interface VirtualNetworkTapsClient {
 
     /**
      * Gets information about the specified virtual network tap.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param tapName The name of virtual network tap.
      * @param context The context to associate with this operation.
@@ -80,12 +82,12 @@ public interface VirtualNetworkTapsClient {
      * @return information about the specified virtual network tap along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<VirtualNetworkTapInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String tapName, Context context);
+    Response<VirtualNetworkTapInner> getByResourceGroupWithResponse(String resourceGroupName, String tapName,
+        Context context);
 
     /**
      * Gets information about the specified virtual network tap.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param tapName The name of virtual network tap.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -98,7 +100,7 @@ public interface VirtualNetworkTapsClient {
 
     /**
      * Creates or updates a Virtual Network Tap.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param tapName The name of the virtual network tap.
      * @param parameters Parameters supplied to the create or update virtual network tap operation.
@@ -108,12 +110,12 @@ public interface VirtualNetworkTapsClient {
      * @return the {@link SyncPoller} for polling of virtual Network Tap resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<VirtualNetworkTapInner>, VirtualNetworkTapInner> beginCreateOrUpdate(
-        String resourceGroupName, String tapName, VirtualNetworkTapInner parameters);
+    SyncPoller<PollResult<VirtualNetworkTapInner>, VirtualNetworkTapInner> beginCreateOrUpdate(String resourceGroupName,
+        String tapName, VirtualNetworkTapInner parameters);
 
     /**
      * Creates or updates a Virtual Network Tap.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param tapName The name of the virtual network tap.
      * @param parameters Parameters supplied to the create or update virtual network tap operation.
@@ -124,12 +126,12 @@ public interface VirtualNetworkTapsClient {
      * @return the {@link SyncPoller} for polling of virtual Network Tap resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<VirtualNetworkTapInner>, VirtualNetworkTapInner> beginCreateOrUpdate(
-        String resourceGroupName, String tapName, VirtualNetworkTapInner parameters, Context context);
+    SyncPoller<PollResult<VirtualNetworkTapInner>, VirtualNetworkTapInner> beginCreateOrUpdate(String resourceGroupName,
+        String tapName, VirtualNetworkTapInner parameters, Context context);
 
     /**
      * Creates or updates a Virtual Network Tap.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param tapName The name of the virtual network tap.
      * @param parameters Parameters supplied to the create or update virtual network tap operation.
@@ -143,7 +145,7 @@ public interface VirtualNetworkTapsClient {
 
     /**
      * Creates or updates a Virtual Network Tap.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param tapName The name of the virtual network tap.
      * @param parameters Parameters supplied to the create or update virtual network tap operation.
@@ -154,12 +156,12 @@ public interface VirtualNetworkTapsClient {
      * @return virtual Network Tap resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    VirtualNetworkTapInner createOrUpdate(
-        String resourceGroupName, String tapName, VirtualNetworkTapInner parameters, Context context);
+    VirtualNetworkTapInner createOrUpdate(String resourceGroupName, String tapName, VirtualNetworkTapInner parameters,
+        Context context);
 
     /**
      * Updates an VirtualNetworkTap tags.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param tapName The name of the tap.
      * @param tapParameters Parameters supplied to update VirtualNetworkTap tags.
@@ -170,12 +172,12 @@ public interface VirtualNetworkTapsClient {
      * @return virtual Network Tap resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<VirtualNetworkTapInner> updateTagsWithResponse(
-        String resourceGroupName, String tapName, TagsObject tapParameters, Context context);
+    Response<VirtualNetworkTapInner> updateTagsWithResponse(String resourceGroupName, String tapName,
+        TagsObject tapParameters, Context context);
 
     /**
      * Updates an VirtualNetworkTap tags.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param tapName The name of the tap.
      * @param tapParameters Parameters supplied to update VirtualNetworkTap tags.
@@ -189,7 +191,7 @@ public interface VirtualNetworkTapsClient {
 
     /**
      * Gets all the VirtualNetworkTaps in a subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all the VirtualNetworkTaps in a subscription as paginated response with {@link PagedIterable}.
@@ -199,7 +201,7 @@ public interface VirtualNetworkTapsClient {
 
     /**
      * Gets all the VirtualNetworkTaps in a subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -211,7 +213,7 @@ public interface VirtualNetworkTapsClient {
 
     /**
      * Gets all the VirtualNetworkTaps in a subscription.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -223,7 +225,7 @@ public interface VirtualNetworkTapsClient {
 
     /**
      * Gets all the VirtualNetworkTaps in a subscription.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

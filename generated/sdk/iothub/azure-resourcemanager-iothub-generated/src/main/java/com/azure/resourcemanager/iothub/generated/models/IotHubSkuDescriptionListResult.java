@@ -9,7 +9,9 @@ import com.azure.resourcemanager.iothub.generated.fluent.models.IotHubSkuDescrip
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The JSON-serialized array of IotHubSkuDescription objects with a next link. */
+/**
+ * The JSON-serialized array of IotHubSkuDescription objects with a next link.
+ */
 @Fluent
 public final class IotHubSkuDescriptionListResult {
     /*
@@ -24,13 +26,15 @@ public final class IotHubSkuDescriptionListResult {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
-    /** Creates an instance of IotHubSkuDescriptionListResult class. */
+    /**
+     * Creates an instance of IotHubSkuDescriptionListResult class.
+     */
     public IotHubSkuDescriptionListResult() {
     }
 
     /**
      * Get the value property: The array of IotHubSkuDescription.
-     *
+     * 
      * @return the value value.
      */
     public List<IotHubSkuDescriptionInner> value() {
@@ -39,7 +43,7 @@ public final class IotHubSkuDescriptionListResult {
 
     /**
      * Set the value property: The array of IotHubSkuDescription.
-     *
+     * 
      * @param value the value value to set.
      * @return the IotHubSkuDescriptionListResult object itself.
      */
@@ -50,7 +54,7 @@ public final class IotHubSkuDescriptionListResult {
 
     /**
      * Get the nextLink property: The next link.
-     *
+     * 
      * @return the nextLink value.
      */
     public String nextLink() {
@@ -59,7 +63,7 @@ public final class IotHubSkuDescriptionListResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

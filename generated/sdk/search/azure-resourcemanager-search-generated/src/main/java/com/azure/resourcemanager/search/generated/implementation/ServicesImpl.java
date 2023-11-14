@@ -25,23 +25,18 @@ public final class ServicesImpl implements Services {
 
     private final com.azure.resourcemanager.search.generated.SearchManager serviceManager;
 
-    public ServicesImpl(
-        ServicesClient innerClient, com.azure.resourcemanager.search.generated.SearchManager serviceManager) {
+    public ServicesImpl(ServicesClient innerClient,
+        com.azure.resourcemanager.search.generated.SearchManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<SearchService> getByResourceGroupWithResponse(
-        String resourceGroupName, String searchServiceName, UUID clientRequestId, Context context) {
-        Response<SearchServiceInner> inner =
-            this
-                .serviceClient()
-                .getByResourceGroupWithResponse(resourceGroupName, searchServiceName, clientRequestId, context);
+    public Response<SearchService> getByResourceGroupWithResponse(String resourceGroupName, String searchServiceName,
+        UUID clientRequestId, Context context) {
+        Response<SearchServiceInner> inner = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName,
+            searchServiceName, clientRequestId, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new SearchServiceImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -57,8 +52,8 @@ public final class ServicesImpl implements Services {
         }
     }
 
-    public Response<Void> deleteWithResponse(
-        String resourceGroupName, String searchServiceName, UUID clientRequestId, Context context) {
+    public Response<Void> deleteWithResponse(String resourceGroupName, String searchServiceName, UUID clientRequestId,
+        Context context) {
         return this.serviceClient().deleteWithResponse(resourceGroupName, searchServiceName, clientRequestId, context);
     }
 
@@ -71,10 +66,10 @@ public final class ServicesImpl implements Services {
         return Utils.mapPage(inner, inner1 -> new SearchServiceImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<SearchService> listByResourceGroup(
-        String resourceGroupName, UUID clientRequestId, Context context) {
-        PagedIterable<SearchServiceInner> inner =
-            this.serviceClient().listByResourceGroup(resourceGroupName, clientRequestId, context);
+    public PagedIterable<SearchService> listByResourceGroup(String resourceGroupName, UUID clientRequestId,
+        Context context) {
+        PagedIterable<SearchServiceInner> inner
+            = this.serviceClient().listByResourceGroup(resourceGroupName, clientRequestId, context);
         return Utils.mapPage(inner, inner1 -> new SearchServiceImpl(inner1, this.manager()));
     }
 
@@ -90,15 +85,10 @@ public final class ServicesImpl implements Services {
 
     public Response<CheckNameAvailabilityOutput> checkNameAvailabilityWithResponse(
         CheckNameAvailabilityInput checkNameAvailabilityInput, UUID clientRequestId, Context context) {
-        Response<CheckNameAvailabilityOutputInner> inner =
-            this
-                .serviceClient()
-                .checkNameAvailabilityWithResponse(checkNameAvailabilityInput, clientRequestId, context);
+        Response<CheckNameAvailabilityOutputInner> inner = this.serviceClient()
+            .checkNameAvailabilityWithResponse(checkNameAvailabilityInput, clientRequestId, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new CheckNameAvailabilityOutputImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -117,19 +107,13 @@ public final class ServicesImpl implements Services {
     public SearchService getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String searchServiceName = Utils.getValueFromIdByName(id, "searchServices");
         if (searchServiceName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'searchServices'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'searchServices'.", id)));
         }
         UUID localClientRequestId = null;
         return this
@@ -140,19 +124,13 @@ public final class ServicesImpl implements Services {
     public Response<SearchService> getByIdWithResponse(String id, UUID clientRequestId, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String searchServiceName = Utils.getValueFromIdByName(id, "searchServices");
         if (searchServiceName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'searchServices'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'searchServices'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, searchServiceName, clientRequestId, context);
     }
@@ -160,19 +138,13 @@ public final class ServicesImpl implements Services {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String searchServiceName = Utils.getValueFromIdByName(id, "searchServices");
         if (searchServiceName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'searchServices'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'searchServices'.", id)));
         }
         UUID localClientRequestId = null;
         this.deleteWithResponse(resourceGroupName, searchServiceName, localClientRequestId, Context.NONE);
@@ -181,19 +153,13 @@ public final class ServicesImpl implements Services {
     public Response<Void> deleteByIdWithResponse(String id, UUID clientRequestId, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String searchServiceName = Utils.getValueFromIdByName(id, "searchServices");
         if (searchServiceName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'searchServices'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'searchServices'.", id)));
         }
         return this.deleteWithResponse(resourceGroupName, searchServiceName, clientRequestId, context);
     }

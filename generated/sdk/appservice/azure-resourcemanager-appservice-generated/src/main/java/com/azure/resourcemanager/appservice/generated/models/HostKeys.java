@@ -7,32 +7,34 @@ package com.azure.resourcemanager.appservice.generated.models;
 import com.azure.resourcemanager.appservice.generated.fluent.models.HostKeysInner;
 import java.util.Map;
 
-/** An immutable client-side representation of HostKeys. */
+/**
+ * An immutable client-side representation of HostKeys.
+ */
 public interface HostKeys {
     /**
      * Gets the masterKey property: Secret key.
-     *
+     * 
      * @return the masterKey value.
      */
     String masterKey();
 
     /**
      * Gets the functionKeys property: Host level function keys.
-     *
+     * 
      * @return the functionKeys value.
      */
     Map<String, String> functionKeys();
 
     /**
      * Gets the systemKeys property: System keys.
-     *
+     * 
      * @return the systemKeys value.
      */
     Map<String, String> systemKeys();
 
     /**
      * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.HostKeysInner object.
-     *
+     * 
      * @return the inner object.
      */
     HostKeysInner innerModel();

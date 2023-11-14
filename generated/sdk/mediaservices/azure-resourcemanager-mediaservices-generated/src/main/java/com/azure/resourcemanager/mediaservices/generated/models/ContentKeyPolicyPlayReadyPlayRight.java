@@ -9,7 +9,9 @@ import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.Duration;
 
-/** Configures the Play Right in the PlayReady license. */
+/**
+ * Configures the Play Right in the PlayReady license.
+ */
 @Fluent
 public final class ContentKeyPolicyPlayReadyPlayRight {
     /*
@@ -91,14 +93,16 @@ public final class ContentKeyPolicyPlayReadyPlayRight {
     @JsonProperty(value = "uncompressedDigitalAudioOpl")
     private Integer uncompressedDigitalAudioOpl;
 
-    /** Creates an instance of ContentKeyPolicyPlayReadyPlayRight class. */
+    /**
+     * Creates an instance of ContentKeyPolicyPlayReadyPlayRight class.
+     */
     public ContentKeyPolicyPlayReadyPlayRight() {
     }
 
     /**
      * Get the firstPlayExpiration property: The amount of time that the license is valid after the license is first
      * used to play content.
-     *
+     * 
      * @return the firstPlayExpiration value.
      */
     public Duration firstPlayExpiration() {
@@ -108,7 +112,7 @@ public final class ContentKeyPolicyPlayReadyPlayRight {
     /**
      * Set the firstPlayExpiration property: The amount of time that the license is valid after the license is first
      * used to play content.
-     *
+     * 
      * @param firstPlayExpiration the firstPlayExpiration value to set.
      * @return the ContentKeyPolicyPlayReadyPlayRight object itself.
      */
@@ -120,7 +124,7 @@ public final class ContentKeyPolicyPlayReadyPlayRight {
     /**
      * Get the scmsRestriction property: Configures the Serial Copy Management System (SCMS) in the license. Must be
      * between 0 and 3 inclusive.
-     *
+     * 
      * @return the scmsRestriction value.
      */
     public Integer scmsRestriction() {
@@ -130,7 +134,7 @@ public final class ContentKeyPolicyPlayReadyPlayRight {
     /**
      * Set the scmsRestriction property: Configures the Serial Copy Management System (SCMS) in the license. Must be
      * between 0 and 3 inclusive.
-     *
+     * 
      * @param scmsRestriction the scmsRestriction value to set.
      * @return the ContentKeyPolicyPlayReadyPlayRight object itself.
      */
@@ -142,7 +146,7 @@ public final class ContentKeyPolicyPlayReadyPlayRight {
     /**
      * Get the agcAndColorStripeRestriction property: Configures Automatic Gain Control (AGC) and Color Stripe in the
      * license. Must be between 0 and 3 inclusive.
-     *
+     * 
      * @return the agcAndColorStripeRestriction value.
      */
     public Integer agcAndColorStripeRestriction() {
@@ -152,7 +156,7 @@ public final class ContentKeyPolicyPlayReadyPlayRight {
     /**
      * Set the agcAndColorStripeRestriction property: Configures Automatic Gain Control (AGC) and Color Stripe in the
      * license. Must be between 0 and 3 inclusive.
-     *
+     * 
      * @param agcAndColorStripeRestriction the agcAndColorStripeRestriction value to set.
      * @return the ContentKeyPolicyPlayReadyPlayRight object itself.
      */
@@ -164,7 +168,7 @@ public final class ContentKeyPolicyPlayReadyPlayRight {
     /**
      * Get the explicitAnalogTelevisionOutputRestriction property: Configures the Explicit Analog Television Output
      * Restriction in the license. Configuration data must be between 0 and 3 inclusive.
-     *
+     * 
      * @return the explicitAnalogTelevisionOutputRestriction value.
      */
     public ContentKeyPolicyPlayReadyExplicitAnalogTelevisionRestriction explicitAnalogTelevisionOutputRestriction() {
@@ -174,7 +178,7 @@ public final class ContentKeyPolicyPlayReadyPlayRight {
     /**
      * Set the explicitAnalogTelevisionOutputRestriction property: Configures the Explicit Analog Television Output
      * Restriction in the license. Configuration data must be between 0 and 3 inclusive.
-     *
+     * 
      * @param explicitAnalogTelevisionOutputRestriction the explicitAnalogTelevisionOutputRestriction value to set.
      * @return the ContentKeyPolicyPlayReadyPlayRight object itself.
      */
@@ -187,7 +191,7 @@ public final class ContentKeyPolicyPlayReadyPlayRight {
     /**
      * Get the digitalVideoOnlyContentRestriction property: Enables the Image Constraint For Analog Component Video
      * Restriction in the license.
-     *
+     * 
      * @return the digitalVideoOnlyContentRestriction value.
      */
     public boolean digitalVideoOnlyContentRestriction() {
@@ -197,12 +201,12 @@ public final class ContentKeyPolicyPlayReadyPlayRight {
     /**
      * Set the digitalVideoOnlyContentRestriction property: Enables the Image Constraint For Analog Component Video
      * Restriction in the license.
-     *
+     * 
      * @param digitalVideoOnlyContentRestriction the digitalVideoOnlyContentRestriction value to set.
      * @return the ContentKeyPolicyPlayReadyPlayRight object itself.
      */
-    public ContentKeyPolicyPlayReadyPlayRight withDigitalVideoOnlyContentRestriction(
-        boolean digitalVideoOnlyContentRestriction) {
+    public ContentKeyPolicyPlayReadyPlayRight
+        withDigitalVideoOnlyContentRestriction(boolean digitalVideoOnlyContentRestriction) {
         this.digitalVideoOnlyContentRestriction = digitalVideoOnlyContentRestriction;
         return this;
     }
@@ -210,7 +214,7 @@ public final class ContentKeyPolicyPlayReadyPlayRight {
     /**
      * Get the imageConstraintForAnalogComponentVideoRestriction property: Enables the Image Constraint For Analog
      * Component Video Restriction in the license.
-     *
+     * 
      * @return the imageConstraintForAnalogComponentVideoRestriction value.
      */
     public boolean imageConstraintForAnalogComponentVideoRestriction() {
@@ -220,9 +224,9 @@ public final class ContentKeyPolicyPlayReadyPlayRight {
     /**
      * Set the imageConstraintForAnalogComponentVideoRestriction property: Enables the Image Constraint For Analog
      * Component Video Restriction in the license.
-     *
+     * 
      * @param imageConstraintForAnalogComponentVideoRestriction the imageConstraintForAnalogComponentVideoRestriction
-     *     value to set.
+     * value to set.
      * @return the ContentKeyPolicyPlayReadyPlayRight object itself.
      */
     public ContentKeyPolicyPlayReadyPlayRight withImageConstraintForAnalogComponentVideoRestriction(
@@ -234,7 +238,7 @@ public final class ContentKeyPolicyPlayReadyPlayRight {
     /**
      * Get the imageConstraintForAnalogComputerMonitorRestriction property: Enables the Image Constraint For Analog
      * Component Video Restriction in the license.
-     *
+     * 
      * @return the imageConstraintForAnalogComputerMonitorRestriction value.
      */
     public boolean imageConstraintForAnalogComputerMonitorRestriction() {
@@ -244,9 +248,9 @@ public final class ContentKeyPolicyPlayReadyPlayRight {
     /**
      * Set the imageConstraintForAnalogComputerMonitorRestriction property: Enables the Image Constraint For Analog
      * Component Video Restriction in the license.
-     *
+     * 
      * @param imageConstraintForAnalogComputerMonitorRestriction the imageConstraintForAnalogComputerMonitorRestriction
-     *     value to set.
+     * value to set.
      * @return the ContentKeyPolicyPlayReadyPlayRight object itself.
      */
     public ContentKeyPolicyPlayReadyPlayRight withImageConstraintForAnalogComputerMonitorRestriction(
@@ -258,7 +262,7 @@ public final class ContentKeyPolicyPlayReadyPlayRight {
     /**
      * Get the allowPassingVideoContentToUnknownOutput property: Configures Unknown output handling settings of the
      * license.
-     *
+     * 
      * @return the allowPassingVideoContentToUnknownOutput value.
      */
     public ContentKeyPolicyPlayReadyUnknownOutputPassingOption allowPassingVideoContentToUnknownOutput() {
@@ -268,7 +272,7 @@ public final class ContentKeyPolicyPlayReadyPlayRight {
     /**
      * Set the allowPassingVideoContentToUnknownOutput property: Configures Unknown output handling settings of the
      * license.
-     *
+     * 
      * @param allowPassingVideoContentToUnknownOutput the allowPassingVideoContentToUnknownOutput value to set.
      * @return the ContentKeyPolicyPlayReadyPlayRight object itself.
      */
@@ -281,7 +285,7 @@ public final class ContentKeyPolicyPlayReadyPlayRight {
     /**
      * Get the uncompressedDigitalVideoOpl property: Specifies the output protection level for uncompressed digital
      * video.
-     *
+     * 
      * @return the uncompressedDigitalVideoOpl value.
      */
     public Integer uncompressedDigitalVideoOpl() {
@@ -291,7 +295,7 @@ public final class ContentKeyPolicyPlayReadyPlayRight {
     /**
      * Set the uncompressedDigitalVideoOpl property: Specifies the output protection level for uncompressed digital
      * video.
-     *
+     * 
      * @param uncompressedDigitalVideoOpl the uncompressedDigitalVideoOpl value to set.
      * @return the ContentKeyPolicyPlayReadyPlayRight object itself.
      */
@@ -302,7 +306,7 @@ public final class ContentKeyPolicyPlayReadyPlayRight {
 
     /**
      * Get the compressedDigitalVideoOpl property: Specifies the output protection level for compressed digital video.
-     *
+     * 
      * @return the compressedDigitalVideoOpl value.
      */
     public Integer compressedDigitalVideoOpl() {
@@ -311,7 +315,7 @@ public final class ContentKeyPolicyPlayReadyPlayRight {
 
     /**
      * Set the compressedDigitalVideoOpl property: Specifies the output protection level for compressed digital video.
-     *
+     * 
      * @param compressedDigitalVideoOpl the compressedDigitalVideoOpl value to set.
      * @return the ContentKeyPolicyPlayReadyPlayRight object itself.
      */
@@ -322,7 +326,7 @@ public final class ContentKeyPolicyPlayReadyPlayRight {
 
     /**
      * Get the analogVideoOpl property: Specifies the output protection level for compressed digital audio.
-     *
+     * 
      * @return the analogVideoOpl value.
      */
     public Integer analogVideoOpl() {
@@ -331,7 +335,7 @@ public final class ContentKeyPolicyPlayReadyPlayRight {
 
     /**
      * Set the analogVideoOpl property: Specifies the output protection level for compressed digital audio.
-     *
+     * 
      * @param analogVideoOpl the analogVideoOpl value to set.
      * @return the ContentKeyPolicyPlayReadyPlayRight object itself.
      */
@@ -342,7 +346,7 @@ public final class ContentKeyPolicyPlayReadyPlayRight {
 
     /**
      * Get the compressedDigitalAudioOpl property: Specifies the output protection level for compressed digital audio.
-     *
+     * 
      * @return the compressedDigitalAudioOpl value.
      */
     public Integer compressedDigitalAudioOpl() {
@@ -351,7 +355,7 @@ public final class ContentKeyPolicyPlayReadyPlayRight {
 
     /**
      * Set the compressedDigitalAudioOpl property: Specifies the output protection level for compressed digital audio.
-     *
+     * 
      * @param compressedDigitalAudioOpl the compressedDigitalAudioOpl value to set.
      * @return the ContentKeyPolicyPlayReadyPlayRight object itself.
      */
@@ -363,7 +367,7 @@ public final class ContentKeyPolicyPlayReadyPlayRight {
     /**
      * Get the uncompressedDigitalAudioOpl property: Specifies the output protection level for uncompressed digital
      * audio.
-     *
+     * 
      * @return the uncompressedDigitalAudioOpl value.
      */
     public Integer uncompressedDigitalAudioOpl() {
@@ -373,7 +377,7 @@ public final class ContentKeyPolicyPlayReadyPlayRight {
     /**
      * Set the uncompressedDigitalAudioOpl property: Specifies the output protection level for uncompressed digital
      * audio.
-     *
+     * 
      * @param uncompressedDigitalAudioOpl the uncompressedDigitalAudioOpl value to set.
      * @return the ContentKeyPolicyPlayReadyPlayRight object itself.
      */
@@ -384,7 +388,7 @@ public final class ContentKeyPolicyPlayReadyPlayRight {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
@@ -392,11 +396,8 @@ public final class ContentKeyPolicyPlayReadyPlayRight {
             explicitAnalogTelevisionOutputRestriction().validate();
         }
         if (allowPassingVideoContentToUnknownOutput() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property allowPassingVideoContentToUnknownOutput in model"
-                            + " ContentKeyPolicyPlayReadyPlayRight"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property allowPassingVideoContentToUnknownOutput in model ContentKeyPolicyPlayReadyPlayRight"));
         }
     }
 

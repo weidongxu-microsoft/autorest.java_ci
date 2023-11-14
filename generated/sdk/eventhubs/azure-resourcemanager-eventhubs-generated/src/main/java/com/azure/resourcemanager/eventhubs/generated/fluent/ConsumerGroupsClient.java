@@ -11,11 +11,13 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.ConsumerGroupInner;
 
-/** An instance of this class provides access to all the operations defined in ConsumerGroupsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in ConsumerGroupsClient.
+ */
 public interface ConsumerGroupsClient {
     /**
      * Creates or updates an Event Hubs consumer group as a nested resource within a Namespace.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param eventHubName The Event Hub name.
@@ -28,17 +30,12 @@ public interface ConsumerGroupsClient {
      * @return single item in List or Get Consumer group operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<ConsumerGroupInner> createOrUpdateWithResponse(
-        String resourceGroupName,
-        String namespaceName,
-        String eventHubName,
-        String consumerGroupName,
-        ConsumerGroupInner parameters,
-        Context context);
+    Response<ConsumerGroupInner> createOrUpdateWithResponse(String resourceGroupName, String namespaceName,
+        String eventHubName, String consumerGroupName, ConsumerGroupInner parameters, Context context);
 
     /**
      * Creates or updates an Event Hubs consumer group as a nested resource within a Namespace.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param eventHubName The Event Hub name.
@@ -50,16 +47,12 @@ public interface ConsumerGroupsClient {
      * @return single item in List or Get Consumer group operation.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ConsumerGroupInner createOrUpdate(
-        String resourceGroupName,
-        String namespaceName,
-        String eventHubName,
-        String consumerGroupName,
-        ConsumerGroupInner parameters);
+    ConsumerGroupInner createOrUpdate(String resourceGroupName, String namespaceName, String eventHubName,
+        String consumerGroupName, ConsumerGroupInner parameters);
 
     /**
      * Deletes a consumer group from the specified Event Hub and resource group.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param eventHubName The Event Hub name.
@@ -71,12 +64,12 @@ public interface ConsumerGroupsClient {
      * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<Void> deleteWithResponse(
-        String resourceGroupName, String namespaceName, String eventHubName, String consumerGroupName, Context context);
+    Response<Void> deleteWithResponse(String resourceGroupName, String namespaceName, String eventHubName,
+        String consumerGroupName, Context context);
 
     /**
      * Deletes a consumer group from the specified Event Hub and resource group.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param eventHubName The Event Hub name.
@@ -90,7 +83,7 @@ public interface ConsumerGroupsClient {
 
     /**
      * Gets a description for the specified consumer group.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param eventHubName The Event Hub name.
@@ -102,12 +95,12 @@ public interface ConsumerGroupsClient {
      * @return a description for the specified consumer group along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<ConsumerGroupInner> getWithResponse(
-        String resourceGroupName, String namespaceName, String eventHubName, String consumerGroupName, Context context);
+    Response<ConsumerGroupInner> getWithResponse(String resourceGroupName, String namespaceName, String eventHubName,
+        String consumerGroupName, Context context);
 
     /**
      * Gets a description for the specified consumer group.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param eventHubName The Event Hub name.
@@ -118,13 +111,13 @@ public interface ConsumerGroupsClient {
      * @return a description for the specified consumer group.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ConsumerGroupInner get(
-        String resourceGroupName, String namespaceName, String eventHubName, String consumerGroupName);
+    ConsumerGroupInner get(String resourceGroupName, String namespaceName, String eventHubName,
+        String consumerGroupName);
 
     /**
      * Gets all the consumer groups in a Namespace. An empty feed is returned if no consumer group exists in the
      * Namespace.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param eventHubName The Event Hub name.
@@ -134,19 +127,19 @@ public interface ConsumerGroupsClient {
      * @return all the consumer groups in a Namespace as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<ConsumerGroupInner> listByEventHub(
-        String resourceGroupName, String namespaceName, String eventHubName);
+    PagedIterable<ConsumerGroupInner> listByEventHub(String resourceGroupName, String namespaceName,
+        String eventHubName);
 
     /**
      * Gets all the consumer groups in a Namespace. An empty feed is returned if no consumer group exists in the
      * Namespace.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param eventHubName The Event Hub name.
      * @param skip Skip is only used if a previous operation returned a partial result. If a previous response contains
-     *     a nextLink element, the value of the nextLink element will include a skip parameter that specifies a starting
-     *     point to use for subsequent calls.
+     * a nextLink element, the value of the nextLink element will include a skip parameter that specifies a starting
+     * point to use for subsequent calls.
      * @param top May be used to limit the number of results to the most recent N usageDetails.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -155,11 +148,6 @@ public interface ConsumerGroupsClient {
      * @return all the consumer groups in a Namespace as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<ConsumerGroupInner> listByEventHub(
-        String resourceGroupName,
-        String namespaceName,
-        String eventHubName,
-        Integer skip,
-        Integer top,
-        Context context);
+    PagedIterable<ConsumerGroupInner> listByEventHub(String resourceGroupName, String namespaceName,
+        String eventHubName, Integer skip, Integer top, Context context);
 }

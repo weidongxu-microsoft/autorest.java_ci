@@ -14,8 +14,7 @@ public final class OperationStatusImpl implements OperationStatus {
 
     private final com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager;
 
-    OperationStatusImpl(
-        OperationStatusInner innerObject,
+    OperationStatusImpl(OperationStatusInner innerObject,
         com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

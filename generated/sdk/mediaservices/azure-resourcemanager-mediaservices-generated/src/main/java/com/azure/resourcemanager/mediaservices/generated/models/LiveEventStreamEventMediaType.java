@@ -8,17 +8,23 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Type of the track. */
+/**
+ * Type of the track.
+ */
 public final class LiveEventStreamEventMediaType extends ExpandableStringEnum<LiveEventStreamEventMediaType> {
-    /** Static value audio for LiveEventStreamEventMediaType. */
+    /**
+     * Static value audio for LiveEventStreamEventMediaType.
+     */
     public static final LiveEventStreamEventMediaType AUDIO = fromString("audio");
 
-    /** Static value video for LiveEventStreamEventMediaType. */
+    /**
+     * Static value video for LiveEventStreamEventMediaType.
+     */
     public static final LiveEventStreamEventMediaType VIDEO = fromString("video");
 
     /**
      * Creates a new instance of LiveEventStreamEventMediaType value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -27,7 +33,7 @@ public final class LiveEventStreamEventMediaType extends ExpandableStringEnum<Li
 
     /**
      * Creates or finds a LiveEventStreamEventMediaType from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding LiveEventStreamEventMediaType.
      */
@@ -38,7 +44,7 @@ public final class LiveEventStreamEventMediaType extends ExpandableStringEnum<Li
 
     /**
      * Gets known LiveEventStreamEventMediaType values.
-     *
+     * 
      * @return known LiveEventStreamEventMediaType values.
      */
     public static Collection<LiveEventStreamEventMediaType> values() {

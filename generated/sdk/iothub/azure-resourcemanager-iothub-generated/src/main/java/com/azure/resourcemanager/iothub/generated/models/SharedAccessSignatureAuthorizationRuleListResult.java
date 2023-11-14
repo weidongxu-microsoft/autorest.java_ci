@@ -9,7 +9,9 @@ import com.azure.resourcemanager.iothub.generated.fluent.models.SharedAccessSign
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The list of shared access policies with a next link. */
+/**
+ * The list of shared access policies with a next link.
+ */
 @Fluent
 public final class SharedAccessSignatureAuthorizationRuleListResult {
     /*
@@ -24,13 +26,15 @@ public final class SharedAccessSignatureAuthorizationRuleListResult {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
-    /** Creates an instance of SharedAccessSignatureAuthorizationRuleListResult class. */
+    /**
+     * Creates an instance of SharedAccessSignatureAuthorizationRuleListResult class.
+     */
     public SharedAccessSignatureAuthorizationRuleListResult() {
     }
 
     /**
      * Get the value property: The list of shared access policies.
-     *
+     * 
      * @return the value value.
      */
     public List<SharedAccessSignatureAuthorizationRuleInner> value() {
@@ -39,19 +43,19 @@ public final class SharedAccessSignatureAuthorizationRuleListResult {
 
     /**
      * Set the value property: The list of shared access policies.
-     *
+     * 
      * @param value the value value to set.
      * @return the SharedAccessSignatureAuthorizationRuleListResult object itself.
      */
-    public SharedAccessSignatureAuthorizationRuleListResult withValue(
-        List<SharedAccessSignatureAuthorizationRuleInner> value) {
+    public SharedAccessSignatureAuthorizationRuleListResult
+        withValue(List<SharedAccessSignatureAuthorizationRuleInner> value) {
         this.value = value;
         return this;
     }
 
     /**
      * Get the nextLink property: The next link.
-     *
+     * 
      * @return the nextLink value.
      */
     public String nextLink() {
@@ -60,7 +64,7 @@ public final class SharedAccessSignatureAuthorizationRuleListResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

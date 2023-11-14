@@ -8,14 +8,18 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Storage type of import source. */
+/**
+ * Storage type of import source.
+ */
 public final class ImportSourceStorageType extends ExpandableStringEnum<ImportSourceStorageType> {
-    /** Static value AzureBlob for ImportSourceStorageType. */
+    /**
+     * Static value AzureBlob for ImportSourceStorageType.
+     */
     public static final ImportSourceStorageType AZURE_BLOB = fromString("AzureBlob");
 
     /**
      * Creates a new instance of ImportSourceStorageType value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -24,7 +28,7 @@ public final class ImportSourceStorageType extends ExpandableStringEnum<ImportSo
 
     /**
      * Creates or finds a ImportSourceStorageType from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding ImportSourceStorageType.
      */
@@ -35,7 +39,7 @@ public final class ImportSourceStorageType extends ExpandableStringEnum<ImportSo
 
     /**
      * Gets known ImportSourceStorageType values.
-     *
+     * 
      * @return known ImportSourceStorageType values.
      */
     public static Collection<ImportSourceStorageType> values() {

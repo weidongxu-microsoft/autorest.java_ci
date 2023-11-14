@@ -13,8 +13,7 @@ public final class ValidateResponseImpl implements ValidateResponse {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    ValidateResponseImpl(
-        ValidateResponseInner innerObject,
+    ValidateResponseImpl(ValidateResponseInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

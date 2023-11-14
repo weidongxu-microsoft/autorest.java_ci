@@ -7,7 +7,9 @@ package com.azure.resourcemanager.eventhubs.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Information about resource association. */
+/**
+ * Information about resource association.
+ */
 @Fluent
 public final class NetworkSecurityPerimeterConfigurationPropertiesResourceAssociation {
     /*
@@ -22,13 +24,15 @@ public final class NetworkSecurityPerimeterConfigurationPropertiesResourceAssoci
     @JsonProperty(value = "accessMode")
     private ResourceAssociationAccessMode accessMode;
 
-    /** Creates an instance of NetworkSecurityPerimeterConfigurationPropertiesResourceAssociation class. */
+    /**
+     * Creates an instance of NetworkSecurityPerimeterConfigurationPropertiesResourceAssociation class.
+     */
     public NetworkSecurityPerimeterConfigurationPropertiesResourceAssociation() {
     }
 
     /**
      * Get the name property: Name of the resource association.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -37,7 +41,7 @@ public final class NetworkSecurityPerimeterConfigurationPropertiesResourceAssoci
 
     /**
      * Set the name property: Name of the resource association.
-     *
+     * 
      * @param name the name value to set.
      * @return the NetworkSecurityPerimeterConfigurationPropertiesResourceAssociation object itself.
      */
@@ -48,7 +52,7 @@ public final class NetworkSecurityPerimeterConfigurationPropertiesResourceAssoci
 
     /**
      * Get the accessMode property: Access Mode of the resource association.
-     *
+     * 
      * @return the accessMode value.
      */
     public ResourceAssociationAccessMode accessMode() {
@@ -57,19 +61,19 @@ public final class NetworkSecurityPerimeterConfigurationPropertiesResourceAssoci
 
     /**
      * Set the accessMode property: Access Mode of the resource association.
-     *
+     * 
      * @param accessMode the accessMode value to set.
      * @return the NetworkSecurityPerimeterConfigurationPropertiesResourceAssociation object itself.
      */
-    public NetworkSecurityPerimeterConfigurationPropertiesResourceAssociation withAccessMode(
-        ResourceAssociationAccessMode accessMode) {
+    public NetworkSecurityPerimeterConfigurationPropertiesResourceAssociation
+        withAccessMode(ResourceAssociationAccessMode accessMode) {
         this.accessMode = accessMode;
         return this;
     }
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

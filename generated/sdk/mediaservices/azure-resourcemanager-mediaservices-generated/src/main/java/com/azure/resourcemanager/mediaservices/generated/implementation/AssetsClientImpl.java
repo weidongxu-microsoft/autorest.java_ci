@@ -39,17 +39,23 @@ import com.azure.resourcemanager.mediaservices.generated.models.AssetCollection;
 import com.azure.resourcemanager.mediaservices.generated.models.ListContainerSasInput;
 import reactor.core.publisher.Mono;
 
-/** An instance of this class provides access to all the operations defined in AssetsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in AssetsClient.
+ */
 public final class AssetsClientImpl implements AssetsClient {
-    /** The proxy service used to perform REST calls. */
+    /**
+     * The proxy service used to perform REST calls.
+     */
     private final AssetsService service;
 
-    /** The service client containing this operation class. */
+    /**
+     * The service client containing this operation class.
+     */
     private final AzureMediaServicesImpl client;
 
     /**
      * Initializes an instance of AssetsClientImpl.
-     *
+     * 
      * @param client the instance of the service client containing this operation class.
      */
     AssetsClientImpl(AzureMediaServicesImpl client) {
@@ -64,152 +70,108 @@ public final class AssetsClientImpl implements AssetsClient {
     @Host("{$host}")
     @ServiceInterface(name = "AzureMediaServicesAs")
     public interface AssetsService {
-        @Headers({"Content-Type: application/json"})
-        @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Media/mediaServices/{accountName}/assets")
-        @ExpectedResponses({200})
+        @Headers({ "Content-Type: application/json" })
+        @Get("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Media/mediaServices/{accountName}/assets")
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<AssetCollection>> list(
-            @HostParam("$host") String endpoint,
+        Mono<Response<AssetCollection>> list(@HostParam("$host") String endpoint,
             @PathParam("subscriptionId") String subscriptionId,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("accountName") String accountName,
-            @QueryParam("api-version") String apiVersion,
-            @QueryParam("$filter") String filter,
-            @QueryParam("$top") Integer top,
-            @QueryParam("$orderby") String orderby,
-            @HeaderParam("Accept") String accept,
+            @PathParam("resourceGroupName") String resourceGroupName, @PathParam("accountName") String accountName,
+            @QueryParam("api-version") String apiVersion, @QueryParam("$filter") String filter,
+            @QueryParam("$top") Integer top, @QueryParam("$orderby") String orderby,
+            @HeaderParam("Accept") String accept, Context context);
+
+        @Headers({ "Content-Type: application/json" })
+        @Get("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Media/mediaServices/{accountName}/assets/{assetName}")
+        @ExpectedResponses({ 200 })
+        @UnexpectedResponseExceptionType(ManagementException.class)
+        Mono<Response<AssetInner>> get(@HostParam("$host") String endpoint,
+            @PathParam("subscriptionId") String subscriptionId,
+            @PathParam("resourceGroupName") String resourceGroupName, @PathParam("accountName") String accountName,
+            @PathParam("assetName") String assetName, @QueryParam("api-version") String apiVersion,
+            @HeaderParam("Accept") String accept, Context context);
+
+        @Headers({ "Content-Type: application/json" })
+        @Put("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Media/mediaServices/{accountName}/assets/{assetName}")
+        @ExpectedResponses({ 200, 201 })
+        @UnexpectedResponseExceptionType(ManagementException.class)
+        Mono<Response<AssetInner>> createOrUpdate(@HostParam("$host") String endpoint,
+            @PathParam("subscriptionId") String subscriptionId,
+            @PathParam("resourceGroupName") String resourceGroupName, @PathParam("accountName") String accountName,
+            @PathParam("assetName") String assetName, @QueryParam("api-version") String apiVersion,
+            @BodyParam("application/json") AssetInner parameters, @HeaderParam("Accept") String accept,
             Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Media/mediaServices/{accountName}/assets/{assetName}")
-        @ExpectedResponses({200})
+        @Headers({ "Content-Type: application/json" })
+        @Delete("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Media/mediaServices/{accountName}/assets/{assetName}")
+        @ExpectedResponses({ 200, 204 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<AssetInner>> get(
-            @HostParam("$host") String endpoint,
+        Mono<Response<Void>> delete(@HostParam("$host") String endpoint,
             @PathParam("subscriptionId") String subscriptionId,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("accountName") String accountName,
-            @PathParam("assetName") String assetName,
-            @QueryParam("api-version") String apiVersion,
-            @HeaderParam("Accept") String accept,
+            @PathParam("resourceGroupName") String resourceGroupName, @PathParam("accountName") String accountName,
+            @PathParam("assetName") String assetName, @QueryParam("api-version") String apiVersion,
+            @HeaderParam("Accept") String accept, Context context);
+
+        @Headers({ "Content-Type: application/json" })
+        @Patch("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Media/mediaServices/{accountName}/assets/{assetName}")
+        @ExpectedResponses({ 200 })
+        @UnexpectedResponseExceptionType(ManagementException.class)
+        Mono<Response<AssetInner>> update(@HostParam("$host") String endpoint,
+            @PathParam("subscriptionId") String subscriptionId,
+            @PathParam("resourceGroupName") String resourceGroupName, @PathParam("accountName") String accountName,
+            @PathParam("assetName") String assetName, @QueryParam("api-version") String apiVersion,
+            @BodyParam("application/json") AssetInner parameters, @HeaderParam("Accept") String accept,
             Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Put(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Media/mediaServices/{accountName}/assets/{assetName}")
-        @ExpectedResponses({200, 201})
+        @Headers({ "Content-Type: application/json" })
+        @Post("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Media/mediaServices/{accountName}/assets/{assetName}/listContainerSas")
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<AssetInner>> createOrUpdate(
-            @HostParam("$host") String endpoint,
+        Mono<Response<AssetContainerSasInner>> listContainerSas(@HostParam("$host") String endpoint,
             @PathParam("subscriptionId") String subscriptionId,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("accountName") String accountName,
-            @PathParam("assetName") String assetName,
-            @QueryParam("api-version") String apiVersion,
-            @BodyParam("application/json") AssetInner parameters,
-            @HeaderParam("Accept") String accept,
+            @PathParam("resourceGroupName") String resourceGroupName, @PathParam("accountName") String accountName,
+            @PathParam("assetName") String assetName, @QueryParam("api-version") String apiVersion,
+            @BodyParam("application/json") ListContainerSasInput parameters, @HeaderParam("Accept") String accept,
             Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Delete(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Media/mediaServices/{accountName}/assets/{assetName}")
-        @ExpectedResponses({200, 204})
+        @Headers({ "Content-Type: application/json" })
+        @Post("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Media/mediaServices/{accountName}/assets/{assetName}/getEncryptionKey")
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<Void>> delete(
-            @HostParam("$host") String endpoint,
+        Mono<Response<StorageEncryptedAssetDecryptionDataInner>> getEncryptionKey(@HostParam("$host") String endpoint,
             @PathParam("subscriptionId") String subscriptionId,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("accountName") String accountName,
-            @PathParam("assetName") String assetName,
-            @QueryParam("api-version") String apiVersion,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @PathParam("resourceGroupName") String resourceGroupName, @PathParam("accountName") String accountName,
+            @PathParam("assetName") String assetName, @QueryParam("api-version") String apiVersion,
+            @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Patch(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Media/mediaServices/{accountName}/assets/{assetName}")
-        @ExpectedResponses({200})
+        @Headers({ "Content-Type: application/json" })
+        @Post("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Media/mediaServices/{accountName}/assets/{assetName}/listStreamingLocators")
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<AssetInner>> update(
-            @HostParam("$host") String endpoint,
+        Mono<Response<ListStreamingLocatorsResponseInner>> listStreamingLocators(@HostParam("$host") String endpoint,
             @PathParam("subscriptionId") String subscriptionId,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("accountName") String accountName,
-            @PathParam("assetName") String assetName,
-            @QueryParam("api-version") String apiVersion,
-            @BodyParam("application/json") AssetInner parameters,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @PathParam("resourceGroupName") String resourceGroupName, @PathParam("accountName") String accountName,
+            @PathParam("assetName") String assetName, @QueryParam("api-version") String apiVersion,
+            @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Post(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Media/mediaServices/{accountName}/assets/{assetName}/listContainerSas")
-        @ExpectedResponses({200})
-        @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<AssetContainerSasInner>> listContainerSas(
-            @HostParam("$host") String endpoint,
-            @PathParam("subscriptionId") String subscriptionId,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("accountName") String accountName,
-            @PathParam("assetName") String assetName,
-            @QueryParam("api-version") String apiVersion,
-            @BodyParam("application/json") ListContainerSasInput parameters,
-            @HeaderParam("Accept") String accept,
-            Context context);
-
-        @Headers({"Content-Type: application/json"})
-        @Post(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Media/mediaServices/{accountName}/assets/{assetName}/getEncryptionKey")
-        @ExpectedResponses({200})
-        @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<StorageEncryptedAssetDecryptionDataInner>> getEncryptionKey(
-            @HostParam("$host") String endpoint,
-            @PathParam("subscriptionId") String subscriptionId,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("accountName") String accountName,
-            @PathParam("assetName") String assetName,
-            @QueryParam("api-version") String apiVersion,
-            @HeaderParam("Accept") String accept,
-            Context context);
-
-        @Headers({"Content-Type: application/json"})
-        @Post(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Media/mediaServices/{accountName}/assets/{assetName}/listStreamingLocators")
-        @ExpectedResponses({200})
-        @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<ListStreamingLocatorsResponseInner>> listStreamingLocators(
-            @HostParam("$host") String endpoint,
-            @PathParam("subscriptionId") String subscriptionId,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("accountName") String accountName,
-            @PathParam("assetName") String assetName,
-            @QueryParam("api-version") String apiVersion,
-            @HeaderParam("Accept") String accept,
-            Context context);
-
-        @Headers({"Content-Type: application/json"})
+        @Headers({ "Content-Type: application/json" })
         @Get("{nextLink}")
-        @ExpectedResponses({200})
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<AssetCollection>> listNext(
-            @PathParam(value = "nextLink", encoded = true) String nextLink,
-            @HostParam("$host") String endpoint,
-            @HeaderParam("Accept") String accept,
-            Context context);
+        Mono<Response<AssetCollection>> listNext(@PathParam(value = "nextLink", encoded = true) String nextLink,
+            @HostParam("$host") String endpoint, @HeaderParam("Accept") String accept, Context context);
     }
 
     /**
      * List Assets
-     *
-     * <p>List Assets in the Media Services account with optional filtering and ordering.
-     *
+     * 
+     * List Assets in the Media Services account with optional filtering and ordering.
+     * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param filter Restricts the set of items returned.
      * @param top Specifies a non-negative integer n that limits the number of items returned from a collection. The
-     *     service returns the number of available items up to but not greater than the specified value n.
+     * service returns the number of available items up to but not greater than the specified value n.
      * @param orderby Specifies the key by which the result collection should be ordered.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -217,19 +179,15 @@ public final class AssetsClientImpl implements AssetsClient {
      * @return a collection of Asset items along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<AssetInner>> listSinglePageAsync(
-        String resourceGroupName, String accountName, String filter, Integer top, String orderby) {
+    private Mono<PagedResponse<AssetInner>> listSinglePageAsync(String resourceGroupName, String accountName,
+        String filter, Integer top, String orderby) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -241,42 +199,23 @@ public final class AssetsClientImpl implements AssetsClient {
         final String apiVersion = "2023-01-01";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .list(
-                            this.client.getEndpoint(),
-                            this.client.getSubscriptionId(),
-                            resourceGroupName,
-                            accountName,
-                            apiVersion,
-                            filter,
-                            top,
-                            orderby,
-                            accept,
-                            context))
-            .<PagedResponse<AssetInner>>map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().odataNextLink(),
-                        null))
+            .withContext(context -> service.list(this.client.getEndpoint(), this.client.getSubscriptionId(),
+                resourceGroupName, accountName, apiVersion, filter, top, orderby, accept, context))
+            .<PagedResponse<AssetInner>>map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(),
+                res.getHeaders(), res.getValue().value(), res.getValue().odataNextLink(), null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * List Assets
-     *
-     * <p>List Assets in the Media Services account with optional filtering and ordering.
-     *
+     * 
+     * List Assets in the Media Services account with optional filtering and ordering.
+     * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param filter Restricts the set of items returned.
      * @param top Specifies a non-negative integer n that limits the number of items returned from a collection. The
-     *     service returns the number of available items up to but not greater than the specified value n.
+     * service returns the number of available items up to but not greater than the specified value n.
      * @param orderby Specifies the key by which the result collection should be ordered.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -285,19 +224,15 @@ public final class AssetsClientImpl implements AssetsClient {
      * @return a collection of Asset items along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<AssetInner>> listSinglePageAsync(
-        String resourceGroupName, String accountName, String filter, Integer top, String orderby, Context context) {
+    private Mono<PagedResponse<AssetInner>> listSinglePageAsync(String resourceGroupName, String accountName,
+        String filter, Integer top, String orderby, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -310,38 +245,22 @@ public final class AssetsClientImpl implements AssetsClient {
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .list(
-                this.client.getEndpoint(),
-                this.client.getSubscriptionId(),
-                resourceGroupName,
-                accountName,
-                apiVersion,
-                filter,
-                top,
-                orderby,
-                accept,
-                context)
-            .map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().odataNextLink(),
-                        null));
+            .list(this.client.getEndpoint(), this.client.getSubscriptionId(), resourceGroupName, accountName,
+                apiVersion, filter, top, orderby, accept, context)
+            .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
+                res.getValue().value(), res.getValue().odataNextLink(), null));
     }
 
     /**
      * List Assets
-     *
-     * <p>List Assets in the Media Services account with optional filtering and ordering.
-     *
+     * 
+     * List Assets in the Media Services account with optional filtering and ordering.
+     * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param filter Restricts the set of items returned.
      * @param top Specifies a non-negative integer n that limits the number of items returned from a collection. The
-     *     service returns the number of available items up to but not greater than the specified value n.
+     * service returns the number of available items up to but not greater than the specified value n.
      * @param orderby Specifies the key by which the result collection should be ordered.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -349,18 +268,17 @@ public final class AssetsClientImpl implements AssetsClient {
      * @return a collection of Asset items as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<AssetInner> listAsync(
-        String resourceGroupName, String accountName, String filter, Integer top, String orderby) {
-        return new PagedFlux<>(
-            () -> listSinglePageAsync(resourceGroupName, accountName, filter, top, orderby),
+    private PagedFlux<AssetInner> listAsync(String resourceGroupName, String accountName, String filter, Integer top,
+        String orderby) {
+        return new PagedFlux<>(() -> listSinglePageAsync(resourceGroupName, accountName, filter, top, orderby),
             nextLink -> listNextSinglePageAsync(nextLink));
     }
 
     /**
      * List Assets
-     *
-     * <p>List Assets in the Media Services account with optional filtering and ordering.
-     *
+     * 
+     * List Assets in the Media Services account with optional filtering and ordering.
+     * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -373,21 +291,20 @@ public final class AssetsClientImpl implements AssetsClient {
         final String filter = null;
         final Integer top = null;
         final String orderby = null;
-        return new PagedFlux<>(
-            () -> listSinglePageAsync(resourceGroupName, accountName, filter, top, orderby),
+        return new PagedFlux<>(() -> listSinglePageAsync(resourceGroupName, accountName, filter, top, orderby),
             nextLink -> listNextSinglePageAsync(nextLink));
     }
 
     /**
      * List Assets
-     *
-     * <p>List Assets in the Media Services account with optional filtering and ordering.
-     *
+     * 
+     * List Assets in the Media Services account with optional filtering and ordering.
+     * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param filter Restricts the set of items returned.
      * @param top Specifies a non-negative integer n that limits the number of items returned from a collection. The
-     *     service returns the number of available items up to but not greater than the specified value n.
+     * service returns the number of available items up to but not greater than the specified value n.
      * @param orderby Specifies the key by which the result collection should be ordered.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -396,18 +313,17 @@ public final class AssetsClientImpl implements AssetsClient {
      * @return a collection of Asset items as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<AssetInner> listAsync(
-        String resourceGroupName, String accountName, String filter, Integer top, String orderby, Context context) {
-        return new PagedFlux<>(
-            () -> listSinglePageAsync(resourceGroupName, accountName, filter, top, orderby, context),
+    private PagedFlux<AssetInner> listAsync(String resourceGroupName, String accountName, String filter, Integer top,
+        String orderby, Context context) {
+        return new PagedFlux<>(() -> listSinglePageAsync(resourceGroupName, accountName, filter, top, orderby, context),
             nextLink -> listNextSinglePageAsync(nextLink, context));
     }
 
     /**
      * List Assets
-     *
-     * <p>List Assets in the Media Services account with optional filtering and ordering.
-     *
+     * 
+     * List Assets in the Media Services account with optional filtering and ordering.
+     * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -425,14 +341,14 @@ public final class AssetsClientImpl implements AssetsClient {
 
     /**
      * List Assets
-     *
-     * <p>List Assets in the Media Services account with optional filtering and ordering.
-     *
+     * 
+     * List Assets in the Media Services account with optional filtering and ordering.
+     * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param filter Restricts the set of items returned.
      * @param top Specifies a non-negative integer n that limits the number of items returned from a collection. The
-     *     service returns the number of available items up to but not greater than the specified value n.
+     * service returns the number of available items up to but not greater than the specified value n.
      * @param orderby Specifies the key by which the result collection should be ordered.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -441,16 +357,16 @@ public final class AssetsClientImpl implements AssetsClient {
      * @return a collection of Asset items as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    public PagedIterable<AssetInner> list(
-        String resourceGroupName, String accountName, String filter, Integer top, String orderby, Context context) {
+    public PagedIterable<AssetInner> list(String resourceGroupName, String accountName, String filter, Integer top,
+        String orderby, Context context) {
         return new PagedIterable<>(listAsync(resourceGroupName, accountName, filter, top, orderby, context));
     }
 
     /**
      * Get an Asset
-     *
-     * <p>Get the details of an Asset in the Media Services account.
-     *
+     * 
+     * Get the details of an Asset in the Media Services account.
+     * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param assetName The Asset name.
@@ -458,22 +374,18 @@ public final class AssetsClientImpl implements AssetsClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the details of an Asset in the Media Services account along with {@link Response} on successful
-     *     completion of {@link Mono}.
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<AssetInner>> getWithResponseAsync(
-        String resourceGroupName, String accountName, String assetName) {
+    private Mono<Response<AssetInner>> getWithResponseAsync(String resourceGroupName, String accountName,
+        String assetName) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -488,26 +400,16 @@ public final class AssetsClientImpl implements AssetsClient {
         final String apiVersion = "2023-01-01";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .get(
-                            this.client.getEndpoint(),
-                            this.client.getSubscriptionId(),
-                            resourceGroupName,
-                            accountName,
-                            assetName,
-                            apiVersion,
-                            accept,
-                            context))
+            .withContext(context -> service.get(this.client.getEndpoint(), this.client.getSubscriptionId(),
+                resourceGroupName, accountName, assetName, apiVersion, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Get an Asset
-     *
-     * <p>Get the details of an Asset in the Media Services account.
-     *
+     * 
+     * Get the details of an Asset in the Media Services account.
+     * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param assetName The Asset name.
@@ -516,22 +418,18 @@ public final class AssetsClientImpl implements AssetsClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the details of an Asset in the Media Services account along with {@link Response} on successful
-     *     completion of {@link Mono}.
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<AssetInner>> getWithResponseAsync(
-        String resourceGroupName, String accountName, String assetName, Context context) {
+    private Mono<Response<AssetInner>> getWithResponseAsync(String resourceGroupName, String accountName,
+        String assetName, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -546,23 +444,15 @@ public final class AssetsClientImpl implements AssetsClient {
         final String apiVersion = "2023-01-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .get(
-                this.client.getEndpoint(),
-                this.client.getSubscriptionId(),
-                resourceGroupName,
-                accountName,
-                assetName,
-                apiVersion,
-                accept,
-                context);
+        return service.get(this.client.getEndpoint(), this.client.getSubscriptionId(), resourceGroupName, accountName,
+            assetName, apiVersion, accept, context);
     }
 
     /**
      * Get an Asset
-     *
-     * <p>Get the details of an Asset in the Media Services account.
-     *
+     * 
+     * Get the details of an Asset in the Media Services account.
+     * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param assetName The Asset name.
@@ -579,9 +469,9 @@ public final class AssetsClientImpl implements AssetsClient {
 
     /**
      * Get an Asset
-     *
-     * <p>Get the details of an Asset in the Media Services account.
-     *
+     * 
+     * Get the details of an Asset in the Media Services account.
+     * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param assetName The Asset name.
@@ -592,16 +482,16 @@ public final class AssetsClientImpl implements AssetsClient {
      * @return the details of an Asset in the Media Services account along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AssetInner> getWithResponse(
-        String resourceGroupName, String accountName, String assetName, Context context) {
+    public Response<AssetInner> getWithResponse(String resourceGroupName, String accountName, String assetName,
+        Context context) {
         return getWithResponseAsync(resourceGroupName, accountName, assetName, context).block();
     }
 
     /**
      * Get an Asset
-     *
-     * <p>Get the details of an Asset in the Media Services account.
-     *
+     * 
+     * Get the details of an Asset in the Media Services account.
+     * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param assetName The Asset name.
@@ -617,9 +507,9 @@ public final class AssetsClientImpl implements AssetsClient {
 
     /**
      * Create or update an Asset
-     *
-     * <p>Creates or updates an Asset in the Media Services account.
-     *
+     * 
+     * Creates or updates an Asset in the Media Services account.
+     * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param assetName The Asset name.
@@ -630,19 +520,15 @@ public final class AssetsClientImpl implements AssetsClient {
      * @return an Asset along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<AssetInner>> createOrUpdateWithResponseAsync(
-        String resourceGroupName, String accountName, String assetName, AssetInner parameters) {
+    private Mono<Response<AssetInner>> createOrUpdateWithResponseAsync(String resourceGroupName, String accountName,
+        String assetName, AssetInner parameters) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -662,27 +548,16 @@ public final class AssetsClientImpl implements AssetsClient {
         final String apiVersion = "2023-01-01";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .createOrUpdate(
-                            this.client.getEndpoint(),
-                            this.client.getSubscriptionId(),
-                            resourceGroupName,
-                            accountName,
-                            assetName,
-                            apiVersion,
-                            parameters,
-                            accept,
-                            context))
+            .withContext(context -> service.createOrUpdate(this.client.getEndpoint(), this.client.getSubscriptionId(),
+                resourceGroupName, accountName, assetName, apiVersion, parameters, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Create or update an Asset
-     *
-     * <p>Creates or updates an Asset in the Media Services account.
-     *
+     * 
+     * Creates or updates an Asset in the Media Services account.
+     * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param assetName The Asset name.
@@ -694,19 +569,15 @@ public final class AssetsClientImpl implements AssetsClient {
      * @return an Asset along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<AssetInner>> createOrUpdateWithResponseAsync(
-        String resourceGroupName, String accountName, String assetName, AssetInner parameters, Context context) {
+    private Mono<Response<AssetInner>> createOrUpdateWithResponseAsync(String resourceGroupName, String accountName,
+        String assetName, AssetInner parameters, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -726,24 +597,15 @@ public final class AssetsClientImpl implements AssetsClient {
         final String apiVersion = "2023-01-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .createOrUpdate(
-                this.client.getEndpoint(),
-                this.client.getSubscriptionId(),
-                resourceGroupName,
-                accountName,
-                assetName,
-                apiVersion,
-                parameters,
-                accept,
-                context);
+        return service.createOrUpdate(this.client.getEndpoint(), this.client.getSubscriptionId(), resourceGroupName,
+            accountName, assetName, apiVersion, parameters, accept, context);
     }
 
     /**
      * Create or update an Asset
-     *
-     * <p>Creates or updates an Asset in the Media Services account.
-     *
+     * 
+     * Creates or updates an Asset in the Media Services account.
+     * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param assetName The Asset name.
@@ -754,17 +616,17 @@ public final class AssetsClientImpl implements AssetsClient {
      * @return an Asset on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<AssetInner> createOrUpdateAsync(
-        String resourceGroupName, String accountName, String assetName, AssetInner parameters) {
+    private Mono<AssetInner> createOrUpdateAsync(String resourceGroupName, String accountName, String assetName,
+        AssetInner parameters) {
         return createOrUpdateWithResponseAsync(resourceGroupName, accountName, assetName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
      * Create or update an Asset
-     *
-     * <p>Creates or updates an Asset in the Media Services account.
-     *
+     * 
+     * Creates or updates an Asset in the Media Services account.
+     * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param assetName The Asset name.
@@ -776,16 +638,16 @@ public final class AssetsClientImpl implements AssetsClient {
      * @return an Asset along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AssetInner> createOrUpdateWithResponse(
-        String resourceGroupName, String accountName, String assetName, AssetInner parameters, Context context) {
+    public Response<AssetInner> createOrUpdateWithResponse(String resourceGroupName, String accountName,
+        String assetName, AssetInner parameters, Context context) {
         return createOrUpdateWithResponseAsync(resourceGroupName, accountName, assetName, parameters, context).block();
     }
 
     /**
      * Create or update an Asset
-     *
-     * <p>Creates or updates an Asset in the Media Services account.
-     *
+     * 
+     * Creates or updates an Asset in the Media Services account.
+     * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param assetName The Asset name.
@@ -796,17 +658,17 @@ public final class AssetsClientImpl implements AssetsClient {
      * @return an Asset.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public AssetInner createOrUpdate(
-        String resourceGroupName, String accountName, String assetName, AssetInner parameters) {
+    public AssetInner createOrUpdate(String resourceGroupName, String accountName, String assetName,
+        AssetInner parameters) {
         return createOrUpdateWithResponse(resourceGroupName, accountName, assetName, parameters, Context.NONE)
             .getValue();
     }
 
     /**
      * Delete an Asset.
-     *
-     * <p>Deletes an Asset in the Media Services account.
-     *
+     * 
+     * Deletes an Asset in the Media Services account.
+     * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param assetName The Asset name.
@@ -816,19 +678,15 @@ public final class AssetsClientImpl implements AssetsClient {
      * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Void>> deleteWithResponseAsync(
-        String resourceGroupName, String accountName, String assetName) {
+    private Mono<Response<Void>> deleteWithResponseAsync(String resourceGroupName, String accountName,
+        String assetName) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -843,26 +701,16 @@ public final class AssetsClientImpl implements AssetsClient {
         final String apiVersion = "2023-01-01";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .delete(
-                            this.client.getEndpoint(),
-                            this.client.getSubscriptionId(),
-                            resourceGroupName,
-                            accountName,
-                            assetName,
-                            apiVersion,
-                            accept,
-                            context))
+            .withContext(context -> service.delete(this.client.getEndpoint(), this.client.getSubscriptionId(),
+                resourceGroupName, accountName, assetName, apiVersion, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Delete an Asset.
-     *
-     * <p>Deletes an Asset in the Media Services account.
-     *
+     * 
+     * Deletes an Asset in the Media Services account.
+     * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param assetName The Asset name.
@@ -873,19 +721,15 @@ public final class AssetsClientImpl implements AssetsClient {
      * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Void>> deleteWithResponseAsync(
-        String resourceGroupName, String accountName, String assetName, Context context) {
+    private Mono<Response<Void>> deleteWithResponseAsync(String resourceGroupName, String accountName, String assetName,
+        Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -900,23 +744,15 @@ public final class AssetsClientImpl implements AssetsClient {
         final String apiVersion = "2023-01-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .delete(
-                this.client.getEndpoint(),
-                this.client.getSubscriptionId(),
-                resourceGroupName,
-                accountName,
-                assetName,
-                apiVersion,
-                accept,
-                context);
+        return service.delete(this.client.getEndpoint(), this.client.getSubscriptionId(), resourceGroupName,
+            accountName, assetName, apiVersion, accept, context);
     }
 
     /**
      * Delete an Asset.
-     *
-     * <p>Deletes an Asset in the Media Services account.
-     *
+     * 
+     * Deletes an Asset in the Media Services account.
+     * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param assetName The Asset name.
@@ -932,9 +768,9 @@ public final class AssetsClientImpl implements AssetsClient {
 
     /**
      * Delete an Asset.
-     *
-     * <p>Deletes an Asset in the Media Services account.
-     *
+     * 
+     * Deletes an Asset in the Media Services account.
+     * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param assetName The Asset name.
@@ -945,16 +781,16 @@ public final class AssetsClientImpl implements AssetsClient {
      * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteWithResponse(
-        String resourceGroupName, String accountName, String assetName, Context context) {
+    public Response<Void> deleteWithResponse(String resourceGroupName, String accountName, String assetName,
+        Context context) {
         return deleteWithResponseAsync(resourceGroupName, accountName, assetName, context).block();
     }
 
     /**
      * Delete an Asset.
-     *
-     * <p>Deletes an Asset in the Media Services account.
-     *
+     * 
+     * Deletes an Asset in the Media Services account.
+     * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param assetName The Asset name.
@@ -969,9 +805,9 @@ public final class AssetsClientImpl implements AssetsClient {
 
     /**
      * Update an Asset
-     *
-     * <p>Updates an existing Asset in the Media Services account.
-     *
+     * 
+     * Updates an existing Asset in the Media Services account.
+     * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param assetName The Asset name.
@@ -982,19 +818,15 @@ public final class AssetsClientImpl implements AssetsClient {
      * @return an Asset along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<AssetInner>> updateWithResponseAsync(
-        String resourceGroupName, String accountName, String assetName, AssetInner parameters) {
+    private Mono<Response<AssetInner>> updateWithResponseAsync(String resourceGroupName, String accountName,
+        String assetName, AssetInner parameters) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -1014,27 +846,16 @@ public final class AssetsClientImpl implements AssetsClient {
         final String apiVersion = "2023-01-01";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .update(
-                            this.client.getEndpoint(),
-                            this.client.getSubscriptionId(),
-                            resourceGroupName,
-                            accountName,
-                            assetName,
-                            apiVersion,
-                            parameters,
-                            accept,
-                            context))
+            .withContext(context -> service.update(this.client.getEndpoint(), this.client.getSubscriptionId(),
+                resourceGroupName, accountName, assetName, apiVersion, parameters, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Update an Asset
-     *
-     * <p>Updates an existing Asset in the Media Services account.
-     *
+     * 
+     * Updates an existing Asset in the Media Services account.
+     * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param assetName The Asset name.
@@ -1046,19 +867,15 @@ public final class AssetsClientImpl implements AssetsClient {
      * @return an Asset along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<AssetInner>> updateWithResponseAsync(
-        String resourceGroupName, String accountName, String assetName, AssetInner parameters, Context context) {
+    private Mono<Response<AssetInner>> updateWithResponseAsync(String resourceGroupName, String accountName,
+        String assetName, AssetInner parameters, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -1078,24 +895,15 @@ public final class AssetsClientImpl implements AssetsClient {
         final String apiVersion = "2023-01-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .update(
-                this.client.getEndpoint(),
-                this.client.getSubscriptionId(),
-                resourceGroupName,
-                accountName,
-                assetName,
-                apiVersion,
-                parameters,
-                accept,
-                context);
+        return service.update(this.client.getEndpoint(), this.client.getSubscriptionId(), resourceGroupName,
+            accountName, assetName, apiVersion, parameters, accept, context);
     }
 
     /**
      * Update an Asset
-     *
-     * <p>Updates an existing Asset in the Media Services account.
-     *
+     * 
+     * Updates an existing Asset in the Media Services account.
+     * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param assetName The Asset name.
@@ -1106,17 +914,17 @@ public final class AssetsClientImpl implements AssetsClient {
      * @return an Asset on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<AssetInner> updateAsync(
-        String resourceGroupName, String accountName, String assetName, AssetInner parameters) {
+    private Mono<AssetInner> updateAsync(String resourceGroupName, String accountName, String assetName,
+        AssetInner parameters) {
         return updateWithResponseAsync(resourceGroupName, accountName, assetName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
      * Update an Asset
-     *
-     * <p>Updates an existing Asset in the Media Services account.
-     *
+     * 
+     * Updates an existing Asset in the Media Services account.
+     * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param assetName The Asset name.
@@ -1128,16 +936,16 @@ public final class AssetsClientImpl implements AssetsClient {
      * @return an Asset along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AssetInner> updateWithResponse(
-        String resourceGroupName, String accountName, String assetName, AssetInner parameters, Context context) {
+    public Response<AssetInner> updateWithResponse(String resourceGroupName, String accountName, String assetName,
+        AssetInner parameters, Context context) {
         return updateWithResponseAsync(resourceGroupName, accountName, assetName, parameters, context).block();
     }
 
     /**
      * Update an Asset
-     *
-     * <p>Updates an existing Asset in the Media Services account.
-     *
+     * 
+     * Updates an existing Asset in the Media Services account.
+     * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param assetName The Asset name.
@@ -1154,10 +962,10 @@ public final class AssetsClientImpl implements AssetsClient {
 
     /**
      * List the Asset URLs
-     *
-     * <p>Lists storage container URLs with shared access signatures (SAS) for uploading and downloading Asset content.
-     * The signatures are derived from the storage account keys.
-     *
+     * 
+     * Lists storage container URLs with shared access signatures (SAS) for uploading and downloading Asset content. The
+     * signatures are derived from the storage account keys.
+     * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param assetName The Asset name.
@@ -1165,23 +973,19 @@ public final class AssetsClientImpl implements AssetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Asset Storage container SAS URLs along with {@link Response} on successful completion of {@link
-     *     Mono}.
+     * @return the Asset Storage container SAS URLs along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<AssetContainerSasInner>> listContainerSasWithResponseAsync(
-        String resourceGroupName, String accountName, String assetName, ListContainerSasInput parameters) {
+    private Mono<Response<AssetContainerSasInner>> listContainerSasWithResponseAsync(String resourceGroupName,
+        String accountName, String assetName, ListContainerSasInput parameters) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -1201,28 +1005,17 @@ public final class AssetsClientImpl implements AssetsClient {
         final String apiVersion = "2023-01-01";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .listContainerSas(
-                            this.client.getEndpoint(),
-                            this.client.getSubscriptionId(),
-                            resourceGroupName,
-                            accountName,
-                            assetName,
-                            apiVersion,
-                            parameters,
-                            accept,
-                            context))
+            .withContext(context -> service.listContainerSas(this.client.getEndpoint(), this.client.getSubscriptionId(),
+                resourceGroupName, accountName, assetName, apiVersion, parameters, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * List the Asset URLs
-     *
-     * <p>Lists storage container URLs with shared access signatures (SAS) for uploading and downloading Asset content.
-     * The signatures are derived from the storage account keys.
-     *
+     * 
+     * Lists storage container URLs with shared access signatures (SAS) for uploading and downloading Asset content. The
+     * signatures are derived from the storage account keys.
+     * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param assetName The Asset name.
@@ -1231,27 +1024,19 @@ public final class AssetsClientImpl implements AssetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Asset Storage container SAS URLs along with {@link Response} on successful completion of {@link
-     *     Mono}.
+     * @return the Asset Storage container SAS URLs along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<AssetContainerSasInner>> listContainerSasWithResponseAsync(
-        String resourceGroupName,
-        String accountName,
-        String assetName,
-        ListContainerSasInput parameters,
-        Context context) {
+    private Mono<Response<AssetContainerSasInner>> listContainerSasWithResponseAsync(String resourceGroupName,
+        String accountName, String assetName, ListContainerSasInput parameters, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -1271,25 +1056,16 @@ public final class AssetsClientImpl implements AssetsClient {
         final String apiVersion = "2023-01-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .listContainerSas(
-                this.client.getEndpoint(),
-                this.client.getSubscriptionId(),
-                resourceGroupName,
-                accountName,
-                assetName,
-                apiVersion,
-                parameters,
-                accept,
-                context);
+        return service.listContainerSas(this.client.getEndpoint(), this.client.getSubscriptionId(), resourceGroupName,
+            accountName, assetName, apiVersion, parameters, accept, context);
     }
 
     /**
      * List the Asset URLs
-     *
-     * <p>Lists storage container URLs with shared access signatures (SAS) for uploading and downloading Asset content.
-     * The signatures are derived from the storage account keys.
-     *
+     * 
+     * Lists storage container URLs with shared access signatures (SAS) for uploading and downloading Asset content. The
+     * signatures are derived from the storage account keys.
+     * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param assetName The Asset name.
@@ -1300,18 +1076,18 @@ public final class AssetsClientImpl implements AssetsClient {
      * @return the Asset Storage container SAS URLs on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<AssetContainerSasInner> listContainerSasAsync(
-        String resourceGroupName, String accountName, String assetName, ListContainerSasInput parameters) {
+    private Mono<AssetContainerSasInner> listContainerSasAsync(String resourceGroupName, String accountName,
+        String assetName, ListContainerSasInput parameters) {
         return listContainerSasWithResponseAsync(resourceGroupName, accountName, assetName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
      * List the Asset URLs
-     *
-     * <p>Lists storage container URLs with shared access signatures (SAS) for uploading and downloading Asset content.
-     * The signatures are derived from the storage account keys.
-     *
+     * 
+     * Lists storage container URLs with shared access signatures (SAS) for uploading and downloading Asset content. The
+     * signatures are derived from the storage account keys.
+     * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param assetName The Asset name.
@@ -1323,22 +1099,18 @@ public final class AssetsClientImpl implements AssetsClient {
      * @return the Asset Storage container SAS URLs along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<AssetContainerSasInner> listContainerSasWithResponse(
-        String resourceGroupName,
-        String accountName,
-        String assetName,
-        ListContainerSasInput parameters,
-        Context context) {
+    public Response<AssetContainerSasInner> listContainerSasWithResponse(String resourceGroupName, String accountName,
+        String assetName, ListContainerSasInput parameters, Context context) {
         return listContainerSasWithResponseAsync(resourceGroupName, accountName, assetName, parameters, context)
             .block();
     }
 
     /**
      * List the Asset URLs
-     *
-     * <p>Lists storage container URLs with shared access signatures (SAS) for uploading and downloading Asset content.
-     * The signatures are derived from the storage account keys.
-     *
+     * 
+     * Lists storage container URLs with shared access signatures (SAS) for uploading and downloading Asset content. The
+     * signatures are derived from the storage account keys.
+     * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param assetName The Asset name.
@@ -1349,17 +1121,17 @@ public final class AssetsClientImpl implements AssetsClient {
      * @return the Asset Storage container SAS URLs.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public AssetContainerSasInner listContainerSas(
-        String resourceGroupName, String accountName, String assetName, ListContainerSasInput parameters) {
+    public AssetContainerSasInner listContainerSas(String resourceGroupName, String accountName, String assetName,
+        ListContainerSasInput parameters) {
         return listContainerSasWithResponse(resourceGroupName, accountName, assetName, parameters, Context.NONE)
             .getValue();
     }
 
     /**
      * Gets the Asset storage key
-     *
-     * <p>Gets the Asset storage encryption keys used to decrypt content created by version 2 of the Media Services API.
-     *
+     * 
+     * Gets the Asset storage encryption keys used to decrypt content created by version 2 of the Media Services API.
+     * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param assetName The Asset name.
@@ -1367,22 +1139,18 @@ public final class AssetsClientImpl implements AssetsClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the Asset storage encryption keys used to decrypt content created by version 2 of the Media Services API
-     *     along with {@link Response} on successful completion of {@link Mono}.
+     * along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<StorageEncryptedAssetDecryptionDataInner>> getEncryptionKeyWithResponseAsync(
-        String resourceGroupName, String accountName, String assetName) {
+    private Mono<Response<StorageEncryptedAssetDecryptionDataInner>>
+        getEncryptionKeyWithResponseAsync(String resourceGroupName, String accountName, String assetName) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -1397,26 +1165,16 @@ public final class AssetsClientImpl implements AssetsClient {
         final String apiVersion = "2023-01-01";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .getEncryptionKey(
-                            this.client.getEndpoint(),
-                            this.client.getSubscriptionId(),
-                            resourceGroupName,
-                            accountName,
-                            assetName,
-                            apiVersion,
-                            accept,
-                            context))
+            .withContext(context -> service.getEncryptionKey(this.client.getEndpoint(), this.client.getSubscriptionId(),
+                resourceGroupName, accountName, assetName, apiVersion, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Gets the Asset storage key
-     *
-     * <p>Gets the Asset storage encryption keys used to decrypt content created by version 2 of the Media Services API.
-     *
+     * 
+     * Gets the Asset storage encryption keys used to decrypt content created by version 2 of the Media Services API.
+     * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param assetName The Asset name.
@@ -1425,22 +1183,18 @@ public final class AssetsClientImpl implements AssetsClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the Asset storage encryption keys used to decrypt content created by version 2 of the Media Services API
-     *     along with {@link Response} on successful completion of {@link Mono}.
+     * along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<StorageEncryptedAssetDecryptionDataInner>> getEncryptionKeyWithResponseAsync(
         String resourceGroupName, String accountName, String assetName, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -1455,23 +1209,15 @@ public final class AssetsClientImpl implements AssetsClient {
         final String apiVersion = "2023-01-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .getEncryptionKey(
-                this.client.getEndpoint(),
-                this.client.getSubscriptionId(),
-                resourceGroupName,
-                accountName,
-                assetName,
-                apiVersion,
-                accept,
-                context);
+        return service.getEncryptionKey(this.client.getEndpoint(), this.client.getSubscriptionId(), resourceGroupName,
+            accountName, assetName, apiVersion, accept, context);
     }
 
     /**
      * Gets the Asset storage key
-     *
-     * <p>Gets the Asset storage encryption keys used to decrypt content created by version 2 of the Media Services API.
-     *
+     * 
+     * Gets the Asset storage encryption keys used to decrypt content created by version 2 of the Media Services API.
+     * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param assetName The Asset name.
@@ -1479,20 +1225,20 @@ public final class AssetsClientImpl implements AssetsClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the Asset storage encryption keys used to decrypt content created by version 2 of the Media Services API
-     *     on successful completion of {@link Mono}.
+     * on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<StorageEncryptedAssetDecryptionDataInner> getEncryptionKeyAsync(
-        String resourceGroupName, String accountName, String assetName) {
+    private Mono<StorageEncryptedAssetDecryptionDataInner> getEncryptionKeyAsync(String resourceGroupName,
+        String accountName, String assetName) {
         return getEncryptionKeyWithResponseAsync(resourceGroupName, accountName, assetName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
      * Gets the Asset storage key
-     *
-     * <p>Gets the Asset storage encryption keys used to decrypt content created by version 2 of the Media Services API.
-     *
+     * 
+     * Gets the Asset storage encryption keys used to decrypt content created by version 2 of the Media Services API.
+     * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param assetName The Asset name.
@@ -1501,19 +1247,19 @@ public final class AssetsClientImpl implements AssetsClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the Asset storage encryption keys used to decrypt content created by version 2 of the Media Services API
-     *     along with {@link Response}.
+     * along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<StorageEncryptedAssetDecryptionDataInner> getEncryptionKeyWithResponse(
-        String resourceGroupName, String accountName, String assetName, Context context) {
+    public Response<StorageEncryptedAssetDecryptionDataInner> getEncryptionKeyWithResponse(String resourceGroupName,
+        String accountName, String assetName, Context context) {
         return getEncryptionKeyWithResponseAsync(resourceGroupName, accountName, assetName, context).block();
     }
 
     /**
      * Gets the Asset storage key
-     *
-     * <p>Gets the Asset storage encryption keys used to decrypt content created by version 2 of the Media Services API.
-     *
+     * 
+     * Gets the Asset storage encryption keys used to decrypt content created by version 2 of the Media Services API.
+     * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param assetName The Asset name.
@@ -1523,16 +1269,16 @@ public final class AssetsClientImpl implements AssetsClient {
      * @return the Asset storage encryption keys used to decrypt content created by version 2 of the Media Services API.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public StorageEncryptedAssetDecryptionDataInner getEncryptionKey(
-        String resourceGroupName, String accountName, String assetName) {
+    public StorageEncryptedAssetDecryptionDataInner getEncryptionKey(String resourceGroupName, String accountName,
+        String assetName) {
         return getEncryptionKeyWithResponse(resourceGroupName, accountName, assetName, Context.NONE).getValue();
     }
 
     /**
      * List Streaming Locators
-     *
-     * <p>Lists Streaming Locators which are associated with this asset.
-     *
+     * 
+     * Lists Streaming Locators which are associated with this asset.
+     * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param assetName The Asset name.
@@ -1540,22 +1286,18 @@ public final class AssetsClientImpl implements AssetsClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the Streaming Locators associated with this Asset along with {@link Response} on successful completion of
-     *     {@link Mono}.
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<ListStreamingLocatorsResponseInner>> listStreamingLocatorsWithResponseAsync(
-        String resourceGroupName, String accountName, String assetName) {
+    private Mono<Response<ListStreamingLocatorsResponseInner>>
+        listStreamingLocatorsWithResponseAsync(String resourceGroupName, String accountName, String assetName) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -1571,25 +1313,16 @@ public final class AssetsClientImpl implements AssetsClient {
         final String accept = "application/json";
         return FluxUtil
             .withContext(
-                context ->
-                    service
-                        .listStreamingLocators(
-                            this.client.getEndpoint(),
-                            this.client.getSubscriptionId(),
-                            resourceGroupName,
-                            accountName,
-                            assetName,
-                            apiVersion,
-                            accept,
-                            context))
+                context -> service.listStreamingLocators(this.client.getEndpoint(), this.client.getSubscriptionId(),
+                    resourceGroupName, accountName, assetName, apiVersion, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * List Streaming Locators
-     *
-     * <p>Lists Streaming Locators which are associated with this asset.
-     *
+     * 
+     * Lists Streaming Locators which are associated with this asset.
+     * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param assetName The Asset name.
@@ -1598,22 +1331,18 @@ public final class AssetsClientImpl implements AssetsClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the Streaming Locators associated with this Asset along with {@link Response} on successful completion of
-     *     {@link Mono}.
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ListStreamingLocatorsResponseInner>> listStreamingLocatorsWithResponseAsync(
         String resourceGroupName, String accountName, String assetName, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -1628,23 +1357,15 @@ public final class AssetsClientImpl implements AssetsClient {
         final String apiVersion = "2023-01-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .listStreamingLocators(
-                this.client.getEndpoint(),
-                this.client.getSubscriptionId(),
-                resourceGroupName,
-                accountName,
-                assetName,
-                apiVersion,
-                accept,
-                context);
+        return service.listStreamingLocators(this.client.getEndpoint(), this.client.getSubscriptionId(),
+            resourceGroupName, accountName, assetName, apiVersion, accept, context);
     }
 
     /**
      * List Streaming Locators
-     *
-     * <p>Lists Streaming Locators which are associated with this asset.
-     *
+     * 
+     * Lists Streaming Locators which are associated with this asset.
+     * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param assetName The Asset name.
@@ -1654,17 +1375,17 @@ public final class AssetsClientImpl implements AssetsClient {
      * @return the Streaming Locators associated with this Asset on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<ListStreamingLocatorsResponseInner> listStreamingLocatorsAsync(
-        String resourceGroupName, String accountName, String assetName) {
+    private Mono<ListStreamingLocatorsResponseInner> listStreamingLocatorsAsync(String resourceGroupName,
+        String accountName, String assetName) {
         return listStreamingLocatorsWithResponseAsync(resourceGroupName, accountName, assetName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
      * List Streaming Locators
-     *
-     * <p>Lists Streaming Locators which are associated with this asset.
-     *
+     * 
+     * Lists Streaming Locators which are associated with this asset.
+     * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param assetName The Asset name.
@@ -1675,16 +1396,16 @@ public final class AssetsClientImpl implements AssetsClient {
      * @return the Streaming Locators associated with this Asset along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ListStreamingLocatorsResponseInner> listStreamingLocatorsWithResponse(
-        String resourceGroupName, String accountName, String assetName, Context context) {
+    public Response<ListStreamingLocatorsResponseInner> listStreamingLocatorsWithResponse(String resourceGroupName,
+        String accountName, String assetName, Context context) {
         return listStreamingLocatorsWithResponseAsync(resourceGroupName, accountName, assetName, context).block();
     }
 
     /**
      * List Streaming Locators
-     *
-     * <p>Lists Streaming Locators which are associated with this asset.
-     *
+     * 
+     * Lists Streaming Locators which are associated with this asset.
+     * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param assetName The Asset name.
@@ -1694,16 +1415,17 @@ public final class AssetsClientImpl implements AssetsClient {
      * @return the Streaming Locators associated with this Asset.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ListStreamingLocatorsResponseInner listStreamingLocators(
-        String resourceGroupName, String accountName, String assetName) {
+    public ListStreamingLocatorsResponseInner listStreamingLocators(String resourceGroupName, String accountName,
+        String assetName) {
         return listStreamingLocatorsWithResponse(resourceGroupName, accountName, assetName, Context.NONE).getValue();
     }
 
     /**
      * Get the next page of items.
-     *
+     * 
      * @param nextLink The URL to get the next list of items
-     *     <p>The nextLink parameter.
+     * 
+     * The nextLink parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1715,31 +1437,22 @@ public final class AssetsClientImpl implements AssetsClient {
             return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
         }
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         final String accept = "application/json";
-        return FluxUtil
-            .withContext(context -> service.listNext(nextLink, this.client.getEndpoint(), accept, context))
-            .<PagedResponse<AssetInner>>map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().odataNextLink(),
-                        null))
+        return FluxUtil.withContext(context -> service.listNext(nextLink, this.client.getEndpoint(), accept, context))
+            .<PagedResponse<AssetInner>>map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(),
+                res.getHeaders(), res.getValue().value(), res.getValue().odataNextLink(), null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Get the next page of items.
-     *
+     * 
      * @param nextLink The URL to get the next list of items
-     *     <p>The nextLink parameter.
+     * 
+     * The nextLink parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1752,23 +1465,13 @@ public final class AssetsClientImpl implements AssetsClient {
             return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
         }
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .listNext(nextLink, this.client.getEndpoint(), accept, context)
-            .map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().odataNextLink(),
-                        null));
+        return service.listNext(nextLink, this.client.getEndpoint(), accept, context)
+            .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
+                res.getValue().value(), res.getValue().odataNextLink(), null));
     }
 }

@@ -9,86 +9,96 @@ import com.azure.resourcemanager.authorization.generated.fluent.models.Permissio
 import com.azure.resourcemanager.authorization.generated.fluent.models.RoleDefinitionInner;
 import java.util.List;
 
-/** An immutable client-side representation of RoleDefinition. */
+/**
+ * An immutable client-side representation of RoleDefinition.
+ */
 public interface RoleDefinition {
     /**
      * Gets the id property: The role definition ID.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the name property: The role definition name.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the type property: The role definition type.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the roleName property: The role name.
-     *
+     * 
      * @return the roleName value.
      */
     String roleName();
 
     /**
      * Gets the description property: The role definition description.
-     *
+     * 
      * @return the description value.
      */
     String description();
 
     /**
      * Gets the roleType property: The role type.
-     *
+     * 
      * @return the roleType value.
      */
     String roleType();
 
     /**
      * Gets the permissions property: Role definition permissions.
-     *
+     * 
      * @return the permissions value.
      */
     List<Permission> permissions();
 
     /**
      * Gets the assignableScopes property: Role definition assignable scopes.
-     *
+     * 
      * @return the assignableScopes value.
      */
     List<String> assignableScopes();
 
     /**
      * Gets the inner com.azure.resourcemanager.authorization.generated.fluent.models.RoleDefinitionInner object.
-     *
+     * 
      * @return the inner object.
      */
     RoleDefinitionInner innerModel();
 
-    /** The entirety of the RoleDefinition definition. */
+    /**
+     * The entirety of the RoleDefinition definition.
+     */
     interface Definition extends DefinitionStages.Blank, DefinitionStages.WithScope, DefinitionStages.WithCreate {
     }
 
-    /** The RoleDefinition definition stages. */
+    /**
+     * The RoleDefinition definition stages.
+     */
     interface DefinitionStages {
-        /** The first stage of the RoleDefinition definition. */
+        /**
+         * The first stage of the RoleDefinition definition.
+         */
         interface Blank extends WithScope {
         }
 
-        /** The stage of the RoleDefinition definition allowing to specify parent resource. */
+        /**
+         * The stage of the RoleDefinition definition allowing to specify parent resource.
+         */
         interface WithScope {
             /**
              * Specifies scope.
-             *
+             * 
              * @param scope The scope of the role definition.
              * @return the next definition stage.
              */
@@ -99,77 +109,83 @@ public interface RoleDefinition {
          * The stage of the RoleDefinition definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
          */
-        interface WithCreate
-            extends DefinitionStages.WithRoleName,
-                DefinitionStages.WithDescription,
-                DefinitionStages.WithRoleType,
-                DefinitionStages.WithPermissions,
-                DefinitionStages.WithAssignableScopes {
+        interface WithCreate extends DefinitionStages.WithRoleName, DefinitionStages.WithDescription,
+            DefinitionStages.WithRoleType, DefinitionStages.WithPermissions, DefinitionStages.WithAssignableScopes {
             /**
              * Executes the create request.
-             *
+             * 
              * @return the created resource.
              */
             RoleDefinition create();
 
             /**
              * Executes the create request.
-             *
+             * 
              * @param context The context to associate with this operation.
              * @return the created resource.
              */
             RoleDefinition create(Context context);
         }
 
-        /** The stage of the RoleDefinition definition allowing to specify roleName. */
+        /**
+         * The stage of the RoleDefinition definition allowing to specify roleName.
+         */
         interface WithRoleName {
             /**
              * Specifies the roleName property: The role name..
-             *
+             * 
              * @param roleName The role name.
              * @return the next definition stage.
              */
             WithCreate withRoleName(String roleName);
         }
 
-        /** The stage of the RoleDefinition definition allowing to specify description. */
+        /**
+         * The stage of the RoleDefinition definition allowing to specify description.
+         */
         interface WithDescription {
             /**
              * Specifies the description property: The role definition description..
-             *
+             * 
              * @param description The role definition description.
              * @return the next definition stage.
              */
             WithCreate withDescription(String description);
         }
 
-        /** The stage of the RoleDefinition definition allowing to specify roleType. */
+        /**
+         * The stage of the RoleDefinition definition allowing to specify roleType.
+         */
         interface WithRoleType {
             /**
              * Specifies the roleType property: The role type..
-             *
+             * 
              * @param roleType The role type.
              * @return the next definition stage.
              */
             WithCreate withRoleType(String roleType);
         }
 
-        /** The stage of the RoleDefinition definition allowing to specify permissions. */
+        /**
+         * The stage of the RoleDefinition definition allowing to specify permissions.
+         */
         interface WithPermissions {
             /**
              * Specifies the permissions property: Role definition permissions..
-             *
+             * 
              * @param permissions Role definition permissions.
              * @return the next definition stage.
              */
             WithCreate withPermissions(List<PermissionInner> permissions);
         }
 
-        /** The stage of the RoleDefinition definition allowing to specify assignableScopes. */
+        /**
+         * The stage of the RoleDefinition definition allowing to specify assignableScopes.
+         */
         interface WithAssignableScopes {
             /**
              * Specifies the assignableScopes property: Role definition assignable scopes..
-             *
+             * 
              * @param assignableScopes Role definition assignable scopes.
              * @return the next definition stage.
              */
@@ -179,85 +195,95 @@ public interface RoleDefinition {
 
     /**
      * Begins update for the RoleDefinition resource.
-     *
+     * 
      * @return the stage of resource update.
      */
     RoleDefinition.Update update();
 
-    /** The template for RoleDefinition update. */
-    interface Update
-        extends UpdateStages.WithRoleName,
-            UpdateStages.WithDescription,
-            UpdateStages.WithRoleType,
-            UpdateStages.WithPermissions,
-            UpdateStages.WithAssignableScopes {
+    /**
+     * The template for RoleDefinition update.
+     */
+    interface Update extends UpdateStages.WithRoleName, UpdateStages.WithDescription, UpdateStages.WithRoleType,
+        UpdateStages.WithPermissions, UpdateStages.WithAssignableScopes {
         /**
          * Executes the update request.
-         *
+         * 
          * @return the updated resource.
          */
         RoleDefinition apply();
 
         /**
          * Executes the update request.
-         *
+         * 
          * @param context The context to associate with this operation.
          * @return the updated resource.
          */
         RoleDefinition apply(Context context);
     }
 
-    /** The RoleDefinition update stages. */
+    /**
+     * The RoleDefinition update stages.
+     */
     interface UpdateStages {
-        /** The stage of the RoleDefinition update allowing to specify roleName. */
+        /**
+         * The stage of the RoleDefinition update allowing to specify roleName.
+         */
         interface WithRoleName {
             /**
              * Specifies the roleName property: The role name..
-             *
+             * 
              * @param roleName The role name.
              * @return the next definition stage.
              */
             Update withRoleName(String roleName);
         }
 
-        /** The stage of the RoleDefinition update allowing to specify description. */
+        /**
+         * The stage of the RoleDefinition update allowing to specify description.
+         */
         interface WithDescription {
             /**
              * Specifies the description property: The role definition description..
-             *
+             * 
              * @param description The role definition description.
              * @return the next definition stage.
              */
             Update withDescription(String description);
         }
 
-        /** The stage of the RoleDefinition update allowing to specify roleType. */
+        /**
+         * The stage of the RoleDefinition update allowing to specify roleType.
+         */
         interface WithRoleType {
             /**
              * Specifies the roleType property: The role type..
-             *
+             * 
              * @param roleType The role type.
              * @return the next definition stage.
              */
             Update withRoleType(String roleType);
         }
 
-        /** The stage of the RoleDefinition update allowing to specify permissions. */
+        /**
+         * The stage of the RoleDefinition update allowing to specify permissions.
+         */
         interface WithPermissions {
             /**
              * Specifies the permissions property: Role definition permissions..
-             *
+             * 
              * @param permissions Role definition permissions.
              * @return the next definition stage.
              */
             Update withPermissions(List<PermissionInner> permissions);
         }
 
-        /** The stage of the RoleDefinition update allowing to specify assignableScopes. */
+        /**
+         * The stage of the RoleDefinition update allowing to specify assignableScopes.
+         */
         interface WithAssignableScopes {
             /**
              * Specifies the assignableScopes property: Role definition assignable scopes..
-             *
+             * 
              * @param assignableScopes Role definition assignable scopes.
              * @return the next definition stage.
              */
@@ -267,14 +293,14 @@ public interface RoleDefinition {
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @return the refreshed resource.
      */
     RoleDefinition refresh();
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @return the refreshed resource.
      */

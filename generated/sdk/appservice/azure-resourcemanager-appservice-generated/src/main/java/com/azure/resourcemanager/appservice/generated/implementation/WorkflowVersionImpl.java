@@ -22,8 +22,7 @@ public final class WorkflowVersionImpl implements WorkflowVersion {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    WorkflowVersionImpl(
-        WorkflowVersionInner innerObject,
+    WorkflowVersionImpl(WorkflowVersionInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

@@ -15,11 +15,13 @@ import com.azure.resourcemanager.resources.generated.fluent.models.GenericResour
 import com.azure.resourcemanager.resources.generated.fluent.models.GenericResourceInner;
 import com.azure.resourcemanager.resources.generated.models.ResourcesMoveInfo;
 
-/** An instance of this class provides access to all the operations defined in ResourcesClient. */
+/**
+ * An instance of this class provides access to all the operations defined in ResourcesClient.
+ */
 public interface ResourcesClient {
     /**
      * Get all the resources for a resource group.
-     *
+     * 
      * @param resourceGroupName The resource group with the resources to get.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -31,23 +33,22 @@ public interface ResourcesClient {
 
     /**
      * Get all the resources for a resource group.
-     *
+     * 
      * @param resourceGroupName The resource group with the resources to get.
      * @param filter The filter to apply on the operation.&lt;br&gt;&lt;br&gt;The properties you can use for eq (equals)
-     *     or ne (not equals) are: location, resourceType, name, resourceGroup, identity, identity/principalId, plan,
-     *     plan/publisher, plan/product, plan/name, plan/version, and plan/promotionCode.&lt;br&gt;&lt;br&gt;For
-     *     example, to filter by a resource type, use: $filter=resourceType eq
-     *     'Microsoft.Network/virtualNetworks'&lt;br&gt;&lt;br&gt;You can use substringof(value, property) in the
-     *     filter. The properties you can use for substring are: name and resourceGroup.&lt;br&gt;&lt;br&gt;For example,
-     *     to get all resources with 'demo' anywhere in the name, use: $filter=substringof('demo',
-     *     name)&lt;br&gt;&lt;br&gt;You can link more than one substringof together by adding and/or
-     *     operators.&lt;br&gt;&lt;br&gt;You can filter by tag names and values. For example, to filter for a tag name
-     *     and value, use $filter=tagName eq 'tag1' and tagValue eq 'Value1'. When you filter by a tag name and value,
-     *     the tags for each resource are not returned in the results.&lt;br&gt;&lt;br&gt;You can use some properties
-     *     together when filtering. The combinations you can use are: substringof and/or resourceType, plan and
-     *     plan/publisher and plan/name, identity and identity/principalId.
+     * or ne (not equals) are: location, resourceType, name, resourceGroup, identity, identity/principalId, plan,
+     * plan/publisher, plan/product, plan/name, plan/version, and plan/promotionCode.&lt;br&gt;&lt;br&gt;For example, to
+     * filter by a resource type, use: $filter=resourceType eq
+     * 'Microsoft.Network/virtualNetworks'&lt;br&gt;&lt;br&gt;You can use substringof(value, property) in the filter.
+     * The properties you can use for substring are: name and resourceGroup.&lt;br&gt;&lt;br&gt;For example, to get all
+     * resources with 'demo' anywhere in the name, use: $filter=substringof('demo', name)&lt;br&gt;&lt;br&gt;You can
+     * link more than one substringof together by adding and/or operators.&lt;br&gt;&lt;br&gt;You can filter by tag
+     * names and values. For example, to filter for a tag name and value, use $filter=tagName eq 'tag1' and tagValue eq
+     * 'Value1'. When you filter by a tag name and value, the tags for each resource are not returned in the
+     * results.&lt;br&gt;&lt;br&gt;You can use some properties together when filtering. The combinations you can use
+     * are: substringof and/or resourceType, plan and plan/publisher and plan/name, identity and identity/principalId.
      * @param expand Comma-separated list of additional properties to be included in the response. Valid values include
-     *     `createdTime`, `changedTime` and `provisioningState`. For example, `$expand=createdTime,changedTime`.
+     * `createdTime`, `changedTime` and `provisioningState`. For example, `$expand=createdTime,changedTime`.
      * @param top The number of results to return. If null is passed, returns all resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -56,16 +57,16 @@ public interface ResourcesClient {
      * @return all the resources for a resource group as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<GenericResourceExpandedInner> listByResourceGroup(
-        String resourceGroupName, String filter, String expand, Integer top, Context context);
+    PagedIterable<GenericResourceExpandedInner> listByResourceGroup(String resourceGroupName, String filter,
+        String expand, Integer top, Context context);
 
     /**
      * Moves resources from one resource group to another resource group.
-     *
-     * <p>The resources to move must be in the same source resource group. The target resource group may be in a
-     * different subscription. When moving resources, both the source group and the target group are locked for the
-     * duration of the operation. Write and delete operations are blocked on the groups until the move completes.
-     *
+     * 
+     * The resources to move must be in the same source resource group. The target resource group may be in a different
+     * subscription. When moving resources, both the source group and the target group are locked for the duration of
+     * the operation. Write and delete operations are blocked on the groups until the move completes.
+     * 
      * @param sourceResourceGroupName The name of the resource group containing the resources to move.
      * @param parameters Parameters for moving resources.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -78,11 +79,11 @@ public interface ResourcesClient {
 
     /**
      * Moves resources from one resource group to another resource group.
-     *
-     * <p>The resources to move must be in the same source resource group. The target resource group may be in a
-     * different subscription. When moving resources, both the source group and the target group are locked for the
-     * duration of the operation. Write and delete operations are blocked on the groups until the move completes.
-     *
+     * 
+     * The resources to move must be in the same source resource group. The target resource group may be in a different
+     * subscription. When moving resources, both the source group and the target group are locked for the duration of
+     * the operation. Write and delete operations are blocked on the groups until the move completes.
+     * 
      * @param sourceResourceGroupName The name of the resource group containing the resources to move.
      * @param parameters Parameters for moving resources.
      * @param context The context to associate with this operation.
@@ -92,16 +93,16 @@ public interface ResourcesClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginMoveResources(
-        String sourceResourceGroupName, ResourcesMoveInfo parameters, Context context);
+    SyncPoller<PollResult<Void>, Void> beginMoveResources(String sourceResourceGroupName, ResourcesMoveInfo parameters,
+        Context context);
 
     /**
      * Moves resources from one resource group to another resource group.
-     *
-     * <p>The resources to move must be in the same source resource group. The target resource group may be in a
-     * different subscription. When moving resources, both the source group and the target group are locked for the
-     * duration of the operation. Write and delete operations are blocked on the groups until the move completes.
-     *
+     * 
+     * The resources to move must be in the same source resource group. The target resource group may be in a different
+     * subscription. When moving resources, both the source group and the target group are locked for the duration of
+     * the operation. Write and delete operations are blocked on the groups until the move completes.
+     * 
      * @param sourceResourceGroupName The name of the resource group containing the resources to move.
      * @param parameters Parameters for moving resources.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -113,11 +114,11 @@ public interface ResourcesClient {
 
     /**
      * Moves resources from one resource group to another resource group.
-     *
-     * <p>The resources to move must be in the same source resource group. The target resource group may be in a
-     * different subscription. When moving resources, both the source group and the target group are locked for the
-     * duration of the operation. Write and delete operations are blocked on the groups until the move completes.
-     *
+     * 
+     * The resources to move must be in the same source resource group. The target resource group may be in a different
+     * subscription. When moving resources, both the source group and the target group are locked for the duration of
+     * the operation. Write and delete operations are blocked on the groups until the move completes.
+     * 
      * @param sourceResourceGroupName The name of the resource group containing the resources to move.
      * @param parameters Parameters for moving resources.
      * @param context The context to associate with this operation.
@@ -130,13 +131,13 @@ public interface ResourcesClient {
 
     /**
      * Validates whether resources can be moved from one resource group to another resource group.
-     *
-     * <p>This operation checks whether the specified resources can be moved to the target. The resources to move must
-     * be in the same source resource group. The target resource group may be in a different subscription. If validation
+     * 
+     * This operation checks whether the specified resources can be moved to the target. The resources to move must be
+     * in the same source resource group. The target resource group may be in a different subscription. If validation
      * succeeds, it returns HTTP response code 204 (no content). If validation fails, it returns HTTP response code 409
      * (Conflict) with an error message. Retrieve the URL in the Location header value to check the result of the
      * long-running operation.
-     *
+     * 
      * @param sourceResourceGroupName The name of the resource group containing the resources to validate for move.
      * @param parameters Parameters for moving resources.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -145,18 +146,18 @@ public interface ResourcesClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginValidateMoveResources(
-        String sourceResourceGroupName, ResourcesMoveInfo parameters);
+    SyncPoller<PollResult<Void>, Void> beginValidateMoveResources(String sourceResourceGroupName,
+        ResourcesMoveInfo parameters);
 
     /**
      * Validates whether resources can be moved from one resource group to another resource group.
-     *
-     * <p>This operation checks whether the specified resources can be moved to the target. The resources to move must
-     * be in the same source resource group. The target resource group may be in a different subscription. If validation
+     * 
+     * This operation checks whether the specified resources can be moved to the target. The resources to move must be
+     * in the same source resource group. The target resource group may be in a different subscription. If validation
      * succeeds, it returns HTTP response code 204 (no content). If validation fails, it returns HTTP response code 409
      * (Conflict) with an error message. Retrieve the URL in the Location header value to check the result of the
      * long-running operation.
-     *
+     * 
      * @param sourceResourceGroupName The name of the resource group containing the resources to validate for move.
      * @param parameters Parameters for moving resources.
      * @param context The context to associate with this operation.
@@ -166,18 +167,18 @@ public interface ResourcesClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginValidateMoveResources(
-        String sourceResourceGroupName, ResourcesMoveInfo parameters, Context context);
+    SyncPoller<PollResult<Void>, Void> beginValidateMoveResources(String sourceResourceGroupName,
+        ResourcesMoveInfo parameters, Context context);
 
     /**
      * Validates whether resources can be moved from one resource group to another resource group.
-     *
-     * <p>This operation checks whether the specified resources can be moved to the target. The resources to move must
-     * be in the same source resource group. The target resource group may be in a different subscription. If validation
+     * 
+     * This operation checks whether the specified resources can be moved to the target. The resources to move must be
+     * in the same source resource group. The target resource group may be in a different subscription. If validation
      * succeeds, it returns HTTP response code 204 (no content). If validation fails, it returns HTTP response code 409
      * (Conflict) with an error message. Retrieve the URL in the Location header value to check the result of the
      * long-running operation.
-     *
+     * 
      * @param sourceResourceGroupName The name of the resource group containing the resources to validate for move.
      * @param parameters Parameters for moving resources.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -189,13 +190,13 @@ public interface ResourcesClient {
 
     /**
      * Validates whether resources can be moved from one resource group to another resource group.
-     *
-     * <p>This operation checks whether the specified resources can be moved to the target. The resources to move must
-     * be in the same source resource group. The target resource group may be in a different subscription. If validation
+     * 
+     * This operation checks whether the specified resources can be moved to the target. The resources to move must be
+     * in the same source resource group. The target resource group may be in a different subscription. If validation
      * succeeds, it returns HTTP response code 204 (no content). If validation fails, it returns HTTP response code 409
      * (Conflict) with an error message. Retrieve the URL in the Location header value to check the result of the
      * long-running operation.
-     *
+     * 
      * @param sourceResourceGroupName The name of the resource group containing the resources to validate for move.
      * @param parameters Parameters for moving resources.
      * @param context The context to associate with this operation.
@@ -208,7 +209,7 @@ public interface ResourcesClient {
 
     /**
      * Get all the resources in a subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all the resources in a subscription as paginated response with {@link PagedIterable}.
@@ -218,22 +219,21 @@ public interface ResourcesClient {
 
     /**
      * Get all the resources in a subscription.
-     *
+     * 
      * @param filter The filter to apply on the operation.&lt;br&gt;&lt;br&gt;The properties you can use for eq (equals)
-     *     or ne (not equals) are: location, resourceType, name, resourceGroup, identity, identity/principalId, plan,
-     *     plan/publisher, plan/product, plan/name, plan/version, and plan/promotionCode.&lt;br&gt;&lt;br&gt;For
-     *     example, to filter by a resource type, use: $filter=resourceType eq
-     *     'Microsoft.Network/virtualNetworks'&lt;br&gt;&lt;br&gt;You can use substringof(value, property) in the
-     *     filter. The properties you can use for substring are: name and resourceGroup.&lt;br&gt;&lt;br&gt;For example,
-     *     to get all resources with 'demo' anywhere in the name, use: $filter=substringof('demo',
-     *     name)&lt;br&gt;&lt;br&gt;You can link more than one substringof together by adding and/or
-     *     operators.&lt;br&gt;&lt;br&gt;You can filter by tag names and values. For example, to filter for a tag name
-     *     and value, use $filter=tagName eq 'tag1' and tagValue eq 'Value1'. When you filter by a tag name and value,
-     *     the tags for each resource are not returned in the results.&lt;br&gt;&lt;br&gt;You can use some properties
-     *     together when filtering. The combinations you can use are: substringof and/or resourceType, plan and
-     *     plan/publisher and plan/name, identity and identity/principalId.
+     * or ne (not equals) are: location, resourceType, name, resourceGroup, identity, identity/principalId, plan,
+     * plan/publisher, plan/product, plan/name, plan/version, and plan/promotionCode.&lt;br&gt;&lt;br&gt;For example, to
+     * filter by a resource type, use: $filter=resourceType eq
+     * 'Microsoft.Network/virtualNetworks'&lt;br&gt;&lt;br&gt;You can use substringof(value, property) in the filter.
+     * The properties you can use for substring are: name and resourceGroup.&lt;br&gt;&lt;br&gt;For example, to get all
+     * resources with 'demo' anywhere in the name, use: $filter=substringof('demo', name)&lt;br&gt;&lt;br&gt;You can
+     * link more than one substringof together by adding and/or operators.&lt;br&gt;&lt;br&gt;You can filter by tag
+     * names and values. For example, to filter for a tag name and value, use $filter=tagName eq 'tag1' and tagValue eq
+     * 'Value1'. When you filter by a tag name and value, the tags for each resource are not returned in the
+     * results.&lt;br&gt;&lt;br&gt;You can use some properties together when filtering. The combinations you can use
+     * are: substringof and/or resourceType, plan and plan/publisher and plan/name, identity and identity/principalId.
      * @param expand Comma-separated list of additional properties to be included in the response. Valid values include
-     *     `createdTime`, `changedTime` and `provisioningState`. For example, `$expand=createdTime,changedTime`.
+     * `createdTime`, `changedTime` and `provisioningState`. For example, `$expand=createdTime,changedTime`.
      * @param top The number of results to return. If null is passed, returns all resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -246,9 +246,9 @@ public interface ResourcesClient {
 
     /**
      * Checks whether a resource exists.
-     *
+     * 
      * @param resourceGroupName The name of the resource group containing the resource to check. The name is case
-     *     insensitive.
+     * insensitive.
      * @param resourceProviderNamespace The resource provider of the resource to check.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type.
@@ -261,20 +261,14 @@ public interface ResourcesClient {
      * @return whether resource exists along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<Boolean> checkExistenceWithResponse(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
-        String apiVersion,
-        Context context);
+    Response<Boolean> checkExistenceWithResponse(String resourceGroupName, String resourceProviderNamespace,
+        String parentResourcePath, String resourceType, String resourceName, String apiVersion, Context context);
 
     /**
      * Checks whether a resource exists.
-     *
+     * 
      * @param resourceGroupName The name of the resource group containing the resource to check. The name is case
-     *     insensitive.
+     * insensitive.
      * @param resourceProviderNamespace The resource provider of the resource to check.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type.
@@ -286,19 +280,14 @@ public interface ResourcesClient {
      * @return whether resource exists.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    boolean checkExistence(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
-        String apiVersion);
+    boolean checkExistence(String resourceGroupName, String resourceProviderNamespace, String parentResourcePath,
+        String resourceType, String resourceName, String apiVersion);
 
     /**
      * Deletes a resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group that contains the resource to delete. The name is case
-     *     insensitive.
+     * insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type.
@@ -310,19 +299,14 @@ public interface ResourcesClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginDelete(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
-        String apiVersion);
+    SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String resourceProviderNamespace,
+        String parentResourcePath, String resourceType, String resourceName, String apiVersion);
 
     /**
      * Deletes a resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group that contains the resource to delete. The name is case
-     *     insensitive.
+     * insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type.
@@ -335,20 +319,14 @@ public interface ResourcesClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginDelete(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
-        String apiVersion,
-        Context context);
+    SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String resourceProviderNamespace,
+        String parentResourcePath, String resourceType, String resourceName, String apiVersion, Context context);
 
     /**
      * Deletes a resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group that contains the resource to delete. The name is case
-     *     insensitive.
+     * insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type.
@@ -359,19 +337,14 @@ public interface ResourcesClient {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void delete(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
-        String apiVersion);
+    void delete(String resourceGroupName, String resourceProviderNamespace, String parentResourcePath,
+        String resourceType, String resourceName, String apiVersion);
 
     /**
      * Deletes a resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group that contains the resource to delete. The name is case
-     *     insensitive.
+     * insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type.
@@ -383,18 +356,12 @@ public interface ResourcesClient {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void delete(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
-        String apiVersion,
-        Context context);
+    void delete(String resourceGroupName, String resourceProviderNamespace, String parentResourcePath,
+        String resourceType, String resourceName, String apiVersion, Context context);
 
     /**
      * Creates a resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group for the resource. The name is case insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
@@ -408,18 +375,13 @@ public interface ResourcesClient {
      * @return the {@link SyncPoller} for polling of resource information.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<GenericResourceInner>, GenericResourceInner> beginCreateOrUpdate(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
-        String apiVersion,
-        GenericResourceInner parameters);
+    SyncPoller<PollResult<GenericResourceInner>, GenericResourceInner> beginCreateOrUpdate(String resourceGroupName,
+        String resourceProviderNamespace, String parentResourcePath, String resourceType, String resourceName,
+        String apiVersion, GenericResourceInner parameters);
 
     /**
      * Creates a resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group for the resource. The name is case insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
@@ -434,19 +396,13 @@ public interface ResourcesClient {
      * @return the {@link SyncPoller} for polling of resource information.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<GenericResourceInner>, GenericResourceInner> beginCreateOrUpdate(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
-        String apiVersion,
-        GenericResourceInner parameters,
-        Context context);
+    SyncPoller<PollResult<GenericResourceInner>, GenericResourceInner> beginCreateOrUpdate(String resourceGroupName,
+        String resourceProviderNamespace, String parentResourcePath, String resourceType, String resourceName,
+        String apiVersion, GenericResourceInner parameters, Context context);
 
     /**
      * Creates a resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group for the resource. The name is case insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
@@ -460,18 +416,13 @@ public interface ResourcesClient {
      * @return resource information.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    GenericResourceInner createOrUpdate(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
-        String apiVersion,
+    GenericResourceInner createOrUpdate(String resourceGroupName, String resourceProviderNamespace,
+        String parentResourcePath, String resourceType, String resourceName, String apiVersion,
         GenericResourceInner parameters);
 
     /**
      * Creates a resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group for the resource. The name is case insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
@@ -486,19 +437,13 @@ public interface ResourcesClient {
      * @return resource information.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    GenericResourceInner createOrUpdate(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
-        String apiVersion,
-        GenericResourceInner parameters,
-        Context context);
+    GenericResourceInner createOrUpdate(String resourceGroupName, String resourceProviderNamespace,
+        String parentResourcePath, String resourceType, String resourceName, String apiVersion,
+        GenericResourceInner parameters, Context context);
 
     /**
      * Updates a resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group for the resource. The name is case insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
@@ -512,18 +457,13 @@ public interface ResourcesClient {
      * @return the {@link SyncPoller} for polling of resource information.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<GenericResourceInner>, GenericResourceInner> beginUpdate(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
-        String apiVersion,
-        GenericResourceInner parameters);
+    SyncPoller<PollResult<GenericResourceInner>, GenericResourceInner> beginUpdate(String resourceGroupName,
+        String resourceProviderNamespace, String parentResourcePath, String resourceType, String resourceName,
+        String apiVersion, GenericResourceInner parameters);
 
     /**
      * Updates a resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group for the resource. The name is case insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
@@ -538,19 +478,13 @@ public interface ResourcesClient {
      * @return the {@link SyncPoller} for polling of resource information.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<GenericResourceInner>, GenericResourceInner> beginUpdate(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
-        String apiVersion,
-        GenericResourceInner parameters,
-        Context context);
+    SyncPoller<PollResult<GenericResourceInner>, GenericResourceInner> beginUpdate(String resourceGroupName,
+        String resourceProviderNamespace, String parentResourcePath, String resourceType, String resourceName,
+        String apiVersion, GenericResourceInner parameters, Context context);
 
     /**
      * Updates a resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group for the resource. The name is case insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
@@ -564,18 +498,12 @@ public interface ResourcesClient {
      * @return resource information.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    GenericResourceInner update(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
-        String apiVersion,
-        GenericResourceInner parameters);
+    GenericResourceInner update(String resourceGroupName, String resourceProviderNamespace, String parentResourcePath,
+        String resourceType, String resourceName, String apiVersion, GenericResourceInner parameters);
 
     /**
      * Updates a resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group for the resource. The name is case insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
@@ -590,21 +518,14 @@ public interface ResourcesClient {
      * @return resource information.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    GenericResourceInner update(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
-        String apiVersion,
-        GenericResourceInner parameters,
-        Context context);
+    GenericResourceInner update(String resourceGroupName, String resourceProviderNamespace, String parentResourcePath,
+        String resourceType, String resourceName, String apiVersion, GenericResourceInner parameters, Context context);
 
     /**
      * Gets a resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group containing the resource to get. The name is case
-     *     insensitive.
+     * insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the resource.
@@ -617,20 +538,14 @@ public interface ResourcesClient {
      * @return a resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<GenericResourceInner> getWithResponse(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
-        String apiVersion,
-        Context context);
+    Response<GenericResourceInner> getWithResponse(String resourceGroupName, String resourceProviderNamespace,
+        String parentResourcePath, String resourceType, String resourceName, String apiVersion, Context context);
 
     /**
      * Gets a resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group containing the resource to get. The name is case
-     *     insensitive.
+     * insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the resource.
@@ -642,20 +557,15 @@ public interface ResourcesClient {
      * @return a resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    GenericResourceInner get(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
-        String apiVersion);
+    GenericResourceInner get(String resourceGroupName, String resourceProviderNamespace, String parentResourcePath,
+        String resourceType, String resourceName, String apiVersion);
 
     /**
      * Checks by ID whether a resource exists.
-     *
+     * 
      * @param resourceId The fully qualified ID of the resource, including the resource name and resource type. Use the
-     *     format,
-     *     /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
+     * format,
+     * /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -668,10 +578,10 @@ public interface ResourcesClient {
 
     /**
      * Checks by ID whether a resource exists.
-     *
+     * 
      * @param resourceId The fully qualified ID of the resource, including the resource name and resource type. Use the
-     *     format,
-     *     /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
+     * format,
+     * /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -683,10 +593,10 @@ public interface ResourcesClient {
 
     /**
      * Deletes a resource by ID.
-     *
+     * 
      * @param resourceId The fully qualified ID of the resource, including the resource name and resource type. Use the
-     *     format,
-     *     /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
+     * format,
+     * /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -698,10 +608,10 @@ public interface ResourcesClient {
 
     /**
      * Deletes a resource by ID.
-     *
+     * 
      * @param resourceId The fully qualified ID of the resource, including the resource name and resource type. Use the
-     *     format,
-     *     /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
+     * format,
+     * /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -714,10 +624,10 @@ public interface ResourcesClient {
 
     /**
      * Deletes a resource by ID.
-     *
+     * 
      * @param resourceId The fully qualified ID of the resource, including the resource name and resource type. Use the
-     *     format,
-     *     /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
+     * format,
+     * /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -728,10 +638,10 @@ public interface ResourcesClient {
 
     /**
      * Deletes a resource by ID.
-     *
+     * 
      * @param resourceId The fully qualified ID of the resource, including the resource name and resource type. Use the
-     *     format,
-     *     /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
+     * format,
+     * /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -743,10 +653,10 @@ public interface ResourcesClient {
 
     /**
      * Create a resource by ID.
-     *
+     * 
      * @param resourceId The fully qualified ID of the resource, including the resource name and resource type. Use the
-     *     format,
-     *     /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
+     * format,
+     * /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
      * @param parameters Create or update resource parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -755,15 +665,15 @@ public interface ResourcesClient {
      * @return the {@link SyncPoller} for polling of resource information.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<GenericResourceInner>, GenericResourceInner> beginCreateOrUpdateById(
-        String resourceId, String apiVersion, GenericResourceInner parameters);
+    SyncPoller<PollResult<GenericResourceInner>, GenericResourceInner> beginCreateOrUpdateById(String resourceId,
+        String apiVersion, GenericResourceInner parameters);
 
     /**
      * Create a resource by ID.
-     *
+     * 
      * @param resourceId The fully qualified ID of the resource, including the resource name and resource type. Use the
-     *     format,
-     *     /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
+     * format,
+     * /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
      * @param parameters Create or update resource parameters.
      * @param context The context to associate with this operation.
@@ -773,15 +683,15 @@ public interface ResourcesClient {
      * @return the {@link SyncPoller} for polling of resource information.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<GenericResourceInner>, GenericResourceInner> beginCreateOrUpdateById(
-        String resourceId, String apiVersion, GenericResourceInner parameters, Context context);
+    SyncPoller<PollResult<GenericResourceInner>, GenericResourceInner> beginCreateOrUpdateById(String resourceId,
+        String apiVersion, GenericResourceInner parameters, Context context);
 
     /**
      * Create a resource by ID.
-     *
+     * 
      * @param resourceId The fully qualified ID of the resource, including the resource name and resource type. Use the
-     *     format,
-     *     /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
+     * format,
+     * /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
      * @param parameters Create or update resource parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -794,10 +704,10 @@ public interface ResourcesClient {
 
     /**
      * Create a resource by ID.
-     *
+     * 
      * @param resourceId The fully qualified ID of the resource, including the resource name and resource type. Use the
-     *     format,
-     *     /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
+     * format,
+     * /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
      * @param parameters Create or update resource parameters.
      * @param context The context to associate with this operation.
@@ -807,15 +717,15 @@ public interface ResourcesClient {
      * @return resource information.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    GenericResourceInner createOrUpdateById(
-        String resourceId, String apiVersion, GenericResourceInner parameters, Context context);
+    GenericResourceInner createOrUpdateById(String resourceId, String apiVersion, GenericResourceInner parameters,
+        Context context);
 
     /**
      * Updates a resource by ID.
-     *
+     * 
      * @param resourceId The fully qualified ID of the resource, including the resource name and resource type. Use the
-     *     format,
-     *     /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
+     * format,
+     * /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
      * @param parameters Update resource parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -824,15 +734,15 @@ public interface ResourcesClient {
      * @return the {@link SyncPoller} for polling of resource information.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<GenericResourceInner>, GenericResourceInner> beginUpdateById(
-        String resourceId, String apiVersion, GenericResourceInner parameters);
+    SyncPoller<PollResult<GenericResourceInner>, GenericResourceInner> beginUpdateById(String resourceId,
+        String apiVersion, GenericResourceInner parameters);
 
     /**
      * Updates a resource by ID.
-     *
+     * 
      * @param resourceId The fully qualified ID of the resource, including the resource name and resource type. Use the
-     *     format,
-     *     /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
+     * format,
+     * /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
      * @param parameters Update resource parameters.
      * @param context The context to associate with this operation.
@@ -842,15 +752,15 @@ public interface ResourcesClient {
      * @return the {@link SyncPoller} for polling of resource information.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<GenericResourceInner>, GenericResourceInner> beginUpdateById(
-        String resourceId, String apiVersion, GenericResourceInner parameters, Context context);
+    SyncPoller<PollResult<GenericResourceInner>, GenericResourceInner> beginUpdateById(String resourceId,
+        String apiVersion, GenericResourceInner parameters, Context context);
 
     /**
      * Updates a resource by ID.
-     *
+     * 
      * @param resourceId The fully qualified ID of the resource, including the resource name and resource type. Use the
-     *     format,
-     *     /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
+     * format,
+     * /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
      * @param parameters Update resource parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -863,10 +773,10 @@ public interface ResourcesClient {
 
     /**
      * Updates a resource by ID.
-     *
+     * 
      * @param resourceId The fully qualified ID of the resource, including the resource name and resource type. Use the
-     *     format,
-     *     /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
+     * format,
+     * /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
      * @param parameters Update resource parameters.
      * @param context The context to associate with this operation.
@@ -876,15 +786,15 @@ public interface ResourcesClient {
      * @return resource information.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    GenericResourceInner updateById(
-        String resourceId, String apiVersion, GenericResourceInner parameters, Context context);
+    GenericResourceInner updateById(String resourceId, String apiVersion, GenericResourceInner parameters,
+        Context context);
 
     /**
      * Gets a resource by ID.
-     *
+     * 
      * @param resourceId The fully qualified ID of the resource, including the resource name and resource type. Use the
-     *     format,
-     *     /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
+     * format,
+     * /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -897,10 +807,10 @@ public interface ResourcesClient {
 
     /**
      * Gets a resource by ID.
-     *
+     * 
      * @param resourceId The fully qualified ID of the resource, including the resource name and resource type. Use the
-     *     format,
-     *     /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
+     * format,
+     * /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

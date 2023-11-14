@@ -13,7 +13,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
 
-/** The live event status. */
+/**
+ * The live event status.
+ */
 @Fluent
 public final class LiveEventStatusInner {
     /*
@@ -52,14 +54,16 @@ public final class LiveEventStatusInner {
     @JsonProperty(value = "trackStatus")
     private List<LiveEventTrackStatus> trackStatus;
 
-    /** Creates an instance of LiveEventStatusInner class. */
+    /**
+     * Creates an instance of LiveEventStatusInner class.
+     */
     public LiveEventStatusInner() {
     }
 
     /**
      * Get the state property: Current state of the live event. See https://go.microsoft.com/fwlink/?linkid=2139012 for
      * more information.
-     *
+     * 
      * @return the state value.
      */
     public LiveEventState state() {
@@ -69,7 +73,7 @@ public final class LiveEventStatusInner {
     /**
      * Set the state property: Current state of the live event. See https://go.microsoft.com/fwlink/?linkid=2139012 for
      * more information.
-     *
+     * 
      * @param state the state value to set.
      * @return the LiveEventStatusInner object itself.
      */
@@ -80,7 +84,7 @@ public final class LiveEventStatusInner {
 
     /**
      * Get the healthStatus property: Health status of last 20 seconds.
-     *
+     * 
      * @return the healthStatus value.
      */
     public LiveEventHealthStatus healthStatus() {
@@ -89,7 +93,7 @@ public final class LiveEventStatusInner {
 
     /**
      * Set the healthStatus property: Health status of last 20 seconds.
-     *
+     * 
      * @param healthStatus the healthStatus value to set.
      * @return the LiveEventStatusInner object itself.
      */
@@ -100,7 +104,7 @@ public final class LiveEventStatusInner {
 
     /**
      * Get the healthDescriptions property: List of strings justifying the health status.
-     *
+     * 
      * @return the healthDescriptions value.
      */
     public List<String> healthDescriptions() {
@@ -109,7 +113,7 @@ public final class LiveEventStatusInner {
 
     /**
      * Set the healthDescriptions property: List of strings justifying the health status.
-     *
+     * 
      * @param healthDescriptions the healthDescriptions value to set.
      * @return the LiveEventStatusInner object itself.
      */
@@ -120,7 +124,7 @@ public final class LiveEventStatusInner {
 
     /**
      * Get the lastUpdatedTime property: Last updated UTC time of this status.
-     *
+     * 
      * @return the lastUpdatedTime value.
      */
     public OffsetDateTime lastUpdatedTime() {
@@ -129,7 +133,7 @@ public final class LiveEventStatusInner {
 
     /**
      * Set the lastUpdatedTime property: Last updated UTC time of this status.
-     *
+     * 
      * @param lastUpdatedTime the lastUpdatedTime value to set.
      * @return the LiveEventStatusInner object itself.
      */
@@ -140,7 +144,7 @@ public final class LiveEventStatusInner {
 
     /**
      * Get the ingestion property: Live event ingestion entry.
-     *
+     * 
      * @return the ingestion value.
      */
     public LiveEventIngestion ingestion() {
@@ -149,7 +153,7 @@ public final class LiveEventStatusInner {
 
     /**
      * Set the ingestion property: Live event ingestion entry.
-     *
+     * 
      * @param ingestion the ingestion value to set.
      * @return the LiveEventStatusInner object itself.
      */
@@ -160,7 +164,7 @@ public final class LiveEventStatusInner {
 
     /**
      * Get the trackStatus property: Track entry list.
-     *
+     * 
      * @return the trackStatus value.
      */
     public List<LiveEventTrackStatus> trackStatus() {
@@ -169,7 +173,7 @@ public final class LiveEventStatusInner {
 
     /**
      * Set the trackStatus property: Track entry list.
-     *
+     * 
      * @param trackStatus the trackStatus value to set.
      * @return the LiveEventStatusInner object itself.
      */
@@ -180,7 +184,7 @@ public final class LiveEventStatusInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

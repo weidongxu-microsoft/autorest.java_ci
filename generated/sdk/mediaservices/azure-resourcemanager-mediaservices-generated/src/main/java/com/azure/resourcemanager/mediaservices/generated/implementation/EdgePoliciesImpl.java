@@ -13,8 +13,7 @@ public final class EdgePoliciesImpl implements EdgePolicies {
 
     private final com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager;
 
-    EdgePoliciesImpl(
-        EdgePoliciesInner innerObject,
+    EdgePoliciesImpl(EdgePoliciesInner innerObject,
         com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

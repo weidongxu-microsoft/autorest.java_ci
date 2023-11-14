@@ -19,11 +19,13 @@ import java.nio.ByteBuffer;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-/** An instance of this class provides access to all the operations defined in ServerSecurityAlertPoliciesClient. */
+/**
+ * An instance of this class provides access to all the operations defined in ServerSecurityAlertPoliciesClient.
+ */
 public interface ServerSecurityAlertPoliciesClient {
     /**
      * Get a server's security alert policy.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param securityAlertPolicyName The name of the security alert policy.
@@ -33,12 +35,12 @@ public interface ServerSecurityAlertPoliciesClient {
      * @return a server's security alert policy along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Mono<Response<ServerSecurityAlertPolicyInner>> getWithResponseAsync(
-        String resourceGroupName, String serverName, SecurityAlertPolicyName securityAlertPolicyName);
+    Mono<Response<ServerSecurityAlertPolicyInner>> getWithResponseAsync(String resourceGroupName, String serverName,
+        SecurityAlertPolicyName securityAlertPolicyName);
 
     /**
      * Get a server's security alert policy.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param securityAlertPolicyName The name of the security alert policy.
@@ -48,12 +50,12 @@ public interface ServerSecurityAlertPoliciesClient {
      * @return a server's security alert policy on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Mono<ServerSecurityAlertPolicyInner> getAsync(
-        String resourceGroupName, String serverName, SecurityAlertPolicyName securityAlertPolicyName);
+    Mono<ServerSecurityAlertPolicyInner> getAsync(String resourceGroupName, String serverName,
+        SecurityAlertPolicyName securityAlertPolicyName);
 
     /**
      * Get a server's security alert policy.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param securityAlertPolicyName The name of the security alert policy.
@@ -64,12 +66,12 @@ public interface ServerSecurityAlertPoliciesClient {
      * @return a server's security alert policy along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<ServerSecurityAlertPolicyInner> getWithResponse(
-        String resourceGroupName, String serverName, SecurityAlertPolicyName securityAlertPolicyName, Context context);
+    Response<ServerSecurityAlertPolicyInner> getWithResponse(String resourceGroupName, String serverName,
+        SecurityAlertPolicyName securityAlertPolicyName, Context context);
 
     /**
      * Get a server's security alert policy.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param securityAlertPolicyName The name of the security alert policy.
@@ -79,12 +81,12 @@ public interface ServerSecurityAlertPoliciesClient {
      * @return a server's security alert policy.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ServerSecurityAlertPolicyInner get(
-        String resourceGroupName, String serverName, SecurityAlertPolicyName securityAlertPolicyName);
+    ServerSecurityAlertPolicyInner get(String resourceGroupName, String serverName,
+        SecurityAlertPolicyName securityAlertPolicyName);
 
     /**
      * Creates or updates a threat detection policy.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param securityAlertPolicyName The name of the threat detection policy.
@@ -95,15 +97,12 @@ public interface ServerSecurityAlertPoliciesClient {
      * @return a server security alert policy along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
-        String resourceGroupName,
-        String serverName,
-        SecurityAlertPolicyName securityAlertPolicyName,
-        ServerSecurityAlertPolicyInner parameters);
+    Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName, String serverName,
+        SecurityAlertPolicyName securityAlertPolicyName, ServerSecurityAlertPolicyInner parameters);
 
     /**
      * Creates or updates a threat detection policy.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param securityAlertPolicyName The name of the threat detection policy.
@@ -115,14 +114,12 @@ public interface ServerSecurityAlertPoliciesClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     PollerFlux<PollResult<ServerSecurityAlertPolicyInner>, ServerSecurityAlertPolicyInner> beginCreateOrUpdateAsync(
-        String resourceGroupName,
-        String serverName,
-        SecurityAlertPolicyName securityAlertPolicyName,
+        String resourceGroupName, String serverName, SecurityAlertPolicyName securityAlertPolicyName,
         ServerSecurityAlertPolicyInner parameters);
 
     /**
      * Creates or updates a threat detection policy.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param securityAlertPolicyName The name of the threat detection policy.
@@ -134,14 +131,12 @@ public interface ServerSecurityAlertPoliciesClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<ServerSecurityAlertPolicyInner>, ServerSecurityAlertPolicyInner> beginCreateOrUpdate(
-        String resourceGroupName,
-        String serverName,
-        SecurityAlertPolicyName securityAlertPolicyName,
+        String resourceGroupName, String serverName, SecurityAlertPolicyName securityAlertPolicyName,
         ServerSecurityAlertPolicyInner parameters);
 
     /**
      * Creates or updates a threat detection policy.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param securityAlertPolicyName The name of the threat detection policy.
@@ -154,15 +149,12 @@ public interface ServerSecurityAlertPoliciesClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<ServerSecurityAlertPolicyInner>, ServerSecurityAlertPolicyInner> beginCreateOrUpdate(
-        String resourceGroupName,
-        String serverName,
-        SecurityAlertPolicyName securityAlertPolicyName,
-        ServerSecurityAlertPolicyInner parameters,
-        Context context);
+        String resourceGroupName, String serverName, SecurityAlertPolicyName securityAlertPolicyName,
+        ServerSecurityAlertPolicyInner parameters, Context context);
 
     /**
      * Creates or updates a threat detection policy.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param securityAlertPolicyName The name of the threat detection policy.
@@ -173,15 +165,12 @@ public interface ServerSecurityAlertPoliciesClient {
      * @return a server security alert policy on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Mono<ServerSecurityAlertPolicyInner> createOrUpdateAsync(
-        String resourceGroupName,
-        String serverName,
-        SecurityAlertPolicyName securityAlertPolicyName,
-        ServerSecurityAlertPolicyInner parameters);
+    Mono<ServerSecurityAlertPolicyInner> createOrUpdateAsync(String resourceGroupName, String serverName,
+        SecurityAlertPolicyName securityAlertPolicyName, ServerSecurityAlertPolicyInner parameters);
 
     /**
      * Creates or updates a threat detection policy.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param securityAlertPolicyName The name of the threat detection policy.
@@ -192,15 +181,12 @@ public interface ServerSecurityAlertPoliciesClient {
      * @return a server security alert policy.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ServerSecurityAlertPolicyInner createOrUpdate(
-        String resourceGroupName,
-        String serverName,
-        SecurityAlertPolicyName securityAlertPolicyName,
-        ServerSecurityAlertPolicyInner parameters);
+    ServerSecurityAlertPolicyInner createOrUpdate(String resourceGroupName, String serverName,
+        SecurityAlertPolicyName securityAlertPolicyName, ServerSecurityAlertPolicyInner parameters);
 
     /**
      * Creates or updates a threat detection policy.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param securityAlertPolicyName The name of the threat detection policy.
@@ -212,16 +198,12 @@ public interface ServerSecurityAlertPoliciesClient {
      * @return a server security alert policy.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ServerSecurityAlertPolicyInner createOrUpdate(
-        String resourceGroupName,
-        String serverName,
-        SecurityAlertPolicyName securityAlertPolicyName,
-        ServerSecurityAlertPolicyInner parameters,
-        Context context);
+    ServerSecurityAlertPolicyInner createOrUpdate(String resourceGroupName, String serverName,
+        SecurityAlertPolicyName securityAlertPolicyName, ServerSecurityAlertPolicyInner parameters, Context context);
 
     /**
      * Get the server's threat detection policies.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -234,7 +216,7 @@ public interface ServerSecurityAlertPoliciesClient {
 
     /**
      * Get the server's threat detection policies.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -247,7 +229,7 @@ public interface ServerSecurityAlertPoliciesClient {
 
     /**
      * Get the server's threat detection policies.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param context The context to associate with this operation.
@@ -257,6 +239,6 @@ public interface ServerSecurityAlertPoliciesClient {
      * @return the server's threat detection policies as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<ServerSecurityAlertPolicyInner> listByServer(
-        String resourceGroupName, String serverName, Context context);
+    PagedIterable<ServerSecurityAlertPolicyInner> listByServer(String resourceGroupName, String serverName,
+        Context context);
 }

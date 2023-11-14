@@ -21,8 +21,7 @@ public final class SettingsImpl implements Settings {
 
     private final com.azure.resourcemanager.costmanagement.generated.CostManagementManager serviceManager;
 
-    public SettingsImpl(
-        SettingsClient innerClient,
+    public SettingsImpl(SettingsClient innerClient,
         com.azure.resourcemanager.costmanagement.generated.CostManagementManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -41,10 +40,7 @@ public final class SettingsImpl implements Settings {
     public Response<Setting> getWithResponse(String settingName, Context context) {
         Response<SettingInner> inner = this.serviceClient().getWithResponse(settingName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new SettingImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -61,13 +57,10 @@ public final class SettingsImpl implements Settings {
     }
 
     public Response<Setting> createOrUpdateWithResponse(String settingName, SettingInner parameters, Context context) {
-        Response<SettingInner> inner =
-            this.serviceClient().createOrUpdateWithResponse(settingName, parameters, context);
+        Response<SettingInner> inner
+            = this.serviceClient().createOrUpdateWithResponse(settingName, parameters, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new SettingImpl(inner.getValue(), this.manager()));
         } else {
             return null;

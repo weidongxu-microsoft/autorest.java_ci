@@ -19,56 +19,45 @@ public final class VpnLinkConnectionsImpl implements VpnLinkConnections {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public VpnLinkConnectionsImpl(
-        VpnLinkConnectionsClient innerClient,
+    public VpnLinkConnectionsImpl(VpnLinkConnectionsClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public void resetConnection(
-        String resourceGroupName, String gatewayName, String connectionName, String linkConnectionName) {
+    public void resetConnection(String resourceGroupName, String gatewayName, String connectionName,
+        String linkConnectionName) {
         this.serviceClient().resetConnection(resourceGroupName, gatewayName, connectionName, linkConnectionName);
     }
 
-    public void resetConnection(
-        String resourceGroupName,
-        String gatewayName,
-        String connectionName,
-        String linkConnectionName,
-        Context context) {
-        this
-            .serviceClient()
-            .resetConnection(resourceGroupName, gatewayName, connectionName, linkConnectionName, context);
+    public void resetConnection(String resourceGroupName, String gatewayName, String connectionName,
+        String linkConnectionName, Context context) {
+        this.serviceClient().resetConnection(resourceGroupName, gatewayName, connectionName, linkConnectionName,
+            context);
     }
 
-    public String getIkeSas(
-        String resourceGroupName, String gatewayName, String connectionName, String linkConnectionName) {
+    public String getIkeSas(String resourceGroupName, String gatewayName, String connectionName,
+        String linkConnectionName) {
         return this.serviceClient().getIkeSas(resourceGroupName, gatewayName, connectionName, linkConnectionName);
     }
 
-    public String getIkeSas(
-        String resourceGroupName,
-        String gatewayName,
-        String connectionName,
-        String linkConnectionName,
-        Context context) {
-        return this
-            .serviceClient()
-            .getIkeSas(resourceGroupName, gatewayName, connectionName, linkConnectionName, context);
+    public String getIkeSas(String resourceGroupName, String gatewayName, String connectionName,
+        String linkConnectionName, Context context) {
+        return this.serviceClient().getIkeSas(resourceGroupName, gatewayName, connectionName, linkConnectionName,
+            context);
     }
 
-    public PagedIterable<VpnSiteLinkConnection> listByVpnConnection(
-        String resourceGroupName, String gatewayName, String connectionName) {
-        PagedIterable<VpnSiteLinkConnectionInner> inner =
-            this.serviceClient().listByVpnConnection(resourceGroupName, gatewayName, connectionName);
+    public PagedIterable<VpnSiteLinkConnection> listByVpnConnection(String resourceGroupName, String gatewayName,
+        String connectionName) {
+        PagedIterable<VpnSiteLinkConnectionInner> inner
+            = this.serviceClient().listByVpnConnection(resourceGroupName, gatewayName, connectionName);
         return Utils.mapPage(inner, inner1 -> new VpnSiteLinkConnectionImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<VpnSiteLinkConnection> listByVpnConnection(
-        String resourceGroupName, String gatewayName, String connectionName, Context context) {
-        PagedIterable<VpnSiteLinkConnectionInner> inner =
-            this.serviceClient().listByVpnConnection(resourceGroupName, gatewayName, connectionName, context);
+    public PagedIterable<VpnSiteLinkConnection> listByVpnConnection(String resourceGroupName, String gatewayName,
+        String connectionName, Context context) {
+        PagedIterable<VpnSiteLinkConnectionInner> inner
+            = this.serviceClient().listByVpnConnection(resourceGroupName, gatewayName, connectionName, context);
         return Utils.mapPage(inner, inner1 -> new VpnSiteLinkConnectionImpl(inner1, this.manager()));
     }
 

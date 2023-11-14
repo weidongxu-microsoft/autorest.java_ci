@@ -20,38 +20,28 @@ public final class VpnSiteLinkConnectionsImpl implements VpnSiteLinkConnections 
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public VpnSiteLinkConnectionsImpl(
-        VpnSiteLinkConnectionsClient innerClient,
+    public VpnSiteLinkConnectionsImpl(VpnSiteLinkConnectionsClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<VpnSiteLinkConnection> getWithResponse(
-        String resourceGroupName,
-        String gatewayName,
-        String connectionName,
-        String linkConnectionName,
-        Context context) {
-        Response<VpnSiteLinkConnectionInner> inner =
-            this
-                .serviceClient()
-                .getWithResponse(resourceGroupName, gatewayName, connectionName, linkConnectionName, context);
+    public Response<VpnSiteLinkConnection> getWithResponse(String resourceGroupName, String gatewayName,
+        String connectionName, String linkConnectionName, Context context) {
+        Response<VpnSiteLinkConnectionInner> inner = this.serviceClient().getWithResponse(resourceGroupName,
+            gatewayName, connectionName, linkConnectionName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new VpnSiteLinkConnectionImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public VpnSiteLinkConnection get(
-        String resourceGroupName, String gatewayName, String connectionName, String linkConnectionName) {
-        VpnSiteLinkConnectionInner inner =
-            this.serviceClient().get(resourceGroupName, gatewayName, connectionName, linkConnectionName);
+    public VpnSiteLinkConnection get(String resourceGroupName, String gatewayName, String connectionName,
+        String linkConnectionName) {
+        VpnSiteLinkConnectionInner inner
+            = this.serviceClient().get(resourceGroupName, gatewayName, connectionName, linkConnectionName);
         if (inner != null) {
             return new VpnSiteLinkConnectionImpl(inner, this.manager());
         } else {

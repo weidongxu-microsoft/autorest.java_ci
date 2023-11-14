@@ -8,67 +8,69 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.ApplicationS
 import com.azure.resourcemanager.appservice.generated.fluent.models.ApplicationStackResourceInner;
 import java.util.List;
 
-/** An immutable client-side representation of ApplicationStackResource. */
+/**
+ * An immutable client-side representation of ApplicationStackResource.
+ */
 public interface ApplicationStackResource {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the name property: The name of the resource.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the type property: The type of the resource.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the kind property: Kind of resource.
-     *
+     * 
      * @return the kind value.
      */
     String kind();
 
     /**
      * Gets the namePropertiesName property: Application stack name.
-     *
+     * 
      * @return the namePropertiesName value.
      */
     String namePropertiesName();
 
     /**
      * Gets the display property: Application stack display name.
-     *
+     * 
      * @return the display value.
      */
     String display();
 
     /**
      * Gets the dependency property: Application stack dependency.
-     *
+     * 
      * @return the dependency value.
      */
     String dependency();
 
     /**
      * Gets the majorVersions property: List of major versions available.
-     *
+     * 
      * @return the majorVersions value.
      */
     List<StackMajorVersion> majorVersions();
 
     /**
      * Gets the frameworks property: List of frameworks associated with application stack.
-     *
+     * 
      * @return the frameworks value.
      */
     List<ApplicationStack> frameworks();
@@ -76,14 +78,14 @@ public interface ApplicationStackResource {
     /**
      * Gets the isDeprecated property: &lt;code&gt;true&lt;/code&gt; if this is the stack is deprecated; otherwise,
      * &lt;code&gt;false&lt;/code&gt;.
-     *
+     * 
      * @return the isDeprecated value.
      */
     List<ApplicationStack> isDeprecated();
 
     /**
      * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.ApplicationStackResourceInner object.
-     *
+     * 
      * @return the inner object.
      */
     ApplicationStackResourceInner innerModel();

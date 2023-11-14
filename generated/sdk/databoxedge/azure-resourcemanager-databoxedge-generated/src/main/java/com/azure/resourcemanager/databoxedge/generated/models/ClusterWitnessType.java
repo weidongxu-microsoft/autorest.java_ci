@@ -8,20 +8,28 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Cluster Witness Type. */
+/**
+ * Cluster Witness Type.
+ */
 public final class ClusterWitnessType extends ExpandableStringEnum<ClusterWitnessType> {
-    /** Static value None for ClusterWitnessType. */
+    /**
+     * Static value None for ClusterWitnessType.
+     */
     public static final ClusterWitnessType NONE = fromString("None");
 
-    /** Static value Cloud for ClusterWitnessType. */
+    /**
+     * Static value Cloud for ClusterWitnessType.
+     */
     public static final ClusterWitnessType CLOUD = fromString("Cloud");
 
-    /** Static value FileShare for ClusterWitnessType. */
+    /**
+     * Static value FileShare for ClusterWitnessType.
+     */
     public static final ClusterWitnessType FILE_SHARE = fromString("FileShare");
 
     /**
      * Creates a new instance of ClusterWitnessType value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -30,7 +38,7 @@ public final class ClusterWitnessType extends ExpandableStringEnum<ClusterWitnes
 
     /**
      * Creates or finds a ClusterWitnessType from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding ClusterWitnessType.
      */
@@ -41,7 +49,7 @@ public final class ClusterWitnessType extends ExpandableStringEnum<ClusterWitnes
 
     /**
      * Gets known ClusterWitnessType values.
-     *
+     * 
      * @return known ClusterWitnessType values.
      */
     public static Collection<ClusterWitnessType> values() {

@@ -7,7 +7,9 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The Data Box Edge/Gateway device extended info patch. */
+/**
+ * The Data Box Edge/Gateway device extended info patch.
+ */
 @Fluent
 public final class DataBoxEdgeDeviceExtendedInfoPatch {
     /*
@@ -41,13 +43,15 @@ public final class DataBoxEdgeDeviceExtendedInfoPatch {
     @JsonProperty(value = "syncStatus")
     private KeyVaultSyncStatus syncStatus;
 
-    /** Creates an instance of DataBoxEdgeDeviceExtendedInfoPatch class. */
+    /**
+     * Creates an instance of DataBoxEdgeDeviceExtendedInfoPatch class.
+     */
     public DataBoxEdgeDeviceExtendedInfoPatch() {
     }
 
     /**
      * Get the clientSecretStoreId property: The Key Vault ARM Id for client secrets.
-     *
+     * 
      * @return the clientSecretStoreId value.
      */
     public String clientSecretStoreId() {
@@ -56,7 +60,7 @@ public final class DataBoxEdgeDeviceExtendedInfoPatch {
 
     /**
      * Set the clientSecretStoreId property: The Key Vault ARM Id for client secrets.
-     *
+     * 
      * @param clientSecretStoreId the clientSecretStoreId value to set.
      * @return the DataBoxEdgeDeviceExtendedInfoPatch object itself.
      */
@@ -67,7 +71,7 @@ public final class DataBoxEdgeDeviceExtendedInfoPatch {
 
     /**
      * Get the clientSecretStoreUrl property: The url to access the Client Key Vault.
-     *
+     * 
      * @return the clientSecretStoreUrl value.
      */
     public String clientSecretStoreUrl() {
@@ -76,7 +80,7 @@ public final class DataBoxEdgeDeviceExtendedInfoPatch {
 
     /**
      * Set the clientSecretStoreUrl property: The url to access the Client Key Vault.
-     *
+     * 
      * @param clientSecretStoreUrl the clientSecretStoreUrl value to set.
      * @return the DataBoxEdgeDeviceExtendedInfoPatch object itself.
      */
@@ -87,7 +91,7 @@ public final class DataBoxEdgeDeviceExtendedInfoPatch {
 
     /**
      * Get the channelIntegrityKeyName property: The name for Channel Integrity Key stored in the Client Key Vault.
-     *
+     * 
      * @return the channelIntegrityKeyName value.
      */
     public String channelIntegrityKeyName() {
@@ -96,7 +100,7 @@ public final class DataBoxEdgeDeviceExtendedInfoPatch {
 
     /**
      * Set the channelIntegrityKeyName property: The name for Channel Integrity Key stored in the Client Key Vault.
-     *
+     * 
      * @param channelIntegrityKeyName the channelIntegrityKeyName value to set.
      * @return the DataBoxEdgeDeviceExtendedInfoPatch object itself.
      */
@@ -106,8 +110,9 @@ public final class DataBoxEdgeDeviceExtendedInfoPatch {
     }
 
     /**
-     * Get the channelIntegrityKeyVersion property: The version of Channel Integrity Key stored in the Client Key Vault.
-     *
+     * Get the channelIntegrityKeyVersion property: The version of Channel Integrity Key stored in the Client Key
+     * Vault.
+     * 
      * @return the channelIntegrityKeyVersion value.
      */
     public String channelIntegrityKeyVersion() {
@@ -115,8 +120,9 @@ public final class DataBoxEdgeDeviceExtendedInfoPatch {
     }
 
     /**
-     * Set the channelIntegrityKeyVersion property: The version of Channel Integrity Key stored in the Client Key Vault.
-     *
+     * Set the channelIntegrityKeyVersion property: The version of Channel Integrity Key stored in the Client Key
+     * Vault.
+     * 
      * @param channelIntegrityKeyVersion the channelIntegrityKeyVersion value to set.
      * @return the DataBoxEdgeDeviceExtendedInfoPatch object itself.
      */
@@ -128,7 +134,7 @@ public final class DataBoxEdgeDeviceExtendedInfoPatch {
     /**
      * Get the syncStatus property: For changing or to initiate the resync to key-vault set the status to
      * KeyVaultSyncPending, rest of the status will not be applicable.
-     *
+     * 
      * @return the syncStatus value.
      */
     public KeyVaultSyncStatus syncStatus() {
@@ -138,7 +144,7 @@ public final class DataBoxEdgeDeviceExtendedInfoPatch {
     /**
      * Set the syncStatus property: For changing or to initiate the resync to key-vault set the status to
      * KeyVaultSyncPending, rest of the status will not be applicable.
-     *
+     * 
      * @param syncStatus the syncStatus value to set.
      * @return the DataBoxEdgeDeviceExtendedInfoPatch object itself.
      */
@@ -149,7 +155,7 @@ public final class DataBoxEdgeDeviceExtendedInfoPatch {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

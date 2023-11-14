@@ -9,7 +9,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
 
-/** Parameters for patching a secret. */
+/**
+ * Parameters for patching a secret.
+ */
 @Fluent
 public final class SecretPatchParameters {
     /*
@@ -25,13 +27,15 @@ public final class SecretPatchParameters {
     @JsonProperty(value = "properties")
     private SecretPatchProperties properties;
 
-    /** Creates an instance of SecretPatchParameters class. */
+    /**
+     * Creates an instance of SecretPatchParameters class.
+     */
     public SecretPatchParameters() {
     }
 
     /**
      * Get the tags property: The tags that will be assigned to the secret.
-     *
+     * 
      * @return the tags value.
      */
     public Map<String, String> tags() {
@@ -40,7 +44,7 @@ public final class SecretPatchParameters {
 
     /**
      * Set the tags property: The tags that will be assigned to the secret.
-     *
+     * 
      * @param tags the tags value to set.
      * @return the SecretPatchParameters object itself.
      */
@@ -51,7 +55,7 @@ public final class SecretPatchParameters {
 
     /**
      * Get the properties property: Properties of the secret.
-     *
+     * 
      * @return the properties value.
      */
     public SecretPatchProperties properties() {
@@ -60,7 +64,7 @@ public final class SecretPatchParameters {
 
     /**
      * Set the properties property: Properties of the secret.
-     *
+     * 
      * @param properties the properties value to set.
      * @return the SecretPatchParameters object itself.
      */
@@ -71,7 +75,7 @@ public final class SecretPatchParameters {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

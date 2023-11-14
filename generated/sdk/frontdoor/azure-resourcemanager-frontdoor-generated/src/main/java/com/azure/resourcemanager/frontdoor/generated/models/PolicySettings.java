@@ -7,7 +7,9 @@ package com.azure.resourcemanager.frontdoor.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Defines top-level WebApplicationFirewallPolicy configuration settings. */
+/**
+ * Defines top-level WebApplicationFirewallPolicy configuration settings.
+ */
 @Fluent
 public final class PolicySettings {
     /*
@@ -47,14 +49,16 @@ public final class PolicySettings {
     @JsonProperty(value = "requestBodyCheck")
     private PolicyRequestBodyCheck requestBodyCheck;
 
-    /** Creates an instance of PolicySettings class. */
+    /**
+     * Creates an instance of PolicySettings class.
+     */
     public PolicySettings() {
     }
 
     /**
      * Get the enabledState property: Describes if the policy is in enabled or disabled state. Defaults to Enabled if
      * not specified.
-     *
+     * 
      * @return the enabledState value.
      */
     public PolicyEnabledState enabledState() {
@@ -64,7 +68,7 @@ public final class PolicySettings {
     /**
      * Set the enabledState property: Describes if the policy is in enabled or disabled state. Defaults to Enabled if
      * not specified.
-     *
+     * 
      * @param enabledState the enabledState value to set.
      * @return the PolicySettings object itself.
      */
@@ -75,7 +79,7 @@ public final class PolicySettings {
 
     /**
      * Get the mode property: Describes if it is in detection mode or prevention mode at policy level.
-     *
+     * 
      * @return the mode value.
      */
     public PolicyMode mode() {
@@ -84,7 +88,7 @@ public final class PolicySettings {
 
     /**
      * Set the mode property: Describes if it is in detection mode or prevention mode at policy level.
-     *
+     * 
      * @param mode the mode value to set.
      * @return the PolicySettings object itself.
      */
@@ -95,7 +99,7 @@ public final class PolicySettings {
 
     /**
      * Get the redirectUrl property: If action type is redirect, this field represents redirect URL for the client.
-     *
+     * 
      * @return the redirectUrl value.
      */
     public String redirectUrl() {
@@ -104,7 +108,7 @@ public final class PolicySettings {
 
     /**
      * Set the redirectUrl property: If action type is redirect, this field represents redirect URL for the client.
-     *
+     * 
      * @param redirectUrl the redirectUrl value to set.
      * @return the PolicySettings object itself.
      */
@@ -116,7 +120,7 @@ public final class PolicySettings {
     /**
      * Get the customBlockResponseStatusCode property: If the action type is block, customer can override the response
      * status code.
-     *
+     * 
      * @return the customBlockResponseStatusCode value.
      */
     public Integer customBlockResponseStatusCode() {
@@ -126,7 +130,7 @@ public final class PolicySettings {
     /**
      * Set the customBlockResponseStatusCode property: If the action type is block, customer can override the response
      * status code.
-     *
+     * 
      * @param customBlockResponseStatusCode the customBlockResponseStatusCode value to set.
      * @return the PolicySettings object itself.
      */
@@ -138,7 +142,7 @@ public final class PolicySettings {
     /**
      * Get the customBlockResponseBody property: If the action type is block, customer can override the response body.
      * The body must be specified in base64 encoding.
-     *
+     * 
      * @return the customBlockResponseBody value.
      */
     public String customBlockResponseBody() {
@@ -148,7 +152,7 @@ public final class PolicySettings {
     /**
      * Set the customBlockResponseBody property: If the action type is block, customer can override the response body.
      * The body must be specified in base64 encoding.
-     *
+     * 
      * @param customBlockResponseBody the customBlockResponseBody value to set.
      * @return the PolicySettings object itself.
      */
@@ -159,7 +163,7 @@ public final class PolicySettings {
 
     /**
      * Get the requestBodyCheck property: Describes if policy managed rules will inspect the request body content.
-     *
+     * 
      * @return the requestBodyCheck value.
      */
     public PolicyRequestBodyCheck requestBodyCheck() {
@@ -168,7 +172,7 @@ public final class PolicySettings {
 
     /**
      * Set the requestBodyCheck property: Describes if policy managed rules will inspect the request body content.
-     *
+     * 
      * @param requestBodyCheck the requestBodyCheck value to set.
      * @return the PolicySettings object itself.
      */
@@ -179,7 +183,7 @@ public final class PolicySettings {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

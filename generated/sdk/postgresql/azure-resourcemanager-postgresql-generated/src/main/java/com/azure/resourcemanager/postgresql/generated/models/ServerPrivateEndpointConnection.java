@@ -7,7 +7,9 @@ package com.azure.resourcemanager.postgresql.generated.models;
 import com.azure.core.annotation.Immutable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** A private endpoint connection under a server. */
+/**
+ * A private endpoint connection under a server.
+ */
 @Immutable
 public final class ServerPrivateEndpointConnection {
     /*
@@ -22,13 +24,15 @@ public final class ServerPrivateEndpointConnection {
     @JsonProperty(value = "properties", access = JsonProperty.Access.WRITE_ONLY)
     private ServerPrivateEndpointConnectionProperties properties;
 
-    /** Creates an instance of ServerPrivateEndpointConnection class. */
+    /**
+     * Creates an instance of ServerPrivateEndpointConnection class.
+     */
     public ServerPrivateEndpointConnection() {
     }
 
     /**
      * Get the id property: Resource ID of the Private Endpoint Connection.
-     *
+     * 
      * @return the id value.
      */
     public String id() {
@@ -37,7 +41,7 @@ public final class ServerPrivateEndpointConnection {
 
     /**
      * Get the properties property: Private endpoint connection properties.
-     *
+     * 
      * @return the properties value.
      */
     public ServerPrivateEndpointConnectionProperties properties() {
@@ -46,7 +50,7 @@ public final class ServerPrivateEndpointConnection {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

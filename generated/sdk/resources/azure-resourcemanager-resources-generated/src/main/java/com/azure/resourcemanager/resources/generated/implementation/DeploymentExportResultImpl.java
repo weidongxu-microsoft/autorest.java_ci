@@ -12,8 +12,7 @@ public final class DeploymentExportResultImpl implements DeploymentExportResult 
 
     private final com.azure.resourcemanager.resources.generated.ResourceManager serviceManager;
 
-    DeploymentExportResultImpl(
-        DeploymentExportResultInner innerObject,
+    DeploymentExportResultImpl(DeploymentExportResultInner innerObject,
         com.azure.resourcemanager.resources.generated.ResourceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

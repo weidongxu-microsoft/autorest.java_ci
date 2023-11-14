@@ -9,10 +9,8 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteLi
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteLinkedBackendArmResource;
 import java.time.OffsetDateTime;
 
-public final class StaticSiteLinkedBackendArmResourceImpl
-    implements StaticSiteLinkedBackendArmResource,
-        StaticSiteLinkedBackendArmResource.Definition,
-        StaticSiteLinkedBackendArmResource.Update {
+public final class StaticSiteLinkedBackendArmResourceImpl implements StaticSiteLinkedBackendArmResource,
+    StaticSiteLinkedBackendArmResource.Definition, StaticSiteLinkedBackendArmResource.Update {
     private StaticSiteLinkedBackendArmResourceInner innerObject;
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
@@ -74,25 +72,19 @@ public final class StaticSiteLinkedBackendArmResourceImpl
     }
 
     public StaticSiteLinkedBackendArmResource create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getStaticSites()
-                .linkBackend(resourceGroupName, name, linkedBackendName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getStaticSites().linkBackend(resourceGroupName, name,
+            linkedBackendName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public StaticSiteLinkedBackendArmResource create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getStaticSites()
-                .linkBackend(resourceGroupName, name, linkedBackendName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getStaticSites().linkBackend(resourceGroupName, name,
+            linkedBackendName, this.innerModel(), context);
         return this;
     }
 
-    StaticSiteLinkedBackendArmResourceImpl(
-        String name, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
+    StaticSiteLinkedBackendArmResourceImpl(String name,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = new StaticSiteLinkedBackendArmResourceInner();
         this.serviceManager = serviceManager;
         this.linkedBackendName = name;
@@ -103,25 +95,18 @@ public final class StaticSiteLinkedBackendArmResourceImpl
     }
 
     public StaticSiteLinkedBackendArmResource apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getStaticSites()
-                .linkBackend(resourceGroupName, name, linkedBackendName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getStaticSites().linkBackend(resourceGroupName, name,
+            linkedBackendName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public StaticSiteLinkedBackendArmResource apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getStaticSites()
-                .linkBackend(resourceGroupName, name, linkedBackendName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getStaticSites().linkBackend(resourceGroupName, name,
+            linkedBackendName, this.innerModel(), context);
         return this;
     }
 
-    StaticSiteLinkedBackendArmResourceImpl(
-        StaticSiteLinkedBackendArmResourceInner innerObject,
+    StaticSiteLinkedBackendArmResourceImpl(StaticSiteLinkedBackendArmResourceInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -131,36 +116,26 @@ public final class StaticSiteLinkedBackendArmResourceImpl
     }
 
     public StaticSiteLinkedBackendArmResource refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getStaticSites()
-                .getLinkedBackendWithResponse(resourceGroupName, name, linkedBackendName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getStaticSites()
+            .getLinkedBackendWithResponse(resourceGroupName, name, linkedBackendName, Context.NONE).getValue();
         return this;
     }
 
     public StaticSiteLinkedBackendArmResource refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getStaticSites()
-                .getLinkedBackendWithResponse(resourceGroupName, name, linkedBackendName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getStaticSites()
+            .getLinkedBackendWithResponse(resourceGroupName, name, linkedBackendName, context).getValue();
         return this;
     }
 
     public void validateBackend(StaticSiteLinkedBackendArmResourceInner staticSiteLinkedBackendEnvelope) {
-        serviceManager
-            .staticSites()
-            .validateBackend(resourceGroupName, name, linkedBackendName, staticSiteLinkedBackendEnvelope);
+        serviceManager.staticSites().validateBackend(resourceGroupName, name, linkedBackendName,
+            staticSiteLinkedBackendEnvelope);
     }
 
-    public void validateBackend(
-        StaticSiteLinkedBackendArmResourceInner staticSiteLinkedBackendEnvelope, Context context) {
-        serviceManager
-            .staticSites()
-            .validateBackend(resourceGroupName, name, linkedBackendName, staticSiteLinkedBackendEnvelope, context);
+    public void validateBackend(StaticSiteLinkedBackendArmResourceInner staticSiteLinkedBackendEnvelope,
+        Context context) {
+        serviceManager.staticSites().validateBackend(resourceGroupName, name, linkedBackendName,
+            staticSiteLinkedBackendEnvelope, context);
     }
 
     public StaticSiteLinkedBackendArmResourceImpl withKind(String kind) {

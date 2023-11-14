@@ -9,7 +9,9 @@ import com.azure.resourcemanager.iothub.generated.fluent.models.IotHubDescriptio
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The JSON-serialized array of IotHubDescription objects with a next link. */
+/**
+ * The JSON-serialized array of IotHubDescription objects with a next link.
+ */
 @Fluent
 public final class IotHubDescriptionListResult {
     /*
@@ -24,13 +26,15 @@ public final class IotHubDescriptionListResult {
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
-    /** Creates an instance of IotHubDescriptionListResult class. */
+    /**
+     * Creates an instance of IotHubDescriptionListResult class.
+     */
     public IotHubDescriptionListResult() {
     }
 
     /**
      * Get the value property: The array of IotHubDescription objects.
-     *
+     * 
      * @return the value value.
      */
     public List<IotHubDescriptionInner> value() {
@@ -39,7 +43,7 @@ public final class IotHubDescriptionListResult {
 
     /**
      * Set the value property: The array of IotHubDescription objects.
-     *
+     * 
      * @param value the value value to set.
      * @return the IotHubDescriptionListResult object itself.
      */
@@ -50,7 +54,7 @@ public final class IotHubDescriptionListResult {
 
     /**
      * Get the nextLink property: The next link.
-     *
+     * 
      * @return the nextLink value.
      */
     public String nextLink() {
@@ -59,7 +63,7 @@ public final class IotHubDescriptionListResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

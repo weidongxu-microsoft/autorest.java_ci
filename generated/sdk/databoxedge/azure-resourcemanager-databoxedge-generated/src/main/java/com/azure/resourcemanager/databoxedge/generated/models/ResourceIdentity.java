@@ -7,7 +7,9 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Msi identity details of the resource. */
+/**
+ * Msi identity details of the resource.
+ */
 @Fluent
 public final class ResourceIdentity {
     /*
@@ -28,13 +30,15 @@ public final class ResourceIdentity {
     @JsonProperty(value = "tenantId", access = JsonProperty.Access.WRITE_ONLY)
     private String tenantId;
 
-    /** Creates an instance of ResourceIdentity class. */
+    /**
+     * Creates an instance of ResourceIdentity class.
+     */
     public ResourceIdentity() {
     }
 
     /**
      * Get the type property: Identity type.
-     *
+     * 
      * @return the type value.
      */
     public MsiIdentityType type() {
@@ -43,7 +47,7 @@ public final class ResourceIdentity {
 
     /**
      * Set the type property: Identity type.
-     *
+     * 
      * @param type the type value to set.
      * @return the ResourceIdentity object itself.
      */
@@ -54,7 +58,7 @@ public final class ResourceIdentity {
 
     /**
      * Get the principalId property: Service Principal Id backing the Msi.
-     *
+     * 
      * @return the principalId value.
      */
     public String principalId() {
@@ -63,7 +67,7 @@ public final class ResourceIdentity {
 
     /**
      * Get the tenantId property: Home Tenant Id.
-     *
+     * 
      * @return the tenantId value.
      */
     public String tenantId() {
@@ -72,7 +76,7 @@ public final class ResourceIdentity {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -22,23 +22,16 @@ public final class ExpressRouteConnectionsImpl implements ExpressRouteConnection
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public ExpressRouteConnectionsImpl(
-        ExpressRouteConnectionsClient innerClient,
+    public ExpressRouteConnectionsImpl(ExpressRouteConnectionsClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public ExpressRouteConnection createOrUpdate(
-        String resourceGroupName,
-        String expressRouteGatewayName,
-        String connectionName,
-        ExpressRouteConnectionInner putExpressRouteConnectionParameters) {
-        ExpressRouteConnectionInner inner =
-            this
-                .serviceClient()
-                .createOrUpdate(
-                    resourceGroupName, expressRouteGatewayName, connectionName, putExpressRouteConnectionParameters);
+    public ExpressRouteConnection createOrUpdate(String resourceGroupName, String expressRouteGatewayName,
+        String connectionName, ExpressRouteConnectionInner putExpressRouteConnectionParameters) {
+        ExpressRouteConnectionInner inner = this.serviceClient().createOrUpdate(resourceGroupName,
+            expressRouteGatewayName, connectionName, putExpressRouteConnectionParameters);
         if (inner != null) {
             return new ExpressRouteConnectionImpl(inner, this.manager());
         } else {
@@ -46,21 +39,10 @@ public final class ExpressRouteConnectionsImpl implements ExpressRouteConnection
         }
     }
 
-    public ExpressRouteConnection createOrUpdate(
-        String resourceGroupName,
-        String expressRouteGatewayName,
-        String connectionName,
-        ExpressRouteConnectionInner putExpressRouteConnectionParameters,
-        Context context) {
-        ExpressRouteConnectionInner inner =
-            this
-                .serviceClient()
-                .createOrUpdate(
-                    resourceGroupName,
-                    expressRouteGatewayName,
-                    connectionName,
-                    putExpressRouteConnectionParameters,
-                    context);
+    public ExpressRouteConnection createOrUpdate(String resourceGroupName, String expressRouteGatewayName,
+        String connectionName, ExpressRouteConnectionInner putExpressRouteConnectionParameters, Context context) {
+        ExpressRouteConnectionInner inner = this.serviceClient().createOrUpdate(resourceGroupName,
+            expressRouteGatewayName, connectionName, putExpressRouteConnectionParameters, context);
         if (inner != null) {
             return new ExpressRouteConnectionImpl(inner, this.manager());
         } else {
@@ -68,15 +50,12 @@ public final class ExpressRouteConnectionsImpl implements ExpressRouteConnection
         }
     }
 
-    public Response<ExpressRouteConnection> getWithResponse(
-        String resourceGroupName, String expressRouteGatewayName, String connectionName, Context context) {
-        Response<ExpressRouteConnectionInner> inner =
-            this.serviceClient().getWithResponse(resourceGroupName, expressRouteGatewayName, connectionName, context);
+    public Response<ExpressRouteConnection> getWithResponse(String resourceGroupName, String expressRouteGatewayName,
+        String connectionName, Context context) {
+        Response<ExpressRouteConnectionInner> inner
+            = this.serviceClient().getWithResponse(resourceGroupName, expressRouteGatewayName, connectionName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ExpressRouteConnectionImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -84,8 +63,8 @@ public final class ExpressRouteConnectionsImpl implements ExpressRouteConnection
     }
 
     public ExpressRouteConnection get(String resourceGroupName, String expressRouteGatewayName, String connectionName) {
-        ExpressRouteConnectionInner inner =
-            this.serviceClient().get(resourceGroupName, expressRouteGatewayName, connectionName);
+        ExpressRouteConnectionInner inner
+            = this.serviceClient().get(resourceGroupName, expressRouteGatewayName, connectionName);
         if (inner != null) {
             return new ExpressRouteConnectionImpl(inner, this.manager());
         } else {
@@ -97,20 +76,17 @@ public final class ExpressRouteConnectionsImpl implements ExpressRouteConnection
         this.serviceClient().delete(resourceGroupName, expressRouteGatewayName, connectionName);
     }
 
-    public void delete(
-        String resourceGroupName, String expressRouteGatewayName, String connectionName, Context context) {
+    public void delete(String resourceGroupName, String expressRouteGatewayName, String connectionName,
+        Context context) {
         this.serviceClient().delete(resourceGroupName, expressRouteGatewayName, connectionName, context);
     }
 
-    public Response<ExpressRouteConnectionList> listWithResponse(
-        String resourceGroupName, String expressRouteGatewayName, Context context) {
-        Response<ExpressRouteConnectionListInner> inner =
-            this.serviceClient().listWithResponse(resourceGroupName, expressRouteGatewayName, context);
+    public Response<ExpressRouteConnectionList> listWithResponse(String resourceGroupName,
+        String expressRouteGatewayName, Context context) {
+        Response<ExpressRouteConnectionListInner> inner
+            = this.serviceClient().listWithResponse(resourceGroupName, expressRouteGatewayName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ExpressRouteConnectionListImpl(inner.getValue(), this.manager()));
         } else {
             return null;

@@ -18,11 +18,13 @@ import java.nio.ByteBuffer;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-/** An instance of this class provides access to all the operations defined in ServerKeysClient. */
+/**
+ * An instance of this class provides access to all the operations defined in ServerKeysClient.
+ */
 public interface ServerKeysClient {
     /**
      * Gets a list of Server keys.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -35,7 +37,7 @@ public interface ServerKeysClient {
 
     /**
      * Gets a list of Server keys.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -48,7 +50,7 @@ public interface ServerKeysClient {
 
     /**
      * Gets a list of Server keys.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param context The context to associate with this operation.
@@ -62,7 +64,7 @@ public interface ServerKeysClient {
 
     /**
      * Gets a PostgreSQL Server key.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param keyName The name of the PostgreSQL Server key to be retrieved.
@@ -76,7 +78,7 @@ public interface ServerKeysClient {
 
     /**
      * Gets a PostgreSQL Server key.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param keyName The name of the PostgreSQL Server key to be retrieved.
@@ -90,7 +92,7 @@ public interface ServerKeysClient {
 
     /**
      * Gets a PostgreSQL Server key.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param keyName The name of the PostgreSQL Server key to be retrieved.
@@ -101,12 +103,12 @@ public interface ServerKeysClient {
      * @return a PostgreSQL Server key along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<ServerKeyInner> getWithResponse(
-        String resourceGroupName, String serverName, String keyName, Context context);
+    Response<ServerKeyInner> getWithResponse(String resourceGroupName, String serverName, String keyName,
+        Context context);
 
     /**
      * Gets a PostgreSQL Server key.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param keyName The name of the PostgreSQL Server key to be retrieved.
@@ -120,7 +122,7 @@ public interface ServerKeysClient {
 
     /**
      * Creates or updates a PostgreSQL Server key.
-     *
+     * 
      * @param serverName The name of the server.
      * @param keyName The name of the PostgreSQL Server key to be operated on (updated or created).
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
@@ -131,12 +133,12 @@ public interface ServerKeysClient {
      * @return a PostgreSQL Server key along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
-        String serverName, String keyName, String resourceGroupName, ServerKeyInner parameters);
+    Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String serverName, String keyName,
+        String resourceGroupName, ServerKeyInner parameters);
 
     /**
      * Creates or updates a PostgreSQL Server key.
-     *
+     * 
      * @param serverName The name of the server.
      * @param keyName The name of the PostgreSQL Server key to be operated on (updated or created).
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
@@ -147,12 +149,12 @@ public interface ServerKeysClient {
      * @return the {@link PollerFlux} for polling of a PostgreSQL Server key.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    PollerFlux<PollResult<ServerKeyInner>, ServerKeyInner> beginCreateOrUpdateAsync(
-        String serverName, String keyName, String resourceGroupName, ServerKeyInner parameters);
+    PollerFlux<PollResult<ServerKeyInner>, ServerKeyInner> beginCreateOrUpdateAsync(String serverName, String keyName,
+        String resourceGroupName, ServerKeyInner parameters);
 
     /**
      * Creates or updates a PostgreSQL Server key.
-     *
+     * 
      * @param serverName The name of the server.
      * @param keyName The name of the PostgreSQL Server key to be operated on (updated or created).
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
@@ -163,12 +165,12 @@ public interface ServerKeysClient {
      * @return the {@link SyncPoller} for polling of a PostgreSQL Server key.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<ServerKeyInner>, ServerKeyInner> beginCreateOrUpdate(
-        String serverName, String keyName, String resourceGroupName, ServerKeyInner parameters);
+    SyncPoller<PollResult<ServerKeyInner>, ServerKeyInner> beginCreateOrUpdate(String serverName, String keyName,
+        String resourceGroupName, ServerKeyInner parameters);
 
     /**
      * Creates or updates a PostgreSQL Server key.
-     *
+     * 
      * @param serverName The name of the server.
      * @param keyName The name of the PostgreSQL Server key to be operated on (updated or created).
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
@@ -180,12 +182,12 @@ public interface ServerKeysClient {
      * @return the {@link SyncPoller} for polling of a PostgreSQL Server key.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<ServerKeyInner>, ServerKeyInner> beginCreateOrUpdate(
-        String serverName, String keyName, String resourceGroupName, ServerKeyInner parameters, Context context);
+    SyncPoller<PollResult<ServerKeyInner>, ServerKeyInner> beginCreateOrUpdate(String serverName, String keyName,
+        String resourceGroupName, ServerKeyInner parameters, Context context);
 
     /**
      * Creates or updates a PostgreSQL Server key.
-     *
+     * 
      * @param serverName The name of the server.
      * @param keyName The name of the PostgreSQL Server key to be operated on (updated or created).
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
@@ -196,12 +198,12 @@ public interface ServerKeysClient {
      * @return a PostgreSQL Server key on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Mono<ServerKeyInner> createOrUpdateAsync(
-        String serverName, String keyName, String resourceGroupName, ServerKeyInner parameters);
+    Mono<ServerKeyInner> createOrUpdateAsync(String serverName, String keyName, String resourceGroupName,
+        ServerKeyInner parameters);
 
     /**
      * Creates or updates a PostgreSQL Server key.
-     *
+     * 
      * @param serverName The name of the server.
      * @param keyName The name of the PostgreSQL Server key to be operated on (updated or created).
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
@@ -212,12 +214,12 @@ public interface ServerKeysClient {
      * @return a PostgreSQL Server key.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ServerKeyInner createOrUpdate(
-        String serverName, String keyName, String resourceGroupName, ServerKeyInner parameters);
+    ServerKeyInner createOrUpdate(String serverName, String keyName, String resourceGroupName,
+        ServerKeyInner parameters);
 
     /**
      * Creates or updates a PostgreSQL Server key.
-     *
+     * 
      * @param serverName The name of the server.
      * @param keyName The name of the PostgreSQL Server key to be operated on (updated or created).
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
@@ -229,12 +231,12 @@ public interface ServerKeysClient {
      * @return a PostgreSQL Server key.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ServerKeyInner createOrUpdate(
-        String serverName, String keyName, String resourceGroupName, ServerKeyInner parameters, Context context);
+    ServerKeyInner createOrUpdate(String serverName, String keyName, String resourceGroupName,
+        ServerKeyInner parameters, Context context);
 
     /**
      * Deletes the PostgreSQL Server key with the given name.
-     *
+     * 
      * @param serverName The name of the server.
      * @param keyName The name of the PostgreSQL Server key to be deleted.
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
@@ -244,12 +246,12 @@ public interface ServerKeysClient {
      * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
-        String serverName, String keyName, String resourceGroupName);
+    Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(String serverName, String keyName,
+        String resourceGroupName);
 
     /**
      * Deletes the PostgreSQL Server key with the given name.
-     *
+     * 
      * @param serverName The name of the server.
      * @param keyName The name of the PostgreSQL Server key to be deleted.
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
@@ -263,7 +265,7 @@ public interface ServerKeysClient {
 
     /**
      * Deletes the PostgreSQL Server key with the given name.
-     *
+     * 
      * @param serverName The name of the server.
      * @param keyName The name of the PostgreSQL Server key to be deleted.
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
@@ -277,7 +279,7 @@ public interface ServerKeysClient {
 
     /**
      * Deletes the PostgreSQL Server key with the given name.
-     *
+     * 
      * @param serverName The name of the server.
      * @param keyName The name of the PostgreSQL Server key to be deleted.
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
@@ -288,12 +290,12 @@ public interface ServerKeysClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginDelete(
-        String serverName, String keyName, String resourceGroupName, Context context);
+    SyncPoller<PollResult<Void>, Void> beginDelete(String serverName, String keyName, String resourceGroupName,
+        Context context);
 
     /**
      * Deletes the PostgreSQL Server key with the given name.
-     *
+     * 
      * @param serverName The name of the server.
      * @param keyName The name of the PostgreSQL Server key to be deleted.
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
@@ -307,7 +309,7 @@ public interface ServerKeysClient {
 
     /**
      * Deletes the PostgreSQL Server key with the given name.
-     *
+     * 
      * @param serverName The name of the server.
      * @param keyName The name of the PostgreSQL Server key to be deleted.
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
@@ -320,7 +322,7 @@ public interface ServerKeysClient {
 
     /**
      * Deletes the PostgreSQL Server key with the given name.
-     *
+     * 
      * @param serverName The name of the server.
      * @param keyName The name of the PostgreSQL Server key to be deleted.
      * @param resourceGroupName The name of the resource group. The name is case insensitive.

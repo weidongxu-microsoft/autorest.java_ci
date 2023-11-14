@@ -22,8 +22,7 @@ public final class FrontendIpConfigurationPropertiesFormatImpl implements Fronte
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    FrontendIpConfigurationPropertiesFormatImpl(
-        FrontendIpConfigurationPropertiesFormatInner innerObject,
+    FrontendIpConfigurationPropertiesFormatImpl(FrontendIpConfigurationPropertiesFormatInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

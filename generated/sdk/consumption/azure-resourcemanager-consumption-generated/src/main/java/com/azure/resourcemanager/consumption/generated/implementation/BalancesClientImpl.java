@@ -25,17 +25,23 @@ import com.azure.resourcemanager.consumption.generated.fluent.BalancesClient;
 import com.azure.resourcemanager.consumption.generated.fluent.models.BalanceInner;
 import reactor.core.publisher.Mono;
 
-/** An instance of this class provides access to all the operations defined in BalancesClient. */
+/**
+ * An instance of this class provides access to all the operations defined in BalancesClient.
+ */
 public final class BalancesClientImpl implements BalancesClient {
-    /** The proxy service used to perform REST calls. */
+    /**
+     * The proxy service used to perform REST calls.
+     */
     private final BalancesService service;
 
-    /** The service client containing this operation class. */
+    /**
+     * The service client containing this operation class.
+     */
     private final ConsumptionManagementClientImpl client;
 
     /**
      * Initializes an instance of BalancesClientImpl.
-     *
+     * 
      * @param client the instance of the service client containing this operation class.
      */
     BalancesClientImpl(ConsumptionManagementClientImpl client) {
@@ -50,49 +56,40 @@ public final class BalancesClientImpl implements BalancesClient {
     @Host("{$host}")
     @ServiceInterface(name = "ConsumptionManagemen")
     public interface BalancesService {
-        @Headers({"Content-Type: application/json"})
+        @Headers({ "Content-Type: application/json" })
         @Get("/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/providers/Microsoft.Consumption/balances")
-        @ExpectedResponses({200})
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<BalanceInner>> getByBillingAccount(
-            @HostParam("$host") String endpoint,
-            @QueryParam("api-version") String apiVersion,
-            @PathParam("billingAccountId") String billingAccountId,
-            @HeaderParam("Accept") String accept,
-            Context context);
+        Mono<Response<BalanceInner>> getByBillingAccount(@HostParam("$host") String endpoint,
+            @QueryParam("api-version") String apiVersion, @PathParam("billingAccountId") String billingAccountId,
+            @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Get(
-            "/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingPeriods/{billingPeriodName}/providers/Microsoft.Consumption/balances")
-        @ExpectedResponses({200})
+        @Headers({ "Content-Type: application/json" })
+        @Get("/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingPeriods/{billingPeriodName}/providers/Microsoft.Consumption/balances")
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<BalanceInner>> getForBillingPeriodByBillingAccount(
-            @HostParam("$host") String endpoint,
-            @QueryParam("api-version") String apiVersion,
-            @PathParam("billingAccountId") String billingAccountId,
-            @PathParam("billingPeriodName") String billingPeriodName,
-            @HeaderParam("Accept") String accept,
+        Mono<Response<BalanceInner>> getForBillingPeriodByBillingAccount(@HostParam("$host") String endpoint,
+            @QueryParam("api-version") String apiVersion, @PathParam("billingAccountId") String billingAccountId,
+            @PathParam("billingPeriodName") String billingPeriodName, @HeaderParam("Accept") String accept,
             Context context);
     }
 
     /**
      * Gets the balances for a scope by billingAccountId. Balances are available via this API only for May 1, 2014 or
      * later.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the balances for a scope by billingAccountId along with {@link Response} on successful completion of
-     *     {@link Mono}.
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<BalanceInner>> getByBillingAccountWithResponseAsync(String billingAccountId) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (billingAccountId == null) {
             return Mono
@@ -100,34 +97,29 @@ public final class BalancesClientImpl implements BalancesClient {
         }
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .getByBillingAccount(
-                            this.client.getEndpoint(), this.client.getApiVersion(), billingAccountId, accept, context))
+            .withContext(context -> service.getByBillingAccount(this.client.getEndpoint(), this.client.getApiVersion(),
+                billingAccountId, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Gets the balances for a scope by billingAccountId. Balances are available via this API only for May 1, 2014 or
      * later.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the balances for a scope by billingAccountId along with {@link Response} on successful completion of
-     *     {@link Mono}.
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<BalanceInner>> getByBillingAccountWithResponseAsync(
-        String billingAccountId, Context context) {
+    private Mono<Response<BalanceInner>> getByBillingAccountWithResponseAsync(String billingAccountId,
+        Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (billingAccountId == null) {
             return Mono
@@ -135,15 +127,14 @@ public final class BalancesClientImpl implements BalancesClient {
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .getByBillingAccount(
-                this.client.getEndpoint(), this.client.getApiVersion(), billingAccountId, accept, context);
+        return service.getByBillingAccount(this.client.getEndpoint(), this.client.getApiVersion(), billingAccountId,
+            accept, context);
     }
 
     /**
      * Gets the balances for a scope by billingAccountId. Balances are available via this API only for May 1, 2014 or
      * later.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -158,7 +149,7 @@ public final class BalancesClientImpl implements BalancesClient {
     /**
      * Gets the balances for a scope by billingAccountId. Balances are available via this API only for May 1, 2014 or
      * later.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -174,7 +165,7 @@ public final class BalancesClientImpl implements BalancesClient {
     /**
      * Gets the balances for a scope by billingAccountId. Balances are available via this API only for May 1, 2014 or
      * later.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -189,23 +180,21 @@ public final class BalancesClientImpl implements BalancesClient {
     /**
      * Gets the balances for a scope by billing period and billingAccountId. Balances are available via this API only
      * for May 1, 2014 or later.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param billingPeriodName Billing Period Name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the balances for a scope by billing period and billingAccountId along with {@link Response} on successful
-     *     completion of {@link Mono}.
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<BalanceInner>> getForBillingPeriodByBillingAccountWithResponseAsync(
-        String billingAccountId, String billingPeriodName) {
+    private Mono<Response<BalanceInner>> getForBillingPeriodByBillingAccountWithResponseAsync(String billingAccountId,
+        String billingPeriodName) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (billingAccountId == null) {
             return Mono
@@ -217,23 +206,15 @@ public final class BalancesClientImpl implements BalancesClient {
         }
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .getForBillingPeriodByBillingAccount(
-                            this.client.getEndpoint(),
-                            this.client.getApiVersion(),
-                            billingAccountId,
-                            billingPeriodName,
-                            accept,
-                            context))
+            .withContext(context -> service.getForBillingPeriodByBillingAccount(this.client.getEndpoint(),
+                this.client.getApiVersion(), billingAccountId, billingPeriodName, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Gets the balances for a scope by billing period and billingAccountId. Balances are available via this API only
      * for May 1, 2014 or later.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param billingPeriodName Billing Period Name.
      * @param context The context to associate with this operation.
@@ -241,16 +222,14 @@ public final class BalancesClientImpl implements BalancesClient {
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the balances for a scope by billing period and billingAccountId along with {@link Response} on successful
-     *     completion of {@link Mono}.
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<BalanceInner>> getForBillingPeriodByBillingAccountWithResponseAsync(
-        String billingAccountId, String billingPeriodName, Context context) {
+    private Mono<Response<BalanceInner>> getForBillingPeriodByBillingAccountWithResponseAsync(String billingAccountId,
+        String billingPeriodName, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (billingAccountId == null) {
             return Mono
@@ -262,20 +241,14 @@ public final class BalancesClientImpl implements BalancesClient {
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .getForBillingPeriodByBillingAccount(
-                this.client.getEndpoint(),
-                this.client.getApiVersion(),
-                billingAccountId,
-                billingPeriodName,
-                accept,
-                context);
+        return service.getForBillingPeriodByBillingAccount(this.client.getEndpoint(), this.client.getApiVersion(),
+            billingAccountId, billingPeriodName, accept, context);
     }
 
     /**
      * Gets the balances for a scope by billing period and billingAccountId. Balances are available via this API only
      * for May 1, 2014 or later.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param billingPeriodName Billing Period Name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -284,8 +257,8 @@ public final class BalancesClientImpl implements BalancesClient {
      * @return the balances for a scope by billing period and billingAccountId on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<BalanceInner> getForBillingPeriodByBillingAccountAsync(
-        String billingAccountId, String billingPeriodName) {
+    private Mono<BalanceInner> getForBillingPeriodByBillingAccountAsync(String billingAccountId,
+        String billingPeriodName) {
         return getForBillingPeriodByBillingAccountWithResponseAsync(billingAccountId, billingPeriodName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
@@ -293,7 +266,7 @@ public final class BalancesClientImpl implements BalancesClient {
     /**
      * Gets the balances for a scope by billing period and billingAccountId. Balances are available via this API only
      * for May 1, 2014 or later.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param billingPeriodName Billing Period Name.
      * @param context The context to associate with this operation.
@@ -303,8 +276,8 @@ public final class BalancesClientImpl implements BalancesClient {
      * @return the balances for a scope by billing period and billingAccountId along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<BalanceInner> getForBillingPeriodByBillingAccountWithResponse(
-        String billingAccountId, String billingPeriodName, Context context) {
+    public Response<BalanceInner> getForBillingPeriodByBillingAccountWithResponse(String billingAccountId,
+        String billingPeriodName, Context context) {
         return getForBillingPeriodByBillingAccountWithResponseAsync(billingAccountId, billingPeriodName, context)
             .block();
     }
@@ -312,7 +285,7 @@ public final class BalancesClientImpl implements BalancesClient {
     /**
      * Gets the balances for a scope by billing period and billingAccountId. Balances are available via this API only
      * for May 1, 2014 or later.
-     *
+     * 
      * @param billingAccountId BillingAccount ID.
      * @param billingPeriodName Billing Period Name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

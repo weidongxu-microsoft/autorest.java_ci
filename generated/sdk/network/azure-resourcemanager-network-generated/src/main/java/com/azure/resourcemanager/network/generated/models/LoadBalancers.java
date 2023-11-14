@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of LoadBalancers. */
+/**
+ * Resource collection API of LoadBalancers.
+ */
 public interface LoadBalancers {
     /**
      * Deletes the specified load balancer.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -23,7 +25,7 @@ public interface LoadBalancers {
 
     /**
      * Deletes the specified load balancer.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @param context The context to associate with this operation.
@@ -35,7 +37,7 @@ public interface LoadBalancers {
 
     /**
      * Gets the specified load balancer.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @param expand Expands referenced resources.
@@ -45,12 +47,12 @@ public interface LoadBalancers {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified load balancer along with {@link Response}.
      */
-    Response<LoadBalancer> getByResourceGroupWithResponse(
-        String resourceGroupName, String loadBalancerName, String expand, Context context);
+    Response<LoadBalancer> getByResourceGroupWithResponse(String resourceGroupName, String loadBalancerName,
+        String expand, Context context);
 
     /**
      * Gets the specified load balancer.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -62,7 +64,7 @@ public interface LoadBalancers {
 
     /**
      * Gets all the load balancers in a subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all the load balancers in a subscription as paginated response with {@link PagedIterable}.
@@ -71,7 +73,7 @@ public interface LoadBalancers {
 
     /**
      * Gets all the load balancers in a subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -82,7 +84,7 @@ public interface LoadBalancers {
 
     /**
      * Gets all the load balancers in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -93,7 +95,7 @@ public interface LoadBalancers {
 
     /**
      * Gets all the load balancers in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -105,7 +107,7 @@ public interface LoadBalancers {
 
     /**
      * Swaps VIPs between two load balancers.
-     *
+     * 
      * @param location The region where load balancers are located at.
      * @param parameters Parameters that define which VIPs should be swapped.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -116,7 +118,7 @@ public interface LoadBalancers {
 
     /**
      * Swaps VIPs between two load balancers.
-     *
+     * 
      * @param location The region where load balancers are located at.
      * @param parameters Parameters that define which VIPs should be swapped.
      * @param context The context to associate with this operation.
@@ -128,7 +130,7 @@ public interface LoadBalancers {
 
     /**
      * List of inbound NAT rule port mappings.
-     *
+     * 
      * @param groupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @param backendPoolName The name of the load balancer backend address pool.
@@ -138,15 +140,12 @@ public interface LoadBalancers {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response for a QueryInboundNatRulePortMapping API.
      */
-    BackendAddressInboundNatRulePortMappings listInboundNatRulePortMappings(
-        String groupName,
-        String loadBalancerName,
-        String backendPoolName,
-        QueryInboundNatRulePortMappingRequest parameters);
+    BackendAddressInboundNatRulePortMappings listInboundNatRulePortMappings(String groupName, String loadBalancerName,
+        String backendPoolName, QueryInboundNatRulePortMappingRequest parameters);
 
     /**
      * List of inbound NAT rule port mappings.
-     *
+     * 
      * @param groupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @param backendPoolName The name of the load balancer backend address pool.
@@ -157,16 +156,12 @@ public interface LoadBalancers {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response for a QueryInboundNatRulePortMapping API.
      */
-    BackendAddressInboundNatRulePortMappings listInboundNatRulePortMappings(
-        String groupName,
-        String loadBalancerName,
-        String backendPoolName,
-        QueryInboundNatRulePortMappingRequest parameters,
-        Context context);
+    BackendAddressInboundNatRulePortMappings listInboundNatRulePortMappings(String groupName, String loadBalancerName,
+        String backendPoolName, QueryInboundNatRulePortMappingRequest parameters, Context context);
 
     /**
      * Migrate load balancer to IP Based.
-     *
+     * 
      * @param groupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @param parameters Parameters supplied to the migrateToIpBased Api.
@@ -176,12 +171,12 @@ public interface LoadBalancers {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response for a migrateToIpBased API along with {@link Response}.
      */
-    Response<MigratedPools> migrateToIpBasedWithResponse(
-        String groupName, String loadBalancerName, MigrateLoadBalancerToIpBasedRequest parameters, Context context);
+    Response<MigratedPools> migrateToIpBasedWithResponse(String groupName, String loadBalancerName,
+        MigrateLoadBalancerToIpBasedRequest parameters, Context context);
 
     /**
      * Migrate load balancer to IP Based.
-     *
+     * 
      * @param groupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -193,7 +188,7 @@ public interface LoadBalancers {
 
     /**
      * Gets the specified load balancer.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -204,7 +199,7 @@ public interface LoadBalancers {
 
     /**
      * Gets the specified load balancer.
-     *
+     * 
      * @param id the resource ID.
      * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
@@ -217,7 +212,7 @@ public interface LoadBalancers {
 
     /**
      * Deletes the specified load balancer.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -227,7 +222,7 @@ public interface LoadBalancers {
 
     /**
      * Deletes the specified load balancer.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -238,7 +233,7 @@ public interface LoadBalancers {
 
     /**
      * Begins definition for a new LoadBalancer resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new LoadBalancer definition.
      */

@@ -17,8 +17,8 @@ public final class RouteFilterRuleImpl implements RouteFilterRule {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    RouteFilterRuleImpl(
-        RouteFilterRuleInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    RouteFilterRuleImpl(RouteFilterRuleInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

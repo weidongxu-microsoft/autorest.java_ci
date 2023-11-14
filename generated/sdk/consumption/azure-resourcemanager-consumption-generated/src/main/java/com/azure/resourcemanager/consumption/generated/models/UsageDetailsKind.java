@@ -8,17 +8,23 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Specifies the kind of usage details. */
+/**
+ * Specifies the kind of usage details.
+ */
 public final class UsageDetailsKind extends ExpandableStringEnum<UsageDetailsKind> {
-    /** Static value legacy for UsageDetailsKind. */
+    /**
+     * Static value legacy for UsageDetailsKind.
+     */
     public static final UsageDetailsKind LEGACY = fromString("legacy");
 
-    /** Static value modern for UsageDetailsKind. */
+    /**
+     * Static value modern for UsageDetailsKind.
+     */
     public static final UsageDetailsKind MODERN = fromString("modern");
 
     /**
      * Creates a new instance of UsageDetailsKind value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -27,7 +33,7 @@ public final class UsageDetailsKind extends ExpandableStringEnum<UsageDetailsKin
 
     /**
      * Creates or finds a UsageDetailsKind from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding UsageDetailsKind.
      */
@@ -38,7 +44,7 @@ public final class UsageDetailsKind extends ExpandableStringEnum<UsageDetailsKin
 
     /**
      * Gets known UsageDetailsKind values.
-     *
+     * 
      * @return known UsageDetailsKind values.
      */
     public static Collection<UsageDetailsKind> values() {

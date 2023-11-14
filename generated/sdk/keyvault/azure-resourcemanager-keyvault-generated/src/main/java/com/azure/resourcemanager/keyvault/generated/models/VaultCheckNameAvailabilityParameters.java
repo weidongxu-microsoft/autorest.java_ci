@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The parameters used to check the availability of the vault name. */
+/**
+ * The parameters used to check the availability of the vault name.
+ */
 @Fluent
 public final class VaultCheckNameAvailabilityParameters {
     /*
@@ -23,14 +25,15 @@ public final class VaultCheckNameAvailabilityParameters {
     @JsonProperty(value = "type", required = true)
     private String type = "Microsoft.KeyVault/vaults";
 
-    /** Creates an instance of VaultCheckNameAvailabilityParameters class. */
+    /**
+     * Creates an instance of VaultCheckNameAvailabilityParameters class.
+     */
     public VaultCheckNameAvailabilityParameters() {
-        type = "Microsoft.KeyVault/vaults";
     }
 
     /**
      * Get the name property: The vault name.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -39,7 +42,7 @@ public final class VaultCheckNameAvailabilityParameters {
 
     /**
      * Set the name property: The vault name.
-     *
+     * 
      * @param name the name value to set.
      * @return the VaultCheckNameAvailabilityParameters object itself.
      */
@@ -50,7 +53,7 @@ public final class VaultCheckNameAvailabilityParameters {
 
     /**
      * Get the type property: The type of resource, Microsoft.KeyVault/vaults.
-     *
+     * 
      * @return the type value.
      */
     public String type() {
@@ -59,7 +62,7 @@ public final class VaultCheckNameAvailabilityParameters {
 
     /**
      * Set the type property: The type of resource, Microsoft.KeyVault/vaults.
-     *
+     * 
      * @param type the type value to set.
      * @return the VaultCheckNameAvailabilityParameters object itself.
      */
@@ -70,15 +73,13 @@ public final class VaultCheckNameAvailabilityParameters {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property name in model VaultCheckNameAvailabilityParameters"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property name in model VaultCheckNameAvailabilityParameters"));
         }
     }
 

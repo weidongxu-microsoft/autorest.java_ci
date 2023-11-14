@@ -150,22 +150,15 @@ public final class BlobContainerImpl implements BlobContainer, BlobContainer.Def
     }
 
     public BlobContainer create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getBlobContainers()
-                .createWithResponse(resourceGroupName, accountName, containerName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getBlobContainers()
+            .createWithResponse(resourceGroupName, accountName, containerName, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public BlobContainer create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getBlobContainers()
-                .createWithResponse(resourceGroupName, accountName, containerName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getBlobContainers()
+            .createWithResponse(resourceGroupName, accountName, containerName, this.innerModel(), context).getValue();
         return this;
     }
 
@@ -180,27 +173,20 @@ public final class BlobContainerImpl implements BlobContainer, BlobContainer.Def
     }
 
     public BlobContainer apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getBlobContainers()
-                .updateWithResponse(resourceGroupName, accountName, containerName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getBlobContainers()
+            .updateWithResponse(resourceGroupName, accountName, containerName, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public BlobContainer apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getBlobContainers()
-                .updateWithResponse(resourceGroupName, accountName, containerName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getBlobContainers()
+            .updateWithResponse(resourceGroupName, accountName, containerName, this.innerModel(), context).getValue();
         return this;
     }
 
-    BlobContainerImpl(
-        BlobContainerInner innerObject, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
+    BlobContainerImpl(BlobContainerInner innerObject,
+        com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
@@ -209,29 +195,20 @@ public final class BlobContainerImpl implements BlobContainer, BlobContainer.Def
     }
 
     public BlobContainer refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getBlobContainers()
-                .getWithResponse(resourceGroupName, accountName, containerName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getBlobContainers()
+            .getWithResponse(resourceGroupName, accountName, containerName, Context.NONE).getValue();
         return this;
     }
 
     public BlobContainer refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getBlobContainers()
-                .getWithResponse(resourceGroupName, accountName, containerName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getBlobContainers()
+            .getWithResponse(resourceGroupName, accountName, containerName, context).getValue();
         return this;
     }
 
     public Response<LegalHold> setLegalHoldWithResponse(LegalHoldInner legalHold, Context context) {
-        return serviceManager
-            .blobContainers()
-            .setLegalHoldWithResponse(resourceGroupName, accountName, containerName, legalHold, context);
+        return serviceManager.blobContainers().setLegalHoldWithResponse(resourceGroupName, accountName, containerName,
+            legalHold, context);
     }
 
     public LegalHold setLegalHold(LegalHoldInner legalHold) {
@@ -239,9 +216,8 @@ public final class BlobContainerImpl implements BlobContainer, BlobContainer.Def
     }
 
     public Response<LegalHold> clearLegalHoldWithResponse(LegalHoldInner legalHold, Context context) {
-        return serviceManager
-            .blobContainers()
-            .clearLegalHoldWithResponse(resourceGroupName, accountName, containerName, legalHold, context);
+        return serviceManager.blobContainers().clearLegalHoldWithResponse(resourceGroupName, accountName, containerName,
+            legalHold, context);
     }
 
     public LegalHold clearLegalHold(LegalHoldInner legalHold) {
@@ -249,9 +225,8 @@ public final class BlobContainerImpl implements BlobContainer, BlobContainer.Def
     }
 
     public Response<LeaseContainerResponse> leaseWithResponse(LeaseContainerRequest parameters, Context context) {
-        return serviceManager
-            .blobContainers()
-            .leaseWithResponse(resourceGroupName, accountName, containerName, parameters, context);
+        return serviceManager.blobContainers().leaseWithResponse(resourceGroupName, accountName, containerName,
+            parameters, context);
     }
 
     public LeaseContainerResponse lease() {
@@ -286,8 +261,8 @@ public final class BlobContainerImpl implements BlobContainer, BlobContainer.Def
         return this;
     }
 
-    public BlobContainerImpl withImmutableStorageWithVersioning(
-        ImmutableStorageWithVersioning immutableStorageWithVersioning) {
+    public BlobContainerImpl
+        withImmutableStorageWithVersioning(ImmutableStorageWithVersioning immutableStorageWithVersioning) {
         this.innerModel().withImmutableStorageWithVersioning(immutableStorageWithVersioning);
         return this;
     }

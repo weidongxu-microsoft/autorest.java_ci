@@ -7,18 +7,20 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.resourcemanager.network.generated.fluent.models.IpPrefixesListInner;
 import java.util.List;
 
-/** An immutable client-side representation of IpPrefixesList. */
+/**
+ * An immutable client-side representation of IpPrefixesList.
+ */
 public interface IpPrefixesList {
     /**
      * Gets the ipPrefixes property: IP Prefix value.
-     *
+     * 
      * @return the ipPrefixes value.
      */
     List<String> ipPrefixes();
 
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.IpPrefixesListInner object.
-     *
+     * 
      * @return the inner object.
      */
     IpPrefixesListInner innerModel();

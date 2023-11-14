@@ -15,8 +15,7 @@ public final class MetricAlertStatusCollectionImpl implements MetricAlertStatusC
 
     private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    MetricAlertStatusCollectionImpl(
-        MetricAlertStatusCollectionInner innerObject,
+    MetricAlertStatusCollectionImpl(MetricAlertStatusCollectionInner innerObject,
         com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

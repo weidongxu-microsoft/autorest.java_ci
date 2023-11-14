@@ -10,7 +10,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
 
-/** Deployment operation parameters. */
+/**
+ * Deployment operation parameters.
+ */
 @Fluent
 public final class Deployment {
     /*
@@ -32,13 +34,15 @@ public final class Deployment {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> tags;
 
-    /** Creates an instance of Deployment class. */
+    /**
+     * Creates an instance of Deployment class.
+     */
     public Deployment() {
     }
 
     /**
      * Get the location property: The location to store the deployment data.
-     *
+     * 
      * @return the location value.
      */
     public String location() {
@@ -47,7 +51,7 @@ public final class Deployment {
 
     /**
      * Set the location property: The location to store the deployment data.
-     *
+     * 
      * @param location the location value to set.
      * @return the Deployment object itself.
      */
@@ -58,7 +62,7 @@ public final class Deployment {
 
     /**
      * Get the properties property: The deployment properties.
-     *
+     * 
      * @return the properties value.
      */
     public DeploymentProperties properties() {
@@ -67,7 +71,7 @@ public final class Deployment {
 
     /**
      * Set the properties property: The deployment properties.
-     *
+     * 
      * @param properties the properties value to set.
      * @return the Deployment object itself.
      */
@@ -78,7 +82,7 @@ public final class Deployment {
 
     /**
      * Get the tags property: Deployment tags.
-     *
+     * 
      * @return the tags value.
      */
     public Map<String, String> tags() {
@@ -87,7 +91,7 @@ public final class Deployment {
 
     /**
      * Set the tags property: Deployment tags.
-     *
+     * 
      * @param tags the tags value to set.
      * @return the Deployment object itself.
      */
@@ -98,14 +102,13 @@ public final class Deployment {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (properties() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property properties in model Deployment"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property properties in model Deployment"));
         } else {
             properties().validate();
         }

@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.applicationinsights.generated.fluent.models.LinkedStorageAccountsProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** An Application Insights component linked storage accounts patch. */
+/**
+ * An Application Insights component linked storage accounts patch.
+ */
 @Fluent
 public final class ComponentLinkedStorageAccountsPatch {
     /*
@@ -17,13 +19,15 @@ public final class ComponentLinkedStorageAccountsPatch {
     @JsonProperty(value = "properties")
     private LinkedStorageAccountsProperties innerProperties;
 
-    /** Creates an instance of ComponentLinkedStorageAccountsPatch class. */
+    /**
+     * Creates an instance of ComponentLinkedStorageAccountsPatch class.
+     */
     public ComponentLinkedStorageAccountsPatch() {
     }
 
     /**
      * Get the innerProperties property: The properties of the linked storage accounts.
-     *
+     * 
      * @return the innerProperties value.
      */
     private LinkedStorageAccountsProperties innerProperties() {
@@ -32,7 +36,7 @@ public final class ComponentLinkedStorageAccountsPatch {
 
     /**
      * Get the linkedStorageAccount property: Linked storage account resource ID.
-     *
+     * 
      * @return the linkedStorageAccount value.
      */
     public String linkedStorageAccount() {
@@ -41,7 +45,7 @@ public final class ComponentLinkedStorageAccountsPatch {
 
     /**
      * Set the linkedStorageAccount property: Linked storage account resource ID.
-     *
+     * 
      * @param linkedStorageAccount the linkedStorageAccount value to set.
      * @return the ComponentLinkedStorageAccountsPatch object itself.
      */
@@ -55,7 +59,7 @@ public final class ComponentLinkedStorageAccountsPatch {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

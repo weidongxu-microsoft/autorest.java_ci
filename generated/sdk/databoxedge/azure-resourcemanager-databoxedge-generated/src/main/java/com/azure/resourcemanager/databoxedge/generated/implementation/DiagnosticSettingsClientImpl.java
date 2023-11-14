@@ -33,119 +33,104 @@ import java.nio.ByteBuffer;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-/** An instance of this class provides access to all the operations defined in DiagnosticSettingsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in DiagnosticSettingsClient.
+ */
 public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsClient {
-    /** The proxy service used to perform REST calls. */
+    /**
+     * The proxy service used to perform REST calls.
+     */
     private final DiagnosticSettingsService service;
 
-    /** The service client containing this operation class. */
+    /**
+     * The service client containing this operation class.
+     */
     private final DataBoxEdgeManagementClientImpl client;
 
     /**
      * Initializes an instance of DiagnosticSettingsClientImpl.
-     *
+     * 
      * @param client the instance of the service client containing this operation class.
      */
     DiagnosticSettingsClientImpl(DataBoxEdgeManagementClientImpl client) {
-        this.service =
-            RestProxy.create(DiagnosticSettingsService.class, client.getHttpPipeline(), client.getSerializerAdapter());
+        this.service = RestProxy.create(DiagnosticSettingsService.class, client.getHttpPipeline(),
+            client.getSerializerAdapter());
         this.client = client;
     }
 
     /**
-     * The interface defining all the services for DataBoxEdgeManagementClientDiagnosticSettings to be used by the proxy
-     * service to perform REST calls.
+     * The interface defining all the services for DataBoxEdgeManagementClientDiagnosticSettings to be used by the
+     * proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "DataBoxEdgeManagemen")
     public interface DiagnosticSettingsService {
-        @Headers({"Content-Type: application/json"})
-        @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/diagnosticProactiveLogCollectionSettings/default")
-        @ExpectedResponses({200})
+        @Headers({ "Content-Type: application/json" })
+        @Get("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/diagnosticProactiveLogCollectionSettings/default")
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<DiagnosticProactiveLogCollectionSettingsInner>> getDiagnosticProactiveLogCollectionSettings(
-            @HostParam("$host") String endpoint,
-            @PathParam("deviceName") String deviceName,
+            @HostParam("$host") String endpoint, @PathParam("deviceName") String deviceName,
             @PathParam("subscriptionId") String subscriptionId,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @QueryParam("api-version") String apiVersion,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @PathParam("resourceGroupName") String resourceGroupName, @QueryParam("api-version") String apiVersion,
+            @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Put(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/diagnosticProactiveLogCollectionSettings/default")
-        @ExpectedResponses({200, 202})
+        @Headers({ "Content-Type: application/json" })
+        @Put("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/diagnosticProactiveLogCollectionSettings/default")
+        @ExpectedResponses({ 200, 202 })
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<Flux<ByteBuffer>>> updateDiagnosticProactiveLogCollectionSettings(
-            @HostParam("$host") String endpoint,
-            @PathParam("deviceName") String deviceName,
+            @HostParam("$host") String endpoint, @PathParam("deviceName") String deviceName,
             @PathParam("subscriptionId") String subscriptionId,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @QueryParam("api-version") String apiVersion,
+            @PathParam("resourceGroupName") String resourceGroupName, @QueryParam("api-version") String apiVersion,
             @BodyParam("application/json") DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/diagnosticRemoteSupportSettings/default")
-        @ExpectedResponses({200})
+        @Headers({ "Content-Type: application/json" })
+        @Get("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/diagnosticRemoteSupportSettings/default")
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<DiagnosticRemoteSupportSettingsInner>> getDiagnosticRemoteSupportSettings(
-            @HostParam("$host") String endpoint,
-            @PathParam("deviceName") String deviceName,
+            @HostParam("$host") String endpoint, @PathParam("deviceName") String deviceName,
             @PathParam("subscriptionId") String subscriptionId,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @QueryParam("api-version") String apiVersion,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @PathParam("resourceGroupName") String resourceGroupName, @QueryParam("api-version") String apiVersion,
+            @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Put(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/diagnosticRemoteSupportSettings/default")
-        @ExpectedResponses({200, 202})
+        @Headers({ "Content-Type: application/json" })
+        @Put("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/diagnosticRemoteSupportSettings/default")
+        @ExpectedResponses({ 200, 202 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<Flux<ByteBuffer>>> updateDiagnosticRemoteSupportSettings(
-            @HostParam("$host") String endpoint,
-            @PathParam("deviceName") String deviceName,
-            @PathParam("subscriptionId") String subscriptionId,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @QueryParam("api-version") String apiVersion,
+        Mono<Response<Flux<ByteBuffer>>> updateDiagnosticRemoteSupportSettings(@HostParam("$host") String endpoint,
+            @PathParam("deviceName") String deviceName, @PathParam("subscriptionId") String subscriptionId,
+            @PathParam("resourceGroupName") String resourceGroupName, @QueryParam("api-version") String apiVersion,
             @BodyParam("application/json") DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @HeaderParam("Accept") String accept, Context context);
     }
 
     /**
      * Gets the proactive log collection settings of the specified Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the proactive log collection settings of the specified Data Box Edge/Data Box Gateway device along with
-     *     {@link Response} on successful completion of {@link Mono}.
+     * {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DiagnosticProactiveLogCollectionSettingsInner>>
         getDiagnosticProactiveLogCollectionSettingsWithResponseAsync(String deviceName, String resourceGroupName) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (deviceName == null) {
             return Mono.error(new IllegalArgumentException("Parameter deviceName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -154,22 +139,14 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
         final String accept = "application/json";
         return FluxUtil
             .withContext(
-                context ->
-                    service
-                        .getDiagnosticProactiveLogCollectionSettings(
-                            this.client.getEndpoint(),
-                            deviceName,
-                            this.client.getSubscriptionId(),
-                            resourceGroupName,
-                            this.client.getApiVersion(),
-                            accept,
-                            context))
+                context -> service.getDiagnosticProactiveLogCollectionSettings(this.client.getEndpoint(), deviceName,
+                    this.client.getSubscriptionId(), resourceGroupName, this.client.getApiVersion(), accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Gets the proactive log collection settings of the specified Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param context The context to associate with this operation.
@@ -177,26 +154,22 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the proactive log collection settings of the specified Data Box Edge/Data Box Gateway device along with
-     *     {@link Response} on successful completion of {@link Mono}.
+     * {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DiagnosticProactiveLogCollectionSettingsInner>>
-        getDiagnosticProactiveLogCollectionSettingsWithResponseAsync(
-            String deviceName, String resourceGroupName, Context context) {
+        getDiagnosticProactiveLogCollectionSettingsWithResponseAsync(String deviceName, String resourceGroupName,
+            Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (deviceName == null) {
             return Mono.error(new IllegalArgumentException("Parameter deviceName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -204,38 +177,31 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .getDiagnosticProactiveLogCollectionSettings(
-                this.client.getEndpoint(),
-                deviceName,
-                this.client.getSubscriptionId(),
-                resourceGroupName,
-                this.client.getApiVersion(),
-                accept,
-                context);
+        return service.getDiagnosticProactiveLogCollectionSettings(this.client.getEndpoint(), deviceName,
+            this.client.getSubscriptionId(), resourceGroupName, this.client.getApiVersion(), accept, context);
     }
 
     /**
      * Gets the proactive log collection settings of the specified Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the proactive log collection settings of the specified Data Box Edge/Data Box Gateway device on
-     *     successful completion of {@link Mono}.
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<DiagnosticProactiveLogCollectionSettingsInner> getDiagnosticProactiveLogCollectionSettingsAsync(
-        String deviceName, String resourceGroupName) {
+    private Mono<DiagnosticProactiveLogCollectionSettingsInner>
+        getDiagnosticProactiveLogCollectionSettingsAsync(String deviceName, String resourceGroupName) {
         return getDiagnosticProactiveLogCollectionSettingsWithResponseAsync(deviceName, resourceGroupName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
      * Gets the proactive log collection settings of the specified Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param context The context to associate with this operation.
@@ -243,19 +209,19 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the proactive log collection settings of the specified Data Box Edge/Data Box Gateway device along with
-     *     {@link Response}.
+     * {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<DiagnosticProactiveLogCollectionSettingsInner>
-        getDiagnosticProactiveLogCollectionSettingsWithResponse(
-            String deviceName, String resourceGroupName, Context context) {
+        getDiagnosticProactiveLogCollectionSettingsWithResponse(String deviceName, String resourceGroupName,
+            Context context) {
         return getDiagnosticProactiveLogCollectionSettingsWithResponseAsync(deviceName, resourceGroupName, context)
             .block();
     }
 
     /**
      * Gets the proactive log collection settings of the specified Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -264,15 +230,15 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @return the proactive log collection settings of the specified Data Box Edge/Data Box Gateway device.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public DiagnosticProactiveLogCollectionSettingsInner getDiagnosticProactiveLogCollectionSettings(
-        String deviceName, String resourceGroupName) {
+    public DiagnosticProactiveLogCollectionSettingsInner getDiagnosticProactiveLogCollectionSettings(String deviceName,
+        String resourceGroupName) {
         return getDiagnosticProactiveLogCollectionSettingsWithResponse(deviceName, resourceGroupName, Context.NONE)
             .getValue();
     }
 
     /**
      * Updates the proactive log collection settings on a Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param proactiveLogCollectionSettings The proactive log collection settings.
@@ -280,60 +246,44 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the diagnostic proactive log collection settings of a device along with {@link Response} on successful
-     *     completion of {@link Mono}.
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateDiagnosticProactiveLogCollectionSettingsWithResponseAsync(
-        String deviceName,
-        String resourceGroupName,
+        String deviceName, String resourceGroupName,
         DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (deviceName == null) {
             return Mono.error(new IllegalArgumentException("Parameter deviceName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
         if (proactiveLogCollectionSettings == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter proactiveLogCollectionSettings is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter proactiveLogCollectionSettings is required and cannot be null."));
         } else {
             proactiveLogCollectionSettings.validate();
         }
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .updateDiagnosticProactiveLogCollectionSettings(
-                            this.client.getEndpoint(),
-                            deviceName,
-                            this.client.getSubscriptionId(),
-                            resourceGroupName,
-                            this.client.getApiVersion(),
-                            proactiveLogCollectionSettings,
-                            accept,
-                            context))
+            .withContext(context -> service.updateDiagnosticProactiveLogCollectionSettings(this.client.getEndpoint(),
+                deviceName, this.client.getSubscriptionId(), resourceGroupName, this.client.getApiVersion(),
+                proactiveLogCollectionSettings, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Updates the proactive log collection settings on a Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param proactiveLogCollectionSettings The proactive log collection settings.
@@ -342,58 +292,43 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the diagnostic proactive log collection settings of a device along with {@link Response} on successful
-     *     completion of {@link Mono}.
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateDiagnosticProactiveLogCollectionSettingsWithResponseAsync(
-        String deviceName,
-        String resourceGroupName,
-        DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings,
-        Context context) {
+        String deviceName, String resourceGroupName,
+        DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (deviceName == null) {
             return Mono.error(new IllegalArgumentException("Parameter deviceName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
         if (proactiveLogCollectionSettings == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter proactiveLogCollectionSettings is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter proactiveLogCollectionSettings is required and cannot be null."));
         } else {
             proactiveLogCollectionSettings.validate();
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .updateDiagnosticProactiveLogCollectionSettings(
-                this.client.getEndpoint(),
-                deviceName,
-                this.client.getSubscriptionId(),
-                resourceGroupName,
-                this.client.getApiVersion(),
-                proactiveLogCollectionSettings,
-                accept,
-                context);
+        return service.updateDiagnosticProactiveLogCollectionSettings(this.client.getEndpoint(), deviceName,
+            this.client.getSubscriptionId(), resourceGroupName, this.client.getApiVersion(),
+            proactiveLogCollectionSettings, accept, context);
     }
 
     /**
      * Updates the proactive log collection settings on a Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param proactiveLogCollectionSettings The proactive log collection settings.
@@ -403,28 +338,21 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @return the {@link PollerFlux} for polling of the diagnostic proactive log collection settings of a device.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    private PollerFlux<
-            PollResult<DiagnosticProactiveLogCollectionSettingsInner>, DiagnosticProactiveLogCollectionSettingsInner>
-        beginUpdateDiagnosticProactiveLogCollectionSettingsAsync(
-            String deviceName,
-            String resourceGroupName,
+    private
+        PollerFlux<PollResult<DiagnosticProactiveLogCollectionSettingsInner>, DiagnosticProactiveLogCollectionSettingsInner>
+        beginUpdateDiagnosticProactiveLogCollectionSettingsAsync(String deviceName, String resourceGroupName,
             DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings) {
-        Mono<Response<Flux<ByteBuffer>>> mono =
-            updateDiagnosticProactiveLogCollectionSettingsWithResponseAsync(
-                deviceName, resourceGroupName, proactiveLogCollectionSettings);
-        return this
-            .client
+        Mono<Response<Flux<ByteBuffer>>> mono = updateDiagnosticProactiveLogCollectionSettingsWithResponseAsync(
+            deviceName, resourceGroupName, proactiveLogCollectionSettings);
+        return this.client
             .<DiagnosticProactiveLogCollectionSettingsInner, DiagnosticProactiveLogCollectionSettingsInner>getLroResult(
-                mono,
-                this.client.getHttpPipeline(),
-                DiagnosticProactiveLogCollectionSettingsInner.class,
-                DiagnosticProactiveLogCollectionSettingsInner.class,
-                this.client.getContext());
+                mono, this.client.getHttpPipeline(), DiagnosticProactiveLogCollectionSettingsInner.class,
+                DiagnosticProactiveLogCollectionSettingsInner.class, this.client.getContext());
     }
 
     /**
      * Updates the proactive log collection settings on a Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param proactiveLogCollectionSettings The proactive log collection settings.
@@ -435,30 +363,22 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @return the {@link PollerFlux} for polling of the diagnostic proactive log collection settings of a device.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    private PollerFlux<
-            PollResult<DiagnosticProactiveLogCollectionSettingsInner>, DiagnosticProactiveLogCollectionSettingsInner>
-        beginUpdateDiagnosticProactiveLogCollectionSettingsAsync(
-            String deviceName,
-            String resourceGroupName,
-            DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings,
-            Context context) {
+    private
+        PollerFlux<PollResult<DiagnosticProactiveLogCollectionSettingsInner>, DiagnosticProactiveLogCollectionSettingsInner>
+        beginUpdateDiagnosticProactiveLogCollectionSettingsAsync(String deviceName, String resourceGroupName,
+            DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings, Context context) {
         context = this.client.mergeContext(context);
-        Mono<Response<Flux<ByteBuffer>>> mono =
-            updateDiagnosticProactiveLogCollectionSettingsWithResponseAsync(
-                deviceName, resourceGroupName, proactiveLogCollectionSettings, context);
-        return this
-            .client
+        Mono<Response<Flux<ByteBuffer>>> mono = updateDiagnosticProactiveLogCollectionSettingsWithResponseAsync(
+            deviceName, resourceGroupName, proactiveLogCollectionSettings, context);
+        return this.client
             .<DiagnosticProactiveLogCollectionSettingsInner, DiagnosticProactiveLogCollectionSettingsInner>getLroResult(
-                mono,
-                this.client.getHttpPipeline(),
-                DiagnosticProactiveLogCollectionSettingsInner.class,
-                DiagnosticProactiveLogCollectionSettingsInner.class,
-                context);
+                mono, this.client.getHttpPipeline(), DiagnosticProactiveLogCollectionSettingsInner.class,
+                DiagnosticProactiveLogCollectionSettingsInner.class, context);
     }
 
     /**
      * Updates the proactive log collection settings on a Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param proactiveLogCollectionSettings The proactive log collection settings.
@@ -468,21 +388,17 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @return the {@link SyncPoller} for polling of the diagnostic proactive log collection settings of a device.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<
-            PollResult<DiagnosticProactiveLogCollectionSettingsInner>, DiagnosticProactiveLogCollectionSettingsInner>
-        beginUpdateDiagnosticProactiveLogCollectionSettings(
-            String deviceName,
-            String resourceGroupName,
+    public
+        SyncPoller<PollResult<DiagnosticProactiveLogCollectionSettingsInner>, DiagnosticProactiveLogCollectionSettingsInner>
+        beginUpdateDiagnosticProactiveLogCollectionSettings(String deviceName, String resourceGroupName,
             DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings) {
-        return this
-            .beginUpdateDiagnosticProactiveLogCollectionSettingsAsync(
-                deviceName, resourceGroupName, proactiveLogCollectionSettings)
-            .getSyncPoller();
+        return this.beginUpdateDiagnosticProactiveLogCollectionSettingsAsync(deviceName, resourceGroupName,
+            proactiveLogCollectionSettings).getSyncPoller();
     }
 
     /**
      * Updates the proactive log collection settings on a Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param proactiveLogCollectionSettings The proactive log collection settings.
@@ -493,22 +409,17 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @return the {@link SyncPoller} for polling of the diagnostic proactive log collection settings of a device.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<
-            PollResult<DiagnosticProactiveLogCollectionSettingsInner>, DiagnosticProactiveLogCollectionSettingsInner>
-        beginUpdateDiagnosticProactiveLogCollectionSettings(
-            String deviceName,
-            String resourceGroupName,
-            DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings,
-            Context context) {
-        return this
-            .beginUpdateDiagnosticProactiveLogCollectionSettingsAsync(
-                deviceName, resourceGroupName, proactiveLogCollectionSettings, context)
-            .getSyncPoller();
+    public
+        SyncPoller<PollResult<DiagnosticProactiveLogCollectionSettingsInner>, DiagnosticProactiveLogCollectionSettingsInner>
+        beginUpdateDiagnosticProactiveLogCollectionSettings(String deviceName, String resourceGroupName,
+            DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings, Context context) {
+        return this.beginUpdateDiagnosticProactiveLogCollectionSettingsAsync(deviceName, resourceGroupName,
+            proactiveLogCollectionSettings, context).getSyncPoller();
     }
 
     /**
      * Updates the proactive log collection settings on a Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param proactiveLogCollectionSettings The proactive log collection settings.
@@ -519,18 +430,15 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DiagnosticProactiveLogCollectionSettingsInner> updateDiagnosticProactiveLogCollectionSettingsAsync(
-        String deviceName,
-        String resourceGroupName,
+        String deviceName, String resourceGroupName,
         DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings) {
-        return beginUpdateDiagnosticProactiveLogCollectionSettingsAsync(
-                deviceName, resourceGroupName, proactiveLogCollectionSettings)
-            .last()
-            .flatMap(this.client::getLroFinalResultOrError);
+        return beginUpdateDiagnosticProactiveLogCollectionSettingsAsync(deviceName, resourceGroupName,
+            proactiveLogCollectionSettings).last().flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
      * Updates the proactive log collection settings on a Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param proactiveLogCollectionSettings The proactive log collection settings.
@@ -542,19 +450,15 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DiagnosticProactiveLogCollectionSettingsInner> updateDiagnosticProactiveLogCollectionSettingsAsync(
-        String deviceName,
-        String resourceGroupName,
-        DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings,
-        Context context) {
-        return beginUpdateDiagnosticProactiveLogCollectionSettingsAsync(
-                deviceName, resourceGroupName, proactiveLogCollectionSettings, context)
-            .last()
-            .flatMap(this.client::getLroFinalResultOrError);
+        String deviceName, String resourceGroupName,
+        DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings, Context context) {
+        return beginUpdateDiagnosticProactiveLogCollectionSettingsAsync(deviceName, resourceGroupName,
+            proactiveLogCollectionSettings, context).last().flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
      * Updates the proactive log collection settings on a Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param proactiveLogCollectionSettings The proactive log collection settings.
@@ -565,17 +469,15 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public DiagnosticProactiveLogCollectionSettingsInner updateDiagnosticProactiveLogCollectionSettings(
-        String deviceName,
-        String resourceGroupName,
+        String deviceName, String resourceGroupName,
         DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings) {
-        return updateDiagnosticProactiveLogCollectionSettingsAsync(
-                deviceName, resourceGroupName, proactiveLogCollectionSettings)
-            .block();
+        return updateDiagnosticProactiveLogCollectionSettingsAsync(deviceName, resourceGroupName,
+            proactiveLogCollectionSettings).block();
     }
 
     /**
      * Updates the proactive log collection settings on a Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param proactiveLogCollectionSettings The proactive log collection settings.
@@ -587,43 +489,36 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public DiagnosticProactiveLogCollectionSettingsInner updateDiagnosticProactiveLogCollectionSettings(
-        String deviceName,
-        String resourceGroupName,
-        DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings,
-        Context context) {
-        return updateDiagnosticProactiveLogCollectionSettingsAsync(
-                deviceName, resourceGroupName, proactiveLogCollectionSettings, context)
-            .block();
+        String deviceName, String resourceGroupName,
+        DiagnosticProactiveLogCollectionSettingsInner proactiveLogCollectionSettings, Context context) {
+        return updateDiagnosticProactiveLogCollectionSettingsAsync(deviceName, resourceGroupName,
+            proactiveLogCollectionSettings, context).block();
     }
 
     /**
      * Gets the diagnostic remote support settings of the specified Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the diagnostic remote support settings of the specified Data Box Edge/Data Box Gateway device along with
-     *     {@link Response} on successful completion of {@link Mono}.
+     * {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<DiagnosticRemoteSupportSettingsInner>> getDiagnosticRemoteSupportSettingsWithResponseAsync(
-        String deviceName, String resourceGroupName) {
+    private Mono<Response<DiagnosticRemoteSupportSettingsInner>>
+        getDiagnosticRemoteSupportSettingsWithResponseAsync(String deviceName, String resourceGroupName) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (deviceName == null) {
             return Mono.error(new IllegalArgumentException("Parameter deviceName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -631,23 +526,14 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
         }
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .getDiagnosticRemoteSupportSettings(
-                            this.client.getEndpoint(),
-                            deviceName,
-                            this.client.getSubscriptionId(),
-                            resourceGroupName,
-                            this.client.getApiVersion(),
-                            accept,
-                            context))
+            .withContext(context -> service.getDiagnosticRemoteSupportSettings(this.client.getEndpoint(), deviceName,
+                this.client.getSubscriptionId(), resourceGroupName, this.client.getApiVersion(), accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Gets the diagnostic remote support settings of the specified Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param context The context to associate with this operation.
@@ -655,25 +541,21 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the diagnostic remote support settings of the specified Data Box Edge/Data Box Gateway device along with
-     *     {@link Response} on successful completion of {@link Mono}.
+     * {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DiagnosticRemoteSupportSettingsInner>> getDiagnosticRemoteSupportSettingsWithResponseAsync(
         String deviceName, String resourceGroupName, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (deviceName == null) {
             return Mono.error(new IllegalArgumentException("Parameter deviceName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -681,38 +563,31 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .getDiagnosticRemoteSupportSettings(
-                this.client.getEndpoint(),
-                deviceName,
-                this.client.getSubscriptionId(),
-                resourceGroupName,
-                this.client.getApiVersion(),
-                accept,
-                context);
+        return service.getDiagnosticRemoteSupportSettings(this.client.getEndpoint(), deviceName,
+            this.client.getSubscriptionId(), resourceGroupName, this.client.getApiVersion(), accept, context);
     }
 
     /**
      * Gets the diagnostic remote support settings of the specified Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the diagnostic remote support settings of the specified Data Box Edge/Data Box Gateway device on
-     *     successful completion of {@link Mono}.
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<DiagnosticRemoteSupportSettingsInner> getDiagnosticRemoteSupportSettingsAsync(
-        String deviceName, String resourceGroupName) {
+    private Mono<DiagnosticRemoteSupportSettingsInner> getDiagnosticRemoteSupportSettingsAsync(String deviceName,
+        String resourceGroupName) {
         return getDiagnosticRemoteSupportSettingsWithResponseAsync(deviceName, resourceGroupName)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
      * Gets the diagnostic remote support settings of the specified Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param context The context to associate with this operation.
@@ -720,17 +595,17 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the diagnostic remote support settings of the specified Data Box Edge/Data Box Gateway device along with
-     *     {@link Response}.
+     * {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DiagnosticRemoteSupportSettingsInner> getDiagnosticRemoteSupportSettingsWithResponse(
-        String deviceName, String resourceGroupName, Context context) {
+    public Response<DiagnosticRemoteSupportSettingsInner>
+        getDiagnosticRemoteSupportSettingsWithResponse(String deviceName, String resourceGroupName, Context context) {
         return getDiagnosticRemoteSupportSettingsWithResponseAsync(deviceName, resourceGroupName, context).block();
     }
 
     /**
      * Gets the diagnostic remote support settings of the specified Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -739,75 +614,58 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @return the diagnostic remote support settings of the specified Data Box Edge/Data Box Gateway device.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public DiagnosticRemoteSupportSettingsInner getDiagnosticRemoteSupportSettings(
-        String deviceName, String resourceGroupName) {
+    public DiagnosticRemoteSupportSettingsInner getDiagnosticRemoteSupportSettings(String deviceName,
+        String resourceGroupName) {
         return getDiagnosticRemoteSupportSettingsWithResponse(deviceName, resourceGroupName, Context.NONE).getValue();
     }
 
     /**
      * Updates the diagnostic remote support settings on a Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param diagnosticRemoteSupportSettings The diagnostic remote support settings.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the remote support settings of a device along with {@link Response} on successful completion of {@link
-     *     Mono}.
+     * @return the remote support settings of a device along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> updateDiagnosticRemoteSupportSettingsWithResponseAsync(
-        String deviceName,
-        String resourceGroupName,
-        DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings) {
+    private Mono<Response<Flux<ByteBuffer>>> updateDiagnosticRemoteSupportSettingsWithResponseAsync(String deviceName,
+        String resourceGroupName, DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (deviceName == null) {
             return Mono.error(new IllegalArgumentException("Parameter deviceName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
         if (diagnosticRemoteSupportSettings == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter diagnosticRemoteSupportSettings is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter diagnosticRemoteSupportSettings is required and cannot be null."));
         } else {
             diagnosticRemoteSupportSettings.validate();
         }
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .updateDiagnosticRemoteSupportSettings(
-                            this.client.getEndpoint(),
-                            deviceName,
-                            this.client.getSubscriptionId(),
-                            resourceGroupName,
-                            this.client.getApiVersion(),
-                            diagnosticRemoteSupportSettings,
-                            accept,
-                            context))
+            .withContext(context -> service.updateDiagnosticRemoteSupportSettings(this.client.getEndpoint(), deviceName,
+                this.client.getSubscriptionId(), resourceGroupName, this.client.getApiVersion(),
+                diagnosticRemoteSupportSettings, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Updates the diagnostic remote support settings on a Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param diagnosticRemoteSupportSettings The diagnostic remote support settings.
@@ -815,59 +673,44 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the remote support settings of a device along with {@link Response} on successful completion of {@link
-     *     Mono}.
+     * @return the remote support settings of a device along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> updateDiagnosticRemoteSupportSettingsWithResponseAsync(
-        String deviceName,
-        String resourceGroupName,
-        DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings,
+    private Mono<Response<Flux<ByteBuffer>>> updateDiagnosticRemoteSupportSettingsWithResponseAsync(String deviceName,
+        String resourceGroupName, DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings,
         Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (deviceName == null) {
             return Mono.error(new IllegalArgumentException("Parameter deviceName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
         if (diagnosticRemoteSupportSettings == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter diagnosticRemoteSupportSettings is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter diagnosticRemoteSupportSettings is required and cannot be null."));
         } else {
             diagnosticRemoteSupportSettings.validate();
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .updateDiagnosticRemoteSupportSettings(
-                this.client.getEndpoint(),
-                deviceName,
-                this.client.getSubscriptionId(),
-                resourceGroupName,
-                this.client.getApiVersion(),
-                diagnosticRemoteSupportSettings,
-                accept,
-                context);
+        return service.updateDiagnosticRemoteSupportSettings(this.client.getEndpoint(), deviceName,
+            this.client.getSubscriptionId(), resourceGroupName, this.client.getApiVersion(),
+            diagnosticRemoteSupportSettings, accept, context);
     }
 
     /**
      * Updates the diagnostic remote support settings on a Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param diagnosticRemoteSupportSettings The diagnostic remote support settings.
@@ -878,26 +721,18 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<DiagnosticRemoteSupportSettingsInner>, DiagnosticRemoteSupportSettingsInner>
-        beginUpdateDiagnosticRemoteSupportSettingsAsync(
-            String deviceName,
-            String resourceGroupName,
+        beginUpdateDiagnosticRemoteSupportSettingsAsync(String deviceName, String resourceGroupName,
             DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings) {
-        Mono<Response<Flux<ByteBuffer>>> mono =
-            updateDiagnosticRemoteSupportSettingsWithResponseAsync(
-                deviceName, resourceGroupName, diagnosticRemoteSupportSettings);
-        return this
-            .client
-            .<DiagnosticRemoteSupportSettingsInner, DiagnosticRemoteSupportSettingsInner>getLroResult(
-                mono,
-                this.client.getHttpPipeline(),
-                DiagnosticRemoteSupportSettingsInner.class,
-                DiagnosticRemoteSupportSettingsInner.class,
-                this.client.getContext());
+        Mono<Response<Flux<ByteBuffer>>> mono = updateDiagnosticRemoteSupportSettingsWithResponseAsync(deviceName,
+            resourceGroupName, diagnosticRemoteSupportSettings);
+        return this.client.<DiagnosticRemoteSupportSettingsInner, DiagnosticRemoteSupportSettingsInner>getLroResult(
+            mono, this.client.getHttpPipeline(), DiagnosticRemoteSupportSettingsInner.class,
+            DiagnosticRemoteSupportSettingsInner.class, this.client.getContext());
     }
 
     /**
      * Updates the diagnostic remote support settings on a Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param diagnosticRemoteSupportSettings The diagnostic remote support settings.
@@ -909,28 +744,19 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<DiagnosticRemoteSupportSettingsInner>, DiagnosticRemoteSupportSettingsInner>
-        beginUpdateDiagnosticRemoteSupportSettingsAsync(
-            String deviceName,
-            String resourceGroupName,
-            DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings,
-            Context context) {
+        beginUpdateDiagnosticRemoteSupportSettingsAsync(String deviceName, String resourceGroupName,
+            DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings, Context context) {
         context = this.client.mergeContext(context);
-        Mono<Response<Flux<ByteBuffer>>> mono =
-            updateDiagnosticRemoteSupportSettingsWithResponseAsync(
-                deviceName, resourceGroupName, diagnosticRemoteSupportSettings, context);
-        return this
-            .client
-            .<DiagnosticRemoteSupportSettingsInner, DiagnosticRemoteSupportSettingsInner>getLroResult(
-                mono,
-                this.client.getHttpPipeline(),
-                DiagnosticRemoteSupportSettingsInner.class,
-                DiagnosticRemoteSupportSettingsInner.class,
-                context);
+        Mono<Response<Flux<ByteBuffer>>> mono = updateDiagnosticRemoteSupportSettingsWithResponseAsync(deviceName,
+            resourceGroupName, diagnosticRemoteSupportSettings, context);
+        return this.client.<DiagnosticRemoteSupportSettingsInner, DiagnosticRemoteSupportSettingsInner>getLroResult(
+            mono, this.client.getHttpPipeline(), DiagnosticRemoteSupportSettingsInner.class,
+            DiagnosticRemoteSupportSettingsInner.class, context);
     }
 
     /**
      * Updates the diagnostic remote support settings on a Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param diagnosticRemoteSupportSettings The diagnostic remote support settings.
@@ -941,19 +767,15 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DiagnosticRemoteSupportSettingsInner>, DiagnosticRemoteSupportSettingsInner>
-        beginUpdateDiagnosticRemoteSupportSettings(
-            String deviceName,
-            String resourceGroupName,
+        beginUpdateDiagnosticRemoteSupportSettings(String deviceName, String resourceGroupName,
             DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings) {
-        return this
-            .beginUpdateDiagnosticRemoteSupportSettingsAsync(
-                deviceName, resourceGroupName, diagnosticRemoteSupportSettings)
-            .getSyncPoller();
+        return this.beginUpdateDiagnosticRemoteSupportSettingsAsync(deviceName, resourceGroupName,
+            diagnosticRemoteSupportSettings).getSyncPoller();
     }
 
     /**
      * Updates the diagnostic remote support settings on a Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param diagnosticRemoteSupportSettings The diagnostic remote support settings.
@@ -965,20 +787,15 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<DiagnosticRemoteSupportSettingsInner>, DiagnosticRemoteSupportSettingsInner>
-        beginUpdateDiagnosticRemoteSupportSettings(
-            String deviceName,
-            String resourceGroupName,
-            DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings,
-            Context context) {
-        return this
-            .beginUpdateDiagnosticRemoteSupportSettingsAsync(
-                deviceName, resourceGroupName, diagnosticRemoteSupportSettings, context)
-            .getSyncPoller();
+        beginUpdateDiagnosticRemoteSupportSettings(String deviceName, String resourceGroupName,
+            DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings, Context context) {
+        return this.beginUpdateDiagnosticRemoteSupportSettingsAsync(deviceName, resourceGroupName,
+            diagnosticRemoteSupportSettings, context).getSyncPoller();
     }
 
     /**
      * Updates the diagnostic remote support settings on a Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param diagnosticRemoteSupportSettings The diagnostic remote support settings.
@@ -988,19 +805,15 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @return the remote support settings of a device on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<DiagnosticRemoteSupportSettingsInner> updateDiagnosticRemoteSupportSettingsAsync(
-        String deviceName,
-        String resourceGroupName,
-        DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings) {
-        return beginUpdateDiagnosticRemoteSupportSettingsAsync(
-                deviceName, resourceGroupName, diagnosticRemoteSupportSettings)
-            .last()
-            .flatMap(this.client::getLroFinalResultOrError);
+    private Mono<DiagnosticRemoteSupportSettingsInner> updateDiagnosticRemoteSupportSettingsAsync(String deviceName,
+        String resourceGroupName, DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings) {
+        return beginUpdateDiagnosticRemoteSupportSettingsAsync(deviceName, resourceGroupName,
+            diagnosticRemoteSupportSettings).last().flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
      * Updates the diagnostic remote support settings on a Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param diagnosticRemoteSupportSettings The diagnostic remote support settings.
@@ -1011,20 +824,16 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @return the remote support settings of a device on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<DiagnosticRemoteSupportSettingsInner> updateDiagnosticRemoteSupportSettingsAsync(
-        String deviceName,
-        String resourceGroupName,
-        DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings,
+    private Mono<DiagnosticRemoteSupportSettingsInner> updateDiagnosticRemoteSupportSettingsAsync(String deviceName,
+        String resourceGroupName, DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings,
         Context context) {
-        return beginUpdateDiagnosticRemoteSupportSettingsAsync(
-                deviceName, resourceGroupName, diagnosticRemoteSupportSettings, context)
-            .last()
-            .flatMap(this.client::getLroFinalResultOrError);
+        return beginUpdateDiagnosticRemoteSupportSettingsAsync(deviceName, resourceGroupName,
+            diagnosticRemoteSupportSettings, context).last().flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
      * Updates the diagnostic remote support settings on a Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param diagnosticRemoteSupportSettings The diagnostic remote support settings.
@@ -1034,18 +843,15 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @return the remote support settings of a device.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public DiagnosticRemoteSupportSettingsInner updateDiagnosticRemoteSupportSettings(
-        String deviceName,
-        String resourceGroupName,
-        DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings) {
-        return updateDiagnosticRemoteSupportSettingsAsync(
-                deviceName, resourceGroupName, diagnosticRemoteSupportSettings)
-            .block();
+    public DiagnosticRemoteSupportSettingsInner updateDiagnosticRemoteSupportSettings(String deviceName,
+        String resourceGroupName, DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings) {
+        return updateDiagnosticRemoteSupportSettingsAsync(deviceName, resourceGroupName,
+            diagnosticRemoteSupportSettings).block();
     }
 
     /**
      * Updates the diagnostic remote support settings on a Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param diagnosticRemoteSupportSettings The diagnostic remote support settings.
@@ -1056,13 +862,10 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
      * @return the remote support settings of a device.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public DiagnosticRemoteSupportSettingsInner updateDiagnosticRemoteSupportSettings(
-        String deviceName,
-        String resourceGroupName,
-        DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings,
+    public DiagnosticRemoteSupportSettingsInner updateDiagnosticRemoteSupportSettings(String deviceName,
+        String resourceGroupName, DiagnosticRemoteSupportSettingsInner diagnosticRemoteSupportSettings,
         Context context) {
-        return updateDiagnosticRemoteSupportSettingsAsync(
-                deviceName, resourceGroupName, diagnosticRemoteSupportSettings, context)
-            .block();
+        return updateDiagnosticRemoteSupportSettingsAsync(deviceName, resourceGroupName,
+            diagnosticRemoteSupportSettings, context).block();
     }
 }

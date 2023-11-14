@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of ServiceEndpointPolicies. */
+/**
+ * Resource collection API of ServiceEndpointPolicies.
+ */
 public interface ServiceEndpointPolicies {
     /**
      * Deletes the specified service endpoint policy.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param serviceEndpointPolicyName The name of the service endpoint policy.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -23,7 +25,7 @@ public interface ServiceEndpointPolicies {
 
     /**
      * Deletes the specified service endpoint policy.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param serviceEndpointPolicyName The name of the service endpoint policy.
      * @param context The context to associate with this operation.
@@ -35,7 +37,7 @@ public interface ServiceEndpointPolicies {
 
     /**
      * Gets the specified service Endpoint Policies in a specified resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param serviceEndpointPolicyName The name of the service endpoint policy.
      * @param expand Expands referenced resources.
@@ -45,12 +47,12 @@ public interface ServiceEndpointPolicies {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified service Endpoint Policies in a specified resource group along with {@link Response}.
      */
-    Response<ServiceEndpointPolicy> getByResourceGroupWithResponse(
-        String resourceGroupName, String serviceEndpointPolicyName, String expand, Context context);
+    Response<ServiceEndpointPolicy> getByResourceGroupWithResponse(String resourceGroupName,
+        String serviceEndpointPolicyName, String expand, Context context);
 
     /**
      * Gets the specified service Endpoint Policies in a specified resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param serviceEndpointPolicyName The name of the service endpoint policy.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -62,7 +64,7 @@ public interface ServiceEndpointPolicies {
 
     /**
      * Gets all the service endpoint policies in a subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all the service endpoint policies in a subscription as paginated response with {@link PagedIterable}.
@@ -71,7 +73,7 @@ public interface ServiceEndpointPolicies {
 
     /**
      * Gets all the service endpoint policies in a subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -82,7 +84,7 @@ public interface ServiceEndpointPolicies {
 
     /**
      * Gets all service endpoint Policies in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -93,7 +95,7 @@ public interface ServiceEndpointPolicies {
 
     /**
      * Gets all service endpoint Policies in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -105,7 +107,7 @@ public interface ServiceEndpointPolicies {
 
     /**
      * Gets the specified service Endpoint Policies in a specified resource group.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -116,7 +118,7 @@ public interface ServiceEndpointPolicies {
 
     /**
      * Gets the specified service Endpoint Policies in a specified resource group.
-     *
+     * 
      * @param id the resource ID.
      * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
@@ -129,7 +131,7 @@ public interface ServiceEndpointPolicies {
 
     /**
      * Deletes the specified service endpoint policy.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -139,7 +141,7 @@ public interface ServiceEndpointPolicies {
 
     /**
      * Deletes the specified service endpoint policy.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -150,7 +152,7 @@ public interface ServiceEndpointPolicies {
 
     /**
      * Begins definition for a new ServiceEndpointPolicy resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new ServiceEndpointPolicy definition.
      */

@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Represents a Database. */
+/**
+ * Represents a Database.
+ */
 @Fluent
 public final class DatabaseInner extends ProxyResource {
     /*
@@ -17,13 +19,15 @@ public final class DatabaseInner extends ProxyResource {
     @JsonProperty(value = "properties")
     private DatabaseProperties innerProperties;
 
-    /** Creates an instance of DatabaseInner class. */
+    /**
+     * Creates an instance of DatabaseInner class.
+     */
     public DatabaseInner() {
     }
 
     /**
      * Get the innerProperties property: The properties of a database.
-     *
+     * 
      * @return the innerProperties value.
      */
     private DatabaseProperties innerProperties() {
@@ -32,7 +36,7 @@ public final class DatabaseInner extends ProxyResource {
 
     /**
      * Get the charset property: The charset of the database.
-     *
+     * 
      * @return the charset value.
      */
     public String charset() {
@@ -41,7 +45,7 @@ public final class DatabaseInner extends ProxyResource {
 
     /**
      * Set the charset property: The charset of the database.
-     *
+     * 
      * @param charset the charset value to set.
      * @return the DatabaseInner object itself.
      */
@@ -55,7 +59,7 @@ public final class DatabaseInner extends ProxyResource {
 
     /**
      * Get the collation property: The collation of the database.
-     *
+     * 
      * @return the collation value.
      */
     public String collation() {
@@ -64,7 +68,7 @@ public final class DatabaseInner extends ProxyResource {
 
     /**
      * Set the collation property: The collation of the database.
-     *
+     * 
      * @param collation the collation value to set.
      * @return the DatabaseInner object itself.
      */
@@ -78,7 +82,7 @@ public final class DatabaseInner extends ProxyResource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

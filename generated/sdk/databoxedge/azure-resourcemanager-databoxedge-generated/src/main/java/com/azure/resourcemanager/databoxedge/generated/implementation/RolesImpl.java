@@ -21,8 +21,8 @@ public final class RolesImpl implements Roles {
 
     private final com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager;
 
-    public RolesImpl(
-        RolesClient innerClient, com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
+    public RolesImpl(RolesClient innerClient,
+        com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -33,18 +33,15 @@ public final class RolesImpl implements Roles {
     }
 
     public PagedIterable<Role> listByDataBoxEdgeDevice(String deviceName, String resourceGroupName, Context context) {
-        PagedIterable<RoleInner> inner =
-            this.serviceClient().listByDataBoxEdgeDevice(deviceName, resourceGroupName, context);
+        PagedIterable<RoleInner> inner
+            = this.serviceClient().listByDataBoxEdgeDevice(deviceName, resourceGroupName, context);
         return Utils.mapPage(inner, inner1 -> new RoleImpl(inner1, this.manager()));
     }
 
     public Response<Role> getWithResponse(String deviceName, String name, String resourceGroupName, Context context) {
         Response<RoleInner> inner = this.serviceClient().getWithResponse(deviceName, name, resourceGroupName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new RoleImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -69,8 +66,8 @@ public final class RolesImpl implements Roles {
         }
     }
 
-    public Role createOrUpdate(
-        String deviceName, String name, String resourceGroupName, RoleInner role, Context context) {
+    public Role createOrUpdate(String deviceName, String name, String resourceGroupName, RoleInner role,
+        Context context) {
         RoleInner inner = this.serviceClient().createOrUpdate(deviceName, name, resourceGroupName, role, context);
         if (inner != null) {
             return new RoleImpl(inner, this.manager());

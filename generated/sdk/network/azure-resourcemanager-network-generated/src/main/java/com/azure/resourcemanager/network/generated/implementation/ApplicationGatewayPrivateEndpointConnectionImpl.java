@@ -17,8 +17,7 @@ public final class ApplicationGatewayPrivateEndpointConnectionImpl
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    ApplicationGatewayPrivateEndpointConnectionImpl(
-        ApplicationGatewayPrivateEndpointConnectionInner innerObject,
+    ApplicationGatewayPrivateEndpointConnectionImpl(ApplicationGatewayPrivateEndpointConnectionInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

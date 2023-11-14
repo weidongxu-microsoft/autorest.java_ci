@@ -16,8 +16,7 @@ public final class BackupRequestImpl implements BackupRequest {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    BackupRequestImpl(
-        BackupRequestInner innerObject,
+    BackupRequestImpl(BackupRequestInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

@@ -12,8 +12,7 @@ public final class HostingEnvironmentDiagnosticsImpl implements HostingEnvironme
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    HostingEnvironmentDiagnosticsImpl(
-        HostingEnvironmentDiagnosticsInner innerObject,
+    HostingEnvironmentDiagnosticsImpl(HostingEnvironmentDiagnosticsInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

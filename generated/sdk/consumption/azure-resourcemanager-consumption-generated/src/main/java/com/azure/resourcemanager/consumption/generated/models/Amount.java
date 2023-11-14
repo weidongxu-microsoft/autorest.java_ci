@@ -8,7 +8,9 @@ import com.azure.core.annotation.Immutable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.math.BigDecimal;
 
-/** The amount plus currency . */
+/**
+ * The amount plus currency .
+ */
 @Immutable
 public class Amount {
     /*
@@ -23,13 +25,15 @@ public class Amount {
     @JsonProperty(value = "value", access = JsonProperty.Access.WRITE_ONLY)
     private BigDecimal value;
 
-    /** Creates an instance of Amount class. */
+    /**
+     * Creates an instance of Amount class.
+     */
     public Amount() {
     }
 
     /**
      * Get the currency property: Amount currency.
-     *
+     * 
      * @return the currency value.
      */
     public String currency() {
@@ -38,7 +42,7 @@ public class Amount {
 
     /**
      * Get the value property: Amount.
-     *
+     * 
      * @return the value value.
      */
     public BigDecimal value() {
@@ -47,7 +51,7 @@ public class Amount {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

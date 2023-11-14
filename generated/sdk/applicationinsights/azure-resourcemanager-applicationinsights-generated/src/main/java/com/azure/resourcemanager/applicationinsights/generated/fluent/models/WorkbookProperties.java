@@ -10,7 +10,9 @@ import com.azure.resourcemanager.applicationinsights.generated.models.SharedType
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Properties that contain a workbook. */
+/**
+ * Properties that contain a workbook.
+ */
 @Fluent
 public final class WorkbookProperties {
     /*
@@ -75,13 +77,15 @@ public final class WorkbookProperties {
     @JsonProperty(value = "sourceResourceId")
     private String sourceResourceId;
 
-    /** Creates an instance of WorkbookProperties class. */
+    /**
+     * Creates an instance of WorkbookProperties class.
+     */
     public WorkbookProperties() {
     }
 
     /**
      * Get the name property: The user-defined name of the workbook.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -90,7 +94,7 @@ public final class WorkbookProperties {
 
     /**
      * Set the name property: The user-defined name of the workbook.
-     *
+     * 
      * @param name the name value to set.
      * @return the WorkbookProperties object itself.
      */
@@ -102,7 +106,7 @@ public final class WorkbookProperties {
     /**
      * Get the serializedData property: Configuration of this particular workbook. Configuration data is a string
      * containing valid JSON.
-     *
+     * 
      * @return the serializedData value.
      */
     public String serializedData() {
@@ -112,7 +116,7 @@ public final class WorkbookProperties {
     /**
      * Set the serializedData property: Configuration of this particular workbook. Configuration data is a string
      * containing valid JSON.
-     *
+     * 
      * @param serializedData the serializedData value to set.
      * @return the WorkbookProperties object itself.
      */
@@ -124,7 +128,7 @@ public final class WorkbookProperties {
     /**
      * Get the version property: This instance's version of the data model. This can change as new features are added
      * that can be marked workbook.
-     *
+     * 
      * @return the version value.
      */
     public String version() {
@@ -134,7 +138,7 @@ public final class WorkbookProperties {
     /**
      * Set the version property: This instance's version of the data model. This can change as new features are added
      * that can be marked workbook.
-     *
+     * 
      * @param version the version value to set.
      * @return the WorkbookProperties object itself.
      */
@@ -145,7 +149,7 @@ public final class WorkbookProperties {
 
     /**
      * Get the workbookId property: Internally assigned unique id of the workbook definition.
-     *
+     * 
      * @return the workbookId value.
      */
     public String workbookId() {
@@ -154,7 +158,7 @@ public final class WorkbookProperties {
 
     /**
      * Set the workbookId property: Internally assigned unique id of the workbook definition.
-     *
+     * 
      * @param workbookId the workbookId value to set.
      * @return the WorkbookProperties object itself.
      */
@@ -166,7 +170,7 @@ public final class WorkbookProperties {
     /**
      * Get the sharedTypeKind property: Enum indicating if this workbook definition is owned by a specific user or is
      * shared between all users with access to the Application Insights component.
-     *
+     * 
      * @return the sharedTypeKind value.
      */
     public SharedTypeKind sharedTypeKind() {
@@ -176,7 +180,7 @@ public final class WorkbookProperties {
     /**
      * Set the sharedTypeKind property: Enum indicating if this workbook definition is owned by a specific user or is
      * shared between all users with access to the Application Insights component.
-     *
+     * 
      * @param sharedTypeKind the sharedTypeKind value to set.
      * @return the WorkbookProperties object itself.
      */
@@ -188,7 +192,7 @@ public final class WorkbookProperties {
     /**
      * Get the timeModified property: Date and time in UTC of the last modification that was made to this workbook
      * definition.
-     *
+     * 
      * @return the timeModified value.
      */
     public String timeModified() {
@@ -197,7 +201,7 @@ public final class WorkbookProperties {
 
     /**
      * Get the category property: Workbook category, as defined by the user at creation time.
-     *
+     * 
      * @return the category value.
      */
     public String category() {
@@ -206,7 +210,7 @@ public final class WorkbookProperties {
 
     /**
      * Set the category property: Workbook category, as defined by the user at creation time.
-     *
+     * 
      * @param category the category value to set.
      * @return the WorkbookProperties object itself.
      */
@@ -217,7 +221,7 @@ public final class WorkbookProperties {
 
     /**
      * Get the tags property: A list of 0 or more tags that are associated with this workbook definition.
-     *
+     * 
      * @return the tags value.
      */
     public List<String> tags() {
@@ -226,7 +230,7 @@ public final class WorkbookProperties {
 
     /**
      * Set the tags property: A list of 0 or more tags that are associated with this workbook definition.
-     *
+     * 
      * @param tags the tags value to set.
      * @return the WorkbookProperties object itself.
      */
@@ -237,7 +241,7 @@ public final class WorkbookProperties {
 
     /**
      * Get the userId property: Unique user id of the specific user that owns this workbook.
-     *
+     * 
      * @return the userId value.
      */
     public String userId() {
@@ -246,7 +250,7 @@ public final class WorkbookProperties {
 
     /**
      * Set the userId property: Unique user id of the specific user that owns this workbook.
-     *
+     * 
      * @param userId the userId value to set.
      * @return the WorkbookProperties object itself.
      */
@@ -257,7 +261,7 @@ public final class WorkbookProperties {
 
     /**
      * Get the sourceResourceId property: Optional resourceId for a source resource.
-     *
+     * 
      * @return the sourceResourceId value.
      */
     public String sourceResourceId() {
@@ -266,7 +270,7 @@ public final class WorkbookProperties {
 
     /**
      * Set the sourceResourceId property: Optional resourceId for a source resource.
-     *
+     * 
      * @param sourceResourceId the sourceResourceId value to set.
      * @return the WorkbookProperties object itself.
      */
@@ -277,41 +281,33 @@ public final class WorkbookProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property name in model WorkbookProperties"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property name in model WorkbookProperties"));
         }
         if (serializedData() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property serializedData in model WorkbookProperties"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property serializedData in model WorkbookProperties"));
         }
         if (workbookId() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property workbookId in model WorkbookProperties"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property workbookId in model WorkbookProperties"));
         }
         if (sharedTypeKind() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property sharedTypeKind in model WorkbookProperties"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property sharedTypeKind in model WorkbookProperties"));
         }
         if (category() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property category in model WorkbookProperties"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property category in model WorkbookProperties"));
         }
         if (userId() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property userId in model WorkbookProperties"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property userId in model WorkbookProperties"));
         }
     }
 

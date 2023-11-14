@@ -103,27 +103,20 @@ public final class ActivityLogAlertResourceImpl
     }
 
     public ActivityLogAlertResource create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getActivityLogAlerts()
-                .createOrUpdateWithResponse(resourceGroupName, activityLogAlertName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getActivityLogAlerts()
+            .createOrUpdateWithResponse(resourceGroupName, activityLogAlertName, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public ActivityLogAlertResource create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getActivityLogAlerts()
-                .createOrUpdateWithResponse(resourceGroupName, activityLogAlertName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getActivityLogAlerts()
+            .createOrUpdateWithResponse(resourceGroupName, activityLogAlertName, this.innerModel(), context).getValue();
         return this;
     }
 
-    ActivityLogAlertResourceImpl(
-        String name, com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
+    ActivityLogAlertResourceImpl(String name,
+        com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = new ActivityLogAlertResourceInner();
         this.serviceManager = serviceManager;
         this.activityLogAlertName = name;
@@ -135,27 +128,20 @@ public final class ActivityLogAlertResourceImpl
     }
 
     public ActivityLogAlertResource apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getActivityLogAlerts()
-                .updateWithResponse(resourceGroupName, activityLogAlertName, updateActivityLogAlertPatch, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getActivityLogAlerts()
+            .updateWithResponse(resourceGroupName, activityLogAlertName, updateActivityLogAlertPatch, Context.NONE)
+            .getValue();
         return this;
     }
 
     public ActivityLogAlertResource apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getActivityLogAlerts()
-                .updateWithResponse(resourceGroupName, activityLogAlertName, updateActivityLogAlertPatch, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getActivityLogAlerts()
+            .updateWithResponse(resourceGroupName, activityLogAlertName, updateActivityLogAlertPatch, context)
+            .getValue();
         return this;
     }
 
-    ActivityLogAlertResourceImpl(
-        ActivityLogAlertResourceInner innerObject,
+    ActivityLogAlertResourceImpl(ActivityLogAlertResourceInner innerObject,
         com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -164,22 +150,14 @@ public final class ActivityLogAlertResourceImpl
     }
 
     public ActivityLogAlertResource refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getActivityLogAlerts()
-                .getByResourceGroupWithResponse(resourceGroupName, activityLogAlertName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getActivityLogAlerts()
+            .getByResourceGroupWithResponse(resourceGroupName, activityLogAlertName, Context.NONE).getValue();
         return this;
     }
 
     public ActivityLogAlertResource refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getActivityLogAlerts()
-                .getByResourceGroupWithResponse(resourceGroupName, activityLogAlertName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getActivityLogAlerts()
+            .getByResourceGroupWithResponse(resourceGroupName, activityLogAlertName, context).getValue();
         return this;
     }
 

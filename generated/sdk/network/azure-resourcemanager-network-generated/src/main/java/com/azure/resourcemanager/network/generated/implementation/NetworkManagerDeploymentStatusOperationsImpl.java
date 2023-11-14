@@ -21,36 +21,28 @@ public final class NetworkManagerDeploymentStatusOperationsImpl implements Netwo
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public NetworkManagerDeploymentStatusOperationsImpl(
-        NetworkManagerDeploymentStatusOperationsClient innerClient,
+    public NetworkManagerDeploymentStatusOperationsImpl(NetworkManagerDeploymentStatusOperationsClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<NetworkManagerDeploymentStatusListResult> listWithResponse(
-        String resourceGroupName,
-        String networkManagerName,
-        NetworkManagerDeploymentStatusParameter parameters,
-        Integer top,
-        Context context) {
-        Response<NetworkManagerDeploymentStatusListResultInner> inner =
-            this.serviceClient().listWithResponse(resourceGroupName, networkManagerName, parameters, top, context);
+    public Response<NetworkManagerDeploymentStatusListResult> listWithResponse(String resourceGroupName,
+        String networkManagerName, NetworkManagerDeploymentStatusParameter parameters, Integer top, Context context) {
+        Response<NetworkManagerDeploymentStatusListResultInner> inner
+            = this.serviceClient().listWithResponse(resourceGroupName, networkManagerName, parameters, top, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new NetworkManagerDeploymentStatusListResultImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public NetworkManagerDeploymentStatusListResult list(
-        String resourceGroupName, String networkManagerName, NetworkManagerDeploymentStatusParameter parameters) {
-        NetworkManagerDeploymentStatusListResultInner inner =
-            this.serviceClient().list(resourceGroupName, networkManagerName, parameters);
+    public NetworkManagerDeploymentStatusListResult list(String resourceGroupName, String networkManagerName,
+        NetworkManagerDeploymentStatusParameter parameters) {
+        NetworkManagerDeploymentStatusListResultInner inner
+            = this.serviceClient().list(resourceGroupName, networkManagerName, parameters);
         if (inner != null) {
             return new NetworkManagerDeploymentStatusListResultImpl(inner, this.manager());
         } else {

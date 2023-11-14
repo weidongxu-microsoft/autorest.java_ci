@@ -7,12 +7,14 @@ package com.azure.resourcemanager.eventhubs.generated.models;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.ClusterQuotaConfigurationPropertiesInner;
 import java.util.Map;
 
-/** An immutable client-side representation of ClusterQuotaConfigurationProperties. */
+/**
+ * An immutable client-side representation of ClusterQuotaConfigurationProperties.
+ */
 public interface ClusterQuotaConfigurationProperties {
     /**
      * Gets the settings property: All possible Cluster settings - a collection of key/value paired settings which apply
      * to quotas and configurations imposed on the cluster.
-     *
+     * 
      * @return the settings value.
      */
     Map<String, String> settings();
@@ -20,7 +22,7 @@ public interface ClusterQuotaConfigurationProperties {
     /**
      * Gets the inner
      * com.azure.resourcemanager.eventhubs.generated.fluent.models.ClusterQuotaConfigurationPropertiesInner object.
-     *
+     * 
      * @return the inner object.
      */
     ClusterQuotaConfigurationPropertiesInner innerModel();

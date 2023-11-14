@@ -7,18 +7,20 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.resourcemanager.network.generated.fluent.models.SwapResourceListResultInner;
 import java.util.List;
 
-/** An immutable client-side representation of SwapResourceListResult. */
+/**
+ * An immutable client-side representation of SwapResourceListResult.
+ */
 public interface SwapResourceListResult {
     /**
      * Gets the value property: The value property.
-     *
+     * 
      * @return the value value.
      */
     List<SwapResource> value();
 
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.SwapResourceListResultInner object.
-     *
+     * 
      * @return the inner object.
      */
     SwapResourceListResultInner innerModel();

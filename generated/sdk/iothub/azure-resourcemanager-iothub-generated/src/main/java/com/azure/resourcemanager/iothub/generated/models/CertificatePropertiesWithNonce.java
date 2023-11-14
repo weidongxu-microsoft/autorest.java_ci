@@ -9,7 +9,9 @@ import com.azure.core.util.DateTimeRfc1123;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
-/** The description of an X509 CA Certificate including the challenge nonce issued for the Proof-Of-Possession flow. */
+/**
+ * The description of an X509 CA Certificate including the challenge nonce issued for the Proof-Of-Possession flow.
+ */
 @Immutable
 public final class CertificatePropertiesWithNonce {
     /*
@@ -60,13 +62,15 @@ public final class CertificatePropertiesWithNonce {
     @JsonProperty(value = "certificate", access = JsonProperty.Access.WRITE_ONLY)
     private String certificate;
 
-    /** Creates an instance of CertificatePropertiesWithNonce class. */
+    /**
+     * Creates an instance of CertificatePropertiesWithNonce class.
+     */
     public CertificatePropertiesWithNonce() {
     }
 
     /**
      * Get the subject property: The certificate's subject name.
-     *
+     * 
      * @return the subject value.
      */
     public String subject() {
@@ -75,7 +79,7 @@ public final class CertificatePropertiesWithNonce {
 
     /**
      * Get the expiry property: The certificate's expiration date and time.
-     *
+     * 
      * @return the expiry value.
      */
     public OffsetDateTime expiry() {
@@ -87,7 +91,7 @@ public final class CertificatePropertiesWithNonce {
 
     /**
      * Get the thumbprint property: The certificate's thumbprint.
-     *
+     * 
      * @return the thumbprint value.
      */
     public String thumbprint() {
@@ -96,7 +100,7 @@ public final class CertificatePropertiesWithNonce {
 
     /**
      * Get the isVerified property: Determines whether certificate has been verified.
-     *
+     * 
      * @return the isVerified value.
      */
     public Boolean isVerified() {
@@ -105,7 +109,7 @@ public final class CertificatePropertiesWithNonce {
 
     /**
      * Get the created property: The certificate's create date and time.
-     *
+     * 
      * @return the created value.
      */
     public OffsetDateTime created() {
@@ -117,7 +121,7 @@ public final class CertificatePropertiesWithNonce {
 
     /**
      * Get the updated property: The certificate's last update date and time.
-     *
+     * 
      * @return the updated value.
      */
     public OffsetDateTime updated() {
@@ -128,8 +132,9 @@ public final class CertificatePropertiesWithNonce {
     }
 
     /**
-     * Get the verificationCode property: The certificate's verification code that will be used for proof of possession.
-     *
+     * Get the verificationCode property: The certificate's verification code that will be used for proof of
+     * possession.
+     * 
      * @return the verificationCode value.
      */
     public String verificationCode() {
@@ -138,7 +143,7 @@ public final class CertificatePropertiesWithNonce {
 
     /**
      * Get the certificate property: The certificate content.
-     *
+     * 
      * @return the certificate value.
      */
     public String certificate() {
@@ -147,7 +152,7 @@ public final class CertificatePropertiesWithNonce {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

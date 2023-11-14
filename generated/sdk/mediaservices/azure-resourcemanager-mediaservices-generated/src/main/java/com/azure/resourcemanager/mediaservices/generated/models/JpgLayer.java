@@ -7,7 +7,9 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Describes the settings to produce a JPEG image from the input video. */
+/**
+ * Describes the settings to produce a JPEG image from the input video.
+ */
 @Fluent
 public final class JpgLayer extends Layer {
     /*
@@ -16,13 +18,15 @@ public final class JpgLayer extends Layer {
     @JsonProperty(value = "quality")
     private Integer quality;
 
-    /** Creates an instance of JpgLayer class. */
+    /**
+     * Creates an instance of JpgLayer class.
+     */
     public JpgLayer() {
     }
 
     /**
      * Get the quality property: The compression quality of the JPEG output. Range is from 0-100 and the default is 70.
-     *
+     * 
      * @return the quality value.
      */
     public Integer quality() {
@@ -31,7 +35,7 @@ public final class JpgLayer extends Layer {
 
     /**
      * Set the quality property: The compression quality of the JPEG output. Range is from 0-100 and the default is 70.
-     *
+     * 
      * @param quality the quality value to set.
      * @return the JpgLayer object itself.
      */
@@ -40,21 +44,27 @@ public final class JpgLayer extends Layer {
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public JpgLayer withWidth(String width) {
         super.withWidth(width);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public JpgLayer withHeight(String height) {
         super.withHeight(height);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public JpgLayer withLabel(String label) {
         super.withLabel(label);
@@ -63,7 +73,7 @@ public final class JpgLayer extends Layer {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

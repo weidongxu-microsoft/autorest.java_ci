@@ -16,8 +16,7 @@ public final class NetworkSettingsImpl implements NetworkSettings {
 
     private final com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager;
 
-    NetworkSettingsImpl(
-        NetworkSettingsInner innerObject,
+    NetworkSettingsImpl(NetworkSettingsInner innerObject,
         com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

@@ -8,15 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of ManagedHsmKeys. */
+/**
+ * Resource collection API of ManagedHsmKeys.
+ */
 public interface ManagedHsmKeys {
     /**
      * Gets the current version of the specified key from the specified managed HSM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
      * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
-     *     running the service. The value provided should not include personally identifiable or sensitive information.
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -27,11 +29,11 @@ public interface ManagedHsmKeys {
 
     /**
      * Gets the current version of the specified key from the specified managed HSM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
      * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
-     *     running the service. The value provided should not include personally identifiable or sensitive information.
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -41,7 +43,7 @@ public interface ManagedHsmKeys {
 
     /**
      * Lists the keys in the specified managed HSM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -53,7 +55,7 @@ public interface ManagedHsmKeys {
 
     /**
      * Lists the keys in the specified managed HSM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
      * @param context The context to associate with this operation.
@@ -66,11 +68,11 @@ public interface ManagedHsmKeys {
 
     /**
      * Gets the specified version of the specified key in the specified managed HSM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
      * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
-     *     running the service. The value provided should not include personally identifiable or sensitive information.
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param keyVersion The version of the key to be retrieved.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -78,16 +80,16 @@ public interface ManagedHsmKeys {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified version of the specified key in the specified managed HSM along with {@link Response}.
      */
-    Response<ManagedHsmKey> getVersionWithResponse(
-        String resourceGroupName, String name, String keyName, String keyVersion, Context context);
+    Response<ManagedHsmKey> getVersionWithResponse(String resourceGroupName, String name, String keyName,
+        String keyVersion, Context context);
 
     /**
      * Gets the specified version of the specified key in the specified managed HSM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
      * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
-     *     running the service. The value provided should not include personally identifiable or sensitive information.
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param keyVersion The version of the key to be retrieved.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -98,11 +100,11 @@ public interface ManagedHsmKeys {
 
     /**
      * Lists the versions of the specified key in the specified managed HSM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
      * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
-     *     running the service. The value provided should not include personally identifiable or sensitive information.
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -112,11 +114,11 @@ public interface ManagedHsmKeys {
 
     /**
      * Lists the versions of the specified key in the specified managed HSM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
      * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
-     *     running the service. The value provided should not include personally identifiable or sensitive information.
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -127,7 +129,7 @@ public interface ManagedHsmKeys {
 
     /**
      * Gets the current version of the specified key from the specified managed HSM.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -138,7 +140,7 @@ public interface ManagedHsmKeys {
 
     /**
      * Gets the current version of the specified key from the specified managed HSM.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -150,7 +152,7 @@ public interface ManagedHsmKeys {
 
     /**
      * Begins definition for a new ManagedHsmKey resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new ManagedHsmKey definition.
      */

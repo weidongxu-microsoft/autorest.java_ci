@@ -12,8 +12,7 @@ public final class DiagnosticCategoryImpl implements DiagnosticCategory {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    DiagnosticCategoryImpl(
-        DiagnosticCategoryInner innerObject,
+    DiagnosticCategoryImpl(DiagnosticCategoryInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

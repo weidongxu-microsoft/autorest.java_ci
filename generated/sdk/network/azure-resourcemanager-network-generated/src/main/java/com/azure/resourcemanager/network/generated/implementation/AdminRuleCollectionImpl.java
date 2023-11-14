@@ -80,8 +80,8 @@ public final class AdminRuleCollectionImpl
 
     private String ruleCollectionName;
 
-    public AdminRuleCollectionImpl withExistingSecurityAdminConfiguration(
-        String resourceGroupName, String networkManagerName, String configurationName) {
+    public AdminRuleCollectionImpl withExistingSecurityAdminConfiguration(String resourceGroupName,
+        String networkManagerName, String configurationName) {
         this.resourceGroupName = resourceGroupName;
         this.networkManagerName = networkManagerName;
         this.configurationName = configurationName;
@@ -89,34 +89,18 @@ public final class AdminRuleCollectionImpl
     }
 
     public AdminRuleCollection create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getAdminRuleCollections()
-                .createOrUpdateWithResponse(
-                    resourceGroupName,
-                    networkManagerName,
-                    configurationName,
-                    ruleCollectionName,
-                    this.innerModel(),
-                    Context.NONE)
+        this.innerObject
+            = serviceManager
+                .serviceClient().getAdminRuleCollections().createOrUpdateWithResponse(resourceGroupName,
+                    networkManagerName, configurationName, ruleCollectionName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
 
     public AdminRuleCollection create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getAdminRuleCollections()
-                .createOrUpdateWithResponse(
-                    resourceGroupName,
-                    networkManagerName,
-                    configurationName,
-                    ruleCollectionName,
-                    this.innerModel(),
-                    context)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getAdminRuleCollections().createOrUpdateWithResponse(resourceGroupName,
+                networkManagerName, configurationName, ruleCollectionName, this.innerModel(), context).getValue();
         return this;
     }
 
@@ -131,39 +115,22 @@ public final class AdminRuleCollectionImpl
     }
 
     public AdminRuleCollection apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getAdminRuleCollections()
-                .createOrUpdateWithResponse(
-                    resourceGroupName,
-                    networkManagerName,
-                    configurationName,
-                    ruleCollectionName,
-                    this.innerModel(),
-                    Context.NONE)
+        this.innerObject
+            = serviceManager
+                .serviceClient().getAdminRuleCollections().createOrUpdateWithResponse(resourceGroupName,
+                    networkManagerName, configurationName, ruleCollectionName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
 
     public AdminRuleCollection apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getAdminRuleCollections()
-                .createOrUpdateWithResponse(
-                    resourceGroupName,
-                    networkManagerName,
-                    configurationName,
-                    ruleCollectionName,
-                    this.innerModel(),
-                    context)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getAdminRuleCollections().createOrUpdateWithResponse(resourceGroupName,
+                networkManagerName, configurationName, ruleCollectionName, this.innerModel(), context).getValue();
         return this;
     }
 
-    AdminRuleCollectionImpl(
-        AdminRuleCollectionInner innerObject,
+    AdminRuleCollectionImpl(AdminRuleCollectionInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -174,23 +141,16 @@ public final class AdminRuleCollectionImpl
     }
 
     public AdminRuleCollection refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getAdminRuleCollections()
-                .getWithResponse(
-                    resourceGroupName, networkManagerName, configurationName, ruleCollectionName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getAdminRuleCollections()
+            .getWithResponse(resourceGroupName, networkManagerName, configurationName, ruleCollectionName, Context.NONE)
+            .getValue();
         return this;
     }
 
     public AdminRuleCollection refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getAdminRuleCollections()
-                .getWithResponse(resourceGroupName, networkManagerName, configurationName, ruleCollectionName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getAdminRuleCollections()
+            .getWithResponse(resourceGroupName, networkManagerName, configurationName, ruleCollectionName, context)
+            .getValue();
         return this;
     }
 

@@ -15,8 +15,7 @@ public final class AzureFirewallFqdnTagImpl implements AzureFirewallFqdnTag {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    AzureFirewallFqdnTagImpl(
-        AzureFirewallFqdnTagInner innerObject,
+    AzureFirewallFqdnTagImpl(AzureFirewallFqdnTagInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

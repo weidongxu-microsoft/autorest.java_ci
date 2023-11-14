@@ -10,7 +10,9 @@ import com.azure.resourcemanager.compute.generated.models.SharedGalleryImageVers
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
-/** Specifies information about the gallery image version that you want to create or update. */
+/**
+ * Specifies information about the gallery image version that you want to create or update.
+ */
 @Fluent
 public final class CommunityGalleryImageVersionInner extends PirCommunityGalleryResource {
     /*
@@ -19,20 +21,24 @@ public final class CommunityGalleryImageVersionInner extends PirCommunityGallery
     @JsonProperty(value = "properties")
     private CommunityGalleryImageVersionProperties innerProperties;
 
-    /** Creates an instance of CommunityGalleryImageVersionInner class. */
+    /**
+     * Creates an instance of CommunityGalleryImageVersionInner class.
+     */
     public CommunityGalleryImageVersionInner() {
     }
 
     /**
      * Get the innerProperties property: Describes the properties of a gallery image version.
-     *
+     * 
      * @return the innerProperties value.
      */
     private CommunityGalleryImageVersionProperties innerProperties() {
         return this.innerProperties;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public CommunityGalleryImageVersionInner withUniqueId(String uniqueId) {
         super.withUniqueId(uniqueId);
@@ -42,7 +48,7 @@ public final class CommunityGalleryImageVersionInner extends PirCommunityGallery
     /**
      * Get the publishedDate property: The published date of the gallery image version Definition. This property can be
      * used for decommissioning purposes. This property is updatable.
-     *
+     * 
      * @return the publishedDate value.
      */
     public OffsetDateTime publishedDate() {
@@ -52,7 +58,7 @@ public final class CommunityGalleryImageVersionInner extends PirCommunityGallery
     /**
      * Set the publishedDate property: The published date of the gallery image version Definition. This property can be
      * used for decommissioning purposes. This property is updatable.
-     *
+     * 
      * @param publishedDate the publishedDate value to set.
      * @return the CommunityGalleryImageVersionInner object itself.
      */
@@ -67,7 +73,7 @@ public final class CommunityGalleryImageVersionInner extends PirCommunityGallery
     /**
      * Get the endOfLifeDate property: The end of life date of the gallery image version Definition. This property can
      * be used for decommissioning purposes. This property is updatable.
-     *
+     * 
      * @return the endOfLifeDate value.
      */
     public OffsetDateTime endOfLifeDate() {
@@ -77,7 +83,7 @@ public final class CommunityGalleryImageVersionInner extends PirCommunityGallery
     /**
      * Set the endOfLifeDate property: The end of life date of the gallery image version Definition. This property can
      * be used for decommissioning purposes. This property is updatable.
-     *
+     * 
      * @param endOfLifeDate the endOfLifeDate value to set.
      * @return the CommunityGalleryImageVersionInner object itself.
      */
@@ -92,7 +98,7 @@ public final class CommunityGalleryImageVersionInner extends PirCommunityGallery
     /**
      * Get the excludeFromLatest property: If set to true, Virtual Machines deployed from the latest version of the
      * Image Definition won't use this Image Version.
-     *
+     * 
      * @return the excludeFromLatest value.
      */
     public Boolean excludeFromLatest() {
@@ -102,7 +108,7 @@ public final class CommunityGalleryImageVersionInner extends PirCommunityGallery
     /**
      * Set the excludeFromLatest property: If set to true, Virtual Machines deployed from the latest version of the
      * Image Definition won't use this Image Version.
-     *
+     * 
      * @param excludeFromLatest the excludeFromLatest value to set.
      * @return the CommunityGalleryImageVersionInner object itself.
      */
@@ -116,7 +122,7 @@ public final class CommunityGalleryImageVersionInner extends PirCommunityGallery
 
     /**
      * Get the storageProfile property: Describes the storage profile of the image version.
-     *
+     * 
      * @return the storageProfile value.
      */
     public SharedGalleryImageVersionStorageProfile storageProfile() {
@@ -125,12 +131,12 @@ public final class CommunityGalleryImageVersionInner extends PirCommunityGallery
 
     /**
      * Set the storageProfile property: Describes the storage profile of the image version.
-     *
+     * 
      * @param storageProfile the storageProfile value to set.
      * @return the CommunityGalleryImageVersionInner object itself.
      */
-    public CommunityGalleryImageVersionInner withStorageProfile(
-        SharedGalleryImageVersionStorageProfile storageProfile) {
+    public CommunityGalleryImageVersionInner
+        withStorageProfile(SharedGalleryImageVersionStorageProfile storageProfile) {
         if (this.innerProperties() == null) {
             this.innerProperties = new CommunityGalleryImageVersionProperties();
         }
@@ -140,7 +146,7 @@ public final class CommunityGalleryImageVersionInner extends PirCommunityGallery
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

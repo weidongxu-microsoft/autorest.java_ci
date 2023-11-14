@@ -160,20 +160,14 @@ public final class PublicIpPrefixImpl implements PublicIpPrefix, PublicIpPrefix.
     }
 
     public PublicIpPrefix create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getPublicIpPrefixes()
-                .createOrUpdate(resourceGroupName, publicIpPrefixName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getPublicIpPrefixes().createOrUpdate(resourceGroupName,
+            publicIpPrefixName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public PublicIpPrefix create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getPublicIpPrefixes()
-                .createOrUpdate(resourceGroupName, publicIpPrefixName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getPublicIpPrefixes().createOrUpdate(resourceGroupName,
+            publicIpPrefixName, this.innerModel(), context);
         return this;
     }
 
@@ -189,27 +183,19 @@ public final class PublicIpPrefixImpl implements PublicIpPrefix, PublicIpPrefix.
     }
 
     public PublicIpPrefix apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getPublicIpPrefixes()
-                .updateTagsWithResponse(resourceGroupName, publicIpPrefixName, updateParameters, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getPublicIpPrefixes()
+            .updateTagsWithResponse(resourceGroupName, publicIpPrefixName, updateParameters, Context.NONE).getValue();
         return this;
     }
 
     public PublicIpPrefix apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getPublicIpPrefixes()
-                .updateTagsWithResponse(resourceGroupName, publicIpPrefixName, updateParameters, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getPublicIpPrefixes()
+            .updateTagsWithResponse(resourceGroupName, publicIpPrefixName, updateParameters, context).getValue();
         return this;
     }
 
-    PublicIpPrefixImpl(
-        PublicIpPrefixInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    PublicIpPrefixImpl(PublicIpPrefixInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
@@ -218,23 +204,16 @@ public final class PublicIpPrefixImpl implements PublicIpPrefix, PublicIpPrefix.
 
     public PublicIpPrefix refresh() {
         String localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getPublicIpPrefixes()
-                .getByResourceGroupWithResponse(resourceGroupName, publicIpPrefixName, localExpand, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getPublicIpPrefixes()
+            .getByResourceGroupWithResponse(resourceGroupName, publicIpPrefixName, localExpand, Context.NONE)
+            .getValue();
         return this;
     }
 
     public PublicIpPrefix refresh(Context context) {
         String localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getPublicIpPrefixes()
-                .getByResourceGroupWithResponse(resourceGroupName, publicIpPrefixName, localExpand, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getPublicIpPrefixes()
+            .getByResourceGroupWithResponse(resourceGroupName, publicIpPrefixName, localExpand, context).getValue();
         return this;
     }
 

@@ -7,7 +7,9 @@ package com.azure.resourcemanager.iothub.generated.fluent.models;
 import com.azure.core.annotation.Immutable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Identity registry statistics. */
+/**
+ * Identity registry statistics.
+ */
 @Immutable
 public final class RegistryStatisticsInner {
     /*
@@ -28,13 +30,15 @@ public final class RegistryStatisticsInner {
     @JsonProperty(value = "disabledDeviceCount", access = JsonProperty.Access.WRITE_ONLY)
     private Long disabledDeviceCount;
 
-    /** Creates an instance of RegistryStatisticsInner class. */
+    /**
+     * Creates an instance of RegistryStatisticsInner class.
+     */
     public RegistryStatisticsInner() {
     }
 
     /**
      * Get the totalDeviceCount property: The total count of devices in the identity registry.
-     *
+     * 
      * @return the totalDeviceCount value.
      */
     public Long totalDeviceCount() {
@@ -43,7 +47,7 @@ public final class RegistryStatisticsInner {
 
     /**
      * Get the enabledDeviceCount property: The count of enabled devices in the identity registry.
-     *
+     * 
      * @return the enabledDeviceCount value.
      */
     public Long enabledDeviceCount() {
@@ -52,7 +56,7 @@ public final class RegistryStatisticsInner {
 
     /**
      * Get the disabledDeviceCount property: The count of disabled devices in the identity registry.
-     *
+     * 
      * @return the disabledDeviceCount value.
      */
     public Long disabledDeviceCount() {
@@ -61,7 +65,7 @@ public final class RegistryStatisticsInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -6,11 +6,13 @@ package com.azure.resourcemanager.search.generated.models;
 
 import com.azure.resourcemanager.search.generated.fluent.models.CheckNameAvailabilityOutputInner;
 
-/** An immutable client-side representation of CheckNameAvailabilityOutput. */
+/**
+ * An immutable client-side representation of CheckNameAvailabilityOutput.
+ */
 public interface CheckNameAvailabilityOutput {
     /**
      * Gets the isNameAvailable property: A value indicating whether the name is available.
-     *
+     * 
      * @return the isNameAvailable value.
      */
     Boolean isNameAvailable();
@@ -19,7 +21,7 @@ public interface CheckNameAvailabilityOutput {
      * Gets the reason property: The reason why the name is not available. 'Invalid' indicates the name provided does
      * not match the naming requirements (incorrect length, unsupported characters, etc.). 'AlreadyExists' indicates
      * that the name is already in use and is therefore unavailable.
-     *
+     * 
      * @return the reason value.
      */
     UnavailableNameReason reason();
@@ -27,14 +29,14 @@ public interface CheckNameAvailabilityOutput {
     /**
      * Gets the message property: A message that explains why the name is invalid and provides resource naming
      * requirements. Available only if 'Invalid' is returned in the 'reason' property.
-     *
+     * 
      * @return the message value.
      */
     String message();
 
     /**
      * Gets the inner com.azure.resourcemanager.search.generated.fluent.models.CheckNameAvailabilityOutputInner object.
-     *
+     * 
      * @return the inner object.
      */
     CheckNameAvailabilityOutputInner innerModel();

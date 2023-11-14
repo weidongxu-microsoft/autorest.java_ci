@@ -13,8 +13,7 @@ public final class CertificateEmailImpl implements CertificateEmail {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    CertificateEmailImpl(
-        CertificateEmailInner innerObject,
+    CertificateEmailImpl(CertificateEmailInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

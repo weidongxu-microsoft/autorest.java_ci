@@ -33,18 +33,15 @@ public final class ApplicationGatewayPrivateEndpointConnectionsImpl
         this.serviceClient().delete(resourceGroupName, applicationGatewayName, connectionName);
     }
 
-    public void delete(
-        String resourceGroupName, String applicationGatewayName, String connectionName, Context context) {
+    public void delete(String resourceGroupName, String applicationGatewayName, String connectionName,
+        Context context) {
         this.serviceClient().delete(resourceGroupName, applicationGatewayName, connectionName, context);
     }
 
-    public ApplicationGatewayPrivateEndpointConnection update(
-        String resourceGroupName,
-        String applicationGatewayName,
-        String connectionName,
-        ApplicationGatewayPrivateEndpointConnectionInner parameters) {
-        ApplicationGatewayPrivateEndpointConnectionInner inner =
-            this.serviceClient().update(resourceGroupName, applicationGatewayName, connectionName, parameters);
+    public ApplicationGatewayPrivateEndpointConnection update(String resourceGroupName, String applicationGatewayName,
+        String connectionName, ApplicationGatewayPrivateEndpointConnectionInner parameters) {
+        ApplicationGatewayPrivateEndpointConnectionInner inner
+            = this.serviceClient().update(resourceGroupName, applicationGatewayName, connectionName, parameters);
         if (inner != null) {
             return new ApplicationGatewayPrivateEndpointConnectionImpl(inner, this.manager());
         } else {
@@ -52,14 +49,10 @@ public final class ApplicationGatewayPrivateEndpointConnectionsImpl
         }
     }
 
-    public ApplicationGatewayPrivateEndpointConnection update(
-        String resourceGroupName,
-        String applicationGatewayName,
-        String connectionName,
-        ApplicationGatewayPrivateEndpointConnectionInner parameters,
-        Context context) {
-        ApplicationGatewayPrivateEndpointConnectionInner inner =
-            this.serviceClient().update(resourceGroupName, applicationGatewayName, connectionName, parameters, context);
+    public ApplicationGatewayPrivateEndpointConnection update(String resourceGroupName, String applicationGatewayName,
+        String connectionName, ApplicationGatewayPrivateEndpointConnectionInner parameters, Context context) {
+        ApplicationGatewayPrivateEndpointConnectionInner inner = this.serviceClient().update(resourceGroupName,
+            applicationGatewayName, connectionName, parameters, context);
         if (inner != null) {
             return new ApplicationGatewayPrivateEndpointConnectionImpl(inner, this.manager());
         } else {
@@ -67,25 +60,22 @@ public final class ApplicationGatewayPrivateEndpointConnectionsImpl
         }
     }
 
-    public Response<ApplicationGatewayPrivateEndpointConnection> getWithResponse(
-        String resourceGroupName, String applicationGatewayName, String connectionName, Context context) {
-        Response<ApplicationGatewayPrivateEndpointConnectionInner> inner =
-            this.serviceClient().getWithResponse(resourceGroupName, applicationGatewayName, connectionName, context);
+    public Response<ApplicationGatewayPrivateEndpointConnection> getWithResponse(String resourceGroupName,
+        String applicationGatewayName, String connectionName, Context context) {
+        Response<ApplicationGatewayPrivateEndpointConnectionInner> inner
+            = this.serviceClient().getWithResponse(resourceGroupName, applicationGatewayName, connectionName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ApplicationGatewayPrivateEndpointConnectionImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public ApplicationGatewayPrivateEndpointConnection get(
-        String resourceGroupName, String applicationGatewayName, String connectionName) {
-        ApplicationGatewayPrivateEndpointConnectionInner inner =
-            this.serviceClient().get(resourceGroupName, applicationGatewayName, connectionName);
+    public ApplicationGatewayPrivateEndpointConnection get(String resourceGroupName, String applicationGatewayName,
+        String connectionName) {
+        ApplicationGatewayPrivateEndpointConnectionInner inner
+            = this.serviceClient().get(resourceGroupName, applicationGatewayName, connectionName);
         if (inner != null) {
             return new ApplicationGatewayPrivateEndpointConnectionImpl(inner, this.manager());
         } else {
@@ -93,20 +83,20 @@ public final class ApplicationGatewayPrivateEndpointConnectionsImpl
         }
     }
 
-    public PagedIterable<ApplicationGatewayPrivateEndpointConnection> list(
-        String resourceGroupName, String applicationGatewayName) {
-        PagedIterable<ApplicationGatewayPrivateEndpointConnectionInner> inner =
-            this.serviceClient().list(resourceGroupName, applicationGatewayName);
-        return Utils
-            .mapPage(inner, inner1 -> new ApplicationGatewayPrivateEndpointConnectionImpl(inner1, this.manager()));
+    public PagedIterable<ApplicationGatewayPrivateEndpointConnection> list(String resourceGroupName,
+        String applicationGatewayName) {
+        PagedIterable<ApplicationGatewayPrivateEndpointConnectionInner> inner
+            = this.serviceClient().list(resourceGroupName, applicationGatewayName);
+        return Utils.mapPage(inner,
+            inner1 -> new ApplicationGatewayPrivateEndpointConnectionImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<ApplicationGatewayPrivateEndpointConnection> list(
-        String resourceGroupName, String applicationGatewayName, Context context) {
-        PagedIterable<ApplicationGatewayPrivateEndpointConnectionInner> inner =
-            this.serviceClient().list(resourceGroupName, applicationGatewayName, context);
-        return Utils
-            .mapPage(inner, inner1 -> new ApplicationGatewayPrivateEndpointConnectionImpl(inner1, this.manager()));
+    public PagedIterable<ApplicationGatewayPrivateEndpointConnection> list(String resourceGroupName,
+        String applicationGatewayName, Context context) {
+        PagedIterable<ApplicationGatewayPrivateEndpointConnectionInner> inner
+            = this.serviceClient().list(resourceGroupName, applicationGatewayName, context);
+        return Utils.mapPage(inner,
+            inner1 -> new ApplicationGatewayPrivateEndpointConnectionImpl(inner1, this.manager()));
     }
 
     private ApplicationGatewayPrivateEndpointConnectionsClient serviceClient() {

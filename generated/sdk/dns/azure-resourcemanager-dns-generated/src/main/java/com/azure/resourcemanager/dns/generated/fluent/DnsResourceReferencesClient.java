@@ -11,11 +11,13 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.dns.generated.fluent.models.DnsResourceReferenceResultInner;
 import com.azure.resourcemanager.dns.generated.models.DnsResourceReferenceRequest;
 
-/** An instance of this class provides access to all the operations defined in DnsResourceReferencesClient. */
+/**
+ * An instance of this class provides access to all the operations defined in DnsResourceReferencesClient.
+ */
 public interface DnsResourceReferencesClient {
     /**
      * Returns the DNS records specified by the referencing targetResourceIds.
-     *
+     * 
      * @param parameters Properties for dns resource reference request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -24,12 +26,12 @@ public interface DnsResourceReferencesClient {
      * @return represents the properties of the Dns Resource Reference Result along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<DnsResourceReferenceResultInner> getByTargetResourcesWithResponse(
-        DnsResourceReferenceRequest parameters, Context context);
+    Response<DnsResourceReferenceResultInner> getByTargetResourcesWithResponse(DnsResourceReferenceRequest parameters,
+        Context context);
 
     /**
      * Returns the DNS records specified by the referencing targetResourceIds.
-     *
+     * 
      * @param parameters Properties for dns resource reference request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

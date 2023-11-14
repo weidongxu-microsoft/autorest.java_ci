@@ -7,7 +7,9 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Cluster Storage Data. */
+/**
+ * Cluster Storage Data.
+ */
 @Fluent
 public final class ClusterStorageViewData {
     /*
@@ -22,13 +24,15 @@ public final class ClusterStorageViewData {
     @JsonProperty(value = "clusterFreeStorageMb")
     private Double clusterFreeStorageMb;
 
-    /** Creates an instance of ClusterStorageViewData class. */
+    /**
+     * Creates an instance of ClusterStorageViewData class.
+     */
     public ClusterStorageViewData() {
     }
 
     /**
      * Get the clusterTotalStorageMb property: Total storage on the cluster in MB.
-     *
+     * 
      * @return the clusterTotalStorageMb value.
      */
     public Double clusterTotalStorageMb() {
@@ -37,7 +41,7 @@ public final class ClusterStorageViewData {
 
     /**
      * Set the clusterTotalStorageMb property: Total storage on the cluster in MB.
-     *
+     * 
      * @param clusterTotalStorageMb the clusterTotalStorageMb value to set.
      * @return the ClusterStorageViewData object itself.
      */
@@ -48,7 +52,7 @@ public final class ClusterStorageViewData {
 
     /**
      * Get the clusterFreeStorageMb property: The available or free storage on the cluster in MB.
-     *
+     * 
      * @return the clusterFreeStorageMb value.
      */
     public Double clusterFreeStorageMb() {
@@ -57,7 +61,7 @@ public final class ClusterStorageViewData {
 
     /**
      * Set the clusterFreeStorageMb property: The available or free storage on the cluster in MB.
-     *
+     * 
      * @param clusterFreeStorageMb the clusterFreeStorageMb value to set.
      * @return the ClusterStorageViewData object itself.
      */
@@ -68,7 +72,7 @@ public final class ClusterStorageViewData {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -18,11 +18,13 @@ import java.nio.ByteBuffer;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-/** An instance of this class provides access to all the operations defined in VirtualNetworkRulesClient. */
+/**
+ * An instance of this class provides access to all the operations defined in VirtualNetworkRulesClient.
+ */
 public interface VirtualNetworkRulesClient {
     /**
      * Gets a virtual network rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param virtualNetworkRuleName The name of the virtual network rule.
@@ -32,12 +34,12 @@ public interface VirtualNetworkRulesClient {
      * @return a virtual network rule along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Mono<Response<VirtualNetworkRuleInner>> getWithResponseAsync(
-        String resourceGroupName, String serverName, String virtualNetworkRuleName);
+    Mono<Response<VirtualNetworkRuleInner>> getWithResponseAsync(String resourceGroupName, String serverName,
+        String virtualNetworkRuleName);
 
     /**
      * Gets a virtual network rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param virtualNetworkRuleName The name of the virtual network rule.
@@ -51,7 +53,7 @@ public interface VirtualNetworkRulesClient {
 
     /**
      * Gets a virtual network rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param virtualNetworkRuleName The name of the virtual network rule.
@@ -62,12 +64,12 @@ public interface VirtualNetworkRulesClient {
      * @return a virtual network rule along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<VirtualNetworkRuleInner> getWithResponse(
-        String resourceGroupName, String serverName, String virtualNetworkRuleName, Context context);
+    Response<VirtualNetworkRuleInner> getWithResponse(String resourceGroupName, String serverName,
+        String virtualNetworkRuleName, Context context);
 
     /**
      * Gets a virtual network rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param virtualNetworkRuleName The name of the virtual network rule.
@@ -81,7 +83,7 @@ public interface VirtualNetworkRulesClient {
 
     /**
      * Creates or updates an existing virtual network rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param virtualNetworkRuleName The name of the virtual network rule.
@@ -92,12 +94,12 @@ public interface VirtualNetworkRulesClient {
      * @return a virtual network rule along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(
-        String resourceGroupName, String serverName, String virtualNetworkRuleName, VirtualNetworkRuleInner parameters);
+    Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName, String serverName,
+        String virtualNetworkRuleName, VirtualNetworkRuleInner parameters);
 
     /**
      * Creates or updates an existing virtual network rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param virtualNetworkRuleName The name of the virtual network rule.
@@ -113,7 +115,7 @@ public interface VirtualNetworkRulesClient {
 
     /**
      * Creates or updates an existing virtual network rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param virtualNetworkRuleName The name of the virtual network rule.
@@ -129,7 +131,7 @@ public interface VirtualNetworkRulesClient {
 
     /**
      * Creates or updates an existing virtual network rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param virtualNetworkRuleName The name of the virtual network rule.
@@ -142,15 +144,12 @@ public interface VirtualNetworkRulesClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<VirtualNetworkRuleInner>, VirtualNetworkRuleInner> beginCreateOrUpdate(
-        String resourceGroupName,
-        String serverName,
-        String virtualNetworkRuleName,
-        VirtualNetworkRuleInner parameters,
+        String resourceGroupName, String serverName, String virtualNetworkRuleName, VirtualNetworkRuleInner parameters,
         Context context);
 
     /**
      * Creates or updates an existing virtual network rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param virtualNetworkRuleName The name of the virtual network rule.
@@ -161,12 +160,12 @@ public interface VirtualNetworkRulesClient {
      * @return a virtual network rule on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Mono<VirtualNetworkRuleInner> createOrUpdateAsync(
-        String resourceGroupName, String serverName, String virtualNetworkRuleName, VirtualNetworkRuleInner parameters);
+    Mono<VirtualNetworkRuleInner> createOrUpdateAsync(String resourceGroupName, String serverName,
+        String virtualNetworkRuleName, VirtualNetworkRuleInner parameters);
 
     /**
      * Creates or updates an existing virtual network rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param virtualNetworkRuleName The name of the virtual network rule.
@@ -177,12 +176,12 @@ public interface VirtualNetworkRulesClient {
      * @return a virtual network rule.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    VirtualNetworkRuleInner createOrUpdate(
-        String resourceGroupName, String serverName, String virtualNetworkRuleName, VirtualNetworkRuleInner parameters);
+    VirtualNetworkRuleInner createOrUpdate(String resourceGroupName, String serverName, String virtualNetworkRuleName,
+        VirtualNetworkRuleInner parameters);
 
     /**
      * Creates or updates an existing virtual network rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param virtualNetworkRuleName The name of the virtual network rule.
@@ -194,16 +193,12 @@ public interface VirtualNetworkRulesClient {
      * @return a virtual network rule.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    VirtualNetworkRuleInner createOrUpdate(
-        String resourceGroupName,
-        String serverName,
-        String virtualNetworkRuleName,
-        VirtualNetworkRuleInner parameters,
-        Context context);
+    VirtualNetworkRuleInner createOrUpdate(String resourceGroupName, String serverName, String virtualNetworkRuleName,
+        VirtualNetworkRuleInner parameters, Context context);
 
     /**
      * Deletes the virtual network rule with the given name.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param virtualNetworkRuleName The name of the virtual network rule.
@@ -213,12 +208,12 @@ public interface VirtualNetworkRulesClient {
      * @return the {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
-        String resourceGroupName, String serverName, String virtualNetworkRuleName);
+    Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(String resourceGroupName, String serverName,
+        String virtualNetworkRuleName);
 
     /**
      * Deletes the virtual network rule with the given name.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param virtualNetworkRuleName The name of the virtual network rule.
@@ -228,12 +223,12 @@ public interface VirtualNetworkRulesClient {
      * @return the {@link PollerFlux} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
-        String resourceGroupName, String serverName, String virtualNetworkRuleName);
+    PollerFlux<PollResult<Void>, Void> beginDeleteAsync(String resourceGroupName, String serverName,
+        String virtualNetworkRuleName);
 
     /**
      * Deletes the virtual network rule with the given name.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param virtualNetworkRuleName The name of the virtual network rule.
@@ -243,12 +238,12 @@ public interface VirtualNetworkRulesClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginDelete(
-        String resourceGroupName, String serverName, String virtualNetworkRuleName);
+    SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String serverName,
+        String virtualNetworkRuleName);
 
     /**
      * Deletes the virtual network rule with the given name.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param virtualNetworkRuleName The name of the virtual network rule.
@@ -259,12 +254,12 @@ public interface VirtualNetworkRulesClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginDelete(
-        String resourceGroupName, String serverName, String virtualNetworkRuleName, Context context);
+    SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String serverName,
+        String virtualNetworkRuleName, Context context);
 
     /**
      * Deletes the virtual network rule with the given name.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param virtualNetworkRuleName The name of the virtual network rule.
@@ -278,7 +273,7 @@ public interface VirtualNetworkRulesClient {
 
     /**
      * Deletes the virtual network rule with the given name.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param virtualNetworkRuleName The name of the virtual network rule.
@@ -291,7 +286,7 @@ public interface VirtualNetworkRulesClient {
 
     /**
      * Deletes the virtual network rule with the given name.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param virtualNetworkRuleName The name of the virtual network rule.
@@ -305,7 +300,7 @@ public interface VirtualNetworkRulesClient {
 
     /**
      * Gets a list of virtual network rules in a server.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -318,7 +313,7 @@ public interface VirtualNetworkRulesClient {
 
     /**
      * Gets a list of virtual network rules in a server.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -331,7 +326,7 @@ public interface VirtualNetworkRulesClient {
 
     /**
      * Gets a list of virtual network rules in a server.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param context The context to associate with this operation.

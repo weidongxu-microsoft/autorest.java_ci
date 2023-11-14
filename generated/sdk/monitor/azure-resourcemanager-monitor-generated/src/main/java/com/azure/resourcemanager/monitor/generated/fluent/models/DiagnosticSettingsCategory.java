@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.monitor.generated.models.CategoryType;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The diagnostic settings Category. */
+/**
+ * The diagnostic settings Category.
+ */
 @Fluent
 public final class DiagnosticSettingsCategory {
     /*
@@ -17,13 +19,15 @@ public final class DiagnosticSettingsCategory {
     @JsonProperty(value = "categoryType")
     private CategoryType categoryType;
 
-    /** Creates an instance of DiagnosticSettingsCategory class. */
+    /**
+     * Creates an instance of DiagnosticSettingsCategory class.
+     */
     public DiagnosticSettingsCategory() {
     }
 
     /**
      * Get the categoryType property: The type of the diagnostic settings category.
-     *
+     * 
      * @return the categoryType value.
      */
     public CategoryType categoryType() {
@@ -32,7 +36,7 @@ public final class DiagnosticSettingsCategory {
 
     /**
      * Set the categoryType property: The type of the diagnostic settings category.
-     *
+     * 
      * @param categoryType the categoryType value to set.
      * @return the DiagnosticSettingsCategory object itself.
      */
@@ -43,7 +47,7 @@ public final class DiagnosticSettingsCategory {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

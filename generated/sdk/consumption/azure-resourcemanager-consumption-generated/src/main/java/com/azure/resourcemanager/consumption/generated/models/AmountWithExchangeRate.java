@@ -8,7 +8,9 @@ import com.azure.core.annotation.Immutable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.math.BigDecimal;
 
-/** The amount with exchange rate. */
+/**
+ * The amount with exchange rate.
+ */
 @Immutable
 public final class AmountWithExchangeRate extends Amount {
     /*
@@ -23,13 +25,15 @@ public final class AmountWithExchangeRate extends Amount {
     @JsonProperty(value = "exchangeRateMonth", access = JsonProperty.Access.WRITE_ONLY)
     private Integer exchangeRateMonth;
 
-    /** Creates an instance of AmountWithExchangeRate class. */
+    /**
+     * Creates an instance of AmountWithExchangeRate class.
+     */
     public AmountWithExchangeRate() {
     }
 
     /**
      * Get the exchangeRate property: The exchange rate.
-     *
+     * 
      * @return the exchangeRate value.
      */
     public BigDecimal exchangeRate() {
@@ -38,7 +42,7 @@ public final class AmountWithExchangeRate extends Amount {
 
     /**
      * Get the exchangeRateMonth property: The exchange rate month.
-     *
+     * 
      * @return the exchangeRateMonth value.
      */
     public Integer exchangeRateMonth() {
@@ -47,7 +51,7 @@ public final class AmountWithExchangeRate extends Amount {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

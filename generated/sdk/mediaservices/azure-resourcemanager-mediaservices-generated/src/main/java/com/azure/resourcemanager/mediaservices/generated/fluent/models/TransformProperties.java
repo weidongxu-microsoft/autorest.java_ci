@@ -11,7 +11,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
 
-/** A Transform. */
+/**
+ * A Transform.
+ */
 @Fluent
 public final class TransformProperties {
     /*
@@ -38,13 +40,16 @@ public final class TransformProperties {
     @JsonProperty(value = "outputs", required = true)
     private List<TransformOutput> outputs;
 
-    /** Creates an instance of TransformProperties class. */
+    /**
+     * Creates an instance of TransformProperties class.
+     */
     public TransformProperties() {
     }
 
     /**
-     * Get the created property: The UTC date and time when the Transform was created, in 'YYYY-MM-DDThh:mm:ssZ' format.
-     *
+     * Get the created property: The UTC date and time when the Transform was created, in 'YYYY-MM-DDThh:mm:ssZ'
+     * format.
+     * 
      * @return the created value.
      */
     public OffsetDateTime created() {
@@ -53,7 +58,7 @@ public final class TransformProperties {
 
     /**
      * Get the description property: An optional verbose description of the Transform.
-     *
+     * 
      * @return the description value.
      */
     public String description() {
@@ -62,7 +67,7 @@ public final class TransformProperties {
 
     /**
      * Set the description property: An optional verbose description of the Transform.
-     *
+     * 
      * @param description the description value to set.
      * @return the TransformProperties object itself.
      */
@@ -74,7 +79,7 @@ public final class TransformProperties {
     /**
      * Get the lastModified property: The UTC date and time when the Transform was last updated, in
      * 'YYYY-MM-DDThh:mm:ssZ' format.
-     *
+     * 
      * @return the lastModified value.
      */
     public OffsetDateTime lastModified() {
@@ -83,7 +88,7 @@ public final class TransformProperties {
 
     /**
      * Get the outputs property: An array of one or more TransformOutputs that the Transform should generate.
-     *
+     * 
      * @return the outputs value.
      */
     public List<TransformOutput> outputs() {
@@ -92,7 +97,7 @@ public final class TransformProperties {
 
     /**
      * Set the outputs property: An array of one or more TransformOutputs that the Transform should generate.
-     *
+     * 
      * @param outputs the outputs value to set.
      * @return the TransformProperties object itself.
      */
@@ -103,14 +108,13 @@ public final class TransformProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (outputs() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property outputs in model TransformProperties"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property outputs in model TransformProperties"));
         } else {
             outputs().forEach(e -> e.validate());
         }

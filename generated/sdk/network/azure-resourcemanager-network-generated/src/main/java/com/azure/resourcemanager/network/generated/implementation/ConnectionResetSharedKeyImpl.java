@@ -12,8 +12,7 @@ public final class ConnectionResetSharedKeyImpl implements ConnectionResetShared
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    ConnectionResetSharedKeyImpl(
-        ConnectionResetSharedKeyInner innerObject,
+    ConnectionResetSharedKeyImpl(ConnectionResetSharedKeyInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

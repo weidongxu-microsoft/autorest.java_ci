@@ -9,7 +9,9 @@ import com.azure.resourcemanager.mediaservices.generated.fluent.models.AssetFilt
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** A collection of AssetFilter items. */
+/**
+ * A collection of AssetFilter items.
+ */
 @Fluent
 public final class AssetFilterCollection {
     /*
@@ -25,13 +27,15 @@ public final class AssetFilterCollection {
     @JsonProperty(value = "@odata.nextLink")
     private String odataNextLink;
 
-    /** Creates an instance of AssetFilterCollection class. */
+    /**
+     * Creates an instance of AssetFilterCollection class.
+     */
     public AssetFilterCollection() {
     }
 
     /**
      * Get the value property: A collection of AssetFilter items.
-     *
+     * 
      * @return the value value.
      */
     public List<AssetFilterInner> value() {
@@ -40,7 +44,7 @@ public final class AssetFilterCollection {
 
     /**
      * Set the value property: A collection of AssetFilter items.
-     *
+     * 
      * @param value the value value to set.
      * @return the AssetFilterCollection object itself.
      */
@@ -52,7 +56,7 @@ public final class AssetFilterCollection {
     /**
      * Get the odataNextLink property: A link to the next page of the collection (when the collection contains too many
      * results to return in one response).
-     *
+     * 
      * @return the odataNextLink value.
      */
     public String odataNextLink() {
@@ -62,7 +66,7 @@ public final class AssetFilterCollection {
     /**
      * Set the odataNextLink property: A link to the next page of the collection (when the collection contains too many
      * results to return in one response).
-     *
+     * 
      * @param odataNextLink the odataNextLink value to set.
      * @return the AssetFilterCollection object itself.
      */
@@ -73,7 +77,7 @@ public final class AssetFilterCollection {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

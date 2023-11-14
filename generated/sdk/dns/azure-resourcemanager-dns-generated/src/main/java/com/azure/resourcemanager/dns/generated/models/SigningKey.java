@@ -8,7 +8,9 @@ import com.azure.core.annotation.Immutable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Represents the signing key. */
+/**
+ * Represents the signing key.
+ */
 @Immutable
 public final class SigningKey {
     /*
@@ -48,13 +50,15 @@ public final class SigningKey {
     @JsonProperty(value = "securityAlgorithmType", access = JsonProperty.Access.WRITE_ONLY)
     private Integer securityAlgorithmType;
 
-    /** Creates an instance of SigningKey class. */
+    /**
+     * Creates an instance of SigningKey class.
+     */
     public SigningKey() {
     }
 
     /**
      * Get the delegationSignerInfo property: The delegation signer information.
-     *
+     * 
      * @return the delegationSignerInfo value.
      */
     public List<DelegationSignerInfo> delegationSignerInfo() {
@@ -63,7 +67,7 @@ public final class SigningKey {
 
     /**
      * Get the flags property: The flags specifies how the key is used.
-     *
+     * 
      * @return the flags value.
      */
     public Integer flags() {
@@ -72,7 +76,7 @@ public final class SigningKey {
 
     /**
      * Get the keyTag property: The key tag value of the DNSKEY Resource Record.
-     *
+     * 
      * @return the keyTag value.
      */
     public Integer keyTag() {
@@ -81,7 +85,7 @@ public final class SigningKey {
 
     /**
      * Get the protocol property: The protocol value. The value is always 3.
-     *
+     * 
      * @return the protocol value.
      */
     public Integer protocol() {
@@ -90,7 +94,7 @@ public final class SigningKey {
 
     /**
      * Get the publicKey property: The public key, represented as a Base64 encoding.
-     *
+     * 
      * @return the publicKey value.
      */
     public String publicKey() {
@@ -101,7 +105,7 @@ public final class SigningKey {
      * Get the securityAlgorithmType property: The security algorithm type represents the standard security algorithm
      * number of the DNSKEY Resource Record. See:
      * https://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xhtml.
-     *
+     * 
      * @return the securityAlgorithmType value.
      */
     public Integer securityAlgorithmType() {
@@ -110,7 +114,7 @@ public final class SigningKey {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

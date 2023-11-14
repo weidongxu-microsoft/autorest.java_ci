@@ -7,7 +7,9 @@ package com.azure.resourcemanager.postgresql.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Service level objectives for performance tier. */
+/**
+ * Service level objectives for performance tier.
+ */
 @Fluent
 public final class PerformanceTierServiceLevelObjectives {
     /*
@@ -58,13 +60,15 @@ public final class PerformanceTierServiceLevelObjectives {
     @JsonProperty(value = "minStorageMB")
     private Integer minStorageMB;
 
-    /** Creates an instance of PerformanceTierServiceLevelObjectives class. */
+    /**
+     * Creates an instance of PerformanceTierServiceLevelObjectives class.
+     */
     public PerformanceTierServiceLevelObjectives() {
     }
 
     /**
      * Get the id property: ID for the service level objective.
-     *
+     * 
      * @return the id value.
      */
     public String id() {
@@ -73,7 +77,7 @@ public final class PerformanceTierServiceLevelObjectives {
 
     /**
      * Set the id property: ID for the service level objective.
-     *
+     * 
      * @param id the id value to set.
      * @return the PerformanceTierServiceLevelObjectives object itself.
      */
@@ -84,7 +88,7 @@ public final class PerformanceTierServiceLevelObjectives {
 
     /**
      * Get the edition property: Edition of the performance tier.
-     *
+     * 
      * @return the edition value.
      */
     public String edition() {
@@ -93,7 +97,7 @@ public final class PerformanceTierServiceLevelObjectives {
 
     /**
      * Set the edition property: Edition of the performance tier.
-     *
+     * 
      * @param edition the edition value to set.
      * @return the PerformanceTierServiceLevelObjectives object itself.
      */
@@ -104,7 +108,7 @@ public final class PerformanceTierServiceLevelObjectives {
 
     /**
      * Get the vCore property: vCore associated with the service level objective.
-     *
+     * 
      * @return the vCore value.
      */
     public Integer vCore() {
@@ -113,7 +117,7 @@ public final class PerformanceTierServiceLevelObjectives {
 
     /**
      * Set the vCore property: vCore associated with the service level objective.
-     *
+     * 
      * @param vCore the vCore value to set.
      * @return the PerformanceTierServiceLevelObjectives object itself.
      */
@@ -124,7 +128,7 @@ public final class PerformanceTierServiceLevelObjectives {
 
     /**
      * Get the hardwareGeneration property: Hardware generation associated with the service level objective.
-     *
+     * 
      * @return the hardwareGeneration value.
      */
     public String hardwareGeneration() {
@@ -133,7 +137,7 @@ public final class PerformanceTierServiceLevelObjectives {
 
     /**
      * Set the hardwareGeneration property: Hardware generation associated with the service level objective.
-     *
+     * 
      * @param hardwareGeneration the hardwareGeneration value to set.
      * @return the PerformanceTierServiceLevelObjectives object itself.
      */
@@ -144,7 +148,7 @@ public final class PerformanceTierServiceLevelObjectives {
 
     /**
      * Get the maxBackupRetentionDays property: Maximum Backup retention in days for the performance tier edition.
-     *
+     * 
      * @return the maxBackupRetentionDays value.
      */
     public Integer maxBackupRetentionDays() {
@@ -153,7 +157,7 @@ public final class PerformanceTierServiceLevelObjectives {
 
     /**
      * Set the maxBackupRetentionDays property: Maximum Backup retention in days for the performance tier edition.
-     *
+     * 
      * @param maxBackupRetentionDays the maxBackupRetentionDays value to set.
      * @return the PerformanceTierServiceLevelObjectives object itself.
      */
@@ -164,7 +168,7 @@ public final class PerformanceTierServiceLevelObjectives {
 
     /**
      * Get the minBackupRetentionDays property: Minimum Backup retention in days for the performance tier edition.
-     *
+     * 
      * @return the minBackupRetentionDays value.
      */
     public Integer minBackupRetentionDays() {
@@ -173,7 +177,7 @@ public final class PerformanceTierServiceLevelObjectives {
 
     /**
      * Set the minBackupRetentionDays property: Minimum Backup retention in days for the performance tier edition.
-     *
+     * 
      * @param minBackupRetentionDays the minBackupRetentionDays value to set.
      * @return the PerformanceTierServiceLevelObjectives object itself.
      */
@@ -184,7 +188,7 @@ public final class PerformanceTierServiceLevelObjectives {
 
     /**
      * Get the maxStorageMB property: Max storage allowed for a server.
-     *
+     * 
      * @return the maxStorageMB value.
      */
     public Integer maxStorageMB() {
@@ -193,7 +197,7 @@ public final class PerformanceTierServiceLevelObjectives {
 
     /**
      * Set the maxStorageMB property: Max storage allowed for a server.
-     *
+     * 
      * @param maxStorageMB the maxStorageMB value to set.
      * @return the PerformanceTierServiceLevelObjectives object itself.
      */
@@ -204,7 +208,7 @@ public final class PerformanceTierServiceLevelObjectives {
 
     /**
      * Get the minStorageMB property: Max storage allowed for a server.
-     *
+     * 
      * @return the minStorageMB value.
      */
     public Integer minStorageMB() {
@@ -213,7 +217,7 @@ public final class PerformanceTierServiceLevelObjectives {
 
     /**
      * Set the minStorageMB property: Max storage allowed for a server.
-     *
+     * 
      * @param minStorageMB the minStorageMB value to set.
      * @return the PerformanceTierServiceLevelObjectives object itself.
      */
@@ -224,7 +228,7 @@ public final class PerformanceTierServiceLevelObjectives {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -21,22 +21,18 @@ public final class AlertRuleIncidentsImpl implements AlertRuleIncidents {
 
     private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    public AlertRuleIncidentsImpl(
-        AlertRuleIncidentsClient innerClient,
+    public AlertRuleIncidentsImpl(AlertRuleIncidentsClient innerClient,
         com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<Incident> getWithResponse(
-        String resourceGroupName, String ruleName, String incidentName, Context context) {
-        Response<IncidentInner> inner =
-            this.serviceClient().getWithResponse(resourceGroupName, ruleName, incidentName, context);
+    public Response<Incident> getWithResponse(String resourceGroupName, String ruleName, String incidentName,
+        Context context) {
+        Response<IncidentInner> inner
+            = this.serviceClient().getWithResponse(resourceGroupName, ruleName, incidentName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new IncidentImpl(inner.getValue(), this.manager()));
         } else {
             return null;

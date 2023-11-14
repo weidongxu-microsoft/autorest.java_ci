@@ -6,11 +6,13 @@ package com.azure.resourcemanager.network.generated.models;
 
 import com.azure.resourcemanager.network.generated.fluent.models.PrivateLinkServiceVisibilityInner;
 
-/** An immutable client-side representation of PrivateLinkServiceVisibility. */
+/**
+ * An immutable client-side representation of PrivateLinkServiceVisibility.
+ */
 public interface PrivateLinkServiceVisibility {
     /**
      * Gets the visible property: Private Link Service Visibility (True/False).
-     *
+     * 
      * @return the visible value.
      */
     Boolean visible();
@@ -18,7 +20,7 @@ public interface PrivateLinkServiceVisibility {
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.PrivateLinkServiceVisibilityInner
      * object.
-     *
+     * 
      * @return the inner object.
      */
     PrivateLinkServiceVisibilityInner innerModel();

@@ -12,8 +12,7 @@ public final class NetworkTraceImpl implements NetworkTrace {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    NetworkTraceImpl(
-        NetworkTraceInner innerObject,
+    NetworkTraceImpl(NetworkTraceInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

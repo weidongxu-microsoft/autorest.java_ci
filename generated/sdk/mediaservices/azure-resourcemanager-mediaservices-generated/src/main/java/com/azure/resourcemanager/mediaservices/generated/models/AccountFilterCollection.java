@@ -9,7 +9,9 @@ import com.azure.resourcemanager.mediaservices.generated.fluent.models.AccountFi
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** A collection of AccountFilter items. */
+/**
+ * A collection of AccountFilter items.
+ */
 @Fluent
 public final class AccountFilterCollection {
     /*
@@ -25,13 +27,15 @@ public final class AccountFilterCollection {
     @JsonProperty(value = "@odata.nextLink")
     private String odataNextLink;
 
-    /** Creates an instance of AccountFilterCollection class. */
+    /**
+     * Creates an instance of AccountFilterCollection class.
+     */
     public AccountFilterCollection() {
     }
 
     /**
      * Get the value property: A collection of AccountFilter items.
-     *
+     * 
      * @return the value value.
      */
     public List<AccountFilterInner> value() {
@@ -40,7 +44,7 @@ public final class AccountFilterCollection {
 
     /**
      * Set the value property: A collection of AccountFilter items.
-     *
+     * 
      * @param value the value value to set.
      * @return the AccountFilterCollection object itself.
      */
@@ -52,7 +56,7 @@ public final class AccountFilterCollection {
     /**
      * Get the odataNextLink property: A link to the next page of the collection (when the collection contains too many
      * results to return in one response).
-     *
+     * 
      * @return the odataNextLink value.
      */
     public String odataNextLink() {
@@ -62,7 +66,7 @@ public final class AccountFilterCollection {
     /**
      * Set the odataNextLink property: A link to the next page of the collection (when the collection contains too many
      * results to return in one response).
-     *
+     * 
      * @param odataNextLink the odataNextLink value to set.
      * @return the AccountFilterCollection object itself.
      */
@@ -73,7 +77,7 @@ public final class AccountFilterCollection {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

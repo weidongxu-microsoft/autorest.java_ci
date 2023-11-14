@@ -12,8 +12,7 @@ public final class BillingMeterImpl implements BillingMeter {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    BillingMeterImpl(
-        BillingMeterInner innerObject,
+    BillingMeterImpl(BillingMeterInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

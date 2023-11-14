@@ -21,21 +21,18 @@ public final class NetworkGroupsImpl implements NetworkGroups {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public NetworkGroupsImpl(
-        NetworkGroupsClient innerClient, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    public NetworkGroupsImpl(NetworkGroupsClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<NetworkGroup> getWithResponse(
-        String resourceGroupName, String networkManagerName, String networkGroupName, Context context) {
-        Response<NetworkGroupInner> inner =
-            this.serviceClient().getWithResponse(resourceGroupName, networkManagerName, networkGroupName, context);
+    public Response<NetworkGroup> getWithResponse(String resourceGroupName, String networkManagerName,
+        String networkGroupName, Context context) {
+        Response<NetworkGroupInner> inner
+            = this.serviceClient().getWithResponse(resourceGroupName, networkManagerName, networkGroupName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new NetworkGroupImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -55,8 +52,8 @@ public final class NetworkGroupsImpl implements NetworkGroups {
         this.serviceClient().delete(resourceGroupName, networkManagerName, networkGroupName);
     }
 
-    public void delete(
-        String resourceGroupName, String networkManagerName, String networkGroupName, Boolean force, Context context) {
+    public void delete(String resourceGroupName, String networkManagerName, String networkGroupName, Boolean force,
+        Context context) {
         this.serviceClient().delete(resourceGroupName, networkManagerName, networkGroupName, force, context);
     }
 
@@ -65,36 +62,28 @@ public final class NetworkGroupsImpl implements NetworkGroups {
         return Utils.mapPage(inner, inner1 -> new NetworkGroupImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<NetworkGroup> list(
-        String resourceGroupName, String networkManagerName, Integer top, String skipToken, Context context) {
-        PagedIterable<NetworkGroupInner> inner =
-            this.serviceClient().list(resourceGroupName, networkManagerName, top, skipToken, context);
+    public PagedIterable<NetworkGroup> list(String resourceGroupName, String networkManagerName, Integer top,
+        String skipToken, Context context) {
+        PagedIterable<NetworkGroupInner> inner
+            = this.serviceClient().list(resourceGroupName, networkManagerName, top, skipToken, context);
         return Utils.mapPage(inner, inner1 -> new NetworkGroupImpl(inner1, this.manager()));
     }
 
     public NetworkGroup getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String networkManagerName = Utils.getValueFromIdByName(id, "networkManagers");
         if (networkManagerName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'networkManagers'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'networkManagers'.", id)));
         }
         String networkGroupName = Utils.getValueFromIdByName(id, "networkGroups");
         if (networkGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'networkGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'networkGroups'.", id)));
         }
         return this.getWithResponse(resourceGroupName, networkManagerName, networkGroupName, Context.NONE).getValue();
     }
@@ -102,26 +91,18 @@ public final class NetworkGroupsImpl implements NetworkGroups {
     public Response<NetworkGroup> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String networkManagerName = Utils.getValueFromIdByName(id, "networkManagers");
         if (networkManagerName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'networkManagers'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'networkManagers'.", id)));
         }
         String networkGroupName = Utils.getValueFromIdByName(id, "networkGroups");
         if (networkGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'networkGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'networkGroups'.", id)));
         }
         return this.getWithResponse(resourceGroupName, networkManagerName, networkGroupName, context);
     }
@@ -129,26 +110,18 @@ public final class NetworkGroupsImpl implements NetworkGroups {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String networkManagerName = Utils.getValueFromIdByName(id, "networkManagers");
         if (networkManagerName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'networkManagers'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'networkManagers'.", id)));
         }
         String networkGroupName = Utils.getValueFromIdByName(id, "networkGroups");
         if (networkGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'networkGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'networkGroups'.", id)));
         }
         Boolean localForce = null;
         this.delete(resourceGroupName, networkManagerName, networkGroupName, localForce, Context.NONE);
@@ -157,26 +130,18 @@ public final class NetworkGroupsImpl implements NetworkGroups {
     public void deleteByIdWithResponse(String id, Boolean force, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String networkManagerName = Utils.getValueFromIdByName(id, "networkManagers");
         if (networkManagerName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'networkManagers'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'networkManagers'.", id)));
         }
         String networkGroupName = Utils.getValueFromIdByName(id, "networkGroups");
         if (networkGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'networkGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'networkGroups'.", id)));
         }
         this.delete(resourceGroupName, networkManagerName, networkGroupName, force, context);
     }

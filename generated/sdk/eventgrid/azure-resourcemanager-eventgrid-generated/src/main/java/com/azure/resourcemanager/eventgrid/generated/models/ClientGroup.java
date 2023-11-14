@@ -8,87 +8,98 @@ import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.ClientGroupInner;
 
-/** An immutable client-side representation of ClientGroup. */
+/**
+ * An immutable client-side representation of ClientGroup.
+ */
 public interface ClientGroup {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the name property: The name of the resource.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the type property: The type of the resource.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the systemData property: The system metadata relating to the ClientGroup resource.
-     *
+     * 
      * @return the systemData value.
      */
     SystemData systemData();
 
     /**
      * Gets the description property: Description for the Client Group resource.
-     *
+     * 
      * @return the description value.
      */
     String description();
 
     /**
-     * Gets the query property: The grouping query for the clients. Example : attributes.keyName IN ['a', 'b', 'c'].
-     *
+     * Gets the query property: The grouping query for the clients.
+     * Example : attributes.keyName IN ['a', 'b', 'c'].
+     * 
      * @return the query value.
      */
     String query();
 
     /**
      * Gets the provisioningState property: Provisioning state of the ClientGroup resource.
-     *
+     * 
      * @return the provisioningState value.
      */
     ClientGroupProvisioningState provisioningState();
 
     /**
      * Gets the name of the resource group.
-     *
+     * 
      * @return the name of the resource group.
      */
     String resourceGroupName();
 
     /**
      * Gets the inner com.azure.resourcemanager.eventgrid.generated.fluent.models.ClientGroupInner object.
-     *
+     * 
      * @return the inner object.
      */
     ClientGroupInner innerModel();
 
-    /** The entirety of the ClientGroup definition. */
+    /**
+     * The entirety of the ClientGroup definition.
+     */
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
 
-    /** The ClientGroup definition stages. */
+    /**
+     * The ClientGroup definition stages.
+     */
     interface DefinitionStages {
-        /** The first stage of the ClientGroup definition. */
+        /**
+         * The first stage of the ClientGroup definition.
+         */
         interface Blank extends WithParentResource {
         }
 
-        /** The stage of the ClientGroup definition allowing to specify parent resource. */
+        /**
+         * The stage of the ClientGroup definition allowing to specify parent resource.
+         */
         interface WithParentResource {
             /**
              * Specifies resourceGroupName, namespaceName.
-             *
+             * 
              * @param resourceGroupName The name of the resource group within the user's subscription.
              * @param namespaceName Name of the namespace.
              * @return the next definition stage.
@@ -103,38 +114,43 @@ public interface ClientGroup {
         interface WithCreate extends DefinitionStages.WithDescription, DefinitionStages.WithQuery {
             /**
              * Executes the create request.
-             *
+             * 
              * @return the created resource.
              */
             ClientGroup create();
 
             /**
              * Executes the create request.
-             *
+             * 
              * @param context The context to associate with this operation.
              * @return the created resource.
              */
             ClientGroup create(Context context);
         }
 
-        /** The stage of the ClientGroup definition allowing to specify description. */
+        /**
+         * The stage of the ClientGroup definition allowing to specify description.
+         */
         interface WithDescription {
             /**
              * Specifies the description property: Description for the Client Group resource..
-             *
+             * 
              * @param description Description for the Client Group resource.
              * @return the next definition stage.
              */
             WithCreate withDescription(String description);
         }
 
-        /** The stage of the ClientGroup definition allowing to specify query. */
+        /**
+         * The stage of the ClientGroup definition allowing to specify query.
+         */
         interface WithQuery {
             /**
-             * Specifies the query property: The grouping query for the clients. Example : attributes.keyName IN ['a',
-             * 'b', 'c']..
-             *
-             * @param query The grouping query for the clients. Example : attributes.keyName IN ['a', 'b', 'c'].
+             * Specifies the query property: The grouping query for the clients.
+             * Example : attributes.keyName IN ['a', 'b', 'c']..
+             * 
+             * @param query The grouping query for the clients.
+             * Example : attributes.keyName IN ['a', 'b', 'c'].
              * @return the next definition stage.
              */
             WithCreate withQuery(String query);
@@ -143,49 +159,58 @@ public interface ClientGroup {
 
     /**
      * Begins update for the ClientGroup resource.
-     *
+     * 
      * @return the stage of resource update.
      */
     ClientGroup.Update update();
 
-    /** The template for ClientGroup update. */
+    /**
+     * The template for ClientGroup update.
+     */
     interface Update extends UpdateStages.WithDescription, UpdateStages.WithQuery {
         /**
          * Executes the update request.
-         *
+         * 
          * @return the updated resource.
          */
         ClientGroup apply();
 
         /**
          * Executes the update request.
-         *
+         * 
          * @param context The context to associate with this operation.
          * @return the updated resource.
          */
         ClientGroup apply(Context context);
     }
 
-    /** The ClientGroup update stages. */
+    /**
+     * The ClientGroup update stages.
+     */
     interface UpdateStages {
-        /** The stage of the ClientGroup update allowing to specify description. */
+        /**
+         * The stage of the ClientGroup update allowing to specify description.
+         */
         interface WithDescription {
             /**
              * Specifies the description property: Description for the Client Group resource..
-             *
+             * 
              * @param description Description for the Client Group resource.
              * @return the next definition stage.
              */
             Update withDescription(String description);
         }
 
-        /** The stage of the ClientGroup update allowing to specify query. */
+        /**
+         * The stage of the ClientGroup update allowing to specify query.
+         */
         interface WithQuery {
             /**
-             * Specifies the query property: The grouping query for the clients. Example : attributes.keyName IN ['a',
-             * 'b', 'c']..
-             *
-             * @param query The grouping query for the clients. Example : attributes.keyName IN ['a', 'b', 'c'].
+             * Specifies the query property: The grouping query for the clients.
+             * Example : attributes.keyName IN ['a', 'b', 'c']..
+             * 
+             * @param query The grouping query for the clients.
+             * Example : attributes.keyName IN ['a', 'b', 'c'].
              * @return the next definition stage.
              */
             Update withQuery(String query);
@@ -194,14 +219,14 @@ public interface ClientGroup {
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @return the refreshed resource.
      */
     ClientGroup refresh();
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @return the refreshed resource.
      */

@@ -14,11 +14,13 @@ import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.network.generated.fluent.models.BastionHostInner;
 import com.azure.resourcemanager.network.generated.models.TagsObject;
 
-/** An instance of this class provides access to all the operations defined in BastionHostsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in BastionHostsClient.
+ */
 public interface BastionHostsClient {
     /**
      * Deletes the specified Bastion Host.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param bastionHostname The name of the Bastion Host.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -31,7 +33,7 @@ public interface BastionHostsClient {
 
     /**
      * Deletes the specified Bastion Host.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param bastionHostname The name of the Bastion Host.
      * @param context The context to associate with this operation.
@@ -45,7 +47,7 @@ public interface BastionHostsClient {
 
     /**
      * Deletes the specified Bastion Host.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param bastionHostname The name of the Bastion Host.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -57,7 +59,7 @@ public interface BastionHostsClient {
 
     /**
      * Deletes the specified Bastion Host.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param bastionHostname The name of the Bastion Host.
      * @param context The context to associate with this operation.
@@ -70,7 +72,7 @@ public interface BastionHostsClient {
 
     /**
      * Gets the specified Bastion Host.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param bastionHostname The name of the Bastion Host.
      * @param context The context to associate with this operation.
@@ -80,12 +82,12 @@ public interface BastionHostsClient {
      * @return the specified Bastion Host along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<BastionHostInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String bastionHostname, Context context);
+    Response<BastionHostInner> getByResourceGroupWithResponse(String resourceGroupName, String bastionHostname,
+        Context context);
 
     /**
      * Gets the specified Bastion Host.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param bastionHostname The name of the Bastion Host.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -98,7 +100,7 @@ public interface BastionHostsClient {
 
     /**
      * Creates or updates the specified Bastion Host.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param bastionHostname The name of the Bastion Host.
      * @param parameters Parameters supplied to the create or update Bastion Host operation.
@@ -108,12 +110,12 @@ public interface BastionHostsClient {
      * @return the {@link SyncPoller} for polling of bastion Host resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<BastionHostInner>, BastionHostInner> beginCreateOrUpdate(
-        String resourceGroupName, String bastionHostname, BastionHostInner parameters);
+    SyncPoller<PollResult<BastionHostInner>, BastionHostInner> beginCreateOrUpdate(String resourceGroupName,
+        String bastionHostname, BastionHostInner parameters);
 
     /**
      * Creates or updates the specified Bastion Host.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param bastionHostname The name of the Bastion Host.
      * @param parameters Parameters supplied to the create or update Bastion Host operation.
@@ -124,12 +126,12 @@ public interface BastionHostsClient {
      * @return the {@link SyncPoller} for polling of bastion Host resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<BastionHostInner>, BastionHostInner> beginCreateOrUpdate(
-        String resourceGroupName, String bastionHostname, BastionHostInner parameters, Context context);
+    SyncPoller<PollResult<BastionHostInner>, BastionHostInner> beginCreateOrUpdate(String resourceGroupName,
+        String bastionHostname, BastionHostInner parameters, Context context);
 
     /**
      * Creates or updates the specified Bastion Host.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param bastionHostname The name of the Bastion Host.
      * @param parameters Parameters supplied to the create or update Bastion Host operation.
@@ -143,7 +145,7 @@ public interface BastionHostsClient {
 
     /**
      * Creates or updates the specified Bastion Host.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param bastionHostname The name of the Bastion Host.
      * @param parameters Parameters supplied to the create or update Bastion Host operation.
@@ -154,12 +156,12 @@ public interface BastionHostsClient {
      * @return bastion Host resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    BastionHostInner createOrUpdate(
-        String resourceGroupName, String bastionHostname, BastionHostInner parameters, Context context);
+    BastionHostInner createOrUpdate(String resourceGroupName, String bastionHostname, BastionHostInner parameters,
+        Context context);
 
     /**
      * Updates Tags for BastionHost resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param bastionHostname The name of the Bastion Host.
      * @param parameters Parameters supplied to update BastionHost tags.
@@ -169,12 +171,12 @@ public interface BastionHostsClient {
      * @return the {@link SyncPoller} for polling of bastion Host resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<BastionHostInner>, BastionHostInner> beginUpdateTags(
-        String resourceGroupName, String bastionHostname, TagsObject parameters);
+    SyncPoller<PollResult<BastionHostInner>, BastionHostInner> beginUpdateTags(String resourceGroupName,
+        String bastionHostname, TagsObject parameters);
 
     /**
      * Updates Tags for BastionHost resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param bastionHostname The name of the Bastion Host.
      * @param parameters Parameters supplied to update BastionHost tags.
@@ -185,12 +187,12 @@ public interface BastionHostsClient {
      * @return the {@link SyncPoller} for polling of bastion Host resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<BastionHostInner>, BastionHostInner> beginUpdateTags(
-        String resourceGroupName, String bastionHostname, TagsObject parameters, Context context);
+    SyncPoller<PollResult<BastionHostInner>, BastionHostInner> beginUpdateTags(String resourceGroupName,
+        String bastionHostname, TagsObject parameters, Context context);
 
     /**
      * Updates Tags for BastionHost resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param bastionHostname The name of the Bastion Host.
      * @param parameters Parameters supplied to update BastionHost tags.
@@ -204,7 +206,7 @@ public interface BastionHostsClient {
 
     /**
      * Updates Tags for BastionHost resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param bastionHostname The name of the Bastion Host.
      * @param parameters Parameters supplied to update BastionHost tags.
@@ -215,12 +217,12 @@ public interface BastionHostsClient {
      * @return bastion Host resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    BastionHostInner updateTags(
-        String resourceGroupName, String bastionHostname, TagsObject parameters, Context context);
+    BastionHostInner updateTags(String resourceGroupName, String bastionHostname, TagsObject parameters,
+        Context context);
 
     /**
      * Lists all Bastion Hosts in a subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return response for ListBastionHosts API service call as paginated response with {@link PagedIterable}.
@@ -230,7 +232,7 @@ public interface BastionHostsClient {
 
     /**
      * Lists all Bastion Hosts in a subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -242,7 +244,7 @@ public interface BastionHostsClient {
 
     /**
      * Lists all Bastion Hosts in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -254,7 +256,7 @@ public interface BastionHostsClient {
 
     /**
      * Lists all Bastion Hosts in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

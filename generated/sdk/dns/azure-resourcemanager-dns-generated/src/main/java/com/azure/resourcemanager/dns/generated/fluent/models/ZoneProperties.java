@@ -11,25 +11,27 @@ import com.azure.resourcemanager.dns.generated.models.ZoneType;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Represents the properties of the zone. */
+/**
+ * Represents the properties of the zone.
+ */
 @Fluent
 public final class ZoneProperties {
     /*
-     * The maximum number of record sets that can be created in this DNS zone.  This is a read-only property and any
+     * The maximum number of record sets that can be created in this DNS zone. This is a read-only property and any
      * attempt to set this value will be ignored.
      */
     @JsonProperty(value = "maxNumberOfRecordSets", access = JsonProperty.Access.WRITE_ONLY)
     private Long maxNumberOfRecordSets;
 
     /*
-     * The maximum number of records per record set that can be created in this DNS zone.  This is a read-only property
+     * The maximum number of records per record set that can be created in this DNS zone. This is a read-only property
      * and any attempt to set this value will be ignored.
      */
     @JsonProperty(value = "maxNumberOfRecordsPerRecordSet", access = JsonProperty.Access.WRITE_ONLY)
     private Long maxNumberOfRecordsPerRecordSet;
 
     /*
-     * The current number of record sets in this DNS zone.  This is a read-only property and any attempt to set this
+     * The current number of record sets in this DNS zone. This is a read-only property and any attempt to set this
      * value will be ignored.
      */
     @JsonProperty(value = "numberOfRecordSets", access = JsonProperty.Access.WRITE_ONLY)
@@ -68,14 +70,16 @@ public final class ZoneProperties {
     @JsonProperty(value = "signingKeys", access = JsonProperty.Access.WRITE_ONLY)
     private List<SigningKey> signingKeys;
 
-    /** Creates an instance of ZoneProperties class. */
+    /**
+     * Creates an instance of ZoneProperties class.
+     */
     public ZoneProperties() {
     }
 
     /**
      * Get the maxNumberOfRecordSets property: The maximum number of record sets that can be created in this DNS zone.
      * This is a read-only property and any attempt to set this value will be ignored.
-     *
+     * 
      * @return the maxNumberOfRecordSets value.
      */
     public Long maxNumberOfRecordSets() {
@@ -83,9 +87,9 @@ public final class ZoneProperties {
     }
 
     /**
-     * Get the maxNumberOfRecordsPerRecordSet property: The maximum number of records per record set that can be created
-     * in this DNS zone. This is a read-only property and any attempt to set this value will be ignored.
-     *
+     * Get the maxNumberOfRecordsPerRecordSet property: The maximum number of records per record set that can be
+     * created in this DNS zone. This is a read-only property and any attempt to set this value will be ignored.
+     * 
      * @return the maxNumberOfRecordsPerRecordSet value.
      */
     public Long maxNumberOfRecordsPerRecordSet() {
@@ -95,7 +99,7 @@ public final class ZoneProperties {
     /**
      * Get the numberOfRecordSets property: The current number of record sets in this DNS zone. This is a read-only
      * property and any attempt to set this value will be ignored.
-     *
+     * 
      * @return the numberOfRecordSets value.
      */
     public Long numberOfRecordSets() {
@@ -103,9 +107,9 @@ public final class ZoneProperties {
     }
 
     /**
-     * Get the nameServers property: The name servers for this DNS zone. This is a read-only property and any attempt to
-     * set this value will be ignored.
-     *
+     * Get the nameServers property: The name servers for this DNS zone. This is a read-only property and any attempt
+     * to set this value will be ignored.
+     * 
      * @return the nameServers value.
      */
     public List<String> nameServers() {
@@ -114,7 +118,7 @@ public final class ZoneProperties {
 
     /**
      * Get the zoneType property: The type of this DNS zone (Public or Private).
-     *
+     * 
      * @return the zoneType value.
      */
     public ZoneType zoneType() {
@@ -123,7 +127,7 @@ public final class ZoneProperties {
 
     /**
      * Set the zoneType property: The type of this DNS zone (Public or Private).
-     *
+     * 
      * @param zoneType the zoneType value to set.
      * @return the ZoneProperties object itself.
      */
@@ -133,9 +137,9 @@ public final class ZoneProperties {
     }
 
     /**
-     * Get the registrationVirtualNetworks property: A list of references to virtual networks that register hostnames in
-     * this DNS zone. This is a only when ZoneType is Private.
-     *
+     * Get the registrationVirtualNetworks property: A list of references to virtual networks that register hostnames
+     * in this DNS zone. This is a only when ZoneType is Private.
+     * 
      * @return the registrationVirtualNetworks value.
      */
     public List<SubResource> registrationVirtualNetworks() {
@@ -143,9 +147,9 @@ public final class ZoneProperties {
     }
 
     /**
-     * Set the registrationVirtualNetworks property: A list of references to virtual networks that register hostnames in
-     * this DNS zone. This is a only when ZoneType is Private.
-     *
+     * Set the registrationVirtualNetworks property: A list of references to virtual networks that register hostnames
+     * in this DNS zone. This is a only when ZoneType is Private.
+     * 
      * @param registrationVirtualNetworks the registrationVirtualNetworks value to set.
      * @return the ZoneProperties object itself.
      */
@@ -155,9 +159,9 @@ public final class ZoneProperties {
     }
 
     /**
-     * Get the resolutionVirtualNetworks property: A list of references to virtual networks that resolve records in this
-     * DNS zone. This is a only when ZoneType is Private.
-     *
+     * Get the resolutionVirtualNetworks property: A list of references to virtual networks that resolve records in
+     * this DNS zone. This is a only when ZoneType is Private.
+     * 
      * @return the resolutionVirtualNetworks value.
      */
     public List<SubResource> resolutionVirtualNetworks() {
@@ -165,9 +169,9 @@ public final class ZoneProperties {
     }
 
     /**
-     * Set the resolutionVirtualNetworks property: A list of references to virtual networks that resolve records in this
-     * DNS zone. This is a only when ZoneType is Private.
-     *
+     * Set the resolutionVirtualNetworks property: A list of references to virtual networks that resolve records in
+     * this DNS zone. This is a only when ZoneType is Private.
+     * 
      * @param resolutionVirtualNetworks the resolutionVirtualNetworks value to set.
      * @return the ZoneProperties object itself.
      */
@@ -178,7 +182,7 @@ public final class ZoneProperties {
 
     /**
      * Get the signingKeys property: The list of signing keys.
-     *
+     * 
      * @return the signingKeys value.
      */
     public List<SigningKey> signingKeys() {
@@ -187,7 +191,7 @@ public final class ZoneProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

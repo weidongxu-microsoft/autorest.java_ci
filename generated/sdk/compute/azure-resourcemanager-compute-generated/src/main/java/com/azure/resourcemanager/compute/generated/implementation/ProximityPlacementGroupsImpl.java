@@ -21,15 +21,14 @@ public final class ProximityPlacementGroupsImpl implements ProximityPlacementGro
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    public ProximityPlacementGroupsImpl(
-        ProximityPlacementGroupsClient innerClient,
+    public ProximityPlacementGroupsImpl(ProximityPlacementGroupsClient innerClient,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<Void> deleteByResourceGroupWithResponse(
-        String resourceGroupName, String proximityPlacementGroupName, Context context) {
+    public Response<Void> deleteByResourceGroupWithResponse(String resourceGroupName,
+        String proximityPlacementGroupName, Context context) {
         return this.serviceClient().deleteWithResponse(resourceGroupName, proximityPlacementGroupName, context);
     }
 
@@ -37,18 +36,12 @@ public final class ProximityPlacementGroupsImpl implements ProximityPlacementGro
         this.serviceClient().delete(resourceGroupName, proximityPlacementGroupName);
     }
 
-    public Response<ProximityPlacementGroup> getByResourceGroupWithResponse(
-        String resourceGroupName, String proximityPlacementGroupName, String includeColocationStatus, Context context) {
-        Response<ProximityPlacementGroupInner> inner =
-            this
-                .serviceClient()
-                .getByResourceGroupWithResponse(
-                    resourceGroupName, proximityPlacementGroupName, includeColocationStatus, context);
+    public Response<ProximityPlacementGroup> getByResourceGroupWithResponse(String resourceGroupName,
+        String proximityPlacementGroupName, String includeColocationStatus, Context context) {
+        Response<ProximityPlacementGroupInner> inner = this.serviceClient().getByResourceGroupWithResponse(
+            resourceGroupName, proximityPlacementGroupName, includeColocationStatus, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ProximityPlacementGroupImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -56,8 +49,8 @@ public final class ProximityPlacementGroupsImpl implements ProximityPlacementGro
     }
 
     public ProximityPlacementGroup getByResourceGroup(String resourceGroupName, String proximityPlacementGroupName) {
-        ProximityPlacementGroupInner inner =
-            this.serviceClient().getByResourceGroup(resourceGroupName, proximityPlacementGroupName);
+        ProximityPlacementGroupInner inner
+            = this.serviceClient().getByResourceGroup(resourceGroupName, proximityPlacementGroupName);
         if (inner != null) {
             return new ProximityPlacementGroupImpl(inner, this.manager());
         } else {
@@ -81,80 +74,53 @@ public final class ProximityPlacementGroupsImpl implements ProximityPlacementGro
     }
 
     public PagedIterable<ProximityPlacementGroup> listByResourceGroup(String resourceGroupName, Context context) {
-        PagedIterable<ProximityPlacementGroupInner> inner =
-            this.serviceClient().listByResourceGroup(resourceGroupName, context);
+        PagedIterable<ProximityPlacementGroupInner> inner
+            = this.serviceClient().listByResourceGroup(resourceGroupName, context);
         return Utils.mapPage(inner, inner1 -> new ProximityPlacementGroupImpl(inner1, this.manager()));
     }
 
     public ProximityPlacementGroup getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String proximityPlacementGroupName = Utils.getValueFromIdByName(id, "proximityPlacementGroups");
         if (proximityPlacementGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'proximityPlacementGroups'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'proximityPlacementGroups'.", id)));
         }
         String localIncludeColocationStatus = null;
-        return this
-            .getByResourceGroupWithResponse(
-                resourceGroupName, proximityPlacementGroupName, localIncludeColocationStatus, Context.NONE)
-            .getValue();
+        return this.getByResourceGroupWithResponse(resourceGroupName, proximityPlacementGroupName,
+            localIncludeColocationStatus, Context.NONE).getValue();
     }
 
-    public Response<ProximityPlacementGroup> getByIdWithResponse(
-        String id, String includeColocationStatus, Context context) {
+    public Response<ProximityPlacementGroup> getByIdWithResponse(String id, String includeColocationStatus,
+        Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String proximityPlacementGroupName = Utils.getValueFromIdByName(id, "proximityPlacementGroups");
         if (proximityPlacementGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'proximityPlacementGroups'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'proximityPlacementGroups'.", id)));
         }
-        return this
-            .getByResourceGroupWithResponse(
-                resourceGroupName, proximityPlacementGroupName, includeColocationStatus, context);
+        return this.getByResourceGroupWithResponse(resourceGroupName, proximityPlacementGroupName,
+            includeColocationStatus, context);
     }
 
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String proximityPlacementGroupName = Utils.getValueFromIdByName(id, "proximityPlacementGroups");
         if (proximityPlacementGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'proximityPlacementGroups'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'proximityPlacementGroups'.", id)));
         }
         this.deleteByResourceGroupWithResponse(resourceGroupName, proximityPlacementGroupName, Context.NONE);
     }
@@ -162,21 +128,13 @@ public final class ProximityPlacementGroupsImpl implements ProximityPlacementGro
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String proximityPlacementGroupName = Utils.getValueFromIdByName(id, "proximityPlacementGroups");
         if (proximityPlacementGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'proximityPlacementGroups'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'proximityPlacementGroups'.", id)));
         }
         return this.deleteByResourceGroupWithResponse(resourceGroupName, proximityPlacementGroupName, context);
     }

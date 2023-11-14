@@ -16,8 +16,7 @@ public final class WhatIfOperationResultImpl implements WhatIfOperationResult {
 
     private final com.azure.resourcemanager.resources.generated.ResourceManager serviceManager;
 
-    WhatIfOperationResultImpl(
-        WhatIfOperationResultInner innerObject,
+    WhatIfOperationResultImpl(WhatIfOperationResultInner innerObject,
         com.azure.resourcemanager.resources.generated.ResourceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

@@ -13,16 +13,18 @@ import com.azure.core.util.Context;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.network.generated.fluent.models.VpnServerConfigurationPolicyGroupInner;
 
-/** An instance of this class provides access to all the operations defined in ConfigurationPolicyGroupsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in ConfigurationPolicyGroupsClient.
+ */
 public interface ConfigurationPolicyGroupsClient {
     /**
      * Creates a ConfigurationPolicyGroup if it doesn't exist else updates the existing one.
-     *
+     * 
      * @param resourceGroupName The resource group name of the ConfigurationPolicyGroup.
      * @param vpnServerConfigurationName The name of the VpnServerConfiguration.
      * @param configurationPolicyGroupName The name of the ConfigurationPolicyGroup.
      * @param vpnServerConfigurationPolicyGroupParameters Parameters supplied to create or update a
-     *     VpnServerConfiguration PolicyGroup.
+     * VpnServerConfiguration PolicyGroup.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -30,20 +32,18 @@ public interface ConfigurationPolicyGroupsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<VpnServerConfigurationPolicyGroupInner>, VpnServerConfigurationPolicyGroupInner>
-        beginCreateOrUpdate(
-            String resourceGroupName,
-            String vpnServerConfigurationName,
+        beginCreateOrUpdate(String resourceGroupName, String vpnServerConfigurationName,
             String configurationPolicyGroupName,
             VpnServerConfigurationPolicyGroupInner vpnServerConfigurationPolicyGroupParameters);
 
     /**
      * Creates a ConfigurationPolicyGroup if it doesn't exist else updates the existing one.
-     *
+     * 
      * @param resourceGroupName The resource group name of the ConfigurationPolicyGroup.
      * @param vpnServerConfigurationName The name of the VpnServerConfiguration.
      * @param configurationPolicyGroupName The name of the ConfigurationPolicyGroup.
      * @param vpnServerConfigurationPolicyGroupParameters Parameters supplied to create or update a
-     *     VpnServerConfiguration PolicyGroup.
+     * VpnServerConfiguration PolicyGroup.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -52,41 +52,36 @@ public interface ConfigurationPolicyGroupsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<VpnServerConfigurationPolicyGroupInner>, VpnServerConfigurationPolicyGroupInner>
-        beginCreateOrUpdate(
-            String resourceGroupName,
-            String vpnServerConfigurationName,
+        beginCreateOrUpdate(String resourceGroupName, String vpnServerConfigurationName,
             String configurationPolicyGroupName,
-            VpnServerConfigurationPolicyGroupInner vpnServerConfigurationPolicyGroupParameters,
-            Context context);
+            VpnServerConfigurationPolicyGroupInner vpnServerConfigurationPolicyGroupParameters, Context context);
 
     /**
      * Creates a ConfigurationPolicyGroup if it doesn't exist else updates the existing one.
-     *
+     * 
      * @param resourceGroupName The resource group name of the ConfigurationPolicyGroup.
      * @param vpnServerConfigurationName The name of the VpnServerConfiguration.
      * @param configurationPolicyGroupName The name of the ConfigurationPolicyGroup.
      * @param vpnServerConfigurationPolicyGroupParameters Parameters supplied to create or update a
-     *     VpnServerConfiguration PolicyGroup.
+     * VpnServerConfiguration PolicyGroup.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return vpnServerConfigurationPolicyGroup Resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    VpnServerConfigurationPolicyGroupInner createOrUpdate(
-        String resourceGroupName,
-        String vpnServerConfigurationName,
+    VpnServerConfigurationPolicyGroupInner createOrUpdate(String resourceGroupName, String vpnServerConfigurationName,
         String configurationPolicyGroupName,
         VpnServerConfigurationPolicyGroupInner vpnServerConfigurationPolicyGroupParameters);
 
     /**
      * Creates a ConfigurationPolicyGroup if it doesn't exist else updates the existing one.
-     *
+     * 
      * @param resourceGroupName The resource group name of the ConfigurationPolicyGroup.
      * @param vpnServerConfigurationName The name of the VpnServerConfiguration.
      * @param configurationPolicyGroupName The name of the ConfigurationPolicyGroup.
      * @param vpnServerConfigurationPolicyGroupParameters Parameters supplied to create or update a
-     *     VpnServerConfiguration PolicyGroup.
+     * VpnServerConfiguration PolicyGroup.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -94,16 +89,13 @@ public interface ConfigurationPolicyGroupsClient {
      * @return vpnServerConfigurationPolicyGroup Resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    VpnServerConfigurationPolicyGroupInner createOrUpdate(
-        String resourceGroupName,
-        String vpnServerConfigurationName,
+    VpnServerConfigurationPolicyGroupInner createOrUpdate(String resourceGroupName, String vpnServerConfigurationName,
         String configurationPolicyGroupName,
-        VpnServerConfigurationPolicyGroupInner vpnServerConfigurationPolicyGroupParameters,
-        Context context);
+        VpnServerConfigurationPolicyGroupInner vpnServerConfigurationPolicyGroupParameters, Context context);
 
     /**
      * Deletes a ConfigurationPolicyGroup.
-     *
+     * 
      * @param resourceGroupName The resource group name of the ConfigurationPolicyGroup.
      * @param vpnServerConfigurationName The name of the VpnServerConfiguration.
      * @param configurationPolicyGroupName The name of the ConfigurationPolicyGroup.
@@ -113,12 +105,12 @@ public interface ConfigurationPolicyGroupsClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginDelete(
-        String resourceGroupName, String vpnServerConfigurationName, String configurationPolicyGroupName);
+    SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String vpnServerConfigurationName,
+        String configurationPolicyGroupName);
 
     /**
      * Deletes a ConfigurationPolicyGroup.
-     *
+     * 
      * @param resourceGroupName The resource group name of the ConfigurationPolicyGroup.
      * @param vpnServerConfigurationName The name of the VpnServerConfiguration.
      * @param configurationPolicyGroupName The name of the ConfigurationPolicyGroup.
@@ -129,15 +121,12 @@ public interface ConfigurationPolicyGroupsClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginDelete(
-        String resourceGroupName,
-        String vpnServerConfigurationName,
-        String configurationPolicyGroupName,
-        Context context);
+    SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String vpnServerConfigurationName,
+        String configurationPolicyGroupName, Context context);
 
     /**
      * Deletes a ConfigurationPolicyGroup.
-     *
+     * 
      * @param resourceGroupName The resource group name of the ConfigurationPolicyGroup.
      * @param vpnServerConfigurationName The name of the VpnServerConfiguration.
      * @param configurationPolicyGroupName The name of the ConfigurationPolicyGroup.
@@ -150,7 +139,7 @@ public interface ConfigurationPolicyGroupsClient {
 
     /**
      * Deletes a ConfigurationPolicyGroup.
-     *
+     * 
      * @param resourceGroupName The resource group name of the ConfigurationPolicyGroup.
      * @param vpnServerConfigurationName The name of the VpnServerConfiguration.
      * @param configurationPolicyGroupName The name of the ConfigurationPolicyGroup.
@@ -160,15 +149,12 @@ public interface ConfigurationPolicyGroupsClient {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void delete(
-        String resourceGroupName,
-        String vpnServerConfigurationName,
-        String configurationPolicyGroupName,
+    void delete(String resourceGroupName, String vpnServerConfigurationName, String configurationPolicyGroupName,
         Context context);
 
     /**
      * Retrieves the details of a ConfigurationPolicyGroup.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnServerConfiguration.
      * @param vpnServerConfigurationName The name of the VpnServerConfiguration.
      * @param configurationPolicyGroupName The name of the ConfigurationPolicyGroup being retrieved.
@@ -179,15 +165,12 @@ public interface ConfigurationPolicyGroupsClient {
      * @return vpnServerConfigurationPolicyGroup Resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<VpnServerConfigurationPolicyGroupInner> getWithResponse(
-        String resourceGroupName,
-        String vpnServerConfigurationName,
-        String configurationPolicyGroupName,
-        Context context);
+    Response<VpnServerConfigurationPolicyGroupInner> getWithResponse(String resourceGroupName,
+        String vpnServerConfigurationName, String configurationPolicyGroupName, Context context);
 
     /**
      * Retrieves the details of a ConfigurationPolicyGroup.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnServerConfiguration.
      * @param vpnServerConfigurationName The name of the VpnServerConfiguration.
      * @param configurationPolicyGroupName The name of the ConfigurationPolicyGroup being retrieved.
@@ -197,37 +180,37 @@ public interface ConfigurationPolicyGroupsClient {
      * @return vpnServerConfigurationPolicyGroup Resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    VpnServerConfigurationPolicyGroupInner get(
-        String resourceGroupName, String vpnServerConfigurationName, String configurationPolicyGroupName);
+    VpnServerConfigurationPolicyGroupInner get(String resourceGroupName, String vpnServerConfigurationName,
+        String configurationPolicyGroupName);
 
     /**
      * Lists all the configurationPolicyGroups in a resource group for a vpnServerConfiguration.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnServerConfiguration.
      * @param vpnServerConfigurationName The name of the VpnServerConfiguration.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnServerConfigurationPolicyGroups as paginated response with {@link
-     *     PagedIterable}.
+     * @return result of the request to list VpnServerConfigurationPolicyGroups as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<VpnServerConfigurationPolicyGroupInner> listByVpnServerConfiguration(
-        String resourceGroupName, String vpnServerConfigurationName);
+    PagedIterable<VpnServerConfigurationPolicyGroupInner> listByVpnServerConfiguration(String resourceGroupName,
+        String vpnServerConfigurationName);
 
     /**
      * Lists all the configurationPolicyGroups in a resource group for a vpnServerConfiguration.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnServerConfiguration.
      * @param vpnServerConfigurationName The name of the VpnServerConfiguration.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnServerConfigurationPolicyGroups as paginated response with {@link
-     *     PagedIterable}.
+     * @return result of the request to list VpnServerConfigurationPolicyGroups as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<VpnServerConfigurationPolicyGroupInner> listByVpnServerConfiguration(
-        String resourceGroupName, String vpnServerConfigurationName, Context context);
+    PagedIterable<VpnServerConfigurationPolicyGroupInner> listByVpnServerConfiguration(String resourceGroupName,
+        String vpnServerConfigurationName, Context context);
 }

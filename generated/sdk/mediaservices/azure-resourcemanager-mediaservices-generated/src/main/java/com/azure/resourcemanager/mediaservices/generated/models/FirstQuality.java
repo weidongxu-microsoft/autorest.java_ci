@@ -7,7 +7,9 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Filter First Quality. */
+/**
+ * Filter First Quality.
+ */
 @Fluent
 public final class FirstQuality {
     /*
@@ -16,13 +18,15 @@ public final class FirstQuality {
     @JsonProperty(value = "bitrate", required = true)
     private int bitrate;
 
-    /** Creates an instance of FirstQuality class. */
+    /**
+     * Creates an instance of FirstQuality class.
+     */
     public FirstQuality() {
     }
 
     /**
      * Get the bitrate property: The first quality bitrate.
-     *
+     * 
      * @return the bitrate value.
      */
     public int bitrate() {
@@ -31,7 +35,7 @@ public final class FirstQuality {
 
     /**
      * Set the bitrate property: The first quality bitrate.
-     *
+     * 
      * @param bitrate the bitrate value to set.
      * @return the FirstQuality object itself.
      */
@@ -42,7 +46,7 @@ public final class FirstQuality {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

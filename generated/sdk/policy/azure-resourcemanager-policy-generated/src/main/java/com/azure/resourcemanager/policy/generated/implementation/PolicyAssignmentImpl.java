@@ -21,8 +21,8 @@ public final class PolicyAssignmentImpl implements PolicyAssignment, PolicyAssig
 
     private final com.azure.resourcemanager.policy.generated.PolicyManager serviceManager;
 
-    PolicyAssignmentImpl(
-        PolicyAssignmentInner innerObject, com.azure.resourcemanager.policy.generated.PolicyManager serviceManager) {
+    PolicyAssignmentImpl(PolicyAssignmentInner innerObject,
+        com.azure.resourcemanager.policy.generated.PolicyManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -124,22 +124,14 @@ public final class PolicyAssignmentImpl implements PolicyAssignment, PolicyAssig
     }
 
     public PolicyAssignment create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getPolicyAssignments()
-                .createWithResponse(scope, policyAssignmentName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getPolicyAssignments()
+            .createWithResponse(scope, policyAssignmentName, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public PolicyAssignment create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getPolicyAssignments()
-                .createWithResponse(scope, policyAssignmentName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getPolicyAssignments()
+            .createWithResponse(scope, policyAssignmentName, this.innerModel(), context).getValue();
         return this;
     }
 
@@ -150,22 +142,14 @@ public final class PolicyAssignmentImpl implements PolicyAssignment, PolicyAssig
     }
 
     public PolicyAssignment refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getPolicyAssignments()
-                .getWithResponse(scope, policyAssignmentName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getPolicyAssignments()
+            .getWithResponse(scope, policyAssignmentName, Context.NONE).getValue();
         return this;
     }
 
     public PolicyAssignment refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getPolicyAssignments()
-                .getWithResponse(scope, policyAssignmentName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getPolicyAssignments()
+            .getWithResponse(scope, policyAssignmentName, context).getValue();
         return this;
     }
 

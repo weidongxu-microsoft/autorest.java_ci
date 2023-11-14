@@ -19,8 +19,7 @@ public final class LocationBasedPerformanceTiersImpl implements LocationBasedPer
 
     private final com.azure.resourcemanager.postgresql.generated.PostgreSqlManager serviceManager;
 
-    public LocationBasedPerformanceTiersImpl(
-        LocationBasedPerformanceTiersClient innerClient,
+    public LocationBasedPerformanceTiersImpl(LocationBasedPerformanceTiersClient innerClient,
         com.azure.resourcemanager.postgresql.generated.PostgreSqlManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;

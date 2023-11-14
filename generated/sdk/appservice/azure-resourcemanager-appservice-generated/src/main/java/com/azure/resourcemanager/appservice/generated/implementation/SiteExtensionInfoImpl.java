@@ -16,8 +16,7 @@ public final class SiteExtensionInfoImpl implements SiteExtensionInfo {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    SiteExtensionInfoImpl(
-        SiteExtensionInfoInner innerObject,
+    SiteExtensionInfoImpl(SiteExtensionInfoInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

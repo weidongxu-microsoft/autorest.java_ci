@@ -18,8 +18,7 @@ public final class PrivateLinkServiceIpConfigurationPropertiesImpl
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    PrivateLinkServiceIpConfigurationPropertiesImpl(
-        PrivateLinkServiceIpConfigurationPropertiesInner innerObject,
+    PrivateLinkServiceIpConfigurationPropertiesImpl(PrivateLinkServiceIpConfigurationPropertiesInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

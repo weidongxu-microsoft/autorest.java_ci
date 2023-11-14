@@ -15,7 +15,9 @@ import com.azure.resourcemanager.databoxedge.generated.models.RoleTypes;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The properties of the Data Box Edge/Gateway device. */
+/**
+ * The properties of the Data Box Edge/Gateway device.
+ */
 @Fluent
 public final class DataBoxEdgeDeviceProperties {
     /*
@@ -132,13 +134,15 @@ public final class DataBoxEdgeDeviceProperties {
     @JsonProperty(value = "kubernetesWorkloadProfile", access = JsonProperty.Access.WRITE_ONLY)
     private String kubernetesWorkloadProfile;
 
-    /** Creates an instance of DataBoxEdgeDeviceProperties class. */
+    /**
+     * Creates an instance of DataBoxEdgeDeviceProperties class.
+     */
     public DataBoxEdgeDeviceProperties() {
     }
 
     /**
      * Get the systemData property: DataBoxEdge Device Properties.
-     *
+     * 
      * @return the systemData value.
      */
     public SystemData systemData() {
@@ -147,7 +151,7 @@ public final class DataBoxEdgeDeviceProperties {
 
     /**
      * Get the dataBoxEdgeDeviceStatus property: The status of the Data Box Edge/Gateway device.
-     *
+     * 
      * @return the dataBoxEdgeDeviceStatus value.
      */
     public DataBoxEdgeDeviceStatus dataBoxEdgeDeviceStatus() {
@@ -156,7 +160,7 @@ public final class DataBoxEdgeDeviceProperties {
 
     /**
      * Get the serialNumber property: The Serial Number of Data Box Edge/Gateway device.
-     *
+     * 
      * @return the serialNumber value.
      */
     public String serialNumber() {
@@ -165,7 +169,7 @@ public final class DataBoxEdgeDeviceProperties {
 
     /**
      * Get the description property: The Description of the Data Box Edge/Gateway device.
-     *
+     * 
      * @return the description value.
      */
     public String description() {
@@ -174,7 +178,7 @@ public final class DataBoxEdgeDeviceProperties {
 
     /**
      * Get the modelDescription property: The description of the Data Box Edge/Gateway device model.
-     *
+     * 
      * @return the modelDescription value.
      */
     public String modelDescription() {
@@ -183,7 +187,7 @@ public final class DataBoxEdgeDeviceProperties {
 
     /**
      * Get the deviceType property: The type of the Data Box Edge/Gateway device.
-     *
+     * 
      * @return the deviceType value.
      */
     public DeviceType deviceType() {
@@ -192,7 +196,7 @@ public final class DataBoxEdgeDeviceProperties {
 
     /**
      * Get the friendlyName property: The Data Box Edge/Gateway device name.
-     *
+     * 
      * @return the friendlyName value.
      */
     public String friendlyName() {
@@ -201,7 +205,7 @@ public final class DataBoxEdgeDeviceProperties {
 
     /**
      * Get the culture property: The Data Box Edge/Gateway device culture.
-     *
+     * 
      * @return the culture value.
      */
     public String culture() {
@@ -210,7 +214,7 @@ public final class DataBoxEdgeDeviceProperties {
 
     /**
      * Get the deviceModel property: The Data Box Edge/Gateway device model.
-     *
+     * 
      * @return the deviceModel value.
      */
     public String deviceModel() {
@@ -219,7 +223,7 @@ public final class DataBoxEdgeDeviceProperties {
 
     /**
      * Get the deviceSoftwareVersion property: The Data Box Edge/Gateway device software version.
-     *
+     * 
      * @return the deviceSoftwareVersion value.
      */
     public String deviceSoftwareVersion() {
@@ -228,7 +232,7 @@ public final class DataBoxEdgeDeviceProperties {
 
     /**
      * Get the deviceLocalCapacity property: The Data Box Edge/Gateway device local capacity in MB.
-     *
+     * 
      * @return the deviceLocalCapacity value.
      */
     public Long deviceLocalCapacity() {
@@ -237,7 +241,7 @@ public final class DataBoxEdgeDeviceProperties {
 
     /**
      * Get the timeZone property: The Data Box Edge/Gateway device timezone.
-     *
+     * 
      * @return the timeZone value.
      */
     public String timeZone() {
@@ -246,7 +250,7 @@ public final class DataBoxEdgeDeviceProperties {
 
     /**
      * Get the deviceHcsVersion property: The device software version number of the device (eg: 1.2.18105.6).
-     *
+     * 
      * @return the deviceHcsVersion value.
      */
     public String deviceHcsVersion() {
@@ -255,7 +259,7 @@ public final class DataBoxEdgeDeviceProperties {
 
     /**
      * Get the configuredRoleTypes property: Type of compute roles configured.
-     *
+     * 
      * @return the configuredRoleTypes value.
      */
     public List<RoleTypes> configuredRoleTypes() {
@@ -264,7 +268,7 @@ public final class DataBoxEdgeDeviceProperties {
 
     /**
      * Get the nodeCount property: The number of nodes in the cluster.
-     *
+     * 
      * @return the nodeCount value.
      */
     public Integer nodeCount() {
@@ -273,7 +277,7 @@ public final class DataBoxEdgeDeviceProperties {
 
     /**
      * Get the resourceMoveDetails property: The details of the move operation on this resource.
-     *
+     * 
      * @return the resourceMoveDetails value.
      */
     public ResourceMoveDetails resourceMoveDetails() {
@@ -282,7 +286,7 @@ public final class DataBoxEdgeDeviceProperties {
 
     /**
      * Get the edgeProfile property: The details of Edge Profile for this resource.
-     *
+     * 
      * @return the edgeProfile value.
      */
     public EdgeProfile edgeProfile() {
@@ -291,7 +295,7 @@ public final class DataBoxEdgeDeviceProperties {
 
     /**
      * Get the dataResidency property: The details of data-residency related properties for this resource.
-     *
+     * 
      * @return the dataResidency value.
      */
     public DataResidency dataResidency() {
@@ -300,7 +304,7 @@ public final class DataBoxEdgeDeviceProperties {
 
     /**
      * Set the dataResidency property: The details of data-residency related properties for this resource.
-     *
+     * 
      * @param dataResidency the dataResidency value to set.
      * @return the DataBoxEdgeDeviceProperties object itself.
      */
@@ -311,7 +315,7 @@ public final class DataBoxEdgeDeviceProperties {
 
     /**
      * Get the kubernetesWorkloadProfile property: Kubernetes Workload Profile.
-     *
+     * 
      * @return the kubernetesWorkloadProfile value.
      */
     public String kubernetesWorkloadProfile() {
@@ -320,7 +324,7 @@ public final class DataBoxEdgeDeviceProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

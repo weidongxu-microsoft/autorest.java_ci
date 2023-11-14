@@ -7,7 +7,9 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The ContentKeyPolicyFairPlayOfflineRentalConfiguration model. */
+/**
+ * The ContentKeyPolicyFairPlayOfflineRentalConfiguration model.
+ */
 @Fluent
 public final class ContentKeyPolicyFairPlayOfflineRentalConfiguration {
     /*
@@ -22,13 +24,15 @@ public final class ContentKeyPolicyFairPlayOfflineRentalConfiguration {
     @JsonProperty(value = "storageDurationSeconds", required = true)
     private long storageDurationSeconds;
 
-    /** Creates an instance of ContentKeyPolicyFairPlayOfflineRentalConfiguration class. */
+    /**
+     * Creates an instance of ContentKeyPolicyFairPlayOfflineRentalConfiguration class.
+     */
     public ContentKeyPolicyFairPlayOfflineRentalConfiguration() {
     }
 
     /**
      * Get the playbackDurationSeconds property: Playback duration.
-     *
+     * 
      * @return the playbackDurationSeconds value.
      */
     public long playbackDurationSeconds() {
@@ -37,19 +41,19 @@ public final class ContentKeyPolicyFairPlayOfflineRentalConfiguration {
 
     /**
      * Set the playbackDurationSeconds property: Playback duration.
-     *
+     * 
      * @param playbackDurationSeconds the playbackDurationSeconds value to set.
      * @return the ContentKeyPolicyFairPlayOfflineRentalConfiguration object itself.
      */
-    public ContentKeyPolicyFairPlayOfflineRentalConfiguration withPlaybackDurationSeconds(
-        long playbackDurationSeconds) {
+    public ContentKeyPolicyFairPlayOfflineRentalConfiguration
+        withPlaybackDurationSeconds(long playbackDurationSeconds) {
         this.playbackDurationSeconds = playbackDurationSeconds;
         return this;
     }
 
     /**
      * Get the storageDurationSeconds property: Storage duration.
-     *
+     * 
      * @return the storageDurationSeconds value.
      */
     public long storageDurationSeconds() {
@@ -58,7 +62,7 @@ public final class ContentKeyPolicyFairPlayOfflineRentalConfiguration {
 
     /**
      * Set the storageDurationSeconds property: Storage duration.
-     *
+     * 
      * @param storageDurationSeconds the storageDurationSeconds value to set.
      * @return the ContentKeyPolicyFairPlayOfflineRentalConfiguration object itself.
      */
@@ -69,7 +73,7 @@ public final class ContentKeyPolicyFairPlayOfflineRentalConfiguration {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

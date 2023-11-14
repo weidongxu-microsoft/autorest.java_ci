@@ -12,8 +12,8 @@ public final class SnapshotImpl implements Snapshot {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    SnapshotImpl(
-        SnapshotInner innerObject, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
+    SnapshotImpl(SnapshotInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -18,8 +18,7 @@ public final class DataBoxEdgeDeviceExtendedInfoImpl implements DataBoxEdgeDevic
 
     private final com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager;
 
-    DataBoxEdgeDeviceExtendedInfoImpl(
-        DataBoxEdgeDeviceExtendedInfoInner innerObject,
+    DataBoxEdgeDeviceExtendedInfoImpl(DataBoxEdgeDeviceExtendedInfoInner innerObject,
         com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

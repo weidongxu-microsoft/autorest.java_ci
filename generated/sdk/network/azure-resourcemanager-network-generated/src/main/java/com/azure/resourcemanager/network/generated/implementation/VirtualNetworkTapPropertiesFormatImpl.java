@@ -22,8 +22,7 @@ public final class VirtualNetworkTapPropertiesFormatImpl implements VirtualNetwo
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    VirtualNetworkTapPropertiesFormatImpl(
-        VirtualNetworkTapPropertiesFormatInner innerObject,
+    VirtualNetworkTapPropertiesFormatImpl(VirtualNetworkTapPropertiesFormatInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -32,12 +31,9 @@ public final class VirtualNetworkTapPropertiesFormatImpl implements VirtualNetwo
     public List<NetworkInterfaceTapConfiguration> networkInterfaceTapConfigurations() {
         List<NetworkInterfaceTapConfigurationInner> inner = this.innerModel().networkInterfaceTapConfigurations();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new NetworkInterfaceTapConfigurationImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(
+                inner.stream().map(inner1 -> new NetworkInterfaceTapConfigurationImpl(inner1, this.manager()))
+                    .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

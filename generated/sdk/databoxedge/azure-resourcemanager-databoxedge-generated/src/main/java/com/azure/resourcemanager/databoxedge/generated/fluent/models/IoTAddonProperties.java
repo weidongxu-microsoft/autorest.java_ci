@@ -12,7 +12,9 @@ import com.azure.resourcemanager.databoxedge.generated.models.IoTDeviceInfo;
 import com.azure.resourcemanager.databoxedge.generated.models.PlatformType;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** IoT addon properties. */
+/**
+ * IoT addon properties.
+ */
 @Fluent
 public final class IoTAddonProperties {
     /*
@@ -51,13 +53,15 @@ public final class IoTAddonProperties {
     @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private AddonState provisioningState;
 
-    /** Creates an instance of IoTAddonProperties class. */
+    /**
+     * Creates an instance of IoTAddonProperties class.
+     */
     public IoTAddonProperties() {
     }
 
     /**
      * Get the ioTDeviceDetails property: IoT device metadata to which appliance needs to be connected.
-     *
+     * 
      * @return the ioTDeviceDetails value.
      */
     public IoTDeviceInfo ioTDeviceDetails() {
@@ -66,7 +70,7 @@ public final class IoTAddonProperties {
 
     /**
      * Set the ioTDeviceDetails property: IoT device metadata to which appliance needs to be connected.
-     *
+     * 
      * @param ioTDeviceDetails the ioTDeviceDetails value to set.
      * @return the IoTAddonProperties object itself.
      */
@@ -77,7 +81,7 @@ public final class IoTAddonProperties {
 
     /**
      * Get the ioTEdgeDeviceDetails property: IoT edge device to which the IoT Addon needs to be configured.
-     *
+     * 
      * @return the ioTEdgeDeviceDetails value.
      */
     public IoTDeviceInfo ioTEdgeDeviceDetails() {
@@ -86,7 +90,7 @@ public final class IoTAddonProperties {
 
     /**
      * Set the ioTEdgeDeviceDetails property: IoT edge device to which the IoT Addon needs to be configured.
-     *
+     * 
      * @param ioTEdgeDeviceDetails the ioTEdgeDeviceDetails value to set.
      * @return the IoTAddonProperties object itself.
      */
@@ -97,7 +101,7 @@ public final class IoTAddonProperties {
 
     /**
      * Get the version property: Version of IoT running on the appliance.
-     *
+     * 
      * @return the version value.
      */
     public String version() {
@@ -106,7 +110,7 @@ public final class IoTAddonProperties {
 
     /**
      * Get the hostPlatform property: Host OS supported by the IoT addon.
-     *
+     * 
      * @return the hostPlatform value.
      */
     public PlatformType hostPlatform() {
@@ -115,7 +119,7 @@ public final class IoTAddonProperties {
 
     /**
      * Get the hostPlatformType property: Platform where the runtime is hosted.
-     *
+     * 
      * @return the hostPlatformType value.
      */
     public HostPlatformType hostPlatformType() {
@@ -124,7 +128,7 @@ public final class IoTAddonProperties {
 
     /**
      * Get the provisioningState property: Addon Provisioning State.
-     *
+     * 
      * @return the provisioningState value.
      */
     public AddonState provisioningState() {
@@ -133,23 +137,19 @@ public final class IoTAddonProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (ioTDeviceDetails() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property ioTDeviceDetails in model IoTAddonProperties"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property ioTDeviceDetails in model IoTAddonProperties"));
         } else {
             ioTDeviceDetails().validate();
         }
         if (ioTEdgeDeviceDetails() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property ioTEdgeDeviceDetails in model IoTAddonProperties"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property ioTEdgeDeviceDetails in model IoTAddonProperties"));
         } else {
             ioTEdgeDeviceDetails().validate();
         }

@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of AlertRules. */
+/**
+ * Resource collection API of AlertRules.
+ */
 public interface AlertRules {
     /**
      * Deletes a classic metric alert rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @param context The context to associate with this operation.
@@ -25,7 +27,7 @@ public interface AlertRules {
 
     /**
      * Deletes a classic metric alert rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -36,7 +38,7 @@ public interface AlertRules {
 
     /**
      * Gets a classic metric alert rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @param context The context to associate with this operation.
@@ -45,12 +47,12 @@ public interface AlertRules {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return a classic metric alert rule along with {@link Response}.
      */
-    Response<AlertRuleResource> getByResourceGroupWithResponse(
-        String resourceGroupName, String ruleName, Context context);
+    Response<AlertRuleResource> getByResourceGroupWithResponse(String resourceGroupName, String ruleName,
+        Context context);
 
     /**
      * Gets a classic metric alert rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param ruleName The name of the rule.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -62,7 +64,7 @@ public interface AlertRules {
 
     /**
      * List the classic metric alert rules within a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -73,7 +75,7 @@ public interface AlertRules {
 
     /**
      * List the classic metric alert rules within a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -85,7 +87,7 @@ public interface AlertRules {
 
     /**
      * List the classic metric alert rules within a subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return represents a collection of alert rule resources as paginated response with {@link PagedIterable}.
@@ -94,7 +96,7 @@ public interface AlertRules {
 
     /**
      * List the classic metric alert rules within a subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -105,7 +107,7 @@ public interface AlertRules {
 
     /**
      * Gets a classic metric alert rule.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -116,7 +118,7 @@ public interface AlertRules {
 
     /**
      * Gets a classic metric alert rule.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -128,7 +130,7 @@ public interface AlertRules {
 
     /**
      * Deletes a classic metric alert rule.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -138,7 +140,7 @@ public interface AlertRules {
 
     /**
      * Deletes a classic metric alert rule.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -150,7 +152,7 @@ public interface AlertRules {
 
     /**
      * Begins definition for a new AlertRuleResource resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new AlertRuleResource definition.
      */

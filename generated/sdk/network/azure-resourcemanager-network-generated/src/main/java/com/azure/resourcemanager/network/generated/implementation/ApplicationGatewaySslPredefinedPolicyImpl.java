@@ -16,8 +16,7 @@ public final class ApplicationGatewaySslPredefinedPolicyImpl implements Applicat
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    ApplicationGatewaySslPredefinedPolicyImpl(
-        ApplicationGatewaySslPredefinedPolicyInner innerObject,
+    ApplicationGatewaySslPredefinedPolicyImpl(ApplicationGatewaySslPredefinedPolicyInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

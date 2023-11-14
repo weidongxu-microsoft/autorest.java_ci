@@ -6,12 +6,14 @@ package com.azure.resourcemanager.storage.generated.models;
 
 import com.azure.resourcemanager.storage.generated.fluent.models.LocalUserRegeneratePasswordResultInner;
 
-/** An immutable client-side representation of LocalUserRegeneratePasswordResult. */
+/**
+ * An immutable client-side representation of LocalUserRegeneratePasswordResult.
+ */
 public interface LocalUserRegeneratePasswordResult {
     /**
      * Gets the sshPassword property: Auto generated password by the server for SSH authentication if hasSshPassword is
      * set to true on the creation of local user.
-     *
+     * 
      * @return the sshPassword value.
      */
     String sshPassword();
@@ -19,7 +21,7 @@ public interface LocalUserRegeneratePasswordResult {
     /**
      * Gets the inner com.azure.resourcemanager.storage.generated.fluent.models.LocalUserRegeneratePasswordResultInner
      * object.
-     *
+     * 
      * @return the inner object.
      */
     LocalUserRegeneratePasswordResultInner innerModel();

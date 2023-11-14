@@ -11,88 +11,90 @@ import com.azure.resourcemanager.keyvault.generated.fluent.models.KeyProperties;
 import java.util.List;
 import java.util.Map;
 
-/** An immutable client-side representation of Key. */
+/**
+ * An immutable client-side representation of Key.
+ */
 public interface Key {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the name property: The name of the resource.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the type property: The type of the resource.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the location property: The geo-location where the resource lives.
-     *
+     * 
      * @return the location value.
      */
     String location();
 
     /**
      * Gets the tags property: Resource tags.
-     *
+     * 
      * @return the tags value.
      */
     Map<String, String> tags();
 
     /**
      * Gets the attributes property: The attributes of the key.
-     *
+     * 
      * @return the attributes value.
      */
     KeyAttributes attributes();
 
     /**
      * Gets the kty property: The type of the key. For valid values, see JsonWebKeyType.
-     *
+     * 
      * @return the kty value.
      */
     JsonWebKeyType kty();
 
     /**
      * Gets the keyOps property: The keyOps property.
-     *
+     * 
      * @return the keyOps value.
      */
     List<JsonWebKeyOperation> keyOps();
 
     /**
      * Gets the keySize property: The key size in bits. For example: 2048, 3072, or 4096 for RSA.
-     *
+     * 
      * @return the keySize value.
      */
     Integer keySize();
 
     /**
      * Gets the curveName property: The elliptic curve name. For valid values, see JsonWebKeyCurveName.
-     *
+     * 
      * @return the curveName value.
      */
     JsonWebKeyCurveName curveName();
 
     /**
      * Gets the keyUri property: The URI to retrieve the current version of the key.
-     *
+     * 
      * @return the keyUri value.
      */
     String keyUri();
 
     /**
      * Gets the keyUriWithVersion property: The URI to retrieve the specific version of the key.
-     *
+     * 
      * @return the keyUriWithVersion value.
      */
     String keyUriWithVersion();
@@ -100,7 +102,7 @@ public interface Key {
     /**
      * Gets the rotationPolicy property: Key rotation policy in response. It will be used for both output and input.
      * Omitted if empty.
-     *
+     * 
      * @return the rotationPolicy value.
      */
     RotationPolicy rotationPolicy();
@@ -108,51 +110,56 @@ public interface Key {
     /**
      * Gets the releasePolicy property: Key release policy in response. It will be used for both output and input.
      * Omitted if empty.
-     *
+     * 
      * @return the releasePolicy value.
      */
     KeyReleasePolicy releasePolicy();
 
     /**
      * Gets the region of the resource.
-     *
+     * 
      * @return the region of the resource.
      */
     Region region();
 
     /**
      * Gets the name of the resource region.
-     *
+     * 
      * @return the name of the resource region.
      */
     String regionName();
 
     /**
      * Gets the inner com.azure.resourcemanager.keyvault.generated.fluent.models.KeyInner object.
-     *
+     * 
      * @return the inner object.
      */
     KeyInner innerModel();
 
-    /** The entirety of the Key definition. */
-    interface Definition
-        extends DefinitionStages.Blank,
-            DefinitionStages.WithParentResource,
-            DefinitionStages.WithProperties,
-            DefinitionStages.WithCreate {
+    /**
+     * The entirety of the Key definition.
+     */
+    interface Definition extends DefinitionStages.Blank, DefinitionStages.WithParentResource,
+        DefinitionStages.WithProperties, DefinitionStages.WithCreate {
     }
 
-    /** The Key definition stages. */
+    /**
+     * The Key definition stages.
+     */
     interface DefinitionStages {
-        /** The first stage of the Key definition. */
+        /**
+         * The first stage of the Key definition.
+         */
         interface Blank extends WithParentResource {
         }
 
-        /** The stage of the Key definition allowing to specify parent resource. */
+        /**
+         * The stage of the Key definition allowing to specify parent resource.
+         */
         interface WithParentResource {
             /**
              * Specifies resourceGroupName, vaultName.
-             *
+             * 
              * @param resourceGroupName The name of the resource group which contains the specified key vault.
              * @param vaultName The name of the key vault which contains the key to be created.
              * @return the next definition stage.
@@ -160,11 +167,13 @@ public interface Key {
             WithProperties withExistingVault(String resourceGroupName, String vaultName);
         }
 
-        /** The stage of the Key definition allowing to specify properties. */
+        /**
+         * The stage of the Key definition allowing to specify properties.
+         */
         interface WithProperties {
             /**
              * Specifies the properties property: The properties of the key to be created..
-             *
+             * 
              * @param properties The properties of the key to be created.
              * @return the next definition stage.
              */
@@ -178,25 +187,27 @@ public interface Key {
         interface WithCreate extends DefinitionStages.WithTags {
             /**
              * Executes the create request.
-             *
+             * 
              * @return the created resource.
              */
             Key create();
 
             /**
              * Executes the create request.
-             *
+             * 
              * @param context The context to associate with this operation.
              * @return the created resource.
              */
             Key create(Context context);
         }
 
-        /** The stage of the Key definition allowing to specify tags. */
+        /**
+         * The stage of the Key definition allowing to specify tags.
+         */
         interface WithTags {
             /**
              * Specifies the tags property: The tags that will be assigned to the key..
-             *
+             * 
              * @param tags The tags that will be assigned to the key.
              * @return the next definition stage.
              */
@@ -206,14 +217,14 @@ public interface Key {
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @return the refreshed resource.
      */
     Key refresh();
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @return the refreshed resource.
      */

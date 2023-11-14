@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of SecurityPartnerProviders. */
+/**
+ * Resource collection API of SecurityPartnerProviders.
+ */
 public interface SecurityPartnerProviders {
     /**
      * Deletes the specified Security Partner Provider.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param securityPartnerProviderName The name of the Security Partner Provider.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -23,7 +25,7 @@ public interface SecurityPartnerProviders {
 
     /**
      * Deletes the specified Security Partner Provider.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param securityPartnerProviderName The name of the Security Partner Provider.
      * @param context The context to associate with this operation.
@@ -35,7 +37,7 @@ public interface SecurityPartnerProviders {
 
     /**
      * Gets the specified Security Partner Provider.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param securityPartnerProviderName The name of the Security Partner Provider.
      * @param context The context to associate with this operation.
@@ -44,12 +46,12 @@ public interface SecurityPartnerProviders {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified Security Partner Provider along with {@link Response}.
      */
-    Response<SecurityPartnerProvider> getByResourceGroupWithResponse(
-        String resourceGroupName, String securityPartnerProviderName, Context context);
+    Response<SecurityPartnerProvider> getByResourceGroupWithResponse(String resourceGroupName,
+        String securityPartnerProviderName, Context context);
 
     /**
      * Gets the specified Security Partner Provider.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param securityPartnerProviderName The name of the Security Partner Provider.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -61,32 +63,32 @@ public interface SecurityPartnerProviders {
 
     /**
      * Lists all Security Partner Providers in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListSecurityPartnerProviders API service call as paginated response with {@link
-     *     PagedIterable}.
+     * @return response for ListSecurityPartnerProviders API service call as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<SecurityPartnerProvider> listByResourceGroup(String resourceGroupName);
 
     /**
      * Lists all Security Partner Providers in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListSecurityPartnerProviders API service call as paginated response with {@link
-     *     PagedIterable}.
+     * @return response for ListSecurityPartnerProviders API service call as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<SecurityPartnerProvider> listByResourceGroup(String resourceGroupName, Context context);
 
     /**
      * Gets all the Security Partner Providers in a subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all the Security Partner Providers in a subscription as paginated response with {@link PagedIterable}.
@@ -95,7 +97,7 @@ public interface SecurityPartnerProviders {
 
     /**
      * Gets all the Security Partner Providers in a subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -106,7 +108,7 @@ public interface SecurityPartnerProviders {
 
     /**
      * Gets the specified Security Partner Provider.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -117,7 +119,7 @@ public interface SecurityPartnerProviders {
 
     /**
      * Gets the specified Security Partner Provider.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -129,7 +131,7 @@ public interface SecurityPartnerProviders {
 
     /**
      * Deletes the specified Security Partner Provider.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -139,7 +141,7 @@ public interface SecurityPartnerProviders {
 
     /**
      * Deletes the specified Security Partner Provider.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -150,7 +152,7 @@ public interface SecurityPartnerProviders {
 
     /**
      * Begins definition for a new SecurityPartnerProvider resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new SecurityPartnerProvider definition.
      */

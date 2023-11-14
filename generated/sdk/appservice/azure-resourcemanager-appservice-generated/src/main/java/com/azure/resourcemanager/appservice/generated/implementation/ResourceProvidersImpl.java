@@ -10,6 +10,7 @@ import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.fluent.ResourceProvidersClient;
+import com.azure.resourcemanager.appservice.generated.fluent.models.AseRegionInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.BillingMeterInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CustomHostnameSitesInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DeploymentLocationsInner;
@@ -24,6 +25,7 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.UserInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ValidateRequestInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ValidateResponseInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.VnetValidationFailureDetailsInner;
+import com.azure.resourcemanager.appservice.generated.models.AseRegion;
 import com.azure.resourcemanager.appservice.generated.models.BillingMeter;
 import com.azure.resourcemanager.appservice.generated.models.CsmMoveResourceEnvelope;
 import com.azure.resourcemanager.appservice.generated.models.CustomHostnameSites;
@@ -49,8 +51,7 @@ public final class ResourceProvidersImpl implements ResourceProviders {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    public ResourceProvidersImpl(
-        ResourceProvidersClient innerClient,
+    public ResourceProvidersImpl(ResourceProvidersClient innerClient,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -59,10 +60,7 @@ public final class ResourceProvidersImpl implements ResourceProviders {
     public Response<User> getPublishingUserWithResponse(Context context) {
         Response<UserInner> inner = this.serviceClient().getPublishingUserWithResponse(context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new UserImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -81,10 +79,7 @@ public final class ResourceProvidersImpl implements ResourceProviders {
     public Response<User> updatePublishingUserWithResponse(UserInner userDetails, Context context) {
         Response<UserInner> inner = this.serviceClient().updatePublishingUserWithResponse(userDetails, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new UserImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -111,13 +106,10 @@ public final class ResourceProvidersImpl implements ResourceProviders {
     }
 
     public Response<SourceControl> getSourceControlWithResponse(String sourceControlType, Context context) {
-        Response<SourceControlInner> inner =
-            this.serviceClient().getSourceControlWithResponse(sourceControlType, context);
+        Response<SourceControlInner> inner
+            = this.serviceClient().getSourceControlWithResponse(sourceControlType, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new SourceControlImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -133,15 +125,12 @@ public final class ResourceProvidersImpl implements ResourceProviders {
         }
     }
 
-    public Response<SourceControl> updateSourceControlWithResponse(
-        String sourceControlType, SourceControlInner requestMessage, Context context) {
-        Response<SourceControlInner> inner =
-            this.serviceClient().updateSourceControlWithResponse(sourceControlType, requestMessage, context);
+    public Response<SourceControl> updateSourceControlWithResponse(String sourceControlType,
+        SourceControlInner requestMessage, Context context) {
+        Response<SourceControlInner> inner
+            = this.serviceClient().updateSourceControlWithResponse(sourceControlType, requestMessage, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new SourceControlImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -167,15 +156,12 @@ public final class ResourceProvidersImpl implements ResourceProviders {
         return Utils.mapPage(inner, inner1 -> new BillingMeterImpl(inner1, this.manager()));
     }
 
-    public Response<ResourceNameAvailability> checkNameAvailabilityWithResponse(
-        ResourceNameAvailabilityRequest request, Context context) {
-        Response<ResourceNameAvailabilityInner> inner =
-            this.serviceClient().checkNameAvailabilityWithResponse(request, context);
+    public Response<ResourceNameAvailability> checkNameAvailabilityWithResponse(ResourceNameAvailabilityRequest request,
+        Context context) {
+        Response<ResourceNameAvailabilityInner> inner
+            = this.serviceClient().checkNameAvailabilityWithResponse(request, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ResourceNameAvailabilityImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -202,13 +188,10 @@ public final class ResourceProvidersImpl implements ResourceProviders {
     }
 
     public Response<DeploymentLocations> getSubscriptionDeploymentLocationsWithResponse(Context context) {
-        Response<DeploymentLocationsInner> inner =
-            this.serviceClient().getSubscriptionDeploymentLocationsWithResponse(context);
+        Response<DeploymentLocationsInner> inner
+            = this.serviceClient().getSubscriptionDeploymentLocationsWithResponse(context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DeploymentLocationsImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -224,34 +207,38 @@ public final class ResourceProvidersImpl implements ResourceProviders {
         }
     }
 
+    public PagedIterable<AseRegion> listAseRegions() {
+        PagedIterable<AseRegionInner> inner = this.serviceClient().listAseRegions();
+        return Utils.mapPage(inner, inner1 -> new AseRegionImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<AseRegion> listAseRegions(Context context) {
+        PagedIterable<AseRegionInner> inner = this.serviceClient().listAseRegions(context);
+        return Utils.mapPage(inner, inner1 -> new AseRegionImpl(inner1, this.manager()));
+    }
+
     public PagedIterable<GeoRegion> listGeoRegions() {
         PagedIterable<GeoRegionInner> inner = this.serviceClient().listGeoRegions();
         return Utils.mapPage(inner, inner1 -> new GeoRegionImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<GeoRegion> listGeoRegions(
-        SkuName sku,
-        Boolean linuxWorkersEnabled,
-        Boolean xenonWorkersEnabled,
-        Boolean linuxDynamicWorkersEnabled,
-        Context context) {
-        PagedIterable<GeoRegionInner> inner =
-            this
-                .serviceClient()
-                .listGeoRegions(sku, linuxWorkersEnabled, xenonWorkersEnabled, linuxDynamicWorkersEnabled, context);
+    public PagedIterable<GeoRegion> listGeoRegions(SkuName sku, Boolean linuxWorkersEnabled,
+        Boolean xenonWorkersEnabled, Boolean linuxDynamicWorkersEnabled, Context context) {
+        PagedIterable<GeoRegionInner> inner = this.serviceClient().listGeoRegions(sku, linuxWorkersEnabled,
+            xenonWorkersEnabled, linuxDynamicWorkersEnabled, context);
         return Utils.mapPage(inner, inner1 -> new GeoRegionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Identifier> listSiteIdentifiersAssignedToHostname(NameIdentifierInner nameIdentifier) {
-        PagedIterable<IdentifierInner> inner =
-            this.serviceClient().listSiteIdentifiersAssignedToHostname(nameIdentifier);
+        PagedIterable<IdentifierInner> inner
+            = this.serviceClient().listSiteIdentifiersAssignedToHostname(nameIdentifier);
         return Utils.mapPage(inner, inner1 -> new IdentifierImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<Identifier> listSiteIdentifiersAssignedToHostname(
-        NameIdentifierInner nameIdentifier, Context context) {
-        PagedIterable<IdentifierInner> inner =
-            this.serviceClient().listSiteIdentifiersAssignedToHostname(nameIdentifier, context);
+    public PagedIterable<Identifier> listSiteIdentifiersAssignedToHostname(NameIdentifierInner nameIdentifier,
+        Context context) {
+        PagedIterable<IdentifierInner> inner
+            = this.serviceClient().listSiteIdentifiersAssignedToHostname(nameIdentifier, context);
         return Utils.mapPage(inner, inner1 -> new IdentifierImpl(inner1, this.manager()));
     }
 
@@ -268,10 +255,7 @@ public final class ResourceProvidersImpl implements ResourceProviders {
     public Response<SkuInfos> listSkusWithResponse(Context context) {
         Response<SkuInfosInner> inner = this.serviceClient().listSkusWithResponse(context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new SkuInfosImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -287,15 +271,12 @@ public final class ResourceProvidersImpl implements ResourceProviders {
         }
     }
 
-    public Response<VnetValidationFailureDetails> verifyHostingEnvironmentVnetWithResponse(
-        VnetParameters parameters, Context context) {
-        Response<VnetValidationFailureDetailsInner> inner =
-            this.serviceClient().verifyHostingEnvironmentVnetWithResponse(parameters, context);
+    public Response<VnetValidationFailureDetails> verifyHostingEnvironmentVnetWithResponse(VnetParameters parameters,
+        Context context) {
+        Response<VnetValidationFailureDetailsInner> inner
+            = this.serviceClient().verifyHostingEnvironmentVnetWithResponse(parameters, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new VnetValidationFailureDetailsImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -311,8 +292,8 @@ public final class ResourceProvidersImpl implements ResourceProviders {
         }
     }
 
-    public Response<Void> moveWithResponse(
-        String resourceGroupName, CsmMoveResourceEnvelope moveResourceEnvelope, Context context) {
+    public Response<Void> moveWithResponse(String resourceGroupName, CsmMoveResourceEnvelope moveResourceEnvelope,
+        Context context) {
         return this.serviceClient().moveWithResponse(resourceGroupName, moveResourceEnvelope, context);
     }
 
@@ -320,15 +301,12 @@ public final class ResourceProvidersImpl implements ResourceProviders {
         this.serviceClient().move(resourceGroupName, moveResourceEnvelope);
     }
 
-    public Response<ValidateResponse> validateWithResponse(
-        String resourceGroupName, ValidateRequestInner validateRequest, Context context) {
-        Response<ValidateResponseInner> inner =
-            this.serviceClient().validateWithResponse(resourceGroupName, validateRequest, context);
+    public Response<ValidateResponse> validateWithResponse(String resourceGroupName,
+        ValidateRequestInner validateRequest, Context context) {
+        Response<ValidateResponseInner> inner
+            = this.serviceClient().validateWithResponse(resourceGroupName, validateRequest, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ValidateResponseImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -344,8 +322,8 @@ public final class ResourceProvidersImpl implements ResourceProviders {
         }
     }
 
-    public Response<Void> validateMoveWithResponse(
-        String resourceGroupName, CsmMoveResourceEnvelope moveResourceEnvelope, Context context) {
+    public Response<Void> validateMoveWithResponse(String resourceGroupName,
+        CsmMoveResourceEnvelope moveResourceEnvelope, Context context) {
         return this.serviceClient().validateMoveWithResponse(resourceGroupName, moveResourceEnvelope, context);
     }
 

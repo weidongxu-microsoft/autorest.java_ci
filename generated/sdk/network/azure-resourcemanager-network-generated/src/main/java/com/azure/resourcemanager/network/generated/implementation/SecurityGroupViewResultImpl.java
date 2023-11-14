@@ -15,8 +15,7 @@ public final class SecurityGroupViewResultImpl implements SecurityGroupViewResul
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    SecurityGroupViewResultImpl(
-        SecurityGroupViewResultInner innerObject,
+    SecurityGroupViewResultImpl(SecurityGroupViewResultInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

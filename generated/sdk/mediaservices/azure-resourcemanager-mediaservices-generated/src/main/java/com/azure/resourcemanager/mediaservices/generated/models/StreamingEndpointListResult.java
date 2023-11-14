@@ -11,8 +11,8 @@ import java.util.List;
 
 /**
  * StreamingEndpointListResult
- *
- * <p>The streaming endpoint list result.
+ * 
+ * The streaming endpoint list result.
  */
 @Fluent
 public final class StreamingEndpointListResult {
@@ -34,13 +34,15 @@ public final class StreamingEndpointListResult {
     @JsonProperty(value = "@odata.nextLink")
     private String odataNextLink;
 
-    /** Creates an instance of StreamingEndpointListResult class. */
+    /**
+     * Creates an instance of StreamingEndpointListResult class.
+     */
     public StreamingEndpointListResult() {
     }
 
     /**
      * Get the value property: The result of the List StreamingEndpoint operation.
-     *
+     * 
      * @return the value value.
      */
     public List<StreamingEndpointInner> value() {
@@ -49,7 +51,7 @@ public final class StreamingEndpointListResult {
 
     /**
      * Set the value property: The result of the List StreamingEndpoint operation.
-     *
+     * 
      * @param value the value value to set.
      * @return the StreamingEndpointListResult object itself.
      */
@@ -60,7 +62,7 @@ public final class StreamingEndpointListResult {
 
     /**
      * Get the odataCount property: The number of result.
-     *
+     * 
      * @return the odataCount value.
      */
     public Integer odataCount() {
@@ -69,7 +71,7 @@ public final class StreamingEndpointListResult {
 
     /**
      * Set the odataCount property: The number of result.
-     *
+     * 
      * @param odataCount the odataCount value to set.
      * @return the StreamingEndpointListResult object itself.
      */
@@ -81,7 +83,7 @@ public final class StreamingEndpointListResult {
     /**
      * Get the odataNextLink property: The link to the next set of results. Not empty if value contains incomplete list
      * of streaming endpoints.
-     *
+     * 
      * @return the odataNextLink value.
      */
     public String odataNextLink() {
@@ -91,7 +93,7 @@ public final class StreamingEndpointListResult {
     /**
      * Set the odataNextLink property: The link to the next set of results. Not empty if value contains incomplete list
      * of streaming endpoints.
-     *
+     * 
      * @param odataNextLink the odataNextLink value to set.
      * @return the StreamingEndpointListResult object itself.
      */
@@ -102,7 +104,7 @@ public final class StreamingEndpointListResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

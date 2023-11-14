@@ -27,8 +27,7 @@ public final class SitePatchResourceImpl implements SitePatchResource {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    SitePatchResourceImpl(
-        SitePatchResourceInner innerObject,
+    SitePatchResourceImpl(SitePatchResourceInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

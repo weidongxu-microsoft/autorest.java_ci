@@ -12,8 +12,7 @@ public final class HybridConnectionLimitsImpl implements HybridConnectionLimits 
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    HybridConnectionLimitsImpl(
-        HybridConnectionLimitsInner innerObject,
+    HybridConnectionLimitsImpl(HybridConnectionLimitsInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

@@ -13,10 +13,8 @@ import com.azure.resourcemanager.appservice.generated.models.KeyVaultSecretStatu
 import java.util.Collections;
 import java.util.Map;
 
-public final class AppServiceCertificateResourceImpl
-    implements AppServiceCertificateResource,
-        AppServiceCertificateResource.Definition,
-        AppServiceCertificateResource.Update {
+public final class AppServiceCertificateResourceImpl implements AppServiceCertificateResource,
+    AppServiceCertificateResource.Definition, AppServiceCertificateResource.Update {
     private AppServiceCertificateResourceInner innerObject;
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
@@ -90,34 +88,27 @@ public final class AppServiceCertificateResourceImpl
 
     private AppServiceCertificatePatchResource updateKeyVaultCertificate;
 
-    public AppServiceCertificateResourceImpl withExistingCertificateOrder(
-        String resourceGroupName, String certificateOrderName) {
+    public AppServiceCertificateResourceImpl withExistingCertificateOrder(String resourceGroupName,
+        String certificateOrderName) {
         this.resourceGroupName = resourceGroupName;
         this.certificateOrderName = certificateOrderName;
         return this;
     }
 
     public AppServiceCertificateResource create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getAppServiceCertificateOrders()
-                .createOrUpdateCertificate(
-                    resourceGroupName, certificateOrderName, name, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getAppServiceCertificateOrders()
+            .createOrUpdateCertificate(resourceGroupName, certificateOrderName, name, this.innerModel(), Context.NONE);
         return this;
     }
 
     public AppServiceCertificateResource create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getAppServiceCertificateOrders()
-                .createOrUpdateCertificate(resourceGroupName, certificateOrderName, name, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getAppServiceCertificateOrders()
+            .createOrUpdateCertificate(resourceGroupName, certificateOrderName, name, this.innerModel(), context);
         return this;
     }
 
-    AppServiceCertificateResourceImpl(
-        String name, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
+    AppServiceCertificateResourceImpl(String name,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = new AppServiceCertificateResourceInner();
         this.serviceManager = serviceManager;
         this.name = name;
@@ -129,29 +120,20 @@ public final class AppServiceCertificateResourceImpl
     }
 
     public AppServiceCertificateResource apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getAppServiceCertificateOrders()
-                .updateCertificateWithResponse(
-                    resourceGroupName, certificateOrderName, name, updateKeyVaultCertificate, Context.NONE)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getAppServiceCertificateOrders().updateCertificateWithResponse(
+                resourceGroupName, certificateOrderName, name, updateKeyVaultCertificate, Context.NONE).getValue();
         return this;
     }
 
     public AppServiceCertificateResource apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getAppServiceCertificateOrders()
-                .updateCertificateWithResponse(
-                    resourceGroupName, certificateOrderName, name, updateKeyVaultCertificate, context)
-                .getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getAppServiceCertificateOrders().updateCertificateWithResponse(
+                resourceGroupName, certificateOrderName, name, updateKeyVaultCertificate, context).getValue();
         return this;
     }
 
-    AppServiceCertificateResourceImpl(
-        AppServiceCertificateResourceInner innerObject,
+    AppServiceCertificateResourceImpl(AppServiceCertificateResourceInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -161,22 +143,14 @@ public final class AppServiceCertificateResourceImpl
     }
 
     public AppServiceCertificateResource refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getAppServiceCertificateOrders()
-                .getCertificateWithResponse(resourceGroupName, certificateOrderName, name, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getAppServiceCertificateOrders()
+            .getCertificateWithResponse(resourceGroupName, certificateOrderName, name, Context.NONE).getValue();
         return this;
     }
 
     public AppServiceCertificateResource refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getAppServiceCertificateOrders()
-                .getCertificateWithResponse(resourceGroupName, certificateOrderName, name, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getAppServiceCertificateOrders()
+            .getCertificateWithResponse(resourceGroupName, certificateOrderName, name, context).getValue();
         return this;
     }
 

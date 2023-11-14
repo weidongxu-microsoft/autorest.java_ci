@@ -13,7 +13,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 import java.util.Map;
 
-/** The autoscale setting resource. */
+/**
+ * The autoscale setting resource.
+ */
 @Fluent
 public final class AutoscaleSettingResourceInner extends Resource {
     /*
@@ -22,27 +24,33 @@ public final class AutoscaleSettingResourceInner extends Resource {
     @JsonProperty(value = "properties", required = true)
     private AutoscaleSetting innerProperties = new AutoscaleSetting();
 
-    /** Creates an instance of AutoscaleSettingResourceInner class. */
+    /**
+     * Creates an instance of AutoscaleSettingResourceInner class.
+     */
     public AutoscaleSettingResourceInner() {
     }
 
     /**
      * Get the innerProperties property: The autoscale setting of the resource.
-     *
+     * 
      * @return the innerProperties value.
      */
     private AutoscaleSetting innerProperties() {
         return this.innerProperties;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public AutoscaleSettingResourceInner withLocation(String location) {
         super.withLocation(location);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public AutoscaleSettingResourceInner withTags(Map<String, String> tags) {
         super.withTags(tags);
@@ -50,9 +58,9 @@ public final class AutoscaleSettingResourceInner extends Resource {
     }
 
     /**
-     * Get the profiles property: the collection of automatic scaling profiles that specify different scaling parameters
-     * for different time periods. A maximum of 20 profiles can be specified.
-     *
+     * Get the profiles property: the collection of automatic scaling profiles that specify different scaling
+     * parameters for different time periods. A maximum of 20 profiles can be specified.
+     * 
      * @return the profiles value.
      */
     public List<AutoscaleProfile> profiles() {
@@ -60,9 +68,9 @@ public final class AutoscaleSettingResourceInner extends Resource {
     }
 
     /**
-     * Set the profiles property: the collection of automatic scaling profiles that specify different scaling parameters
-     * for different time periods. A maximum of 20 profiles can be specified.
-     *
+     * Set the profiles property: the collection of automatic scaling profiles that specify different scaling
+     * parameters for different time periods. A maximum of 20 profiles can be specified.
+     * 
      * @param profiles the profiles value to set.
      * @return the AutoscaleSettingResourceInner object itself.
      */
@@ -76,7 +84,7 @@ public final class AutoscaleSettingResourceInner extends Resource {
 
     /**
      * Get the notifications property: the collection of notifications.
-     *
+     * 
      * @return the notifications value.
      */
     public List<AutoscaleNotification> notifications() {
@@ -85,7 +93,7 @@ public final class AutoscaleSettingResourceInner extends Resource {
 
     /**
      * Set the notifications property: the collection of notifications.
-     *
+     * 
      * @param notifications the notifications value to set.
      * @return the AutoscaleSettingResourceInner object itself.
      */
@@ -100,7 +108,7 @@ public final class AutoscaleSettingResourceInner extends Resource {
     /**
      * Get the enabled property: the enabled flag. Specifies whether automatic scaling is enabled for the resource. The
      * default value is 'false'.
-     *
+     * 
      * @return the enabled value.
      */
     public Boolean enabled() {
@@ -110,7 +118,7 @@ public final class AutoscaleSettingResourceInner extends Resource {
     /**
      * Set the enabled property: the enabled flag. Specifies whether automatic scaling is enabled for the resource. The
      * default value is 'false'.
-     *
+     * 
      * @param enabled the enabled value to set.
      * @return the AutoscaleSettingResourceInner object itself.
      */
@@ -124,7 +132,7 @@ public final class AutoscaleSettingResourceInner extends Resource {
 
     /**
      * Get the name property: the name of the autoscale setting.
-     *
+     * 
      * @return the name value.
      */
     public String namePropertiesName() {
@@ -133,7 +141,7 @@ public final class AutoscaleSettingResourceInner extends Resource {
 
     /**
      * Set the name property: the name of the autoscale setting.
-     *
+     * 
      * @param name the name value to set.
      * @return the AutoscaleSettingResourceInner object itself.
      */
@@ -148,7 +156,7 @@ public final class AutoscaleSettingResourceInner extends Resource {
     /**
      * Get the targetResourceUri property: the resource identifier of the resource that the autoscale setting should be
      * added to.
-     *
+     * 
      * @return the targetResourceUri value.
      */
     public String targetResourceUri() {
@@ -158,7 +166,7 @@ public final class AutoscaleSettingResourceInner extends Resource {
     /**
      * Set the targetResourceUri property: the resource identifier of the resource that the autoscale setting should be
      * added to.
-     *
+     * 
      * @param targetResourceUri the targetResourceUri value to set.
      * @return the AutoscaleSettingResourceInner object itself.
      */
@@ -173,7 +181,7 @@ public final class AutoscaleSettingResourceInner extends Resource {
     /**
      * Get the targetResourceLocation property: the location of the resource that the autoscale setting should be added
      * to.
-     *
+     * 
      * @return the targetResourceLocation value.
      */
     public String targetResourceLocation() {
@@ -183,7 +191,7 @@ public final class AutoscaleSettingResourceInner extends Resource {
     /**
      * Set the targetResourceLocation property: the location of the resource that the autoscale setting should be added
      * to.
-     *
+     * 
      * @param targetResourceLocation the targetResourceLocation value to set.
      * @return the AutoscaleSettingResourceInner object itself.
      */
@@ -197,15 +205,13 @@ public final class AutoscaleSettingResourceInner extends Resource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (innerProperties() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property innerProperties in model AutoscaleSettingResourceInner"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property innerProperties in model AutoscaleSettingResourceInner"));
         } else {
             innerProperties().validate();
         }

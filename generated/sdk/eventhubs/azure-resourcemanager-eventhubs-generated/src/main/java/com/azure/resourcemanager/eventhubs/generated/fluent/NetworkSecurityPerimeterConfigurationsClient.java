@@ -17,7 +17,7 @@ import com.azure.resourcemanager.eventhubs.generated.fluent.models.NetworkSecuri
 public interface NetworkSecurityPerimeterConfigurationsClient {
     /**
      * Gets list of current NetworkSecurityPerimeterConfiguration for Namespace.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param context The context to associate with this operation.
@@ -27,12 +27,12 @@ public interface NetworkSecurityPerimeterConfigurationsClient {
      * @return list of current NetworkSecurityPerimeterConfiguration for Namespace along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<NetworkSecurityPerimeterConfigurationListInner> listWithResponse(
-        String resourceGroupName, String namespaceName, Context context);
+    Response<NetworkSecurityPerimeterConfigurationListInner> listWithResponse(String resourceGroupName,
+        String namespaceName, Context context);
 
     /**
      * Gets list of current NetworkSecurityPerimeterConfiguration for Namespace.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

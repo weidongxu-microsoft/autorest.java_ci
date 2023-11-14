@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Represents a collection of alert rule resources. */
+/**
+ * Represents a collection of alert rule resources.
+ */
 @Fluent
 public final class DiagnosticSettingsResourceCollectionInner {
     /*
@@ -17,13 +19,15 @@ public final class DiagnosticSettingsResourceCollectionInner {
     @JsonProperty(value = "value")
     private List<DiagnosticSettingsResourceInner> value;
 
-    /** Creates an instance of DiagnosticSettingsResourceCollectionInner class. */
+    /**
+     * Creates an instance of DiagnosticSettingsResourceCollectionInner class.
+     */
     public DiagnosticSettingsResourceCollectionInner() {
     }
 
     /**
      * Get the value property: The collection of diagnostic settings resources;.
-     *
+     * 
      * @return the value value.
      */
     public List<DiagnosticSettingsResourceInner> value() {
@@ -32,7 +36,7 @@ public final class DiagnosticSettingsResourceCollectionInner {
 
     /**
      * Set the value property: The collection of diagnostic settings resources;.
-     *
+     * 
      * @param value the value value to set.
      * @return the DiagnosticSettingsResourceCollectionInner object itself.
      */
@@ -43,7 +47,7 @@ public final class DiagnosticSettingsResourceCollectionInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

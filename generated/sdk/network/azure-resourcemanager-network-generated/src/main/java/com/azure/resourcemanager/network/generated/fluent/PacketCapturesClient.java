@@ -15,11 +15,13 @@ import com.azure.resourcemanager.network.generated.fluent.models.PacketCaptureQu
 import com.azure.resourcemanager.network.generated.fluent.models.PacketCaptureResultInner;
 import com.azure.resourcemanager.network.generated.models.PacketCapture;
 
-/** An instance of this class provides access to all the operations defined in PacketCapturesClient. */
+/**
+ * An instance of this class provides access to all the operations defined in PacketCapturesClient.
+ */
 public interface PacketCapturesClient {
     /**
      * Create and start a packet capture on the specified VM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param packetCaptureName The name of the packet capture session.
@@ -30,12 +32,12 @@ public interface PacketCapturesClient {
      * @return the {@link SyncPoller} for polling of information about packet capture session.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<PacketCaptureResultInner>, PacketCaptureResultInner> beginCreate(
-        String resourceGroupName, String networkWatcherName, String packetCaptureName, PacketCapture parameters);
+    SyncPoller<PollResult<PacketCaptureResultInner>, PacketCaptureResultInner> beginCreate(String resourceGroupName,
+        String networkWatcherName, String packetCaptureName, PacketCapture parameters);
 
     /**
      * Create and start a packet capture on the specified VM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param packetCaptureName The name of the packet capture session.
@@ -47,16 +49,12 @@ public interface PacketCapturesClient {
      * @return the {@link SyncPoller} for polling of information about packet capture session.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<PacketCaptureResultInner>, PacketCaptureResultInner> beginCreate(
-        String resourceGroupName,
-        String networkWatcherName,
-        String packetCaptureName,
-        PacketCapture parameters,
-        Context context);
+    SyncPoller<PollResult<PacketCaptureResultInner>, PacketCaptureResultInner> beginCreate(String resourceGroupName,
+        String networkWatcherName, String packetCaptureName, PacketCapture parameters, Context context);
 
     /**
      * Create and start a packet capture on the specified VM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param packetCaptureName The name of the packet capture session.
@@ -67,12 +65,12 @@ public interface PacketCapturesClient {
      * @return information about packet capture session.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    PacketCaptureResultInner create(
-        String resourceGroupName, String networkWatcherName, String packetCaptureName, PacketCapture parameters);
+    PacketCaptureResultInner create(String resourceGroupName, String networkWatcherName, String packetCaptureName,
+        PacketCapture parameters);
 
     /**
      * Create and start a packet capture on the specified VM.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param packetCaptureName The name of the packet capture session.
@@ -84,16 +82,12 @@ public interface PacketCapturesClient {
      * @return information about packet capture session.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    PacketCaptureResultInner create(
-        String resourceGroupName,
-        String networkWatcherName,
-        String packetCaptureName,
-        PacketCapture parameters,
-        Context context);
+    PacketCaptureResultInner create(String resourceGroupName, String networkWatcherName, String packetCaptureName,
+        PacketCapture parameters, Context context);
 
     /**
      * Gets a packet capture session by name.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param packetCaptureName The name of the packet capture session.
@@ -104,12 +98,12 @@ public interface PacketCapturesClient {
      * @return a packet capture session by name along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<PacketCaptureResultInner> getWithResponse(
-        String resourceGroupName, String networkWatcherName, String packetCaptureName, Context context);
+    Response<PacketCaptureResultInner> getWithResponse(String resourceGroupName, String networkWatcherName,
+        String packetCaptureName, Context context);
 
     /**
      * Gets a packet capture session by name.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param packetCaptureName The name of the packet capture session.
@@ -123,7 +117,7 @@ public interface PacketCapturesClient {
 
     /**
      * Deletes the specified packet capture session.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param packetCaptureName The name of the packet capture session.
@@ -133,12 +127,12 @@ public interface PacketCapturesClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginDelete(
-        String resourceGroupName, String networkWatcherName, String packetCaptureName);
+    SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String networkWatcherName,
+        String packetCaptureName);
 
     /**
      * Deletes the specified packet capture session.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param packetCaptureName The name of the packet capture session.
@@ -149,12 +143,12 @@ public interface PacketCapturesClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginDelete(
-        String resourceGroupName, String networkWatcherName, String packetCaptureName, Context context);
+    SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String networkWatcherName,
+        String packetCaptureName, Context context);
 
     /**
      * Deletes the specified packet capture session.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param packetCaptureName The name of the packet capture session.
@@ -167,7 +161,7 @@ public interface PacketCapturesClient {
 
     /**
      * Deletes the specified packet capture session.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param packetCaptureName The name of the packet capture session.
@@ -181,7 +175,7 @@ public interface PacketCapturesClient {
 
     /**
      * Stops a specified packet capture session.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param packetCaptureName The name of the packet capture session.
@@ -191,12 +185,12 @@ public interface PacketCapturesClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginStop(
-        String resourceGroupName, String networkWatcherName, String packetCaptureName);
+    SyncPoller<PollResult<Void>, Void> beginStop(String resourceGroupName, String networkWatcherName,
+        String packetCaptureName);
 
     /**
      * Stops a specified packet capture session.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param packetCaptureName The name of the packet capture session.
@@ -207,12 +201,12 @@ public interface PacketCapturesClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginStop(
-        String resourceGroupName, String networkWatcherName, String packetCaptureName, Context context);
+    SyncPoller<PollResult<Void>, Void> beginStop(String resourceGroupName, String networkWatcherName,
+        String packetCaptureName, Context context);
 
     /**
      * Stops a specified packet capture session.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param packetCaptureName The name of the packet capture session.
@@ -225,7 +219,7 @@ public interface PacketCapturesClient {
 
     /**
      * Stops a specified packet capture session.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param packetCaptureName The name of the packet capture session.
@@ -239,7 +233,7 @@ public interface PacketCapturesClient {
 
     /**
      * Query the status of a running packet capture session.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the Network Watcher resource.
      * @param packetCaptureName The name given to the packet capture session.
@@ -249,12 +243,12 @@ public interface PacketCapturesClient {
      * @return the {@link SyncPoller} for polling of status of packet capture session.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<PacketCaptureQueryStatusResultInner>, PacketCaptureQueryStatusResultInner> beginGetStatus(
-        String resourceGroupName, String networkWatcherName, String packetCaptureName);
+    SyncPoller<PollResult<PacketCaptureQueryStatusResultInner>, PacketCaptureQueryStatusResultInner>
+        beginGetStatus(String resourceGroupName, String networkWatcherName, String packetCaptureName);
 
     /**
      * Query the status of a running packet capture session.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the Network Watcher resource.
      * @param packetCaptureName The name given to the packet capture session.
@@ -265,12 +259,12 @@ public interface PacketCapturesClient {
      * @return the {@link SyncPoller} for polling of status of packet capture session.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<PacketCaptureQueryStatusResultInner>, PacketCaptureQueryStatusResultInner> beginGetStatus(
-        String resourceGroupName, String networkWatcherName, String packetCaptureName, Context context);
+    SyncPoller<PollResult<PacketCaptureQueryStatusResultInner>, PacketCaptureQueryStatusResultInner>
+        beginGetStatus(String resourceGroupName, String networkWatcherName, String packetCaptureName, Context context);
 
     /**
      * Query the status of a running packet capture session.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the Network Watcher resource.
      * @param packetCaptureName The name given to the packet capture session.
@@ -280,12 +274,12 @@ public interface PacketCapturesClient {
      * @return status of packet capture session.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    PacketCaptureQueryStatusResultInner getStatus(
-        String resourceGroupName, String networkWatcherName, String packetCaptureName);
+    PacketCaptureQueryStatusResultInner getStatus(String resourceGroupName, String networkWatcherName,
+        String packetCaptureName);
 
     /**
      * Query the status of a running packet capture session.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the Network Watcher resource.
      * @param packetCaptureName The name given to the packet capture session.
@@ -296,12 +290,12 @@ public interface PacketCapturesClient {
      * @return status of packet capture session.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    PacketCaptureQueryStatusResultInner getStatus(
-        String resourceGroupName, String networkWatcherName, String packetCaptureName, Context context);
+    PacketCaptureQueryStatusResultInner getStatus(String resourceGroupName, String networkWatcherName,
+        String packetCaptureName, Context context);
 
     /**
      * Lists all packet capture sessions within the specified resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the Network Watcher resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -314,7 +308,7 @@ public interface PacketCapturesClient {
 
     /**
      * Lists all packet capture sessions within the specified resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the Network Watcher resource.
      * @param context The context to associate with this operation.

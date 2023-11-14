@@ -13,172 +13,174 @@ import com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkG
 import java.util.List;
 import java.util.Map;
 
-/** An immutable client-side representation of VirtualNetworkGatewayConnection. */
+/**
+ * An immutable client-side representation of VirtualNetworkGatewayConnection.
+ */
 public interface VirtualNetworkGatewayConnection {
     /**
      * Gets the name property: The name of the resource.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the type property: The type of the resource.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the location property: The geo-location where the resource lives.
-     *
+     * 
      * @return the location value.
      */
     String location();
 
     /**
      * Gets the tags property: Resource tags.
-     *
+     * 
      * @return the tags value.
      */
     Map<String, String> tags();
 
     /**
      * Gets the etag property: A unique read-only string that changes whenever the resource is updated.
-     *
+     * 
      * @return the etag value.
      */
     String etag();
 
     /**
      * Gets the id property: Resource ID.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the authorizationKey property: The authorizationKey.
-     *
+     * 
      * @return the authorizationKey value.
      */
     String authorizationKey();
 
     /**
      * Gets the virtualNetworkGateway1 property: The reference to virtual network gateway resource.
-     *
+     * 
      * @return the virtualNetworkGateway1 value.
      */
     VirtualNetworkGateway virtualNetworkGateway1();
 
     /**
      * Gets the virtualNetworkGateway2 property: The reference to virtual network gateway resource.
-     *
+     * 
      * @return the virtualNetworkGateway2 value.
      */
     VirtualNetworkGateway virtualNetworkGateway2();
 
     /**
      * Gets the localNetworkGateway2 property: The reference to local network gateway resource.
-     *
+     * 
      * @return the localNetworkGateway2 value.
      */
     LocalNetworkGateway localNetworkGateway2();
 
     /**
      * Gets the ingressNatRules property: List of ingress NatRules.
-     *
+     * 
      * @return the ingressNatRules value.
      */
     List<SubResource> ingressNatRules();
 
     /**
      * Gets the egressNatRules property: List of egress NatRules.
-     *
+     * 
      * @return the egressNatRules value.
      */
     List<SubResource> egressNatRules();
 
     /**
      * Gets the connectionType property: Gateway connection type.
-     *
+     * 
      * @return the connectionType value.
      */
     VirtualNetworkGatewayConnectionType connectionType();
 
     /**
      * Gets the connectionProtocol property: Connection protocol used for this connection.
-     *
+     * 
      * @return the connectionProtocol value.
      */
     VirtualNetworkGatewayConnectionProtocol connectionProtocol();
 
     /**
      * Gets the routingWeight property: The routing weight.
-     *
+     * 
      * @return the routingWeight value.
      */
     Integer routingWeight();
 
     /**
      * Gets the dpdTimeoutSeconds property: The dead peer detection timeout of this connection in seconds.
-     *
+     * 
      * @return the dpdTimeoutSeconds value.
      */
     Integer dpdTimeoutSeconds();
 
     /**
      * Gets the connectionMode property: The connection mode for this connection.
-     *
+     * 
      * @return the connectionMode value.
      */
     VirtualNetworkGatewayConnectionMode connectionMode();
 
     /**
      * Gets the sharedKey property: The IPSec shared key.
-     *
+     * 
      * @return the sharedKey value.
      */
     String sharedKey();
 
     /**
      * Gets the connectionStatus property: Virtual Network Gateway connection status.
-     *
+     * 
      * @return the connectionStatus value.
      */
     VirtualNetworkGatewayConnectionStatus connectionStatus();
 
     /**
      * Gets the tunnelConnectionStatus property: Collection of all tunnels' connection health status.
-     *
+     * 
      * @return the tunnelConnectionStatus value.
      */
     List<TunnelConnectionHealth> tunnelConnectionStatus();
 
     /**
      * Gets the egressBytesTransferred property: The egress bytes transferred in this connection.
-     *
+     * 
      * @return the egressBytesTransferred value.
      */
     Long egressBytesTransferred();
 
     /**
      * Gets the ingressBytesTransferred property: The ingress bytes transferred in this connection.
-     *
+     * 
      * @return the ingressBytesTransferred value.
      */
     Long ingressBytesTransferred();
 
     /**
      * Gets the peer property: The reference to peerings resource.
-     *
+     * 
      * @return the peer value.
      */
     SubResource peer();
 
     /**
      * Gets the enableBgp property: EnableBgp flag.
-     *
+     * 
      * @return the enableBgp value.
      */
     Boolean enableBgp();
@@ -186,56 +188,56 @@ public interface VirtualNetworkGatewayConnection {
     /**
      * Gets the gatewayCustomBgpIpAddresses property: GatewayCustomBgpIpAddresses to be used for virtual network gateway
      * Connection.
-     *
+     * 
      * @return the gatewayCustomBgpIpAddresses value.
      */
     List<GatewayCustomBgpIpAddressIpConfiguration> gatewayCustomBgpIpAddresses();
 
     /**
      * Gets the useLocalAzureIpAddress property: Use private local Azure IP for the connection.
-     *
+     * 
      * @return the useLocalAzureIpAddress value.
      */
     Boolean useLocalAzureIpAddress();
 
     /**
      * Gets the usePolicyBasedTrafficSelectors property: Enable policy-based traffic selectors.
-     *
+     * 
      * @return the usePolicyBasedTrafficSelectors value.
      */
     Boolean usePolicyBasedTrafficSelectors();
 
     /**
      * Gets the ipsecPolicies property: The IPSec Policies to be considered by this connection.
-     *
+     * 
      * @return the ipsecPolicies value.
      */
     List<IpsecPolicy> ipsecPolicies();
 
     /**
      * Gets the trafficSelectorPolicies property: The Traffic Selector Policies to be considered by this connection.
-     *
+     * 
      * @return the trafficSelectorPolicies value.
      */
     List<TrafficSelectorPolicy> trafficSelectorPolicies();
 
     /**
      * Gets the resourceGuid property: The resource GUID property of the virtual network gateway connection resource.
-     *
+     * 
      * @return the resourceGuid value.
      */
     String resourceGuid();
 
     /**
      * Gets the provisioningState property: The provisioning state of the virtual network gateway connection resource.
-     *
+     * 
      * @return the provisioningState value.
      */
     ProvisioningState provisioningState();
 
     /**
      * Gets the expressRouteGatewayBypass property: Bypass ExpressRoute Gateway for data forwarding.
-     *
+     * 
      * @return the expressRouteGatewayBypass value.
      */
     Boolean expressRouteGatewayBypass();
@@ -243,28 +245,28 @@ public interface VirtualNetworkGatewayConnection {
     /**
      * Gets the enablePrivateLinkFastPath property: Bypass the ExpressRoute gateway when accessing private-links.
      * ExpressRoute FastPath (expressRouteGatewayBypass) must be enabled.
-     *
+     * 
      * @return the enablePrivateLinkFastPath value.
      */
     Boolean enablePrivateLinkFastPath();
 
     /**
      * Gets the region of the resource.
-     *
+     * 
      * @return the region of the resource.
      */
     Region region();
 
     /**
      * Gets the name of the resource region.
-     *
+     * 
      * @return the name of the resource region.
      */
     String regionName();
 
     /**
      * Gets the name of the resource group.
-     *
+     * 
      * @return the name of the resource group.
      */
     String resourceGroupName();
@@ -272,32 +274,36 @@ public interface VirtualNetworkGatewayConnection {
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkGatewayConnectionInner
      * object.
-     *
+     * 
      * @return the inner object.
      */
     VirtualNetworkGatewayConnectionInner innerModel();
 
-    /** The entirety of the VirtualNetworkGatewayConnection definition. */
+    /**
+     * The entirety of the VirtualNetworkGatewayConnection definition.
+     */
     interface Definition
-        extends DefinitionStages.Blank,
-            DefinitionStages.WithLocation,
-            DefinitionStages.WithResourceGroup,
-            DefinitionStages.WithVirtualNetworkGateway1,
-            DefinitionStages.WithConnectionType,
-            DefinitionStages.WithCreate {
+        extends DefinitionStages.Blank, DefinitionStages.WithLocation, DefinitionStages.WithResourceGroup,
+        DefinitionStages.WithVirtualNetworkGateway1, DefinitionStages.WithConnectionType, DefinitionStages.WithCreate {
     }
 
-    /** The VirtualNetworkGatewayConnection definition stages. */
+    /**
+     * The VirtualNetworkGatewayConnection definition stages.
+     */
     interface DefinitionStages {
-        /** The first stage of the VirtualNetworkGatewayConnection definition. */
+        /**
+         * The first stage of the VirtualNetworkGatewayConnection definition.
+         */
         interface Blank extends WithLocation {
         }
 
-        /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify location. */
+        /**
+         * The stage of the VirtualNetworkGatewayConnection definition allowing to specify location.
+         */
         interface WithLocation {
             /**
              * Specifies the region for the resource.
-             *
+             * 
              * @param location The geo-location where the resource lives.
              * @return the next definition stage.
              */
@@ -305,40 +311,46 @@ public interface VirtualNetworkGatewayConnection {
 
             /**
              * Specifies the region for the resource.
-             *
+             * 
              * @param location The geo-location where the resource lives.
              * @return the next definition stage.
              */
             WithResourceGroup withRegion(String location);
         }
 
-        /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify parent resource. */
+        /**
+         * The stage of the VirtualNetworkGatewayConnection definition allowing to specify parent resource.
+         */
         interface WithResourceGroup {
             /**
              * Specifies resourceGroupName.
-             *
+             * 
              * @param resourceGroupName The name of the resource group.
              * @return the next definition stage.
              */
             WithVirtualNetworkGateway1 withExistingResourceGroup(String resourceGroupName);
         }
 
-        /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify virtualNetworkGateway1. */
+        /**
+         * The stage of the VirtualNetworkGatewayConnection definition allowing to specify virtualNetworkGateway1.
+         */
         interface WithVirtualNetworkGateway1 {
             /**
              * Specifies the virtualNetworkGateway1 property: The reference to virtual network gateway resource..
-             *
+             * 
              * @param virtualNetworkGateway1 The reference to virtual network gateway resource.
              * @return the next definition stage.
              */
             WithConnectionType withVirtualNetworkGateway1(VirtualNetworkGatewayInner virtualNetworkGateway1);
         }
 
-        /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify connectionType. */
+        /**
+         * The stage of the VirtualNetworkGatewayConnection definition allowing to specify connectionType.
+         */
         interface WithConnectionType {
             /**
              * Specifies the connectionType property: Gateway connection type..
-             *
+             * 
              * @param connectionType Gateway connection type.
              * @return the next definition stage.
              */
@@ -349,180 +361,194 @@ public interface VirtualNetworkGatewayConnection {
          * The stage of the VirtualNetworkGatewayConnection definition which contains all the minimum required
          * properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
-        interface WithCreate
-            extends DefinitionStages.WithTags,
-                DefinitionStages.WithAuthorizationKey,
-                DefinitionStages.WithVirtualNetworkGateway2,
-                DefinitionStages.WithLocalNetworkGateway2,
-                DefinitionStages.WithIngressNatRules,
-                DefinitionStages.WithEgressNatRules,
-                DefinitionStages.WithConnectionProtocol,
-                DefinitionStages.WithRoutingWeight,
-                DefinitionStages.WithDpdTimeoutSeconds,
-                DefinitionStages.WithConnectionMode,
-                DefinitionStages.WithSharedKey,
-                DefinitionStages.WithPeer,
-                DefinitionStages.WithEnableBgp,
-                DefinitionStages.WithGatewayCustomBgpIpAddresses,
-                DefinitionStages.WithUseLocalAzureIpAddress,
-                DefinitionStages.WithUsePolicyBasedTrafficSelectors,
-                DefinitionStages.WithIpsecPolicies,
-                DefinitionStages.WithTrafficSelectorPolicies,
-                DefinitionStages.WithExpressRouteGatewayBypass,
-                DefinitionStages.WithEnablePrivateLinkFastPath {
+        interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithAuthorizationKey,
+            DefinitionStages.WithVirtualNetworkGateway2, DefinitionStages.WithLocalNetworkGateway2,
+            DefinitionStages.WithIngressNatRules, DefinitionStages.WithEgressNatRules,
+            DefinitionStages.WithConnectionProtocol, DefinitionStages.WithRoutingWeight,
+            DefinitionStages.WithDpdTimeoutSeconds, DefinitionStages.WithConnectionMode, DefinitionStages.WithSharedKey,
+            DefinitionStages.WithPeer, DefinitionStages.WithEnableBgp, DefinitionStages.WithGatewayCustomBgpIpAddresses,
+            DefinitionStages.WithUseLocalAzureIpAddress, DefinitionStages.WithUsePolicyBasedTrafficSelectors,
+            DefinitionStages.WithIpsecPolicies, DefinitionStages.WithTrafficSelectorPolicies,
+            DefinitionStages.WithExpressRouteGatewayBypass, DefinitionStages.WithEnablePrivateLinkFastPath {
             /**
              * Executes the create request.
-             *
+             * 
              * @return the created resource.
              */
             VirtualNetworkGatewayConnection create();
 
             /**
              * Executes the create request.
-             *
+             * 
              * @param context The context to associate with this operation.
              * @return the created resource.
              */
             VirtualNetworkGatewayConnection create(Context context);
         }
 
-        /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify tags. */
+        /**
+         * The stage of the VirtualNetworkGatewayConnection definition allowing to specify tags.
+         */
         interface WithTags {
             /**
              * Specifies the tags property: Resource tags..
-             *
+             * 
              * @param tags Resource tags.
              * @return the next definition stage.
              */
             WithCreate withTags(Map<String, String> tags);
         }
 
-        /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify authorizationKey. */
+        /**
+         * The stage of the VirtualNetworkGatewayConnection definition allowing to specify authorizationKey.
+         */
         interface WithAuthorizationKey {
             /**
              * Specifies the authorizationKey property: The authorizationKey..
-             *
+             * 
              * @param authorizationKey The authorizationKey.
              * @return the next definition stage.
              */
             WithCreate withAuthorizationKey(String authorizationKey);
         }
 
-        /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify virtualNetworkGateway2. */
+        /**
+         * The stage of the VirtualNetworkGatewayConnection definition allowing to specify virtualNetworkGateway2.
+         */
         interface WithVirtualNetworkGateway2 {
             /**
              * Specifies the virtualNetworkGateway2 property: The reference to virtual network gateway resource..
-             *
+             * 
              * @param virtualNetworkGateway2 The reference to virtual network gateway resource.
              * @return the next definition stage.
              */
             WithCreate withVirtualNetworkGateway2(VirtualNetworkGatewayInner virtualNetworkGateway2);
         }
 
-        /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify localNetworkGateway2. */
+        /**
+         * The stage of the VirtualNetworkGatewayConnection definition allowing to specify localNetworkGateway2.
+         */
         interface WithLocalNetworkGateway2 {
             /**
              * Specifies the localNetworkGateway2 property: The reference to local network gateway resource..
-             *
+             * 
              * @param localNetworkGateway2 The reference to local network gateway resource.
              * @return the next definition stage.
              */
             WithCreate withLocalNetworkGateway2(LocalNetworkGatewayInner localNetworkGateway2);
         }
 
-        /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify ingressNatRules. */
+        /**
+         * The stage of the VirtualNetworkGatewayConnection definition allowing to specify ingressNatRules.
+         */
         interface WithIngressNatRules {
             /**
              * Specifies the ingressNatRules property: List of ingress NatRules..
-             *
+             * 
              * @param ingressNatRules List of ingress NatRules.
              * @return the next definition stage.
              */
             WithCreate withIngressNatRules(List<SubResource> ingressNatRules);
         }
 
-        /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify egressNatRules. */
+        /**
+         * The stage of the VirtualNetworkGatewayConnection definition allowing to specify egressNatRules.
+         */
         interface WithEgressNatRules {
             /**
              * Specifies the egressNatRules property: List of egress NatRules..
-             *
+             * 
              * @param egressNatRules List of egress NatRules.
              * @return the next definition stage.
              */
             WithCreate withEgressNatRules(List<SubResource> egressNatRules);
         }
 
-        /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify connectionProtocol. */
+        /**
+         * The stage of the VirtualNetworkGatewayConnection definition allowing to specify connectionProtocol.
+         */
         interface WithConnectionProtocol {
             /**
              * Specifies the connectionProtocol property: Connection protocol used for this connection..
-             *
+             * 
              * @param connectionProtocol Connection protocol used for this connection.
              * @return the next definition stage.
              */
             WithCreate withConnectionProtocol(VirtualNetworkGatewayConnectionProtocol connectionProtocol);
         }
 
-        /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify routingWeight. */
+        /**
+         * The stage of the VirtualNetworkGatewayConnection definition allowing to specify routingWeight.
+         */
         interface WithRoutingWeight {
             /**
              * Specifies the routingWeight property: The routing weight..
-             *
+             * 
              * @param routingWeight The routing weight.
              * @return the next definition stage.
              */
             WithCreate withRoutingWeight(Integer routingWeight);
         }
 
-        /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify dpdTimeoutSeconds. */
+        /**
+         * The stage of the VirtualNetworkGatewayConnection definition allowing to specify dpdTimeoutSeconds.
+         */
         interface WithDpdTimeoutSeconds {
             /**
              * Specifies the dpdTimeoutSeconds property: The dead peer detection timeout of this connection in seconds..
-             *
+             * 
              * @param dpdTimeoutSeconds The dead peer detection timeout of this connection in seconds.
              * @return the next definition stage.
              */
             WithCreate withDpdTimeoutSeconds(Integer dpdTimeoutSeconds);
         }
 
-        /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify connectionMode. */
+        /**
+         * The stage of the VirtualNetworkGatewayConnection definition allowing to specify connectionMode.
+         */
         interface WithConnectionMode {
             /**
              * Specifies the connectionMode property: The connection mode for this connection..
-             *
+             * 
              * @param connectionMode The connection mode for this connection.
              * @return the next definition stage.
              */
             WithCreate withConnectionMode(VirtualNetworkGatewayConnectionMode connectionMode);
         }
 
-        /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify sharedKey. */
+        /**
+         * The stage of the VirtualNetworkGatewayConnection definition allowing to specify sharedKey.
+         */
         interface WithSharedKey {
             /**
              * Specifies the sharedKey property: The IPSec shared key..
-             *
+             * 
              * @param sharedKey The IPSec shared key.
              * @return the next definition stage.
              */
             WithCreate withSharedKey(String sharedKey);
         }
 
-        /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify peer. */
+        /**
+         * The stage of the VirtualNetworkGatewayConnection definition allowing to specify peer.
+         */
         interface WithPeer {
             /**
              * Specifies the peer property: The reference to peerings resource..
-             *
+             * 
              * @param peer The reference to peerings resource.
              * @return the next definition stage.
              */
             WithCreate withPeer(SubResource peer);
         }
 
-        /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify enableBgp. */
+        /**
+         * The stage of the VirtualNetworkGatewayConnection definition allowing to specify enableBgp.
+         */
         interface WithEnableBgp {
             /**
              * Specifies the enableBgp property: EnableBgp flag..
-             *
+             * 
              * @param enableBgp EnableBgp flag.
              * @return the next definition stage.
              */
@@ -536,20 +562,22 @@ public interface VirtualNetworkGatewayConnection {
             /**
              * Specifies the gatewayCustomBgpIpAddresses property: GatewayCustomBgpIpAddresses to be used for virtual
              * network gateway Connection..
-             *
+             * 
              * @param gatewayCustomBgpIpAddresses GatewayCustomBgpIpAddresses to be used for virtual network gateway
-             *     Connection.
+             * Connection.
              * @return the next definition stage.
              */
             WithCreate withGatewayCustomBgpIpAddresses(
                 List<GatewayCustomBgpIpAddressIpConfiguration> gatewayCustomBgpIpAddresses);
         }
 
-        /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify useLocalAzureIpAddress. */
+        /**
+         * The stage of the VirtualNetworkGatewayConnection definition allowing to specify useLocalAzureIpAddress.
+         */
         interface WithUseLocalAzureIpAddress {
             /**
              * Specifies the useLocalAzureIpAddress property: Use private local Azure IP for the connection..
-             *
+             * 
              * @param useLocalAzureIpAddress Use private local Azure IP for the connection.
              * @return the next definition stage.
              */
@@ -563,30 +591,34 @@ public interface VirtualNetworkGatewayConnection {
         interface WithUsePolicyBasedTrafficSelectors {
             /**
              * Specifies the usePolicyBasedTrafficSelectors property: Enable policy-based traffic selectors..
-             *
+             * 
              * @param usePolicyBasedTrafficSelectors Enable policy-based traffic selectors.
              * @return the next definition stage.
              */
             WithCreate withUsePolicyBasedTrafficSelectors(Boolean usePolicyBasedTrafficSelectors);
         }
 
-        /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify ipsecPolicies. */
+        /**
+         * The stage of the VirtualNetworkGatewayConnection definition allowing to specify ipsecPolicies.
+         */
         interface WithIpsecPolicies {
             /**
              * Specifies the ipsecPolicies property: The IPSec Policies to be considered by this connection..
-             *
+             * 
              * @param ipsecPolicies The IPSec Policies to be considered by this connection.
              * @return the next definition stage.
              */
             WithCreate withIpsecPolicies(List<IpsecPolicy> ipsecPolicies);
         }
 
-        /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify trafficSelectorPolicies. */
+        /**
+         * The stage of the VirtualNetworkGatewayConnection definition allowing to specify trafficSelectorPolicies.
+         */
         interface WithTrafficSelectorPolicies {
             /**
              * Specifies the trafficSelectorPolicies property: The Traffic Selector Policies to be considered by this
              * connection..
-             *
+             * 
              * @param trafficSelectorPolicies The Traffic Selector Policies to be considered by this connection.
              * @return the next definition stage.
              */
@@ -599,7 +631,7 @@ public interface VirtualNetworkGatewayConnection {
         interface WithExpressRouteGatewayBypass {
             /**
              * Specifies the expressRouteGatewayBypass property: Bypass ExpressRoute Gateway for data forwarding..
-             *
+             * 
              * @param expressRouteGatewayBypass Bypass ExpressRoute Gateway for data forwarding.
              * @return the next definition stage.
              */
@@ -613,9 +645,9 @@ public interface VirtualNetworkGatewayConnection {
             /**
              * Specifies the enablePrivateLinkFastPath property: Bypass the ExpressRoute gateway when accessing
              * private-links. ExpressRoute FastPath (expressRouteGatewayBypass) must be enabled..
-             *
+             * 
              * @param enablePrivateLinkFastPath Bypass the ExpressRoute gateway when accessing private-links.
-             *     ExpressRoute FastPath (expressRouteGatewayBypass) must be enabled.
+             * ExpressRoute FastPath (expressRouteGatewayBypass) must be enabled.
              * @return the next definition stage.
              */
             WithCreate withEnablePrivateLinkFastPath(Boolean enablePrivateLinkFastPath);
@@ -624,36 +656,42 @@ public interface VirtualNetworkGatewayConnection {
 
     /**
      * Begins update for the VirtualNetworkGatewayConnection resource.
-     *
+     * 
      * @return the stage of resource update.
      */
     VirtualNetworkGatewayConnection.Update update();
 
-    /** The template for VirtualNetworkGatewayConnection update. */
+    /**
+     * The template for VirtualNetworkGatewayConnection update.
+     */
     interface Update extends UpdateStages.WithTags {
         /**
          * Executes the update request.
-         *
+         * 
          * @return the updated resource.
          */
         VirtualNetworkGatewayConnection apply();
 
         /**
          * Executes the update request.
-         *
+         * 
          * @param context The context to associate with this operation.
          * @return the updated resource.
          */
         VirtualNetworkGatewayConnection apply(Context context);
     }
 
-    /** The VirtualNetworkGatewayConnection update stages. */
+    /**
+     * The VirtualNetworkGatewayConnection update stages.
+     */
     interface UpdateStages {
-        /** The stage of the VirtualNetworkGatewayConnection update allowing to specify tags. */
+        /**
+         * The stage of the VirtualNetworkGatewayConnection update allowing to specify tags.
+         */
         interface WithTags {
             /**
              * Specifies the tags property: Resource tags..
-             *
+             * 
              * @param tags Resource tags.
              * @return the next definition stage.
              */
@@ -663,14 +701,14 @@ public interface VirtualNetworkGatewayConnection {
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @return the refreshed resource.
      */
     VirtualNetworkGatewayConnection refresh();
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @return the refreshed resource.
      */
@@ -678,9 +716,9 @@ public interface VirtualNetworkGatewayConnection {
 
     /**
      * Starts packet capture on virtual network gateway connection in the specified resource group.
-     *
+     * 
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response.
      */
@@ -688,13 +726,13 @@ public interface VirtualNetworkGatewayConnection {
 
     /**
      * Starts packet capture on virtual network gateway connection in the specified resource group.
-     *
+     * 
      * @param parameters Virtual network gateway packet capture parameters supplied to start packet capture on gateway
-     *     connection.
+     * connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response.
      */
@@ -702,12 +740,12 @@ public interface VirtualNetworkGatewayConnection {
 
     /**
      * Stops packet capture on virtual network gateway connection in the specified resource group.
-     *
+     * 
      * @param parameters Virtual network gateway packet capture parameters supplied to stop packet capture on gateway
-     *     connection.
+     * connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response.
      */
@@ -715,13 +753,13 @@ public interface VirtualNetworkGatewayConnection {
 
     /**
      * Stops packet capture on virtual network gateway connection in the specified resource group.
-     *
+     * 
      * @param parameters Virtual network gateway packet capture parameters supplied to stop packet capture on gateway
-     *     connection.
+     * connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response.
      */
@@ -729,7 +767,7 @@ public interface VirtualNetworkGatewayConnection {
 
     /**
      * Lists IKE Security Associations for the virtual network gateway connection in the specified resource group.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response.
@@ -738,7 +776,7 @@ public interface VirtualNetworkGatewayConnection {
 
     /**
      * Lists IKE Security Associations for the virtual network gateway connection in the specified resource group.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -749,7 +787,7 @@ public interface VirtualNetworkGatewayConnection {
 
     /**
      * Resets the virtual network gateway connection specified.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
@@ -757,7 +795,7 @@ public interface VirtualNetworkGatewayConnection {
 
     /**
      * Resets the virtual network gateway connection specified.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

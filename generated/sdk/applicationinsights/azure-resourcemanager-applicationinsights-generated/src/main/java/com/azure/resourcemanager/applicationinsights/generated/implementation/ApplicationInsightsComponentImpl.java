@@ -23,10 +23,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-public final class ApplicationInsightsComponentImpl
-    implements ApplicationInsightsComponent,
-        ApplicationInsightsComponent.Definition,
-        ApplicationInsightsComponent.Update {
+public final class ApplicationInsightsComponentImpl implements ApplicationInsightsComponent,
+    ApplicationInsightsComponent.Definition, ApplicationInsightsComponent.Update {
     private ApplicationInsightsComponentInner innerObject;
 
     private final com.azure.resourcemanager.applicationinsights.generated.ApplicationInsightsManager serviceManager;
@@ -177,27 +175,18 @@ public final class ApplicationInsightsComponentImpl
     }
 
     public ApplicationInsightsComponent create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getComponents()
-                .createOrUpdateWithResponse(resourceGroupName, resourceName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getComponents()
+            .createOrUpdateWithResponse(resourceGroupName, resourceName, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public ApplicationInsightsComponent create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getComponents()
-                .createOrUpdateWithResponse(resourceGroupName, resourceName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getComponents()
+            .createOrUpdateWithResponse(resourceGroupName, resourceName, this.innerModel(), context).getValue();
         return this;
     }
 
-    ApplicationInsightsComponentImpl(
-        String name,
+    ApplicationInsightsComponentImpl(String name,
         com.azure.resourcemanager.applicationinsights.generated.ApplicationInsightsManager serviceManager) {
         this.innerObject = new ApplicationInsightsComponentInner();
         this.serviceManager = serviceManager;
@@ -210,27 +199,18 @@ public final class ApplicationInsightsComponentImpl
     }
 
     public ApplicationInsightsComponent apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getComponents()
-                .updateTagsWithResponse(resourceGroupName, resourceName, updateComponentTags, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getComponents()
+            .updateTagsWithResponse(resourceGroupName, resourceName, updateComponentTags, Context.NONE).getValue();
         return this;
     }
 
     public ApplicationInsightsComponent apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getComponents()
-                .updateTagsWithResponse(resourceGroupName, resourceName, updateComponentTags, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getComponents()
+            .updateTagsWithResponse(resourceGroupName, resourceName, updateComponentTags, context).getValue();
         return this;
     }
 
-    ApplicationInsightsComponentImpl(
-        ApplicationInsightsComponentInner innerObject,
+    ApplicationInsightsComponentImpl(ApplicationInsightsComponentInner innerObject,
         com.azure.resourcemanager.applicationinsights.generated.ApplicationInsightsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -239,22 +219,14 @@ public final class ApplicationInsightsComponentImpl
     }
 
     public ApplicationInsightsComponent refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getComponents()
-                .getByResourceGroupWithResponse(resourceGroupName, resourceName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getComponents()
+            .getByResourceGroupWithResponse(resourceGroupName, resourceName, Context.NONE).getValue();
         return this;
     }
 
     public ApplicationInsightsComponent refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getComponents()
-                .getByResourceGroupWithResponse(resourceGroupName, resourceName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getComponents()
+            .getByResourceGroupWithResponse(resourceGroupName, resourceName, context).getValue();
         return this;
     }
 
@@ -331,14 +303,14 @@ public final class ApplicationInsightsComponentImpl
         return this;
     }
 
-    public ApplicationInsightsComponentImpl withPublicNetworkAccessForIngestion(
-        PublicNetworkAccessType publicNetworkAccessForIngestion) {
+    public ApplicationInsightsComponentImpl
+        withPublicNetworkAccessForIngestion(PublicNetworkAccessType publicNetworkAccessForIngestion) {
         this.innerModel().withPublicNetworkAccessForIngestion(publicNetworkAccessForIngestion);
         return this;
     }
 
-    public ApplicationInsightsComponentImpl withPublicNetworkAccessForQuery(
-        PublicNetworkAccessType publicNetworkAccessForQuery) {
+    public ApplicationInsightsComponentImpl
+        withPublicNetworkAccessForQuery(PublicNetworkAccessType publicNetworkAccessForQuery) {
         this.innerModel().withPublicNetworkAccessForQuery(publicNetworkAccessForQuery);
         return this;
     }

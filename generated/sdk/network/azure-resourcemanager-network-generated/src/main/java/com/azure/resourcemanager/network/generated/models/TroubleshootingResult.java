@@ -8,39 +8,41 @@ import com.azure.resourcemanager.network.generated.fluent.models.Troubleshooting
 import java.time.OffsetDateTime;
 import java.util.List;
 
-/** An immutable client-side representation of TroubleshootingResult. */
+/**
+ * An immutable client-side representation of TroubleshootingResult.
+ */
 public interface TroubleshootingResult {
     /**
      * Gets the startTime property: The start time of the troubleshooting.
-     *
+     * 
      * @return the startTime value.
      */
     OffsetDateTime startTime();
 
     /**
      * Gets the endTime property: The end time of the troubleshooting.
-     *
+     * 
      * @return the endTime value.
      */
     OffsetDateTime endTime();
 
     /**
      * Gets the code property: The result code of the troubleshooting.
-     *
+     * 
      * @return the code value.
      */
     String code();
 
     /**
      * Gets the results property: Information from troubleshooting.
-     *
+     * 
      * @return the results value.
      */
     List<TroubleshootingDetails> results();
 
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.TroubleshootingResultInner object.
-     *
+     * 
      * @return the inner object.
      */
     TroubleshootingResultInner innerModel();

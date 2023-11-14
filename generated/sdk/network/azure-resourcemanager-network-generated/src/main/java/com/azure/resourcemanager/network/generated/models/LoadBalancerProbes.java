@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of LoadBalancerProbes. */
+/**
+ * Resource collection API of LoadBalancerProbes.
+ */
 public interface LoadBalancerProbes {
     /**
      * Gets all the load balancer probes.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -24,7 +26,7 @@ public interface LoadBalancerProbes {
 
     /**
      * Gets all the load balancer probes.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @param context The context to associate with this operation.
@@ -37,7 +39,7 @@ public interface LoadBalancerProbes {
 
     /**
      * Gets load balancer probe.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @param probeName The name of the probe.
@@ -47,12 +49,12 @@ public interface LoadBalancerProbes {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return load balancer probe along with {@link Response}.
      */
-    Response<Probe> getWithResponse(
-        String resourceGroupName, String loadBalancerName, String probeName, Context context);
+    Response<Probe> getWithResponse(String resourceGroupName, String loadBalancerName, String probeName,
+        Context context);
 
     /**
      * Gets load balancer probe.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @param probeName The name of the probe.

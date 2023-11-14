@@ -17,8 +17,7 @@ public final class SwapResourceListResultImpl implements SwapResourceListResult 
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    SwapResourceListResultImpl(
-        SwapResourceListResultInner innerObject,
+    SwapResourceListResultImpl(SwapResourceListResultInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -27,12 +26,8 @@ public final class SwapResourceListResultImpl implements SwapResourceListResult 
     public List<SwapResource> value() {
         List<SwapResourceInner> inner = this.innerModel().value();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new SwapResourceImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new SwapResourceImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

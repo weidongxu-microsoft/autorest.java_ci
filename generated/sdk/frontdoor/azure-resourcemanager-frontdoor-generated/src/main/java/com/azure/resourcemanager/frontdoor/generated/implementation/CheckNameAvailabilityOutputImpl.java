@@ -13,8 +13,7 @@ public final class CheckNameAvailabilityOutputImpl implements CheckNameAvailabil
 
     private final com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager;
 
-    CheckNameAvailabilityOutputImpl(
-        CheckNameAvailabilityOutputInner innerObject,
+    CheckNameAvailabilityOutputImpl(CheckNameAvailabilityOutputInner innerObject,
         com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

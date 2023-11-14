@@ -7,7 +7,9 @@ package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** DCAccessCode Properties. */
+/**
+ * DCAccessCode Properties.
+ */
 @Fluent
 public final class DCAccessCodeProperties {
     /*
@@ -16,13 +18,15 @@ public final class DCAccessCodeProperties {
     @JsonProperty(value = "authCode")
     private String authCode;
 
-    /** Creates an instance of DCAccessCodeProperties class. */
+    /**
+     * Creates an instance of DCAccessCodeProperties class.
+     */
     public DCAccessCodeProperties() {
     }
 
     /**
      * Get the authCode property: DCAccess Code for the Self Managed shipment.
-     *
+     * 
      * @return the authCode value.
      */
     public String authCode() {
@@ -31,7 +35,7 @@ public final class DCAccessCodeProperties {
 
     /**
      * Set the authCode property: DCAccess Code for the Self Managed shipment.
-     *
+     * 
      * @param authCode the authCode value to set.
      * @return the DCAccessCodeProperties object itself.
      */
@@ -42,7 +46,7 @@ public final class DCAccessCodeProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

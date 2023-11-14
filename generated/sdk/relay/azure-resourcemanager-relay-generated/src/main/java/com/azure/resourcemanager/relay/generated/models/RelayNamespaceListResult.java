@@ -9,7 +9,9 @@ import com.azure.resourcemanager.relay.generated.fluent.models.RelayNamespaceInn
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The response from the list namespace operation. */
+/**
+ * The response from the list namespace operation.
+ */
 @Fluent
 public final class RelayNamespaceListResult {
     /*
@@ -24,13 +26,15 @@ public final class RelayNamespaceListResult {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
-    /** Creates an instance of RelayNamespaceListResult class. */
+    /**
+     * Creates an instance of RelayNamespaceListResult class.
+     */
     public RelayNamespaceListResult() {
     }
 
     /**
      * Get the value property: Result of the list namespace operation.
-     *
+     * 
      * @return the value value.
      */
     public List<RelayNamespaceInner> value() {
@@ -39,7 +43,7 @@ public final class RelayNamespaceListResult {
 
     /**
      * Set the value property: Result of the list namespace operation.
-     *
+     * 
      * @param value the value value to set.
      * @return the RelayNamespaceListResult object itself.
      */
@@ -51,7 +55,7 @@ public final class RelayNamespaceListResult {
     /**
      * Get the nextLink property: Link to the next set of results. Not empty if value contains incomplete list of
      * namespaces.
-     *
+     * 
      * @return the nextLink value.
      */
     public String nextLink() {
@@ -61,7 +65,7 @@ public final class RelayNamespaceListResult {
     /**
      * Set the nextLink property: Link to the next set of results. Not empty if value contains incomplete list of
      * namespaces.
-     *
+     * 
      * @param nextLink the nextLink value to set.
      * @return the RelayNamespaceListResult object itself.
      */
@@ -72,7 +76,7 @@ public final class RelayNamespaceListResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

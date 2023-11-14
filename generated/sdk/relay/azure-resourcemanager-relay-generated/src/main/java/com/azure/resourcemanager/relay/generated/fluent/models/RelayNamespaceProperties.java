@@ -10,7 +10,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
 
-/** Properties of the namespace. */
+/**
+ * Properties of the namespace.
+ */
 @Fluent
 public final class RelayNamespaceProperties {
     /*
@@ -61,13 +63,15 @@ public final class RelayNamespaceProperties {
     @JsonProperty(value = "publicNetworkAccess")
     private PublicNetworkAccess publicNetworkAccess;
 
-    /** Creates an instance of RelayNamespaceProperties class. */
+    /**
+     * Creates an instance of RelayNamespaceProperties class.
+     */
     public RelayNamespaceProperties() {
     }
 
     /**
      * Get the provisioningState property: Provisioning state of the Namespace.
-     *
+     * 
      * @return the provisioningState value.
      */
     public String provisioningState() {
@@ -76,7 +80,7 @@ public final class RelayNamespaceProperties {
 
     /**
      * Get the status property: Status of the Namespace.
-     *
+     * 
      * @return the status value.
      */
     public String status() {
@@ -85,7 +89,7 @@ public final class RelayNamespaceProperties {
 
     /**
      * Get the createdAt property: The time the namespace was created.
-     *
+     * 
      * @return the createdAt value.
      */
     public OffsetDateTime createdAt() {
@@ -94,7 +98,7 @@ public final class RelayNamespaceProperties {
 
     /**
      * Get the updatedAt property: The time the namespace was updated.
-     *
+     * 
      * @return the updatedAt value.
      */
     public OffsetDateTime updatedAt() {
@@ -103,7 +107,7 @@ public final class RelayNamespaceProperties {
 
     /**
      * Get the serviceBusEndpoint property: Endpoint you can use to perform Service Bus operations.
-     *
+     * 
      * @return the serviceBusEndpoint value.
      */
     public String serviceBusEndpoint() {
@@ -112,7 +116,7 @@ public final class RelayNamespaceProperties {
 
     /**
      * Get the metricId property: Identifier for Azure Insights metrics.
-     *
+     * 
      * @return the metricId value.
      */
     public String metricId() {
@@ -121,7 +125,7 @@ public final class RelayNamespaceProperties {
 
     /**
      * Get the privateEndpointConnections property: List of private endpoint connections.
-     *
+     * 
      * @return the privateEndpointConnections value.
      */
     public List<PrivateEndpointConnectionInner> privateEndpointConnections() {
@@ -130,20 +134,20 @@ public final class RelayNamespaceProperties {
 
     /**
      * Set the privateEndpointConnections property: List of private endpoint connections.
-     *
+     * 
      * @param privateEndpointConnections the privateEndpointConnections value to set.
      * @return the RelayNamespaceProperties object itself.
      */
-    public RelayNamespaceProperties withPrivateEndpointConnections(
-        List<PrivateEndpointConnectionInner> privateEndpointConnections) {
+    public RelayNamespaceProperties
+        withPrivateEndpointConnections(List<PrivateEndpointConnectionInner> privateEndpointConnections) {
         this.privateEndpointConnections = privateEndpointConnections;
         return this;
     }
 
     /**
-     * Get the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
-     * enabled.
-     *
+     * Get the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it
+     * is enabled.
+     * 
      * @return the publicNetworkAccess value.
      */
     public PublicNetworkAccess publicNetworkAccess() {
@@ -151,9 +155,9 @@ public final class RelayNamespaceProperties {
     }
 
     /**
-     * Set the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
-     * enabled.
-     *
+     * Set the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it
+     * is enabled.
+     * 
      * @param publicNetworkAccess the publicNetworkAccess value to set.
      * @return the RelayNamespaceProperties object itself.
      */
@@ -164,7 +168,7 @@ public final class RelayNamespaceProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -14,8 +14,7 @@ public final class ApplicationGatewayBackendHealthOnDemandImpl implements Applic
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    ApplicationGatewayBackendHealthOnDemandImpl(
-        ApplicationGatewayBackendHealthOnDemandInner innerObject,
+    ApplicationGatewayBackendHealthOnDemandImpl(ApplicationGatewayBackendHealthOnDemandInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

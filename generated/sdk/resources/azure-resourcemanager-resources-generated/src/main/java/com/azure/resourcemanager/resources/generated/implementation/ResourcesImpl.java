@@ -24,8 +24,8 @@ public final class ResourcesImpl implements Resources {
 
     private final com.azure.resourcemanager.resources.generated.ResourceManager serviceManager;
 
-    public ResourcesImpl(
-        ResourcesClient innerClient, com.azure.resourcemanager.resources.generated.ResourceManager serviceManager) {
+    public ResourcesImpl(ResourcesClient innerClient,
+        com.azure.resourcemanager.resources.generated.ResourceManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -35,10 +35,10 @@ public final class ResourcesImpl implements Resources {
         return Utils.mapPage(inner, inner1 -> new GenericResourceExpandedImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<GenericResourceExpanded> listByResourceGroup(
-        String resourceGroupName, String filter, String expand, Integer top, Context context) {
-        PagedIterable<GenericResourceExpandedInner> inner =
-            this.serviceClient().listByResourceGroup(resourceGroupName, filter, expand, top, context);
+    public PagedIterable<GenericResourceExpanded> listByResourceGroup(String resourceGroupName, String filter,
+        String expand, Integer top, Context context) {
+        PagedIterable<GenericResourceExpandedInner> inner
+            = this.serviceClient().listByResourceGroup(resourceGroupName, filter, expand, top, context);
         return Utils.mapPage(inner, inner1 -> new GenericResourceExpandedImpl(inner1, this.manager()));
     }
 
@@ -68,101 +68,35 @@ public final class ResourcesImpl implements Resources {
         return Utils.mapPage(inner, inner1 -> new GenericResourceExpandedImpl(inner1, this.manager()));
     }
 
-    public Response<Boolean> checkExistenceWithResponse(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
-        String apiVersion,
-        Context context) {
-        return this
-            .serviceClient()
-            .checkExistenceWithResponse(
-                resourceGroupName,
-                resourceProviderNamespace,
-                parentResourcePath,
-                resourceType,
-                resourceName,
-                apiVersion,
-                context);
+    public Response<Boolean> checkExistenceWithResponse(String resourceGroupName, String resourceProviderNamespace,
+        String parentResourcePath, String resourceType, String resourceName, String apiVersion, Context context) {
+        return this.serviceClient().checkExistenceWithResponse(resourceGroupName, resourceProviderNamespace,
+            parentResourcePath, resourceType, resourceName, apiVersion, context);
     }
 
-    public boolean checkExistence(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
-        String apiVersion) {
-        return this
-            .serviceClient()
-            .checkExistence(
-                resourceGroupName,
-                resourceProviderNamespace,
-                parentResourcePath,
-                resourceType,
-                resourceName,
-                apiVersion);
+    public boolean checkExistence(String resourceGroupName, String resourceProviderNamespace, String parentResourcePath,
+        String resourceType, String resourceName, String apiVersion) {
+        return this.serviceClient().checkExistence(resourceGroupName, resourceProviderNamespace, parentResourcePath,
+            resourceType, resourceName, apiVersion);
     }
 
-    public void delete(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
-        String apiVersion) {
-        this
-            .serviceClient()
-            .delete(
-                resourceGroupName,
-                resourceProviderNamespace,
-                parentResourcePath,
-                resourceType,
-                resourceName,
-                apiVersion);
+    public void delete(String resourceGroupName, String resourceProviderNamespace, String parentResourcePath,
+        String resourceType, String resourceName, String apiVersion) {
+        this.serviceClient().delete(resourceGroupName, resourceProviderNamespace, parentResourcePath, resourceType,
+            resourceName, apiVersion);
     }
 
-    public void delete(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
-        String apiVersion,
-        Context context) {
-        this
-            .serviceClient()
-            .delete(
-                resourceGroupName,
-                resourceProviderNamespace,
-                parentResourcePath,
-                resourceType,
-                resourceName,
-                apiVersion,
-                context);
+    public void delete(String resourceGroupName, String resourceProviderNamespace, String parentResourcePath,
+        String resourceType, String resourceName, String apiVersion, Context context) {
+        this.serviceClient().delete(resourceGroupName, resourceProviderNamespace, parentResourcePath, resourceType,
+            resourceName, apiVersion, context);
     }
 
-    public GenericResource createOrUpdate(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
-        String apiVersion,
+    public GenericResource createOrUpdate(String resourceGroupName, String resourceProviderNamespace,
+        String parentResourcePath, String resourceType, String resourceName, String apiVersion,
         GenericResourceInner parameters) {
-        GenericResourceInner inner =
-            this
-                .serviceClient()
-                .createOrUpdate(
-                    resourceGroupName,
-                    resourceProviderNamespace,
-                    parentResourcePath,
-                    resourceType,
-                    resourceName,
-                    apiVersion,
-                    parameters);
+        GenericResourceInner inner = this.serviceClient().createOrUpdate(resourceGroupName, resourceProviderNamespace,
+            parentResourcePath, resourceType, resourceName, apiVersion, parameters);
         if (inner != null) {
             return new GenericResourceImpl(inner, this.manager());
         } else {
@@ -170,27 +104,11 @@ public final class ResourcesImpl implements Resources {
         }
     }
 
-    public GenericResource createOrUpdate(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
-        String apiVersion,
-        GenericResourceInner parameters,
-        Context context) {
-        GenericResourceInner inner =
-            this
-                .serviceClient()
-                .createOrUpdate(
-                    resourceGroupName,
-                    resourceProviderNamespace,
-                    parentResourcePath,
-                    resourceType,
-                    resourceName,
-                    apiVersion,
-                    parameters,
-                    context);
+    public GenericResource createOrUpdate(String resourceGroupName, String resourceProviderNamespace,
+        String parentResourcePath, String resourceType, String resourceName, String apiVersion,
+        GenericResourceInner parameters, Context context) {
+        GenericResourceInner inner = this.serviceClient().createOrUpdate(resourceGroupName, resourceProviderNamespace,
+            parentResourcePath, resourceType, resourceName, apiVersion, parameters, context);
         if (inner != null) {
             return new GenericResourceImpl(inner, this.manager());
         } else {
@@ -198,25 +116,10 @@ public final class ResourcesImpl implements Resources {
         }
     }
 
-    public GenericResource update(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
-        String apiVersion,
-        GenericResourceInner parameters) {
-        GenericResourceInner inner =
-            this
-                .serviceClient()
-                .update(
-                    resourceGroupName,
-                    resourceProviderNamespace,
-                    parentResourcePath,
-                    resourceType,
-                    resourceName,
-                    apiVersion,
-                    parameters);
+    public GenericResource update(String resourceGroupName, String resourceProviderNamespace, String parentResourcePath,
+        String resourceType, String resourceName, String apiVersion, GenericResourceInner parameters) {
+        GenericResourceInner inner = this.serviceClient().update(resourceGroupName, resourceProviderNamespace,
+            parentResourcePath, resourceType, resourceName, apiVersion, parameters);
         if (inner != null) {
             return new GenericResourceImpl(inner, this.manager());
         } else {
@@ -224,27 +127,10 @@ public final class ResourcesImpl implements Resources {
         }
     }
 
-    public GenericResource update(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
-        String apiVersion,
-        GenericResourceInner parameters,
-        Context context) {
-        GenericResourceInner inner =
-            this
-                .serviceClient()
-                .update(
-                    resourceGroupName,
-                    resourceProviderNamespace,
-                    parentResourcePath,
-                    resourceType,
-                    resourceName,
-                    apiVersion,
-                    parameters,
-                    context);
+    public GenericResource update(String resourceGroupName, String resourceProviderNamespace, String parentResourcePath,
+        String resourceType, String resourceName, String apiVersion, GenericResourceInner parameters, Context context) {
+        GenericResourceInner inner = this.serviceClient().update(resourceGroupName, resourceProviderNamespace,
+            parentResourcePath, resourceType, resourceName, apiVersion, parameters, context);
         if (inner != null) {
             return new GenericResourceImpl(inner, this.manager());
         } else {
@@ -252,53 +138,22 @@ public final class ResourcesImpl implements Resources {
         }
     }
 
-    public Response<GenericResource> getWithResponse(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
-        String apiVersion,
-        Context context) {
-        Response<GenericResourceInner> inner =
-            this
-                .serviceClient()
-                .getWithResponse(
-                    resourceGroupName,
-                    resourceProviderNamespace,
-                    parentResourcePath,
-                    resourceType,
-                    resourceName,
-                    apiVersion,
-                    context);
+    public Response<GenericResource> getWithResponse(String resourceGroupName, String resourceProviderNamespace,
+        String parentResourcePath, String resourceType, String resourceName, String apiVersion, Context context) {
+        Response<GenericResourceInner> inner = this.serviceClient().getWithResponse(resourceGroupName,
+            resourceProviderNamespace, parentResourcePath, resourceType, resourceName, apiVersion, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new GenericResourceImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public GenericResource get(
-        String resourceGroupName,
-        String resourceProviderNamespace,
-        String parentResourcePath,
-        String resourceType,
-        String resourceName,
-        String apiVersion) {
-        GenericResourceInner inner =
-            this
-                .serviceClient()
-                .get(
-                    resourceGroupName,
-                    resourceProviderNamespace,
-                    parentResourcePath,
-                    resourceType,
-                    resourceName,
-                    apiVersion);
+    public GenericResource get(String resourceGroupName, String resourceProviderNamespace, String parentResourcePath,
+        String resourceType, String resourceName, String apiVersion) {
+        GenericResourceInner inner = this.serviceClient().get(resourceGroupName, resourceProviderNamespace,
+            parentResourcePath, resourceType, resourceName, apiVersion);
         if (inner != null) {
             return new GenericResourceImpl(inner, this.manager());
         } else {
@@ -331,10 +186,10 @@ public final class ResourcesImpl implements Resources {
         }
     }
 
-    public GenericResource createOrUpdateById(
-        String resourceId, String apiVersion, GenericResourceInner parameters, Context context) {
-        GenericResourceInner inner =
-            this.serviceClient().createOrUpdateById(resourceId, apiVersion, parameters, context);
+    public GenericResource createOrUpdateById(String resourceId, String apiVersion, GenericResourceInner parameters,
+        Context context) {
+        GenericResourceInner inner
+            = this.serviceClient().createOrUpdateById(resourceId, apiVersion, parameters, context);
         if (inner != null) {
             return new GenericResourceImpl(inner, this.manager());
         } else {
@@ -351,8 +206,8 @@ public final class ResourcesImpl implements Resources {
         }
     }
 
-    public GenericResource updateById(
-        String resourceId, String apiVersion, GenericResourceInner parameters, Context context) {
+    public GenericResource updateById(String resourceId, String apiVersion, GenericResourceInner parameters,
+        Context context) {
         GenericResourceInner inner = this.serviceClient().updateById(resourceId, apiVersion, parameters, context);
         if (inner != null) {
             return new GenericResourceImpl(inner, this.manager());
@@ -362,13 +217,10 @@ public final class ResourcesImpl implements Resources {
     }
 
     public Response<GenericResource> getByIdWithResponse(String resourceId, String apiVersion, Context context) {
-        Response<GenericResourceInner> inner =
-            this.serviceClient().getByIdWithResponse(resourceId, apiVersion, context);
+        Response<GenericResourceInner> inner
+            = this.serviceClient().getByIdWithResponse(resourceId, apiVersion, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new GenericResourceImpl(inner.getValue(), this.manager()));
         } else {
             return null;

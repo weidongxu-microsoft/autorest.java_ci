@@ -9,7 +9,9 @@ import com.azure.resourcemanager.mediaservices.generated.fluent.models.Streaming
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** A collection of StreamingLocator items. */
+/**
+ * A collection of StreamingLocator items.
+ */
 @Fluent
 public final class StreamingLocatorCollection {
     /*
@@ -25,13 +27,15 @@ public final class StreamingLocatorCollection {
     @JsonProperty(value = "@odata.nextLink")
     private String odataNextLink;
 
-    /** Creates an instance of StreamingLocatorCollection class. */
+    /**
+     * Creates an instance of StreamingLocatorCollection class.
+     */
     public StreamingLocatorCollection() {
     }
 
     /**
      * Get the value property: A collection of StreamingLocator items.
-     *
+     * 
      * @return the value value.
      */
     public List<StreamingLocatorInner> value() {
@@ -40,7 +44,7 @@ public final class StreamingLocatorCollection {
 
     /**
      * Set the value property: A collection of StreamingLocator items.
-     *
+     * 
      * @param value the value value to set.
      * @return the StreamingLocatorCollection object itself.
      */
@@ -52,7 +56,7 @@ public final class StreamingLocatorCollection {
     /**
      * Get the odataNextLink property: A link to the next page of the collection (when the collection contains too many
      * results to return in one response).
-     *
+     * 
      * @return the odataNextLink value.
      */
     public String odataNextLink() {
@@ -62,7 +66,7 @@ public final class StreamingLocatorCollection {
     /**
      * Set the odataNextLink property: A link to the next page of the collection (when the collection contains too many
      * results to return in one response).
-     *
+     * 
      * @param odataNextLink the odataNextLink value to set.
      * @return the StreamingLocatorCollection object itself.
      */
@@ -73,7 +77,7 @@ public final class StreamingLocatorCollection {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

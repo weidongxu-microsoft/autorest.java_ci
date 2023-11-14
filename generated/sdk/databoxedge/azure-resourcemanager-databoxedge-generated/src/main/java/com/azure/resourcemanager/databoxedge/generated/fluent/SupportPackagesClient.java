@@ -11,11 +11,13 @@ import com.azure.core.util.Context;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.databoxedge.generated.models.TriggerSupportPackageRequest;
 
-/** An instance of this class provides access to all the operations defined in SupportPackagesClient. */
+/**
+ * An instance of this class provides access to all the operations defined in SupportPackagesClient.
+ */
 public interface SupportPackagesClient {
     /**
      * Triggers support package on the device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param triggerSupportPackageRequest The trigger support package request object.
@@ -25,12 +27,12 @@ public interface SupportPackagesClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginTriggerSupportPackage(
-        String deviceName, String resourceGroupName, TriggerSupportPackageRequest triggerSupportPackageRequest);
+    SyncPoller<PollResult<Void>, Void> beginTriggerSupportPackage(String deviceName, String resourceGroupName,
+        TriggerSupportPackageRequest triggerSupportPackageRequest);
 
     /**
      * Triggers support package on the device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param triggerSupportPackageRequest The trigger support package request object.
@@ -41,15 +43,12 @@ public interface SupportPackagesClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginTriggerSupportPackage(
-        String deviceName,
-        String resourceGroupName,
-        TriggerSupportPackageRequest triggerSupportPackageRequest,
-        Context context);
+    SyncPoller<PollResult<Void>, Void> beginTriggerSupportPackage(String deviceName, String resourceGroupName,
+        TriggerSupportPackageRequest triggerSupportPackageRequest, Context context);
 
     /**
      * Triggers support package on the device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param triggerSupportPackageRequest The trigger support package request object.
@@ -58,12 +57,12 @@ public interface SupportPackagesClient {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void triggerSupportPackage(
-        String deviceName, String resourceGroupName, TriggerSupportPackageRequest triggerSupportPackageRequest);
+    void triggerSupportPackage(String deviceName, String resourceGroupName,
+        TriggerSupportPackageRequest triggerSupportPackageRequest);
 
     /**
      * Triggers support package on the device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param triggerSupportPackageRequest The trigger support package request object.
@@ -73,9 +72,6 @@ public interface SupportPackagesClient {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void triggerSupportPackage(
-        String deviceName,
-        String resourceGroupName,
-        TriggerSupportPackageRequest triggerSupportPackageRequest,
-        Context context);
+    void triggerSupportPackage(String deviceName, String resourceGroupName,
+        TriggerSupportPackageRequest triggerSupportPackageRequest, Context context);
 }

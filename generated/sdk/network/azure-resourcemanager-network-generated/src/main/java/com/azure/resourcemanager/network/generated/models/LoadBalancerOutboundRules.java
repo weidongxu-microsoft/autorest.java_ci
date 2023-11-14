@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of LoadBalancerOutboundRules. */
+/**
+ * Resource collection API of LoadBalancerOutboundRules.
+ */
 public interface LoadBalancerOutboundRules {
     /**
      * Gets all the outbound rules in a load balancer.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -24,7 +26,7 @@ public interface LoadBalancerOutboundRules {
 
     /**
      * Gets all the outbound rules in a load balancer.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @param context The context to associate with this operation.
@@ -37,7 +39,7 @@ public interface LoadBalancerOutboundRules {
 
     /**
      * Gets the specified load balancer outbound rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @param outboundRuleName The name of the outbound rule.
@@ -47,12 +49,12 @@ public interface LoadBalancerOutboundRules {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified load balancer outbound rule along with {@link Response}.
      */
-    Response<OutboundRule> getWithResponse(
-        String resourceGroupName, String loadBalancerName, String outboundRuleName, Context context);
+    Response<OutboundRule> getWithResponse(String resourceGroupName, String loadBalancerName, String outboundRuleName,
+        Context context);
 
     /**
      * Gets the specified load balancer outbound rule.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @param outboundRuleName The name of the outbound rule.

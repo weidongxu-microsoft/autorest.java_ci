@@ -13,20 +13,22 @@ import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.network.generated.fluent.models.SwapResourceInner;
 import com.azure.resourcemanager.network.generated.fluent.models.SwapResourceListResultInner;
 
-/** An instance of this class provides access to all the operations defined in VipSwapsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in VipSwapsClient.
+ */
 public interface VipSwapsClient {
     /**
      * Gets the SwapResource which identifies the slot type for the specified cloud service. The slot type on a cloud
      * service can either be Staging or Production.
-     *
+     * 
      * @param groupName The name of the resource group.
      * @param resourceName The name of the cloud service.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the SwapResource which identifies the slot type for the specified cloud service along with {@link
-     *     Response}.
+     * @return the SwapResource which identifies the slot type for the specified cloud service along with
+     * {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<SwapResourceInner> getWithResponse(String groupName, String resourceName, Context context);
@@ -34,7 +36,7 @@ public interface VipSwapsClient {
     /**
      * Gets the SwapResource which identifies the slot type for the specified cloud service. The slot type on a cloud
      * service can either be Staging or Production.
-     *
+     * 
      * @param groupName The name of the resource group.
      * @param resourceName The name of the cloud service.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -47,11 +49,11 @@ public interface VipSwapsClient {
 
     /**
      * Performs vip swap operation on swappable cloud services.
-     *
+     * 
      * @param groupName The name of the resource group.
      * @param resourceName The name of the cloud service.
      * @param parameters SwapResource object where slot type should be the target slot after vip swap for the specified
-     *     cloud service.
+     * cloud service.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -62,11 +64,11 @@ public interface VipSwapsClient {
 
     /**
      * Performs vip swap operation on swappable cloud services.
-     *
+     * 
      * @param groupName The name of the resource group.
      * @param resourceName The name of the cloud service.
      * @param parameters SwapResource object where slot type should be the target slot after vip swap for the specified
-     *     cloud service.
+     * cloud service.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -74,16 +76,16 @@ public interface VipSwapsClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginCreate(
-        String groupName, String resourceName, SwapResourceInner parameters, Context context);
+    SyncPoller<PollResult<Void>, Void> beginCreate(String groupName, String resourceName, SwapResourceInner parameters,
+        Context context);
 
     /**
      * Performs vip swap operation on swappable cloud services.
-     *
+     * 
      * @param groupName The name of the resource group.
      * @param resourceName The name of the cloud service.
      * @param parameters SwapResource object where slot type should be the target slot after vip swap for the specified
-     *     cloud service.
+     * cloud service.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -93,11 +95,11 @@ public interface VipSwapsClient {
 
     /**
      * Performs vip swap operation on swappable cloud services.
-     *
+     * 
      * @param groupName The name of the resource group.
      * @param resourceName The name of the cloud service.
      * @param parameters SwapResource object where slot type should be the target slot after vip swap for the specified
-     *     cloud service.
+     * cloud service.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -109,15 +111,15 @@ public interface VipSwapsClient {
     /**
      * Gets the list of SwapResource which identifies the slot type for the specified cloud service. The slot type on a
      * cloud service can either be Staging or Production.
-     *
+     * 
      * @param groupName The name of the resource group.
      * @param resourceName The name of the cloud service.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of SwapResource which identifies the slot type for the specified cloud service along with {@link
-     *     Response}.
+     * @return the list of SwapResource which identifies the slot type for the specified cloud service along with
+     * {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<SwapResourceListResultInner> listWithResponse(String groupName, String resourceName, Context context);
@@ -125,7 +127,7 @@ public interface VipSwapsClient {
     /**
      * Gets the list of SwapResource which identifies the slot type for the specified cloud service. The slot type on a
      * cloud service can either be Staging or Production.
-     *
+     * 
      * @param groupName The name of the resource group.
      * @param resourceName The name of the cloud service.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

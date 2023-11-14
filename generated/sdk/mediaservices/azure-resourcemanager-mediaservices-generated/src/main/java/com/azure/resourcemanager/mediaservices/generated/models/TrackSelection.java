@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Class to select a track. */
+/**
+ * Class to select a track.
+ */
 @Fluent
 public final class TrackSelection {
     /*
@@ -17,13 +19,15 @@ public final class TrackSelection {
     @JsonProperty(value = "trackSelections")
     private List<TrackPropertyCondition> trackSelections;
 
-    /** Creates an instance of TrackSelection class. */
+    /**
+     * Creates an instance of TrackSelection class.
+     */
     public TrackSelection() {
     }
 
     /**
      * Get the trackSelections property: TrackSelections is a track property condition list which can specify track(s).
-     *
+     * 
      * @return the trackSelections value.
      */
     public List<TrackPropertyCondition> trackSelections() {
@@ -32,7 +36,7 @@ public final class TrackSelection {
 
     /**
      * Set the trackSelections property: TrackSelections is a track property condition list which can specify track(s).
-     *
+     * 
      * @param trackSelections the trackSelections value to set.
      * @return the TrackSelection object itself.
      */
@@ -43,7 +47,7 @@ public final class TrackSelection {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

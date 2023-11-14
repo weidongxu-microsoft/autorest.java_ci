@@ -7,11 +7,13 @@ package com.azure.resourcemanager.monitor.generated.models;
 import com.azure.resourcemanager.monitor.generated.fluent.models.DiagnosticSettingsResourceCollectionInner;
 import java.util.List;
 
-/** An immutable client-side representation of DiagnosticSettingsResourceCollection. */
+/**
+ * An immutable client-side representation of DiagnosticSettingsResourceCollection.
+ */
 public interface DiagnosticSettingsResourceCollection {
     /**
      * Gets the value property: The collection of diagnostic settings resources;.
-     *
+     * 
      * @return the value value.
      */
     List<DiagnosticSettingsResource> value();
@@ -19,7 +21,7 @@ public interface DiagnosticSettingsResourceCollection {
     /**
      * Gets the inner
      * com.azure.resourcemanager.monitor.generated.fluent.models.DiagnosticSettingsResourceCollectionInner object.
-     *
+     * 
      * @return the inner object.
      */
     DiagnosticSettingsResourceCollectionInner innerModel();

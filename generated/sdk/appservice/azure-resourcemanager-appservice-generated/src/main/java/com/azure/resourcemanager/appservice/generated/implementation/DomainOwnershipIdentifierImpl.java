@@ -59,29 +59,19 @@ public final class DomainOwnershipIdentifierImpl
     }
 
     public DomainOwnershipIdentifier create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDomains()
-                .createOrUpdateOwnershipIdentifierWithResponse(
-                    resourceGroupName, domainName, name, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getDomains().createOrUpdateOwnershipIdentifierWithResponse(
+            resourceGroupName, domainName, name, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public DomainOwnershipIdentifier create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDomains()
-                .createOrUpdateOwnershipIdentifierWithResponse(
-                    resourceGroupName, domainName, name, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getDomains().createOrUpdateOwnershipIdentifierWithResponse(
+            resourceGroupName, domainName, name, this.innerModel(), context).getValue();
         return this;
     }
 
-    DomainOwnershipIdentifierImpl(
-        String name, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
+    DomainOwnershipIdentifierImpl(String name,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = new DomainOwnershipIdentifierInner();
         this.serviceManager = serviceManager;
         this.name = name;
@@ -92,28 +82,20 @@ public final class DomainOwnershipIdentifierImpl
     }
 
     public DomainOwnershipIdentifier apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDomains()
-                .updateOwnershipIdentifierWithResponse(
-                    resourceGroupName, domainName, name, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getDomains()
+            .updateOwnershipIdentifierWithResponse(resourceGroupName, domainName, name, this.innerModel(), Context.NONE)
+            .getValue();
         return this;
     }
 
     public DomainOwnershipIdentifier apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDomains()
-                .updateOwnershipIdentifierWithResponse(resourceGroupName, domainName, name, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getDomains()
+            .updateOwnershipIdentifierWithResponse(resourceGroupName, domainName, name, this.innerModel(), context)
+            .getValue();
         return this;
     }
 
-    DomainOwnershipIdentifierImpl(
-        DomainOwnershipIdentifierInner innerObject,
+    DomainOwnershipIdentifierImpl(DomainOwnershipIdentifierInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -123,22 +105,14 @@ public final class DomainOwnershipIdentifierImpl
     }
 
     public DomainOwnershipIdentifier refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDomains()
-                .getOwnershipIdentifierWithResponse(resourceGroupName, domainName, name, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getDomains()
+            .getOwnershipIdentifierWithResponse(resourceGroupName, domainName, name, Context.NONE).getValue();
         return this;
     }
 
     public DomainOwnershipIdentifier refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDomains()
-                .getOwnershipIdentifierWithResponse(resourceGroupName, domainName, name, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getDomains()
+            .getOwnershipIdentifierWithResponse(resourceGroupName, domainName, name, context).getValue();
         return this;
     }
 

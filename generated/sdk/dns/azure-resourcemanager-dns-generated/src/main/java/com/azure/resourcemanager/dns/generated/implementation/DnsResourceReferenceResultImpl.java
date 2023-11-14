@@ -15,8 +15,7 @@ public final class DnsResourceReferenceResultImpl implements DnsResourceReferenc
 
     private final com.azure.resourcemanager.dns.generated.DnsManager serviceManager;
 
-    DnsResourceReferenceResultImpl(
-        DnsResourceReferenceResultInner innerObject,
+    DnsResourceReferenceResultImpl(DnsResourceReferenceResultInner innerObject,
         com.azure.resourcemanager.dns.generated.DnsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

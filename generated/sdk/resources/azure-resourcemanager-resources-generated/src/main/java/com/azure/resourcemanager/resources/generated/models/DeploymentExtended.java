@@ -10,109 +10,118 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.resources.generated.fluent.models.DeploymentExtendedInner;
 import java.util.Map;
 
-/** An immutable client-side representation of DeploymentExtended. */
+/**
+ * An immutable client-side representation of DeploymentExtended.
+ */
 public interface DeploymentExtended {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the name property: The name of the resource.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the type property: The type of the resource.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the location property: The geo-location where the resource lives.
-     *
+     * 
      * @return the location value.
      */
     String location();
 
     /**
      * Gets the tags property: Resource tags.
-     *
+     * 
      * @return the tags value.
      */
     Map<String, String> tags();
 
     /**
      * Gets the properties property: Deployment properties.
-     *
+     * 
      * @return the properties value.
      */
     DeploymentPropertiesExtended properties();
 
     /**
      * Gets the region of the resource.
-     *
+     * 
      * @return the region of the resource.
      */
     Region region();
 
     /**
      * Gets the name of the resource region.
-     *
+     * 
      * @return the name of the resource region.
      */
     String regionName();
 
     /**
      * Gets the name of the resource group.
-     *
+     * 
      * @return the name of the resource group.
      */
     String resourceGroupName();
 
     /**
      * Gets the inner com.azure.resourcemanager.resources.generated.fluent.models.DeploymentExtendedInner object.
-     *
+     * 
      * @return the inner object.
      */
     DeploymentExtendedInner innerModel();
 
-    /** The entirety of the DeploymentExtended definition. */
-    interface Definition
-        extends DefinitionStages.Blank,
-            DefinitionStages.WithResourceGroup,
-            DefinitionStages.WithProperties,
-            DefinitionStages.WithCreate {
+    /**
+     * The entirety of the DeploymentExtended definition.
+     */
+    interface Definition extends DefinitionStages.Blank, DefinitionStages.WithResourceGroup,
+        DefinitionStages.WithProperties, DefinitionStages.WithCreate {
     }
 
-    /** The DeploymentExtended definition stages. */
+    /**
+     * The DeploymentExtended definition stages.
+     */
     interface DefinitionStages {
-        /** The first stage of the DeploymentExtended definition. */
+        /**
+         * The first stage of the DeploymentExtended definition.
+         */
         interface Blank extends WithResourceGroup {
         }
 
-        /** The stage of the DeploymentExtended definition allowing to specify parent resource. */
+        /**
+         * The stage of the DeploymentExtended definition allowing to specify parent resource.
+         */
         interface WithResourceGroup {
             /**
              * Specifies resourceGroupName.
-             *
+             * 
              * @param resourceGroupName The name of the resource group to deploy the resources to. The name is case
-             *     insensitive. The resource group must already exist.
+             * insensitive. The resource group must already exist.
              * @return the next definition stage.
              */
             WithProperties withExistingResourceGroup(String resourceGroupName);
         }
 
-        /** The stage of the DeploymentExtended definition allowing to specify properties. */
+        /**
+         * The stage of the DeploymentExtended definition allowing to specify properties.
+         */
         interface WithProperties {
             /**
              * Specifies the properties property: The deployment properties..
-             *
+             * 
              * @param properties The deployment properties.
              * @return the next definition stage.
              */
@@ -126,25 +135,27 @@ public interface DeploymentExtended {
         interface WithCreate extends DefinitionStages.WithLocation, DefinitionStages.WithTags {
             /**
              * Executes the create request.
-             *
+             * 
              * @return the created resource.
              */
             DeploymentExtended create();
 
             /**
              * Executes the create request.
-             *
+             * 
              * @param context The context to associate with this operation.
              * @return the created resource.
              */
             DeploymentExtended create(Context context);
         }
 
-        /** The stage of the DeploymentExtended definition allowing to specify location. */
+        /**
+         * The stage of the DeploymentExtended definition allowing to specify location.
+         */
         interface WithLocation {
             /**
              * Specifies the region for the resource.
-             *
+             * 
              * @param location The location to store the deployment data.
              * @return the next definition stage.
              */
@@ -152,18 +163,20 @@ public interface DeploymentExtended {
 
             /**
              * Specifies the region for the resource.
-             *
+             * 
              * @param location The location to store the deployment data.
              * @return the next definition stage.
              */
             WithCreate withRegion(String location);
         }
 
-        /** The stage of the DeploymentExtended definition allowing to specify tags. */
+        /**
+         * The stage of the DeploymentExtended definition allowing to specify tags.
+         */
         interface WithTags {
             /**
              * Specifies the tags property: Deployment tags.
-             *
+             * 
              * @param tags Deployment tags.
              * @return the next definition stage.
              */
@@ -173,47 +186,55 @@ public interface DeploymentExtended {
 
     /**
      * Begins update for the DeploymentExtended resource.
-     *
+     * 
      * @return the stage of resource update.
      */
     DeploymentExtended.Update update();
 
-    /** The template for DeploymentExtended update. */
+    /**
+     * The template for DeploymentExtended update.
+     */
     interface Update extends UpdateStages.WithTags, UpdateStages.WithProperties {
         /**
          * Executes the update request.
-         *
+         * 
          * @return the updated resource.
          */
         DeploymentExtended apply();
 
         /**
          * Executes the update request.
-         *
+         * 
          * @param context The context to associate with this operation.
          * @return the updated resource.
          */
         DeploymentExtended apply(Context context);
     }
 
-    /** The DeploymentExtended update stages. */
+    /**
+     * The DeploymentExtended update stages.
+     */
     interface UpdateStages {
-        /** The stage of the DeploymentExtended update allowing to specify tags. */
+        /**
+         * The stage of the DeploymentExtended update allowing to specify tags.
+         */
         interface WithTags {
             /**
              * Specifies the tags property: Deployment tags.
-             *
+             * 
              * @param tags Deployment tags.
              * @return the next definition stage.
              */
             Update withTags(Map<String, String> tags);
         }
 
-        /** The stage of the DeploymentExtended update allowing to specify properties. */
+        /**
+         * The stage of the DeploymentExtended update allowing to specify properties.
+         */
         interface WithProperties {
             /**
              * Specifies the properties property: The deployment properties..
-             *
+             * 
              * @param properties The deployment properties.
              * @return the next definition stage.
              */
@@ -223,14 +244,14 @@ public interface DeploymentExtended {
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @return the refreshed resource.
      */
     DeploymentExtended refresh();
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @return the refreshed resource.
      */
@@ -238,11 +259,11 @@ public interface DeploymentExtended {
 
     /**
      * Cancels a currently running template deployment.
-     *
-     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * 
+     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
      * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
      * template deployment and leaves the resource group partially deployed.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -253,11 +274,11 @@ public interface DeploymentExtended {
 
     /**
      * Cancels a currently running template deployment.
-     *
-     * <p>You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * 
+     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
      * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
      * template deployment and leaves the resource group partially deployed.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
@@ -266,7 +287,7 @@ public interface DeploymentExtended {
     /**
      * Validates whether the specified template is syntactically correct and will be accepted by Azure Resource
      * Manager..
-     *
+     * 
      * @param parameters Parameters to validate.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -278,7 +299,7 @@ public interface DeploymentExtended {
     /**
      * Validates whether the specified template is syntactically correct and will be accepted by Azure Resource
      * Manager..
-     *
+     * 
      * @param parameters Parameters to validate.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -290,7 +311,7 @@ public interface DeploymentExtended {
 
     /**
      * Returns changes that will be made by the deployment if executed at the scope of the resource group.
-     *
+     * 
      * @param parameters Parameters to validate.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -301,7 +322,7 @@ public interface DeploymentExtended {
 
     /**
      * Returns changes that will be made by the deployment if executed at the scope of the resource group.
-     *
+     * 
      * @param parameters Parameters to validate.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -313,7 +334,7 @@ public interface DeploymentExtended {
 
     /**
      * Exports the template used for specified deployment.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -324,7 +345,7 @@ public interface DeploymentExtended {
 
     /**
      * Exports the template used for specified deployment.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the deployment export result.

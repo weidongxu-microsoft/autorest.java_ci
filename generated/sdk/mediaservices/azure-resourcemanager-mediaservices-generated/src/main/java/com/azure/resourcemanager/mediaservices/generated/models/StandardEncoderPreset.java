@@ -13,7 +13,9 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.List;
 import java.util.Map;
 
-/** Describes all the settings to be used when encoding the input video with the Standard Encoder. */
+/**
+ * Describes all the settings to be used when encoding the input video with the Standard Encoder.
+ */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
 @JsonTypeName("#Microsoft.Media.StandardEncoderPreset")
 @Fluent
@@ -43,14 +45,16 @@ public final class StandardEncoderPreset extends Preset {
     @JsonProperty(value = "formats", required = true)
     private List<Format> formats;
 
-    /** Creates an instance of StandardEncoderPreset class. */
+    /**
+     * Creates an instance of StandardEncoderPreset class.
+     */
     public StandardEncoderPreset() {
     }
 
     /**
      * Get the experimentalOptions property: Dictionary containing key value pairs for parameters not exposed in the
      * preset itself.
-     *
+     * 
      * @return the experimentalOptions value.
      */
     public Map<String, String> experimentalOptions() {
@@ -60,7 +64,7 @@ public final class StandardEncoderPreset extends Preset {
     /**
      * Set the experimentalOptions property: Dictionary containing key value pairs for parameters not exposed in the
      * preset itself.
-     *
+     * 
      * @param experimentalOptions the experimentalOptions value to set.
      * @return the StandardEncoderPreset object itself.
      */
@@ -71,7 +75,7 @@ public final class StandardEncoderPreset extends Preset {
 
     /**
      * Get the filters property: One or more filtering operations that are applied to the input media before encoding.
-     *
+     * 
      * @return the filters value.
      */
     public Filters filters() {
@@ -80,7 +84,7 @@ public final class StandardEncoderPreset extends Preset {
 
     /**
      * Set the filters property: One or more filtering operations that are applied to the input media before encoding.
-     *
+     * 
      * @param filters the filters value to set.
      * @return the StandardEncoderPreset object itself.
      */
@@ -91,7 +95,7 @@ public final class StandardEncoderPreset extends Preset {
 
     /**
      * Get the codecs property: The list of codecs to be used when encoding the input video.
-     *
+     * 
      * @return the codecs value.
      */
     public List<Codec> codecs() {
@@ -100,7 +104,7 @@ public final class StandardEncoderPreset extends Preset {
 
     /**
      * Set the codecs property: The list of codecs to be used when encoding the input video.
-     *
+     * 
      * @param codecs the codecs value to set.
      * @return the StandardEncoderPreset object itself.
      */
@@ -111,7 +115,7 @@ public final class StandardEncoderPreset extends Preset {
 
     /**
      * Get the formats property: The list of outputs to be produced by the encoder.
-     *
+     * 
      * @return the formats value.
      */
     public List<Format> formats() {
@@ -120,7 +124,7 @@ public final class StandardEncoderPreset extends Preset {
 
     /**
      * Set the formats property: The list of outputs to be produced by the encoder.
-     *
+     * 
      * @param formats the formats value to set.
      * @return the StandardEncoderPreset object itself.
      */
@@ -131,7 +135,7 @@ public final class StandardEncoderPreset extends Preset {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override
@@ -141,16 +145,14 @@ public final class StandardEncoderPreset extends Preset {
             filters().validate();
         }
         if (codecs() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property codecs in model StandardEncoderPreset"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property codecs in model StandardEncoderPreset"));
         } else {
             codecs().forEach(e -> e.validate());
         }
         if (formats() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property formats in model StandardEncoderPreset"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property formats in model StandardEncoderPreset"));
         } else {
             formats().forEach(e -> e.validate());
         }

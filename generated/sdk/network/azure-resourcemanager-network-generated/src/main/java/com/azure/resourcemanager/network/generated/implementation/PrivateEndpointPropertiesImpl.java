@@ -25,8 +25,7 @@ public final class PrivateEndpointPropertiesImpl implements PrivateEndpointPrope
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    PrivateEndpointPropertiesImpl(
-        PrivateEndpointPropertiesInner innerObject,
+    PrivateEndpointPropertiesImpl(PrivateEndpointPropertiesInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -44,12 +43,8 @@ public final class PrivateEndpointPropertiesImpl implements PrivateEndpointPrope
     public List<NetworkInterface> networkInterfaces() {
         List<NetworkInterfaceInner> inner = this.innerModel().networkInterfaces();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new NetworkInterfaceImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new NetworkInterfaceImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -89,12 +84,8 @@ public final class PrivateEndpointPropertiesImpl implements PrivateEndpointPrope
     public List<ApplicationSecurityGroup> applicationSecurityGroups() {
         List<ApplicationSecurityGroupInner> inner = this.innerModel().applicationSecurityGroups();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new ApplicationSecurityGroupImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new ApplicationSecurityGroupImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

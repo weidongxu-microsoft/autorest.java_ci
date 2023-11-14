@@ -7,7 +7,9 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Kubernetes node IP configuration. */
+/**
+ * Kubernetes node IP configuration.
+ */
 @Fluent
 public final class KubernetesIpConfiguration {
     /*
@@ -22,13 +24,15 @@ public final class KubernetesIpConfiguration {
     @JsonProperty(value = "ipAddress")
     private String ipAddress;
 
-    /** Creates an instance of KubernetesIpConfiguration class. */
+    /**
+     * Creates an instance of KubernetesIpConfiguration class.
+     */
     public KubernetesIpConfiguration() {
     }
 
     /**
      * Get the port property: Port of the Kubernetes node.
-     *
+     * 
      * @return the port value.
      */
     public String port() {
@@ -37,7 +41,7 @@ public final class KubernetesIpConfiguration {
 
     /**
      * Get the ipAddress property: IP address of the Kubernetes node.
-     *
+     * 
      * @return the ipAddress value.
      */
     public String ipAddress() {
@@ -46,7 +50,7 @@ public final class KubernetesIpConfiguration {
 
     /**
      * Set the ipAddress property: IP address of the Kubernetes node.
-     *
+     * 
      * @param ipAddress the ipAddress value to set.
      * @return the KubernetesIpConfiguration object itself.
      */
@@ -57,7 +61,7 @@ public final class KubernetesIpConfiguration {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

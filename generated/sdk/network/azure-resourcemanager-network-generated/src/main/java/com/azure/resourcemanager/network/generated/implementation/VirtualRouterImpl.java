@@ -112,20 +112,14 @@ public final class VirtualRouterImpl implements VirtualRouter, VirtualRouter.Def
     }
 
     public VirtualRouter create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualRouters()
-                .createOrUpdate(resourceGroupName, virtualRouterName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getVirtualRouters().createOrUpdate(resourceGroupName,
+            virtualRouterName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public VirtualRouter create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualRouters()
-                .createOrUpdate(resourceGroupName, virtualRouterName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getVirtualRouters().createOrUpdate(resourceGroupName,
+            virtualRouterName, this.innerModel(), context);
         return this;
     }
 
@@ -140,25 +134,19 @@ public final class VirtualRouterImpl implements VirtualRouter, VirtualRouter.Def
     }
 
     public VirtualRouter apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualRouters()
-                .createOrUpdate(resourceGroupName, virtualRouterName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getVirtualRouters().createOrUpdate(resourceGroupName,
+            virtualRouterName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public VirtualRouter apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualRouters()
-                .createOrUpdate(resourceGroupName, virtualRouterName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getVirtualRouters().createOrUpdate(resourceGroupName,
+            virtualRouterName, this.innerModel(), context);
         return this;
     }
 
-    VirtualRouterImpl(
-        VirtualRouterInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    VirtualRouterImpl(VirtualRouterInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
@@ -167,23 +155,15 @@ public final class VirtualRouterImpl implements VirtualRouter, VirtualRouter.Def
 
     public VirtualRouter refresh() {
         String localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualRouters()
-                .getByResourceGroupWithResponse(resourceGroupName, virtualRouterName, localExpand, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getVirtualRouters()
+            .getByResourceGroupWithResponse(resourceGroupName, virtualRouterName, localExpand, Context.NONE).getValue();
         return this;
     }
 
     public VirtualRouter refresh(Context context) {
         String localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualRouters()
-                .getByResourceGroupWithResponse(resourceGroupName, virtualRouterName, localExpand, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getVirtualRouters()
+            .getByResourceGroupWithResponse(resourceGroupName, virtualRouterName, localExpand, context).getValue();
         return this;
     }
 

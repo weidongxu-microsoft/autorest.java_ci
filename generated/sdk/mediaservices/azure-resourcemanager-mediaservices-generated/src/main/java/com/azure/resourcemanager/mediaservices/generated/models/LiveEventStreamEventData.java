@@ -7,7 +7,9 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The live event stream event data. */
+/**
+ * The live event stream event data.
+ */
 @Fluent
 public final class LiveEventStreamEventData {
     /*
@@ -184,13 +186,15 @@ public final class LiveEventStreamEventData {
     @JsonProperty(value = "remotePort")
     private String remotePort;
 
-    /** Creates an instance of LiveEventStreamEventData class. */
+    /**
+     * Creates an instance of LiveEventStreamEventData class.
+     */
     public LiveEventStreamEventData() {
     }
 
     /**
      * Get the trackName property: Name of the track.
-     *
+     * 
      * @return the trackName value.
      */
     public String trackName() {
@@ -199,7 +203,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Set the trackName property: Name of the track.
-     *
+     * 
      * @param trackName the trackName value to set.
      * @return the LiveEventStreamEventData object itself.
      */
@@ -210,7 +214,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Get the streamId property: Stream ID in the format "trackName_bitrate".
-     *
+     * 
      * @return the streamId value.
      */
     public String streamId() {
@@ -219,7 +223,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Set the streamId property: Stream ID in the format "trackName_bitrate".
-     *
+     * 
      * @param streamId the streamId value to set.
      * @return the LiveEventStreamEventData object itself.
      */
@@ -230,7 +234,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Get the trackId property: Track index.
-     *
+     * 
      * @return the trackId value.
      */
     public Integer trackId() {
@@ -239,7 +243,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Set the trackId property: Track index.
-     *
+     * 
      * @param trackId the trackId value to set.
      * @return the LiveEventStreamEventData object itself.
      */
@@ -250,7 +254,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Get the mediaType property: Type of the track.
-     *
+     * 
      * @return the mediaType value.
      */
     public LiveEventStreamEventMediaType mediaType() {
@@ -259,7 +263,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Set the mediaType property: Type of the track.
-     *
+     * 
      * @param mediaType the mediaType value to set.
      * @return the LiveEventStreamEventData object itself.
      */
@@ -270,7 +274,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Get the bitrate property: Bitrate of the track.
-     *
+     * 
      * @return the bitrate value.
      */
     public Long bitrate() {
@@ -279,7 +283,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Set the bitrate property: Bitrate of the track.
-     *
+     * 
      * @param bitrate the bitrate value to set.
      * @return the LiveEventStreamEventData object itself.
      */
@@ -290,7 +294,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Get the mediaTimestamp property: Fragment timestamp in timescale.
-     *
+     * 
      * @return the mediaTimestamp value.
      */
     public String mediaTimestamp() {
@@ -299,7 +303,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Set the mediaTimestamp property: Fragment timestamp in timescale.
-     *
+     * 
      * @param mediaTimestamp the mediaTimestamp value to set.
      * @return the LiveEventStreamEventData object itself.
      */
@@ -310,7 +314,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Get the timescale property: Timescale in which timestamps are expressed.
-     *
+     * 
      * @return the timescale value.
      */
     public String timescale() {
@@ -319,7 +323,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Set the timescale property: Timescale in which timestamps are expressed.
-     *
+     * 
      * @param timescale the timescale value to set.
      * @return the LiveEventStreamEventData object itself.
      */
@@ -330,7 +334,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Get the previousFragmentTimestamp property: Previous fragment timestamp in timescale.
-     *
+     * 
      * @return the previousFragmentTimestamp value.
      */
     public String previousFragmentTimestamp() {
@@ -339,7 +343,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Set the previousFragmentTimestamp property: Previous fragment timestamp in timescale.
-     *
+     * 
      * @param previousFragmentTimestamp the previousFragmentTimestamp value to set.
      * @return the LiveEventStreamEventData object itself.
      */
@@ -350,7 +354,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Get the previousFragmentDuration property: Previous fragment duration in timescale.
-     *
+     * 
      * @return the previousFragmentDuration value.
      */
     public String previousFragmentDuration() {
@@ -359,7 +363,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Set the previousFragmentDuration property: Previous fragment duration in timescale.
-     *
+     * 
      * @param previousFragmentDuration the previousFragmentDuration value to set.
      * @return the LiveEventStreamEventData object itself.
      */
@@ -370,7 +374,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Get the currentFragmentTimestamp property: Current fragment timestamp in timescale.
-     *
+     * 
      * @return the currentFragmentTimestamp value.
      */
     public String currentFragmentTimestamp() {
@@ -379,7 +383,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Set the currentFragmentTimestamp property: Current fragment timestamp in timescale.
-     *
+     * 
      * @param currentFragmentTimestamp the currentFragmentTimestamp value to set.
      * @return the LiveEventStreamEventData object itself.
      */
@@ -390,7 +394,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Get the fragmentOneTimestamp property: Timestamp of first fragment used to make a comparison, in timescale.
-     *
+     * 
      * @return the fragmentOneTimestamp value.
      */
     public String fragmentOneTimestamp() {
@@ -399,7 +403,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Set the fragmentOneTimestamp property: Timestamp of first fragment used to make a comparison, in timescale.
-     *
+     * 
      * @param fragmentOneTimestamp the fragmentOneTimestamp value to set.
      * @return the LiveEventStreamEventData object itself.
      */
@@ -410,7 +414,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Get the fragmentOneDuration property: Duration of first fragment used to make a comparison, in timescale.
-     *
+     * 
      * @return the fragmentOneDuration value.
      */
     public String fragmentOneDuration() {
@@ -419,7 +423,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Set the fragmentOneDuration property: Duration of first fragment used to make a comparison, in timescale.
-     *
+     * 
      * @param fragmentOneDuration the fragmentOneDuration value to set.
      * @return the LiveEventStreamEventData object itself.
      */
@@ -430,7 +434,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Get the fragmentTwoTimestamp property: Timestamp of second fragment used to make a comparison, in timescale.
-     *
+     * 
      * @return the fragmentTwoTimestamp value.
      */
     public String fragmentTwoTimestamp() {
@@ -439,7 +443,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Set the fragmentTwoTimestamp property: Timestamp of second fragment used to make a comparison, in timescale.
-     *
+     * 
      * @param fragmentTwoTimestamp the fragmentTwoTimestamp value to set.
      * @return the LiveEventStreamEventData object itself.
      */
@@ -450,7 +454,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Get the fragmentTwoDuration property: Duration of second fragment used to make a comparison, in timescale.
-     *
+     * 
      * @return the fragmentTwoDuration value.
      */
     public String fragmentTwoDuration() {
@@ -459,7 +463,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Set the fragmentTwoDuration property: Duration of second fragment used to make a comparison, in timescale.
-     *
+     * 
      * @param fragmentTwoDuration the fragmentTwoDuration value to set.
      * @return the LiveEventStreamEventData object itself.
      */
@@ -470,7 +474,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Get the fragmentDropReason property: Reason the fragment was dropped.
-     *
+     * 
      * @return the fragmentDropReason value.
      */
     public String fragmentDropReason() {
@@ -479,7 +483,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Set the fragmentDropReason property: Reason the fragment was dropped.
-     *
+     * 
      * @param fragmentDropReason the fragmentDropReason value to set.
      * @return the LiveEventStreamEventData object itself.
      */
@@ -490,7 +494,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Get the discontinuityGap property: Length of the discontinuity gap in timescale.
-     *
+     * 
      * @return the discontinuityGap value.
      */
     public Long discontinuityGap() {
@@ -499,7 +503,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Set the discontinuityGap property: Length of the discontinuity gap in timescale.
-     *
+     * 
      * @param discontinuityGap the discontinuityGap value to set.
      * @return the LiveEventStreamEventData object itself.
      */
@@ -511,7 +515,7 @@ public final class LiveEventStreamEventData {
     /**
      * Get the streamName property: Identifier of the stream or connection. Encoder or customer is responsible to add
      * this ID in the ingest URL.
-     *
+     * 
      * @return the streamName value.
      */
     public String streamName() {
@@ -521,7 +525,7 @@ public final class LiveEventStreamEventData {
     /**
      * Set the streamName property: Identifier of the stream or connection. Encoder or customer is responsible to add
      * this ID in the ingest URL.
-     *
+     * 
      * @param streamName the streamName value to set.
      * @return the LiveEventStreamEventData object itself.
      */
@@ -532,7 +536,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Get the resultCode property: Result code.
-     *
+     * 
      * @return the resultCode value.
      */
     public String resultCode() {
@@ -541,7 +545,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Set the resultCode property: Result code.
-     *
+     * 
      * @param resultCode the resultCode value to set.
      * @return the LiveEventStreamEventData object itself.
      */
@@ -552,7 +556,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Get the resultMessage property: Result message.
-     *
+     * 
      * @return the resultMessage value.
      */
     public String resultMessage() {
@@ -561,7 +565,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Set the resultMessage property: Result message.
-     *
+     * 
      * @param resultMessage the resultMessage value to set.
      * @return the LiveEventStreamEventData object itself.
      */
@@ -572,7 +576,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Get the duration property: Fragment duration.
-     *
+     * 
      * @return the duration value.
      */
     public String duration() {
@@ -581,7 +585,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Set the duration property: Fragment duration.
-     *
+     * 
      * @param duration the duration value to set.
      * @return the LiveEventStreamEventData object itself.
      */
@@ -592,7 +596,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Get the resolution property: Width x Height for video, null otherwise.
-     *
+     * 
      * @return the resolution value.
      */
     public String resolution() {
@@ -601,7 +605,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Set the resolution property: Width x Height for video, null otherwise.
-     *
+     * 
      * @param resolution the resolution value to set.
      * @return the LiveEventStreamEventData object itself.
      */
@@ -612,7 +616,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Get the minTime property: The smaller timestamp of the two fragments compared.
-     *
+     * 
      * @return the minTime value.
      */
     public String minTime() {
@@ -621,7 +625,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Set the minTime property: The smaller timestamp of the two fragments compared.
-     *
+     * 
      * @param minTime the minTime value to set.
      * @return the LiveEventStreamEventData object itself.
      */
@@ -632,7 +636,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Get the minTimeMediaType property: The media type of the smaller timestamp of two fragments compared.
-     *
+     * 
      * @return the minTimeMediaType value.
      */
     public LiveEventStreamEventMinTimeMediaType minTimeMediaType() {
@@ -641,7 +645,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Set the minTimeMediaType property: The media type of the smaller timestamp of two fragments compared.
-     *
+     * 
      * @param minTimeMediaType the minTimeMediaType value to set.
      * @return the LiveEventStreamEventData object itself.
      */
@@ -652,7 +656,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Get the maxTime property: The larger timestamp of the two fragments compared.
-     *
+     * 
      * @return the maxTime value.
      */
     public String maxTime() {
@@ -661,7 +665,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Set the maxTime property: The larger timestamp of the two fragments compared.
-     *
+     * 
      * @param maxTime the maxTime value to set.
      * @return the LiveEventStreamEventData object itself.
      */
@@ -672,7 +676,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Get the maxTimeMediaType property: The media type of the larger timestamp of two fragments compared.
-     *
+     * 
      * @return the maxTimeMediaType value.
      */
     public LiveEventStreamEventMaxTimeMediaType maxTimeMediaType() {
@@ -681,7 +685,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Set the maxTimeMediaType property: The media type of the larger timestamp of two fragments compared.
-     *
+     * 
      * @param maxTimeMediaType the maxTimeMediaType value to set.
      * @return the LiveEventStreamEventData object itself.
      */
@@ -692,7 +696,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Get the timescaleOfMinTime property: Timescale of the fragment with the smaller timestamp.
-     *
+     * 
      * @return the timescaleOfMinTime value.
      */
     public String timescaleOfMinTime() {
@@ -701,7 +705,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Set the timescaleOfMinTime property: Timescale of the fragment with the smaller timestamp.
-     *
+     * 
      * @param timescaleOfMinTime the timescaleOfMinTime value to set.
      * @return the LiveEventStreamEventData object itself.
      */
@@ -712,7 +716,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Get the timescaleOfMaxTime property: Timescale of the fragment with the larger timestamp.
-     *
+     * 
      * @return the timescaleOfMaxTime value.
      */
     public String timescaleOfMaxTime() {
@@ -721,7 +725,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Set the timescaleOfMaxTime property: Timescale of the fragment with the larger timestamp.
-     *
+     * 
      * @param timescaleOfMaxTime the timescaleOfMaxTime value to set.
      * @return the LiveEventStreamEventData object itself.
      */
@@ -732,7 +736,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Get the remoteIp property: Truncated IP of the encoder.
-     *
+     * 
      * @return the remoteIp value.
      */
     public String remoteIp() {
@@ -741,7 +745,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Set the remoteIp property: Truncated IP of the encoder.
-     *
+     * 
      * @param remoteIp the remoteIp value to set.
      * @return the LiveEventStreamEventData object itself.
      */
@@ -752,7 +756,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Get the remotePort property: Port of the encoder.
-     *
+     * 
      * @return the remotePort value.
      */
     public String remotePort() {
@@ -761,7 +765,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Set the remotePort property: Port of the encoder.
-     *
+     * 
      * @param remotePort the remotePort value to set.
      * @return the LiveEventStreamEventData object itself.
      */
@@ -772,7 +776,7 @@ public final class LiveEventStreamEventData {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -7,7 +7,9 @@ package com.azure.resourcemanager.dns.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** An NS record. */
+/**
+ * An NS record.
+ */
 @Fluent
 public final class NsRecord {
     /*
@@ -16,13 +18,15 @@ public final class NsRecord {
     @JsonProperty(value = "nsdname")
     private String nsdname;
 
-    /** Creates an instance of NsRecord class. */
+    /**
+     * Creates an instance of NsRecord class.
+     */
     public NsRecord() {
     }
 
     /**
      * Get the nsdname property: The name server name for this NS record.
-     *
+     * 
      * @return the nsdname value.
      */
     public String nsdname() {
@@ -31,7 +35,7 @@ public final class NsRecord {
 
     /**
      * Set the nsdname property: The name server name for this NS record.
-     *
+     * 
      * @param nsdname the nsdname value to set.
      * @return the NsRecord object itself.
      */
@@ -42,7 +46,7 @@ public final class NsRecord {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

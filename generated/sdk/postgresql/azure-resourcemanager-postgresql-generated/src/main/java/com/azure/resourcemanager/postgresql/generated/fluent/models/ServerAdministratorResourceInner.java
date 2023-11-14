@@ -10,7 +10,9 @@ import com.azure.resourcemanager.postgresql.generated.models.AdministratorType;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.UUID;
 
-/** Represents a and external administrator to be created. */
+/**
+ * Represents a and external administrator to be created.
+ */
 @Fluent
 public final class ServerAdministratorResourceInner extends ProxyResource {
     /*
@@ -19,13 +21,15 @@ public final class ServerAdministratorResourceInner extends ProxyResource {
     @JsonProperty(value = "properties")
     private ServerAdministratorProperties innerProperties;
 
-    /** Creates an instance of ServerAdministratorResourceInner class. */
+    /**
+     * Creates an instance of ServerAdministratorResourceInner class.
+     */
     public ServerAdministratorResourceInner() {
     }
 
     /**
      * Get the innerProperties property: Properties of the server AAD administrator.
-     *
+     * 
      * @return the innerProperties value.
      */
     private ServerAdministratorProperties innerProperties() {
@@ -34,7 +38,7 @@ public final class ServerAdministratorResourceInner extends ProxyResource {
 
     /**
      * Get the administratorType property: The type of administrator.
-     *
+     * 
      * @return the administratorType value.
      */
     public AdministratorType administratorType() {
@@ -43,7 +47,7 @@ public final class ServerAdministratorResourceInner extends ProxyResource {
 
     /**
      * Set the administratorType property: The type of administrator.
-     *
+     * 
      * @param administratorType the administratorType value to set.
      * @return the ServerAdministratorResourceInner object itself.
      */
@@ -57,7 +61,7 @@ public final class ServerAdministratorResourceInner extends ProxyResource {
 
     /**
      * Get the login property: The server administrator login account name.
-     *
+     * 
      * @return the login value.
      */
     public String login() {
@@ -66,7 +70,7 @@ public final class ServerAdministratorResourceInner extends ProxyResource {
 
     /**
      * Set the login property: The server administrator login account name.
-     *
+     * 
      * @param login the login value to set.
      * @return the ServerAdministratorResourceInner object itself.
      */
@@ -80,7 +84,7 @@ public final class ServerAdministratorResourceInner extends ProxyResource {
 
     /**
      * Get the sid property: The server administrator Sid (Secure ID).
-     *
+     * 
      * @return the sid value.
      */
     public UUID sid() {
@@ -89,7 +93,7 @@ public final class ServerAdministratorResourceInner extends ProxyResource {
 
     /**
      * Set the sid property: The server administrator Sid (Secure ID).
-     *
+     * 
      * @param sid the sid value to set.
      * @return the ServerAdministratorResourceInner object itself.
      */
@@ -103,7 +107,7 @@ public final class ServerAdministratorResourceInner extends ProxyResource {
 
     /**
      * Get the tenantId property: The server Active Directory Administrator tenant id.
-     *
+     * 
      * @return the tenantId value.
      */
     public UUID tenantId() {
@@ -112,7 +116,7 @@ public final class ServerAdministratorResourceInner extends ProxyResource {
 
     /**
      * Set the tenantId property: The server Active Directory Administrator tenant id.
-     *
+     * 
      * @param tenantId the tenantId value to set.
      * @return the ServerAdministratorResourceInner object itself.
      */
@@ -126,7 +130,7 @@ public final class ServerAdministratorResourceInner extends ProxyResource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

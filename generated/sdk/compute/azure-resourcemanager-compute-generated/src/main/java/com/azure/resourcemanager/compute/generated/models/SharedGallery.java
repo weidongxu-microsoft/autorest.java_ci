@@ -6,32 +6,34 @@ package com.azure.resourcemanager.compute.generated.models;
 
 import com.azure.resourcemanager.compute.generated.fluent.models.SharedGalleryInner;
 
-/** An immutable client-side representation of SharedGallery. */
+/**
+ * An immutable client-side representation of SharedGallery.
+ */
 public interface SharedGallery {
     /**
      * Gets the name property: Resource name.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the location property: Resource location.
-     *
+     * 
      * @return the location value.
      */
     String location();
 
     /**
      * Gets the uniqueId property: The unique id of this shared gallery.
-     *
+     * 
      * @return the uniqueId value.
      */
     String uniqueId();
 
     /**
      * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.SharedGalleryInner object.
-     *
+     * 
      * @return the inner object.
      */
     SharedGalleryInner innerModel();

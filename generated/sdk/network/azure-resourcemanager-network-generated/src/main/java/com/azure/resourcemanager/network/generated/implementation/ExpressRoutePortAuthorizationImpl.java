@@ -10,10 +10,8 @@ import com.azure.resourcemanager.network.generated.models.ExpressRoutePortAuthor
 import com.azure.resourcemanager.network.generated.models.ExpressRoutePortAuthorizationUseStatus;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 
-public final class ExpressRoutePortAuthorizationImpl
-    implements ExpressRoutePortAuthorization,
-        ExpressRoutePortAuthorization.Definition,
-        ExpressRoutePortAuthorization.Update {
+public final class ExpressRoutePortAuthorizationImpl implements ExpressRoutePortAuthorization,
+    ExpressRoutePortAuthorization.Definition, ExpressRoutePortAuthorization.Update {
     private ExpressRoutePortAuthorizationInner innerObject;
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
@@ -68,34 +66,27 @@ public final class ExpressRoutePortAuthorizationImpl
 
     private String authorizationName;
 
-    public ExpressRoutePortAuthorizationImpl withExistingExpressRoutePort(
-        String resourceGroupName, String expressRoutePortName) {
+    public ExpressRoutePortAuthorizationImpl withExistingExpressRoutePort(String resourceGroupName,
+        String expressRoutePortName) {
         this.resourceGroupName = resourceGroupName;
         this.expressRoutePortName = expressRoutePortName;
         return this;
     }
 
     public ExpressRoutePortAuthorization create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getExpressRoutePortAuthorizations()
-                .createOrUpdate(
-                    resourceGroupName, expressRoutePortName, authorizationName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getExpressRoutePortAuthorizations().createOrUpdate(
+            resourceGroupName, expressRoutePortName, authorizationName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public ExpressRoutePortAuthorization create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getExpressRoutePortAuthorizations()
-                .createOrUpdate(resourceGroupName, expressRoutePortName, authorizationName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getExpressRoutePortAuthorizations()
+            .createOrUpdate(resourceGroupName, expressRoutePortName, authorizationName, this.innerModel(), context);
         return this;
     }
 
-    ExpressRoutePortAuthorizationImpl(
-        String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    ExpressRoutePortAuthorizationImpl(String name,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new ExpressRoutePortAuthorizationInner();
         this.serviceManager = serviceManager;
         this.authorizationName = name;
@@ -106,26 +97,18 @@ public final class ExpressRoutePortAuthorizationImpl
     }
 
     public ExpressRoutePortAuthorization apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getExpressRoutePortAuthorizations()
-                .createOrUpdate(
-                    resourceGroupName, expressRoutePortName, authorizationName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getExpressRoutePortAuthorizations().createOrUpdate(
+            resourceGroupName, expressRoutePortName, authorizationName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public ExpressRoutePortAuthorization apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getExpressRoutePortAuthorizations()
-                .createOrUpdate(resourceGroupName, expressRoutePortName, authorizationName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getExpressRoutePortAuthorizations()
+            .createOrUpdate(resourceGroupName, expressRoutePortName, authorizationName, this.innerModel(), context);
         return this;
     }
 
-    ExpressRoutePortAuthorizationImpl(
-        ExpressRoutePortAuthorizationInner innerObject,
+    ExpressRoutePortAuthorizationImpl(ExpressRoutePortAuthorizationInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -135,22 +118,14 @@ public final class ExpressRoutePortAuthorizationImpl
     }
 
     public ExpressRoutePortAuthorization refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getExpressRoutePortAuthorizations()
-                .getWithResponse(resourceGroupName, expressRoutePortName, authorizationName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getExpressRoutePortAuthorizations()
+            .getWithResponse(resourceGroupName, expressRoutePortName, authorizationName, Context.NONE).getValue();
         return this;
     }
 
     public ExpressRoutePortAuthorization refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getExpressRoutePortAuthorizations()
-                .getWithResponse(resourceGroupName, expressRoutePortName, authorizationName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getExpressRoutePortAuthorizations()
+            .getWithResponse(resourceGroupName, expressRoutePortName, authorizationName, context).getValue();
         return this;
     }
 

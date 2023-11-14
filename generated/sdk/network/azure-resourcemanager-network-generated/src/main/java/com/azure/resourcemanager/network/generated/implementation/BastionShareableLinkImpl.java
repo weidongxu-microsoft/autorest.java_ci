@@ -13,8 +13,7 @@ public final class BastionShareableLinkImpl implements BastionShareableLink {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    BastionShareableLinkImpl(
-        BastionShareableLinkInner innerObject,
+    BastionShareableLinkImpl(BastionShareableLinkInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

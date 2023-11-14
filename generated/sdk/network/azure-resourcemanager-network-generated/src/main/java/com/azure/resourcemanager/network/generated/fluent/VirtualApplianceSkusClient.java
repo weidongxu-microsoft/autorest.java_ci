@@ -11,35 +11,37 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkVirtualApplianceSkuInner;
 
-/** An instance of this class provides access to all the operations defined in VirtualApplianceSkusClient. */
+/**
+ * An instance of this class provides access to all the operations defined in VirtualApplianceSkusClient.
+ */
 public interface VirtualApplianceSkusClient {
     /**
      * List all SKUs available for a virtual appliance.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListNetworkVirtualApplianceSkus API service call as paginated response with {@link
-     *     PagedIterable}.
+     * @return response for ListNetworkVirtualApplianceSkus API service call as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<NetworkVirtualApplianceSkuInner> list();
 
     /**
      * List all SKUs available for a virtual appliance.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListNetworkVirtualApplianceSkus API service call as paginated response with {@link
-     *     PagedIterable}.
+     * @return response for ListNetworkVirtualApplianceSkus API service call as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<NetworkVirtualApplianceSkuInner> list(Context context);
 
     /**
      * Retrieves a single available sku for network virtual appliance.
-     *
+     * 
      * @param skuName Name of the Sku.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -52,7 +54,7 @@ public interface VirtualApplianceSkusClient {
 
     /**
      * Retrieves a single available sku for network virtual appliance.
-     *
+     * 
      * @param skuName Name of the Sku.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

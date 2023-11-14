@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of ResourceGroups. */
+/**
+ * Resource collection API of ResourceGroups.
+ */
 public interface ResourceGroups {
     /**
      * Checks whether a resource group exists.
-     *
+     * 
      * @param resourceGroupName The name of the resource group to check. The name is case insensitive.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -24,7 +26,7 @@ public interface ResourceGroups {
 
     /**
      * Checks whether a resource group exists.
-     *
+     * 
      * @param resourceGroupName The name of the resource group to check. The name is case insensitive.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -35,10 +37,10 @@ public interface ResourceGroups {
 
     /**
      * Deletes a resource group.
-     *
-     * <p>When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all
-     * of its template deployments and currently stored operations.
-     *
+     * 
+     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of
+     * its template deployments and currently stored operations.
+     * 
      * @param resourceGroupName The name of the resource group to delete. The name is case insensitive.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -48,13 +50,13 @@ public interface ResourceGroups {
 
     /**
      * Deletes a resource group.
-     *
-     * <p>When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all
-     * of its template deployments and currently stored operations.
-     *
+     * 
+     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of
+     * its template deployments and currently stored operations.
+     * 
      * @param resourceGroupName The name of the resource group to delete. The name is case insensitive.
      * @param forceDeletionTypes The resource types you want to force delete. Currently, only the following is
-     *     supported: forceDeletionTypes=Microsoft.Compute/virtualMachines,Microsoft.Compute/virtualMachineScaleSets.
+     * supported: forceDeletionTypes=Microsoft.Compute/virtualMachines,Microsoft.Compute/virtualMachineScaleSets.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -64,7 +66,7 @@ public interface ResourceGroups {
 
     /**
      * Gets a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group to get. The name is case insensitive.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -76,7 +78,7 @@ public interface ResourceGroups {
 
     /**
      * Gets a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group to get. The name is case insensitive.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -87,7 +89,7 @@ public interface ResourceGroups {
 
     /**
      * Captures the specified resource group as a template.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param parameters Parameters for exporting the template.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -99,7 +101,7 @@ public interface ResourceGroups {
 
     /**
      * Captures the specified resource group as a template.
-     *
+     * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param parameters Parameters for exporting the template.
      * @param context The context to associate with this operation.
@@ -108,12 +110,12 @@ public interface ResourceGroups {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return resource group export result.
      */
-    ResourceGroupExportResult exportTemplate(
-        String resourceGroupName, ExportTemplateRequest parameters, Context context);
+    ResourceGroupExportResult exportTemplate(String resourceGroupName, ExportTemplateRequest parameters,
+        Context context);
 
     /**
      * Gets all the resource groups for a subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all the resource groups for a subscription as paginated response with {@link PagedIterable}.
@@ -122,9 +124,9 @@ public interface ResourceGroups {
 
     /**
      * Gets all the resource groups for a subscription.
-     *
+     * 
      * @param filter The filter to apply on the operation.&lt;br&gt;&lt;br&gt;You can filter by tag names and values.
-     *     For example, to filter for a tag name and value, use $filter=tagName eq 'tag1' and tagValue eq 'Value1'.
+     * For example, to filter for a tag name and value, use $filter=tagName eq 'tag1' and tagValue eq 'Value1'.
      * @param top The number of results to return. If null is passed, returns all resource groups.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -136,7 +138,7 @@ public interface ResourceGroups {
 
     /**
      * Gets a resource group.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -147,7 +149,7 @@ public interface ResourceGroups {
 
     /**
      * Gets a resource group.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -159,10 +161,10 @@ public interface ResourceGroups {
 
     /**
      * Deletes a resource group.
-     *
-     * <p>When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all
-     * of its template deployments and currently stored operations.
-     *
+     * 
+     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of
+     * its template deployments and currently stored operations.
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -172,13 +174,13 @@ public interface ResourceGroups {
 
     /**
      * Deletes a resource group.
-     *
-     * <p>When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all
-     * of its template deployments and currently stored operations.
-     *
+     * 
+     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of
+     * its template deployments and currently stored operations.
+     * 
      * @param id the resource ID.
      * @param forceDeletionTypes The resource types you want to force delete. Currently, only the following is
-     *     supported: forceDeletionTypes=Microsoft.Compute/virtualMachines,Microsoft.Compute/virtualMachineScaleSets.
+     * supported: forceDeletionTypes=Microsoft.Compute/virtualMachines,Microsoft.Compute/virtualMachineScaleSets.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -188,7 +190,7 @@ public interface ResourceGroups {
 
     /**
      * Begins definition for a new ResourceGroup resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new ResourceGroup definition.
      */

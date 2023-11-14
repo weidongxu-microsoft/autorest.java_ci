@@ -12,8 +12,7 @@ public final class TopLevelDomainImpl implements TopLevelDomain {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    TopLevelDomainImpl(
-        TopLevelDomainInner innerObject,
+    TopLevelDomainImpl(TopLevelDomainInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

@@ -9,11 +9,13 @@ import com.azure.resourcemanager.network.generated.fluent.models.ApplicationSecu
 import com.azure.resourcemanager.network.generated.fluent.models.SecurityRuleInner;
 import java.util.List;
 
-/** An immutable client-side representation of SecurityRule. */
+/**
+ * An immutable client-side representation of SecurityRule.
+ */
 public interface SecurityRule {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.
-     *
+     * 
      * @return the id value.
      */
     String id();
@@ -21,35 +23,35 @@ public interface SecurityRule {
     /**
      * Gets the name property: The name of the resource that is unique within a resource group. This name can be used to
      * access the resource.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the etag property: A unique read-only string that changes whenever the resource is updated.
-     *
+     * 
      * @return the etag value.
      */
     String etag();
 
     /**
      * Gets the type property: The type of the resource.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the description property: A description for this rule. Restricted to 140 chars.
-     *
+     * 
      * @return the description value.
      */
     String description();
 
     /**
      * Gets the protocol property: Network protocol this rule applies to.
-     *
+     * 
      * @return the protocol value.
      */
     SecurityRuleProtocol protocol();
@@ -57,7 +59,7 @@ public interface SecurityRule {
     /**
      * Gets the sourcePortRange property: The source port or range. Integer or range between 0 and 65535. Asterisk '*'
      * can also be used to match all ports.
-     *
+     * 
      * @return the sourcePortRange value.
      */
     String sourcePortRange();
@@ -65,7 +67,7 @@ public interface SecurityRule {
     /**
      * Gets the destinationPortRange property: The destination port or range. Integer or range between 0 and 65535.
      * Asterisk '*' can also be used to match all ports.
-     *
+     * 
      * @return the destinationPortRange value.
      */
     String destinationPortRange();
@@ -74,21 +76,21 @@ public interface SecurityRule {
      * Gets the sourceAddressPrefix property: The CIDR or source IP range. Asterisk '*' can also be used to match all
      * source IPs. Default tags such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used. If this
      * is an ingress rule, specifies where network traffic originates from.
-     *
+     * 
      * @return the sourceAddressPrefix value.
      */
     String sourceAddressPrefix();
 
     /**
      * Gets the sourceAddressPrefixes property: The CIDR or source IP ranges.
-     *
+     * 
      * @return the sourceAddressPrefixes value.
      */
     List<String> sourceAddressPrefixes();
 
     /**
      * Gets the sourceApplicationSecurityGroups property: The application security group specified as source.
-     *
+     * 
      * @return the sourceApplicationSecurityGroups value.
      */
     List<ApplicationSecurityGroup> sourceApplicationSecurityGroups();
@@ -97,42 +99,42 @@ public interface SecurityRule {
      * Gets the destinationAddressPrefix property: The destination address prefix. CIDR or destination IP range.
      * Asterisk '*' can also be used to match all source IPs. Default tags such as 'VirtualNetwork', 'AzureLoadBalancer'
      * and 'Internet' can also be used.
-     *
+     * 
      * @return the destinationAddressPrefix value.
      */
     String destinationAddressPrefix();
 
     /**
      * Gets the destinationAddressPrefixes property: The destination address prefixes. CIDR or destination IP ranges.
-     *
+     * 
      * @return the destinationAddressPrefixes value.
      */
     List<String> destinationAddressPrefixes();
 
     /**
      * Gets the destinationApplicationSecurityGroups property: The application security group specified as destination.
-     *
+     * 
      * @return the destinationApplicationSecurityGroups value.
      */
     List<ApplicationSecurityGroup> destinationApplicationSecurityGroups();
 
     /**
      * Gets the sourcePortRanges property: The source port ranges.
-     *
+     * 
      * @return the sourcePortRanges value.
      */
     List<String> sourcePortRanges();
 
     /**
      * Gets the destinationPortRanges property: The destination port ranges.
-     *
+     * 
      * @return the destinationPortRanges value.
      */
     List<String> destinationPortRanges();
 
     /**
      * Gets the access property: The network traffic is allowed or denied.
-     *
+     * 
      * @return the access value.
      */
     SecurityRuleAccess access();
@@ -141,7 +143,7 @@ public interface SecurityRule {
      * Gets the priority property: The priority of the rule. The value can be between 100 and 4096. The priority number
      * must be unique for each rule in the collection. The lower the priority number, the higher the priority of the
      * rule.
-     *
+     * 
      * @return the priority value.
      */
     int priority();
@@ -149,48 +151,56 @@ public interface SecurityRule {
     /**
      * Gets the direction property: The direction of the rule. The direction specifies if rule will be evaluated on
      * incoming or outgoing traffic.
-     *
+     * 
      * @return the direction value.
      */
     SecurityRuleDirection direction();
 
     /**
      * Gets the provisioningState property: The provisioning state of the security rule resource.
-     *
+     * 
      * @return the provisioningState value.
      */
     ProvisioningState provisioningState();
 
     /**
      * Gets the name of the resource group.
-     *
+     * 
      * @return the name of the resource group.
      */
     String resourceGroupName();
 
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.SecurityRuleInner object.
-     *
+     * 
      * @return the inner object.
      */
     SecurityRuleInner innerModel();
 
-    /** The entirety of the SecurityRule definition. */
+    /**
+     * The entirety of the SecurityRule definition.
+     */
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
 
-    /** The SecurityRule definition stages. */
+    /**
+     * The SecurityRule definition stages.
+     */
     interface DefinitionStages {
-        /** The first stage of the SecurityRule definition. */
+        /**
+         * The first stage of the SecurityRule definition.
+         */
         interface Blank extends WithParentResource {
         }
 
-        /** The stage of the SecurityRule definition allowing to specify parent resource. */
+        /**
+         * The stage of the SecurityRule definition allowing to specify parent resource.
+         */
         interface WithParentResource {
             /**
              * Specifies resourceGroupName, networkSecurityGroupName.
-             *
+             * 
              * @param resourceGroupName The name of the resource group.
              * @param networkSecurityGroupName The name of the network security group.
              * @return the next definition stage.
@@ -202,144 +212,152 @@ public interface SecurityRule {
          * The stage of the SecurityRule definition which contains all the minimum required properties for the resource
          * to be created, but also allows for any other optional properties to be specified.
          */
-        interface WithCreate
-            extends DefinitionStages.WithName,
-                DefinitionStages.WithType,
-                DefinitionStages.WithDescription,
-                DefinitionStages.WithProtocol,
-                DefinitionStages.WithSourcePortRange,
-                DefinitionStages.WithDestinationPortRange,
-                DefinitionStages.WithSourceAddressPrefix,
-                DefinitionStages.WithSourceAddressPrefixes,
-                DefinitionStages.WithSourceApplicationSecurityGroups,
-                DefinitionStages.WithDestinationAddressPrefix,
-                DefinitionStages.WithDestinationAddressPrefixes,
-                DefinitionStages.WithDestinationApplicationSecurityGroups,
-                DefinitionStages.WithSourcePortRanges,
-                DefinitionStages.WithDestinationPortRanges,
-                DefinitionStages.WithAccess,
-                DefinitionStages.WithPriority,
-                DefinitionStages.WithDirection {
+        interface WithCreate extends DefinitionStages.WithName, DefinitionStages.WithType,
+            DefinitionStages.WithDescription, DefinitionStages.WithProtocol, DefinitionStages.WithSourcePortRange,
+            DefinitionStages.WithDestinationPortRange, DefinitionStages.WithSourceAddressPrefix,
+            DefinitionStages.WithSourceAddressPrefixes, DefinitionStages.WithSourceApplicationSecurityGroups,
+            DefinitionStages.WithDestinationAddressPrefix, DefinitionStages.WithDestinationAddressPrefixes,
+            DefinitionStages.WithDestinationApplicationSecurityGroups, DefinitionStages.WithSourcePortRanges,
+            DefinitionStages.WithDestinationPortRanges, DefinitionStages.WithAccess, DefinitionStages.WithPriority,
+            DefinitionStages.WithDirection {
             /**
              * Executes the create request.
-             *
+             * 
              * @return the created resource.
              */
             SecurityRule create();
 
             /**
              * Executes the create request.
-             *
+             * 
              * @param context The context to associate with this operation.
              * @return the created resource.
              */
             SecurityRule create(Context context);
         }
 
-        /** The stage of the SecurityRule definition allowing to specify name. */
+        /**
+         * The stage of the SecurityRule definition allowing to specify name.
+         */
         interface WithName {
             /**
              * Specifies the name property: The name of the resource that is unique within a resource group. This name
              * can be used to access the resource..
-             *
+             * 
              * @param name The name of the resource that is unique within a resource group. This name can be used to
-             *     access the resource.
+             * access the resource.
              * @return the next definition stage.
              */
             WithCreate withName(String name);
         }
 
-        /** The stage of the SecurityRule definition allowing to specify type. */
+        /**
+         * The stage of the SecurityRule definition allowing to specify type.
+         */
         interface WithType {
             /**
              * Specifies the type property: The type of the resource..
-             *
+             * 
              * @param type The type of the resource.
              * @return the next definition stage.
              */
             WithCreate withType(String type);
         }
 
-        /** The stage of the SecurityRule definition allowing to specify description. */
+        /**
+         * The stage of the SecurityRule definition allowing to specify description.
+         */
         interface WithDescription {
             /**
              * Specifies the description property: A description for this rule. Restricted to 140 chars..
-             *
+             * 
              * @param description A description for this rule. Restricted to 140 chars.
              * @return the next definition stage.
              */
             WithCreate withDescription(String description);
         }
 
-        /** The stage of the SecurityRule definition allowing to specify protocol. */
+        /**
+         * The stage of the SecurityRule definition allowing to specify protocol.
+         */
         interface WithProtocol {
             /**
              * Specifies the protocol property: Network protocol this rule applies to..
-             *
+             * 
              * @param protocol Network protocol this rule applies to.
              * @return the next definition stage.
              */
             WithCreate withProtocol(SecurityRuleProtocol protocol);
         }
 
-        /** The stage of the SecurityRule definition allowing to specify sourcePortRange. */
+        /**
+         * The stage of the SecurityRule definition allowing to specify sourcePortRange.
+         */
         interface WithSourcePortRange {
             /**
              * Specifies the sourcePortRange property: The source port or range. Integer or range between 0 and 65535.
              * Asterisk '*' can also be used to match all ports..
-             *
+             * 
              * @param sourcePortRange The source port or range. Integer or range between 0 and 65535. Asterisk '*' can
-             *     also be used to match all ports.
+             * also be used to match all ports.
              * @return the next definition stage.
              */
             WithCreate withSourcePortRange(String sourcePortRange);
         }
 
-        /** The stage of the SecurityRule definition allowing to specify destinationPortRange. */
+        /**
+         * The stage of the SecurityRule definition allowing to specify destinationPortRange.
+         */
         interface WithDestinationPortRange {
             /**
              * Specifies the destinationPortRange property: The destination port or range. Integer or range between 0
              * and 65535. Asterisk '*' can also be used to match all ports..
-             *
+             * 
              * @param destinationPortRange The destination port or range. Integer or range between 0 and 65535. Asterisk
-             *     '*' can also be used to match all ports.
+             * '*' can also be used to match all ports.
              * @return the next definition stage.
              */
             WithCreate withDestinationPortRange(String destinationPortRange);
         }
 
-        /** The stage of the SecurityRule definition allowing to specify sourceAddressPrefix. */
+        /**
+         * The stage of the SecurityRule definition allowing to specify sourceAddressPrefix.
+         */
         interface WithSourceAddressPrefix {
             /**
              * Specifies the sourceAddressPrefix property: The CIDR or source IP range. Asterisk '*' can also be used to
              * match all source IPs. Default tags such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also
              * be used. If this is an ingress rule, specifies where network traffic originates from..
-             *
+             * 
              * @param sourceAddressPrefix The CIDR or source IP range. Asterisk '*' can also be used to match all source
-             *     IPs. Default tags such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used. If
-             *     this is an ingress rule, specifies where network traffic originates from.
+             * IPs. Default tags such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used. If this
+             * is an ingress rule, specifies where network traffic originates from.
              * @return the next definition stage.
              */
             WithCreate withSourceAddressPrefix(String sourceAddressPrefix);
         }
 
-        /** The stage of the SecurityRule definition allowing to specify sourceAddressPrefixes. */
+        /**
+         * The stage of the SecurityRule definition allowing to specify sourceAddressPrefixes.
+         */
         interface WithSourceAddressPrefixes {
             /**
              * Specifies the sourceAddressPrefixes property: The CIDR or source IP ranges..
-             *
+             * 
              * @param sourceAddressPrefixes The CIDR or source IP ranges.
              * @return the next definition stage.
              */
             WithCreate withSourceAddressPrefixes(List<String> sourceAddressPrefixes);
         }
 
-        /** The stage of the SecurityRule definition allowing to specify sourceApplicationSecurityGroups. */
+        /**
+         * The stage of the SecurityRule definition allowing to specify sourceApplicationSecurityGroups.
+         */
         interface WithSourceApplicationSecurityGroups {
             /**
              * Specifies the sourceApplicationSecurityGroups property: The application security group specified as
              * source..
-             *
+             * 
              * @param sourceApplicationSecurityGroups The application security group specified as source.
              * @return the next definition stage.
              */
@@ -347,39 +365,45 @@ public interface SecurityRule {
                 List<ApplicationSecurityGroupInner> sourceApplicationSecurityGroups);
         }
 
-        /** The stage of the SecurityRule definition allowing to specify destinationAddressPrefix. */
+        /**
+         * The stage of the SecurityRule definition allowing to specify destinationAddressPrefix.
+         */
         interface WithDestinationAddressPrefix {
             /**
              * Specifies the destinationAddressPrefix property: The destination address prefix. CIDR or destination IP
              * range. Asterisk '*' can also be used to match all source IPs. Default tags such as 'VirtualNetwork',
              * 'AzureLoadBalancer' and 'Internet' can also be used..
-             *
+             * 
              * @param destinationAddressPrefix The destination address prefix. CIDR or destination IP range. Asterisk
-             *     '*' can also be used to match all source IPs. Default tags such as 'VirtualNetwork',
-             *     'AzureLoadBalancer' and 'Internet' can also be used.
+             * '*' can also be used to match all source IPs. Default tags such as 'VirtualNetwork', 'AzureLoadBalancer'
+             * and 'Internet' can also be used.
              * @return the next definition stage.
              */
             WithCreate withDestinationAddressPrefix(String destinationAddressPrefix);
         }
 
-        /** The stage of the SecurityRule definition allowing to specify destinationAddressPrefixes. */
+        /**
+         * The stage of the SecurityRule definition allowing to specify destinationAddressPrefixes.
+         */
         interface WithDestinationAddressPrefixes {
             /**
              * Specifies the destinationAddressPrefixes property: The destination address prefixes. CIDR or destination
              * IP ranges..
-             *
+             * 
              * @param destinationAddressPrefixes The destination address prefixes. CIDR or destination IP ranges.
              * @return the next definition stage.
              */
             WithCreate withDestinationAddressPrefixes(List<String> destinationAddressPrefixes);
         }
 
-        /** The stage of the SecurityRule definition allowing to specify destinationApplicationSecurityGroups. */
+        /**
+         * The stage of the SecurityRule definition allowing to specify destinationApplicationSecurityGroups.
+         */
         interface WithDestinationApplicationSecurityGroups {
             /**
              * Specifies the destinationApplicationSecurityGroups property: The application security group specified as
              * destination..
-             *
+             * 
              * @param destinationApplicationSecurityGroups The application security group specified as destination.
              * @return the next definition stage.
              */
@@ -387,62 +411,72 @@ public interface SecurityRule {
                 List<ApplicationSecurityGroupInner> destinationApplicationSecurityGroups);
         }
 
-        /** The stage of the SecurityRule definition allowing to specify sourcePortRanges. */
+        /**
+         * The stage of the SecurityRule definition allowing to specify sourcePortRanges.
+         */
         interface WithSourcePortRanges {
             /**
              * Specifies the sourcePortRanges property: The source port ranges..
-             *
+             * 
              * @param sourcePortRanges The source port ranges.
              * @return the next definition stage.
              */
             WithCreate withSourcePortRanges(List<String> sourcePortRanges);
         }
 
-        /** The stage of the SecurityRule definition allowing to specify destinationPortRanges. */
+        /**
+         * The stage of the SecurityRule definition allowing to specify destinationPortRanges.
+         */
         interface WithDestinationPortRanges {
             /**
              * Specifies the destinationPortRanges property: The destination port ranges..
-             *
+             * 
              * @param destinationPortRanges The destination port ranges.
              * @return the next definition stage.
              */
             WithCreate withDestinationPortRanges(List<String> destinationPortRanges);
         }
 
-        /** The stage of the SecurityRule definition allowing to specify access. */
+        /**
+         * The stage of the SecurityRule definition allowing to specify access.
+         */
         interface WithAccess {
             /**
              * Specifies the access property: The network traffic is allowed or denied..
-             *
+             * 
              * @param access The network traffic is allowed or denied.
              * @return the next definition stage.
              */
             WithCreate withAccess(SecurityRuleAccess access);
         }
 
-        /** The stage of the SecurityRule definition allowing to specify priority. */
+        /**
+         * The stage of the SecurityRule definition allowing to specify priority.
+         */
         interface WithPriority {
             /**
              * Specifies the priority property: The priority of the rule. The value can be between 100 and 4096. The
              * priority number must be unique for each rule in the collection. The lower the priority number, the higher
              * the priority of the rule..
-             *
+             * 
              * @param priority The priority of the rule. The value can be between 100 and 4096. The priority number must
-             *     be unique for each rule in the collection. The lower the priority number, the higher the priority of
-             *     the rule.
+             * be unique for each rule in the collection. The lower the priority number, the higher the priority of the
+             * rule.
              * @return the next definition stage.
              */
             WithCreate withPriority(int priority);
         }
 
-        /** The stage of the SecurityRule definition allowing to specify direction. */
+        /**
+         * The stage of the SecurityRule definition allowing to specify direction.
+         */
         interface WithDirection {
             /**
              * Specifies the direction property: The direction of the rule. The direction specifies if rule will be
              * evaluated on incoming or outgoing traffic..
-             *
+             * 
              * @param direction The direction of the rule. The direction specifies if rule will be evaluated on incoming
-             *     or outgoing traffic.
+             * or outgoing traffic.
              * @return the next definition stage.
              */
             WithCreate withDirection(SecurityRuleDirection direction);
@@ -451,152 +485,163 @@ public interface SecurityRule {
 
     /**
      * Begins update for the SecurityRule resource.
-     *
+     * 
      * @return the stage of resource update.
      */
     SecurityRule.Update update();
 
-    /** The template for SecurityRule update. */
-    interface Update
-        extends UpdateStages.WithName,
-            UpdateStages.WithType,
-            UpdateStages.WithDescription,
-            UpdateStages.WithProtocol,
-            UpdateStages.WithSourcePortRange,
-            UpdateStages.WithDestinationPortRange,
-            UpdateStages.WithSourceAddressPrefix,
-            UpdateStages.WithSourceAddressPrefixes,
-            UpdateStages.WithSourceApplicationSecurityGroups,
-            UpdateStages.WithDestinationAddressPrefix,
-            UpdateStages.WithDestinationAddressPrefixes,
-            UpdateStages.WithDestinationApplicationSecurityGroups,
-            UpdateStages.WithSourcePortRanges,
-            UpdateStages.WithDestinationPortRanges,
-            UpdateStages.WithAccess,
-            UpdateStages.WithPriority,
-            UpdateStages.WithDirection {
+    /**
+     * The template for SecurityRule update.
+     */
+    interface Update extends UpdateStages.WithName, UpdateStages.WithType, UpdateStages.WithDescription,
+        UpdateStages.WithProtocol, UpdateStages.WithSourcePortRange, UpdateStages.WithDestinationPortRange,
+        UpdateStages.WithSourceAddressPrefix, UpdateStages.WithSourceAddressPrefixes,
+        UpdateStages.WithSourceApplicationSecurityGroups, UpdateStages.WithDestinationAddressPrefix,
+        UpdateStages.WithDestinationAddressPrefixes, UpdateStages.WithDestinationApplicationSecurityGroups,
+        UpdateStages.WithSourcePortRanges, UpdateStages.WithDestinationPortRanges, UpdateStages.WithAccess,
+        UpdateStages.WithPriority, UpdateStages.WithDirection {
         /**
          * Executes the update request.
-         *
+         * 
          * @return the updated resource.
          */
         SecurityRule apply();
 
         /**
          * Executes the update request.
-         *
+         * 
          * @param context The context to associate with this operation.
          * @return the updated resource.
          */
         SecurityRule apply(Context context);
     }
 
-    /** The SecurityRule update stages. */
+    /**
+     * The SecurityRule update stages.
+     */
     interface UpdateStages {
-        /** The stage of the SecurityRule update allowing to specify name. */
+        /**
+         * The stage of the SecurityRule update allowing to specify name.
+         */
         interface WithName {
             /**
              * Specifies the name property: The name of the resource that is unique within a resource group. This name
              * can be used to access the resource..
-             *
+             * 
              * @param name The name of the resource that is unique within a resource group. This name can be used to
-             *     access the resource.
+             * access the resource.
              * @return the next definition stage.
              */
             Update withName(String name);
         }
 
-        /** The stage of the SecurityRule update allowing to specify type. */
+        /**
+         * The stage of the SecurityRule update allowing to specify type.
+         */
         interface WithType {
             /**
              * Specifies the type property: The type of the resource..
-             *
+             * 
              * @param type The type of the resource.
              * @return the next definition stage.
              */
             Update withType(String type);
         }
 
-        /** The stage of the SecurityRule update allowing to specify description. */
+        /**
+         * The stage of the SecurityRule update allowing to specify description.
+         */
         interface WithDescription {
             /**
              * Specifies the description property: A description for this rule. Restricted to 140 chars..
-             *
+             * 
              * @param description A description for this rule. Restricted to 140 chars.
              * @return the next definition stage.
              */
             Update withDescription(String description);
         }
 
-        /** The stage of the SecurityRule update allowing to specify protocol. */
+        /**
+         * The stage of the SecurityRule update allowing to specify protocol.
+         */
         interface WithProtocol {
             /**
              * Specifies the protocol property: Network protocol this rule applies to..
-             *
+             * 
              * @param protocol Network protocol this rule applies to.
              * @return the next definition stage.
              */
             Update withProtocol(SecurityRuleProtocol protocol);
         }
 
-        /** The stage of the SecurityRule update allowing to specify sourcePortRange. */
+        /**
+         * The stage of the SecurityRule update allowing to specify sourcePortRange.
+         */
         interface WithSourcePortRange {
             /**
              * Specifies the sourcePortRange property: The source port or range. Integer or range between 0 and 65535.
              * Asterisk '*' can also be used to match all ports..
-             *
+             * 
              * @param sourcePortRange The source port or range. Integer or range between 0 and 65535. Asterisk '*' can
-             *     also be used to match all ports.
+             * also be used to match all ports.
              * @return the next definition stage.
              */
             Update withSourcePortRange(String sourcePortRange);
         }
 
-        /** The stage of the SecurityRule update allowing to specify destinationPortRange. */
+        /**
+         * The stage of the SecurityRule update allowing to specify destinationPortRange.
+         */
         interface WithDestinationPortRange {
             /**
              * Specifies the destinationPortRange property: The destination port or range. Integer or range between 0
              * and 65535. Asterisk '*' can also be used to match all ports..
-             *
+             * 
              * @param destinationPortRange The destination port or range. Integer or range between 0 and 65535. Asterisk
-             *     '*' can also be used to match all ports.
+             * '*' can also be used to match all ports.
              * @return the next definition stage.
              */
             Update withDestinationPortRange(String destinationPortRange);
         }
 
-        /** The stage of the SecurityRule update allowing to specify sourceAddressPrefix. */
+        /**
+         * The stage of the SecurityRule update allowing to specify sourceAddressPrefix.
+         */
         interface WithSourceAddressPrefix {
             /**
              * Specifies the sourceAddressPrefix property: The CIDR or source IP range. Asterisk '*' can also be used to
              * match all source IPs. Default tags such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also
              * be used. If this is an ingress rule, specifies where network traffic originates from..
-             *
+             * 
              * @param sourceAddressPrefix The CIDR or source IP range. Asterisk '*' can also be used to match all source
-             *     IPs. Default tags such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used. If
-             *     this is an ingress rule, specifies where network traffic originates from.
+             * IPs. Default tags such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used. If this
+             * is an ingress rule, specifies where network traffic originates from.
              * @return the next definition stage.
              */
             Update withSourceAddressPrefix(String sourceAddressPrefix);
         }
 
-        /** The stage of the SecurityRule update allowing to specify sourceAddressPrefixes. */
+        /**
+         * The stage of the SecurityRule update allowing to specify sourceAddressPrefixes.
+         */
         interface WithSourceAddressPrefixes {
             /**
              * Specifies the sourceAddressPrefixes property: The CIDR or source IP ranges..
-             *
+             * 
              * @param sourceAddressPrefixes The CIDR or source IP ranges.
              * @return the next definition stage.
              */
             Update withSourceAddressPrefixes(List<String> sourceAddressPrefixes);
         }
 
-        /** The stage of the SecurityRule update allowing to specify sourceApplicationSecurityGroups. */
+        /**
+         * The stage of the SecurityRule update allowing to specify sourceApplicationSecurityGroups.
+         */
         interface WithSourceApplicationSecurityGroups {
             /**
              * Specifies the sourceApplicationSecurityGroups property: The application security group specified as
              * source..
-             *
+             * 
              * @param sourceApplicationSecurityGroups The application security group specified as source.
              * @return the next definition stage.
              */
@@ -604,39 +649,45 @@ public interface SecurityRule {
                 List<ApplicationSecurityGroupInner> sourceApplicationSecurityGroups);
         }
 
-        /** The stage of the SecurityRule update allowing to specify destinationAddressPrefix. */
+        /**
+         * The stage of the SecurityRule update allowing to specify destinationAddressPrefix.
+         */
         interface WithDestinationAddressPrefix {
             /**
              * Specifies the destinationAddressPrefix property: The destination address prefix. CIDR or destination IP
              * range. Asterisk '*' can also be used to match all source IPs. Default tags such as 'VirtualNetwork',
              * 'AzureLoadBalancer' and 'Internet' can also be used..
-             *
+             * 
              * @param destinationAddressPrefix The destination address prefix. CIDR or destination IP range. Asterisk
-             *     '*' can also be used to match all source IPs. Default tags such as 'VirtualNetwork',
-             *     'AzureLoadBalancer' and 'Internet' can also be used.
+             * '*' can also be used to match all source IPs. Default tags such as 'VirtualNetwork', 'AzureLoadBalancer'
+             * and 'Internet' can also be used.
              * @return the next definition stage.
              */
             Update withDestinationAddressPrefix(String destinationAddressPrefix);
         }
 
-        /** The stage of the SecurityRule update allowing to specify destinationAddressPrefixes. */
+        /**
+         * The stage of the SecurityRule update allowing to specify destinationAddressPrefixes.
+         */
         interface WithDestinationAddressPrefixes {
             /**
              * Specifies the destinationAddressPrefixes property: The destination address prefixes. CIDR or destination
              * IP ranges..
-             *
+             * 
              * @param destinationAddressPrefixes The destination address prefixes. CIDR or destination IP ranges.
              * @return the next definition stage.
              */
             Update withDestinationAddressPrefixes(List<String> destinationAddressPrefixes);
         }
 
-        /** The stage of the SecurityRule update allowing to specify destinationApplicationSecurityGroups. */
+        /**
+         * The stage of the SecurityRule update allowing to specify destinationApplicationSecurityGroups.
+         */
         interface WithDestinationApplicationSecurityGroups {
             /**
              * Specifies the destinationApplicationSecurityGroups property: The application security group specified as
              * destination..
-             *
+             * 
              * @param destinationApplicationSecurityGroups The application security group specified as destination.
              * @return the next definition stage.
              */
@@ -644,62 +695,72 @@ public interface SecurityRule {
                 List<ApplicationSecurityGroupInner> destinationApplicationSecurityGroups);
         }
 
-        /** The stage of the SecurityRule update allowing to specify sourcePortRanges. */
+        /**
+         * The stage of the SecurityRule update allowing to specify sourcePortRanges.
+         */
         interface WithSourcePortRanges {
             /**
              * Specifies the sourcePortRanges property: The source port ranges..
-             *
+             * 
              * @param sourcePortRanges The source port ranges.
              * @return the next definition stage.
              */
             Update withSourcePortRanges(List<String> sourcePortRanges);
         }
 
-        /** The stage of the SecurityRule update allowing to specify destinationPortRanges. */
+        /**
+         * The stage of the SecurityRule update allowing to specify destinationPortRanges.
+         */
         interface WithDestinationPortRanges {
             /**
              * Specifies the destinationPortRanges property: The destination port ranges..
-             *
+             * 
              * @param destinationPortRanges The destination port ranges.
              * @return the next definition stage.
              */
             Update withDestinationPortRanges(List<String> destinationPortRanges);
         }
 
-        /** The stage of the SecurityRule update allowing to specify access. */
+        /**
+         * The stage of the SecurityRule update allowing to specify access.
+         */
         interface WithAccess {
             /**
              * Specifies the access property: The network traffic is allowed or denied..
-             *
+             * 
              * @param access The network traffic is allowed or denied.
              * @return the next definition stage.
              */
             Update withAccess(SecurityRuleAccess access);
         }
 
-        /** The stage of the SecurityRule update allowing to specify priority. */
+        /**
+         * The stage of the SecurityRule update allowing to specify priority.
+         */
         interface WithPriority {
             /**
              * Specifies the priority property: The priority of the rule. The value can be between 100 and 4096. The
              * priority number must be unique for each rule in the collection. The lower the priority number, the higher
              * the priority of the rule..
-             *
+             * 
              * @param priority The priority of the rule. The value can be between 100 and 4096. The priority number must
-             *     be unique for each rule in the collection. The lower the priority number, the higher the priority of
-             *     the rule.
+             * be unique for each rule in the collection. The lower the priority number, the higher the priority of the
+             * rule.
              * @return the next definition stage.
              */
             Update withPriority(int priority);
         }
 
-        /** The stage of the SecurityRule update allowing to specify direction. */
+        /**
+         * The stage of the SecurityRule update allowing to specify direction.
+         */
         interface WithDirection {
             /**
              * Specifies the direction property: The direction of the rule. The direction specifies if rule will be
              * evaluated on incoming or outgoing traffic..
-             *
+             * 
              * @param direction The direction of the rule. The direction specifies if rule will be evaluated on incoming
-             *     or outgoing traffic.
+             * or outgoing traffic.
              * @return the next definition stage.
              */
             Update withDirection(SecurityRuleDirection direction);
@@ -708,14 +769,14 @@ public interface SecurityRule {
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @return the refreshed resource.
      */
     SecurityRule refresh();
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @return the refreshed resource.
      */

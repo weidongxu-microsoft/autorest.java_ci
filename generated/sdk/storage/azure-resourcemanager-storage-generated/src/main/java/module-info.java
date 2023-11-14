@@ -10,10 +10,6 @@ module com.azure.resourcemanager.storage.generated {
     exports com.azure.resourcemanager.storage.generated.fluent.models;
     exports com.azure.resourcemanager.storage.generated.models;
 
-    opens com.azure.resourcemanager.storage.generated.fluent.models to
-        com.azure.core,
-        com.fasterxml.jackson.databind;
-    opens com.azure.resourcemanager.storage.generated.models to
-        com.azure.core,
-        com.fasterxml.jackson.databind;
+    opens com.azure.resourcemanager.storage.generated.fluent.models to com.azure.core, com.fasterxml.jackson.databind;
+    opens com.azure.resourcemanager.storage.generated.models to com.azure.core, com.fasterxml.jackson.databind;
 }

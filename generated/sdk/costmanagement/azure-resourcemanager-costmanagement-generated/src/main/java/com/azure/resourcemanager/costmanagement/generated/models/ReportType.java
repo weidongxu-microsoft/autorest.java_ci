@@ -13,12 +13,14 @@ import java.util.Collection;
  * represents both usage and forecasted data. Actual usage and forecasted data can be differentiated based on dates.
  */
 public final class ReportType extends ExpandableStringEnum<ReportType> {
-    /** Static value Usage for ReportType. */
+    /**
+     * Static value Usage for ReportType.
+     */
     public static final ReportType USAGE = fromString("Usage");
 
     /**
      * Creates a new instance of ReportType value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -27,7 +29,7 @@ public final class ReportType extends ExpandableStringEnum<ReportType> {
 
     /**
      * Creates or finds a ReportType from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding ReportType.
      */
@@ -38,7 +40,7 @@ public final class ReportType extends ExpandableStringEnum<ReportType> {
 
     /**
      * Gets known ReportType values.
-     *
+     * 
      * @return known ReportType values.
      */
     public static Collection<ReportType> values() {

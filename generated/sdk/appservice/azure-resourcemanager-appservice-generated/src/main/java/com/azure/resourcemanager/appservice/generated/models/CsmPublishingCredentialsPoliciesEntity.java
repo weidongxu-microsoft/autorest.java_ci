@@ -6,32 +6,34 @@ package com.azure.resourcemanager.appservice.generated.models;
 
 import com.azure.resourcemanager.appservice.generated.fluent.models.CsmPublishingCredentialsPoliciesEntityInner;
 
-/** An immutable client-side representation of CsmPublishingCredentialsPoliciesEntity. */
+/**
+ * An immutable client-side representation of CsmPublishingCredentialsPoliciesEntity.
+ */
 public interface CsmPublishingCredentialsPoliciesEntity {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the name property: The name of the resource.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the type property: The type of the resource.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the kind property: Kind of resource.
-     *
+     * 
      * @return the kind value.
      */
     String kind();
@@ -39,7 +41,7 @@ public interface CsmPublishingCredentialsPoliciesEntity {
     /**
      * Gets the allow property: &lt;code&gt;true&lt;/code&gt; to allow access to a publishing method; otherwise,
      * &lt;code&gt;false&lt;/code&gt;.
-     *
+     * 
      * @return the allow value.
      */
     boolean allow();
@@ -47,7 +49,7 @@ public interface CsmPublishingCredentialsPoliciesEntity {
     /**
      * Gets the inner
      * com.azure.resourcemanager.appservice.generated.fluent.models.CsmPublishingCredentialsPoliciesEntityInner object.
-     *
+     * 
      * @return the inner object.
      */
     CsmPublishingCredentialsPoliciesEntityInner innerModel();

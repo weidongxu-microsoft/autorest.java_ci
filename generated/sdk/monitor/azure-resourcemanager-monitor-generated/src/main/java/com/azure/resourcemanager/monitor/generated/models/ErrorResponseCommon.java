@@ -9,7 +9,9 @@ import com.azure.core.management.exception.ManagementError;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The resource management error response. */
+/**
+ * The resource management error response.
+ */
 @Immutable
 public final class ErrorResponseCommon extends ManagementError {
     /*
@@ -18,27 +20,29 @@ public final class ErrorResponseCommon extends ManagementError {
     @JsonProperty(value = "details", access = JsonProperty.Access.WRITE_ONLY)
     private List<ErrorResponseCommon> details;
 
-    /** Creates an instance of ErrorResponseCommon class. */
+    /**
+     * Creates an instance of ErrorResponseCommon class.
+     */
     public ErrorResponseCommon() {
     }
 
     /**
      * Get the details property: The error details.
-     *
+     * 
      * @return the details value.
      */
-    public List<ErrorResponseCommon> details() {
+    public List<ErrorResponseCommon> getDetails() {
         return this.details;
     }
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
-        if (details() != null) {
-            details().forEach(e -> e.validate());
+        if (getDetails() != null) {
+            getDetails().forEach(e -> e.validate());
         }
     }
 }

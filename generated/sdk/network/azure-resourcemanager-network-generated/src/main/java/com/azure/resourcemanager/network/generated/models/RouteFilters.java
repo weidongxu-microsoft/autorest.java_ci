@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of RouteFilters. */
+/**
+ * Resource collection API of RouteFilters.
+ */
 public interface RouteFilters {
     /**
      * Deletes the specified route filter.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param routeFilterName The name of the route filter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -23,7 +25,7 @@ public interface RouteFilters {
 
     /**
      * Deletes the specified route filter.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param routeFilterName The name of the route filter.
      * @param context The context to associate with this operation.
@@ -35,7 +37,7 @@ public interface RouteFilters {
 
     /**
      * Gets the specified route filter.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param routeFilterName The name of the route filter.
      * @param expand Expands referenced express route bgp peering resources.
@@ -45,12 +47,12 @@ public interface RouteFilters {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified route filter along with {@link Response}.
      */
-    Response<RouteFilter> getByResourceGroupWithResponse(
-        String resourceGroupName, String routeFilterName, String expand, Context context);
+    Response<RouteFilter> getByResourceGroupWithResponse(String resourceGroupName, String routeFilterName,
+        String expand, Context context);
 
     /**
      * Gets the specified route filter.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param routeFilterName The name of the route filter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -62,7 +64,7 @@ public interface RouteFilters {
 
     /**
      * Gets all route filters in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -73,7 +75,7 @@ public interface RouteFilters {
 
     /**
      * Gets all route filters in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -85,7 +87,7 @@ public interface RouteFilters {
 
     /**
      * Gets all route filters in a subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all route filters in a subscription as paginated response with {@link PagedIterable}.
@@ -94,7 +96,7 @@ public interface RouteFilters {
 
     /**
      * Gets all route filters in a subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -105,7 +107,7 @@ public interface RouteFilters {
 
     /**
      * Gets the specified route filter.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -116,7 +118,7 @@ public interface RouteFilters {
 
     /**
      * Gets the specified route filter.
-     *
+     * 
      * @param id the resource ID.
      * @param expand Expands referenced express route bgp peering resources.
      * @param context The context to associate with this operation.
@@ -129,7 +131,7 @@ public interface RouteFilters {
 
     /**
      * Deletes the specified route filter.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -139,7 +141,7 @@ public interface RouteFilters {
 
     /**
      * Deletes the specified route filter.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -150,7 +152,7 @@ public interface RouteFilters {
 
     /**
      * Begins definition for a new RouteFilter resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new RouteFilter definition.
      */

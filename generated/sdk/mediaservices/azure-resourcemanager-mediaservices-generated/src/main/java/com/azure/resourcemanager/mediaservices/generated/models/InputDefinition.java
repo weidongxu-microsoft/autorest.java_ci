@@ -23,8 +23,7 @@ import java.util.List;
 @JsonSubTypes({
     @JsonSubTypes.Type(name = "#Microsoft.Media.FromAllInputFile", value = FromAllInputFile.class),
     @JsonSubTypes.Type(name = "#Microsoft.Media.FromEachInputFile", value = FromEachInputFile.class),
-    @JsonSubTypes.Type(name = "#Microsoft.Media.InputFile", value = InputFile.class)
-})
+    @JsonSubTypes.Type(name = "#Microsoft.Media.InputFile", value = InputFile.class) })
 @Fluent
 public class InputDefinition {
     /*
@@ -33,14 +32,16 @@ public class InputDefinition {
     @JsonProperty(value = "includedTracks")
     private List<TrackDescriptor> includedTracks;
 
-    /** Creates an instance of InputDefinition class. */
+    /**
+     * Creates an instance of InputDefinition class.
+     */
     public InputDefinition() {
     }
 
     /**
      * Get the includedTracks property: The list of TrackDescriptors which define the metadata and selection of tracks
      * in the input.
-     *
+     * 
      * @return the includedTracks value.
      */
     public List<TrackDescriptor> includedTracks() {
@@ -50,7 +51,7 @@ public class InputDefinition {
     /**
      * Set the includedTracks property: The list of TrackDescriptors which define the metadata and selection of tracks
      * in the input.
-     *
+     * 
      * @param includedTracks the includedTracks value to set.
      * @return the InputDefinition object itself.
      */
@@ -61,7 +62,7 @@ public class InputDefinition {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

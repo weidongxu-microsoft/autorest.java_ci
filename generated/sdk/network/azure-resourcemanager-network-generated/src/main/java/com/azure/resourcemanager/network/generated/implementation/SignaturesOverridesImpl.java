@@ -13,8 +13,7 @@ public final class SignaturesOverridesImpl implements SignaturesOverrides {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    SignaturesOverridesImpl(
-        SignaturesOverridesInner innerObject,
+    SignaturesOverridesImpl(SignaturesOverridesInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

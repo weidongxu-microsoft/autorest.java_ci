@@ -9,7 +9,9 @@ import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Class of paths for streaming. */
+/**
+ * Class of paths for streaming.
+ */
 @Fluent
 public final class StreamingPath {
     /*
@@ -30,13 +32,15 @@ public final class StreamingPath {
     @JsonProperty(value = "paths")
     private List<String> paths;
 
-    /** Creates an instance of StreamingPath class. */
+    /**
+     * Creates an instance of StreamingPath class.
+     */
     public StreamingPath() {
     }
 
     /**
      * Get the streamingProtocol property: Streaming protocol.
-     *
+     * 
      * @return the streamingProtocol value.
      */
     public StreamingPolicyStreamingProtocol streamingProtocol() {
@@ -45,7 +49,7 @@ public final class StreamingPath {
 
     /**
      * Set the streamingProtocol property: Streaming protocol.
-     *
+     * 
      * @param streamingProtocol the streamingProtocol value to set.
      * @return the StreamingPath object itself.
      */
@@ -56,7 +60,7 @@ public final class StreamingPath {
 
     /**
      * Get the encryptionScheme property: Encryption scheme.
-     *
+     * 
      * @return the encryptionScheme value.
      */
     public EncryptionScheme encryptionScheme() {
@@ -65,7 +69,7 @@ public final class StreamingPath {
 
     /**
      * Set the encryptionScheme property: Encryption scheme.
-     *
+     * 
      * @param encryptionScheme the encryptionScheme value to set.
      * @return the StreamingPath object itself.
      */
@@ -76,7 +80,7 @@ public final class StreamingPath {
 
     /**
      * Get the paths property: Streaming paths for each protocol and encryptionScheme pair.
-     *
+     * 
      * @return the paths value.
      */
     public List<String> paths() {
@@ -85,7 +89,7 @@ public final class StreamingPath {
 
     /**
      * Set the paths property: Streaming paths for each protocol and encryptionScheme pair.
-     *
+     * 
      * @param paths the paths value to set.
      * @return the StreamingPath object itself.
      */
@@ -96,19 +100,17 @@ public final class StreamingPath {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (streamingProtocol() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property streamingProtocol in model StreamingPath"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property streamingProtocol in model StreamingPath"));
         }
         if (encryptionScheme() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property encryptionScheme in model StreamingPath"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property encryptionScheme in model StreamingPath"));
         }
     }
 

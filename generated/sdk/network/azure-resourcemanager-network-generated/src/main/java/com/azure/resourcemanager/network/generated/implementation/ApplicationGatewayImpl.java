@@ -314,12 +314,9 @@ public final class ApplicationGatewayImpl
     public List<ApplicationGatewayPrivateEndpointConnection> privateEndpointConnections() {
         List<ApplicationGatewayPrivateEndpointConnectionInner> inner = this.innerModel().privateEndpointConnections();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new ApplicationGatewayPrivateEndpointConnectionImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(inner.stream()
+                .map(inner1 -> new ApplicationGatewayPrivateEndpointConnectionImpl(inner1, this.manager()))
+                .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }
@@ -395,20 +392,14 @@ public final class ApplicationGatewayImpl
     }
 
     public ApplicationGateway create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getApplicationGateways()
-                .createOrUpdate(resourceGroupName, applicationGatewayName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getApplicationGateways().createOrUpdate(resourceGroupName,
+            applicationGatewayName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public ApplicationGateway create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getApplicationGateways()
-                .createOrUpdate(resourceGroupName, applicationGatewayName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getApplicationGateways().createOrUpdate(resourceGroupName,
+            applicationGatewayName, this.innerModel(), context);
         return this;
     }
 
@@ -424,27 +415,19 @@ public final class ApplicationGatewayImpl
     }
 
     public ApplicationGateway apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getApplicationGateways()
-                .updateTagsWithResponse(resourceGroupName, applicationGatewayName, updateParameters, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getApplicationGateways()
+            .updateTagsWithResponse(resourceGroupName, applicationGatewayName, updateParameters, Context.NONE)
+            .getValue();
         return this;
     }
 
     public ApplicationGateway apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getApplicationGateways()
-                .updateTagsWithResponse(resourceGroupName, applicationGatewayName, updateParameters, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getApplicationGateways()
+            .updateTagsWithResponse(resourceGroupName, applicationGatewayName, updateParameters, context).getValue();
         return this;
     }
 
-    ApplicationGatewayImpl(
-        ApplicationGatewayInner innerObject,
+    ApplicationGatewayImpl(ApplicationGatewayInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -453,22 +436,14 @@ public final class ApplicationGatewayImpl
     }
 
     public ApplicationGateway refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getApplicationGateways()
-                .getByResourceGroupWithResponse(resourceGroupName, applicationGatewayName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getApplicationGateways()
+            .getByResourceGroupWithResponse(resourceGroupName, applicationGatewayName, Context.NONE).getValue();
         return this;
     }
 
     public ApplicationGateway refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getApplicationGateways()
-                .getByResourceGroupWithResponse(resourceGroupName, applicationGatewayName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getApplicationGateways()
+            .getByResourceGroupWithResponse(resourceGroupName, applicationGatewayName, context).getValue();
         return this;
     }
 
@@ -493,22 +468,19 @@ public final class ApplicationGatewayImpl
     }
 
     public ApplicationGatewayBackendHealth backendHealth(String expand, Context context) {
-        return serviceManager
-            .applicationGateways()
-            .backendHealth(resourceGroupName, applicationGatewayName, expand, context);
+        return serviceManager.applicationGateways().backendHealth(resourceGroupName, applicationGatewayName, expand,
+            context);
     }
 
     public ApplicationGatewayBackendHealthOnDemand backendHealthOnDemand(ApplicationGatewayOnDemandProbe probeRequest) {
-        return serviceManager
-            .applicationGateways()
-            .backendHealthOnDemand(resourceGroupName, applicationGatewayName, probeRequest);
+        return serviceManager.applicationGateways().backendHealthOnDemand(resourceGroupName, applicationGatewayName,
+            probeRequest);
     }
 
-    public ApplicationGatewayBackendHealthOnDemand backendHealthOnDemand(
-        ApplicationGatewayOnDemandProbe probeRequest, String expand, Context context) {
-        return serviceManager
-            .applicationGateways()
-            .backendHealthOnDemand(resourceGroupName, applicationGatewayName, probeRequest, expand, context);
+    public ApplicationGatewayBackendHealthOnDemand backendHealthOnDemand(ApplicationGatewayOnDemandProbe probeRequest,
+        String expand, Context context) {
+        return serviceManager.applicationGateways().backendHealthOnDemand(resourceGroupName, applicationGatewayName,
+            probeRequest, expand, context);
     }
 
     public ApplicationGatewayImpl withRegion(Region location) {
@@ -551,26 +523,26 @@ public final class ApplicationGatewayImpl
         return this;
     }
 
-    public ApplicationGatewayImpl withGatewayIpConfigurations(
-        List<ApplicationGatewayIpConfiguration> gatewayIpConfigurations) {
+    public ApplicationGatewayImpl
+        withGatewayIpConfigurations(List<ApplicationGatewayIpConfiguration> gatewayIpConfigurations) {
         this.innerModel().withGatewayIpConfigurations(gatewayIpConfigurations);
         return this;
     }
 
-    public ApplicationGatewayImpl withAuthenticationCertificates(
-        List<ApplicationGatewayAuthenticationCertificate> authenticationCertificates) {
+    public ApplicationGatewayImpl
+        withAuthenticationCertificates(List<ApplicationGatewayAuthenticationCertificate> authenticationCertificates) {
         this.innerModel().withAuthenticationCertificates(authenticationCertificates);
         return this;
     }
 
-    public ApplicationGatewayImpl withTrustedRootCertificates(
-        List<ApplicationGatewayTrustedRootCertificate> trustedRootCertificates) {
+    public ApplicationGatewayImpl
+        withTrustedRootCertificates(List<ApplicationGatewayTrustedRootCertificate> trustedRootCertificates) {
         this.innerModel().withTrustedRootCertificates(trustedRootCertificates);
         return this;
     }
 
-    public ApplicationGatewayImpl withTrustedClientCertificates(
-        List<ApplicationGatewayTrustedClientCertificate> trustedClientCertificates) {
+    public ApplicationGatewayImpl
+        withTrustedClientCertificates(List<ApplicationGatewayTrustedClientCertificate> trustedClientCertificates) {
         this.innerModel().withTrustedClientCertificates(trustedClientCertificates);
         return this;
     }
@@ -580,8 +552,8 @@ public final class ApplicationGatewayImpl
         return this;
     }
 
-    public ApplicationGatewayImpl withFrontendIpConfigurations(
-        List<ApplicationGatewayFrontendIpConfiguration> frontendIpConfigurations) {
+    public ApplicationGatewayImpl
+        withFrontendIpConfigurations(List<ApplicationGatewayFrontendIpConfiguration> frontendIpConfigurations) {
         this.innerModel().withFrontendIpConfigurations(frontendIpConfigurations);
         return this;
     }
@@ -596,20 +568,20 @@ public final class ApplicationGatewayImpl
         return this;
     }
 
-    public ApplicationGatewayImpl withBackendAddressPools(
-        List<ApplicationGatewayBackendAddressPool> backendAddressPools) {
+    public ApplicationGatewayImpl
+        withBackendAddressPools(List<ApplicationGatewayBackendAddressPool> backendAddressPools) {
         this.innerModel().withBackendAddressPools(backendAddressPools);
         return this;
     }
 
-    public ApplicationGatewayImpl withBackendHttpSettingsCollection(
-        List<ApplicationGatewayBackendHttpSettings> backendHttpSettingsCollection) {
+    public ApplicationGatewayImpl
+        withBackendHttpSettingsCollection(List<ApplicationGatewayBackendHttpSettings> backendHttpSettingsCollection) {
         this.innerModel().withBackendHttpSettingsCollection(backendHttpSettingsCollection);
         return this;
     }
 
-    public ApplicationGatewayImpl withBackendSettingsCollection(
-        List<ApplicationGatewayBackendSettings> backendSettingsCollection) {
+    public ApplicationGatewayImpl
+        withBackendSettingsCollection(List<ApplicationGatewayBackendSettings> backendSettingsCollection) {
         this.innerModel().withBackendSettingsCollection(backendSettingsCollection);
         return this;
     }
@@ -634,8 +606,8 @@ public final class ApplicationGatewayImpl
         return this;
     }
 
-    public ApplicationGatewayImpl withRequestRoutingRules(
-        List<ApplicationGatewayRequestRoutingRule> requestRoutingRules) {
+    public ApplicationGatewayImpl
+        withRequestRoutingRules(List<ApplicationGatewayRequestRoutingRule> requestRoutingRules) {
         this.innerModel().withRequestRoutingRules(requestRoutingRules);
         return this;
     }
@@ -650,8 +622,8 @@ public final class ApplicationGatewayImpl
         return this;
     }
 
-    public ApplicationGatewayImpl withRedirectConfigurations(
-        List<ApplicationGatewayRedirectConfiguration> redirectConfigurations) {
+    public ApplicationGatewayImpl
+        withRedirectConfigurations(List<ApplicationGatewayRedirectConfiguration> redirectConfigurations) {
         this.innerModel().withRedirectConfigurations(redirectConfigurations);
         return this;
     }
@@ -677,20 +649,20 @@ public final class ApplicationGatewayImpl
         return this;
     }
 
-    public ApplicationGatewayImpl withAutoscaleConfiguration(
-        ApplicationGatewayAutoscaleConfiguration autoscaleConfiguration) {
+    public ApplicationGatewayImpl
+        withAutoscaleConfiguration(ApplicationGatewayAutoscaleConfiguration autoscaleConfiguration) {
         this.innerModel().withAutoscaleConfiguration(autoscaleConfiguration);
         return this;
     }
 
-    public ApplicationGatewayImpl withPrivateLinkConfigurations(
-        List<ApplicationGatewayPrivateLinkConfiguration> privateLinkConfigurations) {
+    public ApplicationGatewayImpl
+        withPrivateLinkConfigurations(List<ApplicationGatewayPrivateLinkConfiguration> privateLinkConfigurations) {
         this.innerModel().withPrivateLinkConfigurations(privateLinkConfigurations);
         return this;
     }
 
-    public ApplicationGatewayImpl withCustomErrorConfigurations(
-        List<ApplicationGatewayCustomError> customErrorConfigurations) {
+    public ApplicationGatewayImpl
+        withCustomErrorConfigurations(List<ApplicationGatewayCustomError> customErrorConfigurations) {
         this.innerModel().withCustomErrorConfigurations(customErrorConfigurations);
         return this;
     }
@@ -700,8 +672,8 @@ public final class ApplicationGatewayImpl
         return this;
     }
 
-    public ApplicationGatewayImpl withLoadDistributionPolicies(
-        List<ApplicationGatewayLoadDistributionPolicy> loadDistributionPolicies) {
+    public ApplicationGatewayImpl
+        withLoadDistributionPolicies(List<ApplicationGatewayLoadDistributionPolicy> loadDistributionPolicies) {
         this.innerModel().withLoadDistributionPolicies(loadDistributionPolicies);
         return this;
     }

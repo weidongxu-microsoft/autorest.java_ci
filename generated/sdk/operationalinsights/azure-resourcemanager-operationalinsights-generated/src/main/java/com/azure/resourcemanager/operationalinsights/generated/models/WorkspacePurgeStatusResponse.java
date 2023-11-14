@@ -6,11 +6,13 @@ package com.azure.resourcemanager.operationalinsights.generated.models;
 
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.WorkspacePurgeStatusResponseInner;
 
-/** An immutable client-side representation of WorkspacePurgeStatusResponse. */
+/**
+ * An immutable client-side representation of WorkspacePurgeStatusResponse.
+ */
 public interface WorkspacePurgeStatusResponse {
     /**
      * Gets the status property: Status of the operation represented by the requested Id.
-     *
+     * 
      * @return the status value.
      */
     PurgeState status();
@@ -18,7 +20,7 @@ public interface WorkspacePurgeStatusResponse {
     /**
      * Gets the inner
      * com.azure.resourcemanager.operationalinsights.generated.fluent.models.WorkspacePurgeStatusResponseInner object.
-     *
+     * 
      * @return the inner object.
      */
     WorkspacePurgeStatusResponseInner innerModel();

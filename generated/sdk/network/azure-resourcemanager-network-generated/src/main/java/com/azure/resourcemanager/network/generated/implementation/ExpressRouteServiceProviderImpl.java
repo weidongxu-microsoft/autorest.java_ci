@@ -17,8 +17,7 @@ public final class ExpressRouteServiceProviderImpl implements ExpressRouteServic
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    ExpressRouteServiceProviderImpl(
-        ExpressRouteServiceProviderInner innerObject,
+    ExpressRouteServiceProviderImpl(ExpressRouteServiceProviderInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

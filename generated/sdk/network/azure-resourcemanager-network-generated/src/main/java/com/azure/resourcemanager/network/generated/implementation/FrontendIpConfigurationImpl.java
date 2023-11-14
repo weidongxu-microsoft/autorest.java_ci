@@ -22,8 +22,7 @@ public final class FrontendIpConfigurationImpl implements FrontendIpConfiguratio
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    FrontendIpConfigurationImpl(
-        FrontendIpConfigurationInner innerObject,
+    FrontendIpConfigurationImpl(FrontendIpConfigurationInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

@@ -10,7 +10,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.Map;
 
-/** Properties of the deleted managed HSM. */
+/**
+ * Properties of the deleted managed HSM.
+ */
 @Immutable
 public final class DeletedManagedHsmProperties {
     /*
@@ -50,13 +52,15 @@ public final class DeletedManagedHsmProperties {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> tags;
 
-    /** Creates an instance of DeletedManagedHsmProperties class. */
+    /**
+     * Creates an instance of DeletedManagedHsmProperties class.
+     */
     public DeletedManagedHsmProperties() {
     }
 
     /**
      * Get the mhsmId property: The resource id of the original managed HSM.
-     *
+     * 
      * @return the mhsmId value.
      */
     public String mhsmId() {
@@ -65,7 +69,7 @@ public final class DeletedManagedHsmProperties {
 
     /**
      * Get the location property: The location of the original managed HSM.
-     *
+     * 
      * @return the location value.
      */
     public String location() {
@@ -74,7 +78,7 @@ public final class DeletedManagedHsmProperties {
 
     /**
      * Get the deletionDate property: The deleted date.
-     *
+     * 
      * @return the deletionDate value.
      */
     public OffsetDateTime deletionDate() {
@@ -83,7 +87,7 @@ public final class DeletedManagedHsmProperties {
 
     /**
      * Get the scheduledPurgeDate property: The scheduled purged date.
-     *
+     * 
      * @return the scheduledPurgeDate value.
      */
     public OffsetDateTime scheduledPurgeDate() {
@@ -92,7 +96,7 @@ public final class DeletedManagedHsmProperties {
 
     /**
      * Get the purgeProtectionEnabled property: Purge protection status of the original managed HSM.
-     *
+     * 
      * @return the purgeProtectionEnabled value.
      */
     public Boolean purgeProtectionEnabled() {
@@ -101,7 +105,7 @@ public final class DeletedManagedHsmProperties {
 
     /**
      * Get the tags property: Tags of the original managed HSM.
-     *
+     * 
      * @return the tags value.
      */
     public Map<String, String> tags() {
@@ -110,7 +114,7 @@ public final class DeletedManagedHsmProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

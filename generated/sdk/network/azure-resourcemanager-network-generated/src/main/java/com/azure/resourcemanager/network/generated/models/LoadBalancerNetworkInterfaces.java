@@ -7,11 +7,13 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 
-/** Resource collection API of LoadBalancerNetworkInterfaces. */
+/**
+ * Resource collection API of LoadBalancerNetworkInterfaces.
+ */
 public interface LoadBalancerNetworkInterfaces {
     /**
      * Gets associated load balancer network interfaces.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -23,7 +25,7 @@ public interface LoadBalancerNetworkInterfaces {
 
     /**
      * Gets associated load balancer network interfaces.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @param context The context to associate with this operation.

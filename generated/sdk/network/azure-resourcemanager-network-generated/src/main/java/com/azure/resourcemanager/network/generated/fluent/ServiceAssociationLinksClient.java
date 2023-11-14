@@ -10,11 +10,13 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.ServiceAssociationLinksListResultInner;
 
-/** An instance of this class provides access to all the operations defined in ServiceAssociationLinksClient. */
+/**
+ * An instance of this class provides access to all the operations defined in ServiceAssociationLinksClient.
+ */
 public interface ServiceAssociationLinksClient {
     /**
      * Gets a list of service association links for a subnet.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
@@ -25,12 +27,12 @@ public interface ServiceAssociationLinksClient {
      * @return a list of service association links for a subnet along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<ServiceAssociationLinksListResultInner> listWithResponse(
-        String resourceGroupName, String virtualNetworkName, String subnetName, Context context);
+    Response<ServiceAssociationLinksListResultInner> listWithResponse(String resourceGroupName,
+        String virtualNetworkName, String subnetName, Context context);
 
     /**
      * Gets a list of service association links for a subnet.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.

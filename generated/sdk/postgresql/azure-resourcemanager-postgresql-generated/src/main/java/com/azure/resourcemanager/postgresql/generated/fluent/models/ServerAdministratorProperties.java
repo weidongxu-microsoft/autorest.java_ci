@@ -10,7 +10,9 @@ import com.azure.resourcemanager.postgresql.generated.models.AdministratorType;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.UUID;
 
-/** The properties of an server Administrator. */
+/**
+ * The properties of an server Administrator.
+ */
 @Fluent
 public final class ServerAdministratorProperties {
     /*
@@ -37,13 +39,15 @@ public final class ServerAdministratorProperties {
     @JsonProperty(value = "tenantId", required = true)
     private UUID tenantId;
 
-    /** Creates an instance of ServerAdministratorProperties class. */
+    /**
+     * Creates an instance of ServerAdministratorProperties class.
+     */
     public ServerAdministratorProperties() {
     }
 
     /**
      * Get the administratorType property: The type of administrator.
-     *
+     * 
      * @return the administratorType value.
      */
     public AdministratorType administratorType() {
@@ -52,7 +56,7 @@ public final class ServerAdministratorProperties {
 
     /**
      * Set the administratorType property: The type of administrator.
-     *
+     * 
      * @param administratorType the administratorType value to set.
      * @return the ServerAdministratorProperties object itself.
      */
@@ -63,7 +67,7 @@ public final class ServerAdministratorProperties {
 
     /**
      * Get the login property: The server administrator login account name.
-     *
+     * 
      * @return the login value.
      */
     public String login() {
@@ -72,7 +76,7 @@ public final class ServerAdministratorProperties {
 
     /**
      * Set the login property: The server administrator login account name.
-     *
+     * 
      * @param login the login value to set.
      * @return the ServerAdministratorProperties object itself.
      */
@@ -83,7 +87,7 @@ public final class ServerAdministratorProperties {
 
     /**
      * Get the sid property: The server administrator Sid (Secure ID).
-     *
+     * 
      * @return the sid value.
      */
     public UUID sid() {
@@ -92,7 +96,7 @@ public final class ServerAdministratorProperties {
 
     /**
      * Set the sid property: The server administrator Sid (Secure ID).
-     *
+     * 
      * @param sid the sid value to set.
      * @return the ServerAdministratorProperties object itself.
      */
@@ -103,7 +107,7 @@ public final class ServerAdministratorProperties {
 
     /**
      * Get the tenantId property: The server Active Directory Administrator tenant id.
-     *
+     * 
      * @return the tenantId value.
      */
     public UUID tenantId() {
@@ -112,7 +116,7 @@ public final class ServerAdministratorProperties {
 
     /**
      * Set the tenantId property: The server Active Directory Administrator tenant id.
-     *
+     * 
      * @param tenantId the tenantId value to set.
      * @return the ServerAdministratorProperties object itself.
      */
@@ -123,33 +127,25 @@ public final class ServerAdministratorProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (administratorType() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property administratorType in model ServerAdministratorProperties"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property administratorType in model ServerAdministratorProperties"));
         }
         if (login() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property login in model ServerAdministratorProperties"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property login in model ServerAdministratorProperties"));
         }
         if (sid() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property sid in model ServerAdministratorProperties"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property sid in model ServerAdministratorProperties"));
         }
         if (tenantId() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property tenantId in model ServerAdministratorProperties"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property tenantId in model ServerAdministratorProperties"));
         }
     }
 

@@ -11,7 +11,9 @@ import com.azure.resourcemanager.costmanagement.generated.models.ExecutionType;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
-/** The properties of the export execution. */
+/**
+ * The properties of the export execution.
+ */
 @Fluent
 public final class ExportExecutionProperties {
     /*
@@ -63,13 +65,15 @@ public final class ExportExecutionProperties {
     @JsonProperty(value = "runSettings")
     private CommonExportProperties runSettings;
 
-    /** Creates an instance of ExportExecutionProperties class. */
+    /**
+     * Creates an instance of ExportExecutionProperties class.
+     */
     public ExportExecutionProperties() {
     }
 
     /**
      * Get the executionType property: The type of the export execution.
-     *
+     * 
      * @return the executionType value.
      */
     public ExecutionType executionType() {
@@ -78,7 +82,7 @@ public final class ExportExecutionProperties {
 
     /**
      * Set the executionType property: The type of the export execution.
-     *
+     * 
      * @param executionType the executionType value to set.
      * @return the ExportExecutionProperties object itself.
      */
@@ -89,7 +93,7 @@ public final class ExportExecutionProperties {
 
     /**
      * Get the status property: The status of the export execution.
-     *
+     * 
      * @return the status value.
      */
     public ExecutionStatus status() {
@@ -98,7 +102,7 @@ public final class ExportExecutionProperties {
 
     /**
      * Set the status property: The status of the export execution.
-     *
+     * 
      * @param status the status value to set.
      * @return the ExportExecutionProperties object itself.
      */
@@ -108,9 +112,9 @@ public final class ExportExecutionProperties {
     }
 
     /**
-     * Get the submittedBy property: The identifier for the entity that executed the export. For OnDemand executions, it
-     * is the email id. For Scheduled executions, it is the constant value - System.
-     *
+     * Get the submittedBy property: The identifier for the entity that executed the export. For OnDemand executions,
+     * it is the email id. For Scheduled executions, it is the constant value - System.
+     * 
      * @return the submittedBy value.
      */
     public String submittedBy() {
@@ -118,9 +122,9 @@ public final class ExportExecutionProperties {
     }
 
     /**
-     * Set the submittedBy property: The identifier for the entity that executed the export. For OnDemand executions, it
-     * is the email id. For Scheduled executions, it is the constant value - System.
-     *
+     * Set the submittedBy property: The identifier for the entity that executed the export. For OnDemand executions,
+     * it is the email id. For Scheduled executions, it is the constant value - System.
+     * 
      * @param submittedBy the submittedBy value to set.
      * @return the ExportExecutionProperties object itself.
      */
@@ -131,7 +135,7 @@ public final class ExportExecutionProperties {
 
     /**
      * Get the submittedTime property: The time when export was queued to be executed.
-     *
+     * 
      * @return the submittedTime value.
      */
     public OffsetDateTime submittedTime() {
@@ -140,7 +144,7 @@ public final class ExportExecutionProperties {
 
     /**
      * Set the submittedTime property: The time when export was queued to be executed.
-     *
+     * 
      * @param submittedTime the submittedTime value to set.
      * @return the ExportExecutionProperties object itself.
      */
@@ -151,7 +155,7 @@ public final class ExportExecutionProperties {
 
     /**
      * Get the processingStartTime property: The time when export was picked up to be executed.
-     *
+     * 
      * @return the processingStartTime value.
      */
     public OffsetDateTime processingStartTime() {
@@ -160,7 +164,7 @@ public final class ExportExecutionProperties {
 
     /**
      * Set the processingStartTime property: The time when export was picked up to be executed.
-     *
+     * 
      * @param processingStartTime the processingStartTime value to set.
      * @return the ExportExecutionProperties object itself.
      */
@@ -171,7 +175,7 @@ public final class ExportExecutionProperties {
 
     /**
      * Get the processingEndTime property: The time when export execution finished.
-     *
+     * 
      * @return the processingEndTime value.
      */
     public OffsetDateTime processingEndTime() {
@@ -180,7 +184,7 @@ public final class ExportExecutionProperties {
 
     /**
      * Set the processingEndTime property: The time when export execution finished.
-     *
+     * 
      * @param processingEndTime the processingEndTime value to set.
      * @return the ExportExecutionProperties object itself.
      */
@@ -191,7 +195,7 @@ public final class ExportExecutionProperties {
 
     /**
      * Get the fileName property: The name of the file export got written to.
-     *
+     * 
      * @return the fileName value.
      */
     public String fileName() {
@@ -200,7 +204,7 @@ public final class ExportExecutionProperties {
 
     /**
      * Set the fileName property: The name of the file export got written to.
-     *
+     * 
      * @param fileName the fileName value to set.
      * @return the ExportExecutionProperties object itself.
      */
@@ -211,7 +215,7 @@ public final class ExportExecutionProperties {
 
     /**
      * Get the runSettings property: The common properties of the export.
-     *
+     * 
      * @return the runSettings value.
      */
     public CommonExportProperties runSettings() {
@@ -220,7 +224,7 @@ public final class ExportExecutionProperties {
 
     /**
      * Set the runSettings property: The common properties of the export.
-     *
+     * 
      * @param runSettings the runSettings value to set.
      * @return the ExportExecutionProperties object itself.
      */
@@ -231,7 +235,7 @@ public final class ExportExecutionProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

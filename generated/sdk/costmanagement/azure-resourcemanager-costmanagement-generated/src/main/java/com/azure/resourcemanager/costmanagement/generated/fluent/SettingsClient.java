@@ -11,11 +11,13 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.costmanagement.generated.fluent.models.SettingInner;
 
-/** An instance of this class provides access to all the operations defined in SettingsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in SettingsClient.
+ */
 public interface SettingsClient {
     /**
      * Lists all of the settings that have been customized.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return result of listing settings as paginated response with {@link PagedIterable}.
@@ -25,7 +27,7 @@ public interface SettingsClient {
 
     /**
      * Lists all of the settings that have been customized.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -37,7 +39,7 @@ public interface SettingsClient {
 
     /**
      * Retrieves the current value for a specific setting.
-     *
+     * 
      * @param settingName Name of the setting. Allowed values: myscope.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -50,7 +52,7 @@ public interface SettingsClient {
 
     /**
      * Retrieves the current value for a specific setting.
-     *
+     * 
      * @param settingName Name of the setting. Allowed values: myscope.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -62,7 +64,7 @@ public interface SettingsClient {
 
     /**
      * Sets a new value for a specific setting.
-     *
+     * 
      * @param settingName Name of the setting. Allowed values: myscope.
      * @param parameters Body supplied to the CreateOrUpdate setting operation.
      * @param context The context to associate with this operation.
@@ -76,7 +78,7 @@ public interface SettingsClient {
 
     /**
      * Sets a new value for a specific setting.
-     *
+     * 
      * @param settingName Name of the setting. Allowed values: myscope.
      * @param parameters Body supplied to the CreateOrUpdate setting operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -89,7 +91,7 @@ public interface SettingsClient {
 
     /**
      * Remove the current value for a specific setting and reverts back to the default value, if applicable.
-     *
+     * 
      * @param settingName Name of the setting. Allowed values: myscope.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -102,7 +104,7 @@ public interface SettingsClient {
 
     /**
      * Remove the current value for a specific setting and reverts back to the default value, if applicable.
-     *
+     * 
      * @param settingName Name of the setting. Allowed values: myscope.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

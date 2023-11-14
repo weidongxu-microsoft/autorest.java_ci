@@ -22,21 +22,17 @@ public final class ForecastsImpl implements Forecasts {
 
     private final com.azure.resourcemanager.costmanagement.generated.CostManagementManager serviceManager;
 
-    public ForecastsImpl(
-        ForecastsClient innerClient,
+    public ForecastsImpl(ForecastsClient innerClient,
         com.azure.resourcemanager.costmanagement.generated.CostManagementManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<QueryResult> usageWithResponse(
-        String scope, ForecastDefinition parameters, String filter, Context context) {
+    public Response<QueryResult> usageWithResponse(String scope, ForecastDefinition parameters, String filter,
+        Context context) {
         Response<QueryResultInner> inner = this.serviceClient().usageWithResponse(scope, parameters, filter, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new QueryResultImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -53,35 +49,22 @@ public final class ForecastsImpl implements Forecasts {
     }
 
     public Response<QueryResult> externalCloudProviderUsageWithResponse(
-        ExternalCloudProviderType externalCloudProviderType,
-        String externalCloudProviderId,
-        ForecastDefinition parameters,
-        String filter,
-        Context context) {
-        Response<QueryResultInner> inner =
-            this
-                .serviceClient()
-                .externalCloudProviderUsageWithResponse(
-                    externalCloudProviderType, externalCloudProviderId, parameters, filter, context);
+        ExternalCloudProviderType externalCloudProviderType, String externalCloudProviderId,
+        ForecastDefinition parameters, String filter, Context context) {
+        Response<QueryResultInner> inner = this.serviceClient().externalCloudProviderUsageWithResponse(
+            externalCloudProviderType, externalCloudProviderId, parameters, filter, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new QueryResultImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public QueryResult externalCloudProviderUsage(
-        ExternalCloudProviderType externalCloudProviderType,
-        String externalCloudProviderId,
-        ForecastDefinition parameters) {
-        QueryResultInner inner =
-            this
-                .serviceClient()
-                .externalCloudProviderUsage(externalCloudProviderType, externalCloudProviderId, parameters);
+    public QueryResult externalCloudProviderUsage(ExternalCloudProviderType externalCloudProviderType,
+        String externalCloudProviderId, ForecastDefinition parameters) {
+        QueryResultInner inner = this.serviceClient().externalCloudProviderUsage(externalCloudProviderType,
+            externalCloudProviderId, parameters);
         if (inner != null) {
             return new QueryResultImpl(inner, this.manager());
         } else {

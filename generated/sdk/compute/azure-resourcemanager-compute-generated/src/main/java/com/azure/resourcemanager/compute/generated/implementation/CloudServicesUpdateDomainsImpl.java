@@ -21,8 +21,7 @@ public final class CloudServicesUpdateDomainsImpl implements CloudServicesUpdate
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    public CloudServicesUpdateDomainsImpl(
-        CloudServicesUpdateDomainsClient innerClient,
+    public CloudServicesUpdateDomainsImpl(CloudServicesUpdateDomainsClient innerClient,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -32,26 +31,17 @@ public final class CloudServicesUpdateDomainsImpl implements CloudServicesUpdate
         this.serviceClient().walkUpdateDomain(resourceGroupName, cloudServiceName, updateDomain);
     }
 
-    public void walkUpdateDomain(
-        String resourceGroupName,
-        String cloudServiceName,
-        int updateDomain,
-        UpdateDomainInner parameters,
-        Context context) {
+    public void walkUpdateDomain(String resourceGroupName, String cloudServiceName, int updateDomain,
+        UpdateDomainInner parameters, Context context) {
         this.serviceClient().walkUpdateDomain(resourceGroupName, cloudServiceName, updateDomain, parameters, context);
     }
 
-    public Response<UpdateDomain> getUpdateDomainWithResponse(
-        String resourceGroupName, String cloudServiceName, int updateDomain, Context context) {
-        Response<UpdateDomainInner> inner =
-            this
-                .serviceClient()
-                .getUpdateDomainWithResponse(resourceGroupName, cloudServiceName, updateDomain, context);
+    public Response<UpdateDomain> getUpdateDomainWithResponse(String resourceGroupName, String cloudServiceName,
+        int updateDomain, Context context) {
+        Response<UpdateDomainInner> inner = this.serviceClient().getUpdateDomainWithResponse(resourceGroupName,
+            cloudServiceName, updateDomain, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new UpdateDomainImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -59,8 +49,8 @@ public final class CloudServicesUpdateDomainsImpl implements CloudServicesUpdate
     }
 
     public UpdateDomain getUpdateDomain(String resourceGroupName, String cloudServiceName, int updateDomain) {
-        UpdateDomainInner inner =
-            this.serviceClient().getUpdateDomain(resourceGroupName, cloudServiceName, updateDomain);
+        UpdateDomainInner inner
+            = this.serviceClient().getUpdateDomain(resourceGroupName, cloudServiceName, updateDomain);
         if (inner != null) {
             return new UpdateDomainImpl(inner, this.manager());
         } else {
@@ -69,15 +59,15 @@ public final class CloudServicesUpdateDomainsImpl implements CloudServicesUpdate
     }
 
     public PagedIterable<UpdateDomain> listUpdateDomains(String resourceGroupName, String cloudServiceName) {
-        PagedIterable<UpdateDomainInner> inner =
-            this.serviceClient().listUpdateDomains(resourceGroupName, cloudServiceName);
+        PagedIterable<UpdateDomainInner> inner
+            = this.serviceClient().listUpdateDomains(resourceGroupName, cloudServiceName);
         return Utils.mapPage(inner, inner1 -> new UpdateDomainImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<UpdateDomain> listUpdateDomains(
-        String resourceGroupName, String cloudServiceName, Context context) {
-        PagedIterable<UpdateDomainInner> inner =
-            this.serviceClient().listUpdateDomains(resourceGroupName, cloudServiceName, context);
+    public PagedIterable<UpdateDomain> listUpdateDomains(String resourceGroupName, String cloudServiceName,
+        Context context) {
+        PagedIterable<UpdateDomainInner> inner
+            = this.serviceClient().listUpdateDomains(resourceGroupName, cloudServiceName, context);
         return Utils.mapPage(inner, inner1 -> new UpdateDomainImpl(inner1, this.manager()));
     }
 

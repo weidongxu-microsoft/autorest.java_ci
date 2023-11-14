@@ -7,7 +7,9 @@ package com.azure.resourcemanager.dns.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** An A record. */
+/**
+ * An A record.
+ */
 @Fluent
 public final class ARecord {
     /*
@@ -16,13 +18,15 @@ public final class ARecord {
     @JsonProperty(value = "ipv4Address")
     private String ipv4Address;
 
-    /** Creates an instance of ARecord class. */
+    /**
+     * Creates an instance of ARecord class.
+     */
     public ARecord() {
     }
 
     /**
      * Get the ipv4Address property: The IPv4 address of this A record.
-     *
+     * 
      * @return the ipv4Address value.
      */
     public String ipv4Address() {
@@ -31,7 +35,7 @@ public final class ARecord {
 
     /**
      * Set the ipv4Address property: The IPv4 address of this A record.
-     *
+     * 
      * @param ipv4Address the ipv4Address value to set.
      * @return the ARecord object itself.
      */
@@ -42,7 +46,7 @@ public final class ARecord {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

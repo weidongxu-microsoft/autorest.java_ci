@@ -14,22 +14,30 @@ import java.util.Collection;
  * interval.
  */
 public final class DeletionRecoveryLevel extends ExpandableStringEnum<DeletionRecoveryLevel> {
-    /** Static value Purgeable for DeletionRecoveryLevel. */
+    /**
+     * Static value Purgeable for DeletionRecoveryLevel.
+     */
     public static final DeletionRecoveryLevel PURGEABLE = fromString("Purgeable");
 
-    /** Static value Recoverable+Purgeable for DeletionRecoveryLevel. */
+    /**
+     * Static value Recoverable+Purgeable for DeletionRecoveryLevel.
+     */
     public static final DeletionRecoveryLevel RECOVERABLE_PURGEABLE = fromString("Recoverable+Purgeable");
 
-    /** Static value Recoverable for DeletionRecoveryLevel. */
+    /**
+     * Static value Recoverable for DeletionRecoveryLevel.
+     */
     public static final DeletionRecoveryLevel RECOVERABLE = fromString("Recoverable");
 
-    /** Static value Recoverable+ProtectedSubscription for DeletionRecoveryLevel. */
-    public static final DeletionRecoveryLevel RECOVERABLE_PROTECTED_SUBSCRIPTION =
-        fromString("Recoverable+ProtectedSubscription");
+    /**
+     * Static value Recoverable+ProtectedSubscription for DeletionRecoveryLevel.
+     */
+    public static final DeletionRecoveryLevel RECOVERABLE_PROTECTED_SUBSCRIPTION
+        = fromString("Recoverable+ProtectedSubscription");
 
     /**
      * Creates a new instance of DeletionRecoveryLevel value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -38,7 +46,7 @@ public final class DeletionRecoveryLevel extends ExpandableStringEnum<DeletionRe
 
     /**
      * Creates or finds a DeletionRecoveryLevel from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding DeletionRecoveryLevel.
      */
@@ -49,7 +57,7 @@ public final class DeletionRecoveryLevel extends ExpandableStringEnum<DeletionRe
 
     /**
      * Gets known DeletionRecoveryLevel values.
-     *
+     * 
      * @return known DeletionRecoveryLevel values.
      */
     public static Collection<DeletionRecoveryLevel> values() {

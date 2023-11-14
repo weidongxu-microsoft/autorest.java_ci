@@ -8,58 +8,60 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of ExpressRouteCrossConnections. */
+/**
+ * Resource collection API of ExpressRouteCrossConnections.
+ */
 public interface ExpressRouteCrossConnections {
     /**
      * Retrieves all the ExpressRouteCrossConnections in a subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListExpressRouteCrossConnection API service call as paginated response with {@link
-     *     PagedIterable}.
+     * @return response for ListExpressRouteCrossConnection API service call as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<ExpressRouteCrossConnection> list();
 
     /**
      * Retrieves all the ExpressRouteCrossConnections in a subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListExpressRouteCrossConnection API service call as paginated response with {@link
-     *     PagedIterable}.
+     * @return response for ListExpressRouteCrossConnection API service call as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<ExpressRouteCrossConnection> list(Context context);
 
     /**
      * Retrieves all the ExpressRouteCrossConnections in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListExpressRouteCrossConnection API service call as paginated response with {@link
-     *     PagedIterable}.
+     * @return response for ListExpressRouteCrossConnection API service call as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<ExpressRouteCrossConnection> listByResourceGroup(String resourceGroupName);
 
     /**
      * Retrieves all the ExpressRouteCrossConnections in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListExpressRouteCrossConnection API service call as paginated response with {@link
-     *     PagedIterable}.
+     * @return response for ListExpressRouteCrossConnection API service call as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<ExpressRouteCrossConnection> listByResourceGroup(String resourceGroupName, Context context);
 
     /**
      * Gets details about the specified ExpressRouteCrossConnection.
-     *
+     * 
      * @param resourceGroupName The name of the resource group (peering location of the circuit).
      * @param crossConnectionName The name of the ExpressRouteCrossConnection (service key of the circuit).
      * @param context The context to associate with this operation.
@@ -68,12 +70,12 @@ public interface ExpressRouteCrossConnections {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return details about the specified ExpressRouteCrossConnection along with {@link Response}.
      */
-    Response<ExpressRouteCrossConnection> getByResourceGroupWithResponse(
-        String resourceGroupName, String crossConnectionName, Context context);
+    Response<ExpressRouteCrossConnection> getByResourceGroupWithResponse(String resourceGroupName,
+        String crossConnectionName, Context context);
 
     /**
      * Gets details about the specified ExpressRouteCrossConnection.
-     *
+     * 
      * @param resourceGroupName The name of the resource group (peering location of the circuit).
      * @param crossConnectionName The name of the ExpressRouteCrossConnection (service key of the circuit).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -85,7 +87,7 @@ public interface ExpressRouteCrossConnections {
 
     /**
      * Gets the currently advertised ARP table associated with the express route cross connection in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
      * @param peeringName The name of the peering.
@@ -94,14 +96,14 @@ public interface ExpressRouteCrossConnections {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the currently advertised ARP table associated with the express route cross connection in a resource
-     *     group.
+     * group.
      */
-    ExpressRouteCircuitsArpTableListResult listArpTable(
-        String resourceGroupName, String crossConnectionName, String peeringName, String devicePath);
+    ExpressRouteCircuitsArpTableListResult listArpTable(String resourceGroupName, String crossConnectionName,
+        String peeringName, String devicePath);
 
     /**
      * Gets the currently advertised ARP table associated with the express route cross connection in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
      * @param peeringName The name of the peering.
@@ -111,14 +113,14 @@ public interface ExpressRouteCrossConnections {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the currently advertised ARP table associated with the express route cross connection in a resource
-     *     group.
+     * group.
      */
-    ExpressRouteCircuitsArpTableListResult listArpTable(
-        String resourceGroupName, String crossConnectionName, String peeringName, String devicePath, Context context);
+    ExpressRouteCircuitsArpTableListResult listArpTable(String resourceGroupName, String crossConnectionName,
+        String peeringName, String devicePath, Context context);
 
     /**
      * Gets the route table summary associated with the express route cross connection in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
      * @param peeringName The name of the peering.
@@ -128,12 +130,12 @@ public interface ExpressRouteCrossConnections {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the route table summary associated with the express route cross connection in a resource group.
      */
-    ExpressRouteCrossConnectionsRoutesTableSummaryListResult listRoutesTableSummary(
-        String resourceGroupName, String crossConnectionName, String peeringName, String devicePath);
+    ExpressRouteCrossConnectionsRoutesTableSummaryListResult listRoutesTableSummary(String resourceGroupName,
+        String crossConnectionName, String peeringName, String devicePath);
 
     /**
      * Gets the route table summary associated with the express route cross connection in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
      * @param peeringName The name of the peering.
@@ -144,13 +146,13 @@ public interface ExpressRouteCrossConnections {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the route table summary associated with the express route cross connection in a resource group.
      */
-    ExpressRouteCrossConnectionsRoutesTableSummaryListResult listRoutesTableSummary(
-        String resourceGroupName, String crossConnectionName, String peeringName, String devicePath, Context context);
+    ExpressRouteCrossConnectionsRoutesTableSummaryListResult listRoutesTableSummary(String resourceGroupName,
+        String crossConnectionName, String peeringName, String devicePath, Context context);
 
     /**
      * Gets the currently advertised routes table associated with the express route cross connection in a resource
      * group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
      * @param peeringName The name of the peering.
@@ -159,15 +161,15 @@ public interface ExpressRouteCrossConnections {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the currently advertised routes table associated with the express route cross connection in a resource
-     *     group.
+     * group.
      */
-    ExpressRouteCircuitsRoutesTableListResult listRoutesTable(
-        String resourceGroupName, String crossConnectionName, String peeringName, String devicePath);
+    ExpressRouteCircuitsRoutesTableListResult listRoutesTable(String resourceGroupName, String crossConnectionName,
+        String peeringName, String devicePath);
 
     /**
      * Gets the currently advertised routes table associated with the express route cross connection in a resource
      * group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
      * @param peeringName The name of the peering.
@@ -177,14 +179,14 @@ public interface ExpressRouteCrossConnections {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the currently advertised routes table associated with the express route cross connection in a resource
-     *     group.
+     * group.
      */
-    ExpressRouteCircuitsRoutesTableListResult listRoutesTable(
-        String resourceGroupName, String crossConnectionName, String peeringName, String devicePath, Context context);
+    ExpressRouteCircuitsRoutesTableListResult listRoutesTable(String resourceGroupName, String crossConnectionName,
+        String peeringName, String devicePath, Context context);
 
     /**
      * Gets details about the specified ExpressRouteCrossConnection.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -195,7 +197,7 @@ public interface ExpressRouteCrossConnections {
 
     /**
      * Gets details about the specified ExpressRouteCrossConnection.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -207,7 +209,7 @@ public interface ExpressRouteCrossConnections {
 
     /**
      * Begins definition for a new ExpressRouteCrossConnection resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new ExpressRouteCrossConnection definition.
      */

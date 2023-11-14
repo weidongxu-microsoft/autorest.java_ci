@@ -12,89 +12,85 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.compute.generated.fluent.models.ProximityPlacementGroupInner;
 import com.azure.resourcemanager.compute.generated.models.ProximityPlacementGroupUpdate;
 
-/** An instance of this class provides access to all the operations defined in ProximityPlacementGroupsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in ProximityPlacementGroupsClient.
+ */
 public interface ProximityPlacementGroupsClient {
     /**
      * Create or update a proximity placement group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param proximityPlacementGroupName The name of the proximity placement group.
      * @param parameters Parameters supplied to the Create Proximity Placement Group operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the proximity placement group along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<ProximityPlacementGroupInner> createOrUpdateWithResponse(
-        String resourceGroupName,
-        String proximityPlacementGroupName,
-        ProximityPlacementGroupInner parameters,
-        Context context);
+    Response<ProximityPlacementGroupInner> createOrUpdateWithResponse(String resourceGroupName,
+        String proximityPlacementGroupName, ProximityPlacementGroupInner parameters, Context context);
 
     /**
      * Create or update a proximity placement group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param proximityPlacementGroupName The name of the proximity placement group.
      * @param parameters Parameters supplied to the Create Proximity Placement Group operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the proximity placement group.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ProximityPlacementGroupInner createOrUpdate(
-        String resourceGroupName, String proximityPlacementGroupName, ProximityPlacementGroupInner parameters);
+    ProximityPlacementGroupInner createOrUpdate(String resourceGroupName, String proximityPlacementGroupName,
+        ProximityPlacementGroupInner parameters);
 
     /**
      * Update a proximity placement group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param proximityPlacementGroupName The name of the proximity placement group.
      * @param parameters Parameters supplied to the Update Proximity Placement Group operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the proximity placement group along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<ProximityPlacementGroupInner> updateWithResponse(
-        String resourceGroupName,
-        String proximityPlacementGroupName,
-        ProximityPlacementGroupUpdate parameters,
-        Context context);
+    Response<ProximityPlacementGroupInner> updateWithResponse(String resourceGroupName,
+        String proximityPlacementGroupName, ProximityPlacementGroupUpdate parameters, Context context);
 
     /**
      * Update a proximity placement group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param proximityPlacementGroupName The name of the proximity placement group.
      * @param parameters Parameters supplied to the Update Proximity Placement Group operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the proximity placement group.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ProximityPlacementGroupInner update(
-        String resourceGroupName, String proximityPlacementGroupName, ProximityPlacementGroupUpdate parameters);
+    ProximityPlacementGroupInner update(String resourceGroupName, String proximityPlacementGroupName,
+        ProximityPlacementGroupUpdate parameters);
 
     /**
      * Delete a proximity placement group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param proximityPlacementGroupName The name of the proximity placement group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -103,12 +99,12 @@ public interface ProximityPlacementGroupsClient {
 
     /**
      * Delete a proximity placement group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param proximityPlacementGroupName The name of the proximity placement group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
@@ -116,30 +112,30 @@ public interface ProximityPlacementGroupsClient {
 
     /**
      * Retrieves information about a proximity placement group .
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param proximityPlacementGroupName The name of the proximity placement group.
      * @param includeColocationStatus includeColocationStatus=true enables fetching the colocation status of all the
-     *     resources in the proximity placement group.
+     * resources in the proximity placement group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the proximity placement group along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<ProximityPlacementGroupInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String proximityPlacementGroupName, String includeColocationStatus, Context context);
+    Response<ProximityPlacementGroupInner> getByResourceGroupWithResponse(String resourceGroupName,
+        String proximityPlacementGroupName, String includeColocationStatus, Context context);
 
     /**
      * Retrieves information about a proximity placement group .
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param proximityPlacementGroupName The name of the proximity placement group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the proximity placement group.
      */
@@ -148,9 +144,9 @@ public interface ProximityPlacementGroupsClient {
 
     /**
      * Lists all proximity placement groups in a subscription.
-     *
+     * 
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the List Proximity Placement Group operation response as paginated response with {@link PagedIterable}.
      */
@@ -159,11 +155,11 @@ public interface ProximityPlacementGroupsClient {
 
     /**
      * Lists all proximity placement groups in a subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the List Proximity Placement Group operation response as paginated response with {@link PagedIterable}.
      */
@@ -172,11 +168,11 @@ public interface ProximityPlacementGroupsClient {
 
     /**
      * Lists all proximity placement groups in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the List Proximity Placement Group operation response as paginated response with {@link PagedIterable}.
      */
@@ -185,12 +181,12 @@ public interface ProximityPlacementGroupsClient {
 
     /**
      * Lists all proximity placement groups in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the List Proximity Placement Group operation response as paginated response with {@link PagedIterable}.
      */

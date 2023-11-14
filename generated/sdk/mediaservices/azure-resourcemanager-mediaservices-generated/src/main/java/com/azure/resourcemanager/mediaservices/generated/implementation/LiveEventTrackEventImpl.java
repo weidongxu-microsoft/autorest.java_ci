@@ -15,8 +15,7 @@ public final class LiveEventTrackEventImpl implements LiveEventTrackEvent {
 
     private final com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager;
 
-    LiveEventTrackEventImpl(
-        LiveEventTrackEventInner innerObject,
+    LiveEventTrackEventImpl(LiveEventTrackEventInner innerObject,
         com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

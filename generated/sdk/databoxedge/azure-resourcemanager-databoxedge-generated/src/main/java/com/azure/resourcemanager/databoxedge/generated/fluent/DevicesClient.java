@@ -22,66 +22,68 @@ import com.azure.resourcemanager.databoxedge.generated.models.DataBoxEdgeDeviceP
 import com.azure.resourcemanager.databoxedge.generated.models.SecuritySettings;
 import com.azure.resourcemanager.databoxedge.generated.models.UploadCertificateRequest;
 
-/** An instance of this class provides access to all the operations defined in DevicesClient. */
+/**
+ * An instance of this class provides access to all the operations defined in DevicesClient.
+ */
 public interface DevicesClient {
     /**
      * Gets all the Data Box Edge/Data Box Gateway devices in a subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the Data Box Edge/Data Box Gateway devices in a subscription as paginated response with {@link
-     *     PagedIterable}.
+     * @return all the Data Box Edge/Data Box Gateway devices in a subscription as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<DataBoxEdgeDeviceInner> list();
 
     /**
      * Gets all the Data Box Edge/Data Box Gateway devices in a subscription.
-     *
+     * 
      * @param expand Specify $expand=details to populate additional fields related to the resource or Specify
-     *     $skipToken=&lt;token&gt; to populate the next page in the list.
+     * $skipToken=&lt;token&gt; to populate the next page in the list.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the Data Box Edge/Data Box Gateway devices in a subscription as paginated response with {@link
-     *     PagedIterable}.
+     * @return all the Data Box Edge/Data Box Gateway devices in a subscription as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<DataBoxEdgeDeviceInner> list(String expand, Context context);
 
     /**
      * Gets all the Data Box Edge/Data Box Gateway devices in a resource group.
-     *
+     * 
      * @param resourceGroupName The resource group name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the Data Box Edge/Data Box Gateway devices in a resource group as paginated response with {@link
-     *     PagedIterable}.
+     * @return all the Data Box Edge/Data Box Gateway devices in a resource group as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<DataBoxEdgeDeviceInner> listByResourceGroup(String resourceGroupName);
 
     /**
      * Gets all the Data Box Edge/Data Box Gateway devices in a resource group.
-     *
+     * 
      * @param resourceGroupName The resource group name.
      * @param expand Specify $expand=details to populate additional fields related to the resource or Specify
-     *     $skipToken=&lt;token&gt; to populate the next page in the list.
+     * $skipToken=&lt;token&gt; to populate the next page in the list.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the Data Box Edge/Data Box Gateway devices in a resource group as paginated response with {@link
-     *     PagedIterable}.
+     * @return all the Data Box Edge/Data Box Gateway devices in a resource group as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<DataBoxEdgeDeviceInner> listByResourceGroup(String resourceGroupName, String expand, Context context);
 
     /**
      * Gets the properties of the Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param resourceGroupName The resource group name.
      * @param deviceName The device name.
      * @param context The context to associate with this operation.
@@ -91,12 +93,12 @@ public interface DevicesClient {
      * @return the properties of the Data Box Edge/Data Box Gateway device along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<DataBoxEdgeDeviceInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String deviceName, Context context);
+    Response<DataBoxEdgeDeviceInner> getByResourceGroupWithResponse(String resourceGroupName, String deviceName,
+        Context context);
 
     /**
      * Gets the properties of the Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param resourceGroupName The resource group name.
      * @param deviceName The device name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -109,7 +111,7 @@ public interface DevicesClient {
 
     /**
      * Creates or updates a Data Box Edge/Data Box Gateway resource.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param dataBoxEdgeDevice The resource object.
@@ -120,12 +122,12 @@ public interface DevicesClient {
      * @return the Data Box Edge/Gateway device along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<DataBoxEdgeDeviceInner> createOrUpdateWithResponse(
-        String deviceName, String resourceGroupName, DataBoxEdgeDeviceInner dataBoxEdgeDevice, Context context);
+    Response<DataBoxEdgeDeviceInner> createOrUpdateWithResponse(String deviceName, String resourceGroupName,
+        DataBoxEdgeDeviceInner dataBoxEdgeDevice, Context context);
 
     /**
      * Creates or updates a Data Box Edge/Data Box Gateway resource.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param dataBoxEdgeDevice The resource object.
@@ -135,12 +137,12 @@ public interface DevicesClient {
      * @return the Data Box Edge/Gateway device.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    DataBoxEdgeDeviceInner createOrUpdate(
-        String deviceName, String resourceGroupName, DataBoxEdgeDeviceInner dataBoxEdgeDevice);
+    DataBoxEdgeDeviceInner createOrUpdate(String deviceName, String resourceGroupName,
+        DataBoxEdgeDeviceInner dataBoxEdgeDevice);
 
     /**
      * Deletes the Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param resourceGroupName The resource group name.
      * @param deviceName The device name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -153,7 +155,7 @@ public interface DevicesClient {
 
     /**
      * Deletes the Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param resourceGroupName The resource group name.
      * @param deviceName The device name.
      * @param context The context to associate with this operation.
@@ -167,7 +169,7 @@ public interface DevicesClient {
 
     /**
      * Deletes the Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param resourceGroupName The resource group name.
      * @param deviceName The device name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -179,7 +181,7 @@ public interface DevicesClient {
 
     /**
      * Deletes the Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param resourceGroupName The resource group name.
      * @param deviceName The device name.
      * @param context The context to associate with this operation.
@@ -192,7 +194,7 @@ public interface DevicesClient {
 
     /**
      * Modifies a Data Box Edge/Data Box Gateway resource.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param parameters The resource parameters.
@@ -203,12 +205,12 @@ public interface DevicesClient {
      * @return the Data Box Edge/Gateway device along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<DataBoxEdgeDeviceInner> updateWithResponse(
-        String deviceName, String resourceGroupName, DataBoxEdgeDevicePatch parameters, Context context);
+    Response<DataBoxEdgeDeviceInner> updateWithResponse(String deviceName, String resourceGroupName,
+        DataBoxEdgeDevicePatch parameters, Context context);
 
     /**
      * Modifies a Data Box Edge/Data Box Gateway resource.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param parameters The resource parameters.
@@ -222,7 +224,7 @@ public interface DevicesClient {
 
     /**
      * Downloads the updates on a Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -235,7 +237,7 @@ public interface DevicesClient {
 
     /**
      * Downloads the updates on a Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param context The context to associate with this operation.
@@ -245,12 +247,12 @@ public interface DevicesClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginDownloadUpdates(
-        String deviceName, String resourceGroupName, Context context);
+    SyncPoller<PollResult<Void>, Void> beginDownloadUpdates(String deviceName, String resourceGroupName,
+        Context context);
 
     /**
      * Downloads the updates on a Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -262,7 +264,7 @@ public interface DevicesClient {
 
     /**
      * Downloads the updates on a Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param context The context to associate with this operation.
@@ -275,7 +277,7 @@ public interface DevicesClient {
 
     /**
      * Generates certificate for activation key.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param context The context to associate with this operation.
@@ -285,12 +287,12 @@ public interface DevicesClient {
      * @return used in activation key generation flow along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<GenerateCertResponseInner> generateCertificateWithResponse(
-        String deviceName, String resourceGroupName, Context context);
+    Response<GenerateCertResponseInner> generateCertificateWithResponse(String deviceName, String resourceGroupName,
+        Context context);
 
     /**
      * Generates certificate for activation key.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -303,23 +305,23 @@ public interface DevicesClient {
 
     /**
      * Gets additional information for the specified Azure Stack Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return additional information for the specified Azure Stack Edge/Data Box Gateway device along with {@link
-     *     Response}.
+     * @return additional information for the specified Azure Stack Edge/Data Box Gateway device along with
+     * {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<DataBoxEdgeDeviceExtendedInfoInner> getExtendedInformationWithResponse(
-        String deviceName, String resourceGroupName, Context context);
+    Response<DataBoxEdgeDeviceExtendedInfoInner> getExtendedInformationWithResponse(String deviceName,
+        String resourceGroupName, Context context);
 
     /**
      * Gets additional information for the specified Azure Stack Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -332,7 +334,7 @@ public interface DevicesClient {
 
     /**
      * Installs the updates on the Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -345,7 +347,7 @@ public interface DevicesClient {
 
     /**
      * Installs the updates on the Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param context The context to associate with this operation.
@@ -355,12 +357,12 @@ public interface DevicesClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginInstallUpdates(
-        String deviceName, String resourceGroupName, Context context);
+    SyncPoller<PollResult<Void>, Void> beginInstallUpdates(String deviceName, String resourceGroupName,
+        Context context);
 
     /**
      * Installs the updates on the Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -372,7 +374,7 @@ public interface DevicesClient {
 
     /**
      * Installs the updates on the Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param context The context to associate with this operation.
@@ -385,7 +387,7 @@ public interface DevicesClient {
 
     /**
      * Gets the network settings of the specified Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param context The context to associate with this operation.
@@ -395,12 +397,12 @@ public interface DevicesClient {
      * @return the network settings of the specified Data Box Edge/Data Box Gateway device along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<NetworkSettingsInner> getNetworkSettingsWithResponse(
-        String deviceName, String resourceGroupName, Context context);
+    Response<NetworkSettingsInner> getNetworkSettingsWithResponse(String deviceName, String resourceGroupName,
+        Context context);
 
     /**
      * Gets the network settings of the specified Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -413,7 +415,7 @@ public interface DevicesClient {
 
     /**
      * Scans for updates on a Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -426,7 +428,7 @@ public interface DevicesClient {
 
     /**
      * Scans for updates on a Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param context The context to associate with this operation.
@@ -436,12 +438,12 @@ public interface DevicesClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginScanForUpdates(
-        String deviceName, String resourceGroupName, Context context);
+    SyncPoller<PollResult<Void>, Void> beginScanForUpdates(String deviceName, String resourceGroupName,
+        Context context);
 
     /**
      * Scans for updates on a Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -453,7 +455,7 @@ public interface DevicesClient {
 
     /**
      * Scans for updates on a Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param context The context to associate with this operation.
@@ -466,7 +468,7 @@ public interface DevicesClient {
 
     /**
      * Updates the security settings on a Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param securitySettings The security settings.
@@ -476,12 +478,12 @@ public interface DevicesClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginCreateOrUpdateSecuritySettings(
-        String deviceName, String resourceGroupName, SecuritySettings securitySettings);
+    SyncPoller<PollResult<Void>, Void> beginCreateOrUpdateSecuritySettings(String deviceName, String resourceGroupName,
+        SecuritySettings securitySettings);
 
     /**
      * Updates the security settings on a Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param securitySettings The security settings.
@@ -492,12 +494,12 @@ public interface DevicesClient {
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<Void>, Void> beginCreateOrUpdateSecuritySettings(
-        String deviceName, String resourceGroupName, SecuritySettings securitySettings, Context context);
+    SyncPoller<PollResult<Void>, Void> beginCreateOrUpdateSecuritySettings(String deviceName, String resourceGroupName,
+        SecuritySettings securitySettings, Context context);
 
     /**
      * Updates the security settings on a Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param securitySettings The security settings.
@@ -510,7 +512,7 @@ public interface DevicesClient {
 
     /**
      * Updates the security settings on a Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param securitySettings The security settings.
@@ -520,12 +522,12 @@ public interface DevicesClient {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void createOrUpdateSecuritySettings(
-        String deviceName, String resourceGroupName, SecuritySettings securitySettings, Context context);
+    void createOrUpdateSecuritySettings(String deviceName, String resourceGroupName, SecuritySettings securitySettings,
+        Context context);
 
     /**
      * Gets additional information for the specified Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param parameters The patch object.
@@ -533,16 +535,16 @@ public interface DevicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return additional information for the specified Data Box Edge/Data Box Gateway device along with {@link
-     *     Response}.
+     * @return additional information for the specified Data Box Edge/Data Box Gateway device along with
+     * {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<DataBoxEdgeDeviceExtendedInfoInner> updateExtendedInformationWithResponse(
-        String deviceName, String resourceGroupName, DataBoxEdgeDeviceExtendedInfoPatch parameters, Context context);
+    Response<DataBoxEdgeDeviceExtendedInfoInner> updateExtendedInformationWithResponse(String deviceName,
+        String resourceGroupName, DataBoxEdgeDeviceExtendedInfoPatch parameters, Context context);
 
     /**
      * Gets additional information for the specified Data Box Edge/Data Box Gateway device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param parameters The patch object.
@@ -552,30 +554,30 @@ public interface DevicesClient {
      * @return additional information for the specified Data Box Edge/Data Box Gateway device.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    DataBoxEdgeDeviceExtendedInfoInner updateExtendedInformation(
-        String deviceName, String resourceGroupName, DataBoxEdgeDeviceExtendedInfoPatch parameters);
+    DataBoxEdgeDeviceExtendedInfoInner updateExtendedInformation(String deviceName, String resourceGroupName,
+        DataBoxEdgeDeviceExtendedInfoPatch parameters);
 
     /**
      * Gets information about the availability of updates based on the last scan of the device. It also gets information
      * about any ongoing download or install jobs on the device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the availability of updates based on the last scan of the device along with {@link
-     *     Response}.
+     * @return information about the availability of updates based on the last scan of the device along with
+     * {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<UpdateSummaryInner> getUpdateSummaryWithResponse(
-        String deviceName, String resourceGroupName, Context context);
+    Response<UpdateSummaryInner> getUpdateSummaryWithResponse(String deviceName, String resourceGroupName,
+        Context context);
 
     /**
      * Gets information about the availability of updates based on the last scan of the device. It also gets information
      * about any ongoing download or install jobs on the device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -588,7 +590,7 @@ public interface DevicesClient {
 
     /**
      * Uploads registration certificate for the device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param parameters The upload certificate request.
@@ -599,12 +601,12 @@ public interface DevicesClient {
      * @return the upload registration certificate response along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<UploadCertificateResponseInner> uploadCertificateWithResponse(
-        String deviceName, String resourceGroupName, UploadCertificateRequest parameters, Context context);
+    Response<UploadCertificateResponseInner> uploadCertificateWithResponse(String deviceName, String resourceGroupName,
+        UploadCertificateRequest parameters, Context context);
 
     /**
      * Uploads registration certificate for the device.
-     *
+     * 
      * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
      * @param parameters The upload certificate request.
@@ -614,6 +616,6 @@ public interface DevicesClient {
      * @return the upload registration certificate response.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    UploadCertificateResponseInner uploadCertificate(
-        String deviceName, String resourceGroupName, UploadCertificateRequest parameters);
+    UploadCertificateResponseInner uploadCertificate(String deviceName, String resourceGroupName,
+        UploadCertificateRequest parameters);
 }

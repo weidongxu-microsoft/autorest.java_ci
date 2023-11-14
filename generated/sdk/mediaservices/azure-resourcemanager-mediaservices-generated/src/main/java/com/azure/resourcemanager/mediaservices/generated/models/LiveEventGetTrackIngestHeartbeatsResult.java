@@ -9,7 +9,9 @@ import com.azure.resourcemanager.mediaservices.generated.fluent.models.LiveEvent
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Get live event track ingest heart beats result. */
+/**
+ * Get live event track ingest heart beats result.
+ */
 @Fluent
 public final class LiveEventGetTrackIngestHeartbeatsResult {
     /*
@@ -18,13 +20,15 @@ public final class LiveEventGetTrackIngestHeartbeatsResult {
     @JsonProperty(value = "value")
     private List<LiveEventTrackEventInner> value;
 
-    /** Creates an instance of LiveEventGetTrackIngestHeartbeatsResult class. */
+    /**
+     * Creates an instance of LiveEventGetTrackIngestHeartbeatsResult class.
+     */
     public LiveEventGetTrackIngestHeartbeatsResult() {
     }
 
     /**
      * Get the value property: The result of the get live event track events.
-     *
+     * 
      * @return the value value.
      */
     public List<LiveEventTrackEventInner> value() {
@@ -33,7 +37,7 @@ public final class LiveEventGetTrackIngestHeartbeatsResult {
 
     /**
      * Set the value property: The result of the get live event track events.
-     *
+     * 
      * @param value the value value to set.
      * @return the LiveEventGetTrackIngestHeartbeatsResult object itself.
      */
@@ -44,7 +48,7 @@ public final class LiveEventGetTrackIngestHeartbeatsResult {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

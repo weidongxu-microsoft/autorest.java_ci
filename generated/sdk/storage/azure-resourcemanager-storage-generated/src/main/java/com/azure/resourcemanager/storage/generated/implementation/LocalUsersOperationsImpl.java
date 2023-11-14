@@ -25,8 +25,7 @@ public final class LocalUsersOperationsImpl implements LocalUsersOperations {
 
     private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
-    public LocalUsersOperationsImpl(
-        LocalUsersOperationsClient innerClient,
+    public LocalUsersOperationsImpl(LocalUsersOperationsClient innerClient,
         com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -42,15 +41,12 @@ public final class LocalUsersOperationsImpl implements LocalUsersOperations {
         return Utils.mapPage(inner, inner1 -> new LocalUserImpl(inner1, this.manager()));
     }
 
-    public Response<LocalUser> getWithResponse(
-        String resourceGroupName, String accountName, String username, Context context) {
-        Response<LocalUserInner> inner =
-            this.serviceClient().getWithResponse(resourceGroupName, accountName, username, context);
+    public Response<LocalUser> getWithResponse(String resourceGroupName, String accountName, String username,
+        Context context) {
+        Response<LocalUserInner> inner
+            = this.serviceClient().getWithResponse(resourceGroupName, accountName, username, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new LocalUserImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -66,8 +62,8 @@ public final class LocalUsersOperationsImpl implements LocalUsersOperations {
         }
     }
 
-    public Response<Void> deleteWithResponse(
-        String resourceGroupName, String accountName, String username, Context context) {
+    public Response<Void> deleteWithResponse(String resourceGroupName, String accountName, String username,
+        Context context) {
         return this.serviceClient().deleteWithResponse(resourceGroupName, accountName, username, context);
     }
 
@@ -75,15 +71,12 @@ public final class LocalUsersOperationsImpl implements LocalUsersOperations {
         this.serviceClient().delete(resourceGroupName, accountName, username);
     }
 
-    public Response<LocalUserKeys> listKeysWithResponse(
-        String resourceGroupName, String accountName, String username, Context context) {
-        Response<LocalUserKeysInner> inner =
-            this.serviceClient().listKeysWithResponse(resourceGroupName, accountName, username, context);
+    public Response<LocalUserKeys> listKeysWithResponse(String resourceGroupName, String accountName, String username,
+        Context context) {
+        Response<LocalUserKeysInner> inner
+            = this.serviceClient().listKeysWithResponse(resourceGroupName, accountName, username, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new LocalUserKeysImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -99,25 +92,22 @@ public final class LocalUsersOperationsImpl implements LocalUsersOperations {
         }
     }
 
-    public Response<LocalUserRegeneratePasswordResult> regeneratePasswordWithResponse(
-        String resourceGroupName, String accountName, String username, Context context) {
-        Response<LocalUserRegeneratePasswordResultInner> inner =
-            this.serviceClient().regeneratePasswordWithResponse(resourceGroupName, accountName, username, context);
+    public Response<LocalUserRegeneratePasswordResult> regeneratePasswordWithResponse(String resourceGroupName,
+        String accountName, String username, Context context) {
+        Response<LocalUserRegeneratePasswordResultInner> inner
+            = this.serviceClient().regeneratePasswordWithResponse(resourceGroupName, accountName, username, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new LocalUserRegeneratePasswordResultImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public LocalUserRegeneratePasswordResult regeneratePassword(
-        String resourceGroupName, String accountName, String username) {
-        LocalUserRegeneratePasswordResultInner inner =
-            this.serviceClient().regeneratePassword(resourceGroupName, accountName, username);
+    public LocalUserRegeneratePasswordResult regeneratePassword(String resourceGroupName, String accountName,
+        String username) {
+        LocalUserRegeneratePasswordResultInner inner
+            = this.serviceClient().regeneratePassword(resourceGroupName, accountName, username);
         if (inner != null) {
             return new LocalUserRegeneratePasswordResultImpl(inner, this.manager());
         } else {
@@ -128,26 +118,18 @@ public final class LocalUsersOperationsImpl implements LocalUsersOperations {
     public LocalUser getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
         }
         String username = Utils.getValueFromIdByName(id, "localUsers");
         if (username == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'localUsers'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'localUsers'.", id)));
         }
         return this.getWithResponse(resourceGroupName, accountName, username, Context.NONE).getValue();
     }
@@ -155,26 +137,18 @@ public final class LocalUsersOperationsImpl implements LocalUsersOperations {
     public Response<LocalUser> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
         }
         String username = Utils.getValueFromIdByName(id, "localUsers");
         if (username == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'localUsers'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'localUsers'.", id)));
         }
         return this.getWithResponse(resourceGroupName, accountName, username, context);
     }
@@ -182,26 +156,18 @@ public final class LocalUsersOperationsImpl implements LocalUsersOperations {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
         }
         String username = Utils.getValueFromIdByName(id, "localUsers");
         if (username == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'localUsers'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'localUsers'.", id)));
         }
         this.deleteWithResponse(resourceGroupName, accountName, username, Context.NONE);
     }
@@ -209,26 +175,18 @@ public final class LocalUsersOperationsImpl implements LocalUsersOperations {
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
         }
         String username = Utils.getValueFromIdByName(id, "localUsers");
         if (username == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'localUsers'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'localUsers'.", id)));
         }
         return this.deleteWithResponse(resourceGroupName, accountName, username, context);
     }

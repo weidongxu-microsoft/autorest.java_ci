@@ -31,14 +31,16 @@ public final class DsRecord {
     @JsonProperty(value = "digest")
     private Digest digest;
 
-    /** Creates an instance of DsRecord class. */
+    /**
+     * Creates an instance of DsRecord class.
+     */
     public DsRecord() {
     }
 
     /**
      * Get the keyTag property: The key tag value is used to determine which DNSKEY Resource Record is used for
      * signature verification.
-     *
+     * 
      * @return the keyTag value.
      */
     public Integer keyTag() {
@@ -48,7 +50,7 @@ public final class DsRecord {
     /**
      * Set the keyTag property: The key tag value is used to determine which DNSKEY Resource Record is used for
      * signature verification.
-     *
+     * 
      * @param keyTag the keyTag value to set.
      * @return the DsRecord object itself.
      */
@@ -60,7 +62,7 @@ public final class DsRecord {
     /**
      * Get the algorithm property: The security algorithm type represents the standard security algorithm number of the
      * DNSKEY Resource Record. See: https://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xhtml.
-     *
+     * 
      * @return the algorithm value.
      */
     public Integer algorithm() {
@@ -70,7 +72,7 @@ public final class DsRecord {
     /**
      * Set the algorithm property: The security algorithm type represents the standard security algorithm number of the
      * DNSKEY Resource Record. See: https://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xhtml.
-     *
+     * 
      * @param algorithm the algorithm value to set.
      * @return the DsRecord object itself.
      */
@@ -81,7 +83,7 @@ public final class DsRecord {
 
     /**
      * Get the digest property: The digest entity.
-     *
+     * 
      * @return the digest value.
      */
     public Digest digest() {
@@ -90,7 +92,7 @@ public final class DsRecord {
 
     /**
      * Set the digest property: The digest entity.
-     *
+     * 
      * @param digest the digest value to set.
      * @return the DsRecord object itself.
      */
@@ -101,7 +103,7 @@ public final class DsRecord {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -7,7 +7,9 @@ package com.azure.resourcemanager.authorization.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The name of the entity last modified it. */
+/**
+ * The name of the entity last modified it.
+ */
 @Fluent
 public final class Principal {
     /*
@@ -34,13 +36,15 @@ public final class Principal {
     @JsonProperty(value = "email")
     private String email;
 
-    /** Creates an instance of Principal class. */
+    /**
+     * Creates an instance of Principal class.
+     */
     public Principal() {
     }
 
     /**
      * Get the id property: The id of the principal made changes.
-     *
+     * 
      * @return the id value.
      */
     public String id() {
@@ -49,7 +53,7 @@ public final class Principal {
 
     /**
      * Set the id property: The id of the principal made changes.
-     *
+     * 
      * @param id the id value to set.
      * @return the Principal object itself.
      */
@@ -60,7 +64,7 @@ public final class Principal {
 
     /**
      * Get the displayName property: The name of the principal made changes.
-     *
+     * 
      * @return the displayName value.
      */
     public String displayName() {
@@ -69,7 +73,7 @@ public final class Principal {
 
     /**
      * Set the displayName property: The name of the principal made changes.
-     *
+     * 
      * @param displayName the displayName value to set.
      * @return the Principal object itself.
      */
@@ -80,7 +84,7 @@ public final class Principal {
 
     /**
      * Get the type property: Type of principal such as user , group etc.
-     *
+     * 
      * @return the type value.
      */
     public String type() {
@@ -89,7 +93,7 @@ public final class Principal {
 
     /**
      * Set the type property: Type of principal such as user , group etc.
-     *
+     * 
      * @param type the type value to set.
      * @return the Principal object itself.
      */
@@ -100,7 +104,7 @@ public final class Principal {
 
     /**
      * Get the email property: Email of principal.
-     *
+     * 
      * @return the email value.
      */
     public String email() {
@@ -109,7 +113,7 @@ public final class Principal {
 
     /**
      * Set the email property: Email of principal.
-     *
+     * 
      * @param email the email value to set.
      * @return the Principal object itself.
      */
@@ -120,7 +124,7 @@ public final class Principal {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

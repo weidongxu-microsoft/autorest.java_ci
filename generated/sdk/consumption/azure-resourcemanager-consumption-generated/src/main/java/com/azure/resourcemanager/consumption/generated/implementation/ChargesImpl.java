@@ -20,21 +20,18 @@ public final class ChargesImpl implements Charges {
 
     private final com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager;
 
-    public ChargesImpl(
-        ChargesClient innerClient, com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager) {
+    public ChargesImpl(ChargesClient innerClient,
+        com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<ChargesListResult> listWithResponse(
-        String scope, String startDate, String endDate, String filter, String apply, Context context) {
-        Response<ChargesListResultInner> inner =
-            this.serviceClient().listWithResponse(scope, startDate, endDate, filter, apply, context);
+    public Response<ChargesListResult> listWithResponse(String scope, String startDate, String endDate, String filter,
+        String apply, Context context) {
+        Response<ChargesListResultInner> inner
+            = this.serviceClient().listWithResponse(scope, startDate, endDate, filter, apply, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ChargesListResultImpl(inner.getValue(), this.manager()));
         } else {
             return null;

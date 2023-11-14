@@ -20,22 +20,18 @@ public final class DeviceCapacityInfoesImpl implements DeviceCapacityInfoes {
 
     private final com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager;
 
-    public DeviceCapacityInfoesImpl(
-        DeviceCapacityInfoesClient innerClient,
+    public DeviceCapacityInfoesImpl(DeviceCapacityInfoesClient innerClient,
         com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<DeviceCapacityInfo> getDeviceCapacityInfoWithResponse(
-        String resourceGroupName, String deviceName, Context context) {
-        Response<DeviceCapacityInfoInner> inner =
-            this.serviceClient().getDeviceCapacityInfoWithResponse(resourceGroupName, deviceName, context);
+    public Response<DeviceCapacityInfo> getDeviceCapacityInfoWithResponse(String resourceGroupName, String deviceName,
+        Context context) {
+        Response<DeviceCapacityInfoInner> inner
+            = this.serviceClient().getDeviceCapacityInfoWithResponse(resourceGroupName, deviceName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DeviceCapacityInfoImpl(inner.getValue(), this.manager()));
         } else {
             return null;

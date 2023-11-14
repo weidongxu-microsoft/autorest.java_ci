@@ -21,21 +21,17 @@ public final class RoleDefinitionsImpl implements RoleDefinitions {
 
     private final com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager;
 
-    public RoleDefinitionsImpl(
-        RoleDefinitionsClient innerClient,
+    public RoleDefinitionsImpl(RoleDefinitionsClient innerClient,
         com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<RoleDefinition> deleteByResourceGroupWithResponse(
-        String scope, String roleDefinitionId, Context context) {
+    public Response<RoleDefinition> deleteByResourceGroupWithResponse(String scope, String roleDefinitionId,
+        Context context) {
         Response<RoleDefinitionInner> inner = this.serviceClient().deleteWithResponse(scope, roleDefinitionId, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new RoleDefinitionImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -54,10 +50,7 @@ public final class RoleDefinitionsImpl implements RoleDefinitions {
     public Response<RoleDefinition> getWithResponse(String scope, String roleDefinitionId, Context context) {
         Response<RoleDefinitionInner> inner = this.serviceClient().getWithResponse(scope, roleDefinitionId, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new RoleDefinitionImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -86,10 +79,7 @@ public final class RoleDefinitionsImpl implements RoleDefinitions {
     public Response<RoleDefinition> getByIdWithResponse(String roleId, Context context) {
         Response<RoleDefinitionInner> inner = this.serviceClient().getByIdWithResponse(roleId, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new RoleDefinitionImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -106,55 +96,33 @@ public final class RoleDefinitionsImpl implements RoleDefinitions {
     }
 
     public RoleDefinition deleteById(String id) {
-        String scope =
-            Utils
-                .getValueFromIdByParameterName(
-                    id, "/{scope}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId}", "scope");
+        String scope = Utils.getValueFromIdByParameterName(id,
+            "/{scope}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId}", "scope");
         if (scope == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'scope'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'scope'.", id)));
         }
-        String roleDefinitionId =
-            Utils
-                .getValueFromIdByParameterName(
-                    id,
-                    "/{scope}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId}",
-                    "roleDefinitionId");
+        String roleDefinitionId = Utils.getValueFromIdByParameterName(id,
+            "/{scope}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId}", "roleDefinitionId");
         if (roleDefinitionId == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'roleDefinitions'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'roleDefinitions'.", id)));
         }
         return this.deleteByResourceGroupWithResponse(scope, roleDefinitionId, Context.NONE).getValue();
     }
 
     public Response<RoleDefinition> deleteByIdWithResponse(String id, Context context) {
-        String scope =
-            Utils
-                .getValueFromIdByParameterName(
-                    id, "/{scope}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId}", "scope");
+        String scope = Utils.getValueFromIdByParameterName(id,
+            "/{scope}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId}", "scope");
         if (scope == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'scope'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'scope'.", id)));
         }
-        String roleDefinitionId =
-            Utils
-                .getValueFromIdByParameterName(
-                    id,
-                    "/{scope}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId}",
-                    "roleDefinitionId");
+        String roleDefinitionId = Utils.getValueFromIdByParameterName(id,
+            "/{scope}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId}", "roleDefinitionId");
         if (roleDefinitionId == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'roleDefinitions'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'roleDefinitions'.", id)));
         }
         return this.deleteByResourceGroupWithResponse(scope, roleDefinitionId, context);
     }

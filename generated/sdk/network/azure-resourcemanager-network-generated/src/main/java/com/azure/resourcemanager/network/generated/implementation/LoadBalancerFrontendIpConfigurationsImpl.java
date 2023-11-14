@@ -21,47 +21,41 @@ public final class LoadBalancerFrontendIpConfigurationsImpl implements LoadBalan
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public LoadBalancerFrontendIpConfigurationsImpl(
-        LoadBalancerFrontendIpConfigurationsClient innerClient,
+    public LoadBalancerFrontendIpConfigurationsImpl(LoadBalancerFrontendIpConfigurationsClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
     public PagedIterable<FrontendIpConfiguration> list(String resourceGroupName, String loadBalancerName) {
-        PagedIterable<FrontendIpConfigurationInner> inner =
-            this.serviceClient().list(resourceGroupName, loadBalancerName);
+        PagedIterable<FrontendIpConfigurationInner> inner
+            = this.serviceClient().list(resourceGroupName, loadBalancerName);
         return Utils.mapPage(inner, inner1 -> new FrontendIpConfigurationImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<FrontendIpConfiguration> list(
-        String resourceGroupName, String loadBalancerName, Context context) {
-        PagedIterable<FrontendIpConfigurationInner> inner =
-            this.serviceClient().list(resourceGroupName, loadBalancerName, context);
+    public PagedIterable<FrontendIpConfiguration> list(String resourceGroupName, String loadBalancerName,
+        Context context) {
+        PagedIterable<FrontendIpConfigurationInner> inner
+            = this.serviceClient().list(resourceGroupName, loadBalancerName, context);
         return Utils.mapPage(inner, inner1 -> new FrontendIpConfigurationImpl(inner1, this.manager()));
     }
 
-    public Response<FrontendIpConfiguration> getWithResponse(
-        String resourceGroupName, String loadBalancerName, String frontendIpConfigurationName, Context context) {
-        Response<FrontendIpConfigurationInner> inner =
-            this
-                .serviceClient()
-                .getWithResponse(resourceGroupName, loadBalancerName, frontendIpConfigurationName, context);
+    public Response<FrontendIpConfiguration> getWithResponse(String resourceGroupName, String loadBalancerName,
+        String frontendIpConfigurationName, Context context) {
+        Response<FrontendIpConfigurationInner> inner = this.serviceClient().getWithResponse(resourceGroupName,
+            loadBalancerName, frontendIpConfigurationName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new FrontendIpConfigurationImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public FrontendIpConfiguration get(
-        String resourceGroupName, String loadBalancerName, String frontendIpConfigurationName) {
-        FrontendIpConfigurationInner inner =
-            this.serviceClient().get(resourceGroupName, loadBalancerName, frontendIpConfigurationName);
+    public FrontendIpConfiguration get(String resourceGroupName, String loadBalancerName,
+        String frontendIpConfigurationName) {
+        FrontendIpConfigurationInner inner
+            = this.serviceClient().get(resourceGroupName, loadBalancerName, frontendIpConfigurationName);
         if (inner != null) {
             return new FrontendIpConfigurationImpl(inner, this.manager());
         } else {

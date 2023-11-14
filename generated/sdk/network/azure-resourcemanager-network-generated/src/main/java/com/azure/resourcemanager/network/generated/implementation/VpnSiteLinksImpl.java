@@ -21,21 +21,18 @@ public final class VpnSiteLinksImpl implements VpnSiteLinks {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public VpnSiteLinksImpl(
-        VpnSiteLinksClient innerClient, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    public VpnSiteLinksImpl(VpnSiteLinksClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<VpnSiteLink> getWithResponse(
-        String resourceGroupName, String vpnSiteName, String vpnSiteLinkName, Context context) {
-        Response<VpnSiteLinkInner> inner =
-            this.serviceClient().getWithResponse(resourceGroupName, vpnSiteName, vpnSiteLinkName, context);
+    public Response<VpnSiteLink> getWithResponse(String resourceGroupName, String vpnSiteName, String vpnSiteLinkName,
+        Context context) {
+        Response<VpnSiteLinkInner> inner
+            = this.serviceClient().getWithResponse(resourceGroupName, vpnSiteName, vpnSiteLinkName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new VpnSiteLinkImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -57,8 +54,8 @@ public final class VpnSiteLinksImpl implements VpnSiteLinks {
     }
 
     public PagedIterable<VpnSiteLink> listByVpnSite(String resourceGroupName, String vpnSiteName, Context context) {
-        PagedIterable<VpnSiteLinkInner> inner =
-            this.serviceClient().listByVpnSite(resourceGroupName, vpnSiteName, context);
+        PagedIterable<VpnSiteLinkInner> inner
+            = this.serviceClient().listByVpnSite(resourceGroupName, vpnSiteName, context);
         return Utils.mapPage(inner, inner1 -> new VpnSiteLinkImpl(inner1, this.manager()));
     }
 

@@ -7,7 +7,9 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The presentation time range, this is asset related and not recommended for Account Filter. */
+/**
+ * The presentation time range, this is asset related and not recommended for Account Filter.
+ */
 @Fluent
 public final class PresentationTimeRange {
     /*
@@ -46,13 +48,15 @@ public final class PresentationTimeRange {
     @JsonProperty(value = "forceEndTimestamp")
     private Boolean forceEndTimestamp;
 
-    /** Creates an instance of PresentationTimeRange class. */
+    /**
+     * Creates an instance of PresentationTimeRange class.
+     */
     public PresentationTimeRange() {
     }
 
     /**
      * Get the startTimestamp property: The absolute start time boundary.
-     *
+     * 
      * @return the startTimestamp value.
      */
     public Long startTimestamp() {
@@ -61,7 +65,7 @@ public final class PresentationTimeRange {
 
     /**
      * Set the startTimestamp property: The absolute start time boundary.
-     *
+     * 
      * @param startTimestamp the startTimestamp value to set.
      * @return the PresentationTimeRange object itself.
      */
@@ -72,7 +76,7 @@ public final class PresentationTimeRange {
 
     /**
      * Get the endTimestamp property: The absolute end time boundary.
-     *
+     * 
      * @return the endTimestamp value.
      */
     public Long endTimestamp() {
@@ -81,7 +85,7 @@ public final class PresentationTimeRange {
 
     /**
      * Set the endTimestamp property: The absolute end time boundary.
-     *
+     * 
      * @param endTimestamp the endTimestamp value to set.
      * @return the PresentationTimeRange object itself.
      */
@@ -92,7 +96,7 @@ public final class PresentationTimeRange {
 
     /**
      * Get the presentationWindowDuration property: The relative to end sliding window.
-     *
+     * 
      * @return the presentationWindowDuration value.
      */
     public Long presentationWindowDuration() {
@@ -101,7 +105,7 @@ public final class PresentationTimeRange {
 
     /**
      * Set the presentationWindowDuration property: The relative to end sliding window.
-     *
+     * 
      * @param presentationWindowDuration the presentationWindowDuration value to set.
      * @return the PresentationTimeRange object itself.
      */
@@ -112,7 +116,7 @@ public final class PresentationTimeRange {
 
     /**
      * Get the liveBackoffDuration property: The relative to end right edge.
-     *
+     * 
      * @return the liveBackoffDuration value.
      */
     public Long liveBackoffDuration() {
@@ -121,7 +125,7 @@ public final class PresentationTimeRange {
 
     /**
      * Set the liveBackoffDuration property: The relative to end right edge.
-     *
+     * 
      * @param liveBackoffDuration the liveBackoffDuration value to set.
      * @return the PresentationTimeRange object itself.
      */
@@ -132,7 +136,7 @@ public final class PresentationTimeRange {
 
     /**
      * Get the timescale property: The time scale of time stamps.
-     *
+     * 
      * @return the timescale value.
      */
     public Long timescale() {
@@ -141,7 +145,7 @@ public final class PresentationTimeRange {
 
     /**
      * Set the timescale property: The time scale of time stamps.
-     *
+     * 
      * @param timescale the timescale value to set.
      * @return the PresentationTimeRange object itself.
      */
@@ -152,7 +156,7 @@ public final class PresentationTimeRange {
 
     /**
      * Get the forceEndTimestamp property: The indicator of forcing existing of end time stamp.
-     *
+     * 
      * @return the forceEndTimestamp value.
      */
     public Boolean forceEndTimestamp() {
@@ -161,7 +165,7 @@ public final class PresentationTimeRange {
 
     /**
      * Set the forceEndTimestamp property: The indicator of forcing existing of end time stamp.
-     *
+     * 
      * @param forceEndTimestamp the forceEndTimestamp value to set.
      * @return the PresentationTimeRange object itself.
      */
@@ -172,7 +176,7 @@ public final class PresentationTimeRange {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

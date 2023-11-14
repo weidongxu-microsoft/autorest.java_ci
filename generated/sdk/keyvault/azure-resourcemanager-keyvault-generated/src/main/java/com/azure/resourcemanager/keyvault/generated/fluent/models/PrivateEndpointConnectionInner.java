@@ -12,7 +12,9 @@ import com.azure.resourcemanager.keyvault.generated.models.PrivateLinkServiceCon
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
 
-/** Private endpoint connection resource. */
+/**
+ * Private endpoint connection resource.
+ */
 @Fluent
 public final class PrivateEndpointConnectionInner extends Resource {
     /*
@@ -27,13 +29,15 @@ public final class PrivateEndpointConnectionInner extends Resource {
     @JsonProperty(value = "etag")
     private String etag;
 
-    /** Creates an instance of PrivateEndpointConnectionInner class. */
+    /**
+     * Creates an instance of PrivateEndpointConnectionInner class.
+     */
     public PrivateEndpointConnectionInner() {
     }
 
     /**
      * Get the innerProperties property: Resource properties.
-     *
+     * 
      * @return the innerProperties value.
      */
     private PrivateEndpointConnectionProperties innerProperties() {
@@ -42,7 +46,7 @@ public final class PrivateEndpointConnectionInner extends Resource {
 
     /**
      * Get the etag property: Modified whenever there is a change in the state of private endpoint connection.
-     *
+     * 
      * @return the etag value.
      */
     public String etag() {
@@ -51,7 +55,7 @@ public final class PrivateEndpointConnectionInner extends Resource {
 
     /**
      * Set the etag property: Modified whenever there is a change in the state of private endpoint connection.
-     *
+     * 
      * @param etag the etag value to set.
      * @return the PrivateEndpointConnectionInner object itself.
      */
@@ -60,14 +64,18 @@ public final class PrivateEndpointConnectionInner extends Resource {
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public PrivateEndpointConnectionInner withLocation(String location) {
         super.withLocation(location);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public PrivateEndpointConnectionInner withTags(Map<String, String> tags) {
         super.withTags(tags);
@@ -76,7 +84,7 @@ public final class PrivateEndpointConnectionInner extends Resource {
 
     /**
      * Get the privateEndpoint property: Properties of the private endpoint object.
-     *
+     * 
      * @return the privateEndpoint value.
      */
     public PrivateEndpoint privateEndpoint() {
@@ -85,7 +93,7 @@ public final class PrivateEndpointConnectionInner extends Resource {
 
     /**
      * Set the privateEndpoint property: Properties of the private endpoint object.
-     *
+     * 
      * @param privateEndpoint the privateEndpoint value to set.
      * @return the PrivateEndpointConnectionInner object itself.
      */
@@ -99,7 +107,7 @@ public final class PrivateEndpointConnectionInner extends Resource {
 
     /**
      * Get the privateLinkServiceConnectionState property: Approval state of the private link connection.
-     *
+     * 
      * @return the privateLinkServiceConnectionState value.
      */
     public PrivateLinkServiceConnectionState privateLinkServiceConnectionState() {
@@ -108,12 +116,12 @@ public final class PrivateEndpointConnectionInner extends Resource {
 
     /**
      * Set the privateLinkServiceConnectionState property: Approval state of the private link connection.
-     *
+     * 
      * @param privateLinkServiceConnectionState the privateLinkServiceConnectionState value to set.
      * @return the PrivateEndpointConnectionInner object itself.
      */
-    public PrivateEndpointConnectionInner withPrivateLinkServiceConnectionState(
-        PrivateLinkServiceConnectionState privateLinkServiceConnectionState) {
+    public PrivateEndpointConnectionInner
+        withPrivateLinkServiceConnectionState(PrivateLinkServiceConnectionState privateLinkServiceConnectionState) {
         if (this.innerProperties() == null) {
             this.innerProperties = new PrivateEndpointConnectionProperties();
         }
@@ -123,7 +131,7 @@ public final class PrivateEndpointConnectionInner extends Resource {
 
     /**
      * Get the provisioningState property: Provisioning state of the private endpoint connection.
-     *
+     * 
      * @return the provisioningState value.
      */
     public PrivateEndpointConnectionProvisioningState provisioningState() {
@@ -132,12 +140,12 @@ public final class PrivateEndpointConnectionInner extends Resource {
 
     /**
      * Set the provisioningState property: Provisioning state of the private endpoint connection.
-     *
+     * 
      * @param provisioningState the provisioningState value to set.
      * @return the PrivateEndpointConnectionInner object itself.
      */
-    public PrivateEndpointConnectionInner withProvisioningState(
-        PrivateEndpointConnectionProvisioningState provisioningState) {
+    public PrivateEndpointConnectionInner
+        withProvisioningState(PrivateEndpointConnectionProvisioningState provisioningState) {
         if (this.innerProperties() == null) {
             this.innerProperties = new PrivateEndpointConnectionProperties();
         }
@@ -147,7 +155,7 @@ public final class PrivateEndpointConnectionInner extends Resource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

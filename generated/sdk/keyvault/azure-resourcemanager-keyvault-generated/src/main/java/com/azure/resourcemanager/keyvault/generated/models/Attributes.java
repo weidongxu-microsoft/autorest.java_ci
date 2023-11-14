@@ -10,7 +10,9 @@ import java.time.Instant;
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 
-/** The object attributes managed by the KeyVault service. */
+/**
+ * The object attributes managed by the KeyVault service.
+ */
 @Fluent
 public class Attributes {
     /*
@@ -43,13 +45,15 @@ public class Attributes {
     @JsonProperty(value = "updated", access = JsonProperty.Access.WRITE_ONLY)
     private Long updated;
 
-    /** Creates an instance of Attributes class. */
+    /**
+     * Creates an instance of Attributes class.
+     */
     public Attributes() {
     }
 
     /**
      * Get the enabled property: Determines whether the object is enabled.
-     *
+     * 
      * @return the enabled value.
      */
     public Boolean enabled() {
@@ -58,7 +62,7 @@ public class Attributes {
 
     /**
      * Set the enabled property: Determines whether the object is enabled.
-     *
+     * 
      * @param enabled the enabled value to set.
      * @return the Attributes object itself.
      */
@@ -69,7 +73,7 @@ public class Attributes {
 
     /**
      * Get the notBefore property: Not before date in seconds since 1970-01-01T00:00:00Z.
-     *
+     * 
      * @return the notBefore value.
      */
     public OffsetDateTime notBefore() {
@@ -81,7 +85,7 @@ public class Attributes {
 
     /**
      * Set the notBefore property: Not before date in seconds since 1970-01-01T00:00:00Z.
-     *
+     * 
      * @param notBefore the notBefore value to set.
      * @return the Attributes object itself.
      */
@@ -96,7 +100,7 @@ public class Attributes {
 
     /**
      * Get the expires property: Expiry date in seconds since 1970-01-01T00:00:00Z.
-     *
+     * 
      * @return the expires value.
      */
     public OffsetDateTime expires() {
@@ -108,7 +112,7 @@ public class Attributes {
 
     /**
      * Set the expires property: Expiry date in seconds since 1970-01-01T00:00:00Z.
-     *
+     * 
      * @param expires the expires value to set.
      * @return the Attributes object itself.
      */
@@ -123,7 +127,7 @@ public class Attributes {
 
     /**
      * Get the created property: Creation time in seconds since 1970-01-01T00:00:00Z.
-     *
+     * 
      * @return the created value.
      */
     public OffsetDateTime created() {
@@ -135,7 +139,7 @@ public class Attributes {
 
     /**
      * Get the updated property: Last updated time in seconds since 1970-01-01T00:00:00Z.
-     *
+     * 
      * @return the updated value.
      */
     public OffsetDateTime updated() {
@@ -147,7 +151,7 @@ public class Attributes {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

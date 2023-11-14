@@ -12,8 +12,7 @@ public final class AnalysisDefinitionImpl implements AnalysisDefinition {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    AnalysisDefinitionImpl(
-        AnalysisDefinitionInner innerObject,
+    AnalysisDefinitionImpl(AnalysisDefinitionInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

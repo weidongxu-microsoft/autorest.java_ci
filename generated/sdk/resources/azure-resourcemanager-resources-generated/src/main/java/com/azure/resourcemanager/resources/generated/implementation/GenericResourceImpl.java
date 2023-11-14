@@ -17,8 +17,7 @@ public final class GenericResourceImpl implements GenericResource {
 
     private final com.azure.resourcemanager.resources.generated.ResourceManager serviceManager;
 
-    GenericResourceImpl(
-        GenericResourceInner innerObject,
+    GenericResourceImpl(GenericResourceInner innerObject,
         com.azure.resourcemanager.resources.generated.ResourceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

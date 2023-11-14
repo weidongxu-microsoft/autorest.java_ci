@@ -6,25 +6,27 @@ package com.azure.resourcemanager.appservice.generated.models;
 
 import com.azure.resourcemanager.appservice.generated.fluent.models.FunctionSecretsInner;
 
-/** An immutable client-side representation of FunctionSecrets. */
+/**
+ * An immutable client-side representation of FunctionSecrets.
+ */
 public interface FunctionSecrets {
     /**
      * Gets the key property: Secret key.
-     *
+     * 
      * @return the key value.
      */
     String key();
 
     /**
      * Gets the triggerUrl property: Trigger URL.
-     *
+     * 
      * @return the triggerUrl value.
      */
     String triggerUrl();
 
     /**
      * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.FunctionSecretsInner object.
-     *
+     * 
      * @return the inner object.
      */
     FunctionSecretsInner innerModel();

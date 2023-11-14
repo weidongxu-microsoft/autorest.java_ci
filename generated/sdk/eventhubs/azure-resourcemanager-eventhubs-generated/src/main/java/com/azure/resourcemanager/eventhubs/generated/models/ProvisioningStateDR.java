@@ -12,16 +12,24 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * 'Failed'.
  */
 public enum ProvisioningStateDR {
-    /** Enum value Accepted. */
+    /**
+     * Enum value Accepted.
+     */
     ACCEPTED("Accepted"),
 
-    /** Enum value Succeeded. */
+    /**
+     * Enum value Succeeded.
+     */
     SUCCEEDED("Succeeded"),
 
-    /** Enum value Failed. */
+    /**
+     * Enum value Failed.
+     */
     FAILED("Failed");
 
-    /** The actual serialized value for a ProvisioningStateDR instance. */
+    /**
+     * The actual serialized value for a ProvisioningStateDR instance.
+     */
     private final String value;
 
     ProvisioningStateDR(String value) {
@@ -30,7 +38,7 @@ public enum ProvisioningStateDR {
 
     /**
      * Parses a serialized value to a ProvisioningStateDR instance.
-     *
+     * 
      * @param value the serialized value to parse.
      * @return the parsed ProvisioningStateDR object, or null if unable to parse.
      */
@@ -48,7 +56,9 @@ public enum ProvisioningStateDR {
         return null;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @JsonValue
     @Override
     public String toString() {

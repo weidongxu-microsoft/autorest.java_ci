@@ -10,7 +10,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
 
-/** Defines a the properties of a Latency Scorecard. */
+/**
+ * Defines a the properties of a Latency Scorecard.
+ */
 @Fluent
 public final class LatencyScorecardProperties {
     /*
@@ -68,13 +70,15 @@ public final class LatencyScorecardProperties {
     @JsonProperty(value = "latencyMetrics")
     private List<LatencyMetric> latencyMetrics;
 
-    /** Creates an instance of LatencyScorecardProperties class. */
+    /**
+     * Creates an instance of LatencyScorecardProperties class.
+     */
     public LatencyScorecardProperties() {
     }
 
     /**
      * Get the id property: The unique identifier of the Latency Scorecard.
-     *
+     * 
      * @return the id value.
      */
     public String id() {
@@ -83,7 +87,7 @@ public final class LatencyScorecardProperties {
 
     /**
      * Get the name property: The name of the Latency Scorecard.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -92,7 +96,7 @@ public final class LatencyScorecardProperties {
 
     /**
      * Get the description property: The description of the Latency Scorecard.
-     *
+     * 
      * @return the description value.
      */
     public String description() {
@@ -101,7 +105,7 @@ public final class LatencyScorecardProperties {
 
     /**
      * Get the endpointA property: The A endpoint in the scorecard.
-     *
+     * 
      * @return the endpointA value.
      */
     public String endpointA() {
@@ -110,7 +114,7 @@ public final class LatencyScorecardProperties {
 
     /**
      * Get the endpointB property: The B endpoint in the scorecard.
-     *
+     * 
      * @return the endpointB value.
      */
     public String endpointB() {
@@ -119,7 +123,7 @@ public final class LatencyScorecardProperties {
 
     /**
      * Get the startDateTimeUtc property: The start time of the Latency Scorecard in UTC.
-     *
+     * 
      * @return the startDateTimeUtc value.
      */
     public OffsetDateTime startDateTimeUtc() {
@@ -128,7 +132,7 @@ public final class LatencyScorecardProperties {
 
     /**
      * Get the endDateTimeUtc property: The end time of the Latency Scorecard in UTC.
-     *
+     * 
      * @return the endDateTimeUtc value.
      */
     public OffsetDateTime endDateTimeUtc() {
@@ -138,7 +142,7 @@ public final class LatencyScorecardProperties {
     /**
      * Get the country property: The country associated with the Latency Scorecard. Values are country ISO codes as
      * specified here- https://www.iso.org/iso-3166-country-codes.html.
-     *
+     * 
      * @return the country value.
      */
     public String country() {
@@ -147,7 +151,7 @@ public final class LatencyScorecardProperties {
 
     /**
      * Get the latencyMetrics property: The latency metrics of the Latency Scorecard.
-     *
+     * 
      * @return the latencyMetrics value.
      */
     public List<LatencyMetric> latencyMetrics() {
@@ -156,7 +160,7 @@ public final class LatencyScorecardProperties {
 
     /**
      * Set the latencyMetrics property: The latency metrics of the Latency Scorecard.
-     *
+     * 
      * @param latencyMetrics the latencyMetrics value to set.
      * @return the LatencyScorecardProperties object itself.
      */
@@ -167,7 +171,7 @@ public final class LatencyScorecardProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -26,24 +26,28 @@ import com.azure.resourcemanager.monitor.generated.fluent.models.DiagnosticSetti
 import com.azure.resourcemanager.monitor.generated.fluent.models.DiagnosticSettingsCategoryResourceInner;
 import reactor.core.publisher.Mono;
 
-/** An instance of this class provides access to all the operations defined in DiagnosticSettingsCategoriesClient. */
+/**
+ * An instance of this class provides access to all the operations defined in DiagnosticSettingsCategoriesClient.
+ */
 public final class DiagnosticSettingsCategoriesClientImpl implements DiagnosticSettingsCategoriesClient {
-    /** The proxy service used to perform REST calls. */
+    /**
+     * The proxy service used to perform REST calls.
+     */
     private final DiagnosticSettingsCategoriesService service;
 
-    /** The service client containing this operation class. */
+    /**
+     * The service client containing this operation class.
+     */
     private final MonitorClientImpl client;
 
     /**
      * Initializes an instance of DiagnosticSettingsCategoriesClientImpl.
-     *
+     * 
      * @param client the instance of the service client containing this operation class.
      */
     DiagnosticSettingsCategoriesClientImpl(MonitorClientImpl client) {
-        this.service =
-            RestProxy
-                .create(
-                    DiagnosticSettingsCategoriesService.class, client.getHttpPipeline(), client.getSerializerAdapter());
+        this.service = RestProxy.create(DiagnosticSettingsCategoriesService.class, client.getHttpPipeline(),
+            client.getSerializerAdapter());
         this.client = client;
     }
 
@@ -54,49 +58,41 @@ public final class DiagnosticSettingsCategoriesClientImpl implements DiagnosticS
     @Host("{$host}")
     @ServiceInterface(name = "MonitorClientDiagnos")
     public interface DiagnosticSettingsCategoriesService {
-        @Headers({"Content-Type: application/json"})
+        @Headers({ "Content-Type: application/json" })
         @Get("/{resourceUri}/providers/Microsoft.Insights/diagnosticSettingsCategories/{name}")
-        @ExpectedResponses({200})
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<DiagnosticSettingsCategoryResourceInner>> get(
-            @HostParam("$host") String endpoint,
+        Mono<Response<DiagnosticSettingsCategoryResourceInner>> get(@HostParam("$host") String endpoint,
             @PathParam(value = "resourceUri", encoded = true) String resourceUri,
-            @QueryParam("api-version") String apiVersion,
-            @PathParam("name") String name,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @QueryParam("api-version") String apiVersion, @PathParam("name") String name,
+            @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
+        @Headers({ "Content-Type: application/json" })
         @Get("/{resourceUri}/providers/Microsoft.Insights/diagnosticSettingsCategories")
-        @ExpectedResponses({200})
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<DiagnosticSettingsCategoryResourceCollectionInner>> list(
-            @HostParam("$host") String endpoint,
+        Mono<Response<DiagnosticSettingsCategoryResourceCollectionInner>> list(@HostParam("$host") String endpoint,
             @PathParam(value = "resourceUri", encoded = true) String resourceUri,
-            @QueryParam("api-version") String apiVersion,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @QueryParam("api-version") String apiVersion, @HeaderParam("Accept") String accept, Context context);
     }
 
     /**
      * Gets the diagnostic settings category for the specified resource.
-     *
+     * 
      * @param resourceUri The identifier of the resource.
      * @param name The name of the diagnostic setting.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the diagnostic settings category for the specified resource along with {@link Response} on successful
-     *     completion of {@link Mono}.
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<DiagnosticSettingsCategoryResourceInner>> getWithResponseAsync(
-        String resourceUri, String name) {
+    private Mono<Response<DiagnosticSettingsCategoryResourceInner>> getWithResponseAsync(String resourceUri,
+        String name) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceUri == null) {
             return Mono.error(new IllegalArgumentException("Parameter resourceUri is required and cannot be null."));
@@ -114,7 +110,7 @@ public final class DiagnosticSettingsCategoriesClientImpl implements DiagnosticS
 
     /**
      * Gets the diagnostic settings category for the specified resource.
-     *
+     * 
      * @param resourceUri The identifier of the resource.
      * @param name The name of the diagnostic setting.
      * @param context The context to associate with this operation.
@@ -122,16 +118,14 @@ public final class DiagnosticSettingsCategoriesClientImpl implements DiagnosticS
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the diagnostic settings category for the specified resource along with {@link Response} on successful
-     *     completion of {@link Mono}.
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<DiagnosticSettingsCategoryResourceInner>> getWithResponseAsync(
-        String resourceUri, String name, Context context) {
+    private Mono<Response<DiagnosticSettingsCategoryResourceInner>> getWithResponseAsync(String resourceUri,
+        String name, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceUri == null) {
             return Mono.error(new IllegalArgumentException("Parameter resourceUri is required and cannot be null."));
@@ -147,7 +141,7 @@ public final class DiagnosticSettingsCategoriesClientImpl implements DiagnosticS
 
     /**
      * Gets the diagnostic settings category for the specified resource.
-     *
+     * 
      * @param resourceUri The identifier of the resource.
      * @param name The name of the diagnostic setting.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -162,7 +156,7 @@ public final class DiagnosticSettingsCategoriesClientImpl implements DiagnosticS
 
     /**
      * Gets the diagnostic settings category for the specified resource.
-     *
+     * 
      * @param resourceUri The identifier of the resource.
      * @param name The name of the diagnostic setting.
      * @param context The context to associate with this operation.
@@ -172,14 +166,14 @@ public final class DiagnosticSettingsCategoriesClientImpl implements DiagnosticS
      * @return the diagnostic settings category for the specified resource along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DiagnosticSettingsCategoryResourceInner> getWithResponse(
-        String resourceUri, String name, Context context) {
+    public Response<DiagnosticSettingsCategoryResourceInner> getWithResponse(String resourceUri, String name,
+        Context context) {
         return getWithResponseAsync(resourceUri, name, context).block();
     }
 
     /**
      * Gets the diagnostic settings category for the specified resource.
-     *
+     * 
      * @param resourceUri The identifier of the resource.
      * @param name The name of the diagnostic setting.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -194,22 +188,20 @@ public final class DiagnosticSettingsCategoriesClientImpl implements DiagnosticS
 
     /**
      * Lists the diagnostic settings categories for the specified resource.
-     *
+     * 
      * @param resourceUri The identifier of the resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return represents a collection of diagnostic setting category resources along with {@link Response} on
-     *     successful completion of {@link Mono}.
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<DiagnosticSettingsCategoryResourceCollectionInner>> listWithResponseAsync(
-        String resourceUri) {
+    private Mono<Response<DiagnosticSettingsCategoryResourceCollectionInner>>
+        listWithResponseAsync(String resourceUri) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceUri == null) {
             return Mono.error(new IllegalArgumentException("Parameter resourceUri is required and cannot be null."));
@@ -223,23 +215,21 @@ public final class DiagnosticSettingsCategoriesClientImpl implements DiagnosticS
 
     /**
      * Lists the diagnostic settings categories for the specified resource.
-     *
+     * 
      * @param resourceUri The identifier of the resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return represents a collection of diagnostic setting category resources along with {@link Response} on
-     *     successful completion of {@link Mono}.
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<DiagnosticSettingsCategoryResourceCollectionInner>> listWithResponseAsync(
-        String resourceUri, Context context) {
+    private Mono<Response<DiagnosticSettingsCategoryResourceCollectionInner>> listWithResponseAsync(String resourceUri,
+        Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceUri == null) {
             return Mono.error(new IllegalArgumentException("Parameter resourceUri is required and cannot be null."));
@@ -252,13 +242,13 @@ public final class DiagnosticSettingsCategoriesClientImpl implements DiagnosticS
 
     /**
      * Lists the diagnostic settings categories for the specified resource.
-     *
+     * 
      * @param resourceUri The identifier of the resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of diagnostic setting category resources on successful completion of {@link
-     *     Mono}.
+     * @return represents a collection of diagnostic setting category resources on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DiagnosticSettingsCategoryResourceCollectionInner> listAsync(String resourceUri) {
@@ -267,7 +257,7 @@ public final class DiagnosticSettingsCategoriesClientImpl implements DiagnosticS
 
     /**
      * Lists the diagnostic settings categories for the specified resource.
-     *
+     * 
      * @param resourceUri The identifier of the resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -276,14 +266,14 @@ public final class DiagnosticSettingsCategoriesClientImpl implements DiagnosticS
      * @return represents a collection of diagnostic setting category resources along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<DiagnosticSettingsCategoryResourceCollectionInner> listWithResponse(
-        String resourceUri, Context context) {
+    public Response<DiagnosticSettingsCategoryResourceCollectionInner> listWithResponse(String resourceUri,
+        Context context) {
         return listWithResponseAsync(resourceUri, context).block();
     }
 
     /**
      * Lists the diagnostic settings categories for the specified resource.
-     *
+     * 
      * @param resourceUri The identifier of the resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

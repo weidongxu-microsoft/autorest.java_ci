@@ -7,11 +7,13 @@ package com.azure.resourcemanager.azurekusto.generated.models;
 import com.azure.resourcemanager.azurekusto.generated.fluent.models.DataConnectionValidationListResultInner;
 import java.util.List;
 
-/** An immutable client-side representation of DataConnectionValidationListResult. */
+/**
+ * An immutable client-side representation of DataConnectionValidationListResult.
+ */
 public interface DataConnectionValidationListResult {
     /**
      * Gets the value property: The list of Kusto data connection validation errors.
-     *
+     * 
      * @return the value value.
      */
     List<DataConnectionValidationResult> value();
@@ -19,7 +21,7 @@ public interface DataConnectionValidationListResult {
     /**
      * Gets the inner
      * com.azure.resourcemanager.azurekusto.generated.fluent.models.DataConnectionValidationListResultInner object.
-     *
+     * 
      * @return the inner object.
      */
     DataConnectionValidationListResultInner innerModel();

@@ -142,22 +142,14 @@ public final class MetricAlertResourceImpl
     }
 
     public MetricAlertResource create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getMetricAlerts()
-                .createOrUpdateWithResponse(resourceGroupName, ruleName, this.innerModel(), Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getMetricAlerts()
+            .createOrUpdateWithResponse(resourceGroupName, ruleName, this.innerModel(), Context.NONE).getValue();
         return this;
     }
 
     public MetricAlertResource create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getMetricAlerts()
-                .createOrUpdateWithResponse(resourceGroupName, ruleName, this.innerModel(), context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getMetricAlerts()
+            .createOrUpdateWithResponse(resourceGroupName, ruleName, this.innerModel(), context).getValue();
         return this;
     }
 
@@ -173,27 +165,18 @@ public final class MetricAlertResourceImpl
     }
 
     public MetricAlertResource apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getMetricAlerts()
-                .updateWithResponse(resourceGroupName, ruleName, updateParameters, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getMetricAlerts()
+            .updateWithResponse(resourceGroupName, ruleName, updateParameters, Context.NONE).getValue();
         return this;
     }
 
     public MetricAlertResource apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getMetricAlerts()
-                .updateWithResponse(resourceGroupName, ruleName, updateParameters, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getMetricAlerts()
+            .updateWithResponse(resourceGroupName, ruleName, updateParameters, context).getValue();
         return this;
     }
 
-    MetricAlertResourceImpl(
-        MetricAlertResourceInner innerObject,
+    MetricAlertResourceImpl(MetricAlertResourceInner innerObject,
         com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -202,22 +185,14 @@ public final class MetricAlertResourceImpl
     }
 
     public MetricAlertResource refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getMetricAlerts()
-                .getByResourceGroupWithResponse(resourceGroupName, ruleName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getMetricAlerts()
+            .getByResourceGroupWithResponse(resourceGroupName, ruleName, Context.NONE).getValue();
         return this;
     }
 
     public MetricAlertResource refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getMetricAlerts()
-                .getByResourceGroupWithResponse(resourceGroupName, ruleName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getMetricAlerts()
+            .getByResourceGroupWithResponse(resourceGroupName, ruleName, context).getValue();
         return this;
     }
 

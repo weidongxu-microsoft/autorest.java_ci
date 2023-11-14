@@ -9,7 +9,9 @@ import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Define a match condition. */
+/**
+ * Define a match condition.
+ */
 @Fluent
 public final class MatchCondition {
     /*
@@ -49,13 +51,15 @@ public final class MatchCondition {
     @JsonProperty(value = "transforms")
     private List<TransformType> transforms;
 
-    /** Creates an instance of MatchCondition class. */
+    /**
+     * Creates an instance of MatchCondition class.
+     */
     public MatchCondition() {
     }
 
     /**
      * Get the matchVariable property: Request variable to compare with.
-     *
+     * 
      * @return the matchVariable value.
      */
     public MatchVariable matchVariable() {
@@ -64,7 +68,7 @@ public final class MatchCondition {
 
     /**
      * Set the matchVariable property: Request variable to compare with.
-     *
+     * 
      * @param matchVariable the matchVariable value to set.
      * @return the MatchCondition object itself.
      */
@@ -76,7 +80,7 @@ public final class MatchCondition {
     /**
      * Get the selector property: Match against a specific key from the QueryString, PostArgs, RequestHeader or Cookies
      * variables. Default is null.
-     *
+     * 
      * @return the selector value.
      */
     public String selector() {
@@ -86,7 +90,7 @@ public final class MatchCondition {
     /**
      * Set the selector property: Match against a specific key from the QueryString, PostArgs, RequestHeader or Cookies
      * variables. Default is null.
-     *
+     * 
      * @param selector the selector value to set.
      * @return the MatchCondition object itself.
      */
@@ -97,7 +101,7 @@ public final class MatchCondition {
 
     /**
      * Get the operator property: Comparison type to use for matching with the variable value.
-     *
+     * 
      * @return the operator value.
      */
     public Operator operator() {
@@ -106,7 +110,7 @@ public final class MatchCondition {
 
     /**
      * Set the operator property: Comparison type to use for matching with the variable value.
-     *
+     * 
      * @param operator the operator value to set.
      * @return the MatchCondition object itself.
      */
@@ -117,7 +121,7 @@ public final class MatchCondition {
 
     /**
      * Get the negateCondition property: Describes if the result of this condition should be negated.
-     *
+     * 
      * @return the negateCondition value.
      */
     public Boolean negateCondition() {
@@ -126,7 +130,7 @@ public final class MatchCondition {
 
     /**
      * Set the negateCondition property: Describes if the result of this condition should be negated.
-     *
+     * 
      * @param negateCondition the negateCondition value to set.
      * @return the MatchCondition object itself.
      */
@@ -137,7 +141,7 @@ public final class MatchCondition {
 
     /**
      * Get the matchValue property: List of possible match values.
-     *
+     * 
      * @return the matchValue value.
      */
     public List<String> matchValue() {
@@ -146,7 +150,7 @@ public final class MatchCondition {
 
     /**
      * Set the matchValue property: List of possible match values.
-     *
+     * 
      * @param matchValue the matchValue value to set.
      * @return the MatchCondition object itself.
      */
@@ -157,7 +161,7 @@ public final class MatchCondition {
 
     /**
      * Get the transforms property: List of transforms.
-     *
+     * 
      * @return the transforms value.
      */
     public List<TransformType> transforms() {
@@ -166,7 +170,7 @@ public final class MatchCondition {
 
     /**
      * Set the transforms property: List of transforms.
-     *
+     * 
      * @param transforms the transforms value to set.
      * @return the MatchCondition object itself.
      */
@@ -177,24 +181,21 @@ public final class MatchCondition {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (matchVariable() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property matchVariable in model MatchCondition"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property matchVariable in model MatchCondition"));
         }
         if (operator() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property operator in model MatchCondition"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property operator in model MatchCondition"));
         }
         if (matchValue() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property matchValue in model MatchCondition"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property matchValue in model MatchCondition"));
         }
     }
 

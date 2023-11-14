@@ -7,18 +7,20 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCircuitsRoutesTableListResultInner;
 import java.util.List;
 
-/** An immutable client-side representation of ExpressRouteCircuitsRoutesTableListResult. */
+/**
+ * An immutable client-side representation of ExpressRouteCircuitsRoutesTableListResult.
+ */
 public interface ExpressRouteCircuitsRoutesTableListResult {
     /**
      * Gets the value property: The list of routes table.
-     *
+     * 
      * @return the value value.
      */
     List<ExpressRouteCircuitRoutesTable> value();
 
     /**
      * Gets the nextLink property: The URL to get the next set of results.
-     *
+     * 
      * @return the nextLink value.
      */
     String nextLink();
@@ -26,7 +28,7 @@ public interface ExpressRouteCircuitsRoutesTableListResult {
     /**
      * Gets the inner
      * com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCircuitsRoutesTableListResultInner object.
-     *
+     * 
      * @return the inner object.
      */
     ExpressRouteCircuitsRoutesTableListResultInner innerModel();

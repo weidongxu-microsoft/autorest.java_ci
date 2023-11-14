@@ -9,7 +9,9 @@ import com.azure.resourcemanager.mediaservices.generated.models.StreamingLocator
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Class of response for listContentKeys action. */
+/**
+ * Class of response for listContentKeys action.
+ */
 @Fluent
 public final class ListContentKeysResponseInner {
     /*
@@ -18,13 +20,15 @@ public final class ListContentKeysResponseInner {
     @JsonProperty(value = "contentKeys")
     private List<StreamingLocatorContentKey> contentKeys;
 
-    /** Creates an instance of ListContentKeysResponseInner class. */
+    /**
+     * Creates an instance of ListContentKeysResponseInner class.
+     */
     public ListContentKeysResponseInner() {
     }
 
     /**
      * Get the contentKeys property: ContentKeys used by current Streaming Locator.
-     *
+     * 
      * @return the contentKeys value.
      */
     public List<StreamingLocatorContentKey> contentKeys() {
@@ -33,7 +37,7 @@ public final class ListContentKeysResponseInner {
 
     /**
      * Set the contentKeys property: ContentKeys used by current Streaming Locator.
-     *
+     * 
      * @param contentKeys the contentKeys value to set.
      * @return the ListContentKeysResponseInner object itself.
      */
@@ -44,7 +48,7 @@ public final class ListContentKeysResponseInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

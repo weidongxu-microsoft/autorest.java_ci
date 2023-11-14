@@ -15,8 +15,7 @@ public final class BackendAddressInboundNatRulePortMappingsImpl implements Backe
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    BackendAddressInboundNatRulePortMappingsImpl(
-        BackendAddressInboundNatRulePortMappingsInner innerObject,
+    BackendAddressInboundNatRulePortMappingsImpl(BackendAddressInboundNatRulePortMappingsInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

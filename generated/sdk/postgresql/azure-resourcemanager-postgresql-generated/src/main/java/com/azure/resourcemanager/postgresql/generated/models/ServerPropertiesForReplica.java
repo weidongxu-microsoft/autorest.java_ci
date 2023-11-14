@@ -10,7 +10,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** The properties to create a new replica. */
+/**
+ * The properties to create a new replica.
+ */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "createMode")
 @JsonTypeName("Replica")
 @Fluent
@@ -21,13 +23,15 @@ public final class ServerPropertiesForReplica extends ServerPropertiesForCreate 
     @JsonProperty(value = "sourceServerId", required = true)
     private String sourceServerId;
 
-    /** Creates an instance of ServerPropertiesForReplica class. */
+    /**
+     * Creates an instance of ServerPropertiesForReplica class.
+     */
     public ServerPropertiesForReplica() {
     }
 
     /**
      * Get the sourceServerId property: The master server id to create replica from.
-     *
+     * 
      * @return the sourceServerId value.
      */
     public String sourceServerId() {
@@ -36,7 +40,7 @@ public final class ServerPropertiesForReplica extends ServerPropertiesForCreate 
 
     /**
      * Set the sourceServerId property: The master server id to create replica from.
-     *
+     * 
      * @param sourceServerId the sourceServerId value to set.
      * @return the ServerPropertiesForReplica object itself.
      */
@@ -45,42 +49,54 @@ public final class ServerPropertiesForReplica extends ServerPropertiesForCreate 
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ServerPropertiesForReplica withVersion(ServerVersion version) {
         super.withVersion(version);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ServerPropertiesForReplica withSslEnforcement(SslEnforcementEnum sslEnforcement) {
         super.withSslEnforcement(sslEnforcement);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ServerPropertiesForReplica withMinimalTlsVersion(MinimalTlsVersionEnum minimalTlsVersion) {
         super.withMinimalTlsVersion(minimalTlsVersion);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ServerPropertiesForReplica withInfrastructureEncryption(InfrastructureEncryption infrastructureEncryption) {
         super.withInfrastructureEncryption(infrastructureEncryption);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ServerPropertiesForReplica withPublicNetworkAccess(PublicNetworkAccessEnum publicNetworkAccess) {
         super.withPublicNetworkAccess(publicNetworkAccess);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ServerPropertiesForReplica withStorageProfile(StorageProfile storageProfile) {
         super.withStorageProfile(storageProfile);
@@ -89,17 +105,15 @@ public final class ServerPropertiesForReplica extends ServerPropertiesForCreate 
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override
     public void validate() {
         super.validate();
         if (sourceServerId() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property sourceServerId in model ServerPropertiesForReplica"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property sourceServerId in model ServerPropertiesForReplica"));
         }
     }
 

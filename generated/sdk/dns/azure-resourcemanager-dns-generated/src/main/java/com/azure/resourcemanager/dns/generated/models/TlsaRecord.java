@@ -39,14 +39,16 @@ public final class TlsaRecord {
     @JsonProperty(value = "certAssociationData")
     private String certAssociationData;
 
-    /** Creates an instance of TlsaRecord class. */
+    /**
+     * Creates an instance of TlsaRecord class.
+     */
     public TlsaRecord() {
     }
 
     /**
      * Get the usage property: The usage specifies the provided association that will be used to match the certificate
      * presented in the TLS handshake.
-     *
+     * 
      * @return the usage value.
      */
     public Integer usage() {
@@ -56,7 +58,7 @@ public final class TlsaRecord {
     /**
      * Set the usage property: The usage specifies the provided association that will be used to match the certificate
      * presented in the TLS handshake.
-     *
+     * 
      * @param usage the usage value to set.
      * @return the TlsaRecord object itself.
      */
@@ -68,7 +70,7 @@ public final class TlsaRecord {
     /**
      * Get the selector property: The selector specifies which part of the TLS certificate presented by the server will
      * be matched against the association data.
-     *
+     * 
      * @return the selector value.
      */
     public Integer selector() {
@@ -78,7 +80,7 @@ public final class TlsaRecord {
     /**
      * Set the selector property: The selector specifies which part of the TLS certificate presented by the server will
      * be matched against the association data.
-     *
+     * 
      * @param selector the selector value to set.
      * @return the TlsaRecord object itself.
      */
@@ -89,7 +91,7 @@ public final class TlsaRecord {
 
     /**
      * Get the matchingType property: The matching type specifies how the certificate association is presented.
-     *
+     * 
      * @return the matchingType value.
      */
     public Integer matchingType() {
@@ -98,7 +100,7 @@ public final class TlsaRecord {
 
     /**
      * Set the matchingType property: The matching type specifies how the certificate association is presented.
-     *
+     * 
      * @param matchingType the matchingType value to set.
      * @return the TlsaRecord object itself.
      */
@@ -109,7 +111,7 @@ public final class TlsaRecord {
 
     /**
      * Get the certAssociationData property: This specifies the certificate association data to be matched.
-     *
+     * 
      * @return the certAssociationData value.
      */
     public String certAssociationData() {
@@ -118,7 +120,7 @@ public final class TlsaRecord {
 
     /**
      * Set the certAssociationData property: This specifies the certificate association data to be matched.
-     *
+     * 
      * @param certAssociationData the certAssociationData value to set.
      * @return the TlsaRecord object itself.
      */
@@ -129,7 +131,7 @@ public final class TlsaRecord {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

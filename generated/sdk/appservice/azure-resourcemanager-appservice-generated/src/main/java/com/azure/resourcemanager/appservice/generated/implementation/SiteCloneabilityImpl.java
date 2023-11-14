@@ -16,8 +16,7 @@ public final class SiteCloneabilityImpl implements SiteCloneability {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    SiteCloneabilityImpl(
-        SiteCloneabilityInner innerObject,
+    SiteCloneabilityImpl(SiteCloneabilityInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

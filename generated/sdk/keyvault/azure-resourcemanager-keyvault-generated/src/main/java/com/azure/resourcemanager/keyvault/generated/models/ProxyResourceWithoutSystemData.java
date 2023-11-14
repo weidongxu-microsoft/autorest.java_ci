@@ -12,8 +12,8 @@ import java.util.Map;
 
 /**
  * Resource
- *
- * <p>Common fields that are returned in the response for all Azure Resource Manager resources.
+ * 
+ * Common fields that are returned in the response for all Azure Resource Manager resources.
  */
 @Fluent
 public class ProxyResourceWithoutSystemData extends ProxyResource {
@@ -24,13 +24,15 @@ public class ProxyResourceWithoutSystemData extends ProxyResource {
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> tags;
 
-    /** Creates an instance of ProxyResourceWithoutSystemData class. */
+    /**
+     * Creates an instance of ProxyResourceWithoutSystemData class.
+     */
     public ProxyResourceWithoutSystemData() {
     }
 
     /**
      * Get the tags property: Resource tags.
-     *
+     * 
      * @return the tags value.
      */
     public Map<String, String> tags() {
@@ -39,7 +41,7 @@ public class ProxyResourceWithoutSystemData extends ProxyResource {
 
     /**
      * Set the tags property: Resource tags.
-     *
+     * 
      * @param tags the tags value to set.
      * @return the ProxyResourceWithoutSystemData object itself.
      */
@@ -50,7 +52,7 @@ public class ProxyResourceWithoutSystemData extends ProxyResource {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

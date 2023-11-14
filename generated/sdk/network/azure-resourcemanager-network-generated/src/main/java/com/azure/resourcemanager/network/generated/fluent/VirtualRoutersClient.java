@@ -13,16 +13,18 @@ import com.azure.core.util.Context;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualRouterInner;
 
-/** An instance of this class provides access to all the operations defined in VirtualRoutersClient. */
+/**
+ * An instance of this class provides access to all the operations defined in VirtualRoutersClient.
+ */
 public interface VirtualRoutersClient {
     /**
      * Deletes the specified Virtual Router.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualRouterName The name of the Virtual Router.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
@@ -31,13 +33,13 @@ public interface VirtualRoutersClient {
 
     /**
      * Deletes the specified Virtual Router.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualRouterName The name of the Virtual Router.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
@@ -46,12 +48,12 @@ public interface VirtualRoutersClient {
 
     /**
      * Deletes the specified Virtual Router.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualRouterName The name of the Virtual Router.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
@@ -59,13 +61,13 @@ public interface VirtualRoutersClient {
 
     /**
      * Deletes the specified Virtual Router.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualRouterName The name of the Virtual Router.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
@@ -73,29 +75,29 @@ public interface VirtualRoutersClient {
 
     /**
      * Gets the specified Virtual Router.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualRouterName The name of the Virtual Router.
      * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified Virtual Router along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<VirtualRouterInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String virtualRouterName, String expand, Context context);
+    Response<VirtualRouterInner> getByResourceGroupWithResponse(String resourceGroupName, String virtualRouterName,
+        String expand, Context context);
 
     /**
      * Gets the specified Virtual Router.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualRouterName The name of the Virtual Router.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified Virtual Router.
      */
@@ -104,77 +106,77 @@ public interface VirtualRoutersClient {
 
     /**
      * Creates or updates the specified Virtual Router.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualRouterName The name of the Virtual Router.
      * @param parameters Parameters supplied to the create or update Virtual Router.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of virtualRouter Resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<VirtualRouterInner>, VirtualRouterInner> beginCreateOrUpdate(
-        String resourceGroupName, String virtualRouterName, VirtualRouterInner parameters);
+    SyncPoller<PollResult<VirtualRouterInner>, VirtualRouterInner> beginCreateOrUpdate(String resourceGroupName,
+        String virtualRouterName, VirtualRouterInner parameters);
 
     /**
      * Creates or updates the specified Virtual Router.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualRouterName The name of the Virtual Router.
      * @param parameters Parameters supplied to the create or update Virtual Router.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of virtualRouter Resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<VirtualRouterInner>, VirtualRouterInner> beginCreateOrUpdate(
-        String resourceGroupName, String virtualRouterName, VirtualRouterInner parameters, Context context);
+    SyncPoller<PollResult<VirtualRouterInner>, VirtualRouterInner> beginCreateOrUpdate(String resourceGroupName,
+        String virtualRouterName, VirtualRouterInner parameters, Context context);
 
     /**
      * Creates or updates the specified Virtual Router.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualRouterName The name of the Virtual Router.
      * @param parameters Parameters supplied to the create or update Virtual Router.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return virtualRouter Resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    VirtualRouterInner createOrUpdate(
-        String resourceGroupName, String virtualRouterName, VirtualRouterInner parameters);
+    VirtualRouterInner createOrUpdate(String resourceGroupName, String virtualRouterName,
+        VirtualRouterInner parameters);
 
     /**
      * Creates or updates the specified Virtual Router.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualRouterName The name of the Virtual Router.
      * @param parameters Parameters supplied to the create or update Virtual Router.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return virtualRouter Resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    VirtualRouterInner createOrUpdate(
-        String resourceGroupName, String virtualRouterName, VirtualRouterInner parameters, Context context);
+    VirtualRouterInner createOrUpdate(String resourceGroupName, String virtualRouterName, VirtualRouterInner parameters,
+        Context context);
 
     /**
      * Lists all Virtual Routers in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return response for ListVirtualRouters API service call as paginated response with {@link PagedIterable}.
      */
@@ -183,12 +185,12 @@ public interface VirtualRoutersClient {
 
     /**
      * Lists all Virtual Routers in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return response for ListVirtualRouters API service call as paginated response with {@link PagedIterable}.
      */
@@ -197,9 +199,9 @@ public interface VirtualRoutersClient {
 
     /**
      * Gets all the Virtual Routers in a subscription.
-     *
+     * 
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all the Virtual Routers in a subscription as paginated response with {@link PagedIterable}.
      */
@@ -208,11 +210,11 @@ public interface VirtualRoutersClient {
 
     /**
      * Gets all the Virtual Routers in a subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all the Virtual Routers in a subscription as paginated response with {@link PagedIterable}.
      */

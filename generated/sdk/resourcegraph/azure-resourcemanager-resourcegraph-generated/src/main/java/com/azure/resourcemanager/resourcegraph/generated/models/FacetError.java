@@ -11,7 +11,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.List;
 
-/** A facet whose execution resulted in an error. */
+/**
+ * A facet whose execution resulted in an error.
+ */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "resultType")
 @JsonTypeName("FacetError")
 @Fluent
@@ -22,13 +24,15 @@ public final class FacetError extends Facet {
     @JsonProperty(value = "errors", required = true)
     private List<ErrorDetails> errors;
 
-    /** Creates an instance of FacetError class. */
+    /**
+     * Creates an instance of FacetError class.
+     */
     public FacetError() {
     }
 
     /**
      * Get the errors property: An array containing detected facet errors with details.
-     *
+     * 
      * @return the errors value.
      */
     public List<ErrorDetails> errors() {
@@ -37,7 +41,7 @@ public final class FacetError extends Facet {
 
     /**
      * Set the errors property: An array containing detected facet errors with details.
-     *
+     * 
      * @param errors the errors value to set.
      * @return the FacetError object itself.
      */
@@ -46,7 +50,9 @@ public final class FacetError extends Facet {
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public FacetError withExpression(String expression) {
         super.withExpression(expression);
@@ -55,16 +61,15 @@ public final class FacetError extends Facet {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override
     public void validate() {
         super.validate();
         if (errors() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property errors in model FacetError"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property errors in model FacetError"));
         } else {
             errors().forEach(e -> e.validate());
         }

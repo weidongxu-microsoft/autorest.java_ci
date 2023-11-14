@@ -35,17 +35,23 @@ import com.azure.resourcemanager.keyvault.generated.models.SecretListResult;
 import com.azure.resourcemanager.keyvault.generated.models.SecretPatchParameters;
 import reactor.core.publisher.Mono;
 
-/** An instance of this class provides access to all the operations defined in SecretsClient. */
+/**
+ * An instance of this class provides access to all the operations defined in SecretsClient.
+ */
 public final class SecretsClientImpl implements SecretsClient {
-    /** The proxy service used to perform REST calls. */
+    /**
+     * The proxy service used to perform REST calls.
+     */
     private final SecretsService service;
 
-    /** The service client containing this operation class. */
+    /**
+     * The service client containing this operation class.
+     */
     private final KeyVaultManagementClientImpl client;
 
     /**
      * Initializes an instance of SecretsClientImpl.
-     *
+     * 
      * @param client the instance of the service client containing this operation class.
      */
     SecretsClientImpl(KeyVaultManagementClientImpl client) {
@@ -60,102 +66,75 @@ public final class SecretsClientImpl implements SecretsClient {
     @Host("{$host}")
     @ServiceInterface(name = "KeyVaultManagementCl")
     public interface SecretsService {
-        @Headers({"Content-Type: application/json"})
-        @Put(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/vaults/{vaultName}/secrets/{secretName}")
-        @ExpectedResponses({200, 201})
+        @Headers({ "Content-Type: application/json" })
+        @Put("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/vaults/{vaultName}/secrets/{secretName}")
+        @ExpectedResponses({ 200, 201 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<SecretInner>> createOrUpdate(
-            @HostParam("$host") String endpoint,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("vaultName") String vaultName,
-            @PathParam("secretName") String secretName,
-            @QueryParam("api-version") String apiVersion,
+        Mono<Response<SecretInner>> createOrUpdate(@HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName, @PathParam("vaultName") String vaultName,
+            @PathParam("secretName") String secretName, @QueryParam("api-version") String apiVersion,
             @PathParam("subscriptionId") String subscriptionId,
             @BodyParam("application/json") SecretCreateOrUpdateParameters parameters,
-            @HeaderParam("Accept") String accept,
-            Context context);
+            @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Patch(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/vaults/{vaultName}/secrets/{secretName}")
-        @ExpectedResponses({200, 201})
+        @Headers({ "Content-Type: application/json" })
+        @Patch("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/vaults/{vaultName}/secrets/{secretName}")
+        @ExpectedResponses({ 200, 201 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<SecretInner>> update(
-            @HostParam("$host") String endpoint,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("vaultName") String vaultName,
-            @PathParam("secretName") String secretName,
-            @QueryParam("api-version") String apiVersion,
+        Mono<Response<SecretInner>> update(@HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName, @PathParam("vaultName") String vaultName,
+            @PathParam("secretName") String secretName, @QueryParam("api-version") String apiVersion,
             @PathParam("subscriptionId") String subscriptionId,
-            @BodyParam("application/json") SecretPatchParameters parameters,
-            @HeaderParam("Accept") String accept,
+            @BodyParam("application/json") SecretPatchParameters parameters, @HeaderParam("Accept") String accept,
             Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/vaults/{vaultName}/secrets/{secretName}")
-        @ExpectedResponses({200})
+        @Headers({ "Content-Type: application/json" })
+        @Get("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/vaults/{vaultName}/secrets/{secretName}")
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<SecretInner>> get(
-            @HostParam("$host") String endpoint,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("vaultName") String vaultName,
-            @PathParam("secretName") String secretName,
-            @QueryParam("api-version") String apiVersion,
-            @PathParam("subscriptionId") String subscriptionId,
-            @HeaderParam("Accept") String accept,
-            Context context);
+        Mono<Response<SecretInner>> get(@HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName, @PathParam("vaultName") String vaultName,
+            @PathParam("secretName") String secretName, @QueryParam("api-version") String apiVersion,
+            @PathParam("subscriptionId") String subscriptionId, @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
-        @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/vaults/{vaultName}/secrets")
-        @ExpectedResponses({200})
+        @Headers({ "Content-Type: application/json" })
+        @Get("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/vaults/{vaultName}/secrets")
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<SecretListResult>> list(
-            @HostParam("$host") String endpoint,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("vaultName") String vaultName,
-            @QueryParam("$top") Integer top,
-            @QueryParam("api-version") String apiVersion,
-            @PathParam("subscriptionId") String subscriptionId,
-            @HeaderParam("Accept") String accept,
-            Context context);
+        Mono<Response<SecretListResult>> list(@HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName, @PathParam("vaultName") String vaultName,
+            @QueryParam("$top") Integer top, @QueryParam("api-version") String apiVersion,
+            @PathParam("subscriptionId") String subscriptionId, @HeaderParam("Accept") String accept, Context context);
 
-        @Headers({"Content-Type: application/json"})
+        @Headers({ "Content-Type: application/json" })
         @Get("{nextLink}")
-        @ExpectedResponses({200})
+        @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<SecretListResult>> listNext(
-            @PathParam(value = "nextLink", encoded = true) String nextLink,
-            @HostParam("$host") String endpoint,
-            @HeaderParam("Accept") String accept,
-            Context context);
+        Mono<Response<SecretListResult>> listNext(@PathParam(value = "nextLink", encoded = true) String nextLink,
+            @HostParam("$host") String endpoint, @HeaderParam("Accept") String accept, Context context);
     }
 
     /**
      * Create or update a secret in a key vault in the specified subscription. NOTE: This API is intended for internal
      * use in ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
-     *
+     * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName Name of the vault.
      * @param secretName Name of the secret. The value you provide may be copied globally for the purpose of running the
-     *     service. The value provided should not include personally identifiable or sensitive information.
+     * service. The value provided should not include personally identifiable or sensitive information.
      * @param parameters Parameters to create or update the secret.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details along with {@link Response} on successful completion of {@link
-     *     Mono}.
+     * @return resource information with extended details along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<SecretInner>> createOrUpdateWithResponseAsync(
-        String resourceGroupName, String vaultName, String secretName, SecretCreateOrUpdateParameters parameters) {
+    private Mono<Response<SecretInner>> createOrUpdateWithResponseAsync(String resourceGroupName, String vaultName,
+        String secretName, SecretCreateOrUpdateParameters parameters) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -168,10 +147,8 @@ public final class SecretsClientImpl implements SecretsClient {
             return Mono.error(new IllegalArgumentException("Parameter secretName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (parameters == null) {
             return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
@@ -180,50 +157,33 @@ public final class SecretsClientImpl implements SecretsClient {
         }
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .createOrUpdate(
-                            this.client.getEndpoint(),
-                            resourceGroupName,
-                            vaultName,
-                            secretName,
-                            this.client.getApiVersion(),
-                            this.client.getSubscriptionId(),
-                            parameters,
-                            accept,
-                            context))
+            .withContext(context -> service.createOrUpdate(this.client.getEndpoint(), resourceGroupName, vaultName,
+                secretName, this.client.getApiVersion(), this.client.getSubscriptionId(), parameters, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Create or update a secret in a key vault in the specified subscription. NOTE: This API is intended for internal
      * use in ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
-     *
+     * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName Name of the vault.
      * @param secretName Name of the secret. The value you provide may be copied globally for the purpose of running the
-     *     service. The value provided should not include personally identifiable or sensitive information.
+     * service. The value provided should not include personally identifiable or sensitive information.
      * @param parameters Parameters to create or update the secret.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details along with {@link Response} on successful completion of {@link
-     *     Mono}.
+     * @return resource information with extended details along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<SecretInner>> createOrUpdateWithResponseAsync(
-        String resourceGroupName,
-        String vaultName,
-        String secretName,
-        SecretCreateOrUpdateParameters parameters,
-        Context context) {
+    private Mono<Response<SecretInner>> createOrUpdateWithResponseAsync(String resourceGroupName, String vaultName,
+        String secretName, SecretCreateOrUpdateParameters parameters, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -236,10 +196,8 @@ public final class SecretsClientImpl implements SecretsClient {
             return Mono.error(new IllegalArgumentException("Parameter secretName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (parameters == null) {
             return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
@@ -248,27 +206,18 @@ public final class SecretsClientImpl implements SecretsClient {
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .createOrUpdate(
-                this.client.getEndpoint(),
-                resourceGroupName,
-                vaultName,
-                secretName,
-                this.client.getApiVersion(),
-                this.client.getSubscriptionId(),
-                parameters,
-                accept,
-                context);
+        return service.createOrUpdate(this.client.getEndpoint(), resourceGroupName, vaultName, secretName,
+            this.client.getApiVersion(), this.client.getSubscriptionId(), parameters, accept, context);
     }
 
     /**
      * Create or update a secret in a key vault in the specified subscription. NOTE: This API is intended for internal
      * use in ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
-     *
+     * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName Name of the vault.
      * @param secretName Name of the secret. The value you provide may be copied globally for the purpose of running the
-     *     service. The value provided should not include personally identifiable or sensitive information.
+     * service. The value provided should not include personally identifiable or sensitive information.
      * @param parameters Parameters to create or update the secret.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -276,8 +225,8 @@ public final class SecretsClientImpl implements SecretsClient {
      * @return resource information with extended details on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<SecretInner> createOrUpdateAsync(
-        String resourceGroupName, String vaultName, String secretName, SecretCreateOrUpdateParameters parameters) {
+    private Mono<SecretInner> createOrUpdateAsync(String resourceGroupName, String vaultName, String secretName,
+        SecretCreateOrUpdateParameters parameters) {
         return createOrUpdateWithResponseAsync(resourceGroupName, vaultName, secretName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
@@ -285,11 +234,11 @@ public final class SecretsClientImpl implements SecretsClient {
     /**
      * Create or update a secret in a key vault in the specified subscription. NOTE: This API is intended for internal
      * use in ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
-     *
+     * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName Name of the vault.
      * @param secretName Name of the secret. The value you provide may be copied globally for the purpose of running the
-     *     service. The value provided should not include personally identifiable or sensitive information.
+     * service. The value provided should not include personally identifiable or sensitive information.
      * @param parameters Parameters to create or update the secret.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -298,23 +247,19 @@ public final class SecretsClientImpl implements SecretsClient {
      * @return resource information with extended details along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<SecretInner> createOrUpdateWithResponse(
-        String resourceGroupName,
-        String vaultName,
-        String secretName,
-        SecretCreateOrUpdateParameters parameters,
-        Context context) {
+    public Response<SecretInner> createOrUpdateWithResponse(String resourceGroupName, String vaultName,
+        String secretName, SecretCreateOrUpdateParameters parameters, Context context) {
         return createOrUpdateWithResponseAsync(resourceGroupName, vaultName, secretName, parameters, context).block();
     }
 
     /**
      * Create or update a secret in a key vault in the specified subscription. NOTE: This API is intended for internal
      * use in ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
-     *
+     * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName Name of the vault.
      * @param secretName Name of the secret. The value you provide may be copied globally for the purpose of running the
-     *     service. The value provided should not include personally identifiable or sensitive information.
+     * service. The value provided should not include personally identifiable or sensitive information.
      * @param parameters Parameters to create or update the secret.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -322,8 +267,8 @@ public final class SecretsClientImpl implements SecretsClient {
      * @return resource information with extended details.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public SecretInner createOrUpdate(
-        String resourceGroupName, String vaultName, String secretName, SecretCreateOrUpdateParameters parameters) {
+    public SecretInner createOrUpdate(String resourceGroupName, String vaultName, String secretName,
+        SecretCreateOrUpdateParameters parameters) {
         return createOrUpdateWithResponse(resourceGroupName, vaultName, secretName, parameters, Context.NONE)
             .getValue();
     }
@@ -331,7 +276,7 @@ public final class SecretsClientImpl implements SecretsClient {
     /**
      * Update a secret in the specified subscription. NOTE: This API is intended for internal use in ARM deployments.
      * Users should use the data-plane REST service for interaction with vault secrets.
-     *
+     * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName Name of the vault.
      * @param secretName Name of the secret.
@@ -339,17 +284,15 @@ public final class SecretsClientImpl implements SecretsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details along with {@link Response} on successful completion of {@link
-     *     Mono}.
+     * @return resource information with extended details along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<SecretInner>> updateWithResponseAsync(
-        String resourceGroupName, String vaultName, String secretName, SecretPatchParameters parameters) {
+    private Mono<Response<SecretInner>> updateWithResponseAsync(String resourceGroupName, String vaultName,
+        String secretName, SecretPatchParameters parameters) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -362,10 +305,8 @@ public final class SecretsClientImpl implements SecretsClient {
             return Mono.error(new IllegalArgumentException("Parameter secretName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (parameters == null) {
             return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
@@ -374,26 +315,15 @@ public final class SecretsClientImpl implements SecretsClient {
         }
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .update(
-                            this.client.getEndpoint(),
-                            resourceGroupName,
-                            vaultName,
-                            secretName,
-                            this.client.getApiVersion(),
-                            this.client.getSubscriptionId(),
-                            parameters,
-                            accept,
-                            context))
+            .withContext(context -> service.update(this.client.getEndpoint(), resourceGroupName, vaultName, secretName,
+                this.client.getApiVersion(), this.client.getSubscriptionId(), parameters, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Update a secret in the specified subscription. NOTE: This API is intended for internal use in ARM deployments.
      * Users should use the data-plane REST service for interaction with vault secrets.
-     *
+     * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName Name of the vault.
      * @param secretName Name of the secret.
@@ -402,21 +332,15 @@ public final class SecretsClientImpl implements SecretsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details along with {@link Response} on successful completion of {@link
-     *     Mono}.
+     * @return resource information with extended details along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<SecretInner>> updateWithResponseAsync(
-        String resourceGroupName,
-        String vaultName,
-        String secretName,
-        SecretPatchParameters parameters,
-        Context context) {
+    private Mono<Response<SecretInner>> updateWithResponseAsync(String resourceGroupName, String vaultName,
+        String secretName, SecretPatchParameters parameters, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -429,10 +353,8 @@ public final class SecretsClientImpl implements SecretsClient {
             return Mono.error(new IllegalArgumentException("Parameter secretName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         if (parameters == null) {
             return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
@@ -441,23 +363,14 @@ public final class SecretsClientImpl implements SecretsClient {
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .update(
-                this.client.getEndpoint(),
-                resourceGroupName,
-                vaultName,
-                secretName,
-                this.client.getApiVersion(),
-                this.client.getSubscriptionId(),
-                parameters,
-                accept,
-                context);
+        return service.update(this.client.getEndpoint(), resourceGroupName, vaultName, secretName,
+            this.client.getApiVersion(), this.client.getSubscriptionId(), parameters, accept, context);
     }
 
     /**
      * Update a secret in the specified subscription. NOTE: This API is intended for internal use in ARM deployments.
      * Users should use the data-plane REST service for interaction with vault secrets.
-     *
+     * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName Name of the vault.
      * @param secretName Name of the secret.
@@ -468,8 +381,8 @@ public final class SecretsClientImpl implements SecretsClient {
      * @return resource information with extended details on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<SecretInner> updateAsync(
-        String resourceGroupName, String vaultName, String secretName, SecretPatchParameters parameters) {
+    private Mono<SecretInner> updateAsync(String resourceGroupName, String vaultName, String secretName,
+        SecretPatchParameters parameters) {
         return updateWithResponseAsync(resourceGroupName, vaultName, secretName, parameters)
             .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
@@ -477,7 +390,7 @@ public final class SecretsClientImpl implements SecretsClient {
     /**
      * Update a secret in the specified subscription. NOTE: This API is intended for internal use in ARM deployments.
      * Users should use the data-plane REST service for interaction with vault secrets.
-     *
+     * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName Name of the vault.
      * @param secretName Name of the secret.
@@ -489,19 +402,15 @@ public final class SecretsClientImpl implements SecretsClient {
      * @return resource information with extended details along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<SecretInner> updateWithResponse(
-        String resourceGroupName,
-        String vaultName,
-        String secretName,
-        SecretPatchParameters parameters,
-        Context context) {
+    public Response<SecretInner> updateWithResponse(String resourceGroupName, String vaultName, String secretName,
+        SecretPatchParameters parameters, Context context) {
         return updateWithResponseAsync(resourceGroupName, vaultName, secretName, parameters, context).block();
     }
 
     /**
      * Update a secret in the specified subscription. NOTE: This API is intended for internal use in ARM deployments.
      * Users should use the data-plane REST service for interaction with vault secrets.
-     *
+     * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName Name of the vault.
      * @param secretName Name of the secret.
@@ -512,15 +421,15 @@ public final class SecretsClientImpl implements SecretsClient {
      * @return resource information with extended details.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public SecretInner update(
-        String resourceGroupName, String vaultName, String secretName, SecretPatchParameters parameters) {
+    public SecretInner update(String resourceGroupName, String vaultName, String secretName,
+        SecretPatchParameters parameters) {
         return updateWithResponse(resourceGroupName, vaultName, secretName, parameters, Context.NONE).getValue();
     }
 
     /**
      * Gets the specified secret. NOTE: This API is intended for internal use in ARM deployments. Users should use the
      * data-plane REST service for interaction with vault secrets.
-     *
+     * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName The name of the vault.
      * @param secretName The name of the secret.
@@ -530,13 +439,11 @@ public final class SecretsClientImpl implements SecretsClient {
      * @return the specified secret along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<SecretInner>> getWithResponseAsync(
-        String resourceGroupName, String vaultName, String secretName) {
+    private Mono<Response<SecretInner>> getWithResponseAsync(String resourceGroupName, String vaultName,
+        String secretName) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -549,32 +456,20 @@ public final class SecretsClientImpl implements SecretsClient {
             return Mono.error(new IllegalArgumentException("Parameter secretName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .get(
-                            this.client.getEndpoint(),
-                            resourceGroupName,
-                            vaultName,
-                            secretName,
-                            this.client.getApiVersion(),
-                            this.client.getSubscriptionId(),
-                            accept,
-                            context))
+            .withContext(context -> service.get(this.client.getEndpoint(), resourceGroupName, vaultName, secretName,
+                this.client.getApiVersion(), this.client.getSubscriptionId(), accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Gets the specified secret. NOTE: This API is intended for internal use in ARM deployments. Users should use the
      * data-plane REST service for interaction with vault secrets.
-     *
+     * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName The name of the vault.
      * @param secretName The name of the secret.
@@ -585,13 +480,11 @@ public final class SecretsClientImpl implements SecretsClient {
      * @return the specified secret along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<SecretInner>> getWithResponseAsync(
-        String resourceGroupName, String vaultName, String secretName, Context context) {
+    private Mono<Response<SecretInner>> getWithResponseAsync(String resourceGroupName, String vaultName,
+        String secretName, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -604,29 +497,19 @@ public final class SecretsClientImpl implements SecretsClient {
             return Mono.error(new IllegalArgumentException("Parameter secretName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .get(
-                this.client.getEndpoint(),
-                resourceGroupName,
-                vaultName,
-                secretName,
-                this.client.getApiVersion(),
-                this.client.getSubscriptionId(),
-                accept,
-                context);
+        return service.get(this.client.getEndpoint(), resourceGroupName, vaultName, secretName,
+            this.client.getApiVersion(), this.client.getSubscriptionId(), accept, context);
     }
 
     /**
      * Gets the specified secret. NOTE: This API is intended for internal use in ARM deployments. Users should use the
      * data-plane REST service for interaction with vault secrets.
-     *
+     * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName The name of the vault.
      * @param secretName The name of the secret.
@@ -644,7 +527,7 @@ public final class SecretsClientImpl implements SecretsClient {
     /**
      * Gets the specified secret. NOTE: This API is intended for internal use in ARM deployments. Users should use the
      * data-plane REST service for interaction with vault secrets.
-     *
+     * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName The name of the vault.
      * @param secretName The name of the secret.
@@ -655,15 +538,15 @@ public final class SecretsClientImpl implements SecretsClient {
      * @return the specified secret along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<SecretInner> getWithResponse(
-        String resourceGroupName, String vaultName, String secretName, Context context) {
+    public Response<SecretInner> getWithResponse(String resourceGroupName, String vaultName, String secretName,
+        Context context) {
         return getWithResponseAsync(resourceGroupName, vaultName, secretName, context).block();
     }
 
     /**
      * Gets the specified secret. NOTE: This API is intended for internal use in ARM deployments. Users should use the
      * data-plane REST service for interaction with vault secrets.
-     *
+     * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName The name of the vault.
      * @param secretName The name of the secret.
@@ -680,7 +563,7 @@ public final class SecretsClientImpl implements SecretsClient {
     /**
      * The List operation gets information about the secrets in a vault. NOTE: This API is intended for internal use in
      * ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
-     *
+     * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName The name of the vault.
      * @param top Maximum number of results to return.
@@ -690,13 +573,11 @@ public final class SecretsClientImpl implements SecretsClient {
      * @return list of secrets along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<SecretInner>> listSinglePageAsync(
-        String resourceGroupName, String vaultName, Integer top) {
+    private Mono<PagedResponse<SecretInner>> listSinglePageAsync(String resourceGroupName, String vaultName,
+        Integer top) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -706,41 +587,22 @@ public final class SecretsClientImpl implements SecretsClient {
             return Mono.error(new IllegalArgumentException("Parameter vaultName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .list(
-                            this.client.getEndpoint(),
-                            resourceGroupName,
-                            vaultName,
-                            top,
-                            this.client.getApiVersion(),
-                            this.client.getSubscriptionId(),
-                            accept,
-                            context))
-            .<PagedResponse<SecretInner>>map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null))
+            .withContext(context -> service.list(this.client.getEndpoint(), resourceGroupName, vaultName, top,
+                this.client.getApiVersion(), this.client.getSubscriptionId(), accept, context))
+            .<PagedResponse<SecretInner>>map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(),
+                res.getHeaders(), res.getValue().value(), res.getValue().nextLink(), null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * The List operation gets information about the secrets in a vault. NOTE: This API is intended for internal use in
      * ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
-     *
+     * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName The name of the vault.
      * @param top Maximum number of results to return.
@@ -751,13 +613,11 @@ public final class SecretsClientImpl implements SecretsClient {
      * @return list of secrets along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<SecretInner>> listSinglePageAsync(
-        String resourceGroupName, String vaultName, Integer top, Context context) {
+    private Mono<PagedResponse<SecretInner>> listSinglePageAsync(String resourceGroupName, String vaultName,
+        Integer top, Context context) {
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         if (resourceGroupName == null) {
             return Mono
@@ -767,38 +627,22 @@ public final class SecretsClientImpl implements SecretsClient {
             return Mono.error(new IllegalArgumentException("Parameter vaultName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .list(
-                this.client.getEndpoint(),
-                resourceGroupName,
-                vaultName,
-                top,
-                this.client.getApiVersion(),
-                this.client.getSubscriptionId(),
-                accept,
-                context)
-            .map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null));
+            .list(this.client.getEndpoint(), resourceGroupName, vaultName, top, this.client.getApiVersion(),
+                this.client.getSubscriptionId(), accept, context)
+            .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
+                res.getValue().value(), res.getValue().nextLink(), null));
     }
 
     /**
      * The List operation gets information about the secrets in a vault. NOTE: This API is intended for internal use in
      * ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
-     *
+     * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName The name of the vault.
      * @param top Maximum number of results to return.
@@ -809,15 +653,14 @@ public final class SecretsClientImpl implements SecretsClient {
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<SecretInner> listAsync(String resourceGroupName, String vaultName, Integer top) {
-        return new PagedFlux<>(
-            () -> listSinglePageAsync(resourceGroupName, vaultName, top),
+        return new PagedFlux<>(() -> listSinglePageAsync(resourceGroupName, vaultName, top),
             nextLink -> listNextSinglePageAsync(nextLink));
     }
 
     /**
      * The List operation gets information about the secrets in a vault. NOTE: This API is intended for internal use in
      * ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
-     *
+     * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName The name of the vault.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -828,15 +671,14 @@ public final class SecretsClientImpl implements SecretsClient {
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<SecretInner> listAsync(String resourceGroupName, String vaultName) {
         final Integer top = null;
-        return new PagedFlux<>(
-            () -> listSinglePageAsync(resourceGroupName, vaultName, top),
+        return new PagedFlux<>(() -> listSinglePageAsync(resourceGroupName, vaultName, top),
             nextLink -> listNextSinglePageAsync(nextLink));
     }
 
     /**
      * The List operation gets information about the secrets in a vault. NOTE: This API is intended for internal use in
      * ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
-     *
+     * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName The name of the vault.
      * @param top Maximum number of results to return.
@@ -848,15 +690,14 @@ public final class SecretsClientImpl implements SecretsClient {
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<SecretInner> listAsync(String resourceGroupName, String vaultName, Integer top, Context context) {
-        return new PagedFlux<>(
-            () -> listSinglePageAsync(resourceGroupName, vaultName, top, context),
+        return new PagedFlux<>(() -> listSinglePageAsync(resourceGroupName, vaultName, top, context),
             nextLink -> listNextSinglePageAsync(nextLink, context));
     }
 
     /**
      * The List operation gets information about the secrets in a vault. NOTE: This API is intended for internal use in
      * ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
-     *
+     * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName The name of the vault.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -873,7 +714,7 @@ public final class SecretsClientImpl implements SecretsClient {
     /**
      * The List operation gets information about the secrets in a vault. NOTE: This API is intended for internal use in
      * ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
-     *
+     * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName The name of the vault.
      * @param top Maximum number of results to return.
@@ -890,9 +731,10 @@ public final class SecretsClientImpl implements SecretsClient {
 
     /**
      * Get the next page of items.
-     *
+     * 
      * @param nextLink The URL to get the next list of items
-     *     <p>The nextLink parameter.
+     * 
+     * The nextLink parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -904,31 +746,22 @@ public final class SecretsClientImpl implements SecretsClient {
             return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
         }
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         final String accept = "application/json";
-        return FluxUtil
-            .withContext(context -> service.listNext(nextLink, this.client.getEndpoint(), accept, context))
-            .<PagedResponse<SecretInner>>map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null))
+        return FluxUtil.withContext(context -> service.listNext(nextLink, this.client.getEndpoint(), accept, context))
+            .<PagedResponse<SecretInner>>map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(),
+                res.getHeaders(), res.getValue().value(), res.getValue().nextLink(), null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
      * Get the next page of items.
-     *
+     * 
      * @param nextLink The URL to get the next list of items
-     *     <p>The nextLink parameter.
+     * 
+     * The nextLink parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -941,23 +774,13 @@ public final class SecretsClientImpl implements SecretsClient {
             return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
         }
         if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .listNext(nextLink, this.client.getEndpoint(), accept, context)
-            .map(
-                res ->
-                    new PagedResponseBase<>(
-                        res.getRequest(),
-                        res.getStatusCode(),
-                        res.getHeaders(),
-                        res.getValue().value(),
-                        res.getValue().nextLink(),
-                        null));
+        return service.listNext(nextLink, this.client.getEndpoint(), accept, context)
+            .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
+                res.getValue().value(), res.getValue().nextLink(), null));
     }
 }

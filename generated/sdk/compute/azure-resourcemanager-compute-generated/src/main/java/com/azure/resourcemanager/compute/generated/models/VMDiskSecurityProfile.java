@@ -7,7 +7,9 @@ package com.azure.resourcemanager.compute.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Specifies the security profile settings for the managed disk. **Note:** It can only be set for Confidential VMs. */
+/**
+ * Specifies the security profile settings for the managed disk. **Note:** It can only be set for Confidential VMs.
+ */
 @Fluent
 public final class VMDiskSecurityProfile {
     /*
@@ -25,7 +27,9 @@ public final class VMDiskSecurityProfile {
     @JsonProperty(value = "diskEncryptionSet")
     private DiskEncryptionSetParameters diskEncryptionSet;
 
-    /** Creates an instance of VMDiskSecurityProfile class. */
+    /**
+     * Creates an instance of VMDiskSecurityProfile class.
+     */
     public VMDiskSecurityProfile() {
     }
 
@@ -33,7 +37,7 @@ public final class VMDiskSecurityProfile {
      * Get the securityEncryptionType property: Specifies the EncryptionType of the managed disk. It is set to
      * DiskWithVMGuestState for encryption of the managed disk along with VMGuestState blob, and VMGuestStateOnly for
      * encryption of just the VMGuestState blob. **Note:** It can be set for only Confidential VMs.
-     *
+     * 
      * @return the securityEncryptionType value.
      */
     public SecurityEncryptionTypes securityEncryptionType() {
@@ -44,7 +48,7 @@ public final class VMDiskSecurityProfile {
      * Set the securityEncryptionType property: Specifies the EncryptionType of the managed disk. It is set to
      * DiskWithVMGuestState for encryption of the managed disk along with VMGuestState blob, and VMGuestStateOnly for
      * encryption of just the VMGuestState blob. **Note:** It can be set for only Confidential VMs.
-     *
+     * 
      * @param securityEncryptionType the securityEncryptionType value to set.
      * @return the VMDiskSecurityProfile object itself.
      */
@@ -56,7 +60,7 @@ public final class VMDiskSecurityProfile {
     /**
      * Get the diskEncryptionSet property: Specifies the customer managed disk encryption set resource id for the
      * managed disk that is used for Customer Managed Key encrypted ConfidentialVM OS Disk and VMGuest blob.
-     *
+     * 
      * @return the diskEncryptionSet value.
      */
     public DiskEncryptionSetParameters diskEncryptionSet() {
@@ -66,7 +70,7 @@ public final class VMDiskSecurityProfile {
     /**
      * Set the diskEncryptionSet property: Specifies the customer managed disk encryption set resource id for the
      * managed disk that is used for Customer Managed Key encrypted ConfidentialVM OS Disk and VMGuest blob.
-     *
+     * 
      * @param diskEncryptionSet the diskEncryptionSet value to set.
      * @return the VMDiskSecurityProfile object itself.
      */
@@ -77,7 +81,7 @@ public final class VMDiskSecurityProfile {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

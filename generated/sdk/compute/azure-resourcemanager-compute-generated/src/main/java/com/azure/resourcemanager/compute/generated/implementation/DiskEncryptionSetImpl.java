@@ -122,20 +122,14 @@ public final class DiskEncryptionSetImpl
     }
 
     public DiskEncryptionSet create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDiskEncryptionSets()
-                .createOrUpdate(resourceGroupName, diskEncryptionSetName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getDiskEncryptionSets().createOrUpdate(resourceGroupName,
+            diskEncryptionSetName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public DiskEncryptionSet create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDiskEncryptionSets()
-                .createOrUpdate(resourceGroupName, diskEncryptionSetName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getDiskEncryptionSets().createOrUpdate(resourceGroupName,
+            diskEncryptionSetName, this.innerModel(), context);
         return this;
     }
 
@@ -151,25 +145,19 @@ public final class DiskEncryptionSetImpl
     }
 
     public DiskEncryptionSet apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDiskEncryptionSets()
-                .update(resourceGroupName, diskEncryptionSetName, updateDiskEncryptionSet, Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getDiskEncryptionSets().update(resourceGroupName,
+            diskEncryptionSetName, updateDiskEncryptionSet, Context.NONE);
         return this;
     }
 
     public DiskEncryptionSet apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDiskEncryptionSets()
-                .update(resourceGroupName, diskEncryptionSetName, updateDiskEncryptionSet, context);
+        this.innerObject = serviceManager.serviceClient().getDiskEncryptionSets().update(resourceGroupName,
+            diskEncryptionSetName, updateDiskEncryptionSet, context);
         return this;
     }
 
-    DiskEncryptionSetImpl(
-        DiskEncryptionSetInner innerObject, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
+    DiskEncryptionSetImpl(DiskEncryptionSetInner innerObject,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
@@ -177,22 +165,14 @@ public final class DiskEncryptionSetImpl
     }
 
     public DiskEncryptionSet refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDiskEncryptionSets()
-                .getByResourceGroupWithResponse(resourceGroupName, diskEncryptionSetName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getDiskEncryptionSets()
+            .getByResourceGroupWithResponse(resourceGroupName, diskEncryptionSetName, Context.NONE).getValue();
         return this;
     }
 
     public DiskEncryptionSet refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getDiskEncryptionSets()
-                .getByResourceGroupWithResponse(resourceGroupName, diskEncryptionSetName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getDiskEncryptionSets()
+            .getByResourceGroupWithResponse(resourceGroupName, diskEncryptionSetName, context).getValue();
         return this;
     }
 

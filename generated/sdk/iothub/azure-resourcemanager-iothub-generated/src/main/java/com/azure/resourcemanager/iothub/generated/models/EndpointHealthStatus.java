@@ -18,24 +18,34 @@ import java.util.Collection;
  * endpoint. No messages have been delivered to or rejected from this endpoint.
  */
 public final class EndpointHealthStatus extends ExpandableStringEnum<EndpointHealthStatus> {
-    /** Static value unknown for EndpointHealthStatus. */
+    /**
+     * Static value unknown for EndpointHealthStatus.
+     */
     public static final EndpointHealthStatus UNKNOWN = fromString("unknown");
 
-    /** Static value healthy for EndpointHealthStatus. */
+    /**
+     * Static value healthy for EndpointHealthStatus.
+     */
     public static final EndpointHealthStatus HEALTHY = fromString("healthy");
 
-    /** Static value degraded for EndpointHealthStatus. */
+    /**
+     * Static value degraded for EndpointHealthStatus.
+     */
     public static final EndpointHealthStatus DEGRADED = fromString("degraded");
 
-    /** Static value unhealthy for EndpointHealthStatus. */
+    /**
+     * Static value unhealthy for EndpointHealthStatus.
+     */
     public static final EndpointHealthStatus UNHEALTHY = fromString("unhealthy");
 
-    /** Static value dead for EndpointHealthStatus. */
+    /**
+     * Static value dead for EndpointHealthStatus.
+     */
     public static final EndpointHealthStatus DEAD = fromString("dead");
 
     /**
      * Creates a new instance of EndpointHealthStatus value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -44,7 +54,7 @@ public final class EndpointHealthStatus extends ExpandableStringEnum<EndpointHea
 
     /**
      * Creates or finds a EndpointHealthStatus from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding EndpointHealthStatus.
      */
@@ -55,7 +65,7 @@ public final class EndpointHealthStatus extends ExpandableStringEnum<EndpointHea
 
     /**
      * Gets known EndpointHealthStatus values.
-     *
+     * 
      * @return known EndpointHealthStatus values.
      */
     public static Collection<EndpointHealthStatus> values() {

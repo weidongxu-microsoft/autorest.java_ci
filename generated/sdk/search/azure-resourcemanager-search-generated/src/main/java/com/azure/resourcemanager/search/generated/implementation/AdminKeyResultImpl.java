@@ -12,8 +12,8 @@ public final class AdminKeyResultImpl implements AdminKeyResult {
 
     private final com.azure.resourcemanager.search.generated.SearchManager serviceManager;
 
-    AdminKeyResultImpl(
-        AdminKeyResultInner innerObject, com.azure.resourcemanager.search.generated.SearchManager serviceManager) {
+    AdminKeyResultImpl(AdminKeyResultInner innerObject,
+        com.azure.resourcemanager.search.generated.SearchManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

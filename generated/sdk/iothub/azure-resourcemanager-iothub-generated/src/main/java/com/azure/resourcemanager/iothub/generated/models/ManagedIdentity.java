@@ -7,7 +7,9 @@ package com.azure.resourcemanager.iothub.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The properties of the Managed identity. */
+/**
+ * The properties of the Managed identity.
+ */
 @Fluent
 public final class ManagedIdentity {
     /*
@@ -16,13 +18,15 @@ public final class ManagedIdentity {
     @JsonProperty(value = "userAssignedIdentity")
     private String userAssignedIdentity;
 
-    /** Creates an instance of ManagedIdentity class. */
+    /**
+     * Creates an instance of ManagedIdentity class.
+     */
     public ManagedIdentity() {
     }
 
     /**
      * Get the userAssignedIdentity property: The user assigned identity.
-     *
+     * 
      * @return the userAssignedIdentity value.
      */
     public String userAssignedIdentity() {
@@ -31,7 +35,7 @@ public final class ManagedIdentity {
 
     /**
      * Set the userAssignedIdentity property: The user assigned identity.
-     *
+     * 
      * @param userAssignedIdentity the userAssignedIdentity value to set.
      * @return the ManagedIdentity object itself.
      */
@@ -42,7 +46,7 @@ public final class ManagedIdentity {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

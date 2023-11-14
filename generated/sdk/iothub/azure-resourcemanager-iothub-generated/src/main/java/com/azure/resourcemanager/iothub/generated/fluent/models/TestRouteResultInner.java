@@ -9,7 +9,9 @@ import com.azure.resourcemanager.iothub.generated.models.TestResultStatus;
 import com.azure.resourcemanager.iothub.generated.models.TestRouteResultDetails;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Result of testing one route. */
+/**
+ * Result of testing one route.
+ */
 @Fluent
 public final class TestRouteResultInner {
     /*
@@ -24,13 +26,15 @@ public final class TestRouteResultInner {
     @JsonProperty(value = "details")
     private TestRouteResultDetails details;
 
-    /** Creates an instance of TestRouteResultInner class. */
+    /**
+     * Creates an instance of TestRouteResultInner class.
+     */
     public TestRouteResultInner() {
     }
 
     /**
      * Get the result property: Result of testing route.
-     *
+     * 
      * @return the result value.
      */
     public TestResultStatus result() {
@@ -39,7 +43,7 @@ public final class TestRouteResultInner {
 
     /**
      * Set the result property: Result of testing route.
-     *
+     * 
      * @param result the result value to set.
      * @return the TestRouteResultInner object itself.
      */
@@ -50,7 +54,7 @@ public final class TestRouteResultInner {
 
     /**
      * Get the details property: Detailed result of testing route.
-     *
+     * 
      * @return the details value.
      */
     public TestRouteResultDetails details() {
@@ -59,7 +63,7 @@ public final class TestRouteResultInner {
 
     /**
      * Set the details property: Detailed result of testing route.
-     *
+     * 
      * @param details the details value to set.
      * @return the TestRouteResultInner object itself.
      */
@@ -70,7 +74,7 @@ public final class TestRouteResultInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -10,7 +10,9 @@ import com.azure.resourcemanager.compute.generated.fluent.models.CommunityGaller
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The List Community Gallery Image versions operation response. */
+/**
+ * The List Community Gallery Image versions operation response.
+ */
 @Fluent
 public final class CommunityGalleryImageVersionList {
     /*
@@ -26,13 +28,15 @@ public final class CommunityGalleryImageVersionList {
     @JsonProperty(value = "nextLink")
     private String nextLink;
 
-    /** Creates an instance of CommunityGalleryImageVersionList class. */
+    /**
+     * Creates an instance of CommunityGalleryImageVersionList class.
+     */
     public CommunityGalleryImageVersionList() {
     }
 
     /**
      * Get the value property: A list of community gallery image versions.
-     *
+     * 
      * @return the value value.
      */
     public List<CommunityGalleryImageVersionInner> value() {
@@ -41,7 +45,7 @@ public final class CommunityGalleryImageVersionList {
 
     /**
      * Set the value property: A list of community gallery image versions.
-     *
+     * 
      * @param value the value value to set.
      * @return the CommunityGalleryImageVersionList object itself.
      */
@@ -53,7 +57,7 @@ public final class CommunityGalleryImageVersionList {
     /**
      * Get the nextLink property: The uri to fetch the next page of community gallery image versions. Call ListNext()
      * with this to fetch the next page of community gallery image versions.
-     *
+     * 
      * @return the nextLink value.
      */
     public String nextLink() {
@@ -63,7 +67,7 @@ public final class CommunityGalleryImageVersionList {
     /**
      * Set the nextLink property: The uri to fetch the next page of community gallery image versions. Call ListNext()
      * with this to fetch the next page of community gallery image versions.
-     *
+     * 
      * @param nextLink the nextLink value to set.
      * @return the CommunityGalleryImageVersionList object itself.
      */
@@ -74,15 +78,13 @@ public final class CommunityGalleryImageVersionList {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (value() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property value in model CommunityGalleryImageVersionList"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property value in model CommunityGalleryImageVersionList"));
         } else {
             value().forEach(e -> e.validate());
         }

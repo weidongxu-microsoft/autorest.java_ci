@@ -10,7 +10,9 @@ import com.azure.resourcemanager.mediaservices.generated.models.AssetFileEncrypt
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Data needed to decrypt asset files encrypted with legacy storage encryption. */
+/**
+ * Data needed to decrypt asset files encrypted with legacy storage encryption.
+ */
 @Fluent
 public final class StorageEncryptedAssetDecryptionDataInner {
     /*
@@ -25,13 +27,15 @@ public final class StorageEncryptedAssetDecryptionDataInner {
     @JsonProperty(value = "assetFileEncryptionMetadata")
     private List<AssetFileEncryptionMetadata> assetFileEncryptionMetadata;
 
-    /** Creates an instance of StorageEncryptedAssetDecryptionDataInner class. */
+    /**
+     * Creates an instance of StorageEncryptedAssetDecryptionDataInner class.
+     */
     public StorageEncryptedAssetDecryptionDataInner() {
     }
 
     /**
      * Get the key property: The Asset File storage encryption key.
-     *
+     * 
      * @return the key value.
      */
     public byte[] key() {
@@ -40,7 +44,7 @@ public final class StorageEncryptedAssetDecryptionDataInner {
 
     /**
      * Set the key property: The Asset File storage encryption key.
-     *
+     * 
      * @param key the key value to set.
      * @return the StorageEncryptedAssetDecryptionDataInner object itself.
      */
@@ -51,7 +55,7 @@ public final class StorageEncryptedAssetDecryptionDataInner {
 
     /**
      * Get the assetFileEncryptionMetadata property: Asset File encryption metadata.
-     *
+     * 
      * @return the assetFileEncryptionMetadata value.
      */
     public List<AssetFileEncryptionMetadata> assetFileEncryptionMetadata() {
@@ -60,19 +64,19 @@ public final class StorageEncryptedAssetDecryptionDataInner {
 
     /**
      * Set the assetFileEncryptionMetadata property: Asset File encryption metadata.
-     *
+     * 
      * @param assetFileEncryptionMetadata the assetFileEncryptionMetadata value to set.
      * @return the StorageEncryptedAssetDecryptionDataInner object itself.
      */
-    public StorageEncryptedAssetDecryptionDataInner withAssetFileEncryptionMetadata(
-        List<AssetFileEncryptionMetadata> assetFileEncryptionMetadata) {
+    public StorageEncryptedAssetDecryptionDataInner
+        withAssetFileEncryptionMetadata(List<AssetFileEncryptionMetadata> assetFileEncryptionMetadata) {
         this.assetFileEncryptionMetadata = assetFileEncryptionMetadata;
         return this;
     }
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

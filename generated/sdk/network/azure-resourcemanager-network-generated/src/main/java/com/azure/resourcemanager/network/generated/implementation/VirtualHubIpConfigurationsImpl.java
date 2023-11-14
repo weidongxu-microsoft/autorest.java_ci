@@ -21,22 +21,18 @@ public final class VirtualHubIpConfigurationsImpl implements VirtualHubIpConfigu
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public VirtualHubIpConfigurationsImpl(
-        VirtualHubIpConfigurationsClient innerClient,
+    public VirtualHubIpConfigurationsImpl(VirtualHubIpConfigurationsClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<HubIpConfiguration> getWithResponse(
-        String resourceGroupName, String virtualHubName, String ipConfigName, Context context) {
-        Response<HubIpConfigurationInner> inner =
-            this.serviceClient().getWithResponse(resourceGroupName, virtualHubName, ipConfigName, context);
+    public Response<HubIpConfiguration> getWithResponse(String resourceGroupName, String virtualHubName,
+        String ipConfigName, Context context) {
+        Response<HubIpConfigurationInner> inner
+            = this.serviceClient().getWithResponse(resourceGroupName, virtualHubName, ipConfigName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new HubIpConfigurationImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -66,35 +62,26 @@ public final class VirtualHubIpConfigurationsImpl implements VirtualHubIpConfigu
     }
 
     public PagedIterable<HubIpConfiguration> list(String resourceGroupName, String virtualHubName, Context context) {
-        PagedIterable<HubIpConfigurationInner> inner =
-            this.serviceClient().list(resourceGroupName, virtualHubName, context);
+        PagedIterable<HubIpConfigurationInner> inner
+            = this.serviceClient().list(resourceGroupName, virtualHubName, context);
         return Utils.mapPage(inner, inner1 -> new HubIpConfigurationImpl(inner1, this.manager()));
     }
 
     public HubIpConfiguration getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
         if (virtualHubName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
         }
         String ipConfigName = Utils.getValueFromIdByName(id, "ipConfigurations");
         if (ipConfigName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'ipConfigurations'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'ipConfigurations'.", id)));
         }
         return this.getWithResponse(resourceGroupName, virtualHubName, ipConfigName, Context.NONE).getValue();
     }
@@ -102,27 +89,18 @@ public final class VirtualHubIpConfigurationsImpl implements VirtualHubIpConfigu
     public Response<HubIpConfiguration> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
         if (virtualHubName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
         }
         String ipConfigName = Utils.getValueFromIdByName(id, "ipConfigurations");
         if (ipConfigName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'ipConfigurations'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'ipConfigurations'.", id)));
         }
         return this.getWithResponse(resourceGroupName, virtualHubName, ipConfigName, context);
     }
@@ -130,27 +108,18 @@ public final class VirtualHubIpConfigurationsImpl implements VirtualHubIpConfigu
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
         if (virtualHubName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
         }
         String ipConfigName = Utils.getValueFromIdByName(id, "ipConfigurations");
         if (ipConfigName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'ipConfigurations'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'ipConfigurations'.", id)));
         }
         this.delete(resourceGroupName, virtualHubName, ipConfigName, Context.NONE);
     }
@@ -158,27 +127,18 @@ public final class VirtualHubIpConfigurationsImpl implements VirtualHubIpConfigu
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
         if (virtualHubName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
         }
         String ipConfigName = Utils.getValueFromIdByName(id, "ipConfigurations");
         if (ipConfigName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'ipConfigurations'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'ipConfigurations'.", id)));
         }
         this.delete(resourceGroupName, virtualHubName, ipConfigName, context);
     }

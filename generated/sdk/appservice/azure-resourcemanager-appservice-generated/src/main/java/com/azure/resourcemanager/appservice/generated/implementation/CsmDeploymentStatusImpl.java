@@ -16,8 +16,7 @@ public final class CsmDeploymentStatusImpl implements CsmDeploymentStatus {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    CsmDeploymentStatusImpl(
-        CsmDeploymentStatusInner innerObject,
+    CsmDeploymentStatusImpl(CsmDeploymentStatusInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

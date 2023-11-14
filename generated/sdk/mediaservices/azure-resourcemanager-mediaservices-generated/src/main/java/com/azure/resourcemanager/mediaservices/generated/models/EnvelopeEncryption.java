@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** Class for EnvelopeEncryption encryption scheme. */
+/**
+ * Class for EnvelopeEncryption encryption scheme.
+ */
 @Fluent
 public final class EnvelopeEncryption {
     /*
@@ -30,22 +32,24 @@ public final class EnvelopeEncryption {
     private StreamingPolicyContentKeys contentKeys;
 
     /*
-     * Template for the URL of the custom service delivering keys to end user players.  Not required when using Azure
-     * Media Services for issuing keys.  The template supports replaceable tokens that the service will update at
-     * runtime with the value specific to the request.  The currently supported token values are {AlternativeMediaId},
+     * Template for the URL of the custom service delivering keys to end user players. Not required when using Azure
+     * Media Services for issuing keys. The template supports replaceable tokens that the service will update at
+     * runtime with the value specific to the request. The currently supported token values are {AlternativeMediaId},
      * which is replaced with the value of StreamingLocatorId.AlternativeMediaId, and {ContentKeyId}, which is replaced
      * with the value of identifier of the key being requested.
      */
     @JsonProperty(value = "customKeyAcquisitionUrlTemplate")
     private String customKeyAcquisitionUrlTemplate;
 
-    /** Creates an instance of EnvelopeEncryption class. */
+    /**
+     * Creates an instance of EnvelopeEncryption class.
+     */
     public EnvelopeEncryption() {
     }
 
     /**
      * Get the enabledProtocols property: Representing supported protocols.
-     *
+     * 
      * @return the enabledProtocols value.
      */
     public EnabledProtocols enabledProtocols() {
@@ -54,7 +58,7 @@ public final class EnvelopeEncryption {
 
     /**
      * Set the enabledProtocols property: Representing supported protocols.
-     *
+     * 
      * @param enabledProtocols the enabledProtocols value to set.
      * @return the EnvelopeEncryption object itself.
      */
@@ -65,7 +69,7 @@ public final class EnvelopeEncryption {
 
     /**
      * Get the clearTracks property: Representing which tracks should not be encrypted.
-     *
+     * 
      * @return the clearTracks value.
      */
     public List<TrackSelection> clearTracks() {
@@ -74,7 +78,7 @@ public final class EnvelopeEncryption {
 
     /**
      * Set the clearTracks property: Representing which tracks should not be encrypted.
-     *
+     * 
      * @param clearTracks the clearTracks value to set.
      * @return the EnvelopeEncryption object itself.
      */
@@ -86,7 +90,7 @@ public final class EnvelopeEncryption {
     /**
      * Get the contentKeys property: Representing default content key for each encryption scheme and separate content
      * keys for specific tracks.
-     *
+     * 
      * @return the contentKeys value.
      */
     public StreamingPolicyContentKeys contentKeys() {
@@ -96,7 +100,7 @@ public final class EnvelopeEncryption {
     /**
      * Set the contentKeys property: Representing default content key for each encryption scheme and separate content
      * keys for specific tracks.
-     *
+     * 
      * @param contentKeys the contentKeys value to set.
      * @return the EnvelopeEncryption object itself.
      */
@@ -108,11 +112,11 @@ public final class EnvelopeEncryption {
     /**
      * Get the customKeyAcquisitionUrlTemplate property: Template for the URL of the custom service delivering keys to
      * end user players. Not required when using Azure Media Services for issuing keys. The template supports
-     * replaceable tokens that the service will update at runtime with the value specific to the request. The currently
-     * supported token values are {AlternativeMediaId}, which is replaced with the value of
+     * replaceable tokens that the service will update at runtime with the value specific to the request. The
+     * currently supported token values are {AlternativeMediaId}, which is replaced with the value of
      * StreamingLocatorId.AlternativeMediaId, and {ContentKeyId}, which is replaced with the value of identifier of the
      * key being requested.
-     *
+     * 
      * @return the customKeyAcquisitionUrlTemplate value.
      */
     public String customKeyAcquisitionUrlTemplate() {
@@ -122,11 +126,11 @@ public final class EnvelopeEncryption {
     /**
      * Set the customKeyAcquisitionUrlTemplate property: Template for the URL of the custom service delivering keys to
      * end user players. Not required when using Azure Media Services for issuing keys. The template supports
-     * replaceable tokens that the service will update at runtime with the value specific to the request. The currently
-     * supported token values are {AlternativeMediaId}, which is replaced with the value of
+     * replaceable tokens that the service will update at runtime with the value specific to the request. The
+     * currently supported token values are {AlternativeMediaId}, which is replaced with the value of
      * StreamingLocatorId.AlternativeMediaId, and {ContentKeyId}, which is replaced with the value of identifier of the
      * key being requested.
-     *
+     * 
      * @param customKeyAcquisitionUrlTemplate the customKeyAcquisitionUrlTemplate value to set.
      * @return the EnvelopeEncryption object itself.
      */
@@ -137,7 +141,7 @@ public final class EnvelopeEncryption {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

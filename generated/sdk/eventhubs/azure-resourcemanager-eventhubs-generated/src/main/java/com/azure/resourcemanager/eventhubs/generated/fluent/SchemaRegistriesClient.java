@@ -11,11 +11,13 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.SchemaGroupInner;
 
-/** An instance of this class provides access to all the operations defined in SchemaRegistriesClient. */
+/**
+ * An instance of this class provides access to all the operations defined in SchemaRegistriesClient.
+ */
 public interface SchemaRegistriesClient {
     /**
      * Gets all the Schema Groups in a Namespace.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -28,12 +30,12 @@ public interface SchemaRegistriesClient {
 
     /**
      * Gets all the Schema Groups in a Namespace.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param skip Skip is only used if a previous operation returned a partial result. If a previous response contains
-     *     a nextLink element, the value of the nextLink element will include a skip parameter that specifies a starting
-     *     point to use for subsequent calls.
+     * a nextLink element, the value of the nextLink element will include a skip parameter that specifies a starting
+     * point to use for subsequent calls.
      * @param top May be used to limit the number of results to the most recent N usageDetails.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -42,12 +44,12 @@ public interface SchemaRegistriesClient {
      * @return all the Schema Groups in a Namespace as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<SchemaGroupInner> listByNamespace(
-        String resourceGroupName, String namespaceName, Integer skip, Integer top, Context context);
+    PagedIterable<SchemaGroupInner> listByNamespace(String resourceGroupName, String namespaceName, Integer skip,
+        Integer top, Context context);
 
     /**
      * Creates or Updates an EventHub schema group.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param schemaGroupName The Schema Group name.
@@ -59,16 +61,12 @@ public interface SchemaRegistriesClient {
      * @return single item in List or Get Schema Group operation along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<SchemaGroupInner> createOrUpdateWithResponse(
-        String resourceGroupName,
-        String namespaceName,
-        String schemaGroupName,
-        SchemaGroupInner parameters,
-        Context context);
+    Response<SchemaGroupInner> createOrUpdateWithResponse(String resourceGroupName, String namespaceName,
+        String schemaGroupName, SchemaGroupInner parameters, Context context);
 
     /**
      * Creates or Updates an EventHub schema group.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param schemaGroupName The Schema Group name.
@@ -79,12 +77,12 @@ public interface SchemaRegistriesClient {
      * @return single item in List or Get Schema Group operation.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    SchemaGroupInner createOrUpdate(
-        String resourceGroupName, String namespaceName, String schemaGroupName, SchemaGroupInner parameters);
+    SchemaGroupInner createOrUpdate(String resourceGroupName, String namespaceName, String schemaGroupName,
+        SchemaGroupInner parameters);
 
     /**
      * Deletes an EventHub schema group.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param schemaGroupName The Schema Group name.
@@ -95,12 +93,12 @@ public interface SchemaRegistriesClient {
      * @return the {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<Void> deleteWithResponse(
-        String resourceGroupName, String namespaceName, String schemaGroupName, Context context);
+    Response<Void> deleteWithResponse(String resourceGroupName, String namespaceName, String schemaGroupName,
+        Context context);
 
     /**
      * Deletes an EventHub schema group.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param schemaGroupName The Schema Group name.
@@ -113,7 +111,7 @@ public interface SchemaRegistriesClient {
 
     /**
      * Gets the details of an EventHub schema group.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param schemaGroupName The Schema Group name.
@@ -124,12 +122,12 @@ public interface SchemaRegistriesClient {
      * @return the details of an EventHub schema group along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<SchemaGroupInner> getWithResponse(
-        String resourceGroupName, String namespaceName, String schemaGroupName, Context context);
+    Response<SchemaGroupInner> getWithResponse(String resourceGroupName, String namespaceName, String schemaGroupName,
+        Context context);
 
     /**
      * Gets the details of an EventHub schema group.
-     *
+     * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param schemaGroupName The Schema Group name.

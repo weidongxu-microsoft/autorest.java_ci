@@ -23,21 +23,18 @@ public final class VpnConnectionsImpl implements VpnConnections {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public VpnConnectionsImpl(
-        VpnConnectionsClient innerClient, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    public VpnConnectionsImpl(VpnConnectionsClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<VpnConnection> getWithResponse(
-        String resourceGroupName, String gatewayName, String connectionName, Context context) {
-        Response<VpnConnectionInner> inner =
-            this.serviceClient().getWithResponse(resourceGroupName, gatewayName, connectionName, context);
+    public Response<VpnConnection> getWithResponse(String resourceGroupName, String gatewayName, String connectionName,
+        Context context) {
+        Response<VpnConnectionInner> inner
+            = this.serviceClient().getWithResponse(resourceGroupName, gatewayName, connectionName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new VpnConnectionImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -53,15 +50,10 @@ public final class VpnConnectionsImpl implements VpnConnections {
         }
     }
 
-    public VpnConnection createOrUpdate(
-        String resourceGroupName,
-        String gatewayName,
-        String connectionName,
+    public VpnConnection createOrUpdate(String resourceGroupName, String gatewayName, String connectionName,
         VpnConnectionInner vpnConnectionParameters) {
-        VpnConnectionInner inner =
-            this
-                .serviceClient()
-                .createOrUpdate(resourceGroupName, gatewayName, connectionName, vpnConnectionParameters);
+        VpnConnectionInner inner = this.serviceClient().createOrUpdate(resourceGroupName, gatewayName, connectionName,
+            vpnConnectionParameters);
         if (inner != null) {
             return new VpnConnectionImpl(inner, this.manager());
         } else {
@@ -69,16 +61,10 @@ public final class VpnConnectionsImpl implements VpnConnections {
         }
     }
 
-    public VpnConnection createOrUpdate(
-        String resourceGroupName,
-        String gatewayName,
-        String connectionName,
-        VpnConnectionInner vpnConnectionParameters,
-        Context context) {
-        VpnConnectionInner inner =
-            this
-                .serviceClient()
-                .createOrUpdate(resourceGroupName, gatewayName, connectionName, vpnConnectionParameters, context);
+    public VpnConnection createOrUpdate(String resourceGroupName, String gatewayName, String connectionName,
+        VpnConnectionInner vpnConnectionParameters, Context context) {
+        VpnConnectionInner inner = this.serviceClient().createOrUpdate(resourceGroupName, gatewayName, connectionName,
+            vpnConnectionParameters, context);
         if (inner != null) {
             return new VpnConnectionImpl(inner, this.manager());
         } else {
@@ -98,30 +84,20 @@ public final class VpnConnectionsImpl implements VpnConnections {
         return this.serviceClient().startPacketCapture(resourceGroupName, gatewayName, vpnConnectionName);
     }
 
-    public String startPacketCapture(
-        String resourceGroupName,
-        String gatewayName,
-        String vpnConnectionName,
-        VpnConnectionPacketCaptureStartParameters parameters,
-        Context context) {
-        return this
-            .serviceClient()
-            .startPacketCapture(resourceGroupName, gatewayName, vpnConnectionName, parameters, context);
+    public String startPacketCapture(String resourceGroupName, String gatewayName, String vpnConnectionName,
+        VpnConnectionPacketCaptureStartParameters parameters, Context context) {
+        return this.serviceClient().startPacketCapture(resourceGroupName, gatewayName, vpnConnectionName, parameters,
+            context);
     }
 
     public String stopPacketCapture(String resourceGroupName, String gatewayName, String vpnConnectionName) {
         return this.serviceClient().stopPacketCapture(resourceGroupName, gatewayName, vpnConnectionName);
     }
 
-    public String stopPacketCapture(
-        String resourceGroupName,
-        String gatewayName,
-        String vpnConnectionName,
-        VpnConnectionPacketCaptureStopParameters parameters,
-        Context context) {
-        return this
-            .serviceClient()
-            .stopPacketCapture(resourceGroupName, gatewayName, vpnConnectionName, parameters, context);
+    public String stopPacketCapture(String resourceGroupName, String gatewayName, String vpnConnectionName,
+        VpnConnectionPacketCaptureStopParameters parameters, Context context) {
+        return this.serviceClient().stopPacketCapture(resourceGroupName, gatewayName, vpnConnectionName, parameters,
+            context);
     }
 
     public PagedIterable<VpnConnection> listByVpnGateway(String resourceGroupName, String gatewayName) {
@@ -129,10 +105,10 @@ public final class VpnConnectionsImpl implements VpnConnections {
         return Utils.mapPage(inner, inner1 -> new VpnConnectionImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<VpnConnection> listByVpnGateway(
-        String resourceGroupName, String gatewayName, Context context) {
-        PagedIterable<VpnConnectionInner> inner =
-            this.serviceClient().listByVpnGateway(resourceGroupName, gatewayName, context);
+    public PagedIterable<VpnConnection> listByVpnGateway(String resourceGroupName, String gatewayName,
+        Context context) {
+        PagedIterable<VpnConnectionInner> inner
+            = this.serviceClient().listByVpnGateway(resourceGroupName, gatewayName, context);
         return Utils.mapPage(inner, inner1 -> new VpnConnectionImpl(inner1, this.manager()));
     }
 

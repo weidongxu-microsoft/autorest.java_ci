@@ -21,8 +21,7 @@ public final class PrivateDnsZoneGroupsImpl implements PrivateDnsZoneGroups {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public PrivateDnsZoneGroupsImpl(
-        PrivateDnsZoneGroupsClient innerClient,
+    public PrivateDnsZoneGroupsImpl(PrivateDnsZoneGroupsClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -32,32 +31,27 @@ public final class PrivateDnsZoneGroupsImpl implements PrivateDnsZoneGroups {
         this.serviceClient().delete(resourceGroupName, privateEndpointName, privateDnsZoneGroupName);
     }
 
-    public void delete(
-        String resourceGroupName, String privateEndpointName, String privateDnsZoneGroupName, Context context) {
+    public void delete(String resourceGroupName, String privateEndpointName, String privateDnsZoneGroupName,
+        Context context) {
         this.serviceClient().delete(resourceGroupName, privateEndpointName, privateDnsZoneGroupName, context);
     }
 
-    public Response<PrivateDnsZoneGroup> getWithResponse(
-        String resourceGroupName, String privateEndpointName, String privateDnsZoneGroupName, Context context) {
-        Response<PrivateDnsZoneGroupInner> inner =
-            this
-                .serviceClient()
-                .getWithResponse(resourceGroupName, privateEndpointName, privateDnsZoneGroupName, context);
+    public Response<PrivateDnsZoneGroup> getWithResponse(String resourceGroupName, String privateEndpointName,
+        String privateDnsZoneGroupName, Context context) {
+        Response<PrivateDnsZoneGroupInner> inner = this.serviceClient().getWithResponse(resourceGroupName,
+            privateEndpointName, privateDnsZoneGroupName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new PrivateDnsZoneGroupImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public PrivateDnsZoneGroup get(
-        String resourceGroupName, String privateEndpointName, String privateDnsZoneGroupName) {
-        PrivateDnsZoneGroupInner inner =
-            this.serviceClient().get(resourceGroupName, privateEndpointName, privateDnsZoneGroupName);
+    public PrivateDnsZoneGroup get(String resourceGroupName, String privateEndpointName,
+        String privateDnsZoneGroupName) {
+        PrivateDnsZoneGroupInner inner
+            = this.serviceClient().get(resourceGroupName, privateEndpointName, privateDnsZoneGroupName);
         if (inner != null) {
             return new PrivateDnsZoneGroupImpl(inner, this.manager());
         } else {
@@ -65,15 +59,10 @@ public final class PrivateDnsZoneGroupsImpl implements PrivateDnsZoneGroups {
         }
     }
 
-    public PrivateDnsZoneGroup createOrUpdate(
-        String resourceGroupName,
-        String privateEndpointName,
-        String privateDnsZoneGroupName,
-        PrivateDnsZoneGroupInner parameters) {
-        PrivateDnsZoneGroupInner inner =
-            this
-                .serviceClient()
-                .createOrUpdate(resourceGroupName, privateEndpointName, privateDnsZoneGroupName, parameters);
+    public PrivateDnsZoneGroup createOrUpdate(String resourceGroupName, String privateEndpointName,
+        String privateDnsZoneGroupName, PrivateDnsZoneGroupInner parameters) {
+        PrivateDnsZoneGroupInner inner = this.serviceClient().createOrUpdate(resourceGroupName, privateEndpointName,
+            privateDnsZoneGroupName, parameters);
         if (inner != null) {
             return new PrivateDnsZoneGroupImpl(inner, this.manager());
         } else {
@@ -81,16 +70,10 @@ public final class PrivateDnsZoneGroupsImpl implements PrivateDnsZoneGroups {
         }
     }
 
-    public PrivateDnsZoneGroup createOrUpdate(
-        String resourceGroupName,
-        String privateEndpointName,
-        String privateDnsZoneGroupName,
-        PrivateDnsZoneGroupInner parameters,
-        Context context) {
-        PrivateDnsZoneGroupInner inner =
-            this
-                .serviceClient()
-                .createOrUpdate(resourceGroupName, privateEndpointName, privateDnsZoneGroupName, parameters, context);
+    public PrivateDnsZoneGroup createOrUpdate(String resourceGroupName, String privateEndpointName,
+        String privateDnsZoneGroupName, PrivateDnsZoneGroupInner parameters, Context context) {
+        PrivateDnsZoneGroupInner inner = this.serviceClient().createOrUpdate(resourceGroupName, privateEndpointName,
+            privateDnsZoneGroupName, parameters, context);
         if (inner != null) {
             return new PrivateDnsZoneGroupImpl(inner, this.manager());
         } else {
@@ -99,15 +82,15 @@ public final class PrivateDnsZoneGroupsImpl implements PrivateDnsZoneGroups {
     }
 
     public PagedIterable<PrivateDnsZoneGroup> list(String privateEndpointName, String resourceGroupName) {
-        PagedIterable<PrivateDnsZoneGroupInner> inner =
-            this.serviceClient().list(privateEndpointName, resourceGroupName);
+        PagedIterable<PrivateDnsZoneGroupInner> inner
+            = this.serviceClient().list(privateEndpointName, resourceGroupName);
         return Utils.mapPage(inner, inner1 -> new PrivateDnsZoneGroupImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<PrivateDnsZoneGroup> list(
-        String privateEndpointName, String resourceGroupName, Context context) {
-        PagedIterable<PrivateDnsZoneGroupInner> inner =
-            this.serviceClient().list(privateEndpointName, resourceGroupName, context);
+    public PagedIterable<PrivateDnsZoneGroup> list(String privateEndpointName, String resourceGroupName,
+        Context context) {
+        PagedIterable<PrivateDnsZoneGroupInner> inner
+            = this.serviceClient().list(privateEndpointName, resourceGroupName, context);
         return Utils.mapPage(inner, inner1 -> new PrivateDnsZoneGroupImpl(inner1, this.manager()));
     }
 

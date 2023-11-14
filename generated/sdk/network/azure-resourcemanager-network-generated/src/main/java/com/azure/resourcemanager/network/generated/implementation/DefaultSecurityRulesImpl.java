@@ -21,8 +21,7 @@ public final class DefaultSecurityRulesImpl implements DefaultSecurityRules {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public DefaultSecurityRulesImpl(
-        DefaultSecurityRulesClient innerClient,
+    public DefaultSecurityRulesImpl(DefaultSecurityRulesClient innerClient,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -33,24 +32,19 @@ public final class DefaultSecurityRulesImpl implements DefaultSecurityRules {
         return Utils.mapPage(inner, inner1 -> new SecurityRuleImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<SecurityRule> list(
-        String resourceGroupName, String networkSecurityGroupName, Context context) {
-        PagedIterable<SecurityRuleInner> inner =
-            this.serviceClient().list(resourceGroupName, networkSecurityGroupName, context);
+    public PagedIterable<SecurityRule> list(String resourceGroupName, String networkSecurityGroupName,
+        Context context) {
+        PagedIterable<SecurityRuleInner> inner
+            = this.serviceClient().list(resourceGroupName, networkSecurityGroupName, context);
         return Utils.mapPage(inner, inner1 -> new SecurityRuleImpl(inner1, this.manager()));
     }
 
-    public Response<SecurityRule> getWithResponse(
-        String resourceGroupName, String networkSecurityGroupName, String defaultSecurityRuleName, Context context) {
-        Response<SecurityRuleInner> inner =
-            this
-                .serviceClient()
-                .getWithResponse(resourceGroupName, networkSecurityGroupName, defaultSecurityRuleName, context);
+    public Response<SecurityRule> getWithResponse(String resourceGroupName, String networkSecurityGroupName,
+        String defaultSecurityRuleName, Context context) {
+        Response<SecurityRuleInner> inner = this.serviceClient().getWithResponse(resourceGroupName,
+            networkSecurityGroupName, defaultSecurityRuleName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new SecurityRuleImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -58,8 +52,8 @@ public final class DefaultSecurityRulesImpl implements DefaultSecurityRules {
     }
 
     public SecurityRule get(String resourceGroupName, String networkSecurityGroupName, String defaultSecurityRuleName) {
-        SecurityRuleInner inner =
-            this.serviceClient().get(resourceGroupName, networkSecurityGroupName, defaultSecurityRuleName);
+        SecurityRuleInner inner
+            = this.serviceClient().get(resourceGroupName, networkSecurityGroupName, defaultSecurityRuleName);
         if (inner != null) {
             return new SecurityRuleImpl(inner, this.manager());
         } else {

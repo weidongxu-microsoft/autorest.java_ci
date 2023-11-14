@@ -24,8 +24,8 @@ public final class AzureFirewallsImpl implements AzureFirewalls {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public AzureFirewallsImpl(
-        AzureFirewallsClient innerClient, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    public AzureFirewallsImpl(AzureFirewallsClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -38,15 +38,12 @@ public final class AzureFirewallsImpl implements AzureFirewalls {
         this.serviceClient().delete(resourceGroupName, azureFirewallName, context);
     }
 
-    public Response<AzureFirewall> getByResourceGroupWithResponse(
-        String resourceGroupName, String azureFirewallName, Context context) {
-        Response<AzureFirewallInner> inner =
-            this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, azureFirewallName, context);
+    public Response<AzureFirewall> getByResourceGroupWithResponse(String resourceGroupName, String azureFirewallName,
+        Context context) {
+        Response<AzureFirewallInner> inner
+            = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, azureFirewallName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new AzureFirewallImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -92,8 +89,8 @@ public final class AzureFirewallsImpl implements AzureFirewalls {
     }
 
     public IpPrefixesList listLearnedPrefixes(String resourceGroupName, String azureFirewallName, Context context) {
-        IpPrefixesListInner inner =
-            this.serviceClient().listLearnedPrefixes(resourceGroupName, azureFirewallName, context);
+        IpPrefixesListInner inner
+            = this.serviceClient().listLearnedPrefixes(resourceGroupName, azureFirewallName, context);
         if (inner != null) {
             return new IpPrefixesListImpl(inner, this.manager());
         } else {
@@ -101,35 +98,26 @@ public final class AzureFirewallsImpl implements AzureFirewalls {
         }
     }
 
-    public void packetCapture(
-        String resourceGroupName, String azureFirewallName, FirewallPacketCaptureParameters parameters) {
+    public void packetCapture(String resourceGroupName, String azureFirewallName,
+        FirewallPacketCaptureParameters parameters) {
         this.serviceClient().packetCapture(resourceGroupName, azureFirewallName, parameters);
     }
 
-    public void packetCapture(
-        String resourceGroupName,
-        String azureFirewallName,
-        FirewallPacketCaptureParameters parameters,
-        Context context) {
+    public void packetCapture(String resourceGroupName, String azureFirewallName,
+        FirewallPacketCaptureParameters parameters, Context context) {
         this.serviceClient().packetCapture(resourceGroupName, azureFirewallName, parameters, context);
     }
 
     public AzureFirewall getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String azureFirewallName = Utils.getValueFromIdByName(id, "azureFirewalls");
         if (azureFirewallName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'azureFirewalls'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'azureFirewalls'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, azureFirewallName, Context.NONE).getValue();
     }
@@ -137,19 +125,13 @@ public final class AzureFirewallsImpl implements AzureFirewalls {
     public Response<AzureFirewall> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String azureFirewallName = Utils.getValueFromIdByName(id, "azureFirewalls");
         if (azureFirewallName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'azureFirewalls'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'azureFirewalls'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, azureFirewallName, context);
     }
@@ -157,19 +139,13 @@ public final class AzureFirewallsImpl implements AzureFirewalls {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String azureFirewallName = Utils.getValueFromIdByName(id, "azureFirewalls");
         if (azureFirewallName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'azureFirewalls'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'azureFirewalls'.", id)));
         }
         this.delete(resourceGroupName, azureFirewallName, Context.NONE);
     }
@@ -177,19 +153,13 @@ public final class AzureFirewallsImpl implements AzureFirewalls {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String azureFirewallName = Utils.getValueFromIdByName(id, "azureFirewalls");
         if (azureFirewallName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'azureFirewalls'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'azureFirewalls'.", id)));
         }
         this.delete(resourceGroupName, azureFirewallName, context);
     }

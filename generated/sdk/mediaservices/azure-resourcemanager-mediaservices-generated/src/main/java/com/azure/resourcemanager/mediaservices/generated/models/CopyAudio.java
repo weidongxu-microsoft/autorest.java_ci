@@ -8,16 +8,22 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** A codec flag, which tells the encoder to copy the input audio bitstream. */
+/**
+ * A codec flag, which tells the encoder to copy the input audio bitstream.
+ */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata.type")
 @JsonTypeName("#Microsoft.Media.CopyAudio")
 @Fluent
 public final class CopyAudio extends Codec {
-    /** Creates an instance of CopyAudio class. */
+    /**
+     * Creates an instance of CopyAudio class.
+     */
     public CopyAudio() {
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public CopyAudio withLabel(String label) {
         super.withLabel(label);
@@ -26,7 +32,7 @@ public final class CopyAudio extends Codec {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override

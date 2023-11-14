@@ -13,8 +13,8 @@ public final class SwapResourceImpl implements SwapResource {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    SwapResourceImpl(
-        SwapResourceInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    SwapResourceImpl(SwapResourceInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

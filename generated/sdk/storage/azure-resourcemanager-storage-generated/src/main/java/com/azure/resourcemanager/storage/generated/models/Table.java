@@ -8,77 +8,87 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.storage.generated.fluent.models.TableInner;
 import java.util.List;
 
-/** An immutable client-side representation of Table. */
+/**
+ * An immutable client-side representation of Table.
+ */
 public interface Table {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the name property: The name of the resource.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the type property: The type of the resource.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the tableName property: Table name under the specified account.
-     *
+     * 
      * @return the tableName value.
      */
     String tableName();
 
     /**
      * Gets the signedIdentifiers property: List of stored access policies specified on the table.
-     *
+     * 
      * @return the signedIdentifiers value.
      */
     List<TableSignedIdentifier> signedIdentifiers();
 
     /**
      * Gets the name of the resource group.
-     *
+     * 
      * @return the name of the resource group.
      */
     String resourceGroupName();
 
     /**
      * Gets the inner com.azure.resourcemanager.storage.generated.fluent.models.TableInner object.
-     *
+     * 
      * @return the inner object.
      */
     TableInner innerModel();
 
-    /** The entirety of the Table definition. */
+    /**
+     * The entirety of the Table definition.
+     */
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
 
-    /** The Table definition stages. */
+    /**
+     * The Table definition stages.
+     */
     interface DefinitionStages {
-        /** The first stage of the Table definition. */
+        /**
+         * The first stage of the Table definition.
+         */
         interface Blank extends WithParentResource {
         }
 
-        /** The stage of the Table definition allowing to specify parent resource. */
+        /**
+         * The stage of the Table definition allowing to specify parent resource.
+         */
         interface WithParentResource {
             /**
              * Specifies resourceGroupName, accountName.
-             *
+             * 
              * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
-             *     insensitive.
+             * insensitive.
              * @param accountName The name of the storage account within the specified resource group. Storage account
-             *     names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+             * names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
              * @return the next definition stage.
              */
             WithCreate withExistingStorageAccount(String resourceGroupName, String accountName);
@@ -91,25 +101,27 @@ public interface Table {
         interface WithCreate extends DefinitionStages.WithSignedIdentifiers {
             /**
              * Executes the create request.
-             *
+             * 
              * @return the created resource.
              */
             Table create();
 
             /**
              * Executes the create request.
-             *
+             * 
              * @param context The context to associate with this operation.
              * @return the created resource.
              */
             Table create(Context context);
         }
 
-        /** The stage of the Table definition allowing to specify signedIdentifiers. */
+        /**
+         * The stage of the Table definition allowing to specify signedIdentifiers.
+         */
         interface WithSignedIdentifiers {
             /**
              * Specifies the signedIdentifiers property: List of stored access policies specified on the table..
-             *
+             * 
              * @param signedIdentifiers List of stored access policies specified on the table.
              * @return the next definition stage.
              */
@@ -119,36 +131,42 @@ public interface Table {
 
     /**
      * Begins update for the Table resource.
-     *
+     * 
      * @return the stage of resource update.
      */
     Table.Update update();
 
-    /** The template for Table update. */
+    /**
+     * The template for Table update.
+     */
     interface Update extends UpdateStages.WithSignedIdentifiers {
         /**
          * Executes the update request.
-         *
+         * 
          * @return the updated resource.
          */
         Table apply();
 
         /**
          * Executes the update request.
-         *
+         * 
          * @param context The context to associate with this operation.
          * @return the updated resource.
          */
         Table apply(Context context);
     }
 
-    /** The Table update stages. */
+    /**
+     * The Table update stages.
+     */
     interface UpdateStages {
-        /** The stage of the Table update allowing to specify signedIdentifiers. */
+        /**
+         * The stage of the Table update allowing to specify signedIdentifiers.
+         */
         interface WithSignedIdentifiers {
             /**
              * Specifies the signedIdentifiers property: List of stored access policies specified on the table..
-             *
+             * 
              * @param signedIdentifiers List of stored access policies specified on the table.
              * @return the next definition stage.
              */
@@ -158,14 +176,14 @@ public interface Table {
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @return the refreshed resource.
      */
     Table refresh();
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @return the refreshed resource.
      */

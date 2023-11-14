@@ -10,7 +10,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** The properties used to create a new server. */
+/**
+ * The properties used to create a new server.
+ */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "createMode")
 @JsonTypeName("Default")
 @Fluent
@@ -28,14 +30,16 @@ public final class ServerPropertiesForDefaultCreate extends ServerPropertiesForC
     @JsonProperty(value = "administratorLoginPassword")
     private String administratorLoginPassword;
 
-    /** Creates an instance of ServerPropertiesForDefaultCreate class. */
+    /**
+     * Creates an instance of ServerPropertiesForDefaultCreate class.
+     */
     public ServerPropertiesForDefaultCreate() {
     }
 
     /**
      * Get the administratorLogin property: The administrator's login name of a server. Can only be specified when the
      * server is being created (and is required for creation).
-     *
+     * 
      * @return the administratorLogin value.
      */
     public String administratorLogin() {
@@ -45,7 +49,7 @@ public final class ServerPropertiesForDefaultCreate extends ServerPropertiesForC
     /**
      * Set the administratorLogin property: The administrator's login name of a server. Can only be specified when the
      * server is being created (and is required for creation).
-     *
+     * 
      * @param administratorLogin the administratorLogin value to set.
      * @return the ServerPropertiesForDefaultCreate object itself.
      */
@@ -56,7 +60,7 @@ public final class ServerPropertiesForDefaultCreate extends ServerPropertiesForC
 
     /**
      * Get the administratorLoginPassword property: The password of the administrator login.
-     *
+     * 
      * @return the administratorLoginPassword value.
      */
     public String administratorLoginPassword() {
@@ -65,7 +69,7 @@ public final class ServerPropertiesForDefaultCreate extends ServerPropertiesForC
 
     /**
      * Set the administratorLoginPassword property: The password of the administrator login.
-     *
+     * 
      * @param administratorLoginPassword the administratorLoginPassword value to set.
      * @return the ServerPropertiesForDefaultCreate object itself.
      */
@@ -74,43 +78,55 @@ public final class ServerPropertiesForDefaultCreate extends ServerPropertiesForC
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ServerPropertiesForDefaultCreate withVersion(ServerVersion version) {
         super.withVersion(version);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ServerPropertiesForDefaultCreate withSslEnforcement(SslEnforcementEnum sslEnforcement) {
         super.withSslEnforcement(sslEnforcement);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ServerPropertiesForDefaultCreate withMinimalTlsVersion(MinimalTlsVersionEnum minimalTlsVersion) {
         super.withMinimalTlsVersion(minimalTlsVersion);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
-    public ServerPropertiesForDefaultCreate withInfrastructureEncryption(
-        InfrastructureEncryption infrastructureEncryption) {
+    public ServerPropertiesForDefaultCreate
+        withInfrastructureEncryption(InfrastructureEncryption infrastructureEncryption) {
         super.withInfrastructureEncryption(infrastructureEncryption);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ServerPropertiesForDefaultCreate withPublicNetworkAccess(PublicNetworkAccessEnum publicNetworkAccess) {
         super.withPublicNetworkAccess(publicNetworkAccess);
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ServerPropertiesForDefaultCreate withStorageProfile(StorageProfile storageProfile) {
         super.withStorageProfile(storageProfile);
@@ -119,24 +135,19 @@ public final class ServerPropertiesForDefaultCreate extends ServerPropertiesForC
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override
     public void validate() {
         super.validate();
         if (administratorLogin() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property administratorLogin in model ServerPropertiesForDefaultCreate"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property administratorLogin in model ServerPropertiesForDefaultCreate"));
         }
         if (administratorLoginPassword() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property administratorLoginPassword in model"
-                            + " ServerPropertiesForDefaultCreate"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property administratorLoginPassword in model ServerPropertiesForDefaultCreate"));
         }
     }
 

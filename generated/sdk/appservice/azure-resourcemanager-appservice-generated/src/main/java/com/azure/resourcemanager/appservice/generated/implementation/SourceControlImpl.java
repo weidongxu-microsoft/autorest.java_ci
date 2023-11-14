@@ -13,8 +13,7 @@ public final class SourceControlImpl implements SourceControl {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    SourceControlImpl(
-        SourceControlInner innerObject,
+    SourceControlImpl(SourceControlInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

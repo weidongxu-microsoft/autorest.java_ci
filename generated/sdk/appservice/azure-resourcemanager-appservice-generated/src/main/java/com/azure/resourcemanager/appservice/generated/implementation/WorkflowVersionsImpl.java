@@ -21,8 +21,7 @@ public final class WorkflowVersionsImpl implements WorkflowVersions {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    public WorkflowVersionsImpl(
-        WorkflowVersionsClient innerClient,
+    public WorkflowVersionsImpl(WorkflowVersionsClient innerClient,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -33,22 +32,19 @@ public final class WorkflowVersionsImpl implements WorkflowVersions {
         return Utils.mapPage(inner, inner1 -> new WorkflowVersionImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<WorkflowVersion> list(
-        String resourceGroupName, String name, String workflowName, Integer top, Context context) {
-        PagedIterable<WorkflowVersionInner> inner =
-            this.serviceClient().list(resourceGroupName, name, workflowName, top, context);
+    public PagedIterable<WorkflowVersion> list(String resourceGroupName, String name, String workflowName, Integer top,
+        Context context) {
+        PagedIterable<WorkflowVersionInner> inner
+            = this.serviceClient().list(resourceGroupName, name, workflowName, top, context);
         return Utils.mapPage(inner, inner1 -> new WorkflowVersionImpl(inner1, this.manager()));
     }
 
-    public Response<WorkflowVersion> getWithResponse(
-        String resourceGroupName, String name, String workflowName, String versionId, Context context) {
-        Response<WorkflowVersionInner> inner =
-            this.serviceClient().getWithResponse(resourceGroupName, name, workflowName, versionId, context);
+    public Response<WorkflowVersion> getWithResponse(String resourceGroupName, String name, String workflowName,
+        String versionId, Context context) {
+        Response<WorkflowVersionInner> inner
+            = this.serviceClient().getWithResponse(resourceGroupName, name, workflowName, versionId, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new WorkflowVersionImpl(inner.getValue(), this.manager()));
         } else {
             return null;

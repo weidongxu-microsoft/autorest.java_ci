@@ -8,47 +8,71 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** Provisioning state of NetworkSecurityPerimeter configuration propagation. */
+/**
+ * Provisioning state of NetworkSecurityPerimeter configuration propagation.
+ */
 public final class NetworkSecurityPerimeterConfigurationProvisioningState
     extends ExpandableStringEnum<NetworkSecurityPerimeterConfigurationProvisioningState> {
-    /** Static value Unknown for NetworkSecurityPerimeterConfigurationProvisioningState. */
+    /**
+     * Static value Unknown for NetworkSecurityPerimeterConfigurationProvisioningState.
+     */
     public static final NetworkSecurityPerimeterConfigurationProvisioningState UNKNOWN = fromString("Unknown");
 
-    /** Static value Creating for NetworkSecurityPerimeterConfigurationProvisioningState. */
+    /**
+     * Static value Creating for NetworkSecurityPerimeterConfigurationProvisioningState.
+     */
     public static final NetworkSecurityPerimeterConfigurationProvisioningState CREATING = fromString("Creating");
 
-    /** Static value Updating for NetworkSecurityPerimeterConfigurationProvisioningState. */
+    /**
+     * Static value Updating for NetworkSecurityPerimeterConfigurationProvisioningState.
+     */
     public static final NetworkSecurityPerimeterConfigurationProvisioningState UPDATING = fromString("Updating");
 
-    /** Static value Accepted for NetworkSecurityPerimeterConfigurationProvisioningState. */
+    /**
+     * Static value Accepted for NetworkSecurityPerimeterConfigurationProvisioningState.
+     */
     public static final NetworkSecurityPerimeterConfigurationProvisioningState ACCEPTED = fromString("Accepted");
 
-    /** Static value InvalidResponse for NetworkSecurityPerimeterConfigurationProvisioningState. */
-    public static final NetworkSecurityPerimeterConfigurationProvisioningState INVALID_RESPONSE =
-        fromString("InvalidResponse");
+    /**
+     * Static value InvalidResponse for NetworkSecurityPerimeterConfigurationProvisioningState.
+     */
+    public static final NetworkSecurityPerimeterConfigurationProvisioningState INVALID_RESPONSE
+        = fromString("InvalidResponse");
 
-    /** Static value Succeeded for NetworkSecurityPerimeterConfigurationProvisioningState. */
+    /**
+     * Static value Succeeded for NetworkSecurityPerimeterConfigurationProvisioningState.
+     */
     public static final NetworkSecurityPerimeterConfigurationProvisioningState SUCCEEDED = fromString("Succeeded");
 
-    /** Static value SucceededWithIssues for NetworkSecurityPerimeterConfigurationProvisioningState. */
-    public static final NetworkSecurityPerimeterConfigurationProvisioningState SUCCEEDED_WITH_ISSUES =
-        fromString("SucceededWithIssues");
+    /**
+     * Static value SucceededWithIssues for NetworkSecurityPerimeterConfigurationProvisioningState.
+     */
+    public static final NetworkSecurityPerimeterConfigurationProvisioningState SUCCEEDED_WITH_ISSUES
+        = fromString("SucceededWithIssues");
 
-    /** Static value Failed for NetworkSecurityPerimeterConfigurationProvisioningState. */
+    /**
+     * Static value Failed for NetworkSecurityPerimeterConfigurationProvisioningState.
+     */
     public static final NetworkSecurityPerimeterConfigurationProvisioningState FAILED = fromString("Failed");
 
-    /** Static value Deleting for NetworkSecurityPerimeterConfigurationProvisioningState. */
+    /**
+     * Static value Deleting for NetworkSecurityPerimeterConfigurationProvisioningState.
+     */
     public static final NetworkSecurityPerimeterConfigurationProvisioningState DELETING = fromString("Deleting");
 
-    /** Static value Deleted for NetworkSecurityPerimeterConfigurationProvisioningState. */
+    /**
+     * Static value Deleted for NetworkSecurityPerimeterConfigurationProvisioningState.
+     */
     public static final NetworkSecurityPerimeterConfigurationProvisioningState DELETED = fromString("Deleted");
 
-    /** Static value Canceled for NetworkSecurityPerimeterConfigurationProvisioningState. */
+    /**
+     * Static value Canceled for NetworkSecurityPerimeterConfigurationProvisioningState.
+     */
     public static final NetworkSecurityPerimeterConfigurationProvisioningState CANCELED = fromString("Canceled");
 
     /**
      * Creates a new instance of NetworkSecurityPerimeterConfigurationProvisioningState value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -57,7 +81,7 @@ public final class NetworkSecurityPerimeterConfigurationProvisioningState
 
     /**
      * Creates or finds a NetworkSecurityPerimeterConfigurationProvisioningState from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding NetworkSecurityPerimeterConfigurationProvisioningState.
      */
@@ -68,7 +92,7 @@ public final class NetworkSecurityPerimeterConfigurationProvisioningState
 
     /**
      * Gets known NetworkSecurityPerimeterConfigurationProvisioningState values.
-     *
+     * 
      * @return known NetworkSecurityPerimeterConfigurationProvisioningState values.
      */
     public static Collection<NetworkSecurityPerimeterConfigurationProvisioningState> values() {

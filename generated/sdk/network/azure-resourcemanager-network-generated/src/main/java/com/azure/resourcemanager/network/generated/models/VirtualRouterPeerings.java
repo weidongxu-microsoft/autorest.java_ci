@@ -8,60 +8,62 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of VirtualRouterPeerings. */
+/**
+ * Resource collection API of VirtualRouterPeerings.
+ */
 public interface VirtualRouterPeerings {
     /**
      * Deletes the specified peering from a Virtual Router.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualRouterName The name of the Virtual Router.
      * @param peeringName The name of the peering.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void delete(String resourceGroupName, String virtualRouterName, String peeringName);
 
     /**
      * Deletes the specified peering from a Virtual Router.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualRouterName The name of the Virtual Router.
      * @param peeringName The name of the peering.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void delete(String resourceGroupName, String virtualRouterName, String peeringName, Context context);
 
     /**
      * Gets the specified Virtual Router Peering.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualRouterName The name of the Virtual Router.
      * @param peeringName The name of the Virtual Router Peering.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified Virtual Router Peering along with {@link Response}.
      */
-    Response<VirtualRouterPeering> getWithResponse(
-        String resourceGroupName, String virtualRouterName, String peeringName, Context context);
+    Response<VirtualRouterPeering> getWithResponse(String resourceGroupName, String virtualRouterName,
+        String peeringName, Context context);
 
     /**
      * Gets the specified Virtual Router Peering.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualRouterName The name of the Virtual Router.
      * @param peeringName The name of the Virtual Router Peering.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified Virtual Router Peering.
      */
@@ -69,12 +71,12 @@ public interface VirtualRouterPeerings {
 
     /**
      * Lists all Virtual Router Peerings in a Virtual Router resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualRouterName The name of the Virtual Router.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return response for ListVirtualRouterPeerings API service call as paginated response with {@link PagedIterable}.
      */
@@ -82,13 +84,13 @@ public interface VirtualRouterPeerings {
 
     /**
      * Lists all Virtual Router Peerings in a Virtual Router resource.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualRouterName The name of the Virtual Router.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return response for ListVirtualRouterPeerings API service call as paginated response with {@link PagedIterable}.
      */
@@ -96,11 +98,11 @@ public interface VirtualRouterPeerings {
 
     /**
      * Gets the specified Virtual Router Peering.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified Virtual Router Peering along with {@link Response}.
      */
@@ -108,12 +110,12 @@ public interface VirtualRouterPeerings {
 
     /**
      * Gets the specified Virtual Router Peering.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified Virtual Router Peering along with {@link Response}.
      */
@@ -121,30 +123,30 @@ public interface VirtualRouterPeerings {
 
     /**
      * Deletes the specified peering from a Virtual Router.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteById(String id);
 
     /**
      * Deletes the specified peering from a Virtual Router.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
-     *     server.
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteByIdWithResponse(String id, Context context);
 
     /**
      * Begins definition for a new VirtualRouterPeering resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new VirtualRouterPeering definition.
      */

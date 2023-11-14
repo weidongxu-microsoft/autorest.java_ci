@@ -12,8 +12,7 @@ public final class SshPublicKeyGenerateKeyPairResultImpl implements SshPublicKey
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    SshPublicKeyGenerateKeyPairResultImpl(
-        SshPublicKeyGenerateKeyPairResultInner innerObject,
+    SshPublicKeyGenerateKeyPairResultImpl(SshPublicKeyGenerateKeyPairResultInner innerObject,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

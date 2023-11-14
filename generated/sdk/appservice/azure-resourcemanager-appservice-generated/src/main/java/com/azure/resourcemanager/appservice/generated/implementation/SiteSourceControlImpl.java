@@ -13,8 +13,7 @@ public final class SiteSourceControlImpl implements SiteSourceControl {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    SiteSourceControlImpl(
-        SiteSourceControlInner innerObject,
+    SiteSourceControlImpl(SiteSourceControlInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

@@ -7,7 +7,9 @@ package com.azure.resourcemanager.keyvault.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The LifetimeAction model. */
+/**
+ * The LifetimeAction model.
+ */
 @Fluent
 public final class LifetimeAction {
     /*
@@ -22,13 +24,15 @@ public final class LifetimeAction {
     @JsonProperty(value = "action")
     private Action action;
 
-    /** Creates an instance of LifetimeAction class. */
+    /**
+     * Creates an instance of LifetimeAction class.
+     */
     public LifetimeAction() {
     }
 
     /**
      * Get the trigger property: The trigger of key rotation policy lifetimeAction.
-     *
+     * 
      * @return the trigger value.
      */
     public Trigger trigger() {
@@ -37,7 +41,7 @@ public final class LifetimeAction {
 
     /**
      * Set the trigger property: The trigger of key rotation policy lifetimeAction.
-     *
+     * 
      * @param trigger the trigger value to set.
      * @return the LifetimeAction object itself.
      */
@@ -48,7 +52,7 @@ public final class LifetimeAction {
 
     /**
      * Get the action property: The action of key rotation policy lifetimeAction.
-     *
+     * 
      * @return the action value.
      */
     public Action action() {
@@ -57,7 +61,7 @@ public final class LifetimeAction {
 
     /**
      * Set the action property: The action of key rotation policy lifetimeAction.
-     *
+     * 
      * @param action the action value to set.
      * @return the LifetimeAction object itself.
      */
@@ -68,7 +72,7 @@ public final class LifetimeAction {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

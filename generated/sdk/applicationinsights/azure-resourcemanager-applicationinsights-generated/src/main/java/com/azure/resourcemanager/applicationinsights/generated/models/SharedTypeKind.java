@@ -8,17 +8,23 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** The kind of workbook. Choices are user and shared. */
+/**
+ * The kind of workbook. Choices are user and shared.
+ */
 public final class SharedTypeKind extends ExpandableStringEnum<SharedTypeKind> {
-    /** Static value user for SharedTypeKind. */
+    /**
+     * Static value user for SharedTypeKind.
+     */
     public static final SharedTypeKind USER = fromString("user");
 
-    /** Static value shared for SharedTypeKind. */
+    /**
+     * Static value shared for SharedTypeKind.
+     */
     public static final SharedTypeKind SHARED = fromString("shared");
 
     /**
      * Creates a new instance of SharedTypeKind value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -27,7 +33,7 @@ public final class SharedTypeKind extends ExpandableStringEnum<SharedTypeKind> {
 
     /**
      * Creates or finds a SharedTypeKind from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding SharedTypeKind.
      */
@@ -38,7 +44,7 @@ public final class SharedTypeKind extends ExpandableStringEnum<SharedTypeKind> {
 
     /**
      * Gets known SharedTypeKind values.
-     *
+     * 
      * @return known SharedTypeKind values.
      */
     public static Collection<SharedTypeKind> values() {

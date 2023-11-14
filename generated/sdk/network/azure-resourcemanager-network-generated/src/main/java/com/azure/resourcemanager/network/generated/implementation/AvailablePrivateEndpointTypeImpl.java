@@ -12,8 +12,7 @@ public final class AvailablePrivateEndpointTypeImpl implements AvailablePrivateE
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    AvailablePrivateEndpointTypeImpl(
-        AvailablePrivateEndpointTypeInner innerObject,
+    AvailablePrivateEndpointTypeImpl(AvailablePrivateEndpointTypeInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

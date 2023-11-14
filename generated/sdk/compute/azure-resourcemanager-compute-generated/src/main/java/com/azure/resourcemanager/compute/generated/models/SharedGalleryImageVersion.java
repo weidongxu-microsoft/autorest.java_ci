@@ -7,25 +7,27 @@ package com.azure.resourcemanager.compute.generated.models;
 import com.azure.resourcemanager.compute.generated.fluent.models.SharedGalleryImageVersionInner;
 import java.time.OffsetDateTime;
 
-/** An immutable client-side representation of SharedGalleryImageVersion. */
+/**
+ * An immutable client-side representation of SharedGalleryImageVersion.
+ */
 public interface SharedGalleryImageVersion {
     /**
      * Gets the name property: Resource name.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the location property: Resource location.
-     *
+     * 
      * @return the location value.
      */
     String location();
 
     /**
      * Gets the uniqueId property: The unique id of this shared gallery.
-     *
+     * 
      * @return the uniqueId value.
      */
     String uniqueId();
@@ -33,7 +35,7 @@ public interface SharedGalleryImageVersion {
     /**
      * Gets the publishedDate property: The published date of the gallery image version Definition. This property can be
      * used for decommissioning purposes. This property is updatable.
-     *
+     * 
      * @return the publishedDate value.
      */
     OffsetDateTime publishedDate();
@@ -41,7 +43,7 @@ public interface SharedGalleryImageVersion {
     /**
      * Gets the endOfLifeDate property: The end of life date of the gallery image version Definition. This property can
      * be used for decommissioning purposes. This property is updatable.
-     *
+     * 
      * @return the endOfLifeDate value.
      */
     OffsetDateTime endOfLifeDate();
@@ -49,21 +51,21 @@ public interface SharedGalleryImageVersion {
     /**
      * Gets the excludeFromLatest property: If set to true, Virtual Machines deployed from the latest version of the
      * Image Definition won't use this Image Version.
-     *
+     * 
      * @return the excludeFromLatest value.
      */
     Boolean excludeFromLatest();
 
     /**
      * Gets the storageProfile property: Describes the storage profile of the image version.
-     *
+     * 
      * @return the storageProfile value.
      */
     SharedGalleryImageVersionStorageProfile storageProfile();
 
     /**
      * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.SharedGalleryImageVersionInner object.
-     *
+     * 
      * @return the inner object.
      */
     SharedGalleryImageVersionInner innerModel();

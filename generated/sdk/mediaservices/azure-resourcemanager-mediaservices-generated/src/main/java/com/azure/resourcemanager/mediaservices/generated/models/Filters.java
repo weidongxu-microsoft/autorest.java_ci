@@ -50,13 +50,15 @@ public final class Filters {
     @JsonProperty(value = "overlays")
     private List<Overlay> overlays;
 
-    /** Creates an instance of Filters class. */
+    /**
+     * Creates an instance of Filters class.
+     */
     public Filters() {
     }
 
     /**
      * Get the deinterlace property: The de-interlacing settings.
-     *
+     * 
      * @return the deinterlace value.
      */
     public Deinterlace deinterlace() {
@@ -65,7 +67,7 @@ public final class Filters {
 
     /**
      * Set the deinterlace property: The de-interlacing settings.
-     *
+     * 
      * @param deinterlace the deinterlace value to set.
      * @return the Filters object itself.
      */
@@ -77,7 +79,7 @@ public final class Filters {
     /**
      * Get the rotation property: The rotation, if any, to be applied to the input video, before it is encoded. Default
      * is Auto.
-     *
+     * 
      * @return the rotation value.
      */
     public Rotation rotation() {
@@ -87,7 +89,7 @@ public final class Filters {
     /**
      * Set the rotation property: The rotation, if any, to be applied to the input video, before it is encoded. Default
      * is Auto.
-     *
+     * 
      * @param rotation the rotation value to set.
      * @return the Filters object itself.
      */
@@ -98,7 +100,7 @@ public final class Filters {
 
     /**
      * Get the crop property: The parameters for the rectangular window with which to crop the input video.
-     *
+     * 
      * @return the crop value.
      */
     public Rectangle crop() {
@@ -107,7 +109,7 @@ public final class Filters {
 
     /**
      * Set the crop property: The parameters for the rectangular window with which to crop the input video.
-     *
+     * 
      * @param crop the crop value to set.
      * @return the Filters object itself.
      */
@@ -118,7 +120,7 @@ public final class Filters {
 
     /**
      * Get the fadeIn property: Describes the properties of a Fade effect applied to the input media.
-     *
+     * 
      * @return the fadeIn value.
      */
     public Fade fadeIn() {
@@ -127,7 +129,7 @@ public final class Filters {
 
     /**
      * Set the fadeIn property: Describes the properties of a Fade effect applied to the input media.
-     *
+     * 
      * @param fadeIn the fadeIn value to set.
      * @return the Filters object itself.
      */
@@ -138,7 +140,7 @@ public final class Filters {
 
     /**
      * Get the fadeOut property: Describes the properties of a Fade effect applied to the input media.
-     *
+     * 
      * @return the fadeOut value.
      */
     public Fade fadeOut() {
@@ -147,7 +149,7 @@ public final class Filters {
 
     /**
      * Set the fadeOut property: Describes the properties of a Fade effect applied to the input media.
-     *
+     * 
      * @param fadeOut the fadeOut value to set.
      * @return the Filters object itself.
      */
@@ -159,7 +161,7 @@ public final class Filters {
     /**
      * Get the overlays property: The properties of overlays to be applied to the input video. These could be audio,
      * image or video overlays.
-     *
+     * 
      * @return the overlays value.
      */
     public List<Overlay> overlays() {
@@ -169,7 +171,7 @@ public final class Filters {
     /**
      * Set the overlays property: The properties of overlays to be applied to the input video. These could be audio,
      * image or video overlays.
-     *
+     * 
      * @param overlays the overlays value to set.
      * @return the Filters object itself.
      */
@@ -180,7 +182,7 @@ public final class Filters {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

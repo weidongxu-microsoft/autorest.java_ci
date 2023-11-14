@@ -10,7 +10,9 @@ import com.azure.resourcemanager.iothub.generated.models.IotHubCapacity;
 import com.azure.resourcemanager.iothub.generated.models.IotHubSkuInfo;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** SKU properties. */
+/**
+ * SKU properties.
+ */
 @Fluent
 public final class IotHubSkuDescriptionInner {
     /*
@@ -31,13 +33,15 @@ public final class IotHubSkuDescriptionInner {
     @JsonProperty(value = "capacity", required = true)
     private IotHubCapacity capacity;
 
-    /** Creates an instance of IotHubSkuDescriptionInner class. */
+    /**
+     * Creates an instance of IotHubSkuDescriptionInner class.
+     */
     public IotHubSkuDescriptionInner() {
     }
 
     /**
      * Get the resourceType property: The type of the resource.
-     *
+     * 
      * @return the resourceType value.
      */
     public String resourceType() {
@@ -46,7 +50,7 @@ public final class IotHubSkuDescriptionInner {
 
     /**
      * Get the sku property: The type of the resource.
-     *
+     * 
      * @return the sku value.
      */
     public IotHubSkuInfo sku() {
@@ -55,7 +59,7 @@ public final class IotHubSkuDescriptionInner {
 
     /**
      * Set the sku property: The type of the resource.
-     *
+     * 
      * @param sku the sku value to set.
      * @return the IotHubSkuDescriptionInner object itself.
      */
@@ -66,7 +70,7 @@ public final class IotHubSkuDescriptionInner {
 
     /**
      * Get the capacity property: IotHub capacity.
-     *
+     * 
      * @return the capacity value.
      */
     public IotHubCapacity capacity() {
@@ -75,7 +79,7 @@ public final class IotHubSkuDescriptionInner {
 
     /**
      * Set the capacity property: IotHub capacity.
-     *
+     * 
      * @param capacity the capacity value to set.
      * @return the IotHubSkuDescriptionInner object itself.
      */
@@ -86,22 +90,19 @@ public final class IotHubSkuDescriptionInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (sku() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property sku in model IotHubSkuDescriptionInner"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property sku in model IotHubSkuDescriptionInner"));
         } else {
             sku().validate();
         }
         if (capacity() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property capacity in model IotHubSkuDescriptionInner"));
+            throw LOGGER.logExceptionAsError(
+                new IllegalArgumentException("Missing required property capacity in model IotHubSkuDescriptionInner"));
         } else {
             capacity().validate();
         }

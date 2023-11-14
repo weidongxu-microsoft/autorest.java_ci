@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.authorization.generated.models.PrincipalType;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Role assignment properties with scope. */
+/**
+ * Role assignment properties with scope.
+ */
 @Fluent
 public final class RoleAssignmentPropertiesWithScope {
     /*
@@ -41,13 +43,15 @@ public final class RoleAssignmentPropertiesWithScope {
     @JsonProperty(value = "canDelegate")
     private Boolean canDelegate;
 
-    /** Creates an instance of RoleAssignmentPropertiesWithScope class. */
+    /**
+     * Creates an instance of RoleAssignmentPropertiesWithScope class.
+     */
     public RoleAssignmentPropertiesWithScope() {
     }
 
     /**
      * Get the scope property: The role assignment scope.
-     *
+     * 
      * @return the scope value.
      */
     public String scope() {
@@ -56,7 +60,7 @@ public final class RoleAssignmentPropertiesWithScope {
 
     /**
      * Set the scope property: The role assignment scope.
-     *
+     * 
      * @param scope the scope value to set.
      * @return the RoleAssignmentPropertiesWithScope object itself.
      */
@@ -67,7 +71,7 @@ public final class RoleAssignmentPropertiesWithScope {
 
     /**
      * Get the roleDefinitionId property: The role definition ID.
-     *
+     * 
      * @return the roleDefinitionId value.
      */
     public String roleDefinitionId() {
@@ -76,7 +80,7 @@ public final class RoleAssignmentPropertiesWithScope {
 
     /**
      * Set the roleDefinitionId property: The role definition ID.
-     *
+     * 
      * @param roleDefinitionId the roleDefinitionId value to set.
      * @return the RoleAssignmentPropertiesWithScope object itself.
      */
@@ -87,7 +91,7 @@ public final class RoleAssignmentPropertiesWithScope {
 
     /**
      * Get the principalId property: The principal ID.
-     *
+     * 
      * @return the principalId value.
      */
     public String principalId() {
@@ -96,7 +100,7 @@ public final class RoleAssignmentPropertiesWithScope {
 
     /**
      * Set the principalId property: The principal ID.
-     *
+     * 
      * @param principalId the principalId value to set.
      * @return the RoleAssignmentPropertiesWithScope object itself.
      */
@@ -107,7 +111,7 @@ public final class RoleAssignmentPropertiesWithScope {
 
     /**
      * Get the principalType property: The principal type of the assigned principal ID.
-     *
+     * 
      * @return the principalType value.
      */
     public PrincipalType principalType() {
@@ -116,7 +120,7 @@ public final class RoleAssignmentPropertiesWithScope {
 
     /**
      * Set the principalType property: The principal type of the assigned principal ID.
-     *
+     * 
      * @param principalType the principalType value to set.
      * @return the RoleAssignmentPropertiesWithScope object itself.
      */
@@ -127,7 +131,7 @@ public final class RoleAssignmentPropertiesWithScope {
 
     /**
      * Get the canDelegate property: The Delegation flag for the role assignment.
-     *
+     * 
      * @return the canDelegate value.
      */
     public Boolean canDelegate() {
@@ -136,7 +140,7 @@ public final class RoleAssignmentPropertiesWithScope {
 
     /**
      * Set the canDelegate property: The Delegation flag for the role assignment.
-     *
+     * 
      * @param canDelegate the canDelegate value to set.
      * @return the RoleAssignmentPropertiesWithScope object itself.
      */
@@ -147,7 +151,7 @@ public final class RoleAssignmentPropertiesWithScope {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

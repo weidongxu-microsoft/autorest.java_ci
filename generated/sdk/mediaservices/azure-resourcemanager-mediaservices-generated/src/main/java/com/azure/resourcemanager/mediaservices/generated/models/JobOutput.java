@@ -11,14 +11,16 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.time.OffsetDateTime;
 
-/** Describes all the properties of a JobOutput. */
+/**
+ * Describes all the properties of a JobOutput.
+ */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
     include = JsonTypeInfo.As.PROPERTY,
     property = "@odata.type",
     defaultImpl = JobOutput.class)
 @JsonTypeName("JobOutput")
-@JsonSubTypes({@JsonSubTypes.Type(name = "#Microsoft.Media.JobOutputAsset", value = JobOutputAsset.class)})
+@JsonSubTypes({ @JsonSubTypes.Type(name = "#Microsoft.Media.JobOutputAsset", value = JobOutputAsset.class) })
 @Fluent
 public class JobOutput {
     /*
@@ -72,13 +74,15 @@ public class JobOutput {
     @JsonProperty(value = "endTime", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime endTime;
 
-    /** Creates an instance of JobOutput class. */
+    /**
+     * Creates an instance of JobOutput class.
+     */
     public JobOutput() {
     }
 
     /**
      * Get the error property: If the JobOutput is in the Error state, it contains the details of the error.
-     *
+     * 
      * @return the error value.
      */
     public JobError error() {
@@ -87,7 +91,7 @@ public class JobOutput {
 
     /**
      * Get the presetOverride property: A preset used to override the preset in the corresponding transform output.
-     *
+     * 
      * @return the presetOverride value.
      */
     public Preset presetOverride() {
@@ -96,7 +100,7 @@ public class JobOutput {
 
     /**
      * Set the presetOverride property: A preset used to override the preset in the corresponding transform output.
-     *
+     * 
      * @param presetOverride the presetOverride value to set.
      * @return the JobOutput object itself.
      */
@@ -107,7 +111,7 @@ public class JobOutput {
 
     /**
      * Get the state property: Describes the state of the JobOutput.
-     *
+     * 
      * @return the state value.
      */
     public JobState state() {
@@ -116,9 +120,9 @@ public class JobOutput {
 
     /**
      * Get the progress property: If the JobOutput is in a Processing state, this contains the Job completion
-     * percentage. The value is an estimate and not intended to be used to predict Job completion times. To determine if
-     * the JobOutput is complete, use the State property.
-     *
+     * percentage. The value is an estimate and not intended to be used to predict Job completion times. To determine
+     * if the JobOutput is complete, use the State property.
+     * 
      * @return the progress value.
      */
     public Integer progress() {
@@ -129,12 +133,12 @@ public class JobOutput {
      * Get the label property: A label that is assigned to a JobOutput in order to help uniquely identify it. This is
      * useful when your Transform has more than one TransformOutput, whereby your Job has more than one JobOutput. In
      * such cases, when you submit the Job, you will add two or more JobOutputs, in the same order as TransformOutputs
-     * in the Transform. Subsequently, when you retrieve the Job, either through events or on a GET request, you can use
-     * the label to easily identify the JobOutput. If a label is not provided, a default value of
+     * in the Transform. Subsequently, when you retrieve the Job, either through events or on a GET request, you can
+     * use the label to easily identify the JobOutput. If a label is not provided, a default value of
      * '{presetName}_{outputIndex}' will be used, where the preset name is the name of the preset in the corresponding
      * TransformOutput and the output index is the relative index of the this JobOutput within the Job. Note that this
      * index is the same as the relative index of the corresponding TransformOutput within its Transform.
-     *
+     * 
      * @return the label value.
      */
     public String label() {
@@ -145,12 +149,12 @@ public class JobOutput {
      * Set the label property: A label that is assigned to a JobOutput in order to help uniquely identify it. This is
      * useful when your Transform has more than one TransformOutput, whereby your Job has more than one JobOutput. In
      * such cases, when you submit the Job, you will add two or more JobOutputs, in the same order as TransformOutputs
-     * in the Transform. Subsequently, when you retrieve the Job, either through events or on a GET request, you can use
-     * the label to easily identify the JobOutput. If a label is not provided, a default value of
+     * in the Transform. Subsequently, when you retrieve the Job, either through events or on a GET request, you can
+     * use the label to easily identify the JobOutput. If a label is not provided, a default value of
      * '{presetName}_{outputIndex}' will be used, where the preset name is the name of the preset in the corresponding
      * TransformOutput and the output index is the relative index of the this JobOutput within the Job. Note that this
      * index is the same as the relative index of the corresponding TransformOutput within its Transform.
-     *
+     * 
      * @param label the label value to set.
      * @return the JobOutput object itself.
      */
@@ -161,7 +165,7 @@ public class JobOutput {
 
     /**
      * Get the startTime property: The UTC date and time at which this Job Output began processing.
-     *
+     * 
      * @return the startTime value.
      */
     public OffsetDateTime startTime() {
@@ -170,7 +174,7 @@ public class JobOutput {
 
     /**
      * Get the endTime property: The UTC date and time at which this Job Output finished processing.
-     *
+     * 
      * @return the endTime value.
      */
     public OffsetDateTime endTime() {
@@ -179,7 +183,7 @@ public class JobOutput {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

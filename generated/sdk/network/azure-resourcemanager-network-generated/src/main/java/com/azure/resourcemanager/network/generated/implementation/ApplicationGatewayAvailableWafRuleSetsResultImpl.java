@@ -16,8 +16,7 @@ public final class ApplicationGatewayAvailableWafRuleSetsResultImpl
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    ApplicationGatewayAvailableWafRuleSetsResultImpl(
-        ApplicationGatewayAvailableWafRuleSetsResultInner innerObject,
+    ApplicationGatewayAvailableWafRuleSetsResultImpl(ApplicationGatewayAvailableWafRuleSetsResultInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

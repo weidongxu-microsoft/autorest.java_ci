@@ -14,8 +14,7 @@ public final class SignatureOverridesFilterValuesResponseImpl implements Signatu
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    SignatureOverridesFilterValuesResponseImpl(
-        SignatureOverridesFilterValuesResponseInner innerObject,
+    SignatureOverridesFilterValuesResponseImpl(SignatureOverridesFilterValuesResponseInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

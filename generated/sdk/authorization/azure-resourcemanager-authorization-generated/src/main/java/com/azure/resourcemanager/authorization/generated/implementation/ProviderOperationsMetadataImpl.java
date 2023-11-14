@@ -16,8 +16,7 @@ public final class ProviderOperationsMetadataImpl implements ProviderOperationsM
 
     private final com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager;
 
-    ProviderOperationsMetadataImpl(
-        ProviderOperationsMetadataInner innerObject,
+    ProviderOperationsMetadataImpl(ProviderOperationsMetadataInner innerObject,
         com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

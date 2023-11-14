@@ -10,11 +10,13 @@ import com.azure.core.management.Resource;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.VaultAccessPolicyParametersInner;
 
-/** Resource collection API of Vaults. */
+/**
+ * Resource collection API of Vaults.
+ */
 public interface Vaults {
     /**
      * Deletes the specified Azure key vault.
-     *
+     * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName The name of the vault to delete.
      * @param context The context to associate with this operation.
@@ -27,7 +29,7 @@ public interface Vaults {
 
     /**
      * Deletes the specified Azure key vault.
-     *
+     * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName The name of the vault to delete.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -38,7 +40,7 @@ public interface Vaults {
 
     /**
      * Gets the specified Azure key vault.
-     *
+     * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName The name of the vault.
      * @param context The context to associate with this operation.
@@ -51,7 +53,7 @@ public interface Vaults {
 
     /**
      * Gets the specified Azure key vault.
-     *
+     * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName The name of the vault.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -63,7 +65,7 @@ public interface Vaults {
 
     /**
      * Update access policies in a key vault in the specified subscription.
-     *
+     * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName Name of the vault.
      * @param operationKind Name of the operation.
@@ -74,16 +76,12 @@ public interface Vaults {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return parameters for updating the access policy in a vault along with {@link Response}.
      */
-    Response<VaultAccessPolicyParameters> updateAccessPolicyWithResponse(
-        String resourceGroupName,
-        String vaultName,
-        AccessPolicyUpdateKind operationKind,
-        VaultAccessPolicyParametersInner parameters,
-        Context context);
+    Response<VaultAccessPolicyParameters> updateAccessPolicyWithResponse(String resourceGroupName, String vaultName,
+        AccessPolicyUpdateKind operationKind, VaultAccessPolicyParametersInner parameters, Context context);
 
     /**
      * Update access policies in a key vault in the specified subscription.
-     *
+     * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName Name of the vault.
      * @param operationKind Name of the operation.
@@ -93,16 +91,13 @@ public interface Vaults {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return parameters for updating the access policy in a vault.
      */
-    VaultAccessPolicyParameters updateAccessPolicy(
-        String resourceGroupName,
-        String vaultName,
-        AccessPolicyUpdateKind operationKind,
-        VaultAccessPolicyParametersInner parameters);
+    VaultAccessPolicyParameters updateAccessPolicy(String resourceGroupName, String vaultName,
+        AccessPolicyUpdateKind operationKind, VaultAccessPolicyParametersInner parameters);
 
     /**
      * The List operation gets information about the vaults associated with the subscription and within the specified
      * resource group.
-     *
+     * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -114,7 +109,7 @@ public interface Vaults {
     /**
      * The List operation gets information about the vaults associated with the subscription and within the specified
      * resource group.
-     *
+     * 
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param top Maximum number of results to return.
      * @param context The context to associate with this operation.
@@ -127,7 +122,7 @@ public interface Vaults {
 
     /**
      * The List operation gets information about the vaults associated with the subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return list of vaults as paginated response with {@link PagedIterable}.
@@ -136,7 +131,7 @@ public interface Vaults {
 
     /**
      * The List operation gets information about the vaults associated with the subscription.
-     *
+     * 
      * @param top Maximum number of results to return.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -148,7 +143,7 @@ public interface Vaults {
 
     /**
      * Gets information about the deleted vaults in a subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return information about the deleted vaults in a subscription as paginated response with {@link PagedIterable}.
@@ -157,7 +152,7 @@ public interface Vaults {
 
     /**
      * Gets information about the deleted vaults in a subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -168,7 +163,7 @@ public interface Vaults {
 
     /**
      * Gets the deleted Azure key vault.
-     *
+     * 
      * @param vaultName The name of the vault.
      * @param location The location of the deleted vault.
      * @param context The context to associate with this operation.
@@ -181,7 +176,7 @@ public interface Vaults {
 
     /**
      * Gets the deleted Azure key vault.
-     *
+     * 
      * @param vaultName The name of the vault.
      * @param location The location of the deleted vault.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -193,7 +188,7 @@ public interface Vaults {
 
     /**
      * Permanently deletes the specified vault. aka Purges the deleted Azure key vault.
-     *
+     * 
      * @param vaultName The name of the soft-deleted vault.
      * @param location The location of the soft-deleted vault.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -204,7 +199,7 @@ public interface Vaults {
 
     /**
      * Permanently deletes the specified vault. aka Purges the deleted Azure key vault.
-     *
+     * 
      * @param vaultName The name of the soft-deleted vault.
      * @param location The location of the soft-deleted vault.
      * @param context The context to associate with this operation.
@@ -216,7 +211,7 @@ public interface Vaults {
 
     /**
      * The List operation gets information about the vaults associated with the subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return list of vault resources as paginated response with {@link PagedIterable}.
@@ -225,7 +220,7 @@ public interface Vaults {
 
     /**
      * The List operation gets information about the vaults associated with the subscription.
-     *
+     * 
      * @param top Maximum number of results to return.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -237,7 +232,7 @@ public interface Vaults {
 
     /**
      * Checks that the vault name is valid and is not already in use.
-     *
+     * 
      * @param vaultName The name of the vault.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -245,12 +240,12 @@ public interface Vaults {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the CheckNameAvailability operation response along with {@link Response}.
      */
-    Response<CheckNameAvailabilityResult> checkNameAvailabilityWithResponse(
-        VaultCheckNameAvailabilityParameters vaultName, Context context);
+    Response<CheckNameAvailabilityResult>
+        checkNameAvailabilityWithResponse(VaultCheckNameAvailabilityParameters vaultName, Context context);
 
     /**
      * Checks that the vault name is valid and is not already in use.
-     *
+     * 
      * @param vaultName The name of the vault.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -261,7 +256,7 @@ public interface Vaults {
 
     /**
      * Gets the specified Azure key vault.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -272,7 +267,7 @@ public interface Vaults {
 
     /**
      * Gets the specified Azure key vault.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -284,7 +279,7 @@ public interface Vaults {
 
     /**
      * Deletes the specified Azure key vault.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -294,7 +289,7 @@ public interface Vaults {
 
     /**
      * Deletes the specified Azure key vault.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -306,7 +301,7 @@ public interface Vaults {
 
     /**
      * Begins definition for a new Vault resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new Vault definition.
      */

@@ -12,7 +12,9 @@ import com.azure.resourcemanager.databoxedge.generated.models.DayOfWeek;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/** The bandwidth schedule details. */
+/**
+ * The bandwidth schedule details.
+ */
 @Fluent
 public final class BandwidthScheduleInner extends ArmBaseModel {
     /*
@@ -27,13 +29,15 @@ public final class BandwidthScheduleInner extends ArmBaseModel {
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
-    /** Creates an instance of BandwidthScheduleInner class. */
+    /**
+     * Creates an instance of BandwidthScheduleInner class.
+     */
     public BandwidthScheduleInner() {
     }
 
     /**
      * Get the innerProperties property: The properties of the bandwidth schedule.
-     *
+     * 
      * @return the innerProperties value.
      */
     private BandwidthScheduleProperties innerProperties() {
@@ -42,7 +46,7 @@ public final class BandwidthScheduleInner extends ArmBaseModel {
 
     /**
      * Get the systemData property: Metadata pertaining to creation and last modification of BandwidthSchedule.
-     *
+     * 
      * @return the systemData value.
      */
     public SystemData systemData() {
@@ -51,7 +55,7 @@ public final class BandwidthScheduleInner extends ArmBaseModel {
 
     /**
      * Get the start property: The start time of the schedule in UTC.
-     *
+     * 
      * @return the start value.
      */
     public String start() {
@@ -60,7 +64,7 @@ public final class BandwidthScheduleInner extends ArmBaseModel {
 
     /**
      * Set the start property: The start time of the schedule in UTC.
-     *
+     * 
      * @param start the start value to set.
      * @return the BandwidthScheduleInner object itself.
      */
@@ -74,7 +78,7 @@ public final class BandwidthScheduleInner extends ArmBaseModel {
 
     /**
      * Get the stop property: The stop time of the schedule in UTC.
-     *
+     * 
      * @return the stop value.
      */
     public String stop() {
@@ -83,7 +87,7 @@ public final class BandwidthScheduleInner extends ArmBaseModel {
 
     /**
      * Set the stop property: The stop time of the schedule in UTC.
-     *
+     * 
      * @param stop the stop value to set.
      * @return the BandwidthScheduleInner object itself.
      */
@@ -97,7 +101,7 @@ public final class BandwidthScheduleInner extends ArmBaseModel {
 
     /**
      * Get the rateInMbps property: The bandwidth rate in Mbps.
-     *
+     * 
      * @return the rateInMbps value.
      */
     public int rateInMbps() {
@@ -106,7 +110,7 @@ public final class BandwidthScheduleInner extends ArmBaseModel {
 
     /**
      * Set the rateInMbps property: The bandwidth rate in Mbps.
-     *
+     * 
      * @param rateInMbps the rateInMbps value to set.
      * @return the BandwidthScheduleInner object itself.
      */
@@ -120,7 +124,7 @@ public final class BandwidthScheduleInner extends ArmBaseModel {
 
     /**
      * Get the days property: The days of the week when this schedule is applicable.
-     *
+     * 
      * @return the days value.
      */
     public List<DayOfWeek> days() {
@@ -129,7 +133,7 @@ public final class BandwidthScheduleInner extends ArmBaseModel {
 
     /**
      * Set the days property: The days of the week when this schedule is applicable.
-     *
+     * 
      * @param days the days value to set.
      * @return the BandwidthScheduleInner object itself.
      */
@@ -143,17 +147,15 @@ public final class BandwidthScheduleInner extends ArmBaseModel {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override
     public void validate() {
         super.validate();
         if (innerProperties() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property innerProperties in model BandwidthScheduleInner"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property innerProperties in model BandwidthScheduleInner"));
         } else {
             innerProperties().validate();
         }

@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Use to provide parameters when requesting an export of all devices in the IoT hub. */
+/**
+ * Use to provide parameters when requesting an export of all devices in the IoT hub.
+ */
 @Fluent
 public final class ExportDevicesRequest {
     /*
@@ -55,13 +57,15 @@ public final class ExportDevicesRequest {
     @JsonProperty(value = "configurationsBlobName")
     private String configurationsBlobName;
 
-    /** Creates an instance of ExportDevicesRequest class. */
+    /**
+     * Creates an instance of ExportDevicesRequest class.
+     */
     public ExportDevicesRequest() {
     }
 
     /**
      * Get the exportBlobContainerUri property: The export blob container URI.
-     *
+     * 
      * @return the exportBlobContainerUri value.
      */
     public String exportBlobContainerUri() {
@@ -70,7 +74,7 @@ public final class ExportDevicesRequest {
 
     /**
      * Set the exportBlobContainerUri property: The export blob container URI.
-     *
+     * 
      * @param exportBlobContainerUri the exportBlobContainerUri value to set.
      * @return the ExportDevicesRequest object itself.
      */
@@ -81,7 +85,7 @@ public final class ExportDevicesRequest {
 
     /**
      * Get the excludeKeys property: The value indicating whether keys should be excluded during export.
-     *
+     * 
      * @return the excludeKeys value.
      */
     public boolean excludeKeys() {
@@ -90,7 +94,7 @@ public final class ExportDevicesRequest {
 
     /**
      * Set the excludeKeys property: The value indicating whether keys should be excluded during export.
-     *
+     * 
      * @param excludeKeys the excludeKeys value to set.
      * @return the ExportDevicesRequest object itself.
      */
@@ -100,9 +104,9 @@ public final class ExportDevicesRequest {
     }
 
     /**
-     * Get the exportBlobName property: The name of the blob that will be created in the provided output blob container.
-     * This blob will contain the exported device registry information for the IoT Hub.
-     *
+     * Get the exportBlobName property: The name of the blob that will be created in the provided output blob
+     * container. This blob will contain the exported device registry information for the IoT Hub.
+     * 
      * @return the exportBlobName value.
      */
     public String exportBlobName() {
@@ -110,9 +114,9 @@ public final class ExportDevicesRequest {
     }
 
     /**
-     * Set the exportBlobName property: The name of the blob that will be created in the provided output blob container.
-     * This blob will contain the exported device registry information for the IoT Hub.
-     *
+     * Set the exportBlobName property: The name of the blob that will be created in the provided output blob
+     * container. This blob will contain the exported device registry information for the IoT Hub.
+     * 
      * @param exportBlobName the exportBlobName value to set.
      * @return the ExportDevicesRequest object itself.
      */
@@ -124,7 +128,7 @@ public final class ExportDevicesRequest {
     /**
      * Get the authenticationType property: Specifies authentication type being used for connecting to the storage
      * account.
-     *
+     * 
      * @return the authenticationType value.
      */
     public AuthenticationType authenticationType() {
@@ -134,7 +138,7 @@ public final class ExportDevicesRequest {
     /**
      * Set the authenticationType property: Specifies authentication type being used for connecting to the storage
      * account.
-     *
+     * 
      * @param authenticationType the authenticationType value to set.
      * @return the ExportDevicesRequest object itself.
      */
@@ -145,7 +149,7 @@ public final class ExportDevicesRequest {
 
     /**
      * Get the identity property: Managed identity properties of storage endpoint for export devices.
-     *
+     * 
      * @return the identity value.
      */
     public ManagedIdentity identity() {
@@ -154,7 +158,7 @@ public final class ExportDevicesRequest {
 
     /**
      * Set the identity property: Managed identity properties of storage endpoint for export devices.
-     *
+     * 
      * @param identity the identity value to set.
      * @return the ExportDevicesRequest object itself.
      */
@@ -165,7 +169,7 @@ public final class ExportDevicesRequest {
 
     /**
      * Get the includeConfigurations property: The value indicating whether configurations should be exported.
-     *
+     * 
      * @return the includeConfigurations value.
      */
     public Boolean includeConfigurations() {
@@ -174,7 +178,7 @@ public final class ExportDevicesRequest {
 
     /**
      * Set the includeConfigurations property: The value indicating whether configurations should be exported.
-     *
+     * 
      * @param includeConfigurations the includeConfigurations value to set.
      * @return the ExportDevicesRequest object itself.
      */
@@ -186,7 +190,7 @@ public final class ExportDevicesRequest {
     /**
      * Get the configurationsBlobName property: The name of the blob that will be created in the provided output blob
      * container. This blob will contain the exported configurations for the Iot Hub.
-     *
+     * 
      * @return the configurationsBlobName value.
      */
     public String configurationsBlobName() {
@@ -196,7 +200,7 @@ public final class ExportDevicesRequest {
     /**
      * Set the configurationsBlobName property: The name of the blob that will be created in the provided output blob
      * container. This blob will contain the exported configurations for the Iot Hub.
-     *
+     * 
      * @param configurationsBlobName the configurationsBlobName value to set.
      * @return the ExportDevicesRequest object itself.
      */
@@ -207,15 +211,13 @@ public final class ExportDevicesRequest {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
         if (exportBlobContainerUri() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property exportBlobContainerUri in model ExportDevicesRequest"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property exportBlobContainerUri in model ExportDevicesRequest"));
         }
         if (identity() != null) {
             identity().validate();

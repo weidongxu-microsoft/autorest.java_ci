@@ -10,81 +10,83 @@ import com.azure.resourcemanager.keyvault.generated.fluent.models.ManagedHsmKeyP
 import java.util.List;
 import java.util.Map;
 
-/** An immutable client-side representation of ManagedHsmKey. */
+/**
+ * An immutable client-side representation of ManagedHsmKey.
+ */
 public interface ManagedHsmKey {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.
-     *
+     * 
      * @return the id value.
      */
     String id();
 
     /**
      * Gets the name property: The name of the resource.
-     *
+     * 
      * @return the name value.
      */
     String name();
 
     /**
      * Gets the type property: The type of the resource.
-     *
+     * 
      * @return the type value.
      */
     String type();
 
     /**
      * Gets the tags property: Resource tags.
-     *
+     * 
      * @return the tags value.
      */
     Map<String, String> tags();
 
     /**
      * Gets the attributes property: The attributes of the key.
-     *
+     * 
      * @return the attributes value.
      */
     ManagedHsmKeyAttributes attributes();
 
     /**
      * Gets the kty property: The type of the key. For valid values, see JsonWebKeyType.
-     *
+     * 
      * @return the kty value.
      */
     JsonWebKeyType kty();
 
     /**
      * Gets the keyOps property: The keyOps property.
-     *
+     * 
      * @return the keyOps value.
      */
     List<JsonWebKeyOperation> keyOps();
 
     /**
      * Gets the keySize property: The key size in bits. For example: 2048, 3072, or 4096 for RSA.
-     *
+     * 
      * @return the keySize value.
      */
     Integer keySize();
 
     /**
      * Gets the curveName property: The elliptic curve name. For valid values, see JsonWebKeyCurveName.
-     *
+     * 
      * @return the curveName value.
      */
     JsonWebKeyCurveName curveName();
 
     /**
      * Gets the keyUri property: The URI to retrieve the current version of the key.
-     *
+     * 
      * @return the keyUri value.
      */
     String keyUri();
 
     /**
      * Gets the keyUriWithVersion property: The URI to retrieve the specific version of the key.
-     *
+     * 
      * @return the keyUriWithVersion value.
      */
     String keyUriWithVersion();
@@ -92,7 +94,7 @@ public interface ManagedHsmKey {
     /**
      * Gets the rotationPolicy property: Key rotation policy in response. It will be used for both output and input.
      * Omitted if empty.
-     *
+     * 
      * @return the rotationPolicy value.
      */
     ManagedHsmRotationPolicy rotationPolicy();
@@ -100,37 +102,42 @@ public interface ManagedHsmKey {
     /**
      * Gets the releasePolicy property: Key release policy in response. It will be used for both output and input.
      * Omitted if empty.
-     *
+     * 
      * @return the releasePolicy value.
      */
     ManagedHsmKeyReleasePolicy releasePolicy();
 
     /**
      * Gets the inner com.azure.resourcemanager.keyvault.generated.fluent.models.ManagedHsmKeyInner object.
-     *
+     * 
      * @return the inner object.
      */
     ManagedHsmKeyInner innerModel();
 
-    /** The entirety of the ManagedHsmKey definition. */
-    interface Definition
-        extends DefinitionStages.Blank,
-            DefinitionStages.WithParentResource,
-            DefinitionStages.WithProperties,
-            DefinitionStages.WithCreate {
+    /**
+     * The entirety of the ManagedHsmKey definition.
+     */
+    interface Definition extends DefinitionStages.Blank, DefinitionStages.WithParentResource,
+        DefinitionStages.WithProperties, DefinitionStages.WithCreate {
     }
 
-    /** The ManagedHsmKey definition stages. */
+    /**
+     * The ManagedHsmKey definition stages.
+     */
     interface DefinitionStages {
-        /** The first stage of the ManagedHsmKey definition. */
+        /**
+         * The first stage of the ManagedHsmKey definition.
+         */
         interface Blank extends WithParentResource {
         }
 
-        /** The stage of the ManagedHsmKey definition allowing to specify parent resource. */
+        /**
+         * The stage of the ManagedHsmKey definition allowing to specify parent resource.
+         */
         interface WithParentResource {
             /**
              * Specifies resourceGroupName, name.
-             *
+             * 
              * @param resourceGroupName The name of the resource group. The name is case insensitive.
              * @param name The name of the Managed HSM Pool within the specified resource group.
              * @return the next definition stage.
@@ -138,11 +145,13 @@ public interface ManagedHsmKey {
             WithProperties withExistingManagedHSM(String resourceGroupName, String name);
         }
 
-        /** The stage of the ManagedHsmKey definition allowing to specify properties. */
+        /**
+         * The stage of the ManagedHsmKey definition allowing to specify properties.
+         */
         interface WithProperties {
             /**
              * Specifies the properties property: The properties of the key to be created..
-             *
+             * 
              * @param properties The properties of the key to be created.
              * @return the next definition stage.
              */
@@ -156,25 +165,27 @@ public interface ManagedHsmKey {
         interface WithCreate extends DefinitionStages.WithTags {
             /**
              * Executes the create request.
-             *
+             * 
              * @return the created resource.
              */
             ManagedHsmKey create();
 
             /**
              * Executes the create request.
-             *
+             * 
              * @param context The context to associate with this operation.
              * @return the created resource.
              */
             ManagedHsmKey create(Context context);
         }
 
-        /** The stage of the ManagedHsmKey definition allowing to specify tags. */
+        /**
+         * The stage of the ManagedHsmKey definition allowing to specify tags.
+         */
         interface WithTags {
             /**
              * Specifies the tags property: The tags that will be assigned to the key..
-             *
+             * 
              * @param tags The tags that will be assigned to the key.
              * @return the next definition stage.
              */
@@ -184,14 +195,14 @@ public interface ManagedHsmKey {
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @return the refreshed resource.
      */
     ManagedHsmKey refresh();
 
     /**
      * Refreshes the resource to sync with Azure.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @return the refreshed resource.
      */

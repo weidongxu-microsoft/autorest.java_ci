@@ -13,8 +13,7 @@ public final class ExtensionTopicImpl implements ExtensionTopic {
 
     private final com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager;
 
-    ExtensionTopicImpl(
-        ExtensionTopicInner innerObject,
+    ExtensionTopicImpl(ExtensionTopicInner innerObject,
         com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

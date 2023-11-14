@@ -23,15 +23,14 @@ public final class CapacityReservationGroupsImpl implements CapacityReservationG
 
     private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    public CapacityReservationGroupsImpl(
-        CapacityReservationGroupsClient innerClient,
+    public CapacityReservationGroupsImpl(CapacityReservationGroupsClient innerClient,
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<Void> deleteByResourceGroupWithResponse(
-        String resourceGroupName, String capacityReservationGroupName, Context context) {
+    public Response<Void> deleteByResourceGroupWithResponse(String resourceGroupName,
+        String capacityReservationGroupName, Context context) {
         return this.serviceClient().deleteWithResponse(resourceGroupName, capacityReservationGroupName, context);
     }
 
@@ -39,20 +38,12 @@ public final class CapacityReservationGroupsImpl implements CapacityReservationG
         this.serviceClient().delete(resourceGroupName, capacityReservationGroupName);
     }
 
-    public Response<CapacityReservationGroup> getByResourceGroupWithResponse(
-        String resourceGroupName,
-        String capacityReservationGroupName,
-        CapacityReservationGroupInstanceViewTypes expand,
-        Context context) {
-        Response<CapacityReservationGroupInner> inner =
-            this
-                .serviceClient()
-                .getByResourceGroupWithResponse(resourceGroupName, capacityReservationGroupName, expand, context);
+    public Response<CapacityReservationGroup> getByResourceGroupWithResponse(String resourceGroupName,
+        String capacityReservationGroupName, CapacityReservationGroupInstanceViewTypes expand, Context context) {
+        Response<CapacityReservationGroupInner> inner = this.serviceClient()
+            .getByResourceGroupWithResponse(resourceGroupName, capacityReservationGroupName, expand, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new CapacityReservationGroupImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -60,8 +51,8 @@ public final class CapacityReservationGroupsImpl implements CapacityReservationG
     }
 
     public CapacityReservationGroup getByResourceGroup(String resourceGroupName, String capacityReservationGroupName) {
-        CapacityReservationGroupInner inner =
-            this.serviceClient().getByResourceGroup(resourceGroupName, capacityReservationGroupName);
+        CapacityReservationGroupInner inner
+            = this.serviceClient().getByResourceGroup(resourceGroupName, capacityReservationGroupName);
         if (inner != null) {
             return new CapacityReservationGroupImpl(inner, this.manager());
         } else {
@@ -70,15 +61,15 @@ public final class CapacityReservationGroupsImpl implements CapacityReservationG
     }
 
     public PagedIterable<CapacityReservationGroup> listByResourceGroup(String resourceGroupName) {
-        PagedIterable<CapacityReservationGroupInner> inner =
-            this.serviceClient().listByResourceGroup(resourceGroupName);
+        PagedIterable<CapacityReservationGroupInner> inner
+            = this.serviceClient().listByResourceGroup(resourceGroupName);
         return Utils.mapPage(inner, inner1 -> new CapacityReservationGroupImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<CapacityReservationGroup> listByResourceGroup(
-        String resourceGroupName, ExpandTypesForGetCapacityReservationGroups expand, Context context) {
-        PagedIterable<CapacityReservationGroupInner> inner =
-            this.serviceClient().listByResourceGroup(resourceGroupName, expand, context);
+    public PagedIterable<CapacityReservationGroup> listByResourceGroup(String resourceGroupName,
+        ExpandTypesForGetCapacityReservationGroups expand, Context context) {
+        PagedIterable<CapacityReservationGroupInner> inner
+            = this.serviceClient().listByResourceGroup(resourceGroupName, expand, context);
         return Utils.mapPage(inner, inner1 -> new CapacityReservationGroupImpl(inner1, this.manager()));
     }
 
@@ -87,8 +78,8 @@ public final class CapacityReservationGroupsImpl implements CapacityReservationG
         return Utils.mapPage(inner, inner1 -> new CapacityReservationGroupImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<CapacityReservationGroup> list(
-        ExpandTypesForGetCapacityReservationGroups expand, Context context) {
+    public PagedIterable<CapacityReservationGroup> list(ExpandTypesForGetCapacityReservationGroups expand,
+        Context context) {
         PagedIterable<CapacityReservationGroupInner> inner = this.serviceClient().list(expand, context);
         return Utils.mapPage(inner, inner1 -> new CapacityReservationGroupImpl(inner1, this.manager()));
     }
@@ -96,21 +87,13 @@ public final class CapacityReservationGroupsImpl implements CapacityReservationG
     public CapacityReservationGroup getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String capacityReservationGroupName = Utils.getValueFromIdByName(id, "capacityReservationGroups");
         if (capacityReservationGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'capacityReservationGroups'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'capacityReservationGroups'.", id)));
         }
         CapacityReservationGroupInstanceViewTypes localExpand = null;
         return this
@@ -118,25 +101,17 @@ public final class CapacityReservationGroupsImpl implements CapacityReservationG
             .getValue();
     }
 
-    public Response<CapacityReservationGroup> getByIdWithResponse(
-        String id, CapacityReservationGroupInstanceViewTypes expand, Context context) {
+    public Response<CapacityReservationGroup> getByIdWithResponse(String id,
+        CapacityReservationGroupInstanceViewTypes expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String capacityReservationGroupName = Utils.getValueFromIdByName(id, "capacityReservationGroups");
         if (capacityReservationGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'capacityReservationGroups'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'capacityReservationGroups'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, capacityReservationGroupName, expand, context);
     }
@@ -144,21 +119,13 @@ public final class CapacityReservationGroupsImpl implements CapacityReservationG
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String capacityReservationGroupName = Utils.getValueFromIdByName(id, "capacityReservationGroups");
         if (capacityReservationGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'capacityReservationGroups'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'capacityReservationGroups'.", id)));
         }
         this.deleteByResourceGroupWithResponse(resourceGroupName, capacityReservationGroupName, Context.NONE);
     }
@@ -166,21 +133,13 @@ public final class CapacityReservationGroupsImpl implements CapacityReservationG
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String capacityReservationGroupName = Utils.getValueFromIdByName(id, "capacityReservationGroups");
         if (capacityReservationGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'capacityReservationGroups'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'capacityReservationGroups'.", id)));
         }
         return this.deleteByResourceGroupWithResponse(resourceGroupName, capacityReservationGroupName, context);
     }

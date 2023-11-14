@@ -17,8 +17,7 @@ public final class CustomHostnameSitesImpl implements CustomHostnameSites {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    CustomHostnameSitesImpl(
-        CustomHostnameSitesInner innerObject,
+    CustomHostnameSitesImpl(CustomHostnameSitesInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -51,12 +50,8 @@ public final class CustomHostnameSitesImpl implements CustomHostnameSites {
     public List<Identifier> siteResourceIds() {
         List<IdentifierInner> inner = this.innerModel().siteResourceIds();
         if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new IdentifierImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
+            return Collections.unmodifiableList(
+                inner.stream().map(inner1 -> new IdentifierImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

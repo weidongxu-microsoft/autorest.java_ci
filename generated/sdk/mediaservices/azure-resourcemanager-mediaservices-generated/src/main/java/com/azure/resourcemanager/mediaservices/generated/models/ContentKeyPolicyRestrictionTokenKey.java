@@ -9,7 +9,9 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** Base class for Content Key Policy key for token validation. A derived class must be used to create a token key. */
+/**
+ * Base class for Content Key Policy key for token validation. A derived class must be used to create a token key.
+ */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
     include = JsonTypeInfo.As.PROPERTY,
@@ -25,17 +27,18 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
         value = ContentKeyPolicyRsaTokenKey.class),
     @JsonSubTypes.Type(
         name = "#Microsoft.Media.ContentKeyPolicyX509CertificateTokenKey",
-        value = ContentKeyPolicyX509CertificateTokenKey.class)
-})
+        value = ContentKeyPolicyX509CertificateTokenKey.class) })
 @Immutable
 public class ContentKeyPolicyRestrictionTokenKey {
-    /** Creates an instance of ContentKeyPolicyRestrictionTokenKey class. */
+    /**
+     * Creates an instance of ContentKeyPolicyRestrictionTokenKey class.
+     */
     public ContentKeyPolicyRestrictionTokenKey() {
     }
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

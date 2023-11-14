@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of VpnSites. */
+/**
+ * Resource collection API of VpnSites.
+ */
 public interface VpnSites {
     /**
      * Retrieves the details of a VPN site.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnSite.
      * @param vpnSiteName The name of the VpnSite being retrieved.
      * @param context The context to associate with this operation.
@@ -25,7 +27,7 @@ public interface VpnSites {
 
     /**
      * Retrieves the details of a VPN site.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnSite.
      * @param vpnSiteName The name of the VpnSite being retrieved.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -37,7 +39,7 @@ public interface VpnSites {
 
     /**
      * Deletes a VpnSite.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnSite.
      * @param vpnSiteName The name of the VpnSite being deleted.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -48,7 +50,7 @@ public interface VpnSites {
 
     /**
      * Deletes a VpnSite.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnSite.
      * @param vpnSiteName The name of the VpnSite being deleted.
      * @param context The context to associate with this operation.
@@ -60,7 +62,7 @@ public interface VpnSites {
 
     /**
      * Lists all the vpnSites in a resource group.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnSite.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -71,7 +73,7 @@ public interface VpnSites {
 
     /**
      * Lists all the vpnSites in a resource group.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VpnSite.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -83,7 +85,7 @@ public interface VpnSites {
 
     /**
      * Lists all the VpnSites in a subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return result of the request to list VpnSites as paginated response with {@link PagedIterable}.
@@ -92,7 +94,7 @@ public interface VpnSites {
 
     /**
      * Lists all the VpnSites in a subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -103,7 +105,7 @@ public interface VpnSites {
 
     /**
      * Retrieves the details of a VPN site.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -114,7 +116,7 @@ public interface VpnSites {
 
     /**
      * Retrieves the details of a VPN site.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -126,7 +128,7 @@ public interface VpnSites {
 
     /**
      * Deletes a VpnSite.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -136,7 +138,7 @@ public interface VpnSites {
 
     /**
      * Deletes a VpnSite.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -147,7 +149,7 @@ public interface VpnSites {
 
     /**
      * Begins definition for a new VpnSite resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new VpnSite definition.
      */

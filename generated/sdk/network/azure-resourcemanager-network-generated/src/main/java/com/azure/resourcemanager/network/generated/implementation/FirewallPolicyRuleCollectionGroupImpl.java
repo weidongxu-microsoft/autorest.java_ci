@@ -12,10 +12,8 @@ import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import java.util.Collections;
 import java.util.List;
 
-public final class FirewallPolicyRuleCollectionGroupImpl
-    implements FirewallPolicyRuleCollectionGroup,
-        FirewallPolicyRuleCollectionGroup.Definition,
-        FirewallPolicyRuleCollectionGroup.Update {
+public final class FirewallPolicyRuleCollectionGroupImpl implements FirewallPolicyRuleCollectionGroup,
+    FirewallPolicyRuleCollectionGroup.Definition, FirewallPolicyRuleCollectionGroup.Update {
     private FirewallPolicyRuleCollectionGroupInner innerObject;
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
@@ -75,35 +73,27 @@ public final class FirewallPolicyRuleCollectionGroupImpl
 
     private String ruleCollectionGroupName;
 
-    public FirewallPolicyRuleCollectionGroupImpl withExistingFirewallPolicy(
-        String resourceGroupName, String firewallPolicyName) {
+    public FirewallPolicyRuleCollectionGroupImpl withExistingFirewallPolicy(String resourceGroupName,
+        String firewallPolicyName) {
         this.resourceGroupName = resourceGroupName;
         this.firewallPolicyName = firewallPolicyName;
         return this;
     }
 
     public FirewallPolicyRuleCollectionGroup create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getFirewallPolicyRuleCollectionGroups()
-                .createOrUpdate(
-                    resourceGroupName, firewallPolicyName, ruleCollectionGroupName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getFirewallPolicyRuleCollectionGroups().createOrUpdate(
+            resourceGroupName, firewallPolicyName, ruleCollectionGroupName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public FirewallPolicyRuleCollectionGroup create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getFirewallPolicyRuleCollectionGroups()
-                .createOrUpdate(
-                    resourceGroupName, firewallPolicyName, ruleCollectionGroupName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getFirewallPolicyRuleCollectionGroups()
+            .createOrUpdate(resourceGroupName, firewallPolicyName, ruleCollectionGroupName, this.innerModel(), context);
         return this;
     }
 
-    FirewallPolicyRuleCollectionGroupImpl(
-        String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+    FirewallPolicyRuleCollectionGroupImpl(String name,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new FirewallPolicyRuleCollectionGroupInner();
         this.serviceManager = serviceManager;
         this.ruleCollectionGroupName = name;
@@ -114,27 +104,18 @@ public final class FirewallPolicyRuleCollectionGroupImpl
     }
 
     public FirewallPolicyRuleCollectionGroup apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getFirewallPolicyRuleCollectionGroups()
-                .createOrUpdate(
-                    resourceGroupName, firewallPolicyName, ruleCollectionGroupName, this.innerModel(), Context.NONE);
+        this.innerObject = serviceManager.serviceClient().getFirewallPolicyRuleCollectionGroups().createOrUpdate(
+            resourceGroupName, firewallPolicyName, ruleCollectionGroupName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public FirewallPolicyRuleCollectionGroup apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getFirewallPolicyRuleCollectionGroups()
-                .createOrUpdate(
-                    resourceGroupName, firewallPolicyName, ruleCollectionGroupName, this.innerModel(), context);
+        this.innerObject = serviceManager.serviceClient().getFirewallPolicyRuleCollectionGroups()
+            .createOrUpdate(resourceGroupName, firewallPolicyName, ruleCollectionGroupName, this.innerModel(), context);
         return this;
     }
 
-    FirewallPolicyRuleCollectionGroupImpl(
-        FirewallPolicyRuleCollectionGroupInner innerObject,
+    FirewallPolicyRuleCollectionGroupImpl(FirewallPolicyRuleCollectionGroupInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -144,22 +125,14 @@ public final class FirewallPolicyRuleCollectionGroupImpl
     }
 
     public FirewallPolicyRuleCollectionGroup refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getFirewallPolicyRuleCollectionGroups()
-                .getWithResponse(resourceGroupName, firewallPolicyName, ruleCollectionGroupName, Context.NONE)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getFirewallPolicyRuleCollectionGroups()
+            .getWithResponse(resourceGroupName, firewallPolicyName, ruleCollectionGroupName, Context.NONE).getValue();
         return this;
     }
 
     public FirewallPolicyRuleCollectionGroup refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getFirewallPolicyRuleCollectionGroups()
-                .getWithResponse(resourceGroupName, firewallPolicyName, ruleCollectionGroupName, context)
-                .getValue();
+        this.innerObject = serviceManager.serviceClient().getFirewallPolicyRuleCollectionGroups()
+            .getWithResponse(resourceGroupName, firewallPolicyName, ruleCollectionGroupName, context).getValue();
         return this;
     }
 
@@ -173,8 +146,8 @@ public final class FirewallPolicyRuleCollectionGroupImpl
         return this;
     }
 
-    public FirewallPolicyRuleCollectionGroupImpl withRuleCollections(
-        List<FirewallPolicyRuleCollection> ruleCollections) {
+    public FirewallPolicyRuleCollectionGroupImpl
+        withRuleCollections(List<FirewallPolicyRuleCollection> ruleCollections) {
         this.innerModel().withRuleCollections(ruleCollections);
         return this;
     }

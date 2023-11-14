@@ -14,8 +14,7 @@ public final class StampCapacityImpl implements StampCapacity {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    StampCapacityImpl(
-        StampCapacityInner innerObject,
+    StampCapacityImpl(StampCapacityInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

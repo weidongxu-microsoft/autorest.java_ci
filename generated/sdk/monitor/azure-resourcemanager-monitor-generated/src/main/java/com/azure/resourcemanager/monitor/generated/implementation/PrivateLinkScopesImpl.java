@@ -21,8 +21,7 @@ public final class PrivateLinkScopesImpl implements PrivateLinkScopes {
 
     private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    public PrivateLinkScopesImpl(
-        PrivateLinkScopesClient innerClient,
+    public PrivateLinkScopesImpl(PrivateLinkScopesClient innerClient,
         com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
@@ -39,14 +38,14 @@ public final class PrivateLinkScopesImpl implements PrivateLinkScopes {
     }
 
     public PagedIterable<AzureMonitorPrivateLinkScope> listByResourceGroup(String resourceGroupName) {
-        PagedIterable<AzureMonitorPrivateLinkScopeInner> inner =
-            this.serviceClient().listByResourceGroup(resourceGroupName);
+        PagedIterable<AzureMonitorPrivateLinkScopeInner> inner
+            = this.serviceClient().listByResourceGroup(resourceGroupName);
         return Utils.mapPage(inner, inner1 -> new AzureMonitorPrivateLinkScopeImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AzureMonitorPrivateLinkScope> listByResourceGroup(String resourceGroupName, Context context) {
-        PagedIterable<AzureMonitorPrivateLinkScopeInner> inner =
-            this.serviceClient().listByResourceGroup(resourceGroupName, context);
+        PagedIterable<AzureMonitorPrivateLinkScopeInner> inner
+            = this.serviceClient().listByResourceGroup(resourceGroupName, context);
         return Utils.mapPage(inner, inner1 -> new AzureMonitorPrivateLinkScopeImpl(inner1, this.manager()));
     }
 
@@ -58,15 +57,12 @@ public final class PrivateLinkScopesImpl implements PrivateLinkScopes {
         this.serviceClient().delete(resourceGroupName, scopeName, context);
     }
 
-    public Response<AzureMonitorPrivateLinkScope> getByResourceGroupWithResponse(
-        String resourceGroupName, String scopeName, Context context) {
-        Response<AzureMonitorPrivateLinkScopeInner> inner =
-            this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, scopeName, context);
+    public Response<AzureMonitorPrivateLinkScope> getByResourceGroupWithResponse(String resourceGroupName,
+        String scopeName, Context context) {
+        Response<AzureMonitorPrivateLinkScopeInner> inner
+            = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, scopeName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new AzureMonitorPrivateLinkScopeImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -85,20 +81,13 @@ public final class PrivateLinkScopesImpl implements PrivateLinkScopes {
     public AzureMonitorPrivateLinkScope getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String scopeName = Utils.getValueFromIdByName(id, "privateLinkScopes");
         if (scopeName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'privateLinkScopes'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'privateLinkScopes'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, scopeName, Context.NONE).getValue();
     }
@@ -106,20 +95,13 @@ public final class PrivateLinkScopesImpl implements PrivateLinkScopes {
     public Response<AzureMonitorPrivateLinkScope> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String scopeName = Utils.getValueFromIdByName(id, "privateLinkScopes");
         if (scopeName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'privateLinkScopes'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'privateLinkScopes'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, scopeName, context);
     }
@@ -127,20 +109,13 @@ public final class PrivateLinkScopesImpl implements PrivateLinkScopes {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String scopeName = Utils.getValueFromIdByName(id, "privateLinkScopes");
         if (scopeName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'privateLinkScopes'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'privateLinkScopes'.", id)));
         }
         this.delete(resourceGroupName, scopeName, Context.NONE);
     }
@@ -148,20 +123,13 @@ public final class PrivateLinkScopesImpl implements PrivateLinkScopes {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String scopeName = Utils.getValueFromIdByName(id, "privateLinkScopes");
         if (scopeName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'privateLinkScopes'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'privateLinkScopes'.", id)));
         }
         this.delete(resourceGroupName, scopeName, context);
     }

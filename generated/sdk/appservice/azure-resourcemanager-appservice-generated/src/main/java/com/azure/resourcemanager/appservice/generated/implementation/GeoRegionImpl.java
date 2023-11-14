@@ -12,8 +12,8 @@ public final class GeoRegionImpl implements GeoRegion {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    GeoRegionImpl(
-        GeoRegionInner innerObject, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
+    GeoRegionImpl(GeoRegionInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

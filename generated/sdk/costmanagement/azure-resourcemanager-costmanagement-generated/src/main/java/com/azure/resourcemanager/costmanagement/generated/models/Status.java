@@ -7,7 +7,9 @@ package com.azure.resourcemanager.costmanagement.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The status of the long running operation. */
+/**
+ * The status of the long running operation.
+ */
 @Fluent
 public final class Status {
     /*
@@ -16,13 +18,15 @@ public final class Status {
     @JsonProperty(value = "status")
     private OperationStatusType status;
 
-    /** Creates an instance of Status class. */
+    /**
+     * Creates an instance of Status class.
+     */
     public Status() {
     }
 
     /**
      * Get the status property: The status of the long running operation.
-     *
+     * 
      * @return the status value.
      */
     public OperationStatusType status() {
@@ -31,7 +35,7 @@ public final class Status {
 
     /**
      * Set the status property: The status of the long running operation.
-     *
+     * 
      * @param status the status value to set.
      * @return the Status object itself.
      */
@@ -42,7 +46,7 @@ public final class Status {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

@@ -8,17 +8,23 @@ import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
-/** GeoDR Role Types. */
+/**
+ * GeoDR Role Types.
+ */
 public final class GeoDRRoleType extends ExpandableStringEnum<GeoDRRoleType> {
-    /** Static value Primary for GeoDRRoleType. */
+    /**
+     * Static value Primary for GeoDRRoleType.
+     */
     public static final GeoDRRoleType PRIMARY = fromString("Primary");
 
-    /** Static value Secondary for GeoDRRoleType. */
+    /**
+     * Static value Secondary for GeoDRRoleType.
+     */
     public static final GeoDRRoleType SECONDARY = fromString("Secondary");
 
     /**
      * Creates a new instance of GeoDRRoleType value.
-     *
+     * 
      * @deprecated Use the {@link #fromString(String)} factory method.
      */
     @Deprecated
@@ -27,7 +33,7 @@ public final class GeoDRRoleType extends ExpandableStringEnum<GeoDRRoleType> {
 
     /**
      * Creates or finds a GeoDRRoleType from its string representation.
-     *
+     * 
      * @param name a name to look for.
      * @return the corresponding GeoDRRoleType.
      */
@@ -38,7 +44,7 @@ public final class GeoDRRoleType extends ExpandableStringEnum<GeoDRRoleType> {
 
     /**
      * Gets known GeoDRRoleType values.
-     *
+     * 
      * @return known GeoDRRoleType values.
      */
     public static Collection<GeoDRRoleType> values() {

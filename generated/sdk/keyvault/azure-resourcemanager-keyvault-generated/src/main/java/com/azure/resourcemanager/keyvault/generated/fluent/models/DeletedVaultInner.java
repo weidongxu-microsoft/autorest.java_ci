@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.keyvault.generated.models.DeletedVaultProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Deleted vault information with extended details. */
+/**
+ * Deleted vault information with extended details.
+ */
 @Fluent
 public final class DeletedVaultInner {
     /*
@@ -35,13 +37,15 @@ public final class DeletedVaultInner {
     @JsonProperty(value = "properties")
     private DeletedVaultProperties properties;
 
-    /** Creates an instance of DeletedVaultInner class. */
+    /**
+     * Creates an instance of DeletedVaultInner class.
+     */
     public DeletedVaultInner() {
     }
 
     /**
      * Get the id property: The resource ID for the deleted key vault.
-     *
+     * 
      * @return the id value.
      */
     public String id() {
@@ -50,7 +54,7 @@ public final class DeletedVaultInner {
 
     /**
      * Get the name property: The name of the key vault.
-     *
+     * 
      * @return the name value.
      */
     public String name() {
@@ -59,7 +63,7 @@ public final class DeletedVaultInner {
 
     /**
      * Get the type property: The resource type of the key vault.
-     *
+     * 
      * @return the type value.
      */
     public String type() {
@@ -68,7 +72,7 @@ public final class DeletedVaultInner {
 
     /**
      * Get the properties property: Properties of the vault.
-     *
+     * 
      * @return the properties value.
      */
     public DeletedVaultProperties properties() {
@@ -77,7 +81,7 @@ public final class DeletedVaultInner {
 
     /**
      * Set the properties property: Properties of the vault.
-     *
+     * 
      * @param properties the properties value to set.
      * @return the DeletedVaultInner object itself.
      */
@@ -88,7 +92,7 @@ public final class DeletedVaultInner {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {

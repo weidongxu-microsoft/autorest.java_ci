@@ -21,22 +21,18 @@ public final class ActivityLogAlertsImpl implements ActivityLogAlerts {
 
     private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    public ActivityLogAlertsImpl(
-        ActivityLogAlertsClient innerClient,
+    public ActivityLogAlertsImpl(ActivityLogAlertsClient innerClient,
         com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<ActivityLogAlertResource> getByResourceGroupWithResponse(
-        String resourceGroupName, String activityLogAlertName, Context context) {
-        Response<ActivityLogAlertResourceInner> inner =
-            this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, activityLogAlertName, context);
+    public Response<ActivityLogAlertResource> getByResourceGroupWithResponse(String resourceGroupName,
+        String activityLogAlertName, Context context) {
+        Response<ActivityLogAlertResourceInner> inner
+            = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, activityLogAlertName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new ActivityLogAlertResourceImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -44,8 +40,8 @@ public final class ActivityLogAlertsImpl implements ActivityLogAlerts {
     }
 
     public ActivityLogAlertResource getByResourceGroup(String resourceGroupName, String activityLogAlertName) {
-        ActivityLogAlertResourceInner inner =
-            this.serviceClient().getByResourceGroup(resourceGroupName, activityLogAlertName);
+        ActivityLogAlertResourceInner inner
+            = this.serviceClient().getByResourceGroup(resourceGroupName, activityLogAlertName);
         if (inner != null) {
             return new ActivityLogAlertResourceImpl(inner, this.manager());
         } else {
@@ -53,8 +49,8 @@ public final class ActivityLogAlertsImpl implements ActivityLogAlerts {
         }
     }
 
-    public Response<Void> deleteByResourceGroupWithResponse(
-        String resourceGroupName, String activityLogAlertName, Context context) {
+    public Response<Void> deleteByResourceGroupWithResponse(String resourceGroupName, String activityLogAlertName,
+        Context context) {
         return this.serviceClient().deleteWithResponse(resourceGroupName, activityLogAlertName, context);
     }
 
@@ -73,34 +69,27 @@ public final class ActivityLogAlertsImpl implements ActivityLogAlerts {
     }
 
     public PagedIterable<ActivityLogAlertResource> listByResourceGroup(String resourceGroupName) {
-        PagedIterable<ActivityLogAlertResourceInner> inner =
-            this.serviceClient().listByResourceGroup(resourceGroupName);
+        PagedIterable<ActivityLogAlertResourceInner> inner
+            = this.serviceClient().listByResourceGroup(resourceGroupName);
         return Utils.mapPage(inner, inner1 -> new ActivityLogAlertResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ActivityLogAlertResource> listByResourceGroup(String resourceGroupName, Context context) {
-        PagedIterable<ActivityLogAlertResourceInner> inner =
-            this.serviceClient().listByResourceGroup(resourceGroupName, context);
+        PagedIterable<ActivityLogAlertResourceInner> inner
+            = this.serviceClient().listByResourceGroup(resourceGroupName, context);
         return Utils.mapPage(inner, inner1 -> new ActivityLogAlertResourceImpl(inner1, this.manager()));
     }
 
     public ActivityLogAlertResource getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String activityLogAlertName = Utils.getValueFromIdByName(id, "activityLogAlerts");
         if (activityLogAlertName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'activityLogAlerts'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'activityLogAlerts'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, activityLogAlertName, Context.NONE).getValue();
     }
@@ -108,20 +97,13 @@ public final class ActivityLogAlertsImpl implements ActivityLogAlerts {
     public Response<ActivityLogAlertResource> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String activityLogAlertName = Utils.getValueFromIdByName(id, "activityLogAlerts");
         if (activityLogAlertName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'activityLogAlerts'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'activityLogAlerts'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, activityLogAlertName, context);
     }
@@ -129,20 +111,13 @@ public final class ActivityLogAlertsImpl implements ActivityLogAlerts {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String activityLogAlertName = Utils.getValueFromIdByName(id, "activityLogAlerts");
         if (activityLogAlertName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'activityLogAlerts'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'activityLogAlerts'.", id)));
         }
         this.deleteByResourceGroupWithResponse(resourceGroupName, activityLogAlertName, Context.NONE);
     }
@@ -150,20 +125,13 @@ public final class ActivityLogAlertsImpl implements ActivityLogAlerts {
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String activityLogAlertName = Utils.getValueFromIdByName(id, "activityLogAlerts");
         if (activityLogAlertName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'activityLogAlerts'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'activityLogAlerts'.", id)));
         }
         return this.deleteByResourceGroupWithResponse(resourceGroupName, activityLogAlertName, context);
     }

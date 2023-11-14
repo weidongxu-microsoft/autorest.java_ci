@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of NetworkProfiles. */
+/**
+ * Resource collection API of NetworkProfiles.
+ */
 public interface NetworkProfiles {
     /**
      * Deletes the specified network profile.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkProfileName The name of the NetworkProfile.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -23,7 +25,7 @@ public interface NetworkProfiles {
 
     /**
      * Deletes the specified network profile.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkProfileName The name of the NetworkProfile.
      * @param context The context to associate with this operation.
@@ -35,7 +37,7 @@ public interface NetworkProfiles {
 
     /**
      * Gets the specified network profile in a specified resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkProfileName The name of the public IP prefix.
      * @param expand Expands referenced resources.
@@ -45,12 +47,12 @@ public interface NetworkProfiles {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified network profile in a specified resource group along with {@link Response}.
      */
-    Response<NetworkProfile> getByResourceGroupWithResponse(
-        String resourceGroupName, String networkProfileName, String expand, Context context);
+    Response<NetworkProfile> getByResourceGroupWithResponse(String resourceGroupName, String networkProfileName,
+        String expand, Context context);
 
     /**
      * Gets the specified network profile in a specified resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param networkProfileName The name of the public IP prefix.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -62,7 +64,7 @@ public interface NetworkProfiles {
 
     /**
      * Gets all the network profiles in a subscription.
-     *
+     * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all the network profiles in a subscription as paginated response with {@link PagedIterable}.
@@ -71,7 +73,7 @@ public interface NetworkProfiles {
 
     /**
      * Gets all the network profiles in a subscription.
-     *
+     * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -82,7 +84,7 @@ public interface NetworkProfiles {
 
     /**
      * Gets all network profiles in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -93,7 +95,7 @@ public interface NetworkProfiles {
 
     /**
      * Gets all network profiles in a resource group.
-     *
+     * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -105,7 +107,7 @@ public interface NetworkProfiles {
 
     /**
      * Gets the specified network profile in a specified resource group.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -116,7 +118,7 @@ public interface NetworkProfiles {
 
     /**
      * Gets the specified network profile in a specified resource group.
-     *
+     * 
      * @param id the resource ID.
      * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
@@ -129,7 +131,7 @@ public interface NetworkProfiles {
 
     /**
      * Deletes the specified network profile.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -139,7 +141,7 @@ public interface NetworkProfiles {
 
     /**
      * Deletes the specified network profile.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -150,7 +152,7 @@ public interface NetworkProfiles {
 
     /**
      * Begins definition for a new NetworkProfile resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new NetworkProfile definition.
      */

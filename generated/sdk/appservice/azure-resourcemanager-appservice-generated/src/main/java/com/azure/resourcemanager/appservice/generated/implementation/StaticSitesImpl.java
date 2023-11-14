@@ -57,32 +57,28 @@ public final class StaticSitesImpl implements StaticSites {
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    public StaticSitesImpl(
-        StaticSitesClient innerClient,
+    public StaticSitesImpl(StaticSitesClient innerClient,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
 
-    public Response<StaticSitesWorkflowPreview> previewWorkflowWithResponse(
-        String location, StaticSitesWorkflowPreviewRequest staticSitesWorkflowPreviewRequest, Context context) {
-        Response<StaticSitesWorkflowPreviewInner> inner =
-            this.serviceClient().previewWorkflowWithResponse(location, staticSitesWorkflowPreviewRequest, context);
+    public Response<StaticSitesWorkflowPreview> previewWorkflowWithResponse(String location,
+        StaticSitesWorkflowPreviewRequest staticSitesWorkflowPreviewRequest, Context context) {
+        Response<StaticSitesWorkflowPreviewInner> inner
+            = this.serviceClient().previewWorkflowWithResponse(location, staticSitesWorkflowPreviewRequest, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new StaticSitesWorkflowPreviewImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public StaticSitesWorkflowPreview previewWorkflow(
-        String location, StaticSitesWorkflowPreviewRequest staticSitesWorkflowPreviewRequest) {
-        StaticSitesWorkflowPreviewInner inner =
-            this.serviceClient().previewWorkflow(location, staticSitesWorkflowPreviewRequest);
+    public StaticSitesWorkflowPreview previewWorkflow(String location,
+        StaticSitesWorkflowPreviewRequest staticSitesWorkflowPreviewRequest) {
+        StaticSitesWorkflowPreviewInner inner
+            = this.serviceClient().previewWorkflow(location, staticSitesWorkflowPreviewRequest);
         if (inner != null) {
             return new StaticSitesWorkflowPreviewImpl(inner, this.manager());
         } else {
@@ -106,20 +102,17 @@ public final class StaticSitesImpl implements StaticSites {
     }
 
     public PagedIterable<StaticSiteArmResource> listByResourceGroup(String resourceGroupName, Context context) {
-        PagedIterable<StaticSiteArmResourceInner> inner =
-            this.serviceClient().listByResourceGroup(resourceGroupName, context);
+        PagedIterable<StaticSiteArmResourceInner> inner
+            = this.serviceClient().listByResourceGroup(resourceGroupName, context);
         return Utils.mapPage(inner, inner1 -> new StaticSiteArmResourceImpl(inner1, this.manager()));
     }
 
-    public Response<StaticSiteArmResource> getByResourceGroupWithResponse(
-        String resourceGroupName, String name, Context context) {
-        Response<StaticSiteArmResourceInner> inner =
-            this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, name, context);
+    public Response<StaticSiteArmResource> getByResourceGroupWithResponse(String resourceGroupName, String name,
+        Context context) {
+        Response<StaticSiteArmResourceInner> inner
+            = this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, name, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new StaticSiteArmResourceImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -143,64 +136,46 @@ public final class StaticSitesImpl implements StaticSites {
         this.serviceClient().delete(resourceGroupName, name, context);
     }
 
-    public PagedIterable<StaticSiteUserArmResource> listStaticSiteUsers(
-        String resourceGroupName, String name, String authprovider) {
-        PagedIterable<StaticSiteUserArmResourceInner> inner =
-            this.serviceClient().listStaticSiteUsers(resourceGroupName, name, authprovider);
+    public PagedIterable<StaticSiteUserArmResource> listStaticSiteUsers(String resourceGroupName, String name,
+        String authprovider) {
+        PagedIterable<StaticSiteUserArmResourceInner> inner
+            = this.serviceClient().listStaticSiteUsers(resourceGroupName, name, authprovider);
         return Utils.mapPage(inner, inner1 -> new StaticSiteUserArmResourceImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<StaticSiteUserArmResource> listStaticSiteUsers(
-        String resourceGroupName, String name, String authprovider, Context context) {
-        PagedIterable<StaticSiteUserArmResourceInner> inner =
-            this.serviceClient().listStaticSiteUsers(resourceGroupName, name, authprovider, context);
+    public PagedIterable<StaticSiteUserArmResource> listStaticSiteUsers(String resourceGroupName, String name,
+        String authprovider, Context context) {
+        PagedIterable<StaticSiteUserArmResourceInner> inner
+            = this.serviceClient().listStaticSiteUsers(resourceGroupName, name, authprovider, context);
         return Utils.mapPage(inner, inner1 -> new StaticSiteUserArmResourceImpl(inner1, this.manager()));
     }
 
-    public Response<Void> deleteStaticSiteUserWithResponse(
-        String resourceGroupName, String name, String authprovider, String userid, Context context) {
-        return this
-            .serviceClient()
-            .deleteStaticSiteUserWithResponse(resourceGroupName, name, authprovider, userid, context);
+    public Response<Void> deleteStaticSiteUserWithResponse(String resourceGroupName, String name, String authprovider,
+        String userid, Context context) {
+        return this.serviceClient().deleteStaticSiteUserWithResponse(resourceGroupName, name, authprovider, userid,
+            context);
     }
 
     public void deleteStaticSiteUser(String resourceGroupName, String name, String authprovider, String userid) {
         this.serviceClient().deleteStaticSiteUser(resourceGroupName, name, authprovider, userid);
     }
 
-    public Response<StaticSiteUserArmResource> updateStaticSiteUserWithResponse(
-        String resourceGroupName,
-        String name,
-        String authprovider,
-        String userid,
-        StaticSiteUserArmResourceInner staticSiteUserEnvelope,
-        Context context) {
-        Response<StaticSiteUserArmResourceInner> inner =
-            this
-                .serviceClient()
-                .updateStaticSiteUserWithResponse(
-                    resourceGroupName, name, authprovider, userid, staticSiteUserEnvelope, context);
+    public Response<StaticSiteUserArmResource> updateStaticSiteUserWithResponse(String resourceGroupName, String name,
+        String authprovider, String userid, StaticSiteUserArmResourceInner staticSiteUserEnvelope, Context context) {
+        Response<StaticSiteUserArmResourceInner> inner = this.serviceClient().updateStaticSiteUserWithResponse(
+            resourceGroupName, name, authprovider, userid, staticSiteUserEnvelope, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new StaticSiteUserArmResourceImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public StaticSiteUserArmResource updateStaticSiteUser(
-        String resourceGroupName,
-        String name,
-        String authprovider,
-        String userid,
-        StaticSiteUserArmResourceInner staticSiteUserEnvelope) {
-        StaticSiteUserArmResourceInner inner =
-            this
-                .serviceClient()
-                .updateStaticSiteUser(resourceGroupName, name, authprovider, userid, staticSiteUserEnvelope);
+    public StaticSiteUserArmResource updateStaticSiteUser(String resourceGroupName, String name, String authprovider,
+        String userid, StaticSiteUserArmResourceInner staticSiteUserEnvelope) {
+        StaticSiteUserArmResourceInner inner = this.serviceClient().updateStaticSiteUser(resourceGroupName, name,
+            authprovider, userid, staticSiteUserEnvelope);
         if (inner != null) {
             return new StaticSiteUserArmResourceImpl(inner, this.manager());
         } else {
@@ -209,37 +184,34 @@ public final class StaticSitesImpl implements StaticSites {
     }
 
     public PagedIterable<StaticSiteBuildArmResource> getStaticSiteBuilds(String resourceGroupName, String name) {
-        PagedIterable<StaticSiteBuildArmResourceInner> inner =
-            this.serviceClient().getStaticSiteBuilds(resourceGroupName, name);
+        PagedIterable<StaticSiteBuildArmResourceInner> inner
+            = this.serviceClient().getStaticSiteBuilds(resourceGroupName, name);
         return Utils.mapPage(inner, inner1 -> new StaticSiteBuildArmResourceImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<StaticSiteBuildArmResource> getStaticSiteBuilds(
-        String resourceGroupName, String name, Context context) {
-        PagedIterable<StaticSiteBuildArmResourceInner> inner =
-            this.serviceClient().getStaticSiteBuilds(resourceGroupName, name, context);
+    public PagedIterable<StaticSiteBuildArmResource> getStaticSiteBuilds(String resourceGroupName, String name,
+        Context context) {
+        PagedIterable<StaticSiteBuildArmResourceInner> inner
+            = this.serviceClient().getStaticSiteBuilds(resourceGroupName, name, context);
         return Utils.mapPage(inner, inner1 -> new StaticSiteBuildArmResourceImpl(inner1, this.manager()));
     }
 
-    public Response<StaticSiteBuildArmResource> getStaticSiteBuildWithResponse(
-        String resourceGroupName, String name, String environmentName, Context context) {
-        Response<StaticSiteBuildArmResourceInner> inner =
-            this.serviceClient().getStaticSiteBuildWithResponse(resourceGroupName, name, environmentName, context);
+    public Response<StaticSiteBuildArmResource> getStaticSiteBuildWithResponse(String resourceGroupName, String name,
+        String environmentName, Context context) {
+        Response<StaticSiteBuildArmResourceInner> inner
+            = this.serviceClient().getStaticSiteBuildWithResponse(resourceGroupName, name, environmentName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new StaticSiteBuildArmResourceImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public StaticSiteBuildArmResource getStaticSiteBuild(
-        String resourceGroupName, String name, String environmentName) {
-        StaticSiteBuildArmResourceInner inner =
-            this.serviceClient().getStaticSiteBuild(resourceGroupName, name, environmentName);
+    public StaticSiteBuildArmResource getStaticSiteBuild(String resourceGroupName, String name,
+        String environmentName) {
+        StaticSiteBuildArmResourceInner inner
+            = this.serviceClient().getStaticSiteBuild(resourceGroupName, name, environmentName);
         if (inner != null) {
             return new StaticSiteBuildArmResourceImpl(inner, this.manager());
         } else {
@@ -255,34 +227,23 @@ public final class StaticSitesImpl implements StaticSites {
         this.serviceClient().deleteStaticSiteBuild(resourceGroupName, name, environmentName, context);
     }
 
-    public Response<StringDictionary> createOrUpdateStaticSiteBuildAppSettingsWithResponse(
-        String resourceGroupName,
-        String name,
-        String environmentName,
-        StringDictionaryInner appSettings,
-        Context context) {
-        Response<StringDictionaryInner> inner =
-            this
-                .serviceClient()
-                .createOrUpdateStaticSiteBuildAppSettingsWithResponse(
-                    resourceGroupName, name, environmentName, appSettings, context);
+    public Response<StringDictionary> createOrUpdateStaticSiteBuildAppSettingsWithResponse(String resourceGroupName,
+        String name, String environmentName, StringDictionaryInner appSettings, Context context) {
+        Response<StringDictionaryInner> inner
+            = this.serviceClient().createOrUpdateStaticSiteBuildAppSettingsWithResponse(resourceGroupName, name,
+                environmentName, appSettings, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new StringDictionaryImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public StringDictionary createOrUpdateStaticSiteBuildAppSettings(
-        String resourceGroupName, String name, String environmentName, StringDictionaryInner appSettings) {
-        StringDictionaryInner inner =
-            this
-                .serviceClient()
-                .createOrUpdateStaticSiteBuildAppSettings(resourceGroupName, name, environmentName, appSettings);
+    public StringDictionary createOrUpdateStaticSiteBuildAppSettings(String resourceGroupName, String name,
+        String environmentName, StringDictionaryInner appSettings) {
+        StringDictionaryInner inner = this.serviceClient().createOrUpdateStaticSiteBuildAppSettings(resourceGroupName,
+            name, environmentName, appSettings);
         if (inner != null) {
             return new StringDictionaryImpl(inner, this.manager());
         } else {
@@ -291,34 +252,23 @@ public final class StaticSitesImpl implements StaticSites {
     }
 
     public Response<StringDictionary> createOrUpdateStaticSiteBuildFunctionAppSettingsWithResponse(
-        String resourceGroupName,
-        String name,
-        String environmentName,
-        StringDictionaryInner appSettings,
+        String resourceGroupName, String name, String environmentName, StringDictionaryInner appSettings,
         Context context) {
-        Response<StringDictionaryInner> inner =
-            this
-                .serviceClient()
-                .createOrUpdateStaticSiteBuildFunctionAppSettingsWithResponse(
-                    resourceGroupName, name, environmentName, appSettings, context);
+        Response<StringDictionaryInner> inner
+            = this.serviceClient().createOrUpdateStaticSiteBuildFunctionAppSettingsWithResponse(resourceGroupName, name,
+                environmentName, appSettings, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new StringDictionaryImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public StringDictionary createOrUpdateStaticSiteBuildFunctionAppSettings(
-        String resourceGroupName, String name, String environmentName, StringDictionaryInner appSettings) {
-        StringDictionaryInner inner =
-            this
-                .serviceClient()
-                .createOrUpdateStaticSiteBuildFunctionAppSettings(
-                    resourceGroupName, name, environmentName, appSettings);
+    public StringDictionary createOrUpdateStaticSiteBuildFunctionAppSettings(String resourceGroupName, String name,
+        String environmentName, StringDictionaryInner appSettings) {
+        StringDictionaryInner inner = this.serviceClient()
+            .createOrUpdateStaticSiteBuildFunctionAppSettings(resourceGroupName, name, environmentName, appSettings);
         if (inner != null) {
             return new StringDictionaryImpl(inner, this.manager());
         } else {
@@ -326,44 +276,36 @@ public final class StaticSitesImpl implements StaticSites {
         }
     }
 
-    public PagedIterable<DatabaseConnection> getBuildDatabaseConnections(
-        String resourceGroupName, String name, String environmentName) {
-        PagedIterable<DatabaseConnectionInner> inner =
-            this.serviceClient().getBuildDatabaseConnections(resourceGroupName, name, environmentName);
+    public PagedIterable<DatabaseConnection> getBuildDatabaseConnections(String resourceGroupName, String name,
+        String environmentName) {
+        PagedIterable<DatabaseConnectionInner> inner
+            = this.serviceClient().getBuildDatabaseConnections(resourceGroupName, name, environmentName);
         return Utils.mapPage(inner, inner1 -> new DatabaseConnectionImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<DatabaseConnection> getBuildDatabaseConnections(
-        String resourceGroupName, String name, String environmentName, Context context) {
-        PagedIterable<DatabaseConnectionInner> inner =
-            this.serviceClient().getBuildDatabaseConnections(resourceGroupName, name, environmentName, context);
+    public PagedIterable<DatabaseConnection> getBuildDatabaseConnections(String resourceGroupName, String name,
+        String environmentName, Context context) {
+        PagedIterable<DatabaseConnectionInner> inner
+            = this.serviceClient().getBuildDatabaseConnections(resourceGroupName, name, environmentName, context);
         return Utils.mapPage(inner, inner1 -> new DatabaseConnectionImpl(inner1, this.manager()));
     }
 
-    public Response<DatabaseConnection> getBuildDatabaseConnectionWithResponse(
-        String resourceGroupName, String name, String environmentName, String databaseConnectionName, Context context) {
-        Response<DatabaseConnectionInner> inner =
-            this
-                .serviceClient()
-                .getBuildDatabaseConnectionWithResponse(
-                    resourceGroupName, name, environmentName, databaseConnectionName, context);
+    public Response<DatabaseConnection> getBuildDatabaseConnectionWithResponse(String resourceGroupName, String name,
+        String environmentName, String databaseConnectionName, Context context) {
+        Response<DatabaseConnectionInner> inner = this.serviceClient().getBuildDatabaseConnectionWithResponse(
+            resourceGroupName, name, environmentName, databaseConnectionName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DatabaseConnectionImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public DatabaseConnection getBuildDatabaseConnection(
-        String resourceGroupName, String name, String environmentName, String databaseConnectionName) {
-        DatabaseConnectionInner inner =
-            this
-                .serviceClient()
-                .getBuildDatabaseConnection(resourceGroupName, name, environmentName, databaseConnectionName);
+    public DatabaseConnection getBuildDatabaseConnection(String resourceGroupName, String name, String environmentName,
+        String databaseConnectionName) {
+        DatabaseConnectionInner inner = this.serviceClient().getBuildDatabaseConnection(resourceGroupName, name,
+            environmentName, databaseConnectionName);
         if (inner != null) {
             return new DatabaseConnectionImpl(inner, this.manager());
         } else {
@@ -371,46 +313,35 @@ public final class StaticSitesImpl implements StaticSites {
         }
     }
 
-    public Response<Void> deleteBuildDatabaseConnectionWithResponse(
-        String resourceGroupName, String name, String environmentName, String databaseConnectionName, Context context) {
-        return this
-            .serviceClient()
-            .deleteBuildDatabaseConnectionWithResponse(
-                resourceGroupName, name, environmentName, databaseConnectionName, context);
+    public Response<Void> deleteBuildDatabaseConnectionWithResponse(String resourceGroupName, String name,
+        String environmentName, String databaseConnectionName, Context context) {
+        return this.serviceClient().deleteBuildDatabaseConnectionWithResponse(resourceGroupName, name, environmentName,
+            databaseConnectionName, context);
     }
 
-    public void deleteBuildDatabaseConnection(
-        String resourceGroupName, String name, String environmentName, String databaseConnectionName) {
-        this
-            .serviceClient()
-            .deleteBuildDatabaseConnection(resourceGroupName, name, environmentName, databaseConnectionName);
+    public void deleteBuildDatabaseConnection(String resourceGroupName, String name, String environmentName,
+        String databaseConnectionName) {
+        this.serviceClient().deleteBuildDatabaseConnection(resourceGroupName, name, environmentName,
+            databaseConnectionName);
     }
 
-    public Response<DatabaseConnection> getBuildDatabaseConnectionWithDetailsWithResponse(
-        String resourceGroupName, String name, String environmentName, String databaseConnectionName, Context context) {
-        Response<DatabaseConnectionInner> inner =
-            this
-                .serviceClient()
-                .getBuildDatabaseConnectionWithDetailsWithResponse(
-                    resourceGroupName, name, environmentName, databaseConnectionName, context);
+    public Response<DatabaseConnection> getBuildDatabaseConnectionWithDetailsWithResponse(String resourceGroupName,
+        String name, String environmentName, String databaseConnectionName, Context context) {
+        Response<DatabaseConnectionInner> inner
+            = this.serviceClient().getBuildDatabaseConnectionWithDetailsWithResponse(resourceGroupName, name,
+                environmentName, databaseConnectionName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DatabaseConnectionImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public DatabaseConnection getBuildDatabaseConnectionWithDetails(
-        String resourceGroupName, String name, String environmentName, String databaseConnectionName) {
-        DatabaseConnectionInner inner =
-            this
-                .serviceClient()
-                .getBuildDatabaseConnectionWithDetails(
-                    resourceGroupName, name, environmentName, databaseConnectionName);
+    public DatabaseConnection getBuildDatabaseConnectionWithDetails(String resourceGroupName, String name,
+        String environmentName, String databaseConnectionName) {
+        DatabaseConnectionInner inner = this.serviceClient().getBuildDatabaseConnectionWithDetails(resourceGroupName,
+            name, environmentName, databaseConnectionName);
         if (inner != null) {
             return new DatabaseConnectionImpl(inner, this.manager());
         } else {
@@ -418,41 +349,36 @@ public final class StaticSitesImpl implements StaticSites {
         }
     }
 
-    public PagedIterable<StaticSiteFunctionOverviewArmResource> listStaticSiteBuildFunctions(
-        String resourceGroupName, String name, String environmentName) {
-        PagedIterable<StaticSiteFunctionOverviewArmResourceInner> inner =
-            this.serviceClient().listStaticSiteBuildFunctions(resourceGroupName, name, environmentName);
+    public PagedIterable<StaticSiteFunctionOverviewArmResource> listStaticSiteBuildFunctions(String resourceGroupName,
+        String name, String environmentName) {
+        PagedIterable<StaticSiteFunctionOverviewArmResourceInner> inner
+            = this.serviceClient().listStaticSiteBuildFunctions(resourceGroupName, name, environmentName);
         return Utils.mapPage(inner, inner1 -> new StaticSiteFunctionOverviewArmResourceImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<StaticSiteFunctionOverviewArmResource> listStaticSiteBuildFunctions(
-        String resourceGroupName, String name, String environmentName, Context context) {
-        PagedIterable<StaticSiteFunctionOverviewArmResourceInner> inner =
-            this.serviceClient().listStaticSiteBuildFunctions(resourceGroupName, name, environmentName, context);
+    public PagedIterable<StaticSiteFunctionOverviewArmResource> listStaticSiteBuildFunctions(String resourceGroupName,
+        String name, String environmentName, Context context) {
+        PagedIterable<StaticSiteFunctionOverviewArmResourceInner> inner
+            = this.serviceClient().listStaticSiteBuildFunctions(resourceGroupName, name, environmentName, context);
         return Utils.mapPage(inner, inner1 -> new StaticSiteFunctionOverviewArmResourceImpl(inner1, this.manager()));
     }
 
-    public Response<StringDictionary> listStaticSiteBuildAppSettingsWithResponse(
-        String resourceGroupName, String name, String environmentName, Context context) {
-        Response<StringDictionaryInner> inner =
-            this
-                .serviceClient()
-                .listStaticSiteBuildAppSettingsWithResponse(resourceGroupName, name, environmentName, context);
+    public Response<StringDictionary> listStaticSiteBuildAppSettingsWithResponse(String resourceGroupName, String name,
+        String environmentName, Context context) {
+        Response<StringDictionaryInner> inner = this.serviceClient()
+            .listStaticSiteBuildAppSettingsWithResponse(resourceGroupName, name, environmentName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new StringDictionaryImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public StringDictionary listStaticSiteBuildAppSettings(
-        String resourceGroupName, String name, String environmentName) {
-        StringDictionaryInner inner =
-            this.serviceClient().listStaticSiteBuildAppSettings(resourceGroupName, name, environmentName);
+    public StringDictionary listStaticSiteBuildAppSettings(String resourceGroupName, String name,
+        String environmentName) {
+        StringDictionaryInner inner
+            = this.serviceClient().listStaticSiteBuildAppSettings(resourceGroupName, name, environmentName);
         if (inner != null) {
             return new StringDictionaryImpl(inner, this.manager());
         } else {
@@ -460,27 +386,22 @@ public final class StaticSitesImpl implements StaticSites {
         }
     }
 
-    public Response<StringDictionary> listStaticSiteBuildFunctionAppSettingsWithResponse(
-        String resourceGroupName, String name, String environmentName, Context context) {
-        Response<StringDictionaryInner> inner =
-            this
-                .serviceClient()
-                .listStaticSiteBuildFunctionAppSettingsWithResponse(resourceGroupName, name, environmentName, context);
+    public Response<StringDictionary> listStaticSiteBuildFunctionAppSettingsWithResponse(String resourceGroupName,
+        String name, String environmentName, Context context) {
+        Response<StringDictionaryInner> inner = this.serviceClient()
+            .listStaticSiteBuildFunctionAppSettingsWithResponse(resourceGroupName, name, environmentName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new StringDictionaryImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public StringDictionary listStaticSiteBuildFunctionAppSettings(
-        String resourceGroupName, String name, String environmentName) {
-        StringDictionaryInner inner =
-            this.serviceClient().listStaticSiteBuildFunctionAppSettings(resourceGroupName, name, environmentName);
+    public StringDictionary listStaticSiteBuildFunctionAppSettings(String resourceGroupName, String name,
+        String environmentName) {
+        StringDictionaryInner inner
+            = this.serviceClient().listStaticSiteBuildFunctionAppSettings(resourceGroupName, name, environmentName);
         if (inner != null) {
             return new StringDictionaryImpl(inner, this.manager());
         } else {
@@ -488,55 +409,44 @@ public final class StaticSitesImpl implements StaticSites {
         }
     }
 
-    public PagedIterable<DatabaseConnection> getBuildDatabaseConnectionsWithDetails(
-        String resourceGroupName, String name, String environmentName) {
-        PagedIterable<DatabaseConnectionInner> inner =
-            this.serviceClient().getBuildDatabaseConnectionsWithDetails(resourceGroupName, name, environmentName);
+    public PagedIterable<DatabaseConnection> getBuildDatabaseConnectionsWithDetails(String resourceGroupName,
+        String name, String environmentName) {
+        PagedIterable<DatabaseConnectionInner> inner
+            = this.serviceClient().getBuildDatabaseConnectionsWithDetails(resourceGroupName, name, environmentName);
         return Utils.mapPage(inner, inner1 -> new DatabaseConnectionImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<DatabaseConnection> getBuildDatabaseConnectionsWithDetails(
-        String resourceGroupName, String name, String environmentName, Context context) {
-        PagedIterable<DatabaseConnectionInner> inner =
-            this
-                .serviceClient()
-                .getBuildDatabaseConnectionsWithDetails(resourceGroupName, name, environmentName, context);
+    public PagedIterable<DatabaseConnection> getBuildDatabaseConnectionsWithDetails(String resourceGroupName,
+        String name, String environmentName, Context context) {
+        PagedIterable<DatabaseConnectionInner> inner = this.serviceClient()
+            .getBuildDatabaseConnectionsWithDetails(resourceGroupName, name, environmentName, context);
         return Utils.mapPage(inner, inner1 -> new DatabaseConnectionImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<StaticSiteUserProvidedFunctionAppArmResource> getUserProvidedFunctionAppsForStaticSiteBuild(
-        String resourceGroupName, String name, String environmentName) {
-        PagedIterable<StaticSiteUserProvidedFunctionAppArmResourceInner> inner =
-            this
-                .serviceClient()
-                .getUserProvidedFunctionAppsForStaticSiteBuild(resourceGroupName, name, environmentName);
-        return Utils
-            .mapPage(inner, inner1 -> new StaticSiteUserProvidedFunctionAppArmResourceImpl(inner1, this.manager()));
+    public PagedIterable<StaticSiteUserProvidedFunctionAppArmResource>
+        getUserProvidedFunctionAppsForStaticSiteBuild(String resourceGroupName, String name, String environmentName) {
+        PagedIterable<StaticSiteUserProvidedFunctionAppArmResourceInner> inner = this.serviceClient()
+            .getUserProvidedFunctionAppsForStaticSiteBuild(resourceGroupName, name, environmentName);
+        return Utils.mapPage(inner,
+            inner1 -> new StaticSiteUserProvidedFunctionAppArmResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<StaticSiteUserProvidedFunctionAppArmResource> getUserProvidedFunctionAppsForStaticSiteBuild(
         String resourceGroupName, String name, String environmentName, Context context) {
-        PagedIterable<StaticSiteUserProvidedFunctionAppArmResourceInner> inner =
-            this
-                .serviceClient()
-                .getUserProvidedFunctionAppsForStaticSiteBuild(resourceGroupName, name, environmentName, context);
-        return Utils
-            .mapPage(inner, inner1 -> new StaticSiteUserProvidedFunctionAppArmResourceImpl(inner1, this.manager()));
+        PagedIterable<StaticSiteUserProvidedFunctionAppArmResourceInner> inner = this.serviceClient()
+            .getUserProvidedFunctionAppsForStaticSiteBuild(resourceGroupName, name, environmentName, context);
+        return Utils.mapPage(inner,
+            inner1 -> new StaticSiteUserProvidedFunctionAppArmResourceImpl(inner1, this.manager()));
     }
 
     public Response<StaticSiteUserProvidedFunctionAppArmResource>
-        getUserProvidedFunctionAppForStaticSiteBuildWithResponse(
-            String resourceGroupName, String name, String environmentName, String functionAppName, Context context) {
-        Response<StaticSiteUserProvidedFunctionAppArmResourceInner> inner =
-            this
-                .serviceClient()
-                .getUserProvidedFunctionAppForStaticSiteBuildWithResponse(
-                    resourceGroupName, name, environmentName, functionAppName, context);
+        getUserProvidedFunctionAppForStaticSiteBuildWithResponse(String resourceGroupName, String name,
+            String environmentName, String functionAppName, Context context) {
+        Response<StaticSiteUserProvidedFunctionAppArmResourceInner> inner
+            = this.serviceClient().getUserProvidedFunctionAppForStaticSiteBuildWithResponse(resourceGroupName, name,
+                environmentName, functionAppName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new StaticSiteUserProvidedFunctionAppArmResourceImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -545,11 +455,8 @@ public final class StaticSitesImpl implements StaticSites {
 
     public StaticSiteUserProvidedFunctionAppArmResource getUserProvidedFunctionAppForStaticSiteBuild(
         String resourceGroupName, String name, String environmentName, String functionAppName) {
-        StaticSiteUserProvidedFunctionAppArmResourceInner inner =
-            this
-                .serviceClient()
-                .getUserProvidedFunctionAppForStaticSiteBuild(
-                    resourceGroupName, name, environmentName, functionAppName);
+        StaticSiteUserProvidedFunctionAppArmResourceInner inner = this.serviceClient()
+            .getUserProvidedFunctionAppForStaticSiteBuild(resourceGroupName, name, environmentName, functionAppName);
         if (inner != null) {
             return new StaticSiteUserProvidedFunctionAppArmResourceImpl(inner, this.manager());
         } else {
@@ -557,66 +464,46 @@ public final class StaticSitesImpl implements StaticSites {
         }
     }
 
-    public Response<Void> detachUserProvidedFunctionAppFromStaticSiteBuildWithResponse(
-        String resourceGroupName, String name, String environmentName, String functionAppName, Context context) {
-        return this
-            .serviceClient()
-            .detachUserProvidedFunctionAppFromStaticSiteBuildWithResponse(
-                resourceGroupName, name, environmentName, functionAppName, context);
+    public Response<Void> detachUserProvidedFunctionAppFromStaticSiteBuildWithResponse(String resourceGroupName,
+        String name, String environmentName, String functionAppName, Context context) {
+        return this.serviceClient().detachUserProvidedFunctionAppFromStaticSiteBuildWithResponse(resourceGroupName,
+            name, environmentName, functionAppName, context);
     }
 
-    public void detachUserProvidedFunctionAppFromStaticSiteBuild(
-        String resourceGroupName, String name, String environmentName, String functionAppName) {
-        this
-            .serviceClient()
-            .detachUserProvidedFunctionAppFromStaticSiteBuild(
-                resourceGroupName, name, environmentName, functionAppName);
+    public void detachUserProvidedFunctionAppFromStaticSiteBuild(String resourceGroupName, String name,
+        String environmentName, String functionAppName) {
+        this.serviceClient().detachUserProvidedFunctionAppFromStaticSiteBuild(resourceGroupName, name, environmentName,
+            functionAppName);
     }
 
-    public void createZipDeploymentForStaticSiteBuild(
-        String resourceGroupName,
-        String name,
-        String environmentName,
+    public void createZipDeploymentForStaticSiteBuild(String resourceGroupName, String name, String environmentName,
         StaticSiteZipDeploymentArmResource staticSiteZipDeploymentEnvelope) {
-        this
-            .serviceClient()
-            .createZipDeploymentForStaticSiteBuild(
-                resourceGroupName, name, environmentName, staticSiteZipDeploymentEnvelope);
+        this.serviceClient().createZipDeploymentForStaticSiteBuild(resourceGroupName, name, environmentName,
+            staticSiteZipDeploymentEnvelope);
     }
 
-    public void createZipDeploymentForStaticSiteBuild(
-        String resourceGroupName,
-        String name,
-        String environmentName,
-        StaticSiteZipDeploymentArmResource staticSiteZipDeploymentEnvelope,
-        Context context) {
-        this
-            .serviceClient()
-            .createZipDeploymentForStaticSiteBuild(
-                resourceGroupName, name, environmentName, staticSiteZipDeploymentEnvelope, context);
+    public void createZipDeploymentForStaticSiteBuild(String resourceGroupName, String name, String environmentName,
+        StaticSiteZipDeploymentArmResource staticSiteZipDeploymentEnvelope, Context context) {
+        this.serviceClient().createZipDeploymentForStaticSiteBuild(resourceGroupName, name, environmentName,
+            staticSiteZipDeploymentEnvelope, context);
     }
 
-    public Response<StringDictionary> createOrUpdateStaticSiteAppSettingsWithResponse(
-        String resourceGroupName, String name, StringDictionaryInner appSettings, Context context) {
-        Response<StringDictionaryInner> inner =
-            this
-                .serviceClient()
-                .createOrUpdateStaticSiteAppSettingsWithResponse(resourceGroupName, name, appSettings, context);
+    public Response<StringDictionary> createOrUpdateStaticSiteAppSettingsWithResponse(String resourceGroupName,
+        String name, StringDictionaryInner appSettings, Context context) {
+        Response<StringDictionaryInner> inner = this.serviceClient()
+            .createOrUpdateStaticSiteAppSettingsWithResponse(resourceGroupName, name, appSettings, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new StringDictionaryImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public StringDictionary createOrUpdateStaticSiteAppSettings(
-        String resourceGroupName, String name, StringDictionaryInner appSettings) {
-        StringDictionaryInner inner =
-            this.serviceClient().createOrUpdateStaticSiteAppSettings(resourceGroupName, name, appSettings);
+    public StringDictionary createOrUpdateStaticSiteAppSettings(String resourceGroupName, String name,
+        StringDictionaryInner appSettings) {
+        StringDictionaryInner inner
+            = this.serviceClient().createOrUpdateStaticSiteAppSettings(resourceGroupName, name, appSettings);
         if (inner != null) {
             return new StringDictionaryImpl(inner, this.manager());
         } else {
@@ -624,39 +511,36 @@ public final class StaticSitesImpl implements StaticSites {
         }
     }
 
-    public PagedIterable<StaticSiteBasicAuthPropertiesArmResource> listBasicAuth(
-        String resourceGroupName, String name) {
-        PagedIterable<StaticSiteBasicAuthPropertiesArmResourceInner> inner =
-            this.serviceClient().listBasicAuth(resourceGroupName, name);
+    public PagedIterable<StaticSiteBasicAuthPropertiesArmResource> listBasicAuth(String resourceGroupName,
+        String name) {
+        PagedIterable<StaticSiteBasicAuthPropertiesArmResourceInner> inner
+            = this.serviceClient().listBasicAuth(resourceGroupName, name);
         return Utils.mapPage(inner, inner1 -> new StaticSiteBasicAuthPropertiesArmResourceImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<StaticSiteBasicAuthPropertiesArmResource> listBasicAuth(
-        String resourceGroupName, String name, Context context) {
-        PagedIterable<StaticSiteBasicAuthPropertiesArmResourceInner> inner =
-            this.serviceClient().listBasicAuth(resourceGroupName, name, context);
+    public PagedIterable<StaticSiteBasicAuthPropertiesArmResource> listBasicAuth(String resourceGroupName, String name,
+        Context context) {
+        PagedIterable<StaticSiteBasicAuthPropertiesArmResourceInner> inner
+            = this.serviceClient().listBasicAuth(resourceGroupName, name, context);
         return Utils.mapPage(inner, inner1 -> new StaticSiteBasicAuthPropertiesArmResourceImpl(inner1, this.manager()));
     }
 
-    public Response<StaticSiteBasicAuthPropertiesArmResource> getBasicAuthWithResponse(
-        String resourceGroupName, String name, BasicAuthName basicAuthName, Context context) {
-        Response<StaticSiteBasicAuthPropertiesArmResourceInner> inner =
-            this.serviceClient().getBasicAuthWithResponse(resourceGroupName, name, basicAuthName, context);
+    public Response<StaticSiteBasicAuthPropertiesArmResource> getBasicAuthWithResponse(String resourceGroupName,
+        String name, BasicAuthName basicAuthName, Context context) {
+        Response<StaticSiteBasicAuthPropertiesArmResourceInner> inner
+            = this.serviceClient().getBasicAuthWithResponse(resourceGroupName, name, basicAuthName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new StaticSiteBasicAuthPropertiesArmResourceImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public StaticSiteBasicAuthPropertiesArmResource getBasicAuth(
-        String resourceGroupName, String name, BasicAuthName basicAuthName) {
-        StaticSiteBasicAuthPropertiesArmResourceInner inner =
-            this.serviceClient().getBasicAuth(resourceGroupName, name, basicAuthName);
+    public StaticSiteBasicAuthPropertiesArmResource getBasicAuth(String resourceGroupName, String name,
+        BasicAuthName basicAuthName) {
+        StaticSiteBasicAuthPropertiesArmResourceInner inner
+            = this.serviceClient().getBasicAuth(resourceGroupName, name, basicAuthName);
         if (inner != null) {
             return new StaticSiteBasicAuthPropertiesArmResourceImpl(inner, this.manager());
         } else {
@@ -664,27 +548,22 @@ public final class StaticSitesImpl implements StaticSites {
         }
     }
 
-    public Response<StringDictionary> createOrUpdateStaticSiteFunctionAppSettingsWithResponse(
-        String resourceGroupName, String name, StringDictionaryInner appSettings, Context context) {
-        Response<StringDictionaryInner> inner =
-            this
-                .serviceClient()
-                .createOrUpdateStaticSiteFunctionAppSettingsWithResponse(resourceGroupName, name, appSettings, context);
+    public Response<StringDictionary> createOrUpdateStaticSiteFunctionAppSettingsWithResponse(String resourceGroupName,
+        String name, StringDictionaryInner appSettings, Context context) {
+        Response<StringDictionaryInner> inner = this.serviceClient()
+            .createOrUpdateStaticSiteFunctionAppSettingsWithResponse(resourceGroupName, name, appSettings, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new StringDictionaryImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public StringDictionary createOrUpdateStaticSiteFunctionAppSettings(
-        String resourceGroupName, String name, StringDictionaryInner appSettings) {
-        StringDictionaryInner inner =
-            this.serviceClient().createOrUpdateStaticSiteFunctionAppSettings(resourceGroupName, name, appSettings);
+    public StringDictionary createOrUpdateStaticSiteFunctionAppSettings(String resourceGroupName, String name,
+        StringDictionaryInner appSettings) {
+        StringDictionaryInner inner
+            = this.serviceClient().createOrUpdateStaticSiteFunctionAppSettings(resourceGroupName, name, appSettings);
         if (inner != null) {
             return new StringDictionaryImpl(inner, this.manager());
         } else {
@@ -693,34 +572,23 @@ public final class StaticSitesImpl implements StaticSites {
     }
 
     public Response<StaticSiteUserInvitationResponseResource> createUserRolesInvitationLinkWithResponse(
-        String resourceGroupName,
-        String name,
-        StaticSiteUserInvitationRequestResource staticSiteUserRolesInvitationEnvelope,
-        Context context) {
-        Response<StaticSiteUserInvitationResponseResourceInner> inner =
-            this
-                .serviceClient()
-                .createUserRolesInvitationLinkWithResponse(
-                    resourceGroupName, name, staticSiteUserRolesInvitationEnvelope, context);
+        String resourceGroupName, String name,
+        StaticSiteUserInvitationRequestResource staticSiteUserRolesInvitationEnvelope, Context context) {
+        Response<StaticSiteUserInvitationResponseResourceInner> inner
+            = this.serviceClient().createUserRolesInvitationLinkWithResponse(resourceGroupName, name,
+                staticSiteUserRolesInvitationEnvelope, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new StaticSiteUserInvitationResponseResourceImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public StaticSiteUserInvitationResponseResource createUserRolesInvitationLink(
-        String resourceGroupName,
-        String name,
+    public StaticSiteUserInvitationResponseResource createUserRolesInvitationLink(String resourceGroupName, String name,
         StaticSiteUserInvitationRequestResource staticSiteUserRolesInvitationEnvelope) {
-        StaticSiteUserInvitationResponseResourceInner inner =
-            this
-                .serviceClient()
-                .createUserRolesInvitationLink(resourceGroupName, name, staticSiteUserRolesInvitationEnvelope);
+        StaticSiteUserInvitationResponseResourceInner inner = this.serviceClient()
+            .createUserRolesInvitationLink(resourceGroupName, name, staticSiteUserRolesInvitationEnvelope);
         if (inner != null) {
             return new StaticSiteUserInvitationResponseResourceImpl(inner, this.manager());
         } else {
@@ -728,41 +596,38 @@ public final class StaticSitesImpl implements StaticSites {
         }
     }
 
-    public PagedIterable<StaticSiteCustomDomainOverviewArmResource> listStaticSiteCustomDomains(
-        String resourceGroupName, String name) {
-        PagedIterable<StaticSiteCustomDomainOverviewArmResourceInner> inner =
-            this.serviceClient().listStaticSiteCustomDomains(resourceGroupName, name);
-        return Utils
-            .mapPage(inner, inner1 -> new StaticSiteCustomDomainOverviewArmResourceImpl(inner1, this.manager()));
+    public PagedIterable<StaticSiteCustomDomainOverviewArmResource>
+        listStaticSiteCustomDomains(String resourceGroupName, String name) {
+        PagedIterable<StaticSiteCustomDomainOverviewArmResourceInner> inner
+            = this.serviceClient().listStaticSiteCustomDomains(resourceGroupName, name);
+        return Utils.mapPage(inner,
+            inner1 -> new StaticSiteCustomDomainOverviewArmResourceImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<StaticSiteCustomDomainOverviewArmResource> listStaticSiteCustomDomains(
-        String resourceGroupName, String name, Context context) {
-        PagedIterable<StaticSiteCustomDomainOverviewArmResourceInner> inner =
-            this.serviceClient().listStaticSiteCustomDomains(resourceGroupName, name, context);
-        return Utils
-            .mapPage(inner, inner1 -> new StaticSiteCustomDomainOverviewArmResourceImpl(inner1, this.manager()));
+    public PagedIterable<StaticSiteCustomDomainOverviewArmResource>
+        listStaticSiteCustomDomains(String resourceGroupName, String name, Context context) {
+        PagedIterable<StaticSiteCustomDomainOverviewArmResourceInner> inner
+            = this.serviceClient().listStaticSiteCustomDomains(resourceGroupName, name, context);
+        return Utils.mapPage(inner,
+            inner1 -> new StaticSiteCustomDomainOverviewArmResourceImpl(inner1, this.manager()));
     }
 
     public Response<StaticSiteCustomDomainOverviewArmResource> getStaticSiteCustomDomainWithResponse(
         String resourceGroupName, String name, String domainName, Context context) {
-        Response<StaticSiteCustomDomainOverviewArmResourceInner> inner =
-            this.serviceClient().getStaticSiteCustomDomainWithResponse(resourceGroupName, name, domainName, context);
+        Response<StaticSiteCustomDomainOverviewArmResourceInner> inner
+            = this.serviceClient().getStaticSiteCustomDomainWithResponse(resourceGroupName, name, domainName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new StaticSiteCustomDomainOverviewArmResourceImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public StaticSiteCustomDomainOverviewArmResource getStaticSiteCustomDomain(
-        String resourceGroupName, String name, String domainName) {
-        StaticSiteCustomDomainOverviewArmResourceInner inner =
-            this.serviceClient().getStaticSiteCustomDomain(resourceGroupName, name, domainName);
+    public StaticSiteCustomDomainOverviewArmResource getStaticSiteCustomDomain(String resourceGroupName, String name,
+        String domainName) {
+        StaticSiteCustomDomainOverviewArmResourceInner inner
+            = this.serviceClient().getStaticSiteCustomDomain(resourceGroupName, name, domainName);
         if (inner != null) {
             return new StaticSiteCustomDomainOverviewArmResourceImpl(inner, this.manager());
         } else {
@@ -774,107 +639,53 @@ public final class StaticSitesImpl implements StaticSites {
         this.serviceClient().deleteStaticSiteCustomDomain(resourceGroupName, name, domainName);
     }
 
-    public void deleteStaticSiteCustomDomain(
-        String resourceGroupName, String name, String domainName, Context context) {
+    public void deleteStaticSiteCustomDomain(String resourceGroupName, String name, String domainName,
+        Context context) {
         this.serviceClient().deleteStaticSiteCustomDomain(resourceGroupName, name, domainName, context);
     }
 
-    public void validateCustomDomainCanBeAddedToStaticSite(
-        String resourceGroupName,
-        String name,
-        String domainName,
+    public void validateCustomDomainCanBeAddedToStaticSite(String resourceGroupName, String name, String domainName,
         StaticSiteCustomDomainRequestPropertiesArmResource staticSiteCustomDomainRequestPropertiesEnvelope) {
-        this
-            .serviceClient()
-            .validateCustomDomainCanBeAddedToStaticSite(
-                resourceGroupName, name, domainName, staticSiteCustomDomainRequestPropertiesEnvelope);
+        this.serviceClient().validateCustomDomainCanBeAddedToStaticSite(resourceGroupName, name, domainName,
+            staticSiteCustomDomainRequestPropertiesEnvelope);
     }
 
-    public void validateCustomDomainCanBeAddedToStaticSite(
-        String resourceGroupName,
-        String name,
-        String domainName,
+    public void validateCustomDomainCanBeAddedToStaticSite(String resourceGroupName, String name, String domainName,
         StaticSiteCustomDomainRequestPropertiesArmResource staticSiteCustomDomainRequestPropertiesEnvelope,
         Context context) {
-        this
-            .serviceClient()
-            .validateCustomDomainCanBeAddedToStaticSite(
-                resourceGroupName, name, domainName, staticSiteCustomDomainRequestPropertiesEnvelope, context);
+        this.serviceClient().validateCustomDomainCanBeAddedToStaticSite(resourceGroupName, name, domainName,
+            staticSiteCustomDomainRequestPropertiesEnvelope, context);
     }
 
     public PagedIterable<DatabaseConnection> getDatabaseConnections(String resourceGroupName, String name) {
-        PagedIterable<DatabaseConnectionInner> inner =
-            this.serviceClient().getDatabaseConnections(resourceGroupName, name);
+        PagedIterable<DatabaseConnectionInner> inner
+            = this.serviceClient().getDatabaseConnections(resourceGroupName, name);
         return Utils.mapPage(inner, inner1 -> new DatabaseConnectionImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<DatabaseConnection> getDatabaseConnections(
-        String resourceGroupName, String name, Context context) {
-        PagedIterable<DatabaseConnectionInner> inner =
-            this.serviceClient().getDatabaseConnections(resourceGroupName, name, context);
-        return Utils.mapPage(inner, inner1 -> new DatabaseConnectionImpl(inner1, this.manager()));
-    }
-
-    public Response<DatabaseConnection> getDatabaseConnectionWithResponse(
-        String resourceGroupName, String name, String databaseConnectionName, Context context) {
-        Response<DatabaseConnectionInner> inner =
-            this
-                .serviceClient()
-                .getDatabaseConnectionWithResponse(resourceGroupName, name, databaseConnectionName, context);
-        if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
-                new DatabaseConnectionImpl(inner.getValue(), this.manager()));
-        } else {
-            return null;
-        }
-    }
-
-    public DatabaseConnection getDatabaseConnection(
-        String resourceGroupName, String name, String databaseConnectionName) {
-        DatabaseConnectionInner inner =
-            this.serviceClient().getDatabaseConnection(resourceGroupName, name, databaseConnectionName);
-        if (inner != null) {
-            return new DatabaseConnectionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public Response<DatabaseConnection> createOrUpdateDatabaseConnectionWithResponse(
-        String resourceGroupName,
-        String name,
-        String databaseConnectionName,
-        DatabaseConnectionInner databaseConnectionRequestEnvelope,
+    public PagedIterable<DatabaseConnection> getDatabaseConnections(String resourceGroupName, String name,
         Context context) {
-        Response<DatabaseConnectionInner> inner =
-            this
-                .serviceClient()
-                .createOrUpdateDatabaseConnectionWithResponse(
-                    resourceGroupName, name, databaseConnectionName, databaseConnectionRequestEnvelope, context);
+        PagedIterable<DatabaseConnectionInner> inner
+            = this.serviceClient().getDatabaseConnections(resourceGroupName, name, context);
+        return Utils.mapPage(inner, inner1 -> new DatabaseConnectionImpl(inner1, this.manager()));
+    }
+
+    public Response<DatabaseConnection> getDatabaseConnectionWithResponse(String resourceGroupName, String name,
+        String databaseConnectionName, Context context) {
+        Response<DatabaseConnectionInner> inner = this.serviceClient()
+            .getDatabaseConnectionWithResponse(resourceGroupName, name, databaseConnectionName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DatabaseConnectionImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public DatabaseConnection createOrUpdateDatabaseConnection(
-        String resourceGroupName,
-        String name,
-        String databaseConnectionName,
-        DatabaseConnectionInner databaseConnectionRequestEnvelope) {
-        DatabaseConnectionInner inner =
-            this
-                .serviceClient()
-                .createOrUpdateDatabaseConnection(
-                    resourceGroupName, name, databaseConnectionName, databaseConnectionRequestEnvelope);
+    public DatabaseConnection getDatabaseConnection(String resourceGroupName, String name,
+        String databaseConnectionName) {
+        DatabaseConnectionInner inner
+            = this.serviceClient().getDatabaseConnection(resourceGroupName, name, databaseConnectionName);
         if (inner != null) {
             return new DatabaseConnectionImpl(inner, this.manager());
         } else {
@@ -882,49 +693,57 @@ public final class StaticSitesImpl implements StaticSites {
         }
     }
 
-    public Response<Void> deleteDatabaseConnectionWithResponse(
-        String resourceGroupName, String name, String databaseConnectionName, Context context) {
-        return this
-            .serviceClient()
-            .deleteDatabaseConnectionWithResponse(resourceGroupName, name, databaseConnectionName, context);
+    public Response<DatabaseConnection> createOrUpdateDatabaseConnectionWithResponse(String resourceGroupName,
+        String name, String databaseConnectionName, DatabaseConnectionInner databaseConnectionRequestEnvelope,
+        Context context) {
+        Response<DatabaseConnectionInner> inner = this.serviceClient().createOrUpdateDatabaseConnectionWithResponse(
+            resourceGroupName, name, databaseConnectionName, databaseConnectionRequestEnvelope, context);
+        if (inner != null) {
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
+                new DatabaseConnectionImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public DatabaseConnection createOrUpdateDatabaseConnection(String resourceGroupName, String name,
+        String databaseConnectionName, DatabaseConnectionInner databaseConnectionRequestEnvelope) {
+        DatabaseConnectionInner inner = this.serviceClient().createOrUpdateDatabaseConnection(resourceGroupName, name,
+            databaseConnectionName, databaseConnectionRequestEnvelope);
+        if (inner != null) {
+            return new DatabaseConnectionImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<Void> deleteDatabaseConnectionWithResponse(String resourceGroupName, String name,
+        String databaseConnectionName, Context context) {
+        return this.serviceClient().deleteDatabaseConnectionWithResponse(resourceGroupName, name,
+            databaseConnectionName, context);
     }
 
     public void deleteDatabaseConnection(String resourceGroupName, String name, String databaseConnectionName) {
         this.serviceClient().deleteDatabaseConnection(resourceGroupName, name, databaseConnectionName);
     }
 
-    public Response<DatabaseConnection> updateDatabaseConnectionWithResponse(
-        String resourceGroupName,
-        String name,
-        String databaseConnectionName,
-        DatabaseConnectionPatchRequest databaseConnectionRequestEnvelope,
+    public Response<DatabaseConnection> updateDatabaseConnectionWithResponse(String resourceGroupName, String name,
+        String databaseConnectionName, DatabaseConnectionPatchRequest databaseConnectionRequestEnvelope,
         Context context) {
-        Response<DatabaseConnectionInner> inner =
-            this
-                .serviceClient()
-                .updateDatabaseConnectionWithResponse(
-                    resourceGroupName, name, databaseConnectionName, databaseConnectionRequestEnvelope, context);
+        Response<DatabaseConnectionInner> inner = this.serviceClient().updateDatabaseConnectionWithResponse(
+            resourceGroupName, name, databaseConnectionName, databaseConnectionRequestEnvelope, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DatabaseConnectionImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public DatabaseConnection updateDatabaseConnection(
-        String resourceGroupName,
-        String name,
-        String databaseConnectionName,
-        DatabaseConnectionPatchRequest databaseConnectionRequestEnvelope) {
-        DatabaseConnectionInner inner =
-            this
-                .serviceClient()
-                .updateDatabaseConnection(
-                    resourceGroupName, name, databaseConnectionName, databaseConnectionRequestEnvelope);
+    public DatabaseConnection updateDatabaseConnection(String resourceGroupName, String name,
+        String databaseConnectionName, DatabaseConnectionPatchRequest databaseConnectionRequestEnvelope) {
+        DatabaseConnectionInner inner = this.serviceClient().updateDatabaseConnection(resourceGroupName, name,
+            databaseConnectionName, databaseConnectionRequestEnvelope);
         if (inner != null) {
             return new DatabaseConnectionImpl(inner, this.manager());
         } else {
@@ -932,27 +751,22 @@ public final class StaticSitesImpl implements StaticSites {
         }
     }
 
-    public Response<DatabaseConnection> getDatabaseConnectionWithDetailsWithResponse(
-        String resourceGroupName, String name, String databaseConnectionName, Context context) {
-        Response<DatabaseConnectionInner> inner =
-            this
-                .serviceClient()
-                .getDatabaseConnectionWithDetailsWithResponse(resourceGroupName, name, databaseConnectionName, context);
+    public Response<DatabaseConnection> getDatabaseConnectionWithDetailsWithResponse(String resourceGroupName,
+        String name, String databaseConnectionName, Context context) {
+        Response<DatabaseConnectionInner> inner = this.serviceClient()
+            .getDatabaseConnectionWithDetailsWithResponse(resourceGroupName, name, databaseConnectionName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new DatabaseConnectionImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public DatabaseConnection getDatabaseConnectionWithDetails(
-        String resourceGroupName, String name, String databaseConnectionName) {
-        DatabaseConnectionInner inner =
-            this.serviceClient().getDatabaseConnectionWithDetails(resourceGroupName, name, databaseConnectionName);
+    public DatabaseConnection getDatabaseConnectionWithDetails(String resourceGroupName, String name,
+        String databaseConnectionName) {
+        DatabaseConnectionInner inner
+            = this.serviceClient().getDatabaseConnectionWithDetails(resourceGroupName, name, databaseConnectionName);
         if (inner != null) {
             return new DatabaseConnectionImpl(inner, this.manager());
         } else {
@@ -968,29 +782,26 @@ public final class StaticSitesImpl implements StaticSites {
         this.serviceClient().detachStaticSite(resourceGroupName, name, context);
     }
 
-    public PagedIterable<StaticSiteFunctionOverviewArmResource> listStaticSiteFunctions(
-        String resourceGroupName, String name) {
-        PagedIterable<StaticSiteFunctionOverviewArmResourceInner> inner =
-            this.serviceClient().listStaticSiteFunctions(resourceGroupName, name);
+    public PagedIterable<StaticSiteFunctionOverviewArmResource> listStaticSiteFunctions(String resourceGroupName,
+        String name) {
+        PagedIterable<StaticSiteFunctionOverviewArmResourceInner> inner
+            = this.serviceClient().listStaticSiteFunctions(resourceGroupName, name);
         return Utils.mapPage(inner, inner1 -> new StaticSiteFunctionOverviewArmResourceImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<StaticSiteFunctionOverviewArmResource> listStaticSiteFunctions(
-        String resourceGroupName, String name, Context context) {
-        PagedIterable<StaticSiteFunctionOverviewArmResourceInner> inner =
-            this.serviceClient().listStaticSiteFunctions(resourceGroupName, name, context);
+    public PagedIterable<StaticSiteFunctionOverviewArmResource> listStaticSiteFunctions(String resourceGroupName,
+        String name, Context context) {
+        PagedIterable<StaticSiteFunctionOverviewArmResourceInner> inner
+            = this.serviceClient().listStaticSiteFunctions(resourceGroupName, name, context);
         return Utils.mapPage(inner, inner1 -> new StaticSiteFunctionOverviewArmResourceImpl(inner1, this.manager()));
     }
 
-    public Response<StringDictionary> listStaticSiteAppSettingsWithResponse(
-        String resourceGroupName, String name, Context context) {
-        Response<StringDictionaryInner> inner =
-            this.serviceClient().listStaticSiteAppSettingsWithResponse(resourceGroupName, name, context);
+    public Response<StringDictionary> listStaticSiteAppSettingsWithResponse(String resourceGroupName, String name,
+        Context context) {
+        Response<StringDictionaryInner> inner
+            = this.serviceClient().listStaticSiteAppSettingsWithResponse(resourceGroupName, name, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new StringDictionaryImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -1006,15 +817,12 @@ public final class StaticSitesImpl implements StaticSites {
         }
     }
 
-    public Response<StringList> listStaticSiteConfiguredRolesWithResponse(
-        String resourceGroupName, String name, Context context) {
-        Response<StringListInner> inner =
-            this.serviceClient().listStaticSiteConfiguredRolesWithResponse(resourceGroupName, name, context);
+    public Response<StringList> listStaticSiteConfiguredRolesWithResponse(String resourceGroupName, String name,
+        Context context) {
+        Response<StringListInner> inner
+            = this.serviceClient().listStaticSiteConfiguredRolesWithResponse(resourceGroupName, name, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new StringListImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -1030,15 +838,12 @@ public final class StaticSitesImpl implements StaticSites {
         }
     }
 
-    public Response<StringDictionary> listStaticSiteFunctionAppSettingsWithResponse(
-        String resourceGroupName, String name, Context context) {
-        Response<StringDictionaryInner> inner =
-            this.serviceClient().listStaticSiteFunctionAppSettingsWithResponse(resourceGroupName, name, context);
+    public Response<StringDictionary> listStaticSiteFunctionAppSettingsWithResponse(String resourceGroupName,
+        String name, Context context) {
+        Response<StringDictionaryInner> inner
+            = this.serviceClient().listStaticSiteFunctionAppSettingsWithResponse(resourceGroupName, name, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new StringDictionaryImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -1054,15 +859,12 @@ public final class StaticSitesImpl implements StaticSites {
         }
     }
 
-    public Response<StringDictionary> listStaticSiteSecretsWithResponse(
-        String resourceGroupName, String name, Context context) {
-        Response<StringDictionaryInner> inner =
-            this.serviceClient().listStaticSiteSecretsWithResponse(resourceGroupName, name, context);
+    public Response<StringDictionary> listStaticSiteSecretsWithResponse(String resourceGroupName, String name,
+        Context context) {
+        Response<StringDictionaryInner> inner
+            = this.serviceClient().listStaticSiteSecretsWithResponse(resourceGroupName, name, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new StringDictionaryImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -1078,44 +880,38 @@ public final class StaticSitesImpl implements StaticSites {
         }
     }
 
-    public PagedIterable<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionList(
-        String resourceGroupName, String name) {
-        PagedIterable<RemotePrivateEndpointConnectionArmResourceInner> inner =
-            this.serviceClient().getPrivateEndpointConnectionList(resourceGroupName, name);
-        return Utils
-            .mapPage(inner, inner1 -> new RemotePrivateEndpointConnectionArmResourceImpl(inner1, this.manager()));
+    public PagedIterable<RemotePrivateEndpointConnectionArmResource>
+        getPrivateEndpointConnectionList(String resourceGroupName, String name) {
+        PagedIterable<RemotePrivateEndpointConnectionArmResourceInner> inner
+            = this.serviceClient().getPrivateEndpointConnectionList(resourceGroupName, name);
+        return Utils.mapPage(inner,
+            inner1 -> new RemotePrivateEndpointConnectionArmResourceImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionList(
-        String resourceGroupName, String name, Context context) {
-        PagedIterable<RemotePrivateEndpointConnectionArmResourceInner> inner =
-            this.serviceClient().getPrivateEndpointConnectionList(resourceGroupName, name, context);
-        return Utils
-            .mapPage(inner, inner1 -> new RemotePrivateEndpointConnectionArmResourceImpl(inner1, this.manager()));
+    public PagedIterable<RemotePrivateEndpointConnectionArmResource>
+        getPrivateEndpointConnectionList(String resourceGroupName, String name, Context context) {
+        PagedIterable<RemotePrivateEndpointConnectionArmResourceInner> inner
+            = this.serviceClient().getPrivateEndpointConnectionList(resourceGroupName, name, context);
+        return Utils.mapPage(inner,
+            inner1 -> new RemotePrivateEndpointConnectionArmResourceImpl(inner1, this.manager()));
     }
 
     public Response<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionWithResponse(
         String resourceGroupName, String name, String privateEndpointConnectionName, Context context) {
-        Response<RemotePrivateEndpointConnectionArmResourceInner> inner =
-            this
-                .serviceClient()
-                .getPrivateEndpointConnectionWithResponse(
-                    resourceGroupName, name, privateEndpointConnectionName, context);
+        Response<RemotePrivateEndpointConnectionArmResourceInner> inner = this.serviceClient()
+            .getPrivateEndpointConnectionWithResponse(resourceGroupName, name, privateEndpointConnectionName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new RemotePrivateEndpointConnectionArmResourceImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public RemotePrivateEndpointConnectionArmResource getPrivateEndpointConnection(
-        String resourceGroupName, String name, String privateEndpointConnectionName) {
-        RemotePrivateEndpointConnectionArmResourceInner inner =
-            this.serviceClient().getPrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName);
+    public RemotePrivateEndpointConnectionArmResource getPrivateEndpointConnection(String resourceGroupName,
+        String name, String privateEndpointConnectionName) {
+        RemotePrivateEndpointConnectionArmResourceInner inner
+            = this.serviceClient().getPrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName);
         if (inner != null) {
             return new RemotePrivateEndpointConnectionArmResourceImpl(inner, this.manager());
         } else {
@@ -1123,16 +919,12 @@ public final class StaticSitesImpl implements StaticSites {
         }
     }
 
-    public RemotePrivateEndpointConnectionArmResource approveOrRejectPrivateEndpointConnection(
-        String resourceGroupName,
-        String name,
-        String privateEndpointConnectionName,
+    public RemotePrivateEndpointConnectionArmResource approveOrRejectPrivateEndpointConnection(String resourceGroupName,
+        String name, String privateEndpointConnectionName,
         PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper) {
-        RemotePrivateEndpointConnectionArmResourceInner inner =
-            this
-                .serviceClient()
-                .approveOrRejectPrivateEndpointConnection(
-                    resourceGroupName, name, privateEndpointConnectionName, privateEndpointWrapper);
+        RemotePrivateEndpointConnectionArmResourceInner inner
+            = this.serviceClient().approveOrRejectPrivateEndpointConnection(resourceGroupName, name,
+                privateEndpointConnectionName, privateEndpointWrapper);
         if (inner != null) {
             return new RemotePrivateEndpointConnectionArmResourceImpl(inner, this.manager());
         } else {
@@ -1140,17 +932,12 @@ public final class StaticSitesImpl implements StaticSites {
         }
     }
 
-    public RemotePrivateEndpointConnectionArmResource approveOrRejectPrivateEndpointConnection(
-        String resourceGroupName,
-        String name,
-        String privateEndpointConnectionName,
-        PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper,
-        Context context) {
-        RemotePrivateEndpointConnectionArmResourceInner inner =
-            this
-                .serviceClient()
-                .approveOrRejectPrivateEndpointConnection(
-                    resourceGroupName, name, privateEndpointConnectionName, privateEndpointWrapper, context);
+    public RemotePrivateEndpointConnectionArmResource approveOrRejectPrivateEndpointConnection(String resourceGroupName,
+        String name, String privateEndpointConnectionName,
+        PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper, Context context) {
+        RemotePrivateEndpointConnectionArmResourceInner inner
+            = this.serviceClient().approveOrRejectPrivateEndpointConnection(resourceGroupName, name,
+                privateEndpointConnectionName, privateEndpointWrapper, context);
         if (inner != null) {
             return new RemotePrivateEndpointConnectionArmResourceImpl(inner, this.manager());
         } else {
@@ -1158,29 +945,24 @@ public final class StaticSitesImpl implements StaticSites {
         }
     }
 
-    public Object deletePrivateEndpointConnection(
-        String resourceGroupName, String name, String privateEndpointConnectionName) {
-        return this
-            .serviceClient()
-            .deletePrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName);
+    public Object deletePrivateEndpointConnection(String resourceGroupName, String name,
+        String privateEndpointConnectionName) {
+        return this.serviceClient().deletePrivateEndpointConnection(resourceGroupName, name,
+            privateEndpointConnectionName);
     }
 
-    public Object deletePrivateEndpointConnection(
-        String resourceGroupName, String name, String privateEndpointConnectionName, Context context) {
-        return this
-            .serviceClient()
-            .deletePrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName, context);
+    public Object deletePrivateEndpointConnection(String resourceGroupName, String name,
+        String privateEndpointConnectionName, Context context) {
+        return this.serviceClient().deletePrivateEndpointConnection(resourceGroupName, name,
+            privateEndpointConnectionName, context);
     }
 
-    public Response<PrivateLinkResourcesWrapper> getPrivateLinkResourcesWithResponse(
-        String resourceGroupName, String name, Context context) {
-        Response<PrivateLinkResourcesWrapperInner> inner =
-            this.serviceClient().getPrivateLinkResourcesWithResponse(resourceGroupName, name, context);
+    public Response<PrivateLinkResourcesWrapper> getPrivateLinkResourcesWithResponse(String resourceGroupName,
+        String name, Context context) {
+        Response<PrivateLinkResourcesWrapperInner> inner
+            = this.serviceClient().getPrivateLinkResourcesWithResponse(resourceGroupName, name, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new PrivateLinkResourcesWrapperImpl(inner.getValue(), this.manager()));
         } else {
             return null;
@@ -1196,71 +978,62 @@ public final class StaticSitesImpl implements StaticSites {
         }
     }
 
-    public Response<Void> resetStaticSiteApiKeyWithResponse(
-        String resourceGroupName,
-        String name,
-        StaticSiteResetPropertiesArmResource resetPropertiesEnvelope,
-        Context context) {
-        return this
-            .serviceClient()
-            .resetStaticSiteApiKeyWithResponse(resourceGroupName, name, resetPropertiesEnvelope, context);
+    public Response<Void> resetStaticSiteApiKeyWithResponse(String resourceGroupName, String name,
+        StaticSiteResetPropertiesArmResource resetPropertiesEnvelope, Context context) {
+        return this.serviceClient().resetStaticSiteApiKeyWithResponse(resourceGroupName, name, resetPropertiesEnvelope,
+            context);
     }
 
-    public void resetStaticSiteApiKey(
-        String resourceGroupName, String name, StaticSiteResetPropertiesArmResource resetPropertiesEnvelope) {
+    public void resetStaticSiteApiKey(String resourceGroupName, String name,
+        StaticSiteResetPropertiesArmResource resetPropertiesEnvelope) {
         this.serviceClient().resetStaticSiteApiKey(resourceGroupName, name, resetPropertiesEnvelope);
     }
 
     public PagedIterable<DatabaseConnection> getDatabaseConnectionsWithDetails(String resourceGroupName, String name) {
-        PagedIterable<DatabaseConnectionInner> inner =
-            this.serviceClient().getDatabaseConnectionsWithDetails(resourceGroupName, name);
+        PagedIterable<DatabaseConnectionInner> inner
+            = this.serviceClient().getDatabaseConnectionsWithDetails(resourceGroupName, name);
         return Utils.mapPage(inner, inner1 -> new DatabaseConnectionImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<DatabaseConnection> getDatabaseConnectionsWithDetails(
-        String resourceGroupName, String name, Context context) {
-        PagedIterable<DatabaseConnectionInner> inner =
-            this.serviceClient().getDatabaseConnectionsWithDetails(resourceGroupName, name, context);
+    public PagedIterable<DatabaseConnection> getDatabaseConnectionsWithDetails(String resourceGroupName, String name,
+        Context context) {
+        PagedIterable<DatabaseConnectionInner> inner
+            = this.serviceClient().getDatabaseConnectionsWithDetails(resourceGroupName, name, context);
         return Utils.mapPage(inner, inner1 -> new DatabaseConnectionImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<StaticSiteUserProvidedFunctionAppArmResource> getUserProvidedFunctionAppsForStaticSite(
-        String resourceGroupName, String name) {
-        PagedIterable<StaticSiteUserProvidedFunctionAppArmResourceInner> inner =
-            this.serviceClient().getUserProvidedFunctionAppsForStaticSite(resourceGroupName, name);
-        return Utils
-            .mapPage(inner, inner1 -> new StaticSiteUserProvidedFunctionAppArmResourceImpl(inner1, this.manager()));
+    public PagedIterable<StaticSiteUserProvidedFunctionAppArmResource>
+        getUserProvidedFunctionAppsForStaticSite(String resourceGroupName, String name) {
+        PagedIterable<StaticSiteUserProvidedFunctionAppArmResourceInner> inner
+            = this.serviceClient().getUserProvidedFunctionAppsForStaticSite(resourceGroupName, name);
+        return Utils.mapPage(inner,
+            inner1 -> new StaticSiteUserProvidedFunctionAppArmResourceImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<StaticSiteUserProvidedFunctionAppArmResource> getUserProvidedFunctionAppsForStaticSite(
-        String resourceGroupName, String name, Context context) {
-        PagedIterable<StaticSiteUserProvidedFunctionAppArmResourceInner> inner =
-            this.serviceClient().getUserProvidedFunctionAppsForStaticSite(resourceGroupName, name, context);
-        return Utils
-            .mapPage(inner, inner1 -> new StaticSiteUserProvidedFunctionAppArmResourceImpl(inner1, this.manager()));
+    public PagedIterable<StaticSiteUserProvidedFunctionAppArmResource>
+        getUserProvidedFunctionAppsForStaticSite(String resourceGroupName, String name, Context context) {
+        PagedIterable<StaticSiteUserProvidedFunctionAppArmResourceInner> inner
+            = this.serviceClient().getUserProvidedFunctionAppsForStaticSite(resourceGroupName, name, context);
+        return Utils.mapPage(inner,
+            inner1 -> new StaticSiteUserProvidedFunctionAppArmResourceImpl(inner1, this.manager()));
     }
 
     public Response<StaticSiteUserProvidedFunctionAppArmResource> getUserProvidedFunctionAppForStaticSiteWithResponse(
         String resourceGroupName, String name, String functionAppName, Context context) {
-        Response<StaticSiteUserProvidedFunctionAppArmResourceInner> inner =
-            this
-                .serviceClient()
-                .getUserProvidedFunctionAppForStaticSiteWithResponse(resourceGroupName, name, functionAppName, context);
+        Response<StaticSiteUserProvidedFunctionAppArmResourceInner> inner = this.serviceClient()
+            .getUserProvidedFunctionAppForStaticSiteWithResponse(resourceGroupName, name, functionAppName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new StaticSiteUserProvidedFunctionAppArmResourceImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public StaticSiteUserProvidedFunctionAppArmResource getUserProvidedFunctionAppForStaticSite(
-        String resourceGroupName, String name, String functionAppName) {
-        StaticSiteUserProvidedFunctionAppArmResourceInner inner =
-            this.serviceClient().getUserProvidedFunctionAppForStaticSite(resourceGroupName, name, functionAppName);
+    public StaticSiteUserProvidedFunctionAppArmResource
+        getUserProvidedFunctionAppForStaticSite(String resourceGroupName, String name, String functionAppName) {
+        StaticSiteUserProvidedFunctionAppArmResourceInner inner
+            = this.serviceClient().getUserProvidedFunctionAppForStaticSite(resourceGroupName, name, functionAppName);
         if (inner != null) {
             return new StaticSiteUserProvidedFunctionAppArmResourceImpl(inner, this.manager());
         } else {
@@ -1269,15 +1042,11 @@ public final class StaticSitesImpl implements StaticSites {
     }
 
     public StaticSiteUserProvidedFunctionAppArmResource registerUserProvidedFunctionAppWithStaticSite(
-        String resourceGroupName,
-        String name,
-        String functionAppName,
+        String resourceGroupName, String name, String functionAppName,
         StaticSiteUserProvidedFunctionAppArmResourceInner staticSiteUserProvidedFunctionEnvelope) {
-        StaticSiteUserProvidedFunctionAppArmResourceInner inner =
-            this
-                .serviceClient()
-                .registerUserProvidedFunctionAppWithStaticSite(
-                    resourceGroupName, name, functionAppName, staticSiteUserProvidedFunctionEnvelope);
+        StaticSiteUserProvidedFunctionAppArmResourceInner inner
+            = this.serviceClient().registerUserProvidedFunctionAppWithStaticSite(resourceGroupName, name,
+                functionAppName, staticSiteUserProvidedFunctionEnvelope);
         if (inner != null) {
             return new StaticSiteUserProvidedFunctionAppArmResourceImpl(inner, this.manager());
         } else {
@@ -1286,22 +1055,12 @@ public final class StaticSitesImpl implements StaticSites {
     }
 
     public StaticSiteUserProvidedFunctionAppArmResource registerUserProvidedFunctionAppWithStaticSite(
-        String resourceGroupName,
-        String name,
-        String functionAppName,
-        StaticSiteUserProvidedFunctionAppArmResourceInner staticSiteUserProvidedFunctionEnvelope,
-        Boolean isForced,
+        String resourceGroupName, String name, String functionAppName,
+        StaticSiteUserProvidedFunctionAppArmResourceInner staticSiteUserProvidedFunctionEnvelope, Boolean isForced,
         Context context) {
-        StaticSiteUserProvidedFunctionAppArmResourceInner inner =
-            this
-                .serviceClient()
-                .registerUserProvidedFunctionAppWithStaticSite(
-                    resourceGroupName,
-                    name,
-                    functionAppName,
-                    staticSiteUserProvidedFunctionEnvelope,
-                    isForced,
-                    context);
+        StaticSiteUserProvidedFunctionAppArmResourceInner inner
+            = this.serviceClient().registerUserProvidedFunctionAppWithStaticSite(resourceGroupName, name,
+                functionAppName, staticSiteUserProvidedFunctionEnvelope, isForced, context);
         if (inner != null) {
             return new StaticSiteUserProvidedFunctionAppArmResourceImpl(inner, this.manager());
         } else {
@@ -1309,125 +1068,96 @@ public final class StaticSitesImpl implements StaticSites {
         }
     }
 
-    public Response<Void> detachUserProvidedFunctionAppFromStaticSiteWithResponse(
-        String resourceGroupName, String name, String functionAppName, Context context) {
-        return this
-            .serviceClient()
-            .detachUserProvidedFunctionAppFromStaticSiteWithResponse(resourceGroupName, name, functionAppName, context);
+    public Response<Void> detachUserProvidedFunctionAppFromStaticSiteWithResponse(String resourceGroupName, String name,
+        String functionAppName, Context context) {
+        return this.serviceClient().detachUserProvidedFunctionAppFromStaticSiteWithResponse(resourceGroupName, name,
+            functionAppName, context);
     }
 
-    public void detachUserProvidedFunctionAppFromStaticSite(
-        String resourceGroupName, String name, String functionAppName) {
+    public void detachUserProvidedFunctionAppFromStaticSite(String resourceGroupName, String name,
+        String functionAppName) {
         this.serviceClient().detachUserProvidedFunctionAppFromStaticSite(resourceGroupName, name, functionAppName);
     }
 
-    public void createZipDeploymentForStaticSite(
-        String resourceGroupName, String name, StaticSiteZipDeploymentArmResource staticSiteZipDeploymentEnvelope) {
+    public void createZipDeploymentForStaticSite(String resourceGroupName, String name,
+        StaticSiteZipDeploymentArmResource staticSiteZipDeploymentEnvelope) {
         this.serviceClient().createZipDeploymentForStaticSite(resourceGroupName, name, staticSiteZipDeploymentEnvelope);
     }
 
-    public void createZipDeploymentForStaticSite(
-        String resourceGroupName,
-        String name,
-        StaticSiteZipDeploymentArmResource staticSiteZipDeploymentEnvelope,
-        Context context) {
-        this
-            .serviceClient()
-            .createZipDeploymentForStaticSite(resourceGroupName, name, staticSiteZipDeploymentEnvelope, context);
+    public void createZipDeploymentForStaticSite(String resourceGroupName, String name,
+        StaticSiteZipDeploymentArmResource staticSiteZipDeploymentEnvelope, Context context) {
+        this.serviceClient().createZipDeploymentForStaticSite(resourceGroupName, name, staticSiteZipDeploymentEnvelope,
+            context);
     }
 
-    public void validateBackend(
-        String resourceGroupName,
-        String name,
-        String linkedBackendName,
+    public void validateBackend(String resourceGroupName, String name, String linkedBackendName,
         StaticSiteLinkedBackendArmResourceInner staticSiteLinkedBackendEnvelope) {
-        this
-            .serviceClient()
-            .validateBackend(resourceGroupName, name, linkedBackendName, staticSiteLinkedBackendEnvelope);
+        this.serviceClient().validateBackend(resourceGroupName, name, linkedBackendName,
+            staticSiteLinkedBackendEnvelope);
     }
 
-    public void validateBackend(
-        String resourceGroupName,
-        String name,
-        String linkedBackendName,
-        StaticSiteLinkedBackendArmResourceInner staticSiteLinkedBackendEnvelope,
+    public void validateBackend(String resourceGroupName, String name, String linkedBackendName,
+        StaticSiteLinkedBackendArmResourceInner staticSiteLinkedBackendEnvelope, Context context) {
+        this.serviceClient().validateBackend(resourceGroupName, name, linkedBackendName,
+            staticSiteLinkedBackendEnvelope, context);
+    }
+
+    public void validateBackendForBuild(String resourceGroupName, String name, String environmentName,
+        String linkedBackendName, StaticSiteLinkedBackendArmResourceInner staticSiteLinkedBackendEnvelope) {
+        this.serviceClient().validateBackendForBuild(resourceGroupName, name, environmentName, linkedBackendName,
+            staticSiteLinkedBackendEnvelope);
+    }
+
+    public void validateBackendForBuild(String resourceGroupName, String name, String environmentName,
+        String linkedBackendName, StaticSiteLinkedBackendArmResourceInner staticSiteLinkedBackendEnvelope,
         Context context) {
-        this
-            .serviceClient()
-            .validateBackend(resourceGroupName, name, linkedBackendName, staticSiteLinkedBackendEnvelope, context);
-    }
-
-    public void validateBackendForBuild(
-        String resourceGroupName,
-        String name,
-        String environmentName,
-        String linkedBackendName,
-        StaticSiteLinkedBackendArmResourceInner staticSiteLinkedBackendEnvelope) {
-        this
-            .serviceClient()
-            .validateBackendForBuild(
-                resourceGroupName, name, environmentName, linkedBackendName, staticSiteLinkedBackendEnvelope);
-    }
-
-    public void validateBackendForBuild(
-        String resourceGroupName,
-        String name,
-        String environmentName,
-        String linkedBackendName,
-        StaticSiteLinkedBackendArmResourceInner staticSiteLinkedBackendEnvelope,
-        Context context) {
-        this
-            .serviceClient()
-            .validateBackendForBuild(
-                resourceGroupName, name, environmentName, linkedBackendName, staticSiteLinkedBackendEnvelope, context);
+        this.serviceClient().validateBackendForBuild(resourceGroupName, name, environmentName, linkedBackendName,
+            staticSiteLinkedBackendEnvelope, context);
     }
 
     public PagedIterable<StaticSiteLinkedBackendArmResource> getLinkedBackends(String resourceGroupName, String name) {
-        PagedIterable<StaticSiteLinkedBackendArmResourceInner> inner =
-            this.serviceClient().getLinkedBackends(resourceGroupName, name);
+        PagedIterable<StaticSiteLinkedBackendArmResourceInner> inner
+            = this.serviceClient().getLinkedBackends(resourceGroupName, name);
         return Utils.mapPage(inner, inner1 -> new StaticSiteLinkedBackendArmResourceImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<StaticSiteLinkedBackendArmResource> getLinkedBackends(
-        String resourceGroupName, String name, Context context) {
-        PagedIterable<StaticSiteLinkedBackendArmResourceInner> inner =
-            this.serviceClient().getLinkedBackends(resourceGroupName, name, context);
+    public PagedIterable<StaticSiteLinkedBackendArmResource> getLinkedBackends(String resourceGroupName, String name,
+        Context context) {
+        PagedIterable<StaticSiteLinkedBackendArmResourceInner> inner
+            = this.serviceClient().getLinkedBackends(resourceGroupName, name, context);
         return Utils.mapPage(inner, inner1 -> new StaticSiteLinkedBackendArmResourceImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<StaticSiteLinkedBackendArmResource> getLinkedBackendsForBuild(
-        String resourceGroupName, String name, String environmentName) {
-        PagedIterable<StaticSiteLinkedBackendArmResourceInner> inner =
-            this.serviceClient().getLinkedBackendsForBuild(resourceGroupName, name, environmentName);
+    public PagedIterable<StaticSiteLinkedBackendArmResource> getLinkedBackendsForBuild(String resourceGroupName,
+        String name, String environmentName) {
+        PagedIterable<StaticSiteLinkedBackendArmResourceInner> inner
+            = this.serviceClient().getLinkedBackendsForBuild(resourceGroupName, name, environmentName);
         return Utils.mapPage(inner, inner1 -> new StaticSiteLinkedBackendArmResourceImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<StaticSiteLinkedBackendArmResource> getLinkedBackendsForBuild(
-        String resourceGroupName, String name, String environmentName, Context context) {
-        PagedIterable<StaticSiteLinkedBackendArmResourceInner> inner =
-            this.serviceClient().getLinkedBackendsForBuild(resourceGroupName, name, environmentName, context);
+    public PagedIterable<StaticSiteLinkedBackendArmResource> getLinkedBackendsForBuild(String resourceGroupName,
+        String name, String environmentName, Context context) {
+        PagedIterable<StaticSiteLinkedBackendArmResourceInner> inner
+            = this.serviceClient().getLinkedBackendsForBuild(resourceGroupName, name, environmentName, context);
         return Utils.mapPage(inner, inner1 -> new StaticSiteLinkedBackendArmResourceImpl(inner1, this.manager()));
     }
 
-    public Response<StaticSiteLinkedBackendArmResource> getLinkedBackendWithResponse(
-        String resourceGroupName, String name, String linkedBackendName, Context context) {
-        Response<StaticSiteLinkedBackendArmResourceInner> inner =
-            this.serviceClient().getLinkedBackendWithResponse(resourceGroupName, name, linkedBackendName, context);
+    public Response<StaticSiteLinkedBackendArmResource> getLinkedBackendWithResponse(String resourceGroupName,
+        String name, String linkedBackendName, Context context) {
+        Response<StaticSiteLinkedBackendArmResourceInner> inner
+            = this.serviceClient().getLinkedBackendWithResponse(resourceGroupName, name, linkedBackendName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new StaticSiteLinkedBackendArmResourceImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public StaticSiteLinkedBackendArmResource getLinkedBackend(
-        String resourceGroupName, String name, String linkedBackendName) {
-        StaticSiteLinkedBackendArmResourceInner inner =
-            this.serviceClient().getLinkedBackend(resourceGroupName, name, linkedBackendName);
+    public StaticSiteLinkedBackendArmResource getLinkedBackend(String resourceGroupName, String name,
+        String linkedBackendName) {
+        StaticSiteLinkedBackendArmResourceInner inner
+            = this.serviceClient().getLinkedBackend(resourceGroupName, name, linkedBackendName);
         if (inner != null) {
             return new StaticSiteLinkedBackendArmResourceImpl(inner, this.manager());
         } else {
@@ -1435,43 +1165,32 @@ public final class StaticSitesImpl implements StaticSites {
         }
     }
 
-    public Response<Void> unlinkBackendWithResponse(
-        String resourceGroupName,
-        String name,
-        String linkedBackendName,
-        Boolean isCleaningAuthConfig,
-        Context context) {
-        return this
-            .serviceClient()
-            .unlinkBackendWithResponse(resourceGroupName, name, linkedBackendName, isCleaningAuthConfig, context);
+    public Response<Void> unlinkBackendWithResponse(String resourceGroupName, String name, String linkedBackendName,
+        Boolean isCleaningAuthConfig, Context context) {
+        return this.serviceClient().unlinkBackendWithResponse(resourceGroupName, name, linkedBackendName,
+            isCleaningAuthConfig, context);
     }
 
     public void unlinkBackend(String resourceGroupName, String name, String linkedBackendName) {
         this.serviceClient().unlinkBackend(resourceGroupName, name, linkedBackendName);
     }
 
-    public Response<StaticSiteLinkedBackendArmResource> getLinkedBackendForBuildWithResponse(
-        String resourceGroupName, String name, String environmentName, String linkedBackendName, Context context) {
-        Response<StaticSiteLinkedBackendArmResourceInner> inner =
-            this
-                .serviceClient()
-                .getLinkedBackendForBuildWithResponse(
-                    resourceGroupName, name, environmentName, linkedBackendName, context);
+    public Response<StaticSiteLinkedBackendArmResource> getLinkedBackendForBuildWithResponse(String resourceGroupName,
+        String name, String environmentName, String linkedBackendName, Context context) {
+        Response<StaticSiteLinkedBackendArmResourceInner> inner = this.serviceClient()
+            .getLinkedBackendForBuildWithResponse(resourceGroupName, name, environmentName, linkedBackendName, context);
         if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new StaticSiteLinkedBackendArmResourceImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public StaticSiteLinkedBackendArmResource getLinkedBackendForBuild(
-        String resourceGroupName, String name, String environmentName, String linkedBackendName) {
-        StaticSiteLinkedBackendArmResourceInner inner =
-            this.serviceClient().getLinkedBackendForBuild(resourceGroupName, name, environmentName, linkedBackendName);
+    public StaticSiteLinkedBackendArmResource getLinkedBackendForBuild(String resourceGroupName, String name,
+        String environmentName, String linkedBackendName) {
+        StaticSiteLinkedBackendArmResourceInner inner = this.serviceClient().getLinkedBackendForBuild(resourceGroupName,
+            name, environmentName, linkedBackendName);
         if (inner != null) {
             return new StaticSiteLinkedBackendArmResourceImpl(inner, this.manager());
         } else {
@@ -1479,17 +1198,11 @@ public final class StaticSitesImpl implements StaticSites {
         }
     }
 
-    public StaticSiteLinkedBackendArmResource linkBackendToBuild(
-        String resourceGroupName,
-        String name,
-        String environmentName,
-        String linkedBackendName,
+    public StaticSiteLinkedBackendArmResource linkBackendToBuild(String resourceGroupName, String name,
+        String environmentName, String linkedBackendName,
         StaticSiteLinkedBackendArmResourceInner staticSiteLinkedBackendEnvelope) {
-        StaticSiteLinkedBackendArmResourceInner inner =
-            this
-                .serviceClient()
-                .linkBackendToBuild(
-                    resourceGroupName, name, environmentName, linkedBackendName, staticSiteLinkedBackendEnvelope);
+        StaticSiteLinkedBackendArmResourceInner inner = this.serviceClient().linkBackendToBuild(resourceGroupName, name,
+            environmentName, linkedBackendName, staticSiteLinkedBackendEnvelope);
         if (inner != null) {
             return new StaticSiteLinkedBackendArmResourceImpl(inner, this.manager());
         } else {
@@ -1497,23 +1210,11 @@ public final class StaticSitesImpl implements StaticSites {
         }
     }
 
-    public StaticSiteLinkedBackendArmResource linkBackendToBuild(
-        String resourceGroupName,
-        String name,
-        String environmentName,
-        String linkedBackendName,
-        StaticSiteLinkedBackendArmResourceInner staticSiteLinkedBackendEnvelope,
-        Context context) {
-        StaticSiteLinkedBackendArmResourceInner inner =
-            this
-                .serviceClient()
-                .linkBackendToBuild(
-                    resourceGroupName,
-                    name,
-                    environmentName,
-                    linkedBackendName,
-                    staticSiteLinkedBackendEnvelope,
-                    context);
+    public StaticSiteLinkedBackendArmResource linkBackendToBuild(String resourceGroupName, String name,
+        String environmentName, String linkedBackendName,
+        StaticSiteLinkedBackendArmResourceInner staticSiteLinkedBackendEnvelope, Context context) {
+        StaticSiteLinkedBackendArmResourceInner inner = this.serviceClient().linkBackendToBuild(resourceGroupName, name,
+            environmentName, linkedBackendName, staticSiteLinkedBackendEnvelope, context);
         if (inner != null) {
             return new StaticSiteLinkedBackendArmResourceImpl(inner, this.manager());
         } else {
@@ -1521,39 +1222,27 @@ public final class StaticSitesImpl implements StaticSites {
         }
     }
 
-    public Response<Void> unlinkBackendFromBuildWithResponse(
-        String resourceGroupName,
-        String name,
-        String environmentName,
-        String linkedBackendName,
-        Boolean isCleaningAuthConfig,
-        Context context) {
-        return this
-            .serviceClient()
-            .unlinkBackendFromBuildWithResponse(
-                resourceGroupName, name, environmentName, linkedBackendName, isCleaningAuthConfig, context);
+    public Response<Void> unlinkBackendFromBuildWithResponse(String resourceGroupName, String name,
+        String environmentName, String linkedBackendName, Boolean isCleaningAuthConfig, Context context) {
+        return this.serviceClient().unlinkBackendFromBuildWithResponse(resourceGroupName, name, environmentName,
+            linkedBackendName, isCleaningAuthConfig, context);
     }
 
-    public void unlinkBackendFromBuild(
-        String resourceGroupName, String name, String environmentName, String linkedBackendName) {
+    public void unlinkBackendFromBuild(String resourceGroupName, String name, String environmentName,
+        String linkedBackendName) {
         this.serviceClient().unlinkBackendFromBuild(resourceGroupName, name, environmentName, linkedBackendName);
     }
 
     public StaticSiteArmResource getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String name = Utils.getValueFromIdByName(id, "staticSites");
         if (name == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, name, Context.NONE).getValue();
     }
@@ -1561,18 +1250,13 @@ public final class StaticSitesImpl implements StaticSites {
     public Response<StaticSiteArmResource> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String name = Utils.getValueFromIdByName(id, "staticSites");
         if (name == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
         }
         return this.getByResourceGroupWithResponse(resourceGroupName, name, context);
     }
@@ -1580,178 +1264,119 @@ public final class StaticSitesImpl implements StaticSites {
     public DatabaseConnection getBuildDatabaseConnectionById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String name = Utils.getValueFromIdByName(id, "staticSites");
         if (name == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
         }
         String environmentName = Utils.getValueFromIdByName(id, "builds");
         if (environmentName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'builds'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'builds'.", id)));
         }
         String databaseConnectionName = Utils.getValueFromIdByName(id, "databaseConnections");
         if (databaseConnectionName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'databaseConnections'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'databaseConnections'.", id)));
         }
-        return this
-            .getBuildDatabaseConnectionWithResponse(
-                resourceGroupName, name, environmentName, databaseConnectionName, Context.NONE)
-            .getValue();
+        return this.getBuildDatabaseConnectionWithResponse(resourceGroupName, name, environmentName,
+            databaseConnectionName, Context.NONE).getValue();
     }
 
     public Response<DatabaseConnection> getBuildDatabaseConnectionByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String name = Utils.getValueFromIdByName(id, "staticSites");
         if (name == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
         }
         String environmentName = Utils.getValueFromIdByName(id, "builds");
         if (environmentName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'builds'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'builds'.", id)));
         }
         String databaseConnectionName = Utils.getValueFromIdByName(id, "databaseConnections");
         if (databaseConnectionName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'databaseConnections'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'databaseConnections'.", id)));
         }
-        return this
-            .getBuildDatabaseConnectionWithResponse(
-                resourceGroupName, name, environmentName, databaseConnectionName, context);
+        return this.getBuildDatabaseConnectionWithResponse(resourceGroupName, name, environmentName,
+            databaseConnectionName, context);
     }
 
     public StaticSiteUserProvidedFunctionAppArmResource getUserProvidedFunctionAppForStaticSiteBuildById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String name = Utils.getValueFromIdByName(id, "staticSites");
         if (name == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
         }
         String environmentName = Utils.getValueFromIdByName(id, "builds");
         if (environmentName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'builds'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'builds'.", id)));
         }
         String functionAppName = Utils.getValueFromIdByName(id, "userProvidedFunctionApps");
         if (functionAppName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'userProvidedFunctionApps'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'userProvidedFunctionApps'.", id)));
         }
-        return this
-            .getUserProvidedFunctionAppForStaticSiteBuildWithResponse(
-                resourceGroupName, name, environmentName, functionAppName, Context.NONE)
-            .getValue();
+        return this.getUserProvidedFunctionAppForStaticSiteBuildWithResponse(resourceGroupName, name, environmentName,
+            functionAppName, Context.NONE).getValue();
     }
 
     public Response<StaticSiteUserProvidedFunctionAppArmResource>
         getUserProvidedFunctionAppForStaticSiteBuildByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String name = Utils.getValueFromIdByName(id, "staticSites");
         if (name == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
         }
         String environmentName = Utils.getValueFromIdByName(id, "builds");
         if (environmentName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'builds'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'builds'.", id)));
         }
         String functionAppName = Utils.getValueFromIdByName(id, "userProvidedFunctionApps");
         if (functionAppName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'userProvidedFunctionApps'.",
-                                id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'userProvidedFunctionApps'.", id)));
         }
-        return this
-            .getUserProvidedFunctionAppForStaticSiteBuildWithResponse(
-                resourceGroupName, name, environmentName, functionAppName, context);
+        return this.getUserProvidedFunctionAppForStaticSiteBuildWithResponse(resourceGroupName, name, environmentName,
+            functionAppName, context);
     }
 
     public StaticSiteBasicAuthPropertiesArmResource getBasicAuthById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String name = Utils.getValueFromIdByName(id, "staticSites");
         if (name == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
         }
         String basicAuthNameLocal = Utils.getValueFromIdByName(id, "basicAuth");
         if (basicAuthNameLocal == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'basicAuth'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'basicAuth'.", id)));
         }
         BasicAuthName basicAuthName = BasicAuthName.fromString(basicAuthNameLocal);
         return this.getBasicAuthWithResponse(resourceGroupName, name, basicAuthName, Context.NONE).getValue();
@@ -1760,25 +1385,18 @@ public final class StaticSitesImpl implements StaticSites {
     public Response<StaticSiteBasicAuthPropertiesArmResource> getBasicAuthByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String name = Utils.getValueFromIdByName(id, "staticSites");
         if (name == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
         }
         String basicAuthNameLocal = Utils.getValueFromIdByName(id, "basicAuth");
         if (basicAuthNameLocal == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'basicAuth'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'basicAuth'.", id)));
         }
         BasicAuthName basicAuthName = BasicAuthName.fromString(basicAuthNameLocal);
         return this.getBasicAuthWithResponse(resourceGroupName, name, basicAuthName, context);
@@ -1787,52 +1405,38 @@ public final class StaticSitesImpl implements StaticSites {
     public StaticSiteCustomDomainOverviewArmResource getStaticSiteCustomDomainById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String name = Utils.getValueFromIdByName(id, "staticSites");
         if (name == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
         }
         String domainName = Utils.getValueFromIdByName(id, "customDomains");
         if (domainName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'customDomains'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'customDomains'.", id)));
         }
         return this.getStaticSiteCustomDomainWithResponse(resourceGroupName, name, domainName, Context.NONE).getValue();
     }
 
-    public Response<StaticSiteCustomDomainOverviewArmResource> getStaticSiteCustomDomainByIdWithResponse(
-        String id, Context context) {
+    public Response<StaticSiteCustomDomainOverviewArmResource> getStaticSiteCustomDomainByIdWithResponse(String id,
+        Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String name = Utils.getValueFromIdByName(id, "staticSites");
         if (name == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
         }
         String domainName = Utils.getValueFromIdByName(id, "customDomains");
         if (domainName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'customDomains'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'customDomains'.", id)));
         }
         return this.getStaticSiteCustomDomainWithResponse(resourceGroupName, name, domainName, context);
     }
@@ -1840,26 +1444,18 @@ public final class StaticSitesImpl implements StaticSites {
     public StaticSiteLinkedBackendArmResource getLinkedBackendById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String name = Utils.getValueFromIdByName(id, "staticSites");
         if (name == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
         }
         String linkedBackendName = Utils.getValueFromIdByName(id, "linkedBackends");
         if (linkedBackendName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'linkedBackends'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'linkedBackends'.", id)));
         }
         return this.getLinkedBackendWithResponse(resourceGroupName, name, linkedBackendName, Context.NONE).getValue();
     }
@@ -1867,26 +1463,18 @@ public final class StaticSitesImpl implements StaticSites {
     public Response<StaticSiteLinkedBackendArmResource> getLinkedBackendByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String name = Utils.getValueFromIdByName(id, "staticSites");
         if (name == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
         }
         String linkedBackendName = Utils.getValueFromIdByName(id, "linkedBackends");
         if (linkedBackendName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'linkedBackends'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'linkedBackends'.", id)));
         }
         return this.getLinkedBackendWithResponse(resourceGroupName, name, linkedBackendName, context);
     }
@@ -1894,18 +1482,13 @@ public final class StaticSitesImpl implements StaticSites {
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String name = Utils.getValueFromIdByName(id, "staticSites");
         if (name == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
         }
         this.delete(resourceGroupName, name, Context.NONE);
     }
@@ -1913,18 +1496,13 @@ public final class StaticSitesImpl implements StaticSites {
     public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String name = Utils.getValueFromIdByName(id, "staticSites");
         if (name == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
         }
         this.delete(resourceGroupName, name, context);
     }
@@ -1932,99 +1510,68 @@ public final class StaticSitesImpl implements StaticSites {
     public void deleteBuildDatabaseConnectionById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String name = Utils.getValueFromIdByName(id, "staticSites");
         if (name == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
         }
         String environmentName = Utils.getValueFromIdByName(id, "builds");
         if (environmentName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'builds'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'builds'.", id)));
         }
         String databaseConnectionName = Utils.getValueFromIdByName(id, "databaseConnections");
         if (databaseConnectionName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'databaseConnections'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'databaseConnections'.", id)));
         }
-        this
-            .deleteBuildDatabaseConnectionWithResponse(
-                resourceGroupName, name, environmentName, databaseConnectionName, Context.NONE);
+        this.deleteBuildDatabaseConnectionWithResponse(resourceGroupName, name, environmentName, databaseConnectionName,
+            Context.NONE);
     }
 
     public Response<Void> deleteBuildDatabaseConnectionByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String name = Utils.getValueFromIdByName(id, "staticSites");
         if (name == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
         }
         String environmentName = Utils.getValueFromIdByName(id, "builds");
         if (environmentName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'builds'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'builds'.", id)));
         }
         String databaseConnectionName = Utils.getValueFromIdByName(id, "databaseConnections");
         if (databaseConnectionName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'databaseConnections'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'databaseConnections'.", id)));
         }
-        return this
-            .deleteBuildDatabaseConnectionWithResponse(
-                resourceGroupName, name, environmentName, databaseConnectionName, context);
+        return this.deleteBuildDatabaseConnectionWithResponse(resourceGroupName, name, environmentName,
+            databaseConnectionName, context);
     }
 
     public void deleteStaticSiteCustomDomainById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String name = Utils.getValueFromIdByName(id, "staticSites");
         if (name == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
         }
         String domainName = Utils.getValueFromIdByName(id, "customDomains");
         if (domainName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'customDomains'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'customDomains'.", id)));
         }
         this.deleteStaticSiteCustomDomain(resourceGroupName, name, domainName, Context.NONE);
     }
@@ -2032,25 +1579,18 @@ public final class StaticSitesImpl implements StaticSites {
     public void deleteStaticSiteCustomDomainByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
         String name = Utils.getValueFromIdByName(id, "staticSites");
         if (name == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
         }
         String domainName = Utils.getValueFromIdByName(id, "customDomains");
         if (domainName == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'customDomains'.", id)));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'customDomains'.", id)));
         }
         this.deleteStaticSiteCustomDomain(resourceGroupName, name, domainName, context);
     }
@@ -2071,8 +1611,8 @@ public final class StaticSitesImpl implements StaticSites {
         return new DatabaseConnectionImpl(name, this.manager());
     }
 
-    public StaticSiteUserProvidedFunctionAppArmResourceImpl defineStaticSiteUserProvidedFunctionAppArmResource(
-        String name) {
+    public StaticSiteUserProvidedFunctionAppArmResourceImpl
+        defineStaticSiteUserProvidedFunctionAppArmResource(String name) {
         return new StaticSiteUserProvidedFunctionAppArmResourceImpl(name, this.manager());
     }
 

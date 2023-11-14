@@ -13,7 +13,9 @@ import com.azure.resourcemanager.compute.generated.models.GalleryProvisioningSta
 import com.azure.resourcemanager.compute.generated.models.ReplicationStatus;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Describes the properties of a gallery image version. */
+/**
+ * Describes the properties of a gallery image version.
+ */
 @Fluent
 public final class GalleryImageVersionProperties {
     /*
@@ -24,7 +26,7 @@ public final class GalleryImageVersionProperties {
 
     /*
      * The current state of the gallery or gallery artifact.
-     *
+     * 
      * The provisioning state, which only appears in the response.
      */
     @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
@@ -48,13 +50,15 @@ public final class GalleryImageVersionProperties {
     @JsonProperty(value = "replicationStatus", access = JsonProperty.Access.WRITE_ONLY)
     private ReplicationStatus replicationStatus;
 
-    /** Creates an instance of GalleryImageVersionProperties class. */
+    /**
+     * Creates an instance of GalleryImageVersionProperties class.
+     */
     public GalleryImageVersionProperties() {
     }
 
     /**
      * Get the publishingProfile property: The publishing profile of a gallery image Version.
-     *
+     * 
      * @return the publishingProfile value.
      */
     public GalleryImageVersionPublishingProfile publishingProfile() {
@@ -63,7 +67,7 @@ public final class GalleryImageVersionProperties {
 
     /**
      * Set the publishingProfile property: The publishing profile of a gallery image Version.
-     *
+     * 
      * @param publishingProfile the publishingProfile value to set.
      * @return the GalleryImageVersionProperties object itself.
      */
@@ -74,9 +78,9 @@ public final class GalleryImageVersionProperties {
 
     /**
      * Get the provisioningState property: The current state of the gallery or gallery artifact.
-     *
-     * <p>The provisioning state, which only appears in the response.
-     *
+     * 
+     * The provisioning state, which only appears in the response.
+     * 
      * @return the provisioningState value.
      */
     public GalleryProvisioningState provisioningState() {
@@ -85,7 +89,7 @@ public final class GalleryImageVersionProperties {
 
     /**
      * Get the storageProfile property: This is the storage profile of a Gallery Image Version.
-     *
+     * 
      * @return the storageProfile value.
      */
     public GalleryImageVersionStorageProfile storageProfile() {
@@ -94,7 +98,7 @@ public final class GalleryImageVersionProperties {
 
     /**
      * Set the storageProfile property: This is the storage profile of a Gallery Image Version.
-     *
+     * 
      * @param storageProfile the storageProfile value to set.
      * @return the GalleryImageVersionProperties object itself.
      */
@@ -105,7 +109,7 @@ public final class GalleryImageVersionProperties {
 
     /**
      * Get the safetyProfile property: This is the safety profile of the Gallery Image Version.
-     *
+     * 
      * @return the safetyProfile value.
      */
     public GalleryImageVersionSafetyProfile safetyProfile() {
@@ -114,7 +118,7 @@ public final class GalleryImageVersionProperties {
 
     /**
      * Set the safetyProfile property: This is the safety profile of the Gallery Image Version.
-     *
+     * 
      * @param safetyProfile the safetyProfile value to set.
      * @return the GalleryImageVersionProperties object itself.
      */
@@ -125,7 +129,7 @@ public final class GalleryImageVersionProperties {
 
     /**
      * Get the replicationStatus property: This is the replication status of the gallery image version.
-     *
+     * 
      * @return the replicationStatus value.
      */
     public ReplicationStatus replicationStatus() {
@@ -134,7 +138,7 @@ public final class GalleryImageVersionProperties {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
@@ -142,10 +146,8 @@ public final class GalleryImageVersionProperties {
             publishingProfile().validate();
         }
         if (storageProfile() == null) {
-            throw LOGGER
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property storageProfile in model GalleryImageVersionProperties"));
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                "Missing required property storageProfile in model GalleryImageVersionProperties"));
         } else {
             storageProfile().validate();
         }

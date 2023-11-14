@@ -13,8 +13,7 @@ public final class ServiceTagInformationImpl implements ServiceTagInformation {
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    ServiceTagInformationImpl(
-        ServiceTagInformationInner innerObject,
+    ServiceTagInformationImpl(ServiceTagInformationInner innerObject,
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

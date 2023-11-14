@@ -8,11 +8,13 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
-/** Resource collection API of VirtualHubIpConfigurations. */
+/**
+ * Resource collection API of VirtualHubIpConfigurations.
+ */
 public interface VirtualHubIpConfigurations {
     /**
      * Retrieves the details of a Virtual Hub Ip configuration.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @param ipConfigName The name of the ipconfig.
@@ -22,12 +24,12 @@ public interface VirtualHubIpConfigurations {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return ipConfigurations along with {@link Response}.
      */
-    Response<HubIpConfiguration> getWithResponse(
-        String resourceGroupName, String virtualHubName, String ipConfigName, Context context);
+    Response<HubIpConfiguration> getWithResponse(String resourceGroupName, String virtualHubName, String ipConfigName,
+        Context context);
 
     /**
      * Retrieves the details of a Virtual Hub Ip configuration.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @param ipConfigName The name of the ipconfig.
@@ -40,7 +42,7 @@ public interface VirtualHubIpConfigurations {
 
     /**
      * Deletes a VirtualHubIpConfiguration.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualHubBgpConnection.
      * @param virtualHubName The name of the VirtualHub.
      * @param ipConfigName The name of the ipconfig.
@@ -52,7 +54,7 @@ public interface VirtualHubIpConfigurations {
 
     /**
      * Deletes a VirtualHubIpConfiguration.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualHubBgpConnection.
      * @param virtualHubName The name of the VirtualHub.
      * @param ipConfigName The name of the ipconfig.
@@ -65,7 +67,7 @@ public interface VirtualHubIpConfigurations {
 
     /**
      * Retrieves the details of all VirtualHubIpConfigurations.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -77,7 +79,7 @@ public interface VirtualHubIpConfigurations {
 
     /**
      * Retrieves the details of all VirtualHubIpConfigurations.
-     *
+     * 
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @param context The context to associate with this operation.
@@ -90,7 +92,7 @@ public interface VirtualHubIpConfigurations {
 
     /**
      * Retrieves the details of a Virtual Hub Ip configuration.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -101,7 +103,7 @@ public interface VirtualHubIpConfigurations {
 
     /**
      * Retrieves the details of a Virtual Hub Ip configuration.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -113,7 +115,7 @@ public interface VirtualHubIpConfigurations {
 
     /**
      * Deletes a VirtualHubIpConfiguration.
-     *
+     * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -123,7 +125,7 @@ public interface VirtualHubIpConfigurations {
 
     /**
      * Deletes a VirtualHubIpConfiguration.
-     *
+     * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -134,7 +136,7 @@ public interface VirtualHubIpConfigurations {
 
     /**
      * Begins definition for a new HubIpConfiguration resource.
-     *
+     * 
      * @param name resource name.
      * @return the first stage of the new HubIpConfiguration definition.
      */

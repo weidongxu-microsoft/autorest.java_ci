@@ -7,7 +7,9 @@ package com.azure.resourcemanager.postgresql.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** Storage Profile properties of a server. */
+/**
+ * Storage Profile properties of a server.
+ */
 @Fluent
 public final class StorageProfile {
     /*
@@ -34,13 +36,15 @@ public final class StorageProfile {
     @JsonProperty(value = "storageAutogrow")
     private StorageAutogrow storageAutogrow;
 
-    /** Creates an instance of StorageProfile class. */
+    /**
+     * Creates an instance of StorageProfile class.
+     */
     public StorageProfile() {
     }
 
     /**
      * Get the backupRetentionDays property: Backup retention days for the server.
-     *
+     * 
      * @return the backupRetentionDays value.
      */
     public Integer backupRetentionDays() {
@@ -49,7 +53,7 @@ public final class StorageProfile {
 
     /**
      * Set the backupRetentionDays property: Backup retention days for the server.
-     *
+     * 
      * @param backupRetentionDays the backupRetentionDays value to set.
      * @return the StorageProfile object itself.
      */
@@ -60,7 +64,7 @@ public final class StorageProfile {
 
     /**
      * Get the geoRedundantBackup property: Enable Geo-redundant or not for server backup.
-     *
+     * 
      * @return the geoRedundantBackup value.
      */
     public GeoRedundantBackup geoRedundantBackup() {
@@ -69,7 +73,7 @@ public final class StorageProfile {
 
     /**
      * Set the geoRedundantBackup property: Enable Geo-redundant or not for server backup.
-     *
+     * 
      * @param geoRedundantBackup the geoRedundantBackup value to set.
      * @return the StorageProfile object itself.
      */
@@ -80,7 +84,7 @@ public final class StorageProfile {
 
     /**
      * Get the storageMB property: Max storage allowed for a server.
-     *
+     * 
      * @return the storageMB value.
      */
     public Integer storageMB() {
@@ -89,7 +93,7 @@ public final class StorageProfile {
 
     /**
      * Set the storageMB property: Max storage allowed for a server.
-     *
+     * 
      * @param storageMB the storageMB value to set.
      * @return the StorageProfile object itself.
      */
@@ -100,7 +104,7 @@ public final class StorageProfile {
 
     /**
      * Get the storageAutogrow property: Enable Storage Auto Grow.
-     *
+     * 
      * @return the storageAutogrow value.
      */
     public StorageAutogrow storageAutogrow() {
@@ -109,7 +113,7 @@ public final class StorageProfile {
 
     /**
      * Set the storageAutogrow property: Enable Storage Auto Grow.
-     *
+     * 
      * @param storageAutogrow the storageAutogrow value to set.
      * @return the StorageProfile object itself.
      */
@@ -120,7 +124,7 @@ public final class StorageProfile {
 
     /**
      * Validates the instance.
-     *
+     * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
