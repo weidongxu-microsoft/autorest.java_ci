@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.eventhubs.generated.models;
 
+import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
 import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
@@ -107,6 +108,13 @@ public interface Cluster {
     Boolean supportsScaling();
 
     /**
+     * Gets the upgradePreferences property: Properties of the cluster upgrade preferences.
+     * 
+     * @return the upgradePreferences value.
+     */
+    UpgradePreferences upgradePreferences();
+
+    /**
      * Gets the region of the resource.
      * 
      * @return the region of the resource.
@@ -189,8 +197,8 @@ public interface Cluster {
          * The stage of the Cluster definition which contains all the minimum required properties for the resource to be
          * created, but also allows for any other optional properties to be specified.
          */
-        interface WithCreate
-            extends DefinitionStages.WithTags, DefinitionStages.WithSku, DefinitionStages.WithSupportsScaling {
+        interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithSku,
+            DefinitionStages.WithSupportsScaling, DefinitionStages.WithUpgradePreferences {
             /**
              * Executes the create request.
              * 
@@ -245,6 +253,19 @@ public interface Cluster {
              */
             WithCreate withSupportsScaling(Boolean supportsScaling);
         }
+
+        /**
+         * The stage of the Cluster definition allowing to specify upgradePreferences.
+         */
+        interface WithUpgradePreferences {
+            /**
+             * Specifies the upgradePreferences property: Properties of the cluster upgrade preferences..
+             * 
+             * @param upgradePreferences Properties of the cluster upgrade preferences.
+             * @return the next definition stage.
+             */
+            WithCreate withUpgradePreferences(UpgradePreferences upgradePreferences);
+        }
     }
 
     /**
@@ -257,7 +278,8 @@ public interface Cluster {
     /**
      * The template for Cluster update.
      */
-    interface Update extends UpdateStages.WithTags, UpdateStages.WithSku, UpdateStages.WithSupportsScaling {
+    interface Update extends UpdateStages.WithTags, UpdateStages.WithSku, UpdateStages.WithSupportsScaling,
+        UpdateStages.WithUpgradePreferences {
         /**
          * Executes the update request.
          * 
@@ -316,6 +338,19 @@ public interface Cluster {
              */
             Update withSupportsScaling(Boolean supportsScaling);
         }
+
+        /**
+         * The stage of the Cluster update allowing to specify upgradePreferences.
+         */
+        interface WithUpgradePreferences {
+            /**
+             * Specifies the upgradePreferences property: Properties of the cluster upgrade preferences..
+             * 
+             * @param upgradePreferences Properties of the cluster upgrade preferences.
+             * @return the next definition stage.
+             */
+            Update withUpgradePreferences(UpgradePreferences upgradePreferences);
+        }
     }
 
     /**
@@ -332,4 +367,23 @@ public interface Cluster {
      * @return the refreshed resource.
      */
     Cluster refresh(Context context);
+
+    /**
+     * Trigger pending cluster upgrades if any. Bypasses any upgrade preferences set by customer.
+     * 
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
+     */
+    Response<Void> triggerUpgradePostWithResponse(Context context);
+
+    /**
+     * Trigger pending cluster upgrades if any. Bypasses any upgrade preferences set by customer.
+     * 
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void triggerUpgradePost();
 }

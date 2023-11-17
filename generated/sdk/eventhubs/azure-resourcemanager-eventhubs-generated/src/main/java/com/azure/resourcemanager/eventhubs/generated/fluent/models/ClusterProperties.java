@@ -6,6 +6,7 @@ package com.azure.resourcemanager.eventhubs.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.eventhubs.generated.models.ProvisioningState;
+import com.azure.resourcemanager.eventhubs.generated.models.UpgradePreferences;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
@@ -48,6 +49,12 @@ public final class ClusterProperties {
      */
     @JsonProperty(value = "supportsScaling")
     private Boolean supportsScaling;
+
+    /*
+     * Properties of the cluster upgrade preferences.
+     */
+    @JsonProperty(value = "upgradePreferences")
+    private UpgradePreferences upgradePreferences;
 
     /**
      * Creates an instance of ClusterProperties class.
@@ -122,10 +129,33 @@ public final class ClusterProperties {
     }
 
     /**
+     * Get the upgradePreferences property: Properties of the cluster upgrade preferences.
+     * 
+     * @return the upgradePreferences value.
+     */
+    public UpgradePreferences upgradePreferences() {
+        return this.upgradePreferences;
+    }
+
+    /**
+     * Set the upgradePreferences property: Properties of the cluster upgrade preferences.
+     * 
+     * @param upgradePreferences the upgradePreferences value to set.
+     * @return the ClusterProperties object itself.
+     */
+    public ClusterProperties withUpgradePreferences(UpgradePreferences upgradePreferences) {
+        this.upgradePreferences = upgradePreferences;
+        return this;
+    }
+
+    /**
      * Validates the instance.
      * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+        if (upgradePreferences() != null) {
+            upgradePreferences().validate();
+        }
     }
 }

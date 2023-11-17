@@ -29,6 +29,11 @@
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true
 }, {
+  "name" : "com.azure.resourcemanager.eventhubs.generated.models.UpgradePreferences",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
   "name" : "com.azure.resourcemanager.eventhubs.generated.fluent.models.EHNamespaceIdListResultInner",
   "allDeclaredConstructors" : true,
   "allDeclaredFields" : true,
@@ -100,26 +105,6 @@
   "allDeclaredMethods" : true
 }, {
   "name" : "com.azure.resourcemanager.eventhubs.generated.models.ConnectionState",
-  "allDeclaredConstructors" : true,
-  "allDeclaredFields" : true,
-  "allDeclaredMethods" : true
-}, {
-  "name" : "com.azure.resourcemanager.eventhubs.generated.models.GeoDataReplicationProperties",
-  "allDeclaredConstructors" : true,
-  "allDeclaredFields" : true,
-  "allDeclaredMethods" : true
-}, {
-  "name" : "com.azure.resourcemanager.eventhubs.generated.models.NamespaceReplicaLocation",
-  "allDeclaredConstructors" : true,
-  "allDeclaredFields" : true,
-  "allDeclaredMethods" : true
-}, {
-  "name" : "com.azure.resourcemanager.eventhubs.generated.models.FailOver",
-  "allDeclaredConstructors" : true,
-  "allDeclaredFields" : true,
-  "allDeclaredMethods" : true
-}, {
-  "name" : "com.azure.resourcemanager.eventhubs.generated.fluent.models.FailOverProperties",
   "allDeclaredConstructors" : true,
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true
@@ -404,6 +389,11 @@
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true
 }, {
+  "name" : "com.azure.resourcemanager.eventhubs.generated.models.StartDayOfWeek",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
   "name" : "com.azure.resourcemanager.eventhubs.generated.models.SkuName",
   "allDeclaredConstructors" : true,
   "allDeclaredFields" : true,
@@ -430,11 +420,6 @@
   "allDeclaredMethods" : true
 }, {
   "name" : "com.azure.resourcemanager.eventhubs.generated.models.EndPointProvisioningState",
-  "allDeclaredConstructors" : true,
-  "allDeclaredFields" : true,
-  "allDeclaredMethods" : true
-}, {
-  "name" : "com.azure.resourcemanager.eventhubs.generated.models.GeoDRRoleType",
   "allDeclaredConstructors" : true,
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true

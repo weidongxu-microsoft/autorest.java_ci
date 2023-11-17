@@ -106,31 +106,6 @@ public interface Namespaces {
     EHNamespace getByResourceGroup(String resourceGroupName, String namespaceName);
 
     /**
-     * GeoDR Failover.
-     * 
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param parameters Parameters for updating a namespace resource.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void failover(String resourceGroupName, String namespaceName, FailOver parameters);
-
-    /**
-     * GeoDR Failover.
-     * 
-     * @param resourceGroupName Name of the resource group within the azure subscription.
-     * @param namespaceName The Namespace name.
-     * @param parameters Parameters for updating a namespace resource.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void failover(String resourceGroupName, String namespaceName, FailOver parameters, Context context);
-
-    /**
      * Create or update NetworkRuleSet for a Namespace.
      * 
      * @param resourceGroupName Name of the resource group within the azure subscription.

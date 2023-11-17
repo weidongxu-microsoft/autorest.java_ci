@@ -11,8 +11,6 @@ import com.azure.resourcemanager.eventhubs.generated.fluent.models.EHNamespaceIn
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.PrivateEndpointConnectionInner;
 import com.azure.resourcemanager.eventhubs.generated.models.EHNamespace;
 import com.azure.resourcemanager.eventhubs.generated.models.Encryption;
-import com.azure.resourcemanager.eventhubs.generated.models.FailOver;
-import com.azure.resourcemanager.eventhubs.generated.models.GeoDataReplicationProperties;
 import com.azure.resourcemanager.eventhubs.generated.models.Identity;
 import com.azure.resourcemanager.eventhubs.generated.models.PrivateEndpointConnection;
 import com.azure.resourcemanager.eventhubs.generated.models.PublicNetworkAccess;
@@ -140,10 +138,6 @@ public final class EHNamespaceImpl implements EHNamespace, EHNamespace.Definitio
         return this.innerModel().alternateName();
     }
 
-    public GeoDataReplicationProperties geoDataReplication() {
-        return this.innerModel().geoDataReplication();
-    }
-
     public Region region() {
         return Region.fromName(this.regionName());
     }
@@ -227,14 +221,6 @@ public final class EHNamespaceImpl implements EHNamespace, EHNamespace.Definitio
         return this;
     }
 
-    public void failover(FailOver parameters) {
-        serviceManager.namespaces().failover(resourceGroupName, namespaceName, parameters);
-    }
-
-    public void failover(FailOver parameters, Context context) {
-        serviceManager.namespaces().failover(resourceGroupName, namespaceName, parameters, context);
-    }
-
     public EHNamespaceImpl withRegion(Region location) {
         this.innerModel().withLocation(location.toString());
         return this;
@@ -313,11 +299,6 @@ public final class EHNamespaceImpl implements EHNamespace, EHNamespace.Definitio
 
     public EHNamespaceImpl withAlternateName(String alternateName) {
         this.innerModel().withAlternateName(alternateName);
-        return this;
-    }
-
-    public EHNamespaceImpl withGeoDataReplication(GeoDataReplicationProperties geoDataReplication) {
-        this.innerModel().withGeoDataReplication(geoDataReplication);
         return this;
     }
 }

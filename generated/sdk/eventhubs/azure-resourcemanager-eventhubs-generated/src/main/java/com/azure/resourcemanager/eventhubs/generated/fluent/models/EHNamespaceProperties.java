@@ -6,7 +6,6 @@ package com.azure.resourcemanager.eventhubs.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.eventhubs.generated.models.Encryption;
-import com.azure.resourcemanager.eventhubs.generated.models.GeoDataReplicationProperties;
 import com.azure.resourcemanager.eventhubs.generated.models.PublicNetworkAccess;
 import com.azure.resourcemanager.eventhubs.generated.models.TlsVersion;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -120,12 +119,6 @@ public final class EHNamespaceProperties {
      */
     @JsonProperty(value = "alternateName")
     private String alternateName;
-
-    /*
-     * Geo Data Replication settings for the namespace
-     */
-    @JsonProperty(value = "geoDataReplication")
-    private GeoDataReplicationProperties geoDataReplication;
 
     /**
      * Creates an instance of EHNamespaceProperties class.
@@ -417,26 +410,6 @@ public final class EHNamespaceProperties {
     }
 
     /**
-     * Get the geoDataReplication property: Geo Data Replication settings for the namespace.
-     * 
-     * @return the geoDataReplication value.
-     */
-    public GeoDataReplicationProperties geoDataReplication() {
-        return this.geoDataReplication;
-    }
-
-    /**
-     * Set the geoDataReplication property: Geo Data Replication settings for the namespace.
-     * 
-     * @param geoDataReplication the geoDataReplication value to set.
-     * @return the EHNamespaceProperties object itself.
-     */
-    public EHNamespaceProperties withGeoDataReplication(GeoDataReplicationProperties geoDataReplication) {
-        this.geoDataReplication = geoDataReplication;
-        return this;
-    }
-
-    /**
      * Validates the instance.
      * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
@@ -447,9 +420,6 @@ public final class EHNamespaceProperties {
         }
         if (privateEndpointConnections() != null) {
             privateEndpointConnections().forEach(e -> e.validate());
-        }
-        if (geoDataReplication() != null) {
-            geoDataReplication().validate();
         }
     }
 }

@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.eventhubs.generated.implementation;
 
+import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
 import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
@@ -11,6 +12,7 @@ import com.azure.resourcemanager.eventhubs.generated.fluent.models.ClusterInner;
 import com.azure.resourcemanager.eventhubs.generated.models.Cluster;
 import com.azure.resourcemanager.eventhubs.generated.models.ClusterSku;
 import com.azure.resourcemanager.eventhubs.generated.models.ProvisioningState;
+import com.azure.resourcemanager.eventhubs.generated.models.UpgradePreferences;
 import java.util.Collections;
 import java.util.Map;
 
@@ -74,6 +76,10 @@ public final class ClusterImpl implements Cluster, Cluster.Definition, Cluster.U
 
     public Boolean supportsScaling() {
         return this.innerModel().supportsScaling();
+    }
+
+    public UpgradePreferences upgradePreferences() {
+        return this.innerModel().upgradePreferences();
     }
 
     public Region region() {
@@ -159,6 +165,14 @@ public final class ClusterImpl implements Cluster, Cluster.Definition, Cluster.U
         return this;
     }
 
+    public Response<Void> triggerUpgradePostWithResponse(Context context) {
+        return serviceManager.clusters().triggerUpgradePostWithResponse(resourceGroupName, clusterName, context);
+    }
+
+    public void triggerUpgradePost() {
+        serviceManager.clusters().triggerUpgradePost(resourceGroupName, clusterName);
+    }
+
     public ClusterImpl withRegion(Region location) {
         this.innerModel().withLocation(location.toString());
         return this;
@@ -181,6 +195,11 @@ public final class ClusterImpl implements Cluster, Cluster.Definition, Cluster.U
 
     public ClusterImpl withSupportsScaling(Boolean supportsScaling) {
         this.innerModel().withSupportsScaling(supportsScaling);
+        return this;
+    }
+
+    public ClusterImpl withUpgradePreferences(UpgradePreferences upgradePreferences) {
+        this.innerModel().withUpgradePreferences(upgradePreferences);
         return this;
     }
 }

@@ -8,7 +8,6 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
 import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.eventhubs.generated.models.Encryption;
-import com.azure.resourcemanager.eventhubs.generated.models.GeoDataReplicationProperties;
 import com.azure.resourcemanager.eventhubs.generated.models.Identity;
 import com.azure.resourcemanager.eventhubs.generated.models.PublicNetworkAccess;
 import com.azure.resourcemanager.eventhubs.generated.models.Sku;
@@ -442,29 +441,6 @@ public final class EHNamespaceInner extends Resource {
             this.innerProperties = new EHNamespaceProperties();
         }
         this.innerProperties().withAlternateName(alternateName);
-        return this;
-    }
-
-    /**
-     * Get the geoDataReplication property: Geo Data Replication settings for the namespace.
-     * 
-     * @return the geoDataReplication value.
-     */
-    public GeoDataReplicationProperties geoDataReplication() {
-        return this.innerProperties() == null ? null : this.innerProperties().geoDataReplication();
-    }
-
-    /**
-     * Set the geoDataReplication property: Geo Data Replication settings for the namespace.
-     * 
-     * @param geoDataReplication the geoDataReplication value to set.
-     * @return the EHNamespaceInner object itself.
-     */
-    public EHNamespaceInner withGeoDataReplication(GeoDataReplicationProperties geoDataReplication) {
-        if (this.innerProperties() == null) {
-            this.innerProperties = new EHNamespaceProperties();
-        }
-        this.innerProperties().withGeoDataReplication(geoDataReplication);
         return this;
     }
 

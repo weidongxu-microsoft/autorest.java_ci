@@ -9,6 +9,7 @@ import com.azure.core.management.Resource;
 import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.eventhubs.generated.models.ClusterSku;
 import com.azure.resourcemanager.eventhubs.generated.models.ProvisioningState;
+import com.azure.resourcemanager.eventhubs.generated.models.UpgradePreferences;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
 
@@ -163,6 +164,29 @@ public final class ClusterInner extends Resource {
             this.innerProperties = new ClusterProperties();
         }
         this.innerProperties().withSupportsScaling(supportsScaling);
+        return this;
+    }
+
+    /**
+     * Get the upgradePreferences property: Properties of the cluster upgrade preferences.
+     * 
+     * @return the upgradePreferences value.
+     */
+    public UpgradePreferences upgradePreferences() {
+        return this.innerProperties() == null ? null : this.innerProperties().upgradePreferences();
+    }
+
+    /**
+     * Set the upgradePreferences property: Properties of the cluster upgrade preferences.
+     * 
+     * @param upgradePreferences the upgradePreferences value to set.
+     * @return the ClusterInner object itself.
+     */
+    public ClusterInner withUpgradePreferences(UpgradePreferences upgradePreferences) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new ClusterProperties();
+        }
+        this.innerProperties().withUpgradePreferences(upgradePreferences);
         return this;
     }
 

@@ -150,6 +150,30 @@ public interface Clusters {
     EHNamespaceIdListResult listNamespaces(String resourceGroupName, String clusterName);
 
     /**
+     * Trigger pending cluster upgrades if any. Bypasses any upgrade preferences set by customer.
+     * 
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param clusterName The name of the Event Hubs Cluster.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
+     */
+    Response<Void> triggerUpgradePostWithResponse(String resourceGroupName, String clusterName, Context context);
+
+    /**
+     * Trigger pending cluster upgrades if any. Bypasses any upgrade preferences set by customer.
+     * 
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param clusterName The name of the Event Hubs Cluster.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void triggerUpgradePost(String resourceGroupName, String clusterName);
+
+    /**
      * Gets the resource description of the specified Event Hubs Cluster.
      * 
      * @param id the resource ID.
