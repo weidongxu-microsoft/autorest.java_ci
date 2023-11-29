@@ -134,6 +134,29 @@ public final class GalleryImageVersionUpdate extends UpdateResourceDefinition {
     }
 
     /**
+     * Get the securityProfile property: The security profile of a gallery image version.
+     * 
+     * @return the securityProfile value.
+     */
+    public ImageVersionSecurityProfile securityProfile() {
+        return this.innerProperties() == null ? null : this.innerProperties().securityProfile();
+    }
+
+    /**
+     * Set the securityProfile property: The security profile of a gallery image version.
+     * 
+     * @param securityProfile the securityProfile value to set.
+     * @return the GalleryImageVersionUpdate object itself.
+     */
+    public GalleryImageVersionUpdate withSecurityProfile(ImageVersionSecurityProfile securityProfile) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new GalleryImageVersionProperties();
+        }
+        this.innerProperties().withSecurityProfile(securityProfile);
+        return this;
+    }
+
+    /**
      * Validates the instance.
      * 
      * @throws IllegalArgumentException thrown if the instance is not valid.

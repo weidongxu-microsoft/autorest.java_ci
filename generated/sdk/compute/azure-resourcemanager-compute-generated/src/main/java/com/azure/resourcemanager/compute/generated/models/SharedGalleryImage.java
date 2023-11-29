@@ -7,6 +7,7 @@ package com.azure.resourcemanager.compute.generated.models;
 import com.azure.resourcemanager.compute.generated.fluent.models.SharedGalleryImageInner;
 import java.time.OffsetDateTime;
 import java.util.List;
+import java.util.Map;
 
 /**
  * An immutable client-side representation of SharedGalleryImage.
@@ -35,8 +36,7 @@ public interface SharedGalleryImage {
 
     /**
      * Gets the osType property: This property allows you to specify the type of the OS that is included in the disk
-     * when creating a VM from a managed image. &lt;br&gt;&lt;br&gt; Possible values are: &lt;br&gt;&lt;br&gt;
-     * **Windows** &lt;br&gt;&lt;br&gt; **Linux**.
+     * when creating a VM from a managed image. Possible values are: **Windows,** **Linux.**.
      * 
      * @return the osType value.
      */
@@ -123,6 +123,13 @@ public interface SharedGalleryImage {
      * @return the eula value.
      */
     String eula();
+
+    /**
+     * Gets the artifactTags property: The artifact tags of a shared gallery resource.
+     * 
+     * @return the artifactTags value.
+     */
+    Map<String, String> artifactTags();
 
     /**
      * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.SharedGalleryImageInner object.

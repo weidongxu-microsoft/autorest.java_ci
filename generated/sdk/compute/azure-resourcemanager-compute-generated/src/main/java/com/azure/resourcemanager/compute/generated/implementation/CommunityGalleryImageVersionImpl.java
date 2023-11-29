@@ -8,6 +8,8 @@ import com.azure.resourcemanager.compute.generated.fluent.models.CommunityGaller
 import com.azure.resourcemanager.compute.generated.models.CommunityGalleryImageVersion;
 import com.azure.resourcemanager.compute.generated.models.SharedGalleryImageVersionStorageProfile;
 import java.time.OffsetDateTime;
+import java.util.Collections;
+import java.util.Map;
 
 public final class CommunityGalleryImageVersionImpl implements CommunityGalleryImageVersion {
     private CommunityGalleryImageVersionInner innerObject;
@@ -50,6 +52,19 @@ public final class CommunityGalleryImageVersionImpl implements CommunityGalleryI
 
     public SharedGalleryImageVersionStorageProfile storageProfile() {
         return this.innerModel().storageProfile();
+    }
+
+    public String disclaimer() {
+        return this.innerModel().disclaimer();
+    }
+
+    public Map<String, String> artifactTags() {
+        Map<String, String> inner = this.innerModel().artifactTags();
+        if (inner != null) {
+            return Collections.unmodifiableMap(inner);
+        } else {
+            return Collections.emptyMap();
+        }
     }
 
     public CommunityGalleryImageVersionInner innerModel() {

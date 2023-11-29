@@ -6,6 +6,9 @@ package com.azure.resourcemanager.compute.generated.implementation;
 
 import com.azure.resourcemanager.compute.generated.fluent.models.CommunityGalleryInner;
 import com.azure.resourcemanager.compute.generated.models.CommunityGallery;
+import com.azure.resourcemanager.compute.generated.models.CommunityGalleryMetadata;
+import java.util.Collections;
+import java.util.Map;
 
 public final class CommunityGalleryImpl implements CommunityGallery {
     private CommunityGalleryInner innerObject;
@@ -32,6 +35,23 @@ public final class CommunityGalleryImpl implements CommunityGallery {
 
     public String uniqueId() {
         return this.innerModel().uniqueId();
+    }
+
+    public String disclaimer() {
+        return this.innerModel().disclaimer();
+    }
+
+    public Map<String, String> artifactTags() {
+        Map<String, String> inner = this.innerModel().artifactTags();
+        if (inner != null) {
+            return Collections.unmodifiableMap(inner);
+        } else {
+            return Collections.emptyMap();
+        }
+    }
+
+    public CommunityGalleryMetadata communityMetadata() {
+        return this.innerModel().communityMetadata();
     }
 
     public CommunityGalleryInner innerModel() {

@@ -161,8 +161,7 @@ public final class GalleryImageInner extends Resource {
 
     /**
      * Get the osType property: This property allows you to specify the type of the OS that is included in the disk
-     * when creating a VM from a managed image. &lt;br&gt;&lt;br&gt; Possible values are: &lt;br&gt;&lt;br&gt;
-     * **Windows** &lt;br&gt;&lt;br&gt; **Linux**.
+     * when creating a VM from a managed image. Possible values are: **Windows,** **Linux.**.
      * 
      * @return the osType value.
      */
@@ -172,8 +171,7 @@ public final class GalleryImageInner extends Resource {
 
     /**
      * Set the osType property: This property allows you to specify the type of the OS that is included in the disk
-     * when creating a VM from a managed image. &lt;br&gt;&lt;br&gt; Possible values are: &lt;br&gt;&lt;br&gt;
-     * **Windows** &lt;br&gt;&lt;br&gt; **Linux**.
+     * when creating a VM from a managed image. Possible values are: **Windows,** **Linux.**.
      * 
      * @param osType the osType value to set.
      * @return the GalleryImageInner object itself.

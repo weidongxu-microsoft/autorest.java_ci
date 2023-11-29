@@ -167,8 +167,7 @@ public final class GalleryApplicationUpdate extends UpdateResourceDefinition {
 
     /**
      * Get the supportedOSType property: This property allows you to specify the supported type of the OS that
-     * application is built for. &lt;br&gt;&lt;br&gt; Possible values are: &lt;br&gt;&lt;br&gt; **Windows**
-     * &lt;br&gt;&lt;br&gt; **Linux**.
+     * application is built for. Possible values are: **Windows,** **Linux.**.
      * 
      * @return the supportedOSType value.
      */
@@ -178,8 +177,7 @@ public final class GalleryApplicationUpdate extends UpdateResourceDefinition {
 
     /**
      * Set the supportedOSType property: This property allows you to specify the supported type of the OS that
-     * application is built for. &lt;br&gt;&lt;br&gt; Possible values are: &lt;br&gt;&lt;br&gt; **Windows**
-     * &lt;br&gt;&lt;br&gt; **Linux**.
+     * application is built for. Possible values are: **Windows,** **Linux.**.
      * 
      * @param supportedOSType the supportedOSType value to set.
      * @return the GalleryApplicationUpdate object itself.

@@ -13,6 +13,7 @@ import com.azure.resourcemanager.compute.generated.models.GalleryImageVersionSaf
 import com.azure.resourcemanager.compute.generated.models.GalleryImageVersionStorageProfile;
 import com.azure.resourcemanager.compute.generated.models.GalleryImageVersionUpdate;
 import com.azure.resourcemanager.compute.generated.models.GalleryProvisioningState;
+import com.azure.resourcemanager.compute.generated.models.ImageVersionSecurityProfile;
 import com.azure.resourcemanager.compute.generated.models.ReplicationStatus;
 import com.azure.resourcemanager.compute.generated.models.ReplicationStatusTypes;
 import java.util.Collections;
@@ -67,6 +68,10 @@ public final class GalleryImageVersionImpl
 
     public ReplicationStatus replicationStatus() {
         return this.innerModel().replicationStatus();
+    }
+
+    public ImageVersionSecurityProfile securityProfile() {
+        return this.innerModel().securityProfile();
     }
 
     public Region region() {
@@ -212,6 +217,16 @@ public final class GalleryImageVersionImpl
             return this;
         } else {
             this.updateGalleryImageVersion.withSafetyProfile(safetyProfile);
+            return this;
+        }
+    }
+
+    public GalleryImageVersionImpl withSecurityProfile(ImageVersionSecurityProfile securityProfile) {
+        if (isInCreateMode()) {
+            this.innerModel().withSecurityProfile(securityProfile);
+            return this;
+        } else {
+            this.updateGalleryImageVersion.withSecurityProfile(securityProfile);
             return this;
         }
     }

@@ -10,6 +10,7 @@ import com.azure.resourcemanager.compute.generated.models.GalleryImageVersionPub
 import com.azure.resourcemanager.compute.generated.models.GalleryImageVersionSafetyProfile;
 import com.azure.resourcemanager.compute.generated.models.GalleryImageVersionStorageProfile;
 import com.azure.resourcemanager.compute.generated.models.GalleryProvisioningState;
+import com.azure.resourcemanager.compute.generated.models.ImageVersionSecurityProfile;
 import com.azure.resourcemanager.compute.generated.models.ReplicationStatus;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
@@ -145,6 +146,29 @@ public final class GalleryImageVersionInner extends Resource {
      */
     public ReplicationStatus replicationStatus() {
         return this.innerProperties() == null ? null : this.innerProperties().replicationStatus();
+    }
+
+    /**
+     * Get the securityProfile property: The security profile of a gallery image version.
+     * 
+     * @return the securityProfile value.
+     */
+    public ImageVersionSecurityProfile securityProfile() {
+        return this.innerProperties() == null ? null : this.innerProperties().securityProfile();
+    }
+
+    /**
+     * Set the securityProfile property: The security profile of a gallery image version.
+     * 
+     * @param securityProfile the securityProfile value to set.
+     * @return the GalleryImageVersionInner object itself.
+     */
+    public GalleryImageVersionInner withSecurityProfile(ImageVersionSecurityProfile securityProfile) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new GalleryImageVersionProperties();
+        }
+        this.innerProperties().withSecurityProfile(securityProfile);
+        return this;
     }
 
     /**

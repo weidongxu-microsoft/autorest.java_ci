@@ -86,6 +86,13 @@ public interface GalleryImageVersion {
     ReplicationStatus replicationStatus();
 
     /**
+     * Gets the securityProfile property: The security profile of a gallery image version.
+     * 
+     * @return the securityProfile value.
+     */
+    ImageVersionSecurityProfile securityProfile();
+
+    /**
      * Gets the region of the resource.
      * 
      * @return the region of the resource.
@@ -172,7 +179,8 @@ public interface GalleryImageVersion {
          * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithPublishingProfile,
-            DefinitionStages.WithStorageProfile, DefinitionStages.WithSafetyProfile {
+            DefinitionStages.WithStorageProfile, DefinitionStages.WithSafetyProfile,
+            DefinitionStages.WithSecurityProfile {
             /**
              * Executes the create request.
              * 
@@ -240,6 +248,19 @@ public interface GalleryImageVersion {
              */
             WithCreate withSafetyProfile(GalleryImageVersionSafetyProfile safetyProfile);
         }
+
+        /**
+         * The stage of the GalleryImageVersion definition allowing to specify securityProfile.
+         */
+        interface WithSecurityProfile {
+            /**
+             * Specifies the securityProfile property: The security profile of a gallery image version.
+             * 
+             * @param securityProfile The security profile of a gallery image version.
+             * @return the next definition stage.
+             */
+            WithCreate withSecurityProfile(ImageVersionSecurityProfile securityProfile);
+        }
     }
 
     /**
@@ -253,7 +274,7 @@ public interface GalleryImageVersion {
      * The template for GalleryImageVersion update.
      */
     interface Update extends UpdateStages.WithTags, UpdateStages.WithPublishingProfile, UpdateStages.WithStorageProfile,
-        UpdateStages.WithSafetyProfile {
+        UpdateStages.WithSafetyProfile, UpdateStages.WithSecurityProfile {
         /**
          * Executes the update request.
          * 
@@ -324,6 +345,19 @@ public interface GalleryImageVersion {
              * @return the next definition stage.
              */
             Update withSafetyProfile(GalleryImageVersionSafetyProfile safetyProfile);
+        }
+
+        /**
+         * The stage of the GalleryImageVersion update allowing to specify securityProfile.
+         */
+        interface WithSecurityProfile {
+            /**
+             * Specifies the securityProfile property: The security profile of a gallery image version.
+             * 
+             * @param securityProfile The security profile of a gallery image version.
+             * @return the next definition stage.
+             */
+            Update withSecurityProfile(ImageVersionSecurityProfile securityProfile);
         }
     }
 

@@ -18,6 +18,7 @@ import com.azure.resourcemanager.compute.generated.models.RecommendedMachineConf
 import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 public final class CommunityGalleryImageImpl implements CommunityGalleryImage {
     private CommunityGalleryImageInner innerObject;
@@ -97,6 +98,19 @@ public final class CommunityGalleryImageImpl implements CommunityGalleryImage {
 
     public String eula() {
         return this.innerModel().eula();
+    }
+
+    public String disclaimer() {
+        return this.innerModel().disclaimer();
+    }
+
+    public Map<String, String> artifactTags() {
+        Map<String, String> inner = this.innerModel().artifactTags();
+        if (inner != null) {
+            return Collections.unmodifiableMap(inner);
+        } else {
+            return Collections.emptyMap();
+        }
     }
 
     public CommunityGalleryImageInner innerModel() {

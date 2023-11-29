@@ -15,9 +15,11 @@ import com.azure.resourcemanager.compute.generated.models.ImagePurchasePlan;
 import com.azure.resourcemanager.compute.generated.models.OperatingSystemStateTypes;
 import com.azure.resourcemanager.compute.generated.models.OperatingSystemTypes;
 import com.azure.resourcemanager.compute.generated.models.RecommendedMachineConfiguration;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Describes the properties of a gallery image definition.
@@ -26,7 +28,7 @@ import java.util.List;
 public final class SharedGalleryImageProperties {
     /*
      * This property allows you to specify the type of the OS that is included in the disk when creating a VM from a
-     * managed image. <br><br> Possible values are: <br><br> **Windows** <br><br> **Linux**
+     * managed image. Possible values are: **Windows,** **Linux.**
      */
     @JsonProperty(value = "osType", required = true)
     private OperatingSystemTypes osType;
@@ -100,6 +102,13 @@ public final class SharedGalleryImageProperties {
     @JsonProperty(value = "eula")
     private String eula;
 
+    /*
+     * The artifact tags of a shared gallery resource.
+     */
+    @JsonProperty(value = "artifactTags")
+    @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
+    private Map<String, String> artifactTags;
+
     /**
      * Creates an instance of SharedGalleryImageProperties class.
      */
@@ -108,8 +117,7 @@ public final class SharedGalleryImageProperties {
 
     /**
      * Get the osType property: This property allows you to specify the type of the OS that is included in the disk
-     * when creating a VM from a managed image. &lt;br&gt;&lt;br&gt; Possible values are: &lt;br&gt;&lt;br&gt;
-     * **Windows** &lt;br&gt;&lt;br&gt; **Linux**.
+     * when creating a VM from a managed image. Possible values are: **Windows,** **Linux.**.
      * 
      * @return the osType value.
      */
@@ -119,8 +127,7 @@ public final class SharedGalleryImageProperties {
 
     /**
      * Set the osType property: This property allows you to specify the type of the OS that is included in the disk
-     * when creating a VM from a managed image. &lt;br&gt;&lt;br&gt; Possible values are: &lt;br&gt;&lt;br&gt;
-     * **Windows** &lt;br&gt;&lt;br&gt; **Linux**.
+     * when creating a VM from a managed image. Possible values are: **Windows,** **Linux.**.
      * 
      * @param osType the osType value to set.
      * @return the SharedGalleryImageProperties object itself.
@@ -357,6 +364,26 @@ public final class SharedGalleryImageProperties {
      */
     public SharedGalleryImageProperties withEula(String eula) {
         this.eula = eula;
+        return this;
+    }
+
+    /**
+     * Get the artifactTags property: The artifact tags of a shared gallery resource.
+     * 
+     * @return the artifactTags value.
+     */
+    public Map<String, String> artifactTags() {
+        return this.artifactTags;
+    }
+
+    /**
+     * Set the artifactTags property: The artifact tags of a shared gallery resource.
+     * 
+     * @param artifactTags the artifactTags value to set.
+     * @return the SharedGalleryImageProperties object itself.
+     */
+    public SharedGalleryImageProperties withArtifactTags(Map<String, String> artifactTags) {
+        this.artifactTags = artifactTags;
         return this;
     }
 

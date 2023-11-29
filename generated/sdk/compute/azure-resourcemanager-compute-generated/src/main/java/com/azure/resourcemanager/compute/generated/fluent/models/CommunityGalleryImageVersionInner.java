@@ -9,6 +9,7 @@ import com.azure.resourcemanager.compute.generated.models.PirCommunityGalleryRes
 import com.azure.resourcemanager.compute.generated.models.SharedGalleryImageVersionStorageProfile;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
+import java.util.Map;
 
 /**
  * Specifies information about the gallery image version that you want to create or update.
@@ -141,6 +142,52 @@ public final class CommunityGalleryImageVersionInner extends PirCommunityGallery
             this.innerProperties = new CommunityGalleryImageVersionProperties();
         }
         this.innerProperties().withStorageProfile(storageProfile);
+        return this;
+    }
+
+    /**
+     * Get the disclaimer property: The disclaimer for a community gallery resource.
+     * 
+     * @return the disclaimer value.
+     */
+    public String disclaimer() {
+        return this.innerProperties() == null ? null : this.innerProperties().disclaimer();
+    }
+
+    /**
+     * Set the disclaimer property: The disclaimer for a community gallery resource.
+     * 
+     * @param disclaimer the disclaimer value to set.
+     * @return the CommunityGalleryImageVersionInner object itself.
+     */
+    public CommunityGalleryImageVersionInner withDisclaimer(String disclaimer) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new CommunityGalleryImageVersionProperties();
+        }
+        this.innerProperties().withDisclaimer(disclaimer);
+        return this;
+    }
+
+    /**
+     * Get the artifactTags property: The artifact tags of a community gallery resource.
+     * 
+     * @return the artifactTags value.
+     */
+    public Map<String, String> artifactTags() {
+        return this.innerProperties() == null ? null : this.innerProperties().artifactTags();
+    }
+
+    /**
+     * Set the artifactTags property: The artifact tags of a community gallery resource.
+     * 
+     * @param artifactTags the artifactTags value to set.
+     * @return the CommunityGalleryImageVersionInner object itself.
+     */
+    public CommunityGalleryImageVersionInner withArtifactTags(Map<String, String> artifactTags) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new CommunityGalleryImageVersionProperties();
+        }
+        this.innerProperties().withArtifactTags(artifactTags);
         return this;
     }
 

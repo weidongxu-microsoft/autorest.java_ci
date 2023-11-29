@@ -9,7 +9,7 @@ import com.azure.resourcemanager.compute.generated.fluent.models.CommunityGaller
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Base information about the community gallery resource in pir.
+ * Base information about the community gallery resource in azure compute gallery.
  */
 @Fluent
 public class PirCommunityGalleryResource {

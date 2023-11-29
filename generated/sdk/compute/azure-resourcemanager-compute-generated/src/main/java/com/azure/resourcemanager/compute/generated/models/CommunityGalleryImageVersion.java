@@ -6,6 +6,7 @@ package com.azure.resourcemanager.compute.generated.models;
 
 import com.azure.resourcemanager.compute.generated.fluent.models.CommunityGalleryImageVersionInner;
 import java.time.OffsetDateTime;
+import java.util.Map;
 
 /**
  * An immutable client-side representation of CommunityGalleryImageVersion.
@@ -69,6 +70,20 @@ public interface CommunityGalleryImageVersion {
      * @return the storageProfile value.
      */
     SharedGalleryImageVersionStorageProfile storageProfile();
+
+    /**
+     * Gets the disclaimer property: The disclaimer for a community gallery resource.
+     * 
+     * @return the disclaimer value.
+     */
+    String disclaimer();
+
+    /**
+     * Gets the artifactTags property: The artifact tags of a community gallery resource.
+     * 
+     * @return the artifactTags value.
+     */
+    Map<String, String> artifactTags();
 
     /**
      * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.CommunityGalleryImageVersionInner

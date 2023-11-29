@@ -8,6 +8,8 @@ import com.azure.resourcemanager.compute.generated.fluent.models.SharedGalleryIm
 import com.azure.resourcemanager.compute.generated.models.SharedGalleryImageVersion;
 import com.azure.resourcemanager.compute.generated.models.SharedGalleryImageVersionStorageProfile;
 import java.time.OffsetDateTime;
+import java.util.Collections;
+import java.util.Map;
 
 public final class SharedGalleryImageVersionImpl implements SharedGalleryImageVersion {
     private SharedGalleryImageVersionInner innerObject;
@@ -46,6 +48,15 @@ public final class SharedGalleryImageVersionImpl implements SharedGalleryImageVe
 
     public SharedGalleryImageVersionStorageProfile storageProfile() {
         return this.innerModel().storageProfile();
+    }
+
+    public Map<String, String> artifactTags() {
+        Map<String, String> inner = this.innerModel().artifactTags();
+        if (inner != null) {
+            return Collections.unmodifiableMap(inner);
+        } else {
+            return Collections.emptyMap();
+        }
     }
 
     public SharedGalleryImageVersionInner innerModel() {

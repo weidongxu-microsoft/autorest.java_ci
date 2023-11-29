@@ -1959,6 +1959,26 @@
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true
 }, {
+  "name" : "com.azure.resourcemanager.compute.generated.models.ImageVersionSecurityProfile",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
+  "name" : "com.azure.resourcemanager.compute.generated.models.GalleryImageVersionUefiSettings",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
+  "name" : "com.azure.resourcemanager.compute.generated.models.UefiKeySignatures",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
+  "name" : "com.azure.resourcemanager.compute.generated.models.UefiKey",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
   "name" : "com.azure.resourcemanager.compute.generated.models.GalleryImageVersionUpdate",
   "allDeclaredConstructors" : true,
   "allDeclaredFields" : true,
@@ -2069,6 +2089,11 @@
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true
 }, {
+  "name" : "com.azure.resourcemanager.compute.generated.fluent.models.SharedGalleryProperties",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
   "name" : "com.azure.resourcemanager.compute.generated.models.PirSharedGalleryResource",
   "allDeclaredConstructors" : true,
   "allDeclaredFields" : true,
@@ -2135,6 +2160,16 @@
   "allDeclaredMethods" : true
 }, {
   "name" : "com.azure.resourcemanager.compute.generated.fluent.models.CommunityGalleryInner",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
+  "name" : "com.azure.resourcemanager.compute.generated.fluent.models.CommunityGalleryProperties",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
+  "name" : "com.azure.resourcemanager.compute.generated.models.CommunityGalleryMetadata",
   "allDeclaredConstructors" : true,
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true
@@ -2864,6 +2899,16 @@
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true
 }, {
+  "name" : "com.azure.resourcemanager.compute.generated.models.UefiSignatureTemplateName",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
+  "name" : "com.azure.resourcemanager.compute.generated.models.UefiKeyType",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
   "name" : "com.azure.resourcemanager.compute.generated.models.ReplicationStatusTypes",
   "allDeclaredConstructors" : true,
   "allDeclaredFields" : true,
@@ -3004,12 +3049,12 @@
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true
 }, {
-  "name" : "com.azure.resourcemanager.compute.generated.models.ComponentNames",
+  "name" : "com.azure.resourcemanager.compute.generated.models.PassNames",
   "allDeclaredConstructors" : true,
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true
 }, {
-  "name" : "com.azure.resourcemanager.compute.generated.models.PassNames",
+  "name" : "com.azure.resourcemanager.compute.generated.models.ComponentNames",
   "allDeclaredConstructors" : true,
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true

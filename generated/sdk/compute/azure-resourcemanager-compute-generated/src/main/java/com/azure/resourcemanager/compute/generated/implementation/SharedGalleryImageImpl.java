@@ -18,6 +18,7 @@ import com.azure.resourcemanager.compute.generated.models.SharedGalleryImage;
 import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 public final class SharedGalleryImageImpl implements SharedGalleryImage {
     private SharedGalleryImageInner innerObject;
@@ -93,6 +94,15 @@ public final class SharedGalleryImageImpl implements SharedGalleryImage {
 
     public String eula() {
         return this.innerModel().eula();
+    }
+
+    public Map<String, String> artifactTags() {
+        Map<String, String> inner = this.innerModel().artifactTags();
+        if (inner != null) {
+            return Collections.unmodifiableMap(inner);
+        } else {
+            return Collections.emptyMap();
+        }
     }
 
     public SharedGalleryImageInner innerModel() {

@@ -7,6 +7,7 @@ package com.azure.resourcemanager.compute.generated.models;
 import com.azure.resourcemanager.compute.generated.fluent.models.CommunityGalleryImageInner;
 import java.time.OffsetDateTime;
 import java.util.List;
+import java.util.Map;
 
 /**
  * An immutable client-side representation of CommunityGalleryImage.
@@ -42,8 +43,7 @@ public interface CommunityGalleryImage {
 
     /**
      * Gets the osType property: This property allows you to specify the type of the OS that is included in the disk
-     * when creating a VM from a managed image. &lt;br&gt;&lt;br&gt; Possible values are: &lt;br&gt;&lt;br&gt;
-     * **Windows** &lt;br&gt;&lt;br&gt; **Linux**.
+     * when creating a VM from a managed image. Possible values are: **Windows,** **Linux.**.
      * 
      * @return the osType value.
      */
@@ -118,18 +118,32 @@ public interface CommunityGalleryImage {
     Architecture architecture();
 
     /**
-     * Gets the privacyStatementUri property: Privacy statement uri for the current community gallery image.
+     * Gets the privacyStatementUri property: Privacy statement URI for the current community gallery image.
      * 
      * @return the privacyStatementUri value.
      */
     String privacyStatementUri();
 
     /**
-     * Gets the eula property: End-user license agreement for the current community gallery image.
+     * Gets the eula property: The end-user license agreement for the current community gallery image.
      * 
      * @return the eula value.
      */
     String eula();
+
+    /**
+     * Gets the disclaimer property: The disclaimer for a community gallery resource.
+     * 
+     * @return the disclaimer value.
+     */
+    String disclaimer();
+
+    /**
+     * Gets the artifactTags property: The artifact tags of a community gallery resource.
+     * 
+     * @return the artifactTags value.
+     */
+    Map<String, String> artifactTags();
 
     /**
      * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.CommunityGalleryImageInner object.

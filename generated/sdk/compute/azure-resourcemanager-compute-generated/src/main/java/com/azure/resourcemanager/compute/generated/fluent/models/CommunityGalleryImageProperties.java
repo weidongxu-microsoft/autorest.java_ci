@@ -15,9 +15,11 @@ import com.azure.resourcemanager.compute.generated.models.ImagePurchasePlan;
 import com.azure.resourcemanager.compute.generated.models.OperatingSystemStateTypes;
 import com.azure.resourcemanager.compute.generated.models.OperatingSystemTypes;
 import com.azure.resourcemanager.compute.generated.models.RecommendedMachineConfiguration;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Describes the properties of a gallery image definition.
@@ -26,7 +28,7 @@ import java.util.List;
 public final class CommunityGalleryImageProperties {
     /*
      * This property allows you to specify the type of the OS that is included in the disk when creating a VM from a
-     * managed image. <br><br> Possible values are: <br><br> **Windows** <br><br> **Linux**
+     * managed image. Possible values are: **Windows,** **Linux.**
      */
     @JsonProperty(value = "osType", required = true)
     private OperatingSystemTypes osType;
@@ -89,16 +91,29 @@ public final class CommunityGalleryImageProperties {
     private Architecture architecture;
 
     /*
-     * Privacy statement uri for the current community gallery image.
+     * Privacy statement URI for the current community gallery image.
      */
     @JsonProperty(value = "privacyStatementUri")
     private String privacyStatementUri;
 
     /*
-     * End-user license agreement for the current community gallery image.
+     * The end-user license agreement for the current community gallery image.
      */
     @JsonProperty(value = "eula")
     private String eula;
+
+    /*
+     * The disclaimer for a community gallery resource.
+     */
+    @JsonProperty(value = "disclaimer")
+    private String disclaimer;
+
+    /*
+     * The artifact tags of a community gallery resource.
+     */
+    @JsonProperty(value = "artifactTags")
+    @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
+    private Map<String, String> artifactTags;
 
     /**
      * Creates an instance of CommunityGalleryImageProperties class.
@@ -108,8 +123,7 @@ public final class CommunityGalleryImageProperties {
 
     /**
      * Get the osType property: This property allows you to specify the type of the OS that is included in the disk
-     * when creating a VM from a managed image. &lt;br&gt;&lt;br&gt; Possible values are: &lt;br&gt;&lt;br&gt;
-     * **Windows** &lt;br&gt;&lt;br&gt; **Linux**.
+     * when creating a VM from a managed image. Possible values are: **Windows,** **Linux.**.
      * 
      * @return the osType value.
      */
@@ -119,8 +133,7 @@ public final class CommunityGalleryImageProperties {
 
     /**
      * Set the osType property: This property allows you to specify the type of the OS that is included in the disk
-     * when creating a VM from a managed image. &lt;br&gt;&lt;br&gt; Possible values are: &lt;br&gt;&lt;br&gt;
-     * **Windows** &lt;br&gt;&lt;br&gt; **Linux**.
+     * when creating a VM from a managed image. Possible values are: **Windows,** **Linux.**.
      * 
      * @param osType the osType value to set.
      * @return the CommunityGalleryImageProperties object itself.
@@ -321,7 +334,7 @@ public final class CommunityGalleryImageProperties {
     }
 
     /**
-     * Get the privacyStatementUri property: Privacy statement uri for the current community gallery image.
+     * Get the privacyStatementUri property: Privacy statement URI for the current community gallery image.
      * 
      * @return the privacyStatementUri value.
      */
@@ -330,7 +343,7 @@ public final class CommunityGalleryImageProperties {
     }
 
     /**
-     * Set the privacyStatementUri property: Privacy statement uri for the current community gallery image.
+     * Set the privacyStatementUri property: Privacy statement URI for the current community gallery image.
      * 
      * @param privacyStatementUri the privacyStatementUri value to set.
      * @return the CommunityGalleryImageProperties object itself.
@@ -341,7 +354,7 @@ public final class CommunityGalleryImageProperties {
     }
 
     /**
-     * Get the eula property: End-user license agreement for the current community gallery image.
+     * Get the eula property: The end-user license agreement for the current community gallery image.
      * 
      * @return the eula value.
      */
@@ -350,13 +363,53 @@ public final class CommunityGalleryImageProperties {
     }
 
     /**
-     * Set the eula property: End-user license agreement for the current community gallery image.
+     * Set the eula property: The end-user license agreement for the current community gallery image.
      * 
      * @param eula the eula value to set.
      * @return the CommunityGalleryImageProperties object itself.
      */
     public CommunityGalleryImageProperties withEula(String eula) {
         this.eula = eula;
+        return this;
+    }
+
+    /**
+     * Get the disclaimer property: The disclaimer for a community gallery resource.
+     * 
+     * @return the disclaimer value.
+     */
+    public String disclaimer() {
+        return this.disclaimer;
+    }
+
+    /**
+     * Set the disclaimer property: The disclaimer for a community gallery resource.
+     * 
+     * @param disclaimer the disclaimer value to set.
+     * @return the CommunityGalleryImageProperties object itself.
+     */
+    public CommunityGalleryImageProperties withDisclaimer(String disclaimer) {
+        this.disclaimer = disclaimer;
+        return this;
+    }
+
+    /**
+     * Get the artifactTags property: The artifact tags of a community gallery resource.
+     * 
+     * @return the artifactTags value.
+     */
+    public Map<String, String> artifactTags() {
+        return this.artifactTags;
+    }
+
+    /**
+     * Set the artifactTags property: The artifact tags of a community gallery resource.
+     * 
+     * @param artifactTags the artifactTags value to set.
+     * @return the CommunityGalleryImageProperties object itself.
+     */
+    public CommunityGalleryImageProperties withArtifactTags(Map<String, String> artifactTags) {
+        this.artifactTags = artifactTags;
         return this;
     }
 

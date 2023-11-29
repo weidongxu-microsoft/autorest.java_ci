@@ -29,6 +29,11 @@ public final class ConfidentialVMEncryptionType extends ExpandableStringEnum<Con
     public static final ConfidentialVMEncryptionType ENCRYPTED_WITH_CMK = fromString("EncryptedWithCmk");
 
     /**
+     * Static value NonPersistedTPM for ConfidentialVMEncryptionType.
+     */
+    public static final ConfidentialVMEncryptionType NON_PERSISTED_TPM = fromString("NonPersistedTPM");
+
+    /**
      * Creates a new instance of ConfidentialVMEncryptionType value.
      * 
      * @deprecated Use the {@link #fromString(String)} factory method.

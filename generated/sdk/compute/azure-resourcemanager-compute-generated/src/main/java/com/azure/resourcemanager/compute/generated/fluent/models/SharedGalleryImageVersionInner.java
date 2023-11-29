@@ -9,6 +9,7 @@ import com.azure.resourcemanager.compute.generated.models.PirSharedGalleryResour
 import com.azure.resourcemanager.compute.generated.models.SharedGalleryImageVersionStorageProfile;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
+import java.util.Map;
 
 /**
  * Specifies information about the gallery image version that you want to create or update.
@@ -140,6 +141,29 @@ public final class SharedGalleryImageVersionInner extends PirSharedGalleryResour
             this.innerProperties = new SharedGalleryImageVersionProperties();
         }
         this.innerProperties().withStorageProfile(storageProfile);
+        return this;
+    }
+
+    /**
+     * Get the artifactTags property: The artifact tags of a shared gallery resource.
+     * 
+     * @return the artifactTags value.
+     */
+    public Map<String, String> artifactTags() {
+        return this.innerProperties() == null ? null : this.innerProperties().artifactTags();
+    }
+
+    /**
+     * Set the artifactTags property: The artifact tags of a shared gallery resource.
+     * 
+     * @param artifactTags the artifactTags value to set.
+     * @return the SharedGalleryImageVersionInner object itself.
+     */
+    public SharedGalleryImageVersionInner withArtifactTags(Map<String, String> artifactTags) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new SharedGalleryImageVersionProperties();
+        }
+        this.innerProperties().withArtifactTags(artifactTags);
         return this;
     }
 

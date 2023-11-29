@@ -5,6 +5,7 @@
 package com.azure.resourcemanager.compute.generated.models;
 
 import com.azure.resourcemanager.compute.generated.fluent.models.CommunityGalleryInner;
+import java.util.Map;
 
 /**
  * An immutable client-side representation of CommunityGallery.
@@ -37,6 +38,27 @@ public interface CommunityGallery {
      * @return the uniqueId value.
      */
     String uniqueId();
+
+    /**
+     * Gets the disclaimer property: The disclaimer for a community gallery resource.
+     * 
+     * @return the disclaimer value.
+     */
+    String disclaimer();
+
+    /**
+     * Gets the artifactTags property: The artifact tags of a community gallery resource.
+     * 
+     * @return the artifactTags value.
+     */
+    Map<String, String> artifactTags();
+
+    /**
+     * Gets the communityMetadata property: The metadata of community gallery.
+     * 
+     * @return the communityMetadata value.
+     */
+    CommunityGalleryMetadata communityMetadata();
 
     /**
      * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.CommunityGalleryInner object.

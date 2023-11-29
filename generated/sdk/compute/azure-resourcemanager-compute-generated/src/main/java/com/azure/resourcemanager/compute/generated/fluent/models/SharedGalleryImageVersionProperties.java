@@ -6,8 +6,10 @@ package com.azure.resourcemanager.compute.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.compute.generated.models.SharedGalleryImageVersionStorageProfile;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
+import java.util.Map;
 
 /**
  * Describes the properties of a gallery image version.
@@ -40,6 +42,13 @@ public final class SharedGalleryImageVersionProperties {
      */
     @JsonProperty(value = "storageProfile")
     private SharedGalleryImageVersionStorageProfile storageProfile;
+
+    /*
+     * The artifact tags of a shared gallery resource.
+     */
+    @JsonProperty(value = "artifactTags")
+    @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
+    private Map<String, String> artifactTags;
 
     /**
      * Creates an instance of SharedGalleryImageVersionProperties class.
@@ -131,6 +140,26 @@ public final class SharedGalleryImageVersionProperties {
     public SharedGalleryImageVersionProperties
         withStorageProfile(SharedGalleryImageVersionStorageProfile storageProfile) {
         this.storageProfile = storageProfile;
+        return this;
+    }
+
+    /**
+     * Get the artifactTags property: The artifact tags of a shared gallery resource.
+     * 
+     * @return the artifactTags value.
+     */
+    public Map<String, String> artifactTags() {
+        return this.artifactTags;
+    }
+
+    /**
+     * Set the artifactTags property: The artifact tags of a shared gallery resource.
+     * 
+     * @param artifactTags the artifactTags value to set.
+     * @return the SharedGalleryImageVersionProperties object itself.
+     */
+    public SharedGalleryImageVersionProperties withArtifactTags(Map<String, String> artifactTags) {
+        this.artifactTags = artifactTags;
         return this;
     }
 

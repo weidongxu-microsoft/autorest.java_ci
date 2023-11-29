@@ -9,8 +9,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * This property allows you to specify the operation type of gallery sharing update. &lt;br&gt;&lt;br&gt; Possible
- * values are: &lt;br&gt;&lt;br&gt; **Add** &lt;br&gt;&lt;br&gt; **Remove** &lt;br&gt;&lt;br&gt; **Reset**.
+ * This property allows you to specify the operation type of gallery sharing update. Possible values are: **Add,**
+ * **Remove,** **Reset.**.
  */
 public final class SharingUpdateOperationTypes extends ExpandableStringEnum<SharingUpdateOperationTypes> {
     /**

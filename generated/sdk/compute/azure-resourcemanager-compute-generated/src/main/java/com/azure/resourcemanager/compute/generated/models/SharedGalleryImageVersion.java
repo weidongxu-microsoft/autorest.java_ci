@@ -6,6 +6,7 @@ package com.azure.resourcemanager.compute.generated.models;
 
 import com.azure.resourcemanager.compute.generated.fluent.models.SharedGalleryImageVersionInner;
 import java.time.OffsetDateTime;
+import java.util.Map;
 
 /**
  * An immutable client-side representation of SharedGalleryImageVersion.
@@ -62,6 +63,13 @@ public interface SharedGalleryImageVersion {
      * @return the storageProfile value.
      */
     SharedGalleryImageVersionStorageProfile storageProfile();
+
+    /**
+     * Gets the artifactTags property: The artifact tags of a shared gallery resource.
+     * 
+     * @return the artifactTags value.
+     */
+    Map<String, String> artifactTags();
 
     /**
      * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.SharedGalleryImageVersionInner object.

@@ -6,6 +6,8 @@ package com.azure.resourcemanager.compute.generated.implementation;
 
 import com.azure.resourcemanager.compute.generated.fluent.models.SharedGalleryInner;
 import com.azure.resourcemanager.compute.generated.models.SharedGallery;
+import java.util.Collections;
+import java.util.Map;
 
 public final class SharedGalleryImpl implements SharedGallery {
     private SharedGalleryInner innerObject;
@@ -28,6 +30,15 @@ public final class SharedGalleryImpl implements SharedGallery {
 
     public String uniqueId() {
         return this.innerModel().uniqueId();
+    }
+
+    public Map<String, String> artifactTags() {
+        Map<String, String> inner = this.innerModel().artifactTags();
+        if (inner != null) {
+            return Collections.unmodifiableMap(inner);
+        } else {
+            return Collections.emptyMap();
+        }
     }
 
     public SharedGalleryInner innerModel() {

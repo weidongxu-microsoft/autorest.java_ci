@@ -49,8 +49,8 @@ public final class GalleryApplicationProperties {
     private OffsetDateTime endOfLifeDate;
 
     /*
-     * This property allows you to specify the supported type of the OS that application is built for. <br><br>
-     * Possible values are: <br><br> **Windows** <br><br> **Linux**
+     * This property allows you to specify the supported type of the OS that application is built for. Possible values
+     * are: **Windows,** **Linux.**
      */
     @JsonProperty(value = "supportedOSType", required = true)
     private OperatingSystemTypes supportedOSType;
@@ -174,8 +174,7 @@ public final class GalleryApplicationProperties {
 
     /**
      * Get the supportedOSType property: This property allows you to specify the supported type of the OS that
-     * application is built for. &lt;br&gt;&lt;br&gt; Possible values are: &lt;br&gt;&lt;br&gt; **Windows**
-     * &lt;br&gt;&lt;br&gt; **Linux**.
+     * application is built for. Possible values are: **Windows,** **Linux.**.
      * 
      * @return the supportedOSType value.
      */
@@ -185,8 +184,7 @@ public final class GalleryApplicationProperties {
 
     /**
      * Set the supportedOSType property: This property allows you to specify the supported type of the OS that
-     * application is built for. &lt;br&gt;&lt;br&gt; Possible values are: &lt;br&gt;&lt;br&gt; **Windows**
-     * &lt;br&gt;&lt;br&gt; **Linux**.
+     * application is built for. Possible values are: **Windows,** **Linux.**.
      * 
      * @param supportedOSType the supportedOSType value to set.
      * @return the GalleryApplicationProperties object itself.

@@ -89,8 +89,7 @@ public interface GalleryApplication {
 
     /**
      * Gets the supportedOSType property: This property allows you to specify the supported type of the OS that
-     * application is built for. &lt;br&gt;&lt;br&gt; Possible values are: &lt;br&gt;&lt;br&gt; **Windows**
-     * &lt;br&gt;&lt;br&gt; **Linux**.
+     * application is built for. Possible values are: **Windows,** **Linux.**.
      * 
      * @return the supportedOSType value.
      */
@@ -297,12 +296,10 @@ public interface GalleryApplication {
         interface WithSupportedOSType {
             /**
              * Specifies the supportedOSType property: This property allows you to specify the supported type of the OS
-             * that application is built for. &lt;br&gt;&lt;br&gt; Possible values are: &lt;br&gt;&lt;br&gt; **Windows**
-             * &lt;br&gt;&lt;br&gt; **Linux**.
+             * that application is built for. Possible values are: **Windows,** **Linux.**.
              * 
              * @param supportedOSType This property allows you to specify the supported type of the OS that application
-             * is built for. &lt;br&gt;&lt;br&gt; Possible values are: &lt;br&gt;&lt;br&gt; **Windows**
-             * &lt;br&gt;&lt;br&gt; **Linux**.
+             * is built for. Possible values are: **Windows,** **Linux.**.
              * @return the next definition stage.
              */
             WithCreate withSupportedOSType(OperatingSystemTypes supportedOSType);
@@ -445,12 +442,10 @@ public interface GalleryApplication {
         interface WithSupportedOSType {
             /**
              * Specifies the supportedOSType property: This property allows you to specify the supported type of the OS
-             * that application is built for. &lt;br&gt;&lt;br&gt; Possible values are: &lt;br&gt;&lt;br&gt; **Windows**
-             * &lt;br&gt;&lt;br&gt; **Linux**.
+             * that application is built for. Possible values are: **Windows,** **Linux.**.
              * 
              * @param supportedOSType This property allows you to specify the supported type of the OS that application
-             * is built for. &lt;br&gt;&lt;br&gt; Possible values are: &lt;br&gt;&lt;br&gt; **Windows**
-             * &lt;br&gt;&lt;br&gt; **Linux**.
+             * is built for. Possible values are: **Windows,** **Linux.**.
              * @return the next definition stage.
              */
             Update withSupportedOSType(OperatingSystemTypes supportedOSType);

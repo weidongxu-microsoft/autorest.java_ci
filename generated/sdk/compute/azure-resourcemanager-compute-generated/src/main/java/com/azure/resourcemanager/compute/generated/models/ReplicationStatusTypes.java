@@ -18,6 +18,11 @@ public final class ReplicationStatusTypes extends ExpandableStringEnum<Replicati
     public static final ReplicationStatusTypes REPLICATION_STATUS = fromString("ReplicationStatus");
 
     /**
+     * Static value UefiSettings for ReplicationStatusTypes.
+     */
+    public static final ReplicationStatusTypes UEFI_SETTINGS = fromString("UefiSettings");
+
+    /**
      * Creates a new instance of ReplicationStatusTypes value.
      * 
      * @deprecated Use the {@link #fromString(String)} factory method.

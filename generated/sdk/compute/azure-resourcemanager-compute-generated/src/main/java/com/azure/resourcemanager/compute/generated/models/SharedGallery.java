@@ -5,6 +5,7 @@
 package com.azure.resourcemanager.compute.generated.models;
 
 import com.azure.resourcemanager.compute.generated.fluent.models.SharedGalleryInner;
+import java.util.Map;
 
 /**
  * An immutable client-side representation of SharedGallery.
@@ -30,6 +31,13 @@ public interface SharedGallery {
      * @return the uniqueId value.
      */
     String uniqueId();
+
+    /**
+     * Gets the artifactTags property: The artifact tags of a shared gallery resource.
+     * 
+     * @return the artifactTags value.
+     */
+    Map<String, String> artifactTags();
 
     /**
      * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.SharedGalleryInner object.

@@ -10,6 +10,7 @@ import com.azure.resourcemanager.compute.generated.models.GalleryImageVersionPub
 import com.azure.resourcemanager.compute.generated.models.GalleryImageVersionSafetyProfile;
 import com.azure.resourcemanager.compute.generated.models.GalleryImageVersionStorageProfile;
 import com.azure.resourcemanager.compute.generated.models.GalleryProvisioningState;
+import com.azure.resourcemanager.compute.generated.models.ImageVersionSecurityProfile;
 import com.azure.resourcemanager.compute.generated.models.ReplicationStatus;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -49,6 +50,12 @@ public final class GalleryImageVersionProperties {
      */
     @JsonProperty(value = "replicationStatus", access = JsonProperty.Access.WRITE_ONLY)
     private ReplicationStatus replicationStatus;
+
+    /*
+     * The security profile of a gallery image version
+     */
+    @JsonProperty(value = "securityProfile")
+    private ImageVersionSecurityProfile securityProfile;
 
     /**
      * Creates an instance of GalleryImageVersionProperties class.
@@ -137,6 +144,26 @@ public final class GalleryImageVersionProperties {
     }
 
     /**
+     * Get the securityProfile property: The security profile of a gallery image version.
+     * 
+     * @return the securityProfile value.
+     */
+    public ImageVersionSecurityProfile securityProfile() {
+        return this.securityProfile;
+    }
+
+    /**
+     * Set the securityProfile property: The security profile of a gallery image version.
+     * 
+     * @param securityProfile the securityProfile value to set.
+     * @return the GalleryImageVersionProperties object itself.
+     */
+    public GalleryImageVersionProperties withSecurityProfile(ImageVersionSecurityProfile securityProfile) {
+        this.securityProfile = securityProfile;
+        return this;
+    }
+
+    /**
      * Validates the instance.
      * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
@@ -156,6 +183,9 @@ public final class GalleryImageVersionProperties {
         }
         if (replicationStatus() != null) {
             replicationStatus().validate();
+        }
+        if (securityProfile() != null) {
+            securityProfile().validate();
         }
     }
 
