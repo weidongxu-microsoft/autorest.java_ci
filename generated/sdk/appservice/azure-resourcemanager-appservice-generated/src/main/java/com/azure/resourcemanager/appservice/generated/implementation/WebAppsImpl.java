@@ -449,22 +449,21 @@ public final class WebAppsImpl implements WebApps {
         return Utils.mapPage(inner, inner1 -> new SiteConfigResourceImpl(inner1, this.manager()));
     }
 
-    public Response<StringDictionary> updateApplicationSettingsWithResponse(String resourceGroupName, String name,
-        StringDictionaryInner appSettings, Context context) {
-        Response<StringDictionaryInner> inner
-            = this.serviceClient().updateApplicationSettingsWithResponse(resourceGroupName, name, appSettings, context);
+    public StringDictionary updateApplicationSettings(String resourceGroupName, String name,
+        StringDictionaryInner appSettings) {
+        StringDictionaryInner inner
+            = this.serviceClient().updateApplicationSettings(resourceGroupName, name, appSettings);
         if (inner != null) {
-            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
-                new StringDictionaryImpl(inner.getValue(), this.manager()));
+            return new StringDictionaryImpl(inner, this.manager());
         } else {
             return null;
         }
     }
 
     public StringDictionary updateApplicationSettings(String resourceGroupName, String name,
-        StringDictionaryInner appSettings) {
+        StringDictionaryInner appSettings, Context context) {
         StringDictionaryInner inner
-            = this.serviceClient().updateApplicationSettings(resourceGroupName, name, appSettings);
+            = this.serviceClient().updateApplicationSettings(resourceGroupName, name, appSettings, context);
         if (inner != null) {
             return new StringDictionaryImpl(inner, this.manager());
         } else {
@@ -1025,22 +1024,21 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public Response<SiteConfigResource> createOrUpdateConfigurationWithResponse(String resourceGroupName, String name,
-        SiteConfigResourceInner siteConfig, Context context) {
-        Response<SiteConfigResourceInner> inner = this.serviceClient()
-            .createOrUpdateConfigurationWithResponse(resourceGroupName, name, siteConfig, context);
+    public SiteConfigResource createOrUpdateConfiguration(String resourceGroupName, String name,
+        SiteConfigResourceInner siteConfig) {
+        SiteConfigResourceInner inner
+            = this.serviceClient().createOrUpdateConfiguration(resourceGroupName, name, siteConfig);
         if (inner != null) {
-            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
-                new SiteConfigResourceImpl(inner.getValue(), this.manager()));
+            return new SiteConfigResourceImpl(inner, this.manager());
         } else {
             return null;
         }
     }
 
     public SiteConfigResource createOrUpdateConfiguration(String resourceGroupName, String name,
-        SiteConfigResourceInner siteConfig) {
+        SiteConfigResourceInner siteConfig, Context context) {
         SiteConfigResourceInner inner
-            = this.serviceClient().createOrUpdateConfiguration(resourceGroupName, name, siteConfig);
+            = this.serviceClient().createOrUpdateConfiguration(resourceGroupName, name, siteConfig, context);
         if (inner != null) {
             return new SiteConfigResourceImpl(inner, this.manager());
         } else {

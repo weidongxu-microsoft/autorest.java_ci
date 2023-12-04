@@ -365,14 +365,14 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
     }
 
     public Site apply() {
-        this.innerObject = serviceManager.serviceClient().getWebApps()
-            .updateWithResponse(resourceGroupName, name, updateSiteEnvelope, Context.NONE).getValue();
+        this.innerObject = serviceManager.serviceClient().getWebApps().update(resourceGroupName, name,
+            updateSiteEnvelope, Context.NONE);
         return this;
     }
 
     public Site apply(Context context) {
-        this.innerObject = serviceManager.serviceClient().getWebApps()
-            .updateWithResponse(resourceGroupName, name, updateSiteEnvelope, context).getValue();
+        this.innerObject
+            = serviceManager.serviceClient().getWebApps().update(resourceGroupName, name, updateSiteEnvelope, context);
         return this;
     }
 

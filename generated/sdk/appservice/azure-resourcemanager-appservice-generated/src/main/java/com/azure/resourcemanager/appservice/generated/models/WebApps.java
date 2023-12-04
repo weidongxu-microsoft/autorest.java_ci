@@ -659,15 +659,14 @@ public interface WebApps {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param appSettings Application settings of the app.
-     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return string dictionary resource along with {@link Response}.
+     * @return string dictionary resource.
      */
-    Response<StringDictionary> updateApplicationSettingsWithResponse(String resourceGroupName, String name,
-        StringDictionaryInner appSettings, Context context);
+    StringDictionary updateApplicationSettings(String resourceGroupName, String name,
+        StringDictionaryInner appSettings);
 
     /**
      * Replaces the application settings of an app.
@@ -677,14 +676,15 @@ public interface WebApps {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param appSettings Application settings of the app.
+     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return string dictionary resource.
      */
-    StringDictionary updateApplicationSettings(String resourceGroupName, String name,
-        StringDictionaryInner appSettings);
+    StringDictionary updateApplicationSettings(String resourceGroupName, String name, StringDictionaryInner appSettings,
+        Context context);
 
     /**
      * Gets the application settings of an app.
@@ -1590,15 +1590,14 @@ public interface WebApps {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param siteConfig JSON representation of a SiteConfig object. See example.
-     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return web app configuration ARM resource along with {@link Response}.
+     * @return web app configuration ARM resource.
      */
-    Response<SiteConfigResource> createOrUpdateConfigurationWithResponse(String resourceGroupName, String name,
-        SiteConfigResourceInner siteConfig, Context context);
+    SiteConfigResource createOrUpdateConfiguration(String resourceGroupName, String name,
+        SiteConfigResourceInner siteConfig);
 
     /**
      * Updates the configuration of an app.
@@ -1608,6 +1607,7 @@ public interface WebApps {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param siteConfig JSON representation of a SiteConfig object. See example.
+     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      * request is rejected by server.
@@ -1615,7 +1615,7 @@ public interface WebApps {
      * @return web app configuration ARM resource.
      */
     SiteConfigResource createOrUpdateConfiguration(String resourceGroupName, String name,
-        SiteConfigResourceInner siteConfig);
+        SiteConfigResourceInner siteConfig, Context context);
 
     /**
      * Updates the configuration of an app.
