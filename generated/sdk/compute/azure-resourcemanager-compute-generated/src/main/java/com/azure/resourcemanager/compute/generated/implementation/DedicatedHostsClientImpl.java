@@ -135,6 +135,15 @@ public final class DedicatedHostsClientImpl implements DedicatedHostsClient {
             @PathParam("subscriptionId") String subscriptionId, @HeaderParam("Accept") String accept, Context context);
 
         @Headers({ "Content-Type: application/json" })
+        @Post("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/hostGroups/{hostGroupName}/hosts/{hostName}/redeploy")
+        @ExpectedResponses({ 202 })
+        @UnexpectedResponseExceptionType(ApiErrorException.class)
+        Mono<Response<Flux<ByteBuffer>>> redeploy(@HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName, @PathParam("hostGroupName") String hostGroupName,
+            @PathParam("hostName") String hostname, @QueryParam("api-version") String apiVersion,
+            @PathParam("subscriptionId") String subscriptionId, @HeaderParam("Accept") String accept, Context context);
+
+        @Headers({ "Content-Type: application/json" })
         @Get("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/hostGroups/{hostGroupName}/hosts/{hostName}/hostSizes")
         @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ApiErrorException.class)
@@ -191,7 +200,7 @@ public final class DedicatedHostsClientImpl implements DedicatedHostsClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.createOrUpdate(this.client.getEndpoint(), resourceGroupName, hostGroupName,
@@ -239,7 +248,7 @@ public final class DedicatedHostsClientImpl implements DedicatedHostsClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.createOrUpdate(this.client.getEndpoint(), resourceGroupName, hostGroupName, hostname, apiVersion,
@@ -444,7 +453,7 @@ public final class DedicatedHostsClientImpl implements DedicatedHostsClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.update(this.client.getEndpoint(), resourceGroupName, hostGroupName,
@@ -492,7 +501,7 @@ public final class DedicatedHostsClientImpl implements DedicatedHostsClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.update(this.client.getEndpoint(), resourceGroupName, hostGroupName, hostname, apiVersion,
@@ -688,7 +697,7 @@ public final class DedicatedHostsClientImpl implements DedicatedHostsClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.delete(this.client.getEndpoint(), resourceGroupName, hostGroupName,
@@ -729,7 +738,7 @@ public final class DedicatedHostsClientImpl implements DedicatedHostsClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.delete(this.client.getEndpoint(), resourceGroupName, hostGroupName, hostname, apiVersion,
@@ -913,7 +922,7 @@ public final class DedicatedHostsClientImpl implements DedicatedHostsClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.get(this.client.getEndpoint(), resourceGroupName, hostGroupName, hostname,
@@ -957,7 +966,7 @@ public final class DedicatedHostsClientImpl implements DedicatedHostsClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.get(this.client.getEndpoint(), resourceGroupName, hostGroupName, hostname, expand, apiVersion,
@@ -1049,7 +1058,7 @@ public final class DedicatedHostsClientImpl implements DedicatedHostsClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.listByHostGroup(this.client.getEndpoint(), resourceGroupName, hostGroupName,
@@ -1090,7 +1099,7 @@ public final class DedicatedHostsClientImpl implements DedicatedHostsClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1205,7 +1214,7 @@ public final class DedicatedHostsClientImpl implements DedicatedHostsClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.restart(this.client.getEndpoint(), resourceGroupName, hostGroupName,
@@ -1249,7 +1258,7 @@ public final class DedicatedHostsClientImpl implements DedicatedHostsClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.restart(this.client.getEndpoint(), resourceGroupName, hostGroupName, hostname, apiVersion,
@@ -1423,6 +1432,258 @@ public final class DedicatedHostsClientImpl implements DedicatedHostsClient {
     }
 
     /**
+     * Redeploy the dedicated host. The operation will complete successfully once the dedicated host has migrated to a
+     * new node and is running. To determine the health of VMs deployed on the dedicated host after the redeploy check
+     * the Resource Health Center in the Azure Portal. Please refer to
+     * https://docs.microsoft.com/azure/service-health/resource-health-overview for more details.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param hostGroupName The name of the dedicated host group.
+     * @param hostname The name of the dedicated host.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response} on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<Flux<ByteBuffer>>> redeployWithResponseAsync(String resourceGroupName, String hostGroupName,
+        String hostname) {
+        if (this.client.getEndpoint() == null) {
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (hostGroupName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter hostGroupName is required and cannot be null."));
+        }
+        if (hostname == null) {
+            return Mono.error(new IllegalArgumentException("Parameter hostname is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String apiVersion = "2023-09-01";
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(context -> service.redeploy(this.client.getEndpoint(), resourceGroupName, hostGroupName,
+                hostname, apiVersion, this.client.getSubscriptionId(), accept, context))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Redeploy the dedicated host. The operation will complete successfully once the dedicated host has migrated to a
+     * new node and is running. To determine the health of VMs deployed on the dedicated host after the redeploy check
+     * the Resource Health Center in the Azure Portal. Please refer to
+     * https://docs.microsoft.com/azure/service-health/resource-health-overview for more details.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param hostGroupName The name of the dedicated host group.
+     * @param hostname The name of the dedicated host.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response} on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<Flux<ByteBuffer>>> redeployWithResponseAsync(String resourceGroupName, String hostGroupName,
+        String hostname, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (hostGroupName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter hostGroupName is required and cannot be null."));
+        }
+        if (hostname == null) {
+            return Mono.error(new IllegalArgumentException("Parameter hostname is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String apiVersion = "2023-09-01";
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service.redeploy(this.client.getEndpoint(), resourceGroupName, hostGroupName, hostname, apiVersion,
+            this.client.getSubscriptionId(), accept, context);
+    }
+
+    /**
+     * Redeploy the dedicated host. The operation will complete successfully once the dedicated host has migrated to a
+     * new node and is running. To determine the health of VMs deployed on the dedicated host after the redeploy check
+     * the Resource Health Center in the Azure Portal. Please refer to
+     * https://docs.microsoft.com/azure/service-health/resource-health-overview for more details.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param hostGroupName The name of the dedicated host group.
+     * @param hostname The name of the dedicated host.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<Void>, Void> beginRedeployAsync(String resourceGroupName, String hostGroupName,
+        String hostname) {
+        Mono<Response<Flux<ByteBuffer>>> mono = redeployWithResponseAsync(resourceGroupName, hostGroupName, hostname);
+        return this.client.<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class,
+            this.client.getContext());
+    }
+
+    /**
+     * Redeploy the dedicated host. The operation will complete successfully once the dedicated host has migrated to a
+     * new node and is running. To determine the health of VMs deployed on the dedicated host after the redeploy check
+     * the Resource Health Center in the Azure Portal. Please refer to
+     * https://docs.microsoft.com/azure/service-health/resource-health-overview for more details.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param hostGroupName The name of the dedicated host group.
+     * @param hostname The name of the dedicated host.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<Void>, Void> beginRedeployAsync(String resourceGroupName, String hostGroupName,
+        String hostname, Context context) {
+        context = this.client.mergeContext(context);
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = redeployWithResponseAsync(resourceGroupName, hostGroupName, hostname, context);
+        return this.client.<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class,
+            context);
+    }
+
+    /**
+     * Redeploy the dedicated host. The operation will complete successfully once the dedicated host has migrated to a
+     * new node and is running. To determine the health of VMs deployed on the dedicated host after the redeploy check
+     * the Resource Health Center in the Azure Portal. Please refer to
+     * https://docs.microsoft.com/azure/service-health/resource-health-overview for more details.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param hostGroupName The name of the dedicated host group.
+     * @param hostname The name of the dedicated host.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link SyncPoller} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    public SyncPoller<PollResult<Void>, Void> beginRedeploy(String resourceGroupName, String hostGroupName,
+        String hostname) {
+        return this.beginRedeployAsync(resourceGroupName, hostGroupName, hostname).getSyncPoller();
+    }
+
+    /**
+     * Redeploy the dedicated host. The operation will complete successfully once the dedicated host has migrated to a
+     * new node and is running. To determine the health of VMs deployed on the dedicated host after the redeploy check
+     * the Resource Health Center in the Azure Portal. Please refer to
+     * https://docs.microsoft.com/azure/service-health/resource-health-overview for more details.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param hostGroupName The name of the dedicated host group.
+     * @param hostname The name of the dedicated host.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link SyncPoller} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    public SyncPoller<PollResult<Void>, Void> beginRedeploy(String resourceGroupName, String hostGroupName,
+        String hostname, Context context) {
+        return this.beginRedeployAsync(resourceGroupName, hostGroupName, hostname, context).getSyncPoller();
+    }
+
+    /**
+     * Redeploy the dedicated host. The operation will complete successfully once the dedicated host has migrated to a
+     * new node and is running. To determine the health of VMs deployed on the dedicated host after the redeploy check
+     * the Resource Health Center in the Azure Portal. Please refer to
+     * https://docs.microsoft.com/azure/service-health/resource-health-overview for more details.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param hostGroupName The name of the dedicated host group.
+     * @param hostname The name of the dedicated host.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return A {@link Mono} that completes when a successful response is received.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Void> redeployAsync(String resourceGroupName, String hostGroupName, String hostname) {
+        return beginRedeployAsync(resourceGroupName, hostGroupName, hostname).last()
+            .flatMap(this.client::getLroFinalResultOrError);
+    }
+
+    /**
+     * Redeploy the dedicated host. The operation will complete successfully once the dedicated host has migrated to a
+     * new node and is running. To determine the health of VMs deployed on the dedicated host after the redeploy check
+     * the Resource Health Center in the Azure Portal. Please refer to
+     * https://docs.microsoft.com/azure/service-health/resource-health-overview for more details.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param hostGroupName The name of the dedicated host group.
+     * @param hostname The name of the dedicated host.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return A {@link Mono} that completes when a successful response is received.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Void> redeployAsync(String resourceGroupName, String hostGroupName, String hostname, Context context) {
+        return beginRedeployAsync(resourceGroupName, hostGroupName, hostname, context).last()
+            .flatMap(this.client::getLroFinalResultOrError);
+    }
+
+    /**
+     * Redeploy the dedicated host. The operation will complete successfully once the dedicated host has migrated to a
+     * new node and is running. To determine the health of VMs deployed on the dedicated host after the redeploy check
+     * the Resource Health Center in the Azure Portal. Please refer to
+     * https://docs.microsoft.com/azure/service-health/resource-health-overview for more details.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param hostGroupName The name of the dedicated host group.
+     * @param hostname The name of the dedicated host.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void redeploy(String resourceGroupName, String hostGroupName, String hostname) {
+        redeployAsync(resourceGroupName, hostGroupName, hostname).block();
+    }
+
+    /**
+     * Redeploy the dedicated host. The operation will complete successfully once the dedicated host has migrated to a
+     * new node and is running. To determine the health of VMs deployed on the dedicated host after the redeploy check
+     * the Resource Health Center in the Azure Portal. Please refer to
+     * https://docs.microsoft.com/azure/service-health/resource-health-overview for more details.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param hostGroupName The name of the dedicated host group.
+     * @param hostname The name of the dedicated host.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void redeploy(String resourceGroupName, String hostGroupName, String hostname, Context context) {
+        redeployAsync(resourceGroupName, hostGroupName, hostname, context).block();
+    }
+
+    /**
      * Lists all available dedicated host sizes to which the specified dedicated host can be resized. NOTE: The
      * dedicated host sizes provided can be used to only scale up the existing dedicated host.
      * 
@@ -1456,7 +1717,7 @@ public final class DedicatedHostsClientImpl implements DedicatedHostsClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.listAvailableSizes(this.client.getEndpoint(), resourceGroupName,
@@ -1501,7 +1762,7 @@ public final class DedicatedHostsClientImpl implements DedicatedHostsClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service

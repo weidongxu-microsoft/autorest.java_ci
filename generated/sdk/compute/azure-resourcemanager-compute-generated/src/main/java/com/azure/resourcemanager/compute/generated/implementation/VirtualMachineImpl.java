@@ -8,12 +8,14 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
+import com.azure.resourcemanager.compute.generated.fluent.models.StorageProfileInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineExtensionInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineInstanceViewInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineUpdateInner;
 import com.azure.resourcemanager.compute.generated.models.AdditionalCapabilities;
 import com.azure.resourcemanager.compute.generated.models.ApplicationProfile;
+import com.azure.resourcemanager.compute.generated.models.AttachDetachDataDisksRequest;
 import com.azure.resourcemanager.compute.generated.models.BillingProfile;
 import com.azure.resourcemanager.compute.generated.models.CapacityReservationProfile;
 import com.azure.resourcemanager.compute.generated.models.DiagnosticsProfile;
@@ -108,12 +110,25 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
         return this.innerModel().extendedLocation();
     }
 
+    public String managedBy() {
+        return this.innerModel().managedBy();
+    }
+
+    public String etag() {
+        return this.innerModel().etag();
+    }
+
     public HardwareProfile hardwareProfile() {
         return this.innerModel().hardwareProfile();
     }
 
     public StorageProfile storageProfile() {
-        return this.innerModel().storageProfile();
+        StorageProfileInner inner = this.innerModel().storageProfile();
+        if (inner != null) {
+            return new StorageProfileImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public AdditionalCapabilities additionalCapabilities() {
@@ -241,6 +256,14 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
 
     private String vmName;
 
+    private String createIfMatch;
+
+    private String createIfNoneMatch;
+
+    private String updateIfMatch;
+
+    private String updateIfNoneMatch;
+
     private VirtualMachineUpdateInner updateParameters;
 
     public VirtualMachineImpl withExistingResourceGroup(String resourceGroupName) {
@@ -250,13 +273,13 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
 
     public VirtualMachine create() {
         this.innerObject = serviceManager.serviceClient().getVirtualMachines().createOrUpdate(resourceGroupName, vmName,
-            this.innerModel(), Context.NONE);
+            this.innerModel(), createIfMatch, createIfNoneMatch, Context.NONE);
         return this;
     }
 
     public VirtualMachine create(Context context) {
         this.innerObject = serviceManager.serviceClient().getVirtualMachines().createOrUpdate(resourceGroupName, vmName,
-            this.innerModel(), context);
+            this.innerModel(), createIfMatch, createIfNoneMatch, context);
         return this;
     }
 
@@ -264,22 +287,26 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
         this.innerObject = new VirtualMachineInner();
         this.serviceManager = serviceManager;
         this.vmName = name;
+        this.createIfMatch = null;
+        this.createIfNoneMatch = null;
     }
 
     public VirtualMachineImpl update() {
+        this.updateIfMatch = null;
+        this.updateIfNoneMatch = null;
         this.updateParameters = new VirtualMachineUpdateInner();
         return this;
     }
 
     public VirtualMachine apply() {
         this.innerObject = serviceManager.serviceClient().getVirtualMachines().update(resourceGroupName, vmName,
-            updateParameters, Context.NONE);
+            updateParameters, updateIfMatch, updateIfNoneMatch, Context.NONE);
         return this;
     }
 
     public VirtualMachine apply(Context context) {
         this.innerObject = serviceManager.serviceClient().getVirtualMachines().update(resourceGroupName, vmName,
-            updateParameters, context);
+            updateParameters, updateIfMatch, updateIfNoneMatch, context);
         return this;
     }
 
@@ -429,6 +456,14 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
         return serviceManager.virtualMachines().installPatches(resourceGroupName, vmName, installPatchesInput, context);
     }
 
+    public StorageProfile attachDetachDataDisks(AttachDetachDataDisksRequest parameters) {
+        return serviceManager.virtualMachines().attachDetachDataDisks(resourceGroupName, vmName, parameters);
+    }
+
+    public StorageProfile attachDetachDataDisks(AttachDetachDataDisksRequest parameters, Context context) {
+        return serviceManager.virtualMachines().attachDetachDataDisks(resourceGroupName, vmName, parameters, context);
+    }
+
     public RunCommandResult runCommand(RunCommandInput parameters) {
         return serviceManager.virtualMachines().runCommand(resourceGroupName, vmName, parameters);
     }
@@ -502,7 +537,7 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
         }
     }
 
-    public VirtualMachineImpl withStorageProfile(StorageProfile storageProfile) {
+    public VirtualMachineImpl withStorageProfile(StorageProfileInner storageProfile) {
         if (isInCreateMode()) {
             this.innerModel().withStorageProfile(storageProfile);
             return this;
@@ -708,6 +743,26 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
             return this;
         } else {
             this.updateParameters.withApplicationProfile(applicationProfile);
+            return this;
+        }
+    }
+
+    public VirtualMachineImpl withIfMatch(String ifMatch) {
+        if (isInCreateMode()) {
+            this.createIfMatch = ifMatch;
+            return this;
+        } else {
+            this.updateIfMatch = ifMatch;
+            return this;
+        }
+    }
+
+    public VirtualMachineImpl withIfNoneMatch(String ifNoneMatch) {
+        if (isInCreateMode()) {
+            this.createIfNoneMatch = ifNoneMatch;
+            return this;
+        } else {
+            this.updateIfNoneMatch = ifNoneMatch;
             return this;
         }
     }

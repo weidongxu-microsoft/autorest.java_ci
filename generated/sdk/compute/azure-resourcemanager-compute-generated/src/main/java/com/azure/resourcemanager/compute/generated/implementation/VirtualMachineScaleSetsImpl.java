@@ -250,6 +250,15 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
         this.serviceClient().reimageAll(resourceGroupName, vmScaleSetName, vmInstanceIDs, context);
     }
 
+    public void approveRollingUpgrade(String resourceGroupName, String vmScaleSetName) {
+        this.serviceClient().approveRollingUpgrade(resourceGroupName, vmScaleSetName);
+    }
+
+    public void approveRollingUpgrade(String resourceGroupName, String vmScaleSetName,
+        VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs, Context context) {
+        this.serviceClient().approveRollingUpgrade(resourceGroupName, vmScaleSetName, vmInstanceIDs, context);
+    }
+
     public Response<RecoveryWalkResponse> forceRecoveryServiceFabricPlatformUpdateDomainWalkWithResponse(
         String resourceGroupName, String vmScaleSetName, int platformUpdateDomain, String zone, String placementGroupId,
         Context context) {

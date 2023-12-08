@@ -122,6 +122,12 @@ public final class VirtualMachineInstanceViewInner {
     @JsonProperty(value = "patchStatus")
     private VirtualMachinePatchStatus patchStatus;
 
+    /*
+     * [Preview Feature] Specifies whether the VM is currently in or out of the Standby Pool.
+     */
+    @JsonProperty(value = "isVMInStandbyPool", access = JsonProperty.Access.WRITE_ONLY)
+    private Boolean isVMInStandbyPool;
+
     /**
      * Creates an instance of VirtualMachineInstanceViewInner class.
      */
@@ -431,6 +437,16 @@ public final class VirtualMachineInstanceViewInner {
     public VirtualMachineInstanceViewInner withPatchStatus(VirtualMachinePatchStatus patchStatus) {
         this.patchStatus = patchStatus;
         return this;
+    }
+
+    /**
+     * Get the isVMInStandbyPool property: [Preview Feature] Specifies whether the VM is currently in or out of the
+     * Standby Pool.
+     * 
+     * @return the isVMInStandbyPool value.
+     */
+    public Boolean isVMInStandbyPool() {
+        return this.isVMInStandbyPool;
     }
 
     /**

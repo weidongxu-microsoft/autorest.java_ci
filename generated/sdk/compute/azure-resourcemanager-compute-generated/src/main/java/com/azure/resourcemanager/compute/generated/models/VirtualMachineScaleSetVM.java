@@ -96,6 +96,14 @@ public interface VirtualMachineScaleSetVM {
     VirtualMachineIdentity identity();
 
     /**
+     * Gets the etag property: Etag is property returned in Update/Get response of the VMSS VM, so that customer can
+     * supply it in the header to ensure optimistic updates.
+     * 
+     * @return the etag value.
+     */
+    String etag();
+
+    /**
      * Gets the latestModelApplied property: Specifies whether the latest model has been applied to the virtual machine.
      * 
      * @return the latestModelApplied value.

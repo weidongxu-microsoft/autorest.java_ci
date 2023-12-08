@@ -11,6 +11,7 @@ import com.azure.resourcemanager.compute.generated.models.CapacityReservationGro
 import com.azure.resourcemanager.compute.generated.models.CapacityReservationGroupInstanceView;
 import com.azure.resourcemanager.compute.generated.models.CapacityReservationGroupInstanceViewTypes;
 import com.azure.resourcemanager.compute.generated.models.CapacityReservationGroupUpdate;
+import com.azure.resourcemanager.compute.generated.models.ResourceSharingProfile;
 import com.azure.resourcemanager.compute.generated.models.SubResourceReadOnly;
 import java.util.Collections;
 import java.util.List;
@@ -76,6 +77,10 @@ public final class CapacityReservationGroupImpl
 
     public CapacityReservationGroupInstanceView instanceView() {
         return this.innerModel().instanceView();
+    }
+
+    public ResourceSharingProfile sharingProfile() {
+        return this.innerModel().sharingProfile();
     }
 
     public Region region() {
@@ -194,6 +199,16 @@ public final class CapacityReservationGroupImpl
     public CapacityReservationGroupImpl withZones(List<String> zones) {
         this.innerModel().withZones(zones);
         return this;
+    }
+
+    public CapacityReservationGroupImpl withSharingProfile(ResourceSharingProfile sharingProfile) {
+        if (isInCreateMode()) {
+            this.innerModel().withSharingProfile(sharingProfile);
+            return this;
+        } else {
+            this.updateParameters.withSharingProfile(sharingProfile);
+            return this;
+        }
     }
 
     private boolean isInCreateMode() {

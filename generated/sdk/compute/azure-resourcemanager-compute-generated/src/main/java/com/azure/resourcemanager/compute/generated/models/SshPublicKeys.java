@@ -124,6 +124,7 @@ public interface SshPublicKeys {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param sshPublicKeyName The name of the SSH public key.
+     * @param parameters Parameters supplied to generate the SSH public key.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -132,7 +133,7 @@ public interface SshPublicKeys {
      * @return response from generation of an SSH key pair along with {@link Response}.
      */
     Response<SshPublicKeyGenerateKeyPairResult> generateKeyPairWithResponse(String resourceGroupName,
-        String sshPublicKeyName, Context context);
+        String sshPublicKeyName, SshGenerateKeyPairInputParameters parameters, Context context);
 
     /**
      * Generates and returns a public/private key pair and populates the SSH public key resource with the public key.

@@ -397,6 +397,29 @@ public final class VirtualMachineScaleSetUpdate extends UpdateResource {
     }
 
     /**
+     * Get the resiliencyPolicy property: Policy for Resiliency.
+     * 
+     * @return the resiliencyPolicy value.
+     */
+    public ResiliencyPolicy resiliencyPolicy() {
+        return this.innerProperties() == null ? null : this.innerProperties().resiliencyPolicy();
+    }
+
+    /**
+     * Set the resiliencyPolicy property: Policy for Resiliency.
+     * 
+     * @param resiliencyPolicy the resiliencyPolicy value to set.
+     * @return the VirtualMachineScaleSetUpdate object itself.
+     */
+    public VirtualMachineScaleSetUpdate withResiliencyPolicy(ResiliencyPolicy resiliencyPolicy) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new VirtualMachineScaleSetUpdateProperties();
+        }
+        this.innerProperties().withResiliencyPolicy(resiliencyPolicy);
+        return this;
+    }
+
+    /**
      * Validates the instance.
      * 
      * @throws IllegalArgumentException thrown if the instance is not valid.

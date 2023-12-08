@@ -35,6 +35,18 @@ public final class SecurityProfile {
     @JsonProperty(value = "securityType")
     private SecurityTypes securityType;
 
+    /*
+     * Specifies the Managed Identity used by ADE to get access token for keyvault operations.
+     */
+    @JsonProperty(value = "encryptionIdentity")
+    private EncryptionIdentity encryptionIdentity;
+
+    /*
+     * Specifies ProxyAgent settings while creating the virtual machine. Minimum api-version: 2023-09-01.
+     */
+    @JsonProperty(value = "proxyAgentSettings")
+    private ProxyAgentSettings proxyAgentSettings;
+
     /**
      * Creates an instance of SecurityProfile class.
      */
@@ -114,6 +126,50 @@ public final class SecurityProfile {
     }
 
     /**
+     * Get the encryptionIdentity property: Specifies the Managed Identity used by ADE to get access token for keyvault
+     * operations.
+     * 
+     * @return the encryptionIdentity value.
+     */
+    public EncryptionIdentity encryptionIdentity() {
+        return this.encryptionIdentity;
+    }
+
+    /**
+     * Set the encryptionIdentity property: Specifies the Managed Identity used by ADE to get access token for keyvault
+     * operations.
+     * 
+     * @param encryptionIdentity the encryptionIdentity value to set.
+     * @return the SecurityProfile object itself.
+     */
+    public SecurityProfile withEncryptionIdentity(EncryptionIdentity encryptionIdentity) {
+        this.encryptionIdentity = encryptionIdentity;
+        return this;
+    }
+
+    /**
+     * Get the proxyAgentSettings property: Specifies ProxyAgent settings while creating the virtual machine. Minimum
+     * api-version: 2023-09-01.
+     * 
+     * @return the proxyAgentSettings value.
+     */
+    public ProxyAgentSettings proxyAgentSettings() {
+        return this.proxyAgentSettings;
+    }
+
+    /**
+     * Set the proxyAgentSettings property: Specifies ProxyAgent settings while creating the virtual machine. Minimum
+     * api-version: 2023-09-01.
+     * 
+     * @param proxyAgentSettings the proxyAgentSettings value to set.
+     * @return the SecurityProfile object itself.
+     */
+    public SecurityProfile withProxyAgentSettings(ProxyAgentSettings proxyAgentSettings) {
+        this.proxyAgentSettings = proxyAgentSettings;
+        return this;
+    }
+
+    /**
      * Validates the instance.
      * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
@@ -121,6 +177,12 @@ public final class SecurityProfile {
     public void validate() {
         if (uefiSettings() != null) {
             uefiSettings().validate();
+        }
+        if (encryptionIdentity() != null) {
+            encryptionIdentity().validate();
+        }
+        if (proxyAgentSettings() != null) {
+            proxyAgentSettings().validate();
         }
     }
 }

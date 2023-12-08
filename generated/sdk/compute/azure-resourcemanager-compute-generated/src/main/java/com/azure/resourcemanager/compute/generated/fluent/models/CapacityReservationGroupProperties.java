@@ -4,8 +4,9 @@
 
 package com.azure.resourcemanager.compute.generated.fluent.models;
 
-import com.azure.core.annotation.Immutable;
+import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.compute.generated.models.CapacityReservationGroupInstanceView;
+import com.azure.resourcemanager.compute.generated.models.ResourceSharingProfile;
 import com.azure.resourcemanager.compute.generated.models.SubResourceReadOnly;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
@@ -13,7 +14,7 @@ import java.util.List;
 /**
  * capacity reservation group Properties.
  */
-@Immutable
+@Fluent
 public final class CapacityReservationGroupProperties {
     /*
      * A list of all capacity reservation resource ids that belong to capacity reservation group.
@@ -33,6 +34,16 @@ public final class CapacityReservationGroupProperties {
      */
     @JsonProperty(value = "instanceView", access = JsonProperty.Access.WRITE_ONLY)
     private CapacityReservationGroupInstanceView instanceView;
+
+    /*
+     * Specifies the settings to enable sharing across subscriptions for the capacity reservation group resource. Pls.
+     * keep in mind the capacity reservation group resource generally can be shared across subscriptions belonging to a
+     * single azure AAD tenant or cross AAD tenant if there is a trust relationship established between the AAD
+     * tenants. **Note:** Minimum api-version: 2023-09-01. Please refer to https://aka.ms/computereservationsharing for
+     * more details.
+     */
+    @JsonProperty(value = "sharingProfile")
+    private ResourceSharingProfile sharingProfile;
 
     /**
      * Creates an instance of CapacityReservationGroupProperties class.
@@ -71,6 +82,34 @@ public final class CapacityReservationGroupProperties {
     }
 
     /**
+     * Get the sharingProfile property: Specifies the settings to enable sharing across subscriptions for the capacity
+     * reservation group resource. Pls. keep in mind the capacity reservation group resource generally can be shared
+     * across subscriptions belonging to a single azure AAD tenant or cross AAD tenant if there is a trust relationship
+     * established between the AAD tenants. **Note:** Minimum api-version: 2023-09-01. Please refer to
+     * https://aka.ms/computereservationsharing for more details.
+     * 
+     * @return the sharingProfile value.
+     */
+    public ResourceSharingProfile sharingProfile() {
+        return this.sharingProfile;
+    }
+
+    /**
+     * Set the sharingProfile property: Specifies the settings to enable sharing across subscriptions for the capacity
+     * reservation group resource. Pls. keep in mind the capacity reservation group resource generally can be shared
+     * across subscriptions belonging to a single azure AAD tenant or cross AAD tenant if there is a trust relationship
+     * established between the AAD tenants. **Note:** Minimum api-version: 2023-09-01. Please refer to
+     * https://aka.ms/computereservationsharing for more details.
+     * 
+     * @param sharingProfile the sharingProfile value to set.
+     * @return the CapacityReservationGroupProperties object itself.
+     */
+    public CapacityReservationGroupProperties withSharingProfile(ResourceSharingProfile sharingProfile) {
+        this.sharingProfile = sharingProfile;
+        return this;
+    }
+
+    /**
      * Validates the instance.
      * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
@@ -84,6 +123,9 @@ public final class CapacityReservationGroupProperties {
         }
         if (instanceView() != null) {
             instanceView().validate();
+        }
+        if (sharingProfile() != null) {
+            sharingProfile().validate();
         }
     }
 }

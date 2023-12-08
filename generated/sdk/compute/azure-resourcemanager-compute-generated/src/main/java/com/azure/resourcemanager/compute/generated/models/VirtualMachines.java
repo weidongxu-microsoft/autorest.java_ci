@@ -641,6 +641,37 @@ public interface VirtualMachines {
         VirtualMachineInstallPatchesParameters installPatchesInput, Context context);
 
     /**
+     * Attach and detach data disks to/from the virtual machine.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param vmName The name of the virtual machine.
+     * @param parameters Parameters supplied to the attach and detach data disks operation on the virtual machine.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return specifies the storage settings for the virtual machine disks.
+     */
+    StorageProfile attachDetachDataDisks(String resourceGroupName, String vmName,
+        AttachDetachDataDisksRequest parameters);
+
+    /**
+     * Attach and detach data disks to/from the virtual machine.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param vmName The name of the virtual machine.
+     * @param parameters Parameters supplied to the attach and detach data disks operation on the virtual machine.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return specifies the storage settings for the virtual machine disks.
+     */
+    StorageProfile attachDetachDataDisks(String resourceGroupName, String vmName,
+        AttachDetachDataDisksRequest parameters, Context context);
+
+    /**
      * Run command on the VM.
      * 
      * @param resourceGroupName The name of the resource group.

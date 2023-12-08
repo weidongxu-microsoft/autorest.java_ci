@@ -79,6 +79,10 @@ public interface VirtualMachineScaleSetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set to create or update.
      * @param parameters The scale set object.
+     * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource. Specify
+     * the last-seen ETag value to prevent accidentally overwriting concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record
+     * set. Other values will result in error from server as they are not supported.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -88,7 +92,8 @@ public interface VirtualMachineScaleSetsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<VirtualMachineScaleSetInner>, VirtualMachineScaleSetInner> beginCreateOrUpdate(
-        String resourceGroupName, String vmScaleSetName, VirtualMachineScaleSetInner parameters, Context context);
+        String resourceGroupName, String vmScaleSetName, VirtualMachineScaleSetInner parameters, String ifMatch,
+        String ifNoneMatch, Context context);
 
     /**
      * Create or update a VM scale set.
@@ -112,6 +117,10 @@ public interface VirtualMachineScaleSetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set to create or update.
      * @param parameters The scale set object.
+     * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource. Specify
+     * the last-seen ETag value to prevent accidentally overwriting concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record
+     * set. Other values will result in error from server as they are not supported.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -121,7 +130,7 @@ public interface VirtualMachineScaleSetsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     VirtualMachineScaleSetInner createOrUpdate(String resourceGroupName, String vmScaleSetName,
-        VirtualMachineScaleSetInner parameters, Context context);
+        VirtualMachineScaleSetInner parameters, String ifMatch, String ifNoneMatch, Context context);
 
     /**
      * Update a VM scale set.
@@ -145,6 +154,10 @@ public interface VirtualMachineScaleSetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set to create or update.
      * @param parameters The scale set object.
+     * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource. Specify
+     * the last-seen ETag value to prevent accidentally overwriting concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record
+     * set. Other values will result in error from server as they are not supported.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -154,7 +167,8 @@ public interface VirtualMachineScaleSetsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<VirtualMachineScaleSetInner>, VirtualMachineScaleSetInner> beginUpdate(
-        String resourceGroupName, String vmScaleSetName, VirtualMachineScaleSetUpdate parameters, Context context);
+        String resourceGroupName, String vmScaleSetName, VirtualMachineScaleSetUpdate parameters, String ifMatch,
+        String ifNoneMatch, Context context);
 
     /**
      * Update a VM scale set.
@@ -178,6 +192,10 @@ public interface VirtualMachineScaleSetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set to create or update.
      * @param parameters The scale set object.
+     * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource. Specify
+     * the last-seen ETag value to prevent accidentally overwriting concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record
+     * set. Other values will result in error from server as they are not supported.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -187,7 +205,7 @@ public interface VirtualMachineScaleSetsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     VirtualMachineScaleSetInner update(String resourceGroupName, String vmScaleSetName,
-        VirtualMachineScaleSetUpdate parameters, Context context);
+        VirtualMachineScaleSetUpdate parameters, String ifMatch, String ifNoneMatch, Context context);
 
     /**
      * Deletes a VM scale set.
@@ -1139,6 +1157,66 @@ public interface VirtualMachineScaleSetsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     void reimageAll(String resourceGroupName, String vmScaleSetName, VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs,
         Context context);
+
+    /**
+     * Approve upgrade on deferred rolling upgrades for OS disks in the virtual machines in a VM scale set.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param vmScaleSetName The name of the VM scale set.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link SyncPoller} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    SyncPoller<PollResult<Void>, Void> beginApproveRollingUpgrade(String resourceGroupName, String vmScaleSetName);
+
+    /**
+     * Approve upgrade on deferred rolling upgrades for OS disks in the virtual machines in a VM scale set.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param vmScaleSetName The name of the VM scale set.
+     * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link SyncPoller} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    SyncPoller<PollResult<Void>, Void> beginApproveRollingUpgrade(String resourceGroupName, String vmScaleSetName,
+        VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs, Context context);
+
+    /**
+     * Approve upgrade on deferred rolling upgrades for OS disks in the virtual machines in a VM scale set.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param vmScaleSetName The name of the VM scale set.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    void approveRollingUpgrade(String resourceGroupName, String vmScaleSetName);
+
+    /**
+     * Approve upgrade on deferred rolling upgrades for OS disks in the virtual machines in a VM scale set.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param vmScaleSetName The name of the VM scale set.
+     * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    void approveRollingUpgrade(String resourceGroupName, String vmScaleSetName,
+        VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs, Context context);
 
     /**
      * Manual platform update domain walk to update virtual machines in a service fabric virtual machine scale set.

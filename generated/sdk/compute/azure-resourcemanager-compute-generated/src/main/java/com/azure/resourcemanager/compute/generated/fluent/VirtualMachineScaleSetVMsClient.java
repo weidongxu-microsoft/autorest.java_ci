@@ -13,8 +13,10 @@ import com.azure.core.util.Context;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.compute.generated.fluent.models.RetrieveBootDiagnosticsDataResultInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.RunCommandResultInner;
+import com.azure.resourcemanager.compute.generated.fluent.models.StorageProfileInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineScaleSetVMInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineScaleSetVMInstanceViewInner;
+import com.azure.resourcemanager.compute.generated.models.AttachDetachDataDisksRequest;
 import com.azure.resourcemanager.compute.generated.models.InstanceViewTypes;
 import com.azure.resourcemanager.compute.generated.models.RunCommandInput;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMReimageParameters;
@@ -154,6 +156,68 @@ public interface VirtualMachineScaleSetVMsClient {
     void reimageAll(String resourceGroupName, String vmScaleSetName, String instanceId, Context context);
 
     /**
+     * Approve upgrade on deferred rolling upgrade for OS disk on a VM scale set instance.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param vmScaleSetName The name of the VM scale set.
+     * @param instanceId The instance ID of the virtual machine.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link SyncPoller} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    SyncPoller<PollResult<Void>, Void> beginApproveRollingUpgrade(String resourceGroupName, String vmScaleSetName,
+        String instanceId);
+
+    /**
+     * Approve upgrade on deferred rolling upgrade for OS disk on a VM scale set instance.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param vmScaleSetName The name of the VM scale set.
+     * @param instanceId The instance ID of the virtual machine.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link SyncPoller} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    SyncPoller<PollResult<Void>, Void> beginApproveRollingUpgrade(String resourceGroupName, String vmScaleSetName,
+        String instanceId, Context context);
+
+    /**
+     * Approve upgrade on deferred rolling upgrade for OS disk on a VM scale set instance.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param vmScaleSetName The name of the VM scale set.
+     * @param instanceId The instance ID of the virtual machine.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    void approveRollingUpgrade(String resourceGroupName, String vmScaleSetName, String instanceId);
+
+    /**
+     * Approve upgrade on deferred rolling upgrade for OS disk on a VM scale set instance.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param vmScaleSetName The name of the VM scale set.
+     * @param instanceId The instance ID of the virtual machine.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    void approveRollingUpgrade(String resourceGroupName, String vmScaleSetName, String instanceId, Context context);
+
+    /**
      * Deallocates a specific virtual machine in a VM scale set. Shuts down the virtual machine and releases the compute
      * resources it uses. You are not billed for the compute resources of this virtual machine once it is deallocated.
      * 
@@ -243,6 +307,10 @@ public interface VirtualMachineScaleSetVMsClient {
      * @param vmScaleSetName The name of the VM scale set where the extension should be create or updated.
      * @param instanceId The instance ID of the virtual machine.
      * @param parameters Parameters supplied to the Update Virtual Machine Scale Sets VM operation.
+     * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource. Specify
+     * the last-seen ETag value to prevent accidentally overwriting concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record
+     * set. Other values will result in error from server as they are not supported.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -253,7 +321,7 @@ public interface VirtualMachineScaleSetVMsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<VirtualMachineScaleSetVMInner>, VirtualMachineScaleSetVMInner> beginUpdate(
         String resourceGroupName, String vmScaleSetName, String instanceId, VirtualMachineScaleSetVMInner parameters,
-        Context context);
+        String ifMatch, String ifNoneMatch, Context context);
 
     /**
      * Updates a virtual machine of a VM scale set.
@@ -279,6 +347,10 @@ public interface VirtualMachineScaleSetVMsClient {
      * @param vmScaleSetName The name of the VM scale set where the extension should be create or updated.
      * @param instanceId The instance ID of the virtual machine.
      * @param parameters Parameters supplied to the Update Virtual Machine Scale Sets VM operation.
+     * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource. Specify
+     * the last-seen ETag value to prevent accidentally overwriting concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record
+     * set. Other values will result in error from server as they are not supported.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -288,7 +360,7 @@ public interface VirtualMachineScaleSetVMsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     VirtualMachineScaleSetVMInner update(String resourceGroupName, String vmScaleSetName, String instanceId,
-        VirtualMachineScaleSetVMInner parameters, Context context);
+        VirtualMachineScaleSetVMInner parameters, String ifMatch, String ifNoneMatch, Context context);
 
     /**
      * Deletes a virtual machine from a VM scale set.
@@ -840,6 +912,81 @@ public interface VirtualMachineScaleSetVMsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     void simulateEviction(String resourceGroupName, String vmScaleSetName, String instanceId);
+
+    /**
+     * Attach and detach data disks to/from a virtual machine in a VM scale set.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param vmScaleSetName The name of the VM scale set.
+     * @param instanceId The instance ID of the virtual machine.
+     * @param parameters Parameters supplied to the attach and detach data disks operation on a Virtual Machine Scale
+     * Sets VM.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link SyncPoller} for polling of specifies the storage settings for the virtual machine disks.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    SyncPoller<PollResult<StorageProfileInner>, StorageProfileInner> beginAttachDetachDataDisks(
+        String resourceGroupName, String vmScaleSetName, String instanceId, AttachDetachDataDisksRequest parameters);
+
+    /**
+     * Attach and detach data disks to/from a virtual machine in a VM scale set.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param vmScaleSetName The name of the VM scale set.
+     * @param instanceId The instance ID of the virtual machine.
+     * @param parameters Parameters supplied to the attach and detach data disks operation on a Virtual Machine Scale
+     * Sets VM.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link SyncPoller} for polling of specifies the storage settings for the virtual machine disks.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    SyncPoller<PollResult<StorageProfileInner>, StorageProfileInner> beginAttachDetachDataDisks(
+        String resourceGroupName, String vmScaleSetName, String instanceId, AttachDetachDataDisksRequest parameters,
+        Context context);
+
+    /**
+     * Attach and detach data disks to/from a virtual machine in a VM scale set.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param vmScaleSetName The name of the VM scale set.
+     * @param instanceId The instance ID of the virtual machine.
+     * @param parameters Parameters supplied to the attach and detach data disks operation on a Virtual Machine Scale
+     * Sets VM.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return specifies the storage settings for the virtual machine disks.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    StorageProfileInner attachDetachDataDisks(String resourceGroupName, String vmScaleSetName, String instanceId,
+        AttachDetachDataDisksRequest parameters);
+
+    /**
+     * Attach and detach data disks to/from a virtual machine in a VM scale set.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param vmScaleSetName The name of the VM scale set.
+     * @param instanceId The instance ID of the virtual machine.
+     * @param parameters Parameters supplied to the attach and detach data disks operation on a Virtual Machine Scale
+     * Sets VM.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return specifies the storage settings for the virtual machine disks.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    StorageProfileInner attachDetachDataDisks(String resourceGroupName, String vmScaleSetName, String instanceId,
+        AttachDetachDataDisksRequest parameters, Context context);
 
     /**
      * Run command on a virtual machine in a VM scale set.

@@ -194,6 +194,14 @@ public final class DedicatedHostImpl implements DedicatedHost, DedicatedHost.Def
         serviceManager.dedicatedHosts().restart(resourceGroupName, hostGroupName, hostname, context);
     }
 
+    public void redeploy() {
+        serviceManager.dedicatedHosts().redeploy(resourceGroupName, hostGroupName, hostname);
+    }
+
+    public void redeploy(Context context) {
+        serviceManager.dedicatedHosts().redeploy(resourceGroupName, hostGroupName, hostname, context);
+    }
+
     public DedicatedHostImpl withRegion(Region location) {
         this.innerModel().withLocation(location.toString());
         return this;

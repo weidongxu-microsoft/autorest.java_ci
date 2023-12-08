@@ -25,6 +25,12 @@ public final class RestorePointSourceVMStorageProfile {
     @JsonProperty(value = "dataDisks")
     private List<RestorePointSourceVMDataDisk> dataDisks;
 
+    /*
+     * Gets the disk controller type of the VM captured at the time of the restore point creation.
+     */
+    @JsonProperty(value = "diskControllerType", access = JsonProperty.Access.WRITE_ONLY)
+    private DiskControllerTypes diskControllerType;
+
     /**
      * Creates an instance of RestorePointSourceVMStorageProfile class.
      */
@@ -69,6 +75,16 @@ public final class RestorePointSourceVMStorageProfile {
     public RestorePointSourceVMStorageProfile withDataDisks(List<RestorePointSourceVMDataDisk> dataDisks) {
         this.dataDisks = dataDisks;
         return this;
+    }
+
+    /**
+     * Get the diskControllerType property: Gets the disk controller type of the VM captured at the time of the restore
+     * point creation.
+     * 
+     * @return the diskControllerType value.
+     */
+    public DiskControllerTypes diskControllerType() {
+        return this.diskControllerType;
     }
 
     /**

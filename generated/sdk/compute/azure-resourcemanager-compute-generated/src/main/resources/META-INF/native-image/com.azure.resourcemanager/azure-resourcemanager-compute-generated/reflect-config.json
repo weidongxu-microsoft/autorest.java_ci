@@ -289,6 +289,16 @@
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true
 }, {
+  "name" : "com.azure.resourcemanager.compute.generated.models.EncryptionIdentity",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
+  "name" : "com.azure.resourcemanager.compute.generated.models.ProxyAgentSettings",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
   "name" : "com.azure.resourcemanager.compute.generated.models.DiagnosticsProfile",
   "allDeclaredConstructors" : true,
   "allDeclaredFields" : true,
@@ -420,6 +430,21 @@
   "allDeclaredMethods" : true
 }, {
   "name" : "com.azure.resourcemanager.compute.generated.models.PriorityMixPolicy",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
+  "name" : "com.azure.resourcemanager.compute.generated.models.ResiliencyPolicy",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
+  "name" : "com.azure.resourcemanager.compute.generated.models.ResilientVMCreationPolicy",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
+  "name" : "com.azure.resourcemanager.compute.generated.models.ResilientVMDeletionPolicy",
   "allDeclaredConstructors" : true,
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true
@@ -734,7 +759,7 @@
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true
 }, {
-  "name" : "com.azure.resourcemanager.compute.generated.models.StorageProfile",
+  "name" : "com.azure.resourcemanager.compute.generated.fluent.models.StorageProfileInner",
   "allDeclaredConstructors" : true,
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true
@@ -840,6 +865,21 @@
   "allDeclaredMethods" : true
 }, {
   "name" : "com.azure.resourcemanager.compute.generated.fluent.models.RetrieveBootDiagnosticsDataResultInner",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
+  "name" : "com.azure.resourcemanager.compute.generated.models.AttachDetachDataDisksRequest",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
+  "name" : "com.azure.resourcemanager.compute.generated.models.DataDisksToAttach",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
+  "name" : "com.azure.resourcemanager.compute.generated.models.DataDisksToDetach",
   "allDeclaredConstructors" : true,
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true
@@ -1154,6 +1194,11 @@
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true
 }, {
+  "name" : "com.azure.resourcemanager.compute.generated.models.SshGenerateKeyPairInputParameters",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
   "name" : "com.azure.resourcemanager.compute.generated.fluent.models.SshPublicKeyGenerateKeyPairResultInner",
   "allDeclaredConstructors" : true,
   "allDeclaredFields" : true,
@@ -1305,6 +1350,11 @@
   "allDeclaredMethods" : true
 }, {
   "name" : "com.azure.resourcemanager.compute.generated.models.CapacityReservationUtilization",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
+  "name" : "com.azure.resourcemanager.compute.generated.models.ResourceSharingProfile",
   "allDeclaredConstructors" : true,
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true
@@ -2539,6 +2589,11 @@
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true
 }, {
+  "name" : "com.azure.resourcemanager.compute.generated.models.Mode",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
   "name" : "com.azure.resourcemanager.compute.generated.models.VirtualMachinePriorityTypes",
   "allDeclaredConstructors" : true,
   "allDeclaredFields" : true,
@@ -2695,6 +2750,11 @@
   "allDeclaredMethods" : true
 }, {
   "name" : "com.azure.resourcemanager.compute.generated.models.ProximityPlacementGroupType",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
+  "name" : "com.azure.resourcemanager.compute.generated.models.SshEncryptionTypes",
   "allDeclaredConstructors" : true,
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true
@@ -3049,12 +3109,12 @@
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true
 }, {
-  "name" : "com.azure.resourcemanager.compute.generated.models.PassNames",
+  "name" : "com.azure.resourcemanager.compute.generated.models.ComponentNames",
   "allDeclaredConstructors" : true,
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true
 }, {
-  "name" : "com.azure.resourcemanager.compute.generated.models.ComponentNames",
+  "name" : "com.azure.resourcemanager.compute.generated.models.PassNames",
   "allDeclaredConstructors" : true,
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true

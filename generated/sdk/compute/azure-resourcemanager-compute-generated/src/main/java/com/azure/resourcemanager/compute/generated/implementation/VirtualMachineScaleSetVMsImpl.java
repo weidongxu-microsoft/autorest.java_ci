@@ -12,12 +12,15 @@ import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.fluent.VirtualMachineScaleSetVMsClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.RetrieveBootDiagnosticsDataResultInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.RunCommandResultInner;
+import com.azure.resourcemanager.compute.generated.fluent.models.StorageProfileInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineScaleSetVMInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineScaleSetVMInstanceViewInner;
+import com.azure.resourcemanager.compute.generated.models.AttachDetachDataDisksRequest;
 import com.azure.resourcemanager.compute.generated.models.InstanceViewTypes;
 import com.azure.resourcemanager.compute.generated.models.RetrieveBootDiagnosticsDataResult;
 import com.azure.resourcemanager.compute.generated.models.RunCommandInput;
 import com.azure.resourcemanager.compute.generated.models.RunCommandResult;
+import com.azure.resourcemanager.compute.generated.models.StorageProfile;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVM;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMInstanceView;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMReimageParameters;
@@ -53,6 +56,15 @@ public final class VirtualMachineScaleSetVMsImpl implements VirtualMachineScaleS
         this.serviceClient().reimageAll(resourceGroupName, vmScaleSetName, instanceId, context);
     }
 
+    public void approveRollingUpgrade(String resourceGroupName, String vmScaleSetName, String instanceId) {
+        this.serviceClient().approveRollingUpgrade(resourceGroupName, vmScaleSetName, instanceId);
+    }
+
+    public void approveRollingUpgrade(String resourceGroupName, String vmScaleSetName, String instanceId,
+        Context context) {
+        this.serviceClient().approveRollingUpgrade(resourceGroupName, vmScaleSetName, instanceId, context);
+    }
+
     public void deallocate(String resourceGroupName, String vmScaleSetName, String instanceId) {
         this.serviceClient().deallocate(resourceGroupName, vmScaleSetName, instanceId);
     }
@@ -73,9 +85,9 @@ public final class VirtualMachineScaleSetVMsImpl implements VirtualMachineScaleS
     }
 
     public VirtualMachineScaleSetVM update(String resourceGroupName, String vmScaleSetName, String instanceId,
-        VirtualMachineScaleSetVMInner parameters, Context context) {
-        VirtualMachineScaleSetVMInner inner
-            = this.serviceClient().update(resourceGroupName, vmScaleSetName, instanceId, parameters, context);
+        VirtualMachineScaleSetVMInner parameters, String ifMatch, String ifNoneMatch, Context context) {
+        VirtualMachineScaleSetVMInner inner = this.serviceClient().update(resourceGroupName, vmScaleSetName, instanceId,
+            parameters, ifMatch, ifNoneMatch, context);
         if (inner != null) {
             return new VirtualMachineScaleSetVMImpl(inner, this.manager());
         } else {
@@ -223,6 +235,28 @@ public final class VirtualMachineScaleSetVMsImpl implements VirtualMachineScaleS
 
     public void simulateEviction(String resourceGroupName, String vmScaleSetName, String instanceId) {
         this.serviceClient().simulateEviction(resourceGroupName, vmScaleSetName, instanceId);
+    }
+
+    public StorageProfile attachDetachDataDisks(String resourceGroupName, String vmScaleSetName, String instanceId,
+        AttachDetachDataDisksRequest parameters) {
+        StorageProfileInner inner
+            = this.serviceClient().attachDetachDataDisks(resourceGroupName, vmScaleSetName, instanceId, parameters);
+        if (inner != null) {
+            return new StorageProfileImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public StorageProfile attachDetachDataDisks(String resourceGroupName, String vmScaleSetName, String instanceId,
+        AttachDetachDataDisksRequest parameters, Context context) {
+        StorageProfileInner inner = this.serviceClient().attachDetachDataDisks(resourceGroupName, vmScaleSetName,
+            instanceId, parameters, context);
+        if (inner != null) {
+            return new StorageProfileImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public RunCommandResult runCommand(String resourceGroupName, String vmScaleSetName, String instanceId,

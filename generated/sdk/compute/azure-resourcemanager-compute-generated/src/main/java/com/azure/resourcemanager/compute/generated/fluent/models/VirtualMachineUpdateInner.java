@@ -17,7 +17,6 @@ import com.azure.resourcemanager.compute.generated.models.OSProfile;
 import com.azure.resourcemanager.compute.generated.models.Plan;
 import com.azure.resourcemanager.compute.generated.models.ScheduledEventsProfile;
 import com.azure.resourcemanager.compute.generated.models.SecurityProfile;
-import com.azure.resourcemanager.compute.generated.models.StorageProfile;
 import com.azure.resourcemanager.compute.generated.models.UpdateResource;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineEvictionPolicyTypes;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineIdentity;
@@ -179,7 +178,7 @@ public final class VirtualMachineUpdateInner extends UpdateResource {
      * 
      * @return the storageProfile value.
      */
-    public StorageProfile storageProfile() {
+    public StorageProfileInner storageProfile() {
         return this.innerProperties() == null ? null : this.innerProperties().storageProfile();
     }
 
@@ -189,7 +188,7 @@ public final class VirtualMachineUpdateInner extends UpdateResource {
      * @param storageProfile the storageProfile value to set.
      * @return the VirtualMachineUpdateInner object itself.
      */
-    public VirtualMachineUpdateInner withStorageProfile(StorageProfile storageProfile) {
+    public VirtualMachineUpdateInner withStorageProfile(StorageProfileInner storageProfile) {
         if (this.innerProperties() == null) {
             this.innerProperties = new VirtualMachinePropertiesInner();
         }

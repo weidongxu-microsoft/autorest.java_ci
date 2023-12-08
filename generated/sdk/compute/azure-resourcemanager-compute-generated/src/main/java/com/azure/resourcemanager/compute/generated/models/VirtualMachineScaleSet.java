@@ -93,6 +93,14 @@ public interface VirtualMachineScaleSet {
     ExtendedLocation extendedLocation();
 
     /**
+     * Gets the etag property: Etag is property returned in Create/Update/Get response of the VMSS, so that customer can
+     * supply it in the header to ensure optimistic updates.
+     * 
+     * @return the etag value.
+     */
+    String etag();
+
+    /**
      * Gets the upgradePolicy property: The upgrade policy.
      * 
      * @return the upgradePolicy value.
@@ -239,6 +247,13 @@ public interface VirtualMachineScaleSet {
     Boolean constrainedMaximumCapacity();
 
     /**
+     * Gets the resiliencyPolicy property: Policy for Resiliency.
+     * 
+     * @return the resiliencyPolicy value.
+     */
+    ResiliencyPolicy resiliencyPolicy();
+
+    /**
      * Gets the region of the resource.
      * 
      * @return the region of the resource.
@@ -330,7 +345,8 @@ public interface VirtualMachineScaleSet {
             DefinitionStages.WithProximityPlacementGroup, DefinitionStages.WithHostGroup,
             DefinitionStages.WithAdditionalCapabilities, DefinitionStages.WithScaleInPolicy,
             DefinitionStages.WithOrchestrationMode, DefinitionStages.WithSpotRestorePolicy,
-            DefinitionStages.WithPriorityMixPolicy, DefinitionStages.WithConstrainedMaximumCapacity {
+            DefinitionStages.WithPriorityMixPolicy, DefinitionStages.WithConstrainedMaximumCapacity,
+            DefinitionStages.WithResiliencyPolicy, DefinitionStages.WithIfMatch, DefinitionStages.WithIfNoneMatch {
             /**
              * Executes the create request.
              * 
@@ -673,6 +689,51 @@ public interface VirtualMachineScaleSet {
              */
             WithCreate withConstrainedMaximumCapacity(Boolean constrainedMaximumCapacity);
         }
+
+        /**
+         * The stage of the VirtualMachineScaleSet definition allowing to specify resiliencyPolicy.
+         */
+        interface WithResiliencyPolicy {
+            /**
+             * Specifies the resiliencyPolicy property: Policy for Resiliency.
+             * 
+             * @param resiliencyPolicy Policy for Resiliency.
+             * @return the next definition stage.
+             */
+            WithCreate withResiliencyPolicy(ResiliencyPolicy resiliencyPolicy);
+        }
+
+        /**
+         * The stage of the VirtualMachineScaleSet definition allowing to specify ifMatch.
+         */
+        interface WithIfMatch {
+            /**
+             * Specifies the ifMatch property: The ETag of the transformation. Omit this value to always overwrite the
+             * current resource. Specify the last-seen ETag value to prevent accidentally overwriting concurrent
+             * changes..
+             * 
+             * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource.
+             * Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
+             * @return the next definition stage.
+             */
+            WithCreate withIfMatch(String ifMatch);
+        }
+
+        /**
+         * The stage of the VirtualMachineScaleSet definition allowing to specify ifNoneMatch.
+         */
+        interface WithIfNoneMatch {
+            /**
+             * Specifies the ifNoneMatch property: Set to '*' to allow a new record set to be created, but to prevent
+             * updating an existing record set. Other values will result in error from server as they are not
+             * supported..
+             * 
+             * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an
+             * existing record set. Other values will result in error from server as they are not supported.
+             * @return the next definition stage.
+             */
+            WithCreate withIfNoneMatch(String ifNoneMatch);
+        }
     }
 
     /**
@@ -691,7 +752,8 @@ public interface VirtualMachineScaleSet {
         UpdateStages.WithOverprovision, UpdateStages.WithDoNotRunExtensionsOnOverprovisionedVMs,
         UpdateStages.WithSinglePlacementGroup, UpdateStages.WithAdditionalCapabilities, UpdateStages.WithScaleInPolicy,
         UpdateStages.WithProximityPlacementGroup, UpdateStages.WithPriorityMixPolicy,
-        UpdateStages.WithSpotRestorePolicy {
+        UpdateStages.WithSpotRestorePolicy, UpdateStages.WithResiliencyPolicy, UpdateStages.WithIfMatch,
+        UpdateStages.WithIfNoneMatch {
         /**
          * Executes the update request.
          * 
@@ -927,6 +989,51 @@ public interface VirtualMachineScaleSet {
              * @return the next definition stage.
              */
             Update withSpotRestorePolicy(SpotRestorePolicy spotRestorePolicy);
+        }
+
+        /**
+         * The stage of the VirtualMachineScaleSet update allowing to specify resiliencyPolicy.
+         */
+        interface WithResiliencyPolicy {
+            /**
+             * Specifies the resiliencyPolicy property: Policy for Resiliency.
+             * 
+             * @param resiliencyPolicy Policy for Resiliency.
+             * @return the next definition stage.
+             */
+            Update withResiliencyPolicy(ResiliencyPolicy resiliencyPolicy);
+        }
+
+        /**
+         * The stage of the VirtualMachineScaleSet update allowing to specify ifMatch.
+         */
+        interface WithIfMatch {
+            /**
+             * Specifies the ifMatch property: The ETag of the transformation. Omit this value to always overwrite the
+             * current resource. Specify the last-seen ETag value to prevent accidentally overwriting concurrent
+             * changes..
+             * 
+             * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource.
+             * Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
+             * @return the next definition stage.
+             */
+            Update withIfMatch(String ifMatch);
+        }
+
+        /**
+         * The stage of the VirtualMachineScaleSet update allowing to specify ifNoneMatch.
+         */
+        interface WithIfNoneMatch {
+            /**
+             * Specifies the ifNoneMatch property: Set to '*' to allow a new record set to be created, but to prevent
+             * updating an existing record set. Other values will result in error from server as they are not
+             * supported..
+             * 
+             * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an
+             * existing record set. Other values will result in error from server as they are not supported.
+             * @return the next definition stage.
+             */
+            Update withIfNoneMatch(String ifNoneMatch);
         }
     }
 
@@ -1201,6 +1308,27 @@ public interface VirtualMachineScaleSet {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void reimageAll(VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs, Context context);
+
+    /**
+     * Approve upgrade on deferred rolling upgrades for OS disks in the virtual machines in a VM scale set.
+     * 
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void approveRollingUpgrade();
+
+    /**
+     * Approve upgrade on deferred rolling upgrades for OS disks in the virtual machines in a VM scale set.
+     * 
+     * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void approveRollingUpgrade(VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs, Context context);
 
     /**
      * Converts SinglePlacementGroup property to false for a existing virtual machine scale set.

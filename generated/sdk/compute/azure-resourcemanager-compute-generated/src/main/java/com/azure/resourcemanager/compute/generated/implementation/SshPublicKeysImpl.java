@@ -12,6 +12,7 @@ import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.fluent.SshPublicKeysClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.SshPublicKeyGenerateKeyPairResultInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.SshPublicKeyResourceInner;
+import com.azure.resourcemanager.compute.generated.models.SshGenerateKeyPairInputParameters;
 import com.azure.resourcemanager.compute.generated.models.SshPublicKeyGenerateKeyPairResult;
 import com.azure.resourcemanager.compute.generated.models.SshPublicKeyResource;
 import com.azure.resourcemanager.compute.generated.models.SshPublicKeys;
@@ -81,9 +82,9 @@ public final class SshPublicKeysImpl implements SshPublicKeys {
     }
 
     public Response<SshPublicKeyGenerateKeyPairResult> generateKeyPairWithResponse(String resourceGroupName,
-        String sshPublicKeyName, Context context) {
-        Response<SshPublicKeyGenerateKeyPairResultInner> inner
-            = this.serviceClient().generateKeyPairWithResponse(resourceGroupName, sshPublicKeyName, context);
+        String sshPublicKeyName, SshGenerateKeyPairInputParameters parameters, Context context) {
+        Response<SshPublicKeyGenerateKeyPairResultInner> inner = this.serviceClient()
+            .generateKeyPairWithResponse(resourceGroupName, sshPublicKeyName, parameters, context);
         if (inner != null) {
             return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
                 new SshPublicKeyGenerateKeyPairResultImpl(inner.getValue(), this.manager()));

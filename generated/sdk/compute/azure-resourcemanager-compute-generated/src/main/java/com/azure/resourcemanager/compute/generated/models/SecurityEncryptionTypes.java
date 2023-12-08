@@ -10,8 +10,8 @@ import java.util.Collection;
 
 /**
  * Specifies the EncryptionType of the managed disk. It is set to DiskWithVMGuestState for encryption of the managed
- * disk along with VMGuestState blob, and VMGuestStateOnly for encryption of just the VMGuestState blob. **Note:** It
- * can be set for only Confidential VMs.
+ * disk along with VMGuestState blob, VMGuestStateOnly for encryption of just the VMGuestState blob, and NonPersistedTPM
+ * for not persisting firmware state in the VMGuestState blob.. **Note:** It can be set for only Confidential VMs.
  */
 public final class SecurityEncryptionTypes extends ExpandableStringEnum<SecurityEncryptionTypes> {
     /**
@@ -23,6 +23,11 @@ public final class SecurityEncryptionTypes extends ExpandableStringEnum<Security
      * Static value DiskWithVMGuestState for SecurityEncryptionTypes.
      */
     public static final SecurityEncryptionTypes DISK_WITH_VMGUEST_STATE = fromString("DiskWithVMGuestState");
+
+    /**
+     * Static value NonPersistedTPM for SecurityEncryptionTypes.
+     */
+    public static final SecurityEncryptionTypes NON_PERSISTED_TPM = fromString("NonPersistedTPM");
 
     /**
      * Creates a new instance of SecurityEncryptionTypes value.

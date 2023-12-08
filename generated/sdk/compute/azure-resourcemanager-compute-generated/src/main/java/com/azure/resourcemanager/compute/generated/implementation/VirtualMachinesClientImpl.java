@@ -36,6 +36,7 @@ import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.compute.generated.fluent.VirtualMachinesClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.RetrieveBootDiagnosticsDataResultInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.RunCommandResultInner;
+import com.azure.resourcemanager.compute.generated.fluent.models.StorageProfileInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineAssessPatchesResultInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineCaptureResultInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineInner;
@@ -44,6 +45,7 @@ import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineI
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineSizeInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineUpdateInner;
 import com.azure.resourcemanager.compute.generated.models.ApiErrorException;
+import com.azure.resourcemanager.compute.generated.models.AttachDetachDataDisksRequest;
 import com.azure.resourcemanager.compute.generated.models.ExpandTypeForListVMs;
 import com.azure.resourcemanager.compute.generated.models.ExpandTypesForListVMs;
 import com.azure.resourcemanager.compute.generated.models.InstanceViewTypes;
@@ -114,6 +116,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
         Mono<Response<Flux<ByteBuffer>>> createOrUpdate(@HostParam("$host") String endpoint,
             @PathParam("resourceGroupName") String resourceGroupName, @PathParam("vmName") String vmName,
             @QueryParam("api-version") String apiVersion, @PathParam("subscriptionId") String subscriptionId,
+            @HeaderParam("If-Match") String ifMatch, @HeaderParam("If-None-Match") String ifNoneMatch,
             @BodyParam("application/json") VirtualMachineInner parameters, @HeaderParam("Accept") String accept,
             Context context);
 
@@ -124,6 +127,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
         Mono<Response<Flux<ByteBuffer>>> update(@HostParam("$host") String endpoint,
             @PathParam("resourceGroupName") String resourceGroupName, @PathParam("vmName") String vmName,
             @QueryParam("api-version") String apiVersion, @PathParam("subscriptionId") String subscriptionId,
+            @HeaderParam("If-Match") String ifMatch, @HeaderParam("If-None-Match") String ifNoneMatch,
             @BodyParam("application/json") VirtualMachineUpdateInner parameters, @HeaderParam("Accept") String accept,
             Context context);
 
@@ -312,6 +316,16 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
             @HeaderParam("Accept") String accept, Context context);
 
         @Headers({ "Content-Type: application/json" })
+        @Post("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachines/{vmName}/attachDetachDataDisks")
+        @ExpectedResponses({ 200, 202 })
+        @UnexpectedResponseExceptionType(ApiErrorException.class)
+        Mono<Response<Flux<ByteBuffer>>> attachDetachDataDisks(@HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName, @PathParam("vmName") String vmName,
+            @PathParam("subscriptionId") String subscriptionId, @QueryParam("api-version") String apiVersion,
+            @BodyParam("application/json") AttachDetachDataDisksRequest parameters,
+            @HeaderParam("Accept") String accept, Context context);
+
+        @Headers({ "Content-Type: application/json" })
         @Post("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachines/{vmName}/runCommand")
         @ExpectedResponses({ 200, 202 })
         @UnexpectedResponseExceptionType(ManagementException.class)
@@ -369,7 +383,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.listByLocation(this.client.getEndpoint(), location, apiVersion,
@@ -403,7 +417,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -513,7 +527,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.capture(this.client.getEndpoint(), resourceGroupName, vmName, apiVersion,
@@ -558,7 +572,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.capture(this.client.getEndpoint(), resourceGroupName, vmName, apiVersion,
@@ -731,6 +745,10 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
      * @param parameters Parameters supplied to the Create Virtual Machine operation.
+     * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource. Specify
+     * the last-seen ETag value to prevent accidentally overwriting concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record
+     * set. Other values will result in error from server as they are not supported.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -738,7 +756,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName, String vmName,
-        VirtualMachineInner parameters) {
+        VirtualMachineInner parameters, String ifMatch, String ifNoneMatch) {
         if (this.client.getEndpoint() == null) {
             return Mono.error(
                 new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
@@ -759,11 +777,11 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.createOrUpdate(this.client.getEndpoint(), resourceGroupName, vmName,
-                apiVersion, this.client.getSubscriptionId(), parameters, accept, context))
+                apiVersion, this.client.getSubscriptionId(), ifMatch, ifNoneMatch, parameters, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
@@ -774,6 +792,10 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
      * @param parameters Parameters supplied to the Create Virtual Machine operation.
+     * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource. Specify
+     * the last-seen ETag value to prevent accidentally overwriting concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record
+     * set. Other values will result in error from server as they are not supported.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -782,7 +804,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName, String vmName,
-        VirtualMachineInner parameters, Context context) {
+        VirtualMachineInner parameters, String ifMatch, String ifNoneMatch, Context context) {
         if (this.client.getEndpoint() == null) {
             return Mono.error(
                 new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
@@ -803,11 +825,36 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.createOrUpdate(this.client.getEndpoint(), resourceGroupName, vmName, apiVersion,
-            this.client.getSubscriptionId(), parameters, accept, context);
+            this.client.getSubscriptionId(), ifMatch, ifNoneMatch, parameters, accept, context);
+    }
+
+    /**
+     * The operation to create or update a virtual machine. Please note some properties can be set only during virtual
+     * machine creation.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param vmName The name of the virtual machine.
+     * @param parameters Parameters supplied to the Create Virtual Machine operation.
+     * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource. Specify
+     * the last-seen ETag value to prevent accidentally overwriting concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record
+     * set. Other values will result in error from server as they are not supported.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of describes a Virtual Machine.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<VirtualMachineInner>, VirtualMachineInner> beginCreateOrUpdateAsync(
+        String resourceGroupName, String vmName, VirtualMachineInner parameters, String ifMatch, String ifNoneMatch) {
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = createOrUpdateWithResponseAsync(resourceGroupName, vmName, parameters, ifMatch, ifNoneMatch);
+        return this.client.<VirtualMachineInner, VirtualMachineInner>getLroResult(mono, this.client.getHttpPipeline(),
+            VirtualMachineInner.class, VirtualMachineInner.class, this.client.getContext());
     }
 
     /**
@@ -825,7 +872,10 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<VirtualMachineInner>, VirtualMachineInner>
         beginCreateOrUpdateAsync(String resourceGroupName, String vmName, VirtualMachineInner parameters) {
-        Mono<Response<Flux<ByteBuffer>>> mono = createOrUpdateWithResponseAsync(resourceGroupName, vmName, parameters);
+        final String ifMatch = null;
+        final String ifNoneMatch = null;
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = createOrUpdateWithResponseAsync(resourceGroupName, vmName, parameters, ifMatch, ifNoneMatch);
         return this.client.<VirtualMachineInner, VirtualMachineInner>getLroResult(mono, this.client.getHttpPipeline(),
             VirtualMachineInner.class, VirtualMachineInner.class, this.client.getContext());
     }
@@ -837,6 +887,10 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
      * @param parameters Parameters supplied to the Create Virtual Machine operation.
+     * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource. Specify
+     * the last-seen ETag value to prevent accidentally overwriting concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record
+     * set. Other values will result in error from server as they are not supported.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -845,10 +899,11 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<VirtualMachineInner>, VirtualMachineInner> beginCreateOrUpdateAsync(
-        String resourceGroupName, String vmName, VirtualMachineInner parameters, Context context) {
+        String resourceGroupName, String vmName, VirtualMachineInner parameters, String ifMatch, String ifNoneMatch,
+        Context context) {
         context = this.client.mergeContext(context);
         Mono<Response<Flux<ByteBuffer>>> mono
-            = createOrUpdateWithResponseAsync(resourceGroupName, vmName, parameters, context);
+            = createOrUpdateWithResponseAsync(resourceGroupName, vmName, parameters, ifMatch, ifNoneMatch, context);
         return this.client.<VirtualMachineInner, VirtualMachineInner>getLroResult(mono, this.client.getHttpPipeline(),
             VirtualMachineInner.class, VirtualMachineInner.class, context);
     }
@@ -868,7 +923,10 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VirtualMachineInner>, VirtualMachineInner>
         beginCreateOrUpdate(String resourceGroupName, String vmName, VirtualMachineInner parameters) {
-        return this.beginCreateOrUpdateAsync(resourceGroupName, vmName, parameters).getSyncPoller();
+        final String ifMatch = null;
+        final String ifNoneMatch = null;
+        return this.beginCreateOrUpdateAsync(resourceGroupName, vmName, parameters, ifMatch, ifNoneMatch)
+            .getSyncPoller();
     }
 
     /**
@@ -878,6 +936,10 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
      * @param parameters Parameters supplied to the Create Virtual Machine operation.
+     * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource. Specify
+     * the last-seen ETag value to prevent accidentally overwriting concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record
+     * set. Other values will result in error from server as they are not supported.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -885,9 +947,34 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      * @return the {@link SyncPoller} for polling of describes a Virtual Machine.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<PollResult<VirtualMachineInner>, VirtualMachineInner>
-        beginCreateOrUpdate(String resourceGroupName, String vmName, VirtualMachineInner parameters, Context context) {
-        return this.beginCreateOrUpdateAsync(resourceGroupName, vmName, parameters, context).getSyncPoller();
+    public SyncPoller<PollResult<VirtualMachineInner>, VirtualMachineInner> beginCreateOrUpdate(
+        String resourceGroupName, String vmName, VirtualMachineInner parameters, String ifMatch, String ifNoneMatch,
+        Context context) {
+        return this.beginCreateOrUpdateAsync(resourceGroupName, vmName, parameters, ifMatch, ifNoneMatch, context)
+            .getSyncPoller();
+    }
+
+    /**
+     * The operation to create or update a virtual machine. Please note some properties can be set only during virtual
+     * machine creation.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param vmName The name of the virtual machine.
+     * @param parameters Parameters supplied to the Create Virtual Machine operation.
+     * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource. Specify
+     * the last-seen ETag value to prevent accidentally overwriting concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record
+     * set. Other values will result in error from server as they are not supported.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return describes a Virtual Machine on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<VirtualMachineInner> createOrUpdateAsync(String resourceGroupName, String vmName,
+        VirtualMachineInner parameters, String ifMatch, String ifNoneMatch) {
+        return beginCreateOrUpdateAsync(resourceGroupName, vmName, parameters, ifMatch, ifNoneMatch).last()
+            .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
@@ -905,7 +992,9 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VirtualMachineInner> createOrUpdateAsync(String resourceGroupName, String vmName,
         VirtualMachineInner parameters) {
-        return beginCreateOrUpdateAsync(resourceGroupName, vmName, parameters).last()
+        final String ifMatch = null;
+        final String ifNoneMatch = null;
+        return beginCreateOrUpdateAsync(resourceGroupName, vmName, parameters, ifMatch, ifNoneMatch).last()
             .flatMap(this.client::getLroFinalResultOrError);
     }
 
@@ -916,6 +1005,10 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
      * @param parameters Parameters supplied to the Create Virtual Machine operation.
+     * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource. Specify
+     * the last-seen ETag value to prevent accidentally overwriting concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record
+     * set. Other values will result in error from server as they are not supported.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -924,8 +1017,8 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VirtualMachineInner> createOrUpdateAsync(String resourceGroupName, String vmName,
-        VirtualMachineInner parameters, Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, vmName, parameters, context).last()
+        VirtualMachineInner parameters, String ifMatch, String ifNoneMatch, Context context) {
+        return beginCreateOrUpdateAsync(resourceGroupName, vmName, parameters, ifMatch, ifNoneMatch, context).last()
             .flatMap(this.client::getLroFinalResultOrError);
     }
 
@@ -943,7 +1036,9 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public VirtualMachineInner createOrUpdate(String resourceGroupName, String vmName, VirtualMachineInner parameters) {
-        return createOrUpdateAsync(resourceGroupName, vmName, parameters).block();
+        final String ifMatch = null;
+        final String ifNoneMatch = null;
+        return createOrUpdateAsync(resourceGroupName, vmName, parameters, ifMatch, ifNoneMatch).block();
     }
 
     /**
@@ -953,6 +1048,10 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
      * @param parameters Parameters supplied to the Create Virtual Machine operation.
+     * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource. Specify
+     * the last-seen ETag value to prevent accidentally overwriting concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record
+     * set. Other values will result in error from server as they are not supported.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -961,8 +1060,8 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public VirtualMachineInner createOrUpdate(String resourceGroupName, String vmName, VirtualMachineInner parameters,
-        Context context) {
-        return createOrUpdateAsync(resourceGroupName, vmName, parameters, context).block();
+        String ifMatch, String ifNoneMatch, Context context) {
+        return createOrUpdateAsync(resourceGroupName, vmName, parameters, ifMatch, ifNoneMatch, context).block();
     }
 
     /**
@@ -971,6 +1070,10 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
      * @param parameters Parameters supplied to the Update Virtual Machine operation.
+     * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource. Specify
+     * the last-seen ETag value to prevent accidentally overwriting concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record
+     * set. Other values will result in error from server as they are not supported.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -978,7 +1081,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(String resourceGroupName, String vmName,
-        VirtualMachineUpdateInner parameters) {
+        VirtualMachineUpdateInner parameters, String ifMatch, String ifNoneMatch) {
         if (this.client.getEndpoint() == null) {
             return Mono.error(
                 new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
@@ -999,11 +1102,11 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.update(this.client.getEndpoint(), resourceGroupName, vmName, apiVersion,
-                this.client.getSubscriptionId(), parameters, accept, context))
+                this.client.getSubscriptionId(), ifMatch, ifNoneMatch, parameters, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
@@ -1013,6 +1116,10 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
      * @param parameters Parameters supplied to the Update Virtual Machine operation.
+     * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource. Specify
+     * the last-seen ETag value to prevent accidentally overwriting concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record
+     * set. Other values will result in error from server as they are not supported.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -1021,7 +1128,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(String resourceGroupName, String vmName,
-        VirtualMachineUpdateInner parameters, Context context) {
+        VirtualMachineUpdateInner parameters, String ifMatch, String ifNoneMatch, Context context) {
         if (this.client.getEndpoint() == null) {
             return Mono.error(
                 new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
@@ -1042,11 +1149,35 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.update(this.client.getEndpoint(), resourceGroupName, vmName, apiVersion,
-            this.client.getSubscriptionId(), parameters, accept, context);
+            this.client.getSubscriptionId(), ifMatch, ifNoneMatch, parameters, accept, context);
+    }
+
+    /**
+     * The operation to update a virtual machine.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param vmName The name of the virtual machine.
+     * @param parameters Parameters supplied to the Update Virtual Machine operation.
+     * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource. Specify
+     * the last-seen ETag value to prevent accidentally overwriting concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record
+     * set. Other values will result in error from server as they are not supported.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of describes a Virtual Machine.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<VirtualMachineInner>, VirtualMachineInner> beginUpdateAsync(String resourceGroupName,
+        String vmName, VirtualMachineUpdateInner parameters, String ifMatch, String ifNoneMatch) {
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = updateWithResponseAsync(resourceGroupName, vmName, parameters, ifMatch, ifNoneMatch);
+        return this.client.<VirtualMachineInner, VirtualMachineInner>getLroResult(mono, this.client.getHttpPipeline(),
+            VirtualMachineInner.class, VirtualMachineInner.class, this.client.getContext());
     }
 
     /**
@@ -1063,7 +1194,10 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<VirtualMachineInner>, VirtualMachineInner> beginUpdateAsync(String resourceGroupName,
         String vmName, VirtualMachineUpdateInner parameters) {
-        Mono<Response<Flux<ByteBuffer>>> mono = updateWithResponseAsync(resourceGroupName, vmName, parameters);
+        final String ifMatch = null;
+        final String ifNoneMatch = null;
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = updateWithResponseAsync(resourceGroupName, vmName, parameters, ifMatch, ifNoneMatch);
         return this.client.<VirtualMachineInner, VirtualMachineInner>getLroResult(mono, this.client.getHttpPipeline(),
             VirtualMachineInner.class, VirtualMachineInner.class, this.client.getContext());
     }
@@ -1074,6 +1208,10 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
      * @param parameters Parameters supplied to the Update Virtual Machine operation.
+     * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource. Specify
+     * the last-seen ETag value to prevent accidentally overwriting concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record
+     * set. Other values will result in error from server as they are not supported.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -1082,9 +1220,10 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<VirtualMachineInner>, VirtualMachineInner> beginUpdateAsync(String resourceGroupName,
-        String vmName, VirtualMachineUpdateInner parameters, Context context) {
+        String vmName, VirtualMachineUpdateInner parameters, String ifMatch, String ifNoneMatch, Context context) {
         context = this.client.mergeContext(context);
-        Mono<Response<Flux<ByteBuffer>>> mono = updateWithResponseAsync(resourceGroupName, vmName, parameters, context);
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = updateWithResponseAsync(resourceGroupName, vmName, parameters, ifMatch, ifNoneMatch, context);
         return this.client.<VirtualMachineInner, VirtualMachineInner>getLroResult(mono, this.client.getHttpPipeline(),
             VirtualMachineInner.class, VirtualMachineInner.class, context);
     }
@@ -1103,7 +1242,9 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VirtualMachineInner>, VirtualMachineInner> beginUpdate(String resourceGroupName,
         String vmName, VirtualMachineUpdateInner parameters) {
-        return this.beginUpdateAsync(resourceGroupName, vmName, parameters).getSyncPoller();
+        final String ifMatch = null;
+        final String ifNoneMatch = null;
+        return this.beginUpdateAsync(resourceGroupName, vmName, parameters, ifMatch, ifNoneMatch).getSyncPoller();
     }
 
     /**
@@ -1112,6 +1253,10 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
      * @param parameters Parameters supplied to the Update Virtual Machine operation.
+     * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource. Specify
+     * the last-seen ETag value to prevent accidentally overwriting concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record
+     * set. Other values will result in error from server as they are not supported.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -1120,8 +1265,31 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VirtualMachineInner>, VirtualMachineInner> beginUpdate(String resourceGroupName,
-        String vmName, VirtualMachineUpdateInner parameters, Context context) {
-        return this.beginUpdateAsync(resourceGroupName, vmName, parameters, context).getSyncPoller();
+        String vmName, VirtualMachineUpdateInner parameters, String ifMatch, String ifNoneMatch, Context context) {
+        return this.beginUpdateAsync(resourceGroupName, vmName, parameters, ifMatch, ifNoneMatch, context)
+            .getSyncPoller();
+    }
+
+    /**
+     * The operation to update a virtual machine.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param vmName The name of the virtual machine.
+     * @param parameters Parameters supplied to the Update Virtual Machine operation.
+     * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource. Specify
+     * the last-seen ETag value to prevent accidentally overwriting concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record
+     * set. Other values will result in error from server as they are not supported.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return describes a Virtual Machine on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<VirtualMachineInner> updateAsync(String resourceGroupName, String vmName,
+        VirtualMachineUpdateInner parameters, String ifMatch, String ifNoneMatch) {
+        return beginUpdateAsync(resourceGroupName, vmName, parameters, ifMatch, ifNoneMatch).last()
+            .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
@@ -1138,7 +1306,9 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VirtualMachineInner> updateAsync(String resourceGroupName, String vmName,
         VirtualMachineUpdateInner parameters) {
-        return beginUpdateAsync(resourceGroupName, vmName, parameters).last()
+        final String ifMatch = null;
+        final String ifNoneMatch = null;
+        return beginUpdateAsync(resourceGroupName, vmName, parameters, ifMatch, ifNoneMatch).last()
             .flatMap(this.client::getLroFinalResultOrError);
     }
 
@@ -1148,6 +1318,10 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
      * @param parameters Parameters supplied to the Update Virtual Machine operation.
+     * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource. Specify
+     * the last-seen ETag value to prevent accidentally overwriting concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record
+     * set. Other values will result in error from server as they are not supported.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -1156,8 +1330,8 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VirtualMachineInner> updateAsync(String resourceGroupName, String vmName,
-        VirtualMachineUpdateInner parameters, Context context) {
-        return beginUpdateAsync(resourceGroupName, vmName, parameters, context).last()
+        VirtualMachineUpdateInner parameters, String ifMatch, String ifNoneMatch, Context context) {
+        return beginUpdateAsync(resourceGroupName, vmName, parameters, ifMatch, ifNoneMatch, context).last()
             .flatMap(this.client::getLroFinalResultOrError);
     }
 
@@ -1174,7 +1348,9 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public VirtualMachineInner update(String resourceGroupName, String vmName, VirtualMachineUpdateInner parameters) {
-        return updateAsync(resourceGroupName, vmName, parameters).block();
+        final String ifMatch = null;
+        final String ifNoneMatch = null;
+        return updateAsync(resourceGroupName, vmName, parameters, ifMatch, ifNoneMatch).block();
     }
 
     /**
@@ -1183,6 +1359,10 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
      * @param parameters Parameters supplied to the Update Virtual Machine operation.
+     * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource. Specify
+     * the last-seen ETag value to prevent accidentally overwriting concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record
+     * set. Other values will result in error from server as they are not supported.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -1191,8 +1371,8 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public VirtualMachineInner update(String resourceGroupName, String vmName, VirtualMachineUpdateInner parameters,
-        Context context) {
-        return updateAsync(resourceGroupName, vmName, parameters, context).block();
+        String ifMatch, String ifNoneMatch, Context context) {
+        return updateAsync(resourceGroupName, vmName, parameters, ifMatch, ifNoneMatch, context).block();
     }
 
     /**
@@ -1224,7 +1404,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.delete(this.client.getEndpoint(), resourceGroupName, vmName, forceDeletion,
@@ -1262,7 +1442,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.delete(this.client.getEndpoint(), resourceGroupName, vmName, forceDeletion, apiVersion,
@@ -1477,7 +1657,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.getByResourceGroup(this.client.getEndpoint(), resourceGroupName, vmName,
@@ -1518,7 +1698,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.getByResourceGroup(this.client.getEndpoint(), resourceGroupName, vmName, expand, apiVersion,
@@ -1608,7 +1788,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.instanceView(this.client.getEndpoint(), resourceGroupName, vmName,
@@ -1646,7 +1826,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.instanceView(this.client.getEndpoint(), resourceGroupName, vmName, apiVersion,
@@ -1730,7 +1910,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.convertToManagedDisks(this.client.getEndpoint(), resourceGroupName, vmName,
@@ -1768,7 +1948,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.convertToManagedDisks(this.client.getEndpoint(), resourceGroupName, vmName, apiVersion,
@@ -1946,7 +2126,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.deallocate(this.client.getEndpoint(), resourceGroupName, vmName, hibernate,
@@ -1985,7 +2165,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.deallocate(this.client.getEndpoint(), resourceGroupName, vmName, hibernate, apiVersion,
@@ -2209,7 +2389,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.generalize(this.client.getEndpoint(), resourceGroupName, vmName, apiVersion,
@@ -2249,7 +2429,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.generalize(this.client.getEndpoint(), resourceGroupName, vmName, apiVersion,
@@ -2344,7 +2524,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.listByResourceGroup(this.client.getEndpoint(), resourceGroupName, filter,
@@ -2386,7 +2566,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -2525,7 +2705,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.list(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(),
@@ -2563,7 +2743,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -2701,7 +2881,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.listAvailableSizes(this.client.getEndpoint(), resourceGroupName, vmName,
@@ -2741,7 +2921,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -2846,7 +3026,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.powerOff(this.client.getEndpoint(), resourceGroupName, vmName, skipShutdown,
@@ -2886,7 +3066,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.powerOff(this.client.getEndpoint(), resourceGroupName, vmName, skipShutdown, apiVersion,
@@ -3112,7 +3292,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.reapply(this.client.getEndpoint(), resourceGroupName, vmName, apiVersion,
@@ -3149,7 +3329,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.reapply(this.client.getEndpoint(), resourceGroupName, vmName, apiVersion,
@@ -3312,7 +3492,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.restart(this.client.getEndpoint(), resourceGroupName, vmName, apiVersion,
@@ -3349,7 +3529,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.restart(this.client.getEndpoint(), resourceGroupName, vmName, apiVersion,
@@ -3512,7 +3692,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.start(this.client.getEndpoint(), resourceGroupName, vmName, apiVersion,
@@ -3549,7 +3729,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.start(this.client.getEndpoint(), resourceGroupName, vmName, apiVersion,
@@ -3712,7 +3892,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.redeploy(this.client.getEndpoint(), resourceGroupName, vmName, apiVersion,
@@ -3749,7 +3929,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.redeploy(this.client.getEndpoint(), resourceGroupName, vmName, apiVersion,
@@ -3921,7 +4101,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
         if (parameters != null) {
             parameters.validate();
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.reimage(this.client.getEndpoint(), resourceGroupName, vmName, apiVersion,
@@ -3966,7 +4146,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
         if (parameters != null) {
             parameters.validate();
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.reimage(this.client.getEndpoint(), resourceGroupName, vmName, apiVersion,
@@ -4224,7 +4404,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.retrieveBootDiagnosticsData(this.client.getEndpoint(), resourceGroupName,
@@ -4265,7 +4445,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.retrieveBootDiagnosticsData(this.client.getEndpoint(), resourceGroupName, vmName,
@@ -4356,7 +4536,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.performMaintenance(this.client.getEndpoint(), resourceGroupName, vmName,
@@ -4393,7 +4573,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.performMaintenance(this.client.getEndpoint(), resourceGroupName, vmName, apiVersion,
@@ -4558,7 +4738,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.simulateEviction(this.client.getEndpoint(), resourceGroupName, vmName,
@@ -4595,7 +4775,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.simulateEviction(this.client.getEndpoint(), resourceGroupName, vmName, apiVersion,
@@ -4675,7 +4855,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.assessPatches(this.client.getEndpoint(), resourceGroupName, vmName,
@@ -4713,7 +4893,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.assessPatches(this.client.getEndpoint(), resourceGroupName, vmName, apiVersion,
@@ -4894,7 +5074,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
         } else {
             installPatchesInput.validate();
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.installPatches(this.client.getEndpoint(), resourceGroupName, vmName,
@@ -4939,7 +5119,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
         } else {
             installPatchesInput.validate();
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.installPatches(this.client.getEndpoint(), resourceGroupName, vmName, apiVersion,
@@ -5104,6 +5284,241 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
     }
 
     /**
+     * Attach and detach data disks to/from the virtual machine.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param vmName The name of the virtual machine.
+     * @param parameters Parameters supplied to the attach and detach data disks operation on the virtual machine.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return specifies the storage settings for the virtual machine disks along with {@link Response} on successful
+     * completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<Flux<ByteBuffer>>> attachDetachDataDisksWithResponseAsync(String resourceGroupName,
+        String vmName, AttachDetachDataDisksRequest parameters) {
+        if (this.client.getEndpoint() == null) {
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (vmName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter vmName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        if (parameters == null) {
+            return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
+        } else {
+            parameters.validate();
+        }
+        final String apiVersion = "2023-09-01";
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(context -> service.attachDetachDataDisks(this.client.getEndpoint(), resourceGroupName, vmName,
+                this.client.getSubscriptionId(), apiVersion, parameters, accept, context))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Attach and detach data disks to/from the virtual machine.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param vmName The name of the virtual machine.
+     * @param parameters Parameters supplied to the attach and detach data disks operation on the virtual machine.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return specifies the storage settings for the virtual machine disks along with {@link Response} on successful
+     * completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<Flux<ByteBuffer>>> attachDetachDataDisksWithResponseAsync(String resourceGroupName,
+        String vmName, AttachDetachDataDisksRequest parameters, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (vmName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter vmName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        if (parameters == null) {
+            return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
+        } else {
+            parameters.validate();
+        }
+        final String apiVersion = "2023-09-01";
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service.attachDetachDataDisks(this.client.getEndpoint(), resourceGroupName, vmName,
+            this.client.getSubscriptionId(), apiVersion, parameters, accept, context);
+    }
+
+    /**
+     * Attach and detach data disks to/from the virtual machine.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param vmName The name of the virtual machine.
+     * @param parameters Parameters supplied to the attach and detach data disks operation on the virtual machine.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of specifies the storage settings for the virtual machine disks.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<StorageProfileInner>, StorageProfileInner> beginAttachDetachDataDisksAsync(
+        String resourceGroupName, String vmName, AttachDetachDataDisksRequest parameters) {
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = attachDetachDataDisksWithResponseAsync(resourceGroupName, vmName, parameters);
+        return this.client.<StorageProfileInner, StorageProfileInner>getLroResult(mono, this.client.getHttpPipeline(),
+            StorageProfileInner.class, StorageProfileInner.class, this.client.getContext());
+    }
+
+    /**
+     * Attach and detach data disks to/from the virtual machine.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param vmName The name of the virtual machine.
+     * @param parameters Parameters supplied to the attach and detach data disks operation on the virtual machine.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of specifies the storage settings for the virtual machine disks.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<StorageProfileInner>, StorageProfileInner> beginAttachDetachDataDisksAsync(
+        String resourceGroupName, String vmName, AttachDetachDataDisksRequest parameters, Context context) {
+        context = this.client.mergeContext(context);
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = attachDetachDataDisksWithResponseAsync(resourceGroupName, vmName, parameters, context);
+        return this.client.<StorageProfileInner, StorageProfileInner>getLroResult(mono, this.client.getHttpPipeline(),
+            StorageProfileInner.class, StorageProfileInner.class, context);
+    }
+
+    /**
+     * Attach and detach data disks to/from the virtual machine.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param vmName The name of the virtual machine.
+     * @param parameters Parameters supplied to the attach and detach data disks operation on the virtual machine.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link SyncPoller} for polling of specifies the storage settings for the virtual machine disks.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    public SyncPoller<PollResult<StorageProfileInner>, StorageProfileInner>
+        beginAttachDetachDataDisks(String resourceGroupName, String vmName, AttachDetachDataDisksRequest parameters) {
+        return this.beginAttachDetachDataDisksAsync(resourceGroupName, vmName, parameters).getSyncPoller();
+    }
+
+    /**
+     * Attach and detach data disks to/from the virtual machine.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param vmName The name of the virtual machine.
+     * @param parameters Parameters supplied to the attach and detach data disks operation on the virtual machine.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link SyncPoller} for polling of specifies the storage settings for the virtual machine disks.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    public SyncPoller<PollResult<StorageProfileInner>, StorageProfileInner> beginAttachDetachDataDisks(
+        String resourceGroupName, String vmName, AttachDetachDataDisksRequest parameters, Context context) {
+        return this.beginAttachDetachDataDisksAsync(resourceGroupName, vmName, parameters, context).getSyncPoller();
+    }
+
+    /**
+     * Attach and detach data disks to/from the virtual machine.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param vmName The name of the virtual machine.
+     * @param parameters Parameters supplied to the attach and detach data disks operation on the virtual machine.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return specifies the storage settings for the virtual machine disks on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<StorageProfileInner> attachDetachDataDisksAsync(String resourceGroupName, String vmName,
+        AttachDetachDataDisksRequest parameters) {
+        return beginAttachDetachDataDisksAsync(resourceGroupName, vmName, parameters).last()
+            .flatMap(this.client::getLroFinalResultOrError);
+    }
+
+    /**
+     * Attach and detach data disks to/from the virtual machine.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param vmName The name of the virtual machine.
+     * @param parameters Parameters supplied to the attach and detach data disks operation on the virtual machine.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return specifies the storage settings for the virtual machine disks on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<StorageProfileInner> attachDetachDataDisksAsync(String resourceGroupName, String vmName,
+        AttachDetachDataDisksRequest parameters, Context context) {
+        return beginAttachDetachDataDisksAsync(resourceGroupName, vmName, parameters, context).last()
+            .flatMap(this.client::getLroFinalResultOrError);
+    }
+
+    /**
+     * Attach and detach data disks to/from the virtual machine.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param vmName The name of the virtual machine.
+     * @param parameters Parameters supplied to the attach and detach data disks operation on the virtual machine.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return specifies the storage settings for the virtual machine disks.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public StorageProfileInner attachDetachDataDisks(String resourceGroupName, String vmName,
+        AttachDetachDataDisksRequest parameters) {
+        return attachDetachDataDisksAsync(resourceGroupName, vmName, parameters).block();
+    }
+
+    /**
+     * Attach and detach data disks to/from the virtual machine.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param vmName The name of the virtual machine.
+     * @param parameters Parameters supplied to the attach and detach data disks operation on the virtual machine.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return specifies the storage settings for the virtual machine disks.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public StorageProfileInner attachDetachDataDisks(String resourceGroupName, String vmName,
+        AttachDetachDataDisksRequest parameters, Context context) {
+        return attachDetachDataDisksAsync(resourceGroupName, vmName, parameters, context).block();
+    }
+
+    /**
      * Run command on the VM.
      * 
      * @param resourceGroupName The name of the resource group.
@@ -5137,7 +5552,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json, text/json";
         return FluxUtil
             .withContext(context -> service.runCommand(this.client.getEndpoint(), resourceGroupName, vmName, apiVersion,
@@ -5180,7 +5595,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-07-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json, text/json";
         context = this.client.mergeContext(context);
         return service.runCommand(this.client.getEndpoint(), resourceGroupName, vmName, apiVersion,

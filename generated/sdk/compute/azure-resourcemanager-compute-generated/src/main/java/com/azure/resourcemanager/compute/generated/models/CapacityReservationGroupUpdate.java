@@ -76,6 +76,37 @@ public final class CapacityReservationGroupUpdate extends UpdateResource {
     }
 
     /**
+     * Get the sharingProfile property: Specifies the settings to enable sharing across subscriptions for the capacity
+     * reservation group resource. Pls. keep in mind the capacity reservation group resource generally can be shared
+     * across subscriptions belonging to a single azure AAD tenant or cross AAD tenant if there is a trust relationship
+     * established between the AAD tenants. **Note:** Minimum api-version: 2023-09-01. Please refer to
+     * https://aka.ms/computereservationsharing for more details.
+     * 
+     * @return the sharingProfile value.
+     */
+    public ResourceSharingProfile sharingProfile() {
+        return this.innerProperties() == null ? null : this.innerProperties().sharingProfile();
+    }
+
+    /**
+     * Set the sharingProfile property: Specifies the settings to enable sharing across subscriptions for the capacity
+     * reservation group resource. Pls. keep in mind the capacity reservation group resource generally can be shared
+     * across subscriptions belonging to a single azure AAD tenant or cross AAD tenant if there is a trust relationship
+     * established between the AAD tenants. **Note:** Minimum api-version: 2023-09-01. Please refer to
+     * https://aka.ms/computereservationsharing for more details.
+     * 
+     * @param sharingProfile the sharingProfile value to set.
+     * @return the CapacityReservationGroupUpdate object itself.
+     */
+    public CapacityReservationGroupUpdate withSharingProfile(ResourceSharingProfile sharingProfile) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new CapacityReservationGroupProperties();
+        }
+        this.innerProperties().withSharingProfile(sharingProfile);
+        return this;
+    }
+
+    /**
      * Validates the instance.
      * 
      * @throws IllegalArgumentException thrown if the instance is not valid.

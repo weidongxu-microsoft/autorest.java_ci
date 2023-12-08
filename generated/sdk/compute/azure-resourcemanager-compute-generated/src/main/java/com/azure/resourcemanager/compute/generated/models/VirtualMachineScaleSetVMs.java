@@ -72,6 +72,33 @@ public interface VirtualMachineScaleSetVMs {
     void reimageAll(String resourceGroupName, String vmScaleSetName, String instanceId, Context context);
 
     /**
+     * Approve upgrade on deferred rolling upgrade for OS disk on a VM scale set instance.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param vmScaleSetName The name of the VM scale set.
+     * @param instanceId The instance ID of the virtual machine.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void approveRollingUpgrade(String resourceGroupName, String vmScaleSetName, String instanceId);
+
+    /**
+     * Approve upgrade on deferred rolling upgrade for OS disk on a VM scale set instance.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param vmScaleSetName The name of the VM scale set.
+     * @param instanceId The instance ID of the virtual machine.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void approveRollingUpgrade(String resourceGroupName, String vmScaleSetName, String instanceId, Context context);
+
+    /**
      * Deallocates a specific virtual machine in a VM scale set. Shuts down the virtual machine and releases the compute
      * resources it uses. You are not billed for the compute resources of this virtual machine once it is deallocated.
      * 
@@ -123,6 +150,10 @@ public interface VirtualMachineScaleSetVMs {
      * @param vmScaleSetName The name of the VM scale set where the extension should be create or updated.
      * @param instanceId The instance ID of the virtual machine.
      * @param parameters Parameters supplied to the Update Virtual Machine Scale Sets VM operation.
+     * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource. Specify
+     * the last-seen ETag value to prevent accidentally overwriting concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record
+     * set. Other values will result in error from server as they are not supported.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -131,7 +162,7 @@ public interface VirtualMachineScaleSetVMs {
      * @return describes a virtual machine scale set virtual machine.
      */
     VirtualMachineScaleSetVM update(String resourceGroupName, String vmScaleSetName, String instanceId,
-        VirtualMachineScaleSetVMInner parameters, Context context);
+        VirtualMachineScaleSetVMInner parameters, String ifMatch, String ifNoneMatch, Context context);
 
     /**
      * Deletes a virtual machine from a VM scale set.
@@ -460,6 +491,41 @@ public interface VirtualMachineScaleSetVMs {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void simulateEviction(String resourceGroupName, String vmScaleSetName, String instanceId);
+
+    /**
+     * Attach and detach data disks to/from a virtual machine in a VM scale set.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param vmScaleSetName The name of the VM scale set.
+     * @param instanceId The instance ID of the virtual machine.
+     * @param parameters Parameters supplied to the attach and detach data disks operation on a Virtual Machine Scale
+     * Sets VM.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return specifies the storage settings for the virtual machine disks.
+     */
+    StorageProfile attachDetachDataDisks(String resourceGroupName, String vmScaleSetName, String instanceId,
+        AttachDetachDataDisksRequest parameters);
+
+    /**
+     * Attach and detach data disks to/from a virtual machine in a VM scale set.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param vmScaleSetName The name of the VM scale set.
+     * @param instanceId The instance ID of the virtual machine.
+     * @param parameters Parameters supplied to the attach and detach data disks operation on a Virtual Machine Scale
+     * Sets VM.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return specifies the storage settings for the virtual machine disks.
+     */
+    StorageProfile attachDetachDataDisks(String resourceGroupName, String vmScaleSetName, String instanceId,
+        AttachDetachDataDisksRequest parameters, Context context);
 
     /**
      * Run command on a virtual machine in a VM scale set.

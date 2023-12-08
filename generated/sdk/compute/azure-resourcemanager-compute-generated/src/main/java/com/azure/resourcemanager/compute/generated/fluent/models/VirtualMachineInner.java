@@ -19,7 +19,6 @@ import com.azure.resourcemanager.compute.generated.models.OSProfile;
 import com.azure.resourcemanager.compute.generated.models.Plan;
 import com.azure.resourcemanager.compute.generated.models.ScheduledEventsProfile;
 import com.azure.resourcemanager.compute.generated.models.SecurityProfile;
-import com.azure.resourcemanager.compute.generated.models.StorageProfile;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineEvictionPolicyTypes;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineIdentity;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachinePriorityTypes;
@@ -71,6 +70,20 @@ public final class VirtualMachineInner extends Resource {
      */
     @JsonProperty(value = "extendedLocation")
     private ExtendedLocation extendedLocation;
+
+    /*
+     * ManagedBy is set to Virtual Machine Scale Set(VMSS) flex ARM resourceID, if the VM is part of the VMSS. This
+     * property is used by platform for internal resource group delete optimization.
+     */
+    @JsonProperty(value = "managedBy", access = JsonProperty.Access.WRITE_ONLY)
+    private String managedBy;
+
+    /*
+     * Etag is property returned in Create/Update/Get response of the VM, so that customer can supply it in the header
+     * to ensure optimistic updates.
+     */
+    @JsonProperty(value = "etag", access = JsonProperty.Access.WRITE_ONLY)
+    private String etag;
 
     /**
      * Creates an instance of VirtualMachineInner class.
@@ -185,6 +198,26 @@ public final class VirtualMachineInner extends Resource {
     }
 
     /**
+     * Get the managedBy property: ManagedBy is set to Virtual Machine Scale Set(VMSS) flex ARM resourceID, if the VM
+     * is part of the VMSS. This property is used by platform for internal resource group delete optimization.
+     * 
+     * @return the managedBy value.
+     */
+    public String managedBy() {
+        return this.managedBy;
+    }
+
+    /**
+     * Get the etag property: Etag is property returned in Create/Update/Get response of the VM, so that customer can
+     * supply it in the header to ensure optimistic updates.
+     * 
+     * @return the etag value.
+     */
+    public String etag() {
+        return this.etag;
+    }
+
+    /**
      * {@inheritDoc}
      */
     @Override
@@ -230,7 +263,7 @@ public final class VirtualMachineInner extends Resource {
      * 
      * @return the storageProfile value.
      */
-    public StorageProfile storageProfile() {
+    public StorageProfileInner storageProfile() {
         return this.innerProperties() == null ? null : this.innerProperties().storageProfile();
     }
 
@@ -240,7 +273,7 @@ public final class VirtualMachineInner extends Resource {
      * @param storageProfile the storageProfile value to set.
      * @return the VirtualMachineInner object itself.
      */
-    public VirtualMachineInner withStorageProfile(StorageProfile storageProfile) {
+    public VirtualMachineInner withStorageProfile(StorageProfileInner storageProfile) {
         if (this.innerProperties() == null) {
             this.innerProperties = new VirtualMachinePropertiesInner();
         }

@@ -78,6 +78,14 @@ public final class DedicatedHostsImpl implements DedicatedHosts {
         this.serviceClient().restart(resourceGroupName, hostGroupName, hostname, context);
     }
 
+    public void redeploy(String resourceGroupName, String hostGroupName, String hostname) {
+        this.serviceClient().redeploy(resourceGroupName, hostGroupName, hostname);
+    }
+
+    public void redeploy(String resourceGroupName, String hostGroupName, String hostname, Context context) {
+        this.serviceClient().redeploy(resourceGroupName, hostGroupName, hostname, context);
+    }
+
     public PagedIterable<String> listAvailableSizes(String resourceGroupName, String hostGroupName, String hostname) {
         return this.serviceClient().listAvailableSizes(resourceGroupName, hostGroupName, hostname);
     }

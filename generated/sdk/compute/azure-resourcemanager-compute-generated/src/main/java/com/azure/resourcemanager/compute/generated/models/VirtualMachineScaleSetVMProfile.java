@@ -6,6 +6,7 @@ package com.azure.resourcemanager.compute.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.time.OffsetDateTime;
 
 /**
  * Describes a virtual machine scale set virtual machine profile.
@@ -126,6 +127,14 @@ public final class VirtualMachineScaleSetVMProfile {
      */
     @JsonProperty(value = "securityPostureReference")
     private SecurityPostureReference securityPostureReference;
+
+    /*
+     * Specifies the time in which this VM profile for the Virtual Machine Scale Set was created. Minimum API version
+     * for this property is 2023-09-01. This value will be added to VMSS Flex VM tags when creating/updating the VMSS
+     * VM Profile with minimum api-version 2023-09-01.
+     */
+    @JsonProperty(value = "timeCreated", access = JsonProperty.Access.WRITE_ONLY)
+    private OffsetDateTime timeCreated;
 
     /**
      * Creates an instance of VirtualMachineScaleSetVMProfile class.
@@ -522,6 +531,17 @@ public final class VirtualMachineScaleSetVMProfile {
         withSecurityPostureReference(SecurityPostureReference securityPostureReference) {
         this.securityPostureReference = securityPostureReference;
         return this;
+    }
+
+    /**
+     * Get the timeCreated property: Specifies the time in which this VM profile for the Virtual Machine Scale Set was
+     * created. Minimum API version for this property is 2023-09-01. This value will be added to VMSS Flex VM tags when
+     * creating/updating the VMSS VM Profile with minimum api-version 2023-09-01.
+     * 
+     * @return the timeCreated value.
+     */
+    public OffsetDateTime timeCreated() {
+        return this.timeCreated;
     }
 
     /**

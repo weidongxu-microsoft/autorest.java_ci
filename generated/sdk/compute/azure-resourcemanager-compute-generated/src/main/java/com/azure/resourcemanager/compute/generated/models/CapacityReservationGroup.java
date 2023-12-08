@@ -83,6 +83,17 @@ public interface CapacityReservationGroup {
     CapacityReservationGroupInstanceView instanceView();
 
     /**
+     * Gets the sharingProfile property: Specifies the settings to enable sharing across subscriptions for the capacity
+     * reservation group resource. Pls. keep in mind the capacity reservation group resource generally can be shared
+     * across subscriptions belonging to a single azure AAD tenant or cross AAD tenant if there is a trust relationship
+     * established between the AAD tenants. **Note:** Minimum api-version: 2023-09-01. Please refer to
+     * https://aka.ms/computereservationsharing for more details.
+     * 
+     * @return the sharingProfile value.
+     */
+    ResourceSharingProfile sharingProfile();
+
+    /**
      * Gets the region of the resource.
      * 
      * @return the region of the resource.
@@ -165,7 +176,8 @@ public interface CapacityReservationGroup {
          * The stage of the CapacityReservationGroup definition which contains all the minimum required properties for
          * the resource to be created, but also allows for any other optional properties to be specified.
          */
-        interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithZones {
+        interface WithCreate
+            extends DefinitionStages.WithTags, DefinitionStages.WithZones, DefinitionStages.WithSharingProfile {
             /**
              * Executes the create request.
              * 
@@ -211,6 +223,27 @@ public interface CapacityReservationGroup {
              */
             WithCreate withZones(List<String> zones);
         }
+
+        /**
+         * The stage of the CapacityReservationGroup definition allowing to specify sharingProfile.
+         */
+        interface WithSharingProfile {
+            /**
+             * Specifies the sharingProfile property: Specifies the settings to enable sharing across subscriptions for
+             * the capacity reservation group resource. Pls. keep in mind the capacity reservation group resource
+             * generally can be shared across subscriptions belonging to a single azure AAD tenant or cross AAD tenant
+             * if there is a trust relationship established between the AAD tenants. **Note:** Minimum api-version:
+             * 2023-09-01. Please refer to https://aka.ms/computereservationsharing for more details..
+             * 
+             * @param sharingProfile Specifies the settings to enable sharing across subscriptions for the capacity
+             * reservation group resource. Pls. keep in mind the capacity reservation group resource generally can be
+             * shared across subscriptions belonging to a single azure AAD tenant or cross AAD tenant if there is a
+             * trust relationship established between the AAD tenants. **Note:** Minimum api-version: 2023-09-01. Please
+             * refer to https://aka.ms/computereservationsharing for more details.
+             * @return the next definition stage.
+             */
+            WithCreate withSharingProfile(ResourceSharingProfile sharingProfile);
+        }
     }
 
     /**
@@ -223,7 +256,7 @@ public interface CapacityReservationGroup {
     /**
      * The template for CapacityReservationGroup update.
      */
-    interface Update extends UpdateStages.WithTags {
+    interface Update extends UpdateStages.WithTags, UpdateStages.WithSharingProfile {
         /**
          * Executes the update request.
          * 
@@ -255,6 +288,27 @@ public interface CapacityReservationGroup {
              * @return the next definition stage.
              */
             Update withTags(Map<String, String> tags);
+        }
+
+        /**
+         * The stage of the CapacityReservationGroup update allowing to specify sharingProfile.
+         */
+        interface WithSharingProfile {
+            /**
+             * Specifies the sharingProfile property: Specifies the settings to enable sharing across subscriptions for
+             * the capacity reservation group resource. Pls. keep in mind the capacity reservation group resource
+             * generally can be shared across subscriptions belonging to a single azure AAD tenant or cross AAD tenant
+             * if there is a trust relationship established between the AAD tenants. **Note:** Minimum api-version:
+             * 2023-09-01. Please refer to https://aka.ms/computereservationsharing for more details..
+             * 
+             * @param sharingProfile Specifies the settings to enable sharing across subscriptions for the capacity
+             * reservation group resource. Pls. keep in mind the capacity reservation group resource generally can be
+             * shared across subscriptions belonging to a single azure AAD tenant or cross AAD tenant if there is a
+             * trust relationship established between the AAD tenants. **Note:** Minimum api-version: 2023-09-01. Please
+             * refer to https://aka.ms/computereservationsharing for more details.
+             * @return the next definition stage.
+             */
+            Update withSharingProfile(ResourceSharingProfile sharingProfile);
         }
     }
 

@@ -128,6 +128,14 @@ public interface VirtualMachineInstanceView {
     VirtualMachinePatchStatus patchStatus();
 
     /**
+     * Gets the isVMInStandbyPool property: [Preview Feature] Specifies whether the VM is currently in or out of the
+     * Standby Pool.
+     * 
+     * @return the isVMInStandbyPool value.
+     */
+    Boolean isVMInStandbyPool();
+
+    /**
      * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineInstanceViewInner object.
      * 
      * @return the inner object.

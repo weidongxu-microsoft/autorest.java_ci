@@ -8,6 +8,7 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
+import com.azure.resourcemanager.compute.generated.fluent.models.StorageProfileInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineInner;
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -90,6 +91,22 @@ public interface VirtualMachine {
      * @return the extendedLocation value.
      */
     ExtendedLocation extendedLocation();
+
+    /**
+     * Gets the managedBy property: ManagedBy is set to Virtual Machine Scale Set(VMSS) flex ARM resourceID, if the VM
+     * is part of the VMSS. This property is used by platform for internal resource group delete optimization.
+     * 
+     * @return the managedBy value.
+     */
+    String managedBy();
+
+    /**
+     * Gets the etag property: Etag is property returned in Create/Update/Get response of the VM, so that customer can
+     * supply it in the header to ensure optimistic updates.
+     * 
+     * @return the etag value.
+     */
+    String etag();
 
     /**
      * Gets the hardwareProfile property: Specifies the hardware settings for the virtual machine.
@@ -409,7 +426,8 @@ public interface VirtualMachine {
             DefinitionStages.WithHost, DefinitionStages.WithHostGroup, DefinitionStages.WithLicenseType,
             DefinitionStages.WithExtensionsTimeBudget, DefinitionStages.WithPlatformFaultDomain,
             DefinitionStages.WithScheduledEventsProfile, DefinitionStages.WithUserData,
-            DefinitionStages.WithCapacityReservation, DefinitionStages.WithApplicationProfile {
+            DefinitionStages.WithCapacityReservation, DefinitionStages.WithApplicationProfile,
+            DefinitionStages.WithIfMatch, DefinitionStages.WithIfNoneMatch {
             /**
              * Executes the create request.
              * 
@@ -522,7 +540,7 @@ public interface VirtualMachine {
              * @param storageProfile Specifies the storage settings for the virtual machine disks.
              * @return the next definition stage.
              */
-            WithCreate withStorageProfile(StorageProfile storageProfile);
+            WithCreate withStorageProfile(StorageProfileInner storageProfile);
         }
 
         /**
@@ -873,6 +891,38 @@ public interface VirtualMachine {
              */
             WithCreate withApplicationProfile(ApplicationProfile applicationProfile);
         }
+
+        /**
+         * The stage of the VirtualMachine definition allowing to specify ifMatch.
+         */
+        interface WithIfMatch {
+            /**
+             * Specifies the ifMatch property: The ETag of the transformation. Omit this value to always overwrite the
+             * current resource. Specify the last-seen ETag value to prevent accidentally overwriting concurrent
+             * changes..
+             * 
+             * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource.
+             * Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
+             * @return the next definition stage.
+             */
+            WithCreate withIfMatch(String ifMatch);
+        }
+
+        /**
+         * The stage of the VirtualMachine definition allowing to specify ifNoneMatch.
+         */
+        interface WithIfNoneMatch {
+            /**
+             * Specifies the ifNoneMatch property: Set to '*' to allow a new record set to be created, but to prevent
+             * updating an existing record set. Other values will result in error from server as they are not
+             * supported..
+             * 
+             * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an
+             * existing record set. Other values will result in error from server as they are not supported.
+             * @return the next definition stage.
+             */
+            WithCreate withIfNoneMatch(String ifNoneMatch);
+        }
     }
 
     /**
@@ -885,15 +935,16 @@ public interface VirtualMachine {
     /**
      * The template for VirtualMachine update.
      */
-    interface Update extends UpdateStages.WithTags, UpdateStages.WithPlan, UpdateStages.WithIdentity,
-        UpdateStages.WithZones, UpdateStages.WithHardwareProfile, UpdateStages.WithStorageProfile,
-        UpdateStages.WithAdditionalCapabilities, UpdateStages.WithOsProfile, UpdateStages.WithNetworkProfile,
-        UpdateStages.WithSecurityProfile, UpdateStages.WithDiagnosticsProfile, UpdateStages.WithAvailabilitySet,
-        UpdateStages.WithVirtualMachineScaleSet, UpdateStages.WithProximityPlacementGroup, UpdateStages.WithPriority,
-        UpdateStages.WithEvictionPolicy, UpdateStages.WithBillingProfile, UpdateStages.WithHost,
-        UpdateStages.WithHostGroup, UpdateStages.WithLicenseType, UpdateStages.WithExtensionsTimeBudget,
-        UpdateStages.WithPlatformFaultDomain, UpdateStages.WithScheduledEventsProfile, UpdateStages.WithUserData,
-        UpdateStages.WithCapacityReservation, UpdateStages.WithApplicationProfile {
+    interface Update
+        extends UpdateStages.WithTags, UpdateStages.WithPlan, UpdateStages.WithIdentity, UpdateStages.WithZones,
+        UpdateStages.WithHardwareProfile, UpdateStages.WithStorageProfile, UpdateStages.WithAdditionalCapabilities,
+        UpdateStages.WithOsProfile, UpdateStages.WithNetworkProfile, UpdateStages.WithSecurityProfile,
+        UpdateStages.WithDiagnosticsProfile, UpdateStages.WithAvailabilitySet, UpdateStages.WithVirtualMachineScaleSet,
+        UpdateStages.WithProximityPlacementGroup, UpdateStages.WithPriority, UpdateStages.WithEvictionPolicy,
+        UpdateStages.WithBillingProfile, UpdateStages.WithHost, UpdateStages.WithHostGroup,
+        UpdateStages.WithLicenseType, UpdateStages.WithExtensionsTimeBudget, UpdateStages.WithPlatformFaultDomain,
+        UpdateStages.WithScheduledEventsProfile, UpdateStages.WithUserData, UpdateStages.WithCapacityReservation,
+        UpdateStages.WithApplicationProfile, UpdateStages.WithIfMatch, UpdateStages.WithIfNoneMatch {
         /**
          * Executes the update request.
          * 
@@ -997,7 +1048,7 @@ public interface VirtualMachine {
              * @param storageProfile Specifies the storage settings for the virtual machine disks.
              * @return the next definition stage.
              */
-            Update withStorageProfile(StorageProfile storageProfile);
+            Update withStorageProfile(StorageProfileInner storageProfile);
         }
 
         /**
@@ -1347,6 +1398,38 @@ public interface VirtualMachine {
              * @return the next definition stage.
              */
             Update withApplicationProfile(ApplicationProfile applicationProfile);
+        }
+
+        /**
+         * The stage of the VirtualMachine update allowing to specify ifMatch.
+         */
+        interface WithIfMatch {
+            /**
+             * Specifies the ifMatch property: The ETag of the transformation. Omit this value to always overwrite the
+             * current resource. Specify the last-seen ETag value to prevent accidentally overwriting concurrent
+             * changes..
+             * 
+             * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource.
+             * Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
+             * @return the next definition stage.
+             */
+            Update withIfMatch(String ifMatch);
+        }
+
+        /**
+         * The stage of the VirtualMachine update allowing to specify ifNoneMatch.
+         */
+        interface WithIfNoneMatch {
+            /**
+             * Specifies the ifNoneMatch property: Set to '*' to allow a new record set to be created, but to prevent
+             * updating an existing record set. Other values will result in error from server as they are not
+             * supported..
+             * 
+             * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an
+             * existing record set. Other values will result in error from server as they are not supported.
+             * @return the next definition stage.
+             */
+            Update withIfNoneMatch(String ifNoneMatch);
         }
     }
 
@@ -1713,6 +1796,31 @@ public interface VirtualMachine {
      */
     VirtualMachineInstallPatchesResult installPatches(VirtualMachineInstallPatchesParameters installPatchesInput,
         Context context);
+
+    /**
+     * Attach and detach data disks to/from the virtual machine.
+     * 
+     * @param parameters Parameters supplied to the attach and detach data disks operation on the virtual machine.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return specifies the storage settings for the virtual machine disks.
+     */
+    StorageProfile attachDetachDataDisks(AttachDetachDataDisksRequest parameters);
+
+    /**
+     * Attach and detach data disks to/from the virtual machine.
+     * 
+     * @param parameters Parameters supplied to the attach and detach data disks operation on the virtual machine.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return specifies the storage settings for the virtual machine disks.
+     */
+    StorageProfile attachDetachDataDisks(AttachDetachDataDisksRequest parameters, Context context);
 
     /**
      * Run command on the VM.

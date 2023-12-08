@@ -12,7 +12,6 @@ import com.azure.resourcemanager.compute.generated.models.HardwareProfile;
 import com.azure.resourcemanager.compute.generated.models.NetworkProfile;
 import com.azure.resourcemanager.compute.generated.models.OSProfile;
 import com.azure.resourcemanager.compute.generated.models.SecurityProfile;
-import com.azure.resourcemanager.compute.generated.models.StorageProfile;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMNetworkProfileConfiguration;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMProtectionPolicy;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -51,7 +50,7 @@ public final class VirtualMachineScaleSetVMPropertiesInner {
      * Specifies the storage settings for the virtual machine disks.
      */
     @JsonProperty(value = "storageProfile")
-    private StorageProfile storageProfile;
+    private StorageProfileInner storageProfile;
 
     /*
      * Specifies additional capabilities enabled or disabled on the virtual machine in the scale set. For instance:
@@ -206,7 +205,7 @@ public final class VirtualMachineScaleSetVMPropertiesInner {
      * 
      * @return the storageProfile value.
      */
-    public StorageProfile storageProfile() {
+    public StorageProfileInner storageProfile() {
         return this.storageProfile;
     }
 
@@ -216,7 +215,7 @@ public final class VirtualMachineScaleSetVMPropertiesInner {
      * @param storageProfile the storageProfile value to set.
      * @return the VirtualMachineScaleSetVMPropertiesInner object itself.
      */
-    public VirtualMachineScaleSetVMPropertiesInner withStorageProfile(StorageProfile storageProfile) {
+    public VirtualMachineScaleSetVMPropertiesInner withStorageProfile(StorageProfileInner storageProfile) {
         this.storageProfile = storageProfile;
         return this;
     }

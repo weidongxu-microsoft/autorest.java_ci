@@ -10,6 +10,7 @@ import com.azure.resourcemanager.compute.generated.models.AdditionalCapabilities
 import com.azure.resourcemanager.compute.generated.models.AutomaticRepairsPolicy;
 import com.azure.resourcemanager.compute.generated.models.OrchestrationMode;
 import com.azure.resourcemanager.compute.generated.models.PriorityMixPolicy;
+import com.azure.resourcemanager.compute.generated.models.ResiliencyPolicy;
 import com.azure.resourcemanager.compute.generated.models.ScaleInPolicy;
 import com.azure.resourcemanager.compute.generated.models.SpotRestorePolicy;
 import com.azure.resourcemanager.compute.generated.models.UpgradePolicy;
@@ -144,6 +145,12 @@ public final class VirtualMachineScaleSetProperties {
      */
     @JsonProperty(value = "constrainedMaximumCapacity")
     private Boolean constrainedMaximumCapacity;
+
+    /*
+     * Policy for Resiliency
+     */
+    @JsonProperty(value = "resiliencyPolicy")
+    private ResiliencyPolicy resiliencyPolicy;
 
     /**
      * Creates an instance of VirtualMachineScaleSetProperties class.
@@ -526,6 +533,26 @@ public final class VirtualMachineScaleSetProperties {
     }
 
     /**
+     * Get the resiliencyPolicy property: Policy for Resiliency.
+     * 
+     * @return the resiliencyPolicy value.
+     */
+    public ResiliencyPolicy resiliencyPolicy() {
+        return this.resiliencyPolicy;
+    }
+
+    /**
+     * Set the resiliencyPolicy property: Policy for Resiliency.
+     * 
+     * @param resiliencyPolicy the resiliencyPolicy value to set.
+     * @return the VirtualMachineScaleSetProperties object itself.
+     */
+    public VirtualMachineScaleSetProperties withResiliencyPolicy(ResiliencyPolicy resiliencyPolicy) {
+        this.resiliencyPolicy = resiliencyPolicy;
+        return this;
+    }
+
+    /**
      * Validates the instance.
      * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
@@ -551,6 +578,9 @@ public final class VirtualMachineScaleSetProperties {
         }
         if (priorityMixPolicy() != null) {
             priorityMixPolicy().validate();
+        }
+        if (resiliencyPolicy() != null) {
+            resiliencyPolicy().validate();
         }
     }
 }

@@ -9,6 +9,7 @@ import com.azure.core.management.SubResource;
 import com.azure.resourcemanager.compute.generated.models.AdditionalCapabilities;
 import com.azure.resourcemanager.compute.generated.models.AutomaticRepairsPolicy;
 import com.azure.resourcemanager.compute.generated.models.PriorityMixPolicy;
+import com.azure.resourcemanager.compute.generated.models.ResiliencyPolicy;
 import com.azure.resourcemanager.compute.generated.models.ScaleInPolicy;
 import com.azure.resourcemanager.compute.generated.models.SpotRestorePolicy;
 import com.azure.resourcemanager.compute.generated.models.UpgradePolicy;
@@ -91,6 +92,12 @@ public final class VirtualMachineScaleSetUpdateProperties {
      */
     @JsonProperty(value = "spotRestorePolicy")
     private SpotRestorePolicy spotRestorePolicy;
+
+    /*
+     * Policy for Resiliency
+     */
+    @JsonProperty(value = "resiliencyPolicy")
+    private ResiliencyPolicy resiliencyPolicy;
 
     /**
      * Creates an instance of VirtualMachineScaleSetUpdateProperties class.
@@ -341,6 +348,26 @@ public final class VirtualMachineScaleSetUpdateProperties {
     }
 
     /**
+     * Get the resiliencyPolicy property: Policy for Resiliency.
+     * 
+     * @return the resiliencyPolicy value.
+     */
+    public ResiliencyPolicy resiliencyPolicy() {
+        return this.resiliencyPolicy;
+    }
+
+    /**
+     * Set the resiliencyPolicy property: Policy for Resiliency.
+     * 
+     * @param resiliencyPolicy the resiliencyPolicy value to set.
+     * @return the VirtualMachineScaleSetUpdateProperties object itself.
+     */
+    public VirtualMachineScaleSetUpdateProperties withResiliencyPolicy(ResiliencyPolicy resiliencyPolicy) {
+        this.resiliencyPolicy = resiliencyPolicy;
+        return this;
+    }
+
+    /**
      * Validates the instance.
      * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
@@ -366,6 +393,9 @@ public final class VirtualMachineScaleSetUpdateProperties {
         }
         if (spotRestorePolicy() != null) {
             spotRestorePolicy().validate();
+        }
+        if (resiliencyPolicy() != null) {
+            resiliencyPolicy().validate();
         }
     }
 }

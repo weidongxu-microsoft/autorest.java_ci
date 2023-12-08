@@ -452,4 +452,30 @@ public interface DedicatedHost {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void restart(Context context);
+
+    /**
+     * Redeploy the dedicated host. The operation will complete successfully once the dedicated host has migrated to a
+     * new node and is running. To determine the health of VMs deployed on the dedicated host after the redeploy check
+     * the Resource Health Center in the Azure Portal. Please refer to
+     * https://docs.microsoft.com/azure/service-health/resource-health-overview for more details.
+     * 
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void redeploy();
+
+    /**
+     * Redeploy the dedicated host. The operation will complete successfully once the dedicated host has migrated to a
+     * new node and is running. To determine the health of VMs deployed on the dedicated host after the redeploy check
+     * the Resource Health Center in the Azure Portal. Please refer to
+     * https://docs.microsoft.com/azure/service-health/resource-health-overview for more details.
+     * 
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void redeploy(Context context);
 }

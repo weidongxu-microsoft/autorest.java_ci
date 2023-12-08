@@ -13,6 +13,7 @@ import com.azure.resourcemanager.compute.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.compute.generated.models.OrchestrationMode;
 import com.azure.resourcemanager.compute.generated.models.Plan;
 import com.azure.resourcemanager.compute.generated.models.PriorityMixPolicy;
+import com.azure.resourcemanager.compute.generated.models.ResiliencyPolicy;
 import com.azure.resourcemanager.compute.generated.models.ScaleInPolicy;
 import com.azure.resourcemanager.compute.generated.models.Sku;
 import com.azure.resourcemanager.compute.generated.models.SpotRestorePolicy;
@@ -67,6 +68,13 @@ public final class VirtualMachineScaleSetInner extends Resource {
      */
     @JsonProperty(value = "extendedLocation")
     private ExtendedLocation extendedLocation;
+
+    /*
+     * Etag is property returned in Create/Update/Get response of the VMSS, so that customer can supply it in the
+     * header to ensure optimistic updates
+     */
+    @JsonProperty(value = "etag", access = JsonProperty.Access.WRITE_ONLY)
+    private String etag;
 
     /**
      * Creates an instance of VirtualMachineScaleSetInner class.
@@ -191,6 +199,16 @@ public final class VirtualMachineScaleSetInner extends Resource {
     public VirtualMachineScaleSetInner withExtendedLocation(ExtendedLocation extendedLocation) {
         this.extendedLocation = extendedLocation;
         return this;
+    }
+
+    /**
+     * Get the etag property: Etag is property returned in Create/Update/Get response of the VMSS, so that customer can
+     * supply it in the header to ensure optimistic updates.
+     * 
+     * @return the etag value.
+     */
+    public String etag() {
+        return this.etag;
     }
 
     /**
@@ -630,6 +648,29 @@ public final class VirtualMachineScaleSetInner extends Resource {
             this.innerProperties = new VirtualMachineScaleSetProperties();
         }
         this.innerProperties().withConstrainedMaximumCapacity(constrainedMaximumCapacity);
+        return this;
+    }
+
+    /**
+     * Get the resiliencyPolicy property: Policy for Resiliency.
+     * 
+     * @return the resiliencyPolicy value.
+     */
+    public ResiliencyPolicy resiliencyPolicy() {
+        return this.innerProperties() == null ? null : this.innerProperties().resiliencyPolicy();
+    }
+
+    /**
+     * Set the resiliencyPolicy property: Policy for Resiliency.
+     * 
+     * @param resiliencyPolicy the resiliencyPolicy value to set.
+     * @return the VirtualMachineScaleSetInner object itself.
+     */
+    public VirtualMachineScaleSetInner withResiliencyPolicy(ResiliencyPolicy resiliencyPolicy) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new VirtualMachineScaleSetProperties();
+        }
+        this.innerProperties().withResiliencyPolicy(resiliencyPolicy);
         return this;
     }
 

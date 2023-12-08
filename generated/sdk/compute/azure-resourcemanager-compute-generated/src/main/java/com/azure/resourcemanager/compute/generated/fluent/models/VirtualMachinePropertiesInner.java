@@ -16,7 +16,6 @@ import com.azure.resourcemanager.compute.generated.models.NetworkProfile;
 import com.azure.resourcemanager.compute.generated.models.OSProfile;
 import com.azure.resourcemanager.compute.generated.models.ScheduledEventsProfile;
 import com.azure.resourcemanager.compute.generated.models.SecurityProfile;
-import com.azure.resourcemanager.compute.generated.models.StorageProfile;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineEvictionPolicyTypes;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachinePriorityTypes;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -37,7 +36,7 @@ public final class VirtualMachinePropertiesInner {
      * Specifies the storage settings for the virtual machine disks.
      */
     @JsonProperty(value = "storageProfile")
-    private StorageProfile storageProfile;
+    private StorageProfileInner storageProfile;
 
     /*
      * Specifies additional capabilities enabled or disabled on the virtual machine.
@@ -250,7 +249,7 @@ public final class VirtualMachinePropertiesInner {
      * 
      * @return the storageProfile value.
      */
-    public StorageProfile storageProfile() {
+    public StorageProfileInner storageProfile() {
         return this.storageProfile;
     }
 
@@ -260,7 +259,7 @@ public final class VirtualMachinePropertiesInner {
      * @param storageProfile the storageProfile value to set.
      * @return the VirtualMachinePropertiesInner object itself.
      */
-    public VirtualMachinePropertiesInner withStorageProfile(StorageProfile storageProfile) {
+    public VirtualMachinePropertiesInner withStorageProfile(StorageProfileInner storageProfile) {
         this.storageProfile = storageProfile;
         return this;
     }

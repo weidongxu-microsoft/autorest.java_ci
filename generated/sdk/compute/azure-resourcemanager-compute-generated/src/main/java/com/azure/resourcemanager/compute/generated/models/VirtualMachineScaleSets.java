@@ -558,6 +558,33 @@ public interface VirtualMachineScaleSets {
         Context context);
 
     /**
+     * Approve upgrade on deferred rolling upgrades for OS disks in the virtual machines in a VM scale set.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param vmScaleSetName The name of the VM scale set.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void approveRollingUpgrade(String resourceGroupName, String vmScaleSetName);
+
+    /**
+     * Approve upgrade on deferred rolling upgrades for OS disks in the virtual machines in a VM scale set.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param vmScaleSetName The name of the VM scale set.
+     * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void approveRollingUpgrade(String resourceGroupName, String vmScaleSetName,
+        VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs, Context context);
+
+    /**
      * Manual platform update domain walk to update virtual machines in a service fabric virtual machine scale set.
      * 
      * @param resourceGroupName The name of the resource group.

@@ -5,6 +5,7 @@
 package com.azure.resourcemanager.compute.generated.implementation;
 
 import com.azure.core.management.SubResource;
+import com.azure.resourcemanager.compute.generated.fluent.models.StorageProfileInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineScaleSetVMInstanceViewInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineScaleSetVMPropertiesInner;
 import com.azure.resourcemanager.compute.generated.models.AdditionalCapabilities;
@@ -53,7 +54,12 @@ public final class VirtualMachineScaleSetVMPropertiesImpl implements VirtualMach
     }
 
     public StorageProfile storageProfile() {
-        return this.innerModel().storageProfile();
+        StorageProfileInner inner = this.innerModel().storageProfile();
+        if (inner != null) {
+            return new StorageProfileImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public AdditionalCapabilities additionalCapabilities() {

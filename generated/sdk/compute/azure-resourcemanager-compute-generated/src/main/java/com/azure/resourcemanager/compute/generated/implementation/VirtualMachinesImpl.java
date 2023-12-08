@@ -12,18 +12,21 @@ import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.fluent.VirtualMachinesClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.RetrieveBootDiagnosticsDataResultInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.RunCommandResultInner;
+import com.azure.resourcemanager.compute.generated.fluent.models.StorageProfileInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineAssessPatchesResultInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineCaptureResultInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineInstallPatchesResultInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineInstanceViewInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineSizeInner;
+import com.azure.resourcemanager.compute.generated.models.AttachDetachDataDisksRequest;
 import com.azure.resourcemanager.compute.generated.models.ExpandTypeForListVMs;
 import com.azure.resourcemanager.compute.generated.models.ExpandTypesForListVMs;
 import com.azure.resourcemanager.compute.generated.models.InstanceViewTypes;
 import com.azure.resourcemanager.compute.generated.models.RetrieveBootDiagnosticsDataResult;
 import com.azure.resourcemanager.compute.generated.models.RunCommandInput;
 import com.azure.resourcemanager.compute.generated.models.RunCommandResult;
+import com.azure.resourcemanager.compute.generated.models.StorageProfile;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachine;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineAssessPatchesResult;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineCaptureParameters;
@@ -312,6 +315,27 @@ public final class VirtualMachinesImpl implements VirtualMachines {
             = this.serviceClient().installPatches(resourceGroupName, vmName, installPatchesInput, context);
         if (inner != null) {
             return new VirtualMachineInstallPatchesResultImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public StorageProfile attachDetachDataDisks(String resourceGroupName, String vmName,
+        AttachDetachDataDisksRequest parameters) {
+        StorageProfileInner inner = this.serviceClient().attachDetachDataDisks(resourceGroupName, vmName, parameters);
+        if (inner != null) {
+            return new StorageProfileImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public StorageProfile attachDetachDataDisks(String resourceGroupName, String vmName,
+        AttachDetachDataDisksRequest parameters, Context context) {
+        StorageProfileInner inner
+            = this.serviceClient().attachDetachDataDisks(resourceGroupName, vmName, parameters, context);
+        if (inner != null) {
+            return new StorageProfileImpl(inner, this.manager());
         } else {
             return null;
         }

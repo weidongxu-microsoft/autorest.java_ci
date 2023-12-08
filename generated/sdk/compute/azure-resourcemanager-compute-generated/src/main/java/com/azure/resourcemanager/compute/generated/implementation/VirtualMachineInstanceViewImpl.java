@@ -108,6 +108,10 @@ public final class VirtualMachineInstanceViewImpl implements VirtualMachineInsta
         return this.innerModel().patchStatus();
     }
 
+    public Boolean isVMInStandbyPool() {
+        return this.innerModel().isVMInStandbyPool();
+    }
+
     public VirtualMachineInstanceViewInner innerModel() {
         return this.innerObject;
     }

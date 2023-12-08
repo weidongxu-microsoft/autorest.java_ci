@@ -17,6 +17,7 @@ import com.azure.resourcemanager.compute.generated.models.OrchestrationMode;
 import com.azure.resourcemanager.compute.generated.models.OrchestrationServiceStateInput;
 import com.azure.resourcemanager.compute.generated.models.Plan;
 import com.azure.resourcemanager.compute.generated.models.PriorityMixPolicy;
+import com.azure.resourcemanager.compute.generated.models.ResiliencyPolicy;
 import com.azure.resourcemanager.compute.generated.models.ScaleInPolicy;
 import com.azure.resourcemanager.compute.generated.models.Sku;
 import com.azure.resourcemanager.compute.generated.models.SpotRestorePolicy;
@@ -89,6 +90,10 @@ public final class VirtualMachineScaleSetImpl
 
     public ExtendedLocation extendedLocation() {
         return this.innerModel().extendedLocation();
+    }
+
+    public String etag() {
+        return this.innerModel().etag();
     }
 
     public UpgradePolicy upgradePolicy() {
@@ -167,6 +172,10 @@ public final class VirtualMachineScaleSetImpl
         return this.innerModel().constrainedMaximumCapacity();
     }
 
+    public ResiliencyPolicy resiliencyPolicy() {
+        return this.innerModel().resiliencyPolicy();
+    }
+
     public Region region() {
         return Region.fromName(this.regionName());
     }
@@ -191,6 +200,14 @@ public final class VirtualMachineScaleSetImpl
 
     private String vmScaleSetName;
 
+    private String createIfMatch;
+
+    private String createIfNoneMatch;
+
+    private String updateIfMatch;
+
+    private String updateIfNoneMatch;
+
     private VirtualMachineScaleSetUpdate updateParameters;
 
     public VirtualMachineScaleSetImpl withExistingResourceGroup(String resourceGroupName) {
@@ -200,13 +217,13 @@ public final class VirtualMachineScaleSetImpl
 
     public VirtualMachineScaleSet create() {
         this.innerObject = serviceManager.serviceClient().getVirtualMachineScaleSets().createOrUpdate(resourceGroupName,
-            vmScaleSetName, this.innerModel(), Context.NONE);
+            vmScaleSetName, this.innerModel(), createIfMatch, createIfNoneMatch, Context.NONE);
         return this;
     }
 
     public VirtualMachineScaleSet create(Context context) {
         this.innerObject = serviceManager.serviceClient().getVirtualMachineScaleSets().createOrUpdate(resourceGroupName,
-            vmScaleSetName, this.innerModel(), context);
+            vmScaleSetName, this.innerModel(), createIfMatch, createIfNoneMatch, context);
         return this;
     }
 
@@ -214,22 +231,26 @@ public final class VirtualMachineScaleSetImpl
         this.innerObject = new VirtualMachineScaleSetInner();
         this.serviceManager = serviceManager;
         this.vmScaleSetName = name;
+        this.createIfMatch = null;
+        this.createIfNoneMatch = null;
     }
 
     public VirtualMachineScaleSetImpl update() {
+        this.updateIfMatch = null;
+        this.updateIfNoneMatch = null;
         this.updateParameters = new VirtualMachineScaleSetUpdate();
         return this;
     }
 
     public VirtualMachineScaleSet apply() {
         this.innerObject = serviceManager.serviceClient().getVirtualMachineScaleSets().update(resourceGroupName,
-            vmScaleSetName, updateParameters, Context.NONE);
+            vmScaleSetName, updateParameters, updateIfMatch, updateIfNoneMatch, Context.NONE);
         return this;
     }
 
     public VirtualMachineScaleSet apply(Context context) {
         this.innerObject = serviceManager.serviceClient().getVirtualMachineScaleSets().update(resourceGroupName,
-            vmScaleSetName, updateParameters, context);
+            vmScaleSetName, updateParameters, updateIfMatch, updateIfNoneMatch, context);
         return this;
     }
 
@@ -348,6 +369,15 @@ public final class VirtualMachineScaleSetImpl
 
     public void reimageAll(VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs, Context context) {
         serviceManager.virtualMachineScaleSets().reimageAll(resourceGroupName, vmScaleSetName, vmInstanceIDs, context);
+    }
+
+    public void approveRollingUpgrade() {
+        serviceManager.virtualMachineScaleSets().approveRollingUpgrade(resourceGroupName, vmScaleSetName);
+    }
+
+    public void approveRollingUpgrade(VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs, Context context) {
+        serviceManager.virtualMachineScaleSets().approveRollingUpgrade(resourceGroupName, vmScaleSetName, vmInstanceIDs,
+            context);
     }
 
     public Response<Void> convertToSinglePlacementGroupWithResponse(
@@ -560,6 +590,36 @@ public final class VirtualMachineScaleSetImpl
     public VirtualMachineScaleSetImpl withConstrainedMaximumCapacity(Boolean constrainedMaximumCapacity) {
         this.innerModel().withConstrainedMaximumCapacity(constrainedMaximumCapacity);
         return this;
+    }
+
+    public VirtualMachineScaleSetImpl withResiliencyPolicy(ResiliencyPolicy resiliencyPolicy) {
+        if (isInCreateMode()) {
+            this.innerModel().withResiliencyPolicy(resiliencyPolicy);
+            return this;
+        } else {
+            this.updateParameters.withResiliencyPolicy(resiliencyPolicy);
+            return this;
+        }
+    }
+
+    public VirtualMachineScaleSetImpl withIfMatch(String ifMatch) {
+        if (isInCreateMode()) {
+            this.createIfMatch = ifMatch;
+            return this;
+        } else {
+            this.updateIfMatch = ifMatch;
+            return this;
+        }
+    }
+
+    public VirtualMachineScaleSetImpl withIfNoneMatch(String ifNoneMatch) {
+        if (isInCreateMode()) {
+            this.createIfNoneMatch = ifNoneMatch;
+            return this;
+        } else {
+            this.updateIfNoneMatch = ifNoneMatch;
+            return this;
+        }
     }
 
     public VirtualMachineScaleSetImpl

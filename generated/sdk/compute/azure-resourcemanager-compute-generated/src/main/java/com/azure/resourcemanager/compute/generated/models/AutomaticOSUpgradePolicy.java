@@ -36,6 +36,15 @@ public final class AutomaticOSUpgradePolicy {
     @JsonProperty(value = "useRollingUpgradePolicy")
     private Boolean useRollingUpgradePolicy;
 
+    /*
+     * Indicates whether Auto OS Upgrade should undergo deferral. Deferred OS upgrades will send advanced notifications
+     * on a per-VM basis that an OS upgrade from rolling upgrades is incoming, via the IMDS tag
+     * 'Platform.PendingOSUpgrade'. The upgrade then defers until the upgrade is approved via an ApproveRollingUpgrade
+     * call.
+     */
+    @JsonProperty(value = "osRollingUpgradeDeferral")
+    private Boolean osRollingUpgradeDeferral;
+
     /**
      * Creates an instance of AutomaticOSUpgradePolicy class.
      */
@@ -113,6 +122,32 @@ public final class AutomaticOSUpgradePolicy {
      */
     public AutomaticOSUpgradePolicy withUseRollingUpgradePolicy(Boolean useRollingUpgradePolicy) {
         this.useRollingUpgradePolicy = useRollingUpgradePolicy;
+        return this;
+    }
+
+    /**
+     * Get the osRollingUpgradeDeferral property: Indicates whether Auto OS Upgrade should undergo deferral. Deferred
+     * OS upgrades will send advanced notifications on a per-VM basis that an OS upgrade from rolling upgrades is
+     * incoming, via the IMDS tag 'Platform.PendingOSUpgrade'. The upgrade then defers until the upgrade is approved
+     * via an ApproveRollingUpgrade call.
+     * 
+     * @return the osRollingUpgradeDeferral value.
+     */
+    public Boolean osRollingUpgradeDeferral() {
+        return this.osRollingUpgradeDeferral;
+    }
+
+    /**
+     * Set the osRollingUpgradeDeferral property: Indicates whether Auto OS Upgrade should undergo deferral. Deferred
+     * OS upgrades will send advanced notifications on a per-VM basis that an OS upgrade from rolling upgrades is
+     * incoming, via the IMDS tag 'Platform.PendingOSUpgrade'. The upgrade then defers until the upgrade is approved
+     * via an ApproveRollingUpgrade call.
+     * 
+     * @param osRollingUpgradeDeferral the osRollingUpgradeDeferral value to set.
+     * @return the AutomaticOSUpgradePolicy object itself.
+     */
+    public AutomaticOSUpgradePolicy withOsRollingUpgradeDeferral(Boolean osRollingUpgradeDeferral) {
+        this.osRollingUpgradeDeferral = osRollingUpgradeDeferral;
         return this;
     }
 

@@ -19,6 +19,13 @@ public final class CapacityReservationGroupInstanceView {
     @JsonProperty(value = "capacityReservations", access = JsonProperty.Access.WRITE_ONLY)
     private List<CapacityReservationInstanceViewWithName> capacityReservations;
 
+    /*
+     * List of the subscriptions that the capacity reservation group is shared with. **Note:** Minimum api-version:
+     * 2023-09-01. Please refer to https://aka.ms/computereservationsharing for more details.
+     */
+    @JsonProperty(value = "sharedSubscriptionIds", access = JsonProperty.Access.WRITE_ONLY)
+    private List<SubResourceReadOnly> sharedSubscriptionIds;
+
     /**
      * Creates an instance of CapacityReservationGroupInstanceView class.
      */
@@ -36,6 +43,17 @@ public final class CapacityReservationGroupInstanceView {
     }
 
     /**
+     * Get the sharedSubscriptionIds property: List of the subscriptions that the capacity reservation group is shared
+     * with. **Note:** Minimum api-version: 2023-09-01. Please refer to https://aka.ms/computereservationsharing for
+     * more details.
+     * 
+     * @return the sharedSubscriptionIds value.
+     */
+    public List<SubResourceReadOnly> sharedSubscriptionIds() {
+        return this.sharedSubscriptionIds;
+    }
+
+    /**
      * Validates the instance.
      * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
@@ -43,6 +61,9 @@ public final class CapacityReservationGroupInstanceView {
     public void validate() {
         if (capacityReservations() != null) {
             capacityReservations().forEach(e -> e.validate());
+        }
+        if (sharedSubscriptionIds() != null) {
+            sharedSubscriptionIds().forEach(e -> e.validate());
         }
     }
 }

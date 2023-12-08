@@ -15,7 +15,6 @@ import com.azure.resourcemanager.compute.generated.models.OSProfile;
 import com.azure.resourcemanager.compute.generated.models.Plan;
 import com.azure.resourcemanager.compute.generated.models.SecurityProfile;
 import com.azure.resourcemanager.compute.generated.models.Sku;
-import com.azure.resourcemanager.compute.generated.models.StorageProfile;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineIdentity;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMNetworkProfileConfiguration;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMProtectionPolicy;
@@ -73,6 +72,13 @@ public final class VirtualMachineScaleSetVMInner extends Resource {
      */
     @JsonProperty(value = "identity")
     private VirtualMachineIdentity identity;
+
+    /*
+     * Etag is property returned in Update/Get response of the VMSS VM, so that customer can supply it in the header to
+     * ensure optimistic updates.
+     */
+    @JsonProperty(value = "etag", access = JsonProperty.Access.WRITE_ONLY)
+    private String etag;
 
     /**
      * Creates an instance of VirtualMachineScaleSetVMInner class.
@@ -174,6 +180,16 @@ public final class VirtualMachineScaleSetVMInner extends Resource {
     }
 
     /**
+     * Get the etag property: Etag is property returned in Update/Get response of the VMSS VM, so that customer can
+     * supply it in the header to ensure optimistic updates.
+     * 
+     * @return the etag value.
+     */
+    public String etag() {
+        return this.etag;
+    }
+
+    /**
      * {@inheritDoc}
      */
     @Override
@@ -246,7 +262,7 @@ public final class VirtualMachineScaleSetVMInner extends Resource {
      * 
      * @return the storageProfile value.
      */
-    public StorageProfile storageProfile() {
+    public StorageProfileInner storageProfile() {
         return this.innerProperties() == null ? null : this.innerProperties().storageProfile();
     }
 
@@ -256,7 +272,7 @@ public final class VirtualMachineScaleSetVMInner extends Resource {
      * @param storageProfile the storageProfile value to set.
      * @return the VirtualMachineScaleSetVMInner object itself.
      */
-    public VirtualMachineScaleSetVMInner withStorageProfile(StorageProfile storageProfile) {
+    public VirtualMachineScaleSetVMInner withStorageProfile(StorageProfileInner storageProfile) {
         if (this.innerProperties() == null) {
             this.innerProperties = new VirtualMachineScaleSetVMPropertiesInner();
         }
