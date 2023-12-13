@@ -40,6 +40,34 @@ public interface OperationalInsightsManagementClient {
     Duration getDefaultPollInterval();
 
     /**
+     * Gets the OperationsClient object to access its operations.
+     * 
+     * @return the OperationsClient object.
+     */
+    OperationsClient getOperations();
+
+    /**
+     * Gets the WorkspacesClient object to access its operations.
+     * 
+     * @return the WorkspacesClient object.
+     */
+    WorkspacesClient getWorkspaces();
+
+    /**
+     * Gets the DeletedWorkspacesClient object to access its operations.
+     * 
+     * @return the DeletedWorkspacesClient object.
+     */
+    DeletedWorkspacesClient getDeletedWorkspaces();
+
+    /**
+     * Gets the TablesClient object to access its operations.
+     * 
+     * @return the TablesClient object.
+     */
+    TablesClient getTables();
+
+    /**
      * Gets the QueryPacksClient object to access its operations.
      * 
      * @return the QueryPacksClient object.
@@ -164,32 +192,4 @@ public interface OperationalInsightsManagementClient {
      * @return the ClustersClient object.
      */
     ClustersClient getClusters();
-
-    /**
-     * Gets the OperationsClient object to access its operations.
-     * 
-     * @return the OperationsClient object.
-     */
-    OperationsClient getOperations();
-
-    /**
-     * Gets the WorkspacesClient object to access its operations.
-     * 
-     * @return the WorkspacesClient object.
-     */
-    WorkspacesClient getWorkspaces();
-
-    /**
-     * Gets the DeletedWorkspacesClient object to access its operations.
-     * 
-     * @return the DeletedWorkspacesClient object.
-     */
-    DeletedWorkspacesClient getDeletedWorkspaces();
-
-    /**
-     * Gets the TablesClient object to access its operations.
-     * 
-     * @return the TablesClient object.
-     */
-    TablesClient getTables();
 }

@@ -130,6 +130,62 @@ public final class OperationalInsightsManagementClientImpl implements Operationa
     }
 
     /**
+     * The OperationsClient object to access its operations.
+     */
+    private final OperationsClient operations;
+
+    /**
+     * Gets the OperationsClient object to access its operations.
+     * 
+     * @return the OperationsClient object.
+     */
+    public OperationsClient getOperations() {
+        return this.operations;
+    }
+
+    /**
+     * The WorkspacesClient object to access its operations.
+     */
+    private final WorkspacesClient workspaces;
+
+    /**
+     * Gets the WorkspacesClient object to access its operations.
+     * 
+     * @return the WorkspacesClient object.
+     */
+    public WorkspacesClient getWorkspaces() {
+        return this.workspaces;
+    }
+
+    /**
+     * The DeletedWorkspacesClient object to access its operations.
+     */
+    private final DeletedWorkspacesClient deletedWorkspaces;
+
+    /**
+     * Gets the DeletedWorkspacesClient object to access its operations.
+     * 
+     * @return the DeletedWorkspacesClient object.
+     */
+    public DeletedWorkspacesClient getDeletedWorkspaces() {
+        return this.deletedWorkspaces;
+    }
+
+    /**
+     * The TablesClient object to access its operations.
+     */
+    private final TablesClient tables;
+
+    /**
+     * Gets the TablesClient object to access its operations.
+     * 
+     * @return the TablesClient object.
+     */
+    public TablesClient getTables() {
+        return this.tables;
+    }
+
+    /**
      * The QueryPacksClient object to access its operations.
      */
     private final QueryPacksClient queryPacks;
@@ -382,62 +438,6 @@ public final class OperationalInsightsManagementClientImpl implements Operationa
     }
 
     /**
-     * The OperationsClient object to access its operations.
-     */
-    private final OperationsClient operations;
-
-    /**
-     * Gets the OperationsClient object to access its operations.
-     * 
-     * @return the OperationsClient object.
-     */
-    public OperationsClient getOperations() {
-        return this.operations;
-    }
-
-    /**
-     * The WorkspacesClient object to access its operations.
-     */
-    private final WorkspacesClient workspaces;
-
-    /**
-     * Gets the WorkspacesClient object to access its operations.
-     * 
-     * @return the WorkspacesClient object.
-     */
-    public WorkspacesClient getWorkspaces() {
-        return this.workspaces;
-    }
-
-    /**
-     * The DeletedWorkspacesClient object to access its operations.
-     */
-    private final DeletedWorkspacesClient deletedWorkspaces;
-
-    /**
-     * Gets the DeletedWorkspacesClient object to access its operations.
-     * 
-     * @return the DeletedWorkspacesClient object.
-     */
-    public DeletedWorkspacesClient getDeletedWorkspaces() {
-        return this.deletedWorkspaces;
-    }
-
-    /**
-     * The TablesClient object to access its operations.
-     */
-    private final TablesClient tables;
-
-    /**
-     * Gets the TablesClient object to access its operations.
-     * 
-     * @return the TablesClient object.
-     */
-    public TablesClient getTables() {
-        return this.tables;
-    }
-
-    /**
      * Initializes an instance of OperationalInsightsManagementClient client.
      * 
      * @param httpPipeline The HTTP pipeline to send requests through.
@@ -454,6 +454,10 @@ public final class OperationalInsightsManagementClientImpl implements Operationa
         this.defaultPollInterval = defaultPollInterval;
         this.subscriptionId = subscriptionId;
         this.endpoint = endpoint;
+        this.operations = new OperationsClientImpl(this);
+        this.workspaces = new WorkspacesClientImpl(this);
+        this.deletedWorkspaces = new DeletedWorkspacesClientImpl(this);
+        this.tables = new TablesClientImpl(this);
         this.queryPacks = new QueryPacksClientImpl(this);
         this.queries = new QueriesClientImpl(this);
         this.dataExports = new DataExportsClientImpl(this);
@@ -472,10 +476,6 @@ public final class OperationalInsightsManagementClientImpl implements Operationa
         this.schemas = new SchemasClientImpl(this);
         this.workspacePurges = new WorkspacePurgesClientImpl(this);
         this.clusters = new ClustersClientImpl(this);
-        this.operations = new OperationsClientImpl(this);
-        this.workspaces = new WorkspacesClientImpl(this);
-        this.deletedWorkspaces = new DeletedWorkspacesClientImpl(this);
-        this.tables = new TablesClientImpl(this);
     }
 
     /**

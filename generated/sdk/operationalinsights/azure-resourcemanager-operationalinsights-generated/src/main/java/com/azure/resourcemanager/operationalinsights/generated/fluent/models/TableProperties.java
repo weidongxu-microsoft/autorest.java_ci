@@ -26,7 +26,7 @@ public final class TableProperties {
     private Integer retentionInDays;
 
     /*
-     * The table total retention in days, between 4 and 2556. Setting this property to -1 will default to table
+     * The table total retention in days, between 4 and 4383. Setting this property to -1 will default to table
      * retention.
      */
     @JsonProperty(value = "totalRetentionInDays")
@@ -122,7 +122,7 @@ public final class TableProperties {
     }
 
     /**
-     * Get the totalRetentionInDays property: The table total retention in days, between 4 and 2556. Setting this
+     * Get the totalRetentionInDays property: The table total retention in days, between 4 and 4383. Setting this
      * property to -1 will default to table retention.
      * 
      * @return the totalRetentionInDays value.
@@ -132,7 +132,7 @@ public final class TableProperties {
     }
 
     /**
-     * Set the totalRetentionInDays property: The table total retention in days, between 4 and 2556. Setting this
+     * Set the totalRetentionInDays property: The table total retention in days, between 4 and 4383. Setting this
      * property to -1 will default to table retention.
      * 
      * @param totalRetentionInDays the totalRetentionInDays value to set.

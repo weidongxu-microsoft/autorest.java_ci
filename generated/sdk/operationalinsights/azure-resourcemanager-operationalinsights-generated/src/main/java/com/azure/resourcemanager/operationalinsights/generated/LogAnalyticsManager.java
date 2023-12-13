@@ -81,6 +81,14 @@ import java.util.stream.Collectors;
  * Operational Insights Client.
  */
 public final class LogAnalyticsManager {
+    private Operations operations;
+
+    private Workspaces workspaces;
+
+    private DeletedWorkspaces deletedWorkspaces;
+
+    private Tables tables;
+
     private QueryPacks queryPacks;
 
     private Queries queries;
@@ -116,14 +124,6 @@ public final class LogAnalyticsManager {
     private WorkspacePurges workspacePurges;
 
     private Clusters clusters;
-
-    private Operations operations;
-
-    private Workspaces workspaces;
-
-    private DeletedWorkspaces deletedWorkspaces;
-
-    private Tables tables;
 
     private final OperationalInsightsManagementClient clientObject;
 
@@ -321,6 +321,54 @@ public final class LogAnalyticsManager {
                 .policies(policies.toArray(new HttpPipelinePolicy[0])).build();
             return new LogAnalyticsManager(httpPipeline, profile, defaultPollInterval);
         }
+    }
+
+    /**
+     * Gets the resource collection API of Operations.
+     * 
+     * @return Resource collection API of Operations.
+     */
+    public Operations operations() {
+        if (this.operations == null) {
+            this.operations = new OperationsImpl(clientObject.getOperations(), this);
+        }
+        return operations;
+    }
+
+    /**
+     * Gets the resource collection API of Workspaces. It manages Workspace.
+     * 
+     * @return Resource collection API of Workspaces.
+     */
+    public Workspaces workspaces() {
+        if (this.workspaces == null) {
+            this.workspaces = new WorkspacesImpl(clientObject.getWorkspaces(), this);
+        }
+        return workspaces;
+    }
+
+    /**
+     * Gets the resource collection API of DeletedWorkspaces.
+     * 
+     * @return Resource collection API of DeletedWorkspaces.
+     */
+    public DeletedWorkspaces deletedWorkspaces() {
+        if (this.deletedWorkspaces == null) {
+            this.deletedWorkspaces = new DeletedWorkspacesImpl(clientObject.getDeletedWorkspaces(), this);
+        }
+        return deletedWorkspaces;
+    }
+
+    /**
+     * Gets the resource collection API of Tables. It manages Table.
+     * 
+     * @return Resource collection API of Tables.
+     */
+    public Tables tables() {
+        if (this.tables == null) {
+            this.tables = new TablesImpl(clientObject.getTables(), this);
+        }
+        return tables;
     }
 
     /**
@@ -537,54 +585,6 @@ public final class LogAnalyticsManager {
             this.clusters = new ClustersImpl(clientObject.getClusters(), this);
         }
         return clusters;
-    }
-
-    /**
-     * Gets the resource collection API of Operations.
-     * 
-     * @return Resource collection API of Operations.
-     */
-    public Operations operations() {
-        if (this.operations == null) {
-            this.operations = new OperationsImpl(clientObject.getOperations(), this);
-        }
-        return operations;
-    }
-
-    /**
-     * Gets the resource collection API of Workspaces. It manages Workspace.
-     * 
-     * @return Resource collection API of Workspaces.
-     */
-    public Workspaces workspaces() {
-        if (this.workspaces == null) {
-            this.workspaces = new WorkspacesImpl(clientObject.getWorkspaces(), this);
-        }
-        return workspaces;
-    }
-
-    /**
-     * Gets the resource collection API of DeletedWorkspaces.
-     * 
-     * @return Resource collection API of DeletedWorkspaces.
-     */
-    public DeletedWorkspaces deletedWorkspaces() {
-        if (this.deletedWorkspaces == null) {
-            this.deletedWorkspaces = new DeletedWorkspacesImpl(clientObject.getDeletedWorkspaces(), this);
-        }
-        return deletedWorkspaces;
-    }
-
-    /**
-     * Gets the resource collection API of Tables. It manages Table.
-     * 
-     * @return Resource collection API of Tables.
-     */
-    public Tables tables() {
-        if (this.tables == null) {
-            this.tables = new TablesImpl(clientObject.getTables(), this);
-        }
-        return tables;
     }
 
     /**
