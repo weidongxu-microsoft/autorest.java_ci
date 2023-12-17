@@ -79,7 +79,6 @@ import com.azure.resourcemanager.appservice.generated.models.DeletedAppRestoreRe
 import com.azure.resourcemanager.appservice.generated.models.MSDeploy;
 import com.azure.resourcemanager.appservice.generated.models.MigrateMySqlRequest;
 import com.azure.resourcemanager.appservice.generated.models.PremierAddOnPatchResource;
-import com.azure.resourcemanager.appservice.generated.models.PrivateLinkConnectionApprovalRequestResource;
 import com.azure.resourcemanager.appservice.generated.models.SnapshotRestoreRequest;
 import com.azure.resourcemanager.appservice.generated.models.StorageMigrationOptions;
 import com.azure.resourcemanager.appservice.generated.models.WorkflowArtifacts;
@@ -6032,7 +6031,7 @@ public interface WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
      * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
-     * @param privateEndpointWrapper Private Endpoint Connection Approval ARM resource.
+     * @param privateEndpointWrapper Remote Private Endpoint Connection ARM resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      * request is rejected by server.
@@ -6042,7 +6041,8 @@ public interface WebAppsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<RemotePrivateEndpointConnectionArmResourceInner>, RemotePrivateEndpointConnectionArmResourceInner>
         beginApproveOrRejectPrivateEndpointConnection(String resourceGroupName, String name,
-            String privateEndpointConnectionName, PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper);
+            String privateEndpointConnectionName,
+            RemotePrivateEndpointConnectionArmResourceInner privateEndpointWrapper);
 
     /**
      * Approves or rejects a private endpoint connection
@@ -6052,7 +6052,7 @@ public interface WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
      * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
-     * @param privateEndpointWrapper Private Endpoint Connection Approval ARM resource.
+     * @param privateEndpointWrapper Remote Private Endpoint Connection ARM resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -6063,8 +6063,8 @@ public interface WebAppsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<RemotePrivateEndpointConnectionArmResourceInner>, RemotePrivateEndpointConnectionArmResourceInner>
         beginApproveOrRejectPrivateEndpointConnection(String resourceGroupName, String name,
-            String privateEndpointConnectionName, PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper,
-            Context context);
+            String privateEndpointConnectionName,
+            RemotePrivateEndpointConnectionArmResourceInner privateEndpointWrapper, Context context);
 
     /**
      * Approves or rejects a private endpoint connection
@@ -6074,7 +6074,7 @@ public interface WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
      * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
-     * @param privateEndpointWrapper Private Endpoint Connection Approval ARM resource.
+     * @param privateEndpointWrapper Remote Private Endpoint Connection ARM resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      * request is rejected by server.
@@ -6084,7 +6084,7 @@ public interface WebAppsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     RemotePrivateEndpointConnectionArmResourceInner approveOrRejectPrivateEndpointConnection(String resourceGroupName,
         String name, String privateEndpointConnectionName,
-        PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper);
+        RemotePrivateEndpointConnectionArmResourceInner privateEndpointWrapper);
 
     /**
      * Approves or rejects a private endpoint connection
@@ -6094,7 +6094,7 @@ public interface WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
      * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
-     * @param privateEndpointWrapper Private Endpoint Connection Approval ARM resource.
+     * @param privateEndpointWrapper Remote Private Endpoint Connection ARM resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -6105,7 +6105,7 @@ public interface WebAppsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     RemotePrivateEndpointConnectionArmResourceInner approveOrRejectPrivateEndpointConnection(String resourceGroupName,
         String name, String privateEndpointConnectionName,
-        PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper, Context context);
+        RemotePrivateEndpointConnectionArmResourceInner privateEndpointWrapper, Context context);
 
     /**
      * Deletes a private endpoint connection
@@ -13206,7 +13206,7 @@ public interface WebAppsClient {
      * @param name Name of the site.
      * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
      * @param slot The slot parameter.
-     * @param privateEndpointWrapper Private Endpoint Connection Approval ARM resource.
+     * @param privateEndpointWrapper Remote Private Endpoint Connection ARM resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      * request is rejected by server.
@@ -13217,7 +13217,7 @@ public interface WebAppsClient {
     SyncPoller<PollResult<RemotePrivateEndpointConnectionArmResourceInner>, RemotePrivateEndpointConnectionArmResourceInner>
         beginApproveOrRejectPrivateEndpointConnectionSlot(String resourceGroupName, String name,
             String privateEndpointConnectionName, String slot,
-            PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper);
+            RemotePrivateEndpointConnectionArmResourceInner privateEndpointWrapper);
 
     /**
      * Approves or rejects a private endpoint connection
@@ -13228,7 +13228,7 @@ public interface WebAppsClient {
      * @param name Name of the site.
      * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
      * @param slot The slot parameter.
-     * @param privateEndpointWrapper Private Endpoint Connection Approval ARM resource.
+     * @param privateEndpointWrapper Remote Private Endpoint Connection ARM resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -13240,7 +13240,7 @@ public interface WebAppsClient {
     SyncPoller<PollResult<RemotePrivateEndpointConnectionArmResourceInner>, RemotePrivateEndpointConnectionArmResourceInner>
         beginApproveOrRejectPrivateEndpointConnectionSlot(String resourceGroupName, String name,
             String privateEndpointConnectionName, String slot,
-            PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper, Context context);
+            RemotePrivateEndpointConnectionArmResourceInner privateEndpointWrapper, Context context);
 
     /**
      * Approves or rejects a private endpoint connection
@@ -13251,7 +13251,7 @@ public interface WebAppsClient {
      * @param name Name of the site.
      * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
      * @param slot The slot parameter.
-     * @param privateEndpointWrapper Private Endpoint Connection Approval ARM resource.
+     * @param privateEndpointWrapper Remote Private Endpoint Connection ARM resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      * request is rejected by server.
@@ -13261,7 +13261,7 @@ public interface WebAppsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     RemotePrivateEndpointConnectionArmResourceInner approveOrRejectPrivateEndpointConnectionSlot(
         String resourceGroupName, String name, String privateEndpointConnectionName, String slot,
-        PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper);
+        RemotePrivateEndpointConnectionArmResourceInner privateEndpointWrapper);
 
     /**
      * Approves or rejects a private endpoint connection
@@ -13272,7 +13272,7 @@ public interface WebAppsClient {
      * @param name Name of the site.
      * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
      * @param slot The slot parameter.
-     * @param privateEndpointWrapper Private Endpoint Connection Approval ARM resource.
+     * @param privateEndpointWrapper Remote Private Endpoint Connection ARM resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -13283,7 +13283,7 @@ public interface WebAppsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     RemotePrivateEndpointConnectionArmResourceInner approveOrRejectPrivateEndpointConnectionSlot(
         String resourceGroupName, String name, String privateEndpointConnectionName, String slot,
-        PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper, Context context);
+        RemotePrivateEndpointConnectionArmResourceInner privateEndpointWrapper, Context context);
 
     /**
      * Deletes a private endpoint connection

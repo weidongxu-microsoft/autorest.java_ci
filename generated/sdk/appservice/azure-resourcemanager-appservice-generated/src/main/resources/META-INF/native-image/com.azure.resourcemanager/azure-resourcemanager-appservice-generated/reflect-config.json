@@ -744,16 +744,6 @@
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true
 }, {
-  "name" : "com.azure.resourcemanager.appservice.generated.models.PrivateLinkConnectionApprovalRequestResource",
-  "allDeclaredConstructors" : true,
-  "allDeclaredFields" : true,
-  "allDeclaredMethods" : true
-}, {
-  "name" : "com.azure.resourcemanager.appservice.generated.fluent.models.PrivateLinkConnectionApprovalRequest",
-  "allDeclaredConstructors" : true,
-  "allDeclaredFields" : true,
-  "allDeclaredMethods" : true
-}, {
   "name" : "com.azure.resourcemanager.appservice.generated.fluent.models.PrivateLinkResourcesWrapperInner",
   "allDeclaredConstructors" : true,
   "allDeclaredFields" : true,
@@ -3135,6 +3125,16 @@
   "allDeclaredMethods" : true
 }, {
   "name" : "com.azure.resourcemanager.appservice.generated.fluent.models.WorkflowVersionProperties",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
+  "name" : "com.azure.resourcemanager.appservice.generated.fluent.models.PrivateLinkConnectionApprovalRequest",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
+  "name" : "com.azure.resourcemanager.appservice.generated.models.PrivateLinkConnectionApprovalRequestResource",
   "allDeclaredConstructors" : true,
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true

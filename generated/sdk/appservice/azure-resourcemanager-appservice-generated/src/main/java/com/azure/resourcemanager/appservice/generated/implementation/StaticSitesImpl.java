@@ -28,7 +28,6 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.StringListIn
 import com.azure.resourcemanager.appservice.generated.models.BasicAuthName;
 import com.azure.resourcemanager.appservice.generated.models.DatabaseConnection;
 import com.azure.resourcemanager.appservice.generated.models.DatabaseConnectionPatchRequest;
-import com.azure.resourcemanager.appservice.generated.models.PrivateLinkConnectionApprovalRequestResource;
 import com.azure.resourcemanager.appservice.generated.models.PrivateLinkResourcesWrapper;
 import com.azure.resourcemanager.appservice.generated.models.RemotePrivateEndpointConnectionArmResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteArmResource;
@@ -921,7 +920,7 @@ public final class StaticSitesImpl implements StaticSites {
 
     public RemotePrivateEndpointConnectionArmResource approveOrRejectPrivateEndpointConnection(String resourceGroupName,
         String name, String privateEndpointConnectionName,
-        PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper) {
+        RemotePrivateEndpointConnectionArmResourceInner privateEndpointWrapper) {
         RemotePrivateEndpointConnectionArmResourceInner inner
             = this.serviceClient().approveOrRejectPrivateEndpointConnection(resourceGroupName, name,
                 privateEndpointConnectionName, privateEndpointWrapper);
@@ -934,7 +933,7 @@ public final class StaticSitesImpl implements StaticSites {
 
     public RemotePrivateEndpointConnectionArmResource approveOrRejectPrivateEndpointConnection(String resourceGroupName,
         String name, String privateEndpointConnectionName,
-        PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper, Context context) {
+        RemotePrivateEndpointConnectionArmResourceInner privateEndpointWrapper, Context context) {
         RemotePrivateEndpointConnectionArmResourceInner inner
             = this.serviceClient().approveOrRejectPrivateEndpointConnection(resourceGroupName, name,
                 privateEndpointConnectionName, privateEndpointWrapper, context);

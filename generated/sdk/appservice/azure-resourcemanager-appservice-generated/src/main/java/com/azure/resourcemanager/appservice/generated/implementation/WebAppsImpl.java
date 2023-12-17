@@ -105,7 +105,6 @@ import com.azure.resourcemanager.appservice.generated.models.PerfMonResponse;
 import com.azure.resourcemanager.appservice.generated.models.PremierAddOn;
 import com.azure.resourcemanager.appservice.generated.models.PremierAddOnPatchResource;
 import com.azure.resourcemanager.appservice.generated.models.PrivateAccess;
-import com.azure.resourcemanager.appservice.generated.models.PrivateLinkConnectionApprovalRequestResource;
 import com.azure.resourcemanager.appservice.generated.models.PrivateLinkResourcesWrapper;
 import com.azure.resourcemanager.appservice.generated.models.ProcessInfo;
 import com.azure.resourcemanager.appservice.generated.models.ProcessModuleInfo;
@@ -2462,7 +2461,7 @@ public final class WebAppsImpl implements WebApps {
 
     public RemotePrivateEndpointConnectionArmResource approveOrRejectPrivateEndpointConnection(String resourceGroupName,
         String name, String privateEndpointConnectionName,
-        PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper) {
+        RemotePrivateEndpointConnectionArmResourceInner privateEndpointWrapper) {
         RemotePrivateEndpointConnectionArmResourceInner inner
             = this.serviceClient().approveOrRejectPrivateEndpointConnection(resourceGroupName, name,
                 privateEndpointConnectionName, privateEndpointWrapper);
@@ -2475,7 +2474,7 @@ public final class WebAppsImpl implements WebApps {
 
     public RemotePrivateEndpointConnectionArmResource approveOrRejectPrivateEndpointConnection(String resourceGroupName,
         String name, String privateEndpointConnectionName,
-        PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper, Context context) {
+        RemotePrivateEndpointConnectionArmResourceInner privateEndpointWrapper, Context context) {
         RemotePrivateEndpointConnectionArmResourceInner inner
             = this.serviceClient().approveOrRejectPrivateEndpointConnection(resourceGroupName, name,
                 privateEndpointConnectionName, privateEndpointWrapper, context);
@@ -5372,7 +5371,7 @@ public final class WebAppsImpl implements WebApps {
 
     public RemotePrivateEndpointConnectionArmResource approveOrRejectPrivateEndpointConnectionSlot(
         String resourceGroupName, String name, String privateEndpointConnectionName, String slot,
-        PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper) {
+        RemotePrivateEndpointConnectionArmResourceInner privateEndpointWrapper) {
         RemotePrivateEndpointConnectionArmResourceInner inner
             = this.serviceClient().approveOrRejectPrivateEndpointConnectionSlot(resourceGroupName, name,
                 privateEndpointConnectionName, slot, privateEndpointWrapper);
@@ -5385,7 +5384,7 @@ public final class WebAppsImpl implements WebApps {
 
     public RemotePrivateEndpointConnectionArmResource approveOrRejectPrivateEndpointConnectionSlot(
         String resourceGroupName, String name, String privateEndpointConnectionName, String slot,
-        PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper, Context context) {
+        RemotePrivateEndpointConnectionArmResourceInner privateEndpointWrapper, Context context) {
         RemotePrivateEndpointConnectionArmResourceInner inner
             = this.serviceClient().approveOrRejectPrivateEndpointConnectionSlot(resourceGroupName, name,
                 privateEndpointConnectionName, slot, privateEndpointWrapper, context);

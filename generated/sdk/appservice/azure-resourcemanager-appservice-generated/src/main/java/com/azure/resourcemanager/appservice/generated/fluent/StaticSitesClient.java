@@ -28,7 +28,6 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.StringDictio
 import com.azure.resourcemanager.appservice.generated.fluent.models.StringListInner;
 import com.azure.resourcemanager.appservice.generated.models.BasicAuthName;
 import com.azure.resourcemanager.appservice.generated.models.DatabaseConnectionPatchRequest;
-import com.azure.resourcemanager.appservice.generated.models.PrivateLinkConnectionApprovalRequestResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteCustomDomainRequestPropertiesArmResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSitePatchResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteResetPropertiesArmResource;
@@ -2407,7 +2406,8 @@ public interface StaticSitesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<RemotePrivateEndpointConnectionArmResourceInner>, RemotePrivateEndpointConnectionArmResourceInner>
         beginApproveOrRejectPrivateEndpointConnection(String resourceGroupName, String name,
-            String privateEndpointConnectionName, PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper);
+            String privateEndpointConnectionName,
+            RemotePrivateEndpointConnectionArmResourceInner privateEndpointWrapper);
 
     /**
      * Approves or rejects a private endpoint connection
@@ -2428,8 +2428,8 @@ public interface StaticSitesClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<RemotePrivateEndpointConnectionArmResourceInner>, RemotePrivateEndpointConnectionArmResourceInner>
         beginApproveOrRejectPrivateEndpointConnection(String resourceGroupName, String name,
-            String privateEndpointConnectionName, PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper,
-            Context context);
+            String privateEndpointConnectionName,
+            RemotePrivateEndpointConnectionArmResourceInner privateEndpointWrapper, Context context);
 
     /**
      * Approves or rejects a private endpoint connection
@@ -2449,7 +2449,7 @@ public interface StaticSitesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     RemotePrivateEndpointConnectionArmResourceInner approveOrRejectPrivateEndpointConnection(String resourceGroupName,
         String name, String privateEndpointConnectionName,
-        PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper);
+        RemotePrivateEndpointConnectionArmResourceInner privateEndpointWrapper);
 
     /**
      * Approves or rejects a private endpoint connection
@@ -2470,7 +2470,7 @@ public interface StaticSitesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     RemotePrivateEndpointConnectionArmResourceInner approveOrRejectPrivateEndpointConnection(String resourceGroupName,
         String name, String privateEndpointConnectionName,
-        PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper, Context context);
+        RemotePrivateEndpointConnectionArmResourceInner privateEndpointWrapper, Context context);
 
     /**
      * Deletes a private endpoint connection

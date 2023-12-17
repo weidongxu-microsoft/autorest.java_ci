@@ -30,7 +30,6 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.SkuInfoInner
 import com.azure.resourcemanager.appservice.generated.fluent.models.StampCapacityInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.UsageInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.WorkerPoolResourceInner;
-import com.azure.resourcemanager.appservice.generated.models.PrivateLinkConnectionApprovalRequestResource;
 import com.azure.resourcemanager.appservice.generated.models.VirtualNetworkProfile;
 import java.util.List;
 
@@ -1242,7 +1241,7 @@ public interface AppServiceEnvironmentsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
-     * @param privateEndpointWrapper Private Endpoint Connection Approval ARM resource.
+     * @param privateEndpointWrapper Remote Private Endpoint Connection ARM resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      * request is rejected by server.
@@ -1252,7 +1251,8 @@ public interface AppServiceEnvironmentsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<RemotePrivateEndpointConnectionArmResourceInner>, RemotePrivateEndpointConnectionArmResourceInner>
         beginApproveOrRejectPrivateEndpointConnection(String resourceGroupName, String name,
-            String privateEndpointConnectionName, PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper);
+            String privateEndpointConnectionName,
+            RemotePrivateEndpointConnectionArmResourceInner privateEndpointWrapper);
 
     /**
      * Approves or rejects a private endpoint connection
@@ -1262,7 +1262,7 @@ public interface AppServiceEnvironmentsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
-     * @param privateEndpointWrapper Private Endpoint Connection Approval ARM resource.
+     * @param privateEndpointWrapper Remote Private Endpoint Connection ARM resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -1273,8 +1273,8 @@ public interface AppServiceEnvironmentsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<RemotePrivateEndpointConnectionArmResourceInner>, RemotePrivateEndpointConnectionArmResourceInner>
         beginApproveOrRejectPrivateEndpointConnection(String resourceGroupName, String name,
-            String privateEndpointConnectionName, PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper,
-            Context context);
+            String privateEndpointConnectionName,
+            RemotePrivateEndpointConnectionArmResourceInner privateEndpointWrapper, Context context);
 
     /**
      * Approves or rejects a private endpoint connection
@@ -1284,7 +1284,7 @@ public interface AppServiceEnvironmentsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
-     * @param privateEndpointWrapper Private Endpoint Connection Approval ARM resource.
+     * @param privateEndpointWrapper Remote Private Endpoint Connection ARM resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      * request is rejected by server.
@@ -1294,7 +1294,7 @@ public interface AppServiceEnvironmentsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     RemotePrivateEndpointConnectionArmResourceInner approveOrRejectPrivateEndpointConnection(String resourceGroupName,
         String name, String privateEndpointConnectionName,
-        PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper);
+        RemotePrivateEndpointConnectionArmResourceInner privateEndpointWrapper);
 
     /**
      * Approves or rejects a private endpoint connection
@@ -1304,7 +1304,7 @@ public interface AppServiceEnvironmentsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
-     * @param privateEndpointWrapper Private Endpoint Connection Approval ARM resource.
+     * @param privateEndpointWrapper Remote Private Endpoint Connection ARM resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -1315,7 +1315,7 @@ public interface AppServiceEnvironmentsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     RemotePrivateEndpointConnectionArmResourceInner approveOrRejectPrivateEndpointConnection(String resourceGroupName,
         String name, String privateEndpointConnectionName,
-        PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper, Context context);
+        RemotePrivateEndpointConnectionArmResourceInner privateEndpointWrapper, Context context);
 
     /**
      * Deletes a private endpoint connection

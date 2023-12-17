@@ -120,7 +120,8 @@ public interface RemotePrivateEndpointConnectionArmResource {
          * required properties for the resource to be created, but also allows for any other optional properties to be
          * specified.
          */
-        interface WithCreate extends DefinitionStages.WithKind, DefinitionStages.WithPrivateLinkServiceConnectionState {
+        interface WithCreate extends DefinitionStages.WithKind, DefinitionStages.WithPrivateEndpoint,
+            DefinitionStages.WithPrivateLinkServiceConnectionState, DefinitionStages.WithIpAddresses {
             /**
              * Executes the create request.
              * 
@@ -151,6 +152,19 @@ public interface RemotePrivateEndpointConnectionArmResource {
         }
 
         /**
+         * The stage of the RemotePrivateEndpointConnectionArmResource definition allowing to specify privateEndpoint.
+         */
+        interface WithPrivateEndpoint {
+            /**
+             * Specifies the privateEndpoint property: PrivateEndpoint of a remote private endpoint connection.
+             * 
+             * @param privateEndpoint PrivateEndpoint of a remote private endpoint connection.
+             * @return the next definition stage.
+             */
+            WithCreate withPrivateEndpoint(ArmIdWrapper privateEndpoint);
+        }
+
+        /**
          * The stage of the RemotePrivateEndpointConnectionArmResource definition allowing to specify
          * privateLinkServiceConnectionState.
          */
@@ -164,6 +178,19 @@ public interface RemotePrivateEndpointConnectionArmResource {
             WithCreate
                 withPrivateLinkServiceConnectionState(PrivateLinkConnectionState privateLinkServiceConnectionState);
         }
+
+        /**
+         * The stage of the RemotePrivateEndpointConnectionArmResource definition allowing to specify ipAddresses.
+         */
+        interface WithIpAddresses {
+            /**
+             * Specifies the ipAddresses property: Private IPAddresses mapped to the remote private endpoint.
+             * 
+             * @param ipAddresses Private IPAddresses mapped to the remote private endpoint.
+             * @return the next definition stage.
+             */
+            WithCreate withIpAddresses(List<String> ipAddresses);
+        }
     }
 
     /**
@@ -176,7 +203,8 @@ public interface RemotePrivateEndpointConnectionArmResource {
     /**
      * The template for RemotePrivateEndpointConnectionArmResource update.
      */
-    interface Update extends UpdateStages.WithKind, UpdateStages.WithPrivateLinkServiceConnectionState {
+    interface Update extends UpdateStages.WithKind, UpdateStages.WithPrivateEndpoint,
+        UpdateStages.WithPrivateLinkServiceConnectionState, UpdateStages.WithIpAddresses {
         /**
          * Executes the update request.
          * 
@@ -211,6 +239,19 @@ public interface RemotePrivateEndpointConnectionArmResource {
         }
 
         /**
+         * The stage of the RemotePrivateEndpointConnectionArmResource update allowing to specify privateEndpoint.
+         */
+        interface WithPrivateEndpoint {
+            /**
+             * Specifies the privateEndpoint property: PrivateEndpoint of a remote private endpoint connection.
+             * 
+             * @param privateEndpoint PrivateEndpoint of a remote private endpoint connection.
+             * @return the next definition stage.
+             */
+            Update withPrivateEndpoint(ArmIdWrapper privateEndpoint);
+        }
+
+        /**
          * The stage of the RemotePrivateEndpointConnectionArmResource update allowing to specify
          * privateLinkServiceConnectionState.
          */
@@ -222,6 +263,19 @@ public interface RemotePrivateEndpointConnectionArmResource {
              * @return the next definition stage.
              */
             Update withPrivateLinkServiceConnectionState(PrivateLinkConnectionState privateLinkServiceConnectionState);
+        }
+
+        /**
+         * The stage of the RemotePrivateEndpointConnectionArmResource update allowing to specify ipAddresses.
+         */
+        interface WithIpAddresses {
+            /**
+             * Specifies the ipAddresses property: Private IPAddresses mapped to the remote private endpoint.
+             * 
+             * @param ipAddresses Private IPAddresses mapped to the remote private endpoint.
+             * @return the next definition stage.
+             */
+            Update withIpAddresses(List<String> ipAddresses);
         }
     }
 

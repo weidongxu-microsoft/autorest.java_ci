@@ -53,7 +53,6 @@ import com.azure.resourcemanager.appservice.generated.models.DatabaseConnectionC
 import com.azure.resourcemanager.appservice.generated.models.DatabaseConnectionPatchRequest;
 import com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException;
 import com.azure.resourcemanager.appservice.generated.models.PrivateEndpointConnectionCollection;
-import com.azure.resourcemanager.appservice.generated.models.PrivateLinkConnectionApprovalRequestResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteBasicAuthPropertiesCollection;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteBuildCollection;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteCollection;
@@ -660,7 +659,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
             @PathParam("resourceGroupName") String resourceGroupName, @PathParam("name") String name,
             @PathParam("privateEndpointConnectionName") String privateEndpointConnectionName,
             @PathParam("subscriptionId") String subscriptionId, @QueryParam("api-version") String apiVersion,
-            @BodyParam("application/json") PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper,
+            @BodyParam("application/json") RemotePrivateEndpointConnectionArmResourceInner privateEndpointWrapper,
             @HeaderParam("Accept") String accept, Context context);
 
         @Headers({ "Content-Type: application/json" })
@@ -10520,7 +10519,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> approveOrRejectPrivateEndpointConnectionWithResponseAsync(
         String resourceGroupName, String name, String privateEndpointConnectionName,
-        PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper) {
+        RemotePrivateEndpointConnectionArmResourceInner privateEndpointWrapper) {
         if (this.client.getEndpoint() == null) {
             return Mono.error(
                 new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
@@ -10573,7 +10572,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> approveOrRejectPrivateEndpointConnectionWithResponseAsync(
         String resourceGroupName, String name, String privateEndpointConnectionName,
-        PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper, Context context) {
+        RemotePrivateEndpointConnectionArmResourceInner privateEndpointWrapper, Context context) {
         if (this.client.getEndpoint() == null) {
             return Mono.error(
                 new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
@@ -10624,7 +10623,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     private
         PollerFlux<PollResult<RemotePrivateEndpointConnectionArmResourceInner>, RemotePrivateEndpointConnectionArmResourceInner>
         beginApproveOrRejectPrivateEndpointConnectionAsync(String resourceGroupName, String name,
-            String privateEndpointConnectionName, PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper) {
+            String privateEndpointConnectionName,
+            RemotePrivateEndpointConnectionArmResourceInner privateEndpointWrapper) {
         Mono<Response<Flux<ByteBuffer>>> mono = approveOrRejectPrivateEndpointConnectionWithResponseAsync(
             resourceGroupName, name, privateEndpointConnectionName, privateEndpointWrapper);
         return this.client
@@ -10652,8 +10652,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     private
         PollerFlux<PollResult<RemotePrivateEndpointConnectionArmResourceInner>, RemotePrivateEndpointConnectionArmResourceInner>
         beginApproveOrRejectPrivateEndpointConnectionAsync(String resourceGroupName, String name,
-            String privateEndpointConnectionName, PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper,
-            Context context) {
+            String privateEndpointConnectionName,
+            RemotePrivateEndpointConnectionArmResourceInner privateEndpointWrapper, Context context) {
         context = this.client.mergeContext(context);
         Mono<Response<Flux<ByteBuffer>>> mono = approveOrRejectPrivateEndpointConnectionWithResponseAsync(
             resourceGroupName, name, privateEndpointConnectionName, privateEndpointWrapper, context);
@@ -10681,7 +10681,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     public
         SyncPoller<PollResult<RemotePrivateEndpointConnectionArmResourceInner>, RemotePrivateEndpointConnectionArmResourceInner>
         beginApproveOrRejectPrivateEndpointConnection(String resourceGroupName, String name,
-            String privateEndpointConnectionName, PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper) {
+            String privateEndpointConnectionName,
+            RemotePrivateEndpointConnectionArmResourceInner privateEndpointWrapper) {
         return this.beginApproveOrRejectPrivateEndpointConnectionAsync(resourceGroupName, name,
             privateEndpointConnectionName, privateEndpointWrapper).getSyncPoller();
     }
@@ -10705,8 +10706,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     public
         SyncPoller<PollResult<RemotePrivateEndpointConnectionArmResourceInner>, RemotePrivateEndpointConnectionArmResourceInner>
         beginApproveOrRejectPrivateEndpointConnection(String resourceGroupName, String name,
-            String privateEndpointConnectionName, PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper,
-            Context context) {
+            String privateEndpointConnectionName,
+            RemotePrivateEndpointConnectionArmResourceInner privateEndpointWrapper, Context context) {
         return this.beginApproveOrRejectPrivateEndpointConnectionAsync(resourceGroupName, name,
             privateEndpointConnectionName, privateEndpointWrapper, context).getSyncPoller();
     }
@@ -10728,7 +10729,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<RemotePrivateEndpointConnectionArmResourceInner> approveOrRejectPrivateEndpointConnectionAsync(
         String resourceGroupName, String name, String privateEndpointConnectionName,
-        PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper) {
+        RemotePrivateEndpointConnectionArmResourceInner privateEndpointWrapper) {
         return beginApproveOrRejectPrivateEndpointConnectionAsync(resourceGroupName, name,
             privateEndpointConnectionName, privateEndpointWrapper).last()
                 .flatMap(this.client::getLroFinalResultOrError);
@@ -10752,7 +10753,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<RemotePrivateEndpointConnectionArmResourceInner> approveOrRejectPrivateEndpointConnectionAsync(
         String resourceGroupName, String name, String privateEndpointConnectionName,
-        PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper, Context context) {
+        RemotePrivateEndpointConnectionArmResourceInner privateEndpointWrapper, Context context) {
         return beginApproveOrRejectPrivateEndpointConnectionAsync(resourceGroupName, name,
             privateEndpointConnectionName, privateEndpointWrapper, context).last()
                 .flatMap(this.client::getLroFinalResultOrError);
@@ -10775,7 +10776,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public RemotePrivateEndpointConnectionArmResourceInner approveOrRejectPrivateEndpointConnection(
         String resourceGroupName, String name, String privateEndpointConnectionName,
-        PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper) {
+        RemotePrivateEndpointConnectionArmResourceInner privateEndpointWrapper) {
         return approveOrRejectPrivateEndpointConnectionAsync(resourceGroupName, name, privateEndpointConnectionName,
             privateEndpointWrapper).block();
     }
@@ -10798,7 +10799,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     public RemotePrivateEndpointConnectionArmResourceInner approveOrRejectPrivateEndpointConnection(
         String resourceGroupName, String name, String privateEndpointConnectionName,
-        PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper, Context context) {
+        RemotePrivateEndpointConnectionArmResourceInner privateEndpointWrapper, Context context) {
         return approveOrRejectPrivateEndpointConnectionAsync(resourceGroupName, name, privateEndpointConnectionName,
             privateEndpointWrapper, context).block();
     }

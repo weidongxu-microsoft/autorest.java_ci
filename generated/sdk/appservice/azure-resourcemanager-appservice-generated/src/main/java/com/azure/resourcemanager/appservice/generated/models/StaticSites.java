@@ -8,6 +8,7 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DatabaseConnectionInner;
+import com.azure.resourcemanager.appservice.generated.fluent.models.RemotePrivateEndpointConnectionArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteLinkedBackendArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteUserArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteUserProvidedFunctionAppArmResourceInner;
@@ -1633,7 +1634,7 @@ public interface StaticSites {
      */
     RemotePrivateEndpointConnectionArmResource approveOrRejectPrivateEndpointConnection(String resourceGroupName,
         String name, String privateEndpointConnectionName,
-        PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper);
+        RemotePrivateEndpointConnectionArmResourceInner privateEndpointWrapper);
 
     /**
      * Approves or rejects a private endpoint connection
@@ -1653,7 +1654,7 @@ public interface StaticSites {
      */
     RemotePrivateEndpointConnectionArmResource approveOrRejectPrivateEndpointConnection(String resourceGroupName,
         String name, String privateEndpointConnectionName,
-        PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper, Context context);
+        RemotePrivateEndpointConnectionArmResourceInner privateEndpointWrapper, Context context);
 
     /**
      * Deletes a private endpoint connection
