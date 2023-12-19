@@ -13,6 +13,11 @@ import java.util.Collection;
  */
 public final class StandardTierStorageRedundancy extends ExpandableStringEnum<StandardTierStorageRedundancy> {
     /**
+     * Static value Invalid for StandardTierStorageRedundancy.
+     */
+    public static final StandardTierStorageRedundancy INVALID = fromString("Invalid");
+
+    /**
      * Static value LocallyRedundant for StandardTierStorageRedundancy.
      */
     public static final StandardTierStorageRedundancy LOCALLY_REDUNDANT = fromString("LocallyRedundant");

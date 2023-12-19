@@ -24,6 +24,12 @@ public final class SoftDeleteSettings {
     @JsonProperty(value = "softDeleteRetentionPeriodInDays")
     private Integer softDeleteRetentionPeriodInDays;
 
+    /*
+     * The enhancedSecurityState property.
+     */
+    @JsonProperty(value = "enhancedSecurityState")
+    private EnhancedSecurityState enhancedSecurityState;
+
     /**
      * Creates an instance of SoftDeleteSettings class.
      */
@@ -67,6 +73,26 @@ public final class SoftDeleteSettings {
      */
     public SoftDeleteSettings withSoftDeleteRetentionPeriodInDays(Integer softDeleteRetentionPeriodInDays) {
         this.softDeleteRetentionPeriodInDays = softDeleteRetentionPeriodInDays;
+        return this;
+    }
+
+    /**
+     * Get the enhancedSecurityState property: The enhancedSecurityState property.
+     * 
+     * @return the enhancedSecurityState value.
+     */
+    public EnhancedSecurityState enhancedSecurityState() {
+        return this.enhancedSecurityState;
+    }
+
+    /**
+     * Set the enhancedSecurityState property: The enhancedSecurityState property.
+     * 
+     * @param enhancedSecurityState the enhancedSecurityState value to set.
+     * @return the SoftDeleteSettings object itself.
+     */
+    public SoftDeleteSettings withEnhancedSecurityState(EnhancedSecurityState enhancedSecurityState) {
+        this.enhancedSecurityState = enhancedSecurityState;
         return this;
     }
 

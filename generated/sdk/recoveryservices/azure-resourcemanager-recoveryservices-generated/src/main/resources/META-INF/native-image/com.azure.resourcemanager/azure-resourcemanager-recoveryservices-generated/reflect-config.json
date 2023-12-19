@@ -389,6 +389,11 @@
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true
 }, {
+  "name" : "com.azure.resourcemanager.recoveryservices.generated.models.EnhancedSecurityState",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
   "name" : "com.azure.resourcemanager.recoveryservices.generated.models.MultiUserAuthorization",
   "allDeclaredConstructors" : true,
   "allDeclaredFields" : true,

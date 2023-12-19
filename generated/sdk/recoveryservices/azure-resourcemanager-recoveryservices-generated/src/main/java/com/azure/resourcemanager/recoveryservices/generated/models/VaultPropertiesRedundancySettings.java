@@ -4,24 +4,24 @@
 
 package com.azure.resourcemanager.recoveryservices.generated.models;
 
-import com.azure.core.annotation.Immutable;
+import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * The redundancy Settings of a Vault.
  */
-@Immutable
+@Fluent
 public final class VaultPropertiesRedundancySettings {
     /*
      * The storage redundancy setting of a vault
      */
-    @JsonProperty(value = "standardTierStorageRedundancy", access = JsonProperty.Access.WRITE_ONLY)
+    @JsonProperty(value = "standardTierStorageRedundancy")
     private StandardTierStorageRedundancy standardTierStorageRedundancy;
 
     /*
      * Flag to show if Cross Region Restore is enabled on the Vault or not
      */
-    @JsonProperty(value = "crossRegionRestore", access = JsonProperty.Access.WRITE_ONLY)
+    @JsonProperty(value = "crossRegionRestore")
     private CrossRegionRestore crossRegionRestore;
 
     /**
@@ -40,12 +40,35 @@ public final class VaultPropertiesRedundancySettings {
     }
 
     /**
+     * Set the standardTierStorageRedundancy property: The storage redundancy setting of a vault.
+     * 
+     * @param standardTierStorageRedundancy the standardTierStorageRedundancy value to set.
+     * @return the VaultPropertiesRedundancySettings object itself.
+     */
+    public VaultPropertiesRedundancySettings
+        withStandardTierStorageRedundancy(StandardTierStorageRedundancy standardTierStorageRedundancy) {
+        this.standardTierStorageRedundancy = standardTierStorageRedundancy;
+        return this;
+    }
+
+    /**
      * Get the crossRegionRestore property: Flag to show if Cross Region Restore is enabled on the Vault or not.
      * 
      * @return the crossRegionRestore value.
      */
     public CrossRegionRestore crossRegionRestore() {
         return this.crossRegionRestore;
+    }
+
+    /**
+     * Set the crossRegionRestore property: Flag to show if Cross Region Restore is enabled on the Vault or not.
+     * 
+     * @param crossRegionRestore the crossRegionRestore value to set.
+     * @return the VaultPropertiesRedundancySettings object itself.
+     */
+    public VaultPropertiesRedundancySettings withCrossRegionRestore(CrossRegionRestore crossRegionRestore) {
+        this.crossRegionRestore = crossRegionRestore;
+        return this;
     }
 
     /**
