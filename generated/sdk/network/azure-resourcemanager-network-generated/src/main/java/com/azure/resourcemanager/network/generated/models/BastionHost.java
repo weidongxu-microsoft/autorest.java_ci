@@ -44,6 +44,13 @@ public interface BastionHost {
     Map<String, String> tags();
 
     /**
+     * Gets the zones property: A list of availability zones denoting where the resource needs to come from.
+     * 
+     * @return the zones value.
+     */
+    List<String> zones();
+
+    /**
      * Gets the etag property: A unique read-only string that changes whenever the resource is updated.
      * 
      * @return the etag value.
@@ -232,12 +239,12 @@ public interface BastionHost {
          * The stage of the BastionHost definition which contains all the minimum required properties for the resource
          * to be created, but also allows for any other optional properties to be specified.
          */
-        interface WithCreate
-            extends DefinitionStages.WithTags, DefinitionStages.WithSku, DefinitionStages.WithIpConfigurations,
-            DefinitionStages.WithDnsName, DefinitionStages.WithVirtualNetwork, DefinitionStages.WithNetworkAcls,
-            DefinitionStages.WithScaleUnits, DefinitionStages.WithDisableCopyPaste, DefinitionStages.WithEnableFileCopy,
-            DefinitionStages.WithEnableIpConnect, DefinitionStages.WithEnableShareableLink,
-            DefinitionStages.WithEnableTunneling, DefinitionStages.WithEnableKerberos {
+        interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithZones, DefinitionStages.WithSku,
+            DefinitionStages.WithIpConfigurations, DefinitionStages.WithDnsName, DefinitionStages.WithVirtualNetwork,
+            DefinitionStages.WithNetworkAcls, DefinitionStages.WithScaleUnits, DefinitionStages.WithDisableCopyPaste,
+            DefinitionStages.WithEnableFileCopy, DefinitionStages.WithEnableIpConnect,
+            DefinitionStages.WithEnableShareableLink, DefinitionStages.WithEnableTunneling,
+            DefinitionStages.WithEnableKerberos {
             /**
              * Executes the create request.
              * 
@@ -265,6 +272,20 @@ public interface BastionHost {
              * @return the next definition stage.
              */
             WithCreate withTags(Map<String, String> tags);
+        }
+
+        /**
+         * The stage of the BastionHost definition allowing to specify zones.
+         */
+        interface WithZones {
+            /**
+             * Specifies the zones property: A list of availability zones denoting where the resource needs to come
+             * from..
+             * 
+             * @param zones A list of availability zones denoting where the resource needs to come from.
+             * @return the next definition stage.
+             */
+            WithCreate withZones(List<String> zones);
         }
 
         /**

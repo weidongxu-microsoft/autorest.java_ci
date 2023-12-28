@@ -223,7 +223,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.delete(this.client.getEndpoint(), resourceGroupName, circuitName,
@@ -260,7 +260,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.delete(this.client.getEndpoint(), resourceGroupName, circuitName, apiVersion,
@@ -426,7 +426,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.getByResourceGroup(this.client.getEndpoint(), resourceGroupName,
@@ -464,7 +464,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.getByResourceGroup(this.client.getEndpoint(), resourceGroupName, circuitName, apiVersion,
@@ -553,7 +553,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.createOrUpdate(this.client.getEndpoint(), resourceGroupName, circuitName,
@@ -596,7 +596,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.createOrUpdate(this.client.getEndpoint(), resourceGroupName, circuitName, apiVersion,
@@ -787,7 +787,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.updateTags(this.client.getEndpoint(), resourceGroupName, circuitName,
@@ -830,7 +830,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.updateTags(this.client.getEndpoint(), resourceGroupName, circuitName, apiVersion,
@@ -926,7 +926,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.listArpTable(this.client.getEndpoint(), resourceGroupName, circuitName,
@@ -972,7 +972,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.listArpTable(this.client.getEndpoint(), resourceGroupName, circuitName, peeringName, devicePath,
@@ -1190,7 +1190,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.listRoutesTable(this.client.getEndpoint(), resourceGroupName, circuitName,
@@ -1236,7 +1236,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.listRoutesTable(this.client.getEndpoint(), resourceGroupName, circuitName, peeringName,
@@ -1454,7 +1454,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.listRoutesTableSummary(this.client.getEndpoint(), resourceGroupName,
@@ -1500,7 +1500,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.listRoutesTableSummary(this.client.getEndpoint(), resourceGroupName, circuitName, peeringName,
@@ -1715,7 +1715,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.getStats(this.client.getEndpoint(), resourceGroupName, circuitName,
@@ -1753,7 +1753,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.getStats(this.client.getEndpoint(), resourceGroupName, circuitName, apiVersion,
@@ -1841,7 +1841,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.getPeeringStats(this.client.getEndpoint(), resourceGroupName, circuitName,
@@ -1883,7 +1883,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.getPeeringStats(this.client.getEndpoint(), resourceGroupName, circuitName, peeringName,
@@ -1967,7 +1967,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.listByResourceGroup(this.client.getEndpoint(), resourceGroupName,
@@ -2003,7 +2003,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -2091,7 +2091,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.list(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(),
@@ -2121,7 +2121,7 @@ public final class ExpressRouteCircuitsClientImpl implements ExpressRouteCircuit
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.list(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), accept, context)

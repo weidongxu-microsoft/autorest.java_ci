@@ -44,6 +44,15 @@ public final class BastionHostImpl implements BastionHost, BastionHost.Definitio
         }
     }
 
+    public List<String> zones() {
+        List<String> inner = this.innerModel().zones();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
     public String etag() {
         return this.innerModel().etag();
     }
@@ -213,6 +222,11 @@ public final class BastionHostImpl implements BastionHost, BastionHost.Definitio
             this.updateParameters.withTags(tags);
             return this;
         }
+    }
+
+    public BastionHostImpl withZones(List<String> zones) {
+        this.innerModel().withZones(zones);
+        return this;
     }
 
     public BastionHostImpl withSku(Sku sku) {

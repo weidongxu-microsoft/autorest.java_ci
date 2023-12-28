@@ -179,7 +179,7 @@ public final class NetworkManagersClientImpl implements NetworkManagersClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter networkManagerName is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.getByResourceGroup(this.client.getEndpoint(),
@@ -217,7 +217,7 @@ public final class NetworkManagersClientImpl implements NetworkManagersClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter networkManagerName is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.getByResourceGroup(this.client.getEndpoint(), this.client.getSubscriptionId(), resourceGroupName,
@@ -307,7 +307,7 @@ public final class NetworkManagersClientImpl implements NetworkManagersClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.createOrUpdate(this.client.getEndpoint(), this.client.getSubscriptionId(),
@@ -351,7 +351,7 @@ public final class NetworkManagersClientImpl implements NetworkManagersClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.createOrUpdate(this.client.getEndpoint(), this.client.getSubscriptionId(), resourceGroupName,
@@ -442,7 +442,7 @@ public final class NetworkManagersClientImpl implements NetworkManagersClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter networkManagerName is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.delete(this.client.getEndpoint(), this.client.getSubscriptionId(),
@@ -482,7 +482,7 @@ public final class NetworkManagersClientImpl implements NetworkManagersClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter networkManagerName is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.delete(this.client.getEndpoint(), this.client.getSubscriptionId(), resourceGroupName,
@@ -707,7 +707,7 @@ public final class NetworkManagersClientImpl implements NetworkManagersClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.patch(this.client.getEndpoint(), this.client.getSubscriptionId(),
@@ -751,7 +751,7 @@ public final class NetworkManagersClientImpl implements NetworkManagersClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.patch(this.client.getEndpoint(), this.client.getSubscriptionId(), resourceGroupName,
@@ -834,7 +834,7 @@ public final class NetworkManagersClientImpl implements NetworkManagersClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.list(this.client.getEndpoint(), this.client.getSubscriptionId(), apiVersion,
@@ -870,7 +870,7 @@ public final class NetworkManagersClientImpl implements NetworkManagersClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -997,7 +997,7 @@ public final class NetworkManagersClientImpl implements NetworkManagersClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.listByResourceGroup(this.client.getEndpoint(),
@@ -1038,7 +1038,7 @@ public final class NetworkManagersClientImpl implements NetworkManagersClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service

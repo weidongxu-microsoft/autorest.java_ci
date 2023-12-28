@@ -268,7 +268,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.delete(this.client.getEndpoint(), resourceGroupName, serviceName,
@@ -305,7 +305,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.delete(this.client.getEndpoint(), resourceGroupName, serviceName, apiVersion,
@@ -472,7 +472,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.getByResourceGroup(this.client.getEndpoint(), resourceGroupName,
@@ -511,7 +511,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.getByResourceGroup(this.client.getEndpoint(), resourceGroupName, serviceName, apiVersion,
@@ -603,7 +603,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.createOrUpdate(this.client.getEndpoint(), resourceGroupName, serviceName,
@@ -646,7 +646,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.createOrUpdate(this.client.getEndpoint(), resourceGroupName, serviceName, apiVersion,
@@ -827,7 +827,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.listByResourceGroup(this.client.getEndpoint(), resourceGroupName,
@@ -863,7 +863,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -951,7 +951,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.list(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(),
@@ -981,7 +981,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.list(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), accept, context)
@@ -1078,7 +1078,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.getPrivateEndpointConnection(this.client.getEndpoint(), resourceGroupName,
@@ -1122,7 +1122,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.getPrivateEndpointConnection(this.client.getEndpoint(), resourceGroupName, serviceName,
@@ -1229,7 +1229,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.updatePrivateEndpointConnection(this.client.getEndpoint(),
@@ -1279,7 +1279,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.updatePrivateEndpointConnection(this.client.getEndpoint(), resourceGroupName, serviceName,
@@ -1378,7 +1378,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1421,7 +1421,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.deletePrivateEndpointConnection(this.client.getEndpoint(), resourceGroupName, serviceName,
@@ -1605,7 +1605,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.listPrivateEndpointConnections(this.client.getEndpoint(), resourceGroupName,
@@ -1645,7 +1645,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1758,7 +1758,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.checkPrivateLinkServiceVisibility(this.client.getEndpoint(), location,
@@ -1797,7 +1797,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.checkPrivateLinkServiceVisibility(this.client.getEndpoint(), location, apiVersion,
@@ -1991,7 +1991,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.checkPrivateLinkServiceVisibilityByResourceGroup(this.client.getEndpoint(),
@@ -2036,7 +2036,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.checkPrivateLinkServiceVisibilityByResourceGroup(this.client.getEndpoint(), location,
@@ -2233,7 +2233,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.listAutoApprovedPrivateLinkServices(this.client.getEndpoint(), location,
@@ -2269,7 +2269,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -2379,7 +2379,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2422,7 +2422,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-06-01";
+        final String apiVersion = "2023-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
