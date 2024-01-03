@@ -50,11 +50,11 @@ public interface Cluster {
     Map<String, String> tags();
 
     /**
-     * Gets the identity property: The identity of the resource.
+     * Gets the identity property: Resource's identity.
      * 
      * @return the identity value.
      */
-    Identity identity();
+    ManagedServiceIdentity identity();
 
     /**
      * Gets the sku property: The sku properties.
@@ -257,12 +257,12 @@ public interface Cluster {
          */
         interface WithIdentity {
             /**
-             * Specifies the identity property: The identity of the resource..
+             * Specifies the identity property: Resource's identity..
              * 
-             * @param identity The identity of the resource.
+             * @param identity Resource's identity.
              * @return the next definition stage.
              */
-            WithCreate withIdentity(Identity identity);
+            WithCreate withIdentity(ManagedServiceIdentity identity);
         }
 
         /**
@@ -415,12 +415,12 @@ public interface Cluster {
          */
         interface WithIdentity {
             /**
-             * Specifies the identity property: The identity of the resource..
+             * Specifies the identity property: Resource's identity..
              * 
-             * @param identity The identity of the resource.
+             * @param identity Resource's identity.
              * @return the next definition stage.
              */
-            Update withIdentity(Identity identity);
+            Update withIdentity(ManagedServiceIdentity identity);
         }
 
         /**

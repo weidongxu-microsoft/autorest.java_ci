@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * The name of the SKU.
+ * The SKU (tier) of a cluster.
  */
 public final class ClusterSkuNameEnum extends ExpandableStringEnum<ClusterSkuNameEnum> {
     /**

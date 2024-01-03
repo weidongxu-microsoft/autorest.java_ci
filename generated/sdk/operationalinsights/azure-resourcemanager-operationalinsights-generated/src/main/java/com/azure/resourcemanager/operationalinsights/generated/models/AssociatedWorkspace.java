@@ -13,19 +13,21 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Immutable
 public final class AssociatedWorkspace {
     /*
-     * The id of the assigned workspace.
+     * Associated workspace immutable id.
      */
     @JsonProperty(value = "workspaceId", access = JsonProperty.Access.WRITE_ONLY)
     private String workspaceId;
 
     /*
-     * The name id the assigned workspace.
+     * Associated workspace resource name.
      */
     @JsonProperty(value = "workspaceName", access = JsonProperty.Access.WRITE_ONLY)
     private String workspaceName;
 
     /*
-     * The ResourceId id the assigned workspace.
+     * Associated workspace arm resource id, in the form of:
+     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/
+     * workspaces/{workspaceName}.
      */
     @JsonProperty(value = "resourceId", access = JsonProperty.Access.WRITE_ONLY)
     private String resourceId;
@@ -43,7 +45,7 @@ public final class AssociatedWorkspace {
     }
 
     /**
-     * Get the workspaceId property: The id of the assigned workspace.
+     * Get the workspaceId property: Associated workspace immutable id.
      * 
      * @return the workspaceId value.
      */
@@ -52,7 +54,7 @@ public final class AssociatedWorkspace {
     }
 
     /**
-     * Get the workspaceName property: The name id the assigned workspace.
+     * Get the workspaceName property: Associated workspace resource name.
      * 
      * @return the workspaceName value.
      */
@@ -61,7 +63,8 @@ public final class AssociatedWorkspace {
     }
 
     /**
-     * Get the resourceId property: The ResourceId id the assigned workspace.
+     * Get the resourceId property: Associated workspace arm resource id, in the form of:
+     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}.
      * 
      * @return the resourceId value.
      */

@@ -19,7 +19,7 @@ public final class CapacityReservationProperties {
     private String lastSkuUpdate;
 
     /*
-     * Minimum CapacityReservation value in GB.
+     * Minimum CapacityReservation value in Gigabytes.
      */
     @JsonProperty(value = "minCapacity", access = JsonProperty.Access.WRITE_ONLY)
     private Long minCapacity;
@@ -40,7 +40,7 @@ public final class CapacityReservationProperties {
     }
 
     /**
-     * Get the minCapacity property: Minimum CapacityReservation value in GB.
+     * Get the minCapacity property: Minimum CapacityReservation value in Gigabytes.
      * 
      * @return the minCapacity value.
      */

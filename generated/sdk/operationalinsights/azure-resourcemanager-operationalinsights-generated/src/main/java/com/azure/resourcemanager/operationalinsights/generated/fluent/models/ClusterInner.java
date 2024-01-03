@@ -11,8 +11,8 @@ import com.azure.resourcemanager.operationalinsights.generated.models.BillingTyp
 import com.azure.resourcemanager.operationalinsights.generated.models.CapacityReservationProperties;
 import com.azure.resourcemanager.operationalinsights.generated.models.ClusterEntityStatus;
 import com.azure.resourcemanager.operationalinsights.generated.models.ClusterSku;
-import com.azure.resourcemanager.operationalinsights.generated.models.Identity;
 import com.azure.resourcemanager.operationalinsights.generated.models.KeyVaultProperties;
+import com.azure.resourcemanager.operationalinsights.generated.models.ManagedServiceIdentity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 import java.util.Map;
@@ -23,10 +23,10 @@ import java.util.Map;
 @Fluent
 public final class ClusterInner extends Resource {
     /*
-     * The identity of the resource.
+     * Resource's identity.
      */
     @JsonProperty(value = "identity")
-    private Identity identity;
+    private ManagedServiceIdentity identity;
 
     /*
      * The sku properties.
@@ -47,21 +47,21 @@ public final class ClusterInner extends Resource {
     }
 
     /**
-     * Get the identity property: The identity of the resource.
+     * Get the identity property: Resource's identity.
      * 
      * @return the identity value.
      */
-    public Identity identity() {
+    public ManagedServiceIdentity identity() {
         return this.identity;
     }
 
     /**
-     * Set the identity property: The identity of the resource.
+     * Set the identity property: Resource's identity.
      * 
      * @param identity the identity value to set.
      * @return the ClusterInner object itself.
      */
-    public ClusterInner withIdentity(Identity identity) {
+    public ClusterInner withIdentity(ManagedServiceIdentity identity) {
         this.identity = identity;
         return this;
     }

@@ -14,8 +14,8 @@ import com.azure.resourcemanager.operationalinsights.generated.models.Cluster;
 import com.azure.resourcemanager.operationalinsights.generated.models.ClusterEntityStatus;
 import com.azure.resourcemanager.operationalinsights.generated.models.ClusterPatch;
 import com.azure.resourcemanager.operationalinsights.generated.models.ClusterSku;
-import com.azure.resourcemanager.operationalinsights.generated.models.Identity;
 import com.azure.resourcemanager.operationalinsights.generated.models.KeyVaultProperties;
+import com.azure.resourcemanager.operationalinsights.generated.models.ManagedServiceIdentity;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -50,7 +50,7 @@ public final class ClusterImpl implements Cluster, Cluster.Definition, Cluster.U
         }
     }
 
-    public Identity identity() {
+    public ManagedServiceIdentity identity() {
         return this.innerModel().identity();
     }
 
@@ -210,7 +210,7 @@ public final class ClusterImpl implements Cluster, Cluster.Definition, Cluster.U
         }
     }
 
-    public ClusterImpl withIdentity(Identity identity) {
+    public ClusterImpl withIdentity(ManagedServiceIdentity identity) {
         if (isInCreateMode()) {
             this.innerModel().withIdentity(identity);
             return this;

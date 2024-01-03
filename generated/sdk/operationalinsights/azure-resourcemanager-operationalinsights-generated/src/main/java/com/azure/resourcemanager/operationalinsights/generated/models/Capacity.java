@@ -8,9 +8,29 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * The capacity value.
+ * The capacity reservation level in Gigabytes for this cluster.
  */
 public enum Capacity {
+    /**
+     * Enum value 100.
+     */
+    ONE_ZERO_ZERO(100L),
+
+    /**
+     * Enum value 200.
+     */
+    TWO_ZERO_ZERO(200L),
+
+    /**
+     * Enum value 300.
+     */
+    THREE_ZERO_ZERO(300L),
+
+    /**
+     * Enum value 400.
+     */
+    FOUR_ZERO_ZERO(400L),
+
     /**
      * Enum value 500.
      */
@@ -29,7 +49,22 @@ public enum Capacity {
     /**
      * Enum value 5000.
      */
-    FIVE_ZERO_ZERO_ZERO(5000L);
+    FIVE_ZERO_ZERO_ZERO(5000L),
+
+    /**
+     * Enum value 10000.
+     */
+    ONE_ZERO_ZERO_ZERO_ZERO(10000L),
+
+    /**
+     * Enum value 25000.
+     */
+    TWO_FIVE_ZERO_ZERO_ZERO(25000L),
+
+    /**
+     * Enum value 50000.
+     */
+    FIVE_ZERO_ZERO_ZERO_ZERO(50000L);
 
     /**
      * The actual serialized value for a Capacity instance.

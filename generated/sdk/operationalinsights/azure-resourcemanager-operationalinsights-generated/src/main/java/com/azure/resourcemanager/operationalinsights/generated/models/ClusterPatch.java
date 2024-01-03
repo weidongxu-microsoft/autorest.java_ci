@@ -22,10 +22,10 @@ public final class ClusterPatch {
     private ClusterPatchProperties innerProperties;
 
     /*
-     * The identity of the resource.
+     * Resource's identity.
      */
     @JsonProperty(value = "identity")
-    private Identity identity;
+    private ManagedServiceIdentity identity;
 
     /*
      * The sku properties.
@@ -56,21 +56,21 @@ public final class ClusterPatch {
     }
 
     /**
-     * Get the identity property: The identity of the resource.
+     * Get the identity property: Resource's identity.
      * 
      * @return the identity value.
      */
-    public Identity identity() {
+    public ManagedServiceIdentity identity() {
         return this.identity;
     }
 
     /**
-     * Set the identity property: The identity of the resource.
+     * Set the identity property: Resource's identity.
      * 
      * @param identity the identity value to set.
      * @return the ClusterPatch object itself.
      */
-    public ClusterPatch withIdentity(Identity identity) {
+    public ClusterPatch withIdentity(ManagedServiceIdentity identity) {
         this.identity = identity;
         return this;
     }
