@@ -75,6 +75,10 @@ public final class RecordSetImpl implements RecordSet {
         return this.innerModel().targetResource();
     }
 
+    public SubResource trafficManagementProfile() {
+        return this.innerModel().trafficManagementProfile();
+    }
+
     public List<ARecord> aRecords() {
         List<ARecord> inner = this.innerModel().aRecords();
         if (inner != null) {

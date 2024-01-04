@@ -77,6 +77,14 @@ public interface RecordSet {
     SubResource targetResource();
 
     /**
+     * Gets the trafficManagementProfile property: A reference to an azure traffic manager profile resource from where
+     * the dns resource value is taken.
+     * 
+     * @return the trafficManagementProfile value.
+     */
+    SubResource trafficManagementProfile();
+
+    /**
      * Gets the aRecords property: The list of A records in the record set.
      * 
      * @return the aRecords value.

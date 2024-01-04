@@ -61,6 +61,12 @@ public final class RecordSetProperties {
     private SubResource targetResource;
 
     /*
+     * A reference to an azure traffic manager profile resource from where the dns resource value is taken.
+     */
+    @JsonProperty(value = "trafficManagementProfile")
+    private SubResource trafficManagementProfile;
+
+    /*
      * The list of A records in the record set.
      */
     @JsonProperty(value = "ARecords")
@@ -219,6 +225,28 @@ public final class RecordSetProperties {
      */
     public RecordSetProperties withTargetResource(SubResource targetResource) {
         this.targetResource = targetResource;
+        return this;
+    }
+
+    /**
+     * Get the trafficManagementProfile property: A reference to an azure traffic manager profile resource from where
+     * the dns resource value is taken.
+     * 
+     * @return the trafficManagementProfile value.
+     */
+    public SubResource trafficManagementProfile() {
+        return this.trafficManagementProfile;
+    }
+
+    /**
+     * Set the trafficManagementProfile property: A reference to an azure traffic manager profile resource from where
+     * the dns resource value is taken.
+     * 
+     * @param trafficManagementProfile the trafficManagementProfile value to set.
+     * @return the RecordSetProperties object itself.
+     */
+    public RecordSetProperties withTrafficManagementProfile(SubResource trafficManagementProfile) {
+        this.trafficManagementProfile = trafficManagementProfile;
         return this;
     }
 

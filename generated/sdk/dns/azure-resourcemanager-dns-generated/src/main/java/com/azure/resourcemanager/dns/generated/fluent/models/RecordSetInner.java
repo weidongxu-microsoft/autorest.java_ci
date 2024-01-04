@@ -164,6 +164,31 @@ public final class RecordSetInner extends ProxyResource {
     }
 
     /**
+     * Get the trafficManagementProfile property: A reference to an azure traffic manager profile resource from where
+     * the dns resource value is taken.
+     * 
+     * @return the trafficManagementProfile value.
+     */
+    public SubResource trafficManagementProfile() {
+        return this.innerProperties() == null ? null : this.innerProperties().trafficManagementProfile();
+    }
+
+    /**
+     * Set the trafficManagementProfile property: A reference to an azure traffic manager profile resource from where
+     * the dns resource value is taken.
+     * 
+     * @param trafficManagementProfile the trafficManagementProfile value to set.
+     * @return the RecordSetInner object itself.
+     */
+    public RecordSetInner withTrafficManagementProfile(SubResource trafficManagementProfile) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new RecordSetProperties();
+        }
+        this.innerProperties().withTrafficManagementProfile(trafficManagementProfile);
+        return this;
+    }
+
+    /**
      * Get the aRecords property: The list of A records in the record set.
      * 
      * @return the aRecords value.
