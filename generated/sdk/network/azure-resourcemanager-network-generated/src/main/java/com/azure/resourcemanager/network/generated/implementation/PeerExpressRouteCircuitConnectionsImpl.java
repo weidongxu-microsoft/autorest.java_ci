@@ -54,14 +54,16 @@ public final class PeerExpressRouteCircuitConnectionsImpl implements PeerExpress
         String peeringName) {
         PagedIterable<PeerExpressRouteCircuitConnectionInner> inner
             = this.serviceClient().list(resourceGroupName, circuitName, peeringName);
-        return Utils.mapPage(inner, inner1 -> new PeerExpressRouteCircuitConnectionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new PeerExpressRouteCircuitConnectionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PeerExpressRouteCircuitConnection> list(String resourceGroupName, String circuitName,
         String peeringName, Context context) {
         PagedIterable<PeerExpressRouteCircuitConnectionInner> inner
             = this.serviceClient().list(resourceGroupName, circuitName, peeringName, context);
-        return Utils.mapPage(inner, inner1 -> new PeerExpressRouteCircuitConnectionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new PeerExpressRouteCircuitConnectionImpl(inner1, this.manager()));
     }
 
     private PeerExpressRouteCircuitConnectionsClient serviceClient() {

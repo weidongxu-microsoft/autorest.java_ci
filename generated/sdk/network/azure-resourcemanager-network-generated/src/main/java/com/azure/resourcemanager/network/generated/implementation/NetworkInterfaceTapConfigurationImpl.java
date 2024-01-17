@@ -110,9 +110,9 @@ public final class NetworkInterfaceTapConfigurationImpl implements NetworkInterf
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.networkInterfaceName = Utils.getValueFromIdByName(innerObject.id(), "networkInterfaces");
-        this.tapConfigurationName = Utils.getValueFromIdByName(innerObject.id(), "tapConfigurations");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.networkInterfaceName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "networkInterfaces");
+        this.tapConfigurationName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "tapConfigurations");
     }
 
     public NetworkInterfaceTapConfiguration refresh() {

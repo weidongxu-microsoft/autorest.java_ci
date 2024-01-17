@@ -104,28 +104,28 @@ public final class ConnectionMonitorsImpl implements ConnectionMonitors {
     public PagedIterable<ConnectionMonitorResult> list(String resourceGroupName, String networkWatcherName) {
         PagedIterable<ConnectionMonitorResultInner> inner
             = this.serviceClient().list(resourceGroupName, networkWatcherName);
-        return Utils.mapPage(inner, inner1 -> new ConnectionMonitorResultImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ConnectionMonitorResultImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ConnectionMonitorResult> list(String resourceGroupName, String networkWatcherName,
         Context context) {
         PagedIterable<ConnectionMonitorResultInner> inner
             = this.serviceClient().list(resourceGroupName, networkWatcherName, context);
-        return Utils.mapPage(inner, inner1 -> new ConnectionMonitorResultImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ConnectionMonitorResultImpl(inner1, this.manager()));
     }
 
     public ConnectionMonitorResult getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String networkWatcherName = Utils.getValueFromIdByName(id, "networkWatchers");
+        String networkWatcherName = ResourceManagerUtils.getValueFromIdByName(id, "networkWatchers");
         if (networkWatcherName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'networkWatchers'.", id)));
         }
-        String connectionMonitorName = Utils.getValueFromIdByName(id, "connectionMonitors");
+        String connectionMonitorName = ResourceManagerUtils.getValueFromIdByName(id, "connectionMonitors");
         if (connectionMonitorName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'connectionMonitors'.", id)));
@@ -135,17 +135,17 @@ public final class ConnectionMonitorsImpl implements ConnectionMonitors {
     }
 
     public Response<ConnectionMonitorResult> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String networkWatcherName = Utils.getValueFromIdByName(id, "networkWatchers");
+        String networkWatcherName = ResourceManagerUtils.getValueFromIdByName(id, "networkWatchers");
         if (networkWatcherName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'networkWatchers'.", id)));
         }
-        String connectionMonitorName = Utils.getValueFromIdByName(id, "connectionMonitors");
+        String connectionMonitorName = ResourceManagerUtils.getValueFromIdByName(id, "connectionMonitors");
         if (connectionMonitorName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'connectionMonitors'.", id)));
@@ -154,17 +154,17 @@ public final class ConnectionMonitorsImpl implements ConnectionMonitors {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String networkWatcherName = Utils.getValueFromIdByName(id, "networkWatchers");
+        String networkWatcherName = ResourceManagerUtils.getValueFromIdByName(id, "networkWatchers");
         if (networkWatcherName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'networkWatchers'.", id)));
         }
-        String connectionMonitorName = Utils.getValueFromIdByName(id, "connectionMonitors");
+        String connectionMonitorName = ResourceManagerUtils.getValueFromIdByName(id, "connectionMonitors");
         if (connectionMonitorName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'connectionMonitors'.", id)));
@@ -173,17 +173,17 @@ public final class ConnectionMonitorsImpl implements ConnectionMonitors {
     }
 
     public void deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String networkWatcherName = Utils.getValueFromIdByName(id, "networkWatchers");
+        String networkWatcherName = ResourceManagerUtils.getValueFromIdByName(id, "networkWatchers");
         if (networkWatcherName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'networkWatchers'.", id)));
         }
-        String connectionMonitorName = Utils.getValueFromIdByName(id, "connectionMonitors");
+        String connectionMonitorName = ResourceManagerUtils.getValueFromIdByName(id, "connectionMonitors");
         if (connectionMonitorName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'connectionMonitors'.", id)));

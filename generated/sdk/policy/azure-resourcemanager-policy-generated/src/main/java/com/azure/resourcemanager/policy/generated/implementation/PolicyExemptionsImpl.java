@@ -57,60 +57,60 @@ public final class PolicyExemptionsImpl implements PolicyExemptions {
 
     public PagedIterable<PolicyExemption> list() {
         PagedIterable<PolicyExemptionInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new PolicyExemptionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PolicyExemptionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PolicyExemption> list(String filter, Context context) {
         PagedIterable<PolicyExemptionInner> inner = this.serviceClient().list(filter, context);
-        return Utils.mapPage(inner, inner1 -> new PolicyExemptionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PolicyExemptionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PolicyExemption> listByResourceGroup(String resourceGroupName) {
         PagedIterable<PolicyExemptionInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return Utils.mapPage(inner, inner1 -> new PolicyExemptionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PolicyExemptionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PolicyExemption> listByResourceGroup(String resourceGroupName, String filter,
         Context context) {
         PagedIterable<PolicyExemptionInner> inner
             = this.serviceClient().listByResourceGroup(resourceGroupName, filter, context);
-        return Utils.mapPage(inner, inner1 -> new PolicyExemptionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PolicyExemptionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PolicyExemption> listForResource(String resourceGroupName, String resourceProviderNamespace,
         String parentResourcePath, String resourceType, String resourceName) {
         PagedIterable<PolicyExemptionInner> inner = this.serviceClient().listForResource(resourceGroupName,
             resourceProviderNamespace, parentResourcePath, resourceType, resourceName);
-        return Utils.mapPage(inner, inner1 -> new PolicyExemptionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PolicyExemptionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PolicyExemption> listForResource(String resourceGroupName, String resourceProviderNamespace,
         String parentResourcePath, String resourceType, String resourceName, String filter, Context context) {
         PagedIterable<PolicyExemptionInner> inner = this.serviceClient().listForResource(resourceGroupName,
             resourceProviderNamespace, parentResourcePath, resourceType, resourceName, filter, context);
-        return Utils.mapPage(inner, inner1 -> new PolicyExemptionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PolicyExemptionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PolicyExemption> listForManagementGroup(String managementGroupId) {
         PagedIterable<PolicyExemptionInner> inner = this.serviceClient().listForManagementGroup(managementGroupId);
-        return Utils.mapPage(inner, inner1 -> new PolicyExemptionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PolicyExemptionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PolicyExemption> listForManagementGroup(String managementGroupId, String filter,
         Context context) {
         PagedIterable<PolicyExemptionInner> inner
             = this.serviceClient().listForManagementGroup(managementGroupId, filter, context);
-        return Utils.mapPage(inner, inner1 -> new PolicyExemptionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PolicyExemptionImpl(inner1, this.manager()));
     }
 
     public PolicyExemption getById(String id) {
-        String scope = Utils.getValueFromIdByParameterName(id,
+        String scope = ResourceManagerUtils.getValueFromIdByParameterName(id,
             "/{scope}/providers/Microsoft.Authorization/policyExemptions/{policyExemptionName}", "scope");
         if (scope == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'scope'.", id)));
         }
-        String policyExemptionName = Utils.getValueFromIdByParameterName(id,
+        String policyExemptionName = ResourceManagerUtils.getValueFromIdByParameterName(id,
             "/{scope}/providers/Microsoft.Authorization/policyExemptions/{policyExemptionName}", "policyExemptionName");
         if (policyExemptionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
@@ -120,13 +120,13 @@ public final class PolicyExemptionsImpl implements PolicyExemptions {
     }
 
     public Response<PolicyExemption> getByIdWithResponse(String id, Context context) {
-        String scope = Utils.getValueFromIdByParameterName(id,
+        String scope = ResourceManagerUtils.getValueFromIdByParameterName(id,
             "/{scope}/providers/Microsoft.Authorization/policyExemptions/{policyExemptionName}", "scope");
         if (scope == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'scope'.", id)));
         }
-        String policyExemptionName = Utils.getValueFromIdByParameterName(id,
+        String policyExemptionName = ResourceManagerUtils.getValueFromIdByParameterName(id,
             "/{scope}/providers/Microsoft.Authorization/policyExemptions/{policyExemptionName}", "policyExemptionName");
         if (policyExemptionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
@@ -136,13 +136,13 @@ public final class PolicyExemptionsImpl implements PolicyExemptions {
     }
 
     public void deleteById(String id) {
-        String scope = Utils.getValueFromIdByParameterName(id,
+        String scope = ResourceManagerUtils.getValueFromIdByParameterName(id,
             "/{scope}/providers/Microsoft.Authorization/policyExemptions/{policyExemptionName}", "scope");
         if (scope == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'scope'.", id)));
         }
-        String policyExemptionName = Utils.getValueFromIdByParameterName(id,
+        String policyExemptionName = ResourceManagerUtils.getValueFromIdByParameterName(id,
             "/{scope}/providers/Microsoft.Authorization/policyExemptions/{policyExemptionName}", "policyExemptionName");
         if (policyExemptionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
@@ -152,13 +152,13 @@ public final class PolicyExemptionsImpl implements PolicyExemptions {
     }
 
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
-        String scope = Utils.getValueFromIdByParameterName(id,
+        String scope = ResourceManagerUtils.getValueFromIdByParameterName(id,
             "/{scope}/providers/Microsoft.Authorization/policyExemptions/{policyExemptionName}", "scope");
         if (scope == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'scope'.", id)));
         }
-        String policyExemptionName = Utils.getValueFromIdByParameterName(id,
+        String policyExemptionName = ResourceManagerUtils.getValueFromIdByParameterName(id,
             "/{scope}/providers/Microsoft.Authorization/policyExemptions/{policyExemptionName}", "policyExemptionName");
         if (policyExemptionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(

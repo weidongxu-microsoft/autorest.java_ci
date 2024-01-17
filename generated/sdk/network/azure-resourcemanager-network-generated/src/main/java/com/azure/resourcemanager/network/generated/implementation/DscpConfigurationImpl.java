@@ -202,8 +202,8 @@ public final class DscpConfigurationImpl
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.dscpConfigurationName = Utils.getValueFromIdByName(innerObject.id(), "dscpConfigurations");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.dscpConfigurationName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "dscpConfigurations");
     }
 
     public DscpConfiguration refresh() {

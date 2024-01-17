@@ -68,33 +68,33 @@ public final class GalleryApplicationVersionsImpl implements GalleryApplicationV
         String galleryName, String galleryApplicationName) {
         PagedIterable<GalleryApplicationVersionInner> inner
             = this.serviceClient().listByGalleryApplication(resourceGroupName, galleryName, galleryApplicationName);
-        return Utils.mapPage(inner, inner1 -> new GalleryApplicationVersionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new GalleryApplicationVersionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<GalleryApplicationVersion> listByGalleryApplication(String resourceGroupName,
         String galleryName, String galleryApplicationName, Context context) {
         PagedIterable<GalleryApplicationVersionInner> inner = this.serviceClient()
             .listByGalleryApplication(resourceGroupName, galleryName, galleryApplicationName, context);
-        return Utils.mapPage(inner, inner1 -> new GalleryApplicationVersionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new GalleryApplicationVersionImpl(inner1, this.manager()));
     }
 
     public GalleryApplicationVersion getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String galleryName = Utils.getValueFromIdByName(id, "galleries");
+        String galleryName = ResourceManagerUtils.getValueFromIdByName(id, "galleries");
         if (galleryName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'galleries'.", id)));
         }
-        String galleryApplicationName = Utils.getValueFromIdByName(id, "applications");
+        String galleryApplicationName = ResourceManagerUtils.getValueFromIdByName(id, "applications");
         if (galleryApplicationName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'applications'.", id)));
         }
-        String galleryApplicationVersionName = Utils.getValueFromIdByName(id, "versions");
+        String galleryApplicationVersionName = ResourceManagerUtils.getValueFromIdByName(id, "versions");
         if (galleryApplicationVersionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'versions'.", id)));
@@ -106,22 +106,22 @@ public final class GalleryApplicationVersionsImpl implements GalleryApplicationV
 
     public Response<GalleryApplicationVersion> getByIdWithResponse(String id, ReplicationStatusTypes expand,
         Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String galleryName = Utils.getValueFromIdByName(id, "galleries");
+        String galleryName = ResourceManagerUtils.getValueFromIdByName(id, "galleries");
         if (galleryName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'galleries'.", id)));
         }
-        String galleryApplicationName = Utils.getValueFromIdByName(id, "applications");
+        String galleryApplicationName = ResourceManagerUtils.getValueFromIdByName(id, "applications");
         if (galleryApplicationName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'applications'.", id)));
         }
-        String galleryApplicationVersionName = Utils.getValueFromIdByName(id, "versions");
+        String galleryApplicationVersionName = ResourceManagerUtils.getValueFromIdByName(id, "versions");
         if (galleryApplicationVersionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'versions'.", id)));
@@ -131,22 +131,22 @@ public final class GalleryApplicationVersionsImpl implements GalleryApplicationV
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String galleryName = Utils.getValueFromIdByName(id, "galleries");
+        String galleryName = ResourceManagerUtils.getValueFromIdByName(id, "galleries");
         if (galleryName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'galleries'.", id)));
         }
-        String galleryApplicationName = Utils.getValueFromIdByName(id, "applications");
+        String galleryApplicationName = ResourceManagerUtils.getValueFromIdByName(id, "applications");
         if (galleryApplicationName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'applications'.", id)));
         }
-        String galleryApplicationVersionName = Utils.getValueFromIdByName(id, "versions");
+        String galleryApplicationVersionName = ResourceManagerUtils.getValueFromIdByName(id, "versions");
         if (galleryApplicationVersionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'versions'.", id)));
@@ -156,22 +156,22 @@ public final class GalleryApplicationVersionsImpl implements GalleryApplicationV
     }
 
     public void deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String galleryName = Utils.getValueFromIdByName(id, "galleries");
+        String galleryName = ResourceManagerUtils.getValueFromIdByName(id, "galleries");
         if (galleryName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'galleries'.", id)));
         }
-        String galleryApplicationName = Utils.getValueFromIdByName(id, "applications");
+        String galleryApplicationName = ResourceManagerUtils.getValueFromIdByName(id, "applications");
         if (galleryApplicationName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'applications'.", id)));
         }
-        String galleryApplicationVersionName = Utils.getValueFromIdByName(id, "versions");
+        String galleryApplicationVersionName = ResourceManagerUtils.getValueFromIdByName(id, "versions");
         if (galleryApplicationVersionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'versions'.", id)));

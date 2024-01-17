@@ -177,9 +177,9 @@ public final class VirtualMachineExtensionImpl
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.vmName = Utils.getValueFromIdByName(innerObject.id(), "virtualMachines");
-        this.vmExtensionName = Utils.getValueFromIdByName(innerObject.id(), "extensions");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.vmName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "virtualMachines");
+        this.vmExtensionName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "extensions");
     }
 
     public VirtualMachineExtension refresh() {

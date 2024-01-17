@@ -113,9 +113,9 @@ public final class UserImpl implements User, User.Definition, User.Update {
     UserImpl(UserInner innerObject, com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.deviceName = Utils.getValueFromIdByName(innerObject.id(), "dataBoxEdgeDevices");
-        this.name = Utils.getValueFromIdByName(innerObject.id(), "users");
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.deviceName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "dataBoxEdgeDevices");
+        this.name = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "users");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
     }
 
     public User refresh() {

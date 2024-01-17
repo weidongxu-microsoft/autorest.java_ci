@@ -147,8 +147,9 @@ public final class DdosProtectionPlanImpl
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.ddosProtectionPlanName = Utils.getValueFromIdByName(innerObject.id(), "ddosProtectionPlans");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.ddosProtectionPlanName
+            = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "ddosProtectionPlans");
     }
 
     public DdosProtectionPlan refresh() {

@@ -95,9 +95,9 @@ public final class ScopedResourceImpl implements ScopedResource, ScopedResource.
         com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.scopeName = Utils.getValueFromIdByName(innerObject.id(), "privateLinkScopes");
-        this.name = Utils.getValueFromIdByName(innerObject.id(), "scopedResources");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.scopeName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "privateLinkScopes");
+        this.name = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "scopedResources");
     }
 
     public ScopedResource refresh() {

@@ -27,14 +27,14 @@ public final class ApplicationGatewayWafDynamicManifestsImpl implements Applicat
 
     public PagedIterable<ApplicationGatewayWafDynamicManifestResult> get(String location) {
         PagedIterable<ApplicationGatewayWafDynamicManifestResultInner> inner = this.serviceClient().get(location);
-        return Utils.mapPage(inner,
+        return ResourceManagerUtils.mapPage(inner,
             inner1 -> new ApplicationGatewayWafDynamicManifestResultImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ApplicationGatewayWafDynamicManifestResult> get(String location, Context context) {
         PagedIterable<ApplicationGatewayWafDynamicManifestResultInner> inner
             = this.serviceClient().get(location, context);
-        return Utils.mapPage(inner,
+        return ResourceManagerUtils.mapPage(inner,
             inner1 -> new ApplicationGatewayWafDynamicManifestResultImpl(inner1, this.manager()));
     }
 

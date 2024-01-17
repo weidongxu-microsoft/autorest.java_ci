@@ -29,13 +29,13 @@ public final class RolesImpl implements Roles {
 
     public PagedIterable<Role> listByDataBoxEdgeDevice(String deviceName, String resourceGroupName) {
         PagedIterable<RoleInner> inner = this.serviceClient().listByDataBoxEdgeDevice(deviceName, resourceGroupName);
-        return Utils.mapPage(inner, inner1 -> new RoleImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new RoleImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Role> listByDataBoxEdgeDevice(String deviceName, String resourceGroupName, Context context) {
         PagedIterable<RoleInner> inner
             = this.serviceClient().listByDataBoxEdgeDevice(deviceName, resourceGroupName, context);
-        return Utils.mapPage(inner, inner1 -> new RoleImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new RoleImpl(inner1, this.manager()));
     }
 
     public Response<Role> getWithResponse(String deviceName, String name, String resourceGroupName, Context context) {

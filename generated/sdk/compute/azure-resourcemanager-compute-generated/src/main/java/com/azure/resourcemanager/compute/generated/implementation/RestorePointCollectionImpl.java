@@ -144,8 +144,9 @@ public final class RestorePointCollectionImpl
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.restorePointCollectionName = Utils.getValueFromIdByName(innerObject.id(), "restorePointCollections");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.restorePointCollectionName
+            = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "restorePointCollections");
     }
 
     public RestorePointCollection refresh() {

@@ -30,12 +30,12 @@ public final class SharedGalleriesImpl implements SharedGalleries {
 
     public PagedIterable<SharedGallery> list(String location) {
         PagedIterable<SharedGalleryInner> inner = this.serviceClient().list(location);
-        return Utils.mapPage(inner, inner1 -> new SharedGalleryImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SharedGalleryImpl(inner1, this.manager()));
     }
 
     public PagedIterable<SharedGallery> list(String location, SharedToValues sharedTo, Context context) {
         PagedIterable<SharedGalleryInner> inner = this.serviceClient().list(location, sharedTo, context);
-        return Utils.mapPage(inner, inner1 -> new SharedGalleryImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SharedGalleryImpl(inner1, this.manager()));
     }
 
     public Response<SharedGallery> getWithResponse(String location, String galleryUniqueName, Context context) {

@@ -134,7 +134,7 @@ public final class LogProfileResourceImpl
         com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.logProfileName = Utils.getValueFromIdByName(innerObject.id(), "logprofiles");
+        this.logProfileName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "logprofiles");
     }
 
     public LogProfileResource refresh() {

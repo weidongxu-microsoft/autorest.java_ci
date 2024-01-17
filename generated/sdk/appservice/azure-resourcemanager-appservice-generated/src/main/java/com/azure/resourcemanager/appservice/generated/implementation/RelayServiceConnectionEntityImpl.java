@@ -123,9 +123,9 @@ public final class RelayServiceConnectionEntityImpl implements RelayServiceConne
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.name = Utils.getValueFromIdByName(innerObject.id(), "sites");
-        this.entityName = Utils.getValueFromIdByName(innerObject.id(), "hybridconnection");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.name = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "sites");
+        this.entityName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "hybridconnection");
     }
 
     public RelayServiceConnectionEntity refresh() {

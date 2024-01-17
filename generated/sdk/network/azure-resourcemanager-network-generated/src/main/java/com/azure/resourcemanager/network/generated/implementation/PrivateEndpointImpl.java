@@ -202,8 +202,8 @@ public final class PrivateEndpointImpl implements PrivateEndpoint, PrivateEndpoi
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.privateEndpointName = Utils.getValueFromIdByName(innerObject.id(), "privateEndpoints");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.privateEndpointName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "privateEndpoints");
     }
 
     public PrivateEndpoint refresh() {

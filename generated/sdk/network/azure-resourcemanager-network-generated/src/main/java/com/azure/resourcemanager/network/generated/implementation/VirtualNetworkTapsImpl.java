@@ -58,32 +58,32 @@ public final class VirtualNetworkTapsImpl implements VirtualNetworkTaps {
 
     public PagedIterable<VirtualNetworkTap> list() {
         PagedIterable<VirtualNetworkTapInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new VirtualNetworkTapImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new VirtualNetworkTapImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualNetworkTap> list(Context context) {
         PagedIterable<VirtualNetworkTapInner> inner = this.serviceClient().list(context);
-        return Utils.mapPage(inner, inner1 -> new VirtualNetworkTapImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new VirtualNetworkTapImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualNetworkTap> listByResourceGroup(String resourceGroupName) {
         PagedIterable<VirtualNetworkTapInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return Utils.mapPage(inner, inner1 -> new VirtualNetworkTapImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new VirtualNetworkTapImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualNetworkTap> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<VirtualNetworkTapInner> inner
             = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return Utils.mapPage(inner, inner1 -> new VirtualNetworkTapImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new VirtualNetworkTapImpl(inner1, this.manager()));
     }
 
     public VirtualNetworkTap getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String tapName = Utils.getValueFromIdByName(id, "virtualNetworkTaps");
+        String tapName = ResourceManagerUtils.getValueFromIdByName(id, "virtualNetworkTaps");
         if (tapName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'virtualNetworkTaps'.", id)));
@@ -92,12 +92,12 @@ public final class VirtualNetworkTapsImpl implements VirtualNetworkTaps {
     }
 
     public Response<VirtualNetworkTap> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String tapName = Utils.getValueFromIdByName(id, "virtualNetworkTaps");
+        String tapName = ResourceManagerUtils.getValueFromIdByName(id, "virtualNetworkTaps");
         if (tapName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'virtualNetworkTaps'.", id)));
@@ -106,12 +106,12 @@ public final class VirtualNetworkTapsImpl implements VirtualNetworkTaps {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String tapName = Utils.getValueFromIdByName(id, "virtualNetworkTaps");
+        String tapName = ResourceManagerUtils.getValueFromIdByName(id, "virtualNetworkTaps");
         if (tapName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'virtualNetworkTaps'.", id)));
@@ -120,12 +120,12 @@ public final class VirtualNetworkTapsImpl implements VirtualNetworkTaps {
     }
 
     public void deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String tapName = Utils.getValueFromIdByName(id, "virtualNetworkTaps");
+        String tapName = ResourceManagerUtils.getValueFromIdByName(id, "virtualNetworkTaps");
         if (tapName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'virtualNetworkTaps'.", id)));

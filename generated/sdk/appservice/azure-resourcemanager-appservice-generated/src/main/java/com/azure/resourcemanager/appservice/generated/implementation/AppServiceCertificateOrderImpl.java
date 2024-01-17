@@ -225,8 +225,8 @@ public final class AppServiceCertificateOrderImpl
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.certificateOrderName = Utils.getValueFromIdByName(innerObject.id(), "certificateOrders");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.certificateOrderName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "certificateOrders");
     }
 
     public AppServiceCertificateOrder refresh() {

@@ -120,8 +120,8 @@ public final class SshPublicKeyResourceImpl
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.sshPublicKeyName = Utils.getValueFromIdByName(innerObject.id(), "sshPublicKeys");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.sshPublicKeyName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "sshPublicKeys");
     }
 
     public SshPublicKeyResource refresh() {

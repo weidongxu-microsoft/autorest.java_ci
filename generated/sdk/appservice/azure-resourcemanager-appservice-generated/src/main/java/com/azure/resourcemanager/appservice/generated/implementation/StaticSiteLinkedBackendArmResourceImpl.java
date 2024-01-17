@@ -110,9 +110,9 @@ public final class StaticSiteLinkedBackendArmResourceImpl implements StaticSiteL
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.name = Utils.getValueFromIdByName(innerObject.id(), "staticSites");
-        this.linkedBackendName = Utils.getValueFromIdByName(innerObject.id(), "linkedBackends");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.name = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "staticSites");
+        this.linkedBackendName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "linkedBackends");
     }
 
     public StaticSiteLinkedBackendArmResource refresh() {

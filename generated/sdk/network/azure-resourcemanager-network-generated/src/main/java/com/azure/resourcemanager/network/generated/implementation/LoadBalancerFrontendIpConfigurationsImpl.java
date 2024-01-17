@@ -30,14 +30,14 @@ public final class LoadBalancerFrontendIpConfigurationsImpl implements LoadBalan
     public PagedIterable<FrontendIpConfiguration> list(String resourceGroupName, String loadBalancerName) {
         PagedIterable<FrontendIpConfigurationInner> inner
             = this.serviceClient().list(resourceGroupName, loadBalancerName);
-        return Utils.mapPage(inner, inner1 -> new FrontendIpConfigurationImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new FrontendIpConfigurationImpl(inner1, this.manager()));
     }
 
     public PagedIterable<FrontendIpConfiguration> list(String resourceGroupName, String loadBalancerName,
         Context context) {
         PagedIterable<FrontendIpConfigurationInner> inner
             = this.serviceClient().list(resourceGroupName, loadBalancerName, context);
-        return Utils.mapPage(inner, inner1 -> new FrontendIpConfigurationImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new FrontendIpConfigurationImpl(inner1, this.manager()));
     }
 
     public Response<FrontendIpConfiguration> getWithResponse(String resourceGroupName, String loadBalancerName,

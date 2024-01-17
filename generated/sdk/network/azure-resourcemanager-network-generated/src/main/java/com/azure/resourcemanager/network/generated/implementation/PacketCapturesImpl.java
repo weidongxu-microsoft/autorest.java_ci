@@ -115,14 +115,14 @@ public final class PacketCapturesImpl implements PacketCaptures {
     public PagedIterable<PacketCaptureResult> list(String resourceGroupName, String networkWatcherName) {
         PagedIterable<PacketCaptureResultInner> inner
             = this.serviceClient().list(resourceGroupName, networkWatcherName);
-        return Utils.mapPage(inner, inner1 -> new PacketCaptureResultImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PacketCaptureResultImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PacketCaptureResult> list(String resourceGroupName, String networkWatcherName,
         Context context) {
         PagedIterable<PacketCaptureResultInner> inner
             = this.serviceClient().list(resourceGroupName, networkWatcherName, context);
-        return Utils.mapPage(inner, inner1 -> new PacketCaptureResultImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PacketCaptureResultImpl(inner1, this.manager()));
     }
 
     private PacketCapturesClient serviceClient() {

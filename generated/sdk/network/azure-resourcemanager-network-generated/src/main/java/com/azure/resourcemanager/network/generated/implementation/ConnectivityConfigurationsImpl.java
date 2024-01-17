@@ -62,28 +62,28 @@ public final class ConnectivityConfigurationsImpl implements ConnectivityConfigu
     public PagedIterable<ConnectivityConfiguration> list(String resourceGroupName, String networkManagerName) {
         PagedIterable<ConnectivityConfigurationInner> inner
             = this.serviceClient().list(resourceGroupName, networkManagerName);
-        return Utils.mapPage(inner, inner1 -> new ConnectivityConfigurationImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ConnectivityConfigurationImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ConnectivityConfiguration> list(String resourceGroupName, String networkManagerName,
         Integer top, String skipToken, Context context) {
         PagedIterable<ConnectivityConfigurationInner> inner
             = this.serviceClient().list(resourceGroupName, networkManagerName, top, skipToken, context);
-        return Utils.mapPage(inner, inner1 -> new ConnectivityConfigurationImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ConnectivityConfigurationImpl(inner1, this.manager()));
     }
 
     public ConnectivityConfiguration getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String networkManagerName = Utils.getValueFromIdByName(id, "networkManagers");
+        String networkManagerName = ResourceManagerUtils.getValueFromIdByName(id, "networkManagers");
         if (networkManagerName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'networkManagers'.", id)));
         }
-        String configurationName = Utils.getValueFromIdByName(id, "connectivityConfigurations");
+        String configurationName = ResourceManagerUtils.getValueFromIdByName(id, "connectivityConfigurations");
         if (configurationName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'connectivityConfigurations'.", id)));
@@ -92,17 +92,17 @@ public final class ConnectivityConfigurationsImpl implements ConnectivityConfigu
     }
 
     public Response<ConnectivityConfiguration> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String networkManagerName = Utils.getValueFromIdByName(id, "networkManagers");
+        String networkManagerName = ResourceManagerUtils.getValueFromIdByName(id, "networkManagers");
         if (networkManagerName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'networkManagers'.", id)));
         }
-        String configurationName = Utils.getValueFromIdByName(id, "connectivityConfigurations");
+        String configurationName = ResourceManagerUtils.getValueFromIdByName(id, "connectivityConfigurations");
         if (configurationName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'connectivityConfigurations'.", id)));
@@ -111,17 +111,17 @@ public final class ConnectivityConfigurationsImpl implements ConnectivityConfigu
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String networkManagerName = Utils.getValueFromIdByName(id, "networkManagers");
+        String networkManagerName = ResourceManagerUtils.getValueFromIdByName(id, "networkManagers");
         if (networkManagerName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'networkManagers'.", id)));
         }
-        String configurationName = Utils.getValueFromIdByName(id, "connectivityConfigurations");
+        String configurationName = ResourceManagerUtils.getValueFromIdByName(id, "connectivityConfigurations");
         if (configurationName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'connectivityConfigurations'.", id)));
@@ -131,17 +131,17 @@ public final class ConnectivityConfigurationsImpl implements ConnectivityConfigu
     }
 
     public void deleteByIdWithResponse(String id, Boolean force, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String networkManagerName = Utils.getValueFromIdByName(id, "networkManagers");
+        String networkManagerName = ResourceManagerUtils.getValueFromIdByName(id, "networkManagers");
         if (networkManagerName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'networkManagers'.", id)));
         }
-        String configurationName = Utils.getValueFromIdByName(id, "connectivityConfigurations");
+        String configurationName = ResourceManagerUtils.getValueFromIdByName(id, "connectivityConfigurations");
         if (configurationName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'connectivityConfigurations'.", id)));

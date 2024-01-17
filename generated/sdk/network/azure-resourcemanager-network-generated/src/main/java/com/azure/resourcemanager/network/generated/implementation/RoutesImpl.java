@@ -58,26 +58,26 @@ public final class RoutesImpl implements Routes {
 
     public PagedIterable<Route> list(String resourceGroupName, String routeTableName) {
         PagedIterable<RouteInner> inner = this.serviceClient().list(resourceGroupName, routeTableName);
-        return Utils.mapPage(inner, inner1 -> new RouteImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new RouteImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Route> list(String resourceGroupName, String routeTableName, Context context) {
         PagedIterable<RouteInner> inner = this.serviceClient().list(resourceGroupName, routeTableName, context);
-        return Utils.mapPage(inner, inner1 -> new RouteImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new RouteImpl(inner1, this.manager()));
     }
 
     public Route getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String routeTableName = Utils.getValueFromIdByName(id, "routeTables");
+        String routeTableName = ResourceManagerUtils.getValueFromIdByName(id, "routeTables");
         if (routeTableName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'routeTables'.", id)));
         }
-        String routeName = Utils.getValueFromIdByName(id, "routes");
+        String routeName = ResourceManagerUtils.getValueFromIdByName(id, "routes");
         if (routeName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'routes'.", id)));
@@ -86,17 +86,17 @@ public final class RoutesImpl implements Routes {
     }
 
     public Response<Route> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String routeTableName = Utils.getValueFromIdByName(id, "routeTables");
+        String routeTableName = ResourceManagerUtils.getValueFromIdByName(id, "routeTables");
         if (routeTableName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'routeTables'.", id)));
         }
-        String routeName = Utils.getValueFromIdByName(id, "routes");
+        String routeName = ResourceManagerUtils.getValueFromIdByName(id, "routes");
         if (routeName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'routes'.", id)));
@@ -105,17 +105,17 @@ public final class RoutesImpl implements Routes {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String routeTableName = Utils.getValueFromIdByName(id, "routeTables");
+        String routeTableName = ResourceManagerUtils.getValueFromIdByName(id, "routeTables");
         if (routeTableName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'routeTables'.", id)));
         }
-        String routeName = Utils.getValueFromIdByName(id, "routes");
+        String routeName = ResourceManagerUtils.getValueFromIdByName(id, "routes");
         if (routeName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'routes'.", id)));
@@ -124,17 +124,17 @@ public final class RoutesImpl implements Routes {
     }
 
     public void deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String routeTableName = Utils.getValueFromIdByName(id, "routeTables");
+        String routeTableName = ResourceManagerUtils.getValueFromIdByName(id, "routeTables");
         if (routeTableName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'routeTables'.", id)));
         }
-        String routeName = Utils.getValueFromIdByName(id, "routes");
+        String routeName = ResourceManagerUtils.getValueFromIdByName(id, "routes");
         if (routeName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'routes'.", id)));

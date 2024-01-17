@@ -29,13 +29,13 @@ public final class ContainerAppsRevisionsImpl implements ContainerAppsRevisions 
 
     public PagedIterable<Revision> listRevisions(String resourceGroupName, String containerAppName) {
         PagedIterable<RevisionInner> inner = this.serviceClient().listRevisions(resourceGroupName, containerAppName);
-        return Utils.mapPage(inner, inner1 -> new RevisionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new RevisionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Revision> listRevisions(String resourceGroupName, String containerAppName, Context context) {
         PagedIterable<RevisionInner> inner
             = this.serviceClient().listRevisions(resourceGroupName, containerAppName, context);
-        return Utils.mapPage(inner, inner1 -> new RevisionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new RevisionImpl(inner1, this.manager()));
     }
 
     public Response<Revision> getRevisionWithResponse(String resourceGroupName, String containerAppName, String name,

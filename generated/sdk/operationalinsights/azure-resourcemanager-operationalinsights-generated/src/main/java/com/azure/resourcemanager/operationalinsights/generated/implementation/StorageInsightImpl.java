@@ -136,9 +136,9 @@ public final class StorageInsightImpl implements StorageInsight, StorageInsight.
         com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourcegroups");
-        this.workspaceName = Utils.getValueFromIdByName(innerObject.id(), "workspaces");
-        this.storageInsightName = Utils.getValueFromIdByName(innerObject.id(), "storageInsightConfigs");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourcegroups");
+        this.workspaceName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "workspaces");
+        this.storageInsightName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "storageInsightConfigs");
     }
 
     public StorageInsight refresh() {

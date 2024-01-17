@@ -146,10 +146,10 @@ public final class GalleryApplicationVersionImpl
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.galleryName = Utils.getValueFromIdByName(innerObject.id(), "galleries");
-        this.galleryApplicationName = Utils.getValueFromIdByName(innerObject.id(), "applications");
-        this.galleryApplicationVersionName = Utils.getValueFromIdByName(innerObject.id(), "versions");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.galleryName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "galleries");
+        this.galleryApplicationName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "applications");
+        this.galleryApplicationVersionName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "versions");
     }
 
     public GalleryApplicationVersion refresh() {

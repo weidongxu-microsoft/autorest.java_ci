@@ -62,33 +62,33 @@ public final class ManagedHsmsImpl implements ManagedHsms {
 
     public PagedIterable<ManagedHsm> listByResourceGroup(String resourceGroupName) {
         PagedIterable<ManagedHsmInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return Utils.mapPage(inner, inner1 -> new ManagedHsmImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ManagedHsmImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ManagedHsm> listByResourceGroup(String resourceGroupName, Integer top, Context context) {
         PagedIterable<ManagedHsmInner> inner
             = this.serviceClient().listByResourceGroup(resourceGroupName, top, context);
-        return Utils.mapPage(inner, inner1 -> new ManagedHsmImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ManagedHsmImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ManagedHsm> list() {
         PagedIterable<ManagedHsmInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new ManagedHsmImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ManagedHsmImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ManagedHsm> list(Integer top, Context context) {
         PagedIterable<ManagedHsmInner> inner = this.serviceClient().list(top, context);
-        return Utils.mapPage(inner, inner1 -> new ManagedHsmImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ManagedHsmImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DeletedManagedHsm> listDeleted() {
         PagedIterable<DeletedManagedHsmInner> inner = this.serviceClient().listDeleted();
-        return Utils.mapPage(inner, inner1 -> new DeletedManagedHsmImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DeletedManagedHsmImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DeletedManagedHsm> listDeleted(Context context) {
         PagedIterable<DeletedManagedHsmInner> inner = this.serviceClient().listDeleted(context);
-        return Utils.mapPage(inner, inner1 -> new DeletedManagedHsmImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DeletedManagedHsmImpl(inner1, this.manager()));
     }
 
     public Response<DeletedManagedHsm> getDeletedWithResponse(String name, String location, Context context) {
@@ -140,12 +140,12 @@ public final class ManagedHsmsImpl implements ManagedHsms {
     }
 
     public ManagedHsm getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "managedHSMs");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "managedHSMs");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'managedHSMs'.", id)));
@@ -154,12 +154,12 @@ public final class ManagedHsmsImpl implements ManagedHsms {
     }
 
     public Response<ManagedHsm> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "managedHSMs");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "managedHSMs");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'managedHSMs'.", id)));
@@ -168,12 +168,12 @@ public final class ManagedHsmsImpl implements ManagedHsms {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "managedHSMs");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "managedHSMs");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'managedHSMs'.", id)));
@@ -182,12 +182,12 @@ public final class ManagedHsmsImpl implements ManagedHsms {
     }
 
     public void deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "managedHSMs");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "managedHSMs");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'managedHSMs'.", id)));

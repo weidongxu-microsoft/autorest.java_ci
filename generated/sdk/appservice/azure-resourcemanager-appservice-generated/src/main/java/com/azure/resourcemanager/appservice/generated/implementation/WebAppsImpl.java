@@ -161,23 +161,23 @@ public final class WebAppsImpl implements WebApps {
 
     public PagedIterable<Site> list() {
         PagedIterable<SiteInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new SiteImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SiteImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Site> list(Context context) {
         PagedIterable<SiteInner> inner = this.serviceClient().list(context);
-        return Utils.mapPage(inner, inner1 -> new SiteImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SiteImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Site> listByResourceGroup(String resourceGroupName) {
         PagedIterable<SiteInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return Utils.mapPage(inner, inner1 -> new SiteImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SiteImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Site> listByResourceGroup(String resourceGroupName, Boolean includeSlots, Context context) {
         PagedIterable<SiteInner> inner
             = this.serviceClient().listByResourceGroup(resourceGroupName, includeSlots, context);
-        return Utils.mapPage(inner, inner1 -> new SiteImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SiteImpl(inner1, this.manager()));
     }
 
     public Response<Site> getByResourceGroupWithResponse(String resourceGroupName, String name, Context context) {
@@ -264,12 +264,12 @@ public final class WebAppsImpl implements WebApps {
 
     public PagedIterable<BackupItem> listBackups(String resourceGroupName, String name) {
         PagedIterable<BackupItemInner> inner = this.serviceClient().listBackups(resourceGroupName, name);
-        return Utils.mapPage(inner, inner1 -> new BackupItemImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new BackupItemImpl(inner1, this.manager()));
     }
 
     public PagedIterable<BackupItem> listBackups(String resourceGroupName, String name, Context context) {
         PagedIterable<BackupItemInner> inner = this.serviceClient().listBackups(resourceGroupName, name, context);
-        return Utils.mapPage(inner, inner1 -> new BackupItemImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new BackupItemImpl(inner1, this.manager()));
     }
 
     public Response<BackupItem> getBackupStatusWithResponse(String resourceGroupName, String name, String backupId,
@@ -338,14 +338,16 @@ public final class WebAppsImpl implements WebApps {
         listBasicPublishingCredentialsPolicies(String resourceGroupName, String name) {
         PagedIterable<CsmPublishingCredentialsPoliciesEntityInner> inner
             = this.serviceClient().listBasicPublishingCredentialsPolicies(resourceGroupName, name);
-        return Utils.mapPage(inner, inner1 -> new CsmPublishingCredentialsPoliciesEntityImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new CsmPublishingCredentialsPoliciesEntityImpl(inner1, this.manager()));
     }
 
     public PagedIterable<CsmPublishingCredentialsPoliciesEntity>
         listBasicPublishingCredentialsPolicies(String resourceGroupName, String name, Context context) {
         PagedIterable<CsmPublishingCredentialsPoliciesEntityInner> inner
             = this.serviceClient().listBasicPublishingCredentialsPolicies(resourceGroupName, name, context);
-        return Utils.mapPage(inner, inner1 -> new CsmPublishingCredentialsPoliciesEntityImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new CsmPublishingCredentialsPoliciesEntityImpl(inner1, this.manager()));
     }
 
     public Response<CsmPublishingCredentialsPoliciesEntity> getFtpAllowedWithResponse(String resourceGroupName,
@@ -438,14 +440,14 @@ public final class WebAppsImpl implements WebApps {
 
     public PagedIterable<SiteConfigResource> listConfigurations(String resourceGroupName, String name) {
         PagedIterable<SiteConfigResourceInner> inner = this.serviceClient().listConfigurations(resourceGroupName, name);
-        return Utils.mapPage(inner, inner1 -> new SiteConfigResourceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SiteConfigResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<SiteConfigResource> listConfigurations(String resourceGroupName, String name,
         Context context) {
         PagedIterable<SiteConfigResourceInner> inner
             = this.serviceClient().listConfigurations(resourceGroupName, name, context);
-        return Utils.mapPage(inner, inner1 -> new SiteConfigResourceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SiteConfigResourceImpl(inner1, this.manager()));
     }
 
     public StringDictionary updateApplicationSettings(String resourceGroupName, String name,
@@ -700,14 +702,14 @@ public final class WebAppsImpl implements WebApps {
     public PagedIterable<ApiKVReference> getAppSettingsKeyVaultReferences(String resourceGroupName, String name) {
         PagedIterable<ApiKVReferenceInner> inner
             = this.serviceClient().getAppSettingsKeyVaultReferences(resourceGroupName, name);
-        return Utils.mapPage(inner, inner1 -> new ApiKVReferenceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ApiKVReferenceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ApiKVReference> getAppSettingsKeyVaultReferences(String resourceGroupName, String name,
         Context context) {
         PagedIterable<ApiKVReferenceInner> inner
             = this.serviceClient().getAppSettingsKeyVaultReferences(resourceGroupName, name, context);
-        return Utils.mapPage(inner, inner1 -> new ApiKVReferenceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ApiKVReferenceImpl(inner1, this.manager()));
     }
 
     public Response<ApiKVReference> getAppSettingKeyVaultReferenceWithResponse(String resourceGroupName, String name,
@@ -736,14 +738,14 @@ public final class WebAppsImpl implements WebApps {
         String name) {
         PagedIterable<ApiKVReferenceInner> inner
             = this.serviceClient().getSiteConnectionStringKeyVaultReferences(resourceGroupName, name);
-        return Utils.mapPage(inner, inner1 -> new ApiKVReferenceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ApiKVReferenceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ApiKVReference> getSiteConnectionStringKeyVaultReferences(String resourceGroupName,
         String name, Context context) {
         PagedIterable<ApiKVReferenceInner> inner
             = this.serviceClient().getSiteConnectionStringKeyVaultReferences(resourceGroupName, name, context);
-        return Utils.mapPage(inner, inner1 -> new ApiKVReferenceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ApiKVReferenceImpl(inner1, this.manager()));
     }
 
     public Response<ApiKVReference> getSiteConnectionStringKeyVaultReferenceWithResponse(String resourceGroupName,
@@ -1071,14 +1073,16 @@ public final class WebAppsImpl implements WebApps {
         String name) {
         PagedIterable<SiteConfigurationSnapshotInfoInner> inner
             = this.serviceClient().listConfigurationSnapshotInfo(resourceGroupName, name);
-        return Utils.mapPage(inner, inner1 -> new SiteConfigurationSnapshotInfoImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new SiteConfigurationSnapshotInfoImpl(inner1, this.manager()));
     }
 
     public PagedIterable<SiteConfigurationSnapshotInfo> listConfigurationSnapshotInfo(String resourceGroupName,
         String name, Context context) {
         PagedIterable<SiteConfigurationSnapshotInfoInner> inner
             = this.serviceClient().listConfigurationSnapshotInfo(resourceGroupName, name, context);
-        return Utils.mapPage(inner, inner1 -> new SiteConfigurationSnapshotInfoImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new SiteConfigurationSnapshotInfoImpl(inner1, this.manager()));
     }
 
     public Response<SiteConfigResource> getConfigurationSnapshotWithResponse(String resourceGroupName, String name,
@@ -1134,14 +1138,14 @@ public final class WebAppsImpl implements WebApps {
     public PagedIterable<ContinuousWebJob> listContinuousWebJobs(String resourceGroupName, String name) {
         PagedIterable<ContinuousWebJobInner> inner
             = this.serviceClient().listContinuousWebJobs(resourceGroupName, name);
-        return Utils.mapPage(inner, inner1 -> new ContinuousWebJobImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ContinuousWebJobImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ContinuousWebJob> listContinuousWebJobs(String resourceGroupName, String name,
         Context context) {
         PagedIterable<ContinuousWebJobInner> inner
             = this.serviceClient().listContinuousWebJobs(resourceGroupName, name, context);
-        return Utils.mapPage(inner, inner1 -> new ContinuousWebJobImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ContinuousWebJobImpl(inner1, this.manager()));
     }
 
     public Response<ContinuousWebJob> getContinuousWebJobWithResponse(String resourceGroupName, String name,
@@ -1196,14 +1200,14 @@ public final class WebAppsImpl implements WebApps {
         String name) {
         PagedIterable<CsmDeploymentStatusInner> inner
             = this.serviceClient().listProductionSiteDeploymentStatuses(resourceGroupName, name);
-        return Utils.mapPage(inner, inner1 -> new CsmDeploymentStatusImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new CsmDeploymentStatusImpl(inner1, this.manager()));
     }
 
     public PagedIterable<CsmDeploymentStatus> listProductionSiteDeploymentStatuses(String resourceGroupName,
         String name, Context context) {
         PagedIterable<CsmDeploymentStatusInner> inner
             = this.serviceClient().listProductionSiteDeploymentStatuses(resourceGroupName, name, context);
-        return Utils.mapPage(inner, inner1 -> new CsmDeploymentStatusImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new CsmDeploymentStatusImpl(inner1, this.manager()));
     }
 
     public CsmDeploymentStatus getProductionSiteDeploymentStatus(String resourceGroupName, String name,
@@ -1230,12 +1234,12 @@ public final class WebAppsImpl implements WebApps {
 
     public PagedIterable<Deployment> listDeployments(String resourceGroupName, String name) {
         PagedIterable<DeploymentInner> inner = this.serviceClient().listDeployments(resourceGroupName, name);
-        return Utils.mapPage(inner, inner1 -> new DeploymentImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DeploymentImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Deployment> listDeployments(String resourceGroupName, String name, Context context) {
         PagedIterable<DeploymentInner> inner = this.serviceClient().listDeployments(resourceGroupName, name, context);
-        return Utils.mapPage(inner, inner1 -> new DeploymentImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DeploymentImpl(inner1, this.manager()));
     }
 
     public Response<Deployment> getDeploymentWithResponse(String resourceGroupName, String name, String id,
@@ -1313,14 +1317,14 @@ public final class WebAppsImpl implements WebApps {
     public PagedIterable<Identifier> listDomainOwnershipIdentifiers(String resourceGroupName, String name) {
         PagedIterable<IdentifierInner> inner
             = this.serviceClient().listDomainOwnershipIdentifiers(resourceGroupName, name);
-        return Utils.mapPage(inner, inner1 -> new IdentifierImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new IdentifierImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Identifier> listDomainOwnershipIdentifiers(String resourceGroupName, String name,
         Context context) {
         PagedIterable<IdentifierInner> inner
             = this.serviceClient().listDomainOwnershipIdentifiers(resourceGroupName, name, context);
-        return Utils.mapPage(inner, inner1 -> new IdentifierImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new IdentifierImpl(inner1, this.manager()));
     }
 
     public Response<Identifier> getDomainOwnershipIdentifierWithResponse(String resourceGroupName, String name,
@@ -1437,13 +1441,13 @@ public final class WebAppsImpl implements WebApps {
 
     public PagedIterable<FunctionEnvelope> listFunctions(String resourceGroupName, String name) {
         PagedIterable<FunctionEnvelopeInner> inner = this.serviceClient().listFunctions(resourceGroupName, name);
-        return Utils.mapPage(inner, inner1 -> new FunctionEnvelopeImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new FunctionEnvelopeImpl(inner1, this.manager()));
     }
 
     public PagedIterable<FunctionEnvelope> listFunctions(String resourceGroupName, String name, Context context) {
         PagedIterable<FunctionEnvelopeInner> inner
             = this.serviceClient().listFunctions(resourceGroupName, name, context);
-        return Utils.mapPage(inner, inner1 -> new FunctionEnvelopeImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new FunctionEnvelopeImpl(inner1, this.manager()));
     }
 
     public Response<String> getFunctionsAdminTokenWithResponse(String resourceGroupName, String name, Context context) {
@@ -1628,13 +1632,13 @@ public final class WebAppsImpl implements WebApps {
 
     public PagedIterable<HostnameBinding> listHostnameBindings(String resourceGroupName, String name) {
         PagedIterable<HostnameBindingInner> inner = this.serviceClient().listHostnameBindings(resourceGroupName, name);
-        return Utils.mapPage(inner, inner1 -> new HostnameBindingImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new HostnameBindingImpl(inner1, this.manager()));
     }
 
     public PagedIterable<HostnameBinding> listHostnameBindings(String resourceGroupName, String name, Context context) {
         PagedIterable<HostnameBindingInner> inner
             = this.serviceClient().listHostnameBindings(resourceGroupName, name, context);
-        return Utils.mapPage(inner, inner1 -> new HostnameBindingImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new HostnameBindingImpl(inner1, this.manager()));
     }
 
     public Response<HostnameBinding> getHostnameBindingWithResponse(String resourceGroupName, String name,
@@ -1779,14 +1783,14 @@ public final class WebAppsImpl implements WebApps {
     public PagedIterable<WebSiteInstanceStatus> listInstanceIdentifiers(String resourceGroupName, String name) {
         PagedIterable<WebSiteInstanceStatusInner> inner
             = this.serviceClient().listInstanceIdentifiers(resourceGroupName, name);
-        return Utils.mapPage(inner, inner1 -> new WebSiteInstanceStatusImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new WebSiteInstanceStatusImpl(inner1, this.manager()));
     }
 
     public PagedIterable<WebSiteInstanceStatus> listInstanceIdentifiers(String resourceGroupName, String name,
         Context context) {
         PagedIterable<WebSiteInstanceStatusInner> inner
             = this.serviceClient().listInstanceIdentifiers(resourceGroupName, name, context);
-        return Utils.mapPage(inner, inner1 -> new WebSiteInstanceStatusImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new WebSiteInstanceStatusImpl(inner1, this.manager()));
     }
 
     public Response<WebSiteInstanceStatus> getInstanceInfoWithResponse(String resourceGroupName, String name,
@@ -1877,14 +1881,14 @@ public final class WebAppsImpl implements WebApps {
     public PagedIterable<ProcessInfo> listInstanceProcesses(String resourceGroupName, String name, String instanceId) {
         PagedIterable<ProcessInfoInner> inner
             = this.serviceClient().listInstanceProcesses(resourceGroupName, name, instanceId);
-        return Utils.mapPage(inner, inner1 -> new ProcessInfoImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ProcessInfoImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ProcessInfo> listInstanceProcesses(String resourceGroupName, String name, String instanceId,
         Context context) {
         PagedIterable<ProcessInfoInner> inner
             = this.serviceClient().listInstanceProcesses(resourceGroupName, name, instanceId, context);
-        return Utils.mapPage(inner, inner1 -> new ProcessInfoImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ProcessInfoImpl(inner1, this.manager()));
     }
 
     public Response<ProcessInfo> getInstanceProcessWithResponse(String resourceGroupName, String name, String processId,
@@ -1934,14 +1938,14 @@ public final class WebAppsImpl implements WebApps {
         String processId, String instanceId) {
         PagedIterable<ProcessModuleInfoInner> inner
             = this.serviceClient().listInstanceProcessModules(resourceGroupName, name, processId, instanceId);
-        return Utils.mapPage(inner, inner1 -> new ProcessModuleInfoImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ProcessModuleInfoImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ProcessModuleInfo> listInstanceProcessModules(String resourceGroupName, String name,
         String processId, String instanceId, Context context) {
         PagedIterable<ProcessModuleInfoInner> inner
             = this.serviceClient().listInstanceProcessModules(resourceGroupName, name, processId, instanceId, context);
-        return Utils.mapPage(inner, inner1 -> new ProcessModuleInfoImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ProcessModuleInfoImpl(inner1, this.manager()));
     }
 
     public Response<ProcessModuleInfo> getInstanceProcessModuleWithResponse(String resourceGroupName, String name,
@@ -1971,14 +1975,14 @@ public final class WebAppsImpl implements WebApps {
         String processId, String instanceId) {
         PagedIterable<ProcessThreadInfoInner> inner
             = this.serviceClient().listInstanceProcessThreads(resourceGroupName, name, processId, instanceId);
-        return Utils.mapPage(inner, inner1 -> new ProcessThreadInfoImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ProcessThreadInfoImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ProcessThreadInfo> listInstanceProcessThreads(String resourceGroupName, String name,
         String processId, String instanceId, Context context) {
         PagedIterable<ProcessThreadInfoInner> inner
             = this.serviceClient().listInstanceProcessThreads(resourceGroupName, name, processId, instanceId, context);
-        return Utils.mapPage(inner, inner1 -> new ProcessThreadInfoImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ProcessThreadInfoImpl(inner1, this.manager()));
     }
 
     public Response<SiteCloneability> isCloneableWithResponse(String resourceGroupName, String name, Context context) {
@@ -2003,12 +2007,12 @@ public final class WebAppsImpl implements WebApps {
 
     public PagedIterable<BackupItem> listSiteBackups(String resourceGroupName, String name) {
         PagedIterable<BackupItemInner> inner = this.serviceClient().listSiteBackups(resourceGroupName, name);
-        return Utils.mapPage(inner, inner1 -> new BackupItemImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new BackupItemImpl(inner1, this.manager()));
     }
 
     public PagedIterable<BackupItem> listSiteBackups(String resourceGroupName, String name, Context context) {
         PagedIterable<BackupItemInner> inner = this.serviceClient().listSiteBackups(resourceGroupName, name, context);
-        return Utils.mapPage(inner, inner1 -> new BackupItemImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new BackupItemImpl(inner1, this.manager()));
     }
 
     public Response<FunctionSecrets> listSyncFunctionTriggersWithResponse(String resourceGroupName, String name,
@@ -2296,14 +2300,14 @@ public final class WebAppsImpl implements WebApps {
 
     public PagedIterable<PerfMonResponse> listPerfMonCounters(String resourceGroupName, String name) {
         PagedIterable<PerfMonResponseInner> inner = this.serviceClient().listPerfMonCounters(resourceGroupName, name);
-        return Utils.mapPage(inner, inner1 -> new PerfMonResponseImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PerfMonResponseImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PerfMonResponse> listPerfMonCounters(String resourceGroupName, String name, String filter,
         Context context) {
         PagedIterable<PerfMonResponseInner> inner
             = this.serviceClient().listPerfMonCounters(resourceGroupName, name, filter, context);
-        return Utils.mapPage(inner, inner1 -> new PerfMonResponseImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PerfMonResponseImpl(inner1, this.manager()));
     }
 
     public Response<SitePhpErrorLogFlag> getSitePhpErrorLogFlagWithResponse(String resourceGroupName, String name,
@@ -2424,7 +2428,7 @@ public final class WebAppsImpl implements WebApps {
         getPrivateEndpointConnectionList(String resourceGroupName, String name) {
         PagedIterable<RemotePrivateEndpointConnectionArmResourceInner> inner
             = this.serviceClient().getPrivateEndpointConnectionList(resourceGroupName, name);
-        return Utils.mapPage(inner,
+        return ResourceManagerUtils.mapPage(inner,
             inner1 -> new RemotePrivateEndpointConnectionArmResourceImpl(inner1, this.manager()));
     }
 
@@ -2432,7 +2436,7 @@ public final class WebAppsImpl implements WebApps {
         getPrivateEndpointConnectionList(String resourceGroupName, String name, Context context) {
         PagedIterable<RemotePrivateEndpointConnectionArmResourceInner> inner
             = this.serviceClient().getPrivateEndpointConnectionList(resourceGroupName, name, context);
-        return Utils.mapPage(inner,
+        return ResourceManagerUtils.mapPage(inner,
             inner1 -> new RemotePrivateEndpointConnectionArmResourceImpl(inner1, this.manager()));
     }
 
@@ -2520,12 +2524,12 @@ public final class WebAppsImpl implements WebApps {
 
     public PagedIterable<ProcessInfo> listProcesses(String resourceGroupName, String name) {
         PagedIterable<ProcessInfoInner> inner = this.serviceClient().listProcesses(resourceGroupName, name);
-        return Utils.mapPage(inner, inner1 -> new ProcessInfoImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ProcessInfoImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ProcessInfo> listProcesses(String resourceGroupName, String name, Context context) {
         PagedIterable<ProcessInfoInner> inner = this.serviceClient().listProcesses(resourceGroupName, name, context);
-        return Utils.mapPage(inner, inner1 -> new ProcessInfoImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ProcessInfoImpl(inner1, this.manager()));
     }
 
     public Response<ProcessInfo> getProcessWithResponse(String resourceGroupName, String name, String processId,
@@ -2571,14 +2575,14 @@ public final class WebAppsImpl implements WebApps {
         String processId) {
         PagedIterable<ProcessModuleInfoInner> inner
             = this.serviceClient().listProcessModules(resourceGroupName, name, processId);
-        return Utils.mapPage(inner, inner1 -> new ProcessModuleInfoImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ProcessModuleInfoImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ProcessModuleInfo> listProcessModules(String resourceGroupName, String name, String processId,
         Context context) {
         PagedIterable<ProcessModuleInfoInner> inner
             = this.serviceClient().listProcessModules(resourceGroupName, name, processId, context);
-        return Utils.mapPage(inner, inner1 -> new ProcessModuleInfoImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ProcessModuleInfoImpl(inner1, this.manager()));
     }
 
     public Response<ProcessModuleInfo> getProcessModuleWithResponse(String resourceGroupName, String name,
@@ -2608,27 +2612,27 @@ public final class WebAppsImpl implements WebApps {
         String processId) {
         PagedIterable<ProcessThreadInfoInner> inner
             = this.serviceClient().listProcessThreads(resourceGroupName, name, processId);
-        return Utils.mapPage(inner, inner1 -> new ProcessThreadInfoImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ProcessThreadInfoImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ProcessThreadInfo> listProcessThreads(String resourceGroupName, String name, String processId,
         Context context) {
         PagedIterable<ProcessThreadInfoInner> inner
             = this.serviceClient().listProcessThreads(resourceGroupName, name, processId, context);
-        return Utils.mapPage(inner, inner1 -> new ProcessThreadInfoImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ProcessThreadInfoImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PublicCertificate> listPublicCertificates(String resourceGroupName, String name) {
         PagedIterable<PublicCertificateInner> inner
             = this.serviceClient().listPublicCertificates(resourceGroupName, name);
-        return Utils.mapPage(inner, inner1 -> new PublicCertificateImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PublicCertificateImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PublicCertificate> listPublicCertificates(String resourceGroupName, String name,
         Context context) {
         PagedIterable<PublicCertificateInner> inner
             = this.serviceClient().listPublicCertificates(resourceGroupName, name, context);
-        return Utils.mapPage(inner, inner1 -> new PublicCertificateImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PublicCertificateImpl(inner1, this.manager()));
     }
 
     public Response<PublicCertificate> getPublicCertificateWithResponse(String resourceGroupName, String name,
@@ -2722,13 +2726,13 @@ public final class WebAppsImpl implements WebApps {
 
     public PagedIterable<SiteExtensionInfo> listSiteExtensions(String resourceGroupName, String name) {
         PagedIterable<SiteExtensionInfoInner> inner = this.serviceClient().listSiteExtensions(resourceGroupName, name);
-        return Utils.mapPage(inner, inner1 -> new SiteExtensionInfoImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SiteExtensionInfoImpl(inner1, this.manager()));
     }
 
     public PagedIterable<SiteExtensionInfo> listSiteExtensions(String resourceGroupName, String name, Context context) {
         PagedIterable<SiteExtensionInfoInner> inner
             = this.serviceClient().listSiteExtensions(resourceGroupName, name, context);
-        return Utils.mapPage(inner, inner1 -> new SiteExtensionInfoImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SiteExtensionInfoImpl(inner1, this.manager()));
     }
 
     public Response<SiteExtensionInfo> getSiteExtensionWithResponse(String resourceGroupName, String name,
@@ -2784,12 +2788,12 @@ public final class WebAppsImpl implements WebApps {
 
     public PagedIterable<Site> listSlots(String resourceGroupName, String name) {
         PagedIterable<SiteInner> inner = this.serviceClient().listSlots(resourceGroupName, name);
-        return Utils.mapPage(inner, inner1 -> new SiteImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SiteImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Site> listSlots(String resourceGroupName, String name, Context context) {
         PagedIterable<SiteInner> inner = this.serviceClient().listSlots(resourceGroupName, name, context);
-        return Utils.mapPage(inner, inner1 -> new SiteImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SiteImpl(inner1, this.manager()));
     }
 
     public Response<Site> getSlotWithResponse(String resourceGroupName, String name, String slot, Context context) {
@@ -2917,14 +2921,14 @@ public final class WebAppsImpl implements WebApps {
 
     public PagedIterable<BackupItem> listBackupsSlot(String resourceGroupName, String name, String slot) {
         PagedIterable<BackupItemInner> inner = this.serviceClient().listBackupsSlot(resourceGroupName, name, slot);
-        return Utils.mapPage(inner, inner1 -> new BackupItemImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new BackupItemImpl(inner1, this.manager()));
     }
 
     public PagedIterable<BackupItem> listBackupsSlot(String resourceGroupName, String name, String slot,
         Context context) {
         PagedIterable<BackupItemInner> inner
             = this.serviceClient().listBackupsSlot(resourceGroupName, name, slot, context);
-        return Utils.mapPage(inner, inner1 -> new BackupItemImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new BackupItemImpl(inner1, this.manager()));
     }
 
     public Response<BackupItem> getBackupStatusSlotWithResponse(String resourceGroupName, String name, String backupId,
@@ -2994,14 +2998,16 @@ public final class WebAppsImpl implements WebApps {
         listBasicPublishingCredentialsPoliciesSlot(String resourceGroupName, String name, String slot) {
         PagedIterable<CsmPublishingCredentialsPoliciesEntityInner> inner
             = this.serviceClient().listBasicPublishingCredentialsPoliciesSlot(resourceGroupName, name, slot);
-        return Utils.mapPage(inner, inner1 -> new CsmPublishingCredentialsPoliciesEntityImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new CsmPublishingCredentialsPoliciesEntityImpl(inner1, this.manager()));
     }
 
     public PagedIterable<CsmPublishingCredentialsPoliciesEntity> listBasicPublishingCredentialsPoliciesSlot(
         String resourceGroupName, String name, String slot, Context context) {
         PagedIterable<CsmPublishingCredentialsPoliciesEntityInner> inner
             = this.serviceClient().listBasicPublishingCredentialsPoliciesSlot(resourceGroupName, name, slot, context);
-        return Utils.mapPage(inner, inner1 -> new CsmPublishingCredentialsPoliciesEntityImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new CsmPublishingCredentialsPoliciesEntityImpl(inner1, this.manager()));
     }
 
     public Response<CsmPublishingCredentialsPoliciesEntity> getFtpAllowedSlotWithResponse(String resourceGroupName,
@@ -3104,14 +3110,14 @@ public final class WebAppsImpl implements WebApps {
         String slot) {
         PagedIterable<SiteConfigResourceInner> inner
             = this.serviceClient().listConfigurationsSlot(resourceGroupName, name, slot);
-        return Utils.mapPage(inner, inner1 -> new SiteConfigResourceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SiteConfigResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<SiteConfigResource> listConfigurationsSlot(String resourceGroupName, String name, String slot,
         Context context) {
         PagedIterable<SiteConfigResourceInner> inner
             = this.serviceClient().listConfigurationsSlot(resourceGroupName, name, slot, context);
-        return Utils.mapPage(inner, inner1 -> new SiteConfigResourceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SiteConfigResourceImpl(inner1, this.manager()));
     }
 
     public Response<StringDictionary> updateApplicationSettingsSlotWithResponse(String resourceGroupName, String name,
@@ -3372,14 +3378,14 @@ public final class WebAppsImpl implements WebApps {
         String slot) {
         PagedIterable<ApiKVReferenceInner> inner
             = this.serviceClient().getAppSettingsKeyVaultReferencesSlot(resourceGroupName, name, slot);
-        return Utils.mapPage(inner, inner1 -> new ApiKVReferenceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ApiKVReferenceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ApiKVReference> getAppSettingsKeyVaultReferencesSlot(String resourceGroupName, String name,
         String slot, Context context) {
         PagedIterable<ApiKVReferenceInner> inner
             = this.serviceClient().getAppSettingsKeyVaultReferencesSlot(resourceGroupName, name, slot, context);
-        return Utils.mapPage(inner, inner1 -> new ApiKVReferenceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ApiKVReferenceImpl(inner1, this.manager()));
     }
 
     public Response<ApiKVReference> getAppSettingKeyVaultReferenceSlotWithResponse(String resourceGroupName,
@@ -3409,14 +3415,14 @@ public final class WebAppsImpl implements WebApps {
         String name, String slot) {
         PagedIterable<ApiKVReferenceInner> inner
             = this.serviceClient().getSiteConnectionStringKeyVaultReferencesSlot(resourceGroupName, name, slot);
-        return Utils.mapPage(inner, inner1 -> new ApiKVReferenceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ApiKVReferenceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ApiKVReference> getSiteConnectionStringKeyVaultReferencesSlot(String resourceGroupName,
         String name, String slot, Context context) {
         PagedIterable<ApiKVReferenceInner> inner = this.serviceClient()
             .getSiteConnectionStringKeyVaultReferencesSlot(resourceGroupName, name, slot, context);
-        return Utils.mapPage(inner, inner1 -> new ApiKVReferenceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ApiKVReferenceImpl(inner1, this.manager()));
     }
 
     public Response<ApiKVReference> getSiteConnectionStringKeyVaultReferenceSlotWithResponse(String resourceGroupName,
@@ -3709,14 +3715,16 @@ public final class WebAppsImpl implements WebApps {
         String name, String slot) {
         PagedIterable<SiteConfigurationSnapshotInfoInner> inner
             = this.serviceClient().listConfigurationSnapshotInfoSlot(resourceGroupName, name, slot);
-        return Utils.mapPage(inner, inner1 -> new SiteConfigurationSnapshotInfoImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new SiteConfigurationSnapshotInfoImpl(inner1, this.manager()));
     }
 
     public PagedIterable<SiteConfigurationSnapshotInfo> listConfigurationSnapshotInfoSlot(String resourceGroupName,
         String name, String slot, Context context) {
         PagedIterable<SiteConfigurationSnapshotInfoInner> inner
             = this.serviceClient().listConfigurationSnapshotInfoSlot(resourceGroupName, name, slot, context);
-        return Utils.mapPage(inner, inner1 -> new SiteConfigurationSnapshotInfoImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new SiteConfigurationSnapshotInfoImpl(inner1, this.manager()));
     }
 
     public Response<SiteConfigResource> getConfigurationSnapshotSlotWithResponse(String resourceGroupName, String name,
@@ -3775,14 +3783,14 @@ public final class WebAppsImpl implements WebApps {
         String slot) {
         PagedIterable<ContinuousWebJobInner> inner
             = this.serviceClient().listContinuousWebJobsSlot(resourceGroupName, name, slot);
-        return Utils.mapPage(inner, inner1 -> new ContinuousWebJobImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ContinuousWebJobImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ContinuousWebJob> listContinuousWebJobsSlot(String resourceGroupName, String name, String slot,
         Context context) {
         PagedIterable<ContinuousWebJobInner> inner
             = this.serviceClient().listContinuousWebJobsSlot(resourceGroupName, name, slot, context);
-        return Utils.mapPage(inner, inner1 -> new ContinuousWebJobImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ContinuousWebJobImpl(inner1, this.manager()));
     }
 
     public Response<ContinuousWebJob> getContinuousWebJobSlotWithResponse(String resourceGroupName, String name,
@@ -3842,14 +3850,14 @@ public final class WebAppsImpl implements WebApps {
         String slot) {
         PagedIterable<CsmDeploymentStatusInner> inner
             = this.serviceClient().listSlotSiteDeploymentStatusesSlot(resourceGroupName, name, slot);
-        return Utils.mapPage(inner, inner1 -> new CsmDeploymentStatusImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new CsmDeploymentStatusImpl(inner1, this.manager()));
     }
 
     public PagedIterable<CsmDeploymentStatus> listSlotSiteDeploymentStatusesSlot(String resourceGroupName, String name,
         String slot, Context context) {
         PagedIterable<CsmDeploymentStatusInner> inner
             = this.serviceClient().listSlotSiteDeploymentStatusesSlot(resourceGroupName, name, slot, context);
-        return Utils.mapPage(inner, inner1 -> new CsmDeploymentStatusImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new CsmDeploymentStatusImpl(inner1, this.manager()));
     }
 
     public CsmDeploymentStatus getSlotSiteDeploymentStatusSlot(String resourceGroupName, String name, String slot,
@@ -3876,14 +3884,14 @@ public final class WebAppsImpl implements WebApps {
 
     public PagedIterable<Deployment> listDeploymentsSlot(String resourceGroupName, String name, String slot) {
         PagedIterable<DeploymentInner> inner = this.serviceClient().listDeploymentsSlot(resourceGroupName, name, slot);
-        return Utils.mapPage(inner, inner1 -> new DeploymentImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DeploymentImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Deployment> listDeploymentsSlot(String resourceGroupName, String name, String slot,
         Context context) {
         PagedIterable<DeploymentInner> inner
             = this.serviceClient().listDeploymentsSlot(resourceGroupName, name, slot, context);
-        return Utils.mapPage(inner, inner1 -> new DeploymentImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DeploymentImpl(inner1, this.manager()));
     }
 
     public Response<Deployment> getDeploymentSlotWithResponse(String resourceGroupName, String name, String id,
@@ -3986,14 +3994,14 @@ public final class WebAppsImpl implements WebApps {
         String slot) {
         PagedIterable<IdentifierInner> inner
             = this.serviceClient().listDomainOwnershipIdentifiersSlot(resourceGroupName, name, slot);
-        return Utils.mapPage(inner, inner1 -> new IdentifierImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new IdentifierImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Identifier> listDomainOwnershipIdentifiersSlot(String resourceGroupName, String name,
         String slot, Context context) {
         PagedIterable<IdentifierInner> inner
             = this.serviceClient().listDomainOwnershipIdentifiersSlot(resourceGroupName, name, slot, context);
-        return Utils.mapPage(inner, inner1 -> new IdentifierImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new IdentifierImpl(inner1, this.manager()));
     }
 
     public Response<Identifier> getDomainOwnershipIdentifierSlotWithResponse(String resourceGroupName, String name,
@@ -4146,14 +4154,14 @@ public final class WebAppsImpl implements WebApps {
         String slot) {
         PagedIterable<FunctionEnvelopeInner> inner
             = this.serviceClient().listInstanceFunctionsSlot(resourceGroupName, name, slot);
-        return Utils.mapPage(inner, inner1 -> new FunctionEnvelopeImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new FunctionEnvelopeImpl(inner1, this.manager()));
     }
 
     public PagedIterable<FunctionEnvelope> listInstanceFunctionsSlot(String resourceGroupName, String name, String slot,
         Context context) {
         PagedIterable<FunctionEnvelopeInner> inner
             = this.serviceClient().listInstanceFunctionsSlot(resourceGroupName, name, slot, context);
-        return Utils.mapPage(inner, inner1 -> new FunctionEnvelopeImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new FunctionEnvelopeImpl(inner1, this.manager()));
     }
 
     public Response<String> getFunctionsAdminTokenSlotWithResponse(String resourceGroupName, String name, String slot,
@@ -4376,14 +4384,14 @@ public final class WebAppsImpl implements WebApps {
     public PagedIterable<HostnameBinding> listHostnameBindingsSlot(String resourceGroupName, String name, String slot) {
         PagedIterable<HostnameBindingInner> inner
             = this.serviceClient().listHostnameBindingsSlot(resourceGroupName, name, slot);
-        return Utils.mapPage(inner, inner1 -> new HostnameBindingImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new HostnameBindingImpl(inner1, this.manager()));
     }
 
     public PagedIterable<HostnameBinding> listHostnameBindingsSlot(String resourceGroupName, String name, String slot,
         Context context) {
         PagedIterable<HostnameBindingInner> inner
             = this.serviceClient().listHostnameBindingsSlot(resourceGroupName, name, slot, context);
-        return Utils.mapPage(inner, inner1 -> new HostnameBindingImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new HostnameBindingImpl(inner1, this.manager()));
     }
 
     public Response<HostnameBinding> getHostnameBindingSlotWithResponse(String resourceGroupName, String name,
@@ -4655,14 +4663,14 @@ public final class WebAppsImpl implements WebApps {
         String slot) {
         PagedIterable<WebSiteInstanceStatusInner> inner
             = this.serviceClient().listInstanceIdentifiersSlot(resourceGroupName, name, slot);
-        return Utils.mapPage(inner, inner1 -> new WebSiteInstanceStatusImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new WebSiteInstanceStatusImpl(inner1, this.manager()));
     }
 
     public PagedIterable<WebSiteInstanceStatus> listInstanceIdentifiersSlot(String resourceGroupName, String name,
         String slot, Context context) {
         PagedIterable<WebSiteInstanceStatusInner> inner
             = this.serviceClient().listInstanceIdentifiersSlot(resourceGroupName, name, slot, context);
-        return Utils.mapPage(inner, inner1 -> new WebSiteInstanceStatusImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new WebSiteInstanceStatusImpl(inner1, this.manager()));
     }
 
     public Response<WebSiteInstanceStatus> getInstanceInfoSlotWithResponse(String resourceGroupName, String name,
@@ -4760,14 +4768,14 @@ public final class WebAppsImpl implements WebApps {
         String instanceId) {
         PagedIterable<ProcessInfoInner> inner
             = this.serviceClient().listInstanceProcessesSlot(resourceGroupName, name, slot, instanceId);
-        return Utils.mapPage(inner, inner1 -> new ProcessInfoImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ProcessInfoImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ProcessInfo> listInstanceProcessesSlot(String resourceGroupName, String name, String slot,
         String instanceId, Context context) {
         PagedIterable<ProcessInfoInner> inner
             = this.serviceClient().listInstanceProcessesSlot(resourceGroupName, name, slot, instanceId, context);
-        return Utils.mapPage(inner, inner1 -> new ProcessInfoImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ProcessInfoImpl(inner1, this.manager()));
     }
 
     public Response<ProcessInfo> getInstanceProcessSlotWithResponse(String resourceGroupName, String name,
@@ -4819,14 +4827,14 @@ public final class WebAppsImpl implements WebApps {
         String processId, String slot, String instanceId) {
         PagedIterable<ProcessModuleInfoInner> inner
             = this.serviceClient().listInstanceProcessModulesSlot(resourceGroupName, name, processId, slot, instanceId);
-        return Utils.mapPage(inner, inner1 -> new ProcessModuleInfoImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ProcessModuleInfoImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ProcessModuleInfo> listInstanceProcessModulesSlot(String resourceGroupName, String name,
         String processId, String slot, String instanceId, Context context) {
         PagedIterable<ProcessModuleInfoInner> inner = this.serviceClient()
             .listInstanceProcessModulesSlot(resourceGroupName, name, processId, slot, instanceId, context);
-        return Utils.mapPage(inner, inner1 -> new ProcessModuleInfoImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ProcessModuleInfoImpl(inner1, this.manager()));
     }
 
     public Response<ProcessModuleInfo> getInstanceProcessModuleSlotWithResponse(String resourceGroupName, String name,
@@ -4856,14 +4864,14 @@ public final class WebAppsImpl implements WebApps {
         String processId, String slot, String instanceId) {
         PagedIterable<ProcessThreadInfoInner> inner
             = this.serviceClient().listInstanceProcessThreadsSlot(resourceGroupName, name, processId, slot, instanceId);
-        return Utils.mapPage(inner, inner1 -> new ProcessThreadInfoImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ProcessThreadInfoImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ProcessThreadInfo> listInstanceProcessThreadsSlot(String resourceGroupName, String name,
         String processId, String slot, String instanceId, Context context) {
         PagedIterable<ProcessThreadInfoInner> inner = this.serviceClient()
             .listInstanceProcessThreadsSlot(resourceGroupName, name, processId, slot, instanceId, context);
-        return Utils.mapPage(inner, inner1 -> new ProcessThreadInfoImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ProcessThreadInfoImpl(inner1, this.manager()));
     }
 
     public Response<SiteCloneability> isCloneableSlotWithResponse(String resourceGroupName, String name, String slot,
@@ -4889,14 +4897,14 @@ public final class WebAppsImpl implements WebApps {
 
     public PagedIterable<BackupItem> listSiteBackupsSlot(String resourceGroupName, String name, String slot) {
         PagedIterable<BackupItemInner> inner = this.serviceClient().listSiteBackupsSlot(resourceGroupName, name, slot);
-        return Utils.mapPage(inner, inner1 -> new BackupItemImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new BackupItemImpl(inner1, this.manager()));
     }
 
     public PagedIterable<BackupItem> listSiteBackupsSlot(String resourceGroupName, String name, String slot,
         Context context) {
         PagedIterable<BackupItemInner> inner
             = this.serviceClient().listSiteBackupsSlot(resourceGroupName, name, slot, context);
-        return Utils.mapPage(inner, inner1 -> new BackupItemImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new BackupItemImpl(inner1, this.manager()));
     }
 
     public Response<FunctionSecrets> listSyncFunctionTriggersSlotWithResponse(String resourceGroupName, String name,
@@ -5155,14 +5163,14 @@ public final class WebAppsImpl implements WebApps {
     public PagedIterable<PerfMonResponse> listPerfMonCountersSlot(String resourceGroupName, String name, String slot) {
         PagedIterable<PerfMonResponseInner> inner
             = this.serviceClient().listPerfMonCountersSlot(resourceGroupName, name, slot);
-        return Utils.mapPage(inner, inner1 -> new PerfMonResponseImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PerfMonResponseImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PerfMonResponse> listPerfMonCountersSlot(String resourceGroupName, String name, String slot,
         String filter, Context context) {
         PagedIterable<PerfMonResponseInner> inner
             = this.serviceClient().listPerfMonCountersSlot(resourceGroupName, name, slot, filter, context);
-        return Utils.mapPage(inner, inner1 -> new PerfMonResponseImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PerfMonResponseImpl(inner1, this.manager()));
     }
 
     public Response<SitePhpErrorLogFlag> getSitePhpErrorLogFlagSlotWithResponse(String resourceGroupName, String name,
@@ -5333,7 +5341,7 @@ public final class WebAppsImpl implements WebApps {
         getPrivateEndpointConnectionListSlot(String resourceGroupName, String name, String slot) {
         PagedIterable<RemotePrivateEndpointConnectionArmResourceInner> inner
             = this.serviceClient().getPrivateEndpointConnectionListSlot(resourceGroupName, name, slot);
-        return Utils.mapPage(inner,
+        return ResourceManagerUtils.mapPage(inner,
             inner1 -> new RemotePrivateEndpointConnectionArmResourceImpl(inner1, this.manager()));
     }
 
@@ -5341,7 +5349,7 @@ public final class WebAppsImpl implements WebApps {
         getPrivateEndpointConnectionListSlot(String resourceGroupName, String name, String slot, Context context) {
         PagedIterable<RemotePrivateEndpointConnectionArmResourceInner> inner
             = this.serviceClient().getPrivateEndpointConnectionListSlot(resourceGroupName, name, slot, context);
-        return Utils.mapPage(inner,
+        return ResourceManagerUtils.mapPage(inner,
             inner1 -> new RemotePrivateEndpointConnectionArmResourceImpl(inner1, this.manager()));
     }
 
@@ -5431,14 +5439,14 @@ public final class WebAppsImpl implements WebApps {
 
     public PagedIterable<ProcessInfo> listProcessesSlot(String resourceGroupName, String name, String slot) {
         PagedIterable<ProcessInfoInner> inner = this.serviceClient().listProcessesSlot(resourceGroupName, name, slot);
-        return Utils.mapPage(inner, inner1 -> new ProcessInfoImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ProcessInfoImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ProcessInfo> listProcessesSlot(String resourceGroupName, String name, String slot,
         Context context) {
         PagedIterable<ProcessInfoInner> inner
             = this.serviceClient().listProcessesSlot(resourceGroupName, name, slot, context);
-        return Utils.mapPage(inner, inner1 -> new ProcessInfoImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ProcessInfoImpl(inner1, this.manager()));
     }
 
     public Response<ProcessInfo> getProcessSlotWithResponse(String resourceGroupName, String name, String processId,
@@ -5484,14 +5492,14 @@ public final class WebAppsImpl implements WebApps {
         String processId, String slot) {
         PagedIterable<ProcessModuleInfoInner> inner
             = this.serviceClient().listProcessModulesSlot(resourceGroupName, name, processId, slot);
-        return Utils.mapPage(inner, inner1 -> new ProcessModuleInfoImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ProcessModuleInfoImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ProcessModuleInfo> listProcessModulesSlot(String resourceGroupName, String name,
         String processId, String slot, Context context) {
         PagedIterable<ProcessModuleInfoInner> inner
             = this.serviceClient().listProcessModulesSlot(resourceGroupName, name, processId, slot, context);
-        return Utils.mapPage(inner, inner1 -> new ProcessModuleInfoImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ProcessModuleInfoImpl(inner1, this.manager()));
     }
 
     public Response<ProcessModuleInfo> getProcessModuleSlotWithResponse(String resourceGroupName, String name,
@@ -5521,28 +5529,28 @@ public final class WebAppsImpl implements WebApps {
         String processId, String slot) {
         PagedIterable<ProcessThreadInfoInner> inner
             = this.serviceClient().listProcessThreadsSlot(resourceGroupName, name, processId, slot);
-        return Utils.mapPage(inner, inner1 -> new ProcessThreadInfoImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ProcessThreadInfoImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ProcessThreadInfo> listProcessThreadsSlot(String resourceGroupName, String name,
         String processId, String slot, Context context) {
         PagedIterable<ProcessThreadInfoInner> inner
             = this.serviceClient().listProcessThreadsSlot(resourceGroupName, name, processId, slot, context);
-        return Utils.mapPage(inner, inner1 -> new ProcessThreadInfoImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ProcessThreadInfoImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PublicCertificate> listPublicCertificatesSlot(String resourceGroupName, String name,
         String slot) {
         PagedIterable<PublicCertificateInner> inner
             = this.serviceClient().listPublicCertificatesSlot(resourceGroupName, name, slot);
-        return Utils.mapPage(inner, inner1 -> new PublicCertificateImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PublicCertificateImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PublicCertificate> listPublicCertificatesSlot(String resourceGroupName, String name,
         String slot, Context context) {
         PagedIterable<PublicCertificateInner> inner
             = this.serviceClient().listPublicCertificatesSlot(resourceGroupName, name, slot, context);
-        return Utils.mapPage(inner, inner1 -> new PublicCertificateImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PublicCertificateImpl(inner1, this.manager()));
     }
 
     public Response<PublicCertificate> getPublicCertificateSlotWithResponse(String resourceGroupName, String name,
@@ -5667,14 +5675,14 @@ public final class WebAppsImpl implements WebApps {
     public PagedIterable<SiteExtensionInfo> listSiteExtensionsSlot(String resourceGroupName, String name, String slot) {
         PagedIterable<SiteExtensionInfoInner> inner
             = this.serviceClient().listSiteExtensionsSlot(resourceGroupName, name, slot);
-        return Utils.mapPage(inner, inner1 -> new SiteExtensionInfoImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SiteExtensionInfoImpl(inner1, this.manager()));
     }
 
     public PagedIterable<SiteExtensionInfo> listSiteExtensionsSlot(String resourceGroupName, String name, String slot,
         Context context) {
         PagedIterable<SiteExtensionInfoInner> inner
             = this.serviceClient().listSiteExtensionsSlot(resourceGroupName, name, slot, context);
-        return Utils.mapPage(inner, inner1 -> new SiteExtensionInfoImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SiteExtensionInfoImpl(inner1, this.manager()));
     }
 
     public Response<SiteExtensionInfo> getSiteExtensionSlotWithResponse(String resourceGroupName, String name,
@@ -5736,14 +5744,14 @@ public final class WebAppsImpl implements WebApps {
         CsmSlotEntity slotSwapEntity) {
         PagedIterable<SlotDifferenceInner> inner
             = this.serviceClient().listSlotDifferencesSlot(resourceGroupName, name, slot, slotSwapEntity);
-        return Utils.mapPage(inner, inner1 -> new SlotDifferenceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SlotDifferenceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<SlotDifference> listSlotDifferencesSlot(String resourceGroupName, String name, String slot,
         CsmSlotEntity slotSwapEntity, Context context) {
         PagedIterable<SlotDifferenceInner> inner
             = this.serviceClient().listSlotDifferencesSlot(resourceGroupName, name, slot, slotSwapEntity, context);
-        return Utils.mapPage(inner, inner1 -> new SlotDifferenceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SlotDifferenceImpl(inner1, this.manager()));
     }
 
     public void swapSlot(String resourceGroupName, String name, String slot, CsmSlotEntity slotSwapEntity) {
@@ -5757,28 +5765,28 @@ public final class WebAppsImpl implements WebApps {
 
     public PagedIterable<Snapshot> listSnapshotsSlot(String resourceGroupName, String name, String slot) {
         PagedIterable<SnapshotInner> inner = this.serviceClient().listSnapshotsSlot(resourceGroupName, name, slot);
-        return Utils.mapPage(inner, inner1 -> new SnapshotImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SnapshotImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Snapshot> listSnapshotsSlot(String resourceGroupName, String name, String slot,
         Context context) {
         PagedIterable<SnapshotInner> inner
             = this.serviceClient().listSnapshotsSlot(resourceGroupName, name, slot, context);
-        return Utils.mapPage(inner, inner1 -> new SnapshotImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SnapshotImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Snapshot> listSnapshotsFromDRSecondarySlot(String resourceGroupName, String name,
         String slot) {
         PagedIterable<SnapshotInner> inner
             = this.serviceClient().listSnapshotsFromDRSecondarySlot(resourceGroupName, name, slot);
-        return Utils.mapPage(inner, inner1 -> new SnapshotImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SnapshotImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Snapshot> listSnapshotsFromDRSecondarySlot(String resourceGroupName, String name, String slot,
         Context context) {
         PagedIterable<SnapshotInner> inner
             = this.serviceClient().listSnapshotsFromDRSecondarySlot(resourceGroupName, name, slot, context);
-        return Utils.mapPage(inner, inner1 -> new SnapshotImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SnapshotImpl(inner1, this.manager()));
     }
 
     public Response<SiteSourceControl> getSourceControlSlotWithResponse(String resourceGroupName, String name,
@@ -5913,14 +5921,14 @@ public final class WebAppsImpl implements WebApps {
     public PagedIterable<TriggeredWebJob> listTriggeredWebJobsSlot(String resourceGroupName, String name, String slot) {
         PagedIterable<TriggeredWebJobInner> inner
             = this.serviceClient().listTriggeredWebJobsSlot(resourceGroupName, name, slot);
-        return Utils.mapPage(inner, inner1 -> new TriggeredWebJobImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new TriggeredWebJobImpl(inner1, this.manager()));
     }
 
     public PagedIterable<TriggeredWebJob> listTriggeredWebJobsSlot(String resourceGroupName, String name, String slot,
         Context context) {
         PagedIterable<TriggeredWebJobInner> inner
             = this.serviceClient().listTriggeredWebJobsSlot(resourceGroupName, name, slot, context);
-        return Utils.mapPage(inner, inner1 -> new TriggeredWebJobImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new TriggeredWebJobImpl(inner1, this.manager()));
     }
 
     public Response<TriggeredWebJob> getTriggeredWebJobSlotWithResponse(String resourceGroupName, String name,
@@ -5960,14 +5968,14 @@ public final class WebAppsImpl implements WebApps {
         String webJobName, String slot) {
         PagedIterable<TriggeredJobHistoryInner> inner
             = this.serviceClient().listTriggeredWebJobHistorySlot(resourceGroupName, name, webJobName, slot);
-        return Utils.mapPage(inner, inner1 -> new TriggeredJobHistoryImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new TriggeredJobHistoryImpl(inner1, this.manager()));
     }
 
     public PagedIterable<TriggeredJobHistory> listTriggeredWebJobHistorySlot(String resourceGroupName, String name,
         String webJobName, String slot, Context context) {
         PagedIterable<TriggeredJobHistoryInner> inner
             = this.serviceClient().listTriggeredWebJobHistorySlot(resourceGroupName, name, webJobName, slot, context);
-        return Utils.mapPage(inner, inner1 -> new TriggeredJobHistoryImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new TriggeredJobHistoryImpl(inner1, this.manager()));
     }
 
     public Response<TriggeredJobHistory> getTriggeredWebJobHistorySlotWithResponse(String resourceGroupName,
@@ -6005,14 +6013,14 @@ public final class WebAppsImpl implements WebApps {
 
     public PagedIterable<CsmUsageQuota> listUsagesSlot(String resourceGroupName, String name, String slot) {
         PagedIterable<CsmUsageQuotaInner> inner = this.serviceClient().listUsagesSlot(resourceGroupName, name, slot);
-        return Utils.mapPage(inner, inner1 -> new CsmUsageQuotaImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new CsmUsageQuotaImpl(inner1, this.manager()));
     }
 
     public PagedIterable<CsmUsageQuota> listUsagesSlot(String resourceGroupName, String name, String slot,
         String filter, Context context) {
         PagedIterable<CsmUsageQuotaInner> inner
             = this.serviceClient().listUsagesSlot(resourceGroupName, name, slot, filter, context);
-        return Utils.mapPage(inner, inner1 -> new CsmUsageQuotaImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new CsmUsageQuotaImpl(inner1, this.manager()));
     }
 
     public Response<List<VnetInfoResource>> listVnetConnectionsSlotWithResponse(String resourceGroupName, String name,
@@ -6094,12 +6102,12 @@ public final class WebAppsImpl implements WebApps {
 
     public PagedIterable<WebJob> listWebJobsSlot(String resourceGroupName, String name, String slot) {
         PagedIterable<WebJobInner> inner = this.serviceClient().listWebJobsSlot(resourceGroupName, name, slot);
-        return Utils.mapPage(inner, inner1 -> new WebJobImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new WebJobImpl(inner1, this.manager()));
     }
 
     public PagedIterable<WebJob> listWebJobsSlot(String resourceGroupName, String name, String slot, Context context) {
         PagedIterable<WebJobInner> inner = this.serviceClient().listWebJobsSlot(resourceGroupName, name, slot, context);
-        return Utils.mapPage(inner, inner1 -> new WebJobImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new WebJobImpl(inner1, this.manager()));
     }
 
     public Response<WebJob> getWebJobSlotWithResponse(String resourceGroupName, String name, String webJobName,
@@ -6127,14 +6135,14 @@ public final class WebAppsImpl implements WebApps {
         CsmSlotEntity slotSwapEntity) {
         PagedIterable<SlotDifferenceInner> inner
             = this.serviceClient().listSlotDifferencesFromProduction(resourceGroupName, name, slotSwapEntity);
-        return Utils.mapPage(inner, inner1 -> new SlotDifferenceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SlotDifferenceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<SlotDifference> listSlotDifferencesFromProduction(String resourceGroupName, String name,
         CsmSlotEntity slotSwapEntity, Context context) {
         PagedIterable<SlotDifferenceInner> inner
             = this.serviceClient().listSlotDifferencesFromProduction(resourceGroupName, name, slotSwapEntity, context);
-        return Utils.mapPage(inner, inner1 -> new SlotDifferenceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SlotDifferenceImpl(inner1, this.manager()));
     }
 
     public void swapSlotWithProduction(String resourceGroupName, String name, CsmSlotEntity slotSwapEntity) {
@@ -6148,24 +6156,24 @@ public final class WebAppsImpl implements WebApps {
 
     public PagedIterable<Snapshot> listSnapshots(String resourceGroupName, String name) {
         PagedIterable<SnapshotInner> inner = this.serviceClient().listSnapshots(resourceGroupName, name);
-        return Utils.mapPage(inner, inner1 -> new SnapshotImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SnapshotImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Snapshot> listSnapshots(String resourceGroupName, String name, Context context) {
         PagedIterable<SnapshotInner> inner = this.serviceClient().listSnapshots(resourceGroupName, name, context);
-        return Utils.mapPage(inner, inner1 -> new SnapshotImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SnapshotImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Snapshot> listSnapshotsFromDRSecondary(String resourceGroupName, String name) {
         PagedIterable<SnapshotInner> inner = this.serviceClient().listSnapshotsFromDRSecondary(resourceGroupName, name);
-        return Utils.mapPage(inner, inner1 -> new SnapshotImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SnapshotImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Snapshot> listSnapshotsFromDRSecondary(String resourceGroupName, String name,
         Context context) {
         PagedIterable<SnapshotInner> inner
             = this.serviceClient().listSnapshotsFromDRSecondary(resourceGroupName, name, context);
-        return Utils.mapPage(inner, inner1 -> new SnapshotImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SnapshotImpl(inner1, this.manager()));
     }
 
     public Response<SiteSourceControl> getSourceControlWithResponse(String resourceGroupName, String name,
@@ -6295,13 +6303,13 @@ public final class WebAppsImpl implements WebApps {
 
     public PagedIterable<TriggeredWebJob> listTriggeredWebJobs(String resourceGroupName, String name) {
         PagedIterable<TriggeredWebJobInner> inner = this.serviceClient().listTriggeredWebJobs(resourceGroupName, name);
-        return Utils.mapPage(inner, inner1 -> new TriggeredWebJobImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new TriggeredWebJobImpl(inner1, this.manager()));
     }
 
     public PagedIterable<TriggeredWebJob> listTriggeredWebJobs(String resourceGroupName, String name, Context context) {
         PagedIterable<TriggeredWebJobInner> inner
             = this.serviceClient().listTriggeredWebJobs(resourceGroupName, name, context);
-        return Utils.mapPage(inner, inner1 -> new TriggeredWebJobImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new TriggeredWebJobImpl(inner1, this.manager()));
     }
 
     public Response<TriggeredWebJob> getTriggeredWebJobWithResponse(String resourceGroupName, String name,
@@ -6338,14 +6346,14 @@ public final class WebAppsImpl implements WebApps {
         String webJobName) {
         PagedIterable<TriggeredJobHistoryInner> inner
             = this.serviceClient().listTriggeredWebJobHistory(resourceGroupName, name, webJobName);
-        return Utils.mapPage(inner, inner1 -> new TriggeredJobHistoryImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new TriggeredJobHistoryImpl(inner1, this.manager()));
     }
 
     public PagedIterable<TriggeredJobHistory> listTriggeredWebJobHistory(String resourceGroupName, String name,
         String webJobName, Context context) {
         PagedIterable<TriggeredJobHistoryInner> inner
             = this.serviceClient().listTriggeredWebJobHistory(resourceGroupName, name, webJobName, context);
-        return Utils.mapPage(inner, inner1 -> new TriggeredJobHistoryImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new TriggeredJobHistoryImpl(inner1, this.manager()));
     }
 
     public Response<TriggeredJobHistory> getTriggeredWebJobHistoryWithResponse(String resourceGroupName, String name,
@@ -6382,14 +6390,14 @@ public final class WebAppsImpl implements WebApps {
 
     public PagedIterable<CsmUsageQuota> listUsages(String resourceGroupName, String name) {
         PagedIterable<CsmUsageQuotaInner> inner = this.serviceClient().listUsages(resourceGroupName, name);
-        return Utils.mapPage(inner, inner1 -> new CsmUsageQuotaImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new CsmUsageQuotaImpl(inner1, this.manager()));
     }
 
     public PagedIterable<CsmUsageQuota> listUsages(String resourceGroupName, String name, String filter,
         Context context) {
         PagedIterable<CsmUsageQuotaInner> inner
             = this.serviceClient().listUsages(resourceGroupName, name, filter, context);
-        return Utils.mapPage(inner, inner1 -> new CsmUsageQuotaImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new CsmUsageQuotaImpl(inner1, this.manager()));
     }
 
     public Response<List<VnetInfoResource>> listVnetConnectionsWithResponse(String resourceGroupName, String name,
@@ -6561,12 +6569,12 @@ public final class WebAppsImpl implements WebApps {
 
     public PagedIterable<WebJob> listWebJobs(String resourceGroupName, String name) {
         PagedIterable<WebJobInner> inner = this.serviceClient().listWebJobs(resourceGroupName, name);
-        return Utils.mapPage(inner, inner1 -> new WebJobImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new WebJobImpl(inner1, this.manager()));
     }
 
     public PagedIterable<WebJob> listWebJobs(String resourceGroupName, String name, Context context) {
         PagedIterable<WebJobInner> inner = this.serviceClient().listWebJobs(resourceGroupName, name, context);
-        return Utils.mapPage(inner, inner1 -> new WebJobImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new WebJobImpl(inner1, this.manager()));
     }
 
     public Response<WebJob> getWebJobWithResponse(String resourceGroupName, String name, String webJobName,
@@ -6614,14 +6622,14 @@ public final class WebAppsImpl implements WebApps {
         String slot) {
         PagedIterable<WorkflowEnvelopeInner> inner
             = this.serviceClient().listInstanceWorkflowsSlot(resourceGroupName, name, slot);
-        return Utils.mapPage(inner, inner1 -> new WorkflowEnvelopeImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new WorkflowEnvelopeImpl(inner1, this.manager()));
     }
 
     public PagedIterable<WorkflowEnvelope> listInstanceWorkflowsSlot(String resourceGroupName, String name, String slot,
         Context context) {
         PagedIterable<WorkflowEnvelopeInner> inner
             = this.serviceClient().listInstanceWorkflowsSlot(resourceGroupName, name, slot, context);
-        return Utils.mapPage(inner, inner1 -> new WorkflowEnvelopeImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new WorkflowEnvelopeImpl(inner1, this.manager()));
     }
 
     public Response<WorkflowEnvelope> getInstanceWorkflowSlotWithResponse(String resourceGroupName, String name,
@@ -6670,13 +6678,13 @@ public final class WebAppsImpl implements WebApps {
 
     public PagedIterable<WorkflowEnvelope> listWorkflows(String resourceGroupName, String name) {
         PagedIterable<WorkflowEnvelopeInner> inner = this.serviceClient().listWorkflows(resourceGroupName, name);
-        return Utils.mapPage(inner, inner1 -> new WorkflowEnvelopeImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new WorkflowEnvelopeImpl(inner1, this.manager()));
     }
 
     public PagedIterable<WorkflowEnvelope> listWorkflows(String resourceGroupName, String name, Context context) {
         PagedIterable<WorkflowEnvelopeInner> inner
             = this.serviceClient().listWorkflows(resourceGroupName, name, context);
-        return Utils.mapPage(inner, inner1 -> new WorkflowEnvelopeImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new WorkflowEnvelopeImpl(inner1, this.manager()));
     }
 
     public Response<WorkflowEnvelope> getWorkflowWithResponse(String resourceGroupName, String name,
@@ -6722,12 +6730,12 @@ public final class WebAppsImpl implements WebApps {
     }
 
     public Site getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "sites");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "sites");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
@@ -6736,12 +6744,12 @@ public final class WebAppsImpl implements WebApps {
     }
 
     public Response<Site> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "sites");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "sites");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
@@ -6750,17 +6758,17 @@ public final class WebAppsImpl implements WebApps {
     }
 
     public Deployment getDeploymentById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "sites");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "sites");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
-        String varId = Utils.getValueFromIdByName(id, "deployments");
+        String varId = ResourceManagerUtils.getValueFromIdByName(id, "deployments");
         if (varId == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'deployments'.", id)));
@@ -6769,17 +6777,17 @@ public final class WebAppsImpl implements WebApps {
     }
 
     public Response<Deployment> getDeploymentByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "sites");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "sites");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
-        String varId = Utils.getValueFromIdByName(id, "deployments");
+        String varId = ResourceManagerUtils.getValueFromIdByName(id, "deployments");
         if (varId == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'deployments'.", id)));
@@ -6788,17 +6796,18 @@ public final class WebAppsImpl implements WebApps {
     }
 
     public Identifier getDomainOwnershipIdentifierById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "sites");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "sites");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
-        String domainOwnershipIdentifierName = Utils.getValueFromIdByName(id, "domainOwnershipIdentifiers");
+        String domainOwnershipIdentifierName
+            = ResourceManagerUtils.getValueFromIdByName(id, "domainOwnershipIdentifiers");
         if (domainOwnershipIdentifierName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'domainOwnershipIdentifiers'.", id)));
@@ -6808,17 +6817,18 @@ public final class WebAppsImpl implements WebApps {
     }
 
     public Response<Identifier> getDomainOwnershipIdentifierByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "sites");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "sites");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
-        String domainOwnershipIdentifierName = Utils.getValueFromIdByName(id, "domainOwnershipIdentifiers");
+        String domainOwnershipIdentifierName
+            = ResourceManagerUtils.getValueFromIdByName(id, "domainOwnershipIdentifiers");
         if (domainOwnershipIdentifierName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'domainOwnershipIdentifiers'.", id)));
@@ -6828,17 +6838,17 @@ public final class WebAppsImpl implements WebApps {
     }
 
     public FunctionEnvelope getFunctionById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "sites");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "sites");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
-        String functionName = Utils.getValueFromIdByName(id, "functions");
+        String functionName = ResourceManagerUtils.getValueFromIdByName(id, "functions");
         if (functionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'functions'.", id)));
@@ -6847,17 +6857,17 @@ public final class WebAppsImpl implements WebApps {
     }
 
     public Response<FunctionEnvelope> getFunctionByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "sites");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "sites");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
-        String functionName = Utils.getValueFromIdByName(id, "functions");
+        String functionName = ResourceManagerUtils.getValueFromIdByName(id, "functions");
         if (functionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'functions'.", id)));
@@ -6866,17 +6876,17 @@ public final class WebAppsImpl implements WebApps {
     }
 
     public HostnameBinding getHostnameBindingById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "sites");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "sites");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
-        String hostname = Utils.getValueFromIdByName(id, "hostNameBindings");
+        String hostname = ResourceManagerUtils.getValueFromIdByName(id, "hostNameBindings");
         if (hostname == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'hostNameBindings'.", id)));
@@ -6885,17 +6895,17 @@ public final class WebAppsImpl implements WebApps {
     }
 
     public Response<HostnameBinding> getHostnameBindingByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "sites");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "sites");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
-        String hostname = Utils.getValueFromIdByName(id, "hostNameBindings");
+        String hostname = ResourceManagerUtils.getValueFromIdByName(id, "hostNameBindings");
         if (hostname == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'hostNameBindings'.", id)));
@@ -6904,22 +6914,22 @@ public final class WebAppsImpl implements WebApps {
     }
 
     public HybridConnection getHybridConnectionById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "sites");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "sites");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
-        String namespaceName = Utils.getValueFromIdByName(id, "hybridConnectionNamespaces");
+        String namespaceName = ResourceManagerUtils.getValueFromIdByName(id, "hybridConnectionNamespaces");
         if (namespaceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'hybridConnectionNamespaces'.", id)));
         }
-        String relayName = Utils.getValueFromIdByName(id, "relays");
+        String relayName = ResourceManagerUtils.getValueFromIdByName(id, "relays");
         if (relayName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'relays'.", id)));
@@ -6929,22 +6939,22 @@ public final class WebAppsImpl implements WebApps {
     }
 
     public Response<HybridConnection> getHybridConnectionByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "sites");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "sites");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
-        String namespaceName = Utils.getValueFromIdByName(id, "hybridConnectionNamespaces");
+        String namespaceName = ResourceManagerUtils.getValueFromIdByName(id, "hybridConnectionNamespaces");
         if (namespaceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'hybridConnectionNamespaces'.", id)));
         }
-        String relayName = Utils.getValueFromIdByName(id, "relays");
+        String relayName = ResourceManagerUtils.getValueFromIdByName(id, "relays");
         if (relayName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'relays'.", id)));
@@ -6953,17 +6963,17 @@ public final class WebAppsImpl implements WebApps {
     }
 
     public RelayServiceConnectionEntity getRelayServiceConnectionById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "sites");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "sites");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
-        String entityName = Utils.getValueFromIdByName(id, "hybridconnection");
+        String entityName = ResourceManagerUtils.getValueFromIdByName(id, "hybridconnection");
         if (entityName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'hybridconnection'.", id)));
@@ -6973,17 +6983,17 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<RelayServiceConnectionEntity> getRelayServiceConnectionByIdWithResponse(String id,
         Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "sites");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "sites");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
-        String entityName = Utils.getValueFromIdByName(id, "hybridconnection");
+        String entityName = ResourceManagerUtils.getValueFromIdByName(id, "hybridconnection");
         if (entityName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'hybridconnection'.", id)));
@@ -6992,17 +7002,17 @@ public final class WebAppsImpl implements WebApps {
     }
 
     public PremierAddOn getPremierAddOnById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "sites");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "sites");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
-        String premierAddOnName = Utils.getValueFromIdByName(id, "premieraddons");
+        String premierAddOnName = ResourceManagerUtils.getValueFromIdByName(id, "premieraddons");
         if (premierAddOnName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'premieraddons'.", id)));
@@ -7011,17 +7021,17 @@ public final class WebAppsImpl implements WebApps {
     }
 
     public Response<PremierAddOn> getPremierAddOnByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "sites");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "sites");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
-        String premierAddOnName = Utils.getValueFromIdByName(id, "premieraddons");
+        String premierAddOnName = ResourceManagerUtils.getValueFromIdByName(id, "premieraddons");
         if (premierAddOnName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'premieraddons'.", id)));
@@ -7030,17 +7040,17 @@ public final class WebAppsImpl implements WebApps {
     }
 
     public PublicCertificate getPublicCertificateById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "sites");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "sites");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
-        String publicCertificateName = Utils.getValueFromIdByName(id, "publicCertificates");
+        String publicCertificateName = ResourceManagerUtils.getValueFromIdByName(id, "publicCertificates");
         if (publicCertificateName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'publicCertificates'.", id)));
@@ -7050,17 +7060,17 @@ public final class WebAppsImpl implements WebApps {
     }
 
     public Response<PublicCertificate> getPublicCertificateByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "sites");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "sites");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
-        String publicCertificateName = Utils.getValueFromIdByName(id, "publicCertificates");
+        String publicCertificateName = ResourceManagerUtils.getValueFromIdByName(id, "publicCertificates");
         if (publicCertificateName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'publicCertificates'.", id)));
@@ -7069,22 +7079,22 @@ public final class WebAppsImpl implements WebApps {
     }
 
     public VnetInfoResource getVnetConnectionSlotById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "sites");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "sites");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
-        String vnetName = Utils.getValueFromIdByName(id, "virtualNetworkConnections");
+        String vnetName = ResourceManagerUtils.getValueFromIdByName(id, "virtualNetworkConnections");
         if (vnetName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'virtualNetworkConnections'.", id)));
         }
-        String slot = Utils.getValueFromIdByName(id, "slots");
+        String slot = ResourceManagerUtils.getValueFromIdByName(id, "slots");
         if (slot == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'slots'.", id)));
@@ -7093,22 +7103,22 @@ public final class WebAppsImpl implements WebApps {
     }
 
     public Response<VnetInfoResource> getVnetConnectionSlotByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "sites");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "sites");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
-        String vnetName = Utils.getValueFromIdByName(id, "virtualNetworkConnections");
+        String vnetName = ResourceManagerUtils.getValueFromIdByName(id, "virtualNetworkConnections");
         if (vnetName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'virtualNetworkConnections'.", id)));
         }
-        String slot = Utils.getValueFromIdByName(id, "slots");
+        String slot = ResourceManagerUtils.getValueFromIdByName(id, "slots");
         if (slot == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'slots'.", id)));
@@ -7117,27 +7127,27 @@ public final class WebAppsImpl implements WebApps {
     }
 
     public VnetGateway getVnetConnectionGatewaySlotById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "sites");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "sites");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
-        String vnetName = Utils.getValueFromIdByName(id, "virtualNetworkConnections");
+        String vnetName = ResourceManagerUtils.getValueFromIdByName(id, "virtualNetworkConnections");
         if (vnetName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'virtualNetworkConnections'.", id)));
         }
-        String gatewayName = Utils.getValueFromIdByName(id, "gateways");
+        String gatewayName = ResourceManagerUtils.getValueFromIdByName(id, "gateways");
         if (gatewayName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'gateways'.", id)));
         }
-        String slot = Utils.getValueFromIdByName(id, "slots");
+        String slot = ResourceManagerUtils.getValueFromIdByName(id, "slots");
         if (slot == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'slots'.", id)));
@@ -7147,27 +7157,27 @@ public final class WebAppsImpl implements WebApps {
     }
 
     public Response<VnetGateway> getVnetConnectionGatewaySlotByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "sites");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "sites");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
-        String vnetName = Utils.getValueFromIdByName(id, "virtualNetworkConnections");
+        String vnetName = ResourceManagerUtils.getValueFromIdByName(id, "virtualNetworkConnections");
         if (vnetName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'virtualNetworkConnections'.", id)));
         }
-        String gatewayName = Utils.getValueFromIdByName(id, "gateways");
+        String gatewayName = ResourceManagerUtils.getValueFromIdByName(id, "gateways");
         if (gatewayName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'gateways'.", id)));
         }
-        String slot = Utils.getValueFromIdByName(id, "slots");
+        String slot = ResourceManagerUtils.getValueFromIdByName(id, "slots");
         if (slot == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'slots'.", id)));
@@ -7177,12 +7187,12 @@ public final class WebAppsImpl implements WebApps {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "sites");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "sites");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
@@ -7194,12 +7204,12 @@ public final class WebAppsImpl implements WebApps {
 
     public Response<Void> deleteByIdWithResponse(String id, Boolean deleteMetrics, Boolean deleteEmptyServerFarm,
         Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "sites");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "sites");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
@@ -7208,17 +7218,17 @@ public final class WebAppsImpl implements WebApps {
     }
 
     public void deleteDeploymentById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "sites");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "sites");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
-        String varId = Utils.getValueFromIdByName(id, "deployments");
+        String varId = ResourceManagerUtils.getValueFromIdByName(id, "deployments");
         if (varId == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'deployments'.", id)));
@@ -7227,17 +7237,17 @@ public final class WebAppsImpl implements WebApps {
     }
 
     public Response<Void> deleteDeploymentByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "sites");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "sites");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
-        String varId = Utils.getValueFromIdByName(id, "deployments");
+        String varId = ResourceManagerUtils.getValueFromIdByName(id, "deployments");
         if (varId == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'deployments'.", id)));
@@ -7246,17 +7256,18 @@ public final class WebAppsImpl implements WebApps {
     }
 
     public void deleteDomainOwnershipIdentifierById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "sites");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "sites");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
-        String domainOwnershipIdentifierName = Utils.getValueFromIdByName(id, "domainOwnershipIdentifiers");
+        String domainOwnershipIdentifierName
+            = ResourceManagerUtils.getValueFromIdByName(id, "domainOwnershipIdentifiers");
         if (domainOwnershipIdentifierName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'domainOwnershipIdentifiers'.", id)));
@@ -7266,17 +7277,18 @@ public final class WebAppsImpl implements WebApps {
     }
 
     public Response<Void> deleteDomainOwnershipIdentifierByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "sites");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "sites");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
-        String domainOwnershipIdentifierName = Utils.getValueFromIdByName(id, "domainOwnershipIdentifiers");
+        String domainOwnershipIdentifierName
+            = ResourceManagerUtils.getValueFromIdByName(id, "domainOwnershipIdentifiers");
         if (domainOwnershipIdentifierName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'domainOwnershipIdentifiers'.", id)));
@@ -7286,17 +7298,17 @@ public final class WebAppsImpl implements WebApps {
     }
 
     public void deleteFunctionById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "sites");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "sites");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
-        String functionName = Utils.getValueFromIdByName(id, "functions");
+        String functionName = ResourceManagerUtils.getValueFromIdByName(id, "functions");
         if (functionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'functions'.", id)));
@@ -7305,17 +7317,17 @@ public final class WebAppsImpl implements WebApps {
     }
 
     public Response<Void> deleteFunctionByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "sites");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "sites");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
-        String functionName = Utils.getValueFromIdByName(id, "functions");
+        String functionName = ResourceManagerUtils.getValueFromIdByName(id, "functions");
         if (functionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'functions'.", id)));
@@ -7324,17 +7336,17 @@ public final class WebAppsImpl implements WebApps {
     }
 
     public void deleteHostnameBindingById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "sites");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "sites");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
-        String hostname = Utils.getValueFromIdByName(id, "hostNameBindings");
+        String hostname = ResourceManagerUtils.getValueFromIdByName(id, "hostNameBindings");
         if (hostname == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'hostNameBindings'.", id)));
@@ -7343,17 +7355,17 @@ public final class WebAppsImpl implements WebApps {
     }
 
     public Response<Void> deleteHostnameBindingByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "sites");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "sites");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
-        String hostname = Utils.getValueFromIdByName(id, "hostNameBindings");
+        String hostname = ResourceManagerUtils.getValueFromIdByName(id, "hostNameBindings");
         if (hostname == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'hostNameBindings'.", id)));
@@ -7362,22 +7374,22 @@ public final class WebAppsImpl implements WebApps {
     }
 
     public void deleteHybridConnectionById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "sites");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "sites");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
-        String namespaceName = Utils.getValueFromIdByName(id, "hybridConnectionNamespaces");
+        String namespaceName = ResourceManagerUtils.getValueFromIdByName(id, "hybridConnectionNamespaces");
         if (namespaceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'hybridConnectionNamespaces'.", id)));
         }
-        String relayName = Utils.getValueFromIdByName(id, "relays");
+        String relayName = ResourceManagerUtils.getValueFromIdByName(id, "relays");
         if (relayName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'relays'.", id)));
@@ -7386,22 +7398,22 @@ public final class WebAppsImpl implements WebApps {
     }
 
     public Response<Void> deleteHybridConnectionByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "sites");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "sites");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
-        String namespaceName = Utils.getValueFromIdByName(id, "hybridConnectionNamespaces");
+        String namespaceName = ResourceManagerUtils.getValueFromIdByName(id, "hybridConnectionNamespaces");
         if (namespaceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'hybridConnectionNamespaces'.", id)));
         }
-        String relayName = Utils.getValueFromIdByName(id, "relays");
+        String relayName = ResourceManagerUtils.getValueFromIdByName(id, "relays");
         if (relayName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'relays'.", id)));
@@ -7410,17 +7422,17 @@ public final class WebAppsImpl implements WebApps {
     }
 
     public void deleteRelayServiceConnectionById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "sites");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "sites");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
-        String entityName = Utils.getValueFromIdByName(id, "hybridconnection");
+        String entityName = ResourceManagerUtils.getValueFromIdByName(id, "hybridconnection");
         if (entityName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'hybridconnection'.", id)));
@@ -7429,17 +7441,17 @@ public final class WebAppsImpl implements WebApps {
     }
 
     public Response<Void> deleteRelayServiceConnectionByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "sites");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "sites");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
-        String entityName = Utils.getValueFromIdByName(id, "hybridconnection");
+        String entityName = ResourceManagerUtils.getValueFromIdByName(id, "hybridconnection");
         if (entityName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'hybridconnection'.", id)));
@@ -7448,17 +7460,17 @@ public final class WebAppsImpl implements WebApps {
     }
 
     public void deletePremierAddOnById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "sites");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "sites");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
-        String premierAddOnName = Utils.getValueFromIdByName(id, "premieraddons");
+        String premierAddOnName = ResourceManagerUtils.getValueFromIdByName(id, "premieraddons");
         if (premierAddOnName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'premieraddons'.", id)));
@@ -7467,17 +7479,17 @@ public final class WebAppsImpl implements WebApps {
     }
 
     public Response<Void> deletePremierAddOnByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "sites");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "sites");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
-        String premierAddOnName = Utils.getValueFromIdByName(id, "premieraddons");
+        String premierAddOnName = ResourceManagerUtils.getValueFromIdByName(id, "premieraddons");
         if (premierAddOnName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'premieraddons'.", id)));
@@ -7486,17 +7498,17 @@ public final class WebAppsImpl implements WebApps {
     }
 
     public void deletePublicCertificateById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "sites");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "sites");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
-        String publicCertificateName = Utils.getValueFromIdByName(id, "publicCertificates");
+        String publicCertificateName = ResourceManagerUtils.getValueFromIdByName(id, "publicCertificates");
         if (publicCertificateName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'publicCertificates'.", id)));
@@ -7505,17 +7517,17 @@ public final class WebAppsImpl implements WebApps {
     }
 
     public Response<Void> deletePublicCertificateByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "sites");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "sites");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
-        String publicCertificateName = Utils.getValueFromIdByName(id, "publicCertificates");
+        String publicCertificateName = ResourceManagerUtils.getValueFromIdByName(id, "publicCertificates");
         if (publicCertificateName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'publicCertificates'.", id)));
@@ -7524,22 +7536,22 @@ public final class WebAppsImpl implements WebApps {
     }
 
     public void deleteVnetConnectionSlotById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "sites");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "sites");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
-        String vnetName = Utils.getValueFromIdByName(id, "virtualNetworkConnections");
+        String vnetName = ResourceManagerUtils.getValueFromIdByName(id, "virtualNetworkConnections");
         if (vnetName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'virtualNetworkConnections'.", id)));
         }
-        String slot = Utils.getValueFromIdByName(id, "slots");
+        String slot = ResourceManagerUtils.getValueFromIdByName(id, "slots");
         if (slot == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'slots'.", id)));
@@ -7548,22 +7560,22 @@ public final class WebAppsImpl implements WebApps {
     }
 
     public Response<Void> deleteVnetConnectionSlotByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "sites");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "sites");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
         }
-        String vnetName = Utils.getValueFromIdByName(id, "virtualNetworkConnections");
+        String vnetName = ResourceManagerUtils.getValueFromIdByName(id, "virtualNetworkConnections");
         if (vnetName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'virtualNetworkConnections'.", id)));
         }
-        String slot = Utils.getValueFromIdByName(id, "slots");
+        String slot = ResourceManagerUtils.getValueFromIdByName(id, "slots");
         if (slot == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'slots'.", id)));

@@ -57,16 +57,17 @@ public final class SubscriptionNetworkManagerConnectionsImpl implements Subscrip
 
     public PagedIterable<NetworkManagerConnection> list() {
         PagedIterable<NetworkManagerConnectionInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new NetworkManagerConnectionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new NetworkManagerConnectionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<NetworkManagerConnection> list(Integer top, String skipToken, Context context) {
         PagedIterable<NetworkManagerConnectionInner> inner = this.serviceClient().list(top, skipToken, context);
-        return Utils.mapPage(inner, inner1 -> new NetworkManagerConnectionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new NetworkManagerConnectionImpl(inner1, this.manager()));
     }
 
     public NetworkManagerConnection getById(String id) {
-        String networkManagerConnectionName = Utils.getValueFromIdByName(id, "networkManagerConnections");
+        String networkManagerConnectionName
+            = ResourceManagerUtils.getValueFromIdByName(id, "networkManagerConnections");
         if (networkManagerConnectionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'networkManagerConnections'.", id)));
@@ -75,7 +76,8 @@ public final class SubscriptionNetworkManagerConnectionsImpl implements Subscrip
     }
 
     public Response<NetworkManagerConnection> getByIdWithResponse(String id, Context context) {
-        String networkManagerConnectionName = Utils.getValueFromIdByName(id, "networkManagerConnections");
+        String networkManagerConnectionName
+            = ResourceManagerUtils.getValueFromIdByName(id, "networkManagerConnections");
         if (networkManagerConnectionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'networkManagerConnections'.", id)));
@@ -84,7 +86,8 @@ public final class SubscriptionNetworkManagerConnectionsImpl implements Subscrip
     }
 
     public void deleteById(String id) {
-        String networkManagerConnectionName = Utils.getValueFromIdByName(id, "networkManagerConnections");
+        String networkManagerConnectionName
+            = ResourceManagerUtils.getValueFromIdByName(id, "networkManagerConnections");
         if (networkManagerConnectionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'networkManagerConnections'.", id)));
@@ -93,7 +96,8 @@ public final class SubscriptionNetworkManagerConnectionsImpl implements Subscrip
     }
 
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
-        String networkManagerConnectionName = Utils.getValueFromIdByName(id, "networkManagerConnections");
+        String networkManagerConnectionName
+            = ResourceManagerUtils.getValueFromIdByName(id, "networkManagerConnections");
         if (networkManagerConnectionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'networkManagerConnections'.", id)));

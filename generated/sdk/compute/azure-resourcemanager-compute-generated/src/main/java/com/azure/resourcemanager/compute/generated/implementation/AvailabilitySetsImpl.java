@@ -61,45 +61,45 @@ public final class AvailabilitySetsImpl implements AvailabilitySets {
 
     public PagedIterable<AvailabilitySet> list() {
         PagedIterable<AvailabilitySetInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new AvailabilitySetImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new AvailabilitySetImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AvailabilitySet> list(String expand, Context context) {
         PagedIterable<AvailabilitySetInner> inner = this.serviceClient().list(expand, context);
-        return Utils.mapPage(inner, inner1 -> new AvailabilitySetImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new AvailabilitySetImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AvailabilitySet> listByResourceGroup(String resourceGroupName) {
         PagedIterable<AvailabilitySetInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return Utils.mapPage(inner, inner1 -> new AvailabilitySetImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new AvailabilitySetImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AvailabilitySet> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<AvailabilitySetInner> inner
             = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return Utils.mapPage(inner, inner1 -> new AvailabilitySetImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new AvailabilitySetImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualMachineSize> listAvailableSizes(String resourceGroupName, String availabilitySetName) {
         PagedIterable<VirtualMachineSizeInner> inner
             = this.serviceClient().listAvailableSizes(resourceGroupName, availabilitySetName);
-        return Utils.mapPage(inner, inner1 -> new VirtualMachineSizeImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new VirtualMachineSizeImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualMachineSize> listAvailableSizes(String resourceGroupName, String availabilitySetName,
         Context context) {
         PagedIterable<VirtualMachineSizeInner> inner
             = this.serviceClient().listAvailableSizes(resourceGroupName, availabilitySetName, context);
-        return Utils.mapPage(inner, inner1 -> new VirtualMachineSizeImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new VirtualMachineSizeImpl(inner1, this.manager()));
     }
 
     public AvailabilitySet getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String availabilitySetName = Utils.getValueFromIdByName(id, "availabilitySets");
+        String availabilitySetName = ResourceManagerUtils.getValueFromIdByName(id, "availabilitySets");
         if (availabilitySetName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'availabilitySets'.", id)));
@@ -108,12 +108,12 @@ public final class AvailabilitySetsImpl implements AvailabilitySets {
     }
 
     public Response<AvailabilitySet> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String availabilitySetName = Utils.getValueFromIdByName(id, "availabilitySets");
+        String availabilitySetName = ResourceManagerUtils.getValueFromIdByName(id, "availabilitySets");
         if (availabilitySetName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'availabilitySets'.", id)));
@@ -122,12 +122,12 @@ public final class AvailabilitySetsImpl implements AvailabilitySets {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String availabilitySetName = Utils.getValueFromIdByName(id, "availabilitySets");
+        String availabilitySetName = ResourceManagerUtils.getValueFromIdByName(id, "availabilitySets");
         if (availabilitySetName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'availabilitySets'.", id)));
@@ -136,12 +136,12 @@ public final class AvailabilitySetsImpl implements AvailabilitySets {
     }
 
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String availabilitySetName = Utils.getValueFromIdByName(id, "availabilitySets");
+        String availabilitySetName = ResourceManagerUtils.getValueFromIdByName(id, "availabilitySets");
         if (availabilitySetName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'availabilitySets'.", id)));

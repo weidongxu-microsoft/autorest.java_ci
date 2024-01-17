@@ -65,33 +65,33 @@ public final class StaticMembersImpl implements StaticMembers {
         String networkGroupName) {
         PagedIterable<StaticMemberInner> inner
             = this.serviceClient().list(resourceGroupName, networkManagerName, networkGroupName);
-        return Utils.mapPage(inner, inner1 -> new StaticMemberImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new StaticMemberImpl(inner1, this.manager()));
     }
 
     public PagedIterable<StaticMember> list(String resourceGroupName, String networkManagerName,
         String networkGroupName, Integer top, String skipToken, Context context) {
         PagedIterable<StaticMemberInner> inner = this.serviceClient().list(resourceGroupName, networkManagerName,
             networkGroupName, top, skipToken, context);
-        return Utils.mapPage(inner, inner1 -> new StaticMemberImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new StaticMemberImpl(inner1, this.manager()));
     }
 
     public StaticMember getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String networkManagerName = Utils.getValueFromIdByName(id, "networkManagers");
+        String networkManagerName = ResourceManagerUtils.getValueFromIdByName(id, "networkManagers");
         if (networkManagerName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'networkManagers'.", id)));
         }
-        String networkGroupName = Utils.getValueFromIdByName(id, "networkGroups");
+        String networkGroupName = ResourceManagerUtils.getValueFromIdByName(id, "networkGroups");
         if (networkGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'networkGroups'.", id)));
         }
-        String staticMemberName = Utils.getValueFromIdByName(id, "staticMembers");
+        String staticMemberName = ResourceManagerUtils.getValueFromIdByName(id, "staticMembers");
         if (staticMemberName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'staticMembers'.", id)));
@@ -102,22 +102,22 @@ public final class StaticMembersImpl implements StaticMembers {
     }
 
     public Response<StaticMember> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String networkManagerName = Utils.getValueFromIdByName(id, "networkManagers");
+        String networkManagerName = ResourceManagerUtils.getValueFromIdByName(id, "networkManagers");
         if (networkManagerName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'networkManagers'.", id)));
         }
-        String networkGroupName = Utils.getValueFromIdByName(id, "networkGroups");
+        String networkGroupName = ResourceManagerUtils.getValueFromIdByName(id, "networkGroups");
         if (networkGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'networkGroups'.", id)));
         }
-        String staticMemberName = Utils.getValueFromIdByName(id, "staticMembers");
+        String staticMemberName = ResourceManagerUtils.getValueFromIdByName(id, "staticMembers");
         if (staticMemberName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'staticMembers'.", id)));
@@ -126,22 +126,22 @@ public final class StaticMembersImpl implements StaticMembers {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String networkManagerName = Utils.getValueFromIdByName(id, "networkManagers");
+        String networkManagerName = ResourceManagerUtils.getValueFromIdByName(id, "networkManagers");
         if (networkManagerName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'networkManagers'.", id)));
         }
-        String networkGroupName = Utils.getValueFromIdByName(id, "networkGroups");
+        String networkGroupName = ResourceManagerUtils.getValueFromIdByName(id, "networkGroups");
         if (networkGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'networkGroups'.", id)));
         }
-        String staticMemberName = Utils.getValueFromIdByName(id, "staticMembers");
+        String staticMemberName = ResourceManagerUtils.getValueFromIdByName(id, "staticMembers");
         if (staticMemberName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'staticMembers'.", id)));
@@ -151,22 +151,22 @@ public final class StaticMembersImpl implements StaticMembers {
     }
 
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String networkManagerName = Utils.getValueFromIdByName(id, "networkManagers");
+        String networkManagerName = ResourceManagerUtils.getValueFromIdByName(id, "networkManagers");
         if (networkManagerName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'networkManagers'.", id)));
         }
-        String networkGroupName = Utils.getValueFromIdByName(id, "networkGroups");
+        String networkGroupName = ResourceManagerUtils.getValueFromIdByName(id, "networkGroups");
         if (networkGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'networkGroups'.", id)));
         }
-        String staticMemberName = Utils.getValueFromIdByName(id, "staticMembers");
+        String staticMemberName = ResourceManagerUtils.getValueFromIdByName(id, "staticMembers");
         if (staticMemberName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'staticMembers'.", id)));

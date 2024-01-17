@@ -114,9 +114,9 @@ public final class CaCertificateImpl implements CaCertificate, CaCertificate.Def
         com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.namespaceName = Utils.getValueFromIdByName(innerObject.id(), "namespaces");
-        this.caCertificateName = Utils.getValueFromIdByName(innerObject.id(), "caCertificates");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.namespaceName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "namespaces");
+        this.caCertificateName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "caCertificates");
     }
 
     public CaCertificate refresh() {

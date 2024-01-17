@@ -29,12 +29,12 @@ public final class ExpressRoutePortsLocationsImpl implements ExpressRoutePortsLo
 
     public PagedIterable<ExpressRoutePortsLocation> list() {
         PagedIterable<ExpressRoutePortsLocationInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new ExpressRoutePortsLocationImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ExpressRoutePortsLocationImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ExpressRoutePortsLocation> list(Context context) {
         PagedIterable<ExpressRoutePortsLocationInner> inner = this.serviceClient().list(context);
-        return Utils.mapPage(inner, inner1 -> new ExpressRoutePortsLocationImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ExpressRoutePortsLocationImpl(inner1, this.manager()));
     }
 
     public Response<ExpressRoutePortsLocation> getWithResponse(String locationName, Context context) {

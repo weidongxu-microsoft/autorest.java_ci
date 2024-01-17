@@ -35,78 +35,78 @@ public final class ProvidersImpl implements Providers {
 
     public PagedIterable<ApplicationStackResource> getAvailableStacks() {
         PagedIterable<ApplicationStackResourceInner> inner = this.serviceClient().getAvailableStacks();
-        return Utils.mapPage(inner, inner1 -> new ApplicationStackResourceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ApplicationStackResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ApplicationStackResource> getAvailableStacks(ProviderOsTypeSelected osTypeSelected,
         Context context) {
         PagedIterable<ApplicationStackResourceInner> inner
             = this.serviceClient().getAvailableStacks(osTypeSelected, context);
-        return Utils.mapPage(inner, inner1 -> new ApplicationStackResourceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ApplicationStackResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<FunctionAppStack> getFunctionAppStacks() {
         PagedIterable<FunctionAppStackInner> inner = this.serviceClient().getFunctionAppStacks();
-        return Utils.mapPage(inner, inner1 -> new FunctionAppStackImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new FunctionAppStackImpl(inner1, this.manager()));
     }
 
     public PagedIterable<FunctionAppStack> getFunctionAppStacks(ProviderStackOsType stackOsType, Context context) {
         PagedIterable<FunctionAppStackInner> inner = this.serviceClient().getFunctionAppStacks(stackOsType, context);
-        return Utils.mapPage(inner, inner1 -> new FunctionAppStackImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new FunctionAppStackImpl(inner1, this.manager()));
     }
 
     public PagedIterable<FunctionAppStack> getFunctionAppStacksForLocation(String location) {
         PagedIterable<FunctionAppStackInner> inner = this.serviceClient().getFunctionAppStacksForLocation(location);
-        return Utils.mapPage(inner, inner1 -> new FunctionAppStackImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new FunctionAppStackImpl(inner1, this.manager()));
     }
 
     public PagedIterable<FunctionAppStack> getFunctionAppStacksForLocation(String location,
         ProviderStackOsType stackOsType, Context context) {
         PagedIterable<FunctionAppStackInner> inner
             = this.serviceClient().getFunctionAppStacksForLocation(location, stackOsType, context);
-        return Utils.mapPage(inner, inner1 -> new FunctionAppStackImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new FunctionAppStackImpl(inner1, this.manager()));
     }
 
     public PagedIterable<WebAppStack> getWebAppStacksForLocation(String location) {
         PagedIterable<WebAppStackInner> inner = this.serviceClient().getWebAppStacksForLocation(location);
-        return Utils.mapPage(inner, inner1 -> new WebAppStackImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new WebAppStackImpl(inner1, this.manager()));
     }
 
     public PagedIterable<WebAppStack> getWebAppStacksForLocation(String location, ProviderStackOsType stackOsType,
         Context context) {
         PagedIterable<WebAppStackInner> inner
             = this.serviceClient().getWebAppStacksForLocation(location, stackOsType, context);
-        return Utils.mapPage(inner, inner1 -> new WebAppStackImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new WebAppStackImpl(inner1, this.manager()));
     }
 
     public PagedIterable<CsmOperationDescription> listOperations() {
         PagedIterable<CsmOperationDescriptionInner> inner = this.serviceClient().listOperations();
-        return Utils.mapPage(inner, inner1 -> new CsmOperationDescriptionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new CsmOperationDescriptionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<CsmOperationDescription> listOperations(Context context) {
         PagedIterable<CsmOperationDescriptionInner> inner = this.serviceClient().listOperations(context);
-        return Utils.mapPage(inner, inner1 -> new CsmOperationDescriptionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new CsmOperationDescriptionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<WebAppStack> getWebAppStacks() {
         PagedIterable<WebAppStackInner> inner = this.serviceClient().getWebAppStacks();
-        return Utils.mapPage(inner, inner1 -> new WebAppStackImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new WebAppStackImpl(inner1, this.manager()));
     }
 
     public PagedIterable<WebAppStack> getWebAppStacks(ProviderStackOsType stackOsType, Context context) {
         PagedIterable<WebAppStackInner> inner = this.serviceClient().getWebAppStacks(stackOsType, context);
-        return Utils.mapPage(inner, inner1 -> new WebAppStackImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new WebAppStackImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ApplicationStackResource> list() {
         PagedIterable<ApplicationStackResourceInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new ApplicationStackResourceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ApplicationStackResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ApplicationStackResource> list(ProviderOsTypeSelected osTypeSelected, Context context) {
         PagedIterable<ApplicationStackResourceInner> inner = this.serviceClient().list(osTypeSelected, context);
-        return Utils.mapPage(inner, inner1 -> new ApplicationStackResourceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ApplicationStackResourceImpl(inner1, this.manager()));
     }
 
     private ProvidersClient serviceClient() {

@@ -136,10 +136,10 @@ public final class VnetInfoResourceImpl
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.name = Utils.getValueFromIdByName(innerObject.id(), "sites");
-        this.vnetName = Utils.getValueFromIdByName(innerObject.id(), "virtualNetworkConnections");
-        this.slot = Utils.getValueFromIdByName(innerObject.id(), "slots");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.name = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "sites");
+        this.vnetName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "virtualNetworkConnections");
+        this.slot = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "slots");
     }
 
     public VnetInfoResource refresh() {

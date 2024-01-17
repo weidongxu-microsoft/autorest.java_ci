@@ -154,8 +154,8 @@ public final class AutoscaleSettingResourceImpl
         com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourcegroups");
-        this.autoscaleSettingName = Utils.getValueFromIdByName(innerObject.id(), "autoscalesettings");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourcegroups");
+        this.autoscaleSettingName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "autoscalesettings");
     }
 
     public AutoscaleSettingResource refresh() {

@@ -294,8 +294,8 @@ public final class DiskImpl implements Disk, Disk.Definition, Disk.Update {
     DiskImpl(DiskInner innerObject, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.diskName = Utils.getValueFromIdByName(innerObject.id(), "disks");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.diskName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "disks");
     }
 
     public Disk refresh() {

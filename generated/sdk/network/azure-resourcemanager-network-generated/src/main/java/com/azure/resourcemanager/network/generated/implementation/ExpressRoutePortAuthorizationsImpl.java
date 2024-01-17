@@ -62,28 +62,30 @@ public final class ExpressRoutePortAuthorizationsImpl implements ExpressRoutePor
     public PagedIterable<ExpressRoutePortAuthorization> list(String resourceGroupName, String expressRoutePortName) {
         PagedIterable<ExpressRoutePortAuthorizationInner> inner
             = this.serviceClient().list(resourceGroupName, expressRoutePortName);
-        return Utils.mapPage(inner, inner1 -> new ExpressRoutePortAuthorizationImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new ExpressRoutePortAuthorizationImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ExpressRoutePortAuthorization> list(String resourceGroupName, String expressRoutePortName,
         Context context) {
         PagedIterable<ExpressRoutePortAuthorizationInner> inner
             = this.serviceClient().list(resourceGroupName, expressRoutePortName, context);
-        return Utils.mapPage(inner, inner1 -> new ExpressRoutePortAuthorizationImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new ExpressRoutePortAuthorizationImpl(inner1, this.manager()));
     }
 
     public ExpressRoutePortAuthorization getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String expressRoutePortName = Utils.getValueFromIdByName(id, "expressRoutePorts");
+        String expressRoutePortName = ResourceManagerUtils.getValueFromIdByName(id, "expressRoutePorts");
         if (expressRoutePortName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'expressRoutePorts'.", id)));
         }
-        String authorizationName = Utils.getValueFromIdByName(id, "authorizations");
+        String authorizationName = ResourceManagerUtils.getValueFromIdByName(id, "authorizations");
         if (authorizationName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'authorizations'.", id)));
@@ -93,17 +95,17 @@ public final class ExpressRoutePortAuthorizationsImpl implements ExpressRoutePor
     }
 
     public Response<ExpressRoutePortAuthorization> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String expressRoutePortName = Utils.getValueFromIdByName(id, "expressRoutePorts");
+        String expressRoutePortName = ResourceManagerUtils.getValueFromIdByName(id, "expressRoutePorts");
         if (expressRoutePortName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'expressRoutePorts'.", id)));
         }
-        String authorizationName = Utils.getValueFromIdByName(id, "authorizations");
+        String authorizationName = ResourceManagerUtils.getValueFromIdByName(id, "authorizations");
         if (authorizationName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'authorizations'.", id)));
@@ -112,17 +114,17 @@ public final class ExpressRoutePortAuthorizationsImpl implements ExpressRoutePor
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String expressRoutePortName = Utils.getValueFromIdByName(id, "expressRoutePorts");
+        String expressRoutePortName = ResourceManagerUtils.getValueFromIdByName(id, "expressRoutePorts");
         if (expressRoutePortName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'expressRoutePorts'.", id)));
         }
-        String authorizationName = Utils.getValueFromIdByName(id, "authorizations");
+        String authorizationName = ResourceManagerUtils.getValueFromIdByName(id, "authorizations");
         if (authorizationName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'authorizations'.", id)));
@@ -131,17 +133,17 @@ public final class ExpressRoutePortAuthorizationsImpl implements ExpressRoutePor
     }
 
     public void deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String expressRoutePortName = Utils.getValueFromIdByName(id, "expressRoutePorts");
+        String expressRoutePortName = ResourceManagerUtils.getValueFromIdByName(id, "expressRoutePorts");
         if (expressRoutePortName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'expressRoutePorts'.", id)));
         }
-        String authorizationName = Utils.getValueFromIdByName(id, "authorizations");
+        String authorizationName = ResourceManagerUtils.getValueFromIdByName(id, "authorizations");
         if (authorizationName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'authorizations'.", id)));

@@ -27,12 +27,14 @@ public final class ExpressRouteServiceProvidersImpl implements ExpressRouteServi
 
     public PagedIterable<ExpressRouteServiceProvider> list() {
         PagedIterable<ExpressRouteServiceProviderInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new ExpressRouteServiceProviderImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new ExpressRouteServiceProviderImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ExpressRouteServiceProvider> list(Context context) {
         PagedIterable<ExpressRouteServiceProviderInner> inner = this.serviceClient().list(context);
-        return Utils.mapPage(inner, inner1 -> new ExpressRouteServiceProviderImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new ExpressRouteServiceProviderImpl(inner1, this.manager()));
     }
 
     private ExpressRouteServiceProvidersClient serviceClient() {

@@ -137,9 +137,9 @@ public final class AppServiceCertificateResourceImpl implements AppServiceCertif
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.certificateOrderName = Utils.getValueFromIdByName(innerObject.id(), "certificateOrders");
-        this.name = Utils.getValueFromIdByName(innerObject.id(), "certificates");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.certificateOrderName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "certificateOrders");
+        this.name = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "certificates");
     }
 
     public AppServiceCertificateResource refresh() {

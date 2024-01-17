@@ -29,14 +29,14 @@ public final class WorkflowVersionsImpl implements WorkflowVersions {
 
     public PagedIterable<WorkflowVersion> list(String resourceGroupName, String name, String workflowName) {
         PagedIterable<WorkflowVersionInner> inner = this.serviceClient().list(resourceGroupName, name, workflowName);
-        return Utils.mapPage(inner, inner1 -> new WorkflowVersionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new WorkflowVersionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<WorkflowVersion> list(String resourceGroupName, String name, String workflowName, Integer top,
         Context context) {
         PagedIterable<WorkflowVersionInner> inner
             = this.serviceClient().list(resourceGroupName, name, workflowName, top, context);
-        return Utils.mapPage(inner, inner1 -> new WorkflowVersionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new WorkflowVersionImpl(inner1, this.manager()));
     }
 
     public Response<WorkflowVersion> getWithResponse(String resourceGroupName, String name, String workflowName,

@@ -115,9 +115,9 @@ public final class PermissionBindingImpl
         com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.namespaceName = Utils.getValueFromIdByName(innerObject.id(), "namespaces");
-        this.permissionBindingName = Utils.getValueFromIdByName(innerObject.id(), "permissionBindings");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.namespaceName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "namespaces");
+        this.permissionBindingName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "permissionBindings");
     }
 
     public PermissionBinding refresh() {

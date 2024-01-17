@@ -117,9 +117,9 @@ public final class RoleDefinitionImpl implements RoleDefinition, RoleDefinition.
         com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.scope = Utils.getValueFromIdByParameterName(innerObject.id(),
+        this.scope = ResourceManagerUtils.getValueFromIdByParameterName(innerObject.id(),
             "/{scope}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId}", "scope");
-        this.roleDefinitionId = Utils.getValueFromIdByParameterName(innerObject.id(),
+        this.roleDefinitionId = ResourceManagerUtils.getValueFromIdByParameterName(innerObject.id(),
             "/{scope}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId}", "roleDefinitionId");
     }
 

@@ -87,16 +87,16 @@ public final class ResourceGroupsImpl implements ResourceGroups {
 
     public PagedIterable<ResourceGroup> list() {
         PagedIterable<ResourceGroupInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new ResourceGroupImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ResourceGroupImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ResourceGroup> list(String filter, Integer top, Context context) {
         PagedIterable<ResourceGroupInner> inner = this.serviceClient().list(filter, top, context);
-        return Utils.mapPage(inner, inner1 -> new ResourceGroupImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ResourceGroupImpl(inner1, this.manager()));
     }
 
     public ResourceGroup getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
@@ -105,7 +105,7 @@ public final class ResourceGroupsImpl implements ResourceGroups {
     }
 
     public Response<ResourceGroup> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
@@ -114,7 +114,7 @@ public final class ResourceGroupsImpl implements ResourceGroups {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
@@ -124,7 +124,7 @@ public final class ResourceGroupsImpl implements ResourceGroups {
     }
 
     public void deleteByIdWithResponse(String id, String forceDeletionTypes, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));

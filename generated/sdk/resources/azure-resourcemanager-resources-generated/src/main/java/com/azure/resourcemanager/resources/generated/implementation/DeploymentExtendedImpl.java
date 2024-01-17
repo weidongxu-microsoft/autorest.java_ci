@@ -127,8 +127,8 @@ public final class DeploymentExtendedImpl
         com.azure.resourcemanager.resources.generated.ResourceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourcegroups");
-        this.deploymentName = Utils.getValueFromIdByName(innerObject.id(), "deployments");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourcegroups");
+        this.deploymentName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "deployments");
     }
 
     public DeploymentExtended refresh() {

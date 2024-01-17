@@ -112,9 +112,9 @@ public final class ExpressRoutePortAuthorizationImpl implements ExpressRoutePort
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.expressRoutePortName = Utils.getValueFromIdByName(innerObject.id(), "expressRoutePorts");
-        this.authorizationName = Utils.getValueFromIdByName(innerObject.id(), "authorizations");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.expressRoutePortName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "expressRoutePorts");
+        this.authorizationName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "authorizations");
     }
 
     public ExpressRoutePortAuthorization refresh() {

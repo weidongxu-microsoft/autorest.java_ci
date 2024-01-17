@@ -150,8 +150,9 @@ public final class ExpressRouteGatewayImpl
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.expressRouteGatewayName = Utils.getValueFromIdByName(innerObject.id(), "expressRouteGateways");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.expressRouteGatewayName
+            = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "expressRouteGateways");
     }
 
     public ExpressRouteGateway refresh() {

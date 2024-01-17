@@ -29,14 +29,14 @@ public final class AddonsImpl implements Addons {
 
     public PagedIterable<Addon> listByRole(String deviceName, String roleName, String resourceGroupName) {
         PagedIterable<AddonInner> inner = this.serviceClient().listByRole(deviceName, roleName, resourceGroupName);
-        return Utils.mapPage(inner, inner1 -> new AddonImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new AddonImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Addon> listByRole(String deviceName, String roleName, String resourceGroupName,
         Context context) {
         PagedIterable<AddonInner> inner
             = this.serviceClient().listByRole(deviceName, roleName, resourceGroupName, context);
-        return Utils.mapPage(inner, inner1 -> new AddonImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new AddonImpl(inner1, this.manager()));
     }
 
     public Response<Addon> getWithResponse(String deviceName, String roleName, String addonName,

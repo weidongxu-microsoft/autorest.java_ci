@@ -29,14 +29,14 @@ public final class SchemaRegistriesImpl implements SchemaRegistries {
 
     public PagedIterable<SchemaGroup> listByNamespace(String resourceGroupName, String namespaceName) {
         PagedIterable<SchemaGroupInner> inner = this.serviceClient().listByNamespace(resourceGroupName, namespaceName);
-        return Utils.mapPage(inner, inner1 -> new SchemaGroupImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SchemaGroupImpl(inner1, this.manager()));
     }
 
     public PagedIterable<SchemaGroup> listByNamespace(String resourceGroupName, String namespaceName, Integer skip,
         Integer top, Context context) {
         PagedIterable<SchemaGroupInner> inner
             = this.serviceClient().listByNamespace(resourceGroupName, namespaceName, skip, top, context);
-        return Utils.mapPage(inner, inner1 -> new SchemaGroupImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SchemaGroupImpl(inner1, this.manager()));
     }
 
     public Response<Void> deleteWithResponse(String resourceGroupName, String namespaceName, String schemaGroupName,
@@ -70,17 +70,17 @@ public final class SchemaRegistriesImpl implements SchemaRegistries {
     }
 
     public SchemaGroup getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        String namespaceName = ResourceManagerUtils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
-        String schemaGroupName = Utils.getValueFromIdByName(id, "schemagroups");
+        String schemaGroupName = ResourceManagerUtils.getValueFromIdByName(id, "schemagroups");
         if (schemaGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'schemagroups'.", id)));
@@ -89,17 +89,17 @@ public final class SchemaRegistriesImpl implements SchemaRegistries {
     }
 
     public Response<SchemaGroup> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        String namespaceName = ResourceManagerUtils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
-        String schemaGroupName = Utils.getValueFromIdByName(id, "schemagroups");
+        String schemaGroupName = ResourceManagerUtils.getValueFromIdByName(id, "schemagroups");
         if (schemaGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'schemagroups'.", id)));
@@ -108,17 +108,17 @@ public final class SchemaRegistriesImpl implements SchemaRegistries {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        String namespaceName = ResourceManagerUtils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
-        String schemaGroupName = Utils.getValueFromIdByName(id, "schemagroups");
+        String schemaGroupName = ResourceManagerUtils.getValueFromIdByName(id, "schemagroups");
         if (schemaGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'schemagroups'.", id)));
@@ -127,17 +127,17 @@ public final class SchemaRegistriesImpl implements SchemaRegistries {
     }
 
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        String namespaceName = ResourceManagerUtils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
-        String schemaGroupName = Utils.getValueFromIdByName(id, "schemagroups");
+        String schemaGroupName = ResourceManagerUtils.getValueFromIdByName(id, "schemagroups");
         if (schemaGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'schemagroups'.", id)));

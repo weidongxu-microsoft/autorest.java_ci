@@ -431,8 +431,9 @@ public final class ApplicationGatewayImpl
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.applicationGatewayName = Utils.getValueFromIdByName(innerObject.id(), "applicationGateways");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.applicationGatewayName
+            = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "applicationGateways");
     }
 
     public ApplicationGateway refresh() {

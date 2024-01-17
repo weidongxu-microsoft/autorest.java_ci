@@ -145,8 +145,9 @@ public final class LocalNetworkGatewayImpl
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.localNetworkGatewayName = Utils.getValueFromIdByName(innerObject.id(), "localNetworkGateways");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.localNetworkGatewayName
+            = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "localNetworkGateways");
     }
 
     public LocalNetworkGateway refresh() {

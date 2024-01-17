@@ -145,8 +145,8 @@ public final class ActivityLogAlertResourceImpl
         com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.activityLogAlertName = Utils.getValueFromIdByName(innerObject.id(), "activityLogAlerts");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.activityLogAlertName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "activityLogAlerts");
     }
 
     public ActivityLogAlertResource refresh() {

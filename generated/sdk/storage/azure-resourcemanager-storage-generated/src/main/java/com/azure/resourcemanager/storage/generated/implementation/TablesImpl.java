@@ -59,26 +59,26 @@ public final class TablesImpl implements Tables {
 
     public PagedIterable<Table> list(String resourceGroupName, String accountName) {
         PagedIterable<TableInner> inner = this.serviceClient().list(resourceGroupName, accountName);
-        return Utils.mapPage(inner, inner1 -> new TableImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new TableImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Table> list(String resourceGroupName, String accountName, Context context) {
         PagedIterable<TableInner> inner = this.serviceClient().list(resourceGroupName, accountName, context);
-        return Utils.mapPage(inner, inner1 -> new TableImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new TableImpl(inner1, this.manager()));
     }
 
     public Table getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        String accountName = ResourceManagerUtils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
         }
-        String tableName = Utils.getValueFromIdByName(id, "tables");
+        String tableName = ResourceManagerUtils.getValueFromIdByName(id, "tables");
         if (tableName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'tables'.", id)));
@@ -87,17 +87,17 @@ public final class TablesImpl implements Tables {
     }
 
     public Response<Table> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        String accountName = ResourceManagerUtils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
         }
-        String tableName = Utils.getValueFromIdByName(id, "tables");
+        String tableName = ResourceManagerUtils.getValueFromIdByName(id, "tables");
         if (tableName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'tables'.", id)));
@@ -106,17 +106,17 @@ public final class TablesImpl implements Tables {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        String accountName = ResourceManagerUtils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
         }
-        String tableName = Utils.getValueFromIdByName(id, "tables");
+        String tableName = ResourceManagerUtils.getValueFromIdByName(id, "tables");
         if (tableName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'tables'.", id)));
@@ -125,17 +125,17 @@ public final class TablesImpl implements Tables {
     }
 
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        String accountName = ResourceManagerUtils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
         }
-        String tableName = Utils.getValueFromIdByName(id, "tables");
+        String tableName = ResourceManagerUtils.getValueFromIdByName(id, "tables");
         if (tableName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'tables'.", id)));

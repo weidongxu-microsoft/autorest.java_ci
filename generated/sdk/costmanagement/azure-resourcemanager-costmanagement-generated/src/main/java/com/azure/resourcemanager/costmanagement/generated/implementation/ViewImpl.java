@@ -170,9 +170,9 @@ public final class ViewImpl implements View, View.Definition, View.Update {
         com.azure.resourcemanager.costmanagement.generated.CostManagementManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.scope = Utils.getValueFromIdByParameterName(innerObject.id(),
+        this.scope = ResourceManagerUtils.getValueFromIdByParameterName(innerObject.id(),
             "/{scope}/providers/Microsoft.CostManagement/views/{viewName}", "scope");
-        this.viewName = Utils.getValueFromIdByParameterName(innerObject.id(),
+        this.viewName = ResourceManagerUtils.getValueFromIdByParameterName(innerObject.id(),
             "/{scope}/providers/Microsoft.CostManagement/views/{viewName}", "viewName");
     }
 

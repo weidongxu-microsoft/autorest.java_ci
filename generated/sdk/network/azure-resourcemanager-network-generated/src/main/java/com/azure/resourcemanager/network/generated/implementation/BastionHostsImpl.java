@@ -58,31 +58,31 @@ public final class BastionHostsImpl implements BastionHosts {
 
     public PagedIterable<BastionHost> list() {
         PagedIterable<BastionHostInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new BastionHostImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new BastionHostImpl(inner1, this.manager()));
     }
 
     public PagedIterable<BastionHost> list(Context context) {
         PagedIterable<BastionHostInner> inner = this.serviceClient().list(context);
-        return Utils.mapPage(inner, inner1 -> new BastionHostImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new BastionHostImpl(inner1, this.manager()));
     }
 
     public PagedIterable<BastionHost> listByResourceGroup(String resourceGroupName) {
         PagedIterable<BastionHostInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return Utils.mapPage(inner, inner1 -> new BastionHostImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new BastionHostImpl(inner1, this.manager()));
     }
 
     public PagedIterable<BastionHost> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<BastionHostInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return Utils.mapPage(inner, inner1 -> new BastionHostImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new BastionHostImpl(inner1, this.manager()));
     }
 
     public BastionHost getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String bastionHostname = Utils.getValueFromIdByName(id, "bastionHosts");
+        String bastionHostname = ResourceManagerUtils.getValueFromIdByName(id, "bastionHosts");
         if (bastionHostname == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'bastionHosts'.", id)));
@@ -91,12 +91,12 @@ public final class BastionHostsImpl implements BastionHosts {
     }
 
     public Response<BastionHost> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String bastionHostname = Utils.getValueFromIdByName(id, "bastionHosts");
+        String bastionHostname = ResourceManagerUtils.getValueFromIdByName(id, "bastionHosts");
         if (bastionHostname == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'bastionHosts'.", id)));
@@ -105,12 +105,12 @@ public final class BastionHostsImpl implements BastionHosts {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String bastionHostname = Utils.getValueFromIdByName(id, "bastionHosts");
+        String bastionHostname = ResourceManagerUtils.getValueFromIdByName(id, "bastionHosts");
         if (bastionHostname == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'bastionHosts'.", id)));
@@ -119,12 +119,12 @@ public final class BastionHostsImpl implements BastionHosts {
     }
 
     public void deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String bastionHostname = Utils.getValueFromIdByName(id, "bastionHosts");
+        String bastionHostname = ResourceManagerUtils.getValueFromIdByName(id, "bastionHosts");
         if (bastionHostname == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'bastionHosts'.", id)));

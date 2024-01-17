@@ -131,38 +131,38 @@ public final class PolicyDefinitionsImpl implements PolicyDefinitions {
 
     public PagedIterable<PolicyDefinition> list() {
         PagedIterable<PolicyDefinitionInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new PolicyDefinitionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PolicyDefinitionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PolicyDefinition> list(String filter, Integer top, Context context) {
         PagedIterable<PolicyDefinitionInner> inner = this.serviceClient().list(filter, top, context);
-        return Utils.mapPage(inner, inner1 -> new PolicyDefinitionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PolicyDefinitionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PolicyDefinition> listBuiltIn() {
         PagedIterable<PolicyDefinitionInner> inner = this.serviceClient().listBuiltIn();
-        return Utils.mapPage(inner, inner1 -> new PolicyDefinitionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PolicyDefinitionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PolicyDefinition> listBuiltIn(String filter, Integer top, Context context) {
         PagedIterable<PolicyDefinitionInner> inner = this.serviceClient().listBuiltIn(filter, top, context);
-        return Utils.mapPage(inner, inner1 -> new PolicyDefinitionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PolicyDefinitionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PolicyDefinition> listByManagementGroup(String managementGroupId) {
         PagedIterable<PolicyDefinitionInner> inner = this.serviceClient().listByManagementGroup(managementGroupId);
-        return Utils.mapPage(inner, inner1 -> new PolicyDefinitionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PolicyDefinitionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PolicyDefinition> listByManagementGroup(String managementGroupId, String filter, Integer top,
         Context context) {
         PagedIterable<PolicyDefinitionInner> inner
             = this.serviceClient().listByManagementGroup(managementGroupId, filter, top, context);
-        return Utils.mapPage(inner, inner1 -> new PolicyDefinitionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PolicyDefinitionImpl(inner1, this.manager()));
     }
 
     public PolicyDefinition getById(String id) {
-        String policyDefinitionName = Utils.getValueFromIdByName(id, "policyDefinitions");
+        String policyDefinitionName = ResourceManagerUtils.getValueFromIdByName(id, "policyDefinitions");
         if (policyDefinitionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'policyDefinitions'.", id)));
@@ -171,7 +171,7 @@ public final class PolicyDefinitionsImpl implements PolicyDefinitions {
     }
 
     public Response<PolicyDefinition> getByIdWithResponse(String id, Context context) {
-        String policyDefinitionName = Utils.getValueFromIdByName(id, "policyDefinitions");
+        String policyDefinitionName = ResourceManagerUtils.getValueFromIdByName(id, "policyDefinitions");
         if (policyDefinitionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'policyDefinitions'.", id)));
@@ -180,7 +180,7 @@ public final class PolicyDefinitionsImpl implements PolicyDefinitions {
     }
 
     public void deleteById(String id) {
-        String policyDefinitionName = Utils.getValueFromIdByName(id, "policyDefinitions");
+        String policyDefinitionName = ResourceManagerUtils.getValueFromIdByName(id, "policyDefinitions");
         if (policyDefinitionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'policyDefinitions'.", id)));
@@ -189,7 +189,7 @@ public final class PolicyDefinitionsImpl implements PolicyDefinitions {
     }
 
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
-        String policyDefinitionName = Utils.getValueFromIdByName(id, "policyDefinitions");
+        String policyDefinitionName = ResourceManagerUtils.getValueFromIdByName(id, "policyDefinitions");
         if (policyDefinitionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'policyDefinitions'.", id)));

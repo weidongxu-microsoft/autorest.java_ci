@@ -130,9 +130,9 @@ public final class ApplicationGroupImpl
         com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.namespaceName = Utils.getValueFromIdByName(innerObject.id(), "namespaces");
-        this.applicationGroupName = Utils.getValueFromIdByName(innerObject.id(), "applicationGroups");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.namespaceName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "namespaces");
+        this.applicationGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "applicationGroups");
     }
 
     public ApplicationGroup refresh() {

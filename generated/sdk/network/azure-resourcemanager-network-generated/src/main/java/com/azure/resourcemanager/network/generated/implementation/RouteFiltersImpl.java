@@ -58,31 +58,31 @@ public final class RouteFiltersImpl implements RouteFilters {
 
     public PagedIterable<RouteFilter> listByResourceGroup(String resourceGroupName) {
         PagedIterable<RouteFilterInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return Utils.mapPage(inner, inner1 -> new RouteFilterImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new RouteFilterImpl(inner1, this.manager()));
     }
 
     public PagedIterable<RouteFilter> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<RouteFilterInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return Utils.mapPage(inner, inner1 -> new RouteFilterImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new RouteFilterImpl(inner1, this.manager()));
     }
 
     public PagedIterable<RouteFilter> list() {
         PagedIterable<RouteFilterInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new RouteFilterImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new RouteFilterImpl(inner1, this.manager()));
     }
 
     public PagedIterable<RouteFilter> list(Context context) {
         PagedIterable<RouteFilterInner> inner = this.serviceClient().list(context);
-        return Utils.mapPage(inner, inner1 -> new RouteFilterImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new RouteFilterImpl(inner1, this.manager()));
     }
 
     public RouteFilter getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String routeFilterName = Utils.getValueFromIdByName(id, "routeFilters");
+        String routeFilterName = ResourceManagerUtils.getValueFromIdByName(id, "routeFilters");
         if (routeFilterName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'routeFilters'.", id)));
@@ -93,12 +93,12 @@ public final class RouteFiltersImpl implements RouteFilters {
     }
 
     public Response<RouteFilter> getByIdWithResponse(String id, String expand, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String routeFilterName = Utils.getValueFromIdByName(id, "routeFilters");
+        String routeFilterName = ResourceManagerUtils.getValueFromIdByName(id, "routeFilters");
         if (routeFilterName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'routeFilters'.", id)));
@@ -107,12 +107,12 @@ public final class RouteFiltersImpl implements RouteFilters {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String routeFilterName = Utils.getValueFromIdByName(id, "routeFilters");
+        String routeFilterName = ResourceManagerUtils.getValueFromIdByName(id, "routeFilters");
         if (routeFilterName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'routeFilters'.", id)));
@@ -121,12 +121,12 @@ public final class RouteFiltersImpl implements RouteFilters {
     }
 
     public void deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String routeFilterName = Utils.getValueFromIdByName(id, "routeFilters");
+        String routeFilterName = ResourceManagerUtils.getValueFromIdByName(id, "routeFilters");
         if (routeFilterName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'routeFilters'.", id)));

@@ -156,8 +156,9 @@ public final class CapacityReservationGroupImpl
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.capacityReservationGroupName = Utils.getValueFromIdByName(innerObject.id(), "capacityReservationGroups");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.capacityReservationGroupName
+            = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "capacityReservationGroups");
     }
 
     public CapacityReservationGroup refresh() {

@@ -58,31 +58,31 @@ public final class NatGatewaysImpl implements NatGateways {
 
     public PagedIterable<NatGateway> list() {
         PagedIterable<NatGatewayInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new NatGatewayImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new NatGatewayImpl(inner1, this.manager()));
     }
 
     public PagedIterable<NatGateway> list(Context context) {
         PagedIterable<NatGatewayInner> inner = this.serviceClient().list(context);
-        return Utils.mapPage(inner, inner1 -> new NatGatewayImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new NatGatewayImpl(inner1, this.manager()));
     }
 
     public PagedIterable<NatGateway> listByResourceGroup(String resourceGroupName) {
         PagedIterable<NatGatewayInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return Utils.mapPage(inner, inner1 -> new NatGatewayImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new NatGatewayImpl(inner1, this.manager()));
     }
 
     public PagedIterable<NatGateway> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<NatGatewayInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return Utils.mapPage(inner, inner1 -> new NatGatewayImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new NatGatewayImpl(inner1, this.manager()));
     }
 
     public NatGateway getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String natGatewayName = Utils.getValueFromIdByName(id, "natGateways");
+        String natGatewayName = ResourceManagerUtils.getValueFromIdByName(id, "natGateways");
         if (natGatewayName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'natGateways'.", id)));
@@ -93,12 +93,12 @@ public final class NatGatewaysImpl implements NatGateways {
     }
 
     public Response<NatGateway> getByIdWithResponse(String id, String expand, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String natGatewayName = Utils.getValueFromIdByName(id, "natGateways");
+        String natGatewayName = ResourceManagerUtils.getValueFromIdByName(id, "natGateways");
         if (natGatewayName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'natGateways'.", id)));
@@ -107,12 +107,12 @@ public final class NatGatewaysImpl implements NatGateways {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String natGatewayName = Utils.getValueFromIdByName(id, "natGateways");
+        String natGatewayName = ResourceManagerUtils.getValueFromIdByName(id, "natGateways");
         if (natGatewayName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'natGateways'.", id)));
@@ -121,12 +121,12 @@ public final class NatGatewaysImpl implements NatGateways {
     }
 
     public void deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String natGatewayName = Utils.getValueFromIdByName(id, "natGateways");
+        String natGatewayName = ResourceManagerUtils.getValueFromIdByName(id, "natGateways");
         if (natGatewayName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'natGateways'.", id)));

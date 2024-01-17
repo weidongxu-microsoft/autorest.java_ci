@@ -29,22 +29,22 @@ public final class DeletedWebAppsImpl implements DeletedWebApps {
 
     public PagedIterable<DeletedSite> list() {
         PagedIterable<DeletedSiteInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new DeletedSiteImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DeletedSiteImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DeletedSite> list(Context context) {
         PagedIterable<DeletedSiteInner> inner = this.serviceClient().list(context);
-        return Utils.mapPage(inner, inner1 -> new DeletedSiteImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DeletedSiteImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DeletedSite> listByLocation(String location) {
         PagedIterable<DeletedSiteInner> inner = this.serviceClient().listByLocation(location);
-        return Utils.mapPage(inner, inner1 -> new DeletedSiteImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DeletedSiteImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DeletedSite> listByLocation(String location, Context context) {
         PagedIterable<DeletedSiteInner> inner = this.serviceClient().listByLocation(location, context);
-        return Utils.mapPage(inner, inner1 -> new DeletedSiteImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DeletedSiteImpl(inner1, this.manager()));
     }
 
     public Response<DeletedSite> getDeletedWebAppByLocationWithResponse(String location, String deletedSiteId,

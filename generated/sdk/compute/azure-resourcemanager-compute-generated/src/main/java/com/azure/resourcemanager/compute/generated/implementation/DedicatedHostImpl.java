@@ -167,9 +167,9 @@ public final class DedicatedHostImpl implements DedicatedHost, DedicatedHost.Def
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.hostGroupName = Utils.getValueFromIdByName(innerObject.id(), "hostGroups");
-        this.hostname = Utils.getValueFromIdByName(innerObject.id(), "hosts");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.hostGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "hostGroups");
+        this.hostname = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "hosts");
     }
 
     public DedicatedHost refresh() {

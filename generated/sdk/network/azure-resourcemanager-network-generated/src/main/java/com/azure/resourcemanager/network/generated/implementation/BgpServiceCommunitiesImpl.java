@@ -27,12 +27,12 @@ public final class BgpServiceCommunitiesImpl implements BgpServiceCommunities {
 
     public PagedIterable<BgpServiceCommunity> list() {
         PagedIterable<BgpServiceCommunityInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new BgpServiceCommunityImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new BgpServiceCommunityImpl(inner1, this.manager()));
     }
 
     public PagedIterable<BgpServiceCommunity> list(Context context) {
         PagedIterable<BgpServiceCommunityInner> inner = this.serviceClient().list(context);
-        return Utils.mapPage(inner, inner1 -> new BgpServiceCommunityImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new BgpServiceCommunityImpl(inner1, this.manager()));
     }
 
     private BgpServiceCommunitiesClient serviceClient() {

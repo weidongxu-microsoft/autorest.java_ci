@@ -58,31 +58,31 @@ public final class NetworkProfilesImpl implements NetworkProfiles {
 
     public PagedIterable<NetworkProfile> list() {
         PagedIterable<NetworkProfileInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new NetworkProfileImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new NetworkProfileImpl(inner1, this.manager()));
     }
 
     public PagedIterable<NetworkProfile> list(Context context) {
         PagedIterable<NetworkProfileInner> inner = this.serviceClient().list(context);
-        return Utils.mapPage(inner, inner1 -> new NetworkProfileImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new NetworkProfileImpl(inner1, this.manager()));
     }
 
     public PagedIterable<NetworkProfile> listByResourceGroup(String resourceGroupName) {
         PagedIterable<NetworkProfileInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return Utils.mapPage(inner, inner1 -> new NetworkProfileImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new NetworkProfileImpl(inner1, this.manager()));
     }
 
     public PagedIterable<NetworkProfile> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<NetworkProfileInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return Utils.mapPage(inner, inner1 -> new NetworkProfileImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new NetworkProfileImpl(inner1, this.manager()));
     }
 
     public NetworkProfile getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String networkProfileName = Utils.getValueFromIdByName(id, "networkProfiles");
+        String networkProfileName = ResourceManagerUtils.getValueFromIdByName(id, "networkProfiles");
         if (networkProfileName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'networkProfiles'.", id)));
@@ -93,12 +93,12 @@ public final class NetworkProfilesImpl implements NetworkProfiles {
     }
 
     public Response<NetworkProfile> getByIdWithResponse(String id, String expand, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String networkProfileName = Utils.getValueFromIdByName(id, "networkProfiles");
+        String networkProfileName = ResourceManagerUtils.getValueFromIdByName(id, "networkProfiles");
         if (networkProfileName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'networkProfiles'.", id)));
@@ -107,12 +107,12 @@ public final class NetworkProfilesImpl implements NetworkProfiles {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String networkProfileName = Utils.getValueFromIdByName(id, "networkProfiles");
+        String networkProfileName = ResourceManagerUtils.getValueFromIdByName(id, "networkProfiles");
         if (networkProfileName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'networkProfiles'.", id)));
@@ -121,12 +121,12 @@ public final class NetworkProfilesImpl implements NetworkProfiles {
     }
 
     public void deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String networkProfileName = Utils.getValueFromIdByName(id, "networkProfiles");
+        String networkProfileName = ResourceManagerUtils.getValueFromIdByName(id, "networkProfiles");
         if (networkProfileName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'networkProfiles'.", id)));

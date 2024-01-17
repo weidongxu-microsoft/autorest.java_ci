@@ -29,14 +29,16 @@ public final class ApplicationGatewayPrivateLinkResourcesImpl implements Applica
         String applicationGatewayName) {
         PagedIterable<ApplicationGatewayPrivateLinkResourceInner> inner
             = this.serviceClient().list(resourceGroupName, applicationGatewayName);
-        return Utils.mapPage(inner, inner1 -> new ApplicationGatewayPrivateLinkResourceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new ApplicationGatewayPrivateLinkResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ApplicationGatewayPrivateLinkResource> list(String resourceGroupName,
         String applicationGatewayName, Context context) {
         PagedIterable<ApplicationGatewayPrivateLinkResourceInner> inner
             = this.serviceClient().list(resourceGroupName, applicationGatewayName, context);
-        return Utils.mapPage(inner, inner1 -> new ApplicationGatewayPrivateLinkResourceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new ApplicationGatewayPrivateLinkResourceImpl(inner1, this.manager()));
     }
 
     private ApplicationGatewayPrivateLinkResourcesClient serviceClient() {

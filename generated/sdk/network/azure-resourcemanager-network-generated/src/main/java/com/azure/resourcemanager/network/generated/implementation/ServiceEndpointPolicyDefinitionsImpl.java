@@ -65,28 +65,31 @@ public final class ServiceEndpointPolicyDefinitionsImpl implements ServiceEndpoi
         String serviceEndpointPolicyName) {
         PagedIterable<ServiceEndpointPolicyDefinitionInner> inner
             = this.serviceClient().listByResourceGroup(resourceGroupName, serviceEndpointPolicyName);
-        return Utils.mapPage(inner, inner1 -> new ServiceEndpointPolicyDefinitionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new ServiceEndpointPolicyDefinitionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ServiceEndpointPolicyDefinition> listByResourceGroup(String resourceGroupName,
         String serviceEndpointPolicyName, Context context) {
         PagedIterable<ServiceEndpointPolicyDefinitionInner> inner
             = this.serviceClient().listByResourceGroup(resourceGroupName, serviceEndpointPolicyName, context);
-        return Utils.mapPage(inner, inner1 -> new ServiceEndpointPolicyDefinitionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new ServiceEndpointPolicyDefinitionImpl(inner1, this.manager()));
     }
 
     public ServiceEndpointPolicyDefinition getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String serviceEndpointPolicyName = Utils.getValueFromIdByName(id, "serviceEndpointPolicies");
+        String serviceEndpointPolicyName = ResourceManagerUtils.getValueFromIdByName(id, "serviceEndpointPolicies");
         if (serviceEndpointPolicyName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'serviceEndpointPolicies'.", id)));
         }
-        String serviceEndpointPolicyDefinitionName = Utils.getValueFromIdByName(id, "serviceEndpointPolicyDefinitions");
+        String serviceEndpointPolicyDefinitionName
+            = ResourceManagerUtils.getValueFromIdByName(id, "serviceEndpointPolicyDefinitions");
         if (serviceEndpointPolicyDefinitionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String.format(
                 "The resource ID '%s' is not valid. Missing path segment 'serviceEndpointPolicyDefinitions'.", id)));
@@ -96,17 +99,18 @@ public final class ServiceEndpointPolicyDefinitionsImpl implements ServiceEndpoi
     }
 
     public Response<ServiceEndpointPolicyDefinition> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String serviceEndpointPolicyName = Utils.getValueFromIdByName(id, "serviceEndpointPolicies");
+        String serviceEndpointPolicyName = ResourceManagerUtils.getValueFromIdByName(id, "serviceEndpointPolicies");
         if (serviceEndpointPolicyName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'serviceEndpointPolicies'.", id)));
         }
-        String serviceEndpointPolicyDefinitionName = Utils.getValueFromIdByName(id, "serviceEndpointPolicyDefinitions");
+        String serviceEndpointPolicyDefinitionName
+            = ResourceManagerUtils.getValueFromIdByName(id, "serviceEndpointPolicyDefinitions");
         if (serviceEndpointPolicyDefinitionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String.format(
                 "The resource ID '%s' is not valid. Missing path segment 'serviceEndpointPolicyDefinitions'.", id)));
@@ -116,17 +120,18 @@ public final class ServiceEndpointPolicyDefinitionsImpl implements ServiceEndpoi
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String serviceEndpointPolicyName = Utils.getValueFromIdByName(id, "serviceEndpointPolicies");
+        String serviceEndpointPolicyName = ResourceManagerUtils.getValueFromIdByName(id, "serviceEndpointPolicies");
         if (serviceEndpointPolicyName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'serviceEndpointPolicies'.", id)));
         }
-        String serviceEndpointPolicyDefinitionName = Utils.getValueFromIdByName(id, "serviceEndpointPolicyDefinitions");
+        String serviceEndpointPolicyDefinitionName
+            = ResourceManagerUtils.getValueFromIdByName(id, "serviceEndpointPolicyDefinitions");
         if (serviceEndpointPolicyDefinitionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String.format(
                 "The resource ID '%s' is not valid. Missing path segment 'serviceEndpointPolicyDefinitions'.", id)));
@@ -135,17 +140,18 @@ public final class ServiceEndpointPolicyDefinitionsImpl implements ServiceEndpoi
     }
 
     public void deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String serviceEndpointPolicyName = Utils.getValueFromIdByName(id, "serviceEndpointPolicies");
+        String serviceEndpointPolicyName = ResourceManagerUtils.getValueFromIdByName(id, "serviceEndpointPolicies");
         if (serviceEndpointPolicyName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'serviceEndpointPolicies'.", id)));
         }
-        String serviceEndpointPolicyDefinitionName = Utils.getValueFromIdByName(id, "serviceEndpointPolicyDefinitions");
+        String serviceEndpointPolicyDefinitionName
+            = ResourceManagerUtils.getValueFromIdByName(id, "serviceEndpointPolicyDefinitions");
         if (serviceEndpointPolicyDefinitionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String.format(
                 "The resource ID '%s' is not valid. Missing path segment 'serviceEndpointPolicyDefinitions'.", id)));

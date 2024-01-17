@@ -30,14 +30,14 @@ public final class BandwidthSchedulesImpl implements BandwidthSchedules {
     public PagedIterable<BandwidthSchedule> listByDataBoxEdgeDevice(String deviceName, String resourceGroupName) {
         PagedIterable<BandwidthScheduleInner> inner
             = this.serviceClient().listByDataBoxEdgeDevice(deviceName, resourceGroupName);
-        return Utils.mapPage(inner, inner1 -> new BandwidthScheduleImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new BandwidthScheduleImpl(inner1, this.manager()));
     }
 
     public PagedIterable<BandwidthSchedule> listByDataBoxEdgeDevice(String deviceName, String resourceGroupName,
         Context context) {
         PagedIterable<BandwidthScheduleInner> inner
             = this.serviceClient().listByDataBoxEdgeDevice(deviceName, resourceGroupName, context);
-        return Utils.mapPage(inner, inner1 -> new BandwidthScheduleImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new BandwidthScheduleImpl(inner1, this.manager()));
     }
 
     public Response<BandwidthSchedule> getWithResponse(String deviceName, String name, String resourceGroupName,
@@ -70,17 +70,17 @@ public final class BandwidthSchedulesImpl implements BandwidthSchedules {
     }
 
     public BandwidthSchedule getById(String id) {
-        String deviceName = Utils.getValueFromIdByName(id, "dataBoxEdgeDevices");
+        String deviceName = ResourceManagerUtils.getValueFromIdByName(id, "dataBoxEdgeDevices");
         if (deviceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'dataBoxEdgeDevices'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "bandwidthSchedules");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "bandwidthSchedules");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'bandwidthSchedules'.", id)));
         }
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
@@ -89,17 +89,17 @@ public final class BandwidthSchedulesImpl implements BandwidthSchedules {
     }
 
     public Response<BandwidthSchedule> getByIdWithResponse(String id, Context context) {
-        String deviceName = Utils.getValueFromIdByName(id, "dataBoxEdgeDevices");
+        String deviceName = ResourceManagerUtils.getValueFromIdByName(id, "dataBoxEdgeDevices");
         if (deviceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'dataBoxEdgeDevices'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "bandwidthSchedules");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "bandwidthSchedules");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'bandwidthSchedules'.", id)));
         }
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
@@ -108,17 +108,17 @@ public final class BandwidthSchedulesImpl implements BandwidthSchedules {
     }
 
     public void deleteById(String id) {
-        String deviceName = Utils.getValueFromIdByName(id, "dataBoxEdgeDevices");
+        String deviceName = ResourceManagerUtils.getValueFromIdByName(id, "dataBoxEdgeDevices");
         if (deviceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'dataBoxEdgeDevices'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "bandwidthSchedules");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "bandwidthSchedules");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'bandwidthSchedules'.", id)));
         }
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
@@ -127,17 +127,17 @@ public final class BandwidthSchedulesImpl implements BandwidthSchedules {
     }
 
     public void deleteByIdWithResponse(String id, Context context) {
-        String deviceName = Utils.getValueFromIdByName(id, "dataBoxEdgeDevices");
+        String deviceName = ResourceManagerUtils.getValueFromIdByName(id, "dataBoxEdgeDevices");
         if (deviceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'dataBoxEdgeDevices'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "bandwidthSchedules");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "bandwidthSchedules");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'bandwidthSchedules'.", id)));
         }
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));

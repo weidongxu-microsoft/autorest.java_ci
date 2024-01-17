@@ -206,8 +206,8 @@ public final class CustomIpPrefixImpl implements CustomIpPrefix, CustomIpPrefix.
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.customIpPrefixName = Utils.getValueFromIdByName(innerObject.id(), "customIpPrefixes");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.customIpPrefixName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "customIpPrefixes");
     }
 
     public CustomIpPrefix refresh() {

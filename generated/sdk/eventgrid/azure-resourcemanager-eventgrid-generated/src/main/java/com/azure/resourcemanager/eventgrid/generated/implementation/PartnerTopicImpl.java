@@ -163,8 +163,8 @@ public final class PartnerTopicImpl implements PartnerTopic, PartnerTopic.Defini
         com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.partnerTopicName = Utils.getValueFromIdByName(innerObject.id(), "partnerTopics");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.partnerTopicName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "partnerTopics");
     }
 
     public PartnerTopic refresh() {

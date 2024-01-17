@@ -29,13 +29,13 @@ public final class RulesEnginesImpl implements RulesEngines {
 
     public PagedIterable<RulesEngine> listByFrontDoor(String resourceGroupName, String frontDoorName) {
         PagedIterable<RulesEngineInner> inner = this.serviceClient().listByFrontDoor(resourceGroupName, frontDoorName);
-        return Utils.mapPage(inner, inner1 -> new RulesEngineImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new RulesEngineImpl(inner1, this.manager()));
     }
 
     public PagedIterable<RulesEngine> listByFrontDoor(String resourceGroupName, String frontDoorName, Context context) {
         PagedIterable<RulesEngineInner> inner
             = this.serviceClient().listByFrontDoor(resourceGroupName, frontDoorName, context);
-        return Utils.mapPage(inner, inner1 -> new RulesEngineImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new RulesEngineImpl(inner1, this.manager()));
     }
 
     public Response<RulesEngine> getWithResponse(String resourceGroupName, String frontDoorName, String rulesEngineName,
@@ -68,17 +68,17 @@ public final class RulesEnginesImpl implements RulesEngines {
     }
 
     public RulesEngine getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String frontDoorName = Utils.getValueFromIdByName(id, "frontDoors");
+        String frontDoorName = ResourceManagerUtils.getValueFromIdByName(id, "frontDoors");
         if (frontDoorName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'frontDoors'.", id)));
         }
-        String rulesEngineName = Utils.getValueFromIdByName(id, "rulesEngines");
+        String rulesEngineName = ResourceManagerUtils.getValueFromIdByName(id, "rulesEngines");
         if (rulesEngineName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'rulesEngines'.", id)));
@@ -87,17 +87,17 @@ public final class RulesEnginesImpl implements RulesEngines {
     }
 
     public Response<RulesEngine> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String frontDoorName = Utils.getValueFromIdByName(id, "frontDoors");
+        String frontDoorName = ResourceManagerUtils.getValueFromIdByName(id, "frontDoors");
         if (frontDoorName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'frontDoors'.", id)));
         }
-        String rulesEngineName = Utils.getValueFromIdByName(id, "rulesEngines");
+        String rulesEngineName = ResourceManagerUtils.getValueFromIdByName(id, "rulesEngines");
         if (rulesEngineName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'rulesEngines'.", id)));
@@ -106,17 +106,17 @@ public final class RulesEnginesImpl implements RulesEngines {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String frontDoorName = Utils.getValueFromIdByName(id, "frontDoors");
+        String frontDoorName = ResourceManagerUtils.getValueFromIdByName(id, "frontDoors");
         if (frontDoorName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'frontDoors'.", id)));
         }
-        String rulesEngineName = Utils.getValueFromIdByName(id, "rulesEngines");
+        String rulesEngineName = ResourceManagerUtils.getValueFromIdByName(id, "rulesEngines");
         if (rulesEngineName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'rulesEngines'.", id)));
@@ -125,17 +125,17 @@ public final class RulesEnginesImpl implements RulesEngines {
     }
 
     public void deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String frontDoorName = Utils.getValueFromIdByName(id, "frontDoors");
+        String frontDoorName = ResourceManagerUtils.getValueFromIdByName(id, "frontDoors");
         if (frontDoorName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'frontDoors'.", id)));
         }
-        String rulesEngineName = Utils.getValueFromIdByName(id, "rulesEngines");
+        String rulesEngineName = ResourceManagerUtils.getValueFromIdByName(id, "rulesEngines");
         if (rulesEngineName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'rulesEngines'.", id)));

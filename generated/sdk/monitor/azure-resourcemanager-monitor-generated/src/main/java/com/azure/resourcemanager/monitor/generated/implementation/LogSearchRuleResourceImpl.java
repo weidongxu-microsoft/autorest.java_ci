@@ -171,8 +171,8 @@ public final class LogSearchRuleResourceImpl
         com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourcegroups");
-        this.ruleName = Utils.getValueFromIdByName(innerObject.id(), "scheduledQueryRules");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourcegroups");
+        this.ruleName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "scheduledQueryRules");
     }
 
     public LogSearchRuleResource refresh() {

@@ -115,9 +115,10 @@ public final class ManagedPrivateEndpointImpl
         com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.clusterName = Utils.getValueFromIdByName(innerObject.id(), "clusters");
-        this.managedPrivateEndpointName = Utils.getValueFromIdByName(innerObject.id(), "managedPrivateEndpoints");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.clusterName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "clusters");
+        this.managedPrivateEndpointName
+            = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "managedPrivateEndpoints");
     }
 
     public ManagedPrivateEndpoint refresh() {

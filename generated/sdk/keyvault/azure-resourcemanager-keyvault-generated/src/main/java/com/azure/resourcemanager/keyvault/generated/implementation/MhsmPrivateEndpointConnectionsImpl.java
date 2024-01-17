@@ -30,14 +30,16 @@ public final class MhsmPrivateEndpointConnectionsImpl implements MhsmPrivateEndp
     public PagedIterable<MhsmPrivateEndpointConnection> listByResource(String resourceGroupName, String name) {
         PagedIterable<MhsmPrivateEndpointConnectionInner> inner
             = this.serviceClient().listByResource(resourceGroupName, name);
-        return Utils.mapPage(inner, inner1 -> new MhsmPrivateEndpointConnectionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new MhsmPrivateEndpointConnectionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<MhsmPrivateEndpointConnection> listByResource(String resourceGroupName, String name,
         Context context) {
         PagedIterable<MhsmPrivateEndpointConnectionInner> inner
             = this.serviceClient().listByResource(resourceGroupName, name, context);
-        return Utils.mapPage(inner, inner1 -> new MhsmPrivateEndpointConnectionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new MhsmPrivateEndpointConnectionImpl(inner1, this.manager()));
     }
 
     public Response<MhsmPrivateEndpointConnection> getWithResponse(String resourceGroupName, String name,
@@ -86,17 +88,18 @@ public final class MhsmPrivateEndpointConnectionsImpl implements MhsmPrivateEndp
     }
 
     public MhsmPrivateEndpointConnection getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "managedHSMs");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "managedHSMs");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'managedHSMs'.", id)));
         }
-        String privateEndpointConnectionName = Utils.getValueFromIdByName(id, "privateEndpointConnections");
+        String privateEndpointConnectionName
+            = ResourceManagerUtils.getValueFromIdByName(id, "privateEndpointConnections");
         if (privateEndpointConnectionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'privateEndpointConnections'.", id)));
@@ -105,17 +108,18 @@ public final class MhsmPrivateEndpointConnectionsImpl implements MhsmPrivateEndp
     }
 
     public Response<MhsmPrivateEndpointConnection> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "managedHSMs");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "managedHSMs");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'managedHSMs'.", id)));
         }
-        String privateEndpointConnectionName = Utils.getValueFromIdByName(id, "privateEndpointConnections");
+        String privateEndpointConnectionName
+            = ResourceManagerUtils.getValueFromIdByName(id, "privateEndpointConnections");
         if (privateEndpointConnectionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'privateEndpointConnections'.", id)));
@@ -124,17 +128,18 @@ public final class MhsmPrivateEndpointConnectionsImpl implements MhsmPrivateEndp
     }
 
     public MhsmPrivateEndpointConnection deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "managedHSMs");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "managedHSMs");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'managedHSMs'.", id)));
         }
-        String privateEndpointConnectionName = Utils.getValueFromIdByName(id, "privateEndpointConnections");
+        String privateEndpointConnectionName
+            = ResourceManagerUtils.getValueFromIdByName(id, "privateEndpointConnections");
         if (privateEndpointConnectionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'privateEndpointConnections'.", id)));
@@ -143,17 +148,18 @@ public final class MhsmPrivateEndpointConnectionsImpl implements MhsmPrivateEndp
     }
 
     public MhsmPrivateEndpointConnection deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "managedHSMs");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "managedHSMs");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'managedHSMs'.", id)));
         }
-        String privateEndpointConnectionName = Utils.getValueFromIdByName(id, "privateEndpointConnections");
+        String privateEndpointConnectionName
+            = ResourceManagerUtils.getValueFromIdByName(id, "privateEndpointConnections");
         if (privateEndpointConnectionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'privateEndpointConnections'.", id)));

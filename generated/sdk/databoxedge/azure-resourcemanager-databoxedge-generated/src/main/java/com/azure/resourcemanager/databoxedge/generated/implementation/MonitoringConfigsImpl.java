@@ -31,14 +31,16 @@ public final class MonitoringConfigsImpl implements MonitoringConfigs {
         String resourceGroupName) {
         PagedIterable<MonitoringMetricConfigurationInner> inner
             = this.serviceClient().list(deviceName, roleName, resourceGroupName);
-        return Utils.mapPage(inner, inner1 -> new MonitoringMetricConfigurationImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new MonitoringMetricConfigurationImpl(inner1, this.manager()));
     }
 
     public PagedIterable<MonitoringMetricConfiguration> list(String deviceName, String roleName,
         String resourceGroupName, Context context) {
         PagedIterable<MonitoringMetricConfigurationInner> inner
             = this.serviceClient().list(deviceName, roleName, resourceGroupName, context);
-        return Utils.mapPage(inner, inner1 -> new MonitoringMetricConfigurationImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new MonitoringMetricConfigurationImpl(inner1, this.manager()));
     }
 
     public Response<MonitoringMetricConfiguration> getWithResponse(String deviceName, String roleName,

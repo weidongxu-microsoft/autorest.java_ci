@@ -77,22 +77,22 @@ public final class PolicySetDefinitionsImpl implements PolicySetDefinitions {
 
     public PagedIterable<PolicySetDefinition> list() {
         PagedIterable<PolicySetDefinitionInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new PolicySetDefinitionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PolicySetDefinitionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PolicySetDefinition> list(String filter, Integer top, Context context) {
         PagedIterable<PolicySetDefinitionInner> inner = this.serviceClient().list(filter, top, context);
-        return Utils.mapPage(inner, inner1 -> new PolicySetDefinitionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PolicySetDefinitionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PolicySetDefinition> listBuiltIn() {
         PagedIterable<PolicySetDefinitionInner> inner = this.serviceClient().listBuiltIn();
-        return Utils.mapPage(inner, inner1 -> new PolicySetDefinitionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PolicySetDefinitionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PolicySetDefinition> listBuiltIn(String filter, Integer top, Context context) {
         PagedIterable<PolicySetDefinitionInner> inner = this.serviceClient().listBuiltIn(filter, top, context);
-        return Utils.mapPage(inner, inner1 -> new PolicySetDefinitionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PolicySetDefinitionImpl(inner1, this.manager()));
     }
 
     public Response<PolicySetDefinition> createOrUpdateAtManagementGroupWithResponse(String policySetDefinitionName,
@@ -152,18 +152,18 @@ public final class PolicySetDefinitionsImpl implements PolicySetDefinitions {
 
     public PagedIterable<PolicySetDefinition> listByManagementGroup(String managementGroupId) {
         PagedIterable<PolicySetDefinitionInner> inner = this.serviceClient().listByManagementGroup(managementGroupId);
-        return Utils.mapPage(inner, inner1 -> new PolicySetDefinitionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PolicySetDefinitionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PolicySetDefinition> listByManagementGroup(String managementGroupId, String filter,
         Integer top, Context context) {
         PagedIterable<PolicySetDefinitionInner> inner
             = this.serviceClient().listByManagementGroup(managementGroupId, filter, top, context);
-        return Utils.mapPage(inner, inner1 -> new PolicySetDefinitionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PolicySetDefinitionImpl(inner1, this.manager()));
     }
 
     public PolicySetDefinition getById(String id) {
-        String policySetDefinitionName = Utils.getValueFromIdByName(id, "policySetDefinitions");
+        String policySetDefinitionName = ResourceManagerUtils.getValueFromIdByName(id, "policySetDefinitions");
         if (policySetDefinitionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'policySetDefinitions'.", id)));
@@ -172,7 +172,7 @@ public final class PolicySetDefinitionsImpl implements PolicySetDefinitions {
     }
 
     public Response<PolicySetDefinition> getByIdWithResponse(String id, Context context) {
-        String policySetDefinitionName = Utils.getValueFromIdByName(id, "policySetDefinitions");
+        String policySetDefinitionName = ResourceManagerUtils.getValueFromIdByName(id, "policySetDefinitions");
         if (policySetDefinitionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'policySetDefinitions'.", id)));
@@ -181,7 +181,7 @@ public final class PolicySetDefinitionsImpl implements PolicySetDefinitions {
     }
 
     public void deleteById(String id) {
-        String policySetDefinitionName = Utils.getValueFromIdByName(id, "policySetDefinitions");
+        String policySetDefinitionName = ResourceManagerUtils.getValueFromIdByName(id, "policySetDefinitions");
         if (policySetDefinitionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'policySetDefinitions'.", id)));
@@ -190,7 +190,7 @@ public final class PolicySetDefinitionsImpl implements PolicySetDefinitions {
     }
 
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
-        String policySetDefinitionName = Utils.getValueFromIdByName(id, "policySetDefinitions");
+        String policySetDefinitionName = ResourceManagerUtils.getValueFromIdByName(id, "policySetDefinitions");
         if (policySetDefinitionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'policySetDefinitions'.", id)));

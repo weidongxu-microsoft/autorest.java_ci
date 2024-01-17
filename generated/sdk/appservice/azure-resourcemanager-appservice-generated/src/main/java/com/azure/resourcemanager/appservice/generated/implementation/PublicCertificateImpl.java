@@ -110,9 +110,9 @@ public final class PublicCertificateImpl
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.name = Utils.getValueFromIdByName(innerObject.id(), "sites");
-        this.publicCertificateName = Utils.getValueFromIdByName(innerObject.id(), "publicCertificates");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.name = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "sites");
+        this.publicCertificateName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "publicCertificates");
     }
 
     public PublicCertificate refresh() {

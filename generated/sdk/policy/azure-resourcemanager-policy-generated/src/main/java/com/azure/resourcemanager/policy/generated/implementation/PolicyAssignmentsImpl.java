@@ -70,21 +70,21 @@ public final class PolicyAssignmentsImpl implements PolicyAssignments {
 
     public PagedIterable<PolicyAssignment> listByResourceGroup(String resourceGroupName) {
         PagedIterable<PolicyAssignmentInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return Utils.mapPage(inner, inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PolicyAssignment> listByResourceGroup(String resourceGroupName, String filter, Integer top,
         Context context) {
         PagedIterable<PolicyAssignmentInner> inner
             = this.serviceClient().listByResourceGroup(resourceGroupName, filter, top, context);
-        return Utils.mapPage(inner, inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PolicyAssignment> listForResource(String resourceGroupName, String resourceProviderNamespace,
         String parentResourcePath, String resourceType, String resourceName) {
         PagedIterable<PolicyAssignmentInner> inner = this.serviceClient().listForResource(resourceGroupName,
             resourceProviderNamespace, parentResourcePath, resourceType, resourceName);
-        return Utils.mapPage(inner, inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PolicyAssignment> listForResource(String resourceGroupName, String resourceProviderNamespace,
@@ -92,29 +92,29 @@ public final class PolicyAssignmentsImpl implements PolicyAssignments {
         Context context) {
         PagedIterable<PolicyAssignmentInner> inner = this.serviceClient().listForResource(resourceGroupName,
             resourceProviderNamespace, parentResourcePath, resourceType, resourceName, filter, top, context);
-        return Utils.mapPage(inner, inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PolicyAssignment> listForManagementGroup(String managementGroupId) {
         PagedIterable<PolicyAssignmentInner> inner = this.serviceClient().listForManagementGroup(managementGroupId);
-        return Utils.mapPage(inner, inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PolicyAssignment> listForManagementGroup(String managementGroupId, String filter, Integer top,
         Context context) {
         PagedIterable<PolicyAssignmentInner> inner
             = this.serviceClient().listForManagementGroup(managementGroupId, filter, top, context);
-        return Utils.mapPage(inner, inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PolicyAssignment> list() {
         PagedIterable<PolicyAssignmentInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PolicyAssignment> list(String filter, Integer top, Context context) {
         PagedIterable<PolicyAssignmentInner> inner = this.serviceClient().list(filter, top, context);
-        return Utils.mapPage(inner, inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
     }
 
     public Response<PolicyAssignment> deleteByIdWithResponse(String policyAssignmentId, Context context) {

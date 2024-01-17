@@ -132,9 +132,9 @@ public final class SavedSearchImpl implements SavedSearch, SavedSearch.Definitio
         com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourcegroups");
-        this.workspaceName = Utils.getValueFromIdByName(innerObject.id(), "workspaces");
-        this.savedSearchId = Utils.getValueFromIdByName(innerObject.id(), "savedSearches");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourcegroups");
+        this.workspaceName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "workspaces");
+        this.savedSearchId = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "savedSearches");
     }
 
     public SavedSearch refresh() {

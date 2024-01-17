@@ -174,8 +174,9 @@ public final class ExpressRouteCrossConnectionImpl
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.crossConnectionName = Utils.getValueFromIdByName(innerObject.id(), "expressRouteCrossConnections");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.crossConnectionName
+            = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "expressRouteCrossConnections");
     }
 
     public ExpressRouteCrossConnection refresh() {

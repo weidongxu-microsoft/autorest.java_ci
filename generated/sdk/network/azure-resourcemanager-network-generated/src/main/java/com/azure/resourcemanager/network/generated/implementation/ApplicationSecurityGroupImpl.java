@@ -129,8 +129,9 @@ public final class ApplicationSecurityGroupImpl
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.applicationSecurityGroupName = Utils.getValueFromIdByName(innerObject.id(), "applicationSecurityGroups");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.applicationSecurityGroupName
+            = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "applicationSecurityGroups");
     }
 
     public ApplicationSecurityGroup refresh() {

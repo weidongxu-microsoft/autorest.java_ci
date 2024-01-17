@@ -30,23 +30,27 @@ public final class WebApplicationFirewallPoliciesImpl implements WebApplicationF
     public PagedIterable<WebApplicationFirewallPolicy> listByResourceGroup(String resourceGroupName) {
         PagedIterable<WebApplicationFirewallPolicyInner> inner
             = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return Utils.mapPage(inner, inner1 -> new WebApplicationFirewallPolicyImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new WebApplicationFirewallPolicyImpl(inner1, this.manager()));
     }
 
     public PagedIterable<WebApplicationFirewallPolicy> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<WebApplicationFirewallPolicyInner> inner
             = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return Utils.mapPage(inner, inner1 -> new WebApplicationFirewallPolicyImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new WebApplicationFirewallPolicyImpl(inner1, this.manager()));
     }
 
     public PagedIterable<WebApplicationFirewallPolicy> list() {
         PagedIterable<WebApplicationFirewallPolicyInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new WebApplicationFirewallPolicyImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new WebApplicationFirewallPolicyImpl(inner1, this.manager()));
     }
 
     public PagedIterable<WebApplicationFirewallPolicy> list(Context context) {
         PagedIterable<WebApplicationFirewallPolicyInner> inner = this.serviceClient().list(context);
-        return Utils.mapPage(inner, inner1 -> new WebApplicationFirewallPolicyImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new WebApplicationFirewallPolicyImpl(inner1, this.manager()));
     }
 
     public Response<WebApplicationFirewallPolicy> getByResourceGroupWithResponse(String resourceGroupName,
@@ -80,12 +84,13 @@ public final class WebApplicationFirewallPoliciesImpl implements WebApplicationF
     }
 
     public WebApplicationFirewallPolicy getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String policyName = Utils.getValueFromIdByName(id, "ApplicationGatewayWebApplicationFirewallPolicies");
+        String policyName
+            = ResourceManagerUtils.getValueFromIdByName(id, "ApplicationGatewayWebApplicationFirewallPolicies");
         if (policyName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String.format(
                 "The resource ID '%s' is not valid. Missing path segment 'ApplicationGatewayWebApplicationFirewallPolicies'.",
@@ -95,12 +100,13 @@ public final class WebApplicationFirewallPoliciesImpl implements WebApplicationF
     }
 
     public Response<WebApplicationFirewallPolicy> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String policyName = Utils.getValueFromIdByName(id, "ApplicationGatewayWebApplicationFirewallPolicies");
+        String policyName
+            = ResourceManagerUtils.getValueFromIdByName(id, "ApplicationGatewayWebApplicationFirewallPolicies");
         if (policyName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String.format(
                 "The resource ID '%s' is not valid. Missing path segment 'ApplicationGatewayWebApplicationFirewallPolicies'.",
@@ -110,12 +116,13 @@ public final class WebApplicationFirewallPoliciesImpl implements WebApplicationF
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String policyName = Utils.getValueFromIdByName(id, "ApplicationGatewayWebApplicationFirewallPolicies");
+        String policyName
+            = ResourceManagerUtils.getValueFromIdByName(id, "ApplicationGatewayWebApplicationFirewallPolicies");
         if (policyName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String.format(
                 "The resource ID '%s' is not valid. Missing path segment 'ApplicationGatewayWebApplicationFirewallPolicies'.",
@@ -125,12 +132,13 @@ public final class WebApplicationFirewallPoliciesImpl implements WebApplicationF
     }
 
     public void deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String policyName = Utils.getValueFromIdByName(id, "ApplicationGatewayWebApplicationFirewallPolicies");
+        String policyName
+            = ResourceManagerUtils.getValueFromIdByName(id, "ApplicationGatewayWebApplicationFirewallPolicies");
         if (policyName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String.format(
                 "The resource ID '%s' is not valid. Missing path segment 'ApplicationGatewayWebApplicationFirewallPolicies'.",

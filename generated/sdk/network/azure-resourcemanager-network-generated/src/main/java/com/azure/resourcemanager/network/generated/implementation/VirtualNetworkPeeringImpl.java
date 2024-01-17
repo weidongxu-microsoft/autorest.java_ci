@@ -164,9 +164,10 @@ public final class VirtualNetworkPeeringImpl
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.virtualNetworkName = Utils.getValueFromIdByName(innerObject.id(), "virtualNetworks");
-        this.virtualNetworkPeeringName = Utils.getValueFromIdByName(innerObject.id(), "virtualNetworkPeerings");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.virtualNetworkName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "virtualNetworks");
+        this.virtualNetworkPeeringName
+            = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "virtualNetworkPeerings");
     }
 
     public VirtualNetworkPeering refresh() {

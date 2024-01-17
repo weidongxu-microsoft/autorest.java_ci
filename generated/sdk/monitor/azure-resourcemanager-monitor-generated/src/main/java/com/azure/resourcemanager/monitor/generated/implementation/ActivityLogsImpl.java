@@ -27,12 +27,12 @@ public final class ActivityLogsImpl implements ActivityLogs {
 
     public PagedIterable<EventData> list(String filter) {
         PagedIterable<EventDataInner> inner = this.serviceClient().list(filter);
-        return Utils.mapPage(inner, inner1 -> new EventDataImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new EventDataImpl(inner1, this.manager()));
     }
 
     public PagedIterable<EventData> list(String filter, String select, Context context) {
         PagedIterable<EventDataInner> inner = this.serviceClient().list(filter, select, context);
-        return Utils.mapPage(inner, inner1 -> new EventDataImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new EventDataImpl(inner1, this.manager()));
     }
 
     private ActivityLogsClient serviceClient() {

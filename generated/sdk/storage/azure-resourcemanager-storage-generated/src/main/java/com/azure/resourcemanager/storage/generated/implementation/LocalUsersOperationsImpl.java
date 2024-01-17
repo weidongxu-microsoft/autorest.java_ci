@@ -33,12 +33,12 @@ public final class LocalUsersOperationsImpl implements LocalUsersOperations {
 
     public PagedIterable<LocalUser> list(String resourceGroupName, String accountName) {
         PagedIterable<LocalUserInner> inner = this.serviceClient().list(resourceGroupName, accountName);
-        return Utils.mapPage(inner, inner1 -> new LocalUserImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new LocalUserImpl(inner1, this.manager()));
     }
 
     public PagedIterable<LocalUser> list(String resourceGroupName, String accountName, Context context) {
         PagedIterable<LocalUserInner> inner = this.serviceClient().list(resourceGroupName, accountName, context);
-        return Utils.mapPage(inner, inner1 -> new LocalUserImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new LocalUserImpl(inner1, this.manager()));
     }
 
     public Response<LocalUser> getWithResponse(String resourceGroupName, String accountName, String username,
@@ -116,17 +116,17 @@ public final class LocalUsersOperationsImpl implements LocalUsersOperations {
     }
 
     public LocalUser getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        String accountName = ResourceManagerUtils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
         }
-        String username = Utils.getValueFromIdByName(id, "localUsers");
+        String username = ResourceManagerUtils.getValueFromIdByName(id, "localUsers");
         if (username == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'localUsers'.", id)));
@@ -135,17 +135,17 @@ public final class LocalUsersOperationsImpl implements LocalUsersOperations {
     }
 
     public Response<LocalUser> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        String accountName = ResourceManagerUtils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
         }
-        String username = Utils.getValueFromIdByName(id, "localUsers");
+        String username = ResourceManagerUtils.getValueFromIdByName(id, "localUsers");
         if (username == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'localUsers'.", id)));
@@ -154,17 +154,17 @@ public final class LocalUsersOperationsImpl implements LocalUsersOperations {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        String accountName = ResourceManagerUtils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
         }
-        String username = Utils.getValueFromIdByName(id, "localUsers");
+        String username = ResourceManagerUtils.getValueFromIdByName(id, "localUsers");
         if (username == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'localUsers'.", id)));
@@ -173,17 +173,17 @@ public final class LocalUsersOperationsImpl implements LocalUsersOperations {
     }
 
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        String accountName = ResourceManagerUtils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
         }
-        String username = Utils.getValueFromIdByName(id, "localUsers");
+        String username = ResourceManagerUtils.getValueFromIdByName(id, "localUsers");
         if (username == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'localUsers'.", id)));

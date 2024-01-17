@@ -60,28 +60,28 @@ public final class SecurityRulesImpl implements SecurityRules {
 
     public PagedIterable<SecurityRule> list(String resourceGroupName, String networkSecurityGroupName) {
         PagedIterable<SecurityRuleInner> inner = this.serviceClient().list(resourceGroupName, networkSecurityGroupName);
-        return Utils.mapPage(inner, inner1 -> new SecurityRuleImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SecurityRuleImpl(inner1, this.manager()));
     }
 
     public PagedIterable<SecurityRule> list(String resourceGroupName, String networkSecurityGroupName,
         Context context) {
         PagedIterable<SecurityRuleInner> inner
             = this.serviceClient().list(resourceGroupName, networkSecurityGroupName, context);
-        return Utils.mapPage(inner, inner1 -> new SecurityRuleImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SecurityRuleImpl(inner1, this.manager()));
     }
 
     public SecurityRule getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String networkSecurityGroupName = Utils.getValueFromIdByName(id, "networkSecurityGroups");
+        String networkSecurityGroupName = ResourceManagerUtils.getValueFromIdByName(id, "networkSecurityGroups");
         if (networkSecurityGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'networkSecurityGroups'.", id)));
         }
-        String securityRuleName = Utils.getValueFromIdByName(id, "securityRules");
+        String securityRuleName = ResourceManagerUtils.getValueFromIdByName(id, "securityRules");
         if (securityRuleName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'securityRules'.", id)));
@@ -91,17 +91,17 @@ public final class SecurityRulesImpl implements SecurityRules {
     }
 
     public Response<SecurityRule> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String networkSecurityGroupName = Utils.getValueFromIdByName(id, "networkSecurityGroups");
+        String networkSecurityGroupName = ResourceManagerUtils.getValueFromIdByName(id, "networkSecurityGroups");
         if (networkSecurityGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'networkSecurityGroups'.", id)));
         }
-        String securityRuleName = Utils.getValueFromIdByName(id, "securityRules");
+        String securityRuleName = ResourceManagerUtils.getValueFromIdByName(id, "securityRules");
         if (securityRuleName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'securityRules'.", id)));
@@ -110,17 +110,17 @@ public final class SecurityRulesImpl implements SecurityRules {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String networkSecurityGroupName = Utils.getValueFromIdByName(id, "networkSecurityGroups");
+        String networkSecurityGroupName = ResourceManagerUtils.getValueFromIdByName(id, "networkSecurityGroups");
         if (networkSecurityGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'networkSecurityGroups'.", id)));
         }
-        String securityRuleName = Utils.getValueFromIdByName(id, "securityRules");
+        String securityRuleName = ResourceManagerUtils.getValueFromIdByName(id, "securityRules");
         if (securityRuleName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'securityRules'.", id)));
@@ -129,17 +129,17 @@ public final class SecurityRulesImpl implements SecurityRules {
     }
 
     public void deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String networkSecurityGroupName = Utils.getValueFromIdByName(id, "networkSecurityGroups");
+        String networkSecurityGroupName = ResourceManagerUtils.getValueFromIdByName(id, "networkSecurityGroups");
         if (networkSecurityGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'networkSecurityGroups'.", id)));
         }
-        String securityRuleName = Utils.getValueFromIdByName(id, "securityRules");
+        String securityRuleName = ResourceManagerUtils.getValueFromIdByName(id, "securityRules");
         if (securityRuleName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'securityRules'.", id)));

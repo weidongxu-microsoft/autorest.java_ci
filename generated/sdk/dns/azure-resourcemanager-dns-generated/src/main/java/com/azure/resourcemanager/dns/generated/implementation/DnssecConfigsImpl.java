@@ -76,13 +76,13 @@ public final class DnssecConfigsImpl implements DnssecConfigs {
 
     public PagedIterable<DnssecConfig> listByDnsZone(String resourceGroupName, String zoneName) {
         PagedIterable<DnssecConfigInner> inner = this.serviceClient().listByDnsZone(resourceGroupName, zoneName);
-        return Utils.mapPage(inner, inner1 -> new DnssecConfigImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DnssecConfigImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DnssecConfig> listByDnsZone(String resourceGroupName, String zoneName, Context context) {
         PagedIterable<DnssecConfigInner> inner
             = this.serviceClient().listByDnsZone(resourceGroupName, zoneName, context);
-        return Utils.mapPage(inner, inner1 -> new DnssecConfigImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DnssecConfigImpl(inner1, this.manager()));
     }
 
     private DnssecConfigsClient serviceClient() {

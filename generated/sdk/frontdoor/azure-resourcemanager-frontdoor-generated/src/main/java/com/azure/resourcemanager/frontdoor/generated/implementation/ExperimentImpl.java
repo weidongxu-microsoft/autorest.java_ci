@@ -146,9 +146,9 @@ public final class ExperimentImpl implements Experiment, Experiment.Definition, 
         com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.profileName = Utils.getValueFromIdByName(innerObject.id(), "NetworkExperimentProfiles");
-        this.experimentName = Utils.getValueFromIdByName(innerObject.id(), "Experiments");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.profileName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "NetworkExperimentProfiles");
+        this.experimentName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "Experiments");
     }
 
     public Experiment refresh() {

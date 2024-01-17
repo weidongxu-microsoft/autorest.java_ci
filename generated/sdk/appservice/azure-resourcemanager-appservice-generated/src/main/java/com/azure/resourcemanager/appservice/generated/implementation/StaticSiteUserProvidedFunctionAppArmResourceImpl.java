@@ -121,10 +121,10 @@ public final class StaticSiteUserProvidedFunctionAppArmResourceImpl
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.name = Utils.getValueFromIdByName(innerObject.id(), "staticSites");
-        this.environmentName = Utils.getValueFromIdByName(innerObject.id(), "builds");
-        this.functionAppName = Utils.getValueFromIdByName(innerObject.id(), "userProvidedFunctionApps");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.name = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "staticSites");
+        this.environmentName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "builds");
+        this.functionAppName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "userProvidedFunctionApps");
     }
 
     public StaticSiteUserProvidedFunctionAppArmResource refresh() {

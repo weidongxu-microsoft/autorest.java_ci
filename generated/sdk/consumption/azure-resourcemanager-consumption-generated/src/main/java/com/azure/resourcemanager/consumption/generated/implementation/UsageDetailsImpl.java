@@ -28,14 +28,14 @@ public final class UsageDetailsImpl implements UsageDetails {
 
     public PagedIterable<UsageDetail> list(String scope) {
         PagedIterable<UsageDetailInner> inner = this.serviceClient().list(scope);
-        return Utils.mapPage(inner, inner1 -> new UsageDetailImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new UsageDetailImpl(inner1, this.manager()));
     }
 
     public PagedIterable<UsageDetail> list(String scope, String expand, String filter, String skiptoken, Integer top,
         Metrictype metric, Context context) {
         PagedIterable<UsageDetailInner> inner
             = this.serviceClient().list(scope, expand, filter, skiptoken, top, metric, context);
-        return Utils.mapPage(inner, inner1 -> new UsageDetailImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new UsageDetailImpl(inner1, this.manager()));
     }
 
     private UsageDetailsClient serviceClient() {

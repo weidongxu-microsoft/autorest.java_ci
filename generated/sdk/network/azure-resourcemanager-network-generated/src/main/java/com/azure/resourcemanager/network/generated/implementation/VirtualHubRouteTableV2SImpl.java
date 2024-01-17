@@ -80,14 +80,14 @@ public final class VirtualHubRouteTableV2SImpl implements VirtualHubRouteTableV2
 
     public PagedIterable<VirtualHubRouteTableV2> list(String resourceGroupName, String virtualHubName) {
         PagedIterable<VirtualHubRouteTableV2Inner> inner = this.serviceClient().list(resourceGroupName, virtualHubName);
-        return Utils.mapPage(inner, inner1 -> new VirtualHubRouteTableV2Impl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new VirtualHubRouteTableV2Impl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualHubRouteTableV2> list(String resourceGroupName, String virtualHubName,
         Context context) {
         PagedIterable<VirtualHubRouteTableV2Inner> inner
             = this.serviceClient().list(resourceGroupName, virtualHubName, context);
-        return Utils.mapPage(inner, inner1 -> new VirtualHubRouteTableV2Impl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new VirtualHubRouteTableV2Impl(inner1, this.manager()));
     }
 
     private VirtualHubRouteTableV2SClient serviceClient() {

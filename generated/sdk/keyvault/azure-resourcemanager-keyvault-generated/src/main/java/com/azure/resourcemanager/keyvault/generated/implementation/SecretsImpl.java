@@ -50,26 +50,26 @@ public final class SecretsImpl implements Secrets {
 
     public PagedIterable<Secret> list(String resourceGroupName, String vaultName) {
         PagedIterable<SecretInner> inner = this.serviceClient().list(resourceGroupName, vaultName);
-        return Utils.mapPage(inner, inner1 -> new SecretImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SecretImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Secret> list(String resourceGroupName, String vaultName, Integer top, Context context) {
         PagedIterable<SecretInner> inner = this.serviceClient().list(resourceGroupName, vaultName, top, context);
-        return Utils.mapPage(inner, inner1 -> new SecretImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SecretImpl(inner1, this.manager()));
     }
 
     public Secret getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String vaultName = Utils.getValueFromIdByName(id, "vaults");
+        String vaultName = ResourceManagerUtils.getValueFromIdByName(id, "vaults");
         if (vaultName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'vaults'.", id)));
         }
-        String secretName = Utils.getValueFromIdByName(id, "secrets");
+        String secretName = ResourceManagerUtils.getValueFromIdByName(id, "secrets");
         if (secretName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'secrets'.", id)));
@@ -78,17 +78,17 @@ public final class SecretsImpl implements Secrets {
     }
 
     public Response<Secret> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String vaultName = Utils.getValueFromIdByName(id, "vaults");
+        String vaultName = ResourceManagerUtils.getValueFromIdByName(id, "vaults");
         if (vaultName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'vaults'.", id)));
         }
-        String secretName = Utils.getValueFromIdByName(id, "secrets");
+        String secretName = ResourceManagerUtils.getValueFromIdByName(id, "secrets");
         if (secretName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'secrets'.", id)));

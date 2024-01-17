@@ -129,8 +129,9 @@ public final class PartnerRegistrationImpl
         com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.partnerRegistrationName = Utils.getValueFromIdByName(innerObject.id(), "partnerRegistrations");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.partnerRegistrationName
+            = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "partnerRegistrations");
     }
 
     public PartnerRegistration refresh() {

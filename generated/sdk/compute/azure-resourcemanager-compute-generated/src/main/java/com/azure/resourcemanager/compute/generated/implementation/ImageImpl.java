@@ -135,8 +135,8 @@ public final class ImageImpl implements Image, Image.Definition, Image.Update {
     ImageImpl(ImageInner innerObject, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.imageName = Utils.getValueFromIdByName(innerObject.id(), "images");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.imageName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "images");
     }
 
     public Image refresh() {

@@ -151,8 +151,9 @@ public final class PartnerDestinationImpl
         com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.partnerDestinationName = Utils.getValueFromIdByName(innerObject.id(), "partnerDestinations");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.partnerDestinationName
+            = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "partnerDestinations");
     }
 
     public PartnerDestination refresh() {

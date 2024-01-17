@@ -180,8 +180,8 @@ public final class MetricAlertResourceImpl
         com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.ruleName = Utils.getValueFromIdByName(innerObject.id(), "metricAlerts");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.ruleName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "metricAlerts");
     }
 
     public MetricAlertResource refresh() {

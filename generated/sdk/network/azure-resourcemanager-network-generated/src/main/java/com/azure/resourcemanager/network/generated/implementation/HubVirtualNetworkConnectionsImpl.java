@@ -83,14 +83,16 @@ public final class HubVirtualNetworkConnectionsImpl implements HubVirtualNetwork
     public PagedIterable<HubVirtualNetworkConnection> list(String resourceGroupName, String virtualHubName) {
         PagedIterable<HubVirtualNetworkConnectionInner> inner
             = this.serviceClient().list(resourceGroupName, virtualHubName);
-        return Utils.mapPage(inner, inner1 -> new HubVirtualNetworkConnectionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new HubVirtualNetworkConnectionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<HubVirtualNetworkConnection> list(String resourceGroupName, String virtualHubName,
         Context context) {
         PagedIterable<HubVirtualNetworkConnectionInner> inner
             = this.serviceClient().list(resourceGroupName, virtualHubName, context);
-        return Utils.mapPage(inner, inner1 -> new HubVirtualNetworkConnectionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new HubVirtualNetworkConnectionImpl(inner1, this.manager()));
     }
 
     private HubVirtualNetworkConnectionsClient serviceClient() {

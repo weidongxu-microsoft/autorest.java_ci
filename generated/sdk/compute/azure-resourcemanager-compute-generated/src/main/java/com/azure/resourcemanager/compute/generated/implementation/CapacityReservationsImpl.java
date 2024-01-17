@@ -64,28 +64,29 @@ public final class CapacityReservationsImpl implements CapacityReservations {
         String capacityReservationGroupName) {
         PagedIterable<CapacityReservationInner> inner
             = this.serviceClient().listByCapacityReservationGroup(resourceGroupName, capacityReservationGroupName);
-        return Utils.mapPage(inner, inner1 -> new CapacityReservationImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new CapacityReservationImpl(inner1, this.manager()));
     }
 
     public PagedIterable<CapacityReservation> listByCapacityReservationGroup(String resourceGroupName,
         String capacityReservationGroupName, Context context) {
         PagedIterable<CapacityReservationInner> inner = this.serviceClient()
             .listByCapacityReservationGroup(resourceGroupName, capacityReservationGroupName, context);
-        return Utils.mapPage(inner, inner1 -> new CapacityReservationImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new CapacityReservationImpl(inner1, this.manager()));
     }
 
     public CapacityReservation getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String capacityReservationGroupName = Utils.getValueFromIdByName(id, "capacityReservationGroups");
+        String capacityReservationGroupName
+            = ResourceManagerUtils.getValueFromIdByName(id, "capacityReservationGroups");
         if (capacityReservationGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'capacityReservationGroups'.", id)));
         }
-        String capacityReservationName = Utils.getValueFromIdByName(id, "capacityReservations");
+        String capacityReservationName = ResourceManagerUtils.getValueFromIdByName(id, "capacityReservations");
         if (capacityReservationName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'capacityReservations'.", id)));
@@ -97,17 +98,18 @@ public final class CapacityReservationsImpl implements CapacityReservations {
 
     public Response<CapacityReservation> getByIdWithResponse(String id, CapacityReservationInstanceViewTypes expand,
         Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String capacityReservationGroupName = Utils.getValueFromIdByName(id, "capacityReservationGroups");
+        String capacityReservationGroupName
+            = ResourceManagerUtils.getValueFromIdByName(id, "capacityReservationGroups");
         if (capacityReservationGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'capacityReservationGroups'.", id)));
         }
-        String capacityReservationName = Utils.getValueFromIdByName(id, "capacityReservations");
+        String capacityReservationName = ResourceManagerUtils.getValueFromIdByName(id, "capacityReservations");
         if (capacityReservationName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'capacityReservations'.", id)));
@@ -117,17 +119,18 @@ public final class CapacityReservationsImpl implements CapacityReservations {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String capacityReservationGroupName = Utils.getValueFromIdByName(id, "capacityReservationGroups");
+        String capacityReservationGroupName
+            = ResourceManagerUtils.getValueFromIdByName(id, "capacityReservationGroups");
         if (capacityReservationGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'capacityReservationGroups'.", id)));
         }
-        String capacityReservationName = Utils.getValueFromIdByName(id, "capacityReservations");
+        String capacityReservationName = ResourceManagerUtils.getValueFromIdByName(id, "capacityReservations");
         if (capacityReservationName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'capacityReservations'.", id)));
@@ -136,17 +139,18 @@ public final class CapacityReservationsImpl implements CapacityReservations {
     }
 
     public void deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String capacityReservationGroupName = Utils.getValueFromIdByName(id, "capacityReservationGroups");
+        String capacityReservationGroupName
+            = ResourceManagerUtils.getValueFromIdByName(id, "capacityReservationGroups");
         if (capacityReservationGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'capacityReservationGroups'.", id)));
         }
-        String capacityReservationName = Utils.getValueFromIdByName(id, "capacityReservations");
+        String capacityReservationName = ResourceManagerUtils.getValueFromIdByName(id, "capacityReservations");
         if (capacityReservationName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'capacityReservations'.", id)));

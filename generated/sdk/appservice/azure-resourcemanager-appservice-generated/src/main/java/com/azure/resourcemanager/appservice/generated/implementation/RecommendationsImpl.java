@@ -31,12 +31,12 @@ public final class RecommendationsImpl implements Recommendations {
 
     public PagedIterable<Recommendation> list() {
         PagedIterable<RecommendationInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new RecommendationImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new RecommendationImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Recommendation> list(Boolean featured, String filter, Context context) {
         PagedIterable<RecommendationInner> inner = this.serviceClient().list(featured, filter, context);
-        return Utils.mapPage(inner, inner1 -> new RecommendationImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new RecommendationImpl(inner1, this.manager()));
     }
 
     public Response<Void> resetAllFiltersWithResponse(Context context) {
@@ -59,28 +59,28 @@ public final class RecommendationsImpl implements Recommendations {
         String hostingEnvironmentName) {
         PagedIterable<RecommendationInner> inner
             = this.serviceClient().listHistoryForHostingEnvironment(resourceGroupName, hostingEnvironmentName);
-        return Utils.mapPage(inner, inner1 -> new RecommendationImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new RecommendationImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Recommendation> listHistoryForHostingEnvironment(String resourceGroupName,
         String hostingEnvironmentName, Boolean expiredOnly, String filter, Context context) {
         PagedIterable<RecommendationInner> inner = this.serviceClient()
             .listHistoryForHostingEnvironment(resourceGroupName, hostingEnvironmentName, expiredOnly, filter, context);
-        return Utils.mapPage(inner, inner1 -> new RecommendationImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new RecommendationImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Recommendation> listRecommendedRulesForHostingEnvironment(String resourceGroupName,
         String hostingEnvironmentName) {
         PagedIterable<RecommendationInner> inner
             = this.serviceClient().listRecommendedRulesForHostingEnvironment(resourceGroupName, hostingEnvironmentName);
-        return Utils.mapPage(inner, inner1 -> new RecommendationImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new RecommendationImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Recommendation> listRecommendedRulesForHostingEnvironment(String resourceGroupName,
         String hostingEnvironmentName, Boolean featured, String filter, Context context) {
         PagedIterable<RecommendationInner> inner = this.serviceClient().listRecommendedRulesForHostingEnvironment(
             resourceGroupName, hostingEnvironmentName, featured, filter, context);
-        return Utils.mapPage(inner, inner1 -> new RecommendationImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new RecommendationImpl(inner1, this.manager()));
     }
 
     public Response<Void> disableAllForHostingEnvironmentWithResponse(String resourceGroupName, String environmentName,
@@ -145,27 +145,27 @@ public final class RecommendationsImpl implements Recommendations {
     public PagedIterable<Recommendation> listHistoryForWebApp(String resourceGroupName, String siteName) {
         PagedIterable<RecommendationInner> inner
             = this.serviceClient().listHistoryForWebApp(resourceGroupName, siteName);
-        return Utils.mapPage(inner, inner1 -> new RecommendationImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new RecommendationImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Recommendation> listHistoryForWebApp(String resourceGroupName, String siteName,
         Boolean expiredOnly, String filter, Context context) {
         PagedIterable<RecommendationInner> inner
             = this.serviceClient().listHistoryForWebApp(resourceGroupName, siteName, expiredOnly, filter, context);
-        return Utils.mapPage(inner, inner1 -> new RecommendationImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new RecommendationImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Recommendation> listRecommendedRulesForWebApp(String resourceGroupName, String siteName) {
         PagedIterable<RecommendationInner> inner
             = this.serviceClient().listRecommendedRulesForWebApp(resourceGroupName, siteName);
-        return Utils.mapPage(inner, inner1 -> new RecommendationImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new RecommendationImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Recommendation> listRecommendedRulesForWebApp(String resourceGroupName, String siteName,
         Boolean featured, String filter, Context context) {
         PagedIterable<RecommendationInner> inner = this.serviceClient().listRecommendedRulesForWebApp(resourceGroupName,
             siteName, featured, filter, context);
-        return Utils.mapPage(inner, inner1 -> new RecommendationImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new RecommendationImpl(inner1, this.manager()));
     }
 
     public Response<Void> disableAllForWebAppWithResponse(String resourceGroupName, String siteName, Context context) {

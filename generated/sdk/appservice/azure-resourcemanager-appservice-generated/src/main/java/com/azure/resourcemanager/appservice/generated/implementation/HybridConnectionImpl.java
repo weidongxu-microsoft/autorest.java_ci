@@ -132,10 +132,10 @@ public final class HybridConnectionImpl
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.name = Utils.getValueFromIdByName(innerObject.id(), "sites");
-        this.namespaceName = Utils.getValueFromIdByName(innerObject.id(), "hybridConnectionNamespaces");
-        this.relayName = Utils.getValueFromIdByName(innerObject.id(), "relays");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.name = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "sites");
+        this.namespaceName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "hybridConnectionNamespaces");
+        this.relayName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "relays");
     }
 
     public HybridConnection refresh() {

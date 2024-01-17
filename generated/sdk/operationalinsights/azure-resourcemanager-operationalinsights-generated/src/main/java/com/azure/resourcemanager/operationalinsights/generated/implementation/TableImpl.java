@@ -147,9 +147,9 @@ public final class TableImpl implements Table, Table.Definition, Table.Update {
         com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.workspaceName = Utils.getValueFromIdByName(innerObject.id(), "workspaces");
-        this.tableName = Utils.getValueFromIdByName(innerObject.id(), "tables");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.workspaceName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "workspaces");
+        this.tableName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "tables");
     }
 
     public Table refresh() {

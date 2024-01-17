@@ -29,12 +29,14 @@ public final class VirtualApplianceSkusImpl implements VirtualApplianceSkus {
 
     public PagedIterable<NetworkVirtualApplianceSku> list() {
         PagedIterable<NetworkVirtualApplianceSkuInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new NetworkVirtualApplianceSkuImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new NetworkVirtualApplianceSkuImpl(inner1, this.manager()));
     }
 
     public PagedIterable<NetworkVirtualApplianceSku> list(Context context) {
         PagedIterable<NetworkVirtualApplianceSkuInner> inner = this.serviceClient().list(context);
-        return Utils.mapPage(inner, inner1 -> new NetworkVirtualApplianceSkuImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new NetworkVirtualApplianceSkuImpl(inner1, this.manager()));
     }
 
     public Response<NetworkVirtualApplianceSku> getWithResponse(String skuName, Context context) {

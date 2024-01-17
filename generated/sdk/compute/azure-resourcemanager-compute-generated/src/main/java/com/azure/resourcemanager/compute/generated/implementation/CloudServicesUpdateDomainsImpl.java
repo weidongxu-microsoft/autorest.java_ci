@@ -61,14 +61,14 @@ public final class CloudServicesUpdateDomainsImpl implements CloudServicesUpdate
     public PagedIterable<UpdateDomain> listUpdateDomains(String resourceGroupName, String cloudServiceName) {
         PagedIterable<UpdateDomainInner> inner
             = this.serviceClient().listUpdateDomains(resourceGroupName, cloudServiceName);
-        return Utils.mapPage(inner, inner1 -> new UpdateDomainImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new UpdateDomainImpl(inner1, this.manager()));
     }
 
     public PagedIterable<UpdateDomain> listUpdateDomains(String resourceGroupName, String cloudServiceName,
         Context context) {
         PagedIterable<UpdateDomainInner> inner
             = this.serviceClient().listUpdateDomains(resourceGroupName, cloudServiceName, context);
-        return Utils.mapPage(inner, inner1 -> new UpdateDomainImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new UpdateDomainImpl(inner1, this.manager()));
     }
 
     private CloudServicesUpdateDomainsClient serviceClient() {

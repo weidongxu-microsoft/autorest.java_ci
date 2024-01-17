@@ -125,10 +125,10 @@ public final class ConsumerGroupImpl implements ConsumerGroup, ConsumerGroup.Def
         com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.namespaceName = Utils.getValueFromIdByName(innerObject.id(), "namespaces");
-        this.eventHubName = Utils.getValueFromIdByName(innerObject.id(), "eventhubs");
-        this.consumerGroupName = Utils.getValueFromIdByName(innerObject.id(), "consumergroups");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.namespaceName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "namespaces");
+        this.eventHubName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "eventhubs");
+        this.consumerGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "consumergroups");
     }
 
     public ConsumerGroup refresh() {

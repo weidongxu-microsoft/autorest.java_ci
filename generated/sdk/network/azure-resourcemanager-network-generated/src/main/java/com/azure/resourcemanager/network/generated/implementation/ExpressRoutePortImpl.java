@@ -189,8 +189,8 @@ public final class ExpressRoutePortImpl
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.expressRoutePortName = Utils.getValueFromIdByName(innerObject.id(), "ExpressRoutePorts");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.expressRoutePortName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "ExpressRoutePorts");
     }
 
     public ExpressRoutePort refresh() {

@@ -191,8 +191,9 @@ public final class NetworkSecurityGroupImpl
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.networkSecurityGroupName = Utils.getValueFromIdByName(innerObject.id(), "networkSecurityGroups");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.networkSecurityGroupName
+            = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "networkSecurityGroups");
     }
 
     public NetworkSecurityGroup refresh() {

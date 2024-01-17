@@ -105,9 +105,9 @@ public final class ServerKeyImpl implements ServerKey, ServerKey.Definition, Ser
         com.azure.resourcemanager.postgresql.generated.PostgreSqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.serverName = Utils.getValueFromIdByName(innerObject.id(), "servers");
-        this.keyName = Utils.getValueFromIdByName(innerObject.id(), "keys");
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.serverName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "servers");
+        this.keyName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "keys");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
     }
 
     public ServerKey refresh() {

@@ -36,14 +36,14 @@ public final class HybridConnectionsImpl implements HybridConnections {
         String hybridConnectionName) {
         PagedIterable<AuthorizationRuleInner> inner
             = this.serviceClient().listAuthorizationRules(resourceGroupName, namespaceName, hybridConnectionName);
-        return Utils.mapPage(inner, inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AuthorizationRule> listAuthorizationRules(String resourceGroupName, String namespaceName,
         String hybridConnectionName, Context context) {
         PagedIterable<AuthorizationRuleInner> inner = this.serviceClient().listAuthorizationRules(resourceGroupName,
             namespaceName, hybridConnectionName, context);
-        return Utils.mapPage(inner, inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
     }
 
     public Response<AuthorizationRule> createOrUpdateAuthorizationRuleWithResponse(String resourceGroupName,
@@ -155,14 +155,14 @@ public final class HybridConnectionsImpl implements HybridConnections {
     public PagedIterable<HybridConnection> listByNamespace(String resourceGroupName, String namespaceName) {
         PagedIterable<HybridConnectionInner> inner
             = this.serviceClient().listByNamespace(resourceGroupName, namespaceName);
-        return Utils.mapPage(inner, inner1 -> new HybridConnectionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new HybridConnectionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<HybridConnection> listByNamespace(String resourceGroupName, String namespaceName,
         Context context) {
         PagedIterable<HybridConnectionInner> inner
             = this.serviceClient().listByNamespace(resourceGroupName, namespaceName, context);
-        return Utils.mapPage(inner, inner1 -> new HybridConnectionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new HybridConnectionImpl(inner1, this.manager()));
     }
 
     public Response<Void> deleteWithResponse(String resourceGroupName, String namespaceName,
@@ -196,17 +196,17 @@ public final class HybridConnectionsImpl implements HybridConnections {
     }
 
     public HybridConnection getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        String namespaceName = ResourceManagerUtils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
-        String hybridConnectionName = Utils.getValueFromIdByName(id, "hybridConnections");
+        String hybridConnectionName = ResourceManagerUtils.getValueFromIdByName(id, "hybridConnections");
         if (hybridConnectionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'hybridConnections'.", id)));
@@ -215,17 +215,17 @@ public final class HybridConnectionsImpl implements HybridConnections {
     }
 
     public Response<HybridConnection> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        String namespaceName = ResourceManagerUtils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
-        String hybridConnectionName = Utils.getValueFromIdByName(id, "hybridConnections");
+        String hybridConnectionName = ResourceManagerUtils.getValueFromIdByName(id, "hybridConnections");
         if (hybridConnectionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'hybridConnections'.", id)));
@@ -234,17 +234,17 @@ public final class HybridConnectionsImpl implements HybridConnections {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        String namespaceName = ResourceManagerUtils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
-        String hybridConnectionName = Utils.getValueFromIdByName(id, "hybridConnections");
+        String hybridConnectionName = ResourceManagerUtils.getValueFromIdByName(id, "hybridConnections");
         if (hybridConnectionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'hybridConnections'.", id)));
@@ -253,17 +253,17 @@ public final class HybridConnectionsImpl implements HybridConnections {
     }
 
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        String namespaceName = ResourceManagerUtils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
-        String hybridConnectionName = Utils.getValueFromIdByName(id, "hybridConnections");
+        String hybridConnectionName = ResourceManagerUtils.getValueFromIdByName(id, "hybridConnections");
         if (hybridConnectionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'hybridConnections'.", id)));

@@ -123,10 +123,10 @@ public final class SubscriptionImpl implements Subscription, Subscription.Defini
         com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.namespaceName = Utils.getValueFromIdByName(innerObject.id(), "namespaces");
-        this.topicName = Utils.getValueFromIdByName(innerObject.id(), "topics");
-        this.eventSubscriptionName = Utils.getValueFromIdByName(innerObject.id(), "eventSubscriptions");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.namespaceName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "namespaces");
+        this.topicName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "topics");
+        this.eventSubscriptionName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "eventSubscriptions");
     }
 
     public Subscription refresh() {

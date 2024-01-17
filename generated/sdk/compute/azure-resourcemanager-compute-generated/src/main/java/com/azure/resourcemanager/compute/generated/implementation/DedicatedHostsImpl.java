@@ -60,14 +60,14 @@ public final class DedicatedHostsImpl implements DedicatedHosts {
     public PagedIterable<DedicatedHost> listByHostGroup(String resourceGroupName, String hostGroupName) {
         PagedIterable<DedicatedHostInner> inner
             = this.serviceClient().listByHostGroup(resourceGroupName, hostGroupName);
-        return Utils.mapPage(inner, inner1 -> new DedicatedHostImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DedicatedHostImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DedicatedHost> listByHostGroup(String resourceGroupName, String hostGroupName,
         Context context) {
         PagedIterable<DedicatedHostInner> inner
             = this.serviceClient().listByHostGroup(resourceGroupName, hostGroupName, context);
-        return Utils.mapPage(inner, inner1 -> new DedicatedHostImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DedicatedHostImpl(inner1, this.manager()));
     }
 
     public void restart(String resourceGroupName, String hostGroupName, String hostname) {
@@ -96,17 +96,17 @@ public final class DedicatedHostsImpl implements DedicatedHosts {
     }
 
     public DedicatedHost getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String hostGroupName = Utils.getValueFromIdByName(id, "hostGroups");
+        String hostGroupName = ResourceManagerUtils.getValueFromIdByName(id, "hostGroups");
         if (hostGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'hostGroups'.", id)));
         }
-        String hostname = Utils.getValueFromIdByName(id, "hosts");
+        String hostname = ResourceManagerUtils.getValueFromIdByName(id, "hosts");
         if (hostname == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'hosts'.", id)));
@@ -116,17 +116,17 @@ public final class DedicatedHostsImpl implements DedicatedHosts {
     }
 
     public Response<DedicatedHost> getByIdWithResponse(String id, InstanceViewTypes expand, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String hostGroupName = Utils.getValueFromIdByName(id, "hostGroups");
+        String hostGroupName = ResourceManagerUtils.getValueFromIdByName(id, "hostGroups");
         if (hostGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'hostGroups'.", id)));
         }
-        String hostname = Utils.getValueFromIdByName(id, "hosts");
+        String hostname = ResourceManagerUtils.getValueFromIdByName(id, "hosts");
         if (hostname == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'hosts'.", id)));
@@ -135,17 +135,17 @@ public final class DedicatedHostsImpl implements DedicatedHosts {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String hostGroupName = Utils.getValueFromIdByName(id, "hostGroups");
+        String hostGroupName = ResourceManagerUtils.getValueFromIdByName(id, "hostGroups");
         if (hostGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'hostGroups'.", id)));
         }
-        String hostname = Utils.getValueFromIdByName(id, "hosts");
+        String hostname = ResourceManagerUtils.getValueFromIdByName(id, "hosts");
         if (hostname == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'hosts'.", id)));
@@ -154,17 +154,17 @@ public final class DedicatedHostsImpl implements DedicatedHosts {
     }
 
     public void deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String hostGroupName = Utils.getValueFromIdByName(id, "hostGroups");
+        String hostGroupName = ResourceManagerUtils.getValueFromIdByName(id, "hostGroups");
         if (hostGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'hostGroups'.", id)));
         }
-        String hostname = Utils.getValueFromIdByName(id, "hosts");
+        String hostname = ResourceManagerUtils.getValueFromIdByName(id, "hosts");
         if (hostname == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'hosts'.", id)));

@@ -50,22 +50,22 @@ public final class AppServicePlansImpl implements AppServicePlans {
 
     public PagedIterable<AppServicePlan> list() {
         PagedIterable<AppServicePlanInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new AppServicePlanImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new AppServicePlanImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AppServicePlan> list(Boolean detailed, Context context) {
         PagedIterable<AppServicePlanInner> inner = this.serviceClient().list(detailed, context);
-        return Utils.mapPage(inner, inner1 -> new AppServicePlanImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new AppServicePlanImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AppServicePlan> listByResourceGroup(String resourceGroupName) {
         PagedIterable<AppServicePlanInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return Utils.mapPage(inner, inner1 -> new AppServicePlanImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new AppServicePlanImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AppServicePlan> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<AppServicePlanInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return Utils.mapPage(inner, inner1 -> new AppServicePlanImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new AppServicePlanImpl(inner1, this.manager()));
     }
 
     public Response<AppServicePlan> getByResourceGroupWithResponse(String resourceGroupName, String name,
@@ -210,14 +210,14 @@ public final class AppServicePlansImpl implements AppServicePlans {
     public PagedIterable<HybridConnection> listHybridConnections(String resourceGroupName, String name) {
         PagedIterable<HybridConnectionInner> inner
             = this.serviceClient().listHybridConnections(resourceGroupName, name);
-        return Utils.mapPage(inner, inner1 -> new HybridConnectionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new HybridConnectionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<HybridConnection> listHybridConnections(String resourceGroupName, String name,
         Context context) {
         PagedIterable<HybridConnectionInner> inner
             = this.serviceClient().listHybridConnections(resourceGroupName, name, context);
-        return Utils.mapPage(inner, inner1 -> new HybridConnectionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new HybridConnectionImpl(inner1, this.manager()));
     }
 
     public Response<Void> restartWebAppsWithResponse(String resourceGroupName, String name, Boolean softRestart,
@@ -231,14 +231,14 @@ public final class AppServicePlansImpl implements AppServicePlans {
 
     public PagedIterable<Site> listWebApps(String resourceGroupName, String name) {
         PagedIterable<SiteInner> inner = this.serviceClient().listWebApps(resourceGroupName, name);
-        return Utils.mapPage(inner, inner1 -> new SiteImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SiteImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Site> listWebApps(String resourceGroupName, String name, String skipToken, String filter,
         String top, Context context) {
         PagedIterable<SiteInner> inner
             = this.serviceClient().listWebApps(resourceGroupName, name, skipToken, filter, top, context);
-        return Utils.mapPage(inner, inner1 -> new SiteImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SiteImpl(inner1, this.manager()));
     }
 
     public Response<Object> getServerFarmSkusWithResponse(String resourceGroupName, String name, Context context) {
@@ -251,14 +251,14 @@ public final class AppServicePlansImpl implements AppServicePlans {
 
     public PagedIterable<CsmUsageQuota> listUsages(String resourceGroupName, String name) {
         PagedIterable<CsmUsageQuotaInner> inner = this.serviceClient().listUsages(resourceGroupName, name);
-        return Utils.mapPage(inner, inner1 -> new CsmUsageQuotaImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new CsmUsageQuotaImpl(inner1, this.manager()));
     }
 
     public PagedIterable<CsmUsageQuota> listUsages(String resourceGroupName, String name, String filter,
         Context context) {
         PagedIterable<CsmUsageQuotaInner> inner
             = this.serviceClient().listUsages(resourceGroupName, name, filter, context);
-        return Utils.mapPage(inner, inner1 -> new CsmUsageQuotaImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new CsmUsageQuotaImpl(inner1, this.manager()));
     }
 
     public Response<List<VnetInfoResource>> listVnetsWithResponse(String resourceGroupName, String name,
@@ -411,12 +411,12 @@ public final class AppServicePlansImpl implements AppServicePlans {
     }
 
     public AppServicePlan getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "serverfarms");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "serverfarms");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'serverfarms'.", id)));
@@ -425,12 +425,12 @@ public final class AppServicePlansImpl implements AppServicePlans {
     }
 
     public Response<AppServicePlan> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "serverfarms");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "serverfarms");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'serverfarms'.", id)));
@@ -439,12 +439,12 @@ public final class AppServicePlansImpl implements AppServicePlans {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "serverfarms");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "serverfarms");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'serverfarms'.", id)));
@@ -453,12 +453,12 @@ public final class AppServicePlansImpl implements AppServicePlans {
     }
 
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "serverfarms");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "serverfarms");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'serverfarms'.", id)));
@@ -467,22 +467,22 @@ public final class AppServicePlansImpl implements AppServicePlans {
     }
 
     public void deleteVnetRouteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "serverfarms");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "serverfarms");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'serverfarms'.", id)));
         }
-        String vnetName = Utils.getValueFromIdByName(id, "virtualNetworkConnections");
+        String vnetName = ResourceManagerUtils.getValueFromIdByName(id, "virtualNetworkConnections");
         if (vnetName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'virtualNetworkConnections'.", id)));
         }
-        String routeName = Utils.getValueFromIdByName(id, "routes");
+        String routeName = ResourceManagerUtils.getValueFromIdByName(id, "routes");
         if (routeName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'routes'.", id)));
@@ -491,22 +491,22 @@ public final class AppServicePlansImpl implements AppServicePlans {
     }
 
     public Response<Void> deleteVnetRouteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "serverfarms");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "serverfarms");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'serverfarms'.", id)));
         }
-        String vnetName = Utils.getValueFromIdByName(id, "virtualNetworkConnections");
+        String vnetName = ResourceManagerUtils.getValueFromIdByName(id, "virtualNetworkConnections");
         if (vnetName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'virtualNetworkConnections'.", id)));
         }
-        String routeName = Utils.getValueFromIdByName(id, "routes");
+        String routeName = ResourceManagerUtils.getValueFromIdByName(id, "routes");
         if (routeName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'routes'.", id)));

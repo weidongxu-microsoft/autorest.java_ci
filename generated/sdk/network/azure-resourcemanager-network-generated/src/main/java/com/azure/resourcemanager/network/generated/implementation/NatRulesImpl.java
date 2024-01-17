@@ -59,28 +59,28 @@ public final class NatRulesImpl implements NatRules {
     public PagedIterable<VpnGatewayNatRule> listByVpnGateway(String resourceGroupName, String gatewayName) {
         PagedIterable<VpnGatewayNatRuleInner> inner
             = this.serviceClient().listByVpnGateway(resourceGroupName, gatewayName);
-        return Utils.mapPage(inner, inner1 -> new VpnGatewayNatRuleImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new VpnGatewayNatRuleImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VpnGatewayNatRule> listByVpnGateway(String resourceGroupName, String gatewayName,
         Context context) {
         PagedIterable<VpnGatewayNatRuleInner> inner
             = this.serviceClient().listByVpnGateway(resourceGroupName, gatewayName, context);
-        return Utils.mapPage(inner, inner1 -> new VpnGatewayNatRuleImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new VpnGatewayNatRuleImpl(inner1, this.manager()));
     }
 
     public VpnGatewayNatRule getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String gatewayName = Utils.getValueFromIdByName(id, "vpnGateways");
+        String gatewayName = ResourceManagerUtils.getValueFromIdByName(id, "vpnGateways");
         if (gatewayName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'vpnGateways'.", id)));
         }
-        String natRuleName = Utils.getValueFromIdByName(id, "natRules");
+        String natRuleName = ResourceManagerUtils.getValueFromIdByName(id, "natRules");
         if (natRuleName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'natRules'.", id)));
@@ -89,17 +89,17 @@ public final class NatRulesImpl implements NatRules {
     }
 
     public Response<VpnGatewayNatRule> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String gatewayName = Utils.getValueFromIdByName(id, "vpnGateways");
+        String gatewayName = ResourceManagerUtils.getValueFromIdByName(id, "vpnGateways");
         if (gatewayName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'vpnGateways'.", id)));
         }
-        String natRuleName = Utils.getValueFromIdByName(id, "natRules");
+        String natRuleName = ResourceManagerUtils.getValueFromIdByName(id, "natRules");
         if (natRuleName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'natRules'.", id)));
@@ -108,17 +108,17 @@ public final class NatRulesImpl implements NatRules {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String gatewayName = Utils.getValueFromIdByName(id, "vpnGateways");
+        String gatewayName = ResourceManagerUtils.getValueFromIdByName(id, "vpnGateways");
         if (gatewayName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'vpnGateways'.", id)));
         }
-        String natRuleName = Utils.getValueFromIdByName(id, "natRules");
+        String natRuleName = ResourceManagerUtils.getValueFromIdByName(id, "natRules");
         if (natRuleName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'natRules'.", id)));
@@ -127,17 +127,17 @@ public final class NatRulesImpl implements NatRules {
     }
 
     public void deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String gatewayName = Utils.getValueFromIdByName(id, "vpnGateways");
+        String gatewayName = ResourceManagerUtils.getValueFromIdByName(id, "vpnGateways");
         if (gatewayName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'vpnGateways'.", id)));
         }
-        String natRuleName = Utils.getValueFromIdByName(id, "natRules");
+        String natRuleName = ResourceManagerUtils.getValueFromIdByName(id, "natRules");
         if (natRuleName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'natRules'.", id)));

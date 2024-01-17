@@ -112,9 +112,9 @@ public final class RouteImpl implements Route, Route.Definition, Route.Update {
     RouteImpl(RouteInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.routeTableName = Utils.getValueFromIdByName(innerObject.id(), "routeTables");
-        this.routeName = Utils.getValueFromIdByName(innerObject.id(), "routes");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.routeTableName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "routeTables");
+        this.routeName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "routes");
     }
 
     public Route refresh() {

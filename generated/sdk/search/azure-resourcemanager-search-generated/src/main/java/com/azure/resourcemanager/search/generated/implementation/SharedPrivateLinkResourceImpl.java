@@ -105,9 +105,10 @@ public final class SharedPrivateLinkResourceImpl
         com.azure.resourcemanager.search.generated.SearchManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.searchServiceName = Utils.getValueFromIdByName(innerObject.id(), "searchServices");
-        this.sharedPrivateLinkResourceName = Utils.getValueFromIdByName(innerObject.id(), "sharedPrivateLinkResources");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.searchServiceName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "searchServices");
+        this.sharedPrivateLinkResourceName
+            = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "sharedPrivateLinkResources");
     }
 
     public SharedPrivateLinkResource refresh() {

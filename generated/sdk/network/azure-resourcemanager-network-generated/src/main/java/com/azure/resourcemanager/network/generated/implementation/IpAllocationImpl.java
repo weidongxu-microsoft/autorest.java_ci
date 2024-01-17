@@ -156,8 +156,8 @@ public final class IpAllocationImpl implements IpAllocation, IpAllocation.Defini
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.ipAllocationName = Utils.getValueFromIdByName(innerObject.id(), "IpAllocations");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.ipAllocationName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "IpAllocations");
     }
 
     public IpAllocation refresh() {

@@ -108,9 +108,9 @@ public final class ExpressRouteCircuitAuthorizationImpl implements ExpressRouteC
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.circuitName = Utils.getValueFromIdByName(innerObject.id(), "expressRouteCircuits");
-        this.authorizationName = Utils.getValueFromIdByName(innerObject.id(), "authorizations");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.circuitName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "expressRouteCircuits");
+        this.authorizationName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "authorizations");
     }
 
     public ExpressRouteCircuitAuthorization refresh() {

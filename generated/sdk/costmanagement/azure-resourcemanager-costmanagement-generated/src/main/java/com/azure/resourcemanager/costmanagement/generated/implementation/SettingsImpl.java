@@ -29,12 +29,12 @@ public final class SettingsImpl implements Settings {
 
     public PagedIterable<Setting> list() {
         PagedIterable<SettingInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new SettingImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SettingImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Setting> list(Context context) {
         PagedIterable<SettingInner> inner = this.serviceClient().list(context);
-        return Utils.mapPage(inner, inner1 -> new SettingImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SettingImpl(inner1, this.manager()));
     }
 
     public Response<Setting> getWithResponse(String settingName, Context context) {

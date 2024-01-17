@@ -208,8 +208,8 @@ public final class DomainImpl implements Domain, Domain.Definition, Domain.Updat
     DomainImpl(DomainInner innerObject, com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.domainName = Utils.getValueFromIdByName(innerObject.id(), "domains");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.domainName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "domains");
     }
 
     public Domain refresh() {

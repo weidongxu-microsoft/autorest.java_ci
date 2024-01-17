@@ -28,13 +28,13 @@ public final class UsagesImpl implements Usages {
 
     public PagedIterable<QuotaUsageResult> listBySubscription(String location) {
         PagedIterable<QuotaUsageResultInner> inner = this.serviceClient().listBySubscription(location);
-        return Utils.mapPage(inner, inner1 -> new QuotaUsageResultImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new QuotaUsageResultImpl(inner1, this.manager()));
     }
 
     public PagedIterable<QuotaUsageResult> listBySubscription(String location, UUID clientRequestId, Context context) {
         PagedIterable<QuotaUsageResultInner> inner
             = this.serviceClient().listBySubscription(location, clientRequestId, context);
-        return Utils.mapPage(inner, inner1 -> new QuotaUsageResultImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new QuotaUsageResultImpl(inner1, this.manager()));
     }
 
     private UsagesClient serviceClient() {

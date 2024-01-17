@@ -117,9 +117,9 @@ public final class ScopeConnectionImpl implements ScopeConnection, ScopeConnecti
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.networkManagerName = Utils.getValueFromIdByName(innerObject.id(), "networkManagers");
-        this.scopeConnectionName = Utils.getValueFromIdByName(innerObject.id(), "scopeConnections");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.networkManagerName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "networkManagers");
+        this.scopeConnectionName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "scopeConnections");
     }
 
     public ScopeConnection refresh() {

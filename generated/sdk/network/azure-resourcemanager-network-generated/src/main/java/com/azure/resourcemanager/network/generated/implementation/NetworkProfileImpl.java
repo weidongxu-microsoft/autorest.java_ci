@@ -148,8 +148,8 @@ public final class NetworkProfileImpl implements NetworkProfile, NetworkProfile.
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.networkProfileName = Utils.getValueFromIdByName(innerObject.id(), "networkProfiles");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.networkProfileName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "networkProfiles");
     }
 
     public NetworkProfile refresh() {

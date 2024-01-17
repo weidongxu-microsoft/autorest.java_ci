@@ -131,9 +131,9 @@ public final class BudgetImpl implements Budget, Budget.Definition, Budget.Updat
         com.azure.resourcemanager.consumption.generated.ConsumptionManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.scope = Utils.getValueFromIdByParameterName(innerObject.id(),
+        this.scope = ResourceManagerUtils.getValueFromIdByParameterName(innerObject.id(),
             "/{scope}/providers/Microsoft.Consumption/budgets/{budgetName}", "scope");
-        this.budgetName = Utils.getValueFromIdByParameterName(innerObject.id(),
+        this.budgetName = ResourceManagerUtils.getValueFromIdByParameterName(innerObject.id(),
             "/{scope}/providers/Microsoft.Consumption/budgets/{budgetName}", "budgetName");
     }
 

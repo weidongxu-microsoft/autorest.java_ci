@@ -126,8 +126,8 @@ public final class DdosCustomPolicyImpl
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.ddosCustomPolicyName = Utils.getValueFromIdByName(innerObject.id(), "ddosCustomPolicies");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.ddosCustomPolicyName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "ddosCustomPolicies");
     }
 
     public DdosCustomPolicy refresh() {

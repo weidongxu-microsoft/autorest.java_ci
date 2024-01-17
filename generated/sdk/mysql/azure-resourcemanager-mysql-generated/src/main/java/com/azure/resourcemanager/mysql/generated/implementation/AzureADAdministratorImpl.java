@@ -116,10 +116,10 @@ public final class AzureADAdministratorImpl
         com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.serverName = Utils.getValueFromIdByName(innerObject.id(), "flexibleServers");
-        this.administratorName
-            = AdministratorName.fromString(Utils.getValueFromIdByName(innerObject.id(), "administrators"));
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.serverName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "flexibleServers");
+        this.administratorName = AdministratorName
+            .fromString(ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "administrators"));
     }
 
     public AzureADAdministrator refresh() {

@@ -54,14 +54,16 @@ public final class CommunityGalleryImageVersionsImpl implements CommunityGallery
         String galleryImageName) {
         PagedIterable<CommunityGalleryImageVersionInner> inner
             = this.serviceClient().list(location, publicGalleryName, galleryImageName);
-        return Utils.mapPage(inner, inner1 -> new CommunityGalleryImageVersionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new CommunityGalleryImageVersionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<CommunityGalleryImageVersion> list(String location, String publicGalleryName,
         String galleryImageName, Context context) {
         PagedIterable<CommunityGalleryImageVersionInner> inner
             = this.serviceClient().list(location, publicGalleryName, galleryImageName, context);
-        return Utils.mapPage(inner, inner1 -> new CommunityGalleryImageVersionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new CommunityGalleryImageVersionImpl(inner1, this.manager()));
     }
 
     private CommunityGalleryImageVersionsClient serviceClient() {

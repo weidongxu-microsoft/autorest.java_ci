@@ -27,12 +27,12 @@ public final class MetricDefinitionsImpl implements MetricDefinitions {
 
     public PagedIterable<MetricDefinition> list(String resourceUri) {
         PagedIterable<MetricDefinitionInner> inner = this.serviceClient().list(resourceUri);
-        return Utils.mapPage(inner, inner1 -> new MetricDefinitionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new MetricDefinitionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<MetricDefinition> list(String resourceUri, String metricnamespace, Context context) {
         PagedIterable<MetricDefinitionInner> inner = this.serviceClient().list(resourceUri, metricnamespace, context);
-        return Utils.mapPage(inner, inner1 -> new MetricDefinitionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new MetricDefinitionImpl(inner1, this.manager()));
     }
 
     private MetricDefinitionsClient serviceClient() {

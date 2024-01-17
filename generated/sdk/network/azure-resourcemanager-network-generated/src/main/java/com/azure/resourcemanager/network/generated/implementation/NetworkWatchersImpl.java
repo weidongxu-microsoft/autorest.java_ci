@@ -89,22 +89,22 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
 
     public PagedIterable<NetworkWatcher> listByResourceGroup(String resourceGroupName) {
         PagedIterable<NetworkWatcherInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return Utils.mapPage(inner, inner1 -> new NetworkWatcherImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new NetworkWatcherImpl(inner1, this.manager()));
     }
 
     public PagedIterable<NetworkWatcher> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<NetworkWatcherInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return Utils.mapPage(inner, inner1 -> new NetworkWatcherImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new NetworkWatcherImpl(inner1, this.manager()));
     }
 
     public PagedIterable<NetworkWatcher> list() {
         PagedIterable<NetworkWatcherInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new NetworkWatcherImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new NetworkWatcherImpl(inner1, this.manager()));
     }
 
     public PagedIterable<NetworkWatcher> list(Context context) {
         PagedIterable<NetworkWatcherInner> inner = this.serviceClient().list(context);
-        return Utils.mapPage(inner, inner1 -> new NetworkWatcherImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new NetworkWatcherImpl(inner1, this.manager()));
     }
 
     public Response<Topology> getTopologyWithResponse(String resourceGroupName, String networkWatcherName,
@@ -369,12 +369,12 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
     }
 
     public NetworkWatcher getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String networkWatcherName = Utils.getValueFromIdByName(id, "networkWatchers");
+        String networkWatcherName = ResourceManagerUtils.getValueFromIdByName(id, "networkWatchers");
         if (networkWatcherName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'networkWatchers'.", id)));
@@ -383,12 +383,12 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
     }
 
     public Response<NetworkWatcher> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String networkWatcherName = Utils.getValueFromIdByName(id, "networkWatchers");
+        String networkWatcherName = ResourceManagerUtils.getValueFromIdByName(id, "networkWatchers");
         if (networkWatcherName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'networkWatchers'.", id)));
@@ -397,12 +397,12 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String networkWatcherName = Utils.getValueFromIdByName(id, "networkWatchers");
+        String networkWatcherName = ResourceManagerUtils.getValueFromIdByName(id, "networkWatchers");
         if (networkWatcherName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'networkWatchers'.", id)));
@@ -411,12 +411,12 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
     }
 
     public void deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String networkWatcherName = Utils.getValueFromIdByName(id, "networkWatchers");
+        String networkWatcherName = ResourceManagerUtils.getValueFromIdByName(id, "networkWatchers");
         if (networkWatcherName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'networkWatchers'.", id)));

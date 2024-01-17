@@ -84,22 +84,22 @@ public final class VirtualMachineScaleSetVMExtensionsImpl implements VirtualMach
     }
 
     public VirtualMachineScaleSetVMExtension getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String vmScaleSetName = Utils.getValueFromIdByName(id, "virtualMachineScaleSets");
+        String vmScaleSetName = ResourceManagerUtils.getValueFromIdByName(id, "virtualMachineScaleSets");
         if (vmScaleSetName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'virtualMachineScaleSets'.", id)));
         }
-        String instanceId = Utils.getValueFromIdByName(id, "virtualMachines");
+        String instanceId = ResourceManagerUtils.getValueFromIdByName(id, "virtualMachines");
         if (instanceId == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'virtualMachines'.", id)));
         }
-        String vmExtensionName = Utils.getValueFromIdByName(id, "extensions");
+        String vmExtensionName = ResourceManagerUtils.getValueFromIdByName(id, "extensions");
         if (vmExtensionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'extensions'.", id)));
@@ -111,22 +111,22 @@ public final class VirtualMachineScaleSetVMExtensionsImpl implements VirtualMach
     }
 
     public Response<VirtualMachineScaleSetVMExtension> getByIdWithResponse(String id, String expand, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String vmScaleSetName = Utils.getValueFromIdByName(id, "virtualMachineScaleSets");
+        String vmScaleSetName = ResourceManagerUtils.getValueFromIdByName(id, "virtualMachineScaleSets");
         if (vmScaleSetName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'virtualMachineScaleSets'.", id)));
         }
-        String instanceId = Utils.getValueFromIdByName(id, "virtualMachines");
+        String instanceId = ResourceManagerUtils.getValueFromIdByName(id, "virtualMachines");
         if (instanceId == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'virtualMachines'.", id)));
         }
-        String vmExtensionName = Utils.getValueFromIdByName(id, "extensions");
+        String vmExtensionName = ResourceManagerUtils.getValueFromIdByName(id, "extensions");
         if (vmExtensionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'extensions'.", id)));
@@ -135,22 +135,22 @@ public final class VirtualMachineScaleSetVMExtensionsImpl implements VirtualMach
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String vmScaleSetName = Utils.getValueFromIdByName(id, "virtualMachineScaleSets");
+        String vmScaleSetName = ResourceManagerUtils.getValueFromIdByName(id, "virtualMachineScaleSets");
         if (vmScaleSetName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'virtualMachineScaleSets'.", id)));
         }
-        String instanceId = Utils.getValueFromIdByName(id, "virtualMachines");
+        String instanceId = ResourceManagerUtils.getValueFromIdByName(id, "virtualMachines");
         if (instanceId == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'virtualMachines'.", id)));
         }
-        String vmExtensionName = Utils.getValueFromIdByName(id, "extensions");
+        String vmExtensionName = ResourceManagerUtils.getValueFromIdByName(id, "extensions");
         if (vmExtensionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'extensions'.", id)));
@@ -159,22 +159,22 @@ public final class VirtualMachineScaleSetVMExtensionsImpl implements VirtualMach
     }
 
     public void deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String vmScaleSetName = Utils.getValueFromIdByName(id, "virtualMachineScaleSets");
+        String vmScaleSetName = ResourceManagerUtils.getValueFromIdByName(id, "virtualMachineScaleSets");
         if (vmScaleSetName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'virtualMachineScaleSets'.", id)));
         }
-        String instanceId = Utils.getValueFromIdByName(id, "virtualMachines");
+        String instanceId = ResourceManagerUtils.getValueFromIdByName(id, "virtualMachines");
         if (instanceId == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'virtualMachines'.", id)));
         }
-        String vmExtensionName = Utils.getValueFromIdByName(id, "extensions");
+        String vmExtensionName = ResourceManagerUtils.getValueFromIdByName(id, "extensions");
         if (vmExtensionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'extensions'.", id)));

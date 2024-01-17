@@ -29,13 +29,13 @@ public final class BlobServicesImpl implements BlobServices {
 
     public PagedIterable<BlobServiceProperties> list(String resourceGroupName, String accountName) {
         PagedIterable<BlobServicePropertiesInner> inner = this.serviceClient().list(resourceGroupName, accountName);
-        return Utils.mapPage(inner, inner1 -> new BlobServicePropertiesImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new BlobServicePropertiesImpl(inner1, this.manager()));
     }
 
     public PagedIterable<BlobServiceProperties> list(String resourceGroupName, String accountName, Context context) {
         PagedIterable<BlobServicePropertiesInner> inner
             = this.serviceClient().list(resourceGroupName, accountName, context);
-        return Utils.mapPage(inner, inner1 -> new BlobServicePropertiesImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new BlobServicePropertiesImpl(inner1, this.manager()));
     }
 
     public Response<BlobServiceProperties> getServicePropertiesWithResponse(String resourceGroupName,
@@ -60,12 +60,12 @@ public final class BlobServicesImpl implements BlobServices {
     }
 
     public BlobServiceProperties getServicePropertiesById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        String accountName = ResourceManagerUtils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
@@ -74,12 +74,12 @@ public final class BlobServicesImpl implements BlobServices {
     }
 
     public Response<BlobServiceProperties> getServicePropertiesByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        String accountName = ResourceManagerUtils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));

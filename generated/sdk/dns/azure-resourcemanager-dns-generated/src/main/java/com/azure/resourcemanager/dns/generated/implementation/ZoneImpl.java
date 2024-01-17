@@ -185,8 +185,8 @@ public final class ZoneImpl implements Zone, Zone.Definition, Zone.Update {
     ZoneImpl(ZoneInner innerObject, com.azure.resourcemanager.dns.generated.DnsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.zoneName = Utils.getValueFromIdByName(innerObject.id(), "dnsZones");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.zoneName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "dnsZones");
     }
 
     public Zone refresh() {

@@ -29,12 +29,12 @@ public final class LocationBasedCapabilitySetsImpl implements LocationBasedCapab
 
     public PagedIterable<Capability> list(String locationName) {
         PagedIterable<CapabilityInner> inner = this.serviceClient().list(locationName);
-        return Utils.mapPage(inner, inner1 -> new CapabilityImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new CapabilityImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Capability> list(String locationName, Context context) {
         PagedIterable<CapabilityInner> inner = this.serviceClient().list(locationName, context);
-        return Utils.mapPage(inner, inner1 -> new CapabilityImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new CapabilityImpl(inner1, this.manager()));
     }
 
     public Response<Capability> getWithResponse(String locationName, String capabilitySetName, Context context) {

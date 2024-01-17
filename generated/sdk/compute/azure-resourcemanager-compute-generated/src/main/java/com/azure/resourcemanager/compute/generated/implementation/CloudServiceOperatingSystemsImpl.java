@@ -51,12 +51,12 @@ public final class CloudServiceOperatingSystemsImpl implements CloudServiceOpera
 
     public PagedIterable<OSVersion> listOSVersions(String location) {
         PagedIterable<OSVersionInner> inner = this.serviceClient().listOSVersions(location);
-        return Utils.mapPage(inner, inner1 -> new OSVersionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new OSVersionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<OSVersion> listOSVersions(String location, Context context) {
         PagedIterable<OSVersionInner> inner = this.serviceClient().listOSVersions(location, context);
-        return Utils.mapPage(inner, inner1 -> new OSVersionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new OSVersionImpl(inner1, this.manager()));
     }
 
     public Response<OSFamily> getOSFamilyWithResponse(String location, String osFamilyName, Context context) {
@@ -80,12 +80,12 @@ public final class CloudServiceOperatingSystemsImpl implements CloudServiceOpera
 
     public PagedIterable<OSFamily> listOSFamilies(String location) {
         PagedIterable<OSFamilyInner> inner = this.serviceClient().listOSFamilies(location);
-        return Utils.mapPage(inner, inner1 -> new OSFamilyImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new OSFamilyImpl(inner1, this.manager()));
     }
 
     public PagedIterable<OSFamily> listOSFamilies(String location, Context context) {
         PagedIterable<OSFamilyInner> inner = this.serviceClient().listOSFamilies(location, context);
-        return Utils.mapPage(inner, inner1 -> new OSFamilyImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new OSFamilyImpl(inner1, this.manager()));
     }
 
     private CloudServiceOperatingSystemsClient serviceClient() {

@@ -119,9 +119,10 @@ public final class FirewallPolicyRuleCollectionGroupImpl implements FirewallPoli
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.firewallPolicyName = Utils.getValueFromIdByName(innerObject.id(), "firewallPolicies");
-        this.ruleCollectionGroupName = Utils.getValueFromIdByName(innerObject.id(), "ruleCollectionGroups");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.firewallPolicyName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "firewallPolicies");
+        this.ruleCollectionGroupName
+            = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "ruleCollectionGroups");
     }
 
     public FirewallPolicyRuleCollectionGroup refresh() {

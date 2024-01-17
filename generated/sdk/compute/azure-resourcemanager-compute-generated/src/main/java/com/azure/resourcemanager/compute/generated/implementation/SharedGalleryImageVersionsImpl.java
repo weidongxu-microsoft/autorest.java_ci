@@ -32,14 +32,14 @@ public final class SharedGalleryImageVersionsImpl implements SharedGalleryImageV
         String galleryImageName) {
         PagedIterable<SharedGalleryImageVersionInner> inner
             = this.serviceClient().list(location, galleryUniqueName, galleryImageName);
-        return Utils.mapPage(inner, inner1 -> new SharedGalleryImageVersionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SharedGalleryImageVersionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<SharedGalleryImageVersion> list(String location, String galleryUniqueName,
         String galleryImageName, SharedToValues sharedTo, Context context) {
         PagedIterable<SharedGalleryImageVersionInner> inner
             = this.serviceClient().list(location, galleryUniqueName, galleryImageName, sharedTo, context);
-        return Utils.mapPage(inner, inner1 -> new SharedGalleryImageVersionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SharedGalleryImageVersionImpl(inner1, this.manager()));
     }
 
     public Response<SharedGalleryImageVersion> getWithResponse(String location, String galleryUniqueName,

@@ -36,14 +36,14 @@ public final class EventHubsImpl implements EventHubs {
         String eventHubName) {
         PagedIterable<AuthorizationRuleInner> inner
             = this.serviceClient().listAuthorizationRules(resourceGroupName, namespaceName, eventHubName);
-        return Utils.mapPage(inner, inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AuthorizationRule> listAuthorizationRules(String resourceGroupName, String namespaceName,
         String eventHubName, Context context) {
         PagedIterable<AuthorizationRuleInner> inner
             = this.serviceClient().listAuthorizationRules(resourceGroupName, namespaceName, eventHubName, context);
-        return Utils.mapPage(inner, inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
     }
 
     public Response<AuthorizationRule> createOrUpdateAuthorizationRuleWithResponse(String resourceGroupName,
@@ -153,14 +153,14 @@ public final class EventHubsImpl implements EventHubs {
 
     public PagedIterable<Eventhub> listByNamespace(String resourceGroupName, String namespaceName) {
         PagedIterable<EventhubInner> inner = this.serviceClient().listByNamespace(resourceGroupName, namespaceName);
-        return Utils.mapPage(inner, inner1 -> new EventhubImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new EventhubImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Eventhub> listByNamespace(String resourceGroupName, String namespaceName, Integer skip,
         Integer top, Context context) {
         PagedIterable<EventhubInner> inner
             = this.serviceClient().listByNamespace(resourceGroupName, namespaceName, skip, top, context);
-        return Utils.mapPage(inner, inner1 -> new EventhubImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new EventhubImpl(inner1, this.manager()));
     }
 
     public Response<Void> deleteWithResponse(String resourceGroupName, String namespaceName, String eventHubName,
@@ -194,17 +194,17 @@ public final class EventHubsImpl implements EventHubs {
     }
 
     public Eventhub getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        String namespaceName = ResourceManagerUtils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
-        String eventHubName = Utils.getValueFromIdByName(id, "eventhubs");
+        String eventHubName = ResourceManagerUtils.getValueFromIdByName(id, "eventhubs");
         if (eventHubName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'eventhubs'.", id)));
@@ -213,17 +213,17 @@ public final class EventHubsImpl implements EventHubs {
     }
 
     public Response<Eventhub> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        String namespaceName = ResourceManagerUtils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
-        String eventHubName = Utils.getValueFromIdByName(id, "eventhubs");
+        String eventHubName = ResourceManagerUtils.getValueFromIdByName(id, "eventhubs");
         if (eventHubName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'eventhubs'.", id)));
@@ -232,17 +232,17 @@ public final class EventHubsImpl implements EventHubs {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        String namespaceName = ResourceManagerUtils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
-        String eventHubName = Utils.getValueFromIdByName(id, "eventhubs");
+        String eventHubName = ResourceManagerUtils.getValueFromIdByName(id, "eventhubs");
         if (eventHubName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'eventhubs'.", id)));
@@ -251,17 +251,17 @@ public final class EventHubsImpl implements EventHubs {
     }
 
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        String namespaceName = ResourceManagerUtils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
-        String eventHubName = Utils.getValueFromIdByName(id, "eventhubs");
+        String eventHubName = ResourceManagerUtils.getValueFromIdByName(id, "eventhubs");
         if (eventHubName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'eventhubs'.", id)));

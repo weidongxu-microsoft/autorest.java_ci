@@ -65,22 +65,22 @@ public final class P2SVpnGatewaysImpl implements P2SVpnGateways {
 
     public PagedIterable<P2SVpnGateway> listByResourceGroup(String resourceGroupName) {
         PagedIterable<P2SVpnGatewayInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return Utils.mapPage(inner, inner1 -> new P2SVpnGatewayImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new P2SVpnGatewayImpl(inner1, this.manager()));
     }
 
     public PagedIterable<P2SVpnGateway> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<P2SVpnGatewayInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return Utils.mapPage(inner, inner1 -> new P2SVpnGatewayImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new P2SVpnGatewayImpl(inner1, this.manager()));
     }
 
     public PagedIterable<P2SVpnGateway> list() {
         PagedIterable<P2SVpnGatewayInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new P2SVpnGatewayImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new P2SVpnGatewayImpl(inner1, this.manager()));
     }
 
     public PagedIterable<P2SVpnGateway> list(Context context) {
         PagedIterable<P2SVpnGatewayInner> inner = this.serviceClient().list(context);
-        return Utils.mapPage(inner, inner1 -> new P2SVpnGatewayImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new P2SVpnGatewayImpl(inner1, this.manager()));
     }
 
     public P2SVpnGateway reset(String resourceGroupName, String gatewayName) {
@@ -175,12 +175,12 @@ public final class P2SVpnGatewaysImpl implements P2SVpnGateways {
     }
 
     public P2SVpnGateway getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String gatewayName = Utils.getValueFromIdByName(id, "p2svpnGateways");
+        String gatewayName = ResourceManagerUtils.getValueFromIdByName(id, "p2svpnGateways");
         if (gatewayName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'p2svpnGateways'.", id)));
@@ -189,12 +189,12 @@ public final class P2SVpnGatewaysImpl implements P2SVpnGateways {
     }
 
     public Response<P2SVpnGateway> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String gatewayName = Utils.getValueFromIdByName(id, "p2svpnGateways");
+        String gatewayName = ResourceManagerUtils.getValueFromIdByName(id, "p2svpnGateways");
         if (gatewayName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'p2svpnGateways'.", id)));
@@ -203,12 +203,12 @@ public final class P2SVpnGatewaysImpl implements P2SVpnGateways {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String gatewayName = Utils.getValueFromIdByName(id, "p2svpnGateways");
+        String gatewayName = ResourceManagerUtils.getValueFromIdByName(id, "p2svpnGateways");
         if (gatewayName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'p2svpnGateways'.", id)));
@@ -217,12 +217,12 @@ public final class P2SVpnGatewaysImpl implements P2SVpnGateways {
     }
 
     public void deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String gatewayName = Utils.getValueFromIdByName(id, "p2svpnGateways");
+        String gatewayName = ResourceManagerUtils.getValueFromIdByName(id, "p2svpnGateways");
         if (gatewayName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'p2svpnGateways'.", id)));

@@ -97,7 +97,8 @@ public final class NetworkManagerConnectionImpl
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.networkManagerConnectionName = Utils.getValueFromIdByName(innerObject.id(), "networkManagerConnections");
+        this.networkManagerConnectionName
+            = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "networkManagerConnections");
     }
 
     public NetworkManagerConnection refresh() {

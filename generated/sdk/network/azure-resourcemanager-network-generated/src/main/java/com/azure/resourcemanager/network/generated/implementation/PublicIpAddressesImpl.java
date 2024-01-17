@@ -33,21 +33,21 @@ public final class PublicIpAddressesImpl implements PublicIpAddresses {
         String cloudServiceName) {
         PagedIterable<PublicIpAddressInner> inner
             = this.serviceClient().listCloudServicePublicIpAddresses(resourceGroupName, cloudServiceName);
-        return Utils.mapPage(inner, inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PublicIpAddress> listCloudServicePublicIpAddresses(String resourceGroupName,
         String cloudServiceName, Context context) {
         PagedIterable<PublicIpAddressInner> inner
             = this.serviceClient().listCloudServicePublicIpAddresses(resourceGroupName, cloudServiceName, context);
-        return Utils.mapPage(inner, inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PublicIpAddress> listCloudServiceRoleInstancePublicIpAddresses(String resourceGroupName,
         String cloudServiceName, String roleInstanceName, String networkInterfaceName, String ipConfigurationName) {
         PagedIterable<PublicIpAddressInner> inner = this.serviceClient().listCloudServiceRoleInstancePublicIpAddresses(
             resourceGroupName, cloudServiceName, roleInstanceName, networkInterfaceName, ipConfigurationName);
-        return Utils.mapPage(inner, inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PublicIpAddress> listCloudServiceRoleInstancePublicIpAddresses(String resourceGroupName,
@@ -55,7 +55,7 @@ public final class PublicIpAddressesImpl implements PublicIpAddresses {
         Context context) {
         PagedIterable<PublicIpAddressInner> inner = this.serviceClient().listCloudServiceRoleInstancePublicIpAddresses(
             resourceGroupName, cloudServiceName, roleInstanceName, networkInterfaceName, ipConfigurationName, context);
-        return Utils.mapPage(inner, inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
     }
 
     public Response<PublicIpAddress> getCloudServicePublicIpAddressWithResponse(String resourceGroupName,
@@ -114,23 +114,23 @@ public final class PublicIpAddressesImpl implements PublicIpAddresses {
 
     public PagedIterable<PublicIpAddress> list() {
         PagedIterable<PublicIpAddressInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PublicIpAddress> list(Context context) {
         PagedIterable<PublicIpAddressInner> inner = this.serviceClient().list(context);
-        return Utils.mapPage(inner, inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PublicIpAddress> listByResourceGroup(String resourceGroupName) {
         PagedIterable<PublicIpAddressInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return Utils.mapPage(inner, inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PublicIpAddress> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<PublicIpAddressInner> inner
             = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return Utils.mapPage(inner, inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
     }
 
     public PublicIpDdosProtectionStatusResult ddosProtectionStatus(String resourceGroupName,
@@ -159,14 +159,14 @@ public final class PublicIpAddressesImpl implements PublicIpAddresses {
         String virtualMachineScaleSetName) {
         PagedIterable<PublicIpAddressInner> inner = this.serviceClient()
             .listVirtualMachineScaleSetPublicIpAddresses(resourceGroupName, virtualMachineScaleSetName);
-        return Utils.mapPage(inner, inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PublicIpAddress> listVirtualMachineScaleSetPublicIpAddresses(String resourceGroupName,
         String virtualMachineScaleSetName, Context context) {
         PagedIterable<PublicIpAddressInner> inner = this.serviceClient()
             .listVirtualMachineScaleSetPublicIpAddresses(resourceGroupName, virtualMachineScaleSetName, context);
-        return Utils.mapPage(inner, inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PublicIpAddress> listVirtualMachineScaleSetVMPublicIpAddresses(String resourceGroupName,
@@ -175,7 +175,7 @@ public final class PublicIpAddressesImpl implements PublicIpAddresses {
         PagedIterable<PublicIpAddressInner> inner
             = this.serviceClient().listVirtualMachineScaleSetVMPublicIpAddresses(resourceGroupName,
                 virtualMachineScaleSetName, virtualmachineIndex, networkInterfaceName, ipConfigurationName);
-        return Utils.mapPage(inner, inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PublicIpAddress> listVirtualMachineScaleSetVMPublicIpAddresses(String resourceGroupName,
@@ -184,7 +184,7 @@ public final class PublicIpAddressesImpl implements PublicIpAddresses {
         PagedIterable<PublicIpAddressInner> inner
             = this.serviceClient().listVirtualMachineScaleSetVMPublicIpAddresses(resourceGroupName,
                 virtualMachineScaleSetName, virtualmachineIndex, networkInterfaceName, ipConfigurationName, context);
-        return Utils.mapPage(inner, inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
     }
 
     public Response<PublicIpAddress> getVirtualMachineScaleSetPublicIpAddressWithResponse(String resourceGroupName,
@@ -215,12 +215,12 @@ public final class PublicIpAddressesImpl implements PublicIpAddresses {
     }
 
     public PublicIpAddress getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String publicIpAddressName = Utils.getValueFromIdByName(id, "publicIPAddresses");
+        String publicIpAddressName = ResourceManagerUtils.getValueFromIdByName(id, "publicIPAddresses");
         if (publicIpAddressName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'publicIPAddresses'.", id)));
@@ -231,12 +231,12 @@ public final class PublicIpAddressesImpl implements PublicIpAddresses {
     }
 
     public Response<PublicIpAddress> getByIdWithResponse(String id, String expand, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String publicIpAddressName = Utils.getValueFromIdByName(id, "publicIPAddresses");
+        String publicIpAddressName = ResourceManagerUtils.getValueFromIdByName(id, "publicIPAddresses");
         if (publicIpAddressName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'publicIPAddresses'.", id)));
@@ -245,12 +245,12 @@ public final class PublicIpAddressesImpl implements PublicIpAddresses {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String publicIpAddressName = Utils.getValueFromIdByName(id, "publicIPAddresses");
+        String publicIpAddressName = ResourceManagerUtils.getValueFromIdByName(id, "publicIPAddresses");
         if (publicIpAddressName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'publicIPAddresses'.", id)));
@@ -259,12 +259,12 @@ public final class PublicIpAddressesImpl implements PublicIpAddresses {
     }
 
     public void deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String publicIpAddressName = Utils.getValueFromIdByName(id, "publicIPAddresses");
+        String publicIpAddressName = ResourceManagerUtils.getValueFromIdByName(id, "publicIPAddresses");
         if (publicIpAddressName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'publicIPAddresses'.", id)));

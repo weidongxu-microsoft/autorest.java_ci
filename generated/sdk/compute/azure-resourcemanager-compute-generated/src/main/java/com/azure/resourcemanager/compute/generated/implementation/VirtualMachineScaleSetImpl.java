@@ -258,8 +258,8 @@ public final class VirtualMachineScaleSetImpl
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.vmScaleSetName = Utils.getValueFromIdByName(innerObject.id(), "virtualMachineScaleSets");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.vmScaleSetName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "virtualMachineScaleSets");
     }
 
     public VirtualMachineScaleSet refresh() {

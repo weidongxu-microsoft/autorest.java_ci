@@ -132,9 +132,9 @@ public final class ArmDisasterRecoveryImpl
         com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.namespaceName = Utils.getValueFromIdByName(innerObject.id(), "namespaces");
-        this.alias = Utils.getValueFromIdByName(innerObject.id(), "disasterRecoveryConfigs");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.namespaceName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "namespaces");
+        this.alias = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "disasterRecoveryConfigs");
     }
 
     public ArmDisasterRecovery refresh() {

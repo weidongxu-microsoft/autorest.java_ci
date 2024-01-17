@@ -82,14 +82,14 @@ public final class ManagementGroupNetworkManagerConnectionsImpl implements Manag
 
     public PagedIterable<NetworkManagerConnection> list(String managementGroupId) {
         PagedIterable<NetworkManagerConnectionInner> inner = this.serviceClient().list(managementGroupId);
-        return Utils.mapPage(inner, inner1 -> new NetworkManagerConnectionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new NetworkManagerConnectionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<NetworkManagerConnection> list(String managementGroupId, Integer top, String skipToken,
         Context context) {
         PagedIterable<NetworkManagerConnectionInner> inner
             = this.serviceClient().list(managementGroupId, top, skipToken, context);
-        return Utils.mapPage(inner, inner1 -> new NetworkManagerConnectionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new NetworkManagerConnectionImpl(inner1, this.manager()));
     }
 
     private ManagementGroupNetworkManagerConnectionsClient serviceClient() {

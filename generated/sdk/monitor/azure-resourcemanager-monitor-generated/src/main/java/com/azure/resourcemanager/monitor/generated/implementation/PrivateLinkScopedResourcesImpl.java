@@ -59,28 +59,28 @@ public final class PrivateLinkScopedResourcesImpl implements PrivateLinkScopedRe
     public PagedIterable<ScopedResource> listByPrivateLinkScope(String resourceGroupName, String scopeName) {
         PagedIterable<ScopedResourceInner> inner
             = this.serviceClient().listByPrivateLinkScope(resourceGroupName, scopeName);
-        return Utils.mapPage(inner, inner1 -> new ScopedResourceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ScopedResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ScopedResource> listByPrivateLinkScope(String resourceGroupName, String scopeName,
         Context context) {
         PagedIterable<ScopedResourceInner> inner
             = this.serviceClient().listByPrivateLinkScope(resourceGroupName, scopeName, context);
-        return Utils.mapPage(inner, inner1 -> new ScopedResourceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ScopedResourceImpl(inner1, this.manager()));
     }
 
     public ScopedResource getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String scopeName = Utils.getValueFromIdByName(id, "privateLinkScopes");
+        String scopeName = ResourceManagerUtils.getValueFromIdByName(id, "privateLinkScopes");
         if (scopeName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'privateLinkScopes'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "scopedResources");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "scopedResources");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'scopedResources'.", id)));
@@ -89,17 +89,17 @@ public final class PrivateLinkScopedResourcesImpl implements PrivateLinkScopedRe
     }
 
     public Response<ScopedResource> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String scopeName = Utils.getValueFromIdByName(id, "privateLinkScopes");
+        String scopeName = ResourceManagerUtils.getValueFromIdByName(id, "privateLinkScopes");
         if (scopeName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'privateLinkScopes'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "scopedResources");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "scopedResources");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'scopedResources'.", id)));
@@ -108,17 +108,17 @@ public final class PrivateLinkScopedResourcesImpl implements PrivateLinkScopedRe
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String scopeName = Utils.getValueFromIdByName(id, "privateLinkScopes");
+        String scopeName = ResourceManagerUtils.getValueFromIdByName(id, "privateLinkScopes");
         if (scopeName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'privateLinkScopes'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "scopedResources");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "scopedResources");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'scopedResources'.", id)));
@@ -127,17 +127,17 @@ public final class PrivateLinkScopedResourcesImpl implements PrivateLinkScopedRe
     }
 
     public void deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String scopeName = Utils.getValueFromIdByName(id, "privateLinkScopes");
+        String scopeName = ResourceManagerUtils.getValueFromIdByName(id, "privateLinkScopes");
         if (scopeName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'privateLinkScopes'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "scopedResources");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "scopedResources");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'scopedResources'.", id)));

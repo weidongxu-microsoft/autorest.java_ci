@@ -131,10 +131,10 @@ public final class ServerSecurityAlertPolicyImpl
         com.azure.resourcemanager.postgresql.generated.PostgreSqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.serverName = Utils.getValueFromIdByName(innerObject.id(), "servers");
-        this.securityAlertPolicyName
-            = SecurityAlertPolicyName.fromString(Utils.getValueFromIdByName(innerObject.id(), "securityAlertPolicies"));
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.serverName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "servers");
+        this.securityAlertPolicyName = SecurityAlertPolicyName
+            .fromString(ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "securityAlertPolicies"));
     }
 
     public ServerSecurityAlertPolicy refresh() {

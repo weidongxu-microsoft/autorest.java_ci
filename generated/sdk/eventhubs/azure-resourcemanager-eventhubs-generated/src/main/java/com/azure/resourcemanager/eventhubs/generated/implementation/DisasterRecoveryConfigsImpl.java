@@ -38,14 +38,14 @@ public final class DisasterRecoveryConfigsImpl implements DisasterRecoveryConfig
         String alias) {
         PagedIterable<AuthorizationRuleInner> inner
             = this.serviceClient().listAuthorizationRules(resourceGroupName, namespaceName, alias);
-        return Utils.mapPage(inner, inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AuthorizationRule> listAuthorizationRules(String resourceGroupName, String namespaceName,
         String alias, Context context) {
         PagedIterable<AuthorizationRuleInner> inner
             = this.serviceClient().listAuthorizationRules(resourceGroupName, namespaceName, alias, context);
-        return Utils.mapPage(inner, inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
     }
 
     public Response<AuthorizationRule> getAuthorizationRuleWithResponse(String resourceGroupName, String namespaceName,
@@ -119,13 +119,13 @@ public final class DisasterRecoveryConfigsImpl implements DisasterRecoveryConfig
 
     public PagedIterable<ArmDisasterRecovery> list(String resourceGroupName, String namespaceName) {
         PagedIterable<ArmDisasterRecoveryInner> inner = this.serviceClient().list(resourceGroupName, namespaceName);
-        return Utils.mapPage(inner, inner1 -> new ArmDisasterRecoveryImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ArmDisasterRecoveryImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ArmDisasterRecovery> list(String resourceGroupName, String namespaceName, Context context) {
         PagedIterable<ArmDisasterRecoveryInner> inner
             = this.serviceClient().list(resourceGroupName, namespaceName, context);
-        return Utils.mapPage(inner, inner1 -> new ArmDisasterRecoveryImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ArmDisasterRecoveryImpl(inner1, this.manager()));
     }
 
     public Response<Void> deleteWithResponse(String resourceGroupName, String namespaceName, String alias,
@@ -177,17 +177,17 @@ public final class DisasterRecoveryConfigsImpl implements DisasterRecoveryConfig
     }
 
     public ArmDisasterRecovery getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        String namespaceName = ResourceManagerUtils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
-        String alias = Utils.getValueFromIdByName(id, "disasterRecoveryConfigs");
+        String alias = ResourceManagerUtils.getValueFromIdByName(id, "disasterRecoveryConfigs");
         if (alias == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'disasterRecoveryConfigs'.", id)));
@@ -196,17 +196,17 @@ public final class DisasterRecoveryConfigsImpl implements DisasterRecoveryConfig
     }
 
     public Response<ArmDisasterRecovery> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        String namespaceName = ResourceManagerUtils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
-        String alias = Utils.getValueFromIdByName(id, "disasterRecoveryConfigs");
+        String alias = ResourceManagerUtils.getValueFromIdByName(id, "disasterRecoveryConfigs");
         if (alias == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'disasterRecoveryConfigs'.", id)));
@@ -215,17 +215,17 @@ public final class DisasterRecoveryConfigsImpl implements DisasterRecoveryConfig
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        String namespaceName = ResourceManagerUtils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
-        String alias = Utils.getValueFromIdByName(id, "disasterRecoveryConfigs");
+        String alias = ResourceManagerUtils.getValueFromIdByName(id, "disasterRecoveryConfigs");
         if (alias == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'disasterRecoveryConfigs'.", id)));
@@ -234,17 +234,17 @@ public final class DisasterRecoveryConfigsImpl implements DisasterRecoveryConfig
     }
 
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        String namespaceName = ResourceManagerUtils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
-        String alias = Utils.getValueFromIdByName(id, "disasterRecoveryConfigs");
+        String alias = ResourceManagerUtils.getValueFromIdByName(id, "disasterRecoveryConfigs");
         if (alias == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'disasterRecoveryConfigs'.", id)));

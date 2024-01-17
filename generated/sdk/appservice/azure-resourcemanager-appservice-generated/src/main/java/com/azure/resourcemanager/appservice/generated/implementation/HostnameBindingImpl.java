@@ -135,9 +135,9 @@ public final class HostnameBindingImpl implements HostnameBinding, HostnameBindi
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.name = Utils.getValueFromIdByName(innerObject.id(), "sites");
-        this.hostname = Utils.getValueFromIdByName(innerObject.id(), "hostNameBindings");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.name = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "sites");
+        this.hostname = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "hostNameBindings");
     }
 
     public HostnameBinding refresh() {

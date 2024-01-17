@@ -58,32 +58,32 @@ public final class PrivateEndpointsImpl implements PrivateEndpoints {
 
     public PagedIterable<PrivateEndpoint> listByResourceGroup(String resourceGroupName) {
         PagedIterable<PrivateEndpointInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return Utils.mapPage(inner, inner1 -> new PrivateEndpointImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PrivateEndpointImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PrivateEndpoint> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<PrivateEndpointInner> inner
             = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return Utils.mapPage(inner, inner1 -> new PrivateEndpointImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PrivateEndpointImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PrivateEndpoint> list() {
         PagedIterable<PrivateEndpointInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new PrivateEndpointImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PrivateEndpointImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PrivateEndpoint> list(Context context) {
         PagedIterable<PrivateEndpointInner> inner = this.serviceClient().list(context);
-        return Utils.mapPage(inner, inner1 -> new PrivateEndpointImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PrivateEndpointImpl(inner1, this.manager()));
     }
 
     public PrivateEndpoint getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String privateEndpointName = Utils.getValueFromIdByName(id, "privateEndpoints");
+        String privateEndpointName = ResourceManagerUtils.getValueFromIdByName(id, "privateEndpoints");
         if (privateEndpointName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'privateEndpoints'.", id)));
@@ -94,12 +94,12 @@ public final class PrivateEndpointsImpl implements PrivateEndpoints {
     }
 
     public Response<PrivateEndpoint> getByIdWithResponse(String id, String expand, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String privateEndpointName = Utils.getValueFromIdByName(id, "privateEndpoints");
+        String privateEndpointName = ResourceManagerUtils.getValueFromIdByName(id, "privateEndpoints");
         if (privateEndpointName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'privateEndpoints'.", id)));
@@ -108,12 +108,12 @@ public final class PrivateEndpointsImpl implements PrivateEndpoints {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String privateEndpointName = Utils.getValueFromIdByName(id, "privateEndpoints");
+        String privateEndpointName = ResourceManagerUtils.getValueFromIdByName(id, "privateEndpoints");
         if (privateEndpointName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'privateEndpoints'.", id)));
@@ -122,12 +122,12 @@ public final class PrivateEndpointsImpl implements PrivateEndpoints {
     }
 
     public void deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String privateEndpointName = Utils.getValueFromIdByName(id, "privateEndpoints");
+        String privateEndpointName = ResourceManagerUtils.getValueFromIdByName(id, "privateEndpoints");
         if (privateEndpointName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'privateEndpoints'.", id)));

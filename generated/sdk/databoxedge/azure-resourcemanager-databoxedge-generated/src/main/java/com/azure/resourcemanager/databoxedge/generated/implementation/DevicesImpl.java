@@ -42,24 +42,24 @@ public final class DevicesImpl implements Devices {
 
     public PagedIterable<DataBoxEdgeDevice> list() {
         PagedIterable<DataBoxEdgeDeviceInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new DataBoxEdgeDeviceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DataBoxEdgeDeviceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DataBoxEdgeDevice> list(String expand, Context context) {
         PagedIterable<DataBoxEdgeDeviceInner> inner = this.serviceClient().list(expand, context);
-        return Utils.mapPage(inner, inner1 -> new DataBoxEdgeDeviceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DataBoxEdgeDeviceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DataBoxEdgeDevice> listByResourceGroup(String resourceGroupName) {
         PagedIterable<DataBoxEdgeDeviceInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return Utils.mapPage(inner, inner1 -> new DataBoxEdgeDeviceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DataBoxEdgeDeviceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DataBoxEdgeDevice> listByResourceGroup(String resourceGroupName, String expand,
         Context context) {
         PagedIterable<DataBoxEdgeDeviceInner> inner
             = this.serviceClient().listByResourceGroup(resourceGroupName, expand, context);
-        return Utils.mapPage(inner, inner1 -> new DataBoxEdgeDeviceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DataBoxEdgeDeviceImpl(inner1, this.manager()));
     }
 
     public Response<DataBoxEdgeDevice> getByResourceGroupWithResponse(String resourceGroupName, String deviceName,
@@ -257,12 +257,12 @@ public final class DevicesImpl implements Devices {
     }
 
     public DataBoxEdgeDevice getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String deviceName = Utils.getValueFromIdByName(id, "dataBoxEdgeDevices");
+        String deviceName = ResourceManagerUtils.getValueFromIdByName(id, "dataBoxEdgeDevices");
         if (deviceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'dataBoxEdgeDevices'.", id)));
@@ -271,12 +271,12 @@ public final class DevicesImpl implements Devices {
     }
 
     public Response<DataBoxEdgeDevice> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String deviceName = Utils.getValueFromIdByName(id, "dataBoxEdgeDevices");
+        String deviceName = ResourceManagerUtils.getValueFromIdByName(id, "dataBoxEdgeDevices");
         if (deviceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'dataBoxEdgeDevices'.", id)));
@@ -285,12 +285,12 @@ public final class DevicesImpl implements Devices {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String deviceName = Utils.getValueFromIdByName(id, "dataBoxEdgeDevices");
+        String deviceName = ResourceManagerUtils.getValueFromIdByName(id, "dataBoxEdgeDevices");
         if (deviceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'dataBoxEdgeDevices'.", id)));
@@ -299,12 +299,12 @@ public final class DevicesImpl implements Devices {
     }
 
     public void deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String deviceName = Utils.getValueFromIdByName(id, "dataBoxEdgeDevices");
+        String deviceName = ResourceManagerUtils.getValueFromIdByName(id, "dataBoxEdgeDevices");
         if (deviceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'dataBoxEdgeDevices'.", id)));

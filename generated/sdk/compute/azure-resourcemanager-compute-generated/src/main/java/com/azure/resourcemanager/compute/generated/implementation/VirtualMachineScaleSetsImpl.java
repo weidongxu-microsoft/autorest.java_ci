@@ -43,12 +43,12 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
 
     public PagedIterable<VirtualMachineScaleSet> listByLocation(String location) {
         PagedIterable<VirtualMachineScaleSetInner> inner = this.serviceClient().listByLocation(location);
-        return Utils.mapPage(inner, inner1 -> new VirtualMachineScaleSetImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new VirtualMachineScaleSetImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualMachineScaleSet> listByLocation(String location, Context context) {
         PagedIterable<VirtualMachineScaleSetInner> inner = this.serviceClient().listByLocation(location, context);
-        return Utils.mapPage(inner, inner1 -> new VirtualMachineScaleSetImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new VirtualMachineScaleSetImpl(inner1, this.manager()));
     }
 
     public void delete(String resourceGroupName, String vmScaleSetName) {
@@ -123,50 +123,52 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
 
     public PagedIterable<VirtualMachineScaleSet> listByResourceGroup(String resourceGroupName) {
         PagedIterable<VirtualMachineScaleSetInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return Utils.mapPage(inner, inner1 -> new VirtualMachineScaleSetImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new VirtualMachineScaleSetImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualMachineScaleSet> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<VirtualMachineScaleSetInner> inner
             = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return Utils.mapPage(inner, inner1 -> new VirtualMachineScaleSetImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new VirtualMachineScaleSetImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualMachineScaleSet> list() {
         PagedIterable<VirtualMachineScaleSetInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new VirtualMachineScaleSetImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new VirtualMachineScaleSetImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualMachineScaleSet> list(Context context) {
         PagedIterable<VirtualMachineScaleSetInner> inner = this.serviceClient().list(context);
-        return Utils.mapPage(inner, inner1 -> new VirtualMachineScaleSetImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new VirtualMachineScaleSetImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualMachineScaleSetSku> listSkus(String resourceGroupName, String vmScaleSetName) {
         PagedIterable<VirtualMachineScaleSetSkuInner> inner
             = this.serviceClient().listSkus(resourceGroupName, vmScaleSetName);
-        return Utils.mapPage(inner, inner1 -> new VirtualMachineScaleSetSkuImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new VirtualMachineScaleSetSkuImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualMachineScaleSetSku> listSkus(String resourceGroupName, String vmScaleSetName,
         Context context) {
         PagedIterable<VirtualMachineScaleSetSkuInner> inner
             = this.serviceClient().listSkus(resourceGroupName, vmScaleSetName, context);
-        return Utils.mapPage(inner, inner1 -> new VirtualMachineScaleSetSkuImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new VirtualMachineScaleSetSkuImpl(inner1, this.manager()));
     }
 
     public PagedIterable<UpgradeOperationHistoricalStatusInfo> getOSUpgradeHistory(String resourceGroupName,
         String vmScaleSetName) {
         PagedIterable<UpgradeOperationHistoricalStatusInfoInner> inner
             = this.serviceClient().getOSUpgradeHistory(resourceGroupName, vmScaleSetName);
-        return Utils.mapPage(inner, inner1 -> new UpgradeOperationHistoricalStatusInfoImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new UpgradeOperationHistoricalStatusInfoImpl(inner1, this.manager()));
     }
 
     public PagedIterable<UpgradeOperationHistoricalStatusInfo> getOSUpgradeHistory(String resourceGroupName,
         String vmScaleSetName, Context context) {
         PagedIterable<UpgradeOperationHistoricalStatusInfoInner> inner
             = this.serviceClient().getOSUpgradeHistory(resourceGroupName, vmScaleSetName, context);
-        return Utils.mapPage(inner, inner1 -> new UpgradeOperationHistoricalStatusInfoImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new UpgradeOperationHistoricalStatusInfoImpl(inner1, this.manager()));
     }
 
     public void powerOff(String resourceGroupName, String vmScaleSetName) {
@@ -306,12 +308,12 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
     }
 
     public VirtualMachineScaleSet getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String vmScaleSetName = Utils.getValueFromIdByName(id, "virtualMachineScaleSets");
+        String vmScaleSetName = ResourceManagerUtils.getValueFromIdByName(id, "virtualMachineScaleSets");
         if (vmScaleSetName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'virtualMachineScaleSets'.", id)));
@@ -323,12 +325,12 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
 
     public Response<VirtualMachineScaleSet> getByIdWithResponse(String id, ExpandTypesForGetVMScaleSets expand,
         Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String vmScaleSetName = Utils.getValueFromIdByName(id, "virtualMachineScaleSets");
+        String vmScaleSetName = ResourceManagerUtils.getValueFromIdByName(id, "virtualMachineScaleSets");
         if (vmScaleSetName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'virtualMachineScaleSets'.", id)));
@@ -337,12 +339,12 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String vmScaleSetName = Utils.getValueFromIdByName(id, "virtualMachineScaleSets");
+        String vmScaleSetName = ResourceManagerUtils.getValueFromIdByName(id, "virtualMachineScaleSets");
         if (vmScaleSetName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'virtualMachineScaleSets'.", id)));
@@ -352,12 +354,12 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
     }
 
     public void deleteByIdWithResponse(String id, Boolean forceDeletion, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String vmScaleSetName = Utils.getValueFromIdByName(id, "virtualMachineScaleSets");
+        String vmScaleSetName = ResourceManagerUtils.getValueFromIdByName(id, "virtualMachineScaleSets");
         if (vmScaleSetName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'virtualMachineScaleSets'.", id)));

@@ -192,9 +192,9 @@ public final class FileShareImpl implements FileShare, FileShare.Definition, Fil
         com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.accountName = Utils.getValueFromIdByName(innerObject.id(), "storageAccounts");
-        this.shareName = Utils.getValueFromIdByName(innerObject.id(), "shares");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.accountName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "storageAccounts");
+        this.shareName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "shares");
     }
 
     public FileShare refresh() {

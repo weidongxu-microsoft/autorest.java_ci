@@ -65,14 +65,14 @@ public final class NamespaceTopicEventSubscriptionsImpl implements NamespaceTopi
         String topicName) {
         PagedIterable<SubscriptionInner> inner
             = this.serviceClient().listByNamespaceTopic(resourceGroupName, namespaceName, topicName);
-        return Utils.mapPage(inner, inner1 -> new SubscriptionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SubscriptionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Subscription> listByNamespaceTopic(String resourceGroupName, String namespaceName,
         String topicName, String filter, Integer top, Context context) {
         PagedIterable<SubscriptionInner> inner = this.serviceClient().listByNamespaceTopic(resourceGroupName,
             namespaceName, topicName, filter, top, context);
-        return Utils.mapPage(inner, inner1 -> new SubscriptionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SubscriptionImpl(inner1, this.manager()));
     }
 
     public Response<DeliveryAttributeListResult> getDeliveryAttributesWithResponse(String resourceGroupName,
@@ -99,22 +99,22 @@ public final class NamespaceTopicEventSubscriptionsImpl implements NamespaceTopi
     }
 
     public Subscription getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        String namespaceName = ResourceManagerUtils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
-        String topicName = Utils.getValueFromIdByName(id, "topics");
+        String topicName = ResourceManagerUtils.getValueFromIdByName(id, "topics");
         if (topicName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'topics'.", id)));
         }
-        String eventSubscriptionName = Utils.getValueFromIdByName(id, "eventSubscriptions");
+        String eventSubscriptionName = ResourceManagerUtils.getValueFromIdByName(id, "eventSubscriptions");
         if (eventSubscriptionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'eventSubscriptions'.", id)));
@@ -124,22 +124,22 @@ public final class NamespaceTopicEventSubscriptionsImpl implements NamespaceTopi
     }
 
     public Response<Subscription> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        String namespaceName = ResourceManagerUtils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
-        String topicName = Utils.getValueFromIdByName(id, "topics");
+        String topicName = ResourceManagerUtils.getValueFromIdByName(id, "topics");
         if (topicName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'topics'.", id)));
         }
-        String eventSubscriptionName = Utils.getValueFromIdByName(id, "eventSubscriptions");
+        String eventSubscriptionName = ResourceManagerUtils.getValueFromIdByName(id, "eventSubscriptions");
         if (eventSubscriptionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'eventSubscriptions'.", id)));
@@ -148,22 +148,22 @@ public final class NamespaceTopicEventSubscriptionsImpl implements NamespaceTopi
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        String namespaceName = ResourceManagerUtils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
-        String topicName = Utils.getValueFromIdByName(id, "topics");
+        String topicName = ResourceManagerUtils.getValueFromIdByName(id, "topics");
         if (topicName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'topics'.", id)));
         }
-        String eventSubscriptionName = Utils.getValueFromIdByName(id, "eventSubscriptions");
+        String eventSubscriptionName = ResourceManagerUtils.getValueFromIdByName(id, "eventSubscriptions");
         if (eventSubscriptionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'eventSubscriptions'.", id)));
@@ -172,22 +172,22 @@ public final class NamespaceTopicEventSubscriptionsImpl implements NamespaceTopi
     }
 
     public void deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        String namespaceName = ResourceManagerUtils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
-        String topicName = Utils.getValueFromIdByName(id, "topics");
+        String topicName = ResourceManagerUtils.getValueFromIdByName(id, "topics");
         if (topicName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'topics'.", id)));
         }
-        String eventSubscriptionName = Utils.getValueFromIdByName(id, "eventSubscriptions");
+        String eventSubscriptionName = ResourceManagerUtils.getValueFromIdByName(id, "eventSubscriptions");
         if (eventSubscriptionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'eventSubscriptions'.", id)));

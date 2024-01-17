@@ -132,8 +132,8 @@ public final class AzureMonitorPrivateLinkScopeImpl implements AzureMonitorPriva
         com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.scopeName = Utils.getValueFromIdByName(innerObject.id(), "privateLinkScopes");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.scopeName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "privateLinkScopes");
     }
 
     public AzureMonitorPrivateLinkScope refresh() {

@@ -32,14 +32,14 @@ public final class CertificateOrdersDiagnosticsImpl implements CertificateOrders
         String certificateOrderName) {
         PagedIterable<DetectorResponseInner> inner = this.serviceClient()
             .listAppServiceCertificateOrderDetectorResponse(resourceGroupName, certificateOrderName);
-        return Utils.mapPage(inner, inner1 -> new DetectorResponseImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DetectorResponseImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DetectorResponse> listAppServiceCertificateOrderDetectorResponse(String resourceGroupName,
         String certificateOrderName, Context context) {
         PagedIterable<DetectorResponseInner> inner = this.serviceClient()
             .listAppServiceCertificateOrderDetectorResponse(resourceGroupName, certificateOrderName, context);
-        return Utils.mapPage(inner, inner1 -> new DetectorResponseImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DetectorResponseImpl(inner1, this.manager()));
     }
 
     public Response<DetectorResponse> getAppServiceCertificateOrderDetectorResponseWithResponse(

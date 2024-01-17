@@ -102,9 +102,9 @@ public final class TableImpl implements Table, Table.Definition, Table.Update {
     TableImpl(TableInner innerObject, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.accountName = Utils.getValueFromIdByName(innerObject.id(), "storageAccounts");
-        this.tableName = Utils.getValueFromIdByName(innerObject.id(), "tables");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.accountName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "storageAccounts");
+        this.tableName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "tables");
     }
 
     public Table refresh() {

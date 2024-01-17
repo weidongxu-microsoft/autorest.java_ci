@@ -58,31 +58,31 @@ public final class VirtualWansImpl implements VirtualWans {
 
     public PagedIterable<VirtualWan> listByResourceGroup(String resourceGroupName) {
         PagedIterable<VirtualWanInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return Utils.mapPage(inner, inner1 -> new VirtualWanImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new VirtualWanImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualWan> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<VirtualWanInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return Utils.mapPage(inner, inner1 -> new VirtualWanImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new VirtualWanImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualWan> list() {
         PagedIterable<VirtualWanInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new VirtualWanImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new VirtualWanImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualWan> list(Context context) {
         PagedIterable<VirtualWanInner> inner = this.serviceClient().list(context);
-        return Utils.mapPage(inner, inner1 -> new VirtualWanImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new VirtualWanImpl(inner1, this.manager()));
     }
 
     public VirtualWan getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String virtualWanName = Utils.getValueFromIdByName(id, "virtualWans");
+        String virtualWanName = ResourceManagerUtils.getValueFromIdByName(id, "virtualWans");
         if (virtualWanName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'virtualWans'.", id)));
@@ -91,12 +91,12 @@ public final class VirtualWansImpl implements VirtualWans {
     }
 
     public Response<VirtualWan> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String virtualWanName = Utils.getValueFromIdByName(id, "virtualWans");
+        String virtualWanName = ResourceManagerUtils.getValueFromIdByName(id, "virtualWans");
         if (virtualWanName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'virtualWans'.", id)));
@@ -105,12 +105,12 @@ public final class VirtualWansImpl implements VirtualWans {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String virtualWanName = Utils.getValueFromIdByName(id, "virtualWans");
+        String virtualWanName = ResourceManagerUtils.getValueFromIdByName(id, "virtualWans");
         if (virtualWanName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'virtualWans'.", id)));
@@ -119,12 +119,12 @@ public final class VirtualWansImpl implements VirtualWans {
     }
 
     public void deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String virtualWanName = Utils.getValueFromIdByName(id, "virtualWans");
+        String virtualWanName = ResourceManagerUtils.getValueFromIdByName(id, "virtualWans");
         if (virtualWanName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'virtualWans'.", id)));

@@ -149,8 +149,8 @@ public final class VirtualRouterImpl implements VirtualRouter, VirtualRouter.Def
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.virtualRouterName = Utils.getValueFromIdByName(innerObject.id(), "virtualRouters");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.virtualRouterName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "virtualRouters");
     }
 
     public VirtualRouter refresh() {

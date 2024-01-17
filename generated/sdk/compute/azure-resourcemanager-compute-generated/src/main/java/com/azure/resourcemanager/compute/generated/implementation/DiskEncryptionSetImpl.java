@@ -160,8 +160,8 @@ public final class DiskEncryptionSetImpl
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.diskEncryptionSetName = Utils.getValueFromIdByName(innerObject.id(), "diskEncryptionSets");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.diskEncryptionSetName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "diskEncryptionSets");
     }
 
     public DiskEncryptionSet refresh() {

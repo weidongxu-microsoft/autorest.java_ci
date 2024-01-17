@@ -145,8 +145,8 @@ public final class NetworkWatcherImpl implements NetworkWatcher, NetworkWatcher.
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.networkWatcherName = Utils.getValueFromIdByName(innerObject.id(), "networkWatchers");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.networkWatcherName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "networkWatchers");
     }
 
     public NetworkWatcher refresh() {

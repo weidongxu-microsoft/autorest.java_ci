@@ -73,14 +73,14 @@ public final class ChannelsImpl implements Channels {
     public PagedIterable<Channel> listByPartnerNamespace(String resourceGroupName, String partnerNamespaceName) {
         PagedIterable<ChannelInner> inner
             = this.serviceClient().listByPartnerNamespace(resourceGroupName, partnerNamespaceName);
-        return Utils.mapPage(inner, inner1 -> new ChannelImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ChannelImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Channel> listByPartnerNamespace(String resourceGroupName, String partnerNamespaceName,
         String filter, Integer top, Context context) {
         PagedIterable<ChannelInner> inner = this.serviceClient().listByPartnerNamespace(resourceGroupName,
             partnerNamespaceName, filter, top, context);
-        return Utils.mapPage(inner, inner1 -> new ChannelImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ChannelImpl(inner1, this.manager()));
     }
 
     public Response<EventSubscriptionFullUrl> getFullUrlWithResponse(String resourceGroupName,
@@ -107,17 +107,17 @@ public final class ChannelsImpl implements Channels {
     }
 
     public Channel getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String partnerNamespaceName = Utils.getValueFromIdByName(id, "partnerNamespaces");
+        String partnerNamespaceName = ResourceManagerUtils.getValueFromIdByName(id, "partnerNamespaces");
         if (partnerNamespaceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'partnerNamespaces'.", id)));
         }
-        String channelName = Utils.getValueFromIdByName(id, "channels");
+        String channelName = ResourceManagerUtils.getValueFromIdByName(id, "channels");
         if (channelName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'channels'.", id)));
@@ -126,17 +126,17 @@ public final class ChannelsImpl implements Channels {
     }
 
     public Response<Channel> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String partnerNamespaceName = Utils.getValueFromIdByName(id, "partnerNamespaces");
+        String partnerNamespaceName = ResourceManagerUtils.getValueFromIdByName(id, "partnerNamespaces");
         if (partnerNamespaceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'partnerNamespaces'.", id)));
         }
-        String channelName = Utils.getValueFromIdByName(id, "channels");
+        String channelName = ResourceManagerUtils.getValueFromIdByName(id, "channels");
         if (channelName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'channels'.", id)));
@@ -145,17 +145,17 @@ public final class ChannelsImpl implements Channels {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String partnerNamespaceName = Utils.getValueFromIdByName(id, "partnerNamespaces");
+        String partnerNamespaceName = ResourceManagerUtils.getValueFromIdByName(id, "partnerNamespaces");
         if (partnerNamespaceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'partnerNamespaces'.", id)));
         }
-        String channelName = Utils.getValueFromIdByName(id, "channels");
+        String channelName = ResourceManagerUtils.getValueFromIdByName(id, "channels");
         if (channelName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'channels'.", id)));
@@ -164,17 +164,17 @@ public final class ChannelsImpl implements Channels {
     }
 
     public void deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String partnerNamespaceName = Utils.getValueFromIdByName(id, "partnerNamespaces");
+        String partnerNamespaceName = ResourceManagerUtils.getValueFromIdByName(id, "partnerNamespaces");
         if (partnerNamespaceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'partnerNamespaces'.", id)));
         }
-        String channelName = Utils.getValueFromIdByName(id, "channels");
+        String channelName = ResourceManagerUtils.getValueFromIdByName(id, "channels");
         if (channelName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'channels'.", id)));

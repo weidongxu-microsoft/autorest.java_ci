@@ -59,32 +59,32 @@ public final class SecurityPartnerProvidersImpl implements SecurityPartnerProvid
 
     public PagedIterable<SecurityPartnerProvider> listByResourceGroup(String resourceGroupName) {
         PagedIterable<SecurityPartnerProviderInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return Utils.mapPage(inner, inner1 -> new SecurityPartnerProviderImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SecurityPartnerProviderImpl(inner1, this.manager()));
     }
 
     public PagedIterable<SecurityPartnerProvider> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<SecurityPartnerProviderInner> inner
             = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return Utils.mapPage(inner, inner1 -> new SecurityPartnerProviderImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SecurityPartnerProviderImpl(inner1, this.manager()));
     }
 
     public PagedIterable<SecurityPartnerProvider> list() {
         PagedIterable<SecurityPartnerProviderInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new SecurityPartnerProviderImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SecurityPartnerProviderImpl(inner1, this.manager()));
     }
 
     public PagedIterable<SecurityPartnerProvider> list(Context context) {
         PagedIterable<SecurityPartnerProviderInner> inner = this.serviceClient().list(context);
-        return Utils.mapPage(inner, inner1 -> new SecurityPartnerProviderImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SecurityPartnerProviderImpl(inner1, this.manager()));
     }
 
     public SecurityPartnerProvider getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String securityPartnerProviderName = Utils.getValueFromIdByName(id, "securityPartnerProviders");
+        String securityPartnerProviderName = ResourceManagerUtils.getValueFromIdByName(id, "securityPartnerProviders");
         if (securityPartnerProviderName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'securityPartnerProviders'.", id)));
@@ -94,12 +94,12 @@ public final class SecurityPartnerProvidersImpl implements SecurityPartnerProvid
     }
 
     public Response<SecurityPartnerProvider> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String securityPartnerProviderName = Utils.getValueFromIdByName(id, "securityPartnerProviders");
+        String securityPartnerProviderName = ResourceManagerUtils.getValueFromIdByName(id, "securityPartnerProviders");
         if (securityPartnerProviderName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'securityPartnerProviders'.", id)));
@@ -108,12 +108,12 @@ public final class SecurityPartnerProvidersImpl implements SecurityPartnerProvid
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String securityPartnerProviderName = Utils.getValueFromIdByName(id, "securityPartnerProviders");
+        String securityPartnerProviderName = ResourceManagerUtils.getValueFromIdByName(id, "securityPartnerProviders");
         if (securityPartnerProviderName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'securityPartnerProviders'.", id)));
@@ -122,12 +122,12 @@ public final class SecurityPartnerProvidersImpl implements SecurityPartnerProvid
     }
 
     public void deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String securityPartnerProviderName = Utils.getValueFromIdByName(id, "securityPartnerProviders");
+        String securityPartnerProviderName = ResourceManagerUtils.getValueFromIdByName(id, "securityPartnerProviders");
         if (securityPartnerProviderName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'securityPartnerProviders'.", id)));

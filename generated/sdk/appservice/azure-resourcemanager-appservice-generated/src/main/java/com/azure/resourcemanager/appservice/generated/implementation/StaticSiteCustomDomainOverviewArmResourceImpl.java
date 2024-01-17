@@ -124,9 +124,9 @@ public final class StaticSiteCustomDomainOverviewArmResourceImpl implements Stat
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.name = Utils.getValueFromIdByName(innerObject.id(), "staticSites");
-        this.domainName = Utils.getValueFromIdByName(innerObject.id(), "customDomains");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.name = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "staticSites");
+        this.domainName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "customDomains");
     }
 
     public StaticSiteCustomDomainOverviewArmResource refresh() {

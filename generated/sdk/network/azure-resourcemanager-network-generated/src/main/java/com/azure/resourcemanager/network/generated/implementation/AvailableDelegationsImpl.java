@@ -27,12 +27,12 @@ public final class AvailableDelegationsImpl implements AvailableDelegations {
 
     public PagedIterable<AvailableDelegation> list(String location) {
         PagedIterable<AvailableDelegationInner> inner = this.serviceClient().list(location);
-        return Utils.mapPage(inner, inner1 -> new AvailableDelegationImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new AvailableDelegationImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AvailableDelegation> list(String location, Context context) {
         PagedIterable<AvailableDelegationInner> inner = this.serviceClient().list(location, context);
-        return Utils.mapPage(inner, inner1 -> new AvailableDelegationImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new AvailableDelegationImpl(inner1, this.manager()));
     }
 
     private AvailableDelegationsClient serviceClient() {

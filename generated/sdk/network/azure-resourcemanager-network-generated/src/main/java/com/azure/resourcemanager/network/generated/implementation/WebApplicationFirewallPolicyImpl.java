@@ -177,9 +177,9 @@ public final class WebApplicationFirewallPolicyImpl implements WebApplicationFir
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.policyName
-            = Utils.getValueFromIdByName(innerObject.id(), "ApplicationGatewayWebApplicationFirewallPolicies");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.policyName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(),
+            "ApplicationGatewayWebApplicationFirewallPolicies");
     }
 
     public WebApplicationFirewallPolicy refresh() {

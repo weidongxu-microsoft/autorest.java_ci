@@ -62,22 +62,22 @@ public final class DiskAccessesImpl implements DiskAccesses {
 
     public PagedIterable<DiskAccess> listByResourceGroup(String resourceGroupName) {
         PagedIterable<DiskAccessInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return Utils.mapPage(inner, inner1 -> new DiskAccessImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DiskAccessImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DiskAccess> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<DiskAccessInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return Utils.mapPage(inner, inner1 -> new DiskAccessImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DiskAccessImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DiskAccess> list() {
         PagedIterable<DiskAccessInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new DiskAccessImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DiskAccessImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DiskAccess> list(Context context) {
         PagedIterable<DiskAccessInner> inner = this.serviceClient().list(context);
-        return Utils.mapPage(inner, inner1 -> new DiskAccessImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DiskAccessImpl(inner1, this.manager()));
     }
 
     public Response<PrivateLinkResourceListResult> getPrivateLinkResourcesWithResponse(String resourceGroupName,
@@ -164,23 +164,23 @@ public final class DiskAccessesImpl implements DiskAccesses {
         String diskAccessName) {
         PagedIterable<PrivateEndpointConnectionInner> inner
             = this.serviceClient().listPrivateEndpointConnections(resourceGroupName, diskAccessName);
-        return Utils.mapPage(inner, inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PrivateEndpointConnection> listPrivateEndpointConnections(String resourceGroupName,
         String diskAccessName, Context context) {
         PagedIterable<PrivateEndpointConnectionInner> inner
             = this.serviceClient().listPrivateEndpointConnections(resourceGroupName, diskAccessName, context);
-        return Utils.mapPage(inner, inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager()));
     }
 
     public DiskAccess getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String diskAccessName = Utils.getValueFromIdByName(id, "diskAccesses");
+        String diskAccessName = ResourceManagerUtils.getValueFromIdByName(id, "diskAccesses");
         if (diskAccessName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'diskAccesses'.", id)));
@@ -189,12 +189,12 @@ public final class DiskAccessesImpl implements DiskAccesses {
     }
 
     public Response<DiskAccess> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String diskAccessName = Utils.getValueFromIdByName(id, "diskAccesses");
+        String diskAccessName = ResourceManagerUtils.getValueFromIdByName(id, "diskAccesses");
         if (diskAccessName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'diskAccesses'.", id)));
@@ -203,12 +203,12 @@ public final class DiskAccessesImpl implements DiskAccesses {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String diskAccessName = Utils.getValueFromIdByName(id, "diskAccesses");
+        String diskAccessName = ResourceManagerUtils.getValueFromIdByName(id, "diskAccesses");
         if (diskAccessName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'diskAccesses'.", id)));
@@ -217,12 +217,12 @@ public final class DiskAccessesImpl implements DiskAccesses {
     }
 
     public void deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String diskAccessName = Utils.getValueFromIdByName(id, "diskAccesses");
+        String diskAccessName = ResourceManagerUtils.getValueFromIdByName(id, "diskAccesses");
         if (diskAccessName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'diskAccesses'.", id)));

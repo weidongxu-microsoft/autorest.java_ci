@@ -50,12 +50,12 @@ public final class ManagedHsmKeysImpl implements ManagedHsmKeys {
 
     public PagedIterable<ManagedHsmKey> list(String resourceGroupName, String name) {
         PagedIterable<ManagedHsmKeyInner> inner = this.serviceClient().list(resourceGroupName, name);
-        return Utils.mapPage(inner, inner1 -> new ManagedHsmKeyImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ManagedHsmKeyImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ManagedHsmKey> list(String resourceGroupName, String name, Context context) {
         PagedIterable<ManagedHsmKeyInner> inner = this.serviceClient().list(resourceGroupName, name, context);
-        return Utils.mapPage(inner, inner1 -> new ManagedHsmKeyImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ManagedHsmKeyImpl(inner1, this.manager()));
     }
 
     public Response<ManagedHsmKey> getVersionWithResponse(String resourceGroupName, String name, String keyName,
@@ -81,28 +81,28 @@ public final class ManagedHsmKeysImpl implements ManagedHsmKeys {
 
     public PagedIterable<ManagedHsmKey> listVersions(String resourceGroupName, String name, String keyName) {
         PagedIterable<ManagedHsmKeyInner> inner = this.serviceClient().listVersions(resourceGroupName, name, keyName);
-        return Utils.mapPage(inner, inner1 -> new ManagedHsmKeyImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ManagedHsmKeyImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ManagedHsmKey> listVersions(String resourceGroupName, String name, String keyName,
         Context context) {
         PagedIterable<ManagedHsmKeyInner> inner
             = this.serviceClient().listVersions(resourceGroupName, name, keyName, context);
-        return Utils.mapPage(inner, inner1 -> new ManagedHsmKeyImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ManagedHsmKeyImpl(inner1, this.manager()));
     }
 
     public ManagedHsmKey getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "managedHSMs");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "managedHSMs");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'managedHSMs'.", id)));
         }
-        String keyName = Utils.getValueFromIdByName(id, "keys");
+        String keyName = ResourceManagerUtils.getValueFromIdByName(id, "keys");
         if (keyName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'keys'.", id)));
@@ -111,17 +111,17 @@ public final class ManagedHsmKeysImpl implements ManagedHsmKeys {
     }
 
     public Response<ManagedHsmKey> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "managedHSMs");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "managedHSMs");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'managedHSMs'.", id)));
         }
-        String keyName = Utils.getValueFromIdByName(id, "keys");
+        String keyName = ResourceManagerUtils.getValueFromIdByName(id, "keys");
         if (keyName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'keys'.", id)));

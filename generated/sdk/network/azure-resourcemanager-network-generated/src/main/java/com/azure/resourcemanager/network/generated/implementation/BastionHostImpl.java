@@ -188,8 +188,8 @@ public final class BastionHostImpl implements BastionHost, BastionHost.Definitio
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.bastionHostname = Utils.getValueFromIdByName(innerObject.id(), "bastionHosts");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.bastionHostname = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "bastionHosts");
     }
 
     public BastionHost refresh() {

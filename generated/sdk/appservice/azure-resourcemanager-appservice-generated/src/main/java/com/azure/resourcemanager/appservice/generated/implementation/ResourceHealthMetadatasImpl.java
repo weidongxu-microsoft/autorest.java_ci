@@ -29,34 +29,34 @@ public final class ResourceHealthMetadatasImpl implements ResourceHealthMetadata
 
     public PagedIterable<ResourceHealthMetadata> list() {
         PagedIterable<ResourceHealthMetadataInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new ResourceHealthMetadataImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ResourceHealthMetadataImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ResourceHealthMetadata> list(Context context) {
         PagedIterable<ResourceHealthMetadataInner> inner = this.serviceClient().list(context);
-        return Utils.mapPage(inner, inner1 -> new ResourceHealthMetadataImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ResourceHealthMetadataImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ResourceHealthMetadata> listByResourceGroup(String resourceGroupName) {
         PagedIterable<ResourceHealthMetadataInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return Utils.mapPage(inner, inner1 -> new ResourceHealthMetadataImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ResourceHealthMetadataImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ResourceHealthMetadata> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<ResourceHealthMetadataInner> inner
             = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return Utils.mapPage(inner, inner1 -> new ResourceHealthMetadataImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ResourceHealthMetadataImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ResourceHealthMetadata> listBySite(String resourceGroupName, String name) {
         PagedIterable<ResourceHealthMetadataInner> inner = this.serviceClient().listBySite(resourceGroupName, name);
-        return Utils.mapPage(inner, inner1 -> new ResourceHealthMetadataImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ResourceHealthMetadataImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ResourceHealthMetadata> listBySite(String resourceGroupName, String name, Context context) {
         PagedIterable<ResourceHealthMetadataInner> inner
             = this.serviceClient().listBySite(resourceGroupName, name, context);
-        return Utils.mapPage(inner, inner1 -> new ResourceHealthMetadataImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ResourceHealthMetadataImpl(inner1, this.manager()));
     }
 
     public Response<ResourceHealthMetadata> getBySiteWithResponse(String resourceGroupName, String name,
@@ -83,14 +83,14 @@ public final class ResourceHealthMetadatasImpl implements ResourceHealthMetadata
     public PagedIterable<ResourceHealthMetadata> listBySiteSlot(String resourceGroupName, String name, String slot) {
         PagedIterable<ResourceHealthMetadataInner> inner
             = this.serviceClient().listBySiteSlot(resourceGroupName, name, slot);
-        return Utils.mapPage(inner, inner1 -> new ResourceHealthMetadataImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ResourceHealthMetadataImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ResourceHealthMetadata> listBySiteSlot(String resourceGroupName, String name, String slot,
         Context context) {
         PagedIterable<ResourceHealthMetadataInner> inner
             = this.serviceClient().listBySiteSlot(resourceGroupName, name, slot, context);
-        return Utils.mapPage(inner, inner1 -> new ResourceHealthMetadataImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ResourceHealthMetadataImpl(inner1, this.manager()));
     }
 
     public Response<ResourceHealthMetadata> getBySiteSlotWithResponse(String resourceGroupName, String name,

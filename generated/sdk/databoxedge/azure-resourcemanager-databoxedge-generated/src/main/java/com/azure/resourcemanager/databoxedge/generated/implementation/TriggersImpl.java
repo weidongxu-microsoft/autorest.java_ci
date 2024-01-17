@@ -29,14 +29,14 @@ public final class TriggersImpl implements Triggers {
 
     public PagedIterable<Trigger> listByDataBoxEdgeDevice(String deviceName, String resourceGroupName) {
         PagedIterable<TriggerInner> inner = this.serviceClient().listByDataBoxEdgeDevice(deviceName, resourceGroupName);
-        return Utils.mapPage(inner, inner1 -> new TriggerImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new TriggerImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Trigger> listByDataBoxEdgeDevice(String deviceName, String resourceGroupName, String filter,
         Context context) {
         PagedIterable<TriggerInner> inner
             = this.serviceClient().listByDataBoxEdgeDevice(deviceName, resourceGroupName, filter, context);
-        return Utils.mapPage(inner, inner1 -> new TriggerImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new TriggerImpl(inner1, this.manager()));
     }
 
     public Response<Trigger> getWithResponse(String deviceName, String name, String resourceGroupName,

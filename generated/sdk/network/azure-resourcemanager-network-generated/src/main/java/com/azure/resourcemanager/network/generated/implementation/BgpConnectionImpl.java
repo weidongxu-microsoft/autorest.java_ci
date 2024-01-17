@@ -114,9 +114,9 @@ public final class BgpConnectionImpl implements BgpConnection, BgpConnection.Def
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.virtualHubName = Utils.getValueFromIdByName(innerObject.id(), "virtualHubs");
-        this.connectionName = Utils.getValueFromIdByName(innerObject.id(), "bgpConnections");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.virtualHubName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "virtualHubs");
+        this.connectionName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "bgpConnections");
     }
 
     public BgpConnection refresh() {

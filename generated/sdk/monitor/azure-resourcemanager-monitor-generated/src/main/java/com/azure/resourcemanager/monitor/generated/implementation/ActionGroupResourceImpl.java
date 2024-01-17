@@ -224,8 +224,8 @@ public final class ActionGroupResourceImpl
         com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.actionGroupName = Utils.getValueFromIdByName(innerObject.id(), "actionGroups");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.actionGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "actionGroups");
     }
 
     public ActionGroupResource refresh() {

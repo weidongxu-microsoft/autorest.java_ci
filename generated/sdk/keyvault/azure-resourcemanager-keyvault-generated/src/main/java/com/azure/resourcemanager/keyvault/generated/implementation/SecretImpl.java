@@ -125,9 +125,9 @@ public final class SecretImpl implements Secret, Secret.Definition, Secret.Updat
     SecretImpl(SecretInner innerObject, com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.vaultName = Utils.getValueFromIdByName(innerObject.id(), "vaults");
-        this.secretName = Utils.getValueFromIdByName(innerObject.id(), "secrets");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.vaultName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "vaults");
+        this.secretName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "secrets");
     }
 
     public Secret refresh() {

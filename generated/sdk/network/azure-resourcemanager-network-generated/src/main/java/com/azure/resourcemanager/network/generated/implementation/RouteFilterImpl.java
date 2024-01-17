@@ -159,8 +159,8 @@ public final class RouteFilterImpl implements RouteFilter, RouteFilter.Definitio
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.routeFilterName = Utils.getValueFromIdByName(innerObject.id(), "routeFilters");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.routeFilterName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "routeFilters");
     }
 
     public RouteFilter refresh() {

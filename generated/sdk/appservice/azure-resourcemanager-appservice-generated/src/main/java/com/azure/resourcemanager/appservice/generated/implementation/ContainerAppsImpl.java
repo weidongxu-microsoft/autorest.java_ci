@@ -31,22 +31,22 @@ public final class ContainerAppsImpl implements ContainerApps {
 
     public PagedIterable<ContainerApp> list() {
         PagedIterable<ContainerAppInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new ContainerAppImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ContainerAppImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ContainerApp> list(Context context) {
         PagedIterable<ContainerAppInner> inner = this.serviceClient().list(context);
-        return Utils.mapPage(inner, inner1 -> new ContainerAppImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ContainerAppImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ContainerApp> listByResourceGroup(String resourceGroupName) {
         PagedIterable<ContainerAppInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return Utils.mapPage(inner, inner1 -> new ContainerAppImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ContainerAppImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ContainerApp> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<ContainerAppInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return Utils.mapPage(inner, inner1 -> new ContainerAppImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ContainerAppImpl(inner1, this.manager()));
     }
 
     public Response<ContainerApp> getByResourceGroupWithResponse(String resourceGroupName, String name,
@@ -98,12 +98,12 @@ public final class ContainerAppsImpl implements ContainerApps {
     }
 
     public ContainerApp getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "containerApps");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "containerApps");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'containerApps'.", id)));
@@ -112,12 +112,12 @@ public final class ContainerAppsImpl implements ContainerApps {
     }
 
     public Response<ContainerApp> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "containerApps");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "containerApps");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'containerApps'.", id)));
@@ -126,12 +126,12 @@ public final class ContainerAppsImpl implements ContainerApps {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "containerApps");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "containerApps");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'containerApps'.", id)));
@@ -140,12 +140,12 @@ public final class ContainerAppsImpl implements ContainerApps {
     }
 
     public void deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "containerApps");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "containerApps");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'containerApps'.", id)));

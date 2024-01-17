@@ -30,14 +30,14 @@ public final class ApplicationGroupsImpl implements ApplicationGroups {
     public PagedIterable<ApplicationGroup> listByNamespace(String resourceGroupName, String namespaceName) {
         PagedIterable<ApplicationGroupInner> inner
             = this.serviceClient().listByNamespace(resourceGroupName, namespaceName);
-        return Utils.mapPage(inner, inner1 -> new ApplicationGroupImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ApplicationGroupImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ApplicationGroup> listByNamespace(String resourceGroupName, String namespaceName,
         Context context) {
         PagedIterable<ApplicationGroupInner> inner
             = this.serviceClient().listByNamespace(resourceGroupName, namespaceName, context);
-        return Utils.mapPage(inner, inner1 -> new ApplicationGroupImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ApplicationGroupImpl(inner1, this.manager()));
     }
 
     public Response<Void> deleteWithResponse(String resourceGroupName, String namespaceName,
@@ -71,17 +71,17 @@ public final class ApplicationGroupsImpl implements ApplicationGroups {
     }
 
     public ApplicationGroup getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        String namespaceName = ResourceManagerUtils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
-        String applicationGroupName = Utils.getValueFromIdByName(id, "applicationGroups");
+        String applicationGroupName = ResourceManagerUtils.getValueFromIdByName(id, "applicationGroups");
         if (applicationGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'applicationGroups'.", id)));
@@ -90,17 +90,17 @@ public final class ApplicationGroupsImpl implements ApplicationGroups {
     }
 
     public Response<ApplicationGroup> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        String namespaceName = ResourceManagerUtils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
-        String applicationGroupName = Utils.getValueFromIdByName(id, "applicationGroups");
+        String applicationGroupName = ResourceManagerUtils.getValueFromIdByName(id, "applicationGroups");
         if (applicationGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'applicationGroups'.", id)));
@@ -109,17 +109,17 @@ public final class ApplicationGroupsImpl implements ApplicationGroups {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        String namespaceName = ResourceManagerUtils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
-        String applicationGroupName = Utils.getValueFromIdByName(id, "applicationGroups");
+        String applicationGroupName = ResourceManagerUtils.getValueFromIdByName(id, "applicationGroups");
         if (applicationGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'applicationGroups'.", id)));
@@ -128,17 +128,17 @@ public final class ApplicationGroupsImpl implements ApplicationGroups {
     }
 
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        String namespaceName = ResourceManagerUtils.getValueFromIdByName(id, "namespaces");
         if (namespaceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
         }
-        String applicationGroupName = Utils.getValueFromIdByName(id, "applicationGroups");
+        String applicationGroupName = ResourceManagerUtils.getValueFromIdByName(id, "applicationGroups");
         if (applicationGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'applicationGroups'.", id)));

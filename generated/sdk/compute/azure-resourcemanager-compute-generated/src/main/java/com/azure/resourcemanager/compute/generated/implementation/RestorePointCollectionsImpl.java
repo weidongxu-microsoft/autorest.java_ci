@@ -60,32 +60,32 @@ public final class RestorePointCollectionsImpl implements RestorePointCollection
 
     public PagedIterable<RestorePointCollection> listByResourceGroup(String resourceGroupName) {
         PagedIterable<RestorePointCollectionInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return Utils.mapPage(inner, inner1 -> new RestorePointCollectionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new RestorePointCollectionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<RestorePointCollection> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<RestorePointCollectionInner> inner
             = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return Utils.mapPage(inner, inner1 -> new RestorePointCollectionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new RestorePointCollectionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<RestorePointCollection> list() {
         PagedIterable<RestorePointCollectionInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new RestorePointCollectionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new RestorePointCollectionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<RestorePointCollection> list(Context context) {
         PagedIterable<RestorePointCollectionInner> inner = this.serviceClient().list(context);
-        return Utils.mapPage(inner, inner1 -> new RestorePointCollectionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new RestorePointCollectionImpl(inner1, this.manager()));
     }
 
     public RestorePointCollection getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String restorePointCollectionName = Utils.getValueFromIdByName(id, "restorePointCollections");
+        String restorePointCollectionName = ResourceManagerUtils.getValueFromIdByName(id, "restorePointCollections");
         if (restorePointCollectionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'restorePointCollections'.", id)));
@@ -98,12 +98,12 @@ public final class RestorePointCollectionsImpl implements RestorePointCollection
 
     public Response<RestorePointCollection> getByIdWithResponse(String id, RestorePointCollectionExpandOptions expand,
         Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String restorePointCollectionName = Utils.getValueFromIdByName(id, "restorePointCollections");
+        String restorePointCollectionName = ResourceManagerUtils.getValueFromIdByName(id, "restorePointCollections");
         if (restorePointCollectionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'restorePointCollections'.", id)));
@@ -112,12 +112,12 @@ public final class RestorePointCollectionsImpl implements RestorePointCollection
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String restorePointCollectionName = Utils.getValueFromIdByName(id, "restorePointCollections");
+        String restorePointCollectionName = ResourceManagerUtils.getValueFromIdByName(id, "restorePointCollections");
         if (restorePointCollectionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'restorePointCollections'.", id)));
@@ -126,12 +126,12 @@ public final class RestorePointCollectionsImpl implements RestorePointCollection
     }
 
     public void deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String restorePointCollectionName = Utils.getValueFromIdByName(id, "restorePointCollections");
+        String restorePointCollectionName = ResourceManagerUtils.getValueFromIdByName(id, "restorePointCollections");
         if (restorePointCollectionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'restorePointCollections'.", id)));

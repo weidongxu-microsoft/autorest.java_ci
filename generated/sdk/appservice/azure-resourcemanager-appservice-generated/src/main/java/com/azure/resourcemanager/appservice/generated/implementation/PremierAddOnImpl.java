@@ -143,9 +143,9 @@ public final class PremierAddOnImpl implements PremierAddOn, PremierAddOn.Defini
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.name = Utils.getValueFromIdByName(innerObject.id(), "sites");
-        this.premierAddOnName = Utils.getValueFromIdByName(innerObject.id(), "premieraddons");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.name = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "sites");
+        this.premierAddOnName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "premieraddons");
     }
 
     public PremierAddOn refresh() {

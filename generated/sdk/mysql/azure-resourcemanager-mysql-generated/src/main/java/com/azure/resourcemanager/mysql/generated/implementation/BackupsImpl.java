@@ -71,13 +71,13 @@ public final class BackupsImpl implements Backups {
 
     public PagedIterable<ServerBackup> listByServer(String resourceGroupName, String serverName) {
         PagedIterable<ServerBackupInner> inner = this.serviceClient().listByServer(resourceGroupName, serverName);
-        return Utils.mapPage(inner, inner1 -> new ServerBackupImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ServerBackupImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ServerBackup> listByServer(String resourceGroupName, String serverName, Context context) {
         PagedIterable<ServerBackupInner> inner
             = this.serviceClient().listByServer(resourceGroupName, serverName, context);
-        return Utils.mapPage(inner, inner1 -> new ServerBackupImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ServerBackupImpl(inner1, this.manager()));
     }
 
     private BackupsClient serviceClient() {

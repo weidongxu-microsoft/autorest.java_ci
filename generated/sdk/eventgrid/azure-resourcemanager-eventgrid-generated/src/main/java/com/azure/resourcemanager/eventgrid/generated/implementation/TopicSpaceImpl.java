@@ -112,9 +112,9 @@ public final class TopicSpaceImpl implements TopicSpace, TopicSpace.Definition, 
         com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.namespaceName = Utils.getValueFromIdByName(innerObject.id(), "namespaces");
-        this.topicSpaceName = Utils.getValueFromIdByName(innerObject.id(), "topicSpaces");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.namespaceName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "namespaces");
+        this.topicSpaceName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "topicSpaces");
     }
 
     public TopicSpace refresh() {

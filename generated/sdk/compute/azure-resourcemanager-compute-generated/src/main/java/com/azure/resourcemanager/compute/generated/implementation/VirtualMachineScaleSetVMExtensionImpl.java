@@ -171,10 +171,10 @@ public final class VirtualMachineScaleSetVMExtensionImpl implements VirtualMachi
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.vmScaleSetName = Utils.getValueFromIdByName(innerObject.id(), "virtualMachineScaleSets");
-        this.instanceId = Utils.getValueFromIdByName(innerObject.id(), "virtualMachines");
-        this.vmExtensionName = Utils.getValueFromIdByName(innerObject.id(), "extensions");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.vmScaleSetName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "virtualMachineScaleSets");
+        this.instanceId = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "virtualMachines");
+        this.vmExtensionName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "extensions");
     }
 
     public VirtualMachineScaleSetVMExtension refresh() {

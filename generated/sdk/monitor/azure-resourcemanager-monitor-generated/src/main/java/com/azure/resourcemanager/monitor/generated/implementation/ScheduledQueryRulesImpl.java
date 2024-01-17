@@ -59,33 +59,33 @@ public final class ScheduledQueryRulesImpl implements ScheduledQueryRules {
 
     public PagedIterable<LogSearchRuleResource> list() {
         PagedIterable<LogSearchRuleResourceInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new LogSearchRuleResourceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new LogSearchRuleResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<LogSearchRuleResource> list(String filter, Context context) {
         PagedIterable<LogSearchRuleResourceInner> inner = this.serviceClient().list(filter, context);
-        return Utils.mapPage(inner, inner1 -> new LogSearchRuleResourceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new LogSearchRuleResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<LogSearchRuleResource> listByResourceGroup(String resourceGroupName) {
         PagedIterable<LogSearchRuleResourceInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return Utils.mapPage(inner, inner1 -> new LogSearchRuleResourceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new LogSearchRuleResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<LogSearchRuleResource> listByResourceGroup(String resourceGroupName, String filter,
         Context context) {
         PagedIterable<LogSearchRuleResourceInner> inner
             = this.serviceClient().listByResourceGroup(resourceGroupName, filter, context);
-        return Utils.mapPage(inner, inner1 -> new LogSearchRuleResourceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new LogSearchRuleResourceImpl(inner1, this.manager()));
     }
 
     public LogSearchRuleResource getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
         }
-        String ruleName = Utils.getValueFromIdByName(id, "scheduledQueryRules");
+        String ruleName = ResourceManagerUtils.getValueFromIdByName(id, "scheduledQueryRules");
         if (ruleName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'scheduledQueryRules'.", id)));
@@ -94,12 +94,12 @@ public final class ScheduledQueryRulesImpl implements ScheduledQueryRules {
     }
 
     public Response<LogSearchRuleResource> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
         }
-        String ruleName = Utils.getValueFromIdByName(id, "scheduledQueryRules");
+        String ruleName = ResourceManagerUtils.getValueFromIdByName(id, "scheduledQueryRules");
         if (ruleName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'scheduledQueryRules'.", id)));
@@ -108,12 +108,12 @@ public final class ScheduledQueryRulesImpl implements ScheduledQueryRules {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
         }
-        String ruleName = Utils.getValueFromIdByName(id, "scheduledQueryRules");
+        String ruleName = ResourceManagerUtils.getValueFromIdByName(id, "scheduledQueryRules");
         if (ruleName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'scheduledQueryRules'.", id)));
@@ -122,12 +122,12 @@ public final class ScheduledQueryRulesImpl implements ScheduledQueryRules {
     }
 
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
         }
-        String ruleName = Utils.getValueFromIdByName(id, "scheduledQueryRules");
+        String ruleName = ResourceManagerUtils.getValueFromIdByName(id, "scheduledQueryRules");
         if (ruleName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'scheduledQueryRules'.", id)));

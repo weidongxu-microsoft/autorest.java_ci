@@ -172,8 +172,8 @@ public final class NatGatewayImpl implements NatGateway, NatGateway.Definition, 
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.natGatewayName = Utils.getValueFromIdByName(innerObject.id(), "natGateways");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.natGatewayName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "natGateways");
     }
 
     public NatGateway refresh() {

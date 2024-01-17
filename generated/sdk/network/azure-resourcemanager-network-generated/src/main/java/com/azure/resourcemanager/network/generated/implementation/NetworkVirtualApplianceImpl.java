@@ -246,8 +246,9 @@ public final class NetworkVirtualApplianceImpl
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.networkVirtualApplianceName = Utils.getValueFromIdByName(innerObject.id(), "networkVirtualAppliances");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.networkVirtualApplianceName
+            = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "networkVirtualAppliances");
     }
 
     public NetworkVirtualAppliance refresh() {

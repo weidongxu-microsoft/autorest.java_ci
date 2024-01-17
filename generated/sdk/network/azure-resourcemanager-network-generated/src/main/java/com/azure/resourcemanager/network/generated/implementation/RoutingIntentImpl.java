@@ -108,9 +108,9 @@ public final class RoutingIntentImpl implements RoutingIntent, RoutingIntent.Def
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.virtualHubName = Utils.getValueFromIdByName(innerObject.id(), "virtualHubs");
-        this.routingIntentName = Utils.getValueFromIdByName(innerObject.id(), "routingIntent");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.virtualHubName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "virtualHubs");
+        this.routingIntentName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "routingIntent");
     }
 
     public RoutingIntent refresh() {

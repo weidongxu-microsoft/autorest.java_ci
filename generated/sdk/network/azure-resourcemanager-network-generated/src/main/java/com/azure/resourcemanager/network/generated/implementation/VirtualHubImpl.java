@@ -251,8 +251,8 @@ public final class VirtualHubImpl implements VirtualHub, VirtualHub.Definition, 
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.virtualHubName = Utils.getValueFromIdByName(innerObject.id(), "virtualHubs");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.virtualHubName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "virtualHubs");
     }
 
     public VirtualHub refresh() {

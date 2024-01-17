@@ -265,9 +265,9 @@ public final class SubnetImpl implements Subnet, Subnet.Definition, Subnet.Updat
     SubnetImpl(SubnetInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.virtualNetworkName = Utils.getValueFromIdByName(innerObject.id(), "virtualNetworks");
-        this.subnetName = Utils.getValueFromIdByName(innerObject.id(), "subnets");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.virtualNetworkName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "virtualNetworks");
+        this.subnetName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "subnets");
     }
 
     public Subnet refresh() {

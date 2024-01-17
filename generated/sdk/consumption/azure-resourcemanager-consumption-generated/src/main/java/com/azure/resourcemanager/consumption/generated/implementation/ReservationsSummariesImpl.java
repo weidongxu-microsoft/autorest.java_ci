@@ -29,40 +29,40 @@ public final class ReservationsSummariesImpl implements ReservationsSummaries {
     public PagedIterable<ReservationSummary> listByReservationOrder(String reservationOrderId, Datagrain grain) {
         PagedIterable<ReservationSummaryInner> inner
             = this.serviceClient().listByReservationOrder(reservationOrderId, grain);
-        return Utils.mapPage(inner, inner1 -> new ReservationSummaryImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ReservationSummaryImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ReservationSummary> listByReservationOrder(String reservationOrderId, Datagrain grain,
         String filter, Context context) {
         PagedIterable<ReservationSummaryInner> inner
             = this.serviceClient().listByReservationOrder(reservationOrderId, grain, filter, context);
-        return Utils.mapPage(inner, inner1 -> new ReservationSummaryImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ReservationSummaryImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ReservationSummary> listByReservationOrderAndReservation(String reservationOrderId,
         String reservationId, Datagrain grain) {
         PagedIterable<ReservationSummaryInner> inner
             = this.serviceClient().listByReservationOrderAndReservation(reservationOrderId, reservationId, grain);
-        return Utils.mapPage(inner, inner1 -> new ReservationSummaryImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ReservationSummaryImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ReservationSummary> listByReservationOrderAndReservation(String reservationOrderId,
         String reservationId, Datagrain grain, String filter, Context context) {
         PagedIterable<ReservationSummaryInner> inner = this.serviceClient()
             .listByReservationOrderAndReservation(reservationOrderId, reservationId, grain, filter, context);
-        return Utils.mapPage(inner, inner1 -> new ReservationSummaryImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ReservationSummaryImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ReservationSummary> list(String resourceScope, Datagrain grain) {
         PagedIterable<ReservationSummaryInner> inner = this.serviceClient().list(resourceScope, grain);
-        return Utils.mapPage(inner, inner1 -> new ReservationSummaryImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ReservationSummaryImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ReservationSummary> list(String resourceScope, Datagrain grain, String startDate,
         String endDate, String filter, String reservationId, String reservationOrderId, Context context) {
         PagedIterable<ReservationSummaryInner> inner = this.serviceClient().list(resourceScope, grain, startDate,
             endDate, filter, reservationId, reservationOrderId, context);
-        return Utils.mapPage(inner, inner1 -> new ReservationSummaryImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ReservationSummaryImpl(inner1, this.manager()));
     }
 
     private ReservationsSummariesClient serviceClient() {

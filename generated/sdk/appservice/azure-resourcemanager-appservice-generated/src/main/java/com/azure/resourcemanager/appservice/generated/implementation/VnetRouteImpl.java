@@ -111,10 +111,10 @@ public final class VnetRouteImpl implements VnetRoute, VnetRoute.Definition, Vne
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.name = Utils.getValueFromIdByName(innerObject.id(), "serverfarms");
-        this.vnetName = Utils.getValueFromIdByName(innerObject.id(), "virtualNetworkConnections");
-        this.routeName = Utils.getValueFromIdByName(innerObject.id(), "routes");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.name = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "serverfarms");
+        this.vnetName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "virtualNetworkConnections");
+        this.routeName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "routes");
     }
 
     public VnetRouteImpl withKind(String kind) {

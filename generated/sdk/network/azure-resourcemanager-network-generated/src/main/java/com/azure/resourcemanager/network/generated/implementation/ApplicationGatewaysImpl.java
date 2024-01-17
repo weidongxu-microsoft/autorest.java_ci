@@ -72,23 +72,23 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
 
     public PagedIterable<ApplicationGateway> listByResourceGroup(String resourceGroupName) {
         PagedIterable<ApplicationGatewayInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return Utils.mapPage(inner, inner1 -> new ApplicationGatewayImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ApplicationGatewayImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ApplicationGateway> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<ApplicationGatewayInner> inner
             = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return Utils.mapPage(inner, inner1 -> new ApplicationGatewayImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ApplicationGatewayImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ApplicationGateway> list() {
         PagedIterable<ApplicationGatewayInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new ApplicationGatewayImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ApplicationGatewayImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ApplicationGateway> list(Context context) {
         PagedIterable<ApplicationGatewayInner> inner = this.serviceClient().list(context);
-        return Utils.mapPage(inner, inner1 -> new ApplicationGatewayImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ApplicationGatewayImpl(inner1, this.manager()));
     }
 
     public void start(String resourceGroupName, String applicationGatewayName) {
@@ -233,13 +233,15 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
     public PagedIterable<ApplicationGatewaySslPredefinedPolicy> listAvailableSslPredefinedPolicies() {
         PagedIterable<ApplicationGatewaySslPredefinedPolicyInner> inner
             = this.serviceClient().listAvailableSslPredefinedPolicies();
-        return Utils.mapPage(inner, inner1 -> new ApplicationGatewaySslPredefinedPolicyImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new ApplicationGatewaySslPredefinedPolicyImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ApplicationGatewaySslPredefinedPolicy> listAvailableSslPredefinedPolicies(Context context) {
         PagedIterable<ApplicationGatewaySslPredefinedPolicyInner> inner
             = this.serviceClient().listAvailableSslPredefinedPolicies(context);
-        return Utils.mapPage(inner, inner1 -> new ApplicationGatewaySslPredefinedPolicyImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new ApplicationGatewaySslPredefinedPolicyImpl(inner1, this.manager()));
     }
 
     public Response<ApplicationGatewaySslPredefinedPolicy>
@@ -265,12 +267,12 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
     }
 
     public ApplicationGateway getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String applicationGatewayName = Utils.getValueFromIdByName(id, "applicationGateways");
+        String applicationGatewayName = ResourceManagerUtils.getValueFromIdByName(id, "applicationGateways");
         if (applicationGatewayName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'applicationGateways'.", id)));
@@ -279,12 +281,12 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
     }
 
     public Response<ApplicationGateway> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String applicationGatewayName = Utils.getValueFromIdByName(id, "applicationGateways");
+        String applicationGatewayName = ResourceManagerUtils.getValueFromIdByName(id, "applicationGateways");
         if (applicationGatewayName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'applicationGateways'.", id)));
@@ -293,12 +295,12 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String applicationGatewayName = Utils.getValueFromIdByName(id, "applicationGateways");
+        String applicationGatewayName = ResourceManagerUtils.getValueFromIdByName(id, "applicationGateways");
         if (applicationGatewayName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'applicationGateways'.", id)));
@@ -307,12 +309,12 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
     }
 
     public void deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String applicationGatewayName = Utils.getValueFromIdByName(id, "applicationGateways");
+        String applicationGatewayName = ResourceManagerUtils.getValueFromIdByName(id, "applicationGateways");
         if (applicationGatewayName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'applicationGateways'.", id)));

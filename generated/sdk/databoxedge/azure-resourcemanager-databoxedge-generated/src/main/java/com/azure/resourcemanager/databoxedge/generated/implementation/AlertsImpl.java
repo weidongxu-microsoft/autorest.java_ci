@@ -29,13 +29,13 @@ public final class AlertsImpl implements Alerts {
 
     public PagedIterable<Alert> listByDataBoxEdgeDevice(String deviceName, String resourceGroupName) {
         PagedIterable<AlertInner> inner = this.serviceClient().listByDataBoxEdgeDevice(deviceName, resourceGroupName);
-        return Utils.mapPage(inner, inner1 -> new AlertImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new AlertImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Alert> listByDataBoxEdgeDevice(String deviceName, String resourceGroupName, Context context) {
         PagedIterable<AlertInner> inner
             = this.serviceClient().listByDataBoxEdgeDevice(deviceName, resourceGroupName, context);
-        return Utils.mapPage(inner, inner1 -> new AlertImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new AlertImpl(inner1, this.manager()));
     }
 
     public Response<Alert> getWithResponse(String deviceName, String name, String resourceGroupName, Context context) {

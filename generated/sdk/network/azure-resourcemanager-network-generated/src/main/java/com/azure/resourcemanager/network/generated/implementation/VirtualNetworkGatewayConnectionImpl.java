@@ -288,8 +288,9 @@ public final class VirtualNetworkGatewayConnectionImpl implements VirtualNetwork
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.virtualNetworkGatewayConnectionName = Utils.getValueFromIdByName(innerObject.id(), "connections");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.virtualNetworkGatewayConnectionName
+            = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "connections");
     }
 
     public VirtualNetworkGatewayConnection refresh() {

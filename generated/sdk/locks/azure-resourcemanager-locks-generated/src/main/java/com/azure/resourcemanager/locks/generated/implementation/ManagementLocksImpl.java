@@ -222,21 +222,21 @@ public final class ManagementLocksImpl implements ManagementLocks {
 
     public PagedIterable<ManagementLockObject> listByResourceGroup(String resourceGroupName) {
         PagedIterable<ManagementLockObjectInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return Utils.mapPage(inner, inner1 -> new ManagementLockObjectImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ManagementLockObjectImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ManagementLockObject> listByResourceGroup(String resourceGroupName, String filter,
         Context context) {
         PagedIterable<ManagementLockObjectInner> inner
             = this.serviceClient().listByResourceGroup(resourceGroupName, filter, context);
-        return Utils.mapPage(inner, inner1 -> new ManagementLockObjectImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ManagementLockObjectImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ManagementLockObject> listAtResourceLevel(String resourceGroupName,
         String resourceProviderNamespace, String parentResourcePath, String resourceType, String resourceName) {
         PagedIterable<ManagementLockObjectInner> inner = this.serviceClient().listAtResourceLevel(resourceGroupName,
             resourceProviderNamespace, parentResourcePath, resourceType, resourceName);
-        return Utils.mapPage(inner, inner1 -> new ManagementLockObjectImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ManagementLockObjectImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ManagementLockObject> listAtResourceLevel(String resourceGroupName,
@@ -244,36 +244,36 @@ public final class ManagementLocksImpl implements ManagementLocks {
         String filter, Context context) {
         PagedIterable<ManagementLockObjectInner> inner = this.serviceClient().listAtResourceLevel(resourceGroupName,
             resourceProviderNamespace, parentResourcePath, resourceType, resourceName, filter, context);
-        return Utils.mapPage(inner, inner1 -> new ManagementLockObjectImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ManagementLockObjectImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ManagementLockObject> list() {
         PagedIterable<ManagementLockObjectInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new ManagementLockObjectImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ManagementLockObjectImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ManagementLockObject> list(String filter, Context context) {
         PagedIterable<ManagementLockObjectInner> inner = this.serviceClient().list(filter, context);
-        return Utils.mapPage(inner, inner1 -> new ManagementLockObjectImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ManagementLockObjectImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ManagementLockObject> listByScope(String scope) {
         PagedIterable<ManagementLockObjectInner> inner = this.serviceClient().listByScope(scope);
-        return Utils.mapPage(inner, inner1 -> new ManagementLockObjectImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ManagementLockObjectImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ManagementLockObject> listByScope(String scope, String filter, Context context) {
         PagedIterable<ManagementLockObjectInner> inner = this.serviceClient().listByScope(scope, filter, context);
-        return Utils.mapPage(inner, inner1 -> new ManagementLockObjectImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ManagementLockObjectImpl(inner1, this.manager()));
     }
 
     public ManagementLockObject getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String lockName = Utils.getValueFromIdByName(id, "locks");
+        String lockName = ResourceManagerUtils.getValueFromIdByName(id, "locks");
         if (lockName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'locks'.", id)));
@@ -282,12 +282,12 @@ public final class ManagementLocksImpl implements ManagementLocks {
     }
 
     public Response<ManagementLockObject> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String lockName = Utils.getValueFromIdByName(id, "locks");
+        String lockName = ResourceManagerUtils.getValueFromIdByName(id, "locks");
         if (lockName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'locks'.", id)));
@@ -296,12 +296,12 @@ public final class ManagementLocksImpl implements ManagementLocks {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String lockName = Utils.getValueFromIdByName(id, "locks");
+        String lockName = ResourceManagerUtils.getValueFromIdByName(id, "locks");
         if (lockName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'locks'.", id)));
@@ -310,12 +310,12 @@ public final class ManagementLocksImpl implements ManagementLocks {
     }
 
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String lockName = Utils.getValueFromIdByName(id, "locks");
+        String lockName = ResourceManagerUtils.getValueFromIdByName(id, "locks");
         if (lockName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'locks'.", id)));

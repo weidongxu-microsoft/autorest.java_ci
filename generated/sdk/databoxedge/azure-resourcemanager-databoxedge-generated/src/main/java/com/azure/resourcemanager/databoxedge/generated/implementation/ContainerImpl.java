@@ -116,10 +116,10 @@ public final class ContainerImpl implements Container, Container.Definition, Con
         com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.deviceName = Utils.getValueFromIdByName(innerObject.id(), "dataBoxEdgeDevices");
-        this.storageAccountName = Utils.getValueFromIdByName(innerObject.id(), "storageAccounts");
-        this.containerName = Utils.getValueFromIdByName(innerObject.id(), "containers");
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.deviceName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "dataBoxEdgeDevices");
+        this.storageAccountName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "storageAccounts");
+        this.containerName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "containers");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
     }
 
     public Container refresh() {

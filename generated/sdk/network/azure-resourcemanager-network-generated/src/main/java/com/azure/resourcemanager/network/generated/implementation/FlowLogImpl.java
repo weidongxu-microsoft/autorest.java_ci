@@ -156,9 +156,9 @@ public final class FlowLogImpl implements FlowLog, FlowLog.Definition, FlowLog.U
     FlowLogImpl(FlowLogInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.networkWatcherName = Utils.getValueFromIdByName(innerObject.id(), "networkWatchers");
-        this.flowLogName = Utils.getValueFromIdByName(innerObject.id(), "flowLogs");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.networkWatcherName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "networkWatchers");
+        this.flowLogName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "flowLogs");
     }
 
     public FlowLog refresh() {

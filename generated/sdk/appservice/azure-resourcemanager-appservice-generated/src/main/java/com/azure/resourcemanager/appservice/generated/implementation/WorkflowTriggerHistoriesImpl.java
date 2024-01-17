@@ -31,14 +31,14 @@ public final class WorkflowTriggerHistoriesImpl implements WorkflowTriggerHistor
         String triggerName) {
         PagedIterable<WorkflowTriggerHistoryInner> inner
             = this.serviceClient().list(resourceGroupName, name, workflowName, triggerName);
-        return Utils.mapPage(inner, inner1 -> new WorkflowTriggerHistoryImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new WorkflowTriggerHistoryImpl(inner1, this.manager()));
     }
 
     public PagedIterable<WorkflowTriggerHistory> list(String resourceGroupName, String name, String workflowName,
         String triggerName, Integer top, String filter, Context context) {
         PagedIterable<WorkflowTriggerHistoryInner> inner
             = this.serviceClient().list(resourceGroupName, name, workflowName, triggerName, top, filter, context);
-        return Utils.mapPage(inner, inner1 -> new WorkflowTriggerHistoryImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new WorkflowTriggerHistoryImpl(inner1, this.manager()));
     }
 
     public Response<WorkflowTriggerHistory> getWithResponse(String resourceGroupName, String name, String workflowName,

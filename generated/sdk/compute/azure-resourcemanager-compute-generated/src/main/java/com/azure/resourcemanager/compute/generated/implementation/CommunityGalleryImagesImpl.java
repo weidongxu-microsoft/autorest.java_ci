@@ -50,13 +50,13 @@ public final class CommunityGalleryImagesImpl implements CommunityGalleryImages 
 
     public PagedIterable<CommunityGalleryImage> list(String location, String publicGalleryName) {
         PagedIterable<CommunityGalleryImageInner> inner = this.serviceClient().list(location, publicGalleryName);
-        return Utils.mapPage(inner, inner1 -> new CommunityGalleryImageImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new CommunityGalleryImageImpl(inner1, this.manager()));
     }
 
     public PagedIterable<CommunityGalleryImage> list(String location, String publicGalleryName, Context context) {
         PagedIterable<CommunityGalleryImageInner> inner
             = this.serviceClient().list(location, publicGalleryName, context);
-        return Utils.mapPage(inner, inner1 -> new CommunityGalleryImageImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new CommunityGalleryImageImpl(inner1, this.manager()));
     }
 
     private CommunityGalleryImagesClient serviceClient() {

@@ -27,12 +27,12 @@ public final class AvailableEndpointServicesImpl implements AvailableEndpointSer
 
     public PagedIterable<EndpointServiceResult> list(String location) {
         PagedIterable<EndpointServiceResultInner> inner = this.serviceClient().list(location);
-        return Utils.mapPage(inner, inner1 -> new EndpointServiceResultImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new EndpointServiceResultImpl(inner1, this.manager()));
     }
 
     public PagedIterable<EndpointServiceResult> list(String location, Context context) {
         PagedIterable<EndpointServiceResultInner> inner = this.serviceClient().list(location, context);
-        return Utils.mapPage(inner, inner1 -> new EndpointServiceResultImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new EndpointServiceResultImpl(inner1, this.manager()));
     }
 
     private AvailableEndpointServicesClient serviceClient() {

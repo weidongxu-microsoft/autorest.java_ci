@@ -27,14 +27,14 @@ public final class ServiceTagInformationsImpl implements ServiceTagInformations 
 
     public PagedIterable<ServiceTagInformation> list(String location) {
         PagedIterable<ServiceTagInformationInner> inner = this.serviceClient().list(location);
-        return Utils.mapPage(inner, inner1 -> new ServiceTagInformationImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ServiceTagInformationImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ServiceTagInformation> list(String location, Boolean noAddressPrefixes, String tagName,
         Context context) {
         PagedIterable<ServiceTagInformationInner> inner
             = this.serviceClient().list(location, noAddressPrefixes, tagName, context);
-        return Utils.mapPage(inner, inner1 -> new ServiceTagInformationImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ServiceTagInformationImpl(inner1, this.manager()));
     }
 
     private ServiceTagInformationsClient serviceClient() {

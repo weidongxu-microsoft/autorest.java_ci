@@ -191,9 +191,10 @@ public final class BackendAddressPoolImpl
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.loadBalancerName = Utils.getValueFromIdByName(innerObject.id(), "loadBalancers");
-        this.backendAddressPoolName = Utils.getValueFromIdByName(innerObject.id(), "backendAddressPools");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.loadBalancerName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "loadBalancers");
+        this.backendAddressPoolName
+            = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "backendAddressPools");
     }
 
     public BackendAddressPool refresh() {

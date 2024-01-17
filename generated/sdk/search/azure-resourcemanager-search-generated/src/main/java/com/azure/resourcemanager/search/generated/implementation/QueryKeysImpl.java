@@ -52,14 +52,14 @@ public final class QueryKeysImpl implements QueryKeys {
     public PagedIterable<QueryKey> listBySearchService(String resourceGroupName, String searchServiceName) {
         PagedIterable<QueryKeyInner> inner
             = this.serviceClient().listBySearchService(resourceGroupName, searchServiceName);
-        return Utils.mapPage(inner, inner1 -> new QueryKeyImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new QueryKeyImpl(inner1, this.manager()));
     }
 
     public PagedIterable<QueryKey> listBySearchService(String resourceGroupName, String searchServiceName,
         UUID clientRequestId, Context context) {
         PagedIterable<QueryKeyInner> inner
             = this.serviceClient().listBySearchService(resourceGroupName, searchServiceName, clientRequestId, context);
-        return Utils.mapPage(inner, inner1 -> new QueryKeyImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new QueryKeyImpl(inner1, this.manager()));
     }
 
     public Response<Void> deleteWithResponse(String resourceGroupName, String searchServiceName, String key,

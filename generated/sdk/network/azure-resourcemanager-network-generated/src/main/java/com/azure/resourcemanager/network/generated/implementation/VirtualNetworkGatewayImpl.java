@@ -266,8 +266,9 @@ public final class VirtualNetworkGatewayImpl
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.virtualNetworkGatewayName = Utils.getValueFromIdByName(innerObject.id(), "virtualNetworkGateways");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.virtualNetworkGatewayName
+            = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "virtualNetworkGateways");
     }
 
     public VirtualNetworkGateway refresh() {

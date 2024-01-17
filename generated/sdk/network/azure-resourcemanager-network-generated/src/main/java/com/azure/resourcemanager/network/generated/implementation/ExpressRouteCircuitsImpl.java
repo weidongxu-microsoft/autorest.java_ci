@@ -175,32 +175,32 @@ public final class ExpressRouteCircuitsImpl implements ExpressRouteCircuits {
 
     public PagedIterable<ExpressRouteCircuit> listByResourceGroup(String resourceGroupName) {
         PagedIterable<ExpressRouteCircuitInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return Utils.mapPage(inner, inner1 -> new ExpressRouteCircuitImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ExpressRouteCircuitImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ExpressRouteCircuit> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<ExpressRouteCircuitInner> inner
             = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return Utils.mapPage(inner, inner1 -> new ExpressRouteCircuitImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ExpressRouteCircuitImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ExpressRouteCircuit> list() {
         PagedIterable<ExpressRouteCircuitInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new ExpressRouteCircuitImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ExpressRouteCircuitImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ExpressRouteCircuit> list(Context context) {
         PagedIterable<ExpressRouteCircuitInner> inner = this.serviceClient().list(context);
-        return Utils.mapPage(inner, inner1 -> new ExpressRouteCircuitImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ExpressRouteCircuitImpl(inner1, this.manager()));
     }
 
     public ExpressRouteCircuit getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String circuitName = Utils.getValueFromIdByName(id, "expressRouteCircuits");
+        String circuitName = ResourceManagerUtils.getValueFromIdByName(id, "expressRouteCircuits");
         if (circuitName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'expressRouteCircuits'.", id)));
@@ -209,12 +209,12 @@ public final class ExpressRouteCircuitsImpl implements ExpressRouteCircuits {
     }
 
     public Response<ExpressRouteCircuit> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String circuitName = Utils.getValueFromIdByName(id, "expressRouteCircuits");
+        String circuitName = ResourceManagerUtils.getValueFromIdByName(id, "expressRouteCircuits");
         if (circuitName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'expressRouteCircuits'.", id)));
@@ -223,12 +223,12 @@ public final class ExpressRouteCircuitsImpl implements ExpressRouteCircuits {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String circuitName = Utils.getValueFromIdByName(id, "expressRouteCircuits");
+        String circuitName = ResourceManagerUtils.getValueFromIdByName(id, "expressRouteCircuits");
         if (circuitName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'expressRouteCircuits'.", id)));
@@ -237,12 +237,12 @@ public final class ExpressRouteCircuitsImpl implements ExpressRouteCircuits {
     }
 
     public void deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String circuitName = Utils.getValueFromIdByName(id, "expressRouteCircuits");
+        String circuitName = ResourceManagerUtils.getValueFromIdByName(id, "expressRouteCircuits");
         if (circuitName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'expressRouteCircuits'.", id)));

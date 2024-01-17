@@ -154,8 +154,8 @@ public final class AlertRuleResourceImpl
         com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourcegroups");
-        this.ruleName = Utils.getValueFromIdByName(innerObject.id(), "alertrules");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourcegroups");
+        this.ruleName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "alertrules");
     }
 
     public AlertRuleResource refresh() {

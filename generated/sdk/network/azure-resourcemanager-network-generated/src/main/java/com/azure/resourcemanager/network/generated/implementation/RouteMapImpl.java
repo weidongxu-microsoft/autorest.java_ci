@@ -125,9 +125,9 @@ public final class RouteMapImpl implements RouteMap, RouteMap.Definition, RouteM
     RouteMapImpl(RouteMapInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.virtualHubName = Utils.getValueFromIdByName(innerObject.id(), "virtualHubs");
-        this.routeMapName = Utils.getValueFromIdByName(innerObject.id(), "routeMaps");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.virtualHubName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "virtualHubs");
+        this.routeMapName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "routeMaps");
     }
 
     public RouteMap refresh() {

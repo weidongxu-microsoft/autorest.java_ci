@@ -162,8 +162,8 @@ public final class VirtualWanImpl implements VirtualWan, VirtualWan.Definition, 
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.virtualWanName = Utils.getValueFromIdByName(innerObject.id(), "virtualWans");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.virtualWanName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "virtualWans");
     }
 
     public VirtualWan refresh() {

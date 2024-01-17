@@ -31,14 +31,14 @@ public final class WorkbooksImpl implements Workbooks {
 
     public PagedIterable<Workbook> listByResourceGroup(String resourceGroupName, CategoryType category) {
         PagedIterable<WorkbookInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName, category);
-        return Utils.mapPage(inner, inner1 -> new WorkbookImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new WorkbookImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Workbook> listByResourceGroup(String resourceGroupName, CategoryType category,
         List<String> tags, Boolean canFetchContent, Context context) {
         PagedIterable<WorkbookInner> inner
             = this.serviceClient().listByResourceGroup(resourceGroupName, category, tags, canFetchContent, context);
-        return Utils.mapPage(inner, inner1 -> new WorkbookImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new WorkbookImpl(inner1, this.manager()));
     }
 
     public Response<Workbook> getByResourceGroupWithResponse(String resourceGroupName, String resourceName,
@@ -72,12 +72,12 @@ public final class WorkbooksImpl implements Workbooks {
     }
 
     public Workbook getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String resourceName = Utils.getValueFromIdByName(id, "workbooks");
+        String resourceName = ResourceManagerUtils.getValueFromIdByName(id, "workbooks");
         if (resourceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'workbooks'.", id)));
@@ -86,12 +86,12 @@ public final class WorkbooksImpl implements Workbooks {
     }
 
     public Response<Workbook> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String resourceName = Utils.getValueFromIdByName(id, "workbooks");
+        String resourceName = ResourceManagerUtils.getValueFromIdByName(id, "workbooks");
         if (resourceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'workbooks'.", id)));
@@ -100,12 +100,12 @@ public final class WorkbooksImpl implements Workbooks {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String resourceName = Utils.getValueFromIdByName(id, "workbooks");
+        String resourceName = ResourceManagerUtils.getValueFromIdByName(id, "workbooks");
         if (resourceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'workbooks'.", id)));
@@ -114,12 +114,12 @@ public final class WorkbooksImpl implements Workbooks {
     }
 
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String resourceName = Utils.getValueFromIdByName(id, "workbooks");
+        String resourceName = ResourceManagerUtils.getValueFromIdByName(id, "workbooks");
         if (resourceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'workbooks'.", id)));

@@ -77,13 +77,13 @@ public final class AdvancedThreatProtectionSettingsImpl implements AdvancedThrea
 
     public PagedIterable<AdvancedThreatProtection> list(String resourceGroupName, String serverName) {
         PagedIterable<AdvancedThreatProtectionInner> inner = this.serviceClient().list(resourceGroupName, serverName);
-        return Utils.mapPage(inner, inner1 -> new AdvancedThreatProtectionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new AdvancedThreatProtectionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AdvancedThreatProtection> list(String resourceGroupName, String serverName, Context context) {
         PagedIterable<AdvancedThreatProtectionInner> inner
             = this.serviceClient().list(resourceGroupName, serverName, context);
-        return Utils.mapPage(inner, inner1 -> new AdvancedThreatProtectionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new AdvancedThreatProtectionImpl(inner1, this.manager()));
     }
 
     private AdvancedThreatProtectionSettingsClient serviceClient() {

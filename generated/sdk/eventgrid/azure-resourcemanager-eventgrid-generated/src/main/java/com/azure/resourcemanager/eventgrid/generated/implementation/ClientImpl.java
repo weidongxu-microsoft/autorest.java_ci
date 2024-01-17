@@ -125,9 +125,9 @@ public final class ClientImpl implements Client, Client.Definition, Client.Updat
     ClientImpl(ClientInner innerObject, com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.namespaceName = Utils.getValueFromIdByName(innerObject.id(), "namespaces");
-        this.clientName = Utils.getValueFromIdByName(innerObject.id(), "clients");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.namespaceName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "namespaces");
+        this.clientName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "clients");
     }
 
     public Client refresh() {

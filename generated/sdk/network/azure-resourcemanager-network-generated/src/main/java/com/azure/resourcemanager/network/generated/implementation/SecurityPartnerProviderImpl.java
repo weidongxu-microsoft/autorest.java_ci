@@ -140,8 +140,9 @@ public final class SecurityPartnerProviderImpl
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.securityPartnerProviderName = Utils.getValueFromIdByName(innerObject.id(), "securityPartnerProviders");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.securityPartnerProviderName
+            = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "securityPartnerProviders");
     }
 
     public SecurityPartnerProvider refresh() {

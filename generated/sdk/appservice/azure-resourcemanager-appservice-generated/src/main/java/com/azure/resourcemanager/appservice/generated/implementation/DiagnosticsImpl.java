@@ -42,14 +42,14 @@ public final class DiagnosticsImpl implements Diagnostics {
         String name) {
         PagedIterable<DetectorResponseInner> inner
             = this.serviceClient().listHostingEnvironmentDetectorResponses(resourceGroupName, name);
-        return Utils.mapPage(inner, inner1 -> new DetectorResponseImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DetectorResponseImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DetectorResponse> listHostingEnvironmentDetectorResponses(String resourceGroupName,
         String name, Context context) {
         PagedIterable<DetectorResponseInner> inner
             = this.serviceClient().listHostingEnvironmentDetectorResponses(resourceGroupName, name, context);
-        return Utils.mapPage(inner, inner1 -> new DetectorResponseImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DetectorResponseImpl(inner1, this.manager()));
     }
 
     public Response<DetectorResponse> getHostingEnvironmentDetectorResponseWithResponse(String resourceGroupName,
@@ -79,14 +79,14 @@ public final class DiagnosticsImpl implements Diagnostics {
     public PagedIterable<DetectorResponse> listSiteDetectorResponses(String resourceGroupName, String siteName) {
         PagedIterable<DetectorResponseInner> inner
             = this.serviceClient().listSiteDetectorResponses(resourceGroupName, siteName);
-        return Utils.mapPage(inner, inner1 -> new DetectorResponseImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DetectorResponseImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DetectorResponse> listSiteDetectorResponses(String resourceGroupName, String siteName,
         Context context) {
         PagedIterable<DetectorResponseInner> inner
             = this.serviceClient().listSiteDetectorResponses(resourceGroupName, siteName, context);
-        return Utils.mapPage(inner, inner1 -> new DetectorResponseImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DetectorResponseImpl(inner1, this.manager()));
     }
 
     public Response<DetectorResponse> getSiteDetectorResponseWithResponse(String resourceGroupName, String siteName,
@@ -114,14 +114,14 @@ public final class DiagnosticsImpl implements Diagnostics {
     public PagedIterable<DiagnosticCategory> listSiteDiagnosticCategories(String resourceGroupName, String siteName) {
         PagedIterable<DiagnosticCategoryInner> inner
             = this.serviceClient().listSiteDiagnosticCategories(resourceGroupName, siteName);
-        return Utils.mapPage(inner, inner1 -> new DiagnosticCategoryImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DiagnosticCategoryImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DiagnosticCategory> listSiteDiagnosticCategories(String resourceGroupName, String siteName,
         Context context) {
         PagedIterable<DiagnosticCategoryInner> inner
             = this.serviceClient().listSiteDiagnosticCategories(resourceGroupName, siteName, context);
-        return Utils.mapPage(inner, inner1 -> new DiagnosticCategoryImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DiagnosticCategoryImpl(inner1, this.manager()));
     }
 
     public Response<DiagnosticCategory> getSiteDiagnosticCategoryWithResponse(String resourceGroupName, String siteName,
@@ -151,14 +151,14 @@ public final class DiagnosticsImpl implements Diagnostics {
         String diagnosticCategory) {
         PagedIterable<AnalysisDefinitionInner> inner
             = this.serviceClient().listSiteAnalyses(resourceGroupName, siteName, diagnosticCategory);
-        return Utils.mapPage(inner, inner1 -> new AnalysisDefinitionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new AnalysisDefinitionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AnalysisDefinition> listSiteAnalyses(String resourceGroupName, String siteName,
         String diagnosticCategory, Context context) {
         PagedIterable<AnalysisDefinitionInner> inner
             = this.serviceClient().listSiteAnalyses(resourceGroupName, siteName, diagnosticCategory, context);
-        return Utils.mapPage(inner, inner1 -> new AnalysisDefinitionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new AnalysisDefinitionImpl(inner1, this.manager()));
     }
 
     public Response<AnalysisDefinition> getSiteAnalysisWithResponse(String resourceGroupName, String siteName,
@@ -212,14 +212,16 @@ public final class DiagnosticsImpl implements Diagnostics {
         String diagnosticCategory) {
         PagedIterable<DetectorDefinitionResourceInner> inner
             = this.serviceClient().listSiteDetectors(resourceGroupName, siteName, diagnosticCategory);
-        return Utils.mapPage(inner, inner1 -> new DetectorDefinitionResourceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new DetectorDefinitionResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DetectorDefinitionResource> listSiteDetectors(String resourceGroupName, String siteName,
         String diagnosticCategory, Context context) {
         PagedIterable<DetectorDefinitionResourceInner> inner
             = this.serviceClient().listSiteDetectors(resourceGroupName, siteName, diagnosticCategory, context);
-        return Utils.mapPage(inner, inner1 -> new DetectorDefinitionResourceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new DetectorDefinitionResourceImpl(inner1, this.manager()));
     }
 
     public Response<DetectorDefinitionResource> getSiteDetectorWithResponse(String resourceGroupName, String siteName,
@@ -273,14 +275,14 @@ public final class DiagnosticsImpl implements Diagnostics {
         String slot) {
         PagedIterable<DetectorResponseInner> inner
             = this.serviceClient().listSiteDetectorResponsesSlot(resourceGroupName, siteName, slot);
-        return Utils.mapPage(inner, inner1 -> new DetectorResponseImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DetectorResponseImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DetectorResponse> listSiteDetectorResponsesSlot(String resourceGroupName, String siteName,
         String slot, Context context) {
         PagedIterable<DetectorResponseInner> inner
             = this.serviceClient().listSiteDetectorResponsesSlot(resourceGroupName, siteName, slot, context);
-        return Utils.mapPage(inner, inner1 -> new DetectorResponseImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DetectorResponseImpl(inner1, this.manager()));
     }
 
     public Response<DetectorResponse> getSiteDetectorResponseSlotWithResponse(String resourceGroupName, String siteName,
@@ -311,14 +313,14 @@ public final class DiagnosticsImpl implements Diagnostics {
         String slot) {
         PagedIterable<DiagnosticCategoryInner> inner
             = this.serviceClient().listSiteDiagnosticCategoriesSlot(resourceGroupName, siteName, slot);
-        return Utils.mapPage(inner, inner1 -> new DiagnosticCategoryImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DiagnosticCategoryImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DiagnosticCategory> listSiteDiagnosticCategoriesSlot(String resourceGroupName, String siteName,
         String slot, Context context) {
         PagedIterable<DiagnosticCategoryInner> inner
             = this.serviceClient().listSiteDiagnosticCategoriesSlot(resourceGroupName, siteName, slot, context);
-        return Utils.mapPage(inner, inner1 -> new DiagnosticCategoryImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DiagnosticCategoryImpl(inner1, this.manager()));
     }
 
     public Response<DiagnosticCategory> getSiteDiagnosticCategorySlotWithResponse(String resourceGroupName,
@@ -348,14 +350,14 @@ public final class DiagnosticsImpl implements Diagnostics {
         String diagnosticCategory, String slot) {
         PagedIterable<AnalysisDefinitionInner> inner
             = this.serviceClient().listSiteAnalysesSlot(resourceGroupName, siteName, diagnosticCategory, slot);
-        return Utils.mapPage(inner, inner1 -> new AnalysisDefinitionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new AnalysisDefinitionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AnalysisDefinition> listSiteAnalysesSlot(String resourceGroupName, String siteName,
         String diagnosticCategory, String slot, Context context) {
         PagedIterable<AnalysisDefinitionInner> inner
             = this.serviceClient().listSiteAnalysesSlot(resourceGroupName, siteName, diagnosticCategory, slot, context);
-        return Utils.mapPage(inner, inner1 -> new AnalysisDefinitionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new AnalysisDefinitionImpl(inner1, this.manager()));
     }
 
     public Response<AnalysisDefinition> getSiteAnalysisSlotWithResponse(String resourceGroupName, String siteName,
@@ -410,14 +412,16 @@ public final class DiagnosticsImpl implements Diagnostics {
         String diagnosticCategory, String slot) {
         PagedIterable<DetectorDefinitionResourceInner> inner
             = this.serviceClient().listSiteDetectorsSlot(resourceGroupName, siteName, diagnosticCategory, slot);
-        return Utils.mapPage(inner, inner1 -> new DetectorDefinitionResourceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new DetectorDefinitionResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DetectorDefinitionResource> listSiteDetectorsSlot(String resourceGroupName, String siteName,
         String diagnosticCategory, String slot, Context context) {
         PagedIterable<DetectorDefinitionResourceInner> inner = this.serviceClient()
             .listSiteDetectorsSlot(resourceGroupName, siteName, diagnosticCategory, slot, context);
-        return Utils.mapPage(inner, inner1 -> new DetectorDefinitionResourceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new DetectorDefinitionResourceImpl(inner1, this.manager()));
     }
 
     public Response<DetectorDefinitionResource> getSiteDetectorSlotWithResponse(String resourceGroupName,

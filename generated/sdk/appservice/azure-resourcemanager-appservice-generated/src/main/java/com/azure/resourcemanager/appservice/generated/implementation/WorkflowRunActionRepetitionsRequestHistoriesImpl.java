@@ -33,14 +33,14 @@ public final class WorkflowRunActionRepetitionsRequestHistoriesImpl
         String runName, String actionName, String repetitionName) {
         PagedIterable<RequestHistoryInner> inner
             = this.serviceClient().list(resourceGroupName, name, workflowName, runName, actionName, repetitionName);
-        return Utils.mapPage(inner, inner1 -> new RequestHistoryImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new RequestHistoryImpl(inner1, this.manager()));
     }
 
     public PagedIterable<RequestHistory> list(String resourceGroupName, String name, String workflowName,
         String runName, String actionName, String repetitionName, Context context) {
         PagedIterable<RequestHistoryInner> inner = this.serviceClient().list(resourceGroupName, name, workflowName,
             runName, actionName, repetitionName, context);
-        return Utils.mapPage(inner, inner1 -> new RequestHistoryImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new RequestHistoryImpl(inner1, this.manager()));
     }
 
     public Response<RequestHistory> getWithResponse(String resourceGroupName, String name, String workflowName,

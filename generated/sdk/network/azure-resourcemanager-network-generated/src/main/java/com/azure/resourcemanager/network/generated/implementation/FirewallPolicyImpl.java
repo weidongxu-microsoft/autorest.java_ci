@@ -213,8 +213,8 @@ public final class FirewallPolicyImpl implements FirewallPolicy, FirewallPolicy.
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.firewallPolicyName = Utils.getValueFromIdByName(innerObject.id(), "firewallPolicies");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.firewallPolicyName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "firewallPolicies");
     }
 
     public FirewallPolicy refresh() {

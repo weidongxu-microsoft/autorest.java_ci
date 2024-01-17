@@ -28,14 +28,14 @@ public final class MhsmRegionsImpl implements MhsmRegions {
     public PagedIterable<MhsmGeoReplicatedRegion> listByResource(String resourceGroupName, String name) {
         PagedIterable<MhsmGeoReplicatedRegionInner> inner
             = this.serviceClient().listByResource(resourceGroupName, name);
-        return Utils.mapPage(inner, inner1 -> new MhsmGeoReplicatedRegionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new MhsmGeoReplicatedRegionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<MhsmGeoReplicatedRegion> listByResource(String resourceGroupName, String name,
         Context context) {
         PagedIterable<MhsmGeoReplicatedRegionInner> inner
             = this.serviceClient().listByResource(resourceGroupName, name, context);
-        return Utils.mapPage(inner, inner1 -> new MhsmGeoReplicatedRegionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new MhsmGeoReplicatedRegionImpl(inner1, this.manager()));
     }
 
     private MhsmRegionsClient serviceClient() {

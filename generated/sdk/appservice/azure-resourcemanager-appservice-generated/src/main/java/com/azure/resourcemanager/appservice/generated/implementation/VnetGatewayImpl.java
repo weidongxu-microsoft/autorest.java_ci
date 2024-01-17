@@ -110,11 +110,11 @@ public final class VnetGatewayImpl implements VnetGateway, VnetGateway.Definitio
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.name = Utils.getValueFromIdByName(innerObject.id(), "sites");
-        this.vnetName = Utils.getValueFromIdByName(innerObject.id(), "virtualNetworkConnections");
-        this.gatewayName = Utils.getValueFromIdByName(innerObject.id(), "gateways");
-        this.slot = Utils.getValueFromIdByName(innerObject.id(), "slots");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.name = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "sites");
+        this.vnetName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "virtualNetworkConnections");
+        this.gatewayName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "gateways");
+        this.slot = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "slots");
     }
 
     public VnetGateway refresh() {

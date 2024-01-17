@@ -27,12 +27,12 @@ public final class AvailableSkusImpl implements AvailableSkus {
 
     public PagedIterable<DataBoxEdgeSku> list() {
         PagedIterable<DataBoxEdgeSkuInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new DataBoxEdgeSkuImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DataBoxEdgeSkuImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DataBoxEdgeSku> list(Context context) {
         PagedIterable<DataBoxEdgeSkuInner> inner = this.serviceClient().list(context);
-        return Utils.mapPage(inner, inner1 -> new DataBoxEdgeSkuImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DataBoxEdgeSkuImpl(inner1, this.manager()));
     }
 
     private AvailableSkusClient serviceClient() {

@@ -111,7 +111,7 @@ public final class PolicyDefinitionImpl
         com.azure.resourcemanager.policy.generated.PolicyManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.policyDefinitionName = Utils.getValueFromIdByName(innerObject.id(), "policyDefinitions");
+        this.policyDefinitionName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "policyDefinitions");
     }
 
     public PolicyDefinition refresh() {

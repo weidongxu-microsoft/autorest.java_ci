@@ -107,9 +107,10 @@ public final class VirtualApplianceSiteImpl
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.networkVirtualApplianceName = Utils.getValueFromIdByName(innerObject.id(), "networkVirtualAppliances");
-        this.siteName = Utils.getValueFromIdByName(innerObject.id(), "virtualApplianceSites");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.networkVirtualApplianceName
+            = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "networkVirtualAppliances");
+        this.siteName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "virtualApplianceSites");
     }
 
     public VirtualApplianceSite refresh() {

@@ -87,14 +87,16 @@ public final class NetworkVirtualApplianceConnectionsImpl implements NetworkVirt
         String networkVirtualApplianceName) {
         PagedIterable<NetworkVirtualApplianceConnectionInner> inner
             = this.serviceClient().list(resourceGroupName, networkVirtualApplianceName);
-        return Utils.mapPage(inner, inner1 -> new NetworkVirtualApplianceConnectionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new NetworkVirtualApplianceConnectionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<NetworkVirtualApplianceConnection> list(String resourceGroupName,
         String networkVirtualApplianceName, Context context) {
         PagedIterable<NetworkVirtualApplianceConnectionInner> inner
             = this.serviceClient().list(resourceGroupName, networkVirtualApplianceName, context);
-        return Utils.mapPage(inner, inner1 -> new NetworkVirtualApplianceConnectionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new NetworkVirtualApplianceConnectionImpl(inner1, this.manager()));
     }
 
     private NetworkVirtualApplianceConnectionsClient serviceClient() {

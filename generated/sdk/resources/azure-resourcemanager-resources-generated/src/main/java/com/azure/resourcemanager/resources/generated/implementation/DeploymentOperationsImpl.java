@@ -50,14 +50,14 @@ public final class DeploymentOperationsImpl implements DeploymentOperations {
 
     public PagedIterable<DeploymentOperation> listAtScope(String scope, String deploymentName) {
         PagedIterable<DeploymentOperationInner> inner = this.serviceClient().listAtScope(scope, deploymentName);
-        return Utils.mapPage(inner, inner1 -> new DeploymentOperationImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DeploymentOperationImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DeploymentOperation> listAtScope(String scope, String deploymentName, Integer top,
         Context context) {
         PagedIterable<DeploymentOperationInner> inner
             = this.serviceClient().listAtScope(scope, deploymentName, top, context);
-        return Utils.mapPage(inner, inner1 -> new DeploymentOperationImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DeploymentOperationImpl(inner1, this.manager()));
     }
 
     public Response<DeploymentOperation> getAtTenantScopeWithResponse(String deploymentName, String operationId,
@@ -83,13 +83,13 @@ public final class DeploymentOperationsImpl implements DeploymentOperations {
 
     public PagedIterable<DeploymentOperation> listAtTenantScope(String deploymentName) {
         PagedIterable<DeploymentOperationInner> inner = this.serviceClient().listAtTenantScope(deploymentName);
-        return Utils.mapPage(inner, inner1 -> new DeploymentOperationImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DeploymentOperationImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DeploymentOperation> listAtTenantScope(String deploymentName, Integer top, Context context) {
         PagedIterable<DeploymentOperationInner> inner
             = this.serviceClient().listAtTenantScope(deploymentName, top, context);
-        return Utils.mapPage(inner, inner1 -> new DeploymentOperationImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DeploymentOperationImpl(inner1, this.manager()));
     }
 
     public Response<DeploymentOperation> getAtManagementGroupScopeWithResponse(String groupId, String deploymentName,
@@ -117,14 +117,14 @@ public final class DeploymentOperationsImpl implements DeploymentOperations {
     public PagedIterable<DeploymentOperation> listAtManagementGroupScope(String groupId, String deploymentName) {
         PagedIterable<DeploymentOperationInner> inner
             = this.serviceClient().listAtManagementGroupScope(groupId, deploymentName);
-        return Utils.mapPage(inner, inner1 -> new DeploymentOperationImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DeploymentOperationImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DeploymentOperation> listAtManagementGroupScope(String groupId, String deploymentName,
         Integer top, Context context) {
         PagedIterable<DeploymentOperationInner> inner
             = this.serviceClient().listAtManagementGroupScope(groupId, deploymentName, top, context);
-        return Utils.mapPage(inner, inner1 -> new DeploymentOperationImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DeploymentOperationImpl(inner1, this.manager()));
     }
 
     public Response<DeploymentOperation> getAtSubscriptionScopeWithResponse(String deploymentName, String operationId,
@@ -150,14 +150,14 @@ public final class DeploymentOperationsImpl implements DeploymentOperations {
 
     public PagedIterable<DeploymentOperation> listAtSubscriptionScope(String deploymentName) {
         PagedIterable<DeploymentOperationInner> inner = this.serviceClient().listAtSubscriptionScope(deploymentName);
-        return Utils.mapPage(inner, inner1 -> new DeploymentOperationImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DeploymentOperationImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DeploymentOperation> listAtSubscriptionScope(String deploymentName, Integer top,
         Context context) {
         PagedIterable<DeploymentOperationInner> inner
             = this.serviceClient().listAtSubscriptionScope(deploymentName, top, context);
-        return Utils.mapPage(inner, inner1 -> new DeploymentOperationImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DeploymentOperationImpl(inner1, this.manager()));
     }
 
     public Response<DeploymentOperation> getWithResponse(String resourceGroupName, String deploymentName,
@@ -184,14 +184,14 @@ public final class DeploymentOperationsImpl implements DeploymentOperations {
     public PagedIterable<DeploymentOperation> listByResourceGroup(String resourceGroupName, String deploymentName) {
         PagedIterable<DeploymentOperationInner> inner
             = this.serviceClient().listByResourceGroup(resourceGroupName, deploymentName);
-        return Utils.mapPage(inner, inner1 -> new DeploymentOperationImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DeploymentOperationImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DeploymentOperation> listByResourceGroup(String resourceGroupName, String deploymentName,
         Integer top, Context context) {
         PagedIterable<DeploymentOperationInner> inner
             = this.serviceClient().listByResourceGroup(resourceGroupName, deploymentName, top, context);
-        return Utils.mapPage(inner, inner1 -> new DeploymentOperationImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DeploymentOperationImpl(inner1, this.manager()));
     }
 
     private DeploymentOperationsClient serviceClient() {

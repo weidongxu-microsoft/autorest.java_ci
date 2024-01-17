@@ -104,10 +104,10 @@ public final class ManagementPolicyImpl
         com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.accountName = Utils.getValueFromIdByName(innerObject.id(), "storageAccounts");
-        this.managementPolicyName
-            = ManagementPolicyName.fromString(Utils.getValueFromIdByName(innerObject.id(), "managementPolicies"));
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.accountName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "storageAccounts");
+        this.managementPolicyName = ManagementPolicyName
+            .fromString(ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "managementPolicies"));
     }
 
     public ManagementPolicy refresh() {

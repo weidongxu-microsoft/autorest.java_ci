@@ -151,14 +151,14 @@ public final class VirtualMachineScaleSetVMsImpl implements VirtualMachineScaleS
     public PagedIterable<VirtualMachineScaleSetVM> list(String resourceGroupName, String virtualMachineScaleSetName) {
         PagedIterable<VirtualMachineScaleSetVMInner> inner
             = this.serviceClient().list(resourceGroupName, virtualMachineScaleSetName);
-        return Utils.mapPage(inner, inner1 -> new VirtualMachineScaleSetVMImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new VirtualMachineScaleSetVMImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualMachineScaleSetVM> list(String resourceGroupName, String virtualMachineScaleSetName,
         String filter, String select, String expand, Context context) {
         PagedIterable<VirtualMachineScaleSetVMInner> inner
             = this.serviceClient().list(resourceGroupName, virtualMachineScaleSetName, filter, select, expand, context);
-        return Utils.mapPage(inner, inner1 -> new VirtualMachineScaleSetVMImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new VirtualMachineScaleSetVMImpl(inner1, this.manager()));
     }
 
     public void powerOff(String resourceGroupName, String vmScaleSetName, String instanceId) {

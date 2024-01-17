@@ -31,14 +31,14 @@ public final class AdminRuleCollectionsImpl implements AdminRuleCollections {
         String configurationName) {
         PagedIterable<AdminRuleCollectionInner> inner
             = this.serviceClient().list(resourceGroupName, networkManagerName, configurationName);
-        return Utils.mapPage(inner, inner1 -> new AdminRuleCollectionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new AdminRuleCollectionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AdminRuleCollection> list(String resourceGroupName, String networkManagerName,
         String configurationName, Integer top, String skipToken, Context context) {
         PagedIterable<AdminRuleCollectionInner> inner = this.serviceClient().list(resourceGroupName, networkManagerName,
             configurationName, top, skipToken, context);
-        return Utils.mapPage(inner, inner1 -> new AdminRuleCollectionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new AdminRuleCollectionImpl(inner1, this.manager()));
     }
 
     public Response<AdminRuleCollection> getWithResponse(String resourceGroupName, String networkManagerName,
@@ -76,22 +76,22 @@ public final class AdminRuleCollectionsImpl implements AdminRuleCollections {
     }
 
     public AdminRuleCollection getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String networkManagerName = Utils.getValueFromIdByName(id, "networkManagers");
+        String networkManagerName = ResourceManagerUtils.getValueFromIdByName(id, "networkManagers");
         if (networkManagerName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'networkManagers'.", id)));
         }
-        String configurationName = Utils.getValueFromIdByName(id, "securityAdminConfigurations");
+        String configurationName = ResourceManagerUtils.getValueFromIdByName(id, "securityAdminConfigurations");
         if (configurationName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'securityAdminConfigurations'.", id)));
         }
-        String ruleCollectionName = Utils.getValueFromIdByName(id, "ruleCollections");
+        String ruleCollectionName = ResourceManagerUtils.getValueFromIdByName(id, "ruleCollections");
         if (ruleCollectionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'ruleCollections'.", id)));
@@ -102,22 +102,22 @@ public final class AdminRuleCollectionsImpl implements AdminRuleCollections {
     }
 
     public Response<AdminRuleCollection> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String networkManagerName = Utils.getValueFromIdByName(id, "networkManagers");
+        String networkManagerName = ResourceManagerUtils.getValueFromIdByName(id, "networkManagers");
         if (networkManagerName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'networkManagers'.", id)));
         }
-        String configurationName = Utils.getValueFromIdByName(id, "securityAdminConfigurations");
+        String configurationName = ResourceManagerUtils.getValueFromIdByName(id, "securityAdminConfigurations");
         if (configurationName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'securityAdminConfigurations'.", id)));
         }
-        String ruleCollectionName = Utils.getValueFromIdByName(id, "ruleCollections");
+        String ruleCollectionName = ResourceManagerUtils.getValueFromIdByName(id, "ruleCollections");
         if (ruleCollectionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'ruleCollections'.", id)));
@@ -127,22 +127,22 @@ public final class AdminRuleCollectionsImpl implements AdminRuleCollections {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String networkManagerName = Utils.getValueFromIdByName(id, "networkManagers");
+        String networkManagerName = ResourceManagerUtils.getValueFromIdByName(id, "networkManagers");
         if (networkManagerName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'networkManagers'.", id)));
         }
-        String configurationName = Utils.getValueFromIdByName(id, "securityAdminConfigurations");
+        String configurationName = ResourceManagerUtils.getValueFromIdByName(id, "securityAdminConfigurations");
         if (configurationName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'securityAdminConfigurations'.", id)));
         }
-        String ruleCollectionName = Utils.getValueFromIdByName(id, "ruleCollections");
+        String ruleCollectionName = ResourceManagerUtils.getValueFromIdByName(id, "ruleCollections");
         if (ruleCollectionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'ruleCollections'.", id)));
@@ -153,22 +153,22 @@ public final class AdminRuleCollectionsImpl implements AdminRuleCollections {
     }
 
     public void deleteByIdWithResponse(String id, Boolean force, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String networkManagerName = Utils.getValueFromIdByName(id, "networkManagers");
+        String networkManagerName = ResourceManagerUtils.getValueFromIdByName(id, "networkManagers");
         if (networkManagerName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'networkManagers'.", id)));
         }
-        String configurationName = Utils.getValueFromIdByName(id, "securityAdminConfigurations");
+        String configurationName = ResourceManagerUtils.getValueFromIdByName(id, "securityAdminConfigurations");
         if (configurationName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'securityAdminConfigurations'.", id)));
         }
-        String ruleCollectionName = Utils.getValueFromIdByName(id, "ruleCollections");
+        String ruleCollectionName = ResourceManagerUtils.getValueFromIdByName(id, "ruleCollections");
         if (ruleCollectionName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'ruleCollections'.", id)));

@@ -33,14 +33,14 @@ public final class WorkflowTriggersImpl implements WorkflowTriggers {
 
     public PagedIterable<WorkflowTrigger> list(String resourceGroupName, String name, String workflowName) {
         PagedIterable<WorkflowTriggerInner> inner = this.serviceClient().list(resourceGroupName, name, workflowName);
-        return Utils.mapPage(inner, inner1 -> new WorkflowTriggerImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new WorkflowTriggerImpl(inner1, this.manager()));
     }
 
     public PagedIterable<WorkflowTrigger> list(String resourceGroupName, String name, String workflowName, Integer top,
         String filter, Context context) {
         PagedIterable<WorkflowTriggerInner> inner
             = this.serviceClient().list(resourceGroupName, name, workflowName, top, filter, context);
-        return Utils.mapPage(inner, inner1 -> new WorkflowTriggerImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new WorkflowTriggerImpl(inner1, this.manager()));
     }
 
     public Response<WorkflowTrigger> getWithResponse(String resourceGroupName, String name, String workflowName,

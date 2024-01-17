@@ -30,14 +30,16 @@ public final class NetworkInterfaceIpConfigurationsImpl implements NetworkInterf
     public PagedIterable<NetworkInterfaceIpConfiguration> list(String resourceGroupName, String networkInterfaceName) {
         PagedIterable<NetworkInterfaceIpConfigurationInner> inner
             = this.serviceClient().list(resourceGroupName, networkInterfaceName);
-        return Utils.mapPage(inner, inner1 -> new NetworkInterfaceIpConfigurationImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new NetworkInterfaceIpConfigurationImpl(inner1, this.manager()));
     }
 
     public PagedIterable<NetworkInterfaceIpConfiguration> list(String resourceGroupName, String networkInterfaceName,
         Context context) {
         PagedIterable<NetworkInterfaceIpConfigurationInner> inner
             = this.serviceClient().list(resourceGroupName, networkInterfaceName, context);
-        return Utils.mapPage(inner, inner1 -> new NetworkInterfaceIpConfigurationImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new NetworkInterfaceIpConfigurationImpl(inner1, this.manager()));
     }
 
     public Response<NetworkInterfaceIpConfiguration> getWithResponse(String resourceGroupName,

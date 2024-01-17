@@ -32,14 +32,14 @@ public final class WorkflowRunActionsImpl implements WorkflowRunActions {
         String runName) {
         PagedIterable<WorkflowRunActionInner> inner
             = this.serviceClient().list(resourceGroupName, name, workflowName, runName);
-        return Utils.mapPage(inner, inner1 -> new WorkflowRunActionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new WorkflowRunActionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<WorkflowRunAction> list(String resourceGroupName, String name, String workflowName,
         String runName, Integer top, String filter, Context context) {
         PagedIterable<WorkflowRunActionInner> inner
             = this.serviceClient().list(resourceGroupName, name, workflowName, runName, top, filter, context);
-        return Utils.mapPage(inner, inner1 -> new WorkflowRunActionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new WorkflowRunActionImpl(inner1, this.manager()));
     }
 
     public Response<WorkflowRunAction> getWithResponse(String resourceGroupName, String name, String workflowName,

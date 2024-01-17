@@ -27,26 +27,26 @@ public final class PermissionsImpl implements Permissions {
 
     public PagedIterable<Permission> listByResourceGroup(String resourceGroupName) {
         PagedIterable<PermissionInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return Utils.mapPage(inner, inner1 -> new PermissionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PermissionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Permission> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<PermissionInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return Utils.mapPage(inner, inner1 -> new PermissionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PermissionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Permission> listForResource(String resourceGroupName, String resourceProviderNamespace,
         String parentResourcePath, String resourceType, String resourceName) {
         PagedIterable<PermissionInner> inner = this.serviceClient().listForResource(resourceGroupName,
             resourceProviderNamespace, parentResourcePath, resourceType, resourceName);
-        return Utils.mapPage(inner, inner1 -> new PermissionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PermissionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Permission> listForResource(String resourceGroupName, String resourceProviderNamespace,
         String parentResourcePath, String resourceType, String resourceName, Context context) {
         PagedIterable<PermissionInner> inner = this.serviceClient().listForResource(resourceGroupName,
             resourceProviderNamespace, parentResourcePath, resourceType, resourceName, context);
-        return Utils.mapPage(inner, inner1 -> new PermissionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PermissionImpl(inner1, this.manager()));
     }
 
     private PermissionsClient serviceClient() {

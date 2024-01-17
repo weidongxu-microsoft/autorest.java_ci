@@ -27,13 +27,13 @@ public final class ServerBasedPerformanceTiersImpl implements ServerBasedPerform
 
     public PagedIterable<PerformanceTierProperties> list(String resourceGroupName, String serverName) {
         PagedIterable<PerformanceTierPropertiesInner> inner = this.serviceClient().list(resourceGroupName, serverName);
-        return Utils.mapPage(inner, inner1 -> new PerformanceTierPropertiesImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PerformanceTierPropertiesImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PerformanceTierProperties> list(String resourceGroupName, String serverName, Context context) {
         PagedIterable<PerformanceTierPropertiesInner> inner
             = this.serviceClient().list(resourceGroupName, serverName, context);
-        return Utils.mapPage(inner, inner1 -> new PerformanceTierPropertiesImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new PerformanceTierPropertiesImpl(inner1, this.manager()));
     }
 
     private ServerBasedPerformanceTiersClient serviceClient() {

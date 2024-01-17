@@ -27,12 +27,12 @@ public final class ReservationRecommendationsImpl implements ReservationRecommen
 
     public PagedIterable<ReservationRecommendation> list(String resourceScope) {
         PagedIterable<ReservationRecommendationInner> inner = this.serviceClient().list(resourceScope);
-        return Utils.mapPage(inner, inner1 -> new ReservationRecommendationImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ReservationRecommendationImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ReservationRecommendation> list(String resourceScope, String filter, Context context) {
         PagedIterable<ReservationRecommendationInner> inner = this.serviceClient().list(resourceScope, filter, context);
-        return Utils.mapPage(inner, inner1 -> new ReservationRecommendationImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ReservationRecommendationImpl(inner1, this.manager()));
     }
 
     private ReservationRecommendationsClient serviceClient() {

@@ -105,9 +105,9 @@ public final class ClientGroupImpl implements ClientGroup, ClientGroup.Definitio
         com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.namespaceName = Utils.getValueFromIdByName(innerObject.id(), "namespaces");
-        this.clientGroupName = Utils.getValueFromIdByName(innerObject.id(), "clientGroups");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.namespaceName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "namespaces");
+        this.clientGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "clientGroups");
     }
 
     public ClientGroup refresh() {

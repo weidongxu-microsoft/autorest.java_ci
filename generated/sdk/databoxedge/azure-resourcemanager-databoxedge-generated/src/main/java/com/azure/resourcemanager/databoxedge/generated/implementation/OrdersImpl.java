@@ -31,13 +31,13 @@ public final class OrdersImpl implements Orders {
 
     public PagedIterable<Order> listByDataBoxEdgeDevice(String deviceName, String resourceGroupName) {
         PagedIterable<OrderInner> inner = this.serviceClient().listByDataBoxEdgeDevice(deviceName, resourceGroupName);
-        return Utils.mapPage(inner, inner1 -> new OrderImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new OrderImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Order> listByDataBoxEdgeDevice(String deviceName, String resourceGroupName, Context context) {
         PagedIterable<OrderInner> inner
             = this.serviceClient().listByDataBoxEdgeDevice(deviceName, resourceGroupName, context);
-        return Utils.mapPage(inner, inner1 -> new OrderImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new OrderImpl(inner1, this.manager()));
     }
 
     public Response<Order> getWithResponse(String deviceName, String resourceGroupName, Context context) {

@@ -29,23 +29,23 @@ public final class MetricAlertsImpl implements MetricAlerts {
 
     public PagedIterable<MetricAlertResource> list() {
         PagedIterable<MetricAlertResourceInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new MetricAlertResourceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new MetricAlertResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<MetricAlertResource> list(Context context) {
         PagedIterable<MetricAlertResourceInner> inner = this.serviceClient().list(context);
-        return Utils.mapPage(inner, inner1 -> new MetricAlertResourceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new MetricAlertResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<MetricAlertResource> listByResourceGroup(String resourceGroupName) {
         PagedIterable<MetricAlertResourceInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return Utils.mapPage(inner, inner1 -> new MetricAlertResourceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new MetricAlertResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<MetricAlertResource> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<MetricAlertResourceInner> inner
             = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return Utils.mapPage(inner, inner1 -> new MetricAlertResourceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new MetricAlertResourceImpl(inner1, this.manager()));
     }
 
     public Response<MetricAlertResource> getByResourceGroupWithResponse(String resourceGroupName, String ruleName,
@@ -79,12 +79,12 @@ public final class MetricAlertsImpl implements MetricAlerts {
     }
 
     public MetricAlertResource getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String ruleName = Utils.getValueFromIdByName(id, "metricAlerts");
+        String ruleName = ResourceManagerUtils.getValueFromIdByName(id, "metricAlerts");
         if (ruleName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'metricAlerts'.", id)));
@@ -93,12 +93,12 @@ public final class MetricAlertsImpl implements MetricAlerts {
     }
 
     public Response<MetricAlertResource> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String ruleName = Utils.getValueFromIdByName(id, "metricAlerts");
+        String ruleName = ResourceManagerUtils.getValueFromIdByName(id, "metricAlerts");
         if (ruleName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'metricAlerts'.", id)));
@@ -107,12 +107,12 @@ public final class MetricAlertsImpl implements MetricAlerts {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String ruleName = Utils.getValueFromIdByName(id, "metricAlerts");
+        String ruleName = ResourceManagerUtils.getValueFromIdByName(id, "metricAlerts");
         if (ruleName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'metricAlerts'.", id)));
@@ -121,12 +121,12 @@ public final class MetricAlertsImpl implements MetricAlerts {
     }
 
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String ruleName = Utils.getValueFromIdByName(id, "metricAlerts");
+        String ruleName = ResourceManagerUtils.getValueFromIdByName(id, "metricAlerts");
         if (ruleName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'metricAlerts'.", id)));

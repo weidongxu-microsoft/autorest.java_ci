@@ -44,12 +44,14 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
 
     public PagedIterable<AppServiceCertificateOrder> list() {
         PagedIterable<AppServiceCertificateOrderInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new AppServiceCertificateOrderImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new AppServiceCertificateOrderImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AppServiceCertificateOrder> list(Context context) {
         PagedIterable<AppServiceCertificateOrderInner> inner = this.serviceClient().list(context);
-        return Utils.mapPage(inner, inner1 -> new AppServiceCertificateOrderImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new AppServiceCertificateOrderImpl(inner1, this.manager()));
     }
 
     public Response<Void> validatePurchaseInformationWithResponse(
@@ -64,13 +66,15 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
     public PagedIterable<AppServiceCertificateOrder> listByResourceGroup(String resourceGroupName) {
         PagedIterable<AppServiceCertificateOrderInner> inner
             = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return Utils.mapPage(inner, inner1 -> new AppServiceCertificateOrderImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new AppServiceCertificateOrderImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AppServiceCertificateOrder> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<AppServiceCertificateOrderInner> inner
             = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return Utils.mapPage(inner, inner1 -> new AppServiceCertificateOrderImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new AppServiceCertificateOrderImpl(inner1, this.manager()));
     }
 
     public Response<AppServiceCertificateOrder> getByResourceGroupWithResponse(String resourceGroupName,
@@ -108,14 +112,16 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
         String certificateOrderName) {
         PagedIterable<AppServiceCertificateResourceInner> inner
             = this.serviceClient().listCertificates(resourceGroupName, certificateOrderName);
-        return Utils.mapPage(inner, inner1 -> new AppServiceCertificateResourceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new AppServiceCertificateResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AppServiceCertificateResource> listCertificates(String resourceGroupName,
         String certificateOrderName, Context context) {
         PagedIterable<AppServiceCertificateResourceInner> inner
             = this.serviceClient().listCertificates(resourceGroupName, certificateOrderName, context);
-        return Utils.mapPage(inner, inner1 -> new AppServiceCertificateResourceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new AppServiceCertificateResourceImpl(inner1, this.manager()));
     }
 
     public Response<AppServiceCertificateResource> getCertificateWithResponse(String resourceGroupName,
@@ -273,12 +279,12 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
     }
 
     public AppServiceCertificateOrder getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String certificateOrderName = Utils.getValueFromIdByName(id, "certificateOrders");
+        String certificateOrderName = ResourceManagerUtils.getValueFromIdByName(id, "certificateOrders");
         if (certificateOrderName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'certificateOrders'.", id)));
@@ -287,12 +293,12 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
     }
 
     public Response<AppServiceCertificateOrder> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String certificateOrderName = Utils.getValueFromIdByName(id, "certificateOrders");
+        String certificateOrderName = ResourceManagerUtils.getValueFromIdByName(id, "certificateOrders");
         if (certificateOrderName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'certificateOrders'.", id)));
@@ -301,17 +307,17 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
     }
 
     public AppServiceCertificateResource getCertificateById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String certificateOrderName = Utils.getValueFromIdByName(id, "certificateOrders");
+        String certificateOrderName = ResourceManagerUtils.getValueFromIdByName(id, "certificateOrders");
         if (certificateOrderName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'certificateOrders'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "certificates");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "certificates");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'certificates'.", id)));
@@ -320,17 +326,17 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
     }
 
     public Response<AppServiceCertificateResource> getCertificateByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String certificateOrderName = Utils.getValueFromIdByName(id, "certificateOrders");
+        String certificateOrderName = ResourceManagerUtils.getValueFromIdByName(id, "certificateOrders");
         if (certificateOrderName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'certificateOrders'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "certificates");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "certificates");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'certificates'.", id)));
@@ -339,12 +345,12 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String certificateOrderName = Utils.getValueFromIdByName(id, "certificateOrders");
+        String certificateOrderName = ResourceManagerUtils.getValueFromIdByName(id, "certificateOrders");
         if (certificateOrderName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'certificateOrders'.", id)));
@@ -353,12 +359,12 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
     }
 
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String certificateOrderName = Utils.getValueFromIdByName(id, "certificateOrders");
+        String certificateOrderName = ResourceManagerUtils.getValueFromIdByName(id, "certificateOrders");
         if (certificateOrderName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'certificateOrders'.", id)));
@@ -367,17 +373,17 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
     }
 
     public void deleteCertificateById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String certificateOrderName = Utils.getValueFromIdByName(id, "certificateOrders");
+        String certificateOrderName = ResourceManagerUtils.getValueFromIdByName(id, "certificateOrders");
         if (certificateOrderName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'certificateOrders'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "certificates");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "certificates");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'certificates'.", id)));
@@ -386,17 +392,17 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
     }
 
     public Response<Void> deleteCertificateByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String certificateOrderName = Utils.getValueFromIdByName(id, "certificateOrders");
+        String certificateOrderName = ResourceManagerUtils.getValueFromIdByName(id, "certificateOrders");
         if (certificateOrderName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'certificateOrders'.", id)));
         }
-        String name = Utils.getValueFromIdByName(id, "certificates");
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "certificates");
         if (name == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'certificates'.", id)));

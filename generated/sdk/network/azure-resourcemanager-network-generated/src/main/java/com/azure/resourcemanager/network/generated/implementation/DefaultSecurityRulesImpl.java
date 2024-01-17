@@ -29,14 +29,14 @@ public final class DefaultSecurityRulesImpl implements DefaultSecurityRules {
 
     public PagedIterable<SecurityRule> list(String resourceGroupName, String networkSecurityGroupName) {
         PagedIterable<SecurityRuleInner> inner = this.serviceClient().list(resourceGroupName, networkSecurityGroupName);
-        return Utils.mapPage(inner, inner1 -> new SecurityRuleImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SecurityRuleImpl(inner1, this.manager()));
     }
 
     public PagedIterable<SecurityRule> list(String resourceGroupName, String networkSecurityGroupName,
         Context context) {
         PagedIterable<SecurityRuleInner> inner
             = this.serviceClient().list(resourceGroupName, networkSecurityGroupName, context);
-        return Utils.mapPage(inner, inner1 -> new SecurityRuleImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SecurityRuleImpl(inner1, this.manager()));
     }
 
     public Response<SecurityRule> getWithResponse(String resourceGroupName, String networkSecurityGroupName,

@@ -58,26 +58,26 @@ public final class RoutingIntentsImpl implements RoutingIntents {
 
     public PagedIterable<RoutingIntent> list(String resourceGroupName, String virtualHubName) {
         PagedIterable<RoutingIntentInner> inner = this.serviceClient().list(resourceGroupName, virtualHubName);
-        return Utils.mapPage(inner, inner1 -> new RoutingIntentImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new RoutingIntentImpl(inner1, this.manager()));
     }
 
     public PagedIterable<RoutingIntent> list(String resourceGroupName, String virtualHubName, Context context) {
         PagedIterable<RoutingIntentInner> inner = this.serviceClient().list(resourceGroupName, virtualHubName, context);
-        return Utils.mapPage(inner, inner1 -> new RoutingIntentImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new RoutingIntentImpl(inner1, this.manager()));
     }
 
     public RoutingIntent getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
+        String virtualHubName = ResourceManagerUtils.getValueFromIdByName(id, "virtualHubs");
         if (virtualHubName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
         }
-        String routingIntentName = Utils.getValueFromIdByName(id, "routingIntent");
+        String routingIntentName = ResourceManagerUtils.getValueFromIdByName(id, "routingIntent");
         if (routingIntentName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'routingIntent'.", id)));
@@ -86,17 +86,17 @@ public final class RoutingIntentsImpl implements RoutingIntents {
     }
 
     public Response<RoutingIntent> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
+        String virtualHubName = ResourceManagerUtils.getValueFromIdByName(id, "virtualHubs");
         if (virtualHubName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
         }
-        String routingIntentName = Utils.getValueFromIdByName(id, "routingIntent");
+        String routingIntentName = ResourceManagerUtils.getValueFromIdByName(id, "routingIntent");
         if (routingIntentName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'routingIntent'.", id)));
@@ -105,17 +105,17 @@ public final class RoutingIntentsImpl implements RoutingIntents {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
+        String virtualHubName = ResourceManagerUtils.getValueFromIdByName(id, "virtualHubs");
         if (virtualHubName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
         }
-        String routingIntentName = Utils.getValueFromIdByName(id, "routingIntent");
+        String routingIntentName = ResourceManagerUtils.getValueFromIdByName(id, "routingIntent");
         if (routingIntentName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'routingIntent'.", id)));
@@ -124,17 +124,17 @@ public final class RoutingIntentsImpl implements RoutingIntents {
     }
 
     public void deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
+        String virtualHubName = ResourceManagerUtils.getValueFromIdByName(id, "virtualHubs");
         if (virtualHubName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
         }
-        String routingIntentName = Utils.getValueFromIdByName(id, "routingIntent");
+        String routingIntentName = ResourceManagerUtils.getValueFromIdByName(id, "routingIntent");
         if (routingIntentName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'routingIntent'.", id)));

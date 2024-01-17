@@ -61,28 +61,30 @@ public final class ExpressRouteCircuitAuthorizationsImpl implements ExpressRoute
     public PagedIterable<ExpressRouteCircuitAuthorization> list(String resourceGroupName, String circuitName) {
         PagedIterable<ExpressRouteCircuitAuthorizationInner> inner
             = this.serviceClient().list(resourceGroupName, circuitName);
-        return Utils.mapPage(inner, inner1 -> new ExpressRouteCircuitAuthorizationImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new ExpressRouteCircuitAuthorizationImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ExpressRouteCircuitAuthorization> list(String resourceGroupName, String circuitName,
         Context context) {
         PagedIterable<ExpressRouteCircuitAuthorizationInner> inner
             = this.serviceClient().list(resourceGroupName, circuitName, context);
-        return Utils.mapPage(inner, inner1 -> new ExpressRouteCircuitAuthorizationImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new ExpressRouteCircuitAuthorizationImpl(inner1, this.manager()));
     }
 
     public ExpressRouteCircuitAuthorization getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String circuitName = Utils.getValueFromIdByName(id, "expressRouteCircuits");
+        String circuitName = ResourceManagerUtils.getValueFromIdByName(id, "expressRouteCircuits");
         if (circuitName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'expressRouteCircuits'.", id)));
         }
-        String authorizationName = Utils.getValueFromIdByName(id, "authorizations");
+        String authorizationName = ResourceManagerUtils.getValueFromIdByName(id, "authorizations");
         if (authorizationName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'authorizations'.", id)));
@@ -91,17 +93,17 @@ public final class ExpressRouteCircuitAuthorizationsImpl implements ExpressRoute
     }
 
     public Response<ExpressRouteCircuitAuthorization> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String circuitName = Utils.getValueFromIdByName(id, "expressRouteCircuits");
+        String circuitName = ResourceManagerUtils.getValueFromIdByName(id, "expressRouteCircuits");
         if (circuitName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'expressRouteCircuits'.", id)));
         }
-        String authorizationName = Utils.getValueFromIdByName(id, "authorizations");
+        String authorizationName = ResourceManagerUtils.getValueFromIdByName(id, "authorizations");
         if (authorizationName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'authorizations'.", id)));
@@ -110,17 +112,17 @@ public final class ExpressRouteCircuitAuthorizationsImpl implements ExpressRoute
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String circuitName = Utils.getValueFromIdByName(id, "expressRouteCircuits");
+        String circuitName = ResourceManagerUtils.getValueFromIdByName(id, "expressRouteCircuits");
         if (circuitName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'expressRouteCircuits'.", id)));
         }
-        String authorizationName = Utils.getValueFromIdByName(id, "authorizations");
+        String authorizationName = ResourceManagerUtils.getValueFromIdByName(id, "authorizations");
         if (authorizationName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'authorizations'.", id)));
@@ -129,17 +131,17 @@ public final class ExpressRouteCircuitAuthorizationsImpl implements ExpressRoute
     }
 
     public void deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String circuitName = Utils.getValueFromIdByName(id, "expressRouteCircuits");
+        String circuitName = ResourceManagerUtils.getValueFromIdByName(id, "expressRouteCircuits");
         if (circuitName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'expressRouteCircuits'.", id)));
         }
-        String authorizationName = Utils.getValueFromIdByName(id, "authorizations");
+        String authorizationName = ResourceManagerUtils.getValueFromIdByName(id, "authorizations");
         if (authorizationName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'authorizations'.", id)));

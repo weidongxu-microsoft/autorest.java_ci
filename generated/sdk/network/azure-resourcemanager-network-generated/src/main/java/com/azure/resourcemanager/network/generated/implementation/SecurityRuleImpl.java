@@ -197,9 +197,10 @@ public final class SecurityRuleImpl implements SecurityRule, SecurityRule.Defini
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.networkSecurityGroupName = Utils.getValueFromIdByName(innerObject.id(), "networkSecurityGroups");
-        this.securityRuleName = Utils.getValueFromIdByName(innerObject.id(), "securityRules");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.networkSecurityGroupName
+            = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "networkSecurityGroups");
+        this.securityRuleName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "securityRules");
     }
 
     public SecurityRule refresh() {

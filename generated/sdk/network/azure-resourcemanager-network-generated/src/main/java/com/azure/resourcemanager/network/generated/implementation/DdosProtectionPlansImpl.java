@@ -59,32 +59,32 @@ public final class DdosProtectionPlansImpl implements DdosProtectionPlans {
 
     public PagedIterable<DdosProtectionPlan> list() {
         PagedIterable<DdosProtectionPlanInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new DdosProtectionPlanImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DdosProtectionPlanImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DdosProtectionPlan> list(Context context) {
         PagedIterable<DdosProtectionPlanInner> inner = this.serviceClient().list(context);
-        return Utils.mapPage(inner, inner1 -> new DdosProtectionPlanImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DdosProtectionPlanImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DdosProtectionPlan> listByResourceGroup(String resourceGroupName) {
         PagedIterable<DdosProtectionPlanInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return Utils.mapPage(inner, inner1 -> new DdosProtectionPlanImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DdosProtectionPlanImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DdosProtectionPlan> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<DdosProtectionPlanInner> inner
             = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return Utils.mapPage(inner, inner1 -> new DdosProtectionPlanImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DdosProtectionPlanImpl(inner1, this.manager()));
     }
 
     public DdosProtectionPlan getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String ddosProtectionPlanName = Utils.getValueFromIdByName(id, "ddosProtectionPlans");
+        String ddosProtectionPlanName = ResourceManagerUtils.getValueFromIdByName(id, "ddosProtectionPlans");
         if (ddosProtectionPlanName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'ddosProtectionPlans'.", id)));
@@ -93,12 +93,12 @@ public final class DdosProtectionPlansImpl implements DdosProtectionPlans {
     }
 
     public Response<DdosProtectionPlan> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String ddosProtectionPlanName = Utils.getValueFromIdByName(id, "ddosProtectionPlans");
+        String ddosProtectionPlanName = ResourceManagerUtils.getValueFromIdByName(id, "ddosProtectionPlans");
         if (ddosProtectionPlanName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'ddosProtectionPlans'.", id)));
@@ -107,12 +107,12 @@ public final class DdosProtectionPlansImpl implements DdosProtectionPlans {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String ddosProtectionPlanName = Utils.getValueFromIdByName(id, "ddosProtectionPlans");
+        String ddosProtectionPlanName = ResourceManagerUtils.getValueFromIdByName(id, "ddosProtectionPlans");
         if (ddosProtectionPlanName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'ddosProtectionPlans'.", id)));
@@ -121,12 +121,12 @@ public final class DdosProtectionPlansImpl implements DdosProtectionPlans {
     }
 
     public void deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String ddosProtectionPlanName = Utils.getValueFromIdByName(id, "ddosProtectionPlans");
+        String ddosProtectionPlanName = ResourceManagerUtils.getValueFromIdByName(id, "ddosProtectionPlans");
         if (ddosProtectionPlanName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'ddosProtectionPlans'.", id)));

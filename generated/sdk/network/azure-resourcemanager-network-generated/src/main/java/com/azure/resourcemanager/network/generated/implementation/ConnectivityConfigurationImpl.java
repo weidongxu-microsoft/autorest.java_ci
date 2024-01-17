@@ -149,9 +149,10 @@ public final class ConnectivityConfigurationImpl
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.networkManagerName = Utils.getValueFromIdByName(innerObject.id(), "networkManagers");
-        this.configurationName = Utils.getValueFromIdByName(innerObject.id(), "connectivityConfigurations");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.networkManagerName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "networkManagers");
+        this.configurationName
+            = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "connectivityConfigurations");
     }
 
     public ConnectivityConfiguration refresh() {

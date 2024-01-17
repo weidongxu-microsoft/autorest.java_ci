@@ -59,33 +59,34 @@ public final class ApplicationSecurityGroupsImpl implements ApplicationSecurityG
 
     public PagedIterable<ApplicationSecurityGroup> list() {
         PagedIterable<ApplicationSecurityGroupInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new ApplicationSecurityGroupImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ApplicationSecurityGroupImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ApplicationSecurityGroup> list(Context context) {
         PagedIterable<ApplicationSecurityGroupInner> inner = this.serviceClient().list(context);
-        return Utils.mapPage(inner, inner1 -> new ApplicationSecurityGroupImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ApplicationSecurityGroupImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ApplicationSecurityGroup> listByResourceGroup(String resourceGroupName) {
         PagedIterable<ApplicationSecurityGroupInner> inner
             = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return Utils.mapPage(inner, inner1 -> new ApplicationSecurityGroupImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ApplicationSecurityGroupImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ApplicationSecurityGroup> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<ApplicationSecurityGroupInner> inner
             = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return Utils.mapPage(inner, inner1 -> new ApplicationSecurityGroupImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new ApplicationSecurityGroupImpl(inner1, this.manager()));
     }
 
     public ApplicationSecurityGroup getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String applicationSecurityGroupName = Utils.getValueFromIdByName(id, "applicationSecurityGroups");
+        String applicationSecurityGroupName
+            = ResourceManagerUtils.getValueFromIdByName(id, "applicationSecurityGroups");
         if (applicationSecurityGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'applicationSecurityGroups'.", id)));
@@ -95,12 +96,13 @@ public final class ApplicationSecurityGroupsImpl implements ApplicationSecurityG
     }
 
     public Response<ApplicationSecurityGroup> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String applicationSecurityGroupName = Utils.getValueFromIdByName(id, "applicationSecurityGroups");
+        String applicationSecurityGroupName
+            = ResourceManagerUtils.getValueFromIdByName(id, "applicationSecurityGroups");
         if (applicationSecurityGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'applicationSecurityGroups'.", id)));
@@ -109,12 +111,13 @@ public final class ApplicationSecurityGroupsImpl implements ApplicationSecurityG
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String applicationSecurityGroupName = Utils.getValueFromIdByName(id, "applicationSecurityGroups");
+        String applicationSecurityGroupName
+            = ResourceManagerUtils.getValueFromIdByName(id, "applicationSecurityGroups");
         if (applicationSecurityGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'applicationSecurityGroups'.", id)));
@@ -123,12 +126,13 @@ public final class ApplicationSecurityGroupsImpl implements ApplicationSecurityG
     }
 
     public void deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String applicationSecurityGroupName = Utils.getValueFromIdByName(id, "applicationSecurityGroups");
+        String applicationSecurityGroupName
+            = ResourceManagerUtils.getValueFromIdByName(id, "applicationSecurityGroups");
         if (applicationSecurityGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'applicationSecurityGroups'.", id)));

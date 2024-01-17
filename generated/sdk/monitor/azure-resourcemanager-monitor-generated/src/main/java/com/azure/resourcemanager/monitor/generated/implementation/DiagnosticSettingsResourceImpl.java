@@ -128,9 +128,9 @@ public final class DiagnosticSettingsResourceImpl
         com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceUri = Utils.getValueFromIdByParameterName(innerObject.id(),
+        this.resourceUri = ResourceManagerUtils.getValueFromIdByParameterName(innerObject.id(),
             "/{resourceUri}/providers/Microsoft.Insights/diagnosticSettings/{name}", "resourceUri");
-        this.name = Utils.getValueFromIdByParameterName(innerObject.id(),
+        this.name = ResourceManagerUtils.getValueFromIdByParameterName(innerObject.id(),
             "/{resourceUri}/providers/Microsoft.Insights/diagnosticSettings/{name}", "name");
     }
 

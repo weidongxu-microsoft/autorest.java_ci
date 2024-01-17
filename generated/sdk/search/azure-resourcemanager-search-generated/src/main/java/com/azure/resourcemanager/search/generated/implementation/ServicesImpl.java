@@ -63,24 +63,24 @@ public final class ServicesImpl implements Services {
 
     public PagedIterable<SearchService> listByResourceGroup(String resourceGroupName) {
         PagedIterable<SearchServiceInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return Utils.mapPage(inner, inner1 -> new SearchServiceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SearchServiceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<SearchService> listByResourceGroup(String resourceGroupName, UUID clientRequestId,
         Context context) {
         PagedIterable<SearchServiceInner> inner
             = this.serviceClient().listByResourceGroup(resourceGroupName, clientRequestId, context);
-        return Utils.mapPage(inner, inner1 -> new SearchServiceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SearchServiceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<SearchService> list() {
         PagedIterable<SearchServiceInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new SearchServiceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SearchServiceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<SearchService> list(UUID clientRequestId, Context context) {
         PagedIterable<SearchServiceInner> inner = this.serviceClient().list(clientRequestId, context);
-        return Utils.mapPage(inner, inner1 -> new SearchServiceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SearchServiceImpl(inner1, this.manager()));
     }
 
     public Response<CheckNameAvailabilityOutput> checkNameAvailabilityWithResponse(
@@ -105,12 +105,12 @@ public final class ServicesImpl implements Services {
     }
 
     public SearchService getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String searchServiceName = Utils.getValueFromIdByName(id, "searchServices");
+        String searchServiceName = ResourceManagerUtils.getValueFromIdByName(id, "searchServices");
         if (searchServiceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'searchServices'.", id)));
@@ -122,12 +122,12 @@ public final class ServicesImpl implements Services {
     }
 
     public Response<SearchService> getByIdWithResponse(String id, UUID clientRequestId, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String searchServiceName = Utils.getValueFromIdByName(id, "searchServices");
+        String searchServiceName = ResourceManagerUtils.getValueFromIdByName(id, "searchServices");
         if (searchServiceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'searchServices'.", id)));
@@ -136,12 +136,12 @@ public final class ServicesImpl implements Services {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String searchServiceName = Utils.getValueFromIdByName(id, "searchServices");
+        String searchServiceName = ResourceManagerUtils.getValueFromIdByName(id, "searchServices");
         if (searchServiceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'searchServices'.", id)));
@@ -151,12 +151,12 @@ public final class ServicesImpl implements Services {
     }
 
     public Response<Void> deleteByIdWithResponse(String id, UUID clientRequestId, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String searchServiceName = Utils.getValueFromIdByName(id, "searchServices");
+        String searchServiceName = ResourceManagerUtils.getValueFromIdByName(id, "searchServices");
         if (searchServiceName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'searchServices'.", id)));

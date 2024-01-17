@@ -134,9 +134,10 @@ public final class VirtualNetworkGatewayNatRuleImpl implements VirtualNetworkGat
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.virtualNetworkGatewayName = Utils.getValueFromIdByName(innerObject.id(), "virtualNetworkGateways");
-        this.natRuleName = Utils.getValueFromIdByName(innerObject.id(), "natRules");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.virtualNetworkGatewayName
+            = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "virtualNetworkGateways");
+        this.natRuleName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "natRules");
     }
 
     public VirtualNetworkGatewayNatRule refresh() {

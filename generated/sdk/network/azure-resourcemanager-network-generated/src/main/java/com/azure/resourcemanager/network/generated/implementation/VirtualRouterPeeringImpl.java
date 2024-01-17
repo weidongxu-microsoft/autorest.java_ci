@@ -105,9 +105,9 @@ public final class VirtualRouterPeeringImpl
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.virtualRouterName = Utils.getValueFromIdByName(innerObject.id(), "virtualRouters");
-        this.peeringName = Utils.getValueFromIdByName(innerObject.id(), "peerings");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.virtualRouterName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "virtualRouters");
+        this.peeringName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "peerings");
     }
 
     public VirtualRouterPeering refresh() {

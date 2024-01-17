@@ -133,8 +133,8 @@ public final class CloudServiceImpl implements CloudService, CloudService.Defini
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.cloudServiceName = Utils.getValueFromIdByName(innerObject.id(), "cloudServices");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.cloudServiceName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "cloudServices");
     }
 
     public CloudService refresh() {

@@ -117,10 +117,10 @@ public final class StaticMemberImpl implements StaticMember, StaticMember.Defini
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.networkManagerName = Utils.getValueFromIdByName(innerObject.id(), "networkManagers");
-        this.networkGroupName = Utils.getValueFromIdByName(innerObject.id(), "networkGroups");
-        this.staticMemberName = Utils.getValueFromIdByName(innerObject.id(), "staticMembers");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.networkManagerName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "networkManagers");
+        this.networkGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "networkGroups");
+        this.staticMemberName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "staticMembers");
     }
 
     public StaticMember refresh() {

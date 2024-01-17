@@ -57,14 +57,14 @@ public final class DiskRestorePointsImpl implements DiskRestorePoints {
         String restorePointCollectionName, String vmRestorePointName) {
         PagedIterable<DiskRestorePointInner> inner = this.serviceClient().listByRestorePoint(resourceGroupName,
             restorePointCollectionName, vmRestorePointName);
-        return Utils.mapPage(inner, inner1 -> new DiskRestorePointImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DiskRestorePointImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DiskRestorePoint> listByRestorePoint(String resourceGroupName,
         String restorePointCollectionName, String vmRestorePointName, Context context) {
         PagedIterable<DiskRestorePointInner> inner = this.serviceClient().listByRestorePoint(resourceGroupName,
             restorePointCollectionName, vmRestorePointName, context);
-        return Utils.mapPage(inner, inner1 -> new DiskRestorePointImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DiskRestorePointImpl(inner1, this.manager()));
     }
 
     public AccessUri grantAccess(String resourceGroupName, String restorePointCollectionName, String vmRestorePointName,

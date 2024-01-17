@@ -30,14 +30,16 @@ public final class SecurityAdminConfigurationsImpl implements SecurityAdminConfi
     public PagedIterable<SecurityAdminConfiguration> list(String resourceGroupName, String networkManagerName) {
         PagedIterable<SecurityAdminConfigurationInner> inner
             = this.serviceClient().list(resourceGroupName, networkManagerName);
-        return Utils.mapPage(inner, inner1 -> new SecurityAdminConfigurationImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new SecurityAdminConfigurationImpl(inner1, this.manager()));
     }
 
     public PagedIterable<SecurityAdminConfiguration> list(String resourceGroupName, String networkManagerName,
         Integer top, String skipToken, Context context) {
         PagedIterable<SecurityAdminConfigurationInner> inner
             = this.serviceClient().list(resourceGroupName, networkManagerName, top, skipToken, context);
-        return Utils.mapPage(inner, inner1 -> new SecurityAdminConfigurationImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new SecurityAdminConfigurationImpl(inner1, this.manager()));
     }
 
     public Response<SecurityAdminConfiguration> getWithResponse(String resourceGroupName, String networkManagerName,
@@ -73,17 +75,17 @@ public final class SecurityAdminConfigurationsImpl implements SecurityAdminConfi
     }
 
     public SecurityAdminConfiguration getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String networkManagerName = Utils.getValueFromIdByName(id, "networkManagers");
+        String networkManagerName = ResourceManagerUtils.getValueFromIdByName(id, "networkManagers");
         if (networkManagerName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'networkManagers'.", id)));
         }
-        String configurationName = Utils.getValueFromIdByName(id, "securityAdminConfigurations");
+        String configurationName = ResourceManagerUtils.getValueFromIdByName(id, "securityAdminConfigurations");
         if (configurationName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'securityAdminConfigurations'.", id)));
@@ -92,17 +94,17 @@ public final class SecurityAdminConfigurationsImpl implements SecurityAdminConfi
     }
 
     public Response<SecurityAdminConfiguration> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String networkManagerName = Utils.getValueFromIdByName(id, "networkManagers");
+        String networkManagerName = ResourceManagerUtils.getValueFromIdByName(id, "networkManagers");
         if (networkManagerName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'networkManagers'.", id)));
         }
-        String configurationName = Utils.getValueFromIdByName(id, "securityAdminConfigurations");
+        String configurationName = ResourceManagerUtils.getValueFromIdByName(id, "securityAdminConfigurations");
         if (configurationName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'securityAdminConfigurations'.", id)));
@@ -111,17 +113,17 @@ public final class SecurityAdminConfigurationsImpl implements SecurityAdminConfi
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String networkManagerName = Utils.getValueFromIdByName(id, "networkManagers");
+        String networkManagerName = ResourceManagerUtils.getValueFromIdByName(id, "networkManagers");
         if (networkManagerName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'networkManagers'.", id)));
         }
-        String configurationName = Utils.getValueFromIdByName(id, "securityAdminConfigurations");
+        String configurationName = ResourceManagerUtils.getValueFromIdByName(id, "securityAdminConfigurations");
         if (configurationName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'securityAdminConfigurations'.", id)));
@@ -131,17 +133,17 @@ public final class SecurityAdminConfigurationsImpl implements SecurityAdminConfi
     }
 
     public void deleteByIdWithResponse(String id, Boolean force, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String networkManagerName = Utils.getValueFromIdByName(id, "networkManagers");
+        String networkManagerName = ResourceManagerUtils.getValueFromIdByName(id, "networkManagers");
         if (networkManagerName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'networkManagers'.", id)));
         }
-        String configurationName = Utils.getValueFromIdByName(id, "securityAdminConfigurations");
+        String configurationName = ResourceManagerUtils.getValueFromIdByName(id, "securityAdminConfigurations");
         if (configurationName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
                 .format("The resource ID '%s' is not valid. Missing path segment 'securityAdminConfigurations'.", id)));

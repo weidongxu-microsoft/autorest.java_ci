@@ -170,8 +170,9 @@ public final class ProximityPlacementGroupImpl
         com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.proximityPlacementGroupName = Utils.getValueFromIdByName(innerObject.id(), "proximityPlacementGroups");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.proximityPlacementGroupName
+            = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "proximityPlacementGroups");
     }
 
     public ProximityPlacementGroup refresh() {

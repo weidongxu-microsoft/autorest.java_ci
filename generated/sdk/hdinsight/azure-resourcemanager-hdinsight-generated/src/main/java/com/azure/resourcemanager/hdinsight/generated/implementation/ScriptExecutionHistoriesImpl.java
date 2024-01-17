@@ -29,14 +29,14 @@ public final class ScriptExecutionHistoriesImpl implements ScriptExecutionHistor
     public PagedIterable<RuntimeScriptActionDetail> listByCluster(String resourceGroupName, String clusterName) {
         PagedIterable<RuntimeScriptActionDetailInner> inner
             = this.serviceClient().listByCluster(resourceGroupName, clusterName);
-        return Utils.mapPage(inner, inner1 -> new RuntimeScriptActionDetailImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new RuntimeScriptActionDetailImpl(inner1, this.manager()));
     }
 
     public PagedIterable<RuntimeScriptActionDetail> listByCluster(String resourceGroupName, String clusterName,
         Context context) {
         PagedIterable<RuntimeScriptActionDetailInner> inner
             = this.serviceClient().listByCluster(resourceGroupName, clusterName, context);
-        return Utils.mapPage(inner, inner1 -> new RuntimeScriptActionDetailImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new RuntimeScriptActionDetailImpl(inner1, this.manager()));
     }
 
     public Response<Void> promoteWithResponse(String resourceGroupName, String clusterName, String scriptExecutionId,

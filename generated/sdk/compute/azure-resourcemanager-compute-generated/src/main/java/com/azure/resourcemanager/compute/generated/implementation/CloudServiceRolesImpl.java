@@ -50,13 +50,13 @@ public final class CloudServiceRolesImpl implements CloudServiceRoles {
 
     public PagedIterable<CloudServiceRole> list(String resourceGroupName, String cloudServiceName) {
         PagedIterable<CloudServiceRoleInner> inner = this.serviceClient().list(resourceGroupName, cloudServiceName);
-        return Utils.mapPage(inner, inner1 -> new CloudServiceRoleImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new CloudServiceRoleImpl(inner1, this.manager()));
     }
 
     public PagedIterable<CloudServiceRole> list(String resourceGroupName, String cloudServiceName, Context context) {
         PagedIterable<CloudServiceRoleInner> inner
             = this.serviceClient().list(resourceGroupName, cloudServiceName, context);
-        return Utils.mapPage(inner, inner1 -> new CloudServiceRoleImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new CloudServiceRoleImpl(inner1, this.manager()));
     }
 
     private CloudServiceRolesClient serviceClient() {

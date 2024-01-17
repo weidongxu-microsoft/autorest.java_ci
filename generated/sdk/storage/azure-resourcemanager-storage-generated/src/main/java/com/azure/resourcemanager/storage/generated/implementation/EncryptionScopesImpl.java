@@ -51,28 +51,28 @@ public final class EncryptionScopesImpl implements EncryptionScopes {
 
     public PagedIterable<EncryptionScope> list(String resourceGroupName, String accountName) {
         PagedIterable<EncryptionScopeInner> inner = this.serviceClient().list(resourceGroupName, accountName);
-        return Utils.mapPage(inner, inner1 -> new EncryptionScopeImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new EncryptionScopeImpl(inner1, this.manager()));
     }
 
     public PagedIterable<EncryptionScope> list(String resourceGroupName, String accountName, Integer maxpagesize,
         String filter, ListEncryptionScopesInclude include, Context context) {
         PagedIterable<EncryptionScopeInner> inner
             = this.serviceClient().list(resourceGroupName, accountName, maxpagesize, filter, include, context);
-        return Utils.mapPage(inner, inner1 -> new EncryptionScopeImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new EncryptionScopeImpl(inner1, this.manager()));
     }
 
     public EncryptionScope getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        String accountName = ResourceManagerUtils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
         }
-        String encryptionScopeName = Utils.getValueFromIdByName(id, "encryptionScopes");
+        String encryptionScopeName = ResourceManagerUtils.getValueFromIdByName(id, "encryptionScopes");
         if (encryptionScopeName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'encryptionScopes'.", id)));
@@ -81,17 +81,17 @@ public final class EncryptionScopesImpl implements EncryptionScopes {
     }
 
     public Response<EncryptionScope> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        String accountName = ResourceManagerUtils.getValueFromIdByName(id, "storageAccounts");
         if (accountName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
         }
-        String encryptionScopeName = Utils.getValueFromIdByName(id, "encryptionScopes");
+        String encryptionScopeName = ResourceManagerUtils.getValueFromIdByName(id, "encryptionScopes");
         if (encryptionScopeName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'encryptionScopes'.", id)));

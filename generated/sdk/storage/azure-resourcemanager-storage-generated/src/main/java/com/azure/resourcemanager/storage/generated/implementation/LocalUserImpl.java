@@ -141,9 +141,9 @@ public final class LocalUserImpl implements LocalUser, LocalUser.Definition, Loc
         com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.accountName = Utils.getValueFromIdByName(innerObject.id(), "storageAccounts");
-        this.username = Utils.getValueFromIdByName(innerObject.id(), "localUsers");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.accountName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "storageAccounts");
+        this.username = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "localUsers");
     }
 
     public LocalUser refresh() {

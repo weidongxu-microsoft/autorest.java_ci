@@ -111,8 +111,8 @@ public final class ManagementLockObjectImpl
         com.azure.resourcemanager.locks.generated.ManagementLockManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.lockName = Utils.getValueFromIdByName(innerObject.id(), "locks");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.lockName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "locks");
     }
 
     public ManagementLockObject refresh() {

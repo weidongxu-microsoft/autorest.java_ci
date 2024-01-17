@@ -210,8 +210,8 @@ public final class TopicImpl implements Topic, Topic.Definition, Topic.Update {
     TopicImpl(TopicInner innerObject, com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.topicName = Utils.getValueFromIdByName(innerObject.id(), "topics");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.topicName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "topics");
     }
 
     public Topic refresh() {

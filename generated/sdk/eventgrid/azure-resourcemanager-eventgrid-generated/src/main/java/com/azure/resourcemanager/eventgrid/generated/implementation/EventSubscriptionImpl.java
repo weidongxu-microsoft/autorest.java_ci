@@ -160,9 +160,9 @@ public final class EventSubscriptionImpl
         com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.topicName = Utils.getValueFromIdByName(innerObject.id(), "topics");
-        this.eventSubscriptionName = Utils.getValueFromIdByName(innerObject.id(), "eventSubscriptions");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.topicName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "topics");
+        this.eventSubscriptionName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "eventSubscriptions");
     }
 
     public EventSubscription refresh() {

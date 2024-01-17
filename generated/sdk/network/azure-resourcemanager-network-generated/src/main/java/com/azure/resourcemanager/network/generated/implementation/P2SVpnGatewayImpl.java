@@ -167,8 +167,8 @@ public final class P2SVpnGatewayImpl implements P2SVpnGateway, P2SVpnGateway.Def
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.gatewayName = Utils.getValueFromIdByName(innerObject.id(), "p2svpnGateways");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.gatewayName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "p2svpnGateways");
     }
 
     public P2SVpnGateway refresh() {

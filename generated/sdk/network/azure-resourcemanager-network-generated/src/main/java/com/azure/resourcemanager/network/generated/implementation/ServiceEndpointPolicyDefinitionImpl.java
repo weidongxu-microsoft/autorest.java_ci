@@ -122,10 +122,11 @@ public final class ServiceEndpointPolicyDefinitionImpl implements ServiceEndpoin
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.serviceEndpointPolicyName = Utils.getValueFromIdByName(innerObject.id(), "serviceEndpointPolicies");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.serviceEndpointPolicyName
+            = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "serviceEndpointPolicies");
         this.serviceEndpointPolicyDefinitionName
-            = Utils.getValueFromIdByName(innerObject.id(), "serviceEndpointPolicyDefinitions");
+            = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "serviceEndpointPolicyDefinitions");
     }
 
     public ServiceEndpointPolicyDefinition refresh() {

@@ -211,8 +211,8 @@ public final class SearchServiceImpl implements SearchService, SearchService.Def
         com.azure.resourcemanager.search.generated.SearchManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.searchServiceName = Utils.getValueFromIdByName(innerObject.id(), "searchServices");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.searchServiceName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "searchServices");
     }
 
     public SearchService refresh() {

@@ -110,9 +110,10 @@ public final class InboundSecurityRuleImpl
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.networkVirtualApplianceName = Utils.getValueFromIdByName(innerObject.id(), "networkVirtualAppliances");
-        this.ruleCollectionName = Utils.getValueFromIdByName(innerObject.id(), "inboundSecurityRules");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.networkVirtualApplianceName
+            = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "networkVirtualAppliances");
+        this.ruleCollectionName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "inboundSecurityRules");
     }
 
     public InboundSecurityRuleImpl withName(String name) {

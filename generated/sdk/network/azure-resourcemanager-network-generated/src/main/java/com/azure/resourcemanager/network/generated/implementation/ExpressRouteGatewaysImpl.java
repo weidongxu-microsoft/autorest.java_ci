@@ -99,12 +99,12 @@ public final class ExpressRouteGatewaysImpl implements ExpressRouteGateways {
     }
 
     public ExpressRouteGateway getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String expressRouteGatewayName = Utils.getValueFromIdByName(id, "expressRouteGateways");
+        String expressRouteGatewayName = ResourceManagerUtils.getValueFromIdByName(id, "expressRouteGateways");
         if (expressRouteGatewayName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'expressRouteGateways'.", id)));
@@ -113,12 +113,12 @@ public final class ExpressRouteGatewaysImpl implements ExpressRouteGateways {
     }
 
     public Response<ExpressRouteGateway> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String expressRouteGatewayName = Utils.getValueFromIdByName(id, "expressRouteGateways");
+        String expressRouteGatewayName = ResourceManagerUtils.getValueFromIdByName(id, "expressRouteGateways");
         if (expressRouteGatewayName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'expressRouteGateways'.", id)));
@@ -127,12 +127,12 @@ public final class ExpressRouteGatewaysImpl implements ExpressRouteGateways {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String expressRouteGatewayName = Utils.getValueFromIdByName(id, "expressRouteGateways");
+        String expressRouteGatewayName = ResourceManagerUtils.getValueFromIdByName(id, "expressRouteGateways");
         if (expressRouteGatewayName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'expressRouteGateways'.", id)));
@@ -141,12 +141,12 @@ public final class ExpressRouteGatewaysImpl implements ExpressRouteGateways {
     }
 
     public void deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String expressRouteGatewayName = Utils.getValueFromIdByName(id, "expressRouteGateways");
+        String expressRouteGatewayName = ResourceManagerUtils.getValueFromIdByName(id, "expressRouteGateways");
         if (expressRouteGatewayName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'expressRouteGateways'.", id)));

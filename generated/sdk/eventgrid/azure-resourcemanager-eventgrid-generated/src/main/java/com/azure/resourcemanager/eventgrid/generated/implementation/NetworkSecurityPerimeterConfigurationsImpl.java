@@ -81,14 +81,16 @@ public final class NetworkSecurityPerimeterConfigurationsImpl implements Network
         NetworkSecurityPerimeterResourceType resourceType, String resourceName) {
         PagedIterable<NetworkSecurityPerimeterConfigurationInner> inner
             = this.serviceClient().list(resourceGroupName, resourceType, resourceName);
-        return Utils.mapPage(inner, inner1 -> new NetworkSecurityPerimeterConfigurationImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new NetworkSecurityPerimeterConfigurationImpl(inner1, this.manager()));
     }
 
     public PagedIterable<NetworkSecurityPerimeterConfiguration> list(String resourceGroupName,
         NetworkSecurityPerimeterResourceType resourceType, String resourceName, Context context) {
         PagedIterable<NetworkSecurityPerimeterConfigurationInner> inner
             = this.serviceClient().list(resourceGroupName, resourceType, resourceName, context);
-        return Utils.mapPage(inner, inner1 -> new NetworkSecurityPerimeterConfigurationImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new NetworkSecurityPerimeterConfigurationImpl(inner1, this.manager()));
     }
 
     private NetworkSecurityPerimeterConfigurationsClient serviceClient() {

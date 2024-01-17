@@ -27,13 +27,13 @@ public final class MarketplacesImpl implements Marketplaces {
 
     public PagedIterable<Marketplace> list(String scope) {
         PagedIterable<MarketplaceInner> inner = this.serviceClient().list(scope);
-        return Utils.mapPage(inner, inner1 -> new MarketplaceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new MarketplaceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Marketplace> list(String scope, String filter, Integer top, String skiptoken,
         Context context) {
         PagedIterable<MarketplaceInner> inner = this.serviceClient().list(scope, filter, top, skiptoken, context);
-        return Utils.mapPage(inner, inner1 -> new MarketplaceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new MarketplaceImpl(inner1, this.manager()));
     }
 
     private MarketplacesClient serviceClient() {

@@ -56,12 +56,12 @@ public final class DdosCustomPoliciesImpl implements DdosCustomPolicies {
     }
 
     public DdosCustomPolicy getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String ddosCustomPolicyName = Utils.getValueFromIdByName(id, "ddosCustomPolicies");
+        String ddosCustomPolicyName = ResourceManagerUtils.getValueFromIdByName(id, "ddosCustomPolicies");
         if (ddosCustomPolicyName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'ddosCustomPolicies'.", id)));
@@ -70,12 +70,12 @@ public final class DdosCustomPoliciesImpl implements DdosCustomPolicies {
     }
 
     public Response<DdosCustomPolicy> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String ddosCustomPolicyName = Utils.getValueFromIdByName(id, "ddosCustomPolicies");
+        String ddosCustomPolicyName = ResourceManagerUtils.getValueFromIdByName(id, "ddosCustomPolicies");
         if (ddosCustomPolicyName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'ddosCustomPolicies'.", id)));
@@ -84,12 +84,12 @@ public final class DdosCustomPoliciesImpl implements DdosCustomPolicies {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String ddosCustomPolicyName = Utils.getValueFromIdByName(id, "ddosCustomPolicies");
+        String ddosCustomPolicyName = ResourceManagerUtils.getValueFromIdByName(id, "ddosCustomPolicies");
         if (ddosCustomPolicyName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'ddosCustomPolicies'.", id)));
@@ -98,12 +98,12 @@ public final class DdosCustomPoliciesImpl implements DdosCustomPolicies {
     }
 
     public void deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String ddosCustomPolicyName = Utils.getValueFromIdByName(id, "ddosCustomPolicies");
+        String ddosCustomPolicyName = ResourceManagerUtils.getValueFromIdByName(id, "ddosCustomPolicies");
         if (ddosCustomPolicyName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'ddosCustomPolicies'.", id)));

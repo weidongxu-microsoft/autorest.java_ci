@@ -142,9 +142,9 @@ public final class WcfRelayImpl implements WcfRelay, WcfRelay.Definition, WcfRel
     WcfRelayImpl(WcfRelayInner innerObject, com.azure.resourcemanager.relay.generated.RelayManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.namespaceName = Utils.getValueFromIdByName(innerObject.id(), "namespaces");
-        this.relayName = Utils.getValueFromIdByName(innerObject.id(), "wcfRelays");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.namespaceName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "namespaces");
+        this.relayName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "wcfRelays");
     }
 
     public WcfRelay refresh() {

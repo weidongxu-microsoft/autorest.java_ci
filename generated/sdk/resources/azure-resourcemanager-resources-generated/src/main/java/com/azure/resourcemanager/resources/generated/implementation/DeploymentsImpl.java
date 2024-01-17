@@ -146,12 +146,12 @@ public final class DeploymentsImpl implements Deployments {
 
     public PagedIterable<DeploymentExtended> listAtScope(String scope) {
         PagedIterable<DeploymentExtendedInner> inner = this.serviceClient().listAtScope(scope);
-        return Utils.mapPage(inner, inner1 -> new DeploymentExtendedImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DeploymentExtendedImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DeploymentExtended> listAtScope(String scope, String filter, Integer top, Context context) {
         PagedIterable<DeploymentExtendedInner> inner = this.serviceClient().listAtScope(scope, filter, top, context);
-        return Utils.mapPage(inner, inner1 -> new DeploymentExtendedImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DeploymentExtendedImpl(inner1, this.manager()));
     }
 
     public void deleteAtTenantScope(String deploymentName) {
@@ -281,12 +281,12 @@ public final class DeploymentsImpl implements Deployments {
 
     public PagedIterable<DeploymentExtended> listAtTenantScope() {
         PagedIterable<DeploymentExtendedInner> inner = this.serviceClient().listAtTenantScope();
-        return Utils.mapPage(inner, inner1 -> new DeploymentExtendedImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DeploymentExtendedImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DeploymentExtended> listAtTenantScope(String filter, Integer top, Context context) {
         PagedIterable<DeploymentExtendedInner> inner = this.serviceClient().listAtTenantScope(filter, top, context);
-        return Utils.mapPage(inner, inner1 -> new DeploymentExtendedImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DeploymentExtendedImpl(inner1, this.manager()));
     }
 
     public void deleteAtManagementGroupScope(String groupId, String deploymentName) {
@@ -426,14 +426,14 @@ public final class DeploymentsImpl implements Deployments {
 
     public PagedIterable<DeploymentExtended> listAtManagementGroupScope(String groupId) {
         PagedIterable<DeploymentExtendedInner> inner = this.serviceClient().listAtManagementGroupScope(groupId);
-        return Utils.mapPage(inner, inner1 -> new DeploymentExtendedImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DeploymentExtendedImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DeploymentExtended> listAtManagementGroupScope(String groupId, String filter, Integer top,
         Context context) {
         PagedIterable<DeploymentExtendedInner> inner
             = this.serviceClient().listAtManagementGroupScope(groupId, filter, top, context);
-        return Utils.mapPage(inner, inner1 -> new DeploymentExtendedImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DeploymentExtendedImpl(inner1, this.manager()));
     }
 
     public void deleteAtSubscriptionScope(String deploymentName) {
@@ -565,12 +565,12 @@ public final class DeploymentsImpl implements Deployments {
 
     public PagedIterable<DeploymentExtended> list() {
         PagedIterable<DeploymentExtendedInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new DeploymentExtendedImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DeploymentExtendedImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DeploymentExtended> list(String filter, Integer top, Context context) {
         PagedIterable<DeploymentExtendedInner> inner = this.serviceClient().list(filter, top, context);
-        return Utils.mapPage(inner, inner1 -> new DeploymentExtendedImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DeploymentExtendedImpl(inner1, this.manager()));
     }
 
     public void deleteByResourceGroup(String resourceGroupName, String deploymentName) {
@@ -683,14 +683,14 @@ public final class DeploymentsImpl implements Deployments {
 
     public PagedIterable<DeploymentExtended> listByResourceGroup(String resourceGroupName) {
         PagedIterable<DeploymentExtendedInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return Utils.mapPage(inner, inner1 -> new DeploymentExtendedImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DeploymentExtendedImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DeploymentExtended> listByResourceGroup(String resourceGroupName, String filter, Integer top,
         Context context) {
         PagedIterable<DeploymentExtendedInner> inner
             = this.serviceClient().listByResourceGroup(resourceGroupName, filter, top, context);
-        return Utils.mapPage(inner, inner1 -> new DeploymentExtendedImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new DeploymentExtendedImpl(inner1, this.manager()));
     }
 
     public Response<TemplateHashResult> calculateTemplateHashWithResponse(Object template, Context context) {
@@ -714,12 +714,12 @@ public final class DeploymentsImpl implements Deployments {
     }
 
     public DeploymentExtended getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
         }
-        String deploymentName = Utils.getValueFromIdByName(id, "deployments");
+        String deploymentName = ResourceManagerUtils.getValueFromIdByName(id, "deployments");
         if (deploymentName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'deployments'.", id)));
@@ -728,12 +728,12 @@ public final class DeploymentsImpl implements Deployments {
     }
 
     public Response<DeploymentExtended> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
         }
-        String deploymentName = Utils.getValueFromIdByName(id, "deployments");
+        String deploymentName = ResourceManagerUtils.getValueFromIdByName(id, "deployments");
         if (deploymentName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'deployments'.", id)));
@@ -742,12 +742,12 @@ public final class DeploymentsImpl implements Deployments {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
         }
-        String deploymentName = Utils.getValueFromIdByName(id, "deployments");
+        String deploymentName = ResourceManagerUtils.getValueFromIdByName(id, "deployments");
         if (deploymentName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'deployments'.", id)));
@@ -756,12 +756,12 @@ public final class DeploymentsImpl implements Deployments {
     }
 
     public void deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
         }
-        String deploymentName = Utils.getValueFromIdByName(id, "deployments");
+        String deploymentName = ResourceManagerUtils.getValueFromIdByName(id, "deployments");
         if (deploymentName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'deployments'.", id)));

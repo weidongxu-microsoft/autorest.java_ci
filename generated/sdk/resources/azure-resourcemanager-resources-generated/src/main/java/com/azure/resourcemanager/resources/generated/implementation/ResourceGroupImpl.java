@@ -112,7 +112,7 @@ public final class ResourceGroupImpl implements ResourceGroup, ResourceGroup.Def
         com.azure.resourcemanager.resources.generated.ResourceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourcegroups");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourcegroups");
     }
 
     public ResourceGroup refresh() {

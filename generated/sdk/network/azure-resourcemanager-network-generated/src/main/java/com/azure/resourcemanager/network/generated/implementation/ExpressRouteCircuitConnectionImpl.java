@@ -129,10 +129,10 @@ public final class ExpressRouteCircuitConnectionImpl implements ExpressRouteCirc
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.circuitName = Utils.getValueFromIdByName(innerObject.id(), "expressRouteCircuits");
-        this.peeringName = Utils.getValueFromIdByName(innerObject.id(), "peerings");
-        this.connectionName = Utils.getValueFromIdByName(innerObject.id(), "connections");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.circuitName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "expressRouteCircuits");
+        this.peeringName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "peerings");
+        this.connectionName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "connections");
     }
 
     public ExpressRouteCircuitConnection refresh() {

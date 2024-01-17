@@ -233,8 +233,8 @@ public final class SnapshotImpl implements Snapshot, Snapshot.Definition, Snapsh
     SnapshotImpl(SnapshotInner innerObject, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.snapshotName = Utils.getValueFromIdByName(innerObject.id(), "snapshots");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.snapshotName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "snapshots");
     }
 
     public Snapshot refresh() {

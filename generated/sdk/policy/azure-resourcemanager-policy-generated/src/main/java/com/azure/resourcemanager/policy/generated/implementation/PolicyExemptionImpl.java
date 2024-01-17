@@ -122,9 +122,9 @@ public final class PolicyExemptionImpl implements PolicyExemption, PolicyExempti
         com.azure.resourcemanager.policy.generated.PolicyManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.scope = Utils.getValueFromIdByParameterName(innerObject.id(),
+        this.scope = ResourceManagerUtils.getValueFromIdByParameterName(innerObject.id(),
             "/{scope}/providers/Microsoft.Authorization/policyExemptions/{policyExemptionName}", "scope");
-        this.policyExemptionName = Utils.getValueFromIdByParameterName(innerObject.id(),
+        this.policyExemptionName = ResourceManagerUtils.getValueFromIdByParameterName(innerObject.id(),
             "/{scope}/providers/Microsoft.Authorization/policyExemptions/{policyExemptionName}", "policyExemptionName");
     }
 

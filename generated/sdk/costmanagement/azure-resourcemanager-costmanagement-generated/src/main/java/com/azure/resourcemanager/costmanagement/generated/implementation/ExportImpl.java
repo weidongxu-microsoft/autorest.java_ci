@@ -105,9 +105,9 @@ public final class ExportImpl implements Export, Export.Definition, Export.Updat
         com.azure.resourcemanager.costmanagement.generated.CostManagementManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.scope = Utils.getValueFromIdByParameterName(innerObject.id(),
+        this.scope = ResourceManagerUtils.getValueFromIdByParameterName(innerObject.id(),
             "/{scope}/providers/Microsoft.CostManagement/exports/{exportName}", "scope");
-        this.exportName = Utils.getValueFromIdByParameterName(innerObject.id(),
+        this.exportName = ResourceManagerUtils.getValueFromIdByParameterName(innerObject.id(),
             "/{scope}/providers/Microsoft.CostManagement/exports/{exportName}", "exportName");
     }
 

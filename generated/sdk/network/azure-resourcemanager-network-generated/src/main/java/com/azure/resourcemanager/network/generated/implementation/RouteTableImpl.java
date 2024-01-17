@@ -155,8 +155,8 @@ public final class RouteTableImpl implements RouteTable, RouteTable.Definition, 
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.routeTableName = Utils.getValueFromIdByName(innerObject.id(), "routeTables");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.routeTableName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "routeTables");
     }
 
     public RouteTable refresh() {

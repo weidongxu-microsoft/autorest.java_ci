@@ -30,13 +30,13 @@ public final class AutoscaleSettingsImpl implements AutoscaleSettings {
     public PagedIterable<AutoscaleSettingResource> listByResourceGroup(String resourceGroupName) {
         PagedIterable<AutoscaleSettingResourceInner> inner
             = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return Utils.mapPage(inner, inner1 -> new AutoscaleSettingResourceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new AutoscaleSettingResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AutoscaleSettingResource> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<AutoscaleSettingResourceInner> inner
             = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return Utils.mapPage(inner, inner1 -> new AutoscaleSettingResourceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new AutoscaleSettingResourceImpl(inner1, this.manager()));
     }
 
     public Response<Void> deleteByResourceGroupWithResponse(String resourceGroupName, String autoscaleSettingName,
@@ -72,21 +72,21 @@ public final class AutoscaleSettingsImpl implements AutoscaleSettings {
 
     public PagedIterable<AutoscaleSettingResource> list() {
         PagedIterable<AutoscaleSettingResourceInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new AutoscaleSettingResourceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new AutoscaleSettingResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AutoscaleSettingResource> list(Context context) {
         PagedIterable<AutoscaleSettingResourceInner> inner = this.serviceClient().list(context);
-        return Utils.mapPage(inner, inner1 -> new AutoscaleSettingResourceImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new AutoscaleSettingResourceImpl(inner1, this.manager()));
     }
 
     public AutoscaleSettingResource getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
         }
-        String autoscaleSettingName = Utils.getValueFromIdByName(id, "autoscalesettings");
+        String autoscaleSettingName = ResourceManagerUtils.getValueFromIdByName(id, "autoscalesettings");
         if (autoscaleSettingName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'autoscalesettings'.", id)));
@@ -95,12 +95,12 @@ public final class AutoscaleSettingsImpl implements AutoscaleSettings {
     }
 
     public Response<AutoscaleSettingResource> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
         }
-        String autoscaleSettingName = Utils.getValueFromIdByName(id, "autoscalesettings");
+        String autoscaleSettingName = ResourceManagerUtils.getValueFromIdByName(id, "autoscalesettings");
         if (autoscaleSettingName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'autoscalesettings'.", id)));
@@ -109,12 +109,12 @@ public final class AutoscaleSettingsImpl implements AutoscaleSettings {
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
         }
-        String autoscaleSettingName = Utils.getValueFromIdByName(id, "autoscalesettings");
+        String autoscaleSettingName = ResourceManagerUtils.getValueFromIdByName(id, "autoscalesettings");
         if (autoscaleSettingName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'autoscalesettings'.", id)));
@@ -123,12 +123,12 @@ public final class AutoscaleSettingsImpl implements AutoscaleSettings {
     }
 
     public Response<Void> deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
         }
-        String autoscaleSettingName = Utils.getValueFromIdByName(id, "autoscalesettings");
+        String autoscaleSettingName = ResourceManagerUtils.getValueFromIdByName(id, "autoscalesettings");
         if (autoscaleSettingName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'autoscalesettings'.", id)));

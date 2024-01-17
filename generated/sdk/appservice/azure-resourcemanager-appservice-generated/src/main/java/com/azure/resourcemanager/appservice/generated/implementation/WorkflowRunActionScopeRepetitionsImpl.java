@@ -31,14 +31,16 @@ public final class WorkflowRunActionScopeRepetitionsImpl implements WorkflowRunA
         String workflowName, String runName, String actionName) {
         PagedIterable<WorkflowRunActionRepetitionDefinitionInner> inner
             = this.serviceClient().list(resourceGroupName, name, workflowName, runName, actionName);
-        return Utils.mapPage(inner, inner1 -> new WorkflowRunActionRepetitionDefinitionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new WorkflowRunActionRepetitionDefinitionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<WorkflowRunActionRepetitionDefinition> list(String resourceGroupName, String name,
         String workflowName, String runName, String actionName, Context context) {
         PagedIterable<WorkflowRunActionRepetitionDefinitionInner> inner
             = this.serviceClient().list(resourceGroupName, name, workflowName, runName, actionName, context);
-        return Utils.mapPage(inner, inner1 -> new WorkflowRunActionRepetitionDefinitionImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner,
+            inner1 -> new WorkflowRunActionRepetitionDefinitionImpl(inner1, this.manager()));
     }
 
     public Response<WorkflowRunActionRepetitionDefinition> getWithResponse(String resourceGroupName, String name,

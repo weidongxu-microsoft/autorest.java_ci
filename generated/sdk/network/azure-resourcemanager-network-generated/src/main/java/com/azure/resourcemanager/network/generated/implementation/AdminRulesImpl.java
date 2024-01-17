@@ -31,14 +31,14 @@ public final class AdminRulesImpl implements AdminRules {
         String configurationName, String ruleCollectionName) {
         PagedIterable<BaseAdminRuleInner> inner
             = this.serviceClient().list(resourceGroupName, networkManagerName, configurationName, ruleCollectionName);
-        return Utils.mapPage(inner, inner1 -> new BaseAdminRuleImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new BaseAdminRuleImpl(inner1, this.manager()));
     }
 
     public PagedIterable<BaseAdminRule> list(String resourceGroupName, String networkManagerName,
         String configurationName, String ruleCollectionName, Integer top, String skipToken, Context context) {
         PagedIterable<BaseAdminRuleInner> inner = this.serviceClient().list(resourceGroupName, networkManagerName,
             configurationName, ruleCollectionName, top, skipToken, context);
-        return Utils.mapPage(inner, inner1 -> new BaseAdminRuleImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new BaseAdminRuleImpl(inner1, this.manager()));
     }
 
     public Response<BaseAdminRule> getWithResponse(String resourceGroupName, String networkManagerName,

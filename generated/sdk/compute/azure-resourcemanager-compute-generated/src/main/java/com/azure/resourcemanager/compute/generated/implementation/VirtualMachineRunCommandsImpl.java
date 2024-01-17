@@ -33,12 +33,12 @@ public final class VirtualMachineRunCommandsImpl implements VirtualMachineRunCom
 
     public PagedIterable<RunCommandDocumentBase> list(String location) {
         PagedIterable<RunCommandDocumentBaseInner> inner = this.serviceClient().list(location);
-        return Utils.mapPage(inner, inner1 -> new RunCommandDocumentBaseImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new RunCommandDocumentBaseImpl(inner1, this.manager()));
     }
 
     public PagedIterable<RunCommandDocumentBase> list(String location, Context context) {
         PagedIterable<RunCommandDocumentBaseInner> inner = this.serviceClient().list(location, context);
-        return Utils.mapPage(inner, inner1 -> new RunCommandDocumentBaseImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new RunCommandDocumentBaseImpl(inner1, this.manager()));
     }
 
     public Response<RunCommandDocument> getWithResponse(String location, String commandId, Context context) {
@@ -94,28 +94,28 @@ public final class VirtualMachineRunCommandsImpl implements VirtualMachineRunCom
     public PagedIterable<VirtualMachineRunCommand> listByVirtualMachine(String resourceGroupName, String vmName) {
         PagedIterable<VirtualMachineRunCommandInner> inner
             = this.serviceClient().listByVirtualMachine(resourceGroupName, vmName);
-        return Utils.mapPage(inner, inner1 -> new VirtualMachineRunCommandImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new VirtualMachineRunCommandImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualMachineRunCommand> listByVirtualMachine(String resourceGroupName, String vmName,
         String expand, Context context) {
         PagedIterable<VirtualMachineRunCommandInner> inner
             = this.serviceClient().listByVirtualMachine(resourceGroupName, vmName, expand, context);
-        return Utils.mapPage(inner, inner1 -> new VirtualMachineRunCommandImpl(inner1, this.manager()));
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new VirtualMachineRunCommandImpl(inner1, this.manager()));
     }
 
     public VirtualMachineRunCommand getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String vmName = Utils.getValueFromIdByName(id, "virtualMachines");
+        String vmName = ResourceManagerUtils.getValueFromIdByName(id, "virtualMachines");
         if (vmName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'virtualMachines'.", id)));
         }
-        String runCommandName = Utils.getValueFromIdByName(id, "runCommands");
+        String runCommandName = ResourceManagerUtils.getValueFromIdByName(id, "runCommands");
         if (runCommandName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'runCommands'.", id)));
@@ -127,17 +127,17 @@ public final class VirtualMachineRunCommandsImpl implements VirtualMachineRunCom
     }
 
     public Response<VirtualMachineRunCommand> getByIdWithResponse(String id, String expand, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String vmName = Utils.getValueFromIdByName(id, "virtualMachines");
+        String vmName = ResourceManagerUtils.getValueFromIdByName(id, "virtualMachines");
         if (vmName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'virtualMachines'.", id)));
         }
-        String runCommandName = Utils.getValueFromIdByName(id, "runCommands");
+        String runCommandName = ResourceManagerUtils.getValueFromIdByName(id, "runCommands");
         if (runCommandName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'runCommands'.", id)));
@@ -146,17 +146,17 @@ public final class VirtualMachineRunCommandsImpl implements VirtualMachineRunCom
     }
 
     public void deleteById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String vmName = Utils.getValueFromIdByName(id, "virtualMachines");
+        String vmName = ResourceManagerUtils.getValueFromIdByName(id, "virtualMachines");
         if (vmName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'virtualMachines'.", id)));
         }
-        String runCommandName = Utils.getValueFromIdByName(id, "runCommands");
+        String runCommandName = ResourceManagerUtils.getValueFromIdByName(id, "runCommands");
         if (runCommandName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'runCommands'.", id)));
@@ -165,17 +165,17 @@ public final class VirtualMachineRunCommandsImpl implements VirtualMachineRunCom
     }
 
     public void deleteByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
         }
-        String vmName = Utils.getValueFromIdByName(id, "virtualMachines");
+        String vmName = ResourceManagerUtils.getValueFromIdByName(id, "virtualMachines");
         if (vmName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'virtualMachines'.", id)));
         }
-        String runCommandName = Utils.getValueFromIdByName(id, "runCommands");
+        String runCommandName = ResourceManagerUtils.getValueFromIdByName(id, "runCommands");
         if (runCommandName == null) {
             throw LOGGER.logExceptionAsError(new IllegalArgumentException(
                 String.format("The resource ID '%s' is not valid. Missing path segment 'runCommands'.", id)));

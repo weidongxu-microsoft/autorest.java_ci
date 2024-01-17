@@ -104,9 +104,9 @@ public final class RulesEngineImpl implements RulesEngine, RulesEngine.Definitio
         com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.frontDoorName = Utils.getValueFromIdByName(innerObject.id(), "frontDoors");
-        this.rulesEngineName = Utils.getValueFromIdByName(innerObject.id(), "rulesEngines");
+        this.resourceGroupName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "resourceGroups");
+        this.frontDoorName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "frontDoors");
+        this.rulesEngineName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "rulesEngines");
     }
 
     public RulesEngine refresh() {
