@@ -4,13 +4,14 @@
 
 package com.azure.resourcemanager.databoxedge.generated.models;
 
-import com.azure.core.annotation.Immutable;
+import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.List;
 
 /**
  * Load balancer configuration.
  */
-@Immutable
+@Fluent
 public final class LoadBalancerConfig {
     /*
      * Load balancer type
@@ -23,6 +24,12 @@ public final class LoadBalancerConfig {
      */
     @JsonProperty(value = "version", access = JsonProperty.Access.WRITE_ONLY)
     private String version;
+
+    /*
+     * Load balancer ipconfig
+     */
+    @JsonProperty(value = "ipRange")
+    private List<String> ipRange;
 
     /**
      * Creates an instance of LoadBalancerConfig class.
@@ -46,6 +53,26 @@ public final class LoadBalancerConfig {
      */
     public String version() {
         return this.version;
+    }
+
+    /**
+     * Get the ipRange property: Load balancer ipconfig.
+     * 
+     * @return the ipRange value.
+     */
+    public List<String> ipRange() {
+        return this.ipRange;
+    }
+
+    /**
+     * Set the ipRange property: Load balancer ipconfig.
+     * 
+     * @param ipRange the ipRange value to set.
+     * @return the LoadBalancerConfig object itself.
+     */
+    public LoadBalancerConfig withIpRange(List<String> ipRange) {
+        this.ipRange = ipRange;
+        return this;
     }
 
     /**

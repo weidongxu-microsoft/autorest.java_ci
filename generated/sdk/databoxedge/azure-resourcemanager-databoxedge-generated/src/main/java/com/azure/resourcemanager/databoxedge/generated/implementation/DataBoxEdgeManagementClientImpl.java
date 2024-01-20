@@ -468,7 +468,7 @@ public final class DataBoxEdgeManagementClientImpl implements DataBoxEdgeManagem
         this.defaultPollInterval = defaultPollInterval;
         this.subscriptionId = subscriptionId;
         this.endpoint = endpoint;
-        this.apiVersion = "2023-07-01";
+        this.apiVersion = "2023-12-01";
         this.operations = new OperationsClientImpl(this);
         this.availableSkus = new AvailableSkusClientImpl(this);
         this.devices = new DevicesClientImpl(this);
