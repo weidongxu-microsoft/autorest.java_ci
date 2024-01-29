@@ -4,12 +4,10 @@
 
 module com.azure.resourcemanager.eventgrid.generated {
     requires transitive com.azure.core.management;
-
     exports com.azure.resourcemanager.eventgrid.generated;
     exports com.azure.resourcemanager.eventgrid.generated.fluent;
     exports com.azure.resourcemanager.eventgrid.generated.fluent.models;
     exports com.azure.resourcemanager.eventgrid.generated.models;
-
     opens com.azure.resourcemanager.eventgrid.generated.fluent.models to com.azure.core, com.fasterxml.jackson.databind;
     opens com.azure.resourcemanager.eventgrid.generated.models to com.azure.core, com.fasterxml.jackson.databind;
 }

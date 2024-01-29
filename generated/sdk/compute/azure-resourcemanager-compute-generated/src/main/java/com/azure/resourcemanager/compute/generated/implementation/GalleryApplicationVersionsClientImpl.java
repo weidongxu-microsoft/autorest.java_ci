@@ -400,7 +400,7 @@ public final class GalleryApplicationVersionsClientImpl implements GalleryApplic
         GalleryApplicationVersionInner galleryApplicationVersion) {
         return beginCreateOrUpdateAsync(resourceGroupName, galleryName, galleryApplicationName,
             galleryApplicationVersionName, galleryApplicationVersion).last()
-                .flatMap(this.client::getLroFinalResultOrError);
+            .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
@@ -428,7 +428,7 @@ public final class GalleryApplicationVersionsClientImpl implements GalleryApplic
         GalleryApplicationVersionInner galleryApplicationVersion, Context context) {
         return beginCreateOrUpdateAsync(resourceGroupName, galleryName, galleryApplicationName,
             galleryApplicationVersionName, galleryApplicationVersion, context).last()
-                .flatMap(this.client::getLroFinalResultOrError);
+            .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**

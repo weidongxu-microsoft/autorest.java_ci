@@ -4,12 +4,10 @@
 
 module com.azure.resourcemanager.policy.generated {
     requires transitive com.azure.core.management;
-
     exports com.azure.resourcemanager.policy.generated;
     exports com.azure.resourcemanager.policy.generated.fluent;
     exports com.azure.resourcemanager.policy.generated.fluent.models;
     exports com.azure.resourcemanager.policy.generated.models;
-
     opens com.azure.resourcemanager.policy.generated.fluent.models to com.azure.core, com.fasterxml.jackson.databind;
     opens com.azure.resourcemanager.policy.generated.models to com.azure.core, com.fasterxml.jackson.databind;
 }

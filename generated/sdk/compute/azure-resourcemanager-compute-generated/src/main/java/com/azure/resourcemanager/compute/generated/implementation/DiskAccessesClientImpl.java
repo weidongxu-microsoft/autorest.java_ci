@@ -1682,7 +1682,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
         PrivateEndpointConnectionInner privateEndpointConnection) {
         return beginUpdateAPrivateEndpointConnectionAsync(resourceGroupName, diskAccessName,
             privateEndpointConnectionName, privateEndpointConnection).last()
-                .flatMap(this.client::getLroFinalResultOrError);
+            .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
@@ -1708,7 +1708,7 @@ public final class DiskAccessesClientImpl implements DiskAccessesClient {
         PrivateEndpointConnectionInner privateEndpointConnection, Context context) {
         return beginUpdateAPrivateEndpointConnectionAsync(resourceGroupName, diskAccessName,
             privateEndpointConnectionName, privateEndpointConnection, context).last()
-                .flatMap(this.client::getLroFinalResultOrError);
+            .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**

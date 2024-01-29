@@ -4,13 +4,10 @@
 
 module com.azure.resourcemanager.resourcegraph.generated {
     requires transitive com.azure.core.management;
-
     exports com.azure.resourcemanager.resourcegraph.generated;
     exports com.azure.resourcemanager.resourcegraph.generated.fluent;
     exports com.azure.resourcemanager.resourcegraph.generated.fluent.models;
     exports com.azure.resourcemanager.resourcegraph.generated.models;
-
-    opens com.azure.resourcemanager.resourcegraph.generated.fluent.models
-        to com.azure.core, com.fasterxml.jackson.databind;
+    opens com.azure.resourcemanager.resourcegraph.generated.fluent.models to com.azure.core, com.fasterxml.jackson.databind;
     opens com.azure.resourcemanager.resourcegraph.generated.models to com.azure.core, com.fasterxml.jackson.databind;
 }

@@ -753,7 +753,7 @@ public final class VirtualNetworkPeeringsClientImpl implements VirtualNetworkPee
         SyncRemoteAddressSpace syncRemoteAddressSpace) {
         return beginCreateOrUpdateAsync(resourceGroupName, virtualNetworkName, virtualNetworkPeeringName,
             virtualNetworkPeeringParameters, syncRemoteAddressSpace).last()
-                .flatMap(this.client::getLroFinalResultOrError);
+            .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
@@ -775,7 +775,7 @@ public final class VirtualNetworkPeeringsClientImpl implements VirtualNetworkPee
         final SyncRemoteAddressSpace syncRemoteAddressSpace = null;
         return beginCreateOrUpdateAsync(resourceGroupName, virtualNetworkName, virtualNetworkPeeringName,
             virtualNetworkPeeringParameters, syncRemoteAddressSpace).last()
-                .flatMap(this.client::getLroFinalResultOrError);
+            .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
@@ -800,7 +800,7 @@ public final class VirtualNetworkPeeringsClientImpl implements VirtualNetworkPee
         SyncRemoteAddressSpace syncRemoteAddressSpace, Context context) {
         return beginCreateOrUpdateAsync(resourceGroupName, virtualNetworkName, virtualNetworkPeeringName,
             virtualNetworkPeeringParameters, syncRemoteAddressSpace, context).last()
-                .flatMap(this.client::getLroFinalResultOrError);
+            .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**

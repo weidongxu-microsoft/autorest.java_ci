@@ -4,13 +4,10 @@
 
 module com.azure.resourcemanager.appservice.generated {
     requires transitive com.azure.core.management;
-
     exports com.azure.resourcemanager.appservice.generated;
     exports com.azure.resourcemanager.appservice.generated.fluent;
     exports com.azure.resourcemanager.appservice.generated.fluent.models;
     exports com.azure.resourcemanager.appservice.generated.models;
-
-    opens com.azure.resourcemanager.appservice.generated.fluent.models
-        to com.azure.core, com.fasterxml.jackson.databind;
+    opens com.azure.resourcemanager.appservice.generated.fluent.models to com.azure.core, com.fasterxml.jackson.databind;
     opens com.azure.resourcemanager.appservice.generated.models to com.azure.core, com.fasterxml.jackson.databind;
 }

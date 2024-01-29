@@ -4,12 +4,10 @@
 
 module com.azure.resourcemanager.search.generated {
     requires transitive com.azure.core.management;
-
     exports com.azure.resourcemanager.search.generated;
     exports com.azure.resourcemanager.search.generated.fluent;
     exports com.azure.resourcemanager.search.generated.fluent.models;
     exports com.azure.resourcemanager.search.generated.models;
-
     opens com.azure.resourcemanager.search.generated.fluent.models to com.azure.core, com.fasterxml.jackson.databind;
     opens com.azure.resourcemanager.search.generated.models to com.azure.core, com.fasterxml.jackson.databind;
 }

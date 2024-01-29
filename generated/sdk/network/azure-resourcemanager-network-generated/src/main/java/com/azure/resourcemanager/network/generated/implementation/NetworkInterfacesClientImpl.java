@@ -3046,7 +3046,7 @@ public final class NetworkInterfacesClientImpl implements NetworkInterfacesClien
         final String expand = null;
         return getVirtualMachineScaleSetIpConfigurationWithResponseAsync(resourceGroupName, virtualMachineScaleSetName,
             virtualmachineIndex, networkInterfaceName, ipConfigurationName, expand)
-                .flatMap(res -> Mono.justOrEmpty(res.getValue()));
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
     }
 
     /**
