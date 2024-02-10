@@ -22,8 +22,8 @@ import com.azure.resourcemanager.network.generated.models.ApplicationGatewayAvai
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayBackendHealth;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayBackendHealthOnDemand;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayOnDemandProbe;
-import com.azure.resourcemanager.network.generated.models.ApplicationGatewaySslPredefinedPolicy;
 import com.azure.resourcemanager.network.generated.models.ApplicationGateways;
+import com.azure.resourcemanager.network.generated.models.ApplicationGatewaySslPredefinedPolicy;
 import java.util.Collections;
 import java.util.List;
 

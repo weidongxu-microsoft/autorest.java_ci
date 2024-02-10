@@ -18,11 +18,11 @@ import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineS
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineScaleSetSkuInner;
 import com.azure.resourcemanager.compute.generated.models.ExpandTypesForGetVMScaleSets;
 import com.azure.resourcemanager.compute.generated.models.OrchestrationServiceStateInput;
-import com.azure.resourcemanager.compute.generated.models.VMScaleSetConvertToSinglePlacementGroupInput;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetReimageParameters;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetUpdate;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMInstanceIDs;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMInstanceRequiredIDs;
+import com.azure.resourcemanager.compute.generated.models.VMScaleSetConvertToSinglePlacementGroupInput;
 
 /**
  * An instance of this class provides access to all the operations defined in VirtualMachineScaleSetsClient.

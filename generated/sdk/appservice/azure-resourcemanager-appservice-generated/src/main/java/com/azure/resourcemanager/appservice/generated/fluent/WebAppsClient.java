@@ -30,9 +30,9 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.HostnameBind
 import com.azure.resourcemanager.appservice.generated.fluent.models.HybridConnectionInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.IdentifierInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.KeyInfoInner;
+import com.azure.resourcemanager.appservice.generated.fluent.models.MigrateMySqlStatusInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.MSDeployLogInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.MSDeployStatusInner;
-import com.azure.resourcemanager.appservice.generated.fluent.models.MigrateMySqlStatusInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.NetworkFeaturesInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.NetworkTraceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.OperationInner;
@@ -76,8 +76,8 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.WorkflowEnve
 import com.azure.resourcemanager.appservice.generated.models.CsmPublishingProfileOptions;
 import com.azure.resourcemanager.appservice.generated.models.CsmSlotEntity;
 import com.azure.resourcemanager.appservice.generated.models.DeletedAppRestoreRequest;
-import com.azure.resourcemanager.appservice.generated.models.MSDeploy;
 import com.azure.resourcemanager.appservice.generated.models.MigrateMySqlRequest;
+import com.azure.resourcemanager.appservice.generated.models.MSDeploy;
 import com.azure.resourcemanager.appservice.generated.models.PremierAddOnPatchResource;
 import com.azure.resourcemanager.appservice.generated.models.SnapshotRestoreRequest;
 import com.azure.resourcemanager.appservice.generated.models.StorageMigrationOptions;

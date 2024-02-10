@@ -17,8 +17,8 @@ import com.azure.resourcemanager.azurekusto.generated.fluent.models.DataConnecti
 import com.azure.resourcemanager.azurekusto.generated.models.CheckNameResult;
 import com.azure.resourcemanager.azurekusto.generated.models.DataConnection;
 import com.azure.resourcemanager.azurekusto.generated.models.DataConnectionCheckNameRequest;
-import com.azure.resourcemanager.azurekusto.generated.models.DataConnectionValidationListResult;
 import com.azure.resourcemanager.azurekusto.generated.models.DataConnections;
+import com.azure.resourcemanager.azurekusto.generated.models.DataConnectionValidationListResult;
 
 public final class DataConnectionsImpl implements DataConnections {
     private static final ClientLogger LOGGER = new ClientLogger(DataConnectionsImpl.class);

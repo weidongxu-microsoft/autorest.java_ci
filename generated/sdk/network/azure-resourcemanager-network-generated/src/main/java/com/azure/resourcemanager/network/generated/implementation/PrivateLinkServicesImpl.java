@@ -18,8 +18,8 @@ import com.azure.resourcemanager.network.generated.models.AutoApprovedPrivateLin
 import com.azure.resourcemanager.network.generated.models.CheckPrivateLinkServiceVisibilityRequest;
 import com.azure.resourcemanager.network.generated.models.PrivateEndpointConnection;
 import com.azure.resourcemanager.network.generated.models.PrivateLinkService;
-import com.azure.resourcemanager.network.generated.models.PrivateLinkServiceVisibility;
 import com.azure.resourcemanager.network.generated.models.PrivateLinkServices;
+import com.azure.resourcemanager.network.generated.models.PrivateLinkServiceVisibility;
 
 public final class PrivateLinkServicesImpl implements PrivateLinkServices {
     private static final ClientLogger LOGGER = new ClientLogger(PrivateLinkServicesImpl.class);

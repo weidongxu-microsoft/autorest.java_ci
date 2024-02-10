@@ -17,8 +17,8 @@ import com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkU
 import com.azure.resourcemanager.network.generated.models.IpAddressAvailabilityResult;
 import com.azure.resourcemanager.network.generated.models.PublicIpDdosProtectionStatusResult;
 import com.azure.resourcemanager.network.generated.models.VirtualNetwork;
-import com.azure.resourcemanager.network.generated.models.VirtualNetworkUsage;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworks;
+import com.azure.resourcemanager.network.generated.models.VirtualNetworkUsage;
 
 public final class VirtualNetworksImpl implements VirtualNetworks {
     private static final ClientLogger LOGGER = new ClientLogger(VirtualNetworksImpl.class);

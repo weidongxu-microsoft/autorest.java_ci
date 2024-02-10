@@ -20,10 +20,10 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteBu
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteCustomDomainOverviewArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteFunctionOverviewArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteLinkedBackendArmResourceInner;
+import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSitesWorkflowPreviewInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteUserArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteUserInvitationResponseResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteUserProvidedFunctionAppArmResourceInner;
-import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSitesWorkflowPreviewInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StringDictionaryInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StringListInner;
 import com.azure.resourcemanager.appservice.generated.models.BasicAuthName;
@@ -31,9 +31,9 @@ import com.azure.resourcemanager.appservice.generated.models.DatabaseConnectionP
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteCustomDomainRequestPropertiesArmResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSitePatchResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteResetPropertiesArmResource;
+import com.azure.resourcemanager.appservice.generated.models.StaticSitesWorkflowPreviewRequest;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteUserInvitationRequestResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteZipDeploymentArmResource;
-import com.azure.resourcemanager.appservice.generated.models.StaticSitesWorkflowPreviewRequest;
 
 /**
  * An instance of this class provides access to all the operations defined in StaticSitesClient.

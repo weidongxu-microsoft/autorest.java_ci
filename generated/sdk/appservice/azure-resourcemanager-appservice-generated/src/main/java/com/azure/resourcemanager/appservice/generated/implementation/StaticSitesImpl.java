@@ -19,10 +19,10 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteBu
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteCustomDomainOverviewArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteFunctionOverviewArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteLinkedBackendArmResourceInner;
+import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSitesWorkflowPreviewInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteUserArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteUserInvitationResponseResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteUserProvidedFunctionAppArmResourceInner;
-import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSitesWorkflowPreviewInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StringDictionaryInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StringListInner;
 import com.azure.resourcemanager.appservice.generated.models.BasicAuthName;
@@ -38,14 +38,14 @@ import com.azure.resourcemanager.appservice.generated.models.StaticSiteCustomDom
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteFunctionOverviewArmResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteLinkedBackendArmResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteResetPropertiesArmResource;
+import com.azure.resourcemanager.appservice.generated.models.StaticSites;
+import com.azure.resourcemanager.appservice.generated.models.StaticSitesWorkflowPreview;
+import com.azure.resourcemanager.appservice.generated.models.StaticSitesWorkflowPreviewRequest;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteUserArmResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteUserInvitationRequestResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteUserInvitationResponseResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteUserProvidedFunctionAppArmResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteZipDeploymentArmResource;
-import com.azure.resourcemanager.appservice.generated.models.StaticSites;
-import com.azure.resourcemanager.appservice.generated.models.StaticSitesWorkflowPreview;
-import com.azure.resourcemanager.appservice.generated.models.StaticSitesWorkflowPreviewRequest;
 import com.azure.resourcemanager.appservice.generated.models.StringDictionary;
 import com.azure.resourcemanager.appservice.generated.models.StringList;
 

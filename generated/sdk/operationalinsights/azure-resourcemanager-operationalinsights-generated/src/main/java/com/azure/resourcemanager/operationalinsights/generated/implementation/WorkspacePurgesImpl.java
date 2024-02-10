@@ -13,9 +13,9 @@ import com.azure.resourcemanager.operationalinsights.generated.fluent.models.Wor
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.WorkspacePurgeStatusResponseInner;
 import com.azure.resourcemanager.operationalinsights.generated.models.WorkspacePurgeBody;
 import com.azure.resourcemanager.operationalinsights.generated.models.WorkspacePurgeResponse;
-import com.azure.resourcemanager.operationalinsights.generated.models.WorkspacePurgeStatusResponse;
 import com.azure.resourcemanager.operationalinsights.generated.models.WorkspacePurges;
 import com.azure.resourcemanager.operationalinsights.generated.models.WorkspacePurgesPurgeResponse;
+import com.azure.resourcemanager.operationalinsights.generated.models.WorkspacePurgeStatusResponse;
 
 public final class WorkspacePurgesImpl implements WorkspacePurges {
     private static final ClientLogger LOGGER = new ClientLogger(WorkspacePurgesImpl.class);

@@ -14,9 +14,9 @@ import com.azure.resourcemanager.iothub.generated.fluent.models.CertificateListD
 import com.azure.resourcemanager.iothub.generated.fluent.models.CertificateWithNonceDescriptionInner;
 import com.azure.resourcemanager.iothub.generated.models.CertificateDescription;
 import com.azure.resourcemanager.iothub.generated.models.CertificateListDescription;
+import com.azure.resourcemanager.iothub.generated.models.Certificates;
 import com.azure.resourcemanager.iothub.generated.models.CertificateVerificationDescription;
 import com.azure.resourcemanager.iothub.generated.models.CertificateWithNonceDescription;
-import com.azure.resourcemanager.iothub.generated.models.Certificates;
 
 public final class CertificatesImpl implements Certificates {
     private static final ClientLogger LOGGER = new ClientLogger(CertificatesImpl.class);

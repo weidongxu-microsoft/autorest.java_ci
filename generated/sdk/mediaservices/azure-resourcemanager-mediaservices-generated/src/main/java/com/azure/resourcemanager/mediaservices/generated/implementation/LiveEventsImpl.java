@@ -18,10 +18,10 @@ import com.azure.resourcemanager.mediaservices.generated.fluent.models.LiveEvent
 import com.azure.resourcemanager.mediaservices.generated.models.AsyncOperationResult;
 import com.azure.resourcemanager.mediaservices.generated.models.LiveEvent;
 import com.azure.resourcemanager.mediaservices.generated.models.LiveEventActionInput;
+import com.azure.resourcemanager.mediaservices.generated.models.LiveEvents;
 import com.azure.resourcemanager.mediaservices.generated.models.LiveEventStatus;
 import com.azure.resourcemanager.mediaservices.generated.models.LiveEventStreamEvent;
 import com.azure.resourcemanager.mediaservices.generated.models.LiveEventTrackEvent;
-import com.azure.resourcemanager.mediaservices.generated.models.LiveEvents;
 
 public final class LiveEventsImpl implements LiveEvents {
     private static final ClientLogger LOGGER = new ClientLogger(LiveEventsImpl.class);

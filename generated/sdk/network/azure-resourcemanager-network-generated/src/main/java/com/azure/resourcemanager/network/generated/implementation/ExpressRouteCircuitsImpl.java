@@ -11,16 +11,16 @@ import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.fluent.ExpressRouteCircuitsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCircuitInner;
-import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCircuitStatsInner;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCircuitsArpTableListResultInner;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCircuitsRoutesTableListResultInner;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCircuitsRoutesTableSummaryListResultInner;
+import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCircuitStatsInner;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteCircuit;
-import com.azure.resourcemanager.network.generated.models.ExpressRouteCircuitStats;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteCircuits;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteCircuitsArpTableListResult;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteCircuitsRoutesTableListResult;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteCircuitsRoutesTableSummaryListResult;
+import com.azure.resourcemanager.network.generated.models.ExpressRouteCircuitStats;
 
 public final class ExpressRouteCircuitsImpl implements ExpressRouteCircuits {
     private static final ClientLogger LOGGER = new ClientLogger(ExpressRouteCircuitsImpl.class);

@@ -10,8 +10,8 @@ import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.consumption.generated.fluent.ReservationsSummariesClient;
 import com.azure.resourcemanager.consumption.generated.fluent.models.ReservationSummaryInner;
 import com.azure.resourcemanager.consumption.generated.models.Datagrain;
-import com.azure.resourcemanager.consumption.generated.models.ReservationSummary;
 import com.azure.resourcemanager.consumption.generated.models.ReservationsSummaries;
+import com.azure.resourcemanager.consumption.generated.models.ReservationSummary;
 
 public final class ReservationsSummariesImpl implements ReservationsSummaries {
     private static final ClientLogger LOGGER = new ClientLogger(ReservationsSummariesImpl.class);

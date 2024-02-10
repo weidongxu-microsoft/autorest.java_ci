@@ -41,7 +41,6 @@ import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineS
 import com.azure.resourcemanager.compute.generated.models.ApiErrorException;
 import com.azure.resourcemanager.compute.generated.models.ExpandTypesForGetVMScaleSets;
 import com.azure.resourcemanager.compute.generated.models.OrchestrationServiceStateInput;
-import com.azure.resourcemanager.compute.generated.models.VMScaleSetConvertToSinglePlacementGroupInput;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetListOSUpgradeHistory;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetListResult;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetListSkusResult;
@@ -50,6 +49,7 @@ import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSet
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetUpdate;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMInstanceIDs;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMInstanceRequiredIDs;
+import com.azure.resourcemanager.compute.generated.models.VMScaleSetConvertToSinglePlacementGroupInput;
 import java.nio.ByteBuffer;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;

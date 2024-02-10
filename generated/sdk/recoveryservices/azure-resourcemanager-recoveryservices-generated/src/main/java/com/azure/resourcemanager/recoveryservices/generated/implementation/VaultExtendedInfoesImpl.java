@@ -10,8 +10,8 @@ import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.recoveryservices.generated.fluent.VaultExtendedInfoesClient;
 import com.azure.resourcemanager.recoveryservices.generated.fluent.models.VaultExtendedInfoResourceInner;
-import com.azure.resourcemanager.recoveryservices.generated.models.VaultExtendedInfoResource;
 import com.azure.resourcemanager.recoveryservices.generated.models.VaultExtendedInfoes;
+import com.azure.resourcemanager.recoveryservices.generated.models.VaultExtendedInfoResource;
 
 public final class VaultExtendedInfoesImpl implements VaultExtendedInfoes {
     private static final ClientLogger LOGGER = new ClientLogger(VaultExtendedInfoesImpl.class);

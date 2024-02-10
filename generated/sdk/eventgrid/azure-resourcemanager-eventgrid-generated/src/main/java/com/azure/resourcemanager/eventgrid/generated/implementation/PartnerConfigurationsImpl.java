@@ -13,8 +13,8 @@ import com.azure.resourcemanager.eventgrid.generated.fluent.PartnerConfiguration
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.PartnerConfigurationInner;
 import com.azure.resourcemanager.eventgrid.generated.models.Partner;
 import com.azure.resourcemanager.eventgrid.generated.models.PartnerConfiguration;
-import com.azure.resourcemanager.eventgrid.generated.models.PartnerConfigurationUpdateParameters;
 import com.azure.resourcemanager.eventgrid.generated.models.PartnerConfigurations;
+import com.azure.resourcemanager.eventgrid.generated.models.PartnerConfigurationUpdateParameters;
 
 public final class PartnerConfigurationsImpl implements PartnerConfigurations {
     private static final ClientLogger LOGGER = new ClientLogger(PartnerConfigurationsImpl.class);

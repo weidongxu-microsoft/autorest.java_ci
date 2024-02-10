@@ -10,8 +10,8 @@ import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.fluent.MetricAlertsStatusClient;
 import com.azure.resourcemanager.monitor.generated.fluent.models.MetricAlertStatusCollectionInner;
-import com.azure.resourcemanager.monitor.generated.models.MetricAlertStatusCollection;
 import com.azure.resourcemanager.monitor.generated.models.MetricAlertsStatus;
+import com.azure.resourcemanager.monitor.generated.models.MetricAlertStatusCollection;
 
 public final class MetricAlertsStatusImpl implements MetricAlertsStatus {
     private static final ClientLogger LOGGER = new ClientLogger(MetricAlertsStatusImpl.class);

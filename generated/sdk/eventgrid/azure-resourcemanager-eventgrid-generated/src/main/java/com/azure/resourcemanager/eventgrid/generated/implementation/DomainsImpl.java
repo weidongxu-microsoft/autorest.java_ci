@@ -14,8 +14,8 @@ import com.azure.resourcemanager.eventgrid.generated.fluent.models.DomainInner;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.DomainSharedAccessKeysInner;
 import com.azure.resourcemanager.eventgrid.generated.models.Domain;
 import com.azure.resourcemanager.eventgrid.generated.models.DomainRegenerateKeyRequest;
-import com.azure.resourcemanager.eventgrid.generated.models.DomainSharedAccessKeys;
 import com.azure.resourcemanager.eventgrid.generated.models.Domains;
+import com.azure.resourcemanager.eventgrid.generated.models.DomainSharedAccessKeys;
 
 public final class DomainsImpl implements Domains {
     private static final ClientLogger LOGGER = new ClientLogger(DomainsImpl.class);

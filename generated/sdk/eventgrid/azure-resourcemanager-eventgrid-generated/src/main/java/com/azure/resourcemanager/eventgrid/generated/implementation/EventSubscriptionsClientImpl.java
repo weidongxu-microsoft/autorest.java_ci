@@ -37,8 +37,8 @@ import com.azure.resourcemanager.eventgrid.generated.fluent.EventSubscriptionsCl
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.DeliveryAttributeListResultInner;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.EventSubscriptionFullUrlInner;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.EventSubscriptionInner;
-import com.azure.resourcemanager.eventgrid.generated.models.EventSubscriptionUpdateParameters;
 import com.azure.resourcemanager.eventgrid.generated.models.EventSubscriptionsListResult;
+import com.azure.resourcemanager.eventgrid.generated.models.EventSubscriptionUpdateParameters;
 import java.nio.ByteBuffer;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;

@@ -10,8 +10,8 @@ import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mysql.generated.fluent.GetPrivateDnsZoneSuffixesClient;
 import com.azure.resourcemanager.mysql.generated.fluent.models.GetPrivateDnsZoneSuffixResponseInner;
-import com.azure.resourcemanager.mysql.generated.models.GetPrivateDnsZoneSuffixResponse;
 import com.azure.resourcemanager.mysql.generated.models.GetPrivateDnsZoneSuffixes;
+import com.azure.resourcemanager.mysql.generated.models.GetPrivateDnsZoneSuffixResponse;
 
 public final class GetPrivateDnsZoneSuffixesImpl implements GetPrivateDnsZoneSuffixes {
     private static final ClientLogger LOGGER = new ClientLogger(GetPrivateDnsZoneSuffixesImpl.class);

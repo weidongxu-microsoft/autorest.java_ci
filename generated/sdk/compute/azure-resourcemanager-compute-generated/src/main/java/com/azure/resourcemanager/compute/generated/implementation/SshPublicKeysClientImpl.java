@@ -34,8 +34,8 @@ import com.azure.resourcemanager.compute.generated.fluent.models.SshPublicKeyGen
 import com.azure.resourcemanager.compute.generated.fluent.models.SshPublicKeyResourceInner;
 import com.azure.resourcemanager.compute.generated.models.ApiErrorException;
 import com.azure.resourcemanager.compute.generated.models.SshGenerateKeyPairInputParameters;
-import com.azure.resourcemanager.compute.generated.models.SshPublicKeyUpdateResource;
 import com.azure.resourcemanager.compute.generated.models.SshPublicKeysGroupListResult;
+import com.azure.resourcemanager.compute.generated.models.SshPublicKeyUpdateResource;
 import reactor.core.publisher.Mono;
 
 /**

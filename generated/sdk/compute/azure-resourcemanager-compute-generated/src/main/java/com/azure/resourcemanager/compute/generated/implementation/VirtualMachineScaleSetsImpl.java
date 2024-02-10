@@ -19,14 +19,14 @@ import com.azure.resourcemanager.compute.generated.models.ExpandTypesForGetVMSca
 import com.azure.resourcemanager.compute.generated.models.OrchestrationServiceStateInput;
 import com.azure.resourcemanager.compute.generated.models.RecoveryWalkResponse;
 import com.azure.resourcemanager.compute.generated.models.UpgradeOperationHistoricalStatusInfo;
-import com.azure.resourcemanager.compute.generated.models.VMScaleSetConvertToSinglePlacementGroupInput;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSet;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetInstanceView;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetReimageParameters;
+import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSets;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetSku;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMInstanceIDs;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMInstanceRequiredIDs;
-import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSets;
+import com.azure.resourcemanager.compute.generated.models.VMScaleSetConvertToSinglePlacementGroupInput;
 
 public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSets {
     private static final ClientLogger LOGGER = new ClientLogger(VirtualMachineScaleSetsImpl.class);

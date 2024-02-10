@@ -15,10 +15,10 @@ import com.azure.resourcemanager.network.generated.fluent.models.LoadBalancerInn
 import com.azure.resourcemanager.network.generated.fluent.models.MigratedPoolsInner;
 import com.azure.resourcemanager.network.generated.models.BackendAddressInboundNatRulePortMappings;
 import com.azure.resourcemanager.network.generated.models.LoadBalancer;
-import com.azure.resourcemanager.network.generated.models.LoadBalancerVipSwapRequest;
 import com.azure.resourcemanager.network.generated.models.LoadBalancers;
-import com.azure.resourcemanager.network.generated.models.MigrateLoadBalancerToIpBasedRequest;
+import com.azure.resourcemanager.network.generated.models.LoadBalancerVipSwapRequest;
 import com.azure.resourcemanager.network.generated.models.MigratedPools;
+import com.azure.resourcemanager.network.generated.models.MigrateLoadBalancerToIpBasedRequest;
 import com.azure.resourcemanager.network.generated.models.QueryInboundNatRulePortMappingRequest;
 
 public final class LoadBalancersImpl implements LoadBalancers {

@@ -38,8 +38,8 @@ import com.azure.resourcemanager.compute.generated.fluent.models.RunCommandDocum
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineRunCommandInner;
 import com.azure.resourcemanager.compute.generated.models.ApiErrorException;
 import com.azure.resourcemanager.compute.generated.models.RunCommandListResult;
-import com.azure.resourcemanager.compute.generated.models.VirtualMachineRunCommandUpdate;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineRunCommandsListResult;
+import com.azure.resourcemanager.compute.generated.models.VirtualMachineRunCommandUpdate;
 import java.nio.ByteBuffer;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;

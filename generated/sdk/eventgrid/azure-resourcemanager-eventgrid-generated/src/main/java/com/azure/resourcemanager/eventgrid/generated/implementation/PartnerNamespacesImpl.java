@@ -14,8 +14,8 @@ import com.azure.resourcemanager.eventgrid.generated.fluent.models.PartnerNamesp
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.PartnerNamespaceSharedAccessKeysInner;
 import com.azure.resourcemanager.eventgrid.generated.models.PartnerNamespace;
 import com.azure.resourcemanager.eventgrid.generated.models.PartnerNamespaceRegenerateKeyRequest;
-import com.azure.resourcemanager.eventgrid.generated.models.PartnerNamespaceSharedAccessKeys;
 import com.azure.resourcemanager.eventgrid.generated.models.PartnerNamespaces;
+import com.azure.resourcemanager.eventgrid.generated.models.PartnerNamespaceSharedAccessKeys;
 
 public final class PartnerNamespacesImpl implements PartnerNamespaces {
     private static final ClientLogger LOGGER = new ClientLogger(PartnerNamespacesImpl.class);

@@ -16,8 +16,8 @@ import com.azure.resourcemanager.appservice.generated.models.ApplicationStackRes
 import com.azure.resourcemanager.appservice.generated.models.CsmOperationDescription;
 import com.azure.resourcemanager.appservice.generated.models.FunctionAppStack;
 import com.azure.resourcemanager.appservice.generated.models.ProviderOsTypeSelected;
-import com.azure.resourcemanager.appservice.generated.models.ProviderStackOsType;
 import com.azure.resourcemanager.appservice.generated.models.Providers;
+import com.azure.resourcemanager.appservice.generated.models.ProviderStackOsType;
 import com.azure.resourcemanager.appservice.generated.models.WebAppStack;
 
 public final class ProvidersImpl implements Providers {

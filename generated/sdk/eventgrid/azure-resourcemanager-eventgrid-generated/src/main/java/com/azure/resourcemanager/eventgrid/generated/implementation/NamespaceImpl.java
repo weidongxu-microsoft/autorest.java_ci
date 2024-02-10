@@ -21,8 +21,8 @@ import com.azure.resourcemanager.eventgrid.generated.models.NamespaceUpdateParam
 import com.azure.resourcemanager.eventgrid.generated.models.PrivateEndpointConnection;
 import com.azure.resourcemanager.eventgrid.generated.models.PublicNetworkAccess;
 import com.azure.resourcemanager.eventgrid.generated.models.TlsVersion;
-import com.azure.resourcemanager.eventgrid.generated.models.TopicSpacesConfiguration;
 import com.azure.resourcemanager.eventgrid.generated.models.TopicsConfiguration;
+import com.azure.resourcemanager.eventgrid.generated.models.TopicSpacesConfiguration;
 import com.azure.resourcemanager.eventgrid.generated.models.UpdateTopicSpacesConfigurationInfo;
 import java.util.Collections;
 import java.util.List;

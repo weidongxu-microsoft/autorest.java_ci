@@ -25,8 +25,8 @@ import com.azure.core.management.exception.ManagementException;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.SavedSearchesClient;
-import com.azure.resourcemanager.operationalinsights.generated.fluent.models.SavedSearchInner;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.SavedSearchesListResultInner;
+import com.azure.resourcemanager.operationalinsights.generated.fluent.models.SavedSearchInner;
 import reactor.core.publisher.Mono;
 
 /**

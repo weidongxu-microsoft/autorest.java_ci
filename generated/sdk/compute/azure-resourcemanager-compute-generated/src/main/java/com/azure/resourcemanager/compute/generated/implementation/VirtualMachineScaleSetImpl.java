@@ -22,7 +22,6 @@ import com.azure.resourcemanager.compute.generated.models.ScaleInPolicy;
 import com.azure.resourcemanager.compute.generated.models.Sku;
 import com.azure.resourcemanager.compute.generated.models.SpotRestorePolicy;
 import com.azure.resourcemanager.compute.generated.models.UpgradePolicy;
-import com.azure.resourcemanager.compute.generated.models.VMScaleSetConvertToSinglePlacementGroupInput;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSet;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetIdentity;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetReimageParameters;
@@ -31,6 +30,7 @@ import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSet
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMInstanceIDs;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMInstanceRequiredIDs;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMProfile;
+import com.azure.resourcemanager.compute.generated.models.VMScaleSetConvertToSinglePlacementGroupInput;
 import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.List;

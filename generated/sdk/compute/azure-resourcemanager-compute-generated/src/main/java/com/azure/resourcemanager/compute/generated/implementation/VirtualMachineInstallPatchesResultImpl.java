@@ -8,8 +8,8 @@ import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineI
 import com.azure.resourcemanager.compute.generated.models.ApiError;
 import com.azure.resourcemanager.compute.generated.models.PatchInstallationDetail;
 import com.azure.resourcemanager.compute.generated.models.PatchOperationStatus;
-import com.azure.resourcemanager.compute.generated.models.VMGuestPatchRebootStatus;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineInstallPatchesResult;
+import com.azure.resourcemanager.compute.generated.models.VMGuestPatchRebootStatus;
 import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.List;

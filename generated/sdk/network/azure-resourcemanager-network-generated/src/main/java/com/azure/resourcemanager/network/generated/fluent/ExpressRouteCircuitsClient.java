@@ -12,10 +12,10 @@ import com.azure.core.management.polling.PollResult;
 import com.azure.core.util.Context;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCircuitInner;
-import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCircuitStatsInner;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCircuitsArpTableListResultInner;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCircuitsRoutesTableListResultInner;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCircuitsRoutesTableSummaryListResultInner;
+import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCircuitStatsInner;
 import com.azure.resourcemanager.network.generated.models.TagsObject;
 
 /**

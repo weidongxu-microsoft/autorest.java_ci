@@ -15,8 +15,8 @@ import com.azure.resourcemanager.eventhubs.generated.fluent.models.Authorization
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.EventhubInner;
 import com.azure.resourcemanager.eventhubs.generated.models.AccessKeys;
 import com.azure.resourcemanager.eventhubs.generated.models.AuthorizationRule;
-import com.azure.resourcemanager.eventhubs.generated.models.EventHubs;
 import com.azure.resourcemanager.eventhubs.generated.models.Eventhub;
+import com.azure.resourcemanager.eventhubs.generated.models.EventHubs;
 import com.azure.resourcemanager.eventhubs.generated.models.RegenerateAccessKeyParameters;
 
 public final class EventHubsImpl implements EventHubs {

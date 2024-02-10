@@ -18,9 +18,9 @@ import com.azure.resourcemanager.resources.generated.fluent.models.WhatIfOperati
 import com.azure.resourcemanager.resources.generated.models.Deployment;
 import com.azure.resourcemanager.resources.generated.models.DeploymentExportResult;
 import com.azure.resourcemanager.resources.generated.models.DeploymentExtended;
+import com.azure.resourcemanager.resources.generated.models.Deployments;
 import com.azure.resourcemanager.resources.generated.models.DeploymentValidateResult;
 import com.azure.resourcemanager.resources.generated.models.DeploymentWhatIf;
-import com.azure.resourcemanager.resources.generated.models.Deployments;
 import com.azure.resourcemanager.resources.generated.models.ScopedDeployment;
 import com.azure.resourcemanager.resources.generated.models.ScopedDeploymentWhatIf;
 import com.azure.resourcemanager.resources.generated.models.TemplateHashResult;

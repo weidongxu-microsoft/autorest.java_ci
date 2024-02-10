@@ -4,8 +4,8 @@
 
 package com.azure.resourcemanager.operationalinsights.generated.implementation;
 
-import com.azure.resourcemanager.operationalinsights.generated.fluent.models.SavedSearchInner;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.SavedSearchesListResultInner;
+import com.azure.resourcemanager.operationalinsights.generated.fluent.models.SavedSearchInner;
 import com.azure.resourcemanager.operationalinsights.generated.models.SavedSearch;
 import com.azure.resourcemanager.operationalinsights.generated.models.SavedSearchesListResult;
 import java.util.Collections;

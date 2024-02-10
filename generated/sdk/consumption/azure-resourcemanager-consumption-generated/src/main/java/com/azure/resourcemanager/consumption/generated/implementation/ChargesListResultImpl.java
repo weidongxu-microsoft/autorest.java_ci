@@ -5,8 +5,8 @@
 package com.azure.resourcemanager.consumption.generated.implementation;
 
 import com.azure.resourcemanager.consumption.generated.fluent.models.ChargesListResultInner;
-import com.azure.resourcemanager.consumption.generated.models.ChargeSummary;
 import com.azure.resourcemanager.consumption.generated.models.ChargesListResult;
+import com.azure.resourcemanager.consumption.generated.models.ChargeSummary;
 import java.util.Collections;
 import java.util.List;
 

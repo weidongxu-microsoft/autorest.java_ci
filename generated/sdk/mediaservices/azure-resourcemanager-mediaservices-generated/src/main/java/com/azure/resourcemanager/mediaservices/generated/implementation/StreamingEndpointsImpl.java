@@ -15,8 +15,8 @@ import com.azure.resourcemanager.mediaservices.generated.fluent.models.Streaming
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.StreamingEndpointSkuInfoListResultInner;
 import com.azure.resourcemanager.mediaservices.generated.models.AsyncOperationResult;
 import com.azure.resourcemanager.mediaservices.generated.models.StreamingEndpoint;
-import com.azure.resourcemanager.mediaservices.generated.models.StreamingEndpointSkuInfoListResult;
 import com.azure.resourcemanager.mediaservices.generated.models.StreamingEndpoints;
+import com.azure.resourcemanager.mediaservices.generated.models.StreamingEndpointSkuInfoListResult;
 import com.azure.resourcemanager.mediaservices.generated.models.StreamingEntityScaleUnit;
 
 public final class StreamingEndpointsImpl implements StreamingEndpoints {

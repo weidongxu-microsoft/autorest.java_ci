@@ -35,8 +35,8 @@ import com.azure.resourcemanager.compute.generated.models.VirtualMachineInstallP
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineInstallPatchesResult;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineInstanceView;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineReimageParameters;
-import com.azure.resourcemanager.compute.generated.models.VirtualMachineSize;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachines;
+import com.azure.resourcemanager.compute.generated.models.VirtualMachineSize;
 
 public final class VirtualMachinesImpl implements VirtualMachines {
     private static final ClientLogger LOGGER = new ClientLogger(VirtualMachinesImpl.class);

@@ -8,8 +8,8 @@ import com.azure.core.annotation.ReturnType;
 import com.azure.core.annotation.ServiceMethod;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.operationalinsights.generated.fluent.models.SavedSearchInner;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.SavedSearchesListResultInner;
+import com.azure.resourcemanager.operationalinsights.generated.fluent.models.SavedSearchInner;
 
 /**
  * An instance of this class provides access to all the operations defined in SavedSearchesClient.

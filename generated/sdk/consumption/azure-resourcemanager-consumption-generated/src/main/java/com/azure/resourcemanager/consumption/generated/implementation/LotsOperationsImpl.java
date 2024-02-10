@@ -9,8 +9,8 @@ import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.consumption.generated.fluent.LotsOperationsClient;
 import com.azure.resourcemanager.consumption.generated.fluent.models.LotSummaryInner;
-import com.azure.resourcemanager.consumption.generated.models.LotSummary;
 import com.azure.resourcemanager.consumption.generated.models.LotsOperations;
+import com.azure.resourcemanager.consumption.generated.models.LotSummary;
 
 public final class LotsOperationsImpl implements LotsOperations {
     private static final ClientLogger LOGGER = new ClientLogger(LotsOperationsImpl.class);

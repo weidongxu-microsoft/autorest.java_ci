@@ -9,8 +9,8 @@ import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.consumption.generated.fluent.EventsOperationsClient;
 import com.azure.resourcemanager.consumption.generated.fluent.models.EventSummaryInner;
-import com.azure.resourcemanager.consumption.generated.models.EventSummary;
 import com.azure.resourcemanager.consumption.generated.models.EventsOperations;
+import com.azure.resourcemanager.consumption.generated.models.EventSummary;
 
 public final class EventsOperationsImpl implements EventsOperations {
     private static final ClientLogger LOGGER = new ClientLogger(EventsOperationsImpl.class);

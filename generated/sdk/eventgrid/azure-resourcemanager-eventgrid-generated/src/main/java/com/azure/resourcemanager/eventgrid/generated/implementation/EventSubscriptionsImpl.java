@@ -16,8 +16,8 @@ import com.azure.resourcemanager.eventgrid.generated.fluent.models.EventSubscrip
 import com.azure.resourcemanager.eventgrid.generated.models.DeliveryAttributeListResult;
 import com.azure.resourcemanager.eventgrid.generated.models.EventSubscription;
 import com.azure.resourcemanager.eventgrid.generated.models.EventSubscriptionFullUrl;
-import com.azure.resourcemanager.eventgrid.generated.models.EventSubscriptionUpdateParameters;
 import com.azure.resourcemanager.eventgrid.generated.models.EventSubscriptions;
+import com.azure.resourcemanager.eventgrid.generated.models.EventSubscriptionUpdateParameters;
 
 public final class EventSubscriptionsImpl implements EventSubscriptions {
     private static final ClientLogger LOGGER = new ClientLogger(EventSubscriptionsImpl.class);

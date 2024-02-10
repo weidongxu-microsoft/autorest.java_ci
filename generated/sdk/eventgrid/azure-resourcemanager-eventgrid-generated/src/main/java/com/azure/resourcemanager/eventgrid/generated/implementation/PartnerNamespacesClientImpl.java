@@ -37,8 +37,8 @@ import com.azure.resourcemanager.eventgrid.generated.fluent.PartnerNamespacesCli
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.PartnerNamespaceInner;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.PartnerNamespaceSharedAccessKeysInner;
 import com.azure.resourcemanager.eventgrid.generated.models.PartnerNamespaceRegenerateKeyRequest;
-import com.azure.resourcemanager.eventgrid.generated.models.PartnerNamespaceUpdateParameters;
 import com.azure.resourcemanager.eventgrid.generated.models.PartnerNamespacesListResult;
+import com.azure.resourcemanager.eventgrid.generated.models.PartnerNamespaceUpdateParameters;
 import java.nio.ByteBuffer;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;

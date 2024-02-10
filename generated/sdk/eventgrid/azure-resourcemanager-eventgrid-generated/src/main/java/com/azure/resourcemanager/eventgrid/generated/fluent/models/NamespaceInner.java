@@ -13,8 +13,8 @@ import com.azure.resourcemanager.eventgrid.generated.models.NamespaceProvisionin
 import com.azure.resourcemanager.eventgrid.generated.models.NamespaceSku;
 import com.azure.resourcemanager.eventgrid.generated.models.PublicNetworkAccess;
 import com.azure.resourcemanager.eventgrid.generated.models.TlsVersion;
-import com.azure.resourcemanager.eventgrid.generated.models.TopicSpacesConfiguration;
 import com.azure.resourcemanager.eventgrid.generated.models.TopicsConfiguration;
+import com.azure.resourcemanager.eventgrid.generated.models.TopicSpacesConfiguration;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 import java.util.Map;
